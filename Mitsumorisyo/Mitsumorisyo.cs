@@ -5,11 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-
+using DL;
 using BL;
 using Entity;
 using Base.Client;
 using Search;
+using System.IO;
+using System.Data.SqlClient;
+using System.Drawing.Imaging;
 
 namespace Mitsumorisyo
 {
@@ -23,7 +26,7 @@ namespace Mitsumorisyo
 
         private enum EIndex : int
         {
-            DayStart =0,
+            DayStart = 0,
             DayEnd,
             StoreCD,
             InputStart,
@@ -39,7 +42,7 @@ namespace Mitsumorisyo
         private Control[] detailControls;
         private Control[] detailLabels;
         private Control[] searchButtons;
-        
+
         private MitsumoriNyuuryoku_BL mibl;
         private D_Mitsumori_Entity dme;
 
@@ -51,19 +54,20 @@ namespace Mitsumorisyo
         public Mitsumorisyo()
         {
             InitializeComponent();
-                    }
+            ShowImage();
+        }
 
         private void Form_Load(object sender, EventArgs e)
         {
             try
             {
                 base.InProgramID = ProID;
-                base.InProgramNM=ProNm;
+                base.InProgramNM = ProNm;
 
                 this.SetFunctionLabel(EProMode.PRINT);
                 this.InitialControlArray();
                 base.Btn_F10.Text = "";
-                
+
                 //起動時共通処理
                 base.StartProgram();
 
@@ -82,7 +86,7 @@ namespace Mitsumorisyo
 
                 //コマンドライン引数を配列で取得する
                 string[] cmds = System.Environment.GetCommandLineArgs();
-                if(cmds.Length-1 > (int)ECmdLine.PcID)
+                if (cmds.Length - 1 > (int)ECmdLine.PcID)
                 {
                     detailControls[(int)EIndex.MitsumoriNO].Text = cmds[cmds.Length - 1];
                     PrintMode = EPrintMode.DIRECT;
@@ -103,8 +107,8 @@ namespace Mitsumorisyo
         private void InitialControlArray()
         {
             detailControls = new Control[] { ckM_TextBox1, ckM_TextBox2, CboStoreCD, ckM_TextBox3, ckM_TextBox4, ScStaff.TxtCode, ScCustomer.TxtCode, ckM_CustomerName, ckM_TextBox5, ScMitsumoriNO.TxtCode };
-            detailLabels = new Control[] { ScCustomer,ScStaff,ScMitsumoriNO };
-            searchButtons = new Control[] { ScCustomer.BtnSearch};
+            detailLabels = new Control[] { ScCustomer, ScStaff, ScMitsumoriNO };
+            searchButtons = new Control[] { ScCustomer.BtnSearch };
 
             foreach (Control ctl in detailControls)
             {
@@ -116,7 +120,7 @@ namespace Mitsumorisyo
             ckM_RadioButton2.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
             ckM_RadioButton3.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
         }
-       
+
 
         private bool SelectAndInsertExclusive(string mitsumoriNo)
         {
@@ -138,7 +142,7 @@ namespace Mitsumorisyo
 
             if (dt.Rows.Count > 0)
             {
-                bbl.ShowMessage("S004", dt.Rows[0]["Program"].ToString(),dt.Rows[0]["Operator"].ToString());
+                bbl.ShowMessage("S004", dt.Rows[0]["Program"].ToString(), dt.Rows[0]["Operator"].ToString());
                 detailControls[(int)EIndex.MitsumoriNO].Focus();
                 return false;
             }
@@ -152,7 +156,7 @@ namespace Mitsumorisyo
         /// <summary>
         /// 排他処理データを削除する
         /// </summary>
-       private void DeleteExclusive(DataTable dtForUpdate = null)
+        private void DeleteExclusive(DataTable dtForUpdate = null)
         {
             if (mOldMitsumoriNo == "" && dtForUpdate == null)
                 return;
@@ -161,7 +165,7 @@ namespace Mitsumorisyo
 
             if (dtForUpdate != null)
             {
-                foreach(DataRow dr in dtForUpdate.Rows)
+                foreach (DataRow dr in dtForUpdate.Rows)
                 {
                     D_Exclusive_Entity de = new D_Exclusive_Entity();
                     de.DataKBN = (int)Exclusive_BL.DataKbn.Mitsumori;
@@ -182,13 +186,13 @@ namespace Mitsumorisyo
 
             mOldMitsumoriNo = "";
         }
-        
+
         /// <summary>
         /// 見積データ取得処理
         /// </summary>
         /// <param name="set">画面展開なしの場合:falesに設定する</param>
         /// <returns></returns>
-        private DataTable CheckData(out DataTable  dtForUpdate)
+        private DataTable CheckData(out DataTable dtForUpdate)
         {
             string mitsumoriNo = detailControls[(int)EIndex.MitsumoriNO].Text;
             dtForUpdate = null;
@@ -207,7 +211,7 @@ namespace Mitsumorisyo
 
             if (string.IsNullOrWhiteSpace(mitsumoriNo))
             {
-                dme= GetSearchInfo();
+                dme = GetSearchInfo();
             }
             else
             {
@@ -229,7 +233,7 @@ namespace Mitsumorisyo
                 previousCtrl.Focus();
                 return null;
             }
-            else 
+            else
             {
                 //明細にデータをセット
                 int i = 0;
@@ -293,6 +297,7 @@ namespace Mitsumorisyo
                         }
 
                         // 印字データをセット
+
                         Report.SetDataSource(table);
                         Report.Refresh();
 
@@ -334,7 +339,7 @@ namespace Mitsumorisyo
                         Report.Refresh();
 
                         bool result = OutputPDF(filePath, Report);
-                        
+
                         //PDF出力が完了しました。
                         bbl.ShowMessage("I202");
 
@@ -344,7 +349,7 @@ namespace Mitsumorisyo
                 //更新処理
                 //tableの見積番号だけ
                 mibl.D_Mitsumori_Update(dme, dtForUpdate, InOperatorCD, InPcID);
-                
+
             }
             finally
             {
@@ -361,7 +366,7 @@ namespace Mitsumorisyo
         /// <param name="index"></param>
         /// <param name="set">画面展開なしの場合:falesに設定する</param>
         /// <returns></returns>
-        private bool CheckDetail(int index, bool set=true)
+        private bool CheckDetail(int index, bool set = true)
         {
             bool ret;
             switch (index)
@@ -397,7 +402,7 @@ namespace Mitsumorisyo
                             }
                         }
                     }
-                    
+
 
                     break;
 
@@ -416,7 +421,7 @@ namespace Mitsumorisyo
                         ChangeDate = bbl.GetDate()
                     };
                     Staff_BL bl = new Staff_BL();
-                     ret = bl.M_Staff_Select(mse);
+                    ret = bl.M_Staff_Select(mse);
                     if (ret)
                     {
                         ScStaff.LabelText = mse.StaffName;
@@ -428,7 +433,7 @@ namespace Mitsumorisyo
                         return false;
                     }
                     break;
-                    
+
 
                 case (int)EIndex.CustomerCD:
                     if (string.IsNullOrWhiteSpace(detailControls[index].Text))
@@ -445,7 +450,7 @@ namespace Mitsumorisyo
                         ChangeDate = bbl.GetDate()
                     };
                     Customer_BL sbl = new Customer_BL();
-                     ret = sbl.M_Customer_Select(mce);
+                    ret = sbl.M_Customer_Select(mce);
                     if (ret)
                     {
                         if (mOldCustomerCD != detailControls[index].Text)
@@ -454,13 +459,13 @@ namespace Mitsumorisyo
                             if (mce.VariousFLG == "1")
                             {
                                 detailControls[index + 1].Text = mce.CustomerName;
-                                    detailControls[index + 1].Enabled = true;
+                                detailControls[index + 1].Enabled = true;
 
                             }
                             else
                             {
                                 detailControls[index + 1].Text = mce.CustomerName;
-                                
+
                                 //[M_Store_Select]
                                 M_Store_Entity me = new M_Store_Entity
                                 {
@@ -525,7 +530,7 @@ namespace Mitsumorisyo
                         ScMitsumoriNO.LabelText = dt.Rows[0]["MitsumoriName"].ToString();
                     }
 
-                        break;
+                    break;
                 case (int)EIndex.StoreCD:
                     if (CboStoreCD.SelectedValue.Equals("-1"))
                     {
@@ -564,7 +569,7 @@ namespace Mitsumorisyo
                 StaffCD = ScStaff.TxtCode.Text,
                 CustomerCD = ScCustomer.TxtCode.Text,
                 CustomerName = detailControls[(int)EIndex.CustomerName].Text,
-                StoreCD = CboStoreCD.SelectedValue.ToString().Equals("-1") ? string.Empty : CboStoreCD.SelectedValue.ToString(),            
+                StoreCD = CboStoreCD.SelectedValue.ToString().Equals("-1") ? string.Empty : CboStoreCD.SelectedValue.ToString(),
             };
 
             if (ckM_RadioButton1.Checked)
@@ -602,7 +607,7 @@ namespace Mitsumorisyo
                 }
                 else if (ctl.GetType().Equals(typeof(CKM_Controls.CKM_ComboBox)))
                 {
-                    ((CKM_Controls.CKM_ComboBox)ctl).SelectedIndex=-1;
+                    ((CKM_Controls.CKM_ComboBox)ctl).SelectedIndex = -1;
                 }
                 else
                 {
@@ -667,7 +672,7 @@ namespace Mitsumorisyo
         private void ClearCustomerInfo()
         {
             mOldCustomerCD = "";
-            
+
 
             ScCustomer.LabelText = "";
             detailControls[(int)EIndex.CustomerName].Text = "";
@@ -745,9 +750,9 @@ namespace Mitsumorisyo
                         break;
                     }
 
-                case 11:   
-                        break;
-                    
+                case 11:
+                    break;
+
             }   //switch end
 
         }
@@ -783,7 +788,7 @@ namespace Mitsumorisyo
                     {
                         if (detailControls.Length - 1 > index)
                         {
-                            if(index== (int)EIndex.MitsumoriName)
+                            if (index == (int)EIndex.MitsumoriName)
                                 //Shiftが押されている時は前のコントロールのフォーカスを移動
                                 this.ProcessTabKey(!e.Shift);
                             else if (detailControls[index + 1].CanFocus)
@@ -816,8 +821,8 @@ namespace Mitsumorisyo
                 previousCtrl = this.ActiveControl;
 
                 int index = Array.IndexOf(detailControls, sender);
-                switch(index)
-                    {
+                switch (index)
+                {
                     case (int)EIndex.CustomerCD:
                     case (int)EIndex.StaffCD:
                     case (int)EIndex.MitsumoriNO:
@@ -872,8 +877,50 @@ namespace Mitsumorisyo
             }
         }
 
+        private void ShowImage()
+        {
+            string ID = "1";  // JIC
+            Base_DL bdl = new Base_DL();
+            // bdl.re
+            // Base_BL bbl = new Base_BL();
+            Login_BL lbl = new Login_BL();
+            if (lbl.ReadConfig())
+            {
+                var con = bdl.GetConnectionString();
+                byte[] getImg = new byte[0];
+                SqlCommand cmd = new SqlCommand("select Picture from M_Image where id='" + ID + "'", new SqlConnection(con));
+                cmd.CommandType = CommandType.Text;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                var ds = new DataTable();
+                try
+                {
+                    da.Fill(ds);
+                }
+                catch (Exception ex)
+                {
+                    var msg = ex.ToString();
+                }
+                if (ds.Rows.Count == 1)
+                {
+                    foreach (DataRow dr in ds.Rows)
+                    {
+                        getImg = (byte[])dr["Picture"];
+                    }
+                    byte[] imgData = getImg;
+                    MemoryStream stream = new MemoryStream(imgData);
+                    using (Image image = Image.FromStream(stream))
+                    {
+                        if (File.Exists(@"C:\SMS\AppData\Stamp.Wmf"))
+                        {
+                            File.Delete(@"C:\SMS\AppData\Stamp.Wmf");
+                        }
+                        image.Save(@"C:\SMS\AppData\Stamp.Wmf", ImageFormat.Wmf);
+                    }
+                    stream.Close();
+                }
+            }
+        }
         #endregion
-
     }
 }
 
