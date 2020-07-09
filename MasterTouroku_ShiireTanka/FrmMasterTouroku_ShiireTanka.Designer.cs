@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -98,8 +99,8 @@
             this.ckM_Label16 = new CKM_Controls.CKM_Label();
             this.ckM_Label17 = new CKM_Controls.CKM_Label();
             this.ckM_Label18 = new CKM_Controls.CKM_Label();
-            this.btn_displaymain = new CKM_Controls.CKM_Button();
-            this.ckM_Button1 = new CKM_Controls.CKM_Button();
+            this.btn_subdisplay = new CKM_Controls.CKM_Button();
+            this.BT_Capture = new CKM_Controls.CKM_Button();
             this.makershohin = new Search.CKM_SearchControl();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.TB_date_condition = new CKM_Controls.CKM_TextBox();
@@ -183,6 +184,7 @@
             this.TB_headerdate.IntegerPart = 0;
             this.TB_headerdate.IsCorrectDate = true;
             this.TB_headerdate.isEnterKeyDown = false;
+            this.TB_headerdate.IsFirstTime = true;
             this.TB_headerdate.isMaxLengthErr = false;
             this.TB_headerdate.IsNumber = true;
             this.TB_headerdate.IsShop = false;
@@ -266,6 +268,7 @@
             this.shiiresaki.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.shiiresaki.DataCheck = false;
             this.shiiresaki.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shiiresaki.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.shiiresaki.IsCopy = false;
             this.shiiresaki.LabelText = "";
             this.shiiresaki.LabelVisible = true;
@@ -397,8 +400,8 @@
             this.panel3.Controls.Add(this.ckM_Label16);
             this.panel3.Controls.Add(this.ckM_Label17);
             this.panel3.Controls.Add(this.ckM_Label18);
-            this.panel3.Controls.Add(this.btn_displaymain);
-            this.panel3.Controls.Add(this.ckM_Button1);
+            this.panel3.Controls.Add(this.btn_subdisplay);
+            this.panel3.Controls.Add(this.BT_Capture);
             this.panel3.Controls.Add(this.makershohin);
             this.panel3.Controls.Add(this.ckM_Label2);
             this.panel3.Controls.Add(this.TB_date_condition);
@@ -459,6 +462,7 @@
             this.LB_priceouttax.IntegerPart = 8;
             this.LB_priceouttax.IsCorrectDate = true;
             this.LB_priceouttax.isEnterKeyDown = false;
+            this.LB_priceouttax.IsFirstTime = true;
             this.LB_priceouttax.isMaxLengthErr = false;
             this.LB_priceouttax.IsNumber = true;
             this.LB_priceouttax.IsShop = false;
@@ -483,6 +487,7 @@
             this.itemcd.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.itemcd.DataCheck = false;
             this.itemcd.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.itemcd.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.itemcd.IsCopy = false;
             this.itemcd.LabelText = "";
             this.itemcd.LabelVisible = true;
@@ -601,6 +606,7 @@
             this.TB_date_add.IntegerPart = 0;
             this.TB_date_add.IsCorrectDate = true;
             this.TB_date_add.isEnterKeyDown = false;
+            this.TB_date_add.IsFirstTime = true;
             this.TB_date_add.isMaxLengthErr = false;
             this.TB_date_add.IsNumber = true;
             this.TB_date_add.IsShop = false;
@@ -663,6 +669,7 @@
             this.TB_rate.IntegerPart = 8;
             this.TB_rate.IsCorrectDate = true;
             this.TB_rate.isEnterKeyDown = false;
+            this.TB_rate.IsFirstTime = true;
             this.TB_rate.isMaxLengthErr = false;
             this.TB_rate.IsNumber = true;
             this.TB_rate.IsShop = false;
@@ -708,6 +715,7 @@
             this.TB_pricewithouttax.IntegerPart = 8;
             this.TB_pricewithouttax.IsCorrectDate = true;
             this.TB_pricewithouttax.isEnterKeyDown = false;
+            this.TB_pricewithouttax.IsFirstTime = true;
             this.TB_pricewithouttax.isMaxLengthErr = false;
             this.TB_pricewithouttax.IsNumber = true;
             this.TB_pricewithouttax.IsShop = false;
@@ -750,7 +758,7 @@
             this.GV_item.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -774,6 +782,14 @@
             this.定価,
             this.掛率,
             this.発注単価});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GV_item.DefaultCellStyle = dataGridViewCellStyle6;
             this.GV_item.EnableHeadersVisualStyles = false;
             this.GV_item.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_item.Location = new System.Drawing.Point(84, 340);
@@ -970,6 +986,7 @@
             this.makershohinC.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.makershohinC.DataCheck = false;
             this.makershohinC.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.makershohinC.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.makershohinC.IsCopy = false;
             this.makershohinC.LabelText = "";
             this.makershohinC.LabelVisible = false;
@@ -1019,6 +1036,7 @@
             this.TB_dateC.IntegerPart = 0;
             this.TB_dateC.IsCorrectDate = true;
             this.TB_dateC.isEnterKeyDown = false;
+            this.TB_dateC.IsFirstTime = true;
             this.TB_dateC.isMaxLengthErr = false;
             this.TB_dateC.IsNumber = true;
             this.TB_dateC.IsShop = false;
@@ -1126,6 +1144,7 @@
             this.segmentC.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.segmentC.DataCheck = false;
             this.segmentC.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.segmentC.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.segmentC.IsCopy = false;
             this.segmentC.LabelText = "";
             this.segmentC.LabelVisible = true;
@@ -1173,6 +1192,7 @@
             this.sportC.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.sportC.DataCheck = false;
             this.sportC.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sportC.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.sportC.IsCopy = false;
             this.sportC.LabelText = "";
             this.sportC.LabelVisible = true;
@@ -1190,6 +1210,7 @@
             this.sportC.Value2 = null;
             this.sportC.Value3 = null;
             this.sportC.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.sportC_CodeKeyDownEvent);
+
             this.sportC.Enter += new System.EventHandler(this.sportC_Enter);
             // 
             // ckM_Label15
@@ -1220,6 +1241,7 @@
             this.brandC.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.brandC.DataCheck = false;
             this.brandC.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.brandC.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.brandC.IsCopy = false;
             this.brandC.LabelText = "";
             this.brandC.LabelVisible = true;
@@ -1289,42 +1311,43 @@
             this.ckM_Label18.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btn_displaymain
+            // btn_subdisplay
             // 
-            this.btn_displaymain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btn_displaymain.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.btn_displaymain.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_displaymain.DefaultBtnSize = false;
-            this.btn_displaymain.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_displaymain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_displaymain.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.btn_displaymain.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btn_displaymain.Location = new System.Drawing.Point(1689, 87);
-            this.btn_displaymain.Margin = new System.Windows.Forms.Padding(1);
-            this.btn_displaymain.Name = "btn_displaymain";
-            this.btn_displaymain.Size = new System.Drawing.Size(80, 23);
-            this.btn_displaymain.TabIndex = 32;
-            this.btn_displaymain.Text = "表示";
-            this.btn_displaymain.UseVisualStyleBackColor = false;
-            this.btn_displaymain.Click += new System.EventHandler(this.btn_displaymain_Click);
+            this.btn_subdisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btn_subdisplay.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.btn_subdisplay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_subdisplay.DefaultBtnSize = false;
+            this.btn_subdisplay.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_subdisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_subdisplay.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btn_subdisplay.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.btn_subdisplay.Location = new System.Drawing.Point(1689, 87);
+            this.btn_subdisplay.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_subdisplay.Name = "btn_subdisplay";
+            this.btn_subdisplay.Size = new System.Drawing.Size(80, 23);
+            this.btn_subdisplay.TabIndex = 32;
+            this.btn_subdisplay.Text = "表示";
+            this.btn_subdisplay.UseVisualStyleBackColor = false;
+            this.btn_subdisplay.Click += new System.EventHandler(this.btn_subdisplay_Click);
             // 
-            // ckM_Button1
+            // BT_Capture
             // 
-            this.ckM_Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.ckM_Button1.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.ckM_Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckM_Button1.DefaultBtnSize = false;
-            this.ckM_Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ckM_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ckM_Button1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Button1.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.ckM_Button1.Location = new System.Drawing.Point(1689, 15);
-            this.ckM_Button1.Margin = new System.Windows.Forms.Padding(1);
-            this.ckM_Button1.Name = "ckM_Button1";
-            this.ckM_Button1.Size = new System.Drawing.Size(80, 23);
-            this.ckM_Button1.TabIndex = 15;
-            this.ckM_Button1.Text = "取込(F10)";
-            this.ckM_Button1.UseVisualStyleBackColor = false;
+            this.BT_Capture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.BT_Capture.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.BT_Capture.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BT_Capture.DefaultBtnSize = false;
+            this.BT_Capture.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BT_Capture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_Capture.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.BT_Capture.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.BT_Capture.Location = new System.Drawing.Point(1689, 15);
+            this.BT_Capture.Margin = new System.Windows.Forms.Padding(1);
+            this.BT_Capture.Name = "BT_Capture";
+            this.BT_Capture.Size = new System.Drawing.Size(80, 23);
+            this.BT_Capture.TabIndex = 15;
+            this.BT_Capture.Text = "取込(F10)";
+            this.BT_Capture.UseVisualStyleBackColor = false;
+            this.BT_Capture.Click += new System.EventHandler(this.BT_Capture_Click);
             // 
             // makershohin
             // 
@@ -1337,6 +1360,7 @@
             this.makershohin.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.makershohin.DataCheck = false;
             this.makershohin.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.makershohin.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.makershohin.IsCopy = false;
             this.makershohin.LabelText = "";
             this.makershohin.LabelVisible = false;
@@ -1386,6 +1410,7 @@
             this.TB_date_condition.IntegerPart = 0;
             this.TB_date_condition.IsCorrectDate = true;
             this.TB_date_condition.isEnterKeyDown = false;
+            this.TB_date_condition.IsFirstTime = true;
             this.TB_date_condition.isMaxLengthErr = false;
             this.TB_date_condition.IsNumber = true;
             this.TB_date_condition.IsShop = false;
@@ -1493,6 +1518,7 @@
             this.segment.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.segment.DataCheck = false;
             this.segment.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.segment.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.segment.IsCopy = false;
             this.segment.LabelText = "";
             this.segment.LabelVisible = true;
@@ -1540,6 +1566,7 @@
             this.sport.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.sport.DataCheck = false;
             this.sport.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sport.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.sport.IsCopy = false;
             this.sport.LabelText = "";
             this.sport.LabelVisible = true;
@@ -1587,6 +1614,7 @@
             this.brand.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.brand.DataCheck = false;
             this.brand.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.brand.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.brand.IsCopy = false;
             this.brand.LabelText = "";
             this.brand.LabelVisible = true;
@@ -1748,6 +1776,7 @@
             this.TB_dateE.IntegerPart = 0;
             this.TB_dateE.IsCorrectDate = true;
             this.TB_dateE.isEnterKeyDown = false;
+            this.TB_dateE.IsFirstTime = true;
             this.TB_dateE.isMaxLengthErr = false;
             this.TB_dateE.IsNumber = true;
             this.TB_dateE.IsShop = false;
@@ -1775,6 +1804,7 @@
             this.TB_rate_E.IntegerPart = 0;
             this.TB_rate_E.IsCorrectDate = true;
             this.TB_rate_E.isEnterKeyDown = false;
+            this.TB_rate_E.IsFirstTime = true;
             this.TB_rate_E.isMaxLengthErr = false;
             this.TB_rate_E.IsNumber = true;
             this.TB_rate_E.IsShop = false;
@@ -1988,7 +2018,7 @@
         private CKM_Controls.CKM_Button Btn_F11;
         private Search.CKM_SearchControl makershohin;
         private CKM_Controls.CKM_Label ckM_Label2;
-        private CKM_Controls.CKM_Button ckM_Button1;
+        private CKM_Controls.CKM_Button BT_Capture;
         private Search.CKM_SearchControl itemcd;
         private CKM_Controls.CKM_Label ckM_Label3;
         private CKM_Controls.CKM_Label ckM_Label5;
@@ -2020,7 +2050,7 @@
         private CKM_Controls.CKM_Label ckM_Label17;
         private CKM_Controls.CKM_Label ckM_Label18;
         private CKM_Controls.CKM_Button btn_add;
-        private CKM_Controls.CKM_Button btn_displaymain;
+        private CKM_Controls.CKM_Button btn_subdisplay;
         private CKM_Controls.CKM_Button btn_choice;
         private CKM_Controls.CKM_Button btn_selectall;
         private CKM_Controls.CKM_TextBox TB_dateE;

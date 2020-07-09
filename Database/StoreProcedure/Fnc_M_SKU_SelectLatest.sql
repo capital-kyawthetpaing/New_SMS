@@ -43,9 +43,9 @@ RETURN(
       ,main.MakerItem
       ,main.TaniCD
       ,main.SportsCD
-      ,main.ClassificationA
-      ,main.ClassificationB
-      ,main.ClassificationC
+   --   ,main.ClassificationA
+   --   ,main.ClassificationB
+   --   ,main.ClassificationC
       ,main.ZaikoKBN
       ,main.Rack
       ,main.VirtualFlg

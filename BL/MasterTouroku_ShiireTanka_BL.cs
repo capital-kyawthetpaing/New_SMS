@@ -75,6 +75,10 @@ namespace BL
         {
             return msdl.M_SKU_SelectForShiireTanka(me);            
         }
+        public DataTable M_ITEM_SelectBy_ItemCD(M_ITEM_Entity me)
+        {
+            return msdl.M_ITEM_SelectBy_ItemCD(me);
+        }
 
         /// <summary>
         /// 更新時に使用
@@ -87,13 +91,13 @@ namespace BL
             return msdl.PRC_MasterTouroku_ShiireTanka(mpe, dtOldITEM, dtOldSKU, dtITEM, dtSKU);
         }
 
-        public DataTable M_Itemorderprice_Insert(string tbitem, string tbsku, string vendorcd,string storecd)
+        public DataTable Mastertoroku_Shiretanka_Insert(string tbitem, string tbsku, string vendorcd,string storecd)
         {
-            return msdl.M_Itemorderprice_Insert(tbitem,tbsku,vendorcd,storecd);
+            return msdl.Mastertoroku_Shiretanka_Insert(tbitem,tbsku,vendorcd,storecd);
         }
-        public DataTable M_SKU_SelectFor_SKU_Update(string tb)
+        public DataTable M_SKU_SelectFor_SKU_Update(string itb,string stb,string itemcd,string date,string type)
         {
-            return msdl.M_SKU_SelectFor_SKU_Update(tb);
+            return msdl.M_SKU_SelectFor_SKU_Update(itb,stb,itemcd,date,type);
         }
     }
 }

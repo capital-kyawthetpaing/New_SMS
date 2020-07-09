@@ -13,6 +13,7 @@ namespace CKM_Controls
 {
     public class CKM_TextBox : TextBox
     {
+        public bool isClosing = false;
         private Type CtrlType { get; set; }
         public enum Type
         {
@@ -539,12 +540,14 @@ namespace CKM_Controls
         }
         protected override void OnValidating(CancelEventArgs e)
         {
+            if(!isClosing)
+            {
+                if (Check())
+                    base.OnValidating(e);
+                else
+                    e.Cancel = true;
+            }
 
-
-            if (Check())
-                base.OnValidating(e);
-            else
-                e.Cancel = true;
         }
         public string FindMainForm(Control theControl)
         {

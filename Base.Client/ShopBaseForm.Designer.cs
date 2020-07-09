@@ -36,11 +36,11 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.lblShopName = new CKM_Controls.CKMShop_Label();
+            this.lblStoreName = new CKM_Controls.CKMShop_Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lblOperatorName = new CKM_Controls.CKMShop_Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.lblStoreName = new CKM_Controls.CKMShop_Label();
-            this.lblShopName = new CKM_Controls.CKMShop_Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -84,7 +84,7 @@
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("MS Gothic", 24F, System.Drawing.FontStyle.Bold);
+            this.btnClose.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
             this.btnClose.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
             this.btnClose.Location = new System.Drawing.Point(1, 1);
             this.btnClose.Margin = new System.Windows.Forms.Padding(1);
@@ -96,6 +96,7 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.Btn_Click);
             this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
+            this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
             // 
             // btnProcess
             // 
@@ -106,7 +107,7 @@
             this.btnProcess.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnProcess.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProcess.Font = new System.Drawing.Font("MS Gothic", 24F, System.Drawing.FontStyle.Bold);
+            this.btnProcess.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
             this.btnProcess.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
             this.btnProcess.Location = new System.Drawing.Point(514, 1);
             this.btnProcess.Margin = new System.Windows.Forms.Padding(1);
@@ -150,6 +151,40 @@
             this.panel8.Size = new System.Drawing.Size(698, 69);
             this.panel8.TabIndex = 2;
             // 
+            // lblShopName
+            // 
+            this.lblShopName.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.lblShopName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblShopName.Font = new System.Drawing.Font("MS Gothic", 32F, System.Drawing.FontStyle.Bold);
+            this.lblShopName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XLarge;
+            this.lblShopName.FontBold = true;
+            this.lblShopName.ForeColor = System.Drawing.Color.Black;
+            this.lblShopName.Location = new System.Drawing.Point(14, 13);
+            this.lblShopName.Name = "lblShopName";
+            this.lblShopName.Size = new System.Drawing.Size(250, 40);
+            this.lblShopName.TabIndex = 3;
+            this.lblShopName.Text = "XXXX";
+            this.lblShopName.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblShopName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblShopName.Visible = false;
+            // 
+            // lblStoreName
+            // 
+            this.lblStoreName.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.lblStoreName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblStoreName.Font = new System.Drawing.Font("MS Gothic", 32F, System.Drawing.FontStyle.Bold);
+            this.lblStoreName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XLarge;
+            this.lblStoreName.FontBold = true;
+            this.lblStoreName.ForeColor = System.Drawing.Color.Black;
+            this.lblStoreName.Location = new System.Drawing.Point(264, 13);
+            this.lblStoreName.Name = "lblStoreName";
+            this.lblStoreName.Size = new System.Drawing.Size(200, 40);
+            this.lblStoreName.TabIndex = 2;
+            this.lblStoreName.Text = "x x x";
+            this.lblStoreName.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblStoreName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStoreName.Visible = false;
+            // 
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -166,6 +201,7 @@
             this.lblOperatorName.BackColor = System.Drawing.Color.Transparent;
             this.lblOperatorName.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblOperatorName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblOperatorName.FontBold = true;
             this.lblOperatorName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.lblOperatorName.Location = new System.Drawing.Point(98, 13);
             this.lblOperatorName.Name = "lblOperatorName";
@@ -183,38 +219,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(568, 75);
             this.panel6.TabIndex = 0;
-            // 
-            // lblStoreName
-            // 
-            this.lblStoreName.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
-            this.lblStoreName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblStoreName.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
-            this.lblStoreName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XLarge;
-            this.lblStoreName.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName.Location = new System.Drawing.Point(264, 13);
-            this.lblStoreName.Name = "lblStoreName";
-            this.lblStoreName.Size = new System.Drawing.Size(200, 40);
-            this.lblStoreName.TabIndex = 2;
-            this.lblStoreName.Text = "x x x";
-            this.lblStoreName.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblStoreName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblStoreName.Visible = false;
-            // 
-            // lblShopName
-            // 
-            this.lblShopName.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
-            this.lblShopName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblShopName.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
-            this.lblShopName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XLarge;
-            this.lblShopName.ForeColor = System.Drawing.Color.Black;
-            this.lblShopName.Location = new System.Drawing.Point(14, 13);
-            this.lblShopName.Name = "lblShopName";
-            this.lblShopName.Size = new System.Drawing.Size(250, 40);
-            this.lblShopName.TabIndex = 3;
-            this.lblShopName.Text = "XXXX";
-            this.lblShopName.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblShopName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblShopName.Visible = false;
             // 
             // ShopBaseForm
             // 

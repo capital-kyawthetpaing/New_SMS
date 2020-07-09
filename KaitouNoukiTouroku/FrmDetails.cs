@@ -24,7 +24,6 @@ namespace KaitouNoukiTouroku
             public string MakerItem { get; set; }
             public string SKUName { get; set; }
             public string Suryo { get; set; }
-
             public DataTable DtDetail { get; set; }
             //public DataRow[] DataRows { get; set; }
         }
@@ -47,6 +46,7 @@ namespace KaitouNoukiTouroku
 
         #region"公開プロパティ"
         public Detail_Entity de = new Detail_Entity();
+        public int GyoCount { get; set; }
         #endregion
 
         private KaitouNoukiTouroku_BL knbl;
@@ -89,7 +89,7 @@ namespace KaitouNoukiTouroku
                     detailControls[(int)EIndex.ArrivalPlanDate1 + 4 * count].Text =Convert.ToDateTime( row["ArrivalPlanDate"]).ToShortDateString();
 
                 if(knbl.Z_Set(row["ArrivalPlanMonth"])>0)
-                    detailControls[(int)EIndex.ArrivalPlanMonth1 + 4 * count].Text = row["ArrivalPlanMonth"].ToString();
+                    detailControls[(int)EIndex.ArrivalPlanMonth1 + 4 * count].Text = bbl.FormatDate(row["ArrivalPlanMonth"].ToString() + "01").Substring(0, 7);
 
                 if (!string.IsNullOrWhiteSpace(row["ArrivalPlanCD"].ToString()))
                 {
@@ -266,6 +266,8 @@ namespace KaitouNoukiTouroku
                     row["UpdateFlg"] = "2";
                 }
             }
+
+            GyoCount = count;
 
             EndSec();
         }

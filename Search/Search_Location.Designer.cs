@@ -33,11 +33,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSubF11 = new CKM_Controls.CKM_Button();
             this.GvDetail = new CKM_Controls.CKM_GridView();
+            this.colTanaCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CboFromSoukoCD = new CKM_Controls.CKM_ComboBox();
             this.lblSoukoCD = new System.Windows.Forms.Label();
             this.ckM_Label1 = new System.Windows.Forms.Label();
             this.label5 = new CKM_Controls.CKM_Label();
-            this.colTanaCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvDetail)).BeginInit();
             this.SuspendLayout();
@@ -108,6 +108,8 @@
             this.GvDetail.Location = new System.Drawing.Point(106, 140);
             this.GvDetail.Name = "GvDetail";
             this.GvDetail.ReadOnly = true;
+            this.GvDetail.RowHeight_ = 20;
+            this.GvDetail.RowTemplate.Height = 20;
             this.GvDetail.Size = new System.Drawing.Size(143, 350);
             this.GvDetail.TabIndex = 20;
             this.GvDetail.UseRowNo = true;
@@ -115,11 +117,19 @@
             this.GvDetail.DoubleClick += new System.EventHandler(this.GvDetail_DoubleClick);
             this.GvDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvDetail_KeyDown);
             // 
+            // colTanaCD
+            // 
+            this.colTanaCD.DataPropertyName = "TanaCD";
+            this.colTanaCD.HeaderText = "棚番号";
+            this.colTanaCD.Name = "colTanaCD";
+            this.colTanaCD.ReadOnly = true;
+            this.colTanaCD.Width = 80;
+            // 
             // CboFromSoukoCD
             // 
             this.CboFromSoukoCD.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.CboFromSoukoCD.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CboFromSoukoCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.倉庫;
+            this.CboFromSoukoCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.入荷倉庫;
             this.CboFromSoukoCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CboFromSoukoCD.Flag = 0;
             this.CboFromSoukoCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -172,14 +182,6 @@
             this.label5.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // colTanaCD
-            // 
-            this.colTanaCD.DataPropertyName = "TanaCD";
-            this.colTanaCD.HeaderText = "棚番号";
-            this.colTanaCD.Name = "colTanaCD";
-            this.colTanaCD.ReadOnly = true;
-            this.colTanaCD.Width = 80;
-            // 
             // Search_Location
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -187,6 +189,7 @@
             this.ClientSize = new System.Drawing.Size(470, 531);
             this.Controls.Add(this.GvDetail);
             this.F11Visible = true;
+            this.F12Visible = true;
             this.F9Visible = true;
             this.Name = "Search_Location";
             this.PanelHeaderHeight = 130;

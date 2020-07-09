@@ -19,7 +19,7 @@ namespace DL
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                     { "@ITemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.ITemCD } },
-                    { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = me.ChangeDate } },
+                    { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.ChangeDate } },
             };
             return SelectData(dic, sp);
         }
@@ -122,6 +122,8 @@ namespace DL
             AddParam(command, "@OrderAttentionNote", SqlDbType.VarChar, me.OrderAttentionNote);
             AddParam(command, "@CommentInStore", SqlDbType.VarChar, me.CommentInStore);
             AddParam(command, "@CommentOutStore", SqlDbType.VarChar, me.CommentOutStore);
+            AddParam(command, "@ExhibitionSegmentCD", SqlDbType.VarChar, me.ExhibitionSegmentCD);
+            AddParam(command, "@OrderLot", SqlDbType.VarChar, me.OrderLot);
             AddParam(command, "@LastYearTerm", SqlDbType.VarChar, me.LastYearTerm);
             AddParam(command, "@LastSeason", SqlDbType.VarChar, me.LastSeason);
             AddParam(command, "@LastCatalogNO", SqlDbType.VarChar, me.LastCatalogNO);

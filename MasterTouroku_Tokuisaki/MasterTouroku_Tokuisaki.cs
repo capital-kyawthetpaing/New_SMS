@@ -91,20 +91,21 @@ namespace MasterTouroku_Tokuisaki
             , StoreCD
             , StaffCD
             , DeleteFlg
+            , txtCreditCheckKBN
             , COUNT
 
-          //Label
-            ,lblKouzaCD
-            ,lblBillingCD
-            ,lblCollectCD
-            ,lblTankaCD
-            ,lblStaff
-            ,lblStoreName
-            ,lblLastSalesDate
-            ,lblPoint
-            ,lblMinyukin
-            ,lblKensu
-            ,lblCreditAmount
+            //Label
+            , lblKouzaCD
+            , lblBillingCD
+            , lblCollectCD
+            , lblTankaCD
+            , lblStaff
+            , lblStoreName
+            , lblLastSalesDate
+            , lblPoint
+            , lblMinyukin
+            , lblKensu
+            , lblCreditAmount
         }
         private Control[] keyControls;
         private Control[] copyKeyControls;
@@ -179,7 +180,7 @@ namespace MasterTouroku_Tokuisaki
             M_DenominationKBN_Entity me = new M_DenominationKBN_Entity();
 
             DataTable dt = dbl.M_Denomination_cboSelect(me, kbn);
-            BindCombo(combo, "DenominationCD", "DenominationName", dt);         
+            BindCombo(combo, "DenominationCD", "DenominationName", dt);
         }
 
         private void BindCombo(CKM_Controls.CKM_ComboBox combo, string key, string value, DataTable dt)
@@ -239,7 +240,7 @@ namespace MasterTouroku_Tokuisaki
             DataTable dt2 = dt.Copy();
 
             BindCombo(cmbTaxFractionKBN, key, value, dt);
-            
+
             BindCombo(cmbAmountFractionKBN, key, value, dt2);
 
             //1:請求,2:売上,3:明細,4:先入
@@ -369,13 +370,13 @@ namespace MasterTouroku_Tokuisaki
             datarow = dt.NewRow();
             datarow[key] = "4";
             datarow[value] = "Sale";
-            
+
             BindCombo(cmbStoreTankaKBN, key, value, dt);
         }
         private void InitialControlArray()
         {
-            keyControls = new Control[] { ScCustomer.TxtCode,ScCustomer.TxtChangeDate };
-            copyKeyControls = new Control[] { ScCopyCustomer.TxtCode,ScCopyCustomer.TxtChangeDate };
+            keyControls = new Control[] { ScCustomer.TxtCode, ScCustomer.TxtChangeDate };
+            copyKeyControls = new Control[] { ScCopyCustomer.TxtCode, ScCopyCustomer.TxtChangeDate };
             detailControls = new Control[] { ChkVariousFLG,ChkBillingFLG,ChkCollectFLG,pnlCustomerKBN
                             ,txtLastName,txtFirstName,txtCustomerName,pnlAliasKBN,txtKanaName,txtLongName1,txtLongName2,txtBirthDate,pnlSex
                             ,ChkCountryKBN,txtCountryName,txtZipCD1,txtZipCD2,ChkDMFlg,txtAddress1,txtAddress2
@@ -384,13 +385,13 @@ namespace MasterTouroku_Tokuisaki
                             ,pnlHolidayKBN,txtRegisteredNumber
                             ,ChkNoInvoiceFlg,pnlTaxPrintKBN,cmbTaxTiming,cmbTaxFractionKBN,cmbAmountFractionKBN
                             ,cmbPaymentMethodCD,ScKouzaCD.TxtCode,cmbPaymentUnit,cmbStoreTankaKBN,ScTankaCD.TxtCode,ChkAttentionFLG,ChkConfirmFLG,txtConfirmComment
-                            ,cmbCreditLevel,txtCreditCard,txtCreditInsurance,txtCreditDeposit,txtCreditETC,txtCreditWarningAmount,txtCreditAdditionAmount,txtDisplayOrder,txtAnalyzeCD1,txtAnalyzeCD2,txtAnalyzeCD3
+                            ,cmbCreditLevel,txtCreditCard,txtCreditInsurance,txtCreditDeposit,txtCreditETC,txtCreditAdditionAmount,txtDisplayOrder,txtAnalyzeCD1,txtAnalyzeCD2,txtAnalyzeCD3
                             ,ChkPointFLG,txtLastPoint,txtWaitingPoint,txtTotalPoint,txtRemarksOutStore,txtRemarksInStore,
-                            CboStoreCD,ScStaff.TxtCode, checkDeleteFlg };
-            detailLabels = new Control[] { ScKouzaCD, ScBillingCD, ScCollectCD,ScTankaCD, ScStaff, lblStoreName,lblLastSalesDate,lblPoint,lblMinyukin,lblKensu, lblCreditAmount};
+                            CboStoreCD,ScStaff.TxtCode, checkDeleteFlg, txtCreditCheckKBN, txtCreditMessage,  txtFareLevel, txtFare };
+            detailLabels = new Control[] { ScKouzaCD, ScBillingCD, ScCollectCD, ScTankaCD, ScStaff, lblStoreName, lblLastSalesDate, lblPoint, lblMinyukin, lblKensu, lblCreditAmount };
             searchButtons = new Control[] { ScKouzaCD.BtnSearch, ScBillingCD.BtnSearch,ScCollectCD.BtnSearch,ScStaff.BtnSearch,
                                             ScTankaCD.BtnSearch,ScCopyCustomer.BtnSearch,ScCustomer.BtnSearch };
-                
+
             //イベント付与
             foreach (Control ctl in keyControls)
             {
@@ -461,7 +462,7 @@ namespace MasterTouroku_Tokuisaki
                             //Ｅ１０２
                             bbl.ShowMessage("E102");
                             return false;
-                        }                        
+                        }
                         break;
                     case (int)EIndex.ChangeDate:
                         //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
@@ -517,7 +518,7 @@ namespace MasterTouroku_Tokuisaki
 
                         //複写得意先CDに入力がある場合、(When there is an input in 複写得意先CD)Ｅ１０２
                         //必須入力
-                        if (!string.IsNullOrWhiteSpace(copyKeyControls[(int)EIndex.CustomerCD].Text) && string.IsNullOrWhiteSpace(copyKeyControls[index].Text ))
+                        if (!string.IsNullOrWhiteSpace(copyKeyControls[(int)EIndex.CustomerCD].Text) && string.IsNullOrWhiteSpace(copyKeyControls[index].Text))
                         {
                             //Ｅ１０２
                             bbl.ShowMessage("E102");
@@ -647,7 +648,7 @@ namespace MasterTouroku_Tokuisaki
                         txtTel23.Text = mce.Tel23;
                         txtMailAddress.Text = mce.MailAddress;
                         //pnlBillingType.Text = mce.pnlBillingType;
-                        switch(mce.BillingType)
+                        switch (mce.BillingType)
                         {
                             case "1":
                                 ckM_RadioButton2.Checked = true;
@@ -682,7 +683,8 @@ namespace MasterTouroku_Tokuisaki
                             ChkNoInvoiceFlg.Checked = true;
                         //pnlTaxPrintKBN.Text 1:内税、2:外税
                         switch (mce.TaxPrintKBN)
-                        {   case "1":
+                        {
+                            case "1":
                                 ckM_RadioButton7.Checked = true;
                                 break;
                             case "2":
@@ -712,8 +714,12 @@ namespace MasterTouroku_Tokuisaki
                         txtCreditDeposit.Text = bbl.Z_SetStr(mce.CreditDeposit);
                         txtCreditETC.Text = bbl.Z_SetStr(mce.CreditETC);
                         lblCreditAmount.Text = bbl.Z_SetStr(mce.CreditAmount);
-                        txtCreditWarningAmount.Text = bbl.Z_SetStr(mce.CreditWarningAmount);
+                        //txtCreditWarningAmount.Text = bbl.Z_SetStr(mce.CreditWarningAmount);
                         txtCreditAdditionAmount.Text = bbl.Z_SetStr(mce.CreditAdditionAmount);
+                        txtCreditCheckKBN.Text = mce.CreditCheckKBN;
+                        txtCreditMessage.Text = mce.CreditMessage;
+                        txtFareLevel.Text = mce.FareLevel;
+                        txtFare.Text = mce.Fare;
                         txtAnalyzeCD1.Text = mce.AnalyzeCD1;
                         txtAnalyzeCD2.Text = mce.AnalyzeCD2;
                         txtAnalyzeCD3.Text = mce.AnalyzeCD3;
@@ -733,7 +739,7 @@ namespace MasterTouroku_Tokuisaki
                         lblKensu.Text = bbl.Z_SetStr(mce.UnpaidCount);
                         lblStoreName.Text = mce.LastSalesStoreCD;
                         lblLastSalesDate.Text = mce.LastSalesDate;
-                        lblPoint.Text =bbl.Z_SetStr( mce.TotalPurchase);
+                        lblPoint.Text = bbl.Z_SetStr(mce.TotalPurchase);
 
                         if (mce.DeleteFlg.Equals("1"))
                             checkDeleteFlg.Checked = true;
@@ -1007,10 +1013,11 @@ namespace MasterTouroku_Tokuisaki
                 case (int)EIndex.cmbPaymentUnit:
                 case (int)EIndex.cmbCreditLevel:
                 case (int)EIndex.StoreCD:
+                    //case (int)EIndex.StoreCD:
                     //入力必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
-                        ((CKM_Controls.CKM_ComboBox)detailControls[index]).MoveNext = false;
+                        //((CKM_Controls.CKM_ComboBox)detailControls[index]).MoveNext = false;
                         return false;
                     }
                     break;
@@ -1091,7 +1098,20 @@ namespace MasterTouroku_Tokuisaki
                                                     + bbl.Z_Set(detailControls[(int)EIndex.CreditDeposit].Text)
                                                     + bbl.Z_Set(detailControls[(int)EIndex.CreditETC].Text));
                     break;
-
+                case (int)EIndex.txtCreditCheckKBN:
+                    if (!RequireCheck(new Control[] { detailControls[index] }))
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        if (!(Convert.ToInt32(detailControls[index].Text) >= 0 && Convert.ToInt32(detailControls[index].Text) <= 2))
+                        {
+                            bbl.ShowMessage("E117");
+                            return false;
+                        }
+                    }
+                    break;
             }
 
             return true;
@@ -1099,12 +1119,12 @@ namespace MasterTouroku_Tokuisaki
 
         private void SetLabel(int index, string val)
         {
-            switch(index)
+            switch (index)
             {
                 case (int)EIndex.BillingCD:
                     ScBillingCD.LabelText = val;
                     break;
-                    case (int)EIndex.CollectCD:
+                case (int)EIndex.CollectCD:
                     ScCollectCD.LabelText = val;
                     break;
             }
@@ -1129,9 +1149,9 @@ namespace MasterTouroku_Tokuisaki
                 mce.ChangeDate = copyKeyControls[(int)EIndex.ChangeDate].Text;
                 return mce;
             }
-            mce.VariousFLG= ChkVariousFLG.Checked ? "1" : "0"; 
-            mce.BillingFLG= ChkBillingFLG.Checked ? "1" : "0"; 
-            mce.CollectFLG= ChkCollectFLG.Checked ? "1" : "0";
+            mce.VariousFLG = ChkVariousFLG.Checked ? "1" : "0";
+            mce.BillingFLG = ChkBillingFLG.Checked ? "1" : "0";
+            mce.CollectFLG = ChkCollectFLG.Checked ? "1" : "0";
             mce.StoreKBN = "2";//1:WEB、2:店舗
             //pnlCustomerKBN.1:店舗会員、2:店舗現金会員、3:団体法人
             if (radioButton1.Checked)
@@ -1164,7 +1184,7 @@ namespace MasterTouroku_Tokuisaki
                 mce.Sex = "2";
             else if (radioButton7.Checked)
                 mce.Sex = "0";
-            mce.CountryKBN = ChkCountryKBN.Checked ? "1": "0";
+            mce.CountryKBN = ChkCountryKBN.Checked ? "1" : "0";
             mce.CountryName = txtCountryName.Text;
             mce.ZipCD1 = txtZipCD1.Text;
             mce.ZipCD2 = txtZipCD2.Text;
@@ -1218,23 +1238,27 @@ namespace MasterTouroku_Tokuisaki
             mce.CreditLevel = cmbCreditLevel.SelectedValue == null ? "0" : cmbCreditLevel.SelectedValue.ToString();
             mce.CreditCard = txtCreditCard.Text;
             mce.CreditInsurance = txtCreditInsurance.Text;
-            mce.CreditDeposit= txtCreditDeposit.Text;
+            mce.CreditDeposit = txtCreditDeposit.Text;
             mce.CreditETC = txtCreditETC.Text;
             mce.CreditAmount = lblCreditAmount.Text;
-            mce.CreditWarningAmount = txtCreditWarningAmount.Text;
+            //mce.CreditWarningAmount = txtCreditWarningAmount.Text;
             mce.CreditAdditionAmount = txtCreditAdditionAmount.Text;
+            mce.CreditCheckKBN = txtCreditCheckKBN.Text;
+            mce.CreditMessage = txtCreditMessage.Text;
+            mce.FareLevel = txtFareLevel.Text.Replace(",", "");
+            mce.Fare = txtFare.Text.Replace(",", "");
             mce.AnalyzeCD1 = txtAnalyzeCD1.Text;
             mce.AnalyzeCD2 = txtAnalyzeCD2.Text;
             mce.AnalyzeCD3 = txtAnalyzeCD3.Text;
             mce.DisplayOrder = txtDisplayOrder.Text;
-            mce.PointFLG = ChkPointFLG.Checked ? "1" : "0"; 
-            mce.LastPoint = bbl.Z_SetStr( txtLastPoint.Text);
+            mce.PointFLG = ChkPointFLG.Checked ? "1" : "0";
+            mce.LastPoint = bbl.Z_SetStr(txtLastPoint.Text);
             mce.WaitingPoint = bbl.Z_SetStr(txtWaitingPoint.Text);
             mce.TotalPoint = bbl.Z_SetStr(txtTotalPoint.Text);
             mce.RemarksOutStore = txtRemarksOutStore.Text;
             mce.RemarksInStore = txtRemarksInStore.Text;
             mce.MainStoreCD = CboStoreCD.SelectedValue == null ? "" : CboStoreCD.SelectedValue.ToString();
-            mce.StaffCD = detailControls[(int)EIndex.StaffCD].Text; 
+            mce.StaffCD = detailControls[(int)EIndex.StaffCD].Text;
 
             //チェックボックス
             if (checkDeleteFlg.Checked)
@@ -1272,7 +1296,7 @@ namespace MasterTouroku_Tokuisaki
             //更新後画面クリア
             InitScr();
 
-            if(OperationMode== EOperationMode.DELETE)
+            if (OperationMode == EOperationMode.DELETE)
                 bbl.ShowMessage("I102");
             else
                 bbl.ShowMessage("I101");
@@ -1292,7 +1316,7 @@ namespace MasterTouroku_Tokuisaki
 
             //if (OldOperationMode != OperationMode)
             //{
-                Scr_Clr(0);
+            Scr_Clr(0);
             //}
 
             switch (mode)
@@ -1335,7 +1359,7 @@ namespace MasterTouroku_Tokuisaki
                 {
                     ctl.Text = "";
                 }
-                
+
             }
 
             foreach (Control ctl in detailControls)
@@ -1394,8 +1418,8 @@ namespace MasterTouroku_Tokuisaki
                                 ScCustomer.SearchEnable = false;
                                 F9Visible = false;
                             }
-                                
-                                
+
+
                             break;
                         }
 
@@ -1527,7 +1551,7 @@ namespace MasterTouroku_Tokuisaki
                                 {
                                     copyKeyControls[(int)EIndex.CustomerCD].Focus();
                                 }
-                                else if(OperationMode == EOperationMode.UPDATE)
+                                else if (OperationMode == EOperationMode.UPDATE)
                                 {
                                     detailControls[0].Focus();
                                 }
@@ -1613,7 +1637,7 @@ namespace MasterTouroku_Tokuisaki
                     {
                         if (detailControls.Length - 1 > index)
                         {
-                            if (index+1 == (int)EIndex.pnlCustomerKBN)
+                            if (index + 1 == (int)EIndex.pnlCustomerKBN)
                             {
                                 if (radioButton1.Checked)
                                     radioButton1.Focus();
@@ -1749,7 +1773,7 @@ namespace MasterTouroku_Tokuisaki
                     {
                         detailControls[(int)EIndex.BillingCD].Focus();
                     }
-                    else if(((RadioButton)sender).Parent.Equals(pnlCustomerKBN))
+                    else if (((RadioButton)sender).Parent.Equals(pnlCustomerKBN))
                     {
                         if (detailControls[(int)EIndex.LastName].CanFocus)
                             detailControls[(int)EIndex.LastName].Focus();
@@ -1757,7 +1781,7 @@ namespace MasterTouroku_Tokuisaki
                             //あたかもTabキーが押されたかのようにする
                             //Shiftが押されている時は前のコントロールのフォーカスを移動
                             this.ProcessTabKey(!e.Shift);
-                        
+
                     }
                     else if (((RadioButton)sender).Parent.Equals(pnlAliasKBN))
                     {

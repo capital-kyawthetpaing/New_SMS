@@ -49,9 +49,8 @@ namespace HacchuuNyuuryoku
             Tel,
             Fax,
 
-            RemarksInStore,
-            RemarksOutStore
-
+            RemarksOutStore,
+            RemarksInStore
         }
 
         /// <summary>
@@ -1350,6 +1349,13 @@ namespace HacchuuNyuuryoku
                     //画面転送表01に従って、画面情報を表示
                     //この場合、その発注番号のみを表示・処理し、登録ボタン押下でメッセージなくプログラム終了。
                     CheckKey((int)EIndex.OrderNO, true);
+
+                }
+
+                if (W_ApprovalStageFLG.Equals(9))
+                {
+                    //最終承認者の場合は承認済みにする
+                    SetlblDisp("承認");
                 }
 
                 detailControls[(int)EIndex.OrderDate].Focus();  //仕入先？新規の場合は発注日？
@@ -1560,7 +1566,7 @@ namespace HacchuuNyuuryoku
                     return false;
                 }
 
-                if (index == (int)EIndex.OrderNO)
+                if (index == (int)EIndex.OrderNO && OperationMode != EOperationMode.SHOW)
                 {
                     //上位承認者が承認行為を行った後に下位承認者が承認しようとした場合
                     //（以下のSelectができる場合）、Error「上位承認者によって既に承認済みです。」	
@@ -3779,6 +3785,8 @@ namespace HacchuuNyuuryoku
                         }
 
                         SetBtnSubF11Enabled(mSyoninsya);
+
+
                     }
                 }
             }

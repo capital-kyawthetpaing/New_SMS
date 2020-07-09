@@ -55,6 +55,7 @@ namespace KaitouNoukiTouroku
             internal string ArrivalPlanSu;
             internal string SKUCD;
             internal int InstructionSu;
+            internal int GyoCount;
         }
 
         //列番号定数

@@ -1,3 +1,11 @@
+BEGIN TRY 
+ Drop Procedure D_StorePayment_Select
+END try
+BEGIN CATCH END CATCH 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 /****** Object:  StoredProcedure [D_StorePayment_Select    */
 CREATE PROCEDURE D_StorePayment_Select(
     -- Add the parameters for the stored procedure here
