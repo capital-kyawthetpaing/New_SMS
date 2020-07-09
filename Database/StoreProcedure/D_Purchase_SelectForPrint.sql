@@ -92,12 +92,15 @@ BEGIN
           ,DM.OrderRows
           ,DM.DifferenceFlg
           ,DM.DeliveryNo
-          ,(SELECT top 1 M.MakerItem 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= DH.PurchaseDate
-             AND M.AdminNO = DM.AdminNO
-              AND M.DeleteFlg = 0
-             ORDER BY M.ChangeDate desc) AS MakerItem
+          ,
+		  
+		  DM.ItemName as MakerItem
+		 -- (SELECT top 1 M.MakerItem 
+           -- FROM M_SKU AS M 
+           -- WHERE M.ChangeDate <= DH.PurchaseDate
+            -- AND M.AdminNO = DM.AdminNO
+            --  AND M.DeleteFlg = 0
+            -- ORDER BY M.ChangeDate desc) AS MakerItem
           ,DA.VendorDeliveryNo
           ,ISNULL(DO.OrderPerson,'') + (CASE ISNULL(DO.AliasKBN,0) WHEN 1 THEN ' —l' ELSE '' END) AS OrderPerson
 
