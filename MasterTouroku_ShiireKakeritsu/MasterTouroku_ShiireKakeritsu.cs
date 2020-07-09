@@ -381,39 +381,23 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void scSportsCD1_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            //if (e.KeyCode == Keys.Enter)
-            //{
-            //    scSportsCD1.ChangeDate = bbl.GetDate();
-            //    if (!string.IsNullOrEmpty(scSportsCD1.TxtCode.Text))
-            //    {
-            //        if (scSportsCD1.SelectData())
-            //        {
-            //            scSportsCD1.Value1 = scSportsCD1.TxtCode.Text;
-            //            scSportsCD1.Value2 = scSportsCD1.LabelText;
-            //            SearchData();
-            //        }
-            //        else
-            //        {
-            //            scSportsCD1.SetFocus(1);
-            //        }
-            //    }
-
-            //}
             if (e.KeyCode == Keys.Enter)
             {
+                scSportsCD1.ChangeDate = bbl.GetDate();
                 if (!string.IsNullOrEmpty(scSportsCD1.TxtCode.Text))
                 {
                     if (scSportsCD1.SelectData())
                     {
                         scSportsCD1.Value1 = scSportsCD1.TxtCode.Text;
                         scSportsCD1.Value2 = scSportsCD1.LabelText;
+                        SearchData();
                     }
                     else
                     {
-                        bbl.ShowMessage("E101");
                         scSportsCD1.SetFocus(1);
                     }
                 }
+
             }
         }
 
