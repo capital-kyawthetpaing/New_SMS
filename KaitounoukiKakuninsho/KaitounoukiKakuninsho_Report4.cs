@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Mitsumorisyo {
+namespace KaitounoukiKakuninsho {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace Mitsumorisyo {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Mitsumorisyo_Report : ReportClass {
+    public class KaitounoukiKakuninsho_Report : ReportClass {
         
-        public Mitsumorisyo_Report() {
+        public KaitounoukiKakuninsho_Report() {
         }
         
         public override string ResourceName {
             get {
-                return "Mitsumorisyo_Report.rpt";
+                return "KaitounoukiKakuninsho_Report.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Mitsumorisyo {
         
         public override string FullResourceName {
             get {
-                return "Mitsumorisyo.Mitsumorisyo_Report.rpt";
+                return "KaitounoukiKakuninsho.KaitounoukiKakuninsho_Report.rpt";
             }
             set {
                 // Do nothing
@@ -58,7 +58,7 @@ namespace Mitsumorisyo {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section ReportHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section2 {
             get {
                 return this.ReportDefinition.Sections[1];
             }
@@ -66,7 +66,7 @@ namespace Mitsumorisyo {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section2 {
+        public CrystalDecisions.CrystalReports.Engine.Section PageHeaderSection2 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace Mitsumorisyo {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section PageHeaderSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace Mitsumorisyo {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,7 +90,7 @@ namespace Mitsumorisyo {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
             get {
                 return this.ReportDefinition.Sections[5];
             }
@@ -98,7 +98,7 @@ namespace Mitsumorisyo {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[6];
             }
@@ -106,25 +106,17 @@ namespace Mitsumorisyo {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[7];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[8];
+                return this.ReportDefinition.Sections[7];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedMitsumorisyo_Report : Component, ICachedReport {
+    public class CachedKaitounoukiKakuninsho_Report : Component, ICachedReport {
         
-        public CachedMitsumorisyo_Report() {
+        public CachedKaitounoukiKakuninsho_Report() {
         }
         
         [Browsable(false)]
@@ -161,7 +153,7 @@ namespace Mitsumorisyo {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Mitsumorisyo_Report rpt = new Mitsumorisyo_Report();
+            KaitounoukiKakuninsho_Report rpt = new KaitounoukiKakuninsho_Report();
             rpt.Site = this.Site;
             return rpt;
         }

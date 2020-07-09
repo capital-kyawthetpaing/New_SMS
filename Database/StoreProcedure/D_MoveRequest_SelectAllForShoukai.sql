@@ -1,7 +1,12 @@
-
-/****** Object:  StoredProcedure [dbo].[D_MoveRequest_SelectAllForShoukai]    Script Date: 6/11/2019 2:21:19 PM ******/
-DROP PROCEDURE [D_MoveRequest_SelectAllForShoukai]
+ BEGIN TRY 
+ Drop Procedure dbo.D_MoveRequest_SelectAllForShoukai
+END try
+BEGIN CATCH END CATCH 
+SET ANSI_NULLS ON
 GO
+SET QUOTED_IDENTIFIER ON
+GO
+
 
 /****** Object:  StoredProcedure [D_MoveRequest_SelectAllForShoukai]    */
 CREATE PROCEDURE D_MoveRequest_SelectAllForShoukai(
