@@ -68,17 +68,13 @@
             // 
             this.PanelSearch.TabIndex = 7;
             // 
-            // btnChangeIkkatuHacchuuMode
-            // 
-            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.DefaultlabelSize = true;
-            this.label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(1023, 115);
@@ -97,7 +93,7 @@
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.DefaultlabelSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(28, 31);
@@ -114,7 +110,7 @@
             this.label27.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label27.BackColor = System.Drawing.Color.Transparent;
             this.label27.DefaultlabelSize = true;
-            this.label27.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label27.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label27.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label27.ForeColor = System.Drawing.Color.Black;
             this.label27.Location = new System.Drawing.Point(257, 13);
@@ -135,7 +131,7 @@
             this.ScMitsumoriNO.CodeWidth1 = 100;
             this.ScMitsumoriNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScMitsumoriNO.DataCheck = false;
-            this.ScMitsumoriNO.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScMitsumoriNO.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScMitsumoriNO.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScMitsumoriNO.IsCopy = false;
             this.ScMitsumoriNO.LabelText = "";
@@ -178,7 +174,7 @@
             this.ckM_Label1.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label1.DefaultlabelSize = true;
-            this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label1.Location = new System.Drawing.Point(39, 349);
@@ -199,7 +195,7 @@
             this.ckM_SearchControl2.CodeWidth1 = 100;
             this.ckM_SearchControl2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl2.DataCheck = false;
-            this.ckM_SearchControl2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_SearchControl2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_SearchControl2.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ckM_SearchControl2.IsCopy = false;
             this.ckM_SearchControl2.LabelText = "";
@@ -228,7 +224,7 @@
             this.ckM_SearchControl3.CodeWidth1 = 100;
             this.ckM_SearchControl3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl3.DataCheck = false;
-            this.ckM_SearchControl3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_SearchControl3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_SearchControl3.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ckM_SearchControl3.IsCopy = false;
             this.ckM_SearchControl3.LabelText = "";
@@ -257,12 +253,11 @@
             this.ckM_CustomerName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_CustomerName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_CustomerName.DecimalPlace = 0;
-            this.ckM_CustomerName.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_CustomerName.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_CustomerName.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_CustomerName.IntegerPart = 0;
             this.ckM_CustomerName.IsCorrectDate = true;
             this.ckM_CustomerName.isEnterKeyDown = false;
-            this.ckM_CustomerName.IsFirstTime = true;
             this.ckM_CustomerName.isMaxLengthErr = false;
             this.ckM_CustomerName.IsNumber = true;
             this.ckM_CustomerName.IsShop = false;
@@ -279,7 +274,7 @@
             // ckM_RadioButton3
             // 
             this.ckM_RadioButton3.AutoSize = true;
-            this.ckM_RadioButton3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckM_RadioButton3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckM_RadioButton3.Location = new System.Drawing.Point(233, 291);
             this.ckM_RadioButton3.Name = "ckM_RadioButton3";
             this.ckM_RadioButton3.Size = new System.Drawing.Size(62, 16);
@@ -297,12 +292,11 @@
             this.ckM_TextBox5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_TextBox5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox5.DecimalPlace = 0;
-            this.ckM_TextBox5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox5.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_TextBox5.IntegerPart = 0;
             this.ckM_TextBox5.IsCorrectDate = true;
             this.ckM_TextBox5.isEnterKeyDown = false;
-            this.ckM_TextBox5.IsFirstTime = true;
             this.ckM_TextBox5.isMaxLengthErr = false;
             this.ckM_TextBox5.IsNumber = true;
             this.ckM_TextBox5.IsShop = false;
@@ -325,7 +319,7 @@
             this.ScStaff.CodeWidth1 = 70;
             this.ScStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStaff.DataCheck = true;
-            this.ScStaff.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScStaff.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScStaff.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScStaff.IsCopy = false;
             this.ScStaff.LabelText = "";
@@ -354,7 +348,7 @@
             this.ScCustomer.CodeWidth1 = 100;
             this.ScCustomer.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCustomer.DataCheck = true;
-            this.ScCustomer.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScCustomer.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScCustomer.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScCustomer.IsCopy = false;
             this.ScCustomer.LabelText = "";
@@ -379,7 +373,7 @@
             this.label14.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.DefaultlabelSize = true;
-            this.label14.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label14.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label14.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(40, 252);
@@ -396,7 +390,7 @@
             this.label9.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.DefaultlabelSize = true;
-            this.label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(14, 179);
@@ -411,7 +405,7 @@
             // 
             this.lblSkuCD.AutoSize = true;
             this.lblSkuCD.BackColor = System.Drawing.Color.Transparent;
-            this.lblSkuCD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblSkuCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblSkuCD.Location = new System.Drawing.Point(66, 218);
             this.lblSkuCD.Name = "lblSkuCD";
             this.lblSkuCD.Size = new System.Drawing.Size(31, 12);
@@ -425,7 +419,7 @@
             this.ckM_Label8.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label8.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label8.DefaultlabelSize = true;
-            this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label8.Location = new System.Drawing.Point(208, 114);
@@ -446,12 +440,11 @@
             this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox2.DecimalPlace = 0;
-            this.ckM_TextBox2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox2.IntegerPart = 0;
             this.ckM_TextBox2.IsCorrectDate = true;
             this.ckM_TextBox2.isEnterKeyDown = false;
-            this.ckM_TextBox2.IsFirstTime = true;
             this.ckM_TextBox2.isMaxLengthErr = false;
             this.ckM_TextBox2.IsNumber = true;
             this.ckM_TextBox2.IsShop = false;
@@ -471,7 +464,7 @@
             this.ckM_Label2.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label2.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label2.DefaultlabelSize = true;
-            this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label2.Location = new System.Drawing.Point(53, 114);
@@ -485,7 +478,7 @@
             // ckM_RadioButton2
             // 
             this.ckM_RadioButton2.AutoSize = true;
-            this.ckM_RadioButton2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckM_RadioButton2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckM_RadioButton2.Location = new System.Drawing.Point(161, 291);
             this.ckM_RadioButton2.Name = "ckM_RadioButton2";
             this.ckM_RadioButton2.Size = new System.Drawing.Size(62, 16);
@@ -497,7 +490,7 @@
             // 
             this.ckM_RadioButton1.AutoSize = true;
             this.ckM_RadioButton1.Checked = true;
-            this.ckM_RadioButton1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckM_RadioButton1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckM_RadioButton1.Location = new System.Drawing.Point(102, 291);
             this.ckM_RadioButton1.Name = "ckM_RadioButton1";
             this.ckM_RadioButton1.Size = new System.Drawing.Size(49, 16);
@@ -512,7 +505,7 @@
             this.ckM_Label3.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label3.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label3.DefaultlabelSize = true;
-            this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label3.Location = new System.Drawing.Point(27, 144);
@@ -529,7 +522,7 @@
             this.ckM_Label4.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label4.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label4.DefaultlabelSize = true;
-            this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label4.Location = new System.Drawing.Point(53, 293);
@@ -546,7 +539,7 @@
             this.ckM_Label5.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label5.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label5.DefaultlabelSize = true;
-            this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label5.Location = new System.Drawing.Point(208, 143);
@@ -567,12 +560,11 @@
             this.ckM_TextBox4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox4.DecimalPlace = 0;
-            this.ckM_TextBox4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox4.IntegerPart = 0;
             this.ckM_TextBox4.IsCorrectDate = true;
             this.ckM_TextBox4.isEnterKeyDown = false;
-            this.ckM_TextBox4.IsFirstTime = true;
             this.ckM_TextBox4.isMaxLengthErr = false;
             this.ckM_TextBox4.IsNumber = true;
             this.ckM_TextBox4.IsShop = false;
@@ -596,12 +588,11 @@
             this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox1.DecimalPlace = 0;
-            this.ckM_TextBox1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox1.IntegerPart = 0;
             this.ckM_TextBox1.IsCorrectDate = true;
             this.ckM_TextBox1.isEnterKeyDown = false;
-            this.ckM_TextBox1.IsFirstTime = true;
             this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
@@ -625,12 +616,11 @@
             this.ckM_TextBox3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox3.DecimalPlace = 0;
-            this.ckM_TextBox3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox3.IntegerPart = 0;
             this.ckM_TextBox3.IsCorrectDate = true;
             this.ckM_TextBox3.isEnterKeyDown = false;
-            this.ckM_TextBox3.IsFirstTime = true;
             this.ckM_TextBox3.isMaxLengthErr = false;
             this.ckM_TextBox3.IsNumber = true;
             this.ckM_TextBox3.IsShop = false;
@@ -650,7 +640,7 @@
             this.ckM_Label6.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label6.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label6.DefaultlabelSize = true;
-            this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label6.Location = new System.Drawing.Point(14, 319);
@@ -667,7 +657,7 @@
             this.ckM_Label7.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label7.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label7.DefaultlabelSize = true;
-            this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label7.Location = new System.Drawing.Point(100, 371);

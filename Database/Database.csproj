@@ -154,7 +154,6 @@
     <Content Include="StoreProcedure\D_MonthlyClaims_SelectALL.sql" />
     <Content Include="StoreProcedure\D_MonthlyDebt_CSV_Report.sql" />
     <Content Include="StoreProcedure\D_MoveRequest_SelectAll.sql" />
-    <Content Include="StoreProcedure\D_MoveRequest_SelectAllForShoukai.sql" />
     <Content Include="StoreProcedure\D_MoveRequest_SelectData.sql" />
     <Content Include="StoreProcedure\D_Move_SelectData.sql" />
     <Content Include="StoreProcedure\D_NyuukinIchihanyou_Log.sql" />
