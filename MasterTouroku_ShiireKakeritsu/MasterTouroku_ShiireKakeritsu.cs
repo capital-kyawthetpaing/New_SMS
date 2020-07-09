@@ -56,7 +56,8 @@ namespace MasterTouroku_ShiireKakeritsu
             BindCombo();
             SetRequiredField();
             scSupplierCD.SetFocus(1);
-            txtDate1.Text = DateTime.Now.ToString("yyyy/MM/dd");
+            //txtDate1.Text = DateTime.Now.ToString("yyyy/MM/dd");
+            txtDate1.Text = bbl.GetDate();
             RadioCheck();
             dgv_ShiireKakeritsu.AllowUserToAddRows = false;
         }
@@ -79,9 +80,11 @@ namespace MasterTouroku_ShiireKakeritsu
         }
         public void BindCombo()
         {
-            cbo_Store.Bind(string.Empty, "2");
-            cbo_Store.SelectedValue = StoreCD;
+            //cbo_Store.Bind(string.Empty, "2");
+            //cbo_Store.SelectedValue = StoreCD;
             string ymd = bbl.GetDate();
+            cbo_Store.Bind(ymd);
+            RadioCheck();
             cbo_Year.Bind(ymd);
             cbo_Year1.Bind(ymd);
             cbo_Season.Bind(ymd);
@@ -341,19 +344,35 @@ namespace MasterTouroku_ShiireKakeritsu
         #region KeyDown Event For 【抽出条件】
         private void scBrandCD1_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
+            //if (e.KeyCode == Keys.Enter)
+            //{
+            //    scBrandCD1.ChangeDate = bbl.GetDate();
+            //    if (!string.IsNullOrEmpty(scBrandCD1.TxtCode.Text))
+            //    {
+            //        if (scBrandCD1.SelectData())
+            //        {
+            //            scBrandCD1.Value1 = scBrandCD1.TxtCode.Text;
+            //            scBrandCD1.Value2 = scBrandCD1.LabelText;
+            //            SearchData();
+            //        }
+            //        else
+            //        {
+            //            scBrandCD1.SetFocus(1);
+            //        }
+            //    }
+            //}
             if (e.KeyCode == Keys.Enter)
             {
-                scBrandCD1.ChangeDate = bbl.GetDate();
                 if (!string.IsNullOrEmpty(scBrandCD1.TxtCode.Text))
                 {
                     if (scBrandCD1.SelectData())
                     {
                         scBrandCD1.Value1 = scBrandCD1.TxtCode.Text;
                         scBrandCD1.Value2 = scBrandCD1.LabelText;
-                        SearchData();
                     }
                     else
                     {
+                        bbl.ShowMessage("E101");
                         scBrandCD1.SetFocus(1);
                     }
                 }
@@ -405,12 +424,12 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void scSportsCD1_Enter(object sender, EventArgs e)
         {
-            scSportsCD1.Value1 = "202";
+            scSportsCD1.Value3 = "202";
         }
 
         private void scSegmentCD1_Enter(object sender, EventArgs e)
         {
-            scSegmentCD1.Value1 = "203";
+            scSegmentCD1.Value3 = "203";
         }
         private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -550,19 +569,35 @@ namespace MasterTouroku_ShiireKakeritsu
         #region KeyDown Event For【追加・一括変更・選択】	
         private void scBrandCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {              
-                if (!string.IsNullOrEmpty(scBrandCD1.TxtCode.Text))
-                {
-                    mbe.BrandCD = scBrandCD.TxtCode.Text;
-                    mbe.ChangeDate = txtDate1.Text;
-                    DataTable dtbrand = mskbl.M_BrandSelect(mbe);
-                    if (dtbrand.Rows.Count > 0)
-                    {
-                        scBrandCD.LabelText = dtbrand.Rows[0]["BrandName"].ToString();
-                    }                 
-                }
+            //if (e.KeyCode == Keys.Enter)
+            //{              
+            //    if (!string.IsNullOrEmpty(scBrandCD1.TxtCode.Text))
+            //    {
+            //        mbe.BrandCD = scBrandCD.TxtCode.Text;
+            //        mbe.ChangeDate = txtDate1.Text;
+            //        DataTable dtbrand = mskbl.M_BrandSelect(mbe);
+            //        if (dtbrand.Rows.Count > 0)
+            //        {
+            //            scBrandCD.LabelText = dtbrand.Rows[0]["BrandName"].ToString();
+            //        }                 
+            //    }
 
+            //}
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrEmpty(scBrandCD.TxtCode.Text))
+                {
+                    if (scBrandCD.SelectData())
+                    {
+                        scBrandCD.Value1 = scBrandCD.TxtCode.Text;
+                        scBrandCD.Value2 = scBrandCD.LabelText;
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E101");
+                        scBrandCD.SetFocus(1);
+                    }
+                }
             }
         }
 
@@ -608,12 +643,12 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void scSportsCD_Enter(object sender, EventArgs e)
         {
-            scSportsCD.Value1 = "202";
+            scSportsCD.Value3 = "202";
         }
 
         private void scSegmentCD_Enter(object sender, EventArgs e)
         {
-            scSegmentCD.Value1 = "203";
+            scSegmentCD.Value3 = "203";
         }
 
         #endregion
@@ -884,19 +919,19 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
-        protected DataTable ChangeDataColumnName(DataTable dtMain)
-        {
-            dtMain.Columns["VendorCD"].ColumnName = "仕入先CD";
-            dtMain.Columns["StoreCD"].ColumnName = "店舗CD";
-            dtMain.Columns["BrandCD"].ColumnName = "ブランドCD";
-            dtMain.Columns["SportsCD"].ColumnName = "競　技CD";
-            dtMain.Columns["SegmentCD"].ColumnName = "商品分類CD";
-            dtMain.Columns["LastYearTerm"].ColumnName = "年度";
-            dtMain.Columns["LastSeason"].ColumnName = "シーズン";
-            dtMain.Columns["ChangeDate"].ColumnName = "改定日";
-            dtMain.Columns["Rate"].ColumnName = "掛率";
-            return dtMain;
-        }
+        //protected DataTable ChangeDataColumnName(DataTable dtMain)
+        //{
+        //    dtMain.Columns["VendorCD"].ColumnName = "仕入先CD";
+        //    dtMain.Columns["StoreCD"].ColumnName = "店舗CD";
+        //    dtMain.Columns["BrandCD"].ColumnName = "ブランドCD";
+        //    dtMain.Columns["SportsCD"].ColumnName = "競　技CD";
+        //    dtMain.Columns["SegmentCD"].ColumnName = "商品分類CD";
+        //    dtMain.Columns["LastYearTerm"].ColumnName = "年度";
+        //    dtMain.Columns["LastSeason"].ColumnName = "シーズン";
+        //    dtMain.Columns["ChangeDate"].ColumnName = "改定日";
+        //    dtMain.Columns["Rate"].ColumnName = "掛率";
+        //    return dtMain;
+        //}
         protected DataTable ExcelToDatatable(string filePath)
         {
             FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read);
@@ -1071,39 +1106,39 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void ckM_Button1_Click(object sender, EventArgs e)
         {
-            moe = new M_OrderRate_Entity();
-            moe = GetSearchInfo();
-            DataTable dt = mskbl.M_ShiireKakeritsu_Select(moe);
-            if (dt.Rows.Count > 0)
-            {
-                DataTable dtExport = dt;
-                dtExport = ChangeDataColumnName(dtMain);
-                string folderPath = "C:\\SSS\\";
-                if (!Directory.Exists(folderPath))
-                {
-                    Directory.CreateDirectory(folderPath);
-                }
-                SaveFileDialog savedialog = new SaveFileDialog();
-                savedialog.Filter = "Excel Files|*.xlsx;";
-                savedialog.Title = "Save";
-                savedialog.FileName = "仕入先別発注掛率マスタ";
-                savedialog.InitialDirectory = folderPath;
+            //moe = new M_OrderRate_Entity();
+            //moe = GetSearchInfo();
+            //DataTable dt = mskbl.M_ShiireKakeritsu_Select(moe);
+            //if (dt.Rows.Count > 0)
+            //{
+            //    DataTable dtExport = dt;
+            //    dtExport = ChangeDataColumnName(dtMain);
+            //    string folderPath = "C:\\SSS\\";
+            //    if (!Directory.Exists(folderPath))
+            //    {
+            //        Directory.CreateDirectory(folderPath);
+            //    }
+            //    SaveFileDialog savedialog = new SaveFileDialog();
+            //    savedialog.Filter = "Excel Files|*.xlsx;";
+            //    savedialog.Title = "Save";
+            //    savedialog.FileName = "仕入先別発注掛率マスタ";
+            //    savedialog.InitialDirectory = folderPath;
 
-                savedialog.RestoreDirectory = true;
-                if (savedialog.ShowDialog() == DialogResult.OK)
-                {
-                    if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
-                    {
-                        using (XLWorkbook wb = new XLWorkbook())
-                        {
-                            wb.Worksheets.Add(dtMain, "Result");
-                            wb.SaveAs(savedialog.FileName);
-                        }
-                        //Process.Start(Path.GetDirectoryName(savedialog.FileName));
-                    }
-                }
-                F10();
-            }
+            //    savedialog.RestoreDirectory = true;
+            //    if (savedialog.ShowDialog() == DialogResult.OK)
+            //    {
+            //        if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
+            //        {
+            //            using (XLWorkbook wb = new XLWorkbook())
+            //            {
+            //                wb.Worksheets.Add(dtMain, "Result");
+            //                wb.SaveAs(savedialog.FileName);
+            //            }
+            //            //Process.Start(Path.GetDirectoryName(savedialog.FileName));
+            //        }
+            //    }
+               F10();
+            //}
         }
 
         private void cbo_Store_KeyDown(object sender, KeyEventArgs e)

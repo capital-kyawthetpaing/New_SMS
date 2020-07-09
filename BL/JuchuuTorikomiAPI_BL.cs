@@ -33,8 +33,10 @@ namespace BL
         }
         public DataTable D_APIControl_Select()
         {
-            return SimpleSelect1("28");
-            
+            //return SimpleSelect1("28");
+            return pcapdl.D_APIControl_Select();
+
+
         }
         public DataTable JuchuuTorikomiAPI_Grid_Select()
         {

@@ -99,7 +99,7 @@
             this.ckM_Label16 = new CKM_Controls.CKM_Label();
             this.ckM_Label17 = new CKM_Controls.CKM_Label();
             this.ckM_Label18 = new CKM_Controls.CKM_Label();
-            this.btn_displaymain = new CKM_Controls.CKM_Button();
+            this.btn_subdisplay = new CKM_Controls.CKM_Button();
             this.BT_Capture = new CKM_Controls.CKM_Button();
             this.makershohin = new Search.CKM_SearchControl();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -400,7 +400,7 @@
             this.panel3.Controls.Add(this.ckM_Label16);
             this.panel3.Controls.Add(this.ckM_Label17);
             this.panel3.Controls.Add(this.ckM_Label18);
-            this.panel3.Controls.Add(this.btn_displaymain);
+            this.panel3.Controls.Add(this.btn_subdisplay);
             this.panel3.Controls.Add(this.BT_Capture);
             this.panel3.Controls.Add(this.makershohin);
             this.panel3.Controls.Add(this.ckM_Label2);
@@ -1210,6 +1210,7 @@
             this.sportC.Value2 = null;
             this.sportC.Value3 = null;
             this.sportC.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.sportC_CodeKeyDownEvent);
+
             this.sportC.Enter += new System.EventHandler(this.sportC_Enter);
             // 
             // ckM_Label15
@@ -1310,24 +1311,24 @@
             this.ckM_Label18.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btn_displaymain
+            // btn_subdisplay
             // 
-            this.btn_displaymain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btn_displaymain.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.btn_displaymain.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_displaymain.DefaultBtnSize = false;
-            this.btn_displaymain.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_displaymain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_displaymain.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.btn_displaymain.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btn_displaymain.Location = new System.Drawing.Point(1689, 87);
-            this.btn_displaymain.Margin = new System.Windows.Forms.Padding(1);
-            this.btn_displaymain.Name = "btn_displaymain";
-            this.btn_displaymain.Size = new System.Drawing.Size(80, 23);
-            this.btn_displaymain.TabIndex = 32;
-            this.btn_displaymain.Text = "表示";
-            this.btn_displaymain.UseVisualStyleBackColor = false;
-            this.btn_displaymain.Click += new System.EventHandler(this.btn_displaymain_Click);
+            this.btn_subdisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btn_subdisplay.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.btn_subdisplay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_subdisplay.DefaultBtnSize = false;
+            this.btn_subdisplay.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_subdisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_subdisplay.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btn_subdisplay.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.btn_subdisplay.Location = new System.Drawing.Point(1689, 87);
+            this.btn_subdisplay.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_subdisplay.Name = "btn_subdisplay";
+            this.btn_subdisplay.Size = new System.Drawing.Size(80, 23);
+            this.btn_subdisplay.TabIndex = 32;
+            this.btn_subdisplay.Text = "表示";
+            this.btn_subdisplay.UseVisualStyleBackColor = false;
+            this.btn_subdisplay.Click += new System.EventHandler(this.btn_subdisplay_Click);
             // 
             // BT_Capture
             // 
@@ -2049,7 +2050,7 @@
         private CKM_Controls.CKM_Label ckM_Label17;
         private CKM_Controls.CKM_Label ckM_Label18;
         private CKM_Controls.CKM_Button btn_add;
-        private CKM_Controls.CKM_Button btn_displaymain;
+        private CKM_Controls.CKM_Button btn_subdisplay;
         private CKM_Controls.CKM_Button btn_choice;
         private CKM_Controls.CKM_Button btn_selectall;
         private CKM_Controls.CKM_TextBox TB_dateE;

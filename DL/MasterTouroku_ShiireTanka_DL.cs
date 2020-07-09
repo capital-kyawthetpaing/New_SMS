@@ -91,6 +91,17 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
+
+        public DataTable M_ITEM_SelectBy_ItemCD(M_ITEM_Entity mie)
+        {
+            string sp = "M_ITEM_SelectBy_ItemCD";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@itemcd", new ValuePair { value1 =SqlDbType.VarChar,value2 = mie.ITemCD } },
+              
+            };
+            return SelectData(dic, sp);
+        }
         public DataTable M_ITem_ItemNandPriceoutTax_Select(M_ITEM_Entity mi)
         {
             string sp = "M_ITem_ItemNandPriceoutTax_Select";
