@@ -1,3 +1,14 @@
+
+
+BEGIN TRY 
+ Drop PROCEDURE dbo.[M_StoreClose_Select]
+END try
+BEGIN CATCH END CATCH 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
 /****** Object:  StoredProcedure [M_StoreClose_Select]    */
 CREATE PROCEDURE M_StoreClose_Select(
     -- Add the parameters for the stored procedure here
