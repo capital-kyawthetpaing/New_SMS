@@ -1,3 +1,8 @@
+
+/****** Object:  StoredProcedure [dbo].[D_MoveRequest_SelectAllForShoukai]    Script Date: 6/11/2019 2:21:19 PM ******/
+DROP PROCEDURE [D_MoveRequest_SelectAllForShoukai]
+GO
+
 /****** Object:  StoredProcedure [D_MoveRequest_SelectAllForShoukai]    */
 CREATE PROCEDURE D_MoveRequest_SelectAllForShoukai(
     -- Add the parameters for the stored procedure here
