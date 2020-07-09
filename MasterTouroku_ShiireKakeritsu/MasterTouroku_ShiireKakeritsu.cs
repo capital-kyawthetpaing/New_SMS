@@ -56,7 +56,8 @@ namespace MasterTouroku_ShiireKakeritsu
             BindCombo();
             SetRequiredField();
             scSupplierCD.SetFocus(1);
-            txtDate1.Text = DateTime.Now.ToString("yyyy/MM/dd");
+            //txtDate1.Text = DateTime.Now.ToString("yyyy/MM/dd");
+            txtDate1.Text = bbl.GetDate();
             RadioCheck();
             dgv_ShiireKakeritsu.AllowUserToAddRows = false;
         }
@@ -79,9 +80,11 @@ namespace MasterTouroku_ShiireKakeritsu
         }
         public void BindCombo()
         {
-            cbo_Store.Bind(string.Empty, "2");
-            cbo_Store.SelectedValue = StoreCD;
+            //cbo_Store.Bind(string.Empty, "2");
+            //cbo_Store.SelectedValue = StoreCD;
             string ymd = bbl.GetDate();
+            cbo_Store.Bind(ymd);
+            RadioCheck();
             cbo_Year.Bind(ymd);
             cbo_Year1.Bind(ymd);
             cbo_Season.Bind(ymd);
@@ -341,19 +344,35 @@ namespace MasterTouroku_ShiireKakeritsu
         #region KeyDown Event For 【抽出条件】
         private void scBrandCD1_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
+            //if (e.KeyCode == Keys.Enter)
+            //{
+            //    scBrandCD1.ChangeDate = bbl.GetDate();
+            //    if (!string.IsNullOrEmpty(scBrandCD1.TxtCode.Text))
+            //    {
+            //        if (scBrandCD1.SelectData())
+            //        {
+            //            scBrandCD1.Value1 = scBrandCD1.TxtCode.Text;
+            //            scBrandCD1.Value2 = scBrandCD1.LabelText;
+            //            SearchData();
+            //        }
+            //        else
+            //        {
+            //            scBrandCD1.SetFocus(1);
+            //        }
+            //    }
+            //}
             if (e.KeyCode == Keys.Enter)
             {
-                scBrandCD1.ChangeDate = bbl.GetDate();
                 if (!string.IsNullOrEmpty(scBrandCD1.TxtCode.Text))
                 {
                     if (scBrandCD1.SelectData())
                     {
                         scBrandCD1.Value1 = scBrandCD1.TxtCode.Text;
                         scBrandCD1.Value2 = scBrandCD1.LabelText;
-                        SearchData();
                     }
                     else
                     {
+                        bbl.ShowMessage("E101");
                         scBrandCD1.SetFocus(1);
                     }
                 }
@@ -550,19 +569,35 @@ namespace MasterTouroku_ShiireKakeritsu
         #region KeyDown Event For【追加・一括変更・選択】	
         private void scBrandCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {              
-                if (!string.IsNullOrEmpty(scBrandCD1.TxtCode.Text))
-                {
-                    mbe.BrandCD = scBrandCD.TxtCode.Text;
-                    mbe.ChangeDate = txtDate1.Text;
-                    DataTable dtbrand = mskbl.M_BrandSelect(mbe);
-                    if (dtbrand.Rows.Count > 0)
-                    {
-                        scBrandCD.LabelText = dtbrand.Rows[0]["BrandName"].ToString();
-                    }                 
-                }
+            //if (e.KeyCode == Keys.Enter)
+            //{              
+            //    if (!string.IsNullOrEmpty(scBrandCD1.TxtCode.Text))
+            //    {
+            //        mbe.BrandCD = scBrandCD.TxtCode.Text;
+            //        mbe.ChangeDate = txtDate1.Text;
+            //        DataTable dtbrand = mskbl.M_BrandSelect(mbe);
+            //        if (dtbrand.Rows.Count > 0)
+            //        {
+            //            scBrandCD.LabelText = dtbrand.Rows[0]["BrandName"].ToString();
+            //        }                 
+            //    }
 
+            //}
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrEmpty(scBrandCD.TxtCode.Text))
+                {
+                    if (scBrandCD.SelectData())
+                    {
+                        scBrandCD.Value1 = scBrandCD.TxtCode.Text;
+                        scBrandCD.Value2 = scBrandCD.LabelText;
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E101");
+                        scBrandCD.SetFocus(1);
+                    }
+                }
             }
         }
 
