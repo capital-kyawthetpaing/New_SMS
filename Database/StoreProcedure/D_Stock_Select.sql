@@ -1,3 +1,12 @@
+ BEGIN TRY 
+ Drop Procedure dbo.[D_Stock_Select]
+END try
+BEGIN CATCH END CATCH 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
 /****** Object:  StoredProcedure [D_Stock_Select]    */
 CREATE PROCEDURE D_Stock_Select(
     -- Add the parameters for the stored procedure here
