@@ -1896,7 +1896,7 @@ namespace NyuukaNyuuryoku
                     }
                     if (bbl.Z_Set(row["KBN"]) == 1)
                     {
-                        mGrid.g_DArray[i].Check = false;
+                        mGrid.g_DArray[i].Check = true;
                         mGrid.g_DArray[i].JYUNO = row["JuchuuNO"].ToString();
                         mGrid.g_DArray[i].JYGNO = row["JuchuuRows"].ToString();
                         mGrid.g_DArray[i].CustomerCD = row["CustomerCD"].ToString();
@@ -1934,7 +1934,7 @@ namespace NyuukaNyuuryoku
                             mGrid2.S_DispFromArray(0, ref Vsb_Mei_1);
                             return false;
                         }
-                        mGrid2.g_DArray[i2].Check = false;
+                        mGrid2.g_DArray[i2].Check = true;
                         mGrid2.g_DArray[i2].Number = row["JuchuuNO"].ToString();     //OrderNo
                         mGrid2.g_DArray[i2].RowNo = row["JuchuuRows"].ToString();    //OrderRows
                         mGrid2.g_DArray[i2].CustomerCD = row["CustomerCD"].ToString();
