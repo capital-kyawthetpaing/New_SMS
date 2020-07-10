@@ -1711,6 +1711,10 @@ namespace ZaikoIdouNyuuryoku
                         {
                             //Ｅ１０１
                             bbl.ShowMessage("E101");
+                            lblSKUName.Text = "";
+                            lblSKUCD.Text = "";
+                            lblColorName.Text = "";
+                            lblSizeName.Text = "";
                             return false;
                         }
                         else if (dt.Rows.Count == 1)
@@ -1837,6 +1841,10 @@ namespace ZaikoIdouNyuuryoku
                         {
                             //Ｅ１０１
                             bbl.ShowMessage("E101");
+                            lblSKUNameF.Text = "";
+                            lblSKUCDF.Text = "";
+                            lblColorNameF.Text = "";
+                            lblSizeNameF.Text = "";
                             return false;
                         }
                         else if (dt.Rows.Count == 1)
