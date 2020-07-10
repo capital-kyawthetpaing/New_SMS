@@ -2419,7 +2419,10 @@ namespace NyuukaNyuuryoku
                         bbl.ShowMessage("E143", "引当数", "大きい");
                         return false;
                     }
-
+                    if (bbl.Z_Set(mGrid.g_DArray[row].SURYO) > 0)
+                    {
+                        mGrid.g_DArray[row].Check = true;
+                    }
                     break;
             }
 
@@ -2463,6 +2466,10 @@ namespace NyuukaNyuuryoku
                     //    bbl.ShowMessage("E143", "引当数", "大きい");
                     //    return false;
                     //}
+                    if (bbl.Z_Set(mGrid2.g_DArray[row].SURYO) > 0)
+                    {
+                        mGrid2.g_DArray[row].Check = true;
+                    }
                     break;
             }
 
