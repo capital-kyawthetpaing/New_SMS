@@ -2146,6 +2146,16 @@ namespace ZaikoIdouNyuuryoku
                                             bbl.ShowMessage("E186");
                                             return false;
                                         }
+
+                                        //移動元、移動先の倉庫は異なる店舗であること(移動依頼なし)
+                                        if (string.IsNullOrWhiteSpace(keyControls[(int)EIndex.RequestNO].Text))
+                                        {
+                                            if (mFromStoreCD.Equals(mToStoreCD))
+                                            {
+                                                bbl.ShowMessage("E249");
+                                                return false;
+                                            }
+                                        }
                                     }
                                     break;
                                 case EIdoType.倉庫移動:
@@ -2156,6 +2166,16 @@ namespace ZaikoIdouNyuuryoku
                                         if (!mFromStoreCD.Equals(mToStoreCD))
                                         {
                                             bbl.ShowMessage("E206");
+                                            return false;
+                                        }
+                                    }
+
+                                    if (mIdoType.Equals(EIdoType.返品))
+                                    {
+                                        //返品倉庫以外Error SoukoType≠８ならエラー
+                                        if (!dt.Rows[0]["SoukoType"].ToString().Equals("8"))
+                                        {
+                                            bbl.ShowMessage("E250");
                                             return false;
                                         }
                                     }
