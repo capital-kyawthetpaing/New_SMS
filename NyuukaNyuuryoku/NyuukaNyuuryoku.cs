@@ -2478,7 +2478,7 @@ namespace NyuukaNyuuryoku
         /// <summary>
         /// Footer部 金額計算処理
         /// </summary>
-        private void CalcKin()
+        private bool CalcKin()
         {
             //【引当】でチェックが入っている明細の入荷数を集計し、引当総数（【引当】直下）に表示
             decimal sumHikSu = 0;
@@ -2506,8 +2506,9 @@ namespace NyuukaNyuuryoku
             {
                 //Ｅ１４３
                 bbl.ShowMessage("E143", "入荷総数", "大きい");
-                return;
+                return false;
             }
+            return true;
         }
 
         /// <summary>
@@ -2752,7 +2753,8 @@ namespace NyuukaNyuuryoku
             string OrderWayKBN = "";
             string AliasKBN = "";
 
-            CalcKin();
+            if (!CalcKin())
+                return;
 
             switch (kbn)
             {
