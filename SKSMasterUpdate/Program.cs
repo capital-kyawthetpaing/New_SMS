@@ -53,13 +53,13 @@ namespace SKSMasterUpdate
 
                 jsResult += "}";
 
-                //if (ImportToSKS(jsResult))
-                //{
+                if (ImportToSKS(jsResult))
+                {
 
                     sksMasterUpdate_bl.SKSUpdateFlg_ForItem(dtMasterItem,dtMasterSKU);
 
-               // }
-                        
+                }
+
             }
 
         }
