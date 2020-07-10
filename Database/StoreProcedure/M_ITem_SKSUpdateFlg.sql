@@ -75,7 +75,7 @@ BEGIN
 		set msku.SKUUpdateFlg=0,
 		SKSUpdateDateTime=@InsertDateTime
 		From M_SKU as msku inner join #tempSKU as tsku on msku.AdminNO=tsku.Item_AdminCode
-														and  msku.SKUUpdateFlg=1
+														and  msku.SKSUpdateFlg=1
 
 
 			drop table #tempItem
