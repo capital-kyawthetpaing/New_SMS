@@ -101,6 +101,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="KaitounoukiKakuninsho_Report.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>KaitounoukiKakuninsho_Report.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="KaitounoukiKakuninsho.resx">
       <SubType>Designer</SubType>
