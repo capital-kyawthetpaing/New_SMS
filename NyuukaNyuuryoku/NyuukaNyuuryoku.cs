@@ -2482,6 +2482,24 @@ namespace NyuukaNyuuryoku
 
             return true;
         }
+        private void ClearVendor()
+        {
+            for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+            {
+                if (mGrid.g_DArray[RW].Check)
+                {
+                    return;
+                }
+            }
+            for (int RW = 0; RW <= mGrid2.g_MK_Max_Row - 1; RW++)
+            {
+                if (mGrid2.g_DArray[RW].Check)
+                {
+                    return;
+                }
+            }
+            lblVendor.Text = "";
+        }
         /// <summary>
         /// Footer部 金額計算処理
         /// </summary>
@@ -3577,6 +3595,10 @@ namespace NyuukaNyuuryoku
                         //配列の内容を画面にセット
                         mGrid2.S_DispFromArray(Vsb_Mei_1.Value, ref Vsb_Mei_1);
                     }
+                    else
+                    {
+                        ClearVendor();
+                    }
                 }
 
             }
@@ -3650,6 +3672,10 @@ namespace NyuukaNyuuryoku
 
                         //配列の内容を画面にセット
                         mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    }
+                    else
+                    {
+                        ClearVendor();
                     }
                 }
             }
