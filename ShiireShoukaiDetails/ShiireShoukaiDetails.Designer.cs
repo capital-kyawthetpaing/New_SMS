@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -152,7 +151,7 @@
             this.dgv_PurchaseDetails.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -185,14 +184,6 @@
             this.PaymentPlanDate,
             this.PayConfirmFinishedDate,
             this.DeliveryNo});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_PurchaseDetails.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgv_PurchaseDetails.EnableHeadersVisualStyles = false;
             this.dgv_PurchaseDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgv_PurchaseDetails.Location = new System.Drawing.Point(2, 305);
@@ -297,6 +288,7 @@
             this.txtItemName.IntegerPart = 0;
             this.txtItemName.IsCorrectDate = true;
             this.txtItemName.isEnterKeyDown = false;
+            this.txtItemName.IsFirstTime = true;
             this.txtItemName.isMaxLengthErr = false;
             this.txtItemName.IsNumber = true;
             this.txtItemName.IsShop = false;
@@ -391,6 +383,7 @@
             this.txtMakerItemCD.IntegerPart = 0;
             this.txtMakerItemCD.IsCorrectDate = true;
             this.txtMakerItemCD.isEnterKeyDown = false;
+            this.txtMakerItemCD.IsFirstTime = true;
             this.txtMakerItemCD.isMaxLengthErr = false;
             this.txtMakerItemCD.IsNumber = true;
             this.txtMakerItemCD.IsShop = false;
@@ -482,6 +475,7 @@
             this.scStaffCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scStaffCD.DataCheck = false;
             this.scStaffCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scStaffCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scStaffCD.IsCopy = false;
             this.scStaffCD.LabelText = "";
             this.scStaffCD.LabelVisible = true;
@@ -511,6 +505,7 @@
             this.scMakerCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scMakerCD.DataCheck = false;
             this.scMakerCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scMakerCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scMakerCD.IsCopy = false;
             this.scMakerCD.LabelText = "";
             this.scMakerCD.LabelVisible = true;
@@ -578,6 +573,7 @@
             this.txtOrderDate2.IntegerPart = 0;
             this.txtOrderDate2.IsCorrectDate = true;
             this.txtOrderDate2.isEnterKeyDown = false;
+            this.txtOrderDate2.IsFirstTime = true;
             this.txtOrderDate2.isMaxLengthErr = false;
             this.txtOrderDate2.IsNumber = true;
             this.txtOrderDate2.IsShop = false;
@@ -606,6 +602,7 @@
             this.txtPlanDate2.IntegerPart = 0;
             this.txtPlanDate2.IsCorrectDate = true;
             this.txtPlanDate2.isEnterKeyDown = false;
+            this.txtPlanDate2.IsFirstTime = true;
             this.txtPlanDate2.isMaxLengthErr = false;
             this.txtPlanDate2.IsNumber = true;
             this.txtPlanDate2.IsShop = false;
@@ -634,6 +631,7 @@
             this.txtPurchaseDate2.IntegerPart = 0;
             this.txtPurchaseDate2.IsCorrectDate = true;
             this.txtPurchaseDate2.isEnterKeyDown = false;
+            this.txtPurchaseDate2.IsFirstTime = true;
             this.txtPurchaseDate2.isMaxLengthErr = false;
             this.txtPurchaseDate2.IsNumber = true;
             this.txtPurchaseDate2.IsShop = false;
@@ -696,6 +694,7 @@
             this.txtOrderDate1.IntegerPart = 0;
             this.txtOrderDate1.IsCorrectDate = true;
             this.txtOrderDate1.isEnterKeyDown = false;
+            this.txtOrderDate1.IsFirstTime = true;
             this.txtOrderDate1.isMaxLengthErr = false;
             this.txtOrderDate1.IsNumber = true;
             this.txtOrderDate1.IsShop = false;
@@ -740,6 +739,7 @@
             this.txtPlanDate1.IntegerPart = 0;
             this.txtPlanDate1.IsCorrectDate = true;
             this.txtPlanDate1.isEnterKeyDown = false;
+            this.txtPlanDate1.IsFirstTime = true;
             this.txtPlanDate1.isMaxLengthErr = false;
             this.txtPlanDate1.IsNumber = true;
             this.txtPlanDate1.IsShop = false;
@@ -784,6 +784,7 @@
             this.txtPurchaseDate1.IntegerPart = 0;
             this.txtPurchaseDate1.IsCorrectDate = true;
             this.txtPurchaseDate1.isEnterKeyDown = false;
+            this.txtPurchaseDate1.IsFirstTime = true;
             this.txtPurchaseDate1.isMaxLengthErr = false;
             this.txtPurchaseDate1.IsNumber = true;
             this.txtPurchaseDate1.IsShop = false;
@@ -825,6 +826,7 @@
             this.scItem.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scItem.DataCheck = false;
             this.scItem.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scItem.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scItem.IsCopy = false;
             this.scItem.LabelText = "";
             this.scItem.LabelVisible = false;
@@ -853,6 +855,7 @@
             this.scSkuCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSkuCD.DataCheck = false;
             this.scSkuCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scSkuCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scSkuCD.IsCopy = false;
             this.scSkuCD.LabelText = "";
             this.scSkuCD.LabelVisible = false;
@@ -881,6 +884,7 @@
             this.scJanCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scJanCD.DataCheck = false;
             this.scJanCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scJanCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scJanCD.IsCopy = false;
             this.scJanCD.LabelText = "";
             this.scJanCD.LabelVisible = false;
@@ -942,7 +946,7 @@
             // 
             // makerCD
             // 
-            this.makerCD.DataPropertyName = "ItemName";
+            this.makerCD.DataPropertyName = "MakerItem";
             this.makerCD.HeaderText = "メーカー商品CD";
             this.makerCD.Name = "makerCD";
             this.makerCD.Width = 150;
