@@ -1820,6 +1820,15 @@ namespace Base.Client
                         return false;
                     }
                 }
+                else if (c is CKMShop_ComboBox)
+                {
+                    if (((CKMShop_ComboBox)c).SelectedIndex <= 0)
+                    {
+                        bbl.ShowMessage("E102");
+                        c.Focus();
+                        return false;
+                    }
+                }
             }
             return true;
         }
