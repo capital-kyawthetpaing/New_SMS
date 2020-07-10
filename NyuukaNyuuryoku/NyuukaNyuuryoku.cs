@@ -659,7 +659,7 @@ namespace NyuukaNyuuryoku
                                 if (m_EnableCnt - 1 < w_Row)
                                     break;
 
-                                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].JYUNO))
+                                if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].JYUNO))
                                 {
                                     mGrid.g_MK_State[(int)ClsGridHikiate.ColNO.Check, w_Row].Cell_Enabled = true;
                                     mGrid.g_MK_State[(int)ClsGridHikiate.ColNO.SURYO, w_Row].Cell_Enabled = true;
@@ -672,7 +672,7 @@ namespace NyuukaNyuuryoku
                                 if (m_EnableCnt - 1 < w_Row)
                                     break;
 
-                                if (string.IsNullOrWhiteSpace(mGrid2.g_DArray[w_Row].Number))
+                                if (!string.IsNullOrWhiteSpace(mGrid2.g_DArray[w_Row].Number))
                                 {
                                     mGrid2.g_MK_State[(int)ClsGridHikiate.ColNO.Check, w_Row].Cell_Enabled = true;
                                     mGrid2.g_MK_State[(int)ClsGridHikiate.ColNO.SURYO, w_Row].Cell_Enabled = true;
