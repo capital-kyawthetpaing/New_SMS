@@ -161,6 +161,8 @@ namespace TanabanNyuuryoku
         {
             if (index == 11)
             {
+                if (!RequireCheck(new Control[] { txtArrivalDateTo }))
+                    return false;
                 if (!string.IsNullOrWhiteSpace(txtArrivalDateTo.Text))
                 {
                     int result = txtArrivalDateFrom.Text.CompareTo(txtArrivalDateTo.Text);
