@@ -30,8 +30,25 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelDetail = new System.Windows.Forms.Panel();
             this.dgvTanaban = new CKM_Controls.CKM_GridView();
+            this.btnReleaseAll = new CKM_Controls.CKM_Button();
+            this.btnSelectAll = new CKM_Controls.CKM_Button();
+            this.btnApplicable = new CKM_Controls.CKM_Button();
+            this.btnDisplay = new CKM_Controls.CKM_Button();
+            this.ckM_Label5 = new CKM_Controls.CKM_Label();
+            this.chkRegister = new CKM_Controls.CKM_CheckBox();
+            this.chkNotRegister = new CKM_Controls.CKM_CheckBox();
+            this.ckM_Label4 = new CKM_Controls.CKM_Label();
+            this.cboWarehouse = new CKM_Controls.CKM_ComboBox();
+            this.txtArrivalDateTo = new CKM_Controls.CKM_TextBox();
+            this.txtArrivalDateFrom = new CKM_Controls.CKM_TextBox();
+            this.ckM_Label3 = new CKM_Controls.CKM_Label();
+            this.ckM_Label2 = new CKM_Controls.CKM_Label();
+            this.ckM_Label1 = new CKM_Controls.CKM_Label();
+            this.ScStorage = new Search.CKM_SearchControl();
             this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colRackNo1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBtn = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -43,21 +60,6 @@
             this.colJanCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStockSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStockNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnReleaseAll = new CKM_Controls.CKM_Button();
-            this.btnSelectAll = new CKM_Controls.CKM_Button();
-            this.btnApplicable = new CKM_Controls.CKM_Button();
-            this.btnDisplay = new CKM_Controls.CKM_Button();
-            this.ScStorage = new Search.CKM_SearchControl();
-            this.ckM_Label5 = new CKM_Controls.CKM_Label();
-            this.chkRegister = new CKM_Controls.CKM_CheckBox();
-            this.chkNotRegister = new CKM_Controls.CKM_CheckBox();
-            this.ckM_Label4 = new CKM_Controls.CKM_Label();
-            this.cboWarehouse = new CKM_Controls.CKM_ComboBox();
-            this.txtArrivalDateTo = new CKM_Controls.CKM_TextBox();
-            this.txtArrivalDateFrom = new CKM_Controls.CKM_TextBox();
-            this.ckM_Label3 = new CKM_Controls.CKM_Label();
-            this.ckM_Label2 = new CKM_Controls.CKM_Label();
-            this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTanaban)).BeginInit();
             this.SuspendLayout();
@@ -108,7 +110,7 @@
             this.dgvTanaban.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -127,6 +129,14 @@
             this.colJanCD,
             this.colStockSu,
             this.colStockNo});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTanaban.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTanaban.EnableHeadersVisualStyles = false;
             this.dgvTanaban.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvTanaban.Location = new System.Drawing.Point(25, 149);
@@ -139,87 +149,6 @@
             this.dgvTanaban.UseSetting = true;
             this.dgvTanaban.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTanaban_CellContentClick);
             this.dgvTanaban.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvTanaban_Paint);
-            // 
-            // colChk
-            // 
-            this.colChk.HeaderText = "";
-            this.colChk.Name = "colChk";
-            this.colChk.Width = 50;
-            // 
-            // colRackNo1
-            // 
-            this.colRackNo1.DataPropertyName = "RackNo1";
-            this.colRackNo1.HeaderText = "棚番";
-            this.colRackNo1.MaxInputLength = 10;
-            this.colRackNo1.Name = "colRackNo1";
-            // 
-            // colBtn
-            // 
-            this.colBtn.HeaderText = "";
-            this.colBtn.Name = "colBtn";
-            this.colBtn.Width = 50;
-            // 
-            // colRackNO
-            // 
-            this.colRackNO.DataPropertyName = "RackNO";
-            this.colRackNO.HeaderText = "既存棚番";
-            this.colRackNO.MaxInputLength = 10;
-            this.colRackNO.Name = "colRackNO";
-            // 
-            // colSKUCD
-            // 
-            this.colSKUCD.DataPropertyName = "SKUCD";
-            this.colSKUCD.HeaderText = "SKUCD";
-            this.colSKUCD.MaxInputLength = 30;
-            this.colSKUCD.Name = "colSKUCD";
-            this.colSKUCD.Width = 300;
-            // 
-            // colSKUName
-            // 
-            this.colSKUName.DataPropertyName = "SKUName";
-            this.colSKUName.HeaderText = "商品名";
-            this.colSKUName.MaxInputLength = 80;
-            this.colSKUName.Name = "colSKUName";
-            this.colSKUName.Width = 600;
-            // 
-            // colColorName
-            // 
-            this.colColorName.DataPropertyName = "ColorName";
-            this.colColorName.HeaderText = "カラー";
-            this.colColorName.MaxInputLength = 20;
-            this.colColorName.Name = "colColorName";
-            this.colColorName.Width = 200;
-            // 
-            // colSizeName
-            // 
-            this.colSizeName.DataPropertyName = "SizeName";
-            this.colSizeName.HeaderText = "サイズ";
-            this.colSizeName.MaxInputLength = 20;
-            this.colSizeName.Name = "colSizeName";
-            this.colSizeName.Width = 200;
-            // 
-            // colJanCD
-            // 
-            this.colJanCD.DataPropertyName = "JanCD";
-            this.colJanCD.HeaderText = "JANCD";
-            this.colJanCD.MaxInputLength = 13;
-            this.colJanCD.Name = "colJanCD";
-            this.colJanCD.Width = 130;
-            // 
-            // colStockSu
-            // 
-            this.colStockSu.DataPropertyName = "StockSu";
-            this.colStockSu.HeaderText = "在庫数";
-            this.colStockSu.MaxInputLength = 5;
-            this.colStockSu.Name = "colStockSu";
-            this.colStockSu.Width = 80;
-            // 
-            // colStockNo
-            // 
-            this.colStockNo.DataPropertyName = "StockNo";
-            this.colStockNo.HeaderText = "StockNo";
-            this.colStockNo.Name = "colStockNo";
-            this.colStockNo.Visible = false;
             // 
             // btnReleaseAll
             // 
@@ -296,35 +225,6 @@
             this.btnDisplay.Text = "表示(F11)";
             this.btnDisplay.UseVisualStyleBackColor = false;
             this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
-            // 
-            // ScStorage
-            // 
-            this.ScStorage.AutoSize = true;
-            this.ScStorage.ChangeDate = "";
-            this.ScStorage.ChangeDateWidth = 100;
-            this.ScStorage.Code = "";
-            this.ScStorage.CodeWidth = 100;
-            this.ScStorage.CodeWidth1 = 100;
-            this.ScStorage.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ScStorage.DataCheck = false;
-            this.ScStorage.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ScStorage.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.ScStorage.IsCopy = false;
-            this.ScStorage.LabelText = "";
-            this.ScStorage.LabelVisible = false;
-            this.ScStorage.Location = new System.Drawing.Point(958, 83);
-            this.ScStorage.Margin = new System.Windows.Forms.Padding(0);
-            this.ScStorage.Name = "ScStorage";
-            this.ScStorage.NameWidth = 600;
-            this.ScStorage.SearchEnable = true;
-            this.ScStorage.Size = new System.Drawing.Size(133, 28);
-            this.ScStorage.Stype = Search.CKM_SearchControl.SearchType.棚番号;
-            this.ScStorage.TabIndex = 6;
-            this.ScStorage.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ScStorage.UseChangeDate = false;
-            this.ScStorage.Value1 = null;
-            this.ScStorage.Value2 = null;
-            this.ScStorage.Value3 = null;
             // 
             // ckM_Label5
             // 
@@ -508,6 +408,125 @@
             this.ckM_Label1.Text = "入荷日";
             this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ScStorage
+            // 
+            this.ScStorage.AutoSize = true;
+            this.ScStorage.ChangeDate = "";
+            this.ScStorage.ChangeDateWidth = 100;
+            this.ScStorage.Code = "";
+            this.ScStorage.CodeWidth = 100;
+            this.ScStorage.CodeWidth1 = 100;
+            this.ScStorage.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScStorage.DataCheck = false;
+            this.ScStorage.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScStorage.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.ScStorage.IsCopy = false;
+            this.ScStorage.LabelText = "";
+            this.ScStorage.LabelVisible = false;
+            this.ScStorage.Location = new System.Drawing.Point(958, 83);
+            this.ScStorage.Margin = new System.Windows.Forms.Padding(0);
+            this.ScStorage.Name = "ScStorage";
+            this.ScStorage.NameWidth = 600;
+            this.ScStorage.SearchEnable = true;
+            this.ScStorage.Size = new System.Drawing.Size(133, 28);
+            this.ScStorage.Stype = Search.CKM_SearchControl.SearchType.棚番号;
+            this.ScStorage.TabIndex = 6;
+            this.ScStorage.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScStorage.UseChangeDate = false;
+            this.ScStorage.Value1 = null;
+            this.ScStorage.Value2 = null;
+            this.ScStorage.Value3 = null;
+            // 
+            // colChk
+            // 
+            this.colChk.HeaderText = "";
+            this.colChk.Name = "colChk";
+            this.colChk.Width = 50;
+            // 
+            // colRackNo1
+            // 
+            this.colRackNo1.DataPropertyName = "RackNo1";
+            this.colRackNo1.HeaderText = "棚番";
+            this.colRackNo1.MaxInputLength = 10;
+            this.colRackNo1.Name = "colRackNo1";
+            // 
+            // colBtn
+            // 
+            this.colBtn.HeaderText = "";
+            this.colBtn.Name = "colBtn";
+            this.colBtn.Width = 50;
+            // 
+            // colRackNO
+            // 
+            this.colRackNO.DataPropertyName = "RackNO";
+            this.colRackNO.HeaderText = "既存棚番";
+            this.colRackNO.MaxInputLength = 10;
+            this.colRackNO.Name = "colRackNO";
+            this.colRackNO.ReadOnly = true;
+            // 
+            // colSKUCD
+            // 
+            this.colSKUCD.DataPropertyName = "SKUCD";
+            this.colSKUCD.HeaderText = "SKUCD";
+            this.colSKUCD.MaxInputLength = 30;
+            this.colSKUCD.Name = "colSKUCD";
+            this.colSKUCD.ReadOnly = true;
+            this.colSKUCD.Width = 300;
+            // 
+            // colSKUName
+            // 
+            this.colSKUName.DataPropertyName = "SKUName";
+            this.colSKUName.HeaderText = "商品名";
+            this.colSKUName.MaxInputLength = 80;
+            this.colSKUName.Name = "colSKUName";
+            this.colSKUName.ReadOnly = true;
+            this.colSKUName.Width = 600;
+            // 
+            // colColorName
+            // 
+            this.colColorName.DataPropertyName = "ColorName";
+            this.colColorName.HeaderText = "カラー";
+            this.colColorName.MaxInputLength = 20;
+            this.colColorName.Name = "colColorName";
+            this.colColorName.ReadOnly = true;
+            this.colColorName.Width = 200;
+            // 
+            // colSizeName
+            // 
+            this.colSizeName.DataPropertyName = "SizeName";
+            this.colSizeName.HeaderText = "サイズ";
+            this.colSizeName.MaxInputLength = 20;
+            this.colSizeName.Name = "colSizeName";
+            this.colSizeName.ReadOnly = true;
+            this.colSizeName.Width = 200;
+            // 
+            // colJanCD
+            // 
+            this.colJanCD.DataPropertyName = "JanCD";
+            this.colJanCD.HeaderText = "JANCD";
+            this.colJanCD.MaxInputLength = 13;
+            this.colJanCD.Name = "colJanCD";
+            this.colJanCD.ReadOnly = true;
+            this.colJanCD.Width = 130;
+            // 
+            // colStockSu
+            // 
+            this.colStockSu.DataPropertyName = "StockSu";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colStockSu.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colStockSu.HeaderText = "在庫数";
+            this.colStockSu.MaxInputLength = 5;
+            this.colStockSu.Name = "colStockSu";
+            this.colStockSu.ReadOnly = true;
+            this.colStockSu.Width = 80;
+            // 
+            // colStockNo
+            // 
+            this.colStockNo.DataPropertyName = "StockNo";
+            this.colStockNo.HeaderText = "StockNo";
+            this.colStockNo.Name = "colStockNo";
+            this.colStockNo.Visible = false;
             // 
             // FrmTanabanNyuuryoku
             // 
