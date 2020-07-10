@@ -34,6 +34,7 @@ namespace MasterTouroku_ShiireTanka
         string choiceq = "";
         string operatorCd;
         string btn = "";
+        DataTable dtExcel;
         public FrmMasterTouroku_ShiireTanka()
         {
             InitializeComponent();
@@ -138,8 +139,8 @@ namespace MasterTouroku_ShiireTanka
                 {
                     if (shiiresaki.SelectData())
                     {
-                        shiiresaki.Value1 = shiiresaki.TxtCode.Text;
-                        shiiresaki.Value2 = shiiresaki.LabelText;
+                        //shiiresaki.Value1 = shiiresaki.TxtCode.Text;
+                        //shiiresaki.Value2 = shiiresaki.LabelText;
                         DataTable dtdeflg = bbl.Select_SearchName(TB_headerdate.Text, 4, shiiresaki.TxtCode.Text);
                         string deflg = "";
                         if (dtdeflg.Rows.Count > 0)
@@ -166,7 +167,8 @@ namespace MasterTouroku_ShiireTanka
         }
         private void sport_Enter(object sender, EventArgs e)
         {
-            sport.Value3 = "202";
+            sport.Value1 ="202";
+            //sport.Value3 = "202";
         }
         private void sport_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
@@ -208,7 +210,7 @@ namespace MasterTouroku_ShiireTanka
         }
         private void segment_Enter(object sender, EventArgs e)
         {
-            segment.Value3 = "203";
+            segment.Value1 = "203";
         }
         private void brand_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
@@ -630,8 +632,8 @@ namespace MasterTouroku_ShiireTanka
             CB_store.SelectedValue = "0000";
             GV_item.Refresh();
             GV_item.DataSource = null;
-            dt.Rows.Clear();
-            dtsku.Rows.Clear();
+            //dt.Rows.Clear();
+            //dtsku.Rows.Clear();
         }
         private void RB_koten_CheckedChanged(object sender, EventArgs e)
         {
@@ -1453,7 +1455,6 @@ namespace MasterTouroku_ShiireTanka
                 }
             }
         }
-
         private void CheckFun()
         {
 
@@ -1503,23 +1504,76 @@ namespace MasterTouroku_ShiireTanka
                 {
                     try
                     {
-                        DataTable dtExcel = new DataTable();
-                        dtExcel = ReadExcel(filePath, fileExt); //read excel file  
-                        if(dtExcel.Rows.Count >0)
-                        {
-                            //if (dtExcel.Rows[0][0] != "仕入先CD")
-                            //{
-                            //    bl.ShowMessage("E137");
-                            //}
-                            string data = dtExcel.Rows[0][0].ToString();
-                            string data1 = dtExcel.Rows[0][1].ToString();
-                            string data2 = dtExcel.Rows[0][2].ToString();
-                            string data3 = dtExcel.Rows[0][3].ToString();
-                            string data4 = dtExcel.Rows[0][4].ToString();
 
+                        dtExcel = new DataTable();
+                        dtExcel = ReadExcel(filePath, fileExt); //read excel file  
+                        if (ErrorCheckExcel())
+                        {
+                            Clear();
+                            //dtExcel.Rows[0].Delete();
+                            DataTable dtE = new DataTable();
+                            dtE.Columns.Add("VendorCD");
+                            dtE.Columns.Add("StoreCD");
+                            dtE.Columns.Add("ItemCD");
+                            dtE.Columns.Add("ItemName");
+                            dtE.Columns.Add("MakerItem");
+                            dtE.Columns.Add("SportsCD");
+                            dtE.Columns.Add("SegmentCD");
+                            dtE.Columns.Add("SegmentCDName");
+                            dtE.Columns.Add("Char1");
+                            dtE.Columns.Add("BrandCD");
+                            dtE.Columns.Add("BrandName");
+                            dtE.Columns.Add("LastYearTerm");
+                            dtE.Columns.Add("LastSeason");
+                            dtE.Columns.Add("ChangeDate");
+                            dtE.Columns.Add("Rate");
+                            dtE.Columns.Add("PriceOutTax");
+                            dtE.Columns.Add("PriceWithoutTax");
+                            dtE.Columns.Add("InsertOperator");
+                            dtE.Columns.Add("InsertDateTime");
+                            dtE.Columns.Add("UpdateOperator");
+                            dtE.Columns.Add("UpdateDateTime");
+                            m_IE = new M_ITEM_Entity();
+                            m_IE.ITemCD = dtExcel.Rows[1][2].ToString();
+                            DataTable dtadd = bl.M_ITEM_SelectBy_ItemCD(m_IE);
+
+                            if(dtadd.Rows.Count >0)
+                            {
+
+                                DataRow row1;
+                                row1 = dtE.NewRow();
+                                string dates = dtExcel.Rows[1][3].ToString();
+                                //string sDate = (xlRange.Cells[4, 3] as Excel.Range).Value2.ToString();
+
+                                double date = double.Parse(dates);
+
+                                var dateTime = DateTime.FromOADate(date).ToString("yyyy/MM/dd");
+                                row1["ItemCD"] = dtExcel.Rows[1][2].ToString();
+                                row1["ItemName"] = dtadd.Rows[0]["ItemName"];
+                                row1["BrandCD"] = dtadd.Rows[0]["BrandCD"];
+                                row1["BrandName"] = dtadd.Rows[0]["BrandName"];
+                                row1["SportsCD"] = dtadd.Rows[0]["SportsCD"];
+                                row1["Char1"] = dtadd.Rows[0]["Char1"];
+                                row1["SegmentCD"] = dtadd.Rows[0]["SegmentCD"];
+                                row1["SegmentCDName"] = dtadd.Rows[0]["SegmentCDName"];
+                                row1["LastYearTerm"] = dtadd.Rows[0]["LastYearTerm"];
+                                row1["LastSeason"] = dtadd.Rows[0]["LastSeason"];
+                                row1["MakerItem"] = dtadd.Rows[0]["MakerItem"];
+                                row1["Rate"] = dtExcel.Rows[1][4].ToString();
+                                row1["ChangeDate"] = dateTime;
+                                //row1["PriceOutTax"] = dtadd.Rows[0]["PriceOutTax"];
+                                row1["PriceWithoutTax"] = dtExcel.Rows[0][5].ToString();
+                                row1["InsertOperator"] = operatorCd;
+                                row1["InsertDateTime"] = bbl.GetDate();
+                                row1["UpdateOperator"] = operatorCd;
+                                row1["UpdateDateTime"] = bbl.GetDate();
+                                dtE.Rows.Add(row1);
+                                GV_item.DataSource = dtE;
+                            }
+                            //GV_item.DataSource = dtExcel;
                         }
                         //GV_item.Visible = true;
-                        GV_item.DataSource = dtExcel;
+                        //GV_item.DataSource = dtExcel;
                     }
                     catch (Exception ex)
                     {
@@ -1531,6 +1585,101 @@ namespace MasterTouroku_ShiireTanka
                     bl.ShowMessage("E137");
                 }
             }
+        }
+        private bool ErrorCheckExcel()
+        {
+            string todaydate = bl.GetDate();
+           // dtExcel = ReadExcel(filePath, fileExt); //read excel file  
+            if (dtExcel.Rows.Count > 0)
+            {
+                if (dtExcel.Rows[0][0].ToString() != "仕入先CD")
+                {
+                    bl.ShowMessage("E137");
+                    return false;
+                }
+               
+                if (dtExcel.Rows[0][1].ToString() != "店舗CD")
+                {
+                    bl.ShowMessage("E137");
+                    return false;
+                }
+                if (dtExcel.Rows[0][2].ToString() != "ITEM")
+                {
+                    bl.ShowMessage("E137");
+                    return false;
+                }
+                if (dtExcel.Rows[0][3].ToString() != "改定日")
+                {
+                    bl.ShowMessage("E137");
+                    return false;
+                }
+                if (dtExcel.Rows[0][4].ToString() != "掛率")
+                {
+                    bl.ShowMessage("E137");
+                    return false;
+                }
+                if (dtExcel.Rows[0][5].ToString() != "発注単価")
+                {
+                    bl.ShowMessage("E137");
+                    return false;
+                }
+                //string data = dtExcel.Rows[0][0].ToString();
+                //string data1 = dtExcel.Rows[0][1].ToString();
+                //string data2 = dtExcel.Rows[0][2].ToString();
+                //string data3 = dtExcel.Rows[0][3].ToString();
+                //string data4 = dtExcel.Rows[0][4].ToString();
+                for (int i = 0; i < dtExcel.Rows.Count; i++)
+                {
+                    if (dtExcel.Rows[1][0].ToString() != shiiresaki.TxtCode.Text)
+                    {
+                        bl.ShowMessage("E230");
+                        return false;
+                    }
+                    string storecd = dtExcel.Rows[1][1].ToString();
+                    if (!String.IsNullOrEmpty(storecd) && storecd !="0000" )
+                    {
+                        DataTable dtResult = bl.Select_SearchName(todaydate.Replace("/", "-"), 3,storecd);
+                        if(dtResult.Rows.Count == 0)
+                        {
+                            bl.ShowMessage("E138");
+                            return false;
+                        }
+                        if (!base.CheckAvailableStores(storecd))
+                        {
+                            bbl.ShowMessage("E141");
+                            return false;
+                        }
+                    }
+                    if (!String.IsNullOrEmpty(dtExcel.Rows[1][2].ToString()))
+                    {
+                        DataTable dtResult = bbl.Select_SearchName(todaydate.Replace("/", "-"), 15, dtExcel.Rows[1][2].ToString());
+                        if(dtResult.Rows.Count ==0)
+                        {
+                            bl.ShowMessage("E139");
+                            return false;
+                        }
+                    }
+                   
+                    if (String.IsNullOrEmpty(dtExcel.Rows[1][3].ToString()))
+                    {
+
+                        bl.ShowMessage("E103");
+                        return false;
+                    }
+                    string dates = dtExcel.Rows[1][3].ToString();
+                    double date = double.Parse(dates);
+                    var dateTime = DateTime.FromOADate(date).ToString("yyyy/MM/dd");
+                    //if (dtExcel.Rows[1][0].ToString() != shiiresaki.TxtCode.Text)
+                    //{
+                    //    return false;
+                    //}
+                    //if (dtExcel.Rows[1][0].ToString() != shiiresaki.TxtCode.Text)
+                    //{
+                    //    return false;
+                    //}
+                }
+            }
+            return true;
         }
         public DataTable ReadExcel(string fileName, string fileExt)
         {
