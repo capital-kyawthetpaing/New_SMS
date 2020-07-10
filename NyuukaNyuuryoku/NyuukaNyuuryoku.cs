@@ -653,13 +653,18 @@ namespace NyuukaNyuuryoku
                     {
                         if (pGrid == 1)
                         {
+                            //倉庫とJANCDは変更不可
+                            CboSoukoName.Enabled = false;
+                            txtJANCD.Enabled = false;
+                            BtnJANCD.Enabled = false;
+
                             // 入力可の列の設定
                             for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
                             {
                                 if (m_EnableCnt - 1 < w_Row)
                                     break;
 
-                                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].JYUNO))
+                                if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].JYUNO))
                                 {
                                     mGrid.g_MK_State[(int)ClsGridHikiate.ColNO.Check, w_Row].Cell_Enabled = true;
                                     mGrid.g_MK_State[(int)ClsGridHikiate.ColNO.SURYO, w_Row].Cell_Enabled = true;
@@ -672,7 +677,7 @@ namespace NyuukaNyuuryoku
                                 if (m_EnableCnt - 1 < w_Row)
                                     break;
 
-                                if (string.IsNullOrWhiteSpace(mGrid2.g_DArray[w_Row].Number))
+                                if (!string.IsNullOrWhiteSpace(mGrid2.g_DArray[w_Row].Number))
                                 {
                                     mGrid2.g_MK_State[(int)ClsGridHikiate.ColNO.Check, w_Row].Cell_Enabled = true;
                                     mGrid2.g_MK_State[(int)ClsGridHikiate.ColNO.SURYO, w_Row].Cell_Enabled = true;
@@ -1896,7 +1901,7 @@ namespace NyuukaNyuuryoku
                     }
                     if (bbl.Z_Set(row["KBN"]) == 1)
                     {
-                        mGrid.g_DArray[i].Check = false;
+                        mGrid.g_DArray[i].Check = true;
                         mGrid.g_DArray[i].JYUNO = row["JuchuuNO"].ToString();
                         mGrid.g_DArray[i].JYGNO = row["JuchuuRows"].ToString();
                         mGrid.g_DArray[i].CustomerCD = row["CustomerCD"].ToString();
@@ -1934,7 +1939,7 @@ namespace NyuukaNyuuryoku
                             mGrid2.S_DispFromArray(0, ref Vsb_Mei_1);
                             return false;
                         }
-                        mGrid2.g_DArray[i2].Check = false;
+                        mGrid2.g_DArray[i2].Check = true;
                         mGrid2.g_DArray[i2].Number = row["JuchuuNO"].ToString();     //OrderNo
                         mGrid2.g_DArray[i2].RowNo = row["JuchuuRows"].ToString();    //OrderRows
                         mGrid2.g_DArray[i2].CustomerCD = row["CustomerCD"].ToString();
@@ -3198,6 +3203,8 @@ namespace NyuukaNyuuryoku
                         {
                             if (detailControls[index + 1].CanFocus)
                                 detailControls[index + 1].Focus();
+                            else if (index.Equals((int)EIndex.VendorDeliveryNo))
+                                detailControls[(int)EIndex.Nyukasu].Focus();
                             else
                                 //あたかもTabキーが押されたかのようにする
                                 //Shiftが押されている時は前のコントロールのフォーカスを移動
