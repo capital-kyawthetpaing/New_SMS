@@ -22,7 +22,7 @@ namespace Search
             SoukoCD,
             COUNT
         }
-
+         
         public string OperatorCD = string.Empty;
         public string TanaCD = string.Empty;
         public string SoukoCD = string.Empty;
