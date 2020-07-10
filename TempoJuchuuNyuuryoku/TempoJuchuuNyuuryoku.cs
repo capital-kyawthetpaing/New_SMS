@@ -3282,6 +3282,7 @@ namespace TempoJuchuuNyuuryoku
                 case (int)ClsGridJuchuu.ColNO.JanCD:                
                 case (int)ClsGridJuchuu.ColNO.JuchuuUnitPrice: //販売単価 
                 case (int)ClsGridJuchuu.ColNO.CostUnitPrice: //原価単価
+                case (int)ClsGridJuchuu.ColNO.OrderUnitPrice://発注単価
 
                     //各金額項目の再計算必要
                     if (chkAll == false)

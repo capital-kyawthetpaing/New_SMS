@@ -608,7 +608,7 @@ namespace ZaikoIdouNyuuryoku
         // ---------------------------------------------
         private void S_BodySeigyo(short pKBN, short pGrid)
         {
-            int w_Row;
+            //int w_Row;
 
             switch (pKBN)
             {
@@ -927,13 +927,15 @@ namespace ZaikoIdouNyuuryoku
 
                     //↑Paramete起動されるのは、移動依頼受け入力からのみ。
                     keyControls[(int)EIndex.RequestNO].Text = cmds[cmds.Length - 1];
-                    keyControls[(int)EIndex.RequestNO].Enabled = false;
+                    keyControls[(int)EIndex.RequestNO].Enabled = true;
                     keyControls[(int)EIndex.MoveNO].Enabled = false;
                     
                     ret= CheckKey((int)EIndex.RequestNO, true);
 
                     if (!ret)
                         EndSec();
+
+                    return;
                 }
 
                 InitScr();
@@ -1237,7 +1239,7 @@ namespace ZaikoIdouNyuuryoku
                         if (bbl.Z_Set(row["MoveRows"]) == 0)
                             break;
                     }
-                    if (index == (int)EIndex.RequestNO)
+                    if (index == (int)EIndex.RequestNO && OperationMode == EOperationMode.INSERT)
                     {
                         //回答区分<>0の移動依頼明細の場合
                         if (!Convert.ToInt16(row["AnswerKBN"]).Equals(0))
