@@ -101,6 +101,7 @@
             this.scJANCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scJANCD.DataCheck = false;
             this.scJANCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scJANCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scJANCD.IsCopy = false;
             this.scJANCD.LabelText = "";
             this.scJANCD.LabelVisible = false;
@@ -129,6 +130,7 @@
             this.scSKUCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSKUCD.DataCheck = false;
             this.scSKUCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scSKUCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scSKUCD.IsCopy = false;
             this.scSKUCD.LabelText = "";
             this.scSKUCD.LabelVisible = false;
@@ -157,6 +159,7 @@
             this.scITEM.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scITEM.DataCheck = false;
             this.scITEM.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scITEM.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scITEM.IsCopy = false;
             this.scITEM.LabelText = "";
             this.scITEM.LabelVisible = false;
@@ -185,6 +188,7 @@
             this.scMakerShohinCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scMakerShohinCD.DataCheck = false;
             this.scMakerShohinCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scMakerShohinCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scMakerShohinCD.IsCopy = false;
             this.scMakerShohinCD.LabelText = "";
             this.scMakerShohinCD.LabelVisible = false;
@@ -251,6 +255,7 @@
             this.txtSKUName.IntegerPart = 0;
             this.txtSKUName.IsCorrectDate = true;
             this.txtSKUName.isEnterKeyDown = false;
+            this.txtSKUName.IsFirstTime = true;
             this.txtSKUName.isMaxLengthErr = false;
             this.txtSKUName.IsNumber = true;
             this.txtSKUName.IsShop = false;
@@ -294,6 +299,7 @@
             this.txtTargetPeriodT.IntegerPart = 0;
             this.txtTargetPeriodT.IsCorrectDate = true;
             this.txtTargetPeriodT.isEnterKeyDown = false;
+            this.txtTargetPeriodT.IsFirstTime = true;
             this.txtTargetPeriodT.isMaxLengthErr = false;
             this.txtTargetPeriodT.IsNumber = true;
             this.txtTargetPeriodT.IsShop = false;
@@ -321,6 +327,7 @@
             this.txtTargetPeriodF.IntegerPart = 0;
             this.txtTargetPeriodF.IsCorrectDate = true;
             this.txtTargetPeriodF.isEnterKeyDown = false;
+            this.txtTargetPeriodF.IsFirstTime = true;
             this.txtTargetPeriodF.isMaxLengthErr = false;
             this.txtTargetPeriodF.IsNumber = true;
             this.txtTargetPeriodF.IsShop = false;
