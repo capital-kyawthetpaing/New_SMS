@@ -2503,7 +2503,7 @@ namespace NyuukaNyuuryoku
         /// <summary>
         /// Footer部 金額計算処理
         /// </summary>
-        private bool CalcKin()
+        private bool CalcKin(bool f12 = false)
         {
             //【引当】でチェックが入っている明細の入荷数を集計し、引当総数（【引当】直下）に表示
             decimal sumHikSu = 0;
@@ -2532,6 +2532,18 @@ namespace NyuukaNyuuryoku
                 //Ｅ１４３
                 bbl.ShowMessage("E143", "入荷総数", "大きい");
                 return false;
+            }
+            if (f12)
+            {
+                //入荷総数＞（引当での入荷数計＋在庫での入荷数計）の場合、 Ｅ２４８
+                //エラーの場合、カーソルは入荷総数へ
+                if (sumHikSu + sumZaikoSu < bbl.Z_Set(detailControls[(int)EIndex.Nyukasu].Text))
+                {
+                    //Ｅ１４３
+                    bbl.ShowMessage("E248");
+                    txtSu.Focus();
+                    return false;
+                }
             }
             return true;
         }
@@ -2708,7 +2720,8 @@ namespace NyuukaNyuuryoku
                 }
 
                 //各金額項目の再計算必要
-                CalcKin();
+                if (!CalcKin(true))
+                    return;
 
             }
 
