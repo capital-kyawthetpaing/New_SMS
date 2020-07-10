@@ -3169,7 +3169,7 @@
             // 
             this.ckM_CheckBox3.AutoSize = true;
             this.ckM_CheckBox3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox3.Location = new System.Drawing.Point(533, 51);
+            this.ckM_CheckBox3.Location = new System.Drawing.Point(590, 51);
             this.ckM_CheckBox3.Name = "ckM_CheckBox3";
             this.ckM_CheckBox3.Size = new System.Drawing.Size(102, 16);
             this.ckM_CheckBox3.TabIndex = 6;
@@ -3677,7 +3677,7 @@
             this.CboIdoKbn.MaxLength = 7;
             this.CboIdoKbn.MoveNext = false;
             this.CboIdoKbn.Name = "CboIdoKbn";
-            this.CboIdoKbn.Size = new System.Drawing.Size(105, 20);
+            this.CboIdoKbn.Size = new System.Drawing.Size(156, 20);
             this.CboIdoKbn.TabIndex = 5;
             // 
             // label29
