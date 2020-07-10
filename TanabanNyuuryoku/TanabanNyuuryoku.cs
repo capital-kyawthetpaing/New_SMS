@@ -66,6 +66,7 @@ namespace TanabanNyuuryoku
 
         private void SetRequireField()
         {
+            txtArrivalDateTo.Require(true);
             cboWarehouse.Require(true);
         }
 
