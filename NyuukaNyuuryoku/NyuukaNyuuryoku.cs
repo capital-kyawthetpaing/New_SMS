@@ -653,6 +653,11 @@ namespace NyuukaNyuuryoku
                     {
                         if (pGrid == 1)
                         {
+                            //倉庫とJANCDは変更不可
+                            CboSoukoName.Enabled = false;
+                            txtJANCD.Enabled = false;
+                            BtnJANCD.Enabled = false;
+
                             // 入力可の列の設定
                             for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
                             {
@@ -3198,6 +3203,8 @@ namespace NyuukaNyuuryoku
                         {
                             if (detailControls[index + 1].CanFocus)
                                 detailControls[index + 1].Focus();
+                            else if (index.Equals((int)EIndex.VendorDeliveryNo))
+                                detailControls[(int)EIndex.Nyukasu].Focus();
                             else
                                 //あたかもTabキーが押されたかのようにする
                                 //Shiftが押されている時は前のコントロールのフォーカスを移動
