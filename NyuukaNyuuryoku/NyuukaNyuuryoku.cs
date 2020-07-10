@@ -2562,7 +2562,7 @@ namespace NyuukaNyuuryoku
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
             {
                 //zが更新有効行数
-                if (mGrid.g_DArray[RW].Check)
+                if (mGrid.g_DArray[RW].Check || OperationMode == EOperationMode.DELETE)
                 {
                     dt.Rows.Add(1
                         , rowNo
@@ -2586,7 +2586,7 @@ namespace NyuukaNyuuryoku
             for (int RW = 0; RW <= mGrid2.g_MK_Max_Row - 1; RW++)
             {
                 //zが更新有効行数
-                if (mGrid2.g_DArray[RW].Check)
+                if (mGrid2.g_DArray[RW].Check || OperationMode == EOperationMode.DELETE)
                 {
                     dt.Rows.Add(2
                         , rowNo

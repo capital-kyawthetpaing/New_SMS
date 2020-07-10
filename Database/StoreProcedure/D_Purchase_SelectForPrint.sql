@@ -19,7 +19,7 @@ CREATE PROCEDURE D_Purchase_SelectForPrint
 --********************************************--
 --                                            --
 --                 èàóùäJén                   --
---                                            --
+--                                            --D:\GITs\New_SMS\Database\StoreProcedure\D_Purchase_SelectForPrint.sql
 --********************************************--
 
 BEGIN
