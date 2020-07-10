@@ -78,5 +78,7 @@ BEGIN
 														and  msku.SKUUpdateFlg=1
 
 
+			drop table #tempItem
+			drop table #tempSKU
 END
 GO
