@@ -102,6 +102,7 @@
             this.ScSKUCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScSKUCD.DataCheck = false;
             this.ScSKUCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScSKUCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScSKUCD.IsCopy = false;
             this.ScSKUCD.LabelText = "";
             this.ScSKUCD.LabelVisible = true;
