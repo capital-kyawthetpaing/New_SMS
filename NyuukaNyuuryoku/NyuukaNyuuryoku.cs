@@ -1753,7 +1753,7 @@ namespace NyuukaNyuuryoku
 
                     ebl.D_Exclusive_Delete(de);
                 }
-                return;
+                dtForUpdate = new DataTable();
             }
 
             D_Exclusive_Entity dee = new D_Exclusive_Entity
@@ -2562,7 +2562,7 @@ namespace NyuukaNyuuryoku
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
             {
                 //zが更新有効行数
-                if (mGrid.g_DArray[RW].Check)
+                if (mGrid.g_DArray[RW].Check || OperationMode == EOperationMode.DELETE)
                 {
                     dt.Rows.Add(1
                         , rowNo
@@ -2586,7 +2586,7 @@ namespace NyuukaNyuuryoku
             for (int RW = 0; RW <= mGrid2.g_MK_Max_Row - 1; RW++)
             {
                 //zが更新有効行数
-                if (mGrid2.g_DArray[RW].Check)
+                if (mGrid2.g_DArray[RW].Check || OperationMode == EOperationMode.DELETE)
                 {
                     dt.Rows.Add(2
                         , rowNo
@@ -3542,6 +3542,8 @@ namespace NyuukaNyuuryoku
                             }
                         }
 
+                        mGrid2.g_DArray[w_Row].SURYO = mGrid2.g_DArray[w_Row].OrderSu;
+
                         if (!string.IsNullOrWhiteSpace(lblVendor.Text) && !lblVendor.Text.Equals(mGrid2.g_DArray[w_Row].Customer))
                         {
                             //Ｅ１９９				
@@ -3555,6 +3557,9 @@ namespace NyuukaNyuuryoku
                         lblVendor.Text = mGrid2.g_DArray[w_Row].Customer;
 
                         CalcKin();
+
+                        //配列の内容を画面にセット
+                        mGrid2.S_DispFromArray(Vsb_Mei_1.Value, ref Vsb_Mei_1);
                     }
                 }
 
@@ -3610,6 +3615,8 @@ namespace NyuukaNyuuryoku
                     //【引当】の明細をONにした場合、会員名←	画面転送表02のD_Reserve②.発注先								
                     if (mGrid.g_DArray[w_Row].Check)
                     {
+                        mGrid.g_DArray[w_Row].SURYO = mGrid.g_DArray[w_Row].ReserveSu;
+
                         if (!string.IsNullOrWhiteSpace(lblVendor.Text) && !lblVendor.Text.Equals(mGrid.g_DArray[w_Row].VendorName))
                         {
                             //Ｅ１９９				
@@ -3624,6 +3631,9 @@ namespace NyuukaNyuuryoku
                         lblVendor.Text = mGrid.g_DArray[w_Row].VendorName;
 
                         CalcKin();
+
+                        //配列の内容を画面にセット
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                     }
                 }
             }
