@@ -2188,18 +2188,22 @@ namespace ShiireNyuuryoku
                         mGrid.g_DArray[row].TaxRateName = "非課税";
                     }
 
-                    //[M_JANOrderPrice]
-                    M_JANOrderPrice_Entity mje = new M_JANOrderPrice_Entity();
-                    mje.JanCD = mGrid.g_DArray[row].JanCD;
-                    mje.VendorCD = detailControls[(int)EIndex.VendorCD].Text;
-                    mje.ChangeDate = ymd;
+                    ////[M_JANOrderPrice]
+                    //M_JANOrderPrice_Entity mje = new M_JANOrderPrice_Entity();
+                    //mje.JanCD = mGrid.g_DArray[row].JanCD;
+                    //mje.VendorCD = detailControls[(int)EIndex.VendorCD].Text;
+                    //mje.ChangeDate = ymd;
 
-                    JANOrderPrice_BL jbl = new JANOrderPrice_BL();
-                    ret = jbl.M_JANOrderPrice_Select(mje);
-                    if (ret)
-                    {
-                        mGrid.g_DArray[row].PurchaseUnitPrice = bbl.Z_SetStr(mje.PriceWithoutTax);
-                    }
+                    //JANOrderPrice_BL jbl = new JANOrderPrice_BL();
+                    //ret = jbl.M_JANOrderPrice_Select(mje);
+                    //if (ret)
+                    //{
+                    //    mGrid.g_DArray[row].PurchaseUnitPrice = bbl.Z_SetStr(mje.PriceWithoutTax);
+                    //}
+                    
+                    //仕入先、店舗との組み合わせでITEM発注単価マスターかJAN発注単価マスタに存在すること SelectできなければError
+                    //以下①②③④の順番でターゲットが大きくなる（①に近いほど、商品が特定されていく）
+                    mGrid.g_DArray[row].PurchaseUnitPrice = GetTanka(row, ymd);
 
                     mGrid.g_DArray[row].OldJanCD = mGrid.g_DArray[row].JanCD;
                     Grid_NotFocus(col, row);
@@ -2283,7 +2287,6 @@ namespace ShiireNyuuryoku
             //[M_JANOrderPrice]
             M_JANOrderPrice_Entity mje = new M_JANOrderPrice_Entity
             {
-
                 //①JAN発注単価マスタ（店舗指定なし）
                 AdminNO = mGrid.g_DArray[row].AdminNO,
                 VendorCD = detailControls[(int)EIndex.VendorCD].Text,
