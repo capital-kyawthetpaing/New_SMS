@@ -88,7 +88,8 @@ BEGIN
     	AND DM.DeleteDateTime IS NULL
     WHERE ISNULL(DH.AnswerDateTime,'') >= (CASE WHEN @AnswerDateFrom <> '' THEN CONVERT(DATE, @AnswerDateFrom) ELSE ISNULL(DH.AnswerDateTime,'') END)
     AND ISNULL(DH.AnswerDateTime,'') <= (CASE WHEN @AnswerDateTo <> '' THEN CONVERT(DATE, @AnswerDateTo) ELSE ISNULL(DH.AnswerDateTime,'') END)
-    AND DH.FromStoreCD = (CASE WHEN @FromStoreCD <> '' THEN @FromStoreCD ELSE DH.FromStoreCD END)
+    --AND DH.FromStoreCD = (CASE WHEN @FromStoreCD <> '' THEN @FromStoreCD ELSE DH.FromStoreCD END)
+    AND DH.ToStoreCD = (CASE WHEN @FromStoreCD <> '' THEN @FromStoreCD ELSE DH.ToStoreCD END)
     AND ISNULL(DM.AnswerKBN,0) =(CASE WHEN @AnswerKBN = 1 THEN ISNULL(DM.AnswerKBN,0) ELSE 0 END)
     AND DH.DeleteDateTime IS NULL
     
@@ -102,6 +103,7 @@ BEGIN
         AND MF.DeleteFlg = 0
         where MS.ChangeDate <= DH.RequestDate
         AND MS.StoreCD = DH.FromStoreCD
+        AND MF.StoreCD = DH.FromStoreCD
         )
     --Œ ŒÀ‚Ì‚ ‚é“X•Ü‚Ì‚Ý
     AND EXISTS(select MS.StoreCD
