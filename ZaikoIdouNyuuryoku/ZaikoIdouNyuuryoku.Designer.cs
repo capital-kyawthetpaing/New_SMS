@@ -2934,7 +2934,7 @@
             this.TxtRemark1.MoveNext = false;
             this.TxtRemark1.Name = "TxtRemark1";
             this.TxtRemark1.Size = new System.Drawing.Size(650, 19);
-            this.TxtRemark1.TabIndex = 22;
+            this.TxtRemark1.TabIndex = 23;
             this.TxtRemark1.Text = "bbbbbbb";
             this.TxtRemark1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3082,7 +3082,7 @@
             this.ckM_TextBox8.MoveNext = true;
             this.ckM_TextBox8.Name = "ckM_TextBox8";
             this.ckM_TextBox8.Size = new System.Drawing.Size(85, 19);
-            this.ckM_TextBox8.TabIndex = 17;
+            this.ckM_TextBox8.TabIndex = 18;
             this.ckM_TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ckM_TextBox8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3110,7 +3110,7 @@
             this.ckM_TextBox18.MoveNext = true;
             this.ckM_TextBox18.Name = "ckM_TextBox18";
             this.ckM_TextBox18.Size = new System.Drawing.Size(139, 19);
-            this.ckM_TextBox18.TabIndex = 18;
+            this.ckM_TextBox18.TabIndex = 19;
             this.ckM_TextBox18.Text = "XXX";
             this.ckM_TextBox18.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3272,7 +3272,7 @@
             this.ckM_TextBox2.MoveNext = true;
             this.ckM_TextBox2.Name = "ckM_TextBox2";
             this.ckM_TextBox2.Size = new System.Drawing.Size(88, 19);
-            this.ckM_TextBox2.TabIndex = 19;
+            this.ckM_TextBox2.TabIndex = 20;
             this.ckM_TextBox2.Text = "2019/01/01";
             this.ckM_TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -3363,7 +3363,7 @@
             this.ckM_TextBox5.MoveNext = true;
             this.ckM_TextBox5.Name = "ckM_TextBox5";
             this.ckM_TextBox5.Size = new System.Drawing.Size(85, 19);
-            this.ckM_TextBox5.TabIndex = 20;
+            this.ckM_TextBox5.TabIndex = 21;
             this.ckM_TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ckM_TextBox5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3381,7 +3381,7 @@
             this.btnSubF10.Margin = new System.Windows.Forms.Padding(1);
             this.btnSubF10.Name = "btnSubF10";
             this.btnSubF10.Size = new System.Drawing.Size(115, 28);
-            this.btnSubF10.TabIndex = 23;
+            this.btnSubF10.TabIndex = 24;
             this.btnSubF10.Text = "確定(F10)";
             this.btnSubF10.UseVisualStyleBackColor = false;
             this.btnSubF10.Click += new System.EventHandler(this.BtnSubF10_Click);
@@ -3514,7 +3514,7 @@
             this.groupBox1.Location = new System.Drawing.Point(547, 300);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(805, 42);
-            this.groupBox1.TabIndex = 737;
+            this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "付替";
             // 
@@ -3655,7 +3655,7 @@
             this.SC_ITEM_1.SearchEnable = true;
             this.SC_ITEM_1.Size = new System.Drawing.Size(143, 28);
             this.SC_ITEM_1.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
-            this.SC_ITEM_1.TabIndex = 744;
+            this.SC_ITEM_1.TabIndex = 17;
             this.SC_ITEM_1.Tag = "0";
             this.SC_ITEM_1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_ITEM_1.UseChangeDate = false;
@@ -3726,7 +3726,7 @@
             this.CboSoukoCD.MoveNext = false;
             this.CboSoukoCD.Name = "CboSoukoCD";
             this.CboSoukoCD.Size = new System.Drawing.Size(210, 20);
-            this.CboSoukoCD.TabIndex = 21;
+            this.CboSoukoCD.TabIndex = 22;
             // 
             // SC_ITEM_0
             // 

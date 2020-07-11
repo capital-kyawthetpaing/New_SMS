@@ -51,8 +51,8 @@ namespace ZaikoIdouNyuuryoku
             Gyono,    //行番号
             CheckBox4,
             JANCD,
-            JANCD_F,
             FromRackNO,  //移動元棚番
+            JANCD_F,
             Suryo,//数量
             ToRackNO,   //移動先棚番
             ExpectReturnDate,    //出荷・返品予定日
@@ -954,7 +954,7 @@ namespace ZaikoIdouNyuuryoku
             keyControls = new Control[] { ScOrderNO.TxtCode, ScCopyOrderNO.TxtCode, ScRequestNO.TxtCode, CboStoreCD };
             keyLabels = new Control[] { };
             detailControls = new Control[] { ckM_TextBox1, CboIdoKbn, ckM_CheckBox3, ScStaff.TxtCode, CboFromSoukoCD, CboToSoukoCD
-                         ,ckM_TextBox4, ckM_CheckBox4, SC_ITEM_0.TxtCode,SC_ITEM_1.TxtCode, ScFromRackNo.TxtCode, ckM_TextBox8, ckM_TextBox18,  ckM_TextBox2
+                         ,ckM_TextBox4, ckM_CheckBox4, SC_ITEM_0.TxtCode, ScFromRackNo.TxtCode,SC_ITEM_1.TxtCode, ckM_TextBox8, ckM_TextBox18,  ckM_TextBox2
                          , ckM_TextBox5, CboSoukoCD, TxtRemark1};
             detailLabels = new Control[] { ScStaff };
             searchButtons = new Control[] { ScStaff.BtnSearch };
@@ -1888,6 +1888,14 @@ namespace ZaikoIdouNyuuryoku
                     //入力できる場合(When input is possible)
                     if (detailControls[index].Enabled)
                     {
+                        if (mIdoType == EIdoType.店舗間移動)
+                        {
+                            if (ckM_CheckBox4.Checked)
+                            {
+                                //店舗間移動：移動依頼拒否をONにした場合、棚番の入力チェックは不要
+                                return true;
+                            }
+                        }
                         //入力必須(Entry required)
                         if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                         {
@@ -1916,6 +1924,7 @@ namespace ZaikoIdouNyuuryoku
                         }
                     }
                     break;
+
                 case (int)EIndex.Suryo:
                     //入力できる場合(When input is possible)
                     if (detailControls[index].Enabled)
@@ -2686,6 +2695,9 @@ namespace ZaikoIdouNyuuryoku
                             foreach (Control ctl in detailControls)
                             {
                                 ctl.Enabled = Kbn == 0 ? true : false;
+
+                                if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = Kbn == 0 ? true : false;
                             }
                             for (int index = 0; index < searchButtons.Length; index++)
                                 searchButtons[index].Enabled = Kbn == 0 ? true : false;
@@ -3227,6 +3239,8 @@ namespace ZaikoIdouNyuuryoku
 
                                 default:
                                     detailControls[i].Enabled = true;
+                                    if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                        ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = true;
                                     break;
                             }
                         }
@@ -3253,6 +3267,8 @@ namespace ZaikoIdouNyuuryoku
 
                             default:
                                 detailControls[i].Enabled = true;
+                                if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = true;
                                 break;
                         }
                     }
@@ -3279,6 +3295,8 @@ namespace ZaikoIdouNyuuryoku
 
                             default:
                                 detailControls[i].Enabled = true;
+                                if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = true;
                                 break;
                         }
                     }
@@ -3306,6 +3324,8 @@ namespace ZaikoIdouNyuuryoku
 
                             default:
                                 detailControls[i].Enabled = true;
+                                if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = true;
                                 break;
                         }
                     }
@@ -3334,6 +3354,8 @@ namespace ZaikoIdouNyuuryoku
 
                             default:
                                 detailControls[i].Enabled = true;
+                                if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = true;
                                 break;
                         }
                     }
@@ -3361,6 +3383,8 @@ namespace ZaikoIdouNyuuryoku
 
                             default:
                                 detailControls[i].Enabled = true;
+                                if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = true;
                                 break;
                         }
                     }
@@ -3384,6 +3408,8 @@ namespace ZaikoIdouNyuuryoku
 
                             default:
                                 detailControls[i].Enabled = true;
+                                if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = true;
                                 break;
                         }
                     }
