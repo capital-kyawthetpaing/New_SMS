@@ -52,6 +52,7 @@ namespace KaitouNoukiTouroku
         private KaitouNoukiTouroku_BL knbl;
         private Control[] detailControls;
         DataRow[] DataRows;
+        private string[] oldVal = new string[(int)EIndex.ArrivalPlanKbn3+1];
 
         public FrmDetail(ref DataTable dt)
         {
@@ -98,6 +99,11 @@ namespace KaitouNoukiTouroku
                 }
                 count++;
             }  
+
+            for(int i=0; i<=(int)EIndex.ArrivalPlanKbn3; i++)
+            {
+                oldVal[i] = detailControls[i].Text;
+            }
         }
 
         private void Form_Load(object sender, EventArgs e)
@@ -354,7 +360,7 @@ namespace KaitouNoukiTouroku
                         return false;
                     }
                     //（既に出荷指示されている数より小さくはできません）
-                    if (knbl.Z_Set(detailControls[index].Text) <  knbl.Z_Set( detailControls[index].Tag)) //InstructionSu;
+                    if (knbl.Z_Set(detailControls[index].Text) < knbl.Z_Set(detailControls[index].Tag)) //InstructionSu;
                     {
                         knbl.ShowMessage("E225");
                         detailControls[index].Focus();
@@ -367,21 +373,27 @@ namespace KaitouNoukiTouroku
                 case (int)EIndex.ArrivalPlanDate1:
                 case (int)EIndex.ArrivalPlanDate2:
                 case (int)EIndex.ArrivalPlanDate3:
-                    if (!knbl.ChkArrivePlanDate(detailControls[index].Text, ref fmtYmd))
+                    if (detailControls[index].Text != oldVal[index])
                     {
-                        return false;
+                        if (!knbl.ChkArrivePlanDate(detailControls[index].Text, ref fmtYmd))
+                        {
+                            return false;
+                        }
+                        detailControls[index].Text = fmtYmd;
                     }
-                    detailControls[index].Text = fmtYmd;
                     break;
 
                 case (int)EIndex.ArrivalPlanMonth1:
                 case (int)EIndex.ArrivalPlanMonth2:
                 case (int)EIndex.ArrivalPlanMonth3:
-                    if (!knbl.ChkArrivalPlanMonth(detailControls[index].Text, detailControls[index-1].Text, ref fmtYmd))
+                    if (detailControls[index].Text != oldVal[index])
                     {
-                        return false;
+                        if (!knbl.ChkArrivalPlanMonth(detailControls[index].Text, detailControls[index - 1].Text, ref fmtYmd))
+                        {
+                            return false;
+                        }
+                        detailControls[index].Text = fmtYmd;
                     }
-                    detailControls[index].Text = fmtYmd;
                     break;
 
                 case (int)EIndex.ArrivalPlanKbn1:
