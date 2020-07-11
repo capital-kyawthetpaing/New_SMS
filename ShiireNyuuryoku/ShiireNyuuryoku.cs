@@ -1182,7 +1182,7 @@ namespace ShiireNyuuryoku
             for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
             {
                 mGrid.g_MK_State[w_Col, w_Row] = mGrid.g_MK_State[w_Col, w_Row - 1];
-            }           
+            }
 
             CalcKin();
             CalcZei();
@@ -1322,7 +1322,6 @@ namespace ShiireNyuuryoku
                     InStoreCD = mse.StoreCD;
                     ScStaff.LabelText = mse.StaffName;
                 }
-
                 //他のプログラムから起動された場合、照会モードで起動
                 //コマンドライン引数を配列で取得する
                 string[] cmds = System.Environment.GetCommandLineArgs();
@@ -1333,7 +1332,6 @@ namespace ShiireNyuuryoku
                     keyControls[(int)EIndex.PurchaseNO].Text = shiireNO;
                     CheckKey((int)EIndex.PurchaseNO, true);
                 }
-
             }
             catch (Exception ex)
             {
@@ -2179,11 +2177,11 @@ namespace ShiireNyuuryoku
                     }
                     if (mGrid.g_DArray[row].TaxRateFLG == (int)ETaxRateFLG.TSUJYO)
                     {
-                        mGrid.g_DArray[row].TaxRateName = "税込";
+                        mGrid.g_DArray[row].TaxRateName = selectRow["TaxRateName1"].ToString(); //"税込"
                     }
                     else if (mGrid.g_DArray[row].TaxRateFLG == (int)ETaxRateFLG.KEIGEN)
                     {
-                        mGrid.g_DArray[row].TaxRateName = "税込";
+                        mGrid.g_DArray[row].TaxRateName = selectRow["TaxRateName2"].ToString(); //"税込"
                     }
                     else
                     {
@@ -2280,7 +2278,74 @@ namespace ShiireNyuuryoku
 
             return true;
         }
+        private string GetTanka(int row, string ymd)
+        {
+            //[M_JANOrderPrice]
+            M_JANOrderPrice_Entity mje = new M_JANOrderPrice_Entity
+            {
 
+                //①JAN発注単価マスタ（店舗指定なし）
+                AdminNO = mGrid.g_DArray[row].AdminNO,
+                VendorCD = detailControls[(int)EIndex.VendorCD].Text,
+                StoreCD = CboStoreCD.SelectedValue.ToString(),
+                ChangeDate = ymd
+            };
+
+            JANOrderPrice_BL jbl = new JANOrderPrice_BL();
+            bool ret = jbl.M_JANOrderPrice_Select(mje);
+            if (ret)
+            {
+                return bbl.Z_SetStr(mje.PriceWithoutTax);
+            }
+            else
+            {
+                //②	JAN発注単価マスタ（店舗指定あり）
+                mje.StoreCD = "0000";
+
+                ret = jbl.M_JANOrderPrice_Select(mje);
+                if (ret)
+                {
+                    return bbl.Z_SetStr(mje.PriceWithoutTax);
+                }
+                else
+                {
+                    //[M_ItemOrderPrice]
+                    M_ItemOrderPrice_Entity mje2 = new M_ItemOrderPrice_Entity
+                    {
+
+                        //③	ITEM発注単価マスター（店舗指定あり）	
+                        MakerItem = mGrid.g_DArray[row].MakerItem,
+                        VendorCD = detailControls[(int)EIndex.VendorCD].Text,
+                        ChangeDate = ymd,
+                        StoreCD = CboStoreCD.SelectedValue.ToString()
+                    };
+
+                    ItemOrderPrice_BL ibl = new ItemOrderPrice_BL();
+                    ret = ibl.M_ItemOrderPrice_Select(mje2);
+                    if (ret)
+                    {
+                        return bbl.Z_SetStr(mje2.PriceWithoutTax);
+                    }
+                    else
+                    {
+                        //④	ITEM発注単価マスター（店舗指定なし）
+                        mje2.StoreCD = "0000";
+                        ret = ibl.M_ItemOrderPrice_Select(mje2);
+                        if (ret)
+                        {
+                            return bbl.Z_SetStr(mje2.PriceWithoutTax);
+                        }
+                        else
+                        {
+                            //mGrid.g_DArray[row].OldJanCD = "";
+
+                            //bbl.ShowMessage("E170");
+                            return "0";
+                        }
+                    }
+                }
+            }
+        }
         /// <summary>
         /// Footer部 金額計算処理
         /// </summary>
@@ -3246,16 +3311,19 @@ namespace ShiireNyuuryoku
                 {
                     ScCopyNO.Focus();
                 }
-            }
+            } 
             catch (Exception ex)
             {
                 //エラー時共通処理
                 MessageBox.Show(ex.Message);
                 //EndSec();
             }
-        }
 
+        }
+       
         #endregion
+
+
     }
 }
 
