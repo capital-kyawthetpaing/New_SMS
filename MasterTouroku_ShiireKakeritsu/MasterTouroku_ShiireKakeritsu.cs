@@ -1018,7 +1018,7 @@ namespace MasterTouroku_ShiireKakeritsu
                             string data2 = dtExcel.Rows[0][2].ToString();
                             string data3 = dtExcel.Rows[0][3].ToString();
                             string data4 = dtExcel.Rows[0][4].ToString();
-                            dgv_ShiireKakeritsu.DataSource = dtMain;
+                            dgv_ShiireKakeritsu.DataSource = dtExcel;
                         }
                     }
                     else
