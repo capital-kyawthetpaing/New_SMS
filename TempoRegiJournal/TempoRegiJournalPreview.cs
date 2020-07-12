@@ -18,6 +18,15 @@ namespace TempoRegiJournal
         }
 
         /// <summary>
+        /// 店舗レジで使用するプリンター名
+        /// </summary>
+        public string StorePrinterName
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// コンストラクタ
         /// </summary>
         public TempoRegiJournalPreview()
@@ -34,6 +43,7 @@ namespace TempoRegiJournal
 
             report.SetDataSource(Store);
             report.Refresh();
+            report.PrintOptions.PrinterName = StorePrinterName;
 
             crystalReportViewer.ReportSource = report;
         }
