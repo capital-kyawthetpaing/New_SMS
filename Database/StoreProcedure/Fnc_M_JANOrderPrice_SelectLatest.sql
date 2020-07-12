@@ -38,7 +38,7 @@ RETURN(
                   FROM M_JANOrderPrice     
                   WHERE ChangeDate <= CAST(@ChangeDate AS date)  
                     AND DeleteFlg = 0  
-                  GROUP BY VendorCD, StoreCD, AdminNO, ChangeDate)  AS sub    
+                  GROUP BY VendorCD, StoreCD, AdminNO)  AS sub    
       ON  main.VendorCD = sub.VendorCD    
       AND main.StoreCD = sub.StoreCD 
       AND main.AdminNO = sub.AdminNO 
