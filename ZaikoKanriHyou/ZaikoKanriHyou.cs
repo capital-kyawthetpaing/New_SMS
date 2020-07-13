@@ -33,7 +33,6 @@ namespace ZaikoKanriHyou
         {
             InitializeComponent();
             zkhbl = new ZaikoKanriHyou_BL();
-            vr = new Viewer();
         }
 
         private void ZaikoKanriHyou_Load(object sender, EventArgs e)
@@ -197,9 +196,7 @@ namespace ZaikoKanriHyou
                                 zkh_Report.SetParameterValue("lblDate", txtTargetDate.Text);
                                 zkh_Report.SetParameterValue("lblSouko", cboSouko.SelectedValue.ToString() + "   " + cboSouko.AccessibilityObject.Name);
                                 zkh_Report.SetParameterValue("lblToday", dt.Rows[0]["Today"].ToString() + "  " + dt.Rows[0]["Now"].ToString());
-                                //crv = vr.CrystalReportViewer1;
-                                //crv.ReportSource = zkh_Report;
-                                //vr.ShowDialog();
+                                vr = new Viewer();
                                 try
                                 {
                                     
