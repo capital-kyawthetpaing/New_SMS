@@ -1013,15 +1013,18 @@ namespace MasterTouroku_ShiireKakeritsu
                         if (dtExcel.Rows.Count > 0)
                         {
                             //dgv_ShiireKakeritsu.DataSource = dtExcel;
-                            DataRow row1 = null;
-                            //row1["BrandCD"] = dtExcel.Rows[i]["BrandCD"];
-                            //row1["SportsCD"] = dtExcel.Rows[i]["BrandName"];
-                            //row1["SegmentCD"] = dtExcel.Rows[i]["SportsCD"];
-                            //row1["LastYearTerm"] = dtExcel.Rows[i]["Char1"];
-                            //row1["LastSeason"]=dtExcel.Rows[i]["SegmentCD"];
-                            //row1["ChangeDate"] = dtExcel.Rows[i]["SegmentCD"];
-                            //row1["Rate"] = dtExcel.Rows[i]["SegmentCD"];
-                            dgv_ShiireKakeritsu.DataSource = dtExcel;
+                            //DataRow row1 = null;
+                            //for (int i = 0; i < dtExcel.Rows.Count; i++)
+                            //{
+                                //row1["BrandCD"] = dtExcel.Rows[i]["仕入先CD"];
+                                //row1["SportsCD"] = dtExcel.Rows[i]["SportsCD"];
+                                //row1["SegmentCD"] = dtExcel.Rows[i]["SegmentCD"];
+                                //row1["LastYearTerm"] = dtExcel.Rows[i]["LastYearTerm"];
+                                //row1["LastSeason"] = dtExcel.Rows[i]["LastSeason"];
+                                //row1["ChangeDate"] = dtExcel.Rows[i]["ChangeDate"];
+                                //row1["Rate"] = dtExcel.Rows[i]["Rate"];
+                                dgv_ShiireKakeritsu.DataSource = dtExcel;
+                           // }
                         }
                     }
                     else
