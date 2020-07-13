@@ -34,6 +34,7 @@ namespace DL
             AddParam(command, "@StoreCD", SqlDbType.VarChar, dse.StoreCD);
             AddParam(command, "@CustomerCD", SqlDbType.VarChar, dse.CustomerCD);
             AddParam(command, "@Age", SqlDbType.TinyInt, dse.Age);
+            AddParam(command, "@CustomerChangeDate", SqlDbType.VarChar, dse.ChangeDate);
 
             AddParam(command, "@SalesRate", SqlDbType.Int, dspe.SalesRate);
             AddParam(command, "@AdvanceAmount", SqlDbType.Money, dspe.AdvanceAmount);
