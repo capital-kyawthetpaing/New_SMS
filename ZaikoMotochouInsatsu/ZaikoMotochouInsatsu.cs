@@ -35,6 +35,7 @@ namespace ZaikoMotochouInsatsu
         private void ZaikoMotochouInsatsu_Load(object sender, EventArgs e)
         {
             InProgramID = Application.ProductName;
+            MessageBox.Show("Test1");
             StartProgram();
             SetFunctionLabel(EProMode.PRINT);
             SetRequireField();
