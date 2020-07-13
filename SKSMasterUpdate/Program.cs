@@ -26,9 +26,10 @@ namespace SKSMasterUpdate
             {
                 jsResult = "{";
                 DataTable dtItem = sksMasterUpdate_bl.SKS_Item_Select();
-                DataTable dtMasterItem = dtItem.DefaultView.ToTable(true, "Item_Code");
+                DataTable dtMasterItem = new DataTable();
                 if (dtItem != null && dtItem.Rows.Count > 0)
                 {
+                    dtMasterItem = dtItem.DefaultView.ToTable(true, "Item_Code");
                     jsResult += "\"item\":" + datatableToJason(dtItem) + ",";
                     
                 }

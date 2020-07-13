@@ -1,7 +1,4 @@
-﻿//#define DEBUG_CUSTOMER
-//#define USE_TEST_PRINTER
-
-using Base.Client;
+﻿using Base.Client;
 using BL;
 using CrystalDecisions.CrystalReports.Engine;
 using System;
@@ -14,23 +11,6 @@ namespace TempoRegiPoint
 {
     public partial class TempoRegiPoint : ShopBaseForm
     {
-#if DEBUG_CUSTOMER
-        private const string CUSTOMER_CD = "cusT3";
-        private const string CUSTOMER_NAME = "タノハタ・サン";
-#endif
-
-#if USE_TEST_PRINTER
-        /// <summary>
-        /// デバッグ用プリンタ名
-        /// </summary>
-        private string TEST_PRINTER = "Send To OneNote 2016";
-#else
-        /// <summary>
-        /// 本番用プリンタ名
-        /// </summary>
-        private string PRINTER = "EPSON TM-m30 Receipt";
-#endif
-
         /// <summary>
         /// コマンドライン参照
         /// </summary>
@@ -188,6 +168,13 @@ namespace TempoRegiPoint
                 return false;
             }
 
+            if(IssuePoint >= 1000)
+            {
+                bl.ShowMessage("E118");
+                TxtIssuePoint.Focus();
+                return false;
+            }
+
             var ticketUnit = bl.D_TicketUnitSelect(StoreCD);
             if (ticketUnit.Rows.Count == 0 || (IssuePoint % Convert.ToInt32(ticketUnit.Rows[0]["TicketUnit"])) != 0)
             {
@@ -274,12 +261,7 @@ namespace TempoRegiPoint
             ApplyFont(report, "Print12", couponRow.Size12, couponRow.Bold12);   // 12行目
 
             report.Refresh();
-
-#if USE_TEST_PRINTER
-            report.PrintOptions.PrinterName = TEST_PRINTER;
-#else
-            report.PrintOptions.PrinterName = PRINTER;
-#endif
+            report.PrintOptions.PrinterName = StorePrinterName;
 
             // 発行枚数分印刷
             for (var count = 0; count < IssuedNumber; count++)
@@ -410,12 +392,7 @@ namespace TempoRegiPoint
         {
             var search = new Search.TempoRegiKaiinKensaku();
             var result = search.ShowDialog();
-#if DEBUG_CUSTOMER
-            TxtCustomerCD.Text = CUSTOMER_CD;
-            LblCustomerName.Text = CUSTOMER_NAME;
 
-            GetLastPoint();
-#else
             if (!string.IsNullOrEmpty(search.CustomerCD))
             {
                 TxtCustomerCD.Text = search.CustomerCD;
@@ -423,7 +400,6 @@ namespace TempoRegiPoint
 
                 GetLastPoint();
             }
-#endif
         }
 
         /// <summary>

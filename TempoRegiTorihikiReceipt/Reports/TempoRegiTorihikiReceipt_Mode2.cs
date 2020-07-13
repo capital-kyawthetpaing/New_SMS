@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TempoRegiJournal.Reports {
+namespace TempoRegiTorihikiReceipt.Reports {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace TempoRegiJournal.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class TempoRegiJournal_Journal : ReportClass {
+    public class TempoRegiTorihikiReceipt_Mode2 : ReportClass {
         
-        public TempoRegiJournal_Journal() {
+        public TempoRegiTorihikiReceipt_Mode2() {
         }
         
         public override string ResourceName {
             get {
-                return "TempoRegiJournal_Journal.rpt";
+                return "TempoRegiTorihikiReceipt_Mode2.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace TempoRegiJournal.Reports {
         
         public override string FullResourceName {
             get {
-                return "TempoRegiJournal.Reports.TempoRegiJournal_Journal.rpt";
+                return "TempoRegiTorihikiReceipt.Reports.TempoRegiTorihikiReceipt_Mode2.rpt";
             }
             set {
                 // Do nothing
@@ -74,7 +74,7 @@ namespace TempoRegiJournal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace TempoRegiJournal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection6 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,57 +90,17 @@ namespace TempoRegiJournal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection2 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection3 {
-            get {
-                return this.ReportDefinition.Sections[6];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection4 {
-            get {
-                return this.ReportDefinition.Sections[7];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection5 {
-            get {
-                return this.ReportDefinition.Sections[8];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[9];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[10];
+                return this.ReportDefinition.Sections[5];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedTempoRegiJournal_Journal : Component, ICachedReport {
+    public class CachedTempoRegiTorihikiReceipt_Mode2 : Component, ICachedReport {
         
-        public CachedTempoRegiJournal_Journal() {
+        public CachedTempoRegiTorihikiReceipt_Mode2() {
         }
         
         [Browsable(false)]
@@ -177,7 +137,7 @@ namespace TempoRegiJournal.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            TempoRegiJournal_Journal rpt = new TempoRegiJournal_Journal();
+            TempoRegiTorihikiReceipt_Mode2 rpt = new TempoRegiTorihikiReceipt_Mode2();
             rpt.Site = this.Site;
             return rpt;
         }

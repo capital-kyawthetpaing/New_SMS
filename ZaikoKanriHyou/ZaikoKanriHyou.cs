@@ -23,7 +23,6 @@ namespace ZaikoKanriHyou
         ZaikoKanriHyou_BL zkhbl;
         DataTable dt;
         CrystalDecisions.Windows.Forms.CrystalReportViewer crv;
-        Viewer vr;
         D_Purchase_Details_Entity dpde;
         D_MonthlyStock_Entity dmse;
         M_StoreClose_Entity msce;
@@ -33,7 +32,6 @@ namespace ZaikoKanriHyou
         {
             InitializeComponent();
             zkhbl = new ZaikoKanriHyou_BL();
-            vr = new Viewer();
         }
 
         private void ZaikoKanriHyou_Load(object sender, EventArgs e)
@@ -197,9 +195,6 @@ namespace ZaikoKanriHyou
                                 zkh_Report.SetParameterValue("lblDate", txtTargetDate.Text);
                                 zkh_Report.SetParameterValue("lblSouko", cboSouko.SelectedValue.ToString() + "   " + cboSouko.AccessibilityObject.Name);
                                 zkh_Report.SetParameterValue("lblToday", dt.Rows[0]["Today"].ToString() + "  " + dt.Rows[0]["Now"].ToString());
-                                //crv = vr.CrystalReportViewer1;
-                                //crv.ReportSource = zkh_Report;
-                                //vr.ShowDialog();
                                 try
                                 {
                                     
@@ -211,7 +206,7 @@ namespace ZaikoKanriHyou
                                 //out log before print
                                 if (DResult == DialogResult.Yes)
                                 {
-                                    //印刷処理プレビュー
+                                    var vr = new Viewer();
                                     vr.CrystalReportViewer1.ShowPrintButton = true;
                                     vr.CrystalReportViewer1.ReportSource = zkh_Report;
                                     vr.ShowDialog();

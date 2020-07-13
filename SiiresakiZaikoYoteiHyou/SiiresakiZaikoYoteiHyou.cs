@@ -23,7 +23,6 @@ namespace SiiresakiZaikoYoteiHyou
         SiiresakiZaikoYoteiHyou_BL szybl;
         D_MonthlyPurchase_Entity dmpe;
         DataTable dt;
-        Viewer vr;
         CrystalDecisions.Windows.Forms.CrystalReportViewer crv;
         M_StoreClose_Entity msce;
 
@@ -33,7 +32,6 @@ namespace SiiresakiZaikoYoteiHyou
             szybl = new SiiresakiZaikoYoteiHyou_BL();
             dmpe = new D_MonthlyPurchase_Entity();
             dt = new DataTable();
-            vr = new Viewer();
         }
 
         private void SiiresakiZaikoYoteiHyou_Load(object sender, EventArgs e)
@@ -260,6 +258,7 @@ namespace SiiresakiZaikoYoteiHyou
                                 }
                                 if (DResult == DialogResult.Yes)
                                 {
+                                    var vr = new Viewer();
                                     vr.CrystalReportViewer1.ShowPrintButton = true;
                                     vr.CrystalReportViewer1.ReportSource = szy_Report;
                                     vr.ShowDialog();
