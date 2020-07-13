@@ -1013,6 +1013,7 @@ namespace MasterTouroku_ShiireKakeritsu
                         if (dtExcel.Rows.Count > 0)
                         {
                             dgv_ShiireKakeritsu.DataSource = dtExcel;
+
                         }
                     }
                     else
