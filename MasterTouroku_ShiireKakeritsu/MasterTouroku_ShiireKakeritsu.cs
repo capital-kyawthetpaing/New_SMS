@@ -29,6 +29,7 @@ namespace MasterTouroku_ShiireKakeritsu
         M_Brand_Entity mbe;
         DataView dvMain;
         L_Log_Entity log_data;
+        DataTable dtAdd;
         int type = 0;
         string Xml;
         public bool IsNumber { get; set; } = true;
@@ -846,15 +847,13 @@ namespace MasterTouroku_ShiireKakeritsu
             {
                 if (mskbl.ShowMessage(OperationMode == EOperationMode.DELETE ? "Q102" : "Q101") == DialogResult.Yes)
                 {
-                    if(dtExcel.Rows.Count>0)
-                    {
                         UpdateInsert();
-                    }
                 }
             }
         }
         private void UpdateInsert()
         {
+            dtMain = dtAdd;
             Xml = mskbl.DataTableToXml(dtMain);
             log_data = Get_Log_Data();
             moe.VendorCD = scSupplierCD.TxtCode.Text;
@@ -1034,9 +1033,9 @@ namespace MasterTouroku_ShiireKakeritsu
                             //row1["ChangeDate"] = dtExcel.Rows[i]["ChangeDate"];
                             //row1["Rate"] = dtExcel.Rows[i]["Rate"];
                             //dgv_ShiireKakeritsu.Rows("colBrandCD1") = dtExcel.Columns("BrandCD");
-                            DataTable dt = new DataTable();
-                            dt = ChangeDataColumnName(dtExcel);
-                            dgv_ShiireKakeritsu.DataSource = dt;
+                            dtAdd = new DataTable();
+                            dtAdd = ChangeDataColumnName(dtExcel);
+                            dgv_ShiireKakeritsu.DataSource = dtAdd;
                         }
                     }
                     else
