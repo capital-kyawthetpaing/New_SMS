@@ -1009,15 +1009,9 @@ namespace MasterTouroku_ShiireKakeritsu
                         //        }
                         //    }
                         //}
-                        Xml = mskbl.DataTableToXml(dtExcel);
-                        //dtExcel = mskbl.M_OrderRate_Update(moe, Xml, log_data);
+                        //Xml = mskbl.DataTableToXml(dtExcel);
                         if (dtExcel.Rows.Count > 0)
                         {
-                            string data = dtExcel.Rows[0][0].ToString();
-                            string data1 = dtExcel.Rows[0][1].ToString();
-                            string data2 = dtExcel.Rows[0][2].ToString();
-                            string data3 = dtExcel.Rows[0][3].ToString();
-                            string data4 = dtExcel.Rows[0][4].ToString();
                             dgv_ShiireKakeritsu.DataSource = dtExcel;
                         }
                     }
