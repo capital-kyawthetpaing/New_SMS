@@ -348,6 +348,7 @@
     <Content Include="StoreProcedure\M_ItemPrice_SelectData.sql" />
     <Content Include="StoreProcedure\MastertorokuShiiretanka_Select.sql" />
     <Content Include="StoreProcedure\M_ITEM_Select.sql" />
+    <Content Include="StoreProcedure\M_ITEM_SelectBy_ItemCD.sql" />
     <Content Include="StoreProcedure\M_Item_SelectForSKSMasterUpdate.sql" />
     <Content Include="StoreProcedure\M_ITEM_SelectTop1.sql" />
     <Content Include="StoreProcedure\M_ITem_SKSUpdateFlg.sql" />
