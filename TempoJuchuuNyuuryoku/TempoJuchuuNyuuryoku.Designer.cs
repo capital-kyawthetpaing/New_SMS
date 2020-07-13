@@ -341,6 +341,10 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.PanelSearch.TabIndex = 7;
             // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -436,6 +440,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_KAIDT_1.IntegerPart = 0;
             this.IMT_KAIDT_1.IsCorrectDate = true;
             this.IMT_KAIDT_1.isEnterKeyDown = false;
+            this.IMT_KAIDT_1.IsFirstTime = true;
             this.IMT_KAIDT_1.isMaxLengthErr = false;
             this.IMT_KAIDT_1.IsNumber = true;
             this.IMT_KAIDT_1.IsShop = false;
@@ -465,6 +470,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Text_4.IntegerPart = 0;
             this.ckM_Text_4.IsCorrectDate = true;
             this.ckM_Text_4.isEnterKeyDown = false;
+            this.ckM_Text_4.IsFirstTime = true;
             this.ckM_Text_4.isMaxLengthErr = false;
             this.ckM_Text_4.IsNumber = true;
             this.ckM_Text_4.IsShop = false;
@@ -493,6 +499,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_KAIDT_0.IntegerPart = 0;
             this.IMT_KAIDT_0.IsCorrectDate = true;
             this.IMT_KAIDT_0.isEnterKeyDown = false;
+            this.IMT_KAIDT_0.IsFirstTime = true;
             this.IMT_KAIDT_0.isMaxLengthErr = false;
             this.IMT_KAIDT_0.IsNumber = true;
             this.IMT_KAIDT_0.IsShop = false;
@@ -522,6 +529,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_REMAK_2.IntegerPart = 0;
             this.IMT_REMAK_2.IsCorrectDate = true;
             this.IMT_REMAK_2.isEnterKeyDown = false;
+            this.IMT_REMAK_2.IsFirstTime = true;
             this.IMT_REMAK_2.isMaxLengthErr = false;
             this.IMT_REMAK_2.IsNumber = true;
             this.IMT_REMAK_2.IsShop = false;
@@ -551,6 +559,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_REMAK_1.IntegerPart = 0;
             this.IMT_REMAK_1.IsCorrectDate = true;
             this.IMT_REMAK_1.isEnterKeyDown = false;
+            this.IMT_REMAK_1.IsFirstTime = true;
             this.IMT_REMAK_1.isMaxLengthErr = false;
             this.IMT_REMAK_1.IsNumber = true;
             this.IMT_REMAK_1.IsShop = false;
@@ -580,6 +589,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_REMAK_0.IntegerPart = 0;
             this.IMT_REMAK_0.IsCorrectDate = true;
             this.IMT_REMAK_0.isEnterKeyDown = false;
+            this.IMT_REMAK_0.IsFirstTime = true;
             this.IMT_REMAK_0.isMaxLengthErr = false;
             this.IMT_REMAK_0.IsNumber = true;
             this.IMT_REMAK_0.IsShop = false;
@@ -608,6 +618,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ITMCD_0.IntegerPart = 0;
             this.IMT_ITMCD_0.IsCorrectDate = true;
             this.IMT_ITMCD_0.isEnterKeyDown = false;
+            this.IMT_ITMCD_0.IsFirstTime = true;
             this.IMT_ITMCD_0.isMaxLengthErr = false;
             this.IMT_ITMCD_0.IsNumber = true;
             this.IMT_ITMCD_0.IsShop = false;
@@ -637,6 +648,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ITMCD_1.IntegerPart = 0;
             this.IMT_ITMCD_1.IsCorrectDate = true;
             this.IMT_ITMCD_1.isEnterKeyDown = false;
+            this.IMT_ITMCD_1.IsFirstTime = true;
             this.IMT_ITMCD_1.isMaxLengthErr = false;
             this.IMT_ITMCD_1.IsNumber = true;
             this.IMT_ITMCD_1.IsShop = false;
@@ -666,6 +678,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ITMCD_2.IntegerPart = 0;
             this.IMT_ITMCD_2.IsCorrectDate = true;
             this.IMT_ITMCD_2.isEnterKeyDown = false;
+            this.IMT_ITMCD_2.IsFirstTime = true;
             this.IMT_ITMCD_2.isMaxLengthErr = false;
             this.IMT_ITMCD_2.IsNumber = true;
             this.IMT_ITMCD_2.IsShop = false;
@@ -832,6 +845,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_ORTAN_2.IntegerPart = 0;
             this.IMN_ORTAN_2.IsCorrectDate = true;
             this.IMN_ORTAN_2.isEnterKeyDown = false;
+            this.IMN_ORTAN_2.IsFirstTime = true;
             this.IMN_ORTAN_2.isMaxLengthErr = false;
             this.IMN_ORTAN_2.IsNumber = true;
             this.IMN_ORTAN_2.IsShop = false;
@@ -862,6 +876,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_ORTAN_1.IntegerPart = 0;
             this.IMN_ORTAN_1.IsCorrectDate = true;
             this.IMN_ORTAN_1.isEnterKeyDown = false;
+            this.IMN_ORTAN_1.IsFirstTime = true;
             this.IMN_ORTAN_1.isMaxLengthErr = false;
             this.IMN_ORTAN_1.IsNumber = true;
             this.IMN_ORTAN_1.IsShop = false;
@@ -892,6 +907,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_ORTAN_0.IntegerPart = 0;
             this.IMN_ORTAN_0.IsCorrectDate = true;
             this.IMN_ORTAN_0.isEnterKeyDown = false;
+            this.IMN_ORTAN_0.IsFirstTime = true;
             this.IMN_ORTAN_0.isMaxLengthErr = false;
             this.IMN_ORTAN_0.IsNumber = true;
             this.IMN_ORTAN_0.IsShop = false;
@@ -922,6 +938,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SPDAT_2.IntegerPart = 0;
             this.IMT_SPDAT_2.IsCorrectDate = true;
             this.IMT_SPDAT_2.isEnterKeyDown = false;
+            this.IMT_SPDAT_2.IsFirstTime = true;
             this.IMT_SPDAT_2.isMaxLengthErr = false;
             this.IMT_SPDAT_2.IsNumber = true;
             this.IMT_SPDAT_2.IsShop = false;
@@ -952,6 +969,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SPDAT_1.IntegerPart = 0;
             this.IMT_SPDAT_1.IsCorrectDate = true;
             this.IMT_SPDAT_1.isEnterKeyDown = false;
+            this.IMT_SPDAT_1.IsFirstTime = true;
             this.IMT_SPDAT_1.isMaxLengthErr = false;
             this.IMT_SPDAT_1.IsNumber = true;
             this.IMT_SPDAT_1.IsShop = false;
@@ -982,6 +1000,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SPDAT_0.IntegerPart = 0;
             this.IMT_SPDAT_0.IsCorrectDate = true;
             this.IMT_SPDAT_0.isEnterKeyDown = false;
+            this.IMT_SPDAT_0.IsFirstTime = true;
             this.IMT_SPDAT_0.isMaxLengthErr = false;
             this.IMT_SPDAT_0.IsNumber = true;
             this.IMT_SPDAT_0.IsShop = false;
@@ -1201,6 +1220,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_HIKAT_2.IntegerPart = 0;
             this.IMT_HIKAT_2.IsCorrectDate = true;
             this.IMT_HIKAT_2.isEnterKeyDown = false;
+            this.IMT_HIKAT_2.IsFirstTime = true;
             this.IMT_HIKAT_2.isMaxLengthErr = false;
             this.IMT_HIKAT_2.IsNumber = true;
             this.IMT_HIKAT_2.IsShop = false;
@@ -1231,6 +1251,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_HIKAT_1.IntegerPart = 0;
             this.IMT_HIKAT_1.IsCorrectDate = true;
             this.IMT_HIKAT_1.isEnterKeyDown = false;
+            this.IMT_HIKAT_1.IsFirstTime = true;
             this.IMT_HIKAT_1.isMaxLengthErr = false;
             this.IMT_HIKAT_1.IsNumber = true;
             this.IMT_HIKAT_1.IsShop = false;
@@ -1261,6 +1282,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_HIKAT_0.IntegerPart = 0;
             this.IMT_HIKAT_0.IsCorrectDate = true;
             this.IMT_HIKAT_0.isEnterKeyDown = false;
+            this.IMT_HIKAT_0.IsFirstTime = true;
             this.IMT_HIKAT_0.isMaxLengthErr = false;
             this.IMT_HIKAT_0.IsNumber = true;
             this.IMT_HIKAT_0.IsShop = false;
@@ -1290,6 +1312,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_JUONO_0.IntegerPart = 0;
             this.IMT_JUONO_0.IsCorrectDate = true;
             this.IMT_JUONO_0.isEnterKeyDown = false;
+            this.IMT_JUONO_0.IsFirstTime = true;
             this.IMT_JUONO_0.isMaxLengthErr = false;
             this.IMT_JUONO_0.IsNumber = true;
             this.IMT_JUONO_0.IsShop = false;
@@ -1319,6 +1342,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_JUONO_1.IntegerPart = 0;
             this.IMT_JUONO_1.IsCorrectDate = true;
             this.IMT_JUONO_1.isEnterKeyDown = false;
+            this.IMT_JUONO_1.IsFirstTime = true;
             this.IMT_JUONO_1.isMaxLengthErr = false;
             this.IMT_JUONO_1.IsNumber = true;
             this.IMT_JUONO_1.IsShop = false;
@@ -1348,6 +1372,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_JUONO_2.IntegerPart = 0;
             this.IMT_JUONO_2.IsCorrectDate = true;
             this.IMT_JUONO_2.isEnterKeyDown = false;
+            this.IMT_JUONO_2.IsFirstTime = true;
             this.IMT_JUONO_2.isMaxLengthErr = false;
             this.IMT_JUONO_2.IsNumber = true;
             this.IMT_JUONO_2.IsShop = false;
@@ -1432,6 +1457,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER2_2.IntegerPart = 0;
             this.IMN_GENER2_2.IsCorrectDate = true;
             this.IMN_GENER2_2.isEnterKeyDown = false;
+            this.IMN_GENER2_2.IsFirstTime = true;
             this.IMN_GENER2_2.isMaxLengthErr = false;
             this.IMN_GENER2_2.IsNumber = true;
             this.IMN_GENER2_2.IsShop = false;
@@ -1462,6 +1488,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_TEIKA_2.IntegerPart = 0;
             this.IMN_TEIKA_2.IsCorrectDate = true;
             this.IMN_TEIKA_2.isEnterKeyDown = false;
+            this.IMN_TEIKA_2.IsFirstTime = true;
             this.IMN_TEIKA_2.isMaxLengthErr = false;
             this.IMN_TEIKA_2.IsNumber = true;
             this.IMN_TEIKA_2.IsShop = false;
@@ -1492,6 +1519,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER_2.IntegerPart = 0;
             this.IMN_GENER_2.IsCorrectDate = true;
             this.IMN_GENER_2.isEnterKeyDown = false;
+            this.IMN_GENER_2.IsFirstTime = true;
             this.IMN_GENER_2.isMaxLengthErr = false;
             this.IMN_GENER_2.IsNumber = true;
             this.IMN_GENER_2.IsShop = false;
@@ -1522,6 +1550,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_MEMBR_2.IntegerPart = 0;
             this.IMN_MEMBR_2.IsCorrectDate = true;
             this.IMN_MEMBR_2.isEnterKeyDown = false;
+            this.IMN_MEMBR_2.IsFirstTime = true;
             this.IMN_MEMBR_2.isMaxLengthErr = false;
             this.IMN_MEMBR_2.IsNumber = true;
             this.IMN_MEMBR_2.IsShop = false;
@@ -1551,6 +1580,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER2_1.IntegerPart = 0;
             this.IMN_GENER2_1.IsCorrectDate = true;
             this.IMN_GENER2_1.isEnterKeyDown = false;
+            this.IMN_GENER2_1.IsFirstTime = true;
             this.IMN_GENER2_1.isMaxLengthErr = false;
             this.IMN_GENER2_1.IsNumber = true;
             this.IMN_GENER2_1.IsShop = false;
@@ -1581,6 +1611,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_TEIKA_1.IntegerPart = 0;
             this.IMN_TEIKA_1.IsCorrectDate = true;
             this.IMN_TEIKA_1.isEnterKeyDown = false;
+            this.IMN_TEIKA_1.IsFirstTime = true;
             this.IMN_TEIKA_1.isMaxLengthErr = false;
             this.IMN_TEIKA_1.IsNumber = true;
             this.IMN_TEIKA_1.IsShop = false;
@@ -1611,6 +1642,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER_1.IntegerPart = 0;
             this.IMN_GENER_1.IsCorrectDate = true;
             this.IMN_GENER_1.isEnterKeyDown = false;
+            this.IMN_GENER_1.IsFirstTime = true;
             this.IMN_GENER_1.isMaxLengthErr = false;
             this.IMN_GENER_1.IsNumber = true;
             this.IMN_GENER_1.IsShop = false;
@@ -1641,6 +1673,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_MEMBR_1.IntegerPart = 0;
             this.IMN_MEMBR_1.IsCorrectDate = true;
             this.IMN_MEMBR_1.isEnterKeyDown = false;
+            this.IMN_MEMBR_1.IsFirstTime = true;
             this.IMN_MEMBR_1.isMaxLengthErr = false;
             this.IMN_MEMBR_1.IsNumber = true;
             this.IMN_MEMBR_1.IsShop = false;
@@ -1670,6 +1703,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER2_0.IntegerPart = 0;
             this.IMN_GENER2_0.IsCorrectDate = true;
             this.IMN_GENER2_0.isEnterKeyDown = false;
+            this.IMN_GENER2_0.IsFirstTime = true;
             this.IMN_GENER2_0.isMaxLengthErr = false;
             this.IMN_GENER2_0.IsNumber = true;
             this.IMN_GENER2_0.IsShop = false;
@@ -1700,6 +1734,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER_0.IntegerPart = 0;
             this.IMN_GENER_0.IsCorrectDate = true;
             this.IMN_GENER_0.isEnterKeyDown = false;
+            this.IMN_GENER_0.IsFirstTime = true;
             this.IMN_GENER_0.isMaxLengthErr = false;
             this.IMN_GENER_0.IsNumber = true;
             this.IMN_GENER_0.IsShop = false;
@@ -1730,6 +1765,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_MEMBR_0.IntegerPart = 0;
             this.IMN_MEMBR_0.IsCorrectDate = true;
             this.IMN_MEMBR_0.isEnterKeyDown = false;
+            this.IMN_MEMBR_0.IsFirstTime = true;
             this.IMN_MEMBR_0.isMaxLengthErr = false;
             this.IMN_MEMBR_0.IsNumber = true;
             this.IMN_MEMBR_0.IsShop = false;
@@ -1759,6 +1795,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_TEIKA_0.IntegerPart = 0;
             this.IMN_TEIKA_0.IsCorrectDate = true;
             this.IMN_TEIKA_0.isEnterKeyDown = false;
+            this.IMN_TEIKA_0.IsFirstTime = true;
             this.IMN_TEIKA_0.isMaxLengthErr = false;
             this.IMN_TEIKA_0.IsNumber = true;
             this.IMN_TEIKA_0.IsShop = false;
@@ -1789,6 +1826,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_NYUKA_2.IntegerPart = 0;
             this.IMT_NYUKA_2.IsCorrectDate = true;
             this.IMT_NYUKA_2.isEnterKeyDown = false;
+            this.IMT_NYUKA_2.IsFirstTime = true;
             this.IMT_NYUKA_2.isMaxLengthErr = false;
             this.IMT_NYUKA_2.IsNumber = true;
             this.IMT_NYUKA_2.IsShop = false;
@@ -1818,6 +1856,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SYUKA_2.IntegerPart = 0;
             this.IMT_SYUKA_2.IsCorrectDate = true;
             this.IMT_SYUKA_2.isEnterKeyDown = false;
+            this.IMT_SYUKA_2.IsFirstTime = true;
             this.IMT_SYUKA_2.isMaxLengthErr = false;
             this.IMT_SYUKA_2.IsNumber = true;
             this.IMT_SYUKA_2.IsShop = false;
@@ -1847,6 +1886,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_NYUKA_1.IntegerPart = 0;
             this.IMT_NYUKA_1.IsCorrectDate = true;
             this.IMT_NYUKA_1.isEnterKeyDown = false;
+            this.IMT_NYUKA_1.IsFirstTime = true;
             this.IMT_NYUKA_1.isMaxLengthErr = false;
             this.IMT_NYUKA_1.IsNumber = true;
             this.IMT_NYUKA_1.IsShop = false;
@@ -1876,6 +1916,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SYUKA_1.IntegerPart = 0;
             this.IMT_SYUKA_1.IsCorrectDate = true;
             this.IMT_SYUKA_1.isEnterKeyDown = false;
+            this.IMT_SYUKA_1.IsFirstTime = true;
             this.IMT_SYUKA_1.isMaxLengthErr = false;
             this.IMT_SYUKA_1.IsNumber = true;
             this.IMT_SYUKA_1.IsShop = false;
@@ -1905,6 +1946,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_NYUKA_0.IntegerPart = 0;
             this.IMT_NYUKA_0.IsCorrectDate = true;
             this.IMT_NYUKA_0.isEnterKeyDown = false;
+            this.IMT_NYUKA_0.IsFirstTime = true;
             this.IMT_NYUKA_0.isMaxLengthErr = false;
             this.IMT_NYUKA_0.IsNumber = true;
             this.IMT_NYUKA_0.IsShop = false;
@@ -1934,6 +1976,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SYUKA_0.IntegerPart = 0;
             this.IMT_SYUKA_0.IsCorrectDate = true;
             this.IMT_SYUKA_0.isEnterKeyDown = false;
+            this.IMT_SYUKA_0.IsFirstTime = true;
             this.IMT_SYUKA_0.isMaxLengthErr = false;
             this.IMT_SYUKA_0.IsNumber = true;
             this.IMT_SYUKA_0.IsShop = false;
@@ -1963,6 +2006,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_COLDT_2.IntegerPart = 0;
             this.IMT_COLDT_2.IsCorrectDate = true;
             this.IMT_COLDT_2.isEnterKeyDown = false;
+            this.IMT_COLDT_2.IsFirstTime = true;
             this.IMT_COLDT_2.isMaxLengthErr = false;
             this.IMT_COLDT_2.IsNumber = true;
             this.IMT_COLDT_2.IsShop = false;
@@ -1993,6 +2037,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_PAYDT_2.IntegerPart = 0;
             this.IMT_PAYDT_2.IsCorrectDate = true;
             this.IMT_PAYDT_2.isEnterKeyDown = false;
+            this.IMT_PAYDT_2.IsFirstTime = true;
             this.IMT_PAYDT_2.isMaxLengthErr = false;
             this.IMT_PAYDT_2.IsNumber = true;
             this.IMT_PAYDT_2.IsShop = false;
@@ -2023,6 +2068,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ARIDT_2.IntegerPart = 0;
             this.IMT_ARIDT_2.IsCorrectDate = true;
             this.IMT_ARIDT_2.isEnterKeyDown = false;
+            this.IMT_ARIDT_2.IsFirstTime = true;
             this.IMT_ARIDT_2.isMaxLengthErr = false;
             this.IMT_ARIDT_2.IsNumber = true;
             this.IMT_ARIDT_2.IsShop = false;
@@ -2053,6 +2099,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_COLDT_1.IntegerPart = 0;
             this.IMT_COLDT_1.IsCorrectDate = true;
             this.IMT_COLDT_1.isEnterKeyDown = false;
+            this.IMT_COLDT_1.IsFirstTime = true;
             this.IMT_COLDT_1.isMaxLengthErr = false;
             this.IMT_COLDT_1.IsNumber = true;
             this.IMT_COLDT_1.IsShop = false;
@@ -2083,6 +2130,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_PAYDT_1.IntegerPart = 0;
             this.IMT_PAYDT_1.IsCorrectDate = true;
             this.IMT_PAYDT_1.isEnterKeyDown = false;
+            this.IMT_PAYDT_1.IsFirstTime = true;
             this.IMT_PAYDT_1.isMaxLengthErr = false;
             this.IMT_PAYDT_1.IsNumber = true;
             this.IMT_PAYDT_1.IsShop = false;
@@ -2113,6 +2161,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ARIDT_1.IntegerPart = 0;
             this.IMT_ARIDT_1.IsCorrectDate = true;
             this.IMT_ARIDT_1.isEnterKeyDown = false;
+            this.IMT_ARIDT_1.IsFirstTime = true;
             this.IMT_ARIDT_1.isMaxLengthErr = false;
             this.IMT_ARIDT_1.IsNumber = true;
             this.IMT_ARIDT_1.IsShop = false;
@@ -2143,6 +2192,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_COLDT_0.IntegerPart = 0;
             this.IMT_COLDT_0.IsCorrectDate = true;
             this.IMT_COLDT_0.isEnterKeyDown = false;
+            this.IMT_COLDT_0.IsFirstTime = true;
             this.IMT_COLDT_0.isMaxLengthErr = false;
             this.IMT_COLDT_0.IsNumber = true;
             this.IMT_COLDT_0.IsShop = false;
@@ -2173,6 +2223,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_PAYDT_0.IntegerPart = 0;
             this.IMT_PAYDT_0.IsCorrectDate = true;
             this.IMT_PAYDT_0.isEnterKeyDown = false;
+            this.IMT_PAYDT_0.IsFirstTime = true;
             this.IMT_PAYDT_0.isMaxLengthErr = false;
             this.IMT_PAYDT_0.IsNumber = true;
             this.IMT_PAYDT_0.IsShop = false;
@@ -2203,6 +2254,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ARIDT_0.IntegerPart = 0;
             this.IMT_ARIDT_0.IsCorrectDate = true;
             this.IMT_ARIDT_0.isEnterKeyDown = false;
+            this.IMT_ARIDT_0.IsFirstTime = true;
             this.IMT_ARIDT_0.isMaxLengthErr = false;
             this.IMT_ARIDT_0.IsNumber = true;
             this.IMT_ARIDT_0.IsShop = false;
@@ -2234,6 +2286,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox3.IntegerPart = 0;
             this.ckM_TextBox3.IsCorrectDate = true;
             this.ckM_TextBox3.isEnterKeyDown = false;
+            this.ckM_TextBox3.IsFirstTime = true;
             this.ckM_TextBox3.isMaxLengthErr = false;
             this.ckM_TextBox3.IsNumber = true;
             this.ckM_TextBox3.IsShop = false;
@@ -2266,6 +2319,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox4.IntegerPart = 0;
             this.ckM_TextBox4.IsCorrectDate = true;
             this.ckM_TextBox4.isEnterKeyDown = false;
+            this.ckM_TextBox4.IsFirstTime = true;
             this.ckM_TextBox4.isMaxLengthErr = false;
             this.ckM_TextBox4.IsNumber = true;
             this.ckM_TextBox4.IsShop = false;
@@ -2298,6 +2352,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox12.IntegerPart = 0;
             this.ckM_TextBox12.IsCorrectDate = true;
             this.ckM_TextBox12.isEnterKeyDown = false;
+            this.ckM_TextBox12.IsFirstTime = true;
             this.ckM_TextBox12.isMaxLengthErr = false;
             this.ckM_TextBox12.IsNumber = true;
             this.ckM_TextBox12.IsShop = false;
@@ -2329,6 +2384,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ITMNM_2.IntegerPart = 0;
             this.IMT_ITMNM_2.IsCorrectDate = true;
             this.IMT_ITMNM_2.isEnterKeyDown = false;
+            this.IMT_ITMNM_2.IsFirstTime = true;
             this.IMT_ITMNM_2.isMaxLengthErr = false;
             this.IMT_ITMNM_2.IsNumber = true;
             this.IMT_ITMNM_2.IsShop = false;
@@ -2358,6 +2414,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ITMNM_1.IntegerPart = 0;
             this.IMT_ITMNM_1.IsCorrectDate = true;
             this.IMT_ITMNM_1.isEnterKeyDown = false;
+            this.IMT_ITMNM_1.IsFirstTime = true;
             this.IMT_ITMNM_1.isMaxLengthErr = false;
             this.IMT_ITMNM_1.IsNumber = true;
             this.IMT_ITMNM_1.IsShop = false;
@@ -2387,6 +2444,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ITMNM_0.IntegerPart = 0;
             this.IMT_ITMNM_0.IsCorrectDate = true;
             this.IMT_ITMNM_0.isEnterKeyDown = false;
+            this.IMT_ITMNM_0.IsFirstTime = true;
             this.IMT_ITMNM_0.isMaxLengthErr = false;
             this.IMT_ITMNM_0.IsNumber = true;
             this.IMT_ITMNM_0.IsShop = false;
@@ -2495,6 +2553,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox15.IntegerPart = 0;
             this.ckM_TextBox15.IsCorrectDate = true;
             this.ckM_TextBox15.isEnterKeyDown = false;
+            this.ckM_TextBox15.IsFirstTime = true;
             this.ckM_TextBox15.isMaxLengthErr = false;
             this.ckM_TextBox15.IsNumber = true;
             this.ckM_TextBox15.IsShop = false;
@@ -2527,6 +2586,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox16.IntegerPart = 0;
             this.ckM_TextBox16.IsCorrectDate = true;
             this.ckM_TextBox16.isEnterKeyDown = false;
+            this.ckM_TextBox16.IsFirstTime = true;
             this.ckM_TextBox16.isMaxLengthErr = false;
             this.ckM_TextBox16.IsNumber = true;
             this.ckM_TextBox16.IsShop = false;
@@ -2559,6 +2619,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox17.IntegerPart = 0;
             this.ckM_TextBox17.IsCorrectDate = true;
             this.ckM_TextBox17.isEnterKeyDown = false;
+            this.ckM_TextBox17.IsFirstTime = true;
             this.ckM_TextBox17.isMaxLengthErr = false;
             this.ckM_TextBox17.IsNumber = true;
             this.ckM_TextBox17.IsShop = false;
@@ -2591,6 +2652,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ZEIRT_2.IntegerPart = 0;
             this.IMT_ZEIRT_2.IsCorrectDate = true;
             this.IMT_ZEIRT_2.isEnterKeyDown = false;
+            this.IMT_ZEIRT_2.IsFirstTime = true;
             this.IMT_ZEIRT_2.isMaxLengthErr = false;
             this.IMT_ZEIRT_2.IsNumber = true;
             this.IMT_ZEIRT_2.IsShop = false;
@@ -2623,6 +2685,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ZEIRT_1.IntegerPart = 0;
             this.IMT_ZEIRT_1.IsCorrectDate = true;
             this.IMT_ZEIRT_1.isEnterKeyDown = false;
+            this.IMT_ZEIRT_1.IsFirstTime = true;
             this.IMT_ZEIRT_1.isMaxLengthErr = false;
             this.IMT_ZEIRT_1.IsNumber = true;
             this.IMT_ZEIRT_1.IsShop = false;
@@ -2655,6 +2718,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ZKDIS_2.IntegerPart = 0;
             this.IMT_ZKDIS_2.IsCorrectDate = true;
             this.IMT_ZKDIS_2.isEnterKeyDown = false;
+            this.IMT_ZKDIS_2.IsFirstTime = true;
             this.IMT_ZKDIS_2.isMaxLengthErr = false;
             this.IMT_ZKDIS_2.IsNumber = true;
             this.IMT_ZKDIS_2.IsShop = false;
@@ -2687,6 +2751,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ZKDIS_1.IntegerPart = 0;
             this.IMT_ZKDIS_1.IsCorrectDate = true;
             this.IMT_ZKDIS_1.isEnterKeyDown = false;
+            this.IMT_ZKDIS_1.IsFirstTime = true;
             this.IMT_ZKDIS_1.isMaxLengthErr = false;
             this.IMT_ZKDIS_1.IsNumber = true;
             this.IMT_ZKDIS_1.IsShop = false;
@@ -2719,6 +2784,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ZKDIS_0.IntegerPart = 0;
             this.IMT_ZKDIS_0.IsCorrectDate = true;
             this.IMT_ZKDIS_0.isEnterKeyDown = false;
+            this.IMT_ZKDIS_0.IsFirstTime = true;
             this.IMT_ZKDIS_0.isMaxLengthErr = false;
             this.IMT_ZKDIS_0.IsNumber = true;
             this.IMT_ZKDIS_0.IsShop = false;
@@ -2751,6 +2817,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ZEIRT_0.IntegerPart = 0;
             this.IMT_ZEIRT_0.IsCorrectDate = true;
             this.IMT_ZEIRT_0.isEnterKeyDown = false;
+            this.IMT_ZEIRT_0.IsFirstTime = true;
             this.IMT_ZEIRT_0.isMaxLengthErr = false;
             this.IMT_ZEIRT_0.IsNumber = true;
             this.IMT_ZEIRT_0.IsShop = false;
@@ -2782,6 +2849,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_KAIDT_2.IntegerPart = 0;
             this.IMT_KAIDT_2.IsCorrectDate = true;
             this.IMT_KAIDT_2.isEnterKeyDown = false;
+            this.IMT_KAIDT_2.IsFirstTime = true;
             this.IMT_KAIDT_2.isMaxLengthErr = false;
             this.IMT_KAIDT_2.IsNumber = true;
             this.IMT_KAIDT_2.IsShop = false;
@@ -2811,6 +2879,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_WEBPR2_2.IntegerPart = 0;
             this.IMN_WEBPR2_2.IsCorrectDate = true;
             this.IMN_WEBPR2_2.isEnterKeyDown = false;
+            this.IMN_WEBPR2_2.IsFirstTime = true;
             this.IMN_WEBPR2_2.isMaxLengthErr = false;
             this.IMN_WEBPR2_2.IsNumber = true;
             this.IMN_WEBPR2_2.IsShop = false;
@@ -2840,6 +2909,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_WEBPR2_1.IntegerPart = 0;
             this.IMN_WEBPR2_1.IsCorrectDate = true;
             this.IMN_WEBPR2_1.isEnterKeyDown = false;
+            this.IMN_WEBPR2_1.IsFirstTime = true;
             this.IMN_WEBPR2_1.isMaxLengthErr = false;
             this.IMN_WEBPR2_1.IsNumber = true;
             this.IMN_WEBPR2_1.IsShop = false;
@@ -2869,6 +2939,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_WEBPR2_0.IntegerPart = 0;
             this.IMN_WEBPR2_0.IsCorrectDate = true;
             this.IMN_WEBPR2_0.isEnterKeyDown = false;
+            this.IMN_WEBPR2_0.IsFirstTime = true;
             this.IMN_WEBPR2_0.isMaxLengthErr = false;
             this.IMN_WEBPR2_0.IsNumber = true;
             this.IMN_WEBPR2_0.IsShop = false;
@@ -2898,6 +2969,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_SALEP2_2.IntegerPart = 0;
             this.IMN_SALEP2_2.IsCorrectDate = true;
             this.IMN_SALEP2_2.isEnterKeyDown = false;
+            this.IMN_SALEP2_2.IsFirstTime = true;
             this.IMN_SALEP2_2.isMaxLengthErr = false;
             this.IMN_SALEP2_2.IsNumber = true;
             this.IMN_SALEP2_2.IsShop = false;
@@ -2928,6 +3000,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_SALEP2_1.IntegerPart = 0;
             this.IMN_SALEP2_1.IsCorrectDate = true;
             this.IMN_SALEP2_1.isEnterKeyDown = false;
+            this.IMN_SALEP2_1.IsFirstTime = true;
             this.IMN_SALEP2_1.isMaxLengthErr = false;
             this.IMN_SALEP2_1.IsNumber = true;
             this.IMN_SALEP2_1.IsShop = false;
@@ -2958,6 +3031,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_SALEP2_0.IntegerPart = 0;
             this.IMN_SALEP2_0.IsCorrectDate = true;
             this.IMN_SALEP2_0.isEnterKeyDown = false;
+            this.IMN_SALEP2_0.IsFirstTime = true;
             this.IMN_SALEP2_0.isMaxLengthErr = false;
             this.IMN_SALEP2_0.IsNumber = true;
             this.IMN_SALEP2_0.IsShop = false;
@@ -2988,6 +3062,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox9.IntegerPart = 0;
             this.ckM_TextBox9.IsCorrectDate = true;
             this.ckM_TextBox9.isEnterKeyDown = false;
+            this.ckM_TextBox9.IsFirstTime = true;
             this.ckM_TextBox9.isMaxLengthErr = false;
             this.ckM_TextBox9.IsNumber = true;
             this.ckM_TextBox9.IsShop = false;
@@ -3017,6 +3092,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox10.IntegerPart = 0;
             this.ckM_TextBox10.IsCorrectDate = true;
             this.ckM_TextBox10.isEnterKeyDown = false;
+            this.ckM_TextBox10.IsFirstTime = true;
             this.ckM_TextBox10.isMaxLengthErr = false;
             this.ckM_TextBox10.IsNumber = true;
             this.ckM_TextBox10.IsShop = false;
@@ -3046,6 +3122,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox11.IntegerPart = 0;
             this.ckM_TextBox11.IsCorrectDate = true;
             this.ckM_TextBox11.isEnterKeyDown = false;
+            this.ckM_TextBox11.IsFirstTime = true;
             this.ckM_TextBox11.isMaxLengthErr = false;
             this.ckM_TextBox11.IsNumber = true;
             this.ckM_TextBox11.IsShop = false;
@@ -3113,6 +3190,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENKA_2.IntegerPart = 0;
             this.IMN_GENKA_2.IsCorrectDate = true;
             this.IMN_GENKA_2.isEnterKeyDown = false;
+            this.IMN_GENKA_2.IsFirstTime = true;
             this.IMN_GENKA_2.isMaxLengthErr = false;
             this.IMN_GENKA_2.IsNumber = true;
             this.IMN_GENKA_2.IsShop = false;
@@ -3144,6 +3222,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENKA_1.IntegerPart = 0;
             this.IMN_GENKA_1.IsCorrectDate = true;
             this.IMN_GENKA_1.isEnterKeyDown = false;
+            this.IMN_GENKA_1.IsFirstTime = true;
             this.IMN_GENKA_1.isMaxLengthErr = false;
             this.IMN_GENKA_1.IsNumber = true;
             this.IMN_GENKA_1.IsShop = false;
@@ -3175,6 +3254,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_TEIKA2_2.IntegerPart = 0;
             this.IMN_TEIKA2_2.IsCorrectDate = true;
             this.IMN_TEIKA2_2.isEnterKeyDown = false;
+            this.IMN_TEIKA2_2.IsFirstTime = true;
             this.IMN_TEIKA2_2.isMaxLengthErr = false;
             this.IMN_TEIKA2_2.IsNumber = true;
             this.IMN_TEIKA2_2.IsShop = false;
@@ -3206,6 +3286,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_CLINT_2.IntegerPart = 0;
             this.IMN_CLINT_2.IsCorrectDate = true;
             this.IMN_CLINT_2.isEnterKeyDown = false;
+            this.IMN_CLINT_2.IsFirstTime = true;
             this.IMN_CLINT_2.isMaxLengthErr = false;
             this.IMN_CLINT_2.IsNumber = true;
             this.IMN_CLINT_2.IsShop = false;
@@ -3235,6 +3316,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_WEBPR_2.IntegerPart = 0;
             this.IMN_WEBPR_2.IsCorrectDate = true;
             this.IMN_WEBPR_2.isEnterKeyDown = false;
+            this.IMN_WEBPR_2.IsFirstTime = true;
             this.IMN_WEBPR_2.isMaxLengthErr = false;
             this.IMN_WEBPR_2.IsNumber = true;
             this.IMN_WEBPR_2.IsShop = false;
@@ -3264,6 +3346,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_TEIKA2_1.IntegerPart = 0;
             this.IMN_TEIKA2_1.IsCorrectDate = true;
             this.IMN_TEIKA2_1.isEnterKeyDown = false;
+            this.IMN_TEIKA2_1.IsFirstTime = true;
             this.IMN_TEIKA2_1.isMaxLengthErr = false;
             this.IMN_TEIKA2_1.IsNumber = true;
             this.IMN_TEIKA2_1.IsShop = false;
@@ -3295,6 +3378,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_CLINT_1.IntegerPart = 0;
             this.IMN_CLINT_1.IsCorrectDate = true;
             this.IMN_CLINT_1.isEnterKeyDown = false;
+            this.IMN_CLINT_1.IsFirstTime = true;
             this.IMN_CLINT_1.isMaxLengthErr = false;
             this.IMN_CLINT_1.IsNumber = true;
             this.IMN_CLINT_1.IsShop = false;
@@ -3324,6 +3408,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_WEBPR_1.IntegerPart = 0;
             this.IMN_WEBPR_1.IsCorrectDate = true;
             this.IMN_WEBPR_1.isEnterKeyDown = false;
+            this.IMN_WEBPR_1.IsFirstTime = true;
             this.IMN_WEBPR_1.isMaxLengthErr = false;
             this.IMN_WEBPR_1.IsNumber = true;
             this.IMN_WEBPR_1.IsShop = false;
@@ -3353,6 +3438,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_TEIKA2_0.IntegerPart = 0;
             this.IMN_TEIKA2_0.IsCorrectDate = true;
             this.IMN_TEIKA2_0.isEnterKeyDown = false;
+            this.IMN_TEIKA2_0.IsFirstTime = true;
             this.IMN_TEIKA2_0.isMaxLengthErr = false;
             this.IMN_TEIKA2_0.IsNumber = true;
             this.IMN_TEIKA2_0.IsShop = false;
@@ -3417,6 +3503,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENKA_0.IntegerPart = 0;
             this.IMN_GENKA_0.IsCorrectDate = true;
             this.IMN_GENKA_0.isEnterKeyDown = false;
+            this.IMN_GENKA_0.IsFirstTime = true;
             this.IMN_GENKA_0.isMaxLengthErr = false;
             this.IMN_GENKA_0.IsNumber = true;
             this.IMN_GENKA_0.IsShop = false;
@@ -3448,6 +3535,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_CLINT_0.IntegerPart = 0;
             this.IMN_CLINT_0.IsCorrectDate = true;
             this.IMN_CLINT_0.isEnterKeyDown = false;
+            this.IMN_CLINT_0.IsFirstTime = true;
             this.IMN_CLINT_0.isMaxLengthErr = false;
             this.IMN_CLINT_0.IsNumber = true;
             this.IMN_CLINT_0.IsShop = false;
@@ -3477,6 +3565,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_WEBPR_0.IntegerPart = 0;
             this.IMN_WEBPR_0.IsCorrectDate = true;
             this.IMN_WEBPR_0.isEnterKeyDown = false;
+            this.IMN_WEBPR_0.IsFirstTime = true;
             this.IMN_WEBPR_0.isMaxLengthErr = false;
             this.IMN_WEBPR_0.IsNumber = true;
             this.IMN_WEBPR_0.IsShop = false;
@@ -3505,6 +3594,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_JANCD_0.IntegerPart = 0;
             this.IMT_JANCD_0.IsCorrectDate = true;
             this.IMT_JANCD_0.isEnterKeyDown = false;
+            this.IMT_JANCD_0.IsFirstTime = true;
             this.IMT_JANCD_0.isMaxLengthErr = false;
             this.IMT_JANCD_0.IsNumber = true;
             this.IMT_JANCD_0.IsShop = false;
@@ -3565,6 +3655,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_JANCD_1.IntegerPart = 0;
             this.IMT_JANCD_1.IsCorrectDate = true;
             this.IMT_JANCD_1.isEnterKeyDown = false;
+            this.IMT_JANCD_1.IsFirstTime = true;
             this.IMT_JANCD_1.isMaxLengthErr = false;
             this.IMT_JANCD_1.IsNumber = true;
             this.IMT_JANCD_1.IsShop = false;
@@ -3625,6 +3716,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_JANCD_2.IntegerPart = 0;
             this.IMT_JANCD_2.IsCorrectDate = true;
             this.IMT_JANCD_2.isEnterKeyDown = false;
+            this.IMT_JANCD_2.IsFirstTime = true;
             this.IMT_JANCD_2.isMaxLengthErr = false;
             this.IMT_JANCD_2.IsNumber = true;
             this.IMT_JANCD_2.IsShop = false;
@@ -3656,6 +3748,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_CLINT2_2.IntegerPart = 0;
             this.IMN_CLINT2_2.IsCorrectDate = true;
             this.IMN_CLINT2_2.isEnterKeyDown = false;
+            this.IMN_CLINT2_2.IsFirstTime = true;
             this.IMN_CLINT2_2.isMaxLengthErr = false;
             this.IMN_CLINT2_2.IsNumber = true;
             this.IMN_CLINT2_2.IsShop = false;
@@ -3686,6 +3779,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_CLINT2_1.IntegerPart = 0;
             this.IMN_CLINT2_1.IsCorrectDate = true;
             this.IMN_CLINT2_1.isEnterKeyDown = false;
+            this.IMN_CLINT2_1.IsFirstTime = true;
             this.IMN_CLINT2_1.isMaxLengthErr = false;
             this.IMN_CLINT2_1.IsNumber = true;
             this.IMN_CLINT2_1.IsShop = false;
@@ -3716,6 +3810,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_CLINT2_0.IntegerPart = 0;
             this.IMN_CLINT2_0.IsCorrectDate = true;
             this.IMN_CLINT2_0.isEnterKeyDown = false;
+            this.IMN_CLINT2_0.IsFirstTime = true;
             this.IMN_CLINT2_0.isMaxLengthErr = false;
             this.IMN_CLINT2_0.IsNumber = true;
             this.IMN_CLINT2_0.IsShop = false;
@@ -3746,6 +3841,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_SALEP_2.IntegerPart = 0;
             this.IMN_SALEP_2.IsCorrectDate = true;
             this.IMN_SALEP_2.isEnterKeyDown = false;
+            this.IMN_SALEP_2.IsFirstTime = true;
             this.IMN_SALEP_2.isMaxLengthErr = false;
             this.IMN_SALEP_2.IsNumber = true;
             this.IMN_SALEP_2.IsShop = false;
@@ -3777,6 +3873,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_SALEP_1.IntegerPart = 0;
             this.IMN_SALEP_1.IsCorrectDate = true;
             this.IMN_SALEP_1.isEnterKeyDown = false;
+            this.IMN_SALEP_1.IsFirstTime = true;
             this.IMN_SALEP_1.isMaxLengthErr = false;
             this.IMN_SALEP_1.IsNumber = true;
             this.IMN_SALEP_1.IsShop = false;
@@ -3808,6 +3905,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_SALEP_0.IntegerPart = 0;
             this.IMN_SALEP_0.IsCorrectDate = true;
             this.IMN_SALEP_0.isEnterKeyDown = false;
+            this.IMN_SALEP_0.IsFirstTime = true;
             this.IMN_SALEP_0.isMaxLengthErr = false;
             this.IMN_SALEP_0.IsNumber = true;
             this.IMN_SALEP_0.IsShop = false;
@@ -3835,6 +3933,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_VENCD_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_VENCD_0.DataCheck = false;
             this.IMT_VENCD_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.IMT_VENCD_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_VENCD_0.IsCopy = false;
             this.IMT_VENCD_0.LabelText = "";
             this.IMT_VENCD_0.LabelVisible = false;
@@ -3863,6 +3962,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_VENCD_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_VENCD_1.DataCheck = false;
             this.IMT_VENCD_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.IMT_VENCD_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_VENCD_1.IsCopy = false;
             this.IMT_VENCD_1.LabelText = "";
             this.IMT_VENCD_1.LabelVisible = false;
@@ -3891,6 +3991,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_VENCD_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_VENCD_2.DataCheck = false;
             this.IMT_VENCD_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.IMT_VENCD_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_VENCD_2.IsCopy = false;
             this.IMT_VENCD_2.LabelText = "";
             this.IMT_VENCD_2.LabelVisible = false;
@@ -3922,6 +4023,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_VENNM_0.IntegerPart = 0;
             this.IMT_VENNM_0.IsCorrectDate = true;
             this.IMT_VENNM_0.isEnterKeyDown = false;
+            this.IMT_VENNM_0.IsFirstTime = true;
             this.IMT_VENNM_0.isMaxLengthErr = false;
             this.IMT_VENNM_0.IsNumber = true;
             this.IMT_VENNM_0.IsShop = false;
@@ -3951,6 +4053,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_VENNM_1.IntegerPart = 0;
             this.IMT_VENNM_1.IsCorrectDate = true;
             this.IMT_VENNM_1.isEnterKeyDown = false;
+            this.IMT_VENNM_1.IsFirstTime = true;
             this.IMT_VENNM_1.isMaxLengthErr = false;
             this.IMT_VENNM_1.IsNumber = true;
             this.IMT_VENNM_1.IsShop = false;
@@ -3980,6 +4083,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_VENNM_2.IntegerPart = 0;
             this.IMT_VENNM_2.IsCorrectDate = true;
             this.IMT_VENNM_2.isEnterKeyDown = false;
+            this.IMT_VENNM_2.IsFirstTime = true;
             this.IMT_VENNM_2.isMaxLengthErr = false;
             this.IMT_VENNM_2.IsNumber = true;
             this.IMT_VENNM_2.IsShop = false;
@@ -4044,6 +4148,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox6.IntegerPart = 0;
             this.ckM_TextBox6.IsCorrectDate = true;
             this.ckM_TextBox6.isEnterKeyDown = false;
+            this.ckM_TextBox6.IsFirstTime = true;
             this.ckM_TextBox6.isMaxLengthErr = false;
             this.ckM_TextBox6.IsNumber = true;
             this.ckM_TextBox6.IsShop = false;
@@ -4072,6 +4177,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox5.IntegerPart = 0;
             this.ckM_TextBox5.IsCorrectDate = true;
             this.ckM_TextBox5.isEnterKeyDown = false;
+            this.ckM_TextBox5.IsFirstTime = true;
             this.ckM_TextBox5.isMaxLengthErr = false;
             this.ckM_TextBox5.IsNumber = true;
             this.ckM_TextBox5.IsShop = false;
@@ -4756,7 +4862,7 @@ namespace TempoJuchuuNyuuryoku
             this.ScStaff.IsCopy = false;
             this.ScStaff.LabelText = "";
             this.ScStaff.LabelVisible = true;
-            this.ScStaff.Location = new System.Drawing.Point(511, 89);
+            this.ScStaff.Location = new System.Drawing.Point(511, 90);
             this.ScStaff.Margin = new System.Windows.Forms.Padding(0);
             this.ScStaff.Name = "ScStaff";
             this.ScStaff.NameWidth = 250;
@@ -4929,6 +5035,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox1.IntegerPart = 0;
             this.ckM_TextBox1.IsCorrectDate = true;
             this.ckM_TextBox1.isEnterKeyDown = false;
+            this.ckM_TextBox1.IsFirstTime = true;
             this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
@@ -5575,7 +5682,7 @@ namespace TempoJuchuuNyuuryoku
             this.CboSoukoName.Flag = 0;
             this.CboSoukoName.FormattingEnabled = true;
             this.CboSoukoName.Length = 20;
-            this.CboSoukoName.Location = new System.Drawing.Point(260, 92);
+            this.CboSoukoName.Location = new System.Drawing.Point(260, 93);
             this.CboSoukoName.MaxLength = 10;
             this.CboSoukoName.MoveNext = true;
             this.CboSoukoName.Name = "CboSoukoName";
@@ -5654,6 +5761,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox7.IntegerPart = 0;
             this.ckM_TextBox7.IsCorrectDate = true;
             this.ckM_TextBox7.isEnterKeyDown = false;
+            this.ckM_TextBox7.IsFirstTime = true;
             this.ckM_TextBox7.isMaxLengthErr = false;
             this.ckM_TextBox7.IsNumber = true;
             this.ckM_TextBox7.IsShop = false;
@@ -5834,6 +5942,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox8.IntegerPart = 0;
             this.ckM_TextBox8.IsCorrectDate = false;
             this.ckM_TextBox8.isEnterKeyDown = false;
+            this.ckM_TextBox8.IsFirstTime = true;
             this.ckM_TextBox8.isMaxLengthErr = false;
             this.ckM_TextBox8.IsNumber = true;
             this.ckM_TextBox8.IsShop = false;
@@ -5861,6 +5970,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox13.IntegerPart = 0;
             this.ckM_TextBox13.IsCorrectDate = false;
             this.ckM_TextBox13.isEnterKeyDown = false;
+            this.ckM_TextBox13.IsFirstTime = true;
             this.ckM_TextBox13.isMaxLengthErr = false;
             this.ckM_TextBox13.IsNumber = true;
             this.ckM_TextBox13.IsShop = false;
@@ -5888,6 +5998,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox18.IntegerPart = 0;
             this.ckM_TextBox18.IsCorrectDate = false;
             this.ckM_TextBox18.isEnterKeyDown = false;
+            this.ckM_TextBox18.IsFirstTime = true;
             this.ckM_TextBox18.isMaxLengthErr = false;
             this.ckM_TextBox18.IsNumber = true;
             this.ckM_TextBox18.IsShop = false;
@@ -6064,6 +6175,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox14.IntegerPart = 0;
             this.ckM_TextBox14.IsCorrectDate = false;
             this.ckM_TextBox14.isEnterKeyDown = false;
+            this.ckM_TextBox14.IsFirstTime = true;
             this.ckM_TextBox14.isMaxLengthErr = false;
             this.ckM_TextBox14.IsNumber = true;
             this.ckM_TextBox14.IsShop = false;
@@ -6091,6 +6203,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox19.IntegerPart = 0;
             this.ckM_TextBox19.IsCorrectDate = false;
             this.ckM_TextBox19.isEnterKeyDown = false;
+            this.ckM_TextBox19.IsFirstTime = true;
             this.ckM_TextBox19.isMaxLengthErr = false;
             this.ckM_TextBox19.IsNumber = true;
             this.ckM_TextBox19.IsShop = false;
@@ -6118,6 +6231,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox20.IntegerPart = 0;
             this.ckM_TextBox20.IsCorrectDate = false;
             this.ckM_TextBox20.isEnterKeyDown = false;
+            this.ckM_TextBox20.IsFirstTime = true;
             this.ckM_TextBox20.isMaxLengthErr = false;
             this.ckM_TextBox20.IsNumber = true;
             this.ckM_TextBox20.IsShop = false;
@@ -6182,6 +6296,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox21.IntegerPart = 0;
             this.ckM_TextBox21.IsCorrectDate = true;
             this.ckM_TextBox21.isEnterKeyDown = false;
+            this.ckM_TextBox21.IsFirstTime = true;
             this.ckM_TextBox21.isMaxLengthErr = false;
             this.ckM_TextBox21.IsNumber = true;
             this.ckM_TextBox21.IsShop = false;
@@ -6210,6 +6325,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox22.IntegerPart = 0;
             this.ckM_TextBox22.IsCorrectDate = true;
             this.ckM_TextBox22.isEnterKeyDown = false;
+            this.ckM_TextBox22.IsFirstTime = true;
             this.ckM_TextBox22.isMaxLengthErr = false;
             this.ckM_TextBox22.IsNumber = true;
             this.ckM_TextBox22.IsShop = false;

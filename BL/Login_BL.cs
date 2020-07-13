@@ -23,6 +23,15 @@ namespace BL
         public const bool isd = false;
         public static bool Islocalized = false;
         public static string SyncPath = "";
+
+        /// <summary>
+        /// 店舗レジで使用するプリンター名
+        /// </summary>
+        public string StorePrinterName
+        {
+            get { return Base_DL.iniEntity.StorePrinterName; }
+        }
+
         /// <summary>
         /// constructor
         /// </summary>
@@ -247,8 +256,8 @@ namespace BL
             }
             Base_DL.iniEntity.TimeoutValues = idl.IniReadValue("Database", "Timeout");
 
-
-
+            // 店舗レジで使用するプリンター名
+            Base_DL.iniEntity.StorePrinterName = idl.IniReadValue("Printer", "StorePrinterName");
         }
         public string GetInformationOfIniFileByKey(string key)
         {

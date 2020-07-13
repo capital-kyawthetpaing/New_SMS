@@ -416,6 +416,7 @@ BEGIN
            SET [StoreCD] = @StoreCD                         
               ,[RequestDate] = convert(date,@RequestDate)
               ,[MovePurposeKBN] = @MovePurposeKBN
+              ,[FromStoreCD] = @FromStoreCD
               ,[FromSoukoCD] = @FromSoukoCD
               ,[ToStoreCD] = @ToStoreCD
               ,[ToSoukoCD] = @ToSoukoCD

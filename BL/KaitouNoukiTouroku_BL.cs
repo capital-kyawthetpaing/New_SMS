@@ -181,23 +181,23 @@ namespace BL
                 }
 
             }
-            //入荷予定日、年月にともに入力がない場合
-            if (string.IsNullOrWhiteSpace(arrivalPlanDate) && string.IsNullOrWhiteSpace(arrivalPlanMonth))
-            {
-                //入力必須
-                if (string.IsNullOrWhiteSpace(kbn))
-                {
-                    //Ｅ１０２
-                    ShowMessage("E102");
-                    return false;
-                }
-                //Num2が3,4,5,6以外はエラー
-                else if (num2 != "3" && num2 != "4" && num2 != "5" && num2 != "6")
-                {
-                    ShowMessage("E175");
-                    return false;
-                }
-            }
+            ////入荷予定日、年月にともに入力がない場合
+            //if (string.IsNullOrWhiteSpace(arrivalPlanDate) && string.IsNullOrWhiteSpace(arrivalPlanMonth))
+            //{
+            //    //入力必須
+            //    if (string.IsNullOrWhiteSpace(kbn))
+            //    {
+            //        //Ｅ１０２
+            //        ShowMessage("E102");
+            //        return false;
+            //    }
+            //    //Num2が3,4,5,6以外はエラー
+            //    else if (num2 != "3" && num2 != "4" && num2 != "5" && num2 != "6")
+            //    {
+            //        ShowMessage("E175");
+            //        return false;
+            //    }
+            //}
             return true;
         }
         /// <summary>

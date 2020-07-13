@@ -1485,19 +1485,27 @@ namespace KaitouNoukiTouroku
             switch (col)
             {
                 case (int)ClsGridKaitouNouki.ColNO.ArrivePlanDate:
-                    if (!knbl.ChkArrivePlanDate(mGrid.g_DArray[row].ArrivalPlanDate, ref fmtYmd))
+                    //変更されたかどうか
+                    if (mGrid.g_DArray[row].OldArrivalPlanDate != mGrid.g_DArray[row].ArrivalPlanDate)
                     {
-                        return false;
+                        if (!knbl.ChkArrivePlanDate(mGrid.g_DArray[row].ArrivalPlanDate, ref fmtYmd))
+                        {
+                            return false;
+                        }
+                        mGrid.g_DArray[row].ArrivalPlanDate = fmtYmd;
                     }
-                    mGrid.g_DArray[row].ArrivalPlanDate = fmtYmd;
                     break;
 
                 case (int)ClsGridKaitouNouki.ColNO.ArrivalPlanMonth:
-                    if(!knbl.ChkArrivalPlanMonth(mGrid.g_DArray[row].ArrivalPlanMonth, mGrid.g_DArray[row].ArrivalPlanDate,ref fmtYmd))
+                    //変更されたかどうか
+                    if (mGrid.g_DArray[row].OldArrivalPlanMonth != mGrid.g_DArray[row].ArrivalPlanMonth)
                     {
-                        return false;
+                        if (!knbl.ChkArrivalPlanMonth(mGrid.g_DArray[row].ArrivalPlanMonth, mGrid.g_DArray[row].ArrivalPlanDate, ref fmtYmd))
+                        {
+                            return false;
+                        }
+                        mGrid.g_DArray[row].ArrivalPlanMonth = fmtYmd;
                     }
-                    mGrid.g_DArray[row].ArrivalPlanMonth = fmtYmd;
                     break;
 
                 case (int)ClsGridKaitouNouki.ColNO.ArrivePlanCD:

@@ -11,61 +11,56 @@ namespace BL
         /// <summary>
         /// 取引レシート(雑入金)データ取得
         /// </summary>
-        /// <param name="storeCD">ストアコード</param>
-        /// <param name="staffCD">スタッフコード</param>
+        /// <param name="depositNo">入出金No</param>
         /// <returns>取引レシート(雑入金)データ</returns>
-        public DataTable D_MiscDepositSelect(string storeCD, string staffCD)
+        public DataTable D_MiscDepositSelect(string depositNo)
         {
             var dl = new TempoRegiTorihikiReceipt_DL();
-            return dl.D_MiscDepositSelectData(storeCD, staffCD);
+            return dl.D_MiscDepositSelectData(depositNo);
         }
 
         /// <summary>
         /// 取引レシート(入金)データ取得
         /// </summary>
-        /// <param name="storeCD">ストアコード</param>
-        /// <param name="staffCD">スタッフコード</param>
+        /// <param name="depositNo">入出金No</param>
         /// <returns>取引レシート(入金)データ</returns>
-        public DataTable D_DepositSelect(string storeCD, string staffCD)
+        public DataTable D_DepositSelect(string depositNo)
         {
             var dl = new TempoRegiTorihikiReceipt_DL();
-            return dl.D_DepositSelectData(storeCD, staffCD);
+            return dl.D_DepositSelectData(depositNo);
         }
 
         /// <summary>
         /// 取引レシート(雑出金)データ取得
         /// </summary>
-        /// <param name="storeCD">ストアコード</param>
-        /// <param name="staffCD">スタッフコード</param>
+        /// <param name="depositNo">入出金No</param>
         /// <returns>取引レシート(雑出金)データ</returns>
-        public DataTable D_MiscPaymentSelect(string storeCD, string staffCD)
+        public DataTable D_MiscPaymentSelect(string depositNo)
         {
             var dl = new TempoRegiTorihikiReceipt_DL();
-            return dl.D_MiscPaymentSelectData(storeCD, staffCD);
+            return dl.D_MiscPaymentSelectData(depositNo);
         }
 
         /// <summary>
         /// 取引レシート(両替)データ取得
         /// </summary>
-        /// <param name="storeCD">ストアコード</param>
-        /// <param name="staffCD">スタッフコード</param>
+        /// <param name="depositNo">入出金No</param>
         /// <returns>取引レシート(両替)データ</returns>
-        public DataTable D_ExchangeSelect(string storeCD, string staffCD)
+        public DataTable D_ExchangeSelect(string depositNo)
         {
             var dl = new TempoRegiTorihikiReceipt_DL();
-            return dl.D_ExchangeSelectData(storeCD, staffCD);
+            return dl.D_ExchangeSelectData(depositNo);
         }
 
         /// <summary>
         /// 取引レシート(釣銭準備)データ取得
         /// </summary>
-        /// <param name="storeCD">ストアコード</param>
-        /// <param name="staffCD">スタッフコード</param>
+        /// <param name="depositNo">入出金No</param>
         /// <returns>取引レシート(釣銭準備)データ</returns>
-        public DataTable D_ChangePreparationSelect(string storeCD, string staffCD)
+        public DataTable D_ChangePreparationSelect(string depositNo)
         {
             var dl = new TempoRegiTorihikiReceipt_DL();
-            return dl.D_ChangePreparationSelectData(storeCD, staffCD);
+            return dl.D_ChangePreparationSelectData(depositNo);
         }
     }
 }
