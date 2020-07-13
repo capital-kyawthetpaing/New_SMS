@@ -20,6 +20,7 @@ namespace TanabanNyuuryoku
         M_Souko_Entity mse = new M_Souko_Entity();
         M_Location_Entity mle = new M_Location_Entity();
         D_Stock_Entity dse = new D_Stock_Entity();
+        ZaikoIdouNyuuryoku_BL zibl;
 
         DataTable dtstorage = new DataTable();
 
@@ -66,6 +67,7 @@ namespace TanabanNyuuryoku
 
         private void SetRequireField()
         {
+            txtArrivalDateTo.Require(true);
             cboWarehouse.Require(true);
         }
 
@@ -160,6 +162,8 @@ namespace TanabanNyuuryoku
         {
             if (index == 11)
             {
+                if (!RequireCheck(new Control[] { txtArrivalDateTo }))
+                    return false;
                 if (!string.IsNullOrWhiteSpace(txtArrivalDateTo.Text))
                 {
                     int result = txtArrivalDateFrom.Text.CompareTo(txtArrivalDateTo.Text);
@@ -460,6 +464,36 @@ namespace TanabanNyuuryoku
             ScStorage.Value1 = cboWarehouse.SelectedValue.ToString();
         }
 
+        private void ScStorage_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(ScStorage.TxtCode.Text))
+                {
+                    mle = new M_Location_Entity();
+                    zibl = new ZaikoIdouNyuuryoku_BL();
+
+                    mle = GetSearchInfo();
+                    DataTable dt = zibl.M_Location_SelectAll(mle);
+                    if (dt.Rows.Count>0)
+                    {
+                        bbl.ShowMessage("E101");
+                        ScStorage.SetFocus(1);
+                    }
+                }
+            }
+        }
+
+        private M_Location_Entity GetSearchInfo()
+        {
+            string ymd = bbl.GetDate();
+            mle = new M_Location_Entity
+            {
+                ChangeDate =ymd,
+                SoukoCD = cboWarehouse.SelectedValue.ToString().Equals("-1") ? string.Empty : cboWarehouse.SelectedValue.ToString(),
+            };
+            return mle;
+        }
         //private void CheckRowAdd(DataGridViewRow row)
         //{
         //    if(row.Index == dgvTanaban.Rows.Count -1)

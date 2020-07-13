@@ -3282,6 +3282,7 @@ namespace TempoJuchuuNyuuryoku
                 case (int)ClsGridJuchuu.ColNO.JanCD:                
                 case (int)ClsGridJuchuu.ColNO.JuchuuUnitPrice: //販売単価 
                 case (int)ClsGridJuchuu.ColNO.CostUnitPrice: //原価単価
+                case (int)ClsGridJuchuu.ColNO.OrderUnitPrice://発注単価
 
                     //各金額項目の再計算必要
                     if (chkAll == false)
@@ -3411,7 +3412,6 @@ namespace TempoJuchuuNyuuryoku
             //[M_JANOrderPrice]
             M_JANOrderPrice_Entity mje = new M_JANOrderPrice_Entity
             {
-
                 //①JAN発注単価マスタ（店舗指定なし）
                 AdminNO = mGrid.g_DArray[row].AdminNO,
                 VendorCD = mGrid.g_DArray[row].VendorCD,

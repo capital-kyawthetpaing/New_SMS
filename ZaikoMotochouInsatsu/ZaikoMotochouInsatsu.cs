@@ -30,7 +30,7 @@ namespace ZaikoMotochouInsatsu
         {
             InitializeComponent();
             zmibl = new ZaikoMotochouInsatsu_BL();
-            vr = new Viewer();
+            
         }
         private void ZaikoMotochouInsatsu_Load(object sender, EventArgs e)
         {
@@ -190,6 +190,7 @@ namespace ZaikoMotochouInsatsu
                                 {
 
                                     //印刷処理プレビュー
+                                    vr = new Viewer();
                                     vr.CrystalReportViewer1.ShowPrintButton = true;
                                     vr.CrystalReportViewer1.ReportSource = zm_report;
 

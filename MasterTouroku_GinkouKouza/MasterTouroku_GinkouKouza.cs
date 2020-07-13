@@ -21,6 +21,7 @@ namespace MasterTouroku_GinkouKouza
          M_Kouza_Entity mkze;
         int type = 0;//1 = kouza, 2 = copy kouza (for f11)
 
+
         #region constructor
         /// <summary>
         /// default

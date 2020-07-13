@@ -427,11 +427,11 @@
             this.txtSu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSu.ClientColor = System.Drawing.Color.White;
             this.txtSu.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtSu.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.txtSu.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtSu.DecimalPlace = 0;
             this.txtSu.Font = new System.Drawing.Font("ＭＳ ゴシック", 30F);
             this.txtSu.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtSu.IntegerPart = 0;
+            this.txtSu.IntegerPart = 3;
             this.txtSu.IsCorrectDate = true;
             this.txtSu.isEnterKeyDown = false;
             this.txtSu.IsFirstTime = true;
@@ -811,7 +811,7 @@
             // 
             this.ScOrderNO.AutoSize = true;
             this.ScOrderNO.ChangeDate = "";
-            this.ScOrderNO.ChangeDateWidth = 2765497;
+            this.ScOrderNO.ChangeDateWidth = 4609160;
             this.ScOrderNO.Code = "XXXXXXXXX01";
             this.ScOrderNO.CodeWidth = 150;
             this.ScOrderNO.CodeWidth1 = 150;

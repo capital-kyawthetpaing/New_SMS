@@ -29,6 +29,7 @@ BEGIN
     -- Insert statements for procedure here
 	SELECT MS.SoukoName
 		, MS.StoreCD
+		, MS.SoukoType
 	FROM M_Souko AS MS	
 	WHERE MS.SoukoCD = @SoukoCD
 	AND MS.ChangeDate <= @ChangeDate

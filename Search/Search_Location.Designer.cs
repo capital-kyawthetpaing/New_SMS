@@ -48,7 +48,7 @@
             this.PanelHeader.Controls.Add(this.CboFromSoukoCD);
             this.PanelHeader.Controls.Add(this.lblSoukoCD);
             this.PanelHeader.Controls.Add(this.btnSubF11);
-            this.PanelHeader.Size = new System.Drawing.Size(470, 88);
+            this.PanelHeader.Size = new System.Drawing.Size(534, 88);
             this.PanelHeader.TabIndex = 0;
             this.PanelHeader.Controls.SetChildIndex(this.btnSubF11, 0);
             this.PanelHeader.Controls.SetChildIndex(this.lblSoukoCD, 0);
@@ -66,7 +66,7 @@
             this.btnSubF11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubF11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnSubF11.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnSubF11.Location = new System.Drawing.Point(338, 44);
+            this.btnSubF11.Location = new System.Drawing.Point(402, 45);
             this.btnSubF11.Margin = new System.Windows.Forms.Padding(1);
             this.btnSubF11.Name = "btnSubF11";
             this.btnSubF11.Size = new System.Drawing.Size(115, 28);
@@ -100,6 +100,7 @@
             this.GvDetail.Name = "GvDetail";
             this.GvDetail.ReadOnly = true;
             this.GvDetail.RowHeight_ = 20;
+            this.GvDetail.RowTemplate.Height = 20;
             this.GvDetail.Size = new System.Drawing.Size(143, 350);
             this.GvDetail.TabIndex = 20;
             this.GvDetail.UseRowNo = true;
@@ -119,7 +120,7 @@
             // 
             this.CboFromSoukoCD.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.CboFromSoukoCD.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CboFromSoukoCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.WarehouseSelectAll;
+            this.CboFromSoukoCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.入荷倉庫;
             this.CboFromSoukoCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CboFromSoukoCD.Flag = 0;
             this.CboFromSoukoCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -129,7 +130,7 @@
             this.CboFromSoukoCD.MaxLength = 15;
             this.CboFromSoukoCD.MoveNext = true;
             this.CboFromSoukoCD.Name = "CboFromSoukoCD";
-            this.CboFromSoukoCD.Size = new System.Drawing.Size(210, 20);
+            this.CboFromSoukoCD.Size = new System.Drawing.Size(265, 20);
             this.CboFromSoukoCD.TabIndex = 3;
             // 
             // lblSoukoCD
@@ -176,7 +177,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 531);
+            this.ClientSize = new System.Drawing.Size(534, 531);
             this.Controls.Add(this.GvDetail);
             this.F11Visible = true;
             this.F12Visible = true;

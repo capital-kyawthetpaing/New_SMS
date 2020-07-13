@@ -34,5 +34,10 @@ namespace Entity
         public string DatabaseDate { get; set; }
         public string Login_Type { get; set; }
         public bool IsDM_D30Used { get; set; } = false;
+
+        /// <summary>
+        /// 店舗レジで使用するプリンター名
+        /// </summary>
+        public string StorePrinterName { get; set; }
     }
 }

@@ -1,6 +1,4 @@
-﻿//#define USE_TEST_PRINTER
-
-using Base.Client;
+﻿using Base.Client;
 using BL;
 using System;
 using System.Collections.Generic;
@@ -14,18 +12,6 @@ namespace TempoRegiRyousyuusyo
     /// </summary>
     public partial class TempoRegiRyousyuusyo : ShopBaseForm
     {
-#if USE_TEST_PRINTER
-        /// <summary>
-        /// デバッグ用プリンタ名
-        /// </summary>
-        private string TEST_PRINTER = "Send To OneNote 2016";
-#else
-        /// <summary>
-        /// 本番用プリンタ名
-        /// </summary>
-        private string PRINTER = "EPSON TM-m30 Receipt";
-#endif
-
         /// <summary>
         /// コマンドライン参照
         /// </summary>
@@ -63,9 +49,6 @@ namespace TempoRegiRyousyuusyo
         /// BL
         /// </summary>
         TempoRegiRyousyuusyo_BL bl = new TempoRegiRyousyuusyo_BL();
-
-        //private DataTable checkRyousyuushoResult = null;
-        //private DataTable checkReceiptResult = null;
 
         /// <summary>
         /// 店舗レジ領収収書印刷 コンストラクタ
@@ -319,11 +302,7 @@ namespace TempoRegiRyousyuusyo
             var report = new TempoRegiRyousyuusyo_Report();
             report.SetDataSource(ryousyuusyoDataSet);
             report.Refresh();
-#if USE_TEST_PRINTER
-            report.PrintOptions.PrinterName = TEST_PRINTER;
-#else
-            report.PrintOptions.PrinterName = PRINTER;
-#endif
+            report.PrintOptions.PrinterName = StorePrinterName;
             report.PrintToPrinter(0, false, 0, 0);
         }
 
@@ -497,11 +476,7 @@ namespace TempoRegiRyousyuusyo
             var report = new TempoRegiRyousyuusyo_Receipt();
             report.SetDataSource(receiptDataSet);
             report.Refresh();
-#if USE_TEST_PRINTER
-            report.PrintOptions.PrinterName = TEST_PRINTER;
-#else
-            report.PrintOptions.PrinterName = PRINTER;
-#endif
+            report.PrintOptions.PrinterName = StorePrinterName;
             report.PrintToPrinter(0, false, 0, 0);
 
             // 発行済更新、ログ更新
@@ -511,11 +486,7 @@ namespace TempoRegiRyousyuusyo
             var journal = new TempoRegiRyousyuusyo_Journal();
             journal.SetDataSource(receiptDataSet);
             journal.Refresh();
-#if USE_TEST_PRINTER
-            journal.PrintOptions.PrinterName = TEST_PRINTER;
-#else
-            journal.PrintOptions.PrinterName = PRINTER;
-#endif
+            journal.PrintOptions.PrinterName = StorePrinterName;
             journal.PrintToPrinter(0, false, 0, 0);
         }
 
