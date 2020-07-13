@@ -33,7 +33,6 @@ namespace SiiresakiZaikoYoteiHyou
             szybl = new SiiresakiZaikoYoteiHyou_BL();
             dmpe = new D_MonthlyPurchase_Entity();
             dt = new DataTable();
-            vr = new Viewer();
         }
 
         private void SiiresakiZaikoYoteiHyou_Load(object sender, EventArgs e)
@@ -250,6 +249,7 @@ namespace SiiresakiZaikoYoteiHyou
                                 szy_Report.SetParameterValue("lblDateTo",txtTargetDateTo.Text);
                                 szy_Report.SetParameterValue("lblStore", cboStore.SelectedValue.ToString() + "   " + cboStore.AccessibilityObject.Name);
                                 szy_Report.SetParameterValue("lblToday", dt.Rows[0]["Today"].ToString());
+                                vr = new Viewer();
                                 try
                                 {
 
