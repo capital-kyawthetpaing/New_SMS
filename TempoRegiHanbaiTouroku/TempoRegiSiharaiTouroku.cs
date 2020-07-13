@@ -72,6 +72,9 @@ namespace TempoRegiHanbaiTouroku
         {
             InitializeComponent();
 
+            ckmShop_Label7.Visible = false;
+            lblZan.Visible = false;
+
             OperationMode = mode;
             dse = dse1;
             dspe = dspe1;
@@ -132,7 +135,7 @@ namespace TempoRegiHanbaiTouroku
                     txtOther1.Text = "0";
                     txtOther2.Text = "0";
                     lblShiharaiKei.Text = "0";
-                    lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
+                    //lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
 
                     txtDiscount.Focus();
                 }
@@ -162,7 +165,7 @@ namespace TempoRegiHanbaiTouroku
                         cboDenominationName2.SelectedValue = dspe.Denomination2CD;
                     txtKake.Text = bbl.Z_SetStr(dspe.CreditAmount);
                     lblShiharaiKei.Text = "0";
-                    lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
+                    //lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
 
                     btnProcess.Focus();
                 }
@@ -324,7 +327,7 @@ namespace TempoRegiHanbaiTouroku
                 }
 
                 //入力されたらポイント残＝ポイント残－ポイント
-                lblZan.Text = bbl.Z_SetStr(bbl.Z_Set(dse.LastPoint)-bbl.Z_Set(txtPoint.Text));
+                //lblZan.Text = bbl.Z_SetStr(bbl.Z_Set(dse.LastPoint)-bbl.Z_Set(txtPoint.Text));
             }
             if (kbn == (int)meCol.ALL || kbn == (int)meCol.OTHER1)
             {
@@ -752,7 +755,7 @@ namespace TempoRegiHanbaiTouroku
                 }
 
                 //ポイント残 ＝	ポイント残－ポイント
-                lblZan.Text = bbl.Z_SetStr(bbl.Z_Set(dse.LastPoint) - bbl.Z_Set(txtPoint.Text));
+                //lblZan.Text = bbl.Z_SetStr(bbl.Z_Set(dse.LastPoint) - bbl.Z_Set(txtPoint.Text));
 
                 //お支払計＝ポイント＋その他①＋その他②＋カード＋現金＋掛
                 Calkkin();
@@ -878,7 +881,7 @@ namespace TempoRegiHanbaiTouroku
             try
             {
                 //ポイント残					を元に戻す		
-                lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
+                //lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
 
                 //ポイント、その他①②、現金、預り、カード、掛、お支払計を０に。
                 txtDiscount.Text = "0";

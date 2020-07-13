@@ -43,6 +43,7 @@ namespace TempoRegiHanbaiTouroku
         private int mAge;
         private short mHaspoMode;
         private short mSaleMode;
+        private string mCustomerDate;
 
         private string mJuchuuHontaiGaku;
         private string mProperTanka;
@@ -300,6 +301,7 @@ namespace TempoRegiHanbaiTouroku
                     lblCusName.Text = "";
                 }
                 lblPoint.Text = bbl.Z_SetStr(mce.LastPoint);
+                mCustomerDate = mce.ChangeDate;
 
                 switch (mce.StoreTankaKBN)
                 {
@@ -792,6 +794,7 @@ namespace TempoRegiHanbaiTouroku
                     {
                         lblCusName.Text = mce.CustomerName;
                         lblPoint.Text = bbl.Z_SetStr(mce.LastPoint);
+                        mCustomerDate = mce.ChangeDate;
 
                         switch (mce.StoreTankaKBN)
                         {
@@ -1229,6 +1232,7 @@ namespace TempoRegiHanbaiTouroku
             dse.StoreCD = mParStoreCD;
             dse.CustomerCD = txtCustomerNo.Text;
             dse.Age = mAge.ToString();
+            dse.ChangeDate = mCustomerDate;
             dse.LastPoint = bbl.Z_SetStr(lblPoint.Text);            
             dse.Operator = InOperatorCD;
             dse.PC = InPcID;
@@ -1254,6 +1258,7 @@ namespace TempoRegiHanbaiTouroku
             {
                 txtCustomerNo.Text = "";
                 mAge = 0;
+                mCustomerDate = "";
                 lblCusName.Text = "";
                 lblPoint.Text = "";
                 lblStoreTankaKBN.Text = "";
