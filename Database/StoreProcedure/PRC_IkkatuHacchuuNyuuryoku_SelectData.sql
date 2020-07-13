@@ -30,8 +30,8 @@ BEGIN
           ,CAST(NULL AS varchar) AS HacchuuNO    
           ,DJUD.VendorCD   AS SiiresakiCD    
           ,MVEN.VendorName AS SiiresakiName    
-          ,CASE WHEN MSKU.DirectFlg = 1 THEN 'ÅZ' ELSE NULL END AS ChokusouFLG    
-          ,CASE WHEN MSKU.NoNetOrderFlg = 0 THEN 'ÅZ' ELSE 'Å~' END AS NetFLG    
+          ,CASE WHEN MSKU.DirectFlg = 1 THEN 'Åõ' ELSE NULL END AS ChokusouFLG    
+          ,CASE WHEN MSKU.NoNetOrderFlg = 0 THEN 'Åõ' ELSE 'Å~' END AS NetFLG    
           ,CASE WHEN MSKU.DirectFlg = 0 THEN MSOU.SoukoName ELSE DDEP.DeliveryName END AS NounyuusakiName    
           ,MSKU.DirectFlg AS NounyuusakiKBN    
           ,CASE WHEN MSKU.DirectFlg = 0 THEN MSOU.Address1 + ' ' + MSOU.Address2 ELSE DDEP.DeliveryAddress1 + ' ' + DDEP.DeliveryAddress2 END AS NounyuusakiJuusho    
@@ -64,7 +64,7 @@ BEGIN
           ,MMUP.Char1 AS TaniName    
           ,SUB_HacchuuSuu.Value AS HacchuuSuu    
           ,FORMAT(SUB_HacchuuTanka.Value,'###,###') AS HacchuuTanka    
-          ,FORMAT(DJUD.OrderGaku,'###,###') AS Hacchuugaku    
+          ,FORMAT(SUB_Hacchuugaku.Value,'###,###') AS Hacchuugaku    
           ,CASE WHEN MSKU.TaxRateFLG = 1 THEN MSAT.TaxRate1    
                 WHEN MSKU.TaxRateFLG = 2 THEN MSAT.TaxRate2    
                                          ELSE 0    
@@ -84,7 +84,7 @@ BEGIN
     ON MSKU.AdminNO = DJUD.AdminNO    
     LEFT JOIN (SELECT SUB.JuchuuNO    
                      ,SUB.JuchuuRows     
-        ,SUB.OrderNO    
+                     ,SUB.OrderNO    
                      ,SUB.OrderRows    
                  FROM (SELECT ROW_NUMBER()OVER(PARTITION BY DLOD.JuchuuNO,DLOD.JuchuuRows ORDER BY OrderSEQ DESC)num    
                              ,DLOD.JuchuuNO    
@@ -144,7 +144,7 @@ BEGIN
     CROSS JOIN Fnc_M_SalesTax_SelectLatest(@p_HacchuuDate) MSAT    
     OUTER APPLY(SELECT DJUD.OrderUnitPrice Value)SUB_HacchuuTanka    
     OUTER APPLY(SELECT DJUD.JuchuuSuu - DJUD.HikiateSu Value)SUB_HacchuuSuu    
-    OUTER APPLY(SELECT SUB_HacchuuTanka.Value * SUB_HacchuuSuu.Value Value)SUB_Hacchuugaku    
+    OUTER APPLY(SELECT SUB_HacchuuTanka.Value * SUB_HacchuuSuu.Value Value)SUB_Hacchuugaku
     OUTER APPLY(SELECT CASE WHEN MSKU.TaxRateFLG = 1 THEN MSAT.TaxRate1 / 100    
                             WHEN MSKU.TaxRateFLG = 2 THEN MSAT.TaxRate2 / 100    
                                                      ELSE 0    
@@ -160,7 +160,7 @@ BEGIN
     WHERE DJUD.DeleteDateTime IS NULL    
       AND (@p_VendorCD IS NULL OR DJUD.VendorCD = @p_VendorCD)
       AND DJUD.NotOrderFlg = 0
-      AND DJUH.StaffCD = @p_JuchuuStaffCD
+      AND (@p_JuchuuStaffCD IS NULL OR DJUH.StaffCD = @p_JuchuuStaffCD)
       AND ((MSTR.StoreKBN <> 3    
             AND    
             DJUH.StoreCD = @p_StoreCD    

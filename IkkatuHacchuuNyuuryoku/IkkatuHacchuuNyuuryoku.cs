@@ -665,23 +665,26 @@ namespace IkkatuHacchuuNyuuryoku
                                 M_JANOrderPrice_DL mjdl_StoreSiteiNasi = new M_JANOrderPrice_DL();
                                 var dt_MJOP_StoreSiteiNasi = mjdl.M_JANOrderPrice_Select(mjop_StoreSiteiNasi);
 
-                                if (dt_MJOP_StoreSiteiNasi.Rows.Count != 0)
-                                {
-                                    mGrid.g_DArray[w_Row].HacchuuTanka = string.Format("{0:#,##0}", dt_MJOP_StoreSiteiNasi.Rows[0].Field<decimal>("PriceWithoutTax"));
-                                }
-                                else if (dt_MJOP_StoreSiteiAri.Rows.Count != 0)
+                                if (dt_MJOP_StoreSiteiAri.Rows.Count != 0)
                                 {
                                     mGrid.g_DArray[w_Row].HacchuuTanka = string.Format("{0:#,##0}", dt_MJOP_StoreSiteiAri.Rows[0].Field<decimal>("PriceWithoutTax"));
                                 }
-                                else if (dt_MIOP_StoreSiteiNasi.Rows.Count != 0)
+                                else if (dt_MJOP_StoreSiteiNasi.Rows.Count != 0)
                                 {
-                                    mGrid.g_DArray[w_Row].HacchuuTanka = string.Format("{0:#,##0}", dt_MIOP_StoreSiteiNasi.Rows[0].Field<decimal>("PriceWithoutTax"));
+                                    mGrid.g_DArray[w_Row].HacchuuTanka = string.Format("{0:#,##0}", dt_MJOP_StoreSiteiNasi.Rows[0].Field<decimal>("PriceWithoutTax"));
                                 }
                                 else if (dt_MIOP_StoreSiteiAri.Rows.Count != 0)
                                 {
                                     mGrid.g_DArray[w_Row].HacchuuTanka = string.Format("{0:#,##0}", dt_MIOP_StoreSiteiAri.Rows[0].Field<decimal>("PriceWithoutTax"));
                                 }
+                                else if (dt_MIOP_StoreSiteiNasi.Rows.Count != 0)
+                                {
+                                    mGrid.g_DArray[w_Row].HacchuuTanka = string.Format("{0:#,##0}", dt_MIOP_StoreSiteiNasi.Rows[0].Field<decimal>("PriceWithoutTax"));
+                                }
                                 mGrid.g_DArray[w_Row].Hacchuugaku = string.Format("{0:#,##0}", decimal.Parse(mGrid.g_DArray[w_Row].HacchuuTanka) * wSuu);
+                                mGrid.g_MK_Ctrl[(int)ClsGridIkkatuHacchuu.ColNO.HacchuuTanka, w_Row].CellCtl.Text = mGrid.g_DArray[w_Row].HacchuuTanka.ToString();
+                                mGrid.g_MK_Ctrl[(int)ClsGridIkkatuHacchuu.ColNO.Hacchuugaku, w_Row].CellCtl.Text = mGrid.g_DArray[w_Row].Hacchuugaku.ToString();
+
                                 this.CalcKin();
 
                                 break;
@@ -704,6 +707,7 @@ namespace IkkatuHacchuuNyuuryoku
                                 }
                                 //入力された場合、金額再計算
                                 mGrid.g_DArray[w_Row].Hacchuugaku = string.Format("{0:#,##0}", wTanka * wSuu);
+                                mGrid.g_MK_Ctrl[(int)ClsGridIkkatuHacchuu.ColNO.Hacchuugaku, w_Row].CellCtl.Text = mGrid.g_DArray[w_Row].Hacchuugaku.ToString();
 
                                 this.CalcKin();
                                 break;
@@ -718,6 +722,7 @@ namespace IkkatuHacchuuNyuuryoku
                                     }
                                 }
                                 mGrid.g_DArray[w_Row].Hacchuugaku = string.Format("{0:#,##0}", wTanka * wSuu);
+                                mGrid.g_MK_Ctrl[(int)ClsGridIkkatuHacchuu.ColNO.Hacchuugaku, w_Row].CellCtl.Text = mGrid.g_DArray[w_Row].Hacchuugaku.ToString();
 
                                 this.CalcKin();
                                 break;
@@ -757,6 +762,50 @@ namespace IkkatuHacchuuNyuuryoku
                 //エラー時共通処理
                 MessageBox.Show(ex.Message);
                 //EndSec();
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GridControl_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int w_Row;
+                CKM_Controls.CKM_CheckBox w_ActCtl;
+
+                w_ActCtl = (CKM_Controls.CKM_CheckBox)sender;
+                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
+
+                //どの項目か判別
+                int CL = -1;
+                string ctlName = string.Empty;
+                if (w_ActCtl.Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                {
+                    ctlName = w_ActCtl.Parent.Name.Substring(0, w_ActCtl.Parent.Name.LastIndexOf("_"));
+                }
+                else
+                {
+                    ctlName = w_ActCtl.Name.Substring(0, w_ActCtl.Name.LastIndexOf("_"));
+                }
+
+                switch (ctlName)
+                {
+                    case "chkEDIFLG":
+                        CL = (int)ClsGridIkkatuHacchuu.ColNO.EDIFLG;
+                        break;
+                    case "chkTaishouFLG":
+                        CL = (int)ClsGridIkkatuHacchuu.ColNO.TaishouFLG;
+                        this.CalcKin();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -920,54 +969,56 @@ namespace IkkatuHacchuuNyuuryoku
                     return;
                 }
             }
-
-            for (int i = 0; i < detailControls.Length; i++)
+            else
             {
-                if (CheckDetail(i, true) == false)
+                for (int i = 0; i < detailControls.Length; i++)
                 {
-                    detailControls[i].Focus();
-                    return;
+                    if (CheckDetail(i, true) == false)
+                    {
+                        detailControls[i].Focus();
+                        return;
+                    }
                 }
             }
             CheckData(true);
             CheckGrid(0, 0);
 
             this.CalcKin();
-        }
+         }
         /// <summary>
         /// F12：登録
         /// </summary>
         protected override void ExecSec()
         {
-            if (OperationMode == EOperationMode.INSERT)
-            {
-                if (CheckKey((int)EIndex.StoreCD, false) == false)
-                {
-                    return;
-                }
-            }
-            else
-            {
-                for (int i = 0; i < keyControls.Length; i++)
-                {
-                    if (CheckKey(i, false) == false)
-                    {
-                        keyControls[i].Focus();
-                        return;
-                    }
-                }
-            }
+            //if (OperationMode == EOperationMode.INSERT)
+            //{
+            //    if (CheckKey((int)EIndex.StoreCD, false) == false)
+            //    {
+            //        return;
+            //    }
+            //}
+            //else
+            //{
+            //    for (int i = 0; i < keyControls.Length; i++)
+            //    {
+            //        if (CheckKey(i, false) == false)
+            //        {
+            //            keyControls[i].Focus();
+            //            return;
+            //        }
+            //    }
+            //}
 
             if (OperationMode != EOperationMode.DELETE)
             {
-                for (int i = 0; i < detailControls.Length; i++)
-                {
-                    if (CheckDetail(i, false) == false)
-                    {
-                        detailControls[i].Focus();
-                        return;
-                    }
-                }
+                //for (int i = 0; i < detailControls.Length; i++)
+                //{
+                //    if (CheckDetail(i, false) == false)
+                //    {
+                //        detailControls[i].Focus();
+                //        return;
+                //    }
+                //}
                 // 明細部  画面の範囲の内容を配列にセット
                 mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
@@ -981,6 +1032,8 @@ namespace IkkatuHacchuuNyuuryoku
                         || bbl.Z_Set(mGrid.g_DArray[RW].Hacchuugaku) != 0
                         )
                     {
+                        if (mGrid.g_DArray[RW].TaishouFLG == "False") continue;
+
                         for (int CL = (int)ClsGridIkkatuHacchuu.ColNO.SiiresakiCD; CL < (int)ClsGridIkkatuHacchuu.ColNO.COUNT; CL++)
                         {
                             if (CheckGrid(CL, RW, true) == false)
@@ -1058,6 +1111,8 @@ namespace IkkatuHacchuuNyuuryoku
                 mGrid.g_DArray[RW].TaishouFLG = "True";
             }
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+            this.CalcKin();
         }
         /// <summary>
         /// 
@@ -1072,6 +1127,8 @@ namespace IkkatuHacchuuNyuuryoku
                 mGrid.g_DArray[RW].TaishouFLG = "False";
             }
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+            this.CalcKin();
         }
         /// <summary>
         /// 
@@ -1085,12 +1142,14 @@ namespace IkkatuHacchuuNyuuryoku
             if (this.ikkatuHacchuuMode == IkkatuHacchuuMode.FAXHacchuu)
             {
                 this.lblIkkatuHacchuuMode.Text = "Net発注";
+                this.lblIkkatuHacchuuMode.BackColor = System.Drawing.Color.LightGreen;
                 this.ikkatuHacchuuMode = IkkatuHacchuuMode.NetHacchuu;
                 this.btnChangeIkkatuHacchuuMode.Text = "FAX発注(F11)";
             }
             else
             {
                 this.lblIkkatuHacchuuMode.Text = "FAX発注";
+                this.lblIkkatuHacchuuMode.BackColor = System.Drawing.Color.LightBlue;
                 this.ikkatuHacchuuMode = IkkatuHacchuuMode.FAXHacchuu;
                 this.btnChangeIkkatuHacchuuMode.Text = "Net発注(F11)";
             }
@@ -1481,6 +1540,12 @@ namespace IkkatuHacchuuNyuuryoku
                     };
                     Vendor_BL sbl = new Vendor_BL();
                     bool ret = sbl.M_Vendor_SelectTop1(mve);
+                    if (!ret)
+                    {
+                        //Ｅ101
+                        bbl.ShowMessage("E101");
+                        return false;
+                    }
                     if (ret)
                     {
                         if (this.ikkatuHacchuuMode == IkkatuHacchuuMode.NetHacchuu
@@ -1491,6 +1556,7 @@ namespace IkkatuHacchuuNyuuryoku
                             return false;
                         }
                     }
+                    mGrid.g_DArray[row].SiiresakiName = mve.VendorName;
 
                     //[M_ItemOrderPrice_Select]
                     M_ItemOrderPrice_Entity miop_StoreSiteiAri = new M_ItemOrderPrice_Entity
@@ -1710,6 +1776,9 @@ namespace IkkatuHacchuuNyuuryoku
         /// </summary>
         private void CalcKin()
         {
+            // 明細部  画面の範囲の内容を配列にセット
+            mGrid.S_DispToArray(Vsb_Mei_0.Value);
+
             var l = GetMeisaiList();
             this.lblHacchuugakuSum.Text = string.Format("{0:#,0}", l.Sum(r => r.Hacchuugaku == null ? 0 : decimal.Parse(r.Hacchuugaku)));
         }
@@ -1909,7 +1978,7 @@ namespace IkkatuHacchuuNyuuryoku
 
             for (int i = 0; i <= mGrid.g_MK_Max_Row - 1; i++)
             {
-                if (mGrid.g_DArray[i].TaishouFLG == "False" || string.IsNullOrWhiteSpace(mGrid.g_DArray[i].SiiresakiCD)) continue;
+                if (mGrid.g_DArray[i].TaishouFLG == null || mGrid.g_DArray[i].TaishouFLG == "False") continue;
                 MeisaiRecord r = GetMeisaiRecord(i);
                 l.Add(r);
             }
@@ -2087,7 +2156,7 @@ namespace IkkatuHacchuuNyuuryoku
             if (dt.Rows.Count == 0)
             {
                 bbl.ShowMessage("E128");
-                Scr_Clr(1);
+                //Scr_Clr(1);
                 previousCtrl.Focus();
                 return false;
             }
@@ -2213,6 +2282,8 @@ namespace IkkatuHacchuuNyuuryoku
                 previousCtrl.Focus();
             }
 
+            this.CalcKin();
+
             return true;
         }
 
@@ -2292,6 +2363,7 @@ namespace IkkatuHacchuuNyuuryoku
                             mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Enter += new System.EventHandler(GridControl_Enter);
                             mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Leave += new System.EventHandler(GridControl_Leave);
                             mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown);
+                            ((CKM_Controls.CKM_CheckBox)mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl).Click += new System.EventHandler(GridControl_Click);
                         }
                     }
 
