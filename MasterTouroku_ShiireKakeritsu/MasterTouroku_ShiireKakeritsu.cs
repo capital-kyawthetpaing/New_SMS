@@ -579,7 +579,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     if (scSportsCD.SelectData())
                     {
                         scSportsCD.Value1 = "202";
-                        //scSportsCD.Value2 = scSportsCD.LabelText;
+                        scSportsCD.Value2 = scSportsCD.LabelText;
                     }
                     //else
                     //{
@@ -599,7 +599,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     if (scSegmentCD.SelectData())
                     {
                         scSegmentCD.Value1 = "203";
-                        //scSegmentCD.Value2 = scSegmentCD.LabelText;
+                        scSegmentCD.Value2 = scSegmentCD.LabelText;
                     }
                     //else
                     //{
@@ -899,7 +899,7 @@ namespace MasterTouroku_ShiireKakeritsu
             }
         }
 
-        protected DataTable ChangeDataColumnName(DataTable dtMain)
+        protected DataTable ChangeColumnName(DataTable dtMain)
         {
             dtMain.Columns["仕入先CD"].ColumnName = "VendorCD";
             dtMain.Columns["ブランドCD"].ColumnName = "BrandCD";
@@ -909,15 +909,6 @@ namespace MasterTouroku_ShiireKakeritsu
             dtMain.Columns["シーズン"].ColumnName = "LastSeason";
             dtMain.Columns["改定日"].ColumnName = "ChangeDate";
             dtMain.Columns["掛率"].ColumnName = "Rate";
-            //dtMain.Columns["VendorCD"].ColumnName = "仕入先CD";
-            //dtMain.Columns["StoreCD"].ColumnName = "店舗CD";
-            //dtMain.Columns["BrandCD"].ColumnName = "ブランドCD";
-            //dtMain.Columns["SportsCD"].ColumnName = "競　技CD";
-            //dtMain.Columns["SegmentCD"].ColumnName = "商品分類CD";
-            //dtMain.Columns["LastYearTerm"].ColumnName = "年度";
-            //dtMain.Columns["LastSeason"].ColumnName = "シーズン";
-            //dtMain.Columns["ChangeDate"].ColumnName = "改定日";
-            //dtMain.Columns["Rate"].ColumnName = "掛率";
             return dtMain;
         }
         protected DataTable ExcelToDatatable(string filePath)
@@ -1035,7 +1026,7 @@ namespace MasterTouroku_ShiireKakeritsu
                         if (dtExcel.Rows.Count > 0)
                         {
                             dtAdd = new DataTable();
-                            dtAdd = ChangeDataColumnName(dtExcel);
+                            dtAdd = ChangeColumnName(dtExcel);
                             dgv_ShiireKakeritsu.DataSource = dtAdd;
                         }
                     }
