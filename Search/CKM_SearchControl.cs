@@ -1967,6 +1967,9 @@ namespace Search
                     case SearchType.JANCD:
                         dtResult = bbl.SimpleSelect1("66", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
+                    case SearchType.MakerItem:
+                        dtResult = bbl.SimpleSelect1("69", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        break;
                 }
 
             }
