@@ -32,8 +32,6 @@ namespace MasterTouroku_ShiireKakeritsu
         DataTable dtAdd;
         int type = 0;
         string Xml;
-        public bool IsNumber { get; set; } = true;
-        public bool MoveNext { get; set; } = true;
 
         public frmMasterTouroku_ShiireKakeritsu()
         {
@@ -156,20 +154,6 @@ namespace MasterTouroku_ShiireKakeritsu
             {
                 if (!RequireCheck(new Control[] { scSupplierCD.TxtCode,cbo_Store }))
                     return false;
-                //else
-                //{
-                //mve.VendorCD = scSupplierCD.TxtCode.Text;
-                //mve.ChangeDate = txtDate1.Text;
-                //DataTable dtvendor = new DataTable();
-                //dtvendor = mskbl.M_Vendor_Select(mve);
-                //if (dtvendor.Rows.Count == 0)
-                //{
-                //    mskbl.ShowMessage("E101");
-                //    scSupplierCD.SetFocus(1);
-                //    return false;
-                //}
-                //else
-                //{
                 DataTable  dtVedor = mskbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 4, scSupplierCD.TxtCode.Text);
                 if (dtVedor.Rows[0]["DeleteFlg"].ToString() == "1")
                 {
@@ -178,14 +162,6 @@ namespace MasterTouroku_ShiireKakeritsu
                     return false;
                 }
             }
-            //if (scSupplierCD.IsExists(1))
-            //{
-            //    mskbl.ShowMessage("E119");
-            //    scSupplierCD.SetFocus(1);
-            //    return false;
-            //}
-            //if (!RequireCheck(new Control[] { txtDate1 }))
-            //    return false;
             else if (type == 2)
             {
                 if (!RequireCheck(new Control[] { scBrandCD.TxtCode,scSportsCD.TxtCode,scSegmentCD.TxtCode,cbo_Year,cbo_Season,txtChangeDate,txtRate }))
@@ -210,48 +186,6 @@ namespace MasterTouroku_ShiireKakeritsu
                 //    {
                 //        scBrandCD.LabelText = dtbrand.Rows[0]["BrandName"].ToString();
                 //    }
-                //}
-
-                //if (!scSportsCD.IsExists(2))
-                //{
-                //    mskbl.ShowMessage("E101");
-                //    scSportsCD.SetFocus(1);
-                //    return false;
-                //}
-                
-                //if (!scSegmentCD.IsExists(2))
-                //{
-                //    mskbl.ShowMessage("E101");
-                //    scSegmentCD.SetFocus(1);
-                //    return false;
-                //}
-
-                //if (string.IsNullOrWhiteSpace(cbo_Year.Text))
-                //{
-                //    mskbl.ShowMessage("E102");
-                //    cbo_Year.Focus();
-                //    return false;
-                //}
-
-                //if (string.IsNullOrWhiteSpace(cbo_Season.Text))
-                //{
-                //    mskbl.ShowMessage("E102");
-                //    cbo_Season.Focus();
-                //    return false;
-                //}
-
-                //if (string.IsNullOrWhiteSpace(txtChangeDate.Text))
-                //{
-                //    mskbl.ShowMessage("E102");
-                //    txtChangeDate.Focus();
-                //    return false;
-                //}
-
-                //if (string.IsNullOrWhiteSpace(txtRate.Text))
-                //{
-                //    mskbl.ShowMessage("E102");
-                //    txtRate.Focus();
-                //    return false;
                 //}
             }
 
@@ -300,9 +234,17 @@ namespace MasterTouroku_ShiireKakeritsu
                 {
                     if (scSupplierCD.SelectData())
                     {
-                        scSupplierCD.Value1 = scSupplierCD.TxtCode.Text;
-                        scSupplierCD.Value2 = scSupplierCD.LabelText;
-                        SearchData();
+                        DataTable dtVedor = mskbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 4, scSupplierCD.TxtCode.Text);
+                        string deflg = "";
+                        if (dtVedor.Rows.Count>0)
+                        {
+                            deflg = dtVedor.Rows[0]["DeleteFlg"].ToString();
+                        }
+                        if (deflg == "1")
+                        {
+                            bbl.ShowMessage("E119");
+                            scSupplierCD.SetFocus(1);
+                        }
                     }
                     else
                     {
