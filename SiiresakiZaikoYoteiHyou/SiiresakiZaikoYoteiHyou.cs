@@ -23,7 +23,6 @@ namespace SiiresakiZaikoYoteiHyou
         SiiresakiZaikoYoteiHyou_BL szybl;
         D_MonthlyPurchase_Entity dmpe;
         DataTable dt;
-        Viewer vr;
         CrystalDecisions.Windows.Forms.CrystalReportViewer crv;
         M_StoreClose_Entity msce;
 
@@ -249,7 +248,6 @@ namespace SiiresakiZaikoYoteiHyou
                                 szy_Report.SetParameterValue("lblDateTo",txtTargetDateTo.Text);
                                 szy_Report.SetParameterValue("lblStore", cboStore.SelectedValue.ToString() + "   " + cboStore.AccessibilityObject.Name);
                                 szy_Report.SetParameterValue("lblToday", dt.Rows[0]["Today"].ToString());
-                                vr = new Viewer();
                                 try
                                 {
 
@@ -260,6 +258,7 @@ namespace SiiresakiZaikoYoteiHyou
                                 }
                                 if (DResult == DialogResult.Yes)
                                 {
+                                    var vr = new Viewer();
                                     vr.CrystalReportViewer1.ShowPrintButton = true;
                                     vr.CrystalReportViewer1.ReportSource = szy_Report;
                                     vr.ShowDialog();
