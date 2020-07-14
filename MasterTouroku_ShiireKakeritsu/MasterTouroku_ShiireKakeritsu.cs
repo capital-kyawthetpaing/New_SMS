@@ -179,20 +179,6 @@ namespace MasterTouroku_ShiireKakeritsu
                     return false;
                 }
             }
-            //if (string.IsNullOrWhiteSpace(txtRevisionDate.Text))
-            //{
-            //    mskbl.ShowMessage("E102");
-            //    txtRevisionDate.Focus();
-            //    return false;
-            //}
-
-            //if (string.IsNullOrWhiteSpace(txtRate1.Text))
-            //{
-            //    mskbl.ShowMessage("E102");
-            //    txtRate1.Focus();
-            //    return false;
-            //}
-
             //if (scSupplierCD.IsExists(1))
             //{
             //    mskbl.ShowMessage("E119");
