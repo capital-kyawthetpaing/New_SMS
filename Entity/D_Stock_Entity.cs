@@ -48,6 +48,7 @@ namespace Entity
         public string ArrivalStartDate { get; set; }
         public string ArrivalEndDate { get; set; }
         public string RegisterFlg { get; set; }
+        public string UnregisterFlg { get; set; }
         public string LocationFlg { get; set; }
 
         //返品入力
