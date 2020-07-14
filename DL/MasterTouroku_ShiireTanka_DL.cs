@@ -19,7 +19,7 @@ namespace DL
             {
                 { "@vendorcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.VendorCD } },
                 { "@storecd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.StoreCD } },
-                //{ "@changedate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.ChangeDate } },
+                { "@changedate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.ChangeDate } },
                 //{ "@makerItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.MakerItem } },
                 { "@display", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.Display } },
                 //{ "@brandcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.BrandCD } },
@@ -133,7 +133,7 @@ namespace DL
                     {"@LastYearTerm",new ValuePair { value1=SqlDbType.VarChar,value2=mie.LastYearTerm} } ,
                     {"@LastSeason",new ValuePair { value1=SqlDbType.VarChar,value2=mie.LastSeason} } ,
                     {"@ChangeDate",new ValuePair { value1=SqlDbType.VarChar,value2=mie.ChangeDate} } ,
-                    {"@MakerItem",new ValuePair { value1=SqlDbType.VarChar,value2=mie.MakerItem} } 
+                    {"@MakerItem",new ValuePair { value1=SqlDbType.VarChar,value2=mie.MakerItem} }
                };
             return SelectData(dic, "M_ItemOrderPrice_SelectFromItem");
         }

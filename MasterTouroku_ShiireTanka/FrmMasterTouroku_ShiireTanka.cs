@@ -16,6 +16,7 @@ using System.IO;
 using System.Diagnostics;
 using ClosedXML.Excel;
 using System.Data.OleDb;
+using System.Globalization;
 
 namespace MasterTouroku_ShiireTanka
 {
@@ -48,7 +49,8 @@ namespace MasterTouroku_ShiireTanka
         {
             InProgramID = "MasterTouroku_ShiireTanka";
             StartProgram();
-            ModeText = "ITEM";
+            //ModeText = "ITEM";
+            RB_itemandsku_Check();
             BindCombo();
            
             operatorCd = InOperatorCD;
@@ -240,20 +242,17 @@ namespace MasterTouroku_ShiireTanka
         }
         private void makershohin_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            //if(e.KeyCode==Keys.Enter)
-            //{
-            //    if(makershohin.SelectData())
-            //    {
-            //        makershohin.Value1 = makershohin.TxtCode.Text;
-            //        makershohin.Value2 = makershohin.LabelText;
-            //    }
-            //    else
-            //    {
-            //        bbl.ShowMessage("E101");
-            //        makershohin.SetFocus(1);
-            //    }
-            //}
-
+            if (e.KeyCode == Keys.Enter)
+            {
+                if(!String.IsNullOrEmpty(makershohin.TxtCode.Text))
+                {
+                    if (!makershohin.IsExists(2))
+                    {
+                        bl.ShowMessage("E101");
+                        makershohin.Focus();
+                    }
+                }
+            }
         }
         private void brandC_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
@@ -328,19 +327,17 @@ namespace MasterTouroku_ShiireTanka
         }
         private void makershohinC_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            //if(e.KeyCode== Keys.Enter)
-            //{
-            //    if(makershohinC.SelectData())
-            //    {
-            //        makershohinC.Value1 = makershohinC.TxtCode.Text;
-            //        makershohinC.Value2 = makershohinC.LabelText;
-            //    }
-            //    else
-            //    {
-            //        bbl.ShowMessage("E102");
-            //        makershohinC.SetFocus(1);
-            //    }
-            //}
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!String.IsNullOrEmpty(makershohinC.TxtCode.Text))
+                {
+                    if (!makershohinC.IsExists(2))
+                    {
+                        bl.ShowMessage("E101");
+                        makershohinC.Focus();
+                    }
+                }
+            }
         }
         private void itemcd_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
@@ -377,6 +374,17 @@ namespace MasterTouroku_ShiireTanka
         {
             itemcd.Value1 = "1";
             itemcd.ChangeDate = bbl.GetDate();
+        }
+
+        private void makershohin_Enter(object sender, EventArgs e)
+        {
+            makershohin.Value1 = "3";
+            makershohin.ChangeDate = bl.GetDate();
+        }
+        private void makershohinC_Enter(object sender, EventArgs e)
+        {
+            makershohinC.Value1 = "3";
+            makershohinC.ChangeDate = bl.GetDate();
         }
         #endregion
         private bool ErrorCheckMain()
@@ -569,6 +577,7 @@ namespace MasterTouroku_ShiireTanka
             {
                 VendorCD = shiiresaki.TxtCode.Text,
                 StoreCD = CB_store.SelectedValue.ToString(),
+                ChangeDate=TB_headerdate.Text,
                 Display = RB_item.Checked ? "0" : "1",
             };
             return m_IOE;
@@ -707,14 +716,17 @@ namespace MasterTouroku_ShiireTanka
                 this.SKUCD.Visible = true;
                 this.SKUCD.Width = 120;
                 GV_item.Refresh();
+                BT_Capture.Visible = false;
+                ModeText = "SKU";
                 //if (!String.IsNullOrEmpty(shiiresaki.TxtCode.Text))
                 //{
-                    GV_item.DataSource = dtsku;
+                GV_item.DataSource = dtsku;
                 //}
             }
             else
             {
                 //this.GV_item.Size = new System.Drawing.Size(1560, 280);
+                ModeText = "ITEM";
                 panel4.Enabled = true;
                 panel5.Enabled = true;
                 this.SKUCD.Width = 150;
@@ -729,10 +741,10 @@ namespace MasterTouroku_ShiireTanka
                 this.カラー.Width = 0;
                 this.SKUCD.Visible = false;
                 GV_item.Refresh();
-                
+                BT_Capture.Visible = true ;
                 //if (!String.IsNullOrEmpty(shiiresaki.TxtCode.Text))
                 //{
-                    if(btn == "1")
+                if (btn == "1")
                     {
                         GV_item.DataSource = dt;
                     }
@@ -741,6 +753,68 @@ namespace MasterTouroku_ShiireTanka
                         GV_item.DataSource = dtview;
                     }
                    
+                //}
+            }
+        }
+        private void RB_itemandsku_Check()
+        {
+            if (RB_sku.Checked == true)
+            {
+                panel4.Enabled = false;
+                panel5.Enabled = false;
+                this.ブランド.Visible = false;
+                this.シーズン.Visible = false;
+                this.年度.Visible = false;
+                this.商品分類.Visible = false;
+                this.競技.Visible = false;
+
+                //this.GV_item.Location = new System.Drawing.Point(89, 346);かーら
+
+                //this.GV_item.Size = new System.Drawing.Size(1500, 280);
+                this.サイズ.Visible = true;
+                this.サイズ.Width = 175;
+                this.カラー.Visible = true;
+                this.カラー.Width = 130;
+                this.SKUCD.Visible = true;
+                this.SKUCD.Width = 120;
+                GV_item.Refresh();
+                BT_Capture.Visible = false;
+                ModeText = "SKU";
+                //if (!String.IsNullOrEmpty(shiiresaki.TxtCode.Text))
+                //{
+                GV_item.DataSource = dtsku;
+                //}
+            }
+            else
+            {
+                //this.GV_item.Size = new System.Drawing.Size(1560, 280);
+                ModeText = "ITEM";
+                panel4.Enabled = true;
+                panel5.Enabled = true;
+                this.SKUCD.Width = 150;
+                this.ブランド.Visible = true;
+                this.シーズン.Visible = true;
+                this.年度.Visible = true;
+                this.商品分類.Visible = true;
+                this.競技.Visible = true;
+                this.サイズ.Visible = false;
+                this.サイズ.Width = 0;
+                this.カラー.Visible = false;
+                this.カラー.Width = 0;
+                this.SKUCD.Visible = false;
+                GV_item.Refresh();
+                BT_Capture.Visible = true;
+                //if (!String.IsNullOrEmpty(shiiresaki.TxtCode.Text))
+                //{
+                if (btn == "1")
+                {
+                    GV_item.DataSource = dt;
+                }
+                else
+                {
+                    GV_item.DataSource = dtview;
+                }
+
                 //}
             }
         }
@@ -852,6 +926,7 @@ namespace MasterTouroku_ShiireTanka
                             DataRow[] drskuadd;
                             drskuadd = dtsku.Select(selectq + " and  ChangeDate = '" + TB_date_add.Text + "'");
                             DataTable dtskuup = bl.M_SKU_SelectFor_SKU_Update("", "", itemcd.TxtCode.Text, TB_date_add.Text, "3");
+
 
                             if (drskuadd.Length > 0)
                             {
@@ -1450,7 +1525,7 @@ namespace MasterTouroku_ShiireTanka
             {
                 if (e.ColumnIndex == 0)
                 {
-                    string ck = GV_item.Rows[e.RowIndex].Cells["ck"].State.ToString();
+                    //string ck = GV_item.Rows[e.RowIndex].Cells["ck"].State.ToString();
                     //string ck = GV_item.Rows[e.RowIndex].Cells["ck"].
                     string ck1 = GV_item.Rows[e.RowIndex].Cells["ck"].Value.ToString();
                     if (ck1 == "0")
@@ -1768,6 +1843,8 @@ namespace MasterTouroku_ShiireTanka
                     bl.ShowMessage("E137");
                     return false;
                 }
+
+
                 //string data = dtExcel.Rows[0][0].ToString();
                 //string data1 = dtExcel.Rows[0][1].ToString();
                 //string data2 = dtExcel.Rows[0][2].ToString();
@@ -1819,28 +1896,40 @@ namespace MasterTouroku_ShiireTanka
                         return false;
                     }
                     string dates = dtExcel.Rows[i][3].ToString();
+                    //if(!Convert.ToDateTime(dtExcel.Rows[i][3].ToString()))
+                    // {
+
+                    // }
+                    DateTime dt;
+                    string[] formats = { "yyyy/MM/dd hh:mm:ss tt" };
+                    if (!DateTime.TryParseExact(dates, formats,
+                                    System.Globalization.CultureInfo.InvariantCulture,
+                                    DateTimeStyles.None, out dt))
+                    {
+                        return false;
+                    }
                     //string type = dates.GetType.ToString();
-                  
+
                         //var dateTime1 = DateTime.FromOADate(date).ToString("yyyy/MM/dd");
-                   
+
                         //double date = double.Parse(dates);
                         //var dateTime = DateTime.FromOADate(date).ToString("yyyy/MM/dd");
                         //var
-                    //double date = double.Parse(dates);
+                        //double date = double.Parse(dates);
 
-                    //var dateTime = DateTime.FromOADate(date).ToString("yyyy/MM/dd");
+                        //var dateTime = DateTime.FromOADate(date).ToString("yyyy/MM/dd");
 
-                    //double date = double.Parse(dates);
+                        //double date = double.Parse(dates);
 
-                    //var dateTime = DateTime.FromOADate(date).ToString("yyyy/MM/dd");
-                    //if (dtExcel.Rows[1][0].ToString() != shiiresaki.TxtCode.Text)
-                    //{
-                    //    return false;
-                    //}
-                    //if (dtExcel.Rows[1][0].ToString() != shiiresaki.TxtCode.Text)
-                    //{
-                    //    return false;
-                    //}
+                        //var dateTime = DateTime.FromOADate(date).ToString("yyyy/MM/dd");
+                        //if (dtExcel.Rows[1][0].ToString() != shiiresaki.TxtCode.Text)
+                        //{
+                        //    return false;
+                        //}
+                        //if (dtExcel.Rows[1][0].ToString() != shiiresaki.TxtCode.Text)
+                        //{
+                        //    return false;
+                        //}
                 }
             }
             return true;
