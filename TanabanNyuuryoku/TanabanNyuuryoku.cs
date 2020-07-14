@@ -341,9 +341,14 @@ namespace TanabanNyuuryoku
             //*** Insert Update Function
             if (tnbnBL.M_Location_InsertUpdate (dse,mle))
             {
-                Clear(PanelHeader);
-                Clear(panelDetail);
-                txtArrivalDateFrom.Focus();
+                //Clear(PanelHeader);
+                ////Clear(panelDetail);
+                //BindCombo();
+                //chkNotRegister.Checked = true;
+                //ScStorage.Value1 = cboWarehouse.SelectedValue.ToString();
+                //dgvTanaban.ClearSelection();
+                //txtArrivalDateFrom.Focus();
+                Clear();
                 tnbnBL.ShowMessage("I101");
             }
             else
@@ -354,14 +359,13 @@ namespace TanabanNyuuryoku
      
         private void Clear()
         {
-            //Clear(panelDetail);
             txtArrivalDateFrom.Text = DateTime.Now.ToString("yyyy/MM/dd");
             txtArrivalDateTo.Text = DateTime.Now.ToString("yyyy/MM/dd");
 
             BindCombo();
             chkNotRegister.Checked = true;
             chkRegister.Checked = false;
-            ScStorage.Value1 = cboWarehouse.SelectedValue.ToString();
+            Clear(panel1);
 
             dgvTanaban.DataSource = string.Empty;
             txtArrivalDateFrom.Focus();
@@ -454,7 +458,7 @@ namespace TanabanNyuuryoku
         }
 
         private void dgvTanaban_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+       {
             var senderGrid = (DataGridView)sender;
             if(e.RowIndex >= 0)
             {

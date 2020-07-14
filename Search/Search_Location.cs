@@ -55,7 +55,7 @@ namespace Search
             HeaderTitleText = ProNm;
             this.Text = ProNm;
 
-            CboFromSoukoCD.SelectedValue = soukoCD;
+            CboFromSoukoCD.SelectedValue =SoukoCD= soukoCD;
             zibl = new ZaikoIdouNyuuryoku_BL();
         }
 
