@@ -59,6 +59,7 @@ namespace MasterTouroku_ShiireKakeritsu
             scSupplierCD.SetFocus(1);
             txtDate1.Text = DateTime.Now.ToString("yyyy/MM/dd");
             RadioCheck();
+            SetRequiredField();
             dgv_ShiireKakeritsu.AllowUserToAddRows = false;
         }
         private void RadioCheck()
@@ -92,6 +93,9 @@ namespace MasterTouroku_ShiireKakeritsu
         private void SetRequiredField()
         {
             scSupplierCD.TxtCode.Require(true);
+            scBrandCD.TxtCode.Require(true);
+            scSportsCD.TxtCode.Require(true);
+            scSegmentCD.TxtCode.Require(true);
             txtDate1.Require(true);
             txtRevisionDate.Require(true);
             txtRate1.Require(true);
@@ -150,7 +154,7 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             if (type == 1)
             {
-                if (!RequireCheck(new Control[] { scSupplierCD.TxtCode }))
+                if (!RequireCheck(new Control[] { scSupplierCD.TxtCode,cbo_Store }))
                     return false;
                 //else
                 //{
@@ -173,11 +177,6 @@ namespace MasterTouroku_ShiireKakeritsu
                     scSupplierCD.SetFocus(1);
                     return false;
                 }
-                if(string.IsNullOrWhiteSpace(cbo_Store.SelectedValue.ToString()))
-                {
-                    mskbl.ShowMessage("E102");
-                    return false;
-                }
             }
             //if (scSupplierCD.IsExists(1))
             //{
@@ -189,90 +188,77 @@ namespace MasterTouroku_ShiireKakeritsu
             //    return false;
             else if (type == 2)
             {
-
-                if (string.IsNullOrWhiteSpace(scBrandCD.TxtCode.Text))
-                {
-                    mskbl.ShowMessage("E102");
-                    scBrandCD.SetFocus(1);
+                if (!RequireCheck(new Control[] { scBrandCD.TxtCode,scSportsCD.TxtCode,scSegmentCD.TxtCode,cbo_Year,cbo_Season,txtChangeDate,txtRate }))
                     return false;
-                }
-                else
-                {
-                    mbe.BrandCD = scBrandCD.TxtCode.Text;
-                    DataTable dtbrand = mskbl.M_BrandSelect(mbe);
-                    if (dtbrand.Rows.Count == 0)
-                    {
-                        mskbl.ShowMessage("E101");
-                        scBrandCD.SetFocus(1);
-                        return false;
-                    }
-                    else
-                    {
-                        scBrandCD.LabelText = dtbrand.Rows[0]["BrandName"].ToString();
-                    }
-                }
+                //if (string.IsNullOrWhiteSpace(scBrandCD.TxtCode.Text))
+                //{
+                //    mskbl.ShowMessage("E102");
+                //    scBrandCD.SetFocus(1);
+                //    return false;
+                //}
+                //else
+                //{
+                //    mbe.BrandCD = scBrandCD.TxtCode.Text;
+                //    DataTable dtbrand = mskbl.M_BrandSelect(mbe);
+                //    if (dtbrand.Rows.Count == 0)
+                //    {
+                //        mskbl.ShowMessage("E101");
+                //        scBrandCD.SetFocus(1);
+                //        return false;
+                //    }
+                //    else
+                //    {
+                //        scBrandCD.LabelText = dtbrand.Rows[0]["BrandName"].ToString();
+                //    }
+                //}
 
-                if (!scSportsCD.IsExists(2))
-                {
-                    mskbl.ShowMessage("E101");
-                    scSportsCD.SetFocus(1);
-                    return false;
-                }
+                //if (!scSportsCD.IsExists(2))
+                //{
+                //    mskbl.ShowMessage("E101");
+                //    scSportsCD.SetFocus(1);
+                //    return false;
+                //}
                 
-                if (!scSegmentCD.IsExists(2))
-                {
-                    mskbl.ShowMessage("E101");
-                    scSegmentCD.SetFocus(1);
-                    return false;
-                }
+                //if (!scSegmentCD.IsExists(2))
+                //{
+                //    mskbl.ShowMessage("E101");
+                //    scSegmentCD.SetFocus(1);
+                //    return false;
+                //}
 
-                if (string.IsNullOrWhiteSpace(cbo_Year.Text))
-                {
-                    mskbl.ShowMessage("E102");
-                    cbo_Year.Focus();
-                    return false;
-                }
+                //if (string.IsNullOrWhiteSpace(cbo_Year.Text))
+                //{
+                //    mskbl.ShowMessage("E102");
+                //    cbo_Year.Focus();
+                //    return false;
+                //}
 
-                if (string.IsNullOrWhiteSpace(cbo_Season.Text))
-                {
-                    mskbl.ShowMessage("E102");
-                    cbo_Season.Focus();
-                    return false;
-                }
+                //if (string.IsNullOrWhiteSpace(cbo_Season.Text))
+                //{
+                //    mskbl.ShowMessage("E102");
+                //    cbo_Season.Focus();
+                //    return false;
+                //}
 
-                if (string.IsNullOrWhiteSpace(txtChangeDate.Text))
-                {
-                    mskbl.ShowMessage("E102");
-                    txtChangeDate.Focus();
-                    return false;
-                }
+                //if (string.IsNullOrWhiteSpace(txtChangeDate.Text))
+                //{
+                //    mskbl.ShowMessage("E102");
+                //    txtChangeDate.Focus();
+                //    return false;
+                //}
 
-                if (string.IsNullOrWhiteSpace(txtRate.Text))
-                {
-                    mskbl.ShowMessage("E102");
-                    txtRate.Focus();
-                    return false;
-                }
+                //if (string.IsNullOrWhiteSpace(txtRate.Text))
+                //{
+                //    mskbl.ShowMessage("E102");
+                //    txtRate.Focus();
+                //    return false;
+                //}
             }
 
             else if (type == 3)
             {
-                if (!RequireCheck(new Control[] { scSupplierCD.TxtCode }))
+                if (!RequireCheck(new Control[] { scSupplierCD.TxtCode,txtRevisionDate,txtRate1 }))
                     return false;
-
-                if (string.IsNullOrWhiteSpace(txtRevisionDate.Text))
-                {
-                    mskbl.ShowMessage("E102");
-                    txtRevisionDate.Focus();
-                    return false;
-                }
-
-                if (string.IsNullOrWhiteSpace(txtRate1.Text))
-                {
-                    mskbl.ShowMessage("E102");
-                    txtRate1.Focus();
-                    return false;
-                }
             }
             return true;
         }
@@ -337,12 +323,14 @@ namespace MasterTouroku_ShiireKakeritsu
                 {
                     if (scBrandCD1.SelectData())
                     {
-                        scBrandCD1.Value1 = scBrandCD1.TxtCode.Text;
-                        scBrandCD1.Value2 = scBrandCD1.LabelText;
-                        SearchData();
+                        //scBrandCD1.Value1 = scBrandCD1.TxtCode.Text;
+                        //scBrandCD1.Value2 = scBrandCD1.LabelText;
+                        //SearchData();
+                        scBrandCD1.SetFocus(1);
                     }
                     else
                     {
+                        mskbl.ShowMessage("E101");
                         scBrandCD1.SetFocus(1);
                     }
                 }
@@ -358,16 +346,17 @@ namespace MasterTouroku_ShiireKakeritsu
                 {
                     if (scSportsCD1.SelectData())
                     {
-                        scSportsCD1.Value1 = scSportsCD1.TxtCode.Text;
-                        scSportsCD1.Value2 = scSportsCD1.LabelText;
-                        SearchData();
+                        //scSportsCD1.Value1 = scSportsCD1.TxtCode.Text;
+                        //scSportsCD1.Value2 = scSportsCD1.LabelText;
+                        //SearchData();
+                        scSportsCD1.SetFocus(1);
                     }
                     else
                     {
+                        mskbl.ShowMessage("E101");
                         scSportsCD1.SetFocus(1);
                     }
                 }
-
             }
         }
 
@@ -380,12 +369,14 @@ namespace MasterTouroku_ShiireKakeritsu
                 {
                     if (scSegmentCD1.SelectData())
                     {
-                        scSegmentCD1.Value1 = scSegmentCD1.TxtCode.Text;
-                        scSegmentCD1.Value2 = scSegmentCD1.LabelText;
-                        SearchData();
+                        //scSegmentCD1.Value1 = scSegmentCD1.TxtCode.Text;
+                        //scSegmentCD1.Value2 = scSegmentCD1.LabelText;
+                        //SearchData();
+                        scSegmentCD1.SetFocus(1);
                     }
                     else
                     {
+                        mskbl.ShowMessage("E101");
                         scSegmentCD1.SetFocus(1);
                     }
                 }
@@ -541,17 +532,25 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             if (e.KeyCode == Keys.Enter)
             {              
-                if (!string.IsNullOrEmpty(scBrandCD1.TxtCode.Text))
+                if (!string.IsNullOrEmpty(scBrandCD.TxtCode.Text))
                 {
-                    mbe.BrandCD = scBrandCD.TxtCode.Text;
-                    mbe.ChangeDate = txtDate1.Text;
-                    DataTable dtbrand = mskbl.M_BrandSelect(mbe);
-                    if (dtbrand.Rows.Count > 0)
+                    //mbe.BrandCD = scBrandCD.TxtCode.Text;
+                    //mbe.ChangeDate = txtDate1.Text;
+                    //DataTable dtbrand = mskbl.M_BrandSelect(mbe);
+                    //if (dtbrand.Rows.Count > 0)
+                    //{
+                    //    scBrandCD.LabelText = dtbrand.Rows[0]["BrandName"].ToString();
+                    //}        
+                    if (scBrandCD.SelectData())
                     {
-                        scBrandCD.LabelText = dtbrand.Rows[0]["BrandName"].ToString();
-                    }                 
+                        scBrandCD.SetFocus(1);
+                    }
+                    else
+                    {
+                        mskbl.ShowMessage("E101");
+                        scBrandCD.SetFocus(1);
+                    }
                 }
-
             }
         }
 
@@ -564,13 +563,15 @@ namespace MasterTouroku_ShiireKakeritsu
                 {
                     if (scSportsCD.SelectData())
                     {
-                        scSportsCD.Value1 = "202";
-                        scSportsCD.Value2 = scSportsCD.LabelText;
+                        //scSportsCD.Value1 = "202";
+                        //scSportsCD.Value2 = scSportsCD.LabelText;
+                        scSportsCD.SetFocus(1);
                     }
-                    //else
-                    //{
-                    //    scSportsCD.SetFocus(1);
-                    //}
+                    else
+                    {
+                        mskbl.ShowMessage("E101");
+                        scSportsCD.SetFocus(1);
+                    }
                 }
             }
         }
@@ -584,13 +585,15 @@ namespace MasterTouroku_ShiireKakeritsu
                     scSegmentCD.ChangeDate = bbl.GetDate();
                     if (scSegmentCD.SelectData())
                     {
-                        scSegmentCD.Value1 = "203";
-                        scSegmentCD.Value2 = scSegmentCD.LabelText;
+                        //scSegmentCD.Value1 = "203";
+                        //scSegmentCD.Value2 = scSegmentCD.LabelText;
+                        scSegmentCD.SetFocus(1);
                     }
-                    //else
-                    //{
-                    //    scSegmentCD.SetFocus(1);
-                    //}
+                    else
+                    {
+                        mskbl.ShowMessage("E101");
+                        scSegmentCD.SetFocus(1);
+                    }
                 }
             }
         }
@@ -771,61 +774,21 @@ namespace MasterTouroku_ShiireKakeritsu
             //dgv_ShiireKakeritsu.DataSource = dvMain;
         }
         #endregion
-
-        private void txtRate_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (NumberCheck())
-                {
-                    if (!txtRate.Text.Contains("."))
-                    {
-                        txtRate.Text =txtRate.Text + ".00";
-                    }
-                } 
-            }
-        }
-        private void txtRate1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (NumberCheck())
-                {
-                    if (!txtRate1.Text.Contains("."))
-                    {
-                        txtRate1.Text = txtRate1.Text + ".00";
-                    }
-                }
-            }
-        }
-
         /// <summary>
         /// For Rate Textbox
         /// </summary>
         /// <returns></returns>
-        private bool NumberCheck()
-        {
-            if (!string.IsNullOrWhiteSpace(txtRate.Text) && !bbl.IsInteger(txtRate.Text))
-            {
-                IsNumber = false;
-                mskbl.ShowMessage("E118");
-                return false;
-            }
-            MoveNext = true;
-            return true;
-        }
-        public static bool IsInteger(string value)
-        {
-            value = value.Replace("-", "");
-            if (Int64.TryParse(value, out Int64 Num))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        //private bool NumberCheck()
+        //{
+        //    if (!string.IsNullOrWhiteSpace(txtRate.Text) && !bbl.IsInteger(txtRate.Text))
+        //    {
+        //        IsNumber = false;
+        //        mskbl.ShowMessage("E118");
+        //        return false;
+        //    }
+        //    MoveNext = true;
+        //    return true;
+        //}
         private void F11()
         {
             moe = GetSearchInfo();
