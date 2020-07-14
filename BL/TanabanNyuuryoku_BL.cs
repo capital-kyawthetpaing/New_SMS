@@ -24,9 +24,9 @@ namespace BL
             return mldl.M_LocationTana_Select(mle);
         }
 
-        public DataTable M_Location_DataSelect(M_Location_Entity mle)
+        public DataTable M_Location_DataSelect(D_Stock_Entity dse)
         {
-            return mldl.M_Location_DataSelect(mle);
+            return mldl.M_Location_DataSelect(dse);
         }
 
         public bool M_Location_InsertUpdate(D_Stock_Entity dse,M_Location_Entity mle)

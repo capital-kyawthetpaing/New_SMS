@@ -119,9 +119,9 @@ namespace TanabanNyuuryoku
         {
             if (ErrorCheck(11))
             {
-                mle = GetEntity();
+                dse = GetStockEntity();
                 
-                dtstorage = tnbnBL.M_Location_DataSelect(mle);
+                dtstorage = tnbnBL.M_Location_DataSelect(dse);
                 if (dtstorage.Rows.Count == 0)
                 {
                     tnbnBL.ShowMessage("E128");
@@ -148,7 +148,21 @@ namespace TanabanNyuuryoku
              mle.ProgramID = InProgramID;
              mle.Key = cboWarehouse.SelectedValue.ToString();
              mle.PC = InPcID;
-        return mle;
+             return mle;
+        }
+
+        private D_Stock_Entity GetStockEntity()
+        {
+            dse.ArrivalStartDate = txtArrivalDateFrom.Text;
+            dse.ArrivalEndDate = txtArrivalDateTo.Text;
+            dse.SoukoCD = cboWarehouse.SelectedValue.ToString();
+            dse.UnregisterFlg = chkNotRegister.Checked ? "1" : "0";
+            dse.RegisterFlg = chkRegister.Checked ? "1" : "0";
+            dse.ProcessMode = ModeText;
+            dse.Operator = InOperatorCD;
+            dse.ProgramID = InProgramID;
+            dse.PC = InPcID;
+            return dse;
         }
 
         private void btnDisplay_Click(object sender, EventArgs e)
@@ -298,12 +312,17 @@ namespace TanabanNyuuryoku
                    
                     foreach(DataGridViewRow row in dgvTanaban.Rows)
                     {
-                        DataRow dtrow = dtUpdate.NewRow();
-                        dtrow["RackNo"] = row.Cells["colRackNo1"].Value.ToString();
-                        dtrow["StockNo"] = row.Cells["colStockNo"].Value.ToString();
-                        dtUpdate.Rows.Add(dtrow);
+                        //bool chk =(bool)row.Cells["colChk"].Value;
+                        //if(chk)
+                        //{
+                            DataRow dtrow = dtUpdate.NewRow();
+                            dtrow["RackNo"] = row.Cells["colRackNo1"].Value.ToString();
+                            dtrow["StockNo"] = row.Cells["colStockNo"].Value.ToString();
+                            dtUpdate.Rows.Add(dtrow);
+                        //}
+                       
                     }
-
+                   
                     dse = new D_Stock_Entity
                     {
                         dt1 = dtUpdate,
@@ -312,7 +331,8 @@ namespace TanabanNyuuryoku
                     
                      InsertUpdate(dse,mle);
                 }
-                else PreviousCtrl.Focus();
+                else
+                    PreviousCtrl.Focus();
             }
         }
 
@@ -475,7 +495,7 @@ namespace TanabanNyuuryoku
 
                     mle = GetSearchInfo();
                     DataTable dt = zibl.M_Location_SelectAll(mle);
-                    if (dt.Rows.Count>0)
+                    if (dt.Rows.Count<=0)
                     {
                         bbl.ShowMessage("E101");
                         ScStorage.SetFocus(1);
