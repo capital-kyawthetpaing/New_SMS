@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -169,6 +172,12 @@
     <Compile Include="TempoRegiZaikoKakunin_Entity.cs" />
     <Compile Include="UriageMotochou_Entity.cs" />
     <Compile Include="_PonpareEntity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EPSON_TM30\EPSON_TM30.csproj">
+      <Project>{9dea7f04-51d2-4678-9c2c-74745d9b61bd}</Project>
+      <Name>EPSON_TM30</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

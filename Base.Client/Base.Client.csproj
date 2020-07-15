@@ -166,6 +166,10 @@
       <Project>{472a8d76-1ce3-430e-89fe-373d2f6b1031}</Project>
       <Name>CKM_Controls</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DL\DL.csproj">
+      <Project>{9A22D9A9-E851-4765-8842-93FD4CB77300}</Project>
+      <Name>DL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{9dd6c82a-1899-478f-bc18-524ad0b0dcc8}</Project>
       <Name>Entity</Name>
