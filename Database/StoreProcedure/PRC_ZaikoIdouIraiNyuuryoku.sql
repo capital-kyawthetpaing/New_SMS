@@ -172,7 +172,10 @@ BEGIN
     DECLARE @MailAddress3 varchar(100);
     DECLARE @Rows int;
     DECLARE @MailCounter int;
-    
+
+    DECLARE @MailFlg tinyint;
+    SET @MailFlg = (SELECT M.MailFlg FROM M_MovePurpose AS M WHERE M.MovePurposeKBN = 1);
+
     --新規--
     IF @OperateMode = 1
     BEGIN
@@ -277,133 +280,136 @@ BEGIN
     --新規--
     IF @OperateMode = 1
     BEGIN
-        --【D_Mail】メール連絡内容　Table転送仕様Ｃ
-        INSERT INTO [D_Mail]
-           ([MailCounter]
-           ,[MailType]
-           ,[MailKBN]
-           ,[Number]
-           ,[MailNORows]
-           ,[MailDateTime]
-           ,[StaffCD]
-           ,[ContactKBN]
-           ,[MailPatternCD]
-           ,[MailSubject]
-           ,[MailPriority]
-           ,[ReMailFlg]
-           ,[UnitKBN]
-           ,[SendedDateTime]
-           ,[SenderKBN]
-           ,[SenderCD]
-           ,[SenderAddress]
-           ,[MailContent]
-           ,[InsertOperator]
-           ,[InsertDateTime]
-           ,[UpdateOperator]
-           ,[UpdateDateTime])
-        VALUES(
-            ISNULL((SELECT MAX(A.MailCounter) FROM D_Mail AS A),0) +1 
-           ,9	--MailType
-           ,51	--MailKBN
-           ,@RequestNO	--Number
-           ,1	--MailNORows
-           ,@SYSDATETIME	--MailDateTime
-           ,@StaffCD
-           ,1	--ContactKBN
-           ,(SELECT top 1 A.MoveMailPatternCD FROM M_Store AS A
-              WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
-              AND A.ChangeDate <= @RequestDate
-              ORDER BY A.ChangeDate desc)  
-           ,(SELECT top 1 B.MailSubject 
-                FROM M_Store AS A
-                INNER JOIN M_MailPattern AS B
-                ON B.MailPatternCD = A.MoveMailPatternCD
-              WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
-              AND A.ChangeDate <= @RequestDate
-              ORDER BY A.ChangeDate desc)   --MailSubject
-           ,(SELECT top 1 B.MailPriority 
-                FROM M_Store AS A
-                INNER JOIN M_MailPattern AS B
-                ON B.MailPatternCD = A.MoveMailPatternCD
-              WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
-              AND A.ChangeDate <= @RequestDate
-              ORDER BY A.ChangeDate desc)   --MailPriority
-           ,0   --ReMailFlg
-           ,2   --UnitKBN
-           ,NULL    --SendedDateTime
-           ,1   --SenderKBN
-           ,(SELECT A.SenderCD FROM M_MailServer A WHERE A.SenderKBN = 1)   --SenderCD
-           ,(SELECT A.SenderAddress FROM M_MailServer A WHERE A.SenderKBN = 1)  --SenderAddress
-           ,(SELECT top 1 B.MailText 
-                FROM M_Store AS A
-                INNER JOIN M_MailPattern AS B
-                ON B.MailPatternCD = A.MoveMailPatternCD
-              WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
-              AND A.ChangeDate <= @RequestDate
-	          ORDER BY A.ChangeDate desc)	--MailContent
-
-           ,@Operator  
-           ,@SYSDATETIME
-           ,@Operator  
-           ,@SYSDATETIME
-           );   
-        
-        --【D_MailAddress】メール連絡宛先　Table転送仕様Ｄ
-        SET @MailCounter = (SELECT MAX(A.MailCounter) FROM D_Mail AS A WHERE A.[Number] = @RequestNO);
-        SET @Rows = 1;
-        
-        --明細数分Insert★
-        --カーソルオープン
-        OPEN CUR_Store;
-
-        --最初の1行目を取得して変数へ値をセット
-        FETCH NEXT FROM CUR_Store
-        INTO @MailAddress1, @MailAddress2, @MailAddress3;
-        
-        --データの行数分ループ処理を実行する
-        WHILE @@FETCH_STATUS = 0
+        --MailFlg = 1の場合
+        IF @MailFlg = 1
         BEGIN
-            -- ========= ループ内の実際の処理 ここから===
-            IF ISNULL(@MailAddress1,'') <> ''
-            BEGIN
-                EXEC INSERT_UPDATE_D_MailAddress
-                     1  --@KBN ,
-                     ,@MailAddress1
-                     ,@Rows
-                     ,@MailCounter
-                    ;
-                
-                SET @Rows = @Rows + 1;
-            END
-            IF ISNULL(@MailAddress2,'') <> ''
-            BEGIN
-                EXEC INSERT_UPDATE_D_MailAddress
-                     1  --@KBN ,
-                     ,@MailAddress2
-                     ,@Rows
-                     ,@MailCounter 
-                    ;
-                
-                SET @Rows = @Rows + 1;
-            END
-            IF ISNULL(@MailAddress3,'') <> ''
-            BEGIN
-                EXEC INSERT_UPDATE_D_MailAddress
-                     1  --@KBN ,
-                     ,@MailAddress3
-                     ,@Rows
-                     ,@MailCounter
-                    ;
-            END
-            --次の行のデータを取得して変数へ値をセット
+            --【D_Mail】メール連絡内容　Table転送仕様Ｃ
+            INSERT INTO [D_Mail]
+               ([MailCounter]
+               ,[MailType]
+               ,[MailKBN]
+               ,[Number]
+               ,[MailNORows]
+               ,[MailDateTime]
+               ,[StaffCD]
+               ,[ContactKBN]
+               ,[MailPatternCD]
+               ,[MailSubject]
+               ,[MailPriority]
+               ,[ReMailFlg]
+               ,[UnitKBN]
+               ,[SendedDateTime]
+               ,[SenderKBN]
+               ,[SenderCD]
+               ,[SenderAddress]
+               ,[MailContent]
+               ,[InsertOperator]
+               ,[InsertDateTime]
+               ,[UpdateOperator]
+               ,[UpdateDateTime])
+            VALUES(
+                ISNULL((SELECT MAX(A.MailCounter) FROM D_Mail AS A),0) +1 
+               ,9   --MailType
+               ,51  --MailKBN
+               ,@RequestNO  --Number
+               ,1   --MailNORows
+               ,@SYSDATETIME    --MailDateTime
+               ,@StaffCD
+               ,1   --ContactKBN
+               ,(SELECT top 1 A.MoveMailPatternCD FROM M_Store AS A
+                  WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
+                  AND A.ChangeDate <= @RequestDate
+                  ORDER BY A.ChangeDate desc)  
+               ,(SELECT top 1 B.MailSubject 
+                    FROM M_Store AS A
+                    INNER JOIN M_MailPattern AS B
+                    ON B.MailPatternCD = A.MoveMailPatternCD
+                  WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
+                  AND A.ChangeDate <= @RequestDate
+                  ORDER BY A.ChangeDate desc)   --MailSubject
+               ,(SELECT top 1 B.MailPriority 
+                    FROM M_Store AS A
+                    INNER JOIN M_MailPattern AS B
+                    ON B.MailPatternCD = A.MoveMailPatternCD
+                  WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
+                  AND A.ChangeDate <= @RequestDate
+                  ORDER BY A.ChangeDate desc)   --MailPriority
+               ,0   --ReMailFlg
+               ,2   --UnitKBN
+               ,NULL    --SendedDateTime
+               ,1   --SenderKBN
+               ,(SELECT A.SenderCD FROM M_MailServer A WHERE A.SenderKBN = 1)   --SenderCD
+               ,(SELECT A.SenderAddress FROM M_MailServer A WHERE A.SenderKBN = 1)  --SenderAddress
+               ,(SELECT top 1 B.MailText 
+                    FROM M_Store AS A
+                    INNER JOIN M_MailPattern AS B
+                    ON B.MailPatternCD = A.MoveMailPatternCD
+                  WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
+                  AND A.ChangeDate <= @RequestDate
+                  ORDER BY A.ChangeDate desc)   --MailContent
+
+               ,@Operator  
+               ,@SYSDATETIME
+               ,@Operator  
+               ,@SYSDATETIME
+               );
+
+            --【D_MailAddress】メール連絡宛先　Table転送仕様Ｄ
+            SET @MailCounter = (SELECT MAX(A.MailCounter) FROM D_Mail AS A WHERE A.[Number] = @RequestNO);
+            SET @Rows = 1;
+            
+            --明細数分Insert★
+            --カーソルオープン
+            OPEN CUR_Store;
+
+            --最初の1行目を取得して変数へ値をセット
             FETCH NEXT FROM CUR_Store
             INTO @MailAddress1, @MailAddress2, @MailAddress3;
-        END            --LOOPの終わり
-        
-        --カーソルを閉じる
-        CLOSE CUR_Store;
-        DEALLOCATE CUR_Store;
-
+            
+            --データの行数分ループ処理を実行する
+            WHILE @@FETCH_STATUS = 0
+            BEGIN
+                -- ========= ループ内の実際の処理 ここから===
+                IF ISNULL(@MailAddress1,'') <> ''
+                BEGIN
+                    EXEC INSERT_UPDATE_D_MailAddress
+                         1  --@KBN ,
+                         ,@MailAddress1
+                         ,@Rows
+                         ,@MailCounter
+                        ;
+                    
+                    SET @Rows = @Rows + 1;
+                END
+                IF ISNULL(@MailAddress2,'') <> ''
+                BEGIN
+                    EXEC INSERT_UPDATE_D_MailAddress
+                         1  --@KBN ,
+                         ,@MailAddress2
+                         ,@Rows
+                         ,@MailCounter 
+                        ;
+                    
+                    SET @Rows = @Rows + 1;
+                END
+                IF ISNULL(@MailAddress3,'') <> ''
+                BEGIN
+                    EXEC INSERT_UPDATE_D_MailAddress
+                         1  --@KBN ,
+                         ,@MailAddress3
+                         ,@Rows
+                         ,@MailCounter
+                        ;
+                END
+                --次の行のデータを取得して変数へ値をセット
+                FETCH NEXT FROM CUR_Store
+                INTO @MailAddress1, @MailAddress2, @MailAddress3;
+            END            --LOOPの終わり
+            
+            --カーソルを閉じる
+            CLOSE CUR_Store;
+            DEALLOCATE CUR_Store;
+		END
     END
     
     --変更--
@@ -454,111 +460,114 @@ BEGIN
          AND tbl.RequestRows = D_MoveRequestDetailes.RequestRows
          AND tbl.UpdateFlg = 2
          ;
-         
-    	--【D_Mail】メール連絡内容　Table転送仕様Ｃ
-        UPDATE [D_Mail]
-        SET [MailType] = 9
-           ,[MailKBN] = 51
-           ,[Number] = @RequestNO
-          -- ,[MailNORows] = (SELECT MAX(A.MailNORows) FROM D_Mail AS A WHERE A.[Number] = @RequestNO) + 1
-           ,[MailDateTime] = @SYSDATETIME
-           ,[StaffCD] = @StaffCD
-           ,[ContactKBN] = 1
-           ,[MailPatternCD] = (SELECT top 1 A.MoveMailPatternCD FROM M_Store AS A
+        
+        --MailFlg = 1の場合
+        IF @MailFlg = 1
+        BEGIN
+            --【D_Mail】メール連絡内容　Table転送仕様Ｃ
+            UPDATE [D_Mail]
+            SET [MailType] = 9
+               ,[MailKBN] = 51
+               ,[Number] = @RequestNO
+              -- ,[MailNORows] = (SELECT MAX(A.MailNORows) FROM D_Mail AS A WHERE A.[Number] = @RequestNO) + 1
+               ,[MailDateTime] = @SYSDATETIME
+               ,[StaffCD] = @StaffCD
+               ,[ContactKBN] = 1
+               ,[MailPatternCD] = (SELECT top 1 A.MoveMailPatternCD FROM M_Store AS A
+                                  WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
+                                  AND A.ChangeDate <= @RequestDate
+                                  ORDER BY A.ChangeDate desc) 
+               ,[MailSubject] = (SELECT top 1 B.MailSubject 
+                                FROM M_Store AS A
+                                INNER JOIN M_MailPattern AS B
+                                ON B.MailPatternCD = A.MoveMailPatternCD
                               WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
                               AND A.ChangeDate <= @RequestDate
-                              ORDER BY A.ChangeDate desc) 
-           ,[MailSubject] = (SELECT top 1 B.MailSubject 
-                            FROM M_Store AS A
-                            INNER JOIN M_MailPattern AS B
-                            ON B.MailPatternCD = A.MoveMailPatternCD
-                          WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
-                          AND A.ChangeDate <= @RequestDate
-                          ORDER BY A.ChangeDate desc)
-           ,[MailPriority] = (SELECT top 1 B.MailPriority 
-                            FROM M_Store AS A
-                            INNER JOIN M_MailPattern AS B
-                            ON B.MailPatternCD = A.MoveMailPatternCD
-                          WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
-                          AND A.ChangeDate <= @RequestDate
-                          ORDER BY A.ChangeDate desc)
-           ,[ReMailFlg] = 1
-           ,[UnitKBN] = 2
-           ,[SendedDateTime] = NULL
-           ,[SenderKBN] = 1
-           ,[SenderCD] = (SELECT A.SenderCD FROM M_MailServer A WHERE A.SenderKBN = 1)
-           ,[SenderAddress] = (SELECT A.SenderAddress FROM M_MailServer A WHERE A.SenderKBN = 1)
-           ,[MailContent] = (SELECT top 1 B.MailText 
-                            FROM M_Store AS A
-                            INNER JOIN M_MailPattern AS B
-                            ON B.MailPatternCD = A.MoveMailPatternCD
-                          WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
-                          AND A.ChangeDate <= @RequestDate
-                          ORDER BY A.ChangeDate desc)
-           ,[UpdateOperator]   =  @Operator  
-           ,[UpdateDateTime]   =  @SYSDATETIME
-        WHERE [Number] = @RequestNO
-        AND MailCounter = (SELECT MAX(A.MailCounter) FROM D_Mail AS A WHERE A.[Number] = @RequestNO)
-       -- AND MailNORows = (SELECT MAX(A.MailNORows) FROM D_Mail AS A WHERE A.[Number] = @RequestNO)
-        ;
-        
-        --【D_MailAddress】メール連絡宛先　Table転送仕様Ｄ
-        SET @MailCounter = (SELECT MAX(A.MailCounter) FROM D_Mail AS A WHERE A.[Number] = @RequestNO);
-        
-        SET @Rows = 1;
-        
-        --明細数分Insert★
-        --カーソルオープン
-        OPEN CUR_Store;
+                              ORDER BY A.ChangeDate desc)
+               ,[MailPriority] = (SELECT top 1 B.MailPriority 
+                                FROM M_Store AS A
+                                INNER JOIN M_MailPattern AS B
+                                ON B.MailPatternCD = A.MoveMailPatternCD
+                              WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
+                              AND A.ChangeDate <= @RequestDate
+                              ORDER BY A.ChangeDate desc)
+               ,[ReMailFlg] = 1
+               ,[UnitKBN] = 2
+               ,[SendedDateTime] = NULL
+               ,[SenderKBN] = 1
+               ,[SenderCD] = (SELECT A.SenderCD FROM M_MailServer A WHERE A.SenderKBN = 1)
+               ,[SenderAddress] = (SELECT A.SenderAddress FROM M_MailServer A WHERE A.SenderKBN = 1)
+               ,[MailContent] = (SELECT top 1 B.MailText 
+                                FROM M_Store AS A
+                                INNER JOIN M_MailPattern AS B
+                                ON B.MailPatternCD = A.MoveMailPatternCD
+                              WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
+                              AND A.ChangeDate <= @RequestDate
+                              ORDER BY A.ChangeDate desc)
+               ,[UpdateOperator]   =  @Operator  
+               ,[UpdateDateTime]   =  @SYSDATETIME
+            WHERE [Number] = @RequestNO
+            AND MailCounter = (SELECT MAX(A.MailCounter) FROM D_Mail AS A WHERE A.[Number] = @RequestNO)
+           -- AND MailNORows = (SELECT MAX(A.MailNORows) FROM D_Mail AS A WHERE A.[Number] = @RequestNO)
+            ;
 
-        --最初の1行目を取得して変数へ値をセット
-        FETCH NEXT FROM CUR_Store
-        INTO @MailAddress1, @MailAddress2, @MailAddress3;
-        
-        --データの行数分ループ処理を実行する
-        WHILE @@FETCH_STATUS = 0
-        BEGIN
-            -- ========= ループ内の実際の処理 ここから===
-            IF ISNULL(@MailAddress1,'') <> ''
-            BEGIN
-                EXEC INSERT_UPDATE_D_MailAddress
-                     2  --@KBN ,
-                     ,@MailAddress1
-                     ,@Rows
-                     ,@MailCounter
-                    ;
-                
-                SET @Rows = @Rows + 1;
-            END
-            IF ISNULL(@MailAddress2,'') <> ''
-            BEGIN
-                EXEC INSERT_UPDATE_D_MailAddress
-                     2  --@KBN ,
-                     ,@MailAddress2
-                     ,@Rows
-                     ,@MailCounter 
-                    ;
-                
-                SET @Rows = @Rows + 1;
-            END
-            IF ISNULL(@MailAddress3,'') <> ''
-            BEGIN
-                EXEC INSERT_UPDATE_D_MailAddress
-                     2  --@KBN ,
-                     ,@MailAddress3
-                     ,@Rows
-                     ,@MailCounter
-                    ;
-            END
-            --次の行のデータを取得して変数へ値をセット
+            --【D_MailAddress】メール連絡宛先　Table転送仕様Ｄ
+            SET @MailCounter = (SELECT MAX(A.MailCounter) FROM D_Mail AS A WHERE A.[Number] = @RequestNO);
+            
+            SET @Rows = 1;
+            
+            --明細数分Insert★
+            --カーソルオープン
+            OPEN CUR_Store;
+
+            --最初の1行目を取得して変数へ値をセット
             FETCH NEXT FROM CUR_Store
             INTO @MailAddress1, @MailAddress2, @MailAddress3;
-        END            --LOOPの終わり
-        
-        --カーソルを閉じる
-        CLOSE CUR_Store;
-        DEALLOCATE CUR_Store;
-  
+            
+            --データの行数分ループ処理を実行する
+            WHILE @@FETCH_STATUS = 0
+            BEGIN
+                -- ========= ループ内の実際の処理 ここから===
+                IF ISNULL(@MailAddress1,'') <> ''
+                BEGIN
+                    EXEC INSERT_UPDATE_D_MailAddress
+                         2  --@KBN ,
+                         ,@MailAddress1
+                         ,@Rows
+                         ,@MailCounter
+                        ;
+                    
+                    SET @Rows = @Rows + 1;
+                END
+                IF ISNULL(@MailAddress2,'') <> ''
+                BEGIN
+                    EXEC INSERT_UPDATE_D_MailAddress
+                         2  --@KBN ,
+                         ,@MailAddress2
+                         ,@Rows
+                         ,@MailCounter 
+                        ;
+                    
+                    SET @Rows = @Rows + 1;
+                END
+                IF ISNULL(@MailAddress3,'') <> ''
+                BEGIN
+                    EXEC INSERT_UPDATE_D_MailAddress
+                         2  --@KBN ,
+                         ,@MailAddress3
+                         ,@Rows
+                         ,@MailCounter
+                        ;
+                END
+                --次の行のデータを取得して変数へ値をセット
+                FETCH NEXT FROM CUR_Store
+                INTO @MailAddress1, @MailAddress2, @MailAddress3;
+            END            --LOOPの終わり
+            
+            --カーソルを閉じる
+            CLOSE CUR_Store;
+            DEALLOCATE CUR_Store;
+		END
     END    
   
     ELSE IF @OperateMode = 3 --削除--
