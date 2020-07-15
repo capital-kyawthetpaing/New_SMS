@@ -406,6 +406,7 @@
     <Content Include="StoreProcedure\M_SalesTax_Select.sql" />
     <Content Include="StoreProcedure\M_SearchVendor.sql" />
     <Content Include="StoreProcedure\M_Settlement_Bind.sql" />
+    <Content Include="StoreProcedure\M_ShiireKakeritsu_Select.sql" />
     <Content Include="StoreProcedure\M_Site_Select.sql" />
     <Content Include="StoreProcedure\M_Site_SelectByItemCD.sql" />
     <Content Include="StoreProcedure\M_SKULastCost_Select.sql" />

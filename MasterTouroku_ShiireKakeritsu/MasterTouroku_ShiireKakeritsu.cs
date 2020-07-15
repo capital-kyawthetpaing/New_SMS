@@ -96,6 +96,33 @@ namespace MasterTouroku_ShiireKakeritsu
             txtRate.Require(true);
             txtCopy.Require(true);
         }
+        private bool ErrorCheck(int type)
+        {
+            if (type == 1)
+            {
+                if (!RequireCheck(new Control[] { scSupplierCD.TxtCode, cbo_Store }))
+                    return false;
+                DataTable dtVedor = mskbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 4, scSupplierCD.TxtCode.Text);
+                if (dtVedor.Rows[0]["DeleteFlg"].ToString() == "1")
+                {
+                    mskbl.ShowMessage("E119");
+                    scSupplierCD.SetFocus(1);
+                    return false;
+                }
+            }
+            else if (type == 2)
+            {
+                if (!RequireCheck(new Control[] { scBrandCD.TxtCode, scSportsCD.TxtCode, scSegmentCD.TxtCode, cbo_Year, cbo_Season, txtChangeDate, txtRate }))
+                    return false;
+            }
+
+            else if (type == 3)
+            {
+                if (!RequireCheck(new Control[] { scSupplierCD.TxtCode, txtRevisionDate, txtRate1 }))
+                    return false;
+            }
+            return true;
+        }
 
         protected override void EndSec()
         {
@@ -148,33 +175,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     break;
             }
         }
-        private bool ErrorCheck(int type)
-        {
-            if (type == 1)
-            {
-                if (!RequireCheck(new Control[] { scSupplierCD.TxtCode,cbo_Store }))
-                    return false;
-                DataTable  dtVedor = mskbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 4, scSupplierCD.TxtCode.Text);
-                if (dtVedor.Rows[0]["DeleteFlg"].ToString() == "1")
-                {
-                    mskbl.ShowMessage("E119");
-                    scSupplierCD.SetFocus(1);
-                    return false;
-                }
-            }
-            else if (type == 2)
-            {
-                if (!RequireCheck(new Control[] { scBrandCD.TxtCode,scSportsCD.TxtCode,scSegmentCD.TxtCode,cbo_Year,cbo_Season,txtChangeDate,txtRate }))
-                    return false;
-            }
-
-            else if (type == 3)
-            {
-                if (!RequireCheck(new Control[] { scSupplierCD.TxtCode,txtRevisionDate,txtRate1 }))
-                    return false;
-            }
-            return true;
-        }
+       
 
         private M_OrderRate_Entity GetSearchInfo()
         {
