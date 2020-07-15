@@ -53,6 +53,8 @@ namespace MasterTouroku_ShiireKakeritsu
             scSupplierCD.SetFocus(1);
             txtDate1.Text = DateTime.Now.ToString("yyyy/MM/dd");
             RadioCheck();
+            dgv_ShiireKakeritsu.DisabledColumn("colBrandCD1,colSportsCD1,colSegmentCD1,colYear,colSeason,colDate");
+            ModeVisible = false;
         }
         private void RadioCheck()
         {
