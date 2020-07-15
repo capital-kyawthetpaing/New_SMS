@@ -818,7 +818,6 @@ namespace MasterTouroku_ShiireKakeritsu
         }
         private bool ErrorCheckForF10()
         {
-          
             OpenFileDialog op = new OpenFileDialog
             {
                 InitialDirectory = @"C:\",
@@ -857,13 +856,11 @@ namespace MasterTouroku_ShiireKakeritsu
                                 {
                                     mskbl.ShowMessage("E138");
                                     rowse = "1";
-                                    //return false;
                                 }
                                 if (!base.CheckAvailableStores(row["店舗CD"].ToString()))
                                 {
                                     bbl.ShowMessage("E141");
                                     rowse = "1";
-                                    //return false;
                                 }
                                
                             }
@@ -873,7 +870,7 @@ namespace MasterTouroku_ShiireKakeritsu
                                 if (dtResult.Rows.Count == 0)
                                 {
                                     mskbl.ShowMessage("E138");
-                                    return false;
+                                    rowse = "1";
                                 }
                             }
                             else if (row["ブランドCD"] == DBNull.Value && row["競　技CD"] != DBNull.Value)
