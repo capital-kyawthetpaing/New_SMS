@@ -43,9 +43,9 @@
             this.colVendor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFTPFile = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gdvFTPType2 = new CKM_Controls.CKM_GridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFTPDateTime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVendor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFTPFile2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblRireki2 = new CKM_Controls.CKM_Label();
             this.btnStartType2 = new CKM_Controls.CKM_Button();
             this.btnStopType2 = new CKM_Controls.CKM_Button();
@@ -60,6 +60,14 @@
             // PanelHeader
             // 
             this.PanelHeader.Size = new System.Drawing.Size(1711, 0);
+            // 
+            // PanelSearch
+            // 
+            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
+            // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             // 
             // ckM_Label1
             // 
@@ -188,6 +196,8 @@
             this.gdvFTPType1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gdvFTPType1.Location = new System.Drawing.Point(58, 154);
             this.gdvFTPType1.Name = "gdvFTPType1";
+            this.gdvFTPType1.RowHeight_ = 20;
+            this.gdvFTPType1.RowTemplate.Height = 20;
             this.gdvFTPType1.Size = new System.Drawing.Size(800, 300);
             this.gdvFTPType1.TabIndex = 31;
             this.gdvFTPType1.UseRowNo = true;
@@ -198,6 +208,7 @@
             this.colFTPDateTime.DataPropertyName = "FTPDateTime";
             this.colFTPDateTime.HeaderText = "発信日時";
             this.colFTPDateTime.Name = "colFTPDateTime";
+            this.colFTPDateTime.ReadOnly = true;
             this.colFTPDateTime.Width = 120;
             // 
             // colVendor
@@ -205,6 +216,7 @@
             this.colVendor.DataPropertyName = "Vendor";
             this.colVendor.HeaderText = "仕入先";
             this.colVendor.Name = "colVendor";
+            this.colVendor.ReadOnly = true;
             this.colVendor.Width = 350;
             // 
             // colFTPFile
@@ -212,6 +224,7 @@
             this.colFTPFile.DataPropertyName = "FTPFile";
             this.colFTPFile.HeaderText = "取込ファイル";
             this.colFTPFile.Name = "colFTPFile";
+            this.colFTPFile.ReadOnly = true;
             this.colFTPFile.Width = 280;
             // 
             // gdvFTPType2
@@ -232,38 +245,43 @@
             this.gdvFTPType2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gdvFTPType2.ColumnHeadersHeight = 25;
             this.gdvFTPType2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
+            this.colFTPDateTime2,
+            this.colVendor2,
+            this.colFTPFile2});
             this.gdvFTPType2.EnableHeadersVisualStyles = false;
             this.gdvFTPType2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gdvFTPType2.Location = new System.Drawing.Point(58, 566);
             this.gdvFTPType2.Name = "gdvFTPType2";
+            this.gdvFTPType2.RowHeight_ = 20;
+            this.gdvFTPType2.RowTemplate.Height = 20;
             this.gdvFTPType2.Size = new System.Drawing.Size(800, 300);
             this.gdvFTPType2.TabIndex = 38;
             this.gdvFTPType2.UseRowNo = true;
             this.gdvFTPType2.UseSetting = true;
             // 
-            // dataGridViewTextBoxColumn1
+            // colFTPDateTime2
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "FTPDateTime";
-            this.dataGridViewTextBoxColumn1.HeaderText = "受信日時";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 120;
+            this.colFTPDateTime2.DataPropertyName = "FTPDateTime";
+            this.colFTPDateTime2.HeaderText = "受信日時";
+            this.colFTPDateTime2.Name = "colFTPDateTime2";
+            this.colFTPDateTime2.ReadOnly = true;
+            this.colFTPDateTime2.Width = 120;
             // 
-            // dataGridViewTextBoxColumn2
+            // colVendor2
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Vendor";
-            this.dataGridViewTextBoxColumn2.HeaderText = "仕入先";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 350;
+            this.colVendor2.DataPropertyName = "Vendor";
+            this.colVendor2.HeaderText = "仕入先";
+            this.colVendor2.Name = "colVendor2";
+            this.colVendor2.ReadOnly = true;
+            this.colVendor2.Width = 350;
             // 
-            // dataGridViewTextBoxColumn3
+            // colFTPFile2
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "FTPFile";
-            this.dataGridViewTextBoxColumn3.HeaderText = "取込ファイル";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 280;
+            this.colFTPFile2.DataPropertyName = "FTPFile";
+            this.colFTPFile2.HeaderText = "取込ファイル";
+            this.colFTPFile2.Name = "colFTPFile2";
+            this.colFTPFile2.ReadOnly = true;
+            this.colFTPFile2.Width = 280;
             // 
             // lblRireki2
             // 
@@ -452,9 +470,6 @@
         private CKM_Controls.CKM_Button btnStopType1;
         private CKM_Controls.CKM_Label lblRireki1;
         private CKM_Controls.CKM_GridView gdvFTPType1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFTPDateTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVendor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFTPFile;
         private CKM_Controls.CKM_GridView gdvFTPType2;
         private CKM_Controls.CKM_Label lblRireki2;
         private CKM_Controls.CKM_Button btnStartType2;
@@ -462,10 +477,13 @@
         private CKM_Controls.CKM_Label ckM_Label4;
         private System.Windows.Forms.Label lblFTPMode2;
         private CKM_Controls.CKM_Label ckM_Label5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private CKM_Controls.CKM_Button BtnSubF12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFTPDateTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVendor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFTPFile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFTPDateTime2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVendor2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFTPFile2;
     }
 }
 

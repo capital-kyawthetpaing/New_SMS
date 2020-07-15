@@ -1,26 +1,47 @@
-﻿using System;
+﻿using Microsoft.PointOfService;
+using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DL;
-using Microsoft.PointOfService;
 
-namespace Base.Client
+namespace Display_Service
 {
-    public class CashDrawerOpen
+    class Program
     {
-        public CashDrawer m_Drawer { get; set; }= null;
-        
-        public CashDrawerOpen()
+        public static void Main(string[] args)
         {
-          
-          
-        }
+            //[0]  01_0=> OpenCashDrawer
+            //[0] 02_1 => SetDisplay Main
+            //[0] 02_2 => SetDisplay Child 
+            //[1]  => DefaultMessage
+            //[2]  => UpVal
+            //[3]  => DownVal
+            if (args[0].ToString().Split('_').First() == "01")  // OpenCash
+            {
 
-        public void OpenCashDrawer()
+            }
+            else if (args[0].ToString().Split('_').First() == "02")  // Set Display
+            {
+                if (args[0].ToString().Split('_').Last() == "1") // Main
+                {
+                    SetDisplay(true, true, args[1].ToString());
+                }
+                else
+                {
+                    SetDisplay(false, false);
+                }
+            }
+        }
+        public static CashDrawer m_Drawer { get; set; } = null;
+
+        //public ()
+        //{
+
+
+        //}
+
+        public static void OpenCashDrawer()
         {
             try
             {
@@ -80,7 +101,7 @@ namespace Base.Client
             }
         }
 
-        public void CloseCashDrawer()
+        public static void CloseCashDrawer()
         {
             //<<<ステップ1>>>--Start
             if (m_Drawer != null)
@@ -89,7 +110,7 @@ namespace Base.Client
                 {
                     //デバイスを停止します。
 
-                  //  m_Drawer.DeviceEnabled = false;
+                    //  m_Drawer.DeviceEnabled = false;
 
                     //デバイスの使用権を解除します。
 
@@ -98,7 +119,7 @@ namespace Base.Client
                 }
                 catch (PosControlException)
                 {
-                    
+
                 }
                 finally
                 {
@@ -110,7 +131,7 @@ namespace Base.Client
             //<<<ステップ1>>>--End
         }
 
-        public void RemoveDisplay()
+        public static void RemoveDisplay()
         {
 
             try
@@ -128,19 +149,21 @@ namespace Base.Client
             }
         }
 
-        public void SetDisplay(bool IsMarquee, bool IsStartUp, string Upval = null, string Downval = null)
+        public static void SetDisplay(bool IsMarquee, bool IsStartUp, string DefaultMessage = null, string Upval = null, string Downval = null)
         {
             //m_Display = null;
             //deviceInfo = null;
             // m_Display.ClearText();
-            //try { RemoveDisplay(); }
+            //try { RemoveDisplay();
+
+            //}
             //catch { }
 
-            if (m_Display != null)
-            {
-                m_Display.ClearText();
-                return;
-            }
+            //if (m_Display != null)
+            //{
+            //    m_Display.ClearText();
+            //    return;
+            //}
             string strLogicalName = "LineDisplay";
             PosExplorer posExplorer = null;
             try
@@ -154,7 +177,7 @@ namespace Base.Client
             if (m_Display == null)
             {
                 if (deviceInfo == null)
-                deviceInfo = posExplorer.GetDevice(DeviceType.LineDisplay, strLogicalName);
+                    deviceInfo = posExplorer.GetDevice(DeviceType.LineDisplay, strLogicalName);
                 m_Display = (LineDisplay)posExplorer.CreateInstance(deviceInfo);
                 m_Display.Open();
                 m_Display.Claim(1000);
@@ -167,7 +190,7 @@ namespace Base.Client
                 var valdown = "";
                 if (IsStartUp)
                 {
-                    valdown = GetMessages();
+                    valdown =DefaultMessage;
                     Wdh = Encoding.GetEncoding(932).GetByteCount(valdown);
                     m_Display.CharacterSet = 932;
                     m_Display.CreateWindow(1, 0, 1, 20, 1, Wdh);
@@ -179,6 +202,7 @@ namespace Base.Client
                         m_Display.MarqueeType = DisplayMarqueeType.None;
                     }
                     else
+
                     {
                         m_Display.MarqueeFormat = DisplayMarqueeFormat.Walk;
                         m_Display.MarqueeType = DisplayMarqueeType.Init;
@@ -190,7 +214,7 @@ namespace Base.Client
                 else
                 {
                     Wdh = 20;
-                    m_Display.CreateWindow(1, 0, 1, 20, 1, Wdh);
+                    // m_Display.CreateWindow(1, 0, 1, 20, 1, Wdh);
                     m_Display.DisplayTextAt(1, (m_Display.Columns - Downval.Length), Downval, DisplayTextMode.Normal);
                 }
             }
@@ -199,44 +223,17 @@ namespace Base.Client
             }
         End:
             {
-              //  m_Display
-             //   deviceInfo = 
+                //  m_Display
+                //   deviceInfo = 
                 //
             }
         }
-          protected string GetMessages()
-        {
-            var get = getd();
-            var str = "";
-            str += get.Rows[0]["Char1"] == null ? "" : get.Rows[0]["Char1"].ToString().Trim() + "     ";
-            str += get.Rows[0]["Char2"] == null ? "" : get.Rows[0]["Char2"].ToString().Trim() + "     ";
-            str += get.Rows[0]["Char3"] == null ? "" : get.Rows[0]["Char3"].ToString().Trim() + "     ";
-            str += get.Rows[0]["Char4"] == null ? "" : get.Rows[0]["Char4"].ToString().Trim() + "     ";
-            str += get.Rows[0]["Char5"] == null ? "" : get.Rows[0]["Char5"].ToString().Trim();
-            int txt = Encoding.GetEncoding(932).GetByteCount(str);
-            if (txt > 200)
-            {
-                str = str.Substring(0, 200);
-            }
-            return str;
-        }
-          protected DataTable getd()
-        {
-            Base_DL bdl = new Base_DL();
-            var dt = new DataTable();
-            var con = bdl.GetConnection();
-            // SqlConnection conn = new SqlConnection("Data Source=202.223.48.145;Initial Catalog=CapitalSMS;Persist Security Info=True;User ID=sa;Password=admin123456!");
-            SqlConnection conn = con;
-            conn.Open();
-            SqlCommand command = new SqlCommand("Select Char1, Char2, Char3, Char4,Char5 from [M_Multiporpose] where [Key]='1' and Id='326'", conn);
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            adapter.Fill(dt);
-            conn.Close();
-            return dt;
-        }
-          public static LineDisplay m_Display { get; set; } = null;
-          public static DeviceInfo deviceInfo { get; set; } = null;
+    
+        public static LineDisplay m_Display { get; set; } = null;
+        public static DeviceInfo deviceInfo { get; set; } = null;
 
-        public object CDO_Main { get; set; } = null;
+       
+
+    //    public static CDO_Main { get; set; } = null;
     }
 }

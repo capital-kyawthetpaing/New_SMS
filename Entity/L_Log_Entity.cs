@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using EPSON_TM30;
+//using Based.CLient;
 namespace Entity
 {
     public class L_Log_Entity : Base_Entity
@@ -35,9 +36,8 @@ namespace Entity
         public string Login_Type { get; set; }
         public bool IsDM_D30Used { get; set; } = false;
 
-        /// <summary>
-        /// 店舗レジで使用するプリンター名
-        /// </summary>
-        public string StorePrinterName { get; set; }
+        public CashDrawerOpen CDO_DISPLAY { get; set; }
+        public string DefaultMessage { get; set; }
+        public string StorePrinterName { get; set; } // tanohata . . . 
     }
 }

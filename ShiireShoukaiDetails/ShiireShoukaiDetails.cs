@@ -46,6 +46,7 @@ namespace ShiireShoukaiDetails
             scSkuCD.CodeWidth = 600;
             dgv_PurchaseDetails.AllowUserToAddRows = false;
             ModeVisible = false;
+            dgv_PurchaseDetails.DisabledColumn("button,PurchaseNO,SupplierDate,Supplier,SKUCD,JANCD,makerCD,ItemName,ColorSize,Remark1,ParchaseCount,PurchaseUnitPrice,ParchaseAmount,OrderCount1,OrderUnitPrice1,OrderAmount1,OrderDate1,OrderNumber,ArrivalPlanDate,DestinationName,Stroe,StaffOperator,PaymentPlanDate,PayConfirmFinishedDate,DeliveryNo");
         }
 
         /// <summary>
