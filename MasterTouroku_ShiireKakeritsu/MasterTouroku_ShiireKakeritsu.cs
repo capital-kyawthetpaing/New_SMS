@@ -650,7 +650,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     string chk = row.Cells["colChk"].Value.ToString();
                     if (check.Value == check.TrueValue || chk=="True")
                     {
-                        row.Cells["colRate1"].Value = Convert.ToDecimal(txtRate.Text);
+                        row.Cells["colRate1"].Value = txtRate.Text;
                     }
                 }
             }
