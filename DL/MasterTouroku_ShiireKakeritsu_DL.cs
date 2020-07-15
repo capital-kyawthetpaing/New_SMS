@@ -17,13 +17,6 @@ namespace DL
             {
                 {"@VendorCD", new ValuePair { value1 = System.Data.SqlDbType.VarChar, value2 =moe.VendorCD  } },
                 {"@StoreCD",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.StoreCD} }
-                //{"@StoreCD",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.StoreCD} },
-                //{"@BrandCD",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.BrandCD} },
-                //{"@SportsCD",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.SportsCD} },
-                //{"@SegmentCD",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.SegmentCD} },
-                //{"@LastSeason",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.LastSeason} },
-                //{"@ChangeDate",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.ChangeDate} },
-                //{"@Rate",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.Rate} }
             };
             return SelectData(dic, sp);
         }
