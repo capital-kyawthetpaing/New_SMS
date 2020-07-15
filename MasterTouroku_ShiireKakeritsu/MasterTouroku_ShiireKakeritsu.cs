@@ -48,17 +48,13 @@ namespace MasterTouroku_ShiireKakeritsu
             InProgramID = "MasterTouroku_ShiireKakeritsu";
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
-            F2Visible = false;
-            F3Visible = false;
-            F4Visible = false;
-            F5Visible = false;
             BindCombo();
             SetRequiredField();
             scSupplierCD.SetFocus(1);
             txtDate1.Text = DateTime.Now.ToString("yyyy/MM/dd");
             RadioCheck();
-            SetRequiredField();
-            dgv_ShiireKakeritsu.AllowUserToAddRows = false;
+            dgv_ShiireKakeritsu.DisabledColumn("colBrandCD1,colSportsCD1,colSegmentCD1,colYear,colSeason,colDate");
+            ModeVisible = false;
         }
         private void RadioCheck()
         {
@@ -247,9 +243,6 @@ namespace MasterTouroku_ShiireKakeritsu
                 {
                     if (scBrandCD1.SelectData())
                     {
-                        //scBrandCD1.Value1 = scBrandCD1.TxtCode.Text;
-                        //scBrandCD1.Value2 = scBrandCD1.LabelText;
-                        //SearchData();
                         scBrandCD1.SetFocus(1);
                     }
                     else
