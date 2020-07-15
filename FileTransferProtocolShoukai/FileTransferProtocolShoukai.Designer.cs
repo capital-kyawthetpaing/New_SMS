@@ -41,9 +41,6 @@
             this.btnStopType1 = new CKM_Controls.CKM_Button();
             this.lblRireki1 = new CKM_Controls.CKM_Label();
             this.gdvFTPType1 = new CKM_Controls.CKM_GridView();
-            this.colFTPDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVendor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFTPFile = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gdvFTPType2 = new CKM_Controls.CKM_GridView();
             this.lblRireki2 = new CKM_Controls.CKM_Label();
             this.btnStartType2 = new CKM_Controls.CKM_Button();
@@ -52,6 +49,9 @@
             this.lblFTPMode2 = new System.Windows.Forms.Label();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.BtnSubF12 = new CKM_Controls.CKM_Button();
+            this.colFTPDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVendor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFTPFile = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFTPDateTime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVendor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFTPFile2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -211,27 +211,6 @@
             this.gdvFTPType1.TabIndex = 31;
             this.gdvFTPType1.UseRowNo = true;
             this.gdvFTPType1.UseSetting = true;
-            // 
-            // colFTPDateTime
-            // 
-            this.colFTPDateTime.DataPropertyName = "FTPDateTime";
-            this.colFTPDateTime.HeaderText = "発信日時";
-            this.colFTPDateTime.Name = "colFTPDateTime";
-            this.colFTPDateTime.Width = 120;
-            // 
-            // colVendor
-            // 
-            this.colVendor.DataPropertyName = "Vendor";
-            this.colVendor.HeaderText = "仕入先";
-            this.colVendor.Name = "colVendor";
-            this.colVendor.Width = 350;
-            // 
-            // colFTPFile
-            // 
-            this.colFTPFile.DataPropertyName = "FTPFile";
-            this.colFTPFile.HeaderText = "取込ファイル";
-            this.colFTPFile.Name = "colFTPFile";
-            this.colFTPFile.Width = 280;
             // 
             // gdvFTPType2
             // 
@@ -393,11 +372,36 @@
             this.BtnSubF12.UseVisualStyleBackColor = false;
             this.BtnSubF12.Click += new System.EventHandler(this.BtnSubF12_Click);
             // 
+            // colFTPDateTime
+            // 
+            this.colFTPDateTime.DataPropertyName = "FTPDateTime";
+            this.colFTPDateTime.HeaderText = "発信日時";
+            this.colFTPDateTime.Name = "colFTPDateTime";
+            this.colFTPDateTime.ReadOnly = true;
+            this.colFTPDateTime.Width = 120;
+            // 
+            // colVendor
+            // 
+            this.colVendor.DataPropertyName = "Vendor";
+            this.colVendor.HeaderText = "仕入先";
+            this.colVendor.Name = "colVendor";
+            this.colVendor.ReadOnly = true;
+            this.colVendor.Width = 350;
+            // 
+            // colFTPFile
+            // 
+            this.colFTPFile.DataPropertyName = "FTPFile";
+            this.colFTPFile.HeaderText = "取込ファイル";
+            this.colFTPFile.Name = "colFTPFile";
+            this.colFTPFile.ReadOnly = true;
+            this.colFTPFile.Width = 280;
+            // 
             // colFTPDateTime2
             // 
             this.colFTPDateTime2.DataPropertyName = "FTPDateTime";
             this.colFTPDateTime2.HeaderText = "受信日時";
             this.colFTPDateTime2.Name = "colFTPDateTime2";
+            this.colFTPDateTime2.ReadOnly = true;
             this.colFTPDateTime2.Width = 120;
             // 
             // colVendor2
@@ -405,6 +409,7 @@
             this.colVendor2.DataPropertyName = "Vendor";
             this.colVendor2.HeaderText = "仕入先";
             this.colVendor2.Name = "colVendor2";
+            this.colVendor2.ReadOnly = true;
             this.colVendor2.Width = 350;
             // 
             // colFTPFile2
@@ -412,6 +417,7 @@
             this.colFTPFile2.DataPropertyName = "FTPFile";
             this.colFTPFile2.HeaderText = "取込ファイル";
             this.colFTPFile2.Name = "colFTPFile2";
+            this.colFTPFile2.ReadOnly = true;
             this.colFTPFile2.Width = 280;
             // 
             // FileTransferProtocolShoukai
@@ -480,9 +486,6 @@
         private CKM_Controls.CKM_Button btnStopType1;
         private CKM_Controls.CKM_Label lblRireki1;
         private CKM_Controls.CKM_GridView gdvFTPType1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFTPDateTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVendor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFTPFile;
         private CKM_Controls.CKM_GridView gdvFTPType2;
         private CKM_Controls.CKM_Label lblRireki2;
         private CKM_Controls.CKM_Button btnStartType2;
@@ -491,6 +494,9 @@
         private System.Windows.Forms.Label lblFTPMode2;
         private CKM_Controls.CKM_Label ckM_Label5;
         private CKM_Controls.CKM_Button BtnSubF12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFTPDateTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVendor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFTPFile;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFTPDateTime2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVendor2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFTPFile2;

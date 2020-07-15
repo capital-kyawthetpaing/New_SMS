@@ -34,13 +34,13 @@
             this.lbl = new CKM_Controls.CKMShop_Label();
             this.lblJanCD = new CKM_Controls.CKMShop_Label();
             this.GvMultiSKU = new CKM_Controls.CKMShop_GridView();
-            this.ckmShop_Label1 = new CKM_Controls.CKMShop_Label();
-            this.ckmShop_Label2 = new CKM_Controls.CKMShop_Label();
             this.colSKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSKUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSizeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAdminNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colColorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ckmShop_Label1 = new CKM_Controls.CKMShop_Label();
+            this.ckmShop_Label2 = new CKM_Controls.CKMShop_Label();
             ((System.ComponentModel.ISupportInitialize)(this.GvMultiSKU)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,6 +98,7 @@
             this.GvMultiSKU.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GvMultiSKU.ColumnHeadersHeight = 30;
             this.GvMultiSKU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.GvMultiSKU.ColumnHeadersVisible = false;
             this.GvMultiSKU.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSKUCD,
             this.colSKUName,
@@ -118,7 +119,7 @@
             this.GvMultiSKU.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvMultiSKU.GVFontstyle = CKM_Controls.CKMShop_GridView.FontStyle_.Regular;
             this.GvMultiSKU.HeaderHeight_ = 30;
-            this.GvMultiSKU.HeaderVisible = true;
+            this.GvMultiSKU.HeaderVisible = false;
             this.GvMultiSKU.Height_ = 200;
             this.GvMultiSKU.Location = new System.Drawing.Point(37, 163);
             this.GvMultiSKU.Name = "GvMultiSKU";
@@ -132,40 +133,6 @@
             this.GvMultiSKU.UseSetting = true;
             this.GvMultiSKU.Width_ = 1500;
             this.GvMultiSKU.DoubleClick += new System.EventHandler(this.GvMultiSKU_DoubleClick);
-            // 
-            // ckmShop_Label1
-            // 
-            this.ckmShop_Label1.AutoSize = true;
-            this.ckmShop_Label1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.ckmShop_Label1.BackColor = System.Drawing.Color.Transparent;
-            this.ckmShop_Label1.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.ckmShop_Label1.FontBold = true;
-            this.ckmShop_Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label1.Location = new System.Drawing.Point(71, 125);
-            this.ckmShop_Label1.Name = "ckmShop_Label1";
-            this.ckmShop_Label1.Size = new System.Drawing.Size(110, 35);
-            this.ckmShop_Label1.TabIndex = 7;
-            this.ckmShop_Label1.Text = "SKUCD";
-            this.ckmShop_Label1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
-            this.ckmShop_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckmShop_Label2
-            // 
-            this.ckmShop_Label2.AutoSize = true;
-            this.ckmShop_Label2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.ckmShop_Label2.BackColor = System.Drawing.Color.Transparent;
-            this.ckmShop_Label2.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.ckmShop_Label2.FontBold = true;
-            this.ckmShop_Label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label2.Location = new System.Drawing.Point(418, 125);
-            this.ckmShop_Label2.Name = "ckmShop_Label2";
-            this.ckmShop_Label2.Size = new System.Drawing.Size(126, 35);
-            this.ckmShop_Label2.TabIndex = 8;
-            this.ckmShop_Label2.Text = "商品名";
-            this.ckmShop_Label2.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
-            this.ckmShop_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // colSKUCD
             // 
@@ -215,6 +182,40 @@
             this.colColorName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colColorName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colColorName.Visible = false;
+            // 
+            // ckmShop_Label1
+            // 
+            this.ckmShop_Label1.AutoSize = true;
+            this.ckmShop_Label1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label1.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label1.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.ckmShop_Label1.FontBold = true;
+            this.ckmShop_Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.ckmShop_Label1.Location = new System.Drawing.Point(71, 125);
+            this.ckmShop_Label1.Name = "ckmShop_Label1";
+            this.ckmShop_Label1.Size = new System.Drawing.Size(110, 35);
+            this.ckmShop_Label1.TabIndex = 7;
+            this.ckmShop_Label1.Text = "SKUCD";
+            this.ckmShop_Label1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
+            this.ckmShop_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckmShop_Label2
+            // 
+            this.ckmShop_Label2.AutoSize = true;
+            this.ckmShop_Label2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label2.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label2.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.ckmShop_Label2.FontBold = true;
+            this.ckmShop_Label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.ckmShop_Label2.Location = new System.Drawing.Point(418, 125);
+            this.ckmShop_Label2.Name = "ckmShop_Label2";
+            this.ckmShop_Label2.Size = new System.Drawing.Size(126, 35);
+            this.ckmShop_Label2.TabIndex = 8;
+            this.ckmShop_Label2.Text = "商品名";
+            this.ckmShop_Label2.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
+            this.ckmShop_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // frmSearch_SKU
             // 
