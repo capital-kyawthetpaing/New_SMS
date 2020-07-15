@@ -26,6 +26,7 @@ namespace BL
         public const bool isd = false;
         public static bool Islocalized = false;
         public static string SyncPath = "";
+
         /// <summary>
         /// constructor
         /// </summary>
@@ -36,7 +37,10 @@ namespace BL
         }
 
         // MH_Staff_LoginSelect
-
+        public string StorePrinterName
+        {
+            get { return Base_DL.iniEntity.StorePrinterName; }
+        }
         //Check_RegisteredMenu
         public DataTable Check_RegisteredMenu(M_Staff_Entity mse)
         {
