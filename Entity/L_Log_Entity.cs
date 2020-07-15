@@ -35,5 +35,9 @@ namespace Entity
         public string DatabaseDate { get; set; }
         public string Login_Type { get; set; }
         public bool IsDM_D30Used { get; set; } = false;
+
+        public CashDrawerOpen CDO_DISPLAY { get; set; }
+        public string DefaultMessage { get; set; }
+        public string StorePrinterName { get; set; } // tanohata . . . 
     }
 }
