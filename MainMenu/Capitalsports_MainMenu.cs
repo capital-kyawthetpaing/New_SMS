@@ -15,7 +15,8 @@ using DL;
 using System.Runtime.InteropServices;
 using Microsoft.PointOfService;
 using System.Data.SqlClient;
-using Base.Client;
+//using Base.Client;
+using EPSON_TM30;
 namespace MainMenu
 {
     public partial class Capitalsports_MainMenu : Form
@@ -31,7 +32,7 @@ namespace MainMenu
         private const int SW_SHOWMAXIMIZED = 3;
         [DllImport("user32.dll")]
         static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
-
+        CashDrawerOpen cdo = new CashDrawerOpen();
 
         [return: MarshalAs(UnmanagedType.Bool)]
         [DllImport("user32", CharSet = CharSet.Ansi, SetLastError = true, ExactSpelling = true)]
@@ -64,8 +65,14 @@ namespace MainMenu
             BindButtonName();
             try
             {
+                //var pth = "C:\\SMS\\Appdata";
+                //var getmsg = Base_DL.iniEntity.DefaultMessage;
+                //Process.Start(pth+ @"\"+ "Display_Service" + ".exe","02_1" + " "+ getmsg + " "+ "-" +" "+"-" );
+
                 if (Base_DL.iniEntity.IsDM_D30Used)
-                SetDisplay();///Start New Window for display by PTK
+                {
+                    cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+                }///Start New Window for display by PTK
             }
             catch (Exception ex)
             {
@@ -357,8 +364,18 @@ namespace MainMenu
 
                 if (Base_DL.iniEntity.IsDM_D30Used && exe_name == "CashDrawerOpen")
                 {
-                    CashDrawerOpen op = new CashDrawerOpen();
-                    op.OpenCashDrawer();
+                    try
+                    {
+                        CashDrawerOpen cdo_open = new CashDrawerOpen();
+                        cdo_open.OpenCashDrawer();
+                        //Base_DL.iniEntity.CDO_DISPLAY = new EPSON_TM30.CashDrawerOpen(); ;
+                        //Base_DL.iniEntity.CDO_DISPLAY.OpenCashDrawer();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message + ex.StackTrace);
+                    }
+                    // op.OpenCashDrawer();
                 }
                 else
 
@@ -385,19 +402,63 @@ namespace MainMenu
                     //    return;
                     //}
 
+                    if (programID.TrimEnd() == "販売登録" || exe_name == "TempoRegiHanbaiTouroku")
+                    {
+                        try
+                        {
+                            if (Base_DL.iniEntity.IsDM_D30Used)
+                                cdo.RemoveDisplay();
+                            // Base_DL.Ini_Entity_CDP.CDO_DISPLAY.RemoveDisplay();
+                        }
+                        catch
+                        {
+
+                        }
+                    }
                     Process[] localByName = Process.GetProcessesByName(exe_name);
                     if (localByName.Count() > 0)
                     {
-
-
                         IntPtr handle = localByName[0].MainWindowHandle;
                         ShowWindow(handle, SW_SHOWMAXIMIZED);
                         SetForegroundWindow(handle);
-
-
                         return;
                     }
-                (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");
+
+
+                    //if (P)
+                    //   (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");   //original  
+
+                    ///ptk
+                    /// (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");
+                    if (programID.TrimEnd() == "販売登録" || exe_name == "TempoRegiHanbaiTouroku")
+                    {
+                        //ProcessStartInfo startInfo = new ProcessStartInfo(filePath + @"\" + exe_name+".exe", cmdLine + "");
+                        //  startInfo.FileName = exe_name + ".exe";
+                        try
+                        {
+                            using (Process exeProcess = Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + ""))
+                            {
+                                if (Base_DL.iniEntity.IsDM_D30Used)
+                                {
+                                    //MessageBox.Show("Before wait For Exit");
+                                    exeProcess.WaitForExit();
+                                    // MessageBox.Show("Skipped wait For Exit");
+                                    cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+                                    // MessageBox.Show("After Set Disp");
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message + filePath + @"\" + exe_name + ".exe");
+                        }
+
+                    }
+                    else
+                    {
+                        (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");
+                    }
+                    ///ptk
                 }
             }
             catch (Exception ex)
@@ -449,25 +510,37 @@ namespace MainMenu
                         }
                         catch
                         {
+
                         }
                     }
                 }
             }
             try
             {
-                m_Display.MarqueeType = DisplayMarqueeType.None;  // marquee close
-                m_Display.DestroyWindow();                        // instance close we have created
-
-
-                m_Display.ClearText();
-                m_Display.DeviceEnabled = false;
-                m_Display.Release();
-                m_Display.Close();
+                cdo.RemoveDisplay();
+               // true, true,Base_DL.iniEntity.DefaultMessage
+              //  Base_DL.Ini_Entity_CDP.CDO_DISPLAY.RemoveDisplay();
             }
-            catch(Exception ex)
+            catch
             {
-               // MessageBox.Show(ex.Message);
+                
             }
+            
+            //try
+            //{
+            //    m_Display.MarqueeType = DisplayMarqueeType.None;  // marquee close
+            //    m_Display.DestroyWindow();                        // instance close we have created
+
+
+            //    m_Display.ClearText();
+            //    m_Display.DeviceEnabled = false;
+            //    m_Display.Release();
+            //    m_Display.Close();
+            //}
+            //catch(Exception ex)
+            //{
+            //   // MessageBox.Show(ex.Message);
+            //}
         }
 
        

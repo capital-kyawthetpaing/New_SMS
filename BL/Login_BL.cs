@@ -8,6 +8,9 @@ using DL;
 using System.Data;
 using System.Deployment;
 using System.Diagnostics;
+using EPSON_TM30;
+using System.Data.SqlClient;
+
 namespace BL
 {
     public class Login_BL : Base_BL
@@ -240,15 +243,46 @@ namespace BL
             try
             {
                Base_DL.iniEntity.IsDM_D30Used = idl.IniReadValue("Database", "Logical_Printer").ToString().Trim()== "EpsonTM-m30" && idl.IniReadValue("Database", "Login_Type") == "CapitalStoreMenuLogin" ? true : false;
+
             }
             catch
             {
                 Base_DL.iniEntity.IsDM_D30Used =  false;
             }
             Base_DL.iniEntity.TimeoutValues = idl.IniReadValue("Database", "Timeout");
+            Base_DL.iniEntity.DefaultMessage = GetMessages();
 
 
-
+        }
+        protected string GetMessages()
+        {
+            var get = getd();
+            var str = "";
+            str += get.Rows[0]["Char1"] == null ? "" : get.Rows[0]["Char1"].ToString().Trim() + "     ";
+            str += get.Rows[0]["Char2"] == null ? "" : get.Rows[0]["Char2"].ToString().Trim() + "     ";
+            str += get.Rows[0]["Char3"] == null ? "" : get.Rows[0]["Char3"].ToString().Trim() + "     ";
+            str += get.Rows[0]["Char4"] == null ? "" : get.Rows[0]["Char4"].ToString().Trim() + "     ";
+            str += get.Rows[0]["Char5"] == null ? "" : get.Rows[0]["Char5"].ToString().Trim();
+            int txt = Encoding.GetEncoding(932).GetByteCount(str);
+            if (txt > 200)
+            {
+                str = str.Substring(0, 200);
+            }
+            return str;
+        }
+        protected DataTable getd()
+        {
+            Base_DL bdl = new Base_DL();
+            var dt = new DataTable();
+            var con = bdl.GetConnection();
+           // SqlConnection conn = new SqlConnection("Data Source=202.223.48.145;Initial Catalog=CapitalSMS;Persist Security Info=True;User ID=sa;Password=admin123456!");
+            //SqlConnection conn = con;
+            con.Open();
+            SqlCommand command = new SqlCommand("Select Char1, Char2, Char3, Char4,Char5 from [M_Multiporpose] where [Key]='1' and Id='326'", con);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            adapter.Fill(dt);
+            con.Close();
+            return dt;
         }
         public string GetInformationOfIniFileByKey(string key)
         {

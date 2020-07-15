@@ -224,6 +224,10 @@
       <Project>{9dd6c82a-1899-478f-bc18-524ad0b0dcc8}</Project>
       <Name>Entity</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EPSON_TM30\EPSON_TM30.csproj">
+      <Project>{9dea7f04-51d2-4678-9c2c-74745d9b61bd}</Project>
+      <Name>EPSON_TM30</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />

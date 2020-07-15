@@ -96,11 +96,7 @@ namespace TempoRegiNyuukinTouroku
             {
                 if (trntBL.ShowMessage("Q101") == DialogResult.Yes)
                 {
-                    if (Base_DL.iniEntity.IsDM_D30Used)
-                    {
-                        CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
-                        op.OpenCashDrawer(); //2020_06_24 
-                    }
+                  
                     ddpe = GetDepositEntity();
                     if (trntBL.TempoNyuukinTouroku_D_DepositHistory_InsertUpdate(ddpe))
                     {
@@ -111,6 +107,11 @@ namespace TempoRegiNyuukinTouroku
                         }
                         trntBL.ShowMessage("I101");
                         RunConsole();
+                        if (Base_DL.iniEntity.IsDM_D30Used)
+                        {
+                            CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
+                            op.OpenCashDrawer(); //2020_06_24     << PTK
+                        }
                         txtPayment.Clear();
                         txtPayment.Focus();
                         cboDenominationName.SelectedValue = "-1";

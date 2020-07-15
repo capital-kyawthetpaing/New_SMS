@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using EPSON_TM30;
+//using Based.CLient;
 namespace Entity
 {
     public class L_Log_Entity : Base_Entity
@@ -34,5 +35,7 @@ namespace Entity
         public string DatabaseDate { get; set; }
         public string Login_Type { get; set; }
         public bool IsDM_D30Used { get; set; } = false;
+        public  CashDrawerOpen CDO_DISPLAY { get; set; }
+        public string DefaultMessage { get; set; }
     }
 }

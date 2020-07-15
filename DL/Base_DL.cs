@@ -20,6 +20,7 @@ namespace DL
         protected SqlDataAdapter adapter;
         protected SqlTransaction transaction;
         public static Ini_Entity iniEntity = new Ini_Entity();
+        public static Ini_Entity Ini_Entity_CDP { get; set; } = new Ini_Entity();
         #endregion
 
         public Base_DL() { }
