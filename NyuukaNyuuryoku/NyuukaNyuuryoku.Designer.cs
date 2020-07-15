@@ -427,11 +427,11 @@
             this.txtSu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSu.ClientColor = System.Drawing.Color.White;
             this.txtSu.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtSu.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.txtSu.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtSu.DecimalPlace = 0;
             this.txtSu.Font = new System.Drawing.Font("ＭＳ ゴシック", 30F);
             this.txtSu.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtSu.IntegerPart = 0;
+            this.txtSu.IntegerPart = 3;
             this.txtSu.IsCorrectDate = true;
             this.txtSu.isEnterKeyDown = false;
             this.txtSu.IsFirstTime = true;
@@ -771,11 +771,11 @@
             this.ckmShop_Label10.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Large;
             this.ckmShop_Label10.ForeColor = System.Drawing.Color.Blue;
-            this.ckmShop_Label10.Location = new System.Drawing.Point(747, 108);
+            this.ckmShop_Label10.Location = new System.Drawing.Point(718, 108);
             this.ckmShop_Label10.Name = "ckmShop_Label10";
-            this.ckmShop_Label10.Size = new System.Drawing.Size(70, 27);
+            this.ckmShop_Label10.Size = new System.Drawing.Size(99, 27);
             this.ckmShop_Label10.TabIndex = 739;
-            this.ckmShop_Label10.Text = "倉庫";
+            this.ckmShop_Label10.Text = "倉　庫";
             this.ckmShop_Label10.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Blue;
             this.ckmShop_Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -811,7 +811,7 @@
             // 
             this.ScOrderNO.AutoSize = true;
             this.ScOrderNO.ChangeDate = "";
-            this.ScOrderNO.ChangeDateWidth = 1659299;
+            this.ScOrderNO.ChangeDateWidth = 4609160;
             this.ScOrderNO.Code = "XXXXXXXXX01";
             this.ScOrderNO.CodeWidth = 150;
             this.ScOrderNO.CodeWidth1 = 150;

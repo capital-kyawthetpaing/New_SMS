@@ -20,6 +20,7 @@ namespace TanabanNyuuryoku
         M_Souko_Entity mse = new M_Souko_Entity();
         M_Location_Entity mle = new M_Location_Entity();
         D_Stock_Entity dse = new D_Stock_Entity();
+        ZaikoIdouNyuuryoku_BL zibl;
 
         DataTable dtstorage = new DataTable();
 
@@ -66,6 +67,7 @@ namespace TanabanNyuuryoku
 
         private void SetRequireField()
         {
+            txtArrivalDateTo.Require(true);
             cboWarehouse.Require(true);
         }
 
@@ -117,9 +119,9 @@ namespace TanabanNyuuryoku
         {
             if (ErrorCheck(11))
             {
-                mle = GetEntity();
+                dse = GetStockEntity();
                 
-                dtstorage = tnbnBL.M_Location_DataSelect(mle);
+                dtstorage = tnbnBL.M_Location_DataSelect(dse);
                 if (dtstorage.Rows.Count == 0)
                 {
                     tnbnBL.ShowMessage("E128");
@@ -146,7 +148,21 @@ namespace TanabanNyuuryoku
              mle.ProgramID = InProgramID;
              mle.Key = cboWarehouse.SelectedValue.ToString();
              mle.PC = InPcID;
-        return mle;
+             return mle;
+        }
+
+        private D_Stock_Entity GetStockEntity()
+        {
+            dse.ArrivalStartDate = txtArrivalDateFrom.Text;
+            dse.ArrivalEndDate = txtArrivalDateTo.Text;
+            dse.SoukoCD = cboWarehouse.SelectedValue.ToString();
+            dse.UnregisterFlg = chkNotRegister.Checked ? "1" : "0";
+            dse.RegisterFlg = chkRegister.Checked ? "1" : "0";
+            dse.ProcessMode = ModeText;
+            dse.Operator = InOperatorCD;
+            dse.ProgramID = InProgramID;
+            dse.PC = InPcID;
+            return dse;
         }
 
         private void btnDisplay_Click(object sender, EventArgs e)
@@ -160,6 +176,8 @@ namespace TanabanNyuuryoku
         {
             if (index == 11)
             {
+                if (!RequireCheck(new Control[] { txtArrivalDateTo }))
+                    return false;
                 if (!string.IsNullOrWhiteSpace(txtArrivalDateTo.Text))
                 {
                     int result = txtArrivalDateFrom.Text.CompareTo(txtArrivalDateTo.Text);
@@ -294,12 +312,17 @@ namespace TanabanNyuuryoku
                    
                     foreach(DataGridViewRow row in dgvTanaban.Rows)
                     {
-                        DataRow dtrow = dtUpdate.NewRow();
-                        dtrow["RackNo"] = row.Cells["colRackNo1"].Value.ToString();
-                        dtrow["StockNo"] = row.Cells["colStockNo"].Value.ToString();
-                        dtUpdate.Rows.Add(dtrow);
+                        //bool chk =(bool)row.Cells["colChk"].Value;
+                        //if(chk)
+                        //{
+                            DataRow dtrow = dtUpdate.NewRow();
+                            dtrow["RackNo"] = row.Cells["colRackNo1"].Value.ToString();
+                            dtrow["StockNo"] = row.Cells["colStockNo"].Value.ToString();
+                            dtUpdate.Rows.Add(dtrow);
+                        //}
+                       
                     }
-
+                   
                     dse = new D_Stock_Entity
                     {
                         dt1 = dtUpdate,
@@ -308,7 +331,8 @@ namespace TanabanNyuuryoku
                     
                      InsertUpdate(dse,mle);
                 }
-                else PreviousCtrl.Focus();
+                else
+                    PreviousCtrl.Focus();
             }
         }
 
@@ -317,9 +341,14 @@ namespace TanabanNyuuryoku
             //*** Insert Update Function
             if (tnbnBL.M_Location_InsertUpdate (dse,mle))
             {
-                Clear(PanelHeader);
-                Clear(panelDetail);
-                txtArrivalDateFrom.Focus();
+                //Clear(PanelHeader);
+                ////Clear(panelDetail);
+                //BindCombo();
+                //chkNotRegister.Checked = true;
+                //ScStorage.Value1 = cboWarehouse.SelectedValue.ToString();
+                //dgvTanaban.ClearSelection();
+                //txtArrivalDateFrom.Focus();
+                Clear();
                 tnbnBL.ShowMessage("I101");
             }
             else
@@ -330,14 +359,13 @@ namespace TanabanNyuuryoku
      
         private void Clear()
         {
-            //Clear(panelDetail);
             txtArrivalDateFrom.Text = DateTime.Now.ToString("yyyy/MM/dd");
             txtArrivalDateTo.Text = DateTime.Now.ToString("yyyy/MM/dd");
 
             BindCombo();
             chkNotRegister.Checked = true;
             chkRegister.Checked = false;
-            ScStorage.Value1 = cboWarehouse.SelectedValue.ToString();
+            Clear(panel1);
 
             dgvTanaban.DataSource = string.Empty;
             txtArrivalDateFrom.Focus();
@@ -430,7 +458,7 @@ namespace TanabanNyuuryoku
         }
 
         private void dgvTanaban_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+       {
             var senderGrid = (DataGridView)sender;
             if(e.RowIndex >= 0)
             {
@@ -460,6 +488,36 @@ namespace TanabanNyuuryoku
             ScStorage.Value1 = cboWarehouse.SelectedValue.ToString();
         }
 
+        private void ScStorage_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(ScStorage.TxtCode.Text))
+                {
+                    mle = new M_Location_Entity();
+                    zibl = new ZaikoIdouNyuuryoku_BL();
+
+                    mle = GetSearchInfo();
+                    DataTable dt = zibl.M_Location_SelectAll(mle);
+                    if (dt.Rows.Count<=0)
+                    {
+                        bbl.ShowMessage("E101");
+                        ScStorage.SetFocus(1);
+                    }
+                }
+            }
+        }
+
+        private M_Location_Entity GetSearchInfo()
+        {
+            string ymd = bbl.GetDate();
+            mle = new M_Location_Entity
+            {
+                ChangeDate =ymd,
+                SoukoCD = cboWarehouse.SelectedValue.ToString().Equals("-1") ? string.Empty : cboWarehouse.SelectedValue.ToString(),
+            };
+            return mle;
+        }
         //private void CheckRowAdd(DataGridViewRow row)
         //{
         //    if(row.Index == dgvTanaban.Rows.Count -1)

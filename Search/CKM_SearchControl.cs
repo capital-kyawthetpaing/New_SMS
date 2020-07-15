@@ -1956,16 +1956,19 @@ namespace Search
                         dtResult = bbl.SimpleSelect1("56", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
                     case SearchType.競技:
-                        dtResult = bbl.SimpleSelect1("57", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text,Value3);
+                        dtResult = bbl.SimpleSelect1("57", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text,Value1);
                         break;
                     case SearchType.商品分類:
-                        dtResult = bbl.SimpleSelect1("64", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text,Value3);
+                        dtResult = bbl.SimpleSelect1("64", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text,Value1);
                         break;
                     case SearchType.SKU_ITEM_CD:
                         dtResult = bbl.SimpleSelect1("65", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
                     case SearchType.JANCD:
                         dtResult = bbl.SimpleSelect1("66", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        break;
+                    case SearchType.MakerItem:
+                        dtResult = bbl.SimpleSelect1("69", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
                 }
 

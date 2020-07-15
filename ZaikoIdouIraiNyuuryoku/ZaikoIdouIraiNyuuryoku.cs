@@ -1618,6 +1618,13 @@ namespace ZaikoIdouIraiNyuuryoku
                         {
                             mToStoreCD = dt.Rows[0]["StoreCD"].ToString();
 
+                            //移動元倉庫の店舗と同じ店舗であればエラー Ｅ２４９
+                            if (mFromStoreCD.Equals(mToStoreCD))
+                            {
+                                bbl.ShowMessage("E249");
+                                return false;
+                            }
+
                             switch (mIdoType)
                             {
                                 case EIdoType.店舗間移動:

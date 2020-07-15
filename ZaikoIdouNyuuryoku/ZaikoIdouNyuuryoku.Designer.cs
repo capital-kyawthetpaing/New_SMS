@@ -195,6 +195,7 @@
             this.ScRequestNO = new Search.CKM_SearchControl();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.ScCopyOrderNO = new Search.CKM_SearchControl();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.PanelHeader.SuspendLayout();
             this.Pnl_Body.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -2778,7 +2779,6 @@
             this.ScOrderNO.LabelText = "";
             this.ScOrderNO.LabelVisible = false;
             this.ScOrderNO.Location = new System.Drawing.Point(86, 3);
-            this.ScOrderNO.Margin = new System.Windows.Forms.Padding(0);
             this.ScOrderNO.Name = "ScOrderNO";
             this.ScOrderNO.NameWidth = 600;
             this.ScOrderNO.SearchEnable = true;
@@ -2807,7 +2807,6 @@
             this.ScStaff.LabelText = "";
             this.ScStaff.LabelVisible = true;
             this.ScStaff.Location = new System.Drawing.Point(996, 45);
-            this.ScStaff.Margin = new System.Windows.Forms.Padding(0);
             this.ScStaff.Name = "ScStaff";
             this.ScStaff.NameWidth = 250;
             this.ScStaff.SearchEnable = true;
@@ -2870,7 +2869,6 @@
             this.ckM_SearchControl3.LabelText = "";
             this.ckM_SearchControl3.LabelVisible = false;
             this.ckM_SearchControl3.Location = new System.Drawing.Point(343, 4);
-            this.ckM_SearchControl3.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl3.Name = "ckM_SearchControl3";
             this.ckM_SearchControl3.NameWidth = 600;
             this.ckM_SearchControl3.SearchEnable = true;
@@ -2904,7 +2902,7 @@
             this.ckM_TextBox1.Length = 10;
             this.ckM_TextBox1.Location = new System.Drawing.Point(86, 50);
             this.ckM_TextBox1.MaxLength = 10;
-            this.ckM_TextBox1.MoveNext = false;
+            this.ckM_TextBox1.MoveNext = true;
             this.ckM_TextBox1.Name = "ckM_TextBox1";
             this.ckM_TextBox1.Size = new System.Drawing.Size(88, 19);
             this.ckM_TextBox1.TabIndex = 4;
@@ -2919,7 +2917,7 @@
             this.TxtRemark1.BackColor = System.Drawing.Color.White;
             this.TxtRemark1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtRemark1.ClientColor = System.Drawing.Color.White;
-            this.TxtRemark1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.TxtRemark1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.TxtRemark1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TxtRemark1.DecimalPlace = 0;
             this.TxtRemark1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -2936,7 +2934,7 @@
             this.TxtRemark1.MoveNext = false;
             this.TxtRemark1.Name = "TxtRemark1";
             this.TxtRemark1.Size = new System.Drawing.Size(650, 19);
-            this.TxtRemark1.TabIndex = 22;
+            this.TxtRemark1.TabIndex = 23;
             this.TxtRemark1.Text = "bbbbbbb";
             this.TxtRemark1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3024,7 +3022,7 @@
             this.ckM_Label3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(76, 407);
+            this.ckM_Label3.Location = new System.Drawing.Point(78, 407);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(96, 12);
             this.ckM_Label3.TabIndex = 692;
@@ -3048,7 +3046,6 @@
             this.ckM_SearchControl1.LabelText = "";
             this.ckM_SearchControl1.LabelVisible = false;
             this.ckM_SearchControl1.Location = new System.Drawing.Point(577, 3);
-            this.ckM_SearchControl1.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl1.Name = "ckM_SearchControl1";
             this.ckM_SearchControl1.NameWidth = 600;
             this.ckM_SearchControl1.SearchEnable = true;
@@ -3085,7 +3082,7 @@
             this.ckM_TextBox8.MoveNext = true;
             this.ckM_TextBox8.Name = "ckM_TextBox8";
             this.ckM_TextBox8.Size = new System.Drawing.Size(85, 19);
-            this.ckM_TextBox8.TabIndex = 17;
+            this.ckM_TextBox8.TabIndex = 18;
             this.ckM_TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ckM_TextBox8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3113,7 +3110,7 @@
             this.ckM_TextBox18.MoveNext = true;
             this.ckM_TextBox18.Name = "ckM_TextBox18";
             this.ckM_TextBox18.Size = new System.Drawing.Size(139, 19);
-            this.ckM_TextBox18.TabIndex = 18;
+            this.ckM_TextBox18.TabIndex = 19;
             this.ckM_TextBox18.Text = "XXX";
             this.ckM_TextBox18.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3126,7 +3123,7 @@
             this.ckM_Label15.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label15.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label15.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label15.Location = new System.Drawing.Point(101, 348);
+            this.ckM_Label15.Location = new System.Drawing.Point(104, 348);
             this.ckM_Label15.Name = "ckM_Label15";
             this.ckM_Label15.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label15.TabIndex = 697;
@@ -3143,7 +3140,7 @@
             this.ckM_Label17.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label17.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label17.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label17.Location = new System.Drawing.Point(112, 368);
+            this.ckM_Label17.Location = new System.Drawing.Point(117, 368);
             this.ckM_Label17.Name = "ckM_Label17";
             this.ckM_Label17.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label17.TabIndex = 701;
@@ -3160,7 +3157,7 @@
             this.label12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(129, 255);
+            this.label12.Location = new System.Drawing.Point(134, 255);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(40, 12);
             this.label12.TabIndex = 712;
@@ -3172,7 +3169,7 @@
             // 
             this.ckM_CheckBox3.AutoSize = true;
             this.ckM_CheckBox3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox3.Location = new System.Drawing.Point(533, 51);
+            this.ckM_CheckBox3.Location = new System.Drawing.Point(590, 51);
             this.ckM_CheckBox3.Name = "ckM_CheckBox3";
             this.ckM_CheckBox3.Size = new System.Drawing.Size(102, 16);
             this.ckM_CheckBox3.TabIndex = 6;
@@ -3202,7 +3199,7 @@
             this.ckM_Label12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label12.Location = new System.Drawing.Point(138, 330);
+            this.ckM_Label12.Location = new System.Drawing.Point(143, 330);
             this.ckM_Label12.Name = "ckM_Label12";
             this.ckM_Label12.Size = new System.Drawing.Size(31, 12);
             this.ckM_Label12.TabIndex = 716;
@@ -3275,7 +3272,7 @@
             this.ckM_TextBox2.MoveNext = true;
             this.ckM_TextBox2.Name = "ckM_TextBox2";
             this.ckM_TextBox2.Size = new System.Drawing.Size(88, 19);
-            this.ckM_TextBox2.TabIndex = 19;
+            this.ckM_TextBox2.TabIndex = 20;
             this.ckM_TextBox2.Text = "2019/01/01";
             this.ckM_TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -3306,7 +3303,7 @@
             this.ckM_Label9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(129, 279);
+            this.ckM_Label9.Location = new System.Drawing.Point(134, 279);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(40, 12);
             this.ckM_Label9.TabIndex = 726;
@@ -3366,7 +3363,7 @@
             this.ckM_TextBox5.MoveNext = true;
             this.ckM_TextBox5.Name = "ckM_TextBox5";
             this.ckM_TextBox5.Size = new System.Drawing.Size(85, 19);
-            this.ckM_TextBox5.TabIndex = 20;
+            this.ckM_TextBox5.TabIndex = 21;
             this.ckM_TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ckM_TextBox5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3384,7 +3381,7 @@
             this.btnSubF10.Margin = new System.Windows.Forms.Padding(1);
             this.btnSubF10.Name = "btnSubF10";
             this.btnSubF10.Size = new System.Drawing.Size(115, 28);
-            this.btnSubF10.TabIndex = 23;
+            this.btnSubF10.TabIndex = 24;
             this.btnSubF10.Text = "確定(F10)";
             this.btnSubF10.UseVisualStyleBackColor = false;
             this.btnSubF10.Click += new System.EventHandler(this.BtnSubF10_Click);
@@ -3422,7 +3419,6 @@
             this.ScFromRackNo.LabelText = "";
             this.ScFromRackNo.LabelVisible = false;
             this.ScFromRackNo.Location = new System.Drawing.Point(175, 299);
-            this.ScFromRackNo.Margin = new System.Windows.Forms.Padding(0);
             this.ScFromRackNo.Name = "ScFromRackNo";
             this.ScFromRackNo.NameWidth = 281;
             this.ScFromRackNo.SearchEnable = true;
@@ -3456,7 +3452,7 @@
             this.ckM_Label11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label11.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label11.Location = new System.Drawing.Point(99, 307);
+            this.ckM_Label11.Location = new System.Drawing.Point(104, 307);
             this.ckM_Label11.Name = "ckM_Label11";
             this.ckM_Label11.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label11.TabIndex = 735;
@@ -3513,12 +3509,12 @@
             this.groupBox1.Controls.Add(this.lblColorNameF);
             this.groupBox1.Controls.Add(this.ckM_Label21);
             this.groupBox1.Controls.Add(this.SC_ITEM_1);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.groupBox1.Location = new System.Drawing.Point(547, 300);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(805, 45);
-            this.groupBox1.TabIndex = 737;
+            this.groupBox1.Size = new System.Drawing.Size(805, 42);
+            this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "付替";
             // 
@@ -3654,13 +3650,12 @@
             this.SC_ITEM_1.LabelText = "";
             this.SC_ITEM_1.LabelVisible = false;
             this.SC_ITEM_1.Location = new System.Drawing.Point(92, -1);
-            this.SC_ITEM_1.Margin = new System.Windows.Forms.Padding(0);
             this.SC_ITEM_1.Name = "SC_ITEM_1";
             this.SC_ITEM_1.NameWidth = 190;
             this.SC_ITEM_1.SearchEnable = true;
             this.SC_ITEM_1.Size = new System.Drawing.Size(143, 28);
             this.SC_ITEM_1.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
-            this.SC_ITEM_1.TabIndex = 744;
+            this.SC_ITEM_1.TabIndex = 17;
             this.SC_ITEM_1.Tag = "0";
             this.SC_ITEM_1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_ITEM_1.UseChangeDate = false;
@@ -3682,7 +3677,7 @@
             this.CboIdoKbn.MaxLength = 7;
             this.CboIdoKbn.MoveNext = false;
             this.CboIdoKbn.Name = "CboIdoKbn";
-            this.CboIdoKbn.Size = new System.Drawing.Size(105, 20);
+            this.CboIdoKbn.Size = new System.Drawing.Size(156, 20);
             this.CboIdoKbn.TabIndex = 5;
             // 
             // label29
@@ -3731,7 +3726,7 @@
             this.CboSoukoCD.MoveNext = false;
             this.CboSoukoCD.Name = "CboSoukoCD";
             this.CboSoukoCD.Size = new System.Drawing.Size(210, 20);
-            this.CboSoukoCD.TabIndex = 21;
+            this.CboSoukoCD.TabIndex = 22;
             // 
             // SC_ITEM_0
             // 
@@ -3749,7 +3744,6 @@
             this.SC_ITEM_0.LabelText = "";
             this.SC_ITEM_0.LabelVisible = false;
             this.SC_ITEM_0.Location = new System.Drawing.Point(175, 248);
-            this.SC_ITEM_0.Margin = new System.Windows.Forms.Padding(0);
             this.SC_ITEM_0.Name = "SC_ITEM_0";
             this.SC_ITEM_0.NameWidth = 190;
             this.SC_ITEM_0.SearchEnable = true;
@@ -3908,7 +3902,6 @@
             this.ScRequestNO.LabelText = "";
             this.ScRequestNO.LabelVisible = false;
             this.ScRequestNO.Location = new System.Drawing.Point(659, 3);
-            this.ScRequestNO.Margin = new System.Windows.Forms.Padding(0);
             this.ScRequestNO.Name = "ScRequestNO";
             this.ScRequestNO.NameWidth = 600;
             this.ScRequestNO.SearchEnable = true;
@@ -3954,7 +3947,6 @@
             this.ScCopyOrderNO.LabelText = "";
             this.ScCopyOrderNO.LabelVisible = false;
             this.ScCopyOrderNO.Location = new System.Drawing.Point(369, 3);
-            this.ScCopyOrderNO.Margin = new System.Windows.Forms.Padding(0);
             this.ScCopyOrderNO.Name = "ScCopyOrderNO";
             this.ScCopyOrderNO.NameWidth = 600;
             this.ScCopyOrderNO.SearchEnable = true;
@@ -3966,6 +3958,14 @@
             this.ScCopyOrderNO.Value1 = null;
             this.ScCopyOrderNO.Value2 = null;
             this.ScCopyOrderNO.Value3 = null;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Location = new System.Drawing.Point(545, 297);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(812, 47);
+            this.panel2.TabIndex = 748;
             // 
             // ZaikoIdouNyuuryoku
             // 
@@ -4009,12 +4009,14 @@
             this.Controls.Add(this.TxtRemark1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.ScFromRackNo);
+            this.Controls.Add(this.panel2);
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
             this.Name = "ZaikoIdouNyuuryoku";
             this.PanelHeaderHeight = 170;
             this.Text = "ZaikoIdouNyuuryoku";
             this.Load += new System.EventHandler(this.Form_Load);
+            this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.ScFromRackNo, 0);
             this.Controls.SetChildIndex(this.tabControl1, 0);
             this.Controls.SetChildIndex(this.TxtRemark1, 0);
@@ -4236,6 +4238,7 @@
         private System.Windows.Forms.Label lblColorNameF;
         private CKM_Controls.CKM_Label ckM_Label21;
         private Search.CKM_SearchControl SC_ITEM_1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

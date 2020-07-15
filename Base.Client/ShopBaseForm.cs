@@ -62,6 +62,11 @@ namespace Base.Client
         protected bool ShowCloseMessage = true;
 
         /// <summary>
+        /// 店舗レジで使用するプリンター名
+        /// </summary>
+        protected string StorePrinterName { get { return loginbl.StorePrinterName; } }
+
+        /// <summary>
         ///     ''' 終了押下時
         ///     ''' </summary>
         ///     ''' <remarks>
@@ -332,7 +337,7 @@ namespace Base.Client
 
         private bool GetCmdLine()
         {
-            //コマンドライン引数を配列で取得する
+            ////コマンドライン引数を配列で取得する
             string[] cmds = System.Environment.GetCommandLineArgs();
 
             //コマンドライン引数を列挙する

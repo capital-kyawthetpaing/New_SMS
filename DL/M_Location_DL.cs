@@ -42,12 +42,15 @@ namespace DL
             return SelectData(dic, "M_LocationTana_Select");
         }
 
-        public DataTable M_Location_DataSelect(M_Location_Entity mle)
+        public DataTable M_Location_DataSelect(D_Stock_Entity dse)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
                {
-                   {"@Unregister",new ValuePair { value1=SqlDbType.TinyInt,value2=mle.Unregister} },
-                   { "@Register", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mle.Register } }
+                   {"@ArrivalStartDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = dse.ArrivalStartDate } },
+                   {"@ArrivalEndDate",new ValuePair { value1=SqlDbType.VarChar,value2=dse.ArrivalEndDate} },
+                   {"@SoukoCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dse.SoukoCD} },
+                   {"@Unregister",new ValuePair { value1=SqlDbType.TinyInt,value2=dse.UnregisterFlg} },
+                   {"@Register", new ValuePair { value1 = SqlDbType.TinyInt, value2 =dse.RegisterFlg } }
                };
             return SelectData(dic, "M_Location_DataSelect");
         }

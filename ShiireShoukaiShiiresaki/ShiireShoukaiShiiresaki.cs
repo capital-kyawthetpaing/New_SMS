@@ -496,6 +496,7 @@ namespace ShiireShoukaiShiiresaki
                     if (dt.Rows.Count > 0)
                     {
                         string ProcessKBN = dt.Rows[0]["ProcessKBN"].ToString();
+                        string PurchaseNO = dt.Rows[0]["PurchaseNO"].ToString();
                         if (dt.Rows[0]["ProcessKBN"].ToString().Equals("1"))
                         {
                             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);

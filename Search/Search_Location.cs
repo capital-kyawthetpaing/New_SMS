@@ -22,7 +22,7 @@ namespace Search
             SoukoCD,
             COUNT
         }
-
+         
         public string OperatorCD = string.Empty;
         public string TanaCD = string.Empty;
         public string SoukoCD = string.Empty;
@@ -55,7 +55,7 @@ namespace Search
             HeaderTitleText = ProNm;
             this.Text = ProNm;
 
-            CboFromSoukoCD.SelectedValue = soukoCD;
+            CboFromSoukoCD.SelectedValue =SoukoCD= soukoCD;
             zibl = new ZaikoIdouNyuuryoku_BL();
         }
 

@@ -26,6 +26,15 @@ namespace BL
         public const bool isd = false;
         public static bool Islocalized = false;
         public static string SyncPath = "";
+
+        /// <summary>
+        /// 店舗レジで使用するプリンター名
+        /// </summary>
+        public string StorePrinterName
+        {
+            get { return Base_DL.iniEntity.StorePrinterName; }
+        }
+
         /// <summary>
         /// constructor
         /// </summary>
@@ -253,36 +262,7 @@ namespace BL
             Base_DL.iniEntity.DefaultMessage = GetMessages();
 
 
-        }
-        protected string GetMessages()
-        {
-            var get = getd();
-            var str = "";
-            str += get.Rows[0]["Char1"] == null ? "" : get.Rows[0]["Char1"].ToString().Trim() + "     ";
-            str += get.Rows[0]["Char2"] == null ? "" : get.Rows[0]["Char2"].ToString().Trim() + "     ";
-            str += get.Rows[0]["Char3"] == null ? "" : get.Rows[0]["Char3"].ToString().Trim() + "     ";
-            str += get.Rows[0]["Char4"] == null ? "" : get.Rows[0]["Char4"].ToString().Trim() + "     ";
-            str += get.Rows[0]["Char5"] == null ? "" : get.Rows[0]["Char5"].ToString().Trim();
-            int txt = Encoding.GetEncoding(932).GetByteCount(str);
-            if (txt > 200)
-            {
-                str = str.Substring(0, 200);
-            }
-            return str;
-        }
-        protected DataTable getd()
-        {
-            Base_DL bdl = new Base_DL();
-            var dt = new DataTable();
-            var con = bdl.GetConnection();
-           // SqlConnection conn = new SqlConnection("Data Source=202.223.48.145;Initial Catalog=CapitalSMS;Persist Security Info=True;User ID=sa;Password=admin123456!");
-            //SqlConnection conn = con;
-            con.Open();
-            SqlCommand command = new SqlCommand("Select Char1, Char2, Char3, Char4,Char5 from [M_Multiporpose] where [Key]='1' and Id='326'", con);
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            adapter.Fill(dt);
-            con.Close();
-            return dt;
+
         }
         public string GetInformationOfIniFileByKey(string key)
         {

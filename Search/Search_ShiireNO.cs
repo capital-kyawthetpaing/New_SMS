@@ -444,7 +444,7 @@ namespace Search
                 {
                     CboStoreCD.SelectedValue = mse.StoreCD;
                 }
-                
+                detailControls[(int)EIndex.DayEnd].Text = bbl.GetDate();
             }
             catch (Exception ex)
             {

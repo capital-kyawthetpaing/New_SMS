@@ -37,16 +37,6 @@ namespace BL
             //else
             //    return false;
         }
-
-        public DataTable M_Vendor_Select(M_Vendor_Entity mve)
-        {
-            return mvdl.M_Vendor_Select(mve);
-        }
-
-        public DataTable M_BrandSelect(M_Brand_Entity mbe)
-        {
-            return mbdl.M_BrandSelect(mbe);
-        }
         public bool M_OrderRate_Update(M_OrderRate_Entity moe, string Xml, L_Log_Entity log_data)
         {
             return mskdl.M_Shiirekakeritsu(moe,Xml, log_data);

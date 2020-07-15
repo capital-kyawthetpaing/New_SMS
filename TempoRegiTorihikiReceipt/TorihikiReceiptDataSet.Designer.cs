@@ -425,41 +425,61 @@ namespace TempoRegiTorihikiReceipt {
             
             private global::System.Data.DataColumn columnRegistDate;
             
+            private global::System.Data.DataColumn columnDateTime1;
+            
             private global::System.Data.DataColumn columnName1;
             
             private global::System.Data.DataColumn columnAmount1;
+            
+            private global::System.Data.DataColumn columnDateTime2;
             
             private global::System.Data.DataColumn columnName2;
             
             private global::System.Data.DataColumn columnAmount2;
             
+            private global::System.Data.DataColumn columnDateTime3;
+            
             private global::System.Data.DataColumn columnName3;
             
             private global::System.Data.DataColumn columnAmount3;
+            
+            private global::System.Data.DataColumn columnDateTime4;
             
             private global::System.Data.DataColumn columnName4;
             
             private global::System.Data.DataColumn columnAmount4;
             
+            private global::System.Data.DataColumn columnDateTime5;
+            
             private global::System.Data.DataColumn columnName5;
             
             private global::System.Data.DataColumn columnAmount5;
+            
+            private global::System.Data.DataColumn columnDateTime6;
             
             private global::System.Data.DataColumn columnName6;
             
             private global::System.Data.DataColumn columnAmount6;
             
+            private global::System.Data.DataColumn columnDateTime7;
+            
             private global::System.Data.DataColumn columnName7;
             
             private global::System.Data.DataColumn columnAmount7;
+            
+            private global::System.Data.DataColumn columnDateTime8;
             
             private global::System.Data.DataColumn columnName8;
             
             private global::System.Data.DataColumn columnAmount8;
             
+            private global::System.Data.DataColumn columnDateTime9;
+            
             private global::System.Data.DataColumn columnName9;
             
             private global::System.Data.DataColumn columnAmount9;
+            
+            private global::System.Data.DataColumn columnDateTime10;
             
             private global::System.Data.DataColumn columnName10;
             
@@ -524,6 +544,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime1Column {
+                get {
+                    return this.columnDateTime1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name1Column {
                 get {
                     return this.columnName1;
@@ -535,6 +563,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Amount1Column {
                 get {
                     return this.columnAmount1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime2Column {
+                get {
+                    return this.columnDateTime2;
                 }
             }
             
@@ -556,6 +592,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime3Column {
+                get {
+                    return this.columnDateTime3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name3Column {
                 get {
                     return this.columnName3;
@@ -567,6 +611,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Amount3Column {
                 get {
                     return this.columnAmount3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime4Column {
+                get {
+                    return this.columnDateTime4;
                 }
             }
             
@@ -588,6 +640,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime5Column {
+                get {
+                    return this.columnDateTime5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name5Column {
                 get {
                     return this.columnName5;
@@ -599,6 +659,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Amount5Column {
                 get {
                     return this.columnAmount5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime6Column {
+                get {
+                    return this.columnDateTime6;
                 }
             }
             
@@ -620,6 +688,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime7Column {
+                get {
+                    return this.columnDateTime7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name7Column {
                 get {
                     return this.columnName7;
@@ -631,6 +707,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Amount7Column {
                 get {
                     return this.columnAmount7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime8Column {
+                get {
+                    return this.columnDateTime8;
                 }
             }
             
@@ -652,6 +736,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime9Column {
+                get {
+                    return this.columnDateTime9;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name9Column {
                 get {
                     return this.columnName9;
@@ -663,6 +755,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Amount9Column {
                 get {
                     return this.columnAmount9;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime10Column {
+                get {
+                    return this.columnDateTime10;
                 }
             }
             
@@ -723,24 +823,34 @@ namespace TempoRegiTorihikiReceipt {
                         string StoreReceiptPrint, 
                         string StaffReceiptPrint, 
                         string RegistDate, 
+                        string DateTime1, 
                         string Name1, 
                         string Amount1, 
+                        string DateTime2, 
                         string Name2, 
                         string Amount2, 
+                        string DateTime3, 
                         string Name3, 
                         string Amount3, 
+                        string DateTime4, 
                         string Name4, 
                         string Amount4, 
+                        string DateTime5, 
                         string Name5, 
                         string Amount5, 
+                        string DateTime6, 
                         string Name6, 
                         string Amount6, 
+                        string DateTime7, 
                         string Name7, 
                         string Amount7, 
+                        string DateTime8, 
                         string Name8, 
                         string Amount8, 
+                        string DateTime9, 
                         string Name9, 
                         string Amount9, 
+                        string DateTime10, 
                         string Name10, 
                         string Amount10) {
                 MiscDepositTableRow rowMiscDepositTableRow = ((MiscDepositTableRow)(this.NewRow()));
@@ -748,24 +858,34 @@ namespace TempoRegiTorihikiReceipt {
                         StoreReceiptPrint,
                         StaffReceiptPrint,
                         RegistDate,
+                        DateTime1,
                         Name1,
                         Amount1,
+                        DateTime2,
                         Name2,
                         Amount2,
+                        DateTime3,
                         Name3,
                         Amount3,
+                        DateTime4,
                         Name4,
                         Amount4,
+                        DateTime5,
                         Name5,
                         Amount5,
+                        DateTime6,
                         Name6,
                         Amount6,
+                        DateTime7,
                         Name7,
                         Amount7,
+                        DateTime8,
                         Name8,
                         Amount8,
+                        DateTime9,
                         Name9,
                         Amount9,
+                        DateTime10,
                         Name10,
                         Amount10};
                 rowMiscDepositTableRow.ItemArray = columnValuesArray;
@@ -793,24 +913,34 @@ namespace TempoRegiTorihikiReceipt {
                 this.columnStoreReceiptPrint = base.Columns["StoreReceiptPrint"];
                 this.columnStaffReceiptPrint = base.Columns["StaffReceiptPrint"];
                 this.columnRegistDate = base.Columns["RegistDate"];
+                this.columnDateTime1 = base.Columns["DateTime1"];
                 this.columnName1 = base.Columns["Name1"];
                 this.columnAmount1 = base.Columns["Amount1"];
+                this.columnDateTime2 = base.Columns["DateTime2"];
                 this.columnName2 = base.Columns["Name2"];
                 this.columnAmount2 = base.Columns["Amount2"];
+                this.columnDateTime3 = base.Columns["DateTime3"];
                 this.columnName3 = base.Columns["Name3"];
                 this.columnAmount3 = base.Columns["Amount3"];
+                this.columnDateTime4 = base.Columns["DateTime4"];
                 this.columnName4 = base.Columns["Name4"];
                 this.columnAmount4 = base.Columns["Amount4"];
+                this.columnDateTime5 = base.Columns["DateTime5"];
                 this.columnName5 = base.Columns["Name5"];
                 this.columnAmount5 = base.Columns["Amount5"];
+                this.columnDateTime6 = base.Columns["DateTime6"];
                 this.columnName6 = base.Columns["Name6"];
                 this.columnAmount6 = base.Columns["Amount6"];
+                this.columnDateTime7 = base.Columns["DateTime7"];
                 this.columnName7 = base.Columns["Name7"];
                 this.columnAmount7 = base.Columns["Amount7"];
+                this.columnDateTime8 = base.Columns["DateTime8"];
                 this.columnName8 = base.Columns["Name8"];
                 this.columnAmount8 = base.Columns["Amount8"];
+                this.columnDateTime9 = base.Columns["DateTime9"];
                 this.columnName9 = base.Columns["Name9"];
                 this.columnAmount9 = base.Columns["Amount9"];
+                this.columnDateTime10 = base.Columns["DateTime10"];
                 this.columnName10 = base.Columns["Name10"];
                 this.columnAmount10 = base.Columns["Amount10"];
             }
@@ -824,42 +954,62 @@ namespace TempoRegiTorihikiReceipt {
                 base.Columns.Add(this.columnStaffReceiptPrint);
                 this.columnRegistDate = new global::System.Data.DataColumn("RegistDate", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRegistDate);
+                this.columnDateTime1 = new global::System.Data.DataColumn("DateTime1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime1);
                 this.columnName1 = new global::System.Data.DataColumn("Name1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName1);
                 this.columnAmount1 = new global::System.Data.DataColumn("Amount1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount1);
+                this.columnDateTime2 = new global::System.Data.DataColumn("DateTime2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime2);
                 this.columnName2 = new global::System.Data.DataColumn("Name2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName2);
                 this.columnAmount2 = new global::System.Data.DataColumn("Amount2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount2);
+                this.columnDateTime3 = new global::System.Data.DataColumn("DateTime3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime3);
                 this.columnName3 = new global::System.Data.DataColumn("Name3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName3);
                 this.columnAmount3 = new global::System.Data.DataColumn("Amount3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount3);
+                this.columnDateTime4 = new global::System.Data.DataColumn("DateTime4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime4);
                 this.columnName4 = new global::System.Data.DataColumn("Name4", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName4);
                 this.columnAmount4 = new global::System.Data.DataColumn("Amount4", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount4);
+                this.columnDateTime5 = new global::System.Data.DataColumn("DateTime5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime5);
                 this.columnName5 = new global::System.Data.DataColumn("Name5", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName5);
                 this.columnAmount5 = new global::System.Data.DataColumn("Amount5", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount5);
+                this.columnDateTime6 = new global::System.Data.DataColumn("DateTime6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime6);
                 this.columnName6 = new global::System.Data.DataColumn("Name6", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName6);
                 this.columnAmount6 = new global::System.Data.DataColumn("Amount6", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount6);
+                this.columnDateTime7 = new global::System.Data.DataColumn("DateTime7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime7);
                 this.columnName7 = new global::System.Data.DataColumn("Name7", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName7);
                 this.columnAmount7 = new global::System.Data.DataColumn("Amount7", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount7);
+                this.columnDateTime8 = new global::System.Data.DataColumn("DateTime8", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime8);
                 this.columnName8 = new global::System.Data.DataColumn("Name8", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName8);
                 this.columnAmount8 = new global::System.Data.DataColumn("Amount8", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount8);
+                this.columnDateTime9 = new global::System.Data.DataColumn("DateTime9", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime9);
                 this.columnName9 = new global::System.Data.DataColumn("Name9", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName9);
                 this.columnAmount9 = new global::System.Data.DataColumn("Amount9", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount9);
+                this.columnDateTime10 = new global::System.Data.DataColumn("DateTime10", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime10);
                 this.columnName10 = new global::System.Data.DataColumn("Name10", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName10);
                 this.columnAmount10 = new global::System.Data.DataColumn("Amount10", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1007,41 +1157,61 @@ namespace TempoRegiTorihikiReceipt {
             
             private global::System.Data.DataColumn columnCustomerName;
             
+            private global::System.Data.DataColumn columnDateTime1;
+            
             private global::System.Data.DataColumn columnName1;
             
             private global::System.Data.DataColumn columnAmount1;
+            
+            private global::System.Data.DataColumn columnDateTime2;
             
             private global::System.Data.DataColumn columnName2;
             
             private global::System.Data.DataColumn columnAmount2;
             
+            private global::System.Data.DataColumn columnDateTime3;
+            
             private global::System.Data.DataColumn columnName3;
             
             private global::System.Data.DataColumn columnAmount3;
+            
+            private global::System.Data.DataColumn columnDateTime4;
             
             private global::System.Data.DataColumn columnName4;
             
             private global::System.Data.DataColumn columnAmount4;
             
+            private global::System.Data.DataColumn columnDateTime5;
+            
             private global::System.Data.DataColumn columnName5;
             
             private global::System.Data.DataColumn columnAmount5;
+            
+            private global::System.Data.DataColumn columnDateTime6;
             
             private global::System.Data.DataColumn columnName6;
             
             private global::System.Data.DataColumn columnAmount6;
             
+            private global::System.Data.DataColumn columnDateTime7;
+            
             private global::System.Data.DataColumn columnName7;
             
             private global::System.Data.DataColumn columnAmount7;
+            
+            private global::System.Data.DataColumn columnDateTime8;
             
             private global::System.Data.DataColumn columnName8;
             
             private global::System.Data.DataColumn columnAmount8;
             
+            private global::System.Data.DataColumn columnDateTime9;
+            
             private global::System.Data.DataColumn columnName9;
             
             private global::System.Data.DataColumn columnAmount9;
+            
+            private global::System.Data.DataColumn columnDateTime10;
             
             private global::System.Data.DataColumn columnName10;
             
@@ -1122,6 +1292,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime1Column {
+                get {
+                    return this.columnDateTime1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name1Column {
                 get {
                     return this.columnName1;
@@ -1133,6 +1311,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Amount1Column {
                 get {
                     return this.columnAmount1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime2Column {
+                get {
+                    return this.columnDateTime2;
                 }
             }
             
@@ -1154,6 +1340,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime3Column {
+                get {
+                    return this.columnDateTime3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name3Column {
                 get {
                     return this.columnName3;
@@ -1165,6 +1359,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Amount3Column {
                 get {
                     return this.columnAmount3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime4Column {
+                get {
+                    return this.columnDateTime4;
                 }
             }
             
@@ -1186,6 +1388,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime5Column {
+                get {
+                    return this.columnDateTime5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name5Column {
                 get {
                     return this.columnName5;
@@ -1197,6 +1407,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Amount5Column {
                 get {
                     return this.columnAmount5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime6Column {
+                get {
+                    return this.columnDateTime6;
                 }
             }
             
@@ -1218,6 +1436,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime7Column {
+                get {
+                    return this.columnDateTime7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name7Column {
                 get {
                     return this.columnName7;
@@ -1229,6 +1455,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Amount7Column {
                 get {
                     return this.columnAmount7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime8Column {
+                get {
+                    return this.columnDateTime8;
                 }
             }
             
@@ -1250,6 +1484,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime9Column {
+                get {
+                    return this.columnDateTime9;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name9Column {
                 get {
                     return this.columnName9;
@@ -1261,6 +1503,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Amount9Column {
                 get {
                     return this.columnAmount9;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime10Column {
+                get {
+                    return this.columnDateTime10;
                 }
             }
             
@@ -1323,24 +1573,34 @@ namespace TempoRegiTorihikiReceipt {
                         string RegistDate, 
                         string CustomerCD, 
                         string CustomerName, 
+                        string DateTime1, 
                         string Name1, 
                         string Amount1, 
+                        string DateTime2, 
                         string Name2, 
                         string Amount2, 
+                        string DateTime3, 
                         string Name3, 
                         string Amount3, 
+                        string DateTime4, 
                         string Name4, 
                         string Amount4, 
+                        string DateTime5, 
                         string Name5, 
                         string Amount5, 
+                        string DateTime6, 
                         string Name6, 
                         string Amount6, 
+                        string DateTime7, 
                         string Name7, 
                         string Amount7, 
+                        string DateTime8, 
                         string Name8, 
                         string Amount8, 
+                        string DateTime9, 
                         string Name9, 
                         string Amount9, 
+                        string DateTime10, 
                         string Name10, 
                         string Amount10) {
                 DepositTableRow rowDepositTableRow = ((DepositTableRow)(this.NewRow()));
@@ -1350,24 +1610,34 @@ namespace TempoRegiTorihikiReceipt {
                         RegistDate,
                         CustomerCD,
                         CustomerName,
+                        DateTime1,
                         Name1,
                         Amount1,
+                        DateTime2,
                         Name2,
                         Amount2,
+                        DateTime3,
                         Name3,
                         Amount3,
+                        DateTime4,
                         Name4,
                         Amount4,
+                        DateTime5,
                         Name5,
                         Amount5,
+                        DateTime6,
                         Name6,
                         Amount6,
+                        DateTime7,
                         Name7,
                         Amount7,
+                        DateTime8,
                         Name8,
                         Amount8,
+                        DateTime9,
                         Name9,
                         Amount9,
+                        DateTime10,
                         Name10,
                         Amount10};
                 rowDepositTableRow.ItemArray = columnValuesArray;
@@ -1397,24 +1667,34 @@ namespace TempoRegiTorihikiReceipt {
                 this.columnRegistDate = base.Columns["RegistDate"];
                 this.columnCustomerCD = base.Columns["CustomerCD"];
                 this.columnCustomerName = base.Columns["CustomerName"];
+                this.columnDateTime1 = base.Columns["DateTime1"];
                 this.columnName1 = base.Columns["Name1"];
                 this.columnAmount1 = base.Columns["Amount1"];
+                this.columnDateTime2 = base.Columns["DateTime2"];
                 this.columnName2 = base.Columns["Name2"];
                 this.columnAmount2 = base.Columns["Amount2"];
+                this.columnDateTime3 = base.Columns["DateTime3"];
                 this.columnName3 = base.Columns["Name3"];
                 this.columnAmount3 = base.Columns["Amount3"];
+                this.columnDateTime4 = base.Columns["DateTime4"];
                 this.columnName4 = base.Columns["Name4"];
                 this.columnAmount4 = base.Columns["Amount4"];
+                this.columnDateTime5 = base.Columns["DateTime5"];
                 this.columnName5 = base.Columns["Name5"];
                 this.columnAmount5 = base.Columns["Amount5"];
+                this.columnDateTime6 = base.Columns["DateTime6"];
                 this.columnName6 = base.Columns["Name6"];
                 this.columnAmount6 = base.Columns["Amount6"];
+                this.columnDateTime7 = base.Columns["DateTime7"];
                 this.columnName7 = base.Columns["Name7"];
                 this.columnAmount7 = base.Columns["Amount7"];
+                this.columnDateTime8 = base.Columns["DateTime8"];
                 this.columnName8 = base.Columns["Name8"];
                 this.columnAmount8 = base.Columns["Amount8"];
+                this.columnDateTime9 = base.Columns["DateTime9"];
                 this.columnName9 = base.Columns["Name9"];
                 this.columnAmount9 = base.Columns["Amount9"];
+                this.columnDateTime10 = base.Columns["DateTime10"];
                 this.columnName10 = base.Columns["Name10"];
                 this.columnAmount10 = base.Columns["Amount10"];
             }
@@ -1432,42 +1712,62 @@ namespace TempoRegiTorihikiReceipt {
                 base.Columns.Add(this.columnCustomerCD);
                 this.columnCustomerName = new global::System.Data.DataColumn("CustomerName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCustomerName);
+                this.columnDateTime1 = new global::System.Data.DataColumn("DateTime1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime1);
                 this.columnName1 = new global::System.Data.DataColumn("Name1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName1);
                 this.columnAmount1 = new global::System.Data.DataColumn("Amount1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount1);
+                this.columnDateTime2 = new global::System.Data.DataColumn("DateTime2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime2);
                 this.columnName2 = new global::System.Data.DataColumn("Name2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName2);
                 this.columnAmount2 = new global::System.Data.DataColumn("Amount2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount2);
+                this.columnDateTime3 = new global::System.Data.DataColumn("DateTime3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime3);
                 this.columnName3 = new global::System.Data.DataColumn("Name3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName3);
                 this.columnAmount3 = new global::System.Data.DataColumn("Amount3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount3);
+                this.columnDateTime4 = new global::System.Data.DataColumn("DateTime4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime4);
                 this.columnName4 = new global::System.Data.DataColumn("Name4", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName4);
                 this.columnAmount4 = new global::System.Data.DataColumn("Amount4", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount4);
+                this.columnDateTime5 = new global::System.Data.DataColumn("DateTime5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime5);
                 this.columnName5 = new global::System.Data.DataColumn("Name5", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName5);
                 this.columnAmount5 = new global::System.Data.DataColumn("Amount5", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount5);
+                this.columnDateTime6 = new global::System.Data.DataColumn("DateTime6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime6);
                 this.columnName6 = new global::System.Data.DataColumn("Name6", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName6);
                 this.columnAmount6 = new global::System.Data.DataColumn("Amount6", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount6);
+                this.columnDateTime7 = new global::System.Data.DataColumn("DateTime7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime7);
                 this.columnName7 = new global::System.Data.DataColumn("Name7", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName7);
                 this.columnAmount7 = new global::System.Data.DataColumn("Amount7", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount7);
+                this.columnDateTime8 = new global::System.Data.DataColumn("DateTime8", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime8);
                 this.columnName8 = new global::System.Data.DataColumn("Name8", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName8);
                 this.columnAmount8 = new global::System.Data.DataColumn("Amount8", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount8);
+                this.columnDateTime9 = new global::System.Data.DataColumn("DateTime9", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime9);
                 this.columnName9 = new global::System.Data.DataColumn("Name9", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName9);
                 this.columnAmount9 = new global::System.Data.DataColumn("Amount9", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount9);
+                this.columnDateTime10 = new global::System.Data.DataColumn("DateTime10", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime10);
                 this.columnName10 = new global::System.Data.DataColumn("Name10", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName10);
                 this.columnAmount10 = new global::System.Data.DataColumn("Amount10", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1613,6 +1913,8 @@ namespace TempoRegiTorihikiReceipt {
             
             private global::System.Data.DataColumn columnExchangeCount;
             
+            private global::System.Data.DataColumn columnDateTime1;
+            
             private global::System.Data.DataColumn columnName1;
             
             private global::System.Data.DataColumn columnAmount1;
@@ -1620,6 +1922,8 @@ namespace TempoRegiTorihikiReceipt {
             private global::System.Data.DataColumn columnDenomination1;
             
             private global::System.Data.DataColumn columnCount1;
+            
+            private global::System.Data.DataColumn columnDateTime2;
             
             private global::System.Data.DataColumn columnName2;
             
@@ -1629,6 +1933,8 @@ namespace TempoRegiTorihikiReceipt {
             
             private global::System.Data.DataColumn columnCount2;
             
+            private global::System.Data.DataColumn columnDateTime3;
+            
             private global::System.Data.DataColumn columnName3;
             
             private global::System.Data.DataColumn columnAmount3;
@@ -1636,6 +1942,8 @@ namespace TempoRegiTorihikiReceipt {
             private global::System.Data.DataColumn columnDenomination3;
             
             private global::System.Data.DataColumn columnCount3;
+            
+            private global::System.Data.DataColumn columnDateTime4;
             
             private global::System.Data.DataColumn columnName4;
             
@@ -1645,6 +1953,8 @@ namespace TempoRegiTorihikiReceipt {
             
             private global::System.Data.DataColumn columnCount4;
             
+            private global::System.Data.DataColumn columnDateTime5;
+            
             private global::System.Data.DataColumn columnName5;
             
             private global::System.Data.DataColumn columnAmount5;
@@ -1652,6 +1962,8 @@ namespace TempoRegiTorihikiReceipt {
             private global::System.Data.DataColumn columnDenomination5;
             
             private global::System.Data.DataColumn columnCount5;
+            
+            private global::System.Data.DataColumn columnDateTime6;
             
             private global::System.Data.DataColumn columnName6;
             
@@ -1661,6 +1973,8 @@ namespace TempoRegiTorihikiReceipt {
             
             private global::System.Data.DataColumn columnCount6;
             
+            private global::System.Data.DataColumn columnDateTime7;
+            
             private global::System.Data.DataColumn columnName7;
             
             private global::System.Data.DataColumn columnAmount7;
@@ -1668,6 +1982,8 @@ namespace TempoRegiTorihikiReceipt {
             private global::System.Data.DataColumn columnDenomination7;
             
             private global::System.Data.DataColumn columnCount7;
+            
+            private global::System.Data.DataColumn columnDateTime8;
             
             private global::System.Data.DataColumn columnName8;
             
@@ -1677,6 +1993,8 @@ namespace TempoRegiTorihikiReceipt {
             
             private global::System.Data.DataColumn columnCount8;
             
+            private global::System.Data.DataColumn columnDateTime9;
+            
             private global::System.Data.DataColumn columnName9;
             
             private global::System.Data.DataColumn columnAmount9;
@@ -1684,6 +2002,8 @@ namespace TempoRegiTorihikiReceipt {
             private global::System.Data.DataColumn columnDenomination9;
             
             private global::System.Data.DataColumn columnCount9;
+            
+            private global::System.Data.DataColumn columnDateTime10;
             
             private global::System.Data.DataColumn columnName10;
             
@@ -1760,6 +2080,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime1Column {
+                get {
+                    return this.columnDateTime1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name1Column {
                 get {
                     return this.columnName1;
@@ -1787,6 +2115,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Count1Column {
                 get {
                     return this.columnCount1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime2Column {
+                get {
+                    return this.columnDateTime2;
                 }
             }
             
@@ -1824,6 +2160,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime3Column {
+                get {
+                    return this.columnDateTime3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name3Column {
                 get {
                     return this.columnName3;
@@ -1851,6 +2195,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Count3Column {
                 get {
                     return this.columnCount3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime4Column {
+                get {
+                    return this.columnDateTime4;
                 }
             }
             
@@ -1888,6 +2240,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime5Column {
+                get {
+                    return this.columnDateTime5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name5Column {
                 get {
                     return this.columnName5;
@@ -1915,6 +2275,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Count5Column {
                 get {
                     return this.columnCount5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime6Column {
+                get {
+                    return this.columnDateTime6;
                 }
             }
             
@@ -1952,6 +2320,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime7Column {
+                get {
+                    return this.columnDateTime7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name7Column {
                 get {
                     return this.columnName7;
@@ -1979,6 +2355,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Count7Column {
                 get {
                     return this.columnCount7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime8Column {
+                get {
+                    return this.columnDateTime8;
                 }
             }
             
@@ -2016,6 +2400,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime9Column {
+                get {
+                    return this.columnDateTime9;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name9Column {
                 get {
                     return this.columnName9;
@@ -2043,6 +2435,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Count9Column {
                 get {
                     return this.columnCount9;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime10Column {
+                get {
+                    return this.columnDateTime10;
                 }
             }
             
@@ -2120,42 +2520,52 @@ namespace TempoRegiTorihikiReceipt {
                         string StaffReceiptPrint, 
                         string RegistDate, 
                         string ExchangeCount, 
+                        string DateTime1, 
                         string Name1, 
                         string Amount1, 
                         string Denomination1, 
                         string Count1, 
+                        string DateTime2, 
                         string Name2, 
                         string Amount2, 
                         string Denomination2, 
                         string Count2, 
+                        string DateTime3, 
                         string Name3, 
                         string Amount3, 
                         string Denomination3, 
                         string Count3, 
+                        string DateTime4, 
                         string Name4, 
                         string Amount4, 
                         string Denomination4, 
                         string Count4, 
+                        string DateTime5, 
                         string Name5, 
                         string Amount5, 
                         string Denomination5, 
                         string Count5, 
+                        string DateTime6, 
                         string Name6, 
                         string Amount6, 
                         string Denomination6, 
                         string Count6, 
+                        string DateTime7, 
                         string Name7, 
                         string Amount7, 
                         string Denomination7, 
                         string Count7, 
+                        string DateTime8, 
                         string Name8, 
                         string Amount8, 
                         string Denomination8, 
                         string Count8, 
+                        string DateTime9, 
                         string Name9, 
                         string Amount9, 
                         string Denomination9, 
                         string Count9, 
+                        string DateTime10, 
                         string Name10, 
                         string Amount10, 
                         string Denomination10, 
@@ -2166,42 +2576,52 @@ namespace TempoRegiTorihikiReceipt {
                         StaffReceiptPrint,
                         RegistDate,
                         ExchangeCount,
+                        DateTime1,
                         Name1,
                         Amount1,
                         Denomination1,
                         Count1,
+                        DateTime2,
                         Name2,
                         Amount2,
                         Denomination2,
                         Count2,
+                        DateTime3,
                         Name3,
                         Amount3,
                         Denomination3,
                         Count3,
+                        DateTime4,
                         Name4,
                         Amount4,
                         Denomination4,
                         Count4,
+                        DateTime5,
                         Name5,
                         Amount5,
                         Denomination5,
                         Count5,
+                        DateTime6,
                         Name6,
                         Amount6,
                         Denomination6,
                         Count6,
+                        DateTime7,
                         Name7,
                         Amount7,
                         Denomination7,
                         Count7,
+                        DateTime8,
                         Name8,
                         Amount8,
                         Denomination8,
                         Count8,
+                        DateTime9,
                         Name9,
                         Amount9,
                         Denomination9,
                         Count9,
+                        DateTime10,
                         Name10,
                         Amount10,
                         Denomination10,
@@ -2232,42 +2652,52 @@ namespace TempoRegiTorihikiReceipt {
                 this.columnStaffReceiptPrint = base.Columns["StaffReceiptPrint"];
                 this.columnRegistDate = base.Columns["RegistDate"];
                 this.columnExchangeCount = base.Columns["ExchangeCount"];
+                this.columnDateTime1 = base.Columns["DateTime1"];
                 this.columnName1 = base.Columns["Name1"];
                 this.columnAmount1 = base.Columns["Amount1"];
                 this.columnDenomination1 = base.Columns["Denomination1"];
                 this.columnCount1 = base.Columns["Count1"];
+                this.columnDateTime2 = base.Columns["DateTime2"];
                 this.columnName2 = base.Columns["Name2"];
                 this.columnAmount2 = base.Columns["Amount2"];
                 this.columnDenomination2 = base.Columns["Denomination2"];
                 this.columnCount2 = base.Columns["Count2"];
+                this.columnDateTime3 = base.Columns["DateTime3"];
                 this.columnName3 = base.Columns["Name3"];
                 this.columnAmount3 = base.Columns["Amount3"];
                 this.columnDenomination3 = base.Columns["Denomination3"];
                 this.columnCount3 = base.Columns["Count3"];
+                this.columnDateTime4 = base.Columns["DateTime4"];
                 this.columnName4 = base.Columns["Name4"];
                 this.columnAmount4 = base.Columns["Amount4"];
                 this.columnDenomination4 = base.Columns["Denomination4"];
                 this.columnCount4 = base.Columns["Count4"];
+                this.columnDateTime5 = base.Columns["DateTime5"];
                 this.columnName5 = base.Columns["Name5"];
                 this.columnAmount5 = base.Columns["Amount5"];
                 this.columnDenomination5 = base.Columns["Denomination5"];
                 this.columnCount5 = base.Columns["Count5"];
+                this.columnDateTime6 = base.Columns["DateTime6"];
                 this.columnName6 = base.Columns["Name6"];
                 this.columnAmount6 = base.Columns["Amount6"];
                 this.columnDenomination6 = base.Columns["Denomination6"];
                 this.columnCount6 = base.Columns["Count6"];
+                this.columnDateTime7 = base.Columns["DateTime7"];
                 this.columnName7 = base.Columns["Name7"];
                 this.columnAmount7 = base.Columns["Amount7"];
                 this.columnDenomination7 = base.Columns["Denomination7"];
                 this.columnCount7 = base.Columns["Count7"];
+                this.columnDateTime8 = base.Columns["DateTime8"];
                 this.columnName8 = base.Columns["Name8"];
                 this.columnAmount8 = base.Columns["Amount8"];
                 this.columnDenomination8 = base.Columns["Denomination8"];
                 this.columnCount8 = base.Columns["Count8"];
+                this.columnDateTime9 = base.Columns["DateTime9"];
                 this.columnName9 = base.Columns["Name9"];
                 this.columnAmount9 = base.Columns["Amount9"];
                 this.columnDenomination9 = base.Columns["Denomination9"];
                 this.columnCount9 = base.Columns["Count9"];
+                this.columnDateTime10 = base.Columns["DateTime10"];
                 this.columnName10 = base.Columns["Name10"];
                 this.columnAmount10 = base.Columns["Amount10"];
                 this.columnDenomination10 = base.Columns["Denomination10"];
@@ -2285,6 +2715,8 @@ namespace TempoRegiTorihikiReceipt {
                 base.Columns.Add(this.columnRegistDate);
                 this.columnExchangeCount = new global::System.Data.DataColumn("ExchangeCount", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnExchangeCount);
+                this.columnDateTime1 = new global::System.Data.DataColumn("DateTime1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime1);
                 this.columnName1 = new global::System.Data.DataColumn("Name1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName1);
                 this.columnAmount1 = new global::System.Data.DataColumn("Amount1", typeof(string), null, global::System.Data.MappingType.Element);
@@ -2293,6 +2725,8 @@ namespace TempoRegiTorihikiReceipt {
                 base.Columns.Add(this.columnDenomination1);
                 this.columnCount1 = new global::System.Data.DataColumn("Count1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCount1);
+                this.columnDateTime2 = new global::System.Data.DataColumn("DateTime2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime2);
                 this.columnName2 = new global::System.Data.DataColumn("Name2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName2);
                 this.columnAmount2 = new global::System.Data.DataColumn("Amount2", typeof(string), null, global::System.Data.MappingType.Element);
@@ -2301,6 +2735,8 @@ namespace TempoRegiTorihikiReceipt {
                 base.Columns.Add(this.columnDenomination2);
                 this.columnCount2 = new global::System.Data.DataColumn("Count2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCount2);
+                this.columnDateTime3 = new global::System.Data.DataColumn("DateTime3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime3);
                 this.columnName3 = new global::System.Data.DataColumn("Name3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName3);
                 this.columnAmount3 = new global::System.Data.DataColumn("Amount3", typeof(string), null, global::System.Data.MappingType.Element);
@@ -2309,6 +2745,8 @@ namespace TempoRegiTorihikiReceipt {
                 base.Columns.Add(this.columnDenomination3);
                 this.columnCount3 = new global::System.Data.DataColumn("Count3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCount3);
+                this.columnDateTime4 = new global::System.Data.DataColumn("DateTime4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime4);
                 this.columnName4 = new global::System.Data.DataColumn("Name4", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName4);
                 this.columnAmount4 = new global::System.Data.DataColumn("Amount4", typeof(string), null, global::System.Data.MappingType.Element);
@@ -2317,6 +2755,8 @@ namespace TempoRegiTorihikiReceipt {
                 base.Columns.Add(this.columnDenomination4);
                 this.columnCount4 = new global::System.Data.DataColumn("Count4", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCount4);
+                this.columnDateTime5 = new global::System.Data.DataColumn("DateTime5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime5);
                 this.columnName5 = new global::System.Data.DataColumn("Name5", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName5);
                 this.columnAmount5 = new global::System.Data.DataColumn("Amount5", typeof(string), null, global::System.Data.MappingType.Element);
@@ -2325,6 +2765,8 @@ namespace TempoRegiTorihikiReceipt {
                 base.Columns.Add(this.columnDenomination5);
                 this.columnCount5 = new global::System.Data.DataColumn("Count5", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCount5);
+                this.columnDateTime6 = new global::System.Data.DataColumn("DateTime6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime6);
                 this.columnName6 = new global::System.Data.DataColumn("Name6", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName6);
                 this.columnAmount6 = new global::System.Data.DataColumn("Amount6", typeof(string), null, global::System.Data.MappingType.Element);
@@ -2333,6 +2775,8 @@ namespace TempoRegiTorihikiReceipt {
                 base.Columns.Add(this.columnDenomination6);
                 this.columnCount6 = new global::System.Data.DataColumn("Count6", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCount6);
+                this.columnDateTime7 = new global::System.Data.DataColumn("DateTime7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime7);
                 this.columnName7 = new global::System.Data.DataColumn("Name7", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName7);
                 this.columnAmount7 = new global::System.Data.DataColumn("Amount7", typeof(string), null, global::System.Data.MappingType.Element);
@@ -2341,6 +2785,8 @@ namespace TempoRegiTorihikiReceipt {
                 base.Columns.Add(this.columnDenomination7);
                 this.columnCount7 = new global::System.Data.DataColumn("Count7", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCount7);
+                this.columnDateTime8 = new global::System.Data.DataColumn("DateTime8", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime8);
                 this.columnName8 = new global::System.Data.DataColumn("Name8", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName8);
                 this.columnAmount8 = new global::System.Data.DataColumn("Amount8", typeof(string), null, global::System.Data.MappingType.Element);
@@ -2349,6 +2795,8 @@ namespace TempoRegiTorihikiReceipt {
                 base.Columns.Add(this.columnDenomination8);
                 this.columnCount8 = new global::System.Data.DataColumn("Count8", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCount8);
+                this.columnDateTime9 = new global::System.Data.DataColumn("DateTime9", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime9);
                 this.columnName9 = new global::System.Data.DataColumn("Name9", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName9);
                 this.columnAmount9 = new global::System.Data.DataColumn("Amount9", typeof(string), null, global::System.Data.MappingType.Element);
@@ -2357,6 +2805,8 @@ namespace TempoRegiTorihikiReceipt {
                 base.Columns.Add(this.columnDenomination9);
                 this.columnCount9 = new global::System.Data.DataColumn("Count9", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCount9);
+                this.columnDateTime10 = new global::System.Data.DataColumn("DateTime10", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime10);
                 this.columnName10 = new global::System.Data.DataColumn("Name10", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName10);
                 this.columnAmount10 = new global::System.Data.DataColumn("Amount10", typeof(string), null, global::System.Data.MappingType.Element);
@@ -2504,41 +2954,61 @@ namespace TempoRegiTorihikiReceipt {
             
             private global::System.Data.DataColumn columnRegistDate;
             
+            private global::System.Data.DataColumn columnDateTime1;
+            
             private global::System.Data.DataColumn columnName1;
             
             private global::System.Data.DataColumn columnAmount1;
+            
+            private global::System.Data.DataColumn columnDateTime2;
             
             private global::System.Data.DataColumn columnName2;
             
             private global::System.Data.DataColumn columnAmount2;
             
+            private global::System.Data.DataColumn columnDateTime3;
+            
             private global::System.Data.DataColumn columnName3;
             
             private global::System.Data.DataColumn columnAmount3;
+            
+            private global::System.Data.DataColumn columnDateTime4;
             
             private global::System.Data.DataColumn columnName4;
             
             private global::System.Data.DataColumn columnAmount4;
             
+            private global::System.Data.DataColumn columnDateTime5;
+            
             private global::System.Data.DataColumn columnName5;
             
             private global::System.Data.DataColumn columnAmount5;
+            
+            private global::System.Data.DataColumn columnDateTime6;
             
             private global::System.Data.DataColumn columnName6;
             
             private global::System.Data.DataColumn columnAmount6;
             
+            private global::System.Data.DataColumn columnDateTime7;
+            
             private global::System.Data.DataColumn columnName7;
             
             private global::System.Data.DataColumn columnAmount7;
+            
+            private global::System.Data.DataColumn columnDateTime8;
             
             private global::System.Data.DataColumn columnName8;
             
             private global::System.Data.DataColumn columnAmount8;
             
+            private global::System.Data.DataColumn columnDateTime9;
+            
             private global::System.Data.DataColumn columnName9;
             
             private global::System.Data.DataColumn columnAmount9;
+            
+            private global::System.Data.DataColumn columnDateTime10;
             
             private global::System.Data.DataColumn columnName10;
             
@@ -2603,6 +3073,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime1Column {
+                get {
+                    return this.columnDateTime1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name1Column {
                 get {
                     return this.columnName1;
@@ -2614,6 +3092,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Amount1Column {
                 get {
                     return this.columnAmount1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime2Column {
+                get {
+                    return this.columnDateTime2;
                 }
             }
             
@@ -2635,6 +3121,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime3Column {
+                get {
+                    return this.columnDateTime3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name3Column {
                 get {
                     return this.columnName3;
@@ -2646,6 +3140,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Amount3Column {
                 get {
                     return this.columnAmount3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime4Column {
+                get {
+                    return this.columnDateTime4;
                 }
             }
             
@@ -2667,6 +3169,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime5Column {
+                get {
+                    return this.columnDateTime5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name5Column {
                 get {
                     return this.columnName5;
@@ -2678,6 +3188,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Amount5Column {
                 get {
                     return this.columnAmount5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime6Column {
+                get {
+                    return this.columnDateTime6;
                 }
             }
             
@@ -2699,6 +3217,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime7Column {
+                get {
+                    return this.columnDateTime7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name7Column {
                 get {
                     return this.columnName7;
@@ -2710,6 +3236,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Amount7Column {
                 get {
                     return this.columnAmount7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime8Column {
+                get {
+                    return this.columnDateTime8;
                 }
             }
             
@@ -2731,6 +3265,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime9Column {
+                get {
+                    return this.columnDateTime9;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name9Column {
                 get {
                     return this.columnName9;
@@ -2742,6 +3284,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Amount9Column {
                 get {
                     return this.columnAmount9;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime10Column {
+                get {
+                    return this.columnDateTime10;
                 }
             }
             
@@ -2802,24 +3352,34 @@ namespace TempoRegiTorihikiReceipt {
                         string StoreReceiptPrint, 
                         string StaffReceiptPrint, 
                         string RegistDate, 
+                        string DateTime1, 
                         string Name1, 
                         string Amount1, 
+                        string DateTime2, 
                         string Name2, 
                         string Amount2, 
+                        string DateTime3, 
                         string Name3, 
                         string Amount3, 
+                        string DateTime4, 
                         string Name4, 
                         string Amount4, 
+                        string DateTime5, 
                         string Name5, 
                         string Amount5, 
+                        string DateTime6, 
                         string Name6, 
                         string Amount6, 
+                        string DateTime7, 
                         string Name7, 
                         string Amount7, 
+                        string DateTime8, 
                         string Name8, 
                         string Amount8, 
+                        string DateTime9, 
                         string Name9, 
                         string Amount9, 
+                        string DateTime10, 
                         string Name10, 
                         string Amount10) {
                 ChangePreparationTableRow rowChangePreparationTableRow = ((ChangePreparationTableRow)(this.NewRow()));
@@ -2827,24 +3387,34 @@ namespace TempoRegiTorihikiReceipt {
                         StoreReceiptPrint,
                         StaffReceiptPrint,
                         RegistDate,
+                        DateTime1,
                         Name1,
                         Amount1,
+                        DateTime2,
                         Name2,
                         Amount2,
+                        DateTime3,
                         Name3,
                         Amount3,
+                        DateTime4,
                         Name4,
                         Amount4,
+                        DateTime5,
                         Name5,
                         Amount5,
+                        DateTime6,
                         Name6,
                         Amount6,
+                        DateTime7,
                         Name7,
                         Amount7,
+                        DateTime8,
                         Name8,
                         Amount8,
+                        DateTime9,
                         Name9,
                         Amount9,
+                        DateTime10,
                         Name10,
                         Amount10};
                 rowChangePreparationTableRow.ItemArray = columnValuesArray;
@@ -2872,24 +3442,34 @@ namespace TempoRegiTorihikiReceipt {
                 this.columnStoreReceiptPrint = base.Columns["StoreReceiptPrint"];
                 this.columnStaffReceiptPrint = base.Columns["StaffReceiptPrint"];
                 this.columnRegistDate = base.Columns["RegistDate"];
+                this.columnDateTime1 = base.Columns["DateTime1"];
                 this.columnName1 = base.Columns["Name1"];
                 this.columnAmount1 = base.Columns["Amount1"];
+                this.columnDateTime2 = base.Columns["DateTime2"];
                 this.columnName2 = base.Columns["Name2"];
                 this.columnAmount2 = base.Columns["Amount2"];
+                this.columnDateTime3 = base.Columns["DateTime3"];
                 this.columnName3 = base.Columns["Name3"];
                 this.columnAmount3 = base.Columns["Amount3"];
+                this.columnDateTime4 = base.Columns["DateTime4"];
                 this.columnName4 = base.Columns["Name4"];
                 this.columnAmount4 = base.Columns["Amount4"];
+                this.columnDateTime5 = base.Columns["DateTime5"];
                 this.columnName5 = base.Columns["Name5"];
                 this.columnAmount5 = base.Columns["Amount5"];
+                this.columnDateTime6 = base.Columns["DateTime6"];
                 this.columnName6 = base.Columns["Name6"];
                 this.columnAmount6 = base.Columns["Amount6"];
+                this.columnDateTime7 = base.Columns["DateTime7"];
                 this.columnName7 = base.Columns["Name7"];
                 this.columnAmount7 = base.Columns["Amount7"];
+                this.columnDateTime8 = base.Columns["DateTime8"];
                 this.columnName8 = base.Columns["Name8"];
                 this.columnAmount8 = base.Columns["Amount8"];
+                this.columnDateTime9 = base.Columns["DateTime9"];
                 this.columnName9 = base.Columns["Name9"];
                 this.columnAmount9 = base.Columns["Amount9"];
+                this.columnDateTime10 = base.Columns["DateTime10"];
                 this.columnName10 = base.Columns["Name10"];
                 this.columnAmount10 = base.Columns["Amount10"];
             }
@@ -2903,42 +3483,62 @@ namespace TempoRegiTorihikiReceipt {
                 base.Columns.Add(this.columnStaffReceiptPrint);
                 this.columnRegistDate = new global::System.Data.DataColumn("RegistDate", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRegistDate);
+                this.columnDateTime1 = new global::System.Data.DataColumn("DateTime1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime1);
                 this.columnName1 = new global::System.Data.DataColumn("Name1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName1);
                 this.columnAmount1 = new global::System.Data.DataColumn("Amount1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount1);
+                this.columnDateTime2 = new global::System.Data.DataColumn("DateTime2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime2);
                 this.columnName2 = new global::System.Data.DataColumn("Name2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName2);
                 this.columnAmount2 = new global::System.Data.DataColumn("Amount2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount2);
+                this.columnDateTime3 = new global::System.Data.DataColumn("DateTime3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime3);
                 this.columnName3 = new global::System.Data.DataColumn("Name3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName3);
                 this.columnAmount3 = new global::System.Data.DataColumn("Amount3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount3);
+                this.columnDateTime4 = new global::System.Data.DataColumn("DateTime4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime4);
                 this.columnName4 = new global::System.Data.DataColumn("Name4", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName4);
                 this.columnAmount4 = new global::System.Data.DataColumn("Amount4", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount4);
+                this.columnDateTime5 = new global::System.Data.DataColumn("DateTime5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime5);
                 this.columnName5 = new global::System.Data.DataColumn("Name5", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName5);
                 this.columnAmount5 = new global::System.Data.DataColumn("Amount5", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount5);
+                this.columnDateTime6 = new global::System.Data.DataColumn("DateTime6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime6);
                 this.columnName6 = new global::System.Data.DataColumn("Name6", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName6);
                 this.columnAmount6 = new global::System.Data.DataColumn("Amount6", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount6);
+                this.columnDateTime7 = new global::System.Data.DataColumn("DateTime7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime7);
                 this.columnName7 = new global::System.Data.DataColumn("Name7", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName7);
                 this.columnAmount7 = new global::System.Data.DataColumn("Amount7", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount7);
+                this.columnDateTime8 = new global::System.Data.DataColumn("DateTime8", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime8);
                 this.columnName8 = new global::System.Data.DataColumn("Name8", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName8);
                 this.columnAmount8 = new global::System.Data.DataColumn("Amount8", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount8);
+                this.columnDateTime9 = new global::System.Data.DataColumn("DateTime9", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime9);
                 this.columnName9 = new global::System.Data.DataColumn("Name9", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName9);
                 this.columnAmount9 = new global::System.Data.DataColumn("Amount9", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount9);
+                this.columnDateTime10 = new global::System.Data.DataColumn("DateTime10", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime10);
                 this.columnName10 = new global::System.Data.DataColumn("Name10", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName10);
                 this.columnAmount10 = new global::System.Data.DataColumn("Amount10", typeof(string), null, global::System.Data.MappingType.Element);
@@ -3082,41 +3682,61 @@ namespace TempoRegiTorihikiReceipt {
             
             private global::System.Data.DataColumn columnRegistDate;
             
+            private global::System.Data.DataColumn columnDateTime1;
+            
             private global::System.Data.DataColumn columnName1;
             
             private global::System.Data.DataColumn columnAmount1;
+            
+            private global::System.Data.DataColumn columnDateTime2;
             
             private global::System.Data.DataColumn columnName2;
             
             private global::System.Data.DataColumn columnAmount2;
             
+            private global::System.Data.DataColumn columnDateTime3;
+            
             private global::System.Data.DataColumn columnName3;
             
             private global::System.Data.DataColumn columnAmount3;
+            
+            private global::System.Data.DataColumn columnDateTime4;
             
             private global::System.Data.DataColumn columnName4;
             
             private global::System.Data.DataColumn columnAmount4;
             
+            private global::System.Data.DataColumn columnDateTime5;
+            
             private global::System.Data.DataColumn columnName5;
             
             private global::System.Data.DataColumn columnAmount5;
+            
+            private global::System.Data.DataColumn columnDateTime6;
             
             private global::System.Data.DataColumn columnName6;
             
             private global::System.Data.DataColumn columnAmount6;
             
+            private global::System.Data.DataColumn columnDateTime7;
+            
             private global::System.Data.DataColumn columnName7;
             
             private global::System.Data.DataColumn columnAmount7;
+            
+            private global::System.Data.DataColumn columnDateTime8;
             
             private global::System.Data.DataColumn columnName8;
             
             private global::System.Data.DataColumn columnAmount8;
             
+            private global::System.Data.DataColumn columnDateTime9;
+            
             private global::System.Data.DataColumn columnName9;
             
             private global::System.Data.DataColumn columnAmount9;
+            
+            private global::System.Data.DataColumn columnDateTime10;
             
             private global::System.Data.DataColumn columnName10;
             
@@ -3181,6 +3801,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime1Column {
+                get {
+                    return this.columnDateTime1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name1Column {
                 get {
                     return this.columnName1;
@@ -3192,6 +3820,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Amount1Column {
                 get {
                     return this.columnAmount1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime2Column {
+                get {
+                    return this.columnDateTime2;
                 }
             }
             
@@ -3213,6 +3849,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime3Column {
+                get {
+                    return this.columnDateTime3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name3Column {
                 get {
                     return this.columnName3;
@@ -3224,6 +3868,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Amount3Column {
                 get {
                     return this.columnAmount3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime4Column {
+                get {
+                    return this.columnDateTime4;
                 }
             }
             
@@ -3245,6 +3897,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime5Column {
+                get {
+                    return this.columnDateTime5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name5Column {
                 get {
                     return this.columnName5;
@@ -3256,6 +3916,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Amount5Column {
                 get {
                     return this.columnAmount5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime6Column {
+                get {
+                    return this.columnDateTime6;
                 }
             }
             
@@ -3277,6 +3945,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime7Column {
+                get {
+                    return this.columnDateTime7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name7Column {
                 get {
                     return this.columnName7;
@@ -3288,6 +3964,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Amount7Column {
                 get {
                     return this.columnAmount7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime8Column {
+                get {
+                    return this.columnDateTime8;
                 }
             }
             
@@ -3309,6 +3993,14 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime9Column {
+                get {
+                    return this.columnDateTime9;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Name9Column {
                 get {
                     return this.columnName9;
@@ -3320,6 +4012,14 @@ namespace TempoRegiTorihikiReceipt {
             public global::System.Data.DataColumn Amount9Column {
                 get {
                     return this.columnAmount9;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateTime10Column {
+                get {
+                    return this.columnDateTime10;
                 }
             }
             
@@ -3380,24 +4080,34 @@ namespace TempoRegiTorihikiReceipt {
                         string StoreReceiptPrint, 
                         string StaffReceiptPrint, 
                         string RegistDate, 
+                        string DateTime1, 
                         string Name1, 
                         string Amount1, 
+                        string DateTime2, 
                         string Name2, 
                         string Amount2, 
+                        string DateTime3, 
                         string Name3, 
                         string Amount3, 
+                        string DateTime4, 
                         string Name4, 
                         string Amount4, 
+                        string DateTime5, 
                         string Name5, 
                         string Amount5, 
+                        string DateTime6, 
                         string Name6, 
                         string Amount6, 
+                        string DateTime7, 
                         string Name7, 
                         string Amount7, 
+                        string DateTime8, 
                         string Name8, 
                         string Amount8, 
+                        string DateTime9, 
                         string Name9, 
                         string Amount9, 
+                        string DateTime10, 
                         string Name10, 
                         string Amount10) {
                 MiscPaymentTableRow rowMiscPaymentTableRow = ((MiscPaymentTableRow)(this.NewRow()));
@@ -3405,24 +4115,34 @@ namespace TempoRegiTorihikiReceipt {
                         StoreReceiptPrint,
                         StaffReceiptPrint,
                         RegistDate,
+                        DateTime1,
                         Name1,
                         Amount1,
+                        DateTime2,
                         Name2,
                         Amount2,
+                        DateTime3,
                         Name3,
                         Amount3,
+                        DateTime4,
                         Name4,
                         Amount4,
+                        DateTime5,
                         Name5,
                         Amount5,
+                        DateTime6,
                         Name6,
                         Amount6,
+                        DateTime7,
                         Name7,
                         Amount7,
+                        DateTime8,
                         Name8,
                         Amount8,
+                        DateTime9,
                         Name9,
                         Amount9,
+                        DateTime10,
                         Name10,
                         Amount10};
                 rowMiscPaymentTableRow.ItemArray = columnValuesArray;
@@ -3450,24 +4170,34 @@ namespace TempoRegiTorihikiReceipt {
                 this.columnStoreReceiptPrint = base.Columns["StoreReceiptPrint"];
                 this.columnStaffReceiptPrint = base.Columns["StaffReceiptPrint"];
                 this.columnRegistDate = base.Columns["RegistDate"];
+                this.columnDateTime1 = base.Columns["DateTime1"];
                 this.columnName1 = base.Columns["Name1"];
                 this.columnAmount1 = base.Columns["Amount1"];
+                this.columnDateTime2 = base.Columns["DateTime2"];
                 this.columnName2 = base.Columns["Name2"];
                 this.columnAmount2 = base.Columns["Amount2"];
+                this.columnDateTime3 = base.Columns["DateTime3"];
                 this.columnName3 = base.Columns["Name3"];
                 this.columnAmount3 = base.Columns["Amount3"];
+                this.columnDateTime4 = base.Columns["DateTime4"];
                 this.columnName4 = base.Columns["Name4"];
                 this.columnAmount4 = base.Columns["Amount4"];
+                this.columnDateTime5 = base.Columns["DateTime5"];
                 this.columnName5 = base.Columns["Name5"];
                 this.columnAmount5 = base.Columns["Amount5"];
+                this.columnDateTime6 = base.Columns["DateTime6"];
                 this.columnName6 = base.Columns["Name6"];
                 this.columnAmount6 = base.Columns["Amount6"];
+                this.columnDateTime7 = base.Columns["DateTime7"];
                 this.columnName7 = base.Columns["Name7"];
                 this.columnAmount7 = base.Columns["Amount7"];
+                this.columnDateTime8 = base.Columns["DateTime8"];
                 this.columnName8 = base.Columns["Name8"];
                 this.columnAmount8 = base.Columns["Amount8"];
+                this.columnDateTime9 = base.Columns["DateTime9"];
                 this.columnName9 = base.Columns["Name9"];
                 this.columnAmount9 = base.Columns["Amount9"];
+                this.columnDateTime10 = base.Columns["DateTime10"];
                 this.columnName10 = base.Columns["Name10"];
                 this.columnAmount10 = base.Columns["Amount10"];
             }
@@ -3481,42 +4211,62 @@ namespace TempoRegiTorihikiReceipt {
                 base.Columns.Add(this.columnStaffReceiptPrint);
                 this.columnRegistDate = new global::System.Data.DataColumn("RegistDate", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRegistDate);
+                this.columnDateTime1 = new global::System.Data.DataColumn("DateTime1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime1);
                 this.columnName1 = new global::System.Data.DataColumn("Name1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName1);
                 this.columnAmount1 = new global::System.Data.DataColumn("Amount1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount1);
+                this.columnDateTime2 = new global::System.Data.DataColumn("DateTime2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime2);
                 this.columnName2 = new global::System.Data.DataColumn("Name2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName2);
                 this.columnAmount2 = new global::System.Data.DataColumn("Amount2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount2);
+                this.columnDateTime3 = new global::System.Data.DataColumn("DateTime3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime3);
                 this.columnName3 = new global::System.Data.DataColumn("Name3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName3);
                 this.columnAmount3 = new global::System.Data.DataColumn("Amount3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount3);
+                this.columnDateTime4 = new global::System.Data.DataColumn("DateTime4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime4);
                 this.columnName4 = new global::System.Data.DataColumn("Name4", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName4);
                 this.columnAmount4 = new global::System.Data.DataColumn("Amount4", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount4);
+                this.columnDateTime5 = new global::System.Data.DataColumn("DateTime5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime5);
                 this.columnName5 = new global::System.Data.DataColumn("Name5", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName5);
                 this.columnAmount5 = new global::System.Data.DataColumn("Amount5", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount5);
+                this.columnDateTime6 = new global::System.Data.DataColumn("DateTime6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime6);
                 this.columnName6 = new global::System.Data.DataColumn("Name6", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName6);
                 this.columnAmount6 = new global::System.Data.DataColumn("Amount6", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount6);
+                this.columnDateTime7 = new global::System.Data.DataColumn("DateTime7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime7);
                 this.columnName7 = new global::System.Data.DataColumn("Name7", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName7);
                 this.columnAmount7 = new global::System.Data.DataColumn("Amount7", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount7);
+                this.columnDateTime8 = new global::System.Data.DataColumn("DateTime8", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime8);
                 this.columnName8 = new global::System.Data.DataColumn("Name8", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName8);
                 this.columnAmount8 = new global::System.Data.DataColumn("Amount8", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount8);
+                this.columnDateTime9 = new global::System.Data.DataColumn("DateTime9", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime9);
                 this.columnName9 = new global::System.Data.DataColumn("Name9", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName9);
                 this.columnAmount9 = new global::System.Data.DataColumn("Amount9", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount9);
+                this.columnDateTime10 = new global::System.Data.DataColumn("DateTime10", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateTime10);
                 this.columnName10 = new global::System.Data.DataColumn("Name10", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName10);
                 this.columnAmount10 = new global::System.Data.DataColumn("Amount10", typeof(string), null, global::System.Data.MappingType.Element);
@@ -3711,6 +4461,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableMiscDepositTable.DateTime1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'MiscDepositTable\' にある列 \'DateTime1\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableMiscDepositTable.DateTime1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name1 {
                 get {
                     try {
@@ -3738,6 +4504,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableMiscDepositTable.Amount1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableMiscDepositTable.DateTime2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'MiscDepositTable\' にある列 \'DateTime2\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableMiscDepositTable.DateTime2Column] = value;
                 }
             }
             
@@ -3775,6 +4557,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableMiscDepositTable.DateTime3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'MiscDepositTable\' にある列 \'DateTime3\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableMiscDepositTable.DateTime3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name3 {
                 get {
                     try {
@@ -3802,6 +4600,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableMiscDepositTable.Amount3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableMiscDepositTable.DateTime4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'MiscDepositTable\' にある列 \'DateTime4\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableMiscDepositTable.DateTime4Column] = value;
                 }
             }
             
@@ -3839,6 +4653,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime5 {
+                get {
+                    try {
+                        return ((string)(this[this.tableMiscDepositTable.DateTime5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'MiscDepositTable\' にある列 \'DateTime5\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableMiscDepositTable.DateTime5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name5 {
                 get {
                     try {
@@ -3866,6 +4696,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableMiscDepositTable.Amount5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime6 {
+                get {
+                    try {
+                        return ((string)(this[this.tableMiscDepositTable.DateTime6Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'MiscDepositTable\' にある列 \'DateTime6\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableMiscDepositTable.DateTime6Column] = value;
                 }
             }
             
@@ -3903,6 +4749,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime7 {
+                get {
+                    try {
+                        return ((string)(this[this.tableMiscDepositTable.DateTime7Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'MiscDepositTable\' にある列 \'DateTime7\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableMiscDepositTable.DateTime7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name7 {
                 get {
                     try {
@@ -3930,6 +4792,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableMiscDepositTable.Amount7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime8 {
+                get {
+                    try {
+                        return ((string)(this[this.tableMiscDepositTable.DateTime8Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'MiscDepositTable\' にある列 \'DateTime8\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableMiscDepositTable.DateTime8Column] = value;
                 }
             }
             
@@ -3967,6 +4845,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime9 {
+                get {
+                    try {
+                        return ((string)(this[this.tableMiscDepositTable.DateTime9Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'MiscDepositTable\' にある列 \'DateTime9\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableMiscDepositTable.DateTime9Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name9 {
                 get {
                     try {
@@ -3994,6 +4888,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableMiscDepositTable.Amount9Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime10 {
+                get {
+                    try {
+                        return ((string)(this[this.tableMiscDepositTable.DateTime10Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'MiscDepositTable\' にある列 \'DateTime10\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableMiscDepositTable.DateTime10Column] = value;
                 }
             }
             
@@ -4067,6 +4977,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime1Null() {
+                return this.IsNull(this.tableMiscDepositTable.DateTime1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime1Null() {
+                this[this.tableMiscDepositTable.DateTime1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName1Null() {
                 return this.IsNull(this.tableMiscDepositTable.Name1Column);
             }
@@ -4087,6 +5009,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAmount1Null() {
                 this[this.tableMiscDepositTable.Amount1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime2Null() {
+                return this.IsNull(this.tableMiscDepositTable.DateTime2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime2Null() {
+                this[this.tableMiscDepositTable.DateTime2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4115,6 +5049,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime3Null() {
+                return this.IsNull(this.tableMiscDepositTable.DateTime3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime3Null() {
+                this[this.tableMiscDepositTable.DateTime3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName3Null() {
                 return this.IsNull(this.tableMiscDepositTable.Name3Column);
             }
@@ -4135,6 +5081,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAmount3Null() {
                 this[this.tableMiscDepositTable.Amount3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime4Null() {
+                return this.IsNull(this.tableMiscDepositTable.DateTime4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime4Null() {
+                this[this.tableMiscDepositTable.DateTime4Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4163,6 +5121,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime5Null() {
+                return this.IsNull(this.tableMiscDepositTable.DateTime5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime5Null() {
+                this[this.tableMiscDepositTable.DateTime5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName5Null() {
                 return this.IsNull(this.tableMiscDepositTable.Name5Column);
             }
@@ -4183,6 +5153,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAmount5Null() {
                 this[this.tableMiscDepositTable.Amount5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime6Null() {
+                return this.IsNull(this.tableMiscDepositTable.DateTime6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime6Null() {
+                this[this.tableMiscDepositTable.DateTime6Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4211,6 +5193,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime7Null() {
+                return this.IsNull(this.tableMiscDepositTable.DateTime7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime7Null() {
+                this[this.tableMiscDepositTable.DateTime7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName7Null() {
                 return this.IsNull(this.tableMiscDepositTable.Name7Column);
             }
@@ -4231,6 +5225,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAmount7Null() {
                 this[this.tableMiscDepositTable.Amount7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime8Null() {
+                return this.IsNull(this.tableMiscDepositTable.DateTime8Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime8Null() {
+                this[this.tableMiscDepositTable.DateTime8Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4259,6 +5265,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime9Null() {
+                return this.IsNull(this.tableMiscDepositTable.DateTime9Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime9Null() {
+                this[this.tableMiscDepositTable.DateTime9Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName9Null() {
                 return this.IsNull(this.tableMiscDepositTable.Name9Column);
             }
@@ -4279,6 +5297,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAmount9Null() {
                 this[this.tableMiscDepositTable.Amount9Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime10Null() {
+                return this.IsNull(this.tableMiscDepositTable.DateTime10Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime10Null() {
+                this[this.tableMiscDepositTable.DateTime10Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4402,6 +5432,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDepositTable.DateTime1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'DepositTable\' にある列 \'DateTime1\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableDepositTable.DateTime1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name1 {
                 get {
                     try {
@@ -4429,6 +5475,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableDepositTable.Amount1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDepositTable.DateTime2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'DepositTable\' にある列 \'DateTime2\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableDepositTable.DateTime2Column] = value;
                 }
             }
             
@@ -4466,6 +5528,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDepositTable.DateTime3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'DepositTable\' にある列 \'DateTime3\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableDepositTable.DateTime3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name3 {
                 get {
                     try {
@@ -4493,6 +5571,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableDepositTable.Amount3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDepositTable.DateTime4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'DepositTable\' にある列 \'DateTime4\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableDepositTable.DateTime4Column] = value;
                 }
             }
             
@@ -4530,6 +5624,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime5 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDepositTable.DateTime5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'DepositTable\' にある列 \'DateTime5\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableDepositTable.DateTime5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name5 {
                 get {
                     try {
@@ -4557,6 +5667,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableDepositTable.Amount5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime6 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDepositTable.DateTime6Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'DepositTable\' にある列 \'DateTime6\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableDepositTable.DateTime6Column] = value;
                 }
             }
             
@@ -4594,6 +5720,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime7 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDepositTable.DateTime7Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'DepositTable\' にある列 \'DateTime7\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableDepositTable.DateTime7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name7 {
                 get {
                     try {
@@ -4621,6 +5763,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableDepositTable.Amount7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime8 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDepositTable.DateTime8Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'DepositTable\' にある列 \'DateTime8\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableDepositTable.DateTime8Column] = value;
                 }
             }
             
@@ -4658,6 +5816,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime9 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDepositTable.DateTime9Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'DepositTable\' にある列 \'DateTime9\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableDepositTable.DateTime9Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name9 {
                 get {
                     try {
@@ -4685,6 +5859,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableDepositTable.Amount9Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime10 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDepositTable.DateTime10Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'DepositTable\' にある列 \'DateTime10\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableDepositTable.DateTime10Column] = value;
                 }
             }
             
@@ -4782,6 +5972,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime1Null() {
+                return this.IsNull(this.tableDepositTable.DateTime1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime1Null() {
+                this[this.tableDepositTable.DateTime1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName1Null() {
                 return this.IsNull(this.tableDepositTable.Name1Column);
             }
@@ -4802,6 +6004,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAmount1Null() {
                 this[this.tableDepositTable.Amount1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime2Null() {
+                return this.IsNull(this.tableDepositTable.DateTime2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime2Null() {
+                this[this.tableDepositTable.DateTime2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4830,6 +6044,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime3Null() {
+                return this.IsNull(this.tableDepositTable.DateTime3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime3Null() {
+                this[this.tableDepositTable.DateTime3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName3Null() {
                 return this.IsNull(this.tableDepositTable.Name3Column);
             }
@@ -4850,6 +6076,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAmount3Null() {
                 this[this.tableDepositTable.Amount3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime4Null() {
+                return this.IsNull(this.tableDepositTable.DateTime4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime4Null() {
+                this[this.tableDepositTable.DateTime4Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4878,6 +6116,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime5Null() {
+                return this.IsNull(this.tableDepositTable.DateTime5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime5Null() {
+                this[this.tableDepositTable.DateTime5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName5Null() {
                 return this.IsNull(this.tableDepositTable.Name5Column);
             }
@@ -4898,6 +6148,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAmount5Null() {
                 this[this.tableDepositTable.Amount5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime6Null() {
+                return this.IsNull(this.tableDepositTable.DateTime6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime6Null() {
+                this[this.tableDepositTable.DateTime6Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4926,6 +6188,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime7Null() {
+                return this.IsNull(this.tableDepositTable.DateTime7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime7Null() {
+                this[this.tableDepositTable.DateTime7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName7Null() {
                 return this.IsNull(this.tableDepositTable.Name7Column);
             }
@@ -4946,6 +6220,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAmount7Null() {
                 this[this.tableDepositTable.Amount7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime8Null() {
+                return this.IsNull(this.tableDepositTable.DateTime8Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime8Null() {
+                this[this.tableDepositTable.DateTime8Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4974,6 +6260,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime9Null() {
+                return this.IsNull(this.tableDepositTable.DateTime9Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime9Null() {
+                this[this.tableDepositTable.DateTime9Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName9Null() {
                 return this.IsNull(this.tableDepositTable.Name9Column);
             }
@@ -4994,6 +6292,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAmount9Null() {
                 this[this.tableDepositTable.Amount9Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime10Null() {
+                return this.IsNull(this.tableDepositTable.DateTime10Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime10Null() {
+                this[this.tableDepositTable.DateTime10Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5101,6 +6411,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableExchangeTable.DateTime1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ExchangeTable\' にある列 \'DateTime1\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableExchangeTable.DateTime1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name1 {
                 get {
                     try {
@@ -5160,6 +6486,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableExchangeTable.Count1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableExchangeTable.DateTime2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ExchangeTable\' にある列 \'DateTime2\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableExchangeTable.DateTime2Column] = value;
                 }
             }
             
@@ -5229,6 +6571,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableExchangeTable.DateTime3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ExchangeTable\' にある列 \'DateTime3\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableExchangeTable.DateTime3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name3 {
                 get {
                     try {
@@ -5288,6 +6646,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableExchangeTable.Count3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableExchangeTable.DateTime4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ExchangeTable\' にある列 \'DateTime4\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableExchangeTable.DateTime4Column] = value;
                 }
             }
             
@@ -5357,6 +6731,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime5 {
+                get {
+                    try {
+                        return ((string)(this[this.tableExchangeTable.DateTime5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ExchangeTable\' にある列 \'DateTime5\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableExchangeTable.DateTime5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name5 {
                 get {
                     try {
@@ -5416,6 +6806,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableExchangeTable.Count5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime6 {
+                get {
+                    try {
+                        return ((string)(this[this.tableExchangeTable.DateTime6Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ExchangeTable\' にある列 \'DateTime6\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableExchangeTable.DateTime6Column] = value;
                 }
             }
             
@@ -5485,6 +6891,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime7 {
+                get {
+                    try {
+                        return ((string)(this[this.tableExchangeTable.DateTime7Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ExchangeTable\' にある列 \'DateTime7\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableExchangeTable.DateTime7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name7 {
                 get {
                     try {
@@ -5544,6 +6966,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableExchangeTable.Count7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime8 {
+                get {
+                    try {
+                        return ((string)(this[this.tableExchangeTable.DateTime8Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ExchangeTable\' にある列 \'DateTime8\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableExchangeTable.DateTime8Column] = value;
                 }
             }
             
@@ -5613,6 +7051,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime9 {
+                get {
+                    try {
+                        return ((string)(this[this.tableExchangeTable.DateTime9Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ExchangeTable\' にある列 \'DateTime9\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableExchangeTable.DateTime9Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name9 {
                 get {
                     try {
@@ -5672,6 +7126,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableExchangeTable.Count9Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime10 {
+                get {
+                    try {
+                        return ((string)(this[this.tableExchangeTable.DateTime10Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ExchangeTable\' にある列 \'DateTime10\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableExchangeTable.DateTime10Column] = value;
                 }
             }
             
@@ -5789,6 +7259,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime1Null() {
+                return this.IsNull(this.tableExchangeTable.DateTime1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime1Null() {
+                this[this.tableExchangeTable.DateTime1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName1Null() {
                 return this.IsNull(this.tableExchangeTable.Name1Column);
             }
@@ -5833,6 +7315,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetCount1Null() {
                 this[this.tableExchangeTable.Count1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime2Null() {
+                return this.IsNull(this.tableExchangeTable.DateTime2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime2Null() {
+                this[this.tableExchangeTable.DateTime2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5885,6 +7379,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime3Null() {
+                return this.IsNull(this.tableExchangeTable.DateTime3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime3Null() {
+                this[this.tableExchangeTable.DateTime3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName3Null() {
                 return this.IsNull(this.tableExchangeTable.Name3Column);
             }
@@ -5929,6 +7435,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetCount3Null() {
                 this[this.tableExchangeTable.Count3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime4Null() {
+                return this.IsNull(this.tableExchangeTable.DateTime4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime4Null() {
+                this[this.tableExchangeTable.DateTime4Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5981,6 +7499,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime5Null() {
+                return this.IsNull(this.tableExchangeTable.DateTime5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime5Null() {
+                this[this.tableExchangeTable.DateTime5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName5Null() {
                 return this.IsNull(this.tableExchangeTable.Name5Column);
             }
@@ -6025,6 +7555,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetCount5Null() {
                 this[this.tableExchangeTable.Count5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime6Null() {
+                return this.IsNull(this.tableExchangeTable.DateTime6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime6Null() {
+                this[this.tableExchangeTable.DateTime6Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6077,6 +7619,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime7Null() {
+                return this.IsNull(this.tableExchangeTable.DateTime7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime7Null() {
+                this[this.tableExchangeTable.DateTime7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName7Null() {
                 return this.IsNull(this.tableExchangeTable.Name7Column);
             }
@@ -6121,6 +7675,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetCount7Null() {
                 this[this.tableExchangeTable.Count7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime8Null() {
+                return this.IsNull(this.tableExchangeTable.DateTime8Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime8Null() {
+                this[this.tableExchangeTable.DateTime8Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6173,6 +7739,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime9Null() {
+                return this.IsNull(this.tableExchangeTable.DateTime9Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime9Null() {
+                this[this.tableExchangeTable.DateTime9Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName9Null() {
                 return this.IsNull(this.tableExchangeTable.Name9Column);
             }
@@ -6217,6 +7795,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetCount9Null() {
                 this[this.tableExchangeTable.Count9Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime10Null() {
+                return this.IsNull(this.tableExchangeTable.DateTime10Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime10Null() {
+                this[this.tableExchangeTable.DateTime10Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6332,6 +7922,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableChangePreparationTable.DateTime1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ChangePreparationTable\' にある列 \'DateTime1\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableChangePreparationTable.DateTime1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name1 {
                 get {
                     try {
@@ -6359,6 +7965,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableChangePreparationTable.Amount1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableChangePreparationTable.DateTime2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ChangePreparationTable\' にある列 \'DateTime2\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableChangePreparationTable.DateTime2Column] = value;
                 }
             }
             
@@ -6396,6 +8018,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableChangePreparationTable.DateTime3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ChangePreparationTable\' にある列 \'DateTime3\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableChangePreparationTable.DateTime3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name3 {
                 get {
                     try {
@@ -6423,6 +8061,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableChangePreparationTable.Amount3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableChangePreparationTable.DateTime4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ChangePreparationTable\' にある列 \'DateTime4\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableChangePreparationTable.DateTime4Column] = value;
                 }
             }
             
@@ -6460,6 +8114,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime5 {
+                get {
+                    try {
+                        return ((string)(this[this.tableChangePreparationTable.DateTime5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ChangePreparationTable\' にある列 \'DateTime5\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableChangePreparationTable.DateTime5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name5 {
                 get {
                     try {
@@ -6487,6 +8157,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableChangePreparationTable.Amount5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime6 {
+                get {
+                    try {
+                        return ((string)(this[this.tableChangePreparationTable.DateTime6Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ChangePreparationTable\' にある列 \'DateTime6\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableChangePreparationTable.DateTime6Column] = value;
                 }
             }
             
@@ -6524,6 +8210,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime7 {
+                get {
+                    try {
+                        return ((string)(this[this.tableChangePreparationTable.DateTime7Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ChangePreparationTable\' にある列 \'DateTime7\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableChangePreparationTable.DateTime7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name7 {
                 get {
                     try {
@@ -6551,6 +8253,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableChangePreparationTable.Amount7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime8 {
+                get {
+                    try {
+                        return ((string)(this[this.tableChangePreparationTable.DateTime8Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ChangePreparationTable\' にある列 \'DateTime8\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableChangePreparationTable.DateTime8Column] = value;
                 }
             }
             
@@ -6588,6 +8306,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime9 {
+                get {
+                    try {
+                        return ((string)(this[this.tableChangePreparationTable.DateTime9Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ChangePreparationTable\' にある列 \'DateTime9\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableChangePreparationTable.DateTime9Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name9 {
                 get {
                     try {
@@ -6615,6 +8349,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableChangePreparationTable.Amount9Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime10 {
+                get {
+                    try {
+                        return ((string)(this[this.tableChangePreparationTable.DateTime10Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ChangePreparationTable\' にある列 \'DateTime10\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableChangePreparationTable.DateTime10Column] = value;
                 }
             }
             
@@ -6688,6 +8438,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime1Null() {
+                return this.IsNull(this.tableChangePreparationTable.DateTime1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime1Null() {
+                this[this.tableChangePreparationTable.DateTime1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName1Null() {
                 return this.IsNull(this.tableChangePreparationTable.Name1Column);
             }
@@ -6708,6 +8470,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAmount1Null() {
                 this[this.tableChangePreparationTable.Amount1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime2Null() {
+                return this.IsNull(this.tableChangePreparationTable.DateTime2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime2Null() {
+                this[this.tableChangePreparationTable.DateTime2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6736,6 +8510,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime3Null() {
+                return this.IsNull(this.tableChangePreparationTable.DateTime3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime3Null() {
+                this[this.tableChangePreparationTable.DateTime3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName3Null() {
                 return this.IsNull(this.tableChangePreparationTable.Name3Column);
             }
@@ -6756,6 +8542,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAmount3Null() {
                 this[this.tableChangePreparationTable.Amount3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime4Null() {
+                return this.IsNull(this.tableChangePreparationTable.DateTime4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime4Null() {
+                this[this.tableChangePreparationTable.DateTime4Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6784,6 +8582,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime5Null() {
+                return this.IsNull(this.tableChangePreparationTable.DateTime5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime5Null() {
+                this[this.tableChangePreparationTable.DateTime5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName5Null() {
                 return this.IsNull(this.tableChangePreparationTable.Name5Column);
             }
@@ -6804,6 +8614,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAmount5Null() {
                 this[this.tableChangePreparationTable.Amount5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime6Null() {
+                return this.IsNull(this.tableChangePreparationTable.DateTime6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime6Null() {
+                this[this.tableChangePreparationTable.DateTime6Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6832,6 +8654,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime7Null() {
+                return this.IsNull(this.tableChangePreparationTable.DateTime7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime7Null() {
+                this[this.tableChangePreparationTable.DateTime7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName7Null() {
                 return this.IsNull(this.tableChangePreparationTable.Name7Column);
             }
@@ -6852,6 +8686,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAmount7Null() {
                 this[this.tableChangePreparationTable.Amount7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime8Null() {
+                return this.IsNull(this.tableChangePreparationTable.DateTime8Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime8Null() {
+                this[this.tableChangePreparationTable.DateTime8Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6880,6 +8726,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime9Null() {
+                return this.IsNull(this.tableChangePreparationTable.DateTime9Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime9Null() {
+                this[this.tableChangePreparationTable.DateTime9Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName9Null() {
                 return this.IsNull(this.tableChangePreparationTable.Name9Column);
             }
@@ -6900,6 +8758,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAmount9Null() {
                 this[this.tableChangePreparationTable.Amount9Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime10Null() {
+                return this.IsNull(this.tableChangePreparationTable.DateTime10Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime10Null() {
+                this[this.tableChangePreparationTable.DateTime10Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6991,6 +8861,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableMiscPaymentTable.DateTime1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'MiscPaymentTable\' にある列 \'DateTime1\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableMiscPaymentTable.DateTime1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name1 {
                 get {
                     try {
@@ -7018,6 +8904,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableMiscPaymentTable.Amount1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableMiscPaymentTable.DateTime2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'MiscPaymentTable\' にある列 \'DateTime2\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableMiscPaymentTable.DateTime2Column] = value;
                 }
             }
             
@@ -7055,6 +8957,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableMiscPaymentTable.DateTime3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'MiscPaymentTable\' にある列 \'DateTime3\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableMiscPaymentTable.DateTime3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name3 {
                 get {
                     try {
@@ -7082,6 +9000,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableMiscPaymentTable.Amount3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableMiscPaymentTable.DateTime4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'MiscPaymentTable\' にある列 \'DateTime4\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableMiscPaymentTable.DateTime4Column] = value;
                 }
             }
             
@@ -7119,6 +9053,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime5 {
+                get {
+                    try {
+                        return ((string)(this[this.tableMiscPaymentTable.DateTime5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'MiscPaymentTable\' にある列 \'DateTime5\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableMiscPaymentTable.DateTime5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name5 {
                 get {
                     try {
@@ -7146,6 +9096,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableMiscPaymentTable.Amount5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime6 {
+                get {
+                    try {
+                        return ((string)(this[this.tableMiscPaymentTable.DateTime6Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'MiscPaymentTable\' にある列 \'DateTime6\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableMiscPaymentTable.DateTime6Column] = value;
                 }
             }
             
@@ -7183,6 +9149,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime7 {
+                get {
+                    try {
+                        return ((string)(this[this.tableMiscPaymentTable.DateTime7Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'MiscPaymentTable\' にある列 \'DateTime7\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableMiscPaymentTable.DateTime7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name7 {
                 get {
                     try {
@@ -7210,6 +9192,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableMiscPaymentTable.Amount7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime8 {
+                get {
+                    try {
+                        return ((string)(this[this.tableMiscPaymentTable.DateTime8Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'MiscPaymentTable\' にある列 \'DateTime8\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableMiscPaymentTable.DateTime8Column] = value;
                 }
             }
             
@@ -7247,6 +9245,22 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime9 {
+                get {
+                    try {
+                        return ((string)(this[this.tableMiscPaymentTable.DateTime9Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'MiscPaymentTable\' にある列 \'DateTime9\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableMiscPaymentTable.DateTime9Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Name9 {
                 get {
                     try {
@@ -7274,6 +9288,22 @@ namespace TempoRegiTorihikiReceipt {
                 }
                 set {
                     this[this.tableMiscPaymentTable.Amount9Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DateTime10 {
+                get {
+                    try {
+                        return ((string)(this[this.tableMiscPaymentTable.DateTime10Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'MiscPaymentTable\' にある列 \'DateTime10\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableMiscPaymentTable.DateTime10Column] = value;
                 }
             }
             
@@ -7347,6 +9377,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime1Null() {
+                return this.IsNull(this.tableMiscPaymentTable.DateTime1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime1Null() {
+                this[this.tableMiscPaymentTable.DateTime1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName1Null() {
                 return this.IsNull(this.tableMiscPaymentTable.Name1Column);
             }
@@ -7367,6 +9409,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAmount1Null() {
                 this[this.tableMiscPaymentTable.Amount1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime2Null() {
+                return this.IsNull(this.tableMiscPaymentTable.DateTime2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime2Null() {
+                this[this.tableMiscPaymentTable.DateTime2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7395,6 +9449,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime3Null() {
+                return this.IsNull(this.tableMiscPaymentTable.DateTime3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime3Null() {
+                this[this.tableMiscPaymentTable.DateTime3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName3Null() {
                 return this.IsNull(this.tableMiscPaymentTable.Name3Column);
             }
@@ -7415,6 +9481,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAmount3Null() {
                 this[this.tableMiscPaymentTable.Amount3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime4Null() {
+                return this.IsNull(this.tableMiscPaymentTable.DateTime4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime4Null() {
+                this[this.tableMiscPaymentTable.DateTime4Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7443,6 +9521,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime5Null() {
+                return this.IsNull(this.tableMiscPaymentTable.DateTime5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime5Null() {
+                this[this.tableMiscPaymentTable.DateTime5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName5Null() {
                 return this.IsNull(this.tableMiscPaymentTable.Name5Column);
             }
@@ -7463,6 +9553,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAmount5Null() {
                 this[this.tableMiscPaymentTable.Amount5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime6Null() {
+                return this.IsNull(this.tableMiscPaymentTable.DateTime6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime6Null() {
+                this[this.tableMiscPaymentTable.DateTime6Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7491,6 +9593,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime7Null() {
+                return this.IsNull(this.tableMiscPaymentTable.DateTime7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime7Null() {
+                this[this.tableMiscPaymentTable.DateTime7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName7Null() {
                 return this.IsNull(this.tableMiscPaymentTable.Name7Column);
             }
@@ -7511,6 +9625,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAmount7Null() {
                 this[this.tableMiscPaymentTable.Amount7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime8Null() {
+                return this.IsNull(this.tableMiscPaymentTable.DateTime8Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime8Null() {
+                this[this.tableMiscPaymentTable.DateTime8Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7539,6 +9665,18 @@ namespace TempoRegiTorihikiReceipt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime9Null() {
+                return this.IsNull(this.tableMiscPaymentTable.DateTime9Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime9Null() {
+                this[this.tableMiscPaymentTable.DateTime9Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsName9Null() {
                 return this.IsNull(this.tableMiscPaymentTable.Name9Column);
             }
@@ -7559,6 +9697,18 @@ namespace TempoRegiTorihikiReceipt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAmount9Null() {
                 this[this.tableMiscPaymentTable.Amount9Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDateTime10Null() {
+                return this.IsNull(this.tableMiscPaymentTable.DateTime10Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDateTime10Null() {
+                this[this.tableMiscPaymentTable.DateTime10Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
