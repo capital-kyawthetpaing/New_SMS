@@ -388,6 +388,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.NullValue = null;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -1484,12 +1485,12 @@
             this.colRate1.DataPropertyName = "Rate";
             this.colRate1.DecimalPlace = ((byte)(2));
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.NullValue = "0";
             this.colRate1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colRate1.HeaderText = "          掛率";
+            this.colRate1.HeaderText = "         掛率";
             this.colRate1.MaxInputLength = 32767;
             this.colRate1.Name = "colRate1";
-            this.colRate1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colRate1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colRate1.UseMinus = false;
             this.colRate1.UseThousandSeparator = true;
             // 

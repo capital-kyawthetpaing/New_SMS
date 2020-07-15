@@ -108,6 +108,8 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             //scSupplierCD.Clear();
             txtDate1.Text = string.Empty;
+            txtRevisionDate.Text = string.Empty;
+            txtRate1.Text = string.Empty;
             scBrandCD1.Clear();
             scSportsCD1.Clear();
             scSegmentCD1.Clear();
@@ -122,8 +124,6 @@ namespace MasterTouroku_ShiireKakeritsu
             cbo_Season.Text = string.Empty;
             txtChangeDate.Text = string.Empty;
             txtRate.Text = string.Empty;
-            //dgv_ShiireKakeritsu.DataSource = null;
-            //Clear(panelDetail);
             scSupplierCD.SetFocus(1);
         }
 
@@ -137,6 +137,8 @@ namespace MasterTouroku_ShiireKakeritsu
                         if (mskbl.ShowMessage("Q005") != DialogResult.Yes)
                             return;
                         CancelData();
+                        scSupplierCD.Clear();
+                        cbo_Store.SelectedValue = StoreCD;
                         dgv_ShiireKakeritsu.DataSource = null;
                     }
                     break;
@@ -166,27 +168,6 @@ namespace MasterTouroku_ShiireKakeritsu
             {
                 if (!RequireCheck(new Control[] { scBrandCD.TxtCode,scSportsCD.TxtCode,scSegmentCD.TxtCode,cbo_Year,cbo_Season,txtChangeDate,txtRate }))
                     return false;
-                //if (string.IsNullOrWhiteSpace(scBrandCD.TxtCode.Text))
-                //{
-                //    mskbl.ShowMessage("E102");
-                //    scBrandCD.SetFocus(1);
-                //    return false;
-                //}
-                //else
-                //{
-                //    mbe.BrandCD = scBrandCD.TxtCode.Text;
-                //    DataTable dtbrand = mskbl.M_BrandSelect(mbe);
-                //    if (dtbrand.Rows.Count == 0)
-                //    {
-                //        mskbl.ShowMessage("E101");
-                //        scBrandCD.SetFocus(1);
-                //        return false;
-                //    }
-                //    else
-                //    {
-                //        scBrandCD.LabelText = dtbrand.Rows[0]["BrandName"].ToString();
-                //    }
-                //}
             }
 
             else if (type == 3)
@@ -245,6 +226,7 @@ namespace MasterTouroku_ShiireKakeritsu
                             bbl.ShowMessage("E119");
                             scSupplierCD.SetFocus(1);
                         }
+                        SearchData();
                     }
                     else
                     {
