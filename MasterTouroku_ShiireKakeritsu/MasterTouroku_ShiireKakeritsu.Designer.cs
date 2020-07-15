@@ -103,7 +103,7 @@
             this.colYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSeason = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRate1 = new SMS.CustomControls.DataGridViewDecimalColumn();
+            this.colRate1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.panelDetail.SuspendLayout();
@@ -1483,16 +1483,12 @@
             // colRate1
             // 
             this.colRate1.DataPropertyName = "Rate";
-            this.colRate1.DecimalPlace = ((byte)(2));
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Format = "N2";
             dataGridViewCellStyle3.NullValue = "0";
             this.colRate1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colRate1.HeaderText = "         掛率";
-            this.colRate1.MaxInputLength = 32767;
+            this.colRate1.HeaderText = "          掛率";
             this.colRate1.Name = "colRate1";
-            this.colRate1.UseMinus = false;
-            this.colRate1.UseThousandSeparator = true;
             // 
             // col1
             // 
@@ -1507,6 +1503,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1684, 1061);
             this.Controls.Add(this.panelDetail);
+            this.F2Visible = false;
+            this.F3Visible = false;
+            this.F4Visible = false;
+            this.F5Visible = false;
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
             this.Name = "frmMasterTouroku_ShiireKakeritsu";
@@ -1606,7 +1606,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colYear;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSeason;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
-        private SMS.CustomControls.DataGridViewDecimalColumn colRate1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRate1;
         private System.Windows.Forms.DataGridViewTextBoxColumn col1;
     }
 }
