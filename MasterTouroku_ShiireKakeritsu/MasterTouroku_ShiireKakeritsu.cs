@@ -816,7 +816,7 @@ namespace MasterTouroku_ShiireKakeritsu
             excelReader.Close();
             return result.Tables[0];
         }
-        private bool ErrorCheckForF10()
+        private bool ErrorCheckForExcel()
         {
             OpenFileDialog op = new OpenFileDialog
             {
@@ -950,7 +950,7 @@ namespace MasterTouroku_ShiireKakeritsu
         }
         private void F10()
         {
-            if(ErrorCheckForF10())
+            if(ErrorCheckForExcel())
             {
                 dtAdd = new DataTable();
                 dtAdd = ChangeColumnName(dtExcel);
