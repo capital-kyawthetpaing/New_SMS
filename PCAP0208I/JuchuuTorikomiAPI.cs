@@ -35,6 +35,7 @@ namespace JuchuuTorikomiAPI
             Control();
             F12Enable = false;
             dgvJuchuuTorikomiAPI.AutoGenerateColumns = false;
+            dgvJuchuuTorikomiAPI.DisabledColumn("colTorikomiNichiji,colMallStore,colTorikomiOpreator,colTorikomikensu,colErrorCount,colHoryuTaisho,colNayosemachi");
         }
         private void Control()
         {

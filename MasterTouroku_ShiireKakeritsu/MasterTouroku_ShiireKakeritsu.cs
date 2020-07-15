@@ -351,7 +351,6 @@ namespace MasterTouroku_ShiireKakeritsu
                     DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
                     dvMain.RowFilter = searchCondition;
                     dgv_ShiireKakeritsu.DataSource = dvMain;
-
                 }
         }
         private void SearchData()
@@ -386,16 +385,13 @@ namespace MasterTouroku_ShiireKakeritsu
                 searchCondition = "LastSeason= '" + cbo_Season1.Text + "'";
             if (!string.IsNullOrWhiteSpace(txtDate.Text))
                 searchCondition = "ChangeDate= '" + txtDate.Text;
-
+            moe = GetSearchInfo();
+            dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
+            dvMain = new DataView(dtMain);
+            dgv_ShiireKakeritsu.DataSource = dvMain;
             //if (!string.IsNullOrWhiteSpace(searchCondition))
             //{
             //dvMain = new DataView(dtMain, searchCondition, "", DataViewRowState.CurrentRows);
-
-            moe = GetSearchInfo(); 
-             dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
-            dvMain = new DataView(dtMain);
-            dgv_ShiireKakeritsu.DataSource = dvMain; 
-
             //    DataRow[] dr = dtMain.Select(searchCondition);
             //    if (dr.Count() > 0)
             //    {
@@ -417,7 +413,7 @@ namespace MasterTouroku_ShiireKakeritsu
                 txtCopy.Focus();
             }
             else
-            {            
+            {
                 foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
                 {
                     DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
