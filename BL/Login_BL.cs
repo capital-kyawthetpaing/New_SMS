@@ -256,6 +256,7 @@ namespace BL
             Base_DL.iniEntity.TimeoutValues = idl.IniReadValue("Database", "Timeout");
             // 店舗レジで使用するプリンター名
             Base_DL.iniEntity.StorePrinterName = idl.IniReadValue("Printer", "StorePrinterName");
+            if (Base_DL.iniEntity.IsDM_D30Used)
             Base_DL.iniEntity.DefaultMessage = GetMessages();
 
 
