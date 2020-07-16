@@ -137,11 +137,7 @@ namespace TempoRegiRyougaeNyuuryoku
                 {
                     if (trrnbl.ShowMessage("Q101") == DialogResult.Yes)
                     {
-                        if (Base_DL.iniEntity.IsDM_D30Used)
-                        {
-                            CashDrawerOpen op = new CashDrawerOpen(); //ses
-                            op.OpenCashDrawer();
-                        }
+                      
                         valid = false;
                         mre = DepositHistoryEnity();
                         if (trrnbl.TempoRegiRyougaeNyuuryoku_Insert_Update(mre))
@@ -149,12 +145,18 @@ namespace TempoRegiRyougaeNyuuryoku
                            
                             trrnbl.ShowMessage("I101");
                             RunConsole();//exeRun
+                            if (Base_DL.iniEntity.IsDM_D30Used)
+                            {
+                                CashDrawerOpen op = new CashDrawerOpen(); //ses  <<< PTK
+                                op.OpenCashDrawer();
+                            }
                             ExchangeDenomination.SelectedValue = "-1";
                             ExchangeMoney.Clear();
                             ExchangeCount.Clear();
                             ExchangeLabel.Text = "";
                             Remark.Clear();
                             ExchangeMoney.Focus();
+                          
                         }
                         else
                         {

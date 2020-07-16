@@ -20,6 +20,7 @@ namespace DL
         protected SqlDataAdapter adapter;
         protected SqlTransaction transaction;
         public static Ini_Entity iniEntity = new Ini_Entity();
+        public static Ini_Entity Ini_Entity_CDP { get; set; } = new Ini_Entity();
         #endregion
 
         public Base_DL() { }
@@ -105,12 +106,13 @@ namespace DL
                     ValuePair vp = pair.Value;
                     AddParam(command, pair.Key, vp.value1, vp.value2);
                 }
+                command.CommandTimeout = string.IsNullOrWhiteSpace(iniEntity.TimeoutValues) ? 0 : Convert.ToInt32(iniEntity.TimeoutValues);
                 adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
             }
             catch(Exception ex) {
-                var msg = ex.Message;
-              //  throw ex;
+                //var msg = ex.Message;
+               throw ex;
             }
             return dt;
         }

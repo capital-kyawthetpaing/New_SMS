@@ -33,6 +33,7 @@ namespace Search
             gv_CustomerSearch.Columns["BirthDate"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight; // Doesn't want to right align
 
             scbl = new Search_Customer_BL();
+            gv_CustomerSearch.DisabledColumn("CustomerNo,CustomerName,StoreCD,PhoneNo,BirthDate,KanaName,Address,Remark,colRefDate");
         }
 
         private void ckM_Button1_Click(object sender, System.EventArgs e)

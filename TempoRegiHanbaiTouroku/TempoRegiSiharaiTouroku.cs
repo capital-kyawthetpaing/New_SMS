@@ -11,6 +11,7 @@ using Entity;
 using BL;
 using Search;
 using Microsoft.VisualBasic;
+using EPSON_TM30;
 
 namespace TempoRegiHanbaiTouroku
 {
@@ -72,6 +73,10 @@ namespace TempoRegiHanbaiTouroku
         {
             InitializeComponent();
 
+            ckmShop_Label7.Visible = false;
+            lblZan.Visible = false;
+            ShowCloseMessage = false;
+
             OperationMode = mode;
             dse = dse1;
             dspe = dspe1;
@@ -132,7 +137,7 @@ namespace TempoRegiHanbaiTouroku
                     txtOther1.Text = "0";
                     txtOther2.Text = "0";
                     lblShiharaiKei.Text = "0";
-                    lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
+                    //lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
 
                     txtDiscount.Focus();
                 }
@@ -162,7 +167,7 @@ namespace TempoRegiHanbaiTouroku
                         cboDenominationName2.SelectedValue = dspe.Denomination2CD;
                     txtKake.Text = bbl.Z_SetStr(dspe.CreditAmount);
                     lblShiharaiKei.Text = "0";
-                    lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
+                    //lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
 
                     btnProcess.Focus();
                 }
@@ -324,7 +329,7 @@ namespace TempoRegiHanbaiTouroku
                 }
 
                 //入力されたらポイント残＝ポイント残－ポイント
-                lblZan.Text = bbl.Z_SetStr(bbl.Z_Set(dse.LastPoint)-bbl.Z_Set(txtPoint.Text));
+                //lblZan.Text = bbl.Z_SetStr(bbl.Z_Set(dse.LastPoint)-bbl.Z_Set(txtPoint.Text));
             }
             if (kbn == (int)meCol.ALL || kbn == (int)meCol.OTHER1)
             {
@@ -549,29 +554,35 @@ namespace TempoRegiHanbaiTouroku
                         return false;
                     }
 
+                    try
+                    {
+                        //更新処理（通常販売）
+                        GetEntity();
+                        dtUpdate = GetGridEntity();
+                        bool ret = tprg_Hanbai_Bl.PRC_TempoRegiHanbaiTouroku(dse, dspe, dtUpdate, (short)OperationMode);
+
+                        lblJuchuuTaxRitsu.Text = dse.SalesNO;
+
+                        string reissue = OperationMode == FrmMainForm.EOperationMode.INSERT ? "0" : "1";
+
+                        //レシート印字
+                        //TempoRegiRyousyuusyo‗店舗領収書印刷
+                        ExecPrint(dse.SalesNO, reissue);
+
+                        //データ更新（レシート印刷やお釣りのやり取りする間にややこしい更新を行う）
+                        //TempoRegiDataUpdate‗店舗レジデータ更新
+                        ExecUpdate(dse.SalesNO);
+                    }
+                    catch (Exception ex){
+                        MessageBox.Show(ex.Message);
+                    }
                     //エラーでない場合
                     if (bbl.Z_Set(txtAzukari.Text) > 0)
                     {
-                        //Todo:預り額＞０の場合、ドロワー開く
-
+                        //Todo:預り額＞０の場合、ドロワー開く      // PTK to be Continued        
+                        EPSON_TM30.CashDrawerOpen cdo = new EPSON_TM30.CashDrawerOpen();
+                        cdo.OpenCashDrawer();
                     }
-
-                    //更新処理（通常販売）
-                    GetEntity();
-                    dtUpdate = GetGridEntity();
-                    bool ret = tprg_Hanbai_Bl.PRC_TempoRegiHanbaiTouroku(dse, dspe, dtUpdate, (short)OperationMode);
-
-                    lblJuchuuTaxRitsu.Text = dse.SalesNO;
-
-                    string reissue = OperationMode ==  FrmMainForm.EOperationMode.INSERT ? "0":"1";
-
-                    //レシート印字
-                    //TempoRegiRyousyuusyo‗店舗領収書印刷
-                    ExecPrint(dse.SalesNO, reissue);
-
-                    //データ更新（レシート印刷やお釣りのやり取りする間にややこしい更新を行う）
-                    //TempoRegiDataUpdate‗店舗レジデータ更新
-                    ExecUpdate(dse.SalesNO);
 
                     //領収書ボタンを押せるようにする
                     btnRyosyusyo.Enabled = true;
@@ -609,9 +620,8 @@ namespace TempoRegiHanbaiTouroku
                 string receipte = "0";
                 //領収書必要ONの場合、1。以外は0．													
 
-                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + dse.StoreCD 
-                                    + " " + no + " " + receipte + " 1 " + bbl.GetDate() + " " + reissue;
-                System.Diagnostics.Process.Start(filePath, cmdLine); 
+                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + dse.StoreCD + " " + no + " " + receipte + " 1 " + bbl.GetDate() + " " + reissue;
+              ///  System.Diagnostics.Process.Start(filePath, cmdLine);  Just wait to PTK
             }
             else
             {
@@ -752,7 +762,7 @@ namespace TempoRegiHanbaiTouroku
                 }
 
                 //ポイント残 ＝	ポイント残－ポイント
-                lblZan.Text = bbl.Z_SetStr(bbl.Z_Set(dse.LastPoint) - bbl.Z_Set(txtPoint.Text));
+                //lblZan.Text = bbl.Z_SetStr(bbl.Z_Set(dse.LastPoint) - bbl.Z_Set(txtPoint.Text));
 
                 //お支払計＝ポイント＋その他①＋その他②＋カード＋現金＋掛
                 Calkkin();
@@ -878,7 +888,7 @@ namespace TempoRegiHanbaiTouroku
             try
             {
                 //ポイント残					を元に戻す		
-                lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
+                //lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
 
                 //ポイント、その他①②、現金、預り、カード、掛、お支払計を０に。
                 txtDiscount.Text = "0";

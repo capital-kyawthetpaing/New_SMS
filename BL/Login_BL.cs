@@ -8,6 +8,9 @@ using DL;
 using System.Data;
 using System.Deployment;
 using System.Diagnostics;
+using EPSON_TM30;
+using System.Data.SqlClient;
+
 namespace BL
 {
     public class Login_BL : Base_BL
@@ -17,12 +20,13 @@ namespace BL
         /// </summary>
         /// 
         private const string IniFileName = "CKM.ini";
-      //  public static bool Islocalized =false;
+        //  public static bool Islocalized =false;
         M_Staff_DL msdl;
         M_Store_DL mstoredl;
         public const bool isd = false;
         public static bool Islocalized = false;
         public static string SyncPath = "";
+
         /// <summary>
         /// constructor
         /// </summary>
@@ -33,7 +37,10 @@ namespace BL
         }
 
         // MH_Staff_LoginSelect
-
+        public string StorePrinterName
+        {
+            get { return Base_DL.iniEntity.StorePrinterName; }
+        }
         //Check_RegisteredMenu
         public DataTable Check_RegisteredMenu(M_Staff_Entity mse)
         {
@@ -56,7 +63,7 @@ namespace BL
                 mse.KengenCD = dtStaff.Rows[0]["AuthorizationsCD"].ToString();
                 mse.StoreAuthorizationsCD = dtStaff.Rows[0]["StoreAuthorizationsCD"].ToString();
                 mse.PositionCD = dtStaff.Rows[0]["PositionCD"].ToString();
-                
+
             }
             return mse;
         }
@@ -78,7 +85,7 @@ namespace BL
                 Base_DL.iniEntity.DatabaseDate = mse.SysDate;
 
             }
-           
+
             return mse;
         }
 
@@ -96,11 +103,11 @@ namespace BL
                 mse.SoukoCD = dt.Rows[0]["SoukoCD"].ToString();
                 Base_DL.iniEntity.DatabaseDate = mse.SysDate;
             }
-           
+
             return mse;
         }
 
-        public M_Store_Entity M_Store_InitSelect(M_Staff_Entity mse,M_Store_Entity mste)
+        public M_Store_Entity M_Store_InitSelect(M_Staff_Entity mse, M_Store_Entity mste)
         {
             DataTable dt = mstoredl.M_Store_InitSelect(mse);
             if (dt.Rows.Count > 0)
@@ -110,7 +117,7 @@ namespace BL
                 mste.StoreCD = dt.Rows[0]["StoreCD"].ToString();
                 Base_DL.iniEntity.DatabaseDate = mste.SysDate;
             }
-            
+
             return mste;
         }
 
@@ -156,7 +163,7 @@ namespace BL
             {
                 filePath = @"C:\\SMS\\AppData\\CKM.ini";
             }
-           // var f = Islocalized;
+            // var f = Islocalized;
             //if(System.Deployment.Internal.)
             if (System.IO.File.Exists(filePath))
             {
@@ -209,7 +216,7 @@ namespace BL
                 Base_DL.iniEntity.DatabasePassword = idl.IniReadValue("Database", "CapitalStoreMenuLogin").Split(',')[3];
                 Base_DL.iniEntity.Login_Type = "CapitalStoreMenuLogin";
                 Base_DL.iniEntity.StoreType = "1";
-                
+
             }
             else if (idl.IniReadValue("Database", "Login_Type") == "HaspoStoreMenuLogin")
             {
@@ -239,16 +246,50 @@ namespace BL
             //暗号化されたパスワードを複合化
             try
             {
-               Base_DL.iniEntity.IsDM_D30Used = idl.IniReadValue("Database", "Logical_Printer").ToString().Trim()== "EpsonTM-m30" && idl.IniReadValue("Database", "Login_Type") == "CapitalStoreMenuLogin" ? true : false;
+                Base_DL.iniEntity.IsDM_D30Used = idl.IniReadValue("Database", "Logical_Printer").ToString().Trim() == "EpsonTM-m30" && idl.IniReadValue("Database", "Login_Type") == "CapitalStoreMenuLogin" ? true : false;
+
             }
             catch
             {
-                Base_DL.iniEntity.IsDM_D30Used =  false;
+                Base_DL.iniEntity.IsDM_D30Used = false;
             }
             Base_DL.iniEntity.TimeoutValues = idl.IniReadValue("Database", "Timeout");
+            // 店舗レジで使用するプリンター名
+            Base_DL.iniEntity.StorePrinterName = idl.IniReadValue("Printer", "StorePrinterName");
+            if (Base_DL.iniEntity.IsDM_D30Used)
+            Base_DL.iniEntity.DefaultMessage = GetMessages();
 
 
-
+        }
+        protected string GetMessages()
+        {
+            var get = getd();
+            var str = "";
+            str += get.Rows[0]["Char1"] == null ? "" : get.Rows[0]["Char1"].ToString().Trim() + "     ";
+            str += get.Rows[0]["Char2"] == null ? "" : get.Rows[0]["Char2"].ToString().Trim() + "     ";
+            str += get.Rows[0]["Char3"] == null ? "" : get.Rows[0]["Char3"].ToString().Trim() + "     ";
+            str += get.Rows[0]["Char4"] == null ? "" : get.Rows[0]["Char4"].ToString().Trim() + "     ";
+            str += get.Rows[0]["Char5"] == null ? "" : get.Rows[0]["Char5"].ToString().Trim();
+            int txt = Encoding.GetEncoding(932).GetByteCount(str);
+            if (txt > 200)
+            {
+                str = str.Substring(0, 200);
+            }
+            return str;
+        }
+        protected DataTable getd()
+        {
+            Base_DL bdl = new Base_DL();
+            var dt = new DataTable();
+            var con = bdl.GetConnection();
+            // SqlConnection conn = new SqlConnection("Data Source=202.223.48.145;Initial Catalog=CapitalSMS;Persist Security Info=True;User ID=sa;Password=admin123456!");
+            //SqlConnection conn = con;
+            con.Open();
+            SqlCommand command = new SqlCommand("Select Char1, Char2, Char3, Char4,Char5 from [M_Multiporpose] where [Key]='1' and Id='326'", con);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            adapter.Fill(dt);
+            con.Close();
+            return dt;
         }
         public string GetInformationOfIniFileByKey(string key)
         {

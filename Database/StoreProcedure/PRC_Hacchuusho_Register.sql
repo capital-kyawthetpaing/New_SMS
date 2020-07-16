@@ -51,7 +51,7 @@ BEGIN
             ,DisplayRows  
             ,JuchuuNO  
             ,JuchuuRows  
-            ,JuchuuOrderNO  
+    --        ,JuchuuOrderNO  
             ,SKUCD  
             ,AdminNO  
             ,JanCD  
@@ -82,9 +82,9 @@ BEGIN
             ,CancelOrderNO  
             ,AnswerFLG  
             ,EDIOutputDatetime  
-            ,LastArrivePlanNO  
-            ,LastArriveDatetime  
-            ,LastArriveNO  
+    --        ,LastArrivePlanNO  
+    --        ,LastArriveDatetime  
+    --        ,LastArriveNO  
             ,InsertOperator  
             ,InsertDateTime  
             ,UpdateOperator  
@@ -97,7 +97,7 @@ BEGIN
             ,DisplayRows                = ROW_NUMBER()OVER(PARTITION BY DLOR.OrderCD,DLOR.OrderNO ORDER BY DLOR.OrderRows)
             ,JuchuuNO                   = DLOR.JuchuuNO
             ,JuchuuRows                 = DLOR.JuchuuRows
-            ,JuchuuOrderNO              = null
+       --     ,JuchuuOrderNO              = null
             ,SKUCD                      = DODD.SKUCD
             ,AdminNO                    = DODD.AdminNO
             ,JanCD                      = DODD.JanCD
@@ -128,9 +128,9 @@ BEGIN
             ,CancelOrderNO              = null
             ,AnswerFLG                  = 0
             ,EDIOutputDatetime          = null
-            ,LastArrivePlanNO           = null
-            ,LastArriveDatetime         = null
-            ,LastArriveNO               = null
+      --      ,LastArrivePlanNO           = null
+      --      ,LastArriveDatetime         = null
+      --      ,LastArriveNO               = null
             ,InsertOperator             = @p_Operator
             ,InsertDateTime             = @SYSDATETIME
             ,UpdateOperator             = @p_Operator

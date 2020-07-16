@@ -1061,7 +1061,6 @@ namespace ShiireNyuuryokuFromNyuuka
                     InStoreCD = mse.StoreCD;
                     ScStaff.LabelText = mse.StaffName;
                 }
-
                 //他のプログラムから起動された場合、照会モードで起動
                 //コマンドライン引数を配列で取得する
                 string[] cmds = System.Environment.GetCommandLineArgs();
@@ -1072,7 +1071,6 @@ namespace ShiireNyuuryokuFromNyuuka
                     keyControls[(int)EIndex.PurchaseNO].Text = shiireNO;
                     CheckKey((int)EIndex.PurchaseNO, true);
                 }
-
             }
             catch (Exception ex)
             {
@@ -1939,11 +1937,11 @@ namespace ShiireNyuuryokuFromNyuuka
                     }
                     if (mGrid.g_DArray[row].TaxRateFLG == 1)
                     {
-                        mGrid.g_DArray[row].TaxRateName = "税込";
+                        mGrid.g_DArray[row].TaxRateName = dt.Rows[0]["TaxRateName1"].ToString(); //"税込";
                     }
                     else if (mGrid.g_DArray[row].TaxRateFLG == 2)
                     {
-                        mGrid.g_DArray[row].TaxRateName = "税込";
+                        mGrid.g_DArray[row].TaxRateName = dt.Rows[0]["TaxRateName2"].ToString(); //"税込";
                     }
                     else
                     {

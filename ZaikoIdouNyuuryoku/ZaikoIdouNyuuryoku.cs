@@ -51,8 +51,8 @@ namespace ZaikoIdouNyuuryoku
             Gyono,    //行番号
             CheckBox4,
             JANCD,
-            JANCD_F,
             FromRackNO,  //移動元棚番
+            JANCD_F,
             Suryo,//数量
             ToRackNO,   //移動先棚番
             ExpectReturnDate,    //出荷・返品予定日
@@ -608,7 +608,7 @@ namespace ZaikoIdouNyuuryoku
         // ---------------------------------------------
         private void S_BodySeigyo(short pKBN, short pGrid)
         {
-            int w_Row;
+            //int w_Row;
 
             switch (pKBN)
             {
@@ -927,13 +927,15 @@ namespace ZaikoIdouNyuuryoku
 
                     //↑Paramete起動されるのは、移動依頼受け入力からのみ。
                     keyControls[(int)EIndex.RequestNO].Text = cmds[cmds.Length - 1];
-                    keyControls[(int)EIndex.RequestNO].Enabled = false;
+                    keyControls[(int)EIndex.RequestNO].Enabled = true;
                     keyControls[(int)EIndex.MoveNO].Enabled = false;
                     
                     ret= CheckKey((int)EIndex.RequestNO, true);
 
                     if (!ret)
                         EndSec();
+
+                    return;
                 }
 
                 InitScr();
@@ -952,7 +954,7 @@ namespace ZaikoIdouNyuuryoku
             keyControls = new Control[] { ScOrderNO.TxtCode, ScCopyOrderNO.TxtCode, ScRequestNO.TxtCode, CboStoreCD };
             keyLabels = new Control[] { };
             detailControls = new Control[] { ckM_TextBox1, CboIdoKbn, ckM_CheckBox3, ScStaff.TxtCode, CboFromSoukoCD, CboToSoukoCD
-                         ,ckM_TextBox4, ckM_CheckBox4, SC_ITEM_0.TxtCode,SC_ITEM_1.TxtCode, ScFromRackNo.TxtCode, ckM_TextBox8, ckM_TextBox18,  ckM_TextBox2
+                         ,ckM_TextBox4, ckM_CheckBox4, SC_ITEM_0.TxtCode, ScFromRackNo.TxtCode,SC_ITEM_1.TxtCode, ckM_TextBox8, ckM_TextBox18,  ckM_TextBox2
                          , ckM_TextBox5, CboSoukoCD, TxtRemark1};
             detailLabels = new Control[] { ScStaff };
             searchButtons = new Control[] { ScStaff.BtnSearch };
@@ -1237,7 +1239,7 @@ namespace ZaikoIdouNyuuryoku
                         if (bbl.Z_Set(row["MoveRows"]) == 0)
                             break;
                     }
-                    if (index == (int)EIndex.RequestNO)
+                    if (index == (int)EIndex.RequestNO && OperationMode == EOperationMode.INSERT)
                     {
                         //回答区分<>0の移動依頼明細の場合
                         if (!Convert.ToInt16(row["AnswerKBN"]).Equals(0))
@@ -1257,7 +1259,8 @@ namespace ZaikoIdouNyuuryoku
 
                     mGrid.g_DArray[i].MoveSu = bbl.Z_SetStr(row["MoveSu"]);   // 
                     mGrid.g_DArray[i].IraiSu = bbl.Z_SetStr(row["RequestSu"]);   // 
-                    mGrid.g_DArray[i].ExpectReturnDate = row["ExpectReturnDate"].ToString();
+                    //mGrid.g_DArray[i].ExpectReturnDate = row["ExpectReturnDate"].ToString();
+                    mGrid.g_DArray[i].ExpectReturnDate = row["ExpectedDate"].ToString();
 
                     mGrid.g_DArray[i].FromRackNO = row["FromRackNO"].ToString();
                     mGrid.g_DArray[i].ToRackNO = row["ToRackNO"].ToString(); 
@@ -1708,6 +1711,10 @@ namespace ZaikoIdouNyuuryoku
                         {
                             //Ｅ１０１
                             bbl.ShowMessage("E101");
+                            lblSKUName.Text = "";
+                            lblSKUCD.Text = "";
+                            lblColorName.Text = "";
+                            lblSizeName.Text = "";
                             return false;
                         }
                         else if (dt.Rows.Count == 1)
@@ -1834,6 +1841,10 @@ namespace ZaikoIdouNyuuryoku
                         {
                             //Ｅ１０１
                             bbl.ShowMessage("E101");
+                            lblSKUNameF.Text = "";
+                            lblSKUCDF.Text = "";
+                            lblColorNameF.Text = "";
+                            lblSizeNameF.Text = "";
                             return false;
                         }
                         else if (dt.Rows.Count == 1)
@@ -1877,6 +1888,14 @@ namespace ZaikoIdouNyuuryoku
                     //入力できる場合(When input is possible)
                     if (detailControls[index].Enabled)
                     {
+                        if (mIdoType == EIdoType.店舗間移動)
+                        {
+                            if (ckM_CheckBox4.Checked)
+                            {
+                                //店舗間移動：移動依頼拒否をONにした場合、棚番の入力チェックは不要
+                                return true;
+                            }
+                        }
                         //入力必須(Entry required)
                         if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                         {
@@ -1905,6 +1924,7 @@ namespace ZaikoIdouNyuuryoku
                         }
                     }
                     break;
+
                 case (int)EIndex.Suryo:
                     //入力できる場合(When input is possible)
                     if (detailControls[index].Enabled)
@@ -1921,6 +1941,15 @@ namespace ZaikoIdouNyuuryoku
                             bbl.ShowMessage("E109");
                             return false;
                         }
+                        if (mIdoType == EIdoType.店舗間移動)
+                        {
+                            if (ckM_CheckBox4.Checked)
+                            {
+                                //店舗間移動：移動依頼拒否をONにした場合、数量の入力チェックは不要
+                                return true;
+                            }
+                        }
+
                         if (mIdoType != EIdoType.調整追加)
                         {
                             //入力された場合、在庫数量確認  在庫数量が足りない場合Error(If the stock quantity is insufficient)
@@ -2143,6 +2172,16 @@ namespace ZaikoIdouNyuuryoku
                                             bbl.ShowMessage("E186");
                                             return false;
                                         }
+
+                                        //移動元、移動先の倉庫は異なる店舗であること(移動依頼なし)
+                                        if (string.IsNullOrWhiteSpace(keyControls[(int)EIndex.RequestNO].Text))
+                                        {
+                                            if (mFromStoreCD.Equals(mToStoreCD))
+                                            {
+                                                bbl.ShowMessage("E249");
+                                                return false;
+                                            }
+                                        }
                                     }
                                     break;
                                 case EIdoType.倉庫移動:
@@ -2153,6 +2192,16 @@ namespace ZaikoIdouNyuuryoku
                                         if (!mFromStoreCD.Equals(mToStoreCD))
                                         {
                                             bbl.ShowMessage("E206");
+                                            return false;
+                                        }
+                                    }
+
+                                    if (mIdoType.Equals(EIdoType.返品))
+                                    {
+                                        //返品倉庫以外Error SoukoType≠８ならエラー
+                                        if (!dt.Rows[0]["SoukoType"].ToString().Equals("8"))
+                                        {
+                                            bbl.ShowMessage("E250");
                                             return false;
                                         }
                                     }
@@ -2655,6 +2704,9 @@ namespace ZaikoIdouNyuuryoku
                             foreach (Control ctl in detailControls)
                             {
                                 ctl.Enabled = Kbn == 0 ? true : false;
+
+                                if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = Kbn == 0 ? true : false;
                             }
                             for (int index = 0; index < searchButtons.Length; index++)
                                 searchButtons[index].Enabled = Kbn == 0 ? true : false;
@@ -3196,6 +3248,8 @@ namespace ZaikoIdouNyuuryoku
 
                                 default:
                                     detailControls[i].Enabled = true;
+                                    if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                        ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = true;
                                     break;
                             }
                         }
@@ -3222,6 +3276,8 @@ namespace ZaikoIdouNyuuryoku
 
                             default:
                                 detailControls[i].Enabled = true;
+                                if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = true;
                                 break;
                         }
                     }
@@ -3248,6 +3304,8 @@ namespace ZaikoIdouNyuuryoku
 
                             default:
                                 detailControls[i].Enabled = true;
+                                if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = true;
                                 break;
                         }
                     }
@@ -3275,6 +3333,8 @@ namespace ZaikoIdouNyuuryoku
 
                             default:
                                 detailControls[i].Enabled = true;
+                                if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = true;
                                 break;
                         }
                     }
@@ -3303,6 +3363,8 @@ namespace ZaikoIdouNyuuryoku
 
                             default:
                                 detailControls[i].Enabled = true;
+                                if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = true;
                                 break;
                         }
                     }
@@ -3330,6 +3392,8 @@ namespace ZaikoIdouNyuuryoku
 
                             default:
                                 detailControls[i].Enabled = true;
+                                if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = true;
                                 break;
                         }
                     }
@@ -3353,6 +3417,8 @@ namespace ZaikoIdouNyuuryoku
 
                             default:
                                 detailControls[i].Enabled = true;
+                                if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = true;
                                 break;
                         }
                     }

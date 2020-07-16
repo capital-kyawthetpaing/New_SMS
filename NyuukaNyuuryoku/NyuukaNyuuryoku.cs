@@ -609,15 +609,15 @@ namespace NyuukaNyuuryoku
                     {
                         if (pGrid == 1)
                         {
-                            //// 入力可の列の設定
+                            // 入力可の列の設定
                             //for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
                             //{
                             //    if (m_EnableCnt - 1 < w_Row)
                             //        break;
-
-                            //    //Jancd列入力可 (Jancdを入力した時点で他の列が入力可になるため)
-                            //    mGrid.g_MK_State[(int)ClsGridHikiate.ColNO.SURYO, w_Row].Cell_Enabled = true;
-
+                            //    for (int w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
+                            //    {
+                            //        mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = false;
+                            //    }
                             //}
                         }
                         else
@@ -653,13 +653,18 @@ namespace NyuukaNyuuryoku
                     {
                         if (pGrid == 1)
                         {
+                            //倉庫とJANCDは変更不可
+                            CboSoukoName.Enabled = false;
+                            txtJANCD.Enabled = false;
+                            BtnJANCD.Enabled = false;
+
                             // 入力可の列の設定
                             for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
                             {
                                 if (m_EnableCnt - 1 < w_Row)
                                     break;
 
-                                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].JYUNO))
+                                if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].JYUNO))
                                 {
                                     mGrid.g_MK_State[(int)ClsGridHikiate.ColNO.Check, w_Row].Cell_Enabled = true;
                                     mGrid.g_MK_State[(int)ClsGridHikiate.ColNO.SURYO, w_Row].Cell_Enabled = true;
@@ -672,7 +677,7 @@ namespace NyuukaNyuuryoku
                                 if (m_EnableCnt - 1 < w_Row)
                                     break;
 
-                                if (string.IsNullOrWhiteSpace(mGrid2.g_DArray[w_Row].Number))
+                                if (!string.IsNullOrWhiteSpace(mGrid2.g_DArray[w_Row].Number))
                                 {
                                     mGrid2.g_MK_State[(int)ClsGridHikiate.ColNO.Check, w_Row].Cell_Enabled = true;
                                     mGrid2.g_MK_State[(int)ClsGridHikiate.ColNO.SURYO, w_Row].Cell_Enabled = true;
@@ -737,7 +742,7 @@ namespace NyuukaNyuuryoku
             Set_GridTabStop(true);
 
             //【引当】か【在庫】							
-            if (!string.IsNullOrWhiteSpace( mGrid.g_DArray[pRow].JYUNO))
+            if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[pRow].JYUNO))
                 SetFuncKey(this, 9, true);
             else
                 SetFuncKey(this, 9, false);
@@ -1896,7 +1901,7 @@ namespace NyuukaNyuuryoku
                     }
                     if (bbl.Z_Set(row["KBN"]) == 1)
                     {
-                        mGrid.g_DArray[i].Check = false;
+                        mGrid.g_DArray[i].Check = true;
                         mGrid.g_DArray[i].JYUNO = row["JuchuuNO"].ToString();
                         mGrid.g_DArray[i].JYGNO = row["JuchuuRows"].ToString();
                         mGrid.g_DArray[i].CustomerCD = row["CustomerCD"].ToString();
@@ -1934,7 +1939,7 @@ namespace NyuukaNyuuryoku
                             mGrid2.S_DispFromArray(0, ref Vsb_Mei_1);
                             return false;
                         }
-                        mGrid2.g_DArray[i2].Check = false;
+                        mGrid2.g_DArray[i2].Check = true;
                         mGrid2.g_DArray[i2].Number = row["JuchuuNO"].ToString();     //OrderNo
                         mGrid2.g_DArray[i2].RowNo = row["JuchuuRows"].ToString();    //OrderRows
                         mGrid2.g_DArray[i2].CustomerCD = row["CustomerCD"].ToString();
@@ -2382,7 +2387,7 @@ namespace NyuukaNyuuryoku
 
         }
        
-        private bool CheckGrid(int col, int row, bool chkAll=false, bool changeYmd=false)
+        private bool CheckGrid(int col, int row, ref bool focus, bool chkAll=false, bool changeYmd=false)
         {
 
             if (!chkAll && !changeYmd)
@@ -2414,7 +2419,31 @@ namespace NyuukaNyuuryoku
                         bbl.ShowMessage("E143", "引当数", "大きい");
                         return false;
                     }
-
+                    if (bbl.Z_Set(mGrid.g_DArray[row].SURYO) > 0)
+                    {
+                        mGrid.g_DArray[row].Check = true;
+                    }
+                    //【引当】画面明細.引当数≠画面明細.入荷数（＝０を含む）のとき、その画面明細,StockNOと同じ【在庫】画面明細.StockNOで
+                    //【在庫】（画面明細.発注数－引当数）≠画面明細.入荷数(≠０）となる明細があれば、【在庫】画面明細.入荷数をエラーとする
+                    if (bbl.Z_Set(mGrid.g_DArray[row].SURYO) != bbl.Z_Set(mGrid.g_DArray[row].ReserveSu))
+                    {
+                        string stockNO = mGrid.g_DArray[row].StockNO;
+                        for (int RW = 0; RW <= mGrid2.g_MK_Max_Row - 1; RW++)
+                        {
+                            if (mGrid2.g_DArray[RW].StockNO == stockNO)
+                            {
+                                if (bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != bbl.Z_Set(mGrid2.g_DArray[row].OrderSu) - bbl.Z_Set(mGrid2.g_DArray[row].ReserveSu))
+                                {
+                                    //Ｅ２５１
+                                    bbl.ShowMessage("E251");
+                                    //Focusセット処理
+                                    ERR_FOCUS_GRID_SUB2((int)ClsGridZaiko.ColNO.SURYO, RW);
+                                    focus = false;
+                                    return false;
+                                }
+                            }
+                        }
+                    }
                     break;
             }
 
@@ -2458,6 +2487,28 @@ namespace NyuukaNyuuryoku
                     //    bbl.ShowMessage("E143", "引当数", "大きい");
                     //    return false;
                     //}
+                    if (bbl.Z_Set(mGrid2.g_DArray[row].SURYO) > 0)
+                    {
+                        mGrid2.g_DArray[row].Check = true;
+                    }
+                    //（【在庫】画面明細.発注数－引当数）≠画面明細.入荷数（≠０）のとき、その画面明細,StockNOと同じ【引当】画面明細.StockNOで
+                    //【引当】画面明細.引当数≠画面明細.入荷数(≠０）となる明細があれば、【在庫】画面明細.入荷数をエラーとする
+                    if (bbl.Z_Set(mGrid2.g_DArray[row].SURYO) != 0 && bbl.Z_Set(mGrid2.g_DArray[row].SURYO) != bbl.Z_Set(mGrid2.g_DArray[row].OrderSu) - bbl.Z_Set(mGrid2.g_DArray[row].ReserveSu))
+                    {
+                        string stockNO = mGrid2.g_DArray[row].StockNO;
+                        for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+                        {
+                            if (mGrid.g_DArray[RW].StockNO == stockNO)
+                            {
+                                if (bbl.Z_Set(mGrid.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid.g_DArray[RW].ReserveSu) != bbl.Z_Set(mGrid.g_DArray[row].SURYO))
+                                {
+                                    //Ｅ２５１
+                                    bbl.ShowMessage("E251");
+                                    return false;
+                                }
+                            }
+                        }
+                    }
                     break;
             }
 
@@ -2470,10 +2521,28 @@ namespace NyuukaNyuuryoku
 
             return true;
         }
+        private void ClearVendor()
+        {
+            for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+            {
+                if (mGrid.g_DArray[RW].Check)
+                {
+                    return;
+                }
+            }
+            for (int RW = 0; RW <= mGrid2.g_MK_Max_Row - 1; RW++)
+            {
+                if (mGrid2.g_DArray[RW].Check)
+                {
+                    return;
+                }
+            }
+            lblVendor.Text = "";
+        }
         /// <summary>
         /// Footer部 金額計算処理
         /// </summary>
-        private void CalcKin()
+        private bool CalcKin(bool f12 = false)
         {
             //【引当】でチェックが入っている明細の入荷数を集計し、引当総数（【引当】直下）に表示
             decimal sumHikSu = 0;
@@ -2501,8 +2570,21 @@ namespace NyuukaNyuuryoku
             {
                 //Ｅ１４３
                 bbl.ShowMessage("E143", "入荷総数", "大きい");
-                return;
+                return false;
             }
+            if(f12)
+            {
+                //入荷総数＞（引当での入荷数計＋在庫での入荷数計）の場合、 Ｅ２４８
+                //エラーの場合、カーソルは入荷総数へ
+                if (sumHikSu + sumZaikoSu < bbl.Z_Set(detailControls[(int)EIndex.Nyukasu].Text))
+                {
+                    //Ｅ１４３
+                    bbl.ShowMessage("E248");
+                    txtSu.Focus();
+                    return false;
+                }
+            }
+            return true;
         }
 
         /// <summary>
@@ -2577,7 +2659,7 @@ namespace NyuukaNyuuryoku
                         , mGrid.g_DArray[RW].CustomerCD
                         , bbl.Z_Set(mGrid.g_DArray[RW].SURYO)
                         , bbl.Z_Set(mGrid.g_DArray[RW].ArrivalPlanKBN)
-                        , 0
+                        , 0 //bbl.Z_Set(mGrid.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid.g_DArray[RW].SURYO) != bbl.Z_Set(mGrid.g_DArray[RW].ReserveSu) ? 1 : 0
                         );
                     vendorCD = mGrid.g_DArray[RW].VendorCD;
                     rowNo++;
@@ -2601,7 +2683,7 @@ namespace NyuukaNyuuryoku
                         , mGrid2.g_DArray[RW].CustomerCD
                         , bbl.Z_Set(mGrid2.g_DArray[RW].SURYO)
                         , bbl.Z_Set(mGrid2.g_DArray[RW].ArrivalPlanKBN)
-                        , 0
+                        , 0 //bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != bbl.Z_Set(mGrid2.g_DArray[RW].OrderSu) - bbl.Z_Set(mGrid2.g_DArray[RW].ReserveSu) ? 1 : 0
                         );
                     vendorCD = mGrid2.g_DArray[RW].VendorCD;
                     rowNo++;
@@ -2648,10 +2730,12 @@ namespace NyuukaNyuuryoku
                     {
                         for (int CL = (int)ClsGridHikiate.ColNO.SURYO; CL < (int)ClsGridHikiate.ColNO.COUNT; CL++)
                         {
-                            if (CheckGrid(CL, RW, true) == false)
+                            bool focus = true;
+                            if (CheckGrid(CL, RW, ref focus, true) == false)
                             {
-                                //Focusセット処理
-                                ERR_FOCUS_GRID_SUB(CL, RW);
+                                if(focus)
+                                    //Focusセット処理
+                                    ERR_FOCUS_GRID_SUB(CL, RW);
                                 return;
                             }
                         }
@@ -2677,8 +2761,8 @@ namespace NyuukaNyuuryoku
                 }
 
                 //各金額項目の再計算必要
-                CalcKin();
-
+                if (!CalcKin(true))
+                    return;
             }
 
             string vendorCD = "";
@@ -2747,7 +2831,8 @@ namespace NyuukaNyuuryoku
             string OrderWayKBN = "";
             string AliasKBN = "";
 
-            CalcKin();
+            if (!CalcKin())
+                return;
 
             switch (kbn)
             {
@@ -3198,6 +3283,8 @@ namespace NyuukaNyuuryoku
                         {
                             if (detailControls[index + 1].CanFocus)
                                 detailControls[index + 1].Focus();
+                            else if(index.Equals((int)EIndex.VendorDeliveryNo))
+                                detailControls[(int)EIndex.Nyukasu].Focus();
                             else
                                 //あたかもTabキーが押されたかのようにする
                                 //Shiftが押されている時は前のコントロールのフォーカスを移動
@@ -3357,14 +3444,17 @@ namespace NyuukaNyuuryoku
                     //画面の内容を配列へセット
                     mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
+                    bool focus = true;
+
                     //チェック処理
-                    if (CheckGrid(CL, w_Row) == false)
+                    if (CheckGrid(CL, w_Row, ref focus) == false)
                     {
                         //配列の内容を画面へセット
                         mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
-                        //Focusセット処理
-                        w_ActCtl.Focus();
+                        if(focus)
+                            //Focusセット処理
+                            w_ActCtl.Focus();
                         return;
                     }
 
@@ -3561,6 +3651,10 @@ namespace NyuukaNyuuryoku
                         //配列の内容を画面にセット
                         mGrid2.S_DispFromArray(Vsb_Mei_1.Value, ref Vsb_Mei_1);
                     }
+                    else
+                    {
+                        ClearVendor();
+                    }
                 }
 
             }
@@ -3634,6 +3728,10 @@ namespace NyuukaNyuuryoku
 
                         //配列の内容を画面にセット
                         mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    }
+                    else
+                    {
+                        ClearVendor();
                     }
                 }
             }

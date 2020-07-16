@@ -266,6 +266,7 @@
     <Content Include="StoreProcedure\Fnc_UnitPrice.sql" />
     <Content Include="StoreProcedure\Fnc_UnitPrice_SP.sql" />
     <Content Include="StoreProcedure\Function_GetName_ReturnValue.sql" />
+    <Content Include="StoreProcedure\F_SKU.sql" />
     <Content Include="StoreProcedure\GetJuchuuNO.sql" />
     <Content Include="StoreProcedure\GetTemporaryReserveNO.sql" />
     <Content Include="StoreProcedure\Get_ShihraiYoteibi.sql" />
@@ -348,6 +349,7 @@
     <Content Include="StoreProcedure\M_ItemPrice_SelectData.sql" />
     <Content Include="StoreProcedure\MastertorokuShiiretanka_Select.sql" />
     <Content Include="StoreProcedure\M_ITEM_Select.sql" />
+    <Content Include="StoreProcedure\M_ITEM_SelectBy_ItemCD.sql" />
     <Content Include="StoreProcedure\M_Item_SelectForSKSMasterUpdate.sql" />
     <Content Include="StoreProcedure\M_ITEM_SelectTop1.sql" />
     <Content Include="StoreProcedure\M_ITem_SKSUpdateFlg.sql" />
@@ -390,6 +392,7 @@
     <Content Include="StoreProcedure\M_MultiPurpose_KeySearch.sql" />
     <Content Include="StoreProcedure\M_MultiPurpose_KeySelect.sql" />
     <Content Include="StoreProcedure\M_Multipurpose_SelectIDName.sql" />
+    <Content Include="StoreProcedure\M_OrderRate_Update.sql" />
     <Content Include="StoreProcedure\M_Prefix_Delete.sql" />
     <Content Include="StoreProcedure\M_Prefix_Display.sql" />
     <Content Include="StoreProcedure\M_Prefix_Insert_Update.sql" />
@@ -404,6 +407,7 @@
     <Content Include="StoreProcedure\M_SalesTax_Select.sql" />
     <Content Include="StoreProcedure\M_SearchVendor.sql" />
     <Content Include="StoreProcedure\M_Settlement_Bind.sql" />
+    <Content Include="StoreProcedure\M_ShiireKakeritsu_Select.sql" />
     <Content Include="StoreProcedure\M_Site_Select.sql" />
     <Content Include="StoreProcedure\M_Site_SelectByItemCD.sql" />
     <Content Include="StoreProcedure\M_SKULastCost_Select.sql" />
