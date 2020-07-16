@@ -30,6 +30,7 @@ namespace MasterTouroku_ShiireKakeritsu
         DataView dvMain;
         L_Log_Entity log_data;
         DataTable dtAdd;
+        DataTable dtExcel;
         int type = 0;
         string Xml;
 
@@ -815,92 +816,127 @@ namespace MasterTouroku_ShiireKakeritsu
             excelReader.Close();
             return result.Tables[0];
         }
-        private void F10()
+        private bool ErrorCheckForExcel()
         {
             OpenFileDialog op = new OpenFileDialog
             {
                 InitialDirectory = @"C:\",
                 RestoreDirectory = true
             };
-                if (op.ShowDialog() == DialogResult.OK)
+            if (op.ShowDialog() == DialogResult.OK)
+            {
+                string str = op.FileName;
+                string ext = Path.GetExtension(str);
+                if (!(ext.Equals(".xls") || ext.Equals(".xlsx")))
                 {
-                    string str = op.FileName;
-                    string ext = Path.GetExtension(str);
-                    if (!(ext.Equals(".xls") || ext.Equals(".xlsx")))
-                    {
-                        mskbl.ShowMessage("E137");
-                    }
-                    else
-                    {
-                        DataTable dtExcel = ExcelToDatatable(str);
-                        string[] colname = { "仕入先CD", "店舗CD", "改定日", "掛率" };
+                    mskbl.ShowMessage("E137");
+                    return false;
+                }
+                else
+                {
+                    String rowse = "0";
+                     dtExcel = ExcelToDatatable(str);
+                    string[] colname = { "仕入先CD", "店舗CD", "改定日", "掛率" };
                     if (ColumnCheck(colname, dtExcel))
                     {
+                        List<DataRow> toDelete = new List<DataRow>();
                         foreach (DataRow row in dtExcel.Rows)
                         {
                             if (row["仕入先CD"].ToString() != scSupplierCD.TxtCode.Text)
                             {
                                 mskbl.ShowMessage("E230");
+                                 rowse = "1";
+                                toDelete.Add(row);
+                               
                             }
                             else if (row["店舗CD"] != DBNull.Value && row["店舗CD"].ToString() != "0000")
                             {
-                                mskbl.ShowMessage("E138");
+                                DataTable dtResult = mskbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 3, row["店舗CD"].ToString());
+                                if (dtResult.Rows.Count == 0)
+                                {
+                                    mskbl.ShowMessage("E138");
+                                    rowse = "1";
+                                }
+                                if (!base.CheckAvailableStores(row["店舗CD"].ToString()))
+                                {
+                                    bbl.ShowMessage("E141");
+                                    rowse = "1";
+                                }
+                               
                             }
-                            else if (row["ブランドCD"].ToString() == scBrandCD.TxtCode.Text)
+                            else if (!String.IsNullOrEmpty(row["ブランドCD"].ToString()))
                             {
-                                mskbl.ShowMessage("E138");
+                                DataTable dtResult = bbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 15, row["ブランドCD"].ToString());
+                                if (dtResult.Rows.Count == 0)
+                                {
+                                    mskbl.ShowMessage("E138");
+                                    rowse = "1";
+                                }
                             }
                             else if (row["ブランドCD"] == DBNull.Value && row["競　技CD"] != DBNull.Value)
                             {
                                 if (mskbl.SimpleSelect1("64", string.Empty, "202", row["競　技CD"].ToString()).Rows.Count < 0)
                                 {
                                     mskbl.ShowMessage("E138");
+                                    rowse = "1";
                                 }
                             }
                             else if (row["競　技CD"] == DBNull.Value && row["商品分類CD"] != DBNull.Value)
                             {
                                 mskbl.ShowMessage("E229");
+                                rowse = "1";
                             }
                             else if (row["商品分類CD"] == DBNull.Value)
                             {
                                 if (mskbl.SimpleSelect1("64", string.Empty, "203", row["商品分類CD"].ToString()).Rows.Count < 0)
                                 {
                                     mskbl.ShowMessage("E138");
+                                    rowse = "1";
                                 }
                             }
                             else if (row["商品分類CD"] == DBNull.Value && row["年度"] != DBNull.Value)
                             {
                                 mskbl.ShowMessage("E229");
+                                rowse = "1";
                             }
                             else if (row["年度"] == DBNull.Value)
                             {
                                 if (mskbl.SimpleSelect1("64", string.Empty, "307", row["年度"].ToString()).Rows.Count < 0)
                                 {
                                     mskbl.ShowMessage("E138");
+                                    rowse = "1";
                                 }
                             }
                             else if (row["年度"] == DBNull.Value && row["シーズン"] != DBNull.Value)
                             {
                                 mskbl.ShowMessage("E229");
+                                rowse = "1";
                             }
                             else if (row["シーズン"] == DBNull.Value)
                             {
                                 if (mskbl.SimpleSelect1("64", string.Empty, "308", row["シーズン"].ToString()).Rows.Count < 0)
                                 {
                                     mskbl.ShowMessage("E138");
+                                    rowse = "1";
                                 }
                             }
                             else if (row["改定日"] == DBNull.Value)
                             {
                                 mskbl.ShowMessage("E103");
+                                rowse = "1";
                             }
+                            //if(rowse =="1")
+                            //{
+                            //    row.Delete();
+                            //    //dtExcel.AcceptChanges();
+                            //}
+                            rowse = "0";
+                            dtExcel.AcceptChanges();
                         }
-                        // Xml = mskbl.DataTableToXml(dtExcel);
-                        if (dtExcel.Rows.Count > 0)
+                        dtExcel.AcceptChanges();
+                        foreach (DataRow dr in toDelete)
                         {
-                            dtAdd = new DataTable();
-                            dtAdd = ChangeColumnName(dtExcel);
-                            dgv_ShiireKakeritsu.DataSource = dtAdd;
+                            dtExcel.Rows.Remove(dr);
                         }
                     }
                     else
@@ -909,8 +945,19 @@ namespace MasterTouroku_ShiireKakeritsu
                     }
                 }
             }
+
+            return true;
         }
-       protected Boolean ColumnCheck(String[] colName, DataTable dtMain)
+        private void F10()
+        {
+            if(ErrorCheckForExcel())
+            {
+                dtAdd = new DataTable();
+                dtAdd = ChangeColumnName(dtExcel);
+                dgv_ShiireKakeritsu.DataSource = dtExcel;
+            }
+        }
+        protected Boolean ColumnCheck(String[] colName, DataTable dtMain)
         {
             DataColumnCollection col = dtMain.Columns;
             {
