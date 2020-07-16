@@ -136,6 +136,7 @@ namespace TempoRegiZaikoKakunin
                                 lblItemName.Visible = true;
                             }                           
                         }
+                        SelectData();
                     }
                     else
                     {
