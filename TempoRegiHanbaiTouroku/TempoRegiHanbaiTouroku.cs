@@ -21,8 +21,7 @@ namespace TempoRegiHanbaiTouroku
 {
     public partial class TempoRegiHanbaiTouroku : ShopBaseForm
     {
-        private const string TempoRegiRyousyuusyo = "TempoRegiRyousyuusyo.exe"; 
-        private const string ZaikoSyokai = "ZaikoSyokai.exe";
+        private const string TempoRegiZaikoKakunin = "TempoRegiZaikoKakunin.exe";
         EPSON_TM30.CashDrawerOpen cdo  = new EPSON_TM30.CashDrawerOpen();
         private enum meCol : short
         {
@@ -1346,10 +1345,19 @@ namespace TempoRegiHanbaiTouroku
         {
             try
             {
-                TempoRegiZaikoKakunin_Search form = new TempoRegiZaikoKakunin_Search();
-                form.parJancd = txtJanCD.Text;
-                form.ShowDialog();
-
+                // 実行モジュールと同一フォルダのファイルを取得
+                System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + TempoRegiZaikoKakunin;
+                if (System.IO.File.Exists(filePath))
+                {
+                    string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + txtJanCD.Text;
+                    System.Diagnostics.Process.Start(filePath, cmdLine);
+                }
+                else
+                {
+                    //EXEが存在しない時ｴﾗｰ
+                    return;
+                }
             }
             catch (Exception ex)
             {
