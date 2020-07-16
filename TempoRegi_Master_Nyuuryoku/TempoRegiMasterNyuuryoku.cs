@@ -30,6 +30,7 @@ namespace TempoRegi_Master_Nyuuryoku
         string radiovalue = "";
         string btnNameDetails =string.Empty;
         string BtnName = string.Empty;
+        string cd = string.Empty;
         Button btn1 = null, btn2 = null;
         public TempoRegiMasterNyuuryoku()
         {
@@ -403,6 +404,7 @@ namespace TempoRegi_Master_Nyuuryoku
             vertical = ctrlName1.Substring(ctrlName1.Length - 1);
             lblNameNO.Visible = true;
             lblNameNO.Text = string.Empty;
+            cd = string.Empty;
             if (lblGroupNO.Text.Equals("Btn1_No")) return;
             groupno = lblGroupNO.Text.Replace("番目", "");
 
@@ -422,9 +424,9 @@ namespace TempoRegi_Master_Nyuuryoku
                     else
                     {
                         lblNameNO.Text = results[0]["Horizontal"].ToString() + "番目の下";
-                    }
+                    } 
 
-                    txtCD.Text = results[0]["Button"].ToString();
+                    txtCD.Text = cd =results[0]["Button"].ToString();
                 }
 
                 foreach (DataRow row in results)
@@ -560,7 +562,6 @@ namespace TempoRegi_Master_Nyuuryoku
                             txtCD.Text = dtSKU.Rows[0]["JanCD"].ToString();
                             lblAdminNO.Text = dtSKU.Rows[0]["AdminNO"].ToString();
                             lblSearchName.Text =dtSKU.Rows[0]["SKUName"].ToString();
-
                         }
                         else
                         {
@@ -583,6 +584,7 @@ namespace TempoRegi_Master_Nyuuryoku
                         mnrk_bl.ShowMessage("E101");
                         txtCD.Focus();
                     }
+
 
 
                 }
@@ -620,6 +622,21 @@ namespace TempoRegi_Master_Nyuuryoku
                         mnrk_bl.ShowMessage("E101");
                         txtCD.Focus();
                     }
+                }
+
+
+                if (!cd.Equals(txtCD.Text.ToString()))
+                {
+                    cd = txtCD.Text.ToString();
+                    string skuName = lblSearchName.Text.ToString();
+                    int len = Convert.ToInt32(Encoding.GetEncoding(932).GetByteCount(skuName));
+                    while (len > 18)
+                    {
+                        skuName = skuName.Remove(skuName.Length - 1, 1);
+                        len = Convert.ToInt32(Encoding.GetEncoding(932).GetByteCount(skuName));
+                    }
+                    txtBtnNameDown.Text = skuName;
+
                 }
 
             }

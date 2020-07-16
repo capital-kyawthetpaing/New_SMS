@@ -266,6 +266,7 @@
     <Content Include="StoreProcedure\Fnc_UnitPrice.sql" />
     <Content Include="StoreProcedure\Fnc_UnitPrice_SP.sql" />
     <Content Include="StoreProcedure\Function_GetName_ReturnValue.sql" />
+    <Content Include="StoreProcedure\F_SKU.sql" />
     <Content Include="StoreProcedure\GetJuchuuNO.sql" />
     <Content Include="StoreProcedure\GetTemporaryReserveNO.sql" />
     <Content Include="StoreProcedure\Get_ShihraiYoteibi.sql" />
