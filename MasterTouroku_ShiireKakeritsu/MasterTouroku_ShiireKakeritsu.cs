@@ -738,21 +738,6 @@ namespace MasterTouroku_ShiireKakeritsu
             //dgv_ShiireKakeritsu.DataSource = dvMain;
         }
         #endregion
-        /// <summary>
-        /// For Rate Textbox
-        /// </summary>
-        /// <returns></returns>
-        //private bool NumberCheck()
-        //{
-        //    if (!string.IsNullOrWhiteSpace(txtRate.Text) && !bbl.IsInteger(txtRate.Text))
-        //    {
-        //        IsNumber = false;
-        //        mskbl.ShowMessage("E118");
-        //        return false;
-        //    }
-        //    MoveNext = true;
-        //    return true;
-        //}
         private void F11()
         {
             moe = GetSearchInfo();
