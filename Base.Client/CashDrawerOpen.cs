@@ -20,7 +20,7 @@ namespace Base.Client
           
         }
 
-        public void OpenCashDrawer()
+        public void OpenCashDrawer(bool IsWaited=false)
         {
             try
             {
@@ -63,6 +63,7 @@ namespace Base.Client
 
             //このメソッドを実行すると、ドロワーが閉じられるまで処理が戻ってこないので注意してください。
 
+            if (IsWaited)
             m_Drawer.WaitForDrawerClose(10000, 2000, 100, 1000);
 
             try

@@ -31,7 +31,7 @@ namespace EPSON_TM30
             //m_Display.DeviceEnabled = true;
         }
 
-        public void OpenCashDrawer()
+        public void OpenCashDrawer(bool IsWaited = false)
         {
             try
             {
@@ -73,7 +73,7 @@ namespace EPSON_TM30
             //開いてから10秒間経っても閉じられない場合はビープ音を断続的に鳴らします。
 
             //このメソッドを実行すると、ドロワーが閉じられるまで処理が戻ってこないので注意してください。
-
+            if (IsWaited)
             m_Drawer.WaitForDrawerClose(10000, 2000, 100, 1000);
 
             try

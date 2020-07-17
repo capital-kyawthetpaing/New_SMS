@@ -10,6 +10,7 @@ using System.Deployment;
 using System.Diagnostics;
 using EPSON_TM30;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace BL
 {
@@ -281,8 +282,8 @@ namespace BL
         {
             Base_DL bdl = new Base_DL();
             var dt = new DataTable();
-            var con = bdl.GetConnection();
-            // SqlConnection conn = new SqlConnection("Data Source=202.223.48.145;Initial Catalog=CapitalSMS;Persist Security Info=True;User ID=sa;Password=admin123456!");
+            //var con = bdl.GetConnection();
+             SqlConnection con = new SqlConnection("Data Source=202.223.48.145;Initial Catalog=CapitalSMS;Persist Security Info=True;User ID=sa;Password=admin123456!");
             //SqlConnection conn = con;
             con.Open();
             SqlCommand command = new SqlCommand("Select Char1, Char2, Char3, Char4,Char5 from [M_Multiporpose] where [Key]='1' and Id='326'", con);
@@ -291,6 +292,97 @@ namespace BL
             con.Close();
             return dt;
         }
+        public void Display_Service_Update(bool Opened)
+        {
+            var val = (Opened) ? "1" : "0";
+            Base_DL bdl = new Base_DL();
+            using (SqlConnection con = bdl.GetConnection())
+            {
+                con.Open();
+                using (SqlCommand command = new SqlCommand("Update M_Multiporpose set Num1 = '"+val+"' where[Key] = '1' and Id = '326'", con))
+                {
+                    command.ExecuteNonQuery();
+                }
+                con.Close();
+            }
+        }
+        public void Display_Service_Enabled(bool Enabled, string val = null)
+        {
+            var pth = "";
+            if (val == null)
+                pth = @"C:\\SMS\\AppData\Display_Service.exe";
+            else
+                pth = @"C:\\SMS\\AppData\\" + val;
+            if (Enabled)
+            {
+                try
+                {
+                 //   Kill(Path.GetFileNameWithoutExtension(pth));
+                }
+                catch { }
+                try
+                {
+                    //System.Diagnostics.ProcessStartInfo start = new System.Diagnostics.ProcessStartInfo(pth);
+                    //start.FileName = pth;
+                    //start.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                    // Process pc = new Process();
+
+                    Process[] processCollection = Process.GetProcessesByName(Path.GetFileNameWithoutExtension(pth));
+                    if (processCollection.Count() == 0)
+                    {
+                        // Process p = new Process();
+                        System.Diagnostics.ProcessStartInfo start = new System.Diagnostics.ProcessStartInfo(pth);
+                        start.FileName = pth;
+                        start.UseShellExecute = true;
+                        start.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                        start.CreateNoWindow = false;
+                        //start.WindowStyle = ProcessWindowStyle.
+                        //Process pc = new Process();
+                        Process.Start(pth);
+                    }
+                }
+                catch (Exception ex)
+                {
+                }
+            }
+            else
+            {
+                try
+                {
+                    Kill(Path.GetFileNameWithoutExtension(pth));
+                }
+                catch { }
+            }
+        }
+        protected void Kill(string pth)
+        {
+            Process[] processCollection = Process.GetProcessesByName(pth.Replace(".exe",""));
+            foreach (Process p in processCollection)
+            {
+                    p.Kill();
+            }
+
+            Process[] processCollections = Process.GetProcessesByName(pth+".exe");
+            foreach (Process p in processCollections)
+            {
+                p.Kill();
+            }
+        }
+        public string Display_Service_Status()  // 0 not display / 1 Display
+        {
+            Base_DL bdl = new Base_DL();
+            var dt = new DataTable();
+         //   var con = bdl.GetConnection();
+             SqlConnection con = new SqlConnection("Data Source=202.223.48.145;Initial Catalog=CapitalSMS;Persist Security Info=True;User ID=sa;Password=admin123456!");
+            //SqlConnection conn = con;
+            con.Open();
+            SqlCommand command = new SqlCommand("Select Num1 from [M_Multiporpose] where [Key]='1' and Id='326'", con);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            adapter.Fill(dt);
+            con.Close();
+            return dt.Rows.Count > 0 ? dt.Rows[0]["Num1"].ToString() : "0";
+        }
+        
         public string GetInformationOfIniFileByKey(string key)
         {
             // INIﾌｧｲﾙ取得

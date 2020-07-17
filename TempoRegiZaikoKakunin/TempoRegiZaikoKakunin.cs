@@ -20,7 +20,11 @@ namespace TempoRegiZaikoKakunin
         TempoRegiZaikoKakunin_Entity kne = new TempoRegiZaikoKakunin_Entity();
 
         public string data = string.Empty;
+        public string CompanyCD = string.Empty;
         public string JanCD = string.Empty;
+        public string PcID = string.Empty;
+        public string OperatorCD = string.Empty;
+
 
         public frmTempoRegiZaikoKakunin()
         {
@@ -30,30 +34,25 @@ namespace TempoRegiZaikoKakunin
         private void frmTempoRegiZaikoKakunin_Load(object sender, EventArgs e)
         {
             InProgramID = "TempoRegiZaikoKakunin";
+            
+            InPcID = PcID;
+            InOperatorCD = OperatorCD;
+            InCompanyCD = CompanyCD;
             string data = InOperatorCD;
-            //if(!string.IsNullOrWhiteSpace(JanCD))
-            //{
-            //    txtJanCD.Text = JanCD;
-            //}
+            StartProgram();
 
-            
-            this.StartProgramForForm();
-            
-
+            if (!string.IsNullOrWhiteSpace(JanCD))
+            {
+                txtJanCD.Text = JanCD;
+            }
             this.Text = "在庫確認";
             txtJanCD.Focus();
             //SetRequireField();
             chkColorSize.Checked = false;
             BtnP_text = "決定";
 
-            string[] cmds = System.Environment.GetCommandLineArgs();
-            if (cmds.Length - 1 > (int)ECmdLine.PcID)
-            {
-                string janCD = cmds[(int)ECmdLine.PcID + 1];   //
-                //ChangeOperationMode(EOperationMode.UPDATE);
-                txtJanCD.Text = janCD;
-                //CheckKey((int)EIndex.PurchaseNO, true);
-            }
+
+
         }
 
         private void SetRequireField()
