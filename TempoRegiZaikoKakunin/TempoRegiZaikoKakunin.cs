@@ -30,12 +30,13 @@ namespace TempoRegiZaikoKakunin
         private void frmTempoRegiZaikoKakunin_Load(object sender, EventArgs e)
         {
             InProgramID = "TempoRegiZaikoKakunin";
-            string data = InOperatorCD;
-            if(!string.IsNullOrWhiteSpace(JanCD))
+            string data = InOperatorCD;           
+            StartProgram();
+
+            if (!string.IsNullOrWhiteSpace(JanCD))
             {
                 txtJanCD.Text = JanCD;
-            } 
-            StartProgram();
+            }
             this.Text = "在庫確認";
             txtJanCD.Focus();
             //SetRequireField();
