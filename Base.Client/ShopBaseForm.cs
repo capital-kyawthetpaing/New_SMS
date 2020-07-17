@@ -139,6 +139,7 @@ namespace Base.Client
                 this.Close();
                 System.Environment.Exit(0);
             }
+            
 
             //共通処理　Operator 確認
             //[M_Staff]
@@ -147,7 +148,14 @@ namespace Base.Client
                 StaffCD = InOperatorCD
             };
 
+            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+             
+
+            MessageBox.Show(System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + "CKM.ini");
+
+            MessageBox.Show(bbl.GetCon());
             mse = loginbl.M_Staff_InitSelect(mse);
+          
 
             this.lblOperatorName.Text = mse.StaffName;
             //this.lblLoginDate.Text = mse.SysDate;

@@ -31,16 +31,29 @@ namespace TempoRegiZaikoKakunin
         {
             InProgramID = "TempoRegiZaikoKakunin";
             string data = InOperatorCD;
-            if(!string.IsNullOrWhiteSpace(JanCD))
-            {
-                txtJanCD.Text = JanCD;
-            } 
-            StartProgram();
+            //if(!string.IsNullOrWhiteSpace(JanCD))
+            //{
+            //    txtJanCD.Text = JanCD;
+            //}
+
+            
+            this.StartProgramForForm();
+            
+
             this.Text = "在庫確認";
             txtJanCD.Focus();
             //SetRequireField();
             chkColorSize.Checked = false;
             BtnP_text = "決定";
+
+            string[] cmds = System.Environment.GetCommandLineArgs();
+            if (cmds.Length - 1 > (int)ECmdLine.PcID)
+            {
+                string janCD = cmds[(int)ECmdLine.PcID + 1];   //
+                //ChangeOperationMode(EOperationMode.UPDATE);
+                txtJanCD.Text = janCD;
+                //CheckKey((int)EIndex.PurchaseNO, true);
+            }
         }
 
         private void SetRequireField()

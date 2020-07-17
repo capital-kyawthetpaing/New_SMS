@@ -27,6 +27,12 @@ namespace BL
             return result;
         }
 
+        public String GetCon()
+        {
+            Base_DL dl = new Base_DL();
+            return dl.GetConnectionString() ;
+        }
+
         /// <summary>
         /// select data from single table only
         /// </summary>
