@@ -75,6 +75,7 @@ namespace TempoRegiHanbaiTouroku
 
             ckmShop_Label7.Visible = false;
             lblZan.Visible = false;
+            ShowCloseMessage = false;
 
             OperationMode = mode;
             dse = dse1;
