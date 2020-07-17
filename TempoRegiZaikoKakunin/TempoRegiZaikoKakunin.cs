@@ -20,7 +20,11 @@ namespace TempoRegiZaikoKakunin
         TempoRegiZaikoKakunin_Entity kne = new TempoRegiZaikoKakunin_Entity();
 
         public string data = string.Empty;
+        public string CompanyCD = string.Empty;
         public string JanCD = string.Empty;
+        public string PcID = string.Empty;
+        public string OperatorCD = string.Empty;
+
 
         public frmTempoRegiZaikoKakunin()
         {
@@ -30,7 +34,11 @@ namespace TempoRegiZaikoKakunin
         private void frmTempoRegiZaikoKakunin_Load(object sender, EventArgs e)
         {
             InProgramID = "TempoRegiZaikoKakunin";
-            string data = InOperatorCD;           
+            
+            InPcID = PcID;
+            InOperatorCD = OperatorCD;
+            InCompanyCD = CompanyCD;
+            string data = InOperatorCD;
             StartProgram();
 
             if (!string.IsNullOrWhiteSpace(JanCD))
@@ -42,6 +50,9 @@ namespace TempoRegiZaikoKakunin
             //SetRequireField();
             chkColorSize.Checked = false;
             BtnP_text = "決定";
+
+
+
         }
 
         private void SetRequireField()
