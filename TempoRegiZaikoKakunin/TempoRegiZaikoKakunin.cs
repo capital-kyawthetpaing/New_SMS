@@ -20,6 +20,7 @@ namespace TempoRegiZaikoKakunin
         TempoRegiZaikoKakunin_Entity kne = new TempoRegiZaikoKakunin_Entity();
 
         public string data = string.Empty;
+        public string JanCD = string.Empty;
 
         public frmTempoRegiZaikoKakunin()
         {
@@ -30,6 +31,10 @@ namespace TempoRegiZaikoKakunin
         {
             InProgramID = "TempoRegiZaikoKakunin";
             string data = InOperatorCD;
+            if(!string.IsNullOrWhiteSpace(JanCD))
+            {
+                txtJanCD.Text = JanCD;
+            } 
             StartProgram();
             this.Text = "在庫確認";
             txtJanCD.Focus();
