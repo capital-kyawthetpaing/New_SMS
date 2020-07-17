@@ -59,6 +59,7 @@ namespace TempoRegiNyuukinTouroku
 
         public bool ErrorCheck()
         {
+
             if (!RequireCheck(new Control[] { txtPayment, cboDenominationName }))
                 return false;
 

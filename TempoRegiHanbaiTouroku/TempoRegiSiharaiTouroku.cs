@@ -438,6 +438,7 @@ namespace TempoRegiHanbaiTouroku
                 case 2:
                     if (btnProcess.Text == "次の販売へ")
                         //「次の販売へ」を押すと第一画面へ移ります（入力エリアはクリアします）。
+
                         this.Close();
                     else
                         Save();
