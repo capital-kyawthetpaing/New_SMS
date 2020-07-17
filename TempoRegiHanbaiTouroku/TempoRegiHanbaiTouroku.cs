@@ -599,8 +599,8 @@ namespace TempoRegiHanbaiTouroku
             int maxVertical = stHorizontal + 10;
             DataRow[] rows = dtBottunDetails.Select(" Horizontal >=" + stHorizontal + " AND Horizontal <" + maxVertical);
 
-            if (rows.Length == 0)
-                return;
+            //if (rows.Length == 0)
+            //    return;
 
             Clear(tableLayoutPanel3);
 
@@ -640,8 +640,8 @@ namespace TempoRegiHanbaiTouroku
             int maxGroupNO = stHorizontal + 14;
             DataRow[] rows = dtBottunGroup.Select(" GroupNO >=" + stHorizontal + " AND GroupNO <" + maxGroupNO);
 
-            if (rows.Length == 0)
-                return;
+            //if (rows.Length == 0)
+            //    return;
 
             Clear(tableLayoutPanel2);
 
