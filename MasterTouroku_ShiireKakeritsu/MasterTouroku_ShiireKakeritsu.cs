@@ -334,28 +334,37 @@ namespace MasterTouroku_ShiireKakeritsu
         #region ButtonClick for 【抽出条件】
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //SearchData();
-            //BindGrid();
-                string searchCondition = string.Empty;
-                if (!string.IsNullOrWhiteSpace(scBrandCD1.TxtCode.Text))
-                    searchCondition = "BrandCD = '" + scBrandCD1.TxtCode.Text + "'";
-                if (!string.IsNullOrWhiteSpace(scSportsCD1.TxtCode.Text))
-                    searchCondition = "SportsCD='" + scSportsCD1.TxtCode.Text + "'";
-                if (!string.IsNullOrWhiteSpace(scSegmentCD1.TxtCode.Text))
-                    searchCondition = "SegmentCD= '" + scSegmentCD1.TxtCode.Text + "'";
-                if (!string.IsNullOrWhiteSpace(cbo_Year1.Text))
-                    searchCondition = "LastYearTerm='" + cbo_Year1.Text + "'";
-                if (!string.IsNullOrWhiteSpace(cbo_Season1.Text))
-                    searchCondition = "LastSeason= '" + cbo_Season1.Text + "'";
-                if (!string.IsNullOrWhiteSpace(txtDate.Text))
-                    searchCondition = "ChangeDate= '" + txtDate.Text;
-                if (dgv_ShiireKakeritsu.DataSource != null)
-                {
-                    dgv_ShiireKakeritsu.DataSource = dtMain;
-                    DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
-                    dvMain.RowFilter = searchCondition;
-                    dgv_ShiireKakeritsu.DataSource = dvMain;
-                }
+            string searchCondition = string.Empty;
+            if (!string.IsNullOrWhiteSpace(scBrandCD1.TxtCode.Text))
+            {
+                searchCondition = "BrandCD = '" + scBrandCD1.TxtCode.Text + "'";
+            }
+            if (!string.IsNullOrWhiteSpace(scSportsCD1.TxtCode.Text))
+            {
+                searchCondition += "and SportsCD='" + scSportsCD1.TxtCode.Text + "'";
+            }
+            if (!string.IsNullOrWhiteSpace(scSegmentCD1.TxtCode.Text))
+            {
+                searchCondition += "and SegmentCD= '" + scSegmentCD1.TxtCode.Text + "'";
+            }
+            if (!string.IsNullOrWhiteSpace(cbo_Year1.Text))
+            {
+                searchCondition += "and LastYearTerm='" + cbo_Year1.Text + "'";
+            }
+            if (!string.IsNullOrWhiteSpace(cbo_Season1.Text))
+            {
+                searchCondition += "and LastSeason= '" + cbo_Season1.Text + "'";
+            }
+            if (!string.IsNullOrWhiteSpace(txtDate.Text))
+            {
+                searchCondition += "and ChangeDate= '" + txtDate.Text;
+            }
+            if (dgv_ShiireKakeritsu.DataSource != null)
+            {
+                DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
+                dvMain.RowFilter = searchCondition;
+                dgv_ShiireKakeritsu.DataSource = dvMain;
+            }
         }
         private void SearchData()
         {
@@ -535,21 +544,51 @@ namespace MasterTouroku_ShiireKakeritsu
             dgv_ShiireKakeritsu.DataSource = dtMain;
             if (dgv_ShiireKakeritsu.Rows.Count > 0)
             {
+                //string searchCondition = string.Empty;
+                //if (!string.IsNullOrWhiteSpace(scBrandCD.TxtCode.Text))
+                //    searchCondition = "BrandCD = '" + scBrandCD.TxtCode.Text + "'";
+                //if (!string.IsNullOrWhiteSpace(scSportsCD.TxtCode.Text))
+                //    searchCondition = "SportsCD='" + scSportsCD.TxtCode.Text + "'";
+                //if (!string.IsNullOrWhiteSpace(scSegmentCD.TxtCode.Text))
+                //    searchCondition = "SegmentCD= '" + scSegmentCD.TxtCode.Text + "'";
+                //if (!string.IsNullOrWhiteSpace(cbo_Year.Text))
+                //    searchCondition = "LastYearTerm='" + cbo_Year.Text + "'";
+                //if (!string.IsNullOrWhiteSpace(cbo_Season.Text))
+                //    searchCondition = "LastSeason= '" + cbo_Season.Text + "'";
+                //if (!string.IsNullOrWhiteSpace(txtChangeDate.Text))
+                //    searchCondition = "ChangeDate= '" + txtChangeDate.Text + "'";
+                //if (!string.IsNullOrWhiteSpace(txtRate.Text))
+                //    searchCondition = "Rate= '" + txtRate.Text + "'";
                 string searchCondition = string.Empty;
                 if (!string.IsNullOrWhiteSpace(scBrandCD.TxtCode.Text))
+                {
                     searchCondition = "BrandCD = '" + scBrandCD.TxtCode.Text + "'";
+                }
                 if (!string.IsNullOrWhiteSpace(scSportsCD.TxtCode.Text))
-                    searchCondition = "SportsCD='" + scSportsCD.TxtCode.Text + "'";
+                {
+                    searchCondition += "and SportsCD='" + scSportsCD.TxtCode.Text + "'";
+                }
                 if (!string.IsNullOrWhiteSpace(scSegmentCD.TxtCode.Text))
-                    searchCondition = "SegmentCD= '" + scSegmentCD.TxtCode.Text + "'";
-                if (!string.IsNullOrWhiteSpace(cbo_Year.Text))
-                    searchCondition = "LastYearTerm='" + cbo_Year.Text + "'";
+                {
+                    searchCondition += "and SegmentCD= '" + scSegmentCD.TxtCode.Text + "'";
+                }
+                if (!string.IsNullOrWhiteSpace(cbo_Year1.Text))
+                {
+                    searchCondition += "and LastYearTerm='" + cbo_Year.Text + "'";
+                }
                 if (!string.IsNullOrWhiteSpace(cbo_Season.Text))
-                    searchCondition = "LastSeason= '" + cbo_Season.Text + "'";
+                {
+                    searchCondition += "and LastSeason= '" + cbo_Season.Text + "'";
+                }
                 if (!string.IsNullOrWhiteSpace(txtChangeDate.Text))
-                    searchCondition = "ChangeDate= '" + txtChangeDate.Text + "'";
+                {
+                    searchCondition += "and ChangeDate= '" + txtChangeDate.Text;
+                }
                 if (!string.IsNullOrWhiteSpace(txtRate.Text))
-                    searchCondition = "Rate= '" + txtRate.Text + "'";
+                {
+                     searchCondition = "and Rate= '" + txtRate.Text + "'";
+                }
+
                 if (!string.IsNullOrWhiteSpace(searchCondition))
                 {
                     DataRow[] dr = dtMain.Select(searchCondition);
@@ -699,21 +738,6 @@ namespace MasterTouroku_ShiireKakeritsu
             //dgv_ShiireKakeritsu.DataSource = dvMain;
         }
         #endregion
-        /// <summary>
-        /// For Rate Textbox
-        /// </summary>
-        /// <returns></returns>
-        //private bool NumberCheck()
-        //{
-        //    if (!string.IsNullOrWhiteSpace(txtRate.Text) && !bbl.IsInteger(txtRate.Text))
-        //    {
-        //        IsNumber = false;
-        //        mskbl.ShowMessage("E118");
-        //        return false;
-        //    }
-        //    MoveNext = true;
-        //    return true;
-        //}
         private void F11()
         {
             moe = GetSearchInfo();
