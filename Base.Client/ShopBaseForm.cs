@@ -147,13 +147,6 @@ namespace Base.Client
             {
                 StaffCD = InOperatorCD
             };
-
-            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
-             
-
-            MessageBox.Show(System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + "CKM.ini");
-
-            MessageBox.Show(bbl.GetCon());
             mse = loginbl.M_Staff_InitSelect(mse);
           
 
