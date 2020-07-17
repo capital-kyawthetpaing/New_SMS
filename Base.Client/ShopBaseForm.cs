@@ -139,6 +139,7 @@ namespace Base.Client
                 this.Close();
                 System.Environment.Exit(0);
             }
+            
 
             //共通処理　Operator 確認
             //[M_Staff]
@@ -146,8 +147,8 @@ namespace Base.Client
             {
                 StaffCD = InOperatorCD
             };
-
             mse = loginbl.M_Staff_InitSelect(mse);
+          
 
             this.lblOperatorName.Text = mse.StaffName;
             //this.lblLoginDate.Text = mse.SysDate;

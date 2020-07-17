@@ -41,16 +41,24 @@ namespace TempoRegiZaikoKakunin
             string data = InOperatorCD;
             StartProgram();
 
-            if (!string.IsNullOrWhiteSpace(JanCD))
-            {
-                txtJanCD.Text = JanCD;
-            }
+            //if (!string.IsNullOrWhiteSpace(JanCD))
+            //{
+            //    txtJanCD.Text = JanCD;
+            //}
             this.Text = "在庫確認";
             txtJanCD.Focus();
             //SetRequireField();
             chkColorSize.Checked = false;
             BtnP_text = "決定";
 
+            string[] cmds = System.Environment.GetCommandLineArgs();
+            if (cmds.Length - 1 > (int)ECmdLine.PcID)
+            {
+                string shiireNO = cmds[(int)ECmdLine.PcID + 1];   //
+                //ChangeOperationMode(EOperationMode.UPDATE);
+                txtJanCD.Text = shiireNO;
+               // CheckKey((int)EIndex.PurchaseNO, true);
+            }
 
 
         }
