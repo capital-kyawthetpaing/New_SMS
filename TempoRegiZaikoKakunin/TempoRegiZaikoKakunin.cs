@@ -201,5 +201,11 @@ namespace TempoRegiZaikoKakunin
         {
             DataSending();
         }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            TempoRegiShouhinKensaku frmshouhin = new TempoRegiShouhinKensaku(InOperatorCD);
+            frmshouhin.ShowDialog();
+        }
     }
 }
