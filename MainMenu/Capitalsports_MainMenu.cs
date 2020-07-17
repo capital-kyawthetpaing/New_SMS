@@ -17,6 +17,8 @@ using Microsoft.PointOfService;
 using System.Data.SqlClient;
 //using Base.Client;
 using EPSON_TM30;
+using System.Threading;
+
 namespace MainMenu
 {
     public partial class Capitalsports_MainMenu : Form
@@ -402,23 +404,30 @@ namespace MainMenu
                     //    return;
                     //}
 
-                    if (programID.TrimEnd() == "販売登録" || exe_name == "TempoRegiHanbaiTouroku")
+                    if (programID.TrimEnd() == "販売登録" || exe_name == "TempoRegiHanbaiTouroku" ||exe_name == "TempoRegiHanbaiTouroku.exe")
                     {
                         try
                         {
                             if (Base_DL.iniEntity.IsDM_D30Used)
+                            {
                                 cdo.RemoveDisplay();
+                            }
                             // Base_DL.Ini_Entity_CDP.CDO_DISPLAY.RemoveDisplay();
                         }
                         catch
                         {
-
+                            MessageBox.Show("Reclick on HBT");
                         }
                     }
                     Process[] localByName = Process.GetProcessesByName(exe_name);
                     if (localByName.Count() > 0)
                     {
-                        IntPtr handle = localByName[0].MainWindowHandle;
+                        //if (programID.TrimEnd() == "販売登録" || exe_name == "TempoRegiHanbaiTouroku" || exe_name == "TempoRegiHanbaiTouroku.exe")
+                        //{
+                        //  //  Login_BL bbl_1 = new Login_BL();
+                        // //   bbl_1.Display_Service_Update(false);
+                        //}
+                            IntPtr handle = localByName[0].MainWindowHandle;
                         ShowWindow(handle, SW_SHOWMAXIMIZED);
                         SetForegroundWindow(handle);
                         return;
@@ -430,34 +439,29 @@ namespace MainMenu
 
                     ///ptk
                     /// (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");
-                    if (programID.TrimEnd() == "販売登録" || exe_name == "TempoRegiHanbaiTouroku")
-                    {
-                        //ProcessStartInfo startInfo = new ProcessStartInfo(filePath + @"\" + exe_name+".exe", cmdLine + "");
-                        //  startInfo.FileName = exe_name + ".exe";
-                        try
-                        {
-                            using (Process exeProcess = Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + ""))
-                            {
-                                if (Base_DL.iniEntity.IsDM_D30Used)
-                                {
-                                    //MessageBox.Show("Before wait For Exit");
-                                    exeProcess.WaitForExit();
-                                    // MessageBox.Show("Skipped wait For Exit");
-                                    cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
-                                    // MessageBox.Show("After Set Disp");
-                                }
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message + filePath + @"\" + exe_name + ".exe");
-                        }
+                    //if (programID.TrimEnd() == "販売登録" || exe_name == "TempoRegiHanbaiTouroku")
+                    //{
+                    //    try
+                    //    {
+                    //        using (Process exeProcess = Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + ""))
+                    //        {
+                    //            if (Base_DL.iniEntity.IsDM_D30Used)
+                    //            {
+                    //                exeProcess.WaitForExit();
+                    //                cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+                    //            }
+                    //        }
+                    //    }
+                    //    catch (Exception ex)
+                    //    {
+                    //        MessageBox.Show(ex.Message + filePath + @"\" + exe_name + ".exe");
+                    //    }
 
-                    }
-                    else
-                    {
+                    //}
+                    //else
+                    //{
                         (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");
-                    }
+                    //}
                     ///ptk
                 }
             }
@@ -517,6 +521,16 @@ namespace MainMenu
             }
             try
             {
+                Login_BL lbl = new Login_BL();
+                try
+                {
+                    lbl.Display_Service_Update(false);
+                    Thread.Sleep(3 * 1000);
+                    lbl.Display_Service_Enabled(false);
+                }
+                catch {
+
+                }
                 cdo.RemoveDisplay();
                // true, true,Base_DL.iniEntity.DefaultMessage
               //  Base_DL.Ini_Entity_CDP.CDO_DISPLAY.RemoveDisplay();
