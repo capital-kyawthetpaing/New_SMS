@@ -94,10 +94,10 @@
             this.btnInquery.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnInquery.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
             this.btnInquery.ForeColor = System.Drawing.Color.Black;
-            this.btnInquery.Location = new System.Drawing.Point(1730, 139);
+            this.btnInquery.Location = new System.Drawing.Point(1730, 142);
             this.btnInquery.Margin = new System.Windows.Forms.Padding(1);
             this.btnInquery.Name = "btnInquery";
-            this.btnInquery.Size = new System.Drawing.Size(120, 45);
+            this.btnInquery.Size = new System.Drawing.Size(120, 41);
             this.btnInquery.TabIndex = 2;
             this.btnInquery.Text = "照会";
             this.btnInquery.UseVisualStyleBackColor = false;
@@ -127,7 +127,7 @@
             this.lblItemName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblItemName.FontBold = true;
             this.lblItemName.ForeColor = System.Drawing.Color.Black;
-            this.lblItemName.Location = new System.Drawing.Point(499, 136);
+            this.lblItemName.Location = new System.Drawing.Point(445, 134);
             this.lblItemName.Name = "lblItemName";
             this.lblItemName.Size = new System.Drawing.Size(1100, 70);
             this.lblItemName.TabIndex = 49;
@@ -144,7 +144,7 @@
             this.lblColorSize.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblColorSize.FontBold = true;
             this.lblColorSize.ForeColor = System.Drawing.Color.Black;
-            this.lblColorSize.Location = new System.Drawing.Point(510, 210);
+            this.lblColorSize.Location = new System.Drawing.Point(445, 210);
             this.lblColorSize.Name = "lblColorSize";
             this.lblColorSize.Size = new System.Drawing.Size(600, 40);
             this.lblColorSize.TabIndex = 50;
@@ -375,10 +375,10 @@
             this.btnProduct.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnProduct.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
             this.btnProduct.ForeColor = System.Drawing.Color.Black;
-            this.btnProduct.Location = new System.Drawing.Point(39, 137);
+            this.btnProduct.Location = new System.Drawing.Point(44, 140);
             this.btnProduct.Margin = new System.Windows.Forms.Padding(1);
             this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Size = new System.Drawing.Size(125, 45);
+            this.btnProduct.Size = new System.Drawing.Size(120, 41);
             this.btnProduct.TabIndex = 57;
             this.btnProduct.Text = "商 品";
             this.btnProduct.UseVisualStyleBackColor = false;
