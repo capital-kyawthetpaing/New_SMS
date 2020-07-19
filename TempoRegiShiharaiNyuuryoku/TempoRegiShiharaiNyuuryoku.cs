@@ -95,15 +95,17 @@ namespace TempoRegiShiharaiNyuuryoku
             {
                 if (trgshbl.ShowMessage("Q101") == DialogResult.Yes)
                 {
-                    if (Base_DL.iniEntity.IsDM_D30Used)
-                    {
-                        CashDrawerOpen op = new CashDrawerOpen(); 
-                        op.OpenCashDrawer();
-                    }
+                   
                     ddpe = GetDepositEntity();
                     if (trgshbl.TempoRegiShiNyuuryoku_InsertUpdate(ddpe))
                     {
-                        trgshbl.ShowMessage("I101");                      
+                        trgshbl.ShowMessage("I101");
+                        RunConsole();//exeRun    <<<< PTK
+                        if (Base_DL.iniEntity.IsDM_D30Used)
+                        {
+                            CashDrawerOpen op = new CashDrawerOpen();
+                            op.OpenCashDrawer();   // <<<< PTK
+                        }
                         txtPayment.Clear();
                         txtPayment.Focus();
                         cboDenominationName.SelectedValue = "-1";
@@ -111,7 +113,7 @@ namespace TempoRegiShiharaiNyuuryoku
                         DisplayData();                       
                     }
                 }
-                RunConsole();//exeRun
+                
             }
         }
 

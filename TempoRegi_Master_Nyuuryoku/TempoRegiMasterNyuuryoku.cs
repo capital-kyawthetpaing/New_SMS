@@ -30,6 +30,7 @@ namespace TempoRegi_Master_Nyuuryoku
         string radiovalue = "";
         string btnNameDetails =string.Empty;
         string BtnName = string.Empty;
+        string cd = string.Empty;
         Button btn1 = null, btn2 = null;
         public TempoRegiMasterNyuuryoku()
         {
@@ -403,6 +404,7 @@ namespace TempoRegi_Master_Nyuuryoku
             vertical = ctrlName1.Substring(ctrlName1.Length - 1);
             lblNameNO.Visible = true;
             lblNameNO.Text = string.Empty;
+            cd = string.Empty;
             if (lblGroupNO.Text.Equals("Btn1_No")) return;
             groupno = lblGroupNO.Text.Replace("番目", "");
 
@@ -422,9 +424,9 @@ namespace TempoRegi_Master_Nyuuryoku
                     else
                     {
                         lblNameNO.Text = results[0]["Horizontal"].ToString() + "番目の下";
-                    }
+                    } 
 
-                    txtCD.Text = results[0]["Button"].ToString();
+                    txtCD.Text = cd =results[0]["Button"].ToString();
                 }
 
                 foreach (DataRow row in results)
@@ -525,7 +527,7 @@ namespace TempoRegi_Master_Nyuuryoku
                 {
                     txtCD.Text = tpoShouhin.JANCD;
                     lblAdminNO.Text = tpoShouhin.AdminNO;
-                    lblSearchName.Text = "名称" + " " + tpoShouhin.SKUName;
+                    lblSearchName.Text = tpoShouhin.SKUName;
                 }
 
             }
@@ -537,7 +539,7 @@ namespace TempoRegi_Master_Nyuuryoku
                 if (!string.IsNullOrEmpty(tgkkk.CustomerCD))
                 {
                     txtCD.Text = tgkkk.CustomerCD;
-                    lblSearchName.Text = "名称" + " " + tgkkk.CustomerName;
+                    lblSearchName.Text = tgkkk.CustomerName;
                     lblAdminNO.Text = string.Empty;
                 }
 
@@ -559,8 +561,7 @@ namespace TempoRegi_Master_Nyuuryoku
                         {
                             txtCD.Text = dtSKU.Rows[0]["JanCD"].ToString();
                             lblAdminNO.Text = dtSKU.Rows[0]["AdminNO"].ToString();
-                            lblSearchName.Text = "名称" + " " + dtSKU.Rows[0]["SKUName"].ToString();
-
+                            lblSearchName.Text =dtSKU.Rows[0]["SKUName"].ToString();
                         }
                         else
                         {
@@ -569,7 +570,7 @@ namespace TempoRegi_Master_Nyuuryoku
                             if (!frmsku.flgCancel)
                             {
                                 lblAdminNO.Text = frmsku.AdminNO;
-                                lblSearchName.Text = "名称" + " " + frmsku.SKUName;
+                                lblSearchName.Text = frmsku.SKUName;
                             }
 
                         }
@@ -578,9 +579,12 @@ namespace TempoRegi_Master_Nyuuryoku
                     }
                     else
                     {
+                        lblSearchName.Text = string.Empty;
+                        lblAdminNO.Text = string.Empty;
                         mnrk_bl.ShowMessage("E101");
                         txtCD.Focus();
                     }
+
 
 
                 }
@@ -595,7 +599,7 @@ namespace TempoRegi_Master_Nyuuryoku
                             if (dtCusto.Rows.Count == 1)
                             {
                                 txtCD.Text = dtCusto.Rows[0]["CustomerCD"].ToString();
-                                lblSearchName.Text = "名称" + " " + dtCusto.Rows[0]["CustomerName"].ToString();
+                                lblSearchName.Text =dtCusto.Rows[0]["CustomerName"].ToString();
                             }
                             lblSearchName.Visible = true;
                             lblAdminNO.Text = string.Empty;
@@ -618,6 +622,21 @@ namespace TempoRegi_Master_Nyuuryoku
                         mnrk_bl.ShowMessage("E101");
                         txtCD.Focus();
                     }
+                }
+
+
+                if (!cd.Equals(txtCD.Text.ToString()))
+                {
+                    cd = txtCD.Text.ToString();
+                    string skuName = lblSearchName.Text.ToString();
+                    int len = Convert.ToInt32(Encoding.GetEncoding(932).GetByteCount(skuName));
+                    while (len > 18)
+                    {
+                        skuName = skuName.Remove(skuName.Length - 1, 1);
+                        len = Convert.ToInt32(Encoding.GetEncoding(932).GetByteCount(skuName));
+                    }
+                    txtBtnNameDown.Text = skuName;
+
                 }
 
             }
@@ -731,7 +750,7 @@ namespace TempoRegi_Master_Nyuuryoku
                 if (dt.Rows.Count == 1)
                 {
                     txtCD.Text = dt.Rows[0]["JanCD"].ToString();
-                    lblSearchName.Text = "名称" + " " + dt.Rows[0]["SKUName"].ToString();
+                    lblSearchName.Text =dt.Rows[0]["SKUName"].ToString();
                     lblSearchName.Visible = true;
                 }
                 else
@@ -745,9 +764,11 @@ namespace TempoRegi_Master_Nyuuryoku
                 if (dt.Rows.Count == 1)
                 {
                     txtCD.Text = dt.Rows[0]["CustomerCD"].ToString();
-                    lblSearchName.Text = "名称" + " " + dt.Rows[0]["CustomerName"].ToString();
+                    lblSearchName.Text = dt.Rows[0]["CustomerName"].ToString();
                     lblSearchName.Visible = true;
                 }
+                else
+                    lblSearchName.Text = string.Empty;
             }
         }
     }

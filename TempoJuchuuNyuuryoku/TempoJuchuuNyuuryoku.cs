@@ -3412,7 +3412,6 @@ namespace TempoJuchuuNyuuryoku
             //[M_JANOrderPrice]
             M_JANOrderPrice_Entity mje = new M_JANOrderPrice_Entity
             {
-
                 //①JAN発注単価マスタ（店舗指定なし）
                 AdminNO = mGrid.g_DArray[row].AdminNO,
                 VendorCD = mGrid.g_DArray[row].VendorCD,

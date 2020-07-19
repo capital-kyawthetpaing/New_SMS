@@ -141,16 +141,17 @@ namespace TempoRegiTsurisenJyunbi
                 {
                     if (trtjb.ShowMessage("Q101") == DialogResult.Yes)
                     {
-                        if (Base_DL.iniEntity.IsDM_D30Used)
-                        {
-                            CashDrawerOpen op = new CashDrawerOpen(); //ses
-                            op.OpenCashDrawer();
-                        }
+                      
                         mre = DepositHistoryEnity();
                         if (trtjb.TempoRegiTsurisenJyunbi_Insert_Update(mre))
                         {
                             trtjb.ShowMessage("I101");
                             RunConsole();
+                            if (Base_DL.iniEntity.IsDM_D30Used)
+                            {
+                                CashDrawerOpen op = new CashDrawerOpen(); //ses   << PTK
+                                op.OpenCashDrawer();
+                            }
                             txtDate.Clear();
                             DepositGaku.Clear();
                             Remark.Clear();

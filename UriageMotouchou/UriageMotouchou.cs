@@ -22,7 +22,6 @@ namespace UriageMotouchou
         L_Log_Entity lle ;
         DataTable dtReport,dtCheck;
         CrystalDecisions.Windows.Forms.CrystalReportViewer crvr;
-        Viewer vr;
         public UriageMotouchou()
         {
             InitializeComponent();
@@ -184,12 +183,11 @@ namespace UriageMotouchou
                         umtc_Report.SetParameterValue("CustomerCD", sc_Customer.TxtCode.Text);
                         umtc_Report.SetParameterValue("CustName", sc_Customer.LabelText);
                         umtc_Report.SetParameterValue("StoreCD", cboStore.Text);
-                        vr = new Viewer();
-                        crvr = vr.CrystalReportViewer1;
+                        //crvr = vr.CrystalReportViewer1;
 
                         if (DResult == DialogResult.Yes)
                         {
-                            //印刷処理プレビュー
+                            var vr = new Viewer();
                             vr.CrystalReportViewer1.ShowPrintButton = true;
                             vr.CrystalReportViewer1.ReportSource = umtc_Report;
                             vr.ShowDialog();

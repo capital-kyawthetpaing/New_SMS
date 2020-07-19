@@ -11,6 +11,11 @@ namespace TempoRegiJournal
     public partial class TempoRegiJournal : ShopBaseForm
     {
         /// <summary>
+        /// 製品名上段文字数
+        /// </summary>
+        private const int SKU_SHORTNAME_LENGTH = 20;
+
+        /// <summary>
         /// BL
         /// </summary>
         TempoRegiJournal_BL bl = new TempoRegiJournal_BL();
@@ -118,14 +123,24 @@ namespace TempoRegiJournal
         {
             if (ErrorCheck())
             {
-                var journal = bl.D_JournalSelect(StoreCD, txtPrintDateFrom.Text, txtPrintDateTo.Text);
-                if (journal.Rows.Count > 0)
+                var dataNum = bl.D_CheckStoreCalculation(StoreCD, txtPrintDateFrom.Text, txtPrintDateTo.Text);
+
+                var value = ConvertDecimal(dataNum.Rows[0]["DataNum"]);
+                if (string.IsNullOrWhiteSpace(value) || Convert.ToInt32(value) == 0)
                 {
-                    OutputJournal(journal);
+                    bl.ShowMessage("E244");
                 }
                 else
                 {
-                    bl.ShowMessage("E128");
+                    var journal = bl.D_JournalSelect(StoreCD, txtPrintDateFrom.Text, txtPrintDateTo.Text);
+                    if (journal.Rows.Count > 0)
+                    {
+                        OutputJournal(journal);
+                    }
+                    else
+                    {
+                        bl.ShowMessage("E128");
+                    }
                 }
             }
         }
@@ -136,8 +151,8 @@ namespace TempoRegiJournal
         /// <param name="data">データ</param>
         private void OutputJournal(DataTable data)
         {
-            var storeDataSet = CreateStoreDataSet(data, PrintCheckBox.Checked );
-            if(storeDataSet.StoreTable.Count == 0)
+            var storeDataSet = CreateStoreDataSet(data, PrintCheckBox.Checked);
+            if (storeDataSet.StoreTable.Count == 0)
             {
                 bl.ShowMessage("E128");
             }
@@ -146,8 +161,10 @@ namespace TempoRegiJournal
                 // プレビューを開く
                 var preview = new TempoRegiJournalPreview
                 {
-                    Store = storeDataSet
+                    Store = storeDataSet,
+                    StorePrinterName = StorePrinterName
                 };
+
                 preview.SetJournalDataSet();
                 preview.ShowDialog();
             }
@@ -167,11 +184,11 @@ namespace TempoRegiJournal
             {
                 var row = data.Rows[index];
 
-                //if (string.IsNullOrWhiteSpace(ConvertDateTime(row["IssueDate"])))
-                //{
-                //    // 発行日時がないデータは出力対象外
-                //    continue;
-                //}
+                if (string.IsNullOrWhiteSpace(ConvertDateTime(row["IssueDate"], false)))
+                {
+                    // 発行日時がないデータは出力対象外
+                    continue;
+                }
 
                 // 共通データ
                 var salesNO = Convert.ToString(row["SalesNO"]);                             // 売上番号
@@ -198,188 +215,213 @@ namespace TempoRegiJournal
                 sales.StoreReceiptPrint = storeReceiptPrint;                                    // 店舗レシート表記
                 sales.StaffReceiptPrint = staffReceiptPrint;                                    // 担当レシート表記
                 sales.SalesNO = salesNO;                                                        // 売上番号
-                sales.IssueDate = ConvertDateTime(row["IssueDate"]);                            // 発行日時
+                sales.IssueDate = ConvertDateTime(row["IssueDate"], false);                     // 発行日
+                sales.IssueDateTime = Convert.ToString(row["IssueDate"]);                       // 発行日時
                 sales.JanCD = Convert.ToString(row["JanCD"]);                                   // JANCD
-                sales.SalesUnitPrice = ConvertDecimal(row["SalesUnitPrice"]);                   // 単価
-                sales.SalesSU = ConvertDecimal(row["SalesSU"]);                                 // 数量
-                sales.SalesGaku = ConvertDecimal(row["SalesGaku"]);                             // 価格
+
+                var kakaku = ConvertDecimal(row["Kakaku"]);                                     // 価格
+
+                //数量が0の場合は1として処理、その場合、単価は価格を割り当てる
+                var salesSU = ConvertDecimal(row["SalesSU"]);
+                if (string.IsNullOrWhiteSpace(salesSU))
+                {
+                    sales.SalesSU = "1";                                                        // 数量
+                    sales.SalesUnitPrice = kakaku;                                              // 単価
+                }
+                else
+                {
+                    sales.SalesSU = salesSU;                                                    // 数量
+                    sales.SalesUnitPrice = ConvertDecimal(row["SalesUnitPrice"]);               // 単価
+                }
+
+                sales.SalesGaku = kakaku;                                                       // 価格
                 sales.SalesTax = ConvertDecimal(row["SalesTax"]);                               // 売上消費税額
                 sales.SalesTaxRate = ConvertDecimal(row["SalesTaxRate"]) == "8" ? "*" : "";     // 税率
                 sales.TotalGaku = ConvertDecimal(row["TotalGaku"]);                             // 販売合計額
-                                                                                                // 商品名
+
+                // 商品名
                 var skuShortName = Convert.ToString(row["SKUShortName"]);
-                if(skuShortName.Length < 16)
+                if (skuShortName.Length < SKU_SHORTNAME_LENGTH)
                 {
                     sales.SKUShortName1 = skuShortName;
                     sales.SKUShortName2 = "";
                 }
                 else
                 {
-                    var skuShortNames = CountSplit(skuShortName, 16);
+                    var skuShortNames = CountSplit(skuShortName, SKU_SHORTNAME_LENGTH);
                     sales.SKUShortName1 = skuShortNames[0];
                     sales.SKUShortName2 = skuShortNames.Length > 1 ? skuShortNames[1] : "";
                 }
-                //
-                storeDataSet.SalesTable.Rows.Add(sales);
 
                 #region 合計データ
-                if(storeDataSet.SalesSummaryTable.Where(s => s.SalesNO == salesNO).FirstOrDefault() == null)
-                {
-                    var salesSummary = storeDataSet.SalesSummaryTable.NewSalesSummaryTableRow();
-                    salesSummary.SalesNO = salesNO;                                                 // 売上番号
-                    salesSummary.SumSalesSU = ConvertDecimal(row["SumSalesSU"]);                    // 小計数量
-                    salesSummary.Subtotal = ConvertDecimal(row["Subtotal"]);                        // 小計金額
-                    salesSummary.TargetAmount8 = ConvertDecimal(row["TargetAmount8"]);              // 消費税対象額8%
-                    salesSummary.ConsumptionTax8 = ConvertDecimal(row["ConsumptionTax8"]);          // 内消費税等8%
-                    salesSummary.TargetAmount10 = ConvertDecimal(row["TargetAmount10"]);            // 消費税対象額10%
-                    salesSummary.ConsumptionTax10 = ConvertDecimal(row["ConsumptionTax10"]);        // 内消費税等10%
-                    salesSummary.Total = ConvertDecimal(row["Total"]);                              // 合計
-                    //
-                    storeDataSet.SalesSummaryTable.Rows.Add(salesSummary);
-                }
+                sales.SumSalesSU = ConvertDecimal(row["SumSalesSU"]);                           // 小計数量
+                sales.Subtotal = ConvertDecimal(row["Subtotal"]);                               // 小計金額
+                sales.TargetAmount8 = ConvertDecimal(row["TargetAmount8"]);                     // 消費税対象額8%
+                sales.ConsumptionTax8 = ConvertDecimal(row["ConsumptionTax8"]);                 // 内消費税等8%
+                sales.TargetAmount10 = ConvertDecimal(row["TargetAmount10"]);                   // 消費税対象額10%
+                sales.ConsumptionTax10 = ConvertDecimal(row["ConsumptionTax10"]);               // 内消費税等10%
+                sales.Total = ConvertDecimal(row["Total"]);                                     // 合計
                 #endregion // 合計データ
 
-                #region お釣りデータ
-                if (storeDataSet.RefundTable.Where(s => s.SalesNO == salesNO).FirstOrDefault() == null)
-                {
-                    var refund = storeDataSet.RefundTable.NewRefundTableRow();
-                    refund.SalesNO = salesNO;                                                       // 売上番号
-                    refund.Refund = ConvertDecimal(row["Refund"]);                                  // 釣銭
-                    refund.DiscountGaku = ConvertDecimal(row["DiscountGaku"]);                      // 値引額
-                    //
-                    storeDataSet.RefundTable.Rows.Add(refund);
-                }
-                #endregion // お釣りデータ
-
                 #region 支払方法
-                if (storeDataSet.PaymentTable.Where(s => s.SalesNO == salesNO).FirstOrDefault() == null)
-                {
-                    var payment = storeDataSet.PaymentTable.NewPaymentTableRow();
-                    payment.SalesNO = salesNO;                                                      // 売上番号
-                    payment.Name1 = Convert.ToString(row["PaymentName1"]);                          // 支払方法名1
-                    payment.Amount1 = ConvertDecimal(row["AmountPay1"]);                            // 支払方法額1
-                    payment.Name2 = Convert.ToString(row["PaymentName2"]);                          // 支払方法名2
-                    payment.Amount2 = ConvertDecimal(row["AmountPay2"]);                            // 支払方法額2
-                    payment.Name3 = Convert.ToString(row["PaymentName3"]);                          // 支払方法名3
-                    payment.Amount3 = ConvertDecimal(row["AmountPay3"]);                            // 支払方法額3
-                    payment.Name4 = Convert.ToString(row["PaymentName4"]);                          // 支払方法名4
-                    payment.Amount4 = ConvertDecimal(row["AmountPay4"]);                            // 支払方法額4
-                    payment.Name5 = Convert.ToString(row["PaymentName5"]);                          // 支払方法名5
-                    payment.Amount5 = ConvertDecimal(row["AmountPay5"]);                            // 支払方法額5
-                    payment.Name6 = Convert.ToString(row["PaymentName6"]);                          // 支払方法名6
-                    payment.Amount6 = ConvertDecimal(row["AmountPay6"]);                            // 支払方法額6
-                    payment.Name7 = Convert.ToString(row["PaymentName7"]);                          // 支払方法名7
-                    payment.Amount7 = ConvertDecimal(row["AmountPay7"]);                            // 支払方法額7
-                    payment.Name8 = Convert.ToString(row["PaymentName8"]);                          // 支払方法名8
-                    payment.Amount8 = ConvertDecimal(row["AmountPay8"]);                            // 支払方法額8
-                    payment.Name9 = Convert.ToString(row["PaymentName9"]);                          // 支払方法名9
-                    payment.Amount9 = ConvertDecimal(row["AmountPay9"]);                            // 支払方法額9
-                    payment.Name10 = Convert.ToString(row["PaymentName10"]);                        // 支払方法名10
-                    payment.Amount10 = ConvertDecimal(row["AmountPay10"]);                          // 支払方法額10
-                    //
-                    storeDataSet.PaymentTable.Rows.Add(payment);
-                }
+                sales.PaymentName1 = Convert.ToString(row["PaymentName1"]);                     // 支払方法名1
+                sales.PaymentAmount1 = ConvertDecimal(row["AmountPay1"]);                       // 支払方法額1
+                sales.PaymentName2 = Convert.ToString(row["PaymentName2"]);                     // 支払方法名2
+                sales.PaymentAmount2 = ConvertDecimal(row["AmountPay2"]);                       // 支払方法額2
+                sales.PaymentName3 = Convert.ToString(row["PaymentName3"]);                     // 支払方法名3
+                sales.PaymentAmount3 = ConvertDecimal(row["AmountPay3"]);                       // 支払方法額3
+                sales.PaymentName4 = Convert.ToString(row["PaymentName4"]);                     // 支払方法名4
+                sales.PaymentAmount4 = ConvertDecimal(row["AmountPay4"]);                       // 支払方法額4
+                sales.PaymentName5 = Convert.ToString(row["PaymentName5"]);                     // 支払方法名5
+                sales.PaymentAmount5 = ConvertDecimal(row["AmountPay5"]);                       // 支払方法額5
+                sales.PaymentName6 = Convert.ToString(row["PaymentName6"]);                     // 支払方法名6
+                sales.PaymentAmount6 = ConvertDecimal(row["AmountPay6"]);                       // 支払方法額6
+                sales.PaymentName7 = Convert.ToString(row["PaymentName7"]);                     // 支払方法名7
+                sales.PaymentAmount7 = ConvertDecimal(row["AmountPay7"]);                       // 支払方法額7
+                sales.PaymentName8 = Convert.ToString(row["PaymentName8"]);                     // 支払方法名8
+                sales.PaymentAmount8 = ConvertDecimal(row["AmountPay8"]);                       // 支払方法額8
+                sales.PaymentName9 = Convert.ToString(row["PaymentName9"]);                     // 支払方法名9
+                sales.PaymentAmount9 = ConvertDecimal(row["AmountPay9"]);                       // 支払方法額9
+                sales.PaymentName10 = Convert.ToString(row["PaymentName10"]);                   // 支払方法名10
+                sales.PaymentAmount10 = ConvertDecimal(row["AmountPay10"]);                     // 支払方法額10
                 #endregion // 支払方法
+
+                #region お釣りデータ
+                sales.Refund = ConvertDecimal(row["Refund"]);                                   // 釣銭
+                sales.DiscountGaku = ConvertDecimal(row["DiscountGaku"]);                       // 値引額
+                #endregion // お釣りデータ
+                //
+                storeDataSet.SalesTable.Rows.Add(sales);
 
                 #endregion // 販売データ
 
                 #region 雑入金データ
                 if (storeDataSet.MiscDepositTable.Where(s => s.StoreReceiptPrint == storeReceiptPrint && s.SalesNO == salesNO).FirstOrDefault() == null
-                    && !string.IsNullOrWhiteSpace(ConvertDateTime(row["MiscDepositRegistDate"])))
+                    && !string.IsNullOrWhiteSpace(ConvertDateTime(row["MiscDepositRegistDate"], true)))
                 {
                     var miscDeposit = storeDataSet.MiscDepositTable.NewMiscDepositTableRow();
                     miscDeposit.StoreReceiptPrint = storeReceiptPrint;                              // 雑入金店舗レシート表記
                     miscDeposit.StaffReceiptPrint = staffReceiptPrint;                              // 雑入金担当レシート表記
                     miscDeposit.SalesNO = salesNO;                                                  // 売上番号
-                    miscDeposit.RegistDate = ConvertDateTime(row["MiscDepositRegistDate"]);         // 雑入金登録日
+                    miscDeposit.RegistDate = ConvertDateTime(row["MiscDepositRegistDate"], true);   // 雑入金登録日
+                    miscDeposit.DateTime1 = Convert.ToString(row["MiscDepositDate1"]);              // 雑入金日1
                     miscDeposit.Name1 = Convert.ToString(row["MiscDepositName1"]);                  // 雑入金名1
                     miscDeposit.Amount1 = ConvertDecimal(row["MiscDepositAmount1"]);                // 雑入金額1
+                    miscDeposit.DateTime2 = Convert.ToString(row["MiscDepositDate2"]);              // 雑入金日2
                     miscDeposit.Name2 = Convert.ToString(row["MiscDepositName2"]);                  // 雑入金名2
                     miscDeposit.Amount2 = ConvertDecimal(row["MiscDepositAmount2"]);                // 雑入金額2
+                    miscDeposit.DateTime3 = Convert.ToString(row["MiscDepositDate3"]);              // 雑入金日3
                     miscDeposit.Name3 = Convert.ToString(row["MiscDepositName3"]);                  // 雑入金名3
                     miscDeposit.Amount3 = ConvertDecimal(row["MiscDepositAmount3"]);                // 雑入金額3
+                    miscDeposit.DateTime4 = Convert.ToString(row["MiscDepositDate4"]);              // 雑入金日4
                     miscDeposit.Name4 = Convert.ToString(row["MiscDepositName4"]);                  // 雑入金名4
                     miscDeposit.Amount4 = ConvertDecimal(row["MiscDepositAmount4"]);                // 雑入金額4
+                    miscDeposit.DateTime5 = Convert.ToString(row["MiscDepositDate5"]);              // 雑入金日5
                     miscDeposit.Name5 = Convert.ToString(row["MiscDepositName5"]);                  // 雑入金名5
                     miscDeposit.Amount5 = ConvertDecimal(row["MiscDepositAmount5"]);                // 雑入金額5
+                    miscDeposit.DateTime6 = Convert.ToString(row["MiscDepositDate6"]);              // 雑入金日6
                     miscDeposit.Name6 = Convert.ToString(row["MiscDepositName6"]);                  // 雑入金名6
                     miscDeposit.Amount6 = ConvertDecimal(row["MiscDepositAmount6"]);                // 雑入金額6
+                    miscDeposit.DateTime7 = Convert.ToString(row["MiscDepositDate7"]);              // 雑入金日7
                     miscDeposit.Name7 = Convert.ToString(row["MiscDepositName7"]);                  // 雑入金名7
                     miscDeposit.Amount7 = ConvertDecimal(row["MiscDepositAmount7"]);                // 雑入金額7
+                    miscDeposit.DateTime8 = Convert.ToString(row["MiscDepositDate8"]);              // 雑入金日8
                     miscDeposit.Name8 = Convert.ToString(row["MiscDepositName8"]);                  // 雑入金名8
                     miscDeposit.Amount8 = ConvertDecimal(row["MiscDepositAmount8"]);                // 雑入金額8
+                    miscDeposit.DateTime9 = Convert.ToString(row["MiscDepositDate9"]);              // 雑入金日9
                     miscDeposit.Name9 = Convert.ToString(row["MiscDepositName9"]);                  // 雑入金名9
                     miscDeposit.Amount9 = ConvertDecimal(row["MiscDepositAmount9"]);                // 雑入金額9
+                    miscDeposit.DateTime10 = Convert.ToString(row["MiscDepositDate10"]);            // 雑入金日10
                     miscDeposit.Name10 = Convert.ToString(row["MiscDepositName10"]);                // 雑入金名10
                     miscDeposit.Amount10 = ConvertDecimal(row["MiscDepositAmount10"]);              // 雑入金額10
-                //
-                storeDataSet.MiscDepositTable.Rows.Add(miscDeposit);
+                    //
+                    storeDataSet.MiscDepositTable.Rows.Add(miscDeposit);
                 }
                 #endregion // 雑入金データ
 
                 #region 入金データ
                 if (storeDataSet.DepositTable.Where(s => s.StoreReceiptPrint == storeReceiptPrint && s.SalesNO == salesNO).FirstOrDefault() == null
-                    && !string.IsNullOrWhiteSpace(ConvertDateTime(row["DepositRegistDate"])))
+                    && !string.IsNullOrWhiteSpace(ConvertDateTime(row["DepositRegistDate"], true)))
                 {
                     var deposit = storeDataSet.DepositTable.NewDepositTableRow();
                     deposit.StoreReceiptPrint = storeReceiptPrint;                              // 入金店舗レシート表記
                     deposit.StaffReceiptPrint = staffReceiptPrint;                              // 入金担当レシート表記
                     deposit.SalesNO = salesNO;                                                  // 売上番号
-                    deposit.RegistDate = ConvertDateTime(row["DepositRegistDate"]);         // 入金登録日
-                    deposit.CustomerCD = Convert.ToString(row["CustomerCD"]);               // 入金元CD
-                    deposit.CustomerName = Convert.ToString(row["CustomerName"]);           // 入金元名
-                    deposit.Name1 = Convert.ToString(row["DepositName1"]);                  // 入金区分名1
-                    deposit.Amount1 = ConvertDecimal(row["DepositAmount1"]);                // 入金額1
-                    deposit.Name2 = Convert.ToString(row["DepositName2"]);                  // 入金区分名2
-                    deposit.Amount2 = ConvertDecimal(row["DepositAmount2"]);                // 入金額2
-                    deposit.Name3 = Convert.ToString(row["DepositName3"]);                  // 入金区分名3
-                    deposit.Amount3 = ConvertDecimal(row["DepositAmount3"]);                // 入金額3
-                    deposit.Name4 = Convert.ToString(row["DepositName4"]);                  // 入金区分名4
-                    deposit.Amount4 = ConvertDecimal(row["DepositAmount4"]);                // 入金額4
-                    deposit.Name5 = Convert.ToString(row["DepositName5"]);                  // 入金区分名5
-                    deposit.Amount5 = ConvertDecimal(row["DepositAmount5"]);                // 入金額5
-                    deposit.Name6 = Convert.ToString(row["DepositName6"]);                  // 入金区分名6
-                    deposit.Amount6 = ConvertDecimal(row["DepositAmount6"]);                // 入金額6
-                    deposit.Name7 = Convert.ToString(row["DepositName7"]);                  // 入金区分名7
-                    deposit.Amount7 = ConvertDecimal(row["DepositAmount7"]);                // 入金額7
-                    deposit.Name8 = Convert.ToString(row["DepositName8"]);                  // 入金区分名8
-                    deposit.Amount8 = ConvertDecimal(row["DepositAmount8"]);                // 入金額8
-                    deposit.Name9 = Convert.ToString(row["DepositName9"]);                  // 入金区分名9
-                    deposit.Amount9 = ConvertDecimal(row["DepositAmount9"]);                // 入金額9
-                    deposit.Name10 = Convert.ToString(row["DepositName10"]);                // 入金区分名10
-                    deposit.Amount10 = ConvertDecimal(row["DepositAmount10"]);              // 入金額10
-                                                                                            //
+                    deposit.RegistDate = ConvertDateTime(row["DepositRegistDate"], true);       // 入金登録日
+                    deposit.CustomerCD = Convert.ToString(row["CustomerCD"]);                   // 入金元CD
+                    deposit.CustomerName = Convert.ToString(row["CustomerName"]);               // 入金元名
+                    deposit.DateTime1 = Convert.ToString(row["DepositDate1"]);                  // 入金日1
+                    deposit.Name1 = Convert.ToString(row["DepositName1"]);                      // 入金区分名1
+                    deposit.Amount1 = ConvertDecimal(row["DepositAmount1"]);                    // 入金額1
+                    deposit.DateTime2 = Convert.ToString(row["DepositDate2"]);                  // 入金日2
+                    deposit.Name2 = Convert.ToString(row["DepositName2"]);                      // 入金区分名2
+                    deposit.Amount2 = ConvertDecimal(row["DepositAmount2"]);                    // 入金額2
+                    deposit.DateTime3 = Convert.ToString(row["DepositDate3"]);                  // 入金日3
+                    deposit.Name3 = Convert.ToString(row["DepositName3"]);                      // 入金区分名3
+                    deposit.Amount3 = ConvertDecimal(row["DepositAmount3"]);                    // 入金額3
+                    deposit.DateTime4 = Convert.ToString(row["DepositDate4"]);                  // 入金日4
+                    deposit.Name4 = Convert.ToString(row["DepositName4"]);                      // 入金区分名4
+                    deposit.Amount4 = ConvertDecimal(row["DepositAmount4"]);                    // 入金額4
+                    deposit.DateTime5 = Convert.ToString(row["DepositDate5"]);                  // 入金日5
+                    deposit.Name5 = Convert.ToString(row["DepositName5"]);                      // 入金区分名5
+                    deposit.Amount5 = ConvertDecimal(row["DepositAmount5"]);                    // 入金額5
+                    deposit.DateTime6 = Convert.ToString(row["DepositDate6"]);                  // 入金日6
+                    deposit.Name6 = Convert.ToString(row["DepositName6"]);                      // 入金区分名6
+                    deposit.Amount6 = ConvertDecimal(row["DepositAmount6"]);                    // 入金額6
+                    deposit.DateTime7 = Convert.ToString(row["DepositDate7"]);                  // 入金日7
+                    deposit.Name7 = Convert.ToString(row["DepositName7"]);                      // 入金区分名7
+                    deposit.Amount7 = ConvertDecimal(row["DepositAmount7"]);                    // 入金額7
+                    deposit.DateTime8 = Convert.ToString(row["DepositDate8"]);                  // 入金日8
+                    deposit.Name8 = Convert.ToString(row["DepositName8"]);                      // 入金区分名8
+                    deposit.Amount8 = ConvertDecimal(row["DepositAmount8"]);                    // 入金額8
+                    deposit.DateTime9 = Convert.ToString(row["DepositDate9"]);                  // 入金日9
+                    deposit.Name9 = Convert.ToString(row["DepositName9"]);                      // 入金区分名9
+                    deposit.Amount9 = ConvertDecimal(row["DepositAmount9"]);                    // 入金額9
+                    deposit.DateTime10 = Convert.ToString(row["DepositDate10"]);                // 入金日10
+                    deposit.Name10 = Convert.ToString(row["DepositName10"]);                    // 入金区分名10
+                    deposit.Amount10 = ConvertDecimal(row["DepositAmount10"]);                  // 入金額10
+                                                                                                //
                     storeDataSet.DepositTable.Rows.Add(deposit);
                 }
                 #endregion // 入金データ
 
                 #region 雑出金データ
                 if (storeDataSet.MiscPaymentTable.Where(s => s.StoreReceiptPrint == storeReceiptPrint && s.SalesNO == salesNO).FirstOrDefault() == null
-                    && !string.IsNullOrWhiteSpace(ConvertDateTime(row["MiscPaymentRegistDate"])))
+                    && !string.IsNullOrWhiteSpace(ConvertDateTime(row["MiscPaymentRegistDate"], true)))
                 {
                     var miscPayment = storeDataSet.MiscPaymentTable.NewMiscPaymentTableRow();
                     miscPayment.StoreReceiptPrint = storeReceiptPrint;                              // 雑出金店舗レシート表記
                     miscPayment.StaffReceiptPrint = staffReceiptPrint;                              // 雑出金担当レシート表記
                     miscPayment.SalesNO = salesNO;                                                  // 売上番号
-                    miscPayment.RegistDate = ConvertDateTime(row["MiscPaymentRegistDate"]);         // 雑出金登録日
+                    miscPayment.RegistDate = ConvertDateTime(row["MiscPaymentRegistDate"], true);   // 雑出金登録日
+                    miscPayment.DateTime1 = Convert.ToString(row["MiscPaymentDate1"]);              // 雑出金日1
                     miscPayment.Name1 = Convert.ToString(row["MiscPaymentName1"]);                  // 雑出金名1
                     miscPayment.Amount1 = ConvertDecimal(row["MiscPaymentAmount1"]);                // 雑出金額1
+                    miscPayment.DateTime2 = Convert.ToString(row["MiscPaymentDate2"]);              // 雑出金日2
                     miscPayment.Name2 = Convert.ToString(row["MiscPaymentName2"]);                  // 雑出金名2
                     miscPayment.Amount2 = ConvertDecimal(row["MiscPaymentAmount2"]);                // 雑出金額2
+                    miscPayment.DateTime3 = Convert.ToString(row["MiscPaymentDate3"]);              // 雑出金日3
                     miscPayment.Name3 = Convert.ToString(row["MiscPaymentName3"]);                  // 雑出金名3
                     miscPayment.Amount3 = ConvertDecimal(row["MiscPaymentAmount3"]);                // 雑出金額3
+                    miscPayment.DateTime4 = Convert.ToString(row["MiscPaymentDate4"]);              // 雑出金日4
                     miscPayment.Name4 = Convert.ToString(row["MiscPaymentName4"]);                  // 雑出金名4
                     miscPayment.Amount4 = ConvertDecimal(row["MiscPaymentAmount4"]);                // 雑出金額4
+                    miscPayment.DateTime5 = Convert.ToString(row["MiscPaymentDate5"]);              // 雑出金日5
                     miscPayment.Name5 = Convert.ToString(row["MiscPaymentName5"]);                  // 雑出金名5
                     miscPayment.Amount5 = ConvertDecimal(row["MiscPaymentAmount5"]);                // 雑出金額5
+                    miscPayment.DateTime6 = Convert.ToString(row["MiscPaymentDate6"]);              // 雑出金日6
                     miscPayment.Name6 = Convert.ToString(row["MiscPaymentName6"]);                  // 雑出金名6
                     miscPayment.Amount6 = ConvertDecimal(row["MiscPaymentAmount6"]);                // 雑出金額6
+                    miscPayment.DateTime7 = Convert.ToString(row["MiscPaymentDate7"]);              // 雑出金日7
                     miscPayment.Name7 = Convert.ToString(row["MiscPaymentName7"]);                  // 雑出金名7
                     miscPayment.Amount7 = ConvertDecimal(row["MiscPaymentAmount7"]);                // 雑出金額7
+                    miscPayment.DateTime8 = Convert.ToString(row["MiscPaymentDate8"]);              // 雑出金日8
                     miscPayment.Name8 = Convert.ToString(row["MiscPaymentName8"]);                  // 雑出金名8
                     miscPayment.Amount8 = ConvertDecimal(row["MiscPaymentAmount8"]);                // 雑出金額8
+                    miscPayment.DateTime9 = Convert.ToString(row["MiscPaymentDate9"]);              // 雑出金日9
                     miscPayment.Name9 = Convert.ToString(row["MiscPaymentName9"]);                  // 雑出金名9
                     miscPayment.Amount9 = ConvertDecimal(row["MiscPaymentAmount9"]);                // 雑出金額9
+                    miscPayment.DateTime10 = Convert.ToString(row["MiscPaymentDate10"]);            // 雑出金日10
                     miscPayment.Name10 = Convert.ToString(row["MiscPaymentName10"]);                // 雑出金名10
                     miscPayment.Amount10 = ConvertDecimal(row["MiscPaymentAmount10"]);              // 雑出金額10
                     //
@@ -389,49 +431,59 @@ namespace TempoRegiJournal
 
                 #region 両替データ
                 if (storeDataSet.ExchangeTable.Where(s => s.StoreReceiptPrint == storeReceiptPrint && s.SalesNO == salesNO).FirstOrDefault() == null
-                    && !string.IsNullOrWhiteSpace(ConvertDateTime(row["ExchangeRegistDate"])))
+                    && !string.IsNullOrWhiteSpace(ConvertDateTime(row["ExchangeRegistDate"], true)))
                 {
                     var exchange = storeDataSet.ExchangeTable.NewExchangeTableRow();
                     exchange.StoreReceiptPrint = storeReceiptPrint;                                 // 両替店舗レシート表記
                     exchange.StaffReceiptPrint = staffReceiptPrint;                                 // 両替担当レシート表記
                     exchange.SalesNO = salesNO;                                                     // 売上番号
-                    exchange.RegistDate = ConvertDateTime(row["ExchangeRegistDate"]);               // 両替登録日
+                    exchange.RegistDate = ConvertDateTime(row["ExchangeRegistDate"], true);         // 両替登録日
+                    exchange.DateTime1 = Convert.ToString(row["ExchangeDate1"]);                    // 両替日1
                     exchange.Name1 = Convert.ToString(row["ExchangeName1"]);                        // 両替名1
                     exchange.Amount1 = ConvertDecimal(row["ExchangeAmount1"]);                      // 両替額1
                     exchange.Denomination1 = Convert.ToString(row["ExchangeDenomination1"]);        // 両替紙幣1
                     exchange.Count1 = ConvertDecimal(row["ExchangeCount1"]);                        // 両替枚数1
+                    exchange.DateTime2 = Convert.ToString(row["ExchangeDate2"]);                    // 両替日2
                     exchange.Name2 = Convert.ToString(row["ExchangeName2"]);                        // 両替名2
                     exchange.Amount2 = ConvertDecimal(row["ExchangeAmount2"]);                      // 両替額2
                     exchange.Denomination2 = Convert.ToString(row["ExchangeDenomination2"]);        // 両替紙幣2
                     exchange.Count2 = ConvertDecimal(row["ExchangeCount2"]);                        // 両替枚数2
+                    exchange.DateTime3 = Convert.ToString(row["ExchangeDate3"]);                    // 両替日3
                     exchange.Name3 = Convert.ToString(row["ExchangeName3"]);                        // 両替名3
                     exchange.Amount3 = ConvertDecimal(row["ExchangeAmount3"]);                      // 両替額3
                     exchange.Denomination3 = Convert.ToString(row["ExchangeDenomination3"]);        // 両替紙幣3
                     exchange.Count3 = ConvertDecimal(row["ExchangeCount3"]);                        // 両替枚数3
+                    exchange.DateTime4 = Convert.ToString(row["ExchangeDate4"]);                    // 両替日4
                     exchange.Name4 = Convert.ToString(row["ExchangeName4"]);                        // 両替名4
                     exchange.Amount4 = ConvertDecimal(row["ExchangeAmount4"]);                      // 両替額4
                     exchange.Denomination4 = Convert.ToString(row["ExchangeDenomination4"]);        // 両替紙幣4
                     exchange.Count4 = ConvertDecimal(row["ExchangeCount4"]);                        // 両替枚数4
+                    exchange.DateTime5 = Convert.ToString(row["ExchangeDate5"]);                    // 両替日5
                     exchange.Name5 = Convert.ToString(row["ExchangeName5"]);                        // 両替名5
                     exchange.Amount5 = ConvertDecimal(row["ExchangeAmount5"]);                      // 両替額5
                     exchange.Denomination5 = Convert.ToString(row["ExchangeDenomination5"]);        // 両替紙幣5
                     exchange.Count5 = ConvertDecimal(row["ExchangeCount5"]);                        // 両替枚数5
+                    exchange.DateTime6 = Convert.ToString(row["ExchangeDate6"]);                    // 両替日6
                     exchange.Name6 = Convert.ToString(row["ExchangeName6"]);                        // 両替名6
                     exchange.Amount6 = ConvertDecimal(row["ExchangeAmount6"]);                      // 両替額6
                     exchange.Denomination6 = Convert.ToString(row["ExchangeDenomination6"]);        // 両替紙幣6
                     exchange.Count6 = ConvertDecimal(row["ExchangeCount6"]);                        // 両替枚数6
+                    exchange.DateTime7 = Convert.ToString(row["ExchangeDate7"]);                    // 両替日7
                     exchange.Name7 = Convert.ToString(row["ExchangeName7"]);                        // 両替名7
                     exchange.Amount7 = ConvertDecimal(row["ExchangeAmount7"]);                      // 両替額7
                     exchange.Denomination7 = Convert.ToString(row["ExchangeDenomination7"]);        // 両替紙幣7
                     exchange.Count7 = ConvertDecimal(row["ExchangeCount7"]);                        // 両替枚数7
+                    exchange.DateTime8 = Convert.ToString(row["ExchangeDate8"]);                    // 両替日8
                     exchange.Name8 = Convert.ToString(row["ExchangeName8"]);                        // 両替名8
                     exchange.Amount8 = ConvertDecimal(row["ExchangeAmount8"]);                      // 両替額8
                     exchange.Denomination8 = Convert.ToString(row["ExchangeDenomination8"]);        // 両替紙幣8
                     exchange.Count8 = ConvertDecimal(row["ExchangeCount8"]);                        // 両替枚数8
+                    exchange.DateTime9 = Convert.ToString(row["ExchangeDate9"]);                    // 両替日9
                     exchange.Name9 = Convert.ToString(row["ExchangeName9"]);                        // 両替名9
                     exchange.Amount9 = ConvertDecimal(row["ExchangeAmount9"]);                      // 両替額9
                     exchange.Denomination9 = Convert.ToString(row["ExchangeDenomination9"]);        // 両替紙幣9
                     exchange.Count9 = ConvertDecimal(row["ExchangeCount9"]);                        // 両替枚数9
+                    exchange.DateTime10 = Convert.ToString(row["ExchangeDate10"]);                  // 両替日10
                     exchange.Name10 = Convert.ToString(row["ExchangeName10"]);                      // 両替名10
                     exchange.Amount10 = ConvertDecimal(row["ExchangeAmount10"]);                    // 両替額10
                     exchange.Denomination10 = Convert.ToString(row["ExchangeDenomination10"]);      // 両替紙幣10
@@ -443,33 +495,43 @@ namespace TempoRegiJournal
 
                 #region 釣銭準備
                 if (storeDataSet.ChangePreparationTable.Where(s => s.StoreReceiptPrint == storeReceiptPrint && s.SalesNO == salesNO).FirstOrDefault() == null
-                    && !string.IsNullOrWhiteSpace(ConvertDateTime(row["ChangePreparationRegistDate"])))
+                    && !string.IsNullOrWhiteSpace(ConvertDateTime(row["ChangePreparationRegistDate"], true)))
                 {
                     var changePreparation = storeDataSet.ChangePreparationTable.NewChangePreparationTableRow();
-                    changePreparation.StoreReceiptPrint = storeReceiptPrint;                                // 両替店舗レシート表記
-                    changePreparation.StaffReceiptPrint = staffReceiptPrint;                                // 両替担当レシート表記
-                    changePreparation.SalesNO = salesNO;                                                    // 売上番号
-                    changePreparation.RegistDate = ConvertDateTime(row["ChangePreparationRegistDate"]);     // 登録日
-                    changePreparation.Name1 = Convert.ToString(row["ChangePreparationName1"]);              // 釣銭準備名1
-                    changePreparation.Amount1 = ConvertDecimal(row["ChangePreparationAmount1"]);            // 釣銭準備額1
-                    changePreparation.Name2 = Convert.ToString(row["ChangePreparationName2"]);              // 釣銭準備名2
-                    changePreparation.Amount2 = ConvertDecimal(row["ChangePreparationAmount2"]);            // 釣銭準備額2
-                    changePreparation.Name3 = Convert.ToString(row["ChangePreparationName3"]);              // 釣銭準備名3
-                    changePreparation.Amount3 = ConvertDecimal(row["ChangePreparationAmount3"]);            // 釣銭準備額3
-                    changePreparation.Name4 = Convert.ToString(row["ChangePreparationName4"]);              // 釣銭準備名4
-                    changePreparation.Amount4 = ConvertDecimal(row["ChangePreparationAmount4"]);            // 釣銭準備額4
-                    changePreparation.Name5 = Convert.ToString(row["ChangePreparationName5"]);              // 釣銭準備名5
-                    changePreparation.Amount5 = ConvertDecimal(row["ChangePreparationAmount5"]);            // 釣銭準備額5
-                    changePreparation.Name6 = Convert.ToString(row["ChangePreparationName6"]);              // 釣銭準備名6
-                    changePreparation.Amount6 = ConvertDecimal(row["ChangePreparationAmount6"]);            // 釣銭準備額6
-                    changePreparation.Name7 = Convert.ToString(row["ChangePreparationName7"]);              // 釣銭準備名7
-                    changePreparation.Amount7 = ConvertDecimal(row["ChangePreparationAmount7"]);            // 釣銭準備額7
-                    changePreparation.Name8 = Convert.ToString(row["ChangePreparationName8"]);              // 釣銭準備名8
-                    changePreparation.Amount8 = ConvertDecimal(row["ChangePreparationAmount8"]);            // 釣銭準備額8
-                    changePreparation.Name9 = Convert.ToString(row["ChangePreparationName9"]);              // 釣銭準備名9
-                    changePreparation.Amount9 = ConvertDecimal(row["ChangePreparationAmount9"]);            // 釣銭準備額9
-                    changePreparation.Name10 = Convert.ToString(row["ChangePreparationName10"]);            // 釣銭準備名10
-                    changePreparation.Amount10 = ConvertDecimal(row["ChangePreparationAmount10"]);          // 釣銭準備額10
+                    changePreparation.StoreReceiptPrint = storeReceiptPrint;                                    // 両替店舗レシート表記
+                    changePreparation.StaffReceiptPrint = staffReceiptPrint;                                    // 両替担当レシート表記
+                    changePreparation.SalesNO = salesNO;                                                        // 売上番号
+                    changePreparation.RegistDate = ConvertDateTime(row["ChangePreparationRegistDate"], true);   // 登録日
+                    changePreparation.DateTime1 = Convert.ToString(row["ChangePreparationDate1"]);              // 釣銭準備日1
+                    changePreparation.Name1 = Convert.ToString(row["ChangePreparationName1"]);                  // 釣銭準備名1
+                    changePreparation.Amount1 = ConvertDecimal(row["ChangePreparationAmount1"]);                // 釣銭準備額1
+                    changePreparation.DateTime2 = Convert.ToString(row["ChangePreparationDate2"]);              // 釣銭準備日2
+                    changePreparation.Name2 = Convert.ToString(row["ChangePreparationName2"]);                  // 釣銭準備名2
+                    changePreparation.Amount2 = ConvertDecimal(row["ChangePreparationAmount2"]);                // 釣銭準備額2
+                    changePreparation.DateTime3 = Convert.ToString(row["ChangePreparationDate3"]);              // 釣銭準備日3
+                    changePreparation.Name3 = Convert.ToString(row["ChangePreparationName3"]);                  // 釣銭準備名3
+                    changePreparation.Amount3 = ConvertDecimal(row["ChangePreparationAmount3"]);                // 釣銭準備額3
+                    changePreparation.DateTime4 = Convert.ToString(row["ChangePreparationDate4"]);              // 釣銭準備日4
+                    changePreparation.Name4 = Convert.ToString(row["ChangePreparationName4"]);                  // 釣銭準備名4
+                    changePreparation.Amount4 = ConvertDecimal(row["ChangePreparationAmount4"]);                // 釣銭準備額4
+                    changePreparation.DateTime5 = Convert.ToString(row["ChangePreparationDate5"]);              // 釣銭準備日5
+                    changePreparation.Name5 = Convert.ToString(row["ChangePreparationName5"]);                  // 釣銭準備名5
+                    changePreparation.Amount5 = ConvertDecimal(row["ChangePreparationAmount5"]);                // 釣銭準備額5
+                    changePreparation.DateTime6 = Convert.ToString(row["ChangePreparationDate6"]);              // 釣銭準備日6
+                    changePreparation.Name6 = Convert.ToString(row["ChangePreparationName6"]);                  // 釣銭準備名6
+                    changePreparation.Amount6 = ConvertDecimal(row["ChangePreparationAmount6"]);                // 釣銭準備額6
+                    changePreparation.DateTime7 = Convert.ToString(row["ChangePreparationDate7"]);              // 釣銭準備日7
+                    changePreparation.Name7 = Convert.ToString(row["ChangePreparationName7"]);                  // 釣銭準備名7
+                    changePreparation.Amount7 = ConvertDecimal(row["ChangePreparationAmount7"]);                // 釣銭準備額7
+                    changePreparation.DateTime8 = Convert.ToString(row["ChangePreparationDate8"]);              // 釣銭準備日8
+                    changePreparation.Name8 = Convert.ToString(row["ChangePreparationName8"]);                  // 釣銭準備名8
+                    changePreparation.Amount8 = ConvertDecimal(row["ChangePreparationAmount8"]);                // 釣銭準備額8
+                    changePreparation.DateTime9 = Convert.ToString(row["ChangePreparationDate9"]);              // 釣銭準備日9
+                    changePreparation.Name9 = Convert.ToString(row["ChangePreparationName9"]);                  // 釣銭準備名9
+                    changePreparation.Amount9 = ConvertDecimal(row["ChangePreparationAmount9"]);                // 釣銭準備額9
+                    changePreparation.DateTime10 = Convert.ToString(row["ChangePreparationDate10"]);            // 釣銭準備日10
+                    changePreparation.Name10 = Convert.ToString(row["ChangePreparationName10"]);                // 釣銭準備名10
+                    changePreparation.Amount10 = ConvertDecimal(row["ChangePreparationAmount10"]);              // 釣銭準備額10
                     //
                     storeDataSet.ChangePreparationTable.Rows.Add(changePreparation);
                 }
@@ -479,13 +541,13 @@ namespace TempoRegiJournal
 
                 #region 精算処理 現金残高
                 if (storeDataSet.CashBalanceTable.Where(s => s.StoreReceiptPrint == storeReceiptPrint && s.SalesNO == salesNO).FirstOrDefault() == null
-                    && !string.IsNullOrWhiteSpace(ConvertDateTime(row["CashBalanceRegistDate"])))
+                    && !string.IsNullOrWhiteSpace(ConvertDateTime(row["CashBalanceRegistDate"], true)))
                 {
                     var cashBalance = storeDataSet.CashBalanceTable.NewCashBalanceTableRow();
                     cashBalance.StoreReceiptPrint = storeReceiptPrint;                              // 店舗レシート表記
                     cashBalance.StaffReceiptPrint = staffReceiptPrint;                              // 担当レシート表記
                     cashBalance.SalesNO = salesNO;                                                  // 売上番号
-                    cashBalance.RegistDate = ConvertDateTime(row["CashBalanceRegistDate"]);         // 登録日
+                    cashBalance.RegistDate = ConvertDateTime(row["CashBalanceRegistDate"], true);   // 登録日
                     cashBalance.Num10000yen = ConvertDecimal(row["10000yenNum"]);                   // 現金残高10,000枚数
                     cashBalance.Num5000yen = ConvertDecimal(row["5000yenNum"]);                     // 現金残高5,000枚数
                     cashBalance.Num2000yen = ConvertDecimal(row["2000yenNum"]);                     // 現金残高2,000枚数
@@ -508,7 +570,7 @@ namespace TempoRegiJournal
                     cashBalance.Gaku1yen = ConvertDecimal(row["1yenGaku"]);                         // 現金残高1金額
                     cashBalance.Etcyen = ConvertDecimal(row["Etcyen"]);                             // その他金額
                     cashBalance.Change = ConvertDecimal(row["Change"]);                             // 釣銭準備金
-                    cashBalance.TotalGaku = ConvertDecimal(row["TotalGaku"]);                       // 現金残高 現金売上(+)
+                    cashBalance.TotalGaku = ConvertDecimal(row["DepositGaku"]);                     // 現金残高 現金売上(+)
                     cashBalance.CashDeposit = ConvertDecimal(row["CashDeposit"]);                   // 現金残高 現金入金(+)
                     cashBalance.CashPayment = ConvertDecimal(row["CashPayment"]);                   // 現金残高 現金支払(-)
                     cashBalance.CashBalance = ConvertDecimal(row["CashBalance"]);                   // 現金残高 その他金額～現金残高現金支払(-)までの合計
@@ -719,52 +781,55 @@ namespace TempoRegiJournal
 
             #region 出力設定
 
-            // 各明細部印刷有無を印刷フラグで設定
-            storeDataSet.StoreTable[0].DispSales = isPrint;                 // 販売
-            storeDataSet.StoreTable[0].DispMiscDeposit = isPrint;           // 雑入金
-            storeDataSet.StoreTable[0].DispDeposit = isPrint;               // 入金
-            storeDataSet.StoreTable[0].DispMiscPayment = isPrint;           // 雑出金
-            storeDataSet.StoreTable[0].DispExchange = isPrint;              // 両替
-            storeDataSet.StoreTable[0].DispChangePreparation = isPrint;     // 釣銭準備
-
-            if (isPrint)
+            if(storeDataSet.StoreTable.Rows.Count > 0)
             {
-                // 印刷するフラグON時、各明細部の出力件数が0件の場合は印刷フラグOFF
+                // 各明細部印刷有無を印刷フラグで設定
+                storeDataSet.StoreTable[0].DispSales = isPrint;                 // 販売
+                storeDataSet.StoreTable[0].DispMiscDeposit = isPrint;           // 雑入金
+                storeDataSet.StoreTable[0].DispDeposit = isPrint;               // 入金
+                storeDataSet.StoreTable[0].DispMiscPayment = isPrint;           // 雑出金
+                storeDataSet.StoreTable[0].DispExchange = isPrint;              // 両替
+                storeDataSet.StoreTable[0].DispChangePreparation = isPrint;     // 釣銭準備
 
-                // 販売
-                if (storeDataSet.StoreTable.Count == 0)
+                if (isPrint)
                 {
-                    storeDataSet.StoreTable[0].DispSales = false;
-                }
+                    // 印刷するフラグON時、各明細部の出力件数が0件の場合は印刷フラグOFF
 
-                // 雑入金
-                if (storeDataSet.MiscDepositTable.Count == 0)
-                {
-                    storeDataSet.StoreTable[0].DispMiscDeposit = false;
-                }
+                    // 販売
+                    if (storeDataSet.StoreTable.Count == 0)
+                    {
+                        storeDataSet.StoreTable[0].DispSales = false;
+                    }
 
-                // 入金
-                if (storeDataSet.DepositTable.Count == 0)
-                {
-                    storeDataSet.StoreTable[0].DispDeposit = false;
-                }
+                    // 雑入金
+                    if (storeDataSet.MiscDepositTable.Count == 0)
+                    {
+                        storeDataSet.StoreTable[0].DispMiscDeposit = false;
+                    }
 
-                // 雑出金
-                if (storeDataSet.MiscPaymentTable.Count == 0)
-                {
-                    storeDataSet.StoreTable[0].DispMiscPayment = false;
-                }
+                    // 入金
+                    if (storeDataSet.DepositTable.Count == 0)
+                    {
+                        storeDataSet.StoreTable[0].DispDeposit = false;
+                    }
 
-                // 両替
-                if (storeDataSet.ExchangeTable.Count == 0)
-                {
-                    storeDataSet.StoreTable[0].DispExchange = false;
-                }
+                    // 雑出金
+                    if (storeDataSet.MiscPaymentTable.Count == 0)
+                    {
+                        storeDataSet.StoreTable[0].DispMiscPayment = false;
+                    }
 
-                // 釣銭準備
-                if (storeDataSet.ChangePreparationTable.Count == 0)
-                {
-                    storeDataSet.StoreTable[0].DispChangePreparation = false;
+                    // 両替
+                    if (storeDataSet.ExchangeTable.Count == 0)
+                    {
+                        storeDataSet.StoreTable[0].DispExchange = false;
+                    }
+
+                    // 釣銭準備
+                    if (storeDataSet.ChangePreparationTable.Count == 0)
+                    {
+                        storeDataSet.StoreTable[0].DispChangePreparation = false;
+                    }
                 }
             }
 
@@ -778,14 +843,14 @@ namespace TempoRegiJournal
         /// </summary>
         /// <param name="value">元の日時</param>
         /// <returns>日時</returns>
-        private string ConvertDateTime(object value)
+        private string ConvertDateTime(object value, bool dateOnly)
         {
             var result = string.Empty;
 
             var dateTime = Convert.ToString(value);
             if(!string.IsNullOrWhiteSpace(dateTime))
             {
-                result = dateTime.Substring(0, dateTime.LastIndexOf(':'));
+                result = dateOnly ? dateTime.Substring(0, "yyyy/MM/dd".Length) : dateTime.Substring(0, dateTime.LastIndexOf(':'));
             }
 
             return result;
@@ -801,17 +866,24 @@ namespace TempoRegiJournal
         {
             var result = 0;
 
-            var pos = value.ToString().LastIndexOf('.');
-            if (pos < 0)
+            if (string.IsNullOrWhiteSpace(value.ToString()))
             {
-                result = string.IsNullOrWhiteSpace(value.ToString()) ? 0 : Convert.ToInt32(value.ToString());
+                return "";
             }
             else
             {
-                result = string.IsNullOrWhiteSpace(value.ToString()) ? 0 : Convert.ToInt32(value.ToString().Substring(0, pos));
-            }
+                var pos = value.ToString().LastIndexOf('.');
+                if (pos < 0)
+                {
+                    result = string.IsNullOrWhiteSpace(value.ToString()) ? 0 : Convert.ToInt32(value.ToString());
+                }
+                else
+                {
+                    result = string.IsNullOrWhiteSpace(value.ToString()) ? 0 : Convert.ToInt32(value.ToString().Substring(0, pos));
+                }
 
-            return string.Format("{0:#,0}", result);
+                return string.Format("{0:#,0}", result);
+            }
         }
 
         /// <summary>

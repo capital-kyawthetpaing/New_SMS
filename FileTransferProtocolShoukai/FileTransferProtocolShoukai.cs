@@ -50,6 +50,9 @@ namespace FileTransferProtocolShoukai
             Btn_F12.Visible = true;
             Btn_F12.Text = "表示(F12)";
             Btn_F11.Text = string.Empty;
+
+            gdvFTPType1.DisabledColumn("colFTPDateTime,colVendor,colFTPFile");
+            gdvFTPType2.DisabledColumn("colFTPDateTime2,colVendor2,colFTPFile2");
         }
 
         protected override void ExecSec()

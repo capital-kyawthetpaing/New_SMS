@@ -1941,6 +1941,15 @@ namespace ZaikoIdouNyuuryoku
                             bbl.ShowMessage("E109");
                             return false;
                         }
+                        if (mIdoType == EIdoType.店舗間移動)
+                        {
+                            if (ckM_CheckBox4.Checked)
+                            {
+                                //店舗間移動：移動依頼拒否をONにした場合、数量の入力チェックは不要
+                                return true;
+                            }
+                        }
+
                         if (mIdoType != EIdoType.調整追加)
                         {
                             //入力された場合、在庫数量確認  在庫数量が足りない場合Error(If the stock quantity is insufficient)

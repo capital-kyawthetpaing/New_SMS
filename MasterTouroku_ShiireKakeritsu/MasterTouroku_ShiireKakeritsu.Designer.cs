@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtDate1 = new CKM_Controls.CKM_TextBox();
             this.panelDetail = new System.Windows.Forms.Panel();
-            this.ckM_Button1 = new CKM_Controls.CKM_Button();
+            this.btnCapture = new CKM_Controls.CKM_Button();
             this.cbo_Season = new CKM_Controls.CKM_ComboBox();
             this.cbo_Year = new CKM_Controls.CKM_ComboBox();
             this.cbo_Season1 = new CKM_Controls.CKM_ComboBox();
@@ -43,15 +43,6 @@
             this.ckM_Label26 = new CKM_Controls.CKM_Label();
             this.ckM_Label25 = new CKM_Controls.CKM_Label();
             this.dgv_ShiireKakeritsu = new CKM_Controls.CKM_GridView();
-            this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colBrandCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSportsCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSegmentCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSeason = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRate1 = new SMS.CustomControls.DataGridViewDecimalColumn();
-            this.col1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDelete = new CKM_Controls.CKM_Button();
             this.btnUpdate = new CKM_Controls.CKM_Button();
             this.btnAdd = new CKM_Controls.CKM_Button();
@@ -105,6 +96,15 @@
             this.rdoIndividualStores = new CKM_Controls.CKM_RadioButton();
             this.cbo_Store = new CKM_Controls.CKM_ComboBox();
             this.scSupplierCD = new Search.CKM_SearchControl();
+            this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colBrandCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSportsCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSegmentCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSeason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRate1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ShiireKakeritsu)).BeginInit();
@@ -166,7 +166,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(1481, 19);
+            this.ckM_Label2.Location = new System.Drawing.Point(1483, 18);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label2.TabIndex = 4;
@@ -188,6 +188,7 @@
             this.txtDate1.IntegerPart = 0;
             this.txtDate1.IsCorrectDate = true;
             this.txtDate1.isEnterKeyDown = false;
+            this.txtDate1.IsFirstTime = true;
             this.txtDate1.isMaxLengthErr = false;
             this.txtDate1.IsNumber = true;
             this.txtDate1.IsShop = false;
@@ -203,7 +204,7 @@
             // 
             // panelDetail
             // 
-            this.panelDetail.Controls.Add(this.ckM_Button1);
+            this.panelDetail.Controls.Add(this.btnCapture);
             this.panelDetail.Controls.Add(this.cbo_Season);
             this.panelDetail.Controls.Add(this.cbo_Year);
             this.panelDetail.Controls.Add(this.cbo_Season1);
@@ -258,24 +259,24 @@
             this.panelDetail.Size = new System.Drawing.Size(1680, 800);
             this.panelDetail.TabIndex = 0;
             // 
-            // ckM_Button1
+            // btnCapture
             // 
-            this.ckM_Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.ckM_Button1.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.ckM_Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckM_Button1.DefaultBtnSize = false;
-            this.ckM_Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ckM_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ckM_Button1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Button1.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.ckM_Button1.Location = new System.Drawing.Point(1533, 13);
-            this.ckM_Button1.Margin = new System.Windows.Forms.Padding(1);
-            this.ckM_Button1.Name = "ckM_Button1";
-            this.ckM_Button1.Size = new System.Drawing.Size(110, 25);
-            this.ckM_Button1.TabIndex = 53;
-            this.ckM_Button1.Text = "取込(F10)";
-            this.ckM_Button1.UseVisualStyleBackColor = false;
-            this.ckM_Button1.Click += new System.EventHandler(this.ckM_Button1_Click);
+            this.btnCapture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnCapture.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.btnCapture.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCapture.DefaultBtnSize = false;
+            this.btnCapture.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCapture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapture.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCapture.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.btnCapture.Location = new System.Drawing.Point(1533, 13);
+            this.btnCapture.Margin = new System.Windows.Forms.Padding(1);
+            this.btnCapture.Name = "btnCapture";
+            this.btnCapture.Size = new System.Drawing.Size(110, 25);
+            this.btnCapture.TabIndex = 53;
+            this.btnCapture.Text = "取込(F10)";
+            this.btnCapture.UseVisualStyleBackColor = false;
+            this.btnCapture.Click += new System.EventHandler(this.btnCapture_Click);
             // 
             // cbo_Season
             // 
@@ -367,7 +368,7 @@
             this.ckM_Label25.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label25.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label25.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label25.Location = new System.Drawing.Point(101, 200);
+            this.ckM_Label25.Location = new System.Drawing.Point(101, 199);
             this.ckM_Label25.Name = "ckM_Label25";
             this.ckM_Label25.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label25.TabIndex = 45;
@@ -380,17 +381,18 @@
             this.dgv_ShiireKakeritsu.AllowUserToAddRows = false;
             this.dgv_ShiireKakeritsu.AllowUserToDeleteRows = false;
             this.dgv_ShiireKakeritsu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_ShiireKakeritsu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.NullValue = null;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_ShiireKakeritsu.ColumnHeadersHeight = 25;
             this.dgv_ShiireKakeritsu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
@@ -402,14 +404,6 @@
             this.colDate,
             this.colRate1,
             this.col1});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ShiireKakeritsu.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_ShiireKakeritsu.EnableHeadersVisualStyles = false;
             this.dgv_ShiireKakeritsu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgv_ShiireKakeritsu.Location = new System.Drawing.Point(187, 343);
@@ -422,79 +416,6 @@
             this.dgv_ShiireKakeritsu.UseSetting = false;
             this.dgv_ShiireKakeritsu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ShiireKakeritsu_CellContentClick);
             // 
-            // colChk
-            // 
-            this.colChk.FalseValue = "false";
-            this.colChk.HeaderText = "";
-            this.colChk.IndeterminateValue = "false";
-            this.colChk.Name = "colChk";
-            this.colChk.TrueValue = "true";
-            this.colChk.Width = 50;
-            // 
-            // colBrandCD1
-            // 
-            this.colBrandCD1.DataPropertyName = "BrandCD";
-            this.colBrandCD1.HeaderText = "ブランド";
-            this.colBrandCD1.Name = "colBrandCD1";
-            this.colBrandCD1.ReadOnly = true;
-            this.colBrandCD1.Width = 250;
-            // 
-            // colSportsCD1
-            // 
-            this.colSportsCD1.DataPropertyName = "SportsCD";
-            this.colSportsCD1.HeaderText = "競　技";
-            this.colSportsCD1.Name = "colSportsCD1";
-            this.colSportsCD1.ReadOnly = true;
-            this.colSportsCD1.Width = 250;
-            // 
-            // colSegmentCD1
-            // 
-            this.colSegmentCD1.DataPropertyName = "SegmentCD";
-            this.colSegmentCD1.HeaderText = "商品分類";
-            this.colSegmentCD1.Name = "colSegmentCD1";
-            this.colSegmentCD1.ReadOnly = true;
-            this.colSegmentCD1.Width = 250;
-            // 
-            // colYear
-            // 
-            this.colYear.DataPropertyName = "LastYearTerm";
-            this.colYear.HeaderText = "年　度";
-            this.colYear.Name = "colYear";
-            // 
-            // colSeason
-            // 
-            this.colSeason.DataPropertyName = "LastSeason";
-            this.colSeason.HeaderText = "シーズン";
-            this.colSeason.Name = "colSeason";
-            this.colSeason.ReadOnly = true;
-            this.colSeason.Width = 150;
-            // 
-            // colDate
-            // 
-            this.colDate.DataPropertyName = "ChangeDate";
-            this.colDate.HeaderText = "改定日";
-            this.colDate.Name = "colDate";
-            this.colDate.ReadOnly = true;
-            // 
-            // colRate1
-            // 
-            this.colRate1.DataPropertyName = "Rate";
-            this.colRate1.DecimalPlace = ((byte)(0));
-            this.colRate1.HeaderText = "掛率";
-            this.colRate1.MaxInputLength = 32767;
-            this.colRate1.Name = "colRate1";
-            this.colRate1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colRate1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colRate1.UseMinus = false;
-            this.colRate1.UseThousandSeparator = true;
-            // 
-            // col1
-            // 
-            this.col1.DataPropertyName = "Column1";
-            this.col1.HeaderText = "Column1";
-            this.col1.Name = "col1";
-            this.col1.Visible = false;
-            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -505,7 +426,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnDelete.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnDelete.Location = new System.Drawing.Point(1533, 308);
+            this.btnDelete.Location = new System.Drawing.Point(1535, 308);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(1);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(110, 25);
@@ -524,7 +445,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnUpdate.Location = new System.Drawing.Point(1424, 308);
+            this.btnUpdate.Location = new System.Drawing.Point(1426, 308);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(1);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(110, 25);
@@ -543,7 +464,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnAdd.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnAdd.Location = new System.Drawing.Point(1316, 308);
+            this.btnAdd.Location = new System.Drawing.Point(1317, 308);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(1);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(110, 25);
@@ -562,7 +483,7 @@
             this.btnReleaseAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReleaseAll.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnReleaseAll.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnReleaseAll.Location = new System.Drawing.Point(1533, 251);
+            this.btnReleaseAll.Location = new System.Drawing.Point(1534, 251);
             this.btnReleaseAll.Margin = new System.Windows.Forms.Padding(1);
             this.btnReleaseAll.Name = "btnReleaseAll";
             this.btnReleaseAll.Size = new System.Drawing.Size(110, 25);
@@ -581,7 +502,7 @@
             this.btnSelectAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelectAll.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnSelectAll.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnSelectAll.Location = new System.Drawing.Point(1424, 251);
+            this.btnSelectAll.Location = new System.Drawing.Point(1425, 251);
             this.btnSelectAll.Margin = new System.Windows.Forms.Padding(1);
             this.btnSelectAll.Name = "btnSelectAll";
             this.btnSelectAll.Size = new System.Drawing.Size(110, 25);
@@ -600,7 +521,7 @@
             this.btnChoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChoice.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnChoice.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnChoice.Location = new System.Drawing.Point(1315, 251);
+            this.btnChoice.Location = new System.Drawing.Point(1316, 251);
             this.btnChoice.Margin = new System.Windows.Forms.Padding(1);
             this.btnChoice.Name = "btnChoice";
             this.btnChoice.Size = new System.Drawing.Size(110, 25);
@@ -617,25 +538,26 @@
             this.txtRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRate.ClientColor = System.Drawing.Color.White;
             this.txtRate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtRate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtRate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtRate.DecimalPlace = 2;
             this.txtRate.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtRate.IntegerPart = 0;
+            this.txtRate.IntegerPart = 3;
             this.txtRate.IsCorrectDate = true;
             this.txtRate.isEnterKeyDown = false;
+            this.txtRate.IsFirstTime = true;
             this.txtRate.isMaxLengthErr = false;
             this.txtRate.IsNumber = true;
             this.txtRate.IsShop = false;
-            this.txtRate.Length = 20;
+            this.txtRate.Length = 6;
             this.txtRate.Location = new System.Drawing.Point(898, 308);
-            this.txtRate.MaxLength = 20;
+            this.txtRate.MaxLength = 6;
             this.txtRate.MoveNext = true;
             this.txtRate.Name = "txtRate";
-            this.txtRate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtRate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtRate.Size = new System.Drawing.Size(100, 19);
             this.txtRate.TabIndex = 21;
+            this.txtRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtRate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.txtRate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRate_KeyDown);
             // 
             // ckM_Label24
             // 
@@ -668,6 +590,7 @@
             this.txtChangeDate.IntegerPart = 0;
             this.txtChangeDate.IsCorrectDate = true;
             this.txtChangeDate.isEnterKeyDown = false;
+            this.txtChangeDate.IsFirstTime = true;
             this.txtChangeDate.isMaxLengthErr = false;
             this.txtChangeDate.IsNumber = true;
             this.txtChangeDate.IsShop = false;
@@ -726,6 +649,7 @@
             this.scSegmentCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSegmentCD.DataCheck = false;
             this.scSegmentCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scSegmentCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scSegmentCD.IsCopy = false;
             this.scSegmentCD.LabelText = "";
             this.scSegmentCD.LabelVisible = true;
@@ -773,6 +697,7 @@
             this.scSportsCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSportsCD.DataCheck = false;
             this.scSportsCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scSportsCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scSportsCD.IsCopy = false;
             this.scSportsCD.LabelText = "";
             this.scSportsCD.LabelVisible = true;
@@ -801,7 +726,7 @@
             this.ckM_Label20.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label20.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label20.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label20.Location = new System.Drawing.Point(850, 146);
+            this.ckM_Label20.Location = new System.Drawing.Point(850, 145);
             this.ckM_Label20.Name = "ckM_Label20";
             this.ckM_Label20.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label20.TabIndex = 39;
@@ -820,6 +745,7 @@
             this.scBrandCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scBrandCD.DataCheck = false;
             this.scBrandCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scBrandCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scBrandCD.IsCopy = false;
             this.scBrandCD.LabelText = "";
             this.scBrandCD.LabelVisible = true;
@@ -847,7 +773,7 @@
             this.ckM_Label19.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label19.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label19.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label19.Location = new System.Drawing.Point(837, 119);
+            this.ckM_Label19.Location = new System.Drawing.Point(837, 118);
             this.ckM_Label19.Name = "ckM_Label19";
             this.ckM_Label19.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label19.TabIndex = 38;
@@ -922,6 +848,7 @@
             this.txtCopy.IntegerPart = 0;
             this.txtCopy.IsCorrectDate = true;
             this.txtCopy.isEnterKeyDown = false;
+            this.txtCopy.IsFirstTime = true;
             this.txtCopy.isMaxLengthErr = false;
             this.txtCopy.IsNumber = true;
             this.txtCopy.IsShop = false;
@@ -1019,6 +946,7 @@
             this.txtDate.IntegerPart = 0;
             this.txtDate.IsCorrectDate = true;
             this.txtDate.isEnterKeyDown = false;
+            this.txtDate.IsFirstTime = true;
             this.txtDate.isMaxLengthErr = false;
             this.txtDate.IsNumber = true;
             this.txtDate.IsShop = false;
@@ -1041,7 +969,7 @@
             this.ckM_Label13.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label13.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label13.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label13.Location = new System.Drawing.Point(101, 253);
+            this.ckM_Label13.Location = new System.Drawing.Point(101, 252);
             this.ckM_Label13.Name = "ckM_Label13";
             this.ckM_Label13.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label13.TabIndex = 32;
@@ -1058,7 +986,7 @@
             this.ckM_Label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label12.Location = new System.Drawing.Point(88, 226);
+            this.ckM_Label12.Location = new System.Drawing.Point(88, 225);
             this.ckM_Label12.Name = "ckM_Label12";
             this.ckM_Label12.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label12.TabIndex = 31;
@@ -1077,6 +1005,7 @@
             this.scSegmentCD1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSegmentCD1.DataCheck = false;
             this.scSegmentCD1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scSegmentCD1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scSegmentCD1.IsCopy = false;
             this.scSegmentCD1.LabelText = "";
             this.scSegmentCD1.LabelVisible = true;
@@ -1105,7 +1034,7 @@
             this.ckM_Label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label11.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label11.Location = new System.Drawing.Point(88, 171);
+            this.ckM_Label11.Location = new System.Drawing.Point(88, 172);
             this.ckM_Label11.Name = "ckM_Label11";
             this.ckM_Label11.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label11.TabIndex = 30;
@@ -1124,6 +1053,7 @@
             this.scSportsCD1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSportsCD1.DataCheck = false;
             this.scSportsCD1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scSportsCD1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scSportsCD1.IsCopy = false;
             this.scSportsCD1.LabelText = "";
             this.scSportsCD1.LabelVisible = true;
@@ -1171,6 +1101,7 @@
             this.scBrandCD1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scBrandCD1.DataCheck = false;
             this.scBrandCD1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scBrandCD1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scBrandCD1.IsCopy = false;
             this.scBrandCD1.LabelText = "";
             this.scBrandCD1.LabelVisible = true;
@@ -1198,7 +1129,7 @@
             this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(88, 119);
+            this.ckM_Label9.Location = new System.Drawing.Point(88, 118);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label9.TabIndex = 28;
@@ -1248,25 +1179,25 @@
             this.txtRate1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRate1.ClientColor = System.Drawing.Color.White;
             this.txtRate1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtRate1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtRate1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtRate1.DecimalPlace = 2;
             this.txtRate1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtRate1.IntegerPart = 0;
+            this.txtRate1.IntegerPart = 3;
             this.txtRate1.IsCorrectDate = true;
             this.txtRate1.isEnterKeyDown = false;
+            this.txtRate1.IsFirstTime = true;
             this.txtRate1.isMaxLengthErr = false;
             this.txtRate1.IsNumber = true;
             this.txtRate1.IsShop = false;
-            this.txtRate1.Length = 20;
+            this.txtRate1.Length = 6;
             this.txtRate1.Location = new System.Drawing.Point(148, 62);
-            this.txtRate1.MaxLength = 20;
+            this.txtRate1.MaxLength = 6;
             this.txtRate1.MoveNext = true;
             this.txtRate1.Name = "txtRate1";
             this.txtRate1.Size = new System.Drawing.Size(100, 19);
             this.txtRate1.TabIndex = 3;
             this.txtRate1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtRate1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.txtRate1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRate1_KeyDown);
             // 
             // ckM_Label6
             // 
@@ -1277,7 +1208,7 @@
             this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(101, 66);
+            this.ckM_Label6.Location = new System.Drawing.Point(101, 65);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label6.TabIndex = 25;
@@ -1299,6 +1230,7 @@
             this.txtRevisionDate.IntegerPart = 0;
             this.txtRevisionDate.IsCorrectDate = true;
             this.txtRevisionDate.isEnterKeyDown = false;
+            this.txtRevisionDate.IsFirstTime = true;
             this.txtRevisionDate.isMaxLengthErr = false;
             this.txtRevisionDate.IsNumber = true;
             this.txtRevisionDate.IsShop = false;
@@ -1475,6 +1407,7 @@
             this.scSupplierCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSupplierCD.DataCheck = false;
             this.scSupplierCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scSupplierCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scSupplierCD.IsCopy = false;
             this.scSupplierCD.LabelText = "";
             this.scSupplierCD.LabelVisible = true;
@@ -1493,12 +1426,87 @@
             this.scSupplierCD.Value3 = null;
             this.scSupplierCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scSupplierCD_CodeKeyDownEvent);
             // 
+            // colChk
+            // 
+            this.colChk.FalseValue = "false";
+            this.colChk.HeaderText = "";
+            this.colChk.IndeterminateValue = "false";
+            this.colChk.Name = "colChk";
+            this.colChk.TrueValue = "true";
+            this.colChk.Width = 50;
+            // 
+            // colBrandCD1
+            // 
+            this.colBrandCD1.DataPropertyName = "BrandCD";
+            this.colBrandCD1.HeaderText = "ブランド";
+            this.colBrandCD1.Name = "colBrandCD1";
+            this.colBrandCD1.ReadOnly = true;
+            this.colBrandCD1.Width = 250;
+            // 
+            // colSportsCD1
+            // 
+            this.colSportsCD1.DataPropertyName = "SportsCD";
+            this.colSportsCD1.HeaderText = "競　技";
+            this.colSportsCD1.Name = "colSportsCD1";
+            this.colSportsCD1.ReadOnly = true;
+            this.colSportsCD1.Width = 250;
+            // 
+            // colSegmentCD1
+            // 
+            this.colSegmentCD1.DataPropertyName = "SegmentCD";
+            this.colSegmentCD1.HeaderText = "商品分類";
+            this.colSegmentCD1.Name = "colSegmentCD1";
+            this.colSegmentCD1.ReadOnly = true;
+            this.colSegmentCD1.Width = 250;
+            // 
+            // colYear
+            // 
+            this.colYear.DataPropertyName = "LastYearTerm";
+            this.colYear.HeaderText = "年　度";
+            this.colYear.Name = "colYear";
+            // 
+            // colSeason
+            // 
+            this.colSeason.DataPropertyName = "LastSeason";
+            this.colSeason.HeaderText = "シーズン";
+            this.colSeason.Name = "colSeason";
+            this.colSeason.ReadOnly = true;
+            this.colSeason.Width = 150;
+            // 
+            // colDate
+            // 
+            this.colDate.DataPropertyName = "ChangeDate";
+            this.colDate.HeaderText = "改定日";
+            this.colDate.Name = "colDate";
+            this.colDate.ReadOnly = true;
+            // 
+            // colRate1
+            // 
+            this.colRate1.DataPropertyName = "Rate";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "N2";
+            dataGridViewCellStyle9.NullValue = "0";
+            this.colRate1.DefaultCellStyle = dataGridViewCellStyle9;
+            this.colRate1.HeaderText = "          掛率";
+            this.colRate1.Name = "colRate1";
+            // 
+            // col1
+            // 
+            this.col1.DataPropertyName = "Column1";
+            this.col1.HeaderText = "Column1";
+            this.col1.Name = "col1";
+            this.col1.Visible = false;
+            // 
             // frmMasterTouroku_ShiireKakeritsu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1684, 1061);
             this.Controls.Add(this.panelDetail);
+            this.F2Visible = false;
+            this.F3Visible = false;
+            this.F4Visible = false;
+            this.F5Visible = false;
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
             this.Name = "frmMasterTouroku_ShiireKakeritsu";
@@ -1586,7 +1594,7 @@
         private CKM_Controls.CKM_ComboBox cbo_Year;
         private CKM_Controls.CKM_ComboBox cbo_Season1;
         private CKM_Controls.CKM_ComboBox cbo_Year1;
-        private CKM_Controls.CKM_Button ckM_Button1;
+        private CKM_Controls.CKM_Button btnCapture;
         private CKM_Controls.CKM_RadioButton rdoIndividualStores;
         private CKM_Controls.CKM_RadioButton rdoAllStores;
         private CKM_Controls.CKM_Label ckM_Label27;
@@ -1598,7 +1606,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colYear;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSeason;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
-        private SMS.CustomControls.DataGridViewDecimalColumn colRate1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRate1;
         private System.Windows.Forms.DataGridViewTextBoxColumn col1;
     }
 }
