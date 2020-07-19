@@ -121,14 +121,15 @@ namespace BL
                 return true;
             }
         }
-        ///// <summary>
-        ///// 返品入力更新処理
-        ///// MarkDownNyuuryokuより更新時に使用
-        ///// </summary>
-        //public bool Purchase_Exec(D_Purchase_Entity dme, DataTable dt, short operationMode)
-        //{
-        //    return ddl.D_Purchase_ExecH(dme, dt, operationMode);
-        //}
+
+        /// <summary>
+        /// 返品入力更新処理
+        /// MarkDownNyuuryokuより更新時に使用
+        /// </summary>
+        public bool PRC_MarkDownNyuuryoku(D_MarkDown_Entity dme, DataTable dt, short operationMode)
+        {
+            return mdl.PRC_MarkDownNyuuryoku(dme, dt, operationMode);
+        }
 
         ///// <summary>
         ///// 返品入力取得処理
@@ -153,6 +154,6 @@ namespace BL
         //    return dt;
         //}
 
-            
+
     }
 }

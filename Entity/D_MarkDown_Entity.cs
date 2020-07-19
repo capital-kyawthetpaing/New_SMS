@@ -31,5 +31,8 @@ namespace Entity
         public string ChkNotAccount { get; set; }
         public string ChkAccounted { get; set; }
 
+        //更新用
+        public string PurchaseGaku { get; set; }       
+
     }
 }
