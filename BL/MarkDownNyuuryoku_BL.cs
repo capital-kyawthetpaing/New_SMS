@@ -66,6 +66,16 @@ namespace BL
         }
 
         /// <summary>
+        /// 商品取得
+        /// </summary>
+        /// <param name="dme"></param>
+        /// <returns></returns>
+        public DataTable M_SKU_SelectForMarkDown(M_SKU_Entity mse)
+        {
+            return mdl.M_SKU_SelectForMarkDown(mse);
+        }
+
+        /// <summary>
         /// 締処理済の場合（以下のSelectができる場合）Error
         /// </summary>
         /// <param name="dpe"></param>

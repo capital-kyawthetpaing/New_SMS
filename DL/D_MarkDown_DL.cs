@@ -45,6 +45,18 @@ namespace DL
             return SelectData(dic, sp);
         }
 
+        public DataTable M_SKU_SelectForMarkDown(M_SKU_Entity mse)
+        {
+            string sp = "M_SKU_SelectForMarkDown";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+                {
+                    { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.JanCD } },
+                    { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ChangeDate } },
+                };
+
+            return SelectData(dic, sp);
+        }
+
         public bool PRC_MarkDownNyuuryoku(D_MarkDown_Entity dme, DataTable dt, short operationMode)
         {
             string sp = "PRC_MarkDownNyuuryoku";
@@ -57,7 +69,9 @@ namespace DL
             AddParam(command, "@MarkDownNO", SqlDbType.VarChar, dme.MarkDownNO);
             AddParam(command, "@StoreCD", SqlDbType.VarChar, dme.StoreCD);
             AddParam(command, "@SoukoCD", SqlDbType.VarChar, dme.SoukoCD);
-            AddParam(command, "@StockReplicaName", SqlDbType.VarChar, dme.StockReplicaName);
+            AddParam(command, "@ReplicaNO", SqlDbType.Int, dme.ReplicaNO);
+            AddParam(command, "@ReplicaDate", SqlDbType.Date, dme.ReplicaDate);
+            AddParam(command, "@ReplicaTime", SqlDbType.Time, dme.ReplicaTime);
             AddParam(command, "@StaffCD", SqlDbType.VarChar, dme.StaffCD);
             AddParam(command, "@VendorCD", SqlDbType.VarChar, dme.VendorCD);
             AddParam(command, "@CostingDate", SqlDbType.VarChar, dme.CostingDate);

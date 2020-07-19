@@ -12,7 +12,9 @@ namespace Entity
         public string StoreCD { get; set; }
         public string SoukoCD { get; set; }
         public string MarkDownDate { get; set; }
-        public string StockReplicaName { get; set; }
+        public string ReplicaNO { get; set; }
+        public string ReplicaDate { get; set; }
+        public string ReplicaTime { get; set; }
         public string StaffCD { get; set; }
         public string VendorCD { get; set; }
         public string CostingDate { get; set; }

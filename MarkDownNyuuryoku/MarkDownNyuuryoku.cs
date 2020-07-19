@@ -1668,14 +1668,15 @@ namespace MarkDownNyuuryoku
                     M_SKU_Entity mse = new M_SKU_Entity
                     {
                         JanCD = mGrid.g_DArray[row].JanCD,
-                        SetKBN = "0",
                         ChangeDate = ymd
                     };
 
-                    SKU_BL sbl = new SKU_BL();
-                    DataTable dt = sbl.M_SKU_SelectAll(mse);
+                    mdbl = new MarkDownNyuuryoku_BL();
+                    DataTable dt = mdbl.M_SKU_SelectForMarkDown(mse);
                     if (dt.Rows.Count > 0)
                     {
+
+
                         mGrid.g_DArray[row].Chk = false;
                         mGrid.g_DArray[row].ITEMCD = dt.Rows[0]["ITemCD"].ToString();
                         mGrid.g_DArray[row].SKUName = dt.Rows[0]["SKUName"].ToString();
@@ -2049,7 +2050,9 @@ namespace MarkDownNyuuryoku
                 VendorCD = detailControls[(int)EIndex.VendorCD].Text,
                 SoukoCD = CboSouko.SelectedValue.ToString(),
                 StoreCD = mStoreCD,
-                StockReplicaName = CboStockInfo.SelectedText,
+                ReplicaNO = CboStockInfo.SelectedValue.ToString(),
+                ReplicaDate = CboStockInfo.SelectedText.Substring(0,10),
+                ReplicaTime = CboStockInfo.SelectedText.Substring(11,8),
                 StaffCD = detailControls[(int)EIndex.StaffCD].Text,
                 CostingDate = detailControls[(int)EIndex.CostingDate].Text,
                 UnitPriceDate = detailControls[(int)EIndex.UnitPriceDate].Text,
@@ -2448,10 +2451,19 @@ namespace MarkDownNyuuryoku
 
                         if (!frmProduct.flgCancel)
                         {
-                            List<string> list = frmProduct.list;
+                            //JanCdの重複削除
+                            List<string> list = new List<string>();
+                            foreach (string janCd in frmProduct.list)
+                            {
+                                if (!list.Contains(janCd))
+                                {
+                                    list.Add(janCd);
+                                }
+                            }
 
                             //  空行の検索
                             int i = 0;
+                            List<string> dtlJanCd = new List<string>();
                             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
                             {
                                 if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JanCD))
@@ -2459,11 +2471,21 @@ namespace MarkDownNyuuryoku
                                     i = RW;
                                     break;
                                 }
+                                else
+                                {
+                                    dtlJanCd.Add(mGrid.g_DArray[RW].JanCD);
+                                }
                             }
 
                             //  商品表示
                             foreach (string jancd in list)
-                            {                               
+                            {
+                                //画面に同一のJANCDの明細が存在する場合、表示なし
+                                if (dtlJanCd.Contains(jancd))
+                                {
+                                    bbl.ShowMessage("E226");
+                                    return;
+                                }
 
                                 //使用可能行数を超えた場合エラー
                                 if (i > m_EnableCnt - 1)
