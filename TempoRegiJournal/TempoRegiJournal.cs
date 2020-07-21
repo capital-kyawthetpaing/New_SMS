@@ -13,7 +13,7 @@ namespace TempoRegiJournal
         /// <summary>
         /// 製品名上段文字数
         /// </summary>
-        private const int SKU_SHORTNAME_LENGTH = 23;
+        private const int SKU_SHORTNAME_LENGTH = 23*2;
 
         /// <summary>
         /// BL
@@ -240,17 +240,19 @@ namespace TempoRegiJournal
                 sales.TotalGaku = ConvertDecimal(row["TotalGaku"]);                             // 販売合計額
 
                 // 商品名
+                var encoding = System.Text.Encoding.GetEncoding("Shift_JIS");
+
                 var skuShortName = Convert.ToString(row["SKUShortName"]);
-                if (skuShortName.Length < SKU_SHORTNAME_LENGTH)
+                byte[] skuShortNameBT = encoding.GetBytes(skuShortName);
+                if (skuShortNameBT.Length < SKU_SHORTNAME_LENGTH)
                 {
                     sales.SKUShortName1 = skuShortName;
                     sales.SKUShortName2 = "";
                 }
                 else
                 {
-                    var skuShortNames = CountSplit(skuShortName, SKU_SHORTNAME_LENGTH);
-                    sales.SKUShortName1 = skuShortNames[0];
-                    sales.SKUShortName2 = skuShortNames.Length > 1 ? skuShortNames[1] : "";
+                    sales.SKUShortName1 = encoding.GetString(skuShortNameBT, 0, SKU_SHORTNAME_LENGTH);
+                    sales.SKUShortName2 = encoding.GetString(skuShortNameBT, SKU_SHORTNAME_LENGTH, skuShortNameBT.Length - SKU_SHORTNAME_LENGTH);
                 }
 
                 #region 合計データ
