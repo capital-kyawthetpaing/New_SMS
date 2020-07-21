@@ -127,8 +127,7 @@ namespace TempoRegiZaikoKakunin
                 kne.Operator = InOperatorCD;
                 DataTable dt = new DataTable();
                 dt = zaikobl.D_Stock_DataSelect(kne);
-                dgvZaikokakunin.DataSource = dt;
-                
+                dgvZaikokakunin.DataSource = dt;               
             }
         }
         private void txtJanCD_KeyDown(object sender, KeyEventArgs e)
