@@ -187,6 +187,7 @@ namespace TempoRegiTsurisenJyunbi
             if (dt.Rows.Count > 0)
             {
                 trtjb.ShowMessage("E252");
+                return false;
             }
             return true;
         }

@@ -67,6 +67,7 @@ namespace TempoRegiNyuukinTouroku
             if (dt.Rows.Count > 0)
             {
                 trntBL.ShowMessage("E252");
+                return false;
             }
             if (!string.IsNullOrWhiteSpace(txtCustomerCD.Text))
             {
