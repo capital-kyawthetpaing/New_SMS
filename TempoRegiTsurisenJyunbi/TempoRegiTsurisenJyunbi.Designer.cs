@@ -62,7 +62,7 @@
             this.ckmShop_Label3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label3.FontBold = true;
             this.ckmShop_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckmShop_Label3.Location = new System.Drawing.Point(513, 83);
+            this.ckmShop_Label3.Location = new System.Drawing.Point(473, 83);
             this.ckmShop_Label3.Name = "ckmShop_Label3";
             this.ckmShop_Label3.Size = new System.Drawing.Size(607, 35);
             this.ckmShop_Label3.TabIndex = 7;
@@ -93,7 +93,7 @@
             this.txtDate.MaxLength = 10;
             this.txtDate.MoveNext = true;
             this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(250, 42);
+            this.txtDate.Size = new System.Drawing.Size(210, 42);
             this.txtDate.TabIndex = 0;
             this.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -177,7 +177,7 @@
             this.DepositGaku.MaxLength = 10;
             this.DepositGaku.MoveNext = true;
             this.DepositGaku.Name = "DepositGaku";
-            this.DepositGaku.Size = new System.Drawing.Size(250, 42);
+            this.DepositGaku.Size = new System.Drawing.Size(210, 42);
             this.DepositGaku.TabIndex = 1;
             this.DepositGaku.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.DepositGaku.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
