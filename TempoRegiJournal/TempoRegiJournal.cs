@@ -13,7 +13,7 @@ namespace TempoRegiJournal
         /// <summary>
         /// 製品名上段文字数
         /// </summary>
-        private const int SKU_SHORTNAME_LENGTH = 20;
+        private const int SKU_SHORTNAME_LENGTH = 23;
 
         /// <summary>
         /// BL
