@@ -63,7 +63,7 @@ namespace TempoRegiNyuukinTouroku
             if (!RequireCheck(new Control[] { txtPayment, cboDenominationName }))
                 return false;
             DataTable dt = new DataTable();
-            dt = trntBL.SimpleSelect1("70", null, StoreCD, null, null);
+            dt = trntBL.SimpleSelect1("70", ChangeDate.Replace("/", "-"), StoreCD);
             if (dt.Rows.Count > 0)
             {
                 trntBL.ShowMessage("E252");
@@ -104,7 +104,7 @@ namespace TempoRegiNyuukinTouroku
                 if (trntBL.ShowMessage("Q101") == DialogResult.Yes)
                 {
                     DataTable dt = new DataTable();
-                    dt = trntBL.SimpleSelect1("70", null, StoreCD,null, null);
+                    dt = trntBL.SimpleSelect1("70", ChangeDate.Replace("/", "-"), StoreCD);
                     if (dt.Rows.Count > 0)
                     {
                         trntBL.ShowMessage("E252");
