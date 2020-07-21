@@ -137,7 +137,7 @@ namespace TempoRegiRyougaeNyuuryoku
                     if (trrnbl.ShowMessage("Q101") == DialogResult.Yes)
                     {
                         DataTable dt = new DataTable();
-                        dt = trrnbl.SimpleSelect1("70",null, storeCD,null,null);
+                        dt = trrnbl.SimpleSelect1("70", ChangeDate.Replace("/", "-"), storeCD);
                         if(dt.Rows.Count >0)
                         {
                             trrnbl.ShowMessage("E252");
@@ -211,8 +211,9 @@ namespace TempoRegiRyougaeNyuuryoku
                 return false;
             }
             DataTable dt = new DataTable();
-            dt = trrnbl.SimpleSelect1("70",null, storeCD,null,null);
-            if(dt.Rows.Count >0)
+            //dt = trrnbl.SimpleSelect1("70",null, storeCD,null,null);
+            dt = trrnbl.SimpleSelect1("70", ChangeDate.Replace("/", "-"), storeCD);
+            if (dt.Rows.Count >0)
             {
                 trrnbl.ShowMessage("E252");
                 return false;

@@ -133,7 +133,7 @@ namespace MasterTouroku_ShiireKakeritsu
         public void CancelData()
         {
             //scSupplierCD.Clear();
-            txtDate1.Text = string.Empty;
+            //txtDate1.Text = string.Empty;
             txtRevisionDate.Text = string.Empty;
             txtRate1.Text = string.Empty;
             scBrandCD1.Clear();
@@ -335,29 +335,77 @@ namespace MasterTouroku_ShiireKakeritsu
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchCondition = string.Empty;
-            if (!string.IsNullOrWhiteSpace(scBrandCD1.TxtCode.Text))
+            //if (!string.IsNullOrWhiteSpace(scBrandCD1.TxtCode.Text))
+            //{
+            //    searchCondition = "BrandCD = '" + scBrandCD1.TxtCode.Text + "'";
+            //}
+            //if (!string.IsNullOrWhiteSpace(scSportsCD1.TxtCode.Text))
+            //{
+            //    searchCondition += "and SportsCD='" + scSportsCD1.TxtCode.Text + "'";
+            //}
+            //if (!string.IsNullOrWhiteSpace(scSegmentCD1.TxtCode.Text))
+            //{
+            //    searchCondition += "and SegmentCD= '" + scSegmentCD1.TxtCode.Text + "'";
+            //}
+            //if (!string.IsNullOrWhiteSpace(cbo_Year1.Text))
+            //{
+            //    searchCondition += "and LastYearTerm='" + cbo_Year1.Text + "'";
+            //}
+            //if (!string.IsNullOrWhiteSpace(cbo_Season1.Text))
+            //{
+            //    searchCondition += "and LastSeason= '" + cbo_Season1.Text + "'";
+            //}
+            //if (!string.IsNullOrWhiteSpace(txtDate.Text))
+            //{
+            //    searchCondition += "and ChangeDate= '" + txtDate.Text;
+            //}
+            if (String.IsNullOrEmpty(scBrandCD1.TxtCode.Text))
+            {
+                searchCondition = "BrandCD is Null";
+            }
+            else
             {
                 searchCondition = "BrandCD = '" + scBrandCD1.TxtCode.Text + "'";
             }
-            if (!string.IsNullOrWhiteSpace(scSportsCD1.TxtCode.Text))
+            if (String.IsNullOrEmpty(scSportsCD1.TxtCode.Text))
             {
-                searchCondition += "and SportsCD='" + scSportsCD1.TxtCode.Text + "'";
+                searchCondition += "and SportsCD is Null";
             }
-            if (!string.IsNullOrWhiteSpace(scSegmentCD1.TxtCode.Text))
+            else
             {
-                searchCondition += "and SegmentCD= '" + scSegmentCD1.TxtCode.Text + "'";
+                searchCondition += " and SportsCD = '" + scSportsCD1.TxtCode.Text + "'";
             }
-            if (!string.IsNullOrWhiteSpace(cbo_Year1.Text))
+            if (String.IsNullOrEmpty(scSegmentCD1.TxtCode.Text))
             {
-                searchCondition += "and LastYearTerm='" + cbo_Year1.Text + "'";
+                searchCondition += "and SegmentCD is Null";
             }
-            if (!string.IsNullOrWhiteSpace(cbo_Season1.Text))
+            else
             {
-                searchCondition += "and LastSeason= '" + cbo_Season1.Text + "'";
+                searchCondition += " and SegmentCD = '" + scSegmentCD1.TxtCode.Text + "'";
             }
-            if (!string.IsNullOrWhiteSpace(txtDate.Text))
+            if (String.IsNullOrEmpty(cbo_Year1.Text))
             {
-                searchCondition += "and ChangeDate= '" + txtDate.Text;
+                searchCondition += "and LastYearTerm is Null";
+            }
+            else
+            {
+                searchCondition += " and LastYearTerm = '" + cbo_Year1.Text + "'";
+            }
+            if (String.IsNullOrEmpty(cbo_Season1.Text))
+            {
+                searchCondition += "and LastSeason is Null";
+            }
+            else
+            {
+                searchCondition += " and LastSeason = '" + cbo_Season1.Text + "'";
+            }
+            if (String.IsNullOrEmpty(txtDate.Text))
+            {
+                searchCondition += "and ChangeDate is Null";
+            }
+            else
+            {
+                searchCondition += " and ChangeDate = '" + txtDate.Text + "'";
             }
             if (dgv_ShiireKakeritsu.DataSource != null)
             {
