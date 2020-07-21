@@ -30,11 +30,11 @@ namespace TempoRegiZaikoKakunin
         {
             InitializeComponent();
         }
-        
+
         private void frmTempoRegiZaikoKakunin_Load(object sender, EventArgs e)
         {
             InProgramID = "TempoRegiZaikoKakunin";
-            
+
             InPcID = PcID;
             InOperatorCD = OperatorCD;
             InCompanyCD = CompanyCD;
@@ -57,9 +57,11 @@ namespace TempoRegiZaikoKakunin
                 string shiireNO = cmds[(int)ECmdLine.PcID + 1];   //
                 //ChangeOperationMode(EOperationMode.UPDATE);
                 txtJanCD.Text = shiireNO;
-               // CheckKey((int)EIndex.PurchaseNO, true);
+                // CheckKey((int)EIndex.PurchaseNO, true);
             }
-
+            //DataGridViewColumn column = dgvZaikokakunin.Columns[-1];
+            //column.Width = 70;
+         
 
         }
 

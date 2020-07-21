@@ -44,5 +44,61 @@ namespace DL
 
             return SelectData(dic, sp);
         }
+
+        public DataTable M_SKU_SelectForMarkDown(M_SKU_Entity mse)
+        {
+            string sp = "M_SKU_SelectForMarkDown";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+                {
+                    { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.JanCD } },
+                    { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ChangeDate } },
+                };
+
+            return SelectData(dic, sp);
+        }
+
+        public bool PRC_MarkDownNyuuryoku(D_MarkDown_Entity dme, DataTable dt, short operationMode)
+        {
+            string sp = "PRC_MarkDownNyuuryoku";
+
+            command = new SqlCommand(sp, GetConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandTimeout = 0;
+
+            AddParam(command, "@OperateMode", SqlDbType.Int, operationMode.ToString());
+            AddParam(command, "@MarkDownNO", SqlDbType.VarChar, dme.MarkDownNO);
+            AddParam(command, "@StoreCD", SqlDbType.VarChar, dme.StoreCD);
+            AddParam(command, "@SoukoCD", SqlDbType.VarChar, dme.SoukoCD);
+            AddParam(command, "@ReplicaNO", SqlDbType.Int, dme.ReplicaNO);
+            AddParam(command, "@ReplicaDate", SqlDbType.Date, dme.ReplicaDate);
+            AddParam(command, "@ReplicaTime", SqlDbType.Time, dme.ReplicaTime);
+            AddParam(command, "@StaffCD", SqlDbType.VarChar, dme.StaffCD);
+            AddParam(command, "@VendorCD", SqlDbType.VarChar, dme.VendorCD);
+            AddParam(command, "@CostingDate", SqlDbType.VarChar, dme.CostingDate);
+            AddParam(command, "@UnitPriceDate", SqlDbType.VarChar, dme.UnitPriceDate);
+            AddParam(command, "@ExpectedPurchaseDate", SqlDbType.VarChar, dme.ExpectedPurchaseDate);
+            AddParam(command, "@PurchaseDate", SqlDbType.VarChar, dme.PurchaseDate);
+            AddParam(command, "@Comment", SqlDbType.VarChar, dme.Comment);
+            AddParam(command, "@MDPurchaseNO", SqlDbType.VarChar, dme.MDPurchaseNO);
+            AddParam(command, "@PurchaseNO", SqlDbType.VarChar, dme.PurchaseNO);
+            AddParam(command, "@PurchaseGaku", SqlDbType.VarChar, dme.PurchaseGaku);
+
+            AddParamForDataTable(command, "@Table", SqlDbType.Structured, dt);
+            AddParam(command, "@Operator", SqlDbType.VarChar, dme.InsertOperator);
+            AddParam(command, "@PC", SqlDbType.VarChar, dme.PC);
+
+            //OUTパラメータの追加
+            string outPutParam = "@OutMarkDownNO";
+            command.Parameters.Add(outPutParam, SqlDbType.VarChar, 11);
+            command.Parameters[outPutParam].Direction = ParameterDirection.Output;
+
+            UseTransaction = true;
+
+            bool ret = InsertUpdateDeleteData(sp, ref outPutParam);
+            if (ret)
+                dme.MarkDownNO = outPutParam;
+
+            return ret;
+        }
     }
 }
