@@ -141,7 +141,12 @@ namespace TempoRegiTsurisenJyunbi
                 {
                     if (trtjb.ShowMessage("Q101") == DialogResult.Yes)
                     {
-                      
+                        DataTable dt = new DataTable();
+                        dt = trtjb.SimpleSelect1("71", null, storeCD, txtDate.Text, null);
+                        if (dt.Rows.Count > 0)
+                        {
+                            trtjb.ShowMessage("E252");
+                        }
                         mre = DepositHistoryEnity();
                         if (trtjb.TempoRegiTsurisenJyunbi_Insert_Update(mre))
                         {
@@ -177,6 +182,12 @@ namespace TempoRegiTsurisenJyunbi
         {
             if (!RequireCheck(new Control[] { txtDate,DepositGaku}))   // go that focus
                 return false;
+            DataTable dt = new DataTable();
+            dt = trtjb.SimpleSelect1("71", null, storeCD, txtDate.Text, null);
+            if (dt.Rows.Count > 0)
+            {
+                trtjb.ShowMessage("E252");
+            }
             return true;
         }
         private void txtDate_KeyDown(object sender, KeyEventArgs e)
