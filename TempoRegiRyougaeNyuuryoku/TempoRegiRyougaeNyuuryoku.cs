@@ -212,7 +212,7 @@ namespace TempoRegiRyougaeNyuuryoku
             }
             DataTable dt = new DataTable();
             dt = trrnbl.SimpleSelect1("70",null, storeCD,null,null);
-           if(dt.Rows.Count >0)
+            if(dt.Rows.Count >0)
             {
                 trrnbl.ShowMessage("E252");
                 return false;
