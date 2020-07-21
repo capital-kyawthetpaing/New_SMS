@@ -119,6 +119,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Receipt_DataSet.cs">
+      <DependentUpon>Receipt_DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Receipt_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

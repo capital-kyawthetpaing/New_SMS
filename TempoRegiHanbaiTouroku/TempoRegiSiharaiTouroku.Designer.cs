@@ -961,7 +961,7 @@
             this.lblJuchuuTaxRitsu.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuTaxRitsu.Location = new System.Drawing.Point(-2, 2);
             this.lblJuchuuTaxRitsu.Name = "lblJuchuuTaxRitsu";
-            this.lblJuchuuTaxRitsu.Size = new System.Drawing.Size(200, 35);
+            this.lblJuchuuTaxRitsu.Size = new System.Drawing.Size(230, 35);
             this.lblJuchuuTaxRitsu.TabIndex = 94;
             this.lblJuchuuTaxRitsu.Text = "XXXXXXXXX11";
             this.lblJuchuuTaxRitsu.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;

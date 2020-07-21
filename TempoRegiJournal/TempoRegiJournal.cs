@@ -11,6 +11,11 @@ namespace TempoRegiJournal
     public partial class TempoRegiJournal : ShopBaseForm
     {
         /// <summary>
+        /// 製品名上段文字数
+        /// </summary>
+        private const int SKU_SHORTNAME_LENGTH = 20;
+
+        /// <summary>
         /// BL
         /// </summary>
         TempoRegiJournal_BL bl = new TempoRegiJournal_BL();
@@ -236,14 +241,14 @@ namespace TempoRegiJournal
 
                 // 商品名
                 var skuShortName = Convert.ToString(row["SKUShortName"]);
-                if (skuShortName.Length < 16)
+                if (skuShortName.Length < SKU_SHORTNAME_LENGTH)
                 {
                     sales.SKUShortName1 = skuShortName;
                     sales.SKUShortName2 = "";
                 }
                 else
                 {
-                    var skuShortNames = CountSplit(skuShortName, 16);
+                    var skuShortNames = CountSplit(skuShortName, SKU_SHORTNAME_LENGTH);
                     sales.SKUShortName1 = skuShortNames[0];
                     sales.SKUShortName2 = skuShortNames.Length > 1 ? skuShortNames[1] : "";
                 }
