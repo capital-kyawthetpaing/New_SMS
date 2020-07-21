@@ -147,6 +147,7 @@
             this.txtRefDate.IntegerPart = 0;
             this.txtRefDate.IsCorrectDate = true;
             this.txtRefDate.isEnterKeyDown = false;
+            this.txtRefDate.IsFirstTime = true;
             this.txtRefDate.isMaxLengthErr = false;
             this.txtRefDate.IsNumber = true;
             this.txtRefDate.IsShop = false;
@@ -192,6 +193,7 @@
             this.txtCustomerName.IntegerPart = 0;
             this.txtCustomerName.IsCorrectDate = true;
             this.txtCustomerName.isEnterKeyDown = false;
+            this.txtCustomerName.IsFirstTime = true;
             this.txtCustomerName.isMaxLengthErr = false;
             this.txtCustomerName.IsNumber = true;
             this.txtCustomerName.IsShop = false;
@@ -236,6 +238,7 @@
             this.txtKanaName.IntegerPart = 0;
             this.txtKanaName.IsCorrectDate = true;
             this.txtKanaName.isEnterKeyDown = false;
+            this.txtKanaName.IsFirstTime = true;
             this.txtKanaName.isMaxLengthErr = false;
             this.txtKanaName.IsNumber = true;
             this.txtKanaName.IsShop = false;
@@ -279,6 +282,7 @@
             this.txtPhno.IntegerPart = 0;
             this.txtPhno.IsCorrectDate = true;
             this.txtPhno.isEnterKeyDown = false;
+            this.txtPhno.IsFirstTime = true;
             this.txtPhno.isMaxLengthErr = false;
             this.txtPhno.IsNumber = true;
             this.txtPhno.IsShop = false;
@@ -322,6 +326,7 @@
             this.txtBirthDate.IntegerPart = 0;
             this.txtBirthDate.IsCorrectDate = true;
             this.txtBirthDate.isEnterKeyDown = false;
+            this.txtBirthDate.IsFirstTime = true;
             this.txtBirthDate.isMaxLengthErr = false;
             this.txtBirthDate.IsNumber = true;
             this.txtBirthDate.IsShop = false;
@@ -422,6 +427,7 @@
             this.txtKeyword.IntegerPart = 0;
             this.txtKeyword.IsCorrectDate = true;
             this.txtKeyword.isEnterKeyDown = false;
+            this.txtKeyword.IsFirstTime = true;
             this.txtKeyword.isMaxLengthErr = false;
             this.txtKeyword.IsNumber = true;
             this.txtKeyword.IsShop = false;
@@ -466,6 +472,7 @@
             this.txtCustCDFrom.IntegerPart = 0;
             this.txtCustCDFrom.IsCorrectDate = true;
             this.txtCustCDFrom.isEnterKeyDown = false;
+            this.txtCustCDFrom.IsFirstTime = true;
             this.txtCustCDFrom.isMaxLengthErr = false;
             this.txtCustCDFrom.IsNumber = true;
             this.txtCustCDFrom.IsShop = false;
@@ -509,6 +516,7 @@
             this.txtCustCDTo.IntegerPart = 0;
             this.txtCustCDTo.IsCorrectDate = true;
             this.txtCustCDTo.isEnterKeyDown = false;
+            this.txtCustCDTo.IsFirstTime = true;
             this.txtCustCDTo.isMaxLengthErr = false;
             this.txtCustCDTo.IsNumber = true;
             this.txtCustCDTo.IsShop = false;
@@ -675,6 +683,7 @@
             this.ClientSize = new System.Drawing.Size(1284, 785);
             this.Controls.Add(this.gv_CustomerSearch);
             this.F11Visible = true;
+            this.F12Visible = true;
             this.F9Visible = true;
             this.Name = "FrmSearch_Customer";
             this.PanelHeaderHeight = 210;

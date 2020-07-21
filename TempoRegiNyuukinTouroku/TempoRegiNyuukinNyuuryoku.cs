@@ -59,9 +59,16 @@ namespace TempoRegiNyuukinTouroku
 
         public bool ErrorCheck()
         {
+
             if (!RequireCheck(new Control[] { txtPayment, cboDenominationName }))
                 return false;
-
+            DataTable dt = new DataTable();
+            dt = trntBL.SimpleSelect1("70", ChangeDate.Replace("/", "-"), StoreCD);
+            if (dt.Rows.Count > 0)
+            {
+                trntBL.ShowMessage("E252");
+                return false;
+            }
             if (!string.IsNullOrWhiteSpace(txtCustomerCD.Text))
             {
                 DataTable dtCust = new DataTable();
@@ -96,10 +103,11 @@ namespace TempoRegiNyuukinTouroku
             {
                 if (trntBL.ShowMessage("Q101") == DialogResult.Yes)
                 {
-                    if (Base_DL.iniEntity.IsDM_D30Used)
+                    DataTable dt = new DataTable();
+                    dt = trntBL.SimpleSelect1("70", ChangeDate.Replace("/", "-"), StoreCD);
+                    if (dt.Rows.Count > 0)
                     {
-                        CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
-                        op.OpenCashDrawer(); //2020_06_24 
+                        trntBL.ShowMessage("E252");
                     }
                     ddpe = GetDepositEntity();
                     if (trntBL.TempoNyuukinTouroku_D_DepositHistory_InsertUpdate(ddpe))
@@ -111,6 +119,11 @@ namespace TempoRegiNyuukinTouroku
                         }
                         trntBL.ShowMessage("I101");
                         RunConsole();
+                        if (Base_DL.iniEntity.IsDM_D30Used)
+                        {
+                            CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
+                            op.OpenCashDrawer(); //2020_06_24     << PTK
+                        }
                         txtPayment.Clear();
                         txtPayment.Focus();
                         cboDenominationName.SelectedValue = "-1";
@@ -213,7 +226,7 @@ namespace TempoRegiNyuukinTouroku
             {
                 txtCustomerCD.Text = kaiinkensaku.CustomerCD;
                 lblCustomerName.Text = kaiinkensaku.CustomerName;
-                //txtCustomerCD.Focus();
+                txtCustomerCD.Focus();
             }
         }
 

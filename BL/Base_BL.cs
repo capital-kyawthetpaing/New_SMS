@@ -745,6 +745,12 @@ namespace BL
 
             return bdl.SelectData(dic, sp);
         }
+
+        //public string GetConnectionString()
+        //{
+        //    Base_DL dl = new Base_DL();
+        //    return dl.GetConnectionString();
+        //}
     }
 }
 

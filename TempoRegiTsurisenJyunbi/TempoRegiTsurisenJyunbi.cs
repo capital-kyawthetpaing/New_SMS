@@ -141,16 +141,22 @@ namespace TempoRegiTsurisenJyunbi
                 {
                     if (trtjb.ShowMessage("Q101") == DialogResult.Yes)
                     {
-                        if (Base_DL.iniEntity.IsDM_D30Used)
+                        DataTable dt = new DataTable();
+                        dt = trtjb.SimpleSelect1("70", ChangeDate.Replace("/", "-"), storeCD, txtDate.Text);
+                        if (dt.Rows.Count > 0)
                         {
-                            CashDrawerOpen op = new CashDrawerOpen(); //ses
-                            op.OpenCashDrawer();
+                            trtjb.ShowMessage("E252");
                         }
                         mre = DepositHistoryEnity();
                         if (trtjb.TempoRegiTsurisenJyunbi_Insert_Update(mre))
                         {
                             trtjb.ShowMessage("I101");
                             RunConsole();
+                            if (Base_DL.iniEntity.IsDM_D30Used)
+                            {
+                                CashDrawerOpen op = new CashDrawerOpen(); //ses   << PTK
+                                op.OpenCashDrawer();
+                            }
                             txtDate.Clear();
                             DepositGaku.Clear();
                             Remark.Clear();
@@ -176,6 +182,13 @@ namespace TempoRegiTsurisenJyunbi
         {
             if (!RequireCheck(new Control[] { txtDate,DepositGaku}))   // go that focus
                 return false;
+            DataTable dt = new DataTable();
+            dt = trtjb.SimpleSelect1("70", ChangeDate.Replace("/", "-"), storeCD,txtDate.Text);
+            if (dt.Rows.Count > 0)
+            {
+                trtjb.ShowMessage("E252");
+                return false;
+            }
             return true;
         }
         private void txtDate_KeyDown(object sender, KeyEventArgs e)

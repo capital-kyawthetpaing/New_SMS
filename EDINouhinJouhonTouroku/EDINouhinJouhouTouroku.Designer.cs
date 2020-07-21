@@ -74,6 +74,14 @@
             // 
             this.PanelHeader.Size = new System.Drawing.Size(1711, 0);
             // 
+            // PanelSearch
+            // 
+            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
+            // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // ckM_Label1
             // 
             this.ckM_Label1.AutoSize = true;
@@ -196,6 +204,8 @@
             this.gdvDSKENDeliveryDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gdvDSKENDeliveryDetail.Location = new System.Drawing.Point(36, 377);
             this.gdvDSKENDeliveryDetail.Name = "gdvDSKENDeliveryDetail";
+            this.gdvDSKENDeliveryDetail.RowHeight_ = 20;
+            this.gdvDSKENDeliveryDetail.RowTemplate.Height = 20;
             this.gdvDSKENDeliveryDetail.Size = new System.Drawing.Size(1500, 450);
             this.gdvDSKENDeliveryDetail.TabIndex = 24;
             this.gdvDSKENDeliveryDetail.UseRowNo = true;
@@ -417,6 +427,8 @@
             this.gdvDSKENDelivery.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gdvDSKENDelivery.Location = new System.Drawing.Point(36, 95);
             this.gdvDSKENDelivery.Name = "gdvDSKENDelivery";
+            this.gdvDSKENDelivery.RowHeight_ = 20;
+            this.gdvDSKENDelivery.RowTemplate.Height = 20;
             this.gdvDSKENDelivery.Size = new System.Drawing.Size(950, 250);
             this.gdvDSKENDelivery.TabIndex = 15;
             this.gdvDSKENDelivery.UseRowNo = true;

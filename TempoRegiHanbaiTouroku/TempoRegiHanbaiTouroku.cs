@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base.Client;
@@ -12,14 +13,18 @@ using BL;
 using Search;
 using Microsoft.VisualBasic;
 using static Base.Client.FrmMainForm;
+using DL;
+using EPSON_TM30;
+using System.Threading;
+using System.Diagnostics;
+//using CashDrawerOpen = EPSON_TM30.CashDrawerOpen;
 
 namespace TempoRegiHanbaiTouroku
 {
     public partial class TempoRegiHanbaiTouroku : ShopBaseForm
     {
-        private const string TempoRegiRyousyuusyo = "TempoRegiRyousyuusyo.exe"; 
-        private const string ZaikoSyokai = "ZaikoSyokai.exe";
-
+        private const string TempoRegiZaikoKakunin = "TempoRegiZaikoKakunin.exe";
+        EPSON_TM30.CashDrawerOpen cdo  = new EPSON_TM30.CashDrawerOpen();
         private enum meCol : short
         {
             ALL
@@ -70,7 +75,43 @@ namespace TempoRegiHanbaiTouroku
 
         public TempoRegiHanbaiTouroku()
         {
+          
             InitializeComponent();
+            try
+            {
+                if (Base_DL.iniEntity.IsDM_D30Used)
+                {
+                    Login_BL bbl_1 = new Login_BL();
+                    if (bbl_1.ReadConfig())
+                    {
+                        bbl_1.Display_Service_Update(false);
+                        Thread.Sleep(3 * 1000);
+                        bbl_1.Display_Service_Enabled(false);
+                    }
+                    else
+                    {
+                        bbl_1.Display_Service_Update(false);
+                        Thread.Sleep(3 * 1000);
+                        bbl_1.Display_Service_Enabled(false);
+                    }
+                    Kill("Display_Service");
+                }
+            }
+            catch (Exception ex) { MessageBox.Show("Cant remove on second time" + ex.StackTrace); }
+        }
+        protected void Kill(string pth)
+        {
+            Process[] processCollection = Process.GetProcessesByName(pth.Replace(".exe", ""));
+            foreach (Process p in processCollection)
+            {
+                p.Kill();
+            }
+
+            Process[] processCollections = Process.GetProcessesByName(pth + ".exe");
+            foreach (Process p in processCollections)
+            {
+                p.Kill();
+            }
         }
         private void TempoRegiHanbaiTouroku_Load(object sender, EventArgs e)
         {
@@ -123,12 +164,42 @@ namespace TempoRegiHanbaiTouroku
                 }
 
                 InitScr();
+                Stop_DisplayService();  /// PTK
+             
+               
             }
             catch (Exception ex)
             {
                 //エラー時共通処理
-                MessageBox.Show(ex.Message);
+              //  MessageBox.Show(ex.Message + ex.StackTrace);
                 EndSec();
+            }
+        }
+        private void Stop_DisplayService()
+        {
+            if (Base_DL.iniEntity.IsDM_D30Used)
+            {
+
+                Login_BL bbl_1 = new Login_BL();
+                if (bbl_1.ReadConfig())
+                {
+                    bbl_1.Display_Service_Update(false);
+                    Thread.Sleep(3 * 1000);
+                    bbl_1.Display_Service_Enabled(false);
+                }
+                else
+                {
+                    bbl_1.Display_Service_Update(false);
+                    Thread.Sleep(3 * 1000);
+                    bbl_1.Display_Service_Enabled(false);
+                }
+                try
+                {
+                    Kill("Display_Service");
+                }
+                catch { }
+                cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+                //Base_DL.iniEntity.CDO_DISPLAY.SetDisplay(true, true,Base_DL.iniEntity.DefaultMessage);
             }
         }
         /// <summary>
@@ -529,8 +600,12 @@ namespace TempoRegiHanbaiTouroku
                 }
             }
 
+
+
             lblSumSalesGaku.Text =  bbl.Z_SetStr(kin);
             lblSumSalesTax.Text = bbl.Z_SetStr(zei);
+
+           
 
         }
 
@@ -584,8 +659,8 @@ namespace TempoRegiHanbaiTouroku
             int maxVertical = stHorizontal + 10;
             DataRow[] rows = dtBottunDetails.Select(" Horizontal >=" + stHorizontal + " AND Horizontal <" + maxVertical);
 
-            if (rows.Length == 0)
-                return;
+            //if (rows.Length == 0)
+            //    return;
 
             Clear(tableLayoutPanel3);
 
@@ -625,8 +700,8 @@ namespace TempoRegiHanbaiTouroku
             int maxGroupNO = stHorizontal + 14;
             DataRow[] rows = dtBottunGroup.Select(" GroupNO >=" + stHorizontal + " AND GroupNO <" + maxGroupNO);
 
-            if (rows.Length == 0)
-                return;
+            //if (rows.Length == 0)
+            //    return;
 
             Clear(tableLayoutPanel2);
 
@@ -647,13 +722,30 @@ namespace TempoRegiHanbaiTouroku
             }
 
         }
-
+        private void RunDisplay_Service()  // Make when we want to run display_service
+        {
+            try
+            {
+                if (Base_DL.iniEntity.IsDM_D30Used)
+                {
+                    cdo.RemoveDisplay(true);
+                    Login_BL bbl_1 = new Login_BL();
+                    bbl_1.Display_Service_Update(true);
+                    bbl_1.Display_Service_Enabled(true);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in removing display. . .");
+            }
+        }
         protected override void EndSec()
         {
+            RunDisplay_Service();
             this.Close();
         }
 
-        private void ExecOK()
+        private void ExecOK(KeyEventArgs e=null)
         {
             if (OperationMode == FrmMainForm.EOperationMode.INSERT || OperationMode == FrmMainForm.EOperationMode.SHOW)
             {
@@ -747,6 +839,8 @@ namespace TempoRegiHanbaiTouroku
 
             DispFromDataTable(Convert.ToInt16(lblDtGyo1.Text));
 
+
+            Show_Display();  /// ptk
             //JANCD、数量、他の項目をクリア
             ClearScr();
 
@@ -755,6 +849,27 @@ namespace TempoRegiHanbaiTouroku
 
             txtJanCD.Focus();
             
+        }
+
+        private void Show_Display(KeyEventArgs e=null)
+        {
+            //if (e.KeyCode == Keys.Enter)
+                if (Base_DL.iniEntity.IsDM_D30Used)
+            {
+                try
+                {
+                    //Login_BL bbl_1 = new Login_BL();
+                    //bbl_1.Display_Service_Update(false);
+                    //bbl_1.Display_Service_Enabled(false);
+                }
+                catch { }
+                try
+                    {
+                        cdo.SetDisplay(false, false, "", GetShintani_Request_Upper(), GetShinTani_Request_Lower());
+                    }
+                    catch { }
+
+                }
         }
         private bool ErrorCheck(int kbn = 0, bool set = false)
         {
@@ -1086,7 +1201,8 @@ namespace TempoRegiHanbaiTouroku
 
                     if (!frm.flgCancel)
                     {
-                        //更新終了後は画面をクリア
+                        //更新終了後は画面をクリア  >>>. Proceed by PTK
+                        Stop_DisplayService();
                         InitScr();
                     }
                     break;
@@ -1302,10 +1418,19 @@ namespace TempoRegiHanbaiTouroku
         {
             try
             {
-                TempoRegiZaikoKakunin_Search form = new TempoRegiZaikoKakunin_Search();
-                form.parJancd = txtJanCD.Text;
-                form.ShowDialog();
-
+                // 実行モジュールと同一フォルダのファイルを取得
+                System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + TempoRegiZaikoKakunin;
+                if (System.IO.File.Exists(filePath))
+                {
+                    string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + txtJanCD.Text;
+                    System.Diagnostics.Process.Start(filePath, cmdLine);
+                }
+                else
+                {
+                    //EXEが存在しない時ｴﾗｰ
+                    return;
+                }
             }
             catch (Exception ex)
             {
@@ -1357,14 +1482,25 @@ namespace TempoRegiHanbaiTouroku
                     if (Save((int)meCol.JANCD))
                     {
                         //商品CDでEnter押してエラーがなければ、※の処理を一気に行う							
-                        ExecOK();
+                        ExecOK(e);
+                       // EPSON_TM30.CashDrawerOpen cdo = new CashDrawerOpen();
+                       //if (e.KeyCode == Keys.Enter)
+                       // if (Base_DL.iniEntity.IsDM_D30Used)
+                       // {
+                       //         try
+                       //         {
+                       //             cdo.SetDisplay(false, false, "", GetShintani_Request_Upper(), GetShinTani_Request_Lower());
+                       //         }
+                       //         catch { }
+                            
+                       // }
                     }
                 }
             }
             catch (Exception ex)
             {
                 //エラー時共通処理
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message + Environment.NewLine +ex.StackTrace );
             }
         }
 
@@ -1495,6 +1631,18 @@ namespace TempoRegiHanbaiTouroku
             try
             {
                 ExecOK();
+                //if (Base_DL.iniEntity.IsDM_D30Used)
+                //{
+                //    try
+                //    {
+                //        cdo.SetDisplay(false, false, "", GetShintani_Request_Upper(),  GetShinTani_Request_Lower());
+                //        //Base_DL.iniEntity.CDO_DISPLAY.RemoveDisplay();
+                //        // Base_DL.iniEntity.CDO_DISPLAY.SetDisplay(false, false, "", lblSumSalesGaku.Text, lblSumSalesTax.Text);
+                //    }
+                //    catch { }
+
+                //}
+
             }
             catch (Exception ex)
             {
@@ -1939,6 +2087,93 @@ namespace TempoRegiHanbaiTouroku
                 MessageBox.Show(ex.Message);
             }
         }
+        private double GetDob(string val)
+        {
+            try {
+                return Convert.ToDouble(val.Replace("\\", "").Replace(",", ""));
+            }
+            catch {
+                return 0.0;
+            }
+        }
 
+        private Tuple<string,string> Tup()
+        {// return string.Format("{0:#,##0}", Convert.ToInt64(d));
+            var res = 0.0;
+            if (!String.IsNullOrEmpty(lblDtKSu3.Text))
+            {
+                res = GetDob(lblDtKSu3.Text);
+                // goto Tup;
+            }
+            else if (!String.IsNullOrEmpty(lblDtKSu2.Text))
+            {
+                res = GetDob(lblDtKSu2.Text);
+                // goto Tup;
+            }
+            else if (!String.IsNullOrEmpty(lblDtKSu1.Text))
+            {
+                res = GetDob(lblDtKSu1.Text);
+                //goto Tup;
+            }
+            else {
+                res = 0.0;
+            }
+            Tuple<string, string> tp = new Tuple<string, string>(string.Format("{0:#,##0}", Convert.ToInt64(res)) , lblSumSalesGaku.Text);
+            return tp;
+        }
+
+        private string GetUpperVal()
+        {
+            var res = "0";
+            if (!String.IsNullOrEmpty(lblDtKSu3.Text))
+            {
+                res = lblDtKSu3.Text.Replace("\\","");
+                // goto Tup;
+            }
+            else if (!String.IsNullOrEmpty(lblDtKSu2.Text))
+            {
+                res = lblDtKSu2.Text.Replace("\\", "");
+                // goto Tup;
+            }
+            else if (!String.IsNullOrEmpty(lblDtKSu1.Text))
+            {
+                res = lblDtKSu1.Text.Replace("\\", "");
+                //goto Tup;
+            }
+            else
+            {
+                res = "0";
+            }
+            return res;
+        }
+
+        private String GetShintani_Request_Upper()
+        {
+            //string.Format("{0:#,##0}", Convert.ToInt64(res)
+            try
+            {
+                return txtJuchuuUnitPrice.Text + "円" + " x " + txtSu.Text;
+            }
+            catch
+            {
+
+            }
+            return "0";
+        }
+
+        private string GetShinTani_Request_Lower()
+        {
+            try
+            {
+               return "合計"+"     " +lblSumSalesGaku.Text + "円";
+            }
+            catch { }
+            return "0";
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            InitScr();
+        }
     }
 }

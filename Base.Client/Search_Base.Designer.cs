@@ -54,8 +54,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.18744F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.81256F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.17815F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.82185F));
             this.tableLayoutPanel1.Controls.Add(this.ckM_Button2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.ckM_Button1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -77,10 +77,10 @@
             this.ckM_Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ckM_Button2.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
             this.ckM_Button2.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
-            this.ckM_Button2.Location = new System.Drawing.Point(761, 1);
+            this.ckM_Button2.Location = new System.Drawing.Point(845, 1);
             this.ckM_Button2.Margin = new System.Windows.Forms.Padding(1);
             this.ckM_Button2.Name = "ckM_Button2";
-            this.ckM_Button2.Size = new System.Drawing.Size(922, 50);
+            this.ckM_Button2.Size = new System.Drawing.Size(838, 50);
             this.ckM_Button2.TabIndex = 2;
             this.ckM_Button2.Tag = "1";
             this.ckM_Button2.Text = "決定";
@@ -101,7 +101,7 @@
             this.ckM_Button1.Location = new System.Drawing.Point(1, 1);
             this.ckM_Button1.Margin = new System.Windows.Forms.Padding(1);
             this.ckM_Button1.Name = "ckM_Button1";
-            this.ckM_Button1.Size = new System.Drawing.Size(758, 50);
+            this.ckM_Button1.Size = new System.Drawing.Size(842, 50);
             this.ckM_Button1.TabIndex = 0;
             this.ckM_Button1.Tag = "0";
             this.ckM_Button1.Text = "戻る";

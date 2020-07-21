@@ -11,6 +11,7 @@ using Entity;
 using BL;
 using Search;
 using Microsoft.VisualBasic;
+using EPSON_TM30;
 
 namespace TempoRegiHanbaiTouroku
 {
@@ -74,6 +75,7 @@ namespace TempoRegiHanbaiTouroku
 
             ckmShop_Label7.Visible = false;
             lblZan.Visible = false;
+            ShowCloseMessage = false;
 
             OperationMode = mode;
             dse = dse1;
@@ -436,6 +438,7 @@ namespace TempoRegiHanbaiTouroku
                 case 2:
                     if (btnProcess.Text == "次の販売へ")
                         //「次の販売へ」を押すと第一画面へ移ります（入力エリアはクリアします）。
+
                         this.Close();
                     else
                         Save();
@@ -552,29 +555,35 @@ namespace TempoRegiHanbaiTouroku
                         return false;
                     }
 
+                    try
+                    {
+                        //更新処理（通常販売）
+                        GetEntity();
+                        dtUpdate = GetGridEntity();
+                        bool ret = tprg_Hanbai_Bl.PRC_TempoRegiHanbaiTouroku(dse, dspe, dtUpdate, (short)OperationMode);
+
+                        lblJuchuuTaxRitsu.Text = dse.SalesNO;
+
+                        string reissue = OperationMode == FrmMainForm.EOperationMode.INSERT ? "0" : "1";
+
+                        //レシート印字
+                        //TempoRegiRyousyuusyo‗店舗領収書印刷
+                        ExecPrint(dse.SalesNO, reissue);
+
+                        //データ更新（レシート印刷やお釣りのやり取りする間にややこしい更新を行う）
+                        //TempoRegiDataUpdate‗店舗レジデータ更新
+                        ExecUpdate(dse.SalesNO);
+                    }
+                    catch (Exception ex){
+                        MessageBox.Show(ex.Message);
+                    }
                     //エラーでない場合
                     if (bbl.Z_Set(txtAzukari.Text) > 0)
                     {
-                        //Todo:預り額＞０の場合、ドロワー開く
-
+                        //Todo:預り額＞０の場合、ドロワー開く      // PTK to be Continued        
+                        EPSON_TM30.CashDrawerOpen cdo = new EPSON_TM30.CashDrawerOpen();
+                        cdo.OpenCashDrawer();
                     }
-
-                    //更新処理（通常販売）
-                    GetEntity();
-                    dtUpdate = GetGridEntity();
-                    bool ret = tprg_Hanbai_Bl.PRC_TempoRegiHanbaiTouroku(dse, dspe, dtUpdate, (short)OperationMode);
-
-                    lblJuchuuTaxRitsu.Text = dse.SalesNO;
-
-                    string reissue = OperationMode ==  FrmMainForm.EOperationMode.INSERT ? "0":"1";
-
-                    //レシート印字
-                    //TempoRegiRyousyuusyo‗店舗領収書印刷
-                    ExecPrint(dse.SalesNO, reissue);
-
-                    //データ更新（レシート印刷やお釣りのやり取りする間にややこしい更新を行う）
-                    //TempoRegiDataUpdate‗店舗レジデータ更新
-                    ExecUpdate(dse.SalesNO);
 
                     //領収書ボタンを押せるようにする
                     btnRyosyusyo.Enabled = true;
@@ -612,9 +621,13 @@ namespace TempoRegiHanbaiTouroku
                 string receipte = "0";
                 //領収書必要ONの場合、1。以外は0．													
 
-                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + dse.StoreCD 
-                                    + " " + no + " " + receipte + " 1 " + bbl.GetDate() + " " + reissue;
-                System.Diagnostics.Process.Start(filePath, cmdLine); 
+                //2020/07/20 Y.Nishikawa CHG 引数を整備↓↓
+                //string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + dse.StoreCD + " " + no + " " + receipte + " 1 " + bbl.GetDate() + " " + reissue;
+                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + no + " " + receipte + " 1 " + bbl.GetDate() + " " + reissue;
+                //2020/07/20 Y.Nishikawa CHG 引数を整備↑↑
+
+                ///  System.Diagnostics.Process.Start(filePath, cmdLine);  Just wait to PTK
+                System.Diagnostics.Process.Start(filePath, cmdLine);
             }
             else
             {

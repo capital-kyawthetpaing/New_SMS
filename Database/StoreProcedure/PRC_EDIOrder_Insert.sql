@@ -358,7 +358,7 @@ BEGIN
            ,@SYSDATE
            ,LEFT(@VendorCD,10)
            ,'B'
-           ,'21'
+           ,'01'
            ,@VCapitalCD
            ,@VCapitalName
            ,@VOrderCD
