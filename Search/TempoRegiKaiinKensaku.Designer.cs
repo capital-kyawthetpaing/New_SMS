@@ -48,12 +48,6 @@
             this.ckmShop_Label11 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label12 = new CKM_Controls.CKMShop_Label();
             this.dgvKaniiKensaku = new CKM_Controls.CKMShop_GridView();
-            this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCustomerCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colZipCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSaleDate_StoreCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtZipCD = new CKM_Controls.CKM_TextBox();
             this.txtKanaName = new CKM_Controls.CKM_TextBox();
             this.txtCustomerCD = new CKM_Controls.CKM_TextBox();
@@ -63,6 +57,12 @@
             this.panelDetail = new System.Windows.Forms.Panel();
             this.chkAnotherStore = new CKM_Controls.CKMShop_CheckBox();
             this.ckmShop_Label2 = new CKM_Controls.CKMShop_Label();
+            this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCustomerCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colZipCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSaleDate_StoreCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKaniiKensaku)).BeginInit();
             this.panelDetail.SuspendLayout();
             this.SuspendLayout();
@@ -285,6 +285,7 @@
             this.dgvKaniiKensaku.Location = new System.Drawing.Point(12, 201);
             this.dgvKaniiKensaku.Name = "dgvKaniiKensaku";
             this.dgvKaniiKensaku.RowHeadersVisible = false;
+            this.dgvKaniiKensaku.RowHeadersWidth = 70;
             this.dgvKaniiKensaku.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvKaniiKensaku.RowHeight_ = 20;
             this.dgvKaniiKensaku.RowTemplate.Height = 20;
@@ -296,78 +297,6 @@
             this.dgvKaniiKensaku.UseSetting = true;
             this.dgvKaniiKensaku.Width_ = 1875;
             this.dgvKaniiKensaku.DoubleClick += new System.EventHandler(this.dgvKaniiKensaku_DoubleClick);
-            // 
-            // colNo
-            // 
-            this.colNo.DataPropertyName = "No";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colNo.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colNo.HeaderText = "No";
-            this.colNo.Name = "colNo";
-            this.colNo.ReadOnly = true;
-            this.colNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colNo.Width = 65;
-            // 
-            // colCustomerCD
-            // 
-            this.colCustomerCD.DataPropertyName = "CustomerCD";
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colCustomerCD.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colCustomerCD.HeaderText = "会員番号";
-            this.colCustomerCD.Name = "colCustomerCD";
-            this.colCustomerCD.ReadOnly = true;
-            this.colCustomerCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colCustomerCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colCustomerCD.Width = 250;
-            // 
-            // colCustomerName
-            // 
-            this.colCustomerName.DataPropertyName = "CustomerName";
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colCustomerName.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colCustomerName.HeaderText = "会員名";
-            this.colCustomerName.Name = "colCustomerName";
-            this.colCustomerName.ReadOnly = true;
-            this.colCustomerName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colCustomerName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colCustomerName.Width = 400;
-            // 
-            // colZipCD
-            // 
-            this.colZipCD.DataPropertyName = "ZipCD";
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colZipCD.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colZipCD.HeaderText = "〒/TEL";
-            this.colZipCD.Name = "colZipCD";
-            this.colZipCD.ReadOnly = true;
-            this.colZipCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colZipCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colZipCD.Width = 280;
-            // 
-            // colAddress
-            // 
-            this.colAddress.DataPropertyName = "Address";
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colAddress.DefaultCellStyle = dataGridViewCellStyle7;
-            this.colAddress.HeaderText = "住所";
-            this.colAddress.Name = "colAddress";
-            this.colAddress.ReadOnly = true;
-            this.colAddress.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colAddress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colAddress.Width = 600;
-            // 
-            // colSaleDate_StoreCD
-            // 
-            this.colSaleDate_StoreCD.DataPropertyName = "SaleDate_StoreCD";
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colSaleDate_StoreCD.DefaultCellStyle = dataGridViewCellStyle8;
-            this.colSaleDate_StoreCD.HeaderText = "最新来店日/店舗";
-            this.colSaleDate_StoreCD.Name = "colSaleDate_StoreCD";
-            this.colSaleDate_StoreCD.ReadOnly = true;
-            this.colSaleDate_StoreCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colSaleDate_StoreCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colSaleDate_StoreCD.Width = 260;
             // 
             // txtZipCD
             // 
@@ -383,6 +312,7 @@
             this.txtZipCD.IntegerPart = 0;
             this.txtZipCD.IsCorrectDate = true;
             this.txtZipCD.isEnterKeyDown = false;
+            this.txtZipCD.IsFirstTime = true;
             this.txtZipCD.isMaxLengthErr = false;
             this.txtZipCD.IsNumber = true;
             this.txtZipCD.IsShop = false;
@@ -410,6 +340,7 @@
             this.txtKanaName.IntegerPart = 0;
             this.txtKanaName.IsCorrectDate = true;
             this.txtKanaName.isEnterKeyDown = false;
+            this.txtKanaName.IsFirstTime = true;
             this.txtKanaName.isMaxLengthErr = false;
             this.txtKanaName.IsNumber = true;
             this.txtKanaName.IsShop = false;
@@ -436,6 +367,7 @@
             this.txtCustomerCD.IntegerPart = 0;
             this.txtCustomerCD.IsCorrectDate = true;
             this.txtCustomerCD.isEnterKeyDown = false;
+            this.txtCustomerCD.IsFirstTime = true;
             this.txtCustomerCD.isMaxLengthErr = false;
             this.txtCustomerCD.IsNumber = true;
             this.txtCustomerCD.IsShop = false;
@@ -463,6 +395,7 @@
             this.txtCustomerName.IntegerPart = 0;
             this.txtCustomerName.IsCorrectDate = true;
             this.txtCustomerName.isEnterKeyDown = false;
+            this.txtCustomerName.IsFirstTime = true;
             this.txtCustomerName.isMaxLengthErr = false;
             this.txtCustomerName.IsNumber = true;
             this.txtCustomerName.IsShop = false;
@@ -489,6 +422,7 @@
             this.txtDBO.IntegerPart = 0;
             this.txtDBO.IsCorrectDate = true;
             this.txtDBO.isEnterKeyDown = false;
+            this.txtDBO.IsFirstTime = true;
             this.txtDBO.isMaxLengthErr = false;
             this.txtDBO.IsNumber = true;
             this.txtDBO.IsShop = false;
@@ -578,6 +512,78 @@
             this.ckmShop_Label2.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // colNo
+            // 
+            this.colNo.DataPropertyName = "No";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colNo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colNo.HeaderText = "No";
+            this.colNo.Name = "colNo";
+            this.colNo.ReadOnly = true;
+            this.colNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colNo.Width = 70;
+            // 
+            // colCustomerCD
+            // 
+            this.colCustomerCD.DataPropertyName = "CustomerCD";
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCustomerCD.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colCustomerCD.HeaderText = "会員番号";
+            this.colCustomerCD.Name = "colCustomerCD";
+            this.colCustomerCD.ReadOnly = true;
+            this.colCustomerCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colCustomerCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colCustomerCD.Width = 250;
+            // 
+            // colCustomerName
+            // 
+            this.colCustomerName.DataPropertyName = "CustomerName";
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCustomerName.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colCustomerName.HeaderText = "会員名";
+            this.colCustomerName.Name = "colCustomerName";
+            this.colCustomerName.ReadOnly = true;
+            this.colCustomerName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colCustomerName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colCustomerName.Width = 400;
+            // 
+            // colZipCD
+            // 
+            this.colZipCD.DataPropertyName = "ZipCD";
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colZipCD.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colZipCD.HeaderText = "〒/TEL";
+            this.colZipCD.Name = "colZipCD";
+            this.colZipCD.ReadOnly = true;
+            this.colZipCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colZipCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colZipCD.Width = 280;
+            // 
+            // colAddress
+            // 
+            this.colAddress.DataPropertyName = "Address";
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colAddress.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colAddress.HeaderText = "住所";
+            this.colAddress.Name = "colAddress";
+            this.colAddress.ReadOnly = true;
+            this.colAddress.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colAddress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colAddress.Width = 600;
+            // 
+            // colSaleDate_StoreCD
+            // 
+            this.colSaleDate_StoreCD.DataPropertyName = "SaleDate_StoreCD";
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colSaleDate_StoreCD.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colSaleDate_StoreCD.HeaderText = "最新来店日/店舗";
+            this.colSaleDate_StoreCD.Name = "colSaleDate_StoreCD";
+            this.colSaleDate_StoreCD.ReadOnly = true;
+            this.colSaleDate_StoreCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colSaleDate_StoreCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colSaleDate_StoreCD.Width = 260;
+            // 
             // TempoRegiKaiinKensaku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -617,13 +623,13 @@
         private CKM_Controls.CKM_Button btnShow;
         private CKM_Controls.CKMShop_GridView dgvKaniiKensaku;
         private System.Windows.Forms.Panel panelDetail;
+        private CKM_Controls.CKMShop_CheckBox chkAnotherStore;
+        private CKM_Controls.CKMShop_Label ckmShop_Label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCustomerCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCustomerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colZipCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSaleDate_StoreCD;
-        private CKM_Controls.CKMShop_CheckBox chkAnotherStore;
-        private CKM_Controls.CKMShop_Label ckmShop_Label2;
     }
 }

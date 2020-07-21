@@ -251,6 +251,7 @@
     <Content Include="StoreProcedure\Fnc_GetNumber.sql" />
     <Content Include="StoreProcedure\Fnc_M_ItemOrderPrice_SelectLatest.sql" />
     <Content Include="StoreProcedure\Fnc_M_JANOrderPrice_SelectLatest.sql" />
+    <Content Include="StoreProcedure\Fnc_M_SalesTax_SelectLatest.sql" />
     <Content Include="StoreProcedure\Fnc_M_SKU_SelectLatest.sql" />
     <Content Include="StoreProcedure\Fnc_M_Souko_SelectLatest.sql" />
     <Content Include="StoreProcedure\Fnc_M_Store_SelectLatest.sql" />

@@ -101,7 +101,7 @@ namespace TempoRegiFurikomiYoushi
 
             if (e.KeyCode == Keys.Enter)
             {
-                SqlConnection con = new SqlConnection("Data Source = devserver\\sql2014 ;Initial Catalog=SMS;Persist Security Info=True;User ID=sa;Password=admin12345!");
+                SqlConnection con = new SqlConnection("Data Source = devserver1\\sql2014 ;Initial Catalog=SMS;Persist Security Info=True;User ID=sa;Password=admin12345!");
                 con.Open();
                 SqlCommand cmd = new SqlCommand(" select * from D_Sales where SalesNo = '" + txtprintprogress.Text + "'  AND BillingType = '1'", con);
                 cmd.CommandTimeout = 0;

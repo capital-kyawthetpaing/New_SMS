@@ -148,7 +148,8 @@ namespace Base.Client
                 StaffCD = InOperatorCD
             };
             mse = loginbl.M_Staff_InitSelect(mse);
-          
+
+           // MessageBox.Show(bbl.GetConnectionString());
 
             this.lblOperatorName.Text = mse.StaffName;
             //this.lblLoginDate.Text = mse.SysDate;
