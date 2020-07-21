@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtJanCD = new CKM_Controls.CKM_TextBox();
             this.btnInquery = new CKM_Controls.CKM_Button();
             this.ckmShop_Label5 = new CKM_Controls.CKMShop_Label();
@@ -74,11 +74,11 @@
             this.txtJanCD.IsNumber = true;
             this.txtJanCD.IsShop = false;
             this.txtJanCD.Length = 13;
-            this.txtJanCD.Location = new System.Drawing.Point(129, 131);
+            this.txtJanCD.Location = new System.Drawing.Point(156, 131);
             this.txtJanCD.MaxLength = 13;
             this.txtJanCD.MoveNext = true;
             this.txtJanCD.Name = "txtJanCD";
-            this.txtJanCD.Size = new System.Drawing.Size(260, 42);
+            this.txtJanCD.Size = new System.Drawing.Size(240, 42);
             this.txtJanCD.TabIndex = 1;
             this.txtJanCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             this.txtJanCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtJanCD_KeyDown);
@@ -111,7 +111,7 @@
             this.ckmShop_Label5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label5.FontBold = true;
             this.ckmShop_Label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label5.Location = new System.Drawing.Point(103, 179);
+            this.ckmShop_Label5.Location = new System.Drawing.Point(110, 179);
             this.ckmShop_Label5.Name = "ckmShop_Label5";
             this.ckmShop_Label5.Size = new System.Drawing.Size(250, 35);
             this.ckmShop_Label5.TabIndex = 46;
@@ -127,7 +127,7 @@
             this.lblItemName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblItemName.FontBold = true;
             this.lblItemName.ForeColor = System.Drawing.Color.Black;
-            this.lblItemName.Location = new System.Drawing.Point(411, 126);
+            this.lblItemName.Location = new System.Drawing.Point(425, 126);
             this.lblItemName.Name = "lblItemName";
             this.lblItemName.Size = new System.Drawing.Size(1100, 70);
             this.lblItemName.TabIndex = 49;
@@ -143,7 +143,7 @@
             this.lblColorSize.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblColorSize.FontBold = true;
             this.lblColorSize.ForeColor = System.Drawing.Color.Black;
-            this.lblColorSize.Location = new System.Drawing.Point(411, 202);
+            this.lblColorSize.Location = new System.Drawing.Point(425, 202);
             this.lblColorSize.Name = "lblColorSize";
             this.lblColorSize.Size = new System.Drawing.Size(600, 40);
             this.lblColorSize.TabIndex = 50;
@@ -157,7 +157,7 @@
             this.chkColorSize.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.chkColorSize.ForeColor = System.Drawing.Color.Black;
             this.chkColorSize.IsattachedCaption = true;
-            this.chkColorSize.Location = new System.Drawing.Point(356, 180);
+            this.chkColorSize.Location = new System.Drawing.Point(363, 180);
             this.chkColorSize.Name = "chkColorSize";
             this.chkColorSize.Size = new System.Drawing.Size(35, 35);
             this.chkColorSize.TabIndex = 51;
@@ -260,7 +260,7 @@
             this.btnProduct.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnProduct.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
             this.btnProduct.ForeColor = System.Drawing.Color.Black;
-            this.btnProduct.Location = new System.Drawing.Point(10, 131);
+            this.btnProduct.Location = new System.Drawing.Point(37, 131);
             this.btnProduct.Margin = new System.Windows.Forms.Padding(1);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Size = new System.Drawing.Size(120, 41);
@@ -272,8 +272,8 @@
             // colNo
             // 
             this.colNo.DataPropertyName = "KanoSu";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colNo.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colNo.DefaultCellStyle = dataGridViewCellStyle7;
             this.colNo.HeaderText = "可能数";
             this.colNo.Name = "colNo";
             this.colNo.ReadOnly = true;
@@ -284,8 +284,8 @@
             // colQuantity
             // 
             this.colQuantity.DataPropertyName = "ZaikouSu";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colQuantity.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colQuantity.DefaultCellStyle = dataGridViewCellStyle8;
             this.colQuantity.HeaderText = "在庫数";
             this.colQuantity.Name = "colQuantity";
             this.colQuantity.ReadOnly = true;
@@ -296,8 +296,8 @@
             // colDate
             // 
             this.colDate.DataPropertyName = "ArrivalPlanDate";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colDate.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colDate.DefaultCellStyle = dataGridViewCellStyle9;
             this.colDate.HeaderText = "入荷予定日";
             this.colDate.MaxInputLength = 8;
             this.colDate.Name = "colDate";
@@ -332,19 +332,19 @@
             this.dgvZaikokakunin.AllowUserToDeleteRows = false;
             this.dgvZaikokakunin.AllowUserToResizeRows = false;
             this.dgvZaikokakunin.AlterBackColor = CKM_Controls.CKMShop_GridView.AltBackcolor.Control;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
-            this.dgvZaikokakunin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            this.dgvZaikokakunin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvZaikokakunin.BackgroundColor = System.Drawing.Color.White;
             this.dgvZaikokakunin.BackgroungColor = CKM_Controls.CKMShop_GridView.DBackcolor.White;
             this.dgvZaikokakunin.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("MS Gothic", 26F);
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvZaikokakunin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("MS Gothic", 26F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvZaikokakunin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvZaikokakunin.ColumnHeadersHeight = 22;
             this.dgvZaikokakunin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvZaikokakunin.ColumnHeadersVisible = false;
@@ -354,14 +354,14 @@
             this.colDate,
             this.colQuantity,
             this.colNo});
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("MS Gothic", 26F);
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvZaikokakunin.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("MS Gothic", 26F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvZaikokakunin.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvZaikokakunin.DGVback = CKM_Controls.CKMShop_GridView.DGVBackcolor.White;
             this.dgvZaikokakunin.EnableHeadersVisualStyles = false;
             this.dgvZaikokakunin.Font = new System.Drawing.Font("MS Gothic", 26F);
