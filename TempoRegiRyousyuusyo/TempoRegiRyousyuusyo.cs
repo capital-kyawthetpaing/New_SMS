@@ -146,7 +146,7 @@ namespace TempoRegiRyousyuusyo
             if (!bl.D_CheckSalseNO(txtSalesNO.Text))
             {
                 // 売上データなし
-                bl.ShowMessage("E138");
+                bl.ShowMessage("E138", "売上番号");
                 txtSalesNO.Focus();
                 return false;
             }
@@ -156,7 +156,7 @@ namespace TempoRegiRyousyuusyo
                 if (bl.D_CheckDeleteSalseNO(txtSalesNO.Text))
                 {
                     // 削除済み売上データあり
-                    bl.ShowMessage("E140");
+                    bl.ShowMessage("E140", "売上番号");
                     txtSalesNO.Focus();
                     return false;
                 }
