@@ -207,6 +207,11 @@ namespace TempoRegiZaikoKakunin
         {
             TempoRegiShouhinKensaku frmshouhin = new TempoRegiShouhinKensaku(InOperatorCD);
             frmshouhin.ShowDialog();
+                 txtJanCD.Text = frmshouhin.JANCD;
+                lblItemName.Text = frmshouhin.SKUName;
+                lblColorSize.Text = frmshouhin.Color + " . " + frmshouhin.Size;
+                lblColorSize.Visible = true;
+                lblItemName.Visible = true;           
         }
     }
 }
