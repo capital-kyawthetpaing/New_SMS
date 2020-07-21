@@ -363,12 +363,12 @@
             this.dgvDetail.Height_ = 570;
             this.dgvDetail.Location = new System.Drawing.Point(19, 241);
             this.dgvDetail.Name = "dgvDetail";
-            this.dgvDetail.RowHeadersWidth = 65;
+            this.dgvDetail.RowHeadersWidth = 70;
             this.dgvDetail.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvDetail.RowHeight_ = 42;
             this.dgvDetail.RowTemplate.Height = 42;
             this.dgvDetail.ShopFontSize = CKM_Controls.CKMShop_GridView.Font_.Medium;
-            this.dgvDetail.Size = new System.Drawing.Size(1830, 570);
+            this.dgvDetail.Size = new System.Drawing.Size(1810, 570);
             this.dgvDetail.TabIndex = 130;
             this.dgvDetail.UseRowNo = true;
             this.dgvDetail.UseSetting = true;
