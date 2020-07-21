@@ -161,7 +161,7 @@ namespace CKM_Controls
         public CKMShop_Label()
         {
             this.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Bold);
-            this.TextAlign = ContentAlignment.MiddleRight;
+            //this.TextAlign = ContentAlignment.MiddleRight;
         }
 
     }
