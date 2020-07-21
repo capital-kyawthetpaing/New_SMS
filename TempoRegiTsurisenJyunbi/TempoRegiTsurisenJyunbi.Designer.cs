@@ -62,7 +62,7 @@
             this.ckmShop_Label3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label3.FontBold = true;
             this.ckmShop_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckmShop_Label3.Location = new System.Drawing.Point(449, 84);
+            this.ckmShop_Label3.Location = new System.Drawing.Point(513, 83);
             this.ckmShop_Label3.Name = "ckmShop_Label3";
             this.ckmShop_Label3.Size = new System.Drawing.Size(607, 35);
             this.ckmShop_Label3.TabIndex = 7;
@@ -84,6 +84,7 @@
             this.txtDate.IntegerPart = 0;
             this.txtDate.IsCorrectDate = true;
             this.txtDate.isEnterKeyDown = false;
+            this.txtDate.IsFirstTime = true;
             this.txtDate.isMaxLengthErr = false;
             this.txtDate.IsNumber = true;
             this.txtDate.IsShop = false;
@@ -92,7 +93,7 @@
             this.txtDate.MaxLength = 10;
             this.txtDate.MoveNext = true;
             this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(188, 42);
+            this.txtDate.Size = new System.Drawing.Size(250, 42);
             this.txtDate.TabIndex = 0;
             this.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -145,7 +146,7 @@
             this.ckmShop_Label5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label5.FontBold = true;
             this.ckmShop_Label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label5.Location = new System.Drawing.Point(129, 204);
+            this.ckmShop_Label5.Location = new System.Drawing.Point(130, 204);
             this.ckmShop_Label5.Name = "ckmShop_Label5";
             this.ckmShop_Label5.Size = new System.Drawing.Size(125, 35);
             this.ckmShop_Label5.TabIndex = 4;
@@ -167,6 +168,7 @@
             this.DepositGaku.IntegerPart = 8;
             this.DepositGaku.IsCorrectDate = true;
             this.DepositGaku.isEnterKeyDown = false;
+            this.DepositGaku.IsFirstTime = true;
             this.DepositGaku.isMaxLengthErr = false;
             this.DepositGaku.IsNumber = true;
             this.DepositGaku.IsShop = false;
@@ -175,7 +177,7 @@
             this.DepositGaku.MaxLength = 10;
             this.DepositGaku.MoveNext = true;
             this.DepositGaku.Name = "DepositGaku";
-            this.DepositGaku.Size = new System.Drawing.Size(188, 42);
+            this.DepositGaku.Size = new System.Drawing.Size(250, 42);
             this.DepositGaku.TabIndex = 1;
             this.DepositGaku.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.DepositGaku.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
