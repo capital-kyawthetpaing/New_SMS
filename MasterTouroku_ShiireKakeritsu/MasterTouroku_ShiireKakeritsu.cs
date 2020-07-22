@@ -394,7 +394,6 @@ namespace MasterTouroku_ShiireKakeritsu
             }
             if (dgv_ShiireKakeritsu.DataSource != null)
             {
-                
                 DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
                 dvMain.RowFilter = searchCondition;
                 dgv_ShiireKakeritsu.DataSource = dvMain;
@@ -408,6 +407,7 @@ namespace MasterTouroku_ShiireKakeritsu
                 dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
                 if (dtMain.Rows.Count > 0)
                 {
+                    txtRevisionDate.Text = dtMain.Rows[0][8].ToString();
                     BindGrid();
                 }
                 else
@@ -815,6 +815,8 @@ namespace MasterTouroku_ShiireKakeritsu
             if (dtMain.Rows.Count > 0)
             {
                 dgv_ShiireKakeritsu.DataSource = dtMain;
+                txtRevisionDate.Text = dtMain.Rows[0][8].ToString();
+                txtRate1.Text = dtMain.Rows[0][9].ToString();
             }
             else
             {
@@ -837,7 +839,7 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             if(dtAdd != null)
             {
-               dtMain = dtAdd;
+                dtMain = dtAdd;
                 Xml = mskbl.DataTableToXml(dtMain);
                 log_data = Get_Log_Data();
                 moe.VendorCD = scSupplierCD.TxtCode.Text;
@@ -854,6 +856,7 @@ namespace MasterTouroku_ShiireKakeritsu
             }
             if (mskbl.M_OrderRate_Update(moe, Xml, log_data))
             {
+                //DataTable dttt = mskbl.M_OrderRate_Update(moe, Xml, log_data);
                 Clear(PanelHeader);
                 Clear(panelDetail);
                 dgv_ShiireKakeritsu.DataSource = string.Empty;
