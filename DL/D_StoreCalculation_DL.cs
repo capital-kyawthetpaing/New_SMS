@@ -58,5 +58,19 @@ namespace DL
             return SelectData(dic, "D_Store_Calculation_SelectForSeiSan");
         }
 
+        public bool D_StoreCalculation_Delete(D_StoreCalculation_Entity dsce)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dsce.StoreCD } },
+                { "@Date", new ValuePair { value1 = SqlDbType.Date, value2 = dsce.CalculationDate } },
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = dsce.InsertOperator } },
+                { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = dsce.ProgramID } },
+                { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = dsce.PC } },
+            };
+            UseTransaction = true;
+            return InsertUpdateDeleteData(dic, "D_Store_CalculationDelete");
+        }
+
     }
 }
