@@ -1,3 +1,16 @@
+
+
+/****** Object:  StoredProcedure [dbo].[M_Store_Bind]    Script Date: 2020/07/22 10:32:10 ******/
+DROP PROCEDURE [dbo].[M_Store_Bind]
+GO
+
+/****** Object:  StoredProcedure [dbo].[M_Store_Bind]    Script Date: 2020/07/22 10:32:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
   
 -- =============================================  
 -- Author:  <Author,,Name>  
@@ -20,8 +33,11 @@ BEGIN
   
     -- Insert statements for procedure here  
  select ms.StoreCD,ms.StoreName from M_Store ms  
- inner join F_Store(cast(@ChangeDate as varchar(10)),@DeleteFlg) fs on ms.StoreCD = fs.StoreCD  
+ inner join F_Store(cast(@ChangeDate as varchar(10))) fs on ms.StoreCD = fs.StoreCD  
   and ms.ChangeDate = fs.ChangeDate  
  where (@StoreCD is null or (fs.StoreCD = @StoreCD ))  
 END  
   
+GO
+
+
