@@ -94,8 +94,8 @@ BEGIN
           ,CONVERT(varchar,MS.UpdateDateTime) AS UpdateDateTime
           ,MB.BrandKana
 
-    from M_SKU MS
-    INNER JOIN(SELECT M.AdminNO, MAX(M.ChangeDate) AS ChangeDate
+    from F_SKU(@ChangeDate) MS
+    /*INNER JOIN(SELECT M.AdminNO, MAX(M.ChangeDate) AS ChangeDate
         FROM M_SKU M
         WHERE --M.JanCD = (CASE WHEN @JanCD <> '' THEN @JanCD ELSE M.JanCD END)
         --AND M.SKUName LIKE '%' + (CASE WHEN @SKUName <> '' THEN @SKUName ELSE M.SKUName END) + '%'
@@ -104,6 +104,7 @@ BEGIN
         AND M.DeleteFlg = 0
         GROUP BY M.AdminNO)M
         ON M.AdminNO = MS.AdminNO AND M.ChangeDate = MS.ChangeDate
+        */
     LEFT OUTER JOIN M_Brand AS MB
     ON  MB.BrandCD= MS.BrandCD
     
@@ -120,6 +121,7 @@ BEGIN
                         AND A.SKUName LIKE '%' + (CASE WHEN @SKUName <> '' THEN @SKUName ELSE A.SKUName END) + '%'
                         AND ISNULL(MB.BrandKana,'') LIKE '%' + (CASE WHEN @BrandCD <> '' THEN @BrandCD ELSE ISNULL(MB.BrandKana,'') END) + '%'
                         AND A.DeleteFlg = 0
+                        AND A.ChangeDate <= CONVERT(DATE, @ChangeDate)
                         AND A.ITemCD = MS.ITemCD
                          )
     ORDER BY MS.SKUName, MS.JANCD
