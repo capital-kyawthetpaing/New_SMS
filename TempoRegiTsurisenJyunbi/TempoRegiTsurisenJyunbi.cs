@@ -183,7 +183,7 @@ namespace TempoRegiTsurisenJyunbi
             if (!RequireCheck(new Control[] { txtDate,DepositGaku}))   // go that focus
                 return false;
             DataTable dt = new DataTable();
-            dt = trtjb.SimpleSelect1("70", ChangeDate.Replace("/", "-"), storeCD,txtDate.Text);
+            dt = trtjb.SimpleSelect1("71", ChangeDate.Replace("/", "-"), storeCD,txtDate.Text);
             if (dt.Rows.Count > 0)
             {
                 trtjb.ShowMessage("E252");
