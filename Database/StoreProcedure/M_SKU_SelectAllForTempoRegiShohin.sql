@@ -108,20 +108,21 @@ BEGIN
     LEFT OUTER JOIN M_Brand AS MB
     ON  MB.BrandCD= MS.BrandCD
     
-    WHERE (MS.JanCD = (CASE WHEN @JanCD <> '' THEN @JanCD ELSE MS.JanCD END)
+    WHERE /*(MS.JanCD = (CASE WHEN @JanCD <> '' THEN @JanCD ELSE MS.JanCD END)
     AND MS.SKUName LIKE '%' + (CASE WHEN @SKUName <> '' THEN @SKUName ELSE MS.SKUName END) + '%'
     AND ISNULL(MB.BrandKana,'') LIKE '%' + (CASE WHEN @BrandCD <> '' THEN @BrandCD ELSE ISNULL(MB.BrandKana,'') END) + '%'
-    AND MS.DeleteFlg = 0
-    )
-    OR
-    EXISTS (SELECT A.ITemCD FROM M_SKU AS A
+    AND */
+    MS.DeleteFlg = 0
+    --)
+    --OR
+    AND EXISTS (SELECT A.ITemCD FROM F_SKU(@ChangeDate) AS A
                         LEFT OUTER JOIN M_Brand AS MB
                         ON  MB.BrandCD= A.BrandCD
                         WHERE A.JanCD = (CASE WHEN @JanCD <> '' THEN @JanCD ELSE A.JanCD END)
                         AND A.SKUName LIKE '%' + (CASE WHEN @SKUName <> '' THEN @SKUName ELSE A.SKUName END) + '%'
                         AND ISNULL(MB.BrandKana,'') LIKE '%' + (CASE WHEN @BrandCD <> '' THEN @BrandCD ELSE ISNULL(MB.BrandKana,'') END) + '%'
                         AND A.DeleteFlg = 0
-                        AND A.ChangeDate <= CONVERT(DATE, @ChangeDate)
+                        --AND A.ChangeDate <= CONVERT(DATE, @ChangeDate)
                         AND A.ITemCD = MS.ITemCD
                          )
     ORDER BY MS.SKUName, MS.JANCD
