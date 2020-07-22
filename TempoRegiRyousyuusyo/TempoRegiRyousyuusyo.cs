@@ -3,6 +3,7 @@ using BL;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace TempoRegiRyousyuusyo
@@ -48,7 +49,7 @@ namespace TempoRegiRyousyuusyo
         /// <summary>
         /// 製品名上段文字数
         /// </summary>
-        private const int SKU_SHORTNAME_LENGTH = 20;
+        private const int SKU_SHORTNAME_LENGTH = 23*2;
 
         /// <summary>
         /// BL
@@ -146,7 +147,7 @@ namespace TempoRegiRyousyuusyo
             if (!bl.D_CheckSalseNO(txtSalesNO.Text))
             {
                 // 売上データなし
-                bl.ShowMessage("E138");
+                bl.ShowMessage("E138", "売上番号");
                 txtSalesNO.Focus();
                 return false;
             }
@@ -156,7 +157,7 @@ namespace TempoRegiRyousyuusyo
                 if (bl.D_CheckDeleteSalseNO(txtSalesNO.Text))
                 {
                     // 削除済み売上データあり
-                    bl.ShowMessage("E140");
+                    bl.ShowMessage("E140", "売上番号");
                     txtSalesNO.Focus();
                     return false;
                 }
@@ -389,17 +390,19 @@ namespace TempoRegiRyousyuusyo
                 sales.TotalGaku = ConvertDecimal(row["TotalGaku"]);                             // 販売合計額
 
                 // 商品名
+                var encoding = System.Text.Encoding.GetEncoding("Shift_JIS");
+
                 var skuShortName = Convert.ToString(row["SKUShortName"]);
-                if (skuShortName.Length < SKU_SHORTNAME_LENGTH)
+                byte[] skuShortNameBT = encoding.GetBytes(skuShortName);
+                if (skuShortNameBT.Length < SKU_SHORTNAME_LENGTH)
                 {
                     sales.SKUShortName1 = skuShortName;
                     sales.SKUShortName2 = "";
                 }
                 else
                 {
-                    var skuShortNames = CountSplit(skuShortName, SKU_SHORTNAME_LENGTH);
-                    sales.SKUShortName1 = skuShortNames[0];
-                    sales.SKUShortName2 = skuShortNames.Length > 1 ? skuShortNames[1] : "";
+                    sales.SKUShortName1 = encoding.GetString(skuShortNameBT, 0, SKU_SHORTNAME_LENGTH);
+                    sales.SKUShortName2 = encoding.GetString(skuShortNameBT, SKU_SHORTNAME_LENGTH, skuShortNameBT.Length - SKU_SHORTNAME_LENGTH);
                 }
 
                 #region 合計データ

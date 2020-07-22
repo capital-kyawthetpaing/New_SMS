@@ -2066,6 +2066,7 @@ namespace MasterTouroku_ShiireTanka
             return true;
         }
         private void GV_item_KeyPressOne(object sender, KeyPressEventArgs e)
+
         {
             int i = GV_item.CurrentCell.ColumnIndex;
             int j = GV_item.Columns["掛率"].Index;
@@ -2105,11 +2106,13 @@ namespace MasterTouroku_ShiireTanka
         {
             if ((sender as CKM_Controls.CKM_GridView).CurrentCell.OwningColumn.Name == "掛率")
             {
-                e.Control.KeyPress += new KeyPressEventHandler(GV_item_KeyPressOne);
+                //e.Control.KeyPress += new KeyPressEventHandler(GV_item_KeyPressOne);
                 //e.Control.PreviewKeyDown += new PreviewKeyDownEventHandler(GV_item_Press_);
-              
+                e.Control.KeyPress += new KeyPressEventHandler(GV_item_KeyPressOne);
+                e.Control.PreviewKeyDown += new PreviewKeyDownEventHandler(GV_item_Press_);
+
             }
-            
+
         }
         private void GV_item_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
@@ -2135,6 +2138,7 @@ namespace MasterTouroku_ShiireTanka
                             if (ratevlue.Length > 3)
                             {
                                 MessageBox.Show("enter valid no");
+
 
                             }
                             else
@@ -2202,7 +2206,6 @@ namespace MasterTouroku_ShiireTanka
                         {
                             this.掛率.DefaultCellStyle.Format = "N2";
                         }
-
                     }
                 //}
             }
