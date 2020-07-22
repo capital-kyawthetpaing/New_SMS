@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ckmShop_Label62 = new CKM_Controls.CKMShop_Label();
+            this.txtOther = new CKM_Controls.CKMShop_Label();
             this.txtPaymentadjustment = new CKM_Controls.CKMShop_Label();
             this.txtPaymentBill = new CKM_Controls.CKMShop_Label();
             this.txtPaymentOffset = new CKM_Controls.CKMShop_Label();
@@ -144,11 +146,12 @@
             this.ckmShop_Label6 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label1 = new CKM_Controls.CKMShop_Label();
             this.lblDate = new CKM_Controls.CKMShop_Label();
-            this.txtOther = new CKM_Controls.CKMShop_Label();
-            this.ckmShop_Label62 = new CKM_Controls.CKMShop_Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chkDel = new CKM_Controls.CKMShop_CheckBox();
             this.tabPage2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -221,10 +224,43 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1742, 694);
+            this.tabPage2.Size = new System.Drawing.Size(1742, 674);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "                   ";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // ckmShop_Label62
+            // 
+            this.ckmShop_Label62.AutoSize = true;
+            this.ckmShop_Label62.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label62.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label62.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label62.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.ckmShop_Label62.FontBold = true;
+            this.ckmShop_Label62.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.ckmShop_Label62.Location = new System.Drawing.Point(201, 621);
+            this.ckmShop_Label62.Name = "ckmShop_Label62";
+            this.ckmShop_Label62.Size = new System.Drawing.Size(126, 35);
+            this.ckmShop_Label62.TabIndex = 201;
+            this.ckmShop_Label62.Text = "その他";
+            this.ckmShop_Label62.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
+            this.ckmShop_Label62.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtOther
+            // 
+            this.txtOther.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.txtOther.BackColor = System.Drawing.Color.Transparent;
+            this.txtOther.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOther.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.txtOther.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.txtOther.FontBold = true;
+            this.txtOther.ForeColor = System.Drawing.Color.Black;
+            this.txtOther.Location = new System.Drawing.Point(330, 617);
+            this.txtOther.Name = "txtOther";
+            this.txtOther.Size = new System.Drawing.Size(180, 42);
+            this.txtOther.TabIndex = 200;
+            this.txtOther.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.txtOther.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtPaymentadjustment
             // 
@@ -1273,7 +1309,7 @@
             this.tabControl1.Location = new System.Drawing.Point(78, 123);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1750, 720);
+            this.tabControl1.Size = new System.Drawing.Size(1750, 700);
             this.tabControl1.TabIndex = 53;
             // 
             // tabPage1
@@ -1331,7 +1367,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1742, 654);
+            this.tabPage1.Size = new System.Drawing.Size(1742, 674);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "                    ";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1527,6 +1563,7 @@
             this.txt1000.IntegerPart = 6;
             this.txt1000.IsCorrectDate = true;
             this.txt1000.isEnterKeyDown = false;
+            this.txt1000.IsFirstTime = true;
             this.txt1000.isMaxLengthErr = false;
             this.txt1000.IsNumber = true;
             this.txt1000.IsShop = false;
@@ -1773,6 +1810,7 @@
             this.txtotheramount.IntegerPart = 6;
             this.txtotheramount.IsCorrectDate = true;
             this.txtotheramount.isEnterKeyDown = false;
+            this.txtotheramount.IsFirstTime = true;
             this.txtotheramount.isMaxLengthErr = false;
             this.txtotheramount.IsNumber = true;
             this.txtotheramount.IsShop = false;
@@ -1801,6 +1839,7 @@
             this.txt1.IntegerPart = 6;
             this.txt1.IsCorrectDate = true;
             this.txt1.isEnterKeyDown = false;
+            this.txt1.IsFirstTime = true;
             this.txt1.isMaxLengthErr = false;
             this.txt1.IsNumber = true;
             this.txt1.IsShop = false;
@@ -1829,6 +1868,7 @@
             this.txt5.IntegerPart = 6;
             this.txt5.IsCorrectDate = true;
             this.txt5.isEnterKeyDown = false;
+            this.txt5.IsFirstTime = true;
             this.txt5.isMaxLengthErr = false;
             this.txt5.IsNumber = true;
             this.txt5.IsShop = false;
@@ -1857,6 +1897,7 @@
             this.txt10.IntegerPart = 6;
             this.txt10.IsCorrectDate = true;
             this.txt10.isEnterKeyDown = false;
+            this.txt10.IsFirstTime = true;
             this.txt10.isMaxLengthErr = false;
             this.txt10.IsNumber = true;
             this.txt10.IsShop = false;
@@ -1885,6 +1926,7 @@
             this.txt50.IntegerPart = 6;
             this.txt50.IsCorrectDate = true;
             this.txt50.isEnterKeyDown = false;
+            this.txt50.IsFirstTime = true;
             this.txt50.isMaxLengthErr = false;
             this.txt50.IsNumber = true;
             this.txt50.IsShop = false;
@@ -1913,6 +1955,7 @@
             this.txt100.IntegerPart = 6;
             this.txt100.IsCorrectDate = true;
             this.txt100.isEnterKeyDown = false;
+            this.txt100.IsFirstTime = true;
             this.txt100.isMaxLengthErr = false;
             this.txt100.IsNumber = true;
             this.txt100.IsShop = false;
@@ -1941,6 +1984,7 @@
             this.txt500.IntegerPart = 6;
             this.txt500.IsCorrectDate = true;
             this.txt500.isEnterKeyDown = false;
+            this.txt500.IsFirstTime = true;
             this.txt500.isMaxLengthErr = false;
             this.txt500.IsNumber = true;
             this.txt500.IsShop = false;
@@ -1969,6 +2013,7 @@
             this.txt2000.IntegerPart = 6;
             this.txt2000.IsCorrectDate = true;
             this.txt2000.isEnterKeyDown = false;
+            this.txt2000.IsFirstTime = true;
             this.txt2000.isMaxLengthErr = false;
             this.txt2000.IsNumber = true;
             this.txt2000.IsShop = false;
@@ -1997,6 +2042,7 @@
             this.txt5000.IntegerPart = 6;
             this.txt5000.IsCorrectDate = true;
             this.txt5000.isEnterKeyDown = false;
+            this.txt5000.IsFirstTime = true;
             this.txt5000.isMaxLengthErr = false;
             this.txt5000.IsNumber = true;
             this.txt5000.IsShop = false;
@@ -2025,6 +2071,7 @@
             this.txt10000.IntegerPart = 6;
             this.txt10000.IsCorrectDate = true;
             this.txt10000.isEnterKeyDown = false;
+            this.txt10000.IsFirstTime = true;
             this.txt10000.isMaxLengthErr = false;
             this.txt10000.IsNumber = true;
             this.txt10000.IsShop = false;
@@ -2294,44 +2341,33 @@
             this.lblDate.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtOther
+            // panel1
             // 
-            this.txtOther.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.txtOther.BackColor = System.Drawing.Color.Transparent;
-            this.txtOther.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtOther.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.txtOther.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.txtOther.FontBold = true;
-            this.txtOther.ForeColor = System.Drawing.Color.Black;
-            this.txtOther.Location = new System.Drawing.Point(330, 617);
-            this.txtOther.Name = "txtOther";
-            this.txtOther.Size = new System.Drawing.Size(180, 42);
-            this.txtOther.TabIndex = 200;
-            this.txtOther.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.txtOther.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.panel1.Controls.Add(this.chkDel);
+            this.panel1.Location = new System.Drawing.Point(1648, 830);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(250, 70);
+            this.panel1.TabIndex = 55;
             // 
-            // ckmShop_Label62
+            // chkDel
             // 
-            this.ckmShop_Label62.AutoSize = true;
-            this.ckmShop_Label62.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.ckmShop_Label62.BackColor = System.Drawing.Color.Transparent;
-            this.ckmShop_Label62.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label62.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.ckmShop_Label62.FontBold = true;
-            this.ckmShop_Label62.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label62.Location = new System.Drawing.Point(201, 621);
-            this.ckmShop_Label62.Name = "ckmShop_Label62";
-            this.ckmShop_Label62.Size = new System.Drawing.Size(126, 35);
-            this.ckmShop_Label62.TabIndex = 201;
-            this.ckmShop_Label62.Text = "その他";
-            this.ckmShop_Label62.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
-            this.ckmShop_Label62.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkDel.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chkDel.ForeColor = System.Drawing.Color.Black;
+            this.chkDel.IsattachedCaption = true;
+            this.chkDel.Location = new System.Drawing.Point(30, 17);
+            this.chkDel.Name = "chkDel";
+            this.chkDel.Size = new System.Drawing.Size(200, 35);
+            this.chkDel.TabIndex = 0;
+            this.chkDel.Text = "削除する";
+            this.chkDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkDel.UseVisualStyleBackColor = true;
             // 
             // frmTempoRegiSeisanTouroku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1913, 961);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmTempoRegiSeisanTouroku";
@@ -2340,11 +2376,13 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmTempoRegiSeisanTouroku_KeyUp);
             this.Controls.SetChildIndex(this.tabControl1, 0);
             this.Controls.SetChildIndex(this.lblDate, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2470,6 +2508,8 @@
         private CKM_Controls.CKMShop_Label lblCashStorage;
         private CKM_Controls.CKMShop_Label ckmShop_Label62;
         private CKM_Controls.CKMShop_Label txtOther;
+        private System.Windows.Forms.Panel panel1;
+        private CKM_Controls.CKMShop_CheckBox chkDel;
     }
 }
 
