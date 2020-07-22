@@ -108,7 +108,15 @@ namespace TempoRegiSeisanTouroku
                 case 2:
                     if(ErrorCheck())
                     {
-                        InsertUpdate();
+                        if(chkDel.Checked == false)
+                        {
+                            InsertUpdate();
+                        }
+                        else if(chkDel.Checked == true)
+                        {
+                            Delete();
+                        }
+                       
                     }              
                     break;
             }
@@ -138,6 +146,8 @@ namespace TempoRegiSeisanTouroku
                 txt1.Text = dtStore.Rows[0]["Yen1"].ToString();
                 txtotheramount.Text = dtStore.Rows[0]["OtherYen"].ToString();
                 lblCashBalance.Text = dtStore.Rows[0]["TotalCash"].ToString();
+
+                chkDel.Enabled = true;
             }
             else
             {
@@ -153,6 +163,8 @@ namespace TempoRegiSeisanTouroku
                 txt1.Text = "0";
                 txtotheramount.Text = "0";
                 lblCashBalance.Text = "0";
+
+                chkDel.Enabled = false;
             }
             #endregion
 
@@ -758,8 +770,40 @@ namespace TempoRegiSeisanTouroku
             dsce = GetStoreCalculation();       
             if (seisanbl.D_StoreCalculation_Insert_Update(dsce))
             {
+                chkDel.Enabled = true;
                 seisanbl.ShowMessage("I101");              
             }           
+        }
+
+        private void Delete()
+        {
+            string data = InOperatorCD;
+            string date = DateTime.Now.ToString("yyyy/MM/dd");          
+            dsce.StoreCD = data;
+            dsce.CalculationDate = date;
+            dsce.InsertOperator = InOperatorCD;
+            dsce.ProgramID = InProgramID;
+            dsce.PC = InPcID;
+            if (seisanbl.D_StoreCalculation_Delete(dsce))
+            {                
+                seisanbl.ShowMessage("I102");
+                txt10000.Text = "0";
+                txt5000.Text = "0";
+                txt2000.Text = "0";
+                txt1000.Text = "0";
+                txt500.Text = "0";
+                txt100.Text = "0";
+                txt50.Text = "0";
+                txt10.Text = "0";
+                txt5.Text = "0";
+                txt1.Text = "0";
+                txtotheramount.Text = "0";
+                lblCashBalance.Text = "0";
+                lblCashStorage.Text = "¥ " + "0";
+
+                chkDel.Checked = false;
+                chkDel.Enabled = false;
+            }
         }
 
         private D_StoreCalculation_Entity GetStoreCalculation()
