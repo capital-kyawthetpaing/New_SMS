@@ -3,6 +3,7 @@ using BL;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace TempoRegiRyousyuusyo
@@ -44,6 +45,11 @@ namespace TempoRegiRyousyuusyo
             /// <summary>再発行チェック</summary>
             ReissueCheck
         }
+
+        /// <summary>
+        /// 製品名上段文字数
+        /// </summary>
+        private const int SKU_SHORTNAME_LENGTH = 23*2;
 
         /// <summary>
         /// BL
@@ -141,7 +147,7 @@ namespace TempoRegiRyousyuusyo
             if (!bl.D_CheckSalseNO(txtSalesNO.Text))
             {
                 // 売上データなし
-                bl.ShowMessage("E138");
+                bl.ShowMessage("E138", "売上番号");
                 txtSalesNO.Focus();
                 return false;
             }
@@ -151,7 +157,7 @@ namespace TempoRegiRyousyuusyo
                 if (bl.D_CheckDeleteSalseNO(txtSalesNO.Text))
                 {
                     // 削除済み売上データあり
-                    bl.ShowMessage("E140");
+                    bl.ShowMessage("E140", "売上番号");
                     txtSalesNO.Focus();
                     return false;
                 }
@@ -248,7 +254,7 @@ namespace TempoRegiRyousyuusyo
             ryousyuusyoRow.SalesNO = Convert.ToString(row["SalesNO"]);
 
             // 売上日付
-            ryousyuusyoRow.UriageDateTime = ConvertDateTime(row["UriageDateTime"]);
+            ryousyuusyoRow.UriageDateTime = ConvertDateTime(row["UriageDateTime"], !string.IsNullOrWhiteSpace(txtPrintDate.Text));
 
             // 相手名
             ryousyuusyoRow.AiteName = Convert.ToString(row["AiteName"]);
@@ -257,7 +263,8 @@ namespace TempoRegiRyousyuusyo
             ryousyuusyoRow.SalesGaku = ConvertDecimal(row["SalesGaku"]);
 
             // 消費税額
-            ryousyuusyoRow.SalesTax = ConvertDecimal(row["SalesTax"]);
+            var salesTax = ConvertDecimal(row["SalesTax"]);
+            ryousyuusyoRow.SalesTax = (string.IsNullOrWhiteSpace(salesTax) || salesTax == "0" ? "" : @"\") + ConvertDecimal(row["SalesTax"]);
 
             // 会社名
             ryousyuusyoRow.CompanyName = Convert.ToString(row["CompanyName"]);
@@ -290,10 +297,10 @@ namespace TempoRegiRyousyuusyo
             ryousyuusyoRow.StoreCD = Convert.ToString(row["StoreCD"]);
 
             // 更新日付
-            ryousyuusyoRow.ChangeDate = ConvertDateTime(row["ChangeDate"]);
+            ryousyuusyoRow.ChangeDate = ConvertDateTime(row["ChangeDate"], false);
 
             // 売上日付
-            ryousyuusyoRow.SalesDate = ConvertDateTime(row["SalesDate"]);
+            ryousyuusyoRow.SalesDate = ConvertDateTime(row["SalesDate"], false);
 
             // データセットに追加
             ryousyuusyoDataSet.D_SelectData_ForTempoRegiRyousyuusyo.Rows.Add(ryousyuusyoRow);
@@ -312,166 +319,135 @@ namespace TempoRegiRyousyuusyo
         /// <param name="data">データ</param>
         private void OutputReceipt(DataTable data)
         {
-            var row = data.Rows[0];
-
             var receiptDataSet = new Receipt_DataSet();
-            var receiptRow = receiptDataSet.ReceiptTable.NewReceiptTableRow();
-
-            // ロゴ
-            //receiptRow.Logo = Convert.ToBase64String((byte[])row["Logo"]);
-            receiptRow.Logo = (byte[])row["Logo"];
-
-            // 会社名/店舗名/住所1/住所2/電話番号
-            receiptRow.CompanyName = Convert.ToString(row["CompanyName"]);
-            receiptRow.StoreName = Convert.ToString(row["StoreName"]);
-            receiptRow.Address1 = Convert.ToString(row["Address1"]);
-            receiptRow.Address2 = Convert.ToString(row["Address2"]);
-            receiptRow.TelphoneNO = "電話 " + Convert.ToString(row["TelephoneNO"]);
-
-            // メッセージ
-            receiptRow.Char3 = Convert.ToString(row["Char3"]);
-            receiptRow.Char4 = Convert.ToString(row["Char4"]);
-
-            // 発行日
-            receiptRow.DepositDateTime = ConvertDateTime(row["DepositDateTime"]);
-
-            // 再発行日
-            receiptRow.IssuedDatetime = ConvertDateTime(row["IssuedDatetime"]);
-            receiptRow.Issued = string.IsNullOrWhiteSpace(receiptRow.IssuedDatetime) ? null : "再発行";
 
             for (var index = 0; index < data.Rows.Count; index++)
             {
-                row = data.Rows[index];
+                var row = data.Rows[index];
 
-                var detailRow = receiptDataSet.ReceiptDetailTable.NewReceiptDetailTableRow();
-
-                // SalesCD
-                detailRow.SalesNO = Convert.ToString(row["SalesNO"]);
-
-                // JanCD
-                detailRow.JanCD = Convert.ToString(row["JanCD"]);
-
-                // 商品名
-                var skuShortNames = CountSplit(Convert.ToString(row["SKUShortName"]), 16);
-                detailRow.SKUShortName1 = skuShortNames[0];
-
-                if (skuShortNames.Length > 1)
+                if (string.IsNullOrWhiteSpace(ConvertDateTime(row["IssueDateTime"], false)))
                 {
-                    detailRow.SKUShortName2 = skuShortNames[1];
+                    // 発行日時がないデータは出力対象外
+                    continue;
+                }
+
+                // 共通データ
+                var salesNO = Convert.ToString(row["SalesNO"]);                             // 売上番号
+                var storeReceiptPrint = Convert.ToString(row["StoreReceiptPrint"]);         // 店舗レシート表記
+                var staffReceiptPrint = Convert.ToString(row["StaffReceiptPrint"]);         // 担当レシート表記
+
+                #region 店舗データ
+                if (receiptDataSet.StoreTable.Rows.Count == 0)
+                {
+                    var store = receiptDataSet.StoreTable.NewStoreTableRow();
+                    store.Logo = (byte[])row["Logo"];
+                    store.CompanyName = Convert.ToString(row["CompanyName"]);
+                    store.StoreName = Convert.ToString(row["StoreName"]);                       // 店舗名
+                    store.Address1 = Convert.ToString(row["Address1"]);                         // 住所1
+                    store.Address2 = Convert.ToString(row["Address2"]);                         // 住所2
+                    store.TelephoneNO = Convert.ToString(row["TelephoneNO"]);                   // 電話番号
+                    store.StoreReceiptPrint = Convert.ToString(row["StoreReceiptPrint"]);       // 店舗レシート表記
+
+                    // メッセージ
+                    store.Char3 = Convert.ToString(row["Char3"]);
+                    store.Char4 = Convert.ToString(row["Char4"]);
+                    //
+                    receiptDataSet.StoreTable.Rows.Add(store);
+                }
+                #endregion // 店舗データ
+
+                #region 販売データ
+                var sales = receiptDataSet.SalesTable.NewSalesTableRow();
+                sales.StoreReceiptPrint = storeReceiptPrint;                                    // 店舗レシート表記
+                sales.StaffReceiptPrint = staffReceiptPrint;                                    // 担当レシート表記
+                sales.SalesNO = salesNO;                                                        // 売上番号
+                sales.IssueDate = ConvertDateTime(row["IssueDateTime"], false);                 // 発行日
+                sales.IssueDateTime = Convert.ToString(row["IssueDateTime"]);                   // 発行日時
+
+                // 再発行日時
+                var reIssueDateTime = ConvertDateTime(row["ReIssueDateTime"], false);
+                sales.ReIssueDateTime = string.IsNullOrWhiteSpace(reIssueDateTime) ? null : reIssueDateTime + "　　　再発行";
+
+                sales.JanCD = Convert.ToString(row["JanCD"]);                                   // JANCD
+                var kakaku = ConvertDecimal(row["Kakaku"]);                                     // 価格
+
+                //数量が0の場合は1として処理、その場合、単価は価格を割り当てる
+                var salesSU = ConvertDecimal(row["SalesSU"]);
+                if (string.IsNullOrWhiteSpace(salesSU))
+                {
+                    sales.SalesSU = "1";                                                        // 数量
+                    sales.SalesUnitPrice = kakaku;                                              // 単価
                 }
                 else
                 {
-                    detailRow.SKUShortName2 = "";
+                    sales.SalesSU = salesSU;                                                    // 数量
+                    sales.SalesUnitPrice = @"@" + ConvertDecimal(row["SalesUnitPrice"]);        // 単価
                 }
 
-                // 単価
-                detailRow.SalesUnitPrice = ConvertDecimal(row["SalesUnitPrice"]);
+                sales.SalesGaku = kakaku;                                                       // 価格
+                sales.SalesTax = ConvertDecimal(row["SalesTax"]);                               // 売上消費税額
+                sales.SalesTaxRate = ConvertDecimal(row["SalesTaxRate"]) == "8" ? "*" : "";     // 税率
+                sales.TotalGaku = ConvertDecimal(row["TotalGaku"]);                             // 販売合計額
 
-                // 数量
-                detailRow.SalesSu = ConvertDecimal(row["SalesSu"]);
+                // 商品名
+                var encoding = System.Text.Encoding.GetEncoding("Shift_JIS");
 
-                // 価格
-                detailRow.SalesGaku = ConvertDecimal(row["SalesGaku"]);
-
-                //
-                receiptDataSet.ReceiptDetailTable.Rows.Add(detailRow);
-            }
-
-            // 合計数量
-            receiptRow.SumSalesSu = ConvertDecimal(row["SumSalesSu"]);
-
-            // 合計価格
-            receiptRow.SumSalesGaku = ConvertDecimal(row["SumSalesGaku"]);
-
-            // ８％対象額
-            receiptRow.SalesHontaiGaku8 = ConvertDecimal(row["SalesHontaiGaku8"]);
-
-            // 外税８％
-            receiptRow.SalesTax8 = ConvertDecimal(row["SalesTax8"]);
-
-            // １０％対象額
-            receiptRow.SalesHontaiGaku10 = ConvertDecimal(row["SalesHontaiGaku10"]);
-
-            // 外税１０％
-            receiptRow.SalesTax10 = ConvertDecimal(row["SalesTax10"]);
-
-            // 価格＋税額の合計
-            receiptRow.TotalSalesGaku = ConvertDecimal(row["TotalSalesGaku"]);
-
-            // お釣り/今回ポイント/合計ポイント
-            receiptRow.Refund = ConvertDecimal(row["Refund"]);
-            receiptRow.SalesLastPoint = ConvertDecimal(row["SalesLastPoint"]);
-            receiptRow.CustomerLasPoint = ConvertDecimal(row["CustomerLasPoint"]);
-
-            // 担当レシート表記/店舗レシート表記/売上番号
-            receiptRow.StaffReceiptPrint = Convert.ToString(row["StaffReceiptPrint"]);
-            receiptRow.StoreReceiptPrint = Convert.ToString(row["StoreReceiptPrint"]);
-            receiptRow.SalesNO = Convert.ToString(row["SalesNO"]);
-
-            // お預かり1～10
-            for (var index = 1; index <= 10; index++)
-            {
-                var denominationName = Convert.ToString(row["DenominationName" + index]);
-                var depositGaku = ConvertDecimal(row["DepositGaku" + index]);
-
-                switch (index)
+                var skuShortName = Convert.ToString(row["SKUShortName"]);
+                byte[] skuShortNameBT = encoding.GetBytes(skuShortName);
+                if (skuShortNameBT.Length < SKU_SHORTNAME_LENGTH)
                 {
-                    case 1:
-                        receiptRow.DenominationName1 = denominationName;
-                        receiptRow.DepositGaku1 = depositGaku;
-                        break;
-
-                    case 2:
-                        receiptRow.DenominationName2 = denominationName;
-                        receiptRow.DepositGaku2 = depositGaku;
-                        break;
-
-                    case 3:
-                        receiptRow.DenominationName3 = denominationName;
-                        receiptRow.DepositGaku3 = depositGaku;
-                        break;
-
-                    case 4:
-                        receiptRow.DenominationName4 = denominationName;
-                        receiptRow.DepositGaku4 = depositGaku;
-                        break;
-
-                    case 5:
-                        receiptRow.DenominationName5 = denominationName;
-                        receiptRow.DepositGaku5 = depositGaku;
-                        break;
-
-                    case 6:
-                        receiptRow.DenominationName6 = denominationName;
-                        receiptRow.DepositGaku6 = depositGaku;
-                        break;
-
-                    case 7:
-                        receiptRow.DenominationName7 = denominationName;
-                        receiptRow.DepositGaku7 = depositGaku;
-                        break;
-
-                    case 8:
-                        receiptRow.DenominationName8 = denominationName;
-                        receiptRow.DepositGaku8 = depositGaku;
-                        break;
-
-                    case 9:
-                        receiptRow.DenominationName9 = denominationName;
-                        receiptRow.DepositGaku9 = depositGaku;
-                        break;
-
-                    case 10:
-                        receiptRow.DenominationName10 = denominationName;
-                        receiptRow.DepositGaku10 = depositGaku;
-                        break;
-
-                    default:
-                        break;
+                    sales.SKUShortName1 = skuShortName;
+                    sales.SKUShortName2 = "";
                 }
-            }
+                else
+                {
+                    sales.SKUShortName1 = encoding.GetString(skuShortNameBT, 0, SKU_SHORTNAME_LENGTH);
+                    sales.SKUShortName2 = encoding.GetString(skuShortNameBT, SKU_SHORTNAME_LENGTH, skuShortNameBT.Length - SKU_SHORTNAME_LENGTH);
+                }
 
-            receiptDataSet.ReceiptTable.Rows.Add(receiptRow);
+                #region 合計データ
+                sales.SumSalesSU = ConvertDecimal(row["SumSalesSU"]);                           // 小計数量
+                sales.Subtotal = ConvertDecimal(row["Subtotal"]);                               // 小計金額
+                sales.TargetAmount8 = ConvertDecimal(row["TargetAmount8"]);                     // 消費税対象額8%
+                sales.ConsumptionTax8 = ConvertDecimal(row["ConsumptionTax8"]);                 // 内消費税等8%
+                sales.TargetAmount10 = ConvertDecimal(row["TargetAmount10"]);                   // 消費税対象額10%
+                sales.ConsumptionTax10 = ConvertDecimal(row["ConsumptionTax10"]);               // 内消費税等10%
+                sales.Total = ConvertDecimal(row["Total"]);                                     // 合計
+                #endregion // 合計データ
+
+                #region 支払方法
+                sales.PaymentName1 = Convert.ToString(row["PaymentName1"]);                     // 支払方法名1
+                sales.PaymentAmount1 = ConvertDecimal(row["AmountPay1"]);                       // 支払方法額1
+                sales.PaymentName2 = Convert.ToString(row["PaymentName2"]);                     // 支払方法名2
+                sales.PaymentAmount2 = ConvertDecimal(row["AmountPay2"]);                       // 支払方法額2
+                sales.PaymentName3 = Convert.ToString(row["PaymentName3"]);                     // 支払方法名3
+                sales.PaymentAmount3 = ConvertDecimal(row["AmountPay3"]);                       // 支払方法額3
+                sales.PaymentName4 = Convert.ToString(row["PaymentName4"]);                     // 支払方法名4
+                sales.PaymentAmount4 = ConvertDecimal(row["AmountPay4"]);                       // 支払方法額4
+                sales.PaymentName5 = Convert.ToString(row["PaymentName5"]);                     // 支払方法名5
+                sales.PaymentAmount5 = ConvertDecimal(row["AmountPay5"]);                       // 支払方法額5
+                sales.PaymentName6 = Convert.ToString(row["PaymentName6"]);                     // 支払方法名6
+                sales.PaymentAmount6 = ConvertDecimal(row["AmountPay6"]);                       // 支払方法額6
+                sales.PaymentName7 = Convert.ToString(row["PaymentName7"]);                     // 支払方法名7
+                sales.PaymentAmount7 = ConvertDecimal(row["AmountPay7"]);                       // 支払方法額7
+                sales.PaymentName8 = Convert.ToString(row["PaymentName8"]);                     // 支払方法名8
+                sales.PaymentAmount8 = ConvertDecimal(row["AmountPay8"]);                       // 支払方法額8
+                sales.PaymentName9 = Convert.ToString(row["PaymentName9"]);                     // 支払方法名9
+                sales.PaymentAmount9 = ConvertDecimal(row["AmountPay9"]);                       // 支払方法額9
+                sales.PaymentName10 = Convert.ToString(row["PaymentName10"]);                   // 支払方法名10
+                sales.PaymentAmount10 = ConvertDecimal(row["AmountPay10"]);                     // 支払方法額10
+                #endregion // 支払方法
+
+                #region お釣りデータ
+                sales.Refund = ConvertDecimal(row["Refund"]);                                   // 釣銭
+                sales.SalesLastPoint = ConvertDecimal(row["SalesLastPoint"]);                   // 今回ポイント
+                sales.CustomerLastPoint = ConvertDecimal(row["CustomerLastPoint"]);             // 合計ポイント 
+                #endregion // お釣りデータ
+                
+                #endregion // 販売データ
+
+                receiptDataSet.SalesTable.Rows.Add(sales);
+            }
 
             var report = new TempoRegiRyousyuusyo_Receipt();
             report.SetDataSource(receiptDataSet);
@@ -481,13 +457,6 @@ namespace TempoRegiRyousyuusyo
 
             // 発行済更新、ログ更新
             bl.D_UpdateDepositHistory(txtSalesNO.Text, true, InOperatorCD, InProgramID, InPcID);
-
-            // ジャーナル印刷
-            var journal = new TempoRegiRyousyuusyo_Journal();
-            journal.SetDataSource(receiptDataSet);
-            journal.Refresh();
-            journal.PrintOptions.PrinterName = StorePrinterName;
-            journal.PrintToPrinter(0, false, 0, 0);
         }
 
         /// <summary>
@@ -495,10 +464,17 @@ namespace TempoRegiRyousyuusyo
         /// </summary>
         /// <param name="value">元の日時</param>
         /// <returns>日時</returns>
-        private string ConvertDateTime(object value)
+        private string ConvertDateTime(object value, bool dateOnly)
         {
+            var result = string.Empty;
+
             var dateTime = Convert.ToString(value);
-            return string.IsNullOrWhiteSpace(dateTime) ? "" : dateTime.Substring(0, dateTime.LastIndexOf(':'));
+            if (!string.IsNullOrWhiteSpace(dateTime))
+            {
+                result = dateOnly ? dateTime.Substring(0, "yyyy/MM/dd".Length) : dateTime.Substring(0, dateTime.LastIndexOf(':'));
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -511,17 +487,24 @@ namespace TempoRegiRyousyuusyo
         {
             var result = 0;
 
-            var pos = value.ToString().LastIndexOf('.');
-            if (pos < 0)
+            if (string.IsNullOrWhiteSpace(value.ToString()))
             {
-                result = string.IsNullOrWhiteSpace(value.ToString()) ? 0 : Convert.ToInt32(value.ToString());
+                return "";
             }
             else
             {
-                result = string.IsNullOrWhiteSpace(value.ToString()) ? 0 : Convert.ToInt32(value.ToString().Substring(0, pos));
-            }
+                var pos = value.ToString().LastIndexOf('.');
+                if (pos < 0)
+                {
+                    result = string.IsNullOrWhiteSpace(value.ToString()) ? 0 : Convert.ToInt32(value.ToString());
+                }
+                else
+                {
+                    result = string.IsNullOrWhiteSpace(value.ToString()) ? 0 : Convert.ToInt32(value.ToString().Substring(0, pos));
+                }
 
-            return string.Format("{0:#,0}", result);
+                return string.Format("{0:#,0}", result);
+            }
         }
 
         /// <summary>

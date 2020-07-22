@@ -2171,6 +2171,9 @@ namespace TempoRegiHanbaiTouroku
             return "0";
         }
 
-
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            InitScr();
+        }
     }
 }

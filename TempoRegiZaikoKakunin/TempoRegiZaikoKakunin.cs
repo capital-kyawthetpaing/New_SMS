@@ -30,28 +30,38 @@ namespace TempoRegiZaikoKakunin
         {
             InitializeComponent();
         }
-        
+
         private void frmTempoRegiZaikoKakunin_Load(object sender, EventArgs e)
         {
             InProgramID = "TempoRegiZaikoKakunin";
-            
+
             InPcID = PcID;
             InOperatorCD = OperatorCD;
             InCompanyCD = CompanyCD;
             string data = InOperatorCD;
             StartProgram();
 
-            if (!string.IsNullOrWhiteSpace(JanCD))
-            {
-                txtJanCD.Text = JanCD;
-            }
+            //if (!string.IsNullOrWhiteSpace(JanCD))
+            //{
+            //    txtJanCD.Text = JanCD;
+            //}
             this.Text = "在庫確認";
             txtJanCD.Focus();
             //SetRequireField();
             chkColorSize.Checked = false;
             BtnP_text = "決定";
 
-
+            string[] cmds = System.Environment.GetCommandLineArgs();
+            if (cmds.Length - 1 > (int)ECmdLine.PcID)
+            {
+                string shiireNO = cmds[(int)ECmdLine.PcID + 1];   //
+                //ChangeOperationMode(EOperationMode.UPDATE);
+                txtJanCD.Text = shiireNO;
+                // CheckKey((int)EIndex.PurchaseNO, true);
+            }
+            //DataGridViewColumn column = dgvZaikokakunin.Columns[-1];
+            //column.Width = 70;
+         
 
         }
 
@@ -117,8 +127,7 @@ namespace TempoRegiZaikoKakunin
                 kne.Operator = InOperatorCD;
                 DataTable dt = new DataTable();
                 dt = zaikobl.D_Stock_DataSelect(kne);
-                dgvZaikokakunin.DataSource = dt;
-                
+                dgvZaikokakunin.DataSource = dt;               
             }
         }
         private void txtJanCD_KeyDown(object sender, KeyEventArgs e)
@@ -192,6 +201,17 @@ namespace TempoRegiZaikoKakunin
         private void dgvZaikokakunin_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataSending();
+        }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            TempoRegiShouhinKensaku frmshouhin = new TempoRegiShouhinKensaku(InOperatorCD);
+            frmshouhin.ShowDialog();
+                 txtJanCD.Text = frmshouhin.JANCD;
+                lblItemName.Text = frmshouhin.SKUName;
+                lblColorSize.Text = frmshouhin.Color + " . " + frmshouhin.Size;
+                lblColorSize.Visible = true;
+                lblItemName.Visible = true;           
         }
     }
 }
