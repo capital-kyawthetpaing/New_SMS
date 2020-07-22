@@ -390,7 +390,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     searchCondition += " and ";
                 }
                 op = true;
-                searchCondition += " ChangeDate= '" + txtDate.Text;
+                searchCondition += "ChangeDate= '" + txtDate.Text;
             }
             if (dgv_ShiireKakeritsu.DataSource != null)
             {
@@ -938,9 +938,7 @@ namespace MasterTouroku_ShiireKakeritsu
                             if (row["仕入先CD"].ToString() != scSupplierCD.TxtCode.Text)
                             {
                                 mskbl.ShowMessage("E230");
-                                rowse = "1";
                                 toDelete.Add(row);
-
                             }
                             if (row["店舗CD"] != DBNull.Value && row["店舗CD"].ToString() != "0000")
                             {
@@ -948,11 +946,13 @@ namespace MasterTouroku_ShiireKakeritsu
                                 if (dtResult.Rows.Count == 0)
                                 {
                                     mskbl.ShowMessage("E138");
+                                    //toDelete.Add(row);
                                     rowse = "1";
                                 }
                                 if (!base.CheckAvailableStores(row["店舗CD"].ToString()))
                                 {
                                     bbl.ShowMessage("E141");
+                                    //toDelete.Add(row);
                                     rowse = "1";
                                 }
                             }
@@ -968,6 +968,7 @@ namespace MasterTouroku_ShiireKakeritsu
                                 {
                                     mskbl.ShowMessage("E138");
                                     rowse = "1";
+                                    //toDelete.Add(row);
                                 }
                             }
                             if (row["ブランドCD"] == DBNull.Value && row["競　技CD"] != DBNull.Value)
@@ -975,6 +976,7 @@ namespace MasterTouroku_ShiireKakeritsu
                                 if (mskbl.SimpleSelect1("64", string.Empty, "202", row["競　技CD"].ToString()).Rows.Count < 0)
                                 {
                                     mskbl.ShowMessage("E138");
+                                    //toDelete.Add(row);
                                     rowse = "1";
                                 }
                             }
@@ -982,6 +984,7 @@ namespace MasterTouroku_ShiireKakeritsu
                             {
                                 mskbl.ShowMessage("E229");
                                 rowse = "1";
+                                //toDelete.Add(row);
                             }
                             if (string.IsNullOrEmpty(row["商品分類CD"].ToString()))
                             {
@@ -989,12 +992,14 @@ namespace MasterTouroku_ShiireKakeritsu
                                 {
                                     mskbl.ShowMessage("E138");
                                     rowse = "1";
+                                    //toDelete.Add(row);
                                 }
                             }
                             if (row["商品分類CD"] == DBNull.Value && row["年度"] != DBNull.Value)
                             {
                                 mskbl.ShowMessage("E229");
                                 rowse = "1";
+                                //toDelete.Add(row);
                             }
                             if (row["年度"] == DBNull.Value)
                             {
@@ -1002,12 +1007,14 @@ namespace MasterTouroku_ShiireKakeritsu
                                 {
                                     mskbl.ShowMessage("E138");
                                     rowse = "1";
+                                    //toDelete.Add(row);
                                 }
                             }
                             if (row["年度"] == DBNull.Value && row["シーズン"] != DBNull.Value)
                             {
                                 mskbl.ShowMessage("E229");
                                 rowse = "1";
+                                //toDelete.Add(row);
                             }
                             if (row["シーズン"] == DBNull.Value)
                             {
@@ -1015,55 +1022,62 @@ namespace MasterTouroku_ShiireKakeritsu
                                 {
                                     mskbl.ShowMessage("E138");
                                     rowse = "1";
+                                    //toDelete.Add(row);
                                 }
                             }
                             if (String.IsNullOrEmpty(row["改定日"].ToString()))
                             {
                                 mskbl.ShowMessage("E103");
                                 rowse = "1";
+                                //toDelete.Add(row);
                             }
                             if(!String.IsNullOrWhiteSpace(row["改定日"].ToString()))
                             {
                                 string dates = row["改定日"].ToString();
-                                string[] formats = { "yyyy/MM/dd" };
-                                DateTime res;
-                                if (DateTime.TryParse(dates.ToString(), out res))
-                                {
-                                    dates = res.ToString("yyyy-MM-dd");
-                                }
-                                else
-                                {
-                                    mskbl.ShowMessage("E103");
-                                    rowse = "1";
-                                }
+                                //string[] formats = { "yyyy/MM/dd" };
+                                //DateTime res;
+                                //if (DateTime.TryParse(dates.ToString(), out res))
+                                //{
+                                //    dates = res.ToString("yyyy-MM-dd");
+                                //}
                                 //else
                                 //{
                                 //    mskbl.ShowMessage("E103");
                                 //    rowse = "1";
                                 //}
-                                //string inputString = "MM/dd/yyyy";
-                                //DateTime res;
-                                //if (DateTime.TryParse(inputString, out res))
-                                //{
-                                //    mskbl.ShowMessage("E103");
-                                //    String.Format(inputString, res);
-                                //    rowse = "1";
-                                //}
+                                string[] format = { "MM/dd/yyyy" };
+                                DateTime res;
+                                if (DateTime.TryParse(row["改定日"].ToString(), out res))
+                                {
+                                    dates = res.ToString("MM/dd/yyyy");
+                                    //mskbl.ShowMessage("E103");
+                                    //rowse = "1";
+                                }
+                                else
+                                {
+                                    mskbl.ShowMessage("E103");
+                                    //toDelete.Add(row);
+                                    rowse = "1";
+                                }
                             }
-                            //if(rowse =="1")
+                            if (rowse == "0")
+                            {
+                                dtExcel.AcceptChanges();
+                            }
+                            else
+                            {
+                                toDelete.Add(row);
+                            }
+                            //if (rowse == "1")
                             //{
-                            //    row.Delete();
-                            //    //dtExcel.AcceptChanges();
+                            //    dtExcel.Rows.Remove(row);
+                            //    dtExcel.AcceptChanges();
                             //}
                         }
-                        if(rowse=="0")
-                        {
-                            dtExcel.AcceptChanges();
-                        }
-                        foreach (DataRow dr in toDelete)
-                        {
-                            dtExcel.Rows.Remove(dr);
-                        }
+                        //foreach (DataRow dr in toDelete)
+                        //{
+                        //    dtExcel.Rows.Remove(dr);
+                        //}
                     }
                     else
                     {
