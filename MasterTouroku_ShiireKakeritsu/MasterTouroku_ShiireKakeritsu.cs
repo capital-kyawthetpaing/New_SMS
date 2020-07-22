@@ -120,7 +120,7 @@ namespace MasterTouroku_ShiireKakeritsu
 
             else if (type == 3)
             {
-                if (!RequireCheck(new Control[] { scSupplierCD.TxtCode, txtRevisionDate, txtRate1 }))
+                if (!RequireCheck(new Control[] { scSupplierCD.TxtCode}))
                     return false;
             }
             return true;
