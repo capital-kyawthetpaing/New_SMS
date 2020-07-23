@@ -20,7 +20,7 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
-        public bool M_Shiirekakeritsu(M_OrderRate_Entity moe,string xml,L_Log_Entity log_data)
+        public DataTable M_Shiirekakeritsu(M_OrderRate_Entity moe,string xml,L_Log_Entity log_data)
         {
             string sp = "M_OrderRate_Update";
 
@@ -42,7 +42,7 @@ namespace DL
                 { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.ProcessMode }},
                 { "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.Key }}
             };
-            return InsertUpdateDeleteData(dic, sp);
+            return SelectData(dic, sp);
         }
     }
 }
