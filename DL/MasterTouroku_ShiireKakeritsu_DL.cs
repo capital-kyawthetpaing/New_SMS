@@ -29,11 +29,6 @@ namespace DL
                 { "@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = xml } },
                 { "@VendorCD", new ValuePair { value1 = System.Data.SqlDbType.VarChar, value2 =moe.VendorCD  } },
                 { "@StoreCD", new ValuePair { value1 = System.Data.SqlDbType.VarChar, value2 =moe.StoreCD  } },
-                //{ "@BrandCD", new ValuePair { value1 = System.Data.SqlDbType.VarChar, value2 =moe.BrandCD  } },
-                //{ "@SportsCD", new ValuePair { value1 = System.Data.SqlDbType.VarChar, value2 =moe.SportsCD  } },
-                //{ "@SegmentsCD", new ValuePair { value1 = System.Data.SqlDbType.VarChar, value2 =moe.SegmentCD  } },
-                //{ "@Lastyearterm", new ValuePair { value1 = System.Data.SqlDbType.VarChar, value2 =moe.LastYearTerm  } },
-                //{ "@Lastseason", new ValuePair { value1 = System.Data.SqlDbType.VarChar, value2 =moe.LastSeason  } },
                 { "@ChangeDate",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.ChangeDate} },
                 { "@Rate",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.Rate} },
                 { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.Operator }},//ses
