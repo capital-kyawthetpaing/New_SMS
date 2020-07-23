@@ -135,8 +135,8 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             //scSupplierCD.Clear();
             //txtDate1.Text = string.Empty;
-            txtRevisionDate.Text = string.Empty;
-            txtRate1.Text = string.Empty;
+            //txtRevisionDate.Text = string.Empty;
+            //txtRate1.Text = string.Empty;
             scBrandCD1.Clear();
             scSportsCD1.Clear();
             scSegmentCD1.Clear();
@@ -152,11 +152,8 @@ namespace MasterTouroku_ShiireKakeritsu
             txtChangeDate.Text = string.Empty;
             txtRate.Text = string.Empty;
             scSupplierCD.SetFocus(1);
-            rdoAllStores.Checked = true;
-            cbo_Store.SelectedValue = "0000";
-
-
-
+            //rdoAllStores.Checked = true;
+            //cbo_Store.SelectedValue = "0000";
         }
 
         public override void FunctionProcess(int Index)
@@ -170,7 +167,10 @@ namespace MasterTouroku_ShiireKakeritsu
                             return;
                         CancelData();
                         scSupplierCD.Clear();
-                        //cbo_Store.SelectedValue = StoreCD;
+                        txtRevisionDate.Clear();
+                        txtRate1.Clear();
+                        rdoAllStores.Checked = true;
+                        cbo_Store.SelectedValue = "0000";
                         dgv_ShiireKakeritsu.DataSource = null;
                     }
                     break;
@@ -407,7 +407,11 @@ namespace MasterTouroku_ShiireKakeritsu
                 dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
                 if (dtMain.Rows.Count > 0)
                 {
-                    txtRevisionDate.Text = dtMain.Rows[0][8].ToString();
+                    string date = dtMain.Rows[0][8].ToString();
+                    DateTime dteee = Convert.ToDateTime(date);
+                    txtRevisionDate.Text = dteee.ToString("yyyy/MM/dd");
+
+                    txtRate1.Text = dtMain.Rows[0][9].ToString();
                     BindGrid();
                 }
                 else
@@ -470,6 +474,8 @@ namespace MasterTouroku_ShiireKakeritsu
                         if (chk.Value == chk.TrueValue || check=="True")
                         {
                             DataRow dtRow = dtMain.NewRow();
+                            dtRow["VendorCD"] = scSupplierCD.TxtCode.Text;
+                            dtRow["StoreCD"] = cbo_Store.SelectedValue.ToString();
                             dtRow["BrandCD"] = row.Cells["colBrandCD1"].Value.ToString();
                             dtRow["SportsCD"] = row.Cells["colSportsCD1"].Value.ToString();
                             dtRow["SegmentCD"] = row.Cells["colSegmentCD1"].Value.ToString();
@@ -713,6 +719,8 @@ namespace MasterTouroku_ShiireKakeritsu
             {
                 if (dgv_ShiireKakeritsu.Rows.Count == 0)
                 {
+                    dt.Columns.Add("VendorCD");//ses
+                    dt.Columns.Add("StoreCD");//ses
                     dt.Columns.Add("BrandCD");
                     dt.Columns.Add("SportsCD");
                     dt.Columns.Add("SegmentCD");
@@ -722,6 +730,8 @@ namespace MasterTouroku_ShiireKakeritsu
                     dt.Columns.Add("Rate");
 
                     DataRow dtRow = dt.NewRow();
+                    dtRow["VendorCD"] = scSupplierCD.TxtCode.Text;
+                    dtRow["StoreCD"] = cbo_Store.SelectedValue.ToString();
                     dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
                     dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
                     dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
@@ -737,6 +747,8 @@ namespace MasterTouroku_ShiireKakeritsu
                 else
                 {
                     DataRow row = dtMain.NewRow();
+                    row["VendorCD"] = scSupplierCD.TxtCode.Text;
+                    row["StoreCD"] = cbo_Store.SelectedValue.ToString();
                     row["BrandCD"] = scBrandCD.TxtCode.Text;
                     row["SportsCD"] = scSportsCD.TxtCode.Text;
                     row["SegmentCD"] = scSegmentCD.TxtCode.Text;
@@ -815,7 +827,11 @@ namespace MasterTouroku_ShiireKakeritsu
             if (dtMain.Rows.Count > 0)
             {
                 dgv_ShiireKakeritsu.DataSource = dtMain;
-                txtRevisionDate.Text = dtMain.Rows[0][8].ToString();
+                //txtRevisionDate.Text = dtMain.Rows[0][8].ToString();
+                string date = dtMain.Rows[0][8].ToString();
+                //DateTime dteee = DateTime.ParseExact(date,"yyyy/MM/dd",null);
+                DateTime dteee = Convert.ToDateTime(date);
+                txtRevisionDate.Text = dteee.ToString("yyyy/MM/dd");
                 txtRate1.Text = dtMain.Rows[0][9].ToString();
             }
             else
@@ -843,6 +859,7 @@ namespace MasterTouroku_ShiireKakeritsu
                 Xml = mskbl.DataTableToXml(dtMain);
                 log_data = Get_Log_Data();
                 moe.VendorCD = scSupplierCD.TxtCode.Text;
+                moe.StoreCD = cbo_Store.SelectedValue.ToString();
                 moe.ChangeDate = txtRevisionDate.Text;
                 moe.Rate = txtRate1.Text;
             }
@@ -851,12 +868,13 @@ namespace MasterTouroku_ShiireKakeritsu
                 Xml = mskbl.DataTableToXml(dtMain);
                 log_data = Get_Log_Data();
                 moe.VendorCD = scSupplierCD.TxtCode.Text;
+                moe.StoreCD = cbo_Store.SelectedValue.ToString();
                 moe.ChangeDate = txtRevisionDate.Text;
                 moe.Rate = txtRate1.Text;
             }
+            //DataTable dt = mskbl.M_OrderRate_Update(moe, Xml, log_data);
             if (mskbl.M_OrderRate_Update(moe, Xml, log_data))
             {
-                //DataTable dttt = mskbl.M_OrderRate_Update(moe, Xml, log_data);
                 Clear(PanelHeader);
                 Clear(panelDetail);
                 dgv_ShiireKakeritsu.DataSource = string.Empty;
@@ -872,6 +890,7 @@ namespace MasterTouroku_ShiireKakeritsu
         protected DataTable ChangeColumnName(DataTable dtMain)
         {
             dtMain.Columns["仕入先CD"].ColumnName = "VendorCD";
+            dtMain.Columns["店舗CD"].ColumnName = "StoreCD";
             dtMain.Columns["ブランドCD"].ColumnName = "BrandCD";
             dtMain.Columns["競　技CD"].ColumnName = "SportsCD";
             dtMain.Columns["商品分類CD"].ColumnName = "SegmentCD";
