@@ -42,6 +42,11 @@ namespace BL
             return dscdl.D_StoreCalculation_Insert_Update(dsce);
         }
 
+        public bool D_StoreCalculation_Delete(D_StoreCalculation_Entity dsce)
+        {
+            return dscdl.D_StoreCalculation_Delete(dsce);
+        }
+
         public DataTable D_StoreCalculation_Select(D_StoreCalculation_Entity  dsce)
         {
             return dscdl.D_StoreCalculation_Select(dsce);

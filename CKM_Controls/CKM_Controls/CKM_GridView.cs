@@ -184,7 +184,7 @@ namespace CKM_Controls
                                         BeginEdit(true);
                                         break;
                                     }
-                                    else if (TanaCheck("colZipCD1",Rows[CurrentRow.Index].Cells["colZipCD1"].EditedFormattedValue.ToString())  && TanaCheck("colZipCD2"))
+                                    else if (TanaCheck("colZipCD1", Rows[CurrentRow.Index].Cells["colZipCD1"].EditedFormattedValue.ToString()) && TanaCheck("colZipCD2"))
                                     {
                                         YuubinBangouBL.ShowMessage("E105");
                                         BeginEdit(true);
@@ -231,7 +231,7 @@ namespace CKM_Controls
                             {
                                 if (string.IsNullOrWhiteSpace(Rows[CurrentRow.Index].Cells["colZipCD2"].EditedFormattedValue.ToString()) && !string.IsNullOrWhiteSpace(Rows[CurrentRow.Index].Cells["colAdd2"].EditedFormattedValue.ToString()))
                                 {
-                                     Rows[CurrentRow.Index].Cells["colAdd2"].Value = null;
+                                    Rows[CurrentRow.Index].Cells["colAdd2"].Value = null;
                                 }
                                 direction = Keys.Tab;
                                 reverseKey = Keys.Shift | Keys.Tab;
@@ -244,6 +244,82 @@ namespace CKM_Controls
                                 break;
                             }
                         }
+                        else if (this.Name == "GV_item")
+                        {
+
+                            // int e = CurrentCell.RowIndex;
+                            if (CurrentCell.RowIndex != -1)
+                            {
+                                if (CurrentCell.ColumnIndex == Columns["掛率"].Index)
+                                {
+                                    string ratevlue = Rows[CurrentCell.RowIndex].Cells["掛率"].Value.ToString();
+                                    string editvalue = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
+                                    if (!editvalue.Contains("."))
+                                    {
+                                        if (editvalue.Length > 3)
+                                        {
+                                            MessageBox.Show("enter valid no");
+                                            CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+                                            RefreshEdit();
+                                            //CurrentCell.Value = "0";
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            string priceouttax = Rows[CurrentCell.RowIndex].Cells["定価"].Value.ToString();
+                                            string rateproce = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
+                                            decimal rate = Convert.ToDecimal(rateproce);
+                                            decimal con = (decimal)0.01;
+                                            decimal listprice = Convert.ToDecimal(priceouttax);
+                                            Rows[CurrentCell.RowIndex].Cells["発注単価"].Value = Math.Round(listprice * (rate * con)).ToString();
+                                            direction = Keys.Tab;
+                                            reverseKey = Keys.Shift | Keys.Tab;
+                                            break;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Rows[CurrentCell.ColumnIndex].DefaultCellStyle.Format="N2";
+                                        Columns["掛率"].DefaultCellStyle.Format = "N2";
+                                        int x = editvalue.IndexOf('.');
+                                        int count = editvalue.Count(f => f == '.');
+
+                                        if (count != 1 || x >= 4)
+                                        {
+                                            MessageBox.Show("enter valid no");
+                                            CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+                                            RefreshEdit();
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            string priceouttax = Rows[CurrentCell.RowIndex].Cells["定価"].Value.ToString();
+                                            string rateproce = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
+                                            decimal rate = Convert.ToDecimal(rateproce);
+                                            decimal con = (decimal)0.01;
+                                            decimal listprice = Convert.ToDecimal(priceouttax);
+                                            Rows[CurrentCell.RowIndex].Cells["発注単価"].Value = Math.Round(listprice * (rate * con)).ToString();
+                                            direction = Keys.Tab;
+                                            reverseKey = Keys.Shift | Keys.Tab;
+                                            break;
+                                        }
+                                    }
+                                }
+                                //direction = Keys.Tab;
+                                //reverseKey = Keys.Shift | Keys.Tab;
+                                //break;
+                            }
+                            //else
+
+                            //{
+                            direction = Keys.Tab;
+                            reverseKey = Keys.Shift | Keys.Tab;
+                            break;
+                            //}
+
+                        }
+
+
                         else
                         {
                             direction = Keys.Tab;
@@ -428,6 +504,7 @@ namespace CKM_Controls
                     IsSkipped = false;
                 }
             }
+            base.OnCellValidated(e);
         }
         private void CheckDuplicate()
         {
@@ -613,7 +690,6 @@ namespace CKM_Controls
                     }
                 }
             }
-            
         }
         
         private bool TanaCheck( string colname, string Val= null)
@@ -752,6 +828,63 @@ namespace CKM_Controls
                         //}
                     }
 
+                }
+            }
+           else if (Name == "GV_item")
+            {
+                if (CurrentCell.RowIndex != -1)
+                {
+                    if (CurrentCell.ColumnIndex == Columns["掛率"].Index)
+                    {
+                        string ratevlue = Rows[CurrentCell.RowIndex].Cells["掛率"].Value.ToString();
+                        string editvalue = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
+                        if (!editvalue.Contains("."))
+                        {
+                            if (editvalue.Length > 3)
+                            {
+                                MessageBox.Show("enter valid no");
+                                CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+                                RefreshEdit();
+                                //CurrentCell.Value = "0";
+                            }
+                            else
+                            {
+                                string priceouttax = Rows[CurrentCell.RowIndex].Cells["定価"].Value.ToString();
+                                string rateproce = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
+                                decimal rate = Convert.ToDecimal(rateproce);
+                                decimal con = (decimal)0.01;
+                                decimal listprice = Convert.ToDecimal(priceouttax);
+                                Rows[CurrentCell.RowIndex].Cells["発注単価"].Value = Math.Round(listprice * (rate * con)).ToString();
+                               
+                            }
+                        }
+                        else
+                        {
+                            //Rows[CurrentCell.ColumnIndex].DefaultCellStyle.Format="N2";
+                            Columns["掛率"].DefaultCellStyle.Format = "N2";
+                            int x = editvalue.IndexOf('.');
+                            int count = editvalue.Count(f => f == '.');
+
+                            if (count != 1 || x >= 4)
+                            {
+                                MessageBox.Show("enter valid no");
+                                CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+                                RefreshEdit();
+                               
+                            }
+                            else
+                            {
+                                string priceouttax = Rows[CurrentCell.RowIndex].Cells["定価"].Value.ToString();
+                                string rateproce = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
+                                decimal rate = Convert.ToDecimal(rateproce);
+                                decimal con = (decimal)0.01;
+                                decimal listprice = Convert.ToDecimal(priceouttax);
+                                Rows[CurrentCell.RowIndex].Cells["発注単価"].Value = Math.Round(listprice * (rate * con)).ToString();
+                                
+                            }
+                        }
+                    }
+                  
                 }
             }
             else

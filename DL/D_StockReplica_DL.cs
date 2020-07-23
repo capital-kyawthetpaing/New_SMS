@@ -21,7 +21,7 @@ namespace DL
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@ReplicaNO", new ValuePair { value1 = SqlDbType.Int, value2 = sre.ReplicaNO } },
-                { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = sre.JanCD } },
+                { "@AdminNO", new ValuePair { value1 = SqlDbType.Int, value2 = sre.AdminNO } },
                 { "@SoukoCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = sre.SoukoCD } },
             };
             return SelectData(dic, "D_StockReplica_SelectForMarkDown");

@@ -66,17 +66,20 @@ namespace DL
         //    return SelectData(dic, sp);
         //}
 
-        public DataTable Mastertoroku_Shiretanka_Insert(string tbitem,string tbsku,string vendorcd,string storecd)
+        public bool Mastertoroku_Shiretanka_Insert(string tbitem, string tbsku, M_ItemOrderPrice_Entity mi)
         {
             string sp = "Mastertoroku_Shiretanka_Insert";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@tbitem", new ValuePair { value1 =SqlDbType.VarChar,value2 = tbitem } },
-                 { "@tbsku", new ValuePair { value1 =SqlDbType.VarChar,value2 = tbsku } },
-                { "@vendorcd", new ValuePair { value1 =SqlDbType.VarChar,value2 = vendorcd } },
-                { "@storecd", new ValuePair { value1 =SqlDbType.VarChar,value2 = storecd } },
+                { "@tbsku", new ValuePair { value1 =SqlDbType.VarChar,value2 = tbsku } },
+                { "@operator", new ValuePair { value1 =SqlDbType.VarChar,value2 =mi.InsertOperator  } },
+                { "@Program", new ValuePair { value1 =SqlDbType.VarChar,value2 =mi.ProgramID  } },
+                { "@PC", new ValuePair { value1 =SqlDbType.VarChar,value2 =mi.PC  } },
+                { "@OperateMode", new ValuePair { value1 =SqlDbType.VarChar,value2 =mi.ProcessMode  } },
+                { "@KeyItem", new ValuePair { value1 =SqlDbType.VarChar,value2 =mi.Key  } }
             };
-            return SelectData(dic, sp);
+            return InsertUpdateDeleteData(dic, sp);
         }
         public DataTable M_SKU_SelectFor_SKU_Update(string itemtb,string skutb,string itemcd,string date,string type)
         {
