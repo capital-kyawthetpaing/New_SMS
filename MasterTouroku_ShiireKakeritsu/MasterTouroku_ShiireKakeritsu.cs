@@ -407,11 +407,20 @@ namespace MasterTouroku_ShiireKakeritsu
                 dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
                 if (dtMain.Rows.Count > 0)
                 {
-                    string date = dtMain.Rows[0][8].ToString();
-                    DateTime dteee = Convert.ToDateTime(date);
-                    txtRevisionDate.Text = dteee.ToString("yyyy/MM/dd");
-
-                    txtRate1.Text = dtMain.Rows[0][9].ToString();
+                    //string date = dtMain.Rows[0][8].ToString();
+                    //DateTime dteee = Convert.ToDateTime(date);
+                    //txtRevisionDate.Text = dteee.ToString("yyyy/MM/dd");
+                    //txtRate1.Text = dtMain.Rows[0][9].ToString();
+                    foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+                    {
+                        if (string.IsNullOrEmpty(dtMain.Rows[0][3].ToString()) && string.IsNullOrEmpty(dtMain.Rows[0][4].ToString()) && string.IsNullOrEmpty(dtMain.Rows[0][5].ToString()) && string.IsNullOrEmpty(dtMain.Rows[0][6].ToString()) && string.IsNullOrEmpty(dtMain.Rows[0][7].ToString()))
+                        {
+                            string date = dtMain.Rows[0][8].ToString();
+                            DateTime dteee = Convert.ToDateTime(date);
+                            txtRevisionDate.Text = dteee.ToString("yyyy/MM/dd");
+                            txtRate1.Text = dtMain.Rows[0][9].ToString();
+                        }
+                    }
                     BindGrid();
                 }
                 else
@@ -827,12 +836,16 @@ namespace MasterTouroku_ShiireKakeritsu
             if (dtMain.Rows.Count > 0)
             {
                 dgv_ShiireKakeritsu.DataSource = dtMain;
-                //txtRevisionDate.Text = dtMain.Rows[0][8].ToString();
-                string date = dtMain.Rows[0][8].ToString();
-                //DateTime dteee = DateTime.ParseExact(date,"yyyy/MM/dd",null);
-                DateTime dteee = Convert.ToDateTime(date);
-                txtRevisionDate.Text = dteee.ToString("yyyy/MM/dd");
-                txtRate1.Text = dtMain.Rows[0][9].ToString();
+                foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+                {
+                    if (string.IsNullOrEmpty(dtMain.Rows[0][3].ToString()) && string.IsNullOrEmpty(dtMain.Rows[0][4].ToString()) && string.IsNullOrEmpty(dtMain.Rows[0][5].ToString()) && string.IsNullOrEmpty(dtMain.Rows[0][6].ToString()) && string.IsNullOrEmpty(dtMain.Rows[0][7].ToString()))
+                    {
+                        string date = dtMain.Rows[0][8].ToString();
+                        DateTime dteee = Convert.ToDateTime(date);
+                        txtRevisionDate.Text = dteee.ToString("yyyy/MM/dd");
+                        txtRate1.Text = dtMain.Rows[0][9].ToString();
+                    }
+                }
             }
             else
             {
@@ -872,19 +885,21 @@ namespace MasterTouroku_ShiireKakeritsu
                 moe.ChangeDate = txtRevisionDate.Text;
                 moe.Rate = txtRate1.Text;
             }
-            //DataTable dt = mskbl.M_OrderRate_Update(moe, Xml, log_data);
-            if (mskbl.M_OrderRate_Update(moe, Xml, log_data))
-            {
-                Clear(PanelHeader);
-                Clear(panelDetail);
-                dgv_ShiireKakeritsu.DataSource = string.Empty;
-                mskbl.ShowMessage("I101");
-                scSupplierCD.SetFocus(1);
-            }
-            else
-            {
-                mskbl.ShowMessage("S001");
-            }
+            DataTable dt = mskbl.M_OrderRate_Update(moe, Xml, log_data);
+            //if (mskbl.M_OrderRate_Update(moe, Xml, log_data))
+            //{
+            Clear(PanelHeader);
+            Clear(panelDetail);
+            dgv_ShiireKakeritsu.DataSource = string.Empty;
+            mskbl.ShowMessage("I101");
+            //    rdoAllStores.Checked = true;
+            //    cbo_Store.SelectedValue = "0000";
+            scSupplierCD.SetFocus(1);
+            //}
+            //else
+            //{
+            //    mskbl.ShowMessage("S001");
+            //}
         }
 
         protected DataTable ChangeColumnName(DataTable dtMain)
