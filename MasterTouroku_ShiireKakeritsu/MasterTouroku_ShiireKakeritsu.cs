@@ -31,7 +31,7 @@ namespace MasterTouroku_ShiireKakeritsu
         L_Log_Entity log_data;
         DataTable dtAdd;
         DataTable dtExcel;
-        int type = 0;
+        //int type = 0;
         string Xml;
 
         public frmMasterTouroku_ShiireKakeritsu()
@@ -407,20 +407,33 @@ namespace MasterTouroku_ShiireKakeritsu
                 dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
                 if (dtMain.Rows.Count > 0)
                 {
-                    //string date = dtMain.Rows[0][8].ToString();
-                    //DateTime dteee = Convert.ToDateTime(date);
-                    //txtRevisionDate.Text = dteee.ToString("yyyy/MM/dd");
-                    //txtRate1.Text = dtMain.Rows[0][9].ToString();
-                    foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
-                    {
-                        if (string.IsNullOrEmpty(dtMain.Rows[0][3].ToString()) && string.IsNullOrEmpty(dtMain.Rows[0][4].ToString()) && string.IsNullOrEmpty(dtMain.Rows[0][5].ToString()) && string.IsNullOrEmpty(dtMain.Rows[0][6].ToString()) && string.IsNullOrEmpty(dtMain.Rows[0][7].ToString()))
-                        {
-                            string date = dtMain.Rows[0][8].ToString();
-                            DateTime dteee = Convert.ToDateTime(date);
-                            txtRevisionDate.Text = dteee.ToString("yyyy/MM/dd");
-                            txtRate1.Text = dtMain.Rows[0][9].ToString();
-                        }
-                    }
+                    string date = dtMain.Rows[0][8].ToString();
+                    DateTime dteee = Convert.ToDateTime(date);
+                    txtRevisionDate.Text = dteee.ToString("yyyy/MM/dd");
+                    txtRate1.Text = dtMain.Rows[0][9].ToString();
+                    //foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+                    //{
+                    //    if (string.IsNullOrEmpty(dtMain.Rows[0][3].ToString()) && string.IsNullOrEmpty(dtMain.Rows[0][4].ToString()) && string.IsNullOrEmpty(dtMain.Rows[0][5].ToString()) && string.IsNullOrEmpty(dtMain.Rows[0][6].ToString()) && string.IsNullOrEmpty(dtMain.Rows[0][7].ToString()))
+                    //    {
+                    //        string date = dtMain.Rows[0][8].ToString();
+                    //        DateTime dteee = Convert.ToDateTime(date);
+                    //        txtRevisionDate.Text = dteee.ToString("yyyy/MM/dd");
+                    //        txtRate1.Text = dtMain.Rows[0][9].ToString();
+                    //    }
+                    //}
+                    //for (int i = 0; i < dtMain.Rows.Count; i++)
+                    //{
+                    //    var Brand = dtMain.Rows[i]["BrandCD"].ToString();
+                    //    var Sports = dtMain.Rows[i]["SportsCD"].ToString();
+                    //    var Segment = dtMain.Rows[i]["SegmentCD"].ToString();
+                    //    var LastYearTerm = dtMain.Rows[i]["LastYearTerm"].ToString();
+                    //    var LastSeason = dtMain.Rows[i]["LastSeason"].ToString();
+                    //    if (String.IsNullOrEmpty(Brand) || String.IsNullOrEmpty(Sports) || String.IsNullOrEmpty(Segment) || String.IsNullOrEmpty(LastYearTerm) || String.IsNullOrEmpty(LastSeason))
+                    //    {
+                    //        dtMain.Rows[i].Delete();
+                    //    }
+                    //    dgv_ShiireKakeritsu.DataSource = dtMain;
+                    //}
                     BindGrid();
                 }
                 else
@@ -836,16 +849,32 @@ namespace MasterTouroku_ShiireKakeritsu
             if (dtMain.Rows.Count > 0)
             {
                 dgv_ShiireKakeritsu.DataSource = dtMain;
-                foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
-                {
-                    if (string.IsNullOrEmpty(dtMain.Rows[0][3].ToString()) && string.IsNullOrEmpty(dtMain.Rows[0][4].ToString()) && string.IsNullOrEmpty(dtMain.Rows[0][5].ToString()) && string.IsNullOrEmpty(dtMain.Rows[0][6].ToString()) && string.IsNullOrEmpty(dtMain.Rows[0][7].ToString()))
-                    {
-                        string date = dtMain.Rows[0][8].ToString();
-                        DateTime dteee = Convert.ToDateTime(date);
-                        txtRevisionDate.Text = dteee.ToString("yyyy/MM/dd");
-                        txtRate1.Text = dtMain.Rows[0][9].ToString();
-                    }
-                }
+                string date = dtMain.Rows[0][8].ToString();
+                DateTime dteee = Convert.ToDateTime(date);
+                txtRevisionDate.Text = dteee.ToString("yyyy/MM/dd");
+                txtRate1.Text = dtMain.Rows[0][9].ToString();
+                //for (int i = 0; i < dtMain.Rows.Count; i++)
+                //{
+                //    //  string q = " BrandCD is Null or SportsCD is Null or SegmentCD is Null";
+                //    //  DataRow[] row = dtMain.Select(q);
+
+                //    //if(row.Length >0)
+                //    //  {
+                //    //      foreach (var rows in row)
+                //    //      {
+                //    //          rows.Delete();
+                //    //      }
+                //    //  }
+                //    var Brand = dtMain.Rows[i]["BrandCD"].ToString();
+                //    var Sports = dtMain.Rows[i]["SportsCD"].ToString();
+                //    var Segment = dtMain.Rows[i]["SegmentCD"].ToString();
+                //    var LastYearTerm = dtMain.Rows[i]["LastYearTerm"].ToString();
+                //    var LastSeason = dtMain.Rows[i]["LastSeason"].ToString();
+                //    if (String.IsNullOrEmpty(Brand) || String.IsNullOrEmpty(Sports) || String.IsNullOrEmpty(Segment) || String.IsNullOrEmpty(LastYearTerm) || String.IsNullOrEmpty(LastSeason))
+                //    {
+                //        dtMain.Rows[i].Delete(); 
+                //    }
+                //}
             }
             else
             {
@@ -878,6 +907,19 @@ namespace MasterTouroku_ShiireKakeritsu
             }
             else
             {
+                for (int i = 0; i < dtMain.Rows.Count; i++)
+                {
+                    var Brand = dtMain.Rows[i]["BrandCD"].ToString();
+                    var Sports = dtMain.Rows[i]["SportsCD"].ToString();
+                    var Segment = dtMain.Rows[i]["SegmentCD"].ToString();
+                    var LastYearTerm = dtMain.Rows[i]["LastYearTerm"].ToString();
+                    var LastSeason = dtMain.Rows[i]["LastSeason"].ToString();
+                    if (String.IsNullOrEmpty(Brand) || String.IsNullOrEmpty(Sports) || String.IsNullOrEmpty(Segment) || String.IsNullOrEmpty(LastYearTerm) || String.IsNullOrEmpty(LastSeason))
+                    {
+                        dtMain.Rows[i].Delete();
+                    }
+                }
+                dgv_ShiireKakeritsu.DataSource = dtMain;
                 Xml = mskbl.DataTableToXml(dtMain);
                 log_data = Get_Log_Data();
                 moe.VendorCD = scSupplierCD.TxtCode.Text;
