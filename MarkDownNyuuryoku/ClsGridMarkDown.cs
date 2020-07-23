@@ -28,7 +28,7 @@ namespace MarkDownNyuuryoku
             internal string PurchaserUnitPrice;     //最新原価＠
             internal string Rate;                   //掛率
             internal string MarkDownUnitPrice;      //MD変更＠
-            internal string MarkDownSagaku;         //MD差額
+            internal string MarkDownSagakuPrice;    //MD差額＠
             internal string StockSu;                //在庫数
             internal string CalculationSu;          //対象数
             internal string MarkDownGaku;           //仕入予定額
@@ -37,6 +37,10 @@ namespace MarkDownNyuuryoku
             //隠し項目
             internal int MarkDownRows;                  //明細連番
             internal string AdminNO;                    //AdminNO
+            internal decimal TaxRate;                   //税率
+            internal decimal Tax;                   　　//税額
+            internal string TaniCD;                     //単位CD
+            internal string TaniName;                   //単位名
             internal string OldRate;                    //掛率（退避）
             internal string OldMarkDownUnitPrice;       //MD変更＠（退避）
             internal string OldCalculationSu;           //対象数（退避）
@@ -59,7 +63,7 @@ namespace MarkDownNyuuryoku
             PurchaserUnitPrice,
             Rate,
             MarkDownUnitPrice,
-            MarkDownSagaku,
+            MarkDownSagakuPrice,
             StockSu,
             CalculationSu,
             MarkDownGaku,
@@ -250,9 +254,9 @@ namespace MarkDownNyuuryoku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
 
                 // MD差額
-                w_CtlCol = (int)ColNO.MarkDownSagaku;
+                w_CtlCol = (int)ColNO.MarkDownSagakuPrice;
 
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].MarkDownSagaku);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].MarkDownSagakuPrice);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
@@ -358,8 +362,8 @@ namespace MarkDownNyuuryoku
                             g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].MarkDownUnitPrice);
                             break;
                         // MD差額
-                        case (int)ColNO.MarkDownSagaku:
-                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].MarkDownSagaku);
+                        case (int)ColNO.MarkDownSagakuPrice:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].MarkDownSagakuPrice);
                             break;
                         // 在庫数
                         case (int)ColNO.StockSu:

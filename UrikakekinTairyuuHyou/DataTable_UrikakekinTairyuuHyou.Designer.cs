@@ -309,6 +309,8 @@ namespace UrikakekinTairyuuHyou {
             
             private global::System.Data.DataColumn column0;
             
+            private global::System.Data.DataColumn columnResult;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public RPC_UrikakekinTairyuuHyou_PrintSelectDataTable() {
@@ -464,6 +466,14 @@ namespace UrikakekinTairyuuHyou {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ResultColumn {
+                get {
+                    return this.columnResult;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -499,7 +509,23 @@ namespace UrikakekinTairyuuHyou {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public RPC_UrikakekinTairyuuHyou_PrintSelectRow AddRPC_UrikakekinTairyuuHyou_PrintSelectRow(string CustomerCD, string CustomerName, string SaleA, string _11, string _10, string _9, string _8, string _7, string _6, string _5, string _4, string _3, string _2, string _1, string _0) {
+            public RPC_UrikakekinTairyuuHyou_PrintSelectRow AddRPC_UrikakekinTairyuuHyou_PrintSelectRow(
+                        string CustomerCD, 
+                        string CustomerName, 
+                        string SaleA, 
+                        string _11, 
+                        string _10, 
+                        string _9, 
+                        string _8, 
+                        string _7, 
+                        string _6, 
+                        string _5, 
+                        string _4, 
+                        string _3, 
+                        string _2, 
+                        string _1, 
+                        string _0, 
+                        string Result) {
                 RPC_UrikakekinTairyuuHyou_PrintSelectRow rowRPC_UrikakekinTairyuuHyou_PrintSelectRow = ((RPC_UrikakekinTairyuuHyou_PrintSelectRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CustomerCD,
@@ -516,7 +542,8 @@ namespace UrikakekinTairyuuHyou {
                         _3,
                         _2,
                         _1,
-                        _0};
+                        _0,
+                        Result};
                 rowRPC_UrikakekinTairyuuHyou_PrintSelectRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRPC_UrikakekinTairyuuHyou_PrintSelectRow);
                 return rowRPC_UrikakekinTairyuuHyou_PrintSelectRow;
@@ -554,6 +581,7 @@ namespace UrikakekinTairyuuHyou {
                 this.column2 = base.Columns["2"];
                 this.column1 = base.Columns["1"];
                 this.column0 = base.Columns["0"];
+                this.columnResult = base.Columns["Result"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -613,6 +641,8 @@ namespace UrikakekinTairyuuHyou {
                 this.column0.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column0");
                 this.column0.ExtendedProperties.Add("Generator_UserColumnName", "0");
                 base.Columns.Add(this.column0);
+                this.columnResult = new global::System.Data.DataColumn("Result", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnResult);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1010,6 +1040,23 @@ namespace UrikakekinTairyuuHyou {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Result {
+                get {
+                    try {
+                        return ((string)(this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.ResultColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Result\' in table \'RPC_UrikakekinTairyuuHyou_PrintSelect\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.ResultColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsCustomerCDNull() {
                 return this.IsNull(this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.CustomerCDColumn);
             }
@@ -1186,6 +1233,18 @@ namespace UrikakekinTairyuuHyou {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Set_0Null() {
                 this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._0Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsResultNull() {
+                return this.IsNull(this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.ResultColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetResultNull() {
+                this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.ResultColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -287,7 +287,11 @@
             this.btnReflect = new CKM_Controls.CKM_Button();
             this.lblZei = new System.Windows.Forms.Label();
             this.ckM_Label10 = new CKM_Controls.CKM_Label();
-            this.lblMarkDownGaku = new System.Windows.Forms.Label();
+            this.lblPurchaseGaku = new System.Windows.Forms.Label();
+            this.ckM_Label11 = new CKM_Controls.CKM_Label();
+            this.txtPurchaseTax = new CKM_Controls.CKM_TextBox();
+            this.txtTotalPurchaseGaku = new CKM_Controls.CKM_TextBox();
+            this.ckM_Label13 = new CKM_Controls.CKM_Label();
             this.PanelHeader.SuspendLayout();
             this.pnlKubun.SuspendLayout();
             this.Pnl_Body.SuspendLayout();
@@ -6684,7 +6688,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(84, 16);
             this.label13.TabIndex = 265;
-            this.label13.Text = "ＭＤ差額";
+            this.label13.Text = "ＭＤ差額＠";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label18
@@ -6997,7 +7001,7 @@
             this.ckM_Label10.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label10.Location = new System.Drawing.Point(1280, 666);
+            this.ckM_Label10.Location = new System.Drawing.Point(1280, 590);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label10.TabIndex = 749;
@@ -7005,22 +7009,120 @@
             this.ckM_Label10.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblMarkDownGaku
+            // lblPurchaseGaku
             // 
-            this.lblMarkDownGaku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblMarkDownGaku.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMarkDownGaku.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarkDownGaku.Location = new System.Drawing.Point(1250, 684);
-            this.lblMarkDownGaku.Name = "lblMarkDownGaku";
-            this.lblMarkDownGaku.Size = new System.Drawing.Size(100, 18);
-            this.lblMarkDownGaku.TabIndex = 750;
-            this.lblMarkDownGaku.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPurchaseGaku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblPurchaseGaku.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPurchaseGaku.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPurchaseGaku.Location = new System.Drawing.Point(1250, 608);
+            this.lblPurchaseGaku.Name = "lblPurchaseGaku";
+            this.lblPurchaseGaku.Size = new System.Drawing.Size(100, 18);
+            this.lblPurchaseGaku.TabIndex = 750;
+            this.lblPurchaseGaku.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckM_Label11
+            // 
+            this.ckM_Label11.AutoSize = true;
+            this.ckM_Label11.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label11.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label11.DefaultlabelSize = true;
+            this.ckM_Label11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label11.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label11.Location = new System.Drawing.Point(1293, 632);
+            this.ckM_Label11.Name = "ckM_Label11";
+            this.ckM_Label11.Size = new System.Drawing.Size(57, 12);
+            this.ckM_Label11.TabIndex = 751;
+            this.ckM_Label11.Text = "予定税額";
+            this.ckM_Label11.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtPurchaseTax
+            // 
+            this.txtPurchaseTax.AllowMinus = true;
+            this.txtPurchaseTax.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtPurchaseTax.BackColor = System.Drawing.Color.White;
+            this.txtPurchaseTax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPurchaseTax.ClientColor = System.Drawing.Color.White;
+            this.txtPurchaseTax.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtPurchaseTax.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
+            this.txtPurchaseTax.DecimalPlace = 0;
+            this.txtPurchaseTax.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.txtPurchaseTax.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.txtPurchaseTax.IntegerPart = 9;
+            this.txtPurchaseTax.IsCorrectDate = true;
+            this.txtPurchaseTax.isEnterKeyDown = false;
+            this.txtPurchaseTax.IsFirstTime = true;
+            this.txtPurchaseTax.isMaxLengthErr = false;
+            this.txtPurchaseTax.IsNumber = true;
+            this.txtPurchaseTax.IsShop = false;
+            this.txtPurchaseTax.Length = 12;
+            this.txtPurchaseTax.Location = new System.Drawing.Point(1250, 647);
+            this.txtPurchaseTax.MaxLength = 12;
+            this.txtPurchaseTax.MoveNext = true;
+            this.txtPurchaseTax.Name = "txtPurchaseTax";
+            this.txtPurchaseTax.Size = new System.Drawing.Size(100, 19);
+            this.txtPurchaseTax.TabIndex = 752;
+            this.txtPurchaseTax.TabStop = false;
+            this.txtPurchaseTax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPurchaseTax.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // txtTotalPurchaseGaku
+            // 
+            this.txtTotalPurchaseGaku.AllowMinus = true;
+            this.txtTotalPurchaseGaku.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtTotalPurchaseGaku.BackColor = System.Drawing.Color.White;
+            this.txtTotalPurchaseGaku.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTotalPurchaseGaku.ClientColor = System.Drawing.Color.White;
+            this.txtTotalPurchaseGaku.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtTotalPurchaseGaku.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
+            this.txtTotalPurchaseGaku.DecimalPlace = 0;
+            this.txtTotalPurchaseGaku.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.txtTotalPurchaseGaku.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.txtTotalPurchaseGaku.IntegerPart = 9;
+            this.txtTotalPurchaseGaku.IsCorrectDate = true;
+            this.txtTotalPurchaseGaku.isEnterKeyDown = false;
+            this.txtTotalPurchaseGaku.IsFirstTime = true;
+            this.txtTotalPurchaseGaku.isMaxLengthErr = false;
+            this.txtTotalPurchaseGaku.IsNumber = true;
+            this.txtTotalPurchaseGaku.IsShop = false;
+            this.txtTotalPurchaseGaku.Length = 12;
+            this.txtTotalPurchaseGaku.Location = new System.Drawing.Point(1250, 686);
+            this.txtTotalPurchaseGaku.MaxLength = 12;
+            this.txtTotalPurchaseGaku.MoveNext = true;
+            this.txtTotalPurchaseGaku.Name = "txtTotalPurchaseGaku";
+            this.txtTotalPurchaseGaku.Size = new System.Drawing.Size(100, 19);
+            this.txtTotalPurchaseGaku.TabIndex = 754;
+            this.txtTotalPurchaseGaku.TabStop = false;
+            this.txtTotalPurchaseGaku.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTotalPurchaseGaku.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // ckM_Label13
+            // 
+            this.ckM_Label13.AutoSize = true;
+            this.ckM_Label13.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label13.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label13.DefaultlabelSize = true;
+            this.ckM_Label13.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label13.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label13.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label13.Location = new System.Drawing.Point(1280, 670);
+            this.ckM_Label13.Name = "ckM_Label13";
+            this.ckM_Label13.Size = new System.Drawing.Size(70, 12);
+            this.ckM_Label13.TabIndex = 753;
+            this.ckM_Label13.Text = "税込予定額";
+            this.ckM_Label13.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // MarkDownNyuuryoku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.ClientSize = new System.Drawing.Size(1370, 749);
-            this.Controls.Add(this.lblMarkDownGaku);
+            this.Controls.Add(this.txtTotalPurchaseGaku);
+            this.Controls.Add(this.ckM_Label13);
+            this.Controls.Add(this.txtPurchaseTax);
+            this.Controls.Add(this.ckM_Label11);
+            this.Controls.Add(this.lblPurchaseGaku);
             this.Controls.Add(this.ckM_Label10);
             this.Controls.Add(this.btnReflect);
             this.Controls.Add(this.txtRate);
@@ -7095,7 +7197,11 @@
             this.Controls.SetChildIndex(this.txtRate, 0);
             this.Controls.SetChildIndex(this.btnReflect, 0);
             this.Controls.SetChildIndex(this.ckM_Label10, 0);
-            this.Controls.SetChildIndex(this.lblMarkDownGaku, 0);
+            this.Controls.SetChildIndex(this.lblPurchaseGaku, 0);
+            this.Controls.SetChildIndex(this.ckM_Label11, 0);
+            this.Controls.SetChildIndex(this.txtPurchaseTax, 0);
+            this.Controls.SetChildIndex(this.ckM_Label13, 0);
+            this.Controls.SetChildIndex(this.txtTotalPurchaseGaku, 0);
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();
             this.pnlKubun.ResumeLayout(false);
@@ -7189,7 +7295,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private CKM_Controls.CKM_Label ckM_Label10;
-        private System.Windows.Forms.Label lblMarkDownGaku;
+        private System.Windows.Forms.Label lblPurchaseGaku;
         private GridControl.clsGridCheckBox CHK_DELCK_10;
         private CKM_Controls.CKM_TextBox IMN_SURYO_10;
         private CKM_Controls.CKM_TextBox IMN_ZAISU_10;
@@ -7370,6 +7476,10 @@
         private System.Windows.Forms.Label Line2;
         private System.Windows.Forms.Label Line1;
         private CKM_Controls.CKM_TextBox IMN_TEIKA_5;
+        private CKM_Controls.CKM_Label ckM_Label11;
+        private CKM_Controls.CKM_TextBox txtPurchaseTax;
+        private CKM_Controls.CKM_TextBox txtTotalPurchaseGaku;
+        private CKM_Controls.CKM_Label ckM_Label13;
     }
 }
 
