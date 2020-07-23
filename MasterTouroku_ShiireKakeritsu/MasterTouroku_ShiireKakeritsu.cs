@@ -85,7 +85,6 @@ namespace MasterTouroku_ShiireKakeritsu
             cbo_Season.Bind(ymd);
             cbo_Season1.Bind(ymd);
         }
-
         private void SetRequiredField()
         {
             scSupplierCD.TxtCode.Require(true);
@@ -125,35 +124,9 @@ namespace MasterTouroku_ShiireKakeritsu
             }
             return true;
         }
-
         protected override void EndSec()
         {
             this.Close();
-        }
-
-        public void CancelData()
-        {
-            //scSupplierCD.Clear();
-            //txtDate1.Text = string.Empty;
-            //txtRevisionDate.Text = string.Empty;
-            //txtRate1.Text = string.Empty;
-            scBrandCD1.Clear();
-            scSportsCD1.Clear();
-            scSegmentCD1.Clear();
-            cbo_Year1.Text = string.Empty;
-            cbo_Season1.Text = string.Empty;
-            txtDate.Text = string.Empty;
-            txtCopy.Text = string.Empty;
-            scBrandCD.Clear();
-            scSportsCD.Clear();
-            scSegmentCD.Clear();
-            cbo_Year.Text = string.Empty;
-            cbo_Season.Text = string.Empty;
-            txtChangeDate.Text = string.Empty;
-            txtRate.Text = string.Empty;
-            scSupplierCD.SetFocus(1);
-            //rdoAllStores.Checked = true;
-            //cbo_Store.SelectedValue = "0000";
         }
 
         public override void FunctionProcess(int Index)
@@ -182,7 +155,25 @@ namespace MasterTouroku_ShiireKakeritsu
                     break;
             }
         }
-       
+
+        public void CancelData()
+        {
+            scBrandCD1.Clear();
+            scSportsCD1.Clear();
+            scSegmentCD1.Clear();
+            cbo_Year1.Text = string.Empty;
+            cbo_Season1.Text = string.Empty;
+            txtDate.Text = string.Empty;
+            txtCopy.Text = string.Empty;
+            scBrandCD.Clear();
+            scSportsCD.Clear();
+            scSegmentCD.Clear();
+            cbo_Year.Text = string.Empty;
+            cbo_Season.Text = string.Empty;
+            txtChangeDate.Text = string.Empty;
+            txtRate.Text = string.Empty;
+            scSupplierCD.SetFocus(1);
+        }
 
         private M_OrderRate_Entity GetSearchInfo()
         {
@@ -573,8 +564,6 @@ namespace MasterTouroku_ShiireKakeritsu
             scSegmentCD.Value1 = "203";
         }
 
-        #endregion
-
         #region Button Click For 【追加・一括変更・選択】	
 
         private void btnChoice_Click(object sender, EventArgs e)
@@ -947,10 +936,8 @@ namespace MasterTouroku_ShiireKakeritsu
                     UseHeaderRow = useHeaderRow,
                 }
             });
-
-
             excelReader.Close();
-            return result.Tables[0];
+            return result.Tables[0];  
         }
         private bool ErrorCheckForExcel()
         {
