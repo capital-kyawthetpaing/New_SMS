@@ -674,8 +674,6 @@ namespace MasterTouroku_ShiireTanka
         {
             F11();
         }
-
-
         private void RB_item_CheckedChanged(object sender, EventArgs e)
         {
             if (RB_sku.Checked == true)
@@ -1671,7 +1669,6 @@ namespace MasterTouroku_ShiireTanka
                 }
             }
         }
-
         private void CheckFun()
         {
 
@@ -1715,20 +1712,6 @@ namespace MasterTouroku_ShiireTanka
             {
                 vendorcd = shiiresaki.TxtCode.Text;
                 storecd = CB_store.SelectedValue.ToString();
-
-                //string filePath = string.Empty;
-                //string fileExt = string.Empty;
-                //OpenFileDialog file = new OpenFileDialog(); //open dialog to choose file  
-                //if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK) //if there is a file choosen by the user  
-                //{
-                //filePath = file.FileName; //get the path of the file  
-                //fileExt = Path.GetExtension(filePath); //get the file extension  
-                //    if (fileExt.CompareTo(".xls") == 0 || fileExt.CompareTo(".xlsx") == 0)
-                //    {
-                //        try
-                //        {
-                //dtExcel = new DataTable();
-                //            dtExcel = ReadExcel(filePath, fileExt); //read excel file  
                 if (ErrorCheckExcel())
                 {
 
@@ -1974,8 +1957,12 @@ namespace MasterTouroku_ShiireTanka
                             return false;
                         }
                         dtExcel.AcceptChanges();
+                        bool errRow1= false;
                         for (int i = 0; i < dtExcel.Rows.Count; i++)
                         {
+                            
+                            errRow1= false;
+                            dtExcel.AcceptChanges();
                             DataRow row = dtExcel.Rows[i];
 
                             if (row[0] == DBNull.Value)
@@ -1983,11 +1970,15 @@ namespace MasterTouroku_ShiireTanka
                                 break;
 
                             }
-                            bool errRow1 = false;
+                            
                             if (dtExcel.Rows[i][0].ToString() != shiiresaki.TxtCode.Text)
                             {
                                 bl.ShowMessage("E230");
                                 errRow1 = true;
+                                dtExcel.Rows[i].Delete();
+                               
+                                continue;
+                                //goto nextloop;
                             }
                             string storecd = dtExcel.Rows[i][1].ToString();
                             if (!String.IsNullOrEmpty(storecd) && storecd != "0000")
@@ -1997,12 +1988,16 @@ namespace MasterTouroku_ShiireTanka
                                 {
                                     bl.ShowMessage("E138");
                                     errRow1 = true;
+                                    dtExcel.Rows[i].Delete();
+                                    continue;
 
                                 }
                                 else if (!base.CheckAvailableStores(storecd))
                                 {
                                     bbl.ShowMessage("E141");
                                     errRow1 = true;
+                                    dtExcel.Rows[i].Delete();
+                                    continue;
                                 }
                             }
                             if (!String.IsNullOrEmpty(dtExcel.Rows[i][2].ToString()))
@@ -2012,6 +2007,8 @@ namespace MasterTouroku_ShiireTanka
                                 {
                                     bl.ShowMessage("E138");
                                     errRow1 = true;
+                                    dtExcel.Rows[i].Delete();
+                                    continue;
                                 }
                             }
                             if (String.IsNullOrEmpty(dtExcel.Rows[i][3].ToString()))
@@ -2019,6 +2016,8 @@ namespace MasterTouroku_ShiireTanka
 
                                 bl.ShowMessage("E103");
                                 errRow1 = true;
+                                dtExcel.Rows[i].Delete();
+                                continue;
                             }
                             string dates = dtExcel.Rows[i][3].ToString();
                             DateTime dt;
@@ -2029,15 +2028,11 @@ namespace MasterTouroku_ShiireTanka
                             {
                                 bl.ShowMessage("E103");
                                 errRow1 = true;
-                                //return false;
-                            }
-                            if (errRow1)
-                            {
                                 dtExcel.Rows[i].Delete();
+                                continue;
                             }
 
-                            dtExcel.AcceptChanges();
-
+                           
                             //string type = dates.GetType.ToString();
 
                             //var dateTime1 = DateTime.FromOADate(date).ToString("yyyy/MM/dd");
@@ -2045,6 +2040,7 @@ namespace MasterTouroku_ShiireTanka
                             //double date = double.Parse(dates);
                             //var dateTime = DateTime.FromOADate(date).ToString("yyyy/MM/dd");
                         }
+                      
                     }
                     else
                     {
@@ -2066,7 +2062,6 @@ namespace MasterTouroku_ShiireTanka
             return true;
         }
         private void GV_item_KeyPressOne(object sender, KeyPressEventArgs e)
-
         {
             int i = GV_item.CurrentCell.ColumnIndex;
             int j = GV_item.Columns["掛率"].Index;
@@ -2116,54 +2111,64 @@ namespace MasterTouroku_ShiireTanka
         }
         private void GV_item_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1)
-            {
-                if (e.ColumnIndex == GV_item.Columns["改定日"].Index)
-                {
-                    //if (e.KeyCode == Keys.Enter)
-                    //{
-                    //}
-                }
-                if (e.ColumnIndex == GV_item.Columns["掛率"].Index)
-                {
-                    if (eval)
-                    {
-                        string ratevlue= GV_item.Rows[e.RowIndex].Cells["掛率"].Value.ToString();
-                        if (ratevlue.Contains("."))
-                        {
+            //if (1==2)
+            //if (e.RowIndex != -1)
+            //{
+            //    if (e.ColumnIndex == GV_item.Columns["改定日"].Index)
+            //    {
+            //        //if (e.KeyCode == Keys.Enter)
+            //        //{
+            //        //}
+            //    }
+            //    if (e.ColumnIndex == GV_item.Columns["掛率"].Index)
+            //    {
+            //        if (eval)
+            //        {
+            //            string ratevlue= GV_item.Rows[e.RowIndex].Cells["掛率"].Value.ToString();
+            //            if (ratevlue.Contains("."))
+            //            {
                            
-                        }
-                        else
-                        {
-                            if (ratevlue.Length > 3)
-                            {
-                                MessageBox.Show("enter valid no");
+            //            }
+            //            else
+            //            {
+            //                if (ratevlue.Length > 3)
+            //                {
+            //                    MessageBox.Show("enter valid no");
+            //                    ///GV_item.Rows[e.RowIndex].Cells["掛率"].Selected = true;
+            //                    //GV_item.CurrentCell = GV_item.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
 
-                            }
-                            else
-                            {
-                                this.掛率.DefaultCellStyle.Format = "N2";
-                            }
 
-                        }
-                        string priceouttax = GV_item.Rows[e.RowIndex].Cells["定価"].Value.ToString();
-                        string rateproce = GV_item.Rows[e.RowIndex].Cells["掛率"].Value.ToString();
-                        decimal rate = Convert.ToDecimal(rateproce);
-                        decimal con = (decimal)0.01;
-                        decimal listprice = Convert.ToDecimal(priceouttax);
-                        GV_item.Rows[e.RowIndex].Cells["発注単価"].Value = Math.Round(listprice * (rate * con)).ToString();
-                    }
-                    eval = false;
-                }
-            }
+            //                    //this.掛率.DefaultCellStyle.Format = "N0";
+            //                    GV_item.CurrentCell = GV_item.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            //                    GV_item.RefreshEdit();
+            //                    GV_item.CurrentCell.Value = "0";
+            //                    return;
+
+            //                }
+            //                //else
+            //                //{
+            //                //    this.掛率.DefaultCellStyle.Format = "N2";
+            //                //}
+            //            }
+            //            string priceouttax = GV_item.Rows[e.RowIndex].Cells["定価"].Value.ToString();
+            //            string rateproce = GV_item.Rows[e.RowIndex].Cells["掛率"].Value.ToString();
+            //            decimal rate = Convert.ToDecimal(rateproce);
+            //            decimal con = (decimal)0.01;
+            //            decimal listprice = Convert.ToDecimal(priceouttax);
+            //            GV_item.Rows[e.RowIndex].Cells["発注単価"].Value = Math.Round(listprice * (rate * con)).ToString();
+            //        }
+            //        eval = false;
+            //    }
+            //}
+
+
         }
-
         private void GV_item_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == GV_item.Columns["掛率"].Index)
             {
-                eval = false;
+                //eval = false;
             }
         }
 
@@ -2171,7 +2176,6 @@ namespace MasterTouroku_ShiireTanka
         {
             if (e.ColumnIndex == GV_item.Columns["改定日"].Index)
             {
-                //string dates =GV_item.Rows[e.RowIndex].Cells["改定日"].Value.ToString();
                 string dates = GV_item.CurrentCell.EditedFormattedValue.ToString();
                 DateTime dt;
                 string[] formats = { "yyyy/MM/dd hh:mm:ss tt" };
@@ -2180,35 +2184,16 @@ namespace MasterTouroku_ShiireTanka
                                 DateTimeStyles.None, out dt))
                 {
                     bl.ShowMessage("E103");
-                    //errRow1 = true;
-                    ////return false;
                 }
                 GV_item.RefreshEdit();
             }
-            if (e.ColumnIndex == GV_item.Columns["掛率"].Index)
-            {
-                //if (eval)
-                //{
-                    string ratevlue = GV_item.Rows[e.RowIndex].Cells["掛率"].Value.ToString();
-                    if (ratevlue.Contains("."))
-                    {
-                        
-                    }
-                    else
-                    {
-                        if (ratevlue.Length > 3)
-                        {
-                            MessageBox.Show("enter valid no");
-                            GV_item.RefreshEdit();
+           
+        }
 
-                        }
-                        else
-                        {
-                            this.掛率.DefaultCellStyle.Format = "N2";
-                        }
-                    }
-                //}
-            }
+        private void GV_item_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            
+
         }
 
         public DataTable ReadExcel(string fileName, string fileExt)
