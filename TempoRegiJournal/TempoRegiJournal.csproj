@@ -87,9 +87,9 @@
     </Compile>
     <Compile Include="Reports\TempoRegiJournal_SettlementProcess.cs">
       <DependentUpon>TempoRegiJournal_SettlementProcess.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Reports\TempoRegiJournal_Exchange.cs">
       <DependentUpon>TempoRegiJournal_Exchange.rpt</DependentUpon>
