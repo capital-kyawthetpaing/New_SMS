@@ -397,6 +397,8 @@ namespace UrikakekinTairyuuHyou
 
                                 // 印字データをセット
 
+
+
                                 Report.SetDataSource(dtPrint);
                                 Report.Refresh();
                                 Report.SetParameterValue("txtStore", cboStore.SelectedValue.ToString() + "  " + cboStore.Text);

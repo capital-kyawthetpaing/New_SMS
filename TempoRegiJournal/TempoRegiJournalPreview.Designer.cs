@@ -38,6 +38,7 @@
             this.crystalReportViewer.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer.DisplayStatusBar = false;
             this.crystalReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer.EnableDrillDown = false;
             this.crystalReportViewer.Font = new System.Drawing.Font("ＭＳ ゴシック", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.crystalReportViewer.InitialFocus = CrystalDecisions.Windows.Forms.UIComponent.PageObject;
             this.crystalReportViewer.Location = new System.Drawing.Point(0, 0);
