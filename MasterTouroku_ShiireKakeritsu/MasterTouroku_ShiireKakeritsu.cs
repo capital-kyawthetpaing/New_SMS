@@ -865,6 +865,7 @@ namespace MasterTouroku_ShiireKakeritsu
             }
             else
             {
+                dgv_ShiireKakeritsu.DataSource = dtMain;
                 for (int i = 0; i < dtMain.Rows.Count; i++)
                 {
                     var Brand = dtMain.Rows[i]["BrandCD"].ToString();
