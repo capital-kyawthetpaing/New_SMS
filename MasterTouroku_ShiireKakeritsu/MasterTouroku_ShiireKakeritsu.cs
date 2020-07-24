@@ -394,20 +394,22 @@ namespace MasterTouroku_ShiireKakeritsu
                 dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
                 if (dtMain.Rows.Count > 0)
                 {
-                    //string date = dtMain.Rows[0][8].ToString();
-                    //DateTime dteee = Convert.ToDateTime(date);
-                    //txtRevisionDate.Text = dteee.ToString("yyyy/MM/dd");
-                    //txtRate1.Text = dtMain.Rows[0][9].ToString();
-                    //BindGrid();
-                    string q = "BrandCD is Null or SportsCD is Null or SegmentCD is Null";
-                    DataRow[] row = dtMain.Select(q);
-                    if (row.Length > 0)
+                    for (int i = 0; i < dtMain.Rows.Count; i++)
                     {
-                        string date = dtMain.Rows[0][8].ToString();
-                        DateTime dtime = Convert.ToDateTime(date);
-                        txtRevisionDate.Text = dtime.ToString("yyyy/MM/dd");
-                        txtRate1.Text = dtMain.Rows[0][9].ToString();
+                        var Brand = dtMain.Rows[i]["BrandCD"].ToString();
+                        var Sports = dtMain.Rows[i]["SportsCD"].ToString();
+                        var Segment = dtMain.Rows[i]["SegmentCD"].ToString();
+                        var LastYearTerm = dtMain.Rows[i]["LastYearTerm"].ToString();
+                        var LastSeason = dtMain.Rows[i]["LastSeason"].ToString();
+                        if (String.IsNullOrEmpty(Brand) || String.IsNullOrEmpty(Sports) || String.IsNullOrEmpty(Segment) || String.IsNullOrEmpty(LastYearTerm) || String.IsNullOrEmpty(LastSeason))
+                        {
+                            string date = dtMain.Rows[i][8].ToString();
+                            DateTime dtime = Convert.ToDateTime(date);
+                            txtRevisionDate.Text = dtime.ToShortDateString();
+                            txtRate1.Text = dtMain.Rows[i][9].ToString();
+                        }
                     }
+                    dgv_ShiireKakeritsu.DataSource = dtMain;
                 }
                 else
                 {
@@ -824,33 +826,13 @@ namespace MasterTouroku_ShiireKakeritsu
                     var LastSeason = dtMain.Rows[i]["LastSeason"].ToString();
                     if (String.IsNullOrEmpty(Brand) || String.IsNullOrEmpty(Sports) || String.IsNullOrEmpty(Segment) || String.IsNullOrEmpty(LastYearTerm) || String.IsNullOrEmpty(LastSeason))
                     {
-                        txtRevisionDate.Text = dtMain.Rows[i][9].ToString();
+                        string date= dtMain.Rows[i][8].ToString();
+                        DateTime dtime = Convert.ToDateTime(date);
+                        txtRevisionDate.Text = dtime.ToShortDateString();
                         txtRate1.Text = dtMain.Rows[i][9].ToString();
                     }
                 }
                 dgv_ShiireKakeritsu.DataSource = dtMain;
-                //string q = "BrandCD is Null or SportsCD is Null or SegmentCD is Null";
-                //DataRow[] row = dtMain.Select(q);
-                //if (row.Length > 0)
-                //{
-                //    string date = dtMain.Rows[0][8].ToString();
-                //    DateTime dtime = Convert.ToDateTime(date);
-                //    txtRevisionDate.Text = dtime.ToString("yyyy/MM/dd");
-                //    txtRate1.Text = dtMain.Rows[0][9].ToString();
-                //}
-                //dgv_ShiireKakeritsu.DataSource = dtMain;
-                //for (int i = 0; i < dtMain.Rows.Count; i++)
-                //{
-                //    //  string q = " BrandCD is Null or SportsCD is Null or SegmentCD is Null";
-                //    //  DataRow[] row = dtMain.Select(q);
-
-                //    //if(row.Length >0)
-                //    //  {
-                //    //      foreach (var rows in row)
-                //    //      {
-                //    //          rows.Delete();
-                //    //      }
-                //    //  }
             }
             else
             {
