@@ -101,30 +101,30 @@ BEGIN
     SELECT * 
       INTO #Temp_D_DepositHistory1
       FROM (
-            SELECT distinct history.DepositDateTime RegistDate          -- ìoò^ì˙
-                  ,history.Number SalesNO                               -- ì`ï[î‘çÜ
-                  ,history.StoreCD                                      -- ìXï‹CD
-                  ,1 DetailOrder                                        -- ñæç◊ï\é¶èá
-                  ,history.JanCD                                        -- JanCD
-                  ,sku.SKUShortName                                     -- è§ïiñº
+            SELECT distinct history.DepositDateTime RegistDate                  -- ìoò^ì˙
+                  ,history.Number SalesNO                                       -- ì`ï[î‘çÜ
+                  ,history.StoreCD                                              -- ìXï‹CD
+                  ,1 DetailOrder                                                -- ñæç◊ï\é¶èá
+                  ,history.JanCD                                                -- JanCD
+                  ,sku.SKUShortName                                             -- è§ïiñº
                   ,CASE
                      WHEN history.SalesSU = 1 THEN NULL
                      ELSE history.SalesUnitPrice
-                   END AS SalesUnitPrice                                -- íPâø
+                   END AS SalesUnitPrice                                        -- íPâø
                   ,CASE
                      WHEN history.SalesSU = 1 THEN NULL
                      ELSE history.SalesSU
-                   END AS SalesSU                                       -- êîó 
-                  ,history.TotalGaku Kakaku                             -- âøäi
-                  ,history.SalesTax                                     -- ê≈äz
-                  ,history.SalesTaxRate                                 -- ê≈ó¶
-                  ,history.TotalGaku                                    -- îÃîÑçáåväz
-                  ,sales.SalesHontaiGaku8                               -- 8ÅìëŒè€äz
-                  ,sales.SalesHontaiGaku10                              -- 10ÅìëŒè€äz
-                  ,sales.SalesTax8                                      -- äOê≈8Åì
-                  ,sales.SalesTax10                                     -- äOê≈10Åì
-                  ,staff.ReceiptPrint StaffReceiptPrint                 -- íSìñÉåÉVÅ[Égï\ãL
-                  ,store.ReceiptPrint StoreReceiptPrint                 -- ìXï‹ÉåÉVÅ[Égï\ãL
+                   END AS SalesSU                                               -- êîó 
+                  ,history.TotalGaku Kakaku                                     -- âøäi
+                  ,history.SalesTax                                             -- ê≈äz
+                  ,history.SalesTaxRate                                         -- ê≈ó¶
+                  ,history.TotalGaku                                            -- îÃîÑçáåväz
+                  ,sales.SalesHontaiGaku8 + sales.SalesTax8 TargetAmount8       -- 8ÅìëŒè€äz
+                  ,sales.SalesHontaiGaku10 + sales.SalesTax10 TargetAmount10    -- 10ÅìëŒè€äz
+                  ,sales.SalesTax8                                              -- äOê≈8Åì
+                  ,sales.SalesTax10                                             -- äOê≈10Åì
+                  ,staff.ReceiptPrint StaffReceiptPrint                         -- íSìñÉåÉVÅ[Égï\ãL
+                  ,store.ReceiptPrint StoreReceiptPrint                         -- ìXï‹ÉåÉVÅ[Égï\ãL
                   ,history.AccountingDate
               FROM #Temp_D_DepositHistory0 history
               LEFT OUTER JOIN D_Sales sales ON sales.SalesNO = history.Number
@@ -1214,9 +1214,9 @@ BEGIN
           --
           ,(SELECT SUM(CASE WHEN SalesSU IS NULL THEN 1 ELSE SalesSU END) FROM #Temp_D_DepositHistory1 t WHERE t.SalesNO= tempHistory1.SalesNO) SumSalesSU    -- è¨åvêîó 
           ,(SELECT SUM(kakaku) FROM #Temp_D_DepositHistory1 t WHERE t.SalesNO = tempHistory1.SalesNO) Subtotal                                                -- è¨åvã‡äz
-          ,tempHistory1.SalesHontaiGaku8 TargetAmount8                                                                    -- 8ÅìëŒè€äz
+          ,tempHistory1.TargetAmount8                                                                                     -- 8ÅìëŒè€äz
           ,tempHistory1.SalesTax8 ConsumptionTax8                                                                         -- äOê≈8Åì
-          ,tempHistory1.SalesHontaiGaku10 TargetAmount10                                                                  -- 10ÅìëŒè€äz
+          ,tempHistory1.TargetAmount10                                                                                    -- 10ÅìëŒè€äz
           ,tempHistory1.SalesTax10 ConsumptionTax10                                                                       -- äOê≈10Åì
           ,(SELECT SUM(TotalGaku) FROM #Temp_D_DepositHistory1 t WHERE t.SalesNO = tempHistory1.SalesNO) Total            -- çáåv
           --
