@@ -83,7 +83,21 @@ namespace TempoRegiJournal
                 txtPrintDateTo.Focus();
                 return false;
             }
-            else if(Convert.ToDateTime(txtPrintDateFrom.Text).CompareTo(Convert.ToDateTime(txtPrintDateTo.Text)) > 0)
+            else if (!bbl.CheckDate(txtPrintDateFrom.Text))
+            {
+                // 日付エラー
+                bbl.ShowMessage("E103");
+                txtPrintDateFrom.Focus();
+                return false;
+            }
+            else if (!bbl.CheckDate(txtPrintDateTo.Text))
+            {
+                // 日付エラー
+                bbl.ShowMessage("E103");
+                txtPrintDateTo.Focus();
+                return false;
+            }
+            else if (Convert.ToDateTime(txtPrintDateFrom.Text).CompareTo(Convert.ToDateTime(txtPrintDateTo.Text)) > 0)
             {
                 bl.ShowMessage("E130");
                 txtPrintDateFrom.Focus();
