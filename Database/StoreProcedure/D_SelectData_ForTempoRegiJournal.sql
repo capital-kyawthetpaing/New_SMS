@@ -101,30 +101,30 @@ BEGIN
     SELECT * 
       INTO #Temp_D_DepositHistory1
       FROM (
-            SELECT distinct history.DepositDateTime RegistDate          -- ìoò^ì˙
-                  ,history.Number SalesNO                               -- ì`ï[î‘çÜ
-                  ,history.StoreCD                                      -- ìXï‹CD
-                  ,1 DetailOrder                                        -- ñæç◊ï\é¶èá
-                  ,history.JanCD                                        -- JanCD
-                  ,sku.SKUShortName                                     -- è§ïiñº
+            SELECT distinct history.DepositDateTime RegistDate                  -- ìoò^ì˙
+                  ,history.Number SalesNO                                       -- ì`ï[î‘çÜ
+                  ,history.StoreCD                                              -- ìXï‹CD
+                  ,1 DetailOrder                                                -- ñæç◊ï\é¶èá
+                  ,history.JanCD                                                -- JanCD
+                  ,sku.SKUShortName                                             -- è§ïiñº
                   ,CASE
                      WHEN history.SalesSU = 1 THEN NULL
                      ELSE history.SalesUnitPrice
-                   END AS SalesUnitPrice                                -- íPâø
+                   END AS SalesUnitPrice                                        -- íPâø
                   ,CASE
                      WHEN history.SalesSU = 1 THEN NULL
                      ELSE history.SalesSU
-                   END AS SalesSU                                       -- êîó 
-                  ,history.TotalGaku Kakaku                             -- âøäi
-                  ,history.SalesTax                                     -- ê≈äz
-                  ,history.SalesTaxRate                                 -- ê≈ó¶
-                  ,history.TotalGaku                                    -- îÃîÑçáåväz
-                  ,sales.SalesHontaiGaku8                               -- 8ÅìëŒè€äz
-                  ,sales.SalesHontaiGaku10                              -- 10ÅìëŒè€äz
-                  ,sales.SalesTax8                                      -- äOê≈8Åì
-                  ,sales.SalesTax10                                     -- äOê≈10Åì
-                  ,staff.ReceiptPrint StaffReceiptPrint                 -- íSìñÉåÉVÅ[Égï\ãL
-                  ,store.ReceiptPrint StoreReceiptPrint                 -- ìXï‹ÉåÉVÅ[Égï\ãL
+                   END AS SalesSU                                               -- êîó 
+                  ,history.TotalGaku Kakaku                                     -- âøäi
+                  ,history.SalesTax                                             -- ê≈äz
+                  ,history.SalesTaxRate                                         -- ê≈ó¶
+                  ,history.TotalGaku                                            -- îÃîÑçáåväz
+                  ,sales.SalesHontaiGaku8 + sales.SalesTax8 TargetAmount8       -- 8ÅìëŒè€äz
+                  ,sales.SalesHontaiGaku10 + sales.SalesTax10 TargetAmount10    -- 10ÅìëŒè€äz
+                  ,sales.SalesTax8                                              -- äOê≈8Åì
+                  ,sales.SalesTax10                                             -- äOê≈10Åì
+                  ,staff.ReceiptPrint StaffReceiptPrint                         -- íSìñÉåÉVÅ[Égï\ãL
+                  ,store.ReceiptPrint StoreReceiptPrint                         -- ìXï‹ÉåÉVÅ[Égï\ãL
                   ,history.AccountingDate
               FROM #Temp_D_DepositHistory0 history
               LEFT OUTER JOIN D_Sales sales ON sales.SalesNO = history.Number
@@ -209,8 +209,8 @@ BEGIN
                           ,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositDateTime ASC) as RANK
                       FROM #Temp_D_DepositHistory0 history
                       LEFT OUTER JOIN D_Sales sales ON sales.SalesNO = history.Number
-                       AND sales.DeleteDateTime IS NULL
-                       AND sales.BillingType = 1
+                                                   AND sales.DeleteDateTime IS NULL
+                                                   AND sales.BillingType = 1
                       LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
                      WHERE history.DataKBN = 3
                        AND history.DepositKBN = 1
@@ -228,8 +228,8 @@ BEGIN
                   ,SUM(history.DiscountGaku) DiscountGaku    -- ílà¯äz
               FROM #Temp_D_DepositHistory0 history
               LEFT OUTER JOIN D_Sales sales ON sales.SalesNO = history.Number
-               AND sales.DeleteDateTime IS NULL
-               AND sales.BillingType = 1
+                                           AND sales.DeleteDateTime IS NULL
+                                           AND sales.BillingType = 1
              WHERE history.DataKBN = 3 
                AND history.DepositKBN = 1
                AND history.CancelKBN = 0
@@ -315,7 +315,7 @@ BEGIN
                   ,MAX(CASE D.RANK WHEN  9 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate9       -- éGì¸ã‡ì˙9
                   ,MAX(CASE D.RANK WHEN  9 THEN D.DenominationName ELSE NULL END) MiscDepositName9       -- éGì¸ã‡ñº9
                   ,MAX(CASE D.RANK WHEN  9 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount9     -- éGì¸ã‡äz9
-                  ,MAX(CASE D.RANK WHEN 10 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate10      -- éGì¸ã‡ì˙10
+                  ,MAX(CASE D.RANK WHEN  10 THEN D.DepositDateTime ELSE NULL END) MiscDepositDate10      -- éGì¸ã‡ì˙10
                   ,MAX(CASE D.RANK WHEN 10 THEN D.DenominationName ELSE NULL END) MiscDepositName10      -- éGì¸ã‡ñº10
                   ,MAX(CASE D.RANK WHEN 10 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount10    -- éGì¸ã‡äz10
               FROM (
@@ -382,8 +382,8 @@ BEGIN
                           ,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositDateTime ASC) as RANK
                      FROM #Temp_D_DepositHistory0 history
                      LEFT OUTER JOIN D_Sales sales ON sales.SalesNO = history.Number
-                      AND sales.DeleteDateTime IS NULL
-                      AND sales.BillingType = 1
+                                                  AND sales.DeleteDateTime IS NULL
+                                                  AND sales.BillingType = 1
                      LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
                      LEFT OUTER JOIN (
                                       SELECT ROW_NUMBER() OVER(PARTITION BY CustomerCD ORDER BY ChangeDate DESC) AS RANK
@@ -539,10 +539,10 @@ BEGIN
                           ,history.DepositGaku
                       FROM #Temp_D_DepositHistory0 history
                       LEFT OUTER JOIN D_Sales sales ON sales.SalesNO = history.Number
-                       AND sales.DeleteDateTime IS NULL
-                       AND sales.BillingType = 1
+                                                   AND sales.DeleteDateTime IS NULL
+                                                   AND sales.BillingType = 1
                       LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
-                       AND denominationKbn.SystemKBN = 1
+                                                                       AND denominationKbn.SystemKBN = 1
                      WHERE history.DataKBN = 3
                        AND history.DepositKBN = 1
                        AND history.CancelKBN = 0
@@ -562,7 +562,7 @@ BEGIN
                           ,history.DepositGaku
                       FROM #Temp_D_DepositHistory0 history
                      INNER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
-                       AND denominationKbn.SystemKBN = 1
+                                                                 AND denominationKbn.SystemKBN = 1
                      WHERE history.DataKBN = 3
                        AND history.DepositKBN = 2
                        AND history.CancelKBN = 0
@@ -582,7 +582,7 @@ BEGIN
                           ,history.DepositGaku
                       FROM #Temp_D_DepositHistory0 history
                      INNER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
-                       AND denominationKbn.SystemKBN = 1
+                                                                 AND denominationKbn.SystemKBN = 1
                      WHERE history.DataKBN = 3
                        AND history.DepositKBN = 3
                        AND history.CancelKBN = 0
@@ -610,8 +610,8 @@ BEGIN
                           ,history.DiscountGaku
                       FROM #Temp_D_DepositHistory0 history
                       LEFT OUTER JOIN D_Sales sales ON sales.SalesNO = history.Number
-                       AND sales.DeleteDateTime IS NULL
-                       AND sales.BillingType = 1
+                                                   AND sales.DeleteDateTime IS NULL
+                                                   AND sales.BillingType = 1
                      WHERE history.DataKBN = 2
                        AND history.DepositKBN = 1
                        AND history.CancelKBN = 0
@@ -796,8 +796,8 @@ BEGIN
                           ,0 OtherAmountDelivery                                           -- ëºåªã‡ îzíB
                       FROM #Temp_D_DepositHistory0 history
                       LEFT OUTER JOIN D_Sales sales ON sales.SalesNO = history.Number
-                       AND sales.DeleteDateTime IS NULL
-                       AND sales.BillingType = 1
+                                                   AND sales.DeleteDateTime IS NULL
+                                                   AND sales.BillingType = 1
                      WHERE history.DataKBN = 2
                        AND history.DepositKBN = 1
                        AND history.CancelKBN IN (1, 2)
@@ -1008,8 +1008,8 @@ BEGIN
                            END AS ByTimeZoneSalesNO_2300_2400  -- éûä‘ë—ï (îÑè„î‘çÜ) 23:00Å`24:00
                       FROM #Temp_D_DepositHistory0 history
                       LEFT OUTER JOIN D_Sales sales ON sales.SalesNO = history.Number
-                       AND sales.DeleteDateTime IS NULL
-                       AND sales.BillingType = 1
+                                                   AND sales.DeleteDateTime IS NULL
+                                                   AND sales.BillingType = 1
                      WHERE history.DataKBN = 2
                        AND history.DepositKBN = 1
                        AND history.CancelKBN = 0
@@ -1064,7 +1064,7 @@ BEGIN
                     + tempHistory9.DepositGaku
                     + tempHistory10.DepositGaku
                     + tempHistory11.DepositGaku
-                  AS ComputerTotal                                -- ∫›Àﬂ≠∞¿åv íﬁëKèÄîıã‡Å`åªã‡écçÇ åªã‡éxï•(-)Ç‹Ç≈ÇÃçáåv
+                  AS ComputerTotal                               -- ∫›Àﬂ≠∞¿åv íﬁëKèÄîıã‡Å`åªã‡écçÇ åªã‡éxï•(-)Ç‹Ç≈ÇÃçáåv
                   ,(
                     storeCalculation.[10000yenGaku]
                      + storeCalculation.[5000yenGaku]
@@ -1082,7 +1082,7 @@ BEGIN
                      + tempHistory9.DepositGaku
                      + tempHistory10.DepositGaku
                      + tempHistory11.DepositGaku
-                  ) AS CashShortage                               -- åªã‡âﬂïsë´ åªã‡écçÇ-∫›Àﬂ≠∞¿åv
+                  ) AS CashShortage                              -- åªã‡âﬂïsë´ åªã‡écçÇ-∫›Àﬂ≠∞¿åv
                   ,tempHistory12.SalesNOCount                     -- ëçîÑ ì`ï[êî
                   ,tempHistory12.CustomerCDCount                  -- ëçîÑ ãqêî(êl)
                   ,tempHistory12.SalesSUSum                       -- ëçîÑ îÑè„êîó 
@@ -1214,11 +1214,11 @@ BEGIN
           --
           ,(SELECT SUM(CASE WHEN SalesSU IS NULL THEN 1 ELSE SalesSU END) FROM #Temp_D_DepositHistory1 t WHERE t.SalesNO= tempHistory1.SalesNO) SumSalesSU    -- è¨åvêîó 
           ,(SELECT SUM(kakaku) FROM #Temp_D_DepositHistory1 t WHERE t.SalesNO = tempHistory1.SalesNO) Subtotal                                                -- è¨åvã‡äz
-          ,tempHistory1.SalesHontaiGaku8 TargetAmount8                                                                    -- 8ÅìëŒè€äz
+          ,tempHistory1.TargetAmount8                                                                                     -- 8ÅìëŒè€äz
           ,tempHistory1.SalesTax8 ConsumptionTax8                                                                         -- äOê≈8Åì
-          ,tempHistory1.SalesHontaiGaku10 TargetAmount10                                                                  -- 10ÅìëŒè€äz
+          ,tempHistory1.TargetAmount10                                                                                    -- 10ÅìëŒè€äz
           ,tempHistory1.SalesTax10 ConsumptionTax10                                                                       -- äOê≈10Åì
-          ,(SELECT SUM(kakaku + SalesTax) FROM #Temp_D_DepositHistory1 t WHERE t.SalesNO = tempHistory1.SalesNO) Total    -- çáåv
+          ,(SELECT SUM(TotalGaku) FROM #Temp_D_DepositHistory1 t WHERE t.SalesNO = tempHistory1.SalesNO) Total            -- çáåv
           --
           ,tempHistory2.PaymentName1                             -- éxï•ï˚ñ@ñº1
           ,tempHistory2.AmountPay1                               -- éxï•ï˚ñ@äz1

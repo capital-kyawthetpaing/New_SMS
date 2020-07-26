@@ -1946,7 +1946,7 @@
             this.掛率.DataPropertyName = "Rate";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = null;
+            dataGridViewCellStyle5.NullValue = "0";
             this.掛率.DefaultCellStyle = dataGridViewCellStyle5;
             this.掛率.HeaderText = "掛率";
             this.掛率.MaxInputLength = 6;
