@@ -116,8 +116,8 @@ namespace TempoRegiRyousyuusyo
             chkReceipt.Checked = false;
 
             txtPrintDate.Require(true);
-            //txtPrintDate.Clear();
-            txtPrintDate.Text = DateTime.Today.ToShortDateString();
+            txtPrintDate.Clear();
+            //txtPrintDate.Text = DateTime.Today.ToShortDateString();
 
             chkReissue.Checked = false;
         }
@@ -141,6 +141,14 @@ namespace TempoRegiRyousyuusyo
             {
                 bl.ShowMessage("E102");
                 txtSalesNO.Focus();
+                return false;
+            }
+
+            if (!string.IsNullOrWhiteSpace(txtPrintDate.Text) && !bbl.CheckDate(txtPrintDate.Text))
+            {
+                // 日付エラー
+                bbl.ShowMessage("E103");
+                txtPrintDate.Focus();
                 return false;
             }
 
@@ -214,7 +222,7 @@ namespace TempoRegiRyousyuusyo
                         }
                         else
                         {
-                            bl.ShowMessage("E128");
+                            bl.ShowMessage("E198", "領収書");
                             txtSalesNO.Focus();
                         }
                     }
@@ -231,7 +239,7 @@ namespace TempoRegiRyousyuusyo
                         }
                         else
                         {
-                            bl.ShowMessage("E128");
+                            bl.ShowMessage("E198", "レシート");
                             txtSalesNO.Focus();
                         }
                     }
@@ -361,8 +369,8 @@ namespace TempoRegiRyousyuusyo
                 sales.StoreReceiptPrint = storeReceiptPrint;                                    // 店舗レシート表記
                 sales.StaffReceiptPrint = staffReceiptPrint;                                    // 担当レシート表記
                 sales.SalesNO = salesNO;                                                        // 売上番号
-                sales.IssueDate = ConvertDateTime(row["IssueDateTime"], false);                 // 発行日
-                sales.IssueDateTime = Convert.ToString(row["IssueDateTime"]);                   // 発行日時
+                sales.IssueDate = ConvertDateTime(row["IssueDateTime"], true);                  // 発行日
+                sales.IssueDateTime = ConvertDateTime(row["IssueDateTime"], false);             // 発行日時
 
                 // 再発行日時
                 var reIssueDateTime = ConvertDateTime(row["ReIssueDateTime"], false);
@@ -442,8 +450,9 @@ namespace TempoRegiRyousyuusyo
                 sales.Refund = ConvertDecimal(row["Refund"]);                                   // 釣銭
                 sales.SalesLastPoint = ConvertDecimal(row["SalesLastPoint"]);                   // 今回ポイント
                 sales.CustomerLastPoint = ConvertDecimal(row["CustomerLastPoint"]);             // 合計ポイント 
+                sales.CustomerLastPoint = string.IsNullOrWhiteSpace(sales.CustomerLastPoint) ? "0" : sales.CustomerLastPoint;
                 #endregion // お釣りデータ
-                
+
                 #endregion // 販売データ
 
                 receiptDataSet.SalesTable.Rows.Add(sales);
