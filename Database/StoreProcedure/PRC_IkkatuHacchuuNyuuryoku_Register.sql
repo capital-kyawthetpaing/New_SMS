@@ -56,6 +56,7 @@ CREATE TYPE [dbo].[T_IkkatuHacchuuNyuuryoku] AS TABLE(
     ,HacchuuShouhizeigaku        varchar(100) NULL
     ,TaniCD                      varchar(100) NULL
     ,OrderRows                   varchar(100) NULL
+    ,IsYuukouTaishouFLG          varchar(100) NULL
 )
 GO
 
@@ -246,7 +247,7 @@ BEGIN
           ,OrderRows                = CASE WHEN @p_OperateMode = 1 THEN CAST(ROW_NUMBER()OVER(PARTITION BY MAIN.SiiresakiCD,MAIN.NounyuusakiName,MAIN.NounyuusakiJuusho ORDER BY MAIN.GyouNO) AS varchar) ELSE MAIN.OrderRows END    
           ,DisplayRows              = ROW_NUMBER()OVER(PARTITION BY MAIN.SiiresakiCD,MAIN.NounyuusakiName,MAIN.NounyuusakiJuusho ORDER BY MAIN.GyouNO)    
           ,JuchuuNO                 = MAIN.JuchuuNO                  
-          ,JuchuuRows               = MAIN.JuchuuRows                
+          ,JuchuuRows               = ISNULL(MAIN.JuchuuRows,0)
           ,JuchuuOrderNO            = null    
           ,SKUCD                    = MAIN.SKUCD                     
           ,AdminNO                  = MAIN.AdminNO                   

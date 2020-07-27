@@ -19,7 +19,8 @@ GO
 
 CREATE PROCEDURE [dbo].[D_SelectMiscDeposit_ForTempoTorihikiReceipt]
 (
-    @DepositNO        int
+    @DepositNO        int,
+    @StaffCD          varchar(10)
 )AS
 
 --********************************************--
@@ -101,6 +102,7 @@ BEGIN
                                          FROM M_Staff
                                       ) staff ON staff.RANK = 1
                                              AND staff.StoreCD = history.StoreCD
+                                             AND staff.StaffCD = @StaffCD
                                              AND staff.DeleteFlg <> 1
                      WHERE history.DataKBN = 3
                        AND history.DepositKBN = 2

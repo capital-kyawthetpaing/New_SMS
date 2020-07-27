@@ -76,7 +76,7 @@ BEGIN
            END AS HacchuuShouhizeigaku    
           ,MSKU.PriceOutTax AS Teika    
           ,SUB_HacchuuTanka.Value * 100 / NULLIF(MSKU.PriceOutTax,0) AS Kakeritu    
-          ,'1' AS TaishouFLG    
+          ,CAST(1 as bit) AS IsYuukouTaishouFLG
           ,NULL AS OrderRows    
               
     FROM D_JuchuuDetails DJUD  
