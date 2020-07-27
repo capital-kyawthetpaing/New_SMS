@@ -494,12 +494,14 @@ BEGIN
               ,[CommentOutStore] = @CommentOutStore
               ,[CommentInStore]  = @CommentInStore
               ,[StaffCD]         = @StaffCD
-
+              
               ,[ApprovalDate] = (CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalEnabled = 1 THEN @SYSDATE ELSE NULL END)
                                         ELSE @SYSDATE END) --ApprovalDate
-              ,[LastApprovalDate] = (CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalEnabled = 1 THEN (CASE @ApprovalStageFLG WHEN 9 THEN @SYSDATE WHEN -1 THEN NULL ELSE [ApprovalDate] END) ELSE NULL END)
+              ,[LastApprovalDate] = (CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalEnabled = 1 THEN (CASE WHEN @ApprovalStageFLG >= 9 THEN @SYSDATE WHEN @ApprovalStageFLG = -1 THEN NULL ELSE [LastApprovalDate] END) 
+                                                                                ELSE NULL END)
                                             ELSE @SYSDATE END) --LastApprovalDate
-              ,[LastApprovalStaffCD] = (CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalEnabled = 1 THEN (CASE @ApprovalStageFLG WHEN 9 THEN @Operator WHEN -1 THEN NULL ELSE [LastApprovalStaffCD] END) ELSE '1' END)
+              ,[LastApprovalStaffCD] = (CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalEnabled = 1 THEN (CASE WHEN @ApprovalStageFLG >= 9 THEN @Operator WHEN @ApprovalStageFLG = -1 THEN NULL ELSE [LastApprovalStaffCD] END) 
+                                                                                ELSE NULL END)
                                             ELSE @Operator END) --LastApprovalStaffCD
               ,[ApprovalStageFLG] = (CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalEnabled = 1 THEN (CASE @ApprovalStageFLG WHEN -1 THEN 0 ELSE @ApprovalStageFLG END) ELSE 1 END)
                                         ELSE 10 END) --ApprovalStageFLG

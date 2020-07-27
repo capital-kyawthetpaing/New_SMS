@@ -1605,6 +1605,27 @@ namespace HacchuuNyuuryoku
                         }
                     }
                 }
+                else if (index == (int)EIndex.MotoOrderNO)
+                {
+                    //DeleteDateTime 「削除された発注番号」
+                    if (!string.IsNullOrWhiteSpace(dt.Rows[0]["DeleteDateTime"].ToString()))
+                    {
+                        bbl.ShowMessage("E140", "発注番号");
+                        Scr_Clr(1);
+                        previousCtrl.Focus();
+                        return false;
+                    }
+                    else if(dt.Rows[0]["ReturnFLG"].ToString().Equals("1") || dt.Rows[0]["ReturnFLG"].ToString().Equals("2"))
+                    {
+                        if (dt.Rows[0]["ReturnFLG"].ToString().Equals("1"))
+                            bbl.ShowMessage("E253");
+                        else
+                            bbl.ShowMessage("E254");
+                        Scr_Clr(1);
+                        previousCtrl.Focus();
+                        return false;
+                    }
+                }
 
                 //画面セットなしの場合、処理正常終了
                 if (set == false)
@@ -1691,7 +1712,7 @@ namespace HacchuuNyuuryoku
                             else
                                 SetBtnSubF11Enabled(false);
 
-                            switch(mApprovalStageFLG)
+                            switch (mApprovalStageFLG)
                             {
                                 case 0:
                                     SetlblDisp("却下");
@@ -1701,12 +1722,11 @@ namespace HacchuuNyuuryoku
                                     SetlblDisp("申請中");
                                     break;
 
-                                case 9:
-                                    SetlblDisp("承認済");
-                                    break;
-
                                 default:
-                                    SetlblDisp("承認中");
+                                    if (mApprovalStageFLG >=9)
+                                        SetlblDisp("承認済");
+                                    else
+                                       SetlblDisp("承認中");
                                     break;
                             }
                         }
@@ -1714,7 +1734,15 @@ namespace HacchuuNyuuryoku
                         {
                             //複写時
                             SetBtnSubF11Enabled(true);
-                            SetlblDisp("申請中");
+                            if (W_ApprovalStageFLG.Equals(9))
+                            {
+                                //最終承認者の場合は承認済みにする
+                                SetlblDisp("承認");
+                            }
+                            else
+                            {
+                                SetlblDisp("申請中");
+                            }
                         }
 
                         if (row["AliasKBN"].ToString() == "1")
@@ -2490,8 +2518,12 @@ namespace HacchuuNyuuryoku
                         if (bbl.ShowMessage("Q305") != DialogResult.OK)
                             return false;
                     }
+                    if (ckM_CheckBox1.Checked)  //返品のときのみ数量*(-1)
+                    {
+                        mGrid.g_DArray[row].OrderSu = bbl.Z_SetStr(-1 * Math.Abs( bbl.Z_Set(mGrid.g_DArray[row].OrderSu)));   // 
+                    }
 
-                    if(!chkAll)
+                    if (!chkAll)
                         CalcZei(row, ymd);
 
                     break;
@@ -3344,7 +3376,14 @@ namespace HacchuuNyuuryoku
                                 detailControls[(int)EIndex.OrderDate].Focus();
                             else
                                 keyControls[index + 1].Focus();
-
+                        else if (index == (int)EIndex.CopyOrderNO)
+                            if (string.IsNullOrWhiteSpace(keyControls[index].Text))
+                                keyControls[index + 1].Focus();
+                            else
+                                detailControls[(int)EIndex.OrderDate].Focus();
+                        else 
+                            keyControls[index + 1].Focus();
+  
                     }
                     else
                     {
@@ -3522,17 +3561,18 @@ namespace HacchuuNyuuryoku
         {
             try
             {
+                int w_Row;
+                Control w_ActCtl;
+
+                w_ActCtl = (Control)sender;
+                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
+
                 //Enterキー押下時処理
                 //Returnキーが押されているか調べる
                 //AltかCtrlキーが押されている時は、本来の動作をさせる
                 if ((e.KeyCode == Keys.Return) &&
                     ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
                 {
-                    int w_Row;
-                    Control w_ActCtl;
-
-                    w_ActCtl = (Control)sender;
-                    w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
 
                     bool lastCell = false;
 
@@ -3615,6 +3655,17 @@ namespace HacchuuNyuuryoku
                     //this.ProcessTabKey(!e.Shift);
                     //行き先がなかったら移動しない
                     S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+                }
+
+                else if (e.KeyCode == Keys.Tab)
+                {
+                    if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int CL, out int w_CtlRow) == false)
+                    {
+                        return;
+                    }
+
+                    if (CL == (int)ClsGridHacchuu.ColNO.EDIOrderFlg)
+                        S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
                 }
 
             }
