@@ -1,8 +1,11 @@
 ﻿using Base.Client;
 using BL;
+using DL;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
+using System.Threading;
 using System.Windows.Forms;
 using TempoRegiTorihikiReceipt.Reports;
 
@@ -83,6 +86,7 @@ namespace TempoRegiTorihikiReceipt
         public TempoRegiTorihikiReceipt()
         {
             InitializeComponent();
+         //   Start_Display();
         }
 
         /// <summary>
@@ -120,6 +124,7 @@ namespace TempoRegiTorihikiReceipt
         /// </summary>
         protected override void EndSec()
         {
+            //RunDisplay_Service();
             this.Close();
         }
 
@@ -128,8 +133,9 @@ namespace TempoRegiTorihikiReceipt
         /// </summary>
         private void Print()
         {
+             
             var torihikiReceiptDataSet = new TorihikiReceiptDataSet();
-
+            Object ReadyToPrinter=null;
             switch(InputMode)
             {
                 case MODE_DEPOSIT:
@@ -155,7 +161,8 @@ namespace TempoRegiTorihikiReceipt
                         reportModeDepositMiscDeposit.SetDataSource(torihikiReceiptDataSet);
                         reportModeDepositMiscDeposit.Refresh();
 
-                        reportModeDepositMiscDeposit.PrintOptions.PrinterName = StorePrinterName;
+                         reportModeDepositMiscDeposit.PrintOptions.PrinterName = StorePrinterName;
+                        ReadyToPrinter =  reportModeDepositMiscDeposit;
                         reportModeDepositMiscDeposit.PrintToPrinter(0, false, 0, 0);
                     }
                     else if (torihikiReceiptDataSet.MiscDepositTable.Rows.Count == 0 && torihikiReceiptDataSet.DepositTable.Rows.Count > 0)
@@ -167,6 +174,8 @@ namespace TempoRegiTorihikiReceipt
                         reportModeDepositDeposit.Refresh();
 
                         reportModeDepositDeposit.PrintOptions.PrinterName = StorePrinterName;
+                        ReadyToPrinter = reportModeDepositDeposit;
+
                         reportModeDepositDeposit.PrintToPrinter(0, false, 0, 0);
                     }
                     else if (torihikiReceiptDataSet.MiscDepositTable.Rows.Count > 0 && torihikiReceiptDataSet.DepositTable.Rows.Count > 0)
@@ -177,7 +186,8 @@ namespace TempoRegiTorihikiReceipt
                         reportModeDeposit.SetDataSource(torihikiReceiptDataSet);
                         reportModeDeposit.Refresh();
 
-                        reportModeDeposit.PrintOptions.PrinterName = StorePrinterName;
+                         reportModeDeposit.PrintOptions.PrinterName = StorePrinterName;
+                        ReadyToPrinter = reportModeDeposit;
                         reportModeDeposit.PrintToPrinter(0, false, 0, 0);
                     }
                     else
@@ -199,6 +209,7 @@ namespace TempoRegiTorihikiReceipt
                         reportModePayment.Refresh();
 
                         reportModePayment.PrintOptions.PrinterName = StorePrinterName;
+                        ReadyToPrinter = reportModePayment;
                         reportModePayment.PrintToPrinter(0, false, 0, 0);
                     }
                     else
@@ -220,7 +231,8 @@ namespace TempoRegiTorihikiReceipt
                         reportModeExchange.Refresh();
 
                         reportModeExchange.PrintOptions.PrinterName = StorePrinterName;
-                        reportModeExchange.PrintToPrinter(0, false, 0, 0);
+                        ReadyToPrinter = reportModeExchange;
+                       reportModeExchange.PrintToPrinter(0, false, 0, 0);
                     }
                     else
                     {
@@ -240,7 +252,8 @@ namespace TempoRegiTorihikiReceipt
                         reportModeChangePreparation.SetDataSource(torihikiReceiptDataSet);
                         reportModeChangePreparation.Refresh();
 
-                        reportModeChangePreparation.PrintOptions.PrinterName = StorePrinterName;
+                         reportModeChangePreparation.PrintOptions.PrinterName = StorePrinterName;
+                        ReadyToPrinter = reportModeChangePreparation;
                         reportModeChangePreparation.PrintToPrinter(0, false, 0, 0);
                     }
                     else
@@ -249,7 +262,19 @@ namespace TempoRegiTorihikiReceipt
                     }
                     break;
             }
-            
+
+            //if (ReadyToPrinter != null)
+            //{
+            //    //try
+            //    //{
+            //    //    cdo.RemoveDisplay(true);
+            //    //}
+            //    //catch { }
+            //    var RTP = (CrystalDecisions.CrystalReports.Engine.ReportClass)ReadyToPrinter;
+            //     RTP.PrintToPrinter(0, false, 0, 0);
+            //   // Stop_DisplayService();
+            //}
+
             //var report = new TempoRegiTorihikiReceipt_Journal();
 
             //report.SetDataSource(torihikiReceiptDataSet);
@@ -606,5 +631,95 @@ namespace TempoRegiTorihikiReceipt
 
             return result.ToArray();
         }
+        //protected void Kill(string pth)
+        //{
+        //    try
+        //    {
+        //        Process[] processCollection = Process.GetProcessesByName(pth.Replace(".exe", ""));
+        //        foreach (Process p in processCollection)
+        //        {
+        //            p.Kill();
+        //        }
+
+        //        Process[] processCollections = Process.GetProcessesByName(pth + ".exe");
+        //        foreach (Process p in processCollections)
+        //        {
+        //            p.Kill();
+        //        }
+        //    }
+        //    catch { }
+        //}
+        //private void Stop_DisplayService(bool isForced = true)
+        //{
+        //    if (Base_DL.iniEntity.IsDM_D30Used)
+        //    {
+
+        //        Login_BL bbl_1 = new Login_BL();
+        //        if (bbl_1.ReadConfig())
+        //        {
+        //            bbl_1.Display_Service_Update(false);
+        //            Thread.Sleep(3 * 1000);
+        //            bbl_1.Display_Service_Enabled(false);
+        //        }
+        //        else
+        //        {
+        //            bbl_1.Display_Service_Update(false);
+        //            Thread.Sleep(3 * 1000);
+        //            bbl_1.Display_Service_Enabled(false);
+        //        }
+        //        try
+        //        {
+        //            Kill("Display_Service");
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show(ex.StackTrace.ToString());
+        //        }
+        //        if (isForced) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+        //        //Base_DL.iniEntity.CDO_DISPLAY.SetDisplay(true, true,Base_DL.iniEntity.DefaultMessage);
+        //    }
+        //}
+        //private void RunDisplay_Service()  // Make when we want to run display_service
+        //{
+        //    try
+        //    {
+        //        if (Base_DL.iniEntity.IsDM_D30Used)
+        //        {
+        //            cdo.RemoveDisplay(true);
+        //            Login_BL bbl_1 = new Login_BL();
+        //            bbl_1.Display_Service_Update(true);
+        //            bbl_1.Display_Service_Enabled(true);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error in removing display. . .");
+        //    }
+        //}
+        //private void Start_Display()
+        //{
+        //    try
+        //    {
+        //        if (Base_DL.iniEntity.IsDM_D30Used)
+        //        {
+        //            Login_BL bbl_1 = new Login_BL();
+        //            if (bbl_1.ReadConfig())
+        //            {
+        //                bbl_1.Display_Service_Update(false);
+        //                Thread.Sleep(3 * 1000);
+        //                bbl_1.Display_Service_Enabled(false);
+        //            }
+        //            else
+        //            {
+        //                bbl_1.Display_Service_Update(false);
+        //                Thread.Sleep(3 * 1000);
+        //                bbl_1.Display_Service_Enabled(false);
+        //            }
+        //            Kill("Display_Service");
+        //        }
+        //    }
+        //    catch (Exception ex) { MessageBox.Show("Cant remove on second time" + ex.StackTrace); }
+        //}
+        //EPSON_TM30.CashDrawerOpen cdo = new EPSON_TM30.CashDrawerOpen();
     }
 }

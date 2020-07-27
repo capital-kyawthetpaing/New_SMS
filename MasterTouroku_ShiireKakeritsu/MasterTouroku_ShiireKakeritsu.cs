@@ -438,21 +438,6 @@ namespace MasterTouroku_ShiireKakeritsu
             dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
             dvMain = new DataView(dtMain);
             dgv_ShiireKakeritsu.DataSource = dvMain;
-            //if (!string.IsNullOrWhiteSpace(searchCondition))
-            //{
-            //dvMain = new DataView(dtMain, searchCondition, "", DataViewRowState.CurrentRows);
-            //    DataRow[] dr = dtMain.Select(searchCondition);
-            //    if (dr.Count() > 0)
-            //    {
-            //        dtGrid = dvmain//dtMain.Select(searchCondition).CopyToDataTable();
-            //    }
-            //    else
-            //        dtGrid = null;
-            //}
-            //else
-            //{
-            //    dtGrid = dtMain;
-            //}
         }
         private void btnCopy_Click(object sender, EventArgs e)
         {
