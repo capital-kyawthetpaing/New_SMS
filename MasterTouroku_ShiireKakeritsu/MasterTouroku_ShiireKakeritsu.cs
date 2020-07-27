@@ -785,7 +785,7 @@ namespace MasterTouroku_ShiireKakeritsu
             {
                 {
                     DataGridViewRow row = dgv_ShiireKakeritsu.Rows[i];
-                    DataGridViewCheckBoxCell check = row.Cells[0] as DataGridViewCheckBoxCell;
+                     DataGridViewCheckBoxCell check = row.Cells[0] as DataGridViewCheckBoxCell;
                     if (row.Cells["colChk"].Value != null)
                     {
                         string chk = row.Cells["colChk"].Value.ToString();
@@ -799,11 +799,13 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
             toDelete.ForEach(row => row.Delete());
-
+            dgv_ShiireKakeritsu.DataSource = dtMain;
             DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
+            dvMain = new DataView(dtMain);
+            //DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
             //dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
             //dtMain = view.Table;
-            dgv_ShiireKakeritsu.DataSource = dvMain;
+            dgv_ShiireKakeritsu.DataSource =dvMain;
             //dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
             //dvMain = new DataView(dtMain);
             //dgv_ShiireKakeritsu.DataSource = dvMain;
