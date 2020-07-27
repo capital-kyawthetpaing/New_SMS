@@ -141,29 +141,5 @@ namespace BL
             return mdl.PRC_MarkDownNyuuryoku(dme, dt, operationMode);
         }
 
-        ///// <summary>
-        ///// 返品入力取得処理
-        ///// MarkDownNyuuryokuよりデータ抽出時に使用
-        ///// </summary>
-        //public DataTable D_Purchase_SelectDataH(D_Purchase_Entity de, short operationMode)
-        //{
-        //    DataTable dt = ddl.D_Purchase_SelectDataH(de, operationMode);
-
-        //    return dt;
-        //}
-
-        ///// <summary>
-        ///// 返品入力取得処理(入荷から)
-        ///// MarkDownNyuuryokuよりデータ抽出時に使用
-        ///// </summary>
-        //public DataTable D_Stock_SelectAllForShiireH(D_Stock_Entity de)
-        //{
-        //    D_Stock_DL dadl = new D_Stock_DL();
-        //    DataTable dt = dadl.D_Stock_SelectAllForShiireH(de);
-
-        //    return dt;
-        //}
-
-
     }
 }

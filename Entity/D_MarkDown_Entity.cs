@@ -38,6 +38,7 @@ namespace Entity
         public string PayeeCD { get; set; }
         public string PurchaseGaku { get; set; }
         public string PurchaseTax { get; set; }
+        public string TotalPurchaseGaku { get; set; }
         public string TaxGaku8 { get; set; }
         public string TaxGaku10 { get; set; }
         public string HontaiGaku8 { get; set; }

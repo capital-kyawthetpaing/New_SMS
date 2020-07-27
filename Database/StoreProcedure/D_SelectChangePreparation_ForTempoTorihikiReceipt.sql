@@ -18,7 +18,8 @@ GO
 
 CREATE PROCEDURE [dbo].[D_SelectChangePreparation_ForTempoTorihikiReceipt]
 (
-    @DepositNO        int
+    @DepositNO        int,
+    @StaffCD          varchar(10)
 )AS
 
 --********************************************--
@@ -99,6 +100,7 @@ BEGIN
                                          FROM M_Staff
                                       ) staff ON staff.RANK = 1
                                              AND staff.StoreCD = history.StoreCD
+                                             AND staff.StaffCD = @StaffCD
                                              AND staff.DeleteFlg <> 1
                      WHERE history.DepositNO = @DepositNO
                        AND history.DataKBN = 3
