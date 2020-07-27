@@ -174,7 +174,7 @@ namespace KaitounoukiKakuninsho
             //以下の条件でデータが存在しなければエラー (Error if record does not exist)Ｅ１３３
             if (dt.Rows.Count == 0)
             {
-                bbl.ShowMessage("E133");
+                bbl.ShowMessage("E128");
                 previousCtrl.Focus();
                 return null;
             }
