@@ -30,9 +30,10 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox3 = new CKM_Controls.CKM_TextBox();
@@ -41,12 +42,6 @@
             this.CboStoreCD = new CKM_Controls.CKM_ComboBox();
             this.btnSubF11 = new CKM_Controls.CKM_Button();
             this.GvDetail = new CKM_Controls.CKM_GridView();
-            this.colOrderNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colApprovalStageFLG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coIOrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVendorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDeliveryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDeliveryAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox2 = new CKM_Controls.CKM_TextBox();
@@ -66,6 +61,13 @@
             this.btnSearchJANCD = new System.Windows.Forms.Button();
             this.ScStaff = new Search.CKM_SearchControl();
             this.ScOrder = new Search.CKM_SearchControl();
+            this.colOrderNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApprovalStageFLG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coIOrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colReturnFLG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVendorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDeliveryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDeliveryAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvDetail)).BeginInit();
             this.SuspendLayout();
@@ -167,6 +169,7 @@
             this.ckM_TextBox3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox3.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox3.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox3.DecimalPlace = 0;
@@ -175,6 +178,8 @@
             this.ckM_TextBox3.IntegerPart = 0;
             this.ckM_TextBox3.IsCorrectDate = true;
             this.ckM_TextBox3.isEnterKeyDown = false;
+            this.ckM_TextBox3.IsFirstTime = true;
+            this.ckM_TextBox3.isMaxLengthErr = false;
             this.ckM_TextBox3.IsNumber = true;
             this.ckM_TextBox3.IsShop = false;
             this.ckM_TextBox3.Length = 11;
@@ -192,6 +197,7 @@
             this.ckM_TextBox4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox4.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox4.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox4.DecimalPlace = 0;
@@ -200,6 +206,8 @@
             this.ckM_TextBox4.IntegerPart = 0;
             this.ckM_TextBox4.IsCorrectDate = true;
             this.ckM_TextBox4.isEnterKeyDown = false;
+            this.ckM_TextBox4.IsFirstTime = true;
+            this.ckM_TextBox4.isMaxLengthErr = false;
             this.ckM_TextBox4.IsNumber = true;
             this.ckM_TextBox4.IsShop = false;
             this.ckM_TextBox4.Length = 30;
@@ -235,6 +243,7 @@
             this.CboStoreCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア_見積;
             this.CboStoreCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CboStoreCD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CboStoreCD.Flag = 0;
             this.CboStoreCD.FormattingEnabled = true;
             this.CboStoreCD.Length = 30;
             this.CboStoreCD.Location = new System.Drawing.Point(830, 11);
@@ -285,79 +294,31 @@
             this.colOrderNO,
             this.colApprovalStageFLG,
             this.coIOrderDate,
+            this.colReturnFLG,
             this.colVendorName,
             this.colDeliveryName,
             this.colDeliveryAddress});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GvDetail.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GvDetail.DefaultCellStyle = dataGridViewCellStyle6;
             this.GvDetail.EnableHeadersVisualStyles = false;
             this.GvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvDetail.Location = new System.Drawing.Point(9, 316);
             this.GvDetail.Name = "GvDetail";
             this.GvDetail.ReadOnly = true;
-            this.GvDetail.Size = new System.Drawing.Size(1031, 317);
+            this.GvDetail.RowHeight_ = 20;
+            this.GvDetail.RowTemplate.Height = 20;
+            this.GvDetail.Size = new System.Drawing.Size(1032, 317);
             this.GvDetail.TabIndex = 20;
             this.GvDetail.UseRowNo = true;
             this.GvDetail.UseSetting = true;
             this.GvDetail.DoubleClick += new System.EventHandler(this.GvDetail_DoubleClick);
             this.GvDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvDetail_KeyDown);
-            // 
-            // colOrderNO
-            // 
-            this.colOrderNO.DataPropertyName = "OrderNO";
-            this.colOrderNO.HeaderText = "発注番号";
-            this.colOrderNO.Name = "colOrderNO";
-            this.colOrderNO.ReadOnly = true;
-            // 
-            // colApprovalStageFLG
-            // 
-            this.colApprovalStageFLG.DataPropertyName = "ApprovalStageFLG";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colApprovalStageFLG.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colApprovalStageFLG.HeaderText = "承認";
-            this.colApprovalStageFLG.Name = "colApprovalStageFLG";
-            this.colApprovalStageFLG.ReadOnly = true;
-            this.colApprovalStageFLG.Width = 80;
-            // 
-            // coIOrderDate
-            // 
-            this.coIOrderDate.DataPropertyName = "OrderDate";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.coIOrderDate.DefaultCellStyle = dataGridViewCellStyle4;
-            this.coIOrderDate.HeaderText = "発注日";
-            this.coIOrderDate.Name = "coIOrderDate";
-            this.coIOrderDate.ReadOnly = true;
-            this.coIOrderDate.Width = 80;
-            // 
-            // colVendorName
-            // 
-            this.colVendorName.DataPropertyName = "VendorName";
-            this.colVendorName.HeaderText = "仕入先";
-            this.colVendorName.Name = "colVendorName";
-            this.colVendorName.ReadOnly = true;
-            this.colVendorName.Width = 300;
-            // 
-            // colDeliveryName
-            // 
-            this.colDeliveryName.DataPropertyName = "DeliveryName";
-            this.colDeliveryName.HeaderText = "納入先";
-            this.colDeliveryName.Name = "colDeliveryName";
-            this.colDeliveryName.ReadOnly = true;
-            this.colDeliveryName.Width = 250;
-            // 
-            // colDeliveryAddress
-            // 
-            this.colDeliveryAddress.DataPropertyName = "DeliveryAddress";
-            this.colDeliveryAddress.HeaderText = "納入先住所";
-            this.colDeliveryAddress.Name = "colDeliveryAddress";
-            this.colDeliveryAddress.ReadOnly = true;
-            this.colDeliveryAddress.Width = 250;
             // 
             // ckM_TextBox1
             // 
@@ -365,6 +326,7 @@
             this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox1.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox1.DecimalPlace = 0;
@@ -373,6 +335,8 @@
             this.ckM_TextBox1.IntegerPart = 0;
             this.ckM_TextBox1.IsCorrectDate = true;
             this.ckM_TextBox1.isEnterKeyDown = false;
+            this.ckM_TextBox1.IsFirstTime = true;
+            this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
             this.ckM_TextBox1.Length = 10;
@@ -408,6 +372,7 @@
             this.ckM_TextBox2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox2.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox2.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox2.DecimalPlace = 0;
@@ -416,6 +381,8 @@
             this.ckM_TextBox2.IntegerPart = 0;
             this.ckM_TextBox2.IsCorrectDate = true;
             this.ckM_TextBox2.isEnterKeyDown = false;
+            this.ckM_TextBox2.IsFirstTime = true;
+            this.ckM_TextBox2.isMaxLengthErr = false;
             this.ckM_TextBox2.IsNumber = true;
             this.ckM_TextBox2.IsShop = false;
             this.ckM_TextBox2.Length = 10;
@@ -434,6 +401,7 @@
             this.ckM_TextBox5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox5.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox5.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_TextBox5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox5.DecimalPlace = 0;
@@ -442,9 +410,11 @@
             this.ckM_TextBox5.IntegerPart = 0;
             this.ckM_TextBox5.IsCorrectDate = true;
             this.ckM_TextBox5.isEnterKeyDown = false;
+            this.ckM_TextBox5.IsFirstTime = true;
+            this.ckM_TextBox5.isMaxLengthErr = false;
             this.ckM_TextBox5.IsNumber = true;
             this.ckM_TextBox5.IsShop = false;
-            this.ckM_TextBox5.Length = 80;
+            this.ckM_TextBox5.Length = 40;
             this.ckM_TextBox5.Location = new System.Drawing.Point(106, 130);
             this.ckM_TextBox5.MaxLength = 40;
             this.ckM_TextBox5.MoveNext = true;
@@ -522,6 +492,7 @@
             this.ckM_TextBox8.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox8.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox8.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox8.DecimalPlace = 0;
@@ -530,6 +501,8 @@
             this.ckM_TextBox8.IntegerPart = 0;
             this.ckM_TextBox8.IsCorrectDate = false;
             this.ckM_TextBox8.isEnterKeyDown = false;
+            this.ckM_TextBox8.IsFirstTime = true;
+            this.ckM_TextBox8.isMaxLengthErr = false;
             this.ckM_TextBox8.IsNumber = true;
             this.ckM_TextBox8.IsShop = false;
             this.ckM_TextBox8.Length = 300;
@@ -547,6 +520,7 @@
             this.ckM_TextBox6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox6.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox6.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox6.DecimalPlace = 0;
@@ -555,6 +529,8 @@
             this.ckM_TextBox6.IntegerPart = 0;
             this.ckM_TextBox6.IsCorrectDate = false;
             this.ckM_TextBox6.isEnterKeyDown = false;
+            this.ckM_TextBox6.IsFirstTime = true;
+            this.ckM_TextBox6.isMaxLengthErr = false;
             this.ckM_TextBox6.IsNumber = true;
             this.ckM_TextBox6.IsShop = false;
             this.ckM_TextBox6.Length = 300;
@@ -589,6 +565,7 @@
             this.ckM_TextBox7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox7.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox7.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox7.DecimalPlace = 0;
@@ -597,6 +574,8 @@
             this.ckM_TextBox7.IntegerPart = 0;
             this.ckM_TextBox7.IsCorrectDate = false;
             this.ckM_TextBox7.isEnterKeyDown = false;
+            this.ckM_TextBox7.IsFirstTime = true;
+            this.ckM_TextBox7.isMaxLengthErr = false;
             this.ckM_TextBox7.IsNumber = true;
             this.ckM_TextBox7.IsShop = false;
             this.ckM_TextBox7.Length = 300;
@@ -684,7 +663,8 @@
             this.ScStaff.ChangeDate = "";
             this.ScStaff.ChangeDateWidth = 100;
             this.ScStaff.Code = "";
-            this.ScStaff.CodeWidth = 100;
+            this.ScStaff.CodeWidth = 70;
+            this.ScStaff.CodeWidth1 = 70;
             this.ScStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStaff.DataCheck = false;
             this.ScStaff.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -693,9 +673,11 @@
             this.ScStaff.LabelText = "";
             this.ScStaff.LabelVisible = true;
             this.ScStaff.Location = new System.Drawing.Point(106, 69);
+            this.ScStaff.Margin = new System.Windows.Forms.Padding(0);
             this.ScStaff.Name = "ScStaff";
+            this.ScStaff.NameWidth = 250;
             this.ScStaff.SearchEnable = true;
-            this.ScStaff.Size = new System.Drawing.Size(344, 28);
+            this.ScStaff.Size = new System.Drawing.Size(354, 28);
             this.ScStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.ScStaff.TabIndex = 4;
             this.ScStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -710,7 +692,8 @@
             this.ScOrder.ChangeDate = "";
             this.ScOrder.ChangeDateWidth = 100;
             this.ScOrder.Code = "";
-            this.ScOrder.CodeWidth = 130;
+            this.ScOrder.CodeWidth = 100;
+            this.ScOrder.CodeWidth1 = 100;
             this.ScOrder.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScOrder.DataCheck = true;
             this.ScOrder.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -719,7 +702,9 @@
             this.ScOrder.LabelText = "";
             this.ScOrder.LabelVisible = true;
             this.ScOrder.Location = new System.Drawing.Point(106, 38);
+            this.ScOrder.Margin = new System.Windows.Forms.Padding(0);
             this.ScOrder.Name = "ScOrder";
+            this.ScOrder.NameWidth = 310;
             this.ScOrder.SearchEnable = true;
             this.ScOrder.Size = new System.Drawing.Size(444, 28);
             this.ScOrder.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -730,6 +715,67 @@
             this.ScOrder.Value2 = null;
             this.ScOrder.Value3 = null;
             // 
+            // colOrderNO
+            // 
+            this.colOrderNO.DataPropertyName = "OrderNO";
+            this.colOrderNO.HeaderText = "発注番号";
+            this.colOrderNO.Name = "colOrderNO";
+            this.colOrderNO.ReadOnly = true;
+            // 
+            // colApprovalStageFLG
+            // 
+            this.colApprovalStageFLG.DataPropertyName = "ApprovalStageFLG";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colApprovalStageFLG.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colApprovalStageFLG.HeaderText = "承認";
+            this.colApprovalStageFLG.Name = "colApprovalStageFLG";
+            this.colApprovalStageFLG.ReadOnly = true;
+            this.colApprovalStageFLG.Width = 80;
+            // 
+            // coIOrderDate
+            // 
+            this.coIOrderDate.DataPropertyName = "OrderDate";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.coIOrderDate.DefaultCellStyle = dataGridViewCellStyle4;
+            this.coIOrderDate.HeaderText = "発注日";
+            this.coIOrderDate.Name = "coIOrderDate";
+            this.coIOrderDate.ReadOnly = true;
+            this.coIOrderDate.Width = 80;
+            // 
+            // colReturnFLG
+            // 
+            this.colReturnFLG.DataPropertyName = "ReturnFLG";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colReturnFLG.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colReturnFLG.HeaderText = " ";
+            this.colReturnFLG.Name = "colReturnFLG";
+            this.colReturnFLG.ReadOnly = true;
+            this.colReturnFLG.Width = 20;
+            // 
+            // colVendorName
+            // 
+            this.colVendorName.DataPropertyName = "VendorName";
+            this.colVendorName.HeaderText = "仕入先";
+            this.colVendorName.Name = "colVendorName";
+            this.colVendorName.ReadOnly = true;
+            this.colVendorName.Width = 300;
+            // 
+            // colDeliveryName
+            // 
+            this.colDeliveryName.DataPropertyName = "DeliveryName";
+            this.colDeliveryName.HeaderText = "納入先";
+            this.colDeliveryName.Name = "colDeliveryName";
+            this.colDeliveryName.ReadOnly = true;
+            this.colDeliveryName.Width = 250;
+            // 
+            // colDeliveryAddress
+            // 
+            this.colDeliveryAddress.DataPropertyName = "DeliveryAddress";
+            this.colDeliveryAddress.HeaderText = "納入先住所";
+            this.colDeliveryAddress.Name = "colDeliveryAddress";
+            this.colDeliveryAddress.ReadOnly = true;
+            this.colDeliveryAddress.Width = 250;
+            // 
             // Search_HacchuuNO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -737,6 +783,7 @@
             this.ClientSize = new System.Drawing.Size(1062, 682);
             this.Controls.Add(this.GvDetail);
             this.F11Visible = true;
+            this.F12Visible = true;
             this.F9Visible = true;
             this.Name = "Search_HacchuuNO";
             this.PanelHeaderHeight = 310;
@@ -783,6 +830,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colOrderNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn colApprovalStageFLG;
         private System.Windows.Forms.DataGridViewTextBoxColumn coIOrderDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colReturnFLG;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVendorName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDeliveryName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDeliveryAddress;

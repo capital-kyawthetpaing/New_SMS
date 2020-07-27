@@ -61,6 +61,10 @@
       <Project>{83d6364b-73ea-4288-bce7-55a1119ee5a2}</Project>
       <Name>Search</Name>
     </ProjectReference>
+    <Reference Include="GridControl, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Search\RequiredDLL\GridControl.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data.DataSetExtensions" />
