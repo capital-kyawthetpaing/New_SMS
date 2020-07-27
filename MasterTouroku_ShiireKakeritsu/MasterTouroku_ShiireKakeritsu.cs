@@ -923,6 +923,13 @@ namespace MasterTouroku_ShiireKakeritsu
         }
         private bool ErrorCheckForExcel()
         {
+
+            if (String.IsNullOrWhiteSpace(scSupplierCD.TxtCode.Text))
+            {
+                mskbl.ShowMessage("E102");
+                scSupplierCD.Focus();
+                return false;
+            }
             OpenFileDialog op = new OpenFileDialog
             {
                 InitialDirectory = @"C:\",
@@ -951,6 +958,8 @@ namespace MasterTouroku_ShiireKakeritsu
                             {
                                 mskbl.ShowMessage("E230");
                                 rowse = "1";
+                                dtExcel.Rows[i].Delete();
+                                continue;
                             }
                             if (!String.IsNullOrEmpty(dtExcel.Rows[i][1].ToString()) && dtExcel.Rows[i][1].ToString() != "0000")
                             {
@@ -959,11 +968,15 @@ namespace MasterTouroku_ShiireKakeritsu
                                 {
                                     mskbl.ShowMessage("E138");
                                     rowse = "1";
+                                    dtExcel.Rows[i].Delete();
+                                    continue;
                                 }
                                 if (!base.CheckAvailableStores(dtExcel.Rows[i][1].ToString()))
                                 {
                                     bbl.ShowMessage("E141");
                                     rowse = "1";
+                                    dtExcel.Rows[i].Delete();
+                                    continue;
                                 }
                             }
                             if (!String.IsNullOrEmpty(dtExcel.Rows[i][2].ToString()))
@@ -973,6 +986,8 @@ namespace MasterTouroku_ShiireKakeritsu
                                 {
                                     mskbl.ShowMessage("E138");
                                     rowse = "1";
+                                    dtExcel.Rows[i].Delete();
+                                    continue;
                                 }
                                 //if (mskbl.SimpleSelect1("64", string.Empty, "202", dtExcel.Columns["ブランドCD"].ToString()).Rows.Count < 0)
                                 //{
@@ -987,12 +1002,16 @@ namespace MasterTouroku_ShiireKakeritsu
                                 {
                                     mskbl.ShowMessage("E138");
                                     rowse = "1";
+                                    dtExcel.Rows[i].Delete();
+                                    continue;
                                 }
                             }
                             if (String.IsNullOrEmpty(dtExcel.Rows[i][3].ToString()) && !string.IsNullOrEmpty(dtExcel.Rows[i][4].ToString()))
                             {
                                 mskbl.ShowMessage("E229");
                                 rowse = "1";
+                                dtExcel.Rows[i].Delete();
+                                continue;
                             }
                             if (string.IsNullOrEmpty(dtExcel.Rows[i][4].ToString()))
                             {
@@ -1000,6 +1019,8 @@ namespace MasterTouroku_ShiireKakeritsu
                                 {
                                     mskbl.ShowMessage("E138");
                                     rowse = "1";
+                                    dtExcel.Rows[i].Delete();
+                                    continue;
                                 }
                             }
                             if (String.IsNullOrEmpty(dtExcel.Rows[i][4].ToString()) && !string.IsNullOrEmpty(dtExcel.Rows[i][5].ToString()))
@@ -1007,6 +1028,8 @@ namespace MasterTouroku_ShiireKakeritsu
 
                                 mskbl.ShowMessage("E229");
                                 rowse = "1";
+                                dtExcel.Rows[i].Delete();
+                                continue;
                             }
 
                             if (String.IsNullOrEmpty(dtExcel.Rows[i][5].ToString()))
@@ -1015,12 +1038,16 @@ namespace MasterTouroku_ShiireKakeritsu
                                 {
                                     mskbl.ShowMessage("E138");
                                     rowse = "1";
+                                    dtExcel.Rows[i].Delete();
+                                    continue;
                                 }
                             }
                             if (String.IsNullOrEmpty(dtExcel.Rows[i][5].ToString()) && !string.IsNullOrEmpty(dtExcel.Rows[i][6].ToString()))
                             {
                                 mskbl.ShowMessage("E229");
                                 rowse = "1";
+                                dtExcel.Rows[i].Delete();
+                                continue;
                             }
                             if (String.IsNullOrEmpty(dtExcel.Rows[i][6].ToString()))
                             {
@@ -1028,12 +1055,16 @@ namespace MasterTouroku_ShiireKakeritsu
                                 {
                                     mskbl.ShowMessage("E138");
                                     rowse = "1";
+                                    dtExcel.Rows[i].Delete();
+                                    continue;
                                 }
                             }
                             if (String.IsNullOrEmpty(dtExcel.Rows[i][7].ToString()))
                             {
                                 mskbl.ShowMessage("E103");
                                 rowse = "1";
+                                dtExcel.Rows[i].Delete();
+                                continue;
                             }
                             if (!String.IsNullOrWhiteSpace(dtExcel.Rows[i][7].ToString()))
                             {
@@ -1048,12 +1079,14 @@ namespace MasterTouroku_ShiireKakeritsu
                                 {
                                     mskbl.ShowMessage("E103");
                                     rowse = "1";
+                                    dtExcel.Rows[i].Delete();
+                                    continue;
                                 }
                             }
-                            if (rowse == "1")
-                            {
-                                dtExcel.Rows[i].Delete();
-                            }
+                            //if (rowse == "1")
+                            //{
+                            //    dtExcel.Rows[i].Delete();
+                            //}
                         }
                     }
                     else
