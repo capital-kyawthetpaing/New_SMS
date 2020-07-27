@@ -382,6 +382,7 @@ namespace MasterTouroku_ShiireKakeritsu
             if (dgv_ShiireKakeritsu.DataSource != null)
             {
                 DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
+                dvMain = new DataView(dtMain);
                 dvMain.RowFilter = searchCondition;
                 dgv_ShiireKakeritsu.DataSource = dvMain;
             }
@@ -806,9 +807,6 @@ namespace MasterTouroku_ShiireKakeritsu
             //dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
             //dtMain = view.Table;
             dgv_ShiireKakeritsu.DataSource =dvMain;
-            //dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
-            //dvMain = new DataView(dtMain);
-            //dgv_ShiireKakeritsu.DataSource = dvMain;
         }
         #endregion
 
@@ -956,7 +954,6 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
                 else
                 {
-                    //String rowse = "0";
                     dtExcel = ExcelToDatatable(str);
                     string[] colname = { "仕入先CD", "店舗CD", "改定日", "掛率" };
                     if (ColumnCheck(colname, dtExcel))
