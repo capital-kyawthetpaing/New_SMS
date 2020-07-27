@@ -3147,18 +3147,18 @@ namespace MitsumoriNyuuryoku
         {
             try
             {
+                int w_Row;
+                Control w_ActCtl;
+
+                w_ActCtl = (Control)sender;
+                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
+
                 //Enterキー押下時処理
                 //Returnキーが押されているか調べる
                 //AltかCtrlキーが押されている時は、本来の動作をさせる
                 if ((e.KeyCode == Keys.Return) &&
                     ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
                 {
-                    int w_Row;
-                    Control w_ActCtl;
-
-                    w_ActCtl = (Control)sender;
-                    w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
-
                     //どの項目か判別
                     int CL=-1;
                     string ctlName = "";
@@ -3355,7 +3355,16 @@ namespace MitsumoriNyuuryoku
                     //行き先がなかったら移動しない
                     S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
                 }
+                else if (e.KeyCode == Keys.Tab)
+                {
+                    if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int CL, out int w_CtlRow) == false)
+                    {
+                        return;
+                    }
 
+                    if (CL == (int)ClsGridMitsumori.ColNO.NotPrintFLG )
+                        S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+                }
             }
             catch (Exception ex)
             {
