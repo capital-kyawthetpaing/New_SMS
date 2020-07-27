@@ -227,6 +227,7 @@
             this.ckM_TextBox6.IntegerPart = 0;
             this.ckM_TextBox6.IsCorrectDate = true;
             this.ckM_TextBox6.isEnterKeyDown = false;
+            this.ckM_TextBox6.IsFirstTime = true;
             this.ckM_TextBox6.isMaxLengthErr = false;
             this.ckM_TextBox6.IsNumber = true;
             this.ckM_TextBox6.IsShop = false;
@@ -256,6 +257,7 @@
             this.ckM_TextBox5.IntegerPart = 0;
             this.ckM_TextBox5.IsCorrectDate = true;
             this.ckM_TextBox5.isEnterKeyDown = false;
+            this.ckM_TextBox5.IsFirstTime = true;
             this.ckM_TextBox5.isMaxLengthErr = false;
             this.ckM_TextBox5.IsNumber = true;
             this.ckM_TextBox5.IsShop = false;
@@ -319,6 +321,7 @@
             this.ckM_TextBox2.IntegerPart = 0;
             this.ckM_TextBox2.IsCorrectDate = true;
             this.ckM_TextBox2.isEnterKeyDown = false;
+            this.ckM_TextBox2.IsFirstTime = true;
             this.ckM_TextBox2.isMaxLengthErr = false;
             this.ckM_TextBox2.IsNumber = true;
             this.ckM_TextBox2.IsShop = false;
@@ -341,13 +344,14 @@
             this.ckM_TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ckM_TextBox4.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ckM_TextBox4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.YearMonth;
             this.ckM_TextBox4.DecimalPlace = 0;
             this.ckM_TextBox4.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.ckM_TextBox4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox4.IntegerPart = 0;
             this.ckM_TextBox4.IsCorrectDate = true;
             this.ckM_TextBox4.isEnterKeyDown = false;
+            this.ckM_TextBox4.IsFirstTime = true;
             this.ckM_TextBox4.isMaxLengthErr = false;
             this.ckM_TextBox4.IsNumber = true;
             this.ckM_TextBox4.IsShop = false;
@@ -387,13 +391,14 @@
             this.ckM_TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ckM_TextBox3.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ckM_TextBox3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.YearMonth;
             this.ckM_TextBox3.DecimalPlace = 0;
             this.ckM_TextBox3.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.ckM_TextBox3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox3.IntegerPart = 0;
             this.ckM_TextBox3.IsCorrectDate = true;
             this.ckM_TextBox3.isEnterKeyDown = false;
+            this.ckM_TextBox3.IsFirstTime = true;
             this.ckM_TextBox3.isMaxLengthErr = false;
             this.ckM_TextBox3.IsNumber = true;
             this.ckM_TextBox3.IsShop = false;
@@ -423,6 +428,7 @@
             this.ckM_TextBox1.IntegerPart = 0;
             this.ckM_TextBox1.IsCorrectDate = true;
             this.ckM_TextBox1.isEnterKeyDown = false;
+            this.ckM_TextBox1.IsFirstTime = true;
             this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
