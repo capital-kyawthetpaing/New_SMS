@@ -956,7 +956,7 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
                 else
                 {
-                    String rowse = "0";
+                    //String rowse = "0";
                     dtExcel = ExcelToDatatable(str);
                     string[] colname = { "仕入先CD", "店舗CD", "改定日", "掛率" };
                     if (ColumnCheck(colname, dtExcel))
@@ -964,6 +964,7 @@ namespace MasterTouroku_ShiireKakeritsu
                         for (int i = 0; i < dtExcel.Rows.Count; i++)
                         {
                             string vall = dtExcel.Rows[i][1].ToString();
+                            String rowse = "0";
                             if (dtExcel.Rows[i][0].ToString() != scSupplierCD.TxtCode.Text)
                             {
                                 mskbl.ShowMessage("E230");
@@ -985,7 +986,7 @@ namespace MasterTouroku_ShiireKakeritsu
                             }
                             if (!String.IsNullOrEmpty(dtExcel.Rows[i][2].ToString()))
                             {
-                                DataTable dtResult = bbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 15, dtExcel.Rows[i][2].ToString());
+                                DataTable dtResult = bbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 11, dtExcel.Rows[i][2].ToString());
                                 if (dtResult.Rows.Count == 0)
                                 {
                                     mskbl.ShowMessage("E138");
