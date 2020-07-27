@@ -1,8 +1,11 @@
 ﻿using Base.Client;
 using BL;
+using DL;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace TempoRegiRyousyuusyo
@@ -55,7 +58,10 @@ namespace TempoRegiRyousyuusyo
         /// </summary>
         public TempoRegiRyousyuusyo()
         {
+            Start_Display();
             InitializeComponent();
+          
+
         }
 
         /// <summary>
@@ -96,6 +102,7 @@ namespace TempoRegiRyousyuusyo
                 Print();
                 Close();
             }
+            Stop_DisplayService();
         }
 
         /// <summary>
@@ -162,6 +169,7 @@ namespace TempoRegiRyousyuusyo
 
         protected override void EndSec()
         {
+            RunDisplay_Service();
             this.Close();
         }
 
@@ -198,18 +206,36 @@ namespace TempoRegiRyousyuusyo
                 else
                 {
                     // 領収書、レシートいずれかにチェックありの場合
+                    bool Isboth = chkRyousyuusho.Checked && chkReceipt.Checked;
                     if (chkRyousyuusho.Checked)
                     {
                         // 領収書チェックボックスにチェックあり
                         var ryousyuusyo = bl.D_RyousyuusyoSelect(txtSalesNO.Text, txtPrintDate.Text);
                         if (ryousyuusyo.Rows.Count > 0)
                         {
+                            try
+                            {
+                                cdo.RemoveDisplay(true);
+                                cdo.RemoveDisplay(true);
+                            }
+                            catch { }
                             OutputRyouusyusyo(ryousyuusyo);
+                            try
+                            {
+                                Thread.Sleep(2000);
+                                Stop_DisplayService();
+                            }
+                            catch (Exception ex){ MessageBox.Show(ex.Message); }
+
+                            if (!Isboth)
+                            Stop_DisplayService();
                         }
                         else
                         {
+
                             bl.ShowMessage("E128");
                             txtSalesNO.Focus();
+                           
                         }
                     }
 
@@ -221,14 +247,25 @@ namespace TempoRegiRyousyuusyo
                         var receiptData = bl.D_ReceiptSelect(txtSalesNO.Text, chkReissue.Checked);
                         if (receiptData.Rows.Count > 0)
                         {
+                            try
+                            {
+                                cdo.RemoveDisplay(true);
+                                cdo.RemoveDisplay(true);
+                            }
+                            catch { }
                             OutputReceipt(receiptData);
+                           
+                            Stop_DisplayService();
                         }
                         else
                         {
                             bl.ShowMessage("E128");
                             txtSalesNO.Focus();
+                            Stop_DisplayService();
+                            return;
                         }
                     }
+                
                 }
             }
         }
@@ -299,11 +336,13 @@ namespace TempoRegiRyousyuusyo
             ryousyuusyoDataSet.D_SelectData_ForTempoRegiRyousyuusyo.Rows.Add(ryousyuusyoRow);
 
             // 出力
+           // mmmas
             var report = new TempoRegiRyousyuusyo_Report();
             report.SetDataSource(ryousyuusyoDataSet);
             report.Refresh();
             report.PrintOptions.PrinterName = StorePrinterName;
             report.PrintToPrinter(0, false, 0, 0);
+            
         }
 
         /// <summary>
@@ -470,7 +509,7 @@ namespace TempoRegiRyousyuusyo
                         break;
                 }
             }
-
+    
             receiptDataSet.ReceiptTable.Rows.Add(receiptRow);
 
             var report = new TempoRegiRyousyuusyo_Receipt();
@@ -488,6 +527,8 @@ namespace TempoRegiRyousyuusyo
             journal.Refresh();
             journal.PrintOptions.PrinterName = StorePrinterName;
             journal.PrintToPrinter(0, false, 0, 0);
+           
+
         }
 
         /// <summary>
@@ -599,5 +640,95 @@ namespace TempoRegiRyousyuusyo
                 btnClose.Focus();
             }
         }
+        protected void Kill(string pth)
+        {
+            try
+            {
+                Process[] processCollection = Process.GetProcessesByName(pth.Replace(".exe", ""));
+                foreach (Process p in processCollection)
+                {
+                    p.Kill();
+                }
+
+                Process[] processCollections = Process.GetProcessesByName(pth + ".exe");
+                foreach (Process p in processCollections)
+                {
+                    p.Kill();
+                }
+            }
+            catch { }
+        }
+        private void Stop_DisplayService(bool isForced = true)
+        {
+            if (Base_DL.iniEntity.IsDM_D30Used)
+            {
+
+                Login_BL bbl_1 = new Login_BL();
+                if (bbl_1.ReadConfig())
+                {
+                    bbl_1.Display_Service_Update(false);
+                    Thread.Sleep(2 * 1000);
+                    bbl_1.Display_Service_Enabled(false);
+                }
+                else
+                {
+                    bbl_1.Display_Service_Update(false);
+                    Thread.Sleep(2 * 1000);
+                    bbl_1.Display_Service_Enabled(false);
+                }
+                try
+                {
+                    Kill("Display_Service");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.StackTrace.ToString());
+                }
+                if (isForced) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+                //Base_DL.iniEntity.CDO_DISPLAY.SetDisplay(true, true,Base_DL.iniEntity.DefaultMessage);
+            }
+        }
+        private void RunDisplay_Service()  // Make when we want to run display_service
+        {
+            try
+            {
+                if (Base_DL.iniEntity.IsDM_D30Used)
+                {
+                    cdo.RemoveDisplay(true);
+                    Login_BL bbl_1 = new Login_BL();
+                    bbl_1.Display_Service_Update(true);
+                    bbl_1.Display_Service_Enabled(true);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in removing display. . .");
+            }
+        }
+        private void Start_Display()
+        {
+            try
+            {
+                if (Base_DL.iniEntity.IsDM_D30Used)
+                {
+                    Login_BL bbl_1 = new Login_BL();
+                    if (bbl_1.ReadConfig())
+                    {
+                        bbl_1.Display_Service_Update(false);
+                        Thread.Sleep(2 * 1000);
+                        bbl_1.Display_Service_Enabled(false);
+                    }
+                    else
+                    {
+                        bbl_1.Display_Service_Update(false);
+                        Thread.Sleep(2 * 1000);
+                        bbl_1.Display_Service_Enabled(false);
+                    }
+                    Kill("Display_Service");
+                }
+            }
+            catch (Exception ex) { MessageBox.Show("Cant remove on second time" + ex.StackTrace); }
+        }
+        EPSON_TM30.CashDrawerOpen cdo = new EPSON_TM30.CashDrawerOpen();
     }
 }

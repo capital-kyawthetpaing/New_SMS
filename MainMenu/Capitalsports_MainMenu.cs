@@ -404,21 +404,22 @@ namespace MainMenu
                     //    return;
                     //}
 
-                    if (programID.TrimEnd() == "販売登録" || exe_name == "TempoRegiHanbaiTouroku" ||exe_name == "TempoRegiHanbaiTouroku.exe")
-                    {
-                        try
-                        {
-                            if (Base_DL.iniEntity.IsDM_D30Used)
-                            {
-                                cdo.RemoveDisplay();
-                            }
-                            // Base_DL.Ini_Entity_CDP.CDO_DISPLAY.RemoveDisplay();
-                        }
-                        catch
-                        {
-                            MessageBox.Show("Reclick on HBT");
-                        }
-                    }
+                    //if (exe_name == "TempoRegiHanbaiTouroku" )
+                    //{
+                    //    try
+                    //    {
+                    //        if (Base_DL.iniEntity.IsDM_D30Used)
+                    //        {
+                    //            cdo.RemoveDisplay();
+                    //        }
+                    //        // Base_DL.Ini_Entity_CDP.CDO_DISPLAY.RemoveDisplay();
+                    //    }
+                    //    catch
+                    //    {
+                    //        MessageBox.Show("Reclick on HBT");
+                    //    }
+                    //}
+                    RejectDisplay(exe_name);
                     Process[] localByName = Process.GetProcessesByName(exe_name);
                     if (localByName.Count() > 0)
                     {
@@ -470,7 +471,31 @@ namespace MainMenu
                 MessageBox.Show("The program cannot locate to the specified file!!!");
             }
         }
+        private void RejectDisplay(string Exename)
+        {
+            string[] str = new string[] {"TempoRegiHanbaiTouroku" ,"TempoRegiPoint", "TempoRegiRyousyuusyo",
+                "TempoRegiTorihikiReceipt","TempoRegiRyougaeNyuuryoku", "TempoRegiShiharaiNyuuryoku", "TempoRegiTsurisenJyunbi","TempoRegiNyuukinTouroku" };
 
+            foreach (var f in str)
+            {
+                if (Exename == f)
+                {
+                    try
+                    {
+                        if (Base_DL.iniEntity.IsDM_D30Used)
+                        {
+                            cdo.RemoveDisplay();
+                        }
+                        // Base_DL.Ini_Entity_CDP.CDO_DISPLAY.RemoveDisplay();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Reclick on HBT");
+                    }
+                    break;
+                }
+            }
+        }
         private void ckM_Button1_Click(object sender, EventArgs e)
         {
             ForceToclose();
