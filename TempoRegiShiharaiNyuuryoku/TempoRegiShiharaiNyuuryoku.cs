@@ -68,7 +68,14 @@ namespace TempoRegiShiharaiNyuuryoku
                 txtPayment.Focus();
                 return false;
             }
-            if(cboDenominationName.SelectedValue.ToString() == "-1")
+            DataTable dt = new DataTable();
+            dt = trgshbl.SimpleSelect1("70", ChangeDate.Replace("/", "-"), InOperatorCD);
+            if (dt.Rows.Count > 0)
+            {
+                trgshbl.ShowMessage("E252");
+                return false;
+            }
+            if (cboDenominationName.SelectedValue.ToString() == "-1")
             {
                 trgshbl.ShowMessage("E102");
                 cboDenominationName.Focus();
@@ -100,8 +107,12 @@ namespace TempoRegiShiharaiNyuuryoku
             {
                 if (trgshbl.ShowMessage("Q101") == DialogResult.Yes)
                 {
-                   
-                    ddpe = GetDepositEntity();
+                    DataTable dt = new DataTable();
+                    dt = trgshbl.SimpleSelect1("70", ChangeDate.Replace("/", "-"),InOperatorCD);
+                    if (dt.Rows.Count > 0)
+                    {
+                        trgshbl.ShowMessage("E252");
+                    }
                     if (trgshbl.TempoRegiShiNyuuryoku_InsertUpdate(ddpe))
                     {
                         trgshbl.ShowMessage("I101");

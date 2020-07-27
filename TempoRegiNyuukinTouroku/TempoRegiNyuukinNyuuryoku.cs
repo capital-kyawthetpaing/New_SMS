@@ -66,7 +66,13 @@ namespace TempoRegiNyuukinTouroku
 
             if (!RequireCheck(new Control[] { txtPayment, cboDenominationName }))
                 return false;
-
+            DataTable dt = new DataTable();
+            dt = trntBL.SimpleSelect1("70", ChangeDate.Replace("/", "-"), StoreCD);
+            if (dt.Rows.Count > 0)
+            {
+                trntBL.ShowMessage("E252");
+                return false;
+            }
             if (!string.IsNullOrWhiteSpace(txtCustomerCD.Text))
             {
                 DataTable dtCust = new DataTable();
@@ -102,7 +108,12 @@ namespace TempoRegiNyuukinTouroku
             {
                 if (trntBL.ShowMessage("Q101") == DialogResult.Yes)
                 {
-                  
+                    DataTable dt = new DataTable();
+                    dt = trntBL.SimpleSelect1("70", ChangeDate.Replace("/", "-"), StoreCD);
+                    if (dt.Rows.Count > 0)
+                    {
+                        trntBL.ShowMessage("E252");
+                    }
                     ddpe = GetDepositEntity();
                     if (trntBL.TempoNyuukinTouroku_D_DepositHistory_InsertUpdate(ddpe))
                     {
@@ -217,7 +228,7 @@ namespace TempoRegiNyuukinTouroku
             {
                 txtCustomerCD.Text = kaiinkensaku.CustomerCD;
                 lblCustomerName.Text = kaiinkensaku.CustomerName;
-                //txtCustomerCD.Focus();
+                txtCustomerCD.Focus();
             }
         }
 

@@ -140,14 +140,14 @@ namespace TempoRegiTorihikiReceipt
             {
                 case MODE_DEPOSIT:
                     // 雑入金取得
-                    var miscDeposit = bl.D_MiscDepositSelect(InputDepositNO);
+                    var miscDeposit = bl.D_MiscDepositSelect(InputDepositNO, InOperatorCD);
                     if (miscDeposit.Rows.Count > 0)
                     {
                         CreateMiscDepositDataSet(miscDeposit, torihikiReceiptDataSet);
                     }
 
                     // 入金取得
-                    var deposit = bl.D_DepositSelect(InputDepositNO);
+                    var deposit = bl.D_DepositSelect(InputDepositNO, InOperatorCD);
                     if (deposit.Rows.Count > 0)
                     {
                         CreateDepositDataSet(deposit, torihikiReceiptDataSet);
@@ -198,7 +198,7 @@ namespace TempoRegiTorihikiReceipt
 
                 case MODE_PAYMENT:
                     // 雑出金取得
-                    var miscPayment = bl.D_MiscPaymentSelect(InputDepositNO);
+                    var miscPayment = bl.D_MiscPaymentSelect(InputDepositNO, InOperatorCD);
                     if (miscPayment.Rows.Count > 0)
                     {
                         CreateMiscPaymentDataSet(miscPayment, torihikiReceiptDataSet);
@@ -220,7 +220,7 @@ namespace TempoRegiTorihikiReceipt
 
                 case MODE_EXCHANGE:
                     // 両替取得
-                    var exchange = bl.D_ExchangeSelect(InputDepositNO);
+                    var exchange = bl.D_ExchangeSelect(InputDepositNO, InOperatorCD);
                     if (exchange.Rows.Count > 0)
                     {
                         CreateExchangeDataSet(exchange, torihikiReceiptDataSet);
@@ -242,7 +242,7 @@ namespace TempoRegiTorihikiReceipt
 
                 case MODE_CHANGE_PREPARATION:
                     // 釣銭準備
-                    var changePreparation = bl.D_ChangePreparationSelect(InputDepositNO);
+                    var changePreparation = bl.D_ChangePreparationSelect(InputDepositNO, InOperatorCD);
                     if (changePreparation.Rows.Count > 0)
                     {
                         CreateChangePreparationDataSet(changePreparation, torihikiReceiptDataSet);

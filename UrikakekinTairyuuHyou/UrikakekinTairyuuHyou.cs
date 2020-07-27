@@ -154,7 +154,7 @@ namespace UrikakekinTairyuuHyou
                         string[] strmonth = new string[12];
                         for (int i = 11; i >= 0; i--)
                         {
-                            strmonth[i] = now.AddMonths(-i).ToString().Substring(0, 7);
+                            strmonth[i] = now.AddMonths(-i).ToString().Substring(0, 7).ToString();
                         }
 
                         DataTable dt=ukkthbl.Select_DataToExport(msce);
@@ -162,7 +162,7 @@ namespace UrikakekinTairyuuHyou
                         //dr["CustomerCD"] = "";
                         //dr["CustomerName"] = "";
                         //dr["SaleA"] = "";
-                        //dr["11"] = strmonth[11].ToString();
+                        //dr["11"] = Convert.ToString(strmonth[11]);
                         //dr["10"] = strmonth[10].ToString();
                         //dr["9"] = strmonth[9].ToString();
                         //dr["8"] = strmonth[8].ToString();
@@ -182,14 +182,32 @@ namespace UrikakekinTairyuuHyou
                             for (int i = 0; i < dt.Rows.Count; i++)
                             {
                                 if (customerCD != dt.Rows[i]["CustomerCD"].ToString())
-                                {
                                     customerCD = dt.Rows[i]["CustomerCD"].ToString();
-                                    DataRow[] row = dt.Select("SaleA='売上' and CustomerCD='" + customerCD + "'");
 
+                                DataTable dtResult = dt.Select("SaleA='売上' and CustomerCD='" + customerCD + "'").CopyToDataTable();
+                                if(dtResult.Rows.Count==1)
+                                {
+                                    dt.Rows[i]["Result"] = dtResult.Rows[0]["Result"].ToString();
                                 }
+
                             }
+                            //dt.Columns["CustomerCD"].ColumnName =" ";
+                            //dt.Columns["CustomerName"].ColumnName = " ";
+                            //dt.Columns["SaleA"].ColumnName = " ";
+                            dt.Columns["11"].ColumnName = strmonth[11].ToString();
+                            dt.Columns["10"].ColumnName = strmonth[10].ToString();
+                            dt.Columns["9"].ColumnName = strmonth[9].ToString();
+                            dt.Columns["8"].ColumnName = strmonth[8].ToString();
+                            dt.Columns["7"].ColumnName = strmonth[7].ToString();
+                            dt.Columns["6"].ColumnName = strmonth[6].ToString();
+                            dt.Columns["5"].ColumnName = strmonth[5].ToString();
+                            dt.Columns["4"].ColumnName = strmonth[4].ToString();
+                            dt.Columns["3"].ColumnName = strmonth[3].ToString();
+                            dt.Columns["2"].ColumnName = strmonth[2].ToString();
+                            dt.Columns["1"].ColumnName = strmonth[1].ToString();
+                            dt.Columns["0"].ColumnName = strmonth[0].ToString();
+
                             DataTable dtExport = dt;
-                           // dtExport = ChangeDataColumnName(dtExport);
                             string folderPath = "C:\\SMS\\";
                             if (!Directory.Exists(folderPath))
                             {
@@ -204,6 +222,50 @@ namespace UrikakekinTairyuuHyou
                             savedialog.RestoreDirectory = true;
                             if (savedialog.ShowDialog() == DialogResult.OK)
                             {
+                                #region Test
+                                //Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+                                //excel.Application.Workbooks.Add(Type.Missing);
+                                //excel.Columns.AutoFit();
+                                //for(int i=3; i< dtExport.Columns.Count+1; i++)
+                                //{
+                                //    Microsoft.Office.Interop.Excel.Range xlRange = (Microsoft.Office.Interop.Excel.Range)excel.Cells[3, i];
+                                //    //xlRange.Font.Bold = -1;
+                                //    xlRange.Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+                                //    xlRange.Borders.Weight = 1d;
+                                //    xlRange.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                                //    excel.Cells[3, i] = dtExport.Columns[i - 1].ColumnName;
+                                //}
+
+                                ///*For storing Each row and column value to excel sheet*/
+                                //for (int i = 1; i < dtExport.Rows.Count; i++)
+                                //{
+                                //    for (int j = 0; j < dtExport.Columns.Count; j++)
+                                //    {
+                                //        if (dtExport.Rows[i][j] != null)
+                                //        {
+                                //            Microsoft.Office.Interop.Excel.Range xlRange = (Microsoft.Office.Interop.Excel.Range)excel.Cells[i + 2, j + 1];
+                                //            xlRange.Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+                                //            xlRange.Borders.Weight = 1d;
+                                //            excel.Cells[i + 2, j + 1] = "'"+dtExport.Rows[i][j].ToString();
+                                //        }
+                                //    }
+                                //}
+                                //excel.Columns.AutoFit(); // Auto fix the columns size
+                                //System.Windows.Forms.Application.DoEvents();
+                                //string name = "売掛滞留一覧表印刷";
+                                //if (Directory.Exists("C:\\CTR_Data\\")) // Folder dic
+                                //{
+                                //    excel.ActiveWorkbook.SaveCopyAs("C:\\CTR_Data\\" +name + ".xlsx");
+                                //}
+                                //else
+                                //{
+                                //    Directory.CreateDirectory("C:\\CTR_Data\\");
+                                //    excel.ActiveWorkbook.SaveCopyAs("C:\\CTR_Data\\" + name + ".xlsx");
+                                //}
+                                //excel.ActiveWorkbook.Saved = true;
+                                //System.Windows.Forms.Application.DoEvents();
+                                #endregion
+
                                 if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
                                 {
                                     Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
@@ -217,37 +279,45 @@ namespace UrikakekinTairyuuHyou
                                         wb.Worksheets.Add(dtExport, "worksheet");
                                         wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
                                         wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
-                                        //wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
+                                        wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
                                         wb.Worksheet("worksheet").Cell(1, 1).Value = "年月：";
                                         wb.Worksheet("worksheet").Cell(2, 1).Value = "店舗:";
-                                        wb.Worksheet("worksheet").Cell(1, 2).Value = strmonth[11].ToString();
+                                        wb.Worksheet("worksheet").Cell(1, 2).Value = "'" + strmonth[11].ToString();
                                         wb.Worksheet("worksheet").Cell(1, 3).Value = "～";
-                                        wb.Worksheet("worksheet").Cell(1, 4).Value = strmonth[0].ToString();
-                                        wb.Worksheet("worksheet").Cell(2, 2).Value = cboStore.SelectedValue.ToString();
+                                        wb.Worksheet("worksheet").Cell(1, 4).Value = "'" + strmonth[0].ToString();
+                                        wb.Worksheet("worksheet").Cell(2, 2).Value = "'" + cboStore.SelectedValue.ToString();
                                         wb.Worksheet("worksheet").Cell(2, 3).Value = cboStore.Text.ToString();
 
-                                        wb.Worksheet("worksheet").Cell(3, 4).Value = strmonth[11].ToString();
-                                        wb.Worksheet("worksheet").Cell(3, 5).Value = strmonth[10].ToString();
-                                        wb.Worksheet("worksheet").Cell(3, 6).Value = strmonth[9].ToString();
-                                        wb.Worksheet("worksheet").Cell(3, 7).Value = strmonth[8].ToString();
-                                        wb.Worksheet("worksheet").Cell(3, 8).Value = strmonth[7].ToString();
-                                        wb.Worksheet("worksheet").Cell(3, 9).Value = strmonth[6].ToString();
-                                        wb.Worksheet("worksheet").Cell(3, 10).Value = strmonth[5].ToString();
-                                        wb.Worksheet("worksheet").Cell(3, 11).Value = strmonth[4].ToString();
-                                        wb.Worksheet("worksheet").Cell(3, 12).Value = strmonth[3].ToString();
-                                        wb.Worksheet("worksheet").Cell(3, 13).Value = strmonth[2].ToString();
-                                        wb.Worksheet("worksheet").Cell(3, 14).Value = strmonth[1].ToString();
-                                        wb.Worksheet("worksheet").Cell(3, 15).Value = strmonth[0].ToString();
+                                        wb.Worksheet("worksheet").Cell(4, 1).Value = " ";
+                                        wb.Worksheet("worksheet").Cell(4, 2).Value = " ";
+                                        wb.Worksheet("worksheet").Cell(4, 3).Value = " ";
+                                        wb.Worksheet("worksheet").Cell(4, 16).Value = "売掛月数";
 
-                                       
-                                        //wb.Worksheet("worksheet").SetShowRowColHeaders(false);
+                                        //wb.Worksheet("worksheet").Cell(3, 4).Value = "'" + strmonth[11].ToString();
+                                        //wb.Worksheet("worksheet").Cell(3, 5).Value = "'" + strmonth[10].ToString();
+                                        //wb.Worksheet("worksheet").Cell(3, 6).Value = "'" + strmonth[9].ToString();
+                                        //wb.Worksheet("worksheet").Cell(3, 7).Value = "'" + strmonth[8].ToString();
+                                        //wb.Worksheet("worksheet").Cell(3, 8).Value = "'" + strmonth[7].ToString();
+                                        //wb.Worksheet("worksheet").Cell(3, 9).Value = "'" + strmonth[6].ToString();
+                                        //wb.Worksheet("worksheet").Cell(3, 10).Value = "'" + strmonth[5].ToString();
+                                        //wb.Worksheet("worksheet").Cell(3, 11).Value = "'" + strmonth[4].ToString();
+                                        //wb.Worksheet("worksheet").Cell(3, 12).Value = "'" + strmonth[3].ToString();
+                                        //wb.Worksheet("worksheet").Cell(3, 13).Value = "'" + strmonth[2].ToString();
+                                        //wb.Worksheet("worksheet").Cell(3, 14).Value = "'" + strmonth[1].ToString();
+                                        //wb.Worksheet("worksheet").Cell(3, 15).Value = "'" + strmonth[0].ToString();
+                                        //wb.Worksheet("worksheet").Cell(3, 16).Value = "売掛月数";
+
+
+                                        //wb.Worksheet("worksheet").SetShowRowColHeaders(true);
                                         wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;
-                                        wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowHeaderRow = false;
+                                        //wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowHeaderRow = false;
+                                        //wb.Worksheet("worksheet").Rows("4").Delete();
                                         wb.SaveAs(savedialog.FileName);
                                         bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
                                     }
                                     Process.Start(Path.GetDirectoryName(savedialog.FileName));
                                 }
+                               // Process.Start(Path.GetDirectoryName(savedialog.FileName));
                             }
                         }
                         else
@@ -294,6 +364,20 @@ namespace UrikakekinTairyuuHyou
                     }
                     else
                     {
+                        string customerCD = string.Empty;
+                        for (int i = 0; i < dtPrint.Rows.Count; i++)
+                        {
+                            if (customerCD != dtPrint.Rows[i]["CustomerCD"].ToString())
+                                customerCD = dtPrint.Rows[i]["CustomerCD"].ToString();
+
+                            DataTable dtResult = dtPrint.Select("SaleA='売上' and CustomerCD='" + customerCD + "'").CopyToDataTable();
+                            if (dtResult.Rows.Count == 1)
+                            {
+                                dtPrint.Rows[i]["Result"] = dtResult.Rows[0]["Result"].ToString();
+                            }
+
+                        }
+
                         //xsdファイルを保存します。
 
                         //①保存した.xsdはプロジェクトに追加しておきます。
@@ -312,6 +396,8 @@ namespace UrikakekinTairyuuHyou
                                 //}
 
                                 // 印字データをセット
+
+
 
                                 Report.SetDataSource(dtPrint);
                                 Report.Refresh();

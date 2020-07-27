@@ -242,6 +242,7 @@
     <Content Include="StoreProcedure\D_Stock_SelectRackNO.sql" />
     <Content Include="StoreProcedure\D_Stock_SelectSuryo.sql" />
     <Content Include="StoreProcedure\D_Stock_Update.sql" />
+    <Content Include="StoreProcedure\D_StoreCalculationDelete.sql" />
     <Content Include="StoreProcedure\D_StoreCalculation_Insert_Update.sql" />
     <Content Include="StoreProcedure\D_StorePayment_Select.sql" />
     <Content Include="StoreProcedure\D_Store_CalculationSelect.sql" />
@@ -251,6 +252,7 @@
     <Content Include="StoreProcedure\Fnc_GetNumber.sql" />
     <Content Include="StoreProcedure\Fnc_M_ItemOrderPrice_SelectLatest.sql" />
     <Content Include="StoreProcedure\Fnc_M_JANOrderPrice_SelectLatest.sql" />
+    <Content Include="StoreProcedure\Fnc_M_SalesTax_SelectLatest.sql" />
     <Content Include="StoreProcedure\Fnc_M_SKU_SelectLatest.sql" />
     <Content Include="StoreProcedure\Fnc_M_Souko_SelectLatest.sql" />
     <Content Include="StoreProcedure\Fnc_M_Store_SelectLatest.sql" />

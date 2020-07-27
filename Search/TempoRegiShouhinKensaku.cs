@@ -21,6 +21,8 @@ namespace Search
         public string AdminNO = "";
         public string JANCD = "";
         public string SKUName = "";
+        public string Color = "";
+        public string Size = "";
 
         public TempoRegiShouhinKensaku(string Operator)
         {
@@ -102,7 +104,9 @@ namespace Search
         {
             AdminNO = dgvDetail.CurrentRow.Cells["colAdminNO"].Value.ToString();
             SKUName = dgvDetail.CurrentRow.Cells["colSKUName"].Value.ToString();    //added by ETZ 2020-06-22
-            JANCD = dgvDetail.CurrentRow.Cells["colJANCD"].Value.ToString();
+            JANCD = dgvDetail.CurrentRow.Cells["colJANCD"].Value.ToString();        
+            Color = dgvDetail.CurrentRow.Cells["colColorName"].Value.ToString();    //added by ETZ 2020-07-21
+            Size = dgvDetail.CurrentRow.Cells["colSizeName"].Value.ToString();      //added by ETZ 2020-07-21
             this.Close();
         }
 

@@ -11,6 +11,11 @@ namespace TempoRegiJournal
     public partial class TempoRegiJournal : ShopBaseForm
     {
         /// <summary>
+        /// 製品名上段文字数
+        /// </summary>
+        private const int SKU_SHORTNAME_LENGTH = 23*2;
+
+        /// <summary>
         /// BL
         /// </summary>
         TempoRegiJournal_BL bl = new TempoRegiJournal_BL();
@@ -78,7 +83,21 @@ namespace TempoRegiJournal
                 txtPrintDateTo.Focus();
                 return false;
             }
-            else if(Convert.ToDateTime(txtPrintDateFrom.Text).CompareTo(Convert.ToDateTime(txtPrintDateTo.Text)) > 0)
+            else if (!bbl.CheckDate(txtPrintDateFrom.Text))
+            {
+                // 日付エラー
+                bbl.ShowMessage("E103");
+                txtPrintDateFrom.Focus();
+                return false;
+            }
+            else if (!bbl.CheckDate(txtPrintDateTo.Text))
+            {
+                // 日付エラー
+                bbl.ShowMessage("E103");
+                txtPrintDateTo.Focus();
+                return false;
+            }
+            else if (Convert.ToDateTime(txtPrintDateFrom.Text).CompareTo(Convert.ToDateTime(txtPrintDateTo.Text)) > 0)
             {
                 bl.ShowMessage("E130");
                 txtPrintDateFrom.Focus();
@@ -210,8 +229,9 @@ namespace TempoRegiJournal
                 sales.StoreReceiptPrint = storeReceiptPrint;                                    // 店舗レシート表記
                 sales.StaffReceiptPrint = staffReceiptPrint;                                    // 担当レシート表記
                 sales.SalesNO = salesNO;                                                        // 売上番号
-                sales.IssueDate = ConvertDateTime(row["IssueDate"], false);                     // 発行日
-                sales.IssueDateTime = Convert.ToString(row["IssueDate"]);                       // 発行日時
+                //sales.IssueDate = ConvertDateTime(row["IssueDate"], false);                     // 発行日
+                sales.IssueDate = ConvertDateTime(row["IssueDate"], true);                      // 発行日
+                sales.IssueDateTime = ConvertDateTime(row["IssueDate"], false);//Convert.ToString(row["IssueDate"]);                       // 発行日時
                 sales.JanCD = Convert.ToString(row["JanCD"]);                                   // JANCD
 
                 var kakaku = ConvertDecimal(row["Kakaku"]);                                     // 価格
@@ -235,17 +255,19 @@ namespace TempoRegiJournal
                 sales.TotalGaku = ConvertDecimal(row["TotalGaku"]);                             // 販売合計額
 
                 // 商品名
+                var encoding = System.Text.Encoding.GetEncoding("Shift_JIS");
+
                 var skuShortName = Convert.ToString(row["SKUShortName"]);
-                if (skuShortName.Length < 16)
+                byte[] skuShortNameBT = encoding.GetBytes(skuShortName);
+                if (skuShortNameBT.Length < SKU_SHORTNAME_LENGTH)
                 {
                     sales.SKUShortName1 = skuShortName;
                     sales.SKUShortName2 = "";
                 }
                 else
                 {
-                    var skuShortNames = CountSplit(skuShortName, 16);
-                    sales.SKUShortName1 = skuShortNames[0];
-                    sales.SKUShortName2 = skuShortNames.Length > 1 ? skuShortNames[1] : "";
+                    sales.SKUShortName1 = encoding.GetString(skuShortNameBT, 0, SKU_SHORTNAME_LENGTH);
+                    sales.SKUShortName2 = encoding.GetString(skuShortNameBT, SKU_SHORTNAME_LENGTH, skuShortNameBT.Length - SKU_SHORTNAME_LENGTH);
                 }
 
                 #region 合計データ
@@ -291,14 +313,14 @@ namespace TempoRegiJournal
                 #endregion // 販売データ
 
                 #region 雑入金データ
-                if (storeDataSet.MiscDepositTable.Where(s => s.StoreReceiptPrint == storeReceiptPrint && s.SalesNO == salesNO).FirstOrDefault() == null
-                    && !string.IsNullOrWhiteSpace(ConvertDateTime(row["MiscDepositRegistDate"], true)))
+                var miscDepositRegistDate = ConvertDateTime(row["MiscDepositRegistDate"], true);
+                if (storeDataSet.MiscDepositTable.Where(s => s.StoreReceiptPrint == storeReceiptPrint && s.RegistDate == miscDepositRegistDate).FirstOrDefault() == null)
                 {
                     var miscDeposit = storeDataSet.MiscDepositTable.NewMiscDepositTableRow();
                     miscDeposit.StoreReceiptPrint = storeReceiptPrint;                              // 雑入金店舗レシート表記
                     miscDeposit.StaffReceiptPrint = staffReceiptPrint;                              // 雑入金担当レシート表記
                     miscDeposit.SalesNO = salesNO;                                                  // 売上番号
-                    miscDeposit.RegistDate = ConvertDateTime(row["MiscDepositRegistDate"], true);   // 雑入金登録日
+                    miscDeposit.RegistDate = miscDepositRegistDate;                                 // 雑入金登録日
                     miscDeposit.DateTime1 = Convert.ToString(row["MiscDepositDate1"]);              // 雑入金日1
                     miscDeposit.Name1 = Convert.ToString(row["MiscDepositName1"]);                  // 雑入金名1
                     miscDeposit.Amount1 = ConvertDecimal(row["MiscDepositAmount1"]);                // 雑入金額1
@@ -335,14 +357,14 @@ namespace TempoRegiJournal
                 #endregion // 雑入金データ
 
                 #region 入金データ
-                if (storeDataSet.DepositTable.Where(s => s.StoreReceiptPrint == storeReceiptPrint && s.SalesNO == salesNO).FirstOrDefault() == null
-                    && !string.IsNullOrWhiteSpace(ConvertDateTime(row["DepositRegistDate"], true)))
+                var depositRegistDate = ConvertDateTime(row["DepositRegistDate"], true);
+                if (storeDataSet.DepositTable.Where(s => s.StoreReceiptPrint == storeReceiptPrint && s.RegistDate == depositRegistDate).FirstOrDefault() == null)
                 {
                     var deposit = storeDataSet.DepositTable.NewDepositTableRow();
                     deposit.StoreReceiptPrint = storeReceiptPrint;                              // 入金店舗レシート表記
                     deposit.StaffReceiptPrint = staffReceiptPrint;                              // 入金担当レシート表記
                     deposit.SalesNO = salesNO;                                                  // 売上番号
-                    deposit.RegistDate = ConvertDateTime(row["DepositRegistDate"], true);       // 入金登録日
+                    deposit.RegistDate = depositRegistDate;                                     // 入金登録日
                     deposit.CustomerCD = Convert.ToString(row["CustomerCD"]);                   // 入金元CD
                     deposit.CustomerName = Convert.ToString(row["CustomerName"]);               // 入金元名
                     deposit.DateTime1 = Convert.ToString(row["DepositDate1"]);                  // 入金日1
@@ -381,14 +403,14 @@ namespace TempoRegiJournal
                 #endregion // 入金データ
 
                 #region 雑出金データ
-                if (storeDataSet.MiscPaymentTable.Where(s => s.StoreReceiptPrint == storeReceiptPrint && s.SalesNO == salesNO).FirstOrDefault() == null
-                    && !string.IsNullOrWhiteSpace(ConvertDateTime(row["MiscPaymentRegistDate"], true)))
+                var miscPaymentRegistDate = ConvertDateTime(row["MiscPaymentRegistDate"], true);
+                if (storeDataSet.MiscPaymentTable.Where(s => s.StoreReceiptPrint == storeReceiptPrint && s.RegistDate == miscPaymentRegistDate).FirstOrDefault() == null)
                 {
                     var miscPayment = storeDataSet.MiscPaymentTable.NewMiscPaymentTableRow();
                     miscPayment.StoreReceiptPrint = storeReceiptPrint;                              // 雑出金店舗レシート表記
                     miscPayment.StaffReceiptPrint = staffReceiptPrint;                              // 雑出金担当レシート表記
                     miscPayment.SalesNO = salesNO;                                                  // 売上番号
-                    miscPayment.RegistDate = ConvertDateTime(row["MiscPaymentRegistDate"], true);   // 雑出金登録日
+                    miscPayment.RegistDate = miscPaymentRegistDate;                                 // 雑出金登録日
                     miscPayment.DateTime1 = Convert.ToString(row["MiscPaymentDate1"]);              // 雑出金日1
                     miscPayment.Name1 = Convert.ToString(row["MiscPaymentName1"]);                  // 雑出金名1
                     miscPayment.Amount1 = ConvertDecimal(row["MiscPaymentAmount1"]);                // 雑出金額1
@@ -425,14 +447,14 @@ namespace TempoRegiJournal
                 #endregion // 雑出金データ
 
                 #region 両替データ
-                if (storeDataSet.ExchangeTable.Where(s => s.StoreReceiptPrint == storeReceiptPrint && s.SalesNO == salesNO).FirstOrDefault() == null
-                    && !string.IsNullOrWhiteSpace(ConvertDateTime(row["ExchangeRegistDate"], true)))
+                var exchangeRegistDate = ConvertDateTime(row["ExchangeRegistDate"], true);
+                if (storeDataSet.ExchangeTable.Where(s => s.StoreReceiptPrint == storeReceiptPrint && s.RegistDate == exchangeRegistDate).FirstOrDefault() == null)
                 {
                     var exchange = storeDataSet.ExchangeTable.NewExchangeTableRow();
                     exchange.StoreReceiptPrint = storeReceiptPrint;                                 // 両替店舗レシート表記
                     exchange.StaffReceiptPrint = staffReceiptPrint;                                 // 両替担当レシート表記
                     exchange.SalesNO = salesNO;                                                     // 売上番号
-                    exchange.RegistDate = ConvertDateTime(row["ExchangeRegistDate"], true);         // 両替登録日
+                    exchange.RegistDate = exchangeRegistDate;                                       // 両替登録日
                     exchange.DateTime1 = Convert.ToString(row["ExchangeDate1"]);                    // 両替日1
                     exchange.Name1 = Convert.ToString(row["ExchangeName1"]);                        // 両替名1
                     exchange.Amount1 = ConvertDecimal(row["ExchangeAmount1"]);                      // 両替額1
@@ -489,16 +511,17 @@ namespace TempoRegiJournal
                 #endregion // 両替データ
 
                 #region 釣銭準備
-                if (storeDataSet.ChangePreparationTable.Where(s => s.StoreReceiptPrint == storeReceiptPrint && s.SalesNO == salesNO).FirstOrDefault() == null
-                    && !string.IsNullOrWhiteSpace(ConvertDateTime(row["ChangePreparationRegistDate"], true)))
+                var changePreparationRegistDate = ConvertDateTime(row["ChangePreparationRegistDate"], true);
+                if (storeDataSet.ChangePreparationTable.Where(s => s.StoreReceiptPrint == storeReceiptPrint && s.RegistDate == changePreparationRegistDate).FirstOrDefault() == null)
                 {
                     var changePreparation = storeDataSet.ChangePreparationTable.NewChangePreparationTableRow();
                     changePreparation.StoreReceiptPrint = storeReceiptPrint;                                    // 両替店舗レシート表記
                     changePreparation.StaffReceiptPrint = staffReceiptPrint;                                    // 両替担当レシート表記
                     changePreparation.SalesNO = salesNO;                                                        // 売上番号
-                    changePreparation.RegistDate = ConvertDateTime(row["ChangePreparationRegistDate"], true);   // 登録日
+                    changePreparation.RegistDate = changePreparationRegistDate;                                 // 登録日
                     changePreparation.DateTime1 = Convert.ToString(row["ChangePreparationDate1"]);              // 釣銭準備日1
-                    changePreparation.Name1 = Convert.ToString(row["ChangePreparationName1"]);                  // 釣銭準備名1
+                    //changePreparation.Name1 = Convert.ToString(row["ChangePreparationName1"]);                  // 釣銭準備名1
+                    changePreparation.Name1 = "現金";                                                           // 釣銭準備名1
                     changePreparation.Amount1 = ConvertDecimal(row["ChangePreparationAmount1"]);                // 釣銭準備額1
                     changePreparation.DateTime2 = Convert.ToString(row["ChangePreparationDate2"]);              // 釣銭準備日2
                     changePreparation.Name2 = Convert.ToString(row["ChangePreparationName2"]);                  // 釣銭準備名2
@@ -535,14 +558,14 @@ namespace TempoRegiJournal
                 #region 精算処理
 
                 #region 精算処理 現金残高
-                if (storeDataSet.CashBalanceTable.Where(s => s.StoreReceiptPrint == storeReceiptPrint && s.SalesNO == salesNO).FirstOrDefault() == null
-                    && !string.IsNullOrWhiteSpace(ConvertDateTime(row["CashBalanceRegistDate"], true)))
+                var cashBalanceRegistDate = ConvertDateTime(row["CashBalanceRegistDate"], true);
+                if (storeDataSet.CashBalanceTable.Where(s => s.StoreReceiptPrint == storeReceiptPrint && s.RegistDate == cashBalanceRegistDate).FirstOrDefault() == null)
                 {
                     var cashBalance = storeDataSet.CashBalanceTable.NewCashBalanceTableRow();
                     cashBalance.StoreReceiptPrint = storeReceiptPrint;                              // 店舗レシート表記
                     cashBalance.StaffReceiptPrint = staffReceiptPrint;                              // 担当レシート表記
                     cashBalance.SalesNO = salesNO;                                                  // 売上番号
-                    cashBalance.RegistDate = ConvertDateTime(row["CashBalanceRegistDate"], true);   // 登録日
+                    cashBalance.RegistDate = cashBalanceRegistDate;                                 // 登録日
                     cashBalance.Num10000yen = ConvertDecimal(row["10000yenNum"]);                   // 現金残高10,000枚数
                     cashBalance.Num5000yen = ConvertDecimal(row["5000yenNum"]);                     // 現金残高5,000枚数
                     cashBalance.Num2000yen = ConvertDecimal(row["2000yenNum"]);                     // 現金残高2,000枚数
@@ -575,7 +598,7 @@ namespace TempoRegiJournal
                     storeDataSet.CashBalanceTable.Rows.Add(cashBalance);
 
                     #region 精算処理 総売
-                    if (storeDataSet.TotalSalesTable.Where(s => s.RegistDate == cashBalance.RegistDate && s.SalesNO == salesNO).FirstOrDefault() == null)
+                    if (storeDataSet.TotalSalesTable.Where(s => s.RegistDate == cashBalance.RegistDate).FirstOrDefault() == null)
                     {
                         var totalSales = storeDataSet.TotalSalesTable.NewTotalSalesTableRow();
                         totalSales.StaffReceiptPrint = staffReceiptPrint;                               // 担当レシート表記
@@ -591,7 +614,7 @@ namespace TempoRegiJournal
                     #endregion // 精算処理 総売
 
                     #region 精算処理 取引別
-                    if (storeDataSet.ByTransactionTable.Where(s => s.RegistDate == cashBalance.RegistDate && s.SalesNO == salesNO).FirstOrDefault() == null)
+                    if (storeDataSet.ByTransactionTable.Where(s => s.RegistDate == cashBalance.RegistDate).FirstOrDefault() == null)
                     {
                         var byTransaction = storeDataSet.ByTransactionTable.NewByTransactionTableRow();
                         byTransaction.StaffReceiptPrint = staffReceiptPrint;                                    // 担当レシート表記
@@ -613,7 +636,7 @@ namespace TempoRegiJournal
                     #endregion // 精算処理 取引別
 
                     #region 精算処理 決済別
-                    if (storeDataSet.BySettlementTable.Where(s => s.RegistDate == cashBalance.RegistDate && s.SalesNO == salesNO).FirstOrDefault() == null)
+                    if (storeDataSet.BySettlementTable.Where(s => s.RegistDate == cashBalance.RegistDate).FirstOrDefault() == null)
                     {
                         var bySettlement = storeDataSet.BySettlementTable.NewBySettlementTableRow();
                         bySettlement.StaffReceiptPrint = staffReceiptPrint;                             // 担当レシート表記
@@ -645,7 +668,7 @@ namespace TempoRegiJournal
                     #endregion // 精算処理 決済別
 
                     #region 精算処理 入金計
-                    if (storeDataSet.DepositTotalTable.Where(s => s.RegistDate == cashBalance.RegistDate && s.SalesNO == salesNO).FirstOrDefault() == null)
+                    if (storeDataSet.DepositTotalTable.Where(s => s.RegistDate == cashBalance.RegistDate).FirstOrDefault() == null)
                     {
                         var depositTotal = storeDataSet.DepositTotalTable.NewDepositTotalTableRow();
                         depositTotal.StaffReceiptPrint = staffReceiptPrint;                             // 担当レシート表記
@@ -663,7 +686,7 @@ namespace TempoRegiJournal
                     #endregion // 精算処理 入金計
 
                     #region 精算処理 支払計
-                    if (storeDataSet.PaymentTotalTable.Where(s => s.RegistDate == cashBalance.RegistDate && s.SalesNO == salesNO).FirstOrDefault() == null)
+                    if (storeDataSet.PaymentTotalTable.Where(s => s.RegistDate == cashBalance.RegistDate).FirstOrDefault() == null)
                     {
                         var paymentTotal = storeDataSet.PaymentTotalTable.NewPaymentTotalTableRow();
                         paymentTotal.StaffReceiptPrint = staffReceiptPrint;                             // 担当レシート表記
@@ -681,7 +704,7 @@ namespace TempoRegiJournal
                     #endregion // 精算処理 支払計
 
                     #region 精算処理 他金額
-                    if (storeDataSet.OtherAmountTable.Where(s => s.RegistDate == cashBalance.RegistDate && s.SalesNO == salesNO).FirstOrDefault() == null)
+                    if (storeDataSet.OtherAmountTable.Where(s => s.RegistDate == cashBalance.RegistDate).FirstOrDefault() == null)
                     {
                         var otherAmount = storeDataSet.OtherAmountTable.NewOtherAmountTableRow();
                         otherAmount.StaffReceiptPrint = staffReceiptPrint;                              // 担当レシート表記
@@ -698,7 +721,7 @@ namespace TempoRegiJournal
                     #endregion // 精算処理 他金額
 
                     #region 精算処理 時間帯別(税込)
-                    if (storeDataSet.ByTimeZoneTaxIncludedTable.Where(s => s.RegistDate == cashBalance.RegistDate && s.SalesNO == salesNO).FirstOrDefault() == null)
+                    if (storeDataSet.ByTimeZoneTaxIncludedTable.Where(s => s.RegistDate == cashBalance.RegistDate).FirstOrDefault() == null)
                     {
                         var byTimeZoneTaxIncluded = storeDataSet.ByTimeZoneTaxIncludedTable.NewByTimeZoneTaxIncludedTableRow();
                         byTimeZoneTaxIncluded.StaffReceiptPrint = staffReceiptPrint;                                        // 担当レシート表記
@@ -734,7 +757,7 @@ namespace TempoRegiJournal
                     #endregion // 精算処理 時間帯別(税込)
 
                     #region 精算処理 時間帯別件数
-                    if (storeDataSet.ByTimeZoneSalesTable.Where(s => s.RegistDate == cashBalance.RegistDate && s.SalesNO == salesNO).FirstOrDefault() == null)
+                    if (storeDataSet.ByTimeZoneSalesTable.Where(s => s.RegistDate == cashBalance.RegistDate).FirstOrDefault() == null)
                     {
                         var byTimeZoneSales = storeDataSet.ByTimeZoneSalesTable.NewByTimeZoneSalesTableRow();
                         byTimeZoneSales.StaffReceiptPrint = staffReceiptPrint;                                              // 担当レシート表記

@@ -131,7 +131,6 @@ namespace TempoRegiRyougaeNyuuryoku
         /// </summary>
         public void Save()
         {
-           
             if (ErrorCheck())
             {
                 if (ExchangeLabel.Text != ExchangeMoney.Text)
@@ -143,12 +142,16 @@ namespace TempoRegiRyougaeNyuuryoku
                 {
                     if (trrnbl.ShowMessage("Q101") == DialogResult.Yes)
                     {
-                      
+                        DataTable dt = new DataTable();
+                        dt = trrnbl.SimpleSelect1("70", ChangeDate.Replace("/", "-"), storeCD);
+                        if(dt.Rows.Count >0)
+                        {
+                            trrnbl.ShowMessage("E252");
+                        }
                         valid = false;
                         mre = DepositHistoryEnity();
                         if (trrnbl.TempoRegiRyougaeNyuuryoku_Insert_Update(mre))
-                        {                          
-                           
+                        {  
                             trrnbl.ShowMessage("I101");
                           
                             RunConsole();
@@ -160,7 +163,6 @@ namespace TempoRegiRyougaeNyuuryoku
                             ExchangeLabel.Text = "";
                             Remark.Clear();
                             ExchangeMoney.Focus();
-                          
                         }
                         else
                         {
@@ -230,6 +232,14 @@ namespace TempoRegiRyougaeNyuuryoku
                 ExchangeDenomination.Focus();
                 ExchangeDenomination.MoveNext = false;
                 ExchangeCount.MoveNext = false;
+                return false;
+            }
+            DataTable dt = new DataTable();
+            //dt = trrnbl.SimpleSelect1("70",null, storeCD,null,null);
+            dt = trrnbl.SimpleSelect1("70", ChangeDate.Replace("/", "-"), storeCD);
+            if (dt.Rows.Count >0)
+            {
+                trrnbl.ShowMessage("E252");
                 return false;
             }
             if (!RequireCheck(new Control[] { ExchangeCount }))   // go that focus

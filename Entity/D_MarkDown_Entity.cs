@@ -12,7 +12,9 @@ namespace Entity
         public string StoreCD { get; set; }
         public string SoukoCD { get; set; }
         public string MarkDownDate { get; set; }
-        public string StockReplicaName { get; set; }
+        public string ReplicaNO { get; set; }
+        public string ReplicaDate { get; set; }
+        public string ReplicaTime { get; set; }
         public string StaffCD { get; set; }
         public string VendorCD { get; set; }
         public string CostingDate { get; set; }
@@ -30,6 +32,17 @@ namespace Entity
         public string PurchaseDateTo { get; set; }
         public string ChkNotAccount { get; set; }
         public string ChkAccounted { get; set; }
+
+        //更新用
+        public string ChkResult { get; set; }
+        public string PayeeCD { get; set; }
+        public string PurchaseGaku { get; set; }
+        public string PurchaseTax { get; set; }
+        public string TotalPurchaseGaku { get; set; }
+        public string TaxGaku8 { get; set; }
+        public string TaxGaku10 { get; set; }
+        public string HontaiGaku8 { get; set; }
+        public string HontaiGaku10 { get; set; }
 
     }
 }

@@ -239,13 +239,6 @@ namespace TempoRegiPoint
                 return false;
             }
 
-            if(IssuePoint >= 1000)
-            {
-                bl.ShowMessage("E118");
-                TxtIssuePoint.Focus();
-                return false;
-            }
-
             var ticketUnit = bl.D_TicketUnitSelect(StoreCD);
             if (ticketUnit.Rows.Count == 0 || (IssuePoint % Convert.ToInt32(ticketUnit.Rows[0]["TicketUnit"])) != 0)
             {

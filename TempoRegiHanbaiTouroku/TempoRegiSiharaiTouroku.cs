@@ -621,8 +621,13 @@ namespace TempoRegiHanbaiTouroku
                 string receipte = "0";
                 //領収書必要ONの場合、1。以外は0．													
 
-                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + dse.StoreCD + " " + no + " " + receipte + " 1 " + bbl.GetDate() + " " + reissue;
-              ///  System.Diagnostics.Process.Start(filePath, cmdLine);  Just wait to PTK
+                //2020/07/20 Y.Nishikawa CHG 引数を整備↓↓
+                //string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + dse.StoreCD + " " + no + " " + receipte + " 1 " + bbl.GetDate() + " " + reissue;
+                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + no + " " + receipte + " 1 " + bbl.GetDate() + " " + reissue;
+                //2020/07/20 Y.Nishikawa CHG 引数を整備↑↑
+
+                ///  System.Diagnostics.Process.Start(filePath, cmdLine);  Just wait to PTK
+                System.Diagnostics.Process.Start(filePath, cmdLine);
             }
             else
             {

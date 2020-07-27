@@ -66,6 +66,16 @@ namespace BL
         }
 
         /// <summary>
+        /// 商品取得
+        /// </summary>
+        /// <param name="dme"></param>
+        /// <returns></returns>
+        public DataTable M_SKU_SelectForMarkDown(M_SKU_Entity mse)
+        {
+            return mdl.M_SKU_SelectForMarkDown(mse);
+        }
+
+        /// <summary>
         /// 締処理済の場合（以下のSelectができる場合）Error
         /// </summary>
         /// <param name="dpe"></param>
@@ -121,38 +131,15 @@ namespace BL
                 return true;
             }
         }
-        ///// <summary>
-        ///// 返品入力更新処理
-        ///// MarkDownNyuuryokuより更新時に使用
-        ///// </summary>
-        //public bool Purchase_Exec(D_Purchase_Entity dme, DataTable dt, short operationMode)
-        //{
-        //    return ddl.D_Purchase_ExecH(dme, dt, operationMode);
-        //}
 
-        ///// <summary>
-        ///// 返品入力取得処理
-        ///// MarkDownNyuuryokuよりデータ抽出時に使用
-        ///// </summary>
-        //public DataTable D_Purchase_SelectDataH(D_Purchase_Entity de, short operationMode)
-        //{
-        //    DataTable dt = ddl.D_Purchase_SelectDataH(de, operationMode);
+        /// <summary>
+        /// 返品入力更新処理
+        /// MarkDownNyuuryokuより更新時に使用
+        /// </summary>
+        public bool PRC_MarkDownNyuuryoku(D_MarkDown_Entity dme, DataTable dt, short operationMode)
+        {
+            return mdl.PRC_MarkDownNyuuryoku(dme, dt, operationMode);
+        }
 
-        //    return dt;
-        //}
-
-        ///// <summary>
-        ///// 返品入力取得処理(入荷から)
-        ///// MarkDownNyuuryokuよりデータ抽出時に使用
-        ///// </summary>
-        //public DataTable D_Stock_SelectAllForShiireH(D_Stock_Entity de)
-        //{
-        //    D_Stock_DL dadl = new D_Stock_DL();
-        //    DataTable dt = dadl.D_Stock_SelectAllForShiireH(de);
-
-        //    return dt;
-        //}
-
-            
     }
 }

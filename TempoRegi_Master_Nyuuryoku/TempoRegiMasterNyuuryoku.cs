@@ -49,7 +49,7 @@ namespace TempoRegi_Master_Nyuuryoku
             GridViewDataBind();
             btnProcess.Enabled = false;
             txtButtomNameUp.Focus();
-            lblSearchName.TextAlign = ContentAlignment.TopLeft;
+            //lblSearchName.TextAlign = ContentAlignment.TopLeft;
         }
 
         private void TempoRegiMasterNyuuryoku_KeyUp(object sender, KeyEventArgs e)

@@ -20,14 +20,15 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
-        public bool M_Shiirekakeritsu(M_OrderRate_Entity moe,string xml,L_Log_Entity log_data)
+        public DataTable M_Shiirekakeritsu(M_OrderRate_Entity moe,string xml,L_Log_Entity log_data)
         {
             string sp = "M_OrderRate_Update";
 
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = xml } },
-                { "@VendorCD", new ValuePair { value1 = System.Data.SqlDbType.VarChar, value2 =moe.VendorCD  } },              
+                { "@VendorCD", new ValuePair { value1 = System.Data.SqlDbType.VarChar, value2 =moe.VendorCD  } },
+                { "@StoreCD", new ValuePair { value1 = System.Data.SqlDbType.VarChar, value2 =moe.StoreCD  } },
                 { "@ChangeDate",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.ChangeDate} },
                 { "@Rate",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.Rate} },
                 { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.Operator }},//ses
@@ -35,8 +36,9 @@ namespace DL
                 { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.PC }},
                 { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.ProcessMode }},
                 { "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.Key }}
+
             };
-            return InsertUpdateDeleteData(dic, sp);
+            return SelectData(dic, sp);
         }
     }
 }
