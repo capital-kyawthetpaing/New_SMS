@@ -16,7 +16,7 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMasterTouroku_ShiireKakeritsu());
+            Application.Run(new MasterTouroku_ShiireKakeritsu());
         }
     }
 }
