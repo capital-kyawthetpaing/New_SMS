@@ -382,6 +382,7 @@ namespace MasterTouroku_ShiireKakeritsu
             if (dgv_ShiireKakeritsu.DataSource != null)
             {
                 DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
+                dvMain = new DataView(dtMain);
                 dvMain.RowFilter = searchCondition;
                 dgv_ShiireKakeritsu.DataSource = dvMain;
             }
@@ -785,7 +786,7 @@ namespace MasterTouroku_ShiireKakeritsu
             {
                 {
                     DataGridViewRow row = dgv_ShiireKakeritsu.Rows[i];
-                    DataGridViewCheckBoxCell check = row.Cells[0] as DataGridViewCheckBoxCell;
+                     DataGridViewCheckBoxCell check = row.Cells[0] as DataGridViewCheckBoxCell;
                     if (row.Cells["colChk"].Value != null)
                     {
                         string chk = row.Cells["colChk"].Value.ToString();
@@ -799,14 +800,13 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
             toDelete.ForEach(row => row.Delete());
-
+            dgv_ShiireKakeritsu.DataSource = dtMain;
             DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
+            dvMain = new DataView(dtMain);
+            //DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
             //dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
             //dtMain = view.Table;
-            dgv_ShiireKakeritsu.DataSource = dvMain;
-            //dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
-            //dvMain = new DataView(dtMain);
-            //dgv_ShiireKakeritsu.DataSource = dvMain;
+            dgv_ShiireKakeritsu.DataSource =dvMain;
         }
         #endregion
 
@@ -865,7 +865,7 @@ namespace MasterTouroku_ShiireKakeritsu
             }
             else
             {
-                dgv_ShiireKakeritsu.DataSource = dtMain;
+                dtMain.AcceptChanges();
                 for (int i = 0; i < dtMain.Rows.Count; i++)
                 {
                     var Brand = dtMain.Rows[i]["BrandCD"].ToString();
@@ -954,7 +954,6 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
                 else
                 {
-                    String rowse = "0";
                     dtExcel = ExcelToDatatable(str);
                     string[] colname = { "仕入先CD", "店舗CD", "改定日", "掛率" };
                     if (ColumnCheck(colname, dtExcel))
@@ -962,6 +961,7 @@ namespace MasterTouroku_ShiireKakeritsu
                         for (int i = 0; i < dtExcel.Rows.Count; i++)
                         {
                             string vall = dtExcel.Rows[i][1].ToString();
+                            String rowse = "0";
                             if (dtExcel.Rows[i][0].ToString() != scSupplierCD.TxtCode.Text)
                             {
                                 mskbl.ShowMessage("E230");
@@ -983,7 +983,7 @@ namespace MasterTouroku_ShiireKakeritsu
                             }
                             if (!String.IsNullOrEmpty(dtExcel.Rows[i][2].ToString()))
                             {
-                                DataTable dtResult = bbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 15, dtExcel.Rows[i][2].ToString());
+                                DataTable dtResult = bbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 11, dtExcel.Rows[i][2].ToString());
                                 if (dtResult.Rows.Count == 0)
                                 {
                                     mskbl.ShowMessage("E138");

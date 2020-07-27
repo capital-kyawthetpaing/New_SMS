@@ -70,7 +70,7 @@ BEGIN
           ,DODD.OrderTax AS HacchuuShouhizeigaku
           ,MSKU.PriceOutTax AS Teika
           ,DODD.OrderUnitPrice * 100 / NULLIF(MSKU.PriceOutTax,0) AS Kakeritu
-          ,'1' AS TaishouFLG
+          ,CASE WHEN DODD.ArrivePlanDate IS NULL THEN CAST(1 as bit) ELSE CAST(0 as bit) END AS IsYuukouTaishouFLG
           ,DODD.OrderRows
           
     FROM D_Order DODH
@@ -108,6 +108,7 @@ BEGIN
            DODH.OrderProcessNO = @p_OrderProcessNO
           )
       AND DODH.DeleteDateTime IS NULL
+      AND DODH.OrderProcessNO IS NOT NULL
 
     ORDER BY DODD.OrderRows
 

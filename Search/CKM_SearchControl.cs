@@ -1211,6 +1211,7 @@ namespace Search
                     {
                         frmHacchuu.OperatorCD = Value1;
                         frmHacchuu.AllAvailableStores = Value2;
+                        frmHacchuu.storeCD = Value3;
                         frmHacchuu.ShowDialog();
 
                         if (!frmHacchuu.flgCancel)
