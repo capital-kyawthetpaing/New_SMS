@@ -18,7 +18,7 @@ using ExcelDataReader;
 
 namespace MasterTouroku_ShiireKakeritsu
 {
-    public partial class frmMasterTouroku_ShiireKakeritsu : FrmMainForm
+    public partial class MasterTouroku_ShiireKakeritsu : FrmMainForm
     {
         MasterTouroku_ShiireKakeritsu_BL mskbl;
         M_OrderRate_Entity moe;
@@ -33,7 +33,7 @@ namespace MasterTouroku_ShiireKakeritsu
         //int type = 0;
         string Xml;
 
-        public frmMasterTouroku_ShiireKakeritsu()
+        public MasterTouroku_ShiireKakeritsu()
         {
             InitializeComponent();
             mskbl = new MasterTouroku_ShiireKakeritsu_BL();
@@ -42,8 +42,7 @@ namespace MasterTouroku_ShiireKakeritsu
             mbe = new M_Brand_Entity();
             dvMain = new DataView();
         }
-
-        private void frmMasterTouroku_ShiireKakeritsu_Load(object sender, EventArgs e)
+        private void MasterTouroku_ShiireKakeritsu_Load(object sender, EventArgs e)
         {
             InProgramID = "MasterTouroku_ShiireKakeritsu";
             SetFunctionLabel(EProMode.MENTE);
@@ -195,12 +194,6 @@ namespace MasterTouroku_ShiireKakeritsu
             };
             return moe;
         }
-
-        private void frmMasterTouroku_ShiireKakeritsu_KeyUp(object sender, KeyEventArgs e)
-        {
-            MoveNextControl(e);
-        }
-
         private void scSupplierCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.F11)
@@ -1123,6 +1116,14 @@ namespace MasterTouroku_ShiireKakeritsu
             };
             return log_data;
         }
+
         #endregion
+
+        private void MasterTouroku_ShiireKakeritsu_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
+
+       
     }
 }
