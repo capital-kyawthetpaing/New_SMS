@@ -172,6 +172,8 @@ BEGIN
         ON DA.DeleteDateTime IS NULL
         AND DM.OrderNO = DA.Number AND DM.OrderRows = DA.NumberRows
         AND DA.ArrivalPlanKBN = 1
+        AND DA.ArrivalPlanSu <> 0
+        AND DA.ArrivalPlanSu <> DA.ArrivalSu
             
     LEFT OUTER JOIN D_EDI AS DE
         ON DE.EDIImportNO = DA.EDIImportNO
@@ -194,7 +196,7 @@ BEGIN
         --AND DH.DestinationKBN = 2   --直送で無い		2020.03.31 del
         --AND DH.OrderWayKBN = 2  --Net発注でない		2020.03.31 del
         AND DH.ReturnFLG = 0    --キャンセルでない
-        AND DH.ApprovalStageFLG = 9 --承認済みのみ	2020.07.11 add
+        AND DH.ApprovalStageFLG >= 9 --承認済みのみ	2020.07.11 add
         
         AND DH.OrderNO >= (CASE WHEN @OrderNOFrom <> '' THEN @OrderNOFrom ELSE DH.OrderNO END)
         AND DH.OrderNO <= (CASE WHEN @OrderNOTo <> '' THEN @OrderNOTo ELSE DH.OrderNO END)
@@ -204,8 +206,6 @@ BEGIN
         AND ISNULL(CONVERT(DATE,DE.ImportDateTime),'') = (CASE WHEN @EDIDate <> '' THEN CONVERT(DATE, @EDIDate) ELSE ISNULL(CONVERT(DATE,DE.ImportDateTime),'') END)
 
         AND DH.DeleteDateTime IS NULL
-        AND DA.ArrivalPlanSu <> 0
-        AND DA.ArrivalPlanSu <> DA.ArrivalSu
 
     ORDER BY DH.OrderNO
     ;
