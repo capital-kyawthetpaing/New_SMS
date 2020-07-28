@@ -71,7 +71,7 @@ namespace DL
             AddParam(command, "@SoukoCD", SqlDbType.VarChar, dme.SoukoCD);
             AddParam(command, "@StaffCD", SqlDbType.VarChar, dme.StaffCD);
             AddParam(command, "@JANCD", SqlDbType.VarChar, dme.JanCD);
-            AddParam(command, "@AdminNO", SqlDbType.TinyInt, dme.AdminNO);
+            AddParam(command, "@AdminNO", SqlDbType.Int, dme.AdminNO);
             AddParam(command, "@SKUCD", SqlDbType.VarChar, dme.SKUCD);
             AddParam(command, "@ArrivalSu", SqlDbType.Int, dme.ArrivalSu);
 
