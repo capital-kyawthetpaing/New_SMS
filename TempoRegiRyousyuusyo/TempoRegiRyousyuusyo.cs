@@ -48,7 +48,7 @@ namespace TempoRegiRyousyuusyo
             /// <summary>再発行チェック</summary>
             ReissueCheck
         }
-
+        private bool IsHanbaiTouroku = false;
         /// <summary>
         /// 製品名上段文字数
         /// </summary>
@@ -64,7 +64,16 @@ namespace TempoRegiRyousyuusyo
         /// </summary>
         public TempoRegiRyousyuusyo()
         {
-            Start_Display();
+            string[] cmds = Environment.GetCommandLineArgs();
+            if (cmds.Length - 1 > (int)ECmdLine.PcID)
+            {
+                IsHanbaiTouroku = true;
+            }
+            //else
+            //{
+                Start_Display();
+               // IsHanbaiTouroku = false;
+            //}
             InitializeComponent();
 
 
@@ -92,22 +101,30 @@ namespace TempoRegiRyousyuusyo
             string[] cmds = Environment.GetCommandLineArgs();
             if (cmds.Length - 1 > (int)ECmdLine.PcID)
             {
-                // 別プログラムからの呼び出し時
+                try
+                {
+                    // 別プログラムからの呼び出し時
 
-                // フォームを表示させないように最小化してタスクバーにも表示しない
-                WindowState = System.Windows.Forms.FormWindowState.Minimized;
-                ShowInTaskbar = false;
+                    // フォームを表示させないように最小化してタスクバーにも表示しない
+                    WindowState = System.Windows.Forms.FormWindowState.Minimized;
+                    ShowInTaskbar = false;
 
-                txtSalesNO.Text = cmds[(int)CommandLine.SalesNO];
-                chkRyousyuusho.Checked = Convert.ToBoolean(Convert.ToInt32(cmds[(int)CommandLine.RyousyuushoCheck]));
-                chkReceipt.Checked = Convert.ToBoolean(Convert.ToInt32(cmds[(int)CommandLine.ReceiptCheck]));
-                txtPrintDate.Text = cmds[(int)CommandLine.PrintDate];
-                //chkReissue.Checked = Convert.ToBoolean(cmds[(int)CommandLine.ReissueCheck]);
-
-                // 印刷後そくクローズ
-                Print();
-                Close();
+                    txtSalesNO.Text = cmds[(int)CommandLine.SalesNO];
+                    chkRyousyuusho.Checked = Convert.ToBoolean(Convert.ToInt32(cmds[(int)CommandLine.RyousyuushoCheck]));
+                    chkReceipt.Checked = Convert.ToBoolean(Convert.ToInt32(cmds[(int)CommandLine.ReceiptCheck]));
+                    txtPrintDate.Text = cmds[(int)CommandLine.PrintDate];
+                    //chkReissue.Checked = Convert.ToBoolean(cmds[(int)CommandLine.ReissueCheck]);
+                    IsHanbaiTouroku = true;
+                    // 印刷後そくクローズ
+                    Print();
+                    
+                    Close();
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
             }
+            
             Stop_DisplayService();
         }
 
@@ -183,7 +200,9 @@ namespace TempoRegiRyousyuusyo
 
         protected override void EndSec()
         {
-            RunDisplay_Service();
+            
+                RunDisplay_Service();
+            
             this.Close();
         }
 
@@ -227,22 +246,28 @@ namespace TempoRegiRyousyuusyo
                         var ryousyuusyo = bl.D_RyousyuusyoSelect(txtSalesNO.Text, txtPrintDate.Text);
                         if (ryousyuusyo.Rows.Count > 0)
                         {
-                            try
-                            {
-                                cdo.RemoveDisplay(true);
-                                cdo.RemoveDisplay(true);
-                            }
-                            catch { }
-                            OutputRyouusyusyo(ryousyuusyo);
-                            try
-                            {
-                                Thread.Sleep(2000);
-                                Stop_DisplayService();
-                            }
-                            catch (Exception ex) { MessageBox.Show(ex.Message); }
+                            //if (!IsHanbaiTouroku)
+                            //{
+                                try
+                                {
+                                    cdo.RemoveDisplay(true);
+                                    cdo.RemoveDisplay(true);
+                                }
+                                catch { }
+                                OutputRyouusyusyo(ryousyuusyo);
+                                try
+                                {
+                                    Thread.Sleep(2000);
+                                    Stop_DisplayService();
+                                }
+                                catch (Exception ex) { MessageBox.Show(ex.Message); }
 
-                            if (!Isboth)
-                                Stop_DisplayService();
+                                if (!Isboth)
+                                    Stop_DisplayService();
+                            //}
+                            //else {
+                            //    OutputRyouusyusyo(ryousyuusyo);
+                            //}
                         }
                         else
                         {
@@ -259,25 +284,42 @@ namespace TempoRegiRyousyuusyo
 
                         // 店舗取引履歴
                         var receiptData = bl.D_ReceiptSelect(txtSalesNO.Text, chkReissue.Checked);
-                        if (receiptData.Rows.Count > 0)
-                        {
-                            try
+                        //if ((!IsHanbaiTouroku))
+                        //{
+                            if (receiptData.Rows.Count > 0)
                             {
-                                cdo.RemoveDisplay(true);
-                                cdo.RemoveDisplay(true);
-                            }
-                            catch { }
-                            OutputReceipt(receiptData);
+                                try
+                                {
+                                    cdo.RemoveDisplay(true);
+                                    cdo.RemoveDisplay(true);
+                                }
+                                catch { }
+                                OutputReceipt(receiptData);
 
-                            Stop_DisplayService();
-                        }
-                        else
-                        {
-                            bl.ShowMessage("E198", "領収書");
-                            txtSalesNO.Focus();
-                            // Stop_DisplayService();
-                            //  return;
-                        }
+                                Stop_DisplayService();
+                            }
+                            else
+                            {
+                                bl.ShowMessage("E198", "領収書");
+                                txtSalesNO.Focus();
+                                // Stop_DisplayService();
+                                //  return;
+                            }
+                        //}
+                        //else
+                        //{
+                        //    if (receiptData.Rows.Count > 0)
+                        //    {
+                        //        OutputReceipt(receiptData);
+                        //    }
+                        //    else
+                        //    {
+                        //        bl.ShowMessage("E198", "領収書");
+                        //        txtSalesNO.Focus();
+                        //    }
+                        //}
+                  
+                      
                     }
 
                 }
@@ -648,7 +690,8 @@ namespace TempoRegiRyousyuusyo
         }
         private void Stop_DisplayService(bool isForced = true)
         {
-            if (Base_DL.iniEntity.IsDM_D30Used)
+            
+            if (Base_DL.iniEntity.IsDM_D30Used && !IsHanbaiTouroku)
             {
 
                 Login_BL bbl_1 = new Login_BL();
@@ -680,7 +723,7 @@ namespace TempoRegiRyousyuusyo
         {
             try
             {
-                if (Base_DL.iniEntity.IsDM_D30Used)
+                if (Base_DL.iniEntity.IsDM_D30Used && !IsHanbaiTouroku)
                 {
                     cdo.RemoveDisplay(true);
                     Login_BL bbl_1 = new Login_BL();
@@ -697,7 +740,7 @@ namespace TempoRegiRyousyuusyo
         {
             try
             {
-                if (Base_DL.iniEntity.IsDM_D30Used)
+                if (Base_DL.iniEntity.IsDM_D30Used && !IsHanbaiTouroku)
                 {
                     Login_BL bbl_1 = new Login_BL();
                     if (bbl_1.ReadConfig())

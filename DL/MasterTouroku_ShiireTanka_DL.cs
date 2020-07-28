@@ -66,14 +66,15 @@ namespace DL
         //    return SelectData(dic, sp);
         //}
 
-        public bool Mastertoroku_Shiretanka_Insert(string tbitem, string tbsku,string tbdel, M_ItemOrderPrice_Entity mi)
+        public bool Mastertoroku_Shiretanka_Insert(string tbitem, string tbsku,string tbdelitem, string tbdeljan,M_ItemOrderPrice_Entity mi)
         {
             string sp = "Mastertoroku_Shiretanka_Insert";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@tbitem", new ValuePair { value1 =SqlDbType.VarChar,value2 = tbitem } },
                 { "@tbsku", new ValuePair { value1 =SqlDbType.VarChar,value2 = tbsku } },
-                { "@tbdel", new ValuePair { value1 =SqlDbType.VarChar,value2 = tbdel } },
+                { "@tbdelItem", new ValuePair { value1 =SqlDbType.VarChar,value2 = tbdelitem } },
+                { "@tbdelJan", new ValuePair { value1 =SqlDbType.VarChar,value2 = tbdeljan } },
                 { "@operator", new ValuePair { value1 =SqlDbType.VarChar,value2 =mi.InsertOperator  } },
                 { "@Program", new ValuePair { value1 =SqlDbType.VarChar,value2 =mi.ProgramID  } },
                 { "@PC", new ValuePair { value1 =SqlDbType.VarChar,value2 =mi.PC  } },
