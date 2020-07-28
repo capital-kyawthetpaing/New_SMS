@@ -1105,8 +1105,62 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             if (ErrorCheckForExcel())
             {
-                dtMain = ChangeColumnName(dtExcel);
-                dgv_ShiireKakeritsu.DataSource = dtMain;
+                //dtExcel.AcceptChanges();
+                //for (int i = 0; i < dtExcel.Rows.Count; i++)
+                //{
+                //    dtMain = ChangeColumnName(dtExcel);
+                //    //var brand = dtExcel.Rows[i][3].ToString();
+                //    //dt = mskbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 11,brand);
+                //    //var sports = dtExcel.Rows[i][5].ToString();
+                //    //dt = mskbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 12, sports);
+                //    //var segment = dtExcel.Rows[i][7].ToString();
+                //    //dt = mskbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 13, segment);
+                //    //dtExcel.Rows.Add(dt);
+                //}
+                dgv_ShiireKakeritsu.DataSource = dtExcel;
+                if(dtExcel!=null)
+                {
+                   dtExcel.Columns["仕入先CD"].ColumnName = "VendorCD";
+                   dtExcel.Columns["店舗CD"].ColumnName = "StoreCD";
+                   dtExcel.Columns["ブランドCD"].ColumnName = "BrandCD";
+                   dtExcel.Columns.Add("BrandName");
+                   dtExcel.Columns["競　技CD"].ColumnName = "SportsCD";
+                   dtExcel.Columns.Add("SportsName");
+                   dtExcel.Columns["商品分類CD"].ColumnName = "SegmentCD";
+                   dtExcel.Columns.Add("SegmentCDName");
+                   dtExcel.Columns["年度"].ColumnName = "LastYearTerm";
+                   dtExcel.Columns["シーズン"].ColumnName = "LastSeason";
+                   dtExcel.Columns["改定日"].ColumnName = "ChangeDate";
+                   dtExcel.Columns["掛率"].ColumnName = "Rate";
+                   dtMain = dtExcel;
+                }
+                if (dtMain.Rows.Count > 0)
+                {
+                    for(int i=0;i < dtMain.Rows.Count;i++)
+                    {
+                        dtMain.AcceptChanges();
+                        //DataRow row1;
+                        //row1 = dtMain.NewRow();
+                        //dtMain.Rows[i]["VendorCD"] = scSupplierCD.TxtCode.Text;
+                        //dtMain.Rows[i]["StoreCD"] = cbo_Store.SelectedValue.ToString();
+                        //dtMain.Rows[i]["BrandCD"] = dtMain.Rows[i]["BrandCD"];
+                        DataTable dt = mskbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 11, dtMain.Rows[i]["BrandCD"].ToString());
+                        dtMain.Rows[i]["BrandName"] = dt.Rows[0]["Name"].ToString();
+                        //dtMain.Rows[i]["SportsCD"] = dtMain.Rows[i]["SportsCD"];
+                        DataTable dt1 = mskbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 12, dtMain.Rows[i]["SportsCD"].ToString(),"202");
+                        dtMain.Rows[i]["SportsName"] = dt1.Rows[0]["Name"].ToString();
+                        //dtMain.Rows[i]["SegmentCD"] = dtMain.Rows[i]["SegmentCD"];
+                        DataTable dt2 = mskbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 13, dtMain.Rows[i]["SegmentCD"].ToString(),"203");
+                        dtMain.Rows[i]["SegmentCDName"] = dt2.Rows[0]["Name"].ToString();
+                        //dtMain.Rows[i]["LastYearTerm"] = dtMain.Rows[i]["LastYearTerm"];
+                        //dtMain.Rows[i]["LastSeason"] = dtMain.Rows[i]["LastSeason"];
+                        //dtMain.Rows[i]["ChangeDate"] = dtMain.Rows[i]["ChangeDate"];
+                        //dtMain.Rows[i]["Rate"] = dtMain.Rows[i]["Rate"];
+                        //dtMain.Rows.Add(row1);
+
+                    }
+                    dgv_ShiireKakeritsu.DataSource = dtMain;
+                }
             }
         }
         private void cbo_Store_KeyDown(object sender, KeyEventArgs e)
@@ -1136,7 +1190,5 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             MoveNextControl(e);
         }
-
-       
     }
 }
