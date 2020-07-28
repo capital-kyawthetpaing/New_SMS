@@ -53,7 +53,7 @@ namespace MasterTouroku_ShiireKakeritsu
             scSupplierCD.SetFocus(1);
             txtDate1.Text = DateTime.Now.ToString("yyyy/MM/dd");
             RadioCheck();
-            dgv_ShiireKakeritsu.DisabledColumn("colBrandCD1,colSportsCD1,colSegmentCD1,colYear,colSeason,colDate");
+            dgv_ShiireKakeritsu.DisabledColumn("colBrandCD1,colBrandName,colSportsCD1,colSportsName,colSegmentCD1,colSegmentName,colYear,colSeason,colDate");
             ModeVisible = false;
         }
         private void RadioCheck()
@@ -180,6 +180,7 @@ namespace MasterTouroku_ShiireKakeritsu
                 VendorCD = scSupplierCD.TxtCode.Text,
                 StoreCD = cbo_Store.SelectedValue.ToString(),
                 BrandCD = scBrandCD1.TxtCode.Text,
+                BrandName=scBrandCD1.LabelText,
                 SportsCD = scSportsCD1.TxtCode.Text,
                 SegmentCD = scSegmentCD1.TxtCode.Text,
                 LastYearTerm = cbo_Year1.SelectedText,
@@ -396,10 +397,10 @@ namespace MasterTouroku_ShiireKakeritsu
                         var LastSeason = dtMain.Rows[i]["LastSeason"].ToString();
                         if (String.IsNullOrEmpty(Brand) || String.IsNullOrEmpty(Sports) || String.IsNullOrEmpty(Segment) || String.IsNullOrEmpty(LastYearTerm) || String.IsNullOrEmpty(LastSeason))
                         {
-                            string date = dtMain.Rows[i][8].ToString();
+                            string date = dtMain.Rows[i][11].ToString();
                             DateTime dtime = Convert.ToDateTime(date);
                             txtRevisionDate.Text = dtime.ToShortDateString();
-                            txtRate1.Text = dtMain.Rows[i][9].ToString();
+                            txtRate1.Text = dtMain.Rows[i][12].ToString();
                         }
                     }
                     dgv_ShiireKakeritsu.DataSource = dtMain;
@@ -452,8 +453,11 @@ namespace MasterTouroku_ShiireKakeritsu
                              dtRow["VendorCD"] = scSupplierCD.TxtCode.Text;
                              dtRow["StoreCD"] = cbo_Store.SelectedValue.ToString();
                              dtRow["BrandCD"] = row.Cells["colBrandCD1"].Value.ToString();
+                             dtRow["BrandName"] = row.Cells["colBrandName"].Value.ToString();
                              dtRow["SportsCD"] = row.Cells["colSportsCD1"].Value.ToString();
+                             dtRow["SportsName"] = row.Cells["colSportsName"].Value.ToString();
                              dtRow["SegmentCD"] = row.Cells["colSegmentCD1"].Value.ToString();
+                             dtRow["SegmentCDName"] = row.Cells["colSegmentName"].Value.ToString();
                              dtRow["LastYearTerm"] = row.Cells["colYear"].Value.ToString();
                              dtRow["LastSeason"] = row.Cells["colSeason"].Value.ToString();
                              dtRow["ChangeDate"] = txtCopy.Text;
@@ -663,8 +667,11 @@ namespace MasterTouroku_ShiireKakeritsu
                     dt.Columns.Add("VendorCD");//ses
                     dt.Columns.Add("StoreCD");//ses
                     dt.Columns.Add("BrandCD");
+                    dt.Columns.Add("BrandName");
                     dt.Columns.Add("SportsCD");
+                    dt.Columns.Add("SportsName");
                     dt.Columns.Add("SegmentCD");
+                    dt.Columns.Add("SegmentCDName");
                     dt.Columns.Add("LastYearTerm");
                     dt.Columns.Add("LastSeason");
                     dt.Columns.Add("ChangeDate");
@@ -674,8 +681,11 @@ namespace MasterTouroku_ShiireKakeritsu
                     dtRow["VendorCD"] = scSupplierCD.TxtCode.Text;
                     dtRow["StoreCD"] = cbo_Store.SelectedValue.ToString();
                     dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
+                    dtRow["BrandName"] = scBrandCD.LabelText;
                     dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
+                    dtRow["SportsName"] = scSportsCD.LabelText;
                     dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
+                    dtRow["SegmentCDName"] =scSegmentCD.LabelText;
                     dtRow["LastYearTerm"] = cbo_Year.Text;
                     dtRow["LastSeason"] = cbo_Season.Text;
                     dtRow["ChangeDate"] = txtChangeDate.Text;
@@ -691,8 +701,11 @@ namespace MasterTouroku_ShiireKakeritsu
                     row["VendorCD"] = scSupplierCD.TxtCode.Text;
                     row["StoreCD"] = cbo_Store.SelectedValue.ToString();
                     row["BrandCD"] = scBrandCD.TxtCode.Text;
+                    row["BrandName"] = scBrandCD.LabelText;
                     row["SportsCD"] = scSportsCD.TxtCode.Text;
+                    row["SportsName"] = scSportsCD.LabelText;
                     row["SegmentCD"] = scSegmentCD.TxtCode.Text;
+                    row["SegmentCDName"] = scSegmentCD.LabelText;
                     row["LastYearTerm"] = cbo_Year.Text;
                     row["LastSeason"] = cbo_Season.Text;
                     row["ChangeDate"] = txtChangeDate.Text;
@@ -779,10 +792,10 @@ namespace MasterTouroku_ShiireKakeritsu
                     var LastSeason = dtMain.Rows[i]["LastSeason"].ToString();
                     if (String.IsNullOrEmpty(Brand) || String.IsNullOrEmpty(Sports) || String.IsNullOrEmpty(Segment) || String.IsNullOrEmpty(LastYearTerm) || String.IsNullOrEmpty(LastSeason))
                     {
-                        string date= dtMain.Rows[i][8].ToString();
+                        string date= dtMain.Rows[i][11].ToString();
                         DateTime dtime = Convert.ToDateTime(date);
                         txtRevisionDate.Text = dtime.ToShortDateString();
-                        txtRate1.Text = dtMain.Rows[i][9].ToString();
+                        txtRate1.Text = dtMain.Rows[i][12].ToString();
                     }
                 }
                 dgv_ShiireKakeritsu.DataSource = dtMain;
