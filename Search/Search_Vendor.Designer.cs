@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtChangeDate = new CKM_Controls.CKM_TextBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -71,7 +70,7 @@
             this.PanelHeader.Controls.Add(this.ckM_Label2);
             this.PanelHeader.Controls.Add(this.txtChangeDate);
             this.PanelHeader.Controls.Add(this.ckM_Label1);
-            this.PanelHeader.Size = new System.Drawing.Size(1284, 158);
+            this.PanelHeader.Size = new System.Drawing.Size(916, 158);
             this.PanelHeader.TabIndex = 1;
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.txtChangeDate, 0);
@@ -367,7 +366,7 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnSearch.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnSearch.Location = new System.Drawing.Point(1144, 118);
+            this.btnSearch.Location = new System.Drawing.Point(785, 113);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(1);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(118, 28);
@@ -386,7 +385,7 @@
             this.dgvSearchVendor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -399,21 +398,13 @@
             this.Column3,
             this.Column4,
             this.colChangeDate});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSearchVendor.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSearchVendor.EnableHeadersVisualStyles = false;
             this.dgvSearchVendor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.dgvSearchVendor.Location = new System.Drawing.Point(12, 227);
+            this.dgvSearchVendor.Location = new System.Drawing.Point(5, 214);
             this.dgvSearchVendor.Name = "dgvSearchVendor";
             this.dgvSearchVendor.RowHeight_ = 20;
             this.dgvSearchVendor.RowTemplate.Height = 20;
-            this.dgvSearchVendor.Size = new System.Drawing.Size(1260, 500);
+            this.dgvSearchVendor.Size = new System.Drawing.Size(900, 300);
             this.dgvSearchVendor.TabIndex = 9;
             this.dgvSearchVendor.UseRowNo = true;
             this.dgvSearchVendor.UseSetting = true;
@@ -442,7 +433,6 @@
             this.colVendorCD.HeaderText = "仕入先番号";
             this.colVendorCD.Name = "colVendorCD";
             this.colVendorCD.ReadOnly = true;
-            this.colVendorCD.Width = 160;
             // 
             // colVendorName
             // 
@@ -450,7 +440,7 @@
             this.colVendorName.HeaderText = "仕入先名";
             this.colVendorName.Name = "colVendorName";
             this.colVendorName.ReadOnly = true;
-            this.colVendorName.Width = 400;
+            this.colVendorName.Width = 300;
             // 
             // Column3
             // 
@@ -458,7 +448,6 @@
             this.Column3.HeaderText = "カナ名";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 200;
             // 
             // Column4
             // 
@@ -466,7 +455,7 @@
             this.Column4.HeaderText = "備考";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            this.Column4.Width = 450;
+            this.Column4.Width = 350;
             // 
             // colChangeDate
             // 
@@ -479,7 +468,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 785);
+            this.ClientSize = new System.Drawing.Size(916, 590);
             this.Controls.Add(this.dgvSearchVendor);
             this.F11Visible = true;
             this.F12Visible = true;
