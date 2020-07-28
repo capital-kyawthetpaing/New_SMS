@@ -2986,7 +2986,15 @@ namespace HacchuuNyuuryoku
             //ボタンを押すたびに「承認」「却下」のモードを変更する。
             if (init)
             {
-                SetlblDisp("承認中");
+                if (W_ApprovalStageFLG.Equals(9))
+                {
+                    //最終承認者の場合は承認済みにする
+                    SetlblDisp("承認");
+                }
+                else
+                {
+                    SetlblDisp("承認中");
+                }
             }
             else if (lblDisp.Text == "承認中" || lblDisp.Text == "承認")
             {

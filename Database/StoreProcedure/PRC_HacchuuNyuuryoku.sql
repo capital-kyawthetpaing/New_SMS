@@ -451,8 +451,8 @@ BEGIN
             ELSE @SYSDATE END) --LastApprovalDate
            ,(CASE WHEN @OrderHontaiGaku > @Num1 THEN NULL
             ELSE @Operator END) --LastApprovalStaffCD
-           ,(CASE WHEN @OrderHontaiGaku > @Num1 THEN 1
-            ELSE 10 END) --ApprovalStageFLG
+           ,(CASE WHEN @ApprovalStageFLG >= 9 THEN @ApprovalStageFLG ELSE (CASE WHEN @OrderHontaiGaku > @Num1 THEN 1
+            ELSE 10 END) END)--ApprovalStageFLG
            ,NULL    --FirstPrintDate
            ,NULL    --LastPrintDate
 
