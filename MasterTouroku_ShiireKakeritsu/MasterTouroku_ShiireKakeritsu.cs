@@ -1141,8 +1141,8 @@ namespace MasterTouroku_ShiireKakeritsu
                     row1["VendorCD"] = scSupplierCD.TxtCode.Text;
                     row1["StoreCD"] = cbo_Store.SelectedValue.ToString();
                     row1["BrandCD"] = dtMain.Rows[0]["BrandCD"];
-                    var dt=mskbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 11, dtMain.Rows[0]["BrandCD"].ToString());
-                    //row1["BrandName"] = dt.ToString();
+                    DataTable dt=mskbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 11, dtMain.Rows[0]["BrandCD"].ToString());
+                    row1["BrandName"] = dt.Rows[0]["Name"].ToString();
                     row1["SportsCD"] = dtMain.Rows[0]["SportsCD"];
                     var dt1 = mskbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 13, dtMain.Rows[0]["SportsCD"].ToString());
                     //row1["SportsName"] = dtMain.Rows[0]["SportsName"];
