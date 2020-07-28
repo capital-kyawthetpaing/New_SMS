@@ -728,8 +728,11 @@ namespace TempoRegiHanbaiTouroku
             {
                 if (Base_DL.iniEntity.IsDM_D30Used)
                 {
+                    Thread.Sleep(1000);
+                    cdo.RemoveDisplay(true);
                     cdo.RemoveDisplay(true);
                     Login_BL bbl_1 = new Login_BL();
+                    bbl_1.Display_Service_Update(true);
                     bbl_1.Display_Service_Update(true);
                     bbl_1.Display_Service_Enabled(true);
                 }
@@ -842,7 +845,7 @@ namespace TempoRegiHanbaiTouroku
 
             Show_Display();  /// ptk
             //JANCD、数量、他の項目をクリア
-            ClearScr();
+        ///    ClearScr();
 
             //ディスプレイに、お買上計を表示（都度、表示）
             Calkkin();
@@ -1189,7 +1192,9 @@ namespace TempoRegiHanbaiTouroku
                     //第二画面（支払画面）表示
                     //第一画面は入力不可に。（第二画面を消して、第一画面に戻ると入力可能にする）
                     //第一画面の前に、第二画面を表示する（第二画面を後ろにできないようにする）
-                    TempoRegiSiharaiTouroku frm = new TempoRegiSiharaiTouroku(OperationMode, dse, dspe);
+                    string Up = GetShintani_Request_Upper();
+                    string Lp = GetShinTani_Request_Lower();
+                    TempoRegiSiharaiTouroku frm = new TempoRegiSiharaiTouroku(OperationMode, dse, dspe, cdo, Up,Lp );
                     frm.CompanyCD = InCompanyCD;
                     frm.OperatorCD = InOperatorCD;
                     frm.PcID = InPcID;
@@ -1208,7 +1213,7 @@ namespace TempoRegiHanbaiTouroku
                     break;
             }
         }
-
+        
         private void InitScr()
         {
             ClearScr(1);
