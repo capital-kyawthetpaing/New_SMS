@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtChangeDate = new CKM_Controls.CKM_TextBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -45,12 +44,12 @@
             this.txtSupplierNoTo = new CKM_Controls.CKM_TextBox();
             this.btnSearch = new CKM_Controls.CKM_Button();
             this.dgvSearchVendor = new CKM_Controls.CKM_GridView();
-            this.lblVendorKBN = new CKM_Controls.CKM_Label();
             this.colVendorCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVendorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colChangeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblVendorKBN = new CKM_Controls.CKM_Label();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchVendor)).BeginInit();
             this.SuspendLayout();
@@ -119,6 +118,7 @@
             this.txtChangeDate.IntegerPart = 0;
             this.txtChangeDate.IsCorrectDate = true;
             this.txtChangeDate.isEnterKeyDown = false;
+            this.txtChangeDate.IsFirstTime = true;
             this.txtChangeDate.isMaxLengthErr = false;
             this.txtChangeDate.IsNumber = true;
             this.txtChangeDate.IsShop = false;
@@ -164,6 +164,7 @@
             this.txtVendorName.IntegerPart = 0;
             this.txtVendorName.IsCorrectDate = true;
             this.txtVendorName.isEnterKeyDown = false;
+            this.txtVendorName.IsFirstTime = true;
             this.txtVendorName.isMaxLengthErr = false;
             this.txtVendorName.IsNumber = true;
             this.txtVendorName.IsShop = false;
@@ -191,6 +192,7 @@
             this.txtVendorKana.IntegerPart = 0;
             this.txtVendorKana.IsCorrectDate = true;
             this.txtVendorKana.isEnterKeyDown = false;
+            this.txtVendorKana.IsFirstTime = true;
             this.txtVendorKana.isMaxLengthErr = false;
             this.txtVendorKana.IsNumber = true;
             this.txtVendorKana.IsShop = false;
@@ -251,6 +253,7 @@
             this.txtNotDisplayNote.IntegerPart = 0;
             this.txtNotDisplayNote.IsCorrectDate = true;
             this.txtNotDisplayNote.isEnterKeyDown = false;
+            this.txtNotDisplayNote.IsFirstTime = true;
             this.txtNotDisplayNote.isMaxLengthErr = false;
             this.txtNotDisplayNote.IsNumber = true;
             this.txtNotDisplayNote.IsShop = false;
@@ -295,6 +298,7 @@
             this.txtSupplierNoFrom.IntegerPart = 0;
             this.txtSupplierNoFrom.IsCorrectDate = true;
             this.txtSupplierNoFrom.isEnterKeyDown = false;
+            this.txtSupplierNoFrom.IsFirstTime = true;
             this.txtSupplierNoFrom.isMaxLengthErr = false;
             this.txtSupplierNoFrom.IsNumber = true;
             this.txtSupplierNoFrom.IsShop = false;
@@ -338,6 +342,7 @@
             this.txtSupplierNoTo.IntegerPart = 0;
             this.txtSupplierNoTo.IsCorrectDate = true;
             this.txtSupplierNoTo.isEnterKeyDown = false;
+            this.txtSupplierNoTo.IsFirstTime = true;
             this.txtSupplierNoTo.isMaxLengthErr = false;
             this.txtSupplierNoTo.IsNumber = true;
             this.txtSupplierNoTo.IsShop = false;
@@ -380,7 +385,7 @@
             this.dgvSearchVendor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -393,42 +398,17 @@
             this.Column3,
             this.Column4,
             this.colChangeDate});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSearchVendor.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSearchVendor.EnableHeadersVisualStyles = false;
             this.dgvSearchVendor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvSearchVendor.Location = new System.Drawing.Point(12, 227);
             this.dgvSearchVendor.Name = "dgvSearchVendor";
             this.dgvSearchVendor.RowHeight_ = 20;
             this.dgvSearchVendor.RowTemplate.Height = 20;
-            this.dgvSearchVendor.Size = new System.Drawing.Size(1250, 500);
+            this.dgvSearchVendor.Size = new System.Drawing.Size(1260, 500);
             this.dgvSearchVendor.TabIndex = 9;
             this.dgvSearchVendor.UseRowNo = true;
             this.dgvSearchVendor.UseSetting = true;
             this.dgvSearchVendor.DoubleClick += new System.EventHandler(this.dgvSearchVendor_DoubleClick);
-            // 
-            // lblVendorKBN
-            // 
-            this.lblVendorKBN.AutoSize = true;
-            this.lblVendorKBN.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.lblVendorKBN.BackColor = System.Drawing.Color.Transparent;
-            this.lblVendorKBN.DefaultlabelSize = true;
-            this.lblVendorKBN.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.lblVendorKBN.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.lblVendorKBN.ForeColor = System.Drawing.Color.Black;
-            this.lblVendorKBN.Location = new System.Drawing.Point(959, 10);
-            this.lblVendorKBN.Name = "lblVendorKBN";
-            this.lblVendorKBN.Size = new System.Drawing.Size(0, 12);
-            this.lblVendorKBN.TabIndex = 19;
-            this.lblVendorKBN.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.lblVendorKBN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblVendorKBN.Visible = false;
             // 
             // colVendorCD
             // 
@@ -469,6 +449,23 @@
             this.colChangeDate.Name = "colChangeDate";
             this.colChangeDate.Visible = false;
             // 
+            // lblVendorKBN
+            // 
+            this.lblVendorKBN.AutoSize = true;
+            this.lblVendorKBN.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.lblVendorKBN.BackColor = System.Drawing.Color.Transparent;
+            this.lblVendorKBN.DefaultlabelSize = true;
+            this.lblVendorKBN.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.lblVendorKBN.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.lblVendorKBN.ForeColor = System.Drawing.Color.Black;
+            this.lblVendorKBN.Location = new System.Drawing.Point(959, 10);
+            this.lblVendorKBN.Name = "lblVendorKBN";
+            this.lblVendorKBN.Size = new System.Drawing.Size(0, 12);
+            this.lblVendorKBN.TabIndex = 19;
+            this.lblVendorKBN.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.lblVendorKBN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblVendorKBN.Visible = false;
+            // 
             // Search_Vendor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -476,6 +473,7 @@
             this.ClientSize = new System.Drawing.Size(1284, 785);
             this.Controls.Add(this.dgvSearchVendor);
             this.F11Visible = true;
+            this.F12Visible = true;
             this.F9Visible = true;
             this.Name = "Search_Vendor";
             this.PanelHeaderHeight = 200;
