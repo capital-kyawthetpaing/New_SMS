@@ -172,6 +172,8 @@ BEGIN
         ON DA.DeleteDateTime IS NULL
         AND DM.OrderNO = DA.Number AND DM.OrderRows = DA.NumberRows
         AND DA.ArrivalPlanKBN = 1
+        AND DA.ArrivalPlanSu <> 0
+        AND DA.ArrivalPlanSu <> DA.ArrivalSu
             
     LEFT OUTER JOIN D_EDI AS DE
         ON DE.EDIImportNO = DA.EDIImportNO
@@ -204,8 +206,6 @@ BEGIN
         AND ISNULL(CONVERT(DATE,DE.ImportDateTime),'') = (CASE WHEN @EDIDate <> '' THEN CONVERT(DATE, @EDIDate) ELSE ISNULL(CONVERT(DATE,DE.ImportDateTime),'') END)
 
         AND DH.DeleteDateTime IS NULL
-        AND DA.ArrivalPlanSu <> 0
-        AND DA.ArrivalPlanSu <> DA.ArrivalSu
 
     ORDER BY DH.OrderNO
     ;
