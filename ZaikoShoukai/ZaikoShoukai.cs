@@ -451,6 +451,7 @@ namespace ZaikoShoukai
                 {
                     if (!Sports.SelectData())
                     {
+                        Sports.Value1 = "202";
                         bbl.ShowMessage("E101");
                         Sports.SetFocus(1);
                     }
@@ -460,7 +461,7 @@ namespace ZaikoShoukai
         private void Sports_Enter(object sender, EventArgs e)
         {
             Sports.ChangeDate = bbl.GetDate();
-            Sports.Value3 = "202";
+            Sports.Value1 = "202";
         }
         private void TB_ShinkitorokuT_KeyDown(object sender, KeyEventArgs e)
 
