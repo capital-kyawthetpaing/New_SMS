@@ -435,16 +435,15 @@ namespace NyuukaNyuuryoku
                         mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.MaxGyoColor;
                     }
 
-                    //// クリック以外ではフォーカス入らない列の設定(Cell_Selectable)
-                    //switch (w_Col)
-                    //{
-                    //    case object _ when ClsGridMitsumori.ColNO.DELCK:
-                    //        {
-                    //            // 削除チェック
-                    //            S_Set_Cell_Selectable(w_Col, w_Row, false);
-                    //            break;
-                    //        }
-                    //}
+                    //クリック以外ではフォーカス入らない列の設定(Cell_Selectable)
+                    switch (w_Col)
+                    {
+                        case (int)ClsGridHikiate.ColNO.Btn:
+                            {
+                                S_Set_Cell_Selectable(w_Col, w_Row, false);
+                                break;
+                            }
+                    }
                 }
             }
 

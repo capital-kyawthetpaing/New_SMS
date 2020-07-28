@@ -97,6 +97,13 @@ namespace Search
             this.ChangeDate = changeDate;
             this.lblChangeDate.Text = this.ChangeDate;
 
+            for (int i = (int)EIndex.TagName1; i <= (int)EIndex.TagName5; i++)
+            {
+                ((CKM_Controls.CKM_ComboBox)detailControls[i]).Bind(ChangeDate);
+                ((CKM_Controls.CKM_ComboBox)detailControls[i]).DropDownStyle = ComboBoxStyle.DropDown;
+                ((CKM_Controls.CKM_ComboBox)detailControls[i]).AcceptKey = true;
+            }
+
             sbl = new SKU_BL();
         }
 
