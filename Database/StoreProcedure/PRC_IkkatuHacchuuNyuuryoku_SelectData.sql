@@ -30,8 +30,8 @@ BEGIN
           ,CAST(NULL AS varchar) AS HacchuuNO    
           ,DJUD.VendorCD   AS SiiresakiCD    
           ,MVEN.VendorName AS SiiresakiName    
-          ,CASE WHEN MSKU.DirectFlg = 1 THEN N'Åõ' ELSE NULL END AS ChokusouFLG    
-          ,CASE WHEN MSKU.NoNetOrderFlg = 0 THEN N'Åõ' ELSE N'Å~' END AS NetFLG    
+          ,CASE WHEN MSKU.DirectFlg = 1 THEN 'Åõ' ELSE NULL END AS ChokusouFLG    
+          ,CASE WHEN MSKU.NoNetOrderFlg = 0 THEN 'Åõ' ELSE 'Å~' END AS NetFLG    
           ,CASE WHEN MSKU.DirectFlg = 0 THEN MSOU.SoukoName ELSE DDEP.DeliveryName END AS NounyuusakiName    
           ,MSKU.DirectFlg AS NounyuusakiKBN    
           ,CASE WHEN MSKU.DirectFlg = 0 THEN MSOU.Address1 + ' ' + MSOU.Address2 ELSE DDEP.DeliveryAddress1 + ' ' + DDEP.DeliveryAddress2 END AS NounyuusakiJuusho    
