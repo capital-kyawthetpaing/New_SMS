@@ -728,8 +728,11 @@ namespace TempoRegiHanbaiTouroku
             {
                 if (Base_DL.iniEntity.IsDM_D30Used)
                 {
+                    Thread.Sleep(1000);
+                    cdo.RemoveDisplay(true);
                     cdo.RemoveDisplay(true);
                     Login_BL bbl_1 = new Login_BL();
+                    bbl_1.Display_Service_Update(true);
                     bbl_1.Display_Service_Update(true);
                     bbl_1.Display_Service_Enabled(true);
                 }
