@@ -30,6 +30,7 @@ namespace MasterTouroku_ShiireTanka
         DataTable dt= new DataTable();
         DataTable dtsku=new DataTable();
         DataTable deldt;
+        DataTable dtdeljan = new DataTable();
         DataTable dtview;
         string choiceq = "";
         string operatorCd;
@@ -529,6 +530,7 @@ namespace MasterTouroku_ShiireTanka
                 dv = new DataView(dt);
                 GV_item.DataSource = dv;
                 deldt = dt;
+                dtdeljan = dtsku;
             }
         }
         private M_ItemOrderPrice_Entity GetItemorder()
@@ -1000,7 +1002,6 @@ namespace MasterTouroku_ShiireTanka
 
                 string SubDisplayquery = "";
                 btn = "0";
-                //string query;
                 bool operand = false;
                 if (!String.IsNullOrEmpty(brand.TxtCode.Text))
                 {
@@ -1088,7 +1089,6 @@ namespace MasterTouroku_ShiireTanka
                     dv.RowFilter = SubDisplayquery;
                     dtview = dv.ToTable();
                     GV_item.DataSource = dv;
-                    //dv.RowStateFilter = DataViewRowState.CurrentRows;
                 }
             }
         }
@@ -1574,9 +1574,10 @@ namespace MasterTouroku_ShiireTanka
                 
                 m_IOE = GetItemorder();
                 String deletedata = bl.DataTableToXml(deldt);
+                String tbdeljan = bl.DataTableToXml(dtdeljan);
                 String itemdata = bl.DataTableToXml(dt);
                 String skudata = bl.DataTableToXml(dtsku);
-                if (bl.Mastertoroku_Shiretanka_Insert(itemdata, skudata, deletedata, m_IOE))
+                if (bl.Mastertoroku_Shiretanka_Insert(itemdata, skudata, deletedata, tbdeljan, m_IOE))
                 {
                     bl.ShowMessage("I101");
                     Clear();
