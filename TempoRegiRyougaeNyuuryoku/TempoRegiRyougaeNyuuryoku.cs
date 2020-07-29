@@ -352,13 +352,13 @@ namespace TempoRegiRyougaeNyuuryoku
                 if (bbl_1.ReadConfig())
                 {
                     bbl_1.Display_Service_Update(false);
-                    Thread.Sleep(1 * 1000);
+                    Thread.Sleep(2 * 1000);
                     bbl_1.Display_Service_Enabled(false);
                 }
                 else
                 {
                     bbl_1.Display_Service_Update(false);
-                    Thread.Sleep(1 * 1000);
+                    Thread.Sleep(2 * 1000);
                     bbl_1.Display_Service_Enabled(false);
                 }
                 try
@@ -404,13 +404,13 @@ namespace TempoRegiRyougaeNyuuryoku
                     if (bbl_1.ReadConfig())
                     {
                         bbl_1.Display_Service_Update(false);
-                        Thread.Sleep(1 * 1000);
+                        Thread.Sleep(2 * 1000);
                         bbl_1.Display_Service_Enabled(false);
                     }
                     else
                     {
                         bbl_1.Display_Service_Update(false);
-                        Thread.Sleep(1 * 1000);
+                        Thread.Sleep(2 * 1000);
                         bbl_1.Display_Service_Enabled(false);
                     }
                     Kill("Display_Service");
