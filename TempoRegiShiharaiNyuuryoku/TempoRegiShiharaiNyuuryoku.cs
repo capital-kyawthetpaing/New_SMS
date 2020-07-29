@@ -113,6 +113,9 @@ namespace TempoRegiShiharaiNyuuryoku
                     {
                         trgshbl.ShowMessage("E252");
                     }
+
+                    ddpe = GetDepositEntity();
+
                     if (trgshbl.TempoRegiShiNyuuryoku_InsertUpdate(ddpe))
                     {
                         trgshbl.ShowMessage("I101");
