@@ -561,7 +561,7 @@ namespace Search
                 case SearchType.競技:
                     TxtCode.MaxLength = 6;
                     TxtCode.Width = 50;
-                    lblName.Width = 250;
+                    lblName.Width = 280;
                     break;
                 case SearchType.分類:
                     TxtCode.MaxLength = 6;
@@ -686,7 +686,7 @@ namespace Search
                 case SearchType.商品分類://SES
                     TxtCode.MaxLength = 6;
                     TxtCode.Width = 100;
-                    lblName.Width = 300;
+                    lblName.Width = 280;
                     break;
             }
             //}

@@ -189,26 +189,22 @@ namespace TempoRegiRyougaeNyuuryoku
             string cmdLine = InCompanyCD +" " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode + " " + DepositeNO;
             try
             {
-                // MessageBox.Show(filePath + @"\" + programID + ".exe", cmdLine + "");
                 try
                 {
-                   // Stop_DisplayService();
                     cdo.RemoveDisplay(true);
                     cdo.RemoveDisplay(true);
                 }
-                catch {
-                    MessageBox.Show("Error in removing . . . .");
-                }
-                if (Base_DL.iniEntity.IsDM_D30Used) // Wait
+                catch { }
+
+                if (Base_DL.iniEntity.IsDM_D30Used)
                 {
-                    CashDrawerOpen op = new CashDrawerOpen(); //ses  <<< PTK
+                    CashDrawerOpen op = new CashDrawerOpen(); //ses   << PTK
                     op.OpenCashDrawer();
                 }
-                var pro =  System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
-               // cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                // cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
                 pro.WaitForExit();
-                 Stop_DisplayService();
-                // RunDisplay_Service();
+                Stop_DisplayService();
 
             }
             catch(Exception ex)
@@ -352,13 +348,13 @@ namespace TempoRegiRyougaeNyuuryoku
                 if (bbl_1.ReadConfig())
                 {
                     bbl_1.Display_Service_Update(false);
-                    Thread.Sleep(1 * 1000);
+                    Thread.Sleep(2 * 1000);
                     bbl_1.Display_Service_Enabled(false);
                 }
                 else
                 {
                     bbl_1.Display_Service_Update(false);
-                    Thread.Sleep(1 * 1000);
+                    Thread.Sleep(2 * 1000);
                     bbl_1.Display_Service_Enabled(false);
                 }
                 try
@@ -404,13 +400,13 @@ namespace TempoRegiRyougaeNyuuryoku
                     if (bbl_1.ReadConfig())
                     {
                         bbl_1.Display_Service_Update(false);
-                        Thread.Sleep(1 * 1000);
+                        Thread.Sleep(2 * 1000);
                         bbl_1.Display_Service_Enabled(false);
                     }
                     else
                     {
                         bbl_1.Display_Service_Update(false);
-                        Thread.Sleep(1 * 1000);
+                        Thread.Sleep(2 * 1000);
                         bbl_1.Display_Service_Enabled(false);
                     }
                     Kill("Display_Service");

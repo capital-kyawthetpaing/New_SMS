@@ -75,11 +75,65 @@ namespace TempoRegiHanbaiTouroku
 
         public TempoRegiHanbaiTouroku()
         {
-          
+            Start_Display();
             InitializeComponent();
+          
+        }
+        private void RunDisplay_Service()  // Make when we want to run display_service
+        {
             try
             {
+                Login_BL bbl_1 = new Login_BL();
                 if (Base_DL.iniEntity.IsDM_D30Used)
+                {
+                    cdo.RemoveDisplay(true);
+                    cdo.RemoveDisplay(true);
+                    bbl_1.Display_Service_Update(true);
+                    bbl_1.Display_Service_Enabled(true);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in removing display. . .");
+            }
+        }
+        private void Stop_DisplayService(bool isForced = true)
+        {
+            if (Base_DL.iniEntity.IsDM_D30Used && Process.GetProcessesByName("Display_Service").Count() == 1)
+            {
+
+                Login_BL bbl_1 = new Login_BL();
+                if (bbl_1.ReadConfig())
+                {
+                    bbl_1.Display_Service_Update(false);
+                    Thread.Sleep(2 * 1000);
+                    bbl_1.Display_Service_Enabled(false);
+                }
+                else
+                {
+                    bbl_1.Display_Service_Update(false);
+                    Thread.Sleep(2 * 1000);
+                    bbl_1.Display_Service_Enabled(false);
+                }
+
+                try
+                {
+                    Kill("Display_Service");
+                }
+                catch (Exception ex)
+                {
+                    //  MessageBox.Show(ex.StackTrace.ToString());
+                }
+                if (isForced) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+                //Base_DL.iniEntity.CDO_DISPLAY.SetDisplay(true, true,Base_DL.iniEntity.DefaultMessage);
+            }
+
+        }
+        private void Start_Display()
+        {
+            try
+            {
+                if (Base_DL.iniEntity.IsDM_D30Used && Process.GetProcessesByName("Display_Service").Count() == 1)
                 {
                     Login_BL bbl_1 = new Login_BL();
                     if (bbl_1.ReadConfig())
@@ -101,22 +155,27 @@ namespace TempoRegiHanbaiTouroku
         }
         protected void Kill(string pth)
         {
-            Process[] processCollection = Process.GetProcessesByName(pth.Replace(".exe", ""));
-            foreach (Process p in processCollection)
+            try
             {
-                p.Kill();
-            }
+                Process[] processCollection = Process.GetProcessesByName(pth.Replace(".exe", ""));
+                foreach (Process p in processCollection)
+                {
+                    p.Kill();
+                }
 
-            Process[] processCollections = Process.GetProcessesByName(pth + ".exe");
-            foreach (Process p in processCollections)
-            {
-                p.Kill();
+                Process[] processCollections = Process.GetProcessesByName(pth + ".exe");
+                foreach (Process p in processCollections)
+                {
+                    p.Kill();
+                }
             }
+            catch { }
         }
         private void TempoRegiHanbaiTouroku_Load(object sender, EventArgs e)
         {
             try
             {
+             
                 InProgramID = "TempoRegiHanbaiTouroku";
                 StartProgram();
 
@@ -148,7 +207,7 @@ namespace TempoRegiHanbaiTouroku
 
                 //Saleモードの判断
                 mSaleMode = 0;
-                
+                Stop_DisplayService();  /// PTK
                 //HaspoMode＝1の場合
                 if (mHaspoMode.Equals(1))
                 {
@@ -164,7 +223,7 @@ namespace TempoRegiHanbaiTouroku
                 }
 
                 InitScr();
-                Stop_DisplayService();  /// PTK
+       
              
                
             }
@@ -175,33 +234,7 @@ namespace TempoRegiHanbaiTouroku
                 EndSec();
             }
         }
-        private void Stop_DisplayService()
-        {
-            if (Base_DL.iniEntity.IsDM_D30Used)
-            {
 
-                Login_BL bbl_1 = new Login_BL();
-                if (bbl_1.ReadConfig())
-                {
-                    bbl_1.Display_Service_Update(false);
-                    Thread.Sleep(3 * 1000);
-                    bbl_1.Display_Service_Enabled(false);
-                }
-                else
-                {
-                    bbl_1.Display_Service_Update(false);
-                    Thread.Sleep(3 * 1000);
-                    bbl_1.Display_Service_Enabled(false);
-                }
-                try
-                {
-                    Kill("Display_Service");
-                }
-                catch { }
-                cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
-                //Base_DL.iniEntity.CDO_DISPLAY.SetDisplay(true, true,Base_DL.iniEntity.DefaultMessage);
-            }
-        }
         /// <summary>
         /// Get All control 
         /// </summary>
@@ -408,7 +441,8 @@ namespace TempoRegiHanbaiTouroku
 
         }
 
-        private void DispFromDataTable(int gyoNo = 1)
+        private void 
+            DispFromDataTable(int gyoNo = 1)
         {
             if (dtSales.Rows.Count == gyoNo - 1)
             {
@@ -722,26 +756,7 @@ namespace TempoRegiHanbaiTouroku
             }
 
         }
-        private void RunDisplay_Service()  // Make when we want to run display_service
-        {
-            try
-            {
-                if (Base_DL.iniEntity.IsDM_D30Used)
-                {
-                    Thread.Sleep(1000);
-                    cdo.RemoveDisplay(true);
-                    cdo.RemoveDisplay(true);
-                    Login_BL bbl_1 = new Login_BL();
-                    bbl_1.Display_Service_Update(true);
-                    bbl_1.Display_Service_Update(true);
-                    bbl_1.Display_Service_Enabled(true);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error in removing display. . .");
-            }
-        }
+       
         protected override void EndSec()
         {
             RunDisplay_Service();
@@ -843,13 +858,13 @@ namespace TempoRegiHanbaiTouroku
             DispFromDataTable(Convert.ToInt16(lblDtGyo1.Text));
 
 
-            Show_Display();  /// ptk
+             /// ptk
             //JANCD、数量、他の項目をクリア
             //ClearScr();
 
             //ディスプレイに、お買上計を表示（都度、表示）
             Calkkin();
-
+            Show_Display();
             txtJanCD.Focus();
             
         }
