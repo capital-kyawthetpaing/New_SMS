@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_LBLSoko = new CKM_Controls.CKM_Label();
             this.CB_Soko = new CKM_Controls.CKM_ComboBox();
             this.ckM_LB_Tanaban = new CKM_Controls.CKM_Label();
@@ -112,26 +112,6 @@
             this.ckM_LB_Kkensaku = new CKM_Controls.CKM_Label();
             this.ckM_LB_KenrenK = new CKM_Controls.CKM_Label();
             this.GV_Zaiko = new CKM_Controls.CKM_GridView();
-            this.SKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.商品名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.カラー = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.サイズ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.店舗名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoukoName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.棚番 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.現在庫 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.入荷予定 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Button = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.引当可能 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.メーカー = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.JANCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ブランド = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.メーカー商品CD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.最速入荷日 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.基準在庫 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.販売定価 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.標準原価 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckM_LB_Kijunbi = new CKM_Controls.CKM_Label();
             this.ckM_CKB_Mishohin = new CKM_Controls.CKM_CheckBox();
             this.TB_ShoninbiF = new CKM_Controls.CKM_TextBox();
@@ -148,6 +128,23 @@
             this.Sports = new Search.CKM_SearchControl();
             this.Maker = new Search.CKM_SearchControl();
             this.Shiiresaki = new Search.CKM_SearchControl();
+            this.colSKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.商品名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.カラー = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.サイズ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.店舗名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.棚番 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.現在庫 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.入荷予定 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Button = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.引当可能 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.メーカー = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ブランド = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.メーカー商品CD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.最速入荷日 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.基準在庫 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.販売定価 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.標準原価 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_Zaiko)).BeginInit();
@@ -483,7 +480,7 @@
             this.ckM_LB_katarogu.Name = "ckM_LB_katarogu";
             this.ckM_LB_katarogu.Size = new System.Drawing.Size(57, 12);
             this.ckM_LB_katarogu.TabIndex = 24;
-            this.ckM_LB_katarogu.Text = "かタログ";
+            this.ckM_LB_katarogu.Text = "カタログ";
             this.ckM_LB_katarogu.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_LB_katarogu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -829,7 +826,7 @@
             this.ckM_LB_Kei_waza.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_Kei_waza.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_Kei_waza.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_Kei_waza.Location = new System.Drawing.Point(649, 197);
+            this.ckM_LB_Kei_waza.Location = new System.Drawing.Point(649, 199);
             this.ckM_LB_Kei_waza.Name = "ckM_LB_Kei_waza";
             this.ckM_LB_Kei_waza.Size = new System.Drawing.Size(44, 12);
             this.ckM_LB_Kei_waza.TabIndex = 45;
@@ -1477,47 +1474,44 @@
             this.GV_Zaiko.AllowUserToAddRows = false;
             this.GV_Zaiko.AllowUserToDeleteRows = false;
             this.GV_Zaiko.AllowUserToResizeRows = false;
-            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_Zaiko.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_Zaiko.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GV_Zaiko.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_Zaiko.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_Zaiko.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GV_Zaiko.ColumnHeadersHeight = 25;
             this.GV_Zaiko.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SKUCD,
+            this.colSKUCD,
             this.商品名,
             this.カラー,
             this.サイズ,
             this.店舗名,
-            this.SoukoName,
             this.棚番,
             this.現在庫,
             this.入荷予定,
             this.Button,
             this.引当可能,
             this.メーカー,
-            this.JANCD,
             this.ブランド,
-            this.ITEM,
             this.メーカー商品CD,
             this.最速入荷日,
             this.基準在庫,
             this.販売定価,
             this.標準原価});
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GV_Zaiko.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GV_Zaiko.DefaultCellStyle = dataGridViewCellStyle11;
             this.GV_Zaiko.EnableHeadersVisualStyles = false;
             this.GV_Zaiko.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_Zaiko.Location = new System.Drawing.Point(71, 459);
@@ -1532,186 +1526,6 @@
             this.GV_Zaiko.UseRowNo = true;
             this.GV_Zaiko.UseSetting = false;
             this.GV_Zaiko.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GV_Zaiko_CellContentClick);
-            // 
-            // SKUCD
-            // 
-            this.SKUCD.DataPropertyName = "SKUCD";
-            this.SKUCD.HeaderText = "SKUCD";
-            this.SKUCD.Name = "SKUCD";
-            this.SKUCD.ReadOnly = true;
-            this.SKUCD.Width = 200;
-            // 
-            // 商品名
-            // 
-            this.商品名.DataPropertyName = "商品名";
-            this.商品名.HeaderText = "商品名";
-            this.商品名.Name = "商品名";
-            this.商品名.ReadOnly = true;
-            this.商品名.Width = 400;
-            // 
-            // カラー
-            // 
-            this.カラー.DataPropertyName = "カラー";
-            this.カラー.HeaderText = "カラー";
-            this.カラー.Name = "カラー";
-            this.カラー.ReadOnly = true;
-            // 
-            // サイズ
-            // 
-            this.サイズ.DataPropertyName = "サイズ";
-            this.サイズ.HeaderText = "サイズ";
-            this.サイズ.Name = "サイズ";
-            this.サイズ.ReadOnly = true;
-            this.サイズ.Width = 150;
-            // 
-            // 店舗名
-            // 
-            this.店舗名.DataPropertyName = "店舗名";
-            this.店舗名.HeaderText = "店舗名";
-            this.店舗名.Name = "店舗名";
-            this.店舗名.ReadOnly = true;
-            // 
-            // SoukoName
-            // 
-            this.SoukoName.DataPropertyName = "倉庫名";
-            this.SoukoName.HeaderText = "倉庫";
-            this.SoukoName.Name = "SoukoName";
-            this.SoukoName.ReadOnly = true;
-            // 
-            // 棚番
-            // 
-            this.棚番.DataPropertyName = "棚番";
-            this.棚番.HeaderText = "棚番";
-            this.棚番.Name = "棚番";
-            this.棚番.ReadOnly = true;
-            // 
-            // 現在庫
-            // 
-            this.現在庫.DataPropertyName = "在庫数";
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle36.Format = "N0";
-            dataGridViewCellStyle36.NullValue = null;
-            this.現在庫.DefaultCellStyle = dataGridViewCellStyle36;
-            this.現在庫.HeaderText = "現在庫";
-            this.現在庫.Name = "現在庫";
-            this.現在庫.ReadOnly = true;
-            // 
-            // 入荷予定
-            // 
-            this.入荷予定.DataPropertyName = "入荷予定数";
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle37.Format = "N0";
-            dataGridViewCellStyle37.NullValue = null;
-            this.入荷予定.DefaultCellStyle = dataGridViewCellStyle37;
-            this.入荷予定.HeaderText = "入荷予定";
-            this.入荷予定.Name = "入荷予定";
-            this.入荷予定.ReadOnly = true;
-            // 
-            // Button
-            // 
-            this.Button.HeaderText = "";
-            this.Button.Name = "Button";
-            this.Button.ReadOnly = true;
-            this.Button.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Button.UseColumnTextForButtonValue = true;
-            this.Button.Width = 40;
-            // 
-            // 引当可能
-            // 
-            this.引当可能.DataPropertyName = "引当可能数";
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle38.Format = "N0";
-            dataGridViewCellStyle38.NullValue = null;
-            this.引当可能.DefaultCellStyle = dataGridViewCellStyle38;
-            this.引当可能.HeaderText = "引当可能";
-            this.引当可能.Name = "引当可能";
-            this.引当可能.ReadOnly = true;
-            // 
-            // メーカー
-            // 
-            this.メーカー.DataPropertyName = "メーカー在庫数";
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.メーカー.DefaultCellStyle = dataGridViewCellStyle39;
-            this.メーカー.HeaderText = "メーカー";
-            this.メーカー.Name = "メーカー";
-            this.メーカー.ReadOnly = true;
-            // 
-            // JANCD
-            // 
-            this.JANCD.DataPropertyName = "JANCD";
-            this.JANCD.HeaderText = "JANCD";
-            this.JANCD.Name = "JANCD";
-            this.JANCD.ReadOnly = true;
-            // 
-            // ブランド
-            // 
-            this.ブランド.DataPropertyName = "ブランド名";
-            this.ブランド.HeaderText = "ブランド";
-            this.ブランド.Name = "ブランド";
-            this.ブランド.ReadOnly = true;
-            this.ブランド.Width = 180;
-            // 
-            // ITEM
-            // 
-            this.ITEM.DataPropertyName = "ITem";
-            this.ITEM.HeaderText = "ITEM";
-            this.ITEM.Name = "ITEM";
-            this.ITEM.ReadOnly = true;
-            this.ITEM.Width = 200;
-            // 
-            // メーカー商品CD
-            // 
-            this.メーカー商品CD.DataPropertyName = "メーカー商品CD";
-            this.メーカー商品CD.HeaderText = "メーカー商品CD";
-            this.メーカー商品CD.Name = "メーカー商品CD";
-            this.メーカー商品CD.ReadOnly = true;
-            this.メーカー商品CD.Width = 200;
-            // 
-            // 最速入荷日
-            // 
-            this.最速入荷日.DataPropertyName = "最速入荷日";
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle40.Format = "d";
-            dataGridViewCellStyle40.NullValue = null;
-            this.最速入荷日.DefaultCellStyle = dataGridViewCellStyle40;
-            this.最速入荷日.HeaderText = "最速入荷日";
-            this.最速入荷日.Name = "最速入荷日";
-            this.最速入荷日.ReadOnly = true;
-            // 
-            // 基準在庫
-            // 
-            this.基準在庫.DataPropertyName = "基準在庫";
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle41.Format = "N0";
-            dataGridViewCellStyle41.NullValue = null;
-            this.基準在庫.DefaultCellStyle = dataGridViewCellStyle41;
-            this.基準在庫.HeaderText = "基準在庫";
-            this.基準在庫.Name = "基準在庫";
-            this.基準在庫.ReadOnly = true;
-            // 
-            // 販売定価
-            // 
-            this.販売定価.DataPropertyName = "販売定価";
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle42.Format = "N0";
-            dataGridViewCellStyle42.NullValue = null;
-            this.販売定価.DefaultCellStyle = dataGridViewCellStyle42;
-            this.販売定価.HeaderText = "販売定価";
-            this.販売定価.Name = "販売定価";
-            this.販売定価.ReadOnly = true;
-            // 
-            // 標準原価
-            // 
-            this.標準原価.DataPropertyName = "標準原価";
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle43.Format = "N0";
-            dataGridViewCellStyle43.NullValue = null;
-            this.標準原価.DefaultCellStyle = dataGridViewCellStyle43;
-            this.標準原価.HeaderText = "標準原価";
-            this.標準原価.MaxInputLength = 6;
-            this.標準原価.Name = "標準原価";
-            this.標準原価.ReadOnly = true;
-            this.標準原価.Width = 80;
             // 
             // ckM_LB_Kijunbi
             // 
@@ -2069,7 +1883,7 @@
             this.Sports.IsCopy = false;
             this.Sports.LabelText = "";
             this.Sports.LabelVisible = true;
-            this.Sports.Location = new System.Drawing.Point(696, 189);
+            this.Sports.Location = new System.Drawing.Point(696, 191);
             this.Sports.Margin = new System.Windows.Forms.Padding(0);
             this.Sports.Name = "Sports";
             this.Sports.NameWidth = 250;
@@ -2146,6 +1960,163 @@
             this.Shiiresaki.Value3 = null;
             this.Shiiresaki.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.Shiiresaki_CodeKeyDownEvent);
             this.Shiiresaki.Enter += new System.EventHandler(this.Shiiresaki_Enter);
+            // 
+            // colSKUCD
+            // 
+            this.colSKUCD.DataPropertyName = "SKUCD";
+            this.colSKUCD.HeaderText = "SKUCD";
+            this.colSKUCD.Name = "colSKUCD";
+            this.colSKUCD.ReadOnly = true;
+            // 
+            // 商品名
+            // 
+            this.商品名.DataPropertyName = "商品名";
+            this.商品名.HeaderText = "商品名";
+            this.商品名.Name = "商品名";
+            this.商品名.ReadOnly = true;
+            this.商品名.Width = 400;
+            // 
+            // カラー
+            // 
+            this.カラー.DataPropertyName = "カラー";
+            this.カラー.HeaderText = "カラー";
+            this.カラー.Name = "カラー";
+            this.カラー.ReadOnly = true;
+            // 
+            // サイズ
+            // 
+            this.サイズ.DataPropertyName = "サイズ";
+            this.サイズ.HeaderText = "サイズ";
+            this.サイズ.Name = "サイズ";
+            this.サイズ.ReadOnly = true;
+            this.サイズ.Width = 150;
+            // 
+            // 店舗名
+            // 
+            this.店舗名.DataPropertyName = "店舗名";
+            this.店舗名.HeaderText = "店舗名";
+            this.店舗名.Name = "店舗名";
+            this.店舗名.ReadOnly = true;
+            // 
+            // 棚番
+            // 
+            this.棚番.DataPropertyName = "棚番";
+            this.棚番.HeaderText = "棚番";
+            this.棚番.Name = "棚番";
+            this.棚番.ReadOnly = true;
+            // 
+            // 現在庫
+            // 
+            this.現在庫.DataPropertyName = "在庫数";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.現在庫.DefaultCellStyle = dataGridViewCellStyle3;
+            this.現在庫.HeaderText = "現在庫";
+            this.現在庫.Name = "現在庫";
+            this.現在庫.ReadOnly = true;
+            // 
+            // 入荷予定
+            // 
+            this.入荷予定.DataPropertyName = "入荷予定数";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.入荷予定.DefaultCellStyle = dataGridViewCellStyle4;
+            this.入荷予定.HeaderText = "入荷予定";
+            this.入荷予定.Name = "入荷予定";
+            this.入荷予定.ReadOnly = true;
+            // 
+            // Button
+            // 
+            this.Button.HeaderText = "";
+            this.Button.Name = "Button";
+            this.Button.ReadOnly = true;
+            this.Button.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Button.UseColumnTextForButtonValue = true;
+            this.Button.Width = 40;
+            // 
+            // 引当可能
+            // 
+            this.引当可能.DataPropertyName = "引当可能数";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N0";
+            dataGridViewCellStyle5.NullValue = null;
+            this.引当可能.DefaultCellStyle = dataGridViewCellStyle5;
+            this.引当可能.HeaderText = "引当可能";
+            this.引当可能.Name = "引当可能";
+            this.引当可能.ReadOnly = true;
+            // 
+            // メーカー
+            // 
+            this.メーカー.DataPropertyName = "メーカー在庫数";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.メーカー.DefaultCellStyle = dataGridViewCellStyle6;
+            this.メーカー.HeaderText = "メーカー";
+            this.メーカー.Name = "メーカー";
+            this.メーカー.ReadOnly = true;
+            // 
+            // ブランド
+            // 
+            this.ブランド.DataPropertyName = "ブランド名";
+            this.ブランド.HeaderText = "ブランド";
+            this.ブランド.Name = "ブランド";
+            this.ブランド.ReadOnly = true;
+            this.ブランド.Width = 180;
+            // 
+            // メーカー商品CD
+            // 
+            this.メーカー商品CD.DataPropertyName = "メーカー商品CD";
+            this.メーカー商品CD.HeaderText = "メーカー商品CD";
+            this.メーカー商品CD.Name = "メーカー商品CD";
+            this.メーカー商品CD.ReadOnly = true;
+            this.メーカー商品CD.Width = 200;
+            // 
+            // 最速入荷日
+            // 
+            this.最速入荷日.DataPropertyName = "最速入荷日";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Format = "d";
+            dataGridViewCellStyle7.NullValue = null;
+            this.最速入荷日.DefaultCellStyle = dataGridViewCellStyle7;
+            this.最速入荷日.HeaderText = "最速入荷日";
+            this.最速入荷日.Name = "最速入荷日";
+            this.最速入荷日.ReadOnly = true;
+            // 
+            // 基準在庫
+            // 
+            this.基準在庫.DataPropertyName = "基準在庫";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N0";
+            dataGridViewCellStyle8.NullValue = null;
+            this.基準在庫.DefaultCellStyle = dataGridViewCellStyle8;
+            this.基準在庫.HeaderText = "基準在庫";
+            this.基準在庫.Name = "基準在庫";
+            this.基準在庫.ReadOnly = true;
+            // 
+            // 販売定価
+            // 
+            this.販売定価.DataPropertyName = "販売定価";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "N0";
+            dataGridViewCellStyle9.NullValue = null;
+            this.販売定価.DefaultCellStyle = dataGridViewCellStyle9;
+            this.販売定価.HeaderText = "販売定価";
+            this.販売定価.Name = "販売定価";
+            this.販売定価.ReadOnly = true;
+            // 
+            // 標準原価
+            // 
+            this.標準原価.DataPropertyName = "標準原価";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "N0";
+            dataGridViewCellStyle10.NullValue = null;
+            this.標準原価.DefaultCellStyle = dataGridViewCellStyle10;
+            this.標準原価.HeaderText = "標準原価";
+            this.標準原価.MaxInputLength = 6;
+            this.標準原価.Name = "標準原価";
+            this.標準原価.ReadOnly = true;
+            this.標準原価.Width = 80;
             // 
             // ZaikoShoukai
             // 
@@ -2263,26 +2234,9 @@
         private CKM_Controls.CKM_TextBox TB_ShoninbiF;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel PL_head;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SKUCD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 商品名;
-        private System.Windows.Forms.DataGridViewTextBoxColumn カラー;
-        private System.Windows.Forms.DataGridViewTextBoxColumn サイズ;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 店舗名;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoukoName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 棚番;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 現在庫;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 入荷予定;
-        private System.Windows.Forms.DataGridViewButtonColumn Button;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 引当可能;
-        private System.Windows.Forms.DataGridViewTextBoxColumn メーカー;
         private System.Windows.Forms.DataGridViewTextBoxColumn JANCD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ブランド;
         private System.Windows.Forms.DataGridViewTextBoxColumn ITEM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn メーカー商品CD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 最速入荷日;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 基準在庫;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 販売定価;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 標準原価;
         private Search.CKM_SearchControl SearchBrand;
         public CKM_Controls.CKM_ComboBox CB_Soko;
         public CKM_Controls.CKM_RadioButton RB_Makashohincd;
@@ -2294,5 +2248,22 @@
         private Search.CKM_SearchControl jan;
         private Search.CKM_SearchControl sku;
         private System.Windows.Forms.Label LB_ChangeDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSKUCD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 商品名;
+        private System.Windows.Forms.DataGridViewTextBoxColumn カラー;
+        private System.Windows.Forms.DataGridViewTextBoxColumn サイズ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 店舗名;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 棚番;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 現在庫;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 入荷予定;
+        private System.Windows.Forms.DataGridViewButtonColumn Button;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 引当可能;
+        private System.Windows.Forms.DataGridViewTextBoxColumn メーカー;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ブランド;
+        private System.Windows.Forms.DataGridViewTextBoxColumn メーカー商品CD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 最速入荷日;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 基準在庫;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 販売定価;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 標準原価;
     }
 }

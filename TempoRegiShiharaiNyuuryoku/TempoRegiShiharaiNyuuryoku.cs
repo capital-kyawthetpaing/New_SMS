@@ -117,7 +117,7 @@ namespace TempoRegiShiharaiNyuuryoku
                     {
                         trgshbl.ShowMessage("I101");
                         RunConsole();//exeRun    <<<< PTK
-                   
+                        
                         txtPayment.Clear();
                         txtPayment.Focus();
                         cboDenominationName.SelectedValue = "-1";
@@ -125,7 +125,6 @@ namespace TempoRegiShiharaiNyuuryoku
                         DisplayData();                       
                     }
                 }
-                
             }
         }
 
@@ -236,13 +235,13 @@ namespace TempoRegiShiharaiNyuuryoku
                 if (bbl_1.ReadConfig())
                 {
                     bbl_1.Display_Service_Update(false);
-                    Thread.Sleep(1 * 1000);
+                    Thread.Sleep(2 * 1000);
                     bbl_1.Display_Service_Enabled(false);
                 }
                 else
                 {
                     bbl_1.Display_Service_Update(false);
-                    Thread.Sleep(1 * 1000);
+                    Thread.Sleep(2 * 1000);
                     bbl_1.Display_Service_Enabled(false);
                 }
                 try
@@ -263,7 +262,11 @@ namespace TempoRegiShiharaiNyuuryoku
             {
                 if (Base_DL.iniEntity.IsDM_D30Used)
                 {
-                    cdo.RemoveDisplay(true);
+                    try
+                    {
+                        cdo.RemoveDisplay(true);
+                    }
+                    catch { }
                     Login_BL bbl_1 = new Login_BL();
                     bbl_1.Display_Service_Update(true);
                     bbl_1.Display_Service_Enabled(true);
@@ -284,13 +287,13 @@ namespace TempoRegiShiharaiNyuuryoku
                     if (bbl_1.ReadConfig())
                     {
                         bbl_1.Display_Service_Update(false);
-                        Thread.Sleep(1 * 1000);
+                        Thread.Sleep(2 * 1000);
                         bbl_1.Display_Service_Enabled(false);
                     }
                     else
                     {
                         bbl_1.Display_Service_Update(false);
-                        Thread.Sleep(1 * 1000);
+                        Thread.Sleep(2 * 1000);
                         bbl_1.Display_Service_Enabled(false);
                     }
                     Kill("Display_Service");

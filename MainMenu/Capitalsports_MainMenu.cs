@@ -473,8 +473,8 @@ namespace MainMenu
         }
         private void RejectDisplay(string Exename)
         {
-            string[] str = new string[] {"TempoRegiHanbaiTouroku" ,"TempoRegiPoint", "TempoRegiRyousyuusyo",
-                "TempoRegiTorihikiReceipt","TempoRegiRyougaeNyuuryoku", "TempoRegiShiharaiNyuuryoku", "TempoRegiTsurisenJyunbi","TempoRegiNyuukinTouroku" };
+            string[] str = new string[] {"TempoRegiHanbaiTouroku" ,"TempoRegiPoint", "TempoRegiRyousyuusyo", "TempoRegiTorihikiReceipt",
+                "TempoRegiRyougaeNyuuryoku", "TempoRegiShiharaiNyuuryoku", "TempoRegiTsurisenJyunbi","TempoRegiNyuukinTouroku","TempoRegiNyuukinNyuuryoku" };
 
             foreach (var f in str)
             {
@@ -482,7 +482,10 @@ namespace MainMenu
                 {
                     try
                     {
-                        if (Base_DL.iniEntity.IsDM_D30Used)
+
+                        Process[] localByName = Process.GetProcessesByName("Display_Service");
+                        Process[] localByName1 = Process.GetProcessesByName("Display_Service.exe");
+                        if (Base_DL.iniEntity.IsDM_D30Used && localByName.Count() == 0 && localByName1.Count() == 0)
                         {
                             cdo.RemoveDisplay();
                         }
