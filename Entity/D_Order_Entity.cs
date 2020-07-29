@@ -43,7 +43,7 @@ namespace Entity
         public string ApprovalStageFLG { get; set; }
         public string FirstPrintDate { get; set; }
         public string LastPrintDate { get; set; }
-
+        public string ArrivalPlanDate { get; set; }
         public string ApprovalEnabled { get; set; }
 
         //検索用Entity
@@ -91,19 +91,20 @@ namespace Entity
         public string OrderRows { get; set; }
         public string OrderSu { get; set; }
 
-        //入荷入力	
+        //入荷入力
         public string AdminNO { get; set; }
         public string SKUCD { get; set; }
         public string SKUName { get; set; }
         public string JANCD { get; set; }
         public string ColorName { get; set; }
         public string SizeName { get; set; }
-        public string OrderSuu { get; set; }
+        public string OrderSuu { get; set; }		
         public string OrderUnitPrice { get; set; }
         public string TaniCD { get; set; }
         public string PriceOutTax { get; set; }
         public string Rate { get; set; }
         public string OrderTax { get; set; }
         public string OrderTaxRitsu { get; set; }
+
     }
 }
