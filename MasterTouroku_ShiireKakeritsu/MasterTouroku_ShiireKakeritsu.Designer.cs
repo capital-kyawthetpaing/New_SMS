@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -273,7 +272,7 @@
             this.btnCapture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCapture.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnCapture.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnCapture.Location = new System.Drawing.Point(1533, 13);
+            this.btnCapture.Location = new System.Drawing.Point(1553, 13);
             this.btnCapture.Margin = new System.Windows.Forms.Padding(1);
             this.btnCapture.Name = "btnCapture";
             this.btnCapture.Size = new System.Drawing.Size(110, 25);
@@ -390,7 +389,7 @@
             this.dgv_ShiireKakeritsu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.NullValue = null;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -411,21 +410,13 @@
             this.colDate,
             this.colRate1,
             this.col1});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ShiireKakeritsu.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_ShiireKakeritsu.EnableHeadersVisualStyles = false;
             this.dgv_ShiireKakeritsu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.dgv_ShiireKakeritsu.Location = new System.Drawing.Point(187, 343);
+            this.dgv_ShiireKakeritsu.Location = new System.Drawing.Point(164, 343);
             this.dgv_ShiireKakeritsu.Name = "dgv_ShiireKakeritsu";
             this.dgv_ShiireKakeritsu.RowHeight_ = 20;
             this.dgv_ShiireKakeritsu.RowTemplate.Height = 20;
-            this.dgv_ShiireKakeritsu.Size = new System.Drawing.Size(1300, 450);
+            this.dgv_ShiireKakeritsu.Size = new System.Drawing.Size(1365, 450);
             this.dgv_ShiireKakeritsu.TabIndex = 44;
             this.dgv_ShiireKakeritsu.UseRowNo = true;
             this.dgv_ShiireKakeritsu.UseSetting = false;
@@ -441,7 +432,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnDelete.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnDelete.Location = new System.Drawing.Point(1533, 308);
+            this.btnDelete.Location = new System.Drawing.Point(1553, 308);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(1);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(110, 25);
@@ -460,7 +451,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnUpdate.Location = new System.Drawing.Point(1426, 308);
+            this.btnUpdate.Location = new System.Drawing.Point(1445, 308);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(1);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(110, 25);
@@ -479,7 +470,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnAdd.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnAdd.Location = new System.Drawing.Point(1317, 308);
+            this.btnAdd.Location = new System.Drawing.Point(1336, 308);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(1);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(110, 25);
@@ -498,7 +489,7 @@
             this.btnReleaseAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReleaseAll.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnReleaseAll.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnReleaseAll.Location = new System.Drawing.Point(1533, 251);
+            this.btnReleaseAll.Location = new System.Drawing.Point(1553, 251);
             this.btnReleaseAll.Margin = new System.Windows.Forms.Padding(1);
             this.btnReleaseAll.Name = "btnReleaseAll";
             this.btnReleaseAll.Size = new System.Drawing.Size(110, 25);
@@ -517,7 +508,7 @@
             this.btnSelectAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelectAll.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnSelectAll.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnSelectAll.Location = new System.Drawing.Point(1425, 251);
+            this.btnSelectAll.Location = new System.Drawing.Point(1444, 251);
             this.btnSelectAll.Margin = new System.Windows.Forms.Padding(1);
             this.btnSelectAll.Name = "btnSelectAll";
             this.btnSelectAll.Size = new System.Drawing.Size(110, 25);
@@ -536,7 +527,7 @@
             this.btnChoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChoice.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnChoice.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnChoice.Location = new System.Drawing.Point(1316, 251);
+            this.btnChoice.Location = new System.Drawing.Point(1335, 251);
             this.btnChoice.Margin = new System.Windows.Forms.Padding(1);
             this.btnChoice.Name = "btnChoice";
             this.btnChoice.Size = new System.Drawing.Size(110, 25);
@@ -1456,13 +1447,14 @@
             this.colBrandCD1.HeaderText = "ブランド";
             this.colBrandCD1.Name = "colBrandCD1";
             this.colBrandCD1.ReadOnly = true;
+            this.colBrandCD1.Width = 80;
             // 
             // colBrandName
             // 
             this.colBrandName.DataPropertyName = "BrandName";
             this.colBrandName.HeaderText = "";
             this.colBrandName.Name = "colBrandName";
-            this.colBrandName.Width = 250;
+            this.colBrandName.Width = 200;
             // 
             // colSportsCD1
             // 
@@ -1470,13 +1462,14 @@
             this.colSportsCD1.HeaderText = "競　技";
             this.colSportsCD1.Name = "colSportsCD1";
             this.colSportsCD1.ReadOnly = true;
+            this.colSportsCD1.Width = 80;
             // 
             // colSportsName
             // 
             this.colSportsName.DataPropertyName = "SportsName";
             this.colSportsName.HeaderText = "";
             this.colSportsName.Name = "colSportsName";
-            this.colSportsName.Width = 250;
+            this.colSportsName.Width = 200;
             // 
             // colSegmentCD1
             // 
@@ -1484,19 +1477,21 @@
             this.colSegmentCD1.HeaderText = "商品分類";
             this.colSegmentCD1.Name = "colSegmentCD1";
             this.colSegmentCD1.ReadOnly = true;
+            this.colSegmentCD1.Width = 80;
             // 
             // colSegmentName
             // 
             this.colSegmentName.DataPropertyName = "SegmentCDName";
             this.colSegmentName.HeaderText = "";
             this.colSegmentName.Name = "colSegmentName";
-            this.colSegmentName.Width = 250;
+            this.colSegmentName.Width = 200;
             // 
             // colYear
             // 
             this.colYear.DataPropertyName = "LastYearTerm";
             this.colYear.HeaderText = "年　度";
             this.colYear.Name = "colYear";
+            this.colYear.Width = 80;
             // 
             // colSeason
             // 
@@ -1524,6 +1519,7 @@
             this.colRate1.MaxInputLength = 3;
             this.colRate1.MinimumWidth = 3;
             this.colRate1.Name = "colRate1";
+            this.colRate1.Width = 80;
             // 
             // col1
             // 
