@@ -45,9 +45,24 @@ namespace ZaikoShoukai
             ModeVisible = false;
             base.Btn_F10.Text = "CSV(F10)";
             CB_Soko.Focus();
+            this.colSKUCD.Frozen = true;
+            this.商品名.Frozen = true;
+            this.カラー.Frozen = true;
+            this.サイズ.Frozen = true;
+            this.Shiiresaki.NameWidth = 369;
+            this.Maker.NameWidth = 369;
+            this.SearchBrand.NameWidth = 369;
+            this.CB_Tagu1.AcceptKey = true;
+            this.CB_Tagu2.AcceptKey = true;
+            this.CB_Tagu3.AcceptKey = true;
+            this.CB_Tagu4.AcceptKey = true;
+            this.CB_Tagu5.AcceptKey = true;
             AddCol();
             GV_Zaiko.DisabledColumn("colSKUCD,商品名,カラー,サイズ,店舗名,SoukoName,棚番,現在庫,入荷予定,引当可能,メーカー,JANCD,ブランド,ITEM,メーカー商品CD,最速入荷日,基準在庫,販売定価,標準原価");
         }
+
+       
+
         protected override void EndSec()
         {
             this.Close();
@@ -182,7 +197,7 @@ namespace ZaikoShoukai
             msT_Entity = new M_SKUTag_Entity()
             {
                 TagName1 = CB_Tagu1.Text,
-                TagName2=CB_Tagu2.Text,
+                TagName2 =CB_Tagu2.Text,
                 TagName3=CB_Tagu3.Text,
                 TagName4=CB_Tagu4.Text,
                 TagName5=CB_Tagu5.Text,
@@ -280,7 +295,6 @@ namespace ZaikoShoukai
         }
         private void Excel()
         {
-            
                 if (!ErrorCheck())
                 {
                     return;
@@ -519,18 +533,24 @@ namespace ZaikoShoukai
         {
             if (e.RowIndex != -1)
             {
-                soukoname = GV_Zaiko.Rows[e.RowIndex].Cells[5].Value.ToString();
-                skucd = GV_Zaiko.Rows[e.RowIndex].Cells[0].Value.ToString();
-                shohinmei = GV_Zaiko.Rows[e.RowIndex].Cells[1].Value.ToString();
-                color = GV_Zaiko.Rows[e.RowIndex].Cells[2].Value.ToString();
-                size = GV_Zaiko.Rows[e.RowIndex].Cells[3].Value.ToString();
-                jancd = GV_Zaiko.Rows[e.RowIndex].Cells[14].Value.ToString();
-                brand = GV_Zaiko.Rows[e.RowIndex].Cells[13].Value.ToString();
-                item = GV_Zaiko.Rows[e.RowIndex].Cells[12].Value.ToString();
-                makercd = GV_Zaiko.Rows[e.RowIndex].Cells[15].Value.ToString();
-                changedate = LB_ChangeDate.Text;
-                Search_PlanArrival frmVendor = new Search_PlanArrival(adminno, skucd, shohinmei, color, size, jancd, brand, item, makercd, changedate, soukocd,soukoname,StoreCD);
-                frmVendor.ShowDialog();
+                
+
+                if (e.ColumnIndex == GV_Zaiko.Columns["btnPlan"].Index)
+                {
+                    soukoname = GV_Zaiko.Rows[e.RowIndex].Cells[5].Value.ToString();
+                    skucd = GV_Zaiko.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    shohinmei = GV_Zaiko.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    color = GV_Zaiko.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    size = GV_Zaiko.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    jancd = GV_Zaiko.Rows[e.RowIndex].Cells[14].Value.ToString();
+                    brand = GV_Zaiko.Rows[e.RowIndex].Cells[13].Value.ToString();
+                    item = GV_Zaiko.Rows[e.RowIndex].Cells[12].Value.ToString();
+                    makercd = GV_Zaiko.Rows[e.RowIndex].Cells[15].Value.ToString();
+                    changedate = LB_ChangeDate.Text;
+                    Search_PlanArrival frmVendor = new Search_PlanArrival(adminno, skucd, shohinmei, color, size, jancd, brand, item, makercd, changedate, soukocd, soukoname, StoreCD);
+                    frmVendor.ShowDialog();
+                }
+               
             }
         }
         private bool ErrorCheck()
