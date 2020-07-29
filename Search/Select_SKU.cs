@@ -132,6 +132,7 @@ namespace Search
             else
             {
                 sbl.ShowMessage("E128");
+                dgvDetail.DataSource = null;
             }
         }
 

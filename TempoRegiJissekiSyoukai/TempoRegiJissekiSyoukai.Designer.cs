@@ -231,7 +231,7 @@
             this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUp.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.btnUp.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Small;
-            this.btnUp.Location = new System.Drawing.Point(596, 910);
+            this.btnUp.Location = new System.Drawing.Point(588, 910);
             this.btnUp.Margin = new System.Windows.Forms.Padding(1);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(365, 45);
@@ -250,7 +250,7 @@
             this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDown.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.btnDown.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Small;
-            this.btnDown.Location = new System.Drawing.Point(961, 910);
+            this.btnDown.Location = new System.Drawing.Point(953, 910);
             this.btnDown.Margin = new System.Windows.Forms.Padding(1);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(365, 45);
@@ -740,7 +740,7 @@
             this.lblDayRitu1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayRitu1.FontBold = true;
             this.lblDayRitu1.ForeColor = System.Drawing.Color.Black;
-            this.lblDayRitu1.Location = new System.Drawing.Point(1673, 4);
+            this.lblDayRitu1.Location = new System.Drawing.Point(1674, 3);
             this.lblDayRitu1.Name = "lblDayRitu1";
             this.lblDayRitu1.Size = new System.Drawing.Size(93, 30);
             this.lblDayRitu1.TabIndex = 364;
@@ -757,7 +757,7 @@
             this.lblMonthRitu1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthRitu1.FontBold = true;
             this.lblMonthRitu1.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthRitu1.Location = new System.Drawing.Point(1673, 35);
+            this.lblMonthRitu1.Location = new System.Drawing.Point(1674, 33);
             this.lblMonthRitu1.Name = "lblMonthRitu1";
             this.lblMonthRitu1.Size = new System.Drawing.Size(93, 30);
             this.lblMonthRitu1.TabIndex = 363;
@@ -842,7 +842,7 @@
             this.lblDayRitu2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayRitu2.FontBold = true;
             this.lblDayRitu2.ForeColor = System.Drawing.Color.Black;
-            this.lblDayRitu2.Location = new System.Drawing.Point(1673, 71);
+            this.lblDayRitu2.Location = new System.Drawing.Point(1674, 70);
             this.lblDayRitu2.Name = "lblDayRitu2";
             this.lblDayRitu2.Size = new System.Drawing.Size(93, 30);
             this.lblDayRitu2.TabIndex = 358;
@@ -859,7 +859,7 @@
             this.lblDayRitu3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayRitu3.FontBold = true;
             this.lblDayRitu3.ForeColor = System.Drawing.Color.Black;
-            this.lblDayRitu3.Location = new System.Drawing.Point(1673, 142);
+            this.lblDayRitu3.Location = new System.Drawing.Point(1674, 140);
             this.lblDayRitu3.Name = "lblDayRitu3";
             this.lblDayRitu3.Size = new System.Drawing.Size(93, 30);
             this.lblDayRitu3.TabIndex = 357;
@@ -876,7 +876,7 @@
             this.lblMonthRitu2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthRitu2.FontBold = true;
             this.lblMonthRitu2.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthRitu2.Location = new System.Drawing.Point(1674, 105);
+            this.lblMonthRitu2.Location = new System.Drawing.Point(1674, 103);
             this.lblMonthRitu2.Name = "lblMonthRitu2";
             this.lblMonthRitu2.Size = new System.Drawing.Size(93, 30);
             this.lblMonthRitu2.TabIndex = 356;
@@ -893,7 +893,7 @@
             this.lblMonthRitu3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthRitu3.FontBold = true;
             this.lblMonthRitu3.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthRitu3.Location = new System.Drawing.Point(1672, 175);
+            this.lblMonthRitu3.Location = new System.Drawing.Point(1674, 175);
             this.lblMonthRitu3.Name = "lblMonthRitu3";
             this.lblMonthRitu3.Size = new System.Drawing.Size(93, 30);
             this.lblMonthRitu3.TabIndex = 355;
@@ -1743,7 +1743,7 @@
             this.lblDayRitu4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayRitu4.FontBold = true;
             this.lblDayRitu4.ForeColor = System.Drawing.Color.Black;
-            this.lblDayRitu4.Location = new System.Drawing.Point(1673, 213);
+            this.lblDayRitu4.Location = new System.Drawing.Point(1674, 213);
             this.lblDayRitu4.Name = "lblDayRitu4";
             this.lblDayRitu4.Size = new System.Drawing.Size(93, 30);
             this.lblDayRitu4.TabIndex = 305;
@@ -1760,7 +1760,7 @@
             this.lblDayRitu5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayRitu5.FontBold = true;
             this.lblDayRitu5.ForeColor = System.Drawing.Color.Black;
-            this.lblDayRitu5.Location = new System.Drawing.Point(1673, 289);
+            this.lblDayRitu5.Location = new System.Drawing.Point(1674, 289);
             this.lblDayRitu5.Name = "lblDayRitu5";
             this.lblDayRitu5.Size = new System.Drawing.Size(93, 30);
             this.lblDayRitu5.TabIndex = 304;
@@ -1777,7 +1777,7 @@
             this.lblMonthRitu4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthRitu4.FontBold = true;
             this.lblMonthRitu4.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthRitu4.Location = new System.Drawing.Point(1673, 250);
+            this.lblMonthRitu4.Location = new System.Drawing.Point(1674, 250);
             this.lblMonthRitu4.Name = "lblMonthRitu4";
             this.lblMonthRitu4.Size = new System.Drawing.Size(93, 30);
             this.lblMonthRitu4.TabIndex = 303;
@@ -1794,7 +1794,7 @@
             this.lblMonthRitu5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthRitu5.FontBold = true;
             this.lblMonthRitu5.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthRitu5.Location = new System.Drawing.Point(1673, 324);
+            this.lblMonthRitu5.Location = new System.Drawing.Point(1674, 324);
             this.lblMonthRitu5.Name = "lblMonthRitu5";
             this.lblMonthRitu5.Size = new System.Drawing.Size(93, 30);
             this.lblMonthRitu5.TabIndex = 302;
@@ -1913,7 +1913,7 @@
             this.lblDayRitu6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayRitu6.FontBold = true;
             this.lblDayRitu6.ForeColor = System.Drawing.Color.Black;
-            this.lblDayRitu6.Location = new System.Drawing.Point(1673, 365);
+            this.lblDayRitu6.Location = new System.Drawing.Point(1674, 363);
             this.lblDayRitu6.Name = "lblDayRitu6";
             this.lblDayRitu6.Size = new System.Drawing.Size(93, 30);
             this.lblDayRitu6.TabIndex = 295;
@@ -1930,7 +1930,7 @@
             this.lblMonthRitu6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthRitu6.FontBold = true;
             this.lblMonthRitu6.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthRitu6.Location = new System.Drawing.Point(1673, 401);
+            this.lblMonthRitu6.Location = new System.Drawing.Point(1674, 401);
             this.lblMonthRitu6.Name = "lblMonthRitu6";
             this.lblMonthRitu6.Size = new System.Drawing.Size(93, 30);
             this.lblMonthRitu6.TabIndex = 294;
@@ -1947,7 +1947,7 @@
             this.lblDayRitu7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayRitu7.FontBold = true;
             this.lblDayRitu7.ForeColor = System.Drawing.Color.Black;
-            this.lblDayRitu7.Location = new System.Drawing.Point(1673, 442);
+            this.lblDayRitu7.Location = new System.Drawing.Point(1674, 441);
             this.lblDayRitu7.Name = "lblDayRitu7";
             this.lblDayRitu7.Size = new System.Drawing.Size(93, 30);
             this.lblDayRitu7.TabIndex = 293;
@@ -1964,7 +1964,7 @@
             this.lblMonthRitu7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthRitu7.FontBold = true;
             this.lblMonthRitu7.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthRitu7.Location = new System.Drawing.Point(1673, 477);
+            this.lblMonthRitu7.Location = new System.Drawing.Point(1674, 477);
             this.lblMonthRitu7.Name = "lblMonthRitu7";
             this.lblMonthRitu7.Size = new System.Drawing.Size(93, 30);
             this.lblMonthRitu7.TabIndex = 292;
@@ -2168,7 +2168,7 @@
             this.lblDayRitu8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayRitu8.FontBold = true;
             this.lblDayRitu8.ForeColor = System.Drawing.Color.Black;
-            this.lblDayRitu8.Location = new System.Drawing.Point(1673, 516);
+            this.lblDayRitu8.Location = new System.Drawing.Point(1674, 516);
             this.lblDayRitu8.Name = "lblDayRitu8";
             this.lblDayRitu8.Size = new System.Drawing.Size(93, 30);
             this.lblDayRitu8.TabIndex = 280;
@@ -2185,7 +2185,7 @@
             this.lblMonthRitu8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthRitu8.FontBold = true;
             this.lblMonthRitu8.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthRitu8.Location = new System.Drawing.Point(1672, 557);
+            this.lblMonthRitu8.Location = new System.Drawing.Point(1673, 556);
             this.lblMonthRitu8.Name = "lblMonthRitu8";
             this.lblMonthRitu8.Size = new System.Drawing.Size(93, 30);
             this.lblMonthRitu8.TabIndex = 279;
@@ -2389,7 +2389,7 @@
             this.lblDayRitu9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayRitu9.FontBold = true;
             this.lblDayRitu9.ForeColor = System.Drawing.Color.Black;
-            this.lblDayRitu9.Location = new System.Drawing.Point(1672, 597);
+            this.lblDayRitu9.Location = new System.Drawing.Point(1674, 596);
             this.lblDayRitu9.Name = "lblDayRitu9";
             this.lblDayRitu9.Size = new System.Drawing.Size(93, 30);
             this.lblDayRitu9.TabIndex = 267;
@@ -2406,7 +2406,7 @@
             this.lblMonthRitu9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthRitu9.FontBold = true;
             this.lblMonthRitu9.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthRitu9.Location = new System.Drawing.Point(1673, 636);
+            this.lblMonthRitu9.Location = new System.Drawing.Point(1674, 636);
             this.lblMonthRitu9.Name = "lblMonthRitu9";
             this.lblMonthRitu9.Size = new System.Drawing.Size(93, 30);
             this.lblMonthRitu9.TabIndex = 266;
@@ -2763,7 +2763,7 @@
             this.lblMonthRitu10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthRitu10.FontBold = true;
             this.lblMonthRitu10.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthRitu10.Location = new System.Drawing.Point(1673, 717);
+            this.lblMonthRitu10.Location = new System.Drawing.Point(1674, 716);
             this.lblMonthRitu10.Name = "lblMonthRitu10";
             this.lblMonthRitu10.Size = new System.Drawing.Size(93, 30);
             this.lblMonthRitu10.TabIndex = 253;
@@ -2780,7 +2780,7 @@
             this.lblDayRitu10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayRitu10.FontBold = true;
             this.lblDayRitu10.ForeColor = System.Drawing.Color.Black;
-            this.lblDayRitu10.Location = new System.Drawing.Point(1673, 675);
+            this.lblDayRitu10.Location = new System.Drawing.Point(1674, 674);
             this.lblDayRitu10.Name = "lblDayRitu10";
             this.lblDayRitu10.Size = new System.Drawing.Size(93, 30);
             this.lblDayRitu10.TabIndex = 252;

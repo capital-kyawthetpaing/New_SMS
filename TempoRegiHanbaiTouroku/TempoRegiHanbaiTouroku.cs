@@ -1071,12 +1071,13 @@ namespace TempoRegiHanbaiTouroku
                     mSaleExcludedFlg = Convert.ToInt16(selectRow["SaleExcludedFlg"]);
 
                     decimal wSuu = bbl.Z_Set(txtSu.Text);
-                    if (wSuu.Equals(0))
-                    {
-                        txtSu.Text = "1";
-                        wSuu = 1;
-                    }
-                    
+                    //すべての場合でJANCDを入力した時点で数量は１に
+                    //if (wSuu.Equals(0))
+                    //{
+                    txtSu.Text = "1";
+                    wSuu = 1;
+                    //}
+
                     //Function_単価取得.
                     Fnc_UnitPrice_Entity fue = new Fnc_UnitPrice_Entity
                     {

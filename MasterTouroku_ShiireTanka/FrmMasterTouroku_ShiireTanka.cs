@@ -630,6 +630,7 @@ namespace MasterTouroku_ShiireTanka
             //Clear(panel5);
             //Clear(panel3);
             Clear(panel3);
+            LB_priceouttax.Text = "";
             RB_zenten.Checked = true;
             RB_item.Checked = true;
             RB_current.Checked = true;
@@ -678,6 +679,7 @@ namespace MasterTouroku_ShiireTanka
         {
             RB_item.Checked = true;
             Clear(panel3);
+            LB_priceouttax.Text = "";
             //GV_item.Refresh();
             GV_item.DataSource = null;
             if (dt.Rows.Count > 0)

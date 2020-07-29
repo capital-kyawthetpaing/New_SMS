@@ -262,7 +262,8 @@ namespace TempoRegiTorihikiReceipt
                     }
                     break;
             }
-
+            var RTP = (CrystalDecisions.CrystalReports.Engine.ReportClass)ReadyToPrinter;
+            MessageBox.Show(torihikiReceiptDataSet.MiscDepositTable)
             //if (ReadyToPrinter != null)
             //{
             //    //try

@@ -147,6 +147,8 @@ namespace TempoRegiShiharaiNyuuryoku
                     // Stop_DisplayService();
                     cdo.RemoveDisplay(true);
                     cdo.RemoveDisplay(true);
+                    var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                    pro.WaitForExit();
                 }
                 catch
                 {
@@ -157,14 +159,14 @@ namespace TempoRegiShiharaiNyuuryoku
                     CashDrawerOpen op = new CashDrawerOpen();
                     op.OpenCashDrawer();   // <<<< PTK
                 }
-                var pro =  System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+               
                 // cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
-                pro.WaitForExit();
+                
                 Stop_DisplayService();
             }
-            catch
+            catch(Exception ex)
             {
-
+                MessageBox.Show(ex.StackTrace.ToString());
             }
         }
 
