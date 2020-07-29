@@ -55,6 +55,8 @@ namespace MasterTouroku_ShiireKakeritsu
             RadioCheck();
             dgv_ShiireKakeritsu.DisabledColumn("colBrandCD1,colBrandName,colSportsCD1,colSportsName,colSegmentCD1,colSegmentName,colYear,colSeason,colDate");
             ModeVisible = false;
+            scSportsCD1.CodeWidth = 100;
+            scSportsCD.CodeWidth = 100;
         }
         private void RadioCheck()
         {
