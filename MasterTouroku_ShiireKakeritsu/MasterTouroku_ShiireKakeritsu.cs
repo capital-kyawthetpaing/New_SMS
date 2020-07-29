@@ -55,6 +55,8 @@ namespace MasterTouroku_ShiireKakeritsu
             RadioCheck();
             dgv_ShiireKakeritsu.DisabledColumn("colBrandCD1,colBrandName,colSportsCD1,colSportsName,colSegmentCD1,colSegmentName,colYear,colSeason,colDate");
             ModeVisible = false;
+            scSportsCD1.CodeWidth = 100;
+            scSportsCD.CodeWidth = 100;
         }
         private void RadioCheck()
         {
@@ -854,10 +856,11 @@ namespace MasterTouroku_ShiireKakeritsu
                 moe.Rate = txtRate1.Text;
                 DataTable dt = mskbl.M_OrderRate_Update(moe, Xml, log_data);
                 scSupplierCD.Clear();
-                cbo_Store.SelectedValue = "0000";
                 Clear(panelDetail);
                 dgv_ShiireKakeritsu.DataSource = string.Empty;
                 mskbl.ShowMessage("I101");
+                rdoAllStores.Checked = true;
+                cbo_Store.SelectedValue = "0000";
                 scSupplierCD.SetFocus(1);
         }
         protected DataTable ChangeColumnName(DataTable dtMain)
