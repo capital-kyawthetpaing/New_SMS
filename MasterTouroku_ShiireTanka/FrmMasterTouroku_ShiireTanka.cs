@@ -576,7 +576,7 @@ namespace MasterTouroku_ShiireTanka
                 LastSeason=CB_season.Text,
                 AddDate=TB_date_add.Text,
                 ITemCD= itemcd.TxtCode.Text,
-                PriceOutTax=LB_priceouttax1.Text
+                PriceOutTax=LB_priceouttax.Text
                 
             };
             return m_IE;
@@ -702,11 +702,12 @@ namespace MasterTouroku_ShiireTanka
                 this.商品分類.Visible =false;
                 this.競技.Visible =false;
                 this.サイズ.Visible = true;
-                this.サイズ.Width = 175;
+                this.サイズ.Width = 155;
                 this.カラー.Visible = true;
-                this.カラー.Width = 130;
+                this.カラー.Width = 155;
                 this.SKUCD.Visible = true;
-                this.SKUCD.Width = 120;
+                this.SKUCD.Width = 200;
+                this.商品名.Width = 352;
                 GV_item.Refresh();
                 BT_Capture.Visible = false;
                 ModeText = "SKU";
@@ -718,7 +719,7 @@ namespace MasterTouroku_ShiireTanka
                 ModeText = "ITEM";
                 panel4.Enabled = true;
                 panel5.Enabled = true;
-                this.SKUCD.Width = 150;
+                this.SKUCD.Width = 0;
                 this.ブランド.Visible = true;
                 this.シーズン.Visible = true;
                 this.年度.Visible = true;
@@ -729,6 +730,7 @@ namespace MasterTouroku_ShiireTanka
                 this.カラー.Visible = false;
                 this.カラー.Width = 0;
                 this.SKUCD.Visible = false;
+                this.商品名.Width = 320;
                 GV_item.Refresh();
                 BT_Capture.Visible = true ;
                 if (btn == "1" || btn == "2")
@@ -2154,6 +2156,11 @@ namespace MasterTouroku_ShiireTanka
                 GV_item.RefreshEdit();
             }
            
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         public DataTable ReadExcel(string fileName, string fileExt)

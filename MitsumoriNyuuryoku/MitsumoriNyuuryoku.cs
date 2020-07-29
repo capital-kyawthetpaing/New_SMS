@@ -2219,12 +2219,15 @@ namespace MitsumoriNyuuryoku
                         if (mGrid.g_DArray[RW].TaxRateFLG.Equals(1))
                         {
                             kin10 += bbl.Z_Set(mGrid.g_DArray[RW].MitsumoriHontaiGaku);
-                            zeiritsu10 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%", ""));
+                            if (zeiritsu10 == 0)
+                                zeiritsu10 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%", ""));
                         }
                         else if (mGrid.g_DArray[RW].TaxRateFLG.Equals(2))
                         {
                             kin8 += bbl.Z_Set(mGrid.g_DArray[RW].MitsumoriHontaiGaku);
-                            zeiritsu8 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%", ""));
+
+                            if (zeiritsu8 == 0)
+                                zeiritsu8 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%", ""));
                         }
 
                         if (maxKin < bbl.Z_Set(mGrid.g_DArray[RW].MitsumoriGaku))

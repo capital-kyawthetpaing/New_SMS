@@ -3672,12 +3672,14 @@ namespace TempoJuchuuNyuuryoku
                         if (mGrid.g_DArray[RW].TaxRateFLG.Equals(1))
                         {
                             kin10 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
-                            zeiritsu10 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%", ""));
+                            if (zeiritsu10 == 0)
+                                zeiritsu10 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%", ""));
                         }
                         else if (mGrid.g_DArray[RW].TaxRateFLG.Equals(2))
                         {
                             kin8 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
-                            zeiritsu8 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%", ""));
+                            if (zeiritsu8 == 0)
+                                zeiritsu8 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%", ""));
                         }
 
                         if (maxKin < bbl.Z_Set(mGrid.g_DArray[RW].JuchuuGaku) && mGrid.g_DArray[RW].DiscountKbn == 0)

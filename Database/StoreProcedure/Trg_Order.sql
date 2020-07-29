@@ -62,6 +62,7 @@ BEGIN
            ,[StaffCD]
            ,[FirstArriveDate]
            ,[LastArriveDate]
+           ,[ArrivalPlanDate]
            ,[ApprovalDate]
            ,[LastApprovalDate]
            ,[LastApprovalStaffCD]
@@ -105,6 +106,7 @@ BEGIN
            ,StaffCD
            ,FirstArriveDate
            ,LastArriveDate
+           ,ArrivalPlanDate
            ,ApprovalDate
            ,LastApprovalDate
            ,LastApprovalStaffCD
@@ -157,6 +159,7 @@ BEGIN
            ,[StaffCD]
            ,[FirstArriveDate]
            ,[LastArriveDate]
+           ,[ArrivalPlanDate]
            ,[ApprovalDate]
            ,[LastApprovalDate]
            ,[LastApprovalStaffCD]
@@ -199,6 +202,7 @@ BEGIN
            ,StaffCD
            ,FirstArriveDate
            ,LastArriveDate
+           ,ArrivalPlanDate
            ,ApprovalDate
            ,LastApprovalDate
            ,LastApprovalStaffCD

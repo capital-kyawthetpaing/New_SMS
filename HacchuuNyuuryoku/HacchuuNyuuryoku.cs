@@ -87,6 +87,7 @@ namespace HacchuuNyuuryoku
         private int mTaxFractionKBN;
         private int mTaxTiming;
         private bool mSyouninKidou = false;
+        private string mArrivalPlanDate = "";
 
         // -- 明細部をグリッドのように扱うための宣言 ↓--------------------
         ClsGridHacchuu mGrid = new ClsGridHacchuu();
@@ -2641,11 +2642,13 @@ namespace HacchuuNyuuryoku
                         if (mGrid.g_DArray[RW].TaxRateFLG.Equals(1))
                         {
                             kin10 += bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku);
-                            zeiritsu10 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate);
+                            if(zeiritsu10 == 0)
+                                zeiritsu10 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate);
                         }
                         else if (mGrid.g_DArray[RW].TaxRateFLG.Equals(2))
                         {
                             kin8 += bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku);
+                            if(zeiritsu8 == 0)
                             zeiritsu8 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate);
                         }
 
@@ -2760,6 +2763,8 @@ namespace HacchuuNyuuryoku
             doe.CommentOutStore = detailControls[(int)EIndex.RemarksOutStore].Text;
             doe.CommentInStore = detailControls[(int)EIndex.RemarksInStore].Text;
 
+            doe.ArrivalPlanDate = mArrivalPlanDate;
+
             if (BtnSubF11.Enabled)
                 doe.ApprovalEnabled = "1";
             else
@@ -2827,6 +2832,7 @@ namespace HacchuuNyuuryoku
             if (ckM_CheckBox4.Checked)
                 directFLG = 1;
 
+            mArrivalPlanDate = "";
 
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
             {
@@ -2836,6 +2842,9 @@ namespace HacchuuNyuuryoku
                     int EDIFLG = 0;
                     if (mGrid.g_DArray[RW].EDIOrderFlg)
                         EDIFLG = 1;
+
+                    if (mArrivalPlanDate.CompareTo(mGrid.g_DArray[RW].DesiredDeliveryDate) < 0)
+                        mArrivalPlanDate = mGrid.g_DArray[RW].DesiredDeliveryDate;
 
                     dt.Rows.Add(mGrid.g_DArray[RW].hacchuGyoNO > 0 ? mGrid.g_DArray[RW].hacchuGyoNO : rowNo
                         , mGrid.g_DArray[RW].GYONO
