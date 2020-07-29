@@ -519,7 +519,7 @@
             this.lblSonotakin1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSonotakin1.FontBold = true;
             this.lblSonotakin1.ForeColor = System.Drawing.Color.Black;
-            this.lblSonotakin1.Location = new System.Drawing.Point(1026, 33);
+            this.lblSonotakin1.Location = new System.Drawing.Point(1027, 33);
             this.lblSonotakin1.Name = "lblSonotakin1";
             this.lblSonotakin1.Size = new System.Drawing.Size(189, 30);
             this.lblSonotakin1.TabIndex = 159;
@@ -1114,7 +1114,7 @@
             this.lblKakeUrikin2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblKakeUrikin2.FontBold = true;
             this.lblKakeUrikin2.ForeColor = System.Drawing.Color.Black;
-            this.lblKakeUrikin2.Location = new System.Drawing.Point(1026, 69);
+            this.lblKakeUrikin2.Location = new System.Drawing.Point(1027, 69);
             this.lblKakeUrikin2.Name = "lblKakeUrikin2";
             this.lblKakeUrikin2.Size = new System.Drawing.Size(189, 30);
             this.lblKakeUrikin2.TabIndex = 342;
@@ -1148,7 +1148,7 @@
             this.lblKakeUrikin4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblKakeUrikin4.FontBold = true;
             this.lblKakeUrikin4.ForeColor = System.Drawing.Color.Black;
-            this.lblKakeUrikin4.Location = new System.Drawing.Point(1026, 214);
+            this.lblKakeUrikin4.Location = new System.Drawing.Point(1027, 214);
             this.lblKakeUrikin4.Name = "lblKakeUrikin4";
             this.lblKakeUrikin4.Size = new System.Drawing.Size(189, 30);
             this.lblKakeUrikin4.TabIndex = 340;
@@ -1165,7 +1165,7 @@
             this.lblKakeUrikin5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblKakeUrikin5.FontBold = true;
             this.lblKakeUrikin5.ForeColor = System.Drawing.Color.Black;
-            this.lblKakeUrikin5.Location = new System.Drawing.Point(1026, 290);
+            this.lblKakeUrikin5.Location = new System.Drawing.Point(1027, 290);
             this.lblKakeUrikin5.Name = "lblKakeUrikin5";
             this.lblKakeUrikin5.Size = new System.Drawing.Size(189, 30);
             this.lblKakeUrikin5.TabIndex = 339;
@@ -1420,7 +1420,7 @@
             this.lblSonotakin2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSonotakin2.FontBold = true;
             this.lblSonotakin2.ForeColor = System.Drawing.Color.Black;
-            this.lblSonotakin2.Location = new System.Drawing.Point(1027, 103);
+            this.lblSonotakin2.Location = new System.Drawing.Point(1027, 102);
             this.lblSonotakin2.Name = "lblSonotakin2";
             this.lblSonotakin2.Size = new System.Drawing.Size(189, 30);
             this.lblSonotakin2.TabIndex = 324;
@@ -1454,7 +1454,7 @@
             this.lblSonotakin4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSonotakin4.FontBold = true;
             this.lblSonotakin4.ForeColor = System.Drawing.Color.Black;
-            this.lblSonotakin4.Location = new System.Drawing.Point(1026, 250);
+            this.lblSonotakin4.Location = new System.Drawing.Point(1027, 250);
             this.lblSonotakin4.Name = "lblSonotakin4";
             this.lblSonotakin4.Size = new System.Drawing.Size(189, 30);
             this.lblSonotakin4.TabIndex = 322;
@@ -1471,7 +1471,7 @@
             this.lblSonotakin5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSonotakin5.FontBold = true;
             this.lblSonotakin5.ForeColor = System.Drawing.Color.Black;
-            this.lblSonotakin5.Location = new System.Drawing.Point(1026, 324);
+            this.lblSonotakin5.Location = new System.Drawing.Point(1027, 324);
             this.lblSonotakin5.Name = "lblSonotakin5";
             this.lblSonotakin5.Size = new System.Drawing.Size(189, 30);
             this.lblSonotakin5.TabIndex = 321;
