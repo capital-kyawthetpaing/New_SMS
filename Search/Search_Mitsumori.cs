@@ -178,6 +178,7 @@ namespace Search
             else
             {
                ssbl.ShowMessage("E128");
+                GvDetail.DataSource = null;
             }
         }
         private void DetailControl_KeyDown(object sender, KeyEventArgs e)

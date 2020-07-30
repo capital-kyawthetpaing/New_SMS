@@ -2522,6 +2522,8 @@ namespace HacchuuNyuuryoku
                     if (ckM_CheckBox1.Checked)  //返品のときのみ数量*(-1)
                     {
                         mGrid.g_DArray[row].OrderSu = bbl.Z_SetStr(-1 * Math.Abs( bbl.Z_Set(mGrid.g_DArray[row].OrderSu)));   // 
+                        //変更された場合、金額再計算 発注単価×発注数
+                        mGrid.g_DArray[row].OrderGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].OrderUnitPrice) * bbl.Z_Set(mGrid.g_DArray[row].OrderSu));
                     }
 
                     if (!chkAll)
@@ -3398,9 +3400,13 @@ namespace HacchuuNyuuryoku
                                 keyControls[index + 1].Focus();
                             else
                                 detailControls[(int)EIndex.OrderDate].Focus();
-                        else 
+                        else if(keyControls[index + 1].CanFocus)
                             keyControls[index + 1].Focus();
-  
+                        else
+                            //あたかもTabキーが押されたかのようにする
+                            //Shiftが押されている時は前のコントロールのフォーカスを移動
+                            ProcessTabKey(!e.Shift);
+
                     }
                     else
                     {

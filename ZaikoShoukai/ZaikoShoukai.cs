@@ -111,8 +111,6 @@ namespace ZaikoShoukai
                 {
                     GV_Zaiko.Refresh();
                     GV_Zaiko.DataSource = dtData;
-                    adminno = dtData.Rows[0]["AdminNo"].ToString();
-                    soukocd = dtData.Rows[0]["倉庫CD"].ToString();
                 }
                 else
                 {
@@ -533,10 +531,11 @@ namespace ZaikoShoukai
         {
             if (e.RowIndex != -1)
             {
-                
-
                 if (e.ColumnIndex == GV_Zaiko.Columns["btnPlan"].Index)
                 {
+                    
+                    adminno = GV_Zaiko.Rows[e.RowIndex].Cells["AdNO"].Value.ToString();
+                    soukocd =GV_Zaiko.Rows[e.RowIndex].Cells["sokucd"].Value.ToString();
                     soukoname = GV_Zaiko.Rows[e.RowIndex].Cells[5].Value.ToString();
                     skucd = GV_Zaiko.Rows[e.RowIndex].Cells[0].Value.ToString();
                     shohinmei = GV_Zaiko.Rows[e.RowIndex].Cells[1].Value.ToString();

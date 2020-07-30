@@ -136,6 +136,7 @@ namespace Search
                 else
                 {
                     sssbl.ShowMessage("E128");
+                    dgvSiharaiShoriNO.DataSource = null;
                     txtPaymentDateFrom.Focus();
                 }              
             }
