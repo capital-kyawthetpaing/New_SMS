@@ -250,10 +250,11 @@ namespace DL
             };
             return SelectData(dic, "M_Store_BindData");
         }
-        public DataTable GetApprovalData(string operatorNm)
+        public DataTable GetApprovalData(string operatorNm, string storeCD)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
+                {"@StoreCD", new ValuePair { value1 = SqlDbType.VarChar,value2 = storeCD} },
                 {"@Operator", new ValuePair {value1 = SqlDbType.VarChar,value2 = operatorNm} }
             };
             return SelectData(dic, "SelectApprovalData");

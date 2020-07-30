@@ -80,12 +80,12 @@ namespace BL
 
             return true;
         }
-        public int GetApprovalStageFLG(string operatorNm)
+        public int GetApprovalStageFLG(string operatorNm, string storeCD = "")
         {
             int approvalStageFLG = 0;
 
             M_Store_DL dl = new M_Store_DL();
-            DataTable dt = dl.GetApprovalData(operatorNm);
+            DataTable dt = dl.GetApprovalData(operatorNm, storeCD);
 
             if (dt.Rows.Count > 0)
             {

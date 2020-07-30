@@ -1326,8 +1326,7 @@ namespace HacchuuNyuuryoku
                 SetInitSoukoName();
 
                 //承認用データを抽出
-                DataTable dtApp = new DataTable();
-                W_ApprovalStageFLG = hnbl.GetApprovalStageFLG(InOperatorCD);
+                //W_ApprovalStageFLG = hnbl.GetApprovalStageFLG(InOperatorCD, StoreCD);
 
                 detailControls[(int)EIndex.OrderDate].Text = ymd;
 
@@ -3865,7 +3864,9 @@ namespace HacchuuNyuuryoku
                     if (string.IsNullOrWhiteSpace(ymd))
                         ymd = bbl.GetDate();
 
-                     mSyoninsya = false;
+                    W_ApprovalStageFLG = hnbl.GetApprovalStageFLG(InOperatorCD, CboStoreCD.SelectedValue.ToString());
+
+                    mSyoninsya = false;
                     //[M_Store_SelectData]
                     M_Store_Entity mse = new M_Store_Entity
                     {
