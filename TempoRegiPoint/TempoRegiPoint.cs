@@ -1,9 +1,12 @@
 ﻿using Base.Client;
 using BL;
 using CrystalDecisions.CrystalReports.Engine;
+using DL;
 using System;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 using static TempoRegiPoint.Coupon_DataSet;
 
@@ -34,7 +37,7 @@ namespace TempoRegiPoint
             /// <summary>発行ポイント</summary>
             IssuePoint,
         }
-
+        EPSON_TM30.CashDrawerOpen cdo = new EPSON_TM30.CashDrawerOpen();
         /// <summary>
         /// フォントの種類
         /// </summary>
@@ -78,10 +81,77 @@ namespace TempoRegiPoint
         public TempoRegiPoint()
         {
             InitializeComponent();
+
+            Start_Display();
+        }
+        protected void Kill(string pth)
+        {
+            try
+            {
+                Process[] processCollection = Process.GetProcessesByName(pth.Replace(".exe", ""));
+                foreach (Process p in processCollection)
+                {
+                    p.Kill();
+                }
+
+                Process[] processCollections = Process.GetProcessesByName(pth + ".exe");
+                foreach (Process p in processCollections)
+                {
+                    p.Kill();
+                }
+            }
+            catch { }
+        }
+        private void Stop_DisplayService(bool isForced = true)
+        {
+            if (Base_DL.iniEntity.IsDM_D30Used)
+            {
+
+                Login_BL bbl_1 = new Login_BL();
+                if (bbl_1.ReadConfig())
+                {
+                    bbl_1.Display_Service_Update(false);
+                    Thread.Sleep(3 * 1000);
+                    bbl_1.Display_Service_Enabled(false);
+                }
+                else
+                {
+                    bbl_1.Display_Service_Update(false);
+                    Thread.Sleep(3 * 1000);
+                    bbl_1.Display_Service_Enabled(false);
+                }
+                try
+                {
+                    Kill("Display_Service");
+                }
+                catch(Exception ex) {
+                    MessageBox.Show(ex.StackTrace.ToString());
+                }
+             if (isForced)    cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+                //Base_DL.iniEntity.CDO_DISPLAY.SetDisplay(true, true,Base_DL.iniEntity.DefaultMessage);
+            }
+        }
+        private void RunDisplay_Service()  // Make when we want to run display_service
+        {
+            try
+            {
+                if (Base_DL.iniEntity.IsDM_D30Used)
+                {
+                    cdo.RemoveDisplay(true);
+                    Login_BL bbl_1 = new Login_BL();
+                    bbl_1.Display_Service_Update(true);
+                    bbl_1.Display_Service_Enabled(true);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in removing display. . .");
+            }
         }
 
         private void TempoRegiPoint_Load(object sender, EventArgs e)
         {
+        
             InProgramID = "TempoRegiPoint";
             string data = InOperatorCD;
 
@@ -110,6 +180,7 @@ namespace TempoRegiPoint
                 Print();
                 Close();
             }
+            Stop_DisplayService();
         }
 
         /// <summary>
@@ -189,6 +260,7 @@ namespace TempoRegiPoint
         /// </summary>
         protected override void EndSec()
         {
+             RunDisplay_Service();
             Close();
         }
 
@@ -225,7 +297,7 @@ namespace TempoRegiPoint
                 }
             }
         }
-
+      
         /// <summary>
         /// 商品引換券出力
         /// </summary>
@@ -256,12 +328,19 @@ namespace TempoRegiPoint
             report.Refresh();
             report.PrintOptions.PrinterName = StorePrinterName;
 
+            //cdo.RemoveDisplay();
             // 発行枚数分印刷
+            //  Stop_DisplayService();
+            try
+            {
+                cdo.RemoveDisplay(true);
+            }
+            catch { }
             for (var count = 0; count < IssuedNumber; count++)
             {
                 report.PrintToPrinter(0, false, 0, 0);
             }
-
+            Stop_DisplayService();
             // 発行ポイント更新、ログ更新
             bl.M_UpdateLastPoint(TxtCustomerCD.Text, IssuePoint, InOperatorCD, InProgramID, InPcID);
         }
@@ -542,6 +621,30 @@ namespace TempoRegiPoint
         {
             TxtLastPoint.BackColor = Color.White;
             TxtLastPoint.ForeColor = Color.Black;
+        }
+        private void Start_Display()
+        {
+            try
+            {
+                if (Base_DL.iniEntity.IsDM_D30Used)
+                {
+                    Login_BL bbl_1 = new Login_BL();
+                    if (bbl_1.ReadConfig())
+                    {
+                        bbl_1.Display_Service_Update(false);
+                        Thread.Sleep(3 * 1000);
+                        bbl_1.Display_Service_Enabled(false);
+                    }
+                    else
+                    {
+                        bbl_1.Display_Service_Update(false);
+                        Thread.Sleep(3 * 1000);
+                        bbl_1.Display_Service_Enabled(false);
+                    }
+                    Kill("Display_Service");
+                }
+            }
+            catch (Exception ex) { MessageBox.Show("Cant remove on second time" + ex.StackTrace); }
         }
     }
 }

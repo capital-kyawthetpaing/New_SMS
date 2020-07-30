@@ -174,7 +174,7 @@ namespace KaitounoukiKakuninsho
             //以下の条件でデータが存在しなければエラー (Error if record does not exist)Ｅ１３３
             if (dt.Rows.Count == 0)
             {
-                bbl.ShowMessage("E133");
+                bbl.ShowMessage("E128");
                 previousCtrl.Focus();
                 return null;
             }
@@ -337,23 +337,23 @@ namespace KaitounoukiKakuninsho
                     }
 
                     //日付として正しいこと(Be on the correct date)Ｅ１０３
-                    if (!bbl.CheckDate(strYmd))
-                    {
-                        //Ｅ１０３
-                        bbl.ShowMessage("E103");
-                        return false;
-                    }
+                    //if (!bbl.CheckDate(strYmd))
+                    //{
+                    //    //Ｅ１０３
+                    //    bbl.ShowMessage("E103");
+                    //    return false;
+                    //}
 
-                    switch (index)
-                    {
-                        case (int)EIndex.ArrivalPlanMonthFrom:
-                        case (int)EIndex.ArrivalPlanMonthTo:
-                            detailControls[index].Text = strYmd.Substring(0, 7);
-                            break;
-                        default:
-                            detailControls[index].Text = strYmd;
-                            break;
-                    }
+                    //switch (index)
+                    //{
+                    //    case (int)EIndex.ArrivalPlanMonthFrom:
+                    //    case (int)EIndex.ArrivalPlanMonthTo:
+                    //        detailControls[index].Text = strYmd.Substring(0, 7);
+                    //        break;
+                    //    default:
+                    //        detailControls[index].Text = strYmd;
+                    //        break;
+                    //}
 
                     //見積日(From) ≧ 見積日(To)である場合Error
                     if (index == (int)EIndex.OrderDateTo || index == (int)EIndex.ArrivalPlanDateTo || index == (int)EIndex.ArrivalPlanMonthTo)

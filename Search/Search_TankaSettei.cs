@@ -194,6 +194,7 @@ namespace Search
             else
             {
                 mbl.ShowMessage("E128");
+                dgvDetail.DataSource = null;
             }
         }
 

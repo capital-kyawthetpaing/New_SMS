@@ -3412,6 +3412,7 @@ namespace TempoJuchuuNyuuryoku
             //[M_JANOrderPrice]
             M_JANOrderPrice_Entity mje = new M_JANOrderPrice_Entity
             {
+
                 //①JAN発注単価マスタ（店舗指定なし）
                 AdminNO = mGrid.g_DArray[row].AdminNO,
                 VendorCD = mGrid.g_DArray[row].VendorCD,
@@ -3671,12 +3672,14 @@ namespace TempoJuchuuNyuuryoku
                         if (mGrid.g_DArray[RW].TaxRateFLG.Equals(1))
                         {
                             kin10 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
-                            zeiritsu10 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%", ""));
+                            if (zeiritsu10 == 0)
+                                zeiritsu10 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%", ""));
                         }
                         else if (mGrid.g_DArray[RW].TaxRateFLG.Equals(2))
                         {
                             kin8 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
-                            zeiritsu8 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%", ""));
+                            if (zeiritsu8 == 0)
+                                zeiritsu8 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%", ""));
                         }
 
                         if (maxKin < bbl.Z_Set(mGrid.g_DArray[RW].JuchuuGaku) && mGrid.g_DArray[RW].DiscountKbn == 0)
@@ -4750,17 +4753,18 @@ namespace TempoJuchuuNyuuryoku
         {
             try
             {
+                int w_Row;
+                Control w_ActCtl;
+
+                w_ActCtl = (Control)sender;
+                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
+
                 //Enterキー押下時処理
                 //Returnキーが押されているか調べる
                 //AltかCtrlキーが押されている時は、本来の動作をさせる
                 if ((e.KeyCode == Keys.Return) &&
                     ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
                 {
-                    int w_Row;
-                    Control w_ActCtl;
-
-                    w_ActCtl = (Control)sender;
-                    w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
 
                     //どの項目か判別
                     int CL=-1;
@@ -4991,7 +4995,16 @@ namespace TempoJuchuuNyuuryoku
                     //行き先がなかったら移動しない
                     S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
                 }
+                else if (e.KeyCode == Keys.Tab)
+                {
+                    if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int CL, out int w_CtlRow) == false)
+                    {
+                        return;
+                    }
 
+                    if (CL == (int)ClsGridJuchuu.ColNO.ChkExpress || CL == (int)ClsGridJuchuu.ColNO.ChkFuyo || CL == (int)ClsGridJuchuu.ColNO.ChkTyokuso)
+                        S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+                }
             }
             catch (Exception ex)
             {

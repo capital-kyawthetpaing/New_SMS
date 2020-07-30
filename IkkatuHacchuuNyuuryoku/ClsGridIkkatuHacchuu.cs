@@ -16,7 +16,7 @@ namespace IkkatuHacchuuNyuuryoku
         #region Struct
 
         internal const int gc_MaxCL = (int)ColNO.COUNT;       // ｸﾞﾘｯﾄﾞ最大列数
-        internal const int gc_P_GYO = 5;        // 表示明細行(画面)
+        internal const int gc_P_GYO = 6;        // 表示明細行(画面)
         internal const int gMxGyo = 999;        //画面最大明細行数
 
         #endregion
@@ -72,6 +72,7 @@ namespace IkkatuHacchuuNyuuryoku
            , HacchuuShouhizeigaku
            , TaniCD
            , OrderRows
+           , IsYuukouTaishouFLG
            , COUNT
         }
 
@@ -131,6 +132,7 @@ namespace IkkatuHacchuuNyuuryoku
             internal string HacchuuShouhizeigaku;
             internal string TaniCD;
             internal string OrderRows;
+            internal string IsYuukouTaishouFLG;
         }
         /// <summary>
         /// 
@@ -350,11 +352,11 @@ namespace IkkatuHacchuuNyuuryoku
                 w_CtlCol = (int)ColNO.EDIFLG;
                 if (g_DArray[w_Row].EDIFLG == "True")
                 {
-                    ((CKM_Controls.CKM_CheckBox)g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl).Checked = true;
+                    ((GridControl.clsGridCheckBox)g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl).Checked = true;
                 }
                 else
                 {
-                    ((CKM_Controls.CKM_CheckBox)g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl).Checked = false;
+                    ((GridControl.clsGridCheckBox)g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl).Checked = false;
                 }
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].EDIFLG);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
@@ -439,17 +441,17 @@ namespace IkkatuHacchuuNyuuryoku
                 w_CtlCol = (int)ColNO.TaishouFLG;
                 if (g_DArray[w_Row].TaishouFLG == "True")
                 {
-                    ((CKM_Controls.CKM_CheckBox)g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl).Checked = true;
+                    ((GridControl.clsGridCheckBox)g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl).Checked = true;
                 }
                 else
                 {
-                    ((CKM_Controls.CKM_CheckBox)g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl).Checked = false;
+                    ((GridControl.clsGridCheckBox)g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl).Checked = false;
                 }
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].TaishouFLG);
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
 
                 //納入先郵便番号1
@@ -613,6 +615,15 @@ namespace IkkatuHacchuuNyuuryoku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+
+                //IsYuukouTaishouFLG
+                w_CtlCol = (int)ColNO.IsYuukouTaishouFLG;
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].IsYuukouTaishouFLG);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
             }
         }
         /// <summary>
@@ -695,7 +706,7 @@ namespace IkkatuHacchuuNyuuryoku
 
                 // EDI
                 w_CtlCol = (int)ColNO.EDIFLG;
-                if (((CKM_Controls.CKM_CheckBox)g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl).Checked == true)
+                if (((GridControl.clsGridCheckBox)g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl).Checked == true)
                 {
                     g_DArray[w_Row].EDIFLG = "True";
                 }
@@ -738,7 +749,7 @@ namespace IkkatuHacchuuNyuuryoku
 
                 // 対象
                 w_CtlCol = (int)ColNO.TaishouFLG;
-                if (((CKM_Controls.CKM_CheckBox)g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl).Checked == true)
+                if (((GridControl.clsGridCheckBox)g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl).Checked == true)
                 {
                     g_DArray[w_Row].TaishouFLG = "True";
                 }
@@ -818,6 +829,10 @@ namespace IkkatuHacchuuNyuuryoku
                 // OrderRows
                 w_CtlCol = (int)ColNO.OrderRows;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].OrderRows);
+
+                // IsYuukouTaishouFLG
+                w_CtlCol = (int)ColNO.IsYuukouTaishouFLG;
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].IsYuukouTaishouFLG);
             }
         }
         // 明細部のフォーカス移動
@@ -977,6 +992,7 @@ namespace IkkatuHacchuuNyuuryoku
         public string HacchuuShouhizeigaku { get; set; }
         public string TaniCD { get; set; }
         public string OrderRows { get; set; }
+        public string IsYuukouTaishouFLG { get; set; }
     }
 
     #endregion

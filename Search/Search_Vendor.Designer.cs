@@ -71,7 +71,7 @@
             this.PanelHeader.Controls.Add(this.ckM_Label2);
             this.PanelHeader.Controls.Add(this.txtChangeDate);
             this.PanelHeader.Controls.Add(this.ckM_Label1);
-            this.PanelHeader.Size = new System.Drawing.Size(1284, 158);
+            this.PanelHeader.Size = new System.Drawing.Size(916, 158);
             this.PanelHeader.TabIndex = 1;
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.txtChangeDate, 0);
@@ -119,6 +119,7 @@
             this.txtChangeDate.IntegerPart = 0;
             this.txtChangeDate.IsCorrectDate = true;
             this.txtChangeDate.isEnterKeyDown = false;
+            this.txtChangeDate.IsFirstTime = true;
             this.txtChangeDate.isMaxLengthErr = false;
             this.txtChangeDate.IsNumber = true;
             this.txtChangeDate.IsShop = false;
@@ -164,6 +165,7 @@
             this.txtVendorName.IntegerPart = 0;
             this.txtVendorName.IsCorrectDate = true;
             this.txtVendorName.isEnterKeyDown = false;
+            this.txtVendorName.IsFirstTime = true;
             this.txtVendorName.isMaxLengthErr = false;
             this.txtVendorName.IsNumber = true;
             this.txtVendorName.IsShop = false;
@@ -191,6 +193,7 @@
             this.txtVendorKana.IntegerPart = 0;
             this.txtVendorKana.IsCorrectDate = true;
             this.txtVendorKana.isEnterKeyDown = false;
+            this.txtVendorKana.IsFirstTime = true;
             this.txtVendorKana.isMaxLengthErr = false;
             this.txtVendorKana.IsNumber = true;
             this.txtVendorKana.IsShop = false;
@@ -251,6 +254,7 @@
             this.txtNotDisplayNote.IntegerPart = 0;
             this.txtNotDisplayNote.IsCorrectDate = true;
             this.txtNotDisplayNote.isEnterKeyDown = false;
+            this.txtNotDisplayNote.IsFirstTime = true;
             this.txtNotDisplayNote.isMaxLengthErr = false;
             this.txtNotDisplayNote.IsNumber = true;
             this.txtNotDisplayNote.IsShop = false;
@@ -295,6 +299,7 @@
             this.txtSupplierNoFrom.IntegerPart = 0;
             this.txtSupplierNoFrom.IsCorrectDate = true;
             this.txtSupplierNoFrom.isEnterKeyDown = false;
+            this.txtSupplierNoFrom.IsFirstTime = true;
             this.txtSupplierNoFrom.isMaxLengthErr = false;
             this.txtSupplierNoFrom.IsNumber = true;
             this.txtSupplierNoFrom.IsShop = false;
@@ -338,6 +343,7 @@
             this.txtSupplierNoTo.IntegerPart = 0;
             this.txtSupplierNoTo.IsCorrectDate = true;
             this.txtSupplierNoTo.isEnterKeyDown = false;
+            this.txtSupplierNoTo.IsFirstTime = true;
             this.txtSupplierNoTo.isMaxLengthErr = false;
             this.txtSupplierNoTo.IsNumber = true;
             this.txtSupplierNoTo.IsShop = false;
@@ -361,7 +367,7 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnSearch.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnSearch.Location = new System.Drawing.Point(1144, 118);
+            this.btnSearch.Location = new System.Drawing.Point(785, 113);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(1);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(118, 28);
@@ -403,11 +409,11 @@
             this.dgvSearchVendor.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSearchVendor.EnableHeadersVisualStyles = false;
             this.dgvSearchVendor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.dgvSearchVendor.Location = new System.Drawing.Point(12, 227);
+            this.dgvSearchVendor.Location = new System.Drawing.Point(25, 214);
             this.dgvSearchVendor.Name = "dgvSearchVendor";
             this.dgvSearchVendor.RowHeight_ = 20;
             this.dgvSearchVendor.RowTemplate.Height = 20;
-            this.dgvSearchVendor.Size = new System.Drawing.Size(1250, 500);
+            this.dgvSearchVendor.Size = new System.Drawing.Size(876, 290);
             this.dgvSearchVendor.TabIndex = 9;
             this.dgvSearchVendor.UseRowNo = true;
             this.dgvSearchVendor.UseSetting = true;
@@ -436,7 +442,7 @@
             this.colVendorCD.HeaderText = "仕入先番号";
             this.colVendorCD.Name = "colVendorCD";
             this.colVendorCD.ReadOnly = true;
-            this.colVendorCD.Width = 130;
+            this.colVendorCD.Width = 90;
             // 
             // colVendorName
             // 
@@ -444,7 +450,7 @@
             this.colVendorName.HeaderText = "仕入先名";
             this.colVendorName.Name = "colVendorName";
             this.colVendorName.ReadOnly = true;
-            this.colVendorName.Width = 400;
+            this.colVendorName.Width = 280;
             // 
             // Column3
             // 
@@ -452,7 +458,7 @@
             this.Column3.HeaderText = "カナ名";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 200;
+            this.Column3.Width = 90;
             // 
             // Column4
             // 
@@ -460,7 +466,7 @@
             this.Column4.HeaderText = "備考";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            this.Column4.Width = 450;
+            this.Column4.Width = 350;
             // 
             // colChangeDate
             // 
@@ -473,9 +479,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 785);
+            this.ClientSize = new System.Drawing.Size(916, 590);
             this.Controls.Add(this.dgvSearchVendor);
             this.F11Visible = true;
+            this.F12Visible = true;
             this.F9Visible = true;
             this.Name = "Search_Vendor";
             this.PanelHeaderHeight = 200;

@@ -278,6 +278,7 @@ namespace Search
             {
                 btnSubF10.Enabled = false;
                 ssbl.ShowMessage("E128");
+                GvDetail.DataSource = null;
             }
         }
         protected override void ExecSec()

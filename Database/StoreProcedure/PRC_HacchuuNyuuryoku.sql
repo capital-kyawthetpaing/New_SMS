@@ -264,35 +264,35 @@ END
 
 GO
 
-CREATE TYPE T_Order AS TABLE
-    (
-    [OrderRows] [int],
-    [DisplayRows] [int],
-    [SKUNO] [int] ,
-    [SKUCD] [varchar](30) ,
-    [JanCD] [varchar](13) ,
-    [MakerItem] [varchar](30) ,
-    [SKUName] [varchar](80) ,
-    [ColorName] [varchar](20) ,
-    [SizeName] [varchar](20) ,
-    [OrderSuu] [int] ,
-    [OrderUnitPrice] [money] ,
-    [TaniCD] [varchar](2) ,
-    [PriceOutTax] [money] ,
-    [Rate] [decimal](5,2) ,
-    [OrderGaku] [money] ,
-    [OrderHontaiGaku] [money] ,
-    [OrderTax] [money] ,
-    [OrderTaxRitsu] [int] ,
-    [SoukoCD] [varchar](6) ,
-    [DirectFLG] [tinyint],
-    [EDIFLG] [tinyint] ,
-    [DesiredDeliveryDate] [date],
-    [CommentOutStore] [varchar](80) ,
-    [CommentInStore] [varchar](80) ,
-    [UpdateFlg][tinyint]
-    )
-GO
+--CREATE TYPE T_Order AS TABLE
+--    (
+--    [OrderRows] [int],
+--    [DisplayRows] [int],
+--    [SKUNO] [int] ,
+--    [SKUCD] [varchar](30) ,
+--    [JanCD] [varchar](13) ,
+--    [MakerItem] [varchar](30) ,
+--    [SKUName] [varchar](80) ,
+--    [ColorName] [varchar](20) ,
+--    [SizeName] [varchar](20) ,
+--    [OrderSuu] [int] ,
+--    [OrderUnitPrice] [money] ,
+--    [TaniCD] [varchar](2) ,
+--    [PriceOutTax] [money] ,
+--    [Rate] [decimal](5,2) ,
+--    [OrderGaku] [money] ,
+--    [OrderHontaiGaku] [money] ,
+--    [OrderTax] [money] ,
+--    [OrderTaxRitsu] [int] ,
+--    [SoukoCD] [varchar](6) ,
+--    [DirectFLG] [tinyint],
+--    [EDIFLG] [tinyint] ,
+--    [DesiredDeliveryDate] [date],
+--    [CommentOutStore] [varchar](80) ,
+--    [CommentInStore] [varchar](80) ,
+--    [UpdateFlg][tinyint]
+--    )
+--GO
 
 CREATE PROCEDURE PRC_HacchuuNyuuryoku
     (@OperateMode    int,                 -- 処理区分（1:新規 2:修正 3:削除）
@@ -321,6 +321,7 @@ CREATE PROCEDURE PRC_HacchuuNyuuryoku
 
     @CommentOutStore varchar(500) ,
     @CommentInStore varchar(500) ,
+    @ArrivalPlanDate varchar(10),
     @ApprovalEnabled tinyint,	--承認ボタンが利用できない場合=0
     @ApprovalStageFLG int,
 
@@ -403,6 +404,7 @@ BEGIN
           ,[StaffCD]
           ,[FirstArriveDate]
           ,[LastArriveDate]
+          ,[ArrivalPlanDate]
           ,[ApprovalDate]
           ,[LastApprovalDate]
           ,[LastApprovalStaffCD]
@@ -445,14 +447,15 @@ BEGIN
            ,@StaffCD
            ,NULL    --FirstArriveDate
            ,NULL    --LastArriveDate
+           ,@ArrivalPlanDate
            ,(CASE WHEN @OrderHontaiGaku > @Num1 THEN NULL
             ELSE @SYSDATE END) --ApprovalDate
            ,(CASE WHEN @OrderHontaiGaku > @Num1 THEN NULL
             ELSE @SYSDATE END) --LastApprovalDate
            ,(CASE WHEN @OrderHontaiGaku > @Num1 THEN NULL
             ELSE @Operator END) --LastApprovalStaffCD
-           ,(CASE WHEN @OrderHontaiGaku > @Num1 THEN 1
-            ELSE 10 END) --ApprovalStageFLG
+           ,(CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalStageFLG >= 9 THEN @ApprovalStageFLG ELSE 1 END)
+            ELSE 10 END)--ApprovalStageFLG
            ,NULL    --FirstPrintDate
            ,NULL    --LastPrintDate
 
@@ -494,15 +497,18 @@ BEGIN
               ,[CommentOutStore] = @CommentOutStore
               ,[CommentInStore]  = @CommentInStore
               ,[StaffCD]         = @StaffCD
-
+              
               ,[ApprovalDate] = (CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalEnabled = 1 THEN @SYSDATE ELSE NULL END)
                                         ELSE @SYSDATE END) --ApprovalDate
-              ,[LastApprovalDate] = (CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalEnabled = 1 THEN (CASE @ApprovalStageFLG WHEN 9 THEN @SYSDATE WHEN -1 THEN NULL ELSE [ApprovalDate] END) ELSE NULL END)
+              ,[LastApprovalDate] = (CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalEnabled = 1 THEN (CASE WHEN @ApprovalStageFLG >= 9 THEN @SYSDATE WHEN @ApprovalStageFLG = -1 THEN NULL ELSE [LastApprovalDate] END) 
+                                                                                ELSE NULL END)
                                             ELSE @SYSDATE END) --LastApprovalDate
-              ,[LastApprovalStaffCD] = (CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalEnabled = 1 THEN (CASE @ApprovalStageFLG WHEN 9 THEN @Operator WHEN -1 THEN NULL ELSE [LastApprovalStaffCD] END) ELSE '1' END)
+              ,[LastApprovalStaffCD] = (CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalEnabled = 1 THEN (CASE WHEN @ApprovalStageFLG >= 9 THEN @Operator WHEN @ApprovalStageFLG = -1 THEN NULL ELSE [LastApprovalStaffCD] END) 
+                                                                                ELSE NULL END)
                                             ELSE @Operator END) --LastApprovalStaffCD
               ,[ApprovalStageFLG] = (CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalEnabled = 1 THEN (CASE @ApprovalStageFLG WHEN -1 THEN 0 ELSE @ApprovalStageFLG END) ELSE 1 END)
                                         ELSE 10 END) --ApprovalStageFLG
+              ,[ArrivalPlanDate]  = @ArrivalPlanDate
       
               ,[UpdateOperator]     =  @Operator  
               ,[UpdateDateTime]     =  @SYSDATETIME

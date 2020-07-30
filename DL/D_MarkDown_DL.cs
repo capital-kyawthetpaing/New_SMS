@@ -51,6 +51,7 @@ namespace DL
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
                 {
                     { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.JanCD } },
+                    { "@AdminNO", new ValuePair { value1 = SqlDbType.Int, value2 = mse.AdminNO } },
                     { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ChangeDate } },
                 };
 
@@ -83,8 +84,10 @@ namespace DL
             AddParam(command, "@Comment", SqlDbType.VarChar, dme.Comment);
             AddParam(command, "@MDPurchaseNO", SqlDbType.VarChar, dme.MDPurchaseNO);
             AddParam(command, "@PurchaseNO", SqlDbType.VarChar, dme.PurchaseNO);
+            AddParam(command, "@PayeeCD", SqlDbType.VarChar, dme.PayeeCD);
             AddParam(command, "@PurchaseGaku", SqlDbType.Money, dme.PurchaseGaku);
             AddParam(command, "@PurchaseTax", SqlDbType.Money, dme.PurchaseTax);
+            AddParam(command, "@TotalPurchaseGaku", SqlDbType.Money, dme.TotalPurchaseGaku);
             AddParam(command, "@TaxGaku8", SqlDbType.Money, dme.TaxGaku8);
             AddParam(command, "@TaxGaku10", SqlDbType.Money, dme.TaxGaku10);
             AddParam(command, "@HontaiGaku8", SqlDbType.Money, dme.HontaiGaku8);

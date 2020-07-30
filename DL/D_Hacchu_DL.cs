@@ -161,6 +161,7 @@ namespace DL
             AddParam(command, "@OrderGaku", SqlDbType.Money, dme.OrderGaku);
             AddParam(command, "@CommentOutStore", SqlDbType.VarChar, dme.CommentOutStore);
             AddParam(command, "@CommentInStore", SqlDbType.VarChar, dme.CommentInStore);
+            AddParam(command, "@ArrivalPlanDate", SqlDbType.VarChar, dme.ArrivalPlanDate);
             AddParam(command, "@ApprovalEnabled", SqlDbType.TinyInt, dme.ApprovalEnabled);
             AddParam(command, "@ApprovalStageFLG", SqlDbType.Int, dme.ApprovalStageFLG);
 

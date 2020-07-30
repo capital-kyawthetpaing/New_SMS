@@ -585,7 +585,7 @@
             this.lblColorName.Font = new System.Drawing.Font("ＭＳ ゴシック", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblColorName.Location = new System.Drawing.Point(175, 294);
             this.lblColorName.Name = "lblColorName";
-            this.lblColorName.Size = new System.Drawing.Size(340, 30);
+            this.lblColorName.Size = new System.Drawing.Size(450, 30);
             this.lblColorName.TabIndex = 729;
             this.lblColorName.Text = "ＸＸＸＸＸＸＸＸＸ10";
             this.lblColorName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -684,7 +684,7 @@
             this.lblSizeName.Font = new System.Drawing.Font("ＭＳ ゴシック", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblSizeName.Location = new System.Drawing.Point(175, 324);
             this.lblSizeName.Name = "lblSizeName";
-            this.lblSizeName.Size = new System.Drawing.Size(340, 30);
+            this.lblSizeName.Size = new System.Drawing.Size(450, 30);
             this.lblSizeName.TabIndex = 734;
             this.lblSizeName.Text = "ＸＸＸＸＸＸＸＸＸ10";
             this.lblSizeName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -811,7 +811,7 @@
             // 
             this.ScOrderNO.AutoSize = true;
             this.ScOrderNO.ChangeDate = "";
-            this.ScOrderNO.ChangeDateWidth = 4609160;
+            this.ScOrderNO.ChangeDateWidth = 7681932;
             this.ScOrderNO.Code = "XXXXXXXXX01";
             this.ScOrderNO.CodeWidth = 150;
             this.ScOrderNO.CodeWidth1 = 150;
