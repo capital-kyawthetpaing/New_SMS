@@ -20,25 +20,26 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
-        public DataTable M_Shiirekakeritsu(M_OrderRate_Entity moe,string xml,L_Log_Entity log_data)
+        public bool M_Shiirekakeritsu(M_OrderRate_Entity moe,string delData,string insertData)
         {
             string sp = "M_OrderRate_Update";
 
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = xml } },
+                { "@delXml", new ValuePair { value1 = SqlDbType.VarChar, value2 = delData } },
+                { "@insertXml",new ValuePair{value1=SqlDbType.VarChar,value2=insertData } },
                 { "@VendorCD", new ValuePair { value1 = System.Data.SqlDbType.VarChar, value2 =moe.VendorCD  } },
                 { "@StoreCD", new ValuePair { value1 = System.Data.SqlDbType.VarChar, value2 =moe.StoreCD  } },
                 { "@ChangeDate",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.ChangeDate} },
                 { "@Rate",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.Rate} },
-                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.Operator }},//ses
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.Operator }},
                 { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.ProgramID }},
                 { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.PC }},
                 { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.ProcessMode }},
                 { "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.Key }}
 
             };
-            return SelectData(dic, sp);
+            return InsertUpdateDeleteData(dic, sp);
         }
     }
 }
