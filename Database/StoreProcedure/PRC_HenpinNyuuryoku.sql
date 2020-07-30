@@ -262,39 +262,39 @@ END
 
 GO
 
-CREATE TYPE T_ShiireH AS TABLE
-    (
-    [PurchaseRows] [int],
-    [DisplayRows] [int],
-    
-    [SKUCD] [varchar](30) ,
-    [AdminNO] [int] ,
-    [JanCD] [varchar](13) ,
-    [ItemName] [varchar](80) NULL,
-    [ColorName] [varchar](20) ,
-    [SizeName] [varchar](20) ,
-    [Remark] [varchar](200) NULL,
-    
-    [PurchaseSu] [int] ,
-    [OldPurchaseSu] [int] ,
-    [TaniCD] [varchar](2) ,
-    [TaniName] [varchar](10) ,
-    [PurchaserUnitPrice] [money] ,
-    [CalculationGaku] [money] ,
-    [AdjustmentGaku] [money] ,
-    [PurchaseGaku] [money] ,
-    [PurchaseTax] [money] ,
---    [CommentOutStore] [varchar](80) ,
---    [CommentInStore] [varchar](80) ,
-
-    [OrderNO] [varchar](11) ,
-    [OrderRows] [int] ,
-    [DeliveryNo] [int],
-    [StockNO] [varchar](11) ,
-    [WarehousingNO] [int] ,
-    [UpdateFlg][tinyint]
-    )
-GO
+--CREATE TYPE T_ShiireH AS TABLE
+--    (
+--    [PurchaseRows] [int],
+--    [DisplayRows] [int],
+--    
+--    [SKUCD] [varchar](30) ,
+--    [AdminNO] [int] ,
+--    [JanCD] [varchar](13) ,
+--    [ItemName] [varchar](80) NULL,
+--    [ColorName] [varchar](20) ,
+--    [SizeName] [varchar](20) ,
+--    [Remark] [varchar](200) NULL,
+--    
+--    [PurchaseSu] [int] ,
+--    [OldPurchaseSu] [int] ,
+--    [TaniCD] [varchar](2) ,
+--    [TaniName] [varchar](10) ,
+--    [PurchaserUnitPrice] [money] ,
+--    [CalculationGaku] [money] ,
+--    [AdjustmentGaku] [money] ,
+--    [PurchaseGaku] [money] ,
+--    [PurchaseTax] [money] ,
+----    [CommentOutStore] [varchar](80) ,
+----    [CommentInStore] [varchar](80) ,
+--
+--    [OrderNO] [varchar](11) ,
+--    [OrderRows] [int] ,
+--    [DeliveryNo] [int],
+--    [StockNO] [varchar](11) ,
+--    [WarehousingNO] [int] ,
+--    [UpdateFlg][tinyint]
+--    )
+--GO
 
 CREATE PROCEDURE PRC_HenpinNyuuryoku
     (@OperateMode    int,                 -- èàóùãÊï™Åi1:êVãK 2:èCê≥ 3:çÌèúÅj
