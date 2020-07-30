@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 using BL;
@@ -68,7 +65,7 @@ namespace HacchuuNyuuryoku
         private Control[] detailLabels;
         private Control[] searchButtons;
 
-        private HacchuuNyuuryoku_BL mibl;
+        private HacchuuNyuuryoku_BL hnbl;
         private D_Order_Entity doe;
 
         private System.Windows.Forms.Control previousCtrl; // ｶｰｿﾙの元の位置を待避
@@ -748,6 +745,7 @@ namespace HacchuuNyuuryoku
                                 Scr_Lock(1, mc_L_END, 0);  // フレームのロック解除
                                 detailControls[(int)EIndex.OrderDate].Text = bbl.GetDate();
                                 F9Visible = false;
+                                Chk_Souko.Checked = true;
 
                                 if (BtnSubF11.Enabled)
                                     SetFuncKeyAll(this, "111111001011");
@@ -1293,7 +1291,7 @@ namespace HacchuuNyuuryoku
 
                 //コンボボックス初期化
                 string ymd = bbl.GetDate();
-                mibl = new HacchuuNyuuryoku_BL();
+                hnbl = new HacchuuNyuuryoku_BL();
                 CboStoreCD.Bind(ymd);
                 CboSoukoName.Bind(ymd);
 
@@ -1313,7 +1311,7 @@ namespace HacchuuNyuuryoku
                 M_Staff_Entity mse = new M_Staff_Entity
                 {
                     StaffCD = InOperatorCD,
-                    ChangeDate = mibl.GetDate()
+                    ChangeDate = hnbl.GetDate()
                 };
                 Staff_BL bl = new Staff_BL();
                 bool ret = bl.M_Staff_Select(mse);
@@ -1325,9 +1323,10 @@ namespace HacchuuNyuuryoku
                 InOperatorName = mse.StaffName;
                 StoreCD = mse.StoreCD;  //初期値を退避
 
+                SetInitSoukoName();
+
                 //承認用データを抽出
-                DataTable dtApp = new DataTable();
-                W_ApprovalStageFLG = mibl.GetApprovalStageFLG(InOperatorCD);
+                //W_ApprovalStageFLG = hnbl.GetApprovalStageFLG(InOperatorCD, StoreCD);
 
                 detailControls[(int)EIndex.OrderDate].Text = ymd;
 
@@ -1369,13 +1368,28 @@ namespace HacchuuNyuuryoku
 
             }
         }
-
+        private void SetInitSoukoName()
+        {
+            //[M_Souko_SelectForNyuuka]
+            M_Souko_Entity me = new M_Souko_Entity
+            {
+                StoreCD = CboStoreCD.SelectedValue != null ? CboStoreCD.SelectedValue.ToString() : "",
+                SoukoType = "3", //店舗Main倉庫
+                ChangeDate = bbl.GetDate(),
+                DeleteFlg = "0"
+            };
+            DataTable sdt = hnbl.M_Souko_Select(me);
+            if (sdt.Rows.Count > 0)
+            {
+                CboSoukoName.SelectedValue = sdt.Rows[0]["SoukoCD"];
+            }
+        }
         private void InitialControlArray()
         {
             keyControls = new Control[] { ScOrderNO.TxtCode, ScCopyOrderNO.TxtCode, ckM_CheckBox2, ckM_CheckBox1, ScMotoOrderNo.TxtCode, CboStoreCD };
             keyLabels = new Control[] { };
             detailControls = new Control[] { ckM_TextBox1, ScStaff.TxtCode, ScOrder.TxtCode, ckM_Text_4, panel1
-                        ,ckM_CheckBox3, CboSoukoName, ckM_CheckBox4, ckM_TextBox9, ckM_TextBox20, ckM_TextBox19,  ckM_TextBox14, ckM_TextBox7, ckM_TextBox18 , ckM_TextBox8
+                        ,Chk_Souko, CboSoukoName, ckM_CheckBox4, ckM_TextBox9, ckM_TextBox20, ckM_TextBox19,  ckM_TextBox14, ckM_TextBox7, ckM_TextBox18 , ckM_TextBox8
                          ,TxtRemark1,TxtRemark2 };
             detailLabels = new Control[] { ScOrder, ScStaff };
             searchButtons = new Control[] { ScOrder.BtnSearch, ScStaff.BtnSearch };
@@ -1537,7 +1551,7 @@ namespace HacchuuNyuuryoku
             else
                 doe.OrderNO = keyControls[(int)EIndex.OrderNO].Text;
 
-            DataTable dt = mibl.D_Order_SelectData(doe, (short)OperationMode);
+            DataTable dt = hnbl.D_Order_SelectData(doe, (short)OperationMode);
 
             //発注(D_Order)に存在しない場合、Error 「登録されていない発注番号」
             if (dt.Rows.Count == 0)
@@ -1571,7 +1585,7 @@ namespace HacchuuNyuuryoku
                 {
                     //上位承認者が承認行為を行った後に下位承認者が承認しようとした場合
                     //（以下のSelectができる場合）、Error「上位承認者によって既に承認済みです。」	
-                    bool ret = mibl.CheckSyonin(doe.OrderNO, InOperatorCD, out string errno2);
+                    bool ret = hnbl.CheckSyonin(doe.OrderNO, InOperatorCD, out string errno2);
                     if (ret)
                     {
                         if (!string.IsNullOrWhiteSpace(errno2))
@@ -1583,7 +1597,7 @@ namespace HacchuuNyuuryoku
                     }
 
                     //進捗チェック　既に出荷済み,出荷指示済み,ピッキングリスト完了済み,仕入済み,入荷済み警告
-                    ret = mibl.CheckHacchuData(doe.OrderNO, out string errno);
+                    ret = hnbl.CheckHacchuData(doe.OrderNO, out string errno);
                     if (ret)
                     {
                         if (!string.IsNullOrWhiteSpace(errno))
@@ -1684,7 +1698,7 @@ namespace HacchuuNyuuryoku
 
                         if (row["DestinationKBN"].ToString() == "2") //自社倉庫
                         {
-                            ckM_CheckBox3.Checked = true;
+                            Chk_Souko.Checked = true;
                             CboSoukoName.SelectedValue = row["DestinationSoukoCD"];
                             ckM_CheckBox4.Checked = false;
                         }
@@ -1692,7 +1706,7 @@ namespace HacchuuNyuuryoku
                         {
                             ckM_CheckBox4.Checked = true;
                             detailControls[(int)EIndex.DestinationName].Text = row["DestinationName"].ToString();
-                            ckM_CheckBox3.Checked = false;
+                            Chk_Souko.Checked = false;
                         }
 
                         detailControls[(int)EIndex.ZipCD1].Text = row["DestinationZip1CD"].ToString();
@@ -1993,7 +2007,7 @@ namespace HacchuuNyuuryoku
                     break;
 
                 case (int)EIndex.CheckBox4:
-                    if (ckM_CheckBox3.Checked == false && ckM_CheckBox4.Checked == false)
+                    if (Chk_Souko.Checked == false && ckM_CheckBox4.Checked == false)
                     {
                         //Ｅ１０２
                         bbl.ShowMessage("E102");
@@ -2651,7 +2665,7 @@ namespace HacchuuNyuuryoku
                         {
                             kin8 += bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku);
                             if(zeiritsu8 == 0)
-                            zeiritsu8 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate);
+                                zeiritsu8 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate);
                         }
 
                         if (maxKin < bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku))
@@ -2739,7 +2753,7 @@ namespace HacchuuNyuuryoku
             doe.OrderCD = detailControls[(int)EIndex.OrderCD].Text;
             doe.OrderPerson = detailControls[(int)EIndex.OrderName].Text;
 
-            if (ckM_CheckBox3.Checked)  //自社倉庫
+            if (Chk_Souko.Checked)  //自社倉庫
                 doe.DestinationKBN = "2";
             else
                 doe.DestinationKBN = "1";
@@ -2940,7 +2954,7 @@ namespace HacchuuNyuuryoku
 
             //更新処理
             doe = GetEntity();
-            mibl.Order_Exec(doe, dt, (short)OperationMode, InOperatorCD, InPcID);
+            hnbl.Order_Exec(doe, dt, (short)OperationMode, InOperatorCD, InPcID);
 
             if (OperationMode == EOperationMode.DELETE)
                 bbl.ShowMessage("I102");
@@ -3180,7 +3194,7 @@ namespace HacchuuNyuuryoku
                             //SetBtnSubF11Enabled(Kbn == 0 ? true : false);
                             Pnl_Body.Enabled = Kbn == 0 ? true : false;
 
-                            SetEnabled(EIndex.CheckBox3, ckM_CheckBox3.Checked);
+                            SetEnabled(EIndex.CheckBox3, Chk_Souko.Checked);
                             SetEnabled(EIndex.CheckBox4, ckM_CheckBox4.Checked);
                             break;
                         }
@@ -3400,13 +3414,12 @@ namespace HacchuuNyuuryoku
                                 keyControls[index + 1].Focus();
                             else
                                 detailControls[(int)EIndex.OrderDate].Focus();
-                        else if(keyControls[index + 1].CanFocus)
+                        else if (keyControls[index + 1].CanFocus)
                             keyControls[index + 1].Focus();
                         else
                             //あたかもTabキーが押されたかのようにする
                             //Shiftが押されている時は前のコントロールのフォーカスを移動
                             ProcessTabKey(!e.Shift);
-
                     }
                     else
                     {
@@ -3441,7 +3454,7 @@ namespace HacchuuNyuuryoku
                         if (index == (int)EIndex.Fax)
                             //明細の先頭項目へ
                             mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridHacchuu.ColNO.JanCD);
-                        else if (ckM_CheckBox3.Checked && index == (int)EIndex.SoukoName)
+                        else if (Chk_Souko.Checked && index == (int)EIndex.SoukoName)
                         {
                             //明細の先頭項目へ
                             mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridHacchuu.ColNO.JanCD);
@@ -3769,18 +3782,18 @@ namespace HacchuuNyuuryoku
             {
                 //返品チェックがONのときのみ入力可
                 CKM_SearchControl edit = ScMotoOrderNo;
-                bool enabled;
                 if (ckM_CheckBox1.Checked)
                 {
-                    enabled = true;
+                    edit.Enabled = true;
+                    edit.BtnSearch.Enabled = true;
                     ckM_CheckBox2.Checked = false;
                 }
-                else
+                else if (!ckM_CheckBox2.Checked)
                 {
-                    enabled = false;
+                    edit.Enabled = false;
+                    edit.BtnSearch.Enabled = false;
                 }
-                edit.Enabled = enabled;
-                edit.BtnSearch.Enabled = enabled;
+
 
             }
             catch (Exception ex)
@@ -3791,15 +3804,26 @@ namespace HacchuuNyuuryoku
         }
         private void CkM_CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
-            //bool enabled;
-            if (ckM_CheckBox2.Checked)
+            try
             {
-                //enabled = true;
-                ckM_CheckBox1.Checked = false;
+                CKM_SearchControl edit = ScMotoOrderNo;
+                if (ckM_CheckBox2.Checked)
+                {
+                    edit.Enabled = true;
+                    edit.BtnSearch.Enabled = true;
+                    ckM_CheckBox1.Checked = false;
+                }
+                else if (!ckM_CheckBox1.Checked)
+                {
+                    edit.Enabled = false;
+                    edit.BtnSearch.Enabled = false;
+                }
+
             }
-            else
+            catch (Exception ex)
             {
-                //enabled = false;
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -3840,7 +3864,9 @@ namespace HacchuuNyuuryoku
                     if (string.IsNullOrWhiteSpace(ymd))
                         ymd = bbl.GetDate();
 
-                     mSyoninsya = false;
+                    W_ApprovalStageFLG = hnbl.GetApprovalStageFLG(InOperatorCD, CboStoreCD.SelectedValue.ToString());
+
+                    mSyoninsya = false;
                     //[M_Store_SelectData]
                     M_Store_Entity mse = new M_Store_Entity
                     {
@@ -3862,6 +3888,9 @@ namespace HacchuuNyuuryoku
 
 
                     }
+
+                    if (OperationMode == EOperationMode.INSERT && Chk_Souko.Checked)
+                        SetInitSoukoName();
                 }
             }
             catch (Exception ex)
@@ -3929,7 +3958,7 @@ namespace HacchuuNyuuryoku
         {
             try
             {
-                SetEnabled(EIndex.CheckBox3, ckM_CheckBox3.Checked);
+                SetEnabled(EIndex.CheckBox3, Chk_Souko.Checked);
             }
             catch (Exception ex)
             {
@@ -3994,7 +4023,7 @@ namespace HacchuuNyuuryoku
                                 detailControls[i].Enabled = enabled;
                             }
 
-                            ckM_CheckBox3.Checked = !enabled;
+                            Chk_Souko.Checked = !enabled;
                         }
                         else
                         {

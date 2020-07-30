@@ -263,7 +263,7 @@
             this.ckM_TextBox20 = new CKM_Controls.CKM_TextBox();
             this.label12 = new CKM_Controls.CKM_Label();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
-            this.ckM_CheckBox3 = new CKM_Controls.CKM_CheckBox();
+            this.Chk_Souko = new CKM_Controls.CKM_CheckBox();
             this.ckM_CheckBox4 = new CKM_Controls.CKM_CheckBox();
             this.ckM_TextBox9 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label12 = new CKM_Controls.CKM_Label();
@@ -6306,18 +6306,18 @@
             this.ckM_Label6.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ckM_CheckBox3
+            // Chk_Souko
             // 
-            this.ckM_CheckBox3.AutoSize = true;
-            this.ckM_CheckBox3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox3.Location = new System.Drawing.Point(87, 158);
-            this.ckM_CheckBox3.Name = "ckM_CheckBox3";
-            this.ckM_CheckBox3.Size = new System.Drawing.Size(76, 16);
-            this.ckM_CheckBox3.TabIndex = 12;
-            this.ckM_CheckBox3.Text = "自社倉庫";
-            this.ckM_CheckBox3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckM_CheckBox3.UseVisualStyleBackColor = true;
-            this.ckM_CheckBox3.CheckedChanged += new System.EventHandler(this.CkM_CheckBox3_CheckedChanged);
+            this.Chk_Souko.AutoSize = true;
+            this.Chk_Souko.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.Chk_Souko.Location = new System.Drawing.Point(87, 158);
+            this.Chk_Souko.Name = "Chk_Souko";
+            this.Chk_Souko.Size = new System.Drawing.Size(76, 16);
+            this.Chk_Souko.TabIndex = 12;
+            this.Chk_Souko.Text = "自社倉庫";
+            this.Chk_Souko.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Chk_Souko.UseVisualStyleBackColor = true;
+            this.Chk_Souko.CheckedChanged += new System.EventHandler(this.CkM_CheckBox3_CheckedChanged);
             // 
             // ckM_CheckBox4
             // 
@@ -6436,7 +6436,7 @@
             this.Controls.Add(this.lblKin2);
             this.Controls.Add(this.lblKin1);
             this.Controls.Add(this.ckM_CheckBox4);
-            this.Controls.Add(this.ckM_CheckBox3);
+            this.Controls.Add(this.Chk_Souko);
             this.Controls.Add(this.ckM_TextBox7);
             this.Controls.Add(this.ckM_TextBox14);
             this.Controls.Add(this.ckM_TextBox19);
@@ -6499,7 +6499,7 @@
             this.Controls.SetChildIndex(this.ckM_TextBox19, 0);
             this.Controls.SetChildIndex(this.ckM_TextBox14, 0);
             this.Controls.SetChildIndex(this.ckM_TextBox7, 0);
-            this.Controls.SetChildIndex(this.ckM_CheckBox3, 0);
+            this.Controls.SetChildIndex(this.Chk_Souko, 0);
             this.Controls.SetChildIndex(this.ckM_CheckBox4, 0);
             this.Controls.SetChildIndex(this.lblKin1, 0);
             this.Controls.SetChildIndex(this.lblKin2, 0);
@@ -6649,7 +6649,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label7;
-        private CKM_Controls.CKM_CheckBox ckM_CheckBox3;
+        private CKM_Controls.CKM_CheckBox Chk_Souko;
         private CKM_Controls.CKM_CheckBox ckM_CheckBox4;
         private CKM_Controls.CKM_TextBox ckM_TextBox9;
         private CKM_Controls.CKM_Label ckM_Label12;

@@ -123,14 +123,14 @@ BEGIN
            --  Where DS.JuchuuNO = DM.JuchuuNO
            -- AND DS.DeleteDateTime IS NULL
            -- Group by DS.JuchuuNO) AS SalesNO
-           .DS.SalesNO
+           ,DS.SalesNO
 
       FROM D_Juchuu DH
 
       INNER JOIN D_JuchuuDetails AS DM ON DH.JuchuuNO = DM.JuchuuNO AND DM.DeleteDateTime IS NULL
-      LEFT OUTER JOIN (SELECT A.SalesNO FROM D_SalesDetails AS A
+      LEFT OUTER JOIN (SELECT A.SalesNO, A.JuchuuNO FROM D_SalesDetails AS A
                         WHERE A.DeleteDateTime IS NULL
-                        GROUP BY A.SalesNO
+                        GROUP BY A.SalesNO, A.JuchuuNO
         )AS DS ON DS.JuchuuNO = DM.JuchuuNO
 
       WHERE DH.CustomerCD = @CustomerCD               

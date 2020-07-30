@@ -746,6 +746,8 @@ namespace KaitouNoukiTouroku
                         {
                             IMT_DMY_0.Focus();
 
+                            detailControls[(int)EIndex.OrderDateTo].Text = bbl.GetDate();
+
                             Scr_Lock(0, 0, 0);
                            Scr_Lock(1, mc_L_END, 1);   // フレームのロック
                                 this.Vsb_Mei_0.TabStop = false;
