@@ -11,6 +11,8 @@ using Base.Client;
 using BL;
 using Entity;
 using DL;
+using System.Threading;
+using System.Diagnostics;
 
 namespace TempoRegiRyougaeNyuuryoku
 {
@@ -27,13 +29,16 @@ namespace TempoRegiRyougaeNyuuryoku
         string storeCD;
         public frmTempoRegiRyougaeNyuuryoku()
         {
+            Start_Display();
             InitializeComponent();
+           
             dtDepositNO = new DataTable();
             trrnbl = new TempoRegiRyougaeNyuuryoku_BL();
             mre = new D_DepositHistory_Entity();
         }
         private void frmTempoRegiRyougaeNyuuryoku_Load(object sender, EventArgs e)
         {
+            
             trrnbl = new TempoRegiRyougaeNyuuryoku_BL();
             InProgramID = "TempoRegiRyougaeNyuuryoku";
             
@@ -42,6 +47,7 @@ namespace TempoRegiRyougaeNyuuryoku
             SetRequireField();
             BindCombo();
             storeCD = StoreCD;
+            Stop_DisplayService();
             //displayData();
         }
         public void BindCombo()
@@ -147,12 +153,10 @@ namespace TempoRegiRyougaeNyuuryoku
                         if (trrnbl.TempoRegiRyougaeNyuuryoku_Insert_Update(mre))
                         {  
                             trrnbl.ShowMessage("I101");
-                            RunConsole();//exeRun
-                            if (Base_DL.iniEntity.IsDM_D30Used)
-                            {
-                                CashDrawerOpen op = new CashDrawerOpen(); //ses  <<< PTK
-                                op.OpenCashDrawer();
-                            }
+                          
+                            RunConsole();
+                            //exeRun
+                           
                             ExchangeDenomination.SelectedValue = "-1";
                             ExchangeMoney.Clear();
                             ExchangeCount.Clear();
@@ -183,14 +187,60 @@ namespace TempoRegiRyougaeNyuuryoku
             dtDepositNO = bbl.SimpleSelect1("52", "", Application.ProductName, "", "");
             string DepositeNO = dtDepositNO.Rows[0]["DepositNO"].ToString();
             string cmdLine = InCompanyCD +" " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode + " " + DepositeNO;
+
             try
             {
-                System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                try
+                {
+                    cdo.RemoveDisplay(true);
+                    cdo.RemoveDisplay(true);
+                }
+                catch
+                {
+                }
+                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                pro.WaitForExit();
+                try
+                {
+                    cdo.SetDisplay(true, true, "", "");
+                    cdo.RemoveDisplay(true);
+                    cdo.RemoveDisplay(true);
+                }
+                catch { }
+                if (Base_DL.iniEntity.IsDM_D30Used)
+                {
+                    CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
+                    op.OpenCashDrawer(); //2020_06_24     << PTK
+                }
+                Stop_DisplayService();
             }
             catch
             {
-                
             }
+
+            //try
+            //{
+            //    try
+            //    {
+            //        cdo.RemoveDisplay(true);
+            //        cdo.RemoveDisplay(true);
+            //    }
+            //    catch { }
+
+            //    if (Base_DL.iniEntity.IsDM_D30Used)
+            //    {
+            //        CashDrawerOpen op = new CashDrawerOpen(); //ses   << PTK
+            //        op.OpenCashDrawer();
+            //    }
+            //    var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            //    pro.WaitForExit();
+            //    Stop_DisplayService();
+
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.ToString() + Environment.NewLine + ex.StackTrace.ToString()); 
+            //}
         }
         /// <summary>
         /// 入力必須エラーをチェックする
@@ -228,6 +278,7 @@ namespace TempoRegiRyougaeNyuuryoku
         /// </summary>
         protected override void EndSec()
         {
+            RunDisplay_Service();
             this.Close();
         }
         private void ExchangeCount_KeyDown(object sender, KeyEventArgs e)
@@ -300,5 +351,99 @@ namespace TempoRegiRyougaeNyuuryoku
         {
             MoveNextControl(e);
         }
+        protected void Kill(string pth)
+        {
+            try
+            {
+                Process[] processCollection = Process.GetProcessesByName(pth.Replace(".exe", ""));
+                foreach (Process p in processCollection)
+                {
+                    p.Kill();
+                }
+
+                Process[] processCollections = Process.GetProcessesByName(pth + ".exe");
+                foreach (Process p in processCollections)
+                {
+                    p.Kill();
+                }
+            }
+            catch { }
+        }
+        private void Stop_DisplayService(bool isForced = true)
+        {
+            if (Base_DL.iniEntity.IsDM_D30Used)
+            {
+
+                Login_BL bbl_1 = new Login_BL();
+                if (bbl_1.ReadConfig())
+                {
+                    bbl_1.Display_Service_Update(false);
+                    Thread.Sleep(2 * 1000);
+                    bbl_1.Display_Service_Enabled(false);
+                }
+                else
+                {
+                    bbl_1.Display_Service_Update(false);
+                    Thread.Sleep(2 * 1000);
+                    bbl_1.Display_Service_Enabled(false);
+                }
+                try
+                {
+                    Kill("Display_Service");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.StackTrace.ToString());
+                }
+                if (isForced) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+                //Base_DL.iniEntity.CDO_DISPLAY.SetDisplay(true, true,Base_DL.iniEntity.DefaultMessage);
+            }
+        }
+        private void RunDisplay_Service()  // Make when we want to run display_service
+        {
+            try
+            {
+                if (Base_DL.iniEntity.IsDM_D30Used)
+                {
+                    try
+                    {
+                        cdo.RemoveDisplay(true);
+                    }
+                    catch { }
+                    Login_BL bbl_1 = new Login_BL();
+                    bbl_1.Display_Service_Update(true);
+                    bbl_1.Display_Service_Enabled(true);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in removing display. . .");
+            }
+        }
+        private void Start_Display()
+        {
+            try
+            {
+                if (Base_DL.iniEntity.IsDM_D30Used)
+                {
+                    Login_BL bbl_1 = new Login_BL();
+                    if (bbl_1.ReadConfig())
+                    {
+                        bbl_1.Display_Service_Update(false);
+                        Thread.Sleep(2 * 1000);
+                        bbl_1.Display_Service_Enabled(false);
+                    }
+                    else
+                    {
+                        bbl_1.Display_Service_Update(false);
+                        Thread.Sleep(2 * 1000);
+                        bbl_1.Display_Service_Enabled(false);
+                    }
+                    Kill("Display_Service");
+                }
+            }
+            catch (Exception ex) { MessageBox.Show("Cant remove on second time" + ex.StackTrace); }
+        }
+        EPSON_TM30.CashDrawerOpen cdo = new EPSON_TM30.CashDrawerOpen();
     }
 }

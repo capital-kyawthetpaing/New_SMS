@@ -151,6 +151,7 @@ namespace Search
                 if(dt.Rows.Count == 0)
                 {
                     ssnbl.ShowMessage("E128");
+                    dgvSiharaiNO.DataSource = null;
                     txtPaymentDateFrom.Focus();
                 }
                 else

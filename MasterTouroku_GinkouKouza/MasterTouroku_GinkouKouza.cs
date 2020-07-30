@@ -143,7 +143,6 @@ namespace MasterTouroku_GinkouKouza
                         if (!RequireCheck(new Control[] { ScKouzaCD.TxtCode, ScKouzaCD.TxtChangeDate }))   //,ScCopyKouzaCD.TxtCode,ScCopyKouzaCD.TxtChangeDate
                             return false;
                        
-
                     }
 
 

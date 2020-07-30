@@ -435,16 +435,15 @@ namespace NyuukaNyuuryoku
                         mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.MaxGyoColor;
                     }
 
-                    //// クリック以外ではフォーカス入らない列の設定(Cell_Selectable)
-                    //switch (w_Col)
-                    //{
-                    //    case object _ when ClsGridMitsumori.ColNO.DELCK:
-                    //        {
-                    //            // 削除チェック
-                    //            S_Set_Cell_Selectable(w_Col, w_Row, false);
-                    //            break;
-                    //        }
-                    //}
+                    //クリック以外ではフォーカス入らない列の設定(Cell_Selectable)
+                    switch (w_Col)
+                    {
+                        case (int)ClsGridHikiate.ColNO.Btn:
+                            {
+                                S_Set_Cell_Selectable(w_Col, w_Row, false);
+                                break;
+                            }
+                    }
                 }
             }
 
@@ -3417,17 +3416,18 @@ namespace NyuukaNyuuryoku
         {
             try
             {
+                Control w_ActCtl;
+                int w_Row;
+
+                w_ActCtl = (Control)sender;
+                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
+
                 //Enterキー押下時処理
                 //Returnキーが押されているか調べる
                 //AltかCtrlキーが押されている時は、本来の動作をさせる
                 if ((e.KeyCode == Keys.Return) &&
                     ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
                 {
-                    int w_Row;
-                    Control w_ActCtl;
-
-                    w_ActCtl = (Control)sender;
-                    w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
 
                     bool lastCell = false;
 
@@ -3470,7 +3470,16 @@ namespace NyuukaNyuuryoku
                     //行き先がなかったら移動しない
                     S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
                 }
+                else if (e.KeyCode == Keys.Tab)
+                {
+                    if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int CL, out int w_CtlRow) == false)
+                    {
+                        return;
+                    }
 
+                    if (CL == (int)ClsGridHikiate.ColNO.Check)
+                        S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+                }
             }
             catch (Exception ex)
             {
@@ -3543,17 +3552,18 @@ namespace NyuukaNyuuryoku
         {
             try
             {
+                int w_Row;
+                Control w_ActCtl;
+
+                w_ActCtl = (Control)sender;
+                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_1.Value;
+
                 //Enterキー押下時処理
                 //Returnキーが押されているか調べる
                 //AltかCtrlキーが押されている時は、本来の動作をさせる
                 if ((e.KeyCode == Keys.Return) &&
                     ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
                 {
-                    int w_Row;
-                    Control w_ActCtl;
-
-                    w_ActCtl = (Control)sender;
-                    w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_1.Value;
 
                     bool lastCell = false;
 
@@ -3590,7 +3600,16 @@ namespace NyuukaNyuuryoku
                     //行き先がなかったら移動しない
                     S_Grid_1_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
                 }
+                else if (e.KeyCode == Keys.Tab)
+                {
+                    if (mGrid2.F_Search_Ctrl_MK(w_ActCtl, out int CL, out int w_CtlRow) == false)
+                    {
+                        return;
+                    }
 
+                    if (CL == (int)ClsGridZaiko.ColNO.Check)
+                        S_Grid_1_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+                }
             }
             catch (Exception ex)
             {

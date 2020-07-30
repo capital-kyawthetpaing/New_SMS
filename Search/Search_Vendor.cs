@@ -37,7 +37,7 @@ namespace Search
             vbl = new Vendor_BL();
             lblVendorKBN.Text = VendorKBN;
             F11Visible = false;
-            dgvSearchVendor.DisabledColumn("colVendorCD,colVendorName,Column3,Column4,colChangeDate");
+            //dgvSearchVendor.DisabledColumn("colVendorCD,colVendorName,Column3,Column4,colChangeDate");
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

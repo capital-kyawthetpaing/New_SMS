@@ -16,8 +16,8 @@ namespace DL
             {
                {"@SoukoCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.DestinationSoukoCD } },
                {"@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2= doe.StoreCD} },
-               {"@TargetDateFrom" , new ValuePair {value1 = SqlDbType.VarChar ,value2 = dpe.PurchaseDateFrom} },
-               {"@TargetDateTo", new ValuePair {value1 = SqlDbType.VarChar ,value2 = dpe.PurchaseDateTo } },
+               {"@TargetDateFrom" , new ValuePair {value1 = SqlDbType.Date ,value2 = dpe.PurchaseDateFrom} },
+               {"@TargetDateTo", new ValuePair {value1 = SqlDbType.Date ,value2 = dpe.PurchaseDateTo } },
             };
             UseTransaction = true;
             return SelectData(dic, "D_Order_SelectForReport");

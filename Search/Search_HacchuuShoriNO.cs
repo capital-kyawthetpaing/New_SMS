@@ -38,6 +38,7 @@ namespace Search
         public string OperatorCD = string.Empty;
         public string HacchuuShoriNO = string.Empty;
         public string ChangeDate = string.Empty;
+        public string storeCD = string.Empty;
 
         private System.Windows.Forms.Control previousCtrl; // ｶｰｿﾙの元の位置を待避
 
@@ -204,6 +205,7 @@ namespace Search
             else
             {
                tjbl.ShowMessage("E128");
+                GvDetail.DataSource = null;
             }
         }
         private void DetailControl_KeyDown(object sender, KeyEventArgs e)
@@ -381,6 +383,7 @@ namespace Search
                 {
                     CboStoreCD.SelectedValue = mse.StoreCD;
                 }
+                CboStoreCD.SelectedValue = storeCD;
 
                 detailControls[(int)EIndex.DayEnd].Text = tjbl.GetDate();
             }

@@ -59,7 +59,7 @@ namespace Display_Service
                         SD++;
                         RD = 0;
                     }
-                    Thread.Sleep(1 * 1000);
+                    Thread.Sleep(1000);
                 }
             //
            // cdo.SetDisplay(false, false, "1233123","PPPPP","TTTTT");
