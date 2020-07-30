@@ -3783,18 +3783,18 @@ namespace HacchuuNyuuryoku
             {
                 //返品チェックがONのときのみ入力可
                 CKM_SearchControl edit = ScMotoOrderNo;
-                bool enabled;
                 if (ckM_CheckBox1.Checked)
                 {
-                    enabled = true;
+                    edit.Enabled = true;
+                    edit.BtnSearch.Enabled = true;
                     ckM_CheckBox2.Checked = false;
                 }
-                else
+                else if (!ckM_CheckBox2.Checked)
                 {
-                    enabled = false;
+                    edit.Enabled = false;
+                    edit.BtnSearch.Enabled = false;
                 }
-                edit.Enabled = enabled;
-                edit.BtnSearch.Enabled = enabled;
+
 
             }
             catch (Exception ex)
@@ -3805,15 +3805,26 @@ namespace HacchuuNyuuryoku
         }
         private void CkM_CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
-            //bool enabled;
-            if (ckM_CheckBox2.Checked)
+            try
             {
-                //enabled = true;
-                ckM_CheckBox1.Checked = false;
+                CKM_SearchControl edit = ScMotoOrderNo;
+                if (ckM_CheckBox2.Checked)
+                {
+                    edit.Enabled = true;
+                    edit.BtnSearch.Enabled = true;
+                    ckM_CheckBox1.Checked = false;
+                }
+                else if (!ckM_CheckBox1.Checked)
+                {
+                    edit.Enabled = false;
+                    edit.BtnSearch.Enabled = false;
+                }
+
             }
-            else
+            catch (Exception ex)
             {
-                //enabled = false;
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
             }
         }
 
