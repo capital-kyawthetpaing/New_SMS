@@ -80,12 +80,12 @@ namespace BL
 
             return true;
         }
-        public int GetApprovalStageFLG(string operatorNm)
+        public int GetApprovalStageFLG(string operatorNm, string storeCD = "")
         {
             int approvalStageFLG = 0;
 
             M_Store_DL dl = new M_Store_DL();
-            DataTable dt = dl.GetApprovalData(operatorNm);
+            DataTable dt = dl.GetApprovalData(operatorNm, storeCD);
 
             if (dt.Rows.Count > 0)
             {
@@ -118,6 +118,11 @@ namespace BL
             }
 
             return approvalStageFLG;
+        }
+        public DataTable M_Souko_Select(M_Souko_Entity mse)
+        {
+            M_Souko_DL msdl = new M_Souko_DL();
+            return msdl.M_Souko_SelectForNyuuka(mse);
         }
     }
 }

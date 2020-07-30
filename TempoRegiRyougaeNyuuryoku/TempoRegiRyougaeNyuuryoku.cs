@@ -187,6 +187,7 @@ namespace TempoRegiRyougaeNyuuryoku
             dtDepositNO = bbl.SimpleSelect1("52", "", Application.ProductName, "", "");
             string DepositeNO = dtDepositNO.Rows[0]["DepositNO"].ToString();
             string cmdLine = InCompanyCD +" " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode + " " + DepositeNO;
+
             try
             {
                 try
@@ -194,23 +195,52 @@ namespace TempoRegiRyougaeNyuuryoku
                     cdo.RemoveDisplay(true);
                     cdo.RemoveDisplay(true);
                 }
-                catch { }
-
-                if (Base_DL.iniEntity.IsDM_D30Used)
+                catch
                 {
-                    CashDrawerOpen op = new CashDrawerOpen(); //ses   << PTK
-                    op.OpenCashDrawer();
                 }
                 var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
-                // cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
                 pro.WaitForExit();
+                try
+                {
+                    cdo.SetDisplay(true, true, "", "");
+                    cdo.RemoveDisplay(true);
+                    cdo.RemoveDisplay(true);
+                }
+                catch { }
+                if (Base_DL.iniEntity.IsDM_D30Used)
+                {
+                    CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
+                    op.OpenCashDrawer(); //2020_06_24     << PTK
+                }
                 Stop_DisplayService();
-
             }
-            catch(Exception ex)
+            catch
             {
-                MessageBox.Show(ex.ToString() + Environment.NewLine + ex.StackTrace.ToString()); 
             }
+
+            //try
+            //{
+            //    try
+            //    {
+            //        cdo.RemoveDisplay(true);
+            //        cdo.RemoveDisplay(true);
+            //    }
+            //    catch { }
+
+            //    if (Base_DL.iniEntity.IsDM_D30Used)
+            //    {
+            //        CashDrawerOpen op = new CashDrawerOpen(); //ses   << PTK
+            //        op.OpenCashDrawer();
+            //    }
+            //    var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            //    pro.WaitForExit();
+            //    Stop_DisplayService();
+
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.ToString() + Environment.NewLine + ex.StackTrace.ToString()); 
+            //}
         }
         /// <summary>
         /// 入力必須エラーをチェックする

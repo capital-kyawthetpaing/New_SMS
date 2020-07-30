@@ -140,34 +140,61 @@ namespace TempoRegiShiharaiNyuuryoku
             dtDepositNO = bbl.SimpleSelect1("52", "", Application.ProductName, "", "");
             string DepositeNO = dtDepositNO.Rows[0]["DepositNO"].ToString();
             string cmdLine = InCompanyCD + " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode + " " + DepositeNO;//parameter
+
             try
             {
                 try
                 {
-                    // Stop_DisplayService();
                     cdo.RemoveDisplay(true);
                     cdo.RemoveDisplay(true);
-                    var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
-                    pro.WaitForExit();
                 }
                 catch
                 {
-                    MessageBox.Show("Error in removing . . . .");
                 }
+                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                pro.WaitForExit();
+                try
+                {
+                    cdo.SetDisplay(true, true, "", "");
+                    cdo.RemoveDisplay(true);
+                    cdo.RemoveDisplay(true);
+                }
+                catch { }
                 if (Base_DL.iniEntity.IsDM_D30Used)
                 {
-                    CashDrawerOpen op = new CashDrawerOpen();
-                    op.OpenCashDrawer();   // <<<< PTK
+                    CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
+                    op.OpenCashDrawer(); //2020_06_24     << PTK
                 }
-               
-                // cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
-                
                 Stop_DisplayService();
             }
-            catch(Exception ex)
+            catch
             {
-                MessageBox.Show(ex.StackTrace.ToString());
             }
+
+            //try
+            //{
+            //    try
+            //    {
+            //        cdo.RemoveDisplay(true);
+            //        cdo.RemoveDisplay(true);
+            //        var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            //        pro.WaitForExit();
+            //    }
+            //    catch
+            //    {
+            //        MessageBox.Show("Error in removing . . . .");
+            //    }
+            //    if (Base_DL.iniEntity.IsDM_D30Used)
+            //    {
+            //        CashDrawerOpen op = new CashDrawerOpen();
+            //        op.OpenCashDrawer();   // <<<< PTK
+            //    }
+            //    Stop_DisplayService();
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.StackTrace.ToString());
+            //}
         }
 
         private D_DepositHistory_Entity GetDepositEntity()
