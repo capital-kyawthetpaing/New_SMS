@@ -99,7 +99,7 @@ namespace TempoRegiHanbaiTouroku
         }
         private void Stop_DisplayService(bool isForced = true)
         {
-            if (Base_DL.iniEntity.IsDM_D30Used && Process.GetProcessesByName("Display_Service").Count() == 1)
+            if (Base_DL.iniEntity.IsDM_D30Used )
             {
 
                 Login_BL bbl_1 = new Login_BL();
@@ -1222,9 +1222,15 @@ namespace TempoRegiHanbaiTouroku
 
                     if (!frm.flgCancel)
                     {
-                        //更新終了後は画面をクリア  >>>. Proceed by PTK
+                        try { Stop_DisplayService(); }
+                        catch { }
                         Stop_DisplayService();
+                        //更新終了後は画面をクリア  >>>. Proceed by PTK
                         InitScr();
+                    }
+                    else
+                    {
+                     
                     }
                     break;
             }
