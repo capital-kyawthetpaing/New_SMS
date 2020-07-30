@@ -157,13 +157,12 @@ namespace TempoRegiTorihikiReceipt
                     {
                         // 雑入金のみデータあり
                         var reportModeDepositMiscDeposit = new TempoRegiTorihikiReceipt_MiscDeposit();
-
                         reportModeDepositMiscDeposit.SetDataSource(torihikiReceiptDataSet);
                         reportModeDepositMiscDeposit.Refresh();
-
-                         reportModeDepositMiscDeposit.PrintOptions.PrinterName = StorePrinterName;
+                        reportModeDepositMiscDeposit.PrintOptions.PrinterName = StorePrinterName;
                         ReadyToPrinter =  reportModeDepositMiscDeposit;
                         reportModeDepositMiscDeposit.PrintToPrinter(0, false, 0, 0);
+                     //   MessageBox.Show("First Con" + Environment.NewLine + torihikiReceiptDataSet.MiscDepositTable.Rows.Count.ToString());
                     }
                     else if (torihikiReceiptDataSet.MiscDepositTable.Rows.Count == 0 && torihikiReceiptDataSet.DepositTable.Rows.Count > 0)
                     {
@@ -177,23 +176,25 @@ namespace TempoRegiTorihikiReceipt
                         ReadyToPrinter = reportModeDepositDeposit;
 
                         reportModeDepositDeposit.PrintToPrinter(0, false, 0, 0);
+                     //   MessageBox.Show("Second Con");
                     }
                     else if (torihikiReceiptDataSet.MiscDepositTable.Rows.Count > 0 && torihikiReceiptDataSet.DepositTable.Rows.Count > 0)
                     {
                         // 雑入金・入金データあり
                         var reportModeDeposit = new TempoRegiTorihikiReceipt_Mode2();
-
                         reportModeDeposit.SetDataSource(torihikiReceiptDataSet);
                         reportModeDeposit.Refresh();
-
-                         reportModeDeposit.PrintOptions.PrinterName = StorePrinterName;
+                        reportModeDeposit.PrintOptions.PrinterName = StorePrinterName;
                         ReadyToPrinter = reportModeDeposit;
                         reportModeDeposit.PrintToPrinter(0, false, 0, 0);
+                   //     MessageBox.Show("Third Con");
                     }
                     else
                     {
                         bl.ShowMessage("E128");
                     }
+
+
                     break;
 
                 case MODE_PAYMENT:
@@ -263,7 +264,7 @@ namespace TempoRegiTorihikiReceipt
                     break;
             }
             var RTP = (CrystalDecisions.CrystalReports.Engine.ReportClass)ReadyToPrinter;
-            MessageBox.Show(torihikiReceiptDataSet.MiscDepositTable)
+            //MessageBox.Show(torihikiReceiptDataSet.MiscDepositTable)
             //if (ReadyToPrinter != null)
             //{
             //    //try
