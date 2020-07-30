@@ -61,8 +61,6 @@ namespace ZaikoShoukai
             GV_Zaiko.DisabledColumn("colSKUCD,商品名,カラー,サイズ,店舗名,SoukoName,棚番,現在庫,入荷予定,引当可能,メーカー,JANCD,ブランド,ITEM,メーカー商品CD,最速入荷日,基準在庫,販売定価,標準原価");
         }
 
-       
-
         protected override void EndSec()
         {
             this.Close();
@@ -101,6 +99,8 @@ namespace ZaikoShoukai
                 {
                     type = 3;
                 }
+
+                string[]  store = TB_Bikokeyword.ToString().Split(','); 
                 msku_Entity = GetDataEntity();
                 msInfo_Entity = GetInfoEntity();
                 msT_Entity = GetTagEntity();
@@ -151,7 +151,6 @@ namespace ZaikoShoukai
         }
         public M_SKU_Entity GetDataEntity()
         {
-            
             msku_Entity = new M_SKU_Entity()
             {
                 ChangeDate=LB_ChangeDate.Text,
@@ -171,11 +170,10 @@ namespace ZaikoShoukai
                 SportsCD =Sports.TxtCode.Text,
                 InputDateFrom=TB_ShinkitorokuF.Text,
                 InputDateTo=TB_ShinkitorokuT.Text,
-               UpdateDateFrom= TＢ_SaiShuhenkobiF.Text,
-               UpdateDateTo= TB_SaiShuhenkobiT.Text,
-               ApprovalDateFrom=TB_ShoninbiF.Text,
-               ApprovalDateTo=TB_ShoninbiT.Text,
-               
+                UpdateDateFrom= TＢ_SaiShuhenkobiF.Text,
+                UpdateDateTo= TB_SaiShuhenkobiT.Text,
+                ApprovalDateFrom=TB_ShoninbiF.Text,
+                ApprovalDateTo=TB_ShoninbiT.Text,
             };
             return msku_Entity;
         }
