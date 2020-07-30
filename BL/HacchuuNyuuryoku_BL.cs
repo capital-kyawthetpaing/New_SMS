@@ -119,5 +119,10 @@ namespace BL
 
             return approvalStageFLG;
         }
+        public DataTable M_Souko_Select(M_Souko_Entity mse)
+        {
+            M_Souko_DL msdl = new M_Souko_DL();
+            return msdl.M_Souko_SelectForNyuuka(mse);
+        }
     }
 }
