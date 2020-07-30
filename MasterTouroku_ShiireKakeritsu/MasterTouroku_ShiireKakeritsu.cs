@@ -24,14 +24,14 @@ namespace MasterTouroku_ShiireKakeritsu
         M_OrderRate_Entity moe;
         DataTable dtMain;
         DataTable dtGrid;
-        DataTable dt = new DataTable();
+        DataTable dtDel;
+        DataTable dt;
         M_Vendor_Entity mve;
         M_Brand_Entity mbe;
         DataView dvMain;
         L_Log_Entity log_data;
         DataTable dtExcel;
         //int type = 0;
-        string Xml;
 
         public MasterTouroku_ShiireKakeritsu()
         {
@@ -41,6 +41,8 @@ namespace MasterTouroku_ShiireKakeritsu
             mve = new M_Vendor_Entity();
             mbe = new M_Brand_Entity();
             dvMain = new DataView();
+            dtDel = new DataTable();
+            dt = new DataTable();
         }
         private void MasterTouroku_ShiireKakeritsu_Load(object sender, EventArgs e)
         {
@@ -879,6 +881,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     }
                 }
                 dgv_ShiireKakeritsu.DataSource = dtMain;
+                dtDel = dtMain;
             }
             else
             {
@@ -926,20 +929,24 @@ namespace MasterTouroku_ShiireKakeritsu
                     }
                 }
                 dgv_ShiireKakeritsu.DataSource = dtMain;
-                Xml = mskbl.DataTableToXml(dtMain);
-                log_data = Get_Log_Data();
+                dtDel = dtMain;
+                string delData = mskbl.DataTableToXml(dtDel);
+                string insertData = mskbl.DataTableToXml(dtMain);
+                //log_data = Get_Log_Data();
                 moe.VendorCD = scSupplierCD.TxtCode.Text;
                 moe.StoreCD = cbo_Store.SelectedValue.ToString();
                 moe.ChangeDate = txtRevisionDate.Text;
                 moe.Rate = txtRate1.Text;
-                DataTable dt = mskbl.M_OrderRate_Update(moe, Xml, log_data);
-                scSupplierCD.Clear();
-                Clear(panelDetail);
-                dgv_ShiireKakeritsu.DataSource = string.Empty;
-                mskbl.ShowMessage("I101");
-                rdoAllStores.Checked = true;
-                cbo_Store.SelectedValue = "0000";
-                scSupplierCD.SetFocus(1);
+                if( mskbl.M_OrderRate_Update(moe,delData,insertData))
+                {
+                   scSupplierCD.Clear();
+                   Clear(panelDetail);
+                   dgv_ShiireKakeritsu.DataSource = string.Empty;
+                   mskbl.ShowMessage("I101");
+                   rdoAllStores.Checked = true;
+                   cbo_Store.SelectedValue = "0000";
+                   scSupplierCD.SetFocus(1);
+                }
         }
         protected DataTable ChangeColumnName(DataTable dtMain)
         {
