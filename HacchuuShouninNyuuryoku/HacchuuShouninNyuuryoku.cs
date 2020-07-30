@@ -107,7 +107,6 @@ namespace HacchuuShouninNyuuryoku
 
                 //承認用データを抽出(発注入力と同じ)
                 HacchuuNyuuryoku_BL hbl = new HacchuuNyuuryoku_BL();
-                DataTable dtApp = new DataTable();
                 W_ApprovalStageFLG = hbl.GetApprovalStageFLG(InOperatorCD);
                 //この一時テーブルにレコードがない＝承認する立場にない。←画面に表示すべきデータがないというこちになります。
                 if(W_ApprovalStageFLG == 0)
@@ -285,6 +284,8 @@ namespace HacchuuShouninNyuuryoku
             doe.OrderDateFrom = detailControls[(int)EIndex.OrderDateFrom].Text;
             doe.OrderDateTo = detailControls[(int)EIndex.OrderDateTo].Text;
 
+            HacchuuNyuuryoku_BL hbl = new HacchuuNyuuryoku_BL();
+            W_ApprovalStageFLG = hbl.GetApprovalStageFLG(InOperatorCD, CboStoreCD.SelectedValue.ToString());
             doe.ApprovalStageFLG = W_ApprovalStageFLG.ToString();
 
             if (ckM_CheckBox1.Checked)
