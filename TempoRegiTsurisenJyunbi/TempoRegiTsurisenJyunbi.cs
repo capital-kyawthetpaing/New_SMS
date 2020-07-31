@@ -219,26 +219,56 @@ namespace TempoRegiTsurisenJyunbi
             string cmdLine =InCompanyCD+ " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode+" "+DepositeNO;//parameter
             try
             {
-                try {
+                try
+                {
+                    cdo.RemoveDisplay(true);
+                    cdo.RemoveDisplay(true);
+                }
+                catch
+                {
+                }
+                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                pro.WaitForExit();
+                try
+                {
+                    cdo.SetDisplay(true, true, "", "");
                     cdo.RemoveDisplay(true);
                     cdo.RemoveDisplay(true);
                 }
                 catch { }
-
                 if (Base_DL.iniEntity.IsDM_D30Used)
                 {
-                    CashDrawerOpen op = new CashDrawerOpen(); //ses   << PTK
-                    op.OpenCashDrawer();
+                    CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
+                    op.OpenCashDrawer(); //2020_06_24     << PTK
                 }
-                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
-                // cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
-                pro.WaitForExit();
                 Stop_DisplayService();
             }
             catch
             {
-
             }
+
+            //try
+            //{
+            //    try {
+            //        cdo.RemoveDisplay(true);
+            //        cdo.RemoveDisplay(true);
+            //    }
+            //    catch { }
+
+            //    if (Base_DL.iniEntity.IsDM_D30Used)
+            //    {
+            //        CashDrawerOpen op = new CashDrawerOpen(); //ses   << PTK
+            //        op.OpenCashDrawer();
+            //    }
+            //    var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            //    // cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+            //    pro.WaitForExit();
+            //    Stop_DisplayService();
+            //}
+            //catch
+            //{
+
+            //}
         }
         protected void Kill(string pth)
         {

@@ -408,6 +408,7 @@ namespace MasterTouroku_ShiireKakeritsu
                         }
                     }
                     dgv_ShiireKakeritsu.DataSource = dtMain;
+                    dtDel = dtMain;
                 }
                 else
                 {
@@ -1227,25 +1228,12 @@ namespace MasterTouroku_ShiireKakeritsu
                     for(int i=0;i < dtMain.Rows.Count;i++)
                     {
                         dtMain.AcceptChanges();
-                        //DataRow row1;
-                        //row1 = dtMain.NewRow();
-                        //dtMain.Rows[i]["VendorCD"] = scSupplierCD.TxtCode.Text;
-                        //dtMain.Rows[i]["StoreCD"] = cbo_Store.SelectedValue.ToString();
-                        //dtMain.Rows[i]["BrandCD"] = dtMain.Rows[i]["BrandCD"];
                         DataTable dt = mskbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 11, dtMain.Rows[i]["BrandCD"].ToString());
                         dtMain.Rows[i]["BrandName"] = dt.Rows[0]["Name"].ToString();
-                        //dtMain.Rows[i]["SportsCD"] = dtMain.Rows[i]["SportsCD"];
                         DataTable dt1 = mskbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 12, dtMain.Rows[i]["SportsCD"].ToString(),"202");
                         dtMain.Rows[i]["SportsName"] = dt1.Rows[0]["Name"].ToString();
-                        //dtMain.Rows[i]["SegmentCD"] = dtMain.Rows[i]["SegmentCD"];
                         DataTable dt2 = mskbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 13, dtMain.Rows[i]["SegmentCD"].ToString(),"203");
                         dtMain.Rows[i]["SegmentCDName"] = dt2.Rows[0]["Name"].ToString();
-                        //dtMain.Rows[i]["LastYearTerm"] = dtMain.Rows[i]["LastYearTerm"];
-                        //dtMain.Rows[i]["LastSeason"] = dtMain.Rows[i]["LastSeason"];
-                        //dtMain.Rows[i]["ChangeDate"] = dtMain.Rows[i]["ChangeDate"];
-                        //dtMain.Rows[i]["Rate"] = dtMain.Rows[i]["Rate"];
-                        //dtMain.Rows.Add(row1);
-
                     }
                     dgv_ShiireKakeritsu.DataSource = dtMain;
                 }

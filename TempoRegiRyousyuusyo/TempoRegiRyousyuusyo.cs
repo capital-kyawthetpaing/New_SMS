@@ -104,11 +104,9 @@ namespace TempoRegiRyousyuusyo
                 try
                 {
                     // 別プログラムからの呼び出し時
-
                     // フォームを表示させないように最小化してタスクバーにも表示しない
                     WindowState = System.Windows.Forms.FormWindowState.Minimized;
                     ShowInTaskbar = false;
-
                     txtSalesNO.Text = cmds[(int)CommandLine.SalesNO];
                     chkRyousyuusho.Checked = Convert.ToBoolean(Convert.ToInt32(cmds[(int)CommandLine.RyousyuushoCheck]));
                     chkReceipt.Checked = Convert.ToBoolean(Convert.ToInt32(cmds[(int)CommandLine.ReceiptCheck]));
@@ -117,10 +115,10 @@ namespace TempoRegiRyousyuusyo
                     IsHanbaiTouroku = true;
                     // 印刷後そくクローズ
                     Print();
-                    
                     Close();
                 }
-                catch (Exception ex) {
+                catch (Exception ex)
+                {
                     MessageBox.Show(ex.Message);
                 }
             }
@@ -246,8 +244,6 @@ namespace TempoRegiRyousyuusyo
                         var ryousyuusyo = bl.D_RyousyuusyoSelect(txtSalesNO.Text, txtPrintDate.Text);
                         if (ryousyuusyo.Rows.Count > 0)
                         {
-                            //if (!IsHanbaiTouroku)
-                            //{
                                 try
                                 {
                                     cdo.RemoveDisplay(true);
@@ -255,26 +251,21 @@ namespace TempoRegiRyousyuusyo
                                 }
                                 catch { }
                                 OutputRyouusyusyo(ryousyuusyo);
-                                try
-                                {
-                                    Thread.Sleep(2000);
-                                    Stop_DisplayService();
-                                }
-                                catch (Exception ex) { MessageBox.Show(ex.Message); }
-
+                            try
+                            {
+                                Thread.Sleep(2000);
                                 if (!Isboth)
                                     Stop_DisplayService();
-                            //}
-                            //else {
-                            //    OutputRyouusyusyo(ryousyuusyo);
-                            //}
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
                         }
                         else
                         {
-
                             bl.ShowMessage("E198", "領収書");
                             txtSalesNO.Focus();
-
                         }
                     }
 
