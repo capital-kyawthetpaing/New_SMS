@@ -625,6 +625,27 @@ namespace IkkatuHacchuuNyuuryoku
                             case (int)ClsGridIkkatuHacchuu.ColNO.SiiresakiCD:
                                 if (mGrid.g_DArray[w_Row].SiiresakiCD != mGrid.g_DArray[w_Row].preSiiresakiCD)
                                 {
+                                    //[M_JANOrderPrice_Select]
+                                    M_JANOrderPrice_Entity mjop_StoreSiteiAri = new M_JANOrderPrice_Entity
+                                    {
+                                        AdminNO = mGrid.g_DArray[w_Row].AdminNO,
+                                        VendorCD = mGrid.g_DArray[w_Row].SiiresakiCD,
+                                        ChangeDate = detailControls[(int)EIndex.HacchuuDate].Text,
+                                        StoreCD = CboStoreCD.SelectedValue.ToString()
+                                    };
+                                    M_JANOrderPrice_DL mjdl = new M_JANOrderPrice_DL();
+                                    var dt_MJOP_StoreSiteiAri = mjdl.M_JANOrderPrice_Select(mjop_StoreSiteiAri);
+
+                                    //[M_JANOrderPrice_Select]
+                                    M_JANOrderPrice_Entity mjop_StoreSiteiNasi = new M_JANOrderPrice_Entity
+                                    {
+                                        AdminNO = mGrid.g_DArray[w_Row].AdminNO,
+                                        VendorCD = mGrid.g_DArray[w_Row].SiiresakiCD,
+                                        ChangeDate = detailControls[(int)EIndex.HacchuuDate].Text,
+                                        StoreCD = "0000"
+                                    };
+                                    M_JANOrderPrice_DL mjdl_StoreSiteiNasi = new M_JANOrderPrice_DL();
+                                    var dt_MJOP_StoreSiteiNasi = mjdl.M_JANOrderPrice_Select(mjop_StoreSiteiNasi);
                                     //[M_ItemOrderPrice_Select]
                                     M_ItemOrderPrice_Entity miop_StoreSiteiAri = new M_ItemOrderPrice_Entity
                                     {
@@ -646,28 +667,6 @@ namespace IkkatuHacchuuNyuuryoku
                                     };
                                     M_ItemOrderPrice_DL midl_StoreSiteiNasi = new M_ItemOrderPrice_DL();
                                     var dt_MIOP_StoreSiteiNasi = midl_StoreSiteiNasi.M_ItemOrderPrice_Select(miop_StoreSiteiNasi);
-
-                                    //[M_JANOrderPrice_Select]
-                                    M_JANOrderPrice_Entity mjop_StoreSiteiAri = new M_JANOrderPrice_Entity
-                                    {
-                                        JanCD = mGrid.g_DArray[w_Row].JANCD,
-                                        VendorCD = mGrid.g_DArray[w_Row].SiiresakiCD,
-                                        ChangeDate = detailControls[(int)EIndex.HacchuuDate].Text,
-                                        StoreCD = CboStoreCD.SelectedValue.ToString()
-                                    };
-                                    M_JANOrderPrice_DL mjdl = new M_JANOrderPrice_DL();
-                                    var dt_MJOP_StoreSiteiAri = mjdl.M_JANOrderPrice_Select(mjop_StoreSiteiAri);
-
-                                    //[M_JANOrderPrice_Select]
-                                    M_JANOrderPrice_Entity mjop_StoreSiteiNasi = new M_JANOrderPrice_Entity
-                                    {
-                                        JanCD = mGrid.g_DArray[w_Row].JANCD,
-                                        VendorCD = mGrid.g_DArray[w_Row].SiiresakiCD,
-                                        ChangeDate = detailControls[(int)EIndex.HacchuuDate].Text,
-                                        StoreCD = "0000"
-                                    };
-                                    M_JANOrderPrice_DL mjdl_StoreSiteiNasi = new M_JANOrderPrice_DL();
-                                    var dt_MJOP_StoreSiteiNasi = mjdl.M_JANOrderPrice_Select(mjop_StoreSiteiNasi);
 
                                     if (dt_MJOP_StoreSiteiAri.Rows.Count != 0)
                                     {
@@ -1646,6 +1645,28 @@ namespace IkkatuHacchuuNyuuryoku
                     }
                     mGrid.g_DArray[row].SiiresakiName = mve.VendorName;
 
+                    //[M_JANOrderPrice_Select]
+                    M_JANOrderPrice_Entity mjop_StoreSiteiAri = new M_JANOrderPrice_Entity
+                    {
+                        AdminNO = mGrid.g_DArray[row].AdminNO,
+                        VendorCD = mGrid.g_DArray[row].SiiresakiCD,
+                        ChangeDate = detailControls[(int)EIndex.HacchuuDate].Text,
+                        StoreCD = CboStoreCD.SelectedValue.ToString()
+                    };
+                    M_JANOrderPrice_DL mjdl = new M_JANOrderPrice_DL();
+                    var dt_MJOP_StoreSiteiAri = mjdl.M_JANOrderPrice_Select(mjop_StoreSiteiAri);
+
+                    //[M_JANOrderPrice_Select]
+                    M_JANOrderPrice_Entity mjop_StoreSiteiNasi = new M_JANOrderPrice_Entity
+                    {
+                        AdminNO = mGrid.g_DArray[row].AdminNO,
+                        VendorCD = mGrid.g_DArray[row].SiiresakiCD,
+                        ChangeDate = detailControls[(int)EIndex.HacchuuDate].Text,
+                        StoreCD = "0000"
+                    };
+                    M_JANOrderPrice_DL mjdl_StoreSiteiNasi = new M_JANOrderPrice_DL();
+                    var dt_MJOP_StoreSiteiNasi = mjdl.M_JANOrderPrice_Select(mjop_StoreSiteiNasi);
+
                     //[M_ItemOrderPrice_Select]
                     M_ItemOrderPrice_Entity miop_StoreSiteiAri = new M_ItemOrderPrice_Entity
                     {
@@ -1667,28 +1688,6 @@ namespace IkkatuHacchuuNyuuryoku
                     };
                     M_ItemOrderPrice_DL midl_StoreSiteiNasi = new M_ItemOrderPrice_DL();
                     var dt_MIOP_StoreSiteiNasi = midl_StoreSiteiNasi.M_ItemOrderPrice_Select(miop_StoreSiteiNasi);
-
-                    //[M_JANOrderPrice_Select]
-                    M_JANOrderPrice_Entity mjop_StoreSiteiAri = new M_JANOrderPrice_Entity
-                    {
-                        JanCD = mGrid.g_DArray[row].JANCD,
-                        VendorCD = mGrid.g_DArray[row].SiiresakiCD,
-                        ChangeDate = detailControls[(int)EIndex.HacchuuDate].Text,
-                        StoreCD = CboStoreCD.SelectedValue.ToString()
-                    };
-                    M_JANOrderPrice_DL mjdl = new M_JANOrderPrice_DL();
-                    var dt_MJOP_StoreSiteiAri = mjdl.M_JANOrderPrice_Select(mjop_StoreSiteiAri);
-
-                    //[M_JANOrderPrice_Select]
-                    M_JANOrderPrice_Entity mjop_StoreSiteiNasi = new M_JANOrderPrice_Entity
-                    {
-                        JanCD = mGrid.g_DArray[row].JANCD,
-                        VendorCD = mGrid.g_DArray[row].SiiresakiCD,
-                        ChangeDate = detailControls[(int)EIndex.HacchuuDate].Text,
-                        StoreCD = "0000"
-                    };
-                    M_JANOrderPrice_DL mjdl_StoreSiteiNasi = new M_JANOrderPrice_DL();
-                    var dt_MJOP_StoreSiteiNasi = mjdl.M_JANOrderPrice_Select(mjop_StoreSiteiNasi);
 
                     if (dt_MIOP_StoreSiteiAri.Rows.Count == 0
                         && dt_MJOP_StoreSiteiNasi.Rows.Count == 0
