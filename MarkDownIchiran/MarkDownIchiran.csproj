@@ -85,12 +85,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FrmDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmDetail.Designer.cs">
-      <DependentUpon>FrmDetail.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="MarkDownIchiran.resx">
       <DependentUpon>MarkDownIchiran.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,9 +98,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="FrmDetail.resx">
-      <DependentUpon>FrmDetail.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
