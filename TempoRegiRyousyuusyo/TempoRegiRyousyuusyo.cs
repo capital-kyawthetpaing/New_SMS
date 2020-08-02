@@ -291,7 +291,7 @@ namespace TempoRegiRyousyuusyo
                             }
                             else
                             {
-                                bl.ShowMessage("E198", "領収書");
+                                bl.ShowMessage("E128");
                                 txtSalesNO.Focus();
                                 // Stop_DisplayService();
                                 //  return;
@@ -445,7 +445,8 @@ namespace TempoRegiRyousyuusyo
 
                 // 再発行日時
                 var reIssueDateTime = ConvertDateTime(row["ReIssueDateTime"], false);
-                sales.ReIssueDateTime = string.IsNullOrWhiteSpace(reIssueDateTime) ? null : reIssueDateTime + "　　　再発行";
+                sales.ReIssueDateTime = string.IsNullOrWhiteSpace(reIssueDateTime) ? null : reIssueDateTime;
+                sales.ReIssue = string.IsNullOrWhiteSpace(reIssueDateTime) ? null : "再発行";
 
                 sales.JanCD = Convert.ToString(row["JanCD"]);                                   // JANCD
                 var kakaku = ConvertDecimal(row["Kakaku"]);                                     // 価格
