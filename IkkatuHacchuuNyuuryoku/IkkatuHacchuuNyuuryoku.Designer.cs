@@ -34,6 +34,7 @@
             this.label11 = new CKM_Controls.CKM_Label();
             this.txtShanaiBikou_0 = new CKM_Controls.CKM_TextBox();
             this.Pnl_Body = new System.Windows.Forms.Panel();
+            this.txtHacchuuNO_5 = new CKM_Controls.CKM_TextBox();
             this.txtNounyuusakiTELNO_5 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
             this.txtNounyuusakiMailAddress_5 = new CKM_Controls.CKM_TextBox();
@@ -318,12 +319,11 @@
             this.txtNetFLG_5 = new CKM_Controls.CKM_TextBox();
             this.txtChokusouFLG_5 = new CKM_Controls.CKM_TextBox();
             this.txtSiiresakiName_5 = new CKM_Controls.CKM_TextBox();
-            this.txtHacchuuNO_5 = new CKM_Controls.CKM_TextBox();
-            this.scSiiresakiCD_5 = new Search.CKM_SearchControl();
             this.txtShagaiBikou_5 = new CKM_Controls.CKM_TextBox();
             this.chkEDIFLG_5 = new GridControl.clsGridCheckBox();
             this.txtGyouNO_5 = new System.Windows.Forms.Label();
             this.chkTaishouFLG_5 = new GridControl.clsGridCheckBox();
+            this.scSiiresakiCD_5 = new Search.CKM_SearchControl();
             this.label1 = new CKM_Controls.CKM_Label();
             this.label27 = new CKM_Controls.CKM_Label();
             this.ScSiiresakiCD = new Search.CKM_SearchControl();
@@ -799,8 +799,40 @@
             this.Pnl_Body.Location = new System.Drawing.Point(1, 69);
             this.Pnl_Body.Margin = new System.Windows.Forms.Padding(4);
             this.Pnl_Body.Name = "Pnl_Body";
-            this.Pnl_Body.Size = new System.Drawing.Size(1816, 460);
+            this.Pnl_Body.Size = new System.Drawing.Size(1816, 480);
             this.Pnl_Body.TabIndex = 21;
+            // 
+            // txtHacchuuNO_5
+            // 
+            this.txtHacchuuNO_5.AllowMinus = false;
+            this.txtHacchuuNO_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtHacchuuNO_5.BackColor = System.Drawing.Color.Silver;
+            this.txtHacchuuNO_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtHacchuuNO_5.ClientColor = System.Drawing.Color.White;
+            this.txtHacchuuNO_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtHacchuuNO_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtHacchuuNO_5.DecimalPlace = 0;
+            this.txtHacchuuNO_5.Enabled = false;
+            this.txtHacchuuNO_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.txtHacchuuNO_5.IntegerPart = 0;
+            this.txtHacchuuNO_5.IsCorrectDate = true;
+            this.txtHacchuuNO_5.isEnterKeyDown = false;
+            this.txtHacchuuNO_5.IsFirstTime = true;
+            this.txtHacchuuNO_5.isMaxLengthErr = false;
+            this.txtHacchuuNO_5.IsNumber = true;
+            this.txtHacchuuNO_5.IsShop = false;
+            this.txtHacchuuNO_5.Length = 30;
+            this.txtHacchuuNO_5.Location = new System.Drawing.Point(36, 355);
+            this.txtHacchuuNO_5.Margin = new System.Windows.Forms.Padding(4);
+            this.txtHacchuuNO_5.MaxLength = 30;
+            this.txtHacchuuNO_5.MoveNext = true;
+            this.txtHacchuuNO_5.Name = "txtHacchuuNO_5";
+            this.txtHacchuuNO_5.ReadOnly = true;
+            this.txtHacchuuNO_5.Size = new System.Drawing.Size(115, 22);
+            this.txtHacchuuNO_5.TabIndex = 746;
+            this.txtHacchuuNO_5.Tag = "0";
+            this.txtHacchuuNO_5.Text = "XXXXXXXXX11";
+            this.txtHacchuuNO_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtNounyuusakiTELNO_5
             // 
@@ -843,7 +875,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(1583, 436);
+            this.ckM_Label7.Location = new System.Drawing.Point(1583, 446);
             this.ckM_Label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(58, 15);
@@ -889,7 +921,7 @@
             this.lblHacchuugakuSum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblHacchuugakuSum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblHacchuugakuSum.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHacchuugakuSum.Location = new System.Drawing.Point(1647, 430);
+            this.lblHacchuugakuSum.Location = new System.Drawing.Point(1647, 440);
             this.lblHacchuugakuSum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHacchuugakuSum.Name = "lblHacchuugakuSum";
             this.lblHacchuugakuSum.Size = new System.Drawing.Size(103, 22);
@@ -2212,7 +2244,6 @@
             this.label32.TabIndex = 311;
             this.label32.Text = "　";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label32.Click += new System.EventHandler(this.label32_Click);
             // 
             // label33
             // 
@@ -5598,7 +5629,6 @@
             this.txtJuchuuNO_0.Tag = "0";
             this.txtJuchuuNO_0.Text = "XXXXXXXXX11";
             this.txtJuchuuNO_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.txtJuchuuNO_0.TextChanged += new System.EventHandler(this.txtJuchuuNO_0_TextChanged);
             // 
             // txtNounyuusakiJuusho_0
             // 
@@ -9133,68 +9163,6 @@
             this.txtSiiresakiName_5.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtSiiresakiName_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // txtHacchuuNO_5
-            // 
-            this.txtHacchuuNO_5.AllowMinus = false;
-            this.txtHacchuuNO_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.txtHacchuuNO_5.BackColor = System.Drawing.Color.Silver;
-            this.txtHacchuuNO_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtHacchuuNO_5.ClientColor = System.Drawing.Color.White;
-            this.txtHacchuuNO_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtHacchuuNO_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.txtHacchuuNO_5.DecimalPlace = 0;
-            this.txtHacchuuNO_5.Enabled = false;
-            this.txtHacchuuNO_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.txtHacchuuNO_5.IntegerPart = 0;
-            this.txtHacchuuNO_5.IsCorrectDate = true;
-            this.txtHacchuuNO_5.isEnterKeyDown = false;
-            this.txtHacchuuNO_5.IsFirstTime = true;
-            this.txtHacchuuNO_5.isMaxLengthErr = false;
-            this.txtHacchuuNO_5.IsNumber = true;
-            this.txtHacchuuNO_5.IsShop = false;
-            this.txtHacchuuNO_5.Length = 30;
-            this.txtHacchuuNO_5.Location = new System.Drawing.Point(36, 355);
-            this.txtHacchuuNO_5.Margin = new System.Windows.Forms.Padding(4);
-            this.txtHacchuuNO_5.MaxLength = 30;
-            this.txtHacchuuNO_5.MoveNext = true;
-            this.txtHacchuuNO_5.Name = "txtHacchuuNO_5";
-            this.txtHacchuuNO_5.ReadOnly = true;
-            this.txtHacchuuNO_5.Size = new System.Drawing.Size(115, 22);
-            this.txtHacchuuNO_5.TabIndex = 746;
-            this.txtHacchuuNO_5.Tag = "0";
-            this.txtHacchuuNO_5.Text = "XXXXXXXXX11";
-            this.txtHacchuuNO_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // scSiiresakiCD_5
-            // 
-            this.scSiiresakiCD_5.AutoSize = true;
-            this.scSiiresakiCD_5.ChangeDate = "";
-            this.scSiiresakiCD_5.ChangeDateWidth = 133;
-            this.scSiiresakiCD_5.Code = "";
-            this.scSiiresakiCD_5.CodeWidth = 100;
-            this.scSiiresakiCD_5.CodeWidth1 = 100;
-            this.scSiiresakiCD_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.scSiiresakiCD_5.DataCheck = false;
-            this.scSiiresakiCD_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.scSiiresakiCD_5.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.scSiiresakiCD_5.IsCopy = false;
-            this.scSiiresakiCD_5.LabelText = "";
-            this.scSiiresakiCD_5.LabelVisible = false;
-            this.scSiiresakiCD_5.Location = new System.Drawing.Point(151, 349);
-            this.scSiiresakiCD_5.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.scSiiresakiCD_5.Name = "scSiiresakiCD_5";
-            this.scSiiresakiCD_5.NameWidth = 310;
-            this.scSiiresakiCD_5.SearchEnable = true;
-            this.scSiiresakiCD_5.Size = new System.Drawing.Size(144, 40);
-            this.scSiiresakiCD_5.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.scSiiresakiCD_5.TabIndex = 742;
-            this.scSiiresakiCD_5.Tag = "5";
-            this.scSiiresakiCD_5.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.scSiiresakiCD_5.UseChangeDate = false;
-            this.scSiiresakiCD_5.Value1 = null;
-            this.scSiiresakiCD_5.Value2 = null;
-            this.scSiiresakiCD_5.Value3 = null;
-            // 
             // txtShagaiBikou_5
             // 
             this.txtShagaiBikou_5.AllowMinus = false;
@@ -9263,6 +9231,36 @@
             this.chkTaishouFLG_5.TabIndex = 766;
             this.chkTaishouFLG_5.Tag = "5";
             this.chkTaishouFLG_5.UseVisualStyleBackColor = false;
+            // 
+            // scSiiresakiCD_5
+            // 
+            this.scSiiresakiCD_5.AutoSize = true;
+            this.scSiiresakiCD_5.ChangeDate = "";
+            this.scSiiresakiCD_5.ChangeDateWidth = 133;
+            this.scSiiresakiCD_5.Code = "";
+            this.scSiiresakiCD_5.CodeWidth = 100;
+            this.scSiiresakiCD_5.CodeWidth1 = 100;
+            this.scSiiresakiCD_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.scSiiresakiCD_5.DataCheck = false;
+            this.scSiiresakiCD_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.scSiiresakiCD_5.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.scSiiresakiCD_5.IsCopy = false;
+            this.scSiiresakiCD_5.LabelText = "";
+            this.scSiiresakiCD_5.LabelVisible = false;
+            this.scSiiresakiCD_5.Location = new System.Drawing.Point(151, 349);
+            this.scSiiresakiCD_5.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.scSiiresakiCD_5.Name = "scSiiresakiCD_5";
+            this.scSiiresakiCD_5.NameWidth = 310;
+            this.scSiiresakiCD_5.SearchEnable = true;
+            this.scSiiresakiCD_5.Size = new System.Drawing.Size(144, 40);
+            this.scSiiresakiCD_5.Stype = Search.CKM_SearchControl.SearchType.仕入先;
+            this.scSiiresakiCD_5.TabIndex = 742;
+            this.scSiiresakiCD_5.Tag = "5";
+            this.scSiiresakiCD_5.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.scSiiresakiCD_5.UseChangeDate = false;
+            this.scSiiresakiCD_5.Value1 = null;
+            this.scSiiresakiCD_5.Value2 = null;
+            this.scSiiresakiCD_5.Value3 = null;
             // 
             // label1
             // 
@@ -9914,7 +9912,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1836, 560);
+            this.tabControl1.Size = new System.Drawing.Size(1836, 580);
             this.tabControl1.TabIndex = 20;
             // 
             // tabPage1
@@ -9927,7 +9925,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1828, 531);
+            this.tabPage1.Size = new System.Drawing.Size(1828, 551);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "発注明細";
             // 
@@ -10176,7 +10174,7 @@
             // IkkatuHacchuuNyuuryoku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
-            this.ClientSize = new System.Drawing.Size(1827, 845);
+            this.ClientSize = new System.Drawing.Size(1827, 936);
             this.Controls.Add(this.ScJuchuuStaff);
             this.Controls.Add(this.ckM_Label1);
             this.Controls.Add(this.ScHacchuuNO);
