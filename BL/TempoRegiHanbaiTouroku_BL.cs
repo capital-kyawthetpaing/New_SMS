@@ -97,5 +97,15 @@ namespace BL
             return dl.PRC_TempoRegiDataUpdate(dse, operationMode);
 
         }
+        public bool D_StoreCalculation_Select(D_StoreCalculation_Entity dse)
+        {
+            TempoRegiHanbaiTouroku_DL dl = new TempoRegiHanbaiTouroku_DL();
+            DataTable dt =   dl.D_StoreCalculation_Select(dse);
+            if (dt.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+
     }
 }

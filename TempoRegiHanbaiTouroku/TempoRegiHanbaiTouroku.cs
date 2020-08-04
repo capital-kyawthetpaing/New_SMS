@@ -1186,6 +1186,15 @@ namespace TempoRegiHanbaiTouroku
                     }
                     break;
                 case 2:
+                    //その日付で店舗精算データが存在する場合はエラーとする Ｅ２５２
+                    D_StoreCalculation_Entity ds = new D_StoreCalculation_Entity();
+                    ds.StoreCD = StoreCD;
+                    ds.ChangeDate = tprg_Hanbai_Bl.GetDate();
+                    if (tprg_Hanbai_Bl.D_StoreCalculation_Select(ds))
+                    {
+                        bbl.ShowMessage("E252");
+                        return;
+                    }
 
                     if (OperationMode == FrmMainForm.EOperationMode.INSERT || OperationMode == FrmMainForm.EOperationMode.SHOW)
                     {

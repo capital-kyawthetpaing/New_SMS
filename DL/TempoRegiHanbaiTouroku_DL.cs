@@ -118,5 +118,18 @@ namespace DL
 
             return ret;
         }
+
+        public DataTable D_StoreCalculation_Select(D_StoreCalculation_Entity dse)
+        {
+            string sp = "D_StoreCalculation_Select";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dse.StoreCD } },
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = dse.ChangeDate } },
+            };
+
+            return SelectData(dic, sp);
+        }
     }
 }
