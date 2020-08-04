@@ -32,8 +32,6 @@
             this.btnUp = new CKM_Controls.CKM_Button();
             this.btnDown = new CKM_Controls.CKM_Button();
             this.pnlDetail = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblStoreName10 = new CKM_Controls.CKMShop_Label();
             this.lblStoreName1 = new CKM_Controls.CKMShop_Label();
             this.lblDtGyo1 = new CKM_Controls.CKMShop_Label();
             this.lblDtGyo2 = new CKM_Controls.CKMShop_Label();
@@ -203,8 +201,8 @@
             this.ckmShop_Label7 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label9 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label10 = new CKM_Controls.CKMShop_Label();
+            this.lblStoreName10 = new CKM_Controls.CKMShop_Label();
             this.pnlDetail.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ckmShop_Label1
@@ -264,7 +262,7 @@
             // pnlDetail
             // 
             this.pnlDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlDetail.Controls.Add(this.panel1);
+            this.pnlDetail.Controls.Add(this.lblStoreName10);
             this.pnlDetail.Controls.Add(this.lblStoreName1);
             this.pnlDetail.Controls.Add(this.lblDtGyo1);
             this.pnlDetail.Controls.Add(this.lblDtGyo2);
@@ -427,29 +425,6 @@
             this.pnlDetail.Size = new System.Drawing.Size(1900, 755);
             this.pnlDetail.TabIndex = 46;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lblStoreName10);
-            this.panel1.Location = new System.Drawing.Point(82, 671);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(342, 83);
-            this.panel1.TabIndex = 381;
-            // 
-            // lblStoreName10
-            // 
-            this.lblStoreName10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblStoreName10.BackColor = System.Drawing.Color.Transparent;
-            this.lblStoreName10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
-            this.lblStoreName10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
-            this.lblStoreName10.FontBold = true;
-            this.lblStoreName10.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName10.Location = new System.Drawing.Point(4, 7);
-            this.lblStoreName10.Name = "lblStoreName10";
-            this.lblStoreName10.Size = new System.Drawing.Size(334, 65);
-            this.lblStoreName10.TabIndex = 255;
-            this.lblStoreName10.Text = "店舗名　スタッフ名Ｘ";
-            this.lblStoreName10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            // 
             // lblStoreName1
             // 
             this.lblStoreName1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -508,7 +483,7 @@
             this.lblDtGyo3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtGyo3.FontBold = true;
             this.lblDtGyo3.ForeColor = System.Drawing.Color.Black;
-            this.lblDtGyo3.Location = new System.Drawing.Point(12, 141);
+            this.lblDtGyo3.Location = new System.Drawing.Point(13, 141);
             this.lblDtGyo3.Name = "lblDtGyo3";
             this.lblDtGyo3.Size = new System.Drawing.Size(29, 30);
             this.lblDtGyo3.TabIndex = 372;
@@ -525,7 +500,7 @@
             this.lblDtGyo4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtGyo4.FontBold = true;
             this.lblDtGyo4.ForeColor = System.Drawing.Color.Black;
-            this.lblDtGyo4.Location = new System.Drawing.Point(9, 214);
+            this.lblDtGyo4.Location = new System.Drawing.Point(12, 215);
             this.lblDtGyo4.Name = "lblDtGyo4";
             this.lblDtGyo4.Size = new System.Drawing.Size(29, 30);
             this.lblDtGyo4.TabIndex = 371;
@@ -542,7 +517,7 @@
             this.lblDtGyo5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtGyo5.FontBold = true;
             this.lblDtGyo5.ForeColor = System.Drawing.Color.Black;
-            this.lblDtGyo5.Location = new System.Drawing.Point(7, 288);
+            this.lblDtGyo5.Location = new System.Drawing.Point(12, 289);
             this.lblDtGyo5.Name = "lblDtGyo5";
             this.lblDtGyo5.Size = new System.Drawing.Size(29, 30);
             this.lblDtGyo5.TabIndex = 370;
@@ -559,7 +534,7 @@
             this.lblDtGyo6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtGyo6.FontBold = true;
             this.lblDtGyo6.ForeColor = System.Drawing.Color.Black;
-            this.lblDtGyo6.Location = new System.Drawing.Point(9, 362);
+            this.lblDtGyo6.Location = new System.Drawing.Point(11, 364);
             this.lblDtGyo6.Name = "lblDtGyo6";
             this.lblDtGyo6.Size = new System.Drawing.Size(29, 30);
             this.lblDtGyo6.TabIndex = 369;
@@ -576,7 +551,7 @@
             this.lblDtGyo7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtGyo7.FontBold = true;
             this.lblDtGyo7.ForeColor = System.Drawing.Color.Black;
-            this.lblDtGyo7.Location = new System.Drawing.Point(8, 441);
+            this.lblDtGyo7.Location = new System.Drawing.Point(12, 442);
             this.lblDtGyo7.Name = "lblDtGyo7";
             this.lblDtGyo7.Size = new System.Drawing.Size(29, 30);
             this.lblDtGyo7.TabIndex = 368;
@@ -683,7 +658,7 @@
             this.lblDtGyo8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtGyo8.FontBold = true;
             this.lblDtGyo8.ForeColor = System.Drawing.Color.Black;
-            this.lblDtGyo8.Location = new System.Drawing.Point(10, 515);
+            this.lblDtGyo8.Location = new System.Drawing.Point(13, 516);
             this.lblDtGyo8.Name = "lblDtGyo8";
             this.lblDtGyo8.Size = new System.Drawing.Size(29, 30);
             this.lblDtGyo8.TabIndex = 291;
@@ -730,7 +705,7 @@
             this.lblDtGyo9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtGyo9.FontBold = true;
             this.lblDtGyo9.ForeColor = System.Drawing.Color.Black;
-            this.lblDtGyo9.Location = new System.Drawing.Point(11, 596);
+            this.lblDtGyo9.Location = new System.Drawing.Point(13, 596);
             this.lblDtGyo9.Name = "lblDtGyo9";
             this.lblDtGyo9.Size = new System.Drawing.Size(29, 30);
             this.lblDtGyo9.TabIndex = 277;
@@ -747,7 +722,7 @@
             this.lblDtGyo10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtGyo10.FontBold = true;
             this.lblDtGyo10.ForeColor = System.Drawing.Color.Black;
-            this.lblDtGyo10.Location = new System.Drawing.Point(1, 679);
+            this.lblDtGyo10.Location = new System.Drawing.Point(11, 675);
             this.lblDtGyo10.Name = "lblDtGyo10";
             this.lblDtGyo10.Size = new System.Drawing.Size(45, 30);
             this.lblDtGyo10.TabIndex = 256;
@@ -2796,7 +2771,7 @@
             this.lblCusCount1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusCount1.FontBold = true;
             this.lblCusCount1.ForeColor = System.Drawing.Color.Black;
-            this.lblCusCount1.Location = new System.Drawing.Point(1845, 4);
+            this.lblCusCount1.Location = new System.Drawing.Point(1843, 4);
             this.lblCusCount1.Name = "lblCusCount1";
             this.lblCusCount1.Size = new System.Drawing.Size(61, 30);
             this.lblCusCount1.TabIndex = 265;
@@ -2813,7 +2788,7 @@
             this.lblCusCount2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusCount2.FontBold = true;
             this.lblCusCount2.ForeColor = System.Drawing.Color.Black;
-            this.lblCusCount2.Location = new System.Drawing.Point(1845, 72);
+            this.lblCusCount2.Location = new System.Drawing.Point(1844, 72);
             this.lblCusCount2.Name = "lblCusCount2";
             this.lblCusCount2.Size = new System.Drawing.Size(61, 30);
             this.lblCusCount2.TabIndex = 264;
@@ -2830,7 +2805,7 @@
             this.lblCusCount3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusCount3.FontBold = true;
             this.lblCusCount3.ForeColor = System.Drawing.Color.Black;
-            this.lblCusCount3.Location = new System.Drawing.Point(1845, 142);
+            this.lblCusCount3.Location = new System.Drawing.Point(1844, 142);
             this.lblCusCount3.Name = "lblCusCount3";
             this.lblCusCount3.Size = new System.Drawing.Size(61, 30);
             this.lblCusCount3.TabIndex = 263;
@@ -2847,7 +2822,7 @@
             this.lblCusCount4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusCount4.FontBold = true;
             this.lblCusCount4.ForeColor = System.Drawing.Color.Black;
-            this.lblCusCount4.Location = new System.Drawing.Point(1846, 214);
+            this.lblCusCount4.Location = new System.Drawing.Point(1844, 214);
             this.lblCusCount4.Name = "lblCusCount4";
             this.lblCusCount4.Size = new System.Drawing.Size(61, 30);
             this.lblCusCount4.TabIndex = 262;
@@ -2864,7 +2839,7 @@
             this.lblCusCount5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusCount5.FontBold = true;
             this.lblCusCount5.ForeColor = System.Drawing.Color.Black;
-            this.lblCusCount5.Location = new System.Drawing.Point(1845, 291);
+            this.lblCusCount5.Location = new System.Drawing.Point(1844, 291);
             this.lblCusCount5.Name = "lblCusCount5";
             this.lblCusCount5.Size = new System.Drawing.Size(61, 30);
             this.lblCusCount5.TabIndex = 261;
@@ -2881,7 +2856,7 @@
             this.lblCusCount6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusCount6.FontBold = true;
             this.lblCusCount6.ForeColor = System.Drawing.Color.Black;
-            this.lblCusCount6.Location = new System.Drawing.Point(1846, 364);
+            this.lblCusCount6.Location = new System.Drawing.Point(1844, 364);
             this.lblCusCount6.Name = "lblCusCount6";
             this.lblCusCount6.Size = new System.Drawing.Size(61, 30);
             this.lblCusCount6.TabIndex = 260;
@@ -2898,7 +2873,7 @@
             this.lblCusCount7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusCount7.FontBold = true;
             this.lblCusCount7.ForeColor = System.Drawing.Color.Black;
-            this.lblCusCount7.Location = new System.Drawing.Point(1845, 445);
+            this.lblCusCount7.Location = new System.Drawing.Point(1843, 445);
             this.lblCusCount7.Name = "lblCusCount7";
             this.lblCusCount7.Size = new System.Drawing.Size(61, 30);
             this.lblCusCount7.TabIndex = 259;
@@ -2915,7 +2890,7 @@
             this.lblCusCount8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusCount8.FontBold = true;
             this.lblCusCount8.ForeColor = System.Drawing.Color.Black;
-            this.lblCusCount8.Location = new System.Drawing.Point(1845, 518);
+            this.lblCusCount8.Location = new System.Drawing.Point(1844, 518);
             this.lblCusCount8.Name = "lblCusCount8";
             this.lblCusCount8.Size = new System.Drawing.Size(61, 30);
             this.lblCusCount8.TabIndex = 258;
@@ -2932,7 +2907,7 @@
             this.lblCusCount9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusCount9.FontBold = true;
             this.lblCusCount9.ForeColor = System.Drawing.Color.Black;
-            this.lblCusCount9.Location = new System.Drawing.Point(1845, 601);
+            this.lblCusCount9.Location = new System.Drawing.Point(1843, 601);
             this.lblCusCount9.Name = "lblCusCount9";
             this.lblCusCount9.Size = new System.Drawing.Size(61, 30);
             this.lblCusCount9.TabIndex = 257;
@@ -2949,7 +2924,7 @@
             this.lblCusCount10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusCount10.FontBold = true;
             this.lblCusCount10.ForeColor = System.Drawing.Color.Black;
-            this.lblCusCount10.Location = new System.Drawing.Point(1844, 675);
+            this.lblCusCount10.Location = new System.Drawing.Point(1843, 675);
             this.lblCusCount10.Name = "lblCusCount10";
             this.lblCusCount10.Size = new System.Drawing.Size(61, 30);
             this.lblCusCount10.TabIndex = 254;
@@ -3177,6 +3152,21 @@
             this.ckmShop_Label10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // lblStoreName10
+            // 
+            this.lblStoreName10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblStoreName10.BackColor = System.Drawing.Color.Transparent;
+            this.lblStoreName10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
+            this.lblStoreName10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblStoreName10.FontBold = true;
+            this.lblStoreName10.ForeColor = System.Drawing.Color.Black;
+            this.lblStoreName10.Location = new System.Drawing.Point(86, 679);
+            this.lblStoreName10.Name = "lblStoreName10";
+            this.lblStoreName10.Size = new System.Drawing.Size(334, 65);
+            this.lblStoreName10.TabIndex = 255;
+            this.lblStoreName10.Text = "店舗名　スタッフ名Ｘ";
+            this.lblStoreName10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            // 
             // TempoRegiJissekiSyoukai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3220,7 +3210,6 @@
             this.Controls.SetChildIndex(this.ckmShop_Label10, 0);
             this.pnlDetail.ResumeLayout(false);
             this.pnlDetail.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3286,7 +3275,6 @@
         private CKM_Controls.CKMShop_Label lblCusCount8;
         private CKM_Controls.CKMShop_Label lblCusCount9;
         private CKM_Controls.CKMShop_Label lblDtGyo10;
-        private CKM_Controls.CKMShop_Label lblStoreName10;
         private CKM_Controls.CKMShop_Label lblStoreName9;
         private CKM_Controls.CKMShop_Label lblDtGyo9;
         private CKM_Controls.CKMShop_Label lblJyukin9;
@@ -3402,7 +3390,7 @@
         private CKM_Controls.CKMShop_Label lblStoreName7;
         private CKM_Controls.CKMShop_Label lblKakeUrikin1;
         private CKM_Controls.CKMShop_Label lblDayUrikin1;
-        private System.Windows.Forms.Panel panel1;
+        private CKM_Controls.CKMShop_Label lblStoreName10;
     }
 }
 
