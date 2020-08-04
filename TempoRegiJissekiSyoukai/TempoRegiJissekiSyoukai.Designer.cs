@@ -202,7 +202,9 @@
             this.ckmShop_Label7 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label9 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label10 = new CKM_Controls.CKMShop_Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlDetail.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ckmShop_Label1
@@ -262,6 +264,7 @@
             // pnlDetail
             // 
             this.pnlDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDetail.Controls.Add(this.panel1);
             this.pnlDetail.Controls.Add(this.lblStoreName1);
             this.pnlDetail.Controls.Add(this.lblDtGyo1);
             this.pnlDetail.Controls.Add(this.lblDtGyo2);
@@ -281,7 +284,6 @@
             this.pnlDetail.Controls.Add(this.lblStoreName9);
             this.pnlDetail.Controls.Add(this.lblDtGyo9);
             this.pnlDetail.Controls.Add(this.lblDtGyo10);
-            this.pnlDetail.Controls.Add(this.lblStoreName10);
             this.pnlDetail.Controls.Add(this.Hline8);
             this.pnlDetail.Controls.Add(this.Hline6);
             this.pnlDetail.Controls.Add(this.Hline7);
@@ -757,7 +759,7 @@
             this.lblStoreName10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblStoreName10.FontBold = true;
             this.lblStoreName10.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName10.Location = new System.Drawing.Point(96, 673);
+            this.lblStoreName10.Location = new System.Drawing.Point(15, 5);
             this.lblStoreName10.Name = "lblStoreName10";
             this.lblStoreName10.Size = new System.Drawing.Size(323, 30);
             this.lblStoreName10.TabIndex = 255;
@@ -3187,6 +3189,14 @@
             this.ckmShop_Label10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblStoreName10);
+            this.panel1.Location = new System.Drawing.Point(83, 672);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(340, 70);
+            this.panel1.TabIndex = 381;
+            // 
             // TempoRegiJissekiSyoukai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3230,6 +3240,8 @@
             this.Controls.SetChildIndex(this.ckmShop_Label10, 0);
             this.pnlDetail.ResumeLayout(false);
             this.pnlDetail.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3411,6 +3423,7 @@
         private CKM_Controls.CKMShop_Label lblStoreName7;
         private CKM_Controls.CKMShop_Label lblKakeUrikin1;
         private CKM_Controls.CKMShop_Label lblDayUrikin1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
