@@ -146,18 +146,18 @@ namespace TempoRegiTsurisenJyunbi
                 {
                     if (trtjb.ShowMessage("Q101") == DialogResult.Yes)
                     {
-                        DataTable dt = new DataTable();
-                        dt = trtjb.SimpleSelect1("70", ChangeDate.Replace("/", "-"), storeCD, txtDate.Text);
-                        if (dt.Rows.Count > 0)
-                        {
-                            trtjb.ShowMessage("E252");
-                        }
+                        //DataTable dt = new DataTable();
+                        //dt = trtjb.SimpleSelect1("70", ChangeDate.Replace("/", "-"), storeCD, txtDate.Text);
+                        //if (dt.Rows.Count > 0)
+                        //{
+                        //    trtjb.ShowMessage("E252");
+                        //}
+                        //DataCheck();
                         mre = DepositHistoryEnity();
                         if (trtjb.TempoRegiTsurisenJyunbi_Insert_Update(mre))
                         {
                             trtjb.ShowMessage("I101");
                             RunConsole();
-                          
                             txtDate.Clear();
                             DepositGaku.Clear();
                             Remark.Clear();
@@ -175,6 +175,17 @@ namespace TempoRegiTsurisenJyunbi
                 }
             }
         }
+        //public bool DataCheck()
+        //{
+        //    DataTable dt = new DataTable();
+        //    dt = trtjb.SimpleSelect1("71", ChangeDate.Replace("/", "-"), storeCD, txtDate.Text);
+        //    if (dt.Rows.Count > 0)
+        //    {
+        //        trtjb.ShowMessage("E252");
+        //        return false;
+        //    }
+        //    return true;
+        //}
         protected override void EndSec()
         {
             RunDisplay_Service();
@@ -185,10 +196,11 @@ namespace TempoRegiTsurisenJyunbi
             if (!RequireCheck(new Control[] { txtDate,DepositGaku}))   // go that focus
                 return false;
             DataTable dt = new DataTable();
-            dt = trtjb.SimpleSelect1("71", ChangeDate.Replace("/", "-"), storeCD,txtDate.Text);
+            dt = trtjb.SimpleSelect1("71", ChangeDate.Replace("/", "-"), storeCD, txtDate.Text);
             if (dt.Rows.Count > 0)
             {
                 trtjb.ShowMessage("E252");
+                txtDate.Focus();
                 return false;
             }
             return true;
