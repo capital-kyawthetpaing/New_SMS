@@ -771,7 +771,8 @@ namespace TempoRegiSeisanTouroku
             if (seisanbl.D_StoreCalculation_Insert_Update(dsce))
             {
                 chkDel.Enabled = true;
-                seisanbl.ShowMessage("I101");              
+                seisanbl.ShowMessage("I101");
+                tabControl1.SelectedIndex = 0;
             }           
         }
 
@@ -803,6 +804,7 @@ namespace TempoRegiSeisanTouroku
 
                 chkDel.Checked = false;
                 chkDel.Enabled = false;
+                tabControl1.SelectedIndex = 0;
             }
         }
 
