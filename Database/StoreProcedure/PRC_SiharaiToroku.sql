@@ -14,58 +14,58 @@ GO
 --       Program ID      SiharaiToroku
 --       Create date:    2020.06.14
 --    ======================================================================
-CREATE TYPE T_Pay AS TABLE
-    (
-    [Rows] [int],
-    [PayNO]  varchar(11),
-    [PayeeCD]  varchar(13),
-    [PayPlanDate]  date,
-    [HontaiGaku8]  money,
-    [HontaiGaku10]  money,
-    [TaxGaku8]  money,
-    [TaxGaku10]  money,
-    [PayGaku]  money,
-    [NotPaidGaku]  money,
-    [TransferGaku]  money,
-    [TransferFeeGaku]  money,
-    [FeeKBN]  tinyint,
-    [MotoKouzaCD]  varchar(3),
-    [BankCD]  varchar(4),
-    [BranchCD]  varchar(3),
-    [KouzaKBN]  tinyint,
-    [KouzaNO]  varchar(7),
-    [KouzaMeigi]  varchar(40),
-    [CashGaku]  money,
-    [BillGaku]  money,
-    [BillDate]  date,
-    [BillNO]  varchar(20),
-    [ERMCGaku]  money,
-    [ERMCDate]  date,
-    [ERMCNO]  varchar(20),
-    [CardGaku]  money,
-    [OffsetGaku]  money,
-    [OtherGaku1]  money,
-    [Account1]  varchar(10),
-    [SubAccount1]  varchar(10),
-    [OtherGaku2]  money,
-    [Account2]  varchar(10),
-    [SubAccount2]  varchar(10),
-    [UpdateFlg][tinyint]		--新規時：0、修正：1、行削除：2
-    )
-GO
-
-CREATE TYPE T_PayDetails AS TABLE
-    (
-    [PayeeCD]  varchar(13),
-    [PayPlanDate]  date,
-    [PayNORows] [int],
-    [PayPlanNO] [int],
-    [PayGaku]  money,
-    [PayConfirmFinishedKBN] [tinyint],
-    [ProcessingKBN] [tinyint],
-    [UpdateFlg][tinyint]		--新規時：0、修正：1、行削除：2
-    )
-GO
+--CREATE TYPE T_Pay AS TABLE
+--    (
+--    [Rows] [int],
+--    [PayNO]  varchar(11),
+--    [PayeeCD]  varchar(13),
+--    [PayPlanDate]  date,
+--    [HontaiGaku8]  money,
+--    [HontaiGaku10]  money,
+--    [TaxGaku8]  money,
+--    [TaxGaku10]  money,
+--    [PayGaku]  money,
+--    [NotPaidGaku]  money,
+--    [TransferGaku]  money,
+--    [TransferFeeGaku]  money,
+--    [FeeKBN]  tinyint,
+--    [MotoKouzaCD]  varchar(3),
+--    [BankCD]  varchar(4),
+--    [BranchCD]  varchar(3),
+--    [KouzaKBN]  tinyint,
+--    [KouzaNO]  varchar(7),
+--    [KouzaMeigi]  varchar(40),
+--    [CashGaku]  money,
+--    [BillGaku]  money,
+--    [BillDate]  date,
+--    [BillNO]  varchar(20),
+--    [ERMCGaku]  money,
+--    [ERMCDate]  date,
+--    [ERMCNO]  varchar(20),
+--    [CardGaku]  money,
+--    [OffsetGaku]  money,
+--    [OtherGaku1]  money,
+--    [Account1]  varchar(10),
+--    [SubAccount1]  varchar(10),
+--    [OtherGaku2]  money,
+--    [Account2]  varchar(10),
+--    [SubAccount2]  varchar(10),
+--    [UpdateFlg][tinyint]		--新規時：0、修正：1、行削除：2
+--    )
+--GO
+--
+--CREATE TYPE T_PayDetails AS TABLE
+--    (
+--    [PayeeCD]  varchar(13),
+--    [PayPlanDate]  date,
+--    [PayNORows] [int],
+--    [PayPlanNO] [int],
+--    [PayGaku]  money,
+--    [PayConfirmFinishedKBN] [tinyint],
+--    [ProcessingKBN] [tinyint],
+--    [UpdateFlg][tinyint]		--新規時：0、修正：1、行削除：2
+--    )
+--GO
 
 CREATE PROCEDURE PRC_SiharaiToroku
     (@OperateMode    int,                 -- 処理区分（1:新規 2:修正 3:削除）

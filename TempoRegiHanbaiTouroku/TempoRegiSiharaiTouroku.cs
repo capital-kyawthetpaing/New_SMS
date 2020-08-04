@@ -12,6 +12,7 @@ using BL;
 using Search;
 using Microsoft.VisualBasic;
 using EPSON_TM30;
+using DL;
 
 namespace TempoRegiHanbaiTouroku
 {
@@ -274,9 +275,15 @@ namespace TempoRegiHanbaiTouroku
                 flgCancel = true;
 
             }
-            else {
-                cdo.RemoveDisplay();
-                cdo.RemoveDisplay();
+            else
+            {
+                flgCancel = false;
+                try
+                {
+                    cdo.RemoveDisplay(true);
+                    cdo.RemoveDisplay();
+                }
+                catch { }
             }
             this.Close();
         }
@@ -634,33 +641,63 @@ namespace TempoRegiHanbaiTouroku
                 //string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + dse.StoreCD + " " + no + " " + receipte + " 1 " + bbl.GetDate() + " " + reissue;
                 string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + no + " " + receipte + " 1 " + bbl.GetDate() + " " + reissue;
                 //2020/07/20 Y.Nishikawa CHG 引数を整備↑↑
+
+
                 try
                 {
-                    cdo.RemoveDisplay(true);
-                    cdo.RemoveDisplay(true);
-                }
-                catch {
-
-                }
-                ///  System.Diagnostics.Process.Start(filePath, cmdLine);  Just wait to PTK
-              
-                //エラーでない場合
-                if (bbl.Z_Set(txtAzukari.Text) > 0)
-                {
-                    var pro = System.Diagnostics.Process.Start(filePath, cmdLine);
-                    pro.WaitForExit();
-                 //   MessageBox.Show("Printed");
-                    //Todo:預り額＞０の場合、ドロワー開く      // PTK to be Continued    
                     try
                     {
-                        EPSON_TM30.CashDrawerOpen cdo = new EPSON_TM30.CashDrawerOpen();
-                        cdo.OpenCashDrawer();
+                        cdo.RemoveDisplay(true);
+                        cdo.RemoveDisplay(true);
                     }
-                    catch(Exception ex) {
-                        MessageBox.Show(ex.Message);
+                    catch
+                    {
                     }
+                    var pro = System.Diagnostics.Process.Start(filePath, cmdLine);
+                    pro.WaitForExit();
+                    try
+                    {
+                        cdo.SetDisplay(true, true, "", "");
+                        cdo.RemoveDisplay(true);
+                        cdo.RemoveDisplay(true);
+                    }
+                    catch { }
+                    if (Base_DL.iniEntity.IsDM_D30Used)
+                    {
+                        EPSON_TM30.CashDrawerOpen op = new EPSON_TM30.CashDrawerOpen();  //2020_06_24 
+                        op.OpenCashDrawer(); //2020_06_24     << PTK
+                    }
+                    cdo.SetDisplay(false, false, "", Up, Lp);
                 }
-                cdo.SetDisplay(false,false,"",Up,Lp);
+                catch
+                {
+                }
+                //PTK
+                //try
+                //{
+                //    cdo.RemoveDisplay(true);
+                //    cdo.RemoveDisplay(true);
+                //}
+                //catch {
+
+                //}
+
+                ////エラーでない場合
+                //if (bbl.Z_Set(txtAzukari.Text) > 0)
+                //{
+                //    var pro = System.Diagnostics.Process.Start(filePath, cmdLine);
+                //    pro.WaitForExit();
+                //    //Todo:預り額＞０の場合、ドロワー開く      // PTK to be Continued    
+                //    try
+                //    {
+                //        EPSON_TM30.CashDrawerOpen cdo = new EPSON_TM30.CashDrawerOpen();
+                //        cdo.OpenCashDrawer();
+                //    }
+                //    catch(Exception ex) {
+                //        MessageBox.Show(ex.Message);
+                //    }
+                //}
+                //cdo.SetDisplay(false,false,"",Up,Lp);
             }
             else
             {

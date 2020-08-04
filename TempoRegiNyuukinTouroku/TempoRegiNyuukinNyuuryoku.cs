@@ -276,14 +276,21 @@ namespace TempoRegiNyuukinTouroku
                     cdo.RemoveDisplay(true);
                     cdo.RemoveDisplay(true);
                 }
+                catch {
+                }
+             
+                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                pro.WaitForExit();
+                try { cdo.SetDisplay(true, true, "", "");
+                    cdo.RemoveDisplay(true);
+                    cdo.RemoveDisplay(true);
+                }
                 catch { }
                 if (Base_DL.iniEntity.IsDM_D30Used)
                 {
                     CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
                     op.OpenCashDrawer(); //2020_06_24     << PTK
                 }
-                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
-                pro.WaitForExit();
                 Stop_DisplayService();
             }
             catch
@@ -330,13 +337,13 @@ namespace TempoRegiNyuukinTouroku
                 if (bbl_1.ReadConfig())
                 {
                     bbl_1.Display_Service_Update(false);
-                    Thread.Sleep(2 * 1000);
+                    Thread.Sleep(1 * 1000);
                     bbl_1.Display_Service_Enabled(false);
                 }
                 else
                 {
                     bbl_1.Display_Service_Update(false);
-                    Thread.Sleep(2 * 1000);
+                    Thread.Sleep(1 * 1000);
                     bbl_1.Display_Service_Enabled(false);
                 }
 
@@ -351,6 +358,9 @@ namespace TempoRegiNyuukinTouroku
                 if (isForced) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
                 //Base_DL.iniEntity.CDO_DISPLAY.SetDisplay(true, true,Base_DL.iniEntity.DefaultMessage);
             }
+            else {
+                if (isForced) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+            }
 
         }
         private void Start_Display()
@@ -363,17 +373,18 @@ namespace TempoRegiNyuukinTouroku
                     if (bbl_1.ReadConfig())
                     {
                         bbl_1.Display_Service_Update(false);
-                        Thread.Sleep(3 * 1000);
+                        Thread.Sleep(1 * 1000);
                         bbl_1.Display_Service_Enabled(false);
                     }
                     else
                     {
                         bbl_1.Display_Service_Update(false);
-                        Thread.Sleep(3 * 1000);
+                        Thread.Sleep(1 * 1000);
                         bbl_1.Display_Service_Enabled(false);
                     }
                     Kill("Display_Service");
                 }
+
             }
             catch (Exception ex) { MessageBox.Show("Cant remove on second time" + ex.StackTrace); }
         }

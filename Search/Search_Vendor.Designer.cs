@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtChangeDate = new CKM_Controls.CKM_TextBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -385,7 +386,7 @@
             this.dgvSearchVendor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -398,13 +399,21 @@
             this.Column3,
             this.Column4,
             this.colChangeDate});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSearchVendor.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSearchVendor.EnableHeadersVisualStyles = false;
             this.dgvSearchVendor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.dgvSearchVendor.Location = new System.Drawing.Point(5, 214);
+            this.dgvSearchVendor.Location = new System.Drawing.Point(25, 214);
             this.dgvSearchVendor.Name = "dgvSearchVendor";
             this.dgvSearchVendor.RowHeight_ = 20;
             this.dgvSearchVendor.RowTemplate.Height = 20;
-            this.dgvSearchVendor.Size = new System.Drawing.Size(900, 300);
+            this.dgvSearchVendor.Size = new System.Drawing.Size(876, 290);
             this.dgvSearchVendor.TabIndex = 9;
             this.dgvSearchVendor.UseRowNo = true;
             this.dgvSearchVendor.UseSetting = true;
@@ -433,6 +442,7 @@
             this.colVendorCD.HeaderText = "仕入先番号";
             this.colVendorCD.Name = "colVendorCD";
             this.colVendorCD.ReadOnly = true;
+            this.colVendorCD.Width = 90;
             // 
             // colVendorName
             // 
@@ -440,7 +450,7 @@
             this.colVendorName.HeaderText = "仕入先名";
             this.colVendorName.Name = "colVendorName";
             this.colVendorName.ReadOnly = true;
-            this.colVendorName.Width = 300;
+            this.colVendorName.Width = 280;
             // 
             // Column3
             // 
@@ -448,6 +458,7 @@
             this.Column3.HeaderText = "カナ名";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            this.Column3.Width = 90;
             // 
             // Column4
             // 
