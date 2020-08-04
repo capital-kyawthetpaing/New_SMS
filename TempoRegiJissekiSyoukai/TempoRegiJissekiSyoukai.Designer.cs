@@ -202,7 +202,9 @@
             this.ckmShop_Label7 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label9 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label10 = new CKM_Controls.CKMShop_Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlDetail.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ckmShop_Label1
@@ -262,6 +264,7 @@
             // pnlDetail
             // 
             this.pnlDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDetail.Controls.Add(this.panel1);
             this.pnlDetail.Controls.Add(this.lblStoreName1);
             this.pnlDetail.Controls.Add(this.lblDtGyo1);
             this.pnlDetail.Controls.Add(this.lblDtGyo2);
@@ -281,7 +284,6 @@
             this.pnlDetail.Controls.Add(this.lblStoreName9);
             this.pnlDetail.Controls.Add(this.lblDtGyo9);
             this.pnlDetail.Controls.Add(this.lblDtGyo10);
-            this.pnlDetail.Controls.Add(this.lblStoreName10);
             this.pnlDetail.Controls.Add(this.Hline8);
             this.pnlDetail.Controls.Add(this.Hline6);
             this.pnlDetail.Controls.Add(this.Hline7);
@@ -655,11 +657,11 @@
             this.lblStoreName7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblStoreName7.FontBold = true;
             this.lblStoreName7.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName7.Location = new System.Drawing.Point(97, 441);
+            this.lblStoreName7.Location = new System.Drawing.Point(96, 442);
             this.lblStoreName7.Name = "lblStoreName7";
-            this.lblStoreName7.Size = new System.Drawing.Size(323, 30);
+            this.lblStoreName7.Size = new System.Drawing.Size(324, 30);
             this.lblStoreName7.TabIndex = 349;
-            this.lblStoreName7.Text = "店舗名　スタッフ名Ｘ";
+            this.lblStoreName7.Text = "店舗名  スタッフ名Ｘ";
             this.lblStoreName7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblStoreName7.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
@@ -757,7 +759,7 @@
             this.lblStoreName10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblStoreName10.FontBold = true;
             this.lblStoreName10.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName10.Location = new System.Drawing.Point(96, 673);
+            this.lblStoreName10.Location = new System.Drawing.Point(15, 5);
             this.lblStoreName10.Name = "lblStoreName10";
             this.lblStoreName10.Size = new System.Drawing.Size(323, 30);
             this.lblStoreName10.TabIndex = 255;
@@ -1452,7 +1454,7 @@
             this.lblKakeUrikin1.TabIndex = 380;
             this.lblKakeUrikin1.Text = "\\99,999,999";
             this.lblKakeUrikin1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblKakeUrikin1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblKakeUrikin1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // lblSonotakin1
             // 
@@ -2160,11 +2162,11 @@
             this.lblDayYoskin2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayYoskin2.FontBold = true;
             this.lblDayYoskin2.ForeColor = System.Drawing.Color.Black;
-            this.lblDayYoskin2.Location = new System.Drawing.Point(1576, 70);
+            this.lblDayYoskin2.Location = new System.Drawing.Point(1480, 70);
             this.lblDayYoskin2.Name = "lblDayYoskin2";
-            this.lblDayYoskin2.Size = new System.Drawing.Size(93, 30);
+            this.lblDayYoskin2.Size = new System.Drawing.Size(189, 30);
             this.lblDayYoskin2.TabIndex = 361;
-            this.lblDayYoskin2.Text = "9,999";
+            this.lblDayYoskin2.Text = "\\99,999,999";
             this.lblDayYoskin2.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayYoskin2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
@@ -2177,11 +2179,11 @@
             this.lblDayYoskin3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayYoskin3.FontBold = true;
             this.lblDayYoskin3.ForeColor = System.Drawing.Color.Black;
-            this.lblDayYoskin3.Location = new System.Drawing.Point(1575, 141);
+            this.lblDayYoskin3.Location = new System.Drawing.Point(1480, 140);
             this.lblDayYoskin3.Name = "lblDayYoskin3";
-            this.lblDayYoskin3.Size = new System.Drawing.Size(93, 30);
+            this.lblDayYoskin3.Size = new System.Drawing.Size(189, 30);
             this.lblDayYoskin3.TabIndex = 360;
-            this.lblDayYoskin3.Text = "9,999";
+            this.lblDayYoskin3.Text = "\\99,999,999";
             this.lblDayYoskin3.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayYoskin3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
@@ -2194,11 +2196,11 @@
             this.lblDayYoskin4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayYoskin4.FontBold = true;
             this.lblDayYoskin4.ForeColor = System.Drawing.Color.Black;
-            this.lblDayYoskin4.Location = new System.Drawing.Point(1575, 213);
+            this.lblDayYoskin4.Location = new System.Drawing.Point(1480, 213);
             this.lblDayYoskin4.Name = "lblDayYoskin4";
-            this.lblDayYoskin4.Size = new System.Drawing.Size(93, 30);
+            this.lblDayYoskin4.Size = new System.Drawing.Size(189, 30);
             this.lblDayYoskin4.TabIndex = 359;
-            this.lblDayYoskin4.Text = "9,999";
+            this.lblDayYoskin4.Text = "\\99,999,999";
             this.lblDayYoskin4.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayYoskin4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
@@ -2262,11 +2264,11 @@
             this.lblDayYoskin5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayYoskin5.FontBold = true;
             this.lblDayYoskin5.ForeColor = System.Drawing.Color.Black;
-            this.lblDayYoskin5.Location = new System.Drawing.Point(1576, 288);
+            this.lblDayYoskin5.Location = new System.Drawing.Point(1480, 288);
             this.lblDayYoskin5.Name = "lblDayYoskin5";
-            this.lblDayYoskin5.Size = new System.Drawing.Size(93, 30);
+            this.lblDayYoskin5.Size = new System.Drawing.Size(189, 30);
             this.lblDayYoskin5.TabIndex = 301;
-            this.lblDayYoskin5.Text = "9,999";
+            this.lblDayYoskin5.Text = "\\99,999,999";
             this.lblDayYoskin5.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayYoskin5.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
@@ -2279,11 +2281,11 @@
             this.lblDayYoskin6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayYoskin6.FontBold = true;
             this.lblDayYoskin6.ForeColor = System.Drawing.Color.Black;
-            this.lblDayYoskin6.Location = new System.Drawing.Point(1576, 363);
+            this.lblDayYoskin6.Location = new System.Drawing.Point(1480, 363);
             this.lblDayYoskin6.Name = "lblDayYoskin6";
-            this.lblDayYoskin6.Size = new System.Drawing.Size(93, 30);
+            this.lblDayYoskin6.Size = new System.Drawing.Size(189, 30);
             this.lblDayYoskin6.TabIndex = 300;
-            this.lblDayYoskin6.Text = "9,999";
+            this.lblDayYoskin6.Text = "\\99,999,999";
             this.lblDayYoskin6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayYoskin6.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
@@ -2296,11 +2298,11 @@
             this.lblDayYoskin7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayYoskin7.FontBold = true;
             this.lblDayYoskin7.ForeColor = System.Drawing.Color.Black;
-            this.lblDayYoskin7.Location = new System.Drawing.Point(1576, 440);
+            this.lblDayYoskin7.Location = new System.Drawing.Point(1481, 440);
             this.lblDayYoskin7.Name = "lblDayYoskin7";
-            this.lblDayYoskin7.Size = new System.Drawing.Size(93, 30);
+            this.lblDayYoskin7.Size = new System.Drawing.Size(189, 30);
             this.lblDayYoskin7.TabIndex = 299;
-            this.lblDayYoskin7.Text = "9,999";
+            this.lblDayYoskin7.Text = "\\99,999,999";
             this.lblDayYoskin7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayYoskin7.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
@@ -2364,11 +2366,11 @@
             this.lblDayYoskin8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayYoskin8.FontBold = true;
             this.lblDayYoskin8.ForeColor = System.Drawing.Color.Black;
-            this.lblDayYoskin8.Location = new System.Drawing.Point(1575, 516);
+            this.lblDayYoskin8.Location = new System.Drawing.Point(1480, 516);
             this.lblDayYoskin8.Name = "lblDayYoskin8";
-            this.lblDayYoskin8.Size = new System.Drawing.Size(93, 30);
+            this.lblDayYoskin8.Size = new System.Drawing.Size(189, 30);
             this.lblDayYoskin8.TabIndex = 282;
-            this.lblDayYoskin8.Text = "9,999";
+            this.lblDayYoskin8.Text = "\\99,999,999";
             this.lblDayYoskin8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayYoskin8.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
@@ -2398,11 +2400,11 @@
             this.lblDayYoskin9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayYoskin9.FontBold = true;
             this.lblDayYoskin9.ForeColor = System.Drawing.Color.Black;
-            this.lblDayYoskin9.Location = new System.Drawing.Point(1576, 595);
+            this.lblDayYoskin9.Location = new System.Drawing.Point(1480, 596);
             this.lblDayYoskin9.Name = "lblDayYoskin9";
-            this.lblDayYoskin9.Size = new System.Drawing.Size(93, 30);
+            this.lblDayYoskin9.Size = new System.Drawing.Size(189, 30);
             this.lblDayYoskin9.TabIndex = 269;
-            this.lblDayYoskin9.Text = "9,999";
+            this.lblDayYoskin9.Text = "\\99,999,999";
             this.lblDayYoskin9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayYoskin9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -2449,11 +2451,11 @@
             this.lblDayYoskin10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayYoskin10.FontBold = true;
             this.lblDayYoskin10.ForeColor = System.Drawing.Color.Black;
-            this.lblDayYoskin10.Location = new System.Drawing.Point(1576, 674);
+            this.lblDayYoskin10.Location = new System.Drawing.Point(1480, 674);
             this.lblDayYoskin10.Name = "lblDayYoskin10";
-            this.lblDayYoskin10.Size = new System.Drawing.Size(93, 30);
+            this.lblDayYoskin10.Size = new System.Drawing.Size(189, 30);
             this.lblDayYoskin10.TabIndex = 142;
-            this.lblDayYoskin10.Text = "9,999";
+            this.lblDayYoskin10.Text = "\\99,999,999";
             this.lblDayYoskin10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayYoskin10.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
@@ -3187,6 +3189,14 @@
             this.ckmShop_Label10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblStoreName10);
+            this.panel1.Location = new System.Drawing.Point(83, 672);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(340, 70);
+            this.panel1.TabIndex = 381;
+            // 
             // TempoRegiJissekiSyoukai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3230,6 +3240,8 @@
             this.Controls.SetChildIndex(this.ckmShop_Label10, 0);
             this.pnlDetail.ResumeLayout(false);
             this.pnlDetail.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3411,6 +3423,7 @@
         private CKM_Controls.CKMShop_Label lblStoreName7;
         private CKM_Controls.CKMShop_Label lblKakeUrikin1;
         private CKM_Controls.CKMShop_Label lblDayUrikin1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
