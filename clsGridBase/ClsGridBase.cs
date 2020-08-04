@@ -59,8 +59,10 @@ namespace GridBase
                     CKM_Controls.CKM_ComboBox w_Edit;
                     w_Edit = (CKM_Controls.CKM_ComboBox)CellCtl;
 
-                    if(w_Edit.SelectedValue != null)
+                    if (w_Edit.SelectedIndex > 0)
                         pVal = w_Edit.SelectedValue.ToString();
+                    else
+                        pVal = "";
                 }
             }
 
@@ -600,7 +602,7 @@ namespace GridBase
                             }
                         }
                     }
-                    
+
                 }
             }
             if (pOKFlg == false)

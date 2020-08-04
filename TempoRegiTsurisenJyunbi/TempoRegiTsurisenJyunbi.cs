@@ -146,18 +146,18 @@ namespace TempoRegiTsurisenJyunbi
                 {
                     if (trtjb.ShowMessage("Q101") == DialogResult.Yes)
                     {
-                        DataTable dt = new DataTable();
-                        dt = trtjb.SimpleSelect1("70", ChangeDate.Replace("/", "-"), storeCD, txtDate.Text);
-                        if (dt.Rows.Count > 0)
-                        {
-                            trtjb.ShowMessage("E252");
-                        }
+                        //DataTable dt = new DataTable();
+                        //dt = trtjb.SimpleSelect1("70", ChangeDate.Replace("/", "-"), storeCD, txtDate.Text);
+                        //if (dt.Rows.Count > 0)
+                        //{
+                        //    trtjb.ShowMessage("E252");
+                        //}
+                        //DataCheck();
                         mre = DepositHistoryEnity();
                         if (trtjb.TempoRegiTsurisenJyunbi_Insert_Update(mre))
                         {
                             trtjb.ShowMessage("I101");
                             RunConsole();
-                          
                             txtDate.Clear();
                             DepositGaku.Clear();
                             Remark.Clear();
@@ -175,6 +175,17 @@ namespace TempoRegiTsurisenJyunbi
                 }
             }
         }
+        //public bool DataCheck()
+        //{
+        //    DataTable dt = new DataTable();
+        //    dt = trtjb.SimpleSelect1("71", ChangeDate.Replace("/", "-"), storeCD, txtDate.Text);
+        //    if (dt.Rows.Count > 0)
+        //    {
+        //        trtjb.ShowMessage("E252");
+        //        return false;
+        //    }
+        //    return true;
+        //}
         protected override void EndSec()
         {
             RunDisplay_Service();
@@ -185,10 +196,11 @@ namespace TempoRegiTsurisenJyunbi
             if (!RequireCheck(new Control[] { txtDate,DepositGaku}))   // go that focus
                 return false;
             DataTable dt = new DataTable();
-            dt = trtjb.SimpleSelect1("71", ChangeDate.Replace("/", "-"), storeCD,txtDate.Text);
+            dt = trtjb.SimpleSelect1("71", ChangeDate.Replace("/", "-"), storeCD, txtDate.Text);
             if (dt.Rows.Count > 0)
             {
                 trtjb.ShowMessage("E252");
+                txtDate.Focus();
                 return false;
             }
             return true;
@@ -219,26 +231,56 @@ namespace TempoRegiTsurisenJyunbi
             string cmdLine =InCompanyCD+ " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode+" "+DepositeNO;//parameter
             try
             {
-                try {
+                try
+                {
+                    cdo.RemoveDisplay(true);
+                    cdo.RemoveDisplay(true);
+                }
+                catch
+                {
+                }
+                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                pro.WaitForExit();
+                try
+                {
+                    cdo.SetDisplay(true, true, "", "");
                     cdo.RemoveDisplay(true);
                     cdo.RemoveDisplay(true);
                 }
                 catch { }
-
                 if (Base_DL.iniEntity.IsDM_D30Used)
                 {
-                    CashDrawerOpen op = new CashDrawerOpen(); //ses   << PTK
-                    op.OpenCashDrawer();
+                    CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
+                    op.OpenCashDrawer(); //2020_06_24     << PTK
                 }
-                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
-                // cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
-                pro.WaitForExit();
                 Stop_DisplayService();
             }
             catch
             {
-
             }
+
+            //try
+            //{
+            //    try {
+            //        cdo.RemoveDisplay(true);
+            //        cdo.RemoveDisplay(true);
+            //    }
+            //    catch { }
+
+            //    if (Base_DL.iniEntity.IsDM_D30Used)
+            //    {
+            //        CashDrawerOpen op = new CashDrawerOpen(); //ses   << PTK
+            //        op.OpenCashDrawer();
+            //    }
+            //    var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            //    // cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+            //    pro.WaitForExit();
+            //    Stop_DisplayService();
+            //}
+            //catch
+            //{
+
+            //}
         }
         protected void Kill(string pth)
         {

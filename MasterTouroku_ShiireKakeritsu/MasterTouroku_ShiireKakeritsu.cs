@@ -24,14 +24,14 @@ namespace MasterTouroku_ShiireKakeritsu
         M_OrderRate_Entity moe;
         DataTable dtMain;
         DataTable dtGrid;
-        DataTable dt = new DataTable();
+        DataTable dtDel;
+        DataTable dt;
         M_Vendor_Entity mve;
         M_Brand_Entity mbe;
         DataView dvMain;
         L_Log_Entity log_data;
         DataTable dtExcel;
         //int type = 0;
-        string Xml;
 
         public MasterTouroku_ShiireKakeritsu()
         {
@@ -41,6 +41,8 @@ namespace MasterTouroku_ShiireKakeritsu
             mve = new M_Vendor_Entity();
             mbe = new M_Brand_Entity();
             dvMain = new DataView();
+            dtDel = new DataTable();
+            dt = new DataTable();
         }
         private void MasterTouroku_ShiireKakeritsu_Load(object sender, EventArgs e)
         {
@@ -406,6 +408,7 @@ namespace MasterTouroku_ShiireKakeritsu
                         }
                     }
                     dgv_ShiireKakeritsu.DataSource = dtMain;
+                    dtDel = dtMain;
                 }
                 else
                 {
@@ -879,6 +882,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     }
                 }
                 dgv_ShiireKakeritsu.DataSource = dtMain;
+                dtDel = dtMain;
             }
             else
             {
@@ -926,20 +930,24 @@ namespace MasterTouroku_ShiireKakeritsu
                     }
                 }
                 dgv_ShiireKakeritsu.DataSource = dtMain;
-                Xml = mskbl.DataTableToXml(dtMain);
-                log_data = Get_Log_Data();
+                dtDel = dtMain;
+                string delData = mskbl.DataTableToXml(dtDel);
+                string insertData = mskbl.DataTableToXml(dtMain);
+                //log_data = Get_Log_Data();
                 moe.VendorCD = scSupplierCD.TxtCode.Text;
                 moe.StoreCD = cbo_Store.SelectedValue.ToString();
                 moe.ChangeDate = txtRevisionDate.Text;
                 moe.Rate = txtRate1.Text;
-                DataTable dt = mskbl.M_OrderRate_Update(moe, Xml, log_data);
-                scSupplierCD.Clear();
-                Clear(panelDetail);
-                dgv_ShiireKakeritsu.DataSource = string.Empty;
-                mskbl.ShowMessage("I101");
-                rdoAllStores.Checked = true;
-                cbo_Store.SelectedValue = "0000";
-                scSupplierCD.SetFocus(1);
+                if( mskbl.M_OrderRate_Update(moe,delData,insertData))
+                {
+                   scSupplierCD.Clear();
+                   Clear(panelDetail);
+                   dgv_ShiireKakeritsu.DataSource = string.Empty;
+                   mskbl.ShowMessage("I101");
+                   rdoAllStores.Checked = true;
+                   cbo_Store.SelectedValue = "0000";
+                   scSupplierCD.SetFocus(1);
+                }
         }
         protected DataTable ChangeColumnName(DataTable dtMain)
         {
@@ -1220,25 +1228,12 @@ namespace MasterTouroku_ShiireKakeritsu
                     for(int i=0;i < dtMain.Rows.Count;i++)
                     {
                         dtMain.AcceptChanges();
-                        //DataRow row1;
-                        //row1 = dtMain.NewRow();
-                        //dtMain.Rows[i]["VendorCD"] = scSupplierCD.TxtCode.Text;
-                        //dtMain.Rows[i]["StoreCD"] = cbo_Store.SelectedValue.ToString();
-                        //dtMain.Rows[i]["BrandCD"] = dtMain.Rows[i]["BrandCD"];
                         DataTable dt = mskbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 11, dtMain.Rows[i]["BrandCD"].ToString());
                         dtMain.Rows[i]["BrandName"] = dt.Rows[0]["Name"].ToString();
-                        //dtMain.Rows[i]["SportsCD"] = dtMain.Rows[i]["SportsCD"];
                         DataTable dt1 = mskbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 12, dtMain.Rows[i]["SportsCD"].ToString(),"202");
                         dtMain.Rows[i]["SportsName"] = dt1.Rows[0]["Name"].ToString();
-                        //dtMain.Rows[i]["SegmentCD"] = dtMain.Rows[i]["SegmentCD"];
                         DataTable dt2 = mskbl.Select_SearchName(txtDate1.Text.Replace("/", "-"), 13, dtMain.Rows[i]["SegmentCD"].ToString(),"203");
                         dtMain.Rows[i]["SegmentCDName"] = dt2.Rows[0]["Name"].ToString();
-                        //dtMain.Rows[i]["LastYearTerm"] = dtMain.Rows[i]["LastYearTerm"];
-                        //dtMain.Rows[i]["LastSeason"] = dtMain.Rows[i]["LastSeason"];
-                        //dtMain.Rows[i]["ChangeDate"] = dtMain.Rows[i]["ChangeDate"];
-                        //dtMain.Rows[i]["Rate"] = dtMain.Rows[i]["Rate"];
-                        //dtMain.Rows.Add(row1);
-
                     }
                     dgv_ShiireKakeritsu.DataSource = dtMain;
                 }
