@@ -106,17 +106,19 @@ namespace TempoRegiSeisanTouroku
             switch (index + 1)
             {
                 case 2:
-                    if(ErrorCheck())
+                    if (ErrorCheck())
                     {
-                        if(chkDel.Checked == false)
+                        if (chkDel.Checked == false)
                         {
-                            InsertUpdate();
+                            if (bbl.ShowMessage("Q101") == DialogResult.Yes)
+                            {
+                                InsertUpdate();
+                            }
                         }
-                        else if(chkDel.Checked == true)
+                        else if (chkDel.Checked == true)
                         {
                             Delete();
                         }
-                       
                     }              
                     break;
             }
