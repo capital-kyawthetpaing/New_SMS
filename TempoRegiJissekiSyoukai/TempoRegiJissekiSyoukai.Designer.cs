@@ -213,7 +213,7 @@
             this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label1.FontBold = true;
             this.ckmShop_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckmShop_Label1.Location = new System.Drawing.Point(17, 83);
+            this.ckmShop_Label1.Location = new System.Drawing.Point(17, 81);
             this.ckmShop_Label1.Name = "ckmShop_Label1";
             this.ckmShop_Label1.Size = new System.Drawing.Size(111, 31);
             this.ckmShop_Label1.TabIndex = 3;
@@ -3021,7 +3021,7 @@
             this.txtDate.IsNumber = true;
             this.txtDate.IsShop = false;
             this.txtDate.Length = 10;
-            this.txtDate.Location = new System.Drawing.Point(130, 78);
+            this.txtDate.Location = new System.Drawing.Point(130, 76);
             this.txtDate.MaxLength = 10;
             this.txtDate.MoveNext = true;
             this.txtDate.Name = "txtDate";
@@ -3042,7 +3042,7 @@
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.btnShow.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Small;
-            this.btnShow.Location = new System.Drawing.Point(334, 79);
+            this.btnShow.Location = new System.Drawing.Point(334, 77);
             this.btnShow.Margin = new System.Windows.Forms.Padding(1);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(200, 41);

@@ -106,17 +106,19 @@ namespace TempoRegiSeisanTouroku
             switch (index + 1)
             {
                 case 2:
-                    if(ErrorCheck())
+                    if (ErrorCheck())
                     {
-                        if(chkDel.Checked == false)
+                        if (chkDel.Checked == false)
                         {
-                            InsertUpdate();
+                            if (bbl.ShowMessage("Q101") == DialogResult.Yes)
+                            {
+                                InsertUpdate();
+                            }
                         }
-                        else if(chkDel.Checked == true)
+                        else if (chkDel.Checked == true)
                         {
                             Delete();
                         }
-                       
                     }              
                     break;
             }
@@ -771,7 +773,8 @@ namespace TempoRegiSeisanTouroku
             if (seisanbl.D_StoreCalculation_Insert_Update(dsce))
             {
                 chkDel.Enabled = true;
-                seisanbl.ShowMessage("I101");              
+                seisanbl.ShowMessage("I101");
+                tabControl1.SelectedIndex = 0;
             }           
         }
 
@@ -803,6 +806,7 @@ namespace TempoRegiSeisanTouroku
 
                 chkDel.Checked = false;
                 chkDel.Enabled = false;
+                tabControl1.SelectedIndex = 0;
             }
         }
 
