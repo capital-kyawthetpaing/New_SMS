@@ -3192,9 +3192,9 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.lblStoreName10);
-            this.panel1.Location = new System.Drawing.Point(83, 672);
+            this.panel1.Location = new System.Drawing.Point(82, 671);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(340, 70);
+            this.panel1.Size = new System.Drawing.Size(342, 83);
             this.panel1.TabIndex = 381;
             // 
             // TempoRegiJissekiSyoukai
