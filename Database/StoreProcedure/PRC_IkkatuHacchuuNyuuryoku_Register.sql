@@ -109,6 +109,7 @@ BEGIN
      [SKUCD] [varchar](30) NULL,    
      [AdminNO] [int] NOT NULL,    
      [JanCD] [varchar](13) NULL,    
+     [MakerItem] [varchar](50) NULL,    
      [ItemName] [varchar](80) NULL,    
      [ColorName] [varchar](20) NULL,    
      [SizeName] [varchar](20) NULL,    
@@ -183,6 +184,7 @@ BEGIN
      [ApprovalStageFLG] [tinyint] NOT NULL,    
      [FirstPrintDate] [date] NULL,    
      [LastPrintDate] [date] NULL,    
+     [ArrivePlanDate] [date] NULL,    
      [InsertOperator] [varchar](10) NULL,    
      [InsertDateTime] [datetime] NULL,    
      [UpdateOperator] [varchar](10) NULL,    
@@ -206,6 +208,7 @@ BEGIN
    ,SKUCD                   
    ,AdminNO                 
    ,JanCD                   
+   ,MakerItem
    ,ItemName                
    ,ColorName               
    ,SizeName                
@@ -252,6 +255,7 @@ BEGIN
           ,SKUCD                    = MAIN.SKUCD                     
           ,AdminNO                  = MAIN.AdminNO                   
           ,JanCD                    = MAIN.JanCD                     
+          ,MakerItem                = MAIN.MakerShouhinCD
           ,ItemName                 = MAIN.ShouhinName    
           ,ColorName                = MAIN.ColorName                 
           ,SizeName                 = MAIN.SizeName                  
@@ -327,6 +331,7 @@ BEGIN
     ,ApprovalStageFLG              
     ,FirstPrintDate                
     ,LastPrintDate                 
+    ,ArrivePlanDate                 
     ,InsertOperator                
     ,InsertDateTime                
     ,UpdateOperator                
@@ -347,7 +352,7 @@ BEGIN
           ,DestinationKBN               = CASE WHEN MAX(MAIN.ChokusouFLG) = 'ÅZ' THEN 1 ELSE 0 END    
           ,DestinationName              = MAIN.NounyuusakiName    
           ,DestinationZip1CD            = MAX(MAIN.NounyuusakiYuubinNO1)    
-          ,DestinationZip2CD    = MAX(MAIN.NounyuusakiYuubinNO2)    
+          ,DestinationZip2CD            = MAX(MAIN.NounyuusakiYuubinNO2)    
           ,DestinationAddress1          = MAX(MAIN.NounyuusakiJuusho1)    
           ,DestinationAddress2          = MAX(MAIN.NounyuusakiJuusho2)    
           ,DestinationTelphoneNO        = MAX(MAIN.NounyuusakiTELNO)    
@@ -369,6 +374,7 @@ BEGIN
           ,ApprovalStageFLG             = 10    
           ,FirstPrintDate               = null    
           ,LastPrintDate                = null    
+          ,ArrivePlanDate               = MAX(CAST(MAIN.KibouNouki as date))
           ,InsertOperator               = @p_Operator    
           ,InsertDateTime               = @SYSDATETIME    
           ,UpdateOperator               = @p_Operator    
@@ -476,6 +482,7 @@ IF @p_OperateMode = 1
               ,ApprovalStageFLG    
               ,FirstPrintDate    
               ,LastPrintDate    
+              ,ArrivePlanDate
               ,InsertOperator    
               ,InsertDateTime    
               ,UpdateOperator    
@@ -518,6 +525,7 @@ IF @p_OperateMode = 1
               ,ApprovalStageFLG    
               ,FirstPrintDate    
               ,LastPrintDate    
+              ,ArrivePlanDate
               ,InsertOperator    
               ,InsertDateTime    
               ,UpdateOperator    
@@ -536,6 +544,7 @@ IF @p_OperateMode = 1
               ,SKUCD    
               ,AdminNO    
               ,JanCD    
+              ,MakerItem
               ,ItemName    
               ,ColorName    
               ,SizeName    
@@ -578,6 +587,7 @@ IF @p_OperateMode = 1
               ,SKUCD    
               ,AdminNO    
               ,JanCD    
+              ,MakerItem
               ,ItemName    
               ,ColorName    
               ,SizeName    
