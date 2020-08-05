@@ -1401,7 +1401,7 @@
             this.lblKakeUrikin1.TabIndex = 380;
             this.lblKakeUrikin1.Text = "\\99,999,999";
             this.lblKakeUrikin1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblKakeUrikin1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.lblKakeUrikin1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblSonotakin1
             // 
