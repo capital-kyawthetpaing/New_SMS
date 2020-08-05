@@ -550,7 +550,7 @@
             this.lblJuchuuNO1.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO1.Location = new System.Drawing.Point(543, 41);
             this.lblJuchuuNO1.Name = "lblJuchuuNO1";
-            this.lblJuchuuNO1.Size = new System.Drawing.Size(195, 30);
+            this.lblJuchuuNO1.Size = new System.Drawing.Size(225, 30);
             this.lblJuchuuNO1.TabIndex = 71;
             this.lblJuchuuNO1.Text = "XXXXXXXXXXX";
             this.lblJuchuuNO1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
