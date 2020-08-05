@@ -32,6 +32,7 @@
             this.btnUp = new CKM_Controls.CKM_Button();
             this.btnDown = new CKM_Controls.CKM_Button();
             this.pnlDetail = new System.Windows.Forms.Panel();
+            this.lblStoreName10 = new CKM_Controls.CKMShop_Label();
             this.lblStoreName1 = new CKM_Controls.CKMShop_Label();
             this.lblDtGyo1 = new CKM_Controls.CKMShop_Label();
             this.lblDtGyo2 = new CKM_Controls.CKMShop_Label();
@@ -201,7 +202,6 @@
             this.ckmShop_Label7 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label9 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label10 = new CKM_Controls.CKMShop_Label();
-            this.lblStoreName10 = new CKM_Controls.CKMShop_Label();
             this.pnlDetail.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -425,6 +425,21 @@
             this.pnlDetail.Size = new System.Drawing.Size(1900, 755);
             this.pnlDetail.TabIndex = 46;
             // 
+            // lblStoreName10
+            // 
+            this.lblStoreName10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblStoreName10.BackColor = System.Drawing.Color.Transparent;
+            this.lblStoreName10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
+            this.lblStoreName10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblStoreName10.FontBold = true;
+            this.lblStoreName10.ForeColor = System.Drawing.Color.Black;
+            this.lblStoreName10.Location = new System.Drawing.Point(83, 673);
+            this.lblStoreName10.Name = "lblStoreName10";
+            this.lblStoreName10.Size = new System.Drawing.Size(340, 78);
+            this.lblStoreName10.TabIndex = 255;
+            this.lblStoreName10.Text = "店舗名　スタッフ名Ｘ";
+            this.lblStoreName10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            // 
             // lblStoreName1
             // 
             this.lblStoreName1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -433,9 +448,9 @@
             this.lblStoreName1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblStoreName1.FontBold = true;
             this.lblStoreName1.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName1.Location = new System.Drawing.Point(86, 3);
+            this.lblStoreName1.Location = new System.Drawing.Point(83, 1);
             this.lblStoreName1.Name = "lblStoreName1";
-            this.lblStoreName1.Size = new System.Drawing.Size(334, 60);
+            this.lblStoreName1.Size = new System.Drawing.Size(340, 63);
             this.lblStoreName1.TabIndex = 374;
             this.lblStoreName1.Text = "店舗名＠＠＠＠＠＠／";
             this.lblStoreName1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -567,9 +582,9 @@
             this.lblStoreName2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblStoreName2.FontBold = true;
             this.lblStoreName2.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName2.Location = new System.Drawing.Point(86, 69);
+            this.lblStoreName2.Location = new System.Drawing.Point(83, 69);
             this.lblStoreName2.Name = "lblStoreName2";
-            this.lblStoreName2.Size = new System.Drawing.Size(334, 65);
+            this.lblStoreName2.Size = new System.Drawing.Size(340, 65);
             this.lblStoreName2.TabIndex = 354;
             this.lblStoreName2.Text = "店舗名　スタッフ名Ｘ";
             this.lblStoreName2.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -582,9 +597,9 @@
             this.lblStoreName3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblStoreName3.FontBold = true;
             this.lblStoreName3.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName3.Location = new System.Drawing.Point(86, 140);
+            this.lblStoreName3.Location = new System.Drawing.Point(83, 138);
             this.lblStoreName3.Name = "lblStoreName3";
-            this.lblStoreName3.Size = new System.Drawing.Size(334, 65);
+            this.lblStoreName3.Size = new System.Drawing.Size(340, 70);
             this.lblStoreName3.TabIndex = 353;
             this.lblStoreName3.Text = "店舗名　スタッフ名Ｘ";
             this.lblStoreName3.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -597,9 +612,9 @@
             this.lblStoreName4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblStoreName4.FontBold = true;
             this.lblStoreName4.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName4.Location = new System.Drawing.Point(86, 214);
+            this.lblStoreName4.Location = new System.Drawing.Point(82, 212);
             this.lblStoreName4.Name = "lblStoreName4";
-            this.lblStoreName4.Size = new System.Drawing.Size(334, 65);
+            this.lblStoreName4.Size = new System.Drawing.Size(340, 70);
             this.lblStoreName4.TabIndex = 352;
             this.lblStoreName4.Text = "店舗名　スタッフ名Ｘ";
             this.lblStoreName4.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -612,9 +627,9 @@
             this.lblStoreName5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblStoreName5.FontBold = true;
             this.lblStoreName5.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName5.Location = new System.Drawing.Point(87, 289);
+            this.lblStoreName5.Location = new System.Drawing.Point(83, 287);
             this.lblStoreName5.Name = "lblStoreName5";
-            this.lblStoreName5.Size = new System.Drawing.Size(334, 65);
+            this.lblStoreName5.Size = new System.Drawing.Size(340, 70);
             this.lblStoreName5.TabIndex = 351;
             this.lblStoreName5.Text = "店舗名　スタッフ名Ｘ";
             this.lblStoreName5.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -627,9 +642,9 @@
             this.lblStoreName6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblStoreName6.FontBold = true;
             this.lblStoreName6.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName6.Location = new System.Drawing.Point(86, 365);
+            this.lblStoreName6.Location = new System.Drawing.Point(83, 360);
             this.lblStoreName6.Name = "lblStoreName6";
-            this.lblStoreName6.Size = new System.Drawing.Size(334, 65);
+            this.lblStoreName6.Size = new System.Drawing.Size(340, 74);
             this.lblStoreName6.TabIndex = 350;
             this.lblStoreName6.Text = "店舗名　スタッフ名Ｘ";
             this.lblStoreName6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -642,9 +657,9 @@
             this.lblStoreName7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblStoreName7.FontBold = true;
             this.lblStoreName7.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName7.Location = new System.Drawing.Point(87, 442);
+            this.lblStoreName7.Location = new System.Drawing.Point(84, 439);
             this.lblStoreName7.Name = "lblStoreName7";
-            this.lblStoreName7.Size = new System.Drawing.Size(334, 65);
+            this.lblStoreName7.Size = new System.Drawing.Size(340, 70);
             this.lblStoreName7.TabIndex = 349;
             this.lblStoreName7.Text = "店舗名  スタッフ名Ｘ";
             this.lblStoreName7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -674,9 +689,9 @@
             this.lblStoreName8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblStoreName8.FontBold = true;
             this.lblStoreName8.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName8.Location = new System.Drawing.Point(87, 518);
+            this.lblStoreName8.Location = new System.Drawing.Point(83, 513);
             this.lblStoreName8.Name = "lblStoreName8";
-            this.lblStoreName8.Size = new System.Drawing.Size(334, 65);
+            this.lblStoreName8.Size = new System.Drawing.Size(340, 76);
             this.lblStoreName8.TabIndex = 290;
             this.lblStoreName8.Text = "店舗名　スタッフ名Ｘ";
             this.lblStoreName8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -689,9 +704,9 @@
             this.lblStoreName9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblStoreName9.FontBold = true;
             this.lblStoreName9.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName9.Location = new System.Drawing.Point(86, 597);
+            this.lblStoreName9.Location = new System.Drawing.Point(83, 594);
             this.lblStoreName9.Name = "lblStoreName9";
-            this.lblStoreName9.Size = new System.Drawing.Size(334, 65);
+            this.lblStoreName9.Size = new System.Drawing.Size(340, 74);
             this.lblStoreName9.TabIndex = 278;
             this.lblStoreName9.Text = "店舗名　スタッフ名Ｘ";
             this.lblStoreName9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -894,7 +909,6 @@
             // 
             // lblCardUrikin1
             // 
-            this.lblCardUrikin1.AutoSize = true;
             this.lblCardUrikin1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCardUrikin1.BackColor = System.Drawing.Color.Transparent;
             this.lblCardUrikin1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -911,7 +925,6 @@
             // 
             // lblGenUrikin1
             // 
-            this.lblGenUrikin1.AutoSize = true;
             this.lblGenUrikin1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblGenUrikin1.BackColor = System.Drawing.Color.Transparent;
             this.lblGenUrikin1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -928,7 +941,6 @@
             // 
             // lblJyukin1
             // 
-            this.lblJyukin1.AutoSize = true;
             this.lblJyukin1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblJyukin1.BackColor = System.Drawing.Color.Transparent;
             this.lblJyukin1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -945,7 +957,6 @@
             // 
             // lblJyukin2
             // 
-            this.lblJyukin2.AutoSize = true;
             this.lblJyukin2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblJyukin2.BackColor = System.Drawing.Color.Transparent;
             this.lblJyukin2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -962,7 +973,6 @@
             // 
             // lblJyukin3
             // 
-            this.lblJyukin3.AutoSize = true;
             this.lblJyukin3.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblJyukin3.BackColor = System.Drawing.Color.Transparent;
             this.lblJyukin3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -979,7 +989,6 @@
             // 
             // lblJyukin4
             // 
-            this.lblJyukin4.AutoSize = true;
             this.lblJyukin4.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblJyukin4.BackColor = System.Drawing.Color.Transparent;
             this.lblJyukin4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -996,7 +1005,6 @@
             // 
             // lblJyukin5
             // 
-            this.lblJyukin5.AutoSize = true;
             this.lblJyukin5.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblJyukin5.BackColor = System.Drawing.Color.Transparent;
             this.lblJyukin5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1013,14 +1021,13 @@
             // 
             // lblJyukin6
             // 
-            this.lblJyukin6.AutoSize = true;
             this.lblJyukin6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblJyukin6.BackColor = System.Drawing.Color.Transparent;
             this.lblJyukin6.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJyukin6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblJyukin6.FontBold = true;
             this.lblJyukin6.ForeColor = System.Drawing.Color.Black;
-            this.lblJyukin6.Location = new System.Drawing.Point(448, 364);
+            this.lblJyukin6.Location = new System.Drawing.Point(448, 363);
             this.lblJyukin6.Name = "lblJyukin6";
             this.lblJyukin6.Size = new System.Drawing.Size(189, 30);
             this.lblJyukin6.TabIndex = 344;
@@ -1030,7 +1037,6 @@
             // 
             // lblJyukin7
             // 
-            this.lblJyukin7.AutoSize = true;
             this.lblJyukin7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblJyukin7.BackColor = System.Drawing.Color.Transparent;
             this.lblJyukin7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1047,7 +1053,6 @@
             // 
             // lblJyukin8
             // 
-            this.lblJyukin8.AutoSize = true;
             this.lblJyukin8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblJyukin8.BackColor = System.Drawing.Color.Transparent;
             this.lblJyukin8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1064,7 +1069,6 @@
             // 
             // lblJyukin9
             // 
-            this.lblJyukin9.AutoSize = true;
             this.lblJyukin9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblJyukin9.BackColor = System.Drawing.Color.Transparent;
             this.lblJyukin9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1081,7 +1085,6 @@
             // 
             // lblJyukin10
             // 
-            this.lblJyukin10.AutoSize = true;
             this.lblJyukin10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblJyukin10.BackColor = System.Drawing.Color.Transparent;
             this.lblJyukin10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1098,7 +1101,6 @@
             // 
             // lblCardUrikin2
             // 
-            this.lblCardUrikin2.AutoSize = true;
             this.lblCardUrikin2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCardUrikin2.BackColor = System.Drawing.Color.Transparent;
             this.lblCardUrikin2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1115,7 +1117,6 @@
             // 
             // lblCardUrikin3
             // 
-            this.lblCardUrikin3.AutoSize = true;
             this.lblCardUrikin3.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCardUrikin3.BackColor = System.Drawing.Color.Transparent;
             this.lblCardUrikin3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1132,7 +1133,6 @@
             // 
             // lblCardUrikin4
             // 
-            this.lblCardUrikin4.AutoSize = true;
             this.lblCardUrikin4.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCardUrikin4.BackColor = System.Drawing.Color.Transparent;
             this.lblCardUrikin4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1149,7 +1149,6 @@
             // 
             // lblCardUrikin5
             // 
-            this.lblCardUrikin5.AutoSize = true;
             this.lblCardUrikin5.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCardUrikin5.BackColor = System.Drawing.Color.Transparent;
             this.lblCardUrikin5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1166,7 +1165,6 @@
             // 
             // lblCardUrikin6
             // 
-            this.lblCardUrikin6.AutoSize = true;
             this.lblCardUrikin6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCardUrikin6.BackColor = System.Drawing.Color.Transparent;
             this.lblCardUrikin6.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1183,7 +1181,6 @@
             // 
             // lblCardUrikin7
             // 
-            this.lblCardUrikin7.AutoSize = true;
             this.lblCardUrikin7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCardUrikin7.BackColor = System.Drawing.Color.Transparent;
             this.lblCardUrikin7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1200,7 +1197,6 @@
             // 
             // lblCardUrikin8
             // 
-            this.lblCardUrikin8.AutoSize = true;
             this.lblCardUrikin8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCardUrikin8.BackColor = System.Drawing.Color.Transparent;
             this.lblCardUrikin8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1217,7 +1213,6 @@
             // 
             // lblCardUrikin9
             // 
-            this.lblCardUrikin9.AutoSize = true;
             this.lblCardUrikin9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCardUrikin9.BackColor = System.Drawing.Color.Transparent;
             this.lblCardUrikin9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1234,7 +1229,6 @@
             // 
             // lblCardUrikin10
             // 
-            this.lblCardUrikin10.AutoSize = true;
             this.lblCardUrikin10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCardUrikin10.BackColor = System.Drawing.Color.Transparent;
             this.lblCardUrikin10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1251,7 +1245,6 @@
             // 
             // lblGenUrikin2
             // 
-            this.lblGenUrikin2.AutoSize = true;
             this.lblGenUrikin2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblGenUrikin2.BackColor = System.Drawing.Color.Transparent;
             this.lblGenUrikin2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1268,7 +1261,6 @@
             // 
             // lblGenUrikin3
             // 
-            this.lblGenUrikin3.AutoSize = true;
             this.lblGenUrikin3.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblGenUrikin3.BackColor = System.Drawing.Color.Transparent;
             this.lblGenUrikin3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1285,7 +1277,6 @@
             // 
             // lblGenUrikin4
             // 
-            this.lblGenUrikin4.AutoSize = true;
             this.lblGenUrikin4.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblGenUrikin4.BackColor = System.Drawing.Color.Transparent;
             this.lblGenUrikin4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1302,7 +1293,6 @@
             // 
             // lblGenUrikin5
             // 
-            this.lblGenUrikin5.AutoSize = true;
             this.lblGenUrikin5.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblGenUrikin5.BackColor = System.Drawing.Color.Transparent;
             this.lblGenUrikin5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1319,7 +1309,6 @@
             // 
             // lblGenUrikin6
             // 
-            this.lblGenUrikin6.AutoSize = true;
             this.lblGenUrikin6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblGenUrikin6.BackColor = System.Drawing.Color.Transparent;
             this.lblGenUrikin6.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1336,7 +1325,6 @@
             // 
             // lblGenUrikin7
             // 
-            this.lblGenUrikin7.AutoSize = true;
             this.lblGenUrikin7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblGenUrikin7.BackColor = System.Drawing.Color.Transparent;
             this.lblGenUrikin7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1353,7 +1341,6 @@
             // 
             // lblGenUrikin8
             // 
-            this.lblGenUrikin8.AutoSize = true;
             this.lblGenUrikin8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblGenUrikin8.BackColor = System.Drawing.Color.Transparent;
             this.lblGenUrikin8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1370,7 +1357,6 @@
             // 
             // lblGenUrikin9
             // 
-            this.lblGenUrikin9.AutoSize = true;
             this.lblGenUrikin9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblGenUrikin9.BackColor = System.Drawing.Color.Transparent;
             this.lblGenUrikin9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1387,7 +1373,6 @@
             // 
             // lblGenUrikin10
             // 
-            this.lblGenUrikin10.AutoSize = true;
             this.lblGenUrikin10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblGenUrikin10.BackColor = System.Drawing.Color.Transparent;
             this.lblGenUrikin10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1404,7 +1389,6 @@
             // 
             // lblKakeUrikin1
             // 
-            this.lblKakeUrikin1.AutoSize = true;
             this.lblKakeUrikin1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblKakeUrikin1.BackColor = System.Drawing.Color.Transparent;
             this.lblKakeUrikin1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1421,7 +1405,6 @@
             // 
             // lblSonotakin1
             // 
-            this.lblSonotakin1.AutoSize = true;
             this.lblSonotakin1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblSonotakin1.BackColor = System.Drawing.Color.Transparent;
             this.lblSonotakin1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1438,7 +1421,6 @@
             // 
             // lblKakeUrikin2
             // 
-            this.lblKakeUrikin2.AutoSize = true;
             this.lblKakeUrikin2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblKakeUrikin2.BackColor = System.Drawing.Color.Transparent;
             this.lblKakeUrikin2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1455,7 +1437,6 @@
             // 
             // lblKakeUrikin3
             // 
-            this.lblKakeUrikin3.AutoSize = true;
             this.lblKakeUrikin3.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblKakeUrikin3.BackColor = System.Drawing.Color.Transparent;
             this.lblKakeUrikin3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1472,7 +1453,6 @@
             // 
             // lblKakeUrikin4
             // 
-            this.lblKakeUrikin4.AutoSize = true;
             this.lblKakeUrikin4.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblKakeUrikin4.BackColor = System.Drawing.Color.Transparent;
             this.lblKakeUrikin4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1489,7 +1469,6 @@
             // 
             // lblKakeUrikin5
             // 
-            this.lblKakeUrikin5.AutoSize = true;
             this.lblKakeUrikin5.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblKakeUrikin5.BackColor = System.Drawing.Color.Transparent;
             this.lblKakeUrikin5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1506,7 +1485,6 @@
             // 
             // lblKakeUrikin6
             // 
-            this.lblKakeUrikin6.AutoSize = true;
             this.lblKakeUrikin6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblKakeUrikin6.BackColor = System.Drawing.Color.Transparent;
             this.lblKakeUrikin6.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1523,7 +1501,6 @@
             // 
             // lblKakeUrikin7
             // 
-            this.lblKakeUrikin7.AutoSize = true;
             this.lblKakeUrikin7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblKakeUrikin7.BackColor = System.Drawing.Color.Transparent;
             this.lblKakeUrikin7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1540,7 +1517,6 @@
             // 
             // lblSonotakin2
             // 
-            this.lblSonotakin2.AutoSize = true;
             this.lblSonotakin2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblSonotakin2.BackColor = System.Drawing.Color.Transparent;
             this.lblSonotakin2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1557,7 +1533,6 @@
             // 
             // lblSonotakin3
             // 
-            this.lblSonotakin3.AutoSize = true;
             this.lblSonotakin3.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblSonotakin3.BackColor = System.Drawing.Color.Transparent;
             this.lblSonotakin3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1574,7 +1549,6 @@
             // 
             // lblSonotakin4
             // 
-            this.lblSonotakin4.AutoSize = true;
             this.lblSonotakin4.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblSonotakin4.BackColor = System.Drawing.Color.Transparent;
             this.lblSonotakin4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1591,7 +1565,6 @@
             // 
             // lblSonotakin5
             // 
-            this.lblSonotakin5.AutoSize = true;
             this.lblSonotakin5.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblSonotakin5.BackColor = System.Drawing.Color.Transparent;
             this.lblSonotakin5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1608,7 +1581,6 @@
             // 
             // lblSonotakin6
             // 
-            this.lblSonotakin6.AutoSize = true;
             this.lblSonotakin6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblSonotakin6.BackColor = System.Drawing.Color.Transparent;
             this.lblSonotakin6.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1625,7 +1597,6 @@
             // 
             // lblSonotakin7
             // 
-            this.lblSonotakin7.AutoSize = true;
             this.lblSonotakin7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblSonotakin7.BackColor = System.Drawing.Color.Transparent;
             this.lblSonotakin7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1642,7 +1613,6 @@
             // 
             // lblKakeUrikin8
             // 
-            this.lblKakeUrikin8.AutoSize = true;
             this.lblKakeUrikin8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblKakeUrikin8.BackColor = System.Drawing.Color.Transparent;
             this.lblKakeUrikin8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1659,7 +1629,6 @@
             // 
             // lblSonotakin8
             // 
-            this.lblSonotakin8.AutoSize = true;
             this.lblSonotakin8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblSonotakin8.BackColor = System.Drawing.Color.Transparent;
             this.lblSonotakin8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1676,7 +1645,6 @@
             // 
             // lblKakeUrikin9
             // 
-            this.lblKakeUrikin9.AutoSize = true;
             this.lblKakeUrikin9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblKakeUrikin9.BackColor = System.Drawing.Color.Transparent;
             this.lblKakeUrikin9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1693,7 +1661,6 @@
             // 
             // lblSonotakin9
             // 
-            this.lblSonotakin9.AutoSize = true;
             this.lblSonotakin9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblSonotakin9.BackColor = System.Drawing.Color.Transparent;
             this.lblSonotakin9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1710,7 +1677,6 @@
             // 
             // lblKakeUrikin10
             // 
-            this.lblKakeUrikin10.AutoSize = true;
             this.lblKakeUrikin10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblKakeUrikin10.BackColor = System.Drawing.Color.Transparent;
             this.lblKakeUrikin10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1727,7 +1693,6 @@
             // 
             // lblSonotakin10
             // 
-            this.lblSonotakin10.AutoSize = true;
             this.lblSonotakin10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblSonotakin10.BackColor = System.Drawing.Color.Transparent;
             this.lblSonotakin10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1744,7 +1709,6 @@
             // 
             // lblDayUrikin1
             // 
-            this.lblDayUrikin1.AutoSize = true;
             this.lblDayUrikin1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayUrikin1.BackColor = System.Drawing.Color.Transparent;
             this.lblDayUrikin1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1761,7 +1725,6 @@
             // 
             // lblMonthUrikin1
             // 
-            this.lblMonthUrikin1.AutoSize = true;
             this.lblMonthUrikin1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthUrikin1.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthUrikin1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1778,7 +1741,6 @@
             // 
             // lblDayUrikin2
             // 
-            this.lblDayUrikin2.AutoSize = true;
             this.lblDayUrikin2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayUrikin2.BackColor = System.Drawing.Color.Transparent;
             this.lblDayUrikin2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1795,7 +1757,6 @@
             // 
             // lblMonthUrikin2
             // 
-            this.lblMonthUrikin2.AutoSize = true;
             this.lblMonthUrikin2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthUrikin2.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthUrikin2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1812,7 +1773,6 @@
             // 
             // lblDayUrikin3
             // 
-            this.lblDayUrikin3.AutoSize = true;
             this.lblDayUrikin3.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayUrikin3.BackColor = System.Drawing.Color.Transparent;
             this.lblDayUrikin3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1829,7 +1789,6 @@
             // 
             // lblDayUrikin4
             // 
-            this.lblDayUrikin4.AutoSize = true;
             this.lblDayUrikin4.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayUrikin4.BackColor = System.Drawing.Color.Transparent;
             this.lblDayUrikin4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1846,7 +1805,6 @@
             // 
             // lblDayUrikin5
             // 
-            this.lblDayUrikin5.AutoSize = true;
             this.lblDayUrikin5.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayUrikin5.BackColor = System.Drawing.Color.Transparent;
             this.lblDayUrikin5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1863,7 +1821,6 @@
             // 
             // lblDayUrikin6
             // 
-            this.lblDayUrikin6.AutoSize = true;
             this.lblDayUrikin6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayUrikin6.BackColor = System.Drawing.Color.Transparent;
             this.lblDayUrikin6.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1880,7 +1837,6 @@
             // 
             // lblDayUrikin7
             // 
-            this.lblDayUrikin7.AutoSize = true;
             this.lblDayUrikin7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayUrikin7.BackColor = System.Drawing.Color.Transparent;
             this.lblDayUrikin7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1897,7 +1853,6 @@
             // 
             // lblMonthUrikin3
             // 
-            this.lblMonthUrikin3.AutoSize = true;
             this.lblMonthUrikin3.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthUrikin3.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthUrikin3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1914,7 +1869,6 @@
             // 
             // lblMonthUrikin4
             // 
-            this.lblMonthUrikin4.AutoSize = true;
             this.lblMonthUrikin4.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthUrikin4.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthUrikin4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1931,7 +1885,6 @@
             // 
             // lblMonthUrikin5
             // 
-            this.lblMonthUrikin5.AutoSize = true;
             this.lblMonthUrikin5.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthUrikin5.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthUrikin5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1948,7 +1901,6 @@
             // 
             // lblMonthUrikin6
             // 
-            this.lblMonthUrikin6.AutoSize = true;
             this.lblMonthUrikin6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthUrikin6.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthUrikin6.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1965,7 +1917,6 @@
             // 
             // lblMonthUrikin7
             // 
-            this.lblMonthUrikin7.AutoSize = true;
             this.lblMonthUrikin7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthUrikin7.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthUrikin7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1982,7 +1933,6 @@
             // 
             // lblDayUrikin8
             // 
-            this.lblDayUrikin8.AutoSize = true;
             this.lblDayUrikin8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayUrikin8.BackColor = System.Drawing.Color.Transparent;
             this.lblDayUrikin8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -1999,7 +1949,6 @@
             // 
             // lblMonthUrikin8
             // 
-            this.lblMonthUrikin8.AutoSize = true;
             this.lblMonthUrikin8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthUrikin8.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthUrikin8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2016,7 +1965,6 @@
             // 
             // lblDayUrikin9
             // 
-            this.lblDayUrikin9.AutoSize = true;
             this.lblDayUrikin9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayUrikin9.BackColor = System.Drawing.Color.Transparent;
             this.lblDayUrikin9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2033,7 +1981,6 @@
             // 
             // lblMonthUrikin9
             // 
-            this.lblMonthUrikin9.AutoSize = true;
             this.lblMonthUrikin9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthUrikin9.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthUrikin9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2050,7 +1997,6 @@
             // 
             // lblDayUrikin10
             // 
-            this.lblDayUrikin10.AutoSize = true;
             this.lblDayUrikin10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayUrikin10.BackColor = System.Drawing.Color.Transparent;
             this.lblDayUrikin10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2067,7 +2013,6 @@
             // 
             // lblMonthUrikin10
             // 
-            this.lblMonthUrikin10.AutoSize = true;
             this.lblMonthUrikin10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthUrikin10.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthUrikin10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2084,7 +2029,6 @@
             // 
             // lblDayYoskin1
             // 
-            this.lblDayYoskin1.AutoSize = true;
             this.lblDayYoskin1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayYoskin1.BackColor = System.Drawing.Color.Transparent;
             this.lblDayYoskin1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2101,7 +2045,6 @@
             // 
             // lblMonthYoskin1
             // 
-            this.lblMonthYoskin1.AutoSize = true;
             this.lblMonthYoskin1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthYoskin1.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthYoskin1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2118,7 +2061,6 @@
             // 
             // lblDayYoskin2
             // 
-            this.lblDayYoskin2.AutoSize = true;
             this.lblDayYoskin2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayYoskin2.BackColor = System.Drawing.Color.Transparent;
             this.lblDayYoskin2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2135,7 +2077,6 @@
             // 
             // lblDayYoskin3
             // 
-            this.lblDayYoskin3.AutoSize = true;
             this.lblDayYoskin3.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayYoskin3.BackColor = System.Drawing.Color.Transparent;
             this.lblDayYoskin3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2152,7 +2093,6 @@
             // 
             // lblDayYoskin4
             // 
-            this.lblDayYoskin4.AutoSize = true;
             this.lblDayYoskin4.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayYoskin4.BackColor = System.Drawing.Color.Transparent;
             this.lblDayYoskin4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2169,7 +2109,6 @@
             // 
             // lblMonthYoskin2
             // 
-            this.lblMonthYoskin2.AutoSize = true;
             this.lblMonthYoskin2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthYoskin2.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthYoskin2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2186,7 +2125,6 @@
             // 
             // lblMonthYoskin3
             // 
-            this.lblMonthYoskin3.AutoSize = true;
             this.lblMonthYoskin3.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthYoskin3.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthYoskin3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2203,7 +2141,6 @@
             // 
             // lblMonthYoskin4
             // 
-            this.lblMonthYoskin4.AutoSize = true;
             this.lblMonthYoskin4.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthYoskin4.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthYoskin4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2220,7 +2157,6 @@
             // 
             // lblDayYoskin5
             // 
-            this.lblDayYoskin5.AutoSize = true;
             this.lblDayYoskin5.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayYoskin5.BackColor = System.Drawing.Color.Transparent;
             this.lblDayYoskin5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2237,7 +2173,6 @@
             // 
             // lblDayYoskin6
             // 
-            this.lblDayYoskin6.AutoSize = true;
             this.lblDayYoskin6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayYoskin6.BackColor = System.Drawing.Color.Transparent;
             this.lblDayYoskin6.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2254,7 +2189,6 @@
             // 
             // lblDayYoskin7
             // 
-            this.lblDayYoskin7.AutoSize = true;
             this.lblDayYoskin7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayYoskin7.BackColor = System.Drawing.Color.Transparent;
             this.lblDayYoskin7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2271,7 +2205,6 @@
             // 
             // lblMonthYoskin5
             // 
-            this.lblMonthYoskin5.AutoSize = true;
             this.lblMonthYoskin5.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthYoskin5.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthYoskin5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2288,7 +2221,6 @@
             // 
             // lblMonthYoskin6
             // 
-            this.lblMonthYoskin6.AutoSize = true;
             this.lblMonthYoskin6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthYoskin6.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthYoskin6.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2305,7 +2237,6 @@
             // 
             // lblMonthYoskin7
             // 
-            this.lblMonthYoskin7.AutoSize = true;
             this.lblMonthYoskin7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthYoskin7.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthYoskin7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2322,7 +2253,6 @@
             // 
             // lblDayYoskin8
             // 
-            this.lblDayYoskin8.AutoSize = true;
             this.lblDayYoskin8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayYoskin8.BackColor = System.Drawing.Color.Transparent;
             this.lblDayYoskin8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2339,7 +2269,6 @@
             // 
             // lblMonthYoskin8
             // 
-            this.lblMonthYoskin8.AutoSize = true;
             this.lblMonthYoskin8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthYoskin8.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthYoskin8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2356,7 +2285,6 @@
             // 
             // lblDayYoskin9
             // 
-            this.lblDayYoskin9.AutoSize = true;
             this.lblDayYoskin9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayYoskin9.BackColor = System.Drawing.Color.Transparent;
             this.lblDayYoskin9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2373,7 +2301,6 @@
             // 
             // lblMonthYoskin9
             // 
-            this.lblMonthYoskin9.AutoSize = true;
             this.lblMonthYoskin9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthYoskin9.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthYoskin9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2390,7 +2317,6 @@
             // 
             // lblMonthYoskin10
             // 
-            this.lblMonthYoskin10.AutoSize = true;
             this.lblMonthYoskin10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthYoskin10.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthYoskin10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2407,7 +2333,6 @@
             // 
             // lblDayYoskin10
             // 
-            this.lblDayYoskin10.AutoSize = true;
             this.lblDayYoskin10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayYoskin10.BackColor = System.Drawing.Color.Transparent;
             this.lblDayYoskin10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2424,7 +2349,6 @@
             // 
             // lblDayRitu1
             // 
-            this.lblDayRitu1.AutoSize = true;
             this.lblDayRitu1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayRitu1.BackColor = System.Drawing.Color.Transparent;
             this.lblDayRitu1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2441,7 +2365,6 @@
             // 
             // lblMonthRitu1
             // 
-            this.lblMonthRitu1.AutoSize = true;
             this.lblMonthRitu1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthRitu1.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthRitu1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2458,7 +2381,6 @@
             // 
             // lblDayRitu2
             // 
-            this.lblDayRitu2.AutoSize = true;
             this.lblDayRitu2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayRitu2.BackColor = System.Drawing.Color.Transparent;
             this.lblDayRitu2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2475,7 +2397,6 @@
             // 
             // lblDayRitu3
             // 
-            this.lblDayRitu3.AutoSize = true;
             this.lblDayRitu3.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayRitu3.BackColor = System.Drawing.Color.Transparent;
             this.lblDayRitu3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2492,7 +2413,6 @@
             // 
             // lblMonthRitu2
             // 
-            this.lblMonthRitu2.AutoSize = true;
             this.lblMonthRitu2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthRitu2.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthRitu2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2509,7 +2429,6 @@
             // 
             // lblMonthRitu3
             // 
-            this.lblMonthRitu3.AutoSize = true;
             this.lblMonthRitu3.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthRitu3.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthRitu3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2526,7 +2445,6 @@
             // 
             // lblDayRitu4
             // 
-            this.lblDayRitu4.AutoSize = true;
             this.lblDayRitu4.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayRitu4.BackColor = System.Drawing.Color.Transparent;
             this.lblDayRitu4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2543,7 +2461,6 @@
             // 
             // lblDayRitu5
             // 
-            this.lblDayRitu5.AutoSize = true;
             this.lblDayRitu5.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayRitu5.BackColor = System.Drawing.Color.Transparent;
             this.lblDayRitu5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2560,7 +2477,6 @@
             // 
             // lblMonthRitu4
             // 
-            this.lblMonthRitu4.AutoSize = true;
             this.lblMonthRitu4.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthRitu4.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthRitu4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2577,7 +2493,6 @@
             // 
             // lblMonthRitu5
             // 
-            this.lblMonthRitu5.AutoSize = true;
             this.lblMonthRitu5.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthRitu5.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthRitu5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2594,7 +2509,6 @@
             // 
             // lblDayRitu6
             // 
-            this.lblDayRitu6.AutoSize = true;
             this.lblDayRitu6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayRitu6.BackColor = System.Drawing.Color.Transparent;
             this.lblDayRitu6.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2611,7 +2525,6 @@
             // 
             // lblMonthRitu6
             // 
-            this.lblMonthRitu6.AutoSize = true;
             this.lblMonthRitu6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthRitu6.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthRitu6.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2628,7 +2541,6 @@
             // 
             // lblDayRitu7
             // 
-            this.lblDayRitu7.AutoSize = true;
             this.lblDayRitu7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayRitu7.BackColor = System.Drawing.Color.Transparent;
             this.lblDayRitu7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2645,7 +2557,6 @@
             // 
             // lblMonthRitu7
             // 
-            this.lblMonthRitu7.AutoSize = true;
             this.lblMonthRitu7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthRitu7.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthRitu7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2662,7 +2573,6 @@
             // 
             // lblDayRitu8
             // 
-            this.lblDayRitu8.AutoSize = true;
             this.lblDayRitu8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayRitu8.BackColor = System.Drawing.Color.Transparent;
             this.lblDayRitu8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2679,7 +2589,6 @@
             // 
             // lblMonthRitu8
             // 
-            this.lblMonthRitu8.AutoSize = true;
             this.lblMonthRitu8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthRitu8.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthRitu8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2696,7 +2605,6 @@
             // 
             // lblDayRitu9
             // 
-            this.lblDayRitu9.AutoSize = true;
             this.lblDayRitu9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayRitu9.BackColor = System.Drawing.Color.Transparent;
             this.lblDayRitu9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2713,7 +2621,6 @@
             // 
             // lblMonthRitu9
             // 
-            this.lblMonthRitu9.AutoSize = true;
             this.lblMonthRitu9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthRitu9.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthRitu9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2730,7 +2637,6 @@
             // 
             // lblMonthRitu10
             // 
-            this.lblMonthRitu10.AutoSize = true;
             this.lblMonthRitu10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMonthRitu10.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthRitu10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2747,7 +2653,6 @@
             // 
             // lblDayRitu10
             // 
-            this.lblDayRitu10.AutoSize = true;
             this.lblDayRitu10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDayRitu10.BackColor = System.Drawing.Color.Transparent;
             this.lblDayRitu10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2764,7 +2669,6 @@
             // 
             // lblCusCount1
             // 
-            this.lblCusCount1.AutoSize = true;
             this.lblCusCount1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCusCount1.BackColor = System.Drawing.Color.Transparent;
             this.lblCusCount1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2781,7 +2685,6 @@
             // 
             // lblCusCount2
             // 
-            this.lblCusCount2.AutoSize = true;
             this.lblCusCount2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCusCount2.BackColor = System.Drawing.Color.Transparent;
             this.lblCusCount2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2798,7 +2701,6 @@
             // 
             // lblCusCount3
             // 
-            this.lblCusCount3.AutoSize = true;
             this.lblCusCount3.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCusCount3.BackColor = System.Drawing.Color.Transparent;
             this.lblCusCount3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2815,7 +2717,6 @@
             // 
             // lblCusCount4
             // 
-            this.lblCusCount4.AutoSize = true;
             this.lblCusCount4.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCusCount4.BackColor = System.Drawing.Color.Transparent;
             this.lblCusCount4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2832,7 +2733,6 @@
             // 
             // lblCusCount5
             // 
-            this.lblCusCount5.AutoSize = true;
             this.lblCusCount5.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCusCount5.BackColor = System.Drawing.Color.Transparent;
             this.lblCusCount5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2849,7 +2749,6 @@
             // 
             // lblCusCount6
             // 
-            this.lblCusCount6.AutoSize = true;
             this.lblCusCount6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCusCount6.BackColor = System.Drawing.Color.Transparent;
             this.lblCusCount6.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2866,7 +2765,6 @@
             // 
             // lblCusCount7
             // 
-            this.lblCusCount7.AutoSize = true;
             this.lblCusCount7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCusCount7.BackColor = System.Drawing.Color.Transparent;
             this.lblCusCount7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2883,7 +2781,6 @@
             // 
             // lblCusCount8
             // 
-            this.lblCusCount8.AutoSize = true;
             this.lblCusCount8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCusCount8.BackColor = System.Drawing.Color.Transparent;
             this.lblCusCount8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2900,7 +2797,6 @@
             // 
             // lblCusCount9
             // 
-            this.lblCusCount9.AutoSize = true;
             this.lblCusCount9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCusCount9.BackColor = System.Drawing.Color.Transparent;
             this.lblCusCount9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -2917,7 +2813,6 @@
             // 
             // lblCusCount10
             // 
-            this.lblCusCount10.AutoSize = true;
             this.lblCusCount10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCusCount10.BackColor = System.Drawing.Color.Transparent;
             this.lblCusCount10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
@@ -3151,21 +3046,6 @@
             this.ckmShop_Label10.Text = "金額は税抜額";
             this.ckmShop_Label10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblStoreName10
-            // 
-            this.lblStoreName10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblStoreName10.BackColor = System.Drawing.Color.Transparent;
-            this.lblStoreName10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
-            this.lblStoreName10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
-            this.lblStoreName10.FontBold = true;
-            this.lblStoreName10.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName10.Location = new System.Drawing.Point(86, 679);
-            this.lblStoreName10.Name = "lblStoreName10";
-            this.lblStoreName10.Size = new System.Drawing.Size(334, 65);
-            this.lblStoreName10.TabIndex = 255;
-            this.lblStoreName10.Text = "店舗名　スタッフ名Ｘ";
-            this.lblStoreName10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             // 
             // TempoRegiJissekiSyoukai
             // 
