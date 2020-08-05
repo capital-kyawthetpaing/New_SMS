@@ -550,7 +550,7 @@
             this.lblJuchuuNO1.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO1.Location = new System.Drawing.Point(543, 41);
             this.lblJuchuuNO1.Name = "lblJuchuuNO1";
-            this.lblJuchuuNO1.Size = new System.Drawing.Size(200, 30);
+            this.lblJuchuuNO1.Size = new System.Drawing.Size(300, 30);
             this.lblJuchuuNO1.TabIndex = 71;
             this.lblJuchuuNO1.Text = "XXXXXXXXXXX";
             this.lblJuchuuNO1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -584,7 +584,7 @@
             this.lblStoreName1.ForeColor = System.Drawing.Color.Black;
             this.lblStoreName1.Location = new System.Drawing.Point(81, 41);
             this.lblStoreName1.Name = "lblStoreName1";
-            this.lblStoreName1.Size = new System.Drawing.Size(450, 30);
+            this.lblStoreName1.Size = new System.Drawing.Size(390, 30);
             this.lblStoreName1.TabIndex = 69;
             this.lblStoreName1.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
             this.lblStoreName1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -686,7 +686,7 @@
             this.lblJuchuuNO3.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO3.Location = new System.Drawing.Point(543, 41);
             this.lblJuchuuNO3.Name = "lblJuchuuNO3";
-            this.lblJuchuuNO3.Size = new System.Drawing.Size(225, 30);
+            this.lblJuchuuNO3.Size = new System.Drawing.Size(300, 30);
             this.lblJuchuuNO3.TabIndex = 77;
             this.lblJuchuuNO3.Text = "XXXXXXXXXX";
             this.lblJuchuuNO3.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -720,7 +720,7 @@
             this.lblStoreName3.ForeColor = System.Drawing.Color.Black;
             this.lblStoreName3.Location = new System.Drawing.Point(82, 40);
             this.lblStoreName3.Name = "lblStoreName3";
-            this.lblStoreName3.Size = new System.Drawing.Size(450, 30);
+            this.lblStoreName3.Size = new System.Drawing.Size(390, 30);
             this.lblStoreName3.TabIndex = 75;
             this.lblStoreName3.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
             this.lblStoreName3.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -871,7 +871,7 @@
             this.lblJuchuuNO2.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO2.Location = new System.Drawing.Point(543, 41);
             this.lblJuchuuNO2.Name = "lblJuchuuNO2";
-            this.lblJuchuuNO2.Size = new System.Drawing.Size(225, 30);
+            this.lblJuchuuNO2.Size = new System.Drawing.Size(300, 30);
             this.lblJuchuuNO2.TabIndex = 74;
             this.lblJuchuuNO2.Text = "XXXXXXXXXX";
             this.lblJuchuuNO2.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -905,7 +905,7 @@
             this.lblStoreName2.ForeColor = System.Drawing.Color.Black;
             this.lblStoreName2.Location = new System.Drawing.Point(82, 40);
             this.lblStoreName2.Name = "lblStoreName2";
-            this.lblStoreName2.Size = new System.Drawing.Size(450, 30);
+            this.lblStoreName2.Size = new System.Drawing.Size(390, 30);
             this.lblStoreName2.TabIndex = 72;
             this.lblStoreName2.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
             this.lblStoreName2.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -1040,7 +1040,7 @@
             this.lblStoreName10.ForeColor = System.Drawing.Color.Black;
             this.lblStoreName10.Location = new System.Drawing.Point(82, 38);
             this.lblStoreName10.Name = "lblStoreName10";
-            this.lblStoreName10.Size = new System.Drawing.Size(450, 30);
+            this.lblStoreName10.Size = new System.Drawing.Size(390, 30);
             this.lblStoreName10.TabIndex = 144;
             this.lblStoreName10.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
             this.lblStoreName10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -1057,7 +1057,7 @@
             this.lblJuchuuNO10.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO10.Location = new System.Drawing.Point(542, 41);
             this.lblJuchuuNO10.Name = "lblJuchuuNO10";
-            this.lblJuchuuNO10.Size = new System.Drawing.Size(225, 30);
+            this.lblJuchuuNO10.Size = new System.Drawing.Size(300, 30);
             this.lblJuchuuNO10.TabIndex = 146;
             this.lblJuchuuNO10.Text = "XXXXXXXXXX";
             this.lblJuchuuNO10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -1175,7 +1175,7 @@
             this.lblStoreName9.ForeColor = System.Drawing.Color.Black;
             this.lblStoreName9.Location = new System.Drawing.Point(82, 40);
             this.lblStoreName9.Name = "lblStoreName9";
-            this.lblStoreName9.Size = new System.Drawing.Size(450, 30);
+            this.lblStoreName9.Size = new System.Drawing.Size(390, 30);
             this.lblStoreName9.TabIndex = 134;
             this.lblStoreName9.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
             this.lblStoreName9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -1226,7 +1226,7 @@
             this.lblJuchuuNO9.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO9.Location = new System.Drawing.Point(542, 41);
             this.lblJuchuuNO9.Name = "lblJuchuuNO9";
-            this.lblJuchuuNO9.Size = new System.Drawing.Size(225, 30);
+            this.lblJuchuuNO9.Size = new System.Drawing.Size(300, 30);
             this.lblJuchuuNO9.TabIndex = 136;
             this.lblJuchuuNO9.Text = "XXXXXXXXXX";
             this.lblJuchuuNO9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -1344,7 +1344,7 @@
             this.lblStoreName8.ForeColor = System.Drawing.Color.Black;
             this.lblStoreName8.Location = new System.Drawing.Point(82, 40);
             this.lblStoreName8.Name = "lblStoreName8";
-            this.lblStoreName8.Size = new System.Drawing.Size(450, 30);
+            this.lblStoreName8.Size = new System.Drawing.Size(390, 30);
             this.lblStoreName8.TabIndex = 124;
             this.lblStoreName8.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
             this.lblStoreName8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -1412,7 +1412,7 @@
             this.lblJuchuuNO8.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO8.Location = new System.Drawing.Point(542, 41);
             this.lblJuchuuNO8.Name = "lblJuchuuNO8";
-            this.lblJuchuuNO8.Size = new System.Drawing.Size(225, 30);
+            this.lblJuchuuNO8.Size = new System.Drawing.Size(300, 30);
             this.lblJuchuuNO8.TabIndex = 126;
             this.lblJuchuuNO8.Text = "XXXXXXXXXX";
             this.lblJuchuuNO8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -1513,7 +1513,7 @@
             this.lblStoreName7.ForeColor = System.Drawing.Color.Black;
             this.lblStoreName7.Location = new System.Drawing.Point(82, 40);
             this.lblStoreName7.Name = "lblStoreName7";
-            this.lblStoreName7.Size = new System.Drawing.Size(450, 30);
+            this.lblStoreName7.Size = new System.Drawing.Size(390, 30);
             this.lblStoreName7.TabIndex = 114;
             this.lblStoreName7.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
             this.lblStoreName7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -1547,7 +1547,7 @@
             this.lblJuchuuNO7.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO7.Location = new System.Drawing.Point(542, 41);
             this.lblJuchuuNO7.Name = "lblJuchuuNO7";
-            this.lblJuchuuNO7.Size = new System.Drawing.Size(225, 30);
+            this.lblJuchuuNO7.Size = new System.Drawing.Size(300, 30);
             this.lblJuchuuNO7.TabIndex = 116;
             this.lblJuchuuNO7.Text = "XXXXXXXXXX";
             this.lblJuchuuNO7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -1682,7 +1682,7 @@
             this.lblStoreName6.ForeColor = System.Drawing.Color.Black;
             this.lblStoreName6.Location = new System.Drawing.Point(82, 41);
             this.lblStoreName6.Name = "lblStoreName6";
-            this.lblStoreName6.Size = new System.Drawing.Size(450, 30);
+            this.lblStoreName6.Size = new System.Drawing.Size(390, 30);
             this.lblStoreName6.TabIndex = 104;
             this.lblStoreName6.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
             this.lblStoreName6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -1716,7 +1716,7 @@
             this.lblJuchuuNO6.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO6.Location = new System.Drawing.Point(542, 41);
             this.lblJuchuuNO6.Name = "lblJuchuuNO6";
-            this.lblJuchuuNO6.Size = new System.Drawing.Size(225, 30);
+            this.lblJuchuuNO6.Size = new System.Drawing.Size(300, 30);
             this.lblJuchuuNO6.TabIndex = 106;
             this.lblJuchuuNO6.Text = "XXXXXXXXXX";
             this.lblJuchuuNO6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -1851,7 +1851,7 @@
             this.lblStoreName5.ForeColor = System.Drawing.Color.Black;
             this.lblStoreName5.Location = new System.Drawing.Point(82, 40);
             this.lblStoreName5.Name = "lblStoreName5";
-            this.lblStoreName5.Size = new System.Drawing.Size(450, 30);
+            this.lblStoreName5.Size = new System.Drawing.Size(390, 30);
             this.lblStoreName5.TabIndex = 94;
             this.lblStoreName5.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
             this.lblStoreName5.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -1885,7 +1885,7 @@
             this.lblJuchuuNO5.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO5.Location = new System.Drawing.Point(543, 41);
             this.lblJuchuuNO5.Name = "lblJuchuuNO5";
-            this.lblJuchuuNO5.Size = new System.Drawing.Size(225, 30);
+            this.lblJuchuuNO5.Size = new System.Drawing.Size(300, 30);
             this.lblJuchuuNO5.TabIndex = 96;
             this.lblJuchuuNO5.Text = "XXXXXXXXXX";
             this.lblJuchuuNO5.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -2038,7 +2038,7 @@
             this.lblJuchuuNO4.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO4.Location = new System.Drawing.Point(543, 41);
             this.lblJuchuuNO4.Name = "lblJuchuuNO4";
-            this.lblJuchuuNO4.Size = new System.Drawing.Size(225, 30);
+            this.lblJuchuuNO4.Size = new System.Drawing.Size(300, 30);
             this.lblJuchuuNO4.TabIndex = 86;
             this.lblJuchuuNO4.Text = "XXXXXXXXXX";
             this.lblJuchuuNO4.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -2072,7 +2072,7 @@
             this.lblStoreName4.ForeColor = System.Drawing.Color.Black;
             this.lblStoreName4.Location = new System.Drawing.Point(82, 40);
             this.lblStoreName4.Name = "lblStoreName4";
-            this.lblStoreName4.Size = new System.Drawing.Size(450, 30);
+            this.lblStoreName4.Size = new System.Drawing.Size(390, 30);
             this.lblStoreName4.TabIndex = 84;
             this.lblStoreName4.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
             this.lblStoreName4.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
