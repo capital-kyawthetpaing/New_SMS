@@ -59,7 +59,7 @@ namespace ZaikoShoukai
             this.CB_Tagu4.AcceptKey = true;
             this.CB_Tagu5.AcceptKey = true;
             AddCol();
-            GV_Zaiko.DisabledColumn("colSKUCD,商品名,カラー,サイズ,店舗名,SoukoName,棚番,現在庫,入荷予定,引当可能,メーカー,JANCD,colBrand,ITEM,メーカー商品CD,最速入荷日,基準在庫,販売定価,標準原価");
+            //GV_Zaiko.DisabledColumn("colSKUCD,商品名,カラー,サイズ,店舗名,SoukoName,棚番,現在庫,入荷予定,引当可能,メーカー,JANCD,colBrand,ITEM,メーカー商品CD,最速入荷日,基準在庫,販売定価,標準原価");
         }
 
         protected override void EndSec()
