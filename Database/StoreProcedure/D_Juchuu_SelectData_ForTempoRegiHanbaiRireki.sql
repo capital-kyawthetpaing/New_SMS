@@ -15,7 +15,7 @@ GO
 --       Program ID      TempoRegiHanbaiRireki
 --       Create date:    2019.9.19
 --    ======================================================================
-CREATE PROCEDURE [D_Juchuu_SelectData_ForTempoRegiHanbaiRireki]
+CREATE PROCEDURE [dbo].[D_Juchuu_SelectData_ForTempoRegiHanbaiRireki]
     (    @CustomerCD   varchar(13)
     )AS
     
@@ -40,7 +40,7 @@ BEGIN
           AND A.DeleteFlg = 0
           ORDER BY A.ChangeDate desc) AS StoreName	--受注毎に最初のレコードにだけ表示
           ,ROW_NUMBER() OVER(PARTITION BY DH.JuchuuNO ORDER BY DM.JuchuuRows) ROWNUM
-
+		  ,ROW_NUMBER() OVER(PARTITION BY DS.SalesNO ORDER BY DS.JuchuuRows) ROWNUMS
           ,(SELECT top 1 A.StaffName 
           FROM M_Staff A 
           WHERE A.StaffCD = DH.StaffCD AND A.ChangeDate <= DH.JuchuuDate
@@ -129,7 +129,7 @@ BEGIN
       FROM D_Juchuu DH
 
       INNER JOIN D_JuchuuDetails AS DM ON DH.JuchuuNO = DM.JuchuuNO AND DM.DeleteDateTime IS NULL
-      LEFT OUTER JOIN (SELECT A.SalesNO, A.JuchuuNO FROM D_SalesDetails AS A
+      LEFT OUTER JOIN (SELECT A.SalesNO, A.JuchuuNO,Max(A.JuchuuRows)as JuchuuRows FROM D_SalesDetails AS A
                         WHERE A.DeleteDateTime IS NULL
                         GROUP BY A.SalesNO, A.JuchuuNO
         )AS DS ON DS.JuchuuNO = DM.JuchuuNO
@@ -139,6 +139,7 @@ BEGIN
       ORDER BY DH.JuchuuDate desc, DH.JuchuuNO desc, DM.DisplayRows
       ;
 END
+
 
 GO
 
