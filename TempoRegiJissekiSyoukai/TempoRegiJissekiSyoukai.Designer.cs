@@ -915,7 +915,7 @@
             this.lblCardUrikin1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCardUrikin1.FontBold = true;
             this.lblCardUrikin1.ForeColor = System.Drawing.Color.Black;
-            this.lblCardUrikin1.Location = new System.Drawing.Point(651, 5);
+            this.lblCardUrikin1.Location = new System.Drawing.Point(650, 5);
             this.lblCardUrikin1.Name = "lblCardUrikin1";
             this.lblCardUrikin1.Size = new System.Drawing.Size(189, 30);
             this.lblCardUrikin1.TabIndex = 377;
@@ -931,7 +931,7 @@
             this.lblGenUrikin1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblGenUrikin1.FontBold = true;
             this.lblGenUrikin1.ForeColor = System.Drawing.Color.Black;
-            this.lblGenUrikin1.Location = new System.Drawing.Point(861, 4);
+            this.lblGenUrikin1.Location = new System.Drawing.Point(860, 4);
             this.lblGenUrikin1.Name = "lblGenUrikin1";
             this.lblGenUrikin1.Size = new System.Drawing.Size(189, 30);
             this.lblGenUrikin1.TabIndex = 376;
@@ -947,7 +947,7 @@
             this.lblJyukin1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblJyukin1.FontBold = true;
             this.lblJyukin1.ForeColor = System.Drawing.Color.Black;
-            this.lblJyukin1.Location = new System.Drawing.Point(448, 3);
+            this.lblJyukin1.Location = new System.Drawing.Point(447, 3);
             this.lblJyukin1.Name = "lblJyukin1";
             this.lblJyukin1.Size = new System.Drawing.Size(189, 30);
             this.lblJyukin1.TabIndex = 378;
@@ -963,7 +963,7 @@
             this.lblJyukin2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblJyukin2.FontBold = true;
             this.lblJyukin2.ForeColor = System.Drawing.Color.Black;
-            this.lblJyukin2.Location = new System.Drawing.Point(448, 70);
+            this.lblJyukin2.Location = new System.Drawing.Point(447, 70);
             this.lblJyukin2.Name = "lblJyukin2";
             this.lblJyukin2.Size = new System.Drawing.Size(189, 30);
             this.lblJyukin2.TabIndex = 348;
@@ -979,7 +979,7 @@
             this.lblJyukin3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblJyukin3.FontBold = true;
             this.lblJyukin3.ForeColor = System.Drawing.Color.Black;
-            this.lblJyukin3.Location = new System.Drawing.Point(447, 141);
+            this.lblJyukin3.Location = new System.Drawing.Point(446, 141);
             this.lblJyukin3.Name = "lblJyukin3";
             this.lblJyukin3.Size = new System.Drawing.Size(189, 30);
             this.lblJyukin3.TabIndex = 347;
@@ -995,7 +995,7 @@
             this.lblJyukin4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblJyukin4.FontBold = true;
             this.lblJyukin4.ForeColor = System.Drawing.Color.Black;
-            this.lblJyukin4.Location = new System.Drawing.Point(448, 214);
+            this.lblJyukin4.Location = new System.Drawing.Point(447, 214);
             this.lblJyukin4.Name = "lblJyukin4";
             this.lblJyukin4.Size = new System.Drawing.Size(189, 30);
             this.lblJyukin4.TabIndex = 346;
@@ -1011,7 +1011,7 @@
             this.lblJyukin5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblJyukin5.FontBold = true;
             this.lblJyukin5.ForeColor = System.Drawing.Color.Black;
-            this.lblJyukin5.Location = new System.Drawing.Point(447, 289);
+            this.lblJyukin5.Location = new System.Drawing.Point(446, 289);
             this.lblJyukin5.Name = "lblJyukin5";
             this.lblJyukin5.Size = new System.Drawing.Size(189, 30);
             this.lblJyukin5.TabIndex = 345;
@@ -1027,7 +1027,7 @@
             this.lblJyukin6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblJyukin6.FontBold = true;
             this.lblJyukin6.ForeColor = System.Drawing.Color.Black;
-            this.lblJyukin6.Location = new System.Drawing.Point(448, 363);
+            this.lblJyukin6.Location = new System.Drawing.Point(447, 363);
             this.lblJyukin6.Name = "lblJyukin6";
             this.lblJyukin6.Size = new System.Drawing.Size(189, 30);
             this.lblJyukin6.TabIndex = 344;
@@ -1043,7 +1043,7 @@
             this.lblJyukin7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblJyukin7.FontBold = true;
             this.lblJyukin7.ForeColor = System.Drawing.Color.Black;
-            this.lblJyukin7.Location = new System.Drawing.Point(448, 441);
+            this.lblJyukin7.Location = new System.Drawing.Point(447, 441);
             this.lblJyukin7.Name = "lblJyukin7";
             this.lblJyukin7.Size = new System.Drawing.Size(189, 30);
             this.lblJyukin7.TabIndex = 343;
@@ -1059,7 +1059,7 @@
             this.lblJyukin8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblJyukin8.FontBold = true;
             this.lblJyukin8.ForeColor = System.Drawing.Color.Black;
-            this.lblJyukin8.Location = new System.Drawing.Point(448, 516);
+            this.lblJyukin8.Location = new System.Drawing.Point(447, 516);
             this.lblJyukin8.Name = "lblJyukin8";
             this.lblJyukin8.Size = new System.Drawing.Size(189, 30);
             this.lblJyukin8.TabIndex = 289;
@@ -1075,7 +1075,7 @@
             this.lblJyukin9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblJyukin9.FontBold = true;
             this.lblJyukin9.ForeColor = System.Drawing.Color.Black;
-            this.lblJyukin9.Location = new System.Drawing.Point(447, 596);
+            this.lblJyukin9.Location = new System.Drawing.Point(446, 596);
             this.lblJyukin9.Name = "lblJyukin9";
             this.lblJyukin9.Size = new System.Drawing.Size(189, 30);
             this.lblJyukin9.TabIndex = 276;
@@ -1091,7 +1091,7 @@
             this.lblJyukin10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblJyukin10.FontBold = true;
             this.lblJyukin10.ForeColor = System.Drawing.Color.Black;
-            this.lblJyukin10.Location = new System.Drawing.Point(448, 678);
+            this.lblJyukin10.Location = new System.Drawing.Point(447, 678);
             this.lblJyukin10.Name = "lblJyukin10";
             this.lblJyukin10.Size = new System.Drawing.Size(189, 30);
             this.lblJyukin10.TabIndex = 221;
@@ -1107,7 +1107,7 @@
             this.lblCardUrikin2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCardUrikin2.FontBold = true;
             this.lblCardUrikin2.ForeColor = System.Drawing.Color.Black;
-            this.lblCardUrikin2.Location = new System.Drawing.Point(651, 73);
+            this.lblCardUrikin2.Location = new System.Drawing.Point(650, 73);
             this.lblCardUrikin2.Name = "lblCardUrikin2";
             this.lblCardUrikin2.Size = new System.Drawing.Size(189, 30);
             this.lblCardUrikin2.TabIndex = 336;
@@ -1123,7 +1123,7 @@
             this.lblCardUrikin3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCardUrikin3.FontBold = true;
             this.lblCardUrikin3.ForeColor = System.Drawing.Color.Black;
-            this.lblCardUrikin3.Location = new System.Drawing.Point(650, 142);
+            this.lblCardUrikin3.Location = new System.Drawing.Point(649, 142);
             this.lblCardUrikin3.Name = "lblCardUrikin3";
             this.lblCardUrikin3.Size = new System.Drawing.Size(189, 30);
             this.lblCardUrikin3.TabIndex = 335;
@@ -1139,7 +1139,7 @@
             this.lblCardUrikin4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCardUrikin4.FontBold = true;
             this.lblCardUrikin4.ForeColor = System.Drawing.Color.Black;
-            this.lblCardUrikin4.Location = new System.Drawing.Point(650, 216);
+            this.lblCardUrikin4.Location = new System.Drawing.Point(649, 216);
             this.lblCardUrikin4.Name = "lblCardUrikin4";
             this.lblCardUrikin4.Size = new System.Drawing.Size(189, 30);
             this.lblCardUrikin4.TabIndex = 334;
@@ -1155,7 +1155,7 @@
             this.lblCardUrikin5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCardUrikin5.FontBold = true;
             this.lblCardUrikin5.ForeColor = System.Drawing.Color.Black;
-            this.lblCardUrikin5.Location = new System.Drawing.Point(650, 291);
+            this.lblCardUrikin5.Location = new System.Drawing.Point(649, 291);
             this.lblCardUrikin5.Name = "lblCardUrikin5";
             this.lblCardUrikin5.Size = new System.Drawing.Size(189, 30);
             this.lblCardUrikin5.TabIndex = 333;
@@ -1171,7 +1171,7 @@
             this.lblCardUrikin6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCardUrikin6.FontBold = true;
             this.lblCardUrikin6.ForeColor = System.Drawing.Color.Black;
-            this.lblCardUrikin6.Location = new System.Drawing.Point(650, 364);
+            this.lblCardUrikin6.Location = new System.Drawing.Point(649, 364);
             this.lblCardUrikin6.Name = "lblCardUrikin6";
             this.lblCardUrikin6.Size = new System.Drawing.Size(189, 30);
             this.lblCardUrikin6.TabIndex = 332;
@@ -1187,7 +1187,7 @@
             this.lblCardUrikin7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCardUrikin7.FontBold = true;
             this.lblCardUrikin7.ForeColor = System.Drawing.Color.Black;
-            this.lblCardUrikin7.Location = new System.Drawing.Point(650, 442);
+            this.lblCardUrikin7.Location = new System.Drawing.Point(649, 442);
             this.lblCardUrikin7.Name = "lblCardUrikin7";
             this.lblCardUrikin7.Size = new System.Drawing.Size(189, 30);
             this.lblCardUrikin7.TabIndex = 331;
@@ -1203,7 +1203,7 @@
             this.lblCardUrikin8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCardUrikin8.FontBold = true;
             this.lblCardUrikin8.ForeColor = System.Drawing.Color.Black;
-            this.lblCardUrikin8.Location = new System.Drawing.Point(651, 517);
+            this.lblCardUrikin8.Location = new System.Drawing.Point(650, 517);
             this.lblCardUrikin8.Name = "lblCardUrikin8";
             this.lblCardUrikin8.Size = new System.Drawing.Size(189, 30);
             this.lblCardUrikin8.TabIndex = 288;
@@ -1219,7 +1219,7 @@
             this.lblCardUrikin9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCardUrikin9.FontBold = true;
             this.lblCardUrikin9.ForeColor = System.Drawing.Color.Black;
-            this.lblCardUrikin9.Location = new System.Drawing.Point(651, 597);
+            this.lblCardUrikin9.Location = new System.Drawing.Point(650, 597);
             this.lblCardUrikin9.Name = "lblCardUrikin9";
             this.lblCardUrikin9.Size = new System.Drawing.Size(189, 30);
             this.lblCardUrikin9.TabIndex = 275;
@@ -1235,7 +1235,7 @@
             this.lblCardUrikin10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCardUrikin10.FontBold = true;
             this.lblCardUrikin10.ForeColor = System.Drawing.Color.Black;
-            this.lblCardUrikin10.Location = new System.Drawing.Point(652, 679);
+            this.lblCardUrikin10.Location = new System.Drawing.Point(650, 679);
             this.lblCardUrikin10.Name = "lblCardUrikin10";
             this.lblCardUrikin10.Size = new System.Drawing.Size(189, 30);
             this.lblCardUrikin10.TabIndex = 222;
@@ -1251,7 +1251,7 @@
             this.lblGenUrikin2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblGenUrikin2.FontBold = true;
             this.lblGenUrikin2.ForeColor = System.Drawing.Color.Black;
-            this.lblGenUrikin2.Location = new System.Drawing.Point(861, 72);
+            this.lblGenUrikin2.Location = new System.Drawing.Point(860, 72);
             this.lblGenUrikin2.Name = "lblGenUrikin2";
             this.lblGenUrikin2.Size = new System.Drawing.Size(189, 30);
             this.lblGenUrikin2.TabIndex = 330;
@@ -1267,7 +1267,7 @@
             this.lblGenUrikin3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblGenUrikin3.FontBold = true;
             this.lblGenUrikin3.ForeColor = System.Drawing.Color.Black;
-            this.lblGenUrikin3.Location = new System.Drawing.Point(861, 142);
+            this.lblGenUrikin3.Location = new System.Drawing.Point(860, 142);
             this.lblGenUrikin3.Name = "lblGenUrikin3";
             this.lblGenUrikin3.Size = new System.Drawing.Size(189, 30);
             this.lblGenUrikin3.TabIndex = 329;
@@ -1283,7 +1283,7 @@
             this.lblGenUrikin4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblGenUrikin4.FontBold = true;
             this.lblGenUrikin4.ForeColor = System.Drawing.Color.Black;
-            this.lblGenUrikin4.Location = new System.Drawing.Point(860, 214);
+            this.lblGenUrikin4.Location = new System.Drawing.Point(859, 214);
             this.lblGenUrikin4.Name = "lblGenUrikin4";
             this.lblGenUrikin4.Size = new System.Drawing.Size(189, 30);
             this.lblGenUrikin4.TabIndex = 328;
@@ -1299,7 +1299,7 @@
             this.lblGenUrikin5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblGenUrikin5.FontBold = true;
             this.lblGenUrikin5.ForeColor = System.Drawing.Color.Black;
-            this.lblGenUrikin5.Location = new System.Drawing.Point(861, 289);
+            this.lblGenUrikin5.Location = new System.Drawing.Point(860, 289);
             this.lblGenUrikin5.Name = "lblGenUrikin5";
             this.lblGenUrikin5.Size = new System.Drawing.Size(189, 30);
             this.lblGenUrikin5.TabIndex = 327;
@@ -1315,7 +1315,7 @@
             this.lblGenUrikin6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblGenUrikin6.FontBold = true;
             this.lblGenUrikin6.ForeColor = System.Drawing.Color.Black;
-            this.lblGenUrikin6.Location = new System.Drawing.Point(860, 363);
+            this.lblGenUrikin6.Location = new System.Drawing.Point(859, 363);
             this.lblGenUrikin6.Name = "lblGenUrikin6";
             this.lblGenUrikin6.Size = new System.Drawing.Size(189, 30);
             this.lblGenUrikin6.TabIndex = 326;
@@ -1331,7 +1331,7 @@
             this.lblGenUrikin7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblGenUrikin7.FontBold = true;
             this.lblGenUrikin7.ForeColor = System.Drawing.Color.Black;
-            this.lblGenUrikin7.Location = new System.Drawing.Point(861, 441);
+            this.lblGenUrikin7.Location = new System.Drawing.Point(860, 441);
             this.lblGenUrikin7.Name = "lblGenUrikin7";
             this.lblGenUrikin7.Size = new System.Drawing.Size(189, 30);
             this.lblGenUrikin7.TabIndex = 325;
@@ -1347,7 +1347,7 @@
             this.lblGenUrikin8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblGenUrikin8.FontBold = true;
             this.lblGenUrikin8.ForeColor = System.Drawing.Color.Black;
-            this.lblGenUrikin8.Location = new System.Drawing.Point(860, 516);
+            this.lblGenUrikin8.Location = new System.Drawing.Point(859, 516);
             this.lblGenUrikin8.Name = "lblGenUrikin8";
             this.lblGenUrikin8.Size = new System.Drawing.Size(189, 30);
             this.lblGenUrikin8.TabIndex = 287;
@@ -1363,7 +1363,7 @@
             this.lblGenUrikin9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblGenUrikin9.FontBold = true;
             this.lblGenUrikin9.ForeColor = System.Drawing.Color.Black;
-            this.lblGenUrikin9.Location = new System.Drawing.Point(860, 597);
+            this.lblGenUrikin9.Location = new System.Drawing.Point(859, 597);
             this.lblGenUrikin9.Name = "lblGenUrikin9";
             this.lblGenUrikin9.Size = new System.Drawing.Size(189, 30);
             this.lblGenUrikin9.TabIndex = 274;
@@ -1379,7 +1379,7 @@
             this.lblGenUrikin10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblGenUrikin10.FontBold = true;
             this.lblGenUrikin10.ForeColor = System.Drawing.Color.Black;
-            this.lblGenUrikin10.Location = new System.Drawing.Point(861, 677);
+            this.lblGenUrikin10.Location = new System.Drawing.Point(860, 677);
             this.lblGenUrikin10.Name = "lblGenUrikin10";
             this.lblGenUrikin10.Size = new System.Drawing.Size(189, 30);
             this.lblGenUrikin10.TabIndex = 223;
@@ -1395,7 +1395,7 @@
             this.lblKakeUrikin1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblKakeUrikin1.FontBold = true;
             this.lblKakeUrikin1.ForeColor = System.Drawing.Color.Black;
-            this.lblKakeUrikin1.Location = new System.Drawing.Point(1080, 1);
+            this.lblKakeUrikin1.Location = new System.Drawing.Point(1079, 1);
             this.lblKakeUrikin1.Name = "lblKakeUrikin1";
             this.lblKakeUrikin1.Size = new System.Drawing.Size(189, 30);
             this.lblKakeUrikin1.TabIndex = 380;
@@ -1411,7 +1411,7 @@
             this.lblSonotakin1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSonotakin1.FontBold = true;
             this.lblSonotakin1.ForeColor = System.Drawing.Color.Black;
-            this.lblSonotakin1.Location = new System.Drawing.Point(1080, 33);
+            this.lblSonotakin1.Location = new System.Drawing.Point(1079, 33);
             this.lblSonotakin1.Name = "lblSonotakin1";
             this.lblSonotakin1.Size = new System.Drawing.Size(189, 30);
             this.lblSonotakin1.TabIndex = 159;
@@ -1427,7 +1427,7 @@
             this.lblKakeUrikin2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblKakeUrikin2.FontBold = true;
             this.lblKakeUrikin2.ForeColor = System.Drawing.Color.Black;
-            this.lblKakeUrikin2.Location = new System.Drawing.Point(1080, 69);
+            this.lblKakeUrikin2.Location = new System.Drawing.Point(1079, 69);
             this.lblKakeUrikin2.Name = "lblKakeUrikin2";
             this.lblKakeUrikin2.Size = new System.Drawing.Size(189, 30);
             this.lblKakeUrikin2.TabIndex = 342;
@@ -1443,7 +1443,7 @@
             this.lblKakeUrikin3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblKakeUrikin3.FontBold = true;
             this.lblKakeUrikin3.ForeColor = System.Drawing.Color.Black;
-            this.lblKakeUrikin3.Location = new System.Drawing.Point(1079, 141);
+            this.lblKakeUrikin3.Location = new System.Drawing.Point(1078, 141);
             this.lblKakeUrikin3.Name = "lblKakeUrikin3";
             this.lblKakeUrikin3.Size = new System.Drawing.Size(189, 30);
             this.lblKakeUrikin3.TabIndex = 341;
@@ -1459,7 +1459,7 @@
             this.lblKakeUrikin4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblKakeUrikin4.FontBold = true;
             this.lblKakeUrikin4.ForeColor = System.Drawing.Color.Black;
-            this.lblKakeUrikin4.Location = new System.Drawing.Point(1080, 214);
+            this.lblKakeUrikin4.Location = new System.Drawing.Point(1079, 214);
             this.lblKakeUrikin4.Name = "lblKakeUrikin4";
             this.lblKakeUrikin4.Size = new System.Drawing.Size(189, 30);
             this.lblKakeUrikin4.TabIndex = 340;
@@ -1475,7 +1475,7 @@
             this.lblKakeUrikin5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblKakeUrikin5.FontBold = true;
             this.lblKakeUrikin5.ForeColor = System.Drawing.Color.Black;
-            this.lblKakeUrikin5.Location = new System.Drawing.Point(1079, 290);
+            this.lblKakeUrikin5.Location = new System.Drawing.Point(1078, 288);
             this.lblKakeUrikin5.Name = "lblKakeUrikin5";
             this.lblKakeUrikin5.Size = new System.Drawing.Size(189, 30);
             this.lblKakeUrikin5.TabIndex = 339;
@@ -1491,7 +1491,7 @@
             this.lblKakeUrikin6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblKakeUrikin6.FontBold = true;
             this.lblKakeUrikin6.ForeColor = System.Drawing.Color.Black;
-            this.lblKakeUrikin6.Location = new System.Drawing.Point(1079, 364);
+            this.lblKakeUrikin6.Location = new System.Drawing.Point(1078, 364);
             this.lblKakeUrikin6.Name = "lblKakeUrikin6";
             this.lblKakeUrikin6.Size = new System.Drawing.Size(189, 30);
             this.lblKakeUrikin6.TabIndex = 338;
@@ -1507,7 +1507,7 @@
             this.lblKakeUrikin7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblKakeUrikin7.FontBold = true;
             this.lblKakeUrikin7.ForeColor = System.Drawing.Color.Black;
-            this.lblKakeUrikin7.Location = new System.Drawing.Point(1080, 441);
+            this.lblKakeUrikin7.Location = new System.Drawing.Point(1079, 441);
             this.lblKakeUrikin7.Name = "lblKakeUrikin7";
             this.lblKakeUrikin7.Size = new System.Drawing.Size(189, 30);
             this.lblKakeUrikin7.TabIndex = 337;
@@ -1523,7 +1523,7 @@
             this.lblSonotakin2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSonotakin2.FontBold = true;
             this.lblSonotakin2.ForeColor = System.Drawing.Color.Black;
-            this.lblSonotakin2.Location = new System.Drawing.Point(1080, 102);
+            this.lblSonotakin2.Location = new System.Drawing.Point(1079, 102);
             this.lblSonotakin2.Name = "lblSonotakin2";
             this.lblSonotakin2.Size = new System.Drawing.Size(189, 30);
             this.lblSonotakin2.TabIndex = 324;
@@ -1539,7 +1539,7 @@
             this.lblSonotakin3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSonotakin3.FontBold = true;
             this.lblSonotakin3.ForeColor = System.Drawing.Color.Black;
-            this.lblSonotakin3.Location = new System.Drawing.Point(1079, 175);
+            this.lblSonotakin3.Location = new System.Drawing.Point(1078, 175);
             this.lblSonotakin3.Name = "lblSonotakin3";
             this.lblSonotakin3.Size = new System.Drawing.Size(189, 30);
             this.lblSonotakin3.TabIndex = 323;
@@ -1555,7 +1555,7 @@
             this.lblSonotakin4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSonotakin4.FontBold = true;
             this.lblSonotakin4.ForeColor = System.Drawing.Color.Black;
-            this.lblSonotakin4.Location = new System.Drawing.Point(1080, 250);
+            this.lblSonotakin4.Location = new System.Drawing.Point(1079, 250);
             this.lblSonotakin4.Name = "lblSonotakin4";
             this.lblSonotakin4.Size = new System.Drawing.Size(189, 30);
             this.lblSonotakin4.TabIndex = 322;
@@ -1571,7 +1571,7 @@
             this.lblSonotakin5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSonotakin5.FontBold = true;
             this.lblSonotakin5.ForeColor = System.Drawing.Color.Black;
-            this.lblSonotakin5.Location = new System.Drawing.Point(1079, 324);
+            this.lblSonotakin5.Location = new System.Drawing.Point(1078, 324);
             this.lblSonotakin5.Name = "lblSonotakin5";
             this.lblSonotakin5.Size = new System.Drawing.Size(189, 30);
             this.lblSonotakin5.TabIndex = 321;
@@ -1587,7 +1587,7 @@
             this.lblSonotakin6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSonotakin6.FontBold = true;
             this.lblSonotakin6.ForeColor = System.Drawing.Color.Black;
-            this.lblSonotakin6.Location = new System.Drawing.Point(1079, 402);
+            this.lblSonotakin6.Location = new System.Drawing.Point(1078, 402);
             this.lblSonotakin6.Name = "lblSonotakin6";
             this.lblSonotakin6.Size = new System.Drawing.Size(189, 30);
             this.lblSonotakin6.TabIndex = 320;
@@ -1603,7 +1603,7 @@
             this.lblSonotakin7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSonotakin7.FontBold = true;
             this.lblSonotakin7.ForeColor = System.Drawing.Color.Black;
-            this.lblSonotakin7.Location = new System.Drawing.Point(1080, 477);
+            this.lblSonotakin7.Location = new System.Drawing.Point(1079, 477);
             this.lblSonotakin7.Name = "lblSonotakin7";
             this.lblSonotakin7.Size = new System.Drawing.Size(189, 30);
             this.lblSonotakin7.TabIndex = 319;
@@ -1619,7 +1619,7 @@
             this.lblKakeUrikin8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblKakeUrikin8.FontBold = true;
             this.lblKakeUrikin8.ForeColor = System.Drawing.Color.Black;
-            this.lblKakeUrikin8.Location = new System.Drawing.Point(1080, 516);
+            this.lblKakeUrikin8.Location = new System.Drawing.Point(1079, 516);
             this.lblKakeUrikin8.Name = "lblKakeUrikin8";
             this.lblKakeUrikin8.Size = new System.Drawing.Size(189, 30);
             this.lblKakeUrikin8.TabIndex = 286;
@@ -1635,7 +1635,7 @@
             this.lblSonotakin8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSonotakin8.FontBold = true;
             this.lblSonotakin8.ForeColor = System.Drawing.Color.Black;
-            this.lblSonotakin8.Location = new System.Drawing.Point(1080, 555);
+            this.lblSonotakin8.Location = new System.Drawing.Point(1079, 555);
             this.lblSonotakin8.Name = "lblSonotakin8";
             this.lblSonotakin8.Size = new System.Drawing.Size(189, 30);
             this.lblSonotakin8.TabIndex = 285;
@@ -1651,7 +1651,7 @@
             this.lblKakeUrikin9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblKakeUrikin9.FontBold = true;
             this.lblKakeUrikin9.ForeColor = System.Drawing.Color.Black;
-            this.lblKakeUrikin9.Location = new System.Drawing.Point(1080, 596);
+            this.lblKakeUrikin9.Location = new System.Drawing.Point(1079, 596);
             this.lblKakeUrikin9.Name = "lblKakeUrikin9";
             this.lblKakeUrikin9.Size = new System.Drawing.Size(189, 30);
             this.lblKakeUrikin9.TabIndex = 273;
@@ -1667,7 +1667,7 @@
             this.lblSonotakin9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSonotakin9.FontBold = true;
             this.lblSonotakin9.ForeColor = System.Drawing.Color.Black;
-            this.lblSonotakin9.Location = new System.Drawing.Point(1080, 636);
+            this.lblSonotakin9.Location = new System.Drawing.Point(1079, 636);
             this.lblSonotakin9.Name = "lblSonotakin9";
             this.lblSonotakin9.Size = new System.Drawing.Size(189, 30);
             this.lblSonotakin9.TabIndex = 272;
@@ -1683,7 +1683,7 @@
             this.lblKakeUrikin10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblKakeUrikin10.FontBold = true;
             this.lblKakeUrikin10.ForeColor = System.Drawing.Color.Black;
-            this.lblKakeUrikin10.Location = new System.Drawing.Point(1079, 680);
+            this.lblKakeUrikin10.Location = new System.Drawing.Point(1078, 680);
             this.lblKakeUrikin10.Name = "lblKakeUrikin10";
             this.lblKakeUrikin10.Size = new System.Drawing.Size(189, 30);
             this.lblKakeUrikin10.TabIndex = 224;
@@ -1699,7 +1699,7 @@
             this.lblSonotakin10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSonotakin10.FontBold = true;
             this.lblSonotakin10.ForeColor = System.Drawing.Color.Black;
-            this.lblSonotakin10.Location = new System.Drawing.Point(1079, 718);
+            this.lblSonotakin10.Location = new System.Drawing.Point(1078, 718);
             this.lblSonotakin10.Name = "lblSonotakin10";
             this.lblSonotakin10.Size = new System.Drawing.Size(189, 30);
             this.lblSonotakin10.TabIndex = 225;
@@ -1715,7 +1715,7 @@
             this.lblDayUrikin1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayUrikin1.FontBold = true;
             this.lblDayUrikin1.ForeColor = System.Drawing.Color.Black;
-            this.lblDayUrikin1.Location = new System.Drawing.Point(1281, 2);
+            this.lblDayUrikin1.Location = new System.Drawing.Point(1280, 2);
             this.lblDayUrikin1.Name = "lblDayUrikin1";
             this.lblDayUrikin1.Size = new System.Drawing.Size(189, 30);
             this.lblDayUrikin1.TabIndex = 379;
@@ -1731,7 +1731,7 @@
             this.lblMonthUrikin1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthUrikin1.FontBold = true;
             this.lblMonthUrikin1.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthUrikin1.Location = new System.Drawing.Point(1280, 33);
+            this.lblMonthUrikin1.Location = new System.Drawing.Point(1279, 33);
             this.lblMonthUrikin1.Name = "lblMonthUrikin1";
             this.lblMonthUrikin1.Size = new System.Drawing.Size(189, 30);
             this.lblMonthUrikin1.TabIndex = 375;
@@ -1747,7 +1747,7 @@
             this.lblDayUrikin2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayUrikin2.FontBold = true;
             this.lblDayUrikin2.ForeColor = System.Drawing.Color.Black;
-            this.lblDayUrikin2.Location = new System.Drawing.Point(1281, 70);
+            this.lblDayUrikin2.Location = new System.Drawing.Point(1280, 70);
             this.lblDayUrikin2.Name = "lblDayUrikin2";
             this.lblDayUrikin2.Size = new System.Drawing.Size(189, 30);
             this.lblDayUrikin2.TabIndex = 367;
@@ -1763,7 +1763,7 @@
             this.lblMonthUrikin2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthUrikin2.FontBold = true;
             this.lblMonthUrikin2.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthUrikin2.Location = new System.Drawing.Point(1281, 103);
+            this.lblMonthUrikin2.Location = new System.Drawing.Point(1280, 103);
             this.lblMonthUrikin2.Name = "lblMonthUrikin2";
             this.lblMonthUrikin2.Size = new System.Drawing.Size(189, 30);
             this.lblMonthUrikin2.TabIndex = 362;
@@ -1779,7 +1779,7 @@
             this.lblDayUrikin3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayUrikin3.FontBold = true;
             this.lblDayUrikin3.ForeColor = System.Drawing.Color.Black;
-            this.lblDayUrikin3.Location = new System.Drawing.Point(1281, 142);
+            this.lblDayUrikin3.Location = new System.Drawing.Point(1280, 142);
             this.lblDayUrikin3.Name = "lblDayUrikin3";
             this.lblDayUrikin3.Size = new System.Drawing.Size(189, 30);
             this.lblDayUrikin3.TabIndex = 315;
@@ -1795,7 +1795,7 @@
             this.lblDayUrikin4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayUrikin4.FontBold = true;
             this.lblDayUrikin4.ForeColor = System.Drawing.Color.Black;
-            this.lblDayUrikin4.Location = new System.Drawing.Point(1281, 214);
+            this.lblDayUrikin4.Location = new System.Drawing.Point(1280, 214);
             this.lblDayUrikin4.Name = "lblDayUrikin4";
             this.lblDayUrikin4.Size = new System.Drawing.Size(189, 30);
             this.lblDayUrikin4.TabIndex = 314;
@@ -1811,7 +1811,7 @@
             this.lblDayUrikin5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayUrikin5.FontBold = true;
             this.lblDayUrikin5.ForeColor = System.Drawing.Color.Black;
-            this.lblDayUrikin5.Location = new System.Drawing.Point(1282, 288);
+            this.lblDayUrikin5.Location = new System.Drawing.Point(1281, 288);
             this.lblDayUrikin5.Name = "lblDayUrikin5";
             this.lblDayUrikin5.Size = new System.Drawing.Size(189, 30);
             this.lblDayUrikin5.TabIndex = 313;
@@ -1827,7 +1827,7 @@
             this.lblDayUrikin6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayUrikin6.FontBold = true;
             this.lblDayUrikin6.ForeColor = System.Drawing.Color.Black;
-            this.lblDayUrikin6.Location = new System.Drawing.Point(1281, 363);
+            this.lblDayUrikin6.Location = new System.Drawing.Point(1280, 363);
             this.lblDayUrikin6.Name = "lblDayUrikin6";
             this.lblDayUrikin6.Size = new System.Drawing.Size(189, 30);
             this.lblDayUrikin6.TabIndex = 312;
@@ -1843,7 +1843,7 @@
             this.lblDayUrikin7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayUrikin7.FontBold = true;
             this.lblDayUrikin7.ForeColor = System.Drawing.Color.Black;
-            this.lblDayUrikin7.Location = new System.Drawing.Point(1281, 440);
+            this.lblDayUrikin7.Location = new System.Drawing.Point(1280, 440);
             this.lblDayUrikin7.Name = "lblDayUrikin7";
             this.lblDayUrikin7.Size = new System.Drawing.Size(189, 30);
             this.lblDayUrikin7.TabIndex = 311;
@@ -1859,7 +1859,7 @@
             this.lblMonthUrikin3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthUrikin3.FontBold = true;
             this.lblMonthUrikin3.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthUrikin3.Location = new System.Drawing.Point(1281, 175);
+            this.lblMonthUrikin3.Location = new System.Drawing.Point(1280, 175);
             this.lblMonthUrikin3.Name = "lblMonthUrikin3";
             this.lblMonthUrikin3.Size = new System.Drawing.Size(189, 30);
             this.lblMonthUrikin3.TabIndex = 310;
@@ -1875,7 +1875,7 @@
             this.lblMonthUrikin4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthUrikin4.FontBold = true;
             this.lblMonthUrikin4.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthUrikin4.Location = new System.Drawing.Point(1281, 250);
+            this.lblMonthUrikin4.Location = new System.Drawing.Point(1280, 250);
             this.lblMonthUrikin4.Name = "lblMonthUrikin4";
             this.lblMonthUrikin4.Size = new System.Drawing.Size(189, 30);
             this.lblMonthUrikin4.TabIndex = 309;
@@ -1891,7 +1891,7 @@
             this.lblMonthUrikin5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthUrikin5.FontBold = true;
             this.lblMonthUrikin5.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthUrikin5.Location = new System.Drawing.Point(1282, 324);
+            this.lblMonthUrikin5.Location = new System.Drawing.Point(1281, 324);
             this.lblMonthUrikin5.Name = "lblMonthUrikin5";
             this.lblMonthUrikin5.Size = new System.Drawing.Size(189, 30);
             this.lblMonthUrikin5.TabIndex = 308;
@@ -1907,7 +1907,7 @@
             this.lblMonthUrikin6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthUrikin6.FontBold = true;
             this.lblMonthUrikin6.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthUrikin6.Location = new System.Drawing.Point(1281, 400);
+            this.lblMonthUrikin6.Location = new System.Drawing.Point(1280, 400);
             this.lblMonthUrikin6.Name = "lblMonthUrikin6";
             this.lblMonthUrikin6.Size = new System.Drawing.Size(189, 30);
             this.lblMonthUrikin6.TabIndex = 307;
@@ -1923,7 +1923,7 @@
             this.lblMonthUrikin7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthUrikin7.FontBold = true;
             this.lblMonthUrikin7.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthUrikin7.Location = new System.Drawing.Point(1281, 477);
+            this.lblMonthUrikin7.Location = new System.Drawing.Point(1280, 477);
             this.lblMonthUrikin7.Name = "lblMonthUrikin7";
             this.lblMonthUrikin7.Size = new System.Drawing.Size(189, 30);
             this.lblMonthUrikin7.TabIndex = 306;
@@ -1939,7 +1939,7 @@
             this.lblDayUrikin8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayUrikin8.FontBold = true;
             this.lblDayUrikin8.ForeColor = System.Drawing.Color.Black;
-            this.lblDayUrikin8.Location = new System.Drawing.Point(1281, 517);
+            this.lblDayUrikin8.Location = new System.Drawing.Point(1280, 517);
             this.lblDayUrikin8.Name = "lblDayUrikin8";
             this.lblDayUrikin8.Size = new System.Drawing.Size(189, 30);
             this.lblDayUrikin8.TabIndex = 284;
@@ -1955,7 +1955,7 @@
             this.lblMonthUrikin8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthUrikin8.FontBold = true;
             this.lblMonthUrikin8.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthUrikin8.Location = new System.Drawing.Point(1281, 556);
+            this.lblMonthUrikin8.Location = new System.Drawing.Point(1280, 556);
             this.lblMonthUrikin8.Name = "lblMonthUrikin8";
             this.lblMonthUrikin8.Size = new System.Drawing.Size(189, 30);
             this.lblMonthUrikin8.TabIndex = 283;
@@ -1971,7 +1971,7 @@
             this.lblDayUrikin9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayUrikin9.FontBold = true;
             this.lblDayUrikin9.ForeColor = System.Drawing.Color.Black;
-            this.lblDayUrikin9.Location = new System.Drawing.Point(1281, 595);
+            this.lblDayUrikin9.Location = new System.Drawing.Point(1280, 595);
             this.lblDayUrikin9.Name = "lblDayUrikin9";
             this.lblDayUrikin9.Size = new System.Drawing.Size(189, 30);
             this.lblDayUrikin9.TabIndex = 271;
@@ -1987,7 +1987,7 @@
             this.lblMonthUrikin9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthUrikin9.FontBold = true;
             this.lblMonthUrikin9.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthUrikin9.Location = new System.Drawing.Point(1281, 633);
+            this.lblMonthUrikin9.Location = new System.Drawing.Point(1280, 633);
             this.lblMonthUrikin9.Name = "lblMonthUrikin9";
             this.lblMonthUrikin9.Size = new System.Drawing.Size(189, 30);
             this.lblMonthUrikin9.TabIndex = 270;
@@ -2003,7 +2003,7 @@
             this.lblDayUrikin10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayUrikin10.FontBold = true;
             this.lblDayUrikin10.ForeColor = System.Drawing.Color.Black;
-            this.lblDayUrikin10.Location = new System.Drawing.Point(1281, 675);
+            this.lblDayUrikin10.Location = new System.Drawing.Point(1280, 675);
             this.lblDayUrikin10.Name = "lblDayUrikin10";
             this.lblDayUrikin10.Size = new System.Drawing.Size(189, 30);
             this.lblDayUrikin10.TabIndex = 226;
@@ -2019,7 +2019,7 @@
             this.lblMonthUrikin10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthUrikin10.FontBold = true;
             this.lblMonthUrikin10.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthUrikin10.Location = new System.Drawing.Point(1281, 716);
+            this.lblMonthUrikin10.Location = new System.Drawing.Point(1280, 716);
             this.lblMonthUrikin10.Name = "lblMonthUrikin10";
             this.lblMonthUrikin10.Size = new System.Drawing.Size(189, 30);
             this.lblMonthUrikin10.TabIndex = 227;
@@ -2035,7 +2035,7 @@
             this.lblDayYoskin1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayYoskin1.FontBold = true;
             this.lblDayYoskin1.ForeColor = System.Drawing.Color.Black;
-            this.lblDayYoskin1.Location = new System.Drawing.Point(1480, 2);
+            this.lblDayYoskin1.Location = new System.Drawing.Point(1479, 2);
             this.lblDayYoskin1.Name = "lblDayYoskin1";
             this.lblDayYoskin1.Size = new System.Drawing.Size(189, 30);
             this.lblDayYoskin1.TabIndex = 366;
@@ -2051,7 +2051,7 @@
             this.lblMonthYoskin1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthYoskin1.FontBold = true;
             this.lblMonthYoskin1.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthYoskin1.Location = new System.Drawing.Point(1480, 33);
+            this.lblMonthYoskin1.Location = new System.Drawing.Point(1479, 33);
             this.lblMonthYoskin1.Name = "lblMonthYoskin1";
             this.lblMonthYoskin1.Size = new System.Drawing.Size(189, 30);
             this.lblMonthYoskin1.TabIndex = 365;
@@ -2067,7 +2067,7 @@
             this.lblDayYoskin2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayYoskin2.FontBold = true;
             this.lblDayYoskin2.ForeColor = System.Drawing.Color.Black;
-            this.lblDayYoskin2.Location = new System.Drawing.Point(1480, 70);
+            this.lblDayYoskin2.Location = new System.Drawing.Point(1479, 70);
             this.lblDayYoskin2.Name = "lblDayYoskin2";
             this.lblDayYoskin2.Size = new System.Drawing.Size(189, 30);
             this.lblDayYoskin2.TabIndex = 361;
@@ -2083,7 +2083,7 @@
             this.lblDayYoskin3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayYoskin3.FontBold = true;
             this.lblDayYoskin3.ForeColor = System.Drawing.Color.Black;
-            this.lblDayYoskin3.Location = new System.Drawing.Point(1480, 140);
+            this.lblDayYoskin3.Location = new System.Drawing.Point(1479, 140);
             this.lblDayYoskin3.Name = "lblDayYoskin3";
             this.lblDayYoskin3.Size = new System.Drawing.Size(189, 30);
             this.lblDayYoskin3.TabIndex = 360;
@@ -2099,7 +2099,7 @@
             this.lblDayYoskin4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayYoskin4.FontBold = true;
             this.lblDayYoskin4.ForeColor = System.Drawing.Color.Black;
-            this.lblDayYoskin4.Location = new System.Drawing.Point(1480, 213);
+            this.lblDayYoskin4.Location = new System.Drawing.Point(1479, 213);
             this.lblDayYoskin4.Name = "lblDayYoskin4";
             this.lblDayYoskin4.Size = new System.Drawing.Size(189, 30);
             this.lblDayYoskin4.TabIndex = 359;
@@ -2115,7 +2115,7 @@
             this.lblMonthYoskin2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthYoskin2.FontBold = true;
             this.lblMonthYoskin2.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthYoskin2.Location = new System.Drawing.Point(1480, 102);
+            this.lblMonthYoskin2.Location = new System.Drawing.Point(1479, 102);
             this.lblMonthYoskin2.Name = "lblMonthYoskin2";
             this.lblMonthYoskin2.Size = new System.Drawing.Size(189, 30);
             this.lblMonthYoskin2.TabIndex = 318;
@@ -2131,7 +2131,7 @@
             this.lblMonthYoskin3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthYoskin3.FontBold = true;
             this.lblMonthYoskin3.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthYoskin3.Location = new System.Drawing.Point(1479, 176);
+            this.lblMonthYoskin3.Location = new System.Drawing.Point(1478, 176);
             this.lblMonthYoskin3.Name = "lblMonthYoskin3";
             this.lblMonthYoskin3.Size = new System.Drawing.Size(189, 30);
             this.lblMonthYoskin3.TabIndex = 317;
@@ -2147,7 +2147,7 @@
             this.lblMonthYoskin4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthYoskin4.FontBold = true;
             this.lblMonthYoskin4.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthYoskin4.Location = new System.Drawing.Point(1479, 249);
+            this.lblMonthYoskin4.Location = new System.Drawing.Point(1478, 249);
             this.lblMonthYoskin4.Name = "lblMonthYoskin4";
             this.lblMonthYoskin4.Size = new System.Drawing.Size(189, 30);
             this.lblMonthYoskin4.TabIndex = 316;
@@ -2163,7 +2163,7 @@
             this.lblDayYoskin5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayYoskin5.FontBold = true;
             this.lblDayYoskin5.ForeColor = System.Drawing.Color.Black;
-            this.lblDayYoskin5.Location = new System.Drawing.Point(1480, 288);
+            this.lblDayYoskin5.Location = new System.Drawing.Point(1479, 288);
             this.lblDayYoskin5.Name = "lblDayYoskin5";
             this.lblDayYoskin5.Size = new System.Drawing.Size(189, 30);
             this.lblDayYoskin5.TabIndex = 301;
@@ -2179,7 +2179,7 @@
             this.lblDayYoskin6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayYoskin6.FontBold = true;
             this.lblDayYoskin6.ForeColor = System.Drawing.Color.Black;
-            this.lblDayYoskin6.Location = new System.Drawing.Point(1480, 363);
+            this.lblDayYoskin6.Location = new System.Drawing.Point(1479, 363);
             this.lblDayYoskin6.Name = "lblDayYoskin6";
             this.lblDayYoskin6.Size = new System.Drawing.Size(189, 30);
             this.lblDayYoskin6.TabIndex = 300;
@@ -2195,7 +2195,7 @@
             this.lblDayYoskin7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayYoskin7.FontBold = true;
             this.lblDayYoskin7.ForeColor = System.Drawing.Color.Black;
-            this.lblDayYoskin7.Location = new System.Drawing.Point(1481, 440);
+            this.lblDayYoskin7.Location = new System.Drawing.Point(1480, 440);
             this.lblDayYoskin7.Name = "lblDayYoskin7";
             this.lblDayYoskin7.Size = new System.Drawing.Size(189, 30);
             this.lblDayYoskin7.TabIndex = 299;
@@ -2211,7 +2211,7 @@
             this.lblMonthYoskin5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthYoskin5.FontBold = true;
             this.lblMonthYoskin5.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthYoskin5.Location = new System.Drawing.Point(1480, 324);
+            this.lblMonthYoskin5.Location = new System.Drawing.Point(1479, 324);
             this.lblMonthYoskin5.Name = "lblMonthYoskin5";
             this.lblMonthYoskin5.Size = new System.Drawing.Size(189, 30);
             this.lblMonthYoskin5.TabIndex = 298;
@@ -2227,7 +2227,7 @@
             this.lblMonthYoskin6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthYoskin6.FontBold = true;
             this.lblMonthYoskin6.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthYoskin6.Location = new System.Drawing.Point(1479, 402);
+            this.lblMonthYoskin6.Location = new System.Drawing.Point(1478, 402);
             this.lblMonthYoskin6.Name = "lblMonthYoskin6";
             this.lblMonthYoskin6.Size = new System.Drawing.Size(189, 30);
             this.lblMonthYoskin6.TabIndex = 297;
@@ -2243,7 +2243,7 @@
             this.lblMonthYoskin7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthYoskin7.FontBold = true;
             this.lblMonthYoskin7.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthYoskin7.Location = new System.Drawing.Point(1480, 477);
+            this.lblMonthYoskin7.Location = new System.Drawing.Point(1479, 477);
             this.lblMonthYoskin7.Name = "lblMonthYoskin7";
             this.lblMonthYoskin7.Size = new System.Drawing.Size(189, 30);
             this.lblMonthYoskin7.TabIndex = 296;
@@ -2259,7 +2259,7 @@
             this.lblDayYoskin8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayYoskin8.FontBold = true;
             this.lblDayYoskin8.ForeColor = System.Drawing.Color.Black;
-            this.lblDayYoskin8.Location = new System.Drawing.Point(1480, 516);
+            this.lblDayYoskin8.Location = new System.Drawing.Point(1479, 516);
             this.lblDayYoskin8.Name = "lblDayYoskin8";
             this.lblDayYoskin8.Size = new System.Drawing.Size(189, 30);
             this.lblDayYoskin8.TabIndex = 282;
@@ -2275,7 +2275,7 @@
             this.lblMonthYoskin8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthYoskin8.FontBold = true;
             this.lblMonthYoskin8.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthYoskin8.Location = new System.Drawing.Point(1480, 556);
+            this.lblMonthYoskin8.Location = new System.Drawing.Point(1479, 556);
             this.lblMonthYoskin8.Name = "lblMonthYoskin8";
             this.lblMonthYoskin8.Size = new System.Drawing.Size(189, 30);
             this.lblMonthYoskin8.TabIndex = 281;
@@ -2291,7 +2291,7 @@
             this.lblDayYoskin9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayYoskin9.FontBold = true;
             this.lblDayYoskin9.ForeColor = System.Drawing.Color.Black;
-            this.lblDayYoskin9.Location = new System.Drawing.Point(1480, 596);
+            this.lblDayYoskin9.Location = new System.Drawing.Point(1479, 596);
             this.lblDayYoskin9.Name = "lblDayYoskin9";
             this.lblDayYoskin9.Size = new System.Drawing.Size(189, 30);
             this.lblDayYoskin9.TabIndex = 269;
@@ -2307,7 +2307,7 @@
             this.lblMonthYoskin9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthYoskin9.FontBold = true;
             this.lblMonthYoskin9.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthYoskin9.Location = new System.Drawing.Point(1479, 635);
+            this.lblMonthYoskin9.Location = new System.Drawing.Point(1478, 635);
             this.lblMonthYoskin9.Name = "lblMonthYoskin9";
             this.lblMonthYoskin9.Size = new System.Drawing.Size(189, 30);
             this.lblMonthYoskin9.TabIndex = 268;
@@ -2323,7 +2323,7 @@
             this.lblMonthYoskin10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthYoskin10.FontBold = true;
             this.lblMonthYoskin10.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthYoskin10.Location = new System.Drawing.Point(1479, 718);
+            this.lblMonthYoskin10.Location = new System.Drawing.Point(1478, 718);
             this.lblMonthYoskin10.Name = "lblMonthYoskin10";
             this.lblMonthYoskin10.Size = new System.Drawing.Size(189, 30);
             this.lblMonthYoskin10.TabIndex = 143;
@@ -2339,7 +2339,7 @@
             this.lblDayYoskin10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayYoskin10.FontBold = true;
             this.lblDayYoskin10.ForeColor = System.Drawing.Color.Black;
-            this.lblDayYoskin10.Location = new System.Drawing.Point(1480, 674);
+            this.lblDayYoskin10.Location = new System.Drawing.Point(1479, 674);
             this.lblDayYoskin10.Name = "lblDayYoskin10";
             this.lblDayYoskin10.Size = new System.Drawing.Size(189, 30);
             this.lblDayYoskin10.TabIndex = 142;
@@ -2355,7 +2355,7 @@
             this.lblDayRitu1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayRitu1.FontBold = true;
             this.lblDayRitu1.ForeColor = System.Drawing.Color.Black;
-            this.lblDayRitu1.Location = new System.Drawing.Point(1684, 3);
+            this.lblDayRitu1.Location = new System.Drawing.Point(1683, 3);
             this.lblDayRitu1.Name = "lblDayRitu1";
             this.lblDayRitu1.Size = new System.Drawing.Size(93, 30);
             this.lblDayRitu1.TabIndex = 364;
@@ -2371,7 +2371,7 @@
             this.lblMonthRitu1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthRitu1.FontBold = true;
             this.lblMonthRitu1.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthRitu1.Location = new System.Drawing.Point(1684, 33);
+            this.lblMonthRitu1.Location = new System.Drawing.Point(1683, 33);
             this.lblMonthRitu1.Name = "lblMonthRitu1";
             this.lblMonthRitu1.Size = new System.Drawing.Size(93, 30);
             this.lblMonthRitu1.TabIndex = 363;
@@ -2387,7 +2387,7 @@
             this.lblDayRitu2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayRitu2.FontBold = true;
             this.lblDayRitu2.ForeColor = System.Drawing.Color.Black;
-            this.lblDayRitu2.Location = new System.Drawing.Point(1684, 70);
+            this.lblDayRitu2.Location = new System.Drawing.Point(1683, 70);
             this.lblDayRitu2.Name = "lblDayRitu2";
             this.lblDayRitu2.Size = new System.Drawing.Size(93, 30);
             this.lblDayRitu2.TabIndex = 358;
@@ -2403,7 +2403,7 @@
             this.lblDayRitu3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayRitu3.FontBold = true;
             this.lblDayRitu3.ForeColor = System.Drawing.Color.Black;
-            this.lblDayRitu3.Location = new System.Drawing.Point(1684, 140);
+            this.lblDayRitu3.Location = new System.Drawing.Point(1683, 140);
             this.lblDayRitu3.Name = "lblDayRitu3";
             this.lblDayRitu3.Size = new System.Drawing.Size(93, 30);
             this.lblDayRitu3.TabIndex = 357;
@@ -2419,7 +2419,7 @@
             this.lblMonthRitu2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthRitu2.FontBold = true;
             this.lblMonthRitu2.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthRitu2.Location = new System.Drawing.Point(1684, 103);
+            this.lblMonthRitu2.Location = new System.Drawing.Point(1683, 103);
             this.lblMonthRitu2.Name = "lblMonthRitu2";
             this.lblMonthRitu2.Size = new System.Drawing.Size(93, 30);
             this.lblMonthRitu2.TabIndex = 356;
@@ -2435,7 +2435,7 @@
             this.lblMonthRitu3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthRitu3.FontBold = true;
             this.lblMonthRitu3.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthRitu3.Location = new System.Drawing.Point(1684, 175);
+            this.lblMonthRitu3.Location = new System.Drawing.Point(1683, 175);
             this.lblMonthRitu3.Name = "lblMonthRitu3";
             this.lblMonthRitu3.Size = new System.Drawing.Size(93, 30);
             this.lblMonthRitu3.TabIndex = 355;
@@ -2451,7 +2451,7 @@
             this.lblDayRitu4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayRitu4.FontBold = true;
             this.lblDayRitu4.ForeColor = System.Drawing.Color.Black;
-            this.lblDayRitu4.Location = new System.Drawing.Point(1684, 213);
+            this.lblDayRitu4.Location = new System.Drawing.Point(1683, 213);
             this.lblDayRitu4.Name = "lblDayRitu4";
             this.lblDayRitu4.Size = new System.Drawing.Size(93, 30);
             this.lblDayRitu4.TabIndex = 305;
@@ -2467,7 +2467,7 @@
             this.lblDayRitu5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayRitu5.FontBold = true;
             this.lblDayRitu5.ForeColor = System.Drawing.Color.Black;
-            this.lblDayRitu5.Location = new System.Drawing.Point(1684, 289);
+            this.lblDayRitu5.Location = new System.Drawing.Point(1683, 289);
             this.lblDayRitu5.Name = "lblDayRitu5";
             this.lblDayRitu5.Size = new System.Drawing.Size(93, 30);
             this.lblDayRitu5.TabIndex = 304;
@@ -2483,7 +2483,7 @@
             this.lblMonthRitu4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthRitu4.FontBold = true;
             this.lblMonthRitu4.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthRitu4.Location = new System.Drawing.Point(1684, 250);
+            this.lblMonthRitu4.Location = new System.Drawing.Point(1683, 250);
             this.lblMonthRitu4.Name = "lblMonthRitu4";
             this.lblMonthRitu4.Size = new System.Drawing.Size(93, 30);
             this.lblMonthRitu4.TabIndex = 303;
@@ -2499,7 +2499,7 @@
             this.lblMonthRitu5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthRitu5.FontBold = true;
             this.lblMonthRitu5.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthRitu5.Location = new System.Drawing.Point(1684, 324);
+            this.lblMonthRitu5.Location = new System.Drawing.Point(1683, 324);
             this.lblMonthRitu5.Name = "lblMonthRitu5";
             this.lblMonthRitu5.Size = new System.Drawing.Size(93, 30);
             this.lblMonthRitu5.TabIndex = 302;
@@ -2515,7 +2515,7 @@
             this.lblDayRitu6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayRitu6.FontBold = true;
             this.lblDayRitu6.ForeColor = System.Drawing.Color.Black;
-            this.lblDayRitu6.Location = new System.Drawing.Point(1684, 363);
+            this.lblDayRitu6.Location = new System.Drawing.Point(1683, 363);
             this.lblDayRitu6.Name = "lblDayRitu6";
             this.lblDayRitu6.Size = new System.Drawing.Size(93, 30);
             this.lblDayRitu6.TabIndex = 295;
@@ -2531,7 +2531,7 @@
             this.lblMonthRitu6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthRitu6.FontBold = true;
             this.lblMonthRitu6.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthRitu6.Location = new System.Drawing.Point(1684, 401);
+            this.lblMonthRitu6.Location = new System.Drawing.Point(1683, 401);
             this.lblMonthRitu6.Name = "lblMonthRitu6";
             this.lblMonthRitu6.Size = new System.Drawing.Size(93, 30);
             this.lblMonthRitu6.TabIndex = 294;
@@ -2547,7 +2547,7 @@
             this.lblDayRitu7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayRitu7.FontBold = true;
             this.lblDayRitu7.ForeColor = System.Drawing.Color.Black;
-            this.lblDayRitu7.Location = new System.Drawing.Point(1684, 441);
+            this.lblDayRitu7.Location = new System.Drawing.Point(1683, 441);
             this.lblDayRitu7.Name = "lblDayRitu7";
             this.lblDayRitu7.Size = new System.Drawing.Size(93, 30);
             this.lblDayRitu7.TabIndex = 293;
@@ -2563,7 +2563,7 @@
             this.lblMonthRitu7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthRitu7.FontBold = true;
             this.lblMonthRitu7.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthRitu7.Location = new System.Drawing.Point(1684, 477);
+            this.lblMonthRitu7.Location = new System.Drawing.Point(1683, 477);
             this.lblMonthRitu7.Name = "lblMonthRitu7";
             this.lblMonthRitu7.Size = new System.Drawing.Size(93, 30);
             this.lblMonthRitu7.TabIndex = 292;
@@ -2579,7 +2579,7 @@
             this.lblDayRitu8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayRitu8.FontBold = true;
             this.lblDayRitu8.ForeColor = System.Drawing.Color.Black;
-            this.lblDayRitu8.Location = new System.Drawing.Point(1684, 516);
+            this.lblDayRitu8.Location = new System.Drawing.Point(1683, 516);
             this.lblDayRitu8.Name = "lblDayRitu8";
             this.lblDayRitu8.Size = new System.Drawing.Size(93, 30);
             this.lblDayRitu8.TabIndex = 280;
@@ -2595,7 +2595,7 @@
             this.lblMonthRitu8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthRitu8.FontBold = true;
             this.lblMonthRitu8.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthRitu8.Location = new System.Drawing.Point(1683, 556);
+            this.lblMonthRitu8.Location = new System.Drawing.Point(1682, 556);
             this.lblMonthRitu8.Name = "lblMonthRitu8";
             this.lblMonthRitu8.Size = new System.Drawing.Size(93, 30);
             this.lblMonthRitu8.TabIndex = 279;
@@ -2611,7 +2611,7 @@
             this.lblDayRitu9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayRitu9.FontBold = true;
             this.lblDayRitu9.ForeColor = System.Drawing.Color.Black;
-            this.lblDayRitu9.Location = new System.Drawing.Point(1684, 596);
+            this.lblDayRitu9.Location = new System.Drawing.Point(1683, 596);
             this.lblDayRitu9.Name = "lblDayRitu9";
             this.lblDayRitu9.Size = new System.Drawing.Size(93, 30);
             this.lblDayRitu9.TabIndex = 267;
@@ -2627,7 +2627,7 @@
             this.lblMonthRitu9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthRitu9.FontBold = true;
             this.lblMonthRitu9.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthRitu9.Location = new System.Drawing.Point(1684, 636);
+            this.lblMonthRitu9.Location = new System.Drawing.Point(1683, 636);
             this.lblMonthRitu9.Name = "lblMonthRitu9";
             this.lblMonthRitu9.Size = new System.Drawing.Size(93, 30);
             this.lblMonthRitu9.TabIndex = 266;
@@ -2643,7 +2643,7 @@
             this.lblMonthRitu10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblMonthRitu10.FontBold = true;
             this.lblMonthRitu10.ForeColor = System.Drawing.Color.Black;
-            this.lblMonthRitu10.Location = new System.Drawing.Point(1684, 716);
+            this.lblMonthRitu10.Location = new System.Drawing.Point(1683, 716);
             this.lblMonthRitu10.Name = "lblMonthRitu10";
             this.lblMonthRitu10.Size = new System.Drawing.Size(93, 30);
             this.lblMonthRitu10.TabIndex = 253;
@@ -2659,7 +2659,7 @@
             this.lblDayRitu10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDayRitu10.FontBold = true;
             this.lblDayRitu10.ForeColor = System.Drawing.Color.Black;
-            this.lblDayRitu10.Location = new System.Drawing.Point(1684, 674);
+            this.lblDayRitu10.Location = new System.Drawing.Point(1683, 674);
             this.lblDayRitu10.Name = "lblDayRitu10";
             this.lblDayRitu10.Size = new System.Drawing.Size(93, 30);
             this.lblDayRitu10.TabIndex = 252;
@@ -2675,7 +2675,7 @@
             this.lblCusCount1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusCount1.FontBold = true;
             this.lblCusCount1.ForeColor = System.Drawing.Color.Black;
-            this.lblCusCount1.Location = new System.Drawing.Point(1843, 4);
+            this.lblCusCount1.Location = new System.Drawing.Point(1842, 5);
             this.lblCusCount1.Name = "lblCusCount1";
             this.lblCusCount1.Size = new System.Drawing.Size(61, 30);
             this.lblCusCount1.TabIndex = 265;
@@ -2691,7 +2691,7 @@
             this.lblCusCount2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusCount2.FontBold = true;
             this.lblCusCount2.ForeColor = System.Drawing.Color.Black;
-            this.lblCusCount2.Location = new System.Drawing.Point(1844, 72);
+            this.lblCusCount2.Location = new System.Drawing.Point(1843, 73);
             this.lblCusCount2.Name = "lblCusCount2";
             this.lblCusCount2.Size = new System.Drawing.Size(61, 30);
             this.lblCusCount2.TabIndex = 264;
@@ -2707,7 +2707,7 @@
             this.lblCusCount3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusCount3.FontBold = true;
             this.lblCusCount3.ForeColor = System.Drawing.Color.Black;
-            this.lblCusCount3.Location = new System.Drawing.Point(1844, 142);
+            this.lblCusCount3.Location = new System.Drawing.Point(1843, 143);
             this.lblCusCount3.Name = "lblCusCount3";
             this.lblCusCount3.Size = new System.Drawing.Size(61, 30);
             this.lblCusCount3.TabIndex = 263;
@@ -2723,7 +2723,7 @@
             this.lblCusCount4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusCount4.FontBold = true;
             this.lblCusCount4.ForeColor = System.Drawing.Color.Black;
-            this.lblCusCount4.Location = new System.Drawing.Point(1844, 214);
+            this.lblCusCount4.Location = new System.Drawing.Point(1843, 215);
             this.lblCusCount4.Name = "lblCusCount4";
             this.lblCusCount4.Size = new System.Drawing.Size(61, 30);
             this.lblCusCount4.TabIndex = 262;
@@ -2739,7 +2739,7 @@
             this.lblCusCount5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusCount5.FontBold = true;
             this.lblCusCount5.ForeColor = System.Drawing.Color.Black;
-            this.lblCusCount5.Location = new System.Drawing.Point(1844, 291);
+            this.lblCusCount5.Location = new System.Drawing.Point(1843, 292);
             this.lblCusCount5.Name = "lblCusCount5";
             this.lblCusCount5.Size = new System.Drawing.Size(61, 30);
             this.lblCusCount5.TabIndex = 261;
@@ -2755,7 +2755,7 @@
             this.lblCusCount6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusCount6.FontBold = true;
             this.lblCusCount6.ForeColor = System.Drawing.Color.Black;
-            this.lblCusCount6.Location = new System.Drawing.Point(1844, 364);
+            this.lblCusCount6.Location = new System.Drawing.Point(1843, 365);
             this.lblCusCount6.Name = "lblCusCount6";
             this.lblCusCount6.Size = new System.Drawing.Size(61, 30);
             this.lblCusCount6.TabIndex = 260;
@@ -2771,7 +2771,7 @@
             this.lblCusCount7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusCount7.FontBold = true;
             this.lblCusCount7.ForeColor = System.Drawing.Color.Black;
-            this.lblCusCount7.Location = new System.Drawing.Point(1843, 445);
+            this.lblCusCount7.Location = new System.Drawing.Point(1842, 443);
             this.lblCusCount7.Name = "lblCusCount7";
             this.lblCusCount7.Size = new System.Drawing.Size(61, 30);
             this.lblCusCount7.TabIndex = 259;
@@ -2787,7 +2787,7 @@
             this.lblCusCount8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusCount8.FontBold = true;
             this.lblCusCount8.ForeColor = System.Drawing.Color.Black;
-            this.lblCusCount8.Location = new System.Drawing.Point(1844, 518);
+            this.lblCusCount8.Location = new System.Drawing.Point(1843, 519);
             this.lblCusCount8.Name = "lblCusCount8";
             this.lblCusCount8.Size = new System.Drawing.Size(61, 30);
             this.lblCusCount8.TabIndex = 258;
@@ -2803,7 +2803,7 @@
             this.lblCusCount9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusCount9.FontBold = true;
             this.lblCusCount9.ForeColor = System.Drawing.Color.Black;
-            this.lblCusCount9.Location = new System.Drawing.Point(1843, 601);
+            this.lblCusCount9.Location = new System.Drawing.Point(1842, 602);
             this.lblCusCount9.Name = "lblCusCount9";
             this.lblCusCount9.Size = new System.Drawing.Size(61, 30);
             this.lblCusCount9.TabIndex = 257;
@@ -2819,7 +2819,7 @@
             this.lblCusCount10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusCount10.FontBold = true;
             this.lblCusCount10.ForeColor = System.Drawing.Color.Black;
-            this.lblCusCount10.Location = new System.Drawing.Point(1843, 675);
+            this.lblCusCount10.Location = new System.Drawing.Point(1842, 676);
             this.lblCusCount10.Name = "lblCusCount10";
             this.lblCusCount10.Size = new System.Drawing.Size(61, 30);
             this.lblCusCount10.TabIndex = 254;
