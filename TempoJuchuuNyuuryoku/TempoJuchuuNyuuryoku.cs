@@ -18,7 +18,7 @@ namespace TempoJuchuuNyuuryoku
         private const string ProID = "TempoJuchuuNyuuryoku";
         private const string ProNm = "店舗受注入力";
         private const short mc_L_END = 3; // ロック用
-        private const string ZaikoSyokai = "ZaikoSyokai.exe";
+        private const string ZaikoSyokai = "ZaikoSyokai.exe";        
 
         private enum EIndex : int
         {
@@ -83,6 +83,7 @@ namespace TempoJuchuuNyuuryoku
         private D_Juchuu_Entity dje;
         private int mTaxFractionKBN;
         private int mTennic;
+        private string mMesTxt = "受注番号"; 
 
         private System.Windows.Forms.Control previousCtrl; // ｶｰｿﾙの元の位置を待避
 
@@ -1377,7 +1378,16 @@ namespace TempoJuchuuNyuuryoku
                 //受注処理番号
                 if(mTennic.Equals(1))
                 {
-
+                    mMesTxt = "受注処理番号";
+                    LblJuchuNo.Visible = false;
+                    LblCopyJuchuNo.Visible = false;
+                    LblMotoJuchuNo.Visible = false;
+                }
+                else
+                {
+                    LblJuchuNoT.Visible = false;
+                    LblCopyJuchuNoT.Visible = false;
+                    LblMotoJuchuNoT.Visible = false;
                 }
 
                 string ymd = bbl.GetDate();
@@ -1628,7 +1638,7 @@ namespace TempoJuchuuNyuuryoku
             //受注(D_Juchuu)に存在しない場合、Error 「登録されていない受注番号」
             if (dt.Rows.Count == 0)
             {
-                bbl.ShowMessage("E138", "受注番号");
+                bbl.ShowMessage("E138", mMesTxt);
                 Scr_Clr(1);
                 previousCtrl.Focus();
                 return false;
@@ -1638,7 +1648,7 @@ namespace TempoJuchuuNyuuryoku
                 //DeleteDateTime 「削除された受注番号」
                 if (!string.IsNullOrWhiteSpace(dt.Rows[0]["DeleteDateTime"].ToString()))
                 {
-                    bbl.ShowMessage("E140", "受注番号");
+                    bbl.ShowMessage("E140", mMesTxt);
                     Scr_Clr(1);
                     previousCtrl.Focus();
                     return false;
@@ -1647,7 +1657,7 @@ namespace TempoJuchuuNyuuryoku
                 //権限がない場合（以下のSelectができない場合）Error　「権限のない受注番号」
                 if (!base.CheckAvailableStores(dt.Rows[0]["StoreCD"].ToString()))
                 {
-                    bbl.ShowMessage("E139", "受注番号");
+                    bbl.ShowMessage("E139", mMesTxt);
                     Scr_Clr(1);
                     previousCtrl.Focus();
                     return false;
