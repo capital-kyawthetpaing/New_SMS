@@ -562,154 +562,78 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void btnChoice_Click(object sender, EventArgs e)
         {
-                dgv_ShiireKakeritsu.DataSource = dtMain;
-                if (dgv_ShiireKakeritsu.Rows.Count > 0)
+           dgv_ShiireKakeritsu.DataSource = dtMain;
+            if (dgv_ShiireKakeritsu.Rows.Count > 0)
+            {
+                string searchCondition = string.Empty;
+                bool op = false;
+                if (!string.IsNullOrWhiteSpace(scBrandCD.TxtCode.Text))
                 {
-                    string searchCondition = string.Empty;
-                    bool op = false;
-                    if (!string.IsNullOrWhiteSpace(scBrandCD.TxtCode.Text))
-                    {
-                        searchCondition = "BrandCD = '" + scBrandCD.TxtCode.Text + "'";
-                        op = true;
-                    }
-                    if (!string.IsNullOrWhiteSpace(scSportsCD.TxtCode.Text))
-                    {
-                        if (op)
-                        {
-                            searchCondition += " and ";
-                        }
-                        searchCondition += " SportsCD='" + scSportsCD.TxtCode.Text + "'";
-                        op = true;
-                    }
-                    if (!string.IsNullOrWhiteSpace(scSegmentCD.TxtCode.Text))
-                    {
-                        if (op)
-                        {
-                            searchCondition += " and ";
-                        }
-                        op = true;
-                        searchCondition += "SegmentCD= '" + scSegmentCD.TxtCode.Text + "'";
-                    }
-                    if (!string.IsNullOrWhiteSpace(cbo_Year.Text))
-                    {
-                        if (op)
-                        {
-                            searchCondition += " and ";
-                        }
-                        op = true;
-                        searchCondition += "LastYearTerm='" + cbo_Year.Text + "'";
-                    }
-                    if (!string.IsNullOrWhiteSpace(cbo_Season.Text))
-                    {
-                        if (op)
-                        {
-                            searchCondition += " and ";
-                        }
-                        op = true;
-                        searchCondition += "LastSeason= '" + cbo_Season.Text + "'";
-                    }
-                    if (!string.IsNullOrWhiteSpace(txtChangeDate.Text))
-                    {
-                        if (op)
-                        {
-                            searchCondition += " and ";
-                        }
-                        op = true;
-                        searchCondition += " ChangeDate= '" + txtChangeDate.Text;
-                    }
-                    if (!string.IsNullOrWhiteSpace(searchCondition))
-                    {
-                        DataRow[] dr = dtMain.Select(searchCondition);
-                        if (dr.Count() > 0)
-                        {
-                            for (int i = 0; i < dr.Length; i++)
-                            {
-                                dr[i]["Column1"] = "1";
-                            }
-                        }
-                    }
-                    else
-                    {
-                        dtGrid = dtMain;
-                    }
-
-                    dgv_ShiireKakeritsu.DataSource = dtMain;
+                   searchCondition = "BrandCD = '" + scBrandCD.TxtCode.Text + "'";
+                   op = true;
                 }
-            //else
-            //{
-            //    dgv_ShiireKakeritsu.DataSource = dt;
-            //    if (dgv_ShiireKakeritsu.Rows.Count > 0)
-            //    {
-            //        string searchCondition = string.Empty;
-            //        bool op = false;
-            //        if (!string.IsNullOrWhiteSpace(scBrandCD.TxtCode.Text))
-            //        {
-            //            searchCondition = "BrandCD = '" + scBrandCD.TxtCode.Text + "'";
-            //            op = true;
-            //        }
-            //        if (!string.IsNullOrWhiteSpace(scSportsCD.TxtCode.Text))
-            //        {
-            //            if (op)
-            //            {
-            //                searchCondition += " and ";
-            //            }
-            //            searchCondition += " SportsCD='" + scSportsCD.TxtCode.Text + "'";
-            //            op = true;
-            //        }
-            //        if (!string.IsNullOrWhiteSpace(scSegmentCD.TxtCode.Text))
-            //        {
-            //            if (op)
-            //            {
-            //                searchCondition += " and ";
-            //            }
-            //            op = true;
-            //            searchCondition += "SegmentCD= '" + scSegmentCD.TxtCode.Text + "'";
-            //        }
-            //        if (!string.IsNullOrWhiteSpace(cbo_Year.Text))
-            //        {
-            //            if (op)
-            //            {
-            //                searchCondition += " and ";
-            //            }
-            //            op = true;
-            //            searchCondition += "LastYearTerm='" + cbo_Year.Text + "'";
-            //        }
-            //        if (!string.IsNullOrWhiteSpace(cbo_Season.Text))
-            //        {
-            //            if (op)
-            //            {
-            //                searchCondition += " and ";
-            //            }
-            //            op = true;
-            //            searchCondition += "LastSeason= '" + cbo_Season.Text + "'";
-            //        }
-            //        if (!string.IsNullOrWhiteSpace(txtChangeDate.Text))
-            //        {
-            //            if (op)
-            //            {
-            //                searchCondition += " and ";
-            //            }
-            //            op = true;
-            //            searchCondition += " ChangeDate= '" + txtChangeDate.Text;
-            //        }
-            //        if (!string.IsNullOrWhiteSpace(searchCondition))
-            //        {
-            //            DataRow[] dr = dt.Select(searchCondition);
-            //            if (dr.Count() > 0)
-            //            {
-            //                for (int i = 0; i < dr.Length; i++)
-            //                {
-            //                    dr[i]["Column1"] = "1";
-            //                }
-            //            }
-            //        }
-            //        else
-            //        {
-            //            dtGrid = dt;
-            //        }
-            //        dgv_ShiireKakeritsu.DataSource = dt;
-            //    }
-            //}
+                if (!string.IsNullOrWhiteSpace(scSportsCD.TxtCode.Text))
+                {
+                   if (op)
+                   {
+                     searchCondition += " and ";
+                   }
+                     searchCondition += " SportsCD='" + scSportsCD.TxtCode.Text + "'";
+                     op = true;
+                }
+                if (!string.IsNullOrWhiteSpace(scSegmentCD.TxtCode.Text))
+                {
+                   if (op)
+                   {
+                     searchCondition += " and ";
+                   }
+                     op = true;
+                     searchCondition += "SegmentCD= '" + scSegmentCD.TxtCode.Text + "'";
+                }
+                if (!string.IsNullOrWhiteSpace(cbo_Year.Text))
+                {
+                   if (op)
+                   {
+                      searchCondition += " and ";
+                   }
+                      op = true;
+                      searchCondition += "LastYearTerm='" + cbo_Year.Text + "'";
+                }
+                if (!string.IsNullOrWhiteSpace(cbo_Season.Text))
+                {
+                   if (op)
+                   {
+                      searchCondition += " and ";
+                   }
+                      op = true;
+                      searchCondition += "LastSeason= '" + cbo_Season.Text + "'";
+                }
+                if (!string.IsNullOrWhiteSpace(txtChangeDate.Text))
+                {
+                   if (op)
+                   {
+                      searchCondition += " and ";
+                   }
+                      op = true;
+                      searchCondition += " ChangeDate= '" + txtChangeDate.Text;
+                }
+                if (!string.IsNullOrWhiteSpace(searchCondition))
+                { 
+                   DataRow[] dr = dtMain.Select(searchCondition);
+                   if (dr.Count() > 0)
+                   {
+                      for (int i = 0; i < dr.Length; i++)
+                      {
+                         dr[i]["Column1"] = "1";
+                      }
+                   }
+                }
+                else
+                {
+                   dtGrid = dtMain;
+                }
+                   dgv_ShiireKakeritsu.DataSource = dtMain;
+            }
                 foreach (DataGridViewRow drow in dgv_ShiireKakeritsu.Rows)
                 {
                     if (drow.Cells["col1"].Value.ToString() == "1")
@@ -900,32 +824,19 @@ namespace MasterTouroku_ShiireKakeritsu
         }
         private void UpdateInsert()
         {
-            //if (dtExcel != null || dtMain !=null)
-            //{
-            //    dgv_ShiireKakeritsu.DataSource = dtExcel;
-            //    //dtMain = dtAdd;
-            //    Xml = mskbl.DataTableToXml(dtExcel);
-            //    log_data = Get_Log_Data();
-            //    moe.VendorCD = scSupplierCD.TxtCode.Text;
-            //    moe.StoreCD = cbo_Store.SelectedValue.ToString();
-            //    moe.ChangeDate = txtRevisionDate.Text;
-            //    moe.Rate = txtRate1.Text;
-            //}
-            //else
-            //{
-                dtMain.AcceptChanges();
-                for (int i = 0; i < dtMain.Rows.Count; i++)
+            dtMain.AcceptChanges();
+            for (int i = 0; i < dtMain.Rows.Count; i++)
+            {
+               var Brand = dtMain.Rows[i]["BrandCD"].ToString();
+               var Sports = dtMain.Rows[i]["SportsCD"].ToString();
+               var Segment = dtMain.Rows[i]["SegmentCD"].ToString();
+               var LastYearTerm = dtMain.Rows[i]["LastYearTerm"].ToString();
+               var LastSeason = dtMain.Rows[i]["LastSeason"].ToString();
+                if (String.IsNullOrEmpty(Brand) || String.IsNullOrEmpty(Sports) || String.IsNullOrEmpty(Segment) || String.IsNullOrEmpty(LastYearTerm) || String.IsNullOrEmpty(LastSeason))
                 {
-                    var Brand = dtMain.Rows[i]["BrandCD"].ToString();
-                    var Sports = dtMain.Rows[i]["SportsCD"].ToString();
-                    var Segment = dtMain.Rows[i]["SegmentCD"].ToString();
-                    var LastYearTerm = dtMain.Rows[i]["LastYearTerm"].ToString();
-                    var LastSeason = dtMain.Rows[i]["LastSeason"].ToString();
-                    if (String.IsNullOrEmpty(Brand) || String.IsNullOrEmpty(Sports) || String.IsNullOrEmpty(Segment) || String.IsNullOrEmpty(LastYearTerm) || String.IsNullOrEmpty(LastSeason))
-                    {
-                        dtMain.Rows[i].Delete();
-                    }
+                    dtMain.Rows[i].Delete();
                 }
+            }
                 dgv_ShiireKakeritsu.DataSource = dtMain;
                 dtDel = dtMain;
                 string delData = mskbl.DataTableToXml(dtDel);
