@@ -112,6 +112,15 @@ namespace Search
 
         private void btnShow_Click(object sender, EventArgs e)
         {
+            //ブランド名、商品名、JANCDのすべての入力が無ければエラーにする
+            //エラーの場合、カーソルはブランド名に。Ｅ１１１
+            if (string.IsNullOrWhiteSpace(txtBrandCD.Text) && string.IsNullOrWhiteSpace(txtSKUName.Text) && string.IsNullOrWhiteSpace(txtJanCD.Text))
+            {
+                bbl.ShowMessage("E111");
+                txtBrandCD.Focus();
+                return;
+            }
+
             ShowDetail();
         }
 

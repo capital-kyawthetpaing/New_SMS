@@ -97,7 +97,7 @@
             this.btnInquery.Location = new System.Drawing.Point(1727, 130);
             this.btnInquery.Margin = new System.Windows.Forms.Padding(1);
             this.btnInquery.Name = "btnInquery";
-            this.btnInquery.Size = new System.Drawing.Size(120, 41);
+            this.btnInquery.Size = new System.Drawing.Size(120, 45);
             this.btnInquery.TabIndex = 2;
             this.btnInquery.Text = "照会";
             this.btnInquery.UseVisualStyleBackColor = false;
@@ -192,7 +192,7 @@
             this.lblProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.lblProduct.Location = new System.Drawing.Point(419, 292);
             this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Size = new System.Drawing.Size(125, 35);
+            this.lblProduct.Size = new System.Drawing.Size(126, 35);
             this.lblProduct.TabIndex = 53;
             this.lblProduct.Text = "商　品";
             this.lblProduct.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
@@ -263,7 +263,7 @@
             this.btnProduct.Location = new System.Drawing.Point(37, 131);
             this.btnProduct.Margin = new System.Windows.Forms.Padding(1);
             this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Size = new System.Drawing.Size(120, 41);
+            this.btnProduct.Size = new System.Drawing.Size(120, 45);
             this.btnProduct.TabIndex = 57;
             this.btnProduct.Text = "商 品";
             this.btnProduct.UseVisualStyleBackColor = false;

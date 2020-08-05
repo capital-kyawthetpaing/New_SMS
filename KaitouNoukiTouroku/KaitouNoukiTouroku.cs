@@ -1187,7 +1187,7 @@ namespace KaitouNoukiTouroku
                         //変更されたかどうかを退避
                         mGrid.g_DArray[i].OldArrivalPlanDate = mGrid.g_DArray[i].ArrivalPlanDate;
                         mGrid.g_DArray[i].OldArrivalPlanMonth = mGrid.g_DArray[i].ArrivalPlanMonth;
-                        mGrid.g_DArray[i].OldArrivalPlanCD = mGrid.g_DArray[i].ArrivalPlanCD;
+                        mGrid.g_DArray[i].OldArrivalPlanCD = mGrid.g_DArray[i].ArrivalPlanCD != "-1" ? mGrid.g_DArray[i].ArrivalPlanCD : "";
                         mGrid.g_DArray[i].Update = 0;
 
                         m_dataCnt = i + 1;
@@ -1747,7 +1747,7 @@ namespace KaitouNoukiTouroku
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
             {
                 //zが更新有効行数
-                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].OrderNo) == false && mGrid.g_DArray[RW].Update == 1)
+                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].OrderNo) == false && mGrid.g_DArray[RW].Update >= 1)
                 {
                     int rowNo = 1;
 
@@ -1895,6 +1895,7 @@ namespace KaitouNoukiTouroku
         }
         protected override void ExecSec()
         {
+            int UpdateRows = 0;
 
             // 明細部  画面の範囲の内容を配列にセット
             mGrid.S_DispToArray(Vsb_Mei_0.Value);
@@ -1923,8 +1924,18 @@ namespace KaitouNoukiTouroku
                             mGrid.g_DArray[RW].Update = 2;
                         else
                             mGrid.g_DArray[RW].Update = 1;
+
+                        UpdateRows++;
                     }
                 }
+            }
+
+            //明細が1件も登録されていなければ、エラー Ｅ１８９
+            if (UpdateRows==0)
+            {
+                //更新対象なし
+                bbl.ShowMessage("E189");
+                return;
             }
 
             DataTable dt = GetGridEntity();
