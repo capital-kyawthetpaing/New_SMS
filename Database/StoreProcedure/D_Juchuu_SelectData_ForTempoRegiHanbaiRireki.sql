@@ -40,6 +40,7 @@ BEGIN
           AND A.DeleteFlg = 0
           ORDER BY A.ChangeDate desc) AS StoreName	--受注毎に最初のレコードにだけ表示
           ,ROW_NUMBER() OVER(PARTITION BY DH.JuchuuNO ORDER BY DM.JuchuuRows) ROWNUM
+
           ,(SELECT top 1 A.StaffName 
           FROM M_Staff A 
           WHERE A.StaffCD = DH.StaffCD AND A.ChangeDate <= DH.JuchuuDate
