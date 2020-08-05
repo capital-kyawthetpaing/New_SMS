@@ -29,7 +29,7 @@ namespace MasterTouroku_ShiireTanka
         DataView dv;
         DataTable dt= new DataTable();
         DataTable dtsku=new DataTable();
-        DataTable deldt;
+        DataTable deldt=new DataTable();
         DataTable dtdeljan = new DataTable();
         DataTable dtview;
         string choiceq = "";
@@ -525,12 +525,23 @@ namespace MasterTouroku_ShiireTanka
                 TB_date_condition.Text = string.Empty;
                 makershohin.Clear();
                 dt = bl.MastertorokuShiiretanka_Select(m_IOE);
+                if (deldt != null)
+                {
+                    deldt.Rows.Clear();
+                }
+                deldt = bl.MastertorokuShiiretanka_Select(m_IOE); ;
                 m_IOE.Display = "1";
+
+                if (dtdeljan != null)
+                {
+                    dtdeljan.Rows.Clear();
+                }
+                dtdeljan = bl.MastertorokuShiiretanka_Select(m_IOE);
                 dtsku = bl.MastertorokuShiiretanka_Select(m_IOE);
                 dv = new DataView(dt);
                 GV_item.DataSource = dv;
-                deldt = dt;
-                dtdeljan = dtsku;
+               
+                //dtdeljan = dtsku;
             }
         }
         private M_ItemOrderPrice_Entity GetItemorder()
@@ -1788,6 +1799,10 @@ namespace MasterTouroku_ShiireTanka
                                 row1["UpdateDateTime"] = bbl.GetDate();
                                 dt.Rows.Add(row1);
                                 GV_item.DataSource = dt;
+                                if (deldt != null)
+                                {
+                                    deldt.Rows.Clear();
+                                }
                                 deldt = dt;
                                
                                 dv = new DataView(dt);
@@ -1854,7 +1869,11 @@ namespace MasterTouroku_ShiireTanka
                                     row1["UpdateOperator"] = operatorCd;
                                     row1["UpdateDateTime"] = bbl.GetDate();
                                     dtsku.Rows.Add(row1);
-                                    GV_item.DataSource = dtsku;
+                                    //GV_item.DataSource = dtsku;
+                                    if (dtdeljan != null)
+                                    {
+                                        dtdeljan.Rows.Clear();
+                                    }
                                     dtdeljan = dtsku;
                                 }
                             }
