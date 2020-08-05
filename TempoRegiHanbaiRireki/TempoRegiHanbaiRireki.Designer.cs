@@ -399,7 +399,7 @@
             this.label12.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.label12.FontBold = true;
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(537, -2);
+            this.label12.Location = new System.Drawing.Point(477, -2);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(1, 780);
             this.label12.TabIndex = 58;
