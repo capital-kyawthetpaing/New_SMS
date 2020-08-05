@@ -263,7 +263,7 @@
             this.label75.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.label75.FontBold = true;
             this.label75.ForeColor = System.Drawing.Color.Black;
-            this.label75.Location = new System.Drawing.Point(1671, -5);
+            this.label75.Location = new System.Drawing.Point(1703, -5);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(1, 780);
             this.label75.TabIndex = 148;
@@ -514,7 +514,7 @@
             this.lblDtColorSize1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtColorSize1.FontBold = true;
             this.lblDtColorSize1.ForeColor = System.Drawing.Color.Black;
-            this.lblDtColorSize1.Location = new System.Drawing.Point(1371, 6);
+            this.lblDtColorSize1.Location = new System.Drawing.Point(1374, 6);
             this.lblDtColorSize1.Name = "lblDtColorSize1";
             this.lblDtColorSize1.Size = new System.Drawing.Size(295, 60);
             this.lblDtColorSize1.TabIndex = 50;
@@ -650,7 +650,7 @@
             this.lblDtColorSize3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtColorSize3.FontBold = true;
             this.lblDtColorSize3.ForeColor = System.Drawing.Color.Black;
-            this.lblDtColorSize3.Location = new System.Drawing.Point(1371, 6);
+            this.lblDtColorSize3.Location = new System.Drawing.Point(1374, 6);
             this.lblDtColorSize3.Name = "lblDtColorSize3";
             this.lblDtColorSize3.Size = new System.Drawing.Size(295, 60);
             this.lblDtColorSize3.TabIndex = 65;
@@ -835,7 +835,7 @@
             this.lblDtColorSize2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtColorSize2.FontBold = true;
             this.lblDtColorSize2.ForeColor = System.Drawing.Color.Black;
-            this.lblDtColorSize2.Location = new System.Drawing.Point(1371, 6);
+            this.lblDtColorSize2.Location = new System.Drawing.Point(1374, 6);
             this.lblDtColorSize2.Name = "lblDtColorSize2";
             this.lblDtColorSize2.Size = new System.Drawing.Size(295, 60);
             this.lblDtColorSize2.TabIndex = 60;
@@ -1021,7 +1021,7 @@
             this.lblDtColorSize10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtColorSize10.FontBold = true;
             this.lblDtColorSize10.ForeColor = System.Drawing.Color.Black;
-            this.lblDtColorSize10.Location = new System.Drawing.Point(1371, 6);
+            this.lblDtColorSize10.Location = new System.Drawing.Point(1374, 6);
             this.lblDtColorSize10.Name = "lblDtColorSize10";
             this.lblDtColorSize10.Size = new System.Drawing.Size(295, 60);
             this.lblDtColorSize10.TabIndex = 147;
@@ -1190,7 +1190,7 @@
             this.lblDtColorSize9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtColorSize9.FontBold = true;
             this.lblDtColorSize9.ForeColor = System.Drawing.Color.Black;
-            this.lblDtColorSize9.Location = new System.Drawing.Point(1371, 6);
+            this.lblDtColorSize9.Location = new System.Drawing.Point(1374, 6);
             this.lblDtColorSize9.Name = "lblDtColorSize9";
             this.lblDtColorSize9.Size = new System.Drawing.Size(295, 60);
             this.lblDtColorSize9.TabIndex = 137;
@@ -1376,7 +1376,7 @@
             this.lblDtColorSize8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtColorSize8.FontBold = true;
             this.lblDtColorSize8.ForeColor = System.Drawing.Color.Black;
-            this.lblDtColorSize8.Location = new System.Drawing.Point(1371, 6);
+            this.lblDtColorSize8.Location = new System.Drawing.Point(1374, 6);
             this.lblDtColorSize8.Name = "lblDtColorSize8";
             this.lblDtColorSize8.Size = new System.Drawing.Size(295, 60);
             this.lblDtColorSize8.TabIndex = 127;
@@ -1562,7 +1562,7 @@
             this.lblDtColorSize7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtColorSize7.FontBold = true;
             this.lblDtColorSize7.ForeColor = System.Drawing.Color.Black;
-            this.lblDtColorSize7.Location = new System.Drawing.Point(1371, 6);
+            this.lblDtColorSize7.Location = new System.Drawing.Point(1374, 6);
             this.lblDtColorSize7.Name = "lblDtColorSize7";
             this.lblDtColorSize7.Size = new System.Drawing.Size(295, 60);
             this.lblDtColorSize7.TabIndex = 117;
@@ -1748,7 +1748,7 @@
             this.lblDtColorSize6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtColorSize6.FontBold = true;
             this.lblDtColorSize6.ForeColor = System.Drawing.Color.Black;
-            this.lblDtColorSize6.Location = new System.Drawing.Point(1371, 6);
+            this.lblDtColorSize6.Location = new System.Drawing.Point(1374, 6);
             this.lblDtColorSize6.Name = "lblDtColorSize6";
             this.lblDtColorSize6.Size = new System.Drawing.Size(295, 60);
             this.lblDtColorSize6.TabIndex = 107;
@@ -1917,7 +1917,7 @@
             this.lblDtColorSize5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtColorSize5.FontBold = true;
             this.lblDtColorSize5.ForeColor = System.Drawing.Color.Black;
-            this.lblDtColorSize5.Location = new System.Drawing.Point(1371, 6);
+            this.lblDtColorSize5.Location = new System.Drawing.Point(1374, 6);
             this.lblDtColorSize5.Name = "lblDtColorSize5";
             this.lblDtColorSize5.Size = new System.Drawing.Size(295, 60);
             this.lblDtColorSize5.TabIndex = 97;
@@ -2002,7 +2002,7 @@
             this.lblDtColorSize4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtColorSize4.FontBold = true;
             this.lblDtColorSize4.ForeColor = System.Drawing.Color.Black;
-            this.lblDtColorSize4.Location = new System.Drawing.Point(1371, 6);
+            this.lblDtColorSize4.Location = new System.Drawing.Point(1374, 6);
             this.lblDtColorSize4.Name = "lblDtColorSize4";
             this.lblDtColorSize4.Size = new System.Drawing.Size(295, 60);
             this.lblDtColorSize4.TabIndex = 87;
