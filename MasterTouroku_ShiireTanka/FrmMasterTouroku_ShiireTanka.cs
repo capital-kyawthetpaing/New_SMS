@@ -53,7 +53,10 @@ namespace MasterTouroku_ShiireTanka
             StartProgram();
             RB_itemandsku_Check();
             BindCombo();
-           
+            this.segment.CodeWidth = 90;
+            this.sport.NameWidth = 260;
+            this.segmentC.CodeWidth = 90;
+            this.sportC.NameWidth = 260;
             operatorCd = InOperatorCD;
             TB_headerdate.Text = bbl.GetDate();
             GV_item.DisabledColumn("ブランド,競技,商品分類,年度,シーズン,メーカー品番,ITEM,商品名,サイズ,カラー,SKUCD,定価");
