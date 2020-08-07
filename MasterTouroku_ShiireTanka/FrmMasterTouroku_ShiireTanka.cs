@@ -53,6 +53,8 @@ namespace MasterTouroku_ShiireTanka
             StartProgram();
             RB_itemandsku_Check();
             BindCombo();
+            SetRequireField();
+            shiiresaki.SetFocus(1);
             this.segment.CodeWidth = 90;
             this.sport.NameWidth = 260;
             this.segmentC.CodeWidth = 90;

@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle127 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle128 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle129 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle130 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle131 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle132 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TB_headerdate = new CKM_Controls.CKM_TextBox();
             this.LB_headerdate = new CKM_Controls.CKM_Label();
@@ -222,7 +222,7 @@
             this.RB_history.Location = new System.Drawing.Point(657, 15);
             this.RB_history.Name = "RB_history";
             this.RB_history.Size = new System.Drawing.Size(49, 16);
-            this.RB_history.TabIndex = 4;
+            this.RB_history.TabIndex = 6;
             this.RB_history.TabStop = true;
             this.RB_history.Text = "履歴";
             this.RB_history.UseVisualStyleBackColor = true;
@@ -235,7 +235,7 @@
             this.RB_current.Location = new System.Drawing.Point(602, 15);
             this.RB_current.Name = "RB_current";
             this.RB_current.Size = new System.Drawing.Size(49, 16);
-            this.RB_current.TabIndex = 3;
+            this.RB_current.TabIndex = 5;
             this.RB_current.TabStop = true;
             this.RB_current.Text = "現状";
             this.RB_current.UseVisualStyleBackColor = true;
@@ -300,7 +300,7 @@
             this.CB_store.MoveNext = true;
             this.CB_store.Name = "CB_store";
             this.CB_store.Size = new System.Drawing.Size(151, 20);
-            this.CB_store.TabIndex = 10;
+            this.CB_store.TabIndex = 3;
             this.CB_store.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CB_store_KeyDown);
             // 
             // RB_koten
@@ -324,7 +324,7 @@
             this.RB_zenten.Location = new System.Drawing.Point(90, 9);
             this.RB_zenten.Name = "RB_zenten";
             this.RB_zenten.Size = new System.Drawing.Size(49, 16);
-            this.RB_zenten.TabIndex = 8;
+            this.RB_zenten.TabIndex = 7;
             this.RB_zenten.TabStop = true;
             this.RB_zenten.Text = "全店";
             this.RB_zenten.UseVisualStyleBackColor = true;
@@ -360,7 +360,7 @@
             this.Btn_F11.Margin = new System.Windows.Forms.Padding(1);
             this.Btn_F11.Name = "Btn_F11";
             this.Btn_F11.Size = new System.Drawing.Size(90, 25);
-            this.Btn_F11.TabIndex = 11;
+            this.Btn_F11.TabIndex = 8;
             this.Btn_F11.TabStop = false;
             this.Btn_F11.Text = "表示(F11)";
             this.Btn_F11.UseVisualStyleBackColor = false;
@@ -391,7 +391,7 @@
             this.RB_item.Location = new System.Drawing.Point(91, 4);
             this.RB_item.Name = "RB_item";
             this.RB_item.Size = new System.Drawing.Size(51, 16);
-            this.RB_item.TabIndex = 13;
+            this.RB_item.TabIndex = 7;
             this.RB_item.TabStop = true;
             this.RB_item.Text = "ITEM";
             this.RB_item.UseVisualStyleBackColor = true;
@@ -921,17 +921,17 @@
             this.GV_item.AllowUserToAddRows = false;
             this.GV_item.AllowUserToDeleteRows = false;
             this.GV_item.AllowUserToResizeRows = false;
-            dataGridViewCellStyle73.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_item.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle73;
+            dataGridViewCellStyle127.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_item.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle127;
             this.GV_item.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle74.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle74.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle74.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle74.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle74.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle74.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle74;
+            dataGridViewCellStyle128.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle128.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle128.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle128.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle128.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle128.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle128.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle128;
             this.GV_item.ColumnHeadersHeight = 25;
             this.GV_item.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ck,
@@ -1054,10 +1054,10 @@
             // 改定日
             // 
             this.改定日.DataPropertyName = "ChangeDate";
-            dataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle75.Format = "d";
-            dataGridViewCellStyle75.NullValue = null;
-            this.改定日.DefaultCellStyle = dataGridViewCellStyle75;
+            dataGridViewCellStyle129.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle129.Format = "d";
+            dataGridViewCellStyle129.NullValue = null;
+            this.改定日.DefaultCellStyle = dataGridViewCellStyle129;
             this.改定日.HeaderText = "改定日";
             this.改定日.Name = "改定日";
             this.改定日.Width = 80;
@@ -1065,10 +1065,10 @@
             // 定価
             // 
             this.定価.DataPropertyName = "PriceOutTax";
-            dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle76.Format = "N0";
-            dataGridViewCellStyle76.NullValue = null;
-            this.定価.DefaultCellStyle = dataGridViewCellStyle76;
+            dataGridViewCellStyle130.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle130.Format = "N0";
+            dataGridViewCellStyle130.NullValue = null;
+            this.定価.DefaultCellStyle = dataGridViewCellStyle130;
             this.定価.HeaderText = "定価(税抜)";
             this.定価.MaxInputLength = 9;
             this.定価.Name = "定価";
@@ -1077,10 +1077,10 @@
             // 掛率
             // 
             this.掛率.DataPropertyName = "Rate";
-            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle77.Format = "N2";
-            dataGridViewCellStyle77.NullValue = "0";
-            this.掛率.DefaultCellStyle = dataGridViewCellStyle77;
+            dataGridViewCellStyle131.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle131.Format = "N2";
+            dataGridViewCellStyle131.NullValue = "0";
+            this.掛率.DefaultCellStyle = dataGridViewCellStyle131;
             this.掛率.HeaderText = "掛率";
             this.掛率.MaxInputLength = 6;
             this.掛率.MinimumWidth = 10;
@@ -1090,10 +1090,10 @@
             // 発注単価
             // 
             this.発注単価.DataPropertyName = "PriceWithoutTax";
-            dataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle78.Format = "N0";
-            dataGridViewCellStyle78.NullValue = null;
-            this.発注単価.DefaultCellStyle = dataGridViewCellStyle78;
+            dataGridViewCellStyle132.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle132.Format = "N0";
+            dataGridViewCellStyle132.NullValue = null;
+            this.発注単価.DefaultCellStyle = dataGridViewCellStyle132;
             this.発注単価.HeaderText = "発注単価";
             this.発注単価.MaxInputLength = 9;
             this.発注単価.Name = "発注単価";
