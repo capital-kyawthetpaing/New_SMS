@@ -729,10 +729,14 @@ namespace MasterTouroku_ShiireTanka
                 this.SKUCD.Visible = true;
                 this.SKUCD.Width = 200;
                 this.商品名.Width = 352;
-                itemcd.Clear();
-                TB_date_add.Clear();
-                TB_rate.Clear();
-                TB_pricewithouttax.Clear();
+                //itemcd.Clear();
+                //TB_date_add.Clear();
+                //TB_rate.Clear();
+                //TB_pricewithouttax.Clear();
+                //TB_dateE.Clear();
+                //TB_rate_E.Clear();
+                Clear(panel4);
+                Clear(panel5);
                 GV_item.Refresh();
                 BT_Capture.Visible = false;
                 ModeText = "SKU";
