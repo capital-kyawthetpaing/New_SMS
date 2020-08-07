@@ -105,6 +105,7 @@ namespace MasterTouroku_ShiireTanka
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                     {
                         Clear();
+                        shiiresaki.SetFocus(1);
                     }
                     break;
                 case 11:
