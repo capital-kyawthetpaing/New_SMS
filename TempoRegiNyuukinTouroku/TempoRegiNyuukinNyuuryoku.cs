@@ -352,11 +352,13 @@ namespace TempoRegiNyuukinTouroku
                 {
                     //  MessageBox.Show(ex.StackTrace.ToString());
                 }
-                if (isForced) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+                if (isForced && Base_DL.iniEntity.IsDM_D30Used) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
                 //Base_DL.iniEntity.CDO_DISPLAY.SetDisplay(true, true,Base_DL.iniEntity.DefaultMessage);
             }
-            else {
-                if (isForced) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+            else
+            {
+              
+                if (isForced && Base_DL.iniEntity.IsDM_D30Used) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
             }
 
         }
