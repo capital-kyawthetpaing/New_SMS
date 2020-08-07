@@ -108,12 +108,12 @@ namespace TempoRegiNyuukinTouroku
             {
                 if (trntBL.ShowMessage("Q101") == DialogResult.Yes)
                 {
-                    DataTable dt = new DataTable();
-                    dt = trntBL.SimpleSelect1("70", ChangeDate.Replace("/", "-"), StoreCD);
-                    if (dt.Rows.Count > 0)
-                    {
-                        trntBL.ShowMessage("E252");
-                    }
+                    //DataTable dt = new DataTable();
+                    //dt = trntBL.SimpleSelect1("70", ChangeDate.Replace("/", "-"), StoreCD);
+                    //if (dt.Rows.Count > 0)
+                    //{
+                    //    trntBL.ShowMessage("E252");
+                    //}
                     ddpe = GetDepositEntity();
                     if (trntBL.TempoNyuukinTouroku_D_DepositHistory_InsertUpdate(ddpe))
                     {
@@ -170,7 +170,8 @@ namespace TempoRegiNyuukinTouroku
                 Refund = "0",
                 ProperGaku = "0",
                 DiscountGaku = "0",
-                CustomerCD = string.Empty,
+                //CustomerCD = string.Empty,
+                CustomerCD = txtCustomerCD.Text,
                 AdminNO = string.Empty,
                 IsIssued = "0",
                 Operator = InOperatorCD,
@@ -299,10 +300,6 @@ namespace TempoRegiNyuukinTouroku
             }
         }
 
-        private void panelDetail_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void frmTempoRegiTsurisenJyunbi_KeyUp(object sender, KeyEventArgs e)
         {
@@ -355,11 +352,13 @@ namespace TempoRegiNyuukinTouroku
                 {
                     //  MessageBox.Show(ex.StackTrace.ToString());
                 }
-                if (isForced) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+                if (isForced && Base_DL.iniEntity.IsDM_D30Used) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
                 //Base_DL.iniEntity.CDO_DISPLAY.SetDisplay(true, true,Base_DL.iniEntity.DefaultMessage);
             }
-            else {
-                if (isForced) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+            else
+            {
+              
+                if (isForced && Base_DL.iniEntity.IsDM_D30Used) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
             }
 
         }

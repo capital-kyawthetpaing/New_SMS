@@ -201,18 +201,13 @@ namespace TempoRegiHanbaiRireki
                 cs = this.Controls.Find("lblJuchuuNO" + i.ToString(), true);
                 if (cs.Length > 0)
                 {
-                    if("lblJuchuuNO" + (i-1).ToString()!= row["JuchuuNO"].ToString())
-                    {
-                        if (row["ROWNUM"].ToString() == "1")
-                            cs[0].Text = row["JuchuuNO"].ToString();
-                        cs[0].ForeColor = foreCl;
-                       
-                    }
-                    else
-                    {
-                        cs[0].Text = string.Empty;
-                    }
-                    
+                    if (row["ROWNUM"].ToString() == "1")
+                        cs[0].Text = row["JuchuuNO"].ToString();
+                    if(row["ROWNUMS"].ToString()=="1")
+                        cs[0].Text +="/" + row["SalesNO"].ToString();
+
+                    cs[0].ForeColor = foreCl;
+                                        
                 }
 
                 cs = this.Controls.Find("lblDtSSu" + i.ToString(), true);
