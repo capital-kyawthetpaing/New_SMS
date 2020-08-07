@@ -22,8 +22,14 @@ namespace Search
         Search_PlanArrival_BL pa_bl;
         ZaikoShoukai_BL zaibl;
         string adminNO,skucd,shohinmei,color,size,item,brand,jancd,makercd,soukocd,changedate,soukoname,storecd;
+
+        private void PanelHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        
         public Search_PlanArrival(String No, string sku, string shohin, string col, string si
-            , string it, string br, string jan, string maker, string date,string soucd,string souname,string store)
+            , string jan, string br, string it, string maker, string date,string soucd,string souname,string store)
         {
             InitializeComponent();
             HeaderTitleText = "商品在庫照会（入荷予定）";

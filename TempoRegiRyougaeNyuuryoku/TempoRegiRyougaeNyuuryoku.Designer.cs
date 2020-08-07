@@ -75,6 +75,7 @@
             this.ExchangeMoney.IntegerPart = 8;
             this.ExchangeMoney.IsCorrectDate = true;
             this.ExchangeMoney.isEnterKeyDown = false;
+            this.ExchangeMoney.IsFirstTime = true;
             this.ExchangeMoney.isMaxLengthErr = false;
             this.ExchangeMoney.IsNumber = true;
             this.ExchangeMoney.IsShop = false;
@@ -153,6 +154,7 @@
             this.ExchangeCount.IntegerPart = 7;
             this.ExchangeCount.IsCorrectDate = true;
             this.ExchangeCount.isEnterKeyDown = false;
+            this.ExchangeCount.IsFirstTime = true;
             this.ExchangeCount.isMaxLengthErr = false;
             this.ExchangeCount.IsNumber = true;
             this.ExchangeCount.IsShop = false;
@@ -270,9 +272,9 @@
             this.ExchangeLabel.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ExchangeLabel.BackColor = System.Drawing.Color.Transparent;
             this.ExchangeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ExchangeLabel.Font = new System.Drawing.Font("MS Gothic", 28F, System.Drawing.FontStyle.Bold);
-            this.ExchangeLabel.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
-            this.ExchangeLabel.FontBold = true;
+            this.ExchangeLabel.Font = new System.Drawing.Font("MS Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExchangeLabel.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.ExchangeLabel.FontBold = false;
             this.ExchangeLabel.ForeColor = System.Drawing.Color.Black;
             this.ExchangeLabel.Location = new System.Drawing.Point(444, 277);
             this.ExchangeLabel.Name = "ExchangeLabel";
