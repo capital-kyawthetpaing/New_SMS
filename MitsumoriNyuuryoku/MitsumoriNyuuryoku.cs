@@ -3082,7 +3082,7 @@ namespace MitsumoriNyuuryoku
             try
             {
                 previousCtrl = this.ActiveControl;
-                SetFuncKeyAll(this, "111111001011");
+                SetFuncKeyAll(this, "111111001001");
             }
             catch (Exception ex)
             {
