@@ -277,9 +277,9 @@
             this.ExchangeLabel.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium0;
             this.ExchangeLabel.FontBold = true;
             this.ExchangeLabel.ForeColor = System.Drawing.Color.Black;
-            this.ExchangeLabel.Location = new System.Drawing.Point(36, 2);
+            this.ExchangeLabel.Location = new System.Drawing.Point(2, 2);
             this.ExchangeLabel.Name = "ExchangeLabel";
-            this.ExchangeLabel.Size = new System.Drawing.Size(220, 35);
+            this.ExchangeLabel.Size = new System.Drawing.Size(255, 35);
             this.ExchangeLabel.TabIndex = 14;
             this.ExchangeLabel.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ExchangeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
