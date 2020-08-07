@@ -138,12 +138,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.PL_head = new System.Windows.Forms.Panel();
             this.LB_ChangeDate = new System.Windows.Forms.Label();
+            this.sku = new Search.CKM_SearchControl();
+            this.jan = new Search.CKM_SearchControl();
             this.LB_kensaku = new CKM_Controls.CKM_Label();
             this.LB_kenrenkensaku = new CKM_Controls.CKM_Label();
             this.TB_Shijishobengo = new CKM_Controls.CKM_TextBox();
             this.TB_Catalog = new CKM_Controls.CKM_TextBox();
-            this.sku = new Search.CKM_SearchControl();
-            this.jan = new Search.CKM_SearchControl();
             this.SearchBrand = new Search.CKM_SearchControl();
             this.Sports = new Search.CKM_SearchControl();
             this.Maker = new Search.CKM_SearchControl();
@@ -339,7 +339,7 @@
             this.ckM_LB_brand.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_brand.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_brand.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_brand.Location = new System.Drawing.Point(72, 110);
+            this.ckM_LB_brand.Location = new System.Drawing.Point(73, 110);
             this.ckM_LB_brand.Name = "ckM_LB_brand";
             this.ckM_LB_brand.Size = new System.Drawing.Size(57, 12);
             this.ckM_LB_brand.TabIndex = 13;
@@ -356,7 +356,7 @@
             this.ckM_LB_Shohinmei.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_Shohinmei.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_Shohinmei.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_Shohinmei.Location = new System.Drawing.Point(84, 132);
+            this.ckM_LB_Shohinmei.Location = new System.Drawing.Point(85, 132);
             this.ckM_LB_Shohinmei.Name = "ckM_LB_Shohinmei";
             this.ckM_LB_Shohinmei.Size = new System.Drawing.Size(44, 12);
             this.ckM_LB_Shohinmei.TabIndex = 14;
@@ -445,7 +445,7 @@
             this.ckM_LB_Bikokeyword.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_Bikokeyword.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_Bikokeyword.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_Bikokeyword.Location = new System.Drawing.Point(19, 178);
+            this.ckM_LB_Bikokeyword.Location = new System.Drawing.Point(20, 178);
             this.ckM_LB_Bikokeyword.Name = "ckM_LB_Bikokeyword";
             this.ckM_LB_Bikokeyword.Size = new System.Drawing.Size(109, 12);
             this.ckM_LB_Bikokeyword.TabIndex = 20;
@@ -1881,6 +1881,66 @@
             this.LB_ChangeDate.Text = "YYYY/MM/DD";
             this.LB_ChangeDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // sku
+            // 
+            this.sku.AutoSize = true;
+            this.sku.ChangeDate = "";
+            this.sku.ChangeDateWidth = 100;
+            this.sku.Code = "";
+            this.sku.CodeWidth = 190;
+            this.sku.CodeWidth1 = 190;
+            this.sku.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.sku.DataCheck = false;
+            this.sku.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sku.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.sku.IsCopy = false;
+            this.sku.LabelText = "";
+            this.sku.LabelVisible = false;
+            this.sku.Location = new System.Drawing.Point(324, 147);
+            this.sku.Margin = new System.Windows.Forms.Padding(0);
+            this.sku.Name = "sku";
+            this.sku.NameWidth = 350;
+            this.sku.SearchEnable = true;
+            this.sku.Size = new System.Drawing.Size(223, 27);
+            this.sku.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
+            this.sku.TabIndex = 9;
+            this.sku.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.sku.UseChangeDate = false;
+            this.sku.Value1 = null;
+            this.sku.Value2 = null;
+            this.sku.Value3 = null;
+            this.sku.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.sku_CodeKeyDownEvent);
+            // 
+            // jan
+            // 
+            this.jan.AutoSize = true;
+            this.jan.ChangeDate = "";
+            this.jan.ChangeDateWidth = 0;
+            this.jan.Code = "";
+            this.jan.CodeWidth = 110;
+            this.jan.CodeWidth1 = 110;
+            this.jan.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.jan.DataCheck = false;
+            this.jan.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.jan.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.jan.IsCopy = false;
+            this.jan.LabelText = "";
+            this.jan.LabelVisible = false;
+            this.jan.Location = new System.Drawing.Point(132, 147);
+            this.jan.Margin = new System.Windows.Forms.Padding(0);
+            this.jan.Name = "jan";
+            this.jan.NameWidth = 190;
+            this.jan.SearchEnable = true;
+            this.jan.Size = new System.Drawing.Size(143, 27);
+            this.jan.Stype = Search.CKM_SearchControl.SearchType.JANCD;
+            this.jan.TabIndex = 8;
+            this.jan.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.jan.UseChangeDate = false;
+            this.jan.Value1 = null;
+            this.jan.Value2 = null;
+            this.jan.Value3 = null;
+            this.jan.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.jan_CodeKeyDownEvent);
+            // 
             // LB_kensaku
             // 
             this.LB_kensaku.AutoSize = true;
@@ -1907,7 +1967,7 @@
             this.LB_kenrenkensaku.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.LB_kenrenkensaku.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.LB_kenrenkensaku.ForeColor = System.Drawing.Color.Black;
-            this.LB_kenrenkensaku.Location = new System.Drawing.Point(70, 314);
+            this.LB_kenrenkensaku.Location = new System.Drawing.Point(72, 314);
             this.LB_kenrenkensaku.Name = "LB_kenrenkensaku";
             this.LB_kenrenkensaku.Size = new System.Drawing.Size(57, 12);
             this.LB_kenrenkensaku.TabIndex = 92;
@@ -1969,66 +2029,6 @@
             this.TB_Catalog.Size = new System.Drawing.Size(423, 19);
             this.TB_Catalog.TabIndex = 14;
             this.TB_Catalog.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // sku
-            // 
-            this.sku.AutoSize = true;
-            this.sku.ChangeDate = "";
-            this.sku.ChangeDateWidth = 100;
-            this.sku.Code = "";
-            this.sku.CodeWidth = 190;
-            this.sku.CodeWidth1 = 190;
-            this.sku.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.sku.DataCheck = false;
-            this.sku.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.sku.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.sku.IsCopy = false;
-            this.sku.LabelText = "";
-            this.sku.LabelVisible = false;
-            this.sku.Location = new System.Drawing.Point(324, 147);
-            this.sku.Margin = new System.Windows.Forms.Padding(0);
-            this.sku.Name = "sku";
-            this.sku.NameWidth = 350;
-            this.sku.SearchEnable = true;
-            this.sku.Size = new System.Drawing.Size(223, 27);
-            this.sku.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
-            this.sku.TabIndex = 9;
-            this.sku.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.sku.UseChangeDate = false;
-            this.sku.Value1 = null;
-            this.sku.Value2 = null;
-            this.sku.Value3 = null;
-            this.sku.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.sku_CodeKeyDownEvent);
-            // 
-            // jan
-            // 
-            this.jan.AutoSize = true;
-            this.jan.ChangeDate = "";
-            this.jan.ChangeDateWidth = 0;
-            this.jan.Code = "";
-            this.jan.CodeWidth = 110;
-            this.jan.CodeWidth1 = 110;
-            this.jan.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
-            this.jan.DataCheck = false;
-            this.jan.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.jan.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.jan.IsCopy = false;
-            this.jan.LabelText = "";
-            this.jan.LabelVisible = false;
-            this.jan.Location = new System.Drawing.Point(132, 147);
-            this.jan.Margin = new System.Windows.Forms.Padding(0);
-            this.jan.Name = "jan";
-            this.jan.NameWidth = 190;
-            this.jan.SearchEnable = true;
-            this.jan.Size = new System.Drawing.Size(143, 27);
-            this.jan.Stype = Search.CKM_SearchControl.SearchType.JANCD;
-            this.jan.TabIndex = 8;
-            this.jan.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.jan.UseChangeDate = false;
-            this.jan.Value1 = null;
-            this.jan.Value2 = null;
-            this.jan.Value3 = null;
-            this.jan.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.jan_CodeKeyDownEvent);
             // 
             // SearchBrand
             // 
