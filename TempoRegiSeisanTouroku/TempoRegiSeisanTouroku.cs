@@ -802,7 +802,16 @@ namespace TempoRegiSeisanTouroku
                 txt1.Text = "0";
                 txtotheramount.Text = "0";
                 lblCashBalance.Text = "0";
-                lblCashStorage.Text = "¥ " + "0";
+                //lblCashStorage.Text = "¥ " + "0";
+
+                string cash = string.Empty;
+                if (string.IsNullOrWhiteSpace(lblCashBalance.Text))
+                {
+                    lblCashBalance.Text = "0";
+                }
+                cash = (Convert.ToDecimal(lblCashBalance.Text) - Convert.ToDecimal(txtTotal.Text)).ToString();
+                cash = string.IsNullOrWhiteSpace(cash) ? "0" : string.Format("{0:#,#}", Convert.ToInt64(cash));
+                lblCashStorage.Text = "¥ " + (string.IsNullOrWhiteSpace(cash) ? "0" : cash);
 
                 chkDel.Checked = false;
                 chkDel.Enabled = false;
