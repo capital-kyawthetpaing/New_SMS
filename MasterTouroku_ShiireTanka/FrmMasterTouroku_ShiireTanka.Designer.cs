@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle133 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle134 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle135 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle136 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle137 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle138 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle145 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle146 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle147 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle148 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle149 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle150 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TB_headerdate = new CKM_Controls.CKM_TextBox();
             this.LB_headerdate = new CKM_Controls.CKM_Label();
@@ -360,8 +360,7 @@
             this.Btn_F11.Margin = new System.Windows.Forms.Padding(1);
             this.Btn_F11.Name = "Btn_F11";
             this.Btn_F11.Size = new System.Drawing.Size(90, 25);
-            this.Btn_F11.TabIndex = 10;
-            this.Btn_F11.TabStop = false;
+            this.Btn_F11.TabIndex = 12;
             this.Btn_F11.Text = "表示(F11)";
             this.Btn_F11.UseVisualStyleBackColor = false;
             this.Btn_F11.Click += new System.EventHandler(this.Btn_F11_Click);
@@ -921,17 +920,17 @@
             this.GV_item.AllowUserToAddRows = false;
             this.GV_item.AllowUserToDeleteRows = false;
             this.GV_item.AllowUserToResizeRows = false;
-            dataGridViewCellStyle133.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_item.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle133;
+            dataGridViewCellStyle145.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_item.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle145;
             this.GV_item.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle134.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle134.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle134.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle134.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle134.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle134.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle134.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle134;
+            dataGridViewCellStyle146.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle146.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle146.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle146.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle146.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle146.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle146.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle146;
             this.GV_item.ColumnHeadersHeight = 25;
             this.GV_item.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ck,
@@ -1054,10 +1053,10 @@
             // 改定日
             // 
             this.改定日.DataPropertyName = "ChangeDate";
-            dataGridViewCellStyle135.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle135.Format = "d";
-            dataGridViewCellStyle135.NullValue = null;
-            this.改定日.DefaultCellStyle = dataGridViewCellStyle135;
+            dataGridViewCellStyle147.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle147.Format = "d";
+            dataGridViewCellStyle147.NullValue = null;
+            this.改定日.DefaultCellStyle = dataGridViewCellStyle147;
             this.改定日.HeaderText = "改定日";
             this.改定日.Name = "改定日";
             this.改定日.Width = 80;
@@ -1065,10 +1064,10 @@
             // 定価
             // 
             this.定価.DataPropertyName = "PriceOutTax";
-            dataGridViewCellStyle136.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle136.Format = "N0";
-            dataGridViewCellStyle136.NullValue = null;
-            this.定価.DefaultCellStyle = dataGridViewCellStyle136;
+            dataGridViewCellStyle148.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle148.Format = "N0";
+            dataGridViewCellStyle148.NullValue = null;
+            this.定価.DefaultCellStyle = dataGridViewCellStyle148;
             this.定価.HeaderText = "定価(税抜)";
             this.定価.MaxInputLength = 9;
             this.定価.Name = "定価";
@@ -1077,10 +1076,10 @@
             // 掛率
             // 
             this.掛率.DataPropertyName = "Rate";
-            dataGridViewCellStyle137.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle137.Format = "N2";
-            dataGridViewCellStyle137.NullValue = "0";
-            this.掛率.DefaultCellStyle = dataGridViewCellStyle137;
+            dataGridViewCellStyle149.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle149.Format = "N2";
+            dataGridViewCellStyle149.NullValue = "0";
+            this.掛率.DefaultCellStyle = dataGridViewCellStyle149;
             this.掛率.HeaderText = "掛率";
             this.掛率.MaxInputLength = 6;
             this.掛率.MinimumWidth = 10;
@@ -1090,10 +1089,10 @@
             // 発注単価
             // 
             this.発注単価.DataPropertyName = "PriceWithoutTax";
-            dataGridViewCellStyle138.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle138.Format = "N0";
-            dataGridViewCellStyle138.NullValue = null;
-            this.発注単価.DefaultCellStyle = dataGridViewCellStyle138;
+            dataGridViewCellStyle150.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle150.Format = "N0";
+            dataGridViewCellStyle150.NullValue = null;
+            this.発注単価.DefaultCellStyle = dataGridViewCellStyle150;
             this.発注単価.HeaderText = "発注単価";
             this.発注単価.MaxInputLength = 9;
             this.発注単価.Name = "発注単価";
