@@ -60,6 +60,8 @@ namespace MasterTouroku_ShiireTanka
             operatorCd = InOperatorCD;
             TB_headerdate.Text = bbl.GetDate();
             GV_item.DisabledColumn("ブランド,競技,商品分類,年度,シーズン,メーカー品番,ITEM,商品名,サイズ,カラー,SKUCD,定価");
+            itemcd.CodeWidth = 100;
+            itemcd.NameWidth = 280;
         }
         private void BindCombo()
         {
