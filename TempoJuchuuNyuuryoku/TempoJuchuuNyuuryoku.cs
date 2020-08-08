@@ -3066,8 +3066,8 @@ namespace TempoJuchuuNyuuryoku
                         mGrid.g_DArray[row].OrderUnitPrice = GetTanka(row, ymd);
                         //mGrid.g_DArray[row].OrderGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].OrderUnitPrice) * bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu));
 
-                        //０で無い場合、入力された発注単価を原価単価にセットし、原価金額、粗利金額を再計算。
-                        if(bbl.Z_Set(mGrid.g_DArray[row].OrderUnitPrice) != 0)
+                        //０で無いかつ原価単価＝０の場合、入力された発注単価を原価単価にセットし、原価金額、粗利金額を再計算。
+                        if (bbl.Z_Set(mGrid.g_DArray[row].OrderUnitPrice) != 0 && bbl.Z_Set(mGrid.g_DArray[row].CostUnitPrice) == 0)
                         {
                             mGrid.g_DArray[row].CostUnitPrice = mGrid.g_DArray[row].OrderUnitPrice;
                             mGrid.g_DArray[row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].CostUnitPrice) * wSuu);
@@ -3251,9 +3251,9 @@ namespace TempoJuchuuNyuuryoku
                     {
                         if (bbl.ShowMessage("Q306") != DialogResult.OK)
                             return false;
-                    }                       
-                    //０で無い場合、入力された発注単価を原価単価にセットし、原価金額、粗利金額を再計算。
-                    else if(!chkAll)
+                    }
+                    //０で無いかつ原価単価＝０の場合場合、入力された発注単価を原価単価にセットし、原価金額、粗利金額を再計算。
+                    else if (!chkAll && bbl.Z_Set(mGrid.g_DArray[row].CostUnitPrice) == 0)
                     {
                         mGrid.g_DArray[row].CostUnitPrice = mGrid.g_DArray[row].OrderUnitPrice;
                         mGrid.g_DArray[row].CostGaku = string.Format("{0:#,##0}", orderUnitPrice * bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu));
