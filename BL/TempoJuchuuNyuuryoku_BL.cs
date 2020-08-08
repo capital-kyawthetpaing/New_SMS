@@ -160,5 +160,13 @@ namespace BL
 
             return "";
         }
+        public string GetNouki(string date,string storeCD)
+        {
+            DataTable dt = mdl.GetNouki(date, storeCD);
+            if (dt.Rows.Count > 0)
+                return dt.Rows[0]["Nouki"].ToString();
+
+            return "";
+        }
     }
 }
