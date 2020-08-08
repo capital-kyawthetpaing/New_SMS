@@ -53,6 +53,8 @@ namespace MasterTouroku_ShiireTanka
             StartProgram();
             RB_itemandsku_Check();
             BindCombo();
+            SetRequireField();
+            shiiresaki.SetFocus(1);
             this.segment.CodeWidth = 90;
             this.sport.NameWidth = 260;
             this.segmentC.CodeWidth = 90;
@@ -60,6 +62,8 @@ namespace MasterTouroku_ShiireTanka
             operatorCd = InOperatorCD;
             TB_headerdate.Text = bbl.GetDate();
             GV_item.DisabledColumn("ブランド,競技,商品分類,年度,シーズン,メーカー品番,ITEM,商品名,サイズ,カラー,SKUCD,定価");
+            itemcd.CodeWidth = 100;
+            itemcd.NameWidth = 280;
         }
         private void BindCombo()
         {
@@ -101,6 +105,7 @@ namespace MasterTouroku_ShiireTanka
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                     {
                         Clear();
+                        shiiresaki.SetFocus(1);
                     }
                     break;
                 case 11:
@@ -724,6 +729,14 @@ namespace MasterTouroku_ShiireTanka
                 this.SKUCD.Visible = true;
                 this.SKUCD.Width = 200;
                 this.商品名.Width = 352;
+                //itemcd.Clear();
+                //TB_date_add.Clear();
+                //TB_rate.Clear();
+                //TB_pricewithouttax.Clear();
+                //TB_dateE.Clear();
+                //TB_rate_E.Clear();
+                Clear(panel4);
+                Clear(panel5);
                 GV_item.Refresh();
                 BT_Capture.Visible = false;
                 ModeText = "SKU";

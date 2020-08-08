@@ -40,7 +40,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.ExchangeDenomination = new CKM_Controls.CKMShop_ComboBox();
             this.ExchangeLabel = new CKM_Controls.CKMShop_Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel5.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ckmShop_Label2
@@ -226,8 +228,8 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.panel1);
             this.panel5.Controls.Add(this.ExchangeDenomination);
-            this.panel5.Controls.Add(this.ExchangeLabel);
             this.panel5.Controls.Add(this.ExchangeMoney);
             this.panel5.Controls.Add(this.ckmShop_Label4);
             this.panel5.Controls.Add(this.Remark);
@@ -271,17 +273,25 @@
             // 
             this.ExchangeLabel.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ExchangeLabel.BackColor = System.Drawing.Color.Transparent;
-            this.ExchangeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ExchangeLabel.Font = new System.Drawing.Font("MS Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExchangeLabel.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.ExchangeLabel.FontBold = false;
+            this.ExchangeLabel.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.ExchangeLabel.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium0;
+            this.ExchangeLabel.FontBold = true;
             this.ExchangeLabel.ForeColor = System.Drawing.Color.Black;
-            this.ExchangeLabel.Location = new System.Drawing.Point(444, 277);
+            this.ExchangeLabel.Location = new System.Drawing.Point(2, 2);
             this.ExchangeLabel.Name = "ExchangeLabel";
-            this.ExchangeLabel.Size = new System.Drawing.Size(168, 42);
+            this.ExchangeLabel.Size = new System.Drawing.Size(255, 35);
             this.ExchangeLabel.TabIndex = 14;
             this.ExchangeLabel.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ExchangeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.ExchangeLabel);
+            this.panel1.Location = new System.Drawing.Point(424, 277);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(250, 42);
+            this.panel1.TabIndex = 15;
             // 
             // frmTempoRegiRyougaeNyuuryoku
             // 
@@ -296,6 +306,7 @@
             this.Controls.SetChildIndex(this.panel5, 0);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -314,6 +325,7 @@
         private System.Windows.Forms.Panel panel5;
         private CKM_Controls.CKMShop_Label ExchangeLabel;
         private CKM_Controls.CKMShop_ComboBox ExchangeDenomination;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
