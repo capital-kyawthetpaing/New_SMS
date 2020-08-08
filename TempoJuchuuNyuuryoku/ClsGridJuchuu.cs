@@ -73,6 +73,7 @@ namespace TempoJuchuuNyuuryoku
             //internal decimal OrderTaxRitsu;
             internal string MakerItem;
             internal string JuchuuNO;
+            internal string OldShippingPlanDate;
         }
 
         //列番号定数
