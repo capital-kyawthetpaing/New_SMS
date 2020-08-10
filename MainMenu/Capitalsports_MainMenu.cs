@@ -35,10 +35,19 @@ namespace MainMenu
         [DllImport("user32.dll")]
         static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
         CashDrawerOpen cdo = new CashDrawerOpen();
-
         [return: MarshalAs(UnmanagedType.Bool)]
         [DllImport("user32", CharSet = CharSet.Ansi, SetLastError = true, ExactSpelling = true)]
         public static extern bool SetForegroundWindow(IntPtr hwnd);
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
+        }
         public Capitalsports_MainMenu(String SCD, M_Staff_Entity mse)
         {
             
@@ -50,6 +59,7 @@ namespace MainMenu
             SetDesignerFunction();
 
             lblOperatorName.Text = mse.StaffName;
+            
         }
         private void SetDesignerFunction()
         {
@@ -57,11 +67,32 @@ namespace MainMenu
             Event_Designer(panel_left);
             Event_Designer(panel_right);
             this.Load += Capital_MainMenu_Load;
+            ButtonState();
+        }
+        protected void ButtonState()
+        {
+            var c = GetAllControls(this);
+            for (int i = 0; i < c.Count(); i++)
+            {
+                Control ctrl = c.ElementAt(i) as Control;
+                if (ctrl is CKM_Button)
+                {
+                    (ctrl as CKM_Button).FlatStyle = FlatStyle.Flat;
+                    (ctrl as CKM_Button).FlatAppearance.BorderSize = 0;
+                  //  (ctrl as CKM_Button).FlatAppearance.BorderColor = System.Drawing.ColorTranslator.FromHtml("#05af34") ;
+
+                    if ((ctrl as CKM_Button).Parent is Panel &&  (((ctrl as CKM_Button).Parent as Panel).Name == "panel_left" || ((ctrl as CKM_Button).Parent as Panel).Name == "panel_right"))
+                    {
+                        (ctrl as CKM_Button).Font_Size = CKM_Button.CKM_FontSize.Large;
+                        (ctrl as CKM_Button).BackgroundImageLayout = ImageLayout.Stretch;
+                    }
+                }
+            }
         }
         private void Capital_MainMenu_Load(object sender, EventArgs e)
         {
-          //var f=  GetMessages();
-          //  var ds = ASCIIEncoding.ASCII.GetByteCount(f);
+            //var f=  GetMessages();
+            //  var ds = ASCIIEncoding.ASCII.GetByteCount(f);
             Clear_Text(panel_left);
             Clear_Text(panel_right);
             BindButtonName();
@@ -94,6 +125,7 @@ namespace MainMenu
                     j++;
                     ((CKM_Button)ctrl).Text = "";
                     ((CKM_Button)ctrl).Enabled = false;
+                   // ((CKM_Button)ctrl).TabStop = false;
                     ToolTip ttp = new ToolTip();
                     ttp.SetToolTip(((CKM_Button)ctrl), null);
                     // ((CKM_Button)ctrl).Name = "btnPro" + (c.Count() - (j));
@@ -102,6 +134,7 @@ namespace MainMenu
 
 
         }
+      
         protected void BindButtonName()
         {
             var dt = menu = mbl.getMenuNo(Staff_CD, Base_DL.iniEntity.StoreType);
@@ -244,6 +277,7 @@ namespace MainMenu
                     if (pnl == panel_left)
                     {
                         ((CKM_Button)ctrl).Click += panelLeft_Click;
+                        ((CKM_Button)ctrl).EnabledChanged += OnEnabledChanged ;
                     }
                     else
                     {
@@ -254,27 +288,34 @@ namespace MainMenu
                 }
             }
         }
+        private void OnEnabledChanged(object sender, EventArgs e)
+        {
+            //if (!((CKM_Button)sender).Enabled)
+            //((CKM_Button)sender).BackgroundImage = MainMenu.Properties.Resources.bm_3;
+            
+        }
         private void panelRight_MouseEnter(object sender, EventArgs e)
         {
             (sender as CKM_Button).BackgroundColor = CKM_Button.CKM_Color.Orange;
         }
-
         private void panelRight_MouseLeave(object sender, EventArgs e)
         {
             (sender as CKM_Button).BackgroundColor = CKM_Button.CKM_Color.Yellow;
         }
         private void panelRight_Click(object sender, EventArgs e)
         {
+            IsClose = false;
             OpenForm(sender);
         }
         private void ckM_Button4_Click(object sender, EventArgs e)
         {
 
         }
-
         protected Base_BL bbl = new Base_BL();
+        bool IsClose = false;
         private void btnClose_Click(object sender, EventArgs e)
         {
+            IsClose = true;
            // if (bbl.ShowMessage("Q003") == DialogResult.Yes)
                 this.Close();
             //else
@@ -285,6 +326,7 @@ namespace MainMenu
         }
         private void panelLeft_Click(object sender, EventArgs e)
         {
+            IsClose = false;
             var c = GetAllControls(panel_right);
             int j = 0;
             for (int i = 0; i < c.Count(); i++)
@@ -508,23 +550,28 @@ namespace MainMenu
             hln.ShowDialog();
             this.Close();
         }
-
         private void btnProcess_Click(object sender, EventArgs e)
         {
+            IsClose = false;
             Store_Message sm = new Store_Message( mse);
             sm.ShowDialog(); ;
         }
-
         private void Capitalsports_MainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            BL.Base_BL bbl = new Base_BL();
-            if (bbl.ShowMessage("Q003") == DialogResult.Yes)
+            if (IsClose)
             {
-                ForceToclose();
-                e.Cancel = false;
+                BL.Base_BL bbl = new Base_BL();
+                if (bbl.ShowMessage("Q003") == DialogResult.Yes)
+                {
+                    ForceToclose();
+                    e.Cancel = false;
+                }
+                else
+                    e.Cancel = true;
             }
-            else
+            else {
                 e.Cancel = true;
+            }
         }
         public void ForceToclose()
         {
@@ -584,8 +631,6 @@ namespace MainMenu
             //   // MessageBox.Show(ex.Message);
             //}
         }
-
-       
         protected void SetDisplay()
         {
             string strLogicalName = "LineDisplay";

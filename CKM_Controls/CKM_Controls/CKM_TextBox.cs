@@ -107,9 +107,15 @@ namespace CKM_Controls
         [DisplayName("AllowMinus")]
         public bool AllowMinus { get; set; } = false;
 
-        
+        [Browsable(true)]
+        [Category("CKM Properties")]
+        [Description("Border Color")]
+        [DisplayName("Border Color")]
+        public bool BorderColor { get;
 
-        
+            set; } = false;
+
+
         public Color ClientColor { get; set; } = SystemColors.Window;
         private bool IsRequire { get; set; } = false;
         private bool IsReversecheck { get; set; } = false;
@@ -1129,6 +1135,19 @@ namespace CKM_Controls
         protected override void OnBackColorChanged(EventArgs e)
         {
             base.OnBackColorChanged(e);
+        }
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            //if (BorderColor)
+            //{
+            //    BorderStyle = BorderStyle.None;
+            //    Pen p = new Pen(Color.Red);
+            //    Graphics g = e.Graphics;
+            //    int variance = 3;
+            //    g.DrawRectangle(p, new Rectangle(Location.X - variance, Location.Y - variance, Width + variance, Height + variance));
+
+            //}
+            base.OnPaint(e);
         }
     }
 }

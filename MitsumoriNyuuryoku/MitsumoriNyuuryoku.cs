@@ -3515,7 +3515,6 @@ namespace MitsumoriNyuuryoku
                 detailControls[(int)EIndex.CustomerName2].Text = "";
             }
         }
-
     }
 }
 

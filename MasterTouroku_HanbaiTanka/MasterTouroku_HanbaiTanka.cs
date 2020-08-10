@@ -2510,7 +2510,6 @@ namespace MasterTouroku_HanbaiTanka
             mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
 
         }
-
     }
 }
 

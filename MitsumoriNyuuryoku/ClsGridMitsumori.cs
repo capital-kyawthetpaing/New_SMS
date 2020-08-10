@@ -76,6 +76,7 @@ namespace MitsumoriNyuuryoku
             CommentOutStore,    // 社外備考・コメント
             IndividualClientName,    //  個別販売先
             ProfitGaku,             // 粗利額
+
             Space2,
             COUNT
         }

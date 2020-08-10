@@ -1716,7 +1716,7 @@ namespace MasterTouroku_ShiireTanka
             }
         }
         private void BT_Capture_Click(object sender, EventArgs e)
-        {
+       {
             btn = "2";
             if (!String.IsNullOrEmpty(shiiresaki.TxtCode.Text))
             {
