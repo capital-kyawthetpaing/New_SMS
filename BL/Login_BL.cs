@@ -27,7 +27,10 @@ namespace BL
         public const bool isd = false;
         public static bool Islocalized = false;
         public static string SyncPath = "";
-
+        public static string FtpPath = "";
+        public static string ID = "";
+        public static string IP = "";
+        public static string Password = "";
         /// <summary>
         /// constructor
         /// </summary>
@@ -283,8 +286,7 @@ namespace BL
         {
             Base_DL bdl = new Base_DL();
             var dt = new DataTable();
-            //var con = bdl.GetConnection();
-             SqlConnection con = new SqlConnection("Data Source=202.223.48.145;Initial Catalog=CapitalSMS;Persist Security Info=True;User ID=sa;Password=admin123456!");
+            var con = bdl.GetConnection();
             //SqlConnection conn = con;
             con.Open();
             SqlCommand command = new SqlCommand("Select Char1, Char2, Char3, Char4,Char5 from [M_Multiporpose] where [Key]='1' and Id='326'", con);
@@ -373,8 +375,8 @@ namespace BL
         {
             Base_DL bdl = new Base_DL();
             var dt = new DataTable();
-         //   var con = bdl.GetConnection();
-             SqlConnection con = new SqlConnection("Data Source=202.223.48.145;Initial Catalog=CapitalSMS;Persist Security Info=True;User ID=sa;Password=admin123456!");
+            var con = bdl.GetConnection();
+         //   
             //SqlConnection conn = con;
             con.Open();
             SqlCommand command = new SqlCommand("Select Num1 from [M_Multiporpose] where [Key]='1' and Id='326'", con);

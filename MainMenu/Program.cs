@@ -6,6 +6,9 @@ using System.Windows.Forms;
 using BL;
 using DL;
 using System.Deployment;
+using System.Runtime.InteropServices;
+using System.Text;
+
 namespace MainMenu
 {
 
@@ -28,6 +31,9 @@ namespace MainMenu
            
             Application.Run(LoginFormName());
         }
+        [DllImport("kernel32.dll")]
+        private static extern int GetPrivateProfileSection(string lpAppName, byte[] lpszReturnBuffer, int nSize, string lpFileName);
+
         public static bool IsInteger(string value)
         {
             value = value.Replace("-", "");
@@ -42,24 +48,40 @@ namespace MainMenu
         }
        static Form LoginFormName()
         {
+            
             Form pgname =null;
-            const string path= "ftp://202.223.48.145/Sync/";
-            Login_BL.SyncPath = path;
             const string localpath = @"C:\SMS\AppData\CKM.ini";
+
+            var Id = "";
+            var pass = "";
+            var path = "";
+            Login_BL lbl = new Login_BL();
+            IniFile_DL idl = new IniFile_DL(@"‪C:\SMS\AppData\CKM.ini");
+            if (lbl.ReadConfig())
+            {
+                byte[] buffer = new byte[2048];
+
+                GetPrivateProfileSection("ServerAuthen", buffer, 2048, localpath);
+                String[] tmp = Encoding.ASCII.GetString(buffer).Trim('\0').Split('\0');
+                Id = tmp[1].Replace("\"", "").Split('=').Last();
+                pass =  tmp[2].Replace("\"", "").Split('=').Last();
+                path=  tmp[3].Replace("\"", "").Split('=').Last();
+                Login_BL.SyncPath = path;
+                Login_BL.ID = Id;
+                Login_BL.Password = pass;
+                Login_BL.FtpPath = path;
+                //FTPData ftp1 = new FTPData();
+                //ftp1.UpdateSyncData(path);
+            }
+          //  else
+                //return;
             if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
             {
                 FTPData ftp = new FTPData();
                 if (!System.IO.File.Exists(localpath))
                 {
-                    FTPData.Download("CKM.ini", path, "Administrator", "c@p!+A1062O", @"C:\SMS\AppData\");
+                    FTPData.Download("CKM.ini", path,Id, pass, @"C:\SMS\AppData\");
                 }
-                //else
-                //{
-                //    ftp.UpdateSyncData("ftp://202.223.48.145/NewlyModified/");
-                //    // Cursor = Cursors.WaitCursor;
-                //    // this.Cursor = Cursors.Default;
-                //}
-
                 Login_BL.Islocalized = false;
             }
             else
