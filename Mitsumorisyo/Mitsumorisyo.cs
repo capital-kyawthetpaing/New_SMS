@@ -14,7 +14,8 @@ using Search;
 namespace Mitsumorisyo
 {
     /// <summary>
-    /// Mitsumorisyo 見積書
+    /// Mitsumorisyo 
+    /// 見積書
     /// </summary>
     internal partial class Mitsumorisyo : FrmMainForm
     {
