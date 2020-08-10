@@ -1932,19 +1932,22 @@ namespace MarkDownNyuuryoku
 
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
             {
-                kin += bbl.Z_Set(mGrid.g_DArray[RW].MarkDownGaku);     
-                zei += bbl.Z_Set(mGrid.g_DArray[RW].Tax);
+                if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JanCD))
+                {
+                    kin += bbl.Z_Set(mGrid.g_DArray[RW].MarkDownGaku);
+                    zei += bbl.Z_Set(mGrid.g_DArray[RW].Tax);
 
-                if (bbl.Z_Set(mGrid.g_DArray[RW].TaxRate) == 10)
-                {
-                    mHontaiGaku10 += kin;
-                    mTaxGaku10 += zei;
-                }
-                else
-                {
-                    mHontaiGaku8 += kin;
-                    mTaxGaku8 += zei;
-                }
+                    if (bbl.Z_Set(mGrid.g_DArray[RW].TaxRate) == 10)
+                    {
+                        mHontaiGaku10 += kin;
+                        mTaxGaku10 += zei;
+                    }
+                    else
+                    {
+                        mHontaiGaku8 += kin;
+                        mTaxGaku8 += zei;
+                    }
+                }               
 
             }
 
@@ -2242,16 +2245,16 @@ namespace MarkDownNyuuryoku
                 PC = InPcID
             };
 
-            dme.ChkResult = rdoResult.Checked ? "1" : "0";
-            dme.ChangeDate = rdoResult.Checked ? detailControls[(int)EIndex.PurchaseDate].Text : detailControls[(int)EIndex.CostingDate].Text;
-            dme.ReplicaNO = CboStockInfo.SelectedValue.ToString();
-            dme.ReplicaDate = CboStockInfo.Text.Substring(0, 10);
-            dme.ReplicaTime = CboStockInfo.Text.Substring(11, 8);
-            dme.StaffCD = detailControls[(int)EIndex.StaffCD].Text;
-            dme.VendorCD = detailControls[(int)EIndex.VendorCD].Text;
-            dme.PurchaseGaku = bbl.Z_Set(lblPurchaseGaku.Text).ToString();
-            dme.PurchaseTax = bbl.Z_Set(txtPurchaseTax.Text).ToString();
-            dme.TotalPurchaseGaku = bbl.Z_Set(txtTotalPurchaseGaku.Text).ToString();
+            //dme.ChkResult = rdoResult.Checked ? "1" : "0";
+            //dme.ChangeDate = rdoResult.Checked ? detailControls[(int)EIndex.PurchaseDate].Text : detailControls[(int)EIndex.CostingDate].Text;
+            //dme.ReplicaNO = CboStockInfo.SelectedValue.ToString();
+            //dme.ReplicaDate = CboStockInfo.Text.Substring(0, 10);
+            //dme.ReplicaTime = CboStockInfo.Text.Substring(11, 8);
+            //dme.StaffCD = detailControls[(int)EIndex.StaffCD].Text;
+            //dme.VendorCD = detailControls[(int)EIndex.VendorCD].Text;
+            //dme.PurchaseGaku = bbl.Z_Set(lblPurchaseGaku.Text).ToString();
+            //dme.PurchaseTax = bbl.Z_Set(txtPurchaseTax.Text).ToString();
+            //dme.TotalPurchaseGaku = bbl.Z_Set(txtTotalPurchaseGaku.Text).ToString();
 
             // 計算税額≠入力税額の場合、差異を足しこむ
             if (rdoResult.Checked && bbl.Z_Set(txtTotalPurchaseGaku.Text) != mTaxCalcGaku) 

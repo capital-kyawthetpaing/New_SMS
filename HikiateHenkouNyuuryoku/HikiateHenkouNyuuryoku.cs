@@ -492,10 +492,14 @@ namespace HikiateHenkouNyuuryoku
                     if (w_Row <= m_EnableCnt - 1)
                     {
 
-                        // 固定色の列はその色を設定
+                        //固定色の列はその色を設定 2020/07/29通常と同じ色にする
                         switch (w_Col)
                         {
                             case (int)ClsGridZaiko.ColNO.GYONO:
+                                {
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    break;
+                                }
                             case (int)ClsGridZaiko.ColNO.DispArrivalPlanDate:
                             case (int)ClsGridZaiko.ColNO.OrderNO:
                             case (int)ClsGridZaiko.ColNO.VendorName:
@@ -504,7 +508,8 @@ namespace HikiateHenkouNyuuryoku
                             case (int)ClsGridZaiko.ColNO.AllowableSu:
                             case (int)ClsGridZaiko.ColNO.InstructionSu:
                                 {
-                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    //mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                                     break;
                                 }
                         }
@@ -762,6 +767,11 @@ namespace HikiateHenkouNyuuryoku
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                                 }
                                 break;
+
+                            default:
+                                mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
+                                break;
+
                         }
                     }
                     w_AllFlg = false;
@@ -1124,21 +1134,21 @@ namespace HikiateHenkouNyuuryoku
                     if (w_Row <= m_EnableCnt - 1)
                     {
 
-                        // 固定色の列はその色を設定
-                        switch (w_Col)
-                        {
-                            case (int)ClsGridHikiate.ColNO.GYONO:
-                            case (int)ClsGridHikiate.ColNO.JuchuuDate:
-                            case (int)ClsGridHikiate.ColNO.CustomerCD:
-                            case (int)ClsGridHikiate.ColNO.CustomerName:
-                            case (int)ClsGridHikiate.ColNO.JuchuuNO:
-                            case (int)ClsGridHikiate.ColNO.JuchuuSuu:
-                            case (int)ClsGridHikiate.ColNO.InstructionSu:
-                                {
-                                    mGrid2.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
-                                    break;
-                                }
-                        }
+                        // 固定色の列はその色を設定　2020/07/29　通常と同じ色にする
+                        //switch (w_Col)
+                        //{
+                        //    case (int)ClsGridHikiate.ColNO.GYONO:
+                        //    case (int)ClsGridHikiate.ColNO.JuchuuDate:
+                        //    case (int)ClsGridHikiate.ColNO.CustomerCD:
+                        //    case (int)ClsGridHikiate.ColNO.CustomerName:
+                        //    case (int)ClsGridHikiate.ColNO.JuchuuNO:
+                        //    case (int)ClsGridHikiate.ColNO.JuchuuSuu:
+                        //    case (int)ClsGridHikiate.ColNO.InstructionSu:
+                        //        {
+                        //            mGrid2.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                        //            break;
+                        //        }
+                        //}
                     }
 
                     // 使用不可行は固定色を設定
@@ -1402,6 +1412,9 @@ namespace HikiateHenkouNyuuryoku
                                 {
                                     mGrid2.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                                 }
+                                break;
+                            default:
+                                mGrid2.g_MK_State[w_Col, pRow].Cell_Bold = true;
                                 break;
                         }
                     }
@@ -2654,7 +2667,8 @@ namespace HikiateHenkouNyuuryoku
         /// </summary>
         private void ExecExpand()
         {
-            Control w_Act = this.ActiveControl;
+            //Control w_Act = this.ActiveControl;
+            Control w_Act = this.PreviousCtrl;
             int w_Row;
 
             if (mOpeMode == EOpeMode.ZAIKO)
@@ -2871,7 +2885,8 @@ namespace HikiateHenkouNyuuryoku
             try
             {
                 int w_Row;
-                Control w_Act = this.ActiveControl;
+                //Control w_Act = this.ActiveControl;
+                Control w_Act = this.PreviousCtrl;
                 if (w_Act == null)
                     return;
 

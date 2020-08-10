@@ -452,5 +452,17 @@ namespace DL
 
             return SelectData(dic, sp);
         }
+        public DataTable GetNouki(string date, string storeCD)
+        {
+            string sp = "GetNouki";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = storeCD } },
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = date } },
+            };
+
+            return SelectData(dic, sp);
+        }
     }
 }

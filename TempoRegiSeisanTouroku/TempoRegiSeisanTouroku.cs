@@ -106,17 +106,19 @@ namespace TempoRegiSeisanTouroku
             switch (index + 1)
             {
                 case 2:
-                    if(ErrorCheck())
+                    if (ErrorCheck())
                     {
-                        if(chkDel.Checked == false)
+                        if (chkDel.Checked == false)
                         {
-                            InsertUpdate();
+                            if (bbl.ShowMessage("Q101") == DialogResult.Yes)
+                            {
+                                InsertUpdate();
+                            }
                         }
-                        else if(chkDel.Checked == true)
+                        else if (chkDel.Checked == true)
                         {
                             Delete();
                         }
-                       
                     }              
                     break;
             }
@@ -771,7 +773,8 @@ namespace TempoRegiSeisanTouroku
             if (seisanbl.D_StoreCalculation_Insert_Update(dsce))
             {
                 chkDel.Enabled = true;
-                seisanbl.ShowMessage("I101");              
+                seisanbl.ShowMessage("I101");
+                tabControl1.SelectedIndex = 0;
             }           
         }
 
@@ -799,10 +802,20 @@ namespace TempoRegiSeisanTouroku
                 txt1.Text = "0";
                 txtotheramount.Text = "0";
                 lblCashBalance.Text = "0";
-                lblCashStorage.Text = "¥ " + "0";
+                //lblCashStorage.Text = "¥ " + "0";
+
+                string cash = string.Empty;
+                if (string.IsNullOrWhiteSpace(lblCashBalance.Text))
+                {
+                    lblCashBalance.Text = "0";
+                }
+                cash = (Convert.ToDecimal(lblCashBalance.Text) - Convert.ToDecimal(txtTotal.Text)).ToString();
+                cash = string.IsNullOrWhiteSpace(cash) ? "0" : string.Format("{0:#,#}", Convert.ToInt64(cash));
+                lblCashStorage.Text = "¥ " + (string.IsNullOrWhiteSpace(cash) ? "0" : cash);
 
                 chkDel.Checked = false;
                 chkDel.Enabled = false;
+                tabControl1.SelectedIndex = 0;
             }
         }
 

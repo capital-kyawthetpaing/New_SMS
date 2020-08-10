@@ -287,11 +287,15 @@ namespace UrikakekinTairyuuHyou
                                         wb.Worksheet("worksheet").Cell(1, 4).Value = "'" + strmonth[0].ToString();
                                         wb.Worksheet("worksheet").Cell(2, 2).Value = "'" + cboStore.SelectedValue.ToString();
                                         wb.Worksheet("worksheet").Cell(2, 3).Value = cboStore.Text.ToString();
-
+                                        //wb.Worksheet("worksheet").Columns(4, 1).Delete();
+                                        //wb.Worksheet("worksheet").Columns(4, 1).Hide();
+                                        //wb.Worksheet("worksheet").Columns(4, 2).Hide();
+                                        //wb.Worksheet("worksheet").Columns(4, 3).Hide();
                                         wb.Worksheet("worksheet").Cell(4, 1).Value = " ";
                                         wb.Worksheet("worksheet").Cell(4, 2).Value = " ";
                                         wb.Worksheet("worksheet").Cell(4, 3).Value = " ";
                                         wb.Worksheet("worksheet").Cell(4, 16).Value = "売掛月数";
+                                        wb.Worksheet("worksheet").Hide();
 
                                         //wb.Worksheet("worksheet").Cell(3, 4).Value = "'" + strmonth[11].ToString();
                                         //wb.Worksheet("worksheet").Cell(3, 5).Value = "'" + strmonth[10].ToString();

@@ -252,7 +252,6 @@ namespace TempoRegiRyougaeNyuuryoku
                 return false;
 
             if (ExchangeDenomination.SelectedValue.ToString() == "-1")
-
             {
                 trrnbl.ShowMessage("E102");
                 ExchangeDenomination.Focus();
