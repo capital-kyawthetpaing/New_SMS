@@ -358,7 +358,8 @@ namespace TempoRegiNyuukinTouroku
                 if (isForced) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
                 //Base_DL.iniEntity.CDO_DISPLAY.SetDisplay(true, true,Base_DL.iniEntity.DefaultMessage);
             }
-            else {
+            else
+            {
                 if (isForced) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
             }
 

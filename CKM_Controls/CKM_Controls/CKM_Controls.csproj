@@ -123,6 +123,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="R_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="R_Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="CKM_GridView.resx">
       <DependentUpon>CKM_GridView.cs</DependentUpon>
     </EmbeddedResource>

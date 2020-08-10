@@ -32,7 +32,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>http://202.223.48.145/SMS/SMS-GLOBE/</UpdateUrl>
-    <ApplicationRevision>75</ApplicationRevision>
+    <ApplicationRevision>87</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -147,6 +147,12 @@
     </Compile>
     <Compile Include="NewlyModifiedLogicProgram.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ProgressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressBar.Designer.cs">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Store_Message.cs">
       <SubType>Form</SubType>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main_Menu.resx">
       <DependentUpon>Main_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressBar.resx">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -285,6 +294,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_mark_l5k_icon.ico" />
+    <None Include="Resources\bn_15.png" />
+    <None Include="Resources\bn_14.png" />
+    <None Include="Resources\bn_13.png" />
+    <None Include="Resources\bn_12.png" />
+    <None Include="Resources\bn_11.png" />
+    <None Include="Resources\pb_1.png" />
+    <None Include="Resources\bn_10.png" />
+    <None Include="Resources\bn_9.png" />
+    <None Include="Resources\pm_6.png" />
+    <None Include="Resources\pm_4.png" />
+    <None Include="Resources\bm_3.png" />
+    <None Include="Resources\bm_2.png" />
+    <None Include="Resources\bm_1.png" />
+    <None Include="Resources\pn_1.png" />
+    <None Include="Resources\nc_6.png" />
+    <None Include="Resources\nc_5.png" />
+    <None Include="Resources\nc4.png" />
+    <None Include="Resources\nc3.png" />
+    <None Include="Resources\nc2.png" />
+    <None Include="Resources\ncl_1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
