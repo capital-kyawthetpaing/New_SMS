@@ -16,7 +16,7 @@ namespace DL
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 {"@PayeeCD", new ValuePair {value1 = SqlDbType.VarChar,value2 = dpe.PayeeCD} }  ,
-                         {"@PayCloseDate", new ValuePair {value1 = SqlDbType.VarChar,value2 = dpe.PayCloseDate} }
+                {"@PayCloseDate", new ValuePair {value1 = SqlDbType.VarChar,value2 = dpe.PayCloseDate} }
             };
             return SelectData(dic, "CheckPayCloseHistory");
         }
