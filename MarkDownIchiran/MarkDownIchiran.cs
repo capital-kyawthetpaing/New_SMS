@@ -372,30 +372,6 @@ namespace MarkDownIchiran
             }
         }
 
-        protected override void ExecSec()
-        {
-            try
-            {
-                ////詳細画面を起動します
-                //FrmDetail frm = new FrmDetail();
-                //doe.CollectPlanNO = GvDetail.CurrentRow.Cells["CollectPlanNO"].Value.ToString();
-                //frm.dt = mibl.D_CollectPlan_SelectAllForSyosai(doe);
-                //if(frm.dt.Rows.Count >0 )
-                //    frm.ShowDialog();
-                //else
-                //{
-                //    mibl.ShowMessage("E128");
-                //}
-
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-                //EndSec();
-            }
-        }
-
         /// <summary>
         /// EXCEL出力
         /// </summary>
@@ -596,19 +572,6 @@ namespace MarkDownIchiran
         {
             try
             {
-                //int w_Row;
-                ////Control w_Act = this.ActiveControl;
-                //Control w_Act = this.PreviousCtrl;
-                //if (w_Act == null)
-                //    return;
-
-                //if (mGrid2.F_Search_Ctrl_MK(w_Act, out int w_Col, out int w_CtlRow) == false)
-                //    return;
-
-                //w_Row = w_CtlRow + Vsb_Mei_1.Value;
-
-                ////「受注入力」を照会モードで起動（引数：該当行の受注番号）
-                //string juchuuNo = mGrid2.g_DArray[w_Row].JuchuuNO;
 
                 //EXEが存在しない時ｴﾗｰ
                 // 実行モジュールと同一フォルダのファイルを取得
@@ -656,6 +619,16 @@ namespace MarkDownIchiran
                         if (bbl.ShowMessage("Q004") != DialogResult.Yes)
                             return;
 
+                        break;
+                    }
+                case 9: //F10:詳細
+                    {
+                        if (GvDetail.CurrentRow != null && GvDetail.CurrentRow.Index >= 0)
+                        {
+                            string markDownNo = GvDetail.CurrentRow.Cells["colMarkDownNO"].Value.ToString();
+
+                            this.ExecMarkDownNyuuryoku(markDownNo);
+                        }
                         break;
                     }
 
@@ -825,35 +798,9 @@ namespace MarkDownIchiran
             }
         }
 
-        private void GvDetail_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            DataGridView dgv = (DataGridView)sender;
-
-            //セルの列を確認
-            if (e.ColumnIndex == (int)DColNo.VendorCD )
-            {
-                ////セルの値により、背景色を変更する
-                //switch (e.Value)
-                //{
-                //    case "承認済":
-                //        e.CellStyle.BackColor = ClsGridBase.GridColor;
-                //        break;
-                //    case "承認中":
-                //    case "申請":
-                //        e.CellStyle.BackColor = Color.PaleGoldenrod;
-                //        break;
-                //    case "却下":
-                //        e.CellStyle.BackColor = Color.Pink;
-                //        break;
-
-                //}
-            }
-        }
-
-
         #endregion
 
-        
+
     }
 }
 

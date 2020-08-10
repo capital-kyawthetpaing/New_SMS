@@ -14,7 +14,8 @@ using Search;
 namespace Mitsumorisyo
 {
     /// <summary>
-    /// Mitsumorisyo 見積書
+    /// Mitsumorisyo 
+    /// 見積書
     /// </summary>
     internal partial class Mitsumorisyo : FrmMainForm
     {
@@ -334,7 +335,7 @@ namespace Mitsumorisyo
                         Report.Refresh();
 
                         bool result = OutputPDF(filePath, Report);
-                        
+
                         //PDF出力が完了しました。
                         bbl.ShowMessage("I202");
 
@@ -344,7 +345,12 @@ namespace Mitsumorisyo
                 //更新処理
                 //tableの見積番号だけ
                 mibl.D_Mitsumori_Update(dme, dtForUpdate, InOperatorCD, InPcID);
-                
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace.ToString());
+
             }
             finally
             {

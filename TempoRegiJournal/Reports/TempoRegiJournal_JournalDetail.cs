@@ -16,14 +16,14 @@ namespace TempoRegiJournal.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class TempoRegiJournal_Exchange : ReportClass {
+    public class TempoRegiJournal_JournalDetail : ReportClass {
         
-        public TempoRegiJournal_Exchange() {
+        public TempoRegiJournal_JournalDetail() {
         }
         
         public override string ResourceName {
             get {
-                return "TempoRegiJournal_Exchange.rpt";
+                return "TempoRegiJournal_JournalDetail.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace TempoRegiJournal.Reports {
         
         public override string FullResourceName {
             get {
-                return "TempoRegiJournal.Reports.TempoRegiJournal_Exchange.rpt";
+                return "TempoRegiJournal.Reports.TempoRegiJournal_JournalDetail.rpt";
             }
             set {
                 // Do nothing
@@ -74,7 +74,7 @@ namespace TempoRegiJournal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection3 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace TempoRegiJournal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection2 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,7 +90,7 @@ namespace TempoRegiJournal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection5 {
             get {
                 return this.ReportDefinition.Sections[5];
             }
@@ -98,7 +98,7 @@ namespace TempoRegiJournal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
             get {
                 return this.ReportDefinition.Sections[6];
             }
@@ -138,7 +138,7 @@ namespace TempoRegiJournal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection8 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection17 {
             get {
                 return this.ReportDefinition.Sections[11];
             }
@@ -146,7 +146,7 @@ namespace TempoRegiJournal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection9 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection18 {
             get {
                 return this.ReportDefinition.Sections[12];
             }
@@ -154,7 +154,7 @@ namespace TempoRegiJournal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection10 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection20 {
             get {
                 return this.ReportDefinition.Sections[13];
             }
@@ -162,7 +162,7 @@ namespace TempoRegiJournal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection11 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection21 {
             get {
                 return this.ReportDefinition.Sections[14];
             }
@@ -170,7 +170,7 @@ namespace TempoRegiJournal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection22 {
             get {
                 return this.ReportDefinition.Sections[15];
             }
@@ -178,17 +178,57 @@ namespace TempoRegiJournal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection8 {
             get {
                 return this.ReportDefinition.Sections[16];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection23 {
+            get {
+                return this.ReportDefinition.Sections[17];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection3 {
+            get {
+                return this.ReportDefinition.Sections[18];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection2 {
+            get {
+                return this.ReportDefinition.Sections[19];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section ReportFooterSection1 {
+            get {
+                return this.ReportDefinition.Sections[20];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[21];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedTempoRegiJournal_Exchange : Component, ICachedReport {
+    public class CachedTempoRegiJournal_JournalDetail : Component, ICachedReport {
         
-        public CachedTempoRegiJournal_Exchange() {
+        public CachedTempoRegiJournal_JournalDetail() {
         }
         
         [Browsable(false)]
@@ -225,7 +265,7 @@ namespace TempoRegiJournal.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            TempoRegiJournal_Exchange rpt = new TempoRegiJournal_Exchange();
+            TempoRegiJournal_JournalDetail rpt = new TempoRegiJournal_JournalDetail();
             rpt.Site = this.Site;
             return rpt;
         }

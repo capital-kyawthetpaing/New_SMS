@@ -146,6 +146,7 @@
     <Content Include="StoreProcedure\D_MailSend_Update.sql" />
     <Content Include="StoreProcedure\D_Mail_Select.sql" />
     <Content Include="StoreProcedure\D_Mail_SelectAll.sql" />
+    <Content Include="StoreProcedure\D_MarkDown_SelectAll.sql" />
     <Content Include="StoreProcedure\D_MenuMessageSelect.sql" />
     <Content Include="StoreProcedure\D_Mitsumori_SelectAll.sql" />
     <Content Include="StoreProcedure\D_Mitsumori_SelectData.sql" />
@@ -531,6 +532,7 @@
     <Content Include="StoreProcedure\PRC_IkkatuHacchuuNyuuryoku_SelectByOrderNO.sql" />
     <Content Include="StoreProcedure\PRC_IkkatuHacchuuNyuuryoku_SelectData.sql" />
     <Content Include="StoreProcedure\PRC_KaitouNoukiTouroku.sql" />
+    <Content Include="StoreProcedure\PRC_MarkDownNyuuryoku.sql" />
     <Content Include="StoreProcedure\PRC_MasterTouroku_HacchuuPrice.sql" />
     <Content Include="StoreProcedure\PRC_MasterTouroku_HanbaiTanka.sql" />
     <Content Include="StoreProcedure\PRC_MasterTouroku_HanbaiTanka_SKU.sql" />

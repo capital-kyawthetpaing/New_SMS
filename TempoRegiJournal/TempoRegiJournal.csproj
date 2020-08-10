@@ -79,8 +79,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Reports\TempoRegiJournal_Deposit.cs">
-      <DependentUpon>TempoRegiJournal_Deposit.rpt</DependentUpon>
+    <Compile Include="Reports\TempoRegiJournal_Journal.cs">
+      <DependentUpon>TempoRegiJournal_Journal.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\TempoRegiJournal_JournalDetail.cs">
+      <DependentUpon>TempoRegiJournal_JournalDetail.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -91,31 +97,13 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="Reports\TempoRegiJournal_Exchange.cs">
-      <DependentUpon>TempoRegiJournal_Exchange.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Reports\TempoRegiJournal_ChangePreparation.cs">
-      <DependentUpon>TempoRegiJournal_ChangePreparation.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Reports\TempoRegiJournal_MiscPayment.cs">
-      <DependentUpon>TempoRegiJournal_MiscPayment.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="StoreDataSet.cs">
       <DependentUpon>StoreDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="StoreDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>StoreDataSet.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="TempoRegiJournal.cs">
       <SubType>Form</SubType>
@@ -130,18 +118,6 @@
     </Compile>
     <Compile Include="TempoRegiJournalPreview.Designer.cs">
       <DependentUpon>TempoRegiJournalPreview.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\TempoRegiJournal_MiscDeposit.cs">
-      <DependentUpon>TempoRegiJournal_MiscDeposit.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Reports\TempoRegiJournal_Journal.cs">
-      <DependentUpon>TempoRegiJournal_Journal.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Reports\TempoRegiJournal_Sales.cs">
       <AutoGen>True</AutoGen>
@@ -159,25 +135,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reports\TempoRegiJournal_Deposit.rpt">
+    <EmbeddedResource Include="Reports\TempoRegiJournal_Journal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>TempoRegiJournal_Deposit.cs</LastGenOutput>
+      <LastGenOutput>TempoRegiJournal_Journal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TempoRegiJournal_JournalDetail.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TempoRegiJournal_JournalDetail.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\TempoRegiJournal_SettlementProcess.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TempoRegiJournal_SettlementProcess.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\TempoRegiJournal_Exchange.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>TempoRegiJournal_Exchange.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\TempoRegiJournal_ChangePreparation.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>TempoRegiJournal_ChangePreparation.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\TempoRegiJournal_MiscPayment.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>TempoRegiJournal_MiscPayment.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="TempoRegiJournal.resx">
       <DependentUpon>TempoRegiJournal.cs</DependentUpon>
@@ -185,18 +153,19 @@
     <EmbeddedResource Include="TempoRegiJournalPreview.resx">
       <DependentUpon>TempoRegiJournalPreview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\TempoRegiJournal_MiscDeposit.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>TempoRegiJournal_MiscDeposit.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\TempoRegiJournal_Journal.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>TempoRegiJournal_Journal.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reports\TempoRegiJournal_Sales.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TempoRegiJournal_Sales.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
     <None Include="StoreDataSet.xsc">
       <DependentUpon>StoreDataSet.xsd</DependentUpon>
     </None>
@@ -208,15 +177,6 @@
     <None Include="StoreDataSet.xss">
       <DependentUpon>StoreDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

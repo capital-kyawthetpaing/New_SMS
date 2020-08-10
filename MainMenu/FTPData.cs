@@ -1,9 +1,12 @@
-﻿using System;
+﻿using BL;
+using DL;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,12 +18,7 @@ namespace MainMenu
         StringBuilder result = new StringBuilder();
         WebResponse response = null;
         StreamReader reader = null;
-
-        //credentials
-        //static string ftpuri = "ftp://202.223.48.145/";
-        //static string UID = "Administrator";
-        //static string PWD = "c@p!+A1062O";
-        //static string path = @"C:\SMS\AppData\";
+        
         public FTPData()
         {
 
@@ -73,24 +71,39 @@ namespace MainMenu
 
             }
         }
+        [DllImport("kernel32.dll")]
+        private static extern int GetPrivateProfileSection(string lpAppName, byte[] lpszReturnBuffer, int nSize, string lpFileName);
+
         public void UpdateSyncData(string Path)
         {
-            var GetList = FTPData.GetFileList(Path, "Administrator", "c@p!+A1062O", @"C:\SMS\AppData\");   /// Add Network Credentials
+            //var Id = "";
+            //var pass = "";
+            //var path = "";
+            //Login_BL lbl = new Login_BL();
+            //IniFile_DL idl = new IniFile_DL(@"‪C:\SMS\AppData\CKM.ini");
+            //if (lbl.ReadConfig())
+            //{
+            //    byte[] buffer = new byte[2048];
+
+            //    GetPrivateProfileSection("ServerAuthen", buffer, 2048, @"‪C:\SMS\AppData\CKM.ini");
+            //    String[] tmp = Encoding.ASCII.GetString(buffer).Trim('\0').Split('\0');
+            //    Id = tmp[1].Replace("\"", "").Split('=').Last();
+            //    pass = tmp[2].Replace("\"", "").Split('=').Last();
+            //    path = tmp[3].Replace("\"", "").Split('=').Last();
+            //    Login_BL.SyncPath = path;
+            //}
+            
+            var GetList = FTPData.GetFileList(Path, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");   /// Add Network Credentials
             // if (GetList.Count() > 0 && GetList != null)
             if (GetList != null)
             {
                // Cursor = Cursors.WaitCursor;
-
-
                 foreach (string file in GetList)
                 {
-
-                    FTPData.Download(file, Path, "Administrator", "c@p!+A1062O", @"C:\SMS\AppData\");
+                    FTPData.Download(file, Path, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");
                 }
-
               //  Cursor = Cursors.Default;
             }
-
         }
         public static void Download(string file, string ftpuri, string UID, string PWD, string path)
         {
@@ -156,15 +169,6 @@ namespace MainMenu
                 writeStream.Close();
                 response.Close();
                 File.SetLastWriteTime(path + "/" + file, server_Info);
-
-
-                //}
-                //Delete
-                //FtpWebRequest requestFileDelete = (FtpWebRequest)WebRequest.Create("ftp://202.223.48.145/" + file);
-                //requestFileDelete.Credentials = new NetworkCredential("Administrator", "c@p!+A1062O");
-                //requestFileDelete.Method = WebRequestMethods.Ftp.DeleteFile;
-
-                //FtpWebResponse responseFileDelete = (FtpWebResponse)requestFileDelete.GetResponse();
             }
 
             catch
