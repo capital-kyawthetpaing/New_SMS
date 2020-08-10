@@ -93,7 +93,7 @@ namespace BL
 
         //public bool Mastertoroku_Shiretanka_Insert(string tbitem, string tbsku, string tbdel, string tbdejan, M_ItemOrderPrice_Entity mie)
         //{
-        //    return msdl.Mastertoroku_Shiretanka_Insert(tbitem,tbsku,tbdel, tbdejan, mie);
+        //    return msdl.Mastertoroku_Shiretanka_Insert(tbitem, tbsku, tbdel, tbdejan, mie);
         //}
 
         public DataTable Mastertoroku_Shiretanka_Insert(string tbitem, string tbsku, string tbdel, string tbdejan, M_ItemOrderPrice_Entity mie)
