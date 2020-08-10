@@ -1932,6 +1932,7 @@ namespace TempoJuchuuNyuuryoku
                     mGrid.g_DArray[i].PaymentPlanDate = row["PaymentPlanDate"].ToString();
                     mGrid.g_DArray[i].CollectClearDate = row["D_CollectClearDate"].ToString();
                     mGrid.g_DArray[i].ShippingPlanDate = row["ShippingPlanDate"].ToString();
+                    mGrid.g_DArray[i].OldShippingPlanDate = mGrid.g_DArray[i].ShippingPlanDate;
 
                     //mGrid.g_DArray[i].KeigenTax = bbl.Z_Set(row["CollectClearDate"]);
 
@@ -3065,8 +3066,8 @@ namespace TempoJuchuuNyuuryoku
                         mGrid.g_DArray[row].OrderUnitPrice = GetTanka(row, ymd);
                         //mGrid.g_DArray[row].OrderGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].OrderUnitPrice) * bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu));
 
-                        //０で無い場合、入力された発注単価を原価単価にセットし、原価金額、粗利金額を再計算。
-                        if(bbl.Z_Set(mGrid.g_DArray[row].OrderUnitPrice) != 0)
+                        //０で無いかつ原価単価＝０の場合、入力された発注単価を原価単価にセットし、原価金額、粗利金額を再計算。
+                        if (bbl.Z_Set(mGrid.g_DArray[row].OrderUnitPrice) != 0 && bbl.Z_Set(mGrid.g_DArray[row].CostUnitPrice) == 0)
                         {
                             mGrid.g_DArray[row].CostUnitPrice = mGrid.g_DArray[row].OrderUnitPrice;
                             mGrid.g_DArray[row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].CostUnitPrice) * wSuu);
@@ -3202,6 +3203,14 @@ namespace TempoJuchuuNyuuryoku
                             return false;
                         }
 
+                        if (mGrid.g_DArray[row].ShippingPlanDate != mGrid.g_DArray[row].OldShippingPlanDate)
+                        {
+                            //入力された出荷予定日から以下のルールで希望納期を計算する
+                            //希望納期=出荷予定日の前日
+                            mGrid.g_DArray[row].ArrivePlanDate = mibl.GetNouki(mGrid.g_DArray[row].ShippingPlanDate, CboStoreCD.SelectedValue.ToString());
+
+                            mGrid.g_DArray[row].OldShippingPlanDate = mGrid.g_DArray[row].ShippingPlanDate;
+                        }
                     }
                     break;
                 case (int)ClsGridJuchuu.ColNO.ArrivePlanDate:
@@ -3242,9 +3251,9 @@ namespace TempoJuchuuNyuuryoku
                     {
                         if (bbl.ShowMessage("Q306") != DialogResult.OK)
                             return false;
-                    }                       
-                    //０で無い場合、入力された発注単価を原価単価にセットし、原価金額、粗利金額を再計算。
-                    else if(!chkAll)
+                    }
+                    //０で無いかつ原価単価＝０の場合場合、入力された発注単価を原価単価にセットし、原価金額、粗利金額を再計算。
+                    else if (!chkAll && bbl.Z_Set(mGrid.g_DArray[row].CostUnitPrice) == 0)
                     {
                         mGrid.g_DArray[row].CostUnitPrice = mGrid.g_DArray[row].OrderUnitPrice;
                         mGrid.g_DArray[row].CostGaku = string.Format("{0:#,##0}", orderUnitPrice * bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu));
@@ -3682,13 +3691,13 @@ namespace TempoJuchuuNyuuryoku
                         if (mGrid.g_DArray[RW].TaxRateFLG.Equals(1))
                         {
                             kin10 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
-                            if (zeiritsu10 == 0)
+                            if (zeiritsu10 == 0 && !string.IsNullOrWhiteSpace( mGrid.g_DArray[RW].TaxRate))
                                 zeiritsu10 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%", ""));
                         }
                         else if (mGrid.g_DArray[RW].TaxRateFLG.Equals(2))
                         {
                             kin8 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
-                            if (zeiritsu8 == 0)
+                            if (zeiritsu8 == 0 && !string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].TaxRate))
                                 zeiritsu8 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%", ""));
                         }
 

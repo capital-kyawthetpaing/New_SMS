@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle157 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle158 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle159 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle160 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle161 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle162 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TB_headerdate = new CKM_Controls.CKM_TextBox();
             this.LB_headerdate = new CKM_Controls.CKM_Label();
@@ -219,10 +219,10 @@
             // 
             this.RB_history.AutoSize = true;
             this.RB_history.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.RB_history.Location = new System.Drawing.Point(656, 15);
+            this.RB_history.Location = new System.Drawing.Point(657, 15);
             this.RB_history.Name = "RB_history";
             this.RB_history.Size = new System.Drawing.Size(49, 16);
-            this.RB_history.TabIndex = 4;
+            this.RB_history.TabIndex = 6;
             this.RB_history.TabStop = true;
             this.RB_history.Text = "履歴";
             this.RB_history.UseVisualStyleBackColor = true;
@@ -232,10 +232,10 @@
             this.RB_current.AutoSize = true;
             this.RB_current.Checked = true;
             this.RB_current.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.RB_current.Location = new System.Drawing.Point(601, 15);
+            this.RB_current.Location = new System.Drawing.Point(602, 15);
             this.RB_current.Name = "RB_current";
             this.RB_current.Size = new System.Drawing.Size(49, 16);
-            this.RB_current.TabIndex = 3;
+            this.RB_current.TabIndex = 5;
             this.RB_current.TabStop = true;
             this.RB_current.Text = "現状";
             this.RB_current.UseVisualStyleBackColor = true;
@@ -295,19 +295,19 @@
             this.CB_store.Flag = 0;
             this.CB_store.FormattingEnabled = true;
             this.CB_store.Length = 10;
-            this.CB_store.Location = new System.Drawing.Point(200, 7);
+            this.CB_store.Location = new System.Drawing.Point(238, 7);
             this.CB_store.MaxLength = 10;
             this.CB_store.MoveNext = true;
             this.CB_store.Name = "CB_store";
             this.CB_store.Size = new System.Drawing.Size(151, 20);
-            this.CB_store.TabIndex = 10;
+            this.CB_store.TabIndex = 9;
             this.CB_store.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CB_store_KeyDown);
             // 
             // RB_koten
             // 
             this.RB_koten.AutoSize = true;
             this.RB_koten.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.RB_koten.Location = new System.Drawing.Point(145, 10);
+            this.RB_koten.Location = new System.Drawing.Point(170, 10);
             this.RB_koten.Name = "RB_koten";
             this.RB_koten.Size = new System.Drawing.Size(49, 16);
             this.RB_koten.TabIndex = 8;
@@ -321,10 +321,10 @@
             this.RB_zenten.AutoSize = true;
             this.RB_zenten.Checked = true;
             this.RB_zenten.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.RB_zenten.Location = new System.Drawing.Point(84, 9);
+            this.RB_zenten.Location = new System.Drawing.Point(90, 9);
             this.RB_zenten.Name = "RB_zenten";
             this.RB_zenten.Size = new System.Drawing.Size(49, 16);
-            this.RB_zenten.TabIndex = 8;
+            this.RB_zenten.TabIndex = 7;
             this.RB_zenten.TabStop = true;
             this.RB_zenten.Text = "全店";
             this.RB_zenten.UseVisualStyleBackColor = true;
@@ -338,7 +338,7 @@
             this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(23, 11);
+            this.ckM_Label1.Location = new System.Drawing.Point(27, 11);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label1.TabIndex = 7;
@@ -356,12 +356,11 @@
             this.Btn_F11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_F11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.Btn_F11.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.Btn_F11.Location = new System.Drawing.Point(446, 0);
+            this.Btn_F11.Location = new System.Drawing.Point(295, 3);
             this.Btn_F11.Margin = new System.Windows.Forms.Padding(1);
             this.Btn_F11.Name = "Btn_F11";
-            this.Btn_F11.Size = new System.Drawing.Size(80, 23);
-            this.Btn_F11.TabIndex = 11;
-            this.Btn_F11.TabStop = false;
+            this.Btn_F11.Size = new System.Drawing.Size(90, 25);
+            this.Btn_F11.TabIndex = 12;
             this.Btn_F11.Text = "表示(F11)";
             this.Btn_F11.UseVisualStyleBackColor = false;
             this.Btn_F11.Click += new System.EventHandler(this.Btn_F11_Click);
@@ -375,7 +374,7 @@
             this.LB_shohin.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.LB_shohin.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.LB_shohin.ForeColor = System.Drawing.Color.Black;
-            this.LB_shohin.Location = new System.Drawing.Point(20, 6);
+            this.LB_shohin.Location = new System.Drawing.Point(27, 6);
             this.LB_shohin.Name = "LB_shohin";
             this.LB_shohin.Size = new System.Drawing.Size(57, 12);
             this.LB_shohin.TabIndex = 12;
@@ -388,10 +387,10 @@
             this.RB_item.AutoSize = true;
             this.RB_item.Checked = true;
             this.RB_item.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.RB_item.Location = new System.Drawing.Point(87, 4);
+            this.RB_item.Location = new System.Drawing.Point(91, 4);
             this.RB_item.Name = "RB_item";
             this.RB_item.Size = new System.Drawing.Size(51, 16);
-            this.RB_item.TabIndex = 13;
+            this.RB_item.TabIndex = 7;
             this.RB_item.TabStop = true;
             this.RB_item.Text = "ITEM";
             this.RB_item.UseVisualStyleBackColor = true;
@@ -401,7 +400,7 @@
             // 
             this.RB_sku.AutoSize = true;
             this.RB_sku.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.RB_sku.Location = new System.Drawing.Point(151, 4);
+            this.RB_sku.Location = new System.Drawing.Point(171, 4);
             this.RB_sku.Name = "RB_sku";
             this.RB_sku.Size = new System.Drawing.Size(44, 16);
             this.RB_sku.TabIndex = 14;
@@ -486,7 +485,7 @@
             this.lb_segment.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lb_segment.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.lb_segment.ForeColor = System.Drawing.Color.Black;
-            this.lb_segment.Location = new System.Drawing.Point(896, 64);
+            this.lb_segment.Location = new System.Drawing.Point(910, 64);
             this.lb_segment.Name = "lb_segment";
             this.lb_segment.Size = new System.Drawing.Size(57, 12);
             this.lb_segment.TabIndex = 22;
@@ -503,7 +502,7 @@
             this.LB_year.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.LB_year.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.LB_year.ForeColor = System.Drawing.Color.Black;
-            this.LB_year.Location = new System.Drawing.Point(1373, 63);
+            this.LB_year.Location = new System.Drawing.Point(1383, 63);
             this.LB_year.Name = "LB_year";
             this.LB_year.Size = new System.Drawing.Size(44, 12);
             this.LB_year.TabIndex = 24;
@@ -520,7 +519,7 @@
             this.CB_year.Flag = 0;
             this.CB_year.FormattingEnabled = true;
             this.CB_year.Length = 20;
-            this.CB_year.Location = new System.Drawing.Point(1419, 60);
+            this.CB_year.Location = new System.Drawing.Point(1430, 59);
             this.CB_year.MaxLength = 20;
             this.CB_year.MoveNext = true;
             this.CB_year.Name = "CB_year";
@@ -536,7 +535,7 @@
             this.LB_season.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.LB_season.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.LB_season.ForeColor = System.Drawing.Color.Black;
-            this.LB_season.Location = new System.Drawing.Point(1500, 64);
+            this.LB_season.Location = new System.Drawing.Point(1511, 63);
             this.LB_season.Name = "LB_season";
             this.LB_season.Size = new System.Drawing.Size(57, 12);
             this.LB_season.TabIndex = 26;
@@ -553,7 +552,7 @@
             this.CB_season.Flag = 0;
             this.CB_season.FormattingEnabled = true;
             this.CB_season.Length = 10;
-            this.CB_season.Location = new System.Drawing.Point(1558, 59);
+            this.CB_season.Location = new System.Drawing.Point(1571, 59);
             this.CB_season.MaxLength = 20;
             this.CB_season.MoveNext = true;
             this.CB_season.Name = "CB_season";
@@ -569,7 +568,7 @@
             this.lB_date.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lB_date.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.lB_date.ForeColor = System.Drawing.Color.Black;
-            this.lB_date.Location = new System.Drawing.Point(1639, 63);
+            this.lB_date.Location = new System.Drawing.Point(1652, 64);
             this.lB_date.Name = "lB_date";
             this.lB_date.Size = new System.Drawing.Size(44, 12);
             this.lB_date.TabIndex = 28;
@@ -596,7 +595,7 @@
             this.TB_date_condition.IsNumber = true;
             this.TB_date_condition.IsShop = false;
             this.TB_date_condition.Length = 10;
-            this.TB_date_condition.Location = new System.Drawing.Point(1686, 60);
+            this.TB_date_condition.Location = new System.Drawing.Point(1699, 60);
             this.TB_date_condition.MaxLength = 10;
             this.TB_date_condition.MoveNext = true;
             this.TB_date_condition.Name = "TB_date_condition";
@@ -614,7 +613,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(3, 91);
+            this.ckM_Label2.Location = new System.Drawing.Point(1, 91);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(83, 12);
             this.ckM_Label2.TabIndex = 30;
@@ -632,10 +631,10 @@
             this.BT_Capture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_Capture.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BT_Capture.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BT_Capture.Location = new System.Drawing.Point(1689, 15);
+            this.BT_Capture.Location = new System.Drawing.Point(1678, 15);
             this.BT_Capture.Margin = new System.Windows.Forms.Padding(1);
             this.BT_Capture.Name = "BT_Capture";
-            this.BT_Capture.Size = new System.Drawing.Size(80, 23);
+            this.BT_Capture.Size = new System.Drawing.Size(90, 25);
             this.BT_Capture.TabIndex = 15;
             this.BT_Capture.Text = "取込(F10)";
             this.BT_Capture.UseVisualStyleBackColor = false;
@@ -651,10 +650,10 @@
             this.btn_subdisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_subdisplay.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btn_subdisplay.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btn_subdisplay.Location = new System.Drawing.Point(1689, 87);
+            this.btn_subdisplay.Location = new System.Drawing.Point(1678, 87);
             this.btn_subdisplay.Margin = new System.Windows.Forms.Padding(1);
             this.btn_subdisplay.Name = "btn_subdisplay";
-            this.btn_subdisplay.Size = new System.Drawing.Size(80, 23);
+            this.btn_subdisplay.Size = new System.Drawing.Size(90, 25);
             this.btn_subdisplay.TabIndex = 32;
             this.btn_subdisplay.Text = "表示";
             this.btn_subdisplay.UseVisualStyleBackColor = false;
@@ -735,7 +734,7 @@
             this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(53, 27);
+            this.ckM_Label3.Location = new System.Drawing.Point(51, 27);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(33, 12);
             this.ckM_Label3.TabIndex = 33;
@@ -752,7 +751,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(43, 52);
+            this.ckM_Label7.Location = new System.Drawing.Point(40, 52);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label7.TabIndex = 28;
@@ -907,10 +906,10 @@
             this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btn_add.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btn_add.Location = new System.Drawing.Point(1689, 46);
+            this.btn_add.Location = new System.Drawing.Point(1678, 46);
             this.btn_add.Margin = new System.Windows.Forms.Padding(1);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(80, 23);
+            this.btn_add.Size = new System.Drawing.Size(90, 25);
             this.btn_add.TabIndex = 38;
             this.btn_add.Text = "追加";
             this.btn_add.UseVisualStyleBackColor = false;
@@ -921,17 +920,17 @@
             this.GV_item.AllowUserToAddRows = false;
             this.GV_item.AllowUserToDeleteRows = false;
             this.GV_item.AllowUserToResizeRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_item.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle157.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_item.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle157;
             this.GV_item.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle158.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle158.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle158.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle158.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle158.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle158.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle158.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle158;
             this.GV_item.ColumnHeadersHeight = 25;
             this.GV_item.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ck,
@@ -1054,10 +1053,10 @@
             // 改定日
             // 
             this.改定日.DataPropertyName = "ChangeDate";
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.Format = "d";
-            dataGridViewCellStyle27.NullValue = null;
-            this.改定日.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle159.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle159.Format = "d";
+            dataGridViewCellStyle159.NullValue = null;
+            this.改定日.DefaultCellStyle = dataGridViewCellStyle159;
             this.改定日.HeaderText = "改定日";
             this.改定日.Name = "改定日";
             this.改定日.Width = 80;
@@ -1065,10 +1064,10 @@
             // 定価
             // 
             this.定価.DataPropertyName = "PriceOutTax";
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle28.Format = "N0";
-            dataGridViewCellStyle28.NullValue = null;
-            this.定価.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle160.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle160.Format = "N0";
+            dataGridViewCellStyle160.NullValue = null;
+            this.定価.DefaultCellStyle = dataGridViewCellStyle160;
             this.定価.HeaderText = "定価(税抜)";
             this.定価.MaxInputLength = 9;
             this.定価.Name = "定価";
@@ -1077,10 +1076,10 @@
             // 掛率
             // 
             this.掛率.DataPropertyName = "Rate";
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle29.Format = "N2";
-            dataGridViewCellStyle29.NullValue = "0";
-            this.掛率.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle161.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle161.Format = "N2";
+            dataGridViewCellStyle161.NullValue = "0";
+            this.掛率.DefaultCellStyle = dataGridViewCellStyle161;
             this.掛率.HeaderText = "掛率";
             this.掛率.MaxInputLength = 6;
             this.掛率.MinimumWidth = 10;
@@ -1090,10 +1089,10 @@
             // 発注単価
             // 
             this.発注単価.DataPropertyName = "PriceWithoutTax";
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle30.Format = "N0";
-            dataGridViewCellStyle30.NullValue = null;
-            this.発注単価.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle162.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle162.Format = "N0";
+            dataGridViewCellStyle162.NullValue = null;
+            this.発注単価.DefaultCellStyle = dataGridViewCellStyle162;
             this.発注単価.HeaderText = "発注単価";
             this.発注単価.MaxInputLength = 9;
             this.発注単価.Name = "発注単価";
@@ -1141,7 +1140,7 @@
             this.ckM_Label16.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label16.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label16.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label16.Location = new System.Drawing.Point(29, 224);
+            this.ckM_Label16.Location = new System.Drawing.Point(27, 224);
             this.ckM_Label16.Name = "ckM_Label16";
             this.ckM_Label16.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label16.TabIndex = 40;
@@ -1158,7 +1157,7 @@
             this.ckM_Label15.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label15.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label15.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label15.Location = new System.Drawing.Point(503, 224);
+            this.ckM_Label15.Location = new System.Drawing.Point(501, 224);
             this.ckM_Label15.Name = "ckM_Label15";
             this.ckM_Label15.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label15.TabIndex = 42;
@@ -1175,7 +1174,7 @@
             this.ckM_Label14.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label14.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label14.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label14.Location = new System.Drawing.Point(898, 224);
+            this.ckM_Label14.Location = new System.Drawing.Point(910, 224);
             this.ckM_Label14.Name = "ckM_Label14";
             this.ckM_Label14.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label14.TabIndex = 44;
@@ -1192,7 +1191,7 @@
             this.ckM_Label13.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label13.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label13.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label13.Location = new System.Drawing.Point(1375, 223);
+            this.ckM_Label13.Location = new System.Drawing.Point(1383, 223);
             this.ckM_Label13.Name = "ckM_Label13";
             this.ckM_Label13.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label13.TabIndex = 46;
@@ -1209,7 +1208,7 @@
             this.CB_yearC.Flag = 0;
             this.CB_yearC.FormattingEnabled = true;
             this.CB_yearC.Length = 10;
-            this.CB_yearC.Location = new System.Drawing.Point(1420, 219);
+            this.CB_yearC.Location = new System.Drawing.Point(1430, 219);
             this.CB_yearC.MaxLength = 20;
             this.CB_yearC.MoveNext = true;
             this.CB_yearC.Name = "CB_yearC";
@@ -1225,7 +1224,7 @@
             this.ckM_Label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label12.Location = new System.Drawing.Point(1504, 223);
+            this.ckM_Label12.Location = new System.Drawing.Point(1511, 223);
             this.ckM_Label12.Name = "ckM_Label12";
             this.ckM_Label12.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label12.TabIndex = 48;
@@ -1242,7 +1241,7 @@
             this.cb_seasonC.Flag = 0;
             this.cb_seasonC.FormattingEnabled = true;
             this.cb_seasonC.Length = 10;
-            this.cb_seasonC.Location = new System.Drawing.Point(1562, 219);
+            this.cb_seasonC.Location = new System.Drawing.Point(1571, 219);
             this.cb_seasonC.MaxLength = 10;
             this.cb_seasonC.MoveNext = true;
             this.cb_seasonC.Name = "cb_seasonC";
@@ -1258,7 +1257,7 @@
             this.ckM_Label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label11.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label11.Location = new System.Drawing.Point(1642, 223);
+            this.ckM_Label11.Location = new System.Drawing.Point(1652, 223);
             this.ckM_Label11.Name = "ckM_Label11";
             this.ckM_Label11.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label11.TabIndex = 50;
@@ -1285,7 +1284,7 @@
             this.TB_dateC.IsNumber = true;
             this.TB_dateC.IsShop = false;
             this.TB_dateC.Length = 10;
-            this.TB_dateC.Location = new System.Drawing.Point(1687, 219);
+            this.TB_dateC.Location = new System.Drawing.Point(1699, 219);
             this.TB_dateC.MaxLength = 10;
             this.TB_dateC.MoveNext = true;
             this.TB_dateC.Name = "TB_dateC";
@@ -1303,7 +1302,7 @@
             this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label10.Location = new System.Drawing.Point(3, 250);
+            this.ckM_Label10.Location = new System.Drawing.Point(1, 250);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(83, 12);
             this.ckM_Label10.TabIndex = 52;
@@ -1321,10 +1320,10 @@
             this.btn_releaseall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_releaseall.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btn_releaseall.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btn_releaseall.Location = new System.Drawing.Point(1689, 250);
+            this.btn_releaseall.Location = new System.Drawing.Point(1678, 244);
             this.btn_releaseall.Margin = new System.Windows.Forms.Padding(1);
             this.btn_releaseall.Name = "btn_releaseall";
-            this.btn_releaseall.Size = new System.Drawing.Size(80, 23);
+            this.btn_releaseall.Size = new System.Drawing.Size(90, 25);
             this.btn_releaseall.TabIndex = 56;
             this.btn_releaseall.Text = "全解除";
             this.btn_releaseall.UseVisualStyleBackColor = false;
@@ -1340,10 +1339,10 @@
             this.btn_selectall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_selectall.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btn_selectall.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btn_selectall.Location = new System.Drawing.Point(1609, 250);
+            this.btn_selectall.Location = new System.Drawing.Point(1588, 244);
             this.btn_selectall.Margin = new System.Windows.Forms.Padding(1);
             this.btn_selectall.Name = "btn_selectall";
-            this.btn_selectall.Size = new System.Drawing.Size(80, 23);
+            this.btn_selectall.Size = new System.Drawing.Size(90, 25);
             this.btn_selectall.TabIndex = 55;
             this.btn_selectall.Text = "全選択";
             this.btn_selectall.UseVisualStyleBackColor = false;
@@ -1359,10 +1358,10 @@
             this.btn_choice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_choice.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btn_choice.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btn_choice.Location = new System.Drawing.Point(1529, 250);
+            this.btn_choice.Location = new System.Drawing.Point(1498, 244);
             this.btn_choice.Margin = new System.Windows.Forms.Padding(1);
             this.btn_choice.Name = "btn_choice";
-            this.btn_choice.Size = new System.Drawing.Size(80, 23);
+            this.btn_choice.Size = new System.Drawing.Size(90, 25);
             this.btn_choice.TabIndex = 54;
             this.btn_choice.Text = "選択";
             this.btn_choice.UseVisualStyleBackColor = false;
@@ -1444,10 +1443,10 @@
             this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_update.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btn_update.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btn_update.Location = new System.Drawing.Point(1609, 23);
+            this.btn_update.Location = new System.Drawing.Point(1588, 23);
             this.btn_update.Margin = new System.Windows.Forms.Padding(1);
             this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(80, 23);
+            this.btn_update.Size = new System.Drawing.Size(90, 25);
             this.btn_update.TabIndex = 60;
             this.btn_update.Text = "変更";
             this.btn_update.UseVisualStyleBackColor = false;
@@ -1500,7 +1499,7 @@
             this.TB_rate_E.IsNumber = true;
             this.TB_rate_E.IsShop = false;
             this.TB_rate_E.Length = 6;
-            this.TB_rate_E.Location = new System.Drawing.Point(1411, 26);
+            this.TB_rate_E.Location = new System.Drawing.Point(1412, 24);
             this.TB_rate_E.MaxLength = 6;
             this.TB_rate_E.MoveNext = true;
             this.TB_rate_E.Name = "TB_rate_E";
@@ -1518,7 +1517,7 @@
             this.ckM_Label19.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label19.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label19.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label19.Location = new System.Drawing.Point(4, 29);
+            this.ckM_Label19.Location = new System.Drawing.Point(1, 29);
             this.ckM_Label19.Name = "ckM_Label19";
             this.ckM_Label19.Size = new System.Drawing.Size(83, 12);
             this.ckM_Label19.TabIndex = 59;
@@ -1535,7 +1534,7 @@
             this.ckM_Label20.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label20.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label20.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label20.Location = new System.Drawing.Point(1365, 29);
+            this.ckM_Label20.Location = new System.Drawing.Point(1365, 28);
             this.ckM_Label20.Name = "ckM_Label20";
             this.ckM_Label20.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label20.TabIndex = 61;
@@ -1553,10 +1552,10 @@
             this.btn_copy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_copy.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btn_copy.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btn_copy.Location = new System.Drawing.Point(1529, 23);
+            this.btn_copy.Location = new System.Drawing.Point(1499, 23);
             this.btn_copy.Margin = new System.Windows.Forms.Padding(1);
             this.btn_copy.Name = "btn_copy";
-            this.btn_copy.Size = new System.Drawing.Size(80, 23);
+            this.btn_copy.Size = new System.Drawing.Size(90, 25);
             this.btn_copy.TabIndex = 59;
             this.btn_copy.Text = "複写";
             this.btn_copy.UseVisualStyleBackColor = false;
@@ -1572,10 +1571,10 @@
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btn_delete.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btn_delete.Location = new System.Drawing.Point(1689, 23);
+            this.btn_delete.Location = new System.Drawing.Point(1678, 23);
             this.btn_delete.Margin = new System.Windows.Forms.Padding(1);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(80, 23);
+            this.btn_delete.Size = new System.Drawing.Size(90, 25);
             this.btn_delete.TabIndex = 61;
             this.btn_delete.Text = "削除";
             this.btn_delete.UseVisualStyleBackColor = false;
@@ -1668,7 +1667,7 @@
             this.segmentC.IsCopy = false;
             this.segmentC.LabelText = "";
             this.segmentC.LabelVisible = true;
-            this.segmentC.Location = new System.Drawing.Point(954, 215);
+            this.segmentC.Location = new System.Drawing.Point(969, 215);
             this.segmentC.Margin = new System.Windows.Forms.Padding(0);
             this.segmentC.Name = "segmentC";
             this.segmentC.NameWidth = 280;
@@ -1699,7 +1698,7 @@
             this.sportC.IsCopy = false;
             this.sportC.LabelText = "";
             this.sportC.LabelVisible = true;
-            this.sportC.Location = new System.Drawing.Point(548, 215);
+            this.sportC.Location = new System.Drawing.Point(546, 215);
             this.sportC.Margin = new System.Windows.Forms.Padding(0);
             this.sportC.Name = "sportC";
             this.sportC.NameWidth = 280;
@@ -1763,9 +1762,9 @@
             this.itemcd.Location = new System.Drawing.Point(87, 19);
             this.itemcd.Margin = new System.Windows.Forms.Padding(0);
             this.itemcd.Name = "itemcd";
-            this.itemcd.NameWidth = 350;
+            this.itemcd.NameWidth = 280;
             this.itemcd.SearchEnable = true;
-            this.itemcd.Size = new System.Drawing.Size(574, 28);
+            this.itemcd.Size = new System.Drawing.Size(504, 28);
             this.itemcd.Stype = Search.CKM_SearchControl.SearchType.SKU_ITEM_CD;
             this.itemcd.TabIndex = 33;
             this.itemcd.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -1822,7 +1821,7 @@
             this.segment.IsCopy = false;
             this.segment.LabelText = "";
             this.segment.LabelVisible = true;
-            this.segment.Location = new System.Drawing.Point(953, 55);
+            this.segment.Location = new System.Drawing.Point(969, 55);
             this.segment.Margin = new System.Windows.Forms.Padding(0);
             this.segment.Name = "segment";
             this.segment.NameWidth = 280;
