@@ -518,6 +518,24 @@ namespace MasterTouroku_ShiireTanka
             }
             return true;
         }
+
+        private bool ErrorCheckUpdate()
+        {
+            if (!RequireCheck(new Control[] { TB_rate_E }))
+                return false;
+            return true;
+        }
+
+        private bool ErrorCheckCopy()
+        {
+            if (!RequireCheck(new Control[] { TB_dateE,TB_rate_E })) //Step1
+                return false;
+
+           
+            //if (!RequireCheck(new Control[] { shiiresaki, TB_headerdate, CB_store })) //Step1
+            //    return false;
+            return true;
+        }
         private void F11()
         {
             if (ErrorCheckMain())
@@ -1311,12 +1329,14 @@ namespace MasterTouroku_ShiireTanka
         }
         private void btn_Copy_Click(object sender, EventArgs e)
         {
-            if (GV_item.Rows.Count > 0)
-            {
-                if (ErrorCheckMain())
-                {
 
-                    if (!String.IsNullOrEmpty(TB_dateE.Text)  && !String.IsNullOrEmpty(TB_rate_E.Text))
+            if (ErrorCheckMain())
+            {
+                if (GV_item.Rows.Count > 0)
+            {
+
+                //if (!String.IsNullOrEmpty(TB_dateE.Text)  && !String.IsNullOrEmpty(TB_rate_E.Text))
+                if (ErrorCheckCopy())
                     {
                         string date = "";
                         date = "  ChangeDate = '" + TB_dateE.Text + "'";
@@ -1450,7 +1470,7 @@ namespace MasterTouroku_ShiireTanka
                     }
                     else
                     {
-                        bbl.ShowMessage("E103");
+                        //bbl.ShowMessage("");
                         TB_dateE.Focus();
                     }
                 }
@@ -1458,69 +1478,72 @@ namespace MasterTouroku_ShiireTanka
         }
         private void btn_update_Click(object sender, EventArgs e)
         {
-            if (GV_item.Rows.Count > 0)
+            if (ErrorCheckMain())
             {
-
-                if (!String.IsNullOrEmpty(TB_rate_E.Text))
+                if (GV_item.Rows.Count > 0)
                 {
-                    string updateq = "CheckBox = 1";
-                    DataRow[] drupdate;
-                    if (btn == "1" || btn == "2")
-                    {
-                        drupdate = dt.Select(updateq);
-                    }
-                    else
-                    {
-                        drupdate = dtview.Select(updateq);
 
-                    }
-                    //GV_item.DataSource = dtview;
-                    //DataTable dtupdate = dt.Select(updateq).CopyToDataTable();
-                    //if (dtupdate.Rows.Count > 0)
-                    //{
-                    //    dtupdate["Rate"] = TB_rate.Text;
-                    //    //drupdate["PriceOutTax"] = LB_priceouttax.Text;
-                    //}
-                    if (drupdate.Length > 0)
+                    if (ErrorCheckUpdate())
                     {
-                        for (int i = 0; i < drupdate.Length; i++)
+                        string updateq = "CheckBox = 1";
+                        DataRow[] drupdate;
+                        if (btn == "1" || btn == "2")
                         {
-                            drupdate[i]["Rate"] = TB_rate_E.Text;
-                            decimal rate = Convert.ToDecimal(TB_rate_E.Text);
-                            decimal con = (decimal)0.01;
-                            decimal listprice = Convert.ToDecimal(drupdate[i]["PriceOutTax"]);
-                            drupdate[i]["PriceWithoutTax"] = Math.Round(listprice * (rate * con)).ToString();
-                        }
-                        String itemdata;
-                       
-                        if (btn == "1" || btn =="2")
-                        {
-                            itemdata = bl.DataTableToXml(dt);
+                            drupdate = dt.Select(updateq);
                         }
                         else
                         {
-                            GV_item.DataSource = dtview;
-                            itemdata = bl.DataTableToXml(dtview);
-                        }
+                            drupdate = dtview.Select(updateq);
 
-                        String skudata = bl.DataTableToXml(dtsku);
-                        DataTable dtdata = bl.M_SKU_SelectFor_SKU_Update(itemdata, skudata, "", TB_headerdate.Text, "2");
-                        if (dtdata.Rows.Count > 0)
+                        }
+                        //GV_item.DataSource = dtview;
+                        //DataTable dtupdate = dt.Select(updateq).CopyToDataTable();
+                        //if (dtupdate.Rows.Count > 0)
+                        //{
+                        //    dtupdate["Rate"] = TB_rate.Text;
+                        //    //drupdate["PriceOutTax"] = LB_priceouttax.Text;
+                        //}
+                        if (drupdate.Length > 0)
                         {
-                            string itemcd = dtdata.Rows[0]["ItemCD"].ToString();
-                            string qskuupdate = " ItemCD = '" + itemcd + "'";
-                            qskuupdate += " and ChangeDate <= '" + TB_headerdate.Text + "'";
-                            DataRow[] drte = dtsku.Select(qskuupdate);
-                            if (drte.Length > 0)
+                            for (int i = 0; i < drupdate.Length; i++)
                             {
-                                for (int i = 0; i < drte.Length; i++)
+                                drupdate[i]["Rate"] = TB_rate_E.Text;
+                                decimal rate = Convert.ToDecimal(TB_rate_E.Text);
+                                decimal con = (decimal)0.01;
+                                decimal listprice = Convert.ToDecimal(drupdate[i]["PriceOutTax"]);
+                                drupdate[i]["PriceWithoutTax"] = Math.Round(listprice * (rate * con)).ToString();
+                            }
+                            String itemdata;
+
+                            if (btn == "1" || btn == "2")
+                            {
+                                itemdata = bl.DataTableToXml(dt);
+                            }
+                            else
+                            {
+                                GV_item.DataSource = dtview;
+                                itemdata = bl.DataTableToXml(dtview);
+                            }
+
+                            String skudata = bl.DataTableToXml(dtsku);
+                            DataTable dtdata = bl.M_SKU_SelectFor_SKU_Update(itemdata, skudata, "", TB_headerdate.Text, "2");
+                            if (dtdata.Rows.Count > 0)
+                            {
+                                string itemcd = dtdata.Rows[0]["ItemCD"].ToString();
+                                string qskuupdate = " ItemCD = '" + itemcd + "'";
+                                qskuupdate += " and ChangeDate <= '" + TB_headerdate.Text + "'";
+                                DataRow[] drte = dtsku.Select(qskuupdate);
+                                if (drte.Length > 0)
                                 {
-                                    drte[i]["Rate"] = TB_rate_E.Text;
-                                    decimal rate = Convert.ToDecimal(dtdata.Rows[0]["Rate"]);
-                                    decimal con = (decimal)0.01;
-                                    //string priceouttax = drskuscopy[i]["PriceOutTax"].ToString();
-                                    decimal listprice = Convert.ToDecimal(drte[0]["PriceOutTax"]);
-                                    drte[i]["PriceWithoutTax"] = Math.Round(listprice * (rate * con)).ToString();
+                                    for (int i = 0; i < drte.Length; i++)
+                                    {
+                                        drte[i]["Rate"] = TB_rate_E.Text;
+                                        decimal rate = Convert.ToDecimal(dtdata.Rows[0]["Rate"]);
+                                        decimal con = (decimal)0.01;
+                                        //string priceouttax = drskuscopy[i]["PriceOutTax"].ToString();
+                                        decimal listprice = Convert.ToDecimal(drte[0]["PriceOutTax"]);
+                                        drte[i]["PriceWithoutTax"] = Math.Round(listprice * (rate * con)).ToString();
+                                    }
                                 }
                             }
                         }
@@ -1816,7 +1839,7 @@ namespace MasterTouroku_ShiireTanka
                                 row1["ChangeDate"] = datee.ToString("yyyy/MM/dd");
                                 //dateExcel = row1["ChangeDate"].ToString();
                                 //dateExcel = dates;
-                                row1["PriceOutTax"] = dtadd.Rows[0]["PriceOutTax"];
+                                row1["PriceOutTax"] = dtadd.Rows[0]["PriceOutTax"].ToString();
                                 
                                 row1["PriceWithoutTax"] = dtExcel.Rows[i][5].ToString();
                                 row1["InsertOperator"] = operatorCd;

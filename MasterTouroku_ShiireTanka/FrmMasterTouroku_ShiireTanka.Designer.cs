@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -176,6 +175,7 @@
             this.TB_headerdate.AllowMinus = false;
             this.TB_headerdate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_headerdate.BackColor = System.Drawing.Color.White;
+            this.TB_headerdate.BorderColor = false;
             this.TB_headerdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_headerdate.ClientColor = System.Drawing.SystemColors.Window;
             this.TB_headerdate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -613,6 +613,7 @@
             this.TB_date_condition.AllowMinus = false;
             this.TB_date_condition.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_date_condition.BackColor = System.Drawing.Color.White;
+            this.TB_date_condition.BorderColor = false;
             this.TB_date_condition.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_date_condition.ClientColor = System.Drawing.SystemColors.Window;
             this.TB_date_condition.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -827,6 +828,7 @@
             this.TB_date_add.AllowMinus = false;
             this.TB_date_add.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_date_add.BackColor = System.Drawing.Color.White;
+            this.TB_date_add.BorderColor = false;
             this.TB_date_add.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_date_add.ClientColor = System.Drawing.SystemColors.Window;
             this.TB_date_add.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -890,6 +892,7 @@
             this.TB_rate.AllowMinus = false;
             this.TB_rate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_rate.BackColor = System.Drawing.Color.White;
+            this.TB_rate.BorderColor = false;
             this.TB_rate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_rate.ClientColor = System.Drawing.SystemColors.Window;
             this.TB_rate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -936,6 +939,7 @@
             this.TB_pricewithouttax.AllowMinus = false;
             this.TB_pricewithouttax.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_pricewithouttax.BackColor = System.Drawing.Color.White;
+            this.TB_pricewithouttax.BorderColor = false;
             this.TB_pricewithouttax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_pricewithouttax.ClientColor = System.Drawing.SystemColors.Window;
             this.TB_pricewithouttax.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -988,7 +992,7 @@
             this.GV_item.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1012,14 +1016,6 @@
             this.定価,
             this.掛率,
             this.発注単価});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GV_item.DefaultCellStyle = dataGridViewCellStyle7;
             this.GV_item.EnableHeadersVisualStyles = false;
             this.GV_item.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_item.Location = new System.Drawing.Point(25, 490);
@@ -1209,6 +1205,7 @@
             this.TB_dateC.AllowMinus = false;
             this.TB_dateC.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_dateC.BackColor = System.Drawing.Color.White;
+            this.TB_dateC.BorderColor = false;
             this.TB_dateC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_dateC.ClientColor = System.Drawing.SystemColors.Window;
             this.TB_dateC.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1396,6 +1393,7 @@
             this.TB_dateE.AllowMinus = false;
             this.TB_dateE.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_dateE.BackColor = System.Drawing.Color.White;
+            this.TB_dateE.BorderColor = false;
             this.TB_dateE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_dateE.ClientColor = System.Drawing.SystemColors.Window;
             this.TB_dateE.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1424,6 +1422,7 @@
             this.TB_rate_E.AllowMinus = false;
             this.TB_rate_E.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_rate_E.BackColor = System.Drawing.Color.White;
+            this.TB_rate_E.BorderColor = false;
             this.TB_rate_E.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_rate_E.ClientColor = System.Drawing.SystemColors.Window;
             this.TB_rate_E.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
