@@ -81,6 +81,7 @@ namespace DL
                 { "@OperateMode", new ValuePair { value1 =SqlDbType.VarChar,value2 =mi.ProcessMode  } },
                 { "@KeyItem", new ValuePair { value1 =SqlDbType.VarChar,value2 =mi.Key  } }
             };
+            UseTransaction = true;
             return InsertUpdateDeleteData(dic, sp);
         }
         //public DataTable Mastertoroku_Shiretanka_Insert(string tbitem, string tbsku, string tbdelitem, string tbdeljan, M_ItemOrderPrice_Entity mi)
