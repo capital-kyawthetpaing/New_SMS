@@ -31,8 +31,8 @@ BEGIN
           ,DODH.OrderNO AS HacchuuNO
           ,DODH.OrderCD   AS SiiresakiCD
           ,MVEN.VendorName AS SiiresakiName
-          ,CASE WHEN DODD.DirectFLG = 1 THEN 'ÅZ' ELSE NULL END AS ChokusouFLG
-          ,CASE WHEN MSKU.NoNetOrderFlg = 0 THEN 'ÅZ' ELSE 'Å~' END AS NetFLG
+          ,CASE WHEN DODD.DirectFLG = 1 THEN 'Åõ' ELSE NULL END AS ChokusouFLG
+          ,CASE WHEN MSKU.NoNetOrderFlg = 0 THEN 'Åõ' ELSE 'Å~' END AS NetFLG
           ,CASE WHEN DODH.DestinationKBN = 1 THEN MSOU.SoukoName ELSE DODH.DestinationName END AS NounyuusakiName
           ,DODD.DirectFlg AS NounyuusakiKBN
           ,CASE WHEN DODD.DirectFlg = 0 THEN MSOU.Address1 + ' ' + MSOU.Address2 ELSE DODH.DestinationAddress1 + ' ' + DODH.DestinationAddress2 END AS NounyuusakiJuusho
@@ -56,7 +56,7 @@ BEGIN
           ,MSKU.SizeName
           ,MSKU.ColorName
           ,MSKU.OrderAttentionNote AS HacchuuChuuiZikou
-          ,MSKU.EDIOrderFlg AS EDIFLG
+          ,DODD.EDIFLG AS EDIFLG
           ,MSKU.MakerItem AS MakerShouhinCD
           ,FORMAT(DODD.DesiredDeliveryDate,'yyyy/MM/dd') AS KibouNouki
           ,DODD.CommentInStore  AS ShanaiBikou
@@ -72,6 +72,7 @@ BEGIN
           ,DODD.OrderUnitPrice * 100 / NULLIF(MSKU.PriceOutTax,0) AS Kakeritu
           ,CASE WHEN DODD.ArrivePlanDate IS NULL THEN CAST(1 as bit) ELSE CAST(0 as bit) END AS IsYuukouTaishouFLG
           ,DODD.OrderRows
+          ,DODH.OrderWayKBN
           
     FROM D_Order DODH
     LEFT JOIN D_OrderDetails DODD

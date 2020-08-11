@@ -51,16 +51,30 @@ namespace MainMenu
             };
             return mse;
         }
+        protected void Add_ButtonDesign()
+        {
+            ckM_Button2.FlatStyle = FlatStyle.Flat;
+            ckM_Button2.FlatAppearance.BorderSize = 0;
+            ckM_Button2.FlatAppearance.BorderColor = Color.White;
+            ckM_Button1.FlatStyle = FlatStyle.Flat;
+            ckM_Button1.FlatAppearance.BorderSize = 0;
+            ckM_Button1.FlatAppearance.BorderColor = Color.White;
+            ckM_Button3.FlatStyle = FlatStyle.Flat;
+            ckM_Button3.FlatAppearance.BorderSize = 0;
+            ckM_Button3.FlatAppearance.BorderColor = Color.White;
 
+        }
         private void MainmenuLogin_Load(object sender, EventArgs e)
         {
             loginbl = new Login_BL();
+            txtOperatorCD.Focus();
+            Add_ButtonDesign();
             //loginbl = new Login_BL();
             //PopupNotifier pop = new PopupNotifier();
             //pop.TitleText = "New Updates are Available Now!";
             //pop.ContentText = "Press F11 to download new features";
             //pop.Popup();
-          //  pop.
+            //  pop.
 
         }
 
