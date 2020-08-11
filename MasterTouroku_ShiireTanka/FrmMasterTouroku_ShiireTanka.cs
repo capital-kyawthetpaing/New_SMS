@@ -1608,12 +1608,12 @@ namespace MasterTouroku_ShiireTanka
                 String tbdeljan = bl.DataTableToXml(dtdeljan);
                 String itemdata = bl.DataTableToXml(dt);
                 String skudata = bl.DataTableToXml(dtsku);
-                DataTable dst=bl.Mastertoroku_Shiretanka_Insert(itemdata, skudata, deletedata, tbdeljan, m_IOE);
-                //if (bl.Mastertoroku_Shiretanka_Insert(itemdata, skudata, deletedata, tbdeljan, m_IOE))
-                //{
-                //    bl.ShowMessage("I101");
-                //    Clear();
-                //}
+                //DataTable dst=bl.Mastertoroku_Shiretanka_Insert(itemdata, skudata, deletedata, tbdeljan, m_IOE);
+                if (bl.Mastertoroku_Shiretanka_Insert(itemdata, skudata, deletedata, tbdeljan, m_IOE))
+                {
+                    bl.ShowMessage("I101");
+                    Clear();
+                }
                 //string storecd=CB_store.SelectedValue.ToString()
                 //if(btn == "2")
                 //{
@@ -1716,7 +1716,8 @@ namespace MasterTouroku_ShiireTanka
             }
         }
         private void BT_Capture_Click(object sender, EventArgs e)
-       {
+        {
+            //this.定価.DefaultCellStyle.Format = "N0";
             btn = "2";
             if (!String.IsNullOrEmpty(shiiresaki.TxtCode.Text))
             {
@@ -1732,6 +1733,14 @@ namespace MasterTouroku_ShiireTanka
                     if (dtsku.Rows.Count > 0)
                     {
                         dtsku.Rows.Clear();
+                    }
+                    if (deldt != null)
+                    {
+                        deldt.Rows.Clear();
+                    }
+                    if (dtdeljan != null)
+                    {
+                        dtdeljan.Rows.Clear();
                     }
                     GV_item.DataSource = null;
                     //dtExcel.Rows[0].Delete();
@@ -1808,6 +1817,7 @@ namespace MasterTouroku_ShiireTanka
                                 //dateExcel = row1["ChangeDate"].ToString();
                                 //dateExcel = dates;
                                 row1["PriceOutTax"] = dtadd.Rows[0]["PriceOutTax"];
+                                
                                 row1["PriceWithoutTax"] = dtExcel.Rows[i][5].ToString();
                                 row1["InsertOperator"] = operatorCd;
                                 row1["InsertDateTime"] = bbl.GetDate();
@@ -1815,10 +1825,10 @@ namespace MasterTouroku_ShiireTanka
                                 row1["UpdateDateTime"] = bbl.GetDate();
                                 dt.Rows.Add(row1);
                                 GV_item.DataSource = dt;
-                                if (deldt != null)
-                                {
-                                    deldt.Rows.Clear();
-                                }
+                                //if (deldt != null)
+                                //{
+                                //    deldt.Rows.Clear();
+                                //}
                                 deldt = dt;
                                
                                 dv = new DataView(dt);
@@ -1886,15 +1896,15 @@ namespace MasterTouroku_ShiireTanka
                                     row1["UpdateDateTime"] = bbl.GetDate();
                                     dtsku.Rows.Add(row1);
                                     //GV_item.DataSource = dtsku;
-                                    if (dtdeljan != null)
-                                    {
-                                        dtdeljan.Rows.Clear();
-                                    }
+                                    //if (dtdeljan != null)
+                                    //{
+                                    //    dtdeljan.Rows.Clear();
+                                    //}
                                     dtdeljan = dtsku;
                                 }
                             }
                         }
-                        Clear(panel3);
+                        //Clear(panel3);
                         //RB_zenten.Checked = true;
                         //RB_item.Checked = true;
                         //RB_current.Checked = true;
