@@ -673,6 +673,7 @@ namespace MasterTouroku_ShiireTanka
             RB_current.Checked = true;
             TB_headerdate.Text = bbl.GetDate();
             CB_store.SelectedValue = "0000";
+            shiiresaki.SetFocus(1);
             GV_item.Refresh();
             GV_item.DataSource = null;
             if (dt.Rows.Count > 0)
@@ -1803,12 +1804,14 @@ namespace MasterTouroku_ShiireTanka
                             if (row[0] == DBNull.Value)
                             {
                                 break;
-
                             }
                             m_IE = new M_ITEM_Entity();
                             m_IE.ITemCD = dtExcel.Rows[i][2].ToString();
                             DataTable dtadd = bl.M_ITEM_SelectBy_ItemCD(m_IE);
                             string dateExcel = "";
+
+
+
                             if (dtadd.Rows.Count > 0)
                             {
                                 DataRow row1;
@@ -1834,13 +1837,13 @@ namespace MasterTouroku_ShiireTanka
                                 row1["LastYearTerm"] = dtadd.Rows[0]["LastYearTerm"];
                                 row1["LastSeason"] = dtadd.Rows[0]["LastSeason"];
                                 row1["MakerItem"] = dtadd.Rows[0]["MakerItem"];
+                                //if(dtExcel.Rows[i][4].ToString())
                                 row1["Rate"] = dtExcel.Rows[i][4].ToString();
                                 DateTime datee = Convert.ToDateTime(dtExcel.Rows[i][3].ToString());
                                 row1["ChangeDate"] = datee.ToString("yyyy/MM/dd");
                                 //dateExcel = row1["ChangeDate"].ToString();
                                 //dateExcel = dates;
                                 row1["PriceOutTax"] = dtadd.Rows[0]["PriceOutTax"].ToString();
-                                
                                 row1["PriceWithoutTax"] = dtExcel.Rows[i][5].ToString();
                                 row1["InsertOperator"] = operatorCd;
                                 row1["InsertDateTime"] = bbl.GetDate();
@@ -2210,19 +2213,32 @@ namespace MasterTouroku_ShiireTanka
 
         private void GV_item_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            if (e.ColumnIndex == GV_item.Columns["改定日"].Index)
+            try
             {
-                string dates = GV_item.CurrentCell.EditedFormattedValue.ToString();
-                DateTime dt;
-                string[] formats = { "yyyy/MM/dd hh:mm:ss tt" };
-                if (!DateTime.TryParseExact(dates, formats,
-                                System.Globalization.CultureInfo.InvariantCulture,
-                                DateTimeStyles.None, out dt))
+                if (e.ColumnIndex == GV_item.Columns["改定日"].Index)
                 {
-                    bl.ShowMessage("E103");
+                    string dates = GV_item.CurrentCell.EditedFormattedValue.ToString();
+                    DateTime dt;
+                    string[] formats = { "yyyy/MM/dd hh:mm:ss tt" };
+                    if (!DateTime.TryParseExact(dates, formats,
+                                    System.Globalization.CultureInfo.InvariantCulture,
+                                    DateTimeStyles.None, out dt))
+                    {
+                        bl.ShowMessage("E103");
+                    }
+                    GV_item.RefreshEdit();
                 }
+                if (Convert.ToInt32(GV_item.CurrentCell.EditedFormattedValue) < 256 && Convert.ToInt32(GV_item.CurrentCell.EditedFormattedValue) > 0)
+                {}
+               
+            }
+            catch(Exception ex)
+            {
+               
+                MessageBox.Show("Enter valid no");
                 GV_item.RefreshEdit();
             }
+          
            
         }
 
@@ -2259,3 +2275,7 @@ namespace MasterTouroku_ShiireTanka
 
     }
 }
+
+
+
+

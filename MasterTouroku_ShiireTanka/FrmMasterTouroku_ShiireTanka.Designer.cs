@@ -1898,6 +1898,7 @@
             dataGridViewCellStyle3.NullValue = null;
             this.改定日.DefaultCellStyle = dataGridViewCellStyle3;
             this.改定日.HeaderText = "改定日";
+            this.改定日.MaxInputLength = 10;
             this.改定日.Name = "改定日";
             this.改定日.Width = 80;
             // 
