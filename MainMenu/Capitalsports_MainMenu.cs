@@ -276,6 +276,8 @@ namespace MainMenu
                 {
                     if (pnl == panel_left)
                     {
+                        ((CKM_Button)ctrl).MouseLeave += panelLeft_MouseLeave;
+                        ((CKM_Button)ctrl).MouseEnter += panelLeft_MouseEnter;
                         ((CKM_Button)ctrl).Click += panelLeft_Click;
                         ((CKM_Button)ctrl).EnabledChanged += OnEnabledChanged ;
                     }
@@ -288,6 +290,16 @@ namespace MainMenu
                 }
             }
         }
+        private void panelLeft_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bm_3;
+            (sender as CKM_Button).ForeColor = Color.White;
+        }
+        private void panelLeft_MouseEnter(object sender, EventArgs e)
+        {
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bmback_3;
+            (sender as CKM_Button).ForeColor = Color.Black;
+        }
         private void OnEnabledChanged(object sender, EventArgs e)
         {
             //if (!((CKM_Button)sender).Enabled)
@@ -296,11 +308,17 @@ namespace MainMenu
         }
         private void panelRight_MouseEnter(object sender, EventArgs e)
         {
-            (sender as CKM_Button).BackgroundColor = CKM_Button.CKM_Color.Orange;
+            (sender as CKM_Button).BackColor = Color.Transparent;
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bmback_3;
+            (sender as CKM_Button).ForeColor = Color.Black;
+            //  (sender as CKM_Button).BackgroundColor = CKM_Button.CKM_Color.Orange;
         }
         private void panelRight_MouseLeave(object sender, EventArgs e)
         {
-            (sender as CKM_Button).BackgroundColor = CKM_Button.CKM_Color.Yellow;
+            (sender as CKM_Button).BackColor = Color.Transparent;
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bn_9;
+            (sender as CKM_Button).ForeColor = Color.Green;
+            //   (sender as CKM_Button).BackgroundColor = CKM_Button.CKM_Color.Yellow;
         }
         private void panelRight_Click(object sender, EventArgs e)
         {
@@ -702,5 +720,29 @@ namespace MainMenu
         }
         LineDisplay m_Display = null;
         DeviceInfo deviceInfo = null;
+
+        private void btnClose_MouseEnter(object sender, EventArgs e)
+        {
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bmback_3;
+            (sender as CKM_Button).ForeColor = Color.Black;
+        }
+
+        private void btnClose_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bn_10;
+            (sender as CKM_Button).ForeColor = Color.White;
+        }
+
+        private void btnProcess_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bn_9;
+            (sender as CKM_Button).ForeColor = Color.Green;
+        }
+
+        private void ckM_Button1_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bn_12;
+            (sender as CKM_Button).ForeColor = Color.White;
+        }
     }
 }

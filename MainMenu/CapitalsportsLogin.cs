@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
+using CKM_Controls;
 using Entity;
 using Tulpep.NotificationWindow;
 namespace MainMenu
@@ -26,7 +27,8 @@ namespace MainMenu
       
             if (ApplicationDeployment.IsNetworkDeployed)
             {
-                label2.Text = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(4);
+                var  val = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(4);
+                label2.Text = val;
 
             }
             else
@@ -54,7 +56,7 @@ namespace MainMenu
             ckM_Button3.FlatStyle = FlatStyle.Flat;
             ckM_Button3.FlatAppearance.BorderSize = 0;
             ckM_Button3.FlatAppearance.BorderColor = Color.White;
-
+            
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
@@ -262,6 +264,18 @@ namespace MainMenu
                     ckM_Button1.PerformClick();
                 }
             }
+        }
+
+        private void ckM_Button2_MouseEnter(object sender, EventArgs e)
+        {
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bmback_3;
+            (sender as CKM_Button).ForeColor = Color.Black;
+        }
+
+        private void ckM_Button2_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bm_3;
+            (sender as CKM_Button).ForeColor = Color.White;
         }
     }
 }

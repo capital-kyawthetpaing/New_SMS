@@ -172,6 +172,8 @@
             // 
             this.ckM_Button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ckM_Button2.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.White;
+            this.ckM_Button2.BackgroundImage = global::MainMenu.Properties.Resources.bm_3;
+            this.ckM_Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ckM_Button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ckM_Button2.DefaultBtnSize = false;
             this.ckM_Button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -180,7 +182,6 @@
             this.ckM_Button2.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
             this.ckM_Button2.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XSmall;
             this.ckM_Button2.ForeColor = System.Drawing.Color.White;
-            this.ckM_Button2.Image = global::MainMenu.Properties.Resources.nc_6;
             this.ckM_Button2.Location = new System.Drawing.Point(1, 1);
             this.ckM_Button2.Margin = new System.Windows.Forms.Padding(1);
             this.ckM_Button2.Name = "ckM_Button2";
@@ -189,11 +190,15 @@
             this.ckM_Button2.Text = "終了(F1)";
             this.ckM_Button2.UseVisualStyleBackColor = false;
             this.ckM_Button2.Click += new System.EventHandler(this.ckM_Button2_Click);
+            this.ckM_Button2.MouseEnter += new System.EventHandler(this.ckM_Button2_MouseEnter);
+            this.ckM_Button2.MouseLeave += new System.EventHandler(this.ckM_Button2_MouseLeave);
             // 
             // ckM_Button3
             // 
             this.ckM_Button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ckM_Button3.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.White;
+            this.ckM_Button3.BackgroundImage = global::MainMenu.Properties.Resources.bm_3;
+            this.ckM_Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ckM_Button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ckM_Button3.DefaultBtnSize = false;
             this.ckM_Button3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -202,7 +207,6 @@
             this.ckM_Button3.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
             this.ckM_Button3.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XSmall;
             this.ckM_Button3.ForeColor = System.Drawing.Color.White;
-            this.ckM_Button3.Image = global::MainMenu.Properties.Resources.nc_6;
             this.ckM_Button3.Location = new System.Drawing.Point(579, 1);
             this.ckM_Button3.Margin = new System.Windows.Forms.Padding(1);
             this.ckM_Button3.Name = "ckM_Button3";
@@ -211,11 +215,15 @@
             this.ckM_Button3.Text = "同期する (F11)";
             this.ckM_Button3.UseVisualStyleBackColor = false;
             this.ckM_Button3.Click += new System.EventHandler(this.ckM_Button3_Click_1);
+            this.ckM_Button3.MouseEnter += new System.EventHandler(this.ckM_Button2_MouseEnter);
+            this.ckM_Button3.MouseLeave += new System.EventHandler(this.ckM_Button2_MouseLeave);
             // 
             // ckM_Button1
             // 
             this.ckM_Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ckM_Button1.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.White;
+            this.ckM_Button1.BackgroundImage = global::MainMenu.Properties.Resources.bm_3;
+            this.ckM_Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ckM_Button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ckM_Button1.DefaultBtnSize = false;
             this.ckM_Button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -224,7 +232,6 @@
             this.ckM_Button1.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
             this.ckM_Button1.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XSmall;
             this.ckM_Button1.ForeColor = System.Drawing.Color.White;
-            this.ckM_Button1.Image = global::MainMenu.Properties.Resources.nc_6;
             this.ckM_Button1.Location = new System.Drawing.Point(868, 1);
             this.ckM_Button1.Margin = new System.Windows.Forms.Padding(1);
             this.ckM_Button1.Name = "ckM_Button1";
@@ -233,6 +240,8 @@
             this.ckM_Button1.Text = "ログイン(F12)";
             this.ckM_Button1.UseVisualStyleBackColor = false;
             this.ckM_Button1.Click += new System.EventHandler(this.ckM_Button1_Click_1);
+            this.ckM_Button1.MouseEnter += new System.EventHandler(this.ckM_Button2_MouseEnter);
+            this.ckM_Button1.MouseLeave += new System.EventHandler(this.ckM_Button2_MouseLeave);
             // 
             // tableLayoutPanel1
             // 

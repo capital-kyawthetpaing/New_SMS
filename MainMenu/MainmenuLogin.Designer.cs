@@ -105,6 +105,8 @@
             this.ckM_Button2.Text = "終了(F1)";
             this.ckM_Button2.UseVisualStyleBackColor = false;
             this.ckM_Button2.Click += new System.EventHandler(this.ckM_Button2_Click);
+            this.ckM_Button2.MouseEnter += new System.EventHandler(this.ckM_Button2_MouseEnter);
+            this.ckM_Button2.MouseLeave += new System.EventHandler(this.ckM_Button2_MouseLeave);
             // 
             // ckM_Button1
             // 
@@ -128,6 +130,8 @@
             this.ckM_Button1.Text = "ログイン(F12)";
             this.ckM_Button1.UseVisualStyleBackColor = false;
             this.ckM_Button1.Click += new System.EventHandler(this.ckM_Button1_Click);
+            this.ckM_Button1.MouseEnter += new System.EventHandler(this.ckM_Button2_MouseEnter);
+            this.ckM_Button1.MouseLeave += new System.EventHandler(this.ckM_Button2_MouseLeave);
             // 
             // ckM_Button3
             // 
@@ -151,6 +155,8 @@
             this.ckM_Button3.Text = "同期する (F11)";
             this.ckM_Button3.UseVisualStyleBackColor = false;
             this.ckM_Button3.Click += new System.EventHandler(this.ckM_Button3_Click);
+            this.ckM_Button3.MouseEnter += new System.EventHandler(this.ckM_Button2_MouseEnter);
+            this.ckM_Button3.MouseLeave += new System.EventHandler(this.ckM_Button2_MouseLeave);
             // 
             // pictureBox1
             // 
@@ -274,6 +280,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainmenuLogin";
             this.Load += new System.EventHandler(this.MainmenuLogin_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainmenuLogin_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainmenuLogin_KeyDown);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
