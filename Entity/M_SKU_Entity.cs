@@ -10,6 +10,8 @@ namespace Entity
     {
         public string AdminNO { get; set; }
         public string SKUCD {get;set;}
+        public string SKUCDFrom { get; set; }//ses
+        public string SKUCDTo { get; set; }//ses
         public string VariousFLG { get; set; }
         public string SKUName { get; set; }
         public string KanaName { get; set; }
