@@ -4,11 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Deployment.Application;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
+using CKM_Controls;
 using Entity;
 using Tulpep.NotificationWindow;
 namespace MainMenu
@@ -25,7 +27,8 @@ namespace MainMenu
       
             if (ApplicationDeployment.IsNetworkDeployed)
             {
-                label2.Text = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(4);
+                var  val = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(4);
+                label2.Text = val;
 
             }
             else
@@ -35,10 +38,25 @@ namespace MainMenu
         private void CapitalsportsLogin_Load(object sender, EventArgs e)
         {
             loginbl = new Login_BL();
+
             //PopupNotifier pop = new PopupNotifier();
             //pop.TitleText = "New Updates are Available Now!";
             //pop.ContentText = "Press F11 to download new features";
             //pop.Popup();
+            Add_ButtonDesign();
+        }
+        protected void Add_ButtonDesign()
+        {
+            ckM_Button2.FlatStyle = FlatStyle.Flat;
+            ckM_Button2.FlatAppearance.BorderSize = 0;
+            ckM_Button2.FlatAppearance.BorderColor = Color.White;
+            ckM_Button1.FlatStyle = FlatStyle.Flat;
+            ckM_Button1.FlatAppearance.BorderSize = 0;
+            ckM_Button1.FlatAppearance.BorderColor = Color.White;
+            ckM_Button3.FlatStyle = FlatStyle.Flat;
+            ckM_Button3.FlatAppearance.BorderSize = 0;
+            ckM_Button3.FlatAppearance.BorderColor = Color.White;
+            
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
@@ -64,7 +82,13 @@ namespace MainMenu
                 txtOperatorCD.Focus();
                 return false;
             }
+            if (string.IsNullOrWhiteSpace(txtPassword.Text))
+            {
 
+                loginbl.ShowMessage("E101");
+                txtPassword.Focus();
+                return false;
+            }
             return true;
         }
         private M_Staff_Entity GetInfo()
@@ -76,7 +100,6 @@ namespace MainMenu
             };
             return mse;
         }
-
         private void CapitalsportsLogin_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -105,14 +128,25 @@ namespace MainMenu
                 {
                     this.Cursor = Cursors.WaitCursor;
                     FTPData ftp = new FTPData();
-                    ftp.UpdateSyncData(Login_BL.SyncPath);
-                    this.Cursor = Cursors.Default;
+                    try
+                    {
+                        ftp.UpdateSyncData(Login_BL.SyncPath);
+                    }
+                    catch(Exception ex) {
+                        MessageBox.Show(ex.StackTrace.ToString());
+                    }
+                    //MainMenu.ProgressBar pgb = new ProgressBar(Login_BL.SyncPath);
+                    //pgb.ShowDialog();
+
                     MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Cursor = Cursors.Default;
+
+
+
+                  
                     // .. 
                 }
                 ckM_Button1.Focus();
-
-
             }
         }
         private void ckM_Button2_Click(object sender, EventArgs e)
@@ -120,14 +154,14 @@ namespace MainMenu
             this.Close();
             System.Environment.Exit(0);
         }
-
         private void ckM_Button1_Click(object sender, EventArgs e)
         {
-            Login_Click();
+            
             //Base_BL bbl = new Base_BL();
             //bbl.ShowMessage("I001", "テスト", "テスト1");
             
         }
+
         private void Login_Click()
         {
             if (loginbl.ReadConfig() == false)
@@ -192,10 +226,56 @@ namespace MainMenu
 
             }
         }
-
         private void ckM_Button3_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void CapitalsportsLogin_Paint(object sender, PaintEventArgs e)
+        {
+            txtOperatorCD.BorderStyle = BorderStyle.None;
+            Pen p = new Pen(System.Drawing.ColorTranslator.FromHtml("#05af34"));
+            Graphics g = e.Graphics;
+            int variance = 2;
+            g.DrawRectangle(p, new Rectangle(txtOperatorCD.Location.X - variance, txtOperatorCD.Location.Y - variance, txtOperatorCD.Width + variance, txtOperatorCD.Height + variance));
+            txtPassword.BorderStyle = BorderStyle.None;
+            g.DrawRectangle(p, new Rectangle( txtPassword.Location.X - variance, txtPassword.Location.Y - variance, txtPassword.Width + variance, txtPassword.Height + variance));
+
+
+
+        }
+
+        private void ckM_Button3_Click_1(object sender, EventArgs e)
+        {
             F11();
+        }
+
+        private void ckM_Button1_Click_1(object sender, EventArgs e)
+        {
+            Login_Click();
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                if (ErrorCheck())
+                {
+                    ckM_Button1.PerformClick();
+                }
+            }
+        }
+
+        private void ckM_Button2_MouseEnter(object sender, EventArgs e)
+        {
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bmback_3;
+            (sender as CKM_Button).ForeColor = Color.Black;
+        }
+
+        private void ckM_Button2_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bm_3;
+            (sender as CKM_Button).ForeColor = Color.White;
         }
     }
 }

@@ -237,7 +237,7 @@
             this.btnChangeIkkatuHacchuuMode.Location = new System.Drawing.Point(700, 5);
             this.btnChangeIkkatuHacchuuMode.Margin = new System.Windows.Forms.Padding(1);
             this.btnChangeIkkatuHacchuuMode.Name = "btnChangeIkkatuHacchuuMode";
-            this.btnChangeIkkatuHacchuuMode.Size = new System.Drawing.Size(140, 29);
+            this.btnChangeIkkatuHacchuuMode.Size = new System.Drawing.Size(160, 29);
             this.btnChangeIkkatuHacchuuMode.TabIndex = 704;
             this.btnChangeIkkatuHacchuuMode.Text = "FAX発注(F11)";
             this.btnChangeIkkatuHacchuuMode.UseVisualStyleBackColor = false;

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
+using CKM_Controls;
 using Entity;
 using Tulpep.NotificationWindow;
 
@@ -51,16 +52,30 @@ namespace MainMenu
             };
             return mse;
         }
+        protected void Add_ButtonDesign()
+        {
+            ckM_Button2.FlatStyle = FlatStyle.Flat;
+            ckM_Button2.FlatAppearance.BorderSize = 0;
+            ckM_Button2.FlatAppearance.BorderColor = Color.White;
+            ckM_Button1.FlatStyle = FlatStyle.Flat;
+            ckM_Button1.FlatAppearance.BorderSize = 0;
+            ckM_Button1.FlatAppearance.BorderColor = Color.White;
+            ckM_Button3.FlatStyle = FlatStyle.Flat;
+            ckM_Button3.FlatAppearance.BorderSize = 0;
+            ckM_Button3.FlatAppearance.BorderColor = Color.White;
 
+        }
         private void MainmenuLogin_Load(object sender, EventArgs e)
         {
             loginbl = new Login_BL();
+            txtOperatorCD.Focus();
+            Add_ButtonDesign();
             //loginbl = new Login_BL();
             //PopupNotifier pop = new PopupNotifier();
             //pop.TitleText = "New Updates are Available Now!";
             //pop.ContentText = "Press F11 to download new features";
             //pop.Popup();
-          //  pop.
+            //  pop.
 
         }
 
@@ -123,57 +138,104 @@ namespace MainMenu
                 System.Environment.Exit(0);
             }
             if (ErrorCheck())
+            {
+                //共通処理　受取パラメータ、接続情報
+                //コマンドライン引数より情報取得
+                //Iniファイルより情報取得
+                if (loginbl.ReadConfig() == false)
                 {
-                    //共通処理　受取パラメータ、接続情報
-                    //コマンドライン引数より情報取得
-                    //Iniファイルより情報取得
-                    if (loginbl.ReadConfig() == false)
-                    {
-                        //起動時エラー    DB接続不可能
-                        this.Close();
-                        System.Environment.Exit(0);
-                    }
+                    //起動時エラー    DB接続不可能
+                    this.Close();
+                    System.Environment.Exit(0);
+                }
 
-                    var mse = loginbl.MH_Staff_LoginSelect(GetInfo());
-                    if (mse.Rows.Count > 0)
+                var mse = loginbl.MH_Staff_LoginSelect(GetInfo());
+                if (mse.Rows.Count > 0)
+                {
+                    if (mse.Rows[0]["MessageID"].ToString() == "Allow")
                     {
-                        if (mse.Rows[0]["MessageID"].ToString() == "Allow")
+                        if (loginbl.Check_RegisteredMenu(GetInfo()).Rows.Count > 0)
                         {
-                            if (loginbl.Check_RegisteredMenu(GetInfo()).Rows.Count > 0)
-                            {
-                                var mseinfo = loginbl.M_Staff_InitSelect(GetInfo());
-                                Main_Menu menuForm = new Main_Menu(GetInfo().StaffCD, mseinfo);
-                                this.Hide();
-                                menuForm.ShowDialog();
-                                this.Close();
-                            }
-                            else
-                            {
-                                loginbl.ShowMessage("S018");
-                                txtOperatorCD.Select();
-
-                            }
-
+                            var mseinfo = loginbl.M_Staff_InitSelect(GetInfo());
+                            Main_Menu menuForm = new Main_Menu(GetInfo().StaffCD, mseinfo);
+                            this.Hide();
+                            menuForm.ShowDialog();
+                            this.Close();
                         }
                         else
                         {
-                            loginbl.ShowMessage(mse.Rows[0]["MessageID"].ToString());
+                            loginbl.ShowMessage("S018");
                             txtOperatorCD.Select();
+
                         }
 
                     }
                     else
                     {
-                        loginbl.ShowMessage("E101");
+                        loginbl.ShowMessage(mse.Rows[0]["MessageID"].ToString());
                         txtOperatorCD.Select();
                     }
 
                 }
+                else
+                {
+                    loginbl.ShowMessage("E101");
+                    txtOperatorCD.Select();
+                }
+
+            }
         }
 
         private void ckM_Button3_Click(object sender, EventArgs e)
         {
             F11();
+        }
+
+        private void MainmenuLogin_Paint(object sender, PaintEventArgs e)
+        {
+            txtOperatorCD.BorderStyle = BorderStyle.None;
+            Pen p = new Pen(System.Drawing.ColorTranslator.FromHtml("#05af34"));
+            Graphics g = e.Graphics;
+            int variance = 2;
+            g.DrawRectangle(p, new Rectangle(txtOperatorCD.Location.X - variance, txtOperatorCD.Location.Y - variance, txtOperatorCD.Width + variance, txtOperatorCD.Height + variance));
+            txtPassword.BorderStyle = BorderStyle.None;
+            g.DrawRectangle(p, new Rectangle(txtPassword.Location.X - variance, txtPassword.Location.Y - variance, txtPassword.Width + variance, txtPassword.Height + variance));
+
+        }
+        protected void ButtonState()
+        {
+            var c = GetAllControls(this);
+            for (int i = 0; i < c.Count(); i++)
+            {
+                Control ctrl = c.ElementAt(i) as Control;
+                if (ctrl is CKM_Button)
+                {
+
+                }
+            }
+        }
+        public IEnumerable<Control> GetAllControls(Control root)
+        {
+            foreach (Control control in root.Controls)
+            {
+                foreach (Control child in GetAllControls(control))
+                {
+                    yield return child;
+                }
+            }
+            yield return root;
+        }
+
+        private void ckM_Button2_MouseEnter(object sender, EventArgs e)
+        {
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bmback_3;
+            (sender as CKM_Button).ForeColor = Color.Black;
+        }
+
+        private void ckM_Button2_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bm_3;
+            (sender as CKM_Button).ForeColor = Color.White;
         }
     }
 }

@@ -38,12 +38,14 @@ namespace MarkDownNyuuryoku
             internal int MDPurchaseRows;                //マークダウン明細連番
             internal int PurchaseRows;                　//仕入明細連番
             internal string AdminNO;                    //AdminNO
+            internal decimal NormalCost;                //標準原価
             internal decimal TaxRate;                   //税率
             internal decimal Tax;                   　　//税額
             internal string TaniCD;                     //単位CD
             internal string TaniName;                   //単位名
             internal string InsertOperator;             //新規登録者
             internal string InsertDateTime;             //新規登録日時
+            internal string OldEvaluationPrice;         //最新原価＠（退避）
             internal string OldRate;                    //掛率（退避）
             internal string OldMarkDownUnitPrice;       //MD変更＠（退避）
             internal string OldCalculationSu;           //対象数（退避）

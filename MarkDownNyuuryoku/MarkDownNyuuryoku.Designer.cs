@@ -6549,6 +6549,7 @@
             this.Vsb_Mei_0.Name = "Vsb_Mei_0";
             this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 418);
             this.Vsb_Mei_0.TabIndex = 0;
+            this.Vsb_Mei_0.ValueChanged += new System.EventHandler(this.Vsb_Mei_0_ValueChanged);
             // 
             // panel4
             // 
@@ -6819,6 +6820,7 @@
             this.CboSouko.Name = "CboSouko";
             this.CboSouko.Size = new System.Drawing.Size(280, 20);
             this.CboSouko.TabIndex = 3;
+            this.CboSouko.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // ckM_Label4
             // 
@@ -6853,6 +6855,7 @@
             this.CboStockInfo.Name = "CboStockInfo";
             this.CboStockInfo.Size = new System.Drawing.Size(180, 20);
             this.CboStockInfo.TabIndex = 4;
+            this.CboStockInfo.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // ckM_Label5
             // 

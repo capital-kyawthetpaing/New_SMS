@@ -57,16 +57,52 @@ namespace MainMenu
             this.ResizeRedraw = false;
             BindButtonName();
             ChangeFont();
-           
-          //  TextRenderer.MeasureText("12345", btnProj1.Font);
+
+            //  TextRenderer.MeasureText("12345", btnProj1.Font);
             /// btnProj1.Font = new Font(Font, FontStyle.Bold);
 
             // Font dd;
 
-           // this.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Bold);
+            // this.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Bold);
             //  this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            ButtonState();
+        }
+        protected void ButtonState()
+        {
+            var c = GetAllControls(this);
+            for (int i = 0; i < c.Count(); i++)
+            {
+                Control ctrl = c.ElementAt(i) as Control;
+                if (ctrl is CKM_Button)
+                {
+                    (ctrl as CKM_Button).FlatStyle = FlatStyle.Flat;
+                    (ctrl as CKM_Button).FlatAppearance.BorderSize = 0;
+
+                    //  (ctrl as CKM_Button).FlatAppearance.BorderColor = System.Drawing.ColorTranslator.FromHtml("#05af34") ;
+
+                    if ((ctrl as CKM_Button).Parent is Panel && (((ctrl as CKM_Button).Parent as Panel).Name == "panelLeft" || ((ctrl as CKM_Button).Parent as Panel).Name == "panel_right"))
+                    {
 
 
+                        (ctrl as CKM_Button).ForeColor = Color.White; ;
+                        ////(ctrl as CKM_Button).BackgroundImageLayout = ImageLayout.Stretch;
+                        ///
+                        if (((ctrl as CKM_Button).Parent as Panel).Name == "panel_right")
+                        {
+                            (ctrl as CKM_Button).BackgroundImage = MainMenu.Properties.Resources.bn_9;
+                            (ctrl as CKM_Button).ForeColor = Color.Black; ;
+                            (ctrl as CKM_Button).FlatAppearance.BorderColor = Color.White;
+                        }
+                        else
+                        {
+                            (ctrl as CKM_Button).BackgroundImage = MainMenu.Properties.Resources.bm_3;
+                        }
+                        (ctrl as CKM_Button).BackgroundImageLayout = ImageLayout.Stretch;
+                    }
+                }
+            }
+
+            btnLogin.Font = new Font("MS Gothic", 22, FontStyle.Bold);
         }
         protected void ChangeFont()
         {
@@ -306,27 +342,44 @@ namespace MainMenu
         public static extern bool SetForegroundWindow(IntPtr hwnd);
         private void panelRight_MouseEnter(object sender, EventArgs e)
         {
-            // when we hoover the button we get this
-            (sender as Button).BackColor = Color.Khaki;
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bmback_3;
+            (sender as CKM_Button).ForeColor = Color.Black;
+           // (sender as CKM_Button).Font = new System.Drawing.Font((sender as CKM_Button).Font.FontFamily, (sender as CKM_Button).Font.SizeInPoints, System.Drawing.FontStyle.Bold);
+
+            //  (sender as Button).BackColor = Color.Khaki;
         }
 
         private void panelRight_MouseLeave(object sender, EventArgs e)
         {
-            // when we again leave the button we get back original color
-            if ((sender) as Button != btnrightcurrent)
-                (sender as Button).BackColor = Color.FromArgb(255, 224, 192);
+            if ((sender) as CKM_Button != btnleftcurrent)
+            // (sender as CKM_Button).BackColor = Color.FromArgb(192, 255, 192);
+            {
+                (sender as CKM_Button).BackgroundImage = Properties.Resources.bn_9;
+                (sender as CKM_Button).ForeColor = Color.Black;
+             //   (sender as CKM_Button).Font = new System.Drawing.Font((sender as CKM_Button).Font.FontFamily, (sender as CKM_Button).Font.SizeInPoints, System.Drawing.FontStyle.Regular);
+
+            }
+            //if ((sender) as Button != btnrightcurrent)
+            //    (sender as Button).BackColor = Color.FromArgb(255, 224, 192);
         }
         private void panelLeft_MouseEnter(object sender, EventArgs e)
         {
-            // when we hoover the button we get this
-            (sender as CKM_Button).BackColor = Color.LightGreen;
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bmback_3;
+            (sender as CKM_Button).ForeColor = Color.Black;
+           // (sender as CKM_Button).Font = new System.Drawing.Font((sender as CKM_Button).Font.FontFamily, (sender as CKM_Button).Font.SizeInPoints , System.Drawing.FontStyle.Bold);
+            
         }
 
         private void panelLeft_MouseLeave(object sender, EventArgs e)
         {
-            // when we again leave the button we get back original color
             if ((sender) as CKM_Button != btnleftcurrent)
-                (sender as CKM_Button).BackColor = Color.FromArgb(192, 255, 192);
+            // (sender as CKM_Button).BackColor = Color.FromArgb(192, 255, 192);
+            {
+                (sender as CKM_Button).BackgroundImage = Properties.Resources.bm_3;
+                (sender as CKM_Button).ForeColor = Color.White;
+             //   (sender as CKM_Button).Font = new System.Drawing.Font((sender as CKM_Button).Font.FontFamily, (sender as CKM_Button).Font.SizeInPoints, System.Drawing.FontStyle.Regular);
+
+            }
         }
         public void Main_Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -391,12 +444,29 @@ namespace MainMenu
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
 
-        private void btnProj6_Click(object sender, EventArgs e)
+        private void btnClose_MouseHover(object sender, EventArgs e)
         {
+          
+        }
+        private void btnClose_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bm_3;
+            (sender as CKM_Button).ForeColor = Color.White;
+        }
 
+        private void btnClose_MouseEnter(object sender, EventArgs e)
+        {
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bmback_3;
+            (sender as CKM_Button).ForeColor = Color.Black;
+        }
+
+        private void btnLogin_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bn_15;
+            (sender as CKM_Button).Font = new Font("MS Gothic",22,FontStyle.Bold);
+            (sender as CKM_Button).ForeColor = Color.White;
         }
     }
 }
