@@ -104,7 +104,6 @@ namespace CKM_Controls
 
         }
         protected override bool ProcessCmdKey(ref System.Windows.Forms.Message msg, Keys keyData)
-
         {
             Check_SubFormGrid(keyData);
             CheckDuplicate();
@@ -246,7 +245,6 @@ namespace CKM_Controls
                         }
                         else if (this.Name == "GV_item")
                         {
-
                             // int e = CurrentCell.RowIndex;
                             if (CurrentCell.RowIndex != -1)
                             {
@@ -254,36 +252,58 @@ namespace CKM_Controls
                                 {
                                     string ratevlue = Rows[CurrentCell.RowIndex].Cells["掛率"].Value.ToString();
                                     string editvalue = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
+
+                                    //bool b1 = Microsoft.VisualBasic.Information.IsNumeric(editvalue);
+                                    //C/*o*/lumns["掛率"].DefaultCellStyle.Format = "N2";
+                                    //var isNumeric = int.TryParse(editvalue, out int n);
                                     if (!editvalue.Contains("."))
                                     {
-                                        if (editvalue.Length > 3)
+                                        var isNumeric = int.TryParse(editvalue, out int n);
+                                        if (isNumeric)
+                                        {
+                                            if (editvalue.Length > 3)
+                                            {
+                                                //string t= editvalue.GetEnumerator().
+                                                MessageBox.Show("enter valid no");
+                                                CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+                                                RefreshEdit();
+                                                //CurrentCell.Value = "0";
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                string priceouttax = Rows[CurrentCell.RowIndex].Cells["定価"].Value.ToString();
+                                                string rateproce = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
+                                                decimal rate = Convert.ToDecimal(rateproce);
+                                                decimal con = (decimal)0.01;
+                                                decimal listprice = Convert.ToDecimal(priceouttax);
+                                                Rows[CurrentCell.RowIndex].Cells["発注単価"].Value = Math.Round(listprice * (rate * con)).ToString();
+                                                direction = Keys.Tab;
+                                                reverseKey = Keys.Shift | Keys.Tab;
+                                                break;
+                                            }
+                                        }
+                                        else
                                         {
                                             MessageBox.Show("enter valid no");
                                             CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
                                             RefreshEdit();
-                                            //CurrentCell.Value = "0";
-                                            break;
-                                        }
-                                        else
-                                        {
-                                            string priceouttax = Rows[CurrentCell.RowIndex].Cells["定価"].Value.ToString();
-                                            string rateproce = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
-                                            decimal rate = Convert.ToDecimal(rateproce);
-                                            decimal con = (decimal)0.01;
-                                            decimal listprice = Convert.ToDecimal(priceouttax);
-                                            Rows[CurrentCell.RowIndex].Cells["発注単価"].Value = Math.Round(listprice * (rate * con)).ToString();
-                                            direction = Keys.Tab;
-                                            reverseKey = Keys.Shift | Keys.Tab;
                                             break;
                                         }
                                     }
                                     else
                                     {
+
                                         //Rows[CurrentCell.ColumnIndex].DefaultCellStyle.Format="N2";
                                         Columns["掛率"].DefaultCellStyle.Format = "N2";
                                         int x = editvalue.IndexOf('.');
-                                        int count = editvalue.Count(f => f == '.');
 
+                                        int count = editvalue.Count(f => f == '.');
+                                        //string chartese = editvalue.Substring(x+1,count);
+                                        string charre = editvalue.Remove(x, count);
+                                        var isNumeric = int.TryParse(charre, out int n);
+                                        if (isNumeric)
+                                        { 
                                         if (count != 1 || x >= 4)
                                         {
                                             MessageBox.Show("enter valid no");
@@ -304,6 +324,15 @@ namespace CKM_Controls
                                             break;
                                         }
                                     }
+                                        else
+                                        {
+                                            MessageBox.Show("enter valid no");
+                                            CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+                                            RefreshEdit();
+                                            break;
+                                        }
+                                        
+                                 }
                                 }
                                 //direction = Keys.Tab;
                                 //reverseKey = Keys.Shift | Keys.Tab;
@@ -760,7 +789,6 @@ namespace CKM_Controls
 
         protected override void OnCellEndEdit(DataGridViewCellEventArgs e)
         {
-
             // var dtDisplay = new DataTable();
             if (Name == "dgvYuubinBangou")
             {
@@ -830,7 +858,7 @@ namespace CKM_Controls
 
                 }
             }
-           else if (Name == "GV_item")
+            else if (Name == "GV_item")
             {
                 if (CurrentCell.RowIndex != -1)
                 {
@@ -838,24 +866,36 @@ namespace CKM_Controls
                     {
                         string ratevlue = Rows[CurrentCell.RowIndex].Cells["掛率"].Value.ToString();
                         string editvalue = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
+
+
                         if (!editvalue.Contains("."))
                         {
-                            if (editvalue.Length > 3)
+                            var isNumeric = int.TryParse(editvalue, out int n);
+                            if (isNumeric)
+                            {
+                                if (editvalue.Length > 3)
+                                {
+                                    MessageBox.Show("enter valid no");
+                                    CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+                                    RefreshEdit();
+                                    //CurrentCell.Value = "0";
+                                }
+                                else
+                                {
+                                    string priceouttax = Rows[CurrentCell.RowIndex].Cells["定価"].Value.ToString();
+                                    string rateproce = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
+                                    decimal rate = Convert.ToDecimal(rateproce);
+                                    decimal con = (decimal)0.01;
+                                    decimal listprice = Convert.ToDecimal(priceouttax);
+                                    Rows[CurrentCell.RowIndex].Cells["発注単価"].Value = Math.Round(listprice * (rate * con)).ToString();
+
+                                }
+                            }
+                            else
                             {
                                 MessageBox.Show("enter valid no");
                                 CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
                                 RefreshEdit();
-                                //CurrentCell.Value = "0";
-                            }
-                            else
-                            {
-                                string priceouttax = Rows[CurrentCell.RowIndex].Cells["定価"].Value.ToString();
-                                string rateproce = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
-                                decimal rate = Convert.ToDecimal(rateproce);
-                                decimal con = (decimal)0.01;
-                                decimal listprice = Convert.ToDecimal(priceouttax);
-                                Rows[CurrentCell.RowIndex].Cells["発注単価"].Value = Math.Round(listprice * (rate * con)).ToString();
-                               
                             }
                         }
                         else
@@ -864,27 +904,37 @@ namespace CKM_Controls
                             Columns["掛率"].DefaultCellStyle.Format = "N2";
                             int x = editvalue.IndexOf('.');
                             int count = editvalue.Count(f => f == '.');
+                            string charre = editvalue.Remove(x, count);
+                            var isNumeric = int.TryParse(charre, out int n);
+                            if (isNumeric)
+                            {
+                                if (count != 1 || x >= 4)
+                                {
+                                    MessageBox.Show("enter valid no");
+                                    CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+                                    RefreshEdit();
 
-                            if (count != 1 || x >= 4)
+                                }
+                                else
+                                {
+                                    string priceouttax = Rows[CurrentCell.RowIndex].Cells["定価"].Value.ToString();
+                                    string rateproce = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
+                                    decimal rate = Convert.ToDecimal(rateproce);
+                                    decimal con = (decimal)0.01;
+                                    decimal listprice = Convert.ToDecimal(priceouttax);
+                                    Rows[CurrentCell.RowIndex].Cells["発注単価"].Value = Math.Round(listprice * (rate * con)).ToString();
+
+                                }
+                            }
+                            else
                             {
                                 MessageBox.Show("enter valid no");
                                 CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
                                 RefreshEdit();
-                               
-                            }
-                            else
-                            {
-                                string priceouttax = Rows[CurrentCell.RowIndex].Cells["定価"].Value.ToString();
-                                string rateproce = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
-                                decimal rate = Convert.ToDecimal(rateproce);
-                                decimal con = (decimal)0.01;
-                                decimal listprice = Convert.ToDecimal(priceouttax);
-                                Rows[CurrentCell.RowIndex].Cells["発注単価"].Value = Math.Round(listprice * (rate * con)).ToString();
-                                
                             }
                         }
                     }
-                  
+
                 }
             }
             else
