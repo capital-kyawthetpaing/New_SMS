@@ -196,6 +196,8 @@
             this.ckM_Button1.Text = "ログアウト";
             this.ckM_Button1.UseVisualStyleBackColor = false;
             this.ckM_Button1.Click += new System.EventHandler(this.ckM_Button1_Click);
+            this.ckM_Button1.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
+            this.ckM_Button1.MouseLeave += new System.EventHandler(this.ckM_Button1_MouseLeave);
             // 
             // btnProcess
             // 
@@ -219,6 +221,8 @@
             this.btnProcess.Text = "メッセージ";
             this.btnProcess.UseVisualStyleBackColor = false;
             this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
+            this.btnProcess.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
+            this.btnProcess.MouseLeave += new System.EventHandler(this.btnProcess_MouseLeave);
             // 
             // btnClose
             // 
@@ -242,6 +246,8 @@
             this.btnClose.Text = "終了";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
+            this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
             // 
             // panel_right
             // 
@@ -563,7 +569,7 @@
             // 
             // btn_Proj1
             // 
-            this.btn_Proj1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_Proj1.BackColor = System.Drawing.Color.Transparent;
             this.btn_Proj1.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.White;
             this.btn_Proj1.BackgroundImage = global::MainMenu.Properties.Resources.bn_9;
             this.btn_Proj1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
