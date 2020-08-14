@@ -593,7 +593,11 @@ namespace CKM_Controls
         {
             if (FindMainForm(this) == null)  //Shop Base Check  (null ==true)
             {
+                if ((this.Parent is Panel pnl && pnl.Name == "pnl_Body"))
+                {
 
+                }
+               else
                 this.BackColor = Color.FromArgb(226, 239, 218);
             }
             else
@@ -601,14 +605,11 @@ namespace CKM_Controls
                 this.BackColor = SystemColors.Window;
             }
 
-            if (this.Parent is UserControl)
-            {
-                //
-            }
-            else // PTK Commmented Because When error Occurred, Cant Mouse Click Anyway to Close or anyother event. (Moved in KeyDown and Lost Cus)
-            {
-                //Control_Check();  
-            }
+            //if (this.Parent is  Panel pnl&&  pnl.Name == "pnl_Body")
+            //{
+            //    this.BackColor = Color.Red; ; 
+            //}
+           
             base.OnLeave(e);
            /// var f =BackColor= ClientColor;  //PTK temm removed
         }

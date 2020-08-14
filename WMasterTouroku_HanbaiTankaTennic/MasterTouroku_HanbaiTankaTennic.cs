@@ -12,6 +12,8 @@ using Entity;
 using Base.Client;
 using Search;
 using GridBase;
+using CKM_Controls;
+using Search;
 namespace WMasterTouroku_HanbaiTankaTennic
 {
     public partial class MasterTouroku_HanbaiTankaTennic : FrmMainForm
@@ -56,15 +58,92 @@ namespace WMasterTouroku_HanbaiTankaTennic
         private int m_dataCnt = 0;
         private void MasterTouroku_HanbaiTankaTennic_Load(object sender, EventArgs e)
         {
+            try
+            {
+                InProgramID = ProID;
+                SetFunctionLabel(EProMode.MENTE);
+                base.StartProgram();
+                S_SetInit_Grid();
+                txtStartDateFrom.Focus();
+                SKUCDFrom.NameWidth = 0;
+                SKUCDTo.NameWidth = 0;
+                Clear(pnl_Body);
+                Scr_Clr(0);
+                TextLeave();
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public IEnumerable<Control> GetAllControls(Control root)
+        {
+            foreach (Control control in root.Controls)
+            {
+                foreach (Control child in GetAllControls(control))
+                {
+                    yield return child;
+                }
+            }
+            yield return root;
+        }
+        private void Scr_Clr(short Kbn)  /// 0 is initial state
+        {
+            //カスタムコントロールのLeave処理を先に走らせるため pnl_Header
+            //   IMT_DMY_0.Focus();
+            var ctrl = GetAllControls(pnl_Header);
+            if (Kbn == 0)
+            {
+                foreach (Control ctl in ctrl)
+                {
+                    if (ctrl is CKM_TextBox ct)
+                    {
+                        ct.Text = "";
+                    }
+                    else if (ctrl is CKM_SearchControl c)
+                    {
+                        c.TxtChangeDate.Text = "";
+                        c.TxtCode.Text = "";
+                        c.LabelText = "";
+                    }
+                    else if (ctrl is CKM_RadioButton cr && cr.Name == "ckM_RadioButton1")
+                    {
+                        cr.Checked = true;
+                    }
+                }
+            }
 
-            InProgramID = ProID; 
-            SetFunctionLabel(EProMode.MENTE);
-            base.StartProgram();
-            S_SetInit_Grid();
-            txtStartDateFrom.Focus();
-            SKUCDFrom.NameWidth = 0;
-            SKUCDTo.NameWidth = 0;
-            Clear(pnl_Body);
+            //    foreach (Control ctl in keyLabels)
+            //    {
+            //        ((CKM_SearchControl)ctl).LabelText = "";
+            //    }
+
+            //}
+
+            //foreach (Control ctl in detailControls)
+            //{
+            //    if (ctl.GetType().Equals(typeof(CheckBox)))
+            //    {
+            //        ((CheckBox)ctl).Checked = false;
+            //    }
+            //    else if (ctl.GetType().Equals(typeof(RadioButton)))
+            //    {
+            //        ((RadioButton)ctl).Checked = true;
+            //    }
+            //    else
+            //    {
+            //        ctl.Text = "";
+            //    }
+            //}
+
+            //foreach (Control ctl in detailLabels)
+            //{
+            //    ((CKM_SearchControl)ctl).LabelText = "";
+            //}
+
+            S_Clear_Grid();   //画面クリア（明細部）
+
+            //if (Kbn == 0)
+            //    SetEnabled();
         }
         private void InitialControlArray()
         {
@@ -269,6 +348,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
             }
             Set_GridTabStop(false);
             mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
+
         }
         private void SetMultiColNo(DataTable dt = null)
         {
@@ -526,30 +606,141 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 case EOperationMode.SHOW:
                     break;
                 case EOperationMode.UPDATE:
-                    S_BodySeigyo();
+                    S_BodySeigyo(1,1);
                     break;
             }
             btnDisplay.Enabled = true;
             txtStartDateFrom.Focus();
         }
-        private void S_BodySeigyo()
-        {
+        //private void S_BodySeigyo()
+        //{
 
-            //for (int row = 0; row <= 9; row++)
-            //{
+        //for (int row = 0; row <= 9; row++)
+        //{
 
-            //    (Controls.Find("IMT_ITMCD_" + row, true).FirstOrDefault() as CKM_Controls.CKM_TextBox).Enabled = false;
-            //    (Controls.Find("IMT_JANCD_" + row, true).FirstOrDefault() as CKM_Controls.CKM_TextBox).Enabled = false;
-            //    (Controls.Find("IMT_ITMNM_" + row, true).FirstOrDefault() as CKM_Controls.CKM_TextBox).Enabled = false;
-            //    (Controls.Find("IMN_COSTUNPRICE_" + row, true).FirstOrDefault() as CKM_Controls.CKM_TextBox).Enabled = false;
-            //}
-            
+        //    (Controls.Find("IMT_ITMCD_" + row, true).FirstOrDefault() as CKM_Controls.CKM_TextBox).Enabled = false;
+        //    (Controls.Find("IMT_JANCD_" + row, true).FirstOrDefault() as CKM_Controls.CKM_TextBox).Enabled = false;
+        //    (Controls.Find("IMT_ITMNM_" + row, true).FirstOrDefault() as CKM_Controls.CKM_TextBox).Enabled = false;
+        //    (Controls.Find("IMN_COSTUNPRICE_" + row, true).FirstOrDefault() as CKM_Controls.CKM_TextBox).Enabled = false;
+        //}
+
         //    var txtckm =  this.Controls["IMT_ITMCD_0"];
-            //foreach (Control ctl in detailControls)
-            //{
+        //foreach (Control ctl in detailControls)
+        //{
 
-            //   // ctl.Enabled = Kbn == 0 ? true : false;
-            //}
+        //   // ctl.Enabled = Kbn == 0 ? true : false;
+        //}
+
+
+        //}
+        private void S_BodySeigyo(short pKBN, short pGrid)
+        {
+            int w_Row;
+
+            switch (pKBN)
+            {
+                case 0:
+                    {
+                        txtStartDateFrom.Focus();
+                        //Scr_Lock(0, 0, 0);   // フレームのロック解除
+                        //Scr_Lock(1, mc_L_END, 1);  // フレームのロック
+                        //SetEnabled(); //radio button
+                        this.Vsb_Mei_0.TabStop = false;
+                        SetFuncKeyAll(this, "111111001010");
+
+                        break;
+                    }
+
+                case 1:
+                    {
+                        if (pGrid == 1)
+                        {
+                            // 入力可の列の設定
+                            for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
+                            {
+                                if (m_EnableCnt - 1 < w_Row)
+                                    break;
+                                if (!String.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].SKUCD))
+                                {
+                                    for (int w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
+                                    {
+                                        switch (w_Col)
+                                        {
+                                            //case (int)ClsGridHanbaiTankaTennic.ColNO.SKUCD:  
+                                            case (int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate:
+                                            case (int)ClsGridHanbaiTankaTennic.ColNO.EndChangeDate:
+                                            case (int)ClsGridHanbaiTankaTennic.ColNO.UnitPrice:
+                                            case (int)ClsGridHanbaiTankaTennic.ColNO.StandardSalesUnitPrice:
+                                            case (int)ClsGridHanbaiTankaTennic.ColNO.Rank1UnitPrice:
+                                            case (int)ClsGridHanbaiTankaTennic.ColNO.Rank2UnitPrice:
+                                            case (int)ClsGridHanbaiTankaTennic.ColNO.Rank3UnitPrice:
+                                            case (int)ClsGridHanbaiTankaTennic.ColNO.Rank4UnitPrice:
+                                            case (int)ClsGridHanbaiTankaTennic.ColNO.Rank5UnitPrice:
+                                            case (int)ClsGridHanbaiTankaTennic.ColNO.Remarks:
+                                                {
+                                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
+                                                    break;
+                                                }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            txtStartDateFrom.Focus();
+
+                            //画面へデータセット後、明細部入力可、キー部入力不可
+                            //Scr_Lock(2, 3, 0);
+                            //Scr_Lock(0, 1, 1);
+                            SetFuncKeyAll(this, "111111000001");
+                            btnDisplay.Enabled = false;
+
+                            //if (radioButton2.Checked)
+                            //{
+                            //    //単価CD変更不可にする
+                            //    detailControls[(int)EIndex.TankaCD].Enabled = false;
+                            //    ScTanka.BtnSearch.Enabled = false;
+                            //}
+                        }
+                        break;
+                    }
+
+                case 2:
+                    {
+                        if (pGrid == 1)
+                        {
+                            // 使用可項目無  明細部スクロールのみ可
+                            // IMT_DMY_0.Focus()
+                            //SetFuncKeyAll(this, "000010000101", "11100000");
+                            pnl_Body.Enabled = true;                  // ボディ部使用可
+                            break;
+                        }
+                        else
+                        {
+                          //  Scr_Lock(0, 0, 0);
+                            if (OperationMode == EOperationMode.DELETE)
+                            {
+                                //Scr_Lock(1, 3, 1);
+                                SetFuncKeyAll(this, "111111000011");
+                               // Scr_Lock(0, 3, 1);
+                            }
+                            else
+                            {
+                                SetFuncKeyAll(this, "111111000010");
+                            }
+
+                            // 削除時のみ、明細を参照できるように、スクロールバーのTabStopをTrueにする
+                            this.Vsb_Mei_0.TabStop = true;
+                        }
+
+                        break;
+                    }
+                default:
+                    {
+                        break;
+                    }
+            }
         }
         public override void FunctionProcess(int Index)
         {
@@ -663,14 +854,75 @@ namespace WMasterTouroku_HanbaiTankaTennic
             ms = GetInfo();
             dt = spb.M_SKUPrice_HanbaiTankaTennic_Select(mse, ms);
             SetMultiColNo(dt);
+            S_BodySeigyo(1,1);
             mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
         }
+        private void TextLeave()
+        {
+            Add_Leave(new Control[] { panel10, panel41, panel8, panel3, panel17,panel4,panel65,panel89,panel113,panel137 });
+        }
+        private void Add_Leave(Control[] cont)
+        {
+            foreach (var ctr in cont)
+            {
+                var Con = GetAllControls(ctr);
+                foreach (var c in Con)
+                {
+                    if (c is CKM_TextBox ct)
+                    {
+                        ct.Leave += Ct_Leave;
+                        //ct.Enter += Ct_Enter;
+                        //ct.GotFocus += Ct_GotFocus;
+                    }
+                }
+            }
+        }
+        private void Ct_GotFocus(object sender, EventArgs e)
+        {
+            L_Control = (Control)sender;
+        }
+
+        private void Ct_Enter(object sender, EventArgs e)
+        {
+            L_Control = (Control)sender;
+            L_Control = ActiveControl;
+        }
+
+        private void Ct_Leave(object sender, EventArgs e)
+        {//IMT_GYONO_0
+            
+            if ( (sender as CKM_TextBox).Parent is Panel cp)
+            {
+                var Con = GetAllControls(cp);
+                foreach (var ctr in Con)
+                {
+                    if (ctr is Label cl)
+                    {
+                        if (Convert.ToInt32(cl.Text) % 2 == 0)
+                        {
+                            ((CKM_TextBox)sender).BackColor = ClsGridBase.GridColor;
+                        }
+                        else {
+                            ((CKM_TextBox)sender).Back_Color = CKM_TextBox.CKM_Color.White;
+                        }
+                        break;
+                    }
+                }
+                
+                //   ((CKM_TextBox)sender).BackColor =ClsGridBase.GridColor;
+                //if (ct is "")
+                //((CKM_TextBox)sender).BackColor = ClsGridBase.GridColor;
+                //else
+                //    ((CKM_TextBox)sender).BackColor =  Color.White;
+            }
+        }
+        Control L_Control = null;
         private void GridControl_Enter(object sender, EventArgs e)
         {
             try
             {
                 previousCtrl = this.ActiveControl;
-
+             //   PreViousColor = ActiveControl.BackColor;
                 int w_Row;
                 CKM_Controls.CKM_TextBox w_ActCtl;
 
@@ -711,6 +963,9 @@ namespace WMasterTouroku_HanbaiTankaTennic
         }
         private void GridControl_KeyDown(object sender, KeyEventArgs e)
         {
+
+
+
         }
         private void KeyControl_Enter(object sender, EventArgs e)
         {
