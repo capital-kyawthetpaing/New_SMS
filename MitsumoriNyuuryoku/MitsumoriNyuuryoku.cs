@@ -441,9 +441,9 @@ namespace MitsumoriNyuuryoku
 
             mGrid.g_WheelFLG = true;
 
-            if (mGrid.g_MK_MaxValue > m_dataCnt - 1)
-                w_MaxValue = m_dataCnt - 1;
-            else
+            //if (mGrid.g_MK_MaxValue > m_dataCnt - 1)
+            //    w_MaxValue = m_dataCnt - 1;
+            //else
                 w_MaxValue = mGrid.g_MK_MaxValue;
 
             w_Value = Vsb_Mei_0.Value + w_ToMove;

@@ -30,39 +30,47 @@ namespace GridBase
             {
                 pVal = "";
 
-                if (CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                try
                 {
-                    CKM_Controls.CKM_TextBox w_Edit;
-                    w_Edit = (CKM_Controls.CKM_TextBox)CellCtl;
-                    pVal = w_Edit.Text;
-                }
-                else if (CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_MultiLineTextBox)))
-                {
-                    CKM_Controls.CKM_MultiLineTextBox w_Edit;
-                    w_Edit = (CKM_Controls.CKM_MultiLineTextBox)CellCtl;
-                    pVal = w_Edit.Text;
-                }
-                else if (CellCtl.GetType().Equals(typeof(System.Windows.Forms.Label)))
-                {
-                    System.Windows.Forms.Label w_Label;
-                    w_Label = (System.Windows.Forms.Label)CellCtl;
-                    pVal = w_Label.Text;
-                }
-                else if (CellCtl.GetType().Equals(typeof(Search.CKM_SearchControl)))
-                {
-                    Search.CKM_SearchControl w_Edit;
-                    w_Edit = (Search.CKM_SearchControl)CellCtl;
-                    pVal = w_Edit.TxtCode.Text;
-                }
-                else if (CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_ComboBox)))
-                {
-                    CKM_Controls.CKM_ComboBox w_Edit;
-                    w_Edit = (CKM_Controls.CKM_ComboBox)CellCtl;
+                    if (CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                    {
+                        CKM_Controls.CKM_TextBox w_Edit;
+                        w_Edit = (CKM_Controls.CKM_TextBox)CellCtl;
+                        pVal = w_Edit.Text;
+                    }
+                    else if (CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_MultiLineTextBox)))
+                    {
+                        CKM_Controls.CKM_MultiLineTextBox w_Edit;
+                        w_Edit = (CKM_Controls.CKM_MultiLineTextBox)CellCtl;
+                        pVal = w_Edit.Text;
+                    }
+                    else if (CellCtl.GetType().Equals(typeof(System.Windows.Forms.Label)))
+                    {
+                        System.Windows.Forms.Label w_Label;
+                        w_Label = (System.Windows.Forms.Label)CellCtl;
+                        pVal = w_Label.Text;
+                    }
+                    else if (CellCtl.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                    {
+                        Search.CKM_SearchControl w_Edit;
+                        w_Edit = (Search.CKM_SearchControl)CellCtl;
+                        pVal = w_Edit.TxtCode.Text;
+                    }
+                    else if (CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_ComboBox)))
+                    {
+                        CKM_Controls.CKM_ComboBox w_Edit;
+                        w_Edit = (CKM_Controls.CKM_ComboBox)CellCtl;
 
-                    if (w_Edit.SelectedIndex > 0)
-                        pVal = w_Edit.SelectedValue.ToString();
-                    else
-                        pVal = "";
+                        if (w_Edit.SelectedIndex > 0)
+                            pVal = w_Edit.SelectedValue.ToString();
+                        else
+                            pVal = "";
+                    }
+                }
+
+                catch(Exception ex)
+                {
+                    var mes = ex.Message;
                 }
             }
 

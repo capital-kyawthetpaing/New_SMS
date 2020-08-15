@@ -223,8 +223,8 @@ BEGIN
             ,LastApprovalDate                   = @SYSDATE
             ,LastApprovalStaffCD                = @p_Operator  
             ,ApprovalStageFLG                   = 10
-            ,FirstPrintDate                     = null 
-            ,LastPrintDate                      = null
+            ,FirstPrintDate                     = @SYSDATE
+            ,LastPrintDate                      = @SYSDATE
             ,InsertOperator                     = @p_Operator
             ,InsertDateTime                     = @SYSDATETIME 
             ,UpdateOperator                     = @p_Operator
