@@ -400,7 +400,7 @@ namespace TempoRegiPoint
             couponRow.Size8 = Convert.ToInt32(row["Size8"]);        // サイズ
 
             // 9行目
-            couponRow.Print9 = Convert.ToString(row["Print9"]);     // 文章
+            couponRow.Print9 = Convert.ToString(row["Print9"]) + "　　　　　　　.";     // 文章
             couponRow.Bold9 = Convert.ToInt32(row["Bold9"]);        // 太字
             couponRow.Size9 = Convert.ToInt32(row["Size9"]);        // サイズ
 

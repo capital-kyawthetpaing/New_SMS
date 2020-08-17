@@ -103,9 +103,9 @@ BEGIN
       INTO #Temp_D_DepositHistory1
       FROM (
             SELECT distinct history.DepositDateTime RegistDate                  -- ìoò^ì˙
+                  ,CONVERT(Date, history.DepositDateTime) DepositDate           -- ìoò^ì˙
                   ,history.Number SalesNO                                       -- ì`ï[î‘çÜ
                   ,history.StoreCD                                              -- ìXï‹CD
-                  ,ROW_NUMBER() OVER(PARTITION BY history.StoreCD ORDER BY history.DepositDateTime) AS DetailOrder    -- ñæç◊ï\é¶èá
                   ,history.JanCD                                                -- JanCD
                   ,sku.SKUShortName                                             -- è§ïiñº
                   ,CASE
@@ -1255,30 +1255,33 @@ BEGIN
            ) D8;
 
     -- ç≈èI
-    SELECT  
-           (SELECT Picture FROM M_Image WHERE ID = 2) Logo                 -- ÉçÉS
-          ,calendar.CalendarDate                                           -- ì˙ït
-          ,store.StoreName                                                 -- ìXï‹ñº
-          ,store.Address1                                                  -- èZèäÇP
-          ,store.Address2                                                  -- èZèäÇQ
-          ,store.TelephoneNO                                               -- ìdòbî‘çÜ
-          ,tempHistory1.RegistDate IssueDate                               -- î≠çsì˙éû
-          ,tempHistory1.JanCD                                              -- JANCD
-          ,tempHistory1.SKUShortName                                       -- è§ïiñº
-          ,tempHistory1.SalesUnitPrice                                     -- íPâø
-          ,tempHistory1.SalesSU                                            -- êîó 
-          ,tempHistory1.kakaku                                             -- âøäi
-          ,tempHistory1.SalesTax                                           -- ê≈äz
-          ,tempHistory1.SalesTaxRate                                       -- ê≈ó¶
-          ,tempHistory1.TotalGaku                                          -- îÃîÑçáåväz
-          --
-          ,(SELECT SUM(CASE WHEN SalesSU IS NULL THEN 1 ELSE SalesSU END) FROM #Temp_D_DepositHistory1 t WHERE t.SalesNO= tempHistory1.SalesNO) SumSalesSU    -- è¨åvêîó 
-          ,(SELECT SUM(kakaku) FROM #Temp_D_DepositHistory1 t WHERE t.SalesNO = tempHistory1.SalesNO) Subtotal                                                -- è¨åvã‡äz
-          ,tempHistory1.TargetAmount8                                                                                     -- 8ÅìëŒè€äz
-          ,tempHistory1.SalesTax8 ConsumptionTax8                                                                         -- äOê≈8Åì
-          ,tempHistory1.TargetAmount10                                                                                    -- 10ÅìëŒè€äz
-          ,tempHistory1.SalesTax10 ConsumptionTax10                                                                       -- äOê≈10Åì
-          ,(SELECT SUM(TotalGaku) FROM #Temp_D_DepositHistory1 t WHERE t.SalesNO = tempHistory1.SalesNO) Total            -- çáåv
+    SELECT (SELECT Picture FROM M_Image WHERE ID = 2) Logo       -- ÉçÉS
+          ,A.CalendarDate                                        -- ì˙ït
+          ,A.StoreName                                           -- ìXï‹ñº
+          ,A.Address1                                            -- èZèäÇP
+          ,A.Address2                                            -- èZèäÇQ
+          ,A.TelephoneNO                                         -- ìdòbî‘çÜ
+          ,A.IssueDate                                           -- î≠çsì˙éû
+          ,A.DepositDate                                         -- î≠çsì˙
+          ,ROW_NUMBER() OVER(
+               PARTITION BY A.StoreCD 
+                   ORDER BY A.IssueDate
+           ) AS DetailOrder                                      -- ñæç◊ï\é¶èá
+          ,A.JanCD                                               -- JANCD
+          ,A.SKUShortName                                        -- è§ïiñº
+          ,A.SalesUnitPrice                                      -- íPâø
+          ,A.SalesSU                                             -- êîó 
+          ,A.kakaku                                              -- âøäi
+          ,A.SalesTax                                            -- ê≈äz
+          ,A.SalesTaxRate                                        -- ê≈ó¶
+          ,A.TotalGaku                                           -- îÃîÑçáåväz
+          ,A.SumSalesSU                                          -- è¨åvêîó 
+          ,A.Subtotal                                            -- è¨åvã‡äz
+          ,A.TargetAmount8                                       -- 8ÅìëŒè€äz
+          ,A.ConsumptionTax8                                     -- äOê≈8Åì
+          ,A.TargetAmount10                                      -- 10ÅìëŒè€äz
+          ,A.ConsumptionTax10                                    -- äOê≈10Åì
+          ,A.Total                                               -- çáåv
           --
           ,tempHistory2.PaymentName1                             -- éxï•ï˚ñ@ñº1
           ,tempHistory2.AmountPay1                               -- éxï•ï˚ñ@äz1
@@ -1304,9 +1307,9 @@ BEGIN
           ,tempHistory3.Refund                                   -- íﬁëK
           ,tempHistory3.DiscountGaku                             -- ílà¯äz
           --
-          ,tempHistory1.StaffReceiptPrint                        -- íSìñCD
-          ,tempHistory1.StoreReceiptPrint                        -- ìXï‹CD
-          ,tempHistory1.SalesNO                                  -- îÑè„î‘çÜ
+          ,A.StaffReceiptPrint                                   -- íSìñCD
+          ,A.StoreReceiptPrint                                   -- ìXï‹CD
+          ,A.SalesNO                                             -- îÑè„î‘çÜ
           --
           ,tempHistory4.RegistDate ChangePreparationRegistDate   -- ìoò^ì˙
           ,tempHistory4.ChangePreparationDate1                   -- íﬁëKèÄîıì˙1
@@ -1642,35 +1645,80 @@ BEGIN
           ,tempHistory8.ByTimeZoneSalesNO_2100_2200              --Åyê∏éZèàóùÅzéûä‘ë—ï åèêî 21:00Å`22:00
           ,tempHistory8.ByTimeZoneSalesNO_2200_2300              --Åyê∏éZèàóùÅzéûä‘ë—ï åèêî 22:00Å`23:00
           ,tempHistory8.ByTimeZoneSalesNO_2300_2400              --Åyê∏éZèàóùÅzéûä‘ë—ï åèêî 23:00Å`24:00
-      FROM M_Calendar calendar
-      LEFT OUTER JOIN (
-                       SELECT ROW_NUMBER() OVER(PARTITION BY StoreCD ORDER BY ChangeDate DESC) as RANK
-                             ,StoreCD
-                             ,StoreName
-                             ,Address1
-                             ,Address2
-                             ,TelephoneNO
-                             ,ChangeDate
-                             ,ReceiptPrint
-                             ,DeleteFlg
-                         FROM M_Store
-                      ) store ON store.RANK = 1
-                             AND store.StoreCD = @StoreCD
-                             AND store.ChangeDate <= CONVERT(DATE, GETDATE())
-                             AND store.DeleteFlg = 0
-      LEFT OUTER JOIN #Temp_D_DepositHistory1 tempHistory1   ON tempHistory1.StoreCD = store.StoreCD
-                                                            AND tempHistory1.AccountingDate = calendar.CalendarDate
-      LEFT OUTER JOIN #Temp_D_DepositHistory2 tempHistory2   ON tempHistory2.SalesNO = tempHistory1.SalesNO
-      LEFT OUTER JOIN #Temp_D_DepositHistory3 tempHistory3   ON tempHistory3.SalesNO = tempHistory1.SalesNO
-      LEFT OUTER JOIN #Temp_D_DepositHistory4 tempHistory4   ON tempHistory4.RegistDate = calendar.CalendarDate
-      LEFT OUTER JOIN #Temp_D_DepositHistory5 tempHistory5   ON tempHistory5.RegistDate = calendar.CalendarDate
-      LEFT OUTER JOIN #Temp_D_DepositHistory51 tempHistory51 ON tempHistory51.RegistDate = calendar.CalendarDate
-      LEFT OUTER JOIN #Temp_D_DepositHistory6 tempHistory6   ON tempHistory6.RegistDate = calendar.CalendarDate
-      LEFT OUTER JOIN #Temp_D_DepositHistory7 tempHistory7   ON tempHistory7.RegistDate = calendar.CalendarDate
-      LEFT OUTER JOIN #Temp_D_DepositHistory8 tempHistory8   ON tempHistory8.RegistDate = calendar.CalendarDate
-     WHERE calendar.CalendarDate >= convert(date, @DateFrom)
-       AND calendar.CalendarDate <= convert(date, @DateTo)
-     ORDER BY tempHistory1.DetailOrder ASC
+      FROM (
+            SELECT calendar.CalendarDate                                           -- ì˙ït
+                  ,store.StoreCD
+                  ,store.StoreName                                                 -- ìXï‹ñº
+                  ,store.Address1                                                  -- èZèäÇP
+                  ,store.Address2                                                  -- èZèäÇQ
+                  ,store.TelephoneNO                                               -- ìdòbî‘çÜ
+                  ,CASE 
+                       WHEN tempHistory1.DepositDate IS NOT NULL THEN tempHistory1.RegistDate
+                       ELSE CONCAT(calendar.CalendarDate, ' 00:00:00.000')
+                   END IssueDate                                                   -- î≠çsì˙éû
+                  ,CASE 
+                       WHEN tempHistory1.DepositDate IS NOT NULL THEN tempHistory1.DepositDate
+                       ELSE calendar.CalendarDate
+                   END DepositDate                                                 -- î≠çsì˙
+                  ,tempHistory1.SalesNO
+                  ,tempHistory1.JanCD                                              -- JANCD
+                  ,tempHistory1.SKUShortName                                       -- è§ïiñº
+                  ,tempHistory1.SalesUnitPrice                                     -- íPâø
+                  ,tempHistory1.SalesSU                                            -- êîó 
+                  ,tempHistory1.kakaku                                             -- âøäi
+                  ,tempHistory1.SalesTax                                           -- ê≈äz
+                  ,tempHistory1.SalesTaxRate                                       -- ê≈ó¶
+                  ,tempHistory1.TotalGaku                                          -- îÃîÑçáåväz
+                  --
+                  ,(SELECT SUM(CASE 
+                                   WHEN SalesSU IS NULL THEN 1 
+                                   ELSE SalesSU 
+                               END)
+                      FROM #Temp_D_DepositHistory1 t
+                     WHERE t.SalesNO= tempHistory1.SalesNO) SumSalesSU             -- è¨åvêîó 
+                  ,(SELECT SUM(kakaku) 
+                      FROM #Temp_D_DepositHistory1 t 
+                     WHERE t.SalesNO = tempHistory1.SalesNO) Subtotal              -- è¨åvã‡äz
+                  ,tempHistory1.TargetAmount8                                      -- 8ÅìëŒè€äz
+                  ,tempHistory1.SalesTax8 ConsumptionTax8                          -- äOê≈8Åì
+                  ,tempHistory1.TargetAmount10                                     -- 10ÅìëŒè€äz
+                  ,tempHistory1.SalesTax10 ConsumptionTax10                        -- äOê≈10Åì
+                  ,(SELECT SUM(TotalGaku) 
+                      FROM #Temp_D_DepositHistory1 t 
+                     WHERE t.SalesNO = tempHistory1.SalesNO) Total                 -- çáåv
+                  --
+                  ,tempHistory1.StaffReceiptPrint                                  -- íSìñCD
+                  ,store.ReceiptPrint StoreReceiptPrint                            -- ìXï‹CD
+              FROM M_Calendar calendar
+              LEFT OUTER JOIN (
+                               SELECT ROW_NUMBER() OVER(PARTITION BY StoreCD ORDER BY ChangeDate DESC) as RANK
+                                     ,StoreCD
+                                     ,StoreName
+                                     ,Address1
+                                     ,Address2
+                                     ,TelephoneNO
+                                     ,ChangeDate
+                                     ,ReceiptPrint
+                                     ,DeleteFlg
+                                 FROM M_Store
+                              ) store ON store.RANK = 1
+                                     AND store.StoreCD = @StoreCD
+                                     AND store.ChangeDate <= CONVERT(DATE, GETDATE())
+                                     AND store.DeleteFlg = 0
+              LEFT OUTER JOIN #Temp_D_DepositHistory1 tempHistory1 ON tempHistory1.StoreCD = store.StoreCD
+                                                                  AND tempHistory1.AccountingDate = calendar.CalendarDate
+             WHERE calendar.CalendarDate >= convert(date, @DateFrom)
+               AND calendar.CalendarDate <= convert(date, @DateTo)
+           ) A
+      LEFT OUTER JOIN #Temp_D_DepositHistory2 tempHistory2   ON tempHistory2.SalesNO = A.SalesNO
+      LEFT OUTER JOIN #Temp_D_DepositHistory3 tempHistory3   ON tempHistory3.SalesNO = A.SalesNO
+      LEFT OUTER JOIN #Temp_D_DepositHistory4 tempHistory4   ON tempHistory4.RegistDate = A.CalendarDate
+      LEFT OUTER JOIN #Temp_D_DepositHistory5 tempHistory5   ON tempHistory5.RegistDate = A.CalendarDate
+      LEFT OUTER JOIN #Temp_D_DepositHistory51 tempHistory51 ON tempHistory51.RegistDate = A.CalendarDate
+      LEFT OUTER JOIN #Temp_D_DepositHistory6 tempHistory6   ON tempHistory6.RegistDate = A.CalendarDate
+      LEFT OUTER JOIN #Temp_D_DepositHistory7 tempHistory7   ON tempHistory7.RegistDate = A.CalendarDate
+      LEFT OUTER JOIN #Temp_D_DepositHistory8 tempHistory8   ON tempHistory8.RegistDate = A.CalendarDate
+     ORDER BY DetailOrder ASC
          ;
     
     -- ÉèÅ[ÉNÉeÅ[ÉuÉãÇçÌèú

@@ -55,7 +55,7 @@ namespace DL
         /// <param name="hacchuuDate"></param>
         /// <param name="dtTIkkatuHacchuuNyuuryoku"></param>
         /// <returns></returns>
-        public bool PRC_IkkatuHacchuuNyuuryoku_Register(int operationMode,string operatorID,string pc,string storeCD,string staffCD, string orderDate, string orderNO, string orderProcessNO, DataTable dtTIkkatuHacchuuNyuuryoku)
+        public bool PRC_IkkatuHacchuuNyuuryoku_Register(int operationMode,string operatorID,string pc,string storeCD,string staffCD, string orderDate, string orderNO, string orderProcessNO, string ikkatuHacchuuMode, DataTable dtTIkkatuHacchuuNyuuryoku)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
@@ -66,6 +66,7 @@ namespace DL
                 { "@p_StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = staffCD} },
                 { "@p_OrderDate", new ValuePair { value1 = SqlDbType.Date, value2 = orderDate} },
                 { "@p_OrderNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = orderNO} },
+                { "@p_IkkatuHacchuuMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = ikkatuHacchuuMode} },
                 { "@p_OrderProcessNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = orderProcessNO} },
             };
             bool ret = true;

@@ -148,6 +148,7 @@
             this.txtJanCD.AllowMinus = false;
             this.txtJanCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtJanCD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtJanCD.BorderColor = false;
             this.txtJanCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJanCD.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtJanCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -195,6 +196,7 @@
             this.txtSu.AllowMinus = false;
             this.txtSu.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtSu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtSu.BorderColor = false;
             this.txtSu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSu.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSu.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -260,6 +262,7 @@
             this.txtSalesNO.AllowMinus = false;
             this.txtSalesNO.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtSalesNO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtSalesNO.BorderColor = false;
             this.txtSalesNO.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSalesNO.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSalesNO.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -290,6 +293,7 @@
             this.txtCustomerNo.AllowMinus = false;
             this.txtCustomerNo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtCustomerNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtCustomerNo.BorderColor = false;
             this.txtCustomerNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCustomerNo.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtCustomerNo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -875,9 +879,9 @@
             this.lblSumSalesTax.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
             this.lblSumSalesTax.FontBold = false;
             this.lblSumSalesTax.ForeColor = System.Drawing.Color.Black;
-            this.lblSumSalesTax.Location = new System.Drawing.Point(1634, 686);
+            this.lblSumSalesTax.Location = new System.Drawing.Point(1625, 689);
             this.lblSumSalesTax.Name = "lblSumSalesTax";
-            this.lblSumSalesTax.Size = new System.Drawing.Size(260, 53);
+            this.lblSumSalesTax.Size = new System.Drawing.Size(270, 53);
             this.lblSumSalesTax.TabIndex = 63;
             this.lblSumSalesTax.Text = "999,999,999";
             this.lblSumSalesTax.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -888,13 +892,14 @@
             this.lblSumSalesGaku.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Black;
             this.lblSumSalesGaku.BackColor = System.Drawing.Color.Black;
             this.lblSumSalesGaku.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSumSalesGaku.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
+            this.lblSumSalesGaku.Font = new System.Drawing.Font("MS Gothic", 34F, System.Drawing.FontStyle.Bold);
             this.lblSumSalesGaku.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Large;
             this.lblSumSalesGaku.FontBold = true;
             this.lblSumSalesGaku.ForeColor = System.Drawing.Color.White;
-            this.lblSumSalesGaku.Location = new System.Drawing.Point(1634, 631);
+            this.lblSumSalesGaku.Location = new System.Drawing.Point(1625, 631);
             this.lblSumSalesGaku.Name = "lblSumSalesGaku";
-            this.lblSumSalesGaku.Size = new System.Drawing.Size(260, 58);
+            this.lblSumSalesGaku.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.lblSumSalesGaku.Size = new System.Drawing.Size(270, 58);
             this.lblSumSalesGaku.TabIndex = 62;
             this.lblSumSalesGaku.Text = "999,999,999";
             this.lblSumSalesGaku.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.White;
@@ -1116,7 +1121,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 139F));
             this.tableLayoutPanel2.Controls.Add(this.btnGrp14, 13, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnGrp1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnGrp2, 1, 0);
@@ -1149,7 +1154,7 @@
             this.btnGrp14.Location = new System.Drawing.Point(1654, 3);
             this.btnGrp14.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp14.Name = "btnGrp14";
-            this.btnGrp14.Size = new System.Drawing.Size(135, 94);
+            this.btnGrp14.Size = new System.Drawing.Size(137, 94);
             this.btnGrp14.TabIndex = 13;
             this.btnGrp14.Text = " ";
             this.btnGrp14.UseVisualStyleBackColor = false;
@@ -1367,6 +1372,7 @@
             this.txtJuchuuUnitPrice.AllowMinus = true;
             this.txtJuchuuUnitPrice.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtJuchuuUnitPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtJuchuuUnitPrice.BorderColor = false;
             this.txtJuchuuUnitPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJuchuuUnitPrice.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtJuchuuUnitPrice.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1537,7 +1543,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
             this.tableLayoutPanel3.Controls.Add(this.btnSyo12, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.btnSyo42, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.btnSyo52, 0, 1);
@@ -1689,7 +1695,7 @@
             this.btnSyo102.Location = new System.Drawing.Point(1146, 102);
             this.btnSyo102.Margin = new System.Windows.Forms.Padding(1);
             this.btnSyo102.Name = "btnSyo102";
-            this.btnSyo102.Size = new System.Drawing.Size(136, 95);
+            this.btnSyo102.Size = new System.Drawing.Size(138, 95);
             this.btnSyo102.TabIndex = 19;
             this.btnSyo102.Text = " ";
             this.btnSyo102.UseVisualStyleBackColor = false;
@@ -1881,7 +1887,7 @@
             this.btnSyo101.Location = new System.Drawing.Point(1146, 3);
             this.btnSyo101.Margin = new System.Windows.Forms.Padding(1);
             this.btnSyo101.Name = "btnSyo101";
-            this.btnSyo101.Size = new System.Drawing.Size(136, 95);
+            this.btnSyo101.Size = new System.Drawing.Size(138, 95);
             this.btnSyo101.TabIndex = 18;
             this.btnSyo101.Text = " ";
             this.btnSyo101.UseVisualStyleBackColor = false;
@@ -2029,7 +2035,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BtnP_text = "入金へ";
-            this.ClientSize = new System.Drawing.Size(1913, 1011);
+            this.ClientSize = new System.Drawing.Size(1933, 1011);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
