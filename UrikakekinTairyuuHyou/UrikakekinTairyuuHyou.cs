@@ -14,6 +14,7 @@ using CrystalDecisions.Shared;
 using System.IO;
 using ClosedXML.Excel;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace UrikakekinTairyuuHyou
 {
@@ -149,13 +150,22 @@ namespace UrikakekinTairyuuHyou
                     {
                         msce = new M_StoreClose_Entity();
                         msce = GetStoreClose_Data();
-
-                        DateTime now = Convert.ToDateTime(txtDate.Text.ToString() + "/01 00:00:00");
+                        DateTime dtime;
                         string[] strmonth = new string[12];
-                        for (int i = 11; i >= 0; i--)
+                        string now =txtDate.Text.ToString() + "/01";
+
+                        if (DateTime.TryParseExact(now, "yyyy/MM/dd", null,
+                                   DateTimeStyles.None, out dtime))
                         {
-                            strmonth[i] = now.AddMonths(-i).ToString().Substring(0, 7).ToString();
+                          
+                            for (int i = 11; i >= 0; i--)
+                            {
+                                strmonth[i] = dtime.AddMonths(-i).ToString().Substring(0, 7).ToString();
+                            }
                         }
+
+                       
+                        
 
                         DataTable dt=ukkthbl.Select_DataToExport(msce);
                         //DataRow dr = dt.NewRow();
@@ -274,6 +284,9 @@ namespace UrikakekinTairyuuHyou
 
                                     worksheet = workbook.ActiveSheet;
                                     worksheet.Name = "worksheet";
+                                    Microsoft.Office.Interop.Excel.Range excelRange = worksheet.UsedRange;
+                                    excelRange.Cells[6, 13].NumberFormat = "\"$\" #,##0.00"; 
+
                                     using (XLWorkbook wb = new XLWorkbook())
                                     {
                                         wb.Worksheets.Add(dtExport, "worksheet");
@@ -295,7 +308,10 @@ namespace UrikakekinTairyuuHyou
                                         wb.Worksheet("worksheet").Cell(4, 2).Value = " ";
                                         wb.Worksheet("worksheet").Cell(4, 3).Value = " ";
                                         wb.Worksheet("worksheet").Cell(4, 16).Value = "売掛月数";
+                                        
                                         wb.Worksheet("worksheet").Hide();
+
+                                        
 
                                         //wb.Worksheet("worksheet").Cell(3, 4).Value = "'" + strmonth[11].ToString();
                                         //wb.Worksheet("worksheet").Cell(3, 5).Value = "'" + strmonth[10].ToString();
@@ -314,6 +330,7 @@ namespace UrikakekinTairyuuHyou
 
                                         //wb.Worksheet("worksheet").SetShowRowColHeaders(true);
                                         wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;
+                                       
                                         //wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowHeaderRow = false;
                                         //wb.Worksheet("worksheet").Rows("4").Delete();
                                         wb.SaveAs(savedialog.FileName);
