@@ -115,8 +115,8 @@
             this.IMT_STADT_0 = new CKM_Controls.CKM_TextBox();
             this.IMT_JANCD_0 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMNM_0 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ITMCD_0 = new CKM_Controls.CKM_TextBox();
             this.IMT_GYONO_0 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_0 = new CKM_Controls.CKM_TextBox();
             this.IMT_GYONO_2 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.Space2 = new CKM_Controls.CKM_TextBox();
@@ -2220,6 +2220,17 @@
             this.IMT_ITMNM_0.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.IMT_ITMNM_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
+            // IMT_GYONO_0
+            // 
+            this.IMT_GYONO_0.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_GYONO_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_GYONO_0.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IMT_GYONO_0.Location = new System.Drawing.Point(0, 0);
+            this.IMT_GYONO_0.Name = "IMT_GYONO_0";
+            this.IMT_GYONO_0.Size = new System.Drawing.Size(28, 38);
+            this.IMT_GYONO_0.TabIndex = 25;
+            this.IMT_GYONO_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // IMT_ITMCD_0
             // 
             this.IMT_ITMCD_0.AllowMinus = false;
@@ -2247,17 +2258,6 @@
             this.IMT_ITMCD_0.TabIndex = 26;
             this.IMT_ITMCD_0.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // IMT_GYONO_0
-            // 
-            this.IMT_GYONO_0.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_GYONO_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_GYONO_0.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IMT_GYONO_0.Location = new System.Drawing.Point(0, 0);
-            this.IMT_GYONO_0.Name = "IMT_GYONO_0";
-            this.IMT_GYONO_0.Size = new System.Drawing.Size(28, 38);
-            this.IMT_GYONO_0.TabIndex = 25;
-            this.IMT_GYONO_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // IMT_GYONO_2
             // 

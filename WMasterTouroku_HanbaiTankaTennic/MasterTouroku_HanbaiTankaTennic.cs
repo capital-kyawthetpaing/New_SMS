@@ -935,6 +935,8 @@ namespace WMasterTouroku_HanbaiTankaTennic
 
                 Grid_Gotfocus((int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate, w_Row, System.Convert.ToInt32(w_ActCtl.Tag));
 
+              
+                //w_ActCtl.Name
             }
             catch (Exception ex)
             {
@@ -1516,7 +1518,39 @@ namespace WMasterTouroku_HanbaiTankaTennic
 
         private void MasterTouroku_HanbaiTankaTennic_KeyUp(object sender, KeyEventArgs e)
         {
-            MoveNextControl(e);
+            Control w_ActCtl= ActiveControl;
+            if (w_ActCtl is CKM_TextBox c )
+            {
+
+                if ((w_ActCtl as CKM_TextBox).Name == "IMT_REMARK_0")
+                {
+                    c.MoveNext = false;
+
+                    if (e.KeyCode == (Keys.Enter | Keys.Tab))
+                        IMT_STADT_1.Focus();
+                }
+                else if ((w_ActCtl as CKM_TextBox).Name == "IMT_REMARK_1")
+                {
+                    if (e.KeyCode == (Keys.Enter | Keys.Tab))
+                        IMT_STADT_2.Focus();
+                }
+                else
+                {
+                    MoveNextControl(e);
+                }
+            }
+            else
+                 MoveNextControl(e);
+                //else
+                //{
+                //  //  var w_ActCtl = (CKM_TextBox)sender;
+                //    if (w_ActCtl.Name == "IMT_REMARK_0")
+                //    {
+
+
+                //    }
+                //}
+
         }
 
         private void IMT_JANCD_0_TextChanged(object sender, EventArgs e)
