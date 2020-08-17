@@ -39,7 +39,6 @@ namespace DL
                 { "@SKUName",new ValuePair{value1=SqlDbType.VarChar,value2=ms.SKUName} }
             };
             return SelectData(dic, sp);
-
         }
         public bool M_SKUPrice_Insert_Update(M_SKUPrice_Entity mse,int mode)
         {
@@ -49,7 +48,7 @@ namespace DL
                 {"@TankaCD",new ValuePair{value1=SqlDbType.VarChar,value2=mse.TankaCD} },
                 {"@StartDate",new ValuePair{value1=SqlDbType.VarChar,value2=mse.StartChangeDate} },
                 {"@EndDate",new ValuePair{value1=SqlDbType.VarChar,value2=mse.EndChangeDate} },
-                {"@unitPrice",new ValuePair{value1=SqlDbType.VarChar,value2=mse.UnitPrice}},
+                {"@unitPrice",new ValuePair{value1=SqlDbType.VarChar,value2=mse.UnitPrice} },
                 {"@SsUnitPrice",new ValuePair{value1=SqlDbType.VarChar,value2=mse.StandardSalesUnitPrice} },
                 {"@R1UnitPrice",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Rank1UnitPrice} },
                 {"@R2UnitPrice",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Rank2UnitPrice} },
@@ -74,10 +73,10 @@ namespace DL
             {
                {"@TankaCD",new ValuePair{value1=SqlDbType.VarChar,value2=mse.TankaCD} },
                {"@Operator",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Operator} },
-                {"@Program",new ValuePair{value1=SqlDbType.VarChar,value2=mse.ProgramID} },
-                {"@PC",new ValuePair{value1=SqlDbType.VarChar,value2=mse.PC} },
-                {"@OperateMode",new ValuePair{value1=SqlDbType.VarChar,value2=mse.PC} },
-                {"@KeyItem",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Key} }
+               {"@Program",new ValuePair{value1=SqlDbType.VarChar,value2=mse.ProgramID} },
+               {"@PC",new ValuePair{value1=SqlDbType.VarChar,value2=mse.PC} },
+               {"@OperateMode",new ValuePair{value1=SqlDbType.VarChar,value2=mse.PC} },
+               {"@KeyItem",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Key} }
             };
             UseTransaction = true;
             return InsertUpdateDeleteData(dic, sp);

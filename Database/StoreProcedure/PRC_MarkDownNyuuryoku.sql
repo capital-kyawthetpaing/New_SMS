@@ -212,6 +212,7 @@ BEGIN
     DECLARE @PaymentPlanDate varchar(10);
     DECLARE @PayPlanNO int;
     DECLARE @IsNew bit;
+    DECLARE @W_CNT int;
     
     SET @W_ERR = 0;
     SET @SYSDATETIME = SYSDATETIME();
@@ -424,8 +425,8 @@ BEGIN
             --ÅyD_PurchaseÅzTableì]ëóédólC Update
             UPDATE [D_Purchase]
                SET [PurchaseDate] = convert(date,@ChangeDate)
-                  --,[VendorCD] = @VendorCD
-                  --,[CalledVendorCD] = @VendorCD
+                  ,[VendorCD] = @VendorCD
+                  ,[CalledVendorCD] = @VendorCD
                   ,[CalculationGaku] = @PurchaseGaku
                   ,[PurchaseGaku] = @PurchaseGaku
                   ,[PurchaseTax] = @PurchaseTax
@@ -514,61 +515,86 @@ BEGIN
                ,NULL      --StockNO
                ,1         --DifferenceFlgÅö
                ,NULL      --DeliveryNo
-               ,CASE WHEN @IsNew = 1 THEN @Operator ELSE tbl.InsertOperator END
-               ,CASE WHEN @IsNew = 1 THEN @SYSDATETIME ELSE tbl.InsertDateTime END 
+               ,CASE WHEN tbl.InsertOperator IS NULL THEN @Operator ELSE tbl.InsertOperator END
+               ,CASE WHEN tbl.InsertDateTime IS NULL THEN @SYSDATETIME ELSE tbl.InsertDateTime END 
                ,@Operator  
                ,@SYSDATETIME
           FROM @Table tbl
           ;
           
         --áCJANî≠íçíPâøÉ}ÉXÉ^
-        IF ISNULL(@MarkDownNO,'') <> ''
+        IF @ChkResult = '1'
         BEGIN
-            -- ÅyM_JANOrderPriceÅzTableì]ëóédólJ Delete
-            DELETE M_JANOrderPrice
-            FROM   M_JANOrderPrice MJ
-            INNER JOIN D_MarkDown DM ON DM.VendorCD = MJ.VendorCD
-                                    AND DM.UnitPriceDate = MJ.ChangeDate
-            INNER JOIN D_MarkDownDetails DMD ON DM.MarkDownNO = DMD.MarkDownNO
-                                            AND DMD.AdminNO = MJ.AdminNO                                            
-            WHERE DM.MarkDownNO = @MarkDownNO
-            ;   
+            IF ISNULL(@MarkDownNO,'') <> ''
+            BEGIN
+                -- ÅyM_JANOrderPriceÅzTableì]ëóédólJ Delete
+                DELETE M_JANOrderPrice
+                FROM   M_JANOrderPrice MJ
+                INNER JOIN D_MarkDown DM ON DM.VendorCD = MJ.VendorCD
+                                        AND DM.UnitPriceDate = MJ.ChangeDate
+                INNER JOIN D_MarkDownDetails DMD ON DM.MarkDownNO = DMD.MarkDownNO
+                                                AND DMD.AdminNO = MJ.AdminNO                                            
+                WHERE DM.MarkDownNO = @MarkDownNO
+                ;   
+            END
+            
+            -- ÅyM_JANOrderPriceÅzTableì]ëóédólJ Insert
+            INSERT INTO M_JANOrderPrice
+               ([VendorCD]
+               ,[StoreCD]
+               ,[AdminNO]
+               ,[ChangeDate]
+               ,[SKUCD]
+               ,[Rate]
+               ,[PriceWithoutTax]
+               ,[Remarks]
+               ,[DeleteFlg]
+               ,[UsedFlg]
+               ,[InsertOperator]
+               ,[InsertDateTime]
+               ,[UpdateOperator]
+               ,[UpdateDateTime])
+            SELECT
+                @VendorCD
+               ,@StoreCD
+               ,tbl.AdminNO
+               ,@UnitPriceDate
+               ,tbl.SKUCD
+               ,tbl.Rate
+               ,tbl.MarkDownUnitPrice
+               ,NULL
+               ,0
+               ,1
+               ,@Operator
+               ,@SYSDATETIME
+               ,@Operator
+               ,@SYSDATETIME
+            FROM @Table tbl 
+            WHERE NOT EXISTS ( SELECT VendorCD FROM M_JANOrderPrice MJ
+                                WHERE MJ.VendorCD = @VendorCD
+                                  AND MJ.StoreCD = @StoreCD
+                                  AND MJ.ChangeDate = @UnitPriceDate
+                                  AND tbl.AdminNO = MJ.AdminNO
+                              )
+            ;
+            
+            -- ÅyM_JANOrderPriceÅzTableì]ëóédólJ Update
+            UPDATE M_JANOrderPrice
+            SET SKUCD = tbl.SKUCD
+               ,Rate = tbl.Rate
+               ,PriceWithoutTax = tbl.MarkDownUnitPrice
+               ,DeleteFlg = 0
+               ,UsedFlg = 1
+               ,UpdateOperator = @Operator
+               ,UpdateDateTime = @SYSDATETIME
+            FROM @Table AS tbl
+            INNER JOIN M_JANOrderPrice AS MJ ON tbl.AdminNO = MJ.AdminNO
+            WHERE MJ.VendorCD = @VendorCD
+              AND MJ.StoreCD = @StoreCD
+              AND MJ.ChangeDate = @UnitPriceDate
+            ;
         END
         
-        -- ÅyM_JANOrderPriceÅzTableì]ëóédólJ Insert
-        INSERT INTO M_JANOrderPrice
-           ([VendorCD]
-           ,[StoreCD]
-           ,[AdminNO]
-           ,[ChangeDate]
-           ,[SKUCD]
-           ,[Rate]
-           ,[PriceWithoutTax]
-           ,[Remarks]
-           ,[DeleteFlg]
-           ,[UsedFlg]
-           ,[InsertOperator]
-           ,[InsertDateTime]
-           ,[UpdateOperator]
-           ,[UpdateDateTime])
-        SELECT
-            @VendorCD
-           ,@StoreCD
-           ,tbl.AdminNO
-           ,@UnitPriceDate
-           ,tbl.SKUCD
-           ,tbl.Rate
-           ,tbl.MarkDownUnitPrice
-           ,NULL
-           ,0
-           ,1
-           ,@Operator
-           ,@SYSDATETIME
-           ,@Operator
-           ,@SYSDATETIME
-        FROM @Table tbl 
-        ;
-          
         --áDÉ}Å[ÉNÉ_ÉEÉìÅEÉ}Å[ÉNÉ_ÉEÉìñæç◊
         IF @OperateMode = '1'
         BEGIN
