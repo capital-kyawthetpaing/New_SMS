@@ -325,24 +325,24 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 {
                     //switch (W_CtlCol)
                     //{
-                        //case (int)ClsGridHanbaiTankaTennic.ColNO.MitsumoriSuu:
-                        //    mGrid.SetProp_SU(5, ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);
-                        //    ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).AllowMinus = true;
-                        //    break;
-                        //case (int)ClsGridHanbaiTankaTennic.ColNO.MitsumoriUnitPrice:
-                        //case (int)ClsGridHanbaiTankaTennic.ColNO.CostUnitPrice:
-                        //    mGrid.SetProp_TANKA(ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);      // 単価 
-                        //    break;
-                        //case (int)ClsGridHanbaiTankaTennic.ColNO.MitsumoriHontaiGaku:
-                        //case (int)ClsGridHanbaiTankaTennic.ColNO.MitsumoriGaku:
-                        //case (int)ClsGridHanbaiTankaTennic.ColNO.CostGaku:
-                        //case (int)ClsGridHanbaiTankaTennic.ColNO.ProfitGaku:
-                        //    mGrid.SetProp_TANKA(ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);      // 単価 
-                        //    ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).AllowMinus = true;
-                        //    break;
+                    //    case (int)ClsGridHanbaiTankaTennic.ColNO.MitsumoriSuu:
+                    //        mGrid.SetProp_SU(5, ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);
+                    //        ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).AllowMinus = true;
+                    //        break;
+                    //    case (int)ClsGridHanbaiTankaTennic.ColNO.MitsumoriUnitPrice:
+                    //    case (int)ClsGridHanbaiTankaTennic.ColNO.CostUnitPrice:
+                    //        mGrid.SetProp_TANKA(ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);      // 単価 
+                    //        break;
+                    //    case (int)ClsGridHanbaiTankaTennic.ColNO.MitsumoriHontaiGaku:
+                    //    case (int)ClsGridHanbaiTankaTennic.ColNO.MitsumoriGaku:
+                    //    case (int)ClsGridHanbaiTankaTennic.ColNO.CostGaku:
+                    //    case (int)ClsGridHanbaiTankaTennic.ColNO.ProfitGaku:
+                    //        mGrid.SetProp_TANKA(ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);      // 単価 
+                    //        ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).AllowMinus = true;
+                    //        break;
                     //}
 
-                   // mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl.TabIndex = tabindex;
+                    mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl.TabIndex = tabindex;
                     tabindex++;
                 }
             }
@@ -366,8 +366,9 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 {
                     mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
                     mGrid.g_DArray[c].JANCD = dr["JanCD"].ToString();
-                    mGrid.g_DArray[c].StartChangeDate = dr["ChangeDate"].ToString();
-                    mGrid.g_DArray[c].EndChangeDate = dr["TekiyouShuuryouDate"].ToString();
+                    mGrid.g_DArray[c].AdminNo = dr["AdminNo"].ToString();
+                    mGrid.g_DArray[c].StartChangeDate = dr["StartDate"].ToString();
+                    mGrid.g_DArray[c].EndChangeDate = dr["EndDate"].ToString();
                     mGrid.g_DArray[c].UnitPrice = dr["UnitPrice"].ToString();
                     mGrid.g_DArray[c].StandardSalesUnitPrice = dr["StandardSalesUnitPrice"].ToString();
                     mGrid.g_DArray[c].Rank1UnitPrice = dr["Rank1UnitPrice"].ToString();
@@ -859,7 +860,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
         }
         private void TextLeave()
         {
-            Add_Leave(new Control[] { panel10, panel41, panel8, panel3, panel17,panel4,panel65,panel89,panel113,panel137 });
+            Add_Leave(new Control[] { panel10_1, panel10_2, panel8, panel3, panel17,panel4,panel65,panel89,panel113,panel137 });
         }
         private void Add_Leave(Control[] cont)
         {
@@ -1047,6 +1048,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.CostUnitPrice, 2].CellCtl = IMN_COSTUNPRICE_2;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Remarks, 2].CellCtl = IMT_REMARK_2;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Space1, 2].CellCtl = Space2;
+           
             //Control4
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.GYONO, 3].CellCtl = IMT_GYONO_3;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.SKUCD, 3].CellCtl = IMT_ITMCD_3;
@@ -1415,8 +1417,8 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 TankaCD = "0000000000000",
                 StoreCD = "0000",
                 AdminNO="111",
-                StartChangeDate =txtStartDateFrom.Text,
-                EndChangeDate = txtStartDateTo.Text,
+                StartChangeDate = IMT_STADT_0.Text,
+                EndChangeDate = IMT_ENDDT_0.Text,
                 PriceWithTax = "0",
                 PriceWithoutTax = "0",
                 GeneralRate = "0",
@@ -1475,11 +1477,12 @@ namespace WMasterTouroku_HanbaiTankaTennic
         {
             if (spb.M_SKUPrice_Insert_Update(mse, mode))
             {
+                IMT_STADT_0.Focus();
                 spb.ShowMessage("I101");
                 Clear(pnl_Header);
                 Clear(pnl_Body);
                 ChangeOperationMode(OperationMode);
-                txtStartDateFrom.Focus();
+                //txtStartDateFrom.Focus();
             }
             else
             {

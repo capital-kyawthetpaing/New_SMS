@@ -29,6 +29,29 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel10_2 = new System.Windows.Forms.Panel();
+            this.IMT_GYONO_1 = new System.Windows.Forms.Label();
+            this.Space1 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R5UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R4UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R3UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R2UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
+            this.IMT_REMARK_1 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R1UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
+            this.IMN_COSTUNPRICE_1 = new CKM_Controls.CKM_TextBox();
+            this.IMN_SSUNITPRICE_1 = new CKM_Controls.CKM_TextBox();
+            this.IMN_UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ENDDT_1 = new CKM_Controls.CKM_TextBox();
+            this.IMT_STADT_1 = new CKM_Controls.CKM_TextBox();
+            this.IMT_JANCD_1 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ITMNM_1 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ITMCD_1 = new CKM_Controls.CKM_TextBox();
+            this.panel42 = new System.Windows.Forms.Panel();
+            this.panel43 = new System.Windows.Forms.Panel();
+            this.panel44 = new System.Windows.Forms.Panel();
+            this.panel45 = new System.Windows.Forms.Panel();
+            this.panel46 = new System.Windows.Forms.Panel();
+            this.pnl_Body = new System.Windows.Forms.Panel();
             this.pnl_Header = new System.Windows.Forms.Panel();
             this.btnDisplay = new CKM_Controls.CKM_Button();
             this.ckM_TextBox5 = new CKM_Controls.CKM_TextBox();
@@ -70,7 +93,6 @@
             this.lblGridJanCD = new System.Windows.Forms.Label();
             this.lblGridSkuCD = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pnl_Body = new System.Windows.Forms.Panel();
             this.IMT_GYONO_9 = new System.Windows.Forms.Label();
             this.IMT_GYONO_8 = new System.Windows.Forms.Label();
             this.IMT_GYONO_7 = new System.Windows.Forms.Label();
@@ -78,7 +100,7 @@
             this.IMT_GYONO_5 = new System.Windows.Forms.Label();
             this.IMT_GYONO_4 = new System.Windows.Forms.Label();
             this.IMT_GYONO_3 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel10_1 = new System.Windows.Forms.Panel();
             this.IMT_REMARK_0 = new CKM_Controls.CKM_TextBox();
             this.IMN_COSTUNPRICE_0 = new CKM_Controls.CKM_TextBox();
             this.Space0 = new CKM_Controls.CKM_TextBox();
@@ -95,35 +117,8 @@
             this.IMT_ITMNM_0 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMCD_0 = new CKM_Controls.CKM_TextBox();
             this.IMT_GYONO_0 = new System.Windows.Forms.Label();
-            this.panel41 = new System.Windows.Forms.Panel();
-            this.panel42 = new System.Windows.Forms.Panel();
-            this.panel43 = new System.Windows.Forms.Panel();
-            this.panel44 = new System.Windows.Forms.Panel();
-            this.panel45 = new System.Windows.Forms.Panel();
-            this.panel46 = new System.Windows.Forms.Panel();
-            this.Space1 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R5UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R4UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R3UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R2UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
-            this.IMT_REMARK_1 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R1UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
-            this.IMN_COSTUNPRICE_1 = new CKM_Controls.CKM_TextBox();
-            this.IMN_SSUNITPRICE_1 = new CKM_Controls.CKM_TextBox();
-            this.IMN_UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ENDDT_1 = new CKM_Controls.CKM_TextBox();
-            this.IMT_STADT_1 = new CKM_Controls.CKM_TextBox();
-            this.IMT_JANCD_1 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ITMNM_1 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ITMCD_1 = new CKM_Controls.CKM_TextBox();
-            this.IMT_GYONO_1 = new System.Windows.Forms.Label();
             this.IMT_GYONO_2 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
             this.Space2 = new CKM_Controls.CKM_TextBox();
             this.IMN_R5UNITPRICE_2 = new CKM_Controls.CKM_TextBox();
             this.IMN_R4UNITPRICE_2 = new CKM_Controls.CKM_TextBox();
@@ -139,6 +134,11 @@
             this.IMT_JANCD_2 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMNM_2 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMCD_2 = new CKM_Controls.CKM_TextBox();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Space3 = new CKM_Controls.CKM_TextBox();
             this.IMN_R5UNITPRICE_3 = new CKM_Controls.CKM_TextBox();
@@ -156,6 +156,21 @@
             this.IMT_ITMNM_3 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMCD_3 = new CKM_Controls.CKM_TextBox();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.Space4 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R5UNITPRICE_4 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R4UNITPRICE_4 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R3UNITPRICE_4 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R2UNITPRICE_4 = new CKM_Controls.CKM_TextBox();
+            this.IMT_REMARK_4 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R1UNITPRICE_4 = new CKM_Controls.CKM_TextBox();
+            this.IMN_COSTUNPRICE_4 = new CKM_Controls.CKM_TextBox();
+            this.IMN_SSUNITPRICE_4 = new CKM_Controls.CKM_TextBox();
+            this.IMN_UNITPRICE_4 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ENDDT_4 = new CKM_Controls.CKM_TextBox();
+            this.IMT_STADT_4 = new CKM_Controls.CKM_TextBox();
+            this.IMT_JANCD_4 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ITMNM_4 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ITMCD_4 = new CKM_Controls.CKM_TextBox();
             this.panel29 = new System.Windows.Forms.Panel();
             this.panel30 = new System.Windows.Forms.Panel();
             this.panel31 = new System.Windows.Forms.Panel();
@@ -179,22 +194,22 @@
             this.panel20 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
-            this.Space4 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R5UNITPRICE_4 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R4UNITPRICE_4 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R3UNITPRICE_4 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R2UNITPRICE_4 = new CKM_Controls.CKM_TextBox();
-            this.IMT_REMARK_4 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R1UNITPRICE_4 = new CKM_Controls.CKM_TextBox();
-            this.IMN_COSTUNPRICE_4 = new CKM_Controls.CKM_TextBox();
-            this.IMN_SSUNITPRICE_4 = new CKM_Controls.CKM_TextBox();
-            this.IMN_UNITPRICE_4 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ENDDT_4 = new CKM_Controls.CKM_TextBox();
-            this.IMT_STADT_4 = new CKM_Controls.CKM_TextBox();
-            this.IMT_JANCD_4 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ITMNM_4 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ITMCD_4 = new CKM_Controls.CKM_TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Space5 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R5UNITPRICE_5 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R4UNITPRICE_5 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R3UNITPRICE_5 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R2UNITPRICE_5 = new CKM_Controls.CKM_TextBox();
+            this.IMT_REMARK_5 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R1UNITPRICE_5 = new CKM_Controls.CKM_TextBox();
+            this.IMN_COSTUNPRICE_5 = new CKM_Controls.CKM_TextBox();
+            this.IMN_SSUNITPRICE_5 = new CKM_Controls.CKM_TextBox();
+            this.IMN_UNITPRICE_5 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ENDDT_5 = new CKM_Controls.CKM_TextBox();
+            this.IMT_STADT_5 = new CKM_Controls.CKM_TextBox();
+            this.IMT_JANCD_5 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ITMNM_5 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ITMCD_5 = new CKM_Controls.CKM_TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -218,22 +233,22 @@
             this.panel62 = new System.Windows.Forms.Panel();
             this.panel63 = new System.Windows.Forms.Panel();
             this.panel64 = new System.Windows.Forms.Panel();
-            this.Space5 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R5UNITPRICE_5 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R4UNITPRICE_5 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R3UNITPRICE_5 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R2UNITPRICE_5 = new CKM_Controls.CKM_TextBox();
-            this.IMT_REMARK_5 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R1UNITPRICE_5 = new CKM_Controls.CKM_TextBox();
-            this.IMN_COSTUNPRICE_5 = new CKM_Controls.CKM_TextBox();
-            this.IMN_SSUNITPRICE_5 = new CKM_Controls.CKM_TextBox();
-            this.IMN_UNITPRICE_5 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ENDDT_5 = new CKM_Controls.CKM_TextBox();
-            this.IMT_STADT_5 = new CKM_Controls.CKM_TextBox();
-            this.IMT_JANCD_5 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ITMNM_5 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ITMCD_5 = new CKM_Controls.CKM_TextBox();
             this.panel65 = new System.Windows.Forms.Panel();
+            this.Space6 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R5UNITPRICE_6 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R4UNITPRICE_6 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R3UNITPRICE_6 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R2UNITPRICE_6 = new CKM_Controls.CKM_TextBox();
+            this.IMT_REMARK_6 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R1UNITPRICE_6 = new CKM_Controls.CKM_TextBox();
+            this.IMN_COSTUNPRICE_6 = new CKM_Controls.CKM_TextBox();
+            this.IMN_SSUNITPRICE_6 = new CKM_Controls.CKM_TextBox();
+            this.IMN_UNITPRICE_6 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ENDDT_6 = new CKM_Controls.CKM_TextBox();
+            this.IMT_STADT_6 = new CKM_Controls.CKM_TextBox();
+            this.IMT_JANCD_6 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ITMNM_6 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ITMCD_6 = new CKM_Controls.CKM_TextBox();
             this.panel66 = new System.Windows.Forms.Panel();
             this.panel67 = new System.Windows.Forms.Panel();
             this.panel68 = new System.Windows.Forms.Panel();
@@ -257,22 +272,22 @@
             this.panel86 = new System.Windows.Forms.Panel();
             this.panel87 = new System.Windows.Forms.Panel();
             this.panel88 = new System.Windows.Forms.Panel();
-            this.Space6 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R5UNITPRICE_6 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R4UNITPRICE_6 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R3UNITPRICE_6 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R2UNITPRICE_6 = new CKM_Controls.CKM_TextBox();
-            this.IMT_REMARK_6 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R1UNITPRICE_6 = new CKM_Controls.CKM_TextBox();
-            this.IMN_COSTUNPRICE_6 = new CKM_Controls.CKM_TextBox();
-            this.IMN_SSUNITPRICE_6 = new CKM_Controls.CKM_TextBox();
-            this.IMN_UNITPRICE_6 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ENDDT_6 = new CKM_Controls.CKM_TextBox();
-            this.IMT_STADT_6 = new CKM_Controls.CKM_TextBox();
-            this.IMT_JANCD_6 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ITMNM_6 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ITMCD_6 = new CKM_Controls.CKM_TextBox();
             this.panel89 = new System.Windows.Forms.Panel();
+            this.Space7 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R5UNITPRICE_7 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R4UNITPRICE_7 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R3UNITPRICE_7 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R2UNITPRICE_7 = new CKM_Controls.CKM_TextBox();
+            this.IMT_REMARK_7 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R1UNITPRICE_7 = new CKM_Controls.CKM_TextBox();
+            this.IMN_COSTUNPRICE_7 = new CKM_Controls.CKM_TextBox();
+            this.IMN_SSUNITPRICE_7 = new CKM_Controls.CKM_TextBox();
+            this.IMN_UNITPRICE_7 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ENDDT_7 = new CKM_Controls.CKM_TextBox();
+            this.IMT_STADT_7 = new CKM_Controls.CKM_TextBox();
+            this.IMT_JANCD_7 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ITMNM_7 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ITMCD_7 = new CKM_Controls.CKM_TextBox();
             this.panel90 = new System.Windows.Forms.Panel();
             this.panel91 = new System.Windows.Forms.Panel();
             this.panel92 = new System.Windows.Forms.Panel();
@@ -296,22 +311,22 @@
             this.panel110 = new System.Windows.Forms.Panel();
             this.panel111 = new System.Windows.Forms.Panel();
             this.panel112 = new System.Windows.Forms.Panel();
-            this.Space7 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R5UNITPRICE_7 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R4UNITPRICE_7 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R3UNITPRICE_7 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R2UNITPRICE_7 = new CKM_Controls.CKM_TextBox();
-            this.IMT_REMARK_7 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R1UNITPRICE_7 = new CKM_Controls.CKM_TextBox();
-            this.IMN_COSTUNPRICE_7 = new CKM_Controls.CKM_TextBox();
-            this.IMN_SSUNITPRICE_7 = new CKM_Controls.CKM_TextBox();
-            this.IMN_UNITPRICE_7 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ENDDT_7 = new CKM_Controls.CKM_TextBox();
-            this.IMT_STADT_7 = new CKM_Controls.CKM_TextBox();
-            this.IMT_JANCD_7 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ITMNM_7 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ITMCD_7 = new CKM_Controls.CKM_TextBox();
             this.panel113 = new System.Windows.Forms.Panel();
+            this.Space8 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R5UNITPRICE_8 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R4UNITPRICE_8 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R3UNITPRICE_8 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R2UNITPRICE_8 = new CKM_Controls.CKM_TextBox();
+            this.IMT_REMARK_8 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R1UNITPRICE_8 = new CKM_Controls.CKM_TextBox();
+            this.IMN_COSTUNPRICE_8 = new CKM_Controls.CKM_TextBox();
+            this.IMN_SSUNITPRICE_8 = new CKM_Controls.CKM_TextBox();
+            this.IMN_UNITPRICE_8 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ENDDT_8 = new CKM_Controls.CKM_TextBox();
+            this.IMT_STADT_8 = new CKM_Controls.CKM_TextBox();
+            this.IMT_JANCD_8 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ITMNM_8 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ITMCD_8 = new CKM_Controls.CKM_TextBox();
             this.panel114 = new System.Windows.Forms.Panel();
             this.panel115 = new System.Windows.Forms.Panel();
             this.panel116 = new System.Windows.Forms.Panel();
@@ -335,22 +350,22 @@
             this.panel134 = new System.Windows.Forms.Panel();
             this.panel135 = new System.Windows.Forms.Panel();
             this.panel136 = new System.Windows.Forms.Panel();
-            this.Space8 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R5UNITPRICE_8 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R4UNITPRICE_8 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R3UNITPRICE_8 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R2UNITPRICE_8 = new CKM_Controls.CKM_TextBox();
-            this.IMT_REMARK_8 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R1UNITPRICE_8 = new CKM_Controls.CKM_TextBox();
-            this.IMN_COSTUNPRICE_8 = new CKM_Controls.CKM_TextBox();
-            this.IMN_SSUNITPRICE_8 = new CKM_Controls.CKM_TextBox();
-            this.IMN_UNITPRICE_8 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ENDDT_8 = new CKM_Controls.CKM_TextBox();
-            this.IMT_STADT_8 = new CKM_Controls.CKM_TextBox();
-            this.IMT_JANCD_8 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ITMNM_8 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ITMCD_8 = new CKM_Controls.CKM_TextBox();
             this.panel137 = new System.Windows.Forms.Panel();
+            this.Space9 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R5UNITPRICE_9 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R4UNITPRICE_9 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R3UNITPRICE_9 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R2UNITPRICE_9 = new CKM_Controls.CKM_TextBox();
+            this.IMT_REMARK_9 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R1UNITPRICE_9 = new CKM_Controls.CKM_TextBox();
+            this.IMN_COSTUNPRICE_9 = new CKM_Controls.CKM_TextBox();
+            this.IMN_SSUNITPRICE_9 = new CKM_Controls.CKM_TextBox();
+            this.IMN_UNITPRICE_9 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ENDDT_9 = new CKM_Controls.CKM_TextBox();
+            this.IMT_STADT_9 = new CKM_Controls.CKM_TextBox();
+            this.IMT_JANCD_9 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ITMNM_9 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ITMCD_9 = new CKM_Controls.CKM_TextBox();
             this.panel138 = new System.Windows.Forms.Panel();
             this.panel139 = new System.Windows.Forms.Panel();
             this.panel140 = new System.Windows.Forms.Panel();
@@ -374,27 +389,12 @@
             this.panel158 = new System.Windows.Forms.Panel();
             this.panel159 = new System.Windows.Forms.Panel();
             this.panel160 = new System.Windows.Forms.Panel();
-            this.Space9 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R5UNITPRICE_9 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R4UNITPRICE_9 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R3UNITPRICE_9 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R2UNITPRICE_9 = new CKM_Controls.CKM_TextBox();
-            this.IMT_REMARK_9 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R1UNITPRICE_9 = new CKM_Controls.CKM_TextBox();
-            this.IMN_COSTUNPRICE_9 = new CKM_Controls.CKM_TextBox();
-            this.IMN_SSUNITPRICE_9 = new CKM_Controls.CKM_TextBox();
-            this.IMN_UNITPRICE_9 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ENDDT_9 = new CKM_Controls.CKM_TextBox();
-            this.IMT_STADT_9 = new CKM_Controls.CKM_TextBox();
-            this.IMT_JANCD_9 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ITMNM_9 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ITMCD_9 = new CKM_Controls.CKM_TextBox();
             this.panel1.SuspendLayout();
+            this.panel10_2.SuspendLayout();
+            this.panel42.SuspendLayout();
             this.pnl_Header.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel41.SuspendLayout();
-            this.panel42.SuspendLayout();
+            this.panel10_1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -462,7 +462,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel41);
+            this.panel1.Controls.Add(this.panel10_2);
             this.panel1.Controls.Add(this.pnl_Body);
             this.panel1.Controls.Add(this.pnl_Header);
             this.panel1.Controls.Add(this.Vsb_Mei_0);
@@ -471,6 +471,518 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1410, 600);
             this.panel1.TabIndex = 100;
+            // 
+            // panel10_2
+            // 
+            this.panel10_2.Controls.Add(this.IMT_GYONO_1);
+            this.panel10_2.Controls.Add(this.Space1);
+            this.panel10_2.Controls.Add(this.IMN_R5UNITPRICE_1);
+            this.panel10_2.Controls.Add(this.IMN_R4UNITPRICE_1);
+            this.panel10_2.Controls.Add(this.IMN_R3UNITPRICE_1);
+            this.panel10_2.Controls.Add(this.IMN_R2UNITPRICE_1);
+            this.panel10_2.Controls.Add(this.IMT_REMARK_1);
+            this.panel10_2.Controls.Add(this.IMN_R1UNITPRICE_1);
+            this.panel10_2.Controls.Add(this.IMN_COSTUNPRICE_1);
+            this.panel10_2.Controls.Add(this.IMN_SSUNITPRICE_1);
+            this.panel10_2.Controls.Add(this.IMN_UNITPRICE_1);
+            this.panel10_2.Controls.Add(this.IMT_ENDDT_1);
+            this.panel10_2.Controls.Add(this.IMT_STADT_1);
+            this.panel10_2.Controls.Add(this.IMT_JANCD_1);
+            this.panel10_2.Controls.Add(this.IMT_ITMNM_1);
+            this.panel10_2.Controls.Add(this.IMT_ITMCD_1);
+            this.panel10_2.Controls.Add(this.panel42);
+            this.panel10_2.Controls.Add(this.panel45);
+            this.panel10_2.Controls.Add(this.panel46);
+            this.panel10_2.Location = new System.Drawing.Point(14, 248);
+            this.panel10_2.Name = "panel10_2";
+            this.panel10_2.Size = new System.Drawing.Size(1317, 38);
+            this.panel10_2.TabIndex = 169;
+            // 
+            // IMT_GYONO_1
+            // 
+            this.IMT_GYONO_1.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_GYONO_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_GYONO_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IMT_GYONO_1.Location = new System.Drawing.Point(0, 0);
+            this.IMT_GYONO_1.Name = "IMT_GYONO_1";
+            this.IMT_GYONO_1.Size = new System.Drawing.Size(28, 38);
+            this.IMT_GYONO_1.TabIndex = 167;
+            this.IMT_GYONO_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Space1
+            // 
+            this.Space1.AllowMinus = false;
+            this.Space1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.Space1.BackColor = System.Drawing.Color.DarkGray;
+            this.Space1.BorderColor = false;
+            this.Space1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Space1.ClientColor = System.Drawing.SystemColors.Window;
+            this.Space1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.Space1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.Space1.DecimalPlace = 0;
+            this.Space1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.Space1.IntegerPart = 0;
+            this.Space1.IsCorrectDate = true;
+            this.Space1.isEnterKeyDown = false;
+            this.Space1.IsFirstTime = true;
+            this.Space1.isMaxLengthErr = false;
+            this.Space1.IsNumber = true;
+            this.Space1.IsShop = false;
+            this.Space1.Length = 32767;
+            this.Space1.Location = new System.Drawing.Point(1136, 1);
+            this.Space1.MoveNext = true;
+            this.Space1.Name = "Space1";
+            this.Space1.Size = new System.Drawing.Size(181, 19);
+            this.Space1.TabIndex = 179;
+            this.Space1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // IMN_R5UNITPRICE_1
+            // 
+            this.IMN_R5UNITPRICE_1.AllowMinus = false;
+            this.IMN_R5UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMN_R5UNITPRICE_1.BackColor = System.Drawing.Color.White;
+            this.IMN_R5UNITPRICE_1.BorderColor = false;
+            this.IMN_R5UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_R5UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMN_R5UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMN_R5UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMN_R5UNITPRICE_1.DecimalPlace = 0;
+            this.IMN_R5UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_R5UNITPRICE_1.IntegerPart = 0;
+            this.IMN_R5UNITPRICE_1.IsCorrectDate = true;
+            this.IMN_R5UNITPRICE_1.isEnterKeyDown = false;
+            this.IMN_R5UNITPRICE_1.IsFirstTime = true;
+            this.IMN_R5UNITPRICE_1.isMaxLengthErr = false;
+            this.IMN_R5UNITPRICE_1.IsNumber = true;
+            this.IMN_R5UNITPRICE_1.IsShop = false;
+            this.IMN_R5UNITPRICE_1.Length = 32767;
+            this.IMN_R5UNITPRICE_1.Location = new System.Drawing.Point(1046, 0);
+            this.IMN_R5UNITPRICE_1.MoveNext = true;
+            this.IMN_R5UNITPRICE_1.Name = "IMN_R5UNITPRICE_1";
+            this.IMN_R5UNITPRICE_1.Size = new System.Drawing.Size(90, 19);
+            this.IMN_R5UNITPRICE_1.TabIndex = 49;
+            this.IMN_R5UNITPRICE_1.Text = "999,999,999";
+            this.IMN_R5UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.IMN_R5UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // IMN_R4UNITPRICE_1
+            // 
+            this.IMN_R4UNITPRICE_1.AllowMinus = false;
+            this.IMN_R4UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMN_R4UNITPRICE_1.BackColor = System.Drawing.Color.White;
+            this.IMN_R4UNITPRICE_1.BorderColor = false;
+            this.IMN_R4UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_R4UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMN_R4UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMN_R4UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMN_R4UNITPRICE_1.DecimalPlace = 0;
+            this.IMN_R4UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_R4UNITPRICE_1.IntegerPart = 0;
+            this.IMN_R4UNITPRICE_1.IsCorrectDate = true;
+            this.IMN_R4UNITPRICE_1.isEnterKeyDown = false;
+            this.IMN_R4UNITPRICE_1.IsFirstTime = true;
+            this.IMN_R4UNITPRICE_1.isMaxLengthErr = false;
+            this.IMN_R4UNITPRICE_1.IsNumber = true;
+            this.IMN_R4UNITPRICE_1.IsShop = false;
+            this.IMN_R4UNITPRICE_1.Length = 32767;
+            this.IMN_R4UNITPRICE_1.Location = new System.Drawing.Point(956, 0);
+            this.IMN_R4UNITPRICE_1.MoveNext = true;
+            this.IMN_R4UNITPRICE_1.Name = "IMN_R4UNITPRICE_1";
+            this.IMN_R4UNITPRICE_1.Size = new System.Drawing.Size(90, 19);
+            this.IMN_R4UNITPRICE_1.TabIndex = 48;
+            this.IMN_R4UNITPRICE_1.Text = "999,999,999";
+            this.IMN_R4UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.IMN_R4UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // IMN_R3UNITPRICE_1
+            // 
+            this.IMN_R3UNITPRICE_1.AllowMinus = false;
+            this.IMN_R3UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMN_R3UNITPRICE_1.BackColor = System.Drawing.Color.White;
+            this.IMN_R3UNITPRICE_1.BorderColor = false;
+            this.IMN_R3UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_R3UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMN_R3UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMN_R3UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMN_R3UNITPRICE_1.DecimalPlace = 0;
+            this.IMN_R3UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_R3UNITPRICE_1.IntegerPart = 0;
+            this.IMN_R3UNITPRICE_1.IsCorrectDate = true;
+            this.IMN_R3UNITPRICE_1.isEnterKeyDown = false;
+            this.IMN_R3UNITPRICE_1.IsFirstTime = true;
+            this.IMN_R3UNITPRICE_1.isMaxLengthErr = false;
+            this.IMN_R3UNITPRICE_1.IsNumber = true;
+            this.IMN_R3UNITPRICE_1.IsShop = false;
+            this.IMN_R3UNITPRICE_1.Length = 32767;
+            this.IMN_R3UNITPRICE_1.Location = new System.Drawing.Point(866, 0);
+            this.IMN_R3UNITPRICE_1.MoveNext = true;
+            this.IMN_R3UNITPRICE_1.Name = "IMN_R3UNITPRICE_1";
+            this.IMN_R3UNITPRICE_1.Size = new System.Drawing.Size(90, 19);
+            this.IMN_R3UNITPRICE_1.TabIndex = 47;
+            this.IMN_R3UNITPRICE_1.Text = "999,999,999";
+            this.IMN_R3UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.IMN_R3UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // IMN_R2UNITPRICE_1
+            // 
+            this.IMN_R2UNITPRICE_1.AllowMinus = false;
+            this.IMN_R2UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMN_R2UNITPRICE_1.BackColor = System.Drawing.Color.White;
+            this.IMN_R2UNITPRICE_1.BorderColor = false;
+            this.IMN_R2UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_R2UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMN_R2UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMN_R2UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMN_R2UNITPRICE_1.DecimalPlace = 0;
+            this.IMN_R2UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_R2UNITPRICE_1.IntegerPart = 0;
+            this.IMN_R2UNITPRICE_1.IsCorrectDate = true;
+            this.IMN_R2UNITPRICE_1.isEnterKeyDown = false;
+            this.IMN_R2UNITPRICE_1.IsFirstTime = true;
+            this.IMN_R2UNITPRICE_1.isMaxLengthErr = false;
+            this.IMN_R2UNITPRICE_1.IsNumber = true;
+            this.IMN_R2UNITPRICE_1.IsShop = false;
+            this.IMN_R2UNITPRICE_1.Length = 32767;
+            this.IMN_R2UNITPRICE_1.Location = new System.Drawing.Point(776, 0);
+            this.IMN_R2UNITPRICE_1.MoveNext = true;
+            this.IMN_R2UNITPRICE_1.Name = "IMN_R2UNITPRICE_1";
+            this.IMN_R2UNITPRICE_1.Size = new System.Drawing.Size(90, 19);
+            this.IMN_R2UNITPRICE_1.TabIndex = 46;
+            this.IMN_R2UNITPRICE_1.Text = "999,999,999";
+            this.IMN_R2UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.IMN_R2UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // IMT_REMARK_1
+            // 
+            this.IMT_REMARK_1.AllowMinus = false;
+            this.IMT_REMARK_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_REMARK_1.BackColor = System.Drawing.Color.White;
+            this.IMT_REMARK_1.BorderColor = false;
+            this.IMT_REMARK_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_REMARK_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMT_REMARK_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMT_REMARK_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_REMARK_1.DecimalPlace = 0;
+            this.IMT_REMARK_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMARK_1.IntegerPart = 0;
+            this.IMT_REMARK_1.IsCorrectDate = true;
+            this.IMT_REMARK_1.isEnterKeyDown = false;
+            this.IMT_REMARK_1.IsFirstTime = true;
+            this.IMT_REMARK_1.isMaxLengthErr = false;
+            this.IMT_REMARK_1.IsNumber = true;
+            this.IMT_REMARK_1.IsShop = false;
+            this.IMT_REMARK_1.Length = 32767;
+            this.IMT_REMARK_1.Location = new System.Drawing.Point(686, 19);
+            this.IMT_REMARK_1.MoveNext = true;
+            this.IMT_REMARK_1.Name = "IMT_REMARK_1";
+            this.IMT_REMARK_1.Size = new System.Drawing.Size(630, 19);
+            this.IMT_REMARK_1.TabIndex = 50;
+            this.IMT_REMARK_1.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50ＸＸＸＸＸＸＸＸＸ60";
+            this.IMT_REMARK_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // IMN_R1UNITPRICE_1
+            // 
+            this.IMN_R1UNITPRICE_1.AllowMinus = false;
+            this.IMN_R1UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMN_R1UNITPRICE_1.BackColor = System.Drawing.Color.White;
+            this.IMN_R1UNITPRICE_1.BorderColor = false;
+            this.IMN_R1UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_R1UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMN_R1UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMN_R1UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMN_R1UNITPRICE_1.DecimalPlace = 0;
+            this.IMN_R1UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_R1UNITPRICE_1.IntegerPart = 0;
+            this.IMN_R1UNITPRICE_1.IsCorrectDate = true;
+            this.IMN_R1UNITPRICE_1.isEnterKeyDown = false;
+            this.IMN_R1UNITPRICE_1.IsFirstTime = true;
+            this.IMN_R1UNITPRICE_1.isMaxLengthErr = false;
+            this.IMN_R1UNITPRICE_1.IsNumber = true;
+            this.IMN_R1UNITPRICE_1.IsShop = false;
+            this.IMN_R1UNITPRICE_1.Length = 32767;
+            this.IMN_R1UNITPRICE_1.Location = new System.Drawing.Point(686, 0);
+            this.IMN_R1UNITPRICE_1.MoveNext = true;
+            this.IMN_R1UNITPRICE_1.Name = "IMN_R1UNITPRICE_1";
+            this.IMN_R1UNITPRICE_1.Size = new System.Drawing.Size(90, 19);
+            this.IMN_R1UNITPRICE_1.TabIndex = 45;
+            this.IMN_R1UNITPRICE_1.Text = "999,999,999";
+            this.IMN_R1UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.IMN_R1UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // IMN_COSTUNPRICE_1
+            // 
+            this.IMN_COSTUNPRICE_1.AllowMinus = false;
+            this.IMN_COSTUNPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMN_COSTUNPRICE_1.BackColor = System.Drawing.Color.DarkGray;
+            this.IMN_COSTUNPRICE_1.BorderColor = false;
+            this.IMN_COSTUNPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_COSTUNPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMN_COSTUNPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMN_COSTUNPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMN_COSTUNPRICE_1.DecimalPlace = 0;
+            this.IMN_COSTUNPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_COSTUNPRICE_1.IntegerPart = 0;
+            this.IMN_COSTUNPRICE_1.IsCorrectDate = true;
+            this.IMN_COSTUNPRICE_1.isEnterKeyDown = false;
+            this.IMN_COSTUNPRICE_1.IsFirstTime = true;
+            this.IMN_COSTUNPRICE_1.isMaxLengthErr = false;
+            this.IMN_COSTUNPRICE_1.IsNumber = true;
+            this.IMN_COSTUNPRICE_1.IsShop = false;
+            this.IMN_COSTUNPRICE_1.Length = 32767;
+            this.IMN_COSTUNPRICE_1.Location = new System.Drawing.Point(603, 19);
+            this.IMN_COSTUNPRICE_1.MoveNext = true;
+            this.IMN_COSTUNPRICE_1.Name = "IMN_COSTUNPRICE_1";
+            this.IMN_COSTUNPRICE_1.Size = new System.Drawing.Size(83, 19);
+            this.IMN_COSTUNPRICE_1.TabIndex = 181;
+            this.IMN_COSTUNPRICE_1.Text = "999,999,999";
+            this.IMN_COSTUNPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.IMN_COSTUNPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // IMN_SSUNITPRICE_1
+            // 
+            this.IMN_SSUNITPRICE_1.AllowMinus = false;
+            this.IMN_SSUNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMN_SSUNITPRICE_1.BackColor = System.Drawing.Color.White;
+            this.IMN_SSUNITPRICE_1.BorderColor = false;
+            this.IMN_SSUNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SSUNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMN_SSUNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMN_SSUNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMN_SSUNITPRICE_1.DecimalPlace = 0;
+            this.IMN_SSUNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SSUNITPRICE_1.IntegerPart = 0;
+            this.IMN_SSUNITPRICE_1.IsCorrectDate = true;
+            this.IMN_SSUNITPRICE_1.isEnterKeyDown = false;
+            this.IMN_SSUNITPRICE_1.IsFirstTime = true;
+            this.IMN_SSUNITPRICE_1.isMaxLengthErr = false;
+            this.IMN_SSUNITPRICE_1.IsNumber = true;
+            this.IMN_SSUNITPRICE_1.IsShop = false;
+            this.IMN_SSUNITPRICE_1.Length = 32767;
+            this.IMN_SSUNITPRICE_1.Location = new System.Drawing.Point(603, 1);
+            this.IMN_SSUNITPRICE_1.MoveNext = true;
+            this.IMN_SSUNITPRICE_1.Name = "IMN_SSUNITPRICE_1";
+            this.IMN_SSUNITPRICE_1.Size = new System.Drawing.Size(83, 19);
+            this.IMN_SSUNITPRICE_1.TabIndex = 44;
+            this.IMN_SSUNITPRICE_1.Text = "999,999,999";
+            this.IMN_SSUNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.IMN_SSUNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // IMN_UNITPRICE_1
+            // 
+            this.IMN_UNITPRICE_1.AllowMinus = false;
+            this.IMN_UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMN_UNITPRICE_1.BackColor = System.Drawing.Color.White;
+            this.IMN_UNITPRICE_1.BorderColor = false;
+            this.IMN_UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMN_UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMN_UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMN_UNITPRICE_1.DecimalPlace = 0;
+            this.IMN_UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_UNITPRICE_1.IntegerPart = 0;
+            this.IMN_UNITPRICE_1.IsCorrectDate = true;
+            this.IMN_UNITPRICE_1.isEnterKeyDown = false;
+            this.IMN_UNITPRICE_1.IsFirstTime = true;
+            this.IMN_UNITPRICE_1.isMaxLengthErr = false;
+            this.IMN_UNITPRICE_1.IsNumber = true;
+            this.IMN_UNITPRICE_1.IsShop = false;
+            this.IMN_UNITPRICE_1.Length = 32767;
+            this.IMN_UNITPRICE_1.Location = new System.Drawing.Point(520, 1);
+            this.IMN_UNITPRICE_1.MoveNext = true;
+            this.IMN_UNITPRICE_1.Name = "IMN_UNITPRICE_1";
+            this.IMN_UNITPRICE_1.Size = new System.Drawing.Size(83, 19);
+            this.IMN_UNITPRICE_1.TabIndex = 43;
+            this.IMN_UNITPRICE_1.Text = "999,999,999";
+            this.IMN_UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.IMN_UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // IMT_ENDDT_1
+            // 
+            this.IMT_ENDDT_1.AllowMinus = false;
+            this.IMT_ENDDT_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_ENDDT_1.BackColor = System.Drawing.Color.White;
+            this.IMT_ENDDT_1.BorderColor = false;
+            this.IMT_ENDDT_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ENDDT_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMT_ENDDT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMT_ENDDT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_ENDDT_1.DecimalPlace = 0;
+            this.IMT_ENDDT_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ENDDT_1.IntegerPart = 0;
+            this.IMT_ENDDT_1.IsCorrectDate = true;
+            this.IMT_ENDDT_1.isEnterKeyDown = false;
+            this.IMT_ENDDT_1.IsFirstTime = true;
+            this.IMT_ENDDT_1.isMaxLengthErr = false;
+            this.IMT_ENDDT_1.IsNumber = true;
+            this.IMT_ENDDT_1.IsShop = false;
+            this.IMT_ENDDT_1.Length = 32767;
+            this.IMT_ENDDT_1.Location = new System.Drawing.Point(437, 1);
+            this.IMT_ENDDT_1.MoveNext = true;
+            this.IMT_ENDDT_1.Name = "IMT_ENDDT_1";
+            this.IMT_ENDDT_1.Size = new System.Drawing.Size(83, 19);
+            this.IMT_ENDDT_1.TabIndex = 42;
+            this.IMT_ENDDT_1.Text = "9999/99/99";
+            this.IMT_ENDDT_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.IMT_ENDDT_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // IMT_STADT_1
+            // 
+            this.IMT_STADT_1.AllowMinus = false;
+            this.IMT_STADT_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_STADT_1.BackColor = System.Drawing.Color.White;
+            this.IMT_STADT_1.BorderColor = false;
+            this.IMT_STADT_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_STADT_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMT_STADT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMT_STADT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
+            this.IMT_STADT_1.DecimalPlace = 0;
+            this.IMT_STADT_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_STADT_1.IntegerPart = 0;
+            this.IMT_STADT_1.IsCorrectDate = true;
+            this.IMT_STADT_1.isEnterKeyDown = false;
+            this.IMT_STADT_1.IsFirstTime = true;
+            this.IMT_STADT_1.isMaxLengthErr = false;
+            this.IMT_STADT_1.IsNumber = true;
+            this.IMT_STADT_1.IsShop = false;
+            this.IMT_STADT_1.Length = 10;
+            this.IMT_STADT_1.Location = new System.Drawing.Point(354, 1);
+            this.IMT_STADT_1.MaxLength = 10;
+            this.IMT_STADT_1.MoveNext = true;
+            this.IMT_STADT_1.Name = "IMT_STADT_1";
+            this.IMT_STADT_1.Size = new System.Drawing.Size(83, 19);
+            this.IMT_STADT_1.TabIndex = 41;
+            this.IMT_STADT_1.Text = "9999/99/99";
+            this.IMT_STADT_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.IMT_STADT_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // IMT_JANCD_1
+            // 
+            this.IMT_JANCD_1.AllowMinus = false;
+            this.IMT_JANCD_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_JANCD_1.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_JANCD_1.BorderColor = false;
+            this.IMT_JANCD_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_JANCD_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMT_JANCD_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMT_JANCD_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_JANCD_1.DecimalPlace = 0;
+            this.IMT_JANCD_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_JANCD_1.IntegerPart = 0;
+            this.IMT_JANCD_1.IsCorrectDate = true;
+            this.IMT_JANCD_1.isEnterKeyDown = false;
+            this.IMT_JANCD_1.IsFirstTime = true;
+            this.IMT_JANCD_1.isMaxLengthErr = false;
+            this.IMT_JANCD_1.IsNumber = true;
+            this.IMT_JANCD_1.IsShop = false;
+            this.IMT_JANCD_1.Length = 32767;
+            this.IMT_JANCD_1.Location = new System.Drawing.Point(250, 1);
+            this.IMT_JANCD_1.MoveNext = true;
+            this.IMT_JANCD_1.Name = "IMT_JANCD_1";
+            this.IMT_JANCD_1.Size = new System.Drawing.Size(104, 19);
+            this.IMT_JANCD_1.TabIndex = 169;
+            this.IMT_JANCD_1.Text = "XXXXXXXXX1XX3";
+            this.IMT_JANCD_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // IMT_ITMNM_1
+            // 
+            this.IMT_ITMNM_1.AllowMinus = false;
+            this.IMT_ITMNM_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_ITMNM_1.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMNM_1.BorderColor = false;
+            this.IMT_ITMNM_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMNM_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMT_ITMNM_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMT_ITMNM_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_ITMNM_1.DecimalPlace = 0;
+            this.IMT_ITMNM_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMNM_1.IntegerPart = 0;
+            this.IMT_ITMNM_1.IsCorrectDate = true;
+            this.IMT_ITMNM_1.isEnterKeyDown = false;
+            this.IMT_ITMNM_1.IsFirstTime = true;
+            this.IMT_ITMNM_1.isMaxLengthErr = false;
+            this.IMT_ITMNM_1.IsNumber = true;
+            this.IMT_ITMNM_1.IsShop = false;
+            this.IMT_ITMNM_1.Length = 32767;
+            this.IMT_ITMNM_1.Location = new System.Drawing.Point(28, 19);
+            this.IMT_ITMNM_1.MoveNext = true;
+            this.IMT_ITMNM_1.Name = "IMT_ITMNM_1";
+            this.IMT_ITMNM_1.Size = new System.Drawing.Size(575, 19);
+            this.IMT_ITMNM_1.TabIndex = 180;
+            this.IMT_ITMNM_1.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
+            this.IMT_ITMNM_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // IMT_ITMCD_1
+            // 
+            this.IMT_ITMCD_1.AllowMinus = false;
+            this.IMT_ITMCD_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_ITMCD_1.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_1.BorderColor = false;
+            this.IMT_ITMCD_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMT_ITMCD_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMT_ITMCD_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_ITMCD_1.DecimalPlace = 0;
+            this.IMT_ITMCD_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMCD_1.IntegerPart = 0;
+            this.IMT_ITMCD_1.IsCorrectDate = true;
+            this.IMT_ITMCD_1.isEnterKeyDown = false;
+            this.IMT_ITMCD_1.IsFirstTime = true;
+            this.IMT_ITMCD_1.isMaxLengthErr = false;
+            this.IMT_ITMCD_1.IsNumber = true;
+            this.IMT_ITMCD_1.IsShop = true;
+            this.IMT_ITMCD_1.Length = 32767;
+            this.IMT_ITMCD_1.Location = new System.Drawing.Point(28, 1);
+            this.IMT_ITMCD_1.MoveNext = true;
+            this.IMT_ITMCD_1.Name = "IMT_ITMCD_1";
+            this.IMT_ITMCD_1.Size = new System.Drawing.Size(222, 19);
+            this.IMT_ITMCD_1.TabIndex = 168;
+            this.IMT_ITMCD_1.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
+            this.IMT_ITMCD_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // panel42
+            // 
+            this.panel42.Controls.Add(this.panel43);
+            this.panel42.Controls.Add(this.panel44);
+            this.panel42.Location = new System.Drawing.Point(1, 39);
+            this.panel42.Name = "panel42";
+            this.panel42.Size = new System.Drawing.Size(1317, 38);
+            this.panel42.TabIndex = 166;
+            // 
+            // panel43
+            // 
+            this.panel43.Location = new System.Drawing.Point(0, 78);
+            this.panel43.Name = "panel43";
+            this.panel43.Size = new System.Drawing.Size(1317, 38);
+            this.panel43.TabIndex = 165;
+            // 
+            // panel44
+            // 
+            this.panel44.Location = new System.Drawing.Point(0, 40);
+            this.panel44.Name = "panel44";
+            this.panel44.Size = new System.Drawing.Size(1317, 38);
+            this.panel44.TabIndex = 164;
+            // 
+            // panel45
+            // 
+            this.panel45.Location = new System.Drawing.Point(0, 78);
+            this.panel45.Name = "panel45";
+            this.panel45.Size = new System.Drawing.Size(1317, 38);
+            this.panel45.TabIndex = 165;
+            // 
+            // panel46
+            // 
+            this.panel46.Location = new System.Drawing.Point(0, 40);
+            this.panel46.Name = "panel46";
+            this.panel46.Size = new System.Drawing.Size(1317, 38);
+            this.panel46.TabIndex = 164;
+            // 
+            // pnl_Body
+            // 
+            this.pnl_Body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnl_Body.Location = new System.Drawing.Point(12, 208);
+            this.pnl_Body.Name = "pnl_Body";
+            this.pnl_Body.Size = new System.Drawing.Size(1320, 384);
+            this.pnl_Body.TabIndex = 125;
             // 
             // pnl_Header
             // 
@@ -1198,14 +1710,6 @@
             this.label2.Text = "№";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnl_Body
-            // 
-            this.pnl_Body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnl_Body.Location = new System.Drawing.Point(12, 208);
-            this.pnl_Body.Name = "pnl_Body";
-            this.pnl_Body.Size = new System.Drawing.Size(1320, 384);
-            this.pnl_Body.TabIndex = 125;
-            // 
             // IMT_GYONO_9
             // 
             this.IMT_GYONO_9.BackColor = System.Drawing.Color.DarkGray;
@@ -1290,28 +1794,28 @@
             this.IMT_GYONO_3.Text = " ";
             this.IMT_GYONO_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel10
+            // panel10_1
             // 
-            this.panel10.Controls.Add(this.IMT_REMARK_0);
-            this.panel10.Controls.Add(this.IMN_COSTUNPRICE_0);
-            this.panel10.Controls.Add(this.Space0);
-            this.panel10.Controls.Add(this.IMN_R5UNITPRICE_0);
-            this.panel10.Controls.Add(this.IMN_R4UNITPRICE_0);
-            this.panel10.Controls.Add(this.IMN_R3UNITPRICE_0);
-            this.panel10.Controls.Add(this.IMN_R2UNITPRICE_0);
-            this.panel10.Controls.Add(this.IMN_R1UNITPRICE_0);
-            this.panel10.Controls.Add(this.IMN_SSUNITPRICE_0);
-            this.panel10.Controls.Add(this.IMN_UNITPRICE_0);
-            this.panel10.Controls.Add(this.IMT_ENDDT_0);
-            this.panel10.Controls.Add(this.IMT_STADT_0);
-            this.panel10.Controls.Add(this.IMT_JANCD_0);
-            this.panel10.Controls.Add(this.IMT_ITMNM_0);
-            this.panel10.Controls.Add(this.IMT_ITMCD_0);
-            this.panel10.Controls.Add(this.IMT_GYONO_0);
-            this.panel10.Location = new System.Drawing.Point(19, 280);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1317, 38);
-            this.panel10.TabIndex = 162;
+            this.panel10_1.Controls.Add(this.IMT_REMARK_0);
+            this.panel10_1.Controls.Add(this.IMN_COSTUNPRICE_0);
+            this.panel10_1.Controls.Add(this.Space0);
+            this.panel10_1.Controls.Add(this.IMN_R5UNITPRICE_0);
+            this.panel10_1.Controls.Add(this.IMN_R4UNITPRICE_0);
+            this.panel10_1.Controls.Add(this.IMN_R3UNITPRICE_0);
+            this.panel10_1.Controls.Add(this.IMN_R2UNITPRICE_0);
+            this.panel10_1.Controls.Add(this.IMN_R1UNITPRICE_0);
+            this.panel10_1.Controls.Add(this.IMN_SSUNITPRICE_0);
+            this.panel10_1.Controls.Add(this.IMN_UNITPRICE_0);
+            this.panel10_1.Controls.Add(this.IMT_ENDDT_0);
+            this.panel10_1.Controls.Add(this.IMT_STADT_0);
+            this.panel10_1.Controls.Add(this.IMT_JANCD_0);
+            this.panel10_1.Controls.Add(this.IMT_ITMNM_0);
+            this.panel10_1.Controls.Add(this.IMT_GYONO_0);
+            this.panel10_1.Controls.Add(this.IMT_ITMCD_0);
+            this.panel10_1.Location = new System.Drawing.Point(19, 280);
+            this.panel10_1.Name = "panel10_1";
+            this.panel10_1.Size = new System.Drawing.Size(1317, 38);
+            this.panel10_1.TabIndex = 162;
             // 
             // IMT_REMARK_0
             // 
@@ -1755,510 +2259,6 @@
             this.IMT_GYONO_0.TabIndex = 25;
             this.IMT_GYONO_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel41
-            // 
-            this.panel41.Controls.Add(this.IMT_GYONO_1);
-            this.panel41.Controls.Add(this.Space1);
-            this.panel41.Controls.Add(this.IMN_R5UNITPRICE_1);
-            this.panel41.Controls.Add(this.IMN_R4UNITPRICE_1);
-            this.panel41.Controls.Add(this.IMN_R3UNITPRICE_1);
-            this.panel41.Controls.Add(this.IMN_R2UNITPRICE_1);
-            this.panel41.Controls.Add(this.IMT_REMARK_1);
-            this.panel41.Controls.Add(this.IMN_R1UNITPRICE_1);
-            this.panel41.Controls.Add(this.IMN_COSTUNPRICE_1);
-            this.panel41.Controls.Add(this.IMN_SSUNITPRICE_1);
-            this.panel41.Controls.Add(this.IMN_UNITPRICE_1);
-            this.panel41.Controls.Add(this.IMT_ENDDT_1);
-            this.panel41.Controls.Add(this.IMT_STADT_1);
-            this.panel41.Controls.Add(this.IMT_JANCD_1);
-            this.panel41.Controls.Add(this.IMT_ITMNM_1);
-            this.panel41.Controls.Add(this.IMT_ITMCD_1);
-            this.panel41.Controls.Add(this.panel42);
-            this.panel41.Controls.Add(this.panel45);
-            this.panel41.Controls.Add(this.panel46);
-            this.panel41.Location = new System.Drawing.Point(14, 248);
-            this.panel41.Name = "panel41";
-            this.panel41.Size = new System.Drawing.Size(1317, 38);
-            this.panel41.TabIndex = 169;
-            // 
-            // panel42
-            // 
-            this.panel42.Controls.Add(this.panel43);
-            this.panel42.Controls.Add(this.panel44);
-            this.panel42.Location = new System.Drawing.Point(1, 39);
-            this.panel42.Name = "panel42";
-            this.panel42.Size = new System.Drawing.Size(1317, 38);
-            this.panel42.TabIndex = 166;
-            // 
-            // panel43
-            // 
-            this.panel43.Location = new System.Drawing.Point(0, 78);
-            this.panel43.Name = "panel43";
-            this.panel43.Size = new System.Drawing.Size(1317, 38);
-            this.panel43.TabIndex = 165;
-            // 
-            // panel44
-            // 
-            this.panel44.Location = new System.Drawing.Point(0, 40);
-            this.panel44.Name = "panel44";
-            this.panel44.Size = new System.Drawing.Size(1317, 38);
-            this.panel44.TabIndex = 164;
-            // 
-            // panel45
-            // 
-            this.panel45.Location = new System.Drawing.Point(0, 78);
-            this.panel45.Name = "panel45";
-            this.panel45.Size = new System.Drawing.Size(1317, 38);
-            this.panel45.TabIndex = 165;
-            // 
-            // panel46
-            // 
-            this.panel46.Location = new System.Drawing.Point(0, 40);
-            this.panel46.Name = "panel46";
-            this.panel46.Size = new System.Drawing.Size(1317, 38);
-            this.panel46.TabIndex = 164;
-            // 
-            // Space1
-            // 
-            this.Space1.AllowMinus = false;
-            this.Space1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.Space1.BackColor = System.Drawing.Color.DarkGray;
-            this.Space1.BorderColor = false;
-            this.Space1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Space1.ClientColor = System.Drawing.SystemColors.Window;
-            this.Space1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.Space1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.Space1.DecimalPlace = 0;
-            this.Space1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.Space1.IntegerPart = 0;
-            this.Space1.IsCorrectDate = true;
-            this.Space1.isEnterKeyDown = false;
-            this.Space1.IsFirstTime = true;
-            this.Space1.isMaxLengthErr = false;
-            this.Space1.IsNumber = true;
-            this.Space1.IsShop = false;
-            this.Space1.Length = 32767;
-            this.Space1.Location = new System.Drawing.Point(1136, 1);
-            this.Space1.MoveNext = true;
-            this.Space1.Name = "Space1";
-            this.Space1.Size = new System.Drawing.Size(181, 19);
-            this.Space1.TabIndex = 179;
-            this.Space1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // IMN_R5UNITPRICE_1
-            // 
-            this.IMN_R5UNITPRICE_1.AllowMinus = false;
-            this.IMN_R5UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMN_R5UNITPRICE_1.BackColor = System.Drawing.Color.White;
-            this.IMN_R5UNITPRICE_1.BorderColor = false;
-            this.IMN_R5UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_R5UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMN_R5UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMN_R5UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMN_R5UNITPRICE_1.DecimalPlace = 0;
-            this.IMN_R5UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMN_R5UNITPRICE_1.IntegerPart = 0;
-            this.IMN_R5UNITPRICE_1.IsCorrectDate = true;
-            this.IMN_R5UNITPRICE_1.isEnterKeyDown = false;
-            this.IMN_R5UNITPRICE_1.IsFirstTime = true;
-            this.IMN_R5UNITPRICE_1.isMaxLengthErr = false;
-            this.IMN_R5UNITPRICE_1.IsNumber = true;
-            this.IMN_R5UNITPRICE_1.IsShop = false;
-            this.IMN_R5UNITPRICE_1.Length = 32767;
-            this.IMN_R5UNITPRICE_1.Location = new System.Drawing.Point(1046, 0);
-            this.IMN_R5UNITPRICE_1.MoveNext = true;
-            this.IMN_R5UNITPRICE_1.Name = "IMN_R5UNITPRICE_1";
-            this.IMN_R5UNITPRICE_1.Size = new System.Drawing.Size(90, 19);
-            this.IMN_R5UNITPRICE_1.TabIndex = 178;
-            this.IMN_R5UNITPRICE_1.Text = "999,999,999";
-            this.IMN_R5UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_R5UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // IMN_R4UNITPRICE_1
-            // 
-            this.IMN_R4UNITPRICE_1.AllowMinus = false;
-            this.IMN_R4UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMN_R4UNITPRICE_1.BackColor = System.Drawing.Color.White;
-            this.IMN_R4UNITPRICE_1.BorderColor = false;
-            this.IMN_R4UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_R4UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMN_R4UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMN_R4UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMN_R4UNITPRICE_1.DecimalPlace = 0;
-            this.IMN_R4UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMN_R4UNITPRICE_1.IntegerPart = 0;
-            this.IMN_R4UNITPRICE_1.IsCorrectDate = true;
-            this.IMN_R4UNITPRICE_1.isEnterKeyDown = false;
-            this.IMN_R4UNITPRICE_1.IsFirstTime = true;
-            this.IMN_R4UNITPRICE_1.isMaxLengthErr = false;
-            this.IMN_R4UNITPRICE_1.IsNumber = true;
-            this.IMN_R4UNITPRICE_1.IsShop = false;
-            this.IMN_R4UNITPRICE_1.Length = 32767;
-            this.IMN_R4UNITPRICE_1.Location = new System.Drawing.Point(956, 0);
-            this.IMN_R4UNITPRICE_1.MoveNext = true;
-            this.IMN_R4UNITPRICE_1.Name = "IMN_R4UNITPRICE_1";
-            this.IMN_R4UNITPRICE_1.Size = new System.Drawing.Size(90, 19);
-            this.IMN_R4UNITPRICE_1.TabIndex = 177;
-            this.IMN_R4UNITPRICE_1.Text = "999,999,999";
-            this.IMN_R4UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_R4UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // IMN_R3UNITPRICE_1
-            // 
-            this.IMN_R3UNITPRICE_1.AllowMinus = false;
-            this.IMN_R3UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMN_R3UNITPRICE_1.BackColor = System.Drawing.Color.White;
-            this.IMN_R3UNITPRICE_1.BorderColor = false;
-            this.IMN_R3UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_R3UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMN_R3UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMN_R3UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMN_R3UNITPRICE_1.DecimalPlace = 0;
-            this.IMN_R3UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMN_R3UNITPRICE_1.IntegerPart = 0;
-            this.IMN_R3UNITPRICE_1.IsCorrectDate = true;
-            this.IMN_R3UNITPRICE_1.isEnterKeyDown = false;
-            this.IMN_R3UNITPRICE_1.IsFirstTime = true;
-            this.IMN_R3UNITPRICE_1.isMaxLengthErr = false;
-            this.IMN_R3UNITPRICE_1.IsNumber = true;
-            this.IMN_R3UNITPRICE_1.IsShop = false;
-            this.IMN_R3UNITPRICE_1.Length = 32767;
-            this.IMN_R3UNITPRICE_1.Location = new System.Drawing.Point(866, 0);
-            this.IMN_R3UNITPRICE_1.MoveNext = true;
-            this.IMN_R3UNITPRICE_1.Name = "IMN_R3UNITPRICE_1";
-            this.IMN_R3UNITPRICE_1.Size = new System.Drawing.Size(90, 19);
-            this.IMN_R3UNITPRICE_1.TabIndex = 176;
-            this.IMN_R3UNITPRICE_1.Text = "999,999,999";
-            this.IMN_R3UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_R3UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // IMN_R2UNITPRICE_1
-            // 
-            this.IMN_R2UNITPRICE_1.AllowMinus = false;
-            this.IMN_R2UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMN_R2UNITPRICE_1.BackColor = System.Drawing.Color.White;
-            this.IMN_R2UNITPRICE_1.BorderColor = false;
-            this.IMN_R2UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_R2UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMN_R2UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMN_R2UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMN_R2UNITPRICE_1.DecimalPlace = 0;
-            this.IMN_R2UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMN_R2UNITPRICE_1.IntegerPart = 0;
-            this.IMN_R2UNITPRICE_1.IsCorrectDate = true;
-            this.IMN_R2UNITPRICE_1.isEnterKeyDown = false;
-            this.IMN_R2UNITPRICE_1.IsFirstTime = true;
-            this.IMN_R2UNITPRICE_1.isMaxLengthErr = false;
-            this.IMN_R2UNITPRICE_1.IsNumber = true;
-            this.IMN_R2UNITPRICE_1.IsShop = false;
-            this.IMN_R2UNITPRICE_1.Length = 32767;
-            this.IMN_R2UNITPRICE_1.Location = new System.Drawing.Point(776, 0);
-            this.IMN_R2UNITPRICE_1.MoveNext = true;
-            this.IMN_R2UNITPRICE_1.Name = "IMN_R2UNITPRICE_1";
-            this.IMN_R2UNITPRICE_1.Size = new System.Drawing.Size(90, 19);
-            this.IMN_R2UNITPRICE_1.TabIndex = 175;
-            this.IMN_R2UNITPRICE_1.Text = "999,999,999";
-            this.IMN_R2UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_R2UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // IMT_REMARK_1
-            // 
-            this.IMT_REMARK_1.AllowMinus = false;
-            this.IMT_REMARK_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_REMARK_1.BackColor = System.Drawing.Color.White;
-            this.IMT_REMARK_1.BorderColor = false;
-            this.IMT_REMARK_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_REMARK_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMT_REMARK_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_REMARK_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_REMARK_1.DecimalPlace = 0;
-            this.IMT_REMARK_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMT_REMARK_1.IntegerPart = 0;
-            this.IMT_REMARK_1.IsCorrectDate = true;
-            this.IMT_REMARK_1.isEnterKeyDown = false;
-            this.IMT_REMARK_1.IsFirstTime = true;
-            this.IMT_REMARK_1.isMaxLengthErr = false;
-            this.IMT_REMARK_1.IsNumber = true;
-            this.IMT_REMARK_1.IsShop = false;
-            this.IMT_REMARK_1.Length = 32767;
-            this.IMT_REMARK_1.Location = new System.Drawing.Point(686, 19);
-            this.IMT_REMARK_1.MoveNext = true;
-            this.IMT_REMARK_1.Name = "IMT_REMARK_1";
-            this.IMT_REMARK_1.Size = new System.Drawing.Size(630, 19);
-            this.IMT_REMARK_1.TabIndex = 182;
-            this.IMT_REMARK_1.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50ＸＸＸＸＸＸＸＸＸ60";
-            this.IMT_REMARK_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // IMN_R1UNITPRICE_1
-            // 
-            this.IMN_R1UNITPRICE_1.AllowMinus = false;
-            this.IMN_R1UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMN_R1UNITPRICE_1.BackColor = System.Drawing.Color.White;
-            this.IMN_R1UNITPRICE_1.BorderColor = false;
-            this.IMN_R1UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_R1UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMN_R1UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMN_R1UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMN_R1UNITPRICE_1.DecimalPlace = 0;
-            this.IMN_R1UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMN_R1UNITPRICE_1.IntegerPart = 0;
-            this.IMN_R1UNITPRICE_1.IsCorrectDate = true;
-            this.IMN_R1UNITPRICE_1.isEnterKeyDown = false;
-            this.IMN_R1UNITPRICE_1.IsFirstTime = true;
-            this.IMN_R1UNITPRICE_1.isMaxLengthErr = false;
-            this.IMN_R1UNITPRICE_1.IsNumber = true;
-            this.IMN_R1UNITPRICE_1.IsShop = false;
-            this.IMN_R1UNITPRICE_1.Length = 32767;
-            this.IMN_R1UNITPRICE_1.Location = new System.Drawing.Point(686, 0);
-            this.IMN_R1UNITPRICE_1.MoveNext = true;
-            this.IMN_R1UNITPRICE_1.Name = "IMN_R1UNITPRICE_1";
-            this.IMN_R1UNITPRICE_1.Size = new System.Drawing.Size(90, 19);
-            this.IMN_R1UNITPRICE_1.TabIndex = 174;
-            this.IMN_R1UNITPRICE_1.Text = "999,999,999";
-            this.IMN_R1UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_R1UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // IMN_COSTUNPRICE_1
-            // 
-            this.IMN_COSTUNPRICE_1.AllowMinus = false;
-            this.IMN_COSTUNPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMN_COSTUNPRICE_1.BackColor = System.Drawing.Color.DarkGray;
-            this.IMN_COSTUNPRICE_1.BorderColor = false;
-            this.IMN_COSTUNPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_COSTUNPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMN_COSTUNPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMN_COSTUNPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMN_COSTUNPRICE_1.DecimalPlace = 0;
-            this.IMN_COSTUNPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMN_COSTUNPRICE_1.IntegerPart = 0;
-            this.IMN_COSTUNPRICE_1.IsCorrectDate = true;
-            this.IMN_COSTUNPRICE_1.isEnterKeyDown = false;
-            this.IMN_COSTUNPRICE_1.IsFirstTime = true;
-            this.IMN_COSTUNPRICE_1.isMaxLengthErr = false;
-            this.IMN_COSTUNPRICE_1.IsNumber = true;
-            this.IMN_COSTUNPRICE_1.IsShop = false;
-            this.IMN_COSTUNPRICE_1.Length = 32767;
-            this.IMN_COSTUNPRICE_1.Location = new System.Drawing.Point(603, 19);
-            this.IMN_COSTUNPRICE_1.MoveNext = true;
-            this.IMN_COSTUNPRICE_1.Name = "IMN_COSTUNPRICE_1";
-            this.IMN_COSTUNPRICE_1.Size = new System.Drawing.Size(83, 19);
-            this.IMN_COSTUNPRICE_1.TabIndex = 181;
-            this.IMN_COSTUNPRICE_1.Text = "999,999,999";
-            this.IMN_COSTUNPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_COSTUNPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // IMN_SSUNITPRICE_1
-            // 
-            this.IMN_SSUNITPRICE_1.AllowMinus = false;
-            this.IMN_SSUNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMN_SSUNITPRICE_1.BackColor = System.Drawing.Color.White;
-            this.IMN_SSUNITPRICE_1.BorderColor = false;
-            this.IMN_SSUNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_SSUNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMN_SSUNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMN_SSUNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMN_SSUNITPRICE_1.DecimalPlace = 0;
-            this.IMN_SSUNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMN_SSUNITPRICE_1.IntegerPart = 0;
-            this.IMN_SSUNITPRICE_1.IsCorrectDate = true;
-            this.IMN_SSUNITPRICE_1.isEnterKeyDown = false;
-            this.IMN_SSUNITPRICE_1.IsFirstTime = true;
-            this.IMN_SSUNITPRICE_1.isMaxLengthErr = false;
-            this.IMN_SSUNITPRICE_1.IsNumber = true;
-            this.IMN_SSUNITPRICE_1.IsShop = false;
-            this.IMN_SSUNITPRICE_1.Length = 32767;
-            this.IMN_SSUNITPRICE_1.Location = new System.Drawing.Point(603, 1);
-            this.IMN_SSUNITPRICE_1.MoveNext = true;
-            this.IMN_SSUNITPRICE_1.Name = "IMN_SSUNITPRICE_1";
-            this.IMN_SSUNITPRICE_1.Size = new System.Drawing.Size(83, 19);
-            this.IMN_SSUNITPRICE_1.TabIndex = 173;
-            this.IMN_SSUNITPRICE_1.Text = "999,999,999";
-            this.IMN_SSUNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_SSUNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // IMN_UNITPRICE_1
-            // 
-            this.IMN_UNITPRICE_1.AllowMinus = false;
-            this.IMN_UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMN_UNITPRICE_1.BackColor = System.Drawing.Color.White;
-            this.IMN_UNITPRICE_1.BorderColor = false;
-            this.IMN_UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMN_UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMN_UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMN_UNITPRICE_1.DecimalPlace = 0;
-            this.IMN_UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMN_UNITPRICE_1.IntegerPart = 0;
-            this.IMN_UNITPRICE_1.IsCorrectDate = true;
-            this.IMN_UNITPRICE_1.isEnterKeyDown = false;
-            this.IMN_UNITPRICE_1.IsFirstTime = true;
-            this.IMN_UNITPRICE_1.isMaxLengthErr = false;
-            this.IMN_UNITPRICE_1.IsNumber = true;
-            this.IMN_UNITPRICE_1.IsShop = false;
-            this.IMN_UNITPRICE_1.Length = 32767;
-            this.IMN_UNITPRICE_1.Location = new System.Drawing.Point(520, 1);
-            this.IMN_UNITPRICE_1.MoveNext = true;
-            this.IMN_UNITPRICE_1.Name = "IMN_UNITPRICE_1";
-            this.IMN_UNITPRICE_1.Size = new System.Drawing.Size(83, 19);
-            this.IMN_UNITPRICE_1.TabIndex = 172;
-            this.IMN_UNITPRICE_1.Text = "999,999,999";
-            this.IMN_UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // IMT_ENDDT_1
-            // 
-            this.IMT_ENDDT_1.AllowMinus = false;
-            this.IMT_ENDDT_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ENDDT_1.BackColor = System.Drawing.Color.White;
-            this.IMT_ENDDT_1.BorderColor = false;
-            this.IMT_ENDDT_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ENDDT_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMT_ENDDT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_ENDDT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ENDDT_1.DecimalPlace = 0;
-            this.IMT_ENDDT_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMT_ENDDT_1.IntegerPart = 0;
-            this.IMT_ENDDT_1.IsCorrectDate = true;
-            this.IMT_ENDDT_1.isEnterKeyDown = false;
-            this.IMT_ENDDT_1.IsFirstTime = true;
-            this.IMT_ENDDT_1.isMaxLengthErr = false;
-            this.IMT_ENDDT_1.IsNumber = true;
-            this.IMT_ENDDT_1.IsShop = false;
-            this.IMT_ENDDT_1.Length = 32767;
-            this.IMT_ENDDT_1.Location = new System.Drawing.Point(437, 1);
-            this.IMT_ENDDT_1.MoveNext = true;
-            this.IMT_ENDDT_1.Name = "IMT_ENDDT_1";
-            this.IMT_ENDDT_1.Size = new System.Drawing.Size(83, 19);
-            this.IMT_ENDDT_1.TabIndex = 171;
-            this.IMT_ENDDT_1.Text = "9999/99/99";
-            this.IMT_ENDDT_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.IMT_ENDDT_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // IMT_STADT_1
-            // 
-            this.IMT_STADT_1.AllowMinus = false;
-            this.IMT_STADT_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_STADT_1.BackColor = System.Drawing.Color.White;
-            this.IMT_STADT_1.BorderColor = false;
-            this.IMT_STADT_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_STADT_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMT_STADT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_STADT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.IMT_STADT_1.DecimalPlace = 0;
-            this.IMT_STADT_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMT_STADT_1.IntegerPart = 0;
-            this.IMT_STADT_1.IsCorrectDate = true;
-            this.IMT_STADT_1.isEnterKeyDown = false;
-            this.IMT_STADT_1.IsFirstTime = true;
-            this.IMT_STADT_1.isMaxLengthErr = false;
-            this.IMT_STADT_1.IsNumber = true;
-            this.IMT_STADT_1.IsShop = false;
-            this.IMT_STADT_1.Length = 10;
-            this.IMT_STADT_1.Location = new System.Drawing.Point(354, 1);
-            this.IMT_STADT_1.MaxLength = 10;
-            this.IMT_STADT_1.MoveNext = true;
-            this.IMT_STADT_1.Name = "IMT_STADT_1";
-            this.IMT_STADT_1.Size = new System.Drawing.Size(83, 19);
-            this.IMT_STADT_1.TabIndex = 170;
-            this.IMT_STADT_1.Text = "9999/99/99";
-            this.IMT_STADT_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.IMT_STADT_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // IMT_JANCD_1
-            // 
-            this.IMT_JANCD_1.AllowMinus = false;
-            this.IMT_JANCD_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_JANCD_1.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_JANCD_1.BorderColor = false;
-            this.IMT_JANCD_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_JANCD_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMT_JANCD_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_JANCD_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_JANCD_1.DecimalPlace = 0;
-            this.IMT_JANCD_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMT_JANCD_1.IntegerPart = 0;
-            this.IMT_JANCD_1.IsCorrectDate = true;
-            this.IMT_JANCD_1.isEnterKeyDown = false;
-            this.IMT_JANCD_1.IsFirstTime = true;
-            this.IMT_JANCD_1.isMaxLengthErr = false;
-            this.IMT_JANCD_1.IsNumber = true;
-            this.IMT_JANCD_1.IsShop = false;
-            this.IMT_JANCD_1.Length = 32767;
-            this.IMT_JANCD_1.Location = new System.Drawing.Point(250, 1);
-            this.IMT_JANCD_1.MoveNext = true;
-            this.IMT_JANCD_1.Name = "IMT_JANCD_1";
-            this.IMT_JANCD_1.Size = new System.Drawing.Size(104, 19);
-            this.IMT_JANCD_1.TabIndex = 169;
-            this.IMT_JANCD_1.Text = "XXXXXXXXX1XX3";
-            this.IMT_JANCD_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // IMT_ITMNM_1
-            // 
-            this.IMT_ITMNM_1.AllowMinus = false;
-            this.IMT_ITMNM_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ITMNM_1.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMNM_1.BorderColor = false;
-            this.IMT_ITMNM_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMNM_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMT_ITMNM_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_ITMNM_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ITMNM_1.DecimalPlace = 0;
-            this.IMT_ITMNM_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMT_ITMNM_1.IntegerPart = 0;
-            this.IMT_ITMNM_1.IsCorrectDate = true;
-            this.IMT_ITMNM_1.isEnterKeyDown = false;
-            this.IMT_ITMNM_1.IsFirstTime = true;
-            this.IMT_ITMNM_1.isMaxLengthErr = false;
-            this.IMT_ITMNM_1.IsNumber = true;
-            this.IMT_ITMNM_1.IsShop = false;
-            this.IMT_ITMNM_1.Length = 32767;
-            this.IMT_ITMNM_1.Location = new System.Drawing.Point(28, 19);
-            this.IMT_ITMNM_1.MoveNext = true;
-            this.IMT_ITMNM_1.Name = "IMT_ITMNM_1";
-            this.IMT_ITMNM_1.Size = new System.Drawing.Size(575, 19);
-            this.IMT_ITMNM_1.TabIndex = 180;
-            this.IMT_ITMNM_1.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
-            this.IMT_ITMNM_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // IMT_ITMCD_1
-            // 
-            this.IMT_ITMCD_1.AllowMinus = false;
-            this.IMT_ITMCD_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ITMCD_1.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_1.BorderColor = false;
-            this.IMT_ITMCD_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMT_ITMCD_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_ITMCD_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ITMCD_1.DecimalPlace = 0;
-            this.IMT_ITMCD_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMT_ITMCD_1.IntegerPart = 0;
-            this.IMT_ITMCD_1.IsCorrectDate = true;
-            this.IMT_ITMCD_1.isEnterKeyDown = false;
-            this.IMT_ITMCD_1.IsFirstTime = true;
-            this.IMT_ITMCD_1.isMaxLengthErr = false;
-            this.IMT_ITMCD_1.IsNumber = true;
-            this.IMT_ITMCD_1.IsShop = true;
-            this.IMT_ITMCD_1.Length = 32767;
-            this.IMT_ITMCD_1.Location = new System.Drawing.Point(28, 1);
-            this.IMT_ITMCD_1.MoveNext = true;
-            this.IMT_ITMCD_1.Name = "IMT_ITMCD_1";
-            this.IMT_ITMCD_1.Size = new System.Drawing.Size(222, 19);
-            this.IMT_ITMCD_1.TabIndex = 168;
-            this.IMT_ITMCD_1.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_ITMCD_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // IMT_GYONO_1
-            // 
-            this.IMT_GYONO_1.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_GYONO_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_GYONO_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IMT_GYONO_1.Location = new System.Drawing.Point(0, 0);
-            this.IMT_GYONO_1.Name = "IMT_GYONO_1";
-            this.IMT_GYONO_1.Size = new System.Drawing.Size(28, 38);
-            this.IMT_GYONO_1.TabIndex = 167;
-            this.IMT_GYONO_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // IMT_GYONO_2
             // 
             this.IMT_GYONO_2.BackColor = System.Drawing.Color.DarkGray;
@@ -2296,43 +2296,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1317, 38);
             this.panel8.TabIndex = 164;
-            // 
-            // panel14
-            // 
-            this.panel14.Controls.Add(this.panel15);
-            this.panel14.Controls.Add(this.panel16);
-            this.panel14.Location = new System.Drawing.Point(1, 39);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(1317, 38);
-            this.panel14.TabIndex = 166;
-            // 
-            // panel15
-            // 
-            this.panel15.Location = new System.Drawing.Point(0, 78);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(1317, 38);
-            this.panel15.TabIndex = 165;
-            // 
-            // panel16
-            // 
-            this.panel16.Location = new System.Drawing.Point(0, 40);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(1317, 38);
-            this.panel16.TabIndex = 164;
-            // 
-            // panel12
-            // 
-            this.panel12.Location = new System.Drawing.Point(0, 78);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(1317, 38);
-            this.panel12.TabIndex = 165;
-            // 
-            // panel13
-            // 
-            this.panel13.Location = new System.Drawing.Point(0, 40);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(1317, 38);
-            this.panel13.TabIndex = 164;
             // 
             // Space2
             // 
@@ -2764,6 +2727,43 @@
             this.IMT_ITMCD_2.TabIndex = 167;
             this.IMT_ITMCD_2.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.panel15);
+            this.panel14.Controls.Add(this.panel16);
+            this.panel14.Location = new System.Drawing.Point(1, 39);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(1317, 38);
+            this.panel14.TabIndex = 166;
+            // 
+            // panel15
+            // 
+            this.panel15.Location = new System.Drawing.Point(0, 78);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(1317, 38);
+            this.panel15.TabIndex = 165;
+            // 
+            // panel16
+            // 
+            this.panel16.Location = new System.Drawing.Point(0, 40);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(1317, 38);
+            this.panel16.TabIndex = 164;
+            // 
+            // panel12
+            // 
+            this.panel12.Location = new System.Drawing.Point(0, 78);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(1317, 38);
+            this.panel12.TabIndex = 165;
+            // 
+            // panel13
+            // 
+            this.panel13.Location = new System.Drawing.Point(0, 40);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(1317, 38);
+            this.panel13.TabIndex = 164;
             // 
             // panel3
             // 
@@ -3247,185 +3247,6 @@
             this.panel17.Size = new System.Drawing.Size(1317, 38);
             this.panel17.TabIndex = 168;
             // 
-            // panel29
-            // 
-            this.panel29.Controls.Add(this.panel30);
-            this.panel29.Controls.Add(this.panel36);
-            this.panel29.Controls.Add(this.panel39);
-            this.panel29.Controls.Add(this.panel40);
-            this.panel29.Location = new System.Drawing.Point(1, 40);
-            this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(1317, 38);
-            this.panel29.TabIndex = 169;
-            // 
-            // panel30
-            // 
-            this.panel30.Controls.Add(this.panel31);
-            this.panel30.Controls.Add(this.panel34);
-            this.panel30.Controls.Add(this.panel35);
-            this.panel30.Location = new System.Drawing.Point(2, 40);
-            this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(1317, 38);
-            this.panel30.TabIndex = 168;
-            // 
-            // panel31
-            // 
-            this.panel31.Controls.Add(this.panel32);
-            this.panel31.Controls.Add(this.panel33);
-            this.panel31.Location = new System.Drawing.Point(1, 39);
-            this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(1317, 38);
-            this.panel31.TabIndex = 166;
-            // 
-            // panel32
-            // 
-            this.panel32.Location = new System.Drawing.Point(0, 78);
-            this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(1317, 38);
-            this.panel32.TabIndex = 165;
-            // 
-            // panel33
-            // 
-            this.panel33.Location = new System.Drawing.Point(0, 40);
-            this.panel33.Name = "panel33";
-            this.panel33.Size = new System.Drawing.Size(1317, 38);
-            this.panel33.TabIndex = 164;
-            // 
-            // panel34
-            // 
-            this.panel34.Location = new System.Drawing.Point(0, 78);
-            this.panel34.Name = "panel34";
-            this.panel34.Size = new System.Drawing.Size(1317, 38);
-            this.panel34.TabIndex = 165;
-            // 
-            // panel35
-            // 
-            this.panel35.Location = new System.Drawing.Point(0, 40);
-            this.panel35.Name = "panel35";
-            this.panel35.Size = new System.Drawing.Size(1317, 38);
-            this.panel35.TabIndex = 164;
-            // 
-            // panel36
-            // 
-            this.panel36.Controls.Add(this.panel37);
-            this.panel36.Controls.Add(this.panel38);
-            this.panel36.Location = new System.Drawing.Point(1, 39);
-            this.panel36.Name = "panel36";
-            this.panel36.Size = new System.Drawing.Size(1317, 38);
-            this.panel36.TabIndex = 166;
-            // 
-            // panel37
-            // 
-            this.panel37.Location = new System.Drawing.Point(0, 78);
-            this.panel37.Name = "panel37";
-            this.panel37.Size = new System.Drawing.Size(1317, 38);
-            this.panel37.TabIndex = 165;
-            // 
-            // panel38
-            // 
-            this.panel38.Location = new System.Drawing.Point(0, 40);
-            this.panel38.Name = "panel38";
-            this.panel38.Size = new System.Drawing.Size(1317, 38);
-            this.panel38.TabIndex = 164;
-            // 
-            // panel39
-            // 
-            this.panel39.Location = new System.Drawing.Point(0, 78);
-            this.panel39.Name = "panel39";
-            this.panel39.Size = new System.Drawing.Size(1317, 38);
-            this.panel39.TabIndex = 165;
-            // 
-            // panel40
-            // 
-            this.panel40.Location = new System.Drawing.Point(0, 40);
-            this.panel40.Name = "panel40";
-            this.panel40.Size = new System.Drawing.Size(1317, 38);
-            this.panel40.TabIndex = 164;
-            // 
-            // panel23
-            // 
-            this.panel23.Controls.Add(this.panel24);
-            this.panel23.Controls.Add(this.panel27);
-            this.panel23.Controls.Add(this.panel28);
-            this.panel23.Location = new System.Drawing.Point(2, 40);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(1317, 38);
-            this.panel23.TabIndex = 168;
-            // 
-            // panel24
-            // 
-            this.panel24.Controls.Add(this.panel25);
-            this.panel24.Controls.Add(this.panel26);
-            this.panel24.Location = new System.Drawing.Point(1, 39);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(1317, 38);
-            this.panel24.TabIndex = 166;
-            // 
-            // panel25
-            // 
-            this.panel25.Location = new System.Drawing.Point(0, 78);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(1317, 38);
-            this.panel25.TabIndex = 165;
-            // 
-            // panel26
-            // 
-            this.panel26.Location = new System.Drawing.Point(0, 40);
-            this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(1317, 38);
-            this.panel26.TabIndex = 164;
-            // 
-            // panel27
-            // 
-            this.panel27.Location = new System.Drawing.Point(0, 78);
-            this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(1317, 38);
-            this.panel27.TabIndex = 165;
-            // 
-            // panel28
-            // 
-            this.panel28.Location = new System.Drawing.Point(0, 40);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(1317, 38);
-            this.panel28.TabIndex = 164;
-            // 
-            // panel18
-            // 
-            this.panel18.Controls.Add(this.panel19);
-            this.panel18.Controls.Add(this.panel20);
-            this.panel18.Location = new System.Drawing.Point(1, 39);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(1317, 38);
-            this.panel18.TabIndex = 166;
-            // 
-            // panel19
-            // 
-            this.panel19.Location = new System.Drawing.Point(0, 78);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(1317, 38);
-            this.panel19.TabIndex = 165;
-            // 
-            // panel20
-            // 
-            this.panel20.Location = new System.Drawing.Point(0, 40);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(1317, 38);
-            this.panel20.TabIndex = 164;
-            // 
-            // panel21
-            // 
-            this.panel21.Location = new System.Drawing.Point(0, 78);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(1317, 38);
-            this.panel21.TabIndex = 165;
-            // 
-            // panel22
-            // 
-            this.panel22.Location = new System.Drawing.Point(0, 40);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(1317, 38);
-            this.panel22.TabIndex = 164;
-            // 
             // Space4
             // 
             this.Space4.AllowMinus = false;
@@ -3857,6 +3678,185 @@
             this.IMT_ITMCD_4.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
+            // panel29
+            // 
+            this.panel29.Controls.Add(this.panel30);
+            this.panel29.Controls.Add(this.panel36);
+            this.panel29.Controls.Add(this.panel39);
+            this.panel29.Controls.Add(this.panel40);
+            this.panel29.Location = new System.Drawing.Point(1, 40);
+            this.panel29.Name = "panel29";
+            this.panel29.Size = new System.Drawing.Size(1317, 38);
+            this.panel29.TabIndex = 169;
+            // 
+            // panel30
+            // 
+            this.panel30.Controls.Add(this.panel31);
+            this.panel30.Controls.Add(this.panel34);
+            this.panel30.Controls.Add(this.panel35);
+            this.panel30.Location = new System.Drawing.Point(2, 40);
+            this.panel30.Name = "panel30";
+            this.panel30.Size = new System.Drawing.Size(1317, 38);
+            this.panel30.TabIndex = 168;
+            // 
+            // panel31
+            // 
+            this.panel31.Controls.Add(this.panel32);
+            this.panel31.Controls.Add(this.panel33);
+            this.panel31.Location = new System.Drawing.Point(1, 39);
+            this.panel31.Name = "panel31";
+            this.panel31.Size = new System.Drawing.Size(1317, 38);
+            this.panel31.TabIndex = 166;
+            // 
+            // panel32
+            // 
+            this.panel32.Location = new System.Drawing.Point(0, 78);
+            this.panel32.Name = "panel32";
+            this.panel32.Size = new System.Drawing.Size(1317, 38);
+            this.panel32.TabIndex = 165;
+            // 
+            // panel33
+            // 
+            this.panel33.Location = new System.Drawing.Point(0, 40);
+            this.panel33.Name = "panel33";
+            this.panel33.Size = new System.Drawing.Size(1317, 38);
+            this.panel33.TabIndex = 164;
+            // 
+            // panel34
+            // 
+            this.panel34.Location = new System.Drawing.Point(0, 78);
+            this.panel34.Name = "panel34";
+            this.panel34.Size = new System.Drawing.Size(1317, 38);
+            this.panel34.TabIndex = 165;
+            // 
+            // panel35
+            // 
+            this.panel35.Location = new System.Drawing.Point(0, 40);
+            this.panel35.Name = "panel35";
+            this.panel35.Size = new System.Drawing.Size(1317, 38);
+            this.panel35.TabIndex = 164;
+            // 
+            // panel36
+            // 
+            this.panel36.Controls.Add(this.panel37);
+            this.panel36.Controls.Add(this.panel38);
+            this.panel36.Location = new System.Drawing.Point(1, 39);
+            this.panel36.Name = "panel36";
+            this.panel36.Size = new System.Drawing.Size(1317, 38);
+            this.panel36.TabIndex = 166;
+            // 
+            // panel37
+            // 
+            this.panel37.Location = new System.Drawing.Point(0, 78);
+            this.panel37.Name = "panel37";
+            this.panel37.Size = new System.Drawing.Size(1317, 38);
+            this.panel37.TabIndex = 165;
+            // 
+            // panel38
+            // 
+            this.panel38.Location = new System.Drawing.Point(0, 40);
+            this.panel38.Name = "panel38";
+            this.panel38.Size = new System.Drawing.Size(1317, 38);
+            this.panel38.TabIndex = 164;
+            // 
+            // panel39
+            // 
+            this.panel39.Location = new System.Drawing.Point(0, 78);
+            this.panel39.Name = "panel39";
+            this.panel39.Size = new System.Drawing.Size(1317, 38);
+            this.panel39.TabIndex = 165;
+            // 
+            // panel40
+            // 
+            this.panel40.Location = new System.Drawing.Point(0, 40);
+            this.panel40.Name = "panel40";
+            this.panel40.Size = new System.Drawing.Size(1317, 38);
+            this.panel40.TabIndex = 164;
+            // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.panel24);
+            this.panel23.Controls.Add(this.panel27);
+            this.panel23.Controls.Add(this.panel28);
+            this.panel23.Location = new System.Drawing.Point(2, 40);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(1317, 38);
+            this.panel23.TabIndex = 168;
+            // 
+            // panel24
+            // 
+            this.panel24.Controls.Add(this.panel25);
+            this.panel24.Controls.Add(this.panel26);
+            this.panel24.Location = new System.Drawing.Point(1, 39);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(1317, 38);
+            this.panel24.TabIndex = 166;
+            // 
+            // panel25
+            // 
+            this.panel25.Location = new System.Drawing.Point(0, 78);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(1317, 38);
+            this.panel25.TabIndex = 165;
+            // 
+            // panel26
+            // 
+            this.panel26.Location = new System.Drawing.Point(0, 40);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(1317, 38);
+            this.panel26.TabIndex = 164;
+            // 
+            // panel27
+            // 
+            this.panel27.Location = new System.Drawing.Point(0, 78);
+            this.panel27.Name = "panel27";
+            this.panel27.Size = new System.Drawing.Size(1317, 38);
+            this.panel27.TabIndex = 165;
+            // 
+            // panel28
+            // 
+            this.panel28.Location = new System.Drawing.Point(0, 40);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(1317, 38);
+            this.panel28.TabIndex = 164;
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.panel19);
+            this.panel18.Controls.Add(this.panel20);
+            this.panel18.Location = new System.Drawing.Point(1, 39);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(1317, 38);
+            this.panel18.TabIndex = 166;
+            // 
+            // panel19
+            // 
+            this.panel19.Location = new System.Drawing.Point(0, 78);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(1317, 38);
+            this.panel19.TabIndex = 165;
+            // 
+            // panel20
+            // 
+            this.panel20.Location = new System.Drawing.Point(0, 40);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(1317, 38);
+            this.panel20.TabIndex = 164;
+            // 
+            // panel21
+            // 
+            this.panel21.Location = new System.Drawing.Point(0, 78);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(1317, 38);
+            this.panel21.TabIndex = 165;
+            // 
+            // panel22
+            // 
+            this.panel22.Location = new System.Drawing.Point(0, 40);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(1317, 38);
+            this.panel22.TabIndex = 164;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.Space5);
@@ -3884,185 +3884,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1317, 38);
             this.panel4.TabIndex = 169;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.panel49);
-            this.panel5.Controls.Add(this.panel52);
-            this.panel5.Controls.Add(this.panel53);
-            this.panel5.Location = new System.Drawing.Point(1, 40);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1317, 38);
-            this.panel5.TabIndex = 169;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Controls.Add(this.panel47);
-            this.panel6.Controls.Add(this.panel48);
-            this.panel6.Location = new System.Drawing.Point(2, 40);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1317, 38);
-            this.panel6.TabIndex = 168;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.panel9);
-            this.panel7.Controls.Add(this.panel11);
-            this.panel7.Location = new System.Drawing.Point(1, 39);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1317, 38);
-            this.panel7.TabIndex = 166;
-            // 
-            // panel9
-            // 
-            this.panel9.Location = new System.Drawing.Point(0, 78);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1317, 38);
-            this.panel9.TabIndex = 165;
-            // 
-            // panel11
-            // 
-            this.panel11.Location = new System.Drawing.Point(0, 40);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1317, 38);
-            this.panel11.TabIndex = 164;
-            // 
-            // panel47
-            // 
-            this.panel47.Location = new System.Drawing.Point(0, 78);
-            this.panel47.Name = "panel47";
-            this.panel47.Size = new System.Drawing.Size(1317, 38);
-            this.panel47.TabIndex = 165;
-            // 
-            // panel48
-            // 
-            this.panel48.Location = new System.Drawing.Point(0, 40);
-            this.panel48.Name = "panel48";
-            this.panel48.Size = new System.Drawing.Size(1317, 38);
-            this.panel48.TabIndex = 164;
-            // 
-            // panel49
-            // 
-            this.panel49.Controls.Add(this.panel50);
-            this.panel49.Controls.Add(this.panel51);
-            this.panel49.Location = new System.Drawing.Point(1, 39);
-            this.panel49.Name = "panel49";
-            this.panel49.Size = new System.Drawing.Size(1317, 38);
-            this.panel49.TabIndex = 166;
-            // 
-            // panel50
-            // 
-            this.panel50.Location = new System.Drawing.Point(0, 78);
-            this.panel50.Name = "panel50";
-            this.panel50.Size = new System.Drawing.Size(1317, 38);
-            this.panel50.TabIndex = 165;
-            // 
-            // panel51
-            // 
-            this.panel51.Location = new System.Drawing.Point(0, 40);
-            this.panel51.Name = "panel51";
-            this.panel51.Size = new System.Drawing.Size(1317, 38);
-            this.panel51.TabIndex = 164;
-            // 
-            // panel52
-            // 
-            this.panel52.Location = new System.Drawing.Point(0, 78);
-            this.panel52.Name = "panel52";
-            this.panel52.Size = new System.Drawing.Size(1317, 38);
-            this.panel52.TabIndex = 165;
-            // 
-            // panel53
-            // 
-            this.panel53.Location = new System.Drawing.Point(0, 40);
-            this.panel53.Name = "panel53";
-            this.panel53.Size = new System.Drawing.Size(1317, 38);
-            this.panel53.TabIndex = 164;
-            // 
-            // panel54
-            // 
-            this.panel54.Controls.Add(this.panel55);
-            this.panel54.Controls.Add(this.panel58);
-            this.panel54.Controls.Add(this.panel59);
-            this.panel54.Location = new System.Drawing.Point(2, 40);
-            this.panel54.Name = "panel54";
-            this.panel54.Size = new System.Drawing.Size(1317, 38);
-            this.panel54.TabIndex = 168;
-            // 
-            // panel55
-            // 
-            this.panel55.Controls.Add(this.panel56);
-            this.panel55.Controls.Add(this.panel57);
-            this.panel55.Location = new System.Drawing.Point(1, 39);
-            this.panel55.Name = "panel55";
-            this.panel55.Size = new System.Drawing.Size(1317, 38);
-            this.panel55.TabIndex = 166;
-            // 
-            // panel56
-            // 
-            this.panel56.Location = new System.Drawing.Point(0, 78);
-            this.panel56.Name = "panel56";
-            this.panel56.Size = new System.Drawing.Size(1317, 38);
-            this.panel56.TabIndex = 165;
-            // 
-            // panel57
-            // 
-            this.panel57.Location = new System.Drawing.Point(0, 40);
-            this.panel57.Name = "panel57";
-            this.panel57.Size = new System.Drawing.Size(1317, 38);
-            this.panel57.TabIndex = 164;
-            // 
-            // panel58
-            // 
-            this.panel58.Location = new System.Drawing.Point(0, 78);
-            this.panel58.Name = "panel58";
-            this.panel58.Size = new System.Drawing.Size(1317, 38);
-            this.panel58.TabIndex = 165;
-            // 
-            // panel59
-            // 
-            this.panel59.Location = new System.Drawing.Point(0, 40);
-            this.panel59.Name = "panel59";
-            this.panel59.Size = new System.Drawing.Size(1317, 38);
-            this.panel59.TabIndex = 164;
-            // 
-            // panel60
-            // 
-            this.panel60.Controls.Add(this.panel61);
-            this.panel60.Controls.Add(this.panel62);
-            this.panel60.Location = new System.Drawing.Point(1, 39);
-            this.panel60.Name = "panel60";
-            this.panel60.Size = new System.Drawing.Size(1317, 38);
-            this.panel60.TabIndex = 166;
-            // 
-            // panel61
-            // 
-            this.panel61.Location = new System.Drawing.Point(0, 78);
-            this.panel61.Name = "panel61";
-            this.panel61.Size = new System.Drawing.Size(1317, 38);
-            this.panel61.TabIndex = 165;
-            // 
-            // panel62
-            // 
-            this.panel62.Location = new System.Drawing.Point(0, 40);
-            this.panel62.Name = "panel62";
-            this.panel62.Size = new System.Drawing.Size(1317, 38);
-            this.panel62.TabIndex = 164;
-            // 
-            // panel63
-            // 
-            this.panel63.Location = new System.Drawing.Point(0, 78);
-            this.panel63.Name = "panel63";
-            this.panel63.Size = new System.Drawing.Size(1317, 38);
-            this.panel63.TabIndex = 165;
-            // 
-            // panel64
-            // 
-            this.panel64.Location = new System.Drawing.Point(0, 40);
-            this.panel64.Name = "panel64";
-            this.panel64.Size = new System.Drawing.Size(1317, 38);
-            this.panel64.TabIndex = 164;
             // 
             // Space5
             // 
@@ -4495,6 +4316,185 @@
             this.IMT_ITMCD_5.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.panel49);
+            this.panel5.Controls.Add(this.panel52);
+            this.panel5.Controls.Add(this.panel53);
+            this.panel5.Location = new System.Drawing.Point(1, 40);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1317, 38);
+            this.panel5.TabIndex = 169;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Controls.Add(this.panel47);
+            this.panel6.Controls.Add(this.panel48);
+            this.panel6.Location = new System.Drawing.Point(2, 40);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1317, 38);
+            this.panel6.TabIndex = 168;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.panel9);
+            this.panel7.Controls.Add(this.panel11);
+            this.panel7.Location = new System.Drawing.Point(1, 39);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1317, 38);
+            this.panel7.TabIndex = 166;
+            // 
+            // panel9
+            // 
+            this.panel9.Location = new System.Drawing.Point(0, 78);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1317, 38);
+            this.panel9.TabIndex = 165;
+            // 
+            // panel11
+            // 
+            this.panel11.Location = new System.Drawing.Point(0, 40);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(1317, 38);
+            this.panel11.TabIndex = 164;
+            // 
+            // panel47
+            // 
+            this.panel47.Location = new System.Drawing.Point(0, 78);
+            this.panel47.Name = "panel47";
+            this.panel47.Size = new System.Drawing.Size(1317, 38);
+            this.panel47.TabIndex = 165;
+            // 
+            // panel48
+            // 
+            this.panel48.Location = new System.Drawing.Point(0, 40);
+            this.panel48.Name = "panel48";
+            this.panel48.Size = new System.Drawing.Size(1317, 38);
+            this.panel48.TabIndex = 164;
+            // 
+            // panel49
+            // 
+            this.panel49.Controls.Add(this.panel50);
+            this.panel49.Controls.Add(this.panel51);
+            this.panel49.Location = new System.Drawing.Point(1, 39);
+            this.panel49.Name = "panel49";
+            this.panel49.Size = new System.Drawing.Size(1317, 38);
+            this.panel49.TabIndex = 166;
+            // 
+            // panel50
+            // 
+            this.panel50.Location = new System.Drawing.Point(0, 78);
+            this.panel50.Name = "panel50";
+            this.panel50.Size = new System.Drawing.Size(1317, 38);
+            this.panel50.TabIndex = 165;
+            // 
+            // panel51
+            // 
+            this.panel51.Location = new System.Drawing.Point(0, 40);
+            this.panel51.Name = "panel51";
+            this.panel51.Size = new System.Drawing.Size(1317, 38);
+            this.panel51.TabIndex = 164;
+            // 
+            // panel52
+            // 
+            this.panel52.Location = new System.Drawing.Point(0, 78);
+            this.panel52.Name = "panel52";
+            this.panel52.Size = new System.Drawing.Size(1317, 38);
+            this.panel52.TabIndex = 165;
+            // 
+            // panel53
+            // 
+            this.panel53.Location = new System.Drawing.Point(0, 40);
+            this.panel53.Name = "panel53";
+            this.panel53.Size = new System.Drawing.Size(1317, 38);
+            this.panel53.TabIndex = 164;
+            // 
+            // panel54
+            // 
+            this.panel54.Controls.Add(this.panel55);
+            this.panel54.Controls.Add(this.panel58);
+            this.panel54.Controls.Add(this.panel59);
+            this.panel54.Location = new System.Drawing.Point(2, 40);
+            this.panel54.Name = "panel54";
+            this.panel54.Size = new System.Drawing.Size(1317, 38);
+            this.panel54.TabIndex = 168;
+            // 
+            // panel55
+            // 
+            this.panel55.Controls.Add(this.panel56);
+            this.panel55.Controls.Add(this.panel57);
+            this.panel55.Location = new System.Drawing.Point(1, 39);
+            this.panel55.Name = "panel55";
+            this.panel55.Size = new System.Drawing.Size(1317, 38);
+            this.panel55.TabIndex = 166;
+            // 
+            // panel56
+            // 
+            this.panel56.Location = new System.Drawing.Point(0, 78);
+            this.panel56.Name = "panel56";
+            this.panel56.Size = new System.Drawing.Size(1317, 38);
+            this.panel56.TabIndex = 165;
+            // 
+            // panel57
+            // 
+            this.panel57.Location = new System.Drawing.Point(0, 40);
+            this.panel57.Name = "panel57";
+            this.panel57.Size = new System.Drawing.Size(1317, 38);
+            this.panel57.TabIndex = 164;
+            // 
+            // panel58
+            // 
+            this.panel58.Location = new System.Drawing.Point(0, 78);
+            this.panel58.Name = "panel58";
+            this.panel58.Size = new System.Drawing.Size(1317, 38);
+            this.panel58.TabIndex = 165;
+            // 
+            // panel59
+            // 
+            this.panel59.Location = new System.Drawing.Point(0, 40);
+            this.panel59.Name = "panel59";
+            this.panel59.Size = new System.Drawing.Size(1317, 38);
+            this.panel59.TabIndex = 164;
+            // 
+            // panel60
+            // 
+            this.panel60.Controls.Add(this.panel61);
+            this.panel60.Controls.Add(this.panel62);
+            this.panel60.Location = new System.Drawing.Point(1, 39);
+            this.panel60.Name = "panel60";
+            this.panel60.Size = new System.Drawing.Size(1317, 38);
+            this.panel60.TabIndex = 166;
+            // 
+            // panel61
+            // 
+            this.panel61.Location = new System.Drawing.Point(0, 78);
+            this.panel61.Name = "panel61";
+            this.panel61.Size = new System.Drawing.Size(1317, 38);
+            this.panel61.TabIndex = 165;
+            // 
+            // panel62
+            // 
+            this.panel62.Location = new System.Drawing.Point(0, 40);
+            this.panel62.Name = "panel62";
+            this.panel62.Size = new System.Drawing.Size(1317, 38);
+            this.panel62.TabIndex = 164;
+            // 
+            // panel63
+            // 
+            this.panel63.Location = new System.Drawing.Point(0, 78);
+            this.panel63.Name = "panel63";
+            this.panel63.Size = new System.Drawing.Size(1317, 38);
+            this.panel63.TabIndex = 165;
+            // 
+            // panel64
+            // 
+            this.panel64.Location = new System.Drawing.Point(0, 40);
+            this.panel64.Name = "panel64";
+            this.panel64.Size = new System.Drawing.Size(1317, 38);
+            this.panel64.TabIndex = 164;
+            // 
             // panel65
             // 
             this.panel65.Controls.Add(this.Space6);
@@ -4522,185 +4522,6 @@
             this.panel65.Name = "panel65";
             this.panel65.Size = new System.Drawing.Size(1317, 38);
             this.panel65.TabIndex = 170;
-            // 
-            // panel66
-            // 
-            this.panel66.Controls.Add(this.panel67);
-            this.panel66.Controls.Add(this.panel73);
-            this.panel66.Controls.Add(this.panel76);
-            this.panel66.Controls.Add(this.panel77);
-            this.panel66.Location = new System.Drawing.Point(1, 40);
-            this.panel66.Name = "panel66";
-            this.panel66.Size = new System.Drawing.Size(1317, 38);
-            this.panel66.TabIndex = 169;
-            // 
-            // panel67
-            // 
-            this.panel67.Controls.Add(this.panel68);
-            this.panel67.Controls.Add(this.panel71);
-            this.panel67.Controls.Add(this.panel72);
-            this.panel67.Location = new System.Drawing.Point(2, 40);
-            this.panel67.Name = "panel67";
-            this.panel67.Size = new System.Drawing.Size(1317, 38);
-            this.panel67.TabIndex = 168;
-            // 
-            // panel68
-            // 
-            this.panel68.Controls.Add(this.panel69);
-            this.panel68.Controls.Add(this.panel70);
-            this.panel68.Location = new System.Drawing.Point(1, 39);
-            this.panel68.Name = "panel68";
-            this.panel68.Size = new System.Drawing.Size(1317, 38);
-            this.panel68.TabIndex = 166;
-            // 
-            // panel69
-            // 
-            this.panel69.Location = new System.Drawing.Point(0, 78);
-            this.panel69.Name = "panel69";
-            this.panel69.Size = new System.Drawing.Size(1317, 38);
-            this.panel69.TabIndex = 165;
-            // 
-            // panel70
-            // 
-            this.panel70.Location = new System.Drawing.Point(0, 40);
-            this.panel70.Name = "panel70";
-            this.panel70.Size = new System.Drawing.Size(1317, 38);
-            this.panel70.TabIndex = 164;
-            // 
-            // panel71
-            // 
-            this.panel71.Location = new System.Drawing.Point(0, 78);
-            this.panel71.Name = "panel71";
-            this.panel71.Size = new System.Drawing.Size(1317, 38);
-            this.panel71.TabIndex = 165;
-            // 
-            // panel72
-            // 
-            this.panel72.Location = new System.Drawing.Point(0, 40);
-            this.panel72.Name = "panel72";
-            this.panel72.Size = new System.Drawing.Size(1317, 38);
-            this.panel72.TabIndex = 164;
-            // 
-            // panel73
-            // 
-            this.panel73.Controls.Add(this.panel74);
-            this.panel73.Controls.Add(this.panel75);
-            this.panel73.Location = new System.Drawing.Point(1, 39);
-            this.panel73.Name = "panel73";
-            this.panel73.Size = new System.Drawing.Size(1317, 38);
-            this.panel73.TabIndex = 166;
-            // 
-            // panel74
-            // 
-            this.panel74.Location = new System.Drawing.Point(0, 78);
-            this.panel74.Name = "panel74";
-            this.panel74.Size = new System.Drawing.Size(1317, 38);
-            this.panel74.TabIndex = 165;
-            // 
-            // panel75
-            // 
-            this.panel75.Location = new System.Drawing.Point(0, 40);
-            this.panel75.Name = "panel75";
-            this.panel75.Size = new System.Drawing.Size(1317, 38);
-            this.panel75.TabIndex = 164;
-            // 
-            // panel76
-            // 
-            this.panel76.Location = new System.Drawing.Point(0, 78);
-            this.panel76.Name = "panel76";
-            this.panel76.Size = new System.Drawing.Size(1317, 38);
-            this.panel76.TabIndex = 165;
-            // 
-            // panel77
-            // 
-            this.panel77.Location = new System.Drawing.Point(0, 40);
-            this.panel77.Name = "panel77";
-            this.panel77.Size = new System.Drawing.Size(1317, 38);
-            this.panel77.TabIndex = 164;
-            // 
-            // panel78
-            // 
-            this.panel78.Controls.Add(this.panel79);
-            this.panel78.Controls.Add(this.panel82);
-            this.panel78.Controls.Add(this.panel83);
-            this.panel78.Location = new System.Drawing.Point(2, 40);
-            this.panel78.Name = "panel78";
-            this.panel78.Size = new System.Drawing.Size(1317, 38);
-            this.panel78.TabIndex = 168;
-            // 
-            // panel79
-            // 
-            this.panel79.Controls.Add(this.panel80);
-            this.panel79.Controls.Add(this.panel81);
-            this.panel79.Location = new System.Drawing.Point(1, 39);
-            this.panel79.Name = "panel79";
-            this.panel79.Size = new System.Drawing.Size(1317, 38);
-            this.panel79.TabIndex = 166;
-            // 
-            // panel80
-            // 
-            this.panel80.Location = new System.Drawing.Point(0, 78);
-            this.panel80.Name = "panel80";
-            this.panel80.Size = new System.Drawing.Size(1317, 38);
-            this.panel80.TabIndex = 165;
-            // 
-            // panel81
-            // 
-            this.panel81.Location = new System.Drawing.Point(0, 40);
-            this.panel81.Name = "panel81";
-            this.panel81.Size = new System.Drawing.Size(1317, 38);
-            this.panel81.TabIndex = 164;
-            // 
-            // panel82
-            // 
-            this.panel82.Location = new System.Drawing.Point(0, 78);
-            this.panel82.Name = "panel82";
-            this.panel82.Size = new System.Drawing.Size(1317, 38);
-            this.panel82.TabIndex = 165;
-            // 
-            // panel83
-            // 
-            this.panel83.Location = new System.Drawing.Point(0, 40);
-            this.panel83.Name = "panel83";
-            this.panel83.Size = new System.Drawing.Size(1317, 38);
-            this.panel83.TabIndex = 164;
-            // 
-            // panel84
-            // 
-            this.panel84.Controls.Add(this.panel85);
-            this.panel84.Controls.Add(this.panel86);
-            this.panel84.Location = new System.Drawing.Point(1, 39);
-            this.panel84.Name = "panel84";
-            this.panel84.Size = new System.Drawing.Size(1317, 38);
-            this.panel84.TabIndex = 166;
-            // 
-            // panel85
-            // 
-            this.panel85.Location = new System.Drawing.Point(0, 78);
-            this.panel85.Name = "panel85";
-            this.panel85.Size = new System.Drawing.Size(1317, 38);
-            this.panel85.TabIndex = 165;
-            // 
-            // panel86
-            // 
-            this.panel86.Location = new System.Drawing.Point(0, 40);
-            this.panel86.Name = "panel86";
-            this.panel86.Size = new System.Drawing.Size(1317, 38);
-            this.panel86.TabIndex = 164;
-            // 
-            // panel87
-            // 
-            this.panel87.Location = new System.Drawing.Point(0, 78);
-            this.panel87.Name = "panel87";
-            this.panel87.Size = new System.Drawing.Size(1317, 38);
-            this.panel87.TabIndex = 165;
-            // 
-            // panel88
-            // 
-            this.panel88.Location = new System.Drawing.Point(0, 40);
-            this.panel88.Name = "panel88";
-            this.panel88.Size = new System.Drawing.Size(1317, 38);
-            this.panel88.TabIndex = 164;
             // 
             // Space6
             // 
@@ -5133,6 +4954,185 @@
             this.IMT_ITMCD_6.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
+            // panel66
+            // 
+            this.panel66.Controls.Add(this.panel67);
+            this.panel66.Controls.Add(this.panel73);
+            this.panel66.Controls.Add(this.panel76);
+            this.panel66.Controls.Add(this.panel77);
+            this.panel66.Location = new System.Drawing.Point(1, 40);
+            this.panel66.Name = "panel66";
+            this.panel66.Size = new System.Drawing.Size(1317, 38);
+            this.panel66.TabIndex = 169;
+            // 
+            // panel67
+            // 
+            this.panel67.Controls.Add(this.panel68);
+            this.panel67.Controls.Add(this.panel71);
+            this.panel67.Controls.Add(this.panel72);
+            this.panel67.Location = new System.Drawing.Point(2, 40);
+            this.panel67.Name = "panel67";
+            this.panel67.Size = new System.Drawing.Size(1317, 38);
+            this.panel67.TabIndex = 168;
+            // 
+            // panel68
+            // 
+            this.panel68.Controls.Add(this.panel69);
+            this.panel68.Controls.Add(this.panel70);
+            this.panel68.Location = new System.Drawing.Point(1, 39);
+            this.panel68.Name = "panel68";
+            this.panel68.Size = new System.Drawing.Size(1317, 38);
+            this.panel68.TabIndex = 166;
+            // 
+            // panel69
+            // 
+            this.panel69.Location = new System.Drawing.Point(0, 78);
+            this.panel69.Name = "panel69";
+            this.panel69.Size = new System.Drawing.Size(1317, 38);
+            this.panel69.TabIndex = 165;
+            // 
+            // panel70
+            // 
+            this.panel70.Location = new System.Drawing.Point(0, 40);
+            this.panel70.Name = "panel70";
+            this.panel70.Size = new System.Drawing.Size(1317, 38);
+            this.panel70.TabIndex = 164;
+            // 
+            // panel71
+            // 
+            this.panel71.Location = new System.Drawing.Point(0, 78);
+            this.panel71.Name = "panel71";
+            this.panel71.Size = new System.Drawing.Size(1317, 38);
+            this.panel71.TabIndex = 165;
+            // 
+            // panel72
+            // 
+            this.panel72.Location = new System.Drawing.Point(0, 40);
+            this.panel72.Name = "panel72";
+            this.panel72.Size = new System.Drawing.Size(1317, 38);
+            this.panel72.TabIndex = 164;
+            // 
+            // panel73
+            // 
+            this.panel73.Controls.Add(this.panel74);
+            this.panel73.Controls.Add(this.panel75);
+            this.panel73.Location = new System.Drawing.Point(1, 39);
+            this.panel73.Name = "panel73";
+            this.panel73.Size = new System.Drawing.Size(1317, 38);
+            this.panel73.TabIndex = 166;
+            // 
+            // panel74
+            // 
+            this.panel74.Location = new System.Drawing.Point(0, 78);
+            this.panel74.Name = "panel74";
+            this.panel74.Size = new System.Drawing.Size(1317, 38);
+            this.panel74.TabIndex = 165;
+            // 
+            // panel75
+            // 
+            this.panel75.Location = new System.Drawing.Point(0, 40);
+            this.panel75.Name = "panel75";
+            this.panel75.Size = new System.Drawing.Size(1317, 38);
+            this.panel75.TabIndex = 164;
+            // 
+            // panel76
+            // 
+            this.panel76.Location = new System.Drawing.Point(0, 78);
+            this.panel76.Name = "panel76";
+            this.panel76.Size = new System.Drawing.Size(1317, 38);
+            this.panel76.TabIndex = 165;
+            // 
+            // panel77
+            // 
+            this.panel77.Location = new System.Drawing.Point(0, 40);
+            this.panel77.Name = "panel77";
+            this.panel77.Size = new System.Drawing.Size(1317, 38);
+            this.panel77.TabIndex = 164;
+            // 
+            // panel78
+            // 
+            this.panel78.Controls.Add(this.panel79);
+            this.panel78.Controls.Add(this.panel82);
+            this.panel78.Controls.Add(this.panel83);
+            this.panel78.Location = new System.Drawing.Point(2, 40);
+            this.panel78.Name = "panel78";
+            this.panel78.Size = new System.Drawing.Size(1317, 38);
+            this.panel78.TabIndex = 168;
+            // 
+            // panel79
+            // 
+            this.panel79.Controls.Add(this.panel80);
+            this.panel79.Controls.Add(this.panel81);
+            this.panel79.Location = new System.Drawing.Point(1, 39);
+            this.panel79.Name = "panel79";
+            this.panel79.Size = new System.Drawing.Size(1317, 38);
+            this.panel79.TabIndex = 166;
+            // 
+            // panel80
+            // 
+            this.panel80.Location = new System.Drawing.Point(0, 78);
+            this.panel80.Name = "panel80";
+            this.panel80.Size = new System.Drawing.Size(1317, 38);
+            this.panel80.TabIndex = 165;
+            // 
+            // panel81
+            // 
+            this.panel81.Location = new System.Drawing.Point(0, 40);
+            this.panel81.Name = "panel81";
+            this.panel81.Size = new System.Drawing.Size(1317, 38);
+            this.panel81.TabIndex = 164;
+            // 
+            // panel82
+            // 
+            this.panel82.Location = new System.Drawing.Point(0, 78);
+            this.panel82.Name = "panel82";
+            this.panel82.Size = new System.Drawing.Size(1317, 38);
+            this.panel82.TabIndex = 165;
+            // 
+            // panel83
+            // 
+            this.panel83.Location = new System.Drawing.Point(0, 40);
+            this.panel83.Name = "panel83";
+            this.panel83.Size = new System.Drawing.Size(1317, 38);
+            this.panel83.TabIndex = 164;
+            // 
+            // panel84
+            // 
+            this.panel84.Controls.Add(this.panel85);
+            this.panel84.Controls.Add(this.panel86);
+            this.panel84.Location = new System.Drawing.Point(1, 39);
+            this.panel84.Name = "panel84";
+            this.panel84.Size = new System.Drawing.Size(1317, 38);
+            this.panel84.TabIndex = 166;
+            // 
+            // panel85
+            // 
+            this.panel85.Location = new System.Drawing.Point(0, 78);
+            this.panel85.Name = "panel85";
+            this.panel85.Size = new System.Drawing.Size(1317, 38);
+            this.panel85.TabIndex = 165;
+            // 
+            // panel86
+            // 
+            this.panel86.Location = new System.Drawing.Point(0, 40);
+            this.panel86.Name = "panel86";
+            this.panel86.Size = new System.Drawing.Size(1317, 38);
+            this.panel86.TabIndex = 164;
+            // 
+            // panel87
+            // 
+            this.panel87.Location = new System.Drawing.Point(0, 78);
+            this.panel87.Name = "panel87";
+            this.panel87.Size = new System.Drawing.Size(1317, 38);
+            this.panel87.TabIndex = 165;
+            // 
+            // panel88
+            // 
+            this.panel88.Location = new System.Drawing.Point(0, 40);
+            this.panel88.Name = "panel88";
+            this.panel88.Size = new System.Drawing.Size(1317, 38);
+            this.panel88.TabIndex = 164;
+            // 
             // panel89
             // 
             this.panel89.Controls.Add(this.Space7);
@@ -5160,185 +5160,6 @@
             this.panel89.Name = "panel89";
             this.panel89.Size = new System.Drawing.Size(1317, 38);
             this.panel89.TabIndex = 171;
-            // 
-            // panel90
-            // 
-            this.panel90.Controls.Add(this.panel91);
-            this.panel90.Controls.Add(this.panel97);
-            this.panel90.Controls.Add(this.panel100);
-            this.panel90.Controls.Add(this.panel101);
-            this.panel90.Location = new System.Drawing.Point(1, 40);
-            this.panel90.Name = "panel90";
-            this.panel90.Size = new System.Drawing.Size(1317, 38);
-            this.panel90.TabIndex = 169;
-            // 
-            // panel91
-            // 
-            this.panel91.Controls.Add(this.panel92);
-            this.panel91.Controls.Add(this.panel95);
-            this.panel91.Controls.Add(this.panel96);
-            this.panel91.Location = new System.Drawing.Point(2, 40);
-            this.panel91.Name = "panel91";
-            this.panel91.Size = new System.Drawing.Size(1317, 38);
-            this.panel91.TabIndex = 168;
-            // 
-            // panel92
-            // 
-            this.panel92.Controls.Add(this.panel93);
-            this.panel92.Controls.Add(this.panel94);
-            this.panel92.Location = new System.Drawing.Point(1, 39);
-            this.panel92.Name = "panel92";
-            this.panel92.Size = new System.Drawing.Size(1317, 38);
-            this.panel92.TabIndex = 166;
-            // 
-            // panel93
-            // 
-            this.panel93.Location = new System.Drawing.Point(0, 78);
-            this.panel93.Name = "panel93";
-            this.panel93.Size = new System.Drawing.Size(1317, 38);
-            this.panel93.TabIndex = 165;
-            // 
-            // panel94
-            // 
-            this.panel94.Location = new System.Drawing.Point(0, 40);
-            this.panel94.Name = "panel94";
-            this.panel94.Size = new System.Drawing.Size(1317, 38);
-            this.panel94.TabIndex = 164;
-            // 
-            // panel95
-            // 
-            this.panel95.Location = new System.Drawing.Point(0, 78);
-            this.panel95.Name = "panel95";
-            this.panel95.Size = new System.Drawing.Size(1317, 38);
-            this.panel95.TabIndex = 165;
-            // 
-            // panel96
-            // 
-            this.panel96.Location = new System.Drawing.Point(0, 40);
-            this.panel96.Name = "panel96";
-            this.panel96.Size = new System.Drawing.Size(1317, 38);
-            this.panel96.TabIndex = 164;
-            // 
-            // panel97
-            // 
-            this.panel97.Controls.Add(this.panel98);
-            this.panel97.Controls.Add(this.panel99);
-            this.panel97.Location = new System.Drawing.Point(1, 39);
-            this.panel97.Name = "panel97";
-            this.panel97.Size = new System.Drawing.Size(1317, 38);
-            this.panel97.TabIndex = 166;
-            // 
-            // panel98
-            // 
-            this.panel98.Location = new System.Drawing.Point(0, 78);
-            this.panel98.Name = "panel98";
-            this.panel98.Size = new System.Drawing.Size(1317, 38);
-            this.panel98.TabIndex = 165;
-            // 
-            // panel99
-            // 
-            this.panel99.Location = new System.Drawing.Point(0, 40);
-            this.panel99.Name = "panel99";
-            this.panel99.Size = new System.Drawing.Size(1317, 38);
-            this.panel99.TabIndex = 164;
-            // 
-            // panel100
-            // 
-            this.panel100.Location = new System.Drawing.Point(0, 78);
-            this.panel100.Name = "panel100";
-            this.panel100.Size = new System.Drawing.Size(1317, 38);
-            this.panel100.TabIndex = 165;
-            // 
-            // panel101
-            // 
-            this.panel101.Location = new System.Drawing.Point(0, 40);
-            this.panel101.Name = "panel101";
-            this.panel101.Size = new System.Drawing.Size(1317, 38);
-            this.panel101.TabIndex = 164;
-            // 
-            // panel102
-            // 
-            this.panel102.Controls.Add(this.panel103);
-            this.panel102.Controls.Add(this.panel106);
-            this.panel102.Controls.Add(this.panel107);
-            this.panel102.Location = new System.Drawing.Point(2, 40);
-            this.panel102.Name = "panel102";
-            this.panel102.Size = new System.Drawing.Size(1317, 38);
-            this.panel102.TabIndex = 168;
-            // 
-            // panel103
-            // 
-            this.panel103.Controls.Add(this.panel104);
-            this.panel103.Controls.Add(this.panel105);
-            this.panel103.Location = new System.Drawing.Point(1, 39);
-            this.panel103.Name = "panel103";
-            this.panel103.Size = new System.Drawing.Size(1317, 38);
-            this.panel103.TabIndex = 166;
-            // 
-            // panel104
-            // 
-            this.panel104.Location = new System.Drawing.Point(0, 78);
-            this.panel104.Name = "panel104";
-            this.panel104.Size = new System.Drawing.Size(1317, 38);
-            this.panel104.TabIndex = 165;
-            // 
-            // panel105
-            // 
-            this.panel105.Location = new System.Drawing.Point(0, 40);
-            this.panel105.Name = "panel105";
-            this.panel105.Size = new System.Drawing.Size(1317, 38);
-            this.panel105.TabIndex = 164;
-            // 
-            // panel106
-            // 
-            this.panel106.Location = new System.Drawing.Point(0, 78);
-            this.panel106.Name = "panel106";
-            this.panel106.Size = new System.Drawing.Size(1317, 38);
-            this.panel106.TabIndex = 165;
-            // 
-            // panel107
-            // 
-            this.panel107.Location = new System.Drawing.Point(0, 40);
-            this.panel107.Name = "panel107";
-            this.panel107.Size = new System.Drawing.Size(1317, 38);
-            this.panel107.TabIndex = 164;
-            // 
-            // panel108
-            // 
-            this.panel108.Controls.Add(this.panel109);
-            this.panel108.Controls.Add(this.panel110);
-            this.panel108.Location = new System.Drawing.Point(1, 39);
-            this.panel108.Name = "panel108";
-            this.panel108.Size = new System.Drawing.Size(1317, 38);
-            this.panel108.TabIndex = 166;
-            // 
-            // panel109
-            // 
-            this.panel109.Location = new System.Drawing.Point(0, 78);
-            this.panel109.Name = "panel109";
-            this.panel109.Size = new System.Drawing.Size(1317, 38);
-            this.panel109.TabIndex = 165;
-            // 
-            // panel110
-            // 
-            this.panel110.Location = new System.Drawing.Point(0, 40);
-            this.panel110.Name = "panel110";
-            this.panel110.Size = new System.Drawing.Size(1317, 38);
-            this.panel110.TabIndex = 164;
-            // 
-            // panel111
-            // 
-            this.panel111.Location = new System.Drawing.Point(0, 78);
-            this.panel111.Name = "panel111";
-            this.panel111.Size = new System.Drawing.Size(1317, 38);
-            this.panel111.TabIndex = 165;
-            // 
-            // panel112
-            // 
-            this.panel112.Location = new System.Drawing.Point(0, 40);
-            this.panel112.Name = "panel112";
-            this.panel112.Size = new System.Drawing.Size(1317, 38);
-            this.panel112.TabIndex = 164;
             // 
             // Space7
             // 
@@ -5771,6 +5592,185 @@
             this.IMT_ITMCD_7.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
+            // panel90
+            // 
+            this.panel90.Controls.Add(this.panel91);
+            this.panel90.Controls.Add(this.panel97);
+            this.panel90.Controls.Add(this.panel100);
+            this.panel90.Controls.Add(this.panel101);
+            this.panel90.Location = new System.Drawing.Point(1, 40);
+            this.panel90.Name = "panel90";
+            this.panel90.Size = new System.Drawing.Size(1317, 38);
+            this.panel90.TabIndex = 169;
+            // 
+            // panel91
+            // 
+            this.panel91.Controls.Add(this.panel92);
+            this.panel91.Controls.Add(this.panel95);
+            this.panel91.Controls.Add(this.panel96);
+            this.panel91.Location = new System.Drawing.Point(2, 40);
+            this.panel91.Name = "panel91";
+            this.panel91.Size = new System.Drawing.Size(1317, 38);
+            this.panel91.TabIndex = 168;
+            // 
+            // panel92
+            // 
+            this.panel92.Controls.Add(this.panel93);
+            this.panel92.Controls.Add(this.panel94);
+            this.panel92.Location = new System.Drawing.Point(1, 39);
+            this.panel92.Name = "panel92";
+            this.panel92.Size = new System.Drawing.Size(1317, 38);
+            this.panel92.TabIndex = 166;
+            // 
+            // panel93
+            // 
+            this.panel93.Location = new System.Drawing.Point(0, 78);
+            this.panel93.Name = "panel93";
+            this.panel93.Size = new System.Drawing.Size(1317, 38);
+            this.panel93.TabIndex = 165;
+            // 
+            // panel94
+            // 
+            this.panel94.Location = new System.Drawing.Point(0, 40);
+            this.panel94.Name = "panel94";
+            this.panel94.Size = new System.Drawing.Size(1317, 38);
+            this.panel94.TabIndex = 164;
+            // 
+            // panel95
+            // 
+            this.panel95.Location = new System.Drawing.Point(0, 78);
+            this.panel95.Name = "panel95";
+            this.panel95.Size = new System.Drawing.Size(1317, 38);
+            this.panel95.TabIndex = 165;
+            // 
+            // panel96
+            // 
+            this.panel96.Location = new System.Drawing.Point(0, 40);
+            this.panel96.Name = "panel96";
+            this.panel96.Size = new System.Drawing.Size(1317, 38);
+            this.panel96.TabIndex = 164;
+            // 
+            // panel97
+            // 
+            this.panel97.Controls.Add(this.panel98);
+            this.panel97.Controls.Add(this.panel99);
+            this.panel97.Location = new System.Drawing.Point(1, 39);
+            this.panel97.Name = "panel97";
+            this.panel97.Size = new System.Drawing.Size(1317, 38);
+            this.panel97.TabIndex = 166;
+            // 
+            // panel98
+            // 
+            this.panel98.Location = new System.Drawing.Point(0, 78);
+            this.panel98.Name = "panel98";
+            this.panel98.Size = new System.Drawing.Size(1317, 38);
+            this.panel98.TabIndex = 165;
+            // 
+            // panel99
+            // 
+            this.panel99.Location = new System.Drawing.Point(0, 40);
+            this.panel99.Name = "panel99";
+            this.panel99.Size = new System.Drawing.Size(1317, 38);
+            this.panel99.TabIndex = 164;
+            // 
+            // panel100
+            // 
+            this.panel100.Location = new System.Drawing.Point(0, 78);
+            this.panel100.Name = "panel100";
+            this.panel100.Size = new System.Drawing.Size(1317, 38);
+            this.panel100.TabIndex = 165;
+            // 
+            // panel101
+            // 
+            this.panel101.Location = new System.Drawing.Point(0, 40);
+            this.panel101.Name = "panel101";
+            this.panel101.Size = new System.Drawing.Size(1317, 38);
+            this.panel101.TabIndex = 164;
+            // 
+            // panel102
+            // 
+            this.panel102.Controls.Add(this.panel103);
+            this.panel102.Controls.Add(this.panel106);
+            this.panel102.Controls.Add(this.panel107);
+            this.panel102.Location = new System.Drawing.Point(2, 40);
+            this.panel102.Name = "panel102";
+            this.panel102.Size = new System.Drawing.Size(1317, 38);
+            this.panel102.TabIndex = 168;
+            // 
+            // panel103
+            // 
+            this.panel103.Controls.Add(this.panel104);
+            this.panel103.Controls.Add(this.panel105);
+            this.panel103.Location = new System.Drawing.Point(1, 39);
+            this.panel103.Name = "panel103";
+            this.panel103.Size = new System.Drawing.Size(1317, 38);
+            this.panel103.TabIndex = 166;
+            // 
+            // panel104
+            // 
+            this.panel104.Location = new System.Drawing.Point(0, 78);
+            this.panel104.Name = "panel104";
+            this.panel104.Size = new System.Drawing.Size(1317, 38);
+            this.panel104.TabIndex = 165;
+            // 
+            // panel105
+            // 
+            this.panel105.Location = new System.Drawing.Point(0, 40);
+            this.panel105.Name = "panel105";
+            this.panel105.Size = new System.Drawing.Size(1317, 38);
+            this.panel105.TabIndex = 164;
+            // 
+            // panel106
+            // 
+            this.panel106.Location = new System.Drawing.Point(0, 78);
+            this.panel106.Name = "panel106";
+            this.panel106.Size = new System.Drawing.Size(1317, 38);
+            this.panel106.TabIndex = 165;
+            // 
+            // panel107
+            // 
+            this.panel107.Location = new System.Drawing.Point(0, 40);
+            this.panel107.Name = "panel107";
+            this.panel107.Size = new System.Drawing.Size(1317, 38);
+            this.panel107.TabIndex = 164;
+            // 
+            // panel108
+            // 
+            this.panel108.Controls.Add(this.panel109);
+            this.panel108.Controls.Add(this.panel110);
+            this.panel108.Location = new System.Drawing.Point(1, 39);
+            this.panel108.Name = "panel108";
+            this.panel108.Size = new System.Drawing.Size(1317, 38);
+            this.panel108.TabIndex = 166;
+            // 
+            // panel109
+            // 
+            this.panel109.Location = new System.Drawing.Point(0, 78);
+            this.panel109.Name = "panel109";
+            this.panel109.Size = new System.Drawing.Size(1317, 38);
+            this.panel109.TabIndex = 165;
+            // 
+            // panel110
+            // 
+            this.panel110.Location = new System.Drawing.Point(0, 40);
+            this.panel110.Name = "panel110";
+            this.panel110.Size = new System.Drawing.Size(1317, 38);
+            this.panel110.TabIndex = 164;
+            // 
+            // panel111
+            // 
+            this.panel111.Location = new System.Drawing.Point(0, 78);
+            this.panel111.Name = "panel111";
+            this.panel111.Size = new System.Drawing.Size(1317, 38);
+            this.panel111.TabIndex = 165;
+            // 
+            // panel112
+            // 
+            this.panel112.Location = new System.Drawing.Point(0, 40);
+            this.panel112.Name = "panel112";
+            this.panel112.Size = new System.Drawing.Size(1317, 38);
+            this.panel112.TabIndex = 164;
+            // 
             // panel113
             // 
             this.panel113.Controls.Add(this.Space8);
@@ -5798,185 +5798,6 @@
             this.panel113.Name = "panel113";
             this.panel113.Size = new System.Drawing.Size(1317, 38);
             this.panel113.TabIndex = 172;
-            // 
-            // panel114
-            // 
-            this.panel114.Controls.Add(this.panel115);
-            this.panel114.Controls.Add(this.panel121);
-            this.panel114.Controls.Add(this.panel124);
-            this.panel114.Controls.Add(this.panel125);
-            this.panel114.Location = new System.Drawing.Point(1, 40);
-            this.panel114.Name = "panel114";
-            this.panel114.Size = new System.Drawing.Size(1317, 38);
-            this.panel114.TabIndex = 169;
-            // 
-            // panel115
-            // 
-            this.panel115.Controls.Add(this.panel116);
-            this.panel115.Controls.Add(this.panel119);
-            this.panel115.Controls.Add(this.panel120);
-            this.panel115.Location = new System.Drawing.Point(2, 40);
-            this.panel115.Name = "panel115";
-            this.panel115.Size = new System.Drawing.Size(1317, 38);
-            this.panel115.TabIndex = 168;
-            // 
-            // panel116
-            // 
-            this.panel116.Controls.Add(this.panel117);
-            this.panel116.Controls.Add(this.panel118);
-            this.panel116.Location = new System.Drawing.Point(1, 39);
-            this.panel116.Name = "panel116";
-            this.panel116.Size = new System.Drawing.Size(1317, 38);
-            this.panel116.TabIndex = 166;
-            // 
-            // panel117
-            // 
-            this.panel117.Location = new System.Drawing.Point(0, 78);
-            this.panel117.Name = "panel117";
-            this.panel117.Size = new System.Drawing.Size(1317, 38);
-            this.panel117.TabIndex = 165;
-            // 
-            // panel118
-            // 
-            this.panel118.Location = new System.Drawing.Point(0, 40);
-            this.panel118.Name = "panel118";
-            this.panel118.Size = new System.Drawing.Size(1317, 38);
-            this.panel118.TabIndex = 164;
-            // 
-            // panel119
-            // 
-            this.panel119.Location = new System.Drawing.Point(0, 78);
-            this.panel119.Name = "panel119";
-            this.panel119.Size = new System.Drawing.Size(1317, 38);
-            this.panel119.TabIndex = 165;
-            // 
-            // panel120
-            // 
-            this.panel120.Location = new System.Drawing.Point(0, 40);
-            this.panel120.Name = "panel120";
-            this.panel120.Size = new System.Drawing.Size(1317, 38);
-            this.panel120.TabIndex = 164;
-            // 
-            // panel121
-            // 
-            this.panel121.Controls.Add(this.panel122);
-            this.panel121.Controls.Add(this.panel123);
-            this.panel121.Location = new System.Drawing.Point(1, 39);
-            this.panel121.Name = "panel121";
-            this.panel121.Size = new System.Drawing.Size(1317, 38);
-            this.panel121.TabIndex = 166;
-            // 
-            // panel122
-            // 
-            this.panel122.Location = new System.Drawing.Point(0, 78);
-            this.panel122.Name = "panel122";
-            this.panel122.Size = new System.Drawing.Size(1317, 38);
-            this.panel122.TabIndex = 165;
-            // 
-            // panel123
-            // 
-            this.panel123.Location = new System.Drawing.Point(0, 40);
-            this.panel123.Name = "panel123";
-            this.panel123.Size = new System.Drawing.Size(1317, 38);
-            this.panel123.TabIndex = 164;
-            // 
-            // panel124
-            // 
-            this.panel124.Location = new System.Drawing.Point(0, 78);
-            this.panel124.Name = "panel124";
-            this.panel124.Size = new System.Drawing.Size(1317, 38);
-            this.panel124.TabIndex = 165;
-            // 
-            // panel125
-            // 
-            this.panel125.Location = new System.Drawing.Point(0, 40);
-            this.panel125.Name = "panel125";
-            this.panel125.Size = new System.Drawing.Size(1317, 38);
-            this.panel125.TabIndex = 164;
-            // 
-            // panel126
-            // 
-            this.panel126.Controls.Add(this.panel127);
-            this.panel126.Controls.Add(this.panel130);
-            this.panel126.Controls.Add(this.panel131);
-            this.panel126.Location = new System.Drawing.Point(2, 40);
-            this.panel126.Name = "panel126";
-            this.panel126.Size = new System.Drawing.Size(1317, 38);
-            this.panel126.TabIndex = 168;
-            // 
-            // panel127
-            // 
-            this.panel127.Controls.Add(this.panel128);
-            this.panel127.Controls.Add(this.panel129);
-            this.panel127.Location = new System.Drawing.Point(1, 39);
-            this.panel127.Name = "panel127";
-            this.panel127.Size = new System.Drawing.Size(1317, 38);
-            this.panel127.TabIndex = 166;
-            // 
-            // panel128
-            // 
-            this.panel128.Location = new System.Drawing.Point(0, 78);
-            this.panel128.Name = "panel128";
-            this.panel128.Size = new System.Drawing.Size(1317, 38);
-            this.panel128.TabIndex = 165;
-            // 
-            // panel129
-            // 
-            this.panel129.Location = new System.Drawing.Point(0, 40);
-            this.panel129.Name = "panel129";
-            this.panel129.Size = new System.Drawing.Size(1317, 38);
-            this.panel129.TabIndex = 164;
-            // 
-            // panel130
-            // 
-            this.panel130.Location = new System.Drawing.Point(0, 78);
-            this.panel130.Name = "panel130";
-            this.panel130.Size = new System.Drawing.Size(1317, 38);
-            this.panel130.TabIndex = 165;
-            // 
-            // panel131
-            // 
-            this.panel131.Location = new System.Drawing.Point(0, 40);
-            this.panel131.Name = "panel131";
-            this.panel131.Size = new System.Drawing.Size(1317, 38);
-            this.panel131.TabIndex = 164;
-            // 
-            // panel132
-            // 
-            this.panel132.Controls.Add(this.panel133);
-            this.panel132.Controls.Add(this.panel134);
-            this.panel132.Location = new System.Drawing.Point(1, 39);
-            this.panel132.Name = "panel132";
-            this.panel132.Size = new System.Drawing.Size(1317, 38);
-            this.panel132.TabIndex = 166;
-            // 
-            // panel133
-            // 
-            this.panel133.Location = new System.Drawing.Point(0, 78);
-            this.panel133.Name = "panel133";
-            this.panel133.Size = new System.Drawing.Size(1317, 38);
-            this.panel133.TabIndex = 165;
-            // 
-            // panel134
-            // 
-            this.panel134.Location = new System.Drawing.Point(0, 40);
-            this.panel134.Name = "panel134";
-            this.panel134.Size = new System.Drawing.Size(1317, 38);
-            this.panel134.TabIndex = 164;
-            // 
-            // panel135
-            // 
-            this.panel135.Location = new System.Drawing.Point(0, 78);
-            this.panel135.Name = "panel135";
-            this.panel135.Size = new System.Drawing.Size(1317, 38);
-            this.panel135.TabIndex = 165;
-            // 
-            // panel136
-            // 
-            this.panel136.Location = new System.Drawing.Point(0, 40);
-            this.panel136.Name = "panel136";
-            this.panel136.Size = new System.Drawing.Size(1317, 38);
-            this.panel136.TabIndex = 164;
             // 
             // Space8
             // 
@@ -6409,6 +6230,185 @@
             this.IMT_ITMCD_8.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
+            // panel114
+            // 
+            this.panel114.Controls.Add(this.panel115);
+            this.panel114.Controls.Add(this.panel121);
+            this.panel114.Controls.Add(this.panel124);
+            this.panel114.Controls.Add(this.panel125);
+            this.panel114.Location = new System.Drawing.Point(1, 40);
+            this.panel114.Name = "panel114";
+            this.panel114.Size = new System.Drawing.Size(1317, 38);
+            this.panel114.TabIndex = 169;
+            // 
+            // panel115
+            // 
+            this.panel115.Controls.Add(this.panel116);
+            this.panel115.Controls.Add(this.panel119);
+            this.panel115.Controls.Add(this.panel120);
+            this.panel115.Location = new System.Drawing.Point(2, 40);
+            this.panel115.Name = "panel115";
+            this.panel115.Size = new System.Drawing.Size(1317, 38);
+            this.panel115.TabIndex = 168;
+            // 
+            // panel116
+            // 
+            this.panel116.Controls.Add(this.panel117);
+            this.panel116.Controls.Add(this.panel118);
+            this.panel116.Location = new System.Drawing.Point(1, 39);
+            this.panel116.Name = "panel116";
+            this.panel116.Size = new System.Drawing.Size(1317, 38);
+            this.panel116.TabIndex = 166;
+            // 
+            // panel117
+            // 
+            this.panel117.Location = new System.Drawing.Point(0, 78);
+            this.panel117.Name = "panel117";
+            this.panel117.Size = new System.Drawing.Size(1317, 38);
+            this.panel117.TabIndex = 165;
+            // 
+            // panel118
+            // 
+            this.panel118.Location = new System.Drawing.Point(0, 40);
+            this.panel118.Name = "panel118";
+            this.panel118.Size = new System.Drawing.Size(1317, 38);
+            this.panel118.TabIndex = 164;
+            // 
+            // panel119
+            // 
+            this.panel119.Location = new System.Drawing.Point(0, 78);
+            this.panel119.Name = "panel119";
+            this.panel119.Size = new System.Drawing.Size(1317, 38);
+            this.panel119.TabIndex = 165;
+            // 
+            // panel120
+            // 
+            this.panel120.Location = new System.Drawing.Point(0, 40);
+            this.panel120.Name = "panel120";
+            this.panel120.Size = new System.Drawing.Size(1317, 38);
+            this.panel120.TabIndex = 164;
+            // 
+            // panel121
+            // 
+            this.panel121.Controls.Add(this.panel122);
+            this.panel121.Controls.Add(this.panel123);
+            this.panel121.Location = new System.Drawing.Point(1, 39);
+            this.panel121.Name = "panel121";
+            this.panel121.Size = new System.Drawing.Size(1317, 38);
+            this.panel121.TabIndex = 166;
+            // 
+            // panel122
+            // 
+            this.panel122.Location = new System.Drawing.Point(0, 78);
+            this.panel122.Name = "panel122";
+            this.panel122.Size = new System.Drawing.Size(1317, 38);
+            this.panel122.TabIndex = 165;
+            // 
+            // panel123
+            // 
+            this.panel123.Location = new System.Drawing.Point(0, 40);
+            this.panel123.Name = "panel123";
+            this.panel123.Size = new System.Drawing.Size(1317, 38);
+            this.panel123.TabIndex = 164;
+            // 
+            // panel124
+            // 
+            this.panel124.Location = new System.Drawing.Point(0, 78);
+            this.panel124.Name = "panel124";
+            this.panel124.Size = new System.Drawing.Size(1317, 38);
+            this.panel124.TabIndex = 165;
+            // 
+            // panel125
+            // 
+            this.panel125.Location = new System.Drawing.Point(0, 40);
+            this.panel125.Name = "panel125";
+            this.panel125.Size = new System.Drawing.Size(1317, 38);
+            this.panel125.TabIndex = 164;
+            // 
+            // panel126
+            // 
+            this.panel126.Controls.Add(this.panel127);
+            this.panel126.Controls.Add(this.panel130);
+            this.panel126.Controls.Add(this.panel131);
+            this.panel126.Location = new System.Drawing.Point(2, 40);
+            this.panel126.Name = "panel126";
+            this.panel126.Size = new System.Drawing.Size(1317, 38);
+            this.panel126.TabIndex = 168;
+            // 
+            // panel127
+            // 
+            this.panel127.Controls.Add(this.panel128);
+            this.panel127.Controls.Add(this.panel129);
+            this.panel127.Location = new System.Drawing.Point(1, 39);
+            this.panel127.Name = "panel127";
+            this.panel127.Size = new System.Drawing.Size(1317, 38);
+            this.panel127.TabIndex = 166;
+            // 
+            // panel128
+            // 
+            this.panel128.Location = new System.Drawing.Point(0, 78);
+            this.panel128.Name = "panel128";
+            this.panel128.Size = new System.Drawing.Size(1317, 38);
+            this.panel128.TabIndex = 165;
+            // 
+            // panel129
+            // 
+            this.panel129.Location = new System.Drawing.Point(0, 40);
+            this.panel129.Name = "panel129";
+            this.panel129.Size = new System.Drawing.Size(1317, 38);
+            this.panel129.TabIndex = 164;
+            // 
+            // panel130
+            // 
+            this.panel130.Location = new System.Drawing.Point(0, 78);
+            this.panel130.Name = "panel130";
+            this.panel130.Size = new System.Drawing.Size(1317, 38);
+            this.panel130.TabIndex = 165;
+            // 
+            // panel131
+            // 
+            this.panel131.Location = new System.Drawing.Point(0, 40);
+            this.panel131.Name = "panel131";
+            this.panel131.Size = new System.Drawing.Size(1317, 38);
+            this.panel131.TabIndex = 164;
+            // 
+            // panel132
+            // 
+            this.panel132.Controls.Add(this.panel133);
+            this.panel132.Controls.Add(this.panel134);
+            this.panel132.Location = new System.Drawing.Point(1, 39);
+            this.panel132.Name = "panel132";
+            this.panel132.Size = new System.Drawing.Size(1317, 38);
+            this.panel132.TabIndex = 166;
+            // 
+            // panel133
+            // 
+            this.panel133.Location = new System.Drawing.Point(0, 78);
+            this.panel133.Name = "panel133";
+            this.panel133.Size = new System.Drawing.Size(1317, 38);
+            this.panel133.TabIndex = 165;
+            // 
+            // panel134
+            // 
+            this.panel134.Location = new System.Drawing.Point(0, 40);
+            this.panel134.Name = "panel134";
+            this.panel134.Size = new System.Drawing.Size(1317, 38);
+            this.panel134.TabIndex = 164;
+            // 
+            // panel135
+            // 
+            this.panel135.Location = new System.Drawing.Point(0, 78);
+            this.panel135.Name = "panel135";
+            this.panel135.Size = new System.Drawing.Size(1317, 38);
+            this.panel135.TabIndex = 165;
+            // 
+            // panel136
+            // 
+            this.panel136.Location = new System.Drawing.Point(0, 40);
+            this.panel136.Name = "panel136";
+            this.panel136.Size = new System.Drawing.Size(1317, 38);
+            this.panel136.TabIndex = 164;
+            // 
             // panel137
             // 
             this.panel137.Controls.Add(this.Space9);
@@ -6436,185 +6436,6 @@
             this.panel137.Name = "panel137";
             this.panel137.Size = new System.Drawing.Size(1317, 38);
             this.panel137.TabIndex = 173;
-            // 
-            // panel138
-            // 
-            this.panel138.Controls.Add(this.panel139);
-            this.panel138.Controls.Add(this.panel145);
-            this.panel138.Controls.Add(this.panel148);
-            this.panel138.Controls.Add(this.panel149);
-            this.panel138.Location = new System.Drawing.Point(1, 40);
-            this.panel138.Name = "panel138";
-            this.panel138.Size = new System.Drawing.Size(1317, 38);
-            this.panel138.TabIndex = 169;
-            // 
-            // panel139
-            // 
-            this.panel139.Controls.Add(this.panel140);
-            this.panel139.Controls.Add(this.panel143);
-            this.panel139.Controls.Add(this.panel144);
-            this.panel139.Location = new System.Drawing.Point(2, 40);
-            this.panel139.Name = "panel139";
-            this.panel139.Size = new System.Drawing.Size(1317, 38);
-            this.panel139.TabIndex = 168;
-            // 
-            // panel140
-            // 
-            this.panel140.Controls.Add(this.panel141);
-            this.panel140.Controls.Add(this.panel142);
-            this.panel140.Location = new System.Drawing.Point(1, 39);
-            this.panel140.Name = "panel140";
-            this.panel140.Size = new System.Drawing.Size(1317, 38);
-            this.panel140.TabIndex = 166;
-            // 
-            // panel141
-            // 
-            this.panel141.Location = new System.Drawing.Point(0, 78);
-            this.panel141.Name = "panel141";
-            this.panel141.Size = new System.Drawing.Size(1317, 38);
-            this.panel141.TabIndex = 165;
-            // 
-            // panel142
-            // 
-            this.panel142.Location = new System.Drawing.Point(0, 40);
-            this.panel142.Name = "panel142";
-            this.panel142.Size = new System.Drawing.Size(1317, 38);
-            this.panel142.TabIndex = 164;
-            // 
-            // panel143
-            // 
-            this.panel143.Location = new System.Drawing.Point(0, 78);
-            this.panel143.Name = "panel143";
-            this.panel143.Size = new System.Drawing.Size(1317, 38);
-            this.panel143.TabIndex = 165;
-            // 
-            // panel144
-            // 
-            this.panel144.Location = new System.Drawing.Point(0, 40);
-            this.panel144.Name = "panel144";
-            this.panel144.Size = new System.Drawing.Size(1317, 38);
-            this.panel144.TabIndex = 164;
-            // 
-            // panel145
-            // 
-            this.panel145.Controls.Add(this.panel146);
-            this.panel145.Controls.Add(this.panel147);
-            this.panel145.Location = new System.Drawing.Point(1, 39);
-            this.panel145.Name = "panel145";
-            this.panel145.Size = new System.Drawing.Size(1317, 38);
-            this.panel145.TabIndex = 166;
-            // 
-            // panel146
-            // 
-            this.panel146.Location = new System.Drawing.Point(0, 78);
-            this.panel146.Name = "panel146";
-            this.panel146.Size = new System.Drawing.Size(1317, 38);
-            this.panel146.TabIndex = 165;
-            // 
-            // panel147
-            // 
-            this.panel147.Location = new System.Drawing.Point(0, 40);
-            this.panel147.Name = "panel147";
-            this.panel147.Size = new System.Drawing.Size(1317, 38);
-            this.panel147.TabIndex = 164;
-            // 
-            // panel148
-            // 
-            this.panel148.Location = new System.Drawing.Point(0, 78);
-            this.panel148.Name = "panel148";
-            this.panel148.Size = new System.Drawing.Size(1317, 38);
-            this.panel148.TabIndex = 165;
-            // 
-            // panel149
-            // 
-            this.panel149.Location = new System.Drawing.Point(0, 40);
-            this.panel149.Name = "panel149";
-            this.panel149.Size = new System.Drawing.Size(1317, 38);
-            this.panel149.TabIndex = 164;
-            // 
-            // panel150
-            // 
-            this.panel150.Controls.Add(this.panel151);
-            this.panel150.Controls.Add(this.panel154);
-            this.panel150.Controls.Add(this.panel155);
-            this.panel150.Location = new System.Drawing.Point(2, 40);
-            this.panel150.Name = "panel150";
-            this.panel150.Size = new System.Drawing.Size(1317, 38);
-            this.panel150.TabIndex = 168;
-            // 
-            // panel151
-            // 
-            this.panel151.Controls.Add(this.panel152);
-            this.panel151.Controls.Add(this.panel153);
-            this.panel151.Location = new System.Drawing.Point(1, 39);
-            this.panel151.Name = "panel151";
-            this.panel151.Size = new System.Drawing.Size(1317, 38);
-            this.panel151.TabIndex = 166;
-            // 
-            // panel152
-            // 
-            this.panel152.Location = new System.Drawing.Point(0, 78);
-            this.panel152.Name = "panel152";
-            this.panel152.Size = new System.Drawing.Size(1317, 38);
-            this.panel152.TabIndex = 165;
-            // 
-            // panel153
-            // 
-            this.panel153.Location = new System.Drawing.Point(0, 40);
-            this.panel153.Name = "panel153";
-            this.panel153.Size = new System.Drawing.Size(1317, 38);
-            this.panel153.TabIndex = 164;
-            // 
-            // panel154
-            // 
-            this.panel154.Location = new System.Drawing.Point(0, 78);
-            this.panel154.Name = "panel154";
-            this.panel154.Size = new System.Drawing.Size(1317, 38);
-            this.panel154.TabIndex = 165;
-            // 
-            // panel155
-            // 
-            this.panel155.Location = new System.Drawing.Point(0, 40);
-            this.panel155.Name = "panel155";
-            this.panel155.Size = new System.Drawing.Size(1317, 38);
-            this.panel155.TabIndex = 164;
-            // 
-            // panel156
-            // 
-            this.panel156.Controls.Add(this.panel157);
-            this.panel156.Controls.Add(this.panel158);
-            this.panel156.Location = new System.Drawing.Point(1, 39);
-            this.panel156.Name = "panel156";
-            this.panel156.Size = new System.Drawing.Size(1317, 38);
-            this.panel156.TabIndex = 166;
-            // 
-            // panel157
-            // 
-            this.panel157.Location = new System.Drawing.Point(0, 78);
-            this.panel157.Name = "panel157";
-            this.panel157.Size = new System.Drawing.Size(1317, 38);
-            this.panel157.TabIndex = 165;
-            // 
-            // panel158
-            // 
-            this.panel158.Location = new System.Drawing.Point(0, 40);
-            this.panel158.Name = "panel158";
-            this.panel158.Size = new System.Drawing.Size(1317, 38);
-            this.panel158.TabIndex = 164;
-            // 
-            // panel159
-            // 
-            this.panel159.Location = new System.Drawing.Point(0, 78);
-            this.panel159.Name = "panel159";
-            this.panel159.Size = new System.Drawing.Size(1317, 38);
-            this.panel159.TabIndex = 165;
-            // 
-            // panel160
-            // 
-            this.panel160.Location = new System.Drawing.Point(0, 40);
-            this.panel160.Name = "panel160";
-            this.panel160.Size = new System.Drawing.Size(1317, 38);
-            this.panel160.TabIndex = 164;
             // 
             // Space9
             // 
@@ -7047,6 +6868,185 @@
             this.IMT_ITMCD_9.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
+            // panel138
+            // 
+            this.panel138.Controls.Add(this.panel139);
+            this.panel138.Controls.Add(this.panel145);
+            this.panel138.Controls.Add(this.panel148);
+            this.panel138.Controls.Add(this.panel149);
+            this.panel138.Location = new System.Drawing.Point(1, 40);
+            this.panel138.Name = "panel138";
+            this.panel138.Size = new System.Drawing.Size(1317, 38);
+            this.panel138.TabIndex = 169;
+            // 
+            // panel139
+            // 
+            this.panel139.Controls.Add(this.panel140);
+            this.panel139.Controls.Add(this.panel143);
+            this.panel139.Controls.Add(this.panel144);
+            this.panel139.Location = new System.Drawing.Point(2, 40);
+            this.panel139.Name = "panel139";
+            this.panel139.Size = new System.Drawing.Size(1317, 38);
+            this.panel139.TabIndex = 168;
+            // 
+            // panel140
+            // 
+            this.panel140.Controls.Add(this.panel141);
+            this.panel140.Controls.Add(this.panel142);
+            this.panel140.Location = new System.Drawing.Point(1, 39);
+            this.panel140.Name = "panel140";
+            this.panel140.Size = new System.Drawing.Size(1317, 38);
+            this.panel140.TabIndex = 166;
+            // 
+            // panel141
+            // 
+            this.panel141.Location = new System.Drawing.Point(0, 78);
+            this.panel141.Name = "panel141";
+            this.panel141.Size = new System.Drawing.Size(1317, 38);
+            this.panel141.TabIndex = 165;
+            // 
+            // panel142
+            // 
+            this.panel142.Location = new System.Drawing.Point(0, 40);
+            this.panel142.Name = "panel142";
+            this.panel142.Size = new System.Drawing.Size(1317, 38);
+            this.panel142.TabIndex = 164;
+            // 
+            // panel143
+            // 
+            this.panel143.Location = new System.Drawing.Point(0, 78);
+            this.panel143.Name = "panel143";
+            this.panel143.Size = new System.Drawing.Size(1317, 38);
+            this.panel143.TabIndex = 165;
+            // 
+            // panel144
+            // 
+            this.panel144.Location = new System.Drawing.Point(0, 40);
+            this.panel144.Name = "panel144";
+            this.panel144.Size = new System.Drawing.Size(1317, 38);
+            this.panel144.TabIndex = 164;
+            // 
+            // panel145
+            // 
+            this.panel145.Controls.Add(this.panel146);
+            this.panel145.Controls.Add(this.panel147);
+            this.panel145.Location = new System.Drawing.Point(1, 39);
+            this.panel145.Name = "panel145";
+            this.panel145.Size = new System.Drawing.Size(1317, 38);
+            this.panel145.TabIndex = 166;
+            // 
+            // panel146
+            // 
+            this.panel146.Location = new System.Drawing.Point(0, 78);
+            this.panel146.Name = "panel146";
+            this.panel146.Size = new System.Drawing.Size(1317, 38);
+            this.panel146.TabIndex = 165;
+            // 
+            // panel147
+            // 
+            this.panel147.Location = new System.Drawing.Point(0, 40);
+            this.panel147.Name = "panel147";
+            this.panel147.Size = new System.Drawing.Size(1317, 38);
+            this.panel147.TabIndex = 164;
+            // 
+            // panel148
+            // 
+            this.panel148.Location = new System.Drawing.Point(0, 78);
+            this.panel148.Name = "panel148";
+            this.panel148.Size = new System.Drawing.Size(1317, 38);
+            this.panel148.TabIndex = 165;
+            // 
+            // panel149
+            // 
+            this.panel149.Location = new System.Drawing.Point(0, 40);
+            this.panel149.Name = "panel149";
+            this.panel149.Size = new System.Drawing.Size(1317, 38);
+            this.panel149.TabIndex = 164;
+            // 
+            // panel150
+            // 
+            this.panel150.Controls.Add(this.panel151);
+            this.panel150.Controls.Add(this.panel154);
+            this.panel150.Controls.Add(this.panel155);
+            this.panel150.Location = new System.Drawing.Point(2, 40);
+            this.panel150.Name = "panel150";
+            this.panel150.Size = new System.Drawing.Size(1317, 38);
+            this.panel150.TabIndex = 168;
+            // 
+            // panel151
+            // 
+            this.panel151.Controls.Add(this.panel152);
+            this.panel151.Controls.Add(this.panel153);
+            this.panel151.Location = new System.Drawing.Point(1, 39);
+            this.panel151.Name = "panel151";
+            this.panel151.Size = new System.Drawing.Size(1317, 38);
+            this.panel151.TabIndex = 166;
+            // 
+            // panel152
+            // 
+            this.panel152.Location = new System.Drawing.Point(0, 78);
+            this.panel152.Name = "panel152";
+            this.panel152.Size = new System.Drawing.Size(1317, 38);
+            this.panel152.TabIndex = 165;
+            // 
+            // panel153
+            // 
+            this.panel153.Location = new System.Drawing.Point(0, 40);
+            this.panel153.Name = "panel153";
+            this.panel153.Size = new System.Drawing.Size(1317, 38);
+            this.panel153.TabIndex = 164;
+            // 
+            // panel154
+            // 
+            this.panel154.Location = new System.Drawing.Point(0, 78);
+            this.panel154.Name = "panel154";
+            this.panel154.Size = new System.Drawing.Size(1317, 38);
+            this.panel154.TabIndex = 165;
+            // 
+            // panel155
+            // 
+            this.panel155.Location = new System.Drawing.Point(0, 40);
+            this.panel155.Name = "panel155";
+            this.panel155.Size = new System.Drawing.Size(1317, 38);
+            this.panel155.TabIndex = 164;
+            // 
+            // panel156
+            // 
+            this.panel156.Controls.Add(this.panel157);
+            this.panel156.Controls.Add(this.panel158);
+            this.panel156.Location = new System.Drawing.Point(1, 39);
+            this.panel156.Name = "panel156";
+            this.panel156.Size = new System.Drawing.Size(1317, 38);
+            this.panel156.TabIndex = 166;
+            // 
+            // panel157
+            // 
+            this.panel157.Location = new System.Drawing.Point(0, 78);
+            this.panel157.Name = "panel157";
+            this.panel157.Size = new System.Drawing.Size(1317, 38);
+            this.panel157.TabIndex = 165;
+            // 
+            // panel158
+            // 
+            this.panel158.Location = new System.Drawing.Point(0, 40);
+            this.panel158.Name = "panel158";
+            this.panel158.Size = new System.Drawing.Size(1317, 38);
+            this.panel158.TabIndex = 164;
+            // 
+            // panel159
+            // 
+            this.panel159.Location = new System.Drawing.Point(0, 78);
+            this.panel159.Name = "panel159";
+            this.panel159.Size = new System.Drawing.Size(1317, 38);
+            this.panel159.TabIndex = 165;
+            // 
+            // panel160
+            // 
+            this.panel160.Location = new System.Drawing.Point(0, 40);
+            this.panel160.Name = "panel160";
+            this.panel160.Size = new System.Drawing.Size(1317, 38);
+            this.panel160.TabIndex = 164;
+            // 
             // MasterTouroku_HanbaiTankaTennic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -7060,7 +7060,7 @@
             this.Controls.Add(this.panel17);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel8);
-            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.panel10_1);
             this.Controls.Add(this.panel1);
             this.F10Visible = false;
             this.F11Visible = false;
@@ -7074,7 +7074,7 @@
             this.Load += new System.EventHandler(this.MasterTouroku_HanbaiTankaTennic_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MasterTouroku_HanbaiTankaTennic_KeyUp);
             this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.panel10, 0);
+            this.Controls.SetChildIndex(this.panel10_1, 0);
             this.Controls.SetChildIndex(this.panel8, 0);
             this.Controls.SetChildIndex(this.panel3, 0);
             this.Controls.SetChildIndex(this.panel17, 0);
@@ -7084,14 +7084,14 @@
             this.Controls.SetChildIndex(this.panel113, 0);
             this.Controls.SetChildIndex(this.panel137, 0);
             this.panel1.ResumeLayout(false);
+            this.panel10_2.ResumeLayout(false);
+            this.panel10_2.PerformLayout();
+            this.panel42.ResumeLayout(false);
             this.pnl_Header.ResumeLayout(false);
             this.pnl_Header.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel41.ResumeLayout(false);
-            this.panel41.PerformLayout();
-            this.panel42.ResumeLayout(false);
+            this.panel10_1.ResumeLayout(false);
+            this.panel10_1.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel14.ResumeLayout(false);
@@ -7207,7 +7207,7 @@
         private System.Windows.Forms.Label IMT_GYONO_5;
         private System.Windows.Forms.Label IMT_GYONO_4;
         private System.Windows.Forms.Label IMT_GYONO_3;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel10_1;
         private CKM_Controls.CKM_TextBox IMT_REMARK_0;
         private CKM_Controls.CKM_TextBox IMN_COSTUNPRICE_0;
         private CKM_Controls.CKM_TextBox Space0;
@@ -7224,7 +7224,7 @@
         private CKM_Controls.CKM_TextBox IMT_ITMNM_0;
         private CKM_Controls.CKM_TextBox IMT_ITMCD_0;
         private System.Windows.Forms.Label IMT_GYONO_0;
-        private System.Windows.Forms.Panel panel41;
+        private System.Windows.Forms.Panel panel10_2;
         private CKM_Controls.CKM_TextBox Space1;
         private CKM_Controls.CKM_TextBox IMN_R5UNITPRICE_1;
         private CKM_Controls.CKM_TextBox IMN_R4UNITPRICE_1;
