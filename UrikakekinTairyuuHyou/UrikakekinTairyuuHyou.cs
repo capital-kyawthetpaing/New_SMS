@@ -160,7 +160,8 @@ namespace UrikakekinTairyuuHyou
                           
                             for (int i = 11; i >= 0; i--)
                             {
-                                strmonth[i] = dtime.AddMonths(-i).ToString().Substring(0, 7).ToString();
+
+                                strmonth[i] = dtime.AddMonths(-i).ToString("yyyy/MM/dd").Substring(0, 7).ToString();
                             }
                         }
 
