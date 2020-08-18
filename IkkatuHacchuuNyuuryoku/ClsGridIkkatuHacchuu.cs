@@ -369,7 +369,7 @@ namespace IkkatuHacchuuNyuuryoku
 
                 //EDI
                 w_CtlCol = (int)ColNO.EDIFLG;
-                if (g_DArray[w_Row].EDIFLG == "True")
+                if (g_DArray[w_Row].EDIFLG == "1")
                 {
                     ((GridControl.clsGridCheckBox)g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl).Checked = true;
                 }
@@ -756,11 +756,11 @@ namespace IkkatuHacchuuNyuuryoku
                 w_CtlCol = (int)ColNO.EDIFLG;
                 if (((GridControl.clsGridCheckBox)g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl).Checked == true)
                 {
-                    g_DArray[w_Row].EDIFLG = "True";
+                    g_DArray[w_Row].EDIFLG = "1";
                 }
                 else
                 {
-                    g_DArray[w_Row].EDIFLG = "False";
+                    g_DArray[w_Row].EDIFLG = "0";
                 }
 
                 // メーカー商品コード

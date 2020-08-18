@@ -25,7 +25,62 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
-
+        //ses
+        public DataTable M_SKUPrice_HnabaiTankaTennic_Select(M_SKUPrice_Entity mse,M_SKU_Entity ms)
+        {
+            string sp = "Rpc_HanbaiTankaTennic";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@StartChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.StartChangeDate } },
+                { "@EndChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.EndChangeDate } },
+                { "@SKUCDFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.SKUCDFrom } },
+                { "@SKUCDTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.SKUCDTo } },
+                { "@BrandCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.BrandCD } },
+                { "@SKUName",new ValuePair{value1=SqlDbType.VarChar,value2=ms.SKUName} }
+            };
+            return SelectData(dic, sp);
+        }
+        public bool M_SKUPrice_Insert_Update(M_SKUPrice_Entity mse,int mode)
+        {
+            string sp = "M_SKUPrice_Insert_Update";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                {"@TankaCD",new ValuePair{value1=SqlDbType.VarChar,value2=mse.TankaCD} },
+                {"@StartDate",new ValuePair{value1=SqlDbType.VarChar,value2=mse.StartChangeDate} },
+                {"@EndDate",new ValuePair{value1=SqlDbType.VarChar,value2=mse.EndChangeDate} },
+                {"@unitPrice",new ValuePair{value1=SqlDbType.VarChar,value2=mse.UnitPrice} },
+                {"@SsUnitPrice",new ValuePair{value1=SqlDbType.VarChar,value2=mse.StandardSalesUnitPrice} },
+                {"@R1UnitPrice",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Rank1UnitPrice} },
+                {"@R2UnitPrice",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Rank2UnitPrice} },
+                {"@R3UnitPrice",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Rank3UnitPrice} },
+                {"@R4UnitPrice",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Rank4UnitPrice} },
+                {"@R5UnitPrice",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Rank5UnitPrice } },
+                {"@Remarks",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Remarks} },
+                {"@Operator",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Operator} },
+                {"@Program",new ValuePair{value1=SqlDbType.VarChar,value2=mse.ProgramID} },
+                {"@PC",new ValuePair{value1=SqlDbType.VarChar,value2=mse.PC} },
+                {"@OperateMode",new ValuePair{value1=SqlDbType.VarChar,value2=mse.PC} },
+                {"@KeyItem",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Key} },
+                {"@Mode",new ValuePair{value1=SqlDbType.VarChar,value2=mode.ToString()} }
+            };
+            UseTransaction = true;
+            return InsertUpdateDeleteData(dic, sp);
+        }
+        public bool M_SKUPrice_Delete(M_SKUPrice_Entity mse)
+        {
+            string sp = "M_SKUPrice_Delete";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+               {"@TankaCD",new ValuePair{value1=SqlDbType.VarChar,value2=mse.TankaCD} },
+               {"@Operator",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Operator} },
+               {"@Program",new ValuePair{value1=SqlDbType.VarChar,value2=mse.ProgramID} },
+               {"@PC",new ValuePair{value1=SqlDbType.VarChar,value2=mse.PC} },
+               {"@OperateMode",new ValuePair{value1=SqlDbType.VarChar,value2=mse.PC} },
+               {"@KeyItem",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Key} }
+            };
+            UseTransaction = true;
+            return InsertUpdateDeleteData(dic, sp);
+        }
         /*
         public DataTable M_Store_SelectAll(M_Store_Entity mbe)
         {

@@ -98,6 +98,7 @@
             this.txtDate.AllowMinus = false;
             this.txtDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtDate.BackColor = System.Drawing.Color.White;
+            this.txtDate.BorderColor = false;
             this.txtDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDate.ClientColor = System.Drawing.Color.White;
             this.txtDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;

@@ -1,15 +1,17 @@
+USE [CapitalSMS]
+GO
 
-
-/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]    Script Date: 2020/08/05 14:02:45 ******/
+/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]    Script Date: 2020/08/18 14:00:11 ******/
 DROP PROCEDURE [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]
 GO
 
-/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]    Script Date: 2020/08/05 14:02:45 ******/
+/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]    Script Date: 2020/08/18 14:00:11 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER OFF
 GO
+
 
 
 CREATE PROCEDURE [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register](
@@ -21,6 +23,7 @@ CREATE PROCEDURE [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register](
     ,@p_OrderDate                 date
     ,@p_OrderNO                   varchar(11)   
     ,@p_OrderProcessNO            varchar(11)   
+    ,@p_IkkatuHacchuuMode         varchar(1) --0:Netî≠íçÅA1:FAXî≠íç  
     ,@p_TIkkatuHacchuuNyuuryoku   dbo.T_IkkatuHacchuuNyuuryoku  READONLY
 )AS
 BEGIN
@@ -222,9 +225,9 @@ BEGIN
           ,OrderTaxRitsu            = CAST(NULLIF(MAIN.TaxRate,'') as decimal)    
           ,OrderGaku                = CAST(ISNULL(MAIN.Hacchuugaku,0) as money) + CAST(ISNULL(MAIN.Hacchuugaku,0) as money) * CAST(NULLIF(MAIN.TaxRate,'') as decimal) / 100    
           ,SoukoCD                  = MAIN.SoukoCD                   
-          ,DirectFLG                = CASE WHEN MAIN.ChokusouFLG = 'ÅZ' THEN 1 ELSE 0 END    
+          ,DirectFLG                = CASE WHEN MAIN.ChokusouFLG = 'Åõ' THEN 1 ELSE 0 END    
           ,NotNetFLG                = 0    
-          ,EDIFLG                   = CASE WHEN MAIN.EDIFLG = 'True' THEN 1 ELSE 0 END    
+          ,EDIFLG                   = MAIN.EDIFLG
           ,DesiredDeliveryDate      = MAIN.KibouNouki    
           ,ArrivePlanDate           = null    
           ,TotalArrivalSu           = 0    
@@ -297,11 +300,11 @@ BEGIN
           ,OrderDate                    = @p_OrderDate    
           ,ReturnFLG                    = '0'    
           ,OrderDataKBN                 = '1'    
-          ,OrderWayKBN                  = '1'    
+          ,OrderWayKBN                  = CASE WHEN @p_IkkatuHacchuuMode = '0' THEN '1' ELSE '2' END
           ,OrderCD                      = MAIN.SiiresakiCD    
           ,OrderPerson                  = null
           ,AliasKBN                     = '0'    
-          ,DestinationKBN               = CASE WHEN MAX(MAIN.ChokusouFLG) = 'ÅZ' THEN 1 ELSE 0 END    
+          ,DestinationKBN               = CASE WHEN MAX(MAIN.ChokusouFLG) = 'Åõ' THEN 2 ELSE 1 END    
           ,DestinationName              = MAIN.NounyuusakiName    
           ,DestinationZip1CD            = MAX(MAIN.NounyuusakiYuubinNO1)    
           ,DestinationZip2CD            = MAX(MAIN.NounyuusakiYuubinNO2)    
@@ -374,8 +377,8 @@ IF @p_OperateMode = 1
     
             --ì`ï[î‘çÜçÃî‘Åiî≠íçî‘çÜÅj     
             EXEC Fnc_GetNumber      
-                11,             --inì`ï[éÌï  11      
-        @p_OrderDate,    --inäÓèÄì˙      
+                2,             --inì`ï[éÌï  2
+                @p_OrderDate,    --inäÓèÄì˙      
                 @p_StoreCD,       --inìXï‹CD      
                 @p_Operator,      
                 @OrderNO OUTPUT      
