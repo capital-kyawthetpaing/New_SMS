@@ -21,9 +21,13 @@ namespace BL
         {
             return mdl.M_SKUPrice_Select(mie);
         }
-        public bool M_SKUPrice_Insert_Update(M_SKUPrice_Entity mse,int mode)
+        public bool M_SKUPrice_Insert(M_SKUPrice_Entity mse,string Xml)
         {
-            return mdl.M_SKUPrice_Insert_Update(mse, mode);
+            return mdl.M_SKUPrice_Insert(mse,Xml);
+        }
+        public bool M_SKUPrice_Update(M_SKUPrice_Entity mse, string updateXml)
+        {
+            return mdl.M_SKUPrice_Update(mse, updateXml);
         }
         public bool M_SKUPrice_Delete(M_SKUPrice_Entity mse)
         {
