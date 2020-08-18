@@ -2956,6 +2956,7 @@ namespace TempoJuchuuNyuuryoku
                         mGrid.g_DArray[row].ZaikoKBN = Convert.ToInt16(selectRow["ZaikoKBN"].ToString());
                         mGrid.g_DArray[row].KariHikiateNO = "";
                         mGrid.g_DArray[row].MakerItem = selectRow["MakerItem"].ToString();
+                        mGrid.g_DArray[row].ChkTyokuso = selectRow["DirectFlg"].ToString() == "1" ? true : false;
 
                         //[M_Vender]    
                         M_Vendor_Entity mve = new M_Vendor_Entity
