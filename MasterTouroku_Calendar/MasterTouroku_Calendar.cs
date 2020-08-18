@@ -210,7 +210,7 @@ namespace MasterTouroku_Calendar
                 if (mtcbl.M_Calendar_Insert_Update(mce))
                 {
                     now = Convert.ToDateTime(txtMonth.Text.ToString() + "/01 00:00:00");
-                    lblMonth.Text = txtMonth.Text = now.AddDays(1).AddMonths(1).AddDays(-1).ToString();
+                    lblMonth.Text = txtMonth.Text = now.AddDays(1).AddMonths(1).AddDays(-1).ToString("yyyy-mm-dd");
                     BindGridCalendar(now.AddMonths(1));
                     txtMonth.Focus();
                 }
@@ -230,7 +230,7 @@ namespace MasterTouroku_Calendar
                 {
 
                     now = Convert.ToDateTime(txtMonth.Text.ToString() + "/01 00:00:00");
-                    lblMonth.Text = txtMonth.Text = now.AddMonths(-1).ToString();
+                    lblMonth.Text = txtMonth.Text = now.AddMonths(-1).ToString("yyyy-mm-dd");
                     BindGridCalendar(now.AddMonths(-1));
                     txtMonth.Focus();
                 }

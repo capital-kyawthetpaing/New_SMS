@@ -1929,7 +1929,7 @@ namespace MasterTouroku_ShiireTanka
                                                 rowsku1["InsertDateTime"] = bbl.GetDate();
                                                 rowsku1["UpdateOperator"] = operatorCd;
                                                 rowsku1["UpdateDateTime"] = bbl.GetDate();
-                                                dtsku.Rows.Add(row1);
+                                                dtsku.Rows.Add(rowsku1);
                                                 dtdeljan = dtsku;
                                             }
                                         }
