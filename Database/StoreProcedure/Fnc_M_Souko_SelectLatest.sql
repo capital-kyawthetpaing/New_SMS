@@ -1,12 +1,19 @@
 
-IF EXISTS (select * from sys.objects where name = 'Fnc_M_Souko_SelectLatest')
-begin
-    DROP FUNCTION Fnc_M_Souko_SelectLatest
-end
+
+/****** Object:  UserDefinedFunction [dbo].[Fnc_M_Souko_SelectLatest]    Script Date: 2020/08/18 16:20:28 ******/
+DROP FUNCTION [dbo].[Fnc_M_Souko_SelectLatest]
+GO
+
+/****** Object:  UserDefinedFunction [dbo].[Fnc_M_Souko_SelectLatest]    Script Date: 2020/08/18 16:20:28 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER OFF
 GO
 
 
-CREATE FUNCTION Fnc_M_Souko_SelectLatest(  
+
+CREATE FUNCTION [dbo].[Fnc_M_Souko_SelectLatest](  
     @ChangeDate varchar(10)  
 )
 RETURNS TABLE  
@@ -42,13 +49,17 @@ RETURN(
       ,main.UpdateOperator
       ,CONVERT(varchar,main.UpdateDateTime) AS UpdateDateTime  
     FROM M_Souko main
-    INNER JOIN (SELECT StoreCD  
+    INNER JOIN (SELECT StoreCD,SoukoCD  
                       ,MAX(ChangeDate) AS ChangeDate      
                   FROM M_Souko   
                   WHERE ChangeDate <= CAST(@ChangeDate AS date)
                     AND DeleteFlg = 0
-                  GROUP BY StoreCD)  AS sub  
+                  GROUP BY StoreCD,SoukoCD)  AS sub  
       ON  main.StoreCD = sub.StoreCD  
+	  AND main.SoukoCD = sub.SoukoCD
       AND main.ChangeDate = sub.ChangeDate
     WHERE main.DeleteFlg = 0
   )   
+GO
+
+
