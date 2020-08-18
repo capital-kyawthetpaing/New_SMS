@@ -2152,7 +2152,7 @@ namespace MasterTouroku_ShiireTanka
                 }
             }
         }
-        private  bool eval = false;
+        //private  bool eval = false;
         private void GV_item_Press_(object sender, PreviewKeyDownEventArgs e)
         {
 
