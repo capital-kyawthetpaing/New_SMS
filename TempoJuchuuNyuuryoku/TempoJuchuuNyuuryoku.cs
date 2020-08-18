@@ -2956,6 +2956,7 @@ namespace TempoJuchuuNyuuryoku
                         mGrid.g_DArray[row].ZaikoKBN = Convert.ToInt16(selectRow["ZaikoKBN"].ToString());
                         mGrid.g_DArray[row].KariHikiateNO = "";
                         mGrid.g_DArray[row].MakerItem = selectRow["MakerItem"].ToString();
+                        mGrid.g_DArray[row].ChkTyokuso = selectRow["DirectFlg"].ToString() == "1" ? true : false;
 
                         //[M_Vender]    
                         M_Vendor_Entity mve = new M_Vendor_Entity
@@ -5021,8 +5022,19 @@ namespace TempoJuchuuNyuuryoku
                         return;
                     }
 
-                    if (CL == (int)ClsGridJuchuu.ColNO.ChkExpress || CL == (int)ClsGridJuchuu.ColNO.ChkFuyo || CL == (int)ClsGridJuchuu.ColNO.ChkTyokuso)
-                        S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+                    switch (CL)
+                    {
+                        case (int)ClsGridJuchuu.ColNO.NotPrintFLG:
+                        case (int)ClsGridJuchuu.ColNO.ChkExpress:
+                        case (int)ClsGridJuchuu.ColNO.ChkFuyo:
+                        case (int)ClsGridJuchuu.ColNO.ChkTyokuso:
+                            if (e.Shift)
+                                S_Grid_0_Event_ShiftTab(CL, w_Row, w_ActCtl, w_ActCtl);
+                            else
+                                S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+
+                            break;
+                    }
                 }
             }
             catch (Exception ex)
