@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtMonth = new CKM_Controls.CKM_TextBox();
             this.PanelDetail = new System.Windows.Forms.Panel();
@@ -151,6 +152,7 @@
             this.txtMonth.AllowMinus = false;
             this.txtMonth.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtMonth.BackColor = System.Drawing.Color.White;
+            this.txtMonth.BorderColor = false;
             this.txtMonth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMonth.ClientColor = System.Drawing.Color.White;
             this.txtMonth.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -160,12 +162,13 @@
             this.txtMonth.IntegerPart = 0;
             this.txtMonth.IsCorrectDate = true;
             this.txtMonth.isEnterKeyDown = false;
+            this.txtMonth.IsFirstTime = true;
             this.txtMonth.isMaxLengthErr = false;
             this.txtMonth.IsNumber = true;
             this.txtMonth.IsShop = false;
-            this.txtMonth.Length = 6;
+            this.txtMonth.Length = 7;
             this.txtMonth.Location = new System.Drawing.Point(156, 38);
-            this.txtMonth.MaxLength = 6;
+            this.txtMonth.MaxLength = 7;
             this.txtMonth.MoveNext = true;
             this.txtMonth.Name = "txtMonth";
             this.txtMonth.Size = new System.Drawing.Size(60, 19);
@@ -698,7 +701,7 @@
             this.GvCalendar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -738,11 +741,20 @@
             this.Column30,
             this.Column31,
             this.colFlag});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GvCalendar.DefaultCellStyle = dataGridViewCellStyle3;
             this.GvCalendar.EnableHeadersVisualStyles = false;
             this.GvCalendar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvCalendar.Location = new System.Drawing.Point(373, 57);
             this.GvCalendar.Name = "GvCalendar";
             this.GvCalendar.RowHeight_ = 20;
+            this.GvCalendar.RowTemplate.Height = 20;
             this.GvCalendar.Size = new System.Drawing.Size(936, 269);
             this.GvCalendar.TabIndex = 10;
             this.GvCalendar.UseRowNo = false;
