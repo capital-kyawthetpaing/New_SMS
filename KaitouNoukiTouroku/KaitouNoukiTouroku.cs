@@ -1289,6 +1289,7 @@ namespace KaitouNoukiTouroku
                     if (string.IsNullOrWhiteSpace(detailControls[(int)EIndex.OrderDateFrom].Text) && string.IsNullOrWhiteSpace(detailControls[(int)EIndex.OrderDateTo].Text))
                     {
                         SetEnabled(EIndex.ChkMikakutei, false);
+                        ChkMikakutei.Checked = false;
                         ChkMikakutei.Enabled = false;
                         ChkKanbai.Enabled = false;
                         ChkFuyo.Enabled = false;
