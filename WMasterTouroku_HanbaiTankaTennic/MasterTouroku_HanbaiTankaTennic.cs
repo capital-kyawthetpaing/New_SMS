@@ -829,6 +829,212 @@ namespace WMasterTouroku_HanbaiTankaTennic
             }
             return dt;
         }
+
+        private DataTable GetdatafromArray()
+        {
+            var result = new DataTable();
+            var dt = new DataTable();
+            var colnames = new string[] { "TanKaCD", "StoreCD","AdminNO","SKUCD" ,"StartChangeDate", "EndChangeDate", "PriceWithoutTax", "SalePriceOutTax", "Remarks", "DeleteFlg","UsedFlg","InsertOperartor","InsertDateTime","UpdateOperator","UpdateDateTime"};
+            var ColumnNames = new string[] {"SKUCD","AdminNo","JANCD","StartChangeDate","EndChangeDate","UnitPrice","StandardSalesUnitPrice","Rank1","Rank2","Rank3","Rank4","Rank5","ItemName","CostUnitPrice","Remarks" };
+            foreach (var col in ColumnNames)
+            {
+                dt.Columns.Add(col);
+            }
+            foreach (var col in colnames)
+            {
+                result.Columns.Add(col);
+            }
+            for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+            {
+                //DataRow dr = dt.NewRow();
+
+               // var sd= 
+                if (!string.IsNullOrEmpty( mGrid.g_DArray[RW].SKUCD))
+                {
+                    dt.Rows.Add(
+                        mGrid.g_DArray[RW].SKUCD
+                          , mGrid.g_DArray[RW].AdminNo
+                         , mGrid.g_DArray[RW].JANCD
+                         , mGrid.g_DArray[RW].StartChangeDate
+                         , mGrid.g_DArray[RW].EndChangeDate
+                         , mGrid.g_DArray[RW].UnitPrice
+                         , mGrid.g_DArray[RW].StandardSalesUnitPrice
+                         , mGrid.g_DArray[RW].Rank1UnitPrice
+                         , mGrid.g_DArray[RW].Rank2UnitPrice
+                         , mGrid.g_DArray[RW].Rank3UnitPrice
+                         , mGrid.g_DArray[RW].Rank4UnitPrice
+                         , mGrid.g_DArray[RW].Rank5UnitPrice
+                         , mGrid.g_DArray[RW].ItemName
+                         , mGrid.g_DArray[RW].CostUnitPrice
+                         // , bbl.Z_Set(mGrid.g_DArray[RW].Space1)
+                         , mGrid.g_DArray[RW].Remarks == "" ? null : mGrid.g_DArray[RW].Remarks
+                         //, mGrid.g_DArray[RW].Update
+                         );
+                }
+                else
+                {
+                    dt.Rows.Add();
+                }
+            }
+            var dtnow = DateTime.Now.ToString();
+
+            try
+            {
+                foreach (DataRow r in dt.Rows)
+                {
+
+                    var row = r;
+                    if (!row.IsNull(1))
+                    {
+                        if (Getint(row["StandardSalesUnitPrice"].ToString()) != "0")
+                        {
+                            result.Rows.Add(
+                                "0",
+                                "0000",
+                                row["AdminNO"].ToString(),
+                                row["SKUCD"].ToString(),
+                                row["StartChangeDate"].ToString(),
+                                row["EndChangeDate"].ToString(),
+                                row["UnitPrice"].ToString(),
+                                row["StandardSalesUnitPrice"].ToString(),
+                                row["Remarks"].ToString(),
+                                "0",
+                                "0",
+                                 InOperatorCD,
+                                dtnow,
+                                "",
+                                ""
+                                );
+                        }
+                        if (Getint(row["Rank1"].ToString()) != "0")
+                        {
+                            result.Rows.Add(
+                                "1",
+                                 "0000",
+                                row["AdminNO"].ToString(),
+                                row["SKUCD"].ToString(),
+                                row["StartChangeDate"].ToString(),
+                                row["EndChangeDate"].ToString(),
+                                row["UnitPrice"].ToString(),
+                                row["Rank1"].ToString(),
+                                row["Remarks"].ToString(),
+                                 "0",
+                                "0",
+                                 InOperatorCD,
+                                dtnow,
+                                "",
+                                ""
+                                );
+                        }
+                        if (Getint(row["Rank2"].ToString()) != "0")
+                        {
+                            result.Rows.Add(
+                                "2",
+                                "0000",
+                                row["AdminNO"].ToString(),
+                                row["SKUCD"].ToString(),
+                                row["StartChangeDate"].ToString(),
+                                row["EndChangeDate"].ToString(),
+                                row["UnitPrice"].ToString(),
+                                row["Rank2"].ToString(),
+                                row["Remarks"].ToString(),
+                                  "0",
+                                "0",
+                                 InOperatorCD,
+                                dtnow,
+                                "",
+                                ""
+                                );
+                        }
+                        if (Getint(row["Rank3"].ToString()) != "0")
+                        {
+                            result.Rows.Add(
+                                "3",
+                                 "0000",
+                                row["AdminNO"].ToString(),
+                                row["SKUCD"].ToString(),
+                                row["StartChangeDate"].ToString(),
+                                row["EndChangeDate"].ToString(),
+                                row["UnitPrice"].ToString(),
+                                row["Rank3"].ToString(),
+                                row["Remarks"].ToString(),
+                                   "0",
+                                "0",
+                                 InOperatorCD,
+                                dtnow,
+                                "",
+                                ""
+                                );
+                        }
+                        if (Getint(row["Rank4"].ToString()) != "0")
+                        {
+                            result.Rows.Add(
+                                "4",
+                                 "0000",
+                                row["AdminNO"].ToString(),
+                                row["SKUCD"].ToString(),
+                                row["StartChangeDate"].ToString(),
+                                row["EndChangeDate"].ToString(),
+                                row["UnitPrice"].ToString(),
+                                row["Rank4"].ToString(),
+                                row["Remarks"].ToString(),
+                                   "0",
+                                "0",
+                                 InOperatorCD,
+                                dtnow,
+                                "",
+                                ""
+                                );
+                        }
+                        if (Getint(row["Rank5"].ToString()) != "0")
+                        {
+                            result.Rows.Add(
+                                "5",
+                                 "0000",
+                                row["AdminNO"].ToString(),
+                                row["SKUCD"].ToString(),
+                                row["StartChangeDate"].ToString(),
+                                row["EndChangeDate"].ToString(),
+                                row["UnitPrice"].ToString(),
+                                row["Rank5"].ToString(),
+                                row["Remarks"].ToString(),
+                                "0",
+                                "0",
+                                 InOperatorCD,
+                                dtnow,
+                                "",
+                                ""
+                                );
+                        }
+                    }
+                    else
+                        break;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+
+            }
+
+            return result;
+        }
+
+        private string Getint(string val)
+        {
+            try
+            {
+                return Convert.ToInt32(val.Split('.')[0]).ToString();
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+            return "0";
+        }
+        
         private M_SKUPrice_Entity GetSearchInfo()
         {
             mse = new M_SKUPrice_Entity()
@@ -909,7 +1115,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                         break;
                     }
                 }
-                
+                mGrid.S_DispToArray(Vsb_Mei_0.Value);
                 //   ((CKM_TextBox)sender).BackColor =ClsGridBase.GridColor;
                 //if (ct is "")
                 //((CKM_TextBox)sender).BackColor = ClsGridBase.GridColor;
@@ -1464,10 +1670,10 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 switch (OperationMode)
                    {
                       case EOperationMode.INSERT:
-                         InsertUpdate(1);
+                        Insert();
                           break;
                       case EOperationMode.UPDATE:
-                         InsertUpdate(2);
+                        Update();
                           break;
                       case EOperationMode.DELETE:
                          Delete();
@@ -1475,16 +1681,32 @@ namespace WMasterTouroku_HanbaiTankaTennic
                    }
                 }
             }
-        private void InsertUpdate(int mode)
+        private void Insert()
         {
-            if (spb.M_SKUPrice_Insert_Update(mse, mode))
+            var dt = GetdatafromArray();
+            string Xml = spb.DataTableToXml(dt);
+            if (spb.M_SKUPrice_Insert(mse,Xml))
             {
-                IMT_STADT_0.Focus();
                 spb.ShowMessage("I101");
                 Clear(pnl_Header);
                 Clear(pnl_Body);
                 ChangeOperationMode(OperationMode);
-                //txtStartDateFrom.Focus();
+            }
+            else
+            {
+                spb.ShowMessage("S001");
+            }
+        }
+        private void Update()
+        {
+            var dt = GetdatafromArray();
+            string updateXml = spb.DataTableToXml(dt);
+            if(spb.M_SKUPrice_Update(mse,updateXml))
+            {
+                spb.ShowMessage("I101");
+                Clear(pnl_Header);
+                Clear(pnl_Body);
+                ChangeOperationMode(OperationMode);
             }
             else
             {
