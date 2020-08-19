@@ -3651,7 +3651,7 @@ namespace NyuukaNyuuryoku
                             }
                         }
 
-                        mGrid2.g_DArray[w_Row].SURYO = mGrid2.g_DArray[w_Row].OrderSu;
+                        mGrid2.g_DArray[w_Row].SURYO = bbl.Z_SetStr(bbl.Z_Set(mGrid2.g_DArray[w_Row].OrderSu) - bbl.Z_Set(mGrid2.g_DArray[w_Row].ReserveSu));
 
                         if (!string.IsNullOrWhiteSpace(lblVendor.Text) && !lblVendor.Text.Equals(mGrid2.g_DArray[w_Row].Customer))
                         {
