@@ -202,6 +202,7 @@
     <Compile Include="TempoShukkaNyuuryoku_BL.cs" />
     <Compile Include="TempoUriageNyuuryoku_BL.cs" />
     <Compile Include="UriageMotochou_BL.cs" />
+    <Compile Include="UriageNyuuryoku_BL.cs" />
     <Compile Include="UrikakekinTairyuuHyou_BL.cs" />
     <Compile Include="Vendor_BL.cs" />
     <Compile Include="WowmaAPI_BL.cs" />

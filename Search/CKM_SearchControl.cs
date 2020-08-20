@@ -224,6 +224,7 @@ namespace Search
             単価設定,
             見積番号,
             受注番号,
+            受注処理番号,
             発注番号,
             発注処理番号, //2020.07.05 add
             売上番号,
@@ -477,6 +478,7 @@ namespace Search
                     lblName.Width = 600;
                     break;
                 case SearchType.受注番号:
+                case SearchType.受注処理番号:
                     txtCode.MaxLength = 11;
                     txtCode.Width = 100;
                     lblName.Width = 600;
@@ -1175,7 +1177,7 @@ namespace Search
                         }
                     }
                     break;
-                case SearchType.受注番号:   //Todo:変更。受注番号検索が未作成
+                case SearchType.受注番号:   
                     using (Search_JuchuuNO frmJuchuu = new Search_JuchuuNO(changedate))
                     {
                         frmJuchuu.OperatorCD = Value1;
@@ -1185,6 +1187,22 @@ namespace Search
                         if (!frmJuchuu.flgCancel)
                         {
                             txtCode.Text = frmJuchuu.JuchuuNO;
+                            txtChangeDate.Text = frmJuchuu.ChangeDate;
+                            CheckBasedFormPanel(); //Added by PTK
+
+                        }
+                    }
+                    break;
+                case SearchType.受注処理番号:
+                    using (Search_JuchuuProcessNO frmJuchuu = new Search_JuchuuProcessNO(changedate))
+                    {
+                        frmJuchuu.OperatorCD = Value1;
+                        frmJuchuu.AllAvailableStores = Value2;
+                        frmJuchuu.ShowDialog();
+
+                        if (!frmJuchuu.flgCancel)
+                        {
+                            txtCode.Text = frmJuchuu.JuchuuProcessNO;
                             txtChangeDate.Text = frmJuchuu.ChangeDate;
                             CheckBasedFormPanel(); //Added by PTK
 

@@ -150,11 +150,9 @@ namespace DL
             return SelectData(dic, sp);
         }
 
-       
         /// <summary>
-        /// 売上入力データ取得処理
-        /// UriageNyuuryokuよりデータ抽出時に使用
-        /// 売上入力未作成のため納品書で使用するためのストアドとして作成
+        /// 売上データ取得処理
+        /// 納品書で使用するためのストアドとして作成
         /// </summary>
         public DataTable D_Sales_SelectData(D_Sales_Entity mie, short operationMode)
         {
@@ -185,6 +183,7 @@ namespace DL
             UseTransaction = true;
 
             string outPutParam = "";    //未使用
+
             bool ret = InsertUpdateDeleteData(sp, ref outPutParam);
 
             return ret;
@@ -207,54 +206,59 @@ namespace DL
             return SelectData(dic, sp);
         }
 
-        /// <summary>	
-        /// 店舗レジ実績照会データ取得処理	
-        /// TempoRegiJissekiSyoukaiよりデータ抽出時に使用	
-        /// </summary>	
-        /// <param name="de"></param>	
-        /// <returns></returns>	
+        /// <summary>
+        /// 店舗レジ実績照会データ取得処理
+        /// TempoRegiJissekiSyoukaiよりデータ抽出時に使用
+        /// </summary>
+        /// <param name="de"></param>
+        /// <returns></returns>
         public DataTable D_Sales_SelectData_ForTempoRegiJissekiSyoukai(D_Sales_Entity ds)
         {
             string sp = "D_Sales_SelectData_ForTempoRegiJisseki";
+
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@Date", new ValuePair { value1 = SqlDbType.Date, value2 = ds.SalesDate } },
             };
+
             return SelectData(dic, sp);
         }
-        /// <summary>	
-        /// 売上データ取得処理	
-        /// 店舗レジ　販売登録で使用するためのストアドとして作成	
-        /// </summary>	
+
+        /// <summary>
+        /// 売上データ取得処理
+        /// 店舗レジ　販売登録で使用するためのストアドとして作成
+        /// </summary>
         public DataTable D_Sales_SelectForRegi(D_Sales_Entity mie, short operationMode)
         {
             string sp = "D_Sales_SelectForRegi";
-
+            
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@OperateMode", new ValuePair { value1 = SqlDbType.TinyInt, value2 = operationMode.ToString() } },
                 { "@SalesNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = mie.SalesNO } },
             };
+
             return SelectData(dic, sp);
         }
 
-        /// <summary>	
-        /// 出荷売上データ更新処理	
-        /// </summary>	
-        /// <param name="dse"></param>	
-        /// <returns></returns>	
+        /// <summary>
+        /// 出荷売上データ更新処理
+        /// </summary>
+        /// <param name="dse"></param>
+        /// <returns></returns>
         public bool ShukkaUriageUpdate(D_Sales_Entity dse)
         {
             string sp = "PRC_ShukkaUriageUpdate";
+
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = dse.Operator} },
                 { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = dse.PC} },
             };
+
             UseTransaction = true;
             return InsertUpdateDeleteData(dic, sp);
         }
-
         public DataTable D_Sale_SelectForSeisan(D_Sales_Entity dse)
         {
             string sp = "D_Sale_SelectForSeisan";
@@ -266,6 +270,86 @@ namespace DL
             UseTransaction = true;
             return SelectData(dic, sp);
         }
+        /// <summary>
+        /// 売上データ取得処理
+        /// </summary>
+        public DataTable D_Sales_SelectDataForUriageNyuuryoku(D_Sales_Entity mie, short operationMode)
+        {
+            string sp = "D_Sales_SelectDataForUriageNyuuryoku";
 
+            //command.Parameters.Add("@SyoKBN", SqlDbType.TinyInt).Value = mie.SyoKBN;
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@OperateMode", new ValuePair { value1 = SqlDbType.TinyInt, value2 = operationMode.ToString() } },
+                { "@SalesNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = mie.SalesNO } },
+            };
+
+            return SelectData(dic, sp);
+        }
+        /// <summary>
+        /// 売上入力更新処理
+        /// UriageNyuuryokuより更新時に使用
+        /// </summary>
+        /// <param name="de"></param>
+        /// <param name="operationMode"></param>
+        /// <param name="operatorNm"></param>
+        /// <param name="pc"></param>
+        /// <returns></returns>
+        public bool D_Sales_Exec(D_Sales_Entity de, DataTable dt, short operationMode)
+        {
+            string sp = "PRC_UriageNyuuryoku";
+
+            command = new SqlCommand(sp, GetConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandTimeout = 0;
+
+            AddParam(command, "@OperateMode", SqlDbType.Int, operationMode.ToString());
+            AddParam(command, "@SalesNO", SqlDbType.VarChar, de.SalesNO);
+            //AddParam(command, "@JuchuuProcessNO", SqlDbType.VarChar, de.JuchuuProcessNO);
+            AddParam(command, "@StoreCD", SqlDbType.VarChar, de.StoreCD);
+            AddParam(command, "@SalesDate", SqlDbType.VarChar, de.SalesDate);
+            AddParam(command, "@ReturnFLG", SqlDbType.TinyInt, de.ReturnFlg);
+            //AddParam(command, "@SoukoCD", SqlDbType.VarChar, de.SoukoCD);
+            AddParam(command, "@StaffCD", SqlDbType.VarChar, de.StaffCD);
+            AddParam(command, "@CustomerCD", SqlDbType.VarChar, de.CustomerCD);
+            AddParam(command, "@CustomerName", SqlDbType.VarChar, de.CustomerName);
+            AddParam(command, "@CustomerName2", SqlDbType.VarChar, de.CustomerName2);
+
+            AddParam(command, "@SalesGaku", SqlDbType.Money, de.SalesGaku);
+            AddParam(command, "@Discount", SqlDbType.Money, de.Discount);
+            AddParam(command, "@HanbaiHontaiGaku", SqlDbType.Money, de.SalesHontaiGaku);
+            AddParam(command, "@HanbaiTax8", SqlDbType.Money, de.SalesTax8);
+            AddParam(command, "@HanbaiTax10", SqlDbType.Money, de.SalesTax10);
+            AddParam(command, "@HanbaiGaku", SqlDbType.Money, de.SalesGaku);
+            AddParam(command, "@CostGaku", SqlDbType.Money, de.CostGaku);
+            AddParam(command, "@ProfitGaku", SqlDbType.Money, de.ProfitGaku);
+            //AddParam(command, "@Point", SqlDbType.Money, de.Point);
+            //AddParam(command, "@InvoiceGaku", SqlDbType.Money, de.InvoiceGaku);
+            //AddParam(command, "@OrderHontaiGaku", SqlDbType.Money, dme.OrderHontaiGaku);
+            //AddParam(command, "@OrderTax8", SqlDbType.Money, dme.OrderTax8);
+            //AddParam(command, "@OrderTax10", SqlDbType.Money, dme.OrderTax10);
+            //AddParam(command, "@OrderGaku", SqlDbType.Money, dme.OrderGaku);
+            AddParam(command, "@PaymentMethodCD", SqlDbType.VarChar, de.PaymentMethodCD);
+            //AddParam(command, "@PaymentPlanNO", SqlDbType.TinyInt, de.PaymentPlanNO);
+
+            AddParam(command, "@NouhinsyoComment", SqlDbType.VarChar, de.NouhinsyoComment);
+
+            AddParamForDataTable(command, "@Table", SqlDbType.Structured, dt);
+            AddParam(command, "@Operator", SqlDbType.VarChar, de.InsertOperator);
+            AddParam(command, "@PC", SqlDbType.VarChar, de.PC);
+
+            //OUTパラメータの追加
+            string outPutParam = "@OutSalesNo";
+            command.Parameters.Add(outPutParam, SqlDbType.VarChar, 11);
+            command.Parameters[outPutParam].Direction = ParameterDirection.Output;
+
+            UseTransaction = true;
+
+            bool ret = InsertUpdateDeleteData(sp, ref outPutParam);
+            if (ret)
+                de.SalesNO = outPutParam;
+
+            return ret;
+        }
     }
 }
