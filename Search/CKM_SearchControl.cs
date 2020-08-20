@@ -1525,7 +1525,7 @@ namespace Search
                     }
                     break;
                 case SearchType.ID:
-                    using (Search_ID frmID = new Search_ID())
+                    using (Search_ID frmID = new Search_ID()) 
                     {
                         frmID.ShowDialog();
                         if (!frmID.flgCancel)
@@ -1892,36 +1892,15 @@ namespace Search
                 {
                     case SearchType.倉庫:
                         dtResult = bbl.SimpleSelect1("2", TxtChangeDate.Text.Replace("/", "-"), TxtCode.Text);
-                        //FieldsName = "1";
-                        //TableName = "M_Souko";
-                        //Condition = "SoukoCD = '" + TxtCode.Text + "' and " +
-                        //           "ChangeDate <= '" + (string.IsNullOrWhiteSpace(TxtChangeDate.Text) ? DateTime.Now.ToString("yyyy/MM/dd") : TxtChangeDate.Text.Replace("/", "-")) + "'";
-                        //dtResult = bbl.SimpleSelect(FieldsName, TableName, Condition);
                         break;
                     case SearchType.銀行口座:
                         dtResult = bbl.SimpleSelect1("6", TxtChangeDate.Text.Replace("/", "-"), TxtCode.Text);
-                        //FieldsName = "1";
-                        //TableName = "M_Kouza";
-                        //Condition = "KouzaCD = '" + TxtCode.Text + "' and " +
-                        //           "ChangeDate <= '" + (string.IsNullOrWhiteSpace(TxtChangeDate.Text) ? DateTime.Now.ToString("yyyy/MM/dd") : TxtChangeDate.Text.Replace("/", "-")) + "'";
-                        //dtResult = bbl.SimpleSelect(FieldsName, TableName, Condition);
                         break;
                     case SearchType.銀行:
                         dtResult = bbl.SimpleSelect1("4", TxtChangeDate.Text.Replace("/", "-"), TxtCode.Text);
-                        //FieldsName = "1";
-                        //TableName = "M_Bank";
-                        //Condition = "BankCD = '" + TxtCode.Text + "' and " +
-                        //           "ChangeDate <= '" + (string.IsNullOrWhiteSpace(TxtChangeDate.Text) ? DateTime.Now.ToString("yyyy/MM/dd") : TxtChangeDate.Text.Replace("/", "-")) + "'";
-                        //dtResult = bbl.SimpleSelect(FieldsName, TableName, Condition);
                         break;
                     case SearchType.銀行支店:
                         dtResult = bbl.SimpleSelect1("8", TxtChangeDate.Text.Replace("/", "-"), TxtCode.Text, Value1);
-                        //FieldsName = "1";
-                        //TableName = "M_BankShiten";
-                        //Condition = "BranchCD = '" + TxtCode.Text + "' and " + "BankCD = '" + Value1 + "'and " +
-                        //           "ChangeDate <= '" + (string.IsNullOrWhiteSpace(TxtChangeDate.Text) ? DateTime.Now.ToString("yyyy/MM/dd") : TxtChangeDate.Text.Replace("/", "-")) + "'";
-
-                        //dtResult = bbl.SimpleSelect(FieldsName, TableName, Condition);
                         break;
                     case SearchType.仕入先:
                         dtResult = bbl.SimpleSelect1("28", TxtChangeDate.Text.Replace("/", "-"), TxtCode.Text);
@@ -1970,6 +1949,9 @@ namespace Search
                         break;
                     case SearchType.MakerItem:
                         dtResult = bbl.SimpleSelect1("69", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        break;
+                    case SearchType.単価設定:
+                        dtResult = bbl.SimpleSelect1("72", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
                 }
 
@@ -2069,7 +2051,10 @@ namespace Search
                 case SearchType.SKU_ITEM_CD:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 15, txtCode.Text, Value1);
                     break;
-              
+                case SearchType.単価設定:
+                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 16, txtCode.Text, Value1);
+                    break;
+
             }
             if (dtResult.Rows.Count > 0)
             {
