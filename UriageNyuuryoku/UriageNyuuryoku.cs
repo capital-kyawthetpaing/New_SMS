@@ -8,57 +8,35 @@ using Base.Client;
 using Search;
 using GridBase;
 
-namespace TempoJuchuuNyuuryoku
+namespace UriageNyuuryoku
 {
     /// <summary>
-    /// TempoJuchuuNyuuryoku 店舗受注入力
+    /// UriageNyuuryoku 売上入力
     /// </summary>
-    internal partial class TempoJuchuuNyuuryoku : FrmMainForm
+    internal partial class UriageNyuuryoku : FrmMainForm
     {
-        private const string ProID = "TempoJuchuuNyuuryoku";
-        private const string ProNm = "店舗受注入力";
+        private const string ProID = "UriageNyuuryoku";
+        private const string ProNm = "売上入力";
         private const short mc_L_END = 3; // ロック用
         private const string ZaikoSyokai = "ZaikoSyokai.exe";        
 
         private enum EIndex : int
         {
-            JuchuuNO,
-            CopyJuchuuNO,
-            MitsumoriNO,
+            SalesNO,
+            CopySalesNO,
             ckM_CheckBox1,
-            MotoJuchuuNO,
+            MotoSalesNO,
             StoreCD,
 
-            JuchuuDate = 0,
-            SoukoName,
+            SalesDate = 0,
             StaffCD,
             CustomerCD,
             CustomerName,
-            AddressBtn,
             CustomerName2,
-            AliasKBN,
-            Tel1,
-            Tel2,
-            Tel3,
-
-            DeliveryCD,
-            DeliveryName,
-            AddressBtn2,
-            DeliveryName2,
-            AliasKBN2,
-            Tel1D,
-            Tel2D,
-            Tel3D,
 
             PaymentMethodCD,
-            //Discount,
-            //Point,
-            SalesDate,
-            FirstPaypentPlanDate,
             NouhinsyoComment,
-
-            RemarksOutStore,
-            RemarksInStore,
+            ChkPrint,
             COUNT
         }
 
@@ -77,13 +55,12 @@ namespace TempoJuchuuNyuuryoku
         private Control[] detailControls;
         private Control[] detailLabels;
         private Control[] searchButtons;
-
-        private FrmAddress addInfo;
-        private TempoJuchuuNyuuryoku_BL mibl;
-        private D_Juchuu_Entity dje;
+        
+        private UriageNyuuryoku_BL mibl;
+        private D_Sales_Entity dse;
         private int mTaxFractionKBN;
         private int mTennic;
-        private string mMesTxt = "受注番号"; 
+        private string mMesTxt = "売上番号"; 
 
         private System.Windows.Forms.Control previousCtrl; // ｶｰｿﾙの元の位置を待避
 
@@ -92,7 +69,6 @@ namespace TempoJuchuuNyuuryoku
         private string mOldJyuchuNo = "";    //排他処理のため使用
         private string mOldJyuchuDate = "";
         private string mOldCustomerCD = "";
-        private string mOldDeliveryCD = "";
         private decimal mZei10;//通常税額(Hidden)
         private decimal mZei8;//軽減税額(Hidden)
         private string mPaymentMethodCD;    //M_Customer.PaymentMethodCD
@@ -102,7 +78,7 @@ namespace TempoJuchuuNyuuryoku
         private decimal mOrderTax8;//軽減税額(Hidden)
 
         // -- 明細部をグリッドのように扱うための宣言 ↓--------------------
-        ClsGridJuchuu mGrid = new ClsGridJuchuu();
+        ClsGridUriage mGrid = new ClsGridUriage();
         private int m_EnableCnt;
         private int m_dataCnt = 0;        // 修正削除時に画面に展開された行数
         private int m_MaxJyuchuGyoNo;
@@ -120,10 +96,10 @@ namespace TempoJuchuuNyuuryoku
         {
             int W_CtlRow;
 
-            if (ClsGridJuchuu.gc_P_GYO <= ClsGridJuchuu.gMxGyo)
+            if (ClsGridUriage.gc_P_GYO <= ClsGridUriage.gMxGyo)
             {
-                mGrid.g_MK_Max_Row = ClsGridJuchuu.gMxGyo;               // プログラムＭ内最大行数
-                m_EnableCnt = ClsGridJuchuu.gMxGyo;
+                mGrid.g_MK_Max_Row = ClsGridUriage.gMxGyo;               // プログラムＭ内最大行数
+                m_EnableCnt = ClsGridUriage.gMxGyo;
             }
             //else
             //{
@@ -131,8 +107,8 @@ namespace TempoJuchuuNyuuryoku
             //    m_EnableCnt = ClsGridMitsumori.gMxGyo;
             //}
 
-            mGrid.g_MK_Ctl_Row = ClsGridJuchuu.gc_P_GYO;
-            mGrid.g_MK_Ctl_Col = ClsGridJuchuu.gc_MaxCL;
+            mGrid.g_MK_Ctl_Row = ClsGridUriage.gc_P_GYO;
+            mGrid.g_MK_Ctl_Col = ClsGridUriage.gc_MaxCL;
 
             // スクロールが取れるValueの最大値 (画面の最下行にデータの最下行が来た時点の Value)
             mGrid.g_MK_MaxValue = mGrid.g_MK_Max_Row - mGrid.g_MK_Ctl_Row;
@@ -177,15 +153,6 @@ namespace TempoJuchuuNyuuryoku
                             sctl.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown);
                             sctl.Tag = W_CtlRow.ToString();
                         }
-                        else if (mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.GetType().Equals(typeof(Button)))
-                        {
-                            Button btn = (Button)mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl;
-
-                            if(w_CtlCol == (int)ClsGridJuchuu.ColNO.Site)
-                                btn.Click += new System.EventHandler(BTN_Site_Click);
-                            else
-                                btn.Click += new System.EventHandler(BTN_Zaiko_Click);
-                        }
                         else if (mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.GetType().Equals(typeof(GridControl.clsGridCheckBox)))
                         {
                             GridControl.clsGridCheckBox check = (GridControl.clsGridCheckBox)mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl;
@@ -222,7 +189,7 @@ namespace TempoJuchuuNyuuryoku
 
 
             // データ保持用配列の宣言
-            mGrid.g_DArray = new ClsGridJuchuu.ST_DArray_Grid[mGrid.g_MK_Max_Row];
+            mGrid.g_DArray = new ClsGridUriage.ST_DArray_Grid[mGrid.g_MK_Max_Row];
 
             // 行の色
             // 何行で色が切り替わるかの設定。  ここでは 2行一組で繰り返すので 2行分だけ設定
@@ -232,7 +199,7 @@ namespace TempoJuchuuNyuuryoku
             // フォーカス移動順(表示列も含めて、すべての列を設定する)
             mGrid.g_MK_FocusOrder = new int[mGrid.g_MK_Ctl_Col];
 
-            for (int i = (int)ClsGridJuchuu.ColNO.GYONO; i <= (int)ClsGridJuchuu.ColNO.COUNT - 1; i++)
+            for (int i = (int)ClsGridUriage.ColNO.GYONO; i <= (int)ClsGridUriage.ColNO.COUNT - 1; i++)
             {
                 mGrid.g_MK_FocusOrder[i] = i;
             }
@@ -242,21 +209,21 @@ namespace TempoJuchuuNyuuryoku
             // 項目の形式セット
             for (W_CtlRow = 0; W_CtlRow <= mGrid.g_MK_Ctl_Row - 1; W_CtlRow++)
             {
-                for (int W_CtlCol = 0; W_CtlCol < (int)ClsGridJuchuu.ColNO.COUNT; W_CtlCol++)
+                for (int W_CtlCol = 0; W_CtlCol < (int)ClsGridUriage.ColNO.COUNT; W_CtlCol++)
                 {
                     switch (W_CtlCol)
                     {
-                        case (int)ClsGridJuchuu.ColNO.JuchuuSuu:
+                        case (int)ClsGridUriage.ColNO.SalesSU:
                             mGrid.SetProp_SU(5, ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);
                             ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).AllowMinus = true;
                             break;
-                        case (int)ClsGridJuchuu.ColNO.JuchuuHontaiGaku:
-                        case (int)ClsGridJuchuu.ColNO.JuchuuUnitPrice:
-                        case (int)ClsGridJuchuu.ColNO.JuchuuGaku:
-                        case (int)ClsGridJuchuu.ColNO.CostUnitPrice:
-                        case (int)ClsGridJuchuu.ColNO.CostGaku:
-                        case (int)ClsGridJuchuu.ColNO.ProfitGaku:
-                        case (int)ClsGridJuchuu.ColNO.OrderUnitPrice:
+                        case (int)ClsGridUriage.ColNO.SalesHontaiGaku:
+                        case (int)ClsGridUriage.ColNO.SalesUnitPrice:
+                        case (int)ClsGridUriage.ColNO.SalesGaku:
+                        case (int)ClsGridUriage.ColNO.CostUnitPrice:
+                        case (int)ClsGridUriage.ColNO.CostGaku:
+                        case (int)ClsGridUriage.ColNO.ProfitGaku:
+                        case (int)ClsGridUriage.ColNO.OrderUnitPrice:
                         //case (int)ClsGridJuchuu.ColNO.OrderGaku:
                             mGrid.SetProp_TANKA(ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);      // 単価 
                             ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).AllowMinus = true;
@@ -281,159 +248,220 @@ namespace TempoJuchuuNyuuryoku
             mGrid.F_CtrlArray_MK(mGrid.g_MK_Ctl_Col, mGrid.g_MK_Ctl_Row);
 
             // 1行目
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.GYONO, 0].CellCtl = IMT_GYONO_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Space1, 0].CellCtl = ckM_TextBox9;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Space2, 0].CellCtl = ckM_TextBox12;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Space3, 0].CellCtl = ckM_TextBox17;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.GYONO, 0].CellCtl = IMT_GYONO_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.Space1, 0].CellCtl = ckM_TextBox9;
+            //mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.Space2, 0].CellCtl = IMN_GENER2_3;
 
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.SKUCD, 0].CellCtl = IMT_ITMCD_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.JanCD, 0].CellCtl = SC_ITEM_0;// IMT_JANCD_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.SizeName, 0].CellCtl = IMT_KAIDT_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.CostGaku, 0].CellCtl = IMN_GENKA_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.SKUName, 0].CellCtl = IMT_ITMNM_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.JuchuuGaku, 0].CellCtl = IMN_TEIKA_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.JuchuuHontaiGaku, 0].CellCtl = IMN_TEIKA2_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.JuchuuSuu, 0].CellCtl = IMN_GENER_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.JuchuuUnitPrice, 0].CellCtl = IMN_GENER2_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.TaniCD, 0].CellCtl = IMN_MEMBR_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ColorName, 0].CellCtl = IMN_CLINT_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.SetKBN, 0].CellCtl = IMN_CLINT2_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ProfitGaku, 0].CellCtl = IMN_SALEP_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.CostUnitPrice, 0].CellCtl = IMN_SALEP2_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.CommentOutStore, 0].CellCtl = IMN_WEBPR_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.IndividualClientName, 0].CellCtl = IMN_WEBPR2_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.CommentInStore, 0].CellCtl = IMT_REMAK_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.TaxRateDisp, 0].CellCtl = IMT_ZKDIS_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.TaxRate, 0].CellCtl = IMT_ZEIRT_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Site, 0].CellCtl = BTN_Site_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Zaiko, 0].CellCtl = BTN_Zaiko_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.SoukoName, 0].CellCtl = IMC_SOKNM_0;          //出荷倉庫
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.JuchuuOrderNO, 0].CellCtl = IMT_JUONO_0;      //発注番号
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.VendorCD, 0].CellCtl = IMT_VENCD_0;           //発注先
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.VendorName, 0].CellCtl = IMT_VENNM_0;         //発注先名
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, 0].CellCtl = IMT_ARIDT_0;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.PaymentPlanDate, 0].CellCtl = IMT_PAYDT_0;    //支払予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.CollectClearDate, 0].CellCtl = IMT_COLDT_0;   //入金日
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Nyuka, 0].CellCtl = IMT_NYUKA_0;   //入荷進捗
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Syukka, 0].CellCtl = IMT_SYUKA_0;   //出荷進捗
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Hikiate, 0].CellCtl = IMT_HIKAT_0;   //引当表示
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.NotPrintFLG, 0].CellCtl = CHK_PRINT_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ChkTyokuso, 0].CellCtl = CHK_Tyokuso_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ChkFuyo, 0].CellCtl = CHK_FUYO_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ChkExpress, 0].CellCtl = CHK_Express_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ShippingPlanDate, 0].CellCtl = IMT_SPDAT_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.OrderUnitPrice, 0].CellCtl = IMN_ORTAN_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SKUCD, 0].CellCtl = IMT_ITMCD_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.JanCD, 0].CellCtl = SC_ITEM_0;// IMT_JANCD_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SizeName, 0].CellCtl = IMT_KAIDT_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CostGaku, 0].CellCtl = IMN_GENKA_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SKUName, 0].CellCtl = IMT_ITMNM_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesGaku, 0].CellCtl = IMN_TEIKA_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesHontaiGaku, 0].CellCtl = IMN_TEIKA2_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesSU, 0].CellCtl = IMN_GENER_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesUnitPrice, 0].CellCtl = IMN_GENER2_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.TaniCD, 0].CellCtl = IMN_MEMBR_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ColorName, 0].CellCtl = IMN_CLINT_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ProfitGaku, 0].CellCtl = IMN_SALEP_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CostUnitPrice, 0].CellCtl = IMN_SALEP2_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CommentOutStore, 0].CellCtl = IMN_WEBPR_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.IndividualClientName, 0].CellCtl = IMN_WEBPR2_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CommentInStore, 0].CellCtl = IMT_REMAK_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.TaxRateDisp, 0].CellCtl = IMT_ZKDIS_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.TaxRate, 0].CellCtl = IMT_ZEIRT_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.JuchuuOrderNO, 0].CellCtl = IMT_JUONO_0;      //発注番号
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.VendorCD, 0].CellCtl = IMT_VENCD_0;           //発注先
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.VendorName, 0].CellCtl = IMT_VENNM_0;         //発注先名
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ShiireGaku, 0].CellCtl = IMT_ARIDT_0;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.NotPrintFLG, 0].CellCtl = CHK_PRINT_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ShippingPlanDate, 0].CellCtl = IMT_SPDAT_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.OrderUnitPrice, 0].CellCtl = IMN_ORTAN_0;
             //mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.OrderGaku, 0].CellCtl = IMN_ORGAK_0;
 
             // 2行目
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.GYONO, 1].CellCtl = IMT_GYONO_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Space1, 1].CellCtl = ckM_TextBox10;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Space2, 1].CellCtl = ckM_TextBox4;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Space3, 1].CellCtl = ckM_TextBox16;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.GYONO, 1].CellCtl = IMT_GYONO_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.Space1, 1].CellCtl = ckM_TextBox10;
+            //mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.Space2, 1].CellCtl = ckM_TextBox4;
 
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.SKUCD, 1].CellCtl = IMT_ITMCD_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.JanCD, 1].CellCtl = SC_ITEM_1;//IMT_JANCD_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.SizeName, 1].CellCtl = IMT_KAIDT_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.CostGaku, 1].CellCtl = IMN_GENKA_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.SKUName, 1].CellCtl = IMT_ITMNM_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.JuchuuGaku, 1].CellCtl = IMN_TEIKA_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.JuchuuHontaiGaku, 1].CellCtl = IMN_TEIKA2_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.JuchuuSuu, 1].CellCtl = IMN_GENER_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.JuchuuUnitPrice, 1].CellCtl = IMN_GENER2_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.TaniCD, 1].CellCtl = IMN_MEMBR_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ColorName, 1].CellCtl = IMN_CLINT_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.SetKBN, 1].CellCtl = IMN_CLINT2_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ProfitGaku, 1].CellCtl = IMN_SALEP_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.CostUnitPrice, 1].CellCtl = IMN_SALEP2_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.CommentOutStore, 1].CellCtl = IMN_WEBPR_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.IndividualClientName, 1].CellCtl = IMN_WEBPR2_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.CommentInStore, 1].CellCtl = IMT_REMAK_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.TaxRateDisp, 1].CellCtl = IMT_ZKDIS_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.TaxRate, 1].CellCtl = IMT_ZEIRT_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Site, 1].CellCtl = BTN_Site_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Zaiko, 1].CellCtl = BTN_Zaiko_1;
-
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.SoukoName, 1].CellCtl = IMC_SOKNM_1;          //出荷倉庫
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.JuchuuOrderNO, 1].CellCtl = IMT_JUONO_1;      //発注番号
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.VendorCD, 1].CellCtl = IMT_VENCD_1;           //発注先
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.VendorName, 1].CellCtl = IMT_VENNM_1;         //発注先名
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, 1].CellCtl = IMT_ARIDT_1;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.PaymentPlanDate, 1].CellCtl = IMT_PAYDT_1;    //支払予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.CollectClearDate, 1].CellCtl = IMT_COLDT_1;   //入金日
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Nyuka, 1].CellCtl = IMT_NYUKA_1;   //入荷進捗
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Syukka, 1].CellCtl = IMT_SYUKA_1;   //出荷進捗
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Hikiate, 1].CellCtl = IMT_HIKAT_1;   //引当表示
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.NotPrintFLG, 1].CellCtl = CHK_PRINT_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ChkTyokuso, 1].CellCtl = CHK_Tyokuso_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ChkFuyo, 1].CellCtl = CHK_FUYO_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ChkExpress, 1].CellCtl = CHK_Express_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ShippingPlanDate, 1].CellCtl = IMT_SPDAT_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.OrderUnitPrice, 1].CellCtl = IMN_ORTAN_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SKUCD, 1].CellCtl = IMT_ITMCD_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.JanCD, 1].CellCtl = SC_ITEM_1;//IMT_JANCD_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SizeName, 1].CellCtl = IMT_KAIDT_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CostGaku, 1].CellCtl = IMN_GENKA_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SKUName, 1].CellCtl = IMT_ITMNM_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesGaku, 1].CellCtl = IMN_TEIKA_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesHontaiGaku, 1].CellCtl = IMN_TEIKA2_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesSU, 1].CellCtl = IMN_GENER_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesUnitPrice, 1].CellCtl = IMN_GENER2_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.TaniCD, 1].CellCtl = IMN_MEMBR_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ColorName, 1].CellCtl = IMN_CLINT_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ProfitGaku, 1].CellCtl = IMN_SALEP_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CostUnitPrice, 1].CellCtl = IMN_SALEP2_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CommentOutStore, 1].CellCtl = IMN_WEBPR_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.IndividualClientName, 1].CellCtl = IMN_WEBPR2_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CommentInStore, 1].CellCtl = IMT_REMAK_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.TaxRateDisp, 1].CellCtl = IMT_ZKDIS_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.TaxRate, 1].CellCtl = IMT_ZEIRT_1;
+            
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.JuchuuOrderNO, 1].CellCtl = IMT_JUONO_1;      //発注番号
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.VendorCD, 1].CellCtl = IMT_VENCD_1;           //発注先
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.VendorName, 1].CellCtl = IMT_VENNM_1;         //発注先名
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ShiireGaku, 1].CellCtl = IMT_ARIDT_1;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.NotPrintFLG, 1].CellCtl = CHK_PRINT_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ShippingPlanDate, 1].CellCtl = IMT_SPDAT_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.OrderUnitPrice, 1].CellCtl = IMN_ORTAN_1;
             //mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.OrderGaku, 1].CellCtl = IMN_ORGAK_1;
 
             // 3行目
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.GYONO, 2].CellCtl = IMT_GYONO_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Space1, 2].CellCtl = ckM_TextBox11;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Space2, 2].CellCtl = ckM_TextBox3;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Space3, 2].CellCtl = ckM_TextBox15;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.GYONO, 2].CellCtl = IMT_GYONO_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.Space1, 2].CellCtl = ckM_TextBox11;
+            //mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.Space2, 2].CellCtl = ckM_TextBox32;
 
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.SKUCD, 2].CellCtl = IMT_ITMCD_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.JanCD, 2].CellCtl = SC_ITEM_2;//IMT_JANCD_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.SizeName, 2].CellCtl = IMT_KAIDT_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.CostGaku, 2].CellCtl = IMN_GENKA_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.SKUName, 2].CellCtl = IMT_ITMNM_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.JuchuuGaku, 2].CellCtl = IMN_TEIKA_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.JuchuuHontaiGaku, 2].CellCtl = IMN_TEIKA2_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.JuchuuSuu, 2].CellCtl = IMN_GENER_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.JuchuuUnitPrice, 2].CellCtl = IMN_GENER2_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.TaniCD, 2].CellCtl = IMN_MEMBR_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ColorName, 2].CellCtl = IMN_CLINT_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.SetKBN, 2].CellCtl = IMN_CLINT2_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ProfitGaku, 2].CellCtl = IMN_SALEP_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.CostUnitPrice, 2].CellCtl = IMN_SALEP2_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.CommentOutStore, 2].CellCtl = IMN_WEBPR_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.IndividualClientName, 2].CellCtl = IMN_WEBPR2_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.CommentInStore, 2].CellCtl = IMT_REMAK_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.TaxRateDisp, 2].CellCtl = IMT_ZKDIS_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.TaxRate, 2].CellCtl = IMT_ZEIRT_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Site, 2].CellCtl = BTN_Site_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Zaiko, 2].CellCtl = BTN_Zaiko_2;
-
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.SoukoName, 2].CellCtl = IMC_SOKNM_2;          //出荷倉庫
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.JuchuuOrderNO, 2].CellCtl = IMT_JUONO_2;      //発注番号
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.VendorCD, 2].CellCtl = IMT_VENCD_2;           //発注先
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.VendorName, 2].CellCtl = IMT_VENNM_2;         //発注先名
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, 2].CellCtl = IMT_ARIDT_2;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.PaymentPlanDate, 2].CellCtl = IMT_PAYDT_2;    //支払予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.CollectClearDate, 2].CellCtl = IMT_COLDT_2;   //入金日
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Nyuka, 2].CellCtl = IMT_NYUKA_2;   //入荷進捗
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Syukka, 2].CellCtl = IMT_SYUKA_2;   //出荷進捗
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Hikiate, 2].CellCtl = IMT_HIKAT_2;   //引当表示
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.NotPrintFLG, 2].CellCtl = CHK_PRINT_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ChkTyokuso, 2].CellCtl = CHK_Tyokuso_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ChkFuyo, 2].CellCtl = CHK_FUYO_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ChkExpress, 2].CellCtl = CHK_Express_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ShippingPlanDate, 2].CellCtl = IMT_SPDAT_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.OrderUnitPrice, 2].CellCtl = IMN_ORTAN_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SKUCD, 2].CellCtl = IMT_ITMCD_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.JanCD, 2].CellCtl = SC_ITEM_2;//IMT_JANCD_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SizeName, 2].CellCtl = IMT_KAIDT_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CostGaku, 2].CellCtl = IMN_GENKA_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SKUName, 2].CellCtl = IMT_ITMNM_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesGaku, 2].CellCtl = IMN_TEIKA_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesHontaiGaku, 2].CellCtl = IMN_TEIKA2_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesSU, 2].CellCtl = IMN_GENER_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesUnitPrice, 2].CellCtl = IMN_GENER2_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.TaniCD, 2].CellCtl = IMN_MEMBR_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ColorName, 2].CellCtl = IMN_CLINT_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ProfitGaku, 2].CellCtl = IMN_SALEP_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CostUnitPrice, 2].CellCtl = IMN_SALEP2_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CommentOutStore, 2].CellCtl = IMN_WEBPR_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.IndividualClientName, 2].CellCtl = IMN_WEBPR2_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CommentInStore, 2].CellCtl = IMT_REMAK_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.TaxRateDisp, 2].CellCtl = IMT_ZKDIS_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.TaxRate, 2].CellCtl = IMT_ZEIRT_2;
+          
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.JuchuuOrderNO, 2].CellCtl = IMT_JUONO_2;      //発注番号
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.VendorCD, 2].CellCtl = IMT_VENCD_2;           //発注先
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.VendorName, 2].CellCtl = IMT_VENNM_2;         //発注先名
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ShiireGaku, 2].CellCtl = IMT_ARIDT_2;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.NotPrintFLG, 2].CellCtl = CHK_PRINT_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ShippingPlanDate, 2].CellCtl = IMT_SPDAT_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.OrderUnitPrice, 2].CellCtl = IMN_ORTAN_2;
             //mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.OrderGaku, 2].CellCtl = IMN_ORGAK_2;
+
+
+            // 3行目
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.GYONO, 3].CellCtl = IMT_GYONO_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.Space1, 3].CellCtl = ckM_TextBox4;
+            //mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.Space2, 3].CellCtl = IMN_CLINT_3;
+
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SKUCD, 3].CellCtl = IMT_ITMCD_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.JanCD, 3].CellCtl = SC_ITEM_3;//IMT_JANCD_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SizeName, 3].CellCtl = IMT_KAIDT_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CostGaku, 3].CellCtl = IMN_GENKA_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SKUName, 3].CellCtl = IMT_ITMNM_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesGaku, 3].CellCtl = IMN_TEIKA_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesHontaiGaku, 3].CellCtl = IMN_TEIKA2_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesSU, 3].CellCtl = IMN_GENER_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesUnitPrice, 3].CellCtl = IMN_GENER2_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.TaniCD, 3].CellCtl = IMN_MEMBR_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ColorName, 3].CellCtl = IMN_CLINT_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ProfitGaku, 3].CellCtl = IMN_SALEP_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CostUnitPrice, 3].CellCtl = IMN_SALEP2_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CommentOutStore, 3].CellCtl = IMN_WEBPR_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.IndividualClientName, 3].CellCtl = IMN_WEBPR2_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CommentInStore, 3].CellCtl = IMT_REMAK_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.TaxRateDisp, 3].CellCtl = IMT_ZKDIS_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.TaxRate, 3].CellCtl = IMT_ZEIRT_3;
+
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.JuchuuOrderNO, 3].CellCtl = IMT_JUONO_3;      //発注番号
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.VendorCD, 3].CellCtl = IMT_VENCD_3;           //発注先
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.VendorName, 3].CellCtl = IMT_VENNM_3;         //発注先名
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ShiireGaku, 3].CellCtl = IMT_ARIDT_3;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.NotPrintFLG, 3].CellCtl = CHK_PRINT_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ShippingPlanDate, 3].CellCtl = IMT_SPDAT_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.OrderUnitPrice, 3].CellCtl = IMN_ORTAN_3;
+            //mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.OrderGaku, 3].CellCtl = IMN_ORGAK_3;
+
+
+            // 3行目
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.GYONO, 4].CellCtl = IMT_GYONO_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.Space1, 4].CellCtl = ckM_TextBox11;
+            //mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.Space2, 4].CellCtl = IMN_CLINT_4;
+
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SKUCD, 4].CellCtl = IMT_ITMCD_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.JanCD, 4].CellCtl = SC_ITEM_4;//IMT_JANCD_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SizeName, 4].CellCtl = IMT_KAIDT_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CostGaku, 4].CellCtl = IMN_GENKA_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SKUName, 4].CellCtl = IMT_ITMNM_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesGaku, 4].CellCtl = IMN_TEIKA_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesHontaiGaku, 4].CellCtl = IMN_TEIKA2_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesSU, 4].CellCtl = IMN_GENER_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesUnitPrice, 4].CellCtl = IMN_GENER2_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.TaniCD, 4].CellCtl = IMN_MEMBR_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ColorName, 4].CellCtl = IMN_CLINT_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ProfitGaku, 4].CellCtl = IMN_SALEP_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CostUnitPrice, 4].CellCtl = IMN_SALEP2_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CommentOutStore, 4].CellCtl = IMN_WEBPR_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.IndividualClientName, 4].CellCtl = IMN_WEBPR2_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CommentInStore, 4].CellCtl = IMT_REMAK_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.TaxRateDisp, 4].CellCtl = IMT_ZKDIS_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.TaxRate, 4].CellCtl = IMT_ZEIRT_4;
+
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.JuchuuOrderNO, 4].CellCtl = IMT_JUONO_4;      //発注番号
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.VendorCD, 4].CellCtl = IMT_VENCD_4;           //発注先
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.VendorName, 4].CellCtl = IMT_VENNM_4;         //発注先名
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ShiireGaku, 4].CellCtl = IMT_ARIDT_4;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.NotPrintFLG, 4].CellCtl = CHK_PRINT_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ShippingPlanDate, 4].CellCtl = IMT_SPDAT_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.OrderUnitPrice, 4].CellCtl = IMN_ORTAN_4;
+            //mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.OrderGaku, 4].CellCtl = IMN_ORGAK_4;
+
+            // 1行目
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.GYONO, 5].CellCtl = IMT_GYONO_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.Space1, 5].CellCtl = ckM_TextBox56;
+            //mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.Space2, 5].CellCtl = IMN_GENER2_3;
+
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SKUCD, 5].CellCtl = IMT_ITMCD_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.JanCD, 5].CellCtl = SC_ITEM_5;// IMT_JANCD_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SizeName, 5].CellCtl = IMT_KAIDT_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CostGaku, 5].CellCtl = IMN_GENKA_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SKUName, 5].CellCtl = IMT_ITMNM_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesGaku, 5].CellCtl = IMN_TEIKA_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesHontaiGaku, 5].CellCtl = IMN_TEIKA2_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesSU, 5].CellCtl = IMN_GENER_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SalesUnitPrice, 5].CellCtl = IMN_GENER2_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.TaniCD, 5].CellCtl = IMN_MEMBR_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ColorName, 5].CellCtl = IMN_CLINT_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ProfitGaku, 5].CellCtl = IMN_SALEP_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CostUnitPrice, 5].CellCtl = IMN_SALEP2_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CommentOutStore, 5].CellCtl = IMN_WEBPR_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.IndividualClientName, 5].CellCtl = IMN_WEBPR2_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.CommentInStore, 5].CellCtl = IMT_REMAK_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.TaxRateDisp, 5].CellCtl = IMT_ZKDIS_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.TaxRate, 5].CellCtl = IMT_ZEIRT_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.JuchuuOrderNO, 5].CellCtl = IMT_JUONO_5;      //発注番号
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.VendorCD, 5].CellCtl = IMT_VENCD_5;           //発注先
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.VendorName, 5].CellCtl = IMT_VENNM_5;         //発注先名
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ShiireGaku, 5].CellCtl = IMT_ARIDT_5;     //入荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.NotPrintFLG, 5].CellCtl = CHK_PRINT_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.ShippingPlanDate, 5].CellCtl = IMT_SPDAT_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.OrderUnitPrice, 5].CellCtl = IMN_ORTAN_5;
+            //mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.OrderGaku, 5].CellCtl = IMN_ORGAK_5;
         }
 
         // 明細部 Tab の処理
         private void S_Grid_0_Event_Tab(int pCol, int pRow, Control pErrSet, Control pMotoControl)
         {
-            mGrid.F_MoveFocus((int)ClsGridJuchuu.Gen_MK_FocusMove.MvNxt, (int)ClsGridJuchuu.Gen_MK_FocusMove.MvNxt, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0);
+            mGrid.F_MoveFocus((int)ClsGridUriage.Gen_MK_FocusMove.MvNxt, (int)ClsGridUriage.Gen_MK_FocusMove.MvNxt, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0);
         }
 
         // 明細部 Shift+Tab の処理
         private void S_Grid_0_Event_ShiftTab(int pCol, int pRow, Control pErrSet, Control pMotoControl)
         {
-            mGrid.F_MoveFocus((int)ClsGridJuchuu.Gen_MK_FocusMove.MvPrv, (int)ClsGridJuchuu.Gen_MK_FocusMove.MvPrv, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0);
+            mGrid.F_MoveFocus((int)ClsGridUriage.Gen_MK_FocusMove.MvPrv, (int)ClsGridUriage.Gen_MK_FocusMove.MvPrv, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0);
         }
 
         // 明細部 Enter の処理
         private void S_Grid_0_Event_Enter(int pCol, int pRow, Control pErrSet, Control pMotoControl)
         {
-            mGrid.F_MoveFocus((int)ClsGridJuchuu.Gen_MK_FocusMove.MvNxt, (int)ClsGridJuchuu.Gen_MK_FocusMove.MvNxt, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0);
+            mGrid.F_MoveFocus((int)ClsGridUriage.Gen_MK_FocusMove.MvNxt, (int)ClsGridUriage.Gen_MK_FocusMove.MvNxt, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0);
         }
 
         // 明細部 PageDown の処理
@@ -446,7 +474,7 @@ namespace TempoJuchuuNyuuryoku
             else
                 w_GoRow = pRow + (mGrid.g_MK_Ctl_Row - 1);
 
-            mGrid.F_MoveFocus((int)ClsGridJuchuu.Gen_MK_FocusMove.MvSet, (int)ClsGridJuchuu.Gen_MK_FocusMove.MvSet, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0, w_GoRow, pCol);
+            mGrid.F_MoveFocus((int)ClsGridUriage.Gen_MK_FocusMove.MvSet, (int)ClsGridUriage.Gen_MK_FocusMove.MvSet, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0, w_GoRow, pCol);
         }
 
         // 明細部 PageUp の処理
@@ -459,7 +487,7 @@ namespace TempoJuchuuNyuuryoku
             else
                 w_GoRow = pRow - (mGrid.g_MK_Ctl_Row - 1);
 
-            mGrid.F_MoveFocus((int)ClsGridJuchuu.Gen_MK_FocusMove.MvSet, (int)ClsGridJuchuu.Gen_MK_FocusMove.MvSet, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0, w_GoRow, pCol);
+            mGrid.F_MoveFocus((int)ClsGridUriage.Gen_MK_FocusMove.MvSet, (int)ClsGridUriage.Gen_MK_FocusMove.MvSet, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0, w_GoRow, pCol);
         }
 
         // 明細部 MouseWheel の処理
@@ -471,9 +499,9 @@ namespace TempoJuchuuNyuuryoku
 
             mGrid.g_WheelFLG = true;
 
-            //if (mGrid.g_MK_MaxValue > m_dataCnt - 1)
-            //    w_MaxValue = m_dataCnt - 1;
-            //else
+            if (mGrid.g_MK_MaxValue > m_dataCnt - 1)
+                w_MaxValue = m_dataCnt - 1;
+            else
                 w_MaxValue = mGrid.g_MK_MaxValue;
 
             w_Value = Vsb_Mei_0.Value + w_ToMove;
@@ -522,32 +550,23 @@ namespace TempoJuchuuNyuuryoku
                         // 固定色の列はその色を設定
                         switch (w_Col)
                         {
-                            case (int)ClsGridJuchuu.ColNO.GYONO:
-                            case (int)ClsGridJuchuu.ColNO.Space1:
-                            case (int)ClsGridJuchuu.ColNO.Space2:
-                            case (int)ClsGridJuchuu.ColNO.Space3:
-                            case (int)ClsGridJuchuu.ColNO.Site:
-                            case (int)ClsGridJuchuu.ColNO.Zaiko:
+                            case (int)ClsGridUriage.ColNO.GYONO:
+                            case (int)ClsGridUriage.ColNO.Space1:
+                            //case (int)ClsGridUriage.ColNO.Space2:
                                 {
                                     mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
                                     break;
                                 }
-                            case (int)ClsGridJuchuu.ColNO.SKUCD:
-                            case (int)ClsGridJuchuu.ColNO.SetKBN:
-                            case (int)ClsGridJuchuu.ColNO.JuchuuHontaiGaku:
-                            case (int)ClsGridJuchuu.ColNO.TaxRateDisp:
-                            case (int)ClsGridJuchuu.ColNO.Hikiate:
-                            case (int)ClsGridJuchuu.ColNO.TaniCD:
-                            case (int)ClsGridJuchuu.ColNO.JuchuuGaku:
-                            case (int)ClsGridJuchuu.ColNO.TaxRate:
-                            case (int)ClsGridJuchuu.ColNO.CostGaku:
-                            case (int)ClsGridJuchuu.ColNO.ProfitGaku:
-                            case (int)ClsGridJuchuu.ColNO.JuchuuOrderNO:      //発注番号
-                            case (int)ClsGridJuchuu.ColNO.VendorName:         //発注先名
-                            case (int)ClsGridJuchuu.ColNO.PaymentPlanDate:    //支払予定日
-                            case (int)ClsGridJuchuu.ColNO.CollectClearDate:   //入金日
-                            case (int)ClsGridJuchuu.ColNO.Nyuka:
-                            case (int)ClsGridJuchuu.ColNO.Syukka:
+                            case (int)ClsGridUriage.ColNO.SKUCD:
+                            case (int)ClsGridUriage.ColNO.SalesHontaiGaku:
+                            case (int)ClsGridUriage.ColNO.TaxRateDisp:
+                            case (int)ClsGridUriage.ColNO.TaniCD:
+                            case (int)ClsGridUriage.ColNO.SalesGaku:
+                            case (int)ClsGridUriage.ColNO.TaxRate:
+                            case (int)ClsGridUriage.ColNO.CostGaku:
+                            case (int)ClsGridUriage.ColNO.ProfitGaku:
+                            case (int)ClsGridUriage.ColNO.JuchuuOrderNO:      //発注番号
+                            case (int)ClsGridUriage.ColNO.VendorName:         //発注先名
                                 {
                                     mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                                     break;
@@ -562,17 +581,17 @@ namespace TempoJuchuuNyuuryoku
                         mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.MaxGyoColor;
                     }
 
-                    // クリック以外ではフォーカス入らない列の設定(Cell_Selectable)
-                    switch (w_Col)
-                    {
-                        case (int)ClsGridJuchuu.ColNO.Site:
-                        case (int)ClsGridJuchuu.ColNO.Zaiko:
-                            {
-                                // ボタン
-                                S_Set_Cell_Selectable(w_Col, w_Row, false);
-                                break;
-                            }
-                    }
+                    //// クリック以外ではフォーカス入らない列の設定(Cell_Selectable)
+                    //switch (w_Col)
+                    //{
+                    //    case (int)ClsGridUriage.ColNO.Site:
+                    //    case (int)ClsGridUriage.ColNO.Zaiko:
+                    //        {
+                    //            // ボタン
+                    //            S_Set_Cell_Selectable(w_Col, w_Row, false);
+                    //            break;
+                    //        }
+                    //}
                 }
             }
 
@@ -585,9 +604,7 @@ namespace TempoJuchuuNyuuryoku
 
             // 画面クリア
             mGrid.S_DispFromArray(0, ref this.Vsb_Mei_0);
-
-            Btn_SelectAll.Enabled = false;
-            Btn_NoSelect.Enabled = false;
+            
         }
 
         // -------------------------------------------------------------
@@ -747,7 +764,7 @@ namespace TempoJuchuuNyuuryoku
                                     break;
 
                                 // 'Jancd列入力可 (Jancdを入力した時点で他の列が入力可になるため)
-                                mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.JanCD, w_Row].Cell_Enabled = true;
+                                mGrid.g_MK_State[(int)ClsGridUriage.ColNO.JanCD, w_Row].Cell_Enabled = true;
                                 //for (int w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
                                 //{
                                 //    switch (w_Col)
@@ -783,31 +800,27 @@ namespace TempoJuchuuNyuuryoku
                             if (OperationMode == EOperationMode.INSERT)
                             {
                                 Scr_Lock(0, 0, 0);
-                                keyControls[(int)EIndex.JuchuuNO].Text = "";
-                                keyControls[(int)EIndex.JuchuuNO].Enabled = false;
+                                keyControls[(int)EIndex.SalesNO].Text = "";
+                                keyControls[(int)EIndex.SalesNO].Enabled = false;
                                 ScJuchuuNO.BtnSearch.Enabled = false;
-                                keyControls[(int)EIndex.CopyJuchuuNO].Enabled = true;
+                                keyControls[(int)EIndex.CopySalesNO].Enabled = true;
                                 ScCopyJuchuuNO.BtnSearch.Enabled = true;
-                                keyControls[(int)EIndex.MitsumoriNO].Enabled = true;
-                                ScMitsumoriNO.BtnSearch.Enabled = true;
                                 //新規Modeの場合のみCheck可能
                                 ckM_CheckBox1.Enabled = true;
 
                                 Scr_Lock(1, mc_L_END, 0);  // フレームのロック解除
-                                detailControls[(int)EIndex.JuchuuDate].Text = bbl.GetDate();
+                                detailControls[(int)EIndex.SalesDate].Text = bbl.GetDate();
                                 F9Visible = false;
 
                                 SetFuncKeyAll(this, "111111001001");
                             }
                             else
                             {
-                                keyControls[(int)EIndex.JuchuuNO].Enabled = true;
+                                keyControls[(int)EIndex.SalesNO].Enabled = true;
                                 ScJuchuuNO.BtnSearch.Enabled = true;
-                                keyControls[(int)EIndex.CopyJuchuuNO].Text = "";
-                                keyControls[(int)EIndex.CopyJuchuuNO].Enabled = false;
+                                keyControls[(int)EIndex.CopySalesNO].Text = "";
+                                keyControls[(int)EIndex.CopySalesNO].Enabled = false;
                                 ScCopyJuchuuNO.BtnSearch.Enabled = false;
-                                keyControls[(int)EIndex.MitsumoriNO].Enabled = false;
-                                ScMitsumoriNO.BtnSearch.Enabled = false;
                                 ckM_CheckBox1.Enabled = false;
 
                                 Scr_Lock(1, mc_L_END, 1);   // フレームのロック
@@ -835,7 +848,7 @@ namespace TempoJuchuuNyuuryoku
                                 // 'Jancd列入力可 (Jancdを入力した時点で他の列が入力可になるため)
                                 if (string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].JanCD))
                                 {
-                                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.JanCD, w_Row].Cell_Enabled = true;
+                                    mGrid.g_MK_State[(int)ClsGridUriage.ColNO.JanCD, w_Row].Cell_Enabled = true;
                                     continue;
                                 }
 
@@ -844,19 +857,14 @@ namespace TempoJuchuuNyuuryoku
                                     switch (w_Col)
                                     {
 
-                                        case (int)ClsGridJuchuu.ColNO.JuchuuSuu:    // 
-                                        case (int)ClsGridJuchuu.ColNO.JuchuuUnitPrice:    // 
-                                        case (int)ClsGridJuchuu.ColNO.CommentOutStore:    // 
-                                        case (int)ClsGridJuchuu.ColNO.IndividualClientName:    //  
-                                        case (int)ClsGridJuchuu.ColNO.CommentInStore:    //
-                                        case (int)ClsGridJuchuu.ColNO.Site:    //
-                                        case (int)ClsGridJuchuu.ColNO.Zaiko:    // 
-                                        case (int)ClsGridJuchuu.ColNO.NotPrintFLG:    // 
-                                        case (int)ClsGridJuchuu.ColNO.ChkTyokuso:    // 
-                                        case (int)ClsGridJuchuu.ColNO.ChkFuyo:    // 
-                                        case (int)ClsGridJuchuu.ColNO.ChkExpress:    // 
-                                        case (int)ClsGridJuchuu.ColNO.ShippingPlanDate:    //
-                                        case (int)ClsGridJuchuu.ColNO.OrderUnitPrice:    //  
+                                        case (int)ClsGridUriage.ColNO.SalesSU:    // 
+                                        case (int)ClsGridUriage.ColNO.SalesUnitPrice:    // 
+                                        case (int)ClsGridUriage.ColNO.CommentOutStore:    // 
+                                        case (int)ClsGridUriage.ColNO.IndividualClientName:    //  
+                                        case (int)ClsGridUriage.ColNO.CommentInStore:    //
+                                        case (int)ClsGridUriage.ColNO.NotPrintFLG:    // 
+                                        case (int)ClsGridUriage.ColNO.ShippingPlanDate:    //
+                                        case (int)ClsGridUriage.ColNO.OrderUnitPrice:    //  
                                         //case (int)ClsGridJuchuu.ColNO.OrderGaku:    //  
                                                                                          //case (int)ClsGridJuchuu.ColNO.SoukoName:          //出荷倉庫
                                                                                          //case (int)ClsGridJuchuu.ColNO.VendorCD:           //発注先
@@ -865,10 +873,10 @@ namespace TempoJuchuuNyuuryoku
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
                                                 break;
                                             }
-                                        case (int)ClsGridJuchuu.ColNO.JanCD:
-                                        case (int)ClsGridJuchuu.ColNO.SKUName:    // 
-                                        case (int)ClsGridJuchuu.ColNO.ColorName:    // 
-                                        case (int)ClsGridJuchuu.ColNO.SizeName:
+                                        case (int)ClsGridUriage.ColNO.JanCD:
+                                        case (int)ClsGridUriage.ColNO.SKUName:    // 
+                                        case (int)ClsGridUriage.ColNO.ColorName:    // 
+                                        case (int)ClsGridUriage.ColNO.SizeName:
                                             {
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = false;
                                                 break;
@@ -976,13 +984,13 @@ namespace TempoJuchuuNyuuryoku
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0, w_CtlRow, w_CtlRow);
 
 
-            if (pCol == (int)ClsGridJuchuu.ColNO.JanCD || w_AllFlg)
+            if (pCol == (int)ClsGridUriage.ColNO.JanCD || w_AllFlg)
             {
                 if (string.IsNullOrWhiteSpace(mGrid.g_DArray[pRow].JanCD))
                 {
                     for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
                     {
-                        if (w_Col == (int)ClsGridJuchuu.ColNO.JanCD)
+                        if (w_Col == (int)ClsGridUriage.ColNO.JanCD)
                             //JANCD使用可
                             mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                         else
@@ -1000,7 +1008,7 @@ namespace TempoJuchuuNyuuryoku
                     {
                         switch (w_Col)
                         {
-                            case (int)ClsGridJuchuu.ColNO.JanCD:
+                            case (int)ClsGridUriage.ColNO.JanCD:
                                 if (mGrid.g_DArray[pRow].juchuGyoNO == 0)
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
@@ -1013,7 +1021,7 @@ namespace TempoJuchuuNyuuryoku
                                 }
                                 break;
 
-                            case (int)ClsGridJuchuu.ColNO.JuchuuSuu:
+                            case (int)ClsGridUriage.ColNO.SalesSU:
                                 //if (mGrid.g_DArray[pRow].DiscountKbn == 1)
                                 //{
                                 //    mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
@@ -1026,10 +1034,10 @@ namespace TempoJuchuuNyuuryoku
                                 //}
                                 break;
 
-                            case (int)ClsGridJuchuu.ColNO.SKUName:
-                            case (int)ClsGridJuchuu.ColNO.ColorName:    
-                            case (int)ClsGridJuchuu.ColNO.SizeName:
-                            case (int)ClsGridJuchuu.ColNO.CostUnitPrice:
+                            case (int)ClsGridUriage.ColNO.SKUName:
+                            case (int)ClsGridUriage.ColNO.ColorName:    
+                            case (int)ClsGridUriage.ColNO.SizeName:
+                            case (int)ClsGridUriage.ColNO.CostUnitPrice:
                                 if (mGrid.g_DArray[pRow].VariousFLG == 1)
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
@@ -1045,52 +1053,25 @@ namespace TempoJuchuuNyuuryoku
                                 break;
 
                                 
-                            case (int)ClsGridJuchuu.ColNO.JuchuuUnitPrice:    // 
-                            case (int)ClsGridJuchuu.ColNO.CommentOutStore:    // 
-                            case (int)ClsGridJuchuu.ColNO.IndividualClientName:    //  
-                            case (int)ClsGridJuchuu.ColNO.CommentInStore:    //
-                            case (int)ClsGridJuchuu.ColNO.NotPrintFLG:    //
-                            case (int)ClsGridJuchuu.ColNO.ChkTyokuso:    //
-                            case (int)ClsGridJuchuu.ColNO.ChkFuyo:    //
-                            case (int)ClsGridJuchuu.ColNO.Site:    //
-                            case (int)ClsGridJuchuu.ColNO.Zaiko:    // 
-                            case (int)ClsGridJuchuu.ColNO.ChkExpress:    // 
-                            case (int)ClsGridJuchuu.ColNO.ShippingPlanDate:    //
-                            case (int)ClsGridJuchuu.ColNO.OrderUnitPrice:    //  
+                            case (int)ClsGridUriage.ColNO.SalesUnitPrice:    // 
+                            case (int)ClsGridUriage.ColNO.CommentOutStore:    // 
+                            case (int)ClsGridUriage.ColNO.IndividualClientName:    //  
+                            case (int)ClsGridUriage.ColNO.CommentInStore:    //
+                            case (int)ClsGridUriage.ColNO.NotPrintFLG:    //
+                            case (int)ClsGridUriage.ColNO.ShippingPlanDate:    //
+                            case (int)ClsGridUriage.ColNO.OrderUnitPrice:    //  
                             //case (int)ClsGridJuchuu.ColNO.OrderGaku:    //  
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                                                                     }
                                 break;
 
-                            case (int)ClsGridJuchuu.ColNO.VendorCD:           //発注先
-                            case (int)ClsGridJuchuu.ColNO.ArrivePlanDate:    //入荷予定日
+                            case (int)ClsGridUriage.ColNO.VendorCD:           //発注先
+                            case (int)ClsGridUriage.ColNO.ShiireGaku:    //入荷予定日
                                 {
-                                    if (string.IsNullOrWhiteSpace(mGrid.g_DArray[pRow].Nyuka))
-                                    {
-                                        mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
-                                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
-                                    }
-                                    else
-                                    {
-                                        mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
-                                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
-                                    }
-                                }
-                                break;
 
-                            case (int)ClsGridJuchuu.ColNO.SoukoName:          //出荷倉庫
-                                {
-                                    if (string.IsNullOrWhiteSpace(mGrid.g_DArray[pRow].Syukka))
-                                    {
                                         mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                                         mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
-                                    }
-                                    else
-                                    {
-                                        mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
-                                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
-                                    }
                                 }
                                 break;
 
@@ -1101,29 +1082,7 @@ namespace TempoJuchuuNyuuryoku
                     
                 }
             }
-            if (pCol == (int)ClsGridJuchuu.ColNO.Nyuka)
-            {
-                if (mGrid.g_DArray[pRow].Nyuka == "")
-                {
-                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, pRow].Cell_Enabled = true;
-                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, pRow].Cell_ReadOnly = false;
-                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, pRow].Cell_Bold = false;
-                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.VendorCD, pRow].Cell_Enabled = true;
-                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.VendorCD, pRow].Cell_ReadOnly = false;
-                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.VendorCD, pRow].Cell_Bold = false;
-                }
-                else
-                {
-                    //入荷予定日,発注先 入力不可
-                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, pRow].Cell_Enabled = false;
-                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, pRow].Cell_ReadOnly = true;
-                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, pRow].Cell_Bold = true;
-                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.VendorCD, pRow].Cell_Enabled = false;
-                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.VendorCD, pRow].Cell_ReadOnly = true;
-                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.VendorCD, pRow].Cell_Bold = true;
-                }
-            }
-            else if (pCol == (int)ClsGridJuchuu.ColNO.CostUnitPrice)
+ if (pCol == (int)ClsGridUriage.ColNO.CostUnitPrice)
             {
                 if (mGrid.g_DArray[pRow].VariousFLG == 1)
                 {
@@ -1163,10 +1122,10 @@ namespace TempoJuchuuNyuuryoku
             //画面より配列セット 
             mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
-            //明細が出荷済の受注明細、または、売上済の受注明細である場合、削除できない（F7ボタンを使えないようにする）
-            //出荷済・売上済の場合は行削除不可
-            if (mGrid.g_DArray[w_Row].Syukka.Equals("出荷済") || mGrid.g_DArray[w_Row].Syukka.Equals("売上済"))
-                return;
+            ////明細が出荷済の売上明細、または、売上済の売上明細である場合、削除できない（F7ボタンを使えないようにする）
+            ////出荷済・売上済の場合は行削除不可
+            //if (mGrid.g_DArray[w_Row].Syukka.Equals("出荷済") || mGrid.g_DArray[w_Row].Syukka.Equals("売上済"))
+            //    return;
 
             for (int i = w_Row; i < mGrid.g_MK_Max_Row - 1; i++)
             {
@@ -1181,7 +1140,7 @@ namespace TempoJuchuuNyuuryoku
 
             CalcKin();
 
-            int col = (int)ClsGridJuchuu.ColNO.JanCD;
+            int col = (int)ClsGridUriage.ColNO.JanCD;
             Grid_NotFocus(col, w_Row);
 
             //配列の内容を画面へセット
@@ -1191,7 +1150,7 @@ namespace TempoJuchuuNyuuryoku
             IMT_DMY_0.Focus();
 
                 //現在行へ
-                mGrid.F_MoveFocus((int)ClsGridJuchuu.Gen_MK_FocusMove.MvSet, (int)ClsGridJuchuu.Gen_MK_FocusMove.MvNxt, mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl, w_Row, col, ActiveControl, Vsb_Mei_0, w_Row, col);
+                mGrid.F_MoveFocus((int)ClsGridUriage.Gen_MK_FocusMove.MvSet, (int)ClsGridUriage.Gen_MK_FocusMove.MvNxt, mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl, w_Row, col, ActiveControl, Vsb_Mei_0, w_Row, col);
 
         }
 
@@ -1223,7 +1182,7 @@ namespace TempoJuchuuNyuuryoku
             //画面より配列セット 
             mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
-            int col = (int)ClsGridJuchuu.ColNO.JanCD;
+            int col = (int)ClsGridUriage.ColNO.JanCD;
 
             //コピー行より下の明細を1行ずつずらす（内容コピー）
             for (int i = mGrid.g_MK_Max_Row - 1; i >= w_Row; i--)
@@ -1254,19 +1213,18 @@ namespace TempoJuchuuNyuuryoku
                 mGrid.g_MK_State[w_Col, w_Row] = mGrid.g_MK_State[w_Col, w_Row - 1];
             }
 
-            string ymd = detailControls[(int)EIndex.JuchuuDate].Text;
+            string ymd = detailControls[(int)EIndex.SalesDate].Text;
 
             if (string.IsNullOrWhiteSpace(ymd))
                 ymd = bbl.GetDate();
-
-            CheckHikiate(w_Row, ymd);
+            
             Grid_NotFocus(col, w_Row);
             CalcKin();
 
             //配列の内容を画面へセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
-            mGrid.F_MoveFocus((int)ClsGridJuchuu.Gen_MK_FocusMove.MvSet, (int)ClsGridJuchuu.Gen_MK_FocusMove.MvSet, IMT_DMY_0, w_Row, col, ActiveControl, Vsb_Mei_0, w_Row, col);
+            mGrid.F_MoveFocus((int)ClsGridUriage.Gen_MK_FocusMove.MvSet, (int)ClsGridUriage.Gen_MK_FocusMove.MvSet, IMT_DMY_0, w_Row, col, ActiveControl, Vsb_Mei_0, w_Row, col);
         }
         private void ADD_SUB()
         {
@@ -1306,14 +1264,14 @@ namespace TempoJuchuuNyuuryoku
 
             CalcKin();
 
-            int col = (int)ClsGridJuchuu.ColNO.JanCD;
+            int col = (int)ClsGridUriage.ColNO.JanCD;
             Grid_NotFocus(col, w_Row);
 
             //配列の内容を画面へセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
             //現在行へ
-            mGrid.F_MoveFocus((int)ClsGridJuchuu.Gen_MK_FocusMove.MvSet, (int)ClsGridJuchuu.Gen_MK_FocusMove.MvNxt, mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl, w_Row, col, ActiveControl, Vsb_Mei_0, w_Row, col);
+            mGrid.F_MoveFocus((int)ClsGridUriage.Gen_MK_FocusMove.MvSet, (int)ClsGridUriage.Gen_MK_FocusMove.MvNxt, mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl, w_Row, col, ActiveControl, Vsb_Mei_0, w_Row, col);
 
         }
         private void Grid_Gyo_Clr(int RW)  // 明細部１行クリア
@@ -1333,7 +1291,7 @@ namespace TempoJuchuuNyuuryoku
             //Kin_Kei(); // 再計算
 
             // JanCD列以外入力不可 (JanCDを入力した時点で他の列が入力可になるため)
-            Grid_NotFocus((int)ClsGridJuchuu.ColNO.JanCD, RW);
+            Grid_NotFocus((int)ClsGridUriage.ColNO.JanCD, RW);
 
             // 配列の内容を画面にセット
             mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
@@ -1341,7 +1299,7 @@ namespace TempoJuchuuNyuuryoku
 
         #endregion
 
-        public TempoJuchuuNyuuryoku()
+        public UriageNyuuryoku()
         {
             InitializeComponent();
 
@@ -1361,9 +1319,7 @@ namespace TempoJuchuuNyuuryoku
                 this.SetFunctionLabel(EProMode.INPUT);
                 this.InitialControlArray();
                 lblDisp.Visible = true;
-                Btn_F11.Text = "引当(F11)";
-
-                addInfo = new FrmAddress();
+                //Btn_F11.Text = "引当(F11)";
 
                 // 明細部初期化
                 this.S_SetInit_Grid();
@@ -1375,13 +1331,10 @@ namespace TempoJuchuuNyuuryoku
 
                 mTennic = bbl.GetTennic();
 
-                //受注処理番号
+                //売上番号
                 if(mTennic.Equals(1))
                 {
-                    mMesTxt = "受注処理番号";
-                    ScJuchuuNO.Stype = CKM_SearchControl.SearchType.受注処理番号;
-                    ScCopyJuchuuNO.Stype = CKM_SearchControl.SearchType.受注処理番号;
-                    ScMotoJuchuNo.Stype = CKM_SearchControl.SearchType.受注処理番号;
+                    mMesTxt = "売上番号";
                     LblJuchuNo.Visible = false;
                     LblCopyJuchuNo.Visible = false;
                     LblMotoJuchuNo.Visible = false;
@@ -1394,9 +1347,8 @@ namespace TempoJuchuuNyuuryoku
                 }
 
                 string ymd = bbl.GetDate();
-                mibl = new TempoJuchuuNyuuryoku_BL();
+                mibl = new UriageNyuuryoku_BL();
                 CboStoreCD.Bind(ymd);
-                CboSoukoName.Bind(ymd);
                 CboPaymentMethodCD.Bind(string.Empty);
 
                 string stores = GetAllAvailableStores();
@@ -1404,12 +1356,9 @@ namespace TempoJuchuuNyuuryoku
                 ScJuchuuNO.Value2 = stores;
                 ScCopyJuchuuNO.Value1 = InOperatorCD;
                 ScCopyJuchuuNO.Value2 = stores;
-                ScMitsumoriNO.Value1 = InOperatorCD;
-                ScMitsumoriNO.Value2 = stores;
                 ScMotoJuchuNo.Value1 = InOperatorCD;
                 ScMotoJuchuNo.Value2 = stores;
                 ScCustomer.Value1 = "1";
-                ScDeliveryCD.Value1 = "1";
 
 
                 //スタッフマスター(M_Staff)に存在すること
@@ -1429,13 +1378,7 @@ namespace TempoJuchuuNyuuryoku
                 InOperatorName = mse.StaffName;
                 StoreCD = mse.StoreCD;  //初期値を退避
 
-                detailControls[(int)EIndex.JuchuuDate].Text = ymd;
-
-                for (int W_CtlRow = 0; W_CtlRow <= mGrid.g_MK_Ctl_Row - 1; W_CtlRow++)
-                {
-                    CKM_Controls.CKM_ComboBox sctl = (CKM_Controls.CKM_ComboBox)mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.SoukoName, W_CtlRow].CellCtl;
-                    sctl.Bind(ymd);
-                }
+                detailControls[(int)EIndex.SalesDate].Text = ymd;
 
                 //出荷指示登録から起動された場合、照会モードで起動
                 //コマンドライン引数を配列で取得する
@@ -1444,8 +1387,8 @@ namespace TempoJuchuuNyuuryoku
                 {
                     string juchuNO = cmds[(int)ECmdLine.PcID + 1];   //
                     ChangeOperationMode(EOperationMode.SHOW);
-                    keyControls[(int)EIndex.JuchuuNO].Text = juchuNO;
-                    CheckKey((int)EIndex.JuchuuNO, true);
+                    keyControls[(int)EIndex.SalesNO].Text = juchuNO;
+                    CheckKey((int)EIndex.SalesNO, true);
                 }
             }
             catch (Exception ex)
@@ -1459,15 +1402,15 @@ namespace TempoJuchuuNyuuryoku
 
         private void InitialControlArray()
         {
-            keyControls = new Control[] {  ScJuchuuNO.TxtCode, ScCopyJuchuuNO.TxtCode, ScMitsumoriNO.TxtCode, ckM_CheckBox1, ScMotoJuchuNo.TxtCode, CboStoreCD };
+            keyControls = new Control[] {  ScJuchuuNO.TxtCode, ScCopyJuchuuNO.TxtCode, ckM_CheckBox1, ScMotoJuchuNo.TxtCode, CboStoreCD };
             keyLabels = new Control[] {  };
-            detailControls = new Control[] { ckM_TextBox1,CboSoukoName, ScStaff.TxtCode
-                         , ScCustomer.TxtCode,ckM_TextBox7,btnAddress, ckM_Text_4, panel1, ckM_TextBox18 , ckM_TextBox8 , ckM_TextBox13
-                         , ScDeliveryCD.TxtCode,ckM_TextBox21,btnAddress2, ckM_TextBox22, panel2, ckM_TextBox20 , ckM_TextBox14 , ckM_TextBox19
-                         , CboPaymentMethodCD  , ckM_TextBox5,ckM_TextBox6
-                         , ckM_MultiLineTextBox1,TxtRemark1,TxtRemark2 };
-            detailLabels = new Control[] { ScCustomer,ScStaff, ScDeliveryCD };
-            searchButtons = new Control[] { ScCustomer.BtnSearch, ScStaff.BtnSearch,ScDeliveryCD.BtnSearch};
+            detailControls = new Control[] { ckM_TextBox1, ScStaff.TxtCode
+                         , ScCustomer.TxtCode,ckM_TextBox7,ckM_Text_4, IMT_ZEIRT_3 , IMT_JUONO_3 , IMN_TEIKA_3
+                         , IMN_SALEP2_3, IMT_ITMCD_3, IMN_WEBPR2_3 , IMN_GENER_3 , IMT_ZKDIS_3
+                         , CboPaymentMethodCD  , IMN_ORTAN_3,IMT_SPDAT_3
+                         , ckM_MultiLineTextBox1,ChkPrint };
+            detailLabels = new Control[] { ScCustomer,ScStaff};
+            searchButtons = new Control[] { ScCustomer.BtnSearch, ScStaff.BtnSearch,};
 
             //イベント付与
             foreach (Control ctl in keyControls)
@@ -1480,14 +1423,6 @@ namespace TempoJuchuuNyuuryoku
                 ctl.KeyDown += new System.Windows.Forms.KeyEventHandler(DetailControl_KeyDown);
                 ctl.Enter += new System.EventHandler(DetailControl_Enter);
             }
-
-            radioSama.CheckedChanged += new System.EventHandler(RadioButton_CheckedChanged);
-            radioOnchu.CheckedChanged += new System.EventHandler(RadioButton_CheckedChanged);
-
-            radioSama.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
-            radioOnchu.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
-            radioOnchuD.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButtonD_KeyDown);
-            radioSamaD.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButtonD_KeyDown);
         }
         
         /// <summary>
@@ -1501,7 +1436,7 @@ namespace TempoJuchuuNyuuryoku
 
             switch (index)
             {
-                case (int)EIndex.JuchuuNO:
+                case (int)EIndex.SalesNO:
                     //入力必須(Entry required)
                     if (string.IsNullOrWhiteSpace(keyControls[index].Text))
                     {
@@ -1538,21 +1473,16 @@ namespace TempoJuchuuNyuuryoku
 
                     break;
 
-                case (int)EIndex.CopyJuchuuNO:
+                case (int)EIndex.CopySalesNO:
                     if (!string.IsNullOrWhiteSpace(keyControls[index].Text))
                         return CheckData(set, index);
 
                     break;
 
-                case (int)EIndex.MotoJuchuuNO:
+                case (int)EIndex.MotoSalesNO:
                     if (!string.IsNullOrWhiteSpace(keyControls[index].Text))
                         return CheckData(set, index);
-
-                    break;
-
-                case (int)EIndex.MitsumoriNO:
-                    if (!string.IsNullOrWhiteSpace(keyControls[index].Text))
-                        return CheckDataMitsumori(set);
+                    
 
                     break;
 
@@ -1569,7 +1499,7 @@ namespace TempoJuchuuNyuuryoku
             
             DeleteExclusive();
 
-            if (string.IsNullOrWhiteSpace(keyControls[(int)EIndex.JuchuuNO].Text))
+            if (string.IsNullOrWhiteSpace(keyControls[(int)EIndex.SalesNO].Text))
                 return true;
 
             //排他Tableに該当番号が存在するとError
@@ -1578,7 +1508,7 @@ namespace TempoJuchuuNyuuryoku
             D_Exclusive_Entity dee = new D_Exclusive_Entity
             {
                 DataKBN = (int)Exclusive_BL.DataKbn.Jyuchu,
-                Number = keyControls[(int)EIndex.JuchuuNO].Text,
+                Number = keyControls[(int)EIndex.SalesNO].Text,
                 Program = this.InProgramID,
                 Operator = this.InOperatorCD,
                 PC = this.InPcID
@@ -1589,13 +1519,13 @@ namespace TempoJuchuuNyuuryoku
             if (dt.Rows.Count > 0)
             {
                 bbl.ShowMessage("S004", dt.Rows[0]["Program"].ToString(),dt.Rows[0]["Operator"].ToString());
-                keyControls[(int)EIndex.JuchuuNO].Focus();
+                keyControls[(int)EIndex.SalesNO].Focus();
                 return false;
             }
             else
             {
                 bool ret = ebl.D_Exclusive_Insert(dee);
-                mOldJyuchuNo = keyControls[(int)EIndex.JuchuuNO].Text;
+                mOldJyuchuNo = keyControls[(int)EIndex.SalesNO].Text;
                 return ret;
             }
         }
@@ -1620,25 +1550,25 @@ namespace TempoJuchuuNyuuryoku
         }
         
         /// <summary>
-        /// 受注データ取得処理
+        /// 売上データ取得処理
         /// </summary>
         /// <param name="set">画面展開なしの場合:falesに設定する</param>
         /// <returns></returns>
-        private bool CheckData(bool set, int index= (int)EIndex.JuchuuNO)
+        private bool CheckData(bool set, int index= (int)EIndex.SalesNO)
         {
-            //[D_Juchu_SelectData]
-            dje = new D_Juchuu_Entity();
+            //[D_Sales_SelectDataForUriageNyuuryoku]
+            dse = new D_Sales_Entity();
 
-            if(index == (int)EIndex.CopyJuchuuNO)
-                dje.JuchuuNO = keyControls[(int)EIndex.CopyJuchuuNO].Text;
-            else if (index == (int)EIndex.MotoJuchuuNO)
-                dje.JuchuuNO = keyControls[(int)EIndex.MotoJuchuuNO].Text;
+            if(index == (int)EIndex.CopySalesNO)
+                dse.SalesNO = keyControls[(int)EIndex.CopySalesNO].Text;
+            else if (index == (int)EIndex.MotoSalesNO)
+                dse.SalesNO = keyControls[(int)EIndex.MotoSalesNO].Text;
             else
-                dje.JuchuuNO = keyControls[(int)EIndex.JuchuuNO].Text;
+                dse.SalesNO = keyControls[(int)EIndex.SalesNO].Text;
 
-            DataTable dt = mibl.D_Juchu_SelectData(dje, (short)OperationMode, (short)mTennic);
+            DataTable dt = mibl.D_Sales_SelectData(dse, (short)OperationMode, (short)mTennic);
 
-            //受注(D_Juchuu)に存在しない場合、Error 「登録されていない受注番号」
+            //売上(D_Juchuu)に存在しない場合、Error 「登録されていない売上番号」
             if (dt.Rows.Count == 0)
             {
                 bbl.ShowMessage("E138", mMesTxt);
@@ -1648,7 +1578,7 @@ namespace TempoJuchuuNyuuryoku
             }
             else
             {
-                //DeleteDateTime 「削除された受注番号」
+                //DeleteDateTime 「削除された売上番号」
                 if (!string.IsNullOrWhiteSpace(dt.Rows[0]["DeleteDateTime"].ToString()))
                 {
                     bbl.ShowMessage("E140", mMesTxt);
@@ -1657,7 +1587,7 @@ namespace TempoJuchuuNyuuryoku
                     return false;
                 }
 
-                //権限がない場合（以下のSelectができない場合）Error　「権限のない受注番号」
+                //権限がない場合（以下のSelectができない場合）Error　「権限のない売上番号」
                 if (!base.CheckAvailableStores(dt.Rows[0]["StoreCD"].ToString()))
                 {
                     bbl.ShowMessage("E139", mMesTxt);
@@ -1665,10 +1595,22 @@ namespace TempoJuchuuNyuuryoku
                     previousCtrl.Focus();
                     return false;
                 }
-                if (index == (int)EIndex.JuchuuNO)
+                //店舗の締日チェック
+                //店舗締マスターで判断
+                M_StoreClose_Entity mste = new M_StoreClose_Entity
                 {
-                    //進捗チェック　既に売上済み,出荷済み,出荷指示済み,ピッキングリスト完了済み,仕入済み,入荷済み,発注済み警告
-                    bool ret = mibl.CheckJuchuData(dje.JuchuuNO, out string errno, (short)mTennic);
+                    StoreCD = dt.Rows[0]["StoreCD"].ToString(),
+                    FiscalYYYYMM = dt.Rows[0]["SalesDate"].ToString().Replace("/", "").Substring(0, 6)
+                };
+                bool ret = bbl.CheckStoreClose(mste, true, true, false, false, true);
+                if (!ret)
+                {
+                    return false;
+                }
+                if (index == (int)EIndex.SalesNO)
+                {
+                    //進捗チェック　既に入金消込済みの場合、エラー
+                    ret = mibl.CheckSalesData(dse.SalesNO, out string errno, (short)mTennic);
                     if (ret)
                     {
                         if (!string.IsNullOrWhiteSpace(errno))
@@ -1684,27 +1626,25 @@ namespace TempoJuchuuNyuuryoku
                         }
                     }
                     //【削除モードの時】
-                    //出荷済・売上済の明細を含んだ受注は、そのものの削除を不可
+                    //出荷済・売上済の明細を含んだ売上は、そのものの削除を不可
                     if (OperationMode==EOperationMode.DELETE)
                     {
                         //E159:出荷済み、E165：売上済み
                         if ( errno.Equals("E165"))
                         {
-                            //売上済明細が存在するので、その受注データの削除も許さない
+                            //売上済明細が存在するので、その売上データの削除も許さない
                             bbl.ShowMessage("E168");
                             previousCtrl.Focus();
                             return false;
                         }else if(errno.Equals("E159"))
                         {
-                            //出荷済明細が存在するので、その受注データの削除も許さない
+                            //出荷済明細が存在するので、その売上データの削除も許さない
                             bbl.ShowMessage("E167");
                             previousCtrl.Focus();
                             return false;
                         }
                     }
 
-                    //D_TemporaryReserveをDelete
-                    mibl.DeleteTemporaryReserve(dje);
                 }
 
                 //画面セットなしの場合、処理正常終了
@@ -1735,17 +1675,16 @@ namespace TempoJuchuuNyuuryoku
                         CboStoreCD.SelectedValue = row["StoreCD"];
 
                         //明細にデータをセット
-                        if (index == (int)EIndex.JuchuuNO)
+                        if (index == (int)EIndex.SalesNO)
                         {
-                            detailControls[(int)EIndex.JuchuuDate].Text = row["JuchuuDate"].ToString();
+                            detailControls[(int)EIndex.SalesDate].Text = row["JuchuuDate"].ToString();
                         }
                         else
                         {
-                            detailControls[(int)EIndex.JuchuuDate].Text = bbl.GetDate();
+                            detailControls[(int)EIndex.SalesDate].Text = bbl.GetDate();
                         }
-                        mOldJyuchuDate = detailControls[(int)EIndex.JuchuuDate].Text;
-
-                        CboSoukoName.SelectedValue = row["SoukoCD"];
+                        mOldJyuchuDate = detailControls[(int)EIndex.SalesDate].Text;
+                        
                         detailControls[(int)EIndex.StaffCD].Text = row["StaffCD"].ToString();
                         CheckDetail((int)EIndex.StaffCD);
 
@@ -1755,58 +1694,13 @@ namespace TempoJuchuuNyuuryoku
                         if (detailControls[(int)EIndex.CustomerName].Enabled)
                         {
                             detailControls[(int)EIndex.CustomerName].Text = row["CustomerName"].ToString();
-                            addInfo.ade.ZipCD1 = row["ZipCD1"].ToString();
-                            addInfo.ade.ZipCD2 = row["ZipCD2"].ToString();
-                            addInfo.ade.Address1 = row["Address1"].ToString();
-                            addInfo.ade.Address2 = row["Address2"].ToString();
-                            addInfo.ade.Tel11 = row["Tel11"].ToString();
-                            addInfo.ade.Tel12 = row["Tel12"].ToString();
-                            addInfo.ade.Tel13 = row["Tel13"].ToString();
                         }
                         detailControls[(int)EIndex.CustomerName2].Text = row["CustomerName2"].ToString();
-                        detailControls[(int)EIndex.Tel1].Text = row["Tel11"].ToString();
-                        detailControls[(int)EIndex.Tel2].Text = row["Tel12"].ToString();
-                        detailControls[(int)EIndex.Tel3].Text = row["Tel13"].ToString();
-
-                        if (row["AliasKBN"].ToString() == "1")
-                            radioSama.Checked = true;
-                        else
-                            radioOnchu.Checked = true;
-
-                        detailControls[(int)EIndex.DeliveryCD].Text = row["DeliveryCD"].ToString();
-                        CheckDetail((int)EIndex.DeliveryCD);
-
-                        if (detailControls[(int)EIndex.DeliveryName].Enabled)
-                        {
-                            detailControls[(int)EIndex.DeliveryName].Text = row["DeliveryName"].ToString();
-                            addInfo.adeD.ZipCD1 = row["DeliveryZipCD1"].ToString();
-                            addInfo.adeD.ZipCD2 = row["DeliveryZipCD2"].ToString();
-                            addInfo.adeD.Address1 = row["DeliveryAddress1"].ToString();
-                            addInfo.adeD.Address2 = row["DeliveryAddress2"].ToString();
-                            addInfo.adeD.Tel11 = row["DeliveryTel11"].ToString();
-                            addInfo.adeD.Tel12 = row["DeliveryTel12"].ToString();
-                            addInfo.adeD.Tel13 = row["DeliveryTel13"].ToString();
-                        }
-                        detailControls[(int)EIndex.DeliveryName2].Text = row["DeliveryName2"].ToString();
-                        detailControls[(int)EIndex.Tel1D].Text = row["DeliveryTel11"].ToString();
-                        detailControls[(int)EIndex.Tel2D].Text = row["DeliveryTel12"].ToString();
-                        detailControls[(int)EIndex.Tel3D].Text = row["DeliveryTel13"].ToString();
-
-                        if (row["DeliveryAliasKBN"].ToString() == "1")
-                            radioSamaD.Checked = true;
-                        else
-                            radioOnchuD.Checked = true;
 
                         //【Data Area Footer】
                         CboPaymentMethodCD.SelectedValue = row["PaymentMethodCD"].ToString();// mPaymentMethodCD;
-                        //detailControls[(int)EIndex.Point].Text = bbl.Z_SetStr(row["Point"]);
-                        detailControls[(int)EIndex.SalesDate].Text = row["SalesDate"].ToString();
-                        detailControls[(int)EIndex.FirstPaypentPlanDate].Text = row["FirstPaypentPlanDate"].ToString();
                         detailControls[(int)EIndex.NouhinsyoComment].Text = row["NouhinsyoComment"].ToString();
-                        detailControls[(int)EIndex.RemarksInStore].Text = row["CommentInStore"].ToString();
-                        detailControls[(int)EIndex.RemarksOutStore].Text = row["CommentOutStore"].ToString();
 
-                        lblKin1.Text = bbl.Z_SetStr(row["SUM_JuchuuGaku"]);
                         lblKin5.Text = bbl.Z_SetStr(row["Discount"]);
                         lblKin6.Text = bbl.Z_SetStr(row["HanbaiGaku"]);
                         lblKin2.Text = bbl.Z_SetStr(row["HanbaiHontaiGaku"]);
@@ -1815,40 +1709,17 @@ namespace TempoJuchuuNyuuryoku
                         lblKin7.Text = bbl.Z_SetStr(row["InvoiceGaku"]);
                         lblKin10.Text = bbl.Z_SetStr(bbl.Z_Set(row["HanbaiTax8"])+ bbl.Z_Set(row["HanbaiTax10"]));
 
-                        if (index == (int)EIndex.JuchuuNO)
+                        if (index == (int)EIndex.SalesNO)
                         {
-                            if (string.IsNullOrWhiteSpace(row["D_Sales_SalesDate"].ToString()))
-                            {
-                                detailControls[(int)EIndex.SalesDate].Text = row["SalesPlanDate"].ToString();
-                            }
-                            else
-                            {
-                                detailControls[(int)EIndex.SalesDate].Text = row["D_Sales_SalesDate"].ToString();
-                            }
                             lblKin8.Text = bbl.Z_SetStr(row["CollectGaku"]);
                         }
                         else
                         {
-                            detailControls[(int)EIndex.SalesDate].Text = "";
                             lblKin8.Text = "";
                         }
-                        lblKin9.Text = lblKin7.Text;    
                         lblKin11.Text = bbl.Z_SetStr(row["HanbaiTax10"]);
                         lblKin12.Text = bbl.Z_SetStr(row["HanbaiTax8"]);
                         //lblKin13.Text = bbl.Z_SetStr(row["OrderGaku"]);
-
-                        if (index == (int)EIndex.JuchuuNO)
-                        {
-                            lblDay1.Text = row["BillingCloseDate"].ToString();
-                            lblDay2.Text = row["CollectPlanDate"].ToString();
-                            lblDay3.Text = row["CollectClearDate"].ToString();
-                        }
-                        else
-                        {
-                            lblDay1.Text = "";
-                            lblDay2.Text = "";
-                            lblDay3.Text = "";
-                        }
 
                         //明細なしの場合
                         if (bbl.Z_Set(row["JuchuuRows"]) == 0)
@@ -1860,29 +1731,28 @@ namespace TempoJuchuuNyuuryoku
                     mGrid.g_DArray[i].AdminNO = row["SKUNO"].ToString();
                     mGrid.g_DArray[i].SKUCD = row["SKUCD"].ToString();
 
-                    if (index == (int)EIndex.MotoJuchuuNO)
+                    if (index == (int)EIndex.MotoSalesNO)
                     {
-                        mGrid.g_DArray[i].JuchuuSuu =bbl.Z_SetStr(-1 * bbl.Z_Set(row["JuchuuSuu"]));   //単価算出のため先にセットしておく    
+                        mGrid.g_DArray[i].SalesSuu =bbl.Z_SetStr(-1 * bbl.Z_Set(row["JuchuuSuu"]));   //単価算出のため先にセットしておく    
                     }
                     else
                     {
-                        mGrid.g_DArray[i].JuchuuSuu = bbl.Z_SetStr(row["JuchuuSuu"]);   //単価算出のため先にセットしておく    
+                        mGrid.g_DArray[i].SalesSuu = bbl.Z_SetStr(row["JuchuuSuu"]);   //単価算出のため先にセットしておく    
                     }
-                    if (index == (int)EIndex.JuchuuNO)
+                    if (index == (int)EIndex.SalesNO)
                     {
                         mGrid.g_DArray[i].JuchuuNO = row["JuchuuNO"].ToString();
                         mGrid.g_DArray[i].juchuGyoNO = Convert.ToInt16(row["JuchuuRows"].ToString());
                         if (m_MaxJyuchuGyoNo < mGrid.g_DArray[i].juchuGyoNO)
                             m_MaxJyuchuGyoNo = mGrid.g_DArray[i].juchuGyoNO;
                     }
-                    else if (index == (int)EIndex.CopyJuchuuNO)
+                    else if (index == (int)EIndex.CopySalesNO)
                     {
                         mGrid.g_DArray[i].copyJuchuGyoNO = Convert.ToInt16(row["JuchuuRows"].ToString());
                     }
+                    
 
-                    mGrid.g_DArray[i].SoukoName = row["M_SoukoCD"].ToString();  //引当処理のため
-
-                    CheckGrid((int)ClsGridJuchuu.ColNO.JanCD, i, true);
+                    CheckGrid((int)ClsGridUriage.ColNO.JanCD, i, true);
 
                     mGrid.g_DArray[i].SKUName = row["SKUName"].ToString();   // 
                     mGrid.g_DArray[i].ColorName = row["ColorName"].ToString();   // 
@@ -1892,14 +1762,11 @@ namespace TempoJuchuuNyuuryoku
                     //else
                     //    mGrid.g_DArray[i].SetKBN = "";
                     mGrid.g_DArray[i].NotPrintFLG = row["NotPrintFLG"].ToString() == "1" ? true : false;
-                    mGrid.g_DArray[i].ChkTyokuso = row["DirectFLG"].ToString() == "1" ? true : false;
-                    mGrid.g_DArray[i].ChkFuyo = row["NotOrderFLG"].ToString() == "1" ? true : false;
-                    mGrid.g_DArray[i].ChkExpress = row["ExpressFLG"].ToString() == "1" ? true : false;
 
-                    mGrid.g_DArray[i].JuchuuHontaiGaku = bbl.Z_SetStr(row["JuchuuHontaiGaku"]);   // 
+                    mGrid.g_DArray[i].SalesHontaiGaku = bbl.Z_SetStr(row["JuchuuHontaiGaku"]);   // 
                     //mGrid.g_DArray[i].TaxRateDisp = bbl.Z_SetStr(row["MemberPriceOutTax"]);   // 
-                    mGrid.g_DArray[i].JuchuuUnitPrice = bbl.Z_SetStr(row["JuchuuUnitPrice"]);   // 
-                    mGrid.g_DArray[i].JuchuuGaku = bbl.Z_SetStr(row["JuchuuGaku"]);   // 
+                    mGrid.g_DArray[i].SalesUnitPrice = bbl.Z_SetStr(row["JuchuuUnitPrice"]);   // 
+                    mGrid.g_DArray[i].SalesGaku = bbl.Z_SetStr(row["JuchuuGaku"]);   // 
                     mGrid.g_DArray[i].CostUnitPrice = bbl.Z_SetStr(row["CostUnitPrice"]);   // 
                     mGrid.g_DArray[i].CostGaku = bbl.Z_SetStr(row["CostGaku"]);   //  
                     mGrid.g_DArray[i].OrderUnitPrice = bbl.Z_SetStr(row["OrderUnitPrice"]);   // 
@@ -1915,28 +1782,22 @@ namespace TempoJuchuuNyuuryoku
                     mGrid.g_DArray[i].ProfitGaku = bbl.Z_SetStr(row["ProfitGaku"]);   // 
                     
                     //税額(Hidden)
-                    mGrid.g_DArray[i].Tax = bbl.Z_Set(mGrid.g_DArray[i].JuchuuGaku) - bbl.Z_Set(mGrid.g_DArray[i].JuchuuHontaiGaku);
+                    mGrid.g_DArray[i].Tax = bbl.Z_Set(mGrid.g_DArray[i].SalesGaku) - bbl.Z_Set(mGrid.g_DArray[i].SalesHontaiGaku);
 
                     //複写時以外
-                    if (index != (int)EIndex.CopyJuchuuNO)
+                    if (index != (int)EIndex.CopySalesNO)
                     {
                         //進捗チェック　既に売上済み,出荷済み,出荷指示済み,ピッキングリスト完了済み,仕入済み,入荷済み,発注済み警告
-                        bool ret = mibl.CheckJuchuDetailsData(dje.JuchuuNO, row["JuchuuRows"].ToString(), out string status, out string status2);
-                        if (ret)
-                        {
-                            mGrid.g_DArray[i].Nyuka = status;
-                            mGrid.g_DArray[i].Syukka = status2;
-                        }
+                        //bool ret = mibl.CheckJuchuDetailsData(dse.JuchuuNO, row["JuchuuRows"].ToString(), out string status, out string status2);
+                        //if (ret)
+                        //{
+                        //    mGrid.g_DArray[i].Nyuka = status;
+                        //    mGrid.g_DArray[i].Syukka = status2;
+                        //}
                     }
-                    mGrid.g_DArray[i].JuchuuOrderNO = row["JuchuuOrderNO"].ToString();
                     mGrid.g_DArray[i].VendorCD = row["VendorCD"].ToString();
-                    if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[i].VendorCD))
-                        CheckGrid((int)ClsGridJuchuu.ColNO.VendorCD, i);
-                    else
-                        mGrid.g_DArray[i].VendorName = "";
+                    CheckGrid((int)ClsGridUriage.ColNO.VendorCD, i);
                     mGrid.g_DArray[i].ArrivePlanDate = row["ArrivePlanDate"].ToString();
-                    mGrid.g_DArray[i].PaymentPlanDate = row["PaymentPlanDate"].ToString();
-                    mGrid.g_DArray[i].CollectClearDate = row["D_CollectClearDate"].ToString();
                     mGrid.g_DArray[i].ShippingPlanDate = row["ShippingPlanDate"].ToString();
                     mGrid.g_DArray[i].OldShippingPlanDate = mGrid.g_DArray[i].ShippingPlanDate;
 
@@ -1944,11 +1805,11 @@ namespace TempoJuchuuNyuuryoku
 
 
                     m_dataCnt = i + 1;
-                    Grid_NotFocus((int)ClsGridJuchuu.ColNO.JanCD, i);
+                    Grid_NotFocus((int)ClsGridUriage.ColNO.JanCD, i);
                     i++;
                 }
 
-                mOldJyuchuDate = detailControls[(int)EIndex.JuchuuDate].Text;
+                mOldJyuchuDate = detailControls[(int)EIndex.SalesDate].Text;
 
                 CalcKin();
 
@@ -1985,295 +1846,6 @@ namespace TempoJuchuuNyuuryoku
         }
 
         /// <summary>
-        /// 見積データ取得処理
-        /// </summary>
-        /// <param name="set">画面展開なしの場合:falesに設定する</param>
-        /// <returns></returns>
-        private bool CheckDataMitsumori(bool set)
-        {
-            //[D_Mitsumori_SelectData]
-            D_Mitsumori_Entity dme = new D_Mitsumori_Entity();
-            MitsumoriNyuuryoku_BL mbl = new MitsumoriNyuuryoku_BL();
-
-            dme.MitsumoriNO = keyControls[(int)EIndex.MitsumoriNO].Text;
-
-            DataTable dt = mbl.D_Mitsumori_SelectData(dme, (short)OperationMode);
-
-            //以下の条件で見積入力ーが存在しなければエラー (Error if record does not exist)「登録されていない見積番号」
-            if (dt.Rows.Count == 0)
-            {
-                bbl.ShowMessage("E138", "見積番号");
-                Scr_Clr(1);
-                previousCtrl.Focus();
-                return false;
-            }
-            else
-            {
-                //DeleteDateTime 「削除された見積番号」
-                if (!string.IsNullOrWhiteSpace(dt.Rows[0]["DeleteDateTime"].ToString()))
-                {
-                    bbl.ShowMessage("E140", "見積番号");
-                    Scr_Clr(1);
-                    previousCtrl.Focus();
-                    return false;
-                }
-
-                //権限がない場合（以下のSelectができない場合）Error　「権限のない見積番号」
-                if (!base.CheckAvailableStores(dt.Rows[0]["StoreCD"].ToString()))
-                {
-                    bbl.ShowMessage("E139", "見積番号");
-                    Scr_Clr(1);
-                    previousCtrl.Focus();
-                    return false;
-                }
-
-                //画面セットなしの場合、処理正常終了
-                if (set == false)
-                {
-                    return true;
-                }
-
-                DataRow[] selectRow=  dt.Select("JanCD is not null");
-                if(selectRow.Length == 0)
-                {
-                    bbl.ShowMessage("E138", "見積番号");   
-                    Scr_Clr(1);
-                    previousCtrl.Focus();
-                    return false;
-                }
-
-                S_Clear_Grid();   //画面クリア（明細部）
-
-                //明細にデータをセット
-                int i = 0;
-                bool reCalc = false;
-
-                foreach (DataRow row in dt.Rows)
-                {
-                    //使用可能行数を超えた場合エラー
-                    if (i > m_EnableCnt - 1)
-                    {
-                        bbl.ShowMessage("E178", m_EnableCnt.ToString());
-                        mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
-                        return false;
-                    }
-
-                    if (i == 0)
-                    {
-                        CboStoreCD.SelectedValue = row["StoreCD"];
-
-                        //明細にデータをセット
-                        string ymd = bbl.GetDate();
-                        detailControls[(int)EIndex.JuchuuDate].Text = ymd;
-                        mOldJyuchuDate = ymd;
-
-                        //[M_Souko_Select]
-                        M_Souko_Entity me = new M_Souko_Entity
-                        {
-                            StoreCD = row["StoreCD"].ToString(),
-                            SoukoType = "3",
-                            ChangeDate = ymd,
-                            DeleteFlg="0"
-                        };
-                        
-                        DataTable sdt = mibl.M_Souko_SelectForMitsumori(me);
-                        if (sdt.Rows.Count > 0)
-                        {
-                            CboSoukoName.SelectedValue  = sdt.Rows[0]["SoukoCD"];
-                        }
-                        else
-                        {
-                            CboSoukoName.SelectedValue = "";
-                        }
-                        
-                        detailControls[(int)EIndex.StaffCD].Text = row["StaffCD"].ToString();
-                        CheckDetail((int)EIndex.StaffCD);
-
-                        detailControls[(int)EIndex.CustomerCD].Text = row["CustomerCD"].ToString();
-                        CheckDetail((int)EIndex.CustomerCD);
-
-                        if (detailControls[(int)EIndex.CustomerName].Enabled)
-                        {
-                            detailControls[(int)EIndex.CustomerName].Text = row["CustomerName"].ToString();
-                            detailControls[(int)EIndex.CustomerName2].Text = row["CustomerName2"].ToString();
-                            addInfo.ade.ZipCD1 = row["ZipCD1"].ToString();
-                            addInfo.ade.ZipCD2 = row["ZipCD2"].ToString();
-                            addInfo.ade.Address1 = row["Address1"].ToString();
-                            addInfo.ade.Address2 = row["Address2"].ToString();
-                            addInfo.ade.Tel11 = row["Tel11"].ToString();
-                            addInfo.ade.Tel12 = row["Tel12"].ToString();
-                            addInfo.ade.Tel13 = row["Tel13"].ToString();
-                        }
-
-                        detailControls[(int)EIndex.Tel1].Text = row["Tel11"].ToString();
-                        detailControls[(int)EIndex.Tel2].Text = row["Tel12"].ToString();
-                        detailControls[(int)EIndex.Tel3].Text = row["Tel13"].ToString();
-
-                        if (row["AliasKBN"].ToString() == "1")
-                            radioSama.Checked = true;
-                        else
-                            radioOnchu.Checked = true;
-
-                        //【Footer】
-                        detailControls[(int)EIndex.RemarksInStore].Text = row["RemarksInStore"].ToString();
-                        detailControls[(int)EIndex.RemarksOutStore].Text = row["RemarksOutStore"].ToString();
-
-                        lblKin5.Text ="0";          //請求額
-                        //ckM_TextBox2.Text = "0";    //ポイント
-                        ckM_TextBox5.Text = "" ;//売上日
-                        lblKin8.Text = "0";//入金額
-                        ckM_TextBox6.Text = ""; //入金予定日
-                        lblDay1.Text = "";
-                        lblDay2.Text = "";
-                        lblDay3.Text = "";
-
-                        //【Data Area Footer】
-                        ////[M_MultiPorpose]
-                        //MultiPorpose_BL mpbl = new MultiPorpose_BL();
-                        //M_MultiPorpose_Entity mme = new M_MultiPorpose_Entity
-                        //{
-                        //    ID = MultiPorpose_BL.ID_PaymentMethod,
-                        //    Key = mPaymentMethodCD
-                        //};
-                        //DataTable dtMm = mpbl.M_MultiPorpose_Select(mme);
-                        //if(dtMm.Rows.Count>0)
-                        //{
-                        //    CboPaymentMethodCD.SelectedValue = mme.Char1;
-                        //}
-                        CboPaymentMethodCD.SelectedValue = mPaymentMethodCD;
-                        detailControls[(int)EIndex.NouhinsyoComment].Text = row["RemarksOutStore"].ToString();
-
-                        //明細なしの場合
-                        if (bbl.Z_Set(row["MitsumoriRows"]) == 0)
-                            break;
-                    }
-                    if (string.IsNullOrWhiteSpace(row["JanCD"].ToString()))
-                        continue;
-
-                    mGrid.g_DArray[i].JanCD = row["JanCD"].ToString();
-                    //mGrid.g_DArray[i].OldJanCD = mGrid.g_DArray[i].JanCD;
-                    mGrid.g_DArray[i].AdminNO = row["SKUNO"].ToString();
-                    mGrid.g_DArray[i].SKUCD = row["SKUCD"].ToString();
-                    mGrid.g_DArray[i].JuchuuSuu = bbl.Z_SetStr(row["MitsumoriSuu"]);   //単価算出のため先にセットしておく    
-                    CheckGrid((int)ClsGridJuchuu.ColNO.JanCD, i, true);
-
-                    mGrid.g_DArray[i].SKUName = row["SKUName"].ToString();   // 
-                    mGrid.g_DArray[i].ColorName = row["ColorName"].ToString();   // 
-                    mGrid.g_DArray[i].SizeName = row["SizeName"].ToString();   // 
-                    //if (row["SetKBN"].ToString() == "1")
-                    //    mGrid.g_DArray[i].SetKBN = "○";
-                    //else
-                    //    mGrid.g_DArray[i].SetKBN = "";
-                    mGrid.g_DArray[i].NotPrintFLG = row["NotPrintFLG"].ToString() == "1" ? true : false;
-                    //mGrid.g_DArray[i].TaxRateDisp = bbl.Z_SetStr(row["MemberPriceOutTax"]);   // 
-
-                    //画面表示時にメッセージ表示
-                    if (i == 0)
-                    {
-                        if (bbl.ShowMessage("Q303") == DialogResult.Yes)
-                            reCalc = true;
-                    }
-
-                    if(!reCalc)
-                    {
-                        mGrid.g_DArray[i].JuchuuUnitPrice = bbl.Z_SetStr(row["MitsumoriUnitPrice"]);   //販売単価
-                        mGrid.g_DArray[i].JuchuuGaku = bbl.Z_SetStr(row["MitsumoriGaku"]);   //税込販売額
-                        mGrid.g_DArray[i].JuchuuHontaiGaku = bbl.Z_SetStr(row["MitsumoriHontaiGaku"]);   //税抜販売額
-                        mGrid.g_DArray[i].NotReCalc = true;
-                    }
-                    mGrid.g_DArray[i].SoukoName = CboSoukoName.SelectedValue.ToString();
-
-                    //[M_SKULastCost]
-                    M_SKULastCost_Entity msce = new M_SKULastCost_Entity
-                    {
-                        AdminNO = mGrid.g_DArray[i].AdminNO
-                        ,SoukoCD = mGrid.g_DArray[i].SoukoName    //Todo:必要か確認。たぶん必要
-                    };
-                    bool ret=mibl.M_SKULastCost_Select(msce);
-                    if (ret)
-                    {
-                        mGrid.g_DArray[i].CostUnitPrice = bbl.Z_SetStr(msce.LastCost);
-                        mGrid.g_DArray[i].CostGaku = bbl.Z_SetStr(bbl.Z_Set(msce.LastCost) * bbl.Z_Set(row["MitsumoriSuu"]));   //  
-                    }
-
-                    CalcZei(i);
-
-                    //mGrid.g_DArray[i].TaniName = bbl.Z_SetStr(row["TaniName"]);   // 
-                    mGrid.g_DArray[i].CommentInStore = row["CommentInStore"].ToString();   // 
-                    mGrid.g_DArray[i].CommentOutStore = row["CommentOutStore"].ToString();   // 
-                    mGrid.g_DArray[i].IndividualClientName = row["IndividualClientName"].ToString();   // 
-
-                    //粗利額
-                    mGrid.g_DArray[i].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[i].JuchuuHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[i].CostGaku)); // 
-                    //税額
-                    mGrid.g_DArray[i].Tax = bbl.Z_Set(mGrid.g_DArray[i].JuchuuGaku) - bbl.Z_Set(mGrid.g_DArray[i].JuchuuHontaiGaku);
-                    mGrid.g_DArray[i].OrderUnitPrice = "0";   //発注単価
-
-                    i++;
-                }
-
-                CalcKin();
-
-                mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
-
-            }
-
-            if (OperationMode == EOperationMode.UPDATE)
-            {
-                S_BodySeigyo(1, 0);
-                S_BodySeigyo(1, 1);
-                //配列の内容を画面にセット
-                mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-
-                //明細の先頭項目へ
-                mGrid.F_MoveFocus((int)ClsGridJuchuu.Gen_MK_FocusMove.MvSet, (int)ClsGridJuchuu.Gen_MK_FocusMove.MvNxt, this.ActiveControl, -1, -1, this.ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridJuchuu.ColNO.JanCD);
-            }
-            else if (OperationMode == EOperationMode.INSERT)
-            {
-                //複写コピー後
-                S_BodySeigyo(1, 1);
-                //配列の内容を画面にセット
-                mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-
-            }
-            else
-            {
-                S_BodySeigyo(2, 0);
-                S_BodySeigyo(2, 1);
-                //配列の内容を画面にセット
-                mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-
-                previousCtrl.Focus();
-            }
-
-            return true;
-        }
-        protected override void ExecDisp()
-        {
-            //引当処理
-            string ymd = detailControls[(int)EIndex.JuchuuDate].Text;
-
-            if (string.IsNullOrWhiteSpace(ymd))
-                ymd = bbl.GetDate();
-        
-            dje = new D_Juchuu_Entity();
-            dje.JuchuuNO = keyControls[(int)EIndex.JuchuuNO].Text == "" ? mTemporaryReserveNO : keyControls[(int)EIndex.JuchuuNO].Text;
-        
-            //D_TemporaryReserveをDelete
-            mibl.DeleteTemporaryReserve(dje);
-
-            //明細部チェック
-            for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
-            {
-                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JanCD) == false)
-                    CheckHikiate(RW, ymd);
-            }
-
-            //配列の内容を画面へセット
-            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-        }
-
-        /// <summary>
         /// HEAD部のコードチェック
         /// </summary>
         /// <param name="index"></param>
@@ -2290,7 +1862,7 @@ namespace TempoJuchuuNyuuryoku
 
             switch (index)
             {
-                case (int)EIndex.JuchuuDate:
+                case (int)EIndex.SalesDate:
                     //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
                     if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
@@ -2319,10 +1891,10 @@ namespace TempoJuchuuNyuuryoku
                         return false;
                     }
 
-                    //受注日が変更された場合のチェック処理
+                    //売上日が変更された場合のチェック処理
                     if (mOldJyuchuDate != detailControls[index].Text)
                     {
-                        for (int i = (int)EIndex.StaffCD; i <= (int)EIndex.DeliveryCD; i++)
+                        for (int i = (int)EIndex.StaffCD; i <= (int)EIndex.COUNT-1; i++)
                             if (!string.IsNullOrWhiteSpace(detailControls[i].Text))
                                 if (!CheckDependsOnDate(i, true))
                                     return false;
@@ -2332,33 +1904,18 @@ namespace TempoJuchuuNyuuryoku
                         {
                             if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JanCD))
                             {
-                                if (CheckGrid((int)ClsGridJuchuu.ColNO.JanCD, RW, true, true) == false)
+                                if (CheckGrid((int)ClsGridUriage.ColNO.JanCD, RW, true, true) == false)
                                 {
                                     //Focusセット処理
-                                    ERR_FOCUS_GRID_SUB((int)ClsGridJuchuu.ColNO.JanCD, RW);
+                                    ERR_FOCUS_GRID_SUB((int)ClsGridUriage.ColNO.JanCD, RW);
                                     return false;
                                 }
                             }
                         }
                         mOldJyuchuDate = detailControls[index].Text;
                         ScCustomer.ChangeDate = mOldJyuchuDate;
-                        ScDeliveryCD.ChangeDate = mOldJyuchuDate;
                     }
 
-                    break;
-
-                case (int)EIndex.SoukoName:
-                    //選択必須(Entry required)
-                    if (!RequireCheck(new Control[] { detailControls[index] }))
-                    {
-                        CboSoukoName.MoveNext = false;
-                        return false;
-                    }
-                    if (!CheckDependsOnDate(index))
-                    {
-                        CboSoukoName.MoveNext = false;
-                        return false;
-                    }                        
                     break;
 
                 case (int)EIndex.StaffCD:
@@ -2394,7 +1951,6 @@ namespace TempoJuchuuNyuuryoku
                     break;
 
                 case (int)EIndex.CustomerName:
-                case (int)EIndex.DeliveryName:
                     //入力可能の場合 入力必須(Entry required)
                     if (detailControls[index].Enabled)
                     {
@@ -2414,7 +1970,6 @@ namespace TempoJuchuuNyuuryoku
                     break;
 
                 case (int)EIndex.CustomerName2:
-                case (int)EIndex.DeliveryName2:
                     //入力可能の場合 入力必須(Entry required)
                     if (detailControls[index].Enabled && string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
@@ -2425,22 +1980,6 @@ namespace TempoJuchuuNyuuryoku
                     }
                     break;
 
-                case (int)EIndex.DeliveryCD:
-                    //入力必須(Entry required)
-                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
-                    {
-                        //Ｅ１０２
-                        bbl.ShowMessage("E102");
-                        //顧客情報ALLクリア
-                        ClearCustomerInfo(1);
-                        detailControls[index].Focus();
-                        return false;
-                    }
-                    if (!CheckDependsOnDate(index))
-                        return false;
-
-                    break;
-
                 case (int)EIndex.PaymentMethodCD:
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
@@ -2449,90 +1988,6 @@ namespace TempoJuchuuNyuuryoku
                         return false;
                     }
                     break;
-
-                //case (int)EIndex.Point:
-                //    //入力された場合 ポイント＞	Form.Header.残ポイントの場合、Error				
-                //    if(bbl.Z_Set(detailControls[index].Text)>0)
-                //        if(bbl.Z_Set(detailControls[index].Text) > bbl.Z_Set(lblPoint.Text))
-                //        {
-                //            //Ｅ１４６
-                //            bbl.ShowMessage("E146");
-                //            detailControls[index].Focus();
-                //            return false;
-                //        }
-
-                //    break;
-
-                case (int)EIndex.SalesDate:
-                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
-                    {
-                        return true;
-                    }
-                    detailControls[index].Text = bbl.FormatDate(detailControls[index].Text);
-
-                    //日付として正しいこと(Be on the correct date)Ｅ１０３
-                    if (!bbl.CheckDate(detailControls[index].Text))
-                    {
-                        //Ｅ１０３
-                        bbl.ShowMessage("E103");
-                        detailControls[index].Focus();
-                        return false;
-                    }
-
-                    //入力できる範囲内の日付であること
-                    if (!bbl.CheckInputPossibleDate(detailControls[index].Text))
-                    {
-                        //Ｅ１１５
-                        bbl.ShowMessage("E115");
-                        detailControls[index].Focus();
-                        return false;
-                    }
-
-                    //Form.Detail.入荷予定日＞form.売上予定日の場合、
-                    bool errFlg = false;
-                    for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
-                    {
-                        if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].ArrivePlanDate))
-                        {
-                            int result = detailControls[index].Text.CompareTo(mGrid.g_DArray[RW].ArrivePlanDate);
-                            if (result < 0)
-                            {
-                                errFlg = true;
-                                break;
-                            }
-                        }
-                    }
-                    if (errFlg)
-                    {
-                        //「入荷予定日が売上予定日より後になっている商品があります。このまま処理を進めますか？」
-                        if (bbl.ShowMessage("Q304") != DialogResult.Yes)
-                        {
-                            detailControls[index].Focus();
-                            //売上予定日にCursorを移動
-                            return false;
-                        }
-                    }
-                        break;
-
-                case (int)EIndex.FirstPaypentPlanDate:
-                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
-                    {
-                        return true;
-                    }
-
-                    detailControls[index].Text = bbl.FormatDate(detailControls[index].Text);
-
-                    //日付として正しいこと(Be on the correct date)Ｅ１０３
-                    if (!bbl.CheckDate(detailControls[index].Text))
-                    {
-                        //Ｅ１０３
-                        bbl.ShowMessage("E103");
-                        detailControls[index].Focus();
-                        return false;
-                    }
-
-                    break;
-
             }
 
             return true;
@@ -2556,7 +2011,7 @@ namespace TempoJuchuuNyuuryoku
             w_Ctrl = detailControls[(int)EIndex.PaymentMethodCD];
 
             IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
-            w_Ret = mGrid.F_MoveFocus((int)ClsGridJuchuu.Gen_MK_FocusMove.MvSet, (int)ClsGridJuchuu.Gen_MK_FocusMove.MvSet, w_Ctrl, -1, -1, this.ActiveControl, Vsb_Mei_0, pRow, pCol);
+            w_Ret = mGrid.F_MoveFocus((int)ClsGridUriage.Gen_MK_FocusMove.MvSet, (int)ClsGridUriage.Gen_MK_FocusMove.MvSet, w_Ctrl, -1, -1, this.ActiveControl, Vsb_Mei_0, pRow, pCol);
 
         }
 
@@ -2567,41 +2022,13 @@ namespace TempoJuchuuNyuuryoku
         /// <returns></returns>
         private bool CheckDependsOnDate(int index, bool ChangeDate = false)
         {
-            string ymd = detailControls[(int)EIndex.JuchuuDate].Text;
+            string ymd = detailControls[(int)EIndex.SalesDate].Text;
 
             if (string.IsNullOrWhiteSpace(ymd))
                 ymd = bbl.GetDate();
 
             switch (index)
             {
-                case (int)EIndex.SoukoName:
-                    //[M_Souko_Select]
-                    M_Souko_Entity me = new M_Souko_Entity
-                    {
-                        SoukoCD = CboSoukoName.SelectedValue.ToString(),
-                        ChangeDate = ymd,
-                        DeleteFlg = "0"
-                    };
-
-                    DataTable mdt = mibl.M_Souko_IsExists(me);
-                    if (mdt.Rows.Count > 0)
-                    {
-                        if (!base.CheckAvailableStores(mdt.Rows[0]["StoreCD"].ToString()))
-                        {
-                            bbl.ShowMessage("E141");
-                            detailControls[index].Focus();
-                            return false;
-                        }
-                    }
-                    else
-                    {
-                        bbl.ShowMessage("E101");
-                        detailControls[index].Focus();
-                        return false;
-                    }
-
-                    break;
-
                 case (int)EIndex.StaffCD:
                     //スタッフマスター(M_Staff)に存在すること
                     //[M_Staff]
@@ -2627,10 +2054,6 @@ namespace TempoJuchuuNyuuryoku
 
 
                 case (int)EIndex.CustomerCD:
-                case (int)EIndex.DeliveryCD:
-                    short kbn = 0;
-                    if (index.Equals((int)EIndex.DeliveryCD))
-                        kbn = 1;
 
                     //[M_Customer_Select]
                     M_Customer_Entity mce = new M_Customer_Entity
@@ -2648,186 +2071,56 @@ namespace TempoJuchuuNyuuryoku
                         {
                             bbl.ShowMessage("E119");
                             //顧客情報ALLクリア
-                            ClearCustomerInfo(kbn);
+                            ClearCustomerInfo(0);
                             detailControls[index].Focus();
                             return false;
                         }
 
-                        if (kbn.Equals(0))
+                        //顧客CDが変更されている場合のみ再セット
+                        if (mOldCustomerCD != detailControls[index].Text || ChangeDate)
                         {
-                            //顧客CDが変更されている場合のみ再セット
-                            if (mOldCustomerCD != detailControls[index].Text || ChangeDate)
+
+                            detailControls[index + 5].Text = mce.Tel11;
+                            detailControls[index + 6].Text = mce.Tel12;
+                            detailControls[index + 7].Text = mce.Tel13;
+
+                            detailControls[index + 1].Text = mce.CustomerName;
+                            textBox1.Text = mce.RemarksInStore;
+                            textBox2.Text = mce.RemarksOutStore;
+                            CboPaymentMethodCD.SelectedValue = mce.PaymentMethodCD;
+
+                            if (mce.VariousFLG == "1")
                             {
-                                //住所情報セット
-                                addInfo.ade.VariousFLG = mce.VariousFLG;
-                                addInfo.ade.ZipCD1 = mce.ZipCD1;
-                                addInfo.ade.ZipCD2 = mce.ZipCD2;
-                                addInfo.ade.Address1 = mce.Address1;
-                                addInfo.ade.Address2 = mce.Address2;
-                                addInfo.ade.Tel11 = mce.Tel11;
-                                addInfo.ade.Tel12 = mce.Tel12;
-                                addInfo.ade.Tel13 = mce.Tel13;
-
-                                detailControls[index + 5].Text = mce.Tel11;
-                                detailControls[index + 6].Text = mce.Tel12;
-                                detailControls[index + 7].Text = mce.Tel13;
-
-                                detailControls[index + 1].Text = mce.CustomerName;
-                                textBox1.Text = mce.RemarksInStore;
-                                textBox2.Text = mce.RemarksOutStore;
-                                CboPaymentMethodCD.SelectedValue = mce.PaymentMethodCD;
-
-                                if (mce.VariousFLG == "1")
+                                if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
                                 {
-                                    if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
-                                    {
-                                        detailControls[index + 1].Enabled = true;
-                                        detailControls[index + 3].Enabled = true;
-                                    }
-                                    detailControls[index + 3].Text = "";
-                                    lblLastSalesDate.Text = "";
-                                    lblStoreName.Text = "";
-                                    lblPoint.Text = "";
+                                    detailControls[index + 1].Enabled = true;
+                                    detailControls[index + 3].Enabled = true;
                                 }
-                                else
-                                {
-                                    detailControls[index + 1].Enabled = false;
-                                    detailControls[index + 3].Text = "";
-                                    detailControls[index + 3].Enabled = false;
-                                    lblLastSalesDate.Text = mce.LastSalesDate;
-                                    lblPoint.Text = bbl.Z_SetStr(mce.LastPoint);
-
-                                    //[M_Store_Select]
-                                    M_Store_Entity mste = new M_Store_Entity
-                                    {
-                                        StoreCD = mce.LastSalesStoreCD,
-                                        ChangeDate = mce.LastSalesDate
-                                    };
-                                    Store_BL stbl = new Store_BL();
-                                    DataTable sdt = stbl.M_Store_Select(mste);
-                                    if (sdt.Rows.Count > 0)
-                                    {
-                                        lblStoreName.Text = sdt.Rows[0]["StoreName"].ToString();
-                                    }
-                                    else
-                                    {
-                                        lblStoreName.Text = "";
-                                    }
-                                }
-                                //敬称
-                                if (mce.AliasKBN == "1")
-                                {
-                                    radioSama.Checked = true;
-                                }
-                                else
-                                {
-                                    radioOnchu.Checked = true;
-                                }
-                                mPaymentMethodCD = mce.PaymentMethodCD;
-                                mTaxFractionKBN = Convert.ToInt16(mce.TaxFractionKBN);
-                                mTaxTiming = Convert.ToInt16(mce.TaxTiming);
-
-                                //単価設定
-                                //[M_TankaCD]
-                                M_TankaCD_Entity mte = new M_TankaCD_Entity
-                                {
-                                    TankaCD = mce.TankaCD,
-                                    ChangeDate = ymd
-                                };
-                                TankaCD_BL mbl = new TankaCD_BL();
-                                DataTable dt = mbl.M_TankaCD_Select(mte);
-                                if (dt.Rows.Count > 0)
-                                {
-                                    lblTankaName.Text = dt.Rows[0]["TankaName"].ToString();
-                                }
-                                else
-                                {
-                                    lblTankaName.Text = "";
-                                }
-
-
-                                if (string.IsNullOrWhiteSpace(ScDeliveryCD.TxtCode.Text))
-                                {
-                                    ScDeliveryCD.TxtCode.Text = ScCustomer.TxtCode.Text;
-                                    CheckDetail((int)EIndex.DeliveryCD);
-                                    detailControls[(int)EIndex.DeliveryName].Text = detailControls[(int)EIndex.CustomerName].Text;
-                                    detailControls[(int)EIndex.DeliveryName2].Text = detailControls[(int)EIndex.CustomerName2].Text;
-                                    if (radioSama.Checked)
-                                        radioSamaD.Checked = true;
-                                    else
-                                        radioOnchuD.Checked = true;
-                                    detailControls[(int)EIndex.Tel1D].Text = detailControls[(int)EIndex.Tel1].Text;
-                                    detailControls[(int)EIndex.Tel2D].Text = detailControls[(int)EIndex.Tel2].Text;
-                                    detailControls[(int)EIndex.Tel3D].Text = detailControls[(int)EIndex.Tel3].Text;
-
-                                    addInfo.adeD.ZipCD1 = addInfo.ade.ZipCD1;
-                                    addInfo.adeD.ZipCD2 = addInfo.ade.ZipCD2;
-                                    addInfo.adeD.Address1 = addInfo.ade.Address1;
-                                    addInfo.adeD.Address2 = addInfo.ade.Address2;
-                                }
+                                detailControls[index + 3].Text = "";
                             }
-                        }
-                        else
-                        {
-                            //配送先CDが変更されている場合のみ再セット
-                            if (mOldDeliveryCD != detailControls[index].Text || ChangeDate)
+                            else
                             {
-                                //住所情報セット
-                                addInfo.adeD.VariousFLG = mce.VariousFLG;
-                                addInfo.adeD.ZipCD1 = mce.ZipCD1;
-                                addInfo.adeD.ZipCD2 = mce.ZipCD2;
-                                addInfo.adeD.Address1 = mce.Address1;
-                                addInfo.adeD.Address2 = mce.Address2;
-                                addInfo.adeD.Tel11 = mce.Tel11;
-                                addInfo.adeD.Tel12 = mce.Tel12;
-                                addInfo.adeD.Tel13 = mce.Tel13;
+                                detailControls[index + 1].Enabled = false;
+                                detailControls[index + 3].Text = "";
+                                detailControls[index + 3].Enabled = false;
 
-                                detailControls[index + 5].Text = mce.Tel11;
-                                detailControls[index + 6].Text = mce.Tel12;
-                                detailControls[index + 7].Text = mce.Tel13;
-
-                                if (mce.VariousFLG == "1")
-                                {
-                                    detailControls[index + 1].Text = mce.CustomerName;
-                                    if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
-                                    {
-                                        detailControls[index + 1].Enabled = true;
-                                        detailControls[index + 3].Enabled = true;
-                                    }
-                                    detailControls[index + 3].Text = "";                                    
-                                }
-                                else
-                                {
-                                    detailControls[index + 1].Text = mce.CustomerName;
-                                    detailControls[index + 1].Enabled = false;
-                                    detailControls[index + 3].Text = "";
-                                    detailControls[index + 3].Enabled = false;
-                                }
-                                //敬称
-                                if (mce.AliasKBN == "1")
-                                {
-                                    radioSamaD.Checked = true;
-                                }
-                                else
-                                {
-                                    radioOnchuD.Checked = true;
-                                }
                             }
+
+                            mPaymentMethodCD = mce.PaymentMethodCD;
+                            mTaxFractionKBN = Convert.ToInt16(mce.TaxFractionKBN);
+                            mTaxTiming = Convert.ToInt16(mce.TaxTiming);
                         }
                     }
                     else
                     {
                         bbl.ShowMessage("E101");
                         //顧客情報ALLクリア
-                        ClearCustomerInfo(kbn);
+                        ClearCustomerInfo(0);
                         detailControls[index].Focus();
                         return false;
                     }
-
-                    if (kbn.Equals(0))
+                    
                         mOldCustomerCD = detailControls[index].Text;    //位置確認
-                    else
-                        mOldDeliveryCD = detailControls[index].Text;
                     break;
             }
 
@@ -2837,7 +2130,7 @@ namespace TempoJuchuuNyuuryoku
         {
             bool ret = false;
 
-            string ymd = detailControls[(int)EIndex.JuchuuDate].Text;
+            string ymd = detailControls[(int)EIndex.SalesDate].Text;
 
             if (string.IsNullOrWhiteSpace(ymd))
                 ymd = bbl.GetDate();
@@ -2845,7 +2138,7 @@ namespace TempoJuchuuNyuuryoku
             if (!chkAll && !changeYmd)
             {
                 int w_CtlRow = row - Vsb_Mei_0.Value;
-                if (w_CtlRow < ClsGridJuchuu.gc_P_GYO)
+                if (w_CtlRow < ClsGridUriage.gc_P_GYO)
                     if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
                 {
                     if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
@@ -2855,16 +2148,16 @@ namespace TempoJuchuuNyuuryoku
 
             switch (col)
             {
-                case (int)ClsGridJuchuu.ColNO.JanCD:
-                    //販売単価 複写元受注番号が入力されている場合は、以下のメッセージを表示後、その回答によって扱いを変える
-                    if (!string.IsNullOrWhiteSpace(keyControls[(int)EIndex.CopyJuchuuNO].Text))
+                case (int)ClsGridUriage.ColNO.JanCD:
+                    //販売単価 複写元売上番号が入力されている場合は、以下のメッセージを表示後、その回答によって扱いを変える
+                    if (!string.IsNullOrWhiteSpace(keyControls[(int)EIndex.CopySalesNO].Text))
                     {
                         //基本は再計算しない
                         mGrid.g_DArray[row].NotReCalc = true;
 
                         if (!chkAll && mGrid.g_DArray[row].copyJuchuGyoNO > 0)
                         {
-                            //「複写する受注の金額情報をコピーしますか？」
+                            //「複写する売上の金額情報をコピーしますか？」
                             if (bbl.ShowMessage("Q318") != DialogResult.Yes)
                             {
                                 //単価再計算するように
@@ -2946,7 +2239,6 @@ namespace TempoJuchuuNyuuryoku
                         mGrid.g_DArray[row].AdminNO = selectRow["AdminNO"].ToString();
                         mGrid.g_DArray[row].SKUCD = selectRow["SKUCD"].ToString();
                         mGrid.g_DArray[row].SKUName = selectRow["SKUName"].ToString();
-                        mGrid.g_DArray[row].SetKBN = selectRow["SetKBN"].ToString() == "1" ? "〇" : "";
                         mGrid.g_DArray[row].ColorName = selectRow["ColorName"].ToString();
                         mGrid.g_DArray[row].SizeName = selectRow["SizeName"].ToString();
                         mGrid.g_DArray[row].DiscountKbn = Convert.ToInt16(selectRow["DiscountKbn"].ToString());
@@ -2962,7 +2254,6 @@ namespace TempoJuchuuNyuuryoku
                         mGrid.g_DArray[row].ZaikoKBN = Convert.ToInt16(selectRow["ZaikoKBN"].ToString());
                         mGrid.g_DArray[row].KariHikiateNO = "";
                         mGrid.g_DArray[row].MakerItem = selectRow["MakerItem"].ToString();
-                        mGrid.g_DArray[row].ChkTyokuso = selectRow["DirectFlg"].ToString() == "1" ? true : false;
 
                         //[M_Vender]    
                         M_Vendor_Entity mve = new M_Vendor_Entity
@@ -2977,7 +2268,7 @@ namespace TempoJuchuuNyuuryoku
                         if (ret)
                             mGrid.g_DArray[row].VendorName = mve.VendorName;
 
-                        decimal wSuu = bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu);
+                        decimal wSuu = bbl.Z_Set(mGrid.g_DArray[row].SalesSuu);
 
                         if (mGrid.g_DArray[row].NotReCalc != true)
                         {
@@ -2999,11 +2290,11 @@ namespace TempoJuchuuNyuuryoku
                                 {
                                     case 0:
                                         //販売単価=Function_単価取得.out税込単価		
-                                        mGrid.g_DArray[row].JuchuuUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeikomiTanka));
+                                        mGrid.g_DArray[row].SalesUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeikomiTanka));
                                         break;
                                     case 1:
                                         //販売単価=Function_単価取得.out税抜単価
-                                        mGrid.g_DArray[row].JuchuuUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeinukiTanka));
+                                        mGrid.g_DArray[row].SalesUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeinukiTanka));
                                         break;
                                 }
 
@@ -3013,22 +2304,22 @@ namespace TempoJuchuuNyuuryoku
                             else
                             {
                                 //販売単価		
-                                mGrid.g_DArray[row].JuchuuUnitPrice = "0";
+                                mGrid.g_DArray[row].SalesUnitPrice = "0";
                                 //原価単価
                                 mGrid.g_DArray[row].CostUnitPrice = "0";
                             }
 
-                            //	(Form.受注数＝Null	の場合は×１とする)
+                            //	(Form.売上数＝Null	の場合は×１とする)
                             if (wSuu.Equals(0))
                                 wSuu = 1;
 
                             SetJuchuuGaku(row, wSuu, ymd, fue.ZeinukiTanka);
                             
-                            //原価額=Form.受注数≠Nullの場合Function_単価取得.out原価単価×Form.Detail.受注数
+                            //原価額=Form.売上数≠Nullの場合Function_単価取得.out原価単価×Form.Detail.売上数
                             mGrid.g_DArray[row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].CostUnitPrice) * wSuu);
 
                             //粗利額=⑦Form.税抜販売額－⑩Form.原価額				
-                            mGrid.g_DArray[row].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].JuchuuHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[row].CostGaku));
+                            mGrid.g_DArray[row].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].SalesHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[row].CostGaku));
 
                             ////税率=Function_単価取得.out税率
                             //if (bbl.Z_Set(fue.Zeiritsu) == 0)
@@ -3062,11 +2353,7 @@ namespace TempoJuchuuNyuuryoku
                         }
 
                         mGrid.g_DArray[row].OldJanCD = mGrid.g_DArray[row].JanCD;
-
-                        //明細の出荷倉庫CDに、Header部の出荷倉庫CD、倉庫名をセットする。
-                        mGrid.g_DArray[row].SoukoName = CboSoukoName.SelectedIndex > 0 ? CboSoukoName.SelectedValue.ToString() : "";
-
-                        CheckHikiate(row, ymd);
+ 
 
                         //仕入先、店舗との組み合わせでITEM発注単価マスターかJAN発注単価マスタに存在すること SelectできなければError
                         //以下①②③④の順番でターゲットが大きくなる（①に近いほど、商品が特定されていく）
@@ -3086,7 +2373,7 @@ namespace TempoJuchuuNyuuryoku
 
                     break;
 
-                case (int)ClsGridJuchuu.ColNO.SKUName:
+                case (int)ClsGridUriage.ColNO.SKUName:
                     if (mGrid.g_MK_State[col, row].Cell_Enabled)
                     {
                         //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
@@ -3100,37 +2387,7 @@ namespace TempoJuchuuNyuuryoku
                     }
                     break;
 
-                case (int)ClsGridJuchuu.ColNO.SoukoName:
-                    if (mGrid.g_MK_State[col, row].Cell_Enabled)
-                    {
-                        //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
-                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].SoukoName))
-                        {
-                            //Ｅ１０２
-                            bbl.ShowMessage("E102");
-                            return false;
-                        }
-                    }
-                    M_Souko_Entity msoe = new M_Souko_Entity
-                    {
-                        SoukoCD = mGrid.g_DArray[row].SoukoName,
-                        ChangeDate = ymd,
-                        DeleteFlg = "0"
-                    };
-
-                    DataTable msdt = mibl.M_Souko_IsExists(msoe);
-                    if (msdt.Rows.Count > 0)
-                        if (!base.CheckAvailableStores(msdt.Rows[0]["StoreCD"].ToString()))
-                        {
-                            bbl.ShowMessage("E145");
-                            return false;
-                        }
-
-                    ret = CheckHikiate(row, ymd);
-
-                    break;
-
-                case (int)ClsGridJuchuu.ColNO.VendorCD:
+                case (int)ClsGridUriage.ColNO.VendorCD:
                     mGrid.g_DArray[row].VendorName = "";
 
                     if (mGrid.g_MK_State[col, row].Cell_Enabled)
@@ -3138,16 +2395,9 @@ namespace TempoJuchuuNyuuryoku
                         //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
                         if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].VendorCD))
                         {
-                            if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].Nyuka) && mGrid.g_DArray[row].Hikiate != "引当OK")
-                            {
                                 //Ｅ１０２
                                 bbl.ShowMessage("E102");
                                 return false;
-                            }
-                            else
-                            {
-                                return true;
-                            }
                         }
                     }
 
@@ -3176,16 +2426,7 @@ namespace TempoJuchuuNyuuryoku
                     }
                     break;
 
-                case (int)ClsGridJuchuu.ColNO.ChkTyokuso:
-                    bool Check = mGrid.g_DArray[row].ChkTyokuso;
-                    if (Check)
-                    {
-                        mGrid.g_DArray[row].ArrivePlanDate = "";
-                        mGrid.g_DArray[row].KariHikiateNO = "";
-                    }
-                    break;
-
-                case (int)ClsGridJuchuu.ColNO.ShippingPlanDate:
+                case (int)ClsGridUriage.ColNO.ShippingPlanDate:
                     //入力できる場合(When input is possible)
                     //入力無くても良い(It is not necessary to input)
                     if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].ShippingPlanDate))
@@ -3214,13 +2455,13 @@ namespace TempoJuchuuNyuuryoku
                         {
                             //入力された出荷予定日から以下のルールで希望納期を計算する
                             //希望納期=出荷予定日の前日
-                            mGrid.g_DArray[row].ArrivePlanDate = mibl.GetNouki(mGrid.g_DArray[row].ShippingPlanDate, CboStoreCD.SelectedValue.ToString());
+                            //mGrid.g_DArray[row].ArrivePlanDate = mibl.GetNouki(mGrid.g_DArray[row].ShippingPlanDate, CboStoreCD.SelectedValue.ToString());
 
                             mGrid.g_DArray[row].OldShippingPlanDate = mGrid.g_DArray[row].ShippingPlanDate;
                         }
                     }
                     break;
-                case (int)ClsGridJuchuu.ColNO.ArrivePlanDate:
+                case (int)ClsGridUriage.ColNO.ShiireGaku:
                     //入力無くても良い(It is not necessary to input)
                     if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].ArrivePlanDate))
                     {
@@ -3247,7 +2488,7 @@ namespace TempoJuchuuNyuuryoku
                     }
                     break;
 
-                case (int)ClsGridJuchuu.ColNO.OrderUnitPrice://発注単価
+                case (int)ClsGridUriage.ColNO.OrderUnitPrice://発注単価
                     //入力無くても良い(It is not necessary to input)
                     //入力無い場合、0とする（When there is no input, it is set to 0）
                     decimal orderUnitPrice = bbl.Z_Set(mGrid.g_DArray[row].OrderUnitPrice);
@@ -3263,7 +2504,7 @@ namespace TempoJuchuuNyuuryoku
                     else if (!chkAll && bbl.Z_Set(mGrid.g_DArray[row].CostUnitPrice) == 0)
                     {
                         mGrid.g_DArray[row].CostUnitPrice = mGrid.g_DArray[row].OrderUnitPrice;
-                        mGrid.g_DArray[row].CostGaku = string.Format("{0:#,##0}", orderUnitPrice * bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu));
+                        mGrid.g_DArray[row].CostGaku = string.Format("{0:#,##0}", orderUnitPrice * bbl.Z_Set(mGrid.g_DArray[row].SalesSuu));
                     }
                     //mGrid.g_DArray[row].OrderGaku = bbl.Z_SetStr(orderUnitPrice * bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu));
                     break;
@@ -3279,10 +2520,10 @@ namespace TempoJuchuuNyuuryoku
 
             switch (col)
             {
-                case (int)ClsGridJuchuu.ColNO.JuchuuSuu:
+                case (int)ClsGridUriage.ColNO.SalesSU:
                     if (mGrid.g_DArray[row].NotPrintFLG)
                     {
-                        if (mGrid.g_DArray[row].JuchuuSuu != mGrid.g_DArray[row - 1].JuchuuSuu)
+                        if (mGrid.g_DArray[row].SalesSuu != mGrid.g_DArray[row - 1].SalesSuu)
                         {
                             //Ｅ２１７				
                             bbl.ShowMessage("E217");
@@ -3292,7 +2533,7 @@ namespace TempoJuchuuNyuuryoku
                     if (mGrid.g_DArray[row].DiscountKbn.Equals(1))
                     {
                         //見積数≧０の場合、Error				
-                        if (bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu) >= 0)
+                        if (bbl.Z_Set(mGrid.g_DArray[row].SalesSuu) >= 0)
                         {
                             //Ｅ２４１				
                             bbl.ShowMessage("E241");
@@ -3305,10 +2546,10 @@ namespace TempoJuchuuNyuuryoku
 
                     break;
 
-                case (int)ClsGridJuchuu.ColNO.JanCD:                
-                case (int)ClsGridJuchuu.ColNO.JuchuuUnitPrice: //販売単価 
-                case (int)ClsGridJuchuu.ColNO.CostUnitPrice: //原価単価
-                case (int)ClsGridJuchuu.ColNO.OrderUnitPrice://発注単価
+                case (int)ClsGridUriage.ColNO.JanCD:                
+                case (int)ClsGridUriage.ColNO.SalesUnitPrice: //販売単価 
+                case (int)ClsGridUriage.ColNO.CostUnitPrice: //原価単価
+                case (int)ClsGridUriage.ColNO.OrderUnitPrice://発注単価
 
                     //各金額項目の再計算必要
                     if (chkAll == false)
@@ -3324,115 +2565,6 @@ namespace TempoJuchuuNyuuryoku
             return true;
         }
 
-        /// <summary>
-        /// 引当可能かCheckする【引当可能確認ロジック】
-        /// </summary>
-        /// <param name="row"></param>
-        /// <returns></returns>
-        private bool CheckHikiate(int row, string ymd)
-        {
-            bool ret = false;
-
-            //在庫区分=1→画面明細.直送checkbox＝offの場合
-            //if (mGrid.g_DArray[row].ZaikoKBN == 1)
-            if (mGrid.g_DArray[row].ChkTyokuso == false)
-            {              
-                //Function_商品引当.
-                Fnc_Reserve_Entity fre = new Fnc_Reserve_Entity
-                {
-                    AdminNO = mGrid.g_DArray[row].AdminNO,
-                    ChangeDate = ymd,
-                    StoreCD = CboStoreCD.SelectedValue.ToString(),
-                    SoukoCD = mGrid.g_DArray[row].SoukoName,  
-                    Suryo = bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu).ToString(),
-                    DenType = "1",  //1(受注)
-                    DenNo = mGrid.g_DArray[row].JuchuuNO,  // keyControls[(int)EIndex.JuchuuNO].Text,
-                    DenGyoNo = mGrid.g_DArray[row].juchuGyoNO.ToString(),
-                    KariHikiateNo = mGrid.g_DArray[row].KariHikiateNO
-                };
-
-                //Form.受注番号＝Nullの場合
-                if(mTemporaryReserveNO=="")
-                {
-                    mTemporaryReserveNO = mibl.GetTemporaryReserveNO(fre.DenNo);
-
-                    if (mTennic.Equals(1) && !string.IsNullOrWhiteSpace(fre.DenNo))
-                        mTemporaryReserveNO = "";
-                }
-
-                if (string.IsNullOrWhiteSpace(fre.DenNo))
-                {
-                    fre.DenNo = mTemporaryReserveNO;
-                }
-                if (fre.DenGyoNo == "0")
-                {
-                    //if (mTennic.Equals(1))
-                    //    fre.DenGyoNo = "1";
-                    //else
-                        fre.DenGyoNo = (row + 1).ToString();
-                }
-
-                ret = bbl.Fnc_Reserve(fre);
-                if(ret)
-                {
-                    int result;
-
-                    if (!string.IsNullOrWhiteSpace(fre.LastDay))
-                    {
-                        //ただし、			out引当最終日 ≦ Today の場合、Null		
-                        result = fre.LastDay.CompareTo(bbl.GetDate());
-                        if (result <= 0)
-                        {
-                            mGrid.g_DArray[row].ArrivePlanDate = "";
-                        }
-                        else
-                        {
-                            mGrid.g_DArray[row].ArrivePlanDate = fre.LastDay;
-                        }
-                    }
-                    if (fre.Result == "1")
-                    {
-                        mGrid.g_DArray[row].Hikiate = "引当OK";
-
-                        if (mGrid.g_DArray[row].ZaikoKBN == 1)
-                        {
-                            mGrid.g_DArray[row].VendorCD = "";
-                            mGrid.g_DArray[row].VendorName = "";
-                        }
-
-                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].ArrivePlanDate))
-                        {
-                            if (string.IsNullOrWhiteSpace(detailControls[(int)EIndex.SalesDate].Text))
-                                detailControls[(int)EIndex.SalesDate].Text = bbl.GetDate();
-                        }
-                        else
-                        {
-                            if (!string.IsNullOrWhiteSpace(detailControls[(int)EIndex.SalesDate].Text))
-                            {
-                                result = detailControls[(int)EIndex.SalesDate].Text.CompareTo(mGrid.g_DArray[row].ArrivePlanDate);
-                                if (result < 0)
-                                {
-                                    detailControls[(int)EIndex.SalesDate].Text=mGrid.g_DArray[row].ArrivePlanDate;
-                                }
-                            }
-                        }
-                    }
-                    else if (fre.Result == "2")
-                    {
-                        mGrid.g_DArray[row].Hikiate = "一部OK";
-                        detailControls[(int)EIndex.SalesDate].Text = "";
-                    }
-                    else
-                    {
-                        mGrid.g_DArray[row].Hikiate = "引当NG";
-                        detailControls[(int)EIndex.SalesDate].Text = "";
-                    }
-                    mGrid.g_DArray[row].KariHikiateNO = fre.OutKariHikiateNo;
-                }
-            }
-
-            return ret;
-        }
         private string GetTanka(int row, string ymd)
         {
             //[M_JANOrderPrice]
@@ -3514,18 +2646,18 @@ namespace TempoJuchuuNyuuryoku
                         if (mGrid.g_DArray[row].VariousFLG.Equals(1))
                         {
                             //（諸口の場合は入力された税込単価から税抜単価を都度計算する）
-                            //税抜販売額＝Function_消費税計算.out金額１×Form.Detail.受注数
-                            decimal tanka = bbl.GetZeinukiKingaku(bbl.Z_Set(mGrid.g_DArray[row].JuchuuUnitPrice), mGrid.g_DArray[row].TaxRateFLG, ymd);
+                            //税抜販売額＝Function_消費税計算.out金額１×Form.Detail.売上数
+                            decimal tanka = bbl.GetZeinukiKingaku(bbl.Z_Set(mGrid.g_DArray[row].SalesUnitPrice), mGrid.g_DArray[row].TaxRateFLG, ymd);
 
-                            mGrid.g_DArray[row].JuchuuHontaiGaku = string.Format("{0:#,##0}", tanka * wSuu);
+                            mGrid.g_DArray[row].SalesHontaiGaku = string.Format("{0:#,##0}", tanka * wSuu);
                         }
                         else if (mGrid.g_DArray[row].VariousFLG.Equals(0))
                         {
-                            //税抜販売額＝Form.受注数＝Nullの場合Function_単価取得.out税抜単価×Form.受注数
-                            mGrid.g_DArray[row].JuchuuHontaiGaku = string.Format("{0:#,##0}", bbl.Z_Set(fZeinukiTanka) * wSuu);
+                            //税抜販売額＝Form.売上数＝Nullの場合Function_単価取得.out税抜単価×Form.売上数
+                            mGrid.g_DArray[row].SalesHontaiGaku = string.Format("{0:#,##0}", bbl.Z_Set(fZeinukiTanka) * wSuu);
                         }
-                        //税込販売額=Form.受注数≠Nullの場合Function_単価取得.out税込単価×Form.Detail.受注数	
-                        mGrid.g_DArray[row].JuchuuGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].JuchuuUnitPrice) * wSuu);
+                        //税込販売額=Form.売上数≠Nullの場合Function_単価取得.out税込単価×Form.Detail.売上数	
+                        mGrid.g_DArray[row].SalesGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].SalesUnitPrice) * wSuu);
                     }
                     break;
                 case 1:
@@ -3533,16 +2665,16 @@ namespace TempoJuchuuNyuuryoku
                         //税抜販売額
                         if (mGrid.g_DArray[row].VariousFLG.Equals(1))
                         {
-                            //税抜販売額←	Form.Detail.販売単価×	Form.Detail.受注数	Form.受注数＝Nullの場合は×１とする		
-                            mGrid.g_DArray[row].JuchuuHontaiGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].JuchuuUnitPrice) * wSuu);
+                            //税抜販売額←	Form.Detail.販売単価×	Form.Detail.売上数	Form.売上数＝Nullの場合は×１とする		
+                            mGrid.g_DArray[row].SalesHontaiGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].SalesUnitPrice) * wSuu);
                         }
                         else if (mGrid.g_DArray[row].VariousFLG.Equals(0))
                         {
-                            //税抜販売額←Function_単価取得.out税抜単価×Form.Detail.受注数		Form.受注数＝Nullの場合は×１とする	
-                            mGrid.g_DArray[row].JuchuuHontaiGaku = string.Format("{0:#,##0}", bbl.Z_Set(fZeinukiTanka) * wSuu);
+                            //税抜販売額←Function_単価取得.out税抜単価×Form.Detail.売上数		Form.売上数＝Nullの場合は×１とする	
+                            mGrid.g_DArray[row].SalesHontaiGaku = string.Format("{0:#,##0}", bbl.Z_Set(fZeinukiTanka) * wSuu);
                         }
                         //税込販売額=Function_消費税計算.out金額１                                  
-                        mGrid.g_DArray[row].JuchuuGaku = string.Format("{0:#,##0}", bbl.GetZeikomiKingaku(bbl.Z_Set(mGrid.g_DArray[row].JuchuuHontaiGaku), mGrid.g_DArray[row].TaxRateFLG, out decimal zei, ymd));
+                        mGrid.g_DArray[row].SalesGaku = string.Format("{0:#,##0}", bbl.GetZeikomiKingaku(bbl.Z_Set(mGrid.g_DArray[row].SalesHontaiGaku), mGrid.g_DArray[row].TaxRateFLG, out decimal zei, ymd));
                     }
                     break;
             }
@@ -3550,9 +2682,9 @@ namespace TempoJuchuuNyuuryoku
 
         private void CalcZei(int w_Row, bool changeTanka = false)
         {
-            string ymd = detailControls[(int)EIndex.JuchuuDate].Text;
-            decimal wSuu = bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuSuu);
-            decimal wTanka = bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuUnitPrice);
+            string ymd = detailControls[(int)EIndex.SalesDate].Text;
+            decimal wSuu = bbl.Z_Set(mGrid.g_DArray[w_Row].SalesSuu);
+            decimal wTanka = bbl.Z_Set(mGrid.g_DArray[w_Row].SalesUnitPrice);
 
             //paremetersin計算モード←2
             //in基準日←Form.見積日
@@ -3582,7 +2714,7 @@ namespace TempoJuchuuNyuuryoku
             }
 
             //粗利額←⑦Form.Detail.税抜販売額－⑩Form.Detail.原価額
-            mGrid.g_DArray[w_Row].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].CostGaku));
+            mGrid.g_DArray[w_Row].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].SalesHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].CostGaku));
 
             if (mGrid.g_DArray[w_Row].TaxRateFLG == 1)
             {
@@ -3591,11 +2723,11 @@ namespace TempoJuchuuNyuuryoku
                 if (mGrid.g_DArray[w_Row].VariousFLG.Equals(1) || changeTanka)
                 {
                     //通常税額=税込販売額－税抜販売額
-                    mGrid.g_DArray[w_Row].JuchuTax = bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuHontaiGaku);
+                    mGrid.g_DArray[w_Row].JuchuTax = bbl.Z_Set(mGrid.g_DArray[w_Row].SalesGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].SalesHontaiGaku);
                 }
                 else if (mGrid.g_DArray[w_Row].VariousFLG.Equals(0))
                 {
-                    //通常税額←TaxRateFLG＝1の時のFunction_単価取得.out消費税額×Form.Detail.受注数
+                    //通常税額←TaxRateFLG＝1の時のFunction_単価取得.out消費税額×Form.Detail.売上数
                     mGrid.g_DArray[w_Row].JuchuTax = bbl.Z_Set(fue.Zei) * wSuu;
                 }
 
@@ -3609,7 +2741,7 @@ namespace TempoJuchuuNyuuryoku
                 if (mGrid.g_DArray[w_Row].VariousFLG.Equals(1) || changeTanka)
                 {
                     //軽減税額=TaxRateFLG＝2の時の税込販売額－税抜販売額
-                    mGrid.g_DArray[w_Row].KeigenTax = bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuHontaiGaku);
+                    mGrid.g_DArray[w_Row].KeigenTax = bbl.Z_Set(mGrid.g_DArray[w_Row].SalesGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].SalesHontaiGaku);
                 }
                 else if (mGrid.g_DArray[w_Row].VariousFLG.Equals(0))
                 {
@@ -3656,12 +2788,12 @@ namespace TempoJuchuuNyuuryoku
                 if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JanCD) == false)
                 {
                     //粗利額←⑦Form.Detail.税抜販売額－⑩Form.Detail.原価額
-                    mGrid.g_DArray[RW].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[RW].CostGaku));
+                    mGrid.g_DArray[RW].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[RW].SalesHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[RW].CostGaku));
 
                     if (mGrid.g_DArray[RW].DiscountKbn == 0)
-                        kin1 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuGaku);
+                        kin1 += bbl.Z_Set(mGrid.g_DArray[RW].SalesGaku);
                     else
-                        kin5 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuGaku);
+                        kin5 += bbl.Z_Set(mGrid.g_DArray[RW].SalesGaku);
 
                     ////Form.Detail.値引区分＝１ の Form.Detail.税抜販売額  ←Form.Detail.税率＝10%の明細が対象
                     ////－Form.Detail.値引区分＝０ の Form.Detail.税抜販売額  										
@@ -3683,7 +2815,7 @@ namespace TempoJuchuuNyuuryoku
                     //    kin2 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
 
                     //税抜売上額=Form.Detail.税抜販売額のTotal
-                    kin2 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
+                    kin2 += bbl.Z_Set(mGrid.g_DArray[RW].SalesHontaiGaku);
                     zei10 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuTax);
                     zei8 += bbl.Z_Set(mGrid.g_DArray[RW].KeigenTax);
                     kin3 += bbl.Z_Set(mGrid.g_DArray[RW].CostGaku);
@@ -3697,20 +2829,20 @@ namespace TempoJuchuuNyuuryoku
                     {
                         if (mGrid.g_DArray[RW].TaxRateFLG.Equals(1))
                         {
-                            kin10 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
+                            kin10 += bbl.Z_Set(mGrid.g_DArray[RW].SalesHontaiGaku);
                             if (zeiritsu10 == 0 && !string.IsNullOrWhiteSpace( mGrid.g_DArray[RW].TaxRate))
                                 zeiritsu10 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%", ""));
                         }
                         else if (mGrid.g_DArray[RW].TaxRateFLG.Equals(2))
                         {
-                            kin8 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
+                            kin8 += bbl.Z_Set(mGrid.g_DArray[RW].SalesHontaiGaku);
                             if (zeiritsu8 == 0 && !string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].TaxRate))
                                 zeiritsu8 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%", ""));
                         }
 
-                        if (maxKin < bbl.Z_Set(mGrid.g_DArray[RW].JuchuuGaku) && mGrid.g_DArray[RW].DiscountKbn == 0)
+                        if (maxKin < bbl.Z_Set(mGrid.g_DArray[RW].SalesGaku) && mGrid.g_DArray[RW].DiscountKbn == 0)
                         {
-                            maxKin = bbl.Z_Set(mGrid.g_DArray[RW].JuchuuGaku);
+                            maxKin = bbl.Z_Set(mGrid.g_DArray[RW].SalesGaku);
                             maxKinRowNo = RW;
                         }
                     }
@@ -3734,11 +2866,11 @@ namespace TempoJuchuuNyuuryoku
             }
 
             //Footer部
-            //税込受注額・Form.Detail.税込販売額のTotal
-            lblKin1.Text=string.Format("{0:#,##0}", kin1);
+            ////税込売上額・Form.Detail.税込販売額のTotal
+            //lblKin1.Text=string.Format("{0:#,##0}", kin1);
             //値引き額
             lblKin5.Text = string.Format("{0:#,##0}", kin5);
-            //税込売上額＝税込受注額－値引額
+            //税込売上額＝税込売上額－値引額
             lblKin6.Text = string.Format("{0:#,##0}", kin1+kin5);
             //税抜売上額・Form.Detail.税抜販売額のTotal
             lblKin2.Text = string.Format("{0:#,##0}", kin2);
@@ -3762,7 +2894,7 @@ namespace TempoJuchuuNyuuryoku
                 //軽減税額(Hidden)・Form.Detail.軽減税額のTotal
                 lblKin12.Text = string.Format("{0:#,##0}", zei8);
                 mZei8 = zei8;
-                lblKin13.Text = string.Format("{0:#,##0}", sumOrKin);
+                //lblKin13.Text = string.Format("{0:#,##0}", sumOrKin);
             }
             //M_Vendor.TaxTiming＝2:伝票ごと
             else
@@ -3784,7 +2916,7 @@ namespace TempoJuchuuNyuuryoku
                     //※消費税差額＝通常税額(Hidden) ＋ 軽減税額(Hidden)）－ SUM（Form.Detail.通常税額 ＋ Form.Detail.軽減税額）	
 
                     //明細税込販売額に足し込む。
-                    mGrid.g_DArray[maxKinRowNo].JuchuuGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[maxKinRowNo].JuchuuGaku) + sagaku);
+                    mGrid.g_DArray[maxKinRowNo].SalesGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[maxKinRowNo].SalesGaku) + sagaku);
 
                     //明細消費税額に足し込む。
                     if (mGrid.g_DArray[maxKinRowNo].TaxRateFLG.Equals(1))
@@ -3796,9 +2928,9 @@ namespace TempoJuchuuNyuuryoku
                         mGrid.g_DArray[maxKinRowNo].KeigenTax = mGrid.g_DArray[maxKinRowNo].KeigenTax + sagaku;
                     }
                 }
-                //税込受注額・Form.Detail.税込販売額のTotal
-                lblKin1.Text = string.Format("{0:#,##0}", kin1 + sagaku);
-                //税込売上額＝税込受注額－値引額
+                //税込売上額・Form.Detail.税込販売額のTotal
+                //lblKin1.Text = string.Format("{0:#,##0}", kin1 + sagaku);
+                //税込売上額＝税込売上額－値引額
                 lblKin6.Text = string.Format("{0:#,##0}", kin1 + sagaku + kin5);
                 //消費税額
                 lblKin10.Text = string.Format("{0:#,##0}", kin10 + kin8);
@@ -3829,7 +2961,7 @@ namespace TempoJuchuuNyuuryoku
             }
 
             //未入金額＝請求額－入金額
-            lblKin9.Text = string.Format("{0:#,##0}", kin1 + kin5 - bbl.Z_Set(lblKin8.Text));
+            //lblKin9.Text = string.Format("{0:#,##0}", kin1 + kin5 - bbl.Z_Set(lblKin8.Text));
 
 
         }
@@ -3838,87 +2970,52 @@ namespace TempoJuchuuNyuuryoku
         /// 画面情報をセット
         /// </summary>
         /// <returns></returns>
-        private D_Juchuu_Entity GetEntity()
+        private D_Sales_Entity GetEntity()
         {
-            dje = new D_Juchuu_Entity();
-            dje.JuchuuNO = keyControls[(int)EIndex.JuchuuNO].Text;
+            dse = new D_Sales_Entity();
+            dse.SalesNO = keyControls[(int)EIndex.SalesNO].Text;
 
-            if (mTennic.Equals(1))
-                dje.JuchuuProcessNO = keyControls[(int)EIndex.JuchuuNO].Text;
+            //if (mTennic.Equals(1))
+            //    dse.JuchuuProcessNO = keyControls[(int)EIndex.SalesNO].Text;
 
-            dje.StoreCD = CboStoreCD.SelectedValue.ToString();
+            dse.StoreCD = CboStoreCD.SelectedValue.ToString();
 
-            dje.JuchuuDate = detailControls[(int)EIndex.JuchuuDate].Text;
+            dse.SalesDate = detailControls[(int)EIndex.SalesDate].Text;
 
             if(ckM_CheckBox1.Checked)
-                dje.ReturnFLG = "1";
+                dse.ReturnFlg = "1";
             else
-                dje.ReturnFLG = "0";
+                dse.ReturnFlg = "0";
+            
+            dse.StaffCD = detailControls[(int)EIndex.StaffCD].Text;
+            dse.CustomerCD = detailControls[(int)EIndex.CustomerCD].Text;
+            dse.CustomerName = detailControls[(int)EIndex.CustomerName].Text;
+            dse.CustomerName2 = detailControls[(int)EIndex.CustomerName2].Text;
 
-            dje.SoukoCD =CboSoukoName.SelectedValue.ToString();
-            dje.StaffCD = detailControls[(int)EIndex.StaffCD].Text;
-            dje.CustomerCD = detailControls[(int)EIndex.CustomerCD].Text;
-            dje.CustomerName = detailControls[(int)EIndex.CustomerName].Text;
-            dje.CustomerName2 = detailControls[(int)EIndex.CustomerName2].Text;
-            dje.ZipCD1 = addInfo.ade.ZipCD1;
-            dje.ZipCD2 = addInfo.ade.ZipCD2;
-            dje.Address1 = addInfo.ade.Address1;
-            dje.Address2 = addInfo.ade.Address2;
-            dje.Tel11 = detailControls[(int)EIndex.Tel1].Text;
-            dje.Tel12 = detailControls[(int)EIndex.Tel2].Text;
-            dje.Tel13 = detailControls[(int)EIndex.Tel3].Text;
+            
+            dse.Discount = bbl.Z_SetStr(lblKin5.Text);
+            //dje.HanbaiHontaiGaku = (bbl.Z_Set(lblKin1.Text)-(mZei8+ mZei10)).ToString();
+            //dje.HanbaiTax8 = mZei8.ToString();
+            //dje.HanbaiTax10 = mZei10.ToString();
+            //dje.HanbaiGaku = (bbl.Z_Set(lblKin1.Text) - bbl.Z_Set(lblKin5.Text)).ToString();
+            dse.CostGaku = bbl.Z_SetStr(lblKin3.Text);
+            dse.ProfitGaku = bbl.Z_SetStr(lblKin4.Text);
+            //dse.Point = "0";  // bbl.Z_SetStr(detailControls[(int)EIndex.Point].Text);
+            //dse.InvoiceGaku = bbl.Z_SetStr(lblKin7.Text);
 
-            if (radioSama.Checked)
-                dje.AliasKBN="1";
-                    else
-                dje.AliasKBN = "2";
+            dse.PaymentMethodCD = CboPaymentMethodCD.SelectedValue.ToString();
+            //dse.PaymentPlanNO = "0";
+            
+            dse.NouhinsyoComment = detailControls[(int)EIndex.NouhinsyoComment].Text;
 
-            dje.DeliveryCD = detailControls[(int)EIndex.DeliveryCD].Text;
-            dje.DeliveryName = detailControls[(int)EIndex.DeliveryName].Text;
-            dje.DeliveryName2 = detailControls[(int)EIndex.DeliveryName2].Text;
-            dje.DeliveryZipCD1 = addInfo.adeD.ZipCD1;
-            dje.DeliveryZipCD2 = addInfo.adeD.ZipCD2;
-            dje.DeliveryAddress1 = addInfo.adeD.Address1;
-            dje.DeliveryAddress2 = addInfo.adeD.Address2;
-            dje.DeliveryTel11 = detailControls[(int)EIndex.Tel1D].Text;
-            dje.DeliveryTel12 = detailControls[(int)EIndex.Tel2D].Text;
-            dje.DeliveryTel13 = detailControls[(int)EIndex.Tel3D].Text;
-
-            if (radioSamaD.Checked)
-                dje.DeliveryAliasKBN = "1";
-            else
-                dje.DeliveryAliasKBN = "2";
-
-            dje.JuchuuGaku = bbl.Z_SetStr(lblKin1.Text);
-            dje.Discount = bbl.Z_SetStr(lblKin5.Text);
-            dje.HanbaiHontaiGaku = (bbl.Z_Set(lblKin1.Text)-(mZei8+ mZei10)).ToString();
-            dje.HanbaiTax8 = mZei8.ToString();
-            dje.HanbaiTax10 = mZei10.ToString();
-            dje.HanbaiGaku = (bbl.Z_Set(lblKin1.Text) - bbl.Z_Set(lblKin5.Text)).ToString();
-            dje.CostGaku = bbl.Z_SetStr(lblKin3.Text);
-            dje.ProfitGaku = bbl.Z_SetStr(lblKin4.Text);
-            dje.Point = "0";  // bbl.Z_SetStr(detailControls[(int)EIndex.Point].Text);
-            dje.InvoiceGaku = bbl.Z_SetStr(lblKin7.Text);
-
-            dje.PaymentMethodCD = CboPaymentMethodCD.SelectedValue.ToString();
-            dje.PaymentPlanNO = "0";
-            dje.SalesPlanDate = detailControls[(int)EIndex.SalesDate].Text;
-            dje.FirstPaypentPlanDate = detailControls[(int)EIndex.FirstPaypentPlanDate].Text;
-            dje.LastPaymentPlanDate = detailControls[(int)EIndex.FirstPaypentPlanDate].Text;
-            dje.CommentOutStore = detailControls[(int)EIndex.RemarksOutStore].Text;
-            dje.CommentInStore = detailControls[(int)EIndex.RemarksInStore].Text;
-
-            dje.MitsumoriNO = keyControls[(int)EIndex.MitsumoriNO].Text;
-            dje.NouhinsyoComment = detailControls[(int)EIndex.NouhinsyoComment].Text;
-
-            dje.InsertOperator = InOperatorCD;
-            dje.PC = InPcID;
+            dse.InsertOperator = InOperatorCD;
+            dse.PC = InPcID;
             //dje.OrderHontaiGaku = (bbl.Z_Set(lblKin13.Text) - (mOrderTax8 + mOrderTax10)).ToString();
             //dje.OrderTax8 = mOrderTax8.ToString();
             //dje.OrderTax10 = mOrderTax10.ToString();
             //dje.OrderGaku = bbl.Z_SetStr(lblKin13.Text);
 
-            return dje;
+            return dse;
         }
 
         // -----------------------------------------------------------
@@ -3926,11 +3023,11 @@ namespace TempoJuchuuNyuuryoku
         // -----------------------------------------------------------
         private void Para_Add(DataTable dt)
         {
-            dt.Columns.Add("JuchuuRows", typeof(int));
+            dt.Columns.Add("SalesRows", typeof(int));
             dt.Columns.Add("DisplayRows", typeof(int));
-            dt.Columns.Add("SiteJuchuuRows", typeof(int));
+            dt.Columns.Add("SiteSalesRows", typeof(int));
             dt.Columns.Add("NotPrintFLG", typeof(int));
-            dt.Columns.Add("AddJuchuuRows", typeof(int));
+            dt.Columns.Add("AddSalesRows", typeof(int));
             dt.Columns.Add("NotOrderFLG", typeof(int));
             dt.Columns.Add("DirectFLG", typeof(int));
             dt.Columns.Add("SKUNO", typeof(int));
@@ -3940,13 +3037,13 @@ namespace TempoJuchuuNyuuryoku
             dt.Columns.Add("ColorName", typeof(string));
             dt.Columns.Add("SizeName", typeof(string));
             dt.Columns.Add("SetKBN", typeof(int));
-            dt.Columns.Add("JuchuuSuu", typeof(int));
-            dt.Columns.Add("JuchuuUnitPrice", typeof(decimal));
+            dt.Columns.Add("SalesSuu", typeof(int));
+            dt.Columns.Add("SalesUnitPrice", typeof(decimal));
             dt.Columns.Add("TaniCD", typeof(string));
-            dt.Columns.Add("JuchuuGaku", typeof(decimal));
-            dt.Columns.Add("JuchuuHontaiGaku", typeof(decimal));
-            dt.Columns.Add("JuchuuTax", typeof(decimal));
-            dt.Columns.Add("JuchuuTaxRitsu", typeof(decimal));
+            dt.Columns.Add("SalesGaku", typeof(decimal));
+            dt.Columns.Add("SalesHontaiGaku", typeof(decimal));
+            dt.Columns.Add("SalesTax", typeof(decimal));
+            dt.Columns.Add("SalesTaxRitsu", typeof(decimal));
             dt.Columns.Add("CostUnitPrice", typeof(decimal));
             dt.Columns.Add("CostGaku", typeof(decimal));
             dt.Columns.Add("ProfitGaku", typeof(decimal));
@@ -3962,7 +3059,7 @@ namespace TempoJuchuuNyuuryoku
             dt.Columns.Add("ExpressFLG", typeof(int));
             dt.Columns.Add("ShippingPlanDate", typeof(DateTime));
             dt.Columns.Add("OrderUnitPrice", typeof(decimal));
-            dt.Columns.Add("JuchuuNO", typeof(string));
+            dt.Columns.Add("SalesNO", typeof(string));
             //dt.Columns.Add("OrderTax", typeof(decimal));
             //dt.Columns.Add("OrderTaxRitsu", typeof(decimal));
             //dt.Columns.Add("OrderGaku", typeof(decimal));
@@ -3987,9 +3084,6 @@ namespace TempoJuchuuNyuuryoku
                 //zが更新有効行数
                 if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JanCD) == false)
                 {
-                    string setkbn = "1";
-                    if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].SetKBN))
-                        setkbn = "0";
 
                     int notPrintFLG = 0;
                     if (mGrid.g_DArray[RW].NotPrintFLG)
@@ -4006,26 +3100,22 @@ namespace TempoJuchuuNyuuryoku
                         , 0
                         , notPrintFLG
                         , notPrintFLG == 1 ? AddJuchuuRows : 0
-                        , mGrid.g_DArray[RW].ChkFuyo ? 1 : 0
-                        , mGrid.g_DArray[RW].ChkTyokuso ? 1 : 0
                         , bbl.Z_Set(mGrid.g_DArray[RW].AdminNO)
                         , mGrid.g_DArray[RW].SKUCD == "" ? null : mGrid.g_DArray[RW].SKUCD
                         , mGrid.g_DArray[RW].JanCD == "" ? null : mGrid.g_DArray[RW].JanCD
                         , mGrid.g_DArray[RW].SKUName == "" ? null : mGrid.g_DArray[RW].SKUName
                         , mGrid.g_DArray[RW].ColorName == "" ? null : mGrid.g_DArray[RW].ColorName
                         , mGrid.g_DArray[RW].SizeName == "" ? null : mGrid.g_DArray[RW].SizeName
-                        , setkbn
-                        , bbl.Z_Set(mGrid.g_DArray[RW].JuchuuSuu)
-                        , bbl.Z_Set(mGrid.g_DArray[RW].JuchuuUnitPrice)
+                        , bbl.Z_Set(mGrid.g_DArray[RW].SalesSuu)
+                        , bbl.Z_Set(mGrid.g_DArray[RW].SalesUnitPrice)
                         , mGrid.g_DArray[RW].TaniCD == "" ? null : mGrid.g_DArray[RW].TaniCD
-                        , bbl.Z_Set(mGrid.g_DArray[RW].JuchuuGaku)
-                        , bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku)
+                        , bbl.Z_Set(mGrid.g_DArray[RW].SalesGaku)
+                        , bbl.Z_Set(mGrid.g_DArray[RW].SalesHontaiGaku)
                         , bbl.Z_Set(mGrid.g_DArray[RW].JuchuTax) + bbl.Z_Set(mGrid.g_DArray[RW].KeigenTax)
                         , bbl.Z_Set(mGrid.g_DArray[RW].TaxRate.Replace("%", ""))     //税率
                         , bbl.Z_Set(mGrid.g_DArray[RW].CostUnitPrice)
                         , bbl.Z_Set(mGrid.g_DArray[RW].CostGaku)
                         , bbl.Z_Set(mGrid.g_DArray[RW].ProfitGaku)
-                        , mGrid.g_DArray[RW].SoukoName == "" ? null : mGrid.g_DArray[RW].SoukoName
                         , mGrid.g_DArray[RW].VendorCD == "" ? null : mGrid.g_DArray[RW].VendorCD
                         , mGrid.g_DArray[RW].ArrivePlanDate == "" ? null : mGrid.g_DArray[RW].ArrivePlanDate
                         , mGrid.g_DArray[RW].CommentOutStore == "" ? null : mGrid.g_DArray[RW].CommentOutStore
@@ -4033,7 +3123,7 @@ namespace TempoJuchuuNyuuryoku
                         , mGrid.g_DArray[RW].IndividualClientName == "" ? null : mGrid.g_DArray[RW].IndividualClientName
                         , bbl.Z_Set(mGrid.g_DArray[RW].ZaikoKBN)
                         , mGrid.g_DArray[RW].KariHikiateNO == "" ? null : mGrid.g_DArray[RW].KariHikiateNO
-                        , mGrid.g_DArray[RW].ChkExpress ? 1 : 0
+
                         , mGrid.g_DArray[RW].ShippingPlanDate == "" ? null : mGrid.g_DArray[RW].ShippingPlanDate
                         , bbl.Z_Set(mGrid.g_DArray[RW].OrderUnitPrice)
                         , mGrid.g_DArray[RW].JuchuuNO == "" ? null : mGrid.g_DArray[RW].JuchuuNO
@@ -4079,11 +3169,8 @@ namespace TempoJuchuuNyuuryoku
                         return;
                     }
 
-                dje = new D_Juchuu_Entity();
-                dje.JuchuuNO = keyControls[(int)EIndex.JuchuuNO].Text == "" ? mTemporaryReserveNO : keyControls[(int)EIndex.JuchuuNO].Text;
-
-                //D_TemporaryReserveをDelete
-                mibl.DeleteTemporaryReserve(dje);
+                dse = new D_Sales_Entity();
+                dse.SalesNO = keyControls[(int)EIndex.SalesNO].Text == "" ? mTemporaryReserveNO : keyControls[(int)EIndex.SalesNO].Text;
 
                 // 明細部  画面の範囲の内容を配列にセット
                 mGrid.S_DispToArray(Vsb_Mei_0.Value);
@@ -4093,7 +3180,7 @@ namespace TempoJuchuuNyuuryoku
                 {
                     if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JanCD) == false)
                     {
-                        for (int CL = (int)ClsGridJuchuu.ColNO.JanCD; CL < (int)ClsGridJuchuu.ColNO.COUNT; CL++)
+                        for (int CL = (int)ClsGridUriage.ColNO.JanCD; CL < (int)ClsGridUriage.ColNO.COUNT; CL++)
                         {
                             if (CheckGrid(CL, RW, true) == false)
                             {
@@ -4113,8 +3200,8 @@ namespace TempoJuchuuNyuuryoku
             DataTable dt = GetGridEntity();
 
             //更新処理
-            dje = GetEntity();
-            mibl.Juchu_Exec(dje,dt, (short)OperationMode);
+            dse = GetEntity();
+            mibl.Sales_Exec(dse,dt, (short)OperationMode);
 
             if (OperationMode == EOperationMode.DELETE)
                 bbl.ShowMessage("I102");
@@ -4197,11 +3284,6 @@ namespace TempoJuchuuNyuuryoku
                 {
                     ((CheckBox)ctl).Checked = false;
                 }
-                else if (ctl.GetType().Equals(typeof(Panel)))
-                {
-                    radioSama.Checked = true;
-                    radioSamaD.Checked = true;
-                }
                 else if (ctl.GetType().Equals(typeof(CKM_Controls.CKM_ComboBox)))
                 {
                     ((CKM_Controls.CKM_ComboBox)ctl).SelectedIndex=-1;
@@ -4225,8 +3307,7 @@ namespace TempoJuchuuNyuuryoku
 
             mOldJyuchuDate = "";
             S_Clear_Grid();   //画面クリア（明細部）
-
-            lblKin1.Text = "";
+            
             lblKin2.Text = "";
             lblKin3.Text = "";
             lblKin4.Text = "";
@@ -4234,14 +3315,10 @@ namespace TempoJuchuuNyuuryoku
             lblKin6.Text = "";
             lblKin7.Text = "";
             lblKin8.Text = "";
-            lblKin9.Text = "";
             lblKin10.Text = "";
             lblKin11.Text = "";
             lblKin12.Text = "";
-            lblKin13.Text = "";
-            lblDay1.Text = "";
-            lblDay2.Text = "";
-            lblDay3.Text = "";
+
 
             mOrderTaxTiming = 0;
         }
@@ -4251,10 +3328,6 @@ namespace TempoJuchuuNyuuryoku
         /// </summary>
         private void ClearCustomerInfo(short kbn)
         {
-            addInfo.ClearAddressInfo(kbn);
-
-            if (kbn.Equals(0))
-            {
                 mOldCustomerCD = "";
                 mTaxFractionKBN = 0;
                 mTaxTiming = 0;
@@ -4267,20 +3340,6 @@ namespace TempoJuchuuNyuuryoku
                 detailControls[(int)EIndex.CustomerName].Enabled = false;
                 textBox1.Text = "";
                 textBox2.Text = "";
-                lblLastSalesDate.Text = "";
-                lblStoreName.Text = "";
-                lblTankaName.Text = "";
-                lblPoint.Text = "";
-            }
-            else
-            {
-                mOldDeliveryCD= "";
-
-                ScDeliveryCD.LabelText = "";
-                detailControls[(int)EIndex.DeliveryName].Text = "";
-                detailControls[(int)EIndex.DeliveryName2].Text = "";
-                detailControls[(int)EIndex.DeliveryName].Enabled = false;
-            }
         }
 
         private void Scr_Lock(short no1, short no2, short Kbn)
@@ -4325,8 +3384,6 @@ namespace TempoJuchuuNyuuryoku
                                 {
                                     case (int)EIndex.CustomerName:
                                     case (int)EIndex.CustomerName2:
-                                    case (int)EIndex.DeliveryName:
-                                    case (int)EIndex.DeliveryName2:
                                         break;
                                     default:
                                         detailControls[idx].Enabled = Kbn == 0 ? true : false;
@@ -4336,12 +3393,8 @@ namespace TempoJuchuuNyuuryoku
                             }
                             for (int index = 0; index < searchButtons.Length; index++)
                                 searchButtons[index].Enabled = Kbn == 0 ? true : false;
-
-                            btnAddress.Enabled = Kbn == 0 ? true : false;
-                            BtnSubF11.Enabled = Kbn == 0 ? true : false;
+                            
                             Pnl_Body.Enabled = Kbn == 0 ? true : false;
-                            Btn_SelectAll.Enabled = Kbn == 0 ? true : false;
-                            Btn_NoSelect.Enabled = Kbn == 0 ? true : false;
                             break;
                         }
                 }
@@ -4401,10 +3454,10 @@ namespace TempoJuchuuNyuuryoku
                         return;
                     }
 
-                    if(w_Col == (int)ClsGridJuchuu.ColNO.JanCD)
+                    if(w_Col == (int)ClsGridUriage.ColNO.JanCD)
                         //商品検索
                         kbn = EsearchKbn.Product;
-                    else if (w_Col == (int)ClsGridJuchuu.ColNO.VendorCD)
+                    else if (w_Col == (int)ClsGridUriage.ColNO.VendorCD)
                         //仕入先検索
                         kbn = EsearchKbn.Vendor;
 
@@ -4478,7 +3531,7 @@ namespace TempoJuchuuNyuuryoku
                 case EsearchKbn.Product:
 
 
-                    using (Search_Product frmProduct = new Search_Product(detailControls[(int)EIndex.JuchuuDate].Text))
+                    using (Search_Product frmProduct = new Search_Product(detailControls[(int)EIndex.SalesDate].Text))
                     {
                         frmProduct.SKUCD = mGrid.g_DArray[w_Row].SKUCD;
                         //frmProduct.ITEM = mGrid.g_DArray[w_Row].item;
@@ -4493,7 +3546,7 @@ namespace TempoJuchuuNyuuryoku
                             mGrid.g_DArray[w_Row].SKUCD = frmProduct.SKUCD;
                             mGrid.g_DArray[w_Row].AdminNO = frmProduct.AdminNO;
 
-                            CheckGrid((int)ClsGridJuchuu.ColNO.JanCD, w_Row, false, true);
+                            CheckGrid((int)ClsGridUriage.ColNO.JanCD, w_Row, false, true);
 
                             //配列の内容を画面へセット
                             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
@@ -4532,18 +3585,18 @@ namespace TempoJuchuuNyuuryoku
                     {
                         if (index == (int)EIndex.StoreCD)
                         {
-                            detailControls[(int)EIndex.JuchuuDate].Focus();
+                            detailControls[(int)EIndex.SalesDate].Focus();
                         }
-                        else if (index == (int)EIndex.JuchuuNO)
+                        else if (index == (int)EIndex.SalesNO)
                         {
                             if (OperationMode == EOperationMode.UPDATE)
                             {
-                                detailControls[(int)EIndex.JuchuuDate].Focus();
+                                detailControls[(int)EIndex.SalesDate].Focus();
                             }
                         }
-                        else if (index == (int)EIndex.CopyJuchuuNO || index == (int)EIndex.MitsumoriNO)
+                        else if (index == (int)EIndex.CopySalesNO)
                         {
-                            detailControls[(int)EIndex.JuchuuDate].Focus();
+                            detailControls[(int)EIndex.SalesDate].Focus();
                         }
                         else
                         {
@@ -4580,9 +3633,9 @@ namespace TempoJuchuuNyuuryoku
                     bool ret = CheckDetail(index);
                     if (ret)
                     {
-                       if( index == (int)EIndex.Tel3D)
+                       if( index == (int)EIndex.CustomerName2)
                             //明細の先頭項目へ
-                            mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridJuchuu.ColNO.JanCD);
+                            mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridUriage.ColNO.JanCD);
                         else if (detailControls.Length - 1 > index)
                         {
                             if (detailControls[index + 1].CanFocus)
@@ -4676,7 +3729,7 @@ namespace TempoJuchuuNyuuryoku
                 //画面より配列セット 
                 mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
-                if (w_Col == (int)ClsGridJuchuu.ColNO.NotPrintFLG)
+                if (w_Col == (int)ClsGridUriage.ColNO.NotPrintFLG)
                 {
                     bool Check = mGrid.g_DArray[w_Row].NotPrintFLG;
 
@@ -4685,17 +3738,6 @@ namespace TempoJuchuuNyuuryoku
 
                     if (string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].JanCD))
                         mGrid.g_DArray[w_Row].NotPrintFLG = false;
-                }
-                else if (w_Col == (int)ClsGridJuchuu.ColNO.ChkTyokuso)
-                {
-                    //画面明細.直送checkbox＝onの場合
-                    bool Check = mGrid.g_DArray[w_Row].ChkTyokuso;
-                    if(Check)
-                    {
-                        mGrid.g_DArray[w_Row].ArrivePlanDate = "";
-                        mGrid.g_DArray[w_Row].KariHikiateNO = "";
-                    }
-
                 }
 
                 //配列の内容を画面へセット
@@ -4723,17 +3765,17 @@ namespace TempoJuchuuNyuuryoku
                 // 背景色
                 w_ActCtl.BackColor = ClsGridBase.BKColor;
 
-                //明細が出荷済の受注明細、または、売上済の受注明細である場合、削除できない（F7ボタンを使えないようにする）
-                //出荷済・売上済の場合は行削除不可
-                if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].Syukka))
-                {
-                    if (mGrid.g_DArray[w_Row].Syukka.Equals("出荷済") || mGrid.g_DArray[w_Row].Syukka.Equals("売上済"))
-                        Btn_F8.Text = "";
-                    else
-                        Btn_F8.Text = "行削除(F8)";
-                }
-                else
-                    Btn_F8.Text = "行削除(F8)";
+                ////明細が出荷済の売上明細、または、売上済の売上明細である場合、削除できない（F7ボタンを使えないようにする）
+                ////出荷済・売上済の場合は行削除不可
+                //if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].Syukka))
+                //{
+                //    if (mGrid.g_DArray[w_Row].Syukka.Equals("出荷済") || mGrid.g_DArray[w_Row].Syukka.Equals("売上済"))
+                //        Btn_F8.Text = "";
+                //    else
+                //        Btn_F8.Text = "行削除(F8)";
+                //}
+                //else
+                //    Btn_F8.Text = "行削除(F8)";
 
                 if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int w_Col, out int w_CtlRow) == false)
                 {
@@ -4805,64 +3847,52 @@ namespace TempoJuchuuNyuuryoku
                     switch (ctlName)
                     {
                         case "SC_ITEM":
-                            CL = (int)ClsGridJuchuu.ColNO.JanCD;
+                            CL = (int)ClsGridUriage.ColNO.JanCD;
                             break;
                         case "IMT_ITMNM":
-                            CL = (int)ClsGridJuchuu.ColNO.SKUName;
+                            CL = (int)ClsGridUriage.ColNO.SKUName;
                             break;
                         case "CHK_PRINT":
-                            CL = (int)ClsGridJuchuu.ColNO.NotPrintFLG;
-                            break;
-                        case "CHK_FUYO":
-                            CL = (int)ClsGridJuchuu.ColNO.ChkFuyo;
-                            break;
-                        case "CHK_Express":
-                            CL = (int)ClsGridJuchuu.ColNO.ChkExpress;
-                            break;
-                        case "CHK_Tyokuso":
-                            CL = (int)ClsGridJuchuu.ColNO.ChkTyokuso;
+                            CL = (int)ClsGridUriage.ColNO.NotPrintFLG;
                             break;
                         case "IMT_SPDAT":
-                            CL = (int)ClsGridJuchuu.ColNO.ShippingPlanDate;
+                            CL = (int)ClsGridUriage.ColNO.ShippingPlanDate;
                             break;
                         case "IMN_ORTAN":
-                            CL = (int)ClsGridJuchuu.ColNO.OrderUnitPrice;
+                            CL = (int)ClsGridUriage.ColNO.OrderUnitPrice;
                             break;
                         //case "IMN_ORGAK":
                         //    CL = (int)ClsGridJuchuu.ColNO.OrderGaku;
                         //    break;
                         case "IMN_CLINT":
-                            CL = (int)ClsGridJuchuu.ColNO.ColorName;
+                            CL = (int)ClsGridUriage.ColNO.ColorName;
                             break;
                         case "IMT_KAIDT":
-                            CL = (int)ClsGridJuchuu.ColNO.SizeName;
+                            CL = (int)ClsGridUriage.ColNO.SizeName;
                             break;
                         case "IMN_GENER":
-                            CL = (int)ClsGridJuchuu.ColNO.JuchuuSuu;
+                            CL = (int)ClsGridUriage.ColNO.SalesSU;
                             break;
                         case "IMN_GENER2":
-                            CL = (int)ClsGridJuchuu.ColNO.JuchuuUnitPrice;
-                            break;
-                        case "IMC_SOKNM":
-                            CL = (int)ClsGridJuchuu.ColNO.SoukoName;
+                            CL = (int)ClsGridUriage.ColNO.SalesUnitPrice;
                             break;
                         case "IMT_VENCD":
-                            CL = (int)ClsGridJuchuu.ColNO.VendorCD;
+                            CL = (int)ClsGridUriage.ColNO.VendorCD;
                             break;
                         case "IMT_ARIDT":
-                            CL = (int)ClsGridJuchuu.ColNO.ArrivePlanDate;
+                            CL = (int)ClsGridUriage.ColNO.ShiireGaku;
                             break;
                         case "IMN_SALEP2":
-                            CL = (int)ClsGridJuchuu.ColNO.CostUnitPrice;
+                            CL = (int)ClsGridUriage.ColNO.CostUnitPrice;
                             break;
                         case "IMT_REMAK":
-                            CL = (int)ClsGridJuchuu.ColNO.CommentInStore;
+                            CL = (int)ClsGridUriage.ColNO.CommentInStore;
                             break;
                         case "IMN_WEBPR":
-                            CL = (int)ClsGridJuchuu.ColNO.CommentOutStore;
+                            CL = (int)ClsGridUriage.ColNO.CommentOutStore;
                             break;
                         case "IMN_WEBPR2":
-                            CL = (int)ClsGridJuchuu.ColNO.IndividualClientName;
+                            CL = (int)ClsGridUriage.ColNO.IndividualClientName;
                             //if (w_Row == m_dataCnt - 1)
                             if (w_Row == mGrid.g_MK_Max_Row - 1)
                                 lastCell = true;
@@ -4873,21 +3903,21 @@ namespace TempoJuchuuNyuuryoku
                     bool changeFlg = false;
                     switch (CL)
                     {
-                        case (int)ClsGridJuchuu.ColNO.JuchuuSuu:
-                            if (!mGrid.g_DArray[w_Row].JuchuuSuu.Equals(w_ActCtl.Text))
+                        case (int)ClsGridUriage.ColNO.SalesSU:
+                            if (!mGrid.g_DArray[w_Row].SalesSuu.Equals(w_ActCtl.Text))
                             {
                                 changeFlg = true;
                             }
                             break;
 
-                        case (int)ClsGridJuchuu.ColNO.JuchuuUnitPrice: //販売単価
-                            if (!mGrid.g_DArray[w_Row].JuchuuUnitPrice.Equals(w_ActCtl.Text))
+                        case (int)ClsGridUriage.ColNO.SalesUnitPrice: //販売単価
+                            if (!mGrid.g_DArray[w_Row].SalesUnitPrice.Equals(w_ActCtl.Text))
                             {
                                 changeFlg = true;
                             }
                             break;
 
-                        case (int)ClsGridJuchuu.ColNO.CostUnitPrice: //原価単価
+                        case (int)ClsGridUriage.ColNO.CostUnitPrice: //原価単価
                             if (!mGrid.g_DArray[w_Row].CostUnitPrice.Equals(w_ActCtl.Text))
                             {
                                 changeFlg = true;
@@ -4901,13 +3931,13 @@ namespace TempoJuchuuNyuuryoku
                     //手入力時金額を再計算
                     if (changeFlg)
                     {
-                        decimal wSuu = bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuSuu);
-                        string ymd = detailControls[(int)EIndex.JuchuuDate].Text;
+                        decimal wSuu = bbl.Z_Set(mGrid.g_DArray[w_Row].SalesSuu);
+                        string ymd = detailControls[(int)EIndex.SalesDate].Text;
                         decimal wTanka;
 
                         switch (CL)
                         {
-                            case (int)ClsGridJuchuu.ColNO.JuchuuSuu:
+                            case (int)ClsGridUriage.ColNO.SalesSU:
                                 //数量が整数値かどうかチェック
                                 int intSu;
                                 if (!int.TryParse(wSuu.ToString(), out intSu))
@@ -4938,11 +3968,11 @@ namespace TempoJuchuuNyuuryoku
                                         {
                                             case 0:
                                                 //販売単価=Function_単価取得.out税込単価		
-                                                mGrid.g_DArray[w_Row].JuchuuUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeikomiTanka));
+                                                mGrid.g_DArray[w_Row].SalesUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeikomiTanka));
                                                 break;
                                             case 1:
                                                 //販売単価=Function_単価取得.out税抜単価
-                                                mGrid.g_DArray[w_Row].JuchuuUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeinukiTanka));
+                                                mGrid.g_DArray[w_Row].SalesUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeinukiTanka));
                                                 break;
                                         }
 
@@ -4952,7 +3982,7 @@ namespace TempoJuchuuNyuuryoku
                                     else
                                     {
                                         //販売単価		
-                                        mGrid.g_DArray[w_Row].JuchuuUnitPrice = "0";
+                                        mGrid.g_DArray[w_Row].SalesUnitPrice = "0";
                                         //原価単価
                                         mGrid.g_DArray[w_Row].CostUnitPrice = "0";
                                     }
@@ -4967,11 +3997,11 @@ namespace TempoJuchuuNyuuryoku
                                 }
                                 break;
 
-                            case (int)ClsGridJuchuu.ColNO.JuchuuUnitPrice: //販売単価 
+                            case (int)ClsGridUriage.ColNO.SalesUnitPrice: //販売単価 
                                 {
-                                    string tanka = mGrid.g_DArray[w_Row].JuchuuUnitPrice;
+                                    string tanka = mGrid.g_DArray[w_Row].SalesUnitPrice;
                                     if (mTennic.Equals(0))
-                                        tanka = bbl.GetZeinukiKingaku(bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuUnitPrice), mGrid.g_DArray[w_Row].TaxRateFLG, ymd).ToString();
+                                        tanka = bbl.GetZeinukiKingaku(bbl.Z_Set(mGrid.g_DArray[w_Row].SalesUnitPrice), mGrid.g_DArray[w_Row].TaxRateFLG, ymd).ToString();
 
                                     SetJuchuuGaku(w_Row, wSuu, ymd, tanka);
 
@@ -4979,12 +4009,12 @@ namespace TempoJuchuuNyuuryoku
                                 }
                                 break;
 
-                            case (int)ClsGridJuchuu.ColNO.CostUnitPrice: //原価単価
-                                //原価額=Form.Detail.原価単価×	Form.Detail.受注数
-                                mGrid.g_DArray[w_Row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].CostUnitPrice) * bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuSuu));
+                            case (int)ClsGridUriage.ColNO.CostUnitPrice: //原価単価
+                                //原価額=Form.Detail.原価単価×	Form.Detail.売上数
+                                mGrid.g_DArray[w_Row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].CostUnitPrice) * bbl.Z_Set(mGrid.g_DArray[w_Row].SalesSuu));
 
                                 //粗利額
-                                mGrid.g_DArray[w_Row].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].CostGaku)); // 
+                                mGrid.g_DArray[w_Row].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].SalesHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].CostGaku)); // 
 
                                 break;
                         }
@@ -5030,10 +4060,7 @@ namespace TempoJuchuuNyuuryoku
 
                     switch (CL)
                     {
-                        case (int)ClsGridJuchuu.ColNO.NotPrintFLG:
-                        case (int)ClsGridJuchuu.ColNO.ChkExpress:
-                        case (int)ClsGridJuchuu.ColNO.ChkFuyo:
-                        case (int)ClsGridJuchuu.ColNO.ChkTyokuso:
+                        case (int)ClsGridUriage.ColNO.NotPrintFLG:
                             if (e.Shift)
                                 S_Grid_0_Event_ShiftTab(CL, w_Row, w_ActCtl, w_ActCtl);
                             else
@@ -5082,106 +4109,7 @@ namespace TempoJuchuuNyuuryoku
                 MessageBox.Show(ex.Message);
             }
         }
-        
-        private void RadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-            }
-        }
 
-
-        private void RadioButton_KeyDown(object sender, KeyEventArgs e)
-        {
-            try
-            {
-                //Enterキー押下時処理
-                //Returnキーが押されているか調べる
-                //AltかCtrlキーが押されている時は、本来の動作をさせる
-                if ((e.KeyCode == Keys.Return) &&
-                        ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
-                {
-                       detailControls[(int)EIndex.AliasKBN + 1].Focus();
-                }
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-        private void RadioButtonD_KeyDown(object sender, KeyEventArgs e)
-        {
-            try
-            {
-                //Enterキー押下時処理
-                //Returnキーが押されているか調べる
-                //AltかCtrlキーが押されている時は、本来の動作をさせる
-                if ((e.KeyCode == Keys.Return) &&
-                        ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
-                {
-                    detailControls[(int)EIndex.AliasKBN2 + 1].Focus();
-                }
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void BtnAddress_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                addInfo.ade.CustomerCD = ScCustomer.TxtCode.Text;
-                addInfo.ade.CustomerName = detailControls[(int)EIndex.CustomerName].Text;
-                addInfo.ade.CustomerName2 = detailControls[(int)EIndex.CustomerName2].Text;
-                addInfo.ade.Tel11 = detailControls[(int)EIndex.Tel1].Text;
-                addInfo.ade.Tel12 = detailControls[(int)EIndex.Tel2].Text;
-                addInfo.ade.Tel13 = detailControls[(int)EIndex.Tel3].Text;
-                addInfo.kbn = 0;
-                addInfo.ShowDialog();
-
-                detailControls[(int)EIndex.Tel1].Focus();
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-        private void BtnAddressD_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                addInfo.adeD.CustomerCD = ScDeliveryCD.TxtCode.Text;
-                addInfo.adeD.CustomerName = detailControls[(int)EIndex.DeliveryName].Text;
-                addInfo.adeD.CustomerName2 = detailControls[(int)EIndex.DeliveryName2].Text;
-                addInfo.adeD.Tel11 = detailControls[(int)EIndex.Tel1D].Text;
-                addInfo.adeD.Tel12 = detailControls[(int)EIndex.Tel2D].Text;
-                addInfo.adeD.Tel13 = detailControls[(int)EIndex.Tel3D].Text;
-                addInfo.kbn = 1;
-                addInfo.ShowDialog();
-
-                detailControls[(int)EIndex.Tel1D].Focus();
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-            }
-
-        }
         private void CkM_CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             try
@@ -5209,72 +4137,7 @@ namespace TempoJuchuuNyuuryoku
 
 
         }
-        private void CboSoukoName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                //選択された出荷倉庫(倉庫CD)が変わった場合、明細の出荷倉庫CDも同じ倉庫CDに変更する。
-                if (CboSoukoName.SelectedIndex > 0)
-                {
-                    for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
-                    {
-                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JanCD) == false)
-                        {
-                            mGrid.g_DArray[RW].SoukoName = CboSoukoName.SelectedValue.ToString();
-                        }
-                    }
-                    //配列の内容を画面にセット
-                    mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                }
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-            }
-        }
-        private void BtnF11_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                base.FunctionProcess(FuncDisp - 1);
 
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-                //EndSec();
-            }
-        }
-
-        private void Btn_SelectAll_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ChangeCheck(true);
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-                //EndSec();
-            }
-        }
-
-        private void Btn_NoSelect_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ChangeCheck(false);
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-                //EndSec();
-            }
-        }
         /// <summary>
         /// 明細部サイトボタンクリック時処理
         /// </summary>
@@ -5354,7 +4217,6 @@ namespace TempoJuchuuNyuuryoku
                 if (CboStoreCD.SelectedIndex > 0)
                 {
                     ScCustomer.Value2 = CboStoreCD.SelectedValue.ToString();
-                    ScDeliveryCD.Value2 = CboStoreCD.SelectedValue.ToString();
                 }
             }
             catch (Exception ex)
@@ -5371,8 +4233,6 @@ namespace TempoJuchuuNyuuryoku
             detailControls[(int)EIndex.CustomerName].Enabled = enabled;
             detailControls[(int)EIndex.CustomerName2].Enabled = enabled;
 
-            detailControls[(int)EIndex.DeliveryName].Enabled = enabled;
-            detailControls[(int)EIndex.DeliveryName2].Enabled = enabled;
             if (enabled)
             {
 
@@ -5381,28 +4241,9 @@ namespace TempoJuchuuNyuuryoku
             {
                 detailControls[(int)EIndex.CustomerName].Text = "";
                 detailControls[(int)EIndex.CustomerName2].Text = "";
-                detailControls[(int)EIndex.DeliveryName].Text = "";
-                detailControls[(int)EIndex.DeliveryName2].Text = "";
             }
         }
 
-        private void ChangeCheck(bool check)
-        {
-            // 明細部  画面の範囲の内容を配列にセット
-            mGrid.S_DispToArray(Vsb_Mei_0.Value);
-
-            //明細部チェック
-            for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
-            {
-                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JanCD) == false)
-                {
-                    mGrid.g_DArray[RW].ChkFuyo = check;
-                }
-            }
-
-            //配列の内容を画面へセット
-            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-        }
     }
 }
 

@@ -34,6 +34,15 @@ namespace Entity
         public string DiscountTax { get; set; }
         public string DiscountTax8 { get; set; }
         public string DiscountTax10 { get; set; }
+        //売上入力用Entitiy
+        public string CostGaku { get; set; }
+        public string ProfitGaku{ get; set; }
+        public string PurchaseNO{ get; set; }
+        public string SalesEntryKBN{ get; set; }
+        public string NouhinsyoComment{ get; set; }
+        public string ReturnFlg { get; set; }
+        public string CustomerName2 { get; set; }
+        public string PaymentMethodCD { get; set; }
 
         //検索用Entity
         public string SalesDateFrom { get; set; }
