@@ -41,6 +41,16 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
+        public DataTable M_SKUPrice_DataSelect(M_SKUPrice_Entity mse)
+        {
+            string sp = "M_SKUPrice_SelectData";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@SKUCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUCD } },
+                { "@StartDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.StartChangeDate } },
+            };
+            return SelectData(dic,sp);
+        }
         public bool M_SKUPrice_Insert_Update(M_SKUPrice_Entity mse,string Xml,int mode)
         {
             string sp = "M_SKUPrice_Insert_Update";
