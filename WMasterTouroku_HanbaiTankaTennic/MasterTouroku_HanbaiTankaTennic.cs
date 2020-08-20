@@ -614,7 +614,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     break;
                 case EOperationMode.UPDATE:
                     S_BodySeigyo(1, 1);
-                    F12Enable = true;
                     break;
             }
             btnDisplay.Enabled = true;
@@ -762,13 +761,22 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     break;
                 case 3:
                     ChangeOperationMode(EOperationMode.UPDATE);
-                    IMT_STADT_0.Focus();
+                    //IMT_STADT_0.Focus();
+                    ChangeOperationMode(OperationMode);//
+                    Clear(pnl_Header);
+                    InitScr();
                     break;
                 case 4:
                     ChangeOperationMode(EOperationMode.DELETE);
+                    ChangeOperationMode(OperationMode);//
+                    Clear(pnl_Header);
+                    InitScr();
                     break;
                 case 5:
                     ChangeOperationMode(EOperationMode.SHOW);
+                    ChangeOperationMode(OperationMode);//
+                    Clear(pnl_Header);
+                    InitScr();
                     break;
                 case 6:
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
@@ -787,7 +795,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
                         this.ExecSec();
                         break;
                     }
-
                 case 12:
                     F12();
                     break;
