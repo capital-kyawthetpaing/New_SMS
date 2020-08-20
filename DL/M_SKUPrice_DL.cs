@@ -43,7 +43,7 @@ namespace DL
         }
         public DataTable M_SKUPrice_DataSelect(M_SKUPrice_Entity mse)
         {
-            string sp = "M_SKUPrice_SelectData";
+            string sp = "M_SKUPrice_DataSelect";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@SKUCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUCD } },

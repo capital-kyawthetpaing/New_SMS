@@ -1864,24 +1864,24 @@ namespace WMasterTouroku_HanbaiTankaTennic
             return mse;
         }
         private void F12()
+        {
+            if (spb.ShowMessage(OperationMode == EOperationMode.DELETE ? "Q102" : "Q101") == DialogResult.Yes)
             {
-                if (spb.ShowMessage(OperationMode == EOperationMode.DELETE ? "Q102" : "Q101") == DialogResult.Yes)
+               mse = SKUPriceEntity();
+                switch (OperationMode)
                 {
-                   mse = SKUPriceEntity();
-                   switch (OperationMode)
-                   {
-                      case EOperationMode.INSERT:
-                        InsertUpdate(1);
+                    case EOperationMode.INSERT:
+                         InsertUpdate(1);
                           break;
-                      case EOperationMode.UPDATE:
+                    case EOperationMode.UPDATE:
                         InsertUpdate(2);
                           break;
-                      case EOperationMode.DELETE:
+                    case EOperationMode.DELETE:
                         InsertUpdate(3);
                         break;
-                   }
                 }
             }
+        }
         private void InsertUpdate(int mode)
         {
             var dt = GetdatafromArray();
