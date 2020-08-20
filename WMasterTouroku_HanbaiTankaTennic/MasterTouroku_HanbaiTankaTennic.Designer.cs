@@ -805,7 +805,7 @@
             this.IMT_ENDDT_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IMT_ENDDT_1.ClientColor = System.Drawing.SystemColors.Window;
             this.IMT_ENDDT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_ENDDT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_ENDDT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ENDDT_1.DecimalPlace = 0;
             this.IMT_ENDDT_1.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.IMT_ENDDT_1.IntegerPart = 0;
@@ -815,8 +815,9 @@
             this.IMT_ENDDT_1.isMaxLengthErr = false;
             this.IMT_ENDDT_1.IsNumber = true;
             this.IMT_ENDDT_1.IsShop = false;
-            this.IMT_ENDDT_1.Length = 32767;
+            this.IMT_ENDDT_1.Length = 10;
             this.IMT_ENDDT_1.Location = new System.Drawing.Point(437, 1);
+            this.IMT_ENDDT_1.MaxLength = 10;
             this.IMT_ENDDT_1.MoveNext = true;
             this.IMT_ENDDT_1.Name = "IMT_ENDDT_1";
             this.IMT_ENDDT_1.Size = new System.Drawing.Size(83, 19);

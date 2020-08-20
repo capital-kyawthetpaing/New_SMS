@@ -762,6 +762,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     break;
                 case 3:
                     ChangeOperationMode(EOperationMode.UPDATE);
+                    IMT_STADT_0.Focus();
                     break;
                 case 4:
                     ChangeOperationMode(EOperationMode.DELETE);
@@ -1132,6 +1133,11 @@ namespace WMasterTouroku_HanbaiTankaTennic
             {
                 if (ct.Name.Contains("IMT_STADT_"))
                 {
+                    if(!bbl.CheckDate(ct.Text))
+                    {
+                        bbl.ShowMessage("E103");
+                        ct.Focus();
+                    }
                     var SKUCD = this.Controls.Find("IMT_ITMCD_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
                     M_SKUPrice_Entity mse = new M_SKUPrice_Entity
                     {
@@ -1147,6 +1153,11 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 }
                 if (ct.Name.Contains("IMT_ENDDT_"))
                 {
+                    if(!bbl.CheckDate(ct.Text))
+                    {
+                        bbl.ShowMessage("E103");
+                        ct.Focus();
+                    }
                     var StartDate = this.Controls.Find("IMT_STADT_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
                     if (string.Compare(StartDate.Text, ct.Text) == 1)
                     {
@@ -1156,19 +1167,12 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 }
                 if (ct.Name.Contains("IMN_UNITPRICE_"))
                 {
-                    var UnitPrice = ct.Text;
-                    if (ct.Text == "0.0000")
+                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
                     {
-                        decimal value = 0.0000m;
-                        int n = Convert.ToInt32(value);
-                        UnitPrice = n.ToString();
-                        if (UnitPrice == "0")
-                        {
-                            bbl.ShowMessage("E102");
-                            ct.Focus();
-                        }
+                        return;
                     }
-                    else if(string.IsNullOrWhiteSpace(ct.Text))
+                    var UnitPrice = (ct.Text);
+                    if (string.IsNullOrWhiteSpace(ct.Text))
                     {
                         bbl.ShowMessage("E102");
                         ct.Focus();
@@ -1176,19 +1180,12 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 }
                 if (ct.Name.Contains("IMN_SSUNITPRICE_"))
                 {
-                    var ssUnitPrice = ct.Text;
-                    if (ct.Text == "0.0000")
+                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
                     {
-                        decimal value = 0.0000m;
-                        int n = Convert.ToInt32(value);
-                        ssUnitPrice = n.ToString();
-                        if (ssUnitPrice == "0")
-                        {
-                            bbl.ShowMessage("E102");
-                            ct.Focus();
-                        }
+                        return;
                     }
-                    else if (string.IsNullOrWhiteSpace(ct.Text))
+                    var ssUnitPrice = (ct.Text);
+                    if (string.IsNullOrWhiteSpace(ct.Text))
                     {
                         bbl.ShowMessage("E102");
                         ct.Focus();
@@ -1196,19 +1193,12 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 }
                 if (ct.Name.Contains("IMN_R1UNITPRICE_"))
                 {
-                    var r1UnitPrice = ct.Text;
-                    if (ct.Text == "0.0000")
+                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
                     {
-                        decimal value = 0.0000m;
-                        int n = Convert.ToInt32(value);
-                        r1UnitPrice = n.ToString();
-                        if (r1UnitPrice == "0")
-                        {
-                            bbl.ShowMessage("E102");
-                            ct.Focus();
-                        }
+                        return;
                     }
-                    else if (string.IsNullOrWhiteSpace(ct.Text))
+                    var r1UnitPrice = (ct.Text);
+                    if (string.IsNullOrWhiteSpace(ct.Text))
                     {
                         bbl.ShowMessage("E102");
                         ct.Focus();
@@ -1216,19 +1206,12 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 }
                 if (ct.Name.Contains("IMN_R2UNITPRICE_"))
                 {
-                    var r2UnitPrice = ct.Text;
-                    if (ct.Text == "0.0000")
+                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
                     {
-                        decimal value = 0.0000m;
-                        int n = Convert.ToInt32(value);
-                        r2UnitPrice = n.ToString();
-                        if (r2UnitPrice == "0")
-                        {
-                            bbl.ShowMessage("E102");
-                            ct.Focus();
-                        }
+                        return;
                     }
-                    else if (string.IsNullOrWhiteSpace(ct.Text))
+                    var r2UnitPrice = (ct.Text);
+                    if (string.IsNullOrWhiteSpace(ct.Text))
                     {
                         bbl.ShowMessage("E102");
                         ct.Focus();
@@ -1236,19 +1219,12 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 }
                 if (ct.Name.Contains("IMN_R3UNITPRICE_"))
                 {
-                    var r3UnitPrice = ct.Text;
-                    if (ct.Text == "0.0000")
+                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
                     {
-                        decimal value = 0.0000m;
-                        int n = Convert.ToInt32(value);
-                        r3UnitPrice = n.ToString();
-                        if (r3UnitPrice == "0")
-                        {
-                            bbl.ShowMessage("E102");
-                            ct.Focus();
-                        }
+                        return;
                     }
-                    else if (string.IsNullOrWhiteSpace(ct.Text))
+                    var r3UnitPrice = (ct.Text);
+                    if (string.IsNullOrWhiteSpace(ct.Text))
                     {
                         bbl.ShowMessage("E102");
                         ct.Focus();
@@ -1256,19 +1232,12 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 }
                 if (ct.Name.Contains("IMN_R4UNITPRICE_"))
                 {
-                    var r4UnitPrice = ct.Text;
-                    if (ct.Text == "0.0000")
+                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
                     {
-                        decimal value = 0.0000m;
-                        int n = Convert.ToInt32(value);
-                        r4UnitPrice = n.ToString();
-                        if (r4UnitPrice == "0")
-                        {
-                            bbl.ShowMessage("E102");
-                            ct.Focus();
-                        }
+                        return;
                     }
-                    else if (string.IsNullOrWhiteSpace(ct.Text))
+                    var r4UnitPrice = (ct.Text);
+                    if (string.IsNullOrWhiteSpace(ct.Text))
                     {
                         bbl.ShowMessage("E102");
                         ct.Focus();
@@ -1276,19 +1245,12 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 }
                 if (ct.Name.Contains("IMN_R5UNITPRICE_"))
                 {
-                    var r5UnitPrice = ct.Text;
-                    if (ct.Text == "0.0000")
+                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
                     {
-                        decimal value = 0.0000m;
-                        int n = Convert.ToInt32(value);
-                        r5UnitPrice = n.ToString();
-                        if (r5UnitPrice == "0")
-                        {
-                            bbl.ShowMessage("E102");
-                            ct.Focus();
-                        }
+                        return;
                     }
-                    else if (string.IsNullOrWhiteSpace(ct.Text))
+                    var r5UnitPrice = (ct.Text);
+                    if (string.IsNullOrWhiteSpace(ct.Text))
                     {
                         bbl.ShowMessage("E102");
                         ct.Focus();
@@ -1872,12 +1834,15 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 {
                     case EOperationMode.INSERT:
                          InsertUpdate(1);
-                          break;
+                        InitScr();
+                        break;
                     case EOperationMode.UPDATE:
                         InsertUpdate(2);
-                          break;
+                        InitScr();
+                        break;
                     case EOperationMode.DELETE:
                         InsertUpdate(3);
+                        InitScr();
                         break;
                 }
             }
