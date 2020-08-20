@@ -31,6 +31,7 @@ namespace DL
             string sp = "Rpc_HanbaiTankaTennic";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
+                {"@DisplayKBN",new ValuePair{value1=SqlDbType.TinyInt,value2=mse.DisplayKBN} },
                 { "@StartChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.StartChangeDate } },
                 { "@EndChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.EndChangeDate } },
                 { "@SKUCDFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.SKUCDFrom } },
@@ -40,12 +41,12 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
-        public bool M_SKUPrice_Insert(M_SKUPrice_Entity mse,string Xml)
+        public bool M_SKUPrice_Insert_Update(M_SKUPrice_Entity mse,string Xml,int mode)
         {
-            string sp = "M_SKUPrice_Insert";
+            string sp = "M_SKUPrice_Insert_Update";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@insertXML",new ValuePair{value1=SqlDbType.VarChar,value2=Xml} },
+                {"@insertXML",new ValuePair{value1=SqlDbType.VarChar,value2=Xml} },
                 {"@TankaCD",new ValuePair{value1=SqlDbType.VarChar,value2=mse.TankaCD} },
                 {"@StartDate",new ValuePair{value1=SqlDbType.VarChar,value2=mse.StartChangeDate} },
                 {"@EndDate",new ValuePair{value1=SqlDbType.VarChar,value2=mse.EndChangeDate} },
@@ -56,47 +57,34 @@ namespace DL
                 {"@Program",new ValuePair{value1=SqlDbType.VarChar,value2=mse.ProgramID} },
                 {"@PC",new ValuePair{value1=SqlDbType.VarChar,value2=mse.PC} },
                 {"@OperateMode",new ValuePair{value1=SqlDbType.VarChar,value2=mse.PC} },
-                {"@KeyItem",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Key} }
+                {"@KeyItem",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Key} },
+                {"@Mode",new ValuePair{value1=SqlDbType.Int,value2=mode.ToString()} }
             };
             UseTransaction = true;
             return InsertUpdateDeleteData(dic, sp);
         }
-        public bool M_SKUPrice_Update(M_SKUPrice_Entity mse, string updateXml)
-        {
-            string sp = "M_SKUPrice_Update";
-            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
-            {
-                { "@updateXML",new ValuePair{value1=SqlDbType.VarChar,value2=updateXml} },
-                {"@TankaCD",new ValuePair{value1=SqlDbType.VarChar,value2=mse.TankaCD} },
-                {"@StartDate",new ValuePair{value1=SqlDbType.VarChar,value2=mse.StartChangeDate} },
-                {"@EndDate",new ValuePair{value1=SqlDbType.VarChar,value2=mse.EndChangeDate} },
-                {"@PriceWithoutTax",new ValuePair{value1=SqlDbType.Money,value2=mse.PriceWithoutTax} },
-                {"@SalePriceOutTax",new ValuePair{value1=SqlDbType.Money,value2=mse.SalePriceOutTax} },
-                {"@Remarks",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Remarks} },
-                {"@Operator",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Operator} },
-                {"@Program",new ValuePair{value1=SqlDbType.VarChar,value2=mse.ProgramID} },
-                {"@PC",new ValuePair{value1=SqlDbType.VarChar,value2=mse.PC} },
-                {"@OperateMode",new ValuePair{value1=SqlDbType.VarChar,value2=mse.PC} },
-                {"@KeyItem",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Key} }
-            };
-            UseTransaction = true;
-            return InsertUpdateDeleteData(dic, sp);
-        }
-        public bool M_SKUPrice_Delete(M_SKUPrice_Entity mse)
-        {
-            string sp = "M_SKUPrice_Delete";
-            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
-            {
-               {"@TankaCD",new ValuePair{value1=SqlDbType.VarChar,value2=mse.TankaCD} },
-               {"@Operator",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Operator} },
-               {"@Program",new ValuePair{value1=SqlDbType.VarChar,value2=mse.ProgramID} },
-               {"@PC",new ValuePair{value1=SqlDbType.VarChar,value2=mse.PC} },
-               {"@OperateMode",new ValuePair{value1=SqlDbType.VarChar,value2=mse.PC} },
-               {"@KeyItem",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Key} }
-            };
-            UseTransaction = true;
-            return InsertUpdateDeleteData(dic, sp);
-        }
+        //public bool M_SKUPrice_Update(M_SKUPrice_Entity mse, string updateXml)
+        //{
+        //    string sp = "M_SKUPrice_Update";
+        //    Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+        //    {
+        //        { "@updateXML",new ValuePair{value1=SqlDbType.VarChar,value2=updateXml} },
+        //        {"@TankaCD",new ValuePair{value1=SqlDbType.VarChar,value2=mse.TankaCD} },
+        //        {"@StartDate",new ValuePair{value1=SqlDbType.VarChar,value2=mse.StartChangeDate} },
+        //        {"@EndDate",new ValuePair{value1=SqlDbType.VarChar,value2=mse.EndChangeDate} },
+        //        {"@PriceWithoutTax",new ValuePair{value1=SqlDbType.Money,value2=mse.PriceWithoutTax} },
+        //        {"@SalePriceOutTax",new ValuePair{value1=SqlDbType.Money,value2=mse.SalePriceOutTax} },
+        //        {"@Remarks",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Remarks} },
+        //        {"@Operator",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Operator} },
+        //        {"@Program",new ValuePair{value1=SqlDbType.VarChar,value2=mse.ProgramID} },
+        //        {"@PC",new ValuePair{value1=SqlDbType.VarChar,value2=mse.PC} },
+        //        {"@OperateMode",new ValuePair{value1=SqlDbType.VarChar,value2=mse.PC} },
+        //        {"@KeyItem",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Key} }
+        //    };
+        //    UseTransaction = true;
+        //    return InsertUpdateDeleteData(dic, sp);
+        //}
+       
         /*
         public DataTable M_Store_SelectAll(M_Store_Entity mbe)
         {

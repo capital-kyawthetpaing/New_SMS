@@ -8,6 +8,7 @@ namespace Entity
 {
     public class M_SKUPrice_Entity : Base_Entity
     {
+        public string DisplayKBN { get; set; }
         public string TankaCD {get;set;}
         public string StoreCD { get; set; }
         public string AdminNO { get; set; }
