@@ -425,7 +425,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
             }
             return true;
         }
-
         private bool CheckDetail(int index, bool set)
         {
             if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
@@ -713,18 +712,21 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     //IMT_STADT_0.Focus();
                     ChangeOperationMode(OperationMode);//
                     Clear(pnl_Header);
+                    RadioButton1.Checked = true;
                     InitScr();
                     break;
                 case 4:
                     ChangeOperationMode(EOperationMode.DELETE);
                     ChangeOperationMode(OperationMode);//
                     Clear(pnl_Header);
+                    RadioButton1.Checked = true;
                     InitScr();
                     break;
                 case 5:
                     ChangeOperationMode(EOperationMode.SHOW);
                     ChangeOperationMode(OperationMode);//
                     Clear(pnl_Header);
+                    RadioButton1.Checked = true;
                     InitScr();
                     break;
                 case 6:
@@ -732,6 +734,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     {
                         ChangeOperationMode(OperationMode);
                         Clear(pnl_Header);
+                        RadioButton1.Checked = true;
                         InitScr();
                         F12Enable = true;
                     }
