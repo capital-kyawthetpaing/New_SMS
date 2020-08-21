@@ -76,13 +76,13 @@ BEGIN
 											tp.ProductName as SKUName,
 											ISNULL (mj.PriceWithoutTax , mj2.PriceWithoutTax)  as CostUnitPrice,
 											--(Case When mj.PriceWithoutTax = null then mj2.PriceWithoutTax else mj.PriceWithoutTax end) as CostUnitPrice,
-											tp.UnitPrice,
-											tp.StandardSalesUnitPrice,
-											tp.Rank1UnitPrice,
-											tp.Rank2UnitPrice,
-											tp.Rank3UnitPrice,
-											tp.Rank4UnitPrice,
-											tp.Rank5UnitPrice,
+											CAST(tp.UnitPrice AS INT)AS UnitPrice,
+											CAST(tp.StandardSalesUnitPrice AS INT) AS StandardSalesUnitPrice,
+											CAST(tp.Rank1UnitPrice AS INT) AS Rank1UnitPrice,
+											CAST(tp.Rank2UnitPrice AS INT) AS Rank2UnitPrice, 
+											CAST(tp.Rank3UnitPrice AS INT) AS Rank3UnitPrice,
+											CAST(tp.Rank4UnitPrice AS INT) AS Rank4UnitPrice,
+											CAST(tp.Rank5UnitPrice AS INT) AS Rank5UnitPrice,
 											tp.Remarks
 											from #Tmp tp  -- M_SKUPrice1
 											--Left outer join F_SKUPrice(getdate()) mprice on mprice.AdminNO=tp.AdminNO
@@ -153,13 +153,13 @@ BEGIN
 											tp.ProductName as SKUName,
 											ISNULL (mj.PriceWithoutTax , mj2.PriceWithoutTax)  as CostUnitPrice,
 											--(Case When mj.PriceWithoutTax = null then mj2.PriceWithoutTax else mj.PriceWithoutTax end) as CostUnitPrice,
-											tp.UnitPrice,
-											tp.StandardSalesUnitPrice,
-											tp.Rank1UnitPrice,
-											tp.Rank2UnitPrice,
-											tp.Rank3UnitPrice,
-											tp.Rank4UnitPrice,
-											tp.Rank5UnitPrice,
+											CAST(tp.UnitPrice AS INT)AS UnitPrice,
+											CAST(tp.StandardSalesUnitPrice AS INT) AS StandardSalesUnitPrice,
+											CAST(tp.Rank1UnitPrice AS INT) AS Rank1UnitPrice,
+											CAST(tp.Rank2UnitPrice AS INT) AS Rank2UnitPrice, 
+											CAST(tp.Rank3UnitPrice AS INT) AS Rank3UnitPrice,
+											CAST(tp.Rank4UnitPrice AS INT) AS Rank4UnitPrice,
+											CAST(tp.Rank5UnitPrice AS INT) AS Rank5UnitPrice,
 											tp.Remarks
 											from #Temp tp  -- M_SKUPrice1
 											--Left outer join F_SKUPrice(getdate()) mprice on mprice.AdminNO=tp.AdminNO
