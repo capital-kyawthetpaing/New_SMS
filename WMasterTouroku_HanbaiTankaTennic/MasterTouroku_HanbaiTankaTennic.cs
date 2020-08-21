@@ -357,6 +357,11 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 for (int w_Row = 0; w_Row < 999; w_Row++)
                 {
                     mGrid.g_DArray[w_Row].GYONO = (w_Row + 1).ToString();
+                    //mGrid.g_DArray[w_Row].Rank1UnitPrice = "0";
+                    //mGrid.g_DArray[w_Row].Rank2UnitPrice = "0";
+                    //mGrid.g_DArray[w_Row].Rank3UnitPrice = "0";
+                    //mGrid.g_DArray[w_Row].Rank4UnitPrice = "0";
+                    //mGrid.g_DArray[w_Row].Rank5UnitPrice = "0";
                 }
             }
             else  // set Data from db
@@ -993,6 +998,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 SKUCDTo = SKUCDTo.Text,
                 BrandCD = scBrandCD.TxtCode.Text,
                 SKUName = txtSKUName.Text,
+                ExhibitionSegmentCD=scSegmentCD.TxtCode.Text,
                 DeleteFlg="0"
             };
             return ms;
@@ -1589,7 +1595,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     }
                 }
             }
-            Array.Clear(mGrid.g_DArray, mGrid.g_DArray.GetLowerBound(0), mGrid.g_DArray.GetLength(0));
+           Array.Clear(mGrid.g_DArray, mGrid.g_DArray.GetLowerBound(0), mGrid.g_DArray.GetLength(0));
 
             // 行番号の初期値セット
             for (w_Row = 0; w_Row <= mGrid.g_MK_Max_Row - 1; w_Row++)
@@ -1760,7 +1766,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 //Rank3UnitPrice= IMN_R3UNITPRICE_0.Text,
                 //Rank4UnitPrice= IMN_R4UNITPRICE_0.Text,
                 //Rank5UnitPrice= IMN_R5UNITPRICE_0.Text,
-                Remarks=IMT_REMARK_0.Text,
+                //Remarks=IMT_REMARK_0.Text,
                 DeleteFlg ="0",
                 UsedFlg="0",
                 Operator = InOperatorCD,

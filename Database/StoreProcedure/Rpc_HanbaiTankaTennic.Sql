@@ -56,6 +56,7 @@ BEGIN
 										and (@SKUCDTo IS NULL OR (fs.SKUCD>=@SKUCDTo))
 										and  fs.BrandCD=@BrandCD
 										and (@SKUName IS NULL OR   (fs.SKUName LIKE '%'+@SKUName+'%'))
+										and fs.ExhibitionSegmentCD=@SegmentCD
 										and fs.VirtualFlg=0
 										and fs.PresentKBN=0
 										and fs.SampleKBN=0
@@ -134,6 +135,7 @@ BEGIN
 										and (@SKUCDTo IS NULL OR (fs.SKUCD>=@SKUCDTo))
 										and  fs.BrandCD=@BrandCD
 										and (@SKUName IS NULL OR   (fs.SKUName LIKE '%'+@SKUName+'%'))
+										and fs.ExhibitionSegmentCD=@SegmentCD
 										and fs.VirtualFlg=0
 										and fs.PresentKBN=0
 										and fs.SampleKBN=0
