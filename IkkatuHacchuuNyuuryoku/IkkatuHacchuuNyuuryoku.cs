@@ -3269,6 +3269,7 @@ namespace IkkatuHacchuuNyuuryoku
                                             break;
                                         case (int)ClsGridIkkatuHacchuu.ColNO.SiiresakiCD:
                                             mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = OperationMode == EOperationMode.INSERT ? true : false;
+                                            mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = OperationMode == EOperationMode.INSERT ? false : true;
                                             break;
                                         case (int)ClsGridIkkatuHacchuu.ColNO.EDIFLG:
                                         case (int)ClsGridIkkatuHacchuu.ColNO.KibouNouki:
