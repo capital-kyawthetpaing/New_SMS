@@ -437,13 +437,11 @@ namespace CKM_Controls
                                                 if (bb.CheckDate(strdate))
                                                 {
                                                     Rows[CurrentCell.RowIndex].Cells["改定日"].Value = strdate;
-                                                    //this.Rows[CurrentCell.RowIndex].Cells["改定日"].Value = strdate;
-                                                    //CurrentCell.Selected = true;
-                                                    //NotifyCurrentCellDirty(true);
-                                                    //EndEdit();
+                                                    RefreshEdit();
                                                     direction = Keys.Tab;
                                                     reverseKey = Keys.Shift | Keys.Tab;
                                                     break;
+                                                   
                                                 }
                                                   else
                                                 {
