@@ -251,14 +251,12 @@ namespace CKM_Controls
                         else if (this.Name == "GV_item")
                         {
                             Base_BL bb = new Base_BL();
-                            // int e = CurrentCell.RowIndex;
                             if (CurrentCell.RowIndex != -1)
                             {
                                 if (CurrentCell.ColumnIndex == Columns["掛率"].Index)
                                 {
                                     string ratevlue = Rows[CurrentCell.RowIndex].Cells["掛率"].Value.ToString();
                                     string editvalue = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
-                                    //string editvaluech = Rows[CurrentCell.RowIndex].Cells["chk"].EditedFormattedValue.ToString();
                                     if (!String.IsNullOrEmpty(editvalue))
                                     {
                                         if (!editvalue.Contains("."))
@@ -291,7 +289,6 @@ namespace CKM_Controls
                                             else
                                             {
                                                 bb.ShowMessage("E118");
-                                                //MessageBox.Show("enter valid no");
                                                 CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
                                                 RefreshEdit();
                                                 break;
@@ -299,13 +296,9 @@ namespace CKM_Controls
                                         }
                                         else
                                         {
-
-                                            //Rows[CurrentCell.ColumnIndex].DefaultCellStyle.Format="N2";
                                             Columns["掛率"].DefaultCellStyle.Format = "N2";
                                             int x = editvalue.IndexOf('.');
-
                                             int count = editvalue.Count(f => f == '.');
-                                            //string chartese = editvalue.Substring(x+1,count);
                                             string charre = editvalue.Remove(x, count);
                                             var isNumeric = int.TryParse(charre, out int n);
                                             if (isNumeric)
@@ -333,12 +326,10 @@ namespace CKM_Controls
                                             else
                                             {
                                                 bb.ShowMessage("E118");
-                                                //MessageBox.Show("enter valid no");
                                                 CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
                                                 RefreshEdit();
                                                 break;
                                             }
-
                                         }
                                     }
                                     else
@@ -431,9 +422,7 @@ namespace CKM_Controls
                                                     else if (year.Length == 2)
                                                         year = "20" + year;
                                                 }
-                                                //  string strdate = year + "-" + month + "-" + day;
                                                 string strdate = year + "/" + month + "/" + day;
-                                              //CurrentCell= year + "/" + month + "/" + day;
                                                 if (bb.CheckDate(strdate))
                                                 {
                                                     Rows[CurrentCell.RowIndex].Cells["改定日"].Value = strdate;
