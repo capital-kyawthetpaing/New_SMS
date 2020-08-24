@@ -2105,7 +2105,7 @@ namespace MarkDownNyuuryoku
                     }
                 }
 
-                for (int row = 2; row < InputData.GetLength(0); row++)
+                for (int row = 2; row <= InputData.GetLength(0); row++)
                 {
                     // 各行の値をListに変換（すべてnullは読み飛ばし）
                     List<string> data = new List<string>();
@@ -2246,7 +2246,7 @@ namespace MarkDownNyuuryoku
                     bbl.ShowMessage("E190");
                     return false;
                 }
-                else if (bbl.Z_Set(data[(int)EColNo.CalculationSu]) < 0 || bbl.Z_Set(data[(int)EColNo.CalculationSu]) > 999999999)
+                else if (bbl.Z_Set(data[(int)EColNo.CalculationSu]) < -99999 || bbl.Z_Set(data[(int)EColNo.CalculationSu]) > 99999)
                 {
                     //Ｅ２３１
                     bbl.ShowMessage("E231");
@@ -3540,7 +3540,23 @@ namespace MarkDownNyuuryoku
         /// <param name="e"></param>
         private void btnInput_Click(object sender, EventArgs e)
         {
-            this.ExecInput();
+            try
+            {
+                for (int i = 0; i <= (int)EIndex.Remark; i++)
+                {
+                    if (!CheckDetail(i))
+                    {
+                        detailControls[i].Focus();
+                        return;
+                    }
+                }
+                this.ExecInput();
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }            
         }
 
         /// <summary>
