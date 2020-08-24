@@ -106,7 +106,7 @@
     </ProjectReference>
     <ProjectReference Include="..\TempoRegiKaiinTouroku_ShopForm\TempoRegiKaiinTouroku_ShopForm.csproj">
       <Project>{e33c4a94-6e1a-4182-a3aa-80b1382cd290}</Project>
-      <Name>TempoRegiHanbaiRireki_ShopForm</Name>
+      <Name>TempoRegiKaiinTouroku_ShopForm</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

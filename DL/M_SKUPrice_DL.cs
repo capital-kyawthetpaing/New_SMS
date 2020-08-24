@@ -31,15 +31,26 @@ namespace DL
             string sp = "Rpc_HanbaiTankaTennic";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                {"@DisplayKBN",new ValuePair{value1=SqlDbType.TinyInt,value2=mse.DisplayKBN} },
+                { "@DisplayKBN",new ValuePair{value1=SqlDbType.TinyInt,value2=mse.DisplayKBN} },
                 { "@StartChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.StartChangeDate } },
                 { "@EndChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.EndChangeDate } },
                 { "@SKUCDFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.SKUCDFrom } },
                 { "@SKUCDTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.SKUCDTo } },
                 { "@BrandCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.BrandCD } },
-                { "@SKUName",new ValuePair{value1=SqlDbType.VarChar,value2=ms.SKUName} }
+                { "@SKUName",new ValuePair{value1=SqlDbType.VarChar,value2=ms.SKUName} },
+                { "@SegmentCD",new ValuePair{value1=SqlDbType.VarChar,value2=ms.ExhibitionSegmentCD} }
             };
             return SelectData(dic, sp);
+        }
+        public DataTable M_SKUPrice_DataSelect(M_SKUPrice_Entity mse)
+        {
+            string sp = "M_SKUPrice_DataSelect";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@SKUCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUCD } },
+                { "@StartDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.StartChangeDate } },
+            };
+            return SelectData(dic,sp);
         }
         public bool M_SKUPrice_Insert_Update(M_SKUPrice_Entity mse,string Xml,int mode)
         {

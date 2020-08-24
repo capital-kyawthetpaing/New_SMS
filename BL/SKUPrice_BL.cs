@@ -35,6 +35,10 @@ namespace BL
         {
             return mdl.M_SKUPrice_HnabaiTankaTennic_Select(mse, ms);
         }
+        public DataTable M_SKUPrice_SelectData(M_SKUPrice_Entity mse)
+        {
+            return mdl.M_SKUPrice_DataSelect(mse);
+        }
         /// </summary>
         /// <param name="me"></param>
         /// <returns></returns>

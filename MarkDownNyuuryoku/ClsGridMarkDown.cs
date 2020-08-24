@@ -49,6 +49,7 @@ namespace MarkDownNyuuryoku
             internal string OldRate;                    //掛率（退避）
             internal string OldMarkDownUnitPrice;       //MD変更＠（退避）
             internal string OldCalculationSu;           //対象数（退避）
+            internal string OldMarkDownGaku;           //仕入予定額（退避）
         }
 
         //列番号定数
