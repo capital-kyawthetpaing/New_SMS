@@ -438,12 +438,9 @@ namespace CKM_Controls
                                                 {
                                                     Rows[CurrentCell.RowIndex].Cells["改定日"].Value = strdate;
                                                     //this.Rows[CurrentCell.RowIndex].Cells["改定日"].Value = strdate;
-                                                    CurrentCell.Selected = true;
                                                     //CurrentCell.Selected = true;
                                                     //NotifyCurrentCellDirty(true);
-                                                    CurrentCell.
-                                                    BeginEdit(true);
-                                                  
+                                                    //EndEdit();
                                                     direction = Keys.Tab;
                                                     reverseKey = Keys.Shift | Keys.Tab;
                                                     break;
