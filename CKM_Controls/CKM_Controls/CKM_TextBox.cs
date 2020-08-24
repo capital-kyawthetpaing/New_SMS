@@ -1150,5 +1150,10 @@ namespace CKM_Controls
             //}
             base.OnPaint(e);
         }
+
+        protected override void OnValidated(EventArgs e)
+        {
+            base.OnValidated(e);
+        }
     }
 }

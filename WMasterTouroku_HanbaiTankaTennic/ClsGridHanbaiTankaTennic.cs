@@ -28,7 +28,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
             internal string Space1;
             //hide
             internal string AdminNo;
-            internal int DeleteFLG;
+            internal int DeleteFlg;
             internal int UsedFLG;
         }
         internal enum ColNO : int

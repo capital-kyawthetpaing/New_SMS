@@ -1379,6 +1379,9 @@ namespace TempoJuchuuNyuuryoku
                 if(mTennic.Equals(1))
                 {
                     mMesTxt = "受注処理番号";
+                    ScJuchuuNO.Stype = CKM_SearchControl.SearchType.受注処理番号;
+                    ScCopyJuchuuNO.Stype = CKM_SearchControl.SearchType.受注処理番号;
+                    ScMotoJuchuNo.Stype = CKM_SearchControl.SearchType.受注処理番号;
                     LblJuchuNo.Visible = false;
                     LblCopyJuchuNo.Visible = false;
                     LblMotoJuchuNo.Visible = false;
@@ -1927,7 +1930,10 @@ namespace TempoJuchuuNyuuryoku
                     }
                     mGrid.g_DArray[i].JuchuuOrderNO = row["JuchuuOrderNO"].ToString();
                     mGrid.g_DArray[i].VendorCD = row["VendorCD"].ToString();
-                    CheckGrid((int)ClsGridJuchuu.ColNO.VendorCD, i);
+                    if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[i].VendorCD))
+                        CheckGrid((int)ClsGridJuchuu.ColNO.VendorCD, i);
+                    else
+                        mGrid.g_DArray[i].VendorName = "";
                     mGrid.g_DArray[i].ArrivePlanDate = row["ArrivePlanDate"].ToString();
                     mGrid.g_DArray[i].PaymentPlanDate = row["PaymentPlanDate"].ToString();
                     mGrid.g_DArray[i].CollectClearDate = row["D_CollectClearDate"].ToString();
@@ -2956,6 +2962,7 @@ namespace TempoJuchuuNyuuryoku
                         mGrid.g_DArray[row].ZaikoKBN = Convert.ToInt16(selectRow["ZaikoKBN"].ToString());
                         mGrid.g_DArray[row].KariHikiateNO = "";
                         mGrid.g_DArray[row].MakerItem = selectRow["MakerItem"].ToString();
+                        mGrid.g_DArray[row].ChkTyokuso = selectRow["DirectFlg"].ToString() == "1" ? true : false;
 
                         //[M_Vender]    
                         M_Vendor_Entity mve = new M_Vendor_Entity
@@ -4786,7 +4793,7 @@ namespace TempoJuchuuNyuuryoku
                 {
 
                     //どの項目か判別
-                    int CL=-1;
+                    int CL = -1;
                     string ctlName = "";
                     if (w_ActCtl.Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
                         ctlName = w_ActCtl.Parent.Name.Substring(0, w_ActCtl.Parent.Name.LastIndexOf("_"));
@@ -4925,7 +4932,7 @@ namespace TempoJuchuuNyuuryoku
 
                                     bool ret = bbl.Fnc_UnitPrice(fue);
                                     if (ret)
-                                    {   
+                                    {
                                         //数量変更時も単価再計算
                                         switch (mTennic)
                                         {
@@ -4950,7 +4957,7 @@ namespace TempoJuchuuNyuuryoku
                                         mGrid.g_DArray[w_Row].CostUnitPrice = "0";
                                     }
 
-                                    SetJuchuuGaku(w_Row, wSuu, ymd, fue.ZeinukiTanka);                                   
+                                    SetJuchuuGaku(w_Row, wSuu, ymd, fue.ZeinukiTanka);
 
                                     //原価額←Function_単価取得.out原価単価×Form.Detail.見積数
                                     mGrid.g_DArray[w_Row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.GenkaTanka) * wSuu);
@@ -4963,7 +4970,7 @@ namespace TempoJuchuuNyuuryoku
                             case (int)ClsGridJuchuu.ColNO.JuchuuUnitPrice: //販売単価 
                                 {
                                     string tanka = mGrid.g_DArray[w_Row].JuchuuUnitPrice;
-                                    if(mTennic.Equals(0))
+                                    if (mTennic.Equals(0))
                                         tanka = bbl.GetZeinukiKingaku(bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuUnitPrice), mGrid.g_DArray[w_Row].TaxRateFLG, ymd).ToString();
 
                                     SetJuchuuGaku(w_Row, wSuu, ymd, tanka);
@@ -5021,8 +5028,19 @@ namespace TempoJuchuuNyuuryoku
                         return;
                     }
 
-                    if (CL == (int)ClsGridJuchuu.ColNO.ChkExpress || CL == (int)ClsGridJuchuu.ColNO.ChkFuyo || CL == (int)ClsGridJuchuu.ColNO.ChkTyokuso)
-                        S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+                    switch (CL)
+                    {
+                        case (int)ClsGridJuchuu.ColNO.NotPrintFLG:
+                        case (int)ClsGridJuchuu.ColNO.ChkExpress:
+                        case (int)ClsGridJuchuu.ColNO.ChkFuyo:
+                        case (int)ClsGridJuchuu.ColNO.ChkTyokuso:
+                            if (e.Shift)
+                                S_Grid_0_Event_ShiftTab(CL, w_Row, w_ActCtl, w_ActCtl);
+                            else
+                                S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+
+                            break;
+                    }
                 }
             }
             catch (Exception ex)

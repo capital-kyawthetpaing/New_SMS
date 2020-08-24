@@ -153,6 +153,12 @@
     <Compile Include="Search_JuchuuNO.Designer.cs">
       <DependentUpon>Search_JuchuuNO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Search_JuchuuProcessNO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_JuchuuProcessNO.Designer.cs">
+      <DependentUpon>Search_JuchuuProcessNO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Search_KeihiNO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -385,6 +391,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Search_JuchuuNO.resx">
       <DependentUpon>Search_JuchuuNO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search_JuchuuProcessNO.resx">
+      <DependentUpon>Search_JuchuuProcessNO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Search_KeihiNO.resx">
       <DependentUpon>Search_KeihiNO.cs</DependentUpon>
