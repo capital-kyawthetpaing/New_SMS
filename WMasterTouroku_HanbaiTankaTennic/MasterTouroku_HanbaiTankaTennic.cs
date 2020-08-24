@@ -1769,7 +1769,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 //Rank3UnitPrice= IMN_R3UNITPRICE_0.Text,
                 //Rank4UnitPrice= IMN_R4UNITPRICE_0.Text,
                 //Rank5UnitPrice= IMN_R5UNITPRICE_0.Text,
-                //Remarks=IMT_REMARK_0.Text,
+                Remarks=IMT_REMARK_0.Text,
                 DeleteFlg ="0",
                 UsedFlg="0",
                 Operator = InOperatorCD,
