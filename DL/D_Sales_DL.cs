@@ -273,7 +273,7 @@ namespace DL
         /// <summary>
         /// 売上データ取得処理
         /// </summary>
-        public DataTable D_Sales_SelectDataForUriageNyuuryoku(D_Sales_Entity mie, short operationMode)
+        public DataTable D_Sales_SelectDataForUriageNyuuryoku(D_Sales_Entity mie, short operationMode, short tennic = 0)
         {
             string sp = "D_Sales_SelectDataForUriageNyuuryoku";
 
@@ -282,6 +282,7 @@ namespace DL
             {
                 { "@OperateMode", new ValuePair { value1 = SqlDbType.TinyInt, value2 = operationMode.ToString() } },
                 { "@SalesNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = mie.SalesNO } },
+                { "@Tennic", new ValuePair { value1 = SqlDbType.TinyInt, value2 = tennic.ToString() } },
             };
 
             return SelectData(dic, sp);

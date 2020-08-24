@@ -37,7 +37,7 @@ namespace BL
         /// </summary>
         public DataTable D_Sales_SelectData(D_Sales_Entity de, short operationMode, short tennic = 0)
         {
-            DataTable dt = dsdl.D_Sales_SelectDataForUriageNyuuryoku(de, operationMode);
+            DataTable dt = dsdl.D_Sales_SelectDataForUriageNyuuryoku(de, operationMode, tennic);
 
             return dt;
         }
