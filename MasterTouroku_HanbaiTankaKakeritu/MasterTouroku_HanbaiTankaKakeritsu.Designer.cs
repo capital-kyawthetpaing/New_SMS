@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtSeason = new CKM_Controls.CKM_TextBox();
             this.gdvHanbaiTankaKakeritsu = new CKM_Controls.CKM_GridView();
             this.ckM_Label16 = new CKM_Controls.CKM_Label();
             this.btnSetting = new CKM_Controls.CKM_Button();
@@ -42,7 +41,6 @@
             this.cboSeason = new CKM_Controls.CKM_ComboBox();
             this.cboYear = new CKM_Controls.CKM_ComboBox();
             this.txtRate = new CKM_Controls.CKM_TextBox();
-            this.txtYearCopy = new CKM_Controls.CKM_TextBox();
             this.txtPriceOutTaxTo = new CKM_Controls.CKM_TextBox();
             this.txtPriceOutTaxFrom = new CKM_Controls.CKM_TextBox();
             this.ScSegmentCopy = new Search.CKM_SearchControl();
@@ -69,6 +67,8 @@
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
+            this.cboYearCopy = new CKM_Controls.CKM_ComboBox();
+            this.cboSeasonCopy = new CKM_Controls.CKM_ComboBox();
             this.colchk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colTankaCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TankaName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,7 +99,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtSeason);
+            this.panel1.Controls.Add(this.cboSeasonCopy);
+            this.panel1.Controls.Add(this.cboYearCopy);
             this.panel1.Controls.Add(this.gdvHanbaiTankaKakeritsu);
             this.panel1.Controls.Add(this.ckM_Label16);
             this.panel1.Controls.Add(this.btnSetting);
@@ -109,7 +110,6 @@
             this.panel1.Controls.Add(this.cboSeason);
             this.panel1.Controls.Add(this.cboYear);
             this.panel1.Controls.Add(this.txtRate);
-            this.panel1.Controls.Add(this.txtYearCopy);
             this.panel1.Controls.Add(this.txtPriceOutTaxTo);
             this.panel1.Controls.Add(this.txtPriceOutTaxFrom);
             this.panel1.Controls.Add(this.ScSegmentCopy);
@@ -140,35 +140,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1700, 875);
             this.panel1.TabIndex = 0;
-            // 
-            // txtSeason
-            // 
-            this.txtSeason.AllowMinus = false;
-            this.txtSeason.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.txtSeason.BackColor = System.Drawing.Color.White;
-            this.txtSeason.BorderColor = false;
-            this.txtSeason.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSeason.ClientColor = System.Drawing.SystemColors.Window;
-            this.txtSeason.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtSeason.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.txtSeason.DecimalPlace = 0;
-            this.txtSeason.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtSeason.IntegerPart = 0;
-            this.txtSeason.IsCorrectDate = true;
-            this.txtSeason.isEnterKeyDown = false;
-            this.txtSeason.IsFirstTime = true;
-            this.txtSeason.isMaxLengthErr = false;
-            this.txtSeason.IsNumber = true;
-            this.txtSeason.IsShop = false;
-            this.txtSeason.Length = 6;
-            this.txtSeason.Location = new System.Drawing.Point(919, 109);
-            this.txtSeason.MaxLength = 6;
-            this.txtSeason.MoveNext = true;
-            this.txtSeason.Name = "txtSeason";
-            this.txtSeason.Size = new System.Drawing.Size(70, 19);
-            this.txtSeason.TabIndex = 14;
-            this.txtSeason.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.txtSeason.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSeason_KeyDown);
             // 
             // gdvHanbaiTankaKakeritsu
             // 
@@ -374,34 +345,6 @@
             this.txtRate.TabIndex = 18;
             this.txtRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtRate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // txtYearCopy
-            // 
-            this.txtYearCopy.AllowMinus = false;
-            this.txtYearCopy.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.txtYearCopy.BackColor = System.Drawing.Color.White;
-            this.txtYearCopy.BorderColor = false;
-            this.txtYearCopy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtYearCopy.ClientColor = System.Drawing.SystemColors.Window;
-            this.txtYearCopy.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtYearCopy.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.txtYearCopy.DecimalPlace = 0;
-            this.txtYearCopy.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtYearCopy.IntegerPart = 0;
-            this.txtYearCopy.IsCorrectDate = true;
-            this.txtYearCopy.isEnterKeyDown = false;
-            this.txtYearCopy.IsFirstTime = true;
-            this.txtYearCopy.isMaxLengthErr = false;
-            this.txtYearCopy.IsNumber = true;
-            this.txtYearCopy.IsShop = false;
-            this.txtYearCopy.Length = 6;
-            this.txtYearCopy.Location = new System.Drawing.Point(697, 110);
-            this.txtYearCopy.MaxLength = 6;
-            this.txtYearCopy.MoveNext = true;
-            this.txtYearCopy.Name = "txtYearCopy";
-            this.txtYearCopy.Size = new System.Drawing.Size(70, 19);
-            this.txtYearCopy.TabIndex = 13;
-            this.txtYearCopy.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtPriceOutTaxTo
             // 
@@ -757,7 +700,7 @@
             this.ckM_Label14.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label14.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label14.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label14.Location = new System.Drawing.Point(814, 113);
+            this.ckM_Label14.Location = new System.Drawing.Point(815, 113);
             this.ckM_Label14.Name = "ckM_Label14";
             this.ckM_Label14.Size = new System.Drawing.Size(96, 12);
             this.ckM_Label14.TabIndex = 14;
@@ -986,6 +929,38 @@
             this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // cboYearCopy
+            // 
+            this.cboYearCopy.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cboYearCopy.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboYearCopy.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.年度;
+            this.cboYearCopy.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboYearCopy.Flag = 0;
+            this.cboYearCopy.FormattingEnabled = true;
+            this.cboYearCopy.Length = 7;
+            this.cboYearCopy.Location = new System.Drawing.Point(699, 108);
+            this.cboYearCopy.MaxLength = 7;
+            this.cboYearCopy.MoveNext = true;
+            this.cboYearCopy.Name = "cboYearCopy";
+            this.cboYearCopy.Size = new System.Drawing.Size(70, 20);
+            this.cboYearCopy.TabIndex = 37;
+            // 
+            // cboSeasonCopy
+            // 
+            this.cboSeasonCopy.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cboSeasonCopy.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboSeasonCopy.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
+            this.cboSeasonCopy.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboSeasonCopy.Flag = 0;
+            this.cboSeasonCopy.FormattingEnabled = true;
+            this.cboSeasonCopy.Length = 10;
+            this.cboSeasonCopy.Location = new System.Drawing.Point(914, 109);
+            this.cboSeasonCopy.MaxLength = 10;
+            this.cboSeasonCopy.MoveNext = true;
+            this.cboSeasonCopy.Name = "cboSeasonCopy";
+            this.cboSeasonCopy.Size = new System.Drawing.Size(70, 20);
+            this.cboSeasonCopy.TabIndex = 38;
+            // 
             // colchk
             // 
             this.colchk.FalseValue = "false";
@@ -1075,6 +1050,7 @@
             this.colRate.MaxInputLength = 6;
             this.colRate.MinimumWidth = 3;
             this.colRate.Name = "colRate";
+            this.colRate.Width = 80;
             // 
             // FrmMasterTouroku_HanbaiTankaKakeritsu
             // 
@@ -1132,7 +1108,6 @@
         private Search.CKM_SearchControl ScTanka;
         private CKM_Controls.CKM_ComboBox cboYear;
         private CKM_Controls.CKM_TextBox txtRate;
-        private CKM_Controls.CKM_TextBox txtYearCopy;
         private CKM_Controls.CKM_TextBox txtPriceOutTaxTo;
         private CKM_Controls.CKM_TextBox txtPriceOutTaxFrom;
         private CKM_Controls.CKM_ComboBox cboSeason;
@@ -1142,7 +1117,8 @@
         private CKM_Controls.CKM_Button btnDisplay;
         private CKM_Controls.CKM_Label ckM_Label16;
         private CKM_Controls.CKM_GridView gdvHanbaiTankaKakeritsu;
-        private CKM_Controls.CKM_TextBox txtSeason;
+        private CKM_Controls.CKM_ComboBox cboSeasonCopy;
+        private CKM_Controls.CKM_ComboBox cboYearCopy;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colchk;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTankaCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn TankaName;
