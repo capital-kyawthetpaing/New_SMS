@@ -9,17 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base.Client;
 using BL;
+using Entity;
 
-namespace MasterTouroku_HanbaiTankaKakeritu
+namespace MasterTouroku_HanbaiTankaKakeritsu
 {
-    public partial class FrmMasterTouroku_HanbaiTankaKakeritu :FrmMainForm
+    public partial class FrmMasterTouroku_HanbaiTankaKakeritsu :FrmMainForm
     {
         MasterTouroku_HanbaiTankaKakeritu_BL mhbtbl;
+        M_SKU_Entity mskue;
+        M_SKUPrice_Entity mskupe;
         EOperationMode OperationMode;
-        public FrmMasterTouroku_HanbaiTankaKakeritu()
+        DataTable dtData;
+
+        public FrmMasterTouroku_HanbaiTankaKakeritsu()
         {
             InitializeComponent();
             mhbtbl = new MasterTouroku_HanbaiTankaKakeritu_BL();
+            mskue = new M_SKU_Entity();
+            mskupe = new M_SKUPrice_Entity();
         }
 
         /// <summary>
@@ -27,17 +34,20 @@ namespace MasterTouroku_HanbaiTankaKakeritu
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void FrmMasterTouroku_HanbaiTankaKakeritu_Load(object sender, EventArgs e)
+        private void FrmMasterTouroku_HanbaiTankaKakeritsu_Load(object sender, EventArgs e)
         {
-            InProgramID = "MasterTouroku_HanbaiTankaKakeritu";
+            InProgramID = "MasterTouroku_HanbaiTankaKakeritsu";
 
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
             KeyUp += FrmMasterTouroku_HanbaiTankaKakeritu_KeyUp;
             SetRequireField();
+            BindCombox();
 
             OperationMode = EOperationMode.INSERT;
         }
+
+        #region Error Check
 
         /// <summary>
         /// Required Check
@@ -52,15 +62,15 @@ namespace MasterTouroku_HanbaiTankaKakeritu
 
         private bool ErrorCheck()
         {
-            if (!RequireCheck(new Control[] { txtFromDate,ScTanka.TxtCode}))
+            if (!RequireCheck(new Control[] { txtFromDate, ScTanka.TxtCode }))
                 return false;
-            if(!ScTanka.IsExists(2))
+            if (!ScTanka.IsExists(2))
             {
                 bbl.ShowMessage("E101");
                 ScTanka.SetFocus(1);
                 return false;
             }
-            if(!string.IsNullOrWhiteSpace(ScBrand.TxtCode.Text))
+            if (!string.IsNullOrWhiteSpace(ScBrand.TxtCode.Text))
                 if (!ScBrand.IsExists(2))
                 {
                     bbl.ShowMessage("E101");
@@ -99,6 +109,14 @@ namespace MasterTouroku_HanbaiTankaKakeritu
             return true;
         }
 
+        #endregion
+        private void BindCombox()
+        {
+            string ymd = bbl.GetDate();
+            cboYear.Bind(ymd);
+            cboSeason.Bind(ymd);
+        }
+
         /// <summary>
         /// Handle F1 to F12 Click
         /// </summary>
@@ -119,14 +137,11 @@ namespace MasterTouroku_HanbaiTankaKakeritu
                         if (bbl.ShowMessage("Q005") != DialogResult.Yes)
                         {
                             Clear();
+                            txtFromDate.Focus();
                         }
-                        //CancelData();
-                        //scSupplierCD.Clear();
-                        //txtRevisionDate.Clear();
-                        //txtRate1.Clear();
-                        //rdoAllStores.Checked = true;
-                        //cbo_Store.SelectedValue = "0000";
-                        //dgv_ShiireKakeritsu.DataSource = null;
+                        else
+                            PreviousCtrl.Focus();
+                        
                     }
                     break;
                 case 11:
@@ -143,16 +158,6 @@ namespace MasterTouroku_HanbaiTankaKakeritu
             this.Close();
         }
 
-        private void btnAllCheck_Click(object sender, EventArgs e)
-        {
-            CheckState(true);
-        }
-
-        private void btnAllUnCheck_Click(object sender, EventArgs e)
-        {
-            CheckState(false);
-        }
-
         private void CheckState(bool flag)
         {
             foreach (DataGridViewRow row1 in gdvHanbaiTankaKakeritsu.Rows)
@@ -163,12 +168,97 @@ namespace MasterTouroku_HanbaiTankaKakeritu
 
         private void F11()
         {
+            if(ErrorCheck())
+            {
+                if (OperationMode == EOperationMode.INSERT)
+                {
+                    Display(1);
+                }
+                else if (OperationMode == EOperationMode.UPDATE)
+                {
+                    Display(2);
+
+                }
+            }
             
         }
         private void F12()
         {
-            
+            if (ErrorCheck())
+            {
+                if(dtData.Rows.Count > 0)
+                {
+                    if (bbl.ShowMessage(OperationMode == EOperationMode.DELETE ? "Q102" : "Q101") == DialogResult.Yes)
+                    {
+                        mskue = GetSKUEntity();
+                        mskupe = GetSKUPriceEntity();
+                        mskupe.dt1 = dtData;
+                        switch (OperationMode)
+                        {
+                            case EOperationMode.INSERT:
+                                InsertUpdate(1);
+                                break;
+                            case EOperationMode.UPDATE:
+                                InsertUpdate(2);
+                                break;
+                        }
+                    }
+                }
+              
+            }
         }
+
+
+        private void InsertUpdate(int mode)
+        {
+            if(mhbtbl.SaleRatePrice_InsertUpdate(mskue,mskupe,mode))
+            {
+
+            }
+            else
+            {
+                bbl.ShowMessage("S001");
+            }
+
+        }
+        #region Get Searching  Data
+        private M_SKU_Entity GetSKUEntity()
+        {
+            mskue = new M_SKU_Entity
+            {
+                ChangeDate = txtFromDate.Text,
+                EndDate = txtToDate.Text,
+                DateCopy = txtDateCopy.Text,
+                BrandCD = ScBrand.Code,
+                BrandCDCopy = ScBrandCopy.Code,
+                ExhibitionSegmentCD = ScSegment.Code,
+                ExhibitionSegmentCDCopy = ScSegmentCopy.Code,
+                LastYearTerm = cboYear.SelectedText,
+                LastYearTermCopy = txtYearCopy.Text,
+                LastSeason = cboSeason.SelectedText,
+                LastSeasonCopy = txtSeason.Text,
+                PriceOutTaxFrom = txtPriceOutTaxFrom.Text,
+                PriceOutTaxTo = txtPriceOutTaxTo.Text,
+                ProcessMode = ModeText,
+                InsertOperator = InOperatorCD,
+                ProgramID = InProgramID,
+                PC = InPcID,
+                Key = txtFromDate.Text.ToString() + " " + ScTanka.Code.ToString()
+            };
+            return mskue;
+        }
+
+        private M_SKUPrice_Entity GetSKUPriceEntity()
+        {
+            mskupe = new M_SKUPrice_Entity
+            {
+                TankaCD=ScTanka.Code,
+                TankaName=ScTanka.Name,
+                TankaCDCopy=ScTankaCopy.Code,
+            };
+            return mskupe;
+        }
+        #endregion
 
         private void Clear()
         {
@@ -336,15 +426,14 @@ namespace MasterTouroku_HanbaiTankaKakeritu
         {
             if (e.KeyCode == Keys.Enter)
             {
-                //base.OperationMode = OperationMode;
-                //switch(OperationMode)
-                //{
-                //    case EOperationMode.INSERT:Display(1);
-                //        break;
-                //}
-               if(OperationMode==EOperationMode.INSERT)
+              if(OperationMode==EOperationMode.INSERT)
                 {
                     Display(1);
+                }
+              else if(OperationMode == EOperationMode.UPDATE)
+                {
+                    Display(2);
+
                 }
             }
          }
@@ -353,28 +442,100 @@ namespace MasterTouroku_HanbaiTankaKakeritu
 
         #endregion
 
+        #region Button Click
+        private void btnDisplay_Click(object sender, EventArgs e)
+        {
+            if (ErrorCheck())
+            {
+                if (OperationMode == EOperationMode.INSERT)
+                {
+                    Display(1);
+                }
+                else if (OperationMode == EOperationMode.UPDATE)
+                {
+                    Display(2);
+
+                }
+            }
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+
+            if (RequireCheck(new Control[] { txtFromDate, ScTanka.TxtCode }))
+            {
+                foreach (DataGridViewRow row in gdvHanbaiTankaKakeritsu.Rows)
+                {
+                    DataGridViewCheckBoxCell check = row.Cells[0] as DataGridViewCheckBoxCell;
+                    if (row.Cells["colchk"].Value != null)
+                    {
+                        string chk = row.Cells["colchk"].Value.ToString();
+                        if (check.Value == check.TrueValue || chk == "True")
+                        {
+                            row.Cells["colRate"].Value = txtRate.Text;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void btnAllCheck_Click(object sender, EventArgs e)
+        {
+            CheckState(true);
+        }
+
+        private void btnAllUnCheck_Click(object sender, EventArgs e)
+        {
+            CheckState(false);
+        }
+        #endregion
+
         private void Display(int mode)
         {
-            if(mode==1)
+            mskue = GetSKUEntity();
+            mskupe = GetSKUPriceEntity();
+            dtData = new DataTable();
+            if (mode==1)
             {
                 if (string.IsNullOrWhiteSpace(txtDateCopy.Text))
                 {
+                    dtData = mhbtbl.Select_SKUData(mskue,mskupe,"1");
+                    if (dtData.Rows.Count > 0)
+                        gdvHanbaiTankaKakeritsu.DataSource = dtData;
+                    else
+                    {
+                        bbl.ShowMessage("E128");
+                        PreviousCtrl.Focus();
 
+                    }
+                        
+                }
+                else if (!string.IsNullOrWhiteSpace(txtDateCopy.Text))
+                {
+                    dtData = mhbtbl.Select_SKUData(mskue, mskupe, "2");
+                    if (dtData.Rows.Count > 0)
+                        gdvHanbaiTankaKakeritsu.DataSource = dtData;
+                    else
+                    {
+                        bbl.ShowMessage("E128");
+                        PreviousCtrl.Focus();
+
+                    }
                 }
             }
             else
             {
+                 dtData = mhbtbl.Select_SKUData(mskue, mskupe, "3");
+                if (dtData.Rows.Count > 0)
+                    gdvHanbaiTankaKakeritsu.DataSource = dtData;
+                else
+                {
+                    bbl.ShowMessage("E128");
+                    PreviousCtrl.Focus();
 
+                }
             }
             
-        }
-
-        private void btnDisplay_Click(object sender, EventArgs e)
-        {
-            if(ErrorCheck())
-            {
-
-            }
         }
 
         private void FrmMasterTouroku_HanbaiTankaKakeritu_KeyUp(object sender, KeyEventArgs e)
@@ -382,7 +543,7 @@ namespace MasterTouroku_HanbaiTankaKakeritu
             MoveNextControl(e);
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void gdvHanbaiTankaKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -51,5 +51,9 @@ namespace Entity
         public string ItemTo { get; set; }
         public string BrandCD { get; set; }
         public string ITemName { get; set; }
+
+        //HanbaiTankaKakeritu Entity
+        public string TankaCDCopy { get; set; }
+        public string TankaName { get; set; }
     }
 }

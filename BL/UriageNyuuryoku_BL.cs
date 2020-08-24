@@ -37,7 +37,7 @@ namespace BL
         /// </summary>
         public DataTable D_Sales_SelectData(D_Sales_Entity de, short operationMode, short tennic = 0)
         {
-            DataTable dt = dsdl.D_Sales_SelectDataForUriageNyuuryoku(de, operationMode);
+            DataTable dt = dsdl.D_Sales_SelectDataForUriageNyuuryoku(de, operationMode, tennic);
 
             return dt;
         }
@@ -90,6 +90,26 @@ namespace BL
             //    ret = true;
             //}
             
+            return ret;
+        }
+        /// <summary>
+        /// 締処理済の場合（以下のSelectができる場合）Error
+        /// </summary>
+        /// <param name="dpe"></param>
+        /// <returns></returns>
+        public bool CheckPayCloseHistory(D_PayCloseHistory_Entity dpe)
+        {
+            D_PayCloseHistory_DL dpd = new D_PayCloseHistory_DL();
+            DataTable dt = dpd.CheckPayCloseHistory(dpe);
+
+            bool ret = false;
+
+            if (dt.Rows.Count > 0)
+            {
+                dpe.PayCloseNO = dt.Rows[0]["PayCloseNO"].ToString();
+                ret = true;
+            }
+
             return ret;
         }
         ///// <summary>
