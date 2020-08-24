@@ -31,13 +31,14 @@ namespace DL
             string sp = "Rpc_HanbaiTankaTennic";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                {"@DisplayKBN",new ValuePair{value1=SqlDbType.TinyInt,value2=mse.DisplayKBN} },
+                { "@DisplayKBN",new ValuePair{value1=SqlDbType.TinyInt,value2=mse.DisplayKBN} },
                 { "@StartChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.StartChangeDate } },
                 { "@EndChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.EndChangeDate } },
                 { "@SKUCDFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.SKUCDFrom } },
                 { "@SKUCDTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.SKUCDTo } },
                 { "@BrandCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.BrandCD } },
-                { "@SKUName",new ValuePair{value1=SqlDbType.VarChar,value2=ms.SKUName} }
+                { "@SKUName",new ValuePair{value1=SqlDbType.VarChar,value2=ms.SKUName} },
+                { "@SegmentCD",new ValuePair{value1=SqlDbType.VarChar,value2=ms.ExhibitionSegmentCD} }
             };
             return SelectData(dic, sp);
         }
