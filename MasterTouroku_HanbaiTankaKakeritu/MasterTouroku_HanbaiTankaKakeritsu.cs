@@ -115,6 +115,8 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
             string ymd = bbl.GetDate();
             cboYear.Bind(ymd);
             cboSeason.Bind(ymd);
+            cboYearCopy.Bind(ymd);
+            cboSeasonCopy.Bind(ymd);
         }
 
         /// <summary>
@@ -213,7 +215,9 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
         {
             if(mhbtbl.SaleRatePrice_InsertUpdate(mskue,mskupe,mode))
             {
-
+                bbl.ShowMessage("I101");
+                Clear();
+                txtFromDate.Focus();
             }
             else
             {
@@ -234,9 +238,9 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
                 ExhibitionSegmentCD = ScSegment.Code,
                 ExhibitionSegmentCDCopy = ScSegmentCopy.Code,
                 LastYearTerm = cboYear.SelectedText,
-                LastYearTermCopy = txtYearCopy.Text,
+                LastYearTermCopy = cboYearCopy.SelectedText,
                 LastSeason = cboSeason.SelectedText,
-                LastSeasonCopy = txtSeason.Text,
+                LastSeasonCopy = cboSeasonCopy.SelectedText,
                 PriceOutTaxFrom = txtPriceOutTaxFrom.Text,
                 PriceOutTaxTo = txtPriceOutTaxTo.Text,
                 ProcessMode = ModeText,
@@ -275,8 +279,8 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
             ScTankaCopy.Clear();
             ScBrandCopy.Clear();
             ScSegmentCopy.Clear();
-            txtYearCopy.Text = string.Empty;
-            txtSeason.Text = string.Empty;
+            cboYearCopy.SelectedValue = "-1";
+            cboSeasonCopy.SelectedValue = "-1";
             txtRate.Text = string.Empty;
             gdvHanbaiTankaKakeritsu.DataSource = null;
 
