@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{627A513D-A89D-4517-BE07-C3EC72D30149}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MasterTouroku_HanbaiTankaKakeritu</RootNamespace>
-    <AssemblyName>MasterTouroku_HanbaiTankaKakeritu</AssemblyName>
+    <RootNamespace>MasterTouroku_HanbaiTankaKakeritsu</RootNamespace>
+    <AssemblyName>MasterTouroku_HanbaiTankaKakeritsu</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MasterTouroku_HanbaiTankaKakeritu.cs">
+    <Compile Include="MasterTouroku_HanbaiTankaKakeritsu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MasterTouroku_HanbaiTankaKakeritu.Designer.cs">
-      <DependentUpon>MasterTouroku_HanbaiTankaKakeritu.cs</DependentUpon>
+    <Compile Include="MasterTouroku_HanbaiTankaKakeritsu.Designer.cs">
+      <DependentUpon>MasterTouroku_HanbaiTankaKakeritsu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MasterTouroku_HanbaiTankaKakeritu.resx">
-      <DependentUpon>MasterTouroku_HanbaiTankaKakeritu.cs</DependentUpon>
+    <EmbeddedResource Include="MasterTouroku_HanbaiTankaKakeritsu.resx">
+      <DependentUpon>MasterTouroku_HanbaiTankaKakeritsu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

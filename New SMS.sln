@@ -323,7 +323,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkDownIchiran", "MarkDown
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterTouroku_HanbaiTankaTennic", "WMasterTouroku_HanbaiTankaTennic\MasterTouroku_HanbaiTankaTennic.csproj", "{DA7C11D0-F345-4102-841C-5BB6CAD4BA68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterTouroku_HanbaiTankaKakeritu", "MasterTouroku_HanbaiTankaKakeritu\MasterTouroku_HanbaiTankaKakeritu.csproj", "{627A513D-A89D-4517-BE07-C3EC72D30149}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterTouroku_HanbaiTankaKakeritsu", "MasterTouroku_HanbaiTankaKakeritu\MasterTouroku_HanbaiTankaKakeritsu.csproj", "{627A513D-A89D-4517-BE07-C3EC72D30149}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UriageNyuuryoku", "UriageNyuuryoku\UriageNyuuryoku.csproj", "{C3C00CFB-3572-4FAB-B3C5-BF246DCFFEFD}"
 EndProject
