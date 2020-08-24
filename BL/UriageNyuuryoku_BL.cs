@@ -92,6 +92,26 @@ namespace BL
             
             return ret;
         }
+        /// <summary>
+        /// 締処理済の場合（以下のSelectができる場合）Error
+        /// </summary>
+        /// <param name="dpe"></param>
+        /// <returns></returns>
+        public bool CheckPayCloseHistory(D_PayCloseHistory_Entity dpe)
+        {
+            D_PayCloseHistory_DL dpd = new D_PayCloseHistory_DL();
+            DataTable dt = dpd.CheckPayCloseHistory(dpe);
+
+            bool ret = false;
+
+            if (dt.Rows.Count > 0)
+            {
+                dpe.PayCloseNO = dt.Rows[0]["PayCloseNO"].ToString();
+                ret = true;
+            }
+
+            return ret;
+        }
         ///// <summary>
         ///// 入荷進捗、出荷進捗
         ///// </summary>
