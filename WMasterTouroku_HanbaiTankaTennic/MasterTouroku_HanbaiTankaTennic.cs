@@ -675,6 +675,8 @@ namespace WMasterTouroku_HanbaiTankaTennic
                         else
                         {
                             //  Scr_Lock(0, 0, 0);
+
+
                             if (OperationMode == EOperationMode.DELETE)
                             {
                                 //Scr_Lock(1, 3, 1);
@@ -692,6 +694,10 @@ namespace WMasterTouroku_HanbaiTankaTennic
 
                         break;
                     }
+
+                case 3:
+                    Scr_Clr(1);
+                    break;
                 default:
                     {
                         break;
@@ -1013,8 +1019,10 @@ namespace WMasterTouroku_HanbaiTankaTennic
             dt = spb.M_SKUPrice_HanbaiTankaTennic_Select(mse, ms);
             if (dt.Rows.Count > 0)
             {
+                S_BodySeigyo(3, 0);
                 SetMultiColNo(dt);
                 S_BodySeigyo(1, 1);
+               
                 mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
             }
             else
@@ -1092,6 +1100,10 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     {
                         bbl.ShowMessage("E103");
                         ct.Focus();
+                    }
+                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
+                    {
+                        return;
                     }
                     var SKUCD = this.Controls.Find("IMT_ITMCD_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
                     M_SKUPrice_Entity mse = new M_SKUPrice_Entity
@@ -1769,7 +1781,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 //Rank3UnitPrice= IMN_R3UNITPRICE_0.Text,
                 //Rank4UnitPrice= IMN_R4UNITPRICE_0.Text,
                 //Rank5UnitPrice= IMN_R5UNITPRICE_0.Text,
-                //Remarks=IMT_REMARK_0.Text,
+                Remarks=IMT_REMARK_0.Text,
                 DeleteFlg ="0",
                 UsedFlg="0",
                 Operator = InOperatorCD,

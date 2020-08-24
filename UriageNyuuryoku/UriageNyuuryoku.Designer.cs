@@ -5977,10 +5977,10 @@ namespace UriageNyuuryoku
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(-4, 197);
+            this.tabControl1.Location = new System.Drawing.Point(-4, 196);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1377, 519);
+            this.tabControl1.Size = new System.Drawing.Size(1377, 517);
             this.tabControl1.TabIndex = 26;
             // 
             // tabPage1
@@ -6017,7 +6017,7 @@ namespace UriageNyuuryoku
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1369, 493);
+            this.tabPage1.Size = new System.Drawing.Size(1369, 491);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "売上明細";
             // 
@@ -6613,7 +6613,7 @@ namespace UriageNyuuryoku
             this.ckM_CheckBox2.Location = new System.Drawing.Point(249, 102);
             this.ckM_CheckBox2.Name = "ckM_CheckBox2";
             this.ckM_CheckBox2.Size = new System.Drawing.Size(63, 16);
-            this.ckM_CheckBox2.TabIndex = 718;
+            this.ckM_CheckBox2.TabIndex = 8;
             this.ckM_CheckBox2.Text = "即請求";
             this.ckM_CheckBox2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ckM_CheckBox2.UseVisualStyleBackColor = true;

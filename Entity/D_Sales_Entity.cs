@@ -43,7 +43,10 @@ namespace Entity
         public string ReturnFlg { get; set; }
         public string CustomerName2 { get; set; }
         public string PaymentMethodCD { get; set; }
-
+        public string BillingCD { get; set; }
+        public string CollectPlanDate { get; set; }
+        public string PaymentPlanDate { get; set; }
+        public string BillingNO { get; set; }
         //検索用Entity
         public string SalesDateFrom { get; set; }
         public string SalesDateTo { get; set; }

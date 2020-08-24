@@ -273,7 +273,7 @@ namespace DL
         /// <summary>
         /// 売上データ取得処理
         /// </summary>
-        public DataTable D_Sales_SelectDataForUriageNyuuryoku(D_Sales_Entity mie, short operationMode)
+        public DataTable D_Sales_SelectDataForUriageNyuuryoku(D_Sales_Entity mie, short operationMode, short tennic = 0)
         {
             string sp = "D_Sales_SelectDataForUriageNyuuryoku";
 
@@ -282,6 +282,7 @@ namespace DL
             {
                 { "@OperateMode", new ValuePair { value1 = SqlDbType.TinyInt, value2 = operationMode.ToString() } },
                 { "@SalesNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = mie.SalesNO } },
+                { "@Tennic", new ValuePair { value1 = SqlDbType.TinyInt, value2 = tennic.ToString() } },
             };
 
             return SelectData(dic, sp);
@@ -305,33 +306,35 @@ namespace DL
 
             AddParam(command, "@OperateMode", SqlDbType.Int, operationMode.ToString());
             AddParam(command, "@SalesNO", SqlDbType.VarChar, de.SalesNO);
-            //AddParam(command, "@JuchuuProcessNO", SqlDbType.VarChar, de.JuchuuProcessNO);
+            AddParam(command, "@PurchaseNO", SqlDbType.VarChar, de.PurchaseNO);
             AddParam(command, "@StoreCD", SqlDbType.VarChar, de.StoreCD);
             AddParam(command, "@SalesDate", SqlDbType.VarChar, de.SalesDate);
+            AddParam(command, "@BillingType", SqlDbType.TinyInt, de.BillingType);
             AddParam(command, "@ReturnFLG", SqlDbType.TinyInt, de.ReturnFlg);
-            //AddParam(command, "@SoukoCD", SqlDbType.VarChar, de.SoukoCD);
             AddParam(command, "@StaffCD", SqlDbType.VarChar, de.StaffCD);
             AddParam(command, "@CustomerCD", SqlDbType.VarChar, de.CustomerCD);
             AddParam(command, "@CustomerName", SqlDbType.VarChar, de.CustomerName);
             AddParam(command, "@CustomerName2", SqlDbType.VarChar, de.CustomerName2);
+            AddParam(command, "@BillingCD", SqlDbType.VarChar, de.BillingCD);
+            AddParam(command, "@CollectPlanDate", SqlDbType.VarChar, de.CollectPlanDate);
+            AddParam(command, "@PaymentPlanDate", SqlDbType.VarChar, de.PaymentPlanDate);
 
             AddParam(command, "@SalesGaku", SqlDbType.Money, de.SalesGaku);
-            AddParam(command, "@Discount", SqlDbType.Money, de.Discount);
-            AddParam(command, "@HanbaiHontaiGaku", SqlDbType.Money, de.SalesHontaiGaku);
-            AddParam(command, "@HanbaiTax8", SqlDbType.Money, de.SalesTax8);
-            AddParam(command, "@HanbaiTax10", SqlDbType.Money, de.SalesTax10);
-            AddParam(command, "@HanbaiGaku", SqlDbType.Money, de.SalesGaku);
+            //AddParam(command, "@Discount", SqlDbType.Money, de.Discount);
+            AddParam(command, "@SalesHontaiGaku", SqlDbType.Money, de.SalesHontaiGaku);
+            //AddParam(command, "@SalesHontaiGaku0", SqlDbType.Money, de.SalesHontaiGaku0);
+            //AddParam(command, "@SalesHontaiGaku8", SqlDbType.Money, de.SalesHontaiGaku8);
+            //AddParam(command, "@SalesHontaiGaku10", SqlDbType.Money, de.SalesHontaiGaku10);
+            AddParam(command, "@SalesTax8", SqlDbType.Money, de.SalesTax8);
+            AddParam(command, "@SalesTax10", SqlDbType.Money, de.SalesTax10);
             AddParam(command, "@CostGaku", SqlDbType.Money, de.CostGaku);
             AddParam(command, "@ProfitGaku", SqlDbType.Money, de.ProfitGaku);
-            //AddParam(command, "@Point", SqlDbType.Money, de.Point);
-            //AddParam(command, "@InvoiceGaku", SqlDbType.Money, de.InvoiceGaku);
+
             //AddParam(command, "@OrderHontaiGaku", SqlDbType.Money, dme.OrderHontaiGaku);
             //AddParam(command, "@OrderTax8", SqlDbType.Money, dme.OrderTax8);
             //AddParam(command, "@OrderTax10", SqlDbType.Money, dme.OrderTax10);
             //AddParam(command, "@OrderGaku", SqlDbType.Money, dme.OrderGaku);
             AddParam(command, "@PaymentMethodCD", SqlDbType.VarChar, de.PaymentMethodCD);
-            //AddParam(command, "@PaymentPlanNO", SqlDbType.TinyInt, de.PaymentPlanNO);
-
             AddParam(command, "@NouhinsyoComment", SqlDbType.VarChar, de.NouhinsyoComment);
 
             AddParamForDataTable(command, "@Table", SqlDbType.Structured, dt);
@@ -340,7 +343,7 @@ namespace DL
 
             //OUTパラメータの追加
             string outPutParam = "@OutSalesNo";
-            command.Parameters.Add(outPutParam, SqlDbType.VarChar, 11);
+            command.Parameters.Add(outPutParam, SqlDbType.VarChar, 500);
             command.Parameters[outPutParam].Direction = ParameterDirection.Output;
 
             UseTransaction = true;

@@ -22,7 +22,7 @@ namespace UriageNyuuryoku
             internal string SKUName;      // 
             internal string SalesGaku;      //税込販売額
             internal string SalesHontaiGaku;      //税抜販売額 
-            internal string SalesSuu;      //受注数
+            internal string SalesSuu;           //受注数
             internal string SalesUnitPrice;      //販売単価 
             internal string TaniName;      //
             internal string TaxRateDisp;      // 
@@ -31,18 +31,17 @@ namespace UriageNyuuryoku
             
             internal string VendorCD;           //発注先
             internal string VendorName;         //発注先名
-            internal string ArrivePlanDate;     //入荷予定日
 
-            internal string ProfitGaku;      //粗利額
+            internal string ProfitGaku;         //粗利額
             internal string CostUnitPrice;      //原価単価 
             internal string CommentOutStore;      //
             internal string IndividualClientName;      //  
             internal string CommentInStore;      // 
             internal bool NotPrintFLG;
 
-            internal string ShippingPlanDate;
+            internal string PaymentPlanDate;
             internal string OrderUnitPrice;
-            //internal string OrderGaku;
+            internal string OrderGaku;
 
             //隠し項目
             internal int DiscountKbn;   //SKUマスタ値引き区分
@@ -50,22 +49,23 @@ namespace UriageNyuuryoku
             internal string AdminNO;    //M_SKU.AdminNO
             internal int VariousFLG;    //1:Various(諸口)
             internal string TaniCD;
-            internal string Site;
             internal decimal JuchuTax;  //通常税額(Hidden)
             internal decimal KeigenTax;      //軽減税額(Hidden)
             internal decimal Tax;       //税額(Hidden)
-            internal int juchuGyoNO;    //受注行番号(Hidden)
+            internal int salesGyoNO;    //売上行番号(Hidden)修正・削除時にセットされる
             internal string OldJanCD;
-            internal int ZaikoKBN;  //M_SKU.在庫区分
-            internal string KariHikiateNO;  //仮引当番号
+            internal int ZaikoKBN;      //M_SKU.在庫区分
             internal bool NotReCalc;//単価再計算しない場合はTrue
             internal int copyJuchuGyoNO;    //複写元受注行番号(Hidden)単価再計算をするかどうかの判断するためだけの情報
-            //internal decimal OrderTax;          //通常税額(Hidden)
-            //internal decimal KeigenOrderTax;    //軽減税額(Hidden)
-            //internal decimal OrderTaxRitsu;
             internal string MakerItem;
-            internal string JuchuuNO;
-            internal string OldShippingPlanDate;
+            internal string PurchaseNO;
+            internal string BillingNo;
+            internal string PayeeCD;
+            internal string TaxTiming;  //仕入先税計算区分
+            internal int TaxFractionKBN;
+            internal decimal OrderTax;          //通常税額(Hidden)
+            internal decimal KeigenOrderTax;    //軽減税額(Hidden)
+            //internal decimal OrderTaxRitsu;
         }
 
         //列番号定数
@@ -80,19 +80,19 @@ namespace UriageNyuuryoku
             SizeName,           //サイズ
             TaxRateDisp,            //税込み表示
             TaxRate,            //税率
-            JuchuuOrderNO,      //Space
+            Space2,      //Space
 
             Space1,
             VendorCD,           //発注先
             VendorName,         //発注先名
-            ShippingPlanDate,   //支払予定日
+            PaymentPlanDate,   //支払予定日
             SalesSU,           // 受注数
             TaniCD,                 // 単位 
             SalesUnitPrice,    //販売単価 
             SalesHontaiGaku,    // 税抜販売額
             SalesGaku,          //税込販売額
             OrderUnitPrice,     //仕入単価
-            ShiireGaku,     //仕入額
+            OrderGaku,     //仕入額
             CostUnitPrice,      // 原価単価
             CostGaku,           //原価額
             ProfitGaku,             // 粗利額
@@ -391,7 +391,7 @@ namespace UriageNyuuryoku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
 
-                w_CtlCol = (int)ColNO.JuchuuOrderNO;      //発注番号
+                w_CtlCol = (int)ColNO.Space2;      //発注番号
 
                 //g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].JuchuuOrderNO);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
@@ -421,19 +421,9 @@ namespace UriageNyuuryoku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
 
-                w_CtlCol = (int)ColNO.ShiireGaku;    //入荷予定日
+                w_CtlCol = (int)ColNO.PaymentPlanDate;
 
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].ArrivePlanDate);
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
-
-                w_CtlCol = (int)ColNO.ShippingPlanDate;
-
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].ShippingPlanDate);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].PaymentPlanDate);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
@@ -461,25 +451,25 @@ namespace UriageNyuuryoku
                     g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.ForeColor = System.Drawing.SystemColors.WindowText;
                 }
 
-                //w_CtlCol = (int)ColNO.OrderGaku;
+                w_CtlCol = (int)ColNO.OrderGaku;
 
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].OrderGaku);
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].OrderGaku);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
 
-                ////マイナスPrice対応
-                //if (bbl.Z_Set(g_DArray[w_Row].OrderGaku) < 0)
-                //{
-                //    g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.ForeColor = System.Drawing.Color.Red;
-                //}
-                //else
-                //{
-                //    g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.ForeColor = System.Drawing.SystemColors.WindowText;
-                //}
+                //マイナスPrice対応
+                if (bbl.Z_Set(g_DArray[w_Row].OrderGaku) < 0)
+                {
+                    g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.ForeColor = System.Drawing.SystemColors.WindowText;
+                }
             }
         }
 
@@ -583,17 +573,14 @@ namespace UriageNyuuryoku
                 w_CtlCol = (int)ColNO.VendorName;         //発注先名
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].VendorName);
 
-                w_CtlCol = (int)ColNO.ShiireGaku;     //入荷予定日
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ArrivePlanDate);
-
-                w_CtlCol = (int)ColNO.ShippingPlanDate;   //出荷予定日
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ShippingPlanDate);
+                w_CtlCol = (int)ColNO.PaymentPlanDate;   //出荷予定日
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].PaymentPlanDate);
 
                 w_CtlCol = (int)ColNO.OrderUnitPrice;   //発注単価
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].OrderUnitPrice);
 
-                //w_CtlCol = (int)ColNO.OrderGaku;   //発注額
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].OrderGaku);
+                w_CtlCol = (int)ColNO.OrderGaku;   //発注額
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].OrderGaku);
             }
         }
 
