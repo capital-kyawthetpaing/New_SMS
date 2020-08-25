@@ -474,9 +474,9 @@ namespace KaitouNoukiTouroku
 
             mGrid.g_WheelFLG = true;
 
-            if (mGrid.g_MK_MaxValue > m_dataCnt - 1)
-                w_MaxValue = m_dataCnt - 1;
-            else
+            //if (mGrid.g_MK_MaxValue > m_dataCnt - 1)
+            //    w_MaxValue = m_dataCnt - 1;
+            //else
                 w_MaxValue = mGrid.g_MK_MaxValue;
 
             w_Value = Vsb_Mei_0.Value + w_ToMove;
@@ -746,14 +746,18 @@ namespace KaitouNoukiTouroku
                         {
                             IMT_DMY_0.Focus();
 
-                            detailControls[(int)EIndex.OrderDateTo].Text = bbl.GetDate();
-
                             Scr_Lock(0, 0, 0);
-                           Scr_Lock(1, mc_L_END, 1);   // フレームのロック
-                                this.Vsb_Mei_0.TabStop = false;
+                            Scr_Lock(1, mc_L_END, 1);   // フレームのロック
+                            this.Vsb_Mei_0.TabStop = false;
 
-                                SetFuncKeyAll(this, "100001001010");
-                                                    }
+                            SetFuncKeyAll(this, "100001001010");
+
+                            detailControls[(int)EIndex.OrderDateTo].Text = bbl.GetDate();
+                            ChkMikakutei.Checked = true;
+                            ChkMikakutei.Enabled = true;
+                            ChkKanbai.Enabled = true;
+                            ChkFuyo.Enabled = true;
+                        }
                         break;
                     }
 
@@ -1281,6 +1285,16 @@ namespace KaitouNoukiTouroku
                 case (int)EIndex.ArrivalPlanDateTo:
                 case (int)EIndex.ArrivalPlanMonthFrom:
                 case (int)EIndex.ArrivalPlanMonthTo:
+                    //発注日のどちらかに入力があった場合に、未確定分、完売、不要のチェックボックスの入力を可能にする																											
+                    if (string.IsNullOrWhiteSpace(detailControls[(int)EIndex.OrderDateFrom].Text) && string.IsNullOrWhiteSpace(detailControls[(int)EIndex.OrderDateTo].Text))
+                    {
+                        SetEnabled(EIndex.ChkMikakutei, false);
+                        ChkMikakutei.Checked = false;
+                        ChkMikakutei.Enabled = false;
+                        ChkKanbai.Enabled = false;
+                        ChkFuyo.Enabled = false;
+                    }
+
                     if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                         return true;
 
@@ -1336,7 +1350,6 @@ namespace KaitouNoukiTouroku
                         ChkKanbai.Enabled = true;
                         ChkFuyo.Enabled = true;
                     }
-
                         break; 
 
                 case (int)EIndex.OrderCD:

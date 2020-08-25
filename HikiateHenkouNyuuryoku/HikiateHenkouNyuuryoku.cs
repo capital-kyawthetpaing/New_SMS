@@ -444,9 +444,9 @@ namespace HikiateHenkouNyuuryoku
 
             mGrid.g_WheelFLG = true;
 
-            if (mGrid.g_MK_MaxValue > m_dataCnt - 1)
-                w_MaxValue = m_dataCnt - 1;
-            else
+            //if (mGrid.g_MK_MaxValue > m_dataCnt - 1)
+            //    w_MaxValue = m_dataCnt - 1;
+            //else
                 w_MaxValue = mGrid.g_MK_MaxValue;
 
             w_Value = Vsb_Mei_0.Value + w_ToMove;
@@ -1086,9 +1086,9 @@ namespace HikiateHenkouNyuuryoku
 
             mGrid2.g_WheelFLG = true;
 
-            if (mGrid2.g_MK_MaxValue > m_dataCnt2 - 1)
-                w_MaxValue = m_dataCnt2 - 1;
-            else
+            //if (mGrid2.g_MK_MaxValue > m_dataCnt2 - 1)
+            //    w_MaxValue = m_dataCnt2 - 1;
+            //else
                 w_MaxValue = mGrid2.g_MK_MaxValue;
 
             w_Value = Vsb_Mei_1.Value + w_ToMove;

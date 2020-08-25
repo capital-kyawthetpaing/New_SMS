@@ -95,6 +95,7 @@
     <Compile Include="MasterTouroku_GinkouKouza_BL.cs" />
     <Compile Include="MasterTouroku_GinkouShiten_BL.cs" />
     <Compile Include="MasterTouroku_HacchuuPrice_BL.cs" />
+    <Compile Include="MasterTouroku_HanbaiTankaKakeritu_BL.cs" />
     <Compile Include="MasterTouroku_Hanyou_BL.cs" />
     <Compile Include="MasterTouroku_Renban_BL.cs" />
     <Compile Include="MasterTouroku_Settouchi_BL.cs" />
@@ -201,6 +202,7 @@
     <Compile Include="TempoShukkaNyuuryoku_BL.cs" />
     <Compile Include="TempoUriageNyuuryoku_BL.cs" />
     <Compile Include="UriageMotochou_BL.cs" />
+    <Compile Include="UriageNyuuryoku_BL.cs" />
     <Compile Include="UrikakekinTairyuuHyou_BL.cs" />
     <Compile Include="Vendor_BL.cs" />
     <Compile Include="WowmaAPI_BL.cs" />

@@ -1088,6 +1088,7 @@ namespace IkkatuHacchuuNyuuryoku
                                                                , txtHacchuuDate.Text.ToStringOrNull()
                                                                , ScHacchuuNO.TxtCode.Text.ToStringOrNull()
                                                                , ScHacchuuShoriNO.TxtCode.Text.ToStringOrNull()
+                                                               , this.ikkatuHacchuuMode == IkkatuHacchuuMode.NetHacchuu ? "0" : "1"
                                                                , meisaiList.ToDataTable());
 
             if (OperationMode == EOperationMode.DELETE)
@@ -1567,9 +1568,9 @@ namespace IkkatuHacchuuNyuuryoku
 
                     if (ret)
                     {
-                        //仕入先CDが変更されている場合のみ再セット
-                        if (mOldVendorCD != detailControls[index].Text || ChangeIkkatuHacchuuDate)
-                        {
+                        ////仕入先CDが変更されている場合のみ再セット
+                        //if (mOldVendorCD != detailControls[index].Text || ChangeIkkatuHacchuuDate)
+                        //{
                             if (this.ikkatuHacchuuMode == IkkatuHacchuuMode.NetHacchuu)
                             {
                                 if (mve.NetFlg != "1")
@@ -1583,7 +1584,7 @@ namespace IkkatuHacchuuNyuuryoku
                                 bbl.ShowMessage("E119");
                                 return false;
                             }
-                        }
+                        //}
                         this.ScSiiresakiCD.LabelText = mve.VendorName;
                     }
                     else
@@ -2269,9 +2270,23 @@ namespace IkkatuHacchuuNyuuryoku
                 previousCtrl.Focus();
                 return false;
             }
-
             else
             {
+                if (dt.Rows[0]["OrderWayKBN"].ToString() == "1")
+                {
+                    this.lblIkkatuHacchuuMode.Text = "Net発注";
+                    this.lblIkkatuHacchuuMode.BackColor = System.Drawing.Color.Lime;
+                    this.ikkatuHacchuuMode = IkkatuHacchuuMode.NetHacchuu;
+                    this.btnChangeIkkatuHacchuuMode.Text = "FAX発注(F11)";
+                }
+                else
+                {
+                    this.lblIkkatuHacchuuMode.Text = "FAX発注";
+                    this.lblIkkatuHacchuuMode.BackColor = System.Drawing.Color.Cyan;
+                    this.ikkatuHacchuuMode = IkkatuHacchuuMode.FAXHacchuu;
+                    this.btnChangeIkkatuHacchuuMode.Text = "Net発注(F11)";
+                }
+
                 ////DeleteDateTime 「削除された見積番号」
                 //if (!string.IsNullOrWhiteSpace(dt.Rows[0]["DeleteDateTime"].ToString()))
                 //{
@@ -3254,6 +3269,7 @@ namespace IkkatuHacchuuNyuuryoku
                                             break;
                                         case (int)ClsGridIkkatuHacchuu.ColNO.SiiresakiCD:
                                             mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = OperationMode == EOperationMode.INSERT ? true : false;
+                                            mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = OperationMode == EOperationMode.INSERT ? false : true;
                                             break;
                                         case (int)ClsGridIkkatuHacchuu.ColNO.EDIFLG:
                                         case (int)ClsGridIkkatuHacchuu.ColNO.KibouNouki:

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,6 +66,7 @@ namespace CKM_Controls
         string DisablecolName = string.Empty;
         string EnablecolName = string.Empty;
         string columnName = string.Empty;
+      
         public CKM_GridView()
         {
             mtsbl = new MasterTouroku_Souko_BL();
@@ -103,6 +105,8 @@ namespace CKM_Controls
             }
 
         }
+      
+
         protected override bool ProcessCmdKey(ref System.Windows.Forms.Message msg, Keys keyData)
 
         {
@@ -246,68 +250,229 @@ namespace CKM_Controls
                         }
                         else if (this.Name == "GV_item")
                         {
-
-                            // int e = CurrentCell.RowIndex;
+                            Base_BL bb = new Base_BL();
                             if (CurrentCell.RowIndex != -1)
                             {
                                 if (CurrentCell.ColumnIndex == Columns["掛率"].Index)
                                 {
                                     string ratevlue = Rows[CurrentCell.RowIndex].Cells["掛率"].Value.ToString();
                                     string editvalue = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
-                                    if (!editvalue.Contains("."))
+                                    if (!String.IsNullOrEmpty(editvalue))
                                     {
-                                        if (editvalue.Length > 3)
+                                        if (!editvalue.Contains("."))
                                         {
-                                            MessageBox.Show("enter valid no");
-                                            CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
-                                            RefreshEdit();
-                                            //CurrentCell.Value = "0";
-                                            break;
+                                            var isNumeric = int.TryParse(editvalue, out int n);
+                                            if (isNumeric)
+                                            {
+                                                if (editvalue.Length > 3)
+                                                {
+                                                    
+                                                    MessageBox.Show("enter valid no");
+                                                    CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+                                                    RefreshEdit();
+                                                    //CurrentCell.Value = "0";
+                                                    break;
+                                                }
+                                                else
+                                                {
+                                                    string priceouttax = Rows[CurrentCell.RowIndex].Cells["定価"].Value.ToString();
+                                                    string rateproce = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
+                                                    decimal rate = Convert.ToDecimal(rateproce);
+                                                    decimal con = (decimal)0.01;
+                                                    decimal listprice = Convert.ToDecimal(priceouttax);
+                                                    Rows[CurrentCell.RowIndex].Cells["発注単価"].Value = Math.Round(listprice * (rate * con)).ToString();
+                                                    direction = Keys.Tab;
+                                                    reverseKey = Keys.Shift | Keys.Tab;
+                                                    break;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                bb.ShowMessage("E118");
+                                                CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+                                                RefreshEdit();
+                                                break;
+                                            }
                                         }
                                         else
                                         {
-                                            string priceouttax = Rows[CurrentCell.RowIndex].Cells["定価"].Value.ToString();
-                                            string rateproce = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
-                                            decimal rate = Convert.ToDecimal(rateproce);
-                                            decimal con = (decimal)0.01;
-                                            decimal listprice = Convert.ToDecimal(priceouttax);
-                                            Rows[CurrentCell.RowIndex].Cells["発注単価"].Value = Math.Round(listprice * (rate * con)).ToString();
-                                            direction = Keys.Tab;
-                                            reverseKey = Keys.Shift | Keys.Tab;
-                                            break;
+                                            Columns["掛率"].DefaultCellStyle.Format = "N2";
+                                            int x = editvalue.IndexOf('.');
+                                            int count = editvalue.Count(f => f == '.');
+                                            string charre = editvalue.Remove(x, count);
+                                            var isNumeric = int.TryParse(charre, out int n);
+                                            if (isNumeric)
+                                            {
+                                                if (count != 1 || x >= 4)
+                                                {
+                                                    MessageBox.Show("enter valid no");
+                                                    CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+                                                    RefreshEdit();
+                                                    break;
+                                                }
+                                                else
+                                                {
+                                                    string priceouttax = Rows[CurrentCell.RowIndex].Cells["定価"].Value.ToString();
+                                                    string rateproce = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
+                                                    decimal rate = Convert.ToDecimal(rateproce);
+                                                    decimal con = (decimal)0.01;
+                                                    decimal listprice = Convert.ToDecimal(priceouttax);
+                                                    Rows[CurrentCell.RowIndex].Cells["発注単価"].Value = Math.Round(listprice * (rate * con)).ToString();
+                                                    direction = Keys.Tab;
+                                                    reverseKey = Keys.Shift | Keys.Tab;
+                                                    break;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                bb.ShowMessage("E118");
+                                                CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+                                                RefreshEdit();
+                                                break;
+                                            }
                                         }
                                     }
                                     else
                                     {
-                                        //Rows[CurrentCell.ColumnIndex].DefaultCellStyle.Format="N2";
-                                        Columns["掛率"].DefaultCellStyle.Format = "N2";
-                                        int x = editvalue.IndexOf('.');
-                                        int count = editvalue.Count(f => f == '.');
-
-                                        if (count != 1 || x >= 4)
-                                        {
-                                            MessageBox.Show("enter valid no");
-                                            CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
-                                            RefreshEdit();
-                                            break;
-                                        }
-                                        else
-                                        {
-                                            string priceouttax = Rows[CurrentCell.RowIndex].Cells["定価"].Value.ToString();
-                                            string rateproce = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
-                                            decimal rate = Convert.ToDecimal(rateproce);
-                                            decimal con = (decimal)0.01;
-                                            decimal listprice = Convert.ToDecimal(priceouttax);
-                                            Rows[CurrentCell.RowIndex].Cells["発注単価"].Value = Math.Round(listprice * (rate * con)).ToString();
-                                            direction = Keys.Tab;
-                                            reverseKey = Keys.Shift | Keys.Tab;
-                                            break;
-                                        }
+                                        bb.ShowMessage("E102");
+                                        CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+                                        RefreshEdit();
+                                        break;
                                     }
                                 }
-                                //direction = Keys.Tab;
-                                //reverseKey = Keys.Shift | Keys.Tab;
-                                //break;
+                                if (CurrentCell.ColumnIndex == Columns["改定日"].Index)
+                                {
+                                    string editvalue = Rows[CurrentCell.RowIndex].Cells["改定日"].EditedFormattedValue.ToString();
+                                  
+                                    if (String.IsNullOrEmpty(editvalue))
+                                    {
+                                        bb.ShowMessage("E102");
+                                        CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+                                        RefreshEdit();
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        if (!string.IsNullOrWhiteSpace(editvalue))
+                                        {
+                                            
+                                            if (bb.IsInteger(editvalue.Replace("/", "").Replace("-", "")))
+                                            {
+                                                string day = string.Empty, month = string.Empty, year = string.Empty;
+                                                string corvalue = string.Empty;
+                                                if (editvalue.Contains("/"))
+                                                {
+                                                    string[] date = editvalue.Split('/');
+                                                    day = date[date.Length - 1].PadLeft(2, '0');
+                                                    month = date[date.Length - 2].PadLeft(2, '0');
+
+                                                    if (date.Length > 2)
+                                                        year = date[date.Length - 3];
+
+                                                    Rows[CurrentCell.RowIndex].Cells["改定日"].Value = year + month + day;//  this.Text.Replace("/", "");
+                                                    corvalue = year + month + day;
+                                                }
+                                                else if (editvalue.Contains("-"))
+                                                {
+                                                    string[] date = editvalue.Split('-');
+                                                    day = date[date.Length - 1].PadLeft(2, '0');
+                                                    month = date[date.Length - 2].PadLeft(2, '0');
+
+                                                    if (date.Length > 2)
+                                                        year = date[date.Length - 3];
+
+                                                    Rows[CurrentCell.RowIndex].Cells["改定日"].Value = year + month + day;//  this.Text.Replace("-", "");
+                                                    corvalue = year + month + day;
+                                                }
+                                                string text;
+                                                if(!String.IsNullOrEmpty(corvalue))
+                                                {
+                                                    text = corvalue;
+                                                }
+                                                else
+                                                {
+                                                    text = editvalue;
+                                                }
+                                               
+                                                text = text.PadLeft(8, '0');
+                                                day = text.Substring(text.Length - 2);
+                                                month = text.Substring(text.Length - 4).Substring(0, 2);
+                                                year = Convert.ToInt32(text.Substring(0, text.Length - 4)).ToString();
+
+                                                if (month == "00")
+                                                {
+                                                    month = string.Empty;
+                                                }
+                                                if (year == "0")
+                                                {
+                                                    year = string.Empty;
+                                                }
+
+                                                if (string.IsNullOrWhiteSpace(month))
+                                                    month = DateTime.Now.Month.ToString().PadLeft(2, '0');//if user doesn't input for month,set current month
+
+                                                if (string.IsNullOrWhiteSpace(year))
+                                                {
+                                                    year = DateTime.Now.Year.ToString();//if user doesn't input for year,set current year
+                                                }
+                                                else
+                                                {
+                                                    if (year.Length == 1)
+                                                        year = "200" + year;
+                                                    else if (year.Length == 2)
+                                                        year = "20" + year;
+                                                }
+                                                string strdate = year + "/" + month + "/" + day;
+                                                if (bb.CheckDate(strdate))
+                                                {
+                                                    Rows[CurrentCell.RowIndex].Cells["改定日"].Value = strdate;
+                                                    RefreshEdit();
+                                                    direction = Keys.Tab;
+                                                    reverseKey = Keys.Shift | Keys.Tab;
+                                                    break;
+                                                   
+                                                }
+                                                  else
+                                                {
+                                                    bb.ShowMessage("E103");
+                                                    CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+                                                    RefreshEdit();
+                                                    break;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                bb.ShowMessage("E103");
+                                                CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+                                                RefreshEdit();
+                                                break;
+                                            }
+                                        }
+
+                                    }
+                                }
+
+                                if (CurrentCell.ColumnIndex == Columns["発注単価"].Index)
+                                {
+                                    string editvalue = Rows[CurrentCell.RowIndex].Cells["発注単価"].EditedFormattedValue.ToString();
+
+                                    if (String.IsNullOrEmpty(editvalue))
+                                    {
+                                        bb.ShowMessage("E102");
+                                        CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+                                        RefreshEdit();
+                                        break;
+                                    }
+                                    var isNumeric = int.TryParse(editvalue, out int n);
+                                    if (!isNumeric)
+                                    {
+                                        bb.ShowMessage("E118");
+                                        //MessageBox.Show("enter valid no");
+                                        CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+                                        RefreshEdit();
+                                        break;
+                                    }
+                                }
                             }
                             //else
 
@@ -760,7 +925,6 @@ namespace CKM_Controls
 
         protected override void OnCellEndEdit(DataGridViewCellEventArgs e)
         {
-
             // var dtDisplay = new DataTable();
             if (Name == "dgvYuubinBangou")
             {
@@ -830,69 +994,218 @@ namespace CKM_Controls
 
                 }
             }
-           else if (Name == "GV_item")
-            {
-                if (CurrentCell.RowIndex != -1)
-                {
-                    if (CurrentCell.ColumnIndex == Columns["掛率"].Index)
-                    {
-                        string ratevlue = Rows[CurrentCell.RowIndex].Cells["掛率"].Value.ToString();
-                        string editvalue = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
-                        if (!editvalue.Contains("."))
-                        {
-                            if (editvalue.Length > 3)
-                            {
-                                MessageBox.Show("enter valid no");
-                                CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
-                                RefreshEdit();
-                                //CurrentCell.Value = "0";
-                            }
-                            else
-                            {
-                                string priceouttax = Rows[CurrentCell.RowIndex].Cells["定価"].Value.ToString();
-                                string rateproce = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
-                                decimal rate = Convert.ToDecimal(rateproce);
-                                decimal con = (decimal)0.01;
-                                decimal listprice = Convert.ToDecimal(priceouttax);
-                                Rows[CurrentCell.RowIndex].Cells["発注単価"].Value = Math.Round(listprice * (rate * con)).ToString();
-                               
-                            }
-                        }
-                        else
-                        {
-                            //Rows[CurrentCell.ColumnIndex].DefaultCellStyle.Format="N2";
-                            Columns["掛率"].DefaultCellStyle.Format = "N2";
-                            int x = editvalue.IndexOf('.');
-                            int count = editvalue.Count(f => f == '.');
+            //else if (Name == "GV_item")
+            //{
+            //    Base_BL bb = new Base_BL();
+            //    if (CurrentCell.RowIndex != -1)
+            //    {
+            //        if (CurrentCell.ColumnIndex == Columns["掛率"].Index)
+            //        {
+            //            //string ratevlue = Rows[CurrentCell.RowIndex].Cells["掛率"].Value.ToString();
+            //            //string editvalue = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
 
-                            if (count != 1 || x >= 4)
-                            {
-                                MessageBox.Show("enter valid no");
-                                CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
-                                RefreshEdit();
-                               
-                            }
-                            else
-                            {
-                                string priceouttax = Rows[CurrentCell.RowIndex].Cells["定価"].Value.ToString();
-                                string rateproce = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
-                                decimal rate = Convert.ToDecimal(rateproce);
-                                decimal con = (decimal)0.01;
-                                decimal listprice = Convert.ToDecimal(priceouttax);
-                                Rows[CurrentCell.RowIndex].Cells["発注単価"].Value = Math.Round(listprice * (rate * con)).ToString();
-                                
-                            }
-                        }
-                    }
-                  
-                }
-            }
+            //            //if (String.IsNullOrEmpty(editvalue))
+            //            //{
+            //            //    bb.ShowMessage("E102");
+            //            //    CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+            //            //    RefreshEdit();
+            //            //}
+            //            //else
+            //            //{
+            //            //    if (!editvalue.Contains("."))
+            //            //    {
+            //            //        var isNumeric = int.TryParse(editvalue, out int n);
+            //            //        if (isNumeric)
+            //            //        {
+            //            //            if (editvalue.Length > 3)
+            //            //            {
+            //            //                MessageBox.Show("enter valid no");
+            //            //                CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+            //            //                RefreshEdit();
+            //            //                //CurrentCell.Value = "0";
+            //            //            }
+            //            //            else
+            //            //            {
+            //            //                string priceouttax = Rows[CurrentCell.RowIndex].Cells["定価"].Value.ToString();
+            //            //                string rateproce = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
+            //            //                decimal rate = Convert.ToDecimal(rateproce);
+            //            //                decimal con = (decimal)0.01;
+            //            //                decimal listprice = Convert.ToDecimal(priceouttax);
+            //            //                Rows[CurrentCell.RowIndex].Cells["発注単価"].Value = Math.Round(listprice * (rate * con)).ToString();
+
+            //            //            }
+            //            //        }
+            //            //        else
+            //            //        {
+            //            //            MessageBox.Show("enter valid no");
+            //            //            CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+            //            //            RefreshEdit();
+            //            //        }
+            //            //    }
+            //            //    else
+            //            //    {
+            //            //        //Rows[CurrentCell.ColumnIndex].DefaultCellStyle.Format="N2";
+            //            //        Columns["掛率"].DefaultCellStyle.Format = "N2";
+            //            //        int x = editvalue.IndexOf('.');
+            //            //        int count = editvalue.Count(f => f == '.');
+            //            //        string charre = editvalue.Remove(x, count);
+            //            //        var isNumeric = int.TryParse(charre, out int n);
+            //            //        if (isNumeric)
+            //            //        {
+            //            //            if (count != 1 || x >= 4)
+            //            //            {
+            //            //                MessageBox.Show("enter valid no");
+            //            //                CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+            //            //                RefreshEdit();
+
+            //            //            }
+            //            //            else
+            //            //            {
+            //            //                string priceouttax = Rows[CurrentCell.RowIndex].Cells["定価"].Value.ToString();
+            //            //                string rateproce = Rows[CurrentCell.RowIndex].Cells["掛率"].EditedFormattedValue.ToString();
+            //            //                decimal rate = Convert.ToDecimal(rateproce);
+            //            //                decimal con = (decimal)0.01;
+            //            //                decimal listprice = Convert.ToDecimal(priceouttax);
+            //            //                Rows[CurrentCell.RowIndex].Cells["発注単価"].Value = Math.Round(listprice * (rate * con)).ToString();
+
+            //            //            }
+            //            //        }
+            //            //        else
+            //            //        {
+            //            //            MessageBox.Show("enter valid no");
+            //            //            CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+            //            //            RefreshEdit();
+            //            //        }
+            //            //    }
+            //            //}
+            //        }
+
+            //        if (CurrentCell.ColumnIndex == Columns["改定日"].Index)
+            //       {
+            //        //    string editvalue = Rows[CurrentCell.RowIndex].Cells["改定日"].EditedFormattedValue.ToString();
+            //        //    if(String.IsNullOrEmpty(editvalue))
+            //        //    {
+            //        //        bb.ShowMessage("E102");
+            //        //        CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+            //        //        RefreshEdit();
+            //        //    }
+            //        //    else
+            //        //    {
+            //        //        //string dates = GV_item.CurrentCell.EditedFormattedValue.ToString();
+            //        //        //DateTime dt;
+            //        //        //string[] formats = { "yyyy/MM/dd" };
+            //        //        //if (!DateTime.TryParseExact(editvalue, formats,
+            //        //        //                System.Globalization.CultureInfo.InvariantCulture,
+            //        //        //                DateTimeStyles.None, out dt))
+            //        //        //{
+            //        //        //    bb.ShowMessage("E103");
+            //        //        //    CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+            //        //        //    RefreshEdit();
+            //        //        //}
+            //        //        if (!string.IsNullOrWhiteSpace(editvalue))
+            //        //        {
+            //        //            if (bb.IsInteger(editvalue.Replace("/", "").Replace("-", "")))
+            //        //            {
+            //        //                string day = string.Empty, month = string.Empty, year = string.Empty;
+            //        //                if (editvalue.Contains("/"))
+            //        //                {
+            //        //                    string[] date = editvalue.Split('/');
+            //        //                    day = date[date.Length - 1].PadLeft(2, '0');
+            //        //                    month = date[date.Length - 2].PadLeft(2, '0');
+
+            //        //                    if (date.Length > 2)
+            //        //                        year = date[date.Length - 3];
+
+            //        //                    Rows[CurrentCell.RowIndex].Cells["改定日"].Value = year + month + day;//  this.Text.Replace("/", "");
+            //        //                }
+            //        //                else if (editvalue.Contains("-"))
+            //        //                {
+            //        //                    string[] date = editvalue.Split('-');
+            //        //                    day = date[date.Length - 1].PadLeft(2, '0');
+            //        //                    month = date[date.Length - 2].PadLeft(2, '0');
+
+            //        //                    if (date.Length > 2)
+            //        //                        year = date[date.Length - 3];
+
+            //        //                    Rows[CurrentCell.RowIndex].Cells["改定日"].Value = year + month + day;//  this.Text.Replace("-", "");
+            //        //                }
+
+            //        //                string text = editvalue;
+            //        //                text = text.PadLeft(8, '0');
+            //        //                day = text.Substring(text.Length - 2);
+            //        //                month = text.Substring(text.Length - 4).Substring(0, 2);
+            //        //                year = Convert.ToInt32(text.Substring(0, text.Length - 4)).ToString();
+
+            //        //                if (month == "00")
+            //        //                {
+            //        //                    month = string.Empty;
+            //        //                }
+            //        //                if (year == "0")
+            //        //                {
+            //        //                    year = string.Empty;
+            //        //                }
+
+            //        //                if (string.IsNullOrWhiteSpace(month))
+            //        //                    month = DateTime.Now.Month.ToString().PadLeft(2, '0');//if user doesn't input for month,set current month
+
+            //        //                if (string.IsNullOrWhiteSpace(year))
+            //        //                {
+            //        //                    year = DateTime.Now.Year.ToString();//if user doesn't input for year,set current year
+            //        //                }
+            //        //                else
+            //        //                {
+            //        //                    if (year.Length == 1)
+            //        //                        year = "200" + year;
+            //        //                    else if (year.Length == 2)
+            //        //                        year = "20" + year;
+            //        //                }
+
+            //        //                //  string strdate = year + "-" + month + "-" + day;
+            //        //                string strdate = year + "/" + month + "/" + day;
+            //        //                if (bb.CheckDate(strdate))
+            //        //                {
+            //        //                    //IsCorrectDate = true;
+            //        //                    Rows[CurrentCell.RowIndex].Cells["改定日"].Value = strdate;
+            //        //                }
+            //        //                else
+            //        //                {
+            //        //                    bb.ShowMessage("E103");
+            //        //                    CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+            //        //                    RefreshEdit();
+            //        //                }
+            //        //            }
+            //        //            else
+            //        //            {
+            //        //                bb.ShowMessage("E103");
+            //        //                CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+            //        //                RefreshEdit();
+            //        //            }
+            //        //        }
+
+            //        //    }
+            //        }
+
+            //        //if (CurrentCell.ColumnIndex == Columns["発注単価"].Index)
+            //        {
+            //             string editvalue = Rows[CurrentCell.RowIndex].Cells["発注単価"].EditedFormattedValue.ToString();
+            //            if (String.IsNullOrEmpty(editvalue))
+            //            {
+            //                bb.ShowMessage("E102");
+            //                CurrentCell = this[CurrentCell.ColumnIndex, CurrentCell.RowIndex];
+            //                RefreshEdit();
+            //            }
+            //            else
+            //            {
+            //            }
+            //        }
+            //    }
+            //}
             else
             {
                 base.OnCellEndEdit(e);
             }
         }
-
+      
         protected override void OnCellValidating(DataGridViewCellValidatingEventArgs e)
         {
             base.OnCellValidating(e);

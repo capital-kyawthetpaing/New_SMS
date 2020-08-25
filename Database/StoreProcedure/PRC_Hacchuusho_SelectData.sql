@@ -78,7 +78,7 @@ BEGIN
                 ,OrderPerson                      = DODH.OrderPerson
                 ,VendorKeishou_Sama               = CASE WHEN DODH.AliasKBN = 1 THEN '—l' ELSE NULL END
                 ,VendorKeishou_Onchuu             = CASE WHEN DODH.AliasKBN = 2 THEN 'Œä’†' ELSE NULL END
-                ,NouhinsakiZipCD                  = CASE WHEN SUB_InsatuShurui.Value = 3 THEN ISNULL(DODH.DestinationZip1CD,'') + ISNULL(DODH.DestinationZip2CD,'') ELSE ISNULL(MSOU.ZipCD1,'') + ISNULL(MSOU.ZipCD2,'') END
+                ,NouhinsakiZipCD                  = CASE WHEN SUB_InsatuShurui.Value = 3 THEN ISNULL(DODH.DestinationZip1CD,'') + '-' + ISNULL(DODH.DestinationZip2CD,'') ELSE ISNULL(MSOU.ZipCD1,'') + '-' + ISNULL(MSOU.ZipCD2,'') END
                 ,NouhinsakiName                   = CASE WHEN SUB_InsatuShurui.Value = 3 THEN DODH.DestinationName ELSE MSOU.SoukoName END 
                 ,NouhinsakiJuusho1                = CASE WHEN SUB_InsatuShurui.Value = 3 THEN DODH.DestinationAddress1 ELSE MSOU.Address1 END 
                 ,NouhinsakiJuusho2                = CASE WHEN SUB_InsatuShurui.Value = 3 THEN DODH.DestinationAddress2 ELSE MSOU.Address2 END 
@@ -90,12 +90,12 @@ BEGIN
                 ,MakerItem                        = CASE WHEN MSKU.VariousFLG = 0 THEN MSKU.MakerItem ELSE DODD.MakerItem END
                 ,JANCD                            = MSKU.JanCD
                 ,SKUName                          = CASE WHEN MSKU.VariousFLG = 0 THEN MSKU.SKUName ELSE DODD.ItemName END
-                ,ColorSizeName                    = CASE WHEN MSKU.VariousFLG = 0 THEN ISNULL(MSKU.ColorName,'') + ISNULL(MSKU.SizeName,'')
-                                                                                  ELSE ISNULL(DODD.ColorName,'') + ISNULL(DODD.SizeName,'')
+                ,ColorSizeName                    = CASE WHEN MSKU.VariousFLG = 0 THEN ISNULL(MSKU.ColorName,'') + ' ' + ISNULL(MSKU.SizeName,'')
+                                                                                  ELSE ISNULL(DODD.ColorName,'') + ' ' + ISNULL(DODD.SizeName,'')
                                                     END
                 ,CommentOutStore                  = DODD.CommentOutStore
                 ,OrderUnitPrice                   = DODD.OrderUnitPrice
-                ,OrderGaku                        = DODD.OrderGaku
+                ,OrderGaku                        = DODD.OrderHontaiGaku
                 ,OrderSu                          = DODD.OrderSu
                 ,TaniName                         = MMPP_Tani.Char1
                 ,JuchuuNO                         = DODD.JuchuuNO

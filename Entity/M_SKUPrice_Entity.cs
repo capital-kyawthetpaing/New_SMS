@@ -8,6 +8,7 @@ namespace Entity
 {
     public class M_SKUPrice_Entity : Base_Entity
     {
+        public string DisplayKBN { get; set; }
         public string TankaCD {get;set;}
         public string StoreCD { get; set; }
         public string AdminNO { get; set; }
@@ -29,6 +30,19 @@ namespace Entity
         public string WebRate { get; set; }
         public string WebPriceWithTax { get; set; }
         public string WebPriceOutTax { get; set; }
+        //ses
+        public string UnitPrice { get; set; }
+        public string StandardSalesUnitPrice { get; set; }
+        public string Rank1UnitPrice { get; set; }
+        public string Rank2UnitPrice { get; set; }
+        public string Rank3UnitPrice { get; set; }
+        public string Rank4UnitPrice { get; set; }
+        public string Rank5UnitPrice { get; set; }
+        public string ItemName { get; set; }
+        public string CostUnitPrice { get; set; }
+        public string StartChangeDate { get; set; }
+        public string EndChangeDate { get; set; }
+        //ses
         public string Remarks { get; set; }
 
         //検索用
@@ -37,5 +51,9 @@ namespace Entity
         public string ItemTo { get; set; }
         public string BrandCD { get; set; }
         public string ITemName { get; set; }
+
+        //HanbaiTankaKakeritu Entity
+        public string TankaCDCopy { get; set; }
+        public string TankaName { get; set; }
     }
 }

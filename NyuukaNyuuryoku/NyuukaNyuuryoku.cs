@@ -357,9 +357,9 @@ namespace NyuukaNyuuryoku
 
             mGrid.g_WheelFLG = true;
 
-            if (mGrid.g_MK_MaxValue > m_dataCnt - 1)
-                w_MaxValue = m_dataCnt - 1;
-            else
+            //if (mGrid.g_MK_MaxValue > m_dataCnt - 1)
+            //    w_MaxValue = m_dataCnt - 1;
+            //else
                 w_MaxValue = mGrid.g_MK_MaxValue;
 
             w_Value = Vsb_Mei_0.Value + w_ToMove;
@@ -1041,9 +1041,9 @@ namespace NyuukaNyuuryoku
 
             mGrid2.g_WheelFLG = true;
 
-            if (mGrid2.g_MK_MaxValue > m_dataCnt2 - 1)
-                w_MaxValue = m_dataCnt2 - 1;
-            else
+            //if (mGrid2.g_MK_MaxValue > m_dataCnt2 - 1)
+            //    w_MaxValue = m_dataCnt2 - 1;
+            //else
                 w_MaxValue = mGrid2.g_MK_MaxValue;
 
             w_Value = Vsb_Mei_1.Value + w_ToMove;
@@ -1943,7 +1943,7 @@ namespace NyuukaNyuuryoku
                         mGrid2.g_DArray[i2].RowNo = row["JuchuuRows"].ToString();    //OrderRows
                         mGrid2.g_DArray[i2].CustomerCD = row["CustomerCD"].ToString();
                         mGrid2.g_DArray[i2].Customer = row["CustomerName2"].ToString();
-                        mGrid2.g_DArray[i2].OrderSu = bbl.Z_SetStr(row["HachuSu"]);   // 
+                        //mGrid2.g_DArray[i2].OrderSu = bbl.Z_SetStr(row["HachuSu"]);   // 
                         mGrid2.g_DArray[i2].ReserveSu = bbl.Z_SetStr(row["ReserveSu"]);   //
                         mGrid2.g_DArray[i2].SURYO = bbl.Z_SetStr(row["DR_ArrivalSu"]);
                         mGrid2.g_DArray[i2].DirectFlg = row["DirectFlg"].ToString();
@@ -2293,7 +2293,7 @@ namespace NyuukaNyuuryoku
                                     mGrid2.g_DArray[i2].RowNo = row["JuchuuRows"].ToString();    //OrderRows
                                     mGrid2.g_DArray[i2].CustomerCD = row["CustomerCD"].ToString();
                                     mGrid2.g_DArray[i2].Customer = row["CustomerName2"].ToString();
-                                    mGrid2.g_DArray[i2].OrderSu = bbl.Z_SetStr(row["HachuSu"]);   // 
+                                    //mGrid2.g_DArray[i2].OrderSu = bbl.Z_SetStr(row["HachuSu"]);   // 
                                     mGrid2.g_DArray[i2].ReserveSu = bbl.Z_SetStr(row["ReserveSu"]);   //
                                     mGrid2.g_DArray[i2].SURYO = bbl.Z_SetStr(row["DR_ArrivalSu"]);
                                     mGrid2.g_DArray[i2].DirectFlg = row["DirectFlg"].ToString();
@@ -2423,7 +2423,7 @@ namespace NyuukaNyuuryoku
                         mGrid.g_DArray[row].Check = true;
                     }
                     //【引当】画面明細.引当数≠画面明細.入荷数（＝０を含む）のとき、その画面明細,StockNOと同じ【在庫】画面明細.StockNOで
-                    //【在庫】（画面明細.発注数－引当数）≠画面明細.入荷数(≠０）となる明細があれば、【在庫】画面明細.入荷数をエラーとする
+                    //【在庫】画面明細.予定数≠画面明細.入荷数(≠０）となる明細があれば、【在庫】画面明細.入荷数をエラーとする
                     if (bbl.Z_Set(mGrid.g_DArray[row].SURYO) != bbl.Z_Set(mGrid.g_DArray[row].ReserveSu))
                     {
                         string stockNO = mGrid.g_DArray[row].StockNO;
@@ -2431,7 +2431,7 @@ namespace NyuukaNyuuryoku
                         {
                             if (mGrid2.g_DArray[RW].StockNO == stockNO)
                             {
-                                if (bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != bbl.Z_Set(mGrid2.g_DArray[row].OrderSu) - bbl.Z_Set(mGrid2.g_DArray[row].ReserveSu))
+                                if (bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != bbl.Z_Set(mGrid2.g_DArray[row].ReserveSu))
                                 {
                                     //Ｅ２５１
                                     bbl.ShowMessage("E251");
@@ -2490,9 +2490,9 @@ namespace NyuukaNyuuryoku
                     {
                         mGrid2.g_DArray[row].Check = true;
                     }
-                    //（【在庫】画面明細.発注数－引当数）≠画面明細.入荷数（≠０）のとき、その画面明細,StockNOと同じ【引当】画面明細.StockNOで
+                    //【在庫】画面明細.予定数≠画面明細.入荷数（≠０）のとき、その画面明細,StockNOと同じ【引当】画面明細.StockNOで
                     //【引当】画面明細.引当数≠画面明細.入荷数(≠０）となる明細があれば、【在庫】画面明細.入荷数をエラーとする
-                    if (bbl.Z_Set(mGrid2.g_DArray[row].SURYO) != 0 && bbl.Z_Set(mGrid2.g_DArray[row].SURYO) != bbl.Z_Set(mGrid2.g_DArray[row].OrderSu) - bbl.Z_Set(mGrid2.g_DArray[row].ReserveSu))
+                    if (bbl.Z_Set(mGrid2.g_DArray[row].SURYO) != 0 && bbl.Z_Set(mGrid2.g_DArray[row].SURYO) != bbl.Z_Set(mGrid2.g_DArray[row].ReserveSu))
                     {
                         string stockNO = mGrid2.g_DArray[row].StockNO;
                         for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
@@ -2911,7 +2911,7 @@ namespace NyuukaNyuuryoku
                 mGrid2.g_DArray[i2].RowNo = row["JuchuuRows"].ToString();    //OrderRows
                 mGrid2.g_DArray[i2].CustomerCD = row["CustomerCD"].ToString();
                 mGrid2.g_DArray[i2].Customer = row["CustomerName2"].ToString();
-                mGrid2.g_DArray[i2].OrderSu = bbl.Z_SetStr(row["HachuSu"]);   // 
+                //mGrid2.g_DArray[i2].OrderSu = bbl.Z_SetStr(row["HachuSu"]);   // 
                 mGrid2.g_DArray[i2].ReserveSu = bbl.Z_SetStr(row["ReserveSu"]);   //
                 mGrid2.g_DArray[i2].SURYO = bbl.Z_SetStr(row["DR_ArrivalSu"]);
                 mGrid2.g_DArray[i2].DirectFlg = row["DirectFlg"].ToString();
@@ -3651,7 +3651,7 @@ namespace NyuukaNyuuryoku
                             }
                         }
 
-                        mGrid2.g_DArray[w_Row].SURYO = mGrid2.g_DArray[w_Row].OrderSu;
+                        mGrid2.g_DArray[w_Row].SURYO = bbl.Z_SetStr(bbl.Z_Set(mGrid2.g_DArray[w_Row].OrderSu) - bbl.Z_Set(mGrid2.g_DArray[w_Row].ReserveSu));
 
                         if (!string.IsNullOrWhiteSpace(lblVendor.Text) && !lblVendor.Text.Equals(mGrid2.g_DArray[w_Row].Customer))
                         {

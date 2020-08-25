@@ -10,6 +10,8 @@ namespace Entity
     {
         public string AdminNO { get; set; }
         public string SKUCD {get;set;}
+        public string SKUCDFrom { get; set; }//ses
+        public string SKUCDTo { get; set; }//ses
         public string VariousFLG { get; set; }
         public string SKUName { get; set; }
         public string KanaName { get; set; }
@@ -122,5 +124,15 @@ namespace Entity
         public string TaxRateFLGName { get; set; }
         public string CostingKBNName { get; set; }
         public string ShouhinCD { get; set; }
+
+        //HanbaiTankaKakeritu Entity
+        public string DateCopy { get; set; }
+        public string BrandCDCopy { get; set; }
+        public string ExhibitionSegmentCDCopy { get; set; }
+        public string LastYearTermCopy { get; set; }
+        public string LastSeasonCopy { get; set; }
+        public string EndDate { get; set; }
+        public string PriceOutTaxFrom { get; set; }
+        public string PriceOutTaxTo { get; set; }
     }
 }

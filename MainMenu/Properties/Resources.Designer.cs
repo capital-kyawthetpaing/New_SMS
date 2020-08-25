@@ -93,6 +93,16 @@ namespace MainMenu.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bmback_3 {
+            get {
+                object obj = ResourceManager.GetObject("bmback_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bn_10 {
             get {
                 object obj = ResourceManager.GetObject("bn_10", resourceCulture);
