@@ -354,5 +354,24 @@ namespace DL
 
             return ret;
         }
+        /// <summary>
+        /// 進捗チェック　
+        /// 既に入金消込済みの場合、エラー
+        /// </summary>
+        /// <param name="salesNo"></param>
+        /// <returns></returns>
+        public DataTable CheckSalesData(D_Sales_Entity dse)
+        {
+            string sp = "CheckSalesData";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@SalesNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = dse.SalesNO } },
+                { "@PurchaseNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = dse.PurchaseNO } },
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dse.StoreCD} },
+            };
+
+            return SelectData(dic, sp);
+        }
     }
 }
