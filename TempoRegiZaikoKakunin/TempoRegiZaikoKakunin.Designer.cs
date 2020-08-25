@@ -60,6 +60,7 @@
             this.txtJanCD.AllowMinus = false;
             this.txtJanCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtJanCD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtJanCD.BorderColor = false;
             this.txtJanCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJanCD.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtJanCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -192,7 +193,7 @@
             this.lblProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.lblProduct.Location = new System.Drawing.Point(419, 292);
             this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Size = new System.Drawing.Size(126, 35);
+            this.lblProduct.Size = new System.Drawing.Size(125, 35);
             this.lblProduct.TabIndex = 53;
             this.lblProduct.Text = "商　品";
             this.lblProduct.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
@@ -362,7 +363,7 @@
             // 
             // colQuantity
             // 
-            this.colQuantity.DataPropertyName = "ZaikouSu";
+            this.colQuantity.DataPropertyName = "StockNum";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.colQuantity.DefaultCellStyle = dataGridViewCellStyle4;
             this.colQuantity.HeaderText = "在庫数";
