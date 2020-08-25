@@ -31,9 +31,9 @@ namespace BL
         //}
        
         //ses
-        public DataTable M_SKUPrice_HanbaiTankaTennic_Select(M_SKUPrice_Entity mse,M_SKU_Entity ms)
+        public DataTable M_SKUPrice_HanbaiTankaTennic_Select(M_SKUPrice_Entity mse,M_SKU_Entity ms, short operationMode)
         {
-            return mdl.M_SKUPrice_HnabaiTankaTennic_Select(mse, ms);
+            return mdl.M_SKUPrice_HnabaiTankaTennic_Select(mse, ms,operationMode);
         }
         public DataTable M_SKUPrice_SelectData(M_SKUPrice_Entity mse)
         {

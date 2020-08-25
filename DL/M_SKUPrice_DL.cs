@@ -26,11 +26,12 @@ namespace DL
             return SelectData(dic, sp);
         }
         //ses
-        public DataTable M_SKUPrice_HnabaiTankaTennic_Select(M_SKUPrice_Entity mse,M_SKU_Entity ms)
+        public DataTable M_SKUPrice_HnabaiTankaTennic_Select(M_SKUPrice_Entity mse,M_SKU_Entity ms, short operationMode)
         {
             string sp = "Rpc_HanbaiTankaTennic";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
+                { "@Mode",new ValuePair{value1=SqlDbType.TinyInt,value2=operationMode.ToString()} },
                 { "@DisplayKBN",new ValuePair{value1=SqlDbType.TinyInt,value2=mse.DisplayKBN} },
                 { "@StartChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.StartChangeDate } },
                 { "@EndChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.EndChangeDate } },
