@@ -350,7 +350,7 @@
             // 
             // colDate
             // 
-            this.colDate.DataPropertyName = "ArrivalPlanDate";
+            this.colDate.DataPropertyName = "StockDate";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.colDate.DefaultCellStyle = dataGridViewCellStyle3;
             this.colDate.HeaderText = "入荷予定日";
