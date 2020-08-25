@@ -561,9 +561,11 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 case EOperationMode.SHOW:
                     break;
                 case EOperationMode.UPDATE:
-                    S_BodySeigyo(1, 1);
+                    //S_BodySeigyo(1, 1);
+                    S_BodySeigyo(0, 0);
                     break;
             }
+            Clear(pnl_Body);
             btnDisplay.Enabled = true;
             F12Enable = true;
             txtStartDateFrom.Focus();
@@ -712,6 +714,11 @@ namespace WMasterTouroku_HanbaiTankaTennic
             {
                 case 2:
                     ChangeOperationMode(EOperationMode.INSERT);
+                    ChangeOperationMode(OperationMode);
+                    Clear(pnl_Header);
+                    Clear(pnl_Body);
+                    RadioButton1.Checked = true;
+                    //InitScr();
                     break;
                 case 3:
                     ChangeOperationMode(EOperationMode.UPDATE);
@@ -749,7 +756,22 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     break;
                 case 11:
                     {
-                        F11();
+                        //F11();
+                        //this.ExecSec();
+                        //break;
+                        if (OperationMode == EOperationMode.DELETE)
+                        { //Ｑ１０２		
+                            if (bbl.ShowMessage("Q102") != DialogResult.Yes)
+                                return;
+                        }
+                        else
+                        {
+                            //Ｑ１０１		
+                            if (bbl.ShowMessage("Q101") != DialogResult.Yes)
+                                return;
+                        }
+
+
                         this.ExecSec();
                         break;
                     }
@@ -1016,14 +1038,24 @@ namespace WMasterTouroku_HanbaiTankaTennic
         {
             mse = GetSearchInfo();
             ms = GetInfo();
-            dt = spb.M_SKUPrice_HanbaiTankaTennic_Select(mse, ms);
+            dt = spb.M_SKUPrice_HanbaiTankaTennic_Select(mse, ms, (short)OperationMode);
             if (dt.Rows.Count > 0)
             {
-                S_BodySeigyo(3, 0);
-                SetMultiColNo(dt);
-                S_BodySeigyo(1, 1);
-               
-                mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
+                if ((OperationMode == EOperationMode.DELETE) || (OperationMode == EOperationMode.SHOW))
+                {
+                    SetMultiColNo(dt);
+                    S_BodySeigyo(2, 2);
+                    mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
+
+                    return;
+                }
+                else
+                {
+                    S_BodySeigyo(3, 0);
+                    SetMultiColNo(dt);
+                    S_BodySeigyo(1, 1);
+                    mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
+                }
             }
             else
             {
@@ -1818,12 +1850,15 @@ namespace WMasterTouroku_HanbaiTankaTennic
         {
             var dt = GetdatafromArray();
             string Xml = spb.DataTableToXml(dt);
-            if (spb.M_SKUPrice_Insert_Update(mse,Xml,mode))
+            if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
             {
-                spb.ShowMessage("I101");
-                Clear(pnl_Header);
-                Clear(pnl_Body);
-                ChangeOperationMode(OperationMode);
+                if (spb.M_SKUPrice_Insert_Update(mse, Xml, mode))
+                {
+                    spb.ShowMessage("I101");
+                    Clear(pnl_Header);
+                    Clear(pnl_Body);
+                    ChangeOperationMode(OperationMode);
+                }
             }
             else
             {
