@@ -32,7 +32,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cboSeasonCopy = new CKM_Controls.CKM_ComboBox();
+            this.cboYearCopy = new CKM_Controls.CKM_ComboBox();
             this.gdvHanbaiTankaKakeritsu = new CKM_Controls.CKM_GridView();
+            this.colchk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colTankaCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TankaName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBrandCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colExhibitionSegmentCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colExhibitionSegmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLastYearTerm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLastSeason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckM_Label16 = new CKM_Controls.CKM_Label();
             this.btnSetting = new CKM_Controls.CKM_Button();
             this.btnAllUnCheck = new CKM_Controls.CKM_Button();
@@ -67,20 +81,6 @@
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
-            this.cboYearCopy = new CKM_Controls.CKM_ComboBox();
-            this.cboSeasonCopy = new CKM_Controls.CKM_ComboBox();
-            this.colchk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colTankaCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TankaName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBrandCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colExhibitionSegmentCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colExhibitionSegmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLastYearTerm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLastSeason = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdvHanbaiTankaKakeritsu)).BeginInit();
             this.SuspendLayout();
@@ -141,6 +141,38 @@
             this.panel1.Size = new System.Drawing.Size(1700, 875);
             this.panel1.TabIndex = 0;
             // 
+            // cboSeasonCopy
+            // 
+            this.cboSeasonCopy.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cboSeasonCopy.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboSeasonCopy.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
+            this.cboSeasonCopy.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboSeasonCopy.Flag = 0;
+            this.cboSeasonCopy.FormattingEnabled = true;
+            this.cboSeasonCopy.Length = 10;
+            this.cboSeasonCopy.Location = new System.Drawing.Point(914, 109);
+            this.cboSeasonCopy.MaxLength = 10;
+            this.cboSeasonCopy.MoveNext = true;
+            this.cboSeasonCopy.Name = "cboSeasonCopy";
+            this.cboSeasonCopy.Size = new System.Drawing.Size(70, 20);
+            this.cboSeasonCopy.TabIndex = 38;
+            // 
+            // cboYearCopy
+            // 
+            this.cboYearCopy.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cboYearCopy.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboYearCopy.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.年度;
+            this.cboYearCopy.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboYearCopy.Flag = 0;
+            this.cboYearCopy.FormattingEnabled = true;
+            this.cboYearCopy.Length = 7;
+            this.cboYearCopy.Location = new System.Drawing.Point(699, 108);
+            this.cboYearCopy.MaxLength = 7;
+            this.cboYearCopy.MoveNext = true;
+            this.cboYearCopy.Name = "cboYearCopy";
+            this.cboYearCopy.Size = new System.Drawing.Size(70, 20);
+            this.cboYearCopy.TabIndex = 37;
+            // 
             // gdvHanbaiTankaKakeritsu
             // 
             this.gdvHanbaiTankaKakeritsu.AllowUserToAddRows = false;
@@ -190,6 +222,97 @@
             this.gdvHanbaiTankaKakeritsu.UseRowNo = true;
             this.gdvHanbaiTankaKakeritsu.UseSetting = true;
             this.gdvHanbaiTankaKakeritsu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdvHanbaiTankaKakeritsu_CellContentClick);
+            // 
+            // colchk
+            // 
+            this.colchk.FalseValue = "false";
+            this.colchk.HeaderText = "";
+            this.colchk.Name = "colchk";
+            this.colchk.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colchk.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colchk.TrueValue = "true";
+            this.colchk.Width = 40;
+            // 
+            // colTankaCD
+            // 
+            this.colTankaCD.DataPropertyName = "TankaCD";
+            this.colTankaCD.HeaderText = "ランク";
+            this.colTankaCD.Name = "colTankaCD";
+            this.colTankaCD.ReadOnly = true;
+            this.colTankaCD.Width = 120;
+            // 
+            // TankaName
+            // 
+            this.TankaName.DataPropertyName = "TankaName";
+            this.TankaName.HeaderText = "";
+            this.TankaName.Name = "TankaName";
+            this.TankaName.ReadOnly = true;
+            this.TankaName.Width = 250;
+            // 
+            // colBrandCD
+            // 
+            this.colBrandCD.DataPropertyName = "BrandCD";
+            this.colBrandCD.HeaderText = "ブランド";
+            this.colBrandCD.Name = "colBrandCD";
+            this.colBrandCD.ReadOnly = true;
+            // 
+            // colBrandName
+            // 
+            this.colBrandName.DataPropertyName = "BrandName";
+            this.colBrandName.HeaderText = "";
+            this.colBrandName.Name = "colBrandName";
+            this.colBrandName.ReadOnly = true;
+            this.colBrandName.Width = 300;
+            // 
+            // colExhibitionSegmentCD
+            // 
+            this.colExhibitionSegmentCD.DataPropertyName = "ExhibitionSegmentCD";
+            this.colExhibitionSegmentCD.HeaderText = "セグメント";
+            this.colExhibitionSegmentCD.Name = "colExhibitionSegmentCD";
+            // 
+            // colExhibitionSegmentName
+            // 
+            this.colExhibitionSegmentName.DataPropertyName = "ExhibitionSegmentName";
+            this.colExhibitionSegmentName.HeaderText = "";
+            this.colExhibitionSegmentName.Name = "colExhibitionSegmentName";
+            this.colExhibitionSegmentName.ReadOnly = true;
+            this.colExhibitionSegmentName.Width = 170;
+            // 
+            // colLastYearTerm
+            // 
+            this.colLastYearTerm.DataPropertyName = "LastYearTerm";
+            this.colLastYearTerm.HeaderText = "年度";
+            this.colLastYearTerm.Name = "colLastYearTerm";
+            // 
+            // colLastSeason
+            // 
+            this.colLastSeason.DataPropertyName = "LastSeason";
+            this.colLastSeason.HeaderText = "シーズン";
+            this.colLastSeason.Name = "colLastSeason";
+            this.colLastSeason.ReadOnly = true;
+            // 
+            // colStartDate
+            // 
+            this.colStartDate.DataPropertyName = "StartDate";
+            this.colStartDate.HeaderText = "適用開始日";
+            this.colStartDate.Name = "colStartDate";
+            this.colStartDate.ReadOnly = true;
+            // 
+            // colEndDate
+            // 
+            this.colEndDate.DataPropertyName = "EndDate";
+            this.colEndDate.HeaderText = "適用終了日";
+            this.colEndDate.Name = "colEndDate";
+            this.colEndDate.ReadOnly = true;
+            // 
+            // colRate
+            // 
+            this.colRate.DataPropertyName = "Rate";
+            this.colRate.HeaderText = "掛率";
+            this.colRate.MaxInputLength = 6;
+            this.colRate.MinimumWidth = 3;
+            this.colRate.Name = "colRate";
+            this.colRate.Width = 80;
             // 
             // ckM_Label16
             // 
@@ -928,129 +1051,6 @@
             this.ckM_Label1.Text = "適用開始日";
             this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cboYearCopy
-            // 
-            this.cboYearCopy.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cboYearCopy.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboYearCopy.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.年度;
-            this.cboYearCopy.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.cboYearCopy.Flag = 0;
-            this.cboYearCopy.FormattingEnabled = true;
-            this.cboYearCopy.Length = 7;
-            this.cboYearCopy.Location = new System.Drawing.Point(699, 108);
-            this.cboYearCopy.MaxLength = 7;
-            this.cboYearCopy.MoveNext = true;
-            this.cboYearCopy.Name = "cboYearCopy";
-            this.cboYearCopy.Size = new System.Drawing.Size(70, 20);
-            this.cboYearCopy.TabIndex = 37;
-            // 
-            // cboSeasonCopy
-            // 
-            this.cboSeasonCopy.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cboSeasonCopy.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboSeasonCopy.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
-            this.cboSeasonCopy.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.cboSeasonCopy.Flag = 0;
-            this.cboSeasonCopy.FormattingEnabled = true;
-            this.cboSeasonCopy.Length = 10;
-            this.cboSeasonCopy.Location = new System.Drawing.Point(914, 109);
-            this.cboSeasonCopy.MaxLength = 10;
-            this.cboSeasonCopy.MoveNext = true;
-            this.cboSeasonCopy.Name = "cboSeasonCopy";
-            this.cboSeasonCopy.Size = new System.Drawing.Size(70, 20);
-            this.cboSeasonCopy.TabIndex = 38;
-            // 
-            // colchk
-            // 
-            this.colchk.FalseValue = "false";
-            this.colchk.HeaderText = "";
-            this.colchk.Name = "colchk";
-            this.colchk.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colchk.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colchk.TrueValue = "true";
-            this.colchk.Width = 40;
-            // 
-            // colTankaCD
-            // 
-            this.colTankaCD.DataPropertyName = "TankaCD";
-            this.colTankaCD.HeaderText = "ランク";
-            this.colTankaCD.Name = "colTankaCD";
-            this.colTankaCD.ReadOnly = true;
-            this.colTankaCD.Width = 120;
-            // 
-            // TankaName
-            // 
-            this.TankaName.DataPropertyName = "TankaName";
-            this.TankaName.HeaderText = "";
-            this.TankaName.Name = "TankaName";
-            this.TankaName.ReadOnly = true;
-            this.TankaName.Width = 250;
-            // 
-            // colBrandCD
-            // 
-            this.colBrandCD.DataPropertyName = "BrandCD";
-            this.colBrandCD.HeaderText = "ブランド";
-            this.colBrandCD.Name = "colBrandCD";
-            this.colBrandCD.ReadOnly = true;
-            // 
-            // colBrandName
-            // 
-            this.colBrandName.DataPropertyName = "BrandName";
-            this.colBrandName.HeaderText = "";
-            this.colBrandName.Name = "colBrandName";
-            this.colBrandName.ReadOnly = true;
-            this.colBrandName.Width = 300;
-            // 
-            // colExhibitionSegmentCD
-            // 
-            this.colExhibitionSegmentCD.DataPropertyName = "ExhibitionSegmentCD";
-            this.colExhibitionSegmentCD.HeaderText = "セグメント";
-            this.colExhibitionSegmentCD.Name = "colExhibitionSegmentCD";
-            // 
-            // colExhibitionSegmentName
-            // 
-            this.colExhibitionSegmentName.DataPropertyName = "ExhibitionSegmentName";
-            this.colExhibitionSegmentName.HeaderText = "";
-            this.colExhibitionSegmentName.Name = "colExhibitionSegmentName";
-            this.colExhibitionSegmentName.ReadOnly = true;
-            this.colExhibitionSegmentName.Width = 170;
-            // 
-            // colLastYearTerm
-            // 
-            this.colLastYearTerm.DataPropertyName = "LastYearTerm";
-            this.colLastYearTerm.HeaderText = "年度";
-            this.colLastYearTerm.Name = "colLastYearTerm";
-            // 
-            // colLastSeason
-            // 
-            this.colLastSeason.DataPropertyName = "LastSeason";
-            this.colLastSeason.HeaderText = "シーズン";
-            this.colLastSeason.Name = "colLastSeason";
-            this.colLastSeason.ReadOnly = true;
-            // 
-            // colStartDate
-            // 
-            this.colStartDate.DataPropertyName = "StartDate";
-            this.colStartDate.HeaderText = "適用開始日";
-            this.colStartDate.Name = "colStartDate";
-            this.colStartDate.ReadOnly = true;
-            // 
-            // colEndDate
-            // 
-            this.colEndDate.DataPropertyName = "EndDate";
-            this.colEndDate.HeaderText = "適用終了日";
-            this.colEndDate.Name = "colEndDate";
-            this.colEndDate.ReadOnly = true;
-            // 
-            // colRate
-            // 
-            this.colRate.DataPropertyName = "Rate";
-            this.colRate.HeaderText = "掛率";
-            this.colRate.MaxInputLength = 6;
-            this.colRate.MinimumWidth = 3;
-            this.colRate.Name = "colRate";
-            this.colRate.Width = 80;
             // 
             // FrmMasterTouroku_HanbaiTankaKakeritsu
             // 
