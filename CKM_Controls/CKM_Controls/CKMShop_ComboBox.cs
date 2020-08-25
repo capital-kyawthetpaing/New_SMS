@@ -418,7 +418,7 @@ namespace CKM_Controls
         {
             this.ItemHeight = Iheight;
             float csize;
-          //  DropDownHeight = 10 * ItemHeight;
+            //  DropDownHeight = 10 * ItemHeight;
             //if (((ItemHeight*18 / 24) ).ToString().Contains("."))
             //{
             //    csize = float.Parse(Convert.ToInt32(((ItemHeight  * 18) / 24).ToString().Split('.').First()).ToString());
@@ -427,9 +427,10 @@ namespace CKM_Controls
             //{
             //    csize = float.Parse(((ItemHeight*18)/24).ToString()) ;
             //}
-            
-            
-            Font = new Font("Meiryo UI", Font.Size, Font.Style);
+
+
+            //Font = new Font("Meiryo UI", Font.Size, Font.Style);
+            Font = new Font("MS Gothic", Font.Size, Font.Style);
         }
 
         public void Bind(string changeDate, string type = null)
