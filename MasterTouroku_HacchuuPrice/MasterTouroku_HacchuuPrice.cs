@@ -1174,7 +1174,7 @@ namespace MasterTouroku_HacchuuPrice
 
                 int iMax = 0;
 
-                for (int row = 2; row < InputData.GetLength(0); row++)
+                for (int row = 2; row <= InputData.GetLength(0); row++)
                 {
                     // 各行の値をListに変換（すべてnullは読み飛ばし）
                     List<string> data = new List<string>();
