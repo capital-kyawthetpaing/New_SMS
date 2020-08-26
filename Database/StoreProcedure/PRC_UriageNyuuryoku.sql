@@ -2,8 +2,6 @@ DROP  PROCEDURE [dbo].[D_Sales_SelectDataForUriageNyuuryoku]
 GO
 DROP  PROCEDURE [dbo].[CheckSalesData]
 GO
-DROP  PROCEDURE [dbo].[CheckJuchuDetailsData]
-GO
 DROP  PROCEDURE [dbo].[PRC_UriageNyuuryoku]
 GO
 
@@ -127,7 +125,9 @@ GO
 
 
 CREATE PROCEDURE CheckSalesData
-    (@SalesNO varchar(11)
+    (@SalesNO varchar(11),
+    @PurchaseNO  varchar(11),
+    @StoreCD   varchar(4)
     )AS
     
 --********************************************--
@@ -146,15 +146,35 @@ BEGIN
     DECLARE @CNT int;
     
     SET @ERRNO = '';
-    /*
-    --既に売上済み警告
-    --以下の条件でレコードがあれば売上済として警告メッセージを表示する
+    
+    --既に入金消込済みの場合、エラー
+    --以下の条件でレコードがあれば入金済としてエラーメッセージを表示する
     SELECT @CNT = COUNT(A.SalesNO)
     FROM D_Sales AS A
     INNER JOIN D_CollectPlan AS B
     ON B.SalesNO = A.SalesNO
-    INNER JOIN (
-    	) AS C
+    INNER JOIN (SELECT DCB.CollectPlanNO
+            FROM D_PaymentConfirm AS DP
+            LEFT OUTER JOIN D_CollectBilling AS DCB
+            ON DCB.ConfirmNO = DP.ConfirmNO
+            AND DCB.DeleteDateTime IS NULL
+            LEFT OUTER JOIN D_CollectBillingDetails AS DCBD
+            ON DCBD.ConfirmNO = DCB.ConfirmNO
+            AND DCBD.CollectPlanNO = DCB.CollectPlanNO
+            AND DCBD.DeleteDateTime IS NULL
+            LEFT OUTER JOIN D_CollectPlanDetails AS DCPD
+            ON DCPD.CollectPlanNO = DCBD.CollectPlanNO
+            AND DCPD.CollectPlanRows = DCBD.CollectPlanRows
+            AND DCPD.DeleteDateTime IS NULL
+            LEFT OUTER JOIN D_CollectPlan AS DCP
+            ON DCP.CollectPlanNO = DCPD.CollectPlanNO
+            AND DCP.DeleteDateTime IS NULL
+            LEFT OUTER JOIN D_Collect AS DC
+            ON DC.CollectNO = DP.CollectNO
+            AND DC.DeleteDateTime IS NULL
+            WHERE DCP.StoreCD = @StoreCD
+            GROUP BY DCB.CollectPlanNO
+        ) AS C
     ON C.CollectPlanNO = B.CollectPlanNO
     WHERE A.SalesNO = @SalesNO
     AND A.DeleteDateTime IS NULL
@@ -162,287 +182,29 @@ BEGIN
 
     IF @CNT > 0 
     BEGIN
-        SET @ERRNO = 'E165';
+        SET @ERRNO = 'E246';
         SELECT @ERRNO AS errno;
         RETURN;
     END;
     
-    --既に出荷済み警告
-    --以下の条件でレコードがあれば出荷済として警告メッセージを表示する
+    --締処理済チェック
+    --D_PayPlanに、支払締番号がセットされていれば、エラー（下記のSelectができたらエラー）
     SELECT @CNT = COUNT(A.Number)
-    FROM D_ShippingDetails A
-    WHERE A.Number = @JuchuuNO
-    AND A.ShippingKBN = 1
+    FROM D_PayPlan A
+    WHERE A.Number = @PurchaseNO
+    AND A.PayPlanKBN = 1
+    AND A.PayCloseNO IS NOT NULL
     AND A.DeleteDateTime IS NULL
     ;
 
     IF @CNT > 0 
     BEGIN
-        SET @ERRNO = 'E159';
+        SET @ERRNO = 'E176';
         SELECT @ERRNO AS errno;
         RETURN;
     END;
-
-    --既に出荷指示済み警告
-    --以下の条件でレコードがあれば出荷指示済として警告メッセージを表示する
-    SELECT @CNT = COUNT(A.Number)
-    FROM D_InstructionDetails B
-    INNER JOIN D_Reserve A ON A.ReserveNO = B.ReserveNO
-    WHERE A.Number = @JuchuuNO
-    AND A.ReserveKBN = 1
-    AND A.DeleteDateTime IS NULL
-    AND B.DeleteDateTime IS NULL
-    ;
-
-    IF @CNT > 0 
-    BEGIN
-        SET @ERRNO = 'E160';
-        SELECT @ERRNO AS errno;
-        RETURN;
-    END;
-
-    --既にピッキングリスト完了済み警告
-    --以下の条件でレコードがあればピッキング済として警告メッセージを表示する
-    SELECT @CNT = COUNT(A.Number)
-    FROM D_PickingDetails B
-    INNER JOIN D_Reserve A ON A.ReserveNO = B.ReserveNO
-    WHERE A.Number = @JuchuuNO
-    AND A.ReserveKBN = 1
-    AND A.DeleteDateTime IS NULL
-    AND B.DeleteDateTime IS NULL
-    AND B.PickingDoneDateTime IS NOT NULL
-    ;
-
-    IF @CNT > 0 
-    BEGIN
-        SET @ERRNO = 'E161';
-        SELECT @ERRNO AS errno;
-        RETURN;
-    END;
-    
-    --既に仕入済み警告
-    --以下の条件でレコードがあれば発注済として警告メッセージを表示する
-    SELECT @CNT = COUNT(A.JuchuuNO)
-    FROM D_PurchaseDetails D
-    INNER JOIN D_ArrivalDetails C ON C.ArrivalNO = D.ArrivalNO
-    INNER JOIN D_ArrivalPlan B ON B.ArrivalPlanNO = C.ArrivalPlanNO
-    INNER JOIN D_OrderDetails A ON A.OrderNO = B.Number AND A.OrderRows = B.NumberRows
-    WHERE A.JuchuuNO = @JuchuuNO
-    AND A.DeleteDateTime IS NULL
-    AND B.DeleteDateTime IS NULL
-    AND C.DeleteDateTime IS NULL
-    AND D.DeleteDateTime IS NULL
-    ;
-
-    IF @CNT > 0 
-    BEGIN
-        SET @ERRNO = 'E164';
-        SELECT @ERRNO AS errno;
-        RETURN;
-    END;
-
-    --既に入荷済み警告
-    --以下の条件でレコードがあれば発注済として警告メッセージを表示する
-    SELECT @CNT = COUNT(A.JuchuuNO)
-    FROM D_ArrivalDetails C
-    INNER JOIN D_ArrivalPlan B ON B.ArrivalPlanNO = C.ArrivalPlanNO
-    INNER JOIN D_OrderDetails A ON A.OrderNO = B.Number AND A.OrderRows = B.NumberRows
-    WHERE A.JuchuuNO = @JuchuuNO
-    AND A.DeleteDateTime IS NULL
-    AND B.DeleteDateTime IS NULL
-    AND C.DeleteDateTime IS NULL
-    ;
-
-    IF @CNT > 0 
-    BEGIN
-        SET @ERRNO = 'E163';
-        SELECT @ERRNO AS errno;
-        RETURN;
-    END;
-
-    --既に発注済み警告
-    --以下の条件でレコードがあれば発注済として警告メッセージを表示する
-    SELECT @CNT = COUNT(A.JuchuuNO)
-    FROM D_OrderDetails A 
-    WHERE A.JuchuuNO = @JuchuuNO
-    AND A.DeleteDateTime IS NULL
-    ;
-
-    IF @CNT > 0 
-    BEGIN
-        SET @ERRNO = 'E162';
-        SELECT @ERRNO AS errno;
-        RETURN;
-    END;
-    */
+   
     SELECT @ERRNO AS errno;
-
-END
-
-GO
-
-CREATE PROCEDURE CheckJuchuDetailsData
-    (@JuchuuNO varchar(11),
-     @JuchuuRows int
-    )AS
-    
---********************************************--
---                                            --
---                 処理開始                   --
---                                            --
---********************************************--
-
-BEGIN
-    -- SET NOCOUNT ON added to prevent extra result sets from
-    -- interfering with SELECT statements.
-    SET NOCOUNT ON;
-
-    -- Insert statements for procedure here
-    DECLARE @STATUS varchar(10);
-    DECLARE @STATUS2 varchar(10);
-    DECLARE @CNT int;
-    DECLARE @FLG int;
-    DECLARE @FLG2 int;
-    
-    SET @STATUS = '';
-    SET @STATUS2 = '';
-    SET @FLG = 0;
-    SET @FLG2 = 0;
-
-    --既に仕入済み警告
-    --以下の条件でレコードがあれば発注済として警告メッセージを表示する
-    SELECT @CNT = COUNT(A.JuchuuNO)
-    FROM D_PurchaseDetails D
-    INNER JOIN D_ArrivalDetails C ON C.ArrivalNO = D.ArrivalNO
-    INNER JOIN D_ArrivalPlan B ON B.ArrivalPlanNO = C.ArrivalPlanNO
-    INNER JOIN D_OrderDetails A ON A.OrderNO = B.Number AND A.OrderRows = B.NumberRows
-    WHERE A.JuchuuNO = @JuchuuNO
-    AND A.JuchuuRows = @JuchuuRows
-    AND A.DeleteDateTime IS NULL
-    AND B.DeleteDateTime IS NULL
-    AND C.DeleteDateTime IS NULL
-    AND D.DeleteDateTime IS NULL
-    ;
-
-    IF @CNT > 0 
-    BEGIN
-        SET @STATUS = '仕入済';
-        SET @FLG = 1;
-    END;
-
-    IF @FLG = 0
-    BEGIN
-        --既に入荷済み警告
-        --以下の条件でレコードがあれば発注済として警告メッセージを表示する
-        SELECT @CNT = COUNT(A.JuchuuNO)
-        FROM D_ArrivalDetails C
-        INNER JOIN D_ArrivalPlan B ON B.ArrivalPlanNO = C.ArrivalPlanNO
-        INNER JOIN D_OrderDetails A ON A.OrderNO = B.Number AND A.OrderRows = B.NumberRows
-        WHERE A.JuchuuNO = @JuchuuNO
-        AND A.JuchuuRows = @JuchuuRows
-        AND A.DeleteDateTime IS NULL
-        AND B.DeleteDateTime IS NULL
-        AND C.DeleteDateTime IS NULL
-        ;
-
-        IF @CNT > 0 
-        BEGIN
-            SET @STATUS = '入荷済';
-            SET @FLG = 1;
-        END;
-
-        IF @FLG = 0
-        BEGIN
-            --既に発注済み警告
-            --以下の条件でレコードがあれば発注済として警告メッセージを表示する
-            SELECT @CNT = COUNT(A.JuchuuNO)
-            FROM D_OrderDetails A 
-            WHERE A.JuchuuNO = @JuchuuNO
-            AND A.JuchuuRows = @JuchuuRows
-            AND A.DeleteDateTime IS NULL
-            ;
-
-            IF @CNT > 0 
-            BEGIN
-                SET @STATUS = '発注済';
-                SET @FLG = 1;
-            END;
-        END;
-    END;
-
-    --既に売上済み警告
-    --以下の条件でレコードがあれば売上済として警告メッセージを表示する
-    SELECT @CNT = COUNT(A.JuchuuNO)
-    FROM D_SalesDetails A
-    WHERE A.JuchuuNO = @JuchuuNO
-    AND A.JuchuuRows = @JuchuuRows
-    AND A.DeleteDateTime IS NULL
-    ;
-
-    IF @CNT > 0 
-    BEGIN
-        SET @STATUS2 = '売上済';
-        SELECT @STATUS AS STATUS, @STATUS2 AS STATUS2;
-        RETURN;
-    END;
-    
-    --既に出荷済み警告
-    --以下の条件でレコードがあれば出荷済として警告メッセージを表示する
-    SELECT @CNT = COUNT(A.Number)
-    FROM D_ShippingDetails A
-    WHERE A.Number = @JuchuuNO
-    AND A.NumberRows = @JuchuuRows
-    AND A.ShippingKBN = 1
-    AND A.DeleteDateTime IS NULL
-    ;
-
-    IF @CNT > 0 
-    BEGIN
-        SET @STATUS2 = '出荷済';
-        SELECT @STATUS AS STATUS, @STATUS2 AS STATUS2;
-        RETURN;
-    END;
-
-    --既に出荷指示済み警告
-    --以下の条件でレコードがあれば出荷指示済として警告メッセージを表示する
-    SELECT @CNT = COUNT(A.Number)
-    FROM D_InstructionDetails B
-    INNER JOIN D_Reserve A ON A.ReserveNO = B.ReserveNO
-    WHERE A.Number = @JuchuuNO
-    AND A.NumberRows = @JuchuuRows
-    AND A.ReserveKBN = 1
-    AND A.DeleteDateTime IS NULL
-    AND B.DeleteDateTime IS NULL
-    ;
-
-    IF @CNT > 0 
-    BEGIN
-        SET @STATUS2 = '出荷指示済';
-        SELECT @STATUS AS STATUS, @STATUS2 AS STATUS2;
-        RETURN;
-    END;
-
-    --既にピッキングリスト完了済み警告
-    --以下の条件でレコードがあればピッキング済として警告メッセージを表示する
-    SELECT @CNT = COUNT(A.Number)
-    FROM D_PickingDetails B
-    INNER JOIN D_Reserve A ON A.ReserveNO = B.ReserveNO
-    WHERE A.Number = @JuchuuNO
-    AND A.NumberRows = @JuchuuRows
-    AND A.ReserveKBN = 1
-    AND A.DeleteDateTime IS NULL
-    AND B.DeleteDateTime IS NULL
-    AND B.PickingDoneDateTime IS NOT NULL
-    ;
-
-    IF @CNT > 0 
-    BEGIN
-        SET @STATUS2 = 'ピッキング済';
-        SELECT @STATUS AS STATUS, @STATUS2 AS STATUS2;
-        RETURN;
-    END;
-    
-    SELECT @STATUS AS STATUS, @STATUS2 AS STATUS2;
 
 END
 
@@ -1971,6 +1733,18 @@ BEGIN
               ,[DeleteDateTime]     =  @SYSDATETIME
          WHERE SalesNO = @SalesNO
          ;
+         
+        --D_SalesTran           Insert  Table転送仕様Ｌ
+        --D_SalesDetailsTran    Insert  Table転送仕様Ｍ
+        EXEC INSERT_D_SalesTran
+            @SalesNO 
+            ,3  --ProcessKBN tinyint,
+            ,1  --RecoredKBN
+            ,-1 --SIGN int,
+            ,@Operator
+            ,@SYSDATETIME
+            ,@SalesDate
+            ;
     END
     
     IF @OperateMode >= 2 --修正/削除--
