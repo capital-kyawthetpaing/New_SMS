@@ -782,7 +782,129 @@ BEGIN
          AND DBM.BillingNO = D_Billing.BillingNO
          AND DBM.SalesNO = @SalesNO
          ;
-        ;
+        --ÅEForm.êøãÅÉ{É^ÉìÅÅÅuë¶êøãÅÅvÇÃèÍçáÇÃÇ›
+        IF @@ROWCOUNT = 0 AND @BillingType = 1
+        BEGIN
+            --ì`ï[î‘çÜçÃî‘
+            EXEC Fnc_GetNumber
+                15,             --inì`ï[éÌï  15
+                @SalesDate,    --inäÓèÄì˙
+                @StoreCD,       --inìXï‹CD
+                @Operator,
+                @BillingNO OUTPUT
+                ;
+                    
+            IF ISNULL(@BillingNO,'') = ''
+            BEGIN
+                SET @W_ERR = 1;
+                RETURN @W_ERR;
+            END
+
+            --D_Billing             Insert  Tableì]ëóédólÇi
+            INSERT INTO [D_Billing]
+                   ([BillingNO]
+                   ,[BillingType]   --2019.10.23 add
+                   ,[StoreCD]
+                   ,[BillingCloseDate]
+                   ,[CollectPlanDate]
+                   ,[BillingCustomerCD]
+                   ,[ProcessingNO]
+                   ,[SumBillingHontaiGaku]
+                   ,[SumBillingHontaiGaku0]
+                   ,[SumBillingHontaiGaku8]
+                   ,[SumBillingHontaiGaku10]
+                   ,[SumBillingTax]
+                   ,[SumBillingTax8]
+                   ,[SumBillingTax10]
+                   ,[SumBillingGaku]
+                   ,[AdjustHontaiGaku8]
+                   ,[AdjustHontaiGaku10]
+                   ,[AdjustTax8]
+                   ,[AdjustTax10]
+                   ,[TotalBillingHontaiGaku]
+                   ,[TotalBillingHontaiGaku0]
+                   ,[TotalBillingHontaiGaku8]
+                   ,[TotalBillingHontaiGaku10]
+                   ,[TotalBillingTax]
+                   ,[TotalBillingTax8]
+                   ,[TotalBillingTax10]
+                   ,[BillingGaku]
+                   ,[PrintDateTime]
+                   ,[PrintStaffCD]
+                   ,[CollectDate]
+                   ,[LastCollectDate]
+                   ,[CollectStaffCD]
+                   ,[CollectGaku]
+                   ,[LastBillingGaku]
+                   ,[LastCollectGaku]
+                   ,[BillingConfirmFlg]
+                   ,[InsertOperator]
+                   ,[InsertDateTime]
+                   ,[UpdateOperator]
+                   ,[UpdateDateTime]
+                   ,[DeleteOperator]
+                   ,[DeleteDateTime])
+             SELECT
+                   @BillingNO
+                   ,1   --BillingType   2019.10.23 add
+                   ,DS.StoreCD
+                   ,CONVERT(date, @SalesDate)
+                   ,CONVERT(date, @CollectPlanDate)
+                   ,@BillingCD       --BillingCustomerCD
+                   ,NULL    --ProcessingNO
+                   ,DS.SalesHontaiGaku  --SumBillingHontaiGaku 
+                   ,DS.SalesHontaiGaku0 --SumBillingHontaiGaku0 
+                   ,DS.SalesHontaiGaku8 --SumBillingHontaiGaku8 
+                   ,DS.SalesHontaiGaku10    --SumBillingHontaiGaku10 
+                   ,DS.SalesTax --SumBillingTax 
+                   ,DS.SalesTax8    --SumBillingTax8 
+                   ,DS.SalesTax10   --SumBillingTax10 
+                   ,DS.SalesGaku    --SumBillingGaku 
+                   ,0   --AdjustHontaiGaku8 
+                   ,0   --AdjustHontaiGaku10 
+                   ,0   --AdjustTax8 
+                   ,0   --AdjustTax10 
+                   ,DS.SalesHontaiGaku        
+                   ,DS.SalesHontaiGaku0
+                   ,DS.SalesHontaiGaku8
+                   ,DS.SalesHontaiGaku10
+                   ,DS.SalesTax
+                   ,DS.SalesTax8
+                   ,DS.SalesTax10
+                   ,DS.SalesGaku
+                   ,NULL    --PrintDateTime
+                   ,NULL    --PrintStaffCD
+                   ,NULL    --CollectDate
+                   ,NULL    --LastCollectDate
+                   ,NULL    --CollectStaffCD
+                   ,0   --CollectGaku-
+                   ,0   --LastBillingGaku
+                   ,0   --LastCollectGaku 
+                   ,1   -- BillingConfirmFlg
+                   ,@Operator  
+                   ,@SYSDATETIME
+                   ,@Operator  
+                   ,@SYSDATETIME
+                   ,NULL                  
+                   ,NULL
+               FROM D_Sales AS DS
+               WHERE DS.SalesNO = @SalesNO
+               ;
+
+        END
+        ELSE IF @BillingType = 0
+        BEGIN
+             --Tableì]ëóédólÇiáAÅ@çÌèú
+             UPDATE D_Billing SET
+                   [UpdateOperator]     =  @Operator  
+                  ,[UpdateDateTime]     =  @SYSDATETIME
+                  ,[DeleteOperator]     =  @Operator  
+                  ,[DeleteDateTime]     =  @SYSDATETIME
+             FROM D_BillingDetails AS DBM
+             WHERE DBM.BillingNO = D_Billing.BillingNO
+             AND DBM.SalesNO = @SalesNO
+             ;
+        END
         
         --D_BillingDetails  Update Tableì]ëóédólÇjáAçXêV
         UPDATE D_BillingDetails SET

@@ -1549,7 +1549,7 @@ namespace UriageNyuuryoku
             else
             {
                 //このプログラムで作成された売上データで無い場合、Error 「他のプログラムで登録された伝票の為、呼び出せません。」
-                if (dt.Rows[0]["SalesEntryKBN"].ToString().Equals("1"))
+                if (!dt.Rows[0]["SalesEntryKBN"].ToString().Equals("1"))
                 {
                     bbl.ShowMessage("E247", mMesTxt);
                     Scr_Clr(1);
@@ -2493,7 +2493,25 @@ namespace UriageNyuuryoku
                 case (int)ClsGridUriage.ColNO.SalesSU:
                     if (mGrid.g_DArray[row].NotPrintFLG)
                     {
-                        if (mGrid.g_DArray[row].SalesSuu != mGrid.g_DArray[row - 1].SalesSuu)
+                        //新規時は仕入先毎にチェックする
+                        int chkRow = row;
+                        string su = "";
+                        string sircd = mGrid.g_DArray[row].VendorCD;
+                        for (int rw = row-1; rw >= 0; rw--)
+                        {
+                            if (mGrid.g_DArray[rw].VendorCD.Equals(sircd) && !mGrid.g_DArray[rw].NotPrintFLG)
+                            {
+                                chkRow = rw;
+                                su = mGrid.g_DArray[rw].SalesSuu;
+                                break;
+                            }
+                        }
+                        if(chkRow.Equals(row))
+                        {
+                            //一行目にはチェックできない
+                            mGrid.g_DArray[row].NotPrintFLG = false;
+                        }
+                        if (!mGrid.g_DArray[row].SalesSuu.Equals(su))
                         {
                             //Ｅ２１７				
                             bbl.ShowMessage("E217");
@@ -3752,6 +3770,25 @@ namespace UriageNyuuryoku
 
                     if (string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].JanCD))
                         mGrid.g_DArray[w_Row].NotPrintFLG = false;
+
+                    //新規時は仕入先毎にチェックする
+                    int chkRow = w_Row;
+                    string su = "";
+                    string sircd = mGrid.g_DArray[w_Row].VendorCD;
+                    for (int rw = w_Row - 1; rw >= 0; rw--)
+                    {
+                        if (mGrid.g_DArray[rw].VendorCD.Equals(sircd) && !mGrid.g_DArray[rw].NotPrintFLG)
+                        {
+                            chkRow = rw;
+                            su = mGrid.g_DArray[rw].SalesSuu;
+                            break;
+                        }
+                    }
+                    if (chkRow.Equals(w_Row))
+                    {
+                        //一行目にはチェックできない
+                        mGrid.g_DArray[w_Row].NotPrintFLG = false;
+                    }
                 }
 
                 //配列の内容を画面へセット
