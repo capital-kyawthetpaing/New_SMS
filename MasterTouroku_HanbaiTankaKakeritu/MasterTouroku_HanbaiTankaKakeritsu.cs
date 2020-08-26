@@ -237,10 +237,10 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
                 BrandCDCopy = ScBrandCopy.Code,
                 ExhibitionSegmentCD = ScSegment.Code,
                 ExhibitionSegmentCDCopy = ScSegmentCopy.Code,
-                LastYearTerm = cboYear.SelectedText,
-                LastYearTermCopy = cboYearCopy.SelectedText,
-                LastSeason = cboSeason.SelectedText,
-                LastSeasonCopy = cboSeasonCopy.SelectedText,
+                LastYearTerm = cboYear.SelectedValue.ToString(),
+                LastYearTermCopy = cboYearCopy.SelectedValue.ToString(),
+                LastSeason = cboSeason.SelectedValue.ToString(),
+                LastSeasonCopy = cboSeasonCopy.SelectedValue.ToString(),
                 PriceOutTaxFrom = txtPriceOutTaxFrom.Text,
                 PriceOutTaxTo = txtPriceOutTaxTo.Text,
                 ProcessMode = ModeText,
@@ -256,8 +256,8 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
         {
             mskupe = new M_SKUPrice_Entity
             {
-                TankaCD=ScTanka.Code,
-                TankaName=ScTanka.Name,
+                TankaCD = ScTanka.Code,
+                TankaName = ScTanka.LabelText,
                 TankaCDCopy=ScTankaCopy.Code,
             };
             return mskupe;
@@ -466,7 +466,7 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
         private void btnSetting_Click(object sender, EventArgs e)
         {
 
-            if (RequireCheck(new Control[] { txtFromDate, ScTanka.TxtCode }))
+            if (RequireCheck(new Control[] { txtFromDate, ScTanka.TxtCode,txtRate }))
             {
                 foreach (DataGridViewRow row in gdvHanbaiTankaKakeritsu.Rows)
                 {
