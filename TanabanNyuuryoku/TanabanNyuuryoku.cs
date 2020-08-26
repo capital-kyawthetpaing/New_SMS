@@ -117,8 +117,8 @@ namespace TanabanNyuuryoku
         /// 
         private void F11()
         {
-            //if (ErrorCheck(11))
-            //{
+            if (ErrorCheck(11))
+            {
                 dse = GetStockEntity();
                 
                 dtstorage = tnbnBL.M_Location_DataSelect(dse);
@@ -132,11 +132,11 @@ namespace TanabanNyuuryoku
                 {
                     dgvTanaban.DataSource = dtstorage;
                 }
-            //}
-            //else
-            //{
-            //    dgvTanaban.DataSource = string.Empty;
-            //}
+            }
+            else
+            {
+                dgvTanaban.DataSource = string.Empty;
+            }
         }
 
         private M_Location_Entity GetEntity()
