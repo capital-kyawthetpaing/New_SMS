@@ -565,6 +565,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     S_BodySeigyo(0, 0);
                     break;
             }
+            S_SetInit_Grid();
             Clear(pnl_Body);
             btnDisplay.Enabled = true;
             F12Enable = true;
@@ -718,7 +719,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     Clear(pnl_Header);
                     Clear(pnl_Body);
                     RadioButton1.Checked = true;
-                    //InitScr();
                     break;
                 case 3:
                     ChangeOperationMode(EOperationMode.UPDATE);
@@ -756,9 +756,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     break;
                 case 11:
                     {
-                        //F11();
-                        //this.ExecSec();
-                        //break;
                         if (OperationMode == EOperationMode.DELETE)
                         { //Ｑ１０２		
                             if (bbl.ShowMessage("Q102") != DialogResult.Yes)
@@ -1121,8 +1118,11 @@ namespace WMasterTouroku_HanbaiTankaTennic
             }
         }
         Control L_Control = null;
+        bool IsEntered = false;
         private void GridControl_Validated(object sender, EventArgs e)
         {
+            if (IsEntered)
+                return;
             Control c = sender as Control;
             if (c is CKM_TextBox ct)
             {
@@ -1147,8 +1147,11 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     if(dt.Rows.Count>0)
                     {
                         bbl.ShowMessage("E105");
-                        ct.Focus();
+                        IsEntered = true;
+                        // ct.Focus();
+                        return;
                     }
+                    IsEntered = false;
                 }
                 if (ct.Name.Contains("IMT_ENDDT_"))
                 {
@@ -1806,8 +1809,8 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 WebRate="0",
                 WebPriceWithTax="0",
                 WebPriceOutTax="0",
-                //UnitPrice= IMN_UNITPRICE_0.Text,
-                //StandardSalesUnitPrice= IMN_SSUNITPRICE_0.Text,
+                UnitPrice= IMN_UNITPRICE_0.Text,
+                StandardSalesUnitPrice= IMN_SSUNITPRICE_0.Text,
                 //Rank1UnitPrice= IMN_R1UNITPRICE_0.Text,
                 //Rank2UnitPrice= IMN_R2UNITPRICE_0.Text,
                 //Rank3UnitPrice= IMN_R3UNITPRICE_0.Text,
@@ -1850,8 +1853,8 @@ namespace WMasterTouroku_HanbaiTankaTennic
         {
             var dt = GetdatafromArray();
             string Xml = spb.DataTableToXml(dt);
-            if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
-            {
+            //if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
+            //{
                 if (spb.M_SKUPrice_Insert_Update(mse, Xml, mode))
                 {
                     spb.ShowMessage("I101");
@@ -1859,7 +1862,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     Clear(pnl_Body);
                     ChangeOperationMode(OperationMode);
                 }
-            }
+            //}
             else
             {
                 spb.ShowMessage("S001");
