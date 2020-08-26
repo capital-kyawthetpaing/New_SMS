@@ -565,6 +565,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     S_BodySeigyo(0, 0);
                     break;
             }
+            S_SetInit_Grid();
             Clear(pnl_Body);
             btnDisplay.Enabled = true;
             F12Enable = true;
