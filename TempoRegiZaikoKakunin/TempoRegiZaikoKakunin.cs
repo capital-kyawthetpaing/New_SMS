@@ -115,7 +115,50 @@ namespace TempoRegiZaikoKakunin
 
         private void btnInquery_Click(object sender, EventArgs e)
         {
-            SelectData();
+            //SelectData();
+            if (!string.IsNullOrWhiteSpace(txtJanCD.Text))
+            {
+                DataTable dtSKU = SelectSKUData(txtJanCD.Text);
+                if (dtSKU.Rows.Count > 0)
+                {
+
+                    if (dtSKU.Rows.Count == 1)
+                    {
+                        txtJanCD.Text = dtSKU.Rows[0]["JanCD"].ToString();
+                        lblItemName.Text = dtSKU.Rows[0]["SKUName"].ToString();
+                        lblColorSize.Text = dtSKU.Rows[0]["ColorName"].ToString() + " . " + dtSKU.Rows[0]["SizeName"].ToString();
+                        lblColorSize.Visible = true;
+                        lblItemName.Visible = true;
+                    }
+                    else
+                    {
+
+                        frmSearch_SKU frmsku = new frmSearch_SKU(txtJanCD.Text, dtSKU);
+                        frmsku.ShowDialog();
+                        if (!frmsku.flgCancel)
+                        {
+                            lblItemName.Text = frmsku.SKUName;
+                            lblColorSize.Text = frmsku.SizeColorName;
+                            lblColorSize.Visible = true;
+                            lblItemName.Visible = true;
+                        }
+                    }
+                    SelectData();
+                }
+                else
+                {
+                    zaikobl.ShowMessage("E101");
+                    txtJanCD.Focus();
+                }
+            }
+            else
+            {
+                zaikobl.ShowMessage("E102");
+                lblItemName.Text = string.Empty;
+                lblColorSize.Text = string.Empty;
+                txtJanCD.Focus();
+
+            }
         }
 
         private void SelectData()
@@ -127,7 +170,16 @@ namespace TempoRegiZaikoKakunin
                 kne.Operator = InOperatorCD;
                 DataTable dt = new DataTable();
                 dt = zaikobl.D_Stock_DataSelect(kne);
-                dgvZaikokakunin.DataSource = dt;               
+                if(dt.Rows.Count > 0)
+                {
+                    dgvZaikokakunin.DataSource = dt;
+                }
+                else
+                {
+                    zaikobl.ShowMessage("E128");
+                    txtJanCD.Focus();
+                }
+                          
             }
         }
         private void txtJanCD_KeyDown(object sender, KeyEventArgs e)
