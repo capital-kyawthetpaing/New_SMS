@@ -279,8 +279,8 @@
             this.ExchangeDenomination.ComboAlign = CKM_Controls.CKMShop_ComboBox.Align.right;
             this.ExchangeDenomination.Ctrl_Byte = CKM_Controls.CKMShop_ComboBox.Bytes.半全角;
             this.ExchangeDenomination.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ExchangeDenomination.Font = new System.Drawing.Font("MS Gothic", 28F);
-            this.ExchangeDenomination.FontSize_ = 28F;
+            this.ExchangeDenomination.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.ExchangeDenomination.FontSize_ = 26F;
             this.ExchangeDenomination.FormattingEnabled = true;
             this.ExchangeDenomination.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ExchangeDenomination.ItemHeight = 38;
