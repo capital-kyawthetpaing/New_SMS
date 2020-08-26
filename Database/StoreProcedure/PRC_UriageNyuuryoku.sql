@@ -1157,7 +1157,7 @@ BEGIN
                        ,[UpdateOperator]
                        ,[UpdateDateTime])
                  SELECT @PurchaseNO                         
-                       ,ROW_NUMBER() OVER(ORDER BY tbl.SalesRows) AS PurchaseRows                       
+                       ,ROW_NUMBER() OVER(PARTITION BY tbl.VendorCD ORDER BY tbl.SalesRows) AS PurchaseRows                       
                        ,tbl.DisplayRows 
                        ,NULL    --ArrivalNO   
                        ,tbl.SKUCD
@@ -1383,7 +1383,7 @@ BEGIN
                    ,0       --DeliveryNoteFLG, tinyint,>
                    ,0       --BillingPrintFLG, tinyint,>
                    ,@PurchaseNO
-				   ,ROW_NUMBER() OVER(ORDER BY tbl.SalesRows) AS PurchaseRows
+				   ,ROW_NUMBER() OVER(PARTITION BY tbl.VendorCD ORDER BY tbl.SalesRows) AS PurchaseRows
                    ,@Operator
                    ,@SYSDATETIME
                    ,@Operator
