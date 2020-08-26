@@ -1176,7 +1176,7 @@ namespace UriageNyuuryoku
                 {
                     //前の行をコピーしてできた新しい行
                     mGrid.g_DArray[i].PurchaseNO = "";
-                    mGrid.g_DArray[i].BillingNo = "";
+                    //mGrid.g_DArray[i].BillingNo = "";
                     mGrid.g_DArray[i].salesGyoNO = 0;
                     mGrid.g_DArray[i].copyJuchuGyoNO = 0;
                 }
@@ -1548,6 +1548,15 @@ namespace UriageNyuuryoku
             }
             else
             {
+                //このプログラムで作成された売上データで無い場合、Error 「他のプログラムで登録された伝票の為、呼び出せません。」
+                if (dt.Rows[0]["SalesEntryKBN"].ToString().Equals("1"))
+                {
+                    bbl.ShowMessage("E247", mMesTxt);
+                    Scr_Clr(1);
+                    previousCtrl.Focus();
+                    return false;
+                }
+
                 //DeleteDateTime 「削除された売上番号」
                 if (!string.IsNullOrWhiteSpace(dt.Rows[0]["DeleteDateTime"].ToString()))
                 {
@@ -1565,56 +1574,36 @@ namespace UriageNyuuryoku
                     previousCtrl.Focus();
                     return false;
                 }
-                //店舗の締日チェック
-                //店舗締マスターで判断
-                M_StoreClose_Entity mste = new M_StoreClose_Entity
-                {
-                    StoreCD = dt.Rows[0]["StoreCD"].ToString(),
-                    FiscalYYYYMM = dt.Rows[0]["SalesDate"].ToString().Replace("/", "").Substring(0, 6)
-                };
-                bool ret = bbl.CheckStoreClose(mste, true, true, false, false, true);
-                if (!ret)
-                {
-                    return false;
-                }
+
+                bool ret;
                 if (index == (int)EIndex.SalesNO)
                 {
-                    //進捗チェック　既に入金消込済みの場合、エラー
-                    ret = mubl.CheckSalesData(dse.SalesNO, out string errno, (short)mTennic);
+                    //店舗の締日チェック
+                    //店舗締マスターで判断
+                    M_StoreClose_Entity mste = new M_StoreClose_Entity
+                    {
+                        StoreCD = dt.Rows[0]["StoreCD"].ToString(),
+                        FiscalYYYYMM = dt.Rows[0]["SalesDate"].ToString().Replace("/", "").Substring(0, 6)
+                    };
+                    ret = bbl.CheckStoreClose(mste, true, true, false, false, true);
+                    if (!ret)
+                    {
+                        return false;
+                    }
+
+                    dse.PurchaseNO = dt.Rows[0]["PurchaseNO"].ToString();
+                    dse.StoreCD = dt.Rows[0]["StoreCD"].ToString();
+
+                    //進捗チェック　既に入金消込済みの場合、エラーＥ２４６
+                    ret = mubl.CheckSalesData(dse, out string errno, (short)mTennic);
                     if (ret)
                     {
                         if (!string.IsNullOrWhiteSpace(errno))
                         {
                             //警告メッセージを表示する
                             bbl.ShowMessage(errno);
-
-                            //E165：売上済み
-                            if (errno.Equals("E165"))
-                            {
-                                lblDisp.Text = "売上済";
-                            }
                         }
                     }
-                    //【削除モードの時】
-                    //出荷済・売上済の明細を含んだ売上は、そのものの削除を不可
-                    if (OperationMode==EOperationMode.DELETE)
-                    {
-                        //E159:出荷済み、E165：売上済み
-                        if ( errno.Equals("E165"))
-                        {
-                            //売上済明細が存在するので、その売上データの削除も許さない
-                            bbl.ShowMessage("E168");
-                            previousCtrl.Focus();
-                            return false;
-                        }else if(errno.Equals("E159"))
-                        {
-                            //出荷済明細が存在するので、その売上データの削除も許さない
-                            bbl.ShowMessage("E167");
-                            previousCtrl.Focus();
-                            return false;
-                        }
-                    }
-
                 }
 
                 //画面セットなしの場合、処理正常終了
@@ -1629,7 +1618,6 @@ namespace UriageNyuuryoku
                 dtForUpdate.Columns.Add("kbn", Type.GetType("System.String"));
                 dtForUpdate.Columns.Add("no", Type.GetType("System.String"));
 
-                //bool ret;
 
                 //排他処理
                 foreach (DataRow row in dt.Rows)
@@ -2450,7 +2438,6 @@ namespace UriageNyuuryoku
 
                         if (ret)
                         {
-
                             //支払予定日←Fnc_PlanDateよりout予定日をSet
                             Fnc_PlanDate_Entity fpe = new Fnc_PlanDate_Entity();
                             fpe.KaisyuShiharaiKbn = "1";    // "1";1：支払		

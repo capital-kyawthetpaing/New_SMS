@@ -45,53 +45,24 @@ namespace BL
         /// 進捗チェック　
         /// 既に入金消込済みの場合、エラー
         /// </summary>
-        /// <param name="juchuNo"></param>
+        /// <param name="dse"></param>
         /// <param name="errno"></param>
         /// <returns></returns>
-        public bool CheckSalesData(string juchuNo, out string errno, short tennic = 0)
+        public bool CheckSalesData(D_Sales_Entity dse, out string errno, short tennic = 0)
         {
             bool ret = false;
             errno = "";
 
-            if (tennic.Equals(1))
-            {
-                //DataTable dt = dsdl.GetJuchuuNO(juchuNo);
-                //foreach (DataRow row in dt.Rows)
-                //{
-                //    ret = CheckSalesData(row["JuchuuNo"].ToString(), out errno);
-                //    if (!ret)
-                //        return ret;
-                //}
-            }
-            else
-            {
-                return CheckSalesData(juchuNo, out errno);
-            }
+            DataTable dt = dsdl.CheckSalesData(dse);
 
+            if (dt.Rows.Count > 0)
+            {
+                errno = dt.Rows[0]["errno"].ToString();
+                ret = true;
+            }
             return ret;
         }
-        /// <summary>
-        /// 進捗チェック　
-        /// 既に入金消込済みの場合、エラー
-        /// </summary>
-        /// <param name="juchuNo"></param>
-        /// <param name="errno"></param>
-        /// <returns></returns>
-        public bool CheckSalesData(string juchuNo, out string errno)
-        {
-            //DataTable dt = dsdl.CheckSalesData(juchuNo);
 
-            bool ret = false;
-            errno = "";
-
-            //if (dt.Rows.Count>0)
-            //{
-            //    errno = dt.Rows[0]["errno"].ToString();
-            //    ret = true;
-            //}
-            
-            return ret;
-        }
         /// <summary>
         /// 締処理済の場合（以下のSelectができる場合）Error
         /// </summary>
