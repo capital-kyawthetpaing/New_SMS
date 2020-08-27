@@ -131,7 +131,7 @@ namespace CKM_Controls
         private TextBox txt1 = null;
 
         public bool MoveNext { get; set; } = true;
-
+        public bool UseColorSizMode { get; set; } = false;
         Base_BL bbl;
 
         private CKM_Color BackGroundColor { get; set; }
@@ -353,6 +353,10 @@ namespace CKM_Controls
                         ShowErrorMessage("E102");
                         return;
                     }
+                    else if (UseColorSizMode && !string.IsNullOrWhiteSpace(Text))
+                    {
+                        Text = GetVal(Text);
+                    }
                     else if (CtrlType == Type.Date && !DateCheck())
                         return;
                     else if (CtrlType == Type.Number && !NumberCheck())
@@ -398,7 +402,7 @@ namespace CKM_Controls
                     }
                     base.OnKeyDown(e);
                 }
-
+               
                 else if (!string.IsNullOrWhiteSpace(txt.Text))
                 {
                     if (IsRequire && string.IsNullOrWhiteSpace(Text))
@@ -447,6 +451,47 @@ namespace CKM_Controls
 
             else
                 base.OnKeyDown(e);
+        }
+        private string GetVal(string val)
+        {
+            int t = 0;
+            try
+            {
+                t = Convert.ToInt32(val);
+            }
+            catch
+            {
+
+            }
+            if (t == 0)
+            {
+                bbl.ShowMessage("PLease enter the correct size or color no. . . ");
+                this.Focus();
+                //return;
+            }
+            return GetPad(t);
+        }
+        private int GetInt(string val)
+        {
+            if (!string.IsNullOrWhiteSpace(val))
+            {
+                try
+                {
+                    return Convert.ToInt32(val);
+                }
+                catch {
+                    return Convert.ToInt32(0);
+                }
+            }
+            return 0;
+        }
+        private string GetPad(int val)
+        {
+            if (val != 0)
+            {
+                return val.ToString().PadLeft(4, '0');
+            }
+            return "0001";
         }
         protected void Control_Check()
         {
