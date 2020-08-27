@@ -307,6 +307,7 @@ namespace DL
             AddParam(command, "@OperateMode", SqlDbType.Int, operationMode.ToString());
             AddParam(command, "@SalesNO", SqlDbType.VarChar, de.SalesNO);
             AddParam(command, "@PurchaseNO", SqlDbType.VarChar, de.PurchaseNO);
+            AddParam(command, "@BillingNO", SqlDbType.VarChar, de.BillingNO);
             AddParam(command, "@StoreCD", SqlDbType.VarChar, de.StoreCD);
             AddParam(command, "@SalesDate", SqlDbType.VarChar, de.SalesDate);
             AddParam(command, "@BillingType", SqlDbType.TinyInt, de.BillingType);

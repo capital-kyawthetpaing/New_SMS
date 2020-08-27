@@ -832,7 +832,7 @@ namespace UriageNyuuryoku
                                 {
                                     switch (w_Col)
                                     {
-
+                                        case (int)ClsGridUriage.ColNO.JanCD:
                                         case (int)ClsGridUriage.ColNO.SalesSU:    // 
                                         case (int)ClsGridUriage.ColNO.SalesUnitPrice:    // 
                                         case (int)ClsGridUriage.ColNO.CommentOutStore:    // 
@@ -844,7 +844,6 @@ namespace UriageNyuuryoku
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
                                                 break;
                                             }
-                                        case (int)ClsGridUriage.ColNO.JanCD:
                                         case (int)ClsGridUriage.ColNO.SKUName:    // 
                                         case (int)ClsGridUriage.ColNO.ColorName:    // 
                                         case (int)ClsGridUriage.ColNO.SizeName:
@@ -981,16 +980,16 @@ namespace UriageNyuuryoku
                         switch (w_Col)
                         {
                             case (int)ClsGridUriage.ColNO.JanCD:
-                                if (mGrid.g_DArray[pRow].salesGyoNO == 0)
-                                {
+                                //if (mGrid.g_DArray[pRow].salesGyoNO == 0)
+                                //{
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
-                                }
-                                else
-                                {
-                                    mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
-                                    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
-                                }
+                                //}
+                                //else
+                                //{
+                                //    mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                                //    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
+                                //}
                                 break;
 
                             case (int)ClsGridUriage.ColNO.SalesSU:
@@ -1549,7 +1548,7 @@ namespace UriageNyuuryoku
             else
             {
                 //このプログラムで作成された売上データで無い場合、Error 「他のプログラムで登録された伝票の為、呼び出せません。」
-                if (dt.Rows[0]["SalesEntryKBN"].ToString().Equals("1"))
+                if (!dt.Rows[0]["SalesEntryKBN"].ToString().Equals("1"))
                 {
                     bbl.ShowMessage("E247", mMesTxt);
                     Scr_Clr(1);
@@ -1788,6 +1787,15 @@ namespace UriageNyuuryoku
                     mGrid.g_DArray[i].OrderGaku = bbl.Z_SetStr(row["D_PurchaseGaku"]);   // 
 
                     CalcZei(i);
+
+                    if (mGrid.g_DArray[i].TaxRateFLG == 1)
+                    {
+                        mGrid.g_DArray[i].JuchuTax = bbl.Z_Set(row["D_SalesTax"]);
+                    }
+                    else if (mGrid.g_DArray[i].TaxRateFLG == 2)
+                    {
+                        mGrid.g_DArray[i].KeigenTax = bbl.Z_Set(row["D_SalesTax"]);
+                    }
 
                     //mGrid.g_DArray[i].TaniName = bbl.Z_SetStr(row["TaniName"]);   // CheckGridでセット
                     mGrid.g_DArray[i].CommentInStore = row["CommentInStore"].ToString();   // 
@@ -2493,7 +2501,25 @@ namespace UriageNyuuryoku
                 case (int)ClsGridUriage.ColNO.SalesSU:
                     if (mGrid.g_DArray[row].NotPrintFLG)
                     {
-                        if (mGrid.g_DArray[row].SalesSuu != mGrid.g_DArray[row - 1].SalesSuu)
+                        //新規時は仕入先毎にチェックする
+                        int chkRow = row;
+                        string su = "";
+                        string sircd = mGrid.g_DArray[row].VendorCD;
+                        for (int rw = row-1; rw >= 0; rw--)
+                        {
+                            if (mGrid.g_DArray[rw].VendorCD.Equals(sircd) && !mGrid.g_DArray[rw].NotPrintFLG)
+                            {
+                                chkRow = rw;
+                                su = mGrid.g_DArray[rw].SalesSuu;
+                                break;
+                            }
+                        }
+                        if(chkRow.Equals(row))
+                        {
+                            //一行目にはチェックできない
+                            mGrid.g_DArray[row].NotPrintFLG = false;
+                        }
+                        if (!mGrid.g_DArray[row].SalesSuu.Equals(su))
                         {
                             //Ｅ２１７				
                             bbl.ShowMessage("E217");
@@ -2982,7 +3008,7 @@ namespace UriageNyuuryoku
             dse = new D_Sales_Entity();
             dse.SalesNO = keyControls[(int)EIndex.SalesNO].Text;
             dse.PurchaseNO = mOldPurchaseNO;
-            //dse.BillingNO = mOldBillingNo;
+            dse.BillingNO = mOldBillingNo;
             dse.BillingCD = mBillingCD;
             dse.CollectPlanDate = mCollectPlanDate;
             dse.PaymentPlanDate = mPaymentPlanDate;
@@ -3752,6 +3778,25 @@ namespace UriageNyuuryoku
 
                     if (string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].JanCD))
                         mGrid.g_DArray[w_Row].NotPrintFLG = false;
+
+                    //新規時は仕入先毎にチェックする
+                    int chkRow = w_Row;
+                    string su = "";
+                    string sircd = mGrid.g_DArray[w_Row].VendorCD;
+                    for (int rw = w_Row - 1; rw >= 0; rw--)
+                    {
+                        if (mGrid.g_DArray[rw].VendorCD.Equals(sircd) && !mGrid.g_DArray[rw].NotPrintFLG)
+                        {
+                            chkRow = rw;
+                            su = mGrid.g_DArray[rw].SalesSuu;
+                            break;
+                        }
+                    }
+                    if (chkRow.Equals(w_Row))
+                    {
+                        //一行目にはチェックできない
+                        mGrid.g_DArray[w_Row].NotPrintFLG = false;
+                    }
                 }
 
                 //配列の内容を画面へセット

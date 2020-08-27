@@ -257,6 +257,7 @@ CREATE PROCEDURE PRC_UriageNyuuryoku
     (@OperateMode    int,                 -- ˆ—‹æ•ªi1:V‹K 2:C³ 3:íœj
     @SalesNO   varchar(11),
     @PurchaseNO  varchar(11),
+    @BillingNO  varchar(11),
     @StoreCD   varchar(4),
     @SalesDate  varchar(10),
     @BillingType tinyint ,
@@ -301,7 +302,7 @@ BEGIN
     DECLARE @OperateModeNm varchar(10);
     DECLARE @KeyItem varchar(100);
     --DECLARE @PurchaseNO varchar(11);
-    DECLARE @BillingNO  varchar(11);
+    --DECLARE @BillingNO  varchar(11);
     DECLARE @Program varchar(20);
     DECLARE @Tennic tinyint;
     
@@ -434,7 +435,7 @@ BEGIN
                ,[UpdateOperator]
                ,[UpdateDateTime])
          SELECT @PurchaseNO                         
-               ,ROW_NUMBER() OVER(ORDER BY tbl.SalesRows) AS PurchaseRows                       
+               ,tbl.SalesRows AS PurchaseRows                       
                ,tbl.DisplayRows 
                ,NULL    --ArrivalNO   
                ,tbl.SKUCD
@@ -626,7 +627,7 @@ BEGIN
            ,[DeleteDateTime])
         SELECT
             @SalesNO
-           ,ROW_NUMBER() OVER(ORDER BY tbl.SalesRows) AS SalesRows
+           ,tbl.SalesRows
            ,NULL AS JuchuuNO
            ,0 AS JuchuuRows
            ,tbl.NotPrintFLG
@@ -665,8 +666,6 @@ BEGIN
            ,NULL --DeleteDateTime
         FROM @Table tbl
         WHERE tbl.UpdateFlg = 0
-        AND tbl.VendorCD = @tblVendorCD
-        --AND (@Tennic = 0  OR (@Tennic = 1 AND tbl.DisplayRows = @DisplayRows))  --š
         ;
           
         --síœ•ª
@@ -738,6 +737,63 @@ BEGIN
         AND D_CollectPlanDetails.DeleteDateTime IS NULL
         ;
 
+		--s’Ç‰Á•ª
+        --D_CollectPlanDetails  Insert  Table“]‘—Žd—l‚h
+        INSERT INTO [D_CollectPlanDetails]
+           ([CollectPlanNO]
+           ,[CollectPlanRows]
+           ,[SalesNO]
+           ,[SalesRows]
+           ,[JuchuuNO]
+           ,[JuchuuRows]
+           ,[JuchuuKBN]
+           ,[HontaiGaku]
+           ,[Tax]
+           ,[CollectPlanGaku]
+           ,[TaxRitsu]
+           ,[FirstCollectPlanDate]
+           ,[PaymentProgressKBN]
+           ,[BillingPrintFLG]
+           ,[AdjustTax]
+           ,[InsertOperator]
+           ,[InsertDateTime]
+           ,[UpdateOperator]
+           ,[UpdateDateTime]
+           ,[DeleteOperator]
+           ,[DeleteDateTime])
+        SELECT
+           (SELECT top 1 DH.CollectPlanNO 
+            FROM D_CollectPlan AS DH
+            WHERE DH.SalesNO = @SalesNO
+            ORDER BY CollectPlanNO desc)
+           ,DSM.SalesRows   --CollectPlanRows
+           ,DSM.SalesNO
+           ,DSM.SalesRows
+           ,DSM.JuchuuNO
+           ,DSM.JuchuuRows
+           ,3 AS JuchuuKBN	--3:“X•ÜŠO¤
+           ,DSM.SalesHontaiGaku --HontaiGaku
+           ,DSM.SalesTax    --Tax
+           ,DSM.SalesGaku   --CollectPlanGaku
+           ,DSM.SalesTaxRitsu   --TaxRitsu
+           ,CONVERT(date, @CollectPlanDate)
+           ,0   --PaymentProgressKBN
+           ,0   --BillingPrintFLG
+           ,0   --AdjustTax
+           ,@Operator
+           ,@SYSDATETIME
+           ,@Operator
+           ,@SYSDATETIME
+           ,NULL --DeleteOperator
+           ,NULL --DeleteDateTime
+       FROM D_SalesDetails AS DSM
+       INNER JOIN @Table AS tbl
+       ON tbl.SalesRows = DSM.SalesRows
+       WHERE DSM.SalesNO = @SalesNO
+       AND DSM.DeleteDateTime IS NULL
+       AND tbl.UpdateFlg = 0
+       ;
+		
         --síœ•ª
         --‰ñŽû—\’è–¾×
         UPDATE D_CollectPlanDetails SET
@@ -782,7 +838,129 @@ BEGIN
          AND DBM.BillingNO = D_Billing.BillingNO
          AND DBM.SalesNO = @SalesNO
          ;
-        ;
+        --EForm.¿‹ƒ{ƒ^ƒ“u‘¦¿‹v‚Ìê‡‚Ì‚Ý
+        IF @@ROWCOUNT = 0 AND @BillingType = 1
+        BEGIN
+            --“`•[”Ô†Ì”Ô
+            EXEC Fnc_GetNumber
+                15,             --in“`•[Ží•Ê 15
+                @SalesDate,    --inŠî€“ú
+                @StoreCD,       --in“X•ÜCD
+                @Operator,
+                @BillingNO OUTPUT
+                ;
+                    
+            IF ISNULL(@BillingNO,'') = ''
+            BEGIN
+                SET @W_ERR = 1;
+                RETURN @W_ERR;
+            END
+
+            --D_Billing             Insert  Table“]‘—Žd—l‚i
+            INSERT INTO [D_Billing]
+                   ([BillingNO]
+                   ,[BillingType]   --2019.10.23 add
+                   ,[StoreCD]
+                   ,[BillingCloseDate]
+                   ,[CollectPlanDate]
+                   ,[BillingCustomerCD]
+                   ,[ProcessingNO]
+                   ,[SumBillingHontaiGaku]
+                   ,[SumBillingHontaiGaku0]
+                   ,[SumBillingHontaiGaku8]
+                   ,[SumBillingHontaiGaku10]
+                   ,[SumBillingTax]
+                   ,[SumBillingTax8]
+                   ,[SumBillingTax10]
+                   ,[SumBillingGaku]
+                   ,[AdjustHontaiGaku8]
+                   ,[AdjustHontaiGaku10]
+                   ,[AdjustTax8]
+                   ,[AdjustTax10]
+                   ,[TotalBillingHontaiGaku]
+                   ,[TotalBillingHontaiGaku0]
+                   ,[TotalBillingHontaiGaku8]
+                   ,[TotalBillingHontaiGaku10]
+                   ,[TotalBillingTax]
+                   ,[TotalBillingTax8]
+                   ,[TotalBillingTax10]
+                   ,[BillingGaku]
+                   ,[PrintDateTime]
+                   ,[PrintStaffCD]
+                   ,[CollectDate]
+                   ,[LastCollectDate]
+                   ,[CollectStaffCD]
+                   ,[CollectGaku]
+                   ,[LastBillingGaku]
+                   ,[LastCollectGaku]
+                   ,[BillingConfirmFlg]
+                   ,[InsertOperator]
+                   ,[InsertDateTime]
+                   ,[UpdateOperator]
+                   ,[UpdateDateTime]
+                   ,[DeleteOperator]
+                   ,[DeleteDateTime])
+             SELECT
+                   @BillingNO
+                   ,1   --BillingType   2019.10.23 add
+                   ,DS.StoreCD
+                   ,CONVERT(date, @SalesDate)
+                   ,CONVERT(date, @CollectPlanDate)
+                   ,@BillingCD       --BillingCustomerCD
+                   ,NULL    --ProcessingNO
+                   ,DS.SalesHontaiGaku  --SumBillingHontaiGaku 
+                   ,DS.SalesHontaiGaku0 --SumBillingHontaiGaku0 
+                   ,DS.SalesHontaiGaku8 --SumBillingHontaiGaku8 
+                   ,DS.SalesHontaiGaku10    --SumBillingHontaiGaku10 
+                   ,DS.SalesTax --SumBillingTax 
+                   ,DS.SalesTax8    --SumBillingTax8 
+                   ,DS.SalesTax10   --SumBillingTax10 
+                   ,DS.SalesGaku    --SumBillingGaku 
+                   ,0   --AdjustHontaiGaku8 
+                   ,0   --AdjustHontaiGaku10 
+                   ,0   --AdjustTax8 
+                   ,0   --AdjustTax10 
+                   ,DS.SalesHontaiGaku        
+                   ,DS.SalesHontaiGaku0
+                   ,DS.SalesHontaiGaku8
+                   ,DS.SalesHontaiGaku10
+                   ,DS.SalesTax
+                   ,DS.SalesTax8
+                   ,DS.SalesTax10
+                   ,DS.SalesGaku
+                   ,NULL    --PrintDateTime
+                   ,NULL    --PrintStaffCD
+                   ,NULL    --CollectDate
+                   ,NULL    --LastCollectDate
+                   ,NULL    --CollectStaffCD
+                   ,0   --CollectGaku-
+                   ,0   --LastBillingGaku
+                   ,0   --LastCollectGaku 
+                   ,1   -- BillingConfirmFlg
+                   ,@Operator  
+                   ,@SYSDATETIME
+                   ,@Operator  
+                   ,@SYSDATETIME
+                   ,NULL                  
+                   ,NULL
+               FROM D_Sales AS DS
+               WHERE DS.SalesNO = @SalesNO
+               ;
+
+        END
+        ELSE IF @BillingType = 0
+        BEGIN
+             --Table“]‘—Žd—l‚i‡A@íœ
+             UPDATE D_Billing SET
+                   [UpdateOperator]     =  @Operator  
+                  ,[UpdateDateTime]     =  @SYSDATETIME
+                  ,[DeleteOperator]     =  @Operator  
+                  ,[DeleteDateTime]     =  @SYSDATETIME
+             FROM D_BillingDetails AS DBM
+             WHERE DBM.BillingNO = D_Billing.BillingNO
+             AND DBM.SalesNO = @SalesNO
+             ;
+        END
         
         --D_BillingDetails  Update Table“]‘—Žd—l‚j‡AXV
         UPDATE D_BillingDetails SET
@@ -814,6 +992,73 @@ BEGIN
         AND D_BillingDetails.DeleteDateTime IS NULL
         ;
 
+        --s’Ç‰Á•ª
+        --D_BillingDetails      Insert  Table“]‘—Žd—l‚j
+        INSERT INTO [D_BillingDetails]
+           ([BillingNO]
+           ,[BillingType]   --2019.10.23 add
+           ,[BillingRows]
+           ,[StoreCD]
+           ,[BillingCloseDate]
+           ,[CustomerCD]
+           ,[SalesNO]
+           ,[SalesRows]
+           ,[CollectPlanNO]
+           ,[CollectPlanRows]
+           ,[BillingHontaiGaku]
+           ,[BillingTax]
+           ,[BillingGaku]
+           ,[TaxRitsu]
+           ,[InvoiceFLG]
+           ,[InsertOperator]
+           ,[InsertDateTime]
+           ,[UpdateOperator]
+           ,[UpdateDateTime]
+           ,[DeleteOperator]
+           ,[DeleteDateTime])
+     SELECT
+           @BillingNO
+           ,1   --BillingType   2019.10.23 add
+           ,DSM.SalesRows AS BillingRows
+           ,DS.StoreCD
+           ,CONVERT(date, @SalesDate) AS BillingCloseDate
+           ,DS.CustomerCD
+           ,DSM.SalesNO
+           ,DSM.SalesRows 
+           ,DM.CollectPlanNO 
+           ,DM.CollectPlanRows 
+           ,DSM.SalesHontaiGaku 
+           ,DSM.SalesTax 
+           ,DSM.SalesGaku   --CollectPlanGaku 
+           ,DSM.SalesTaxRitsu 
+           ,0   --InvoiceFLG 
+           ,@Operator  
+           ,@SYSDATETIME
+           ,@Operator  
+           ,@SYSDATETIME
+           ,NULL                  
+           ,NULL
+           
+        FROM D_SalesDetails AS DSM
+        INNER JOIN @Table AS tbl
+        ON tbl.SalesRows = DSM.SalesRows
+       
+        LEFT OUTER JOIN D_CollectPlanDetails AS DM
+        ON DM.SalesNO = DSM.SalesNO
+        AND DM.SalesRows = DSM.SalesRows
+        AND DM.DeleteDateTime IS Null
+        
+        LEFT OUTER JOIN D_Sales AS DS
+        ON DS.SalesNO = DSM.SalesNO
+        AND DS.DeleteDateTime IS Null
+
+        WHERE DSM.SalesNO = @SalesNO    
+        AND DSM.DeleteDateTime IS Null             
+        AND tbl.UpdateFlg = 0
+        ;
+
+		
+		
         --síœ•ª
          --¿‹–¾×
          --Table“]‘—Žd—l‚j‡A@íœ
@@ -1035,7 +1280,7 @@ BEGIN
                        ,[UpdateOperator]
                        ,[UpdateDateTime])
                  SELECT @PurchaseNO                         
-                       ,ROW_NUMBER() OVER(ORDER BY tbl.SalesRows) AS PurchaseRows                       
+                       ,ROW_NUMBER() OVER(PARTITION BY tbl.VendorCD ORDER BY tbl.SalesRows) AS PurchaseRows                       
                        ,tbl.DisplayRows 
                        ,NULL    --ArrivalNO   
                        ,tbl.SKUCD
@@ -1261,7 +1506,7 @@ BEGIN
                    ,0       --DeliveryNoteFLG, tinyint,>
                    ,0       --BillingPrintFLG, tinyint,>
                    ,@PurchaseNO
-				   ,ROW_NUMBER() OVER(ORDER BY tbl.SalesRows) AS PurchaseRows
+				   ,ROW_NUMBER() OVER(PARTITION BY tbl.VendorCD ORDER BY tbl.SalesRows) AS PurchaseRows
                    ,@Operator
                    ,@SYSDATETIME
                    ,@Operator
@@ -1526,8 +1771,8 @@ BEGIN
                        WHERE DS.SalesNO = @SalesNO
                        ;
 
-	                --D_BillingDetails      Insert  Table“]‘—Žd—l‚j
-	                INSERT INTO [D_BillingDetails]
+                    --D_BillingDetails      Insert  Table“]‘—Žd—l‚j
+                    INSERT INTO [D_BillingDetails]
                        ([BillingNO]
                        ,[BillingType]   --2019.10.23 add
                        ,[BillingRows]
