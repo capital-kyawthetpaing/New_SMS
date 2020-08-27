@@ -8,6 +8,7 @@ namespace Entity
 {
     public class M_SKUPrice_Entity : Base_Entity
     {
+        public string DisplayKBN { get; set; }
         public string TankaCD {get;set;}
         public string StoreCD { get; set; }
         public string AdminNO { get; set; }
@@ -50,5 +51,9 @@ namespace Entity
         public string ItemTo { get; set; }
         public string BrandCD { get; set; }
         public string ITemName { get; set; }
+
+        //HanbaiTankaKakeritu Entity
+        public string TankaCDCopy { get; set; }
+        public string TankaName { get; set; }
     }
 }

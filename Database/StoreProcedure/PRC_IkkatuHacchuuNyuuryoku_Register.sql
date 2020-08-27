@@ -1,15 +1,17 @@
+USE [CapitalSMS]
+GO
 
-
-/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]    Script Date: 2020/08/05 14:02:45 ******/
+/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]    Script Date: 2020/08/18 14:00:11 ******/
 DROP PROCEDURE [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]
 GO
 
-/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]    Script Date: 2020/08/05 14:02:45 ******/
+/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]    Script Date: 2020/08/18 14:00:11 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER OFF
 GO
+
 
 
 CREATE PROCEDURE [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register](
@@ -435,7 +437,7 @@ IF @p_OperateMode = 1
               ,ApprovalStageFLG    
               ,FirstPrintDate    
               ,LastPrintDate    
-              ,ArrivePlanDate
+              ,ArrivalPlanDate
               ,InsertOperator    
               ,InsertDateTime    
               ,UpdateOperator    

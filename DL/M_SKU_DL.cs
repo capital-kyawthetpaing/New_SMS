@@ -296,6 +296,32 @@ namespace DL
             };
             return SelectData(dic, "M_SKU_SelectForSKSMasterUpdate");
         }
+
+        public DataTable M_SKUDataForHanbaiTankaKakeritu(M_SKU_Entity mskue, M_SKUPrice_Entity mskupe,string option)
+        {
+            string sp = "M_SKUSelectDataForHanbaiTankaKakeritu";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@StartDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mskue.ChangeDate } },
+                { "@EndDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mskue.EndDate } },
+                { "@DateCopy", new ValuePair { value1 = SqlDbType.VarChar, value2 = mskue.DateCopy } },
+                { "@TankaCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mskupe.TankaCD } },
+                { "@TankaName", new ValuePair { value1 = SqlDbType.VarChar, value2 = mskupe.TankaName } },
+                { "@TankaCDCopy", new ValuePair { value1 = SqlDbType.VarChar, value2 = mskupe.TankaCDCopy } },
+                { "@BrandCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mskue.BrandCD } },
+                { "@BrandCDCopy", new ValuePair { value1 = SqlDbType.VarChar, value2 = mskue.BrandCDCopy } },
+                { "@ExhibitionSegmentCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mskue.ExhibitionSegmentCD } },
+                { "@ExhibitionSegmentCDCopy", new ValuePair { value1 = SqlDbType.VarChar, value2 = mskue.ExhibitionSegmentCDCopy } },
+                { "@LastYearTerm", new ValuePair { value1 = SqlDbType.VarChar, value2 = mskue.LastYearTerm } },
+                { "@LastYearTermCopy", new ValuePair { value1 = SqlDbType.VarChar, value2 = mskue.LastYearTermCopy } },
+                { "@LastSeason", new ValuePair { value1 = SqlDbType.VarChar, value2 = mskue.LastSeason } },
+                { "@LastSeasonCopy", new ValuePair { value1 = SqlDbType.VarChar, value2 = mskue.LastSeasonCopy } },
+                { "@PriceOutTaxFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = mskue.PriceOutTaxFrom } },
+                { "@PriceOutTaxTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = mskue.PriceOutTaxTo } },
+                { "@Option", new ValuePair { value1 = SqlDbType.VarChar, value2 =option } },
+            };
+            return SelectData(dic, sp);
+        }
     }
 
 }

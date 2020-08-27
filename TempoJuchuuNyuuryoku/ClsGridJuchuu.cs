@@ -74,6 +74,8 @@ namespace TempoJuchuuNyuuryoku
             internal string MakerItem;
             internal string JuchuuNO;
             internal string OldShippingPlanDate;
+            internal string DesiredDeliveryDate;
+
         }
 
         //列番号定数

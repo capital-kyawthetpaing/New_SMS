@@ -65,10 +65,13 @@ BEGIN
           ,DM.PurchaserUnitPrice
           ,DM.PurchaserUnitPrice - DM.EvaluationPrice AS PurchaserSagakuPrice
           ,DM.PurchaseGaku
+          ,ISNULL(DPM.PurchaseTax,0) AS PurchaseTax
           ,DM.InsertOperator
           ,Format(DM.InsertDateTime, 'yyyy/MM/dd HH:mm:ss') AS InsertDateTime
       FROM D_MarkDown DH
      INNER JOIN D_MarkDownDetails DM ON DH.MarkDownNO = DM.MarkDownNO
+     LEFT JOIN D_PurchaseDetails DPM ON DM.PurchaseNO = DPM.PurchaseNO
+                                    AND DM.PurchaseRows = DPM.PurchaseRows
      WHERE DH.MarkDownNO = @MarkDownNO
      ORDER BY DM.MarkDownRows
      ;
@@ -327,7 +330,8 @@ BEGIN
             ELSE
             BEGIN
                 UPDATE D_PayPlan
-                   SET [RecordedDate] = @PurchaseDate
+                   SET [PayeeCD] = @PayeeCD
+                      ,[RecordedDate] = @PurchaseDate
                       ,[PayPlanDate] = @PaymentPlanDate
                       ,[HontaiGaku8] = @HontaiGaku8
                       ,[HontaiGaku10] = @HontaiGaku10

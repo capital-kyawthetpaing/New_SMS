@@ -26,7 +26,6 @@ namespace BL
         {
             return mdl.D_Juchu_SelectAllForShoukai(de, mse, operatorNm, pc);
         }
-
         /// <summary>
         /// 受注検索にて使用
         /// </summary>
@@ -36,6 +35,10 @@ namespace BL
         public DataTable D_Juchu_SelectAll(D_Juchuu_Entity de, M_SKU_Entity mse)
         {
             return mdl.D_Juchu_SelectAll(de, mse);
+        }
+        public DataTable D_Juchu_SelectAllForSearch_JuchuuProcessNO(D_Juchuu_Entity de, M_SKU_Entity mse)
+        {
+            return mdl.D_Juchu_SelectAllForSearch_JuchuuProcessNO(de, mse);
         }
     }
 }

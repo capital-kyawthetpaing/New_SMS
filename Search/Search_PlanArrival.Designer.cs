@@ -38,11 +38,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LB_SizeName = new CKM_Controls.CKM_Label();
             this.GV_PlanArrival = new CKM_Controls.CKM_GridView();
-            this.入荷予定 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.倉庫 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.入荷数量 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.発注番号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.引当数量 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LB_Skucd = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.LB_Brand = new CKM_Controls.CKM_Label();
@@ -60,6 +55,11 @@
             this.TB_SizeName = new System.Windows.Forms.Label();
             this.TB_ColorName = new System.Windows.Forms.Label();
             this.TB_Shohinmei = new System.Windows.Forms.Label();
+            this.入荷予定 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.倉庫 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.入荷数量 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.発注番号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.引当数量 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_PlanArrival)).BeginInit();
             this.SuspendLayout();
@@ -164,57 +164,6 @@
             this.GV_PlanArrival.TabIndex = 761;
             this.GV_PlanArrival.UseRowNo = true;
             this.GV_PlanArrival.UseSetting = false;
-            // 
-            // 入荷予定
-            // 
-            this.入荷予定.DataPropertyName = "ArrivalPlanDate";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.入荷予定.DefaultCellStyle = dataGridViewCellStyle3;
-            this.入荷予定.HeaderText = "入荷予定";
-            this.入荷予定.Name = "入荷予定";
-            this.入荷予定.ReadOnly = true;
-            // 
-            // 倉庫
-            // 
-            this.倉庫.DataPropertyName = "SoukoName";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.倉庫.DefaultCellStyle = dataGridViewCellStyle4;
-            this.倉庫.HeaderText = "倉庫";
-            this.倉庫.Name = "倉庫";
-            this.倉庫.ReadOnly = true;
-            this.倉庫.Width = 176;
-            // 
-            // 入荷数量
-            // 
-            this.入荷数量.DataPropertyName = "ArrivalPlanSu";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N0";
-            dataGridViewCellStyle5.NullValue = null;
-            this.入荷数量.DefaultCellStyle = dataGridViewCellStyle5;
-            this.入荷数量.HeaderText = "入荷数量";
-            this.入荷数量.Name = "入荷数量";
-            this.入荷数量.ReadOnly = true;
-            // 
-            // 発注番号
-            // 
-            this.発注番号.DataPropertyName = "Number";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.発注番号.DefaultCellStyle = dataGridViewCellStyle6;
-            this.発注番号.HeaderText = "発注番号";
-            this.発注番号.Name = "発注番号";
-            this.発注番号.ReadOnly = true;
-            this.発注番号.Width = 120;
-            // 
-            // 引当数量
-            // 
-            this.引当数量.DataPropertyName = "AllowableSU";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "N0";
-            dataGridViewCellStyle7.NullValue = null;
-            this.引当数量.DefaultCellStyle = dataGridViewCellStyle7;
-            this.引当数量.HeaderText = "引当数量";
-            this.引当数量.Name = "引当数量";
-            this.引当数量.ReadOnly = true;
             // 
             // LB_Skucd
             // 
@@ -454,6 +403,57 @@
             this.TB_Shohinmei.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.TB_Shohinmei.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // 入荷予定
+            // 
+            this.入荷予定.DataPropertyName = "ArrivalPlanDate";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.入荷予定.DefaultCellStyle = dataGridViewCellStyle3;
+            this.入荷予定.HeaderText = "入荷予定日";
+            this.入荷予定.Name = "入荷予定";
+            this.入荷予定.ReadOnly = true;
+            // 
+            // 倉庫
+            // 
+            this.倉庫.DataPropertyName = "SoukoName";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.倉庫.DefaultCellStyle = dataGridViewCellStyle4;
+            this.倉庫.HeaderText = "倉庫";
+            this.倉庫.Name = "倉庫";
+            this.倉庫.ReadOnly = true;
+            this.倉庫.Width = 176;
+            // 
+            // 入荷数量
+            // 
+            this.入荷数量.DataPropertyName = "ArrivalPlanSu";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N0";
+            dataGridViewCellStyle5.NullValue = null;
+            this.入荷数量.DefaultCellStyle = dataGridViewCellStyle5;
+            this.入荷数量.HeaderText = "入荷予定";
+            this.入荷数量.Name = "入荷数量";
+            this.入荷数量.ReadOnly = true;
+            // 
+            // 発注番号
+            // 
+            this.発注番号.DataPropertyName = "Number";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.発注番号.DefaultCellStyle = dataGridViewCellStyle6;
+            this.発注番号.HeaderText = "発注番号";
+            this.発注番号.Name = "発注番号";
+            this.発注番号.ReadOnly = true;
+            this.発注番号.Width = 120;
+            // 
+            // 引当数量
+            // 
+            this.引当数量.DataPropertyName = "AllowableSU";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N0";
+            dataGridViewCellStyle7.NullValue = null;
+            this.引当数量.DefaultCellStyle = dataGridViewCellStyle7;
+            this.引当数量.HeaderText = "引当可能";
+            this.引当数量.Name = "引当数量";
+            this.引当数量.ReadOnly = true;
+            // 
             // Search_PlanArrival
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -488,11 +488,6 @@
         private CKM_Controls.CKM_Label LBLSoko;
         private CKM_Controls.CKM_ComboBox CB_Soko;
         private CKM_Controls.CKM_Label ckM_Label7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 入荷予定;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 倉庫;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 入荷数量;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 発注番号;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 引当数量;
         private System.Windows.Forms.Label TB_Jancd;
         private System.Windows.Forms.Label TB_Shohinmei;
         private System.Windows.Forms.Label TB_ColorName;
@@ -501,5 +496,10 @@
         private System.Windows.Forms.Label TB_Skucd;
         private System.Windows.Forms.Label TB_Brand;
         private System.Windows.Forms.Label TB_makerCD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 入荷予定;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 倉庫;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 入荷数量;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 発注番号;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 引当数量;
     }
 }

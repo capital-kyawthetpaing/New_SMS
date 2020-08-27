@@ -21,20 +21,24 @@ namespace BL
         {
             return mdl.M_SKUPrice_Select(mie);
         }
-        public bool M_SKUPrice_Insert_Update(M_SKUPrice_Entity mse,int mode)
+        public bool M_SKUPrice_Insert_Update(M_SKUPrice_Entity mse,string Xml,int mode)
         {
-            return mdl.M_SKUPrice_Insert_Update(mse, mode);
+            return mdl.M_SKUPrice_Insert_Update(mse,Xml,mode);
         }
-        public bool M_SKUPrice_Delete(M_SKUPrice_Entity mse)
-        {
-            return mdl.M_SKUPrice_Delete(mse);
-        }
+        //public bool M_SKUPrice_Update(M_SKUPrice_Entity mse, string updateXml)
+        //{
+        //    return mdl.M_SKUPrice_Update(mse, updateXml);
+        //}
+       
         //ses
-        public DataTable M_SKUPrice_HanbaiTankaTennic_Select(M_SKUPrice_Entity mse,M_SKU_Entity ms)
+        public DataTable M_SKUPrice_HanbaiTankaTennic_Select(M_SKUPrice_Entity mse,M_SKU_Entity ms, short operationMode)
         {
-            return mdl.M_SKUPrice_HnabaiTankaTennic_Select(mse, ms);
+            return mdl.M_SKUPrice_HnabaiTankaTennic_Select(mse, ms,operationMode);
         }
-        
+        public DataTable M_SKUPrice_SelectData(M_SKUPrice_Entity mse)
+        {
+            return mdl.M_SKUPrice_DataSelect(mse);
+        }
         /// </summary>
         /// <param name="me"></param>
         /// <returns></returns>

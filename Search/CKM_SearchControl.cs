@@ -224,6 +224,7 @@ namespace Search
             単価設定,
             見積番号,
             受注番号,
+            受注処理番号,
             発注番号,
             発注処理番号, //2020.07.05 add
             売上番号,
@@ -477,6 +478,7 @@ namespace Search
                     lblName.Width = 600;
                     break;
                 case SearchType.受注番号:
+                case SearchType.受注処理番号:
                     txtCode.MaxLength = 11;
                     txtCode.Width = 100;
                     lblName.Width = 600;
@@ -1175,7 +1177,7 @@ namespace Search
                         }
                     }
                     break;
-                case SearchType.受注番号:   //Todo:変更。受注番号検索が未作成
+                case SearchType.受注番号:   
                     using (Search_JuchuuNO frmJuchuu = new Search_JuchuuNO(changedate))
                     {
                         frmJuchuu.OperatorCD = Value1;
@@ -1185,6 +1187,22 @@ namespace Search
                         if (!frmJuchuu.flgCancel)
                         {
                             txtCode.Text = frmJuchuu.JuchuuNO;
+                            txtChangeDate.Text = frmJuchuu.ChangeDate;
+                            CheckBasedFormPanel(); //Added by PTK
+
+                        }
+                    }
+                    break;
+                case SearchType.受注処理番号:
+                    using (Search_JuchuuProcessNO frmJuchuu = new Search_JuchuuProcessNO(changedate))
+                    {
+                        frmJuchuu.OperatorCD = Value1;
+                        frmJuchuu.AllAvailableStores = Value2;
+                        frmJuchuu.ShowDialog();
+
+                        if (!frmJuchuu.flgCancel)
+                        {
+                            txtCode.Text = frmJuchuu.JuchuuProcessNO;
                             txtChangeDate.Text = frmJuchuu.ChangeDate;
                             CheckBasedFormPanel(); //Added by PTK
 
@@ -1525,7 +1543,7 @@ namespace Search
                     }
                     break;
                 case SearchType.ID:
-                    using (Search_ID frmID = new Search_ID())
+                    using (Search_ID frmID = new Search_ID()) 
                     {
                         frmID.ShowDialog();
                         if (!frmID.flgCancel)
@@ -1892,36 +1910,15 @@ namespace Search
                 {
                     case SearchType.倉庫:
                         dtResult = bbl.SimpleSelect1("2", TxtChangeDate.Text.Replace("/", "-"), TxtCode.Text);
-                        //FieldsName = "1";
-                        //TableName = "M_Souko";
-                        //Condition = "SoukoCD = '" + TxtCode.Text + "' and " +
-                        //           "ChangeDate <= '" + (string.IsNullOrWhiteSpace(TxtChangeDate.Text) ? DateTime.Now.ToString("yyyy/MM/dd") : TxtChangeDate.Text.Replace("/", "-")) + "'";
-                        //dtResult = bbl.SimpleSelect(FieldsName, TableName, Condition);
                         break;
                     case SearchType.銀行口座:
                         dtResult = bbl.SimpleSelect1("6", TxtChangeDate.Text.Replace("/", "-"), TxtCode.Text);
-                        //FieldsName = "1";
-                        //TableName = "M_Kouza";
-                        //Condition = "KouzaCD = '" + TxtCode.Text + "' and " +
-                        //           "ChangeDate <= '" + (string.IsNullOrWhiteSpace(TxtChangeDate.Text) ? DateTime.Now.ToString("yyyy/MM/dd") : TxtChangeDate.Text.Replace("/", "-")) + "'";
-                        //dtResult = bbl.SimpleSelect(FieldsName, TableName, Condition);
                         break;
                     case SearchType.銀行:
                         dtResult = bbl.SimpleSelect1("4", TxtChangeDate.Text.Replace("/", "-"), TxtCode.Text);
-                        //FieldsName = "1";
-                        //TableName = "M_Bank";
-                        //Condition = "BankCD = '" + TxtCode.Text + "' and " +
-                        //           "ChangeDate <= '" + (string.IsNullOrWhiteSpace(TxtChangeDate.Text) ? DateTime.Now.ToString("yyyy/MM/dd") : TxtChangeDate.Text.Replace("/", "-")) + "'";
-                        //dtResult = bbl.SimpleSelect(FieldsName, TableName, Condition);
                         break;
                     case SearchType.銀行支店:
                         dtResult = bbl.SimpleSelect1("8", TxtChangeDate.Text.Replace("/", "-"), TxtCode.Text, Value1);
-                        //FieldsName = "1";
-                        //TableName = "M_BankShiten";
-                        //Condition = "BranchCD = '" + TxtCode.Text + "' and " + "BankCD = '" + Value1 + "'and " +
-                        //           "ChangeDate <= '" + (string.IsNullOrWhiteSpace(TxtChangeDate.Text) ? DateTime.Now.ToString("yyyy/MM/dd") : TxtChangeDate.Text.Replace("/", "-")) + "'";
-
-                        //dtResult = bbl.SimpleSelect(FieldsName, TableName, Condition);
                         break;
                     case SearchType.仕入先:
                         dtResult = bbl.SimpleSelect1("28", TxtChangeDate.Text.Replace("/", "-"), TxtCode.Text);
@@ -1970,6 +1967,9 @@ namespace Search
                         break;
                     case SearchType.MakerItem:
                         dtResult = bbl.SimpleSelect1("69", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        break;
+                    case SearchType.単価設定:
+                        dtResult = bbl.SimpleSelect1("72", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
                 }
 
@@ -2069,7 +2069,10 @@ namespace Search
                 case SearchType.SKU_ITEM_CD:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 15, txtCode.Text, Value1);
                     break;
-              
+                case SearchType.単価設定:
+                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 16, txtCode.Text, Value1);
+                    break;
+
             }
             if (dtResult.Rows.Count > 0)
             {
