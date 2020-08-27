@@ -190,6 +190,7 @@ BEGIN
             
             AND DC.PaymentProgressKBN = 0
             AND ISNULL(DBC.ProcessingKBN,0) <> 3
+            AND DH.SalesEntryKBN = 0	--2020.08.27 add
 
         ORDER BY DH.SalesNO, DM.SalesRows
         ;
