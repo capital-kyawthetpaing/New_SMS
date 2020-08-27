@@ -832,7 +832,7 @@ namespace UriageNyuuryoku
                                 {
                                     switch (w_Col)
                                     {
-
+                                        case (int)ClsGridUriage.ColNO.JanCD:
                                         case (int)ClsGridUriage.ColNO.SalesSU:    // 
                                         case (int)ClsGridUriage.ColNO.SalesUnitPrice:    // 
                                         case (int)ClsGridUriage.ColNO.CommentOutStore:    // 
@@ -844,7 +844,6 @@ namespace UriageNyuuryoku
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
                                                 break;
                                             }
-                                        case (int)ClsGridUriage.ColNO.JanCD:
                                         case (int)ClsGridUriage.ColNO.SKUName:    // 
                                         case (int)ClsGridUriage.ColNO.ColorName:    // 
                                         case (int)ClsGridUriage.ColNO.SizeName:
@@ -981,16 +980,16 @@ namespace UriageNyuuryoku
                         switch (w_Col)
                         {
                             case (int)ClsGridUriage.ColNO.JanCD:
-                                if (mGrid.g_DArray[pRow].salesGyoNO == 0)
-                                {
+                                //if (mGrid.g_DArray[pRow].salesGyoNO == 0)
+                                //{
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
-                                }
-                                else
-                                {
-                                    mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
-                                    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
-                                }
+                                //}
+                                //else
+                                //{
+                                //    mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                                //    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
+                                //}
                                 break;
 
                             case (int)ClsGridUriage.ColNO.SalesSU:
@@ -1788,6 +1787,15 @@ namespace UriageNyuuryoku
                     mGrid.g_DArray[i].OrderGaku = bbl.Z_SetStr(row["D_PurchaseGaku"]);   // 
 
                     CalcZei(i);
+
+                    if (mGrid.g_DArray[i].TaxRateFLG == 1)
+                    {
+                        mGrid.g_DArray[i].JuchuTax = bbl.Z_Set(row["D_SalesTax"]);
+                    }
+                    else if (mGrid.g_DArray[i].TaxRateFLG == 2)
+                    {
+                        mGrid.g_DArray[i].KeigenTax = bbl.Z_Set(row["D_SalesTax"]);
+                    }
 
                     //mGrid.g_DArray[i].TaniName = bbl.Z_SetStr(row["TaniName"]);   // CheckGridでセット
                     mGrid.g_DArray[i].CommentInStore = row["CommentInStore"].ToString();   // 
@@ -3000,7 +3008,7 @@ namespace UriageNyuuryoku
             dse = new D_Sales_Entity();
             dse.SalesNO = keyControls[(int)EIndex.SalesNO].Text;
             dse.PurchaseNO = mOldPurchaseNO;
-            //dse.BillingNO = mOldBillingNo;
+            dse.BillingNO = mOldBillingNo;
             dse.BillingCD = mBillingCD;
             dse.CollectPlanDate = mCollectPlanDate;
             dse.PaymentPlanDate = mPaymentPlanDate;
