@@ -1151,7 +1151,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                         //// ct.Focus();
                         return;
                     }
-                    IsEntered = false;
+                    //IsEntered = false;
                 }
                 if (ct.Name.Contains("IMT_ENDDT_"))
                 {
