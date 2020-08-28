@@ -98,7 +98,7 @@ namespace TempoRegiRyougaeNyuuryoku
                 DepositKBN1 = "5",
                 CancelKBN = "0",
                 RecoredKBN = "0",
-                DenominationCD = "",
+                DenominationCD = "1",
                 Rows = "0",
                 SalesSU = "0",
                 SalesUnitPrice = "0",

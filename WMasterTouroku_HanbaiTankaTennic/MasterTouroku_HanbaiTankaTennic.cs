@@ -1148,7 +1148,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     {
                         bbl.ShowMessage("E105");
                         IsEntered = true;
-                        // ct.Focus();
+                        //// ct.Focus();
                         return;
                     }
                     IsEntered = false;
