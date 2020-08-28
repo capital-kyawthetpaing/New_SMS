@@ -1940,6 +1940,10 @@ namespace KaitouNoukiTouroku
 
                         UpdateRows++;
                     }
+                    else if(mGrid.g_DArray[RW].Update != 0)
+                    {
+                        UpdateRows++;
+                    }
                 }
             }
 
