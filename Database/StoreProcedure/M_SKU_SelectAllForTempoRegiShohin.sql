@@ -93,6 +93,7 @@ BEGIN
           ,MS.UpdateOperator
           ,CONVERT(varchar,MS.UpdateDateTime) AS UpdateDateTime
           ,MB.BrandKana
+          ,MB.BrandName
 
     from F_SKU(@ChangeDate) MS
     /*INNER JOIN(SELECT M.AdminNO, MAX(M.ChangeDate) AS ChangeDate
