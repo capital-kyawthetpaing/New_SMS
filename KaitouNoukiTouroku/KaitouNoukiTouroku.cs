@@ -1701,6 +1701,7 @@ namespace KaitouNoukiTouroku
 
                 OrderNoFrom = detailControls[(int)EIndex.OrderNOFrom].Text,
                 OrderNoTo = detailControls[(int)EIndex.OrderNOTo].Text,
+                EDIDate = detailControls[(int)EIndex.Edi].Text,
                 ArrivalPlanCD = CboArrivalPlanCD.SelectedIndex > 0 ? CboArrivalPlanCD.SelectedValue.ToString() : ""
             };
 
