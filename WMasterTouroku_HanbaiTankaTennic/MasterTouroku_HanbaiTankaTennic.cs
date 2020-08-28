@@ -1148,10 +1148,10 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     {
                         bbl.ShowMessage("E105");
                         IsEntered = true;
-                        // ct.Focus();
+                        //// ct.Focus();
                         return;
                     }
-                    IsEntered = false;
+                    //IsEntered = false;
                 }
                 if (ct.Name.Contains("IMT_ENDDT_"))
                 {

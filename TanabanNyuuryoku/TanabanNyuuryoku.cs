@@ -221,7 +221,7 @@ namespace TanabanNyuuryoku
                 }
 
                 if(!string.IsNullOrWhiteSpace (ScStorage.TxtCode.Text))
-                {
+                { 
                     mle.SoukoCD = cboWarehouse.SelectedValue.ToString();
                     mle.TanaCD = ScStorage.TxtCode.Text;
                     DataTable dtLocation = new DataTable();
@@ -476,6 +476,7 @@ namespace TanabanNyuuryoku
                             if (!string.IsNullOrWhiteSpace(ScStorage.TxtCode.Text))
                             {
                                 row.Cells[dgvTanaban.Columns["colRackNo1"].Index].Value = sl.TanaCD;
+                               
                             }
                         }
                     }
@@ -495,15 +496,18 @@ namespace TanabanNyuuryoku
                 if (!string.IsNullOrWhiteSpace(ScStorage.TxtCode.Text))
                 {
                     mle = new M_Location_Entity();
-                    zibl = new ZaikoIdouNyuuryoku_BL();
+                    tnbnBL = new TanabanNyuuryoku_BL();
 
-                    mle = GetSearchInfo();
-                    DataTable dt = zibl.M_Location_SelectAll(mle);
-                    if (dt.Rows.Count<=0)
+                    mle.SoukoCD = cboWarehouse.SelectedValue.ToString();
+                    mle.TanaCD = ScStorage.TxtCode.Text;
+                    DataTable dtLocation = new DataTable();
+                    dtLocation = tnbnBL.M_LocationTana_Select(mle);
+                    if (dtLocation.Rows.Count == 0)
                     {
-                        bbl.ShowMessage("E101");
-                        ScStorage.SetFocus(1);
+                        tnbnBL.ShowMessage("E101");
+                        ScStorage.SetFocus(1);                     
                     }
+
                 }
             }
         }
@@ -515,8 +519,27 @@ namespace TanabanNyuuryoku
             {
                 ChangeDate =ymd,
                 SoukoCD = cboWarehouse.SelectedValue.ToString().Equals("-1") ? string.Empty : cboWarehouse.SelectedValue.ToString(),
+                TanaCD = ScStorage.TxtCode.Text,
             };
             return mle;
+        }
+
+        private void dgvTanaban_KeyDown(object sender, KeyEventArgs e)
+        {
+            //if (e.KeyCode == Keys.Enter)
+            //{
+            //    mle = new M_Location_Entity();
+            //    zibl = new ZaikoIdouNyuuryoku_BL();
+            //    mle.SoukoCD = cboWarehouse.SelectedValue.ToString();
+            //    mle.TanaCD = dgvTanaban.Columns["colRackNo1"].ToString();
+            //    DataTable dtLocation = new DataTable();
+            //    dtLocation = tnbnBL.M_LocationTana_Select(mle);
+            //    if (dtLocation.Rows.Count == 0)
+            //    {
+            //        tnbnBL.ShowMessage("E101");
+            //        ScStorage.SetFocus(1);
+            //    }
+            //}
         }
         //private void CheckRowAdd(DataGridViewRow row)
         //{
