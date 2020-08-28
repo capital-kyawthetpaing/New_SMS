@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -227,6 +228,7 @@
             this.TB_RackNoF.AllowMinus = false;
             this.TB_RackNoF.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_RackNoF.BackColor = System.Drawing.Color.White;
+            this.TB_RackNoF.BorderColor = false;
             this.TB_RackNoF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_RackNoF.ClientColor = System.Drawing.Color.White;
             this.TB_RackNoF.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -272,6 +274,7 @@
             this.TB_RackNoT.AllowMinus = false;
             this.TB_RackNoT.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_RackNoT.BackColor = System.Drawing.Color.White;
+            this.TB_RackNoT.BorderColor = false;
             this.TB_RackNoT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_RackNoT.ClientColor = System.Drawing.Color.White;
             this.TB_RackNoT.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -305,7 +308,7 @@
             this.ckM_LB_Shiiresaki.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_Shiiresaki.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_Shiiresaki.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_Shiiresaki.Location = new System.Drawing.Point(84, 40);
+            this.ckM_LB_Shiiresaki.Location = new System.Drawing.Point(85, 40);
             this.ckM_LB_Shiiresaki.Name = "ckM_LB_Shiiresaki";
             this.ckM_LB_Shiiresaki.Size = new System.Drawing.Size(44, 12);
             this.ckM_LB_Shiiresaki.TabIndex = 11;
@@ -322,11 +325,11 @@
             this.ckM_LB_meka.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_meka.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_meka.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_meka.Location = new System.Drawing.Point(73, 85);
+            this.ckM_LB_meka.Location = new System.Drawing.Point(33, 85);
             this.ckM_LB_meka.Name = "ckM_LB_meka";
-            this.ckM_LB_meka.Size = new System.Drawing.Size(57, 12);
+            this.ckM_LB_meka.Size = new System.Drawing.Size(96, 12);
             this.ckM_LB_meka.TabIndex = 12;
-            this.ckM_LB_meka.Text = "メーカー";
+            this.ckM_LB_meka.Text = "メーカー在庫数";
             this.ckM_LB_meka.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_LB_meka.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -339,7 +342,7 @@
             this.ckM_LB_brand.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_brand.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_brand.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_brand.Location = new System.Drawing.Point(73, 110);
+            this.ckM_LB_brand.Location = new System.Drawing.Point(72, 110);
             this.ckM_LB_brand.Name = "ckM_LB_brand";
             this.ckM_LB_brand.Size = new System.Drawing.Size(57, 12);
             this.ckM_LB_brand.TabIndex = 13;
@@ -369,6 +372,7 @@
             this.TB_Shohinmei.AllowMinus = false;
             this.TB_Shohinmei.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_Shohinmei.BackColor = System.Drawing.Color.White;
+            this.TB_Shohinmei.BorderColor = false;
             this.TB_Shohinmei.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_Shohinmei.ClientColor = System.Drawing.Color.White;
             this.TB_Shohinmei.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -413,6 +417,7 @@
             this.TB_Bikokeyword.AllowMinus = false;
             this.TB_Bikokeyword.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_Bikokeyword.BackColor = System.Drawing.Color.White;
+            this.TB_Bikokeyword.BorderColor = false;
             this.TB_Bikokeyword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_Bikokeyword.ClientColor = System.Drawing.Color.White;
             this.TB_Bikokeyword.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -861,6 +866,7 @@
             this.TB_mekashohinCD.AllowMinus = false;
             this.TB_mekashohinCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_mekashohinCD.BackColor = System.Drawing.Color.White;
+            this.TB_mekashohinCD.BorderColor = false;
             this.TB_mekashohinCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_mekashohinCD.ClientColor = System.Drawing.Color.White;
             this.TB_mekashohinCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -905,6 +911,7 @@
             this.TB_item.AllowMinus = false;
             this.TB_item.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_item.BackColor = System.Drawing.Color.White;
+            this.TB_item.BorderColor = false;
             this.TB_item.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_item.ClientColor = System.Drawing.Color.White;
             this.TB_item.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -990,6 +997,7 @@
             this.TB_ShoninbiT.AllowMinus = false;
             this.TB_ShoninbiT.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_ShoninbiT.BackColor = System.Drawing.Color.White;
+            this.TB_ShoninbiT.BorderColor = false;
             this.TB_ShoninbiT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_ShoninbiT.ClientColor = System.Drawing.Color.White;
             this.TB_ShoninbiT.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1036,6 +1044,7 @@
             this.TB_SaiShuhenkobiT.AllowMinus = false;
             this.TB_SaiShuhenkobiT.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_SaiShuhenkobiT.BackColor = System.Drawing.Color.White;
+            this.TB_SaiShuhenkobiT.BorderColor = false;
             this.TB_SaiShuhenkobiT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_SaiShuhenkobiT.ClientColor = System.Drawing.Color.White;
             this.TB_SaiShuhenkobiT.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1081,6 +1090,7 @@
             this.TＢ_SaiShuhenkobiF.AllowMinus = false;
             this.TＢ_SaiShuhenkobiF.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TＢ_SaiShuhenkobiF.BackColor = System.Drawing.Color.White;
+            this.TＢ_SaiShuhenkobiF.BorderColor = false;
             this.TＢ_SaiShuhenkobiF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TＢ_SaiShuhenkobiF.ClientColor = System.Drawing.Color.White;
             this.TＢ_SaiShuhenkobiF.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1126,6 +1136,7 @@
             this.TB_ShinkitorokuT.AllowMinus = false;
             this.TB_ShinkitorokuT.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_ShinkitorokuT.BackColor = System.Drawing.Color.White;
+            this.TB_ShinkitorokuT.BorderColor = false;
             this.TB_ShinkitorokuT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_ShinkitorokuT.ClientColor = System.Drawing.Color.White;
             this.TB_ShinkitorokuT.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1155,6 +1166,7 @@
             this.TB_ShinkitorokuF.AllowMinus = false;
             this.TB_ShinkitorokuF.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_ShinkitorokuF.BackColor = System.Drawing.Color.White;
+            this.TB_ShinkitorokuF.BorderColor = false;
             this.TB_ShinkitorokuF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_ShinkitorokuF.ClientColor = System.Drawing.Color.White;
             this.TB_ShinkitorokuF.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1484,7 +1496,7 @@
             this.GV_Zaiko.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1513,6 +1525,14 @@
             this.基準在庫,
             this.販売定価,
             this.標準原価});
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GV_Zaiko.DefaultCellStyle = dataGridViewCellStyle11;
             this.GV_Zaiko.EnableHeadersVisualStyles = false;
             this.GV_Zaiko.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_Zaiko.Location = new System.Drawing.Point(46, 438);
@@ -1752,6 +1772,7 @@
             this.TB_ShoninbiF.AllowMinus = false;
             this.TB_ShoninbiF.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_ShoninbiF.BackColor = System.Drawing.Color.White;
+            this.TB_ShoninbiF.BorderColor = false;
             this.TB_ShoninbiF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_ShoninbiF.ClientColor = System.Drawing.Color.White;
             this.TB_ShoninbiF.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1980,6 +2001,7 @@
             this.TB_Shijishobengo.AllowMinus = false;
             this.TB_Shijishobengo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_Shijishobengo.BackColor = System.Drawing.Color.White;
+            this.TB_Shijishobengo.BorderColor = false;
             this.TB_Shijishobengo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_Shijishobengo.ClientColor = System.Drawing.SystemColors.Window;
             this.TB_Shijishobengo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -2007,6 +2029,7 @@
             this.TB_Catalog.AllowMinus = false;
             this.TB_Catalog.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_Catalog.BackColor = System.Drawing.Color.White;
+            this.TB_Catalog.BorderColor = false;
             this.TB_Catalog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_Catalog.ClientColor = System.Drawing.SystemColors.Window;
             this.TB_Catalog.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -2045,7 +2068,7 @@
             this.SearchBrand.IsCopy = false;
             this.SearchBrand.LabelText = "";
             this.SearchBrand.LabelVisible = true;
-            this.SearchBrand.Location = new System.Drawing.Point(133, 101);
+            this.SearchBrand.Location = new System.Drawing.Point(132, 101);
             this.SearchBrand.Margin = new System.Windows.Forms.Padding(0);
             this.SearchBrand.Name = "SearchBrand";
             this.SearchBrand.NameWidth = 280;
