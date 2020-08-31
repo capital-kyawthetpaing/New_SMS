@@ -81,47 +81,48 @@ namespace SaikenKanriHyou
         {
             if (ErrorCheck())
             {
-
-                M_StoreCheck();//exeRun
-
                 dtCSV = new DataTable();
                 dtCSV = CheckData();
-                dtCSV.Columns["CustomerCD"].ColumnName = "顧客CD";
-
-                if (dtCSV == null) return;
-
-                try
+                if (dtCSV.Rows.Count > 0)
                 {
-                    DialogResult DResult;
-                    DResult = bbl.ShowMessage("Q203");
-                    if (DResult == DialogResult.Yes)
+                    M_StoreCheck();//exeRun
+                    dtCSV.Columns["CustomerCD"].ColumnName = "顧客CD";
+
+                    //if (dtCSV == null) return;
+
+                    try
                     {
-                        ////LoacalDirectory
-                        string folderPath = "C:\\CSV\\";
-                        if (!Directory.Exists(folderPath))
+                        DialogResult DResult;
+                        DResult = bbl.ShowMessage("Q203");
+                        if (DResult == DialogResult.Yes)
                         {
-                            Directory.CreateDirectory(folderPath);
-                        }
-                        SaveFileDialog savedialog = new SaveFileDialog();
-                        savedialog.Filter = "CSV|*.csv";
-                        savedialog.Title = "Save";
-                        savedialog.FileName = "債権管理表";
-                        savedialog.InitialDirectory = folderPath;
-                        savedialog.RestoreDirectory = true;
-                        if (savedialog.ShowDialog() == DialogResult.OK)
-                        {
-                            if (Path.GetExtension(savedialog.FileName).Contains("csv"))
+                            ////LoacalDirectory
+                            string folderPath = "C:\\CSV\\";
+                            if (!Directory.Exists(folderPath))
                             {
-                                CsvWriter csvwriter = new CsvWriter();
-                                csvwriter.WriteCsv(dtCSV, savedialog.FileName, Encoding.GetEncoding(932));
+                                Directory.CreateDirectory(folderPath);
                             }
-                            Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                            SaveFileDialog savedialog = new SaveFileDialog();
+                            savedialog.Filter = "CSV|*.csv";
+                            savedialog.Title = "Save";
+                            savedialog.FileName = "債権管理表";
+                            savedialog.InitialDirectory = folderPath;
+                            savedialog.RestoreDirectory = true;
+                            if (savedialog.ShowDialog() == DialogResult.OK)
+                            {
+                                if (Path.GetExtension(savedialog.FileName).Contains("csv"))
+                                {
+                                    CsvWriter csvwriter = new CsvWriter();
+                                    csvwriter.WriteCsv(dtCSV, savedialog.FileName, Encoding.GetEncoding(932));
+                                }
+                                Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                            }
                         }
                     }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.Message);
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                 }
             }
         }
@@ -151,7 +152,8 @@ namespace SaikenKanriHyou
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "1";
-            string cmdLine =  InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + Mode + " " + YYYYMM;//parameter
+            //string cmdLine =  InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + Mode + " " + YYYYMM;//parameter
+            string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + Mode + " " + YYYYMM;
             try
             {
                 System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
