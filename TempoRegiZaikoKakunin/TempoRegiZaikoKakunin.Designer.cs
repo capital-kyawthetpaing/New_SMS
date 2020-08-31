@@ -95,7 +95,7 @@
             this.btnInquery.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnInquery.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
             this.btnInquery.ForeColor = System.Drawing.Color.Black;
-            this.btnInquery.Location = new System.Drawing.Point(1737, 130);
+            this.btnInquery.Location = new System.Drawing.Point(1742, 126);
             this.btnInquery.Margin = new System.Windows.Forms.Padding(1);
             this.btnInquery.Name = "btnInquery";
             this.btnInquery.Size = new System.Drawing.Size(120, 45);
@@ -280,7 +280,6 @@
             this.dgvZaikokakunin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvZaikokakunin.BackgroundColor = System.Drawing.Color.White;
             this.dgvZaikokakunin.BackgroungColor = CKM_Controls.CKMShop_GridView.DBackcolor.White;
-            this.dgvZaikokakunin.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 26F);
@@ -321,11 +320,11 @@
             this.dgvZaikokakunin.RowHeight_ = 42;
             this.dgvZaikokakunin.RowTemplate.Height = 70;
             this.dgvZaikokakunin.ShopFontSize = CKM_Controls.CKMShop_GridView.Font_.Medium;
-            this.dgvZaikokakunin.Size = new System.Drawing.Size(1835, 400);
+            this.dgvZaikokakunin.Size = new System.Drawing.Size(1830, 470);
             this.dgvZaikokakunin.TabIndex = 48;
             this.dgvZaikokakunin.UseRowNo = true;
             this.dgvZaikokakunin.UseSetting = true;
-            this.dgvZaikokakunin.Width_ = 1835;
+            this.dgvZaikokakunin.Width_ = 1830;
             this.dgvZaikokakunin.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvZaikokakunin_CellDoubleClick);
             // 
             // colWarehouse
@@ -371,7 +370,7 @@
             this.colQuantity.ReadOnly = true;
             this.colQuantity.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colQuantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colQuantity.Width = 190;
+            this.colQuantity.Width = 180;
             // 
             // colNo
             // 
