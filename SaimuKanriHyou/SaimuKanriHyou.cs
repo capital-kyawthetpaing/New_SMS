@@ -184,10 +184,11 @@ namespace SaimuKanriHyou
                     chk = 1;
                 else chk = 0;
                 dtExport = saimukanriBL.D_MonthlyDebt_CSV_Report(mde,chk);
-                CheckBeforeExport();
+                
 
                 if (dtExport.Rows.Count > 0)
                 {
+                    CheckBeforeExport();
                     DataTable dtCsv = new DataTable();
                     dtCsv = CreateDatatable();
                     for (int i = 0; dtExport.Rows.Count > i; i++)
