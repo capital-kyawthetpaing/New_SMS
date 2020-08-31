@@ -142,7 +142,7 @@ BEGIN
 				0,
 				0,
 				0,
-				fs.PriceOutTax * tsr.Rate,
+				case when ftcd.RoundKBN=1 then round(fs.PriceOutTax * tsr.Rate) else round(fs.PriceOutTax * tsr.Rate) end,
 				0,
 				0,
 				0,
@@ -177,7 +177,9 @@ BEGIN
 		Else
 		Begin 
 			
-			select * 
+			Update mskup
+			Set TekiyouShuuryouDate=@EndDate,
+			SalePriceOutTax=fs.PriceOutTax * tsr.Rate
 			From M_SKUPrice as mskup 
 			left outer join F_SKU(@StartDate) as fs on fs.AdminNO=mskup.AdminNO 
 														and fs.DeleteFlg=0
