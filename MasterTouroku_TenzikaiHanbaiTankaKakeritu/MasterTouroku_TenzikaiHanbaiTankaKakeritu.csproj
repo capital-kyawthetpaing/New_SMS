@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -33,17 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Base.Client">
+    <Reference Include="Base.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\Debug\Base.Client.dll</HintPath>
     </Reference>
-    <Reference Include="BL">
+    <Reference Include="BL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\Debug\BL.dll</HintPath>
     </Reference>
-    <Reference Include="CKM_Controls">
+    <Reference Include="CKM_Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\Debug\CKM_Controls.dll</HintPath>
-    </Reference>
-    <Reference Include="closedXML">
-      <HintPath>..\bin\Debug\closedXML.dll</HintPath>
     </Reference>
     <Reference Include="Entity">
       <HintPath>..\bin\Debug\Entity.dll</HintPath>

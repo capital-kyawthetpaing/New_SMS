@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ckM_GridView1 = new CKM_Controls.CKM_GridView();
+            this.GV_Tenzaishohin = new CKM_Controls.CKM_GridView();
             this.CheckBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrandCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,8 +62,10 @@
             this.LB_segment = new CKM_Controls.CKM_Label();
             this.Lb_brand = new CKM_Controls.CKM_Label();
             this.LB_tanka = new CKM_Controls.CKM_Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ckM_GridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GV_Tenzaishohin)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -80,7 +82,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.ckM_GridView1);
             this.panel1.Controls.Add(this.btnSetting);
             this.panel1.Controls.Add(this.BT_DeseletAll);
             this.panel1.Controls.Add(this.BT_SelectAll);
@@ -103,26 +104,26 @@
             this.panel1.Controls.Add(this.LB_tanka);
             this.panel1.Location = new System.Drawing.Point(2, 53);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1690, 700);
+            this.panel1.Size = new System.Drawing.Size(1690, 160);
             this.panel1.TabIndex = 100;
             // 
-            // ckM_GridView1
+            // GV_Tenzaishohin
             // 
-            this.ckM_GridView1.AllowUserToDeleteRows = false;
-            this.ckM_GridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.ckM_GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.ckM_GridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ckM_GridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.ckM_GridView1.ColumnHeadersHeight = 25;
-            this.ckM_GridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GV_Tenzaishohin.AllowUserToDeleteRows = false;
+            this.GV_Tenzaishohin.AllowUserToResizeRows = false;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_Tenzaishohin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            this.GV_Tenzaishohin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            this.GV_Tenzaishohin.ColumnHeadersHeight = 25;
+            this.GV_Tenzaishohin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CheckBox,
             this.BrandCD,
             this.BrandName,
@@ -131,24 +132,24 @@
             this.Year,
             this.Season,
             this.Rate});
-            this.ckM_GridView1.EnableHeadersVisualStyles = false;
-            this.ckM_GridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.ckM_GridView1.Location = new System.Drawing.Point(16, 188);
-            this.ckM_GridView1.Name = "ckM_GridView1";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ckM_GridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.ckM_GridView1.RowHeight_ = 20;
-            this.ckM_GridView1.RowTemplate.Height = 20;
-            this.ckM_GridView1.Size = new System.Drawing.Size(1000, 500);
-            this.ckM_GridView1.TabIndex = 77;
-            this.ckM_GridView1.UseRowNo = true;
-            this.ckM_GridView1.UseSetting = false;
+            this.GV_Tenzaishohin.EnableHeadersVisualStyles = false;
+            this.GV_Tenzaishohin.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.GV_Tenzaishohin.Location = new System.Drawing.Point(33, 3);
+            this.GV_Tenzaishohin.Name = "GV_Tenzaishohin";
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_Tenzaishohin.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            this.GV_Tenzaishohin.RowHeight_ = 20;
+            this.GV_Tenzaishohin.RowTemplate.Height = 20;
+            this.GV_Tenzaishohin.Size = new System.Drawing.Size(1000, 500);
+            this.GV_Tenzaishohin.TabIndex = 77;
+            this.GV_Tenzaishohin.UseRowNo = true;
+            this.GV_Tenzaishohin.UseSetting = false;
             // 
             // CheckBox
             // 
@@ -158,8 +159,8 @@
             // 
             // BrandCD
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.BrandCD.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.White;
+            this.BrandCD.DefaultCellStyle = dataGridViewCellStyle23;
             this.BrandCD.HeaderText = "ブランド";
             this.BrandCD.Name = "BrandCD";
             // 
@@ -230,6 +231,7 @@
             this.BT_DeseletAll.TabIndex = 74;
             this.BT_DeseletAll.Text = "全解除";
             this.BT_DeseletAll.UseVisualStyleBackColor = false;
+            this.BT_DeseletAll.Click += new System.EventHandler(this.BT_DeseletAll_Click);
             // 
             // BT_SelectAll
             // 
@@ -248,6 +250,7 @@
             this.BT_SelectAll.TabIndex = 73;
             this.BT_SelectAll.Text = "全選択";
             this.BT_SelectAll.UseVisualStyleBackColor = false;
+            this.BT_SelectAll.Click += new System.EventHandler(this.BT_SelectAll_Click);
             // 
             // BT_Display
             // 
@@ -418,7 +421,6 @@
             this.TB_PriceOutTaxF.Name = "TB_PriceOutTaxF";
             this.TB_PriceOutTaxF.Size = new System.Drawing.Size(100, 19);
             this.TB_PriceOutTaxF.TabIndex = 61;
-            this.TB_PriceOutTaxF.Text = "999,999,999";
             this.TB_PriceOutTaxF.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TB_PriceOutTaxF.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -427,7 +429,7 @@
             this.Sc_Segment.AutoSize = true;
             this.Sc_Segment.ChangeDate = "";
             this.Sc_Segment.ChangeDateWidth = 100;
-            this.Sc_Segment.Code = "XXXXX6";
+            this.Sc_Segment.Code = "";
             this.Sc_Segment.CodeWidth = 100;
             this.Sc_Segment.CodeWidth1 = 100;
             this.Sc_Segment.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
@@ -435,7 +437,7 @@
             this.Sc_Segment.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.Sc_Segment.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.Sc_Segment.IsCopy = false;
-            this.Sc_Segment.LabelText = "XXXXXXXXX1XXXXXXXXX2";
+            this.Sc_Segment.LabelText = "";
             this.Sc_Segment.LabelVisible = true;
             this.Sc_Segment.Location = new System.Drawing.Point(87, 64);
             this.Sc_Segment.Margin = new System.Windows.Forms.Padding(0);
@@ -450,14 +452,15 @@
             this.Sc_Segment.Value1 = null;
             this.Sc_Segment.Value2 = null;
             this.Sc_Segment.Value3 = null;
-            this.Sc_Segment.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Sc_Segment_KeyDown);
+            this.Sc_Segment.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.Sc_Segment_CodeKeyDownEvent);
+            this.Sc_Segment.Enter += new System.EventHandler(this.Sc_Segment_Enter);
             // 
             // SC_Brand
             // 
             this.SC_Brand.AutoSize = true;
             this.SC_Brand.ChangeDate = "";
             this.SC_Brand.ChangeDateWidth = 100;
-            this.SC_Brand.Code = "XXXXX6";
+            this.SC_Brand.Code = "";
             this.SC_Brand.CodeWidth = 100;
             this.SC_Brand.CodeWidth1 = 100;
             this.SC_Brand.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
@@ -465,7 +468,7 @@
             this.SC_Brand.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.SC_Brand.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.SC_Brand.IsCopy = false;
-            this.SC_Brand.LabelText = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3XXXXXXXXX4";
+            this.SC_Brand.LabelText = "";
             this.SC_Brand.LabelVisible = true;
             this.SC_Brand.Location = new System.Drawing.Point(87, 39);
             this.SC_Brand.Margin = new System.Windows.Forms.Padding(0);
@@ -480,14 +483,16 @@
             this.SC_Brand.Value1 = null;
             this.SC_Brand.Value2 = null;
             this.SC_Brand.Value3 = null;
-            this.SC_Brand.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SC_Brand_KeyDown);
+            this.SC_Brand.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_Brand_CodeKeyDownEvent);
+            this.SC_Brand.Enter += new System.EventHandler(this.SC_Brand_Enter);
+            this.SC_Brand.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SC_Tanka_CodeKeyDownEvent);
             // 
             // SC_Tanka
             // 
             this.SC_Tanka.AutoSize = true;
             this.SC_Tanka.ChangeDate = "";
             this.SC_Tanka.ChangeDateWidth = 100;
-            this.SC_Tanka.Code = "XXXXXXXXXXXXX";
+            this.SC_Tanka.Code = "";
             this.SC_Tanka.CodeWidth = 100;
             this.SC_Tanka.CodeWidth1 = 100;
             this.SC_Tanka.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
@@ -495,7 +500,7 @@
             this.SC_Tanka.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.SC_Tanka.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.SC_Tanka.IsCopy = false;
-            this.SC_Tanka.LabelText = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3";
+            this.SC_Tanka.LabelText = "";
             this.SC_Tanka.LabelVisible = true;
             this.SC_Tanka.Location = new System.Drawing.Point(87, 14);
             this.SC_Tanka.Margin = new System.Windows.Forms.Padding(0);
@@ -510,7 +515,8 @@
             this.SC_Tanka.Value1 = null;
             this.SC_Tanka.Value2 = null;
             this.SC_Tanka.Value3 = null;
-            this.SC_Tanka.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SC_Tanka_KeyDown);
+            this.SC_Tanka.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_Tanka_CodeKeyDownEvent);
+            this.SC_Tanka.Enter += new System.EventHandler(this.SC_Tanka_Enter);
             // 
             // LB_Season
             // 
@@ -614,11 +620,20 @@
             this.LB_tanka.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.LB_tanka.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.GV_Tenzaishohin);
+            this.panel2.Location = new System.Drawing.Point(1, 212);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1690, 550);
+            this.panel2.TabIndex = 101;
+            // 
             // FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1703, 804);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.F10Visible = false;
             this.F2Visible = false;
@@ -632,9 +647,11 @@
             this.Text = "MasterTouroku_TenzikaiHanbaiTankaKakeritu";
             this.Load += new System.EventHandler(this.FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.panel2, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ckM_GridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GV_Tenzaishohin)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -663,7 +680,7 @@
         private CKM_Controls.CKM_Button BT_Display;
         private CKM_Controls.CKM_TextBox TB_Rate;
         private CKM_Controls.CKM_Label LB_Rate;
-        private CKM_Controls.CKM_GridView ckM_GridView1;
+        private CKM_Controls.CKM_GridView GV_Tenzaishohin;
         private System.Windows.Forms.DataGridViewTextBoxColumn CheckBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrandCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrandName;
@@ -672,5 +689,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Year;
         private System.Windows.Forms.DataGridViewTextBoxColumn Season;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rate;
+        private System.Windows.Forms.Panel panel2;
     }
 }
