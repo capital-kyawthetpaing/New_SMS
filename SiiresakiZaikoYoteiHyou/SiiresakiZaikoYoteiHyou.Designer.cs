@@ -102,6 +102,7 @@
             this.txtTargetDateTo.AllowMinus = false;
             this.txtTargetDateTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTargetDateTo.BackColor = System.Drawing.Color.White;
+            this.txtTargetDateTo.BorderColor = false;
             this.txtTargetDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTargetDateTo.ClientColor = System.Drawing.Color.White;
             this.txtTargetDateTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -148,6 +149,7 @@
             this.txtTargetDateFrom.AllowMinus = false;
             this.txtTargetDateFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtTargetDateFrom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtTargetDateFrom.BorderColor = false;
             this.txtTargetDateFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTargetDateFrom.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtTargetDateFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
