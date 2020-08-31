@@ -162,6 +162,7 @@
             this.scVendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scVendor.DataCheck = false;
             this.scVendor.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scVendor.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scVendor.IsCopy = false;
             this.scVendor.LabelText = "";
             this.scVendor.LabelVisible = true;
@@ -186,6 +187,7 @@
             this.txtTargetYear.AllowMinus = false;
             this.txtTargetYear.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTargetYear.BackColor = System.Drawing.Color.White;
+            this.txtTargetYear.BorderColor = false;
             this.txtTargetYear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTargetYear.ClientColor = System.Drawing.Color.White;
             this.txtTargetYear.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -195,6 +197,7 @@
             this.txtTargetYear.IntegerPart = 0;
             this.txtTargetYear.IsCorrectDate = true;
             this.txtTargetYear.isEnterKeyDown = false;
+            this.txtTargetYear.IsFirstTime = true;
             this.txtTargetYear.isMaxLengthErr = false;
             this.txtTargetYear.IsNumber = true;
             this.txtTargetYear.IsShop = false;
