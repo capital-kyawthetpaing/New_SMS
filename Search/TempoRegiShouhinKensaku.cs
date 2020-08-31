@@ -72,6 +72,10 @@ namespace Search
                     dgvDetail.CurrentRow.Selected = true;
                     dgvDetail.Focus();
                 }
+                else
+                {
+                    skuBL.ShowMessage("E128");
+                }
             }
         }
 
@@ -102,11 +106,14 @@ namespace Search
        
         private void ExecSec()
         {
-            AdminNO = dgvDetail.CurrentRow.Cells["colAdminNO"].Value.ToString();
-            SKUName = dgvDetail.CurrentRow.Cells["colSKUName"].Value.ToString();    //added by ETZ 2020-06-22
-            JANCD = dgvDetail.CurrentRow.Cells["colJANCD"].Value.ToString();        
-            Color = dgvDetail.CurrentRow.Cells["colColorName"].Value.ToString();    //added by ETZ 2020-07-21
-            Size = dgvDetail.CurrentRow.Cells["colSizeName"].Value.ToString();      //added by ETZ 2020-07-21
+            if (dgvDetail.CurrentRow != null && dgvDetail.CurrentRow.Index >= 0)
+            {
+                AdminNO = dgvDetail.CurrentRow.Cells["colAdminNO"].Value.ToString();
+                SKUName = dgvDetail.CurrentRow.Cells["colSKUName"].Value.ToString();    //added by ETZ 2020-06-22
+                JANCD = dgvDetail.CurrentRow.Cells["colJANCD"].Value.ToString();
+                Color = dgvDetail.CurrentRow.Cells["colColorName"].Value.ToString();    //added by ETZ 2020-07-21
+                Size = dgvDetail.CurrentRow.Cells["colSizeName"].Value.ToString();      //added by ETZ 2020-07-21
+            }
             this.Close();
         }
 

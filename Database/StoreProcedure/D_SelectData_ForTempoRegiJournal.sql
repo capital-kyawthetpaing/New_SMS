@@ -333,6 +333,7 @@ BEGIN
                      WHERE history.DataKBN = 3
                        AND history.DepositKBN = 2
                        AND history.CancelKBN = 0
+                       AND history.CustomerCD IS NULL
                    ) D
              GROUP BY D.RegistDate
            ) D5;
@@ -522,7 +523,7 @@ BEGIN
                     SELECT CONVERT(Date, history.DepositDateTime) RegistDate
                           ,history.DepositDateTime DepositDateTime
                           ,denominationKbn.DenominationName
-                          ,history.DepositGaku
+                          ,ABS(history.DepositGaku) DepositGaku
                           ,history.ExchangeDenomination
                           ,ABS(history.ExchangeCount) ExchangeCount
                           ,ROW_NUMBER() OVER (PARTITION BY  history.Number ORDER BY history.DepositDateTime) AS RANK
