@@ -1297,6 +1297,7 @@ namespace MarkDownNyuuryoku
                         mode = EOperationMode.SHOW;
                         Btn_F3.Text = "";
                         Btn_F4.Text = "";
+                        Btn_F8.Text = "";
                     }
                     //仕入月で仮締めがされていない
                     else
@@ -1306,6 +1307,7 @@ namespace MarkDownNyuuryoku
                         {
                             Btn_F3.Text = "";
                             Btn_F4.Text = "";
+                            Btn_F8.Text = "";
                             mCloseState = EClose.Closed;
                         }
                         else
@@ -1323,6 +1325,7 @@ namespace MarkDownNyuuryoku
                     {                        
                         Btn_F3.Text = "";
                         Btn_F4.Text = "";
+                        Btn_F8.Text = "";
                         mCloseState = EClose.Closed;                        
                     }
                     else
@@ -1445,6 +1448,11 @@ namespace MarkDownNyuuryoku
         /// <returns></returns>
         private bool CheckDetail(int index, bool set=true)
         {
+            if (detailControls[index].Enabled == false)
+            {
+                return true;
+            }
+
             if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
             {
                 if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
@@ -2105,7 +2113,7 @@ namespace MarkDownNyuuryoku
                     }
                 }
 
-                for (int row = 2; row < InputData.GetLength(0); row++)
+                for (int row = 2; row <= InputData.GetLength(0); row++)
                 {
                     // 各行の値をListに変換（すべてnullは読み飛ばし）
                     List<string> data = new List<string>();
@@ -2143,7 +2151,7 @@ namespace MarkDownNyuuryoku
                         continue;
 
                     mGrid.g_DArray[i].JanCD = data[(int)EColNo.JanCD].ToString();
-                    this.DispNewDetail(i);
+                    this.DispNewDetail(i, data[(int)EColNo.Rate].ToString(), data[(int)EColNo.MarkDownUnitPrice].ToString(), data[(int)EColNo.CalculationSu].ToString());
 
                     m_dataCnt = i + 1;
                     Grid_NotFocus((int)ClsGridMarkDown.ColNO.JanCD, i);
@@ -2246,7 +2254,7 @@ namespace MarkDownNyuuryoku
                     bbl.ShowMessage("E190");
                     return false;
                 }
-                else if (bbl.Z_Set(data[(int)EColNo.CalculationSu]) < 0 || bbl.Z_Set(data[(int)EColNo.CalculationSu]) > 999999999)
+                else if (bbl.Z_Set(data[(int)EColNo.CalculationSu]) < -99999 || bbl.Z_Set(data[(int)EColNo.CalculationSu]) > 99999)
                 {
                     //Ｅ２３１
                     bbl.ShowMessage("E231");
@@ -2356,6 +2364,9 @@ namespace MarkDownNyuuryoku
                         }
                     }
                 }
+
+                bbl.ShowMessage("I201");
+
                 return;
             }
 
@@ -2941,6 +2952,8 @@ namespace MarkDownNyuuryoku
                                 return;
 
                             this.OutputCsv();
+
+                            
                         }
                         break;
                     }
@@ -3054,7 +3067,7 @@ namespace MarkDownNyuuryoku
         /// 新規明細表示処理
         /// </summary>
         /// <param name="row"></param>
-        private void DispNewDetail(int row)
+        private void DispNewDetail(int row, string rate = "", string markDownUnitPrice = "" , string calculationSu = "")
         {
             // M_SKUよりセット
             CheckGrid((int)ClsGridMarkDown.ColNO.JanCD, row);
@@ -3062,6 +3075,20 @@ namespace MarkDownNyuuryoku
             mGrid.g_DArray[row].Chk = false;
             mGrid.g_DArray[row].Rate = "";
             mGrid.g_DArray[row].MarkDownUnitPrice = "";
+            if (!string.IsNullOrWhiteSpace(rate))
+            {
+                mGrid.g_DArray[row].Rate = bbl.Z_SetStr(rate);
+
+                if (string.IsNullOrWhiteSpace(markDownUnitPrice))
+                {
+                    mGrid.g_DArray[row].MarkDownUnitPrice = bbl.Z_SetStr(GetResultWithHasuKbn((int)HASU_KBN.KIRISUTE, bbl.Z_Set(mGrid.g_DArray[row].PriceOutTax) * bbl.Z_Set(mGrid.g_DArray[row].Rate) / 100));
+                }
+            }
+
+            if (!string.IsNullOrWhiteSpace(markDownUnitPrice))
+            {
+                mGrid.g_DArray[row].MarkDownUnitPrice = bbl.Z_SetStr(markDownUnitPrice);
+            }
 
             //[D_StockReplica]
             D_StockReplica_Entity dse = new D_StockReplica_Entity
@@ -3082,8 +3109,15 @@ namespace MarkDownNyuuryoku
             {                
                 mGrid.g_DArray[row].StockSu = "0";
             }
-            mGrid.g_DArray[row].MarkDownSagakuPrice = (bbl.Z_Set(mGrid.g_DArray[row].EvaluationPrice) * -1).ToString();
-            mGrid.g_DArray[row].CalculationSu = mGrid.g_DArray[row].StockSu;
+            mGrid.g_DArray[row].MarkDownSagakuPrice = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].MarkDownUnitPrice) - bbl.Z_Set(mGrid.g_DArray[row].EvaluationPrice));
+            if (!string.IsNullOrWhiteSpace(calculationSu))
+            {
+                mGrid.g_DArray[row].CalculationSu = bbl.Z_SetStr(calculationSu);
+            }
+            else
+            {
+                mGrid.g_DArray[row].CalculationSu = mGrid.g_DArray[row].StockSu;
+            }            
             mGrid.g_DArray[row].MarkDownGaku = (bbl.Z_Set(mGrid.g_DArray[row].MarkDownSagakuPrice) * bbl.Z_Set(mGrid.g_DArray[row].CalculationSu)).ToString();
             mGrid.g_DArray[row].Tax = GetResultWithHasuKbn((int)HASU_KBN.KIRISUTE, bbl.Z_Set(mGrid.g_DArray[row].MarkDownGaku) * mGrid.g_DArray[row].TaxRate / 100);
 
@@ -3540,7 +3574,23 @@ namespace MarkDownNyuuryoku
         /// <param name="e"></param>
         private void btnInput_Click(object sender, EventArgs e)
         {
-            this.ExecInput();
+            try
+            {
+                for (int i = 0; i <= (int)EIndex.Remark; i++)
+                {
+                    if (!CheckDetail(i))
+                    {
+                        detailControls[i].Focus();
+                        return;
+                    }
+                }
+                this.ExecInput();
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }            
         }
 
         /// <summary>

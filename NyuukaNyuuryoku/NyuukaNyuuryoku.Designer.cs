@@ -815,7 +815,7 @@
             // 
             this.ScOrderNO.AutoSize = true;
             this.ScOrderNO.ChangeDate = "";
-            this.ScOrderNO.ChangeDateWidth = 12803218;
+            this.ScOrderNO.ChangeDateWidth = 21338695;
             this.ScOrderNO.Code = "XXXXXXXXX01";
             this.ScOrderNO.CodeWidth = 150;
             this.ScOrderNO.CodeWidth1 = 150;
@@ -4053,7 +4053,7 @@
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(77, 27);
             this.label24.TabIndex = 275;
-            this.label24.Text = "予定数";
+            this.label24.Text = " ";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label25
@@ -4092,7 +4092,7 @@
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(77, 27);
             this.label29.TabIndex = 266;
-            this.label29.Text = "引当数";
+            this.label29.Text = "予定数";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label30

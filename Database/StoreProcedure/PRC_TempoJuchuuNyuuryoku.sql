@@ -648,6 +648,7 @@ CREATE TYPE T_Juchuu AS TABLE
     [ShippingPlanDate] [date] ,
     [OrderUnitPrice] [money] ,
     [JuchuuNO] [varchar](11) ,	--Tennic=1ÇÃèÍçáÇ…égóp
+    [DesiredDeliveryDate]  [varchar](10) ,
     [UpdateFlg][tinyint]
     )
 GO
@@ -1524,7 +1525,7 @@ BEGIN
                            ,NULL    --LastOrderNO
                            ,0   --LastOrderRows
                            ,NULL    --LastOrderDateTime
-                           ,NULL    --DesiredDeliveryDate
+                           ,tbl.DesiredDeliveryDate
                            ,0   --AnswerFLG
                            ,tbl.ArrivePlanDate
                            ,NULL    --ArrivePlanNO
@@ -1613,7 +1614,8 @@ BEGIN
                        ,[ProfitGaku] = tbl.ProfitGaku                    
                        ,[SoukoCD] = tbl.SoukoCD    
                        ,[DirectFLG] = tbl.DirectFLG                        
-                       ,[VendorCD] = tbl.VendorCD                         
+                       ,[VendorCD] = tbl.VendorCD                
+                       ,[DesiredDeliveryDate] = tbl.DesiredDeliveryDate            
                        ,[ArrivePlanDate] = tbl.ArrivePlanDate            
                        ,[CommentOutStore] = tbl.CommentOutStore          
                        ,[CommentInStore] = tbl.CommentInStore            

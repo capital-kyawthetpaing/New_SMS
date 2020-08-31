@@ -3214,7 +3214,7 @@ namespace TempoJuchuuNyuuryoku
                         {
                             //入力された出荷予定日から以下のルールで希望納期を計算する
                             //希望納期=出荷予定日の前日
-                            mGrid.g_DArray[row].ArrivePlanDate = mibl.GetNouki(mGrid.g_DArray[row].ShippingPlanDate, CboStoreCD.SelectedValue.ToString());
+                            mGrid.g_DArray[row].DesiredDeliveryDate = mibl.GetNouki(mGrid.g_DArray[row].ShippingPlanDate, CboStoreCD.SelectedValue.ToString());
 
                             mGrid.g_DArray[row].OldShippingPlanDate = mGrid.g_DArray[row].ShippingPlanDate;
                         }
@@ -3966,6 +3966,8 @@ namespace TempoJuchuuNyuuryoku
             //dt.Columns.Add("OrderTax", typeof(decimal));
             //dt.Columns.Add("OrderTaxRitsu", typeof(decimal));
             //dt.Columns.Add("OrderGaku", typeof(decimal));
+            dt.Columns.Add("DesiredDeliveryDate", typeof(string));
+
             dt.Columns.Add("UpdateFlg", typeof(int));
         }
 
@@ -4040,6 +4042,7 @@ namespace TempoJuchuuNyuuryoku
                         //, bbl.Z_Set(mGrid.g_DArray[RW].OrderTax)
                         //, bbl.Z_Set(mGrid.g_DArray[RW].OrderTaxRitsu)
                         //, bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku)
+                        , mGrid.g_DArray[RW].DesiredDeliveryDate == "" ? null : mGrid.g_DArray[RW].DesiredDeliveryDate
                         , mGrid.g_DArray[RW].juchuGyoNO > 0 ? 1:0
                         );
 

@@ -187,8 +187,8 @@ namespace MasterTouroku_ShiireKakeritsu
                 BrandName=scBrandCD1.LabelText,
                 SportsCD = scSportsCD1.TxtCode.Text,
                 SegmentCD = scSegmentCD1.TxtCode.Text,
-                LastYearTerm = cbo_Year1.SelectedText,
-                LastSeason = cbo_Season1.SelectedText,
+                LastYearTerm = cbo_Year1.SelectedValue.ToString(),
+                LastSeason = cbo_Season1.SelectedValue.ToString(),
                 ChangeDate = txtDate.Text,
                 Rate = txtRate.Text,
                 ProcessMode = ModeText,
@@ -1151,6 +1151,28 @@ namespace MasterTouroku_ShiireKakeritsu
         private void MasterTouroku_ShiireKakeritsu_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
+        }
+
+        private void dgv_ShiireKakeritsu_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try
+            {
+                if (Convert.ToInt32(dgv_ShiireKakeritsu.CurrentCell.EditedFormattedValue) < 256 && Convert.ToInt32(dgv_ShiireKakeritsu.CurrentCell.EditedFormattedValue) > 0)
+                {
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Enter valid number. . . ");
+                    dgv_ShiireKakeritsu.CurrentCell.Value = 0;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Enter valid number. . . ");
+                dgv_ShiireKakeritsu.CurrentCell.Value = 0;
+            }
+            dgv_ShiireKakeritsu.RefreshEdit();
         }
     }
 }

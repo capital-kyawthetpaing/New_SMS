@@ -273,7 +273,7 @@ namespace DL
         /// <summary>
         /// 売上データ取得処理
         /// </summary>
-        public DataTable D_Sales_SelectDataForUriageNyuuryoku(D_Sales_Entity mie, short operationMode)
+        public DataTable D_Sales_SelectDataForUriageNyuuryoku(D_Sales_Entity mie, short operationMode, short tennic = 0)
         {
             string sp = "D_Sales_SelectDataForUriageNyuuryoku";
 
@@ -282,6 +282,7 @@ namespace DL
             {
                 { "@OperateMode", new ValuePair { value1 = SqlDbType.TinyInt, value2 = operationMode.ToString() } },
                 { "@SalesNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = mie.SalesNO } },
+                { "@Tennic", new ValuePair { value1 = SqlDbType.TinyInt, value2 = tennic.ToString() } },
             };
 
             return SelectData(dic, sp);
@@ -306,6 +307,7 @@ namespace DL
             AddParam(command, "@OperateMode", SqlDbType.Int, operationMode.ToString());
             AddParam(command, "@SalesNO", SqlDbType.VarChar, de.SalesNO);
             AddParam(command, "@PurchaseNO", SqlDbType.VarChar, de.PurchaseNO);
+            AddParam(command, "@BillingNO", SqlDbType.VarChar, de.BillingNO);
             AddParam(command, "@StoreCD", SqlDbType.VarChar, de.StoreCD);
             AddParam(command, "@SalesDate", SqlDbType.VarChar, de.SalesDate);
             AddParam(command, "@BillingType", SqlDbType.TinyInt, de.BillingType);
@@ -352,6 +354,25 @@ namespace DL
                 de.SalesNO = outPutParam;
 
             return ret;
+        }
+        /// <summary>
+        /// 進捗チェック　
+        /// 既に入金消込済みの場合、エラー
+        /// </summary>
+        /// <param name="salesNo"></param>
+        /// <returns></returns>
+        public DataTable CheckSalesData(D_Sales_Entity dse)
+        {
+            string sp = "CheckSalesData";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@SalesNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = dse.SalesNO } },
+                { "@PurchaseNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = dse.PurchaseNO } },
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dse.StoreCD} },
+            };
+
+            return SelectData(dic, sp);
         }
     }
 }

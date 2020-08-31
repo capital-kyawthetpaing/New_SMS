@@ -59,7 +59,7 @@ namespace UriageNyuuryoku
             internal int copyJuchuGyoNO;    //複写元受注行番号(Hidden)単価再計算をするかどうかの判断するためだけの情報
             internal string MakerItem;
             internal string PurchaseNO;
-            internal string BillingNo;
+            //internal string BillingNo;
             internal string PayeeCD;
             internal string TaxTiming;  //仕入先税計算区分
             internal int TaxFractionKBN;

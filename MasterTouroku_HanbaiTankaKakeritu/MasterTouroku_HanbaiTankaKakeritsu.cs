@@ -19,6 +19,7 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
         M_SKU_Entity mskue;
         M_SKUPrice_Entity mskupe;
         EOperationMode OperationMode;
+        DataTable dtData;
 
         public FrmMasterTouroku_HanbaiTankaKakeritsu()
         {
@@ -114,6 +115,8 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
             string ymd = bbl.GetDate();
             cboYear.Bind(ymd);
             cboSeason.Bind(ymd);
+            cboYearCopy.Bind(ymd);
+            cboSeasonCopy.Bind(ymd);
         }
 
         /// <summary>
@@ -136,6 +139,7 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
                         if (bbl.ShowMessage("Q005") != DialogResult.Yes)
                         {
                             Clear();
+                            txtFromDate.Focus();
                         }
                         else
                             PreviousCtrl.Focus();
@@ -182,9 +186,45 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
         }
         private void F12()
         {
-            
+            if (ErrorCheck())
+            {
+                if(dtData.Rows.Count > 0)
+                {
+                    if (bbl.ShowMessage(OperationMode == EOperationMode.DELETE ? "Q102" : "Q101") == DialogResult.Yes)
+                    {
+                        mskue = GetSKUEntity();
+                        mskupe = GetSKUPriceEntity();
+                        mskupe.dt1 = dtData;
+                        switch (OperationMode)
+                        {
+                            case EOperationMode.INSERT:
+                                InsertUpdate(1);
+                                break;
+                            case EOperationMode.UPDATE:
+                                InsertUpdate(2);
+                                break;
+                        }
+                    }
+                }
+              
+            }
         }
 
+
+        private void InsertUpdate(int mode)
+        {
+            if(mhbtbl.SaleRatePrice_InsertUpdate(mskue,mskupe,mode))
+            {
+                bbl.ShowMessage("I101");
+                Clear();
+                txtFromDate.Focus();
+            }
+            else
+            {
+                bbl.ShowMessage("S001");
+            }
+
+        }
         #region Get Searching  Data
         private M_SKU_Entity GetSKUEntity()
         {
@@ -194,19 +234,20 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
                 EndDate = txtToDate.Text,
                 DateCopy = txtDateCopy.Text,
                 BrandCD = ScBrand.Code,
-                BrandCDCopy=ScBrandCopy.Code,
+                BrandCDCopy = ScBrandCopy.Code,
                 ExhibitionSegmentCD = ScSegment.Code,
-                ExhibitionSegmentCDCopy=ScSegmentCopy.Code,
-                LastYearTerm = cboYear.SelectedText,
-                LastYearTermCopy=txtYearCopy.Text,
-                LastSeason=cboSeason.SelectedText,
-                LastSeasonCopy=txtSeason.Text,
-                PriceOutTaxFrom=txtPriceOutTaxFrom.Text,
-                PriceOutTaxTo=txtPriceOutTaxTo.Text,
+                ExhibitionSegmentCDCopy = ScSegmentCopy.Code,
+                LastYearTerm = cboYear.SelectedValue.ToString(),
+                LastYearTermCopy = cboYearCopy.SelectedValue.ToString(),
+                LastSeason = cboSeason.SelectedValue.ToString(),
+                LastSeasonCopy = cboSeasonCopy.SelectedValue.ToString(),
+                PriceOutTaxFrom = txtPriceOutTaxFrom.Text,
+                PriceOutTaxTo = txtPriceOutTaxTo.Text,
                 ProcessMode = ModeText,
                 InsertOperator = InOperatorCD,
                 ProgramID = InProgramID,
                 PC = InPcID,
+                Key = txtFromDate.Text.ToString() + " " + ScTanka.Code.ToString()
             };
             return mskue;
         }
@@ -215,8 +256,8 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
         {
             mskupe = new M_SKUPrice_Entity
             {
-                TankaCD=ScTanka.Code,
-                TankaName=ScTanka.Name,
+                TankaCD = ScTanka.Code,
+                TankaName = ScTanka.LabelText,
                 TankaCDCopy=ScTankaCopy.Code,
             };
             return mskupe;
@@ -238,8 +279,8 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
             ScTankaCopy.Clear();
             ScBrandCopy.Clear();
             ScSegmentCopy.Clear();
-            txtYearCopy.Text = string.Empty;
-            txtSeason.Text = string.Empty;
+            cboYearCopy.SelectedValue = "-1";
+            cboSeasonCopy.SelectedValue = "-1";
             txtRate.Text = string.Empty;
             gdvHanbaiTankaKakeritsu.DataSource = null;
 
@@ -425,7 +466,7 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
         private void btnSetting_Click(object sender, EventArgs e)
         {
 
-            if (RequireCheck(new Control[] { txtFromDate, ScTanka.TxtCode }))
+            if (RequireCheck(new Control[] { txtFromDate, ScTanka.TxtCode,txtRate }))
             {
                 foreach (DataGridViewRow row in gdvHanbaiTankaKakeritsu.Rows)
                 {
@@ -457,11 +498,12 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
         {
             mskue = GetSKUEntity();
             mskupe = GetSKUPriceEntity();
+            dtData = new DataTable();
             if (mode==1)
             {
                 if (string.IsNullOrWhiteSpace(txtDateCopy.Text))
                 {
-                    DataTable dtData = mhbtbl.Select_SKUData(mskue,mskupe,"1");
+                    dtData = mhbtbl.Select_SKUData(mskue,mskupe,"1");
                     if (dtData.Rows.Count > 0)
                         gdvHanbaiTankaKakeritsu.DataSource = dtData;
                     else
@@ -474,7 +516,7 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
                 }
                 else if (!string.IsNullOrWhiteSpace(txtDateCopy.Text))
                 {
-                    DataTable dtData = mhbtbl.Select_SKUData(mskue, mskupe, "2");
+                    dtData = mhbtbl.Select_SKUData(mskue, mskupe, "2");
                     if (dtData.Rows.Count > 0)
                         gdvHanbaiTankaKakeritsu.DataSource = dtData;
                     else
@@ -487,7 +529,7 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
             }
             else
             {
-                DataTable dtData = mhbtbl.Select_SKUData(mskue, mskupe, "3");
+                 dtData = mhbtbl.Select_SKUData(mskue, mskupe, "3");
                 if (dtData.Rows.Count > 0)
                     gdvHanbaiTankaKakeritsu.DataSource = dtData;
                 else

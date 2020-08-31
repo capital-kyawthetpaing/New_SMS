@@ -413,7 +413,7 @@
             // 
             // colBrandKana
             // 
-            this.colBrandKana.DataPropertyName = "BrandKana";
+            this.colBrandKana.DataPropertyName = "BrandName";
             this.colBrandKana.HeaderText = "ブランド";
             this.colBrandKana.Name = "colBrandKana";
             this.colBrandKana.Resizable = System.Windows.Forms.DataGridViewTriState.False;
