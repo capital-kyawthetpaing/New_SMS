@@ -320,7 +320,7 @@
             this.dgvZaikokakunin.RowHeight_ = 42;
             this.dgvZaikokakunin.RowTemplate.Height = 70;
             this.dgvZaikokakunin.ShopFontSize = CKM_Controls.CKMShop_GridView.Font_.Medium;
-            this.dgvZaikokakunin.Size = new System.Drawing.Size(1830, 470);
+            this.dgvZaikokakunin.Size = new System.Drawing.Size(1830, 570);
             this.dgvZaikokakunin.TabIndex = 48;
             this.dgvZaikokakunin.UseRowNo = true;
             this.dgvZaikokakunin.UseSetting = true;
