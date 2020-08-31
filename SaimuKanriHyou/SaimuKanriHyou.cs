@@ -373,7 +373,7 @@ namespace SaimuKanriHyou
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "1";
-            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
+            string cmdLine =  InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + Mode + " " + YYYYMM;//parameter
             System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
         }
 
