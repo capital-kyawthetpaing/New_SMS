@@ -10,9 +10,8 @@ using Entity;
 
 namespace BL
 {
-    class TenzikaiShouhinJouhouShuturyoku_BL
+   public class TenzikaiShouhinJouhouShuturyoku_BL : Base_BL
     {
         TenzikaiShouhinJouhouShuturyoku_DL TenzikaiDl;
-
     }
 }
