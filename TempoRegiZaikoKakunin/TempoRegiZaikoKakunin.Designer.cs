@@ -95,7 +95,7 @@
             this.btnInquery.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnInquery.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
             this.btnInquery.ForeColor = System.Drawing.Color.Black;
-            this.btnInquery.Location = new System.Drawing.Point(1727, 130);
+            this.btnInquery.Location = new System.Drawing.Point(1742, 126);
             this.btnInquery.Margin = new System.Windows.Forms.Padding(1);
             this.btnInquery.Name = "btnInquery";
             this.btnInquery.Size = new System.Drawing.Size(120, 45);
@@ -174,7 +174,7 @@
             this.lblZaiko.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblZaiko.FontBold = true;
             this.lblZaiko.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblZaiko.Location = new System.Drawing.Point(99, 291);
+            this.lblZaiko.Location = new System.Drawing.Point(125, 291);
             this.lblZaiko.Name = "lblZaiko";
             this.lblZaiko.Size = new System.Drawing.Size(163, 35);
             this.lblZaiko.TabIndex = 52;
@@ -191,7 +191,7 @@
             this.lblProduct.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblProduct.FontBold = true;
             this.lblProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblProduct.Location = new System.Drawing.Point(419, 292);
+            this.lblProduct.Location = new System.Drawing.Point(426, 292);
             this.lblProduct.Name = "lblProduct";
             this.lblProduct.Size = new System.Drawing.Size(125, 35);
             this.lblProduct.TabIndex = 53;
@@ -208,7 +208,7 @@
             this.lblplandate.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblplandate.FontBold = true;
             this.lblplandate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblplandate.Location = new System.Drawing.Point(1280, 292);
+            this.lblplandate.Location = new System.Drawing.Point(1284, 292);
             this.lblplandate.Name = "lblplandate";
             this.lblplandate.Size = new System.Drawing.Size(200, 35);
             this.lblplandate.TabIndex = 54;
@@ -225,7 +225,7 @@
             this.lblsou.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblsou.FontBold = true;
             this.lblsou.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblsou.Location = new System.Drawing.Point(1565, 292);
+            this.lblsou.Location = new System.Drawing.Point(1564, 292);
             this.lblsou.Name = "lblsou";
             this.lblsou.Size = new System.Drawing.Size(126, 35);
             this.lblsou.TabIndex = 55;
@@ -242,7 +242,7 @@
             this.lblallowsou.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblallowsou.FontBold = true;
             this.lblallowsou.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblallowsou.Location = new System.Drawing.Point(1711, 293);
+            this.lblallowsou.Location = new System.Drawing.Point(1696, 293);
             this.lblallowsou.Name = "lblallowsou";
             this.lblallowsou.Size = new System.Drawing.Size(145, 35);
             this.lblallowsou.TabIndex = 56;
@@ -280,7 +280,6 @@
             this.dgvZaikokakunin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvZaikokakunin.BackgroundColor = System.Drawing.Color.White;
             this.dgvZaikokakunin.BackgroungColor = CKM_Controls.CKMShop_GridView.DBackcolor.White;
-            this.dgvZaikokakunin.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 26F);
@@ -314,18 +313,18 @@
             this.dgvZaikokakunin.HeaderHeight_ = 22;
             this.dgvZaikokakunin.HeaderVisible = false;
             this.dgvZaikokakunin.Height_ = 550;
-            this.dgvZaikokakunin.Location = new System.Drawing.Point(25, 331);
+            this.dgvZaikokakunin.Location = new System.Drawing.Point(34, 331);
             this.dgvZaikokakunin.Name = "dgvZaikokakunin";
             this.dgvZaikokakunin.RowHeadersWidth = 70;
             this.dgvZaikokakunin.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvZaikokakunin.RowHeight_ = 42;
             this.dgvZaikokakunin.RowTemplate.Height = 70;
             this.dgvZaikokakunin.ShopFontSize = CKM_Controls.CKMShop_GridView.Font_.Medium;
-            this.dgvZaikokakunin.Size = new System.Drawing.Size(1860, 400);
+            this.dgvZaikokakunin.Size = new System.Drawing.Size(1830, 570);
             this.dgvZaikokakunin.TabIndex = 48;
             this.dgvZaikokakunin.UseRowNo = true;
             this.dgvZaikokakunin.UseSetting = true;
-            this.dgvZaikokakunin.Width_ = 1860;
+            this.dgvZaikokakunin.Width_ = 1830;
             this.dgvZaikokakunin.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvZaikokakunin_CellDoubleClick);
             // 
             // colWarehouse
@@ -371,7 +370,7 @@
             this.colQuantity.ReadOnly = true;
             this.colQuantity.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colQuantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colQuantity.Width = 200;
+            this.colQuantity.Width = 180;
             // 
             // colNo
             // 
@@ -383,7 +382,7 @@
             this.colNo.ReadOnly = true;
             this.colNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colNo.Width = 170;
+            this.colNo.Width = 165;
             // 
             // frmTempoRegiZaikoKakunin
             // 

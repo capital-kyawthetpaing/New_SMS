@@ -32,10 +32,10 @@ BEGIN
     SET NOCOUNT ON;
 
     SELECT CONVERT(DATE, history.DepositDateTime) RegistDate                           -- ìoò^ì˙
-          ,history.ExchangeCount                                                       -- óºë÷âÒêî
+          ,ABS(history.ExchangeCount) ExchangeCount                                    -- óºë÷âÒêî
           ,FORMAT(history.DepositDateTime, 'yyyy/MM/dd HH:mm') ExchangeDateTime        -- óºë÷ì˙
           ,denominationKbn.DenominationName ExchangeName                               -- óºë÷ñº
-          ,history.DepositGaku ExchangeAmount                                          -- óºë÷äz
+          ,ABS(history.DepositGaku) ExchangeAmount                                     -- óºë÷äz
           ,history.ExchangeDenomination                                                -- óºë÷éÜïº
           ,history.Remark ExchangeRemark                                               -- óºë÷îıçl
           ,staff.ReceiptPrint StaffReceiptPrint                                        -- íSìñÉåÉVÅ[Égï\ãL
