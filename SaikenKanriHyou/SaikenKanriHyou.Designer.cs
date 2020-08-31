@@ -139,6 +139,7 @@
             this.sc_Customer.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.sc_Customer.DataCheck = false;
             this.sc_Customer.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sc_Customer.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.sc_Customer.IsCopy = false;
             this.sc_Customer.LabelText = "";
             this.sc_Customer.LabelVisible = true;
@@ -221,6 +222,7 @@
             this.txtTargetdate.AllowMinus = false;
             this.txtTargetdate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTargetdate.BackColor = System.Drawing.Color.White;
+            this.txtTargetdate.BorderColor = false;
             this.txtTargetdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTargetdate.ClientColor = System.Drawing.Color.White;
             this.txtTargetdate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -230,6 +232,7 @@
             this.txtTargetdate.IntegerPart = 0;
             this.txtTargetdate.IsCorrectDate = true;
             this.txtTargetdate.isEnterKeyDown = false;
+            this.txtTargetdate.IsFirstTime = true;
             this.txtTargetdate.isMaxLengthErr = false;
             this.txtTargetdate.IsNumber = true;
             this.txtTargetdate.IsShop = false;
