@@ -200,12 +200,9 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
         {
             if (GV_Tenzaishohin.Rows.Count > 0)
             {
-
-                
-                foreach (DataGridViewRow row in GV_Tenzaishohin.Rows)
+                foreach (DataGridViewRow row1 in GV_Tenzaishohin.Rows)
                 {
-
-                    row.Cells["ck"].Value = "0";
+                    row1.Cells["ck"].Value = "0";
                 }
             }
         }
