@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    class M_TenzikaiShouhin_Entity
+    public class M_TenzikaiShouhin_Entity:Base_Entity
     {
         public string VendorCD { get; set; }
         public string LastYearTerm { get; set; }
