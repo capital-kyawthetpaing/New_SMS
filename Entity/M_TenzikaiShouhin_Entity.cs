@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-      public  class M_TenzikaiShouhin_Entity
-      {
+    public class M_TenzikaiShouhin_Entity:Base_Entity
+    {
         public string VendorCD { get; set; }
         public string LastYearTerm { get; set; }
         public string LastSeason { get; set; }
@@ -16,5 +16,5 @@ namespace Entity
         public string SegmentCDFrom { get; set; }
         public string SegmentCDTo { get; set; }
         public string TenzikaiName { get; set; }
-      }
+    }
 }
