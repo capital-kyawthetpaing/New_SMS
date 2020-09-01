@@ -9,14 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base.Client;
 using BL;
+using Entity;
 
 namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
 {
     public partial class FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu : FrmMainForm
     {
+        M_TenzikaiShouhin_Entity mTSE; 
         public FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu()
         {
             InitializeComponent();
+            mTSE = new M_TenzikaiShouhin_Entity();
         }
         private void FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu_Load(object sender, EventArgs e)
         {
@@ -131,37 +134,49 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 case 6:
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                     {
-                        Clear();
+                        CleanData();
                         SC_Tanka.SetFocus(1);
                     }
+                    break;
+                case 3:
+                    ChangeMode(EOperationMode.UPDATE);
                     break;
                 //case 11:
                 //    F11();
                 //    break;
-                //case 12:
-                //    F12();
-                //    break;
+                    //case 12:
+                    //    F12();
+                    //    break;
             }
         }
-        private void Clear()
+        private void ChangeMode(EOperationMode OperationMode)
+        {
+            base.OperationMode = OperationMode;
+            switch (OperationMode)
+            {
+               
+                case EOperationMode.UPDATE:
+                    Clear(panel1);
+                    SC_Tanka.SetFocus(1);
+                    break;
+            }
+            
+        }
+        private void CleanData()
         {
             Clear(panel1);
             GV_Tenzaishohin.DataSource = null;
 
         }
+
+        private void SetRequireField()
+        {
+            SC_Tanka.TxtCode.Require(true);
+            TB_Rate.Require(true);
+        }
         protected override void EndSec()
         {
             this.Close();
-        }
-
-        private void SC_Tanka_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SC_Brand_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void Sc_Segment_Enter(object sender, EventArgs e)
@@ -185,14 +200,20 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
         {
             if (GV_Tenzaishohin.Rows.Count > 0)
             {
-
-                
-                foreach (DataGridViewRow row in GV_Tenzaishohin.Rows)
+                foreach (DataGridViewRow row1 in GV_Tenzaishohin.Rows)
                 {
-
-                    row.Cells["ck"].Value = "0";
+                    row1.Cells["ck"].Value = "0";
                 }
             }
+        }
+
+        private void BT_Display_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void F11()
+        {
+
         }
     }
 }
