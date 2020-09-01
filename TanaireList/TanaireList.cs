@@ -319,7 +319,7 @@ namespace TanaireList
             if(chkRegistered.Checked==false && chkUnregistered.Checked==false)
             {
                 tnlbl.ShowMessage("E111");
-                txtStartDate.Focus();
+                chkUnregistered.Focus();
                 return false;
             }
             if (!string.IsNullOrWhiteSpace(ScSKUCD.Code) && !ScSKUCD.IsExists(2))
@@ -393,6 +393,8 @@ namespace TanaireList
                     }
 
                 }
+                else
+                    Clear(panel2);
 
             }
         }
