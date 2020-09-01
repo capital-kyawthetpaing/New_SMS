@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-   public class D_Instruction_Entity:Base_Entity
+    public class D_Instruction_Entity : Base_Entity
     {
         public string InstructionNO { get; set; }
         public string DeliveryPlanNO { get; set; }
@@ -45,16 +45,16 @@ namespace Entity
         public int Chk5 { get; set; }
         public int ChkHakkozumi { get; set; }
         public int ChkSyukkazumi { get; set; }
+        public int ChkSyukkaFuka { get; set; }
         //検索用Entity
         public string InstructionDateFrom { get; set; }
         public string InstructionDateTo { get; set; }
         public string DeliveryPlanDateFrom { get; set; }
         public string DeliveryPlanDateTo { get; set; }
         public string JuchuuNO { get; set; }
-
         //出荷指示書用Entity
         public int ChkMihakko { get; set; }
         public int ChkSaihakko { get; set; }
-        public int ChkNohinSeikyu { get; set; }
-    }
+        public int　ChkNohinSeikyu{ get; set; }
+}
 }
