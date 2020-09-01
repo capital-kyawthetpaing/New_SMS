@@ -16,5 +16,13 @@ namespace Entity
         public string SegmentCDFrom { get; set; }
         public string SegmentCDTo { get; set; }
         public string TenzikaiName { get; set; }
+
+        public string DeleteFlg { get; set; }
+        public string TanKaCD { get; set; }
+
+        public string SalePriceOutTaxF { get; set; }
+        public string SalePriceOutTaxT { get; set; }
+
+        public string InsertOperator { get; set; }
     }
 }

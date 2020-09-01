@@ -105,6 +105,7 @@
     <Compile Include="MasterTouroku_SKUCDHenkou_SKUCD変更_BL.cs" />
     <Compile Include="MasterTouroku_Souko_BL.cs" />
     <Compile Include="MasterTouroku_Staff_BL.cs" />
+    <Compile Include="MasterTouroku_TenzikaiHanbaiTankaKakeritu_BL.cs" />
     <Compile Include="MasterTouroku_UnsouGaisya_BL.cs" />
     <Compile Include="MasterTouroku_YuubinBangou_BL.cs" />
     <Compile Include="Menu_BL.cs" />

@@ -34,7 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSetting = new CKM_Controls.CKM_Button();
+            this.BT_Apply = new CKM_Controls.CKM_Button();
             this.BT_DeseletAll = new CKM_Controls.CKM_Button();
             this.BT_SelectAll = new CKM_Controls.CKM_Button();
             this.BT_Display = new CKM_Controls.CKM_Button();
@@ -55,7 +55,8 @@
             this.Lb_brand = new CKM_Controls.CKM_Label();
             this.LB_tanka = new CKM_Controls.CKM_Label();
             this.GV_Tenzaishohin = new CKM_Controls.CKM_GridView();
-            this.CheckBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.CheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.BrandCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Segment = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +64,6 @@
             this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Season = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_Tenzaishohin)).BeginInit();
             this.panel2.SuspendLayout();
@@ -83,7 +83,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnSetting);
+            this.panel1.Controls.Add(this.BT_Apply);
             this.panel1.Controls.Add(this.BT_DeseletAll);
             this.panel1.Controls.Add(this.BT_SelectAll);
             this.panel1.Controls.Add(this.BT_Display);
@@ -108,23 +108,24 @@
             this.panel1.Size = new System.Drawing.Size(1690, 160);
             this.panel1.TabIndex = 100;
             // 
-            // btnSetting
+            // BT_Apply
             // 
-            this.btnSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnSetting.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.btnSetting.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSetting.DefaultBtnSize = false;
-            this.btnSetting.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetting.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSetting.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnSetting.Location = new System.Drawing.Point(856, 117);
-            this.btnSetting.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(90, 23);
-            this.btnSetting.TabIndex = 76;
-            this.btnSetting.Text = "適用";
-            this.btnSetting.UseVisualStyleBackColor = false;
+            this.BT_Apply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.BT_Apply.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.BT_Apply.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BT_Apply.DefaultBtnSize = false;
+            this.BT_Apply.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BT_Apply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_Apply.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.BT_Apply.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.BT_Apply.Location = new System.Drawing.Point(856, 117);
+            this.BT_Apply.Margin = new System.Windows.Forms.Padding(1);
+            this.BT_Apply.Name = "BT_Apply";
+            this.BT_Apply.Size = new System.Drawing.Size(90, 23);
+            this.BT_Apply.TabIndex = 76;
+            this.BT_Apply.Text = "適用";
+            this.BT_Apply.UseVisualStyleBackColor = false;
+            this.BT_Apply.Click += new System.EventHandler(this.BT_Apply_Click);
             // 
             // BT_DeseletAll
             // 
@@ -533,6 +534,7 @@
             // 
             // GV_Tenzaishohin
             // 
+            this.GV_Tenzaishohin.AllowUserToAddRows = false;
             this.GV_Tenzaishohin.AllowUserToDeleteRows = false;
             this.GV_Tenzaishohin.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
@@ -582,51 +584,7 @@
             this.GV_Tenzaishohin.TabIndex = 77;
             this.GV_Tenzaishohin.UseRowNo = true;
             this.GV_Tenzaishohin.UseSetting = false;
-            // 
-            // CheckBox
-            // 
-            this.CheckBox.HeaderText = "";
-            this.CheckBox.Name = "CheckBox";
-            this.CheckBox.Width = 30;
-            // 
-            // BrandCD
-            // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.BrandCD.DefaultCellStyle = dataGridViewCellStyle3;
-            this.BrandCD.HeaderText = "ブランド";
-            this.BrandCD.Name = "BrandCD";
-            // 
-            // BrandName
-            // 
-            this.BrandName.HeaderText = "";
-            this.BrandName.Name = "BrandName";
-            this.BrandName.Width = 200;
-            // 
-            // Segment
-            // 
-            this.Segment.HeaderText = "せグメト";
-            this.Segment.Name = "Segment";
-            // 
-            // SegmentName
-            // 
-            this.SegmentName.HeaderText = "";
-            this.SegmentName.Name = "SegmentName";
-            this.SegmentName.Width = 200;
-            // 
-            // Year
-            // 
-            this.Year.HeaderText = "年度";
-            this.Year.Name = "Year";
-            // 
-            // Season
-            // 
-            this.Season.HeaderText = "シーズン";
-            this.Season.Name = "Season";
-            // 
-            // Rate
-            // 
-            this.Rate.HeaderText = "掛率";
-            this.Rate.Name = "Rate";
+            this.GV_Tenzaishohin.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.GV_Tenzaishohin_DataError);
             // 
             // panel2
             // 
@@ -635,6 +593,68 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1690, 550);
             this.panel2.TabIndex = 101;
+            // 
+            // CheckBox
+            // 
+            this.CheckBox.FalseValue = "0";
+            this.CheckBox.HeaderText = "";
+            this.CheckBox.Name = "CheckBox";
+            this.CheckBox.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CheckBox.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.CheckBox.TrueValue = "1";
+            this.CheckBox.Width = 30;
+            // 
+            // BrandCD
+            // 
+            this.BrandCD.DataPropertyName = "BrandCD";
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            this.BrandCD.DefaultCellStyle = dataGridViewCellStyle3;
+            this.BrandCD.HeaderText = "ブランド";
+            this.BrandCD.Name = "BrandCD";
+            this.BrandCD.ReadOnly = true;
+            // 
+            // BrandName
+            // 
+            this.BrandName.DataPropertyName = "BrandName";
+            this.BrandName.HeaderText = "";
+            this.BrandName.Name = "BrandName";
+            this.BrandName.ReadOnly = true;
+            this.BrandName.Width = 200;
+            // 
+            // Segment
+            // 
+            this.Segment.DataPropertyName = "SegmentCD";
+            this.Segment.HeaderText = "せグメト";
+            this.Segment.Name = "Segment";
+            this.Segment.ReadOnly = true;
+            // 
+            // SegmentName
+            // 
+            this.SegmentName.DataPropertyName = "SegmentName";
+            this.SegmentName.HeaderText = "";
+            this.SegmentName.Name = "SegmentName";
+            this.SegmentName.ReadOnly = true;
+            this.SegmentName.Width = 200;
+            // 
+            // Year
+            // 
+            this.Year.DataPropertyName = "LastYearTerm";
+            this.Year.HeaderText = "年度";
+            this.Year.Name = "Year";
+            this.Year.ReadOnly = true;
+            // 
+            // Season
+            // 
+            this.Season.DataPropertyName = "LastSeason";
+            this.Season.HeaderText = "シーズン";
+            this.Season.Name = "Season";
+            this.Season.ReadOnly = true;
+            // 
+            // Rate
+            // 
+            this.Rate.DataPropertyName = "Rate";
+            this.Rate.HeaderText = "掛率";
+            this.Rate.Name = "Rate";
             // 
             // FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu
             // 
@@ -682,14 +702,15 @@
         private CKM_Controls.CKM_Label LB_segment;
         private CKM_Controls.CKM_Label Lb_brand;
         private CKM_Controls.CKM_Label LB_tanka;
-        private CKM_Controls.CKM_Button btnSetting;
+        private CKM_Controls.CKM_Button BT_Apply;
         private CKM_Controls.CKM_Button BT_DeseletAll;
         private CKM_Controls.CKM_Button BT_SelectAll;
         private CKM_Controls.CKM_Button BT_Display;
         private CKM_Controls.CKM_TextBox TB_Rate;
         private CKM_Controls.CKM_Label LB_Rate;
         private CKM_Controls.CKM_GridView GV_Tenzaishohin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CheckBox;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn CheckBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrandCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrandName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Segment;
@@ -697,6 +718,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Year;
         private System.Windows.Forms.DataGridViewTextBoxColumn Season;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rate;
-        private System.Windows.Forms.Panel panel2;
     }
 }
