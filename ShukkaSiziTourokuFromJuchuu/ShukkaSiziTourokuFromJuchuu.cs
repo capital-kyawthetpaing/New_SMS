@@ -725,8 +725,8 @@ namespace ShukkaSiziTourokuFromJuchuu
                                 if (m_EnableCnt - 1 < w_Row)
                                     break;
 
-                                //DeliveryPlanNOがある場合、入力可（有効行）
-                                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].DeliveryPlanNO))
+                                //（有効行）
+                                if (mGrid.g_DArray[w_Row].Kbn == 0)
                                 {
                                     continue;
                                 }
@@ -739,6 +739,7 @@ namespace ShukkaSiziTourokuFromJuchuu
                                         case (int)ClsGridShukka.ColNO.ChkTekiyo:    // 
                                         case (int)ClsGridShukka.ColNO.ChkUntin:    // 
                                         case (int)ClsGridShukka.ColNO.ChkShikyu:    //  
+                                        case (int)ClsGridShukka.ColNO.ChkMinyukin:    //  
                                         case (int)ClsGridShukka.ColNO.DeliveryPlanDate:    //入荷予定日
                                         case (int)ClsGridShukka.ColNO.CarrierName:    // 
                                         case (int)ClsGridShukka.ColNO.CommentInStore:    // 
@@ -754,15 +755,15 @@ namespace ShukkaSiziTourokuFromJuchuu
                                                     mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
                                                 }
 
-                                                if(w_Col == (int)ClsGridShukka.ColNO.DeliveryPlanDate)
+                                                if(w_Col == (int)ClsGridShukka.ColNO.ChkSyukka)
                                                 {
                                                     if (mGrid.g_DArray[w_Row].PinkFont.Equals(1))
                                                     {
-                                                        mGrid.g_MK_Ctrl[w_Col, w_Row].CellCtl.BackColor = Color.Pink;
+                                                        mGrid.g_MK_State[w_Col, w_Row].Cell_Color = Color.Pink;
                                                     }
                                                     else
                                                     {
-                                                        mGrid.g_MK_Ctrl[w_Col, w_Row].CellCtl.BackColor = mGrid.F_GetBackColor_MK(w_Col, w_Row);
+                                                        mGrid.g_MK_State[w_Col, w_Row].Cell_Color = mGrid.F_GetBackColor_MK(w_Col, w_Row);
                                                     }
                                                 }
                                             }
@@ -1028,7 +1029,7 @@ namespace ShukkaSiziTourokuFromJuchuu
                 //排他処理
                 foreach (DataRow row in dtInstruction.Rows)
                 {
-                    if (mOldInstructionNO != row["InstructionNO"].ToString())
+                    if (mOldInstructionNO != row["InstructionNO"].ToString() && !string.IsNullOrWhiteSpace(row["InstructionNO"].ToString()))
                     {
                         ret = SelectAndInsertExclusive(Exclusive_BL.DataKbn.SyukkaShiji, row["InstructionNO"].ToString());
                         if (!ret)
@@ -1045,7 +1046,7 @@ namespace ShukkaSiziTourokuFromJuchuu
                     }
                     if (mOldJuchuNO != row["JuchuNo"].ToString() && !string.IsNullOrWhiteSpace(row["JuchuNo"].ToString()))
                     {
-                        ret = SelectAndInsertExclusive(Exclusive_BL.DataKbn.Nyuka, row["JuchuNo"].ToString());
+                        ret = SelectAndInsertExclusive(Exclusive_BL.DataKbn.Jyuchu, row["JuchuNo"].ToString());
                         if (!ret)
                             return false;
 
@@ -1054,7 +1055,7 @@ namespace ShukkaSiziTourokuFromJuchuu
                         // データを追加
                         DataRow rowForUpdate;
                         rowForUpdate = dtForUpdate.NewRow();
-                        rowForUpdate["kbn"] = (int)Exclusive_BL.DataKbn.Nyuka;
+                        rowForUpdate["kbn"] = (int)Exclusive_BL.DataKbn.Jyuchu;
                         rowForUpdate["no"] = mOldJuchuNO;
                         dtForUpdate.Rows.Add(rowForUpdate);
                     }
@@ -1083,7 +1084,7 @@ namespace ShukkaSiziTourokuFromJuchuu
                         mGrid.g_DArray[i].PinkFont = 0;
 
                     //Untin＝1の時、ON
-                    if (bbl.Z_Set(row["Untin"]) == 1)
+                    if (bbl.Z_Set(row["UntinFlg"]) == 1)
                         mGrid.g_DArray[i].ChkUntin = true;
                     else
                         mGrid.g_DArray[i].ChkUntin = false;
@@ -1099,12 +1100,17 @@ namespace ShukkaSiziTourokuFromJuchuu
                         mGrid.g_DArray[i].ChkShikyu = false;
                     }
 
+                    if (bbl.Z_Set(row["Minyukin"]) == 1)
+                        mGrid.g_DArray[i].ChkMinyukin = true;
+                    else
+                        mGrid.g_DArray[i].ChkMinyukin = false;
+
                     mGrid.g_DArray[i].DeliveryPlanDate = row["DeliveryPlanDate"].ToString();
-                    mGrid.g_DArray[i].Hanbaigaku = row["HanbaiHontaiGaku"].ToString();
+                    mGrid.g_DArray[i].Hanbaigaku = bbl.Z_SetStr(row["HanbaiHontaiGaku"]);
                     mGrid.g_DArray[i].JuchuNo = row["JuchuuNO"].ToString();
                     mGrid.g_DArray[i].DeliveryAddress1 = row["DeliveryAddress1"].ToString();   // 
                     mGrid.g_DArray[i].DeliveryName = row["CustomerName"].ToString();
-                    mGrid.g_DArray[i].CarrierName = row["CarrierCD"].ToString();   // Combobox
+                    mGrid.g_DArray[i].CarrierName = row["DeliveryCD"].ToString();   // Combobox
                     mGrid.g_DArray[i].CommentInStore = row["CommentInStore"].ToString();   // 
                     mGrid.g_DArray[i].CommentOutStore = row["CommentOutStore"].ToString();   //
                     mGrid.g_DArray[i].ShippingDate = row["ShippingDate"].ToString();   // 
@@ -1117,10 +1123,11 @@ namespace ShukkaSiziTourokuFromJuchuu
                     mGrid.g_DArray[i].SKUName = row["SKUName"].ToString();   // 
                     mGrid.g_DArray[i].ColorName = row["ColorName"].ToString();   // 
                     mGrid.g_DArray[i].SizeName = row["SizeName"].ToString();   // 
-                    mGrid.g_DArray[i].JuchuSu = bbl.Z_SetStr(row["JuchuSu"]);
+                    mGrid.g_DArray[i].JuchuSu = bbl.Z_SetStr(row["JuchuuSuu"]);
+                    mGrid.g_DArray[i].SoukoName = row["SoukoName"].ToString();
 
                     //隠し項目
-                    mGrid.g_DArray[i].InstructionKBN = Convert.ToInt16(row["InstructionKBN"]);
+                    mGrid.g_DArray[i].InstructionKBN = Convert.ToInt16(row["ShukkaShubetsu"]);
                     mGrid.g_DArray[i].InstructionRows = Convert.ToInt16(row["InstructionRows"]);
                     mGrid.g_DArray[i].DeliveryPlanNO = row["DeliveryPlanNO"].ToString();
                     mGrid.g_DArray[i].Kbn = Convert.ToInt16(row["KBN"]);
@@ -1354,6 +1361,17 @@ namespace ShukkaSiziTourokuFromJuchuu
                         }
                     }
                     break;
+
+                case (int)ClsGridShukka.ColNO.ChkSyukka:
+                    //出荷CheckBoxをONにした場合、(When the shipping CheckBox is turned ON,)
+                    //同一出荷先/出荷予定日の受注明細を集計し、合計税抜受注額を算出する。
+
+                    break;
+
+                case (int)ClsGridShukka.ColNO.ChkUntin:
+                    ChangeCheckUntin(mGrid.g_DArray[row].ChkUntin, row);
+
+                        break;
             }
 
             //配列の内容を画面へセット
@@ -1716,7 +1734,7 @@ namespace ShukkaSiziTourokuFromJuchuu
                     if (ret)
                     {
 
-                        if (index == (int)EIndex.DeliveryName) //取込日
+                        if (index == (int)EIndex.ChkShukkafuka) 
                             btnSubF11.Focus();
 
                         else if (index == (int)EIndex.COUNT - 1)
@@ -2014,6 +2032,11 @@ namespace ShukkaSiziTourokuFromJuchuu
                 //EndSec();
             }
         }
+        /// <summary>
+        /// 適用ボタン押下時処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Hanei_Click(object sender, EventArgs e)
         {
             try
@@ -2091,7 +2114,23 @@ namespace ShukkaSiziTourokuFromJuchuu
                     break;
             }
         }
+        private void ChangeCheckUntin(bool check, int row)
+        {
+            string syukkaName = mGrid.g_DArray[row].DeliveryName;
+            string syukkaDate = mGrid.g_DArray[row].DeliveryPlanDate;
 
+            //運賃明細追加CheckBoxをONにした場合、(When the Add fare details CheckBox is turned ON,)
+            //同一出荷先/出荷予定日の全明細の運賃明細追加CheckBoxをON
+            //運賃明細追加CheckBoxをOFFにした場合、(When the Add fare details CheckBox is turned ON,)
+            //同一出荷先/出荷予定日の全明細の運賃明細追加CheckBoxをOFF
+            for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+            {
+                if (mGrid.g_DArray[RW].DeliveryName == syukkaName && mGrid.g_DArray[RW].DeliveryPlanDate == syukkaDate)
+                {
+                    mGrid.g_DArray[RW].ChkUntin = check;
+                }
+            }
+        }
     }
 }
 
