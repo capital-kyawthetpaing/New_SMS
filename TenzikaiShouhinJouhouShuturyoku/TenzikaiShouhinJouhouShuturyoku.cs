@@ -11,7 +11,6 @@ using BL;
 using Entity;
 using Base.Client;
 using CKM_Controls;
-using Search;
 using System.Diagnostics;
 using System.IO;
 using ClosedXML.Excel;
@@ -20,11 +19,12 @@ namespace TenzikaiShouhinJouhouShuturyoku
 {
     public partial class frmTenzikaiShouhinJouhouShuturyoku : FrmMainForm
     {
+        TenzikaiShouhinJouhouShuturyoku_BL tzkbl;
         public frmTenzikaiShouhinJouhouShuturyoku()
         {
             InitializeComponent();
+            tzkbl = new TenzikaiShouhinJouhouShuturyoku_BL();
         }
-
         private void frmTenzikaiShouhinJouhouShuturyoku_Load(object sender, EventArgs e)
         {
             InProgramID = "TenzikaiShouhinJouhouShuturyoku";
@@ -56,6 +56,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
                         if (bbl.ShowMessage("Q004") != DialogResult.Yes)
                             return;
                         Clear(panelDetail);
+                        scSupplierCD.SetFocus(1);
                     }
                     break;
                 case 10:
