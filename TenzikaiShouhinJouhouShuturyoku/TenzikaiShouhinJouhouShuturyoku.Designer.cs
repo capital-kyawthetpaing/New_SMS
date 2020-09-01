@@ -103,7 +103,7 @@
             this.txtExhibitionName.IsNumber = true;
             this.txtExhibitionName.IsShop = false;
             this.txtExhibitionName.Length = 32767;
-            this.txtExhibitionName.Location = new System.Drawing.Point(199, 179);
+            this.txtExhibitionName.Location = new System.Drawing.Point(199, 171);
             this.txtExhibitionName.MoveNext = true;
             this.txtExhibitionName.Name = "txtExhibitionName";
             this.txtExhibitionName.Size = new System.Drawing.Size(500, 19);
@@ -128,10 +128,10 @@
             this.scSegmentCDTo.Location = new System.Drawing.Point(661, 124);
             this.scSegmentCDTo.Margin = new System.Windows.Forms.Padding(0);
             this.scSegmentCDTo.Name = "scSegmentCDTo";
-            this.scSegmentCDTo.NameWidth = 281;
+            this.scSegmentCDTo.NameWidth = 280;
             this.scSegmentCDTo.SearchEnable = true;
-            this.scSegmentCDTo.Size = new System.Drawing.Size(415, 28);
-            this.scSegmentCDTo.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.scSegmentCDTo.Size = new System.Drawing.Size(414, 28);
+            this.scSegmentCDTo.Stype = Search.CKM_SearchControl.SearchType.商品分類;
             this.scSegmentCDTo.TabIndex = 14;
             this.scSegmentCDTo.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSegmentCDTo.UseChangeDate = false;
@@ -139,6 +139,7 @@
             this.scSegmentCDTo.Value2 = null;
             this.scSegmentCDTo.Value3 = null;
             this.scSegmentCDTo.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scSegmentCDTo_CodeKeyDownEvent);
+            this.scSegmentCDTo.Enter += new System.EventHandler(this.scSegmentCDTo_Enter);
             this.scSegmentCDTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.scSegmentCDTo_KeyDown);
             // 
             // ckM_Label7
@@ -176,10 +177,10 @@
             this.scSegmentCDFrom.Location = new System.Drawing.Point(199, 126);
             this.scSegmentCDFrom.Margin = new System.Windows.Forms.Padding(0);
             this.scSegmentCDFrom.Name = "scSegmentCDFrom";
-            this.scSegmentCDFrom.NameWidth = 281;
+            this.scSegmentCDFrom.NameWidth = 280;
             this.scSegmentCDFrom.SearchEnable = true;
-            this.scSegmentCDFrom.Size = new System.Drawing.Size(415, 28);
-            this.scSegmentCDFrom.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.scSegmentCDFrom.Size = new System.Drawing.Size(414, 28);
+            this.scSegmentCDFrom.Stype = Search.CKM_SearchControl.SearchType.商品分類;
             this.scSegmentCDFrom.TabIndex = 12;
             this.scSegmentCDFrom.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSegmentCDFrom.UseChangeDate = false;
@@ -187,6 +188,7 @@
             this.scSegmentCDFrom.Value2 = null;
             this.scSegmentCDFrom.Value3 = null;
             this.scSegmentCDFrom.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scSegmentCDFrom_CodeKeyDownEvent);
+            this.scSegmentCDFrom.Enter += new System.EventHandler(this.scSegmentCDFrom_Enter);
             // 
             // ckM_Label6
             // 
@@ -223,10 +225,10 @@
             this.scBrandCDTo.Location = new System.Drawing.Point(660, 88);
             this.scBrandCDTo.Margin = new System.Windows.Forms.Padding(0);
             this.scBrandCDTo.Name = "scBrandCDTo";
-            this.scBrandCDTo.NameWidth = 281;
+            this.scBrandCDTo.NameWidth = 280;
             this.scBrandCDTo.SearchEnable = true;
-            this.scBrandCDTo.Size = new System.Drawing.Size(415, 28);
-            this.scBrandCDTo.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.scBrandCDTo.Size = new System.Drawing.Size(414, 28);
+            this.scBrandCDTo.Stype = Search.CKM_SearchControl.SearchType.ブランド;
             this.scBrandCDTo.TabIndex = 10;
             this.scBrandCDTo.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scBrandCDTo.UseChangeDate = false;
@@ -287,7 +289,7 @@
             // 
             this.cbo_Season.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cbo_Season.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbo_Season.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
+            this.cbo_Season.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
             this.cbo_Season.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
             this.cbo_Season.Flag = 0;
             this.cbo_Season.FormattingEnabled = true;
@@ -303,7 +305,7 @@
             // 
             this.cbo_Year.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cbo_Year.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbo_Year.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
+            this.cbo_Year.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.年度;
             this.cbo_Year.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
             this.cbo_Year.Flag = 0;
             this.cbo_Year.FormattingEnabled = true;
@@ -354,7 +356,7 @@
             this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(139, 183);
+            this.ckM_Label5.Location = new System.Drawing.Point(139, 175);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label5.TabIndex = 4;
@@ -371,7 +373,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(126, 145);
+            this.ckM_Label4.Location = new System.Drawing.Point(126, 134);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label4.TabIndex = 3;

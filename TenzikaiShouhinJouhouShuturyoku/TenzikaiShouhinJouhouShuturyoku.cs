@@ -20,10 +20,13 @@ namespace TenzikaiShouhinJouhouShuturyoku
     public partial class frmTenzikaiShouhinJouhouShuturyoku : FrmMainForm
     {
         TenzikaiShouhinJouhouShuturyoku_BL tzkbl;
+        M_TenzikaiShouhin_Entity mte;
+        DataTable dt;
         public frmTenzikaiShouhinJouhouShuturyoku()
         {
             InitializeComponent();
             tzkbl = new TenzikaiShouhinJouhouShuturyoku_BL();
+            dt = new DataTable();
         }
         private void frmTenzikaiShouhinJouhouShuturyoku_Load(object sender, EventArgs e)
         {
@@ -32,7 +35,9 @@ namespace TenzikaiShouhinJouhouShuturyoku
             StartProgram();
             BindCombo();
             Btn_F10.Text = "出力(F10)";
+            F2Visible = false;
             SetRequiredField();
+            scSupplierCD.SetFocus(1);
         }
         public void BindCombo()
         {
@@ -86,12 +91,77 @@ namespace TenzikaiShouhinJouhouShuturyoku
             }
             return true;
         }
-
+        private M_TenzikaiShouhin_Entity GetData()
+        {
+            mte = new M_TenzikaiShouhin_Entity()
+            {
+               VendorCD=scSupplierCD.TxtCode.Text,
+               LastYearTerm=cbo_Year.SelectedValue.ToString(),
+               LastSeason=cbo_Season.SelectedValue.ToString(),
+               BranCDFrom=scBrandCDFrom.TxtCode.Text,
+               BrandCDTo=scBrandCDTo.TxtCode.Text,
+               SegmentCDFrom=scSegmentCDFrom.TxtCode.Text,
+               SegmentCDTo=scSegmentCDTo.TxtCode.Text,
+               TenzikaiName=txtExhibitionName.Text
+            };
+            return mte;
+        }
         private void F10()
         {
             if (ErrorCheck())
             {
+                mte = new M_TenzikaiShouhin_Entity();
+                mte = GetData();
+                DataTable dt = tzkbl.Rpc_TenzikaiShouhinJouhouShuturyoku(mte);
+                if (dt.Rows.Count > 0)
+                {
+                    //DataTable dtExport = dt;
+                    string folderPath = "C:\\SES\\";
+                    if (!Directory.Exists(folderPath))
+                    {
+                        Directory.CreateDirectory(folderPath);
+                    }
+                    SaveFileDialog savedialog = new SaveFileDialog();
+                    savedialog.Filter = "Excel Files|*.xlsx;";
+                    savedialog.Title = "Save";
+                    savedialog.FileName = "展示会商品情報出力";
+                    savedialog.InitialDirectory = folderPath;
+                    savedialog.RestoreDirectory = true;
+                    if (savedialog.ShowDialog() == DialogResult.OK)
+                    {
+                        if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
+                        {
+                            Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+                            Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+                            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
 
+                            worksheet = workbook.ActiveSheet;
+                            worksheet.Name = "worksheet";
+                            using (XLWorkbook wb = new XLWorkbook())
+                            {
+                                wb.Worksheets.Add(dt, "worksheet");
+                                wb.SaveAs(savedialog.FileName);
+                                tzkbl.ShowMessage("Q201", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
+                            }
+                            Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                        }
+                    }
+                }
+            }
+        }
+        private void scSupplierCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                scSupplierCD.ChangeDate = bbl.GetDate();
+                if (!string.IsNullOrEmpty(scSupplierCD.TxtCode.Text))
+                {
+                    if (!scSupplierCD.SelectData())
+                    {
+                        bbl.ShowMessage("E101");
+                        scSupplierCD.SetFocus(1);
+                    }
+                }
             }
         }
         private void scBrandCDFrom_CodeKeyDownEvent(object sender, KeyEventArgs e)
@@ -157,7 +227,6 @@ namespace TenzikaiShouhinJouhouShuturyoku
                 }
             }
         }
-
         private void scBrandCDTo_KeyDown(object sender, KeyEventArgs e)
         {
             if (!string.IsNullOrEmpty(scBrandCDFrom.TxtCode.Text) && !string.IsNullOrEmpty(scBrandCDTo.TxtCode.Text))
@@ -181,21 +250,13 @@ namespace TenzikaiShouhinJouhouShuturyoku
                 }
             }
         }
-
-        private void scSupplierCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        private void scSegmentCDFrom_Enter(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                scSupplierCD.ChangeDate = bbl.GetDate();
-                if (!string.IsNullOrEmpty(scSupplierCD.TxtCode.Text))
-                {
-                    if (!scSupplierCD.SelectData())
-                    {
-                        bbl.ShowMessage("E101");
-                        scSupplierCD.SetFocus(1);
-                    }
-                }
-            }
+            scSegmentCDFrom.Value1 = "226";
+        }
+        private void scSegmentCDTo_Enter(object sender, EventArgs e)
+        {
+            scSegmentCDTo.Value1 = "226";
         }
         protected override void EndSec()
         {

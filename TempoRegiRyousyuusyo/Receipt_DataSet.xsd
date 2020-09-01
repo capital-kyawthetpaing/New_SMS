@@ -12,7 +12,7 @@
   <xs:element name="Receipt_DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Receipt_DataSet" msprop:Generator_UserDSName="Receipt_DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="StoreTable" msprop:Generator_TableClassName="StoreTableDataTable" msprop:Generator_TableVarName="tableStoreTable" msprop:Generator_TablePropName="StoreTable" msprop:Generator_RowDeletingName="StoreTableRowDeleting" msprop:Generator_RowChangingName="StoreTableRowChanging" msprop:Generator_RowEvHandlerName="StoreTableRowChangeEventHandler" msprop:Generator_RowDeletedName="StoreTableRowDeleted" msprop:Generator_UserTableName="StoreTable" msprop:Generator_RowChangedName="StoreTableRowChanged" msprop:Generator_RowEvArgName="StoreTableRowChangeEvent" msprop:Generator_RowClassName="StoreTableRow">
+        <xs:element name="StoreTable" msprop:Generator_TableClassName="StoreTableDataTable" msprop:Generator_TableVarName="tableStoreTable" msprop:Generator_RowChangedName="StoreTableRowChanged" msprop:Generator_TablePropName="StoreTable" msprop:Generator_RowDeletingName="StoreTableRowDeleting" msprop:Generator_RowChangingName="StoreTableRowChanging" msprop:Generator_RowEvHandlerName="StoreTableRowChangeEventHandler" msprop:Generator_RowDeletedName="StoreTableRowDeleted" msprop:Generator_RowClassName="StoreTableRow" msprop:Generator_UserTableName="StoreTable" msprop:Generator_RowEvArgName="StoreTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Logo" msprop:Generator_ColumnVarNameInTable="columnLogo" msprop:Generator_ColumnPropNameInRow="Logo" msprop:Generator_ColumnPropNameInTable="LogoColumn" msprop:Generator_UserColumnName="Logo" type="xs:base64Binary" minOccurs="0" />
@@ -27,7 +27,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SalesTable" msprop:Generator_TableClassName="SalesTableDataTable" msprop:Generator_TableVarName="tableSalesTable" msprop:Generator_TablePropName="SalesTable" msprop:Generator_RowDeletingName="SalesTableRowDeleting" msprop:Generator_RowChangingName="SalesTableRowChanging" msprop:Generator_RowEvHandlerName="SalesTableRowChangeEventHandler" msprop:Generator_RowDeletedName="SalesTableRowDeleted" msprop:Generator_UserTableName="SalesTable" msprop:Generator_RowChangedName="SalesTableRowChanged" msprop:Generator_RowEvArgName="SalesTableRowChangeEvent" msprop:Generator_RowClassName="SalesTableRow">
+        <xs:element name="SalesTable" msprop:Generator_TableClassName="SalesTableDataTable" msprop:Generator_TableVarName="tableSalesTable" msprop:Generator_RowChangedName="SalesTableRowChanged" msprop:Generator_TablePropName="SalesTable" msprop:Generator_RowDeletingName="SalesTableRowDeleting" msprop:Generator_RowChangingName="SalesTableRowChanging" msprop:Generator_RowEvHandlerName="SalesTableRowChangeEventHandler" msprop:Generator_RowDeletedName="SalesTableRowDeleted" msprop:Generator_RowClassName="SalesTableRow" msprop:Generator_UserTableName="SalesTable" msprop:Generator_RowEvArgName="SalesTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="StoreReceiptPrint" msprop:Generator_ColumnVarNameInTable="columnStoreReceiptPrint" msprop:Generator_ColumnPropNameInRow="StoreReceiptPrint" msprop:Generator_ColumnPropNameInTable="StoreReceiptPrintColumn" msprop:Generator_UserColumnName="StoreReceiptPrint" type="xs:string" minOccurs="0" />
@@ -37,6 +37,7 @@
               <xs:element name="IssueDateTime" msprop:Generator_ColumnVarNameInTable="columnIssueDateTime" msprop:Generator_ColumnPropNameInRow="IssueDateTime" msprop:Generator_ColumnPropNameInTable="IssueDateTimeColumn" msprop:Generator_UserColumnName="IssueDateTime" type="xs:string" minOccurs="0" />
               <xs:element name="ReIssueDateTime" msprop:Generator_ColumnVarNameInTable="columnReIssueDateTime" msprop:Generator_ColumnPropNameInRow="ReIssueDateTime" msprop:Generator_ColumnPropNameInTable="ReIssueDateTimeColumn" msprop:Generator_UserColumnName="ReIssueDateTime" type="xs:string" minOccurs="0" />
               <xs:element name="ReIssue" msprop:Generator_ColumnVarNameInTable="columnReIssue" msprop:Generator_ColumnPropNameInRow="ReIssue" msprop:Generator_ColumnPropNameInTable="ReIssueColumn" msprop:Generator_UserColumnName="ReIssue" type="xs:string" minOccurs="0" />
+              <xs:element name="Row" msprop:Generator_ColumnVarNameInTable="columnRow" msprop:Generator_ColumnPropNameInRow="Row" msprop:Generator_ColumnPropNameInTable="RowColumn" msprop:Generator_UserColumnName="Row" type="xs:int" minOccurs="0" />
               <xs:element name="JanCD" msprop:Generator_ColumnVarNameInTable="columnJanCD" msprop:Generator_ColumnPropNameInRow="JanCD" msprop:Generator_ColumnPropNameInTable="JanCDColumn" msprop:Generator_UserColumnName="JanCD" type="xs:string" minOccurs="0" />
               <xs:element name="SKUShortName1" msprop:Generator_ColumnVarNameInTable="columnSKUShortName1" msprop:Generator_ColumnPropNameInRow="SKUShortName1" msprop:Generator_ColumnPropNameInTable="SKUShortName1Column" msprop:Generator_UserColumnName="SKUShortName1" type="xs:string" minOccurs="0" />
               <xs:element name="SKUShortName2" msprop:Generator_ColumnVarNameInTable="columnSKUShortName2" msprop:Generator_ColumnPropNameInRow="SKUShortName2" msprop:Generator_ColumnPropNameInTable="SKUShortName2Column" msprop:Generator_UserColumnName="SKUShortName2" type="xs:string" minOccurs="0" />
@@ -84,7 +85,7 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="StoreTable_SalesTable" msdata:parent="StoreTable" msdata:child="SalesTable" msdata:parentkey="StoreReceiptPrint" msdata:childkey="StoreReceiptPrint" msprop:Generator_UserChildTable="SalesTable" msprop:Generator_ChildPropName="GetSalesTableRows" msprop:Generator_UserRelationName="StoreTable_SalesTable" msprop:Generator_RelationVarName="relationStoreTable_SalesTable" msprop:Generator_UserParentTable="StoreTable" msprop:Generator_ParentPropName="StoreTableRow" />
+      <msdata:Relationship name="StoreTable_SalesTable" msdata:parent="StoreTable" msdata:child="SalesTable" msdata:parentkey="StoreReceiptPrint" msdata:childkey="StoreReceiptPrint" msprop:Generator_UserChildTable="SalesTable" msprop:Generator_ChildPropName="GetSalesTableRows" msprop:Generator_UserRelationName="StoreTable_SalesTable" msprop:Generator_ParentPropName="StoreTableRow" msprop:Generator_RelationVarName="relationStoreTable_SalesTable" msprop:Generator_UserParentTable="StoreTable" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

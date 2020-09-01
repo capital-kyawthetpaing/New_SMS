@@ -1892,7 +1892,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
         {
             var dt = GetdatafromArray();
             string Xml = spb.DataTableToXml(dt);
-            var StartDate = dt.Rows[0]["StartChangeDate"].ToString();
+            string StartDate = dt.Rows[0]["StartChangeDate"].ToString();
             if (dt.Rows.Count>=StartDate.Length)
             {
                 bbl.ShowMessage("Date Exist!!");

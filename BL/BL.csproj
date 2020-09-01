@@ -159,6 +159,7 @@
     <Compile Include="ShukkaNyuuryoku_BL.cs" />
     <Compile Include="ShukkaShijiTouroku_BL.cs" />
     <Compile Include="ShukkaShoukai_BL.cs" />
+    <Compile Include="ShukkaSiziTourokuFromJuchuu_BL.cs" />
     <Compile Include="ShukkaUriageUpdate_BL.cs" />
     <Compile Include="SiharaiNyuuryoku_BL.cs" />
     <Compile Include="SiharaiTouroku_BL.cs" />

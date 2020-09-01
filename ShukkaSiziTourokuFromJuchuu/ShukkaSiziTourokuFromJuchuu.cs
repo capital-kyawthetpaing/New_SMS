@@ -9,16 +9,15 @@ using Base.Client;
 using Search;
 using GridBase;
 
-namespace ShukkaShijiTouroku
+namespace ShukkaSiziTourokuFromJuchuu
 {
     /// <summary>
-    /// ShukkaShijiTouroku 出荷指示登録
+    /// ShukkaSiziTourokuFromJuchuu 出荷指示登録(受注から)
     /// </summary>
-    internal partial class ShukkaShijiTouroku : FrmMainForm
+    internal partial class ShukkaSiziTourokuFromJuchuu : FrmMainForm
     {
-        private const string ProID = "ShukkaShijiTouroku";
-        private const string ProNm = "出荷指示登録";
-        private const string JuchuuNyuuryoku = "TempoJuchuuNyuuryoku.exe";
+        private const string ProID = "ShukkaSiziTourokuFromJuchuu";
+        private const string ProNm = "出荷指示登録(受注から)";
         private const short mc_L_END = 3; // ロック用
 
 
@@ -29,13 +28,12 @@ namespace ShukkaShijiTouroku
             PlanDateTo,
             Chk1,
             Chk2,
-            Chk3,
-            Chk4,
             Chk5,
             DeliveryName,
 
             ChkHakkozumi,
             ChkShukkazumi,
+            ChkShukkafuka,
 
             DeliveryPlanDate,
             CarrierCD,
@@ -48,12 +46,14 @@ namespace ShukkaShijiTouroku
         private Control[] detailLabels;
         private Control[] searchButtons;
 
-        private ShukkaShijiTouroku_BL ssbl;
+        private ShukkaSiziTourokuFromJuchuu_BL ssbl;
         private D_Instruction_Entity die;
         private DataTable dtInstruction;
 
         private System.Windows.Forms.Control previousCtrl; // ｶｰｿﾙの元の位置を待避
 
+        private DataTable dtForUpdate;              //排他用   
+        private string mOldJuchuNO = "";    //排他処理のため使用
         private string mOldInstructionNO = "";    //排他処理のため使用
 
 
@@ -140,16 +140,6 @@ namespace ShukkaShijiTouroku
                             check.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown);
                             check.Click += new System.EventHandler(CHK_Del_Click);
                         }
-                        else if (mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.GetType().Equals(typeof(Button)))
-                        {
-                            Button btn = (Button)mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl;
-
-                            if (w_CtlCol == (int)ClsGridShukka.ColNO.BtnJuchu)
-                                btn.Click += new System.EventHandler(BTN_Juchu_Click);
-                            else
-                                btn.Click += new System.EventHandler(BTN_Detail_Click);
-
-                        }
                     }
                 }
             }
@@ -181,12 +171,13 @@ namespace ShukkaShijiTouroku
             {
                 for (int W_CtlCol = 0; W_CtlCol < (int)ClsGridShukka.ColNO.COUNT; W_CtlCol++)
                 {
-                    //switch (W_CtlCol)
-                    //{
-                    //    case (int)ClsGridShukka.ColNO.Space:
-                    //        mGrid.SetProp_SU(5, ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);
-                    //        break;
-                    //}
+                    switch (W_CtlCol)
+                    {
+                        case (int)ClsGridShukka.ColNO.Hanbaigaku:
+                        case (int)ClsGridShukka.ColNO.JuchuSu:
+                            mGrid.SetProp_TANKA(ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);
+                            break;
+                    }
 
                     mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl.TabIndex = tabindex;
                     tabindex++;
@@ -208,58 +199,67 @@ namespace ShukkaShijiTouroku
             // 1行目
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.GYONO, 0].CellCtl = IMT_GYONO_0;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkSyukka, 0].CellCtl = CHK_EDICK_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnJuchu, 0].CellCtl = BTN_Detail_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnDetail, 0].CellCtl = BTN_Detail2_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SKUName, 0].CellCtl = IMT_SYONM_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SizeName, 0].CellCtl = IMT_SIZE_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ColorName, 0].CellCtl = IMT_COLOR_0;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CarrierName, 0].CellCtl = IMC_KBN_0;    //支払予定
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JuchuNo, 0].CellCtl = IMT_ITMCD_0;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkTekiyo, 0].CellCtl = CHK_Tekiyo_0;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.PrintDate, 0].CellCtl = IMT_KAIDT_0;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryAddress1, 0].CellCtl = IMT_ITMNM_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.Space, 0].CellCtl = IMN_TEIKA_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkSokujitu, 0].CellCtl = CHK_Sokujitu_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SoukoName, 0].CellCtl = IMN_TEIKA_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkUntin, 0].CellCtl = CHK_Sokujitu_0;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.InstructionNO, 0].CellCtl = IMN_MEMBR_0;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ShippingDate, 0].CellCtl = IMN_CLINT_0;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentOutStore, 0].CellCtl = IMN_WEBPR_0;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryName, 0].CellCtl = IMN_WEBPR2_0;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentInStore, 0].CellCtl = IMT_REMAK_0;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkShikyu, 0].CellCtl = CHK_Shikyu_0;      //メーカー商品CD
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 0].CellCtl = IMT_ARIDT_0;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 0].CellCtl = IMT_PAYDT_0;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 0].CellCtl = IMT_ARIDT_0;     //出荷予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.Hanbaigaku, 0].CellCtl = IMT_PAYDT_0;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkMinyukin, 0].CellCtl = CHK_Minyu_0;    //
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SKUCD, 0].CellCtl = IMT_JUONO_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JanCD, 0].CellCtl = IMT_JANCD_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JuchuSu, 0].CellCtl = IMN_GENER_0;
 
             // 2行目
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.GYONO, 1].CellCtl = IMT_GYONO_1;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkSyukka, 1].CellCtl = CHK_EDICK_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnJuchu, 1].CellCtl = BTN_Detail_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnDetail, 1].CellCtl = BTN_Detail2_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SKUName, 1].CellCtl = IMT_SYONM_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SizeName, 1].CellCtl = IMT_SIZE_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ColorName, 1].CellCtl = IMT_COLOR_1;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CarrierName, 1].CellCtl = IMC_KBN_1;    //支払予定
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JuchuNo, 1].CellCtl = IMT_ITMCD_1;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkTekiyo, 1].CellCtl = CHK_Tekiyo_1;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.PrintDate, 1].CellCtl = IMT_KAIDT_1;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryAddress1, 1].CellCtl = IMT_ITMNM_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.Space, 1].CellCtl = IMN_TEIKA_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkSokujitu, 1].CellCtl = CHK_Sokujitu_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SoukoName, 1].CellCtl = IMN_TEIKA_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkUntin, 1].CellCtl = CHK_Sokujitu_1;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.InstructionNO, 1].CellCtl = IMN_MEMBR_1;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ShippingDate, 1].CellCtl = IMN_CLINT_1;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentOutStore, 1].CellCtl = IMN_WEBPR_1;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryName, 1].CellCtl = IMN_WEBPR2_1;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentInStore, 1].CellCtl = IMT_REMAK_1;
-
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkShikyu, 1].CellCtl = CHK_Shikyu_1;      //メーカー商品CD
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 1].CellCtl = IMT_ARIDT_1;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 1].CellCtl = IMT_PAYDT_1;    //支払予定日
-
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.Hanbaigaku, 1].CellCtl = IMT_PAYDT_1;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkMinyukin, 1].CellCtl = CHK_Minyu_1;    //
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SKUCD, 1].CellCtl = IMT_JUONO_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JanCD, 01].CellCtl = IMT_JANCD_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JuchuSu, 01].CellCtl = IMN_GENER_1;
             // 3行目
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.GYONO, 2].CellCtl = IMT_GYONO_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnJuchu, 2].CellCtl = BTN_Detail_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnDetail, 2].CellCtl = BTN_Detail2_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SKUName, 2].CellCtl = IMT_SYONM_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SizeName, 2].CellCtl = IMT_SIZE_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ColorName, 2].CellCtl = IMT_COLOR_2;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CarrierName, 2].CellCtl = IMC_KBN_2;    //支払予定
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkSyukka, 2].CellCtl = CHK_EDICK_2;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JuchuNo, 2].CellCtl = IMT_ITMCD_2;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkTekiyo, 2].CellCtl = CHK_Tekiyo_2;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.PrintDate, 2].CellCtl = IMT_KAIDT_2;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryAddress1, 2].CellCtl = IMT_ITMNM_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.Space, 2].CellCtl = IMN_TEIKA_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkSokujitu, 2].CellCtl = CHK_Sokujitu_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SoukoName, 2].CellCtl = IMN_TEIKA_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkUntin, 2].CellCtl = CHK_Sokujitu_2;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.InstructionNO, 2].CellCtl = IMN_MEMBR_2;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ShippingDate, 2].CellCtl = IMN_CLINT_2;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentOutStore, 2].CellCtl = IMN_WEBPR_2;
@@ -267,20 +267,24 @@ namespace ShukkaShijiTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentInStore, 2].CellCtl = IMT_REMAK_2;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkShikyu, 2].CellCtl = CHK_Shikyu_2;      //メーカー商品CD
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 2].CellCtl = IMT_ARIDT_2;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 2].CellCtl = IMT_PAYDT_2;    //支払予定日
-
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.Hanbaigaku, 2].CellCtl = IMT_PAYDT_2;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkMinyukin, 2].CellCtl = CHK_Minyu_2;    //
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SKUCD, 2].CellCtl = IMT_JUONO_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JanCD, 2].CellCtl = IMT_JANCD_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JuchuSu, 2].CellCtl = IMN_GENER_2;
             // 1行目
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.GYONO, 3].CellCtl = IMT_GYONO_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnJuchu, 3].CellCtl = BTN_Detail_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnDetail, 3].CellCtl = BTN_Detail2_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SKUName, 3].CellCtl = IMT_SYONM_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SizeName, 3].CellCtl = IMT_SIZE_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ColorName, 3].CellCtl = IMT_COLOR_3;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CarrierName, 3].CellCtl = IMC_KBN_3;    //支払予定
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkSyukka, 3].CellCtl = CHK_EDICK_3;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JuchuNo, 3].CellCtl = IMT_ITMCD_3;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkTekiyo, 3].CellCtl = CHK_Tekiyo_3;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.PrintDate, 3].CellCtl = IMT_KAIDT_3;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryAddress1, 3].CellCtl = IMT_ITMNM_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.Space, 3].CellCtl = IMN_TEIKA_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkSokujitu, 3].CellCtl = CHK_Sokujitu_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SoukoName, 3].CellCtl = IMN_TEIKA_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkUntin, 3].CellCtl = CHK_Sokujitu_3;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.InstructionNO, 3].CellCtl = IMN_MEMBR_3;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ShippingDate, 3].CellCtl = IMN_CLINT_3;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentOutStore, 3].CellCtl = IMN_WEBPR_3;
@@ -288,20 +292,24 @@ namespace ShukkaShijiTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentInStore, 3].CellCtl = IMT_REMAK_3;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkShikyu, 3].CellCtl = CHK_Shikyu_3;      //メーカー商品CD
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 3].CellCtl = IMT_ARIDT_3;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 3].CellCtl = IMT_PAYDT_3;    //支払予定日
-
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.Hanbaigaku, 3].CellCtl = IMT_PAYDT_3;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkMinyukin, 3].CellCtl = CHK_Minyu_3;    //
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SKUCD, 3].CellCtl = IMT_JUONO_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JanCD, 03].CellCtl = IMT_JANCD_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JuchuSu, 03].CellCtl = IMN_GENER_3;
             // 1行目
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.GYONO, 4].CellCtl = IMT_GYONO_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnJuchu, 4].CellCtl = BTN_Detail_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnDetail, 4].CellCtl = BTN_Detail2_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SKUName, 4].CellCtl = IMT_SYONM_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SizeName, 4].CellCtl = IMT_SIZE_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ColorName, 4].CellCtl = IMT_COLOR_4;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CarrierName, 4].CellCtl = IMC_KBN_4;    //支払予定
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkSyukka, 4].CellCtl = CHK_EDICK_4;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JuchuNo, 4].CellCtl = IMT_ITMCD_4;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkTekiyo, 4].CellCtl = CHK_Tekiyo_4;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.PrintDate, 4].CellCtl = IMT_KAIDT_4;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryAddress1, 4].CellCtl = IMT_ITMNM_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.Space, 4].CellCtl = IMN_TEIKA_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkSokujitu, 4].CellCtl = CHK_Sokujitu_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SoukoName, 4].CellCtl = IMN_TEIKA_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkUntin, 4].CellCtl = CHK_Sokujitu_4;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.InstructionNO, 4].CellCtl = IMN_MEMBR_4;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ShippingDate, 4].CellCtl = IMN_CLINT_4;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentOutStore, 4].CellCtl = IMN_WEBPR_4;
@@ -309,20 +317,24 @@ namespace ShukkaShijiTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentInStore, 4].CellCtl = IMT_REMAK_4;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkShikyu, 4].CellCtl = CHK_Shikyu_4;      //メーカー商品CD
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 4].CellCtl = IMT_ARIDT_4;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 4].CellCtl = IMT_PAYDT_4;    //支払予定日
-
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.Hanbaigaku, 4].CellCtl = IMT_PAYDT_4;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkMinyukin, 4].CellCtl = CHK_Minyu_4;    //
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SKUCD, 4].CellCtl = IMT_JUONO_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JanCD, 04].CellCtl = IMT_JANCD_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JuchuSu, 4].CellCtl = IMN_GENER_4;
             // 1行目
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.GYONO, 5].CellCtl = IMT_GYONO_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnJuchu, 5].CellCtl = BTN_Detail_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnDetail, 5].CellCtl = BTN_Detail2_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SKUName, 5].CellCtl = IMT_SYONM_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SizeName, 5].CellCtl = IMT_SIZE_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ColorName, 5].CellCtl = IMT_COLOR_5;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CarrierName, 5].CellCtl = IMC_KBN_5;    //支払予定
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkSyukka, 5].CellCtl = CHK_EDICK_5;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JuchuNo, 5].CellCtl = IMT_ITMCD_5;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkTekiyo, 5].CellCtl = CHK_Tekiyo_5;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.PrintDate, 5].CellCtl = IMT_KAIDT_5;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryAddress1, 5].CellCtl = IMT_ITMNM_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.Space, 5].CellCtl = IMN_TEIKA_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkSokujitu, 5].CellCtl = CHK_Sokujitu_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SoukoName, 5].CellCtl = IMN_TEIKA_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkUntin, 5].CellCtl = CHK_Sokujitu_5;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.InstructionNO, 5].CellCtl = IMN_MEMBR_5;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ShippingDate, 5].CellCtl = IMN_CLINT_5;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentOutStore, 5].CellCtl = IMN_WEBPR_5;
@@ -330,20 +342,24 @@ namespace ShukkaShijiTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentInStore, 5].CellCtl = IMT_REMAK_5;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkShikyu, 5].CellCtl = CHK_Shikyu_5;      //メーカー商品CD
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 5].CellCtl = IMT_ARIDT_5;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 5].CellCtl = IMT_PAYDT_5;    //支払予定日
-
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.Hanbaigaku, 5].CellCtl = IMT_PAYDT_5;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkMinyukin, 5].CellCtl = CHK_Minyu_5;    //
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SKUCD, 05].CellCtl = IMT_JUONO_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JanCD, 5].CellCtl = IMT_JANCD_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JuchuSu, 05].CellCtl = IMN_GENER_5;
             // 1行目
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.GYONO, 6].CellCtl = IMT_GYONO_6;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnJuchu, 6].CellCtl = BTN_Detail_6;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnDetail, 6].CellCtl = BTN_Detail2_6;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SKUName, 6].CellCtl = IMT_SYONM_6;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SizeName, 6].CellCtl = IMT_SIZE_6;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ColorName,6].CellCtl = IMT_COLOR_6;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CarrierName, 6].CellCtl = IMC_KBN_6;    //支払予定
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkSyukka, 6].CellCtl = CHK_EDICK_6;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JuchuNo, 6].CellCtl = IMT_ITMCD_6;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkTekiyo, 6].CellCtl = CHK_Tekiyo_6;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.PrintDate, 6].CellCtl = IMT_KAIDT_6;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryAddress1, 6].CellCtl = IMT_ITMNM_6;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.Space, 6].CellCtl = IMN_TEIKA_6;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkSokujitu, 6].CellCtl = CHK_Sokujitu_6;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SoukoName, 6].CellCtl = IMN_TEIKA_6;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkUntin, 6].CellCtl = CHK_Sokujitu_6;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.InstructionNO, 6].CellCtl = IMN_MEMBR_6;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ShippingDate, 6].CellCtl = IMN_CLINT_6;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentOutStore, 6].CellCtl = IMN_WEBPR_6;
@@ -351,68 +367,11 @@ namespace ShukkaShijiTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentInStore, 6].CellCtl = IMT_REMAK_6;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkShikyu, 6].CellCtl = CHK_Shikyu_6;      //メーカー商品CD
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 6].CellCtl = IMT_ARIDT_6;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 6].CellCtl = IMT_PAYDT_6;    //支払予定日
-
-            // 1行目
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.GYONO, 7].CellCtl = IMT_GYONO_7;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnJuchu, 7].CellCtl = BTN_Detail_7;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnDetail, 7].CellCtl = BTN_Detail2_7;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CarrierName, 7].CellCtl = IMC_KBN_7;    //支払予定
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkSyukka, 7].CellCtl = CHK_EDICK_7;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JuchuNo, 7].CellCtl = IMT_ITMCD_7;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkTekiyo, 7].CellCtl = CHK_Tekiyo_7;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.PrintDate, 7].CellCtl = IMT_KAIDT_7;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryAddress1, 7].CellCtl = IMT_ITMNM_7;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.Space, 7].CellCtl = IMN_TEIKA_7;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkSokujitu, 7].CellCtl = CHK_Sokujitu_7;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.InstructionNO, 7].CellCtl = IMN_MEMBR_7;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ShippingDate, 7].CellCtl = IMN_CLINT_7;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentOutStore, 7].CellCtl = IMN_WEBPR_7;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryName, 7].CellCtl = IMN_WEBPR2_7;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentInStore, 7].CellCtl = IMT_REMAK_7;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkShikyu, 7].CellCtl = CHK_Shikyu_7;      //メーカー商品CD
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 7].CellCtl = IMT_ARIDT_7;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 7].CellCtl = IMT_PAYDT_7;    //支払予定日
-            // 1行目
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.GYONO, 8].CellCtl = IMT_GYONO_8;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnJuchu, 8].CellCtl = BTN_Detail_8;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnDetail, 8].CellCtl = BTN_Detail2_8;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CarrierName, 8].CellCtl = IMC_KBN_8;    //支払予定
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkSyukka, 8].CellCtl = CHK_EDICK_8;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JuchuNo, 8].CellCtl = IMT_ITMCD_8;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkTekiyo, 8].CellCtl = CHK_Tekiyo_8;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.PrintDate, 8].CellCtl = IMT_KAIDT_8;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryAddress1, 8].CellCtl = IMT_ITMNM_8;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.Space, 8].CellCtl = IMN_TEIKA_8;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkSokujitu, 8].CellCtl = CHK_Sokujitu_8;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.InstructionNO, 8].CellCtl = IMN_MEMBR_8;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ShippingDate, 8].CellCtl = IMN_CLINT_8;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentOutStore, 8].CellCtl = IMN_WEBPR_8;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryName, 8].CellCtl = IMN_WEBPR2_8;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentInStore, 8].CellCtl = IMT_REMAK_8;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkShikyu, 8].CellCtl = CHK_Shikyu_8;      //メーカー商品CD
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 8].CellCtl = IMT_ARIDT_8;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 8].CellCtl = IMT_PAYDT_8;    //支払予定日
-            // 1行目
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.GYONO, 9].CellCtl = IMT_GYONO_9;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnJuchu, 9].CellCtl = BTN_Detail_9;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnDetail, 9].CellCtl = BTN_Detail2_9;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CarrierName, 9].CellCtl = IMC_KBN_9;    //支払予定
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkSyukka, 9].CellCtl = CHK_EDICK_9;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JuchuNo, 9].CellCtl = IMT_ITMCD_9;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkTekiyo, 9].CellCtl = CHK_Tekiyo_9;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.PrintDate, 9].CellCtl = IMT_KAIDT_9;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryAddress1, 9].CellCtl = IMT_ITMNM_9;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.Space, 9].CellCtl = IMN_TEIKA_9;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkSokujitu, 9].CellCtl = CHK_Sokujitu_9;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.InstructionNO, 9].CellCtl = IMN_MEMBR_9;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ShippingDate, 9].CellCtl = IMN_CLINT_9;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentOutStore, 9].CellCtl = IMN_WEBPR_9;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryName, 9].CellCtl = IMN_WEBPR2_9;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentInStore, 9].CellCtl = IMT_REMAK_9;
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkShikyu, 9].CellCtl = CHK_Shikyu_9;      //メーカー商品CD
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 9].CellCtl = IMT_ARIDT_9;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 9].CellCtl = IMT_PAYDT_9;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.Hanbaigaku, 6].CellCtl = IMT_PAYDT_6;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkMinyukin, 6].CellCtl = CHK_Minyu_6;    //
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.SKUCD, 06].CellCtl = IMT_JUONO_6;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JanCD, 6].CellCtl = IMT_JANCD_6;
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.JuchuSu, 6].CellCtl = IMN_GENER_6;
         }
 
         // 明細部 Tab の処理
@@ -520,18 +479,25 @@ namespace ShukkaShijiTouroku
                         switch (w_Col)
                         {
                             case (int)ClsGridShukka.ColNO.GYONO:
-                            case (int)ClsGridShukka.ColNO.Space:
                                 {
                                     mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
                                     break;
                                 }
-                            case (int)ClsGridShukka.ColNO.DecidedDeliveryDate:
                             case (int)ClsGridShukka.ColNO.JuchuNo:
+                            case (int)ClsGridShukka.ColNO.Hanbaigaku:
                             case (int)ClsGridShukka.ColNO.InstructionNO:
                             case (int)ClsGridShukka.ColNO.DeliveryAddress1:
                             case (int)ClsGridShukka.ColNO.DeliveryName:
                             case (int)ClsGridShukka.ColNO.PrintDate:
                             case (int)ClsGridShukka.ColNO.ShippingDate:
+                            case (int)ClsGridShukka.ColNO.JanCD:
+                            case (int)ClsGridShukka.ColNO.SKUCD:
+                            case (int)ClsGridShukka.ColNO.SKUName:
+                            case (int)ClsGridShukka.ColNO.ColorName:
+                            case (int)ClsGridShukka.ColNO.SizeName:
+                            case (int)ClsGridShukka.ColNO.JuchuSu:
+                            case (int)ClsGridShukka.ColNO.SoukoName:
+
                                 {
                                     mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                                     break;
@@ -571,7 +537,6 @@ namespace ShukkaShijiTouroku
 
             ckM_Button1.Tag = "0";
             ckM_Button2.Tag = "0";
-            ckM_Button3.Tag = "0";
             ckM_Button4.Tag = "0";
 
         }
@@ -760,8 +725,8 @@ namespace ShukkaShijiTouroku
                                 if (m_EnableCnt - 1 < w_Row)
                                     break;
 
-                                //DeliveryPlanNOがある場合、入力可（有効行）
-                                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].DeliveryPlanNO))
+                                //（有効行）
+                                if (mGrid.g_DArray[w_Row].Kbn == 0)
                                 {
                                     continue;
                                 }
@@ -770,26 +735,18 @@ namespace ShukkaShijiTouroku
                                 {
                                     switch (w_Col)
                                     {
-                                        case (int)ClsGridShukka.ColNO.BtnJuchu:    // 
-                                        case (int)ClsGridShukka.ColNO.BtnDetail:    //  
-                                            //Form. 出荷指示種別(Hidden)＝２の場合は、クリックしても処理不要
-                                            if (mGrid.g_DArray[w_Row].InstructionKBN.Equals(2))
-                                                mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = false;
-                                            else
-                                                mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
-                                            break;
-
                                         case (int)ClsGridShukka.ColNO.ChkSyukka:    //
                                         case (int)ClsGridShukka.ColNO.ChkTekiyo:    // 
-                                        case (int)ClsGridShukka.ColNO.ChkSokujitu:    // 
+                                        case (int)ClsGridShukka.ColNO.ChkUntin:    // 
                                         case (int)ClsGridShukka.ColNO.ChkShikyu:    //  
+                                        case (int)ClsGridShukka.ColNO.ChkMinyukin:    //  
                                         case (int)ClsGridShukka.ColNO.DeliveryPlanDate:    //入荷予定日
                                         case (int)ClsGridShukka.ColNO.CarrierName:    // 
                                         case (int)ClsGridShukka.ColNO.CommentInStore:    // 
                                         case (int)ClsGridShukka.ColNO.CommentOutStore:    // 
                                             {
                                                 //出荷データが存在する時、入力不可
-                                                if (mGrid.g_DArray[w_Row].Kbn.Equals(2))
+                                                if (mGrid.g_DArray[w_Row].Kbn.Equals(3))
                                                 {
                                                     mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = false;
                                                 }
@@ -798,15 +755,15 @@ namespace ShukkaShijiTouroku
                                                     mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
                                                 }
 
-                                                if(w_Col == (int)ClsGridShukka.ColNO.DeliveryPlanDate)
+                                                if(w_Col == (int)ClsGridShukka.ColNO.ChkSyukka)
                                                 {
-                                                    if (mGrid.g_DArray[w_Row].RedFont.Equals(1))
+                                                    if (mGrid.g_DArray[w_Row].PinkFont.Equals(1))
                                                     {
-                                                        mGrid.g_MK_Ctrl[w_Col, w_Row].CellCtl.ForeColor = Color.Red;
+                                                        mGrid.g_MK_State[w_Col, w_Row].Cell_Color = Color.Pink;
                                                     }
                                                     else
                                                     {
-                                                        mGrid.g_MK_Ctrl[w_Col, w_Row].CellCtl.ForeColor = Color.Black;
+                                                        mGrid.g_MK_State[w_Col, w_Row].Cell_Color = mGrid.F_GetBackColor_MK(w_Col, w_Row);
                                                     }
                                                 }
                                             }
@@ -880,7 +837,7 @@ namespace ShukkaShijiTouroku
 
         #endregion
 
-        public ShukkaShijiTouroku()
+        public ShukkaSiziTourokuFromJuchuu()
         {
             InitializeComponent();
 
@@ -904,12 +861,14 @@ namespace ShukkaShijiTouroku
                 // 明細部初期化
                 this.S_SetInit_Grid();
 
+                Scr_Clr(0);
+
                 //起動時共通処理
                 base.StartProgram();
 
                 //コンボボックス初期化
                 string ymd = bbl.GetDate();
-                ssbl = new ShukkaShijiTouroku_BL();
+                ssbl = new ShukkaSiziTourokuFromJuchuu_BL();
                 CboStoreCD.Bind(ymd);
                 ckM_ComboBox1.Bind(ymd);//
 
@@ -957,8 +916,8 @@ namespace ShukkaShijiTouroku
             //keyControls = new Control[] { };
             //keyLabels = new Control[] {  };
             detailControls = new Control[] { CboStoreCD, ckM_TextBox1 ,ckM_TextBox2 
-                     ,ckM_CheckBox1,ckM_CheckBox2,ckM_CheckBox3,ckM_CheckBox4,ckM_CheckBox5
-                     ,ckM_TextBox5, ChkHakkozumi,ChkSyukkazumi,ckM_TextBox18, ckM_ComboBox1
+                     ,ckM_CheckBox1,ckM_CheckBox2,ckM_CheckBox5
+                     ,ckM_TextBox5, ChkHakkozumi,ChkSyukkazumi,ChkSyukkaFuka, ckM_TextBox18, ckM_ComboBox1
                          };
             detailLabels = new Control[] { };
             searchButtons = new Control[] { };
@@ -971,9 +930,9 @@ namespace ShukkaShijiTouroku
             }
         }
 
-        private bool SelectAndInsertExclusive(string orderNo)
+        private bool SelectAndInsertExclusive(Exclusive_BL.DataKbn kbn, string No)
         {
-            if (OperationMode == EOperationMode.SHOW || OperationMode == EOperationMode.INSERT)
+            if (OperationMode == EOperationMode.SHOW)
                 return true;
 
             //排他Tableに該当番号が存在するとError
@@ -981,8 +940,8 @@ namespace ShukkaShijiTouroku
             Exclusive_BL ebl = new Exclusive_BL();
             D_Exclusive_Entity dee = new D_Exclusive_Entity
             {
-                DataKBN = (int)Exclusive_BL.DataKbn.SyukkaShiji,
-                Number = orderNo,
+                DataKBN = (int)kbn,
+                Number = No,
                 Program = this.InProgramID,
                 Operator = this.InOperatorCD,
                 PC = this.InPcID
@@ -993,7 +952,7 @@ namespace ShukkaShijiTouroku
             if (dt.Rows.Count > 0)
             {
                 bbl.ShowMessage("S004", dt.Rows[0]["Program"].ToString(), dt.Rows[0]["Operator"].ToString());
-                detailControls[(int)EIndex.CarrierCD].Focus();
+                detailControls[(int)EIndex.PlanDateFrom].Focus();
                 return false;
             }
             else
@@ -1005,7 +964,7 @@ namespace ShukkaShijiTouroku
         /// <summary>
         /// 排他処理データを削除する
         /// </summary>
-        private void DeleteExclusive(DataTable dtForUpdate = null)
+        private void DeleteExclusive()
         {
             if (dtForUpdate == null)
                 return;
@@ -1014,21 +973,17 @@ namespace ShukkaShijiTouroku
 
             if (dtForUpdate != null)
             {
+                mOldJuchuNO = "";
                 mOldInstructionNO = "";
                 foreach (DataRow dr in dtForUpdate.Rows)
                 {
-                    if (mOldInstructionNO != dr["InstructionNO"].ToString())
+                    D_Exclusive_Entity de = new D_Exclusive_Entity
                     {
-                        D_Exclusive_Entity de = new D_Exclusive_Entity
-                        {
-                            DataKBN = (int)Exclusive_BL.DataKbn.SyukkaShiji,
-                            Number = dr["InstructionNO"].ToString()
-                        };
+                        DataKBN = Convert.ToInt16(dr["kbn"]),
+                        Number = dr["no"].ToString()
+                    };
 
-                        ebl.D_Exclusive_Delete(de);
-
-                        mOldInstructionNO = dr["InstructionNO"].ToString();
-                    }
+                    ebl.D_Exclusive_Delete(de);
                 }
                 return;
             }
@@ -1041,13 +996,12 @@ namespace ShukkaShijiTouroku
         /// <returns></returns>
         private bool CheckData(bool set)
         {
-            DeleteExclusive(dtInstruction);
 
-            //[D_Instruction_SelectData]
+            //[D_Instruction_SelectDataFromJuchu]
             die = GetEntity();
 
-            //Errorでない場合、画面転送表01と画面転送表02をUNIONして、画面表示
-            dtInstruction = ssbl.D_Instruction_SelectData(die);
+            //Errorでない場合、画面転送表01と画面転送表02と画面転送表03をUNIONして、画面表示
+            dtInstruction = ssbl.D_Instruction_SelectDataFromJuchu(die);
 
             if (dtInstruction.Rows.Count == 0)
             {
@@ -1063,6 +1017,48 @@ namespace ShukkaShijiTouroku
                 if (set == false)
                 {
                     return true;
+                }
+
+                DeleteExclusive();
+
+                dtForUpdate = new DataTable();
+                dtForUpdate.Columns.Add("kbn", Type.GetType("System.String"));
+                dtForUpdate.Columns.Add("no", Type.GetType("System.String"));
+
+                bool ret;
+                //排他処理
+                foreach (DataRow row in dtInstruction.Rows)
+                {
+                    if (mOldInstructionNO != row["InstructionNO"].ToString() && !string.IsNullOrWhiteSpace(row["InstructionNO"].ToString()))
+                    {
+                        ret = SelectAndInsertExclusive(Exclusive_BL.DataKbn.SyukkaShiji, row["InstructionNO"].ToString());
+                        if (!ret)
+                            return false;
+
+                        mOldInstructionNO = row["InstructionNO"].ToString();
+
+                        // データを追加
+                        DataRow rowForUpdate;
+                        rowForUpdate = dtForUpdate.NewRow();
+                        rowForUpdate["kbn"] = (int)Exclusive_BL.DataKbn.SyukkaShiji;
+                        rowForUpdate["no"] = mOldInstructionNO;
+                        dtForUpdate.Rows.Add(rowForUpdate);
+                    }
+                    if (mOldJuchuNO != row["JuchuNo"].ToString() && !string.IsNullOrWhiteSpace(row["JuchuNo"].ToString()))
+                    {
+                        ret = SelectAndInsertExclusive(Exclusive_BL.DataKbn.Jyuchu, row["JuchuNo"].ToString());
+                        if (!ret)
+                            return false;
+
+                        mOldJuchuNO = row["JuchuNo"].ToString();
+
+                        // データを追加
+                        DataRow rowForUpdate;
+                        rowForUpdate = dtForUpdate.NewRow();
+                        rowForUpdate["kbn"] = (int)Exclusive_BL.DataKbn.Jyuchu;
+                        rowForUpdate["no"] = mOldJuchuNO;
+                        dtForUpdate.Rows.Add(rowForUpdate);
+                    }
                 }
 
                 S_Clear_Grid();   //画面クリア（明細部）
@@ -1082,47 +1078,57 @@ namespace ShukkaShijiTouroku
                         mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
                         return false;
                     }
-
-                    if (!string.IsNullOrWhiteSpace(row["InstructionNO"].ToString()) && mOldInstructionNO != row["InstructionNO"].ToString())
-                    {
-                        bool ret = SelectAndInsertExclusive(row["InstructionNO"].ToString());
-                        if (!ret)
-                            return false;
-
-                        mOldInstructionNO = row["InstructionNO"].ToString();
-                    }
-                    if (row["DeliveryPlanDate"].ToString().Equals(ymd))
-                        mGrid.g_DArray[i].RedFont = 1;
+                    if (bbl.Z_Set( row["CNT"]) > 0)
+                        mGrid.g_DArray[i].PinkFont = 1;
                     else
-                        mGrid.g_DArray[i].RedFont = 0;
+                        mGrid.g_DArray[i].PinkFont = 0;
 
-                    mGrid.g_DArray[i].DeliveryPlanDate = row["DeliveryPlanDate"].ToString();
-
-                    //OntheDayFLG＝1の時、ON
-                    if (bbl.Z_Set(row["OntheDayFLG"]) == 1)
-                        mGrid.g_DArray[i].ChkSokujitu = true;
+                    //Untin＝1の時、ON
+                    if (bbl.Z_Set(row["UntinFlg"]) == 1)
+                        mGrid.g_DArray[i].ChkUntin = true;
                     else
-                        mGrid.g_DArray[i].ChkSokujitu = false;
+                        mGrid.g_DArray[i].ChkUntin = false;
 
                     //ExpressFLG ＝1の時、ON
                     if (bbl.Z_Set(row["ExpressFLG"]) == 1)
+                    {
                         mGrid.g_DArray[i].ChkShikyu = true;
+                        mGrid.g_DArray[i].ChkUntin = true;
+                    }
                     else
+                    {
                         mGrid.g_DArray[i].ChkShikyu = false;
+                    }
 
-                    mGrid.g_DArray[i].DecidedDeliveryDate = row["DecidedDeliveryDate"].ToString();
-                    mGrid.g_DArray[i].JuchuNo = row["Number"].ToString();
+                    if (bbl.Z_Set(row["Minyukin"]) == 1)
+                        mGrid.g_DArray[i].ChkMinyukin = true;
+                    else
+                        mGrid.g_DArray[i].ChkMinyukin = false;
+
+                    mGrid.g_DArray[i].DeliveryPlanDate = row["DeliveryPlanDate"].ToString();
+                    mGrid.g_DArray[i].Hanbaigaku = bbl.Z_SetStr(row["HanbaiHontaiGaku"]);
+                    mGrid.g_DArray[i].JuchuNo = row["JuchuuNO"].ToString();
                     mGrid.g_DArray[i].DeliveryAddress1 = row["DeliveryAddress1"].ToString();   // 
-                    mGrid.g_DArray[i].DeliveryName = row["DeliveryName"].ToString();
-                    mGrid.g_DArray[i].CarrierName = row["CarrierCD"].ToString();   // 
+                    mGrid.g_DArray[i].DeliveryName = row["CustomerName"].ToString();
+                    mGrid.g_DArray[i].CarrierName = row["DeliveryCD"].ToString();   // Combobox
                     mGrid.g_DArray[i].CommentInStore = row["CommentInStore"].ToString();   // 
                     mGrid.g_DArray[i].CommentOutStore = row["CommentOutStore"].ToString();   //
                     mGrid.g_DArray[i].ShippingDate = row["ShippingDate"].ToString();   // 
                     mGrid.g_DArray[i].PrintDate = row["PrintDate"].ToString();   // 
                     mGrid.g_DArray[i].InstructionNO = row["InstructionNO"].ToString();
 
+                    mGrid.g_DArray[i].JanCD = row["JanCD"].ToString();
+                    //mGrid.g_DArray[i].AdminNO = row["AdminNO"].ToString();
+                    mGrid.g_DArray[i].SKUCD = row["SKUCD"].ToString();
+                    mGrid.g_DArray[i].SKUName = row["SKUName"].ToString();   // 
+                    mGrid.g_DArray[i].ColorName = row["ColorName"].ToString();   // 
+                    mGrid.g_DArray[i].SizeName = row["SizeName"].ToString();   // 
+                    mGrid.g_DArray[i].JuchuSu = bbl.Z_SetStr(row["JuchuuSuu"]);
+                    mGrid.g_DArray[i].SoukoName = row["SoukoName"].ToString();
+
                     //隠し項目
-                    mGrid.g_DArray[i].InstructionKBN = Convert.ToInt16(row["InstructionKBN"]);
+                    mGrid.g_DArray[i].InstructionKBN = Convert.ToInt16(row["ShukkaShubetsu"]);
+                    mGrid.g_DArray[i].InstructionRows = Convert.ToInt16(row["InstructionRows"]);
                     mGrid.g_DArray[i].DeliveryPlanNO = row["DeliveryPlanNO"].ToString();
                     mGrid.g_DArray[i].Kbn = Convert.ToInt16(row["KBN"]);
                     mGrid.g_DArray[i].Update = 0;
@@ -1156,7 +1162,7 @@ namespace ShukkaShijiTouroku
             //CheckBox＝ON				
             //がひとつも無ければ、エラー									
             //通常(右記以外)CheckBoxへ	            
-            if (ckM_CheckBox1.Checked || ckM_CheckBox2.Checked || ckM_CheckBox3.Checked || ckM_CheckBox4.Checked || ckM_CheckBox5.Checked)
+            if (ckM_CheckBox1.Checked || ckM_CheckBox2.Checked || ckM_CheckBox5.Checked)
             {
 
             }
@@ -1261,7 +1267,7 @@ namespace ShukkaShijiTouroku
                     break;
 
                 case (int)EIndex.CarrierCD:
-
+                    //入力無くても良い(It is not necessary to input)
                     break;
 
             }
@@ -1355,6 +1361,17 @@ namespace ShukkaShijiTouroku
                         }
                     }
                     break;
+
+                case (int)ClsGridShukka.ColNO.ChkSyukka:
+                    //出荷CheckBoxをONにした場合、(When the shipping CheckBox is turned ON,)
+                    //同一出荷先/出荷予定日の受注明細を集計し、合計税抜受注額を算出する。
+
+                    break;
+
+                case (int)ClsGridShukka.ColNO.ChkUntin:
+                    ChangeCheckUntin(mGrid.g_DArray[row].ChkUntin, row);
+
+                        break;
             }
 
             //配列の内容を画面へセット
@@ -1388,16 +1405,6 @@ namespace ShukkaShijiTouroku
             else
                 die.Chk2 = 0;
 
-            if (ckM_CheckBox3.Checked)
-                die.Chk3 = 1;
-            else
-                die.Chk3 = 0;
-
-            if (ckM_CheckBox4.Checked)
-                die.Chk4 = 1;
-            else
-                die.Chk4 = 0;
-
             if (ckM_CheckBox5.Checked)
                 die.Chk5 = 1;
             else
@@ -1413,6 +1420,11 @@ namespace ShukkaShijiTouroku
             else
                 die.ChkSyukkazumi = 0;
 
+            if (ChkSyukkaFuka.Checked)
+                die.ChkSyukkaFuka = 1;
+            else
+                die.ChkSyukkaFuka = 0;
+
             return die;
         }
 
@@ -1422,6 +1434,7 @@ namespace ShukkaShijiTouroku
         private void Para_Add(DataTable dt)
         {
             dt.Columns.Add("InstructionNO", typeof(string));
+            dt.Columns.Add("InstructionRows", typeof(int));
             dt.Columns.Add("InstructionKBN", typeof(int));
             dt.Columns.Add("DeliveryPlanNO", typeof(string));
             dt.Columns.Add("GyoNO", typeof(int));
@@ -1429,8 +1442,8 @@ namespace ShukkaShijiTouroku
             dt.Columns.Add("CarrierCD", typeof(string));
             dt.Columns.Add("CommentOutStore", typeof(string));
             dt.Columns.Add("CommentInStore", typeof(string));
-            dt.Columns.Add("OntheDayFLG", typeof(int));
             dt.Columns.Add("ExpressFLG", typeof(int));
+            dt.Columns.Add("UntinFlg", typeof(int));
             dt.Columns.Add("UpdateFlg", typeof(int));
         }
 
@@ -1443,9 +1456,11 @@ namespace ShukkaShijiTouroku
 
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
             {
+                //Form.Detail.出荷CheckBox＝ON
                 if (mGrid.g_DArray[RW].ChkSyukka)
                 {
                     dt.Rows.Add(mGrid.g_DArray[RW].InstructionNO == "" ? null : mGrid.g_DArray[RW].InstructionNO
+                         , bbl.Z_Set(mGrid.g_DArray[RW].InstructionRows)
                          , bbl.Z_Set(mGrid.g_DArray[RW].InstructionKBN)
                          , mGrid.g_DArray[RW].DeliveryPlanNO
                          , rowNo //mGrid.g_DArray[RW].GYONO
@@ -1453,8 +1468,8 @@ namespace ShukkaShijiTouroku
                          , mGrid.g_DArray[RW].CarrierName == "" ? null : mGrid.g_DArray[RW].CarrierName
                          , mGrid.g_DArray[RW].CommentOutStore == "" ? null : mGrid.g_DArray[RW].CommentOutStore
                          , mGrid.g_DArray[RW].CommentInStore == "" ? null : mGrid.g_DArray[RW].CommentInStore
-                         , mGrid.g_DArray[RW].ChkSokujitu ? 1 : 0
                          , mGrid.g_DArray[RW].ChkShikyu ? 1 : 0
+                         , mGrid.g_DArray[RW].ChkUntin ? 1 : 0
                          , mGrid.g_DArray[RW].Update
                          );
 
@@ -1517,7 +1532,7 @@ namespace ShukkaShijiTouroku
             OperationMode = mode; // (1:新規,2:修正,3;削除)
 
             //排他処理を解除
-            DeleteExclusive(dtInstruction);
+            DeleteExclusive();
 
             Scr_Clr(0);
 
@@ -1689,7 +1704,7 @@ namespace ShukkaShijiTouroku
         {
             try
             {
-                //DeleteExclusive(dtOrder);
+                DeleteExclusive();
             }
             catch (Exception ex)
             {
@@ -1719,7 +1734,7 @@ namespace ShukkaShijiTouroku
                     if (ret)
                     {
 
-                        if (index == (int)EIndex.DeliveryName) //取込日
+                        if (index == (int)EIndex.ChkShukkafuka) 
                             btnSubF11.Focus();
 
                         else if (index == (int)EIndex.COUNT - 1)
@@ -1823,18 +1838,18 @@ namespace ShukkaShijiTouroku
         {
             try
             {
+                int w_Row;
+                Control w_ActCtl;
+
+                w_ActCtl = (Control)sender;
+                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
+
                 //Enterキー押下時処理
                 //Returnキーが押されているか調べる
                 //AltかCtrlキーが押されている時は、本来の動作をさせる
                 if ((e.KeyCode == Keys.Return) &&
                     ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
                 {
-                    int w_Row;
-                    Control w_ActCtl;
-
-                    w_ActCtl = (Control)sender;
-                    w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
-
                     //bool changeFlg = false;
                     //if (w_ActCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
                     //    changeFlg = ((CKM_Controls.CKM_TextBox)w_ActCtl).Modified;
@@ -1890,7 +1905,28 @@ namespace ShukkaShijiTouroku
                     //行き先がなかったら移動しない
                     S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
                 }
+                else if (e.KeyCode == Keys.Tab)
+                {
+                    if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int CL, out int w_CtlRow) == false)
+                    {
+                        return;
+                    }
 
+                    switch (CL)
+                    {
+                        case (int)ClsGridShukka.ColNO.ChkMinyukin:
+                        case (int)ClsGridShukka.ColNO.ChkShikyu:
+                        case (int)ClsGridShukka.ColNO.ChkUntin:
+                        case (int)ClsGridShukka.ColNO.ChkSyukka:
+                        case (int)ClsGridShukka.ColNO.ChkTekiyo:
+                            if (e.Shift)
+                                S_Grid_0_Event_ShiftTab(CL, w_Row, w_ActCtl, w_ActCtl);
+                            else
+                                S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+
+                            break;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -1956,47 +1992,6 @@ namespace ShukkaShijiTouroku
                 //EndSec();
             }
         }
-    
-        /// <summary>
-        /// 明細部受注ボタンクリック時処理
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BTN_Juchu_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int w_Row;
-                Control w_ActCtl;
-
-                w_ActCtl = (Control)sender;
-                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
-
-                //「受注入力」を照会モードで起動（引数：該当行の受注番号）
-                string juchuNo = mGrid.g_DArray[w_Row].JuchuNo;
-
-                //EXEが存在しない時ｴﾗｰ
-                // 実行モジュールと同一フォルダのファイルを取得
-                System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
-                string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + JuchuuNyuuryoku;
-                if (System.IO.File.Exists(filePath))
-                {
-                    string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + juchuNo;
-                    System.Diagnostics.Process.Start(filePath, cmdLine);
-                }
-                else
-                {
-                    //ファイルなし
-                }
-
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-                //EndSec();
-            }
-        }
         private void Btn_Shukkka_Click(object sender, EventArgs e)
         {
             try
@@ -2024,19 +2019,6 @@ namespace ShukkaShijiTouroku
                 //EndSec();
             }
         }
-        private void Btn_Sokujitsu_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ChangeCheck(true, (int)ClsGridShukka.ColNO.ChkSokujitu);
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-                //EndSec();
-            }
-        }
         private void Btn_Shikyu_Click(object sender, EventArgs e)
         {
             try
@@ -2050,30 +2032,11 @@ namespace ShukkaShijiTouroku
                 //EndSec();
             }
         }
-        private void BTN_Detail_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int w_Row;
-                Control w_ActCtl;
-
-                w_ActCtl = (Control)sender;
-                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
-
-                //画面転送表03に従い、第2画面を起動
-                FrmShukkaShiji frm = new FrmShukkaShiji();
-                frm.DeliveryPlanNO = mGrid.g_DArray[w_Row].DeliveryPlanNO;
-                frm.JuchuNO = mGrid.g_DArray[w_Row].JuchuNo;
-
-                frm.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-                //EndSec();
-            }
-        }
+        /// <summary>
+        /// 適用ボタン押下時処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Hanei_Click(object sender, EventArgs e)
         {
             try
@@ -2125,10 +2088,6 @@ namespace ShukkaShijiTouroku
                         if (mGrid.g_MK_State[index, RW].Cell_Enabled)
                             mGrid.g_DArray[RW].ChkTekiyo = ckM_Button2.Tag.Equals("0") ? true : false;
                         break;
-                    case (int)ClsGridShukka.ColNO.ChkSokujitu:
-                        if (mGrid.g_MK_State[index, RW].Cell_Enabled)
-                            mGrid.g_DArray[RW].ChkSokujitu = ckM_Button3.Tag.Equals("0") ? true : false;
-                        break;
                     case (int)ClsGridShukka.ColNO.ChkShikyu:
                         if (mGrid.g_MK_State[index, RW].Cell_Enabled)
                             mGrid.g_DArray[RW].ChkShikyu = ckM_Button4.Tag.Equals("0") ? true : false;
@@ -2150,15 +2109,28 @@ namespace ShukkaShijiTouroku
                 case (int)ClsGridShukka.ColNO.ChkTekiyo:
                     ckM_Button2.Tag = ckM_Button2.Tag.Equals("0") ? "1" : "0";
                     break;
-                case (int)ClsGridShukka.ColNO.ChkSokujitu:
-                    ckM_Button3.Tag = ckM_Button3.Tag.Equals("0") ? "1" : "0";
-                    break;
                 case (int)ClsGridShukka.ColNO.ChkShikyu:
                     ckM_Button4.Tag = ckM_Button4.Tag.Equals("0") ? "1" : "0";
                     break;
             }
         }
+        private void ChangeCheckUntin(bool check, int row)
+        {
+            string syukkaName = mGrid.g_DArray[row].DeliveryName;
+            string syukkaDate = mGrid.g_DArray[row].DeliveryPlanDate;
 
+            //運賃明細追加CheckBoxをONにした場合、(When the Add fare details CheckBox is turned ON,)
+            //同一出荷先/出荷予定日の全明細の運賃明細追加CheckBoxをON
+            //運賃明細追加CheckBoxをOFFにした場合、(When the Add fare details CheckBox is turned ON,)
+            //同一出荷先/出荷予定日の全明細の運賃明細追加CheckBoxをOFF
+            for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+            {
+                if (mGrid.g_DArray[RW].DeliveryName == syukkaName && mGrid.g_DArray[RW].DeliveryPlanDate == syukkaDate)
+                {
+                    mGrid.g_DArray[RW].ChkUntin = check;
+                }
+            }
+        }
     }
 }
 
