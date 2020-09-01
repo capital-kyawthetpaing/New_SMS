@@ -322,12 +322,12 @@ namespace NyuukaShoukai
                     return false;
                 }
             }
-            else
-            {
-                nkskbl.ShowMessage("E188", "入荷日(To)");
-                txtArrivalDay2.Focus();
-                return false;
-            }
+            //else
+            //{
+            //    nkskbl.ShowMessage("E188", "入荷日(To)");
+            //    txtArrivalDay2.Focus();
+            //    return false;
+            //}
 
             if (!string.IsNullOrWhiteSpace(txtStockDate2.Text))
             {
@@ -339,12 +339,12 @@ namespace NyuukaShoukai
                     return false;
                 }
             }
-            else
-            {
-                nkskbl.ShowMessage("E188", "入荷予定日(To)");
-                txtStockDate2.Focus();
-                return false;
-            }
+            //else
+            //{
+            //    nkskbl.ShowMessage("E188", "入荷予定日(To)");
+            //    txtStockDate2.Focus();
+            //    return false;
+            //}
 
             if (!statusChk1.Checked && !statusChk2.Checked)
             {
@@ -364,38 +364,38 @@ namespace NyuukaShoukai
                     return false;
                 }
             }
-            else
-            {
-                nkskbl.ShowMessage("E188", "仕入日(To)");
-                txtPurchaseDate2.Focus();
-                return false;
-            }
+            //else
+            //{
+            //    nkskbl.ShowMessage("E188", "仕入日(To)");
+            //    txtPurchaseDate2.Focus();
+            //    return false;
+            //}
 
             //if (string.IsNullOrWhiteSpace(txtArrivalDay1.Text) || (string.IsNullOrWhiteSpace(txtArrivalDay2.Text)))
             //{
-            //    if(string.IsNullOrWhiteSpace(txtStockDate1.Text) || (string.IsNullOrWhiteSpace(txtStockDate2.Text)))
+            //    if (string.IsNullOrWhiteSpace(txtStockDate1.Text) || (string.IsNullOrWhiteSpace(txtStockDate2.Text)))
             //    {
             //        if (string.IsNullOrWhiteSpace(txtPurchaseDate1.Text) || (string.IsNullOrWhiteSpace(txtPurchaseDate2.Text)))
             //        {
-            //            nkskbl.ShowMessage("E188");
+            //            nkskbl.ShowMessage("E188", "日付(To)");
             //            txtPurchaseDate2.Focus();
             //            return false;
             //        }
             //    }
             //}
 
-            //if (string.IsNullOrWhiteSpace(txtArrivalDay2.Text))
-            //{
-            //    if (string.IsNullOrWhiteSpace(txtStockDate2.Text))
-            //    {
-            //        if (string.IsNullOrWhiteSpace(txtPurchaseDate2.Text))
-            //        {
-            //            nkskbl.ShowMessage("E188");
-            //            txtPurchaseDate2.Focus();
-            //            return false;
-            //        }
-            //    }
-            //}
+            if (string.IsNullOrWhiteSpace(txtArrivalDay2.Text))
+            {
+                if (string.IsNullOrWhiteSpace(txtStockDate2.Text))
+                {
+                    if (string.IsNullOrWhiteSpace(txtPurchaseDate2.Text))
+                    {
+                        nkskbl.ShowMessage("E188", "日付(To)");
+                        txtPurchaseDate2.Focus();
+                        return false;
+                    }
+                }
+            }
 
             if (!chkDelivery.Checked && !ChkArrival.Checked )
             {
@@ -518,11 +518,11 @@ namespace NyuukaShoukai
                         txtArrivalDay2.Focus();
                     }
                 }
-                else
-                {
-                    nkskbl.ShowMessage("E188", "入荷日(To)");
-                    txtArrivalDay2.Focus();
-                }
+                //else
+                //{
+                //    nkskbl.ShowMessage("E188", "入荷日(To)");
+                //    txtArrivalDay2.Focus();
+                //}
 
             }
         }
@@ -540,11 +540,11 @@ namespace NyuukaShoukai
                         txtStockDate2.Focus();
                     }
                 }
-                else
-                {
-                    nkskbl.ShowMessage("E188", "入荷予定日(To)");
-                    txtStockDate2.Focus();                   
-                }
+                //else
+                //{
+                //    nkskbl.ShowMessage("E188", "入荷予定日(To)");
+                //    txtStockDate2.Focus();                   
+                //}
 
             }
         }
@@ -564,10 +564,15 @@ namespace NyuukaShoukai
                 }
                 else
                 {
-                    nkskbl.ShowMessage("E188", "仕入日(To)");
-                    txtPurchaseDate2.Focus();
-                }
-
+                   if (string.IsNullOrWhiteSpace(txtStockDate2.Text))
+                   {
+                       if (string.IsNullOrWhiteSpace(txtArrivalDay2.Text))
+                       {
+                           nkskbl.ShowMessage("E188", "日付(To)");
+                           txtPurchaseDate2.Focus();                             
+                       }
+                   }
+                }            
             }
         }
         

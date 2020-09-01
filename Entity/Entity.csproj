@@ -162,6 +162,7 @@
     <Compile Include="M_StorePoint_Entity.cs" />
     <Compile Include="M_Store_Entity.cs" />
     <Compile Include="M_TankaCD_Entity.cs" />
+    <Compile Include="M_TenzikaiShouhin_Entity.cs" />
     <Compile Include="M_VendorFTP_Entity.cs" />
     <Compile Include="M_Vendor_Entity.cs" />
     <Compile Include="M_ZipCode_Entity.cs" />
