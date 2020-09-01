@@ -90,7 +90,7 @@ namespace HacchuuShoukai
 
                 this.SetFunctionLabel(EProMode.SHOW);
                 this.InitialControlArray();
-
+                
                 Btn_F10.Text = "出力(F10)";
 
                 //起動時共通処理
@@ -107,9 +107,11 @@ namespace HacchuuShoukai
                 ScJuchuuNO.Value1 = InOperatorCD;
                 ScJuchuuNO.Value2 = stores;
                 ScVendor.Value1 = "1";
-
+               
                 SetFuncKeyAll(this, "100001000010");
+               
                 Scr_Clr(0);
+                //ckM_TextBox1.Text = bbl.GetDate();
 
             }
             catch (Exception ex)
@@ -437,6 +439,7 @@ namespace HacchuuShoukai
                 else
                 {
                     ctl.Text = "";
+                    ckM_TextBox1.Text = bbl.GetDate();
                 }
             }
 

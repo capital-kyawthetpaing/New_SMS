@@ -184,10 +184,10 @@ namespace SaimuKanriHyou
                     chk = 1;
                 else chk = 0;
                 dtExport = saimukanriBL.D_MonthlyDebt_CSV_Report(mde,chk);
-                CheckBeforeExport();
-
+                
                 if (dtExport.Rows.Count > 0)
                 {
+                    CheckBeforeExport();
                     DataTable dtCsv = new DataTable();
                     dtCsv = CreateDatatable();
                     for (int i = 0; dtExport.Rows.Count > i; i++)
@@ -238,6 +238,10 @@ namespace SaimuKanriHyou
                     {
                         MessageBox.Show(ex.Message);
                     }
+                }
+                else
+                {
+                    saimukanriBL.ShowMessage("E128");
                 }
             }
         }
@@ -373,7 +377,8 @@ namespace SaimuKanriHyou
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "1";
-            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
+            //string cmdLine =  InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + Mode + " " + YYYYMM;//parameter
+            string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + Mode + " " + YYYYMM;
             System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
         }
 
