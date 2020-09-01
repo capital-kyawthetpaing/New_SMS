@@ -4394,7 +4394,7 @@
             this.IMN_WEBPR_5.IsNumber = true;
             this.IMN_WEBPR_5.IsShop = false;
             this.IMN_WEBPR_5.Length = 80;
-            this.IMN_WEBPR_5.Location = new System.Drawing.Point(452, 305);
+            this.IMN_WEBPR_5.Location = new System.Drawing.Point(452, 304);
             this.IMN_WEBPR_5.MaxLength = 80;
             this.IMN_WEBPR_5.MoveNext = true;
             this.IMN_WEBPR_5.Name = "IMN_WEBPR_5";

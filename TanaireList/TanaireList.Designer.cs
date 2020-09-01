@@ -134,7 +134,7 @@
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label6.TabIndex = 12;
-            this.ckM_Label6.Text = "既存棚番";
+            this.ckM_Label6.Text = "棚番履歴";
             this.ckM_Label6.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -311,6 +311,7 @@
             this.txtEndDate.AllowMinus = false;
             this.txtEndDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtEndDate.BackColor = System.Drawing.Color.White;
+            this.txtEndDate.BorderColor = false;
             this.txtEndDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEndDate.ClientColor = System.Drawing.Color.White;
             this.txtEndDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -340,6 +341,7 @@
             this.txtStartDate.AllowMinus = false;
             this.txtStartDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtStartDate.BackColor = System.Drawing.Color.White;
+            this.txtStartDate.BorderColor = false;
             this.txtStartDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtStartDate.ClientColor = System.Drawing.Color.White;
             this.txtStartDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;

@@ -694,6 +694,8 @@ namespace TempoRegiRyousyuusyo {
             
             private global::System.Data.DataColumn columnReIssue;
             
+            private global::System.Data.DataColumn columnRow;
+            
             private global::System.Data.DataColumn columnJanCD;
             
             private global::System.Data.DataColumn columnSKUShortName1;
@@ -858,6 +860,14 @@ namespace TempoRegiRyousyuusyo {
             public global::System.Data.DataColumn ReIssueColumn {
                 get {
                     return this.columnReIssue;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn RowColumn {
+                get {
+                    return this.columnRow;
                 }
             }
             
@@ -1218,6 +1228,7 @@ namespace TempoRegiRyousyuusyo {
                         string IssueDateTime, 
                         string ReIssueDateTime, 
                         string ReIssue, 
+                        int Row, 
                         string JanCD, 
                         string SKUShortName1, 
                         string SKUShortName2, 
@@ -1266,6 +1277,7 @@ namespace TempoRegiRyousyuusyo {
                         IssueDateTime,
                         ReIssueDateTime,
                         ReIssue,
+                        Row,
                         JanCD,
                         SKUShortName1,
                         SKUShortName2,
@@ -1337,6 +1349,7 @@ namespace TempoRegiRyousyuusyo {
                 this.columnIssueDateTime = base.Columns["IssueDateTime"];
                 this.columnReIssueDateTime = base.Columns["ReIssueDateTime"];
                 this.columnReIssue = base.Columns["ReIssue"];
+                this.columnRow = base.Columns["Row"];
                 this.columnJanCD = base.Columns["JanCD"];
                 this.columnSKUShortName1 = base.Columns["SKUShortName1"];
                 this.columnSKUShortName2 = base.Columns["SKUShortName2"];
@@ -1395,6 +1408,8 @@ namespace TempoRegiRyousyuusyo {
                 base.Columns.Add(this.columnReIssueDateTime);
                 this.columnReIssue = new global::System.Data.DataColumn("ReIssue", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnReIssue);
+                this.columnRow = new global::System.Data.DataColumn("Row", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRow);
                 this.columnJanCD = new global::System.Data.DataColumn("JanCD", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnJanCD);
                 this.columnSKUShortName1 = new global::System.Data.DataColumn("SKUShortName1", typeof(string), null, global::System.Data.MappingType.Element);
@@ -2000,6 +2015,22 @@ namespace TempoRegiRyousyuusyo {
                 }
                 set {
                     this[this.tableSalesTable.ReIssueColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Row {
+                get {
+                    try {
+                        return ((int)(this[this.tableSalesTable.RowColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'SalesTable\' にある列 \'Row\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableSalesTable.RowColumn] = value;
                 }
             }
             
@@ -2720,6 +2751,18 @@ namespace TempoRegiRyousyuusyo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetReIssueNull() {
                 this[this.tableSalesTable.ReIssueColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsRowNull() {
+                return this.IsNull(this.tableSalesTable.RowColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetRowNull() {
+                this[this.tableSalesTable.RowColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

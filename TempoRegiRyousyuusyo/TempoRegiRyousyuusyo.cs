@@ -527,6 +527,8 @@ namespace TempoRegiRyousyuusyo
 
                 #endregion // 販売データ
 
+                sales.Row = receiptDataSet.SalesTable.Where(v => v.IssueDateTime == sales.IssueDateTime && v.SalesNO == sales.SalesNO).Count() + 1;
+
                 receiptDataSet.SalesTable.Rows.Add(sales);
             }
 
