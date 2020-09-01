@@ -22,8 +22,8 @@ namespace DL
                 {"@BrandCDTo",new ValuePair{value1=SqlDbType.VarChar,value2=mte.BrandCDTo} },
                 {"@SegmentCDFrom",new ValuePair{value1=SqlDbType.VarChar,value2=mte.SegmentCDFrom} },
                 {"@SegmentCDTo",new ValuePair{value1=SqlDbType.VarChar,value2=mte.SegmentCDTo} },
-                {"@TenzikaiName",new ValuePair{value1=SqlDbType.VarChar,value2=mte.TenzikaiName} },
-        };
+                {"@TenzikaiName",new ValuePair{value1=SqlDbType.VarChar,value2=mte.TenzikaiName} }
+            };
             return SelectData(dic, sp);
        }
     }
