@@ -39,7 +39,7 @@ namespace TanaireList
 
             ModeVisible = false;
             Btn_F2.Text = string.Empty;
-            Btn_F10.Text = "出力(F10)";
+            Btn_F10.Text = string.Empty;
 
             SetRequireField();
         }
@@ -134,12 +134,12 @@ namespace TanaireList
                     if (!string.IsNullOrWhiteSpace(ScSKUCD.Code))
                     {
                         dtPrint = tnlbl.SelectDataForPrint(dse, "1");
-                        header = "棚入れリスト";
+                        header = "棚入れリスト(履歴）";
                     }
                     else
                     {
                         dtPrint = tnlbl.SelectDataForPrint(dse, "2");
-                        header = "棚入れリスト(履歴）";
+                        header = "棚入れリスト";
 
                     }
 
@@ -316,12 +316,13 @@ namespace TanaireList
                 txtStartDate.Focus();
                 return false;
             }
-            if(chkRegistered.Checked==false && chkUnregistered.Checked==false)
-            {
-                tnlbl.ShowMessage("E111");
-                chkUnregistered.Focus();
-                return false;
-            }
+            if(string.IsNullOrWhiteSpace(ScSKUCD.Code))
+                if(chkRegistered.Checked==false && chkUnregistered.Checked==false)
+                {
+                    tnlbl.ShowMessage("E111");
+                    chkUnregistered.Focus();
+                    return false;
+                }
             if (!string.IsNullOrWhiteSpace(ScSKUCD.Code) && !ScSKUCD.IsExists(2))
             {
                 tnlbl.ShowMessage("E101");
