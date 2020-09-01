@@ -142,7 +142,10 @@ BEGIN
 				0,
 				0,
 				0,
-				case when ftcd.RoundKBN=1 then round(fs.PriceOutTax * tsr.Rate) else round(fs.PriceOutTax * tsr.Rate) end,
+				case 
+					when ftcd.RoundKBN=1 then floor(fs.PriceOutTax * tsr.Rate)
+					when ftcd.RoundKBN=2 then ceiling(fs.PriceOutTax * tsr.Rate)
+					else round((fs.PriceOutTax * tsr.Rate),2) end,
 				0,
 				0,
 				0,
@@ -179,7 +182,10 @@ BEGIN
 			
 			Update mskup
 			Set TekiyouShuuryouDate=@EndDate,
-			SalePriceOutTax=fs.PriceOutTax * tsr.Rate
+			SalePriceOutTax=case 
+								when ftcd.RoundKBN=1 then floor(fs.PriceOutTax * tsr.Rate)
+								when ftcd.RoundKBN=2 then ceiling(fs.PriceOutTax * tsr.Rate)
+								else round((fs.PriceOutTax * tsr.Rate),2) end
 			From M_SKUPrice as mskup 
 			left outer join F_SKU(@StartDate) as fs on fs.AdminNO=mskup.AdminNO 
 														and fs.DeleteFlg=0
