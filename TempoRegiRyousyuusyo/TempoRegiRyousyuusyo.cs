@@ -384,12 +384,21 @@ namespace TempoRegiRyousyuusyo
 
             // 出力
             // mmmas
-            var report = new TempoRegiRyousyuusyo_Report();
-            report.SetDataSource(ryousyuusyoDataSet);
-            report.Refresh();
-            report.PrintOptions.PrinterName = StorePrinterName;
-            report.PrintToPrinter(0, false, 0, 0);
-
+            try
+            {
+              
+                var report = new TempoRegiRyousyuusyo_Report();
+                report.SetDataSource(ryousyuusyoDataSet);
+                report.Refresh();
+              //  MessageBox.Show(report.PrintOptions.PrinterName + "  "+ StorePrinterName);
+                report.PrintOptions.PrinterName = StorePrinterName;
+             //   MessageBox.Show(report.PrintOptions.PrinterName);
+                report.PrintToPrinter(0, false, 0, 0);
+              //  MessageBox.Show(report.PrintOptions.PrinterName);
+            }
+            catch(Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         /// <summary>
@@ -695,6 +704,7 @@ namespace TempoRegiRyousyuusyo
                 }
                 else
                 {
+
                     bbl_1.Display_Service_Update(false);
                     Thread.Sleep(2 * 1000);
                     bbl_1.Display_Service_Enabled(false);

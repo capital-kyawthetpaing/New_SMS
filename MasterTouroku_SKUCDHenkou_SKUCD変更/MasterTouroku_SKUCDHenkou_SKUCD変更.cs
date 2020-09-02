@@ -434,7 +434,7 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                     F11Display.Enabled = F11Enable = true;
                     F11Visible = true;
                     F12Enable = false;
-                    ClearGrid();
+                    //ClearGrid();
                     break;
                 
                 case EOperationMode.DELETE:
@@ -450,7 +450,7 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                     F12Enable = false;
                     F11Display.Enabled = F11Enable = true;
                     F11Visible = true;
-                    ClearGrid();
+                    //ClearGrid();
                     break;
             }
             Sc_Item.SetFocus(1);

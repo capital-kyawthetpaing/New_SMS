@@ -140,6 +140,7 @@ namespace TempoRegiRyougaeNyuuryoku
                 }
                 else
                 {
+
                     if (trrnbl.ShowMessage("Q101") == DialogResult.Yes)
                     {
                         DataTable dt = new DataTable();
@@ -151,12 +152,19 @@ namespace TempoRegiRyougaeNyuuryoku
                         valid = false;
                         mre = DepositHistoryEnity();
                         if (trrnbl.TempoRegiRyougaeNyuuryoku_Insert_Update(mre))
-                        {  
-                            trrnbl.ShowMessage("I101");
-                          
-                            RunConsole();
+                        {
+                            //trrnbl.ShowMessage("I101");
+
+                            //RunConsole();
                             //exeRun
-                           
+                            if (Base_DL.iniEntity.IsDM_D30Used)
+                            {
+                                RunConsole();
+                            }
+                            else
+                            {
+                                trrnbl.ShowMessage("I101");
+                            }
                             ExchangeDenomination.SelectedValue = "-1";
                             ExchangeMoney.Clear();
                             ExchangeCount.Clear();
@@ -190,8 +198,22 @@ namespace TempoRegiRyougaeNyuuryoku
 
             try
             {
+              
                 try
                 {
+                    //cdo.SetDisplay(true, true, "", "");
+                    //cdo.RemoveDisplay(true);
+                    //cdo.RemoveDisplay(true);
+                }
+                catch { }
+                if (Base_DL.iniEntity.IsDM_D30Used)
+                {
+                    CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
+                    op.OpenCashDrawer(); //2020_06_24     << PTK
+                }
+                try
+                {
+                    cdo.SetDisplay(true, true, "", "");
                     cdo.RemoveDisplay(true);
                     cdo.RemoveDisplay(true);
                 }
@@ -200,18 +222,6 @@ namespace TempoRegiRyougaeNyuuryoku
                 }
                 var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
                 pro.WaitForExit();
-                try
-                {
-                    cdo.SetDisplay(true, true, "", "");
-                    cdo.RemoveDisplay(true);
-                    cdo.RemoveDisplay(true);
-                }
-                catch { }
-                if (Base_DL.iniEntity.IsDM_D30Used)
-                {
-                    CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
-                    op.OpenCashDrawer(); //2020_06_24     << PTK
-                }
                 Stop_DisplayService();
             }
             catch

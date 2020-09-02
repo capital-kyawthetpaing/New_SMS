@@ -179,7 +179,8 @@ namespace CKM_Controls
             FMedium,
             Medium,
             Large,
-            XLarge
+            XLarge,
+            XXLarge
         }
 
         [Browsable(true)]
@@ -214,6 +215,9 @@ namespace CKM_Controls
                         break;
                     case FontSize.XLarge:
                         this.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Regular);
+                        break;
+                    case FontSize.XXLarge:
+                        this.Font = new System.Drawing.Font("MS Gothic", 40F, System.Drawing.FontStyle.Regular);
                         break;
                 }
             }

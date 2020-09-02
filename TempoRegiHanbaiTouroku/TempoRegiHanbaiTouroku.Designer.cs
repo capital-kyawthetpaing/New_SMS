@@ -172,6 +172,7 @@
             this.txtJanCD.TabIndex = 4;
             this.txtJanCD.Text = "49XXXXXXXXX13";
             this.txtJanCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtJanCD.UseColorSizMode = false;
             this.txtJanCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtJanCD_KeyDown);
             // 
             // ckmShop_Label7
@@ -221,6 +222,7 @@
             this.txtSu.Text = "1000";
             this.txtSu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtSu.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtSu.UseColorSizMode = false;
             this.txtSu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShippingSu_KeyDown);
             // 
             // ckmShop_Label9
@@ -286,6 +288,7 @@
             this.txtSalesNO.TabIndex = 11;
             this.txtSalesNO.Text = "XXXXXXXXX11";
             this.txtSalesNO.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtSalesNO.UseColorSizMode = false;
             this.txtSalesNO.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSalesNo_KeyDown);
             // 
             // txtCustomerNo
@@ -317,6 +320,7 @@
             this.txtCustomerNo.TabIndex = 1;
             this.txtCustomerNo.Text = "XXXXXXXXXXX13";
             this.txtCustomerNo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtCustomerNo.UseColorSizMode = false;
             this.txtCustomerNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerNo_KeyDown);
             // 
             // btnOk
@@ -879,9 +883,9 @@
             this.lblSumSalesTax.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
             this.lblSumSalesTax.FontBold = false;
             this.lblSumSalesTax.ForeColor = System.Drawing.Color.Black;
-            this.lblSumSalesTax.Location = new System.Drawing.Point(1625, 689);
+            this.lblSumSalesTax.Location = new System.Drawing.Point(1544, 690);
             this.lblSumSalesTax.Name = "lblSumSalesTax";
-            this.lblSumSalesTax.Size = new System.Drawing.Size(270, 53);
+            this.lblSumSalesTax.Size = new System.Drawing.Size(350, 53);
             this.lblSumSalesTax.TabIndex = 63;
             this.lblSumSalesTax.Text = "999,999,999";
             this.lblSumSalesTax.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -892,14 +896,14 @@
             this.lblSumSalesGaku.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Black;
             this.lblSumSalesGaku.BackColor = System.Drawing.Color.Black;
             this.lblSumSalesGaku.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSumSalesGaku.Font = new System.Drawing.Font("MS Gothic", 34F, System.Drawing.FontStyle.Bold);
-            this.lblSumSalesGaku.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Large;
+            this.lblSumSalesGaku.Font = new System.Drawing.Font("MS Gothic", 40F, System.Drawing.FontStyle.Bold);
+            this.lblSumSalesGaku.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XXLarge;
             this.lblSumSalesGaku.FontBold = true;
             this.lblSumSalesGaku.ForeColor = System.Drawing.Color.White;
-            this.lblSumSalesGaku.Location = new System.Drawing.Point(1625, 631);
+            this.lblSumSalesGaku.Location = new System.Drawing.Point(1544, 631);
             this.lblSumSalesGaku.Name = "lblSumSalesGaku";
             this.lblSumSalesGaku.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.lblSumSalesGaku.Size = new System.Drawing.Size(270, 58);
+            this.lblSumSalesGaku.Size = new System.Drawing.Size(350, 58);
             this.lblSumSalesGaku.TabIndex = 62;
             this.lblSumSalesGaku.Text = "999,999,999";
             this.lblSumSalesGaku.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.White;
@@ -914,7 +918,7 @@
             this.ckmShop_Label17.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label17.FontBold = true;
             this.ckmShop_Label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label17.Location = new System.Drawing.Point(1418, 646);
+            this.ckmShop_Label17.Location = new System.Drawing.Point(1377, 647);
             this.ckmShop_Label17.Name = "ckmShop_Label17";
             this.ckmShop_Label17.Size = new System.Drawing.Size(168, 30);
             this.ckmShop_Label17.TabIndex = 60;
@@ -1049,7 +1053,7 @@
             this.label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.label4.FontBold = true;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.label4.Location = new System.Drawing.Point(1383, 689);
+            this.label4.Location = new System.Drawing.Point(1341, 695);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(200, 40);
             this.label4.TabIndex = 73;
@@ -1121,7 +1125,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 139F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 145F));
             this.tableLayoutPanel2.Controls.Add(this.btnGrp14, 13, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnGrp1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnGrp2, 1, 0);
@@ -1154,7 +1158,7 @@
             this.btnGrp14.Location = new System.Drawing.Point(1654, 3);
             this.btnGrp14.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp14.Name = "btnGrp14";
-            this.btnGrp14.Size = new System.Drawing.Size(137, 94);
+            this.btnGrp14.Size = new System.Drawing.Size(143, 94);
             this.btnGrp14.TabIndex = 13;
             this.btnGrp14.Text = " ";
             this.btnGrp14.UseVisualStyleBackColor = false;
@@ -1397,6 +1401,7 @@
             this.txtJuchuuUnitPrice.Text = "10000";
             this.txtJuchuuUnitPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtJuchuuUnitPrice.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtJuchuuUnitPrice.UseColorSizMode = false;
             this.txtJuchuuUnitPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtJuchuuUnitPrice_KeyDown);
             // 
             // btnHenpin
@@ -1543,7 +1548,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 146F));
             this.tableLayoutPanel3.Controls.Add(this.btnSyo12, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.btnSyo42, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.btnSyo52, 0, 1);
@@ -1695,7 +1700,7 @@
             this.btnSyo102.Location = new System.Drawing.Point(1146, 102);
             this.btnSyo102.Margin = new System.Windows.Forms.Padding(1);
             this.btnSyo102.Name = "btnSyo102";
-            this.btnSyo102.Size = new System.Drawing.Size(138, 95);
+            this.btnSyo102.Size = new System.Drawing.Size(144, 95);
             this.btnSyo102.TabIndex = 19;
             this.btnSyo102.Text = " ";
             this.btnSyo102.UseVisualStyleBackColor = false;
@@ -1887,7 +1892,7 @@
             this.btnSyo101.Location = new System.Drawing.Point(1146, 3);
             this.btnSyo101.Margin = new System.Windows.Forms.Padding(1);
             this.btnSyo101.Name = "btnSyo101";
-            this.btnSyo101.Size = new System.Drawing.Size(138, 95);
+            this.btnSyo101.Size = new System.Drawing.Size(144, 95);
             this.btnSyo101.TabIndex = 18;
             this.btnSyo101.Text = " ";
             this.btnSyo101.UseVisualStyleBackColor = false;
