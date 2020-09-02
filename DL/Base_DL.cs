@@ -89,7 +89,7 @@ namespace DL
         protected void AddParamForDataTable(SqlCommand cmd, string key, SqlDbType dbType, DataTable dt)
         {
             cmd.Parameters.Add(key, dbType).Value = dt;
-        }
+        } 
 
         public DataTable SelectData(Dictionary<string, ValuePair> dic, string sp)
         {

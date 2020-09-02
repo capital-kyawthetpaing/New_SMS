@@ -45,6 +45,7 @@ namespace ShukkaSiziTourokuFromJuchuu
             internal int InstructionRows;
             internal int InstructionKBN;
             internal string DeliveryPlanNO;
+            internal string CustomerCD;
             internal int Kbn;   //1:出荷指示未作成分(受注から),2:出荷指示未作成分,3:出荷指示作成済分
             internal int PinkFont;
             internal int Update;

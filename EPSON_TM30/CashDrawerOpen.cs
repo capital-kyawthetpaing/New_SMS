@@ -15,23 +15,8 @@ namespace EPSON_TM30
        /* PosExplorer posExplorer*/
         public CashDrawerOpen()
         {
-            //string strLogicalName = "LineDisplay";
-            //PosExplorer posExplorer = null;
-            //try
-            //{
-            //    posExplorer = new PosExplorer();
-            //}
-            //catch (Exception ex)
-            //{
-            //}
-            //deviceInfo = posExplorer.GetDevice(DeviceType.LineDisplay, strLogicalName);
-            //m_Display = (LineDisplay)posExplorer.CreateInstance(deviceInfo);
-            //m_Display.Open();
-            //m_Display.Claim(1000);
-            //m_Display.DeviceEnabled = true;
         }
-
-        public void OpenCashDrawer(bool IsWaited = false)
+        public void OpenCashDrawer(bool IsWaited = false,bool IsIdle = false)
         {
             try
             {
@@ -65,20 +50,19 @@ namespace EPSON_TM30
 
             // ドロワーが開いている間、待ちます。
 
+            
             while (m_Drawer.DrawerOpened == false)
             {
                 System.Threading.Thread.Sleep(100);
             }
-
-            //開いてから10秒間経っても閉じられない場合はビープ音を断続的に鳴らします。
-
-            //このメソッドを実行すると、ドロワーが閉じられるまで処理が戻ってこないので注意してください。
+            if (IsIdle)
+                return;
+            
             if (IsWaited)
             m_Drawer.WaitForDrawerClose(10000, 2000, 100, 1000);
 
             try
             {
-
                 CloseCashDrawer();
             }
             catch
@@ -90,7 +74,6 @@ namespace EPSON_TM30
                 catch { }
             }
         }
-
         public void CloseCashDrawer()
         {
             //<<<ステップ1>>>--Start
@@ -98,12 +81,6 @@ namespace EPSON_TM30
             {
                 try
                 {
-                    //デバイスを停止します。
-
-                    //  m_Drawer.DeviceEnabled = false;
-
-                    //デバイスの使用権を解除します。
-
                     m_Drawer.Release();
 
                 }
@@ -113,14 +90,10 @@ namespace EPSON_TM30
                 }
                 finally
                 {
-                    //デバイスの使用を終了します。
-
                     m_Drawer.Close();
                 }
             }
-            //<<<ステップ1>>>--End
         }
-
         public void RemoveDisplay(bool IsForced=false)
         {
             if (IsForced)
@@ -145,42 +118,38 @@ namespace EPSON_TM30
             {
                 try
                 {
-                    //m_Display.DestroyWindow();                        // instance close we have created
-                    //m_Display.ClearText();
                     m_Display.DeviceEnabled = false;
                     m_Display.Release();
                     m_Display.Close();
                 }
-                catch{
+                catch
+                {
 
                     try
                     {
-                       // m_Display.DeviceEnabled = false;
                         m_Display.Release();
                         m_Display.Close();
                     }
-                    catch {
+                    catch
+                    {
                         try
                         {
-                           // m_Display.Release();
                             m_Display.Close();
                         }
                         catch { }
                     }
                 }
-                // MessageBox.Show(ex.Message);
             }
         }
-
-        public void SetDisplay(bool IsMarquee, bool IsStartUp,string DefaultMessage = null ,string Upval = null, string Downval = null)
+        public void SetDisplay(bool IsMarquee, bool IsStartUp, string DefaultMessage = null, string Upval = null, string Downval = null)
         {
-           
             try
             {
                 int Wdh = 0;
                 var valdown = "";
                 if (IsStartUp)
                 {
+
                     try { RemoveDisplay(); }
                     catch
                     { }
@@ -198,9 +167,10 @@ namespace EPSON_TM30
                         deviceInfo = posExplorer.GetDevice(DeviceType.LineDisplay, strLogicalName);
                         m_Display = (LineDisplay)posExplorer.CreateInstance(deviceInfo);
                         m_Display.Open();
-                        m_Display.Claim(1000);
+                        m_Display.Claim(10000);
                         m_Display.DeviceEnabled = true;
                     }
+
                     catch { }
                     valdown = DefaultMessage;
                     Wdh = Encoding.GetEncoding(932).GetByteCount(valdown);
@@ -216,7 +186,7 @@ namespace EPSON_TM30
                     }
                     else
                     {
-                       
+
                         m_Display.MarqueeFormat = DisplayMarqueeFormat.Walk;
                         m_Display.MarqueeType = DisplayMarqueeType.Init;
                         m_Display.MarqueeRepeatWait = 1000;
@@ -224,11 +194,9 @@ namespace EPSON_TM30
                         m_Display.DisplayText(valdown, DisplayTextMode.Normal);
                         m_Display.MarqueeType = DisplayMarqueeType.Left;
                     }
-                   
                 }
                 else
                 {
-                  
                     Wdh = 20;
                     try
                     {
@@ -252,35 +220,24 @@ namespace EPSON_TM30
                             deviceInfo = posExplorer.GetDevice(DeviceType.LineDisplay, strLogicalName);
                             m_Display = (LineDisplay)posExplorer.CreateInstance(deviceInfo);
                             m_Display.Open();
-                            m_Display.Claim(1000);
+                            m_Display.Claim(10000);
                             m_Display.DeviceEnabled = true;
                         }
                         catch { }
-
-                        //m_Display.CreateWindow(1,0,1,20,1,20);
-                        //RemoveDisplay();
                         m_Display.CharacterSet = 932;
-                        var i= Encoding.GetEncoding(932).GetByteCount(Downval);
+                        var i = Encoding.GetEncoding(932).GetByteCount(Downval);
                         var j = Encoding.GetEncoding(932).GetByteCount(Upval);
                         m_Display.DisplayTextAt(0, (m_Display.Columns - j), Upval, DisplayTextMode.Normal);
                         m_Display.DisplayTextAt(1, (m_Display.Columns - i), Downval, DisplayTextMode.Normal);
-                        //PutSecond(i,Downval);
                     }
                     catch
                     {
-                       // m_Display.DisplayText(Upval, DisplayTextMode.Normal);
                     }
                 }
             }
             catch (PosControlException pe)
             {
             }
-        //End:
-            //{
-            //    //  m_Display
-            //    //   deviceInfo = 
-            //    //
-            //}
         }
         private void PutSecond(int i, string Downval)
         {
@@ -295,44 +252,13 @@ namespace EPSON_TM30
         }
         private static void ForcedToBeBlank()
         {
-            //try
-            //{
-            //    string strLogicalName = "LineDisplay";
-            //    PosExplorer posExplorer = null;
-            //    try
-            //    {
-            //        posExplorer = new PosExplorer();
-            //        m_Display.ClearText();
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //    }
-            //    deviceInfo = posExplorer.GetDevice(DeviceType.LineDisplay, strLogicalName);
-            //    m_Display = (LineDisplay)posExplorer.CreateInstance(deviceInfo);
-            //    m_Display.Open();
-            //    m_Display.Claim(1000);
-            //    m_Display.DeviceEnabled = true;
-            //}
-            //catch { }
-
-          //  m_Display.CharacterSet = 932;
-           // m_Display.CreateWindow(1, 0, 1, 20, 1, 20);
             try
             {
-                //   m_Display.CreateWindow(1, 0, 1, 20, 1, 20);
-                //    m_Display.DestroyWindow();
-                /// m_Display.DisplayText("", DisplayTextMode.Normal);
-                /// m_Display.CreateWindow(1, 0, 1, 20, 1, 20);
-                //  m_Display.MarqueeType = DisplayMarqueeType.None;
                 m_Display.CreateWindow(1, 0, 1, 20, 1, 20);
                 m_Display.DestroyWindow();
                 m_Display.ClearText();
             }
             catch { }
-
-           // m_Display.ClearText();
-           // m_Display.DestroyWindow();
-
         }
         protected string GetMessages()
         {
@@ -366,7 +292,6 @@ namespace EPSON_TM30
         }
         public static LineDisplay m_Display  = null;
         public static DeviceInfo deviceInfo  = null;
-
         public object CDO_Main  = null;
     }
 }

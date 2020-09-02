@@ -616,6 +616,8 @@ namespace TempoRegiHanbaiTouroku
             }
             return false;
         }
+        string a = "";
+        string b = ""; 
         private bool ExecPrint(string no, string reissue)
         {
             //Parameter受取  OperatorCD←	Parameter受取 OperatorCD 
@@ -641,63 +643,67 @@ namespace TempoRegiHanbaiTouroku
                 //string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + dse.StoreCD + " " + no + " " + receipte + " 1 " + bbl.GetDate() + " " + reissue;
                 string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + no + " " + receipte + " 1 " + bbl.GetDate() + " " + reissue;
                 //2020/07/20 Y.Nishikawa CHG 引数を整備↑↑
-
-
+                a = filePath;
+                b = cmdLine;
                 try
                 {
+
+                    ///movedBegin
                     try
                     {
-                        cdo.RemoveDisplay(true);
-                        cdo.RemoveDisplay(true);
+                        Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath,  "", cmdLine));
                     }
-                    catch
-                    {
-                    }
-                    var pro = System.Diagnostics.Process.Start(filePath, cmdLine);
-                    pro.WaitForExit();
-                    try
-                    {
-                        cdo.SetDisplay(true, true, "", "");
-                        cdo.RemoveDisplay(true);
-                        cdo.RemoveDisplay(true);
-                    }
-                    catch { }
-                    if (Base_DL.iniEntity.IsDM_D30Used)
-                    {
-                        EPSON_TM30.CashDrawerOpen op = new EPSON_TM30.CashDrawerOpen();  //2020_06_24 
-                        op.OpenCashDrawer(); //2020_06_24     << PTK
+                    catch (Exception ex) {
+
+                        MessageBox.Show("Parallel function worked and cant dispose instance. . . " + ex.Message + Environment.NewLine+ ex.StackTrace.ToString());
+
                     }
                     cdo.SetDisplay(false, false, "", Up, Lp);
                 }
                 catch
                 {
+
                 }
-                //PTK
+
                 //try
                 //{
-                //    cdo.RemoveDisplay(true);
-                //    cdo.RemoveDisplay(true);
-                //}
-                //catch {
-
-                //}
-
-                ////エラーでない場合
-                //if (bbl.Z_Set(txtAzukari.Text) > 0)
-                //{
-                //    var pro = System.Diagnostics.Process.Start(filePath, cmdLine);
-                //    pro.WaitForExit();
-                //    //Todo:預り額＞０の場合、ドロワー開く      // PTK to be Continued    
                 //    try
                 //    {
-                //        EPSON_TM30.CashDrawerOpen cdo = new EPSON_TM30.CashDrawerOpen();
-                //        cdo.OpenCashDrawer();
+                //        cdo.RemoveDisplay(true);
+                //        cdo.RemoveDisplay(true);
                 //    }
-                //    catch(Exception ex) {
-                //        MessageBox.Show(ex.Message);
+                //    catch
+                //    {
+                //        cdo.RemoveDisplay(true);
                 //    }
+                //    if (Base_DL.iniEntity.IsDM_D30Used)
+                //    {
+                //        EPSON_TM30.CashDrawerOpen op = new EPSON_TM30.CashDrawerOpen();  //2020_06_24 
+                //        op.OpenCashDrawer(); //2020_06_24     << PTK
+                //    }
+                //    try
+                //    {
+                //        var pro = System.Diagnostics.Process.Start(filePath, cmdLine);
+                //        pro.WaitForExit();
+                //    }
+                //    catch (Exception ex)
+                //    {
+                //        MessageBox.Show(ex.Message + Environment.NewLine + cmdLine);
+
+                //    }
+                //    try
+                //    {
+                //        cdo.SetDisplay(true, true, "", "");
+                //        cdo.RemoveDisplay(true);
+                //        cdo.RemoveDisplay(true);
+                //    }
+                //    catch { }
+
+                //    cdo.SetDisplay(false, false, "", Up, Lp);
                 //}
-                //cdo.SetDisplay(false,false,"",Up,Lp);
+                //catch
+                //{
+                //}
             }
             else
             {
@@ -705,6 +711,55 @@ namespace TempoRegiHanbaiTouroku
                 return false;
             }
             return true;
+        }
+
+        protected void CDO_Open()
+        {
+            try
+            {
+                // cdo.RemoveDisplay(true);
+                // cdo.RemoveDisplay(true);
+            }
+            catch
+            {
+            }
+            if (Base_DL.iniEntity.IsDM_D30Used)
+            {
+                EPSON_TM30.CashDrawerOpen op = new EPSON_TM30.CashDrawerOpen(); //2020_06_24
+                op.OpenCashDrawer(); //2020_06_24 << PTK
+            }
+            try
+            {
+                cdo.RemoveDisplay(true);
+                cdo.RemoveDisplay(true);
+            }
+            catch { MessageBox.Show("CO. . . "); }
+        }
+        protected void Printer_Open(string filePath, string programID, string cmdLine)
+        {
+            if (programID == "")
+            {
+                var pro = System.Diagnostics.Process.Start(filePath, cmdLine);
+                pro.WaitForExit();
+            }
+            else
+            {
+                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                pro.WaitForExit();
+            }
+            try
+            {
+                cdo.SetDisplay(true, true, "");
+                cdo.RemoveDisplay(true);
+                cdo.RemoveDisplay(true);
+                cdo.SetDisplay(false, false, "", Up, Lp);
+            }
+            catch
+            {
+                MessageBox.Show("P0. . .");
+            }
+
+
         }
         private bool ExecUpdate(string no)
         {

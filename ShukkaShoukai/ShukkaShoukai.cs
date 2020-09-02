@@ -493,10 +493,14 @@ namespace ShukkaShoukai
                                 skskbl.ShowMessage("E139");
                                 SC_Order.Focus();
                             }
+                            else
+                            {
+                                cboDestinationWarehouse.Focus();
+                            }
                         }
                     }
                 }
-                cboDestinationWarehouse.Focus();
+                
             }
         }
         #endregion

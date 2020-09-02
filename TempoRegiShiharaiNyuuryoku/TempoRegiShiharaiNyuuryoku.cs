@@ -105,6 +105,7 @@ namespace TempoRegiShiharaiNyuuryoku
         {
             if(ErrorCheck())
             {
+
                 if (trgshbl.ShowMessage("Q101") == DialogResult.Yes)
                 {
                     DataTable dt = new DataTable();
@@ -118,9 +119,16 @@ namespace TempoRegiShiharaiNyuuryoku
 
                     if (trgshbl.TempoRegiShiNyuuryoku_InsertUpdate(ddpe))
                     {
-                        trgshbl.ShowMessage("I101");
-                        RunConsole();//exeRun    <<<< PTK
-                        
+                        //trgshbl.ShowMessage("I101");
+                        //RunConsole();//exeRun    <<<< PTK
+                        if (Base_DL.iniEntity.IsDM_D30Used)
+                        {
+                            RunConsole();
+                        }
+                        else
+                        {
+                            trgshbl.ShowMessage("I101");
+                        }
                         txtPayment.Clear();
                         txtPayment.Focus();
                         cboDenominationName.SelectedValue = "-1";
@@ -143,16 +151,7 @@ namespace TempoRegiShiharaiNyuuryoku
 
             try
             {
-                try
-                {
-                    cdo.RemoveDisplay(true);
-                    cdo.RemoveDisplay(true);
-                }
-                catch
-                {
-                }
-                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
-                pro.WaitForExit();
+              
                 try
                 {
                     cdo.SetDisplay(true, true, "", "");
@@ -165,6 +164,16 @@ namespace TempoRegiShiharaiNyuuryoku
                     CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
                     op.OpenCashDrawer(); //2020_06_24     << PTK
                 }
+                try
+                {
+                    cdo.RemoveDisplay(true);
+                    cdo.RemoveDisplay(true);
+                }
+                catch
+                {
+                }
+                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                pro.WaitForExit();
                 Stop_DisplayService();
             }
             catch

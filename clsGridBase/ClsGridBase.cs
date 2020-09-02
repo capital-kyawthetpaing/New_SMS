@@ -221,7 +221,66 @@ namespace GridBase
                     //w_Edit.TxtCode.BackColor = pColor;
                 }
             }
-
+            public void SForeColor(System.Drawing.Color pColor)
+            {
+                if (CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                {
+                    CKM_Controls.CKM_TextBox w_Edit;
+                    // Editコントロールのとき
+                    w_Edit = (CKM_Controls.CKM_TextBox)CellCtl;
+                    w_Edit.ForeColor = pColor;
+                    return;
+                }
+                else if (CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_MultiLineTextBox)))
+                {
+                    CKM_Controls.CKM_MultiLineTextBox w_Edit;
+                    // Editコントロールのとき
+                    w_Edit = (CKM_Controls.CKM_MultiLineTextBox)CellCtl;
+                    w_Edit.ForeColor = pColor;
+                    return;
+                }
+                else if (CellCtl.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                {
+                    Search.CKM_SearchControl w_Edit;
+                    w_Edit = (Search.CKM_SearchControl)CellCtl;
+                    w_Edit.TxtCode.ForeColor = pColor;
+                }
+                else if (CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_ComboBox)))
+                {
+                    CKM_Controls.CKM_ComboBox w_Edit;
+                    w_Edit = (CKM_Controls.CKM_ComboBox)CellCtl;
+                    w_Edit.ForeColor = pColor;
+                }
+                else if (CellCtl.GetType().Equals(typeof(GridControl.clsGridCheckBox)))
+                {
+                    GridControl.clsGridCheckBox w_Check;
+                    // チェックボックス　のとき
+                    w_Check = (GridControl.clsGridCheckBox)CellCtl;
+                    w_Check.ForeColor = pColor;
+                }
+                else if (CellCtl.GetType().Equals(typeof(GridControl.clsGridButton)))
+                {
+                    GridControl.clsGridButton w_Button;
+                    // ボタン　のとき
+                    w_Button = (GridControl.clsGridButton)CellCtl;
+                    w_Button.ForeColor = pColor;
+                }
+                else if (CellCtl.GetType().Equals(typeof(Button)))
+                {
+                    Button w_Button;
+                    // ボタン　のとき
+                    w_Button = (Button)CellCtl;
+                    w_Button.ForeColor = pColor;
+                }
+                else if (CellCtl.GetType().Equals(typeof(Label)))
+                {
+                    Label w_Edit;
+                    // Label
+                    w_Edit = (Label)CellCtl;
+                    w_Edit.ForeColor = pColor;
+                    return;
+                }
+            }
             public void SEnabled(bool pEnabled)
             {
                 CellCtl.Enabled = pEnabled;
@@ -320,6 +379,7 @@ namespace GridBase
             public bool Cell_Enabled;      //使用可/不可
             public bool Cell_ReadOnly;     //編集可/不可  (True=不可 False=可)
             public bool Cell_Selectable;   //フォーカスセット可能か
+            public Color Cell_ForeColor;       //セルの文字色をセット（TextBoxの場合Enabled=Falseだと文字色が変わらないのでLabel等に変更する必要あり）
             public Color Cell_Color;       //セルの色(行の色とは別に固定色であればセット  表示項目の灰色等)
             public bool Cell_Bold;
             //初期化
@@ -328,6 +388,7 @@ namespace GridBase
                 Cell_Enabled = false;        //使用不可
                 Cell_ReadOnly = false;       //編集可
                 Cell_Selectable = true;      //フォーカスセット可能
+                Cell_ForeColor = Control.DefaultForeColor;
                 Cell_Color = System.Drawing.Color.Empty;
                 Cell_Bold = false;
             }
@@ -404,7 +465,24 @@ namespace GridBase
                 return System.Drawing.Color.Empty;
             }
         }
+        //'-----------------------------------------------
+        //'   指定されたセルに設定するForeColorを返す
+        //'
+        //'       引数：  pCol   列番号
+        //'               pRow   行番号(データ)
+        //'-----------------------------------------------
+        public System.Drawing.Color F_GetForeColor_MK(int pCol, int pRow)
+        {
+            try
+            {
+                return g_MK_State[pCol, pRow].Cell_ForeColor;
 
+            }
+            catch
+            {
+                return System.Drawing.Color.Empty;
+            }
+        }
         private bool F_MoveFocus_Sub(int pCol, int pRow)
         {
             try

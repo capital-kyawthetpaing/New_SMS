@@ -141,6 +141,7 @@ namespace TempoRegiTsurisenJyunbi
         /// </summary>
         public void Save()
         {
+
             if (ErrorCheck())
             {
                 {
@@ -156,8 +157,16 @@ namespace TempoRegiTsurisenJyunbi
                         mre = DepositHistoryEnity();
                         if (trtjb.TempoRegiTsurisenJyunbi_Insert_Update(mre))
                         {
-                            trtjb.ShowMessage("I101");
-                            RunConsole();
+                            if (Base_DL.iniEntity.IsDM_D30Used)
+                            {
+                                RunConsole();
+                            }
+                            else
+                            {
+                                trtjb.ShowMessage("I101");
+                            }
+                            //trtjb.ShowMessage("I101");
+                            //RunConsole();
                             txtDate.Clear();
                             DepositGaku.Clear();
                             Remark.Clear();
@@ -231,16 +240,7 @@ namespace TempoRegiTsurisenJyunbi
             string cmdLine =InCompanyCD+ " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode+" "+DepositeNO;//parameter
             try
             {
-                try
-                {
-                    cdo.RemoveDisplay(true);
-                    cdo.RemoveDisplay(true);
-                }
-                catch
-                {
-                }
-                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
-                pro.WaitForExit();
+
                 try
                 {
                     cdo.SetDisplay(true, true, "", "");
@@ -253,6 +253,17 @@ namespace TempoRegiTsurisenJyunbi
                     CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
                     op.OpenCashDrawer(); //2020_06_24     << PTK
                 }
+                try
+                {
+                    cdo.SetDisplay(true, true, "", "");
+                    cdo.RemoveDisplay(true);
+                    cdo.RemoveDisplay(true);
+                }
+                catch
+                {
+                }
+                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                pro.WaitForExit();
                 Stop_DisplayService();
             }
             catch
