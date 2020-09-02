@@ -151,7 +151,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(630, 134);
+            this.ckM_Label7.Location = new System.Drawing.Point(629, 134);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label7.TabIndex = 13;
@@ -199,7 +199,7 @@
             this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(625, 96);
+            this.ckM_Label6.Location = new System.Drawing.Point(625, 97);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label6.TabIndex = 11;
@@ -332,7 +332,7 @@
             this.scSupplierCD.IsCopy = false;
             this.scSupplierCD.LabelText = "";
             this.scSupplierCD.LabelVisible = true;
-            this.scSupplierCD.Location = new System.Drawing.Point(199, 21);
+            this.scSupplierCD.Location = new System.Drawing.Point(199, 22);
             this.scSupplierCD.Margin = new System.Windows.Forms.Padding(0);
             this.scSupplierCD.Name = "scSupplierCD";
             this.scSupplierCD.NameWidth = 310;
@@ -390,7 +390,7 @@
             this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(125, 102);
+            this.ckM_Label3.Location = new System.Drawing.Point(125, 97);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(71, 12);
             this.ckM_Label3.TabIndex = 2;
