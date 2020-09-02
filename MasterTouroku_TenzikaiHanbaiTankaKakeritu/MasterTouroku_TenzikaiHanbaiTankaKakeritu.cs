@@ -300,8 +300,6 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 foreach (DataGridViewRow row in GV_Tenzaishohin.Rows)
                 {
                     DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
-                    //string celll = row.Cells["CheckBox"].Value.ToString();
-                    //string cell = chk.ToString();
                     if (chk.Value == "1")
                     {
                         string itemcd = row.Cells["Rate"].Value.ToString();

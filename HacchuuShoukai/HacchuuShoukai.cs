@@ -111,7 +111,6 @@ namespace HacchuuShoukai
                 SetFuncKeyAll(this, "100001000010");
                
                 Scr_Clr(0);
-                //ckM_TextBox1.Text = bbl.GetDate();
 
             }
             catch (Exception ex)
@@ -439,7 +438,7 @@ namespace HacchuuShoukai
                 else
                 {
                     ctl.Text = "";
-                    ckM_TextBox1.Text = bbl.GetDate();
+                    ckM_TextBox2.Text = bbl.GetDate();
                 }
             }
 
