@@ -34,10 +34,6 @@ namespace DL
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@xml", new ValuePair { value1 =SqlDbType.Xml,value2 = xml } },
-                { "@Operator", new ValuePair { value1 =SqlDbType.VarChar,value2 = mTSE.InsertOperator } },
-                { "@Program", new ValuePair { value1 =SqlDbType.VarChar,value2 = mTSE.ProgramID } },
-                { "@PC", new ValuePair { value1 =SqlDbType.VarChar,value2 = mTSE.PC } },
-                { "@Key", new ValuePair { value1 =SqlDbType.VarChar,value2 = mTSE.Key } },
                 { "@TankaCD", new ValuePair { value1 =SqlDbType.VarChar,value2 = mTSE.TanKaCD } },
                 { "@BrandCD", new ValuePair { value1 =SqlDbType.VarChar,value2 = mTSE.BranCDFrom } },
                 { "@SegmentCD", new ValuePair { value1 =SqlDbType.VarChar,value2 = mTSE.SegmentCDFrom } },
@@ -45,6 +41,11 @@ namespace DL
                 { "@LastSeason", new ValuePair { value1 =SqlDbType.VarChar,value2 = mTSE.LastSeason } },
                 { "@PriceOutTaxF", new ValuePair { value1 =SqlDbType.VarChar,value2 = mTSE.SalePriceOutTaxF } },
                 { "@PriceOutTaxT", new ValuePair { value1 =SqlDbType.VarChar,value2 = mTSE.SalePriceOutTaxT } },
+                { "@Operator", new ValuePair { value1 =SqlDbType.VarChar,value2 = mTSE.InsertOperator } },
+                { "@Program", new ValuePair { value1 =SqlDbType.VarChar,value2 = mTSE.ProgramID } },
+                { "@PC", new ValuePair { value1 =SqlDbType.VarChar,value2 = mTSE.PC } },
+                { "@OperateMode", new ValuePair { value1 =SqlDbType.VarChar,value2 =mTSE.ProcessMode  } },
+                { "@KeyItem", new ValuePair { value1 =SqlDbType.VarChar,value2 = mTSE.Key } },
             };
             UseTransaction = true;
             return InsertUpdateDeleteData(dic, sp);

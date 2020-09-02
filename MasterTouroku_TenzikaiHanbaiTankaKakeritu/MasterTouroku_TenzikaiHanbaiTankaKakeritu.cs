@@ -273,8 +273,9 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 SalePriceOutTaxT = TB_PriceOutTaxT.Text,
                 InsertOperator = InOperatorCD,
                 PC = InPcID,
+                ProcessMode = "",
                 ProgramID = InProgramID,
-                Key=InPcID,
+                Key = SC_Tanka.TxtCode.Text + "" + TB_Rate.Text,
             };
 
             return mTSE;
