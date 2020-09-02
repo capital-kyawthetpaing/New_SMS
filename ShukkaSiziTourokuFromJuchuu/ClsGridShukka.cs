@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShukkaShijiTouroku
+namespace ShukkaSiziTourokuFromJuchuu
 {
 //'明細部を構成するコントロールのTagに 行番号(0～) をセットしてください。
 //'明細部を構成するコントロールのうち TextBoxコントロール以外はカスタムコントロール(MeisaiControl)を使用してください。(Tabの検知のため)
@@ -17,14 +17,15 @@ namespace ShukkaShijiTouroku
             internal string GYONO;      // №
             internal bool ChkSyukka;
             internal bool ChkTekiyo;
-            internal bool ChkSokujitu;
+            internal bool ChkUntin;
             internal bool ChkShikyu;
-            internal string DecidedDeliveryDate;     //着指定日時
+            internal bool ChkMinyukin;
+            internal string Hanbaigaku;     //着指定日時
             internal string JuchuNo;      // 
             internal string DeliveryAddress1;      // 
             internal string PrintDate;      // 
             internal string ShippingDate;      //
-            internal string Space;      //
+            internal string SoukoName;      //
 
             internal string CommentInStore;      // 
             internal string CommentOutStore;      //
@@ -33,11 +34,20 @@ namespace ShukkaShijiTouroku
             internal string DeliveryPlanDate;  //出荷予定日     
             internal string CarrierName;      // 
 
+            internal string JanCD;      // 
+            internal string SKUCD;
+            internal string SizeName;      // 
+            internal string ColorName;      //
+            internal string SKUName;      // 
+            internal string JuchuSu;
+
             //隠し項目
+            internal int InstructionRows;
             internal int InstructionKBN;
             internal string DeliveryPlanNO;
-            internal int Kbn;   //1:出荷指示未作成分,2:出荷指示作成済分
-            internal int RedFont;
+            internal string CustomerCD;
+            internal int Kbn;   //1:出荷指示未作成分(受注から),2:出荷指示未作成分,3:出荷指示作成済分
+            internal int PinkFont;
             internal int Update;
 
         }
@@ -48,31 +58,36 @@ namespace ShukkaShijiTouroku
             GYONO,
             ChkSyukka,
             ChkTekiyo,
-            DeliveryPlanDate,     //出荷予定日
-            ChkSokujitu,
             ChkShikyu,
-
-            DecidedDeliveryDate,    //着指定日時
+            ChkUntin,
             JuchuNo,
-            DeliveryAddress1,
+            PrintDate,           //出荷指示書
             DeliveryName,    //  出荷先名(顧客名)
             CarrierName,      // 配送会社
-            BtnJuchu,
-            BtnDetail,
+            DeliveryAddress1,
 
-            Space,
-            PrintDate,           //出荷指示書
-            ShippingDate,       //出荷
+            DeliveryPlanDate,     //出荷予定日
+            ChkMinyukin,
+            Hanbaigaku,    //販売額合計
             InstructionNO,      // 出荷指示番号 
-
+            ShippingDate,       //出荷
             CommentOutStore,    // 社外備考・コメント
             CommentInStore,    //社内備考・コメント
+
             
+            JanCD,
+            SKUCD,
+            SKUName,
+            ColorName,          // カラー
+            SizeName,           //サイズ
+            JuchuSu,
+            SoukoName,
+
             COUNT
         }
         internal ST_DArray_Grid[] g_DArray=null;
         internal const int gc_MaxCL = (int)ColNO.COUNT;       // ｸﾞﾘｯﾄﾞ最大列数
-        internal const int gc_P_GYO = 10;        // 表示明細行(画面)
+        internal const int gc_P_GYO = 7;        // 表示明細行(画面)
         internal const int gMxGyo = 999;        //画面最大明細行数
 
         internal short g_VSB_Flg;           // ｽｸﾛｰﾙﾊﾞｰのValueChangedｲﾍﾞﾝﾄの実行判断
@@ -146,15 +161,15 @@ namespace ShukkaShijiTouroku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
 
-                // 
-                //w_CtlCol = (int)ColNO.JanCD;
+                w_CtlCol = (int)ColNO.JanCD;
 
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].JanCD);
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].JanCD);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
 
                 // 
                 w_CtlCol = (int)ColNO.PrintDate;
@@ -179,14 +194,15 @@ namespace ShukkaShijiTouroku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
 
                 // 
-                w_CtlCol = (int)ColNO.Space;
+                w_CtlCol = (int)ColNO.SoukoName;
 
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].Space);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].SoukoName);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御            
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御      
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
 
                 // 単位
                 w_CtlCol = (int)ColNO.InstructionNO;
@@ -238,9 +254,9 @@ namespace ShukkaShijiTouroku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           //TABSTOP制御
 
 
-                w_CtlCol = (int)ColNO.ChkSokujitu;
+                w_CtlCol = (int)ColNO.ChkUntin;
 
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].ChkSokujitu);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].ChkUntin);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           //TABSTOP制御
@@ -253,23 +269,12 @@ namespace ShukkaShijiTouroku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           //TABSTOP制御
 
-                w_CtlCol = (int)ColNO.BtnJuchu;
+                w_CtlCol = (int)ColNO.ChkMinyukin;
 
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].ChkMinyukin);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
-
-
-                w_CtlCol = (int)ColNO.BtnDetail;
-
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
-
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           //TABSTOP制御
                 // 
                 w_CtlCol = (int)ColNO.CommentOutStore;
 
@@ -314,16 +319,66 @@ namespace ShukkaShijiTouroku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
 
-                w_CtlCol = (int)ColNO.DecidedDeliveryDate;    //支払予定日
+                w_CtlCol = (int)ColNO.Hanbaigaku;    //支払予定日
 
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].DecidedDeliveryDate);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].Hanbaigaku);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SForeColor(F_GetForeColor_MK(w_CtlCol, w_Row));   //赤字になる場合
+
+                w_CtlCol = (int)ColNO.SKUCD;
+
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].SKUCD);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
+
+                w_CtlCol = (int)ColNO.SKUName;
+
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].SKUName);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
+
+
+                w_CtlCol = (int)ColNO.ColorName;
+
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].ColorName);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
+
+                w_CtlCol = (int)ColNO.SizeName;
+
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].SizeName);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
+
+                w_CtlCol = (int)ColNO.JuchuSu;
+
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].JuchuSu);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
 
             }
         }
@@ -332,79 +387,103 @@ namespace ShukkaShijiTouroku
         {
             int w_Row;
             int w_CtlRow;
-            int w_CtlCol;
 
             for (w_CtlRow = 0; w_CtlRow <= g_MK_Ctl_Row - 1; w_CtlRow++)            // 画面上の明細番号
             {
                 w_Row = w_CtlRow + pStartRow;                // データの行番号
 
-                // 行番号
-                w_CtlCol = (int)ColNO.GYONO;
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].GYONO);
+                for (int w_CtlCol = 0; w_CtlCol <= g_MK_Ctl_Col - 1; w_CtlCol++)
+                {
+                    switch (w_CtlCol)
+                    {
+                        // 行番号
+                        case (int)ColNO.GYONO:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].GYONO);
+                            break;
 
-                //チェック
-                w_CtlCol = (int)ColNO.ChkSyukka;
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ChkSyukka);
-                w_CtlCol = (int)ColNO.ChkTekiyo;
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ChkTekiyo);
-                w_CtlCol = (int)ColNO.ChkSokujitu;
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ChkSokujitu);
-                w_CtlCol = (int)ColNO.ChkShikyu;
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ChkShikyu);
+                        //チェック
+                        case (int)ColNO.ChkSyukka:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ChkSyukka);
+                            break;
+                        case (int)ColNO.ChkTekiyo:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ChkTekiyo);
+                            break;
+                        case (int)ColNO.ChkUntin:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ChkUntin);
+                            break;
+                        case (int)ColNO.ChkShikyu:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ChkShikyu);
+                            break;
+                        case (int)ColNO.ChkMinyukin:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ChkMinyukin);
+                            break;
+                        // 
+                        case (int)ColNO.JuchuNo:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].JuchuNo);
+                            break;
+                        // 
+                        case (int)ColNO.PrintDate:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].PrintDate);
+                            break;
+                        // 
+                        case (int)ColNO.DeliveryAddress1:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].DeliveryAddress1);
+                            break;
+                        // 
+                        case (int)ColNO.SoukoName:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SoukoName);
+                            break;
+                        // 
+                        case (int)ColNO.InstructionNO:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].InstructionNO);
+                            break;
+                        // 
+                        case (int)ColNO.ShippingDate:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ShippingDate);
+                            break;
+                        // 
+                        case (int)ColNO.CommentOutStore:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].CommentOutStore);
+                            break;
+                        // 
+                        case (int)ColNO.DeliveryName:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].DeliveryName);
+                            break;
+                        // 備考
+                        case (int)ColNO.CommentInStore:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].CommentInStore);
+                            break;
+                        case (int)ColNO.CarrierName:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].CarrierName);
+                            break;
+                        case (int)ColNO.DeliveryPlanDate:     //
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].DeliveryPlanDate);
+                            break;
+                        case (int)ColNO.Hanbaigaku:    //出荷予定日
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].Hanbaigaku);
+                            break;
 
-                // 
-                w_CtlCol = (int)ColNO.JuchuNo;
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].JuchuNo);
-
-                //// 
-                //w_CtlCol = (int)ColNO.JanCD;
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].JanCD);
-
-                // 
-                w_CtlCol = (int)ColNO.PrintDate;
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].PrintDate);
-
-                // 
-                w_CtlCol = (int)ColNO.DeliveryAddress1;
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].DeliveryAddress1);
-
-                // 
-                w_CtlCol = (int)ColNO.Space;
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].Space);
-                
-                // 
-                //w_CtlCol = (int)ColNO.ArrivalPlanMonth;
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ArrivalPlanMonth);
-
-                // 
-                w_CtlCol = (int)ColNO.InstructionNO;
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].InstructionNO);
-
-                // 
-                w_CtlCol = (int)ColNO.ShippingDate;
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ShippingDate);
-
-                // 
-                w_CtlCol = (int)ColNO.CommentOutStore;
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].CommentOutStore);
-
-                // 
-                w_CtlCol = (int)ColNO.DeliveryName;
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].DeliveryName);
-
-                // 備考
-                w_CtlCol = (int)ColNO.CommentInStore;
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].CommentInStore);
-
-                w_CtlCol = (int)ColNO.CarrierName;     
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].CarrierName);
-
-                w_CtlCol = (int)ColNO.DeliveryPlanDate;     //
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].DeliveryPlanDate);
-
-                w_CtlCol = (int)ColNO.DecidedDeliveryDate;    //出荷予定日
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].DecidedDeliveryDate);
-
+                        case (int)ColNO.JanCD:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].JanCD);
+                            break;
+                        case (int)ColNO.SKUCD:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SKUCD);
+                            break;
+                        case (int)ColNO.SizeName:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SizeName);
+                            break;
+                        case (int)ColNO.ColorName:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ColorName);
+                            break;
+                        // 
+                        case (int)ColNO.SKUName:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SKUName);
+                            break;
+                        case (int)ColNO.JuchuSu:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].JuchuSu);
+                            break;
+                    }
+                }
             }
         }
 

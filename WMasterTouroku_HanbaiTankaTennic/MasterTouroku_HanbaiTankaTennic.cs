@@ -55,6 +55,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
         ClsGridHanbaiTankaTennic mGrid = new ClsGridHanbaiTankaTennic();
         private int m_EnableCnt;
         private int m_dataCnt = 0;
+        private TextBox txt = null;
         private void MasterTouroku_HanbaiTankaTennic_Load(object sender, EventArgs e)
         {
             try
@@ -1892,28 +1893,49 @@ namespace WMasterTouroku_HanbaiTankaTennic
         {
             var dt = GetdatafromArray();
             string Xml = spb.DataTableToXml(dt);
-            var StartDate = dt.Rows[0]["StartChangeDate"].ToString();
-            if (dt.Rows.Count>=StartDate.Length)
-            {
-                bbl.ShowMessage("Date Exist!!");
-                IMT_ENDDT_0.Focus();
-            }
+            //string StartDate = dt.Rows[0]["StartChangeDate"].ToString();
+            //if (dt.Rows.Count>=StartDate.Length)
+            //{
+            //    bbl.ShowMessage("Date Exist!!");
+            //    IMT_ENDDT_0.Focus();
+            //}
+
             //if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
             //{
             if (spb.M_SKUPrice_Insert_Update(mse, Xml, mode))
-                {
-                    spb.ShowMessage("I101");
-                    Clear(pnl_Header);
-                    Clear(pnl_Body);
-                    ChangeOperationMode(OperationMode);
-                }
+            {
+                 spb.ShowMessage("I101");
+                 Clear(pnl_Header);
+                 Clear(pnl_Body);
+                 ChangeOperationMode(OperationMode);
+            }
             //}
             else
             {
                 spb.ShowMessage("S001");
             }
         }
-        private void ckM_TextBox68_TextChanged(object sender, EventArgs e)
+        protected bool RequireCheck(Control[] ctrl, TextBox txt = null)
+        {
+            this.txt = txt;
+            foreach (Control c in ctrl)
+            {
+                if (c is CKM_TextBox)
+                {
+                    if (txt == null)
+                    {
+                        var StartDate = dt.Rows[0]["StartChangeDate"].ToString();
+                        if(c.Text==StartDate.ToString())
+                        {
+                            bbl.ShowMessage("Date Exist!!");
+                            c.Focus();
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+       private void ckM_TextBox68_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -23,7 +23,8 @@ namespace DL
                 {"@SegmentCDFrom",new ValuePair{value1=SqlDbType.VarChar,value2=mte.SegmentCDFrom} },
                 {"@SegmentCDTo",new ValuePair{value1=SqlDbType.VarChar,value2=mte.SegmentCDTo} },
                 {"@TenzikaiName",new ValuePair{value1=SqlDbType.VarChar,value2=mte.TenzikaiName} },
-        };
+                {"@JANCD",new ValuePair{value1=SqlDbType.VarChar,value2=mte.JANCD} }
+            };
             return SelectData(dic, sp);
        }
     }

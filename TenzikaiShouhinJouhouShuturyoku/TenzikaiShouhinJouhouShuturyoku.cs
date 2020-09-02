@@ -35,6 +35,8 @@ namespace TenzikaiShouhinJouhouShuturyoku
             StartProgram();
             BindCombo();
             Btn_F10.Text = "出力(F10)";
+            F2Visible = false;
+            F9Visible = true;
             SetRequiredField();
             scSupplierCD.SetFocus(1);
         }
@@ -112,9 +114,9 @@ namespace TenzikaiShouhinJouhouShuturyoku
                 mte = new M_TenzikaiShouhin_Entity();
                 mte = GetData();
                 DataTable dt = tzkbl.Rpc_TenzikaiShouhinJouhouShuturyoku(mte);
-                if(dt.Rows.Count>0)
+                if (dt.Rows.Count > 0)
                 {
-                    DataTable dtExport = dt;
+                    //DataTable dtExport = dt;
                     string folderPath = "C:\\SES\\";
                     if (!Directory.Exists(folderPath))
                     {
@@ -123,9 +125,28 @@ namespace TenzikaiShouhinJouhouShuturyoku
                     SaveFileDialog savedialog = new SaveFileDialog();
                     savedialog.Filter = "Excel Files|*.xlsx;";
                     savedialog.Title = "Save";
-                    savedialog.FileName = "仕入先在庫予定表";
+                    savedialog.FileName = "展示会商品情報出力";
                     savedialog.InitialDirectory = folderPath;
                     savedialog.RestoreDirectory = true;
+                    if (savedialog.ShowDialog() == DialogResult.OK)
+                    {
+                        if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
+                        {
+                            Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+                            Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+                            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+
+                            worksheet = workbook.ActiveSheet;
+                            worksheet.Name = "worksheet";
+                            using (XLWorkbook wb = new XLWorkbook())
+                            {
+                                wb.Worksheets.Add(dt, "worksheet");
+                                wb.SaveAs(savedialog.FileName);
+                                tzkbl.ShowMessage("Q201", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
+                            }
+                            Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                        }
+                    }
                 }
             }
         }

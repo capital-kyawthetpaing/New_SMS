@@ -15,11 +15,15 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
 {
     public partial class FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu : FrmMainForm
     {
-        M_TenzikaiShouhin_Entity mTSE; 
+        M_TenzikaiShouhin_Entity mTSE;
+        MasterTouroku_TenzikaiHanbaiTankaKakeritu_BL bl;
+        DataTable dtSelect;
         public FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu()
         {
             InitializeComponent();
             mTSE = new M_TenzikaiShouhin_Entity();
+            bl = new MasterTouroku_TenzikaiHanbaiTankaKakeritu_BL();
+            dtSelect = new DataTable();
         }
         private void FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu_Load(object sender, EventArgs e)
         {
@@ -32,7 +36,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
         }
         private bool ErrorCheck()
         {
-            if (!RequireCheck(new Control[] { SC_Tanka.TxtCode })) //Step1
+            if (!RequireCheck(new Control[] { SC_Tanka.TxtCode ,TB_Rate})) //Step1
                 return false;
 
             if (!SC_Tanka.IsExists(2))
@@ -41,20 +45,26 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 SC_Tanka.SetFocus(1);
                 return false;
             }
-
-            if (!SC_Brand.IsExists(2))
+            if(!String.IsNullOrEmpty(SC_Brand.TxtCode.Text))
             {
-                bbl.ShowMessage("E101");
-                SC_Brand.SetFocus(1);
-                return false;
+                if (!SC_Brand.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    SC_Brand.SetFocus(1);
+                    return false;
+                }
             }
-
-            if (!Sc_Segment.IsExists(2))
+            
+            if (!String.IsNullOrEmpty(Sc_Segment.TxtCode.Text))
             {
-                bbl.ShowMessage("E101");
-                Sc_Segment.SetFocus(1);
-                return false;
+                if (!Sc_Segment.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    Sc_Segment.SetFocus(1);
+                    return false;
+                }
             }
+            
             //Console.WriteLine(header.Trim(new Char[] { ' ', '*', '.' }));
 
             if (!String.IsNullOrEmpty(TB_PriceOutTaxF.Text))
@@ -72,6 +82,8 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                     return false;
                 }
             }
+
+
             return true;
 
         }
@@ -141,12 +153,12 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 case 3:
                     ChangeMode(EOperationMode.UPDATE);
                     break;
-                //case 11:
-                //    F11();
-                //    break;
-                    //case 12:
-                    //    F12();
-                    //    break;
+                case 11:
+                    F11();
+                    break;
+                case 12:
+                    F12();
+                    break;
             }
         }
         private void ChangeMode(EOperationMode OperationMode)
@@ -200,20 +212,104 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
         {
             if (GV_Tenzaishohin.Rows.Count > 0)
             {
-                foreach (DataGridViewRow row1 in GV_Tenzaishohin.Rows)
+                foreach (DataGridViewRow row in GV_Tenzaishohin.Rows)
                 {
-                    row1.Cells["ck"].Value = "0";
+                    row.Cells["CheckBox"].Value = "0";
                 }
             }
         }
 
         private void BT_Display_Click(object sender, EventArgs e)
         {
-
+            F11();
         }
         private void F11()
         {
+            mTSE = GetTenzikaiShouhinData();
+            dtSelect = bl.M_TenzikaiShouhin_Select(mTSE);
+            if(dtSelect.Rows.Count >0)
+            {
+                GV_Tenzaishohin.DataSource = dtSelect;
+            }
+            else
+            {
+                GV_Tenzaishohin.DataSource = null;
+                bl.ShowMessage("E128");
+            }
+       }
 
+
+        private void F12()
+        {
+            if(dtSelect.Rows.Count >0)
+            {
+                mTSE = GetTenzikaiShouhinData();
+                String dtinsert = bl.DataTableToXml(dtSelect);
+                if (bl.InsertUpdate_TenzikaiHanbaiTankaKakeritu(mTSE, dtinsert))
+                {
+                  bbl.ShowMessage("I101");
+                    CleanData();
+                    SC_Tanka.SetFocus(1);
+                }
+                else
+                {
+                    bbl.ShowMessage("S001");
+                }
+
+
+            }
+        }
+
+       private M_TenzikaiShouhin_Entity GetTenzikaiShouhinData()
+        {
+            mTSE = new M_TenzikaiShouhin_Entity()
+            {
+                TanKaCD = SC_Tanka.TxtCode.Text,
+                BranCDFrom = SC_Brand.TxtCode.Text,
+                SegmentCDFrom = Sc_Segment.TxtCode.Text,
+                LastYearTerm = CB_Year.SelectedValue.ToString(),
+                LastSeason = CB_Season.SelectedValue.ToString(),
+                SalePriceOutTaxF = TB_PriceOutTaxF.Text,
+                SalePriceOutTaxT = TB_PriceOutTaxT.Text,
+                InsertOperator = InOperatorCD,
+                PC = InPcID,
+                ProgramID = InProgramID,
+                Key=InPcID,
+            };
+
+            return mTSE;
+        }
+
+        private void GV_Tenzaishohin_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try
+            {
+
+            }
+            catch
+            {
+                MessageBox.Show("Enter valid no");
+                GV_Tenzaishohin.RefreshEdit();
+            }
+        }
+
+        private void BT_Apply_Click(object sender, EventArgs e)
+        {
+            if(ErrorCheck())
+            {
+                foreach (DataGridViewRow row in GV_Tenzaishohin.Rows)
+                {
+                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                    //string celll = row.Cells["CheckBox"].Value.ToString();
+                    //string cell = chk.ToString();
+                    if (chk.Value == "1")
+                    {
+                        string itemcd = row.Cells["Rate"].Value.ToString();
+                        row.Cells["Rate"].Value = TB_Rate.Text;
+                    }
+
+                }
+            }
         }
     }
 }

@@ -66,7 +66,7 @@ namespace MasterTouroku_ShiireTanka
             this.sportC.NameWidth = 260;
             operatorCd = InOperatorCD;
             TB_headerdate.Text = bbl.GetDate();
-            GV_item.DisabledColumn("ブランド,競技,商品分類,年度,シーズン,メーカー品番,ITEM,商品名,サイズ,カラー,SKUCD,定価");
+            //GV_item.DisabledColumn("ブランド,競技,商品分類,年度,シーズン,メーカー品番,ITEM,商品名,サイズ,カラー,SKUCD,定価");
             itemcd.CodeWidth = 100;
             itemcd.NameWidth = 280;
             LB_priceouttax.Text = "";
@@ -1568,87 +1568,7 @@ namespace MasterTouroku_ShiireTanka
                     }
 
                 }
-
-
-            //        if (RB_item.Checked  && itemview)
-            //            {
-            //                row.Cells["ck"].Value = "1";
-                            
-                           
-            //            }
-            //            if(RB_sku.Checked && skuview)
-            //            {
-                        
-            //                row.Cells["ck"].Value = "1";
-                            
-            //            }
-            //    }             
-            //    if (RB_item.Checked)
-            //    {
-            //        string testitem = "";
-            //        DataRow[] kkte;
-                   
-
-            //        if (!itemview)
-            //        {
-            //            kkte = dt.Select(" CheckBox =1");
-            //        }
-            //        else
-            //        {
-            //            kkte = dtview.Select(" CheckBox =1");
-            //        }
-
-            //        if (kkte.Length > 0)
-            //        {
-            //            for (int k = 0; k < kkte.Length; k++)
-            //            {
-            //                testitem = kkte[k]["ITemCD"].ToString();
-            //                string qskuupdate = " ITemCD = '" + testitem + "'";
-            //                DataRow[] drte;
-            //                if(skuview)
-            //                {
-            //                    drte = dtskuview.Select(qskuupdate);
-            //                }
-            //                else
-            //                {
-            //                    drte = dtsku.Select(qskuupdate);
-            //                }
-            //                if (drte.Length > 0)
-            //                {
-
-            //                    for (int f = 0; f < drte.Length; f++)
-            //                    {
-            //                        drte[f]["CheckBox"] = "1";
-            //                    }
-            //                }
-            //            }
-            //        }
-            //    }
-            //}
-            //    String itemdata = bl.DataTableToXml(dt);
-            //    String skudata = bl.DataTableToXml(dtsku);
-            //    DataTable dtdata = bl.M_SKU_SelectFor_SKU_Update(itemdata, skudata, "", TB_headerdate.Text, "2");
-
-            //    if (dtdata.Rows.Count > 0)
-            //    {
-            //        for (int j = 0; j < dtdata.Rows.Count; j++)
-            //        {
-            //            string itemcd = dtdata.Rows[j]["ItemCD"].ToString();
-            //            string qskuupdate = " ItemCD = '" + itemcd + "'";
-            //            qskuupdate += " and ChangeDate <= '" + TB_headerdate.Text + "'";
-            //            DataRow[] drte = dtsku.Select(qskuupdate);
-
-            //            if (drte.Length > 0)
-            //            {
-                        
-            //                for (int i = 0; i < drte.Length; i++)
-            //                {
-            //                    drte[i]["CheckBox"] = "1";
-            //                }
-            //            }
-            //        }
-            //}
-        }
+            }
         }
         private void btn_releaseall_Click(object sender, EventArgs e)
         {
@@ -2085,30 +2005,13 @@ namespace MasterTouroku_ShiireTanka
                     String tbdeljan = bl.DataTableToXml(dtdeljan);
                     String itemdata = bl.DataTableToXml(dt);
                     String skudata = bl.DataTableToXml(dtsku);
-                    //DataTable dst=bl.Mastertoroku_Shiretanka_Insert(itemdata, skudata, deletedata, tbdeljan, m_IOE);
-                    //try
-                    //{
+                    
                         if (bl.Mastertoroku_Shiretanka_Insert(itemdata, skudata, deletedata, tbdeljan, m_IOE))
                         {
                             bl.ShowMessage("I101");
                             Clear();
                         }
-                    //}
-                    //catch(Exception ex)
-                    //{
-                    //    MessageBox.Show(ex.Message);
-                    //}
                    
-                    //string storecd=CB_store.SelectedValue.ToString()
-                    //if(btn == "2")
-                    //{
-                    //DataTable dtr = bl.Mastertoroku_Shiretanka_Insert(itemdata, skudata,m_IOE);
-                    //}
-                    //else
-                    //{
-                    //    DataTable dtr = bl.Mastertoroku_Shiretanka_Insert(itemdata, skudata, m_IOE);
-                    //}
-                    //}
                 }
                 else
                 {
@@ -2712,10 +2615,6 @@ namespace MasterTouroku_ShiireTanka
            
         }
 
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         public DataTable ReadExcel(string fileName, string fileExt)
         {
