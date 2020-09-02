@@ -136,7 +136,7 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
                     break;
                 case 6:
                     {
-                        if (bbl.ShowMessage("Q005") != DialogResult.Yes)
+                        if (bbl.ShowMessage("Q005") == DialogResult.Yes)
                         {
                             Clear();
                             txtFromDate.Focus();

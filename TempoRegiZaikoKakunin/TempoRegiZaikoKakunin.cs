@@ -49,7 +49,7 @@ namespace TempoRegiZaikoKakunin
             txtJanCD.Focus();
             //SetRequireField();
             chkColorSize.Checked = false;
-            BtnP_text = "決定";
+            BtnP_text = "決　定";
 
             string[] cmds = System.Environment.GetCommandLineArgs();
             if (cmds.Length - 1 > (int)ECmdLine.PcID)
@@ -176,6 +176,7 @@ namespace TempoRegiZaikoKakunin
                 }
                 else
                 {
+                    dgvZaikokakunin.DataSource = string.Empty;
                     zaikobl.ShowMessage("E128");
                     txtJanCD.Focus();
                 }

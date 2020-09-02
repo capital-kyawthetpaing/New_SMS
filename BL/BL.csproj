@@ -105,6 +105,7 @@
     <Compile Include="MasterTouroku_SKUCDHenkou_SKUCD変更_BL.cs" />
     <Compile Include="MasterTouroku_Souko_BL.cs" />
     <Compile Include="MasterTouroku_Staff_BL.cs" />
+    <Compile Include="MasterTouroku_TenzikaiHanbaiTankaKakeritu_BL.cs" />
     <Compile Include="MasterTouroku_UnsouGaisya_BL.cs" />
     <Compile Include="MasterTouroku_YuubinBangou_BL.cs" />
     <Compile Include="Menu_BL.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="ShukkaNyuuryoku_BL.cs" />
     <Compile Include="ShukkaShijiTouroku_BL.cs" />
     <Compile Include="ShukkaShoukai_BL.cs" />
+    <Compile Include="ShukkaSiziTourokuFromJuchuu_BL.cs" />
     <Compile Include="ShukkaUriageUpdate_BL.cs" />
     <Compile Include="SiharaiNyuuryoku_BL.cs" />
     <Compile Include="SiharaiTouroku_BL.cs" />
@@ -201,6 +203,7 @@
     <Compile Include="TempoRejiPointSettei_BL.cs" />
     <Compile Include="TempoShukkaNyuuryoku_BL.cs" />
     <Compile Include="TempoUriageNyuuryoku_BL.cs" />
+    <Compile Include="TenzikaiShouhinJouhouShuturyoku_BL.cs" />
     <Compile Include="UriageMotochou_BL.cs" />
     <Compile Include="UriageNyuuryoku_BL.cs" />
     <Compile Include="UrikakekinTairyuuHyou_BL.cs" />

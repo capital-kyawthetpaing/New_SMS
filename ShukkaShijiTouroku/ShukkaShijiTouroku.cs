@@ -224,7 +224,7 @@ namespace ShukkaShijiTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentInStore, 0].CellCtl = IMT_REMAK_0;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkShikyu, 0].CellCtl = CHK_Shikyu_0;      //メーカー商品CD
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 0].CellCtl = IMT_ARIDT_0;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 0].CellCtl = IMT_PAYDT_0;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 0].CellCtl = LBL_DEDAY_0;// IMT_PAYDT_0;    //支払予定日
 
             // 2行目
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.GYONO, 1].CellCtl = IMT_GYONO_1;
@@ -246,7 +246,7 @@ namespace ShukkaShijiTouroku
 
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkShikyu, 1].CellCtl = CHK_Shikyu_1;      //メーカー商品CD
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 1].CellCtl = IMT_ARIDT_1;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 1].CellCtl = IMT_PAYDT_1;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 1].CellCtl = LBL_DEDAY_1;//IMT_PAYDT_1;    //支払予定日
 
             // 3行目
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.GYONO, 2].CellCtl = IMT_GYONO_2;
@@ -267,7 +267,7 @@ namespace ShukkaShijiTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentInStore, 2].CellCtl = IMT_REMAK_2;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkShikyu, 2].CellCtl = CHK_Shikyu_2;      //メーカー商品CD
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 2].CellCtl = IMT_ARIDT_2;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 2].CellCtl = IMT_PAYDT_2;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 2].CellCtl = LBL_DEDAY_2;//IMT_PAYDT_2;    //支払予定日
 
             // 1行目
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.GYONO, 3].CellCtl = IMT_GYONO_3;
@@ -288,7 +288,7 @@ namespace ShukkaShijiTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentInStore, 3].CellCtl = IMT_REMAK_3;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkShikyu, 3].CellCtl = CHK_Shikyu_3;      //メーカー商品CD
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 3].CellCtl = IMT_ARIDT_3;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 3].CellCtl = IMT_PAYDT_3;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 3].CellCtl = LBL_DEDAY_3;// IMT_PAYDT_3;    //支払予定日
 
             // 1行目
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.GYONO, 4].CellCtl = IMT_GYONO_4;
@@ -309,7 +309,7 @@ namespace ShukkaShijiTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentInStore, 4].CellCtl = IMT_REMAK_4;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkShikyu, 4].CellCtl = CHK_Shikyu_4;      //メーカー商品CD
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 4].CellCtl = IMT_ARIDT_4;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 4].CellCtl = IMT_PAYDT_4;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 4].CellCtl = LBL_DEDAY_4;// IMT_PAYDT_4;    //支払予定日
 
             // 1行目
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.GYONO, 5].CellCtl = IMT_GYONO_5;
@@ -330,7 +330,7 @@ namespace ShukkaShijiTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentInStore, 5].CellCtl = IMT_REMAK_5;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkShikyu, 5].CellCtl = CHK_Shikyu_5;      //メーカー商品CD
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 5].CellCtl = IMT_ARIDT_5;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 5].CellCtl = IMT_PAYDT_5;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 5].CellCtl = LBL_DEDAY_5;//IMT_PAYDT_5;    //支払予定日
 
             // 1行目
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.GYONO, 6].CellCtl = IMT_GYONO_6;
@@ -351,7 +351,7 @@ namespace ShukkaShijiTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentInStore, 6].CellCtl = IMT_REMAK_6;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkShikyu, 6].CellCtl = CHK_Shikyu_6;      //メーカー商品CD
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 6].CellCtl = IMT_ARIDT_6;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 6].CellCtl = IMT_PAYDT_6;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 6].CellCtl = LBL_DEDAY_6;//IMT_PAYDT_6;    //支払予定日
 
             // 1行目
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.GYONO, 7].CellCtl = IMT_GYONO_7;
@@ -372,7 +372,7 @@ namespace ShukkaShijiTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentInStore, 7].CellCtl = IMT_REMAK_7;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkShikyu, 7].CellCtl = CHK_Shikyu_7;      //メーカー商品CD
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 7].CellCtl = IMT_ARIDT_7;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 7].CellCtl = IMT_PAYDT_7;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 7].CellCtl = LBL_DEDAY_7;// IMT_PAYDT_7;    //支払予定日
             // 1行目
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.GYONO, 8].CellCtl = IMT_GYONO_8;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnJuchu, 8].CellCtl = BTN_Detail_8;
@@ -392,7 +392,7 @@ namespace ShukkaShijiTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentInStore, 8].CellCtl = IMT_REMAK_8;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkShikyu, 8].CellCtl = CHK_Shikyu_8;      //メーカー商品CD
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 8].CellCtl = IMT_ARIDT_8;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 8].CellCtl = IMT_PAYDT_8;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 8].CellCtl = LBL_DEDAY_8;// IMT_PAYDT_8;    //支払予定日
             // 1行目
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.GYONO, 9].CellCtl = IMT_GYONO_9;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.BtnJuchu, 9].CellCtl = BTN_Detail_9;
@@ -412,7 +412,7 @@ namespace ShukkaShijiTouroku
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.CommentInStore, 9].CellCtl = IMT_REMAK_9;
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.ChkShikyu, 9].CellCtl = CHK_Shikyu_9;      //メーカー商品CD
             mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DeliveryPlanDate, 9].CellCtl = IMT_ARIDT_9;     //入荷予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 9].CellCtl = IMT_PAYDT_9;    //支払予定日
+            mGrid.g_MK_Ctrl[(int)ClsGridShukka.ColNO.DecidedDeliveryDate, 9].CellCtl = LBL_DEDAY_9;// IMT_PAYDT_9;    //支払予定日
         }
 
         // 明細部 Tab の処理
@@ -471,7 +471,7 @@ namespace ShukkaShijiTouroku
             //if (mGrid.g_MK_MaxValue > m_dataCnt - 1)
             //    w_MaxValue = m_dataCnt - 1;
             //else
-                w_MaxValue = mGrid.g_MK_MaxValue;
+            w_MaxValue = mGrid.g_MK_MaxValue;
 
             w_Value = Vsb_Mei_0.Value + w_ToMove;
 
@@ -796,22 +796,22 @@ namespace ShukkaShijiTouroku
                                                 else
                                                 {
                                                     mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
-                                                }
-
-                                                if(w_Col == (int)ClsGridShukka.ColNO.DeliveryPlanDate)
-                                                {
-                                                    if (mGrid.g_DArray[w_Row].RedFont.Equals(1))
-                                                    {
-                                                        mGrid.g_MK_Ctrl[w_Col, w_Row].CellCtl.ForeColor = Color.Red;
-                                                    }
-                                                    else
-                                                    {
-                                                        mGrid.g_MK_Ctrl[w_Col, w_Row].CellCtl.ForeColor = Color.Black;
-                                                    }
-                                                }
+                                                }                                    
                                             }
                                             break;
-
+                                        case (int)ClsGridShukka.ColNO.DecidedDeliveryDate:
+                                            if (mGrid.g_DArray[w_Row].RedFont.Equals(1))
+                                            {
+                                                mGrid.g_MK_State[w_Col, w_Row].Cell_ForeColor = Color.Red;
+                                                mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
+                                                //mGrid.g_MK_State[w_Col, w_Row].Cell_Color = Color.Red;
+                                            }
+                                            else
+                                            {
+                                                mGrid.g_MK_State[w_Col, w_Row].Cell_ForeColor = Color.Black;
+                                                //mGrid.g_MK_State[w_Col, w_Row].Cell_Color = mGrid.F_GetBackColor_MK(w_Col, w_Row);
+                                            }
+                                            break;
                                         default:
                                             {
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = false;
@@ -1689,7 +1689,7 @@ namespace ShukkaShijiTouroku
         {
             try
             {
-                //DeleteExclusive(dtOrder);
+                DeleteExclusive(dtInstruction);
             }
             catch (Exception ex)
             {

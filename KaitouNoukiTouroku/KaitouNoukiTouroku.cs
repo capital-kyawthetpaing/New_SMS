@@ -1701,6 +1701,7 @@ namespace KaitouNoukiTouroku
 
                 OrderNoFrom = detailControls[(int)EIndex.OrderNOFrom].Text,
                 OrderNoTo = detailControls[(int)EIndex.OrderNOTo].Text,
+                EDIDate = detailControls[(int)EIndex.Edi].Text,
                 ArrivalPlanCD = CboArrivalPlanCD.SelectedIndex > 0 ? CboArrivalPlanCD.SelectedValue.ToString() : ""
             };
 
@@ -1938,6 +1939,10 @@ namespace KaitouNoukiTouroku
                         else
                             mGrid.g_DArray[RW].Update = 1;
 
+                        UpdateRows++;
+                    }
+                    else if(mGrid.g_DArray[RW].Update != 0)
+                    {
                         UpdateRows++;
                     }
                 }

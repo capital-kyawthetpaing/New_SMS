@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -262,7 +261,7 @@
             this.dgvPayment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -288,14 +287,6 @@
             this.colHontaiGaku10,
             this.colTaxGaku8,
             this.colTaxGaku10});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPayment.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgvPayment.EnableHeadersVisualStyles = false;
             this.dgvPayment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvPayment.Location = new System.Drawing.Point(35, 87);
@@ -516,6 +507,7 @@
             this.ScStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStaff.DataCheck = false;
             this.ScStaff.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScStaff.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScStaff.IsCopy = false;
             this.ScStaff.LabelText = "";
             this.ScStaff.LabelVisible = true;
@@ -539,6 +531,7 @@
             this.txtPaymentDate.AllowMinus = false;
             this.txtPaymentDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPaymentDate.BackColor = System.Drawing.Color.White;
+            this.txtPaymentDate.BorderColor = false;
             this.txtPaymentDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPaymentDate.ClientColor = System.Drawing.Color.White;
             this.txtPaymentDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -548,6 +541,7 @@
             this.txtPaymentDate.IntegerPart = 0;
             this.txtPaymentDate.IsCorrectDate = true;
             this.txtPaymentDate.isEnterKeyDown = false;
+            this.txtPaymentDate.IsFirstTime = true;
             this.txtPaymentDate.isMaxLengthErr = false;
             this.txtPaymentDate.IsNumber = true;
             this.txtPaymentDate.IsShop = false;
@@ -693,6 +687,7 @@
             this.txtBillSettleDate.AllowMinus = false;
             this.txtBillSettleDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtBillSettleDate.BackColor = System.Drawing.Color.White;
+            this.txtBillSettleDate.BorderColor = false;
             this.txtBillSettleDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBillSettleDate.ClientColor = System.Drawing.Color.White;
             this.txtBillSettleDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -702,6 +697,7 @@
             this.txtBillSettleDate.IntegerPart = 0;
             this.txtBillSettleDate.IsCorrectDate = true;
             this.txtBillSettleDate.isEnterKeyDown = false;
+            this.txtBillSettleDate.IsFirstTime = true;
             this.txtBillSettleDate.isMaxLengthErr = false;
             this.txtBillSettleDate.IsNumber = true;
             this.txtBillSettleDate.IsShop = false;
@@ -774,6 +770,7 @@
             this.txtDueDate2.AllowMinus = false;
             this.txtDueDate2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtDueDate2.BackColor = System.Drawing.Color.White;
+            this.txtDueDate2.BorderColor = false;
             this.txtDueDate2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDueDate2.ClientColor = System.Drawing.Color.White;
             this.txtDueDate2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -783,6 +780,7 @@
             this.txtDueDate2.IntegerPart = 0;
             this.txtDueDate2.IsCorrectDate = true;
             this.txtDueDate2.isEnterKeyDown = false;
+            this.txtDueDate2.IsFirstTime = true;
             this.txtDueDate2.isMaxLengthErr = false;
             this.txtDueDate2.IsNumber = true;
             this.txtDueDate2.IsShop = false;
@@ -802,6 +800,7 @@
             this.txtDueDate1.AllowMinus = false;
             this.txtDueDate1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtDueDate1.BackColor = System.Drawing.Color.White;
+            this.txtDueDate1.BorderColor = false;
             this.txtDueDate1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDueDate1.ClientColor = System.Drawing.Color.White;
             this.txtDueDate1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -811,6 +810,7 @@
             this.txtDueDate1.IntegerPart = 0;
             this.txtDueDate1.IsCorrectDate = true;
             this.txtDueDate1.isEnterKeyDown = false;
+            this.txtDueDate1.IsFirstTime = true;
             this.txtDueDate1.isMaxLengthErr = false;
             this.txtDueDate1.IsNumber = true;
             this.txtDueDate1.IsShop = false;
@@ -956,6 +956,7 @@
             this.ScPaymentNum.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScPaymentNum.DataCheck = false;
             this.ScPaymentNum.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScPaymentNum.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScPaymentNum.IsCopy = false;
             this.ScPaymentNum.LabelText = "";
             this.ScPaymentNum.LabelVisible = false;
@@ -985,6 +986,7 @@
             this.ScPaymentProcessNum.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScPaymentProcessNum.DataCheck = false;
             this.ScPaymentProcessNum.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScPaymentProcessNum.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScPaymentProcessNum.IsCopy = false;
             this.ScPaymentProcessNum.LabelText = "";
             this.ScPaymentProcessNum.LabelVisible = false;
@@ -1014,6 +1016,7 @@
             this.ScPayee.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScPayee.DataCheck = false;
             this.ScPayee.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScPayee.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScPayee.IsCopy = false;
             this.ScPayee.LabelText = "";
             this.ScPayee.LabelVisible = true;

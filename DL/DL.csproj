@@ -115,6 +115,7 @@
     <Compile Include="MasterTouroku_HacchuuPrice_DL.cs" />
     <Compile Include="MasterTouroku_ShiireKakeritsu_DL.cs" />
     <Compile Include="MasterTouroku_ShiireTanka_DL.cs" />
+    <Compile Include="MasterTouroku_TenzikaiHanbaiTankaKakeritu_DL.cs" />
     <Compile Include="Menu_DL.cs" />
     <Compile Include="M_API_DL.cs" />
     <Compile Include="M_Authorizations_DL.cs" />
@@ -177,6 +178,7 @@
     <Compile Include="TempoRegiTorihikiReceipt_DL.cs" />
     <Compile Include="TempoShukkaNyuuryoku_DL.cs" />
     <Compile Include="M_UnsouGaisya_DL.cs" />
+    <Compile Include="TenzikaiShouhinJouhouShuturyoku_DL.cs" />
     <Compile Include="ZaikoKanriHyou_DL.cs" />
     <Compile Include="ZaikoShoukai_DL.cs" />
     <Compile Include="_Ponpare_DL.cs" />

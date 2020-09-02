@@ -309,10 +309,6 @@
             // 
             this.PanelSearch.TabIndex = 7;
             // 
-            // btnChangeIkkatuHacchuuMode
-            // 
-            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -391,7 +387,6 @@
             this.IMT_KAIDT_1.IntegerPart = 0;
             this.IMT_KAIDT_1.IsCorrectDate = true;
             this.IMT_KAIDT_1.isEnterKeyDown = false;
-            this.IMT_KAIDT_1.IsFirstTime = true;
             this.IMT_KAIDT_1.isMaxLengthErr = false;
             this.IMT_KAIDT_1.IsNumber = true;
             this.IMT_KAIDT_1.IsShop = false;
@@ -421,7 +416,6 @@
             this.ckM_Text_4.IntegerPart = 0;
             this.ckM_Text_4.IsCorrectDate = true;
             this.ckM_Text_4.isEnterKeyDown = false;
-            this.ckM_Text_4.IsFirstTime = true;
             this.ckM_Text_4.isMaxLengthErr = false;
             this.ckM_Text_4.IsNumber = true;
             this.ckM_Text_4.IsShop = false;
@@ -450,7 +444,6 @@
             this.IMT_KAIDT_0.IntegerPart = 0;
             this.IMT_KAIDT_0.IsCorrectDate = true;
             this.IMT_KAIDT_0.isEnterKeyDown = false;
-            this.IMT_KAIDT_0.IsFirstTime = true;
             this.IMT_KAIDT_0.isMaxLengthErr = false;
             this.IMT_KAIDT_0.IsNumber = true;
             this.IMT_KAIDT_0.IsShop = false;
@@ -480,7 +473,6 @@
             this.IMT_REMAK_2.IntegerPart = 0;
             this.IMT_REMAK_2.IsCorrectDate = true;
             this.IMT_REMAK_2.isEnterKeyDown = false;
-            this.IMT_REMAK_2.IsFirstTime = true;
             this.IMT_REMAK_2.isMaxLengthErr = false;
             this.IMT_REMAK_2.IsNumber = true;
             this.IMT_REMAK_2.IsShop = false;
@@ -510,7 +502,6 @@
             this.IMT_REMAK_1.IntegerPart = 0;
             this.IMT_REMAK_1.IsCorrectDate = true;
             this.IMT_REMAK_1.isEnterKeyDown = false;
-            this.IMT_REMAK_1.IsFirstTime = true;
             this.IMT_REMAK_1.isMaxLengthErr = false;
             this.IMT_REMAK_1.IsNumber = true;
             this.IMT_REMAK_1.IsShop = false;
@@ -540,7 +531,6 @@
             this.IMT_REMAK_0.IntegerPart = 0;
             this.IMT_REMAK_0.IsCorrectDate = true;
             this.IMT_REMAK_0.isEnterKeyDown = false;
-            this.IMT_REMAK_0.IsFirstTime = true;
             this.IMT_REMAK_0.isMaxLengthErr = false;
             this.IMT_REMAK_0.IsNumber = true;
             this.IMT_REMAK_0.IsShop = false;
@@ -569,7 +559,6 @@
             this.IMT_ITMCD_0.IntegerPart = 0;
             this.IMT_ITMCD_0.IsCorrectDate = true;
             this.IMT_ITMCD_0.isEnterKeyDown = false;
-            this.IMT_ITMCD_0.IsFirstTime = true;
             this.IMT_ITMCD_0.isMaxLengthErr = false;
             this.IMT_ITMCD_0.IsNumber = true;
             this.IMT_ITMCD_0.IsShop = false;
@@ -599,7 +588,6 @@
             this.IMT_ITMCD_1.IntegerPart = 0;
             this.IMT_ITMCD_1.IsCorrectDate = true;
             this.IMT_ITMCD_1.isEnterKeyDown = false;
-            this.IMT_ITMCD_1.IsFirstTime = true;
             this.IMT_ITMCD_1.isMaxLengthErr = false;
             this.IMT_ITMCD_1.IsNumber = true;
             this.IMT_ITMCD_1.IsShop = false;
@@ -629,7 +617,6 @@
             this.IMT_ITMCD_2.IntegerPart = 0;
             this.IMT_ITMCD_2.IsCorrectDate = true;
             this.IMT_ITMCD_2.isEnterKeyDown = false;
-            this.IMT_ITMCD_2.IsFirstTime = true;
             this.IMT_ITMCD_2.isMaxLengthErr = false;
             this.IMT_ITMCD_2.IsNumber = true;
             this.IMT_ITMCD_2.IsShop = false;
@@ -945,7 +932,6 @@
             this.IMN_GENER2_7.IntegerPart = 0;
             this.IMN_GENER2_7.IsCorrectDate = true;
             this.IMN_GENER2_7.isEnterKeyDown = false;
-            this.IMN_GENER2_7.IsFirstTime = true;
             this.IMN_GENER2_7.isMaxLengthErr = false;
             this.IMN_GENER2_7.IsNumber = true;
             this.IMN_GENER2_7.IsShop = false;
@@ -976,7 +962,6 @@
             this.IMN_WEBPR2_7.IntegerPart = 0;
             this.IMN_WEBPR2_7.IsCorrectDate = true;
             this.IMN_WEBPR2_7.isEnterKeyDown = false;
-            this.IMN_WEBPR2_7.IsFirstTime = true;
             this.IMN_WEBPR2_7.isMaxLengthErr = false;
             this.IMN_WEBPR2_7.IsNumber = true;
             this.IMN_WEBPR2_7.IsShop = false;
@@ -1006,7 +991,6 @@
             this.IMN_WEBPR_7.IntegerPart = 0;
             this.IMN_WEBPR_7.IsCorrectDate = true;
             this.IMN_WEBPR_7.isEnterKeyDown = false;
-            this.IMN_WEBPR_7.IsFirstTime = true;
             this.IMN_WEBPR_7.isMaxLengthErr = false;
             this.IMN_WEBPR_7.IsNumber = true;
             this.IMN_WEBPR_7.IsShop = false;
@@ -1036,7 +1020,6 @@
             this.IMN_TEIKA_7.IntegerPart = 0;
             this.IMN_TEIKA_7.IsCorrectDate = true;
             this.IMN_TEIKA_7.isEnterKeyDown = false;
-            this.IMN_TEIKA_7.IsFirstTime = true;
             this.IMN_TEIKA_7.isMaxLengthErr = false;
             this.IMN_TEIKA_7.IsNumber = true;
             this.IMN_TEIKA_7.IsShop = false;
@@ -1067,7 +1050,6 @@
             this.IMN_TEIKA2_7.IntegerPart = 3;
             this.IMN_TEIKA2_7.IsCorrectDate = true;
             this.IMN_TEIKA2_7.isEnterKeyDown = false;
-            this.IMN_TEIKA2_7.IsFirstTime = true;
             this.IMN_TEIKA2_7.isMaxLengthErr = false;
             this.IMN_TEIKA2_7.IsNumber = true;
             this.IMN_TEIKA2_7.IsShop = false;
@@ -1099,7 +1081,6 @@
             this.IMT_REMAK_7.IntegerPart = 0;
             this.IMT_REMAK_7.IsCorrectDate = true;
             this.IMT_REMAK_7.isEnterKeyDown = false;
-            this.IMT_REMAK_7.IsFirstTime = true;
             this.IMT_REMAK_7.isMaxLengthErr = false;
             this.IMT_REMAK_7.IsNumber = true;
             this.IMT_REMAK_7.IsShop = false;
@@ -1129,7 +1110,6 @@
             this.IMT_PAYDT_7.IntegerPart = 0;
             this.IMT_PAYDT_7.IsCorrectDate = true;
             this.IMT_PAYDT_7.isEnterKeyDown = false;
-            this.IMT_PAYDT_7.IsFirstTime = true;
             this.IMT_PAYDT_7.isMaxLengthErr = false;
             this.IMT_PAYDT_7.IsNumber = true;
             this.IMT_PAYDT_7.IsShop = false;
@@ -1160,7 +1140,6 @@
             this.IMN_CLINT_7.IntegerPart = 0;
             this.IMN_CLINT_7.IsCorrectDate = true;
             this.IMN_CLINT_7.isEnterKeyDown = false;
-            this.IMN_CLINT_7.IsFirstTime = true;
             this.IMN_CLINT_7.isMaxLengthErr = false;
             this.IMN_CLINT_7.IsNumber = true;
             this.IMN_CLINT_7.IsShop = false;
@@ -1190,7 +1169,6 @@
             this.IMT_KAIDT_7.IntegerPart = 0;
             this.IMT_KAIDT_7.IsCorrectDate = true;
             this.IMT_KAIDT_7.isEnterKeyDown = false;
-            this.IMT_KAIDT_7.IsFirstTime = true;
             this.IMT_KAIDT_7.isMaxLengthErr = false;
             this.IMT_KAIDT_7.IsNumber = true;
             this.IMT_KAIDT_7.IsShop = false;
@@ -1219,7 +1197,6 @@
             this.IMT_JUONO_7.IntegerPart = 0;
             this.IMT_JUONO_7.IsCorrectDate = true;
             this.IMT_JUONO_7.isEnterKeyDown = false;
-            this.IMT_JUONO_7.IsFirstTime = true;
             this.IMT_JUONO_7.isMaxLengthErr = false;
             this.IMT_JUONO_7.IsNumber = true;
             this.IMT_JUONO_7.IsShop = false;
@@ -1250,7 +1227,6 @@
             this.IMN_GENER_7.IntegerPart = 0;
             this.IMN_GENER_7.IsCorrectDate = true;
             this.IMN_GENER_7.isEnterKeyDown = false;
-            this.IMN_GENER_7.IsFirstTime = true;
             this.IMN_GENER_7.isMaxLengthErr = false;
             this.IMN_GENER_7.IsNumber = true;
             this.IMN_GENER_7.IsShop = false;
@@ -1281,7 +1257,6 @@
             this.IMN_MEMBR_7.IntegerPart = 0;
             this.IMN_MEMBR_7.IsCorrectDate = true;
             this.IMN_MEMBR_7.isEnterKeyDown = false;
-            this.IMN_MEMBR_7.IsFirstTime = true;
             this.IMN_MEMBR_7.isMaxLengthErr = false;
             this.IMN_MEMBR_7.IsNumber = true;
             this.IMN_MEMBR_7.IsShop = false;
@@ -1311,7 +1286,6 @@
             this.IMT_ARIDT_7.IntegerPart = 0;
             this.IMT_ARIDT_7.IsCorrectDate = true;
             this.IMT_ARIDT_7.isEnterKeyDown = false;
-            this.IMT_ARIDT_7.IsFirstTime = true;
             this.IMT_ARIDT_7.isMaxLengthErr = false;
             this.IMT_ARIDT_7.IsNumber = true;
             this.IMT_ARIDT_7.IsShop = false;
@@ -1342,7 +1316,6 @@
             this.IMT_ITMNM_7.IntegerPart = 0;
             this.IMT_ITMNM_7.IsCorrectDate = true;
             this.IMT_ITMNM_7.isEnterKeyDown = false;
-            this.IMT_ITMNM_7.IsFirstTime = true;
             this.IMT_ITMNM_7.isMaxLengthErr = false;
             this.IMT_ITMNM_7.IsNumber = true;
             this.IMT_ITMNM_7.IsShop = false;
@@ -1372,7 +1345,6 @@
             this.IMN_SALEP2_7.IntegerPart = 0;
             this.IMN_SALEP2_7.IsCorrectDate = true;
             this.IMN_SALEP2_7.isEnterKeyDown = false;
-            this.IMN_SALEP2_7.IsFirstTime = true;
             this.IMN_SALEP2_7.isMaxLengthErr = false;
             this.IMN_SALEP2_7.IsNumber = true;
             this.IMN_SALEP2_7.IsShop = false;
@@ -1402,7 +1374,6 @@
             this.IMT_ITMCD_7.IntegerPart = 0;
             this.IMT_ITMCD_7.IsCorrectDate = true;
             this.IMT_ITMCD_7.isEnterKeyDown = false;
-            this.IMT_ITMCD_7.IsFirstTime = true;
             this.IMT_ITMCD_7.isMaxLengthErr = false;
             this.IMT_ITMCD_7.IsNumber = true;
             this.IMT_ITMCD_7.IsShop = false;
@@ -1450,7 +1421,6 @@
             this.IMN_GENER2_6.IntegerPart = 0;
             this.IMN_GENER2_6.IsCorrectDate = true;
             this.IMN_GENER2_6.isEnterKeyDown = false;
-            this.IMN_GENER2_6.IsFirstTime = true;
             this.IMN_GENER2_6.isMaxLengthErr = false;
             this.IMN_GENER2_6.IsNumber = true;
             this.IMN_GENER2_6.IsShop = false;
@@ -1481,7 +1451,6 @@
             this.IMN_WEBPR2_6.IntegerPart = 0;
             this.IMN_WEBPR2_6.IsCorrectDate = true;
             this.IMN_WEBPR2_6.isEnterKeyDown = false;
-            this.IMN_WEBPR2_6.IsFirstTime = true;
             this.IMN_WEBPR2_6.isMaxLengthErr = false;
             this.IMN_WEBPR2_6.IsNumber = true;
             this.IMN_WEBPR2_6.IsShop = false;
@@ -1511,7 +1480,6 @@
             this.IMN_WEBPR_6.IntegerPart = 0;
             this.IMN_WEBPR_6.IsCorrectDate = true;
             this.IMN_WEBPR_6.isEnterKeyDown = false;
-            this.IMN_WEBPR_6.IsFirstTime = true;
             this.IMN_WEBPR_6.isMaxLengthErr = false;
             this.IMN_WEBPR_6.IsNumber = true;
             this.IMN_WEBPR_6.IsShop = false;
@@ -1541,7 +1509,6 @@
             this.IMN_TEIKA_6.IntegerPart = 0;
             this.IMN_TEIKA_6.IsCorrectDate = true;
             this.IMN_TEIKA_6.isEnterKeyDown = false;
-            this.IMN_TEIKA_6.IsFirstTime = true;
             this.IMN_TEIKA_6.isMaxLengthErr = false;
             this.IMN_TEIKA_6.IsNumber = true;
             this.IMN_TEIKA_6.IsShop = false;
@@ -1572,7 +1539,6 @@
             this.IMN_TEIKA2_6.IntegerPart = 3;
             this.IMN_TEIKA2_6.IsCorrectDate = true;
             this.IMN_TEIKA2_6.isEnterKeyDown = false;
-            this.IMN_TEIKA2_6.IsFirstTime = true;
             this.IMN_TEIKA2_6.isMaxLengthErr = false;
             this.IMN_TEIKA2_6.IsNumber = true;
             this.IMN_TEIKA2_6.IsShop = false;
@@ -1604,7 +1570,6 @@
             this.IMT_REMAK_6.IntegerPart = 0;
             this.IMT_REMAK_6.IsCorrectDate = true;
             this.IMT_REMAK_6.isEnterKeyDown = false;
-            this.IMT_REMAK_6.IsFirstTime = true;
             this.IMT_REMAK_6.isMaxLengthErr = false;
             this.IMT_REMAK_6.IsNumber = true;
             this.IMT_REMAK_6.IsShop = false;
@@ -1634,7 +1599,6 @@
             this.IMT_PAYDT_6.IntegerPart = 0;
             this.IMT_PAYDT_6.IsCorrectDate = true;
             this.IMT_PAYDT_6.isEnterKeyDown = false;
-            this.IMT_PAYDT_6.IsFirstTime = true;
             this.IMT_PAYDT_6.isMaxLengthErr = false;
             this.IMT_PAYDT_6.IsNumber = true;
             this.IMT_PAYDT_6.IsShop = false;
@@ -1665,7 +1629,6 @@
             this.IMN_CLINT_6.IntegerPart = 0;
             this.IMN_CLINT_6.IsCorrectDate = true;
             this.IMN_CLINT_6.isEnterKeyDown = false;
-            this.IMN_CLINT_6.IsFirstTime = true;
             this.IMN_CLINT_6.isMaxLengthErr = false;
             this.IMN_CLINT_6.IsNumber = true;
             this.IMN_CLINT_6.IsShop = false;
@@ -1695,7 +1658,6 @@
             this.IMT_KAIDT_6.IntegerPart = 0;
             this.IMT_KAIDT_6.IsCorrectDate = true;
             this.IMT_KAIDT_6.isEnterKeyDown = false;
-            this.IMT_KAIDT_6.IsFirstTime = true;
             this.IMT_KAIDT_6.isMaxLengthErr = false;
             this.IMT_KAIDT_6.IsNumber = true;
             this.IMT_KAIDT_6.IsShop = false;
@@ -1724,7 +1686,6 @@
             this.IMT_JUONO_6.IntegerPart = 0;
             this.IMT_JUONO_6.IsCorrectDate = true;
             this.IMT_JUONO_6.isEnterKeyDown = false;
-            this.IMT_JUONO_6.IsFirstTime = true;
             this.IMT_JUONO_6.isMaxLengthErr = false;
             this.IMT_JUONO_6.IsNumber = true;
             this.IMT_JUONO_6.IsShop = false;
@@ -1755,7 +1716,6 @@
             this.IMN_GENER_6.IntegerPart = 0;
             this.IMN_GENER_6.IsCorrectDate = true;
             this.IMN_GENER_6.isEnterKeyDown = false;
-            this.IMN_GENER_6.IsFirstTime = true;
             this.IMN_GENER_6.isMaxLengthErr = false;
             this.IMN_GENER_6.IsNumber = true;
             this.IMN_GENER_6.IsShop = false;
@@ -1786,7 +1746,6 @@
             this.IMN_MEMBR_6.IntegerPart = 0;
             this.IMN_MEMBR_6.IsCorrectDate = true;
             this.IMN_MEMBR_6.isEnterKeyDown = false;
-            this.IMN_MEMBR_6.IsFirstTime = true;
             this.IMN_MEMBR_6.isMaxLengthErr = false;
             this.IMN_MEMBR_6.IsNumber = true;
             this.IMN_MEMBR_6.IsShop = false;
@@ -1816,7 +1775,6 @@
             this.IMT_ARIDT_6.IntegerPart = 0;
             this.IMT_ARIDT_6.IsCorrectDate = true;
             this.IMT_ARIDT_6.isEnterKeyDown = false;
-            this.IMT_ARIDT_6.IsFirstTime = true;
             this.IMT_ARIDT_6.isMaxLengthErr = false;
             this.IMT_ARIDT_6.IsNumber = true;
             this.IMT_ARIDT_6.IsShop = false;
@@ -1847,7 +1805,6 @@
             this.IMT_ITMNM_6.IntegerPart = 0;
             this.IMT_ITMNM_6.IsCorrectDate = true;
             this.IMT_ITMNM_6.isEnterKeyDown = false;
-            this.IMT_ITMNM_6.IsFirstTime = true;
             this.IMT_ITMNM_6.isMaxLengthErr = false;
             this.IMT_ITMNM_6.IsNumber = true;
             this.IMT_ITMNM_6.IsShop = false;
@@ -1877,7 +1834,6 @@
             this.IMN_SALEP2_6.IntegerPart = 0;
             this.IMN_SALEP2_6.IsCorrectDate = true;
             this.IMN_SALEP2_6.isEnterKeyDown = false;
-            this.IMN_SALEP2_6.IsFirstTime = true;
             this.IMN_SALEP2_6.isMaxLengthErr = false;
             this.IMN_SALEP2_6.IsNumber = true;
             this.IMN_SALEP2_6.IsShop = false;
@@ -1907,7 +1863,6 @@
             this.IMT_ITMCD_6.IntegerPart = 0;
             this.IMT_ITMCD_6.IsCorrectDate = true;
             this.IMT_ITMCD_6.isEnterKeyDown = false;
-            this.IMT_ITMCD_6.IsFirstTime = true;
             this.IMT_ITMCD_6.isMaxLengthErr = false;
             this.IMT_ITMCD_6.IsNumber = true;
             this.IMT_ITMCD_6.IsShop = false;
@@ -1955,7 +1910,6 @@
             this.IMN_GENER2_5.IntegerPart = 0;
             this.IMN_GENER2_5.IsCorrectDate = true;
             this.IMN_GENER2_5.isEnterKeyDown = false;
-            this.IMN_GENER2_5.IsFirstTime = true;
             this.IMN_GENER2_5.isMaxLengthErr = false;
             this.IMN_GENER2_5.IsNumber = true;
             this.IMN_GENER2_5.IsShop = false;
@@ -1986,7 +1940,6 @@
             this.IMN_WEBPR2_5.IntegerPart = 0;
             this.IMN_WEBPR2_5.IsCorrectDate = true;
             this.IMN_WEBPR2_5.isEnterKeyDown = false;
-            this.IMN_WEBPR2_5.IsFirstTime = true;
             this.IMN_WEBPR2_5.isMaxLengthErr = false;
             this.IMN_WEBPR2_5.IsNumber = true;
             this.IMN_WEBPR2_5.IsShop = false;
@@ -2016,7 +1969,6 @@
             this.IMN_WEBPR_5.IntegerPart = 0;
             this.IMN_WEBPR_5.IsCorrectDate = true;
             this.IMN_WEBPR_5.isEnterKeyDown = false;
-            this.IMN_WEBPR_5.IsFirstTime = true;
             this.IMN_WEBPR_5.isMaxLengthErr = false;
             this.IMN_WEBPR_5.IsNumber = true;
             this.IMN_WEBPR_5.IsShop = false;
@@ -2046,7 +1998,6 @@
             this.IMN_TEIKA_5.IntegerPart = 0;
             this.IMN_TEIKA_5.IsCorrectDate = true;
             this.IMN_TEIKA_5.isEnterKeyDown = false;
-            this.IMN_TEIKA_5.IsFirstTime = true;
             this.IMN_TEIKA_5.isMaxLengthErr = false;
             this.IMN_TEIKA_5.IsNumber = true;
             this.IMN_TEIKA_5.IsShop = false;
@@ -2077,7 +2028,6 @@
             this.IMN_TEIKA2_5.IntegerPart = 3;
             this.IMN_TEIKA2_5.IsCorrectDate = true;
             this.IMN_TEIKA2_5.isEnterKeyDown = false;
-            this.IMN_TEIKA2_5.IsFirstTime = true;
             this.IMN_TEIKA2_5.isMaxLengthErr = false;
             this.IMN_TEIKA2_5.IsNumber = true;
             this.IMN_TEIKA2_5.IsShop = false;
@@ -2109,7 +2059,6 @@
             this.IMT_REMAK_5.IntegerPart = 0;
             this.IMT_REMAK_5.IsCorrectDate = true;
             this.IMT_REMAK_5.isEnterKeyDown = false;
-            this.IMT_REMAK_5.IsFirstTime = true;
             this.IMT_REMAK_5.isMaxLengthErr = false;
             this.IMT_REMAK_5.IsNumber = true;
             this.IMT_REMAK_5.IsShop = false;
@@ -2139,7 +2088,6 @@
             this.IMT_PAYDT_5.IntegerPart = 0;
             this.IMT_PAYDT_5.IsCorrectDate = true;
             this.IMT_PAYDT_5.isEnterKeyDown = false;
-            this.IMT_PAYDT_5.IsFirstTime = true;
             this.IMT_PAYDT_5.isMaxLengthErr = false;
             this.IMT_PAYDT_5.IsNumber = true;
             this.IMT_PAYDT_5.IsShop = false;
@@ -2170,7 +2118,6 @@
             this.IMN_CLINT_5.IntegerPart = 0;
             this.IMN_CLINT_5.IsCorrectDate = true;
             this.IMN_CLINT_5.isEnterKeyDown = false;
-            this.IMN_CLINT_5.IsFirstTime = true;
             this.IMN_CLINT_5.isMaxLengthErr = false;
             this.IMN_CLINT_5.IsNumber = true;
             this.IMN_CLINT_5.IsShop = false;
@@ -2200,7 +2147,6 @@
             this.IMT_KAIDT_5.IntegerPart = 0;
             this.IMT_KAIDT_5.IsCorrectDate = true;
             this.IMT_KAIDT_5.isEnterKeyDown = false;
-            this.IMT_KAIDT_5.IsFirstTime = true;
             this.IMT_KAIDT_5.isMaxLengthErr = false;
             this.IMT_KAIDT_5.IsNumber = true;
             this.IMT_KAIDT_5.IsShop = false;
@@ -2229,7 +2175,6 @@
             this.IMT_JUONO_5.IntegerPart = 0;
             this.IMT_JUONO_5.IsCorrectDate = true;
             this.IMT_JUONO_5.isEnterKeyDown = false;
-            this.IMT_JUONO_5.IsFirstTime = true;
             this.IMT_JUONO_5.isMaxLengthErr = false;
             this.IMT_JUONO_5.IsNumber = true;
             this.IMT_JUONO_5.IsShop = false;
@@ -2260,7 +2205,6 @@
             this.IMN_GENER_5.IntegerPart = 0;
             this.IMN_GENER_5.IsCorrectDate = true;
             this.IMN_GENER_5.isEnterKeyDown = false;
-            this.IMN_GENER_5.IsFirstTime = true;
             this.IMN_GENER_5.isMaxLengthErr = false;
             this.IMN_GENER_5.IsNumber = true;
             this.IMN_GENER_5.IsShop = false;
@@ -2291,7 +2235,6 @@
             this.IMN_MEMBR_5.IntegerPart = 0;
             this.IMN_MEMBR_5.IsCorrectDate = true;
             this.IMN_MEMBR_5.isEnterKeyDown = false;
-            this.IMN_MEMBR_5.IsFirstTime = true;
             this.IMN_MEMBR_5.isMaxLengthErr = false;
             this.IMN_MEMBR_5.IsNumber = true;
             this.IMN_MEMBR_5.IsShop = false;
@@ -2321,7 +2264,6 @@
             this.IMT_ARIDT_5.IntegerPart = 0;
             this.IMT_ARIDT_5.IsCorrectDate = true;
             this.IMT_ARIDT_5.isEnterKeyDown = false;
-            this.IMT_ARIDT_5.IsFirstTime = true;
             this.IMT_ARIDT_5.isMaxLengthErr = false;
             this.IMT_ARIDT_5.IsNumber = true;
             this.IMT_ARIDT_5.IsShop = false;
@@ -2352,7 +2294,6 @@
             this.IMT_ITMNM_5.IntegerPart = 0;
             this.IMT_ITMNM_5.IsCorrectDate = true;
             this.IMT_ITMNM_5.isEnterKeyDown = false;
-            this.IMT_ITMNM_5.IsFirstTime = true;
             this.IMT_ITMNM_5.isMaxLengthErr = false;
             this.IMT_ITMNM_5.IsNumber = true;
             this.IMT_ITMNM_5.IsShop = false;
@@ -2382,7 +2323,6 @@
             this.IMN_SALEP2_5.IntegerPart = 0;
             this.IMN_SALEP2_5.IsCorrectDate = true;
             this.IMN_SALEP2_5.isEnterKeyDown = false;
-            this.IMN_SALEP2_5.IsFirstTime = true;
             this.IMN_SALEP2_5.isMaxLengthErr = false;
             this.IMN_SALEP2_5.IsNumber = true;
             this.IMN_SALEP2_5.IsShop = false;
@@ -2412,7 +2352,6 @@
             this.IMT_ITMCD_5.IntegerPart = 0;
             this.IMT_ITMCD_5.IsCorrectDate = true;
             this.IMT_ITMCD_5.isEnterKeyDown = false;
-            this.IMT_ITMCD_5.IsFirstTime = true;
             this.IMT_ITMCD_5.isMaxLengthErr = false;
             this.IMT_ITMCD_5.IsNumber = true;
             this.IMT_ITMCD_5.IsShop = false;
@@ -2460,7 +2399,6 @@
             this.IMN_GENER2_4.IntegerPart = 0;
             this.IMN_GENER2_4.IsCorrectDate = true;
             this.IMN_GENER2_4.isEnterKeyDown = false;
-            this.IMN_GENER2_4.IsFirstTime = true;
             this.IMN_GENER2_4.isMaxLengthErr = false;
             this.IMN_GENER2_4.IsNumber = true;
             this.IMN_GENER2_4.IsShop = false;
@@ -2491,7 +2429,6 @@
             this.IMN_WEBPR2_4.IntegerPart = 0;
             this.IMN_WEBPR2_4.IsCorrectDate = true;
             this.IMN_WEBPR2_4.isEnterKeyDown = false;
-            this.IMN_WEBPR2_4.IsFirstTime = true;
             this.IMN_WEBPR2_4.isMaxLengthErr = false;
             this.IMN_WEBPR2_4.IsNumber = true;
             this.IMN_WEBPR2_4.IsShop = false;
@@ -2521,7 +2458,6 @@
             this.IMN_WEBPR_4.IntegerPart = 0;
             this.IMN_WEBPR_4.IsCorrectDate = true;
             this.IMN_WEBPR_4.isEnterKeyDown = false;
-            this.IMN_WEBPR_4.IsFirstTime = true;
             this.IMN_WEBPR_4.isMaxLengthErr = false;
             this.IMN_WEBPR_4.IsNumber = true;
             this.IMN_WEBPR_4.IsShop = false;
@@ -2551,7 +2487,6 @@
             this.IMN_TEIKA_4.IntegerPart = 0;
             this.IMN_TEIKA_4.IsCorrectDate = true;
             this.IMN_TEIKA_4.isEnterKeyDown = false;
-            this.IMN_TEIKA_4.IsFirstTime = true;
             this.IMN_TEIKA_4.isMaxLengthErr = false;
             this.IMN_TEIKA_4.IsNumber = true;
             this.IMN_TEIKA_4.IsShop = false;
@@ -2582,7 +2517,6 @@
             this.IMN_TEIKA2_4.IntegerPart = 3;
             this.IMN_TEIKA2_4.IsCorrectDate = true;
             this.IMN_TEIKA2_4.isEnterKeyDown = false;
-            this.IMN_TEIKA2_4.IsFirstTime = true;
             this.IMN_TEIKA2_4.isMaxLengthErr = false;
             this.IMN_TEIKA2_4.IsNumber = true;
             this.IMN_TEIKA2_4.IsShop = false;
@@ -2614,7 +2548,6 @@
             this.IMT_REMAK_4.IntegerPart = 0;
             this.IMT_REMAK_4.IsCorrectDate = true;
             this.IMT_REMAK_4.isEnterKeyDown = false;
-            this.IMT_REMAK_4.IsFirstTime = true;
             this.IMT_REMAK_4.isMaxLengthErr = false;
             this.IMT_REMAK_4.IsNumber = true;
             this.IMT_REMAK_4.IsShop = false;
@@ -2644,7 +2577,6 @@
             this.IMT_PAYDT_4.IntegerPart = 0;
             this.IMT_PAYDT_4.IsCorrectDate = true;
             this.IMT_PAYDT_4.isEnterKeyDown = false;
-            this.IMT_PAYDT_4.IsFirstTime = true;
             this.IMT_PAYDT_4.isMaxLengthErr = false;
             this.IMT_PAYDT_4.IsNumber = true;
             this.IMT_PAYDT_4.IsShop = false;
@@ -2675,7 +2607,6 @@
             this.IMN_CLINT_4.IntegerPart = 0;
             this.IMN_CLINT_4.IsCorrectDate = true;
             this.IMN_CLINT_4.isEnterKeyDown = false;
-            this.IMN_CLINT_4.IsFirstTime = true;
             this.IMN_CLINT_4.isMaxLengthErr = false;
             this.IMN_CLINT_4.IsNumber = true;
             this.IMN_CLINT_4.IsShop = false;
@@ -2705,7 +2636,6 @@
             this.IMT_KAIDT_4.IntegerPart = 0;
             this.IMT_KAIDT_4.IsCorrectDate = true;
             this.IMT_KAIDT_4.isEnterKeyDown = false;
-            this.IMT_KAIDT_4.IsFirstTime = true;
             this.IMT_KAIDT_4.isMaxLengthErr = false;
             this.IMT_KAIDT_4.IsNumber = true;
             this.IMT_KAIDT_4.IsShop = false;
@@ -2734,7 +2664,6 @@
             this.IMT_JUONO_4.IntegerPart = 0;
             this.IMT_JUONO_4.IsCorrectDate = true;
             this.IMT_JUONO_4.isEnterKeyDown = false;
-            this.IMT_JUONO_4.IsFirstTime = true;
             this.IMT_JUONO_4.isMaxLengthErr = false;
             this.IMT_JUONO_4.IsNumber = true;
             this.IMT_JUONO_4.IsShop = false;
@@ -2765,7 +2694,6 @@
             this.IMN_GENER_4.IntegerPart = 0;
             this.IMN_GENER_4.IsCorrectDate = true;
             this.IMN_GENER_4.isEnterKeyDown = false;
-            this.IMN_GENER_4.IsFirstTime = true;
             this.IMN_GENER_4.isMaxLengthErr = false;
             this.IMN_GENER_4.IsNumber = true;
             this.IMN_GENER_4.IsShop = false;
@@ -2796,7 +2724,6 @@
             this.IMN_MEMBR_4.IntegerPart = 0;
             this.IMN_MEMBR_4.IsCorrectDate = true;
             this.IMN_MEMBR_4.isEnterKeyDown = false;
-            this.IMN_MEMBR_4.IsFirstTime = true;
             this.IMN_MEMBR_4.isMaxLengthErr = false;
             this.IMN_MEMBR_4.IsNumber = true;
             this.IMN_MEMBR_4.IsShop = false;
@@ -2826,7 +2753,6 @@
             this.IMT_ARIDT_4.IntegerPart = 0;
             this.IMT_ARIDT_4.IsCorrectDate = true;
             this.IMT_ARIDT_4.isEnterKeyDown = false;
-            this.IMT_ARIDT_4.IsFirstTime = true;
             this.IMT_ARIDT_4.isMaxLengthErr = false;
             this.IMT_ARIDT_4.IsNumber = true;
             this.IMT_ARIDT_4.IsShop = false;
@@ -2857,7 +2783,6 @@
             this.IMT_ITMNM_4.IntegerPart = 0;
             this.IMT_ITMNM_4.IsCorrectDate = true;
             this.IMT_ITMNM_4.isEnterKeyDown = false;
-            this.IMT_ITMNM_4.IsFirstTime = true;
             this.IMT_ITMNM_4.isMaxLengthErr = false;
             this.IMT_ITMNM_4.IsNumber = true;
             this.IMT_ITMNM_4.IsShop = false;
@@ -2887,7 +2812,6 @@
             this.IMN_SALEP2_4.IntegerPart = 0;
             this.IMN_SALEP2_4.IsCorrectDate = true;
             this.IMN_SALEP2_4.isEnterKeyDown = false;
-            this.IMN_SALEP2_4.IsFirstTime = true;
             this.IMN_SALEP2_4.isMaxLengthErr = false;
             this.IMN_SALEP2_4.IsNumber = true;
             this.IMN_SALEP2_4.IsShop = false;
@@ -2917,7 +2841,6 @@
             this.IMT_ITMCD_4.IntegerPart = 0;
             this.IMT_ITMCD_4.IsCorrectDate = true;
             this.IMT_ITMCD_4.isEnterKeyDown = false;
-            this.IMT_ITMCD_4.IsFirstTime = true;
             this.IMT_ITMCD_4.isMaxLengthErr = false;
             this.IMT_ITMCD_4.IsNumber = true;
             this.IMT_ITMCD_4.IsShop = false;
@@ -2965,7 +2888,6 @@
             this.IMN_GENER2_3.IntegerPart = 0;
             this.IMN_GENER2_3.IsCorrectDate = true;
             this.IMN_GENER2_3.isEnterKeyDown = false;
-            this.IMN_GENER2_3.IsFirstTime = true;
             this.IMN_GENER2_3.isMaxLengthErr = false;
             this.IMN_GENER2_3.IsNumber = true;
             this.IMN_GENER2_3.IsShop = false;
@@ -2996,7 +2918,6 @@
             this.IMN_WEBPR2_3.IntegerPart = 0;
             this.IMN_WEBPR2_3.IsCorrectDate = true;
             this.IMN_WEBPR2_3.isEnterKeyDown = false;
-            this.IMN_WEBPR2_3.IsFirstTime = true;
             this.IMN_WEBPR2_3.isMaxLengthErr = false;
             this.IMN_WEBPR2_3.IsNumber = true;
             this.IMN_WEBPR2_3.IsShop = false;
@@ -3026,7 +2947,6 @@
             this.IMN_WEBPR_3.IntegerPart = 0;
             this.IMN_WEBPR_3.IsCorrectDate = true;
             this.IMN_WEBPR_3.isEnterKeyDown = false;
-            this.IMN_WEBPR_3.IsFirstTime = true;
             this.IMN_WEBPR_3.isMaxLengthErr = false;
             this.IMN_WEBPR_3.IsNumber = true;
             this.IMN_WEBPR_3.IsShop = false;
@@ -3056,7 +2976,6 @@
             this.IMN_TEIKA_3.IntegerPart = 0;
             this.IMN_TEIKA_3.IsCorrectDate = true;
             this.IMN_TEIKA_3.isEnterKeyDown = false;
-            this.IMN_TEIKA_3.IsFirstTime = true;
             this.IMN_TEIKA_3.isMaxLengthErr = false;
             this.IMN_TEIKA_3.IsNumber = true;
             this.IMN_TEIKA_3.IsShop = false;
@@ -3087,7 +3006,6 @@
             this.IMN_TEIKA2_3.IntegerPart = 3;
             this.IMN_TEIKA2_3.IsCorrectDate = true;
             this.IMN_TEIKA2_3.isEnterKeyDown = false;
-            this.IMN_TEIKA2_3.IsFirstTime = true;
             this.IMN_TEIKA2_3.isMaxLengthErr = false;
             this.IMN_TEIKA2_3.IsNumber = true;
             this.IMN_TEIKA2_3.IsShop = false;
@@ -3119,7 +3037,6 @@
             this.IMT_REMAK_3.IntegerPart = 0;
             this.IMT_REMAK_3.IsCorrectDate = true;
             this.IMT_REMAK_3.isEnterKeyDown = false;
-            this.IMT_REMAK_3.IsFirstTime = true;
             this.IMT_REMAK_3.isMaxLengthErr = false;
             this.IMT_REMAK_3.IsNumber = true;
             this.IMT_REMAK_3.IsShop = false;
@@ -3149,7 +3066,6 @@
             this.IMT_PAYDT_3.IntegerPart = 0;
             this.IMT_PAYDT_3.IsCorrectDate = true;
             this.IMT_PAYDT_3.isEnterKeyDown = false;
-            this.IMT_PAYDT_3.IsFirstTime = true;
             this.IMT_PAYDT_3.isMaxLengthErr = false;
             this.IMT_PAYDT_3.IsNumber = true;
             this.IMT_PAYDT_3.IsShop = false;
@@ -3180,7 +3096,6 @@
             this.IMN_CLINT_3.IntegerPart = 0;
             this.IMN_CLINT_3.IsCorrectDate = true;
             this.IMN_CLINT_3.isEnterKeyDown = false;
-            this.IMN_CLINT_3.IsFirstTime = true;
             this.IMN_CLINT_3.isMaxLengthErr = false;
             this.IMN_CLINT_3.IsNumber = true;
             this.IMN_CLINT_3.IsShop = false;
@@ -3210,7 +3125,6 @@
             this.IMT_KAIDT_3.IntegerPart = 0;
             this.IMT_KAIDT_3.IsCorrectDate = true;
             this.IMT_KAIDT_3.isEnterKeyDown = false;
-            this.IMT_KAIDT_3.IsFirstTime = true;
             this.IMT_KAIDT_3.isMaxLengthErr = false;
             this.IMT_KAIDT_3.IsNumber = true;
             this.IMT_KAIDT_3.IsShop = false;
@@ -3239,7 +3153,6 @@
             this.IMT_JUONO_3.IntegerPart = 0;
             this.IMT_JUONO_3.IsCorrectDate = true;
             this.IMT_JUONO_3.isEnterKeyDown = false;
-            this.IMT_JUONO_3.IsFirstTime = true;
             this.IMT_JUONO_3.isMaxLengthErr = false;
             this.IMT_JUONO_3.IsNumber = true;
             this.IMT_JUONO_3.IsShop = false;
@@ -3270,7 +3183,6 @@
             this.IMN_GENER_3.IntegerPart = 0;
             this.IMN_GENER_3.IsCorrectDate = true;
             this.IMN_GENER_3.isEnterKeyDown = false;
-            this.IMN_GENER_3.IsFirstTime = true;
             this.IMN_GENER_3.isMaxLengthErr = false;
             this.IMN_GENER_3.IsNumber = true;
             this.IMN_GENER_3.IsShop = false;
@@ -3301,7 +3213,6 @@
             this.IMN_MEMBR_3.IntegerPart = 0;
             this.IMN_MEMBR_3.IsCorrectDate = true;
             this.IMN_MEMBR_3.isEnterKeyDown = false;
-            this.IMN_MEMBR_3.IsFirstTime = true;
             this.IMN_MEMBR_3.isMaxLengthErr = false;
             this.IMN_MEMBR_3.IsNumber = true;
             this.IMN_MEMBR_3.IsShop = false;
@@ -3331,7 +3242,6 @@
             this.IMT_ARIDT_3.IntegerPart = 0;
             this.IMT_ARIDT_3.IsCorrectDate = true;
             this.IMT_ARIDT_3.isEnterKeyDown = false;
-            this.IMT_ARIDT_3.IsFirstTime = true;
             this.IMT_ARIDT_3.isMaxLengthErr = false;
             this.IMT_ARIDT_3.IsNumber = true;
             this.IMT_ARIDT_3.IsShop = false;
@@ -3362,7 +3272,6 @@
             this.IMT_ITMNM_3.IntegerPart = 0;
             this.IMT_ITMNM_3.IsCorrectDate = true;
             this.IMT_ITMNM_3.isEnterKeyDown = false;
-            this.IMT_ITMNM_3.IsFirstTime = true;
             this.IMT_ITMNM_3.isMaxLengthErr = false;
             this.IMT_ITMNM_3.IsNumber = true;
             this.IMT_ITMNM_3.IsShop = false;
@@ -3392,7 +3301,6 @@
             this.IMN_SALEP2_3.IntegerPart = 0;
             this.IMN_SALEP2_3.IsCorrectDate = true;
             this.IMN_SALEP2_3.isEnterKeyDown = false;
-            this.IMN_SALEP2_3.IsFirstTime = true;
             this.IMN_SALEP2_3.isMaxLengthErr = false;
             this.IMN_SALEP2_3.IsNumber = true;
             this.IMN_SALEP2_3.IsShop = false;
@@ -3422,7 +3330,6 @@
             this.IMT_ITMCD_3.IntegerPart = 0;
             this.IMT_ITMCD_3.IsCorrectDate = true;
             this.IMT_ITMCD_3.isEnterKeyDown = false;
-            this.IMT_ITMCD_3.IsFirstTime = true;
             this.IMT_ITMCD_3.isMaxLengthErr = false;
             this.IMT_ITMCD_3.IsNumber = true;
             this.IMT_ITMCD_3.IsShop = false;
@@ -3470,7 +3377,6 @@
             this.IMT_ARIDT_0.IntegerPart = 0;
             this.IMT_ARIDT_0.IsCorrectDate = true;
             this.IMT_ARIDT_0.isEnterKeyDown = false;
-            this.IMT_ARIDT_0.IsFirstTime = true;
             this.IMT_ARIDT_0.isMaxLengthErr = false;
             this.IMT_ARIDT_0.IsNumber = true;
             this.IMT_ARIDT_0.IsShop = false;
@@ -3501,7 +3407,6 @@
             this.IMN_GENER2_2.IntegerPart = 0;
             this.IMN_GENER2_2.IsCorrectDate = true;
             this.IMN_GENER2_2.isEnterKeyDown = false;
-            this.IMN_GENER2_2.IsFirstTime = true;
             this.IMN_GENER2_2.isMaxLengthErr = false;
             this.IMN_GENER2_2.IsNumber = true;
             this.IMN_GENER2_2.IsShop = false;
@@ -3532,7 +3437,6 @@
             this.IMN_GENER2_1.IntegerPart = 0;
             this.IMN_GENER2_1.IsCorrectDate = true;
             this.IMN_GENER2_1.isEnterKeyDown = false;
-            this.IMN_GENER2_1.IsFirstTime = true;
             this.IMN_GENER2_1.isMaxLengthErr = false;
             this.IMN_GENER2_1.IsNumber = true;
             this.IMN_GENER2_1.IsShop = false;
@@ -3563,7 +3467,6 @@
             this.IMN_GENER2_0.IntegerPart = 0;
             this.IMN_GENER2_0.IsCorrectDate = true;
             this.IMN_GENER2_0.isEnterKeyDown = false;
-            this.IMN_GENER2_0.IsFirstTime = true;
             this.IMN_GENER2_0.isMaxLengthErr = false;
             this.IMN_GENER2_0.IsNumber = true;
             this.IMN_GENER2_0.IsShop = false;
@@ -3594,7 +3497,6 @@
             this.IMN_WEBPR2_2.IntegerPart = 0;
             this.IMN_WEBPR2_2.IsCorrectDate = true;
             this.IMN_WEBPR2_2.isEnterKeyDown = false;
-            this.IMN_WEBPR2_2.IsFirstTime = true;
             this.IMN_WEBPR2_2.isMaxLengthErr = false;
             this.IMN_WEBPR2_2.IsNumber = true;
             this.IMN_WEBPR2_2.IsShop = false;
@@ -3624,7 +3526,6 @@
             this.IMN_WEBPR2_1.IntegerPart = 0;
             this.IMN_WEBPR2_1.IsCorrectDate = true;
             this.IMN_WEBPR2_1.isEnterKeyDown = false;
-            this.IMN_WEBPR2_1.IsFirstTime = true;
             this.IMN_WEBPR2_1.isMaxLengthErr = false;
             this.IMN_WEBPR2_1.IsNumber = true;
             this.IMN_WEBPR2_1.IsShop = false;
@@ -3654,7 +3555,6 @@
             this.IMN_WEBPR2_0.IntegerPart = 0;
             this.IMN_WEBPR2_0.IsCorrectDate = true;
             this.IMN_WEBPR2_0.isEnterKeyDown = false;
-            this.IMN_WEBPR2_0.IsFirstTime = true;
             this.IMN_WEBPR2_0.isMaxLengthErr = false;
             this.IMN_WEBPR2_0.IsNumber = true;
             this.IMN_WEBPR2_0.IsShop = false;
@@ -3684,7 +3584,6 @@
             this.IMN_WEBPR_2.IntegerPart = 0;
             this.IMN_WEBPR_2.IsCorrectDate = true;
             this.IMN_WEBPR_2.isEnterKeyDown = false;
-            this.IMN_WEBPR_2.IsFirstTime = true;
             this.IMN_WEBPR_2.isMaxLengthErr = false;
             this.IMN_WEBPR_2.IsNumber = true;
             this.IMN_WEBPR_2.IsShop = false;
@@ -3714,7 +3613,6 @@
             this.IMN_WEBPR_1.IntegerPart = 0;
             this.IMN_WEBPR_1.IsCorrectDate = true;
             this.IMN_WEBPR_1.isEnterKeyDown = false;
-            this.IMN_WEBPR_1.IsFirstTime = true;
             this.IMN_WEBPR_1.isMaxLengthErr = false;
             this.IMN_WEBPR_1.IsNumber = true;
             this.IMN_WEBPR_1.IsShop = false;
@@ -3744,7 +3642,6 @@
             this.IMN_WEBPR_0.IntegerPart = 0;
             this.IMN_WEBPR_0.IsCorrectDate = true;
             this.IMN_WEBPR_0.isEnterKeyDown = false;
-            this.IMN_WEBPR_0.IsFirstTime = true;
             this.IMN_WEBPR_0.isMaxLengthErr = false;
             this.IMN_WEBPR_0.IsNumber = true;
             this.IMN_WEBPR_0.IsShop = false;
@@ -3774,7 +3671,6 @@
             this.IMN_TEIKA_2.IntegerPart = 0;
             this.IMN_TEIKA_2.IsCorrectDate = true;
             this.IMN_TEIKA_2.isEnterKeyDown = false;
-            this.IMN_TEIKA_2.IsFirstTime = true;
             this.IMN_TEIKA_2.isMaxLengthErr = false;
             this.IMN_TEIKA_2.IsNumber = true;
             this.IMN_TEIKA_2.IsShop = false;
@@ -3805,7 +3701,6 @@
             this.IMN_TEIKA2_2.IntegerPart = 3;
             this.IMN_TEIKA2_2.IsCorrectDate = true;
             this.IMN_TEIKA2_2.isEnterKeyDown = false;
-            this.IMN_TEIKA2_2.IsFirstTime = true;
             this.IMN_TEIKA2_2.isMaxLengthErr = false;
             this.IMN_TEIKA2_2.IsNumber = true;
             this.IMN_TEIKA2_2.IsShop = false;
@@ -3837,7 +3732,6 @@
             this.IMN_TEIKA_1.IntegerPart = 0;
             this.IMN_TEIKA_1.IsCorrectDate = true;
             this.IMN_TEIKA_1.isEnterKeyDown = false;
-            this.IMN_TEIKA_1.IsFirstTime = true;
             this.IMN_TEIKA_1.isMaxLengthErr = false;
             this.IMN_TEIKA_1.IsNumber = true;
             this.IMN_TEIKA_1.IsShop = false;
@@ -3868,7 +3762,6 @@
             this.IMN_TEIKA2_1.IntegerPart = 3;
             this.IMN_TEIKA2_1.IsCorrectDate = true;
             this.IMN_TEIKA2_1.isEnterKeyDown = false;
-            this.IMN_TEIKA2_1.IsFirstTime = true;
             this.IMN_TEIKA2_1.isMaxLengthErr = false;
             this.IMN_TEIKA2_1.IsNumber = true;
             this.IMN_TEIKA2_1.IsShop = false;
@@ -3900,7 +3793,6 @@
             this.IMN_TEIKA_0.IntegerPart = 0;
             this.IMN_TEIKA_0.IsCorrectDate = true;
             this.IMN_TEIKA_0.isEnterKeyDown = false;
-            this.IMN_TEIKA_0.IsFirstTime = true;
             this.IMN_TEIKA_0.isMaxLengthErr = false;
             this.IMN_TEIKA_0.IsNumber = true;
             this.IMN_TEIKA_0.IsShop = false;
@@ -3931,7 +3823,6 @@
             this.IMN_TEIKA2_0.IntegerPart = 3;
             this.IMN_TEIKA2_0.IsCorrectDate = true;
             this.IMN_TEIKA2_0.isEnterKeyDown = false;
-            this.IMN_TEIKA2_0.IsFirstTime = true;
             this.IMN_TEIKA2_0.isMaxLengthErr = false;
             this.IMN_TEIKA2_0.IsNumber = true;
             this.IMN_TEIKA2_0.IsShop = false;
@@ -3963,7 +3854,6 @@
             this.IMT_PAYDT_2.IntegerPart = 0;
             this.IMT_PAYDT_2.IsCorrectDate = true;
             this.IMT_PAYDT_2.isEnterKeyDown = false;
-            this.IMT_PAYDT_2.IsFirstTime = true;
             this.IMT_PAYDT_2.isMaxLengthErr = false;
             this.IMT_PAYDT_2.IsNumber = true;
             this.IMT_PAYDT_2.IsShop = false;
@@ -3994,7 +3884,6 @@
             this.IMT_PAYDT_1.IntegerPart = 0;
             this.IMT_PAYDT_1.IsCorrectDate = true;
             this.IMT_PAYDT_1.isEnterKeyDown = false;
-            this.IMT_PAYDT_1.IsFirstTime = true;
             this.IMT_PAYDT_1.isMaxLengthErr = false;
             this.IMT_PAYDT_1.IsNumber = true;
             this.IMT_PAYDT_1.IsShop = false;
@@ -4025,7 +3914,6 @@
             this.IMT_PAYDT_0.IntegerPart = 0;
             this.IMT_PAYDT_0.IsCorrectDate = true;
             this.IMT_PAYDT_0.isEnterKeyDown = false;
-            this.IMT_PAYDT_0.IsFirstTime = true;
             this.IMT_PAYDT_0.isMaxLengthErr = false;
             this.IMT_PAYDT_0.IsNumber = true;
             this.IMT_PAYDT_0.IsShop = false;
@@ -4056,7 +3944,6 @@
             this.IMN_CLINT_2.IntegerPart = 0;
             this.IMN_CLINT_2.IsCorrectDate = true;
             this.IMN_CLINT_2.isEnterKeyDown = false;
-            this.IMN_CLINT_2.IsFirstTime = true;
             this.IMN_CLINT_2.isMaxLengthErr = false;
             this.IMN_CLINT_2.IsNumber = true;
             this.IMN_CLINT_2.IsShop = false;
@@ -4086,7 +3973,6 @@
             this.IMN_CLINT_1.IntegerPart = 0;
             this.IMN_CLINT_1.IsCorrectDate = true;
             this.IMN_CLINT_1.isEnterKeyDown = false;
-            this.IMN_CLINT_1.IsFirstTime = true;
             this.IMN_CLINT_1.isMaxLengthErr = false;
             this.IMN_CLINT_1.IsNumber = true;
             this.IMN_CLINT_1.IsShop = false;
@@ -4116,7 +4002,6 @@
             this.IMN_CLINT_0.IntegerPart = 0;
             this.IMN_CLINT_0.IsCorrectDate = true;
             this.IMN_CLINT_0.isEnterKeyDown = false;
-            this.IMN_CLINT_0.IsFirstTime = true;
             this.IMN_CLINT_0.isMaxLengthErr = false;
             this.IMN_CLINT_0.IsNumber = true;
             this.IMN_CLINT_0.IsShop = false;
@@ -4146,7 +4031,6 @@
             this.IMT_KAIDT_2.IntegerPart = 0;
             this.IMT_KAIDT_2.IsCorrectDate = true;
             this.IMT_KAIDT_2.isEnterKeyDown = false;
-            this.IMT_KAIDT_2.IsFirstTime = true;
             this.IMT_KAIDT_2.isMaxLengthErr = false;
             this.IMT_KAIDT_2.IsNumber = true;
             this.IMT_KAIDT_2.IsShop = false;
@@ -4175,7 +4059,6 @@
             this.IMT_JUONO_0.IntegerPart = 0;
             this.IMT_JUONO_0.IsCorrectDate = true;
             this.IMT_JUONO_0.isEnterKeyDown = false;
-            this.IMT_JUONO_0.IsFirstTime = true;
             this.IMT_JUONO_0.isMaxLengthErr = false;
             this.IMT_JUONO_0.IsNumber = true;
             this.IMT_JUONO_0.IsShop = false;
@@ -4205,7 +4088,6 @@
             this.IMT_JUONO_1.IntegerPart = 0;
             this.IMT_JUONO_1.IsCorrectDate = true;
             this.IMT_JUONO_1.isEnterKeyDown = false;
-            this.IMT_JUONO_1.IsFirstTime = true;
             this.IMT_JUONO_1.isMaxLengthErr = false;
             this.IMT_JUONO_1.IsNumber = true;
             this.IMT_JUONO_1.IsShop = false;
@@ -4235,7 +4117,6 @@
             this.IMT_JUONO_2.IntegerPart = 0;
             this.IMT_JUONO_2.IsCorrectDate = true;
             this.IMT_JUONO_2.isEnterKeyDown = false;
-            this.IMT_JUONO_2.IsFirstTime = true;
             this.IMT_JUONO_2.isMaxLengthErr = false;
             this.IMT_JUONO_2.IsNumber = true;
             this.IMT_JUONO_2.IsShop = false;
@@ -4266,7 +4147,6 @@
             this.IMN_GENER_2.IntegerPart = 0;
             this.IMN_GENER_2.IsCorrectDate = true;
             this.IMN_GENER_2.isEnterKeyDown = false;
-            this.IMN_GENER_2.IsFirstTime = true;
             this.IMN_GENER_2.isMaxLengthErr = false;
             this.IMN_GENER_2.IsNumber = true;
             this.IMN_GENER_2.IsShop = false;
@@ -4297,7 +4177,6 @@
             this.IMN_MEMBR_2.IntegerPart = 0;
             this.IMN_MEMBR_2.IsCorrectDate = true;
             this.IMN_MEMBR_2.isEnterKeyDown = false;
-            this.IMN_MEMBR_2.IsFirstTime = true;
             this.IMN_MEMBR_2.isMaxLengthErr = false;
             this.IMN_MEMBR_2.IsNumber = true;
             this.IMN_MEMBR_2.IsShop = false;
@@ -4327,7 +4206,6 @@
             this.IMN_GENER_1.IntegerPart = 0;
             this.IMN_GENER_1.IsCorrectDate = true;
             this.IMN_GENER_1.isEnterKeyDown = false;
-            this.IMN_GENER_1.IsFirstTime = true;
             this.IMN_GENER_1.isMaxLengthErr = false;
             this.IMN_GENER_1.IsNumber = true;
             this.IMN_GENER_1.IsShop = false;
@@ -4358,7 +4236,6 @@
             this.IMN_MEMBR_1.IntegerPart = 0;
             this.IMN_MEMBR_1.IsCorrectDate = true;
             this.IMN_MEMBR_1.isEnterKeyDown = false;
-            this.IMN_MEMBR_1.IsFirstTime = true;
             this.IMN_MEMBR_1.isMaxLengthErr = false;
             this.IMN_MEMBR_1.IsNumber = true;
             this.IMN_MEMBR_1.IsShop = false;
@@ -4388,7 +4265,6 @@
             this.IMN_GENER_0.IntegerPart = 0;
             this.IMN_GENER_0.IsCorrectDate = true;
             this.IMN_GENER_0.isEnterKeyDown = false;
-            this.IMN_GENER_0.IsFirstTime = true;
             this.IMN_GENER_0.isMaxLengthErr = false;
             this.IMN_GENER_0.IsNumber = true;
             this.IMN_GENER_0.IsShop = false;
@@ -4419,7 +4295,6 @@
             this.IMN_MEMBR_0.IntegerPart = 0;
             this.IMN_MEMBR_0.IsCorrectDate = true;
             this.IMN_MEMBR_0.isEnterKeyDown = false;
-            this.IMN_MEMBR_0.IsFirstTime = true;
             this.IMN_MEMBR_0.isMaxLengthErr = false;
             this.IMN_MEMBR_0.IsNumber = true;
             this.IMN_MEMBR_0.IsShop = false;
@@ -4449,7 +4324,6 @@
             this.IMT_ARIDT_2.IntegerPart = 0;
             this.IMT_ARIDT_2.IsCorrectDate = true;
             this.IMT_ARIDT_2.isEnterKeyDown = false;
-            this.IMT_ARIDT_2.IsFirstTime = true;
             this.IMT_ARIDT_2.isMaxLengthErr = false;
             this.IMT_ARIDT_2.IsNumber = true;
             this.IMT_ARIDT_2.IsShop = false;
@@ -4480,7 +4354,6 @@
             this.IMT_ARIDT_1.IntegerPart = 0;
             this.IMT_ARIDT_1.IsCorrectDate = true;
             this.IMT_ARIDT_1.isEnterKeyDown = false;
-            this.IMT_ARIDT_1.IsFirstTime = true;
             this.IMT_ARIDT_1.isMaxLengthErr = false;
             this.IMT_ARIDT_1.IsNumber = true;
             this.IMT_ARIDT_1.IsShop = false;
@@ -4511,7 +4384,6 @@
             this.IMT_ITMNM_2.IntegerPart = 0;
             this.IMT_ITMNM_2.IsCorrectDate = true;
             this.IMT_ITMNM_2.isEnterKeyDown = false;
-            this.IMT_ITMNM_2.IsFirstTime = true;
             this.IMT_ITMNM_2.isMaxLengthErr = false;
             this.IMT_ITMNM_2.IsNumber = true;
             this.IMT_ITMNM_2.IsShop = false;
@@ -4541,7 +4413,6 @@
             this.IMT_ITMNM_1.IntegerPart = 0;
             this.IMT_ITMNM_1.IsCorrectDate = true;
             this.IMT_ITMNM_1.isEnterKeyDown = false;
-            this.IMT_ITMNM_1.IsFirstTime = true;
             this.IMT_ITMNM_1.isMaxLengthErr = false;
             this.IMT_ITMNM_1.IsNumber = true;
             this.IMT_ITMNM_1.IsShop = false;
@@ -4571,7 +4442,6 @@
             this.IMT_ITMNM_0.IntegerPart = 0;
             this.IMT_ITMNM_0.IsCorrectDate = true;
             this.IMT_ITMNM_0.isEnterKeyDown = false;
-            this.IMT_ITMNM_0.IsFirstTime = true;
             this.IMT_ITMNM_0.isMaxLengthErr = false;
             this.IMT_ITMNM_0.IsNumber = true;
             this.IMT_ITMNM_0.IsShop = false;
@@ -4601,7 +4471,6 @@
             this.IMN_SALEP2_2.IntegerPart = 0;
             this.IMN_SALEP2_2.IsCorrectDate = true;
             this.IMN_SALEP2_2.isEnterKeyDown = false;
-            this.IMN_SALEP2_2.IsFirstTime = true;
             this.IMN_SALEP2_2.isMaxLengthErr = false;
             this.IMN_SALEP2_2.IsNumber = true;
             this.IMN_SALEP2_2.IsShop = false;
@@ -4632,7 +4501,6 @@
             this.IMN_SALEP2_1.IntegerPart = 0;
             this.IMN_SALEP2_1.IsCorrectDate = true;
             this.IMN_SALEP2_1.isEnterKeyDown = false;
-            this.IMN_SALEP2_1.IsFirstTime = true;
             this.IMN_SALEP2_1.isMaxLengthErr = false;
             this.IMN_SALEP2_1.IsNumber = true;
             this.IMN_SALEP2_1.IsShop = false;
@@ -4663,7 +4531,6 @@
             this.IMN_SALEP2_0.IntegerPart = 0;
             this.IMN_SALEP2_0.IsCorrectDate = true;
             this.IMN_SALEP2_0.isEnterKeyDown = false;
-            this.IMN_SALEP2_0.IsFirstTime = true;
             this.IMN_SALEP2_0.isMaxLengthErr = false;
             this.IMN_SALEP2_0.IsNumber = true;
             this.IMN_SALEP2_0.IsShop = false;
@@ -4695,7 +4562,6 @@
             this.SC_ITEM_0.LabelText = "";
             this.SC_ITEM_0.LabelVisible = false;
             this.SC_ITEM_0.Location = new System.Drawing.Point(27, -5);
-            this.SC_ITEM_0.Margin = new System.Windows.Forms.Padding(0);
             this.SC_ITEM_0.Name = "SC_ITEM_0";
             this.SC_ITEM_0.NameWidth = 190;
             this.SC_ITEM_0.SearchEnable = true;
@@ -4731,7 +4597,6 @@
             this.IMT_JANCD_0.IntegerPart = 0;
             this.IMT_JANCD_0.IsCorrectDate = true;
             this.IMT_JANCD_0.isEnterKeyDown = false;
-            this.IMT_JANCD_0.IsFirstTime = true;
             this.IMT_JANCD_0.isMaxLengthErr = false;
             this.IMT_JANCD_0.IsNumber = true;
             this.IMT_JANCD_0.IsShop = false;
@@ -4743,6 +4608,7 @@
             this.IMT_JANCD_0.ReadOnly = true;
             this.IMT_JANCD_0.Size = new System.Drawing.Size(104, 19);
             this.IMT_JANCD_0.TabIndex = 259;
+            this.IMT_JANCD_0.TabStop = false;
             this.IMT_JANCD_0.Tag = "0";
             this.IMT_JANCD_0.Text = "XXXXXXXXX1XX3";
             this.IMT_JANCD_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -4763,7 +4629,6 @@
             this.SC_ITEM_1.LabelText = "";
             this.SC_ITEM_1.LabelVisible = false;
             this.SC_ITEM_1.Location = new System.Drawing.Point(27, 33);
-            this.SC_ITEM_1.Margin = new System.Windows.Forms.Padding(0);
             this.SC_ITEM_1.Name = "SC_ITEM_1";
             this.SC_ITEM_1.NameWidth = 190;
             this.SC_ITEM_1.SearchEnable = true;
@@ -4793,7 +4658,6 @@
             this.SC_ITEM_2.LabelText = "";
             this.SC_ITEM_2.LabelVisible = false;
             this.SC_ITEM_2.Location = new System.Drawing.Point(27, 71);
-            this.SC_ITEM_2.Margin = new System.Windows.Forms.Padding(0);
             this.SC_ITEM_2.Name = "SC_ITEM_2";
             this.SC_ITEM_2.NameWidth = 190;
             this.SC_ITEM_2.SearchEnable = true;
@@ -4821,7 +4685,6 @@
             this.IMT_JANCD_2.IntegerPart = 0;
             this.IMT_JANCD_2.IsCorrectDate = true;
             this.IMT_JANCD_2.isEnterKeyDown = false;
-            this.IMT_JANCD_2.IsFirstTime = true;
             this.IMT_JANCD_2.isMaxLengthErr = false;
             this.IMT_JANCD_2.IsNumber = true;
             this.IMT_JANCD_2.IsShop = false;
@@ -4833,6 +4696,7 @@
             this.IMT_JANCD_2.ReadOnly = true;
             this.IMT_JANCD_2.Size = new System.Drawing.Size(85, 19);
             this.IMT_JANCD_2.TabIndex = 261;
+            this.IMT_JANCD_2.TabStop = false;
             this.IMT_JANCD_2.Tag = "2";
             this.IMT_JANCD_2.Text = "XXXXXXXXX1XX3";
             this.IMT_JANCD_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -4887,7 +4751,6 @@
             this.SC_ITEM_3.LabelText = "";
             this.SC_ITEM_3.LabelVisible = false;
             this.SC_ITEM_3.Location = new System.Drawing.Point(27, 109);
-            this.SC_ITEM_3.Margin = new System.Windows.Forms.Padding(0);
             this.SC_ITEM_3.Name = "SC_ITEM_3";
             this.SC_ITEM_3.NameWidth = 190;
             this.SC_ITEM_3.SearchEnable = true;
@@ -4917,7 +4780,6 @@
             this.SC_ITEM_4.LabelText = "";
             this.SC_ITEM_4.LabelVisible = false;
             this.SC_ITEM_4.Location = new System.Drawing.Point(27, 147);
-            this.SC_ITEM_4.Margin = new System.Windows.Forms.Padding(0);
             this.SC_ITEM_4.Name = "SC_ITEM_4";
             this.SC_ITEM_4.NameWidth = 190;
             this.SC_ITEM_4.SearchEnable = true;
@@ -4947,7 +4809,6 @@
             this.SC_ITEM_5.LabelText = "";
             this.SC_ITEM_5.LabelVisible = false;
             this.SC_ITEM_5.Location = new System.Drawing.Point(27, 185);
-            this.SC_ITEM_5.Margin = new System.Windows.Forms.Padding(0);
             this.SC_ITEM_5.Name = "SC_ITEM_5";
             this.SC_ITEM_5.NameWidth = 190;
             this.SC_ITEM_5.SearchEnable = true;
@@ -4977,7 +4838,6 @@
             this.SC_ITEM_6.LabelText = "";
             this.SC_ITEM_6.LabelVisible = false;
             this.SC_ITEM_6.Location = new System.Drawing.Point(27, 223);
-            this.SC_ITEM_6.Margin = new System.Windows.Forms.Padding(0);
             this.SC_ITEM_6.Name = "SC_ITEM_6";
             this.SC_ITEM_6.NameWidth = 190;
             this.SC_ITEM_6.SearchEnable = true;
@@ -5007,7 +4867,6 @@
             this.SC_ITEM_7.LabelText = "";
             this.SC_ITEM_7.LabelVisible = false;
             this.SC_ITEM_7.Location = new System.Drawing.Point(27, 261);
-            this.SC_ITEM_7.Margin = new System.Windows.Forms.Padding(0);
             this.SC_ITEM_7.Name = "SC_ITEM_7";
             this.SC_ITEM_7.NameWidth = 190;
             this.SC_ITEM_7.SearchEnable = true;
@@ -5201,7 +5060,6 @@
             this.ScOrder.LabelText = "";
             this.ScOrder.LabelVisible = true;
             this.ScOrder.Location = new System.Drawing.Point(87, 122);
-            this.ScOrder.Margin = new System.Windows.Forms.Padding(0);
             this.ScOrder.Name = "ScOrder";
             this.ScOrder.NameWidth = 310;
             this.ScOrder.SearchEnable = true;
@@ -5526,7 +5384,6 @@
             this.ScCopyOrderNO.LabelText = "";
             this.ScCopyOrderNO.LabelVisible = false;
             this.ScCopyOrderNO.Location = new System.Drawing.Point(342, 3);
-            this.ScCopyOrderNO.Margin = new System.Windows.Forms.Padding(0);
             this.ScCopyOrderNO.Name = "ScCopyOrderNO";
             this.ScCopyOrderNO.NameWidth = 600;
             this.ScCopyOrderNO.SearchEnable = true;
@@ -5555,7 +5412,6 @@
             this.ScOrderNO.LabelText = "";
             this.ScOrderNO.LabelVisible = false;
             this.ScOrderNO.Location = new System.Drawing.Point(86, 3);
-            this.ScOrderNO.Margin = new System.Windows.Forms.Padding(0);
             this.ScOrderNO.Name = "ScOrderNO";
             this.ScOrderNO.NameWidth = 600;
             this.ScOrderNO.SearchEnable = true;
@@ -5584,7 +5440,6 @@
             this.ScStaff.LabelText = "";
             this.ScStaff.LabelVisible = true;
             this.ScStaff.Location = new System.Drawing.Point(997, 92);
-            this.ScStaff.Margin = new System.Windows.Forms.Padding(0);
             this.ScStaff.Name = "ScStaff";
             this.ScStaff.NameWidth = 250;
             this.ScStaff.SearchEnable = true;
@@ -5699,7 +5554,6 @@
             this.ckM_SearchControl3.LabelText = "";
             this.ckM_SearchControl3.LabelVisible = false;
             this.ckM_SearchControl3.Location = new System.Drawing.Point(343, 4);
-            this.ckM_SearchControl3.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl3.Name = "ckM_SearchControl3";
             this.ckM_SearchControl3.NameWidth = 600;
             this.ckM_SearchControl3.SearchEnable = true;
@@ -5727,7 +5581,6 @@
             this.ckM_TextBox1.IntegerPart = 0;
             this.ckM_TextBox1.IsCorrectDate = true;
             this.ckM_TextBox1.isEnterKeyDown = false;
-            this.ckM_TextBox1.IsFirstTime = true;
             this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
@@ -5760,7 +5613,7 @@
             this.TxtRemark1.Name = "TxtRemark1";
             this.TxtRemark1.RowCount = 5;
             this.TxtRemark1.Size = new System.Drawing.Size(650, 48);
-            this.TxtRemark1.TabIndex = 23;
+            this.TxtRemark1.TabIndex = 24;
             this.TxtRemark1.Text = "bbbbbbb";
             this.TxtRemark1.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Normal;
             // 
@@ -5877,7 +5730,7 @@
             this.TxtRemark2.Name = "TxtRemark2";
             this.TxtRemark2.RowCount = 5;
             this.TxtRemark2.Size = new System.Drawing.Size(650, 47);
-            this.TxtRemark2.TabIndex = 24;
+            this.TxtRemark2.TabIndex = 25;
             this.TxtRemark2.Text = resources.GetString("TxtRemark2.Text");
             this.TxtRemark2.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Normal;
             // 
@@ -5948,7 +5801,6 @@
             this.ckM_SearchControl1.LabelText = "";
             this.ckM_SearchControl1.LabelVisible = false;
             this.ckM_SearchControl1.Location = new System.Drawing.Point(577, 3);
-            this.ckM_SearchControl1.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl1.Name = "ckM_SearchControl1";
             this.ckM_SearchControl1.NameWidth = 600;
             this.ckM_SearchControl1.SearchEnable = true;
@@ -5994,7 +5846,6 @@
             this.ScMotoOrderNo.LabelText = "";
             this.ScMotoOrderNo.LabelVisible = false;
             this.ScMotoOrderNo.Location = new System.Drawing.Point(870, 3);
-            this.ScMotoOrderNo.Margin = new System.Windows.Forms.Padding(0);
             this.ScMotoOrderNo.Name = "ScMotoOrderNo";
             this.ScMotoOrderNo.NameWidth = 600;
             this.ScMotoOrderNo.SearchEnable = true;
@@ -6022,7 +5873,6 @@
             this.ckM_TextBox8.IntegerPart = 0;
             this.ckM_TextBox8.IsCorrectDate = true;
             this.ckM_TextBox8.isEnterKeyDown = false;
-            this.ckM_TextBox8.IsFirstTime = true;
             this.ckM_TextBox8.isMaxLengthErr = false;
             this.ckM_TextBox8.IsNumber = true;
             this.ckM_TextBox8.IsShop = false;
@@ -6050,7 +5900,6 @@
             this.ckM_TextBox18.IntegerPart = 0;
             this.ckM_TextBox18.IsCorrectDate = true;
             this.ckM_TextBox18.isEnterKeyDown = false;
-            this.ckM_TextBox18.IsFirstTime = true;
             this.ckM_TextBox18.isMaxLengthErr = false;
             this.ckM_TextBox18.IsNumber = true;
             this.ckM_TextBox18.IsShop = false;
@@ -6173,7 +6022,6 @@
             this.ckM_TextBox7.IntegerPart = 0;
             this.ckM_TextBox7.IsCorrectDate = true;
             this.ckM_TextBox7.isEnterKeyDown = false;
-            this.ckM_TextBox7.IsFirstTime = true;
             this.ckM_TextBox7.isMaxLengthErr = false;
             this.ckM_TextBox7.IsNumber = true;
             this.ckM_TextBox7.IsShop = false;
@@ -6202,7 +6050,6 @@
             this.ckM_TextBox14.IntegerPart = 0;
             this.ckM_TextBox14.IsCorrectDate = true;
             this.ckM_TextBox14.isEnterKeyDown = false;
-            this.ckM_TextBox14.IsFirstTime = true;
             this.ckM_TextBox14.isMaxLengthErr = false;
             this.ckM_TextBox14.IsNumber = true;
             this.ckM_TextBox14.IsShop = false;
@@ -6231,7 +6078,6 @@
             this.ckM_TextBox19.IntegerPart = 0;
             this.ckM_TextBox19.IsCorrectDate = true;
             this.ckM_TextBox19.isEnterKeyDown = false;
-            this.ckM_TextBox19.IsFirstTime = true;
             this.ckM_TextBox19.isMaxLengthErr = false;
             this.ckM_TextBox19.IsNumber = true;
             this.ckM_TextBox19.IsShop = false;
@@ -6259,7 +6105,6 @@
             this.ckM_TextBox20.IntegerPart = 0;
             this.ckM_TextBox20.IsCorrectDate = true;
             this.ckM_TextBox20.isEnterKeyDown = false;
-            this.ckM_TextBox20.IsFirstTime = true;
             this.ckM_TextBox20.isMaxLengthErr = false;
             this.ckM_TextBox20.IsNumber = true;
             this.ckM_TextBox20.IsShop = false;
@@ -6347,7 +6192,6 @@
             this.ckM_TextBox9.IntegerPart = 0;
             this.ckM_TextBox9.IsCorrectDate = true;
             this.ckM_TextBox9.isEnterKeyDown = false;
-            this.ckM_TextBox9.IsFirstTime = true;
             this.ckM_TextBox9.isMaxLengthErr = false;
             this.ckM_TextBox9.IsNumber = true;
             this.ckM_TextBox9.IsShop = false;

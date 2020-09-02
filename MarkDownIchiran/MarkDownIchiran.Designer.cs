@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -247,6 +248,7 @@
             this.txtCostingDate1.AllowMinus = false;
             this.txtCostingDate1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtCostingDate1.BackColor = System.Drawing.Color.White;
+            this.txtCostingDate1.BorderColor = false;
             this.txtCostingDate1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCostingDate1.ClientColor = System.Drawing.Color.White;
             this.txtCostingDate1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -371,6 +373,7 @@
             this.txtCostingDate2.AllowMinus = false;
             this.txtCostingDate2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtCostingDate2.BackColor = System.Drawing.Color.White;
+            this.txtCostingDate2.BorderColor = false;
             this.txtCostingDate2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCostingDate2.ClientColor = System.Drawing.Color.White;
             this.txtCostingDate2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -423,7 +426,7 @@
             this.GvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -441,6 +444,14 @@
             this.colComment,
             this.colMarkDownNO,
             this.colStaffCD});
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GvDetail.DefaultCellStyle = dataGridViewCellStyle7;
             this.GvDetail.EnableHeadersVisualStyles = false;
             this.GvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvDetail.Location = new System.Drawing.Point(12, 210);
@@ -455,6 +466,7 @@
             this.GvDetail.UseRowNo = true;
             this.GvDetail.UseSetting = true;
             this.GvDetail.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvDetail_CellDoubleClick);
+            this.GvDetail.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvDetail_CellEnter);
             // 
             // colVendorCD
             // 
@@ -602,6 +614,7 @@
             this.txtPurchaseDate2.AllowMinus = false;
             this.txtPurchaseDate2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPurchaseDate2.BackColor = System.Drawing.Color.White;
+            this.txtPurchaseDate2.BorderColor = false;
             this.txtPurchaseDate2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPurchaseDate2.ClientColor = System.Drawing.Color.White;
             this.txtPurchaseDate2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -649,6 +662,7 @@
             this.txtPurchaseDate1.AllowMinus = false;
             this.txtPurchaseDate1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPurchaseDate1.BackColor = System.Drawing.Color.White;
+            this.txtPurchaseDate1.BorderColor = false;
             this.txtPurchaseDate1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPurchaseDate1.ClientColor = System.Drawing.Color.White;
             this.txtPurchaseDate1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;

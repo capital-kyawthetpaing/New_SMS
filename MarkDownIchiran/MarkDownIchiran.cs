@@ -97,29 +97,15 @@ namespace MarkDownIchiran
 
                 //コンボボックス初期化
                 string ymd = bbl.GetDate();
-                mibl = new MarkDownIchiran_BL();
                 CboStoreCD.Bind(ymd);
 
+                mibl = new MarkDownIchiran_BL();
                 ckM_Message1.TextAlign = ContentAlignment.TopLeft;
                 ckM_Message2.TextAlign = ContentAlignment.TopLeft;
 
                 //画面クリア
                 Scr_Clr(0);
-
-                //スタッフマスター(M_Staff)に存在すること
-                //[M_Staff]
-                M_Staff_Entity mse = new M_Staff_Entity
-                {
-                    StaffCD = InOperatorCD,
-                    ChangeDate = mibl.GetDate()
-                };
-                Staff_BL bl = new Staff_BL();
-                bool ret = bl.M_Staff_Select(mse);
-                if (ret)
-                {
-                    CboStoreCD.SelectedValue = mse.StoreCD;
-                }
-
+                
                 detailControls[(int)EIndex.VendorCD].Focus(); 
             }
             catch (Exception ex)
@@ -130,17 +116,7 @@ namespace MarkDownIchiran
 
             }
         }
-        private void Bind(CKM_Controls.CKM_ComboBox combo, int kbn = 0)
-        {
-            DenominationKBN_BL dbl = new DenominationKBN_BL();
-            M_DenominationKBN_Entity me = new M_DenominationKBN_Entity();
-            if (kbn.Equals(0))
-                me.SystemKBN = "2";
-
-            DataTable dtNyukinhouhou = dbl.BindKbn(me, kbn);
-            BindCombo(combo, "DenominationCD", "DenominationName", dtNyukinhouhou);
-            ;
-        }
+        
         private void BindCombo(CKM_Controls.CKM_ComboBox combo, string key, string value, DataTable dt)
         {
             DataRow dr = dt.NewRow();
@@ -172,7 +148,26 @@ namespace MarkDownIchiran
                 
             }
         }
-        
+
+        private void InitScr()
+        {
+            string ymd = bbl.GetDate();
+
+            //スタッフマスター(M_Staff)に存在すること
+            //[M_Staff]
+            M_Staff_Entity mse = new M_Staff_Entity
+            {
+                StaffCD = InOperatorCD,
+                ChangeDate = ymd
+            };
+            Staff_BL bl = new Staff_BL();
+            bool ret = bl.M_Staff_Select(mse);
+            if (ret)
+            {
+                CboStoreCD.SelectedValue = mse.StoreCD;
+            }
+        }
+
         /// <summary>
         /// コードチェック
         /// </summary>
@@ -180,6 +175,11 @@ namespace MarkDownIchiran
         /// <returns></returns>
         private bool CheckDetail(int index)
         {
+            if (detailControls[index].Enabled == false)
+            {
+                return true;
+            }
+
             if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
             {
                 if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
@@ -259,18 +259,23 @@ namespace MarkDownIchiran
                 case (int)EIndex.CostingDateTo:
                 case (int)EIndex.PurchaseDateFrom:
                 case (int)EIndex.PurchaseDateTo:
-                    //入力不可の場合、チェックなし
-                    if (!detailControls[index].Enabled)
+                    // 必須チェック
+                    if ((ckM_NotAccount.Checked　&& index == (int)EIndex.CostingDateTo)
+                        || (ckM_Accounted.Checked && index == (int)EIndex.PurchaseDateTo))
                     {
-                        return true;
+                        if (!RequireCheck(new Control[] { detailControls[index] }))
+                        {
+                            return false;
+                        }
                     }
-
-                    //入力無くても良い(It is not necessary to input)
-                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    else
                     {
-                        return true;
+                        if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                        {
+                            return true;
+                        }
                     }
-
+                    
                     detailControls[index].Text = bbl.FormatDate(detailControls[index].Text);
 
                     //日付として正しいこと(Be on the correct date)Ｅ１０３
@@ -363,7 +368,6 @@ namespace MarkDownIchiran
                 GvDetail.Enabled = true;
                 GvDetail.Focus();
 
-                BtnAdd.Enabled = true;
                 BtnExcel.Enabled = true;
             }
             else
@@ -447,23 +451,23 @@ namespace MarkDownIchiran
                     for (int row = 0; row <  rowMaxNum; row++)
                     {
                         v[row, (int)EColNo.StoreCD] = CboStoreCD.SelectedValue.ToString();
-                        v[row, (int)EColNo.StoreName] = CboStoreCD.SelectedText.ToString();
+                        v[row, (int)EColNo.StoreName] = CboStoreCD.Text;
                         v[row, (int)EColNo.VendorCD] = dgv.Rows[row].Cells[(int)DColNo.VendorCD].Value.ToString();
                         v[row, (int)EColNo.VendorName] = dgv.Rows[row].Cells[(int)DColNo.VendorName].Value.ToString();
                         v[row, (int)EColNo.StaffCD] = dgv.Rows[row].Cells[(int)DColNo.StaffCD].Value.ToString();
                         v[row, (int)EColNo.StaffName] = dgv.Rows[row].Cells[(int)DColNo.StaffName].Value.ToString();
                         if (dgv.Rows[row].Cells[(int)DColNo.MarkDownDate].Value != null)
                         {
-                            v[row, (int)EColNo.MarkDownDate] = dgv.Rows[row].Cells[(int)DColNo.MarkDownDate].Value.ToString();
+                            v[row, (int)EColNo.MarkDownDate] = string.Format("{0:yyyy/MM/dd}", dgv.Rows[row].Cells[(int)DColNo.MarkDownDate].Value);
                         }
                         if (dgv.Rows[row].Cells[(int)DColNo.CostingDate].Value != null)
                         {
-                            v[row, (int)EColNo.CostingDate] = dgv.Rows[row].Cells[(int)DColNo.CostingDate].Value.ToString();
+                            v[row, (int)EColNo.CostingDate] = string.Format("{0:yyyy/MM/dd}", dgv.Rows[row].Cells[(int)DColNo.CostingDate].Value);
                         }
-                        v[row, (int)EColNo.MarkDownGaku] = bbl.Z_SetStr(dgv.Rows[row].Cells[(int)DColNo.MarkDownGaku].Value);
+                        v[row, (int)EColNo.MarkDownGaku] = string.Format("{0:###0}", dgv.Rows[row].Cells[(int)DColNo.MarkDownGaku].Value);
                         if (dgv.Rows[row].Cells[(int)DColNo.PurchaseDate].Value != null)
                         {
-                            v[row, (int)EColNo.PurchaseDate] = dgv.Rows[row].Cells[(int)DColNo.PurchaseDate].Value.ToString();
+                            v[row, (int)EColNo.PurchaseDate] = string.Format("{0:yyyy/MM/dd}", dgv.Rows[row].Cells[(int)DColNo.PurchaseDate].Value);
                         }
                         if (dgv.Rows[row].Cells[(int)DColNo.Comment].Value != null)
                         {
@@ -561,11 +565,17 @@ namespace MarkDownIchiran
                     }
                 }
 
-                BtnAdd.Enabled = false;
+                BtnAdd.Enabled = true;
                 BtnExcel.Enabled = false;
 
+                // 初期表示
+                this.InitScr();
+
             }
-            
+
+            GvDetail.DataSource = null;
+            GvDetail.RowCount = 0;
+
         }
 
         private void ExecMarkDownNyuuryoku(string markdownNo)
@@ -580,7 +590,14 @@ namespace MarkDownIchiran
                 if (System.IO.File.Exists(filePath))
                 {
                     string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + markdownNo;
-                    System.Diagnostics.Process.Start(filePath, cmdLine);
+                    System.Diagnostics.Process p = System.Diagnostics.Process.Start(filePath, cmdLine);
+                    p.WaitForExit();
+
+                    // 再表示
+                    if (!string.IsNullOrWhiteSpace(markdownNo))
+                    {
+                        this.ExecDisp();
+                    }             
                 }
 
                 else
@@ -616,9 +633,11 @@ namespace MarkDownIchiran
                 case 5: //F6:キャンセル
                     {
                         //Ｑ００４				
-                        if (bbl.ShowMessage("Q004") != DialogResult.Yes)
+                        if (bbl.ShowMessage("Q004") != DialogResult.Yes)                       
                             return;
 
+                        this.Scr_Clr(0);
+                        detailControls[(int)EIndex.VendorCD].Focus();
                         break;
                     }
                 case 9: //F10:詳細
@@ -653,6 +672,9 @@ namespace MarkDownIchiran
             try
             {
                 previousCtrl = this.ActiveControl;
+
+                // 詳細ボタン使用不可
+                SetFuncKey(this, 9, false);
             }
 
             catch (Exception ex)
@@ -798,9 +820,13 @@ namespace MarkDownIchiran
             }
         }
 
+
         #endregion
 
-
+        private void GvDetail_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            SetFuncKey(this, 9, true);
+        }
     }
 }
 
