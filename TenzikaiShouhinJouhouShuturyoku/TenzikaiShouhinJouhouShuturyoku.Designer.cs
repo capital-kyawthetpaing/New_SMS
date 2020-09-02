@@ -439,6 +439,7 @@
             this.ClientSize = new System.Drawing.Size(1713, 961);
             this.Controls.Add(this.panelDetail);
             this.F11Visible = false;
+            this.F12Visible = false;
             this.F2Visible = false;
             this.F3Visible = false;
             this.F4Visible = false;
