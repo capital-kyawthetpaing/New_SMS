@@ -91,6 +91,7 @@
             this.txtDiscount.AllowMinus = false;
             this.txtDiscount.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtDiscount.BorderColor = false;
             this.txtDiscount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDiscount.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtDiscount.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -114,6 +115,7 @@
             this.txtDiscount.TabIndex = 0;
             this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtDiscount.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtDiscount.UseColorSizMode = false;
             // 
             // ckmShop_Label7
             // 
@@ -137,6 +139,7 @@
             this.txtPoint.AllowMinus = false;
             this.txtPoint.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtPoint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtPoint.BorderColor = false;
             this.txtPoint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPoint.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPoint.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -161,6 +164,7 @@
             this.txtPoint.Text = "1000";
             this.txtPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPoint.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtPoint.UseColorSizMode = false;
             // 
             // ckmShop_Label9
             // 
@@ -201,6 +205,7 @@
             this.txtKake.AllowMinus = false;
             this.txtKake.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtKake.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtKake.BorderColor = false;
             this.txtKake.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKake.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtKake.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -225,6 +230,7 @@
             this.txtKake.Text = "1000";
             this.txtKake.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtKake.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtKake.UseColorSizMode = false;
             // 
             // btnRyosyusyo
             // 
@@ -304,6 +310,7 @@
             this.txtCash.AllowMinus = false;
             this.txtCash.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtCash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtCash.BorderColor = false;
             this.txtCash.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCash.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtCash.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -328,6 +335,7 @@
             this.txtCash.Text = "1000";
             this.txtCash.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCash.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtCash.UseColorSizMode = false;
             // 
             // lblHenpin
             // 
@@ -497,6 +505,7 @@
             this.txtOther1.AllowMinus = false;
             this.txtOther1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtOther1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtOther1.BorderColor = false;
             this.txtOther1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOther1.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtOther1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -521,12 +530,14 @@
             this.txtOther1.Text = "1000";
             this.txtOther1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtOther1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtOther1.UseColorSizMode = false;
             // 
             // txtOther2
             // 
             this.txtOther2.AllowMinus = false;
             this.txtOther2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtOther2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtOther2.BorderColor = false;
             this.txtOther2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOther2.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtOther2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -551,12 +562,14 @@
             this.txtOther2.Text = "1000";
             this.txtOther2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtOther2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtOther2.UseColorSizMode = false;
             // 
             // txtCard
             // 
             this.txtCard.AllowMinus = false;
             this.txtCard.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtCard.BorderColor = false;
             this.txtCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCard.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtCard.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -581,12 +594,14 @@
             this.txtCard.Text = "1000";
             this.txtCard.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCard.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtCard.UseColorSizMode = false;
             // 
             // txtAzukari
             // 
             this.txtAzukari.AllowMinus = false;
             this.txtAzukari.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtAzukari.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtAzukari.BorderColor = false;
             this.txtAzukari.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAzukari.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtAzukari.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -611,6 +626,7 @@
             this.txtAzukari.Text = "1000";
             this.txtAzukari.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtAzukari.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtAzukari.UseColorSizMode = false;
             // 
             // ckmShop_Label5
             // 
@@ -639,7 +655,7 @@
             this.cboDenominationName1.ComboAlign = CKM_Controls.CKMShop_ComboBox.Align.center;
             this.cboDenominationName1.Ctrl_Byte = CKM_Controls.CKMShop_ComboBox.Bytes.半全角;
             this.cboDenominationName1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboDenominationName1.Font = new System.Drawing.Font("Meiryo UI", 26F);
+            this.cboDenominationName1.Font = new System.Drawing.Font("MS Gothic", 26F);
             this.cboDenominationName1.FontSize_ = 26F;
             this.cboDenominationName1.FormattingEnabled = true;
             this.cboDenominationName1.IntegralHeight = false;
@@ -665,7 +681,7 @@
             this.cboDenominationName2.ComboAlign = CKM_Controls.CKMShop_ComboBox.Align.center;
             this.cboDenominationName2.Ctrl_Byte = CKM_Controls.CKMShop_ComboBox.Bytes.半全角;
             this.cboDenominationName2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboDenominationName2.Font = new System.Drawing.Font("Meiryo UI", 26F);
+            this.cboDenominationName2.Font = new System.Drawing.Font("MS Gothic", 26F);
             this.cboDenominationName2.FontSize_ = 26F;
             this.cboDenominationName2.FormattingEnabled = true;
             this.cboDenominationName2.IntegralHeight = false;
@@ -691,7 +707,7 @@
             this.cboCardDenominationCD.ComboAlign = CKM_Controls.CKMShop_ComboBox.Align.center;
             this.cboCardDenominationCD.Ctrl_Byte = CKM_Controls.CKMShop_ComboBox.Bytes.半全角;
             this.cboCardDenominationCD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboCardDenominationCD.Font = new System.Drawing.Font("Meiryo UI", 26F);
+            this.cboCardDenominationCD.Font = new System.Drawing.Font("MS Gothic", 26F);
             this.cboCardDenominationCD.FontSize_ = 26F;
             this.cboCardDenominationCD.FormattingEnabled = true;
             this.cboCardDenominationCD.IntegralHeight = false;
@@ -750,6 +766,7 @@
             this.txtMaeuke.AllowMinus = false;
             this.txtMaeuke.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtMaeuke.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtMaeuke.BorderColor = false;
             this.txtMaeuke.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMaeuke.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtMaeuke.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -774,6 +791,7 @@
             this.txtMaeuke.Text = "1000";
             this.txtMaeuke.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtMaeuke.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtMaeuke.UseColorSizMode = false;
             // 
             // ckmShop_Label6
             // 

@@ -697,7 +697,7 @@ namespace CKM_Controls
             this.BackgroundColor = this.GridColor = Color.FromArgb(198, 224, 180);
 
             this.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(221, 235, 247);
-            this.RowHeadersVisible = true;
+           // this.RowHeadersVisible = true;
 
             this.AutoGenerateColumns = false;
             this.ScrollBars = System.Windows.Forms.ScrollBars.Both;

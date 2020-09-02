@@ -161,10 +161,10 @@ namespace DL
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                 { "@ITemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mie.ITemCD } },
-                 { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = mie.ChangeDate } },
+                 { "@Item", new ValuePair { value1 = SqlDbType.VarChar, value2 = mie.ITemCD } },
+                 { "@StartDate", new ValuePair { value1 = SqlDbType.Date, value2 = mie.ChangeDate } },
             };
-            return SelectData(dic, "M_ITem_SelectForSKUCDHenkou01");
+            return SelectData(dic, "M_Sku_henkouSelect");
         }
 
         public DataTable M_Item_SelectForSKSMasterUpdate()
@@ -187,6 +187,25 @@ namespace DL
                 { "@xmlMasterSKU", new ValuePair { value1 = SqlDbType.VarChar, value2 = xmlMasterSKU} },
             };
 
+            return InsertUpdateDeleteData(dic, sp);
+        }
+
+        public bool SKUUpdate(string xml, string xml_1, string OPD, string OPT, string OPTR, string PGM, string PC, string OPM, string KI)
+        {
+            string sp = "M_SKUHenKou";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                 { "@OPTDate", new ValuePair { value1 = SqlDbType.Date, value2 = OPD} },
+                  { "@OPTTime", new ValuePair { value1 = SqlDbType.Time, value2 = OPT} },
+                   { "@InsertOPT", new ValuePair { value1 = SqlDbType.VarChar, value2 = OPTR} },
+                    { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = PGM} },
+                     { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = PC} },
+                  { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = OPM} },
+                  { "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = KI} },
+                { "@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = xml} },
+                 { "@xml_1", new ValuePair { value1 = SqlDbType.VarChar, value2 = xml_1} },
+            };
             return InsertUpdateDeleteData(dic, sp);
         }
     }

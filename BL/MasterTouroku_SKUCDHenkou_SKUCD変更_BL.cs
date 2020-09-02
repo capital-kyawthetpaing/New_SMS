@@ -26,7 +26,10 @@ namespace BL
         {
             return midl.M_ITem_SelectForSKUCDHenkou01(mie);
         }
-
+        public bool SKUUpdate(string xml, string xml_1,string OPD, string OPT, string OPTR, string PGM, string PC, string OPM, string KI)
+        {
+            return midl.SKUUpdate(xml,xml_1,OPD,OPT, OPTR, PGM,PC,OPM,KI);
+        }
 
 
     }

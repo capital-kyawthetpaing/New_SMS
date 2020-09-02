@@ -273,6 +273,16 @@
             this.ckM_Button4 = new CKM_Controls.CKM_Button();
             this.ckM_Button1 = new CKM_Controls.CKM_Button();
             this.ckM_Button2 = new CKM_Controls.CKM_Button();
+            this.LBL_DEDAY_9 = new System.Windows.Forms.Label();
+            this.LBL_DEDAY_8 = new System.Windows.Forms.Label();
+            this.LBL_DEDAY_7 = new System.Windows.Forms.Label();
+            this.LBL_DEDAY_6 = new System.Windows.Forms.Label();
+            this.LBL_DEDAY_5 = new System.Windows.Forms.Label();
+            this.LBL_DEDAY_4 = new System.Windows.Forms.Label();
+            this.LBL_DEDAY_3 = new System.Windows.Forms.Label();
+            this.LBL_DEDAY_2 = new System.Windows.Forms.Label();
+            this.LBL_DEDAY_1 = new System.Windows.Forms.Label();
+            this.LBL_DEDAY_0 = new System.Windows.Forms.Label();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.Pnl_Body.SuspendLayout();
@@ -594,6 +604,16 @@
             // 
             this.Pnl_Body.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.Pnl_Body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Pnl_Body.Controls.Add(this.LBL_DEDAY_9);
+            this.Pnl_Body.Controls.Add(this.LBL_DEDAY_8);
+            this.Pnl_Body.Controls.Add(this.LBL_DEDAY_7);
+            this.Pnl_Body.Controls.Add(this.LBL_DEDAY_6);
+            this.Pnl_Body.Controls.Add(this.LBL_DEDAY_5);
+            this.Pnl_Body.Controls.Add(this.LBL_DEDAY_4);
+            this.Pnl_Body.Controls.Add(this.LBL_DEDAY_3);
+            this.Pnl_Body.Controls.Add(this.LBL_DEDAY_2);
+            this.Pnl_Body.Controls.Add(this.LBL_DEDAY_1);
+            this.Pnl_Body.Controls.Add(this.LBL_DEDAY_0);
             this.Pnl_Body.Controls.Add(this.IMT_GYONO_9);
             this.Pnl_Body.Controls.Add(this.IMT_GYONO_8);
             this.Pnl_Body.Controls.Add(this.IMT_GYONO_7);
@@ -5793,6 +5813,126 @@
             this.ckM_Button2.UseVisualStyleBackColor = false;
             this.ckM_Button2.Click += new System.EventHandler(this.Btn_Tekiyo_Click);
             // 
+            // LBL_DEDAY_9
+            // 
+            this.LBL_DEDAY_9.BackColor = System.Drawing.Color.Silver;
+            this.LBL_DEDAY_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LBL_DEDAY_9.Location = new System.Drawing.Point(241, 342);
+            this.LBL_DEDAY_9.Name = "LBL_DEDAY_9";
+            this.LBL_DEDAY_9.Size = new System.Drawing.Size(103, 19);
+            this.LBL_DEDAY_9.TabIndex = 752;
+            this.LBL_DEDAY_9.Tag = "9";
+            this.LBL_DEDAY_9.Text = "10";
+            this.LBL_DEDAY_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LBL_DEDAY_8
+            // 
+            this.LBL_DEDAY_8.BackColor = System.Drawing.Color.Silver;
+            this.LBL_DEDAY_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LBL_DEDAY_8.Location = new System.Drawing.Point(241, 304);
+            this.LBL_DEDAY_8.Name = "LBL_DEDAY_8";
+            this.LBL_DEDAY_8.Size = new System.Drawing.Size(103, 19);
+            this.LBL_DEDAY_8.TabIndex = 751;
+            this.LBL_DEDAY_8.Tag = "8";
+            this.LBL_DEDAY_8.Text = "9";
+            this.LBL_DEDAY_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LBL_DEDAY_7
+            // 
+            this.LBL_DEDAY_7.BackColor = System.Drawing.Color.Silver;
+            this.LBL_DEDAY_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LBL_DEDAY_7.Location = new System.Drawing.Point(241, 266);
+            this.LBL_DEDAY_7.Name = "LBL_DEDAY_7";
+            this.LBL_DEDAY_7.Size = new System.Drawing.Size(103, 19);
+            this.LBL_DEDAY_7.TabIndex = 750;
+            this.LBL_DEDAY_7.Tag = "7";
+            this.LBL_DEDAY_7.Text = "8";
+            this.LBL_DEDAY_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LBL_DEDAY_6
+            // 
+            this.LBL_DEDAY_6.BackColor = System.Drawing.Color.Silver;
+            this.LBL_DEDAY_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LBL_DEDAY_6.Location = new System.Drawing.Point(241, 228);
+            this.LBL_DEDAY_6.Name = "LBL_DEDAY_6";
+            this.LBL_DEDAY_6.Size = new System.Drawing.Size(103, 19);
+            this.LBL_DEDAY_6.TabIndex = 749;
+            this.LBL_DEDAY_6.Tag = "6";
+            this.LBL_DEDAY_6.Text = "7";
+            this.LBL_DEDAY_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LBL_DEDAY_5
+            // 
+            this.LBL_DEDAY_5.BackColor = System.Drawing.Color.Silver;
+            this.LBL_DEDAY_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LBL_DEDAY_5.Location = new System.Drawing.Point(241, 190);
+            this.LBL_DEDAY_5.Name = "LBL_DEDAY_5";
+            this.LBL_DEDAY_5.Size = new System.Drawing.Size(103, 19);
+            this.LBL_DEDAY_5.TabIndex = 748;
+            this.LBL_DEDAY_5.Tag = "5";
+            this.LBL_DEDAY_5.Text = "6";
+            this.LBL_DEDAY_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LBL_DEDAY_4
+            // 
+            this.LBL_DEDAY_4.BackColor = System.Drawing.Color.Silver;
+            this.LBL_DEDAY_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LBL_DEDAY_4.Location = new System.Drawing.Point(241, 152);
+            this.LBL_DEDAY_4.Name = "LBL_DEDAY_4";
+            this.LBL_DEDAY_4.Size = new System.Drawing.Size(103, 19);
+            this.LBL_DEDAY_4.TabIndex = 747;
+            this.LBL_DEDAY_4.Tag = "4";
+            this.LBL_DEDAY_4.Text = "5";
+            this.LBL_DEDAY_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LBL_DEDAY_3
+            // 
+            this.LBL_DEDAY_3.BackColor = System.Drawing.Color.Silver;
+            this.LBL_DEDAY_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LBL_DEDAY_3.Location = new System.Drawing.Point(241, 114);
+            this.LBL_DEDAY_3.Name = "LBL_DEDAY_3";
+            this.LBL_DEDAY_3.Size = new System.Drawing.Size(103, 19);
+            this.LBL_DEDAY_3.TabIndex = 746;
+            this.LBL_DEDAY_3.Tag = "3";
+            this.LBL_DEDAY_3.Text = "4";
+            this.LBL_DEDAY_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LBL_DEDAY_2
+            // 
+            this.LBL_DEDAY_2.BackColor = System.Drawing.Color.Silver;
+            this.LBL_DEDAY_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LBL_DEDAY_2.Location = new System.Drawing.Point(241, 76);
+            this.LBL_DEDAY_2.Name = "LBL_DEDAY_2";
+            this.LBL_DEDAY_2.Size = new System.Drawing.Size(103, 19);
+            this.LBL_DEDAY_2.TabIndex = 745;
+            this.LBL_DEDAY_2.Tag = "2";
+            this.LBL_DEDAY_2.Text = "3";
+            this.LBL_DEDAY_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LBL_DEDAY_1
+            // 
+            this.LBL_DEDAY_1.BackColor = System.Drawing.Color.Silver;
+            this.LBL_DEDAY_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LBL_DEDAY_1.Location = new System.Drawing.Point(241, 38);
+            this.LBL_DEDAY_1.Name = "LBL_DEDAY_1";
+            this.LBL_DEDAY_1.Size = new System.Drawing.Size(103, 19);
+            this.LBL_DEDAY_1.TabIndex = 744;
+            this.LBL_DEDAY_1.Tag = "1";
+            this.LBL_DEDAY_1.Text = "2";
+            this.LBL_DEDAY_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LBL_DEDAY_0
+            // 
+            this.LBL_DEDAY_0.BackColor = System.Drawing.Color.Silver;
+            this.LBL_DEDAY_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LBL_DEDAY_0.Location = new System.Drawing.Point(241, 0);
+            this.LBL_DEDAY_0.Name = "LBL_DEDAY_0";
+            this.LBL_DEDAY_0.Size = new System.Drawing.Size(103, 19);
+            this.LBL_DEDAY_0.TabIndex = 743;
+            this.LBL_DEDAY_0.Tag = "0";
+            this.LBL_DEDAY_0.Text = "1";
+            this.LBL_DEDAY_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ShukkaShijiTouroku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -6077,6 +6217,16 @@
         private System.Windows.Forms.Button BTN_Detail2_1;
         private System.Windows.Forms.Button BTN_Detail2_0;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label LBL_DEDAY_9;
+        private System.Windows.Forms.Label LBL_DEDAY_8;
+        private System.Windows.Forms.Label LBL_DEDAY_7;
+        private System.Windows.Forms.Label LBL_DEDAY_6;
+        private System.Windows.Forms.Label LBL_DEDAY_5;
+        private System.Windows.Forms.Label LBL_DEDAY_4;
+        private System.Windows.Forms.Label LBL_DEDAY_3;
+        private System.Windows.Forms.Label LBL_DEDAY_2;
+        private System.Windows.Forms.Label LBL_DEDAY_1;
+        private System.Windows.Forms.Label LBL_DEDAY_0;
     }
 }
 

@@ -1130,6 +1130,7 @@ namespace ShukkaSiziTourokuFromJuchuu
                     mGrid.g_DArray[i].InstructionKBN = Convert.ToInt16(row["ShukkaShubetsu"]);
                     mGrid.g_DArray[i].InstructionRows = Convert.ToInt16(row["InstructionRows"]);
                     mGrid.g_DArray[i].DeliveryPlanNO = row["DeliveryPlanNO"].ToString();
+                    mGrid.g_DArray[i].CustomerCD = row["CustomerCD"].ToString();    //受注データのみセットされる
                     mGrid.g_DArray[i].Kbn = Convert.ToInt16(row["KBN"]);
                     mGrid.g_DArray[i].Update = 0;
 
@@ -1361,17 +1362,6 @@ namespace ShukkaSiziTourokuFromJuchuu
                         }
                     }
                     break;
-
-                case (int)ClsGridShukka.ColNO.ChkSyukka:
-                    //出荷CheckBoxをONにした場合、(When the shipping CheckBox is turned ON,)
-                    //同一出荷先/出荷予定日の受注明細を集計し、合計税抜受注額を算出する。
-
-                    break;
-
-                case (int)ClsGridShukka.ColNO.ChkUntin:
-                    ChangeCheckUntin(mGrid.g_DArray[row].ChkUntin, row);
-
-                        break;
             }
 
             //配列の内容を画面へセット
@@ -1982,8 +1972,23 @@ namespace ShukkaSiziTourokuFromJuchuu
                 w_ActCtl = (Control)sender;
                 w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
 
+                if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int CL, out int w_CtlRow) == false)
+                {
+                    return;
+                }
 
+                switch (CL)
+                {
+                    case (int)ClsGridShukka.ColNO.ChkSyukka:
+                        if(mGrid.g_DArray[w_Row].ChkSyukka)
+                        ChangeCheckSyukka(w_Row);
+                        break;
 
+                    case (int)ClsGridShukka.ColNO.ChkUntin:
+                        ChangeCheckUntin(mGrid.g_DArray[w_Row].ChkUntin, w_Row);
+
+                        break;
+                }
             }
             catch (Exception ex)
             {
@@ -2114,6 +2119,45 @@ namespace ShukkaSiziTourokuFromJuchuu
                     break;
             }
         }
+        private void ChangeCheckSyukka(int row)
+        {
+            string syukkaName = mGrid.g_DArray[row].DeliveryName;
+            string syukkaDate = mGrid.g_DArray[row].DeliveryPlanDate;
+            decimal sum = 0;
+
+            //出荷CheckBoxをONにした場合、(When the shipping CheckBox is turned ON,)
+            //同一出荷先/出荷予定日の受注明細を集計し、合計税抜受注額を算出する。
+            for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+            {
+                if (mGrid.g_DArray[RW].DeliveryName == syukkaName && mGrid.g_DArray[RW].DeliveryPlanDate == syukkaDate)
+                {
+                    sum += bbl.Z_Set(mGrid.g_DArray[RW].Hanbaigaku);
+                }
+            }
+
+            //[M_Customer_Select]
+            M_Customer_Entity mce = new M_Customer_Entity
+            {
+                CustomerCD = mGrid.g_DArray[row].CustomerCD,
+                ChangeDate = syukkaDate
+            };
+            Customer_BL sbl = new Customer_BL();
+            bool ret = sbl.M_Customer_Select(mce);
+
+            if (ret)
+            {
+                //上記算出金額　≦	FareLevel（右のSELECTより取得）の場合、	
+                //運賃明細追加CheckBoxをON(Turn on Check Box to add fare details)
+                if (sum <= bbl.Z_Set(mce.FareLevel))
+                {
+                    mGrid.g_DArray[row].ChkUntin = true;
+                    return;
+                }
+            }
+
+            mGrid.g_DArray[row].ChkUntin = false;
+        }
+
         private void ChangeCheckUntin(bool check, int row)
         {
             string syukkaName = mGrid.g_DArray[row].DeliveryName;
