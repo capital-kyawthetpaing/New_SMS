@@ -423,6 +423,7 @@
     <Content Include="StoreProcedure\M_Site_Select.sql" />
     <Content Include="StoreProcedure\M_Site_SelectByItemCD.sql" />
     <Content Include="StoreProcedure\M_SKUHenKou.sql" />
+    <Content Include="StoreProcedure\M_SKUHenkou_Insert.sql" />
     <Content Include="StoreProcedure\M_SKULastCost_Select.sql" />
     <Content Include="StoreProcedure\M_SKUMakerVendor_Select.sql" />
     <Content Include="StoreProcedure\M_SKUPrice_DataSelect.Sql" />
