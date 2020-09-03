@@ -273,8 +273,9 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 SalePriceOutTaxT = TB_PriceOutTaxT.Text,
                 InsertOperator = InOperatorCD,
                 PC = InPcID,
+                ProcessMode = "",
                 ProgramID = InProgramID,
-                Key=InPcID,
+                Key = SC_Tanka.TxtCode.Text + "" + TB_Rate.Text,
             };
 
             return mTSE;
@@ -300,8 +301,6 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 foreach (DataGridViewRow row in GV_Tenzaishohin.Rows)
                 {
                     DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
-                    //string celll = row.Cells["CheckBox"].Value.ToString();
-                    //string cell = chk.ToString();
                     if (chk.Value == "1")
                     {
                         string itemcd = row.Cells["Rate"].Value.ToString();
