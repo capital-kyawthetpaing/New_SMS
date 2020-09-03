@@ -1352,13 +1352,16 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 if (ct.Name.Contains("IMT_STADT_"))
                 {
                     SetMultiColNo(dt);
-                    var StartDate1 = dt.Rows[0]["StartDate"].ToString();
-                    //var IsExist = true; ///(ct.Text) // bll.bdfbedf 
-                    var StartDate = this.Controls.Find("IMT_STADT_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
-                    if (StartDate.Text== StartDate1.ToString())
+                    for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        bbl.ShowMessage("Date exit!!!");
+                        var StartDate1 = dt.Rows[i]["StartDate"].ToString();
+                        var StartDate = this.Controls.Find("IMT_STADT_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
+                        if (StartDate.Text == StartDate1.ToString())
+                        {
+                            bbl.ShowMessage("Date exit!!!");
+                        }
                     }
+                    //var IsExist = true; ///(ct.Text) // bll.bdfbedf 
                 }
             }
                 //    else if (ct.Name.Contains("IMT_ENDDT_"))
@@ -1398,7 +1401,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 MessageBox.Show(ex.Message);
             }
         }
-       
         private void S_SetControlArray()
         {
             mGrid.F_CtrlArray_MK(mGrid.g_MK_Ctl_Col, mGrid.g_MK_Ctl_Row);
