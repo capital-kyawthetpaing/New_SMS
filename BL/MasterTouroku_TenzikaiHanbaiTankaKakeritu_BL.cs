@@ -17,9 +17,10 @@ namespace BL
             return dl.M_TenzikaiShouhin_Select(mTSE);
         }
 
-        public bool InsertUpdate_TenzikaiHanbaiTankaKakeritu(M_TenzikaiShouhin_Entity mTSE, string xml)
+        public bool InsertUpdate_TenzikaiHanbaiTankaKakeritu(M_TenzikaiShouhin_Entity mTSE)
         {
-            return dl.InsertUpdate_TenzikaiHanbaiTankaKakeritu(mTSE, xml);
+            mTSE.xml1 = DataTableToXml(mTSE.dt1);
+            return dl.InsertUpdate_TenzikaiHanbaiTankaKakeritu(mTSE);
         }
     }
 }

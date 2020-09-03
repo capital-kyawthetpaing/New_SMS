@@ -28,12 +28,12 @@ namespace DL
         }
 
 
-        public bool InsertUpdate_TenzikaiHanbaiTankaKakeritu(M_TenzikaiShouhin_Entity mTSE, String xml)
+        public bool InsertUpdate_TenzikaiHanbaiTankaKakeritu(M_TenzikaiShouhin_Entity mTSE)
         {
             string sp = "InsertUpdate_TenzikaiHanbaiTankaKakeritu";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@xml", new ValuePair { value1 =SqlDbType.Xml,value2 = xml } },
+                { "@xml", new ValuePair { value1 =SqlDbType.Xml,value2 = mTSE.xml1 } },
                 { "@TankaCD", new ValuePair { value1 =SqlDbType.VarChar,value2 = mTSE.TanKaCD } },
                 { "@BrandCD", new ValuePair { value1 =SqlDbType.VarChar,value2 = mTSE.BranCDFrom } },
                 { "@SegmentCD", new ValuePair { value1 =SqlDbType.VarChar,value2 = mTSE.SegmentCDFrom } },
