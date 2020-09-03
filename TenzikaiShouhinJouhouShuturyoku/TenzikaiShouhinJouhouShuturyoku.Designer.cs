@@ -300,7 +300,7 @@
             this.cbo_Season.MaxLength = 10;
             this.cbo_Season.MoveNext = true;
             this.cbo_Season.Name = "cbo_Season";
-            this.cbo_Season.Size = new System.Drawing.Size(90, 20);
+            this.cbo_Season.Size = new System.Drawing.Size(100, 20);
             this.cbo_Season.TabIndex = 7;
             // 
             // cbo_Year
@@ -316,7 +316,7 @@
             this.cbo_Year.MaxLength = 10;
             this.cbo_Year.MoveNext = true;
             this.cbo_Year.Name = "cbo_Year";
-            this.cbo_Year.Size = new System.Drawing.Size(90, 20);
+            this.cbo_Year.Size = new System.Drawing.Size(100, 20);
             this.cbo_Year.TabIndex = 6;
             // 
             // scSupplierCD
