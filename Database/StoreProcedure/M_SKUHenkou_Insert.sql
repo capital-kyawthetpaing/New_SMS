@@ -56,7 +56,7 @@ BEGIN
 	insert into D_SKUUpdate(InsertOperator, InsertDateTime, AdminNo,JanCD, NewSKUCD, SKUCD, ChangeDate, DeleteFlag)	select a.InsertOperator, InsertDateTime, AdminNo, JanCD,((NewSKUCD))as NewSKUCD , SKUCD, ChangeDate, DeleteFlg  from 	(select * from #temp where (NewSizeNo  <> SizeNo )or (NewColorNo <> ColorNo)) a
 
 	--M_Item
-    select  top 1  mi.*  into #ti from #temp t left outer join M_Item mi 
+    select  top 1  mi.*,t.ChangeDate as NewChangeDate  into #ti from #temp t left outer join M_Item mi 
   on lEFT(t.NewSKUCD,LEN(t.NewSKUCD)-8) = mi.ItemCD 
     insert into M_Item
   (
@@ -151,7 +151,7 @@ UpdateDateTime
   )
   select 
   ItemCD,
-  (select top 1 ChangeDate  from #ti),
+  (select top 1 NewChangeDate  from #ti),
   VariousFLG,							
 ITemName	,						
 KanaName,							

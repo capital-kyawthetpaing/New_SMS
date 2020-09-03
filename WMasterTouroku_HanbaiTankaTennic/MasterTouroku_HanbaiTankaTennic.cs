@@ -875,8 +875,32 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     dt.Rows.Add();
                 }
             }
-            var dtnow = DateTime.Now.ToString();
 
+            foreach (DataRow dr in dt.Rows)
+            {
+                if ( !string.IsNullOrEmpty(dr["SKUCD"].ToString()) )
+                {
+                    if (string.IsNullOrEmpty(dr["StartChangeDate"].ToString()))
+                    {
+                        //Show Error Empty
+                    }
+                    else
+                    {
+                        M_SKUPrice_Entity mse = new M_SKUPrice_Entity
+                        {
+                            SKUCD = dr["SKUCD"].ToString(),
+                        };
+                        var dt_Exist = spb.M_SKUPrice_SelectData(mse);
+                        if (dt_Exist.Rows.Count > 0)
+                        {
+                            return null;
+                        }
+                    }
+                }
+            }
+
+            var dtnow = DateTime.Now.ToString();
+            #region Exceed
             try
             {
                 foreach (DataRow r in dt.Rows)
@@ -1015,7 +1039,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 var msg = ex.Message;
 
             }
-
+            #region exceed
             return result;
         }
         private string Getint(string val)
@@ -1896,13 +1920,19 @@ namespace WMasterTouroku_HanbaiTankaTennic
         private void InsertUpdate(int mode)
         {
             var dt = GetdatafromArray();
-            string Xml = spb.DataTableToXml(dt);
-            string StartDate = dt.Rows[0]["StartChangeDate"].ToString();
-            if (dt.Rows.Count >= StartDate.Length)
+            if (dt == null)
             {
-                bbl.ShowMessage("Date Exist!!");
-                IMT_ENDDT_0.Focus();
+                bbl.ShowMessage("E105");  // Start date exist check
+                PreviousCtrl.Focus();
+                return;
             }
+            string Xml = spb.DataTableToXml(dt);
+           // string StartDate = dt.Rows[0]["StartChangeDate"].ToString();
+            //if (dt.Rows.Count >= StartDate.Length)
+            //{
+            //    bbl.ShowMessage("Date Exist!!");
+            //    IMT_ENDDT_0.Focus();
+            //}
             if (spb.M_SKUPrice_Insert_Update(mse, Xml, mode))
             {
                  spb.ShowMessage("I101");

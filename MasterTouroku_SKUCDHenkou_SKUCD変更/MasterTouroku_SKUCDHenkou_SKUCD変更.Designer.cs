@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtDate1 = new CKM_Controls.CKM_TextBox();
             this.txtRevDate = new CKM_Controls.CKM_TextBox();
             this.F11Display = new CKM_Controls.CKM_Button();
@@ -723,6 +724,8 @@
             this.panelDetail.Controls.Add(this.lblProductName);
             this.panelDetail.Controls.Add(this.ckM_Label2);
             this.panelDetail.Controls.Add(this.ckM_Label1);
+            this.panelDetail.Controls.Add(this.sn_1);
+            this.panelDetail.Controls.Add(this.cn_1);
             this.panelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDetail.Location = new System.Drawing.Point(0, 180);
             this.panelDetail.Name = "panelDetail";
@@ -735,18 +738,18 @@
             this.ckM_GridView1.AllowUserToDeleteRows = false;
             this.ckM_GridView1.AllowUserToResizeColumns = false;
             this.ckM_GridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.ckM_GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.ckM_GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.ckM_GridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.ckM_GridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ckM_GridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ckM_GridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.ckM_GridView1.ColumnHeadersHeight = 25;
             this.ckM_GridView1.ColumnHeadersVisible = false;
             this.ckM_GridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -770,6 +773,14 @@
             this.Column18,
             this.Column19,
             this.Column20});
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ckM_GridView1.DefaultCellStyle = dataGridViewCellStyle12;
             this.ckM_GridView1.EnableHeadersVisualStyles = false;
             this.ckM_GridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.ckM_GridView1.Location = new System.Drawing.Point(315, 182);
@@ -1026,11 +1037,13 @@
             this.panel2.Controls.Add(this.so_2);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.so_1);
-            this.panel2.Controls.Add(this.sn_1);
             this.panel2.Location = new System.Drawing.Point(316, 109);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1300, 90);
             this.panel2.TabIndex = 219;
+            this.panel2.Scroll += new System.Windows.Forms.ScrollEventHandler(this.panel2_Scroll_1);
+            this.panel2.DockChanged += new System.EventHandler(this.panel2_DockChanged);
+            this.panel2.RightToLeftChanged += new System.EventHandler(this.panel2_RightToLeftChanged);
             // 
             // panel63
             // 
@@ -3124,7 +3137,7 @@
             this.sn_1.IsNumber = true;
             this.sn_1.IsShop = false;
             this.sn_1.Length = 32767;
-            this.sn_1.Location = new System.Drawing.Point(0, 0);
+            this.sn_1.Location = new System.Drawing.Point(374, 57);
             this.sn_1.MoveNext = true;
             this.sn_1.Name = "sn_1";
             this.sn_1.Size = new System.Drawing.Size(130, 19);
@@ -3334,7 +3347,6 @@
             this.panel4.Controls.Add(this.co_1);
             this.panel4.Controls.Add(this.cn_3);
             this.panel4.Controls.Add(this.cn_2);
-            this.panel4.Controls.Add(this.cn_1);
             this.panel4.Location = new System.Drawing.Point(50, 182);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(285, 362);
@@ -8583,7 +8595,7 @@
             this.cn_1.IsNumber = true;
             this.cn_1.IsShop = false;
             this.cn_1.Length = 32767;
-            this.cn_1.Location = new System.Drawing.Point(0, 1);
+            this.cn_1.Location = new System.Drawing.Point(32, 127);
             this.cn_1.MoveNext = true;
             this.cn_1.Name = "cn_1";
             this.cn_1.Size = new System.Drawing.Size(50, 19);
@@ -8686,7 +8698,7 @@
             this.lblPartNum.Name = "lblPartNum";
             this.lblPartNum.Size = new System.Drawing.Size(200, 19);
             this.lblPartNum.TabIndex = 16;
-            this.lblPartNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPartNum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblProductName
             // 
@@ -8695,7 +8707,7 @@
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(485, 19);
             this.lblProductName.TabIndex = 15;
-            this.lblProductName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // checkBox31
             // 
