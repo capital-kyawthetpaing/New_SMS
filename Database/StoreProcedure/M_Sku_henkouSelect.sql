@@ -21,7 +21,9 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-		select
+		select	
+		mi.ItemName as ItemName,
+								mi.MakerItem as MakerItem,
 								mi.SizeCount as nsc,
 								mi.SizeCount as osc,
 								Cast(ms.SizeName as varchar(15)) as SizeName,

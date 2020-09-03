@@ -190,10 +190,13 @@ namespace DL
             return InsertUpdateDeleteData(dic, sp);
         }
 
-        public bool SKUUpdate(string xml, string xml_1, string OPD, string OPT, string OPTR, string PGM, string PC, string OPM, string KI)
+        public bool SKUUpdate(string xml, string xml_1, string OPD, string OPT, string OPTR, string PGM, string PC, string OPM, string KI,string Mode)
         {
             string sp = "M_SKUHenKou";
-
+            if (!String.IsNullOrEmpty(Mode))
+            {
+                sp = "M_SKUHenKou_Insert";
+            }
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                  { "@OPTDate", new ValuePair { value1 = SqlDbType.Date, value2 = OPD} },

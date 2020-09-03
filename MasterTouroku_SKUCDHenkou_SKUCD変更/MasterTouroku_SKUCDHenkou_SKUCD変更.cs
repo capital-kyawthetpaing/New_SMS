@@ -151,11 +151,11 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
         {
             if (e.KeyCode == Keys.Enter)
             {
-                IsStop = false;
-                if(!IsStop)Check_E102(); // Check Empty
-                if(!IsStop)Check_E105();  // Check Duplicate
-                if(!IsStop)Check_E228();   // Check unOrder without sorting
-                if(!IsStop)Check_E229(true);    // Check Biggest
+                //IsStop = false;
+                //if(!IsStop)Check_E102(); // Check Empty
+                //if(!IsStop)Check_E105();  // Check Duplicate
+                //if(!IsStop)Check_E228();   // Check unOrder without sorting
+                //if(!IsStop)Check_E229(true);    // Check Biggest
             }
         }
         static bool IsStop = false;
@@ -405,6 +405,9 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                 case 6:
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                     {
+                        ClearGrid();
+                        lblProductName.Text = "";
+                        lblPartNum.Text = "";
                         ChangeMode(OperationMode);
                         Sc_Item.SetFocus(1);
                     }
@@ -434,7 +437,7 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                     F11Display.Enabled = F11Enable = true;
                     F11Visible = true;
                     F12Enable = false;
-                    //ClearGrid();
+                   
                     break;
                 
                 case EOperationMode.DELETE:
@@ -606,6 +609,7 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                     mie.ChangeDate = txtRevDate.Text;
                     dtitem = mskubl.M_ITem_SelectForSKUCDHenkou01(mie);
                 }
+
                 DisablePanel(PanelHeader);
                 EnablePanel(panelDetail);
                 Add_Name_Tag(panel4);
@@ -614,6 +618,9 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                 F11Display.Enabled = false;
                 F12Enable = true;
                 ckM_GridView1.Refresh();
+                lblProductName.Text = dtitem.Rows[0]["ItemName"].ToString();
+                lblPartNum.Text = dtitem.Rows[0]["MakerItem"].ToString();
+                   
                 Set_Value(dtitem,panel2);
                 Set_Value(dtitem,panel4);
                 Set_JanCD(dtitem);
@@ -731,12 +738,27 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                         bbl.ShowMessage("I101");
                         ChangeMode(EOperationMode.UPDATE);
                      
-                        ckM_GridView1.Enabled = false;
+                       // ckM_GridView1.Enabled = false;
                     }
                 }
                 else if (OperationMode == EOperationMode.INSERT) {
-
+                    var dtxml = bbl.DataTableToXml(D_SKUUpdate());
+                    var dtxml_1 = bbl.DataTableToXml(D_SKUChange());
+                    var IsUpdate = mskubl.SKUUpdate(dtxml, dtxml_1, C_dt.Split(' ')[0].ToString(), C_dt.Split(' ').Last(), InOperatorCD, InProgramID, InPcID, "新規", (Sc_Item.TxtCode.Text + txtDate1.Text), "I");
+                    if (IsUpdate)
+                    {
+                        bbl.ShowMessage("I101");
+                        ChangeMode(EOperationMode.INSERT);
+                        
+                        
+                       // ckM_GridView1.Enabled = false;
+                    }
                 }
+                ckM_GridView1.RefreshEdit();
+                ckM_GridView1.Refresh();
+                ClearGrid();
+                lblProductName.Text = "";
+                lblPartNum.Text = "";
                 /////////////////Insert and Update
             }
         }
@@ -1064,6 +1086,21 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
         }
 
         private void ckM_GridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel2_DockChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_RightToLeftChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Scroll_1(object sender, ScrollEventArgs e)
         {
 
         }

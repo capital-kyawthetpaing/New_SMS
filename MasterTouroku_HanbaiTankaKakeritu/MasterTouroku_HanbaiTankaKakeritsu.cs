@@ -133,6 +133,8 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
                     break;
                 case 3:
                          OperationMode = EOperationMode.UPDATE;
+                        Clear();
+                        txtFromDate.Focus();
                     break;
                 case 6:
                     {
@@ -426,21 +428,21 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
             ScSegmentCopy.Value1 = "226";
         }
 
-        private void txtSeason_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-              if(OperationMode==EOperationMode.INSERT)
-                {
-                    Display(1);
-                }
-              else if(OperationMode == EOperationMode.UPDATE)
-                {
-                    Display(2);
+        //private void txtSeason_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    if (e.KeyCode == Keys.Enter)
+        //    {
+        //      if(OperationMode==EOperationMode.INSERT)
+        //        {
+        //            Display(1);
+        //        }
+        //      else if(OperationMode == EOperationMode.UPDATE)
+        //        {
+        //            Display(2);
 
-                }
-            }
-         }
+        //        }
+        //    }
+        // }
 
 
 
@@ -509,7 +511,8 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
                     else
                     {
                         bbl.ShowMessage("E128");
-                        PreviousCtrl.Focus();
+                        gdvHanbaiTankaKakeritsu.DataSource = null;
+                        txtFromDate.Focus();
 
                     }
                         
@@ -522,7 +525,8 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
                     else
                     {
                         bbl.ShowMessage("E128");
-                        PreviousCtrl.Focus();
+                        gdvHanbaiTankaKakeritsu.DataSource = null;
+                        txtFromDate.Focus();
 
                     }
                 }
@@ -535,7 +539,8 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
                 else
                 {
                     bbl.ShowMessage("E128");
-                    PreviousCtrl.Focus();
+                    gdvHanbaiTankaKakeritsu.DataSource = null;
+                    txtFromDate.Focus();
 
                 }
             }
@@ -550,6 +555,30 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
         private void gdvHanbaiTankaKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void cboSeasonCopy_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboSeasonCopy_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (ErrorCheck())
+                {
+                    if (OperationMode == EOperationMode.INSERT)
+                    {
+                        Display(1);
+                    }
+                    else if (OperationMode == EOperationMode.UPDATE)
+                    {
+                        Display(2);
+
+                    }
+                }
+            }
         }
     }
 }
