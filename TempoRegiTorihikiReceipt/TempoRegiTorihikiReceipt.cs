@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
 using TempoRegiTorihikiReceipt.Reports;
+using Microsoft.PointOfService;
 
 namespace TempoRegiTorihikiReceipt
 {
@@ -96,6 +97,7 @@ namespace TempoRegiTorihikiReceipt
         /// <param name="e"></param>
         private void TempoRegiTorihikiReceipt_Load(object sender, EventArgs e)
         {
+           
             InProgramID = "TempoRegiTorihikiReceipt";
             string data = InOperatorCD;
 
@@ -127,72 +129,161 @@ namespace TempoRegiTorihikiReceipt
             //RunDisplay_Service();
             this.Close();
         }
+        private PosPrinter GetReceiptPrinter()
+        {
+            PosExplorer posExplorer = new PosExplorer();
+            
+            PosPrinter ppt = null;
 
+            DeviceInfo receiptPrinterDevice = null;
+            try
+            {
+               
+                 receiptPrinterDevice = posExplorer.GetDevice(DeviceType.PosPrinter, "PosPrinter"); //May need to change this if you don't use a logicial name or use a different one.
+                //MessageBox.Show( );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to get device information." + Environment.NewLine + ex.StackTrace.ToString(), "PrinterSample_Step16");
+                // No device available.
+
+            }
+            try
+            {
+                ppt = (PosPrinter)posExplorer.CreateInstance(receiptPrinterDevice);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to instantiate device." + Environment.NewLine + ex.StackTrace.ToString(), "PrinterSample_Step16");
+                // No device available.
+            }
+            return ppt;
+        }
+        private void ConnectToPrinter(PosPrinter printer)
+        {
+            try
+            {
+                printer.Open();
+                printer.Claim(1000);
+                printer.DeviceEnabled = true;
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace.ToString());
+            }
+        }
+         PosPrinter printer = null;
+        private void PrintReceipt()
+        {
+            try
+            {
+                printer = GetReceiptPrinter();
+                ConnectToPrinter(printer);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace.ToString());
+            }
+        }
+       
+        private void DisconnectFromPrinter(PosPrinter printer)
+        {
+           
+            printer.Release();
+            printer.Close();
+        }
         /// <summary>
         /// 印刷実行
         /// </summary>
         private void Print()
         {
-             
+            try
+            {
+              //  PrintReceipt();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace.ToString());
+            }
+
             var torihikiReceiptDataSet = new TorihikiReceiptDataSet();
             Object ReadyToPrinter=null;
             switch(InputMode)
             {
                 case MODE_DEPOSIT:
                     // 雑入金取得
-                    var miscDeposit = bl.D_MiscDepositSelect(InputDepositNO, InOperatorCD);
-                    if (miscDeposit.Rows.Count > 0)
+                    try
                     {
-                        CreateMiscDepositDataSet(miscDeposit, torihikiReceiptDataSet);
-                    }
+                        string y = "";
+                        var miscDeposit = bl.D_MiscDepositSelect(InputDepositNO, InOperatorCD);
+                        if (miscDeposit.Rows.Count > 0)
+                        {
+                            CreateMiscDepositDataSet(miscDeposit, torihikiReceiptDataSet);
+                        }
 
-                    // 入金取得
-                    var deposit = bl.D_DepositSelect(InputDepositNO, InOperatorCD);
-                    if (deposit.Rows.Count > 0)
-                    {
-                        CreateDepositDataSet(deposit, torihikiReceiptDataSet);
-                    }
+                        // 入金取得
+                        var deposit = bl.D_DepositSelect(InputDepositNO, InOperatorCD);
+                        if (deposit.Rows.Count > 0)
+                        {
+                            CreateDepositDataSet(deposit, torihikiReceiptDataSet);
+                        }
 
-                    if (torihikiReceiptDataSet.MiscDepositTable.Rows.Count > 0 && torihikiReceiptDataSet.DepositTable.Rows.Count == 0)
-                    {
-                        // 雑入金のみデータあり
-                        var reportModeDepositMiscDeposit = new TempoRegiTorihikiReceipt_MiscDeposit();
-                        reportModeDepositMiscDeposit.SetDataSource(torihikiReceiptDataSet);
-                        reportModeDepositMiscDeposit.Refresh();
-                        reportModeDepositMiscDeposit.PrintOptions.PrinterName = StorePrinterName;
-                        ReadyToPrinter =  reportModeDepositMiscDeposit;
-                        reportModeDepositMiscDeposit.PrintToPrinter(0, false, 0, 0);
-                     //   MessageBox.Show("First Con" + Environment.NewLine + torihikiReceiptDataSet.MiscDepositTable.Rows.Count.ToString());
-                    }
-                    else if (torihikiReceiptDataSet.MiscDepositTable.Rows.Count == 0 && torihikiReceiptDataSet.DepositTable.Rows.Count > 0)
-                    {
-                        // 入金のみデータあり
-                        var reportModeDepositDeposit = new TempoRegiTorihikiReceipt_Deposit();
+                        if (torihikiReceiptDataSet.MiscDepositTable.Rows.Count > 0 && torihikiReceiptDataSet.DepositTable.Rows.Count == 0)
+                        {
+                            // 雑入金のみデータあり
+                            var reportModeDepositMiscDeposit = new TempoRegiTorihikiReceipt_MiscDeposit();
+                            reportModeDepositMiscDeposit.SetDataSource(torihikiReceiptDataSet);
+                            reportModeDepositMiscDeposit.Refresh();
+                           reportModeDepositMiscDeposit.PrintOptions.PrinterName = StorePrinterName;
+                            ReadyToPrinter = reportModeDepositMiscDeposit;
+                            reportModeDepositMiscDeposit.PrintToPrinter(0, false, 0, 0);
+                            y = "1 " + reportModeDepositMiscDeposit.PrintOptions.PrinterName;
+                            //   MessageBox.Show("First Con" + Environment.NewLine + torihikiReceiptDataSet.MiscDepositTable.Rows.Count.ToString());
+                        }
+                        else if (torihikiReceiptDataSet.MiscDepositTable.Rows.Count == 0 && torihikiReceiptDataSet.DepositTable.Rows.Count > 0)
+                        {
+                            // 入金のみデータあり
+                            var reportModeDepositDeposit = new TempoRegiTorihikiReceipt_Deposit();
 
-                        reportModeDepositDeposit.SetDataSource(torihikiReceiptDataSet);
-                        reportModeDepositDeposit.Refresh();
+                            reportModeDepositDeposit.SetDataSource(torihikiReceiptDataSet);
+                            reportModeDepositDeposit.Refresh();
 
-                        reportModeDepositDeposit.PrintOptions.PrinterName = StorePrinterName;
-                        ReadyToPrinter = reportModeDepositDeposit;
+                            reportModeDepositDeposit.PrintOptions.PrinterName = StorePrinterName;
+                            ReadyToPrinter = reportModeDepositDeposit;
 
-                        reportModeDepositDeposit.PrintToPrinter(0, false, 0, 0);
-                     //   MessageBox.Show("Second Con");
+                            reportModeDepositDeposit.PrintToPrinter(0, false, 0, 0);
+                            y = "2 " + reportModeDepositDeposit.PrintOptions.PrinterName;
+                            //   MessageBox.Show("Second Con");
+                        }
+                        else if (torihikiReceiptDataSet.MiscDepositTable.Rows.Count > 0 && torihikiReceiptDataSet.DepositTable.Rows.Count > 0)
+                        {
+                            // 雑入金・入金データあり
+                            var reportModeDeposit = new TempoRegiTorihikiReceipt_Mode2();
+                            reportModeDeposit.SetDataSource(torihikiReceiptDataSet);
+                            reportModeDeposit.Refresh();
+                            reportModeDeposit.PrintOptions.PrinterName = StorePrinterName;
+                            ReadyToPrinter = reportModeDeposit;
+                            reportModeDeposit.PrintToPrinter(0, false, 0, 0);
+                            y = "3 " + reportModeDeposit.PrintOptions.PrinterName;
+                            //     MessageBox.Show("Third Con");
+                            
+
+                        }
+                        else
+                        {
+                            bl.ShowMessage("E128");
+                        }
+
+                       // DisconnectFromPrinter(printer);
+                       // MessageBox.Show("Disconnected Printer " + Environment.NewLine +" Step went on named " + y.ToString());
+                        
                     }
-                    else if (torihikiReceiptDataSet.MiscDepositTable.Rows.Count > 0 && torihikiReceiptDataSet.DepositTable.Rows.Count > 0)
+                    catch (Exception ex)
                     {
-                        // 雑入金・入金データあり
-                        var reportModeDeposit = new TempoRegiTorihikiReceipt_Mode2();
-                        reportModeDeposit.SetDataSource(torihikiReceiptDataSet);
-                        reportModeDeposit.Refresh();
-                        reportModeDeposit.PrintOptions.PrinterName = StorePrinterName;
-                        ReadyToPrinter = reportModeDeposit;
-                        reportModeDeposit.PrintToPrinter(0, false, 0, 0);
-                   //     MessageBox.Show("Third Con");
+                        MessageBox.Show(ex.Message);
                     }
-                    else
-                    {
-                        bl.ShowMessage("E128");
-                    }
+                    
 
 
                     break;

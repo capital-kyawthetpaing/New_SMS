@@ -535,6 +535,7 @@
             this.Space1.Size = new System.Drawing.Size(181, 19);
             this.Space1.TabIndex = 179;
             this.Space1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.Space1.UseColorSizMode = false;
             // 
             // IMN_R5UNITPRICE_1
             // 
@@ -564,6 +565,7 @@
             this.IMN_R5UNITPRICE_1.Text = "999,999,999";
             this.IMN_R5UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R5UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R5UNITPRICE_1.UseColorSizMode = false;
             // 
             // IMN_R4UNITPRICE_1
             // 
@@ -593,6 +595,7 @@
             this.IMN_R4UNITPRICE_1.Text = "999,999,999";
             this.IMN_R4UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R4UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R4UNITPRICE_1.UseColorSizMode = false;
             // 
             // IMN_R3UNITPRICE_1
             // 
@@ -622,6 +625,7 @@
             this.IMN_R3UNITPRICE_1.Text = "999,999,999";
             this.IMN_R3UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R3UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R3UNITPRICE_1.UseColorSizMode = false;
             // 
             // IMN_R2UNITPRICE_1
             // 
@@ -651,6 +655,7 @@
             this.IMN_R2UNITPRICE_1.Text = "999,999,999";
             this.IMN_R2UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R2UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R2UNITPRICE_1.UseColorSizMode = false;
             // 
             // IMT_REMARK_1
             // 
@@ -679,6 +684,7 @@
             this.IMT_REMARK_1.TabIndex = 50;
             this.IMT_REMARK_1.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50ＸＸＸＸＸＸＸＸＸ60";
             this.IMT_REMARK_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_REMARK_1.UseColorSizMode = false;
             // 
             // IMN_R1UNITPRICE_1
             // 
@@ -708,6 +714,7 @@
             this.IMN_R1UNITPRICE_1.Text = "999,999,999";
             this.IMN_R1UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R1UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R1UNITPRICE_1.UseColorSizMode = false;
             // 
             // IMN_COSTUNPRICE_1
             // 
@@ -737,6 +744,7 @@
             this.IMN_COSTUNPRICE_1.Text = "999,999,999";
             this.IMN_COSTUNPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_COSTUNPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_COSTUNPRICE_1.UseColorSizMode = false;
             // 
             // IMN_SSUNITPRICE_1
             // 
@@ -766,6 +774,7 @@
             this.IMN_SSUNITPRICE_1.Text = "999,999,999";
             this.IMN_SSUNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SSUNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_SSUNITPRICE_1.UseColorSizMode = false;
             // 
             // IMN_UNITPRICE_1
             // 
@@ -795,6 +804,7 @@
             this.IMN_UNITPRICE_1.Text = "999,999,999";
             this.IMN_UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_UNITPRICE_1.UseColorSizMode = false;
             // 
             // IMT_ENDDT_1
             // 
@@ -825,6 +835,7 @@
             this.IMT_ENDDT_1.Text = "9999/99/99";
             this.IMT_ENDDT_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_ENDDT_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ENDDT_1.UseColorSizMode = false;
             // 
             // IMT_STADT_1
             // 
@@ -855,6 +866,7 @@
             this.IMT_STADT_1.Text = "9999/99/99";
             this.IMT_STADT_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_STADT_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_STADT_1.UseColorSizMode = false;
             // 
             // IMT_JANCD_1
             // 
@@ -883,6 +895,7 @@
             this.IMT_JANCD_1.TabIndex = 169;
             this.IMT_JANCD_1.Text = "XXXXXXXXX1XX3";
             this.IMT_JANCD_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_JANCD_1.UseColorSizMode = false;
             // 
             // IMT_ITMNM_1
             // 
@@ -911,6 +924,7 @@
             this.IMT_ITMNM_1.TabIndex = 180;
             this.IMT_ITMNM_1.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.IMT_ITMNM_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ITMNM_1.UseColorSizMode = false;
             // 
             // IMT_ITMCD_1
             // 
@@ -939,6 +953,7 @@
             this.IMT_ITMCD_1.TabIndex = 168;
             this.IMT_ITMCD_1.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ITMCD_1.UseColorSizMode = false;
             // 
             // panel42
             // 
@@ -1060,6 +1075,7 @@
             this.ckM_TextBox5.Size = new System.Drawing.Size(85, 19);
             this.ckM_TextBox5.TabIndex = 130;
             this.ckM_TextBox5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_TextBox5.UseColorSizMode = false;
             // 
             // ckM_Label8
             // 
@@ -1105,6 +1121,7 @@
             this.ckM_TextBox4.Size = new System.Drawing.Size(85, 19);
             this.ckM_TextBox4.TabIndex = 129;
             this.ckM_TextBox4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_TextBox4.UseColorSizMode = false;
             // 
             // ckM_Label7
             // 
@@ -1198,6 +1215,7 @@
             this.txtSKUName.Size = new System.Drawing.Size(540, 19);
             this.txtSKUName.TabIndex = 128;
             this.txtSKUName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSKUName.UseColorSizMode = false;
             // 
             // ckM_RadioButton2
             // 
@@ -1443,6 +1461,7 @@
             this.txtStartDateFrom.TabIndex = 122;
             this.txtStartDateFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtStartDateFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtStartDateFrom.UseColorSizMode = false;
             // 
             // ckM_Label1
             // 
@@ -1489,6 +1508,7 @@
             this.txtStartDateTo.TabIndex = 123;
             this.txtStartDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtStartDateTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtStartDateTo.UseColorSizMode = false;
             this.txtStartDateTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtStartDateTo_KeyDown_1);
             // 
             // Vsb_Mei_0
@@ -1845,6 +1865,7 @@
             this.IMT_REMARK_0.TabIndex = 40;
             this.IMT_REMARK_0.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50ＸＸＸＸＸＸＸＸＸ60";
             this.IMT_REMARK_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_REMARK_0.UseColorSizMode = false;
             // 
             // IMN_COSTUNPRICE_0
             // 
@@ -1874,6 +1895,7 @@
             this.IMN_COSTUNPRICE_0.Text = "999,999,999";
             this.IMN_COSTUNPRICE_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_COSTUNPRICE_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_COSTUNPRICE_0.UseColorSizMode = false;
             // 
             // Space0
             // 
@@ -1901,6 +1923,7 @@
             this.Space0.Size = new System.Drawing.Size(181, 19);
             this.Space0.TabIndex = 37;
             this.Space0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.Space0.UseColorSizMode = false;
             // 
             // IMN_R5UNITPRICE_0
             // 
@@ -1930,6 +1953,7 @@
             this.IMN_R5UNITPRICE_0.Text = "999,999,999";
             this.IMN_R5UNITPRICE_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R5UNITPRICE_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R5UNITPRICE_0.UseColorSizMode = false;
             // 
             // IMN_R4UNITPRICE_0
             // 
@@ -1959,6 +1983,7 @@
             this.IMN_R4UNITPRICE_0.Text = "999,999,999";
             this.IMN_R4UNITPRICE_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R4UNITPRICE_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R4UNITPRICE_0.UseColorSizMode = false;
             // 
             // IMN_R3UNITPRICE_0
             // 
@@ -1988,6 +2013,7 @@
             this.IMN_R3UNITPRICE_0.Text = "999,999,999";
             this.IMN_R3UNITPRICE_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R3UNITPRICE_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R3UNITPRICE_0.UseColorSizMode = false;
             // 
             // IMN_R2UNITPRICE_0
             // 
@@ -2017,6 +2043,7 @@
             this.IMN_R2UNITPRICE_0.Text = "999,999,999";
             this.IMN_R2UNITPRICE_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R2UNITPRICE_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R2UNITPRICE_0.UseColorSizMode = false;
             // 
             // IMN_R1UNITPRICE_0
             // 
@@ -2046,6 +2073,7 @@
             this.IMN_R1UNITPRICE_0.Text = "999,999,999";
             this.IMN_R1UNITPRICE_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R1UNITPRICE_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R1UNITPRICE_0.UseColorSizMode = false;
             // 
             // IMN_SSUNITPRICE_0
             // 
@@ -2075,6 +2103,7 @@
             this.IMN_SSUNITPRICE_0.Text = "999,999,999";
             this.IMN_SSUNITPRICE_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SSUNITPRICE_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_SSUNITPRICE_0.UseColorSizMode = false;
             // 
             // IMN_UNITPRICE_0
             // 
@@ -2104,6 +2133,7 @@
             this.IMN_UNITPRICE_0.Text = "999,999,999";
             this.IMN_UNITPRICE_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_UNITPRICE_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_UNITPRICE_0.UseColorSizMode = false;
             // 
             // IMT_ENDDT_0
             // 
@@ -2134,6 +2164,7 @@
             this.IMT_ENDDT_0.Text = "9999/99/99";
             this.IMT_ENDDT_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_ENDDT_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ENDDT_0.UseColorSizMode = false;
             // 
             // IMT_STADT_0
             // 
@@ -2164,6 +2195,7 @@
             this.IMT_STADT_0.Text = "9999/99/99";
             this.IMT_STADT_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_STADT_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_STADT_0.UseColorSizMode = false;
             // 
             // IMT_JANCD_0
             // 
@@ -2192,6 +2224,7 @@
             this.IMT_JANCD_0.TabIndex = 27;
             this.IMT_JANCD_0.Text = "XXXXXXXXX1XX3";
             this.IMT_JANCD_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_JANCD_0.UseColorSizMode = false;
             // 
             // IMT_ITMNM_0
             // 
@@ -2220,6 +2253,7 @@
             this.IMT_ITMNM_0.TabIndex = 38;
             this.IMT_ITMNM_0.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.IMT_ITMNM_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ITMNM_0.UseColorSizMode = false;
             // 
             // IMT_GYONO_0
             // 
@@ -2259,6 +2293,7 @@
             this.IMT_ITMCD_0.TabIndex = 26;
             this.IMT_ITMCD_0.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ITMCD_0.UseColorSizMode = false;
             // 
             // IMT_GYONO_2
             // 
@@ -2324,6 +2359,7 @@
             this.Space2.Size = new System.Drawing.Size(181, 19);
             this.Space2.TabIndex = 178;
             this.Space2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.Space2.UseColorSizMode = false;
             // 
             // IMN_R5UNITPRICE_2
             // 
@@ -2353,6 +2389,7 @@
             this.IMN_R5UNITPRICE_2.Text = "999,999,999";
             this.IMN_R5UNITPRICE_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R5UNITPRICE_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R5UNITPRICE_2.UseColorSizMode = false;
             // 
             // IMN_R4UNITPRICE_2
             // 
@@ -2382,6 +2419,7 @@
             this.IMN_R4UNITPRICE_2.Text = "999,999,999";
             this.IMN_R4UNITPRICE_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R4UNITPRICE_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R4UNITPRICE_2.UseColorSizMode = false;
             // 
             // IMN_R3UNITPRICE_2
             // 
@@ -2411,6 +2449,7 @@
             this.IMN_R3UNITPRICE_2.Text = "999,999,999";
             this.IMN_R3UNITPRICE_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R3UNITPRICE_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R3UNITPRICE_2.UseColorSizMode = false;
             // 
             // IMN_R2UNITPRICE_2
             // 
@@ -2440,6 +2479,7 @@
             this.IMN_R2UNITPRICE_2.Text = "999,999,999";
             this.IMN_R2UNITPRICE_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R2UNITPRICE_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R2UNITPRICE_2.UseColorSizMode = false;
             // 
             // IMT_REMARK_2
             // 
@@ -2468,6 +2508,7 @@
             this.IMT_REMARK_2.TabIndex = 181;
             this.IMT_REMARK_2.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50ＸＸＸＸＸＸＸＸＸ60";
             this.IMT_REMARK_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_REMARK_2.UseColorSizMode = false;
             // 
             // IMN_R1UNITPRICE_2
             // 
@@ -2497,6 +2538,7 @@
             this.IMN_R1UNITPRICE_2.Text = "999,999,999";
             this.IMN_R1UNITPRICE_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R1UNITPRICE_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R1UNITPRICE_2.UseColorSizMode = false;
             // 
             // IMN_COSTUNPRICE_2
             // 
@@ -2526,6 +2568,7 @@
             this.IMN_COSTUNPRICE_2.Text = "999,999,999";
             this.IMN_COSTUNPRICE_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_COSTUNPRICE_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_COSTUNPRICE_2.UseColorSizMode = false;
             // 
             // IMN_SSUNITPRICE_2
             // 
@@ -2555,6 +2598,7 @@
             this.IMN_SSUNITPRICE_2.Text = "999,999,999";
             this.IMN_SSUNITPRICE_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SSUNITPRICE_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_SSUNITPRICE_2.UseColorSizMode = false;
             // 
             // IMN_UNITPRICE_2
             // 
@@ -2584,6 +2628,7 @@
             this.IMN_UNITPRICE_2.Text = "999,999,999";
             this.IMN_UNITPRICE_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_UNITPRICE_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_UNITPRICE_2.UseColorSizMode = false;
             // 
             // IMT_ENDDT_2
             // 
@@ -2614,6 +2659,7 @@
             this.IMT_ENDDT_2.Text = "9999/99/99";
             this.IMT_ENDDT_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_ENDDT_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ENDDT_2.UseColorSizMode = false;
             // 
             // IMT_STADT_2
             // 
@@ -2644,6 +2690,7 @@
             this.IMT_STADT_2.Text = "9999/99/99";
             this.IMT_STADT_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_STADT_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_STADT_2.UseColorSizMode = false;
             // 
             // IMT_JANCD_2
             // 
@@ -2672,6 +2719,7 @@
             this.IMT_JANCD_2.TabIndex = 169;
             this.IMT_JANCD_2.Text = "XXXXXXXXX1XX3";
             this.IMT_JANCD_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_JANCD_2.UseColorSizMode = false;
             // 
             // IMT_ITMNM_2
             // 
@@ -2700,6 +2748,7 @@
             this.IMT_ITMNM_2.TabIndex = 179;
             this.IMT_ITMNM_2.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.IMT_ITMNM_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ITMNM_2.UseColorSizMode = false;
             // 
             // IMT_ITMCD_2
             // 
@@ -2728,6 +2777,7 @@
             this.IMT_ITMCD_2.TabIndex = 167;
             this.IMT_ITMCD_2.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ITMCD_2.UseColorSizMode = false;
             // 
             // panel14
             // 
@@ -2815,6 +2865,7 @@
             this.Space3.Size = new System.Drawing.Size(181, 19);
             this.Space3.TabIndex = 81;
             this.Space3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.Space3.UseColorSizMode = false;
             // 
             // IMN_R5UNITPRICE_3
             // 
@@ -2844,6 +2895,7 @@
             this.IMN_R5UNITPRICE_3.Text = "999,999,999";
             this.IMN_R5UNITPRICE_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R5UNITPRICE_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R5UNITPRICE_3.UseColorSizMode = false;
             // 
             // IMN_R4UNITPRICE_3
             // 
@@ -2873,6 +2925,7 @@
             this.IMN_R4UNITPRICE_3.Text = "999,999,999";
             this.IMN_R4UNITPRICE_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R4UNITPRICE_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R4UNITPRICE_3.UseColorSizMode = false;
             // 
             // IMN_R3UNITPRICE_3
             // 
@@ -2902,6 +2955,7 @@
             this.IMN_R3UNITPRICE_3.Text = "999,999,999";
             this.IMN_R3UNITPRICE_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R3UNITPRICE_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R3UNITPRICE_3.UseColorSizMode = false;
             // 
             // IMN_R2UNITPRICE_3
             // 
@@ -2931,6 +2985,7 @@
             this.IMN_R2UNITPRICE_3.Text = "999,999,999";
             this.IMN_R2UNITPRICE_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R2UNITPRICE_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R2UNITPRICE_3.UseColorSizMode = false;
             // 
             // IMT_REMARK_3
             // 
@@ -2959,6 +3014,7 @@
             this.IMT_REMARK_3.TabIndex = 84;
             this.IMT_REMARK_3.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50ＸＸＸＸＸＸＸＸＸ60";
             this.IMT_REMARK_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_REMARK_3.UseColorSizMode = false;
             // 
             // IMN_R1UNITPRICE_3
             // 
@@ -2988,6 +3044,7 @@
             this.IMN_R1UNITPRICE_3.Text = "999,999,999";
             this.IMN_R1UNITPRICE_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R1UNITPRICE_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R1UNITPRICE_3.UseColorSizMode = false;
             // 
             // IMN_COSTUNPRICE_3
             // 
@@ -3017,6 +3074,7 @@
             this.IMN_COSTUNPRICE_3.Text = "999,999,999";
             this.IMN_COSTUNPRICE_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_COSTUNPRICE_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_COSTUNPRICE_3.UseColorSizMode = false;
             // 
             // IMN_SSUNITPRICE_3
             // 
@@ -3046,6 +3104,7 @@
             this.IMN_SSUNITPRICE_3.Text = "999,999,999";
             this.IMN_SSUNITPRICE_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SSUNITPRICE_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_SSUNITPRICE_3.UseColorSizMode = false;
             // 
             // IMN_UNITPRICE_3
             // 
@@ -3075,6 +3134,7 @@
             this.IMN_UNITPRICE_3.Text = "999,999,999";
             this.IMN_UNITPRICE_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_UNITPRICE_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_UNITPRICE_3.UseColorSizMode = false;
             // 
             // IMT_ENDDT_3
             // 
@@ -3105,6 +3165,7 @@
             this.IMT_ENDDT_3.Text = "9999/99/99";
             this.IMT_ENDDT_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_ENDDT_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ENDDT_3.UseColorSizMode = false;
             // 
             // IMT_STADT_3
             // 
@@ -3135,6 +3196,7 @@
             this.IMT_STADT_3.Text = "9999/99/99";
             this.IMT_STADT_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_STADT_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_STADT_3.UseColorSizMode = false;
             // 
             // IMT_JANCD_3
             // 
@@ -3163,6 +3225,7 @@
             this.IMT_JANCD_3.TabIndex = 71;
             this.IMT_JANCD_3.Text = "XXXXXXXXX1XX3";
             this.IMT_JANCD_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_JANCD_3.UseColorSizMode = false;
             // 
             // IMT_ITMNM_3
             // 
@@ -3191,6 +3254,7 @@
             this.IMT_ITMNM_3.TabIndex = 82;
             this.IMT_ITMNM_3.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.IMT_ITMNM_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ITMNM_3.UseColorSizMode = false;
             // 
             // IMT_ITMCD_3
             // 
@@ -3219,6 +3283,7 @@
             this.IMT_ITMCD_3.TabIndex = 70;
             this.IMT_ITMCD_3.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ITMCD_3.UseColorSizMode = false;
             // 
             // panel17
             // 
@@ -3274,6 +3339,7 @@
             this.Space4.Size = new System.Drawing.Size(181, 19);
             this.Space4.TabIndex = 181;
             this.Space4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.Space4.UseColorSizMode = false;
             // 
             // IMN_R5UNITPRICE_4
             // 
@@ -3303,6 +3369,7 @@
             this.IMN_R5UNITPRICE_4.Text = "999,999,999";
             this.IMN_R5UNITPRICE_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R5UNITPRICE_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R5UNITPRICE_4.UseColorSizMode = false;
             // 
             // IMN_R4UNITPRICE_4
             // 
@@ -3332,6 +3399,7 @@
             this.IMN_R4UNITPRICE_4.Text = "999,999,999";
             this.IMN_R4UNITPRICE_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R4UNITPRICE_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R4UNITPRICE_4.UseColorSizMode = false;
             // 
             // IMN_R3UNITPRICE_4
             // 
@@ -3361,6 +3429,7 @@
             this.IMN_R3UNITPRICE_4.Text = "999,999,999";
             this.IMN_R3UNITPRICE_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R3UNITPRICE_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R3UNITPRICE_4.UseColorSizMode = false;
             // 
             // IMN_R2UNITPRICE_4
             // 
@@ -3390,6 +3459,7 @@
             this.IMN_R2UNITPRICE_4.Text = "999,999,999";
             this.IMN_R2UNITPRICE_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R2UNITPRICE_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R2UNITPRICE_4.UseColorSizMode = false;
             // 
             // IMT_REMARK_4
             // 
@@ -3418,6 +3488,7 @@
             this.IMT_REMARK_4.TabIndex = 184;
             this.IMT_REMARK_4.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50ＸＸＸＸＸＸＸＸＸ60";
             this.IMT_REMARK_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_REMARK_4.UseColorSizMode = false;
             // 
             // IMN_R1UNITPRICE_4
             // 
@@ -3447,6 +3518,7 @@
             this.IMN_R1UNITPRICE_4.Text = "999,999,999";
             this.IMN_R1UNITPRICE_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R1UNITPRICE_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R1UNITPRICE_4.UseColorSizMode = false;
             // 
             // IMN_COSTUNPRICE_4
             // 
@@ -3476,6 +3548,7 @@
             this.IMN_COSTUNPRICE_4.Text = "999,999,999";
             this.IMN_COSTUNPRICE_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_COSTUNPRICE_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_COSTUNPRICE_4.UseColorSizMode = false;
             // 
             // IMN_SSUNITPRICE_4
             // 
@@ -3505,6 +3578,7 @@
             this.IMN_SSUNITPRICE_4.Text = "999,999,999";
             this.IMN_SSUNITPRICE_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SSUNITPRICE_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_SSUNITPRICE_4.UseColorSizMode = false;
             // 
             // IMN_UNITPRICE_4
             // 
@@ -3534,6 +3608,7 @@
             this.IMN_UNITPRICE_4.Text = "999,999,999";
             this.IMN_UNITPRICE_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_UNITPRICE_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_UNITPRICE_4.UseColorSizMode = false;
             // 
             // IMT_ENDDT_4
             // 
@@ -3564,6 +3639,7 @@
             this.IMT_ENDDT_4.Text = "9999/99/99";
             this.IMT_ENDDT_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_ENDDT_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ENDDT_4.UseColorSizMode = false;
             // 
             // IMT_STADT_4
             // 
@@ -3594,6 +3670,7 @@
             this.IMT_STADT_4.Text = "9999/99/99";
             this.IMT_STADT_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_STADT_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_STADT_4.UseColorSizMode = false;
             // 
             // IMT_JANCD_4
             // 
@@ -3622,6 +3699,7 @@
             this.IMT_JANCD_4.TabIndex = 171;
             this.IMT_JANCD_4.Text = "XXXXXXXXX1XX3";
             this.IMT_JANCD_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_JANCD_4.UseColorSizMode = false;
             // 
             // IMT_ITMNM_4
             // 
@@ -3650,6 +3728,7 @@
             this.IMT_ITMNM_4.TabIndex = 182;
             this.IMT_ITMNM_4.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.IMT_ITMNM_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ITMNM_4.UseColorSizMode = false;
             // 
             // IMT_ITMCD_4
             // 
@@ -3678,6 +3757,7 @@
             this.IMT_ITMCD_4.TabIndex = 170;
             this.IMT_ITMCD_4.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ITMCD_4.UseColorSizMode = false;
             // 
             // panel29
             // 
@@ -3912,6 +3992,7 @@
             this.Space5.Size = new System.Drawing.Size(181, 19);
             this.Space5.TabIndex = 181;
             this.Space5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.Space5.UseColorSizMode = false;
             // 
             // IMN_R5UNITPRICE_5
             // 
@@ -3941,6 +4022,7 @@
             this.IMN_R5UNITPRICE_5.Text = "999,999,999";
             this.IMN_R5UNITPRICE_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R5UNITPRICE_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R5UNITPRICE_5.UseColorSizMode = false;
             // 
             // IMN_R4UNITPRICE_5
             // 
@@ -3970,6 +4052,7 @@
             this.IMN_R4UNITPRICE_5.Text = "999,999,999";
             this.IMN_R4UNITPRICE_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R4UNITPRICE_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R4UNITPRICE_5.UseColorSizMode = false;
             // 
             // IMN_R3UNITPRICE_5
             // 
@@ -3999,6 +4082,7 @@
             this.IMN_R3UNITPRICE_5.Text = "999,999,999";
             this.IMN_R3UNITPRICE_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R3UNITPRICE_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R3UNITPRICE_5.UseColorSizMode = false;
             // 
             // IMN_R2UNITPRICE_5
             // 
@@ -4028,6 +4112,7 @@
             this.IMN_R2UNITPRICE_5.Text = "999,999,999";
             this.IMN_R2UNITPRICE_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R2UNITPRICE_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R2UNITPRICE_5.UseColorSizMode = false;
             // 
             // IMT_REMARK_5
             // 
@@ -4056,6 +4141,7 @@
             this.IMT_REMARK_5.TabIndex = 184;
             this.IMT_REMARK_5.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50ＸＸＸＸＸＸＸＸＸ60";
             this.IMT_REMARK_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_REMARK_5.UseColorSizMode = false;
             // 
             // IMN_R1UNITPRICE_5
             // 
@@ -4085,6 +4171,7 @@
             this.IMN_R1UNITPRICE_5.Text = "999,999,999";
             this.IMN_R1UNITPRICE_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R1UNITPRICE_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R1UNITPRICE_5.UseColorSizMode = false;
             // 
             // IMN_COSTUNPRICE_5
             // 
@@ -4114,6 +4201,7 @@
             this.IMN_COSTUNPRICE_5.Text = "999,999,999";
             this.IMN_COSTUNPRICE_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_COSTUNPRICE_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_COSTUNPRICE_5.UseColorSizMode = false;
             // 
             // IMN_SSUNITPRICE_5
             // 
@@ -4143,6 +4231,7 @@
             this.IMN_SSUNITPRICE_5.Text = "999,999,999";
             this.IMN_SSUNITPRICE_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SSUNITPRICE_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_SSUNITPRICE_5.UseColorSizMode = false;
             // 
             // IMN_UNITPRICE_5
             // 
@@ -4172,6 +4261,7 @@
             this.IMN_UNITPRICE_5.Text = "999,999,999";
             this.IMN_UNITPRICE_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_UNITPRICE_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_UNITPRICE_5.UseColorSizMode = false;
             // 
             // IMT_ENDDT_5
             // 
@@ -4202,6 +4292,7 @@
             this.IMT_ENDDT_5.Text = "9999/99/99";
             this.IMT_ENDDT_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_ENDDT_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ENDDT_5.UseColorSizMode = false;
             // 
             // IMT_STADT_5
             // 
@@ -4232,6 +4323,7 @@
             this.IMT_STADT_5.Text = "9999/99/99";
             this.IMT_STADT_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_STADT_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_STADT_5.UseColorSizMode = false;
             // 
             // IMT_JANCD_5
             // 
@@ -4260,6 +4352,7 @@
             this.IMT_JANCD_5.TabIndex = 171;
             this.IMT_JANCD_5.Text = "XXXXXXXXX1XX3";
             this.IMT_JANCD_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_JANCD_5.UseColorSizMode = false;
             // 
             // IMT_ITMNM_5
             // 
@@ -4288,6 +4381,7 @@
             this.IMT_ITMNM_5.TabIndex = 182;
             this.IMT_ITMNM_5.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.IMT_ITMNM_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ITMNM_5.UseColorSizMode = false;
             // 
             // IMT_ITMCD_5
             // 
@@ -4316,6 +4410,7 @@
             this.IMT_ITMCD_5.TabIndex = 170;
             this.IMT_ITMCD_5.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ITMCD_5.UseColorSizMode = false;
             // 
             // panel5
             // 
@@ -4550,6 +4645,7 @@
             this.Space6.Size = new System.Drawing.Size(181, 19);
             this.Space6.TabIndex = 181;
             this.Space6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.Space6.UseColorSizMode = false;
             // 
             // IMN_R5UNITPRICE_6
             // 
@@ -4579,6 +4675,7 @@
             this.IMN_R5UNITPRICE_6.Text = "999,999,999";
             this.IMN_R5UNITPRICE_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R5UNITPRICE_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R5UNITPRICE_6.UseColorSizMode = false;
             // 
             // IMN_R4UNITPRICE_6
             // 
@@ -4608,6 +4705,7 @@
             this.IMN_R4UNITPRICE_6.Text = "999,999,999";
             this.IMN_R4UNITPRICE_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R4UNITPRICE_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R4UNITPRICE_6.UseColorSizMode = false;
             // 
             // IMN_R3UNITPRICE_6
             // 
@@ -4637,6 +4735,7 @@
             this.IMN_R3UNITPRICE_6.Text = "999,999,999";
             this.IMN_R3UNITPRICE_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R3UNITPRICE_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R3UNITPRICE_6.UseColorSizMode = false;
             // 
             // IMN_R2UNITPRICE_6
             // 
@@ -4666,6 +4765,7 @@
             this.IMN_R2UNITPRICE_6.Text = "999,999,999";
             this.IMN_R2UNITPRICE_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R2UNITPRICE_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R2UNITPRICE_6.UseColorSizMode = false;
             // 
             // IMT_REMARK_6
             // 
@@ -4694,6 +4794,7 @@
             this.IMT_REMARK_6.TabIndex = 184;
             this.IMT_REMARK_6.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50ＸＸＸＸＸＸＸＸＸ60";
             this.IMT_REMARK_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_REMARK_6.UseColorSizMode = false;
             // 
             // IMN_R1UNITPRICE_6
             // 
@@ -4723,6 +4824,7 @@
             this.IMN_R1UNITPRICE_6.Text = "999,999,999";
             this.IMN_R1UNITPRICE_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R1UNITPRICE_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R1UNITPRICE_6.UseColorSizMode = false;
             // 
             // IMN_COSTUNPRICE_6
             // 
@@ -4752,6 +4854,7 @@
             this.IMN_COSTUNPRICE_6.Text = "999,999,999";
             this.IMN_COSTUNPRICE_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_COSTUNPRICE_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_COSTUNPRICE_6.UseColorSizMode = false;
             // 
             // IMN_SSUNITPRICE_6
             // 
@@ -4781,6 +4884,7 @@
             this.IMN_SSUNITPRICE_6.Text = "999,999,999";
             this.IMN_SSUNITPRICE_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SSUNITPRICE_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_SSUNITPRICE_6.UseColorSizMode = false;
             // 
             // IMN_UNITPRICE_6
             // 
@@ -4810,6 +4914,7 @@
             this.IMN_UNITPRICE_6.Text = "999,999,999";
             this.IMN_UNITPRICE_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_UNITPRICE_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_UNITPRICE_6.UseColorSizMode = false;
             // 
             // IMT_ENDDT_6
             // 
@@ -4840,6 +4945,7 @@
             this.IMT_ENDDT_6.Text = "9999/99/99";
             this.IMT_ENDDT_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_ENDDT_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ENDDT_6.UseColorSizMode = false;
             // 
             // IMT_STADT_6
             // 
@@ -4870,6 +4976,7 @@
             this.IMT_STADT_6.Text = "9999/99/99";
             this.IMT_STADT_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_STADT_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_STADT_6.UseColorSizMode = false;
             // 
             // IMT_JANCD_6
             // 
@@ -4898,6 +5005,7 @@
             this.IMT_JANCD_6.TabIndex = 171;
             this.IMT_JANCD_6.Text = "XXXXXXXXX1XX3";
             this.IMT_JANCD_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_JANCD_6.UseColorSizMode = false;
             // 
             // IMT_ITMNM_6
             // 
@@ -4926,6 +5034,7 @@
             this.IMT_ITMNM_6.TabIndex = 182;
             this.IMT_ITMNM_6.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.IMT_ITMNM_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ITMNM_6.UseColorSizMode = false;
             // 
             // IMT_ITMCD_6
             // 
@@ -4954,6 +5063,7 @@
             this.IMT_ITMCD_6.TabIndex = 170;
             this.IMT_ITMCD_6.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ITMCD_6.UseColorSizMode = false;
             // 
             // panel66
             // 
@@ -5188,6 +5298,7 @@
             this.Space7.Size = new System.Drawing.Size(181, 19);
             this.Space7.TabIndex = 181;
             this.Space7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.Space7.UseColorSizMode = false;
             // 
             // IMN_R5UNITPRICE_7
             // 
@@ -5217,6 +5328,7 @@
             this.IMN_R5UNITPRICE_7.Text = "999,999,999";
             this.IMN_R5UNITPRICE_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R5UNITPRICE_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R5UNITPRICE_7.UseColorSizMode = false;
             // 
             // IMN_R4UNITPRICE_7
             // 
@@ -5246,6 +5358,7 @@
             this.IMN_R4UNITPRICE_7.Text = "999,999,999";
             this.IMN_R4UNITPRICE_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R4UNITPRICE_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R4UNITPRICE_7.UseColorSizMode = false;
             // 
             // IMN_R3UNITPRICE_7
             // 
@@ -5275,6 +5388,7 @@
             this.IMN_R3UNITPRICE_7.Text = "999,999,999";
             this.IMN_R3UNITPRICE_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R3UNITPRICE_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R3UNITPRICE_7.UseColorSizMode = false;
             // 
             // IMN_R2UNITPRICE_7
             // 
@@ -5304,6 +5418,7 @@
             this.IMN_R2UNITPRICE_7.Text = "999,999,999";
             this.IMN_R2UNITPRICE_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R2UNITPRICE_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R2UNITPRICE_7.UseColorSizMode = false;
             // 
             // IMT_REMARK_7
             // 
@@ -5332,6 +5447,7 @@
             this.IMT_REMARK_7.TabIndex = 184;
             this.IMT_REMARK_7.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50ＸＸＸＸＸＸＸＸＸ60";
             this.IMT_REMARK_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_REMARK_7.UseColorSizMode = false;
             // 
             // IMN_R1UNITPRICE_7
             // 
@@ -5361,6 +5477,7 @@
             this.IMN_R1UNITPRICE_7.Text = "999,999,999";
             this.IMN_R1UNITPRICE_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R1UNITPRICE_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R1UNITPRICE_7.UseColorSizMode = false;
             // 
             // IMN_COSTUNPRICE_7
             // 
@@ -5390,6 +5507,7 @@
             this.IMN_COSTUNPRICE_7.Text = "999,999,999";
             this.IMN_COSTUNPRICE_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_COSTUNPRICE_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_COSTUNPRICE_7.UseColorSizMode = false;
             // 
             // IMN_SSUNITPRICE_7
             // 
@@ -5419,6 +5537,7 @@
             this.IMN_SSUNITPRICE_7.Text = "999,999,999";
             this.IMN_SSUNITPRICE_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SSUNITPRICE_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_SSUNITPRICE_7.UseColorSizMode = false;
             // 
             // IMN_UNITPRICE_7
             // 
@@ -5448,6 +5567,7 @@
             this.IMN_UNITPRICE_7.Text = "999,999,999";
             this.IMN_UNITPRICE_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_UNITPRICE_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_UNITPRICE_7.UseColorSizMode = false;
             // 
             // IMT_ENDDT_7
             // 
@@ -5478,6 +5598,7 @@
             this.IMT_ENDDT_7.Text = "9999/99/99";
             this.IMT_ENDDT_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_ENDDT_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ENDDT_7.UseColorSizMode = false;
             // 
             // IMT_STADT_7
             // 
@@ -5508,6 +5629,7 @@
             this.IMT_STADT_7.Text = "9999/99/99";
             this.IMT_STADT_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_STADT_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_STADT_7.UseColorSizMode = false;
             // 
             // IMT_JANCD_7
             // 
@@ -5536,6 +5658,7 @@
             this.IMT_JANCD_7.TabIndex = 171;
             this.IMT_JANCD_7.Text = "XXXXXXXXX1XX3";
             this.IMT_JANCD_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_JANCD_7.UseColorSizMode = false;
             // 
             // IMT_ITMNM_7
             // 
@@ -5564,6 +5687,7 @@
             this.IMT_ITMNM_7.TabIndex = 182;
             this.IMT_ITMNM_7.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.IMT_ITMNM_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ITMNM_7.UseColorSizMode = false;
             // 
             // IMT_ITMCD_7
             // 
@@ -5592,6 +5716,7 @@
             this.IMT_ITMCD_7.TabIndex = 170;
             this.IMT_ITMCD_7.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ITMCD_7.UseColorSizMode = false;
             // 
             // panel90
             // 
@@ -5826,6 +5951,7 @@
             this.Space8.Size = new System.Drawing.Size(181, 19);
             this.Space8.TabIndex = 181;
             this.Space8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.Space8.UseColorSizMode = false;
             // 
             // IMN_R5UNITPRICE_8
             // 
@@ -5855,6 +5981,7 @@
             this.IMN_R5UNITPRICE_8.Text = "999,999,999";
             this.IMN_R5UNITPRICE_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R5UNITPRICE_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R5UNITPRICE_8.UseColorSizMode = false;
             // 
             // IMN_R4UNITPRICE_8
             // 
@@ -5884,6 +6011,7 @@
             this.IMN_R4UNITPRICE_8.Text = "999,999,999";
             this.IMN_R4UNITPRICE_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R4UNITPRICE_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R4UNITPRICE_8.UseColorSizMode = false;
             // 
             // IMN_R3UNITPRICE_8
             // 
@@ -5913,6 +6041,7 @@
             this.IMN_R3UNITPRICE_8.Text = "999,999,999";
             this.IMN_R3UNITPRICE_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R3UNITPRICE_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R3UNITPRICE_8.UseColorSizMode = false;
             // 
             // IMN_R2UNITPRICE_8
             // 
@@ -5942,6 +6071,7 @@
             this.IMN_R2UNITPRICE_8.Text = "999,999,999";
             this.IMN_R2UNITPRICE_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R2UNITPRICE_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R2UNITPRICE_8.UseColorSizMode = false;
             // 
             // IMT_REMARK_8
             // 
@@ -5970,6 +6100,7 @@
             this.IMT_REMARK_8.TabIndex = 184;
             this.IMT_REMARK_8.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50ＸＸＸＸＸＸＸＸＸ60";
             this.IMT_REMARK_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_REMARK_8.UseColorSizMode = false;
             // 
             // IMN_R1UNITPRICE_8
             // 
@@ -5999,6 +6130,7 @@
             this.IMN_R1UNITPRICE_8.Text = "999,999,999";
             this.IMN_R1UNITPRICE_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R1UNITPRICE_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R1UNITPRICE_8.UseColorSizMode = false;
             // 
             // IMN_COSTUNPRICE_8
             // 
@@ -6028,6 +6160,7 @@
             this.IMN_COSTUNPRICE_8.Text = "999,999,999";
             this.IMN_COSTUNPRICE_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_COSTUNPRICE_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_COSTUNPRICE_8.UseColorSizMode = false;
             // 
             // IMN_SSUNITPRICE_8
             // 
@@ -6057,6 +6190,7 @@
             this.IMN_SSUNITPRICE_8.Text = "999,999,999";
             this.IMN_SSUNITPRICE_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SSUNITPRICE_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_SSUNITPRICE_8.UseColorSizMode = false;
             // 
             // IMN_UNITPRICE_8
             // 
@@ -6086,6 +6220,7 @@
             this.IMN_UNITPRICE_8.Text = "999,999,999";
             this.IMN_UNITPRICE_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_UNITPRICE_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_UNITPRICE_8.UseColorSizMode = false;
             // 
             // IMT_ENDDT_8
             // 
@@ -6116,6 +6251,7 @@
             this.IMT_ENDDT_8.Text = "9999/99/99";
             this.IMT_ENDDT_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_ENDDT_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ENDDT_8.UseColorSizMode = false;
             // 
             // IMT_STADT_8
             // 
@@ -6146,6 +6282,7 @@
             this.IMT_STADT_8.Text = "9999/99/99";
             this.IMT_STADT_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_STADT_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_STADT_8.UseColorSizMode = false;
             // 
             // IMT_JANCD_8
             // 
@@ -6174,6 +6311,7 @@
             this.IMT_JANCD_8.TabIndex = 171;
             this.IMT_JANCD_8.Text = "XXXXXXXXX1XX3";
             this.IMT_JANCD_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_JANCD_8.UseColorSizMode = false;
             // 
             // IMT_ITMNM_8
             // 
@@ -6202,6 +6340,7 @@
             this.IMT_ITMNM_8.TabIndex = 182;
             this.IMT_ITMNM_8.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.IMT_ITMNM_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ITMNM_8.UseColorSizMode = false;
             // 
             // IMT_ITMCD_8
             // 
@@ -6230,6 +6369,7 @@
             this.IMT_ITMCD_8.TabIndex = 170;
             this.IMT_ITMCD_8.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ITMCD_8.UseColorSizMode = false;
             // 
             // panel114
             // 
@@ -6464,6 +6604,7 @@
             this.Space9.Size = new System.Drawing.Size(181, 19);
             this.Space9.TabIndex = 172;
             this.Space9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.Space9.UseColorSizMode = false;
             // 
             // IMN_R5UNITPRICE_9
             // 
@@ -6493,6 +6634,7 @@
             this.IMN_R5UNITPRICE_9.Text = "999,999,999";
             this.IMN_R5UNITPRICE_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R5UNITPRICE_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R5UNITPRICE_9.UseColorSizMode = false;
             // 
             // IMN_R4UNITPRICE_9
             // 
@@ -6522,6 +6664,7 @@
             this.IMN_R4UNITPRICE_9.Text = "999,999,999";
             this.IMN_R4UNITPRICE_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R4UNITPRICE_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R4UNITPRICE_9.UseColorSizMode = false;
             // 
             // IMN_R3UNITPRICE_9
             // 
@@ -6551,6 +6694,7 @@
             this.IMN_R3UNITPRICE_9.Text = "999,999,999";
             this.IMN_R3UNITPRICE_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R3UNITPRICE_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R3UNITPRICE_9.UseColorSizMode = false;
             // 
             // IMN_R2UNITPRICE_9
             // 
@@ -6580,6 +6724,7 @@
             this.IMN_R2UNITPRICE_9.Text = "999,999,999";
             this.IMN_R2UNITPRICE_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R2UNITPRICE_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R2UNITPRICE_9.UseColorSizMode = false;
             // 
             // IMT_REMARK_9
             // 
@@ -6608,6 +6753,7 @@
             this.IMT_REMARK_9.TabIndex = 178;
             this.IMT_REMARK_9.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50ＸＸＸＸＸＸＸＸＸ60";
             this.IMT_REMARK_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_REMARK_9.UseColorSizMode = false;
             // 
             // IMN_R1UNITPRICE_9
             // 
@@ -6637,6 +6783,7 @@
             this.IMN_R1UNITPRICE_9.Text = "999,999,999";
             this.IMN_R1UNITPRICE_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R1UNITPRICE_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R1UNITPRICE_9.UseColorSizMode = false;
             // 
             // IMN_COSTUNPRICE_9
             // 
@@ -6666,6 +6813,7 @@
             this.IMN_COSTUNPRICE_9.Text = "999,999,999";
             this.IMN_COSTUNPRICE_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_COSTUNPRICE_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_COSTUNPRICE_9.UseColorSizMode = false;
             // 
             // IMN_SSUNITPRICE_9
             // 
@@ -6695,6 +6843,7 @@
             this.IMN_SSUNITPRICE_9.Text = "999,999,999";
             this.IMN_SSUNITPRICE_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_SSUNITPRICE_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_SSUNITPRICE_9.UseColorSizMode = false;
             // 
             // IMN_UNITPRICE_9
             // 
@@ -6724,6 +6873,7 @@
             this.IMN_UNITPRICE_9.Text = "999,999,999";
             this.IMN_UNITPRICE_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_UNITPRICE_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_UNITPRICE_9.UseColorSizMode = false;
             // 
             // IMT_ENDDT_9
             // 
@@ -6754,6 +6904,7 @@
             this.IMT_ENDDT_9.Text = "9999/99/99";
             this.IMT_ENDDT_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_ENDDT_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ENDDT_9.UseColorSizMode = false;
             // 
             // IMT_STADT_9
             // 
@@ -6784,6 +6935,7 @@
             this.IMT_STADT_9.Text = "9999/99/99";
             this.IMT_STADT_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IMT_STADT_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_STADT_9.UseColorSizMode = false;
             // 
             // IMT_JANCD_9
             // 
@@ -6812,6 +6964,7 @@
             this.IMT_JANCD_9.TabIndex = 173;
             this.IMT_JANCD_9.Text = "XXXXXXXXX1XX3";
             this.IMT_JANCD_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_JANCD_9.UseColorSizMode = false;
             // 
             // IMT_ITMNM_9
             // 
@@ -6840,6 +6993,7 @@
             this.IMT_ITMNM_9.TabIndex = 175;
             this.IMT_ITMNM_9.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.IMT_ITMNM_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ITMNM_9.UseColorSizMode = false;
             // 
             // IMT_ITMCD_9
             // 
@@ -6868,6 +7022,7 @@
             this.IMT_ITMCD_9.TabIndex = 171;
             this.IMT_ITMCD_9.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ITMCD_9.UseColorSizMode = false;
             // 
             // panel138
             // 

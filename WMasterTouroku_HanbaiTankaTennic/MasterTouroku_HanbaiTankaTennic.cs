@@ -55,6 +55,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
         ClsGridHanbaiTankaTennic mGrid = new ClsGridHanbaiTankaTennic();
         private int m_EnableCnt;
         private int m_dataCnt = 0;
+        public string[] DuplicateCheckCol = null;
         private void MasterTouroku_HanbaiTankaTennic_Load(object sender, EventArgs e)
         {
             try
@@ -1008,8 +1009,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     else
                         break;
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -1347,29 +1346,36 @@ namespace WMasterTouroku_HanbaiTankaTennic
         }
         private void GridControl_KeyDown(object sender, KeyEventArgs e)
         {
-            //Control c = sender as Control;
-            //if (c is CKM_TextBox ct && e.KeyCode == (Keys.Enter | Keys.Tab) )
-            //{
-            //    if (ct.Name.Contains("IMT_STADT_"))
-            //    {
-            //        var IsExist = true; ///(ct.Text) // bll.bdfbedf 
-            //        if (IsExist)
-            //        {
-            //            bbl.ShowMessage("E105");
-            //        }
-            //    }
-            //    else if (ct.Name.Contains("IMT_ENDDT_"))
-            //    {
-            //        // Button btn = PanelFooter.;
-            //        var StartDate = this.Controls.Find("IMT_STADT_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
-            //        if (string.Compare(StartDate.Text,  ct.Text) == 1)
-            //        {
-            //            bbl.ShowMessage("E104");
-            //        }
-            //    }
-            //}
-            //mGrid.S_DispToArray(Vsb_Mei_0.Value);
-        }
+            Control c = sender as Control;
+            if (c is CKM_TextBox ct && e.KeyCode == (Keys.Enter | Keys.Tab))
+            {
+                if (ct.Name.Contains("IMT_STADT_"))
+                {
+                    SetMultiColNo(dt);
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        var StartDate1 = dt.Rows[i]["StartDate"].ToString();
+                        var StartDate = this.Controls.Find("IMT_STADT_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
+                        if (StartDate.Text == StartDate1.ToString())
+                        {
+                            bbl.ShowMessage("Date exit!!!");
+                        }
+                    }
+                    //var IsExist = true; ///(ct.Text) // bll.bdfbedf 
+                }
+            }
+                //    else if (ct.Name.Contains("IMT_ENDDT_"))
+                //    {
+                //        // Button btn = PanelFooter.;
+                //        var StartDate = this.Controls.Find("IMT_STADT_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
+                //        if (string.Compare(StartDate.Text,  ct.Text) == 1)
+                //        {
+                //            bbl.ShowMessage("E104");
+                //        }
+                //    }
+                //}
+                //mGrid.S_DispToArray(Vsb_Mei_0.Value);
+            }
         private void KeyControl_Enter(object sender, EventArgs e)
         {
             try
@@ -1395,7 +1401,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 MessageBox.Show(ex.Message);
             }
         }
-       
         private void S_SetControlArray()
         {
             mGrid.F_CtrlArray_MK(mGrid.g_MK_Ctl_Col, mGrid.g_MK_Ctl_Row);
@@ -1893,26 +1898,67 @@ namespace WMasterTouroku_HanbaiTankaTennic
             var dt = GetdatafromArray();
             string Xml = spb.DataTableToXml(dt);
             string StartDate = dt.Rows[0]["StartChangeDate"].ToString();
-            if (dt.Rows.Count>=StartDate.Length)
+            if (dt.Rows.Count >= StartDate.Length)
             {
                 bbl.ShowMessage("Date Exist!!");
                 IMT_ENDDT_0.Focus();
             }
-            //if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
-            //{
             if (spb.M_SKUPrice_Insert_Update(mse, Xml, mode))
-                {
-                    spb.ShowMessage("I101");
-                    Clear(pnl_Header);
-                    Clear(pnl_Body);
-                    ChangeOperationMode(OperationMode);
-                }
-            //}
+            {
+                 spb.ShowMessage("I101");
+                 Clear(pnl_Header);
+                 Clear(pnl_Body);
+                 ChangeOperationMode(OperationMode);
+            }
             else
             {
                 spb.ShowMessage("S001");
             }
         }
+        //protected bool RequireCheck(Control[] ctrl, TextBox txt = null)
+        //{
+        //    this.txt = txt;
+        //    foreach (Control c in ctrl)
+        //    {
+        //        if (c is CKM_TextBox)
+        //        {
+        //            if (txt == null)
+        //            {
+        //                var StartDate = dt.Rows[0]["StartChangeDate"].ToString();
+        //                if(c.Text==StartDate.ToString())
+        //                {
+        //                    bbl.ShowMessage("Date Exist!!");
+        //                    c.Focus();
+        //                }
+        //            }
+        //        }
+        //    }
+        //    return true;
+        //}
+        //protected void Check_Textbox()
+        //{
+        //    try
+        //    {
+        //        previousCtrl = this.ActiveControl;
+        //        if (previousCtrl is CKM_TextBox ct)
+        //        {
+        //            if (ct.Name.Contains("IMT_STADT_"))
+        //            {
+        //                var StartDate = dt.Rows[0]["StartChangeDate"].ToString();
+        //                if (previousCtrl.GetType().BaseType.Name.Contains("StartDate"))
+        //                {
+        //                    bbl.ShowMessage("Date Exist!!");
+        //                    previousCtrl.Focus();
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //    }
+        //}
+       
         private void ckM_TextBox68_TextChanged(object sender, EventArgs e)
         {
 

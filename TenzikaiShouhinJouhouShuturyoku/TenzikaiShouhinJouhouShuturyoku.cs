@@ -36,6 +36,11 @@ namespace TenzikaiShouhinJouhouShuturyoku
             BindCombo();
             Btn_F10.Text = "出力(F10)";
             F2Visible = false;
+            F9Visible = true;
+            scBrandCDFrom.NameWidth = 0;
+            scBrandCDTo.NameWidth = 0;
+            scSegmentCDFrom.NameWidth = 0;
+            scSegmentCDTo.NameWidth = 0;
             SetRequiredField();
             scSupplierCD.SetFocus(1);
         }

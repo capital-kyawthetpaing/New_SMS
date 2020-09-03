@@ -359,6 +359,7 @@
     <Content Include="StoreProcedure\M_ItemPrice_Select.sql" />
     <Content Include="StoreProcedure\M_ItemPrice_SelectData.sql" />
     <Content Include="StoreProcedure\MastertorokuShiiretanka_Select.sql" />
+    <Content Include="StoreProcedure\M_ITEM_NormalSelect.sql" />
     <Content Include="StoreProcedure\M_ITEM_Select.sql" />
     <Content Include="StoreProcedure\M_ITEM_SelectBy_ItemCD.sql" />
     <Content Include="StoreProcedure\M_Item_SelectForSKSMasterUpdate.sql" />
@@ -421,6 +422,7 @@
     <Content Include="StoreProcedure\M_ShiireKakeritsu_Select.sql" />
     <Content Include="StoreProcedure\M_Site_Select.sql" />
     <Content Include="StoreProcedure\M_Site_SelectByItemCD.sql" />
+    <Content Include="StoreProcedure\M_SKUHenKou.sql" />
     <Content Include="StoreProcedure\M_SKULastCost_Select.sql" />
     <Content Include="StoreProcedure\M_SKUMakerVendor_Select.sql" />
     <Content Include="StoreProcedure\M_SKUPrice_DataSelect.Sql" />
@@ -429,6 +431,7 @@
     <Content Include="StoreProcedure\M_SKUPrice_SelectData.sql" />
     <Content Include="StoreProcedure\M_SKUPrice_SelectTanka.sql" />
     <Content Include="StoreProcedure\M_SKUSelectDataForHanbaiTankaKakeritu.sql" />
+    <Content Include="StoreProcedure\M_Sku_henkouSelect.sql" />
     <Content Include="StoreProcedure\M_SKU_Select.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectAll.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectAllForTempoRegiShohin.sql" />
@@ -572,7 +575,6 @@
     <Content Include="StoreProcedure\PRC_ZaikoIdou_A2B2.sql" />
     <Content Include="StoreProcedure\RakutenOrderDataDetail_Insert.sql" />
     <Content Include="StoreProcedure\RakutenOrder_InsertSelect.sql" />
-    <Content Include="StoreProcedure\Rpc_HanbaiTankaTennic.Sql" />
     <Content Include="StoreProcedure\RPC_SiiresakiZaikoYoteiHyou.sql" />
     <Content Include="StoreProcedure\RPC_UriageMotochou_PrintSelect.sql" />
     <Content Include="StoreProcedure\RPC_UrikakekinTairyuuHyou_PrintSelect.sql" />

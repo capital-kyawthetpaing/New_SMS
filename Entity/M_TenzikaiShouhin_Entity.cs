@@ -16,7 +16,7 @@ namespace Entity
         public string SegmentCDFrom { get; set; }
         public string SegmentCDTo { get; set; }
         public string TenzikaiName { get; set; }
-
+        public string JANCD { get; set; }
         public string DeleteFlg { get; set; }
         public string TanKaCD { get; set; }
 

@@ -41,7 +41,8 @@ namespace TempoRegiHanbaiTouroku
         private D_Sales_Entity dse;
         private D_StorePayment_Entity dspe;
         //private DataTable dtUpdate;
-
+        private string LeftVal = "";
+        private string RightVal = "";
         private Base.Client.FrmMainForm.EOperationMode OperationMode;
         private string mParStoreCD;
         private int mParSaleRate;
@@ -182,7 +183,7 @@ namespace TempoRegiHanbaiTouroku
                 btnProcess.Text = "入金へ";
                 SetRequireField();
                 AddHandler();
-
+                lblSumSalesGaku.Font_Size =   CKM_Controls.CKMShop_Label.CKM_FontSize.XXLarge;
                 //コマンドライン引数を配列で取得する
                 string[] cmds = System.Environment.GetCommandLineArgs();
                 if (cmds.Length - 1 > (int)ECmdLine.PcID)
@@ -857,10 +858,11 @@ namespace TempoRegiHanbaiTouroku
 
             DispFromDataTable(Convert.ToInt16(lblDtGyo1.Text));
 
-
+            LeftVal = txtJuchuuUnitPrice.Text;
+            RightVal = txtSu.Text;
              /// ptk
             //JANCD、数量、他の項目をクリア
-            //ClearScr();
+            ClearScr();
 
             //ディスプレイに、お買上計を表示（都度、表示）
             Calkkin();
@@ -869,25 +871,17 @@ namespace TempoRegiHanbaiTouroku
             
         }
 
+
         private void Show_Display(KeyEventArgs e=null)
         {
-            //if (e.KeyCode == Keys.Enter)
-                if (Base_DL.iniEntity.IsDM_D30Used)
+            if (Base_DL.iniEntity.IsDM_D30Used)
             {
                 try
                 {
-                    //Login_BL bbl_1 = new Login_BL();
-                    //bbl_1.Display_Service_Update(false);
-                    //bbl_1.Display_Service_Enabled(false);
+                    cdo.SetDisplay(false, false, "", GetShintani_Request_Upper(), GetShinTani_Request_Lower());
                 }
                 catch { }
-                try
-                    {
-                        cdo.SetDisplay(false, false, "", GetShintani_Request_Upper(), GetShinTani_Request_Lower());
-                    }
-                    catch { }
-
-                }
+            }
         }
         private bool ErrorCheck(int kbn = 0, bool set = false)
         {
@@ -1233,7 +1227,7 @@ namespace TempoRegiHanbaiTouroku
                     {
                         try { Stop_DisplayService(); }
                         catch { }
-                        Stop_DisplayService();
+                      //  Stop_DisplayService();
                         //更新終了後は画面をクリア  >>>. Proceed by PTK
                         InitScr();
                     }
@@ -2188,7 +2182,7 @@ namespace TempoRegiHanbaiTouroku
             //string.Format("{0:#,##0}", Convert.ToInt64(res)
             try
             {
-                return txtJuchuuUnitPrice.Text + "円" + " x " + txtSu.Text;
+                return LeftVal + "円" + " x " + RightVal;
             }
             catch
             {
