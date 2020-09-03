@@ -138,7 +138,44 @@ namespace TempoRegiShiharaiNyuuryoku
                 }
             }
         }
-
+        protected void CDO_Open()
+        {
+            if (Base_DL.iniEntity.IsDM_D30Used)
+            {
+                CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
+                op.OpenCashDrawer(); //2020_06_24     << PTK
+            }
+        }
+        protected void Printer_Open(string filePath, string programID, string cmdLine)
+        {
+            try
+            {
+                try
+                {
+                    cdo.RemoveDisplay(true);
+                    cdo.RemoveDisplay(true);
+                }
+                catch { }
+                // System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                pro.WaitForExit();
+                try
+                {
+                    cdo.SetDisplay(true, true, "");
+                    cdo.RemoveDisplay(true);
+                    cdo.RemoveDisplay(true);
+                    // cdo.SetDisplay(false, false, "", Up, Lp);
+                }
+                catch
+                {
+                    MessageBox.Show("P0. .  .");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void RunConsole()
         {
             string programID = "TempoRegiTorihikiReceipt";
@@ -151,30 +188,44 @@ namespace TempoRegiShiharaiNyuuryoku
 
             try
             {
-              
                 try
                 {
-                    cdo.SetDisplay(true, true, "", "");
-                    cdo.RemoveDisplay(true);
-                    cdo.RemoveDisplay(true);
+                    ///movedBegin
+                    try
+                    {
+                        //  Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, programID, cmdLine));
+                        Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, programID, cmdLine));
+                    }
+                    catch (Exception ex) { MessageBox.Show("Parallel function worked and cant dispose instance. . . " + ex.Message); }
                 }
-                catch { }
-                if (Base_DL.iniEntity.IsDM_D30Used)
+                catch (Exception ex)
                 {
-                    CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
-                    op.OpenCashDrawer(); //2020_06_24     << PTK
+                    MessageBox.Show(ex.Message);
                 }
-                try
-                {
-                    cdo.RemoveDisplay(true);
-                    cdo.RemoveDisplay(true);
-                }
-                catch
-                {
-                }
-                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
-                pro.WaitForExit();
                 Stop_DisplayService();
+                //try
+                //{
+                //    cdo.SetDisplay(true, true, "", "");
+                //    cdo.RemoveDisplay(true);
+                //    cdo.RemoveDisplay(true);
+                //}
+                //catch { }
+                //if (Base_DL.iniEntity.IsDM_D30Used)
+                //{
+                //    CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
+                //    op.OpenCashDrawer(); //2020_06_24     << PTK
+                //}
+                //try
+                //{
+                //    cdo.RemoveDisplay(true);
+                //    cdo.RemoveDisplay(true);
+                //}
+                //catch
+                //{
+                //}
+                //var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                //pro.WaitForExit();
+                //Stop_DisplayService();
             }
             catch
             {
