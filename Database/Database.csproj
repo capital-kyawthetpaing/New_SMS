@@ -286,6 +286,7 @@
     <Content Include="StoreProcedure\ImportYahooShipping.sql" />
     <Content Include="StoreProcedure\ImportYahooShippingDetail.sql" />
     <Content Include="StoreProcedure\InsertUpdate_HanbaiTankaKakeritu.sql" />
+    <Content Include="StoreProcedure\InsertUpdate_TenzikaiHanbaiTankaKakeritu.sql" />
     <Content Include="StoreProcedure\INSERT_D_Billing_6_1.sql" />
     <Content Include="StoreProcedure\INSERT_D_CollectBilling_10_1.sql" />
     <Content Include="StoreProcedure\INSERT_D_CollectBilling_11_1.sql" />
@@ -501,6 +502,7 @@
     <Content Include="StoreProcedure\M_TanaDate_Select.sql" />
     <Content Include="StoreProcedure\M_TankaCD_Select.sql" />
     <Content Include="StoreProcedure\M_TankaCD_SelectAll.sql" />
+    <Content Include="StoreProcedure\M_TenzikaiShouhin_Select.sql" />
     <Content Include="StoreProcedure\M_VendorFTP_ForSelectFile.sql" />
     <Content Include="StoreProcedure\M_VendorFTP_Select.sql" />
     <Content Include="StoreProcedure\M_Vendor_BankShiten_Select.sql" />
