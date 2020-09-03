@@ -735,7 +735,8 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                     }
                 }
                 else if (OperationMode == EOperationMode.INSERT) {
-
+                    var dtxml = bbl.DataTableToXml(D_SKUUpdate());
+                    var dtxml_1 = bbl.DataTableToXml(D_SKUChange());
                 }
                 /////////////////Insert and Update
             }
