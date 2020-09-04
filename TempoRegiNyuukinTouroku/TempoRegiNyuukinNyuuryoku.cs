@@ -119,13 +119,20 @@ namespace TempoRegiNyuukinTouroku
                     {
                         if (!string.IsNullOrWhiteSpace(txtCustomerCD.Text))
                         {
+
                             dce = GetDCollectData();
                             trntBL.TempoNyuukinTouroku_D_Collect_Insert(dce);
                         }
-                        trntBL.ShowMessage("I101");
-                      
-                        RunConsole();
-                       
+                        //  
+
+                        if (Base_DL.iniEntity.IsDM_D30Used)
+                        {
+                            RunConsole();
+                        }
+                        else
+                        {
+                            trntBL.ShowMessage("I101");
+                        }
                         txtPayment.Clear();
                         txtPayment.Focus();
                         cboDenominationName.SelectedValue = "-1";
@@ -272,35 +279,67 @@ namespace TempoRegiNyuukinTouroku
             string cmdLine = InCompanyCD + " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode + " " + depositNo; //parameter
             try
             {
+                ///movedBegin
+                try
+                {
+                    //  Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, programID, cmdLine));
+                    Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, programID, cmdLine));
+                }
+                catch(Exception ex) { MessageBox.Show("Parallel function worked and cant dispose instance. . . " + ex.Message); }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            Stop_DisplayService();
+        }
+        protected void CDO_Open()
+        {
+            if (Base_DL.iniEntity.IsDM_D30Used)
+            {
+                CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
+                op.OpenCashDrawer(); //2020_06_24     << PTK
+            }
+        }
+        protected void Printer_Open(string filePath,string programID, string cmdLine)
+        {
+            try
+            {
                 try
                 {
                     cdo.RemoveDisplay(true);
                     cdo.RemoveDisplay(true);
                 }
-                catch {
-                }
-             
-                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
-                pro.WaitForExit();
-                try { cdo.SetDisplay(true, true, "", "");
-                    cdo.RemoveDisplay(true);
-                    cdo.RemoveDisplay(true);
-                }
                 catch { }
-                if (Base_DL.iniEntity.IsDM_D30Used)
+               // System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                 var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                 pro.WaitForExit();
+                try
                 {
-                    CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
-                    op.OpenCashDrawer(); //2020_06_24     << PTK
+                    cdo.SetDisplay(true, true, "");
+                    cdo.RemoveDisplay(true);
+                    cdo.RemoveDisplay(true);
+                   // cdo.SetDisplay(false, false, "", Up, Lp);
                 }
-                Stop_DisplayService();
+                catch
+                {
+                    MessageBox.Show("P0. .  .");
+                }
             }
-            catch
+            catch(Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
+        protected async Task RunParallel(string fp, string pi,string cl)
+        {
+            //Parallel.Invoke(() => CDO_Open(),
+            //    () => Printer_Open(fp, pi, cl));
+            var task1 = Task.Factory.StartNew(() => CDO_Open());
+            var task2 = Task.Factory.StartNew(() => Printer_Open(fp, pi, cl));
 
-
+            await Task.WhenAll(task1, task2);
+        }
         private void frmTempoRegiTsurisenJyunbi_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);

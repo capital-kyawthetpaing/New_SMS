@@ -13,6 +13,7 @@ namespace BL
     {
         M_SKU_DL skudl;
         M_SalesRate_DL msrdl;
+        M_SKU_Entity mskue;
         public MasterTouroku_HanbaiTankaKakeritu_BL()
         {
             skudl = new M_SKU_DL();
