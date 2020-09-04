@@ -145,6 +145,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
                             using (XLWorkbook wb = new XLWorkbook())
                             {
                                 wb.Worksheets.Add(dt, "worksheet");
+                                wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;
                                 wb.SaveAs(savedialog.FileName);
                                 tzkbl.ShowMessage("Q201", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
                             }

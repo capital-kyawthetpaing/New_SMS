@@ -25,18 +25,20 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             bl = new MasterTouroku_TenzikaiHanbaiTankaKakeritu_BL();
             dtSelect = new DataTable();
         }
+
         private void FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu_Load(object sender, EventArgs e)
         {
-
             InProgramID = "MasterTouroku_TenzikaiHanbaiTankaKakeritu";
             StartProgram();
+            ModeText = "登録";
             string ymd = bbl.GetDate();
             CB_Year.Bind(ymd);
             CB_Season.Bind(ymd);
+            SC_Tanka.TxtCode.Require(true);
         }
         private bool ErrorCheck()
         {
-            if (!RequireCheck(new Control[] { SC_Tanka.TxtCode ,TB_Rate})) //Step1
+            if (!RequireCheck(new Control[] { SC_Tanka.TxtCode })) //Step1
                 return false;
 
             if (!SC_Tanka.IsExists(2))
@@ -45,7 +47,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 SC_Tanka.SetFocus(1);
                 return false;
             }
-            if(!String.IsNullOrEmpty(SC_Brand.TxtCode.Text))
+            if (!String.IsNullOrEmpty(SC_Brand.TxtCode.Text))
             {
                 if (!SC_Brand.IsExists(2))
                 {
@@ -54,7 +56,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                     return false;
                 }
             }
-            
+
             if (!String.IsNullOrEmpty(Sc_Segment.TxtCode.Text))
             {
                 if (!Sc_Segment.IsExists(2))
@@ -64,7 +66,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                     return false;
                 }
             }
-            
+
             //Console.WriteLine(header.Trim(new Char[] { ' ', '*', '.' }));
 
             if (!String.IsNullOrEmpty(TB_PriceOutTaxF.Text))
@@ -87,8 +89,6 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             return true;
 
         }
-      
-
         private void SC_Tanka_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -105,40 +105,36 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
 
             }
         }
-
         private void SC_Brand_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 if (!String.IsNullOrEmpty(SC_Brand.TxtCode.Text))
                 {
-                    if(!SC_Brand.SelectData())
+                    if (!SC_Brand.SelectData())
                     {
                         bbl.ShowMessage("E101");
                         SC_Brand.SetFocus(1);
                     }
-                    
+
                 }
             }
         }
-
         private void Sc_Segment_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 if (!String.IsNullOrEmpty(Sc_Segment.TxtCode.Text))
                 {
-                    if(!Sc_Segment.SelectData())
-                     {
+                    if (!Sc_Segment.SelectData())
+                    {
                         bbl.ShowMessage("E101");
                         Sc_Segment.SetFocus(1);
                     }
-                   
+
                 }
             }
         }
-
-
         public override void FunctionProcess(int Index)
         {
             switch (Index + 1)
@@ -166,13 +162,13 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             base.OperationMode = OperationMode;
             switch (OperationMode)
             {
-               
+
                 case EOperationMode.UPDATE:
                     Clear(panel1);
                     SC_Tanka.SetFocus(1);
                     break;
             }
-            
+
         }
         private void CleanData()
         {
@@ -180,22 +176,14 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             GV_Tenzaishohin.DataSource = null;
 
         }
-
-        private void SetRequireField()
-        {
-            SC_Tanka.TxtCode.Require(true);
-            TB_Rate.Require(true);
-        }
         protected override void EndSec()
         {
             this.Close();
         }
-
         private void Sc_Segment_Enter(object sender, EventArgs e)
         {
             Sc_Segment.Value1 = "226";
         }
-
         private void BT_SelectAll_Click(object sender, EventArgs e)
         {
             if (GV_Tenzaishohin.Rows.Count > 0)
@@ -207,7 +195,6 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 }
             }
         }
-
         private void BT_DeseletAll_Click(object sender, EventArgs e)
         {
             if (GV_Tenzaishohin.Rows.Count > 0)
@@ -218,49 +205,50 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 }
             }
         }
-
         private void BT_Display_Click(object sender, EventArgs e)
         {
             F11();
         }
         private void F11()
         {
-            mTSE = GetTenzikaiShouhinData();
-            dtSelect = bl.M_TenzikaiShouhin_Select(mTSE);
-            if(dtSelect.Rows.Count >0)
-            {
-                GV_Tenzaishohin.DataSource = dtSelect;
-            }
-            else
-            {
-                GV_Tenzaishohin.DataSource = null;
-                bl.ShowMessage("E128");
-            }
-       }
-
-
-        private void F12()
-        {
-            if(dtSelect.Rows.Count >0)
+            if (ErrorCheck())
             {
                 mTSE = GetTenzikaiShouhinData();
-                String dtinsert = bl.DataTableToXml(dtSelect);
-                if (bl.InsertUpdate_TenzikaiHanbaiTankaKakeritu(mTSE, dtinsert))
+                dtSelect = bl.M_TenzikaiShouhin_Select(mTSE);
+                if (dtSelect.Rows.Count > 0)
                 {
-                  bbl.ShowMessage("I101");
-                    CleanData();
-                    SC_Tanka.SetFocus(1);
+                    GV_Tenzaishohin.DataSource = dtSelect;
                 }
                 else
                 {
-                    bbl.ShowMessage("S001");
+                    GV_Tenzaishohin.DataSource = null;
+                    bl.ShowMessage("E128");
                 }
-
-
             }
         }
+        private void F12()
+        {
+            if (ErrorCheck())
+            {
 
-       private M_TenzikaiShouhin_Entity GetTenzikaiShouhinData()
+                if (dtSelect.Rows.Count > 0)
+                {
+                    mTSE = GetTenzikaiShouhinData();
+                    mTSE.dt1 = dtSelect;
+                    if (bl.InsertUpdate_TenzikaiHanbaiTankaKakeritu(mTSE))
+                    {
+                        bbl.ShowMessage("I101");
+                        CleanData();
+                        SC_Tanka.SetFocus(1);
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("S001");
+                    }
+                }
+            }
+        }
+        private M_TenzikaiShouhin_Entity GetTenzikaiShouhinData()
         {
             mTSE = new M_TenzikaiShouhin_Entity()
             {
@@ -275,12 +263,11 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 PC = InPcID,
                 ProcessMode = "",
                 ProgramID = InProgramID,
-                Key = SC_Tanka.TxtCode.Text + "" + TB_Rate.Text,
+                Key = SC_Tanka.TxtCode.Text + " " + TB_Rate.Text,
             };
 
             return mTSE;
         }
-
         private void GV_Tenzaishohin_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             try
@@ -293,22 +280,183 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 GV_Tenzaishohin.RefreshEdit();
             }
         }
-
         private void BT_Apply_Click(object sender, EventArgs e)
         {
-            if(ErrorCheck())
+            if (ErrorCheck())
             {
                 foreach (DataGridViewRow row in GV_Tenzaishohin.Rows)
                 {
                     DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
                     if (chk.Value == "1")
                     {
-                        string itemcd = row.Cells["Rate"].Value.ToString();
-                        row.Cells["Rate"].Value = TB_Rate.Text;
+                        if (!String.IsNullOrEmpty(TB_Rate.Text))
+                        {
+                            string itemcd = row.Cells["Rate"].Value.ToString();
+                            row.Cells["Rate"].Value = TB_Rate.Text;
+                        }
+                        else
+                        {
+                            bl.ShowMessage("E102");
+                            TB_Rate.Focus();
+                            break;
+                        }
+
                     }
 
                 }
+
+            }
+
+        }
+        private void FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
+
+        private void GV_Tenzaishohin_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                if (GV_Tenzaishohin.Columns[e.ColumnIndex].Name == "Rate")
+                {
+                    string rate = GV_Tenzaishohin.Rows[e.RowIndex].Cells["Rate"].Value.ToString();
+                    if (!String.IsNullOrEmpty(rate))
+                    {
+                        if (!rate.Contains("."))
+                        {
+                            var isNumeric = int.TryParse(rate, out int n);
+                            if (isNumeric)
+                            {
+                                if (rate.Length > 3)
+                                {
+                                    MessageBox.Show("enter valid no");
+
+                                }
+                            }
+                        }
+                        else
+                        {
+                            int x = rate.IndexOf('.');
+                            int count = rate.Count(f => f == '.');
+                            string charre = rate.Remove(x, count);
+                            var isNumeric = int.TryParse(charre, out int n);
+                            if (count != 1 || x >= 4)
+                            {
+                                MessageBox.Show("enter valid no");
+
+                            }
+                        }
+                    }
+                }
             }
         }
+
+        private void GV_Tenzaishohin_CellValidated(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (GV_Tenzaishohin.Columns[e.ColumnIndex].Name == "Rate")
+            {
+                string rate = GV_Tenzaishohin.Rows[e.RowIndex].Cells["Rate"].Value.ToString();
+                if (!String.IsNullOrEmpty(rate))
+                {
+                    if (!rate.Contains("."))
+                    {
+                        var isNumeric = int.TryParse(rate, out int n);
+                        if (isNumeric)
+                        {
+                            if (rate.Length > 3)
+                            {
+                                MessageBox.Show("enter valid no");
+                                GV_Tenzaishohin.RefreshEdit();
+
+                            }
+                        }
+                    }
+                    else
+                    {
+                        int x = rate.IndexOf('.');
+                        int count = rate.Count(f => f == '.');
+                        string charre = rate.Remove(x, count);
+                        var isNumeric = int.TryParse(charre, out int n);
+                        if (count != 1 || x >= 4)
+                        {
+                            MessageBox.Show("enter valid no");
+                            GV_Tenzaishohin.RefreshEdit();
+
+                        }
+                    }
+                }
+            }
+        }
+
+        private void GV_Tenzaishohin_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if
+           (GV_Tenzaishohin.Columns[e.ColumnIndex].Name == "Rate")
+             {
+                string rate = GV_Tenzaishohin.Rows[e.RowIndex].Cells["Rate"].EditedFormattedValue.ToString();
+                if (!String.IsNullOrEmpty(rate))
+                {
+                    if (!rate.Contains("."))
+                    {
+                        var isNumeric = int.TryParse(rate, out int n);
+                        if (isNumeric)
+                        {
+                            if (rate.Length > 3)
+                            {
+                                MessageBox.Show("enter valid no");
+                                GV_Tenzaishohin.RefreshEdit();
+
+                            }
+                        }
+                    }
+                    else
+                    {
+                        int x = rate.IndexOf('.');
+                        int count = rate.Count(f => f == '.');
+                        string charre = rate.Remove(x, count);
+                        var isNumeric = int.TryParse(charre, out int n);
+                        if (count != 1 || x >= 4)
+                        {
+                            MessageBox.Show("enter valid no");
+                            GV_Tenzaishohin.RefreshEdit();
+
+                        }
+                    }
+                }
+            }
+        }
+
+        private void GV_Tenzaishohin_Paint(object sender, PaintEventArgs e)
+        {
+            //dgvPaymentClose.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dgvPaymentClose.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dgvPaymentClose.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dgvPaymentClose.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dgvPaymentClose.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            string[] monthes = { "ブランド", "せグメト", "", "" };
+            for (int j = 1; j < 5;)
+            {
+                Rectangle r1 = this.GV_Tenzaishohin.GetCellDisplayRectangle(j, -1, true);
+                int w1 = this.GV_Tenzaishohin.GetCellDisplayRectangle(j + 1, -1, true).Width;
+                r1.X += 1;
+                r1.Y += 1;
+                r1.Width = r1.Width + w1 - 2;
+                r1.Height = r1.Height - 2;
+
+                e.Graphics.FillRectangle(new SolidBrush(this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.BackColor), r1);
+                StringFormat format = new StringFormat();
+                format.LineAlignment = StringAlignment.Center;
+                format.Alignment = StringAlignment.Center;
+                e.Graphics.DrawString(monthes[j / 2],
+                this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.Font,
+                new SolidBrush(this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.ForeColor),
+                r1,
+                format);
+                j += 2;
+            }
+        }
+
+      
     }
 }

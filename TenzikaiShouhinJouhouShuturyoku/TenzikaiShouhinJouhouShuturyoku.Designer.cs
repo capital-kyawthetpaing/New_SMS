@@ -103,7 +103,7 @@
             this.txtExhibitionName.IsNumber = true;
             this.txtExhibitionName.IsShop = false;
             this.txtExhibitionName.Length = 40;
-            this.txtExhibitionName.Location = new System.Drawing.Point(199, 166);
+            this.txtExhibitionName.Location = new System.Drawing.Point(199, 164);
             this.txtExhibitionName.MaxLength = 40;
             this.txtExhibitionName.MoveNext = true;
             this.txtExhibitionName.Name = "txtExhibitionName";
@@ -358,7 +358,7 @@
             this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(139, 170);
+            this.ckM_Label5.Location = new System.Drawing.Point(139, 168);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label5.TabIndex = 4;
