@@ -65,6 +65,7 @@
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
             this.GvDetail = new CKM_Controls.CKM_GridView();
+            this.colDetail = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colStoreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVendorCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVendorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -126,6 +127,9 @@
             this.label9 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox3 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox15 = new CKM_Controls.CKM_TextBox();
+            this.ckM_CheckBox3 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox14 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_Label13 = new CKM_Controls.CKM_Label();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvDetail)).BeginInit();
@@ -133,6 +137,9 @@
             // 
             // PanelHeader
             // 
+            this.PanelHeader.Controls.Add(this.ckM_CheckBox3);
+            this.PanelHeader.Controls.Add(this.ckM_CheckBox14);
+            this.PanelHeader.Controls.Add(this.ckM_Label13);
             this.PanelHeader.Controls.Add(this.ckM_TextBox15);
             this.PanelHeader.Controls.Add(this.ckM_TextBox3);
             this.PanelHeader.Controls.Add(this.ckM_TextBox5);
@@ -253,6 +260,9 @@
             this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox5, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox3, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox15, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.ckM_Label13, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.ckM_CheckBox14, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.ckM_CheckBox3, 0);
             // 
             // PanelSearch
             // 
@@ -541,7 +551,7 @@
             this.ckM_TextBox8.MoveNext = true;
             this.ckM_TextBox8.Name = "ckM_TextBox8";
             this.ckM_TextBox8.Size = new System.Drawing.Size(60, 19);
-            this.ckM_TextBox8.TabIndex = 17;
+            this.ckM_TextBox8.TabIndex = 18;
             this.ckM_TextBox8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label14
@@ -610,7 +620,7 @@
             this.ScCustomer.SearchEnable = true;
             this.ScCustomer.Size = new System.Drawing.Size(634, 28);
             this.ScCustomer.Stype = Search.CKM_SearchControl.SearchType.得意先;
-            this.ScCustomer.TabIndex = 15;
+            this.ScCustomer.TabIndex = 16;
             this.ScCustomer.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCustomer.UseChangeDate = false;
             this.ScCustomer.Value1 = null;
@@ -791,6 +801,7 @@
             this.GvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GvDetail.ColumnHeadersHeight = 25;
             this.GvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colDetail,
             this.colStoreName,
             this.colVendorCD,
             this.colVendorName,
@@ -831,10 +842,23 @@
             this.GvDetail.TabIndex = 50;
             this.GvDetail.UseRowNo = true;
             this.GvDetail.UseSetting = true;
+            this.GvDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvDetail_CellContentClick);
+            // 
+            // colDetail
+            // 
+            this.colDetail.Frozen = true;
+            this.colDetail.HeaderText = " 詳細";
+            this.colDetail.Name = "colDetail";
+            this.colDetail.ReadOnly = true;
+            this.colDetail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDetail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colDetail.Text = "";
+            this.colDetail.Width = 50;
             // 
             // colStoreName
             // 
             this.colStoreName.DataPropertyName = "StoreName";
+            this.colStoreName.Frozen = true;
             this.colStoreName.HeaderText = "店舗";
             this.colStoreName.Name = "colStoreName";
             this.colStoreName.ReadOnly = true;
@@ -843,6 +867,7 @@
             // colVendorCD
             // 
             this.colVendorCD.DataPropertyName = "CustomerCD";
+            this.colVendorCD.Frozen = true;
             this.colVendorCD.HeaderText = "顧客";
             this.colVendorCD.Name = "colVendorCD";
             this.colVendorCD.ReadOnly = true;
@@ -850,6 +875,7 @@
             // colVendorName
             // 
             this.colVendorName.DataPropertyName = "CustomerName";
+            this.colVendorName.Frozen = true;
             this.colVendorName.HeaderText = " ";
             this.colVendorName.Name = "colVendorName";
             this.colVendorName.ReadOnly = true;
@@ -1294,7 +1320,7 @@
             this.ckM_CheckBox4.Location = new System.Drawing.Point(218, 62);
             this.ckM_CheckBox4.Name = "ckM_CheckBox4";
             this.ckM_CheckBox4.Size = new System.Drawing.Size(63, 16);
-            this.ckM_CheckBox4.TabIndex = 9;
+            this.ckM_CheckBox4.TabIndex = 11;
             this.ckM_CheckBox4.Text = "未入荷";
             this.ckM_CheckBox4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ckM_CheckBox4.UseVisualStyleBackColor = true;
@@ -1352,7 +1378,7 @@
             this.ckM_Label30.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label30.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label30.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label30.Location = new System.Drawing.Point(11, 139);
+            this.ckM_Label30.Location = new System.Drawing.Point(11, 195);
             this.ckM_Label30.Name = "ckM_Label30";
             this.ckM_Label30.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label30.TabIndex = 740;
@@ -1403,10 +1429,10 @@
             // 
             this.ckM_CheckBox8.AutoSize = true;
             this.ckM_CheckBox8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox8.Location = new System.Drawing.Point(73, 138);
+            this.ckM_CheckBox8.Location = new System.Drawing.Point(73, 194);
             this.ckM_CheckBox8.Name = "ckM_CheckBox8";
             this.ckM_CheckBox8.Size = new System.Drawing.Size(50, 16);
-            this.ckM_CheckBox8.TabIndex = 5;
+            this.ckM_CheckBox8.TabIndex = 7;
             this.ckM_CheckBox8.Text = "通常";
             this.ckM_CheckBox8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ckM_CheckBox8.UseVisualStyleBackColor = true;
@@ -1415,10 +1441,10 @@
             // 
             this.ckM_CheckBox9.AutoSize = true;
             this.ckM_CheckBox9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox9.Location = new System.Drawing.Point(73, 160);
+            this.ckM_CheckBox9.Location = new System.Drawing.Point(73, 216);
             this.ckM_CheckBox9.Name = "ckM_CheckBox9";
             this.ckM_CheckBox9.Size = new System.Drawing.Size(50, 16);
-            this.ckM_CheckBox9.TabIndex = 6;
+            this.ckM_CheckBox9.TabIndex = 8;
             this.ckM_CheckBox9.Text = "返品";
             this.ckM_CheckBox9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ckM_CheckBox9.UseVisualStyleBackColor = true;
@@ -1430,7 +1456,7 @@
             this.ckM_CheckBox10.Location = new System.Drawing.Point(218, 18);
             this.ckM_CheckBox10.Name = "ckM_CheckBox10";
             this.ckM_CheckBox10.Size = new System.Drawing.Size(63, 16);
-            this.ckM_CheckBox10.TabIndex = 7;
+            this.ckM_CheckBox10.TabIndex = 9;
             this.ckM_CheckBox10.Text = "未発注";
             this.ckM_CheckBox10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ckM_CheckBox10.UseVisualStyleBackColor = true;
@@ -1443,7 +1469,7 @@
             this.ckM_CheckBox11.Location = new System.Drawing.Point(218, 40);
             this.ckM_CheckBox11.Name = "ckM_CheckBox11";
             this.ckM_CheckBox11.Size = new System.Drawing.Size(102, 16);
-            this.ckM_CheckBox11.TabIndex = 8;
+            this.ckM_CheckBox11.TabIndex = 10;
             this.ckM_CheckBox11.Text = "納期回答待ち";
             this.ckM_CheckBox11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ckM_CheckBox11.UseVisualStyleBackColor = true;
@@ -1473,7 +1499,7 @@
             this.ckM_CheckBox12.Location = new System.Drawing.Point(218, 84);
             this.ckM_CheckBox12.Name = "ckM_CheckBox12";
             this.ckM_CheckBox12.Size = new System.Drawing.Size(63, 16);
-            this.ckM_CheckBox12.TabIndex = 10;
+            this.ckM_CheckBox12.TabIndex = 12;
             this.ckM_CheckBox12.Text = "未仕入";
             this.ckM_CheckBox12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ckM_CheckBox12.UseVisualStyleBackColor = true;
@@ -1486,7 +1512,7 @@
             this.ckM_CheckBox13.Location = new System.Drawing.Point(218, 106);
             this.ckM_CheckBox13.Name = "ckM_CheckBox13";
             this.ckM_CheckBox13.Size = new System.Drawing.Size(50, 16);
-            this.ckM_CheckBox13.TabIndex = 11;
+            this.ckM_CheckBox13.TabIndex = 13;
             this.ckM_CheckBox13.Text = "全て";
             this.ckM_CheckBox13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ckM_CheckBox13.UseVisualStyleBackColor = true;
@@ -1581,7 +1607,7 @@
             this.BtnChoseAll.Margin = new System.Windows.Forms.Padding(1);
             this.BtnChoseAll.Name = "BtnChoseAll";
             this.BtnChoseAll.Size = new System.Drawing.Size(115, 28);
-            this.BtnChoseAll.TabIndex = 12;
+            this.BtnChoseAll.TabIndex = 14;
             this.BtnChoseAll.Text = "全選択";
             this.BtnChoseAll.UseVisualStyleBackColor = false;
             this.BtnChoseAll.Click += new System.EventHandler(this.BtnChoseAll_Click);
@@ -1600,7 +1626,7 @@
             this.BtnOff.Margin = new System.Windows.Forms.Padding(1);
             this.BtnOff.Name = "BtnOff";
             this.BtnOff.Size = new System.Drawing.Size(115, 28);
-            this.BtnOff.TabIndex = 13;
+            this.BtnOff.TabIndex = 15;
             this.BtnOff.Text = "全解除";
             this.BtnOff.UseVisualStyleBackColor = false;
             this.BtnOff.Click += new System.EventHandler(this.BtnOff_Click);
@@ -1629,7 +1655,7 @@
             this.ckM_TextBox4.MoveNext = true;
             this.ckM_TextBox4.Name = "ckM_TextBox4";
             this.ckM_TextBox4.Size = new System.Drawing.Size(255, 19);
-            this.ckM_TextBox4.TabIndex = 16;
+            this.ckM_TextBox4.TabIndex = 17;
             this.ckM_TextBox4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ScVendor
@@ -1638,8 +1664,8 @@
             this.ScVendor.ChangeDate = "";
             this.ScVendor.ChangeDateWidth = 100;
             this.ScVendor.Code = "";
-            this.ScVendor.CodeWidth = 130;
-            this.ScVendor.CodeWidth1 = 130;
+            this.ScVendor.CodeWidth = 100;
+            this.ScVendor.CodeWidth1 = 100;
             this.ScVendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScVendor.DataCheck = true;
             this.ScVendor.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -1650,11 +1676,11 @@
             this.ScVendor.Location = new System.Drawing.Point(420, 111);
             this.ScVendor.Margin = new System.Windows.Forms.Padding(0);
             this.ScVendor.Name = "ScVendor";
-            this.ScVendor.NameWidth = 280;
+            this.ScVendor.NameWidth = 310;
             this.ScVendor.SearchEnable = true;
             this.ScVendor.Size = new System.Drawing.Size(444, 28);
             this.ScVendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.ScVendor.TabIndex = 20;
+            this.ScVendor.TabIndex = 21;
             this.ScVendor.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScVendor.UseChangeDate = false;
             this.ScVendor.Value1 = null;
@@ -1695,7 +1721,7 @@
             this.ScStaff.SearchEnable = true;
             this.ScStaff.Size = new System.Drawing.Size(354, 28);
             this.ScStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
-            this.ScStaff.TabIndex = 21;
+            this.ScStaff.TabIndex = 22;
             this.ScStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScStaff.UseChangeDate = false;
             this.ScStaff.Value1 = null;
@@ -1743,7 +1769,7 @@
             this.ckM_TextBox3.MoveNext = true;
             this.ckM_TextBox3.Name = "ckM_TextBox3";
             this.ckM_TextBox3.Size = new System.Drawing.Size(60, 19);
-            this.ckM_TextBox3.TabIndex = 18;
+            this.ckM_TextBox3.TabIndex = 19;
             this.ckM_TextBox3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox15
@@ -1770,8 +1796,49 @@
             this.ckM_TextBox15.MoveNext = true;
             this.ckM_TextBox15.Name = "ckM_TextBox15";
             this.ckM_TextBox15.Size = new System.Drawing.Size(60, 19);
-            this.ckM_TextBox15.TabIndex = 19;
+            this.ckM_TextBox15.TabIndex = 20;
             this.ckM_TextBox15.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // ckM_CheckBox3
+            // 
+            this.ckM_CheckBox3.AutoSize = true;
+            this.ckM_CheckBox3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox3.Location = new System.Drawing.Point(73, 137);
+            this.ckM_CheckBox3.Name = "ckM_CheckBox3";
+            this.ckM_CheckBox3.Size = new System.Drawing.Size(50, 16);
+            this.ckM_CheckBox3.TabIndex = 5;
+            this.ckM_CheckBox3.Text = "レジ";
+            this.ckM_CheckBox3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckM_CheckBox3.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox14
+            // 
+            this.ckM_CheckBox14.AutoSize = true;
+            this.ckM_CheckBox14.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox14.Location = new System.Drawing.Point(73, 159);
+            this.ckM_CheckBox14.Name = "ckM_CheckBox14";
+            this.ckM_CheckBox14.Size = new System.Drawing.Size(50, 16);
+            this.ckM_CheckBox14.TabIndex = 6;
+            this.ckM_CheckBox14.Text = "外商";
+            this.ckM_CheckBox14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckM_CheckBox14.UseVisualStyleBackColor = true;
+            // 
+            // ckM_Label13
+            // 
+            this.ckM_Label13.AutoSize = true;
+            this.ckM_Label13.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label13.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label13.DefaultlabelSize = true;
+            this.ckM_Label13.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label13.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label13.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label13.Location = new System.Drawing.Point(11, 138);
+            this.ckM_Label13.Name = "ckM_Label13";
+            this.ckM_Label13.Size = new System.Drawing.Size(57, 12);
+            this.ckM_Label13.TabIndex = 760;
+            this.ckM_Label13.Text = "受注場所";
+            this.ckM_Label13.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // TempoJuchuuShoukai
             // 
@@ -1860,6 +1927,10 @@
         private CKM_Controls.CKM_TextBox ckM_TextBox3;
         private Search.CKM_SearchControl ScStaff;
         private CKM_Controls.CKM_Label label9;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox3;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox14;
+        private CKM_Controls.CKM_Label ckM_Label13;
+        private System.Windows.Forms.DataGridViewButtonColumn colDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStoreName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVendorCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVendorName;

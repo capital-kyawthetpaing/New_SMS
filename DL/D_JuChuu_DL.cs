@@ -130,13 +130,13 @@ namespace DL
 
             return SelectData(dic, sp);
         }
-        /// <summary>
-        /// 店舗受注照会にて使用
-        /// </summary>
-        /// <param name="de"></param>
-        /// <param name="mse"></param>
-        /// <returns></returns>
-        public DataTable D_Juchu_SelectAllForShoukai(D_Juchuu_Entity de, M_SKU_Entity mse, string operatorNm, string pc)
+    /// <summary>
+    /// 店舗受注照会にて使用
+    /// </summary>
+    /// <param name="de"></param>
+    /// <param name="mse"></param>
+    /// <returns></returns>
+    public DataTable D_Juchu_SelectAllForShoukai(D_Juchuu_Entity de, M_SKU_Entity mse, string operatorNm, string pc)
         {
             string sp = "D_Juchu_SelectAllForShoukai";
 
@@ -157,6 +157,8 @@ namespace DL
                 { "@ChkMinyukin", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMinyukin.ToString() } },
                 { "@ChkAll", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkAll.ToString() } },
 
+                { "@ChkReji", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkReji.ToString() } },
+                { "@ChkGaisho", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkGaisho.ToString() } },
                 { "@ChkTujo", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkTujo.ToString() } },
                 { "@ChkHenpin", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkHenpin.ToString() } },
 

@@ -27,6 +27,8 @@ namespace TempoJuchuuShoukai
             ChkMiseikyu,
             ChkMinyukin,
             ChkAll,
+            ChkReji,
+            ChkGaisho,
             ChkTujo,
             ChkHenpin,
 
@@ -98,6 +100,7 @@ namespace TempoJuchuuShoukai
                 //起動時共通処理
                 base.StartProgram();
 
+
                 //初期値セット
                 ssbl = new TempoJuchuuShoukai_BL();
                 string ymd = ssbl.GetDate();
@@ -168,6 +171,14 @@ namespace TempoJuchuuShoukai
             {
                 dje.ChkAll = 1;
             }
+            if (((CheckBox)detailControls[(int)EIndex.ChkReji]).Checked)
+            {
+                dje.ChkReji = 1;
+            }
+            if (((CheckBox)detailControls[(int)EIndex.ChkGaisho]).Checked)
+            {
+                dje.ChkGaisho = 1;
+            }
             if (((CheckBox)detailControls[(int)EIndex.ChkTujo]).Checked)
             {
                 dje.ChkTujo = 1;
@@ -207,32 +218,24 @@ namespace TempoJuchuuShoukai
 
             return dje;
         }
-        protected override void ExecSec()
+        private void ExecDetail(int row)
         {
-            try
+            //受注入力を起動します
+            //EXEが存在しない時ｴﾗｰ
+            // 実行モジュールと同一フォルダのファイルを取得
+            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + Juchuu;
+            if (System.IO.File.Exists(filePath))
             {
-                //受注入力を起動します
-                //EXEが存在しない時ｴﾗｰ
-                // 実行モジュールと同一フォルダのファイルを取得
-                System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
-                string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + Juchuu;
-                if (System.IO.File.Exists(filePath))
-                {                    
-                    string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID;
-                    System.Diagnostics.Process.Start(filePath, cmdLine);
-                }
-                else
-                {
-                    //ファイルなし
-                }
+                string juchuNo = GvDetail.Rows[row].Cells["colJuchuuNO"].Value.ToString();
+                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + juchuNo;
+                System.Diagnostics.Process.Start(filePath, cmdLine);
+            }
+            else
+            {
+                //ファイルなし
+            }
 
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-                //EndSec();
-            }
         }
 
         protected override void ExecDisp()
@@ -251,6 +254,13 @@ namespace TempoJuchuuShoukai
             {
                 bbl.ShowMessage("E111");
                 detailControls[(int)EIndex.ChkMihikiate].Focus();
+                return;
+            }
+            //受注場所
+            if (!((CheckBox)detailControls[(int)EIndex.ChkReji]).Checked && !((CheckBox)detailControls[(int)EIndex.ChkGaisho]).Checked)
+            {
+                bbl.ShowMessage("E111");
+                detailControls[(int)EIndex.ChkReji].Focus();
                 return;
             }
             //受注種別
@@ -280,6 +290,7 @@ namespace TempoJuchuuShoukai
                 GvDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 GvDetail.CurrentRow.Selected = true;
                 GvDetail.Enabled = true;
+                SetGrid();
                 GvDetail.Focus();
                 Btn_F10.Enabled = true;
             }
@@ -310,6 +321,7 @@ namespace TempoJuchuuShoukai
         private void InitialControlArray()
         {
             detailControls = new Control[] { ckM_CheckBox7,ckM_CheckBox5,ckM_CheckBox6,ckM_CheckBox1,ckM_CheckBox2
+                ,ckM_CheckBox3,ckM_CheckBox14
                 ,ckM_CheckBox8,ckM_CheckBox9,ckM_CheckBox10,ckM_CheckBox11
                 ,ckM_CheckBox4,ckM_CheckBox12,ckM_CheckBox13
                 , CboStoreCD
@@ -377,6 +389,18 @@ namespace TempoJuchuuShoukai
                         }
                     }
 
+                    break;
+                case (int)EIndex.JuchuNoTo:
+                    if (!string.IsNullOrWhiteSpace(detailControls[index - 1].Text) && !string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    {
+                        int result = detailControls[index].Text.CompareTo(detailControls[index - 1].Text);
+                        if (result < 0)
+                        {
+                            bbl.ShowMessage("E106");
+                            detailControls[index].Focus();
+                            return false;
+                        }
+                    }
                     break;
 
                 case (int)EIndex.StoreCD:
@@ -560,8 +584,11 @@ namespace TempoJuchuuShoukai
             ((CheckBox)detailControls[(int)EIndex.ChkTujo]).Checked = true;
             ((CheckBox)detailControls[(int)EIndex.ChkHenpin]).Checked = true;
             ((CheckBox)detailControls[(int)EIndex.ChkHachuAll]).Checked = true;
+            ((CheckBox)detailControls[(int)EIndex.ChkReji]).Checked = true;
+            ((CheckBox)detailControls[(int)EIndex.ChkGaisho]).Checked = true;
 
             GvDetail.DataSource = null;
+            SetGrid();
             GvDetail.Enabled = false;
             Btn_F10.Enabled = false;
         }
@@ -574,6 +601,27 @@ namespace TempoJuchuuShoukai
             ScCustomer.LabelText = "";
         }
 
+        private void SetGrid()
+        {
+
+            ////GridViewのプロパティ設定
+            ////"Column1"列のヘッダーのテキストの配置を上下左右とも中央にする
+            //GvDetail.Columns["colJuchuuDate"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //GvDetail.Columns["coIOrderDate"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //GvDetail.Columns["colArrivalDate"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //GvDetail.Columns["colNyukaBi"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //GvDetail.Columns["colSaleDate"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //GvDetail.Columns["colSikyuYmd"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //GvDetail.Columns["colNyukinYmd"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            //GvDetail.Columns["colJuchuuDate"].SortMode = DataGridViewColumnSortMode.NotSortable;
+            //GvDetail.Columns["coIOrderDate"].SortMode = DataGridViewColumnSortMode.NotSortable;
+            //GvDetail.Columns["colArrivalDate"].SortMode = DataGridViewColumnSortMode.NotSortable;
+            //GvDetail.Columns["colNyukaBi"].SortMode = DataGridViewColumnSortMode.NotSortable;
+            //GvDetail.Columns["colSaleDate"].SortMode = DataGridViewColumnSortMode.NotSortable;
+            //GvDetail.Columns["colSikyuYmd"].SortMode = DataGridViewColumnSortMode.NotSortable;
+            //GvDetail.Columns["colNyukinYmd"].SortMode = DataGridViewColumnSortMode.NotSortable;
+        }
         /// <summary>
         /// handle f1 to f12 click event
         /// implement base virtual function
@@ -799,7 +847,6 @@ namespace TempoJuchuuShoukai
             }
         }
 
-
         private void BtnChoseAll_Click(object sender, EventArgs e)
         {
             try
@@ -870,6 +917,22 @@ namespace TempoJuchuuShoukai
             {
                 //エラー時共通処理
                 MessageBox.Show(ex.Message);
+            }
+        }
+        private void GvDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.ColumnIndex == 0)
+                {
+                    ExecDetail(e.RowIndex);
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
             }
         }
         #endregion
