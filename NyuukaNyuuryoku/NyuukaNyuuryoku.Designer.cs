@@ -197,6 +197,9 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
+            this.lblMaker = new System.Windows.Forms.Label();
+            this.ckM_Label3 = new CKM_Controls.CKM_Label();
+            this.txtMakerItem = new CKM_Controls.CKM_TextBox();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -446,7 +449,7 @@
             this.txtSu.MoveNext = true;
             this.txtSu.Name = "txtSu";
             this.txtSu.Size = new System.Drawing.Size(73, 47);
-            this.txtSu.TabIndex = 3;
+            this.txtSu.TabIndex = 4;
             this.txtSu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtSu.TextSize = CKM_Controls.CKM_TextBox.FontSize.XLarge;
             // 
@@ -545,7 +548,7 @@
             this.CboSoukoName.ComboAlign = CKM_Controls.CKMShop_ComboBox.Align.center;
             this.CboSoukoName.Ctrl_Byte = CKM_Controls.CKMShop_ComboBox.Bytes.半全角;
             this.CboSoukoName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CboSoukoName.Font = new System.Drawing.Font("Meiryo UI", 14F);
+            this.CboSoukoName.Font = new System.Drawing.Font("ＭＳ ゴシック", 14F);
             this.CboSoukoName.FontSize_ = 14F;
             this.CboSoukoName.FormattingEnabled = true;
             this.CboSoukoName.ItemHeight = 26;
@@ -815,7 +818,7 @@
             // 
             this.ScOrderNO.AutoSize = true;
             this.ScOrderNO.ChangeDate = "";
-            this.ScOrderNO.ChangeDateWidth = 21338695;
+            this.ScOrderNO.ChangeDateWidth = 59274147;
             this.ScOrderNO.Code = "XXXXXXXXX01";
             this.ScOrderNO.CodeWidth = 150;
             this.ScOrderNO.CodeWidth1 = 150;
@@ -4108,10 +4111,71 @@
             this.label30.Text = " ";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // lblMaker
+            // 
+            this.lblMaker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblMaker.Font = new System.Drawing.Font("ＭＳ ゴシック", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblMaker.Location = new System.Drawing.Point(823, 176);
+            this.lblMaker.Name = "lblMaker";
+            this.lblMaker.Size = new System.Drawing.Size(535, 30);
+            this.lblMaker.TabIndex = 750;
+            this.lblMaker.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ10";
+            this.lblMaker.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ckM_Label3
+            // 
+            this.ckM_Label3.AutoSize = true;
+            this.ckM_Label3.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label3.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label3.DefaultlabelSize = true;
+            this.ckM_Label3.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Large;
+            this.ckM_Label3.ForeColor = System.Drawing.Color.Blue;
+            this.ckM_Label3.Location = new System.Drawing.Point(694, 178);
+            this.ckM_Label3.Name = "ckM_Label3";
+            this.ckM_Label3.Size = new System.Drawing.Size(130, 27);
+            this.ckM_Label3.TabIndex = 749;
+            this.ckM_Label3.Text = "ﾒｰｶｰ品番";
+            this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Blue;
+            this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtMakerItem
+            // 
+            this.txtMakerItem.AllowMinus = false;
+            this.txtMakerItem.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtMakerItem.BackColor = System.Drawing.Color.White;
+            this.txtMakerItem.BorderColor = false;
+            this.txtMakerItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMakerItem.ClientColor = System.Drawing.Color.White;
+            this.txtMakerItem.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtMakerItem.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtMakerItem.DecimalPlace = 0;
+            this.txtMakerItem.Font = new System.Drawing.Font("ＭＳ ゴシック", 16F);
+            this.txtMakerItem.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.txtMakerItem.IntegerPart = 0;
+            this.txtMakerItem.IsCorrectDate = true;
+            this.txtMakerItem.isEnterKeyDown = false;
+            this.txtMakerItem.IsFirstTime = true;
+            this.txtMakerItem.isMaxLengthErr = false;
+            this.txtMakerItem.IsNumber = false;
+            this.txtMakerItem.IsShop = false;
+            this.txtMakerItem.Length = 50;
+            this.txtMakerItem.Location = new System.Drawing.Point(823, 176);
+            this.txtMakerItem.MaxLength = 50;
+            this.txtMakerItem.MoveNext = true;
+            this.txtMakerItem.Name = "txtMakerItem";
+            this.txtMakerItem.Size = new System.Drawing.Size(520, 29);
+            this.txtMakerItem.TabIndex = 3;
+            this.txtMakerItem.Text = "XXXXXXXXXXX1315";
+            this.txtMakerItem.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
+            // 
             // NyuukaNyuuryoku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.txtMakerItem);
+            this.Controls.Add(this.lblMaker);
+            this.Controls.Add(this.ckM_Label3);
             this.Controls.Add(this.Pnl_Body2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblZaiko);
@@ -4181,6 +4245,9 @@
             this.Controls.SetChildIndex(this.lblZaiko, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.Pnl_Body2, 0);
+            this.Controls.SetChildIndex(this.ckM_Label3, 0);
+            this.Controls.SetChildIndex(this.lblMaker, 0);
+            this.Controls.SetChildIndex(this.txtMakerItem, 0);
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();
             this.PanelSearch.ResumeLayout(false);
@@ -4367,6 +4434,9 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label lblMaker;
+        private CKM_Controls.CKM_Label ckM_Label3;
+        private CKM_Controls.CKM_TextBox txtMakerItem;
     }
 }
 
