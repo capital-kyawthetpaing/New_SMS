@@ -900,7 +900,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
             }
 
             var dtnow = DateTime.Now.ToString();
-            #region Exceed
+           
             try
             {
                 foreach (DataRow r in dt.Rows)
@@ -1039,7 +1039,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 var msg = ex.Message;
 
             }
-            #region exceed
+            
             return result;
         }
         private string Getint(string val)
@@ -1335,7 +1335,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
 
                 // 背景色
-                w_ActCtl.BackColor = ClsGridBase.BKColor;
+               // w_ActCtl.BackColor = ClsGridBase.BKColor;  ---PTK
 
                 Grid_Gotfocus((int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate, w_Row, System.Convert.ToInt32(w_ActCtl.Tag));
 
@@ -1359,7 +1359,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
 
                 // 背景色
-                w_ActCtl.BackColor = mGrid.F_GetBackColor_MK((int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate, w_Row);
+             //   w_ActCtl.BackColor = mGrid.F_GetBackColor_MK((int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate, w_Row);
 
             }
             catch (Exception ex)
