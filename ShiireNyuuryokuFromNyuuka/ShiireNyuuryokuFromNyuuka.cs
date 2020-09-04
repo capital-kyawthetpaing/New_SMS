@@ -1029,7 +1029,7 @@ namespace ShiireNyuuryokuFromNyuuka
                 
                 Btn_F7.Text = "";
                 Btn_F8.Text = "";
-                Btn_F10.Text = "納品データ(F10)";
+                Btn_F10.Text = "納品ﾃﾞｰﾀ(F10)";
                 Btn_F11.Text = "表示(F11)";
 
                 //コンボボックス初期化
@@ -3152,11 +3152,15 @@ namespace ShiireNyuuryokuFromNyuuka
             {
                 ChangeBackColor(w_Row, 1);
                 //Onの時、仕入数以降、入力可
+                mGrid.g_DArray[w_Row].PurchaseSu = mGrid.g_DArray[w_Row].ArrivalSu;
+                CheckGrid((int)ClsGridShiire.ColNO.PurchaseSu, w_Row);
             }
             else
             {
                 //Offの時、仕入数以降、入力不可
                 ChangeBackColor(w_Row);
+                mGrid.g_DArray[w_Row].PurchaseSu = "0";
+                CheckGrid((int)ClsGridShiire.ColNO.PurchaseSu, w_Row);
             }
 
             Grid_NotFocus((int)ClsGridShiire.ColNO.Chk, w_Row);
