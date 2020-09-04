@@ -1535,13 +1535,15 @@ namespace MasterTouroku_ShiireTanka
                 string itemcd;
                 DataRow[] drskuchoice;
                 DataRow[] drskuviewchoice;
-                foreach (DataGridViewRow row in GV_item.Rows)
+               // foreach (DataGridViewRow row in GV_item.Rows)
+                for(int j=0;j< GV_item.Rows.Count;j ++)
                 {
 
-                    row.Cells["ck"].Value = "1";
+                    //GV_item.Rows[j].Cells["ck"].Value = "1";
+                    dt.Rows[j]["CheckBox"] = "1";
                     if (RB_item.Checked)
                     {
-                        itemcd = row.Cells["ITEM"].Value.ToString();
+                        itemcd = GV_item.Rows[j].Cells["ITEM"].Value.ToString();
                         drskuchoice = dtsku.Select(" ITemCD = '" + itemcd + "'");
                         if (drskuchoice.Length > 0)
                         {
@@ -1938,9 +1940,9 @@ namespace MasterTouroku_ShiireTanka
             if (GV_item.Rows.Count > 0)
             {
 
-                DataRow[] dritem;
+               
                 DataRow[] dritemview;
-
+                DataRow[] dritem;
                 dritem = dt.Select(" CheckBox =1");
                 
                 if (dritem.Length > 0)
@@ -2001,17 +2003,19 @@ namespace MasterTouroku_ShiireTanka
                 {
 
                     m_IOE = GetItemorder();
-                    String deletedata = bl.DataTableToXml(deldt);
-                    String tbdeljan = bl.DataTableToXml(dtdeljan);
-                    String itemdata = bl.DataTableToXml(dt);
-                    String skudata = bl.DataTableToXml(dtsku);
-                    
-                        if (bl.Mastertoroku_Shiretanka_Insert(itemdata, skudata, deletedata, tbdeljan, m_IOE))
-                        {
-                            bl.ShowMessage("I101");
-                            Clear();
-                        }
-                   
+                    m_IOE.dt1 = deldt;
+                    m_IOE.dt2 = dtdeljan;
+                    m_IOE.dt3 = dt;
+                    m_IOE.dt4 = dtsku;
+                    //String deletedata = bl.DataTableToXml(deldt);
+                    //String tbdeljan = bl.DataTableToXml(dtdeljan);
+                    //String itemdata = bl.DataTableToXml(dt);
+                    //String skudata = bl.DataTableToXml(dtsku);
+                    if (bl.Mastertoroku_Shiretanka_Insert(m_IOE))
+                    {
+                        bl.ShowMessage("I101");
+                        Clear();
+                    }
                 }
                 else
                 {
