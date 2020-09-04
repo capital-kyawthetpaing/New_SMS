@@ -403,48 +403,85 @@ namespace WMasterTouroku_HanbaiTankaTennic
         {
             return CheckDetail(index, true);
         }
-        //private bool CheckGrid(int col, int row)
-        //{
-        //    if (!bbl.CheckDate(mGrid.g_DArray[row].StartChangeDate))
-        //    {
-        //        bbl.ShowMessage("E103");
-        //        return false;
-        //    }
-        //    if (!bbl.CheckDate(mGrid.g_DArray[row].EndChangeDate))
-        //    {
-        //        bbl.ShowMessage("E103");
-        //        return false;
-        //    }
-        //    if (!string.IsNullOrEmpty(mGrid.g_DArray[row].StartChangeDate) && !string.IsNullOrEmpty(mGrid.g_DArray[row].EndChangeDate))
-        //    {
-        //        if (string.Compare(mGrid.g_DArray[row].StartChangeDate, mGrid.g_DArray[row].EndChangeDate) == 1)
-        //        {
-        //            bbl.ShowMessage("E104");
-        //            return false;
-        //        }
-        //    }
-        //    return true;
-        //}
-        private bool ErrorCheck(int row)
+        private bool CheckGrid(int col, int row)
         {
-            if (!bbl.CheckDate(mGrid.g_DArray[row].StartChangeDate))
+            switch (col)
             {
-                bbl.ShowMessage("E103");
-                return false;
+                case (int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate:
+                    mGrid.g_DArray[row].StartChangeDate = bbl.FormatDate(mGrid.g_DArray[row].StartChangeDate);
+
+                    // correct date
+                    if (!bbl.CheckDate(mGrid.g_DArray[row].StartChangeDate))
+                    {
+                        bbl.ShowMessage("E103");
+                        return false;
+                    }
+                    M_SKUPrice_Entity mse = new M_SKUPrice_Entity
+                    {
+                        SKUCD = mGrid.g_DArray[row].SKUCD,
+                        ChangeDate = mGrid.g_DArray[row].StartChangeDate
+                    };
+                    DataTable dt = spb.M_SKUPrice_DataSelect(mse);
+                    if (dt.Rows.Count > 0)
+                    {
+                        //Ｅ１０５
+                        bbl.ShowMessage("E105");
+                        return false;
+                    }
+                    break;
+                case (int)ClsGridHanbaiTankaTennic.ColNO.EndChangeDate:
+                    if (!string.IsNullOrEmpty(mGrid.g_DArray[row].StartChangeDate) && !string.IsNullOrEmpty(mGrid.g_DArray[row].EndChangeDate))
+                    {
+                        if (string.Compare(mGrid.g_DArray[row].StartChangeDate, mGrid.g_DArray[row].EndChangeDate) == 1)
+                        {
+                            bbl.ShowMessage("E104");
+                            return false;
+                        }
+                    }
+                    break;
+                default:
+                    string val = "";
+
+                    switch (col)
+                    {
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.UnitPrice:
+                            val = mGrid.g_DArray[row].UnitPrice;
+                            break;
+
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.StandardSalesUnitPrice:
+                            val = mGrid.g_DArray[row].StandardSalesUnitPrice;
+                            break;
+
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank1UnitPrice:  
+                            val = mGrid.g_DArray[row].Rank1UnitPrice;
+                            break;
+
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank2UnitPrice:
+                            val = mGrid.g_DArray[row].Rank2UnitPrice;
+                            break;
+
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank3UnitPrice: 
+                            val = mGrid.g_DArray[row].Rank3UnitPrice;
+                            break;
+
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank4UnitPrice:
+                            val = mGrid.g_DArray[row].Rank4UnitPrice;
+                            break;
+
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank5UnitPrice: 
+                            val = mGrid.g_DArray[row].Rank5UnitPrice;
+                            break;
+                    }
+                    if (string.IsNullOrWhiteSpace(val))
+                    {
+                        bbl.ShowMessage("E102");
+                        return false;
+                    }
+                    break;
             }
-            if (!bbl.CheckDate(mGrid.g_DArray[row].EndChangeDate))
-            {
-                bbl.ShowMessage("E103");
-                return false;
-            }
-            if (!string.IsNullOrEmpty(mGrid.g_DArray[row].StartChangeDate) && !string.IsNullOrEmpty(mGrid.g_DArray[row].EndChangeDate))
-            {
-                if (string.Compare(mGrid.g_DArray[row].StartChangeDate, mGrid.g_DArray[row].EndChangeDate) == 1)
-                {
-                    bbl.ShowMessage("E104");
-                    return false;
-                }
-            }
+
+            //配列の内容を画面へセット
+            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
             return true;
         }
@@ -548,16 +585,16 @@ namespace WMasterTouroku_HanbaiTankaTennic
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
             {
                 //m_dataCntが更新有効行数
-                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].SKUCD) == false)
+                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].StartChangeDate) == false)
                 {
                     for (int CL = (int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate; CL < (int)ClsGridHanbaiTankaTennic.ColNO.COUNT; CL++)
                     {
-                        //if (CheckGrid(CL, RW) == false)
-                        //{
-                        //Focusセット処理
-                        ERR_FOCUS_GRID_SUB(CL, RW);
-                        return;
-                        //}
+                        if (CheckGrid(CL, RW) == false)
+                        {
+                            //Focusセット処理
+                            ERR_FOCUS_GRID_SUB(CL, RW);
+                            return;
+                        }
                     }
                 }
             }
@@ -1166,161 +1203,161 @@ namespace WMasterTouroku_HanbaiTankaTennic
         bool IsEntered = false;
         private void GridControl_Validated(object sender, EventArgs e)
         {
-            if (IsEntered)
-                return;
-            Control c = sender as Control;
-            if (c is CKM_TextBox ct)
-            {
-                if (ct.Name.Contains("IMT_STADT_"))
-                {
-                    if(!bbl.CheckDate(ct.Text))
-                    {
-                        bbl.ShowMessage("E103");
-                        ct.Focus();
-                    }
-                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
-                    {
-                        return;
-                    }
-                    var SKUCD = this.Controls.Find("IMT_ITMCD_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
-                    M_SKUPrice_Entity mse = new M_SKUPrice_Entity
-                    {
-                        SKUCD=SKUCD.Text,
-                        StartChangeDate =ct.Text
-                    };
-                    DataTable dt = spb.M_SKUPrice_DataSelect(mse);
-                    if(dt.Rows.Count>0)
-                    {
-                        bbl.ShowMessage("E105");
-                        IsEntered = true;
-                        //// ct.Focus();
-                        return;
-                    }
-                    //IsEntered = false;
-                }
-                if (ct.Name.Contains("IMT_ENDDT_"))
-                {
-                    if(!bbl.CheckDate(ct.Text))
-                    {
-                        bbl.ShowMessage("E103");
-                        ct.Focus();
-                    }
-                    var StartDate = this.Controls.Find("IMT_STADT_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
-                    if (string.Compare(StartDate.Text, ct.Text) == 1)
-                    {
-                        bbl.ShowMessage("E104");
-                        ct.Focus();
-                    }
-                    //DataTable dtInsert = new DataTable();
-                    //dtInsert = spb.SimpleSelect1("73", null, ct.Text);
-                    //if(dtInsert.Rows.Count>0)
-                    //{
-                    //    MessageBox.Show("Date Exit!!!");
-                    //    ct.Focus();
-                    //}
-                }
-                if (ct.Name.Contains("IMN_UNITPRICE_"))
-                {
-                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
-                    {
-                        return;
-                    }
-                    var UnitPrice = (ct.Text);
-                    if (string.IsNullOrWhiteSpace(ct.Text))
-                    {
-                        bbl.ShowMessage("E102");
-                        ct.Focus();
-                    }
-                }
-                if (ct.Name.Contains("IMN_SSUNITPRICE_"))
-                {
-                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
-                    {
-                        return;
-                    }
-                    var ssUnitPrice = (ct.Text);
-                    if (string.IsNullOrWhiteSpace(ct.Text))
-                    {
-                        bbl.ShowMessage("E102");
-                        ct.Focus();
-                    }
-                }
-                if (ct.Name.Contains("IMN_R1UNITPRICE_"))
-                {
-                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
-                    {
-                        return;
-                    }
-                    var r1UnitPrice = (ct.Text);
-                    if (string.IsNullOrWhiteSpace(ct.Text))
-                    {
-                        bbl.ShowMessage("E102");
-                        ct.Focus();
-                    }
-                }
-                if (ct.Name.Contains("IMN_R2UNITPRICE_"))
-                {
-                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
-                    {
-                        return;
-                    }
-                    var r2UnitPrice = (ct.Text);
-                    if (string.IsNullOrWhiteSpace(ct.Text))
-                    {
-                        bbl.ShowMessage("E102");
-                        ct.Focus();
-                    }
-                }
-                if (ct.Name.Contains("IMN_R3UNITPRICE_"))
-                {
-                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
-                    {
-                        return;
-                    }
-                    var r3UnitPrice = (ct.Text);
-                    if (string.IsNullOrWhiteSpace(ct.Text))
-                    {
-                        bbl.ShowMessage("E102");
-                        ct.Focus();
-                    }
-                }
-                if (ct.Name.Contains("IMN_R4UNITPRICE_"))
-                {
-                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
-                    {
-                        return;
-                    }
-                    var r4UnitPrice = (ct.Text);
-                    if (string.IsNullOrWhiteSpace(ct.Text))
-                    {
-                        bbl.ShowMessage("E102");
-                        ct.Focus();
-                    }
-                }
-                if (ct.Name.Contains("IMN_R5UNITPRICE_"))
-                {
-                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
-                    {
-                        return;
-                    }
-                    var r5UnitPrice = (ct.Text);
-                    if (string.IsNullOrWhiteSpace(ct.Text))
-                    {
-                        bbl.ShowMessage("E102");
-                        ct.Focus();
-                    }
-                }
-                //if (ct.Name.Contains("IMN_R5UNITPRICE_"))
-                //{
-                //    var UnitPrice = ct.Text;
-                //    if (string.IsNullOrEmpty(ct.Text))
-                //    {
-                //        bbl.ShowMessage("E102");
-                //        ct.Focus();
-                //    }
-                //}
-            }
-            mGrid.S_DispToArray(Vsb_Mei_0.Value);
+            //if (IsEntered)
+            //    return;
+            //Control c = sender as Control;
+            //if (c is CKM_TextBox ct)
+            //{
+            //    if (ct.Name.Contains("IMT_STADT_"))
+            //    {
+            //        if(!bbl.CheckDate(ct.Text))
+            //        {
+            //            bbl.ShowMessage("E103");
+            //            ct.Focus();
+            //        }
+            //        if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
+            //        {
+            //            return;
+            //        }
+            //        var SKUCD = this.Controls.Find("IMT_ITMCD_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
+            //        M_SKUPrice_Entity mse = new M_SKUPrice_Entity
+            //        {
+            //            SKUCD=SKUCD.Text,
+            //            StartChangeDate =ct.Text
+            //        };
+            //        DataTable dt = spb.M_SKUPrice_DataSelect(mse);
+            //        if(dt.Rows.Count>0)
+            //        {
+            //            bbl.ShowMessage("E105");
+            //            IsEntered = true;
+            //            //// ct.Focus();
+            //            return;
+            //        }
+            //        //IsEntered = false;
+            //    }
+            //    if (ct.Name.Contains("IMT_ENDDT_"))
+            //    {
+            //        if(!bbl.CheckDate(ct.Text))
+            //        {
+            //            bbl.ShowMessage("E103");
+            //            ct.Focus();
+            //        }
+            //        var StartDate = this.Controls.Find("IMT_STADT_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
+            //        if (string.Compare(StartDate.Text, ct.Text) == 1)
+            //        {
+            //            bbl.ShowMessage("E104");
+            //            ct.Focus();
+            //        }
+            //        //DataTable dtInsert = new DataTable();
+            //        //dtInsert = spb.SimpleSelect1("73", null, ct.Text);
+            //        //if(dtInsert.Rows.Count>0)
+            //        //{
+            //        //    MessageBox.Show("Date Exit!!!");
+            //        //    ct.Focus();
+            //        //}
+            //    }
+            //    if (ct.Name.Contains("IMN_UNITPRICE_"))
+            //    {
+            //        if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
+            //        {
+            //            return;
+            //        }
+            //        var UnitPrice = (ct.Text);
+            //        if (string.IsNullOrWhiteSpace(ct.Text))
+            //        {
+            //            bbl.ShowMessage("E102");
+            //            ct.Focus();
+            //        }
+            //    }
+            //    if (ct.Name.Contains("IMN_SSUNITPRICE_"))
+            //    {
+            //        if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
+            //        {
+            //            return;
+            //        }
+            //        var ssUnitPrice = (ct.Text);
+            //        if (string.IsNullOrWhiteSpace(ct.Text))
+            //        {
+            //            bbl.ShowMessage("E102");
+            //            ct.Focus();
+            //        }
+            //    }
+            //    if (ct.Name.Contains("IMN_R1UNITPRICE_"))
+            //    {
+            //        if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
+            //        {
+            //            return;
+            //        }
+            //        var r1UnitPrice = (ct.Text);
+            //        if (string.IsNullOrWhiteSpace(ct.Text))
+            //        {
+            //            bbl.ShowMessage("E102");
+            //            ct.Focus();
+            //        }
+            //    }
+            //    if (ct.Name.Contains("IMN_R2UNITPRICE_"))
+            //    {
+            //        if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
+            //        {
+            //            return;
+            //        }
+            //        var r2UnitPrice = (ct.Text);
+            //        if (string.IsNullOrWhiteSpace(ct.Text))
+            //        {
+            //            bbl.ShowMessage("E102");
+            //            ct.Focus();
+            //        }
+            //    }
+            //    if (ct.Name.Contains("IMN_R3UNITPRICE_"))
+            //    {
+            //        if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
+            //        {
+            //            return;
+            //        }
+            //        var r3UnitPrice = (ct.Text);
+            //        if (string.IsNullOrWhiteSpace(ct.Text))
+            //        {
+            //            bbl.ShowMessage("E102");
+            //            ct.Focus();
+            //        }
+            //    }
+            //    if (ct.Name.Contains("IMN_R4UNITPRICE_"))
+            //    {
+            //        if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
+            //        {
+            //            return;
+            //        }
+            //        var r4UnitPrice = (ct.Text);
+            //        if (string.IsNullOrWhiteSpace(ct.Text))
+            //        {
+            //            bbl.ShowMessage("E102");
+            //            ct.Focus();
+            //        }
+            //    }
+            //    if (ct.Name.Contains("IMN_R5UNITPRICE_"))
+            //    {
+            //        if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
+            //        {
+            //            return;
+            //        }
+            //        var r5UnitPrice = (ct.Text);
+            //        if (string.IsNullOrWhiteSpace(ct.Text))
+            //        {
+            //            bbl.ShowMessage("E102");
+            //            ct.Focus();
+            //        }
+            //    }
+            //    //if (ct.Name.Contains("IMN_R5UNITPRICE_"))
+            //    //{
+            //    //    var UnitPrice = ct.Text;
+            //    //    if (string.IsNullOrEmpty(ct.Text))
+            //    //    {
+            //    //        bbl.ShowMessage("E102");
+            //    //        ct.Focus();
+            //    //    }
+            //    //}
+            //}
+            //mGrid.S_DispToArray(Vsb_Mei_0.Value);
         }
         private void GridControl_Enter(object sender, EventArgs e)
         {
@@ -1370,36 +1407,157 @@ namespace WMasterTouroku_HanbaiTankaTennic
         }
         private void GridControl_KeyDown(object sender, KeyEventArgs e)
         {
-            //Control c = sender as Control;
-            //if (c is CKM_TextBox ct && e.KeyCode == (Keys.Enter | Keys.Tab))
-            //{
-            //    if (ct.Name.Contains("IMT_STADT_"))
-            //    {
-            //        SetMultiColNo(dt);
-            //        for (int i = 0; i < dt.Rows.Count; i++)
-            //        {
-            //            var StartDate1 = dt.Rows[i]["StartDate"].ToString();
-            //            var StartDate = this.Controls.Find("IMT_STADT_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
-            //            if (StartDate.Text == StartDate1.ToString())
-            //            {
-            //                bbl.ShowMessage("Date exit!!!");
-            //            }
-            //        }
-            //        //var IsExist = true; ///(ct.Text) // bll.bdfbedf 
-            //    }
-            //}
-                //    else if (ct.Name.Contains("IMT_ENDDT_"))
-                //    {
-                //        // Button btn = PanelFooter.;
-                //        var StartDate = this.Controls.Find("IMT_STADT_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
-                //        if (string.Compare(StartDate.Text,  ct.Text) == 1)
-                //        {
-                //            bbl.ShowMessage("E104");
-                //        }
-                //    }
-                //}
-                //mGrid.S_DispToArray(Vsb_Mei_0.Value);
+            try
+            {
+                if ((e.KeyCode == Keys.Return) &&
+                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+                {
+                    int w_Row;
+                    CKM_Controls.CKM_TextBox w_ActCtl;
+
+                    w_ActCtl = (CKM_Controls.CKM_TextBox)sender;
+                    w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
+                    int CL = (int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate;
+
+                    string ctlName = w_ActCtl.Name.Substring(0, w_ActCtl.Name.LastIndexOf("_"));
+
+                    bool lastCell = false;
+                    switch (ctlName)
+                    {
+                        case "IMT_STADT":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate;
+                            break;
+                        case "IMT_ENDDT":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.EndChangeDate;
+                            break;
+                        case "IMN_UNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.UnitPrice;
+                            break;
+                        case "IMN_SSUNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.StandardSalesUnitPrice;
+                            break;
+                        case "IMN_R1UNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.Rank1UnitPrice;
+                            break;
+                        case "IMN_R2UNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.Rank2UnitPrice;
+                            break;
+                        case "IMN_R3UNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.Rank3UnitPrice;
+                            break;
+                        case "IMN_R4UNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.Rank4UnitPrice;
+                            break;
+                        case "IMN_R5UNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.Rank5UnitPrice;
+                            break;
+                    }
+                    int w_CtlRow = w_Row - Vsb_Mei_0.Value;
+                    if (mGrid.g_MK_Ctrl[CL, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                    {
+                        if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[CL, w_CtlRow].CellCtl).isMaxLengthErr)
+                            return;
+                    }
+                    bool changeFlg = false;
+                    switch (CL)
+                    {
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate:
+                            if (!mGrid.g_DArray[w_Row].StartChangeDate.Equals(w_ActCtl.Text))
+                            {
+                                changeFlg = true;
+                            }
+                            break;
+
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.EndChangeDate:
+                            if (!mGrid.g_DArray[w_Row].EndChangeDate.Equals(w_ActCtl.Text))
+                            {
+                                changeFlg = true;
+                            }
+                            break;
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.UnitPrice:
+                            if (!mGrid.g_DArray[w_Row].UnitPrice.Equals(w_ActCtl.Text))
+                            {
+                                changeFlg = true;
+                            }
+                            break;
+
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.StandardSalesUnitPrice:
+                            if (!mGrid.g_DArray[w_Row].StandardSalesUnitPrice.Equals(w_ActCtl.Text))
+                            {
+                                changeFlg = true;
+                            }
+                            break;
+
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank1UnitPrice:
+                            if (!mGrid.g_DArray[w_Row].Rank1UnitPrice.Equals(w_ActCtl.Text))
+                            {
+                                changeFlg = true;
+                            }
+                            break;
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank2UnitPrice:
+                            if (!mGrid.g_DArray[w_Row].Rank2UnitPrice.Equals(w_ActCtl.Text))
+                            {
+                                changeFlg = true;
+                            }
+                            break;
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank3UnitPrice:
+                            if (!mGrid.g_DArray[w_Row].Rank3UnitPrice.Equals(w_ActCtl.Text))
+                            {
+                                changeFlg = true;
+                            }
+                            break;
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank4UnitPrice:
+                            if (!mGrid.g_DArray[w_Row].Rank4UnitPrice.Equals(w_ActCtl.Text))
+                            {
+                                changeFlg = true;
+                            }
+                            break;
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank5UnitPrice:
+                            if (!mGrid.g_DArray[w_Row].Rank5UnitPrice.Equals(w_ActCtl.Text))
+                            {
+                                changeFlg = true;
+                            }
+                            break;
+                    }
+                    if (changeFlg)
+                    {
+                        decimal d;
+                        decimal zei;
+                        string ymd = mGrid.g_DArray[w_Row].StartChangeDate;
+                        int taxRateFlg = mGrid.g_DArray[w_Row].DeleteFlg;
+                        switch (CL)
+                        {
+                            //(税抜)⇒(税込)
+                            case (int)ClsGridHanbaiTankaTennic.ColNO.UnitPrice:
+                                if (Decimal.TryParse(mGrid.g_DArray[w_Row].UnitPrice, out d))
+                                    mGrid.g_DArray[w_Row].UnitPrice = string.Format("{0:#,##0}", bbl.GetZeikomiKingaku(d, taxRateFlg, out zei, ymd));
+                                else
+                                    mGrid.g_DArray[w_Row].UnitPrice = "0";
+                                break;
+
+                        }
+                        }
+                        if (CheckGrid(CL, w_Row) == false)
+                    {
+                        //Focusセット処理
+                        w_ActCtl.Focus();
+                        return;
+                    }
+                    if (lastCell)
+                    {
+                        w_ActCtl.Focus();
+                        return;
+                    }
+
+                    this.ProcessTabKey(!e.Shift);
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            mGrid.S_DispToArray(Vsb_Mei_0.Value);
+        }
         private void KeyControl_Enter(object sender, EventArgs e)
         {
             try
