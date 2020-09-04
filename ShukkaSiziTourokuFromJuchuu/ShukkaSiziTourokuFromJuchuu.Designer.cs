@@ -4828,9 +4828,9 @@
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.IMT_DMY_0);
-            this.panel4.Location = new System.Drawing.Point(3, 2);
+            this.panel4.Location = new System.Drawing.Point(3, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1317, 52);
+            this.panel4.Size = new System.Drawing.Size(1306, 50);
             this.panel4.TabIndex = 342;
             // 
             // label10
@@ -5612,7 +5612,7 @@
             this.label45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label45.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label45.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label45.Location = new System.Drawing.Point(1172, 275);
+            this.label45.Location = new System.Drawing.Point(1172, 277);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(145, 16);
             this.label45.TabIndex = 313;

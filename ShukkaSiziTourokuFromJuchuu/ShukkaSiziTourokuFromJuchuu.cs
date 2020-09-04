@@ -746,7 +746,7 @@ namespace ShukkaSiziTourokuFromJuchuu
                                         case (int)ClsGridShukka.ColNO.CommentOutStore:    // 
                                             {
                                                 //出荷データが存在する時、入力不可
-                                                if (mGrid.g_DArray[w_Row].Kbn.Equals(3))
+                                                if (!string.IsNullOrWhiteSpace( mGrid.g_DArray[w_Row].ShippingDate))
                                                 {
                                                     mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = false;
                                                 }
@@ -1427,6 +1427,7 @@ namespace ShukkaSiziTourokuFromJuchuu
             dt.Columns.Add("InstructionRows", typeof(int));
             dt.Columns.Add("InstructionKBN", typeof(int));
             dt.Columns.Add("DeliveryPlanNO", typeof(string));
+            dt.Columns.Add("DeliveryName", typeof(string));
             dt.Columns.Add("GyoNO", typeof(int));
             dt.Columns.Add("DeliveryPlanDate", typeof(DateTime));
             dt.Columns.Add("CarrierCD", typeof(string));
@@ -1453,6 +1454,7 @@ namespace ShukkaSiziTourokuFromJuchuu
                          , bbl.Z_Set(mGrid.g_DArray[RW].InstructionRows)
                          , bbl.Z_Set(mGrid.g_DArray[RW].InstructionKBN)
                          , mGrid.g_DArray[RW].DeliveryPlanNO
+                         , mGrid.g_DArray[RW].DeliveryName
                          , rowNo //mGrid.g_DArray[RW].GYONO
                          , mGrid.g_DArray[RW].DeliveryPlanDate == "" ? null : mGrid.g_DArray[RW].DeliveryPlanDate
                          , mGrid.g_DArray[RW].CarrierName == "" ? null : mGrid.g_DArray[RW].CarrierName
@@ -1977,11 +1979,14 @@ namespace ShukkaSiziTourokuFromJuchuu
                     return;
                 }
 
+                //画面より配列セット 
+                mGrid.S_DispToArray(Vsb_Mei_0.Value);
+
                 switch (CL)
                 {
                     case (int)ClsGridShukka.ColNO.ChkSyukka:
-                        if(mGrid.g_DArray[w_Row].ChkSyukka)
-                        ChangeCheckSyukka(w_Row);
+                        if(mGrid.g_DArray[w_Row].ChkSyukka && mGrid.g_DArray[w_Row].Kbn.Equals(1))                            
+                                ChangeCheckSyukka(w_Row);
                         break;
 
                     case (int)ClsGridShukka.ColNO.ChkUntin:
@@ -2129,9 +2134,12 @@ namespace ShukkaSiziTourokuFromJuchuu
             //同一出荷先/出荷予定日の受注明細を集計し、合計税抜受注額を算出する。
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
             {
-                if (mGrid.g_DArray[RW].DeliveryName == syukkaName && mGrid.g_DArray[RW].DeliveryPlanDate == syukkaDate)
+                if (mGrid.g_DArray[RW].Kbn.Equals(1))
                 {
-                    sum += bbl.Z_Set(mGrid.g_DArray[RW].Hanbaigaku);
+                    if (mGrid.g_DArray[RW].DeliveryName == syukkaName && mGrid.g_DArray[RW].DeliveryPlanDate == syukkaDate)
+                    {
+                        sum += bbl.Z_Set(mGrid.g_DArray[RW].Hanbaigaku);
+                    }
                 }
             }
 

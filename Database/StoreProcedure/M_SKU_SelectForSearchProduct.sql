@@ -624,7 +624,7 @@ BEGIN
     END
     ELSE
     BEGIN
-        SELECT MS.*
+        SELECT top 1001 MS.*
         FROM #TableForSearchProduct AS MS
         ORDER BY MS.SKUCD
         ;

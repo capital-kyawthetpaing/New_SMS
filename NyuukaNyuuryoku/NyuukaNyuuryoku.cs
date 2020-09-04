@@ -32,10 +32,12 @@ namespace NyuukaNyuuryoku
             VendorDeliveryNo,
             SoukoName,
             JANCD,
+            txtMaker,
             Nyukasu,
 
             Vendor = 0,
             SKUCD,
+            Maker,
             SKUName,
             Brand,
             Color,
@@ -1618,8 +1620,8 @@ namespace NyuukaNyuuryoku
         {
             keyControls = new Control[] {  ScOrderNO.TxtCode, CboStoreCD};
             keyLabels = new Control[] {  };
-            detailControls = new Control[] { ckM_TextBox1, txtVendorDeliveryNo, CboSoukoName, txtJANCD, txtSu };
-            detailLabels = new Control[] { lblVendor,lblSKUCD,lblSKUName,lblBrand,lblColorName,lblSizeName,lblTani,lblHikiate,lblZaiko };
+            detailControls = new Control[] { ckM_TextBox1, txtVendorDeliveryNo, CboSoukoName, txtJANCD, txtMakerItem, txtSu };
+            detailLabels = new Control[] { lblVendor,lblSKUCD,lblMaker,lblSKUName,lblBrand,lblColorName,lblSizeName,lblTani,lblHikiate,lblZaiko };
             searchButtons = new Control[] { BtnJANCD};
 
             
@@ -1891,6 +1893,7 @@ namespace NyuukaNyuuryoku
                         mAdminNO = row["AdminNO"].ToString();
                         lblVendor.Text= row["VendorName"].ToString();
                         lblSKUCD.Text = row["SKUCD"].ToString();
+                        SetMakerText( row["MakerItem"].ToString());
                         lblSKUName.Text = row["SKUName"].ToString();
                         lblBrand.Text = row["BrandName"].ToString();
                         lblColorName.Text = row["ColorName"].ToString();
@@ -1944,7 +1947,8 @@ namespace NyuukaNyuuryoku
                         mGrid2.g_DArray[i2].CustomerCD = row["CustomerCD"].ToString();
                         mGrid2.g_DArray[i2].Customer = row["CustomerName2"].ToString();
                         //mGrid2.g_DArray[i2].OrderSu = bbl.Z_SetStr(row["HachuSu"]);   // 
-                        mGrid2.g_DArray[i2].ReserveSu = bbl.Z_SetStr(row["ReserveSu"]);   //
+                        //mGrid2.g_DArray[i2].ReserveSu = bbl.Z_SetStr(row["ReserveSu"]);   //
+                        mGrid2.g_DArray[i2].ReserveSu = bbl.Z_SetStr(bbl.Z_Set(row["HachuSu"]) - bbl.Z_Set(row["ReserveSu"]));   //
                         mGrid2.g_DArray[i2].SURYO = bbl.Z_SetStr(row["DR_ArrivalSu"]);
                         mGrid2.g_DArray[i2].DirectFlg = row["DirectFlg"].ToString();
                         mGrid2.g_DArray[i2].DeliveryPlanDate = row["DeliveryPlanDate"].ToString();
@@ -2157,6 +2161,8 @@ namespace NyuukaNyuuryoku
                         mAdminNO = selectRow["AdminNO"].ToString();
                         mJANCD = selectRow["JANCD"].ToString();
                         lblSKUCD.Text = selectRow["SKUCD"].ToString();
+                        SetMakerText(selectRow["MakerItem"].ToString());
+                        SetMakerVisible(selectRow["VariousFLG"].ToString().Equals("1"));
                         lblSKUName.Text = selectRow["SKUName"].ToString();
                         lblColorName.Text = selectRow["ColorName"].ToString();
                         lblSizeName.Text = selectRow["SizeName"].ToString();
@@ -2176,6 +2182,8 @@ namespace NyuukaNyuuryoku
                             if (dtAr.Rows.Count == 0)
                             {
                                 bbl.ShowMessage("E128");
+                                S_Clear_Grid();   //画面クリア（明細部）
+                                S_Clear_Grid2();   //画面クリア（明細部）
                                 mAdminNO = "";
                                 return false;
                             }
@@ -2294,7 +2302,7 @@ namespace NyuukaNyuuryoku
                                     mGrid2.g_DArray[i2].CustomerCD = row["CustomerCD"].ToString();
                                     mGrid2.g_DArray[i2].Customer = row["CustomerName2"].ToString();
                                     //mGrid2.g_DArray[i2].OrderSu = bbl.Z_SetStr(row["HachuSu"]);   // 
-                                    mGrid2.g_DArray[i2].ReserveSu = bbl.Z_SetStr(row["ReserveSu"]);   //
+                                    mGrid2.g_DArray[i2].ReserveSu = bbl.Z_SetStr(bbl.Z_Set(row["HachuSu"]) -  bbl.Z_Set(row["ReserveSu"]));   //
                                     mGrid2.g_DArray[i2].SURYO = bbl.Z_SetStr(row["DR_ArrivalSu"]);
                                     mGrid2.g_DArray[i2].DirectFlg = row["DirectFlg"].ToString();
                                     mGrid2.g_DArray[i2].DeliveryPlanDate = row["DeliveryPlanDate"].ToString();
@@ -2603,6 +2611,7 @@ namespace NyuukaNyuuryoku
                 JanCD = txtJANCD.Text,
                 AdminNO = mAdminNO,
                 SKUCD = lblSKUCD.Text,
+                MakerItem = txtMakerItem.Text,
                 StaffCD = InOperatorCD,
                 InsertOperator = InOperatorCD,
                 PC = InPcID
@@ -3040,6 +3049,7 @@ namespace NyuukaNyuuryoku
             mAdminNO = "";
             mJANCD = "";
             mOldArrivalDate = "";
+            SetMakerVisible(false);
             S_Clear_Grid();   //画面クリア（明細部）
             S_Clear_Grid2();   //画面クリア（明細部）
         }
@@ -3215,6 +3225,16 @@ namespace NyuukaNyuuryoku
                     break;
             }
 
+        }
+        private void SetMakerText(string text)
+        {
+            txtMakerItem.Text = text;
+            lblMaker.Text = text;
+        }
+        private void SetMakerVisible(bool visible)
+        {
+            txtMakerItem.Visible = visible;
+            lblMaker.Visible = !visible;
         }
 
         #region "内部イベント"
@@ -3651,7 +3671,8 @@ namespace NyuukaNyuuryoku
                             }
                         }
 
-                        mGrid2.g_DArray[w_Row].SURYO = bbl.Z_SetStr(bbl.Z_Set(mGrid2.g_DArray[w_Row].OrderSu) - bbl.Z_Set(mGrid2.g_DArray[w_Row].ReserveSu));
+                        //mGrid2.g_DArray[w_Row].SURYO = bbl.Z_SetStr(bbl.Z_Set(mGrid2.g_DArray[w_Row].OrderSu) - bbl.Z_Set(mGrid2.g_DArray[w_Row].ReserveSu));
+                        mGrid2.g_DArray[w_Row].SURYO = bbl.Z_SetStr(mGrid2.g_DArray[w_Row].ReserveSu);
 
                         if (!string.IsNullOrWhiteSpace(lblVendor.Text) && !lblVendor.Text.Equals(mGrid2.g_DArray[w_Row].Customer))
                         {

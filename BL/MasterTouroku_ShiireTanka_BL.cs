@@ -91,9 +91,13 @@ namespace BL
             return msdl.PRC_MasterTouroku_ShiireTanka(mpe, dtOldITEM, dtOldSKU, dtITEM, dtSKU);
         }
 
-        public bool Mastertoroku_Shiretanka_Insert(string tbitem, string tbsku, string tbdel, string tbdejan, M_ItemOrderPrice_Entity mie)
+        public bool Mastertoroku_Shiretanka_Insert( M_ItemOrderPrice_Entity mie)
         {
-            return msdl.Mastertoroku_Shiretanka_Insert(tbitem, tbsku, tbdel, tbdejan, mie);
+            mie.xml1= DataTableToXml(mie.dt1);
+            mie.xml2 = DataTableToXml(mie.dt2);
+            mie.xml3 = DataTableToXml(mie.dt3);
+            mie.xml4 = DataTableToXml(mie.dt4);
+            return msdl.Mastertoroku_Shiretanka_Insert(mie);
         }
 
         //public DataTable Mastertoroku_Shiretanka_Insert(string tbitem, string tbsku, string tbdel, string tbdejan, M_ItemOrderPrice_Entity mie)

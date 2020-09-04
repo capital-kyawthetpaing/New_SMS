@@ -890,7 +890,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                         {
                             SKUCD = dr["SKUCD"].ToString(),
                         };
-                        var dt_Exist = spb.M_SKUPrice_SelectData(mse);
+                        var dt_Exist = spb.M_SKUPrice_DataSelect(mse);
                         if (dt_Exist.Rows.Count > 0)
                         {
                             return null;
@@ -1188,7 +1188,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                         SKUCD=SKUCD.Text,
                         StartChangeDate =ct.Text
                     };
-                    DataTable dt = spb.M_SKUPrice_SelectData(mse);
+                    DataTable dt = spb.M_SKUPrice_DataSelect(mse);
                     if(dt.Rows.Count>0)
                     {
                         bbl.ShowMessage("E105");
@@ -1370,24 +1370,24 @@ namespace WMasterTouroku_HanbaiTankaTennic
         }
         private void GridControl_KeyDown(object sender, KeyEventArgs e)
         {
-            Control c = sender as Control;
-            if (c is CKM_TextBox ct && e.KeyCode == (Keys.Enter | Keys.Tab))
-            {
-                if (ct.Name.Contains("IMT_STADT_"))
-                {
-                    SetMultiColNo(dt);
-                    for (int i = 0; i < dt.Rows.Count; i++)
-                    {
-                        var StartDate1 = dt.Rows[i]["StartDate"].ToString();
-                        var StartDate = this.Controls.Find("IMT_STADT_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
-                        if (StartDate.Text == StartDate1.ToString())
-                        {
-                            bbl.ShowMessage("Date exit!!!");
-                        }
-                    }
-                    //var IsExist = true; ///(ct.Text) // bll.bdfbedf 
-                }
-            }
+            //Control c = sender as Control;
+            //if (c is CKM_TextBox ct && e.KeyCode == (Keys.Enter | Keys.Tab))
+            //{
+            //    if (ct.Name.Contains("IMT_STADT_"))
+            //    {
+            //        SetMultiColNo(dt);
+            //        for (int i = 0; i < dt.Rows.Count; i++)
+            //        {
+            //            var StartDate1 = dt.Rows[i]["StartDate"].ToString();
+            //            var StartDate = this.Controls.Find("IMT_STADT_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
+            //            if (StartDate.Text == StartDate1.ToString())
+            //            {
+            //                bbl.ShowMessage("Date exit!!!");
+            //            }
+            //        }
+            //        //var IsExist = true; ///(ct.Text) // bll.bdfbedf 
+            //    }
+            //}
                 //    else if (ct.Name.Contains("IMT_ENDDT_"))
                 //    {
                 //        // Button btn = PanelFooter.;
@@ -1945,50 +1945,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 spb.ShowMessage("S001");
             }
         }
-        //protected bool RequireCheck(Control[] ctrl, TextBox txt = null)
-        //{
-        //    this.txt = txt;
-        //    foreach (Control c in ctrl)
-        //    {
-        //        if (c is CKM_TextBox)
-        //        {
-        //            if (txt == null)
-        //            {
-        //                var StartDate = dt.Rows[0]["StartChangeDate"].ToString();
-        //                if(c.Text==StartDate.ToString())
-        //                {
-        //                    bbl.ShowMessage("Date Exist!!");
-        //                    c.Focus();
-        //                }
-        //            }
-        //        }
-        //    }
-        //    return true;
-        //}
-        //protected void Check_Textbox()
-        //{
-        //    try
-        //    {
-        //        previousCtrl = this.ActiveControl;
-        //        if (previousCtrl is CKM_TextBox ct)
-        //        {
-        //            if (ct.Name.Contains("IMT_STADT_"))
-        //            {
-        //                var StartDate = dt.Rows[0]["StartChangeDate"].ToString();
-        //                if (previousCtrl.GetType().BaseType.Name.Contains("StartDate"))
-        //                {
-        //                    bbl.ShowMessage("Date Exist!!");
-        //                    previousCtrl.Focus();
-        //                }
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //    }
-        //}
-       
+        
         private void ckM_TextBox68_TextChanged(object sender, EventArgs e)
         {
 

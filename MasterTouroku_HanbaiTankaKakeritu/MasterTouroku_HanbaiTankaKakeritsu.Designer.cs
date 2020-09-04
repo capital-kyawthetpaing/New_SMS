@@ -30,8 +30,9 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboSeasonCopy = new CKM_Controls.CKM_ComboBox();
             this.cboYearCopy = new CKM_Controls.CKM_ComboBox();
@@ -216,6 +217,14 @@
             this.colStartDate,
             this.colEndDate,
             this.colRate});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gdvHanbaiTankaKakeritsu.DefaultCellStyle = dataGridViewCellStyle4;
             this.gdvHanbaiTankaKakeritsu.EnableHeadersVisualStyles = false;
             this.gdvHanbaiTankaKakeritsu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gdvHanbaiTankaKakeritsu.Location = new System.Drawing.Point(25, 177);
@@ -227,6 +236,7 @@
             this.gdvHanbaiTankaKakeritsu.UseRowNo = true;
             this.gdvHanbaiTankaKakeritsu.UseSetting = true;
             this.gdvHanbaiTankaKakeritsu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdvHanbaiTankaKakeritsu_CellContentClick);
+            this.gdvHanbaiTankaKakeritsu.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdvHanbaiTankaKakeritsu_CellEndEdit);
             // 
             // colchk
             // 
@@ -477,6 +487,7 @@
             this.txtRate.TabIndex = 18;
             this.txtRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtRate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtRate.UseColorSizMode = false;
             // 
             // txtPriceOutTaxTo
             // 
@@ -506,6 +517,7 @@
             this.txtPriceOutTaxTo.TabIndex = 8;
             this.txtPriceOutTaxTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPriceOutTaxTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtPriceOutTaxTo.UseColorSizMode = false;
             this.txtPriceOutTaxTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPriceOutTaxTo_KeyDown);
             // 
             // txtPriceOutTaxFrom
@@ -536,6 +548,7 @@
             this.txtPriceOutTaxFrom.TabIndex = 7;
             this.txtPriceOutTaxFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPriceOutTaxFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtPriceOutTaxFrom.UseColorSizMode = false;
             // 
             // ScSegmentCopy
             // 
@@ -747,6 +760,7 @@
             this.txtDateCopy.TabIndex = 9;
             this.txtDateCopy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDateCopy.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDateCopy.UseColorSizMode = false;
             // 
             // txtFromDate
             // 
@@ -776,6 +790,7 @@
             this.txtFromDate.TabIndex = 0;
             this.txtFromDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFromDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtFromDate.UseColorSizMode = false;
             // 
             // txtToDate
             // 
@@ -805,6 +820,7 @@
             this.txtToDate.TabIndex = 1;
             this.txtToDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtToDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtToDate.UseColorSizMode = false;
             // 
             // ckM_Label15
             // 
@@ -1136,10 +1152,10 @@
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "Rate";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = "0";
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = "0";
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn11.HeaderText = "掛率";
             this.dataGridViewTextBoxColumn11.MaxInputLength = 8;
             this.dataGridViewTextBoxColumn11.MinimumWidth = 3;
@@ -1183,7 +1199,6 @@
         private CKM_Controls.CKM_Label ckM_Label12;
         private CKM_Controls.CKM_Label ckM_Label11;
         private CKM_Controls.CKM_Label ckM_Label10;
-        private CKM_Controls.CKM_Label ckM_Label9;
         private CKM_Controls.CKM_Label ckM_Label8;
         private CKM_Controls.CKM_Label ckM_Label7;
         private CKM_Controls.CKM_Label ckM_Label6;
@@ -1204,7 +1219,6 @@
         private CKM_Controls.CKM_TextBox txtRate;
         private CKM_Controls.CKM_TextBox txtPriceOutTaxTo;
         private CKM_Controls.CKM_TextBox txtPriceOutTaxFrom;
-        private CKM_Controls.CKM_ComboBox cboSeason;
         private CKM_Controls.CKM_Button btnSetting;
         private CKM_Controls.CKM_Button btnAllUnCheck;
         private CKM_Controls.CKM_Button btnAllCheck;
@@ -1236,6 +1250,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private CKM_Controls.CKM_ComboBox cboSeason;
+        private CKM_Controls.CKM_Label ckM_Label9;
     }
 }
 
