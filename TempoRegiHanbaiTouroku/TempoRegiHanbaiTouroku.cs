@@ -223,9 +223,16 @@ namespace TempoRegiHanbaiTouroku
                 }
 
                 InitScr();
-       
-             
-               
+
+
+                try
+                {
+                    Stop_DisplayService();
+                    cdo.SetDisplay(true, true, "");
+                    cdo.RemoveDisplay(true);
+                    cdo.RemoveDisplay(true);
+                }
+                catch { }
             }
             catch (Exception ex)
             {
@@ -1224,16 +1231,22 @@ namespace TempoRegiHanbaiTouroku
 
                     if (!frm.flgCancel)
                     {
-                        try { Stop_DisplayService(); }
+                        try { Stop_DisplayService();
+                            cdo.SetDisplay(true, true, "");
+                            cdo.RemoveDisplay(true);
+                            cdo.RemoveDisplay(true);
+                        }
                         catch { }
                       //  Stop_DisplayService();
                         //更新終了後は画面をクリア  >>>. Proceed by PTK
                         InitScr();
                     }
-                    else
-                    {
-                     
-                    }
+
+                   
+                    //else
+                    //{
+
+                    //}
                     break;
             }
         }
