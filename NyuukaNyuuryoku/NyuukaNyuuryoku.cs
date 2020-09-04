@@ -2294,7 +2294,7 @@ namespace NyuukaNyuuryoku
                                     mGrid2.g_DArray[i2].CustomerCD = row["CustomerCD"].ToString();
                                     mGrid2.g_DArray[i2].Customer = row["CustomerName2"].ToString();
                                     //mGrid2.g_DArray[i2].OrderSu = bbl.Z_SetStr(row["HachuSu"]);   // 
-                                    mGrid2.g_DArray[i2].ReserveSu = bbl.Z_SetStr(row["ReserveSu"]);   //
+                                    mGrid2.g_DArray[i2].ReserveSu = bbl.Z_SetStr(bbl.Z_Set(row["HachuSu"]) -  bbl.Z_Set(row["ReserveSu"]));   //
                                     mGrid2.g_DArray[i2].SURYO = bbl.Z_SetStr(row["DR_ArrivalSu"]);
                                     mGrid2.g_DArray[i2].DirectFlg = row["DirectFlg"].ToString();
                                     mGrid2.g_DArray[i2].DeliveryPlanDate = row["DeliveryPlanDate"].ToString();

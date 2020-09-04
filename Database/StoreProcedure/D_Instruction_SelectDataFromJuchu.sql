@@ -30,6 +30,7 @@ BEGIN
             ,(CASE WHEN DJ.FareLevel > SUM(DJ.JuchuuHontaiGaku) OVER(PARTITION BY DJ.CustomerCD) THEN 1 ELSE 0 END) AS UntinFlg
             ,DJ.JuchuuNO + '-' + RIGHT('00' + CONVERT(varchar,DJ.JuchuuRows),3) AS JuchuuNO
             ,NULL AS PrintDate		--出荷指示書
+            ,DJ.CustomerCD
             ,DJ.CustomerName
             ,DJ.DeliveryCD
             ,DJ.DeliveryName
@@ -50,7 +51,7 @@ BEGIN
             ,DJ.JuchuuSuu
             ,DJ.SoukoName
             ,DJ.ShukkaShubetsu
-            ,NULL AS DeliveryPlanNO	--配送予定番号
+            ,DJ.DeliveryPlanNO--配送予定番号 AS DeliveryPlanNO	--配送予定番号
             ,0 AS InstructionRows	--出荷指示明細連番
             ,DJ.JuchuuNo As JuchuNo
             --※D_Juchuu②：D_Juchuu①を顧客CDでグループ化してSUM(D_Juchuu①.明細受注本体額)をSELECT
@@ -109,12 +110,12 @@ BEGIN
                             WHERE M.CustomerCD = DH.CustomerCD AND M.ChangeDate <= DH.JuchuuDate
                             AND M.DeleteFlg = 0 
                             ORDER BY M.ChangeDate desc) AS FareLevel 
-            
+                    ,DD.DeliveryPlanNO--配送予定番号
             FROM D_JuchuuDetails AS DM
-            LEFT OUTER JOIN D_Juchuu AS DH
+            INNER JOIN D_Juchuu AS DH
             ON DH.JuchuuNo = DM.JuchuuNo
             AND DH.DeleteDateTime IS NULL
-            LEFT OUTER JOIN D_DeliveryPlanDetails AS DD
+            INNER JOIN D_DeliveryPlanDetails AS DD
             ON DD.Number = DM.JuchuuNo
             AND DD.NumberRows = DM.JuchuuRows
             --AND DD.DeleteDateTime IS NULL
@@ -202,6 +203,7 @@ BEGIN
     		,0 AS Untin
             ,NULL AS JuchuuNO
             ,NULL AS PrintDate		--出荷指示書
+            ,NULL AS CustomerCD
             ,DD.DeliveryName AS CustomerName
             ,DD.CarrierCD AS DeliveryCD
             ,(SELECT top 1 A.CarrierName
@@ -322,6 +324,7 @@ BEGIN
             ,(CASE WHEN MM.Num1 = DIM.AdminNO THEN 1 ELSE 0 END) AS Untin
             ,DR.Number + '-' + RIGHT('00' + CONVERT(varchar,DR.NumberRows),3) AS JuchuuNO
             ,CONVERT(varchar,DI.PrintDate,111) AS PrintDate		--出荷指示書
+            ,NULL AS CustomerCD
             ,DI.DeliveryName AS CustomerName
             ,DI.CarrierCD AS DeliveryCD
             ,(SELECT top 1 A.CarrierName
