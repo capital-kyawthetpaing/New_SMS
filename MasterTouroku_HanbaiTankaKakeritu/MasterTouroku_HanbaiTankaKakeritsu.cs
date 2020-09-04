@@ -27,6 +27,7 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
             mhbtbl = new MasterTouroku_HanbaiTankaKakeritu_BL();
             mskue = new M_SKU_Entity();
             mskupe = new M_SKUPrice_Entity();
+           // KeyUp += FrmMasterTouroku_HanbaiTankaKakeritu_KeyUp;
         }
 
         /// <summary>
@@ -577,6 +578,43 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
                     {
                         Display(2);
 
+                    }
+                }
+            }
+        }
+
+        private void gdvHanbaiTankaKakeritsu_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (gdvHanbaiTankaKakeritsu.Columns[e.ColumnIndex].Name == "Rate")
+            {
+                string rate = gdvHanbaiTankaKakeritsu.Rows[e.RowIndex].Cells["Rate"].Value.ToString();
+                if (!String.IsNullOrEmpty(rate))
+                {
+                    if (!rate.Contains("."))
+                    {
+                        var isNumeric = int.TryParse(rate, out int n);
+                        if (isNumeric)
+                        {
+                            if (rate.Length > 3)
+                            {
+                                MessageBox.Show("enter valid no");
+                                gdvHanbaiTankaKakeritsu.RefreshEdit();
+
+                            }
+                        }
+                    }
+                    else
+                    {
+                        int x = rate.IndexOf('.');
+                        int count = rate.Count(f => f == '.');
+                        string charre = rate.Remove(x, count);
+                        var isNumeric = int.TryParse(charre, out int n);
+                        if (count != 1 || x >= 4)
+                        {
+                            MessageBox.Show("enter valid no");
+                            gdvHanbaiTankaKakeritsu.RefreshEdit();
+
+                        }
                     }
                 }
             }
