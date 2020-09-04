@@ -52,10 +52,11 @@ namespace Search
             DayStart,
             DayEnd
         }
-        public string Mode { get; set; }
         /// <summary>
         /// Mode=5の場合チェックONされたJANCDを起動元画面に戻す
         /// </summary>
+        public string Mode { get; set; }
+
         public List<string> list = new List<string>(); 
         public string AdminNO { get; set; }
         public string ITEM { get; set; }
@@ -316,6 +317,12 @@ namespace Search
 
             if (dt.Rows.Count>0)
             {
+                if(dt.Rows.Count > 1000)
+                {
+                    sbl.ShowMessage("I320");
+
+                    dt.Rows.RemoveAt(1000);
+                }
                 //ストアドで実装するように変更
                 //if (!string.IsNullOrWhiteSpace(detailControls[(int)EIndex.ITemCD].Text))
                 //{
@@ -416,7 +423,7 @@ namespace Search
             }
             else
             {
-                sbl.ShowMessage("E128");
+               sbl.ShowMessage("E128");
                 GvDetail.DataSource = null;
             }
         }
@@ -720,10 +727,8 @@ namespace Search
                 if (Mode == "5")
                 {
                     JANCD = "";
-                    //Modified by KTP ( modify last row doesn't work)
-                    //for (int i = 0; i < GvDetail.RowCount - 1; i++)
                     for (int i = 0; i < GvDetail.RowCount; i++)
-                        {
+                    {
                         if (GvDetail.Rows[i].Cells["colCheck"].Value != null && GvDetail.Rows[i].Cells["colCheck"].Value.Equals(true))
                         {
                             list.Add(GvDetail.Rows[i].Cells["colJANCD"].Value.ToString());
