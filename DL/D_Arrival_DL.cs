@@ -73,6 +73,7 @@ namespace DL
             AddParam(command, "@JANCD", SqlDbType.VarChar, dme.JanCD);
             AddParam(command, "@AdminNO", SqlDbType.Int, dme.AdminNO);
             AddParam(command, "@SKUCD", SqlDbType.VarChar, dme.SKUCD);
+            AddParam(command, "@MakerItem", SqlDbType.VarChar, dme.MakerItem);
             AddParam(command, "@ArrivalSu", SqlDbType.Int, dme.ArrivalSu);
 
             AddParamForDataTable(command, "@Table", SqlDbType.Structured, dt);
@@ -130,20 +131,22 @@ namespace DL
             return SelectData(dic, sp);
         }
 
-        /// <summary>	
-        /// 入荷入力データ取得処理	
-        /// NyuukaNyuuryokuよりデータ抽出時に使用	
-        /// F10:入荷予定押下時	
-        /// </summary>	
+        /// <summary>
+        /// 入荷入力データ取得処理
+        /// NyuukaNyuuryokuよりデータ抽出時に使用
+        /// F10:入荷予定押下時
+        /// </summary>
         public DataTable D_ArrivalPlan_SelectDataByOrderNO(D_Order_Entity de)
         {
             string sp = "D_ArrivalPlan_SelectDataByOrderNO";
+
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@OrderNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.OrderNO } },
                 { "@AdminNo", new ValuePair { value1 = SqlDbType.Int, value2 = de.AdminNO } },
                 { "@SoukoCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.DestinationSoukoCD } },
             };
+
             return SelectData(dic, sp);
         }
 
