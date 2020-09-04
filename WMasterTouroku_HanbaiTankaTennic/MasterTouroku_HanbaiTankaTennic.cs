@@ -890,7 +890,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                         {
                             SKUCD = dr["SKUCD"].ToString(),
                         };
-                        var dt_Exist = spb.M_SKUPrice_SelectData(mse);
+                        var dt_Exist = spb.M_SKUPrice_DataSelect(mse);
                         if (dt_Exist.Rows.Count > 0)
                         {
                             return null;
@@ -1188,7 +1188,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                         SKUCD=SKUCD.Text,
                         StartChangeDate =ct.Text
                     };
-                    DataTable dt = spb.M_SKUPrice_SelectData(mse);
+                    DataTable dt = spb.M_SKUPrice_DataSelect(mse);
                     if(dt.Rows.Count>0)
                     {
                         bbl.ShowMessage("E105");
