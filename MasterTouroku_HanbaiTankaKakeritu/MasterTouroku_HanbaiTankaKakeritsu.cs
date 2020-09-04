@@ -232,6 +232,7 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
         {
             mskue = new M_SKU_Entity
             {
+                dt1=dtData,
                 ChangeDate = txtFromDate.Text,
                 EndDate = txtToDate.Text,
                 DateCopy = txtDateCopy.Text,

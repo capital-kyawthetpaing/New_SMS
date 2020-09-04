@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboSeasonCopy = new CKM_Controls.CKM_ComboBox();
             this.cboYearCopy = new CKM_Controls.CKM_ComboBox();
@@ -53,7 +53,6 @@
             this.btnAllUnCheck = new CKM_Controls.CKM_Button();
             this.btnAllCheck = new CKM_Controls.CKM_Button();
             this.btnDisplay = new CKM_Controls.CKM_Button();
-            this.cboSeason = new CKM_Controls.CKM_ComboBox();
             this.cboYear = new CKM_Controls.CKM_ComboBox();
             this.txtRate = new CKM_Controls.CKM_TextBox();
             this.txtPriceOutTaxTo = new CKM_Controls.CKM_TextBox();
@@ -73,7 +72,6 @@
             this.ckM_Label12 = new CKM_Controls.CKM_Label();
             this.ckM_Label11 = new CKM_Controls.CKM_Label();
             this.ckM_Label10 = new CKM_Controls.CKM_Label();
-            this.ckM_Label9 = new CKM_Controls.CKM_Label();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
@@ -93,6 +91,8 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ckM_Label9 = new CKM_Controls.CKM_Label();
+            this.cboSeason = new CKM_Controls.CKM_ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdvHanbaiTankaKakeritsu)).BeginInit();
             this.SuspendLayout();
@@ -191,17 +191,17 @@
             this.gdvHanbaiTankaKakeritsu.AllowUserToAddRows = false;
             this.gdvHanbaiTankaKakeritsu.AllowUserToDeleteRows = false;
             this.gdvHanbaiTankaKakeritsu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.gdvHanbaiTankaKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.gdvHanbaiTankaKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.gdvHanbaiTankaKakeritsu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gdvHanbaiTankaKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gdvHanbaiTankaKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.gdvHanbaiTankaKakeritsu.ColumnHeadersHeight = 25;
             this.gdvHanbaiTankaKakeritsu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colchk,
@@ -313,10 +313,10 @@
             // colRate
             // 
             this.colRate.DataPropertyName = "Rate";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = "0";
-            this.colRate.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.Format = "N2";
+            dataGridViewCellStyle12.NullValue = "0";
+            this.colRate.DefaultCellStyle = dataGridViewCellStyle12;
             this.colRate.HeaderText = "掛率";
             this.colRate.MaxInputLength = 8;
             this.colRate.MinimumWidth = 3;
@@ -417,22 +417,6 @@
             this.btnDisplay.UseVisualStyleBackColor = false;
             this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
             // 
-            // cboSeason
-            // 
-            this.cboSeason.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cboSeason.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboSeason.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
-            this.cboSeason.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.cboSeason.Flag = 0;
-            this.cboSeason.FormattingEnabled = true;
-            this.cboSeason.Length = 10;
-            this.cboSeason.Location = new System.Drawing.Point(287, 109);
-            this.cboSeason.MaxLength = 10;
-            this.cboSeason.MoveNext = true;
-            this.cboSeason.Name = "cboSeason";
-            this.cboSeason.Size = new System.Drawing.Size(70, 20);
-            this.cboSeason.TabIndex = 6;
-            // 
             // cboYear
             // 
             this.cboYear.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
@@ -477,6 +461,7 @@
             this.txtRate.TabIndex = 18;
             this.txtRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtRate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtRate.UseColorSizMode = false;
             // 
             // txtPriceOutTaxTo
             // 
@@ -506,6 +491,7 @@
             this.txtPriceOutTaxTo.TabIndex = 8;
             this.txtPriceOutTaxTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPriceOutTaxTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtPriceOutTaxTo.UseColorSizMode = false;
             this.txtPriceOutTaxTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPriceOutTaxTo_KeyDown);
             // 
             // txtPriceOutTaxFrom
@@ -536,6 +522,7 @@
             this.txtPriceOutTaxFrom.TabIndex = 7;
             this.txtPriceOutTaxFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPriceOutTaxFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtPriceOutTaxFrom.UseColorSizMode = false;
             // 
             // ScSegmentCopy
             // 
@@ -747,6 +734,7 @@
             this.txtDateCopy.TabIndex = 9;
             this.txtDateCopy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDateCopy.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDateCopy.UseColorSizMode = false;
             // 
             // txtFromDate
             // 
@@ -776,6 +764,7 @@
             this.txtFromDate.TabIndex = 0;
             this.txtFromDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFromDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtFromDate.UseColorSizMode = false;
             // 
             // txtToDate
             // 
@@ -805,6 +794,7 @@
             this.txtToDate.TabIndex = 1;
             this.txtToDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtToDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtToDate.UseColorSizMode = false;
             // 
             // ckM_Label15
             // 
@@ -907,23 +897,6 @@
             this.ckM_Label10.Text = "複写元ランク";
             this.ckM_Label10.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_Label9
-            // 
-            this.ckM_Label9.AutoSize = true;
-            this.ckM_Label9.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label9.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label9.DefaultlabelSize = true;
-            this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(227, 113);
-            this.ckM_Label9.Name = "ckM_Label9";
-            this.ckM_Label9.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label9.TabIndex = 9;
-            this.ckM_Label9.Text = "シーズン";
-            this.ckM_Label9.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckM_Label8
             // 
@@ -1136,15 +1109,48 @@
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "Rate";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = "0";
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle13.Format = "N2";
+            dataGridViewCellStyle13.NullValue = "0";
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridViewTextBoxColumn11.HeaderText = "掛率";
             this.dataGridViewTextBoxColumn11.MaxInputLength = 8;
             this.dataGridViewTextBoxColumn11.MinimumWidth = 3;
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.Width = 80;
+            // 
+            // ckM_Label9
+            // 
+            this.ckM_Label9.AutoSize = true;
+            this.ckM_Label9.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label9.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label9.DefaultlabelSize = true;
+            this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label9.Location = new System.Drawing.Point(227, 113);
+            this.ckM_Label9.Name = "ckM_Label9";
+            this.ckM_Label9.Size = new System.Drawing.Size(57, 12);
+            this.ckM_Label9.TabIndex = 9;
+            this.ckM_Label9.Text = "シーズン";
+            this.ckM_Label9.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cboSeason
+            // 
+            this.cboSeason.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cboSeason.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboSeason.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
+            this.cboSeason.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboSeason.Flag = 0;
+            this.cboSeason.FormattingEnabled = true;
+            this.cboSeason.Length = 10;
+            this.cboSeason.Location = new System.Drawing.Point(287, 109);
+            this.cboSeason.MaxLength = 10;
+            this.cboSeason.MoveNext = true;
+            this.cboSeason.Name = "cboSeason";
+            this.cboSeason.Size = new System.Drawing.Size(70, 20);
+            this.cboSeason.TabIndex = 6;
             // 
             // FrmMasterTouroku_HanbaiTankaKakeritsu
             // 
@@ -1183,7 +1189,6 @@
         private CKM_Controls.CKM_Label ckM_Label12;
         private CKM_Controls.CKM_Label ckM_Label11;
         private CKM_Controls.CKM_Label ckM_Label10;
-        private CKM_Controls.CKM_Label ckM_Label9;
         private CKM_Controls.CKM_Label ckM_Label8;
         private CKM_Controls.CKM_Label ckM_Label7;
         private CKM_Controls.CKM_Label ckM_Label6;
@@ -1204,7 +1209,6 @@
         private CKM_Controls.CKM_TextBox txtRate;
         private CKM_Controls.CKM_TextBox txtPriceOutTaxTo;
         private CKM_Controls.CKM_TextBox txtPriceOutTaxFrom;
-        private CKM_Controls.CKM_ComboBox cboSeason;
         private CKM_Controls.CKM_Button btnSetting;
         private CKM_Controls.CKM_Button btnAllUnCheck;
         private CKM_Controls.CKM_Button btnAllCheck;
@@ -1236,6 +1240,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private CKM_Controls.CKM_ComboBox cboSeason;
+        private CKM_Controls.CKM_Label ckM_Label9;
     }
 }
 

@@ -245,8 +245,6 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                     {
                         bbl.ShowMessage("S001");
                     }
-
-
                 }
             }
         }

@@ -66,15 +66,15 @@ namespace DL
         //    return SelectData(dic, sp);
         //}
 
-        public bool Mastertoroku_Shiretanka_Insert(string tbitem, string tbsku, string tbdelitem, string tbdeljan, M_ItemOrderPrice_Entity mi)
+        public bool Mastertoroku_Shiretanka_Insert(M_ItemOrderPrice_Entity mi)
         {
             string sp = "Mastertoroku_Shiretanka_Insert";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@tbitem", new ValuePair { value1 =SqlDbType.VarChar,value2 = tbitem } },
-                { "@tbsku", new ValuePair { value1 =SqlDbType.VarChar,value2 = tbsku } },
-                { "@tbdelItem", new ValuePair { value1 =SqlDbType.VarChar,value2 = tbdelitem } },
-                { "@tbdelJan", new ValuePair { value1 =SqlDbType.VarChar,value2 = tbdeljan } },
+                { "@tbitem", new ValuePair { value1 =SqlDbType.VarChar,value2 = mi.xml3 } },
+                { "@tbsku", new ValuePair { value1 =SqlDbType.VarChar,value2 = mi.xml4 } },
+                { "@tbdelItem", new ValuePair { value1 =SqlDbType.VarChar,value2 = mi.xml1 } },
+                { "@tbdelJan", new ValuePair { value1 =SqlDbType.VarChar,value2 = mi.xml2 } },
                 { "@operator", new ValuePair { value1 =SqlDbType.VarChar,value2 =mi.InsertOperator  } },
                 { "@Program", new ValuePair { value1 =SqlDbType.VarChar,value2 =mi.ProgramID  } },
                 { "@PC", new ValuePair { value1 =SqlDbType.VarChar,value2 =mi.PC  } },
