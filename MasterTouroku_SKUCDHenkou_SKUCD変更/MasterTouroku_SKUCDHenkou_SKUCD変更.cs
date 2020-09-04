@@ -46,30 +46,38 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
             F7Visible = false;
             F8Visible = false;
             F10Visible = false;
-
-
-
-            //  // panel1.Location=new Point(870, 356);
-
+            
 
             for (int t = 0; t < 50; t++)
             {
                 ckM_GridView1.Rows.Add();
                 
             }
+            EnterVoid();
 
-            //panel4.VerticalScroll.Minimum = 0;
-            //panel4.VerticalScroll.Maximum = 30;
-            //panel4.VerticalScroll.SmallChange = 18;
-            //panel4.VerticalScroll.LargeChange = 30;
-
-            //panel4.VerticalScroll.Visible = false;
-            //panel4.HorizontalScroll.Visible = false;
-            //39, 524
-
-           
+            panel2.MouseWheel += Panel2_MouseWheel;
         }
+        protected override void OnMouseWheel(MouseEventArgs e)
+        {
+            //  if ()
+         //   base.OnMouseWheel(e);
+        }
+        private void Panel2_MouseWheel(object sender, MouseEventArgs e)
+        {
+            ((HandledMouseEventArgs)e).Handled = false;
+           // return;
+          //  MessageBox.Show(e.Delta.ToString());
+            
+           // MessageBox.Show(panel2.HorizontalScroll.Value.ToString() + Environment.NewLine + ckM_GridView1.HorizontalScrollingOffset + Environment.NewLine + ckM_GridView1.FirstDisplayedScrollingColumnIndex);
+            //throw new NotImplementedException();
+        }
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == 0x20a)
 
+                return;
+            base.WndProc(ref m);
+        }
         private void Add_Name_Tag(Control ctl)
         {
             var c = GetAllControls(ctl);
@@ -1044,14 +1052,10 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
         {
             if (e.NewValue == 31)
             {
-                // ckM_GridView1.RefreshEdit();
-               // e.NewValue = e.OldValue;
                 return;
             }
             panel4.VerticalScroll.Value = (ckM_GridView1.FirstDisplayedScrollingRowIndex * 18 +1);
             panel2.HorizontalScroll.Value= (ckM_GridView1.FirstDisplayedScrollingColumnIndex * 130 + 1);
-            //ckM_GridView1.FirstDisplayedScrollingRowIndex;
-            // ckM_GridView1.Refresh();
         }
         public IEnumerable<Control> GetAllControls(Control root)
         {
@@ -1090,21 +1094,29 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
 
         }
 
-        private void panel2_DockChanged(object sender, EventArgs e)
+        private void EnterVoid()
         {
-
+            var c = GetAllControls(panel2);
+      
+            foreach (var con in c)
+            {
+               
+                if (con is CKM_TextBox ct &&  (ct.Name.Contains("sn_")))
+                {
+                    ct.Enter += Ct_Enter; 
+                }
+            }
         }
 
-        private void panel2_RightToLeftChanged(object sender, EventArgs e)
+        private void Ct_Enter(object sender, EventArgs e)
         {
-
+           
         }
 
         private void panel2_Scroll_1(object sender, ScrollEventArgs e)
         {
 
         }
-
         //private void panelDetail_Paint(object sender, PaintEventArgs e)
         //{
         //}
