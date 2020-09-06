@@ -604,44 +604,20 @@ BEGIN
     SELECT * 
       INTO #Temp_D_DepositHistory12
       FROM (
-            SELECT D2.RegistDate
-                  ,SUM(D2.SalesNO) SalesNOCount 
-                  ,COUNT(D2.CustomerCD) CustomerCDCount
-                  ,D2.SalesSU SalesSUSum
-                  ,D2.TotalGaku TotalGakuSum
-                  ,D2.DiscountGaku
-              FROM (
-                    SELECT D.RegistDate
-                          ,COUNT(D.SalesNO) SalesNO
-                          ,D.CustomerCD
-                          ,SUM(D.SalesSU) SalesSU
-                          ,SUM(D.TotalGaku) TotalGaku
-                          ,SUM(D.DiscountGaku) DiscountGaku
-                      FROM (
-                            SELECT CONVERT(DATE, history.DepositDateTime) RegistDate 
-                                  ,sales.SalesNO
-                                  ,sales.CustomerCD
-                                  ,SUM(history.SalesSU) SalesSU
-                                  ,SUM(history.TotalGaku) TotalGaku
-                                  ,SUM(history.DiscountGaku) DiscountGaku
-                              FROM #Temp_D_DepositHistory0 history
-                              LEFT OUTER JOIN D_Sales sales ON sales.SalesNO = history.Number
-                             WHERE history.DataKBN = 2
-                               AND history.DepositKBN = 1
-                               AND history.CancelKBN = 0
-                               AND sales.DeleteDateTime IS NULL
-                               AND sales.BillingType = 1
-                             GROUP BY CONVERT(DATE, history.DepositDateTime)
-                                     ,sales.SalesNO
-                                     ,sales.CustomerCD
-                           ) D
-                     GROUP BY D.RegistDate
-                             ,D.CustomerCD
-                   ) D2
-             GROUP BY D2.RegistDate
-                     ,D2.SalesSU
-                     ,D2.TotalGaku
-                     ,D2.DiscountGaku
+            SELECT CONVERT(DATE, history.DepositDateTime) RegistDate 
+                  ,COUNT(DISTINCT sales.SalesNO) SalesNOCount
+                  ,COUNT(DISTINCT sales.CustomerCD) CustomerCDCount
+                  ,SUM(history.SalesSU) SalesSUSum
+                  ,SUM(history.TotalGaku) TotalGakuSum
+                  ,SUM(history.DiscountGaku) DiscountGaku
+              FROM #Temp_D_DepositHistory0 history
+              LEFT OUTER JOIN D_Sales sales ON sales.SalesNO = history.Number
+             WHERE history.DataKBN = 2
+               AND history.DepositKBN = 1
+               AND history.CancelKBN = 0
+               AND sales.DeleteDateTime IS NULL
+               AND sales.BillingType = 1
+             GROUP BY CONVERT(DATE, history.DepositDateTime)
            ) D12;
 
     -- Åyê∏éZèàóùÅzÉèÅ[ÉNÉeÅ[ÉuÉãÇPÇRçÏê¨
