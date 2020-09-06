@@ -387,7 +387,6 @@ BEGIN
                           ,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositDateTime ASC) as RANK
                           ,history.Remark
                      FROM #Temp_D_DepositHistory0 history
-                     LEFT OUTER JOIN D_Sales sales ON sales.SalesNO = history.Number
                      LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
                      LEFT OUTER JOIN (
                                       SELECT ROW_NUMBER() OVER(PARTITION BY CustomerCD ORDER BY ChangeDate DESC) AS RANK
@@ -402,9 +401,6 @@ BEGIN
                       AND history.DepositKBN = 2
                       AND history.CancelKBN = 0
                       AND history.CustomerCD IS NOT NULL
-                      AND sales.DeleteDateTime IS NULL
-                      AND sales.BillingType = 1
-                      AND customer.DeleteFlg = 0
                    ) D
              GROUP BY D.RegistDate
            ) D51;
