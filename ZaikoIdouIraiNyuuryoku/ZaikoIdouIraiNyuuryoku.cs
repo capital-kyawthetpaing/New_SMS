@@ -839,6 +839,8 @@ namespace ZaikoIdouIraiNyuuryoku
                 //起動時共通処理
                 base.StartProgram();
 
+                isLoading = true;
+
                 Btn_F7.Text = "";
                 Btn_F8.Text = "";
                 Btn_F10.Text = "確定(F10)";
@@ -1503,6 +1505,10 @@ namespace ZaikoIdouIraiNyuuryoku
                     break;
 
                 case (int)EIndex.ExpectedDate:
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text) && mDetailOperationMode == EOperationMode.DELETE)
+                    {
+                        return true;
+                    }
                     //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
                     if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
@@ -1854,7 +1860,28 @@ namespace ZaikoIdouIraiNyuuryoku
                     {
                         detailControls[i].Focus();
                         return;
-                    }              
+                    }
+
+                //明細部チェック
+                for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+                {
+                    if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JanCD) == false)
+                    {
+                        detailControls[(int)EIndex.Gyono].Text = (RW + 1).ToString();
+                        if (CheckDetail((int)EIndex.Gyono) == false)
+                        {
+                            detailControls[(int)EIndex.Gyono].Focus();
+                            return;
+                        }
+
+                        for (int i = (int)EIndex.JANCD; i <= (int)EIndex.RemarksInStore; i++)
+                            if (CheckDetail(i, false) == false)
+                            {
+                                detailControls[i].Focus();
+                                return;
+                            }
+                    }
+                }
             }
 
             DataTable dt = GetGridEntity();
@@ -1908,9 +1935,7 @@ namespace ZaikoIdouIraiNyuuryoku
                 case EOperationMode.SHOW:
                     keyControls[0].Focus();
                     break;
-
             }
-
         }
 
         private void ChangeDetailOperationMode(EOperationMode mode)
