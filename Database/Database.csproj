@@ -578,6 +578,7 @@
     <Content Include="StoreProcedure\PRC_ZaikoIdou_A2B2.sql" />
     <Content Include="StoreProcedure\RakutenOrderDataDetail_Insert.sql" />
     <Content Include="StoreProcedure\RakutenOrder_InsertSelect.sql" />
+    <Content Include="StoreProcedure\Rpc_HanbaiTankaTennic.Sql" />
     <Content Include="StoreProcedure\RPC_SiiresakiZaikoYoteiHyou.sql" />
     <Content Include="StoreProcedure\RPC_UriageMotochou_PrintSelect.sql" />
     <Content Include="StoreProcedure\RPC_UrikakekinTairyuuHyou_PrintSelect.sql" />
