@@ -107,7 +107,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
                BrandCDTo=scBrandCDTo.TxtCode.Text,
                SegmentCDFrom=scSegmentCDFrom.TxtCode.Text,
                SegmentCDTo=scSegmentCDTo.TxtCode.Text,
-               TenzikaiName=txtExhibitionName.Text
+               //TenzikaiName=txtExhibitionName.Text
             };
             return mte;
         }
