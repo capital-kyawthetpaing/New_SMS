@@ -43,6 +43,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
             scSegmentCDTo.NameWidth = 0;
             SetRequiredField();
             scSupplierCD.SetFocus(1);
+            ckM_SearchControl1.NameWidth = 0;
         }
         public void BindCombo()
         {

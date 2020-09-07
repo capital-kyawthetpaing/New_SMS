@@ -125,6 +125,10 @@ namespace Search
                 GetData();
             }
         }
+        private void dgvSearch_Tenzikai_DoubleClick(object sender, EventArgs e)
+        {
+            GetData();
+        }
         private void GetData()
         {
             if (dgvSearch_Tenzikai.CurrentRow != null && dgvSearch_Tenzikai.CurrentRow.Index >= 0)
@@ -180,20 +184,17 @@ namespace Search
                 }
             }
         }
-        private void dgvSearch_Tenzikai_DoubleClick(object sender, EventArgs e)
-        {
-            GetData(); 
-        }
-
-        private void Search_Tenzikai_KeyUp(object sender, KeyEventArgs e)
-        {
-            MoveNextControl(e);
-        }
-
+       
         private void Search_Tenzikai_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F11)
                 F11();
         }
+        private void Search_Tenzikai_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
+
+       
     }
 }
