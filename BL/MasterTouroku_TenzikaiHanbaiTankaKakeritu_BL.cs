@@ -22,5 +22,9 @@ namespace BL
             mTSE.xml1 = DataTableToXml(mTSE.dt1);
             return dl.InsertUpdate_TenzikaiHanbaiTankaKakeritu(mTSE);
         }
+        public DataTable M_SearchTenzikai(M_TenzikaiShouhin_Entity mte)
+        {
+            return dl.M_TenzikaiShouhin_Search(mte);
+        }
     }
 }

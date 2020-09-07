@@ -8,6 +8,7 @@ namespace Entity
 {
     public class M_TenzikaiShouhin_Entity:Base_Entity
     {
+        public string RefDate { get; set; }
         public string VendorCD { get; set; }
         public string LastYearTerm { get; set; }
         public string LastSeason { get; set; }
@@ -19,10 +20,14 @@ namespace Entity
         public string JANCD { get; set; }
         public string DeleteFlg { get; set; }
         public string TanKaCD { get; set; }
-
+        public string VendorCDFrom { get; set; }
+        public string VendorCDTo { get; set; }
         public string SalePriceOutTaxF { get; set; }
         public string SalePriceOutTaxT { get; set; }
-
+        public string NewRStartDate { get; set; }
+        public string NewREndDate { get; set; }
+        public string LastCStartDate { get; set; }
+        public string LastCEndDate { get; set; }
         public string InsertOperator { get; set; }
     }
 }

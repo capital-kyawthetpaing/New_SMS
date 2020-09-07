@@ -26,7 +26,24 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
-
+        public DataTable M_TenzikaiShouhin_Search(M_TenzikaiShouhin_Entity mte)
+        {
+            string sp = "M_TenzikaiShouhin_Search";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@VendorCD", new ValuePair { value1 =SqlDbType.VarChar,value2 = mte.VendorCD } },
+                { "@TenzikaiName", new ValuePair { value1 =SqlDbType.VarChar,value2 = mte.TenzikaiName} },
+                { "@VendorCDFrom", new ValuePair { value1 =SqlDbType.VarChar,value2 = mte.VendorCDFrom} },
+                { "@VendorCDTo", new ValuePair { value1 =SqlDbType.VarChar,value2 = mte.VendorCDTo } },
+                { "@LastYearTerm", new ValuePair { value1 =SqlDbType.VarChar,value2 = mte.LastYearTerm } },
+                { "@LastSeason", new ValuePair { value1 =SqlDbType.VarChar,value2 = mte.LastSeason } },
+                { "@NStartDate", new ValuePair { value1 =SqlDbType.VarChar,value2 = mte.NewRStartDate} },
+                { "@NEndDate", new ValuePair { value1 =SqlDbType.VarChar,value2 = mte.NewREndDate} },
+                { "@LStartDate", new ValuePair { value1 =SqlDbType.VarChar,value2 = mte.LastCStartDate} },
+                { "@LEndDate", new ValuePair { value1 =SqlDbType.VarChar,value2 = mte.LastCEndDate} },
+            };
+            return SelectData(dic, sp);
+        }
 
         public bool InsertUpdate_TenzikaiHanbaiTankaKakeritu(M_TenzikaiShouhin_Entity mTSE)
         {
