@@ -270,15 +270,6 @@ namespace Hacchuusho
 
                         // 印字データをセット
                         Report.SetDataSource(table);
-                        if ((int)table.Rows[0]["InsatuShuruiKBN"] != 3)
-                        {
-                            ((CrystalDecisions.CrystalReports.Engine.LineObject)Report.ReportDefinition.ReportObjects["line1"]).LineColor = Color.White;
-                            ((CrystalDecisions.CrystalReports.Engine.LineObject)Report.ReportDefinition.ReportObjects["line2"]).LineColor = Color.White;
-                            ((CrystalDecisions.CrystalReports.Engine.LineObject)Report.ReportDefinition.ReportObjects["line3"]).LineColor = Color.White;
-                            ((CrystalDecisions.CrystalReports.Engine.LineObject)Report.ReportDefinition.ReportObjects["line4"]).LineColor = Color.White;
-                            ((CrystalDecisions.CrystalReports.Engine.LineObject)Report.ReportDefinition.ReportObjects["line6"]).LineColor = Color.White;
-                            ((CrystalDecisions.CrystalReports.Engine.LineObject)Report.ReportDefinition.ReportObjects["line8"]).LineColor = Color.White;
-                        }
                         Report.Refresh();
 
                         if (ret == DialogResult.Yes)
@@ -335,11 +326,8 @@ namespace Hacchuusho
                 le.KeyItem = this.ScHacchuuNO.TxtCode.Text;
                 hsbl.L_Log_Insert(le);
 
-                if ((int)table.Rows[0]["InsatuShuruiKBN"] == 4)
-                {
-                    //更新処理
-                    hsbl.PRC_Hacchuusho_Register(this.InOperatorCD, this.CboStoreCD.SelectedValue.ToString(), this.ScStaff.TxtCode.Text, this.ScVendor.TxtCode.Text, this.ScHacchuuNO.TxtCode.Text);
-                }
+                //更新処理
+                hsbl.PRC_Hacchuusho_Register(this.InOperatorCD, this.CboStoreCD.SelectedValue.ToString(), this.ScStaff.TxtCode.Text, this.ScVendor.TxtCode.Text, this.ScHacchuuNO.TxtCode.Text);
             }
             finally
             {

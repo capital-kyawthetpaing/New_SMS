@@ -247,6 +247,14 @@ BEGIN
     AND (@p_OrderCD IS NULL OR DLOR.OrderCD = @p_OrderCD)
     AND DLOR.OrderNO = @p_OrderNO
     
+    UPDATE DODH
+    SET  FirstPrintDate    = @SYSDATE
+        ,LastPrintDate     = @SYSDATE
+    FROM D_Order DODH
+    INNER JOIN D_LastOrder DLOR
+    ON DODH.OrderNO = DLOR.OrderNO
+    WHERE (@p_OrderCD IS NULL OR DLOR.OrderCD = @p_OrderCD)
+    AND DLOR.OrderNO = @p_OrderNO
 
     UPDATE DODD
     SET  CancelOrderNO     = @OrderNO
