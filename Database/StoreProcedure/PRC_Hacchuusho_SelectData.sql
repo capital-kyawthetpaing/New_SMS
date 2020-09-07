@@ -90,8 +90,8 @@ BEGIN
                 ,MakerItem                        = CASE WHEN MSKU.VariousFLG = 0 THEN MSKU.MakerItem ELSE DODD.MakerItem END
                 ,JANCD                            = MSKU.JanCD
                 ,SKUName                          = CASE WHEN MSKU.VariousFLG = 0 THEN MSKU.SKUName ELSE DODD.ItemName END
-                ,ColorSizeName                    = CASE WHEN MSKU.VariousFLG = 0 THEN ISNULL(MSKU.ColorName,'') + ' ' + ISNULL(MSKU.SizeName,'')
-                                                                                  ELSE ISNULL(DODD.ColorName,'') + ' ' + ISNULL(DODD.SizeName,'')
+                ,ColorSizeName                    = CASE WHEN MSKU.VariousFLG = 0 THEN ISNULL(MSKU.ColorName,'') + '  ' + ISNULL(MSKU.SizeName,'')
+                                                                                  ELSE ISNULL(DODD.ColorName,'') + '  ' + ISNULL(DODD.SizeName,'')
                                                     END
                 ,CommentOutStore                  = DODD.CommentOutStore
                 ,OrderUnitPrice                   = DODD.OrderUnitPrice
@@ -100,7 +100,7 @@ BEGIN
                 ,TaniName                         = MMPP_Tani.Char1
                 ,JuchuuNO                         = DODD.JuchuuNO
                 ,OrderHontaiGaku                  = DODH.OrderHontaiGaku
-                ,RemarksOutStore                  = DODD.Remarks
+                ,RemarksOutStore                  = DODH.CommentOutStore
                 ,Print1                           = MSTR.Print1 
                 ,Print2                           = MSTR.Print2 
                 ,Print3                           = MSTR.Print3 
@@ -154,35 +154,30 @@ BEGIN
                              END AS Value
                      )SUB_InsatuShurui
 
-          WHERE @p_InsatuShurui_Hacchhusho = 1
-            AND ((@p_HacchuuNO IS NOT NULL AND DODH.OrderNO = @p_HacchuuNO)
-                 OR
-                 (@p_HacchuuNO IS NULL
-                  AND DODH.DeleteDateTime IS NULL
-                  AND DODH.StoreCD = @p_StoreCD
-                  AND ((@p_InsatuShurui_Hacchhusho = 1 AND SUB_InsatuShurui.Value = 1)
-                        OR
-                       (@p_InsatuShurui_NetHacchuu = 1 AND SUB_InsatuShurui.Value = 2)
-                        OR
-                       (@p_InsatuShurui_Chokusou   = 1 AND SUB_InsatuShurui.Value = 3)
-                        OR
-                       (@p_InsatuShurui_Cancel     = 1 AND SUB_InsatuShurui.Value = 4)
-                      )
-                  AND (   (@p_InsatuTaishou_Mihakkou  = 1 AND DODH.LastPrintDate IS NULL )  
-                       OR (@p_InsatuTaishou_Saihakkou = 1 AND DODH.LastPrintDate IS NOT NULL))  
-                  AND (@p_HacchuuDateFrom IS NULL OR DODH.OrderDate >= @p_HacchuuDateFrom)
-                  AND (@p_HacchuuDateTo IS NULL OR DODH.OrderDate <= @p_HacchuuDateTo)
-                  AND (@p_Staff IS NULL OR DODH.StaffCD = @p_Staff)
-                  AND (@p_Vendor IS NULL OR DODH.OrderCD = @p_Vendor)
-                  AND ((@p_IsPrintMisshounin = 1 AND DODH.ApprovalStageFLG > 0)
-                       OR 
-                       (@p_IsPrintMisshounin = 0 OR DODH.ApprovalStageFLG >= 9)
-                      )
-                  AND ((@p_IsPrintEDIHacchuu = 1 AND DODD.EDIFLG in (0,1))
-                       OR 
-                       (@p_IsPrintEDIHacchuu = 0 OR DODD.EDIFLG = 0)
-                      )
-                 )
+          WHERE (@p_HacchuuNO IS NULL OR (@p_HacchuuNO IS NOT NULL AND DODH.OrderNO = @p_HacchuuNO))
+            AND DODH.DeleteDateTime IS NULL
+            AND DODH.StoreCD = @p_StoreCD
+            AND ((@p_InsatuShurui_Hacchhusho = 1 AND SUB_InsatuShurui.Value = 1)
+                  OR
+                 (@p_InsatuShurui_NetHacchuu = 1 AND SUB_InsatuShurui.Value = 2)
+                  OR
+                 (@p_InsatuShurui_Chokusou   = 1 AND SUB_InsatuShurui.Value = 3)
+                  OR
+                 (@p_InsatuShurui_Cancel     = 1 AND SUB_InsatuShurui.Value = 4)
+                )
+            AND (   (@p_InsatuTaishou_Mihakkou  = 1 AND DODH.LastPrintDate IS NULL)  
+                 OR (@p_InsatuTaishou_Saihakkou = 1 AND DODH.LastPrintDate IS NOT NULL))  
+            AND (@p_HacchuuDateFrom IS NULL OR DODH.OrderDate >= @p_HacchuuDateFrom)
+            AND (@p_HacchuuDateTo IS NULL OR DODH.OrderDate <= @p_HacchuuDateTo)
+            AND (@p_Staff IS NULL OR DODH.StaffCD = @p_Staff)
+            AND (@p_Vendor IS NULL OR DODH.OrderCD = @p_Vendor)
+            AND ((@p_IsPrintMisshounin = 1 AND DODH.ApprovalStageFLG > 0)
+                 OR 
+                 (@p_IsPrintMisshounin = 0 AND DODH.ApprovalStageFLG >= 9)
+                )
+            AND (@p_IsPrintEDIHacchuu = 1
+                 OR 
+                 (@p_IsPrintEDIHacchuu = 0 AND DODD.EDIFLG = 0)
                 )
           )MAIN
     ORDER BY MAIN.OrderNO
