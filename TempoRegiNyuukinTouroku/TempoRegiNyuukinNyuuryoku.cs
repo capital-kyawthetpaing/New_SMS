@@ -305,26 +305,26 @@ namespace TempoRegiNyuukinTouroku
         {
             try
             {
-                try
-                {
-                    cdo.RemoveDisplay(true);
-                    cdo.RemoveDisplay(true);
-                }
-                catch { }
+                //try
+                //{
+                //    cdo.RemoveDisplay(true);
+                //    cdo.RemoveDisplay(true);
+                //}
+                //catch { }
                // System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
                  var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
                  pro.WaitForExit();
-                try
-                {
-                    cdo.SetDisplay(true, true, "");
-                    cdo.RemoveDisplay(true);
-                    cdo.RemoveDisplay(true);
-                   // cdo.SetDisplay(false, false, "", Up, Lp);
-                }
-                catch
-                {
-                    MessageBox.Show("P0. .  .");
-                }
+                //try
+                //{
+                //    cdo.SetDisplay(true, true, "");
+                //    cdo.RemoveDisplay(true);
+                //    cdo.RemoveDisplay(true);
+                //   // cdo.SetDisplay(false, false, "", Up, Lp);
+                //}
+                //catch
+                //{
+                //    MessageBox.Show("P0. .  .");
+                //}
             }
             catch(Exception ex)
             {
@@ -349,15 +349,15 @@ namespace TempoRegiNyuukinTouroku
         {
             try
             {
-                Login_BL bbl_1 = new Login_BL();
-                if (Base_DL.iniEntity.IsDM_D30Used)
-                {
-                    cdo.RemoveDisplay(true);
-                    cdo.RemoveDisplay(true);
-                    bbl_1.Display_Service_Update(true);
+                //Login_BL bbl_1 = new Login_BL();
+                //if (Base_DL.iniEntity.IsDM_D30Used)
+                //{
+                //    cdo.RemoveDisplay(true);
+                //    cdo.RemoveDisplay(true);
+                //    bbl_1.Display_Service_Update(true);
 
-                    bbl_1.Display_Service_Enabled(true);
-                }
+                //    bbl_1.Display_Service_Enabled(true);
+                //}
             }
             catch (Exception ex)
             {
@@ -366,65 +366,65 @@ namespace TempoRegiNyuukinTouroku
         }
         private void Stop_DisplayService(bool isForced = true)
         {
-            if (Base_DL.iniEntity.IsDM_D30Used && Process.GetProcessesByName("Display_Service").Count() == 1)
-            {
+            //if (Base_DL.iniEntity.IsDM_D30Used && Process.GetProcessesByName("Display_Service").Count() == 1)
+            //{
 
-                Login_BL bbl_1 = new Login_BL();
-                if (bbl_1.ReadConfig())
-                {
-                    bbl_1.Display_Service_Update(false);
-                    Thread.Sleep(1 * 1000);
-                    bbl_1.Display_Service_Enabled(false);
-                }
-                else
-                {
-                    bbl_1.Display_Service_Update(false);
-                    Thread.Sleep(1 * 1000);
-                    bbl_1.Display_Service_Enabled(false);
-                }
+            //    Login_BL bbl_1 = new Login_BL();
+            //    if (bbl_1.ReadConfig())
+            //    {
+            //        bbl_1.Display_Service_Update(false);
+            //        Thread.Sleep(1 * 1000);
+            //        bbl_1.Display_Service_Enabled(false);
+            //    }
+            //    else
+            //    {
+            //        bbl_1.Display_Service_Update(false);
+            //        Thread.Sleep(1 * 1000);
+            //        bbl_1.Display_Service_Enabled(false);
+            //    }
 
-                try
-                {
-                    Kill("Display_Service");
-                }
-                catch (Exception ex)
-                {
-                    //  MessageBox.Show(ex.StackTrace.ToString());
-                }
-                if (isForced && Base_DL.iniEntity.IsDM_D30Used) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
-                //Base_DL.iniEntity.CDO_DISPLAY.SetDisplay(true, true,Base_DL.iniEntity.DefaultMessage);
-            }
-            else
-            {
+            //    try
+            //    {
+            //        Kill("Display_Service");
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        //  MessageBox.Show(ex.StackTrace.ToString());
+            //    }
+            //    if (isForced && Base_DL.iniEntity.IsDM_D30Used) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+            //    //Base_DL.iniEntity.CDO_DISPLAY.SetDisplay(true, true,Base_DL.iniEntity.DefaultMessage);
+            //}
+            //else
+            //{
               
-                if (isForced && Base_DL.iniEntity.IsDM_D30Used) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
-            }
+            //    if (isForced && Base_DL.iniEntity.IsDM_D30Used) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+            //}
 
         }
         private void Start_Display()
         {
-            try
-            {
-                if (Base_DL.iniEntity.IsDM_D30Used && Process.GetProcessesByName("Display_Service").Count() == 1)
-                {
-                    Login_BL bbl_1 = new Login_BL();
-                    if (bbl_1.ReadConfig())
-                    {
-                        bbl_1.Display_Service_Update(false);
-                        Thread.Sleep(1 * 1000);
-                        bbl_1.Display_Service_Enabled(false);
-                    }
-                    else
-                    {
-                        bbl_1.Display_Service_Update(false);
-                        Thread.Sleep(1 * 1000);
-                        bbl_1.Display_Service_Enabled(false);
-                    }
-                    Kill("Display_Service");
-                }
+            //try
+            //{
+            //    if (Base_DL.iniEntity.IsDM_D30Used && Process.GetProcessesByName("Display_Service").Count() == 1)
+            //    {
+            //        Login_BL bbl_1 = new Login_BL();
+            //        if (bbl_1.ReadConfig())
+            //        {
+            //            bbl_1.Display_Service_Update(false);
+            //            Thread.Sleep(1 * 1000);
+            //            bbl_1.Display_Service_Enabled(false);
+            //        }
+            //        else
+            //        {
+            //            bbl_1.Display_Service_Update(false);
+            //            Thread.Sleep(1 * 1000);
+            //            bbl_1.Display_Service_Enabled(false);
+            //        }
+            //        Kill("Display_Service");
+            //    }
 
-            }
-            catch (Exception ex) { MessageBox.Show("Cant remove on second time" + ex.StackTrace); }
+            //}
+            //catch (Exception ex) { MessageBox.Show("Cant remove on second time" + ex.StackTrace); }
         }
         protected void Kill(string pth)
         {

@@ -1411,7 +1411,7 @@ namespace ShiireNyuuryokuFromNyuuka
         private void ExecDispNohin(short kbn)
         {
             //抽出条件エリアのエラーチェック
-            for (int i = (int)EIndex.ArrivalDateFrom; i <= (int)EIndex.VendorDeliveryNo; i++)
+            for (int i = (int)EIndex.CalledVendorCD; i <= (int)EIndex.VendorDeliveryNo; i++)
                 if (CheckDetail(i) == false)
                 {
                     detailControls[i].Focus();
@@ -1431,6 +1431,8 @@ namespace ShiireNyuuryokuFromNyuuka
                 dt = snbl.D_Delivery_SelectAll(dae);
             }
 
+            S_Clear_Grid();   //画面クリア（明細部）
+
             if (dt.Rows.Count == 0)
             {
                 bbl.ShowMessage("E128");
@@ -1439,7 +1441,6 @@ namespace ShiireNyuuryokuFromNyuuka
             }
             else
             {
-                S_Clear_Grid();   //画面クリア（明細部）
 
                 //明細にデータをセット
                 int i = 0;
@@ -3205,6 +3206,15 @@ namespace ShiireNyuuryokuFromNyuuka
                     case (int)ClsGridShiire.ColNO.TaxRate:
                         {
                             mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
+
+                            if (kbn == 1)
+                            {
+                                mGrid.g_MK_State[w_Col, w_Row].Cell_Color = backCL;
+                            }
+                            else
+                            {
+                                mGrid.g_MK_State[w_Col, w_Row].Cell_Color = System.Drawing.Color.Empty;
+                            }
                             break;
                         }
                 }

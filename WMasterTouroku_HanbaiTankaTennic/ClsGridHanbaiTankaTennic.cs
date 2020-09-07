@@ -30,6 +30,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
             internal string AdminNo;
             internal int DeleteFlg;
             internal int UsedFLG;
+            internal int TaxRateFLG;
         }
         internal enum ColNO : int
         {

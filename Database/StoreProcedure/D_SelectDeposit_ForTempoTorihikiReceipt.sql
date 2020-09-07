@@ -41,7 +41,6 @@ BEGIN
           ,staff.ReceiptPrint StaffReceiptPrint                                   -- 担当レシート表記
           ,store.ReceiptPrint StoreReceiptPrint                                   -- 店舗レシート表記
       FROM D_DepositHistory history
-      LEFT OUTER JOIN D_Sales sales ON sales.SalesNO = history.Number
       LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
       LEFT OUTER JOIN (
                        SELECT ROW_NUMBER() OVER(PARTITION BY CustomerCD ORDER BY ChangeDate DESC) AS RANK
@@ -76,9 +75,6 @@ BEGIN
        AND history.DepositNO = @DepositNO
        AND history.CancelKBN = 0
        AND history.CustomerCD IS NOT NULL
-       AND sales.DeleteDateTime IS NULL
-       AND sales.BillingType = 1
-       AND customer.DeleteFlg = 0
        AND store.DeleteFlg <> 1
        AND staff.DeleteFlg <> 1
         ;
