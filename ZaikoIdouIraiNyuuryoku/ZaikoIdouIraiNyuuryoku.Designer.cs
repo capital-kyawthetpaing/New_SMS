@@ -2311,6 +2311,7 @@
             this.CboFromSoukoCD.Name = "CboFromSoukoCD";
             this.CboFromSoukoCD.Size = new System.Drawing.Size(210, 20);
             this.CboFromSoukoCD.TabIndex = 8;
+            this.CboFromSoukoCD.SelectedIndexChanged += new System.EventHandler(this.CboSoukoCD_SelectedIndexChanged);
             // 
             // panel4
             // 
@@ -2512,7 +2513,6 @@
             this.ScOrderNO.LabelText = "";
             this.ScOrderNO.LabelVisible = false;
             this.ScOrderNO.Location = new System.Drawing.Point(113, 3);
-            this.ScOrderNO.Margin = new System.Windows.Forms.Padding(0);
             this.ScOrderNO.Name = "ScOrderNO";
             this.ScOrderNO.NameWidth = 600;
             this.ScOrderNO.SearchEnable = true;
@@ -2541,7 +2541,6 @@
             this.ScStaff.LabelText = "";
             this.ScStaff.LabelVisible = true;
             this.ScStaff.Location = new System.Drawing.Point(996, 45);
-            this.ScStaff.Margin = new System.Windows.Forms.Padding(0);
             this.ScStaff.Name = "ScStaff";
             this.ScStaff.NameWidth = 250;
             this.ScStaff.SearchEnable = true;
@@ -2566,7 +2565,7 @@
             this.CboStoreCD.Length = 40;
             this.CboStoreCD.Location = new System.Drawing.Point(1060, 7);
             this.CboStoreCD.MaxLength = 40;
-            this.CboStoreCD.MoveNext = false;
+            this.CboStoreCD.MoveNext = true;
             this.CboStoreCD.Name = "CboStoreCD";
             this.CboStoreCD.Size = new System.Drawing.Size(280, 20);
             this.CboStoreCD.TabIndex = 3;
@@ -2604,7 +2603,6 @@
             this.ckM_SearchControl3.LabelText = "";
             this.ckM_SearchControl3.LabelVisible = false;
             this.ckM_SearchControl3.Location = new System.Drawing.Point(343, 4);
-            this.ckM_SearchControl3.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl3.Name = "ckM_SearchControl3";
             this.ckM_SearchControl3.NameWidth = 600;
             this.ckM_SearchControl3.SearchEnable = true;
@@ -2638,7 +2636,7 @@
             this.ckM_TextBox1.Length = 10;
             this.ckM_TextBox1.Location = new System.Drawing.Point(113, 50);
             this.ckM_TextBox1.MaxLength = 10;
-            this.ckM_TextBox1.MoveNext = false;
+            this.ckM_TextBox1.MoveNext = true;
             this.ckM_TextBox1.Name = "ckM_TextBox1";
             this.ckM_TextBox1.Size = new System.Drawing.Size(88, 19);
             this.ckM_TextBox1.TabIndex = 4;
@@ -2782,7 +2780,6 @@
             this.ckM_SearchControl1.LabelText = "";
             this.ckM_SearchControl1.LabelVisible = false;
             this.ckM_SearchControl1.Location = new System.Drawing.Point(577, 3);
-            this.ckM_SearchControl1.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl1.Name = "ckM_SearchControl1";
             this.ckM_SearchControl1.NameWidth = 600;
             this.ckM_SearchControl1.SearchEnable = true;
@@ -2873,6 +2870,7 @@
             this.CboToSoukoCD.Name = "CboToSoukoCD";
             this.CboToSoukoCD.Size = new System.Drawing.Size(210, 20);
             this.CboToSoukoCD.TabIndex = 9;
+            this.CboToSoukoCD.SelectedIndexChanged += new System.EventHandler(this.CboSoukoCD_SelectedIndexChanged);
             // 
             // label17
             // 
@@ -3098,7 +3096,6 @@
             this.SC_ITEM_0.LabelText = "";
             this.SC_ITEM_0.LabelVisible = false;
             this.SC_ITEM_0.Location = new System.Drawing.Point(175, 228);
-            this.SC_ITEM_0.Margin = new System.Windows.Forms.Padding(0);
             this.SC_ITEM_0.Name = "SC_ITEM_0";
             this.SC_ITEM_0.NameWidth = 190;
             this.SC_ITEM_0.SearchEnable = true;
@@ -3199,7 +3196,6 @@
             this.ScCopyOrderNO.LabelText = "";
             this.ScCopyOrderNO.LabelVisible = false;
             this.ScCopyOrderNO.Location = new System.Drawing.Point(421, 3);
-            this.ScCopyOrderNO.Margin = new System.Windows.Forms.Padding(0);
             this.ScCopyOrderNO.Name = "ScCopyOrderNO";
             this.ScCopyOrderNO.NameWidth = 600;
             this.ScCopyOrderNO.SearchEnable = true;

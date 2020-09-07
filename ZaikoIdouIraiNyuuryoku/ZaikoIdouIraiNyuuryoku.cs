@@ -5,11 +5,8 @@ using Base.Client;
 using Search;
 using GridBase;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ZaikoIdouIraiNyuuryoku
@@ -77,6 +74,7 @@ namespace ZaikoIdouIraiNyuuryoku
         private string mFromStoreCD = "";
         private string mToStoreCD = "";
         private string InStoreCD = "";      //初期店舗CD
+        private bool isLoading = true;
 
         private string mAdminNO = "";
         private string mJANCD = "";
@@ -880,6 +878,8 @@ namespace ZaikoIdouIraiNyuuryoku
                 }
 
                 InitScr();
+
+                isLoading = false;
             }
             catch (Exception ex)
             {
@@ -1883,6 +1883,7 @@ namespace ZaikoIdouIraiNyuuryoku
         {
             OperationMode = mode; // (1:新規,2:修正,3;削除)
             mDetailOperationMode = EOperationMode.INSERT;
+            isLoading = true;
 
             //排他処理を解除
             DeleteExclusive();
@@ -1893,6 +1894,8 @@ namespace ZaikoIdouIraiNyuuryoku
             S_BodySeigyo(0, 1);
             //配列の内容を画面にセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+            isLoading = false;
 
             switch (mode)
             {
@@ -2335,22 +2338,6 @@ namespace ZaikoIdouIraiNyuuryoku
                 MessageBox.Show(ex.Message);
                 //EndSec();
             }
-        }
-        private void BtnSubF11_Click(object sender, EventArgs e)
-        {
-            //表示ボタンClick時   
-            try
-            {
-                base.FunctionProcess(FuncDisp - 1);
-
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-                //EndSec();
-            }
-
         }
         private void BtnSubF10_Click(object sender, EventArgs e)
         {
@@ -2878,6 +2865,29 @@ namespace ZaikoIdouIraiNyuuryoku
                 }
             }
 
+        }
+
+        private void CboSoukoCD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (isLoading)
+                    return;
+
+                int index = Array.IndexOf(detailControls, sender);
+
+                if (CheckDetail(index, false) == false)
+                {
+                    detailControls[index].Focus();
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
         }
     }
 }
