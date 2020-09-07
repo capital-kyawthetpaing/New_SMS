@@ -733,8 +733,9 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
         {
             var C_DateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             C_dt = C_DateTime;
-            
-            if(ErrorCheck_())
+            if (bbl.ShowMessage("Q101") != DialogResult.Yes)
+                return;
+            if (ErrorCheck_())
             {
                 if ( OperationMode == EOperationMode.UPDATE)
                 {

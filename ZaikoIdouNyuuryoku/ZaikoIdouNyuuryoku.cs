@@ -1907,20 +1907,24 @@ namespace ZaikoIdouNyuuryoku
                         if (!CheckDependsOnDate(index))
                             return false;
 
-                        //在庫データに棚番が存在しない場合、Error
-                        D_Stock_Entity dse = new D_Stock_Entity
+                        //"調整追加"以外のとき　（調整追加の場合は在庫データがなくてもOK)
+                        if (mIdoType != EIdoType.調整追加)
                         {
-                            SoukoCD = CboFromSoukoCD.SelectedValue.ToString(),
-                            RackNO = detailControls[index].Text,
-                            AdminNO = mAdminNO
-                        };
+                            //在庫データに棚番が存在しない場合、Error
+                            D_Stock_Entity dse = new D_Stock_Entity
+                            {
+                                SoukoCD = CboFromSoukoCD.SelectedValue.ToString(),
+                                RackNO = detailControls[index].Text,
+                                AdminNO = mAdminNO
+                            };
 
-                        DataTable dt = zibl.D_Stock_Select(dse);
-                        if (dt.Rows.Count == 0)
-                        {
-                            //Ｅ２０５
-                            bbl.ShowMessage("E205");
-                            return false;
+                            DataTable dt = zibl.D_Stock_Select(dse);
+                            if (dt.Rows.Count == 0)
+                            {
+                                //Ｅ２０５
+                                bbl.ShowMessage("E205");
+                                return false;
+                            }
                         }
                     }
                     break;
