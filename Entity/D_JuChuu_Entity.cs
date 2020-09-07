@@ -138,6 +138,8 @@ namespace Entity
         public int ChkMiseikyu { get; set; }
         public int ChkMinyukin { get; set; }
         public int ChkAll { get; set; }
+        public int ChkReji { get; set; }
+        public int ChkGaisho { get; set; }
         public int ChkTujo { get; set; }
         public int ChkHenpin { get; set; }
 
