@@ -18,6 +18,10 @@ namespace Search
     {
         M_TenzikaiShouhin_Entity mte;
         MasterTouroku_TenzikaiHanbaiTankaKakeritu_BL mtbl;
+        public string TenzikaiName = "";
+        public string VendorName = "";
+        public string LastYearTerm = "";
+        public string LastSeason = "";
         public Search_Tenzikai(string ChangeDate)
         {
             InitializeComponent();
@@ -125,6 +129,10 @@ namespace Search
         {
             if (dgvSearch_Tenzikai.CurrentRow != null && dgvSearch_Tenzikai.CurrentRow.Index >= 0)
             {
+                TenzikaiName = dgvSearch_Tenzikai.CurrentRow.Cells["colTenzikaiName"].Value.ToString();
+                VendorName = dgvSearch_Tenzikai.CurrentRow.Cells["colVendorName"].Value.ToString();
+                LastYearTerm = dgvSearch_Tenzikai.CurrentRow.Cells["colLastYearTerm"].Value.ToString();
+                LastSeason = dgvSearch_Tenzikai.CurrentRow.Cells["colSeason"].Value.ToString();
                 this.Close();
             }
         }
