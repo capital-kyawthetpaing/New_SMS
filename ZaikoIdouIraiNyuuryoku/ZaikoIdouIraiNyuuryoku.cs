@@ -5,11 +5,8 @@ using Base.Client;
 using Search;
 using GridBase;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ZaikoIdouIraiNyuuryoku
@@ -77,6 +74,7 @@ namespace ZaikoIdouIraiNyuuryoku
         private string mFromStoreCD = "";
         private string mToStoreCD = "";
         private string InStoreCD = "";      //初期店舗CD
+        private bool isLoading = true;
 
         private string mAdminNO = "";
         private string mJANCD = "";
@@ -841,6 +839,8 @@ namespace ZaikoIdouIraiNyuuryoku
                 //起動時共通処理
                 base.StartProgram();
 
+                isLoading = true;
+
                 Btn_F7.Text = "";
                 Btn_F8.Text = "";
                 Btn_F10.Text = "確定(F10)";
@@ -880,6 +880,8 @@ namespace ZaikoIdouIraiNyuuryoku
                 }
 
                 InitScr();
+
+                isLoading = false;
             }
             catch (Exception ex)
             {
@@ -1503,6 +1505,10 @@ namespace ZaikoIdouIraiNyuuryoku
                     break;
 
                 case (int)EIndex.ExpectedDate:
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text) && mDetailOperationMode == EOperationMode.DELETE)
+                    {
+                        return true;
+                    }
                     //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
                     if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
@@ -1854,7 +1860,28 @@ namespace ZaikoIdouIraiNyuuryoku
                     {
                         detailControls[i].Focus();
                         return;
-                    }              
+                    }
+
+                //明細部チェック
+                for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+                {
+                    if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JanCD) == false)
+                    {
+                        detailControls[(int)EIndex.Gyono].Text = (RW + 1).ToString();
+                        if (CheckDetail((int)EIndex.Gyono) == false)
+                        {
+                            detailControls[(int)EIndex.Gyono].Focus();
+                            return;
+                        }
+
+                        for (int i = (int)EIndex.JANCD; i <= (int)EIndex.RemarksInStore; i++)
+                            if (CheckDetail(i, false) == false)
+                            {
+                                detailControls[i].Focus();
+                                return;
+                            }
+                    }
+                }
             }
 
             DataTable dt = GetGridEntity();
@@ -1883,6 +1910,7 @@ namespace ZaikoIdouIraiNyuuryoku
         {
             OperationMode = mode; // (1:新規,2:修正,3;削除)
             mDetailOperationMode = EOperationMode.INSERT;
+            isLoading = true;
 
             //排他処理を解除
             DeleteExclusive();
@@ -1893,6 +1921,8 @@ namespace ZaikoIdouIraiNyuuryoku
             S_BodySeigyo(0, 1);
             //配列の内容を画面にセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+            isLoading = false;
 
             switch (mode)
             {
@@ -1905,9 +1935,7 @@ namespace ZaikoIdouIraiNyuuryoku
                 case EOperationMode.SHOW:
                     keyControls[0].Focus();
                     break;
-
             }
-
         }
 
         private void ChangeDetailOperationMode(EOperationMode mode)
@@ -2335,22 +2363,6 @@ namespace ZaikoIdouIraiNyuuryoku
                 MessageBox.Show(ex.Message);
                 //EndSec();
             }
-        }
-        private void BtnSubF11_Click(object sender, EventArgs e)
-        {
-            //表示ボタンClick時   
-            try
-            {
-                base.FunctionProcess(FuncDisp - 1);
-
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-                //EndSec();
-            }
-
         }
         private void BtnSubF10_Click(object sender, EventArgs e)
         {
@@ -2878,6 +2890,29 @@ namespace ZaikoIdouIraiNyuuryoku
                 }
             }
 
+        }
+
+        private void CboSoukoCD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (isLoading)
+                    return;
+
+                int index = Array.IndexOf(detailControls, sender);
+
+                if (CheckDetail(index, false) == false)
+                {
+                    detailControls[index].Focus();
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
         }
     }
 }
