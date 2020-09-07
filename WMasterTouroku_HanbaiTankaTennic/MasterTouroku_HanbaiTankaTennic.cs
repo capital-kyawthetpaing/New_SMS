@@ -69,7 +69,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 SKUCDTo.NameWidth = 0;
                 Clear(pnl_Body);
                 Scr_Clr(0);
-                TextLeave();
+                CustomEvent();
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
@@ -267,9 +267,9 @@ namespace WMasterTouroku_HanbaiTankaTennic
                         if (mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
                         {
                             mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Enter += new System.EventHandler(GridControl_Enter);
-                            mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Leave += new System.EventHandler(GridControl_Leave);
-                            mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown);//GridControl_Validated
-                            mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Validated += new EventHandler(GridControl_Validated);
+                          //  mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Leave += new System.EventHandler(GridControl_Leave);
+                          //  mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown);//GridControl_Validated
+                          //  mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Validated += new EventHandler(GridControl_Validated);
 
                         }
                     }
@@ -1142,11 +1142,12 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 txtStartDateFrom.Focus();
             }
         }
-        private void TextLeave()
+        private void CustomEvent()
         {
-            Add_Leave(new Control[] { panel10_1, panel10_2, panel8, panel3, panel17, panel4, panel65, panel89, panel113, panel137 });
+            Add(new Control[] { panel10_1, panel10_2, panel8, panel3, panel17, panel4, panel65, panel89, panel113, panel137 });
+            
         }
-        private void Add_Leave(Control[] cont)
+        private void Add(Control[] cont)
         {
             foreach (var ctr in cont)
             {
@@ -1156,13 +1157,17 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     if (c is CKM_TextBox ct)
                     {
                         ct.Leave += Ct_Leave;
-                        //ct.Enter += keyD;
+                        ct.Validated += Validated;
                         //ct.GotFocus += Ct_GotFocus;
                     }
                 }
             }
         }
-        private void Ct_GotFocus(object sender, EventArgs e)
+        private void Validated(object sender, EventArgs e)
+        {
+            GridControl_Validated(sender,e);
+        }
+            private void Ct_GotFocus(object sender, EventArgs e)
         {
             L_Control = (Control)sender;
         }
@@ -1203,161 +1208,161 @@ namespace WMasterTouroku_HanbaiTankaTennic
         bool IsEntered = false;
         private void GridControl_Validated(object sender, EventArgs e)
         {
-            //if (IsEntered)
-            //    return;
-            //Control c = sender as Control;
-            //if (c is CKM_TextBox ct)
-            //{
-            //    if (ct.Name.Contains("IMT_STADT_"))
-            //    {
-            //        if(!bbl.CheckDate(ct.Text))
-            //        {
-            //            bbl.ShowMessage("E103");
-            //            ct.Focus();
-            //        }
-            //        if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
-            //        {
-            //            return;
-            //        }
-            //        var SKUCD = this.Controls.Find("IMT_ITMCD_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
-            //        M_SKUPrice_Entity mse = new M_SKUPrice_Entity
-            //        {
-            //            SKUCD=SKUCD.Text,
-            //            StartChangeDate =ct.Text
-            //        };
-            //        DataTable dt = spb.M_SKUPrice_DataSelect(mse);
-            //        if(dt.Rows.Count>0)
-            //        {
-            //            bbl.ShowMessage("E105");
-            //            IsEntered = true;
-            //            //// ct.Focus();
-            //            return;
-            //        }
-            //        //IsEntered = false;
-            //    }
-            //    if (ct.Name.Contains("IMT_ENDDT_"))
-            //    {
-            //        if(!bbl.CheckDate(ct.Text))
-            //        {
-            //            bbl.ShowMessage("E103");
-            //            ct.Focus();
-            //        }
-            //        var StartDate = this.Controls.Find("IMT_STADT_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
-            //        if (string.Compare(StartDate.Text, ct.Text) == 1)
-            //        {
-            //            bbl.ShowMessage("E104");
-            //            ct.Focus();
-            //        }
-            //        //DataTable dtInsert = new DataTable();
-            //        //dtInsert = spb.SimpleSelect1("73", null, ct.Text);
-            //        //if(dtInsert.Rows.Count>0)
-            //        //{
-            //        //    MessageBox.Show("Date Exit!!!");
-            //        //    ct.Focus();
-            //        //}
-            //    }
-            //    if (ct.Name.Contains("IMN_UNITPRICE_"))
-            //    {
-            //        if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
-            //        {
-            //            return;
-            //        }
-            //        var UnitPrice = (ct.Text);
-            //        if (string.IsNullOrWhiteSpace(ct.Text))
-            //        {
-            //            bbl.ShowMessage("E102");
-            //            ct.Focus();
-            //        }
-            //    }
-            //    if (ct.Name.Contains("IMN_SSUNITPRICE_"))
-            //    {
-            //        if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
-            //        {
-            //            return;
-            //        }
-            //        var ssUnitPrice = (ct.Text);
-            //        if (string.IsNullOrWhiteSpace(ct.Text))
-            //        {
-            //            bbl.ShowMessage("E102");
-            //            ct.Focus();
-            //        }
-            //    }
-            //    if (ct.Name.Contains("IMN_R1UNITPRICE_"))
-            //    {
-            //        if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
-            //        {
-            //            return;
-            //        }
-            //        var r1UnitPrice = (ct.Text);
-            //        if (string.IsNullOrWhiteSpace(ct.Text))
-            //        {
-            //            bbl.ShowMessage("E102");
-            //            ct.Focus();
-            //        }
-            //    }
-            //    if (ct.Name.Contains("IMN_R2UNITPRICE_"))
-            //    {
-            //        if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
-            //        {
-            //            return;
-            //        }
-            //        var r2UnitPrice = (ct.Text);
-            //        if (string.IsNullOrWhiteSpace(ct.Text))
-            //        {
-            //            bbl.ShowMessage("E102");
-            //            ct.Focus();
-            //        }
-            //    }
-            //    if (ct.Name.Contains("IMN_R3UNITPRICE_"))
-            //    {
-            //        if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
-            //        {
-            //            return;
-            //        }
-            //        var r3UnitPrice = (ct.Text);
-            //        if (string.IsNullOrWhiteSpace(ct.Text))
-            //        {
-            //            bbl.ShowMessage("E102");
-            //            ct.Focus();
-            //        }
-            //    }
-            //    if (ct.Name.Contains("IMN_R4UNITPRICE_"))
-            //    {
-            //        if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
-            //        {
-            //            return;
-            //        }
-            //        var r4UnitPrice = (ct.Text);
-            //        if (string.IsNullOrWhiteSpace(ct.Text))
-            //        {
-            //            bbl.ShowMessage("E102");
-            //            ct.Focus();
-            //        }
-            //    }
-            //    if (ct.Name.Contains("IMN_R5UNITPRICE_"))
-            //    {
-            //        if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
-            //        {
-            //            return;
-            //        }
-            //        var r5UnitPrice = (ct.Text);
-            //        if (string.IsNullOrWhiteSpace(ct.Text))
-            //        {
-            //            bbl.ShowMessage("E102");
-            //            ct.Focus();
-            //        }
-            //    }
-            //    //if (ct.Name.Contains("IMN_R5UNITPRICE_"))
-            //    //{
-            //    //    var UnitPrice = ct.Text;
-            //    //    if (string.IsNullOrEmpty(ct.Text))
-            //    //    {
-            //    //        bbl.ShowMessage("E102");
-            //    //        ct.Focus();
-            //    //    }
-            //    //}
-            //}
-            //mGrid.S_DispToArray(Vsb_Mei_0.Value);
+            if (IsEntered)
+                return;
+            Control c = sender as Control;
+            if (c is CKM_TextBox ct)
+            {
+                if (ct.Name.Contains("IMT_STADT_"))
+                {
+                    if (!bbl.CheckDate(ct.Text))
+                    {
+                        bbl.ShowMessage("E103");
+                        ct.Focus();
+                    }
+                    if (ActiveControl is CKM_Button cb && cb.Name.Contains("Btn"))
+                    {
+                        return;
+                    }
+                    var SKUCD = this.Controls.Find("IMT_ITMCD_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
+                    M_SKUPrice_Entity mse = new M_SKUPrice_Entity
+                    {
+                        SKUCD = SKUCD.Text,
+                        StartChangeDate = ct.Text
+                    };
+                    DataTable dt = spb.M_SKUPrice_DataSelect(mse);
+                    if (dt.Rows.Count > 0)
+                    {
+                        bbl.ShowMessage("E105");
+                       // IsEntered = true;
+                         ct.Focus();
+                        return;
+                    }
+                    //IsEntered = false;
+                }
+                if (ct.Name.Contains("IMT_ENDDT_"))
+                {
+                    //if (!bbl.CheckDate(ct.Text))
+                    //{
+                    //    bbl.ShowMessage("E103");
+                    //    ct.Focus();
+                    //}
+                    var StartDate = this.Controls.Find("IMT_STADT_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
+                    if (string.Compare(StartDate.Text, ct.Text) == 1)
+                    {
+                        bbl.ShowMessage("E104");
+                        ct.Focus();
+                    }
+                    //DataTable dtInsert = new DataTable();
+                    //dtInsert = spb.SimpleSelect1("73", null, ct.Text);
+                    //if(dtInsert.Rows.Count>0)
+                    //{
+                    //    MessageBox.Show("Date Exit!!!");
+                    //    ct.Focus();
+                    //}
+                }
+                if (ct.Name.Contains("IMN_UNITPRICE_"))
+                {
+                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
+                    {
+                        return;
+                    }
+                    var UnitPrice = (ct.Text);
+                    if (string.IsNullOrWhiteSpace(ct.Text))
+                    {
+                        bbl.ShowMessage("E102");
+                        ct.Focus();
+                    }
+                }
+                if (ct.Name.Contains("IMN_SSUNITPRICE_"))
+                {
+                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
+                    {
+                        return;
+                    }
+                    var ssUnitPrice = (ct.Text);
+                    if (string.IsNullOrWhiteSpace(ct.Text))
+                    {
+                        bbl.ShowMessage("E102");
+                        ct.Focus();
+                    }
+                }
+                if (ct.Name.Contains("IMN_R1UNITPRICE_"))
+                {
+                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
+                    {
+                        return;
+                    }
+                    var r1UnitPrice = (ct.Text);
+                    if (string.IsNullOrWhiteSpace(ct.Text))
+                    {
+                        bbl.ShowMessage("E102");
+                        ct.Focus();
+                    }
+                }
+                if (ct.Name.Contains("IMN_R2UNITPRICE_"))
+                {
+                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
+                    {
+                        return;
+                    }
+                    var r2UnitPrice = (ct.Text);
+                    if (string.IsNullOrWhiteSpace(ct.Text))
+                    {
+                        bbl.ShowMessage("E102");
+                        ct.Focus();
+                    }
+                }
+                if (ct.Name.Contains("IMN_R3UNITPRICE_"))
+                {
+                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
+                    {
+                        return;
+                    }
+                    var r3UnitPrice = (ct.Text);
+                    if (string.IsNullOrWhiteSpace(ct.Text))
+                    {
+                        bbl.ShowMessage("E102");
+                        ct.Focus();
+                    }
+                }
+                if (ct.Name.Contains("IMN_R4UNITPRICE_"))
+                {
+                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
+                    {
+                        return;
+                    }
+                    var r4UnitPrice = (ct.Text);
+                    if (string.IsNullOrWhiteSpace(ct.Text))
+                    {
+                        bbl.ShowMessage("E102");
+                        ct.Focus();
+                    }
+                }
+                if (ct.Name.Contains("IMN_R5UNITPRICE_"))
+                {
+                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
+                    {
+                        return;
+                    }
+                    var r5UnitPrice = (ct.Text);
+                    if (string.IsNullOrWhiteSpace(ct.Text))
+                    {
+                        bbl.ShowMessage("E102");
+                        ct.Focus();
+                    }
+                }
+                //if (ct.Name.Contains("IMN_R5UNITPRICE_"))
+                //{
+                //    var UnitPrice = ct.Text;
+                //    if (string.IsNullOrEmpty(ct.Text))
+                //    {
+                //        bbl.ShowMessage("E102");
+                //        ct.Focus();
+                //    }
+                //}
+            }
+            mGrid.S_DispToArray(Vsb_Mei_0.Value);
         }
         private void GridControl_Enter(object sender, EventArgs e)
         {
@@ -1396,7 +1401,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
 
                 // 背景色
-             //   w_ActCtl.BackColor = mGrid.F_GetBackColor_MK((int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate, w_Row);
+                //   w_ActCtl.BackColor = mGrid.F_GetBackColor_MK((int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate, w_Row);
 
             }
             catch (Exception ex)
@@ -1906,7 +1911,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 return;
             }
         }
-        
         private void Vsb_Mei_0_ValueChanged(object sender, System.EventArgs e)
         {
             int w_Dest = 0;
