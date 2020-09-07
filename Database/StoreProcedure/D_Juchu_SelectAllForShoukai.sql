@@ -69,7 +69,13 @@ BEGIN
       END
       
     SELECT DH.JuchuuNO
+          ,DH.JuchuuProcessNO
+          ,(CASE DH.JuchuuKBN WHEN 2 THEN (SELECT MIN(A.SalesNO) FROM D_SalesDetails AS A
+                                            WHERE A.JuchuuNO = DH.JuchuuNO
+                                            AND A.JuchuuRows = 1
+                                            AND A.DeleteDateTime IS NULL) ELSE '' END) AS SalesNO
           ,CONVERT(varchar,DH.JuchuuDate,111) AS JuchuuDate
+          ,(CASE DH.JuchuuKBN WHEN 2 THEN LEFT(CONVERT(varchar,DH.JuchuuTime,108),5) ELSE '' END) AS JuchuuTime
           ,(SELECT top 1 A.StoreName 
               FROM M_Store A 
               WHERE A.StoreCD = DH.StoreCD AND A.ChangeDate <= DH.JuchuuDate
@@ -181,12 +187,14 @@ BEGIN
             AND DH.JuchuuNO = D.JuchuuNO
             ) AS CollectClearDate   --“ü‹à“ú
             
-           ,(SELECT M.DenominationName FROM M_DenominationKBN AS M
-            WHERE M.DenominationCD = DH.PaymentMethodCD) AS DenominationName    --“ü‹à•û–@
+           ,(CASE DH.JuchuuKBN WHEN 2 THEN (SELECT M.DenominationName FROM M_DenominationKBN AS M
+                                             WHERE M.DenominationCD = DC3.PaymentMethodCD)
+                ELSE (SELECT M.DenominationName FROM M_DenominationKBN AS M
+                       WHERE M.DenominationCD = DH.PaymentMethodCD) END) AS DenominationName    --“ü‹à•û–@
             
-            ,(CASE WHEN ISNULL(DC.CollectAmount,0)=0 THEN '–¢“ü‹à' 
-                WHEN ISNULL(DC.CollectAmount,0) <> DH.JuchuuGaku THEN 'ˆê•”“ü‹à'
-                WHEN ISNULL(DC.CollectAmount,0) >= DH.JuchuuGaku THEN '“ü‹àŠ®—¹'
+            ,(CASE WHEN ISNULL(DCB.CollectAmount,0)=0 THEN '–¢“ü‹à' 
+                WHEN ISNULL(DCB.CollectAmount,0) <> DH.JuchuuGaku THEN 'ˆê•”“ü‹à'
+                WHEN ISNULL(DCB.CollectAmount,0) >= DH.JuchuuGaku THEN '“ü‹àŠ®—¹'
                 ELSE '' END) AS CollectAmount
 
           ,(SELECT top 1 (CASE A.VariousFLG WHEN 1 THEN DM.SKUName ELSE A.SKUName END) AS SKUName 
@@ -252,15 +260,30 @@ BEGIN
     ON  DM.JuchuuNO = DDM.JuchuuNO 
     AND  DM.JuchuuRows = DDM.JuchuuRows 
     
-    LEFT OUTER JOIN (SELECT D.JuchuuNO, SUM(DC.CollectAmount) AS CollectAmount
+    LEFT OUTER JOIN (SELECT D.JuchuuNO, SUM(DCB.CollectAmount) AS CollectAmount
             FROM D_CollectPlanDetails AS D 
-            INNER JOIN D_CollectBillingDetails AS DC ON DC.CollectPlanNO = D.CollectPlanNO
-            AND DC.CollectPlanRows = D.CollectPlanRows
-            AND DC.DeleteDateTime IS NULL
+            INNER JOIN D_CollectBillingDetails AS DCB ON DCB.CollectPlanNO = D.CollectPlanNO
+            AND DCB.CollectPlanRows = D.CollectPlanRows
+            AND DCB.DeleteDateTime IS NULL
             WHERE D.DeleteDateTime IS NULL
             GROUP BY D.JuchuuNO
-            ) AS DC ON DH.JuchuuNO = DC.JuchuuNO   --“ü‹àó‘Ô
-                     
+            ) AS DCB ON DH.JuchuuNO = DCB.JuchuuNO   --“ü‹àó‘Ô
+
+    LEFT OUTER JOIN (SELECT JuchuuNO, MAX(CollectPlanGaku) AS CollectPlanGaku
+            FROM D_CollectPlan 
+            WHERE DeleteDateTime IS NULL
+            GROUP BY JuchuuNO
+            ) AS DC ON DC.JuchuuNO = DH.JuchuuNO
+    LEFT OUTER JOIN (SELECT JuchuuNO, CollectPlanGaku, MIN(CollectPlanNO) AS CollectPlanNO
+            FROM D_CollectPlan 
+            WHERE DeleteDateTime IS NULL
+            GROUP BY JuchuuNO, CollectPlanGaku
+            ) AS DC2 ON DC2.JuchuuNO = DC.JuchuuNO
+            AND DC2.CollectPlanGaku = DC.CollectPlanGaku
+    LEFT OUTER JOIN D_CollectPlan AS DC3
+    ON DC3.CollectPlanNO = DC2.CollectPlanNO
+    AND DC3.DeleteDateTime IS NULL
+    
     WHERE DH.JuchuuDate >= (CASE WHEN @JuchuuDateFrom <> '' THEN CONVERT(DATE, @JuchuuDateFrom) ELSE DH.JuchuuDate END)
         AND DH.JuchuuDate <= (CASE WHEN @JuchuuDateTo <> '' THEN CONVERT(DATE, @JuchuuDateTo) ELSE DH.JuchuuDate END)
         AND DH.JuchuuNO >= (CASE WHEN @JuchuuNOFrom <> '' THEN @JuchuuNOFrom ELSE DH.JuchuuNO END)

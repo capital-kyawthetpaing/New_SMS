@@ -30,7 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,6 +39,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new CKM_Controls.CKM_Label();
             this.label1 = new CKM_Controls.CKM_Label();
             this.label27 = new CKM_Controls.CKM_Label();
@@ -71,6 +72,7 @@
             this.colVendorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJuchuuDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coIOrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colArrivalDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNyukaBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,6 +80,7 @@
             this.colSikyuYmd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNyukinYmd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJuchuuNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSalesNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHouho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApprovalStageFLG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colKin = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,6 +91,7 @@
             this.colColorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBikou = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBikou2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colJuchuuProcessNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox9 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
@@ -807,6 +811,7 @@
             this.colVendorName,
             this.colSKUCD,
             this.colJuchuuDate,
+            this.colTime,
             this.coIOrderDate,
             this.colArrivalDate,
             this.colNyukaBi,
@@ -814,6 +819,7 @@
             this.colSikyuYmd,
             this.colNyukinYmd,
             this.colJuchuuNO,
+            this.colSalesNo,
             this.colHouho,
             this.colApprovalStageFLG,
             this.colKin,
@@ -823,15 +829,16 @@
             this.colSizeName,
             this.colColorName,
             this.colBikou,
-            this.colBikou2});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GvDetail.DefaultCellStyle = dataGridViewCellStyle11;
+            this.colBikou2,
+            this.colJuchuuProcessNO});
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GvDetail.DefaultCellStyle = dataGridViewCellStyle12;
             this.GvDetail.EnableHeadersVisualStyles = false;
             this.GvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvDetail.Location = new System.Drawing.Point(9, 324);
@@ -898,11 +905,21 @@
             this.colJuchuuDate.ReadOnly = true;
             this.colJuchuuDate.Width = 80;
             // 
+            // colTime
+            // 
+            this.colTime.DataPropertyName = "JuchuuTime";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colTime.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colTime.HeaderText = "時刻";
+            this.colTime.Name = "colTime";
+            this.colTime.ReadOnly = true;
+            this.colTime.Width = 50;
+            // 
             // coIOrderDate
             // 
             this.coIOrderDate.DataPropertyName = "OrderDate";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.coIOrderDate.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.coIOrderDate.DefaultCellStyle = dataGridViewCellStyle5;
             this.coIOrderDate.HeaderText = "発注日";
             this.coIOrderDate.Name = "coIOrderDate";
             this.coIOrderDate.ReadOnly = true;
@@ -911,8 +928,8 @@
             // colArrivalDate
             // 
             this.colArrivalDate.DataPropertyName = "ArrivalPlanDate";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colArrivalDate.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colArrivalDate.DefaultCellStyle = dataGridViewCellStyle6;
             this.colArrivalDate.HeaderText = "入荷予定日";
             this.colArrivalDate.Name = "colArrivalDate";
             this.colArrivalDate.ReadOnly = true;
@@ -921,8 +938,8 @@
             // colNyukaBi
             // 
             this.colNyukaBi.DataPropertyName = "ArrivalDate";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colNyukaBi.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colNyukaBi.DefaultCellStyle = dataGridViewCellStyle7;
             this.colNyukaBi.HeaderText = "入荷日";
             this.colNyukaBi.Name = "colNyukaBi";
             this.colNyukaBi.ReadOnly = true;
@@ -931,8 +948,8 @@
             // colSaleDate
             // 
             this.colSaleDate.DataPropertyName = "SalesDate";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colSaleDate.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colSaleDate.DefaultCellStyle = dataGridViewCellStyle8;
             this.colSaleDate.HeaderText = "売上日";
             this.colSaleDate.Name = "colSaleDate";
             this.colSaleDate.ReadOnly = true;
@@ -941,8 +958,8 @@
             // colSikyuYmd
             // 
             this.colSikyuYmd.DataPropertyName = "BillingCloseDate";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colSikyuYmd.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colSikyuYmd.DefaultCellStyle = dataGridViewCellStyle9;
             this.colSikyuYmd.HeaderText = "請求日";
             this.colSikyuYmd.Name = "colSikyuYmd";
             this.colSikyuYmd.ReadOnly = true;
@@ -951,8 +968,8 @@
             // colNyukinYmd
             // 
             this.colNyukinYmd.DataPropertyName = "CollectClearDate";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colNyukinYmd.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colNyukinYmd.DefaultCellStyle = dataGridViewCellStyle10;
             this.colNyukinYmd.HeaderText = "入金日";
             this.colNyukinYmd.Name = "colNyukinYmd";
             this.colNyukinYmd.ReadOnly = true;
@@ -964,6 +981,13 @@
             this.colJuchuuNO.HeaderText = "受注番号";
             this.colJuchuuNO.Name = "colJuchuuNO";
             this.colJuchuuNO.ReadOnly = true;
+            // 
+            // colSalesNo
+            // 
+            this.colSalesNo.DataPropertyName = "SalesNo";
+            this.colSalesNo.HeaderText = "売上番号";
+            this.colSalesNo.Name = "colSalesNo";
+            this.colSalesNo.ReadOnly = true;
             // 
             // colHouho
             // 
@@ -982,10 +1006,10 @@
             // colKin
             // 
             this.colKin.DataPropertyName = "JuchuuGaku";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "N0";
-            dataGridViewCellStyle10.NullValue = null;
-            this.colKin.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.Format = "N0";
+            dataGridViewCellStyle11.NullValue = null;
+            this.colKin.DefaultCellStyle = dataGridViewCellStyle11;
             this.colKin.HeaderText = "金額(税込)";
             this.colKin.Name = "colKin";
             this.colKin.ReadOnly = true;
@@ -1042,6 +1066,14 @@
             this.colBikou2.Name = "colBikou2";
             this.colBikou2.ReadOnly = true;
             this.colBikou2.Width = 200;
+            // 
+            // colJuchuuProcessNO
+            // 
+            this.colJuchuuProcessNO.DataPropertyName = "JuchuuProcessNO";
+            this.colJuchuuProcessNO.HeaderText = "JuchuuProcessNO";
+            this.colJuchuuProcessNO.Name = "colJuchuuProcessNO";
+            this.colJuchuuProcessNO.ReadOnly = true;
+            this.colJuchuuProcessNO.Visible = false;
             // 
             // ckM_Label6
             // 
@@ -1936,6 +1968,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colVendorName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSKUCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colJuchuuDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn coIOrderDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colArrivalDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNyukaBi;
@@ -1943,6 +1976,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colSikyuYmd;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNyukinYmd;
         private System.Windows.Forms.DataGridViewTextBoxColumn colJuchuuNO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSalesNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHouho;
         private System.Windows.Forms.DataGridViewTextBoxColumn colApprovalStageFLG;
         private System.Windows.Forms.DataGridViewTextBoxColumn colKin;
@@ -1953,6 +1987,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colColorName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBikou;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBikou2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colJuchuuProcessNO;
     }
 }
 

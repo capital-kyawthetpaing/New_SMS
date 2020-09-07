@@ -76,6 +76,7 @@ namespace TempoJuchuuShoukai
         private D_Juchuu_Entity dje;
         private M_SKU_Entity mse;
         private TempoJuchuuShoukai_BL ssbl;
+        private int mTennic;
 
         private System.Windows.Forms.Control previousCtrl; // ｶｰｿﾙの元の位置を待避
 
@@ -100,6 +101,7 @@ namespace TempoJuchuuShoukai
                 //起動時共通処理
                 base.StartProgram();
 
+                mTennic = bbl.GetTennic();
 
                 //初期値セット
                 ssbl = new TempoJuchuuShoukai_BL();
@@ -227,7 +229,7 @@ namespace TempoJuchuuShoukai
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + Juchuu;
             if (System.IO.File.Exists(filePath))
             {
-                string juchuNo = GvDetail.Rows[row].Cells["colJuchuuNO"].Value.ToString();
+                string juchuNo =mTennic.Equals(1) ? GvDetail.Rows[row].Cells["colJuchuuProcessNO"].Value.ToString() : GvDetail.Rows[row].Cells["colJuchuuNO"].Value.ToString();
                 string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + juchuNo;
                 System.Diagnostics.Process.Start(filePath, cmdLine);
             }
@@ -290,7 +292,7 @@ namespace TempoJuchuuShoukai
                 GvDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 GvDetail.CurrentRow.Selected = true;
                 GvDetail.Enabled = true;
-                SetGrid();
+                //SetGrid();
                 GvDetail.Focus();
                 Btn_F10.Enabled = true;
             }
@@ -588,7 +590,7 @@ namespace TempoJuchuuShoukai
             ((CheckBox)detailControls[(int)EIndex.ChkGaisho]).Checked = true;
 
             GvDetail.DataSource = null;
-            SetGrid();
+            //SetGrid();
             GvDetail.Enabled = false;
             Btn_F10.Enabled = false;
         }
@@ -601,8 +603,8 @@ namespace TempoJuchuuShoukai
             ScCustomer.LabelText = "";
         }
 
-        private void SetGrid()
-        {
+        //private void SetGrid()
+        //{
 
             ////GridViewのプロパティ設定
             ////"Column1"列のヘッダーのテキストの配置を上下左右とも中央にする
@@ -621,7 +623,7 @@ namespace TempoJuchuuShoukai
             //GvDetail.Columns["colSaleDate"].SortMode = DataGridViewColumnSortMode.NotSortable;
             //GvDetail.Columns["colSikyuYmd"].SortMode = DataGridViewColumnSortMode.NotSortable;
             //GvDetail.Columns["colNyukinYmd"].SortMode = DataGridViewColumnSortMode.NotSortable;
-        }
+        //}
         /// <summary>
         /// handle f1 to f12 click event
         /// implement base virtual function
