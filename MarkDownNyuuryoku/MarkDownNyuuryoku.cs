@@ -958,6 +958,9 @@ namespace MarkDownNyuuryoku
 
                                 default:
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                                    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
+                                    break;
+
                                     break;
 
                             }
@@ -3725,7 +3728,7 @@ namespace MarkDownNyuuryoku
                     case (int)ClsGridMarkDown.ColNO.MarkDownSagakuPrice:
                     case (int)ClsGridMarkDown.ColNO.StockSu:
                         {
-                            mGrid.g_MK_State[w_Col, w_Row].Cell_Color = backCL;
+                            //mGrid.g_MK_State[w_Col, w_Row].Cell_Color = backCL;
                             mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                             break;
                         }
