@@ -34,31 +34,42 @@ BEGIN
     -- Insert statements for procedure here
 	Declare @InsertDateTime datetime=getdate()
 
-		CREATE TABLE [dbo].[#tempSalesRate]
-		(   
+	CREATE TABLE [dbo].[#tempSalesRate]
+	(
 			TankaCD varchar(13),
+			TankaName varchar(30),
 			BrandCD varchar(6),
+			BrandName varchar(30),
 			ExhibitionSegmentCD	varchar(5),
+			ExhibitionSegmentName varchar(30),
 			LastYearTerm varchar(6),
 			LastSeason	varchar(6),
-			Rate		decimal(3,2)
-		
-		)
+			StartDate  varchar(10),
+			EndDate varchar(10),
+			Rate	varchar(10)
+	)
 	
 	declare @DocHandle int
 
-	exec sp_xml_preparedocument @DocHandle output, #tempSalesRate
+	exec sp_xml_preparedocument @DocHandle output, @xml
 	insert into #tempSalesRate
-	select *  FROM OPENXML (@DocHandle, '/NewDataSet/test',2)
+	select * 
+	--into #tempJuChuu
+	FROM OPENXML (@DocHandle, '/NewDataSet/test',2)
 			with
 			(
 				TankaCD varchar(13),
+				TankaName varchar(30),
 				BrandCD varchar(6),
+				BrandName varchar(30),
 				ExhibitionSegmentCD	varchar(5),
+				ExhibitionSegmentName varchar(30),
 				LastYearTerm varchar(6),
 				LastSeason	varchar(6),
-				Rate		decimal(3,2)		
-
+				StartDate  varchar(10),
+				EndDate varchar(10),
+				Rate	varchar(10)
+				
 			)
 			exec sp_xml_removedocument @DocHandle;
 
@@ -130,7 +141,7 @@ BEGIN
 				@StartDate,
 				@EndDate,
 				0,
-				fs.PriceOutTax,
+				Isnull(fs.PriceOutTax,0),
 				0,
 				0,
 				0,
@@ -143,9 +154,9 @@ BEGIN
 				0,
 				0,
 				case 
-					when ftcd.RoundKBN=1 then floor(fs.PriceOutTax * tsr.Rate)
-					when ftcd.RoundKBN=2 then ceiling(fs.PriceOutTax * tsr.Rate)
-					else round((fs.PriceOutTax * tsr.Rate),2) end,
+					when ftcd.RoundKBN=1 then Isnull(floor(fs.PriceOutTax * tsr.Rate),0)
+					when ftcd.RoundKBN=2 then Isnull(ceiling(fs.PriceOutTax * tsr.Rate),0)
+					else Isnull(round((fs.PriceOutTax * tsr.Rate),2),0) end,
 				0,
 				0,
 				0,
@@ -183,9 +194,9 @@ BEGIN
 			Update mskup
 			Set TekiyouShuuryouDate=@EndDate,
 			SalePriceOutTax=case 
-								when ftcd.RoundKBN=1 then floor(fs.PriceOutTax * tsr.Rate)
-								when ftcd.RoundKBN=2 then ceiling(fs.PriceOutTax * tsr.Rate)
-								else round((fs.PriceOutTax * tsr.Rate),2) end
+								when ftcd.RoundKBN=1 then Isnull(floor(fs.PriceOutTax * tsr.Rate),0)
+								when ftcd.RoundKBN=2 then Isnull(ceiling(fs.PriceOutTax * tsr.Rate),0)
+								else Isnull(round((fs.PriceOutTax * tsr.Rate),2),0) end
 			From M_SKUPrice as mskup 
 			left outer join F_SKU(@StartDate) as fs on fs.AdminNO=mskup.AdminNO 
 														and fs.DeleteFlg=0

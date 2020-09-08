@@ -18,6 +18,10 @@ namespace Search
     {
         M_TenzikaiShouhin_Entity mte;
         MasterTouroku_TenzikaiHanbaiTankaKakeritu_BL mtbl;
+        public string TenzikaiName = "";
+        public string VendorName = "";
+        public string LastYearTerm = "";
+        public string LastSeason = "";
         public Search_Tenzikai(string ChangeDate)
         {
             InitializeComponent();
@@ -121,10 +125,18 @@ namespace Search
                 GetData();
             }
         }
+        private void dgvSearch_Tenzikai_DoubleClick(object sender, EventArgs e)
+        {
+            GetData();
+        }
         private void GetData()
         {
             if (dgvSearch_Tenzikai.CurrentRow != null && dgvSearch_Tenzikai.CurrentRow.Index >= 0)
             {
+                TenzikaiName = dgvSearch_Tenzikai.CurrentRow.Cells["colTenzikaiName"].Value.ToString();
+                VendorName = dgvSearch_Tenzikai.CurrentRow.Cells["colVendorName"].Value.ToString();
+                LastYearTerm = dgvSearch_Tenzikai.CurrentRow.Cells["colLastYearTerm"].Value.ToString();
+                LastSeason = dgvSearch_Tenzikai.CurrentRow.Cells["colSeason"].Value.ToString();
                 this.Close();
             }
         }
@@ -172,20 +184,17 @@ namespace Search
                 }
             }
         }
-        private void dgvSearch_Tenzikai_DoubleClick(object sender, EventArgs e)
-        {
-            GetData(); 
-        }
-
-        private void Search_Tenzikai_KeyUp(object sender, KeyEventArgs e)
-        {
-            MoveNextControl(e);
-        }
-
+       
         private void Search_Tenzikai_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F11)
                 F11();
         }
+        private void Search_Tenzikai_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
+
+       
     }
 }

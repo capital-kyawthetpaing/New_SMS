@@ -41,7 +41,6 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
 
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
-            KeyUp += FrmMasterTouroku_HanbaiTankaKakeritu_KeyUp;
             SetRequireField();
             BindCombox();
 
@@ -131,9 +130,11 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
             switch (Index + 1)
             {
                 case 2: OperationMode = EOperationMode.INSERT;
+                        Clear();
+                        txtFromDate.Focus();
                     break;
                 case 3:
-                         OperationMode = EOperationMode.UPDATE;
+                        OperationMode = EOperationMode.UPDATE;
                         Clear();
                         txtFromDate.Focus();
                     break;
@@ -554,11 +555,6 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
             MoveNextControl(e);
         }
 
-        private void gdvHanbaiTankaKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void cboSeasonCopy_Enter(object sender, EventArgs e)
         {
 
@@ -585,39 +581,73 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
 
         private void gdvHanbaiTankaKakeritsu_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (gdvHanbaiTankaKakeritsu.Columns[e.ColumnIndex].Name == "Rate")
+            
+        }
+
+        private void gdvHanbaiTankaKakeritsu_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+
+        }
+
+        private void gdvHanbaiTankaKakeritsu_CellValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            //if (gdvHanbaiTankaKakeritsu.Columns[e.ColumnIndex].Name == "colRate")
+            //{
+            //    string rate = gdvHanbaiTankaKakeritsu.Rows[e.RowIndex].Cells["colRate"].Value.ToString();
+            //    if (!String.IsNullOrEmpty(rate))
+            //    {
+            //        if (!rate.Contains("."))
+            //        {
+            //            var isNumeric = int.TryParse(rate, out int n);
+            //            if (isNumeric)
+            //            {
+            //                if (rate.Length > 3)
+            //                {
+            //                    MessageBox.Show("enter valid no");
+            //                    //gdvHanbaiTankaKakeritsu.RefreshEdit();
+            //                    gdvHanbaiTankaKakeritsu.CurrentCell = gdvHanbaiTankaKakeritsu.Rows[e.RowIndex].Cells["colRate"];
+
+            //                }
+            //            }
+            //        }
+            //        else
+            //        {
+            //            int x = rate.IndexOf('.');
+            //            int count = rate.Count(f => f == '.');
+            //            string charre = rate.Remove(x, count);
+            //            var isNumeric = int.TryParse(charre, out int n);
+            //            if (count != 1 || x >= 4)
+            //            {
+            //                MessageBox.Show("enter valid no");
+            //               // gdvHanbaiTankaKakeritsu.RefreshEdit();
+            //                gdvHanbaiTankaKakeritsu.CurrentCell = gdvHanbaiTankaKakeritsu.Rows[e.RowIndex].Cells["colRate"];
+
+            //            }
+            //        }
+            //    }
+            //}
+        }
+
+        private void gdvHanbaiTankaKakeritsu_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try
             {
-                string rate = gdvHanbaiTankaKakeritsu.Rows[e.RowIndex].Cells["Rate"].Value.ToString();
-                if (!String.IsNullOrEmpty(rate))
+                if (Convert.ToInt32(gdvHanbaiTankaKakeritsu.CurrentCell.EditedFormattedValue) < 256 && Convert.ToInt32(gdvHanbaiTankaKakeritsu.CurrentCell.EditedFormattedValue) > 0)
                 {
-                    if (!rate.Contains("."))
-                    {
-                        var isNumeric = int.TryParse(rate, out int n);
-                        if (isNumeric)
-                        {
-                            if (rate.Length > 3)
-                            {
-                                MessageBox.Show("enter valid no");
-                                gdvHanbaiTankaKakeritsu.RefreshEdit();
-
-                            }
-                        }
-                    }
-                    else
-                    {
-                        int x = rate.IndexOf('.');
-                        int count = rate.Count(f => f == '.');
-                        string charre = rate.Remove(x, count);
-                        var isNumeric = int.TryParse(charre, out int n);
-                        if (count != 1 || x >= 4)
-                        {
-                            MessageBox.Show("enter valid no");
-                            gdvHanbaiTankaKakeritsu.RefreshEdit();
-
-                        }
-                    }
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Enter valid number. . . ");
+                    gdvHanbaiTankaKakeritsu.CurrentCell.Value = 0;
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Enter valid number. . . ");
+                gdvHanbaiTankaKakeritsu.CurrentCell.Value = 0;
+            }
+            gdvHanbaiTankaKakeritsu.RefreshEdit();
         }
     }
 }
