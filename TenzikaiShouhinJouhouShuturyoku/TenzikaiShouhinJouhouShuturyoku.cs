@@ -77,7 +77,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
         }
         private bool ErrorCheck()
         {
-            if (!RequireCheck(new Control[] { cbo_Year,cbo_Season }))
+            if (!RequireCheck(new Control[] { scSupplierCD,cbo_Year,cbo_Season }))
                 return false;
             if (!string.IsNullOrEmpty(scBrandCDFrom.TxtCode.Text) && !string.IsNullOrEmpty(scBrandCDTo.TxtCode.Text))
             {
