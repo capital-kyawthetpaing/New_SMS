@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TB_Rate = new CKM_Controls.CKM_TextBox();
             this.BT_Apply = new CKM_Controls.CKM_Button();
             this.BT_DeseletAll = new CKM_Controls.CKM_Button();
             this.BT_SelectAll = new CKM_Controls.CKM_Button();
@@ -64,7 +66,6 @@
             this.Season = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.TB_Rate = new CKM_Controls.CKM_TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_Tenzaishohin)).BeginInit();
             this.panel2.SuspendLayout();
@@ -108,6 +109,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1690, 160);
             this.panel1.TabIndex = 100;
+            // 
+            // TB_Rate
+            // 
+            this.TB_Rate.AllowMinus = false;
+            this.TB_Rate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.TB_Rate.BackColor = System.Drawing.Color.White;
+            this.TB_Rate.BorderColor = false;
+            this.TB_Rate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_Rate.ClientColor = System.Drawing.SystemColors.Window;
+            this.TB_Rate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.TB_Rate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
+            this.TB_Rate.DecimalPlace = 2;
+            this.TB_Rate.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.TB_Rate.IntegerPart = 3;
+            this.TB_Rate.IsCorrectDate = true;
+            this.TB_Rate.isEnterKeyDown = false;
+            this.TB_Rate.IsFirstTime = true;
+            this.TB_Rate.isMaxLengthErr = false;
+            this.TB_Rate.IsNumber = true;
+            this.TB_Rate.IsShop = false;
+            this.TB_Rate.Length = 6;
+            this.TB_Rate.Location = new System.Drawing.Point(818, 127);
+            this.TB_Rate.MaxLength = 6;
+            this.TB_Rate.MoveNext = true;
+            this.TB_Rate.Name = "TB_Rate";
+            this.TB_Rate.Size = new System.Drawing.Size(78, 19);
+            this.TB_Rate.TabIndex = 73;
+            this.TB_Rate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TB_Rate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.TB_Rate.UseColorSizMode = false;
             // 
             // BT_Apply
             // 
@@ -514,6 +545,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.GV_Tenzaishohin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GV_Tenzaishohin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.GV_Tenzaishohin.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("GV_Tenzaishohin.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
@@ -638,36 +670,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1690, 550);
             this.panel2.TabIndex = 101;
-            // 
-            // TB_Rate
-            // 
-            this.TB_Rate.AllowMinus = false;
-            this.TB_Rate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.TB_Rate.BackColor = System.Drawing.Color.White;
-            this.TB_Rate.BorderColor = false;
-            this.TB_Rate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_Rate.ClientColor = System.Drawing.SystemColors.Window;
-            this.TB_Rate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.TB_Rate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.TB_Rate.DecimalPlace = 2;
-            this.TB_Rate.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.TB_Rate.IntegerPart = 3;
-            this.TB_Rate.IsCorrectDate = true;
-            this.TB_Rate.isEnterKeyDown = false;
-            this.TB_Rate.IsFirstTime = true;
-            this.TB_Rate.isMaxLengthErr = false;
-            this.TB_Rate.IsNumber = true;
-            this.TB_Rate.IsShop = false;
-            this.TB_Rate.Length = 6;
-            this.TB_Rate.Location = new System.Drawing.Point(818, 127);
-            this.TB_Rate.MaxLength = 6;
-            this.TB_Rate.MoveNext = true;
-            this.TB_Rate.Name = "TB_Rate";
-            this.TB_Rate.Size = new System.Drawing.Size(78, 19);
-            this.TB_Rate.TabIndex = 73;
-            this.TB_Rate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.TB_Rate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.TB_Rate.UseColorSizMode = false;
             // 
             // FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu
             // 

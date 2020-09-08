@@ -89,6 +89,14 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             return true;
 
         }
+
+
+        private bool ErrorCheckApply()
+        {
+            if (!RequireCheck(new Control[] { TB_Rate }))
+                return false;
+            return true;
+        }
         private void SC_Tanka_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -284,29 +292,28 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
         {
             if (ErrorCheck())
             {
-                foreach (DataGridViewRow row in GV_Tenzaishohin.Rows)
+                if (ErrorCheckApply())
                 {
-                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
-                    if (chk.Value == "1")
+                    foreach (DataGridViewRow row in GV_Tenzaishohin.Rows)
                     {
-                        if (!String.IsNullOrEmpty(TB_Rate.Text))
+                        DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                        if (chk.Value == "1")
                         {
-                            string itemcd = row.Cells["Rate"].Value.ToString();
-                            row.Cells["Rate"].Value = TB_Rate.Text;
+                            if (!String.IsNullOrEmpty(TB_Rate.Text))
+                            {
+                                string itemcd = row.Cells["Rate"].Value.ToString();
+                                row.Cells["Rate"].Value = TB_Rate.Text;
+                            }
+                            else
+                            {
+                                bl.ShowMessage("E102");
+                                TB_Rate.Focus();
+                                break;
+                            }
                         }
-                        else
-                        {
-                            bl.ShowMessage("E102");
-                            TB_Rate.Focus();
-                            break;
-                        }
-
                     }
-
                 }
-
             }
-
         }
         private void FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu_KeyUp(object sender, KeyEventArgs e)
         {
@@ -315,78 +322,79 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
 
         private void GV_Tenzaishohin_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1)
-            {
-                if (GV_Tenzaishohin.Columns[e.ColumnIndex].Name == "Rate")
-                {
-                    string rate = GV_Tenzaishohin.Rows[e.RowIndex].Cells["Rate"].Value.ToString();
-                    if (!String.IsNullOrEmpty(rate))
-                    {
-                        if (!rate.Contains("."))
-                        {
-                            var isNumeric = int.TryParse(rate, out int n);
-                            if (isNumeric)
-                            {
-                                if (rate.Length > 3)
-                                {
-                                    MessageBox.Show("enter valid no");
+            //if (e.RowIndex != -1)
+            //{
+            //    if (GV_Tenzaishohin.Columns[e.ColumnIndex].Name == "Rate")
+            //    {
+            //        string rate = GV_Tenzaishohin.Rows[e.RowIndex].Cells["Rate"].Value.ToString();
+            //        if (!String.IsNullOrEmpty(rate))
+            //        {
+            //            if (!rate.Contains("."))
+            //            {
+            //                var isNumeric = int.TryParse(rate, out int n);
+            //                if (isNumeric)
+            //                {
+            //                    if (rate.Length > 3)
+            //                    {
+            //                        MessageBox.Show("enter valid no");
+            //                    }
+            //                }
+            //            }
+            //            else
+            //            {
+            //                int x = rate.IndexOf('.');
+            //                int count = rate.Count(f => f == '.');
+            //                string charre = rate.Remove(x, count);
+            //                var isNumeric = int.TryParse(charre, out int n);
+            //                if (count != 1 || x >= 4)
+            //                {
+            //                    MessageBox.Show("enter valid no");
 
-                                }
-                            }
-                        }
-                        else
-                        {
-                            int x = rate.IndexOf('.');
-                            int count = rate.Count(f => f == '.');
-                            string charre = rate.Remove(x, count);
-                            var isNumeric = int.TryParse(charre, out int n);
-                            if (count != 1 || x >= 4)
-                            {
-                                MessageBox.Show("enter valid no");
+            //                }
+            //            }
+            //        }
+            //    }
+            //} 
 
-                            }
-                        }
-                    }
-                }
-            }
         }
 
         private void GV_Tenzaishohin_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (GV_Tenzaishohin.Columns[e.ColumnIndex].Name == "Rate")
-            {
-                string rate = GV_Tenzaishohin.Rows[e.RowIndex].Cells["Rate"].Value.ToString();
-                if (!String.IsNullOrEmpty(rate))
-                {
-                    if (!rate.Contains("."))
-                    {
-                        var isNumeric = int.TryParse(rate, out int n);
-                        if (isNumeric)
-                        {
-                            if (rate.Length > 3)
-                            {
-                                MessageBox.Show("enter valid no");
-                                GV_Tenzaishohin.RefreshEdit();
+            //if (GV_Tenzaishohin.Columns[e.ColumnIndex].Name == "Rate")
+            //{
+            //    string rate = GV_Tenzaishohin.Rows[e.RowIndex].Cells["Rate"].Value.ToString();
+            //    if (!String.IsNullOrEmpty(rate))
+            //    {
+            //        if (!rate.Contains("."))
+            //        {
+            //            var isNumeric = int.TryParse(rate, out int n);
+            //            if (isNumeric)
+            //            {
+            //                if (rate.Length > 3)
+            //                {
+            //                    MessageBox.Show("enter valid no");
+            //                    GV_Tenzaishohin.RefreshEdit();
 
-                            }
-                        }
-                    }
-                    else
-                    {
-                        int x = rate.IndexOf('.');
-                        int count = rate.Count(f => f == '.');
-                        string charre = rate.Remove(x, count);
-                        var isNumeric = int.TryParse(charre, out int n);
-                        if (count != 1 || x >= 4)
-                        {
-                            MessageBox.Show("enter valid no");
-                            GV_Tenzaishohin.RefreshEdit();
+            //                }
+            //            }
+            //        }
+            //        else
+            //        {
+            //            int x = rate.IndexOf('.');
+            //            int count = rate.Count(f => f == '.');
+            //            string charre = rate.Remove(x, count);
+            //            var isNumeric = int.TryParse(charre, out int n);
+            //            if (count != 1 || x >= 4)
+            //            {
+            //                MessageBox.Show("enter valid no");
+            //                GV_Tenzaishohin.RefreshEdit();
 
-                        }
-                    }
-                }
-            }
+            //            }
+            //        }
+            //    }
+            //} 
+
         }
 
         private void GV_Tenzaishohin_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
