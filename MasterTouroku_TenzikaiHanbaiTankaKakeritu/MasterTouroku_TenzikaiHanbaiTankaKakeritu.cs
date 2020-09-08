@@ -399,8 +399,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
 
         private void GV_Tenzaishohin_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-            if
-           (GV_Tenzaishohin.Columns[e.ColumnIndex].Name == "Rate")
+            if(GV_Tenzaishohin.Columns[e.ColumnIndex].Name == "Rate")
              {
                 string rate = GV_Tenzaishohin.Rows[e.RowIndex].Cells["Rate"].EditedFormattedValue.ToString();
                 if (!String.IsNullOrEmpty(rate))
@@ -414,7 +413,6 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                             {
                                 MessageBox.Show("enter valid no");
                                 GV_Tenzaishohin.RefreshEdit();
-
                             }
                         }
                     }
@@ -428,7 +426,6 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                         {
                             MessageBox.Show("enter valid no");
                             GV_Tenzaishohin.RefreshEdit();
-
                         }
                     }
                 }
