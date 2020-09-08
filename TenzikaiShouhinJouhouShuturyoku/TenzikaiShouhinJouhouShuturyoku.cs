@@ -77,7 +77,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
         }
         private bool ErrorCheck()
         {
-            if (!RequireCheck(new Control[] { cbo_Year,cbo_Season }))
+            if (!RequireCheck(new Control[] {scSupplierCD.TxtCode ,cbo_Year,cbo_Season }))
                 return false;
             if (!string.IsNullOrEmpty(scBrandCDFrom.TxtCode.Text) && !string.IsNullOrEmpty(scBrandCDTo.TxtCode.Text))
             {
@@ -108,7 +108,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
                BrandCDTo=scBrandCDTo.TxtCode.Text,
                SegmentCDFrom=scSegmentCDFrom.TxtCode.Text,
                SegmentCDTo=scSegmentCDTo.TxtCode.Text,
-               //TenzikaiName=txtExhibitionName.Text
+               TenzikaiName= ckM_SearchControl1.TxtCode.Text
             };
             return mte;
         }
@@ -121,7 +121,6 @@ namespace TenzikaiShouhinJouhouShuturyoku
                 DataTable dt = tzkbl.Rpc_TenzikaiShouhinJouhouShuturyoku(mte);
                 if (dt.Rows.Count > 0)
                 {
-                    //DataTable dtExport = dt;
                     string folderPath = "C:\\SES\\";
                     if (!Directory.Exists(folderPath))
                     {
@@ -153,6 +152,11 @@ namespace TenzikaiShouhinJouhouShuturyoku
                             Process.Start(Path.GetDirectoryName(savedialog.FileName));
                         }
                     }
+                }
+                else
+                {
+                    tzkbl.ShowMessage("E128");
+                    scSupplierCD.SetFocus(1);
                 }
             }
         }

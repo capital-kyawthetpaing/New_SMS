@@ -35,6 +35,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             CB_Year.Bind(ymd);
             CB_Season.Bind(ymd);
             SC_Tanka.TxtCode.Require(true);
+            GV_Tenzaishohin.CheckCol.Add("Rate");
         }
         private bool ErrorCheck()
         {
@@ -88,6 +89,14 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
 
             return true;
 
+        }
+
+
+        private bool ErrorCheckApply()
+        {
+            if (!RequireCheck(new Control[] { TB_Rate }))
+                return false;
+            return true;
         }
         private void SC_Tanka_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
@@ -284,116 +293,38 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
         {
             if (ErrorCheck())
             {
-                foreach (DataGridViewRow row in GV_Tenzaishohin.Rows)
+                if (ErrorCheckApply())
                 {
-                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
-                    if (chk.Value == "1")
+                    foreach (DataGridViewRow row in GV_Tenzaishohin.Rows)
                     {
-                        if (!String.IsNullOrEmpty(TB_Rate.Text))
+                        DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                        if (chk.Value == "1")
                         {
-                            string itemcd = row.Cells["Rate"].Value.ToString();
-                            row.Cells["Rate"].Value = TB_Rate.Text;
+                            if (!String.IsNullOrEmpty(TB_Rate.Text))
+                            {
+                                string itemcd = row.Cells["Rate"].Value.ToString();
+                                row.Cells["Rate"].Value = TB_Rate.Text;
+                            }
+                            else
+                            {
+                                bl.ShowMessage("E102");
+                                TB_Rate.Focus();
+                                break;
+                            }
                         }
-                        else
-                        {
-                            bl.ShowMessage("E102");
-                            TB_Rate.Focus();
-                            break;
-                        }
-
                     }
-
                 }
-
             }
-
         }
         private void FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
         }
-
-        private void GV_Tenzaishohin_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex != -1)
-            {
-                if (GV_Tenzaishohin.Columns[e.ColumnIndex].Name == "Rate")
-                {
-                    string rate = GV_Tenzaishohin.Rows[e.RowIndex].Cells["Rate"].Value.ToString();
-                    if (!String.IsNullOrEmpty(rate))
-                    {
-                        if (!rate.Contains("."))
-                        {
-                            var isNumeric = int.TryParse(rate, out int n);
-                            if (isNumeric)
-                            {
-                                if (rate.Length > 3)
-                                {
-                                    MessageBox.Show("enter valid no");
-
-                                }
-                            }
-                        }
-                        else
-                        {
-                            int x = rate.IndexOf('.');
-                            int count = rate.Count(f => f == '.');
-                            string charre = rate.Remove(x, count);
-                            var isNumeric = int.TryParse(charre, out int n);
-                            if (count != 1 || x >= 4)
-                            {
-                                MessageBox.Show("enter valid no");
-
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        private void GV_Tenzaishohin_CellValidated(object sender, DataGridViewCellEventArgs e)
-        {
-
-            if (GV_Tenzaishohin.Columns[e.ColumnIndex].Name == "Rate")
-            {
-                string rate = GV_Tenzaishohin.Rows[e.RowIndex].Cells["Rate"].Value.ToString();
-                if (!String.IsNullOrEmpty(rate))
-                {
-                    if (!rate.Contains("."))
-                    {
-                        var isNumeric = int.TryParse(rate, out int n);
-                        if (isNumeric)
-                        {
-                            if (rate.Length > 3)
-                            {
-                                MessageBox.Show("enter valid no");
-                                GV_Tenzaishohin.RefreshEdit();
-
-                            }
-                        }
-                    }
-                    else
-                    {
-                        int x = rate.IndexOf('.');
-                        int count = rate.Count(f => f == '.');
-                        string charre = rate.Remove(x, count);
-                        var isNumeric = int.TryParse(charre, out int n);
-                        if (count != 1 || x >= 4)
-                        {
-                            MessageBox.Show("enter valid no");
-                            GV_Tenzaishohin.RefreshEdit();
-
-                        }
-                    }
-                }
-            }
-        }
-
+       
         private void GV_Tenzaishohin_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-            if
-           (GV_Tenzaishohin.Columns[e.ColumnIndex].Name == "Rate")
-             {
+            if (GV_Tenzaishohin.Columns[e.ColumnIndex].Name == "Rate")
+            {
                 string rate = GV_Tenzaishohin.Rows[e.RowIndex].Cells["Rate"].EditedFormattedValue.ToString();
                 if (!String.IsNullOrEmpty(rate))
                 {
@@ -406,8 +337,12 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                             {
                                 MessageBox.Show("enter valid no");
                                 GV_Tenzaishohin.RefreshEdit();
-
                             }
+                        }
+                        else
+                        {
+                            MessageBox.Show("enter valid no");
+                            GV_Tenzaishohin.RefreshEdit();
                         }
                     }
                     else
@@ -416,24 +351,28 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                         int count = rate.Count(f => f == '.');
                         string charre = rate.Remove(x, count);
                         var isNumeric = int.TryParse(charre, out int n);
-                        if (count != 1 || x >= 4)
+                        if(isNumeric)
+                        {
+                            if (count != 1 || x >= 4)
+                            {
+                                MessageBox.Show("enter valid no");
+                                GV_Tenzaishohin.RefreshEdit();
+                            }
+                        }
+                        else
                         {
                             MessageBox.Show("enter valid no");
                             GV_Tenzaishohin.RefreshEdit();
-
                         }
+                       
                     }
                 }
             }
+
         }
 
         private void GV_Tenzaishohin_Paint(object sender, PaintEventArgs e)
         {
-            //dgvPaymentClose.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dgvPaymentClose.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dgvPaymentClose.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dgvPaymentClose.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dgvPaymentClose.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             string[] monthes = { "ブランド", "せグメト", "", "" };
             for (int j = 1; j < 5;)
             {
@@ -456,7 +395,5 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 j += 2;
             }
         }
-
-      
     }
 }

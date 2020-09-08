@@ -116,6 +116,14 @@ namespace Search
                     LModifiedDateTo.Focus();
                 }
             }
+            if (string.IsNullOrWhiteSpace(txtExhibitionName.Text) && string.IsNullOrWhiteSpace(scSupplierCDFrom.TxtCode.Text) && string.IsNullOrWhiteSpace(scSupplierCDTo.TxtCode.Text) && 
+                string.IsNullOrWhiteSpace(cbo_Year.Text) && string.IsNullOrWhiteSpace(cbo_Season.Text) && string.IsNullOrWhiteSpace(NRegistrationDateFrom.Text) && string.IsNullOrWhiteSpace(NRegistrationDateTo.Text) &&
+                string.IsNullOrWhiteSpace(LModifiedDateFrom.Text) && string.IsNullOrWhiteSpace(LModifiedDateTo.Text))
+            {
+                bbl.ShowMessage("E111");
+                txtExhibitionName.Focus();
+                return false;
+            }
             return true;
         }
         public override void FunctionProcess(int index)
@@ -194,7 +202,5 @@ namespace Search
         {
             MoveNextControl(e);
         }
-
-       
     }
 }
