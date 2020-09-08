@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 using BL;
 using Entity;
 using Base.Client;
-using Search;
 using GridBase;
 
 namespace ZaikoIdouIraiUkeNyuuryoku
@@ -123,20 +119,24 @@ namespace ZaikoIdouIraiUkeNyuuryoku
             switch (index)
             {
                 case (int)EIndex.StoreCD:
-                    //選択必須(Entry required)
-                    if (!RequireCheck(new Control[] { detailControls[index] }))
-                    {
-                        return false;
-                    }
-                    else
+                    ////選択必須(Entry required)
+                    //if (!RequireCheck(new Control[] { detailControls[index] }))
+                    //{
+                    //    return false;
+                    //}
+                    //else
+                    //{
+                    if (CboFromStoreCD.SelectedIndex > 0)
                     {
                         if (!base.CheckAvailableStores(CboFromStoreCD.SelectedValue.ToString()))
                         {
                             bbl.ShowMessage("E141");
                             return false;
-                        }                        
+                        }
                     }
+                    //}
                     break;
+
                 case (int)EIndex.DateFrom:
                 case (int)EIndex.DateTo:
                     //入力無くても良い(It is not necessary to input)
@@ -272,7 +272,11 @@ namespace ZaikoIdouIraiUkeNyuuryoku
         private D_MoveRequest_Entity GetEntity()
         {
             doe = new D_MoveRequest_Entity();
-            doe.FromStoreCD = CboFromStoreCD.SelectedValue.ToString();
+
+            if (CboFromStoreCD.SelectedIndex > 0)
+                doe.FromStoreCD = CboFromStoreCD.SelectedValue.ToString();
+            else
+                doe.FromStoreCD = "";
 
             doe.AnswerDateFrom = detailControls[(int)EIndex.DateFrom].Text;
             doe.AnswerDateTo = detailControls[(int)EIndex.DateTo].Text;
@@ -428,24 +432,6 @@ namespace ZaikoIdouIraiUkeNyuuryoku
                 //EndSec();
             }
         }
-        
-        //private void DgvDetail_KeyDown(object sender, KeyEventArgs e)
-        //{
-        //    try
-        //    {
-        //        if (e.KeyCode == Keys.Enter)
-        //            if (e.Control == false)
-        //            {
-        //                this.ExecSec();
-        //            }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        //エラー時共通処理
-        //        MessageBox.Show(ex.Message);
-        //        //EndSec();
-        //    }
-        //}
 
         private void GvDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -489,8 +475,41 @@ namespace ZaikoIdouIraiUkeNyuuryoku
         //    }
         //}
 
-        #endregion
 
+        private void GvDetail_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            for (int wRow = 0; wRow < GvDetail.RowCount; wRow++)
+            {
+                //AnswerKBN	＝	1が1件以上の場合、明細行の色は淡い青色
+                if (bbl.Z_Set(GvDetail["AnswerKBN_CNT1", wRow].Value) >= 1)
+                {
+                    for (int wCol = 0; wCol < GvDetail.ColumnCount; wCol++)
+                    {
+                        //セルスタイルを変更する
+                        GvDetail[wCol, wRow].Style.BackColor = Color.DeepSkyBlue;
+                    }
+                }
+                else
+                {
+                    //AnswerKBN＝	1が0件かつAnswerKBN＝	9が1件以上の場合、明細は淡い赤色	
+                    if (bbl.Z_Set(GvDetail["AnswerKBN_CNT9", wRow].Value) >= 1)
+
+                        for (int wCol = 0; wCol < GvDetail.ColumnCount; wCol++)
+                        {
+                            //セルスタイルを変更する
+                            GvDetail[wCol, wRow].Style.BackColor = Color.LightSalmon;
+                        }
+                    else
+                        //AnswerKBN＝	1が0件かつAnswerKBN＝	9が0件かつAnswerKBN＝	0が1件以上の場合、灰色
+                        for (int wCol = 0; wCol < GvDetail.ColumnCount; wCol++)
+                        {
+                            //セルスタイルを変更する
+                            GvDetail[wCol, wRow].Style.BackColor = ClsGridBase.GrayColor;
+                        }
+                }
+            }
+        }
+        #endregion
     }
 }
 

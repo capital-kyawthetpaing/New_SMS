@@ -30,7 +30,7 @@ BEGIN
          ,M.MovePurposeName
          ,(SELECT top 1 A.StoreName
           FROM M_Store A 
-          WHERE A.StoreCD = DH.FromStoreCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DH.RequestDate
+          WHERE A.StoreCD = DH.ToStoreCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DH.RequestDate
           ORDER BY A.ChangeDate desc) AS FromStoreName
          ,DH.FromSoukoCD
          ,(SELECT top 1 A.SoukoName
@@ -98,13 +98,14 @@ BEGIN
         from M_StoreAuthorizations MS
         INNER JOIN M_Staff AS MF
         ON MF.StaffCD = @Operator
+        AND MF.StoreCD = MS.StoreCD
         AND MF.ChangeDate <= DH.RequestDate
         AND MF.StoreAuthorizationsCD = MS.StoreAuthorizationsCD
         AND MF.DeleteFlg = 0
         where MS.ChangeDate <= DH.RequestDate
-        AND MS.StoreCD = DH.FromStoreCD
         AND MF.StoreCD = DH.FromStoreCD
         )
+/*
     --Œ ŒÀ‚Ì‚ ‚é“X•Ü‚Ì‚Ý
     AND EXISTS(select MS.StoreCD
         from M_StoreAuthorizations MS
@@ -116,7 +117,7 @@ BEGIN
         where MS.ChangeDate <= DH.RequestDate
         AND MS.StoreCD = DH.ToStoreCD
         )
-        
+*/        
     ORDER BY DH.RequestDate, DH.RequestNO
     ;
 
