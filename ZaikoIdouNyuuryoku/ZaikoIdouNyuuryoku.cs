@@ -1516,7 +1516,7 @@ namespace ZaikoIdouNyuuryoku
                 case (int)EIndex.CheckBox3:
                     //入力できない場合(When input is impossible)
                     // 移動依頼番号が未入力の場合(移動依頼番号で検索されていない場合または、検索できなかった場合)
-                    if (ckM_CheckBox3.Checked)
+                    if (ckM_CheckBox3.Checked && set)
                     {
                         ret = CheckData(false, (int)EIndex.RequestNO);
                         if (!ret)
@@ -1940,11 +1940,11 @@ namespace ZaikoIdouNyuuryoku
                             bbl.ShowMessage("E102");
                             return false;
                         }
-                        if (bbl.Z_Set(detailControls[index].Text) <=0)
-                        {
-                            bbl.ShowMessage("E109");
-                            return false;
-                        }
+                        //if (bbl.Z_Set(detailControls[index].Text) <=0)
+                        //{
+                        //    bbl.ShowMessage("E109");
+                        //    return false;
+                        //}
                         if (mIdoType == EIdoType.店舗間移動)
                         {
                             if (ckM_CheckBox4.Checked)
@@ -2439,15 +2439,15 @@ namespace ZaikoIdouNyuuryoku
                     return;
                 }
             }
-            else
-            {
-                for (int i = 0; i < keyControls.Length; i++)
-                    if (CheckKey(i, false) == false)
-                    {
-                        keyControls[i].Focus();
-                        return;
-                    }
-            }
+            //else
+            //{
+            //    for (int i = 0; i < keyControls.Length; i++)
+            //        if (CheckKey(i, false) == false)
+            //        {
+            //            keyControls[i].Focus();
+            //            return;
+            //        }
+            //}
 
             if (OperationMode != EOperationMode.DELETE)
             {
@@ -3771,6 +3771,7 @@ namespace ZaikoIdouNyuuryoku
                 {
                     case (int)ClsGridIdo.ColNO.GYONO:
                     case (int)ClsGridIdo.ColNO.Space:
+                    case (int)ClsGridIdo.ColNO.CommentOutStore:
                         {
                             mGrid.g_MK_State[w_Col, w_Row].Cell_Color = backCL;
                             break;
