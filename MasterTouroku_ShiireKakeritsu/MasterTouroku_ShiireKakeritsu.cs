@@ -59,6 +59,8 @@ namespace MasterTouroku_ShiireKakeritsu
             ModeVisible = false;
             scSportsCD1.CodeWidth = 100;
             scSportsCD.CodeWidth = 100;
+
+            dgv_ShiireKakeritsu.CheckCol.Add("colRate1");
         }
         private void RadioCheck()
         {
@@ -1173,6 +1175,42 @@ namespace MasterTouroku_ShiireKakeritsu
                 dgv_ShiireKakeritsu.CurrentCell.Value = 0;
             }
             dgv_ShiireKakeritsu.RefreshEdit();
+        }
+
+        private void dgv_ShiireKakeritsu_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (dgv_ShiireKakeritsu.Columns[e.ColumnIndex].Name == "colRate1")
+            {
+                string rate = dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colRate1"].EditedFormattedValue.ToString();
+                if (!String.IsNullOrEmpty(rate))
+                {
+                    if (!rate.Contains("."))
+                    {
+                        var isNumeric = int.TryParse(rate, out int n);
+                        if (isNumeric)
+                        {
+                            if (rate.Length > 3)
+                            {
+                                MessageBox.Show("enter valid no");
+                                dgv_ShiireKakeritsu.RefreshEdit();
+
+                            }
+                        }
+                    }
+                    else
+                    {
+                        int x = rate.IndexOf('.');
+                        int count = rate.Count(f => f == '.');
+                        string charre = rate.Remove(x, count);
+                        var isNumeric = int.TryParse(charre, out int n);
+                        if (count != 1 || x >= 4)
+                        {
+                            MessageBox.Show("enter valid no");
+                            dgv_ShiireKakeritsu.RefreshEdit();
+                        }
+                    }
+                }
+            }
         }
     }
 }
