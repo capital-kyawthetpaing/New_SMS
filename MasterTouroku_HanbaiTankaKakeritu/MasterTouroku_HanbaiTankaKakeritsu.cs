@@ -45,6 +45,8 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
             BindCombox();
 
             OperationMode = EOperationMode.INSERT;
+
+            gdvHanbaiTankaKakeritsu.CheckCol.Add("colRate");
         }
 
         #region Error Check
@@ -579,14 +581,44 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
             }
         }
 
-        private void gdvHanbaiTankaKakeritsu_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
+  
         private void gdvHanbaiTankaKakeritsu_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
+            if (gdvHanbaiTankaKakeritsu.Columns[e.ColumnIndex].Name == "colRate")
+            {
+                string rate = gdvHanbaiTankaKakeritsu.Rows[e.RowIndex].Cells["colRate"].Value.ToString();
+                if (!String.IsNullOrEmpty(rate))
+                {
+                    if (!rate.Contains("."))
+                    {
+                        var isNumeric = int.TryParse(rate, out int n);
+                        if (isNumeric)
+                        {
+                            if (rate.Length > 3)
+                            {
+                                MessageBox.Show("enter valid no");
+                                gdvHanbaiTankaKakeritsu.RefreshEdit();
+                              // gdvHanbaiTankaKakeritsu.CurrentCell = gdvHanbaiTankaKakeritsu.Rows[e.RowIndex].Cells["colRate"];
 
+                            }
+                        }
+                    }
+                    else
+                    {
+                        int x = rate.IndexOf('.');
+                        int count = rate.Count(f => f == '.');
+                        string charre = rate.Remove(x, count);
+                        var isNumeric = int.TryParse(charre, out int n);
+                        if (count != 1 || x >= 4)
+                        {
+                            MessageBox.Show("enter valid no");
+                             gdvHanbaiTankaKakeritsu.RefreshEdit();
+                            //gdvHanbaiTankaKakeritsu.CurrentCell = gdvHanbaiTankaKakeritsu.Rows[e.RowIndex].Cells["colRate"];
+
+                        }
+                    }
+                }
+            }
         }
 
         private void gdvHanbaiTankaKakeritsu_CellValidated(object sender, DataGridViewCellEventArgs e)
