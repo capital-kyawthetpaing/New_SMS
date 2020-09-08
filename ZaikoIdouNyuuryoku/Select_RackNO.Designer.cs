@@ -30,14 +30,13 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvDetail = new CKM_Controls.CKM_GridView();
-            this.ckM_Label1 = new CKM_Controls.CKM_Label();
-            this.lblJanCD = new System.Windows.Forms.Label();
             this.colRackNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAllowableSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAdminNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ckM_Label1 = new CKM_Controls.CKM_Label();
+            this.lblJanCD = new System.Windows.Forms.Label();
             this.lblSKUName = new System.Windows.Forms.Label();
             this.lblSoukoName = new System.Windows.Forms.Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -66,11 +65,10 @@
             this.dgvDetail.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.dgvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDetail.AutoGenerateColumns = false;
             this.dgvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -81,14 +79,6 @@
             this.colRackNO,
             this.colAllowableSu,
             this.colAdminNO});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDetail.Enabled = false;
             this.dgvDetail.EnableHeadersVisualStyles = false;
             this.dgvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
@@ -103,33 +93,6 @@
             this.dgvDetail.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DgvStore_CellPainting);
             this.dgvDetail.DoubleClick += new System.EventHandler(this.DgvStore_DoubleClick);
             this.dgvDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvStore_KeyDown);
-            // 
-            // ckM_Label1
-            // 
-            this.ckM_Label1.AutoSize = true;
-            this.ckM_Label1.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label1.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label1.DefaultlabelSize = true;
-            this.ckM_Label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label1.Location = new System.Drawing.Point(35, 13);
-            this.ckM_Label1.Name = "ckM_Label1";
-            this.ckM_Label1.Size = new System.Drawing.Size(40, 12);
-            this.ckM_Label1.TabIndex = 48;
-            this.ckM_Label1.Text = "SKUCD";
-            this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblJanCD
-            // 
-            this.lblJanCD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblJanCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblJanCD.Location = new System.Drawing.Point(81, 9);
-            this.lblJanCD.Name = "lblJanCD";
-            this.lblJanCD.Size = new System.Drawing.Size(100, 20);
-            this.lblJanCD.TabIndex = 49;
-            this.lblJanCD.Text = "XXXXXXXXX1XX3";
-            this.lblJanCD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // colRackNO
             // 
@@ -156,6 +119,34 @@
             this.colAdminNO.Name = "colAdminNO";
             this.colAdminNO.ReadOnly = true;
             this.colAdminNO.Visible = false;
+            // 
+            // ckM_Label1
+            // 
+            this.ckM_Label1.AutoSize = true;
+            this.ckM_Label1.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label1.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label1.DefaultlabelSize = true;
+            this.ckM_Label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label1.Location = new System.Drawing.Point(35, 13);
+            this.ckM_Label1.Name = "ckM_Label1";
+            this.ckM_Label1.Size = new System.Drawing.Size(40, 12);
+            this.ckM_Label1.TabIndex = 48;
+            this.ckM_Label1.Text = "SKUCD";
+            this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblJanCD
+            // 
+            this.lblJanCD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblJanCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblJanCD.Location = new System.Drawing.Point(81, 9);
+            this.lblJanCD.Name = "lblJanCD";
+            this.lblJanCD.Size = new System.Drawing.Size(239, 20);
+            this.lblJanCD.TabIndex = 49;
+            this.lblJanCD.Text = "XXXXXXXXX1XX3";
+            this.lblJanCD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblSKUName
             // 
@@ -189,6 +180,7 @@
             this.ckM_Label2.DefaultlabelSize = true;
             this.ckM_Label2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label2.Location = new System.Drawing.Point(35, 65);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(31, 12);
@@ -203,6 +195,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(593, 413);
             this.Controls.Add(this.dgvDetail);
+            this.F11Visible = true;
+            this.F12Visible = true;
+            this.F9Visible = true;
             this.Name = "Select_RackNO";
             this.PanelHeaderHeight = 140;
             this.ProgramName = "棚番選択";
