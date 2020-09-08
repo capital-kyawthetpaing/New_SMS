@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelDetail = new System.Windows.Forms.Panel();
+            this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.scMakerShohinCD = new Search.CKM_SearchControl();
             this.rdoProductCD = new CKM_Controls.CKM_RadioButton();
             this.rdoITEM = new CKM_Controls.CKM_RadioButton();
@@ -46,7 +47,6 @@
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtTargetDate = new CKM_Controls.CKM_TextBox();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
-            this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.panelDetail.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,6 +87,23 @@
             this.panelDetail.Name = "panelDetail";
             this.panelDetail.Size = new System.Drawing.Size(1713, 889);
             this.panelDetail.TabIndex = 13;
+            // 
+            // ckM_Label8
+            // 
+            this.ckM_Label8.AutoSize = true;
+            this.ckM_Label8.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label8.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label8.DefaultlabelSize = true;
+            this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.ckM_Label8.Location = new System.Drawing.Point(542, 299);
+            this.ckM_Label8.Name = "ckM_Label8";
+            this.ckM_Label8.Size = new System.Drawing.Size(397, 12);
+            this.ckM_Label8.TabIndex = 17;
+            this.ckM_Label8.Text = "その商品と同じサイト商品番号(メーカー商品CD)の商品も印字する";
+            this.ckM_Label8.Text_Color = CKM_Controls.CKM_Label.CKM_Color.DarkGreen;
+            this.ckM_Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // scMakerShohinCD
             // 
@@ -434,23 +451,6 @@
             this.ckM_Label1.Text = "対象年月";
             this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_Label8
-            // 
-            this.ckM_Label8.AutoSize = true;
-            this.ckM_Label8.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label8.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label8.DefaultlabelSize = true;
-            this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label8.ForeColor = System.Drawing.Color.Green;
-            this.ckM_Label8.Location = new System.Drawing.Point(542, 299);
-            this.ckM_Label8.Name = "ckM_Label8";
-            this.ckM_Label8.Size = new System.Drawing.Size(397, 12);
-            this.ckM_Label8.TabIndex = 17;
-            this.ckM_Label8.Text = "その商品と同じサイト商品番号(メーカー商品CD)の商品も印字する";
-            this.ckM_Label8.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ZaikoKanriHyou
             // 
