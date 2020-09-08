@@ -316,37 +316,29 @@ BEGIN
                ,@SYSDATETIME    --MailDateTime
                ,@StaffCD
                ,1   --ContactKBN
-               ,(SELECT top 1 A.MoveMailPatternCD FROM M_Store AS A
-                  WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
-                  AND A.ChangeDate <= @RequestDate
-                  ORDER BY A.ChangeDate desc)  
+               ,(SELECT top 1 A.MoveMailPatternCD FROM F_Store(@RequestDate) AS A
+                  WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0)  
                ,(SELECT top 1 B.MailSubject 
-                    FROM M_Store AS A
+                    FROM F_Store(@RequestDate) AS A
                     INNER JOIN M_MailPattern AS B
                     ON B.MailPatternCD = A.MoveMailPatternCD
-                  WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
-                  AND A.ChangeDate <= @RequestDate
-                  ORDER BY A.ChangeDate desc)   --MailSubject
+                   WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0)   --MailSubject
                ,(SELECT top 1 B.MailPriority 
-                    FROM M_Store AS A
+                    FROM F_Store(@RequestDate) AS A
                     INNER JOIN M_MailPattern AS B
                     ON B.MailPatternCD = A.MoveMailPatternCD
-                  WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
-                  AND A.ChangeDate <= @RequestDate
-                  ORDER BY A.ChangeDate desc)   --MailPriority
+                  WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0)   --MailPriority
                ,0   --ReMailFlg
                ,2   --UnitKBN
                ,NULL    --SendedDateTime
                ,1   --SenderKBN
-               ,(SELECT A.SenderCD FROM M_MailServer A WHERE A.SenderKBN = 1)   --SenderCD
-               ,(SELECT A.SenderAddress FROM M_MailServer A WHERE A.SenderKBN = 1)  --SenderAddress
+               ,@ToStoreCD   --SenderCD
+               ,(SELECT A.SenderAddress FROM M_MailServer A WHERE A.SenderKBN = 1 AND A.SenderCD = @ToStoreCD)  --SenderAddress
                ,(SELECT top 1 B.MailText 
-                    FROM M_Store AS A
-                    INNER JOIN M_MailPattern AS B
-                    ON B.MailPatternCD = A.MoveMailPatternCD
-                  WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
-                  AND A.ChangeDate <= @RequestDate
-                  ORDER BY A.ChangeDate desc)   --MailContent
+                   FROM F_Store(@RequestDate) AS A
+                  INNER JOIN M_MailPattern AS B
+                     ON B.MailPatternCD = A.MoveMailPatternCD
+                  WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0)   --MailContent
 
                ,@Operator  
                ,@SYSDATETIME
@@ -419,16 +411,16 @@ BEGIN
         
         --yD_MoveRequestzÝŒÉˆÚ“®ˆË—Š@Table“]‘—Žd—l‚`
         UPDATE [D_MoveRequest]
-           SET [StoreCD] = @StoreCD                         
-              ,[RequestDate] = convert(date,@RequestDate)
+           SET [StoreCD]        = @StoreCD                         
+              ,[RequestDate]    = convert(date,@RequestDate)
               ,[MovePurposeKBN] = @MovePurposeKBN
-              ,[FromStoreCD] = @FromStoreCD
-              ,[FromSoukoCD] = @FromSoukoCD
-              ,[ToStoreCD] = @ToStoreCD
-              ,[ToSoukoCD] = @ToSoukoCD
-              ,[StaffCD]         = @StaffCD  
-              ,[UpdateOperator]     =  @Operator  
-              ,[UpdateDateTime]     =  @SYSDATETIME
+              ,[FromStoreCD]    = @FromStoreCD
+              ,[FromSoukoCD]    = @FromSoukoCD
+              ,[ToStoreCD]      = @ToStoreCD
+              ,[ToSoukoCD]      = @ToSoukoCD
+              ,[StaffCD]        = @StaffCD  
+              ,[UpdateOperator] =  @Operator  
+              ,[UpdateDateTime] =  @SYSDATETIME
          WHERE RequestNO = @RequestNO
            ;
 
@@ -439,14 +431,14 @@ BEGIN
                ,[JanCD]          = tbl.JanCD
                ,[RequestSu]      = tbl.RequestSu
                ,[ExpectedDate]   = tbl.ExpectedDate
-               ,[CommentInStore]   = tbl.CommentInStore    
-               ,[UpdateOperator]   =  @Operator  
-               ,[UpdateDateTime]   =  @SYSDATETIME
+               ,[CommentInStore] = tbl.CommentInStore    
+               ,[UpdateOperator] =  @Operator  
+               ,[UpdateDateTime] =  @SYSDATETIME
         FROM D_MoveRequestDetailes
         INNER JOIN @Table tbl
-         ON @RequestNO = D_MoveRequestDetailes.RequestNO
+         ON @RequestNO       = D_MoveRequestDetailes.RequestNO
          AND tbl.RequestRows = D_MoveRequestDetailes.RequestRows
-         AND tbl.UpdateFlg = 1
+         AND tbl.UpdateFlg   = 1
          ;
 
         --íœs
@@ -456,9 +448,9 @@ BEGIN
                ,[DeleteDateTime]     =  @SYSDATETIME
         FROM D_MoveRequestDetailes
         INNER JOIN @Table tbl
-         ON @RequestNO = D_MoveRequestDetailes.RequestNO
-         AND tbl.RequestRows = D_MoveRequestDetailes.RequestRows
-         AND tbl.UpdateFlg = 2
+           ON @RequestNO      = D_MoveRequestDetailes.RequestNO
+          AND tbl.RequestRows = D_MoveRequestDetailes.RequestRows
+          AND tbl.UpdateFlg   = 2
          ;
         
         --MailFlg = 1‚Ìê‡
@@ -466,47 +458,39 @@ BEGIN
         BEGIN
             --yD_Mailzƒ[ƒ‹˜A—“à—e@Table“]‘—Žd—l‚b
             UPDATE [D_Mail]
-            SET [MailType] = 9
-               ,[MailKBN] = 51
-               ,[Number] = @RequestNO
+            SET [MailType]     = 9
+               ,[MailKBN]      = 51
+               ,[Number]       = @RequestNO
               -- ,[MailNORows] = (SELECT MAX(A.MailNORows) FROM D_Mail AS A WHERE A.[Number] = @RequestNO) + 1
                ,[MailDateTime] = @SYSDATETIME
-               ,[StaffCD] = @StaffCD
-               ,[ContactKBN] = 1
-               ,[MailPatternCD] = (SELECT top 1 A.MoveMailPatternCD FROM M_Store AS A
-                                  WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
-                                  AND A.ChangeDate <= @RequestDate
-                                  ORDER BY A.ChangeDate desc) 
+               ,[StaffCD]      = @StaffCD
+               ,[ContactKBN]   = 1
+               ,[MailPatternCD] = (SELECT top 1 A.MoveMailPatternCD FROM F_Store(@RequestDate) AS A
+                                  WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0) 
                ,[MailSubject] = (SELECT top 1 B.MailSubject 
-                                FROM M_Store AS A
-                                INNER JOIN M_MailPattern AS B
-                                ON B.MailPatternCD = A.MoveMailPatternCD
-                              WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
-                              AND A.ChangeDate <= @RequestDate
-                              ORDER BY A.ChangeDate desc)
+                                   FROM F_Store(@RequestDate) AS A
+                                  INNER JOIN M_MailPattern AS B
+                                     ON B.MailPatternCD = A.MoveMailPatternCD
+                                  WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0)
                ,[MailPriority] = (SELECT top 1 B.MailPriority 
-                                FROM M_Store AS A
-                                INNER JOIN M_MailPattern AS B
-                                ON B.MailPatternCD = A.MoveMailPatternCD
-                              WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
-                              AND A.ChangeDate <= @RequestDate
-                              ORDER BY A.ChangeDate desc)
-               ,[ReMailFlg] = 1
-               ,[UnitKBN] = 2
+                                    FROM F_Store(@RequestDate) AS A
+                                   INNER JOIN M_MailPattern AS B
+                                      ON B.MailPatternCD = A.MoveMailPatternCD
+                                   WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0)
+               ,[ReMailFlg]      = 1
+               ,[UnitKBN]        = 2
                ,[SendedDateTime] = NULL
-               ,[SenderKBN] = 1
-               ,[SenderCD] = (SELECT A.SenderCD FROM M_MailServer A WHERE A.SenderKBN = 1)
-               ,[SenderAddress] = (SELECT A.SenderAddress FROM M_MailServer A WHERE A.SenderKBN = 1)
-               ,[MailContent] = (SELECT top 1 B.MailText 
-                                FROM M_Store AS A
-                                INNER JOIN M_MailPattern AS B
-                                ON B.MailPatternCD = A.MoveMailPatternCD
-                              WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0 
-                              AND A.ChangeDate <= @RequestDate
-                              ORDER BY A.ChangeDate desc)
-               ,[UpdateOperator]   =  @Operator  
-               ,[UpdateDateTime]   =  @SYSDATETIME
-            WHERE [Number] = @RequestNO
+               ,[SenderKBN]      = 1
+               ,[SenderCD]       = @ToStoreCD
+               ,[SenderAddress]  = (SELECT A.SenderAddress FROM M_MailServer A WHERE A.SenderKBN = 1 AND A.SenderCD = @ToStoreCD)
+               ,[MailContent]    = (SELECT top 1 B.MailText 
+                                      FROM F_Store(@RequestDate) AS A
+                                     INNER JOIN M_MailPattern AS B
+                                        ON B.MailPatternCD = A.MoveMailPatternCD
+                                     WHERE A.StoreCD = @ToStoreCD AND A.DeleteFlg = 0)
+               ,[UpdateOperator] =  @Operator  
+               ,[UpdateDateTime] =  @SYSDATETIME
+            WHERE [Number]  = @RequestNO
             AND MailCounter = (SELECT MAX(A.MailCounter) FROM D_Mail AS A WHERE A.[Number] = @RequestNO)
            -- AND MailNORows = (SELECT MAX(A.MailNORows) FROM D_Mail AS A WHERE A.[Number] = @RequestNO)
             ;
