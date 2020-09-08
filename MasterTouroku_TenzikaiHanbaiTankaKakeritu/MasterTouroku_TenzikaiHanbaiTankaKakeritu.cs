@@ -35,6 +35,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             CB_Year.Bind(ymd);
             CB_Season.Bind(ymd);
             SC_Tanka.TxtCode.Require(true);
+            GV_Tenzaishohin.CheckCol.Add("Rate");
         }
         private bool ErrorCheck()
         {
