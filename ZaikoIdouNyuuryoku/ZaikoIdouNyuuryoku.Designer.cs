@@ -146,7 +146,6 @@
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_SearchControl1 = new Search.CKM_SearchControl();
             this.ckM_TextBox8 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox18 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label15 = new CKM_Controls.CKM_Label();
             this.ckM_Label17 = new CKM_Controls.CKM_Label();
             this.label12 = new CKM_Controls.CKM_Label();
@@ -196,6 +195,7 @@
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.ScCopyOrderNO = new Search.CKM_SearchControl();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ScToRackNo = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
             this.Pnl_Body.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -3086,34 +3086,6 @@
             this.ckM_TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ckM_TextBox8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox18
-            // 
-            this.ckM_TextBox18.AllowMinus = false;
-            this.ckM_TextBox18.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox18.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox18.ClientColor = System.Drawing.Color.White;
-            this.ckM_TextBox18.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox18.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox18.DecimalPlace = 0;
-            this.ckM_TextBox18.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ckM_TextBox18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ckM_TextBox18.IntegerPart = 0;
-            this.ckM_TextBox18.IsCorrectDate = true;
-            this.ckM_TextBox18.isEnterKeyDown = false;
-            this.ckM_TextBox18.isMaxLengthErr = false;
-            this.ckM_TextBox18.IsNumber = true;
-            this.ckM_TextBox18.IsShop = false;
-            this.ckM_TextBox18.Length = 15;
-            this.ckM_TextBox18.Location = new System.Drawing.Point(175, 346);
-            this.ckM_TextBox18.MaxLength = 15;
-            this.ckM_TextBox18.MoveNext = true;
-            this.ckM_TextBox18.Name = "ckM_TextBox18";
-            this.ckM_TextBox18.Size = new System.Drawing.Size(139, 19);
-            this.ckM_TextBox18.TabIndex = 19;
-            this.ckM_TextBox18.Text = "XXX";
-            this.ckM_TextBox18.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
             // ckM_Label15
             // 
             this.ckM_Label15.AutoSize = true;
@@ -3235,6 +3207,7 @@
             this.CboToSoukoCD.Name = "CboToSoukoCD";
             this.CboToSoukoCD.Size = new System.Drawing.Size(210, 20);
             this.CboToSoukoCD.TabIndex = 9;
+            this.CboToSoukoCD.SelectedIndexChanged += new System.EventHandler(this.CboToSoukoCD_SelectedIndexChanged);
             // 
             // label17
             // 
@@ -3968,6 +3941,34 @@
             this.panel2.Size = new System.Drawing.Size(812, 47);
             this.panel2.TabIndex = 748;
             // 
+            // ScToRackNo
+            // 
+            this.ScToRackNo.AutoSize = true;
+            this.ScToRackNo.ChangeDate = "";
+            this.ScToRackNo.ChangeDateWidth = 100;
+            this.ScToRackNo.Code = "";
+            this.ScToRackNo.CodeWidth = 100;
+            this.ScToRackNo.CodeWidth1 = 100;
+            this.ScToRackNo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScToRackNo.DataCheck = true;
+            this.ScToRackNo.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScToRackNo.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.ScToRackNo.IsCopy = false;
+            this.ScToRackNo.LabelText = "";
+            this.ScToRackNo.LabelVisible = false;
+            this.ScToRackNo.Location = new System.Drawing.Point(175, 341);
+            this.ScToRackNo.Name = "ScToRackNo";
+            this.ScToRackNo.NameWidth = 600;
+            this.ScToRackNo.SearchEnable = true;
+            this.ScToRackNo.Size = new System.Drawing.Size(133, 28);
+            this.ScToRackNo.Stype = Search.CKM_SearchControl.SearchType.棚番号;
+            this.ScToRackNo.TabIndex = 19;
+            this.ScToRackNo.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScToRackNo.UseChangeDate = false;
+            this.ScToRackNo.Value1 = null;
+            this.ScToRackNo.Value2 = null;
+            this.ScToRackNo.Value3 = null;
+            // 
             // ZaikoIdouNyuuryoku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -4002,7 +4003,6 @@
             this.Controls.Add(this.lblColorName);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.ckM_Label17);
-            this.Controls.Add(this.ckM_TextBox18);
             this.Controls.Add(this.ckM_Label15);
             this.Controls.Add(this.ckM_TextBox8);
             this.Controls.Add(this.ckM_Label3);
@@ -4011,12 +4011,14 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.ScFromRackNo);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.ScToRackNo);
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
             this.Name = "ZaikoIdouNyuuryoku";
             this.PanelHeaderHeight = 170;
             this.Text = "ZaikoIdouNyuuryoku";
             this.Load += new System.EventHandler(this.Form_Load);
+            this.Controls.SetChildIndex(this.ScToRackNo, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.ScFromRackNo, 0);
             this.Controls.SetChildIndex(this.tabControl1, 0);
@@ -4025,7 +4027,6 @@
             this.Controls.SetChildIndex(this.ckM_Label3, 0);
             this.Controls.SetChildIndex(this.ckM_TextBox8, 0);
             this.Controls.SetChildIndex(this.ckM_Label15, 0);
-            this.Controls.SetChildIndex(this.ckM_TextBox18, 0);
             this.Controls.SetChildIndex(this.ckM_Label17, 0);
             this.Controls.SetChildIndex(this.label12, 0);
             this.Controls.SetChildIndex(this.lblColorName, 0);
@@ -4135,7 +4136,6 @@
         private CKM_Controls.CKM_Label ckM_Label3;
         private Search.CKM_SearchControl ckM_SearchControl1;
         private CKM_Controls.CKM_TextBox ckM_TextBox8;
-        private CKM_Controls.CKM_TextBox ckM_TextBox18;
         private CKM_Controls.CKM_Label ckM_Label15;
         private CKM_Controls.CKM_Label ckM_Label17;
         private System.Windows.Forms.Label label46;
@@ -4240,6 +4240,7 @@
         private CKM_Controls.CKM_Label ckM_Label21;
         private Search.CKM_SearchControl SC_ITEM_1;
         private System.Windows.Forms.Panel panel2;
+        private Search.CKM_SearchControl ScToRackNo;
     }
 }
 
