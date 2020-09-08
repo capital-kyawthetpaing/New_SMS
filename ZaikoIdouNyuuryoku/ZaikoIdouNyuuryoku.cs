@@ -636,6 +636,7 @@ namespace ZaikoIdouNyuuryoku
                                 detailControls[(int)EIndex.MoveDate].Text = bbl.GetDate();
                                 ScStaff.TxtCode.Text = InOperatorCD;
                                 CheckDetail((int)EIndex.StaffCD);
+                                ckM_CheckBox3.Enabled = false;
 
                                 BtnSubF2.Enabled = true;
                                 BtnSubF3.Enabled = true;
@@ -1397,17 +1398,17 @@ namespace ZaikoIdouNyuuryoku
 
         protected override void ExecDisp()
         {
-            if (mDetailOperationMode == EOperationMode.DELETE)
-            { //Ｑ１０２		
-                if (bbl.ShowMessage("Q102") != DialogResult.Yes)
-                    return;
-            }
-            else
-            {
-                //Ｑ１０１		
-                if (bbl.ShowMessage("Q101") != DialogResult.Yes)
-                    return;
-            }
+            //if (mDetailOperationMode == EOperationMode.DELETE)
+            //{ //Ｑ１０２		
+            //    if (bbl.ShowMessage("Q102") != DialogResult.Yes)
+            //        return;
+            //}
+            //else
+            //{
+            //    //Ｑ１０１		
+            //    if (bbl.ShowMessage("Q101") != DialogResult.Yes)
+            //        return;
+            //}
 
             //在庫移動明細編集エリアのエラーチェック
             for (int i = (int)EIndex.Gyono; i <= (int)EIndex.RemarksInStore; i++)
@@ -3716,17 +3717,34 @@ namespace ZaikoIdouNyuuryoku
                 case EsearchKbn.Product:
                     using (Search_Product frmProduct = new Search_Product(detailControls[(int)EIndex.MoveDate].Text))
                     {
-                        frmProduct.SKUCD = lblSKUCD.Text;
-                        frmProduct.JANCD = detailControls[(int)EIndex.JANCD].Text;
-                        frmProduct.ShowDialog();
+                        if (setCtl == SC_ITEM_0)
+                        {
+                            frmProduct.SKUCD = lblSKUCD.Text;
+                            frmProduct.JANCD = detailControls[(int)EIndex.JANCD].Text;
+                        }
+                        else
+                        {
+                            frmProduct.SKUCD = lblSKUCDF.Text;
+                            frmProduct.JANCD = detailControls[(int)EIndex.JANCD_F].Text;
+                        }
+                            frmProduct.ShowDialog();
 
                         if (!frmProduct.flgCancel)
                         {
-                            detailControls[(int)EIndex.JANCD].Text = frmProduct.JANCD;
-                            mJANCD = frmProduct.JANCD;
-                            lblSKUCD.Text = frmProduct.SKUCD;
-                            mAdminNO = frmProduct.AdminNO;
+                            ((Search.CKM_SearchControl)setCtl).TxtCode.Text  = frmProduct.JANCD;
 
+                            if (setCtl == SC_ITEM_0)
+                            {
+                                mJANCD = frmProduct.JANCD;
+                                lblSKUCD.Text = frmProduct.SKUCD;
+                                mAdminNO = frmProduct.AdminNO;
+                            }
+                            else
+                            {
+                                mJANCDF = frmProduct.JANCD;
+                                lblSKUCDF.Text = frmProduct.SKUCD;
+                                mAdminNOF = frmProduct.AdminNO;
+                            }
                             setCtl.Focus();
 
                             //CheckDetail((int)EIndex.JANCD, true);

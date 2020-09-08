@@ -469,7 +469,7 @@
             this.IMT_ITMCD_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_0.DecimalPlace = 0;
-            this.IMT_ITMCD_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMCD_0.IntegerPart = 0;
             this.IMT_ITMCD_0.IsCorrectDate = true;
             this.IMT_ITMCD_0.isEnterKeyDown = false;
@@ -3671,6 +3671,7 @@
             this.CboIdoKbn.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CboIdoKbn.Flag = 0;
             this.CboIdoKbn.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.CboIdoKbn.ForeColor = System.Drawing.Color.Red;
             this.CboIdoKbn.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.CboIdoKbn.Length = 15;
             this.CboIdoKbn.Location = new System.Drawing.Point(394, 49);
