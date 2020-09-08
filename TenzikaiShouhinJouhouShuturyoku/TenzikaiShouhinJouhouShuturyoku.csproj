@@ -40,9 +40,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Search\RequiredDLL\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
-    <Reference Include="ElencySolutions.CsvHelper">
-      <HintPath>..\Search\RequiredDLL\ElencySolutions.CsvHelper.dll</HintPath>
-    </Reference>
     <Reference Include="ExcelDataReader">
       <HintPath>..\Search\RequiredDLL\ExcelDataReader.dll</HintPath>
     </Reference>
