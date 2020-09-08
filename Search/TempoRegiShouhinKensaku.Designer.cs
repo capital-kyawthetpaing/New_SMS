@@ -220,6 +220,7 @@
             this.txtJanCD.TabIndex = 2;
             this.txtJanCD.Text = "49XXXXXXXXX13";
             this.txtJanCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtJanCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtJanCD_KeyDown);
             // 
             // txtSKUName
             // 

@@ -1029,7 +1029,7 @@ namespace ShiireNyuuryokuFromNyuuka
                 
                 Btn_F7.Text = "";
                 Btn_F8.Text = "";
-                Btn_F10.Text = "納品データ(F10)";
+                Btn_F10.Text = "納品ﾃﾞｰﾀ(F10)";
                 Btn_F11.Text = "表示(F11)";
 
                 //コンボボックス初期化
@@ -1411,7 +1411,7 @@ namespace ShiireNyuuryokuFromNyuuka
         private void ExecDispNohin(short kbn)
         {
             //抽出条件エリアのエラーチェック
-            for (int i = (int)EIndex.ArrivalDateFrom; i <= (int)EIndex.VendorDeliveryNo; i++)
+            for (int i = (int)EIndex.CalledVendorCD; i <= (int)EIndex.VendorDeliveryNo; i++)
                 if (CheckDetail(i) == false)
                 {
                     detailControls[i].Focus();
@@ -1431,6 +1431,8 @@ namespace ShiireNyuuryokuFromNyuuka
                 dt = snbl.D_Delivery_SelectAll(dae);
             }
 
+            S_Clear_Grid();   //画面クリア（明細部）
+
             if (dt.Rows.Count == 0)
             {
                 bbl.ShowMessage("E128");
@@ -1439,7 +1441,6 @@ namespace ShiireNyuuryokuFromNyuuka
             }
             else
             {
-                S_Clear_Grid();   //画面クリア（明細部）
 
                 //明細にデータをセット
                 int i = 0;
@@ -3152,11 +3153,15 @@ namespace ShiireNyuuryokuFromNyuuka
             {
                 ChangeBackColor(w_Row, 1);
                 //Onの時、仕入数以降、入力可
+                mGrid.g_DArray[w_Row].PurchaseSu = mGrid.g_DArray[w_Row].ArrivalSu;
+                CheckGrid((int)ClsGridShiire.ColNO.PurchaseSu, w_Row);
             }
             else
             {
                 //Offの時、仕入数以降、入力不可
                 ChangeBackColor(w_Row);
+                mGrid.g_DArray[w_Row].PurchaseSu = "0";
+                CheckGrid((int)ClsGridShiire.ColNO.PurchaseSu, w_Row);
             }
 
             Grid_NotFocus((int)ClsGridShiire.ColNO.Chk, w_Row);
@@ -3201,6 +3206,15 @@ namespace ShiireNyuuryokuFromNyuuka
                     case (int)ClsGridShiire.ColNO.TaxRate:
                         {
                             mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
+
+                            if (kbn == 1)
+                            {
+                                mGrid.g_MK_State[w_Col, w_Row].Cell_Color = backCL;
+                            }
+                            else
+                            {
+                                mGrid.g_MK_State[w_Col, w_Row].Cell_Color = System.Drawing.Color.Empty;
+                            }
                             break;
                         }
                 }

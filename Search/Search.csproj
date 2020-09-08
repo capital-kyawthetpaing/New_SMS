@@ -292,6 +292,12 @@
     <Compile Include="Search_TempoUriageNO.designer.cs">
       <DependentUpon>Search_TempoUriageNO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Search_Tenzikai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_Tenzikai.Designer.cs">
+      <DependentUpon>Search_Tenzikai.cs</DependentUpon>
+    </Compile>
     <Compile Include="Search_Vendor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -460,6 +466,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Search_TempoUriageNO.resx">
       <DependentUpon>Search_TempoUriageNO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search_Tenzikai.resx">
+      <DependentUpon>Search_Tenzikai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Search_Vendor.resx">
       <DependentUpon>Search_Vendor.cs</DependentUpon>

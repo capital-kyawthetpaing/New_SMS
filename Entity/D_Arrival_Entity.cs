@@ -22,6 +22,7 @@ namespace Entity
         public string JanCD { get; set; }
         public string AdminNO { get; set; }
         public string SKUCD { get; set; }
+        public string MakerItem { get; set; }
         public string ArrivalSu { get; set; }
         public string PurchaseSu { get; set; }
 

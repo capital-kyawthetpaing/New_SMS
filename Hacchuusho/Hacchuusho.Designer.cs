@@ -308,6 +308,7 @@
             this.txtHacchuuDateFrom.AllowMinus = false;
             this.txtHacchuuDateFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuDateFrom.BackColor = System.Drawing.Color.White;
+            this.txtHacchuuDateFrom.BorderColor = false;
             this.txtHacchuuDateFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuDateFrom.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuDateFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -333,6 +334,7 @@
             this.txtHacchuuDateFrom.TabIndex = 3;
             this.txtHacchuuDateFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtHacchuuDateFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuDateFrom.UseColorSizMode = false;
             // 
             // ScVendor
             // 
@@ -382,7 +384,7 @@
             this.chkInsatuTaishou_Saihakkou.Location = new System.Drawing.Point(259, 171);
             this.chkInsatuTaishou_Saihakkou.Name = "chkInsatuTaishou_Saihakkou";
             this.chkInsatuTaishou_Saihakkou.Size = new System.Drawing.Size(97, 19);
-            this.chkInsatuTaishou_Saihakkou.TabIndex = 706;
+            this.chkInsatuTaishou_Saihakkou.TabIndex = 2;
             this.chkInsatuTaishou_Saihakkou.Text = "再発行分";
             this.chkInsatuTaishou_Saihakkou.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkInsatuTaishou_Saihakkou.UseVisualStyleBackColor = true;
@@ -411,6 +413,7 @@
             this.txtHacchuuDateTo.AllowMinus = false;
             this.txtHacchuuDateTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuDateTo.BackColor = System.Drawing.Color.White;
+            this.txtHacchuuDateTo.BorderColor = false;
             this.txtHacchuuDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuDateTo.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuDateTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -436,6 +439,7 @@
             this.txtHacchuuDateTo.TabIndex = 4;
             this.txtHacchuuDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtHacchuuDateTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuDateTo.UseColorSizMode = false;
             // 
             // ckM_Label6
             // 
@@ -675,7 +679,7 @@
             this.ScHacchuuNO.SearchEnable = true;
             this.ScHacchuuNO.Size = new System.Drawing.Size(144, 34);
             this.ScHacchuuNO.Stype = Search.CKM_SearchControl.SearchType.発注番号;
-            this.ScHacchuuNO.TabIndex = 726;
+            this.ScHacchuuNO.TabIndex = 7;
             this.ScHacchuuNO.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScHacchuuNO.UseChangeDate = false;
             this.ScHacchuuNO.Value1 = null;

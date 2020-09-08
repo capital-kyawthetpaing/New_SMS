@@ -43,6 +43,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
             scSegmentCDTo.NameWidth = 0;
             SetRequiredField();
             scSupplierCD.SetFocus(1);
+            ckM_SearchControl1.NameWidth = 0;
         }
         public void BindCombo()
         {
@@ -76,7 +77,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
         }
         private bool ErrorCheck()
         {
-            if (!RequireCheck(new Control[] { cbo_Year,cbo_Season }))
+            if (!RequireCheck(new Control[] { scSupplierCD,cbo_Year,cbo_Season }))
                 return false;
             if (!string.IsNullOrEmpty(scBrandCDFrom.TxtCode.Text) && !string.IsNullOrEmpty(scBrandCDTo.TxtCode.Text))
             {
@@ -107,7 +108,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
                BrandCDTo=scBrandCDTo.TxtCode.Text,
                SegmentCDFrom=scSegmentCDFrom.TxtCode.Text,
                SegmentCDTo=scSegmentCDTo.TxtCode.Text,
-               TenzikaiName=txtExhibitionName.Text
+               //TenzikaiName=txtExhibitionName.Text
             };
             return mte;
         }

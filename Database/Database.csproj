@@ -503,6 +503,7 @@
     <Content Include="StoreProcedure\M_TanaDate_Select.sql" />
     <Content Include="StoreProcedure\M_TankaCD_Select.sql" />
     <Content Include="StoreProcedure\M_TankaCD_SelectAll.sql" />
+    <Content Include="StoreProcedure\M_TenzikaiShouhin_Search.sql" />
     <Content Include="StoreProcedure\M_TenzikaiShouhin_Select.sql" />
     <Content Include="StoreProcedure\M_VendorFTP_ForSelectFile.sql" />
     <Content Include="StoreProcedure\M_VendorFTP_Select.sql" />
@@ -578,7 +579,9 @@
     <Content Include="StoreProcedure\PRC_ZaikoIdou_A2B2.sql" />
     <Content Include="StoreProcedure\RakutenOrderDataDetail_Insert.sql" />
     <Content Include="StoreProcedure\RakutenOrder_InsertSelect.sql" />
+    <Content Include="StoreProcedure\Rpc_HanbaiTankaTennic.Sql" />
     <Content Include="StoreProcedure\RPC_SiiresakiZaikoYoteiHyou.sql" />
+    <Content Include="StoreProcedure\Rpc_TenzikaiShouhinJouhouShuturyoku.sql" />
     <Content Include="StoreProcedure\RPC_UriageMotochou_PrintSelect.sql" />
     <Content Include="StoreProcedure\RPC_UrikakekinTairyuuHyou_PrintSelect.sql" />
     <Content Include="StoreProcedure\RPC_ZaikoKanriHyou.sql" />

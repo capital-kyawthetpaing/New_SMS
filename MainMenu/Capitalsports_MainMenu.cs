@@ -91,21 +91,15 @@ namespace MainMenu
         }
         private void Capital_MainMenu_Load(object sender, EventArgs e)
         {
-            //var f=  GetMessages();
-            //  var ds = ASCIIEncoding.ASCII.GetByteCount(f);
             Clear_Text(panel_left);
             Clear_Text(panel_right);
             BindButtonName();
             try
             {
-                //var pth = "C:\\SMS\\Appdata";
-                //var getmsg = Base_DL.iniEntity.DefaultMessage;
-                //Process.Start(pth+ @"\"+ "Display_Service" + ".exe","02_1" + " "+ getmsg + " "+ "-" +" "+"-" );
-
-                if (Base_DL.iniEntity.IsDM_D30Used)
-                {
-                    cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
-                }///Start New Window for display by PTK
+                //if (Base_DL.iniEntity.IsDM_D30Used)
+                //{
+                // //   cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+                //}///Start New Window for display by PTK
             }
             catch (Exception ex)
             {
@@ -430,20 +424,14 @@ namespace MainMenu
                     {
                         CashDrawerOpen cdo_open = new CashDrawerOpen();
                         cdo_open.OpenCashDrawer();
-                        //Base_DL.iniEntity.CDO_DISPLAY = new EPSON_TM30.CashDrawerOpen(); ;
-                        //Base_DL.iniEntity.CDO_DISPLAY.OpenCashDrawer();
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message + ex.StackTrace);
                     }
-                    // op.OpenCashDrawer();
                 }
                 else
-
                 {
-                    //System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
-                    //string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
                     string filePath = "";
                     //System.Diagnostics.Debug 
                     if (Debugger.IsAttached || Login_BL.Islocalized)
@@ -456,74 +444,16 @@ namespace MainMenu
                         filePath = @"C:\\SMS\\AppData";
                     }
                     string cmdLine = " " + "01" + " " + mse.StaffCD + " " + Login_BL.GetHostName();
-                    //Process[] localByName = Process.GetProcessesByName(exe_name);
-                    //if (localByName.Count() > 0)
-                    //{
-                    //    IntPtr handle = localByName[0].MainWindowHandle;
-                    //    ShowWindow(handle, SW_SHOWMAXIMIZED);
-                    //    return;
-                    //}
-
-                    //if (exe_name == "TempoRegiHanbaiTouroku" )
-                    //{
-                    //    try
-                    //    {
-                    //        if (Base_DL.iniEntity.IsDM_D30Used)
-                    //        {
-                    //            cdo.RemoveDisplay();
-                    //        }
-                    //        // Base_DL.Ini_Entity_CDP.CDO_DISPLAY.RemoveDisplay();
-                    //    }
-                    //    catch
-                    //    {
-                    //        MessageBox.Show("Reclick on HBT");
-                    //    }
-                    //}
                     RejectDisplay(exe_name);
                     Process[] localByName = Process.GetProcessesByName(exe_name);
                     if (localByName.Count() > 0)
                     {
-                        //if (programID.TrimEnd() == "販売登録" || exe_name == "TempoRegiHanbaiTouroku" || exe_name == "TempoRegiHanbaiTouroku.exe")
-                        //{
-                        //  //  Login_BL bbl_1 = new Login_BL();
-                        // //   bbl_1.Display_Service_Update(false);
-                        //}
-                            IntPtr handle = localByName[0].MainWindowHandle;
+                        IntPtr handle = localByName[0].MainWindowHandle;
                         ShowWindow(handle, SW_SHOWMAXIMIZED);
                         SetForegroundWindow(handle);
                         return;
                     }
-
-
-                    //if (P)
-                    //   (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");   //original  
-
-                    ///ptk
-                    /// (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");
-                    //if (programID.TrimEnd() == "販売登録" || exe_name == "TempoRegiHanbaiTouroku")
-                    //{
-                    //    try
-                    //    {
-                    //        using (Process exeProcess = Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + ""))
-                    //        {
-                    //            if (Base_DL.iniEntity.IsDM_D30Used)
-                    //            {
-                    //                exeProcess.WaitForExit();
-                    //                cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
-                    //            }
-                    //        }
-                    //    }
-                    //    catch (Exception ex)
-                    //    {
-                    //        MessageBox.Show(ex.Message + filePath + @"\" + exe_name + ".exe");
-                    //    }
-
-                    //}
-                    //else
-                    //{
                         (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");
-                    //}
-                    ///ptk
                 }
             }
             catch (Exception ex)
@@ -545,11 +475,10 @@ namespace MainMenu
 
                         Process[] localByName = Process.GetProcessesByName("Display_Service");
                         Process[] localByName1 = Process.GetProcessesByName("Display_Service.exe");
-                        if (Base_DL.iniEntity.IsDM_D30Used && localByName.Count() == 0 && localByName1.Count() == 0)
-                        {
-                            cdo.RemoveDisplay();
-                        }
-                        // Base_DL.Ini_Entity_CDP.CDO_DISPLAY.RemoveDisplay();
+                        ////////if (Base_DL.iniEntity.IsDM_D30Used && localByName.Count() == 0 && localByName1.Count() == 0)
+                        ////////{
+                        ////////   // cdo.RemoveDisplay();
+                        ////////}
                     }
                     catch
                     {
@@ -581,13 +510,18 @@ namespace MainMenu
                 BL.Base_BL bbl = new Base_BL();
                 if (bbl.ShowMessage("Q003") == DialogResult.Yes)
                 {
-                    ForceToclose();
+                    try
+                    {
+                        ForceToclose();
+                    }
+                    catch { }
                     e.Cancel = false;
                 }
                 else
                     e.Cancel = true;
             }
-            else {
+            else
+            {
                 e.Cancel = true;
             }
         }
@@ -598,7 +532,6 @@ namespace MainMenu
                 var localByName = Process.GetProcessesByName(dr["ProgramID_ID"].ToString());
                 if (localByName.Count() > 0)
                 {
-
                     foreach (var process in localByName)
                     {
                         try
@@ -607,7 +540,6 @@ namespace MainMenu
                         }
                         catch
                         {
-
                         }
                     }
                 }

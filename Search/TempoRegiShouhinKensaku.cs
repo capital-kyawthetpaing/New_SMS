@@ -135,5 +135,30 @@ namespace Search
         {
             MoveNextControl(e);
         }
+        private void txtJanCD_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+                {
+
+                    btnShow_Click(sender, new EventArgs());
+
+                    if (dgvDetail.CurrentRow != null && dgvDetail.CurrentRow.Index >= 0)
+                    {
+                        btnShow.Focus();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

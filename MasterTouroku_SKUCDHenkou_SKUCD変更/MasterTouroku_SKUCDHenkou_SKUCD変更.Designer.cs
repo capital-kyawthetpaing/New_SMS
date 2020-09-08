@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtDate1 = new CKM_Controls.CKM_TextBox();
             this.txtRevDate = new CKM_Controls.CKM_TextBox();
             this.F11Display = new CKM_Controls.CKM_Button();
@@ -82,6 +82,7 @@
             this.sm_17 = new CKM_Controls.CKM_TextBox();
             this.so_17 = new CKM_Controls.CKM_TextBox();
             this.sn_17 = new CKM_Controls.CKM_TextBox();
+            this.sn_1 = new CKM_Controls.CKM_TextBox();
             this.sn_2 = new CKM_Controls.CKM_TextBox();
             this.sm_1 = new CKM_Controls.CKM_TextBox();
             this.panel67 = new System.Windows.Forms.Panel();
@@ -161,7 +162,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.sc_1 = new System.Windows.Forms.CheckBox();
             this.so_1 = new CKM_Controls.CKM_TextBox();
-            this.sn_1 = new CKM_Controls.CKM_TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cc_49 = new System.Windows.Forms.CheckBox();
@@ -195,6 +195,7 @@
             this.cc_35 = new System.Windows.Forms.CheckBox();
             this.panel39 = new System.Windows.Forms.Panel();
             this.cc_34 = new System.Windows.Forms.CheckBox();
+            this.cn_1 = new CKM_Controls.CKM_TextBox();
             this.panel40 = new System.Windows.Forms.Panel();
             this.cc_33 = new System.Windows.Forms.CheckBox();
             this.panel41 = new System.Windows.Forms.Panel();
@@ -412,7 +413,6 @@
             this.co_1 = new CKM_Controls.CKM_TextBox();
             this.cn_3 = new CKM_Controls.CKM_TextBox();
             this.cn_2 = new CKM_Controls.CKM_TextBox();
-            this.cn_1 = new CKM_Controls.CKM_TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -724,8 +724,6 @@
             this.panelDetail.Controls.Add(this.lblProductName);
             this.panelDetail.Controls.Add(this.ckM_Label2);
             this.panelDetail.Controls.Add(this.ckM_Label1);
-            this.panelDetail.Controls.Add(this.sn_1);
-            this.panelDetail.Controls.Add(this.cn_1);
             this.panelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDetail.Location = new System.Drawing.Point(0, 180);
             this.panelDetail.Name = "panelDetail";
@@ -738,18 +736,18 @@
             this.ckM_GridView1.AllowUserToDeleteRows = false;
             this.ckM_GridView1.AllowUserToResizeColumns = false;
             this.ckM_GridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.ckM_GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.ckM_GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.ckM_GridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.ckM_GridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ckM_GridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ckM_GridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ckM_GridView1.ColumnHeadersHeight = 25;
             this.ckM_GridView1.ColumnHeadersVisible = false;
             this.ckM_GridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -773,14 +771,14 @@
             this.Column18,
             this.Column19,
             this.Column20});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ckM_GridView1.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ckM_GridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.ckM_GridView1.EnableHeadersVisualStyles = false;
             this.ckM_GridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.ckM_GridView1.Location = new System.Drawing.Point(315, 182);
@@ -974,6 +972,7 @@
             this.panel2.Controls.Add(this.sm_17);
             this.panel2.Controls.Add(this.so_17);
             this.panel2.Controls.Add(this.sn_17);
+            this.panel2.Controls.Add(this.sn_1);
             this.panel2.Controls.Add(this.sn_2);
             this.panel2.Controls.Add(this.sm_1);
             this.panel2.Controls.Add(this.panel67);
@@ -1042,8 +1041,6 @@
             this.panel2.Size = new System.Drawing.Size(1300, 90);
             this.panel2.TabIndex = 219;
             this.panel2.Scroll += new System.Windows.Forms.ScrollEventHandler(this.panel2_Scroll_1);
-            this.panel2.DockChanged += new System.EventHandler(this.panel2_DockChanged);
-            this.panel2.RightToLeftChanged += new System.EventHandler(this.panel2_RightToLeftChanged);
             // 
             // panel63
             // 
@@ -1464,6 +1461,34 @@
             this.sn_17.TabIndex = 16;
             this.sn_17.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.sn_17.UseColorSizMode = false;
+            // 
+            // sn_1
+            // 
+            this.sn_1.AllowMinus = false;
+            this.sn_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.sn_1.BackColor = System.Drawing.Color.White;
+            this.sn_1.BorderColor = false;
+            this.sn_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sn_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.sn_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.sn_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.sn_1.DecimalPlace = 0;
+            this.sn_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sn_1.IntegerPart = 0;
+            this.sn_1.IsCorrectDate = true;
+            this.sn_1.isEnterKeyDown = false;
+            this.sn_1.IsFirstTime = true;
+            this.sn_1.isMaxLengthErr = false;
+            this.sn_1.IsNumber = true;
+            this.sn_1.IsShop = false;
+            this.sn_1.Length = 32767;
+            this.sn_1.Location = new System.Drawing.Point(0, 0);
+            this.sn_1.MoveNext = true;
+            this.sn_1.Name = "sn_1";
+            this.sn_1.Size = new System.Drawing.Size(130, 19);
+            this.sn_1.TabIndex = 0;
+            this.sn_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.sn_1.UseColorSizMode = false;
             // 
             // sn_2
             // 
@@ -3117,34 +3142,6 @@
             this.so_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.so_1.UseColorSizMode = false;
             // 
-            // sn_1
-            // 
-            this.sn_1.AllowMinus = false;
-            this.sn_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.sn_1.BackColor = System.Drawing.Color.White;
-            this.sn_1.BorderColor = false;
-            this.sn_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sn_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.sn_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.sn_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.sn_1.DecimalPlace = 0;
-            this.sn_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.sn_1.IntegerPart = 0;
-            this.sn_1.IsCorrectDate = true;
-            this.sn_1.isEnterKeyDown = false;
-            this.sn_1.IsFirstTime = true;
-            this.sn_1.isMaxLengthErr = false;
-            this.sn_1.IsNumber = true;
-            this.sn_1.IsShop = false;
-            this.sn_1.Length = 32767;
-            this.sn_1.Location = new System.Drawing.Point(374, 57);
-            this.sn_1.MoveNext = true;
-            this.sn_1.Name = "sn_1";
-            this.sn_1.Size = new System.Drawing.Size(130, 19);
-            this.sn_1.TabIndex = 0;
-            this.sn_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.sn_1.UseColorSizMode = false;
-            // 
             // panel4
             // 
             this.panel4.AutoScroll = true;
@@ -3164,6 +3161,7 @@
             this.panel4.Controls.Add(this.panel37);
             this.panel4.Controls.Add(this.panel38);
             this.panel4.Controls.Add(this.panel39);
+            this.panel4.Controls.Add(this.cn_1);
             this.panel4.Controls.Add(this.panel40);
             this.panel4.Controls.Add(this.panel41);
             this.panel4.Controls.Add(this.panel42);
@@ -3655,6 +3653,34 @@
             this.cc_34.Size = new System.Drawing.Size(15, 14);
             this.cc_34.TabIndex = 221;
             this.cc_34.UseVisualStyleBackColor = true;
+            // 
+            // cn_1
+            // 
+            this.cn_1.AllowMinus = false;
+            this.cn_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.cn_1.BackColor = System.Drawing.Color.White;
+            this.cn_1.BorderColor = false;
+            this.cn_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cn_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.cn_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.cn_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.cn_1.DecimalPlace = 0;
+            this.cn_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.cn_1.IntegerPart = 0;
+            this.cn_1.IsCorrectDate = true;
+            this.cn_1.isEnterKeyDown = false;
+            this.cn_1.IsFirstTime = true;
+            this.cn_1.isMaxLengthErr = false;
+            this.cn_1.IsNumber = true;
+            this.cn_1.IsShop = false;
+            this.cn_1.Length = 32767;
+            this.cn_1.Location = new System.Drawing.Point(0, 1);
+            this.cn_1.MoveNext = true;
+            this.cn_1.Name = "cn_1";
+            this.cn_1.Size = new System.Drawing.Size(50, 19);
+            this.cn_1.TabIndex = 203;
+            this.cn_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.cn_1.UseColorSizMode = false;
             // 
             // panel40
             // 
@@ -8574,34 +8600,6 @@
             this.cn_2.TabIndex = 206;
             this.cn_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.cn_2.UseColorSizMode = false;
-            // 
-            // cn_1
-            // 
-            this.cn_1.AllowMinus = false;
-            this.cn_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.cn_1.BackColor = System.Drawing.Color.White;
-            this.cn_1.BorderColor = false;
-            this.cn_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cn_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.cn_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.cn_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.cn_1.DecimalPlace = 0;
-            this.cn_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.cn_1.IntegerPart = 0;
-            this.cn_1.IsCorrectDate = true;
-            this.cn_1.isEnterKeyDown = false;
-            this.cn_1.IsFirstTime = true;
-            this.cn_1.isMaxLengthErr = false;
-            this.cn_1.IsNumber = true;
-            this.cn_1.IsShop = false;
-            this.cn_1.Length = 32767;
-            this.cn_1.Location = new System.Drawing.Point(32, 127);
-            this.cn_1.MoveNext = true;
-            this.cn_1.Name = "cn_1";
-            this.cn_1.Size = new System.Drawing.Size(50, 19);
-            this.cn_1.TabIndex = 203;
-            this.cn_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.cn_1.UseColorSizMode = false;
             // 
             // label10
             // 

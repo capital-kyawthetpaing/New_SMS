@@ -69,7 +69,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 SKUCDTo.NameWidth = 0;
                 Clear(pnl_Body);
                 Scr_Clr(0);
-                TextLeave();
+                CustomEvent();
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
@@ -267,9 +267,9 @@ namespace WMasterTouroku_HanbaiTankaTennic
                         if (mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
                         {
                             mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Enter += new System.EventHandler(GridControl_Enter);
-                            mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Leave += new System.EventHandler(GridControl_Leave);
-                            mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown);//GridControl_Validated
-                            mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Validated += new EventHandler(GridControl_Validated);
+                          //  mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Leave += new System.EventHandler(GridControl_Leave);
+                          //  mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown);//GridControl_Validated
+                          //  mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Validated += new EventHandler(GridControl_Validated);
 
                         }
                     }
@@ -403,48 +403,85 @@ namespace WMasterTouroku_HanbaiTankaTennic
         {
             return CheckDetail(index, true);
         }
-        //private bool CheckGrid(int col, int row)
-        //{
-        //    if (!bbl.CheckDate(mGrid.g_DArray[row].StartChangeDate))
-        //    {
-        //        bbl.ShowMessage("E103");
-        //        return false;
-        //    }
-        //    if (!bbl.CheckDate(mGrid.g_DArray[row].EndChangeDate))
-        //    {
-        //        bbl.ShowMessage("E103");
-        //        return false;
-        //    }
-        //    if (!string.IsNullOrEmpty(mGrid.g_DArray[row].StartChangeDate) && !string.IsNullOrEmpty(mGrid.g_DArray[row].EndChangeDate))
-        //    {
-        //        if (string.Compare(mGrid.g_DArray[row].StartChangeDate, mGrid.g_DArray[row].EndChangeDate) == 1)
-        //        {
-        //            bbl.ShowMessage("E104");
-        //            return false;
-        //        }
-        //    }
-        //    return true;
-        //}
-        private bool ErrorCheck(int row)
+        private bool CheckGrid(int col, int row)
         {
-            if (!bbl.CheckDate(mGrid.g_DArray[row].StartChangeDate))
+            switch (col)
             {
-                bbl.ShowMessage("E103");
-                return false;
+                case (int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate:
+                    mGrid.g_DArray[row].StartChangeDate = bbl.FormatDate(mGrid.g_DArray[row].StartChangeDate);
+
+                    // correct date
+                    if (!bbl.CheckDate(mGrid.g_DArray[row].StartChangeDate))
+                    {
+                        bbl.ShowMessage("E103");
+                        return false;
+                    }
+                    M_SKUPrice_Entity mse = new M_SKUPrice_Entity
+                    {
+                        SKUCD = mGrid.g_DArray[row].SKUCD,
+                        ChangeDate = mGrid.g_DArray[row].StartChangeDate
+                    };
+                    DataTable dt = spb.M_SKUPrice_DataSelect(mse);
+                    if (dt.Rows.Count > 0)
+                    {
+                        //Ｅ１０５
+                        bbl.ShowMessage("E105");
+                        return false;
+                    }
+                    break;
+                case (int)ClsGridHanbaiTankaTennic.ColNO.EndChangeDate:
+                    if (!string.IsNullOrEmpty(mGrid.g_DArray[row].StartChangeDate) && !string.IsNullOrEmpty(mGrid.g_DArray[row].EndChangeDate))
+                    {
+                        if (string.Compare(mGrid.g_DArray[row].StartChangeDate, mGrid.g_DArray[row].EndChangeDate) == 1)
+                        {
+                            bbl.ShowMessage("E104");
+                            return false;
+                        }
+                    }
+                    break;
+                default:
+                    string val = "";
+
+                    switch (col)
+                    {
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.UnitPrice:
+                            val = mGrid.g_DArray[row].UnitPrice;
+                            break;
+
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.StandardSalesUnitPrice:
+                            val = mGrid.g_DArray[row].StandardSalesUnitPrice;
+                            break;
+
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank1UnitPrice:  
+                            val = mGrid.g_DArray[row].Rank1UnitPrice;
+                            break;
+
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank2UnitPrice:
+                            val = mGrid.g_DArray[row].Rank2UnitPrice;
+                            break;
+
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank3UnitPrice: 
+                            val = mGrid.g_DArray[row].Rank3UnitPrice;
+                            break;
+
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank4UnitPrice:
+                            val = mGrid.g_DArray[row].Rank4UnitPrice;
+                            break;
+
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank5UnitPrice: 
+                            val = mGrid.g_DArray[row].Rank5UnitPrice;
+                            break;
+                    }
+                    if (string.IsNullOrWhiteSpace(val))
+                    {
+                        bbl.ShowMessage("E102");
+                        return false;
+                    }
+                    break;
             }
-            if (!bbl.CheckDate(mGrid.g_DArray[row].EndChangeDate))
-            {
-                bbl.ShowMessage("E103");
-                return false;
-            }
-            if (!string.IsNullOrEmpty(mGrid.g_DArray[row].StartChangeDate) && !string.IsNullOrEmpty(mGrid.g_DArray[row].EndChangeDate))
-            {
-                if (string.Compare(mGrid.g_DArray[row].StartChangeDate, mGrid.g_DArray[row].EndChangeDate) == 1)
-                {
-                    bbl.ShowMessage("E104");
-                    return false;
-                }
-            }
+
+            //配列の内容を画面へセット
+            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
             return true;
         }
@@ -548,16 +585,16 @@ namespace WMasterTouroku_HanbaiTankaTennic
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
             {
                 //m_dataCntが更新有効行数
-                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].SKUCD) == false)
+                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].StartChangeDate) == false)
                 {
                     for (int CL = (int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate; CL < (int)ClsGridHanbaiTankaTennic.ColNO.COUNT; CL++)
                     {
-                        //if (CheckGrid(CL, RW) == false)
-                        //{
-                        //Focusセット処理
-                        ERR_FOCUS_GRID_SUB(CL, RW);
-                        return;
-                        //}
+                        if (CheckGrid(CL, RW) == false)
+                        {
+                            //Focusセット処理
+                            ERR_FOCUS_GRID_SUB(CL, RW);
+                            return;
+                        }
                     }
                 }
             }
@@ -890,7 +927,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                         {
                             SKUCD = dr["SKUCD"].ToString(),
                         };
-                        var dt_Exist = spb.M_SKUPrice_SelectData(mse);
+                        var dt_Exist = spb.M_SKUPrice_DataSelect(mse);
                         if (dt_Exist.Rows.Count > 0)
                         {
                             return null;
@@ -1101,15 +1138,16 @@ namespace WMasterTouroku_HanbaiTankaTennic
             }
             else
             {
-                bbl.ShowMessage("E128");
+                bbl.ShowMessage("E133");
                 txtStartDateFrom.Focus();
             }
         }
-        private void TextLeave()
+        private void CustomEvent()
         {
-            Add_Leave(new Control[] { panel10_1, panel10_2, panel8, panel3, panel17, panel4, panel65, panel89, panel113, panel137 });
+            Add(new Control[] { panel10_1, panel10_2, panel8, panel3, panel17, panel4, panel65, panel89, panel113, panel137 });
+            
         }
-        private void Add_Leave(Control[] cont)
+        private void Add(Control[] cont)
         {
             foreach (var ctr in cont)
             {
@@ -1119,11 +1157,15 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     if (c is CKM_TextBox ct)
                     {
                         ct.Leave += Ct_Leave;
-                        //ct.Enter += keyD;
+                        ct.Validated += Validated;
                         //ct.GotFocus += Ct_GotFocus;
                     }
                 }
             }
+        }
+        private void Validated(object sender, EventArgs e)
+        {
+            GridControl_Validated(sender,e);
         }
         private void Ct_GotFocus(object sender, EventArgs e)
         {
@@ -1173,38 +1215,38 @@ namespace WMasterTouroku_HanbaiTankaTennic
             {
                 if (ct.Name.Contains("IMT_STADT_"))
                 {
-                    if(!bbl.CheckDate(ct.Text))
+                    if (!bbl.CheckDate(ct.Text))
                     {
                         bbl.ShowMessage("E103");
                         ct.Focus();
                     }
-                    if (ActiveControl is CKM_Button cb && cb.Name == "BtnF1")
+                    if (ActiveControl is CKM_Button cb && cb.Name.Contains("Btn"))
                     {
                         return;
                     }
                     var SKUCD = this.Controls.Find("IMT_ITMCD_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
                     M_SKUPrice_Entity mse = new M_SKUPrice_Entity
                     {
-                        SKUCD=SKUCD.Text,
-                        StartChangeDate =ct.Text
+                        SKUCD = SKUCD.Text,
+                        StartChangeDate = ct.Text
                     };
-                    DataTable dt = spb.M_SKUPrice_SelectData(mse);
-                    if(dt.Rows.Count>0)
+                    DataTable dt = spb.M_SKUPrice_DataSelect(mse);
+                    if (dt.Rows.Count > 0)
                     {
                         bbl.ShowMessage("E105");
-                        IsEntered = true;
-                        //// ct.Focus();
+                       // IsEntered = true;
+                         ct.Focus();
                         return;
                     }
                     //IsEntered = false;
                 }
                 if (ct.Name.Contains("IMT_ENDDT_"))
                 {
-                    if(!bbl.CheckDate(ct.Text))
-                    {
-                        bbl.ShowMessage("E103");
-                        ct.Focus();
-                    }
+                    //if (!bbl.CheckDate(ct.Text))
+                    //{
+                    //    bbl.ShowMessage("E103");
+                    //    ct.Focus();
+                    //}
                     var StartDate = this.Controls.Find("IMT_STADT_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
                     if (string.Compare(StartDate.Text, ct.Text) == 1)
                     {
@@ -1359,7 +1401,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
 
                 // 背景色
-             //   w_ActCtl.BackColor = mGrid.F_GetBackColor_MK((int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate, w_Row);
+                //   w_ActCtl.BackColor = mGrid.F_GetBackColor_MK((int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate, w_Row);
 
             }
             catch (Exception ex)
@@ -1370,36 +1412,157 @@ namespace WMasterTouroku_HanbaiTankaTennic
         }
         private void GridControl_KeyDown(object sender, KeyEventArgs e)
         {
-            Control c = sender as Control;
-            if (c is CKM_TextBox ct && e.KeyCode == (Keys.Enter | Keys.Tab))
+            try
             {
-                if (ct.Name.Contains("IMT_STADT_"))
+                if ((e.KeyCode == Keys.Return) &&
+                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
                 {
-                    SetMultiColNo(dt);
-                    for (int i = 0; i < dt.Rows.Count; i++)
+                    int w_Row;
+                    CKM_Controls.CKM_TextBox w_ActCtl;
+
+                    w_ActCtl = (CKM_Controls.CKM_TextBox)sender;
+                    w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
+                    int CL = (int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate;
+
+                    string ctlName = w_ActCtl.Name.Substring(0, w_ActCtl.Name.LastIndexOf("_"));
+
+                    bool lastCell = false;
+                    switch (ctlName)
                     {
-                        var StartDate1 = dt.Rows[i]["StartDate"].ToString();
-                        var StartDate = this.Controls.Find("IMT_STADT_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
-                        if (StartDate.Text == StartDate1.ToString())
-                        {
-                            bbl.ShowMessage("Date exit!!!");
-                        }
+                        case "IMT_STADT":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate;
+                            break;
+                        case "IMT_ENDDT":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.EndChangeDate;
+                            break;
+                        case "IMN_UNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.UnitPrice;
+                            break;
+                        case "IMN_SSUNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.StandardSalesUnitPrice;
+                            break;
+                        case "IMN_R1UNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.Rank1UnitPrice;
+                            break;
+                        case "IMN_R2UNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.Rank2UnitPrice;
+                            break;
+                        case "IMN_R3UNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.Rank3UnitPrice;
+                            break;
+                        case "IMN_R4UNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.Rank4UnitPrice;
+                            break;
+                        case "IMN_R5UNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.Rank5UnitPrice;
+                            break;
                     }
-                    //var IsExist = true; ///(ct.Text) // bll.bdfbedf 
+                    int w_CtlRow = w_Row - Vsb_Mei_0.Value;
+                    if (mGrid.g_MK_Ctrl[CL, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                    {
+                        if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[CL, w_CtlRow].CellCtl).isMaxLengthErr)
+                            return;
+                    }
+                    bool changeFlg = false;
+                    switch (CL)
+                    {
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate:
+                            if (!mGrid.g_DArray[w_Row].StartChangeDate.Equals(w_ActCtl.Text))
+                            {
+                                changeFlg = true;
+                            }
+                            break;
+
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.EndChangeDate:
+                            if (!mGrid.g_DArray[w_Row].EndChangeDate.Equals(w_ActCtl.Text))
+                            {
+                                changeFlg = true;
+                            }
+                            break;
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.UnitPrice:
+                            if (!mGrid.g_DArray[w_Row].UnitPrice.Equals(w_ActCtl.Text))
+                            {
+                                changeFlg = true;
+                            }
+                            break;
+
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.StandardSalesUnitPrice:
+                            if (!mGrid.g_DArray[w_Row].StandardSalesUnitPrice.Equals(w_ActCtl.Text))
+                            {
+                                changeFlg = true;
+                            }
+                            break;
+
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank1UnitPrice:
+                            if (!mGrid.g_DArray[w_Row].Rank1UnitPrice.Equals(w_ActCtl.Text))
+                            {
+                                changeFlg = true;
+                            }
+                            break;
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank2UnitPrice:
+                            if (!mGrid.g_DArray[w_Row].Rank2UnitPrice.Equals(w_ActCtl.Text))
+                            {
+                                changeFlg = true;
+                            }
+                            break;
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank3UnitPrice:
+                            if (!mGrid.g_DArray[w_Row].Rank3UnitPrice.Equals(w_ActCtl.Text))
+                            {
+                                changeFlg = true;
+                            }
+                            break;
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank4UnitPrice:
+                            if (!mGrid.g_DArray[w_Row].Rank4UnitPrice.Equals(w_ActCtl.Text))
+                            {
+                                changeFlg = true;
+                            }
+                            break;
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank5UnitPrice:
+                            if (!mGrid.g_DArray[w_Row].Rank5UnitPrice.Equals(w_ActCtl.Text))
+                            {
+                                changeFlg = true;
+                            }
+                            break;
+                    }
+                    if (changeFlg)
+                    {
+                        decimal d;
+                        decimal zei;
+                        string ymd = mGrid.g_DArray[w_Row].StartChangeDate;
+                        int taxRateFlg = mGrid.g_DArray[w_Row].DeleteFlg;
+                        switch (CL)
+                        {
+                            //(税抜)⇒(税込)
+                            case (int)ClsGridHanbaiTankaTennic.ColNO.UnitPrice:
+                                if (Decimal.TryParse(mGrid.g_DArray[w_Row].UnitPrice, out d))
+                                    mGrid.g_DArray[w_Row].UnitPrice = string.Format("{0:#,##0}", bbl.GetZeikomiKingaku(d, taxRateFlg, out zei, ymd));
+                                else
+                                    mGrid.g_DArray[w_Row].UnitPrice = "0";
+                                break;
+
+                        }
+                        }
+                        if (CheckGrid(CL, w_Row) == false)
+                    {
+                        //Focusセット処理
+                        w_ActCtl.Focus();
+                        return;
+                    }
+                    if (lastCell)
+                    {
+                        w_ActCtl.Focus();
+                        return;
+                    }
+
+                    this.ProcessTabKey(!e.Shift);
                 }
             }
-                //    else if (ct.Name.Contains("IMT_ENDDT_"))
-                //    {
-                //        // Button btn = PanelFooter.;
-                //        var StartDate = this.Controls.Find("IMT_STADT_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
-                //        if (string.Compare(StartDate.Text,  ct.Text) == 1)
-                //        {
-                //            bbl.ShowMessage("E104");
-                //        }
-                //    }
-                //}
-                //mGrid.S_DispToArray(Vsb_Mei_0.Value);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
+            mGrid.S_DispToArray(Vsb_Mei_0.Value);
+        }
         private void KeyControl_Enter(object sender, EventArgs e)
         {
             try
@@ -1748,7 +1911,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 return;
             }
         }
-        
         private void Vsb_Mei_0_ValueChanged(object sender, System.EventArgs e)
         {
             int w_Dest = 0;
@@ -1893,31 +2055,21 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 switch (OperationMode)
                 {
                     case EOperationMode.INSERT:
-                        //SetMultiColNo(dt);
-                        //var EndDate = dt.Rows[0]["EndDate"].ToString();
-                        //if (EndDate.Length==0)
-                        //{
-                        //    bbl.ShowMessage("Date Exist!!");
-                        //    IMT_ENDDT_0.Focus();
-                        //}
-                        //else
-                        //{
-                            InsertUpdate(1);
+                            Insert(1);
                             InitScr();
-                        //}
                         break;
                     case EOperationMode.UPDATE:
-                        InsertUpdate(2);
+                        UpdateDelete(2);
                         InitScr();
                         break;
                     case EOperationMode.DELETE: 
-                        InsertUpdate(3);
+                        UpdateDelete(3);
                         InitScr();
                         break;
                 }
             }
         }
-        private void InsertUpdate(int mode)
+        private void Insert(int mode)
         {
             var dt = GetdatafromArray();
             if (dt == null)
@@ -1927,12 +2079,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 return;
             }
             string Xml = spb.DataTableToXml(dt);
-           // string StartDate = dt.Rows[0]["StartChangeDate"].ToString();
-            //if (dt.Rows.Count >= StartDate.Length)
-            //{
-            //    bbl.ShowMessage("Date Exist!!");
-            //    IMT_ENDDT_0.Focus();
-            //}
             if (spb.M_SKUPrice_Insert_Update(mse, Xml, mode))
             {
                  spb.ShowMessage("I101");
@@ -1945,50 +2091,22 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 spb.ShowMessage("S001");
             }
         }
-        //protected bool RequireCheck(Control[] ctrl, TextBox txt = null)
-        //{
-        //    this.txt = txt;
-        //    foreach (Control c in ctrl)
-        //    {
-        //        if (c is CKM_TextBox)
-        //        {
-        //            if (txt == null)
-        //            {
-        //                var StartDate = dt.Rows[0]["StartChangeDate"].ToString();
-        //                if(c.Text==StartDate.ToString())
-        //                {
-        //                    bbl.ShowMessage("Date Exist!!");
-        //                    c.Focus();
-        //                }
-        //            }
-        //        }
-        //    }
-        //    return true;
-        //}
-        //protected void Check_Textbox()
-        //{
-        //    try
-        //    {
-        //        previousCtrl = this.ActiveControl;
-        //        if (previousCtrl is CKM_TextBox ct)
-        //        {
-        //            if (ct.Name.Contains("IMT_STADT_"))
-        //            {
-        //                var StartDate = dt.Rows[0]["StartChangeDate"].ToString();
-        //                if (previousCtrl.GetType().BaseType.Name.Contains("StartDate"))
-        //                {
-        //                    bbl.ShowMessage("Date Exist!!");
-        //                    previousCtrl.Focus();
-        //                }
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //    }
-        //}
-       
+        private void UpdateDelete(int mode)
+        {
+            var dt = GetdatafromArray();
+            string Xml = spb.DataTableToXml(dt);
+            if (spb.M_SKUPrice_Insert_Update(mse, Xml, mode))
+            {
+                spb.ShowMessage("I101");
+                Clear(pnl_Header);
+                Clear(pnl_Body);
+                ChangeOperationMode(OperationMode);
+            }
+            else
+            {
+                spb.ShowMessage("S001");
+            }
+        }
         private void ckM_TextBox68_TextChanged(object sender, EventArgs e)
         {
 

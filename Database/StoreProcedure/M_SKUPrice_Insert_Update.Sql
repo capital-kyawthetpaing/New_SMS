@@ -125,7 +125,7 @@ update msk  set
 	msk.TankaCD = tp.TankaCD and
 	msk.AdminNo = tp.AdminNo and
 	msk.StoreCD= tp.StoreCD and
-	msk.SKUCD= tp.SKUCD 
+	msk.ChangeDate= tp.StartChangeDate  
 
 	
 	End
