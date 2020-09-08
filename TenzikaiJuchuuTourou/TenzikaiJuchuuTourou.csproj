@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClsGridTenjikai.cs" />
     <Compile Include="TenzikaiJuchuuTourou.cs">
       <SubType>Form</SubType>
     </Compile>
