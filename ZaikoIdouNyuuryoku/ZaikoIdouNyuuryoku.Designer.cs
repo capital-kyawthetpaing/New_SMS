@@ -3425,11 +3425,11 @@
             this.ckM_Label11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label11.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label11.Location = new System.Drawing.Point(104, 307);
+            this.ckM_Label11.Location = new System.Drawing.Point(143, 307);
             this.ckM_Label11.Name = "ckM_Label11";
-            this.ckM_Label11.Size = new System.Drawing.Size(70, 12);
+            this.ckM_Label11.Size = new System.Drawing.Size(31, 12);
             this.ckM_Label11.TabIndex = 735;
-            this.ckM_Label11.Text = "移動元棚番";
+            this.ckM_Label11.Text = "棚番";
             this.ckM_Label11.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 

@@ -221,7 +221,7 @@ namespace ZaikoYoteiHyou
                 DateTime firstday = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
                 firstday.AddDays(-1).ToString("dd/MM/yyyy");
 
-                string Text = txtTargetDateTo.Text;
+                string Text = txtTargetDateTo.Text.ToString();
                 if(!string.IsNullOrWhiteSpace(Text))
                 {
                     string[] p = Text.Split('/');
