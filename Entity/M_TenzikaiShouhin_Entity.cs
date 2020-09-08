@@ -28,6 +28,8 @@ namespace Entity
         public string NewREndDate { get; set; }
         public string LastCStartDate { get; set; }
         public string LastCEndDate { get; set; }
+        public string HanbaiYoteiDateMonth { get; set; }
+        public string HanbaiYoteiDate { get; set; }
         public string InsertOperator { get; set; }
     }
 }

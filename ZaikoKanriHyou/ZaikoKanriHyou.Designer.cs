@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelDetail = new System.Windows.Forms.Panel();
+            this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.scMakerShohinCD = new Search.CKM_SearchControl();
             this.rdoProductCD = new CKM_Controls.CKM_RadioButton();
             this.rdoITEM = new CKM_Controls.CKM_RadioButton();
@@ -63,6 +64,7 @@
             // 
             // panelDetail
             // 
+            this.panelDetail.Controls.Add(this.ckM_Label8);
             this.panelDetail.Controls.Add(this.scMakerShohinCD);
             this.panelDetail.Controls.Add(this.rdoProductCD);
             this.panelDetail.Controls.Add(this.rdoITEM);
@@ -86,6 +88,23 @@
             this.panelDetail.Size = new System.Drawing.Size(1713, 889);
             this.panelDetail.TabIndex = 13;
             // 
+            // ckM_Label8
+            // 
+            this.ckM_Label8.AutoSize = true;
+            this.ckM_Label8.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label8.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label8.DefaultlabelSize = true;
+            this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.ckM_Label8.Location = new System.Drawing.Point(542, 299);
+            this.ckM_Label8.Name = "ckM_Label8";
+            this.ckM_Label8.Size = new System.Drawing.Size(397, 12);
+            this.ckM_Label8.TabIndex = 17;
+            this.ckM_Label8.Text = "その商品と同じサイト商品番号(メーカー商品CD)の商品も印字する";
+            this.ckM_Label8.Text_Color = CKM_Controls.CKM_Label.CKM_Color.DarkGreen;
+            this.ckM_Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // scMakerShohinCD
             // 
             this.scMakerShohinCD.AutoSize = true;
@@ -97,6 +116,7 @@
             this.scMakerShohinCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scMakerShohinCD.DataCheck = false;
             this.scMakerShohinCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scMakerShohinCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scMakerShohinCD.IsCopy = false;
             this.scMakerShohinCD.LabelText = "";
             this.scMakerShohinCD.LabelVisible = false;
@@ -154,9 +174,10 @@
             this.txtSKUName.AllowMinus = false;
             this.txtSKUName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSKUName.BackColor = System.Drawing.Color.White;
+            this.txtSKUName.BorderColor = false;
             this.txtSKUName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSKUName.ClientColor = System.Drawing.Color.White;
-            this.txtSKUName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtSKUName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtSKUName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtSKUName.DecimalPlace = 0;
             this.txtSKUName.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -164,6 +185,7 @@
             this.txtSKUName.IntegerPart = 0;
             this.txtSKUName.IsCorrectDate = true;
             this.txtSKUName.isEnterKeyDown = false;
+            this.txtSKUName.IsFirstTime = true;
             this.txtSKUName.isMaxLengthErr = false;
             this.txtSKUName.IsNumber = true;
             this.txtSKUName.IsShop = false;
@@ -175,6 +197,7 @@
             this.txtSKUName.Size = new System.Drawing.Size(500, 19);
             this.txtSKUName.TabIndex = 8;
             this.txtSKUName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSKUName.UseColorSizMode = false;
             // 
             // scJANCD
             // 
@@ -187,6 +210,7 @@
             this.scJANCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scJANCD.DataCheck = false;
             this.scJANCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scJANCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scJANCD.IsCopy = true;
             this.scJANCD.LabelText = "";
             this.scJANCD.LabelVisible = false;
@@ -216,6 +240,7 @@
             this.scSKUCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSKUCD.DataCheck = false;
             this.scSKUCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scSKUCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scSKUCD.IsCopy = false;
             this.scSKUCD.LabelText = "";
             this.scSKUCD.LabelVisible = false;
@@ -244,6 +269,7 @@
             this.scITEM.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scITEM.DataCheck = false;
             this.scITEM.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scITEM.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scITEM.IsCopy = true;
             this.scITEM.LabelText = "";
             this.scITEM.LabelVisible = false;
@@ -384,6 +410,7 @@
             this.txtTargetDate.AllowMinus = false;
             this.txtTargetDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTargetDate.BackColor = System.Drawing.Color.White;
+            this.txtTargetDate.BorderColor = false;
             this.txtTargetDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTargetDate.ClientColor = System.Drawing.Color.White;
             this.txtTargetDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -393,6 +420,7 @@
             this.txtTargetDate.IntegerPart = 0;
             this.txtTargetDate.IsCorrectDate = true;
             this.txtTargetDate.isEnterKeyDown = false;
+            this.txtTargetDate.IsFirstTime = true;
             this.txtTargetDate.isMaxLengthErr = false;
             this.txtTargetDate.IsNumber = true;
             this.txtTargetDate.IsShop = false;
@@ -405,6 +433,7 @@
             this.txtTargetDate.TabIndex = 1;
             this.txtTargetDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTargetDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTargetDate.UseColorSizMode = false;
             // 
             // ckM_Label1
             // 
@@ -464,6 +493,7 @@
         private CKM_Controls.CKM_RadioButton rdoITEM;
         private CKM_Controls.CKM_CheckBox chkRelatedPrinting;
         private Search.CKM_SearchControl scMakerShohinCD;
+        private CKM_Controls.CKM_Label ckM_Label8;
     }
 }
 
