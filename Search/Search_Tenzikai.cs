@@ -116,6 +116,14 @@ namespace Search
                     LModifiedDateTo.Focus();
                 }
             }
+            if (string.IsNullOrWhiteSpace(txtExhibitionName.Text) && string.IsNullOrWhiteSpace(scSupplierCDFrom.TxtCode.Text) && string.IsNullOrWhiteSpace(scSupplierCDTo.TxtCode.Text) && 
+                string.IsNullOrWhiteSpace(cbo_Year.Text) && string.IsNullOrWhiteSpace(cbo_Season.Text) && string.IsNullOrWhiteSpace(NRegistrationDateFrom.Text) && string.IsNullOrWhiteSpace(NRegistrationDateTo.Text) &&
+                string.IsNullOrWhiteSpace(LModifiedDateFrom.Text) && string.IsNullOrWhiteSpace(LModifiedDateTo.Text))
+            {
+                bbl.ShowMessage("E111");
+                txtExhibitionName.Focus();
+                return false;
+            }
             return true;
         }
         public override void FunctionProcess(int index)
@@ -124,6 +132,10 @@ namespace Search
             {
                 GetData();
             }
+        }
+        private void dgvSearch_Tenzikai_DoubleClick(object sender, EventArgs e)
+        {
+            GetData();
         }
         private void GetData()
         {
@@ -180,20 +192,15 @@ namespace Search
                 }
             }
         }
-        private void dgvSearch_Tenzikai_DoubleClick(object sender, EventArgs e)
-        {
-            GetData(); 
-        }
-
-        private void Search_Tenzikai_KeyUp(object sender, KeyEventArgs e)
-        {
-            MoveNextControl(e);
-        }
-
+       
         private void Search_Tenzikai_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F11)
                 F11();
+        }
+        private void Search_Tenzikai_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
         }
     }
 }

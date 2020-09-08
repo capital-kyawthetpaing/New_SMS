@@ -35,11 +35,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TB_Rate = new CKM_Controls.CKM_TextBox();
             this.BT_Apply = new CKM_Controls.CKM_Button();
             this.BT_DeseletAll = new CKM_Controls.CKM_Button();
             this.BT_SelectAll = new CKM_Controls.CKM_Button();
             this.BT_Display = new CKM_Controls.CKM_Button();
-            this.TB_Rate = new CKM_Controls.CKM_TextBox();
             this.LB_Rate = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.CB_Season = new CKM_Controls.CKM_ComboBox();
@@ -84,11 +84,11 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.TB_Rate);
             this.panel1.Controls.Add(this.BT_Apply);
             this.panel1.Controls.Add(this.BT_DeseletAll);
             this.panel1.Controls.Add(this.BT_SelectAll);
             this.panel1.Controls.Add(this.BT_Display);
-            this.panel1.Controls.Add(this.TB_Rate);
             this.panel1.Controls.Add(this.LB_Rate);
             this.panel1.Controls.Add(this.ckM_Label1);
             this.panel1.Controls.Add(this.CB_Season);
@@ -108,6 +108,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1690, 160);
             this.panel1.TabIndex = 100;
+            // 
+            // TB_Rate
+            // 
+            this.TB_Rate.AllowMinus = false;
+            this.TB_Rate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.TB_Rate.BackColor = System.Drawing.Color.White;
+            this.TB_Rate.BorderColor = false;
+            this.TB_Rate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_Rate.ClientColor = System.Drawing.SystemColors.Window;
+            this.TB_Rate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.TB_Rate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
+            this.TB_Rate.DecimalPlace = 2;
+            this.TB_Rate.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.TB_Rate.IntegerPart = 3;
+            this.TB_Rate.IsCorrectDate = true;
+            this.TB_Rate.isEnterKeyDown = false;
+            this.TB_Rate.IsFirstTime = true;
+            this.TB_Rate.isMaxLengthErr = false;
+            this.TB_Rate.IsNumber = true;
+            this.TB_Rate.IsShop = false;
+            this.TB_Rate.Length = 6;
+            this.TB_Rate.Location = new System.Drawing.Point(818, 127);
+            this.TB_Rate.MaxLength = 6;
+            this.TB_Rate.MoveNext = true;
+            this.TB_Rate.Name = "TB_Rate";
+            this.TB_Rate.Size = new System.Drawing.Size(78, 19);
+            this.TB_Rate.TabIndex = 73;
+            this.TB_Rate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TB_Rate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.TB_Rate.UseColorSizMode = false;
             // 
             // BT_Apply
             // 
@@ -184,36 +214,6 @@
             this.BT_Display.Text = "表示";
             this.BT_Display.UseVisualStyleBackColor = false;
             this.BT_Display.Click += new System.EventHandler(this.BT_Display_Click);
-            // 
-            // TB_Rate
-            // 
-            this.TB_Rate.AllowMinus = false;
-            this.TB_Rate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.TB_Rate.BackColor = System.Drawing.Color.White;
-            this.TB_Rate.BorderColor = false;
-            this.TB_Rate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_Rate.ClientColor = System.Drawing.SystemColors.Window;
-            this.TB_Rate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.TB_Rate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.TB_Rate.DecimalPlace = 2;
-            this.TB_Rate.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.TB_Rate.IntegerPart = 3;
-            this.TB_Rate.IsCorrectDate = true;
-            this.TB_Rate.isEnterKeyDown = false;
-            this.TB_Rate.IsFirstTime = true;
-            this.TB_Rate.isMaxLengthErr = false;
-            this.TB_Rate.IsNumber = true;
-            this.TB_Rate.IsShop = false;
-            this.TB_Rate.Length = 6;
-            this.TB_Rate.Location = new System.Drawing.Point(818, 128);
-            this.TB_Rate.MaxLength = 6;
-            this.TB_Rate.MoveNext = true;
-            this.TB_Rate.Name = "TB_Rate";
-            this.TB_Rate.Size = new System.Drawing.Size(70, 19);
-            this.TB_Rate.TabIndex = 11;
-            this.TB_Rate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.TB_Rate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.TB_Rate.UseColorSizMode = false;
             // 
             // LB_Rate
             // 
@@ -714,7 +714,6 @@
         private CKM_Controls.CKM_Button BT_DeseletAll;
         private CKM_Controls.CKM_Button BT_SelectAll;
         private CKM_Controls.CKM_Button BT_Display;
-        private CKM_Controls.CKM_TextBox TB_Rate;
         private CKM_Controls.CKM_Label LB_Rate;
         private CKM_Controls.CKM_GridView GV_Tenzaishohin;
         private System.Windows.Forms.Panel panel2;
@@ -726,5 +725,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Year;
         private System.Windows.Forms.DataGridViewTextBoxColumn Season;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rate;
+        private CKM_Controls.CKM_TextBox TB_Rate;
     }
 }

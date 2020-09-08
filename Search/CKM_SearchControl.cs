@@ -274,7 +274,8 @@ namespace Search
             支払処理,//---2019-12-19
             支払番号検索 ,//2020-01-27
             プログラムID, //SES
-            商品分類//SES
+            商品分類,//SES
+            展示会名//Added by SES
         }
         [Browsable(true)]
         [Category("CKM Properties")]
@@ -689,6 +690,12 @@ namespace Search
                     TxtCode.MaxLength = 6;
                     TxtCode.Width = 100;
                     lblName.Width = 280;
+                    break;
+
+                case SearchType.展示会名://ses 9/7/2020
+                    TxtCode.MaxLength = 40;
+                    TxtCode.Width = 400;
+                    lblName.Width = 180;
                     break;
             }
             //}
@@ -1752,6 +1759,17 @@ namespace Search
                     }
                     break;
 
+                case SearchType.展示会名://SES added
+                    using (Search_Tenzikai frmTenzikai = new Search_Tenzikai(changedate))
+                    {
+                        frmTenzikai.ShowDialog();
+                        if (!frmTenzikai.flgCancel)
+                        {
+                            txtCode.Text = frmTenzikai.TenzikaiName;
+                            CheckBasedFormPanel();
+                        }
+                    }
+                    break;
             }
 
 
