@@ -320,88 +320,11 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
         {
             MoveNextControl(e);
         }
-
-        private void GV_Tenzaishohin_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //if (e.RowIndex != -1)
-            //{
-            //    if (GV_Tenzaishohin.Columns[e.ColumnIndex].Name == "Rate")
-            //    {
-            //        string rate = GV_Tenzaishohin.Rows[e.RowIndex].Cells["Rate"].Value.ToString();
-            //        if (!String.IsNullOrEmpty(rate))
-            //        {
-            //            if (!rate.Contains("."))
-            //            {
-            //                var isNumeric = int.TryParse(rate, out int n);
-            //                if (isNumeric)
-            //                {
-            //                    if (rate.Length > 3)
-            //                    {
-            //                        MessageBox.Show("enter valid no");
-            //                    }
-            //                }
-            //            }
-            //            else
-            //            {
-            //                int x = rate.IndexOf('.');
-            //                int count = rate.Count(f => f == '.');
-            //                string charre = rate.Remove(x, count);
-            //                var isNumeric = int.TryParse(charre, out int n);
-            //                if (count != 1 || x >= 4)
-            //                {
-            //                    MessageBox.Show("enter valid no");
-
-            //                }
-            //            }
-            //        }
-            //    }
-            //} 
-
-        }
-
-        private void GV_Tenzaishohin_CellValidated(object sender, DataGridViewCellEventArgs e)
-        {
-
-            //if (GV_Tenzaishohin.Columns[e.ColumnIndex].Name == "Rate")
-            //{
-            //    string rate = GV_Tenzaishohin.Rows[e.RowIndex].Cells["Rate"].Value.ToString();
-            //    if (!String.IsNullOrEmpty(rate))
-            //    {
-            //        if (!rate.Contains("."))
-            //        {
-            //            var isNumeric = int.TryParse(rate, out int n);
-            //            if (isNumeric)
-            //            {
-            //                if (rate.Length > 3)
-            //                {
-            //                    MessageBox.Show("enter valid no");
-            //                    GV_Tenzaishohin.RefreshEdit();
-
-            //                }
-            //            }
-            //        }
-            //        else
-            //        {
-            //            int x = rate.IndexOf('.');
-            //            int count = rate.Count(f => f == '.');
-            //            string charre = rate.Remove(x, count);
-            //            var isNumeric = int.TryParse(charre, out int n);
-            //            if (count != 1 || x >= 4)
-            //            {
-            //                MessageBox.Show("enter valid no");
-            //                GV_Tenzaishohin.RefreshEdit();
-
-            //            }
-            //        }
-            //    }
-            //} 
-
-        }
-
+       
         private void GV_Tenzaishohin_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-            if(GV_Tenzaishohin.Columns[e.ColumnIndex].Name == "Rate")
-             {
+            if (GV_Tenzaishohin.Columns[e.ColumnIndex].Name == "Rate")
+            {
                 string rate = GV_Tenzaishohin.Rows[e.RowIndex].Cells["Rate"].EditedFormattedValue.ToString();
                 if (!String.IsNullOrEmpty(rate))
                 {
@@ -416,6 +339,11 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                                 GV_Tenzaishohin.RefreshEdit();
                             }
                         }
+                        else
+                        {
+                            MessageBox.Show("enter valid no");
+                            GV_Tenzaishohin.RefreshEdit();
+                        }
                     }
                     else
                     {
@@ -423,23 +351,28 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                         int count = rate.Count(f => f == '.');
                         string charre = rate.Remove(x, count);
                         var isNumeric = int.TryParse(charre, out int n);
-                        if (count != 1 || x >= 4)
+                        if(isNumeric)
+                        {
+                            if (count != 1 || x >= 4)
+                            {
+                                MessageBox.Show("enter valid no");
+                                GV_Tenzaishohin.RefreshEdit();
+                            }
+                        }
+                        else
                         {
                             MessageBox.Show("enter valid no");
                             GV_Tenzaishohin.RefreshEdit();
                         }
+                       
                     }
                 }
             }
+
         }
 
         private void GV_Tenzaishohin_Paint(object sender, PaintEventArgs e)
         {
-            //dgvPaymentClose.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dgvPaymentClose.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dgvPaymentClose.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dgvPaymentClose.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dgvPaymentClose.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             string[] monthes = { "ブランド", "せグメト", "", "" };
             for (int j = 1; j < 5;)
             {
@@ -462,7 +395,5 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 j += 2;
             }
         }
-
-      
     }
 }
