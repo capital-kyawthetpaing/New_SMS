@@ -1877,6 +1877,8 @@ namespace ZaikoIdouIraiNyuuryoku
                         for (int i = (int)EIndex.JANCD; i <= (int)EIndex.RemarksInStore; i++)
                             if (CheckDetail(i, false) == false)
                             {
+                                //Ｅ２５８
+                                bbl.ShowMessage("E258", (RW+1).ToString());
                                 detailControls[i].Focus();
                                 return;
                             }
