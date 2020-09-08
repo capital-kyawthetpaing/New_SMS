@@ -33,6 +33,8 @@ namespace Search
         {
             BindCombo();
             SetRequiredField();
+            scSupplierCDFrom.NameWidth = 0;
+            scSupplierCDTo.NameWidth = 0;
             txtDate.Focus();
         }
         public void BindCombo()
