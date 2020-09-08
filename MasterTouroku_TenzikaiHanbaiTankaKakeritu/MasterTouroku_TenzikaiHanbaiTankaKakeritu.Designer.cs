@@ -57,6 +57,7 @@
             this.Lb_brand = new CKM_Controls.CKM_Label();
             this.LB_tanka = new CKM_Controls.CKM_Label();
             this.GV_Tenzaishohin = new CKM_Controls.CKM_GridView();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.CheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.BrandCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,7 +66,6 @@
             this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Season = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_Tenzaishohin)).BeginInit();
             this.panel2.SuspendLayout();
@@ -594,6 +594,14 @@
             this.GV_Tenzaishohin.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.GV_Tenzaishohin_DataError);
             this.GV_Tenzaishohin.Paint += new System.Windows.Forms.PaintEventHandler(this.GV_Tenzaishohin_Paint);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.GV_Tenzaishohin);
+            this.panel2.Location = new System.Drawing.Point(1, 212);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1690, 550);
+            this.panel2.TabIndex = 101;
+            // 
             // CheckBox
             // 
             this.CheckBox.FalseValue = "0";
@@ -654,20 +662,12 @@
             // 
             this.Rate.DataPropertyName = "Rate";
             dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
+            dataGridViewCellStyle4.NullValue = "0";
             this.Rate.DefaultCellStyle = dataGridViewCellStyle4;
             this.Rate.HeaderText = "掛率";
             this.Rate.MaxInputLength = 6;
             this.Rate.Name = "Rate";
             this.Rate.Width = 90;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.GV_Tenzaishohin);
-            this.panel2.Location = new System.Drawing.Point(1, 212);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1690, 550);
-            this.panel2.TabIndex = 101;
             // 
             // FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu
             // 
@@ -724,6 +724,7 @@
         private CKM_Controls.CKM_Label LB_Rate;
         private CKM_Controls.CKM_GridView GV_Tenzaishohin;
         private System.Windows.Forms.Panel panel2;
+        private CKM_Controls.CKM_TextBox TB_Rate;
         private System.Windows.Forms.DataGridViewCheckBoxColumn CheckBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrandCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrandName;
@@ -732,6 +733,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Year;
         private System.Windows.Forms.DataGridViewTextBoxColumn Season;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rate;
-        private CKM_Controls.CKM_TextBox TB_Rate;
     }
 }
