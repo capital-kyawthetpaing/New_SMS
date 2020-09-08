@@ -36,10 +36,25 @@
     <Reference Include="closedXML">
       <HintPath>E:\New Project\New_SMS\bin\Debug\closedXML.dll</HintPath>
     </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Search\RequiredDLL\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ElencySolutions.CsvHelper">
+      <HintPath>..\Search\RequiredDLL\ElencySolutions.CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader">
+      <HintPath>..\Search\RequiredDLL\ExcelDataReader.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="OFFICE, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\office\15.0.0.0__71e9bce111e9429c\OFFICE.DLL</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
