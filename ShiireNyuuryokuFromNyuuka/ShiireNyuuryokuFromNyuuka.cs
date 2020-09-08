@@ -3161,6 +3161,7 @@ namespace ShiireNyuuryokuFromNyuuka
                 //Offの時、仕入数以降、入力不可
                 ChangeBackColor(w_Row);
                 mGrid.g_DArray[w_Row].PurchaseSu = "0";
+                mGrid.g_DArray[w_Row].PurchaseGaku = "0";
                 CheckGrid((int)ClsGridShiire.ColNO.PurchaseSu, w_Row);
             }
 
