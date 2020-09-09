@@ -16,6 +16,7 @@ namespace BL
         public SiiresakiZaikoYoteiHyou_BL()
         {
             dmpdl = new D_MonthlyPurchase_DL();
+            mscdl = new M_StoreClose_DL();
         }
         public DataTable RPC_SiiresakiZaikoYoteiHyou(D_MonthlyPurchase_Entity dmpe)
         {
