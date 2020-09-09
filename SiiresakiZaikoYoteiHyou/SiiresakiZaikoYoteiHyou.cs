@@ -49,7 +49,8 @@ namespace SiiresakiZaikoYoteiHyou
             txtTargetDateTo.Text = DateTime.Now.ToString("yyyy/MM");
             txtTargetDateTo.Focus();
         }
-        private void SetRequiredField()
+        
+            private void SetRequiredField()
         {
             txtTargetDateTo.Require(true);
             cboStore.Require(true);
