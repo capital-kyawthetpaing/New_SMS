@@ -83,6 +83,8 @@ namespace ZaikoKanriHyou
         {
             if (!RequireCheck(new Control[] { txtTargetDate}))
                 return false;
+            if (!txtTargetDate.YearMonthCheck())
+                return false;
             if ((chkRelatedPrinting.Checked == true))
             {
                 if (!((rdoITEM.Checked == true) || (rdoProductCD.Checked == true)))
@@ -186,7 +188,7 @@ namespace ZaikoKanriHyou
                         {
                             case EPrintMode.DIRECT:
                                 DResult = bbl.ShowMessage("Q201");
-                                if (DResult == DialogResult.Cancel)
+                                if (DResult == DialogResult.No)
                                 {
                                     return;
                                 }
