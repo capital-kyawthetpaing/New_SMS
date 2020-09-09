@@ -533,7 +533,7 @@ namespace PickingList
                     return false;
                 }
             }
-            if (chkReissued1.Checked==true)
+            if (chkReissued1.Checked==true && !string.IsNullOrWhiteSpace(txtDateTo1.Text))
                 if (!ScPickingNo1.IsExists(2))
                 {
                     bbl.ShowMessage("E128");
@@ -595,7 +595,7 @@ namespace PickingList
 
             if (e.KeyCode == Keys.Enter)
             {
-                if (chkUnissued1.Checked == true)
+                if (chkUnissued1.Checked == true && !string.IsNullOrWhiteSpace(txtDateTo1.Text))
                 {
                     int result = txtDateFrom1.Text.CompareTo(txtDateTo1.Text);
                     if (result > 0)
