@@ -200,6 +200,11 @@ namespace SiiresakiZaikoYoteiHyou
                         }
                     }
                 }
+                else
+                {
+                    szybl.ShowMessage("E138");
+                    txtTargetDateTo.Focus();
+                }
             }
         }
 
