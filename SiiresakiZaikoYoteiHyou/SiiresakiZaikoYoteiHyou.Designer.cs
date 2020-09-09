@@ -125,6 +125,7 @@
             this.txtTargetDateTo.TabIndex = 3;
             this.txtTargetDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTargetDateTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTargetDateTo.UseColorSizMode = false;
             this.txtTargetDateTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTargetDateTo_KeyDown);
             // 
             // ckM_Label2
@@ -173,6 +174,7 @@
             this.txtTargetDateFrom.TabIndex = 1;
             this.txtTargetDateFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTargetDateFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTargetDateFrom.UseColorSizMode = false;
             // 
             // lblDate
             // 

@@ -177,7 +177,7 @@ namespace ZaikoKanriHyou
                 
                 if (dt.Rows.Count > 0)
                 {
-                   // CheckBeforeExport();
+                     CheckBeforeExport();
                     try
                     {
                         ZaikoKanriHyou_Report zkh_Report = new ZaikoKanriHyou_Report();
@@ -263,7 +263,7 @@ namespace ZaikoKanriHyou
             msce = new M_StoreClose_Entity();
             msce = GetStoreClose_Data();
 
-            if (zkhbl.M_StoreClose_Check(msce, "2").Rows.Count > 0)
+            if (zkhbl.M_StoreClose_Check(msce, "3").Rows.Count > 0)
             {
                 string ProgramID = "GetsujiZaikoKeisanSyori";
                 RunConsole(ProgramID, msce.FiscalYYYYMM);

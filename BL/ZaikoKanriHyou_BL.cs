@@ -17,6 +17,7 @@ namespace BL
         public ZaikoKanriHyou_BL()
         {
             zkhdl = new ZaikoKanriHyou_DL();
+            mscdl = new M_StoreClose_DL();
         }
         public DataTable RPC_ZaikoKanriHyou(D_Purchase_Details_Entity dpde,D_MonthlyStock_Entity dmse,int chk)
         {
