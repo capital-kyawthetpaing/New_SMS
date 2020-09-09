@@ -763,7 +763,7 @@ namespace ShukkaSiziTourokuFromJuchuu
                                                     }
                                                     else
                                                     {
-                                                        mGrid.g_MK_State[w_Col, w_Row].Cell_Color = mGrid.F_GetBackColor_MK(w_Col, w_Row);
+                                                        mGrid.g_MK_State[w_Col, w_Row].Cell_Color = System.Drawing.Color.Empty;
                                                     }
                                                 }
                                             }

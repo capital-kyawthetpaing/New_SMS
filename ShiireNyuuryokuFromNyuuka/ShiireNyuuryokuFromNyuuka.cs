@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 using BL;
@@ -1238,6 +1235,13 @@ namespace ShiireNyuuryokuFromNyuuka
             }
             else
             {
+                if (!dt.Rows[0]["ProcessKBN"].ToString().Equals("1"))
+                {
+                    bbl.ShowMessage("E259");
+                    Scr_Clr(1);
+                    previousCtrl.Focus();
+                    return false;
+                }
                 //DeleteDateTime 「削除された仕入番号」
                 if (!string.IsNullOrWhiteSpace(dt.Rows[0]["DeleteDateTime"].ToString()))
                 {
