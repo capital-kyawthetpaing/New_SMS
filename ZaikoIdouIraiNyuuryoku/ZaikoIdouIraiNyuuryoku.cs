@@ -1218,17 +1218,17 @@ namespace ZaikoIdouIraiNyuuryoku
 
         protected override void ExecDisp()
         {
-            if (mDetailOperationMode == EOperationMode.DELETE)
-            { //Ｑ１０２		
-                if (bbl.ShowMessage("Q102") != DialogResult.Yes)
-                    return;
-            }
-            else
-            {
-                //Ｑ１０１		
-                if (bbl.ShowMessage("Q101") != DialogResult.Yes)
-                    return;
-            }
+            //if (mDetailOperationMode == EOperationMode.DELETE)
+            //{ //Ｑ１０２		
+            //    if (bbl.ShowMessage("Q102") != DialogResult.Yes)
+            //        return;
+            //}
+            //else
+            //{
+            //    //Ｑ１０１		
+            //    if (bbl.ShowMessage("Q101") != DialogResult.Yes)
+            //        return;
+            //}
 
             //在庫移動明細編集エリアのエラーチェック
             for (int i = (int)EIndex.Gyono; i <= (int)EIndex.RemarksInStore; i++)
