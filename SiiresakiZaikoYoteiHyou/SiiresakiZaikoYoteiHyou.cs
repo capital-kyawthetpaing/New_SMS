@@ -230,7 +230,7 @@ namespace SiiresakiZaikoYoteiHyou
                 DataTable dt = szybl.RPC_SiiresakiZaikoYoteiHyou(dmpe);
                 if (dt.Rows.Count > 0)
                 {
-                    // CheckBeforeExport();
+                     CheckBeforeExport();
                     try
                     {
                         SiiresakiZaikoYoteiHyou_Report szy_Report = new SiiresakiZaikoYoteiHyou_Report();
