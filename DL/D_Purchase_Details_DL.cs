@@ -32,6 +32,7 @@ namespace DL
                    //{ "@ChkSumi", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpd_e.ChkSumi  } },
                   // { "@ChkMi", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpd_e.ChkMi  } },
                    { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpd_e.StaffCD  } },
+                   { "@StoreCD", new ValuePair { value1=SqlDbType.VarChar,value2=dpd_e.StoreCD} }
 
             };
             //return SelectData(dic, "ShiireShoukaiDetails_SelectAll");
