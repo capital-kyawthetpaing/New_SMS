@@ -49,7 +49,8 @@ namespace SiiresakiZaikoYoteiHyou
             txtTargetDateTo.Text = DateTime.Now.ToString("yyyy/MM");
             txtTargetDateTo.Focus();
         }
-        private void SetRequiredField()
+        
+            private void SetRequiredField()
         {
             txtTargetDateTo.Require(true);
             cboStore.Require(true);
@@ -229,7 +230,7 @@ namespace SiiresakiZaikoYoteiHyou
                 DataTable dt = szybl.RPC_SiiresakiZaikoYoteiHyou(dmpe);
                 if (dt.Rows.Count > 0)
                 {
-                    // CheckBeforeExport();
+                     CheckBeforeExport();
                     try
                     {
                         SiiresakiZaikoYoteiHyou_Report szy_Report = new SiiresakiZaikoYoteiHyou_Report();
