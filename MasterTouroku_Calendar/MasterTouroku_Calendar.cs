@@ -205,14 +205,17 @@ namespace MasterTouroku_Calendar
         {
             if (!string.IsNullOrWhiteSpace(txtMonth.Text))
             {
-                CreateDataTable();
-                mce = GetCalendarEntity();
-                if (mtcbl.M_Calendar_Insert_Update(mce))
+                if (txtMonth.YearMonthCheck())
                 {
-                    now = Convert.ToDateTime(txtMonth.Text.ToString() + "/01 00:00:00");
-                    lblMonth.Text = txtMonth.Text = now.AddDays(1).AddMonths(1).AddDays(-1).ToString("yyyy-mm-dd");
-                    BindGridCalendar(now.AddMonths(1));
-                    txtMonth.Focus();
+                    CreateDataTable();
+                    mce = GetCalendarEntity();
+                    if (mtcbl.M_Calendar_Insert_Update(mce))
+                    {
+                        now = Convert.ToDateTime(txtMonth.Text.ToString() + "/01 00:00:00");
+                        lblMonth.Text = txtMonth.Text = now.AddDays(1).AddMonths(1).AddDays(-1).ToString("yyyy-mm-dd");
+                        BindGridCalendar(now.AddMonths(1));
+                        txtMonth.Focus();
+                    }
                 }
 
             }
@@ -224,15 +227,18 @@ namespace MasterTouroku_Calendar
         {
             if (!string.IsNullOrWhiteSpace(txtMonth.Text))
             {
-                CreateDataTable();
-                mce = GetCalendarEntity();
-                if (mtcbl.M_Calendar_Insert_Update(mce))
+                if (txtMonth.YearMonthCheck())
                 {
+                    CreateDataTable();
+                    mce = GetCalendarEntity();
+                    if (mtcbl.M_Calendar_Insert_Update(mce))
+                    {
 
-                    now = Convert.ToDateTime(txtMonth.Text.ToString() + "/01 00:00:00");
-                    lblMonth.Text = txtMonth.Text = now.AddMonths(-1).ToString("yyyy-mm-dd");
-                    BindGridCalendar(now.AddMonths(-1));
-                    txtMonth.Focus();
+                        now = Convert.ToDateTime(txtMonth.Text.ToString() + "/01 00:00:00");
+                        lblMonth.Text = txtMonth.Text = now.AddMonths(-1).ToString("yyyy-mm-dd");
+                        BindGridCalendar(now.AddMonths(-1));
+                        txtMonth.Focus();
+                    }
                 }
 
             }
@@ -246,15 +252,20 @@ namespace MasterTouroku_Calendar
         {
             if (!string.IsNullOrWhiteSpace(txtMonth.Text))
             {
-                if (mtcbl.ShowMessage("Q101") == DialogResult.Yes)
+                
+                if(txtMonth.YearMonthCheck())
                 {
-                    CreateDataTable();
-                    mce = GetCalendarEntity();
-                    InsertUpdate();
+                    if (mtcbl.ShowMessage("Q101") == DialogResult.Yes)
+                    {
+                        CreateDataTable();
+                        mce = GetCalendarEntity();
+                        InsertUpdate();
 
+                    }
+                    else
+                        PreviousCtrl.Focus();
                 }
-                else
-                    PreviousCtrl.Focus();
+                
 
             }
             else

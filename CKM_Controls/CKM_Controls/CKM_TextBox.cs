@@ -523,7 +523,7 @@ namespace CKM_Controls
                 }
             }
         }
-        protected bool YearMonthCheck()  /// To be proceeded by PTK
+        public bool YearMonthCheck()  /// To be proceeded by PTK
         {
             Text = Text.Replace("/", "");
             if (Text == "0")
