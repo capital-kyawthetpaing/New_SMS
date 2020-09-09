@@ -9,6 +9,7 @@ namespace Entity
   public  class D_Purchase_Details_Entity : Base_Entity
     {
         public  string VendorCD { get; set; }
+        public string StoreCD { get; set; }
         public string JanCD { get; set; }
         public string SKUCD { get; set; }
         public string ItemCD { get; set; }

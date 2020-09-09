@@ -15,7 +15,7 @@ GO
 --       Create date:    2020.8.30
 --    ======================================================================
 
-CREATE TYPE [T_ShukkaF] AS TABLE(
+CREATE TYPE [T_ShukkaSFJ] AS TABLE(
     [InstructionNO]    [varchar](11) NULL,
     [InstructionRows]  [int] NULL,
     [InstructionKBN]   [tinyint] NULL,
@@ -34,7 +34,7 @@ GO
 
 CREATE PROCEDURE [PRC_ShukkaSiziTourokuFromJuchuu]
     (@StoreCD         varchar(4),
-    @Table            T_ShukkaF READONLY,
+    @Table            T_ShukkaSFJ READONLY,
     @Operator         varchar(10),
     @PC               varchar(30),
     @OutInstructionNO varchar(11) OUTPUT
@@ -64,7 +64,7 @@ BEGIN
               ,CONVERT(varchar, tbl.DeliveryPlanDate, 111) AS DeliveryPlanDate
               ,tbl.DeliveryPlanNO, tbl.DeliveryName, tbl.UntinFlg
         FROM @Table tbl
-        ORDER BY tbl.DeliveryPlanNO, tbl.DeliveryPlanDate, tbl.DeliveryName, tbl.GyoNO
+        ORDER BY tbl.DeliveryPlanDate, tbl.DeliveryName, tbl.GyoNO	--tbl.DeliveryPlanNO, 
         ;
     DECLARE @InstructionNO    varchar(11);
     DECLARE @InstructionRows  int;
@@ -74,8 +74,8 @@ BEGIN
     DECLARE @UntinFlg         tinyint;
     DECLARE @DeliveryPlanNO   varchar(11);
     DECLARE @DeliveryName     varchar(80);
-	DECLARE @OldKey           varchar(150);
-	
+    DECLARE @OldKey           varchar(150);
+    
     DECLARE @D_InstructionDetailsInserted TABLE (
          InstructionRows int
          ,ReserveNO varchar(11)
@@ -84,8 +84,8 @@ BEGIN
     --カーソルオープン
     OPEN CUR_AAA;
 
-	SET @OldKey = '';
-	
+    SET @OldKey = '';
+    
     --最初の1行目を取得して変数へ値をセット
     FETCH NEXT FROM CUR_AAA
     INTO @InstructionNO, @InstructionRows, @InstructionKBN, @GyoNO, @DeliveryPlanDate, @DeliveryPlanNO, @DeliveryName, @UntinFlg 
@@ -100,9 +100,9 @@ BEGIN
         	--該当の出荷指示伝票を削除し、関係するテーブルを更新する。その後同一出荷先/出荷予定日で出荷指示伝票を作成する。
             UPDATE [D_Stock]
                SET [ReserveSu] = [D_Stock].[ReserveSu] - (CASE ISNULL(W.SetKBN,0) WHEN 1 THEN W.ReserveSu*W.SetSu
-                                ELSE W.ReserveSu END)   
+                                                                                  ELSE W.ReserveSu END)   
                   ,[InstructionSu] = [D_Stock].[InstructionSu] + (CASE ISNULL(W.SetKBN,0) WHEN 1 THEN W.ReserveSu*W.SetSu
-                                ELSE W.ReserveSu END)   
+                                                                                          ELSE W.ReserveSu END)   
                   ,[UpdateOperator] = @Operator
                   ,[UpdateDateTime] = @SYSDATETIME
             FROM (SELECT A.StockNO
@@ -111,11 +111,11 @@ BEGIN
                     ,C.SetSu
                 FROM D_Reserve AS A
                 LEFT OUTER JOIN D_Stock AS B
-                ON B.StockNO = A.StockNO
-                AND B.DeleteDateTime IS NULL
+                  ON B.StockNO = A.StockNO
+                 AND B.DeleteDateTime IS NULL
                 LEFT OUTER JOIN F_SKU(@DeliveryPlanDate) AS C
-                ON C.AdminNO = A.AdminNO                   
-                AND C.DeleteFlg = 0
+                  ON C.AdminNO = A.AdminNO                   
+                 AND C.DeleteFlg = 0
                 
                 WHERE A.ShippingOrderNO = @InstructionNO
                 AND A.ShippingOrderRows = @InstructionRows
@@ -150,8 +150,8 @@ BEGIN
             
             UPDATE [D_JuchuuDetails]
                SET [DeliveryOrderSu] = B.ReserveSu * (-1)
-                  ,[UpdateOperator] = @Operator
-                  ,[UpdateDateTime] = @SYSDATETIME
+                  ,[UpdateOperator]  = @Operator
+                  ,[UpdateDateTime]  = @SYSDATETIME
             FROM D_Reserve AS B
             WHERE B.Number = D_JuchuuDetails.JuchuuNO
             AND B.NumberRows = D_JuchuuDetails.JuchuuRows
@@ -177,9 +177,9 @@ BEGIN
         --D_Instruction Insert時 "新規" D_Instruction Update時 "変更"
         SET @OperateModeNm = '新規';    
 
-        IF @OldKey <> @DeliveryPlanNO + @DeliveryPlanDate + @DeliveryName
+        IF @OldKey <> @DeliveryPlanDate + @DeliveryName
         BEGIN
-            SET @OldKey = @DeliveryPlanNO + @DeliveryPlanDate + @DeliveryName;
+            SET @OldKey = @DeliveryPlanDate + @DeliveryName;
     
             --【D_Instruction】Insert Table転送仕様Ａ 出荷指示
             --伝票番号採番
@@ -238,13 +238,13 @@ BEGIN
                ,@SYSDATE    --InstructionDate
                ,tbl.DeliveryPlanDate
                ,(SELECT top 1 DR.SoukoCD    --FromSoukoCD
-                           FROM  D_Reserve AS DR
-                           INNER JOIN D_DeliveryPlanDetails AS DM
-                           ON DM.DeliveryPlanNO = DD.DeliveryPlanNO
-                           WHERE DR.Number = DM.Number
-                            AND DR.NumberRows = DM.NumberRows
-                            AND DR.DeleteDateTime IS NULL
-                            ORDER BY DM.DeliveryPlanRows, DR.ReserveNO)
+                   FROM D_Reserve AS DR
+                  INNER JOIN D_DeliveryPlanDetails AS DM
+                     ON DM.DeliveryPlanNO = DD.DeliveryPlanNO
+                  WHERE DR.Number = DM.Number
+                    AND DR.NumberRows = DM.NumberRows
+                    AND DR.DeleteDateTime IS NULL
+                  ORDER BY DM.DeliveryPlanRows, DR.ReserveNO)
                ,DD.DeliveryName
                ,DD.DeliverySoukoCD
                ,DD.DeliveryZip1CD
@@ -273,11 +273,12 @@ BEGIN
                ,NULL --DeleteOperator
                ,NULL --DeleteDateTime
             FROM @Table AS tbl
-            INNER JOIN D_DeliveryPlan AS DD
-            ON DD.DeliveryPlanNO = tbl.DeliveryPlanNO   --※キャンセル分も作成
-            AND DD.DeliveryKBN = tbl.InstructionKBN
+           INNER JOIN D_DeliveryPlan AS DD
+              ON DD.DeliveryPlanNO = tbl.DeliveryPlanNO   --※キャンセル分も作成
+             AND DD.DeliveryKBN = tbl.InstructionKBN
 
-            WHERE tbl.DeliveryPlanNO = @DeliveryPlanNO  
+            WHERE tbl.DeliveryPlanNO = @DeliveryPlanNO
+            AND tbl.GyoNO = @GyoNO
             ;
             
             --【L_Log】Insert Table転送仕様Ｚ（処理モード：新規）処理履歴 
@@ -313,7 +314,7 @@ BEGIN
             OUTPUT INSERTED.InstructionRows, INSERTED.ReserveNO INTO @D_InstructionDetailsInserted(InstructionRows,ReserveNO)
             SELECT
                 @InstructionNO
-               ,ROW_NUMBER() OVER(ORDER BY DD.DeliveryPlanNO, DM.DeliveryPlanRows, DM.Number, DM.NumberRows)
+               ,ROW_NUMBER() OVER(ORDER BY tbl.GyoNO)	-- DD.DeliveryPlanNO, DM.DeliveryPlanRows, DM.Number, DM.NumberRows)
                ,DD.DeliveryKBN   --InstructionKBN
                ,DR.ReserveNO
                ,DR.SKUCD
@@ -329,22 +330,22 @@ BEGIN
                ,NULL --DeleteOperator
                ,NULL --DeleteDateTime
             FROM @Table AS tbl
-            INNER JOIN D_DeliveryPlan AS DD
-            ON DD.DeliveryPlanNO = tbl.DeliveryPlanNO   --※キャンセル分も作成
-            AND DD.DeliveryKBN = tbl.InstructionKBN
-            INNER JOIN D_DeliveryPlanDetails AS DM
-            ON DM.DeliveryPlanNO = tbl.DeliveryPlanNO
+           INNER JOIN D_DeliveryPlan AS DD
+              ON DD.DeliveryPlanNO = tbl.DeliveryPlanNO   --※キャンセル分も作成
+             AND DD.DeliveryKBN = tbl.InstructionKBN
+           INNER JOIN D_DeliveryPlanDetails AS DM
+              ON DM.DeliveryPlanNO = tbl.DeliveryPlanNO
             
             LEFT OUTER JOIN D_Reserve AS DR
-            ON DR.Number = DM.Number
-            AND DR.NumberRows = DM.NumberRows
-            AND DR.DeleteDateTime IS NULL
-            WHERE tbl.DeliveryPlanNO = @DeliveryPlanNO
-            AND tbl.DeliveryPlanDate = CONVERT(date, @DeliveryPlanDate)
-            AND tbl.DeliveryName = @DeliveryName
-            ORDER BY DD.DeliveryPlanNO, DM.DeliveryPlanRows, DM.Number, DM.NumberRows
+              ON DR.Number = DM.Number
+             AND DR.NumberRows = DM.NumberRows
+             AND DR.DeleteDateTime IS NULL
+           WHERE tbl.DeliveryPlanDate = CONVERT(date, @DeliveryPlanDate)
+             AND tbl.DeliveryName = @DeliveryName
+            --AND tbl.DeliveryPlanNO = @DeliveryPlanNO
+            --ORDER BY DD.DeliveryPlanNO, DM.DeliveryPlanRows, DM.Number, DM.NumberRows
+           ORDER BY tbl.GyoNO
             ;
-
             
             --【D_Reserve】      Update Table転送仕様Ｃ 引当
             UPDATE D_Reserve
@@ -352,16 +353,15 @@ BEGIN
                    ,[UpdateDateTime]   =  @SYSDATETIME
                    ,[ShippingOrderNO]  =  @InstructionNO
                    ,[ShippingOrderRows]= (SELECT DI.InstructionRows
-                                          FROM @D_InstructionDetailsInserted AS DI
-                                          WHERE DI.ReserveNO = D_Reserve.ReserveNO
+                                            FROM @D_InstructionDetailsInserted AS DI
+                                           WHERE DI.ReserveNO = D_Reserve.ReserveNO
                                           )
-             FROM D_DeliveryPlanDetails AS DM
+              FROM D_DeliveryPlanDetails AS DM
              INNER JOIN @Table AS tbl
-             ON DM.DeliveryPlanNO = tbl.DeliveryPlanNO
-             AND tbl.DeliveryPlanNO = @DeliveryPlanNO
-             AND tbl.DeliveryPlanDate = CONVERT(date, @DeliveryPlanDate)
-             AND tbl.DeliveryName = @DeliveryName
-             
+                ON DM.DeliveryPlanNO    = tbl.DeliveryPlanNO
+               AND tbl.DeliveryPlanDate = CONVERT(date, @DeliveryPlanDate)
+               AND tbl.DeliveryName     = @DeliveryName
+             --AND tbl.DeliveryPlanNO   = @DeliveryPlanNO
              WHERE D_Reserve.Number = DM.Number
                AND D_Reserve.NumberRows = DM.NumberRows
                AND D_Reserve.DeleteDateTime IS NULL
@@ -370,27 +370,27 @@ BEGIN
             --【D_Stock】        Update Table転送仕様Ｄ 在庫
             UPDATE [D_Stock]
                SET [ReserveSu] = [D_Stock].[ReserveSu] - (CASE ISNULL(F.SetKBN,0) WHEN 1 THEN DR.ReserveSu*F.SetSu
-                                                            ELSE DR.ReserveSu END) 
+                                                                                  ELSE DR.ReserveSu END) 
                   ,[InstructionSu] = [D_Stock].[InstructionSu] + (CASE ISNULL(F.SetKBN,0) WHEN 1 THEN DR.ReserveSu*F.SetSu
-                                                            ELSE DR.ReserveSu END)    
+                                                                                          ELSE DR.ReserveSu END)    
                   ,[UpdateOperator] = @Operator
                   ,[UpdateDateTime] = @SYSDATETIME
             FROM D_DeliveryPlanDetails AS DM
-            INNER JOIN @Table AS tbl
-            ON DM.DeliveryPlanNO = tbl.DeliveryPlanNO
-            AND tbl.DeliveryPlanNO = @DeliveryPlanNO
-            AND tbl.DeliveryPlanDate = CONVERT(date, @DeliveryPlanDate)
-            AND tbl.DeliveryName = @DeliveryName
-            INNER JOIN D_Reserve AS DR
-            ON DR.Number = DM.Number
-            AND DR.NumberRows = DM.NumberRows
-            AND DR.DeleteDateTime IS NULL
+           INNER JOIN @Table AS tbl
+              ON DM.DeliveryPlanNO    = tbl.DeliveryPlanNO
+             AND tbl.DeliveryPlanDate = CONVERT(date, @DeliveryPlanDate)
+             AND tbl.DeliveryName     = @DeliveryName
+            --AND tbl.DeliveryPlanNO  = @DeliveryPlanNO
+           INNER JOIN D_Reserve AS DR
+              ON DR.Number = DM.Number
+             AND DR.NumberRows = DM.NumberRows
+             AND DR.DeleteDateTime IS NULL
             LEFT OUTER JOIN F_SKU(@SYSDATE) AS F
-            ON F.AdminNO = DR.AdminNO
-            AND F.DeleteFlg = 0
-            WHERE D_Stock.StockNO = DR.StockNO
-            AND D_Stock.DeleteDateTime IS NULL
-            ;
+              ON F.AdminNO = DR.AdminNO
+             AND F.DeleteFlg = 0
+           WHERE D_Stock.StockNO = DR.StockNO
+             AND D_Stock.DeleteDateTime IS NULL
+               ;
             
             UPDATE [D_Juchuu]
                SET [UpdateOperator] = @Operator
@@ -398,9 +398,9 @@ BEGIN
             FROM D_DeliveryPlanDetails AS DM
             INNER JOIN @Table AS tbl
             ON DM.DeliveryPlanNO = tbl.DeliveryPlanNO
-            AND tbl.DeliveryPlanNO = @DeliveryPlanNO
             AND tbl.DeliveryPlanDate = CONVERT(date, @DeliveryPlanDate)
             AND tbl.DeliveryName = @DeliveryName
+            --AND tbl.DeliveryPlanNO = @DeliveryPlanNO
             INNER JOIN D_Reserve AS DR
             ON DR.Number = DM.Number
             AND DR.NumberRows = DM.NumberRows
@@ -417,9 +417,9 @@ BEGIN
             FROM D_DeliveryPlanDetails AS DM
             INNER JOIN @Table AS tbl
             ON DM.DeliveryPlanNO = tbl.DeliveryPlanNO
-            AND tbl.DeliveryPlanNO = @DeliveryPlanNO
             AND tbl.DeliveryPlanDate = CONVERT(date, @DeliveryPlanDate)
             AND tbl.DeliveryName = @DeliveryName
+            --AND tbl.DeliveryPlanNO = @DeliveryPlanNO
             INNER JOIN D_Reserve AS DR
             ON DR.Number = DM.Number
             AND DR.NumberRows = DM.NumberRows
@@ -479,8 +479,7 @@ BEGIN
             WHERE tbl.GyoNO = @GyoNO
             ;
         END
-        
-        
+
         -- ========= ループ内の実際の処理 ここまで===
 
         --次の行のデータを取得して変数へ値をセット
