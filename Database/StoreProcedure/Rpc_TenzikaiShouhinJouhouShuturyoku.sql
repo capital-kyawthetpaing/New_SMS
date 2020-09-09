@@ -21,7 +21,9 @@ CREATE PROCEDURE [dbo].[Rpc_TenzikaiShouhinJouhouShuturyoku]
 @SegmentCDFrom as varchar(6),
 @SegmentCDTo as varchar(6),
 @TenzikaiName as varchar(80),
-@JANCD as varchar(13)
+@JANCD as varchar(13),
+@HanbaiYoteiDateMonth as int,
+@HanbaiYoteiDate as varchar(8)
 AS
 BEGIN
 	Select 
@@ -31,6 +33,7 @@ BEGIN
 	mt.SizeName AS サイズ,
 	mt.Colorname AS カラー,
 	mt.HanbaiYoteiDate AS 販売予定日,
+	Concat(ISNULL(@HanbaiYoteiDateMonth, '')  , N'月' , ISNULL(@HanbaiYoteiDate, '') )as  '販売予定日',
 	'' AS 即納数,
 	'' AS 希望日1,
 	'' AS 希望日2,
