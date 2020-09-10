@@ -87,7 +87,12 @@ namespace TenzikaiJuchuuJouhouHurikaeShori
                     detailControls[i].Focus();
                     return;
                 }
-            
+
+            if (bbl.ShowMessage("Q201") != DialogResult.Yes)
+            {
+                return;
+            }
+
             M_TenzikaiShouhin_Entity me = new M_TenzikaiShouhin_Entity
             {
                 ProcessMode = RdoCreate.Checked ? "1":"3",
@@ -259,7 +264,7 @@ namespace TenzikaiJuchuuJouhouHurikaeShori
                 {
                     ((CheckBox)ctl).Checked = false;
                 }
-                else if (ctl.GetType().Equals(typeof(Panel)))
+                else if (ctl.GetType().Equals(typeof(Panel)) || ctl.GetType().Equals(typeof(CKM_Controls.CKM_RadioButton)))
                 {
                 }
                 else if (ctl.GetType().Equals(typeof(CKM_Controls.CKM_ComboBox)))
