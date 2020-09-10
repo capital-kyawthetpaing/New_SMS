@@ -830,7 +830,7 @@ namespace CKM_Controls
         /// <summary>
         /// Check Date
         /// </summary>
-        private bool DateCheck()
+        public bool DateCheck()
         {
             bbl = new Base_BL();
             if (!string.IsNullOrWhiteSpace(this.Text))
