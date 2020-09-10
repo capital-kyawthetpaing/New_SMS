@@ -52,6 +52,7 @@ BEGIN
             ,DJ.SoukoName
             ,DJ.ShukkaShubetsu
             ,DJ.DeliveryPlanNO--配送予定番号 AS DeliveryPlanNO	--配送予定番号
+            ,DJ.DeliveryPlanRows
             ,0 AS InstructionRows	--出荷指示明細連番
             ,DJ.JuchuuNo As JuchuNo
             --※D_Juchuu②：D_Juchuu①を顧客CDでグループ化してSUM(D_Juchuu①.明細受注本体額)をSELECT
@@ -111,6 +112,7 @@ BEGIN
                          AND M.DeleteFlg = 0 
                        ORDER BY M.ChangeDate desc) AS FareLevel 
                     ,DD.DeliveryPlanNO--配送予定番号
+                    ,DD.DeliveryPlanRows--配送予定番号
             FROM D_JuchuuDetails AS DM
            INNER JOIN D_Juchuu AS DH
               ON DH.JuchuuNo = DM.JuchuuNo
@@ -262,7 +264,8 @@ BEGIN
               AND M.StoreCD = @StoreCD
               ORDER BY M.ChangeDate desc) AS SoukoName
             ,DD.DeliveryKBN As ShukkaShubetsu
-            ,DD.DeliveryPlanNO--配送予定番号
+            ,DM.DeliveryPlanNO--配送予定番号
+            ,DM.DeliveryPlanRows
             ,0 AS InstructionRows	--出荷指示明細連番
             ,NULL As JuchuNo
             --※D_Juchuu②：D_Juchuu①を顧客CDでグループ化してSUM(D_Juchuu①.明細受注本体額)をSELECT
@@ -382,6 +385,7 @@ BEGIN
               ORDER BY M.ChangeDate desc) AS SoukoName
             ,DI.InstructionKBN As ShukkaShubetsu
             ,DI.DeliveryPlanNO	--配送予定番号
+            ,DM.DeliveryPlanRows
             ,DIM.InstructionRows	--出荷指示明細連番
             ,NULL As JuchuNo
             --※D_Juchuu②：D_Juchuu①を顧客CDでグループ化してSUM(D_Juchuu①.明細受注本体額)をSELECT
@@ -410,6 +414,9 @@ BEGIN
         INNER JOIN D_DeliveryPlan AS DD
         ON DD.DeliveryPlanNO = DI.DeliveryPlanNO
         --AND DD.DeleteDateTime IS NULL
+        INNER JOIN D_DeliveryPlanDetails AS DM
+        ON DR.Number = DM.Number
+        AND DR.NumberRows = DM.NumberRows
         LEFT OUTER JOIN D_Shipping AS DS
         ON DS.InstructionNO = DI.InstructionNO
         AND DS.DeleteDateTime IS NULL
