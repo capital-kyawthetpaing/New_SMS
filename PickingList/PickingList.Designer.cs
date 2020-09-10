@@ -169,6 +169,7 @@
             this.txtDateTo1.AllowMinus = false;
             this.txtDateTo1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtDateTo1.BackColor = System.Drawing.Color.White;
+            this.txtDateTo1.BorderColor = false;
             this.txtDateTo1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDateTo1.ClientColor = System.Drawing.Color.White;
             this.txtDateTo1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -178,6 +179,7 @@
             this.txtDateTo1.IntegerPart = 0;
             this.txtDateTo1.IsCorrectDate = true;
             this.txtDateTo1.isEnterKeyDown = false;
+            this.txtDateTo1.IsFirstTime = true;
             this.txtDateTo1.isMaxLengthErr = false;
             this.txtDateTo1.IsNumber = true;
             this.txtDateTo1.IsShop = false;
@@ -190,6 +192,7 @@
             this.txtDateTo1.TabIndex = 5;
             this.txtDateTo1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDateTo1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDateTo1.UseColorSizMode = false;
             this.txtDateTo1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDateTo1_KeyDown);
             // 
             // txtDateFrom1
@@ -197,6 +200,7 @@
             this.txtDateFrom1.AllowMinus = false;
             this.txtDateFrom1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtDateFrom1.BackColor = System.Drawing.Color.White;
+            this.txtDateFrom1.BorderColor = false;
             this.txtDateFrom1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDateFrom1.ClientColor = System.Drawing.Color.White;
             this.txtDateFrom1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -206,6 +210,7 @@
             this.txtDateFrom1.IntegerPart = 0;
             this.txtDateFrom1.IsCorrectDate = true;
             this.txtDateFrom1.isEnterKeyDown = false;
+            this.txtDateFrom1.IsFirstTime = true;
             this.txtDateFrom1.isMaxLengthErr = false;
             this.txtDateFrom1.IsNumber = true;
             this.txtDateFrom1.IsShop = false;
@@ -218,12 +223,14 @@
             this.txtDateFrom1.TabIndex = 4;
             this.txtDateFrom1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDateFrom1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDateFrom1.UseColorSizMode = false;
             // 
             // txtShipmentDate
             // 
             this.txtShipmentDate.AllowMinus = false;
             this.txtShipmentDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShipmentDate.BackColor = System.Drawing.Color.White;
+            this.txtShipmentDate.BorderColor = false;
             this.txtShipmentDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtShipmentDate.ClientColor = System.Drawing.Color.White;
             this.txtShipmentDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -233,6 +240,7 @@
             this.txtShipmentDate.IntegerPart = 0;
             this.txtShipmentDate.IsCorrectDate = true;
             this.txtShipmentDate.isEnterKeyDown = false;
+            this.txtShipmentDate.IsFirstTime = true;
             this.txtShipmentDate.isMaxLengthErr = false;
             this.txtShipmentDate.IsNumber = true;
             this.txtShipmentDate.IsShop = false;
@@ -245,6 +253,7 @@
             this.txtShipmentDate.TabIndex = 6;
             this.txtShipmentDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtShipmentDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtShipmentDate.UseColorSizMode = false;
             this.txtShipmentDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShipmentDate_KeyDown);
             // 
             // ckM_Label5
@@ -275,6 +284,7 @@
             this.ScPickingNo1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScPickingNo1.DataCheck = true;
             this.ScPickingNo1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScPickingNo1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScPickingNo1.IsCopy = false;
             this.ScPickingNo1.LabelText = "";
             this.ScPickingNo1.LabelVisible = false;
@@ -322,6 +332,7 @@
             this.ScPickingNo2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScPickingNo2.DataCheck = true;
             this.ScPickingNo2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScPickingNo2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScPickingNo2.IsCopy = false;
             this.ScPickingNo2.LabelText = "";
             this.ScPickingNo2.LabelVisible = false;
@@ -363,6 +374,7 @@
             this.txtDateTo2.AllowMinus = false;
             this.txtDateTo2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtDateTo2.BackColor = System.Drawing.Color.White;
+            this.txtDateTo2.BorderColor = false;
             this.txtDateTo2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDateTo2.ClientColor = System.Drawing.Color.White;
             this.txtDateTo2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -372,6 +384,7 @@
             this.txtDateTo2.IntegerPart = 0;
             this.txtDateTo2.IsCorrectDate = true;
             this.txtDateTo2.isEnterKeyDown = false;
+            this.txtDateTo2.IsFirstTime = true;
             this.txtDateTo2.isMaxLengthErr = false;
             this.txtDateTo2.IsNumber = true;
             this.txtDateTo2.IsShop = false;
@@ -384,6 +397,7 @@
             this.txtDateTo2.TabIndex = 11;
             this.txtDateTo2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDateTo2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDateTo2.UseColorSizMode = false;
             this.txtDateTo2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDateTo2_KeyDown);
             // 
             // txtDateFrom2
@@ -391,6 +405,7 @@
             this.txtDateFrom2.AllowMinus = false;
             this.txtDateFrom2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtDateFrom2.BackColor = System.Drawing.Color.White;
+            this.txtDateFrom2.BorderColor = false;
             this.txtDateFrom2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDateFrom2.ClientColor = System.Drawing.Color.White;
             this.txtDateFrom2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -400,6 +415,7 @@
             this.txtDateFrom2.IntegerPart = 0;
             this.txtDateFrom2.IsCorrectDate = true;
             this.txtDateFrom2.isEnterKeyDown = false;
+            this.txtDateFrom2.IsFirstTime = true;
             this.txtDateFrom2.isMaxLengthErr = false;
             this.txtDateFrom2.IsNumber = true;
             this.txtDateFrom2.IsShop = false;
@@ -412,6 +428,7 @@
             this.txtDateFrom2.TabIndex = 10;
             this.txtDateFrom2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDateFrom2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDateFrom2.UseColorSizMode = false;
             // 
             // ckM_Label8
             // 
@@ -422,11 +439,11 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(94, 257);
+            this.ckM_Label8.Location = new System.Drawing.Point(55, 256);
             this.ckM_Label8.Name = "ckM_Label8";
-            this.ckM_Label8.Size = new System.Drawing.Size(70, 12);
+            this.ckM_Label8.Size = new System.Drawing.Size(109, 12);
             this.ckM_Label8.TabIndex = 28;
-            this.ckM_Label8.Text = "出荷予定日";
+            this.ckM_Label8.Text = "当初の出荷予定日";
             this.ckM_Label8.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
