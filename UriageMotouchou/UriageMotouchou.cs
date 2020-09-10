@@ -149,15 +149,8 @@ namespace UriageMotouchou
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "1";
-            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
-            try
-            {
-                System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
-            }
-            catch
-            {
-                umbl.ShowMessage("E138");
-            }
+            string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;
+            System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
         }
 
         private void PrintDataSelect()

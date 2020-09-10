@@ -343,11 +343,11 @@ namespace ShiireShoukaiDetails
         private bool ErrorCheck()
         {
             //<Remark>入力無くても良い(It is not necessary to input)</Remark>
-            //if (!RequireCheck(new Control[] { txtPurchaseDate1,txtPurchaseDate2,txtPlanDate1,txtPlanDate2,txtOrderDate1,txtOrderDate2}))
+            //if (!RequireCheck(new Control[] { txtPurchaseDate1, txtPurchaseDate2, txtPlanDate1, txtPlanDate2, txtOrderDate1, txtOrderDate2 }))
             //{
             //    return false;
-            //}        
-
+            //}
+            
             if (!string.IsNullOrEmpty(txtPurchaseDate1.Text)&& !string.IsNullOrEmpty(txtPurchaseDate2.Text))
             {
                 if (string.Compare(txtPurchaseDate1.Text, txtPurchaseDate2.Text) == 1)
