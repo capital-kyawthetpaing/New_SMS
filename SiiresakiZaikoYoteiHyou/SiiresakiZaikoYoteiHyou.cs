@@ -202,7 +202,7 @@ namespace SiiresakiZaikoYoteiHyou
                 }
                 else
                 {
-                    szybl.ShowMessage("E138");
+                    szybl.ShowMessage("E128");
                     txtTargetDateTo.Focus();
                 }
             }

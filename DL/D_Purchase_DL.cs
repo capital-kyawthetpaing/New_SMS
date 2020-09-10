@@ -50,6 +50,7 @@ namespace DL
                    //{ "@Unpaid", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dp_e.UnPaid  } },
                    { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dp_e.StaffCD  } },
                    { "@PayeeFLg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dp_e.PayeeFLg  } },
+                    { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dp_e.StoreCD  } },
 
             };
             return SelectData(dic, "D_Purchase_Select");
