@@ -278,6 +278,7 @@ namespace ShiireShoukaiDetails
                 {
                     ssdbl.ShowMessage("E128");
                     dgv_PurchaseDetails.DataSource = null;
+                    txtPurchaseDate1.Focus();
                 }
             }
         }
@@ -347,7 +348,12 @@ namespace ShiireShoukaiDetails
             //{
             //    return false;
             //}
-            
+            if (!txtPurchaseDate1.DateCheck() || !txtPurchaseDate2.DateCheck())
+                return false;
+            if (!txtPlanDate1.DateCheck() || !txtPlanDate2.DateCheck())
+                return false;
+            if (!txtOrderDate1.DateCheck() || !txtOrderDate2.DateCheck())
+                return false;
             if (!string.IsNullOrEmpty(txtPurchaseDate1.Text)&& !string.IsNullOrEmpty(txtPurchaseDate2.Text))
             {
                 if (string.Compare(txtPurchaseDate1.Text, txtPurchaseDate2.Text) == 1)
