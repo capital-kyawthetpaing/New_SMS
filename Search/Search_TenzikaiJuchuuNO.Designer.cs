@@ -35,13 +35,13 @@
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtOrderDateFrom = new CKM_Controls.CKM_TextBox();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
-            this.SupplierCD = new Search.CKM_SearchControl();
+            this.ScSupplier = new Search.CKM_SearchControl();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.cboYear = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_Label4 = new CKM_Controls.CKM_Label();
             this.cboSeason = new CKM_Controls.CKM_ComboBox();
-            this.ckM_SearchControl1 = new Search.CKM_SearchControl();
+            this.scStaff = new Search.CKM_SearchControl();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.ckM_SearchControl2 = new Search.CKM_SearchControl();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
@@ -163,34 +163,34 @@
             this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // SupplierCD
+            // ScSupplier
             // 
-            this.SupplierCD.AutoSize = true;
-            this.SupplierCD.ChangeDate = "";
-            this.SupplierCD.ChangeDateWidth = 100;
-            this.SupplierCD.Code = "";
-            this.SupplierCD.CodeWidth = 100;
-            this.SupplierCD.CodeWidth1 = 100;
-            this.SupplierCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SupplierCD.DataCheck = false;
-            this.SupplierCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SupplierCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.SupplierCD.IsCopy = false;
-            this.SupplierCD.LabelText = "";
-            this.SupplierCD.LabelVisible = false;
-            this.SupplierCD.Location = new System.Drawing.Point(112, 112);
-            this.SupplierCD.Margin = new System.Windows.Forms.Padding(0);
-            this.SupplierCD.Name = "SupplierCD";
-            this.SupplierCD.NameWidth = 310;
-            this.SupplierCD.SearchEnable = true;
-            this.SupplierCD.Size = new System.Drawing.Size(133, 27);
-            this.SupplierCD.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.SupplierCD.TabIndex = 20;
-            this.SupplierCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SupplierCD.UseChangeDate = false;
-            this.SupplierCD.Value1 = null;
-            this.SupplierCD.Value2 = null;
-            this.SupplierCD.Value3 = null;
+            this.ScSupplier.AutoSize = true;
+            this.ScSupplier.ChangeDate = "";
+            this.ScSupplier.ChangeDateWidth = 100;
+            this.ScSupplier.Code = "";
+            this.ScSupplier.CodeWidth = 100;
+            this.ScSupplier.CodeWidth1 = 100;
+            this.ScSupplier.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScSupplier.DataCheck = false;
+            this.ScSupplier.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScSupplier.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.ScSupplier.IsCopy = false;
+            this.ScSupplier.LabelText = "";
+            this.ScSupplier.LabelVisible = false;
+            this.ScSupplier.Location = new System.Drawing.Point(112, 112);
+            this.ScSupplier.Margin = new System.Windows.Forms.Padding(0);
+            this.ScSupplier.Name = "ScSupplier";
+            this.ScSupplier.NameWidth = 310;
+            this.ScSupplier.SearchEnable = true;
+            this.ScSupplier.Size = new System.Drawing.Size(133, 27);
+            this.ScSupplier.Stype = Search.CKM_SearchControl.SearchType.仕入先;
+            this.ScSupplier.TabIndex = 20;
+            this.ScSupplier.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScSupplier.UseChangeDate = false;
+            this.ScSupplier.Value1 = null;
+            this.ScSupplier.Value2 = null;
+            this.ScSupplier.Value3 = null;
             // 
             // ckM_Label8
             // 
@@ -271,34 +271,34 @@
             this.cboSeason.Size = new System.Drawing.Size(121, 20);
             this.cboSeason.TabIndex = 23;
             // 
-            // ckM_SearchControl1
+            // scStaff
             // 
-            this.ckM_SearchControl1.AutoSize = true;
-            this.ckM_SearchControl1.ChangeDate = "";
-            this.ckM_SearchControl1.ChangeDateWidth = 100;
-            this.ckM_SearchControl1.Code = "";
-            this.ckM_SearchControl1.CodeWidth = 70;
-            this.ckM_SearchControl1.CodeWidth1 = 70;
-            this.ckM_SearchControl1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_SearchControl1.DataCheck = false;
-            this.ckM_SearchControl1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_SearchControl1.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.ckM_SearchControl1.IsCopy = false;
-            this.ckM_SearchControl1.LabelText = "";
-            this.ckM_SearchControl1.LabelVisible = false;
-            this.ckM_SearchControl1.Location = new System.Drawing.Point(112, 184);
-            this.ckM_SearchControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.ckM_SearchControl1.Name = "ckM_SearchControl1";
-            this.ckM_SearchControl1.NameWidth = 250;
-            this.ckM_SearchControl1.SearchEnable = true;
-            this.ckM_SearchControl1.Size = new System.Drawing.Size(103, 27);
-            this.ckM_SearchControl1.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
-            this.ckM_SearchControl1.TabIndex = 26;
-            this.ckM_SearchControl1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ckM_SearchControl1.UseChangeDate = false;
-            this.ckM_SearchControl1.Value1 = null;
-            this.ckM_SearchControl1.Value2 = null;
-            this.ckM_SearchControl1.Value3 = null;
+            this.scStaff.AutoSize = true;
+            this.scStaff.ChangeDate = "";
+            this.scStaff.ChangeDateWidth = 100;
+            this.scStaff.Code = "";
+            this.scStaff.CodeWidth = 70;
+            this.scStaff.CodeWidth1 = 70;
+            this.scStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.scStaff.DataCheck = false;
+            this.scStaff.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scStaff.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.scStaff.IsCopy = false;
+            this.scStaff.LabelText = "";
+            this.scStaff.LabelVisible = false;
+            this.scStaff.Location = new System.Drawing.Point(112, 184);
+            this.scStaff.Margin = new System.Windows.Forms.Padding(0);
+            this.scStaff.Name = "scStaff";
+            this.scStaff.NameWidth = 250;
+            this.scStaff.SearchEnable = true;
+            this.scStaff.Size = new System.Drawing.Size(103, 27);
+            this.scStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
+            this.scStaff.TabIndex = 26;
+            this.scStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.scStaff.UseChangeDate = false;
+            this.scStaff.Value1 = null;
+            this.scStaff.Value2 = null;
+            this.scStaff.Value3 = null;
             // 
             // ckM_Label5
             // 
@@ -667,13 +667,13 @@
             this.Controls.Add(this.txtKanaName);
             this.Controls.Add(this.ckM_SearchControl2);
             this.Controls.Add(this.ckM_Label6);
-            this.Controls.Add(this.ckM_SearchControl1);
+            this.Controls.Add(this.scStaff);
             this.Controls.Add(this.ckM_Label5);
             this.Controls.Add(this.ckM_Label4);
             this.Controls.Add(this.cboSeason);
             this.Controls.Add(this.ckM_Label3);
             this.Controls.Add(this.cboYear);
-            this.Controls.Add(this.SupplierCD);
+            this.Controls.Add(this.ScSupplier);
             this.Controls.Add(this.ckM_Label8);
             this.Controls.Add(this.txtOrderDateTo);
             this.Controls.Add(this.ckM_Label2);
@@ -692,13 +692,13 @@
             this.Controls.SetChildIndex(this.ckM_Label2, 0);
             this.Controls.SetChildIndex(this.txtOrderDateTo, 0);
             this.Controls.SetChildIndex(this.ckM_Label8, 0);
-            this.Controls.SetChildIndex(this.SupplierCD, 0);
+            this.Controls.SetChildIndex(this.ScSupplier, 0);
             this.Controls.SetChildIndex(this.cboYear, 0);
             this.Controls.SetChildIndex(this.ckM_Label3, 0);
             this.Controls.SetChildIndex(this.cboSeason, 0);
             this.Controls.SetChildIndex(this.ckM_Label4, 0);
             this.Controls.SetChildIndex(this.ckM_Label5, 0);
-            this.Controls.SetChildIndex(this.ckM_SearchControl1, 0);
+            this.Controls.SetChildIndex(this.scStaff, 0);
             this.Controls.SetChildIndex(this.ckM_Label6, 0);
             this.Controls.SetChildIndex(this.ckM_SearchControl2, 0);
             this.Controls.SetChildIndex(this.txtKanaName, 0);
@@ -723,13 +723,13 @@
         private CKM_Controls.CKM_Label ckM_Label2;
         private CKM_Controls.CKM_TextBox txtOrderDateFrom;
         private CKM_Controls.CKM_Label ckM_Label1;
-        private CKM_SearchControl SupplierCD;
+        private CKM_SearchControl ScSupplier;
         private CKM_Controls.CKM_Label ckM_Label8;
         private CKM_Controls.CKM_ComboBox cboYear;
         private CKM_Controls.CKM_Label ckM_Label3;
         private CKM_Controls.CKM_Label ckM_Label4;
         private CKM_Controls.CKM_ComboBox cboSeason;
-        private CKM_SearchControl ckM_SearchControl1;
+        private CKM_SearchControl scStaff;
         private CKM_Controls.CKM_Label ckM_Label5;
         private CKM_SearchControl ckM_SearchControl2;
         private CKM_Controls.CKM_Label ckM_Label6;
