@@ -15,13 +15,18 @@ namespace Search
 {
     public partial class Search_TenzikaiJuchuuNO :  FrmSubForm
     {
+        TenzikaiJuchuuNo_BL tzkjbl;
+        M_Vendor_Entity mve;
         public Search_TenzikaiJuchuuNO()
         {
+            
             InitializeComponent();
         }
 
-        private void Search_TenzikaiJuchuuNO_Load(object sender, EventArgs e)
+        public void Search_TenzikaiJuchuuNO_Load(object sender, EventArgs e)
         {
+            tzkjbl = new TenzikaiJuchuuNo_BL();
+            mve = new M_Vendor_Entity();
             txtOrderDateTo.Text = DateTime.Now.ToString();
             BindCombo();
         }
@@ -54,11 +59,56 @@ namespace Search
             {
                 if (string.Compare(txtOrderDateFrom.Text, txtOrderDateTo.Text) == 1)
                 {
-                    //ssbl.ShowMessage("E104");
+                    tzkjbl.ShowMessage("E104");
                     txtOrderDateTo.Focus();
                     return false;
                 }
             }
+
+            if(string.IsNullOrWhiteSpace(txtOrderDateTo.Text))
+            {
+                ScSupplier.ChangeDate = bbl.GetDate();
+                scStaff.ChangeDate = bbl.GetDate();
+            }
+            else
+            {
+                ScSupplier.ChangeDate = txtOrderDateTo.Text;
+                scStaff.ChangeDate = txtOrderDateTo.Text;
+            }
+            if(string.IsNullOrWhiteSpace(ScSupplier.TxtCode.Text))
+            {   
+                if(ScSupplier.SelectData())
+                {
+                    bbl.ShowMessage("E101");
+                    ScSupplier.SetFocus(1);
+                    return false;
+                }
+            }
+
+            if (string.IsNullOrWhiteSpace(cboYear.Text.ToString())) 
+            {
+                tzkjbl.ShowMessage("E102");
+                cboYear.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(cboSeason.Text.ToString()))
+            {
+                tzkjbl.ShowMessage("E102");
+                cboSeason.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(scStaff.TxtCode.Text))
+            {
+                if (scStaff.SelectData())
+                {
+                    bbl.ShowMessage("E101");
+                    scStaff.SetFocus(1);
+                    return false;
+                }              
+            }
+
 
             return true;
 
