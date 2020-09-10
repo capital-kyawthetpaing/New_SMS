@@ -82,6 +82,7 @@ namespace ShiireShoukaiShiiresaki
                 PaymentDueDateFrom = txtPaymentDueDateFrom.Text,
                 PaymentDueDateTo = txtPaymentDueDateTo.Text,
                 DeliveryNo = txtDeliveryNoteNo.Text,
+                StoreCD= ComboStore.SelectedValue.ToString(),
                 PayeeFLg = payeeflg,
                 CheckValue=CheckValue()
                 //Paid = paid,
@@ -317,6 +318,9 @@ namespace ShiireShoukaiShiiresaki
 
         private bool ErrorCheck()
         {
+
+
+
             /// <remarks>仕入日(from)は仕入日(To)より大きいの場合エラーになる</remarks>
             //if (!string.IsNullOrWhiteSpace(txtPurchaseDateFrom.Text) && !string.IsNullOrWhiteSpace(txtPurchaseDateTo.Text))
             //{
@@ -333,8 +337,12 @@ namespace ShiireShoukaiShiiresaki
             //    txtPurchaseDateTo.Focus();
             //    return false;
             //}
+          
             if (!string.IsNullOrWhiteSpace(txtPurchaseDateTo.Text))
             {
+                //if (!txtPurchaseDateFrom.de)
+                //    return false;
+
                 int result = txtPurchaseDateFrom.Text.CompareTo(txtPurchaseDateTo.Text);
                 if (result > 0)
                 {
