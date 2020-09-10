@@ -53,8 +53,8 @@
             this.ckM_Label10 = new CKM_Controls.CKM_Label();
             this.ScJanCD = new Search.CKM_SearchControl();
             this.ckM_Label11 = new CKM_Controls.CKM_Label();
-            this.btnSubF11 = new CKM_Controls.CKM_Button();
-            this.ckM_GridView1 = new CKM_Controls.CKM_GridView();
+            this.btnDisplay = new CKM_Controls.CKM_Button();
+            this.dgvTenzikai = new CKM_Controls.CKM_GridView();
             this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colOrderNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colOrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,7 +62,7 @@
             this.colYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSeason = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.ckM_GridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTenzikai)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -548,32 +548,32 @@
             this.ckM_Label11.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btnSubF11
+            // btnDisplay
             // 
-            this.btnSubF11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnSubF11.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.btnSubF11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubF11.DefaultBtnSize = false;
-            this.btnSubF11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSubF11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubF11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSubF11.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnSubF11.Location = new System.Drawing.Point(596, 331);
-            this.btnSubF11.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSubF11.Name = "btnSubF11";
-            this.btnSubF11.Size = new System.Drawing.Size(115, 28);
-            this.btnSubF11.TabIndex = 94;
-            this.btnSubF11.Text = "表示(F11)";
-            this.btnSubF11.UseVisualStyleBackColor = false;
+            this.btnDisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnDisplay.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.btnDisplay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDisplay.DefaultBtnSize = false;
+            this.btnDisplay.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDisplay.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDisplay.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.btnDisplay.Location = new System.Drawing.Point(596, 331);
+            this.btnDisplay.Margin = new System.Windows.Forms.Padding(1);
+            this.btnDisplay.Name = "btnDisplay";
+            this.btnDisplay.Size = new System.Drawing.Size(115, 28);
+            this.btnDisplay.TabIndex = 94;
+            this.btnDisplay.Text = "表示(F11)";
+            this.btnDisplay.UseVisualStyleBackColor = false;
             // 
-            // ckM_GridView1
+            // dgvTenzikai
             // 
-            this.ckM_GridView1.AllowUserToDeleteRows = false;
-            this.ckM_GridView1.AllowUserToResizeRows = false;
+            this.dgvTenzikai.AllowUserToDeleteRows = false;
+            this.dgvTenzikai.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.ckM_GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.ckM_GridView1.AutoGenerateColumns = false;
-            this.ckM_GridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.dgvTenzikai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTenzikai.AutoGenerateColumns = false;
+            this.dgvTenzikai.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
@@ -581,9 +581,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ckM_GridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.ckM_GridView1.ColumnHeadersHeight = 25;
-            this.ckM_GridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTenzikai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvTenzikai.ColumnHeadersHeight = 25;
+            this.dgvTenzikai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNo,
             this.colOrderNum,
             this.colOrderDate,
@@ -598,16 +598,16 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ckM_GridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ckM_GridView1.EnableHeadersVisualStyles = false;
-            this.ckM_GridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.ckM_GridView1.Location = new System.Drawing.Point(12, 400);
-            this.ckM_GridView1.Name = "ckM_GridView1";
-            this.ckM_GridView1.RowHeight_ = 20;
-            this.ckM_GridView1.Size = new System.Drawing.Size(950, 300);
-            this.ckM_GridView1.TabIndex = 95;
-            this.ckM_GridView1.UseRowNo = true;
-            this.ckM_GridView1.UseSetting = true;
+            this.dgvTenzikai.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvTenzikai.EnableHeadersVisualStyles = false;
+            this.dgvTenzikai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.dgvTenzikai.Location = new System.Drawing.Point(12, 400);
+            this.dgvTenzikai.Name = "dgvTenzikai";
+            this.dgvTenzikai.RowHeight_ = 20;
+            this.dgvTenzikai.Size = new System.Drawing.Size(950, 300);
+            this.dgvTenzikai.TabIndex = 95;
+            this.dgvTenzikai.UseRowNo = true;
+            this.dgvTenzikai.UseSetting = true;
             // 
             // colNo
             // 
@@ -655,8 +655,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1219, 823);
-            this.Controls.Add(this.ckM_GridView1);
-            this.Controls.Add(this.btnSubF11);
+            this.Controls.Add(this.dgvTenzikai);
+            this.Controls.Add(this.btnDisplay);
             this.Controls.Add(this.ScJanCD);
             this.Controls.Add(this.ckM_Label11);
             this.Controls.Add(this.ScSKUCD);
@@ -709,9 +709,9 @@
             this.Controls.SetChildIndex(this.ScSKUCD, 0);
             this.Controls.SetChildIndex(this.ckM_Label11, 0);
             this.Controls.SetChildIndex(this.ScJanCD, 0);
-            this.Controls.SetChildIndex(this.btnSubF11, 0);
-            this.Controls.SetChildIndex(this.ckM_GridView1, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.ckM_GridView1)).EndInit();
+            this.Controls.SetChildIndex(this.btnDisplay, 0);
+            this.Controls.SetChildIndex(this.dgvTenzikai, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTenzikai)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -741,8 +741,8 @@
         private CKM_Controls.CKM_Label ckM_Label10;
         private CKM_SearchControl ScJanCD;
         private CKM_Controls.CKM_Label ckM_Label11;
-        private CKM_Controls.CKM_Button btnSubF11;
-        private CKM_Controls.CKM_GridView ckM_GridView1;
+        private CKM_Controls.CKM_Button btnDisplay;
+        private CKM_Controls.CKM_GridView dgvTenzikai;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOrderNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOrderDate;
