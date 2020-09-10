@@ -16,31 +16,33 @@ namespace BL
         UriageMotochou_Entity ume;
         Base_BL bbl;
         DataTable dtCheck;
+        M_StoreClose_DL mscdl;
 
         public UriageMotochou_BL()
         {
             bbl = new Base_BL();
-            dmcdl = new D_MonthlyClaims_DL();            
+            dmcdl = new D_MonthlyClaims_DL();
+            mscdl = new M_StoreClose_DL();
         }
 
-        public bool CheckData(int type,string StoreCD,string YYYYMM)
-        {
-            switch (type)
-            {
-                case 1:
-                    dtCheck = bbl.SimpleSelect1("47", "", StoreCD, YYYYMM);
-                    break;
-                case 2:
-                    dtCheck = bbl.SimpleSelect1("48", "", StoreCD, YYYYMM);
-                    break;
-            }
+        //public bool CheckData(int type,string StoreCD,string YYYYMM)
+        //{
+        //    switch (type)
+        //    {
+        //        case 1:
+        //            dtCheck = bbl.SimpleSelect1("47", "", StoreCD, YYYYMM);
+        //            break;
+        //        case 2:
+        //            dtCheck = bbl.SimpleSelect1("48", "", StoreCD, YYYYMM);
+        //            break;
+        //    }
 
 
-            if (dtCheck.Rows.Count > 0)
-                return true;
-            else
-                return false;
-        }
+        //    if (dtCheck.Rows.Count > 0)
+        //        return true;
+        //    else
+        //        return false;
+        //}
         
         public DataTable UriageMotochou_PrintSelect(UriageMotochou_Entity ume)
         {
@@ -62,6 +64,10 @@ namespace BL
 
             }
             return date;
+        }
+        public DataTable M_StoreClose_Check(M_StoreClose_Entity msce, string mode)
+        {
+            return mscdl.M_StoreClose_Check(msce, mode);
         }
     }
 }
