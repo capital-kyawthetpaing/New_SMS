@@ -26,6 +26,7 @@ namespace ZaikoKanriHyou
         D_Purchase_Details_Entity dpde;
         D_MonthlyStock_Entity dmse;
         M_StoreClose_Entity msce;
+        M_StoreAuthorizations_Entity msae = new M_StoreAuthorizations_Entity();
         int chk = 0;
         
         public ZaikoKanriHyou()
@@ -93,9 +94,14 @@ namespace ZaikoKanriHyou
                     return false;
                 }
             }
-            if (!base.CheckAvailableStores(cboSouko.SelectedValue.ToString()))
+            msae.StoreAuthorizationsCD = StoreAuthorizationsCD;
+            msae.ChangeDate = StoreAuthorizationsChangeDate;
+            msae.StoreCD = cboSouko.SelectedValue.ToString();
+            DataTable dtAuthorization = new DataTable();
+            dtAuthorization = zkhbl.M_StoreAuthorizations_Select(msae);
+            if (dtAuthorization.Rows.Count == 0)
             {
-                bbl.ShowMessage("E139");
+                zkhbl.ShowMessage("E139");
                 cboSouko.Focus();
                 return false;
             }
@@ -307,15 +313,6 @@ namespace ZaikoKanriHyou
             {
                 rdoITEM.Checked = false;
                 rdoProductCD.Checked = false;
-            }
-        }
-
-        private void cboSouko_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (!base.CheckAvailableStores(cboSouko.SelectedValue.ToString()))
-            {
-                bbl.ShowMessage("E139");
-                cboSouko.Focus();
             }
         }
     }
