@@ -345,8 +345,6 @@ namespace ShiireShoukaiShiiresaki
 
             if (!string.IsNullOrWhiteSpace(txtPurchaseDateTo.Text))
             {
-               
-
                 int result = txtPurchaseDateFrom.Text.CompareTo(txtPurchaseDateTo.Text);
                 if (result > 0)
                 {
