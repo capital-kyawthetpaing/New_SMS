@@ -93,6 +93,12 @@ namespace ZaikoKanriHyou
                     return false;
                 }
             }
+            if (!base.CheckAvailableStores(cboSouko.SelectedValue.ToString()))
+            {
+                bbl.ShowMessage("E138");
+                cboSouko.Focus();
+                return false;
+            }
             return true;
         }
       
@@ -296,6 +302,20 @@ namespace ZaikoKanriHyou
             if(chkRelatedPrinting.Checked==true)
             {
                 rdoITEM.Checked = true;
+            }
+            else
+            {
+                rdoITEM.Checked = false;
+                rdoProductCD.Checked = false;
+            }
+        }
+
+        private void cboSouko_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!base.CheckAvailableStores(cboSouko.SelectedValue.ToString()))
+            {
+                bbl.ShowMessage("E138");
+                cboSouko.Focus();
             }
         }
     }

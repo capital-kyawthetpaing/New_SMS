@@ -388,6 +388,7 @@
             this.cboSouko.Name = "cboSouko";
             this.cboSouko.Size = new System.Drawing.Size(265, 20);
             this.cboSouko.TabIndex = 3;
+            this.cboSouko.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboSouko_KeyDown);
             // 
             // ckM_Label2
             // 
