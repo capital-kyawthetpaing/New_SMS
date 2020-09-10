@@ -297,6 +297,11 @@ namespace ZaikoKanriHyou
             {
                 rdoITEM.Checked = true;
             }
+            else
+            {
+                rdoITEM.Checked = false;
+                rdoProductCD.Checked = false;
+            }
         }
     }
 }
