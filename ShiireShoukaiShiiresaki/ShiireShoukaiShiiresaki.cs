@@ -82,6 +82,7 @@ namespace ShiireShoukaiShiiresaki
                 PaymentDueDateFrom = txtPaymentDueDateFrom.Text,
                 PaymentDueDateTo = txtPaymentDueDateTo.Text,
                 DeliveryNo = txtDeliveryNoteNo.Text,
+                StoreCD= ComboStore.SelectedValue.ToString(),
                 PayeeFLg = payeeflg,
                 CheckValue=CheckValue()
                 //Paid = paid,
@@ -317,6 +318,9 @@ namespace ShiireShoukaiShiiresaki
 
         private bool ErrorCheck()
         {
+
+
+
             /// <remarks>仕入日(from)は仕入日(To)より大きいの場合エラーになる</remarks>
             //if (!string.IsNullOrWhiteSpace(txtPurchaseDateFrom.Text) && !string.IsNullOrWhiteSpace(txtPurchaseDateTo.Text))
             //{
@@ -333,6 +337,12 @@ namespace ShiireShoukaiShiiresaki
             //    txtPurchaseDateTo.Focus();
             //    return false;
             //}
+
+            if(!txtPurchaseDateFrom.DateCheck())
+                return false;
+            if (!txtPurchaseDateTo.DateCheck())
+                return false;
+
             if (!string.IsNullOrWhiteSpace(txtPurchaseDateTo.Text))
             {
                 int result = txtPurchaseDateFrom.Text.CompareTo(txtPurchaseDateTo.Text);
@@ -343,11 +353,17 @@ namespace ShiireShoukaiShiiresaki
                       return false;
                 }
             }
+
+            if (!txtArrivalDateFrom.DateCheck())
+                return false;
+            if (!txtArrivalDateTo.DateCheck())
+                return false;
             /// <remarks>入荷日(from)は入荷日(To)より大きいの場合エラーになる</remarks>
             if (!string.IsNullOrWhiteSpace(txtArrivalDateFrom.Text) && !string.IsNullOrWhiteSpace(txtArrivalDateTo.Text))
             {
                 if (string.Compare(txtArrivalDateFrom.Text, txtArrivalDateTo.Text) == 1)
                 {
+                   
                     dpurchase_bl.ShowMessage("E104");
                     txtArrivalDateTo.Focus();
                     return false;
@@ -355,6 +371,10 @@ namespace ShiireShoukaiShiiresaki
                
             }
 
+            if (!txtPaymentDueDateFrom.DateCheck())
+                return false;
+            if (!txtPaymentDueDateTo.DateCheck())
+                return false;
             /// <remarks>支払予定日(from)は支払予定日(To)より大きいの場合エラーになる</remarks>
             if (!string.IsNullOrWhiteSpace(txtPaymentDueDateFrom.Text) && !string.IsNullOrWhiteSpace(txtPaymentDueDateTo.Text))
             {
