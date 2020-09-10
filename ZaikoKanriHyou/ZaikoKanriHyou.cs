@@ -95,7 +95,7 @@ namespace ZaikoKanriHyou
             }
             if (!base.CheckAvailableStores(cboSouko.SelectedValue.ToString()))
             {
-                bbl.ShowMessage("E138");
+                bbl.ShowMessage("E139");
                 cboSouko.Focus();
                 return false;
             }
@@ -314,7 +314,7 @@ namespace ZaikoKanriHyou
         {
             if (!base.CheckAvailableStores(cboSouko.SelectedValue.ToString()))
             {
-                bbl.ShowMessage("E138");
+                bbl.ShowMessage("E139");
                 cboSouko.Focus();
             }
         }
