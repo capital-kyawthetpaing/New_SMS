@@ -337,11 +337,15 @@ namespace ShiireShoukaiShiiresaki
             //    txtPurchaseDateTo.Focus();
             //    return false;
             //}
-          
+
+            if(!txtPurchaseDateFrom.DateCheck())
+                return false;
+            if (!txtPurchaseDateTo.DateCheck())
+                return false;
+
             if (!string.IsNullOrWhiteSpace(txtPurchaseDateTo.Text))
             {
-                //if (!txtPurchaseDateFrom.de)
-                //    return false;
+               
 
                 int result = txtPurchaseDateFrom.Text.CompareTo(txtPurchaseDateTo.Text);
                 if (result > 0)
@@ -351,11 +355,17 @@ namespace ShiireShoukaiShiiresaki
                       return false;
                 }
             }
+
+            if (!txtArrivalDateFrom.DateCheck())
+                return false;
+            if (!txtArrivalDateTo.DateCheck())
+                return false;
             /// <remarks>入荷日(from)は入荷日(To)より大きいの場合エラーになる</remarks>
             if (!string.IsNullOrWhiteSpace(txtArrivalDateFrom.Text) && !string.IsNullOrWhiteSpace(txtArrivalDateTo.Text))
             {
                 if (string.Compare(txtArrivalDateFrom.Text, txtArrivalDateTo.Text) == 1)
                 {
+                   
                     dpurchase_bl.ShowMessage("E104");
                     txtArrivalDateTo.Focus();
                     return false;
@@ -363,6 +373,10 @@ namespace ShiireShoukaiShiiresaki
                
             }
 
+            if (!txtPaymentDueDateFrom.DateCheck())
+                return false;
+            if (!txtPaymentDueDateTo.DateCheck())
+                return false;
             /// <remarks>支払予定日(from)は支払予定日(To)より大きいの場合エラーになる</remarks>
             if (!string.IsNullOrWhiteSpace(txtPaymentDueDateFrom.Text) && !string.IsNullOrWhiteSpace(txtPaymentDueDateTo.Text))
             {
