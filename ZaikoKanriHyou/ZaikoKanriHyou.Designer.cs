@@ -168,6 +168,7 @@
             this.chkRelatedPrinting.TabIndex = 14;
             this.chkRelatedPrinting.Text = "関連印字する";
             this.chkRelatedPrinting.UseVisualStyleBackColor = true;
+            this.chkRelatedPrinting.CheckedChanged += new System.EventHandler(this.chkRelatedPrinting_CheckedChanged);
             // 
             // txtSKUName
             // 

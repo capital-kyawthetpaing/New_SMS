@@ -22,6 +22,7 @@ namespace UriageMotouchou
         L_Log_Entity lle ;
         DataTable dtReport,dtCheck;
         CrystalDecisions.Windows.Forms.CrystalReportViewer crvr;
+        M_StoreClose_Entity msce;
         public UriageMotouchou()
         {
             InitializeComponent();
@@ -94,19 +95,18 @@ namespace UriageMotouchou
                     return false;
                 }
             }
-            if (!string.IsNullOrEmpty(txtTagetFrom.Text) && !string.IsNullOrEmpty(txtTargetTo.Text))
-            {
-                if (string.Compare(txtTagetFrom.Text, txtTargetTo.Text) == 1)
-                {
-                    umbl.ShowMessage("E104");
-                    txtTargetTo.Focus();
-                    return false;
-                }
-            }
             return true;
         }
 
-
+        private M_StoreClose_Entity GetStoreClose_Data()
+        {
+            msce = new M_StoreClose_Entity()
+            {
+                StoreCD = cboStore.SelectedValue.ToString(),
+                FiscalYYYYMM = txtTagetFrom.Text.Replace("/", ""),
+            };
+            return msce;
+        }
         #region 印刷するボタンPrintSec
         protected override void PrintSec()
         {
@@ -119,22 +119,30 @@ namespace UriageMotouchou
                 dtReport = umbl.UriageMotochou_PrintSelect(ume);
                 if (dtReport.Rows.Count > 0)
                 {
-                    string StoreCD = cboStore.SelectedValue.ToString();
-                    string YYYYMM = txtTargetTo.Text.Replace("/", "");
-                    if (umbl.CheckData(1, StoreCD, YYYYMM))
-                    {
-                        //月次処理（債権集計処理）を起動 Exe Console Run
-                        string ProgramID = "GetsujiSaikenKeisanSyori";
-                        OpenForm(ProgramID, txtTagetFrom.Text);
+                    //string StoreCD = cboStore.SelectedValue.ToString();
+                    //string YYYYMM = txtTagetFrom.Text.Replace("/", "");
+                    msce = new M_StoreClose_Entity();
+                    msce = GetStoreClose_Data();
+                    //if (umbl.CheckData(1, StoreCD, YYYYMM))
+                    //{
+                    //    //月次処理（債権集計処理）を起動 Exe Console Run
+                    //    string ProgramID = "GetsujiSaikenKeisanSyori";
+                    //    OpenForm(ProgramID, txtTagetFrom.Text);
 
-                        //印刷処理
-                        PrintDataSelect();
-                    }
-                    else if (umbl.CheckData(2, StoreCD, YYYYMM))
+                    //    //印刷処理
+                    //    PrintDataSelect();
+                    //}
+                    if (umbl.M_StoreClose_Check(msce, "1").Rows.Count > 0)
                     {
-                        //印刷処理
+                        string ProgramID = "GetsujiZaikoKeisanSyori";
+                        OpenForm(ProgramID, msce.FiscalYYYYMM);
                         PrintDataSelect();
                     }
+                    //else if (umbl.CheckData(2, StoreCD, YYYYMM))
+                    //{
+                    //    //印刷処理
+                    //    PrintDataSelect();
+                    //}
                 }
                 else
                 {
@@ -149,15 +157,8 @@ namespace UriageMotouchou
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "1";
-            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
-            try
-            {
-                System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
-            }
-            catch
-            {
-                umbl.ShowMessage("E138");
-            }
+            string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;
+            System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
         }
 
         private void PrintDataSelect()
@@ -178,8 +179,7 @@ namespace UriageMotouchou
                         umtc_Report.SetDataSource(dtReport);
                         umtc_Report.Refresh();
                         umtc_Report.SetParameterValue("YYYYMMF", txtTagetFrom.Text);
-                        umtc_Report.SetParameterValue("YYYYMMT", txtTargetTo.Text);
-                        umtc_Report.SetParameterValue("PrintDateTime", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("hh:mm"));
+                        umtc_Report.SetParameterValue("PrintDateTime", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("HH:mm"));
                         umtc_Report.SetParameterValue("CustomerCD", sc_Customer.TxtCode.Text);
                         umtc_Report.SetParameterValue("CustName", sc_Customer.LabelText);
                         umtc_Report.SetParameterValue("StoreCD", cboStore.Text);
@@ -252,7 +252,7 @@ namespace UriageMotouchou
                 PC = this.InPcID,
                 Program = this.InProgramID,
                 OperateMode = "",
-                KeyItem = txtTagetFrom.Text + "_S " + txtTargetTo.Text + "_E " + sc_Customer.TxtCode.Text + " " + cboStore.SelectedValue.ToString()
+                KeyItem = txtTagetFrom.Text + "_S " + sc_Customer.TxtCode.Text + " " + cboStore.SelectedValue.ToString()
             };
 
             return lle;
@@ -261,18 +261,18 @@ namespace UriageMotouchou
         private UriageMotochou_Entity GetDataInfo()
         {
             string Todate = string.Empty;
-            if (!string.IsNullOrWhiteSpace(txtTargetTo.Text))
-            {
-                int year = Convert.ToInt32(txtTargetTo.Text.Substring(0, 4));
-                int month = Convert.ToInt32(txtTargetTo.Text.Substring(5, 2));
-                string lastday = "/" + DateTime.DaysInMonth(year, month).ToString();
-                Todate = txtTargetTo.Text + lastday;
-            }
+            //if (!string.IsNullOrWhiteSpace(txtTargetTo.Text))
+            //{
+            //    int year = Convert.ToInt32(txtTargetTo.Text.Substring(0, 4));
+            //    int month = Convert.ToInt32(txtTargetTo.Text.Substring(5, 2));
+            //    string lastday = "/" + DateTime.DaysInMonth(year, month).ToString();
+            //    Todate = txtTargetTo.Text + lastday;
+            //}
 
             ume = new UriageMotochou_Entity()
             {
                 YYYYMMFrom = txtTagetFrom.Text.Replace("/", ""),
-                YYYYMMTo = txtTargetTo.Text.Replace("/", ""),
+                //YYYYMMTo = txtTargetTo.Text.Replace("/", ""),
                 CustomerCD = sc_Customer.TxtCode.Text,
                 StoreCD = cboStore.SelectedValue.ToString(),
                 TargetDateFrom = txtTagetFrom.Text + "/01",
@@ -316,21 +316,6 @@ namespace UriageMotouchou
             sc_Customer.Value2 = cboStore.SelectedValue.Equals("-1") ? "" : cboStore.SelectedValue.ToString();
            // sc_Customer.ChangeDate = txtTagetFrom.Text;//月初
             sc_Customer.ChangeDate = umbl.GetDate(txtTagetFrom.Text);
-        }
-
-        private void txtTargetTo_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (!string.IsNullOrEmpty(txtTagetFrom.Text) && !string.IsNullOrEmpty(txtTargetTo.Text))
-                {
-                    if (string.Compare(txtTagetFrom.Text, txtTargetTo.Text) == 1)
-                    {
-                        umbl.ShowMessage("E104");
-                        txtTargetTo.Focus();
-                    }
-                }
-            }
         }
         private void sc_Customer_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {

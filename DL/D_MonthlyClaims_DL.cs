@@ -64,9 +64,9 @@ namespace DL
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>()
             {
                 {"@FromYYYYMM",new ValuePair{value1=SqlDbType.Int,value2=ume.YYYYMMFrom}},
-                {"@ToYYYYMM",new ValuePair{value1=SqlDbType.Int,value2=ume.YYYYMMTo} },
+                //{"@ToYYYYMM",new ValuePair{value1=SqlDbType.Int,value2=ume.YYYYMMTo} },
                 {"@FromDate",new ValuePair{value1=SqlDbType.Date,value2=ume.TargetDateFrom} },
-                {"@ToDate",new ValuePair{value1=SqlDbType.Date,value2=ume.TargetDateTo} },
+                //{"@ToDate",new ValuePair{value1=SqlDbType.Date,value2=ume.TargetDateTo} },
                 {"@CustomerCD",new ValuePair{value1=SqlDbType.VarChar,value2=ume.CustomerCD} },
                 {"@StoreCD",new ValuePair{value1=SqlDbType.VarChar,value2=ume.StoreCD } },
                 {"@chkValue",new ValuePair{value1=SqlDbType.TinyInt,value2=ume.ChkValue}}
