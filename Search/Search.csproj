@@ -304,6 +304,12 @@
     <Compile Include="Search_TenzikaiJuchuuNO.Designer.cs">
       <DependentUpon>Search_TenzikaiJuchuuNO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Search_TenzikaiShouhin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_TenzikaiShouhin.Designer.cs">
+      <DependentUpon>Search_TenzikaiShouhin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Search_Vendor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -478,6 +484,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Search_TenzikaiJuchuuNO.resx">
       <DependentUpon>Search_TenzikaiJuchuuNO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search_TenzikaiShouhin.resx">
+      <DependentUpon>Search_TenzikaiShouhin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Search_Vendor.resx">
       <DependentUpon>Search_Vendor.cs</DependentUpon>

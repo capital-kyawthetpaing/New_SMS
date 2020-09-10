@@ -290,5 +290,18 @@ namespace ZaikoKanriHyou
         {
             MoveNextControl(e);
         }
+
+        private void chkRelatedPrinting_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkRelatedPrinting.Checked==true)
+            {
+                rdoITEM.Checked = true;
+            }
+            else
+            {
+                rdoITEM.Checked = false;
+                rdoProductCD.Checked = false;
+            }
+        }
     }
 }
