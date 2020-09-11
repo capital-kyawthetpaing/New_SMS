@@ -1106,7 +1106,11 @@ namespace ShukkaSiziTourokuFromJuchuu
                         mGrid.g_DArray[i].ChkMinyukin = false;
 
                     mGrid.g_DArray[i].DeliveryPlanDate = row["DeliveryPlanDate"].ToString();
-                    mGrid.g_DArray[i].Hanbaigaku = bbl.Z_SetStr(row["HanbaiHontaiGaku"]);
+                    if (Convert.ToInt16(row["KBN"]) == 1)
+                        mGrid.g_DArray[i].Hanbaigaku = bbl.Z_SetStr(row["HanbaiHontaiGaku"]);
+                    else
+                        mGrid.g_DArray[i].Hanbaigaku ="";
+
                     mGrid.g_DArray[i].JuchuNo = row["JuchuuNO"].ToString();
                     mGrid.g_DArray[i].DeliveryAddress1 = row["DeliveryAddress1"].ToString();   // 
                     mGrid.g_DArray[i].DeliveryName = row["CustomerName"].ToString();
