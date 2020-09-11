@@ -38,6 +38,18 @@ namespace DL
             return SelectData(dic, sp);
         }
 
+        public DataTable M_Customer_SelectForTenzikai(M_Customer_Entity mce)
+        {
+            string sp = "M_Customer_SelectForTenzikai";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+             {
+                { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mce.CustomerCD } },
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = mce.ChangeDate } }
+            };
+            return SelectData(dic, sp);
+
+        }
+
         public DataTable Select_M_Customer_CustomerName(string janCD)
         {
             string sp = "M_Customer_CustomerName_Select";

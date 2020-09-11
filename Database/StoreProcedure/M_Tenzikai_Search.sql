@@ -1,5 +1,5 @@
 BEGIN TRY 
- Drop Procedure [dbo].[M_TenzikaiShouhin_Search]
+ Drop Procedure [dbo].[M_Tenzikai_Search]
 END try
 BEGIN CATCH END CATCH 
 SET ANSI_NULLS ON
@@ -12,7 +12,7 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE [dbo].[M_TenzikaiShouhin_Search]
+CREATE PROCEDURE [dbo].[M_Tenzikai_Search]
 @VendorCD as varchar(13),
 @TenzikaiName as varchar(80),
 @VendorCDFrom as varchar(13),
