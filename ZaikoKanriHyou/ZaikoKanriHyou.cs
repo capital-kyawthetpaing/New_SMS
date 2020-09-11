@@ -126,10 +126,15 @@ namespace ZaikoKanriHyou
         }
         private D_MonthlyStock_Entity MonthlyStockInfo()
         {
+            int year = Convert.ToInt32(txtTargetDate.Text.Substring(0, 4));
+            int month = Convert.ToInt32(txtTargetDate.Text.Substring(5, 2));
+            string lastday = "/" + DateTime.DaysInMonth(year, month).ToString();
             dmse = new D_MonthlyStock_Entity()
             {
+                YYYYMM = txtTargetDate.Text.Replace("/", ""),
                 SoukoCD = cboSouko.SelectedValue.ToString(),
-                YYYYMM = txtTargetDate.Text.Replace("/", "")
+                TargetDateFrom = txtTargetDate.Text + "/01",
+                TargetDateTo = txtTargetDate.Text + lastday
             };
             return dmse;
         }
