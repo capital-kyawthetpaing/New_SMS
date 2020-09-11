@@ -162,7 +162,7 @@
             // 
             this.chkRelatedPrinting.AutoSize = true;
             this.chkRelatedPrinting.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.chkRelatedPrinting.Location = new System.Drawing.Point(144, 299);
+            this.chkRelatedPrinting.Location = new System.Drawing.Point(146, 297);
             this.chkRelatedPrinting.Name = "chkRelatedPrinting";
             this.chkRelatedPrinting.Size = new System.Drawing.Size(102, 16);
             this.chkRelatedPrinting.TabIndex = 14;
