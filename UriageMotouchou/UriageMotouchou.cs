@@ -119,30 +119,14 @@ namespace UriageMotouchou
                 dtReport = umbl.UriageMotochou_PrintSelect(ume);
                 if (dtReport.Rows.Count > 0)
                 {
-                    //string StoreCD = cboStore.SelectedValue.ToString();
-                    //string YYYYMM = txtTagetFrom.Text.Replace("/", "");
                     msce = new M_StoreClose_Entity();
                     msce = GetStoreClose_Data();
-                    //if (umbl.CheckData(1, StoreCD, YYYYMM))
-                    //{
-                    //    //月次処理（債権集計処理）を起動 Exe Console Run
-                    //    string ProgramID = "GetsujiSaikenKeisanSyori";
-                    //    OpenForm(ProgramID, txtTagetFrom.Text);
-
-                    //    //印刷処理
-                    //    PrintDataSelect();
-                    //}
                     if (umbl.M_StoreClose_Check(msce, "1").Rows.Count > 0)
                     {
                         string ProgramID = "GetsujiZaikoKeisanSyori";
                         OpenForm(ProgramID, msce.FiscalYYYYMM);
                         PrintDataSelect();
                     }
-                    //else if (umbl.CheckData(2, StoreCD, YYYYMM))
-                    //{
-                    //    //印刷処理
-                    //    PrintDataSelect();
-                    //}
                 }
                 else
                 {
@@ -179,7 +163,7 @@ namespace UriageMotouchou
                         umtc_Report.SetDataSource(dtReport);
                         umtc_Report.Refresh();
                         umtc_Report.SetParameterValue("YYYYMMF", txtTagetFrom.Text);
-                        umtc_Report.SetParameterValue("PrintDateTime", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("HH:mm"));
+                        umtc_Report.SetParameterValue("PrintDateTime", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("hh:mm"));
                         umtc_Report.SetParameterValue("CustomerCD", sc_Customer.TxtCode.Text);
                         umtc_Report.SetParameterValue("CustName", sc_Customer.LabelText);
                         umtc_Report.SetParameterValue("StoreCD", cboStore.Text);
