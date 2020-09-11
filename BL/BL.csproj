@@ -145,6 +145,7 @@
     <Compile Include="Search_Souko_BL.cs" />
     <Compile Include="Search_Supplier_BL.cs" />
     <Compile Include="Search_TempoUriageNO_BL .cs" />
+    <Compile Include="Search_TenzikaiShouhin_BL.cs" />
     <Compile Include="SeikyuuShimeShori_BL.cs" />
     <Compile Include="SeikyuuShoukai_BL.cs" />
     <Compile Include="SeikyuuSho_BL.cs" />
