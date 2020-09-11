@@ -305,6 +305,7 @@
     <Content Include="StoreProcedure\INSERT_D_SalesTran.sql" />
     <Content Include="StoreProcedure\INSERT_M_SKUTag.sql" />
     <Content Include="StoreProcedure\Insert_Update_ShiharaiShori.sql" />
+    <Content Include="StoreProcedure\JuuChuuBiCheck.sql" />
     <Content Include="StoreProcedure\KehiNyuuryoku_Delete.sql" />
     <Content Include="StoreProcedure\KehiNyuuryoku_Insert_Update.sql" />
     <Content Include="StoreProcedure\L_CostDetailsHistory_Insert.sql" />
@@ -503,8 +504,8 @@
     <Content Include="StoreProcedure\M_TanaDate_Select.sql" />
     <Content Include="StoreProcedure\M_TankaCD_Select.sql" />
     <Content Include="StoreProcedure\M_TankaCD_SelectAll.sql" />
-    <Content Include="StoreProcedure\M_TenzikaiShouhin_Search.sql" />
     <Content Include="StoreProcedure\M_TenzikaiShouhin_Select.sql" />
+    <Content Include="StoreProcedure\M_Tenzikai_Search.sql" />
     <Content Include="StoreProcedure\M_VendorFTP_ForSelectFile.sql" />
     <Content Include="StoreProcedure\M_VendorFTP_Select.sql" />
     <Content Include="StoreProcedure\M_Vendor_BankShiten_Select.sql" />
@@ -522,6 +523,7 @@
     <Content Include="StoreProcedure\M_Vendor_SelectForSiharaiNo.sql" />
     <Content Include="StoreProcedure\M_Vendor_SelectForSiharaiNyuuroku.sql" />
     <Content Include="StoreProcedure\M_Vendor_SelectTop1.sql" />
+    <Content Include="StoreProcedure\M_Vendor_Select_Tenji.sql" />
     <Content Include="StoreProcedure\M_Vendor_Staff_Select.sql" />
     <Content Include="StoreProcedure\M_Vendor_ZipCodeSelect.sql" />
     <Content Include="StoreProcedure\M_ZipCode_Select.sql" />
@@ -591,6 +593,7 @@
     <Content Include="StoreProcedure\SelectPrintData.sql" />
     <Content Include="StoreProcedure\Select_PaymentClose_ValueCheck.sql" />
     <Content Include="StoreProcedure\Select_SearchName.sql" />
+    <Content Include="StoreProcedure\ShuukaSoukoCheck.sql" />
     <Content Include="StoreProcedure\Simple_Select.sql" />
     <Content Include="StoreProcedure\sp_alterdiagram.sql" />
     <Content Include="StoreProcedure\sp_creatediagram.sql" />

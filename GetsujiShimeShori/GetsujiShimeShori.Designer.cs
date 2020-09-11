@@ -153,6 +153,7 @@
             this.CboStoreCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア_月次;
             this.CboStoreCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CboStoreCD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CboStoreCD.Flag = 0;
             this.CboStoreCD.FormattingEnabled = true;
             this.CboStoreCD.Length = 40;
             this.CboStoreCD.Location = new System.Drawing.Point(106, 73);
@@ -170,6 +171,7 @@
             this.ckM_SearchControl2.ChangeDateWidth = 100;
             this.ckM_SearchControl2.Code = "";
             this.ckM_SearchControl2.CodeWidth = 100;
+            this.ckM_SearchControl2.CodeWidth1 = 100;
             this.ckM_SearchControl2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl2.DataCheck = false;
             this.ckM_SearchControl2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -179,6 +181,7 @@
             this.ckM_SearchControl2.LabelVisible = false;
             this.ckM_SearchControl2.Location = new System.Drawing.Point(343, 5);
             this.ckM_SearchControl2.Name = "ckM_SearchControl2";
+            this.ckM_SearchControl2.NameWidth = 600;
             this.ckM_SearchControl2.SearchEnable = true;
             this.ckM_SearchControl2.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl2.Stype = Search.CKM_SearchControl.SearchType.見積番号;
@@ -196,6 +199,7 @@
             this.ckM_SearchControl3.ChangeDateWidth = 100;
             this.ckM_SearchControl3.Code = "";
             this.ckM_SearchControl3.CodeWidth = 100;
+            this.ckM_SearchControl3.CodeWidth1 = 100;
             this.ckM_SearchControl3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl3.DataCheck = false;
             this.ckM_SearchControl3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -205,6 +209,7 @@
             this.ckM_SearchControl3.LabelVisible = false;
             this.ckM_SearchControl3.Location = new System.Drawing.Point(343, 4);
             this.ckM_SearchControl3.Name = "ckM_SearchControl3";
+            this.ckM_SearchControl3.NameWidth = 600;
             this.ckM_SearchControl3.SearchEnable = true;
             this.ckM_SearchControl3.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl3.Stype = Search.CKM_SearchControl.SearchType.見積番号;

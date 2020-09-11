@@ -1,5 +1,19 @@
+USE [CapitalSMS]
+GO
+
+/****** Object:  StoredProcedure [dbo].[D_Stock_SelectZaiko]    Script Date: 2020/09/11 10:54:45 ******/
+DROP PROCEDURE [dbo].[D_Stock_SelectZaiko]
+GO
+
+/****** Object:  StoredProcedure [dbo].[D_Stock_SelectZaiko]    Script Date: 2020/09/11 10:54:45 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
 /****** Object:  StoredProcedure [D_Stock_SelectZaiko]    */
-CREATE PROCEDURE D_Stock_SelectZaiko(
+CREATE PROCEDURE [dbo].[D_Stock_SelectZaiko](
     -- Add the parameters for the stored procedure here
     @SoukoCD  varchar(6),
 --    @RackNO  varchar(11),
@@ -45,3 +59,5 @@ BEGIN
 END
 
 GO
+
+

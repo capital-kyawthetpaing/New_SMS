@@ -87,7 +87,19 @@ namespace DL
             UseTransaction = true;
             return SelectData(dic,"M_Vendor_Search");
         }
+        public DataTable M_Vendor_Select_Tenji(M_Vendor_Entity mve)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.DateTime, value2 = mve.ChangeDate } },
+                { "@DeleteFlg", new ValuePair { value1 = SqlDbType.VarChar, value2 =mve.DeleteFlg } },
+                {"@VendorFlg", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.VendorFlg } },
+                {"@VendorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.VendorCD } },
 
+            };
+            UseTransaction = true;
+            return SelectData(dic, "M_Vendor_Select_Tenji");
+        }
         public DataTable Payee_Select(M_Vendor_Entity mve)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
