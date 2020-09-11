@@ -49,7 +49,8 @@ namespace SiiresakiZaikoYoteiHyou
             txtTargetDateTo.Text = DateTime.Now.ToString("yyyy/MM");
             txtTargetDateTo.Focus();
         }
-        private void SetRequiredField()
+        
+            private void SetRequiredField()
         {
             txtTargetDateTo.Require(true);
             cboStore.Require(true);
@@ -199,6 +200,11 @@ namespace SiiresakiZaikoYoteiHyou
                         }
                     }
                 }
+                else
+                {
+                    szybl.ShowMessage("E128");
+                    txtTargetDateTo.Focus();
+                }
             }
         }
 
@@ -229,7 +235,7 @@ namespace SiiresakiZaikoYoteiHyou
                 DataTable dt = szybl.RPC_SiiresakiZaikoYoteiHyou(dmpe);
                 if (dt.Rows.Count > 0)
                 {
-                    // CheckBeforeExport();
+                     CheckBeforeExport();
                     try
                     {
                         SiiresakiZaikoYoteiHyou_Report szy_Report = new SiiresakiZaikoYoteiHyou_Report();
@@ -238,7 +244,7 @@ namespace SiiresakiZaikoYoteiHyou
                         {
                             case EPrintMode.DIRECT:
                                 DResult = bbl.ShowMessage("Q201");
-                                if (DResult == DialogResult.Cancel)
+                                if (DResult == DialogResult.No)
                                 {
                                     return;
                                 }
@@ -246,7 +252,7 @@ namespace SiiresakiZaikoYoteiHyou
                                 szy_Report.Refresh();
                                 szy_Report.SetParameterValue("lblDateFrom", txtTargetDateFrom.Text);
                                 szy_Report.SetParameterValue("lblDateTo",txtTargetDateTo.Text);
-                                szy_Report.SetParameterValue("lblStore", cboStore.SelectedValue.ToString() + "   " + cboStore.AccessibilityObject.Name);
+                                szy_Report.SetParameterValue("lblStore", cboStore.SelectedValue.ToString() + "   " + cboStore.Text);
                                 szy_Report.SetParameterValue("lblToday", dt.Rows[0]["Today"].ToString());
                                 try
                                 {
@@ -315,23 +321,24 @@ namespace SiiresakiZaikoYoteiHyou
             msce = new M_StoreClose_Entity();
             msce = GetStoreClose_Data();
 
-            if (szybl.M_StoreClose_Check(msce, "2").Rows.Count > 0)
+            if (szybl.M_StoreClose_Check(msce, "3").Rows.Count > 0)
             {
-                string ProgramID = "GetsujiZaikoKeisanSyori,GetsujiShiireKeisanSyori";
-                RunConsole(ProgramID, dmpe.YYYYMM);
+                string ProgramID = "GetsujiZaikoKeisanSyori";
+                string ProgramID1 = "GetsujiShiireKeisanSyori";
+                RunConsole(ProgramID,ProgramID1, dmpe.YYYYMMS);
             }
         }
-        private void RunConsole(string programID, string YYYYMM)
+        private void RunConsole(string programID,string programID1, string YYYYMMS)
         {
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "1";
-            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
-            string str = "GetsujiZaikoKeisanSyori,GetsujiShiireKeisanSyori";
-            //System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
-            System.Diagnostics.Process.Start(filePath+@"\"+str.Substring(0,22)+".exe",cmdLine+"");
-            System.Diagnostics.Process.Start(filePath+@"\"+str.Substring(24,23)+".exe",cmdLine+"");
-            //System.Diagnostics.Process.Start(filePath+@"\"+programID+".exe",cmdLine+"");
+            string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + " " + Mode + " " + YYYYMMS;//parameter
+            //string str = "GetsujiZaikoKeisanSyori,GetsujiShiireKeisanSyori";
+            System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            //System.Diagnostics.Process.Start(filePath+@"\"+str.Substring(0,22)+".exe",cmdLine+"");
+            //System.Diagnostics.Process.Start(filePath+@"\"+str.Substring(24,23)+".exe",cmdLine+"");
+            System.Diagnostics.Process.Start(filePath+@"\"+programID1+".exe",cmdLine+"");
         }
        
         private void SiiresakiZaikoYoteiHyou_KeyUp(object sender, KeyEventArgs e)

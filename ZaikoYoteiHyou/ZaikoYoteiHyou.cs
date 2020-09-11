@@ -221,7 +221,7 @@ namespace ZaikoYoteiHyou
                 DateTime firstday = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
                 firstday.AddDays(-1).ToString("dd/MM/yyyy");
 
-                string Text = txtTargetDateTo.Text;
+                string Text = txtTargetDateTo.Text.ToString();
                 if(!string.IsNullOrWhiteSpace(Text))
                 {
                     string[] p = Text.Split('/');
@@ -285,7 +285,7 @@ namespace ZaikoYoteiHyou
                                 // 印字データをセット
                                 Report.SetDataSource(dt);
                                 Report.Refresh();
-                                Report.SetParameterValue("PrintDate", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("hh:mm"));
+                                Report.SetParameterValue("PrintDate", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("HH:mm"));
                                 Report.SetParameterValue("TargetDate", txtTargetDateFrom.Text + " ～ " + txtTargetDateTo.Text);
                                 Report.SetParameterValue("txtSouko", cboWareHouse.SelectedValue.ToString() + "  " + cboWareHouse.Text);
 

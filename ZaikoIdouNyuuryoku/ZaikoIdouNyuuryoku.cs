@@ -636,6 +636,7 @@ namespace ZaikoIdouNyuuryoku
                                 detailControls[(int)EIndex.MoveDate].Text = bbl.GetDate();
                                 ScStaff.TxtCode.Text = InOperatorCD;
                                 CheckDetail((int)EIndex.StaffCD);
+                                ckM_CheckBox3.Enabled = false;
 
                                 BtnSubF2.Enabled = true;
                                 BtnSubF3.Enabled = true;
@@ -954,7 +955,7 @@ namespace ZaikoIdouNyuuryoku
             keyControls = new Control[] { ScOrderNO.TxtCode, ScCopyOrderNO.TxtCode, ScRequestNO.TxtCode, CboStoreCD };
             keyLabels = new Control[] { };
             detailControls = new Control[] { ckM_TextBox1, CboIdoKbn, ckM_CheckBox3, ScStaff.TxtCode, CboFromSoukoCD, CboToSoukoCD
-                         ,ckM_TextBox4, ckM_CheckBox4, SC_ITEM_0.TxtCode, ScFromRackNo.TxtCode,SC_ITEM_1.TxtCode, ckM_TextBox8, ckM_TextBox18,  ckM_TextBox2
+                         ,ckM_TextBox4, ckM_CheckBox4, SC_ITEM_0.TxtCode, ScFromRackNo.TxtCode,SC_ITEM_1.TxtCode, ckM_TextBox8, ScToRackNo.TxtCode,  ckM_TextBox2
                          , ckM_TextBox5, CboSoukoCD, TxtRemark1};
             detailLabels = new Control[] { ScStaff };
             searchButtons = new Control[] { ScStaff.BtnSearch };
@@ -1397,17 +1398,17 @@ namespace ZaikoIdouNyuuryoku
 
         protected override void ExecDisp()
         {
-            if (mDetailOperationMode == EOperationMode.DELETE)
-            { //Ｑ１０２		
-                if (bbl.ShowMessage("Q102") != DialogResult.Yes)
-                    return;
-            }
-            else
-            {
-                //Ｑ１０１		
-                if (bbl.ShowMessage("Q101") != DialogResult.Yes)
-                    return;
-            }
+            //if (mDetailOperationMode == EOperationMode.DELETE)
+            //{ //Ｑ１０２		
+            //    if (bbl.ShowMessage("Q102") != DialogResult.Yes)
+            //        return;
+            //}
+            //else
+            //{
+            //    //Ｑ１０１		
+            //    if (bbl.ShowMessage("Q101") != DialogResult.Yes)
+            //        return;
+            //}
 
             //在庫移動明細編集エリアのエラーチェック
             for (int i = (int)EIndex.Gyono; i <= (int)EIndex.RemarksInStore; i++)
@@ -1516,7 +1517,7 @@ namespace ZaikoIdouNyuuryoku
                 case (int)EIndex.CheckBox3:
                     //入力できない場合(When input is impossible)
                     // 移動依頼番号が未入力の場合(移動依頼番号で検索されていない場合または、検索できなかった場合)
-                    if (ckM_CheckBox3.Checked)
+                    if (ckM_CheckBox3.Checked && set)
                     {
                         ret = CheckData(false, (int)EIndex.RequestNO);
                         if (!ret)
@@ -1940,11 +1941,11 @@ namespace ZaikoIdouNyuuryoku
                             bbl.ShowMessage("E102");
                             return false;
                         }
-                        if (bbl.Z_Set(detailControls[index].Text) <=0)
-                        {
-                            bbl.ShowMessage("E109");
-                            return false;
-                        }
+                        //if (bbl.Z_Set(detailControls[index].Text) <=0)
+                        //{
+                        //    bbl.ShowMessage("E109");
+                        //    return false;
+                        //}
                         if (mIdoType == EIdoType.店舗間移動)
                         {
                             if (ckM_CheckBox4.Checked)
@@ -2439,15 +2440,15 @@ namespace ZaikoIdouNyuuryoku
                     return;
                 }
             }
-            else
-            {
-                for (int i = 0; i < keyControls.Length; i++)
-                    if (CheckKey(i, false) == false)
-                    {
-                        keyControls[i].Focus();
-                        return;
-                    }
-            }
+            //else
+            //{
+            //    for (int i = 0; i < keyControls.Length; i++)
+            //        if (CheckKey(i, false) == false)
+            //        {
+            //            keyControls[i].Focus();
+            //            return;
+            //        }
+            //}
 
             if (OperationMode != EOperationMode.DELETE)
             {
@@ -3198,6 +3199,11 @@ namespace ZaikoIdouNyuuryoku
                 //EndSec();
             }
         }
+        private void CboToSoukoCD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CboToSoukoCD.SelectedIndex > 0)
+                ScToRackNo.Value1 = CboToSoukoCD.SelectedValue.ToString();
+        }
         #endregion
 
         private void SetEnabled(EIdoType kbn)
@@ -3716,17 +3722,34 @@ namespace ZaikoIdouNyuuryoku
                 case EsearchKbn.Product:
                     using (Search_Product frmProduct = new Search_Product(detailControls[(int)EIndex.MoveDate].Text))
                     {
-                        frmProduct.SKUCD = lblSKUCD.Text;
-                        frmProduct.JANCD = detailControls[(int)EIndex.JANCD].Text;
-                        frmProduct.ShowDialog();
+                        if (setCtl == SC_ITEM_0)
+                        {
+                            frmProduct.SKUCD = lblSKUCD.Text;
+                            frmProduct.JANCD = detailControls[(int)EIndex.JANCD].Text;
+                        }
+                        else
+                        {
+                            frmProduct.SKUCD = lblSKUCDF.Text;
+                            frmProduct.JANCD = detailControls[(int)EIndex.JANCD_F].Text;
+                        }
+                            frmProduct.ShowDialog();
 
                         if (!frmProduct.flgCancel)
                         {
-                            detailControls[(int)EIndex.JANCD].Text = frmProduct.JANCD;
-                            mJANCD = frmProduct.JANCD;
-                            lblSKUCD.Text = frmProduct.SKUCD;
-                            mAdminNO = frmProduct.AdminNO;
+                            ((Search.CKM_SearchControl)setCtl).TxtCode.Text  = frmProduct.JANCD;
 
+                            if (setCtl == SC_ITEM_0)
+                            {
+                                mJANCD = frmProduct.JANCD;
+                                lblSKUCD.Text = frmProduct.SKUCD;
+                                mAdminNO = frmProduct.AdminNO;
+                            }
+                            else
+                            {
+                                mJANCDF = frmProduct.JANCD;
+                                lblSKUCDF.Text = frmProduct.SKUCD;
+                                mAdminNOF = frmProduct.AdminNO;
+                            }
                             setCtl.Focus();
 
                             //CheckDetail((int)EIndex.JANCD, true);
@@ -3771,6 +3794,7 @@ namespace ZaikoIdouNyuuryoku
                 {
                     case (int)ClsGridIdo.ColNO.GYONO:
                     case (int)ClsGridIdo.ColNO.Space:
+                    case (int)ClsGridIdo.ColNO.CommentOutStore:
                         {
                             mGrid.g_MK_State[w_Col, w_Row].Cell_Color = backCL;
                             break;
@@ -3784,6 +3808,8 @@ namespace ZaikoIdouNyuuryoku
                 }
             }
         }
+
+     
     }
 }
 

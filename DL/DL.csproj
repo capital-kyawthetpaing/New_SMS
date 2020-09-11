@@ -101,6 +101,7 @@
     <Compile Include="D_Stock_DL.cs" />
     <Compile Include="D_StoreCalculation_DL.cs" />
     <Compile Include="D_StorePayment_DL.cs" />
+    <Compile Include="D_TenzikaiJuchuu_DL.cs" />
     <Compile Include="D_Warehousing_DL.cs" />
     <Compile Include="D_WowmaJuchuu_DL.cs" />
     <Compile Include="D_YahooAPI_DL.cs" />

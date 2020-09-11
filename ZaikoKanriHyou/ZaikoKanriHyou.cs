@@ -26,6 +26,7 @@ namespace ZaikoKanriHyou
         D_Purchase_Details_Entity dpde;
         D_MonthlyStock_Entity dmse;
         M_StoreClose_Entity msce;
+        M_StoreAuthorizations_Entity msae = new M_StoreAuthorizations_Entity();
         int chk = 0;
         
         public ZaikoKanriHyou()
@@ -83,6 +84,8 @@ namespace ZaikoKanriHyou
         {
             if (!RequireCheck(new Control[] { txtTargetDate}))
                 return false;
+            if (!txtTargetDate.YearMonthCheck())
+                return false;
             if ((chkRelatedPrinting.Checked == true))
             {
                 if (!((rdoITEM.Checked == true) || (rdoProductCD.Checked == true)))
@@ -90,6 +93,17 @@ namespace ZaikoKanriHyou
                     zkhbl.ShowMessage("E102");
                     return false;
                 }
+            }
+            msae.StoreAuthorizationsCD = StoreAuthorizationsCD;
+            msae.ChangeDate = StoreAuthorizationsChangeDate;
+            msae.StoreCD = cboSouko.SelectedValue.ToString();
+            DataTable dtAuthorization = new DataTable();
+            dtAuthorization = zkhbl.M_StoreAuthorizations_Select(msae);
+            if (dtAuthorization.Rows.Count == 0)
+            {
+                zkhbl.ShowMessage("E139");
+                cboSouko.Focus();
+                return false;
             }
             return true;
         }
@@ -112,10 +126,15 @@ namespace ZaikoKanriHyou
         }
         private D_MonthlyStock_Entity MonthlyStockInfo()
         {
+            int year = Convert.ToInt32(txtTargetDate.Text.Substring(0, 4));
+            int month = Convert.ToInt32(txtTargetDate.Text.Substring(5, 2));
+            string lastday = "/" + DateTime.DaysInMonth(year, month).ToString();
             dmse = new D_MonthlyStock_Entity()
             {
+                YYYYMM = txtTargetDate.Text.Replace("/", ""),
                 SoukoCD = cboSouko.SelectedValue.ToString(),
-                YYYYMM = txtTargetDate.Text.Replace("/", "")
+                TargetDateFrom = txtTargetDate.Text + "/01",
+                TargetDateTo = txtTargetDate.Text + lastday
             };
             return dmse;
         }
@@ -177,7 +196,7 @@ namespace ZaikoKanriHyou
                 
                 if (dt.Rows.Count > 0)
                 {
-                   // CheckBeforeExport();
+                     CheckBeforeExport();
                     try
                     {
                         ZaikoKanriHyou_Report zkh_Report = new ZaikoKanriHyou_Report();
@@ -186,14 +205,14 @@ namespace ZaikoKanriHyou
                         {
                             case EPrintMode.DIRECT:
                                 DResult = bbl.ShowMessage("Q201");
-                                if (DResult == DialogResult.Cancel)
+                                if (DResult == DialogResult.No)
                                 {
                                     return;
                                 }
                                 zkh_Report.SetDataSource(dt);
                                 zkh_Report.Refresh();
                                 zkh_Report.SetParameterValue("lblDate", txtTargetDate.Text);
-                                zkh_Report.SetParameterValue("lblSouko", cboSouko.SelectedValue.ToString() + "   " + cboSouko.AccessibilityObject.Name);
+                                zkh_Report.SetParameterValue("lblSouko", cboSouko.SelectedValue.ToString() + "   " + cboSouko.Text);
                                 zkh_Report.SetParameterValue("lblToday", dt.Rows[0]["Today"].ToString() + "  " + dt.Rows[0]["Now"].ToString());
                                 try
                                 {
@@ -263,7 +282,7 @@ namespace ZaikoKanriHyou
             msce = new M_StoreClose_Entity();
             msce = GetStoreClose_Data();
 
-            if (zkhbl.M_StoreClose_Check(msce, "2").Rows.Count > 0)
+            if (zkhbl.M_StoreClose_Check(msce, "3").Rows.Count > 0)
             {
                 string ProgramID = "GetsujiZaikoKeisanSyori";
                 RunConsole(ProgramID, msce.FiscalYYYYMM);
@@ -274,7 +293,8 @@ namespace ZaikoKanriHyou
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "1";
-            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
+            //string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
+            string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
             System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
         }
 
@@ -286,6 +306,19 @@ namespace ZaikoKanriHyou
         private void scJANCD_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
+        }
+
+        private void chkRelatedPrinting_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkRelatedPrinting.Checked==true)
+            {
+                rdoITEM.Checked = true;
+            }
+            else
+            {
+                rdoITEM.Checked = false;
+                rdoProductCD.Checked = false;
+            }
         }
     }
 }

@@ -11,9 +11,10 @@ namespace DL
    public class MasterTouroku_TenzikaiHanbaiTankaKakeritu_DL:Base_DL
    {
 
-        string sp = "M_TenzikaiShouhin_Select";
+       
         public DataTable M_TenzikaiShouhin_Select(M_TenzikaiShouhin_Entity mTSE)
         {
+            string sp = "M_TenzikaiShouhin_Select";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@TankaCD", new ValuePair { value1 =SqlDbType.VarChar,value2 = mTSE.TanKaCD } },

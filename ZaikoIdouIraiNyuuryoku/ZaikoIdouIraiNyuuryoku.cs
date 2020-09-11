@@ -1218,17 +1218,17 @@ namespace ZaikoIdouIraiNyuuryoku
 
         protected override void ExecDisp()
         {
-            if (mDetailOperationMode == EOperationMode.DELETE)
-            { //Ｑ１０２		
-                if (bbl.ShowMessage("Q102") != DialogResult.Yes)
-                    return;
-            }
-            else
-            {
-                //Ｑ１０１		
-                if (bbl.ShowMessage("Q101") != DialogResult.Yes)
-                    return;
-            }
+            //if (mDetailOperationMode == EOperationMode.DELETE)
+            //{ //Ｑ１０２		
+            //    if (bbl.ShowMessage("Q102") != DialogResult.Yes)
+            //        return;
+            //}
+            //else
+            //{
+            //    //Ｑ１０１		
+            //    if (bbl.ShowMessage("Q101") != DialogResult.Yes)
+            //        return;
+            //}
 
             //在庫移動明細編集エリアのエラーチェック
             for (int i = (int)EIndex.Gyono; i <= (int)EIndex.RemarksInStore; i++)
@@ -1455,20 +1455,27 @@ namespace ZaikoIdouIraiNyuuryoku
                                         //Ｅ１９３
                                         bbl.ShowMessage("E193");
 
-                                        using (Select_SKU frmSKU = new Select_SKU())
+                                        if (dt.Rows.Count > 1)
                                         {
-                                            frmSKU.parJANCD = dt.Rows[0]["JanCD"].ToString();
-                                            frmSKU.parChangeDate = detailControls[(int)EIndex.RequestDate].Text;
-                                            frmSKU.ShowDialog();
+                                            using (Select_SKU frmSKU = new Select_SKU())
+                                            {
+                                                frmSKU.parJANCD = dt.Rows[0]["JanCD"].ToString();
+                                                frmSKU.parChangeDate = detailControls[(int)EIndex.RequestDate].Text;
+                                                frmSKU.ShowDialog();
 
-                                            if (!frmSKU.flgCancel)
-                                            {
-                                                selectRow = dt.Select(" AdminNO = " + frmSKU.parAdminNO)[0];
+                                                if (!frmSKU.flgCancel)
+                                                {
+                                                    selectRow = dt.Select(" AdminNO = " + frmSKU.parAdminNO)[0];
+                                                }
+                                                else
+                                                {
+                                                    return false;
+                                                }
                                             }
-                                            else
-                                            {
-                                                return false;
-                                            }
+                                        }
+                                        else
+                                        {
+                                            return false;
                                         }
                                         RW = -1;
                                     }

@@ -512,7 +512,8 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
                 {
                     dtData = mhbtbl.Select_SKUData(mskue,mskupe,"1");
                     if (dtData.Rows.Count > 0)
-                        gdvHanbaiTankaKakeritsu.DataSource = dtData;
+                            gdvHanbaiTankaKakeritsu.DataSource = dtData;
+                        
                     else
                     {
                         bbl.ShowMessage("E128");
@@ -586,7 +587,7 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
         {
             if (gdvHanbaiTankaKakeritsu.Columns[e.ColumnIndex].Name == "colRate")
             {
-                string rate = gdvHanbaiTankaKakeritsu.Rows[e.RowIndex].Cells["colRate"].Value.ToString();
+                string rate = gdvHanbaiTankaKakeritsu.Rows[e.RowIndex].Cells["colRate"].EditedFormattedValue.ToString();
                 if (!String.IsNullOrEmpty(rate))
                 {
                     if (!rate.Contains("."))
@@ -598,7 +599,6 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
                             {
                                 MessageBox.Show("enter valid no");
                                 gdvHanbaiTankaKakeritsu.RefreshEdit();
-                              // gdvHanbaiTankaKakeritsu.CurrentCell = gdvHanbaiTankaKakeritsu.Rows[e.RowIndex].Cells["colRate"];
 
                             }
                         }
@@ -613,8 +613,6 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
                         {
                             MessageBox.Show("enter valid no");
                              gdvHanbaiTankaKakeritsu.RefreshEdit();
-                            //gdvHanbaiTankaKakeritsu.CurrentCell = gdvHanbaiTankaKakeritsu.Rows[e.RowIndex].Cells["colRate"];
-
                         }
                     }
                 }

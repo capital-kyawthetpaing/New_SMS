@@ -23,7 +23,9 @@ namespace DL
                 {"@SegmentCDFrom",new ValuePair{value1=SqlDbType.VarChar,value2=mte.SegmentCDFrom} },
                 {"@SegmentCDTo",new ValuePair{value1=SqlDbType.VarChar,value2=mte.SegmentCDTo} },
                 {"@TenzikaiName",new ValuePair{value1=SqlDbType.VarChar,value2=mte.TenzikaiName} },
-                {"@JANCD",new ValuePair{value1=SqlDbType.VarChar,value2=mte.JANCD} }
+                {"@JANCD",new ValuePair{value1=SqlDbType.VarChar,value2=mte.JANCD} },
+                {"@HanbaiYoteiDateMonth",new ValuePair{value1=SqlDbType.Int,value2=mte.HanbaiYoteiDateMonth} },
+                {"@HanbaiYoteiDate",new ValuePair{value1=SqlDbType.VarChar,value2=mte.HanbaiYoteiDate} }
             };
             return SelectData(dic, sp);
        }

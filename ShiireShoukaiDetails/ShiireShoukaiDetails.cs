@@ -46,7 +46,7 @@ namespace ShiireShoukaiDetails
             scSkuCD.CodeWidth = 600;
             dgv_PurchaseDetails.AllowUserToAddRows = false;
             ModeVisible = false;
-            dgv_PurchaseDetails.DisabledColumn("button,PurchaseNO,SupplierDate,Supplier,SKUCD,JANCD,makerCD,ItemName,ColorSize,Remark1,ParchaseCount,PurchaseUnitPrice,ParchaseAmount,OrderCount1,OrderUnitPrice1,OrderAmount1,OrderDate1,OrderNumber,ArrivalPlanDate,DestinationName,Stroe,StaffOperator,PaymentPlanDate,PayConfirmFinishedDate,DeliveryNo");
+            //dgv_PurchaseDetails.DisabledColumn("button,PurchaseNO,SupplierDate,Supplier,SKUCD,JANCD,makerCD,ItemName,ColorSize,Remark1,ParchaseCount,PurchaseUnitPrice,ParchaseAmount,OrderCount1,OrderUnitPrice1,OrderAmount1,OrderDate1,OrderNumber,ArrivalPlanDate,DestinationName,Stroe,StaffOperator,PaymentPlanDate,PayConfirmFinishedDate,DeliveryNo");
         }
 
         /// <summary>
@@ -278,6 +278,7 @@ namespace ShiireShoukaiDetails
                 {
                     ssdbl.ShowMessage("E128");
                     dgv_PurchaseDetails.DataSource = null;
+                    txtPurchaseDate1.Focus();
                 }
             }
         }
@@ -343,11 +344,16 @@ namespace ShiireShoukaiDetails
         private bool ErrorCheck()
         {
             //<Remark>入力無くても良い(It is not necessary to input)</Remark>
-            //if (!RequireCheck(new Control[] { txtPurchaseDate1,txtPurchaseDate2,txtPlanDate1,txtPlanDate2,txtOrderDate1,txtOrderDate2}))
+            //if (!RequireCheck(new Control[] { txtPurchaseDate1, txtPurchaseDate2, txtPlanDate1, txtPlanDate2, txtOrderDate1, txtOrderDate2 }))
             //{
             //    return false;
-            //}        
-
+            //}
+            if (!txtPurchaseDate1.DateCheck() || !txtPurchaseDate2.DateCheck())
+                return false;
+            if (!txtPlanDate1.DateCheck() || !txtPlanDate2.DateCheck())
+                return false;
+            if (!txtOrderDate1.DateCheck() || !txtOrderDate2.DateCheck())
+                return false;
             if (!string.IsNullOrEmpty(txtPurchaseDate1.Text)&& !string.IsNullOrEmpty(txtPurchaseDate2.Text))
             {
                 if (string.Compare(txtPurchaseDate1.Text, txtPurchaseDate2.Text) == 1)

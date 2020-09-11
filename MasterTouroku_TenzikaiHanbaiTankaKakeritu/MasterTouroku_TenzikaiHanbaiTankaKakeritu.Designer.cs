@@ -645,7 +645,7 @@
             // 
             this.Rate.DataPropertyName = "Rate";
             dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
+            dataGridViewCellStyle4.NullValue = "0";
             this.Rate.DefaultCellStyle = dataGridViewCellStyle4;
             this.Rate.HeaderText = "掛率";
             this.Rate.MaxInputLength = 6;
@@ -715,6 +715,7 @@
         private CKM_Controls.CKM_Label LB_Rate;
         private CKM_Controls.CKM_GridView GV_Tenzaishohin;
         private System.Windows.Forms.Panel panel2;
+        private CKM_Controls.CKM_TextBox TB_Rate;
         private System.Windows.Forms.DataGridViewCheckBoxColumn CheckBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrandCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrandName;
@@ -723,6 +724,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Year;
         private System.Windows.Forms.DataGridViewTextBoxColumn Season;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rate;
-        private CKM_Controls.CKM_TextBox TB_Rate;
     }
 }

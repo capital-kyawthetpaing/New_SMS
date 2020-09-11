@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterTouroku_ShiireKakeritsu));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -205,6 +207,7 @@
             this.txtDate1.TabIndex = 1;
             this.txtDate1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDate1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDate1.UseColorSizMode = false;
             // 
             // panelDetail
             // 
@@ -388,9 +391,10 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_ShiireKakeritsu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.dgv_ShiireKakeritsu.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgv_ShiireKakeritsu.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.NullValue = null;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -411,6 +415,14 @@
             this.colDate,
             this.colRate1,
             this.col1});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ShiireKakeritsu.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_ShiireKakeritsu.EnableHeadersVisualStyles = false;
             this.dgv_ShiireKakeritsu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgv_ShiireKakeritsu.Location = new System.Drawing.Point(164, 343);
@@ -422,6 +434,7 @@
             this.dgv_ShiireKakeritsu.UseRowNo = true;
             this.dgv_ShiireKakeritsu.UseSetting = false;
             this.dgv_ShiireKakeritsu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ShiireKakeritsu_CellContentClick);
+            this.dgv_ShiireKakeritsu.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgv_ShiireKakeritsu_CellValidating);
             this.dgv_ShiireKakeritsu.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgv_ShiireKakeritsu_DataError);
             // 
             // btnDelete
@@ -567,6 +580,7 @@
             this.txtRate.TabIndex = 21;
             this.txtRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtRate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtRate.UseColorSizMode = false;
             // 
             // ckM_Label24
             // 
@@ -613,6 +627,7 @@
             this.txtChangeDate.TabIndex = 20;
             this.txtChangeDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChangeDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtChangeDate.UseColorSizMode = false;
             // 
             // ckM_Label23
             // 
@@ -872,6 +887,7 @@
             this.txtCopy.TabIndex = 11;
             this.txtCopy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCopy.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtCopy.UseColorSizMode = false;
             // 
             // ckM_Label16
             // 
@@ -971,6 +987,7 @@
             this.txtDate.TabIndex = 9;
             this.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDate.UseColorSizMode = false;
             // 
             // ckM_Label13
             // 
@@ -1211,6 +1228,7 @@
             this.txtRate1.TabIndex = 3;
             this.txtRate1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtRate1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtRate1.UseColorSizMode = false;
             // 
             // ckM_Label6
             // 
@@ -1257,6 +1275,7 @@
             this.txtRevisionDate.TabIndex = 2;
             this.txtRevisionDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtRevisionDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtRevisionDate.UseColorSizMode = false;
             // 
             // ckM_Label5
             // 
@@ -1524,8 +1543,7 @@
             dataGridViewCellStyle3.NullValue = "0";
             this.colRate1.DefaultCellStyle = dataGridViewCellStyle3;
             this.colRate1.HeaderText = "          掛率";
-            this.colRate1.MaxInputLength = 8;
-            this.colRate1.MinimumWidth = 3;
+            this.colRate1.MaxInputLength = 6;
             this.colRate1.Name = "colRate1";
             this.colRate1.Width = 80;
             // 

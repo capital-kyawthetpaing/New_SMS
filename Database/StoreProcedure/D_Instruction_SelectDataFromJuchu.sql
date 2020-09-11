@@ -52,6 +52,7 @@ BEGIN
             ,DJ.SoukoName
             ,DJ.ShukkaShubetsu
             ,DJ.DeliveryPlanNO--配送予定番号 AS DeliveryPlanNO	--配送予定番号
+            ,DJ.DeliveryPlanRows
             ,0 AS InstructionRows	--出荷指示明細連番
             ,DJ.JuchuuNo As JuchuNo
             --※D_Juchuu②：D_Juchuu①を顧客CDでグループ化してSUM(D_Juchuu①.明細受注本体額)をSELECT
@@ -78,7 +79,7 @@ BEGIN
                     ,MD.DepositLaterFLG
 
                     ,(CASE @ChkSyukkaFuka WHEN 0 THEN 0 --Form.出荷不可分(入金不足)を含む≠ONの場合、OFF
-                    	   ELSE (CASE MD.DepositLaterFLG WHEN 0 THEN 0 ELSE 1 END) END) AS Minyukin --= 0（先入金）の場合、OFF
+                    	                  ELSE (CASE MD.DepositLaterFLG WHEN 0 THEN 0 ELSE 1 END) END) AS Minyukin --= 0（先入金）の場合、OFF
                     
                     ,DH.HanbaiHontaiGaku
                     ,DM.CommentOutStore
@@ -91,50 +92,51 @@ BEGIN
                     ,DM.SizeName
                     ,DM.JuchuuSuu
                     ,(SELECT top 1 M.SoukoName FROM M_Souko AS M 
-                            WHERE M.SoukoCD = DM.SoukoCD AND M.ChangeDate <= DH.JuchuuDate
-                            AND M.DeleteFlg = 0 
-                            ORDER BY M.ChangeDate desc) AS SoukoName
+                       WHERE M.SoukoCD = DM.SoukoCD AND M.ChangeDate <= DH.JuchuuDate
+                         AND M.DeleteFlg = 0 
+                       ORDER BY M.ChangeDate desc) AS SoukoName
                     ,1 As ShukkaShubetsu
                     ,DH.JuchuuDate
                     ,DH.CustomerCD
                     ,DM.JuchuuHontaiGaku
                     ,(SELECT top 1 M.CollectCD FROM M_Customer AS M 
-                            WHERE M.CustomerCD = DH.CustomerCD AND M.ChangeDate <= DH.JuchuuDate
-                            AND M.DeleteFlg = 0 
-                            ORDER BY M.ChangeDate desc) AS CollectCD
+                       WHERE M.CustomerCD = DH.CustomerCD AND M.ChangeDate <= DH.JuchuuDate
+                         AND M.DeleteFlg = 0 
+                       ORDER BY M.ChangeDate desc) AS CollectCD
                     ,(SELECT top 1 M.BillingCD FROM M_Customer AS M 
-                            WHERE M.CustomerCD = DH.CustomerCD AND M.ChangeDate <= DH.JuchuuDate
-                            AND M.DeleteFlg = 0 
-                            ORDER BY M.ChangeDate desc) AS BillingCD
+                       WHERE M.CustomerCD = DH.CustomerCD AND M.ChangeDate <= DH.JuchuuDate
+                         AND M.DeleteFlg = 0 
+                       ORDER BY M.ChangeDate desc) AS BillingCD
                     ,(SELECT top 1 M.FareLevel FROM M_Customer AS M 
-                            WHERE M.CustomerCD = DH.CustomerCD AND M.ChangeDate <= DH.JuchuuDate
-                            AND M.DeleteFlg = 0 
-                            ORDER BY M.ChangeDate desc) AS FareLevel 
+                       WHERE M.CustomerCD = DH.CustomerCD AND M.ChangeDate <= DH.JuchuuDate
+                         AND M.DeleteFlg = 0 
+                       ORDER BY M.ChangeDate desc) AS FareLevel 
                     ,DD.DeliveryPlanNO--配送予定番号
+                    ,DD.DeliveryPlanRows--配送予定番号
             FROM D_JuchuuDetails AS DM
-            INNER JOIN D_Juchuu AS DH
-            ON DH.JuchuuNo = DM.JuchuuNo
-            AND DH.DeleteDateTime IS NULL
-            INNER JOIN D_DeliveryPlanDetails AS DD
-            ON DD.Number = DM.JuchuuNo
-            AND DD.NumberRows = DM.JuchuuRows
-            --AND DD.DeleteDateTime IS NULL
+           INNER JOIN D_Juchuu AS DH
+              ON DH.JuchuuNo = DM.JuchuuNo
+             AND DH.DeleteDateTime IS NULL
+           INNER JOIN D_DeliveryPlanDetails AS DD
+              ON DD.Number = DM.JuchuuNo
+             AND DD.NumberRows = DM.JuchuuRows
+           --AND DD.DeleteDateTime IS NULL
             LEFT OUTER JOIN M_ZipCode AS MZ
-            ON MZ.ZipCD1 = DH.DeliveryZipCD1
-            AND MZ.ZipCD2 = DH.DeliveryZipCD2
+              ON MZ.ZipCD1 = DH.DeliveryZipCD1
+             AND MZ.ZipCD2 = DH.DeliveryZipCD2
             LEFT OUTER JOIN M_DenominationKBN As MD
-            ON MD.DenominationCD = DH.PaymentMethodCD
+              ON MD.DenominationCD = DH.PaymentMethodCD
             
             --①回収予定から入金済額を集計（D_CollectBillingはCollectPlanNOでGroupby 必要)
             LEFT OUTER JOIN D_CollectPlan AS DC
-            ON DC.JuchuuNO = DH.JuchuuNO
-            AND DC.DeleteDateTime IS NULL
+              ON DC.JuchuuNO = DH.JuchuuNO
+             AND DC.DeleteDateTime IS NULL
             
             --D_CollectBilling①
             LEFT OUTER JOIN (
                 SELECT CollectPlanNO AS CollectPlanNO                                  
                       ,SUM(CollectAmount) AS TotalCollectAmount                                    
-                FROM D_CollectBilling                                    
+                 FROM D_CollectBilling                                    
                 WHERE DeleteDateTime IS NULL                                  
                 GROUP BY CollectPlanNO                                   
             ) AS DB1
@@ -143,8 +145,8 @@ BEGIN
             --※D_CollectBilling②：CollectPlanNOでグループ化（D_CollectBilling.DeleteDateTime IS NULL）してSUM(D_CollectBilling.CollectAmount)をSELECT
             LEFT OUTER JOIN (
                 SELECT CollectPlanNO AS CollectPlanNO
-                ,   SUM(CollectAmount) AS TotalCollectAmount
-                FROM D_CollectBilling
+                      ,SUM(CollectAmount) AS TotalCollectAmount
+                 FROM D_CollectBilling
                 WHERE DeleteDateTime IS NULL
                 GROUP BY CollectPlanNO
             ) AS DB2
@@ -159,13 +161,13 @@ BEGIN
                 OR (@Chk2 = 1 AND DM.ExpressFLG = 1)    --至急CheckBox=ONの時
                 )
             AND NOT EXISTS(SELECT 1 FROM D_DeliveryPlanDetails AS B     --完了していない引当なし
-                    WHERE B.DeliveryPlanNO = DD.DeliveryPlanNO
-                    --AND B.DeleteDateTime IS NULL
-                    AND B.HikiateFLG = 0
-                    AND B.UpdateCancelKBN <> 9)
+                           WHERE B.DeliveryPlanNO = DD.DeliveryPlanNO
+                           --AND B.DeleteDateTime IS NULL
+                           AND B.HikiateFLG = 0
+                           AND B.UpdateCancelKBN <> 9)
             AND NOT EXISTS(SELECT 1 FROM D_Instruction AS DI
-                    WHERE DI.DeliveryPlanNO = DD.DeliveryPlanNO     --出荷指示未作成
-                    AND DI.DeleteDateTime IS NULL)
+                           WHERE DI.DeliveryPlanNO = DD.DeliveryPlanNO     --出荷指示未作成
+                           AND DI.DeleteDateTime IS NULL)
 
         ) AS DJ
         
@@ -173,8 +175,8 @@ BEGIN
         --※D_Collect①：CollectCustomerCDでグループ化（D_Collect.DeleteDateTime IS NULL）してSUM(D_Collect.ConfirmSource),SUM(D_Collect.CollectAmount)をSELECT
         LEFT OUTER JOIN (
             SELECT CollectCustomerCD AS CollectCustomerCD                              
-                ,   SUM(ConfirmSource) AS TotalConfirmSource                                
-                ,   SUM(CollectAmount) AS TotalCollectAmount                                
+                  ,SUM(ConfirmSource) AS TotalConfirmSource                                
+                  ,SUM(CollectAmount) AS TotalCollectAmount                                
             FROM D_Collect                               
             WHERE DeleteDateTime IS NULL                              
             GROUP BY CollectCustomerCD                               
@@ -185,7 +187,7 @@ BEGIN
         --※D_CollectPlan①：CustomerCDでグループ化（D_CollectPlan.DeleteDateTime IS NULL）してSUM(D_CollectPlan.CollectPlanGaku)をSELECT
         LEFT OUTER JOIN (
             SELECT DC.CustomerCD AS CustomerCD
-            	,SUM(DC.CollectPlanGaku) AS TotalCollectPlanGaku
+            	  ,SUM(DC.CollectPlanGaku) AS TotalCollectPlanGaku
             FROM D_CollectPlan AS DC
             WHERE DC.DeleteDateTime IS NULL
             GROUP BY DC.CustomerCD
@@ -215,9 +217,9 @@ BEGIN
             ,DD.DeliveryAddress1
             ,(CASE WHEN DD.DecidedDeliveryDate IS NOT NULL THEN 
                     (CASE WHEN DATEADD(DAY,-1*ISNULL(MZ.CarrierLeadDay,0),DD.DecidedDeliveryDate) < SYSDATETIME() THEN
-                        CONVERT(varchar,SYSDATETIME(),111)
-                        ELSE CONVERT(varchar,DD.DecidedDeliveryDate,111) END)
-                ELSE CONVERT(varchar,DD.DeliveryPlanDate,111) END) AS DeliveryPlanDate   --出荷予定日
+                               CONVERT(varchar,SYSDATETIME(),111)
+                          ELSE CONVERT(varchar,DD.DecidedDeliveryDate,111) END)
+                   ELSE CONVERT(varchar,DD.DeliveryPlanDate,111) END) AS DeliveryPlanDate   --出荷予定日
             ,0 AS Minyukin    --
             ,0 AS HanbaiHontaiGaku
             ,NULL AS InstructionNO  --出荷指示番号
@@ -256,12 +258,15 @@ BEGIN
               AND M.DeleteFlg = 0
               ORDER BY M.ChangeDate desc) AS SizeName
             ,DMD.MoveSu AS JuchuuSuu
-            ,(SELECT top 1 M.SoukoName FROM M_Souko AS M WHERE M.SoukoCD = DD.DeliverySoukoCD AND M.ChangeDate <= DD.DeliveryPlanDate
-                    AND M.DeleteFlg = 0 
-                    AND M.StoreCD = @StoreCD
-                    ORDER BY M.ChangeDate desc) AS SoukoName
+            --,(SELECT top 1 M.SoukoName FROM M_Souko AS M 
+            --  WHERE M.SoukoCD = DD.DeliverySoukoCD AND M.ChangeDate <= DD.DeliveryPlanDate
+            --  AND M.DeleteFlg = 0 
+            --  AND M.StoreCD = @StoreCD
+            --  ORDER BY M.ChangeDate desc) AS SoukoName
+            ,NULL As SoukoName
             ,DD.DeliveryKBN As ShukkaShubetsu
-            ,DD.DeliveryPlanNO--配送予定番号
+            ,DM.DeliveryPlanNO--配送予定番号
+            ,DM.DeliveryPlanRows
             ,0 AS InstructionRows	--出荷指示明細連番
             ,NULL As JuchuNo
             --※D_Juchuu②：D_Juchuu①を顧客CDでグループ化してSUM(D_Juchuu①.明細受注本体額)をSELECT
@@ -301,21 +306,21 @@ BEGIN
             OR (@Chk2 = 1 AND DD.ExpressFLG = 1)    --至急CheckBox=ONの時
             OR (@Chk5 = 1 AND DD.DeliveryKBN = 2)
             )
-        AND EXISTS(SELECT M.SoukoCD FROM M_Souko AS M
-                WHERE M.SoukoCD = DD.DeliverySoukoCD
-                AND M.DeleteFlg = 0
-                AND M.StoreCD = @StoreCD
-            )
+        --AND EXISTS(SELECT M.SoukoCD FROM M_Souko AS M
+        --           WHERE M.SoukoCD = DD.DeliverySoukoCD
+        --           AND M.DeleteFlg = 0
+        --           AND M.StoreCD = @StoreCD
+        --    )
         --※完了していない引当なし
         AND NOT EXISTS(SELECT 1 FROM D_DeliveryPlanDetails AS B
-                    WHERE B.DeliveryPlanNO = DD.DeliveryPlanNO
-                    --AND B.DeleteDateTime IS NULL
-                    AND B.HikiateFLG = 0
-                    AND B.UpdateCancelKBN <> 9)
+                       WHERE B.DeliveryPlanNO = DD.DeliveryPlanNO
+                       --AND B.DeleteDateTime IS NULL
+                       AND B.HikiateFLG = 0
+                       AND B.UpdateCancelKBN <> 9)
         --※出荷指示未作成
         AND NOT EXISTS(SELECT 1 FROM D_Instruction AS DI
-                    WHERE DI.DeliveryPlanNO = DD.DeliveryPlanNO
-                    AND DI.DeleteDateTime IS NULL)
+                       WHERE DI.DeliveryPlanNO = DD.DeliveryPlanNO
+                       AND DI.DeleteDateTime IS NULL)
 	UNION ALL
 	
     --画面項目転送表03　(出荷指示作成済分)・・・出荷指示データから表示
@@ -336,54 +341,58 @@ BEGIN
             ,DI.DeliveryAddress1
             ,CONVERT(varchar,DI.DeliveryPlanDate,111) AS DeliveryPlanDate   --出荷予定日
             ,0 AS Minyukin    --
-            ,0 AS HanbaiHontaiGaku
+            ,NULL AS HanbaiHontaiGaku
             ,DI.InstructionNO		--出荷指示番号
             ,CONVERT(varchar,DS.ShippingDate,111) AS ShippingDate	--出荷日
             ,DI.CommentOutStore
             ,DI.CommentInStore
             ,DR.AdminNO
             ,(SELECT top 1 M.JANCD 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= DI.DeliveryPlanDate
-             AND M.AdminNO = DIM.AdminNO
+              FROM M_SKU AS M 
+              WHERE M.ChangeDate <= DI.DeliveryPlanDate
+              AND M.AdminNO = DIM.AdminNO
               AND M.DeleteFlg = 0
-             ORDER BY M.ChangeDate desc) AS JANCD
+              ORDER BY M.ChangeDate desc) AS JANCD
             ,(SELECT top 1 M.SKUCD 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= DI.DeliveryPlanDate
-             AND M.AdminNO = DIM.AdminNO
+              FROM M_SKU AS M 
+              WHERE M.ChangeDate <= DI.DeliveryPlanDate
+              AND M.AdminNO = DIM.AdminNO
               AND M.DeleteFlg = 0
-             ORDER BY M.ChangeDate desc) AS SKUCD
+              ORDER BY M.ChangeDate desc) AS SKUCD
             ,(SELECT top 1 M.SKUName 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= DI.DeliveryPlanDate
-             AND M.AdminNO = DIM.AdminNO
+              FROM M_SKU AS M 
+              WHERE M.ChangeDate <= DI.DeliveryPlanDate
+              AND M.AdminNO = DIM.AdminNO
               AND M.DeleteFlg = 0
-             ORDER BY M.ChangeDate desc) AS SKUName
+              ORDER BY M.ChangeDate desc) AS SKUName
             ,(SELECT top 1 M.ColorName 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= DI.DeliveryPlanDate
-             AND M.AdminNO = DIM.AdminNO
+              FROM M_SKU AS M 
+              WHERE M.ChangeDate <= DI.DeliveryPlanDate
+              AND M.AdminNO = DIM.AdminNO
               AND M.DeleteFlg = 0
-             ORDER BY M.ChangeDate desc) AS ColorName
+              ORDER BY M.ChangeDate desc) AS ColorName
             ,(SELECT top 1 M.SizeName 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= DI.DeliveryPlanDate
-             AND M.AdminNO = DIM.AdminNO
+              FROM M_SKU AS M 
+              WHERE M.ChangeDate <= DI.DeliveryPlanDate
+              AND M.AdminNO = DIM.AdminNO
               AND M.DeleteFlg = 0
-             ORDER BY M.ChangeDate desc) AS SizeName
+              ORDER BY M.ChangeDate desc) AS SizeName
             ,DIM.InstructionSu AS JuchuuSuu
-            ,(SELECT top 1 M.SoukoName FROM M_Souko AS M WHERE M.SoukoCD = DI.DeliverySoukoCD AND M.ChangeDate <= DI.DeliveryPlanDate
-                    AND M.DeleteFlg = 0
-                    AND M.StoreCD = @StoreCD
-                    ORDER BY M.ChangeDate desc) AS SoukoName
+            --,(SELECT top 1 M.SoukoName FROM M_Souko AS M 
+            --  WHERE M.SoukoCD = DI.DeliverySoukoCD 
+            --  AND M.ChangeDate <= DI.DeliveryPlanDate
+            --  AND M.DeleteFlg = 0
+            --  AND M.StoreCD = @StoreCD
+            --  ORDER BY M.ChangeDate desc) AS SoukoName
+            ,NULL AS SoukoName
             ,DI.InstructionKBN As ShukkaShubetsu
             ,DI.DeliveryPlanNO	--配送予定番号
+            ,DM.DeliveryPlanRows
             ,DIM.InstructionRows	--出荷指示明細連番
             ,NULL As JuchuNo
             --※D_Juchuu②：D_Juchuu①を顧客CDでグループ化してSUM(D_Juchuu①.明細受注本体額)をSELECT
             ,0 AS JuchuuHontaiGaku
-            ,(SELECT COUnt(*)
+            ,(SELECT COUNT(*)
                 FROM D_InstructionDetails AS DISM
                 INNER JOIN D_Instruction DISH
                 ON DISH.InstructionNO = DISM.InstructionNO
@@ -407,6 +416,9 @@ BEGIN
         INNER JOIN D_DeliveryPlan AS DD
         ON DD.DeliveryPlanNO = DI.DeliveryPlanNO
         --AND DD.DeleteDateTime IS NULL
+        INNER JOIN D_DeliveryPlanDetails AS DM
+        ON DR.Number = DM.Number
+        AND DR.NumberRows = DM.NumberRows
         LEFT OUTER JOIN D_Shipping AS DS
         ON DS.InstructionNO = DI.InstructionNO
         AND DS.DeleteDateTime IS NULL
@@ -425,15 +437,15 @@ BEGIN
             OR (@Chk2 = 1 AND DI.ExpressFLG = 1)    --至急CheckBox=ONの時
             OR (@Chk5 = 1 AND DI.InstructionKBN = 2)
             )
-        AND EXISTS(SELECT M.SoukoCD FROM M_Souko AS M
-                WHERE M.SoukoCD = DI.DeliverySoukoCD
-                AND M.DeleteFlg = 0
-                AND M.StoreCD = @StoreCD
-            )
+        --AND EXISTS(SELECT M.SoukoCD FROM M_Souko AS M
+        --        WHERE M.SoukoCD = DI.DeliverySoukoCD
+        --        AND M.DeleteFlg = 0
+        --        AND M.StoreCD = @StoreCD
+        --    )
         AND (@ChkHakkozumi = 1 OR (@ChkHakkozumi = 0 AND DI.PrintDate IS NULL))
         AND (@ChkSyukkazumi = 1 OR (@ChkSyukkazumi = 0 AND NOT EXISTS(SELECT 1 FROM D_Shipping AS A
-                                            WHERE A.InstructionNO = DI.InstructionNO
-                                            AND A.DeleteDateTime IS NULL)))        
+                                                                      WHERE A.InstructionNO = DI.InstructionNO
+                                                                      AND A.DeleteDateTime IS NULL)))        
     --※画面項目転送表01のデータも含めての並び順
     --出荷予定日,出荷先名(顧客名),受注番号-明細連番,出荷指示番号
     ORDER BY DeliveryPlanDate, DeliveryName, JuchuuNO, InstructionNO	
