@@ -26,6 +26,7 @@ namespace ZaikoKanriHyou
         D_Purchase_Details_Entity dpde;
         D_MonthlyStock_Entity dmse;
         M_StoreClose_Entity msce;
+        M_StoreAuthorizations_Entity msae = new M_StoreAuthorizations_Entity();
         int chk = 0;
         
         public ZaikoKanriHyou()
@@ -93,6 +94,17 @@ namespace ZaikoKanriHyou
                     return false;
                 }
             }
+            msae.StoreAuthorizationsCD = StoreAuthorizationsCD;
+            msae.ChangeDate = StoreAuthorizationsChangeDate;
+            msae.StoreCD = cboSouko.SelectedValue.ToString();
+            DataTable dtAuthorization = new DataTable();
+            dtAuthorization = zkhbl.M_StoreAuthorizations_Select(msae);
+            if (dtAuthorization.Rows.Count == 0)
+            {
+                zkhbl.ShowMessage("E139");
+                cboSouko.Focus();
+                return false;
+            }
             return true;
         }
       
@@ -114,10 +126,15 @@ namespace ZaikoKanriHyou
         }
         private D_MonthlyStock_Entity MonthlyStockInfo()
         {
+            int year = Convert.ToInt32(txtTargetDate.Text.Substring(0, 4));
+            int month = Convert.ToInt32(txtTargetDate.Text.Substring(5, 2));
+            string lastday = "/" + DateTime.DaysInMonth(year, month).ToString();
             dmse = new D_MonthlyStock_Entity()
             {
+                YYYYMM = txtTargetDate.Text.Replace("/", ""),
                 SoukoCD = cboSouko.SelectedValue.ToString(),
-                YYYYMM = txtTargetDate.Text.Replace("/", "")
+                TargetDateFrom = txtTargetDate.Text + "/01",
+                TargetDateTo = txtTargetDate.Text + lastday
             };
             return dmse;
         }
@@ -195,7 +212,7 @@ namespace ZaikoKanriHyou
                                 zkh_Report.SetDataSource(dt);
                                 zkh_Report.Refresh();
                                 zkh_Report.SetParameterValue("lblDate", txtTargetDate.Text);
-                                zkh_Report.SetParameterValue("lblSouko", cboSouko.SelectedValue.ToString() + "   " + cboSouko.AccessibilityObject.Name);
+                                zkh_Report.SetParameterValue("lblSouko", cboSouko.SelectedValue.ToString() + "   " + cboSouko.Text);
                                 zkh_Report.SetParameterValue("lblToday", dt.Rows[0]["Today"].ToString() + "  " + dt.Rows[0]["Now"].ToString());
                                 try
                                 {
@@ -296,6 +313,11 @@ namespace ZaikoKanriHyou
             if(chkRelatedPrinting.Checked==true)
             {
                 rdoITEM.Checked = true;
+            }
+            else
+            {
+                rdoITEM.Checked = false;
+                rdoProductCD.Checked = false;
             }
         }
     }

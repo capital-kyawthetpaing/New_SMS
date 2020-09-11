@@ -258,11 +258,12 @@ BEGIN
               AND M.DeleteFlg = 0
               ORDER BY M.ChangeDate desc) AS SizeName
             ,DMD.MoveSu AS JuchuuSuu
-            ,(SELECT top 1 M.SoukoName FROM M_Souko AS M 
-              WHERE M.SoukoCD = DD.DeliverySoukoCD AND M.ChangeDate <= DD.DeliveryPlanDate
-              AND M.DeleteFlg = 0 
-              AND M.StoreCD = @StoreCD
-              ORDER BY M.ChangeDate desc) AS SoukoName
+            --,(SELECT top 1 M.SoukoName FROM M_Souko AS M 
+            --  WHERE M.SoukoCD = DD.DeliverySoukoCD AND M.ChangeDate <= DD.DeliveryPlanDate
+            --  AND M.DeleteFlg = 0 
+            --  AND M.StoreCD = @StoreCD
+            --  ORDER BY M.ChangeDate desc) AS SoukoName
+            ,NULL As SoukoName
             ,DD.DeliveryKBN As ShukkaShubetsu
             ,DM.DeliveryPlanNO--”z‘——\’è”Ô†
             ,DM.DeliveryPlanRows
@@ -305,11 +306,11 @@ BEGIN
             OR (@Chk2 = 1 AND DD.ExpressFLG = 1)    --ŽŠ‹}CheckBox=ON‚ÌŽž
             OR (@Chk5 = 1 AND DD.DeliveryKBN = 2)
             )
-        AND EXISTS(SELECT M.SoukoCD FROM M_Souko AS M
-                   WHERE M.SoukoCD = DD.DeliverySoukoCD
-                   AND M.DeleteFlg = 0
-                   AND M.StoreCD = @StoreCD
-            )
+        --AND EXISTS(SELECT M.SoukoCD FROM M_Souko AS M
+        --           WHERE M.SoukoCD = DD.DeliverySoukoCD
+        --           AND M.DeleteFlg = 0
+        --           AND M.StoreCD = @StoreCD
+        --    )
         --¦Š®—¹‚µ‚Ä‚¢‚È‚¢ˆø“–‚È‚µ
         AND NOT EXISTS(SELECT 1 FROM D_DeliveryPlanDetails AS B
                        WHERE B.DeliveryPlanNO = DD.DeliveryPlanNO
@@ -340,7 +341,7 @@ BEGIN
             ,DI.DeliveryAddress1
             ,CONVERT(varchar,DI.DeliveryPlanDate,111) AS DeliveryPlanDate   --o‰×—\’è“ú
             ,0 AS Minyukin    --
-            ,0 AS HanbaiHontaiGaku
+            ,NULL AS HanbaiHontaiGaku
             ,DI.InstructionNO		--o‰×ŽwŽ¦”Ô†
             ,CONVERT(varchar,DS.ShippingDate,111) AS ShippingDate	--o‰×“ú
             ,DI.CommentOutStore
@@ -377,12 +378,13 @@ BEGIN
               AND M.DeleteFlg = 0
               ORDER BY M.ChangeDate desc) AS SizeName
             ,DIM.InstructionSu AS JuchuuSuu
-            ,(SELECT top 1 M.SoukoName FROM M_Souko AS M 
-              WHERE M.SoukoCD = DI.DeliverySoukoCD 
-              AND M.ChangeDate <= DI.DeliveryPlanDate
-              AND M.DeleteFlg = 0
-              AND M.StoreCD = @StoreCD
-              ORDER BY M.ChangeDate desc) AS SoukoName
+            --,(SELECT top 1 M.SoukoName FROM M_Souko AS M 
+            --  WHERE M.SoukoCD = DI.DeliverySoukoCD 
+            --  AND M.ChangeDate <= DI.DeliveryPlanDate
+            --  AND M.DeleteFlg = 0
+            --  AND M.StoreCD = @StoreCD
+            --  ORDER BY M.ChangeDate desc) AS SoukoName
+            ,NULL AS SoukoName
             ,DI.InstructionKBN As ShukkaShubetsu
             ,DI.DeliveryPlanNO	--”z‘——\’è”Ô†
             ,DM.DeliveryPlanRows
@@ -435,11 +437,11 @@ BEGIN
             OR (@Chk2 = 1 AND DI.ExpressFLG = 1)    --ŽŠ‹}CheckBox=ON‚ÌŽž
             OR (@Chk5 = 1 AND DI.InstructionKBN = 2)
             )
-        AND EXISTS(SELECT M.SoukoCD FROM M_Souko AS M
-                WHERE M.SoukoCD = DI.DeliverySoukoCD
-                AND M.DeleteFlg = 0
-                AND M.StoreCD = @StoreCD
-            )
+        --AND EXISTS(SELECT M.SoukoCD FROM M_Souko AS M
+        --        WHERE M.SoukoCD = DI.DeliverySoukoCD
+        --        AND M.DeleteFlg = 0
+        --        AND M.StoreCD = @StoreCD
+        --    )
         AND (@ChkHakkozumi = 1 OR (@ChkHakkozumi = 0 AND DI.PrintDate IS NULL))
         AND (@ChkSyukkazumi = 1 OR (@ChkSyukkazumi = 0 AND NOT EXISTS(SELECT 1 FROM D_Shipping AS A
                                                                       WHERE A.InstructionNO = DI.InstructionNO
