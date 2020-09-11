@@ -207,7 +207,7 @@ namespace ZaikoKanriHyou
                                 zkh_Report.SetDataSource(dt);
                                 zkh_Report.Refresh();
                                 zkh_Report.SetParameterValue("lblDate", txtTargetDate.Text);
-                                zkh_Report.SetParameterValue("lblSouko", cboSouko.SelectedValue.ToString() + "   " + cboSouko.AccessibilityObject.Name);
+                                zkh_Report.SetParameterValue("lblSouko", cboSouko.SelectedValue.ToString() + "   " + cboSouko.Text);
                                 zkh_Report.SetParameterValue("lblToday", dt.Rows[0]["Today"].ToString() + "  " + dt.Rows[0]["Now"].ToString());
                                 try
                                 {
