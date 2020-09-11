@@ -197,7 +197,7 @@ namespace GetsujiShimeShori
             if (position.Equals("0"))
             {
                 label.Text = "入力可";
-                label.BackColor = Color.FromArgb(255, 192, 0);
+                label.BackColor = Color.FromArgb(128, 255, 255);
                 button.Enabled = true;
                 button.Text = "仮締する";
             }
@@ -456,8 +456,19 @@ namespace GetsujiShimeShori
                 if (index <= (int)EIndex.All)
                     SubBtnClick(index);
                 else
+                {
+                    if (index == (int)EIndex.Kakutei)
+                    {
+                        if (bbl.ShowMessage("Q323") != DialogResult.Yes)
+                            return;
+                    }
+                    else
+                    {
+                        if (bbl.ShowMessage("Q322") != DialogResult.Yes)
+                            return;
+                    }
                     SubBtnClickKakutei(index);
-
+                }
                 //画面更新
                 ExecDisp();
             }
