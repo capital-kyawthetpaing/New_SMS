@@ -54,9 +54,9 @@ BEGIN
         AND FiscalYYYYMM = @FiscalYYYYMM
         ;
         
-        IF @@ROWCOUNT = 0
+        IF @@ROWCOUNT = 0 OR @Mode = 1
         BEGIN
-        	EXEC M_StoreClose_Insert
+            EXEC M_StoreClose_Insert
                   @StoreCD
                   ,@FiscalYYYYMM
                   ,@Operator
