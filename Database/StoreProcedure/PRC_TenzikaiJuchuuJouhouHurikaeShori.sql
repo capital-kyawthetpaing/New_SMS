@@ -38,7 +38,7 @@ BEGIN
     AND B.DeleteDateTime IS NULL
     WHERE A.DeleteDateTime IS NULL
     --一時ワークテーブル「M_SKU①」(一時ワークテーブル「D_TaishougaiJuchuu①」、テーブル転送仕様Ｂで「M_SKU①」として使用)	
-    AND NOT EXISTS(SELECT MT.JanCD
+    AND NOT EXISTS(SELECT MT.JanCD AS TenzikaiShouhinJanCD
                          ,F.AdminNO
                          ,F.SKUCD
                          ,F.JanCD
@@ -58,7 +58,7 @@ BEGIN
                                ) AS MT 
                    ON MT.ExhibitionCommonCD = F.ExhibitionCommonCD
                    WHERE F.DeleteFlg = 0
-                   AND F.JanCD = B.JanCD)
+                   AND MT.JanCD = B.JanCD)
     AND A.JuchuuHurikaeZumiFLG = 0
     AND A.VendorCD = @VendorCD
     AND A.LastYearTerm = @LastYearTerm
@@ -271,8 +271,8 @@ CREATE PROCEDURE PRC_TenzikaiJuchuuJouhouHurikaeShori
     @LastSeason     varchar(6),
 
     @Operator  varchar(10),
-    @PC  varchar(30),
-    @OutJuchuuProcessNO varchar(11) OUTPUT
+    @PC  varchar(30)
+--    @OutJuchuuProcessNO varchar(11) OUTPUT
 )AS
 
 --********************************************--
@@ -328,7 +328,7 @@ BEGIN
                 AND B.DeleteDateTime IS NULL
                 WHERE A.DeleteDateTime IS NULL
                 --一時ワークテーブル「M_SKU①」(一時ワークテーブル「D_TaishougaiJuchuu①」、テーブル転送仕様Ｂで「M_SKU①」として使用)	
-                AND NOT EXISTS(SELECT MT.JanCD
+                AND NOT EXISTS(SELECT MT.JanCD AS TenzikaiShouhinJanCD
                                      ,F.AdminNO
                                      ,F.SKUCD
                                      ,F.JanCD
@@ -348,7 +348,7 @@ BEGIN
                                            ) AS MT 
                                ON MT.ExhibitionCommonCD = F.ExhibitionCommonCD
                                WHERE F.DeleteFlg = 0
-                               AND F.JanCD = B.JanCD)
+                               AND MT.JanCD = B.JanCD)
         		AND A.JuchuuHurikaeZumiFLG = 0
                 AND A.VendorCD = @VendorCD
                 AND A.LastYearTerm = @LastYearTerm
@@ -768,7 +768,7 @@ BEGIN
                    INNER JOIN D_TenzikaiJuchuuDetails AS DM
                    ON DM.TenzikaiJuchuuNO = DT.TenzikaiJuchuuNO
                    AND DM.DeleteDateTime IS NULL
-                   LEFT OUTER JOIN (SELECT MT.JanCD
+                   LEFT OUTER JOIN (SELECT MT.JanCD AS TenzikaiShouhinJanCD
                                      ,F.AdminNO
                                      ,F.SKUCD
                                      ,F.JanCD
@@ -787,10 +787,8 @@ BEGIN
                                            GROUP BY MTS.ExhibitionCommonCD
                                            ) AS MT 
                                ON MT.ExhibitionCommonCD = F.ExhibitionCommonCD
-                               WHERE F.DeleteFlg = 0
-                               AND F.JanCD = B.JanCD) AS FS
-                   ON FS.JanCD = DM.TenzikaiShouhinJanCD
-                   AND F.DeleteFlg = 0
+                               WHERE F.DeleteFlg = 0) AS FS
+                   ON FS.TenzikaiShouhinJanCD = DM.JanCD
                    WHERE DT.TenzikaiJuchuuNO = @TenzikaiJuchuuNO
                    AND DM.TenzikaiJuchuuRows = @TenzikaiJuchuuRows
                   ;
@@ -1029,10 +1027,10 @@ BEGIN
         @Operator,
         'TenzikaiJuchuuJouhouHurikaeShori',
         @PC,
-        '',
+        NULL,
         @KeyItem;
 
-    SET @OutJuchuuProcessNO = @JuchuuProcessNO;
+    --SET @OutJuchuuProcessNO = @JuchuuProcessNO;
     
 --<<OWARI>>
   return @W_ERR;
