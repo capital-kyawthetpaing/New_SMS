@@ -227,7 +227,6 @@ namespace Search
                 }
             }
         }
-
         private void SC_segment_Enter(object sender, EventArgs e)
         {
             SC_segment.Value1 = "226";
