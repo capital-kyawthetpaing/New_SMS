@@ -113,8 +113,8 @@ namespace CKM_Controls
             運送会社,
             配送会社,
             マークダウン倉庫,   
-            在庫情報
-
+            在庫情報,
+            出荷倉庫
         }
 
         private int length = 10;
@@ -494,6 +494,15 @@ namespace CKM_Controls
                     msoe3.DeleteFlg = "0";
                     DataTable dtSSoukoH = sjbl.M_Souko_BindForShukka(msoe3);
                     BindCombo("SoukoCD", "SoukoName", dtSSoukoH);
+                    break;
+
+                case CboType.出荷倉庫:
+                    ShuukaSouko_BL Shuuka = new ShuukaSouko_BL();
+                    //M_Souko_Entity msoe3 = new M_Souko_Entity();
+                    // msoe3.ChangeDate = changeDate;
+                    // msoe3.DeleteFlg = "0";
+                    DataTable dtShuukka = Shuuka.M_Souko_BindForShukka(changeDate, "0");
+                    BindCombo("SoukoCD", "SoukoName", dtShuukka);
                     break;
                 case CboType.棚卸倉庫:
                     Tanaoroshi_BL tabl = new Tanaoroshi_BL();
