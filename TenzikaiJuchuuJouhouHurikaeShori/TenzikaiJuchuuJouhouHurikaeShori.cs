@@ -88,7 +88,7 @@ namespace TenzikaiJuchuuJouhouHurikaeShori
                     return;
                 }
 
-            if (bbl.ShowMessage("Q201") != DialogResult.Yes)
+            if (bbl.ShowMessage("Q101") != DialogResult.Yes)
             {
                 return;
             }

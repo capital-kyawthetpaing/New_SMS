@@ -30,6 +30,10 @@ namespace Entity
         public string LastCEndDate { get; set; }
         public string HanbaiYoteiDateMonth { get; set; }
         public string HanbaiYoteiDate { get; set; }
-        public string InsertOperator { get; set; }
+        public string SKUName { get; set; }
+        public string InsertDateFrom { get; set; }
+        public string InsertDateTo { get; set; }
+        public string UpdateDateFrom { get; set; }
+        public string UpdateDateTo { get; set; }
     }
 }

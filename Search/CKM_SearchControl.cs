@@ -265,6 +265,7 @@ namespace Search
             EDI処理番号,
             棚番号,
             ピッキング番号,
+            展示会商品,
             //<----------- 2019.12.05
             /*ItemMulti,*/
             //SKUMulti,
@@ -696,6 +697,12 @@ namespace Search
                     TxtCode.MaxLength = 40;
                     TxtCode.Width = 400;
                     lblName.Width = 180;
+                    break;
+
+                case SearchType.展示会商品:
+                    txtCode.MaxLength = 13;
+                    txtCode.Width = 100;
+                    lblName.Width = 310;
                     break;
             }
             //}
@@ -1768,6 +1775,23 @@ namespace Search
                             txtCode.Text = frmTenzikai.TenzikaiName;
                             CheckBasedFormPanel();
                         }
+                    }
+                    break;
+                case SearchType.展示会商品:
+                    using (Search_TenzikaiShouhin frmTenzikaishouhin = new Search_TenzikaiShouhin())
+                    {
+                        //frmTenzikaishouhin.parChangeDate = changedate;
+
+                        if (UseChangeDate == true)
+                            frmTenzikaishouhin.parChangeDate = changedate;
+                        frmTenzikaishouhin.ShowDialog();
+                        if (!frmTenzikaishouhin.flgCancel)
+                        {
+                            txtCode.Text = frmTenzikaishouhin.parTzikaishouhinCD;
+                            lblName.Text = frmTenzikaishouhin.parTzikaishouhindName;
+                            CheckBasedFormPanel();//PTK added
+                        }
+
                     }
                     break;
             }

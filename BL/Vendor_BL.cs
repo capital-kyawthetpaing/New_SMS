@@ -146,7 +146,18 @@ namespace BL
             else
                 return false;
         }
-
+        public bool M_Vendor_Select_Tenji(M_Vendor_Entity mve)
+        {
+            DataTable dt = mvdl.M_Vendor_Select_Tenji(mve);
+            if (dt.Rows.Count > 0)
+            {
+                mve.VendorCD = dt.Rows[0]["VendorCD"].ToString();
+                mve.VendorName = dt.Rows[0]["VendorName"].ToString();
+                return true;
+            }
+            else
+                return false;
+        }
         public bool M_Vendor_SelectForPayeeCD(M_Vendor_Entity mve)
         {
             DataTable dt = mvdl.M_Vendor_SelectForPayeeCD(mve);

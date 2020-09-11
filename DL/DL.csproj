@@ -171,6 +171,7 @@
     <Compile Include="D_DepositHistory_DL.cs" />
     <Compile Include="M_Customer_DL.cs" />
     <Compile Include="Search_PlanArrival_DL.cs" />
+    <Compile Include="ShuukaSouko_DL.cs" />
     <Compile Include="TempoRegiFurikomiYoushi_DL.cs" />
     <Compile Include="TempoRegiHanbaiTouroku_DL.cs" />
     <Compile Include="TempoRegiJournal_DL.cs" />
@@ -179,6 +180,7 @@
     <Compile Include="TempoRegiTorihikiReceipt_DL.cs" />
     <Compile Include="TempoShukkaNyuuryoku_DL.cs" />
     <Compile Include="M_UnsouGaisya_DL.cs" />
+    <Compile Include="TenjikaiJuuChuu_DL.cs" />
     <Compile Include="TenzikaiShouhinJouhouShuturyoku_DL.cs" />
     <Compile Include="ZaikoKanriHyou_DL.cs" />
     <Compile Include="ZaikoShoukai_DL.cs" />
