@@ -29,7 +29,7 @@ namespace DL
         }
         public DataTable M_TenzikaiShouhin_Search(M_TenzikaiShouhin_Entity mte)
         {
-            string sp = "M_TenzikaiShouhin_Search";
+            string sp = "M_Tenzikai_Search";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@VendorCD", new ValuePair { value1 =SqlDbType.VarChar,value2 = mte.VendorCD } },
