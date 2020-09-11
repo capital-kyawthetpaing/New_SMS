@@ -171,6 +171,7 @@
     <Compile Include="D_DepositHistory_DL.cs" />
     <Compile Include="M_Customer_DL.cs" />
     <Compile Include="Search_PlanArrival_DL.cs" />
+    <Compile Include="Search_TenzikaiShouhin_DL.cs" />
     <Compile Include="ShuukaSouko_DL.cs" />
     <Compile Include="TempoRegiFurikomiYoushi_DL.cs" />
     <Compile Include="TempoRegiHanbaiTouroku_DL.cs" />
