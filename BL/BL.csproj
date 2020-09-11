@@ -161,6 +161,7 @@
     <Compile Include="ShukkaShoukai_BL.cs" />
     <Compile Include="ShukkaSiziTourokuFromJuchuu_BL.cs" />
     <Compile Include="ShukkaUriageUpdate_BL.cs" />
+    <Compile Include="ShuukaSouko_BL.cs" />
     <Compile Include="SiharaiNyuuryoku_BL.cs" />
     <Compile Include="SiharaiTouroku_BL.cs" />
     <Compile Include="SiharaiYoteiHyou_BL.cs" />
@@ -203,6 +204,7 @@
     <Compile Include="TempoRejiPointSettei_BL.cs" />
     <Compile Include="TempoShukkaNyuuryoku_BL.cs" />
     <Compile Include="TempoUriageNyuuryoku_BL.cs" />
+    <Compile Include="TenjikaiJuuChuu_BL.cs" />
     <Compile Include="TenzikaiShouhinJouhouShuturyoku_BL.cs" />
     <Compile Include="UriageMotochou_BL.cs" />
     <Compile Include="UriageNyuuryoku_BL.cs" />

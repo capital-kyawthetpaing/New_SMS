@@ -33,17 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BL">
-      <HintPath>..\..\..\Projects\Cash\CashDrawerOpen\CashDrawerOpen\CashDrawerOpen\Bigin\DLL\BL.dll</HintPath>
-    </Reference>
-    <Reference Include="Entity">
-      <HintPath>..\..\..\Projects\Cash\CashDrawerOpen\CashDrawerOpen\CashDrawerOpen\Bigin\DLL\Entity.dll</HintPath>
-    </Reference>
     <Reference Include="GridBase">
       <HintPath>..\..\..\Projects\PP_Test\GBase\RDLL\GridBase.dll</HintPath>
-    </Reference>
-    <Reference Include="Search">
-      <HintPath>..\CKM_Controls\bin\Debug\Search.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -59,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClsGridTenjikai.cs" />
+    <Compile Include="FrmAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddress.Designer.cs">
+      <DependentUpon>FrmAddress.cs</DependentUpon>
+    </Compile>
     <Compile Include="TenzikaiJuchuuTourou.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +64,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAddress.resx">
+      <DependentUpon>FrmAddress.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TenzikaiJuchuuTourou.resx">
       <DependentUpon>TenzikaiJuchuuTourou.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,9 +97,21 @@
       <Project>{79af5f26-a50b-433c-9f87-c9173b9efe04}</Project>
       <Name>Base.Client</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BL\BL.csproj">
+      <Project>{fb2217ab-ee9b-4996-a8f1-321320cbc791}</Project>
+      <Name>BL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CKM_Controls\CKM_Controls\CKM_Controls.csproj">
       <Project>{472a8d76-1ce3-430e-89fe-373d2f6b1031}</Project>
       <Name>CKM_Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{9dd6c82a-1899-478f-bc18-524ad0b0dcc8}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Search\Search.csproj">
+      <Project>{83d6364b-73ea-4288-bce7-55a1119ee5a2}</Project>
+      <Name>Search</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

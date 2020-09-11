@@ -89,7 +89,17 @@ namespace DL
             };
             return SelectData(dic, "M_Souko_SelectForNyuuka");
         }
+        //M_Souko_BindForTenJiShukka
 
+        public DataTable M_Souko_BindForTenJiShukka(string ChangeDate, string DeleteFlg)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = ChangeDate } },
+                { "@DeleteFlg", new ValuePair { value1 = SqlDbType.VarChar, value2 = DeleteFlg } },
+            };
+            return SelectData(dic, "M_Souko_BindForTenJiShukka");
+        }
         public DataTable M_Souko_BindForNyuuka(M_Souko_Entity mse)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
