@@ -1437,7 +1437,7 @@ namespace TempoJuchuuNyuuryoku
                     sctl.Bind(ymd);
                 }
 
-                //出荷指示登録から起動された場合、照会モードで起動
+                //出荷指示登録・店舗受注照会から起動された場合、照会モードで起動
                 //コマンドライン引数を配列で取得する
                 string[] cmds = System.Environment.GetCommandLineArgs();
                 if (cmds.Length - 1 > (int)ECmdLine.PcID)
@@ -4111,6 +4111,52 @@ namespace TempoJuchuuNyuuryoku
                 ////各金額項目の再計算必要
                 CalcKin();
 
+            }
+
+            //M_Control.Tennic＝1 の場合、
+            if (mTennic.Equals(1))
+            {
+                //与信チェックを行う
+                //Function_与信チェックより以下情報を取得する
+                Fnc_Credit_Entity fce = new Fnc_Credit_Entity
+                {
+                    Operator = InOperatorCD,
+                    PC = InPcID,
+                    ChangeDate = detailControls[(int)EIndex.JuchuuDate].Text,
+                    CustomerCD = detailControls[(int)EIndex.CustomerCD].Text,
+                };
+
+                bool ret = bbl.Fnc_Credit(fce);
+                if(ret)
+                {
+                    //out与信チェック区分 0:なし、1:警告、2:エラー
+                    if(fce.CreditCheckKBN.Equals("0"))
+                    {
+                        //●与信チェック区分＝0の場合、処理なし 次工程へ
+
+                    }
+                    else if (fce.CreditCheckKBN.Equals("1"))
+                    {
+                        //●与信チェック区分＝1の場合、
+                        //●与信限度額＞●総債権額＋Footer.税込売上額の場合、警告表示			
+                        if(bbl.Z_Set(fce.CreditAmount) > bbl.Z_Set(fce.SaikenGaku) + bbl.Z_Set(lblKin6.Text))
+                        {
+                            if (bbl.ShowMessage("Q324", bbl.Z_SetStr(fce.CreditAmount), bbl.Z_SetStr(fce.SaikenGaku), bbl.Z_SetStr(lblKin6.Text), fce.CreditMessage) != DialogResult.Yes)
+                                return;
+                        }
+                    }
+                    else if (fce.CreditCheckKBN.Equals("2"))
+                    {
+                        //●与信チェック区分＝2の場合、
+                        //●与信限度額＞●総債権額＋Footer.税込売上額の場合、警告表示			
+                        if (bbl.Z_Set(fce.CreditAmount) > bbl.Z_Set(fce.SaikenGaku) + bbl.Z_Set(lblKin6.Text))
+                        {
+                            bbl.ShowMessage("E261", bbl.Z_SetStr(fce.CreditAmount), bbl.Z_SetStr(fce.SaikenGaku), bbl.Z_SetStr(lblKin6.Text), fce.CreditMessage);
+                            return;
+                        }
+                    }
+
+                }
             }
 
             DataTable dt = GetGridEntity();

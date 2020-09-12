@@ -66,7 +66,6 @@ namespace Search
                 {
                     GV_TZshouhin.DataSource = null;
                     bbl.ShowMessage("E128");
-
                 }
             }
         }
