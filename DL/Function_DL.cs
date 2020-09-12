@@ -115,6 +115,8 @@ namespace DL
             string sp = "Fnc_Credit";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 =fce.Operator } },
+                { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = fce.PC }},
                 { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = fce.ChangeDate } },
                 { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = fce.CustomerCD } },
             };
