@@ -4138,8 +4138,8 @@ namespace TempoJuchuuNyuuryoku
                     else if (fce.CreditCheckKBN.Equals("1"))
                     {
                         //●与信チェック区分＝1の場合、
-                        //●与信限度額＞●総債権額＋Footer.税込売上額の場合、警告表示			
-                        if(bbl.Z_Set(fce.CreditAmount) > bbl.Z_Set(fce.SaikenGaku) + bbl.Z_Set(lblKin6.Text))
+                        //●与信限度額<●総債権額＋Footer.税込売上額の場合、警告表示			
+                        if(bbl.Z_Set(fce.CreditAmount) < bbl.Z_Set(fce.SaikenGaku) + bbl.Z_Set(lblKin6.Text))
                         {
                             if (bbl.ShowMessage("Q324", bbl.Z_SetStr(fce.CreditAmount), bbl.Z_SetStr(fce.SaikenGaku), bbl.Z_SetStr(lblKin6.Text), fce.CreditMessage) != DialogResult.Yes)
                                 return;
@@ -4148,8 +4148,8 @@ namespace TempoJuchuuNyuuryoku
                     else if (fce.CreditCheckKBN.Equals("2"))
                     {
                         //●与信チェック区分＝2の場合、
-                        //●与信限度額＞●総債権額＋Footer.税込売上額の場合、警告表示			
-                        if (bbl.Z_Set(fce.CreditAmount) > bbl.Z_Set(fce.SaikenGaku) + bbl.Z_Set(lblKin6.Text))
+                        //●与信限度額<●総債権額＋Footer.税込売上額の場合、警告表示			
+                        if (bbl.Z_Set(fce.CreditAmount) < bbl.Z_Set(fce.SaikenGaku) + bbl.Z_Set(lblKin6.Text))
                         {
                             bbl.ShowMessage("E261", bbl.Z_SetStr(fce.CreditAmount), bbl.Z_SetStr(fce.SaikenGaku), bbl.Z_SetStr(lblKin6.Text), fce.CreditMessage);
                             return;
