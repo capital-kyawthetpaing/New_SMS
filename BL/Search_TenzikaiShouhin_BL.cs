@@ -13,7 +13,6 @@ namespace BL
     {
         Search_TenzikaiShouhin_DL dl;
        
-
         public Search_TenzikaiShouhin_BL()
         {
             dl = new Search_TenzikaiShouhin_DL();

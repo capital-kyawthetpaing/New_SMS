@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Search_TenzikaiShouhin));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.LB_Season = new CKM_Controls.CKM_Label();
-            this.ckM_Label10 = new CKM_Controls.CKM_Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Lb_brand = new CKM_Controls.CKM_Label();
             this.LB_tenzikainame = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
@@ -53,6 +51,15 @@
             this.TB_InsertDateTimeT = new CKM_Controls.CKM_TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.GV_TZshouhin = new CKM_Controls.CKM_GridView();
+            this.TB_Tenziname = new CKM_Controls.CKM_TextBox();
+            this.TB_SKUname = new CKM_Controls.CKM_TextBox();
+            this.CB_Year = new CKM_Controls.CKM_ComboBox();
+            this.CB_Season = new CKM_Controls.CKM_ComboBox();
+            this.lbyear = new CKM_Controls.CKM_Label();
+            this.ckM_Label7 = new CKM_Controls.CKM_Label();
+            this.SC_segment = new Search.CKM_SearchControl();
+            this.SC_Brand = new Search.CKM_SearchControl();
+            this.SC_Vendor = new Search.CKM_SearchControl();
             this.tankacd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenzikainame = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.skucd = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,13 +73,6 @@
             this.biko = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.insertdatetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedatetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TB_Tenziname = new CKM_Controls.CKM_TextBox();
-            this.TB_SKUname = new CKM_Controls.CKM_TextBox();
-            this.SC_segment = new Search.CKM_SearchControl();
-            this.SC_Brand = new Search.CKM_SearchControl();
-            this.SC_Vendor = new Search.CKM_SearchControl();
-            this.CB_Season = new CKM_Controls.CKM_ComboBox();
-            this.CB_Year = new CKM_Controls.CKM_ComboBox();
             this.PanelHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_TZshouhin)).BeginInit();
@@ -80,9 +80,11 @@
             // 
             // PanelHeader
             // 
+            this.PanelHeader.Controls.Add(this.ckM_Label7);
+            this.PanelHeader.Controls.Add(this.lbyear);
             this.PanelHeader.Controls.Add(this.CB_Season);
-            this.PanelHeader.Controls.Add(this.TB_SKUname);
             this.PanelHeader.Controls.Add(this.CB_Year);
+            this.PanelHeader.Controls.Add(this.TB_SKUname);
             this.PanelHeader.Controls.Add(this.TB_Tenziname);
             this.PanelHeader.Controls.Add(this.BT_Display);
             this.PanelHeader.Controls.Add(this.SC_segment);
@@ -102,13 +104,10 @@
             this.PanelHeader.Controls.Add(this.ckM_Label1);
             this.PanelHeader.Controls.Add(this.LB_tenzikainame);
             this.PanelHeader.Controls.Add(this.SC_Vendor);
-            this.PanelHeader.Controls.Add(this.LB_Season);
-            this.PanelHeader.Controls.Add(this.ckM_Label10);
             this.PanelHeader.Controls.Add(this.Lb_brand);
             this.PanelHeader.Size = new System.Drawing.Size(1302, 178);
+            this.PanelHeader.TabIndex = 1;
             this.PanelHeader.Controls.SetChildIndex(this.Lb_brand, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_Label10, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.LB_Season, 0);
             this.PanelHeader.Controls.SetChildIndex(this.SC_Vendor, 0);
             this.PanelHeader.Controls.SetChildIndex(this.LB_tenzikainame, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label1, 0);
@@ -128,43 +127,11 @@
             this.PanelHeader.Controls.SetChildIndex(this.SC_segment, 0);
             this.PanelHeader.Controls.SetChildIndex(this.BT_Display, 0);
             this.PanelHeader.Controls.SetChildIndex(this.TB_Tenziname, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.CB_Year, 0);
             this.PanelHeader.Controls.SetChildIndex(this.TB_SKUname, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.CB_Year, 0);
             this.PanelHeader.Controls.SetChildIndex(this.CB_Season, 0);
-            // 
-            // LB_Season
-            // 
-            this.LB_Season.AutoSize = true;
-            this.LB_Season.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.LB_Season.BackColor = System.Drawing.Color.Transparent;
-            this.LB_Season.DefaultlabelSize = true;
-            this.LB_Season.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.LB_Season.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.LB_Season.ForeColor = System.Drawing.Color.Black;
-            this.LB_Season.Location = new System.Drawing.Point(212, 103);
-            this.LB_Season.Name = "LB_Season";
-            this.LB_Season.Size = new System.Drawing.Size(57, 12);
-            this.LB_Season.TabIndex = 79;
-            this.LB_Season.Text = "シーズン";
-            this.LB_Season.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.LB_Season.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_Label10
-            // 
-            this.ckM_Label10.AutoSize = true;
-            this.ckM_Label10.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label10.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label10.DefaultlabelSize = true;
-            this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label10.Location = new System.Drawing.Point(32, 102);
-            this.ckM_Label10.Name = "ckM_Label10";
-            this.ckM_Label10.Size = new System.Drawing.Size(44, 12);
-            this.ckM_Label10.TabIndex = 77;
-            this.ckM_Label10.Text = "年　度";
-            this.ckM_Label10.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.PanelHeader.Controls.SetChildIndex(this.lbyear, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.ckM_Label7, 0);
             // 
             // Lb_brand
             // 
@@ -225,7 +192,7 @@
             this.LB_ChangeDate.Location = new System.Drawing.Point(79, 12);
             this.LB_ChangeDate.Name = "LB_ChangeDate";
             this.LB_ChangeDate.Size = new System.Drawing.Size(80, 19);
-            this.LB_ChangeDate.TabIndex = 0;
+            this.LB_ChangeDate.TabIndex = 2;
             this.LB_ChangeDate.Text = "YYYY/MM/DD";
             this.LB_ChangeDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -255,7 +222,7 @@
             this.ckM_LB_Shinkitorokubi.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_Shinkitorokubi.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_Shinkitorokubi.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_Shinkitorokubi.Location = new System.Drawing.Point(627, 138);
+            this.ckM_LB_Shinkitorokubi.Location = new System.Drawing.Point(626, 135);
             this.ckM_LB_Shinkitorokubi.Name = "ckM_LB_Shinkitorokubi";
             this.ckM_LB_Shinkitorokubi.Size = new System.Drawing.Size(70, 12);
             this.ckM_LB_Shinkitorokubi.TabIndex = 779;
@@ -283,12 +250,12 @@
             this.TB_UpdateDateTimeF.IsNumber = true;
             this.TB_UpdateDateTimeF.IsShop = false;
             this.TB_UpdateDateTimeF.Length = 10;
-            this.TB_UpdateDateTimeF.Location = new System.Drawing.Point(700, 134);
+            this.TB_UpdateDateTimeF.Location = new System.Drawing.Point(698, 132);
             this.TB_UpdateDateTimeF.MaxLength = 10;
             this.TB_UpdateDateTimeF.MoveNext = true;
             this.TB_UpdateDateTimeF.Name = "TB_UpdateDateTimeF";
             this.TB_UpdateDateTimeF.Size = new System.Drawing.Size(100, 19);
-            this.TB_UpdateDateTimeF.TabIndex = 10;
+            this.TB_UpdateDateTimeF.TabIndex = 12;
             this.TB_UpdateDateTimeF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_UpdateDateTimeF.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_UpdateDateTimeF.UseColorSizMode = false;
@@ -313,12 +280,12 @@
             this.TB_UpdateDateTimeT.IsNumber = true;
             this.TB_UpdateDateTimeT.IsShop = false;
             this.TB_UpdateDateTimeT.Length = 10;
-            this.TB_UpdateDateTimeT.Location = new System.Drawing.Point(824, 132);
+            this.TB_UpdateDateTimeT.Location = new System.Drawing.Point(824, 130);
             this.TB_UpdateDateTimeT.MaxLength = 10;
             this.TB_UpdateDateTimeT.MoveNext = true;
             this.TB_UpdateDateTimeT.Name = "TB_UpdateDateTimeT";
             this.TB_UpdateDateTimeT.Size = new System.Drawing.Size(100, 19);
-            this.TB_UpdateDateTimeT.TabIndex = 11;
+            this.TB_UpdateDateTimeT.TabIndex = 13;
             this.TB_UpdateDateTimeT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_UpdateDateTimeT.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_UpdateDateTimeT.UseColorSizMode = false;
@@ -332,7 +299,7 @@
             this.ckM_LＢ_ShinkitorokuF.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LＢ_ShinkitorokuF.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LＢ_ShinkitorokuF.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LＢ_ShinkitorokuF.Location = new System.Drawing.Point(803, 138);
+            this.ckM_LＢ_ShinkitorokuF.Location = new System.Drawing.Point(803, 135);
             this.ckM_LＢ_ShinkitorokuF.Name = "ckM_LＢ_ShinkitorokuF";
             this.ckM_LＢ_ShinkitorokuF.Size = new System.Drawing.Size(18, 12);
             this.ckM_LＢ_ShinkitorokuF.TabIndex = 780;
@@ -349,7 +316,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(627, 107);
+            this.ckM_Label2.Location = new System.Drawing.Point(628, 104);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label2.TabIndex = 783;
@@ -377,12 +344,12 @@
             this.TB_InsertDateTimeF.IsNumber = true;
             this.TB_InsertDateTimeF.IsShop = false;
             this.TB_InsertDateTimeF.Length = 10;
-            this.TB_InsertDateTimeF.Location = new System.Drawing.Point(700, 103);
+            this.TB_InsertDateTimeF.Location = new System.Drawing.Point(698, 100);
             this.TB_InsertDateTimeF.MaxLength = 10;
             this.TB_InsertDateTimeF.MoveNext = true;
             this.TB_InsertDateTimeF.Name = "TB_InsertDateTimeF";
             this.TB_InsertDateTimeF.Size = new System.Drawing.Size(100, 19);
-            this.TB_InsertDateTimeF.TabIndex = 8;
+            this.TB_InsertDateTimeF.TabIndex = 10;
             this.TB_InsertDateTimeF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_InsertDateTimeF.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_InsertDateTimeF.UseColorSizMode = false;
@@ -396,7 +363,7 @@
             this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(802, 107);
+            this.ckM_Label3.Location = new System.Drawing.Point(803, 104);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label3.TabIndex = 784;
@@ -413,7 +380,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(626, 43);
+            this.ckM_Label4.Location = new System.Drawing.Point(638, 43);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label4.TabIndex = 786;
@@ -452,7 +419,7 @@
             this.BT_Display.Margin = new System.Windows.Forms.Padding(1);
             this.BT_Display.Name = "BT_Display";
             this.BT_Display.Size = new System.Drawing.Size(118, 28);
-            this.BT_Display.TabIndex = 12;
+            this.BT_Display.TabIndex = 14;
             this.BT_Display.Text = "表示(F11)";
             this.BT_Display.UseVisualStyleBackColor = false;
             this.BT_Display.Click += new System.EventHandler(this.BT_Display_Click);
@@ -477,12 +444,12 @@
             this.TB_InsertDateTimeT.IsNumber = true;
             this.TB_InsertDateTimeT.IsShop = false;
             this.TB_InsertDateTimeT.Length = 10;
-            this.TB_InsertDateTimeT.Location = new System.Drawing.Point(824, 103);
+            this.TB_InsertDateTimeT.Location = new System.Drawing.Point(824, 100);
             this.TB_InsertDateTimeT.MaxLength = 10;
             this.TB_InsertDateTimeT.MoveNext = true;
             this.TB_InsertDateTimeT.Name = "TB_InsertDateTimeT";
             this.TB_InsertDateTimeT.Size = new System.Drawing.Size(100, 19);
-            this.TB_InsertDateTimeT.TabIndex = 9;
+            this.TB_InsertDateTimeT.TabIndex = 11;
             this.TB_InsertDateTimeT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_InsertDateTimeT.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_InsertDateTimeT.UseColorSizMode = false;
@@ -493,25 +460,25 @@
             this.panel1.Location = new System.Drawing.Point(1, 220);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1300, 460);
-            this.panel1.TabIndex = 5;
+            this.panel1.TabIndex = 15;
             // 
             // GV_TZshouhin
             // 
             this.GV_TZshouhin.AllowUserToAddRows = false;
             this.GV_TZshouhin.AllowUserToDeleteRows = false;
             this.GV_TZshouhin.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_TZshouhin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_TZshouhin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GV_TZshouhin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_TZshouhin.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("GV_TZshouhin.CheckCol")));
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_TZshouhin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_TZshouhin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GV_TZshouhin.ColumnHeadersHeight = 25;
             this.GV_TZshouhin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tankacd,
@@ -540,6 +507,222 @@
             this.GV_TZshouhin.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GV_TZshouhin_CellDoubleClick);
             this.GV_TZshouhin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GV_TZshouhin_KeyDown);
             // 
+            // TB_Tenziname
+            // 
+            this.TB_Tenziname.AllowMinus = false;
+            this.TB_Tenziname.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.TB_Tenziname.BackColor = System.Drawing.Color.White;
+            this.TB_Tenziname.BorderColor = false;
+            this.TB_Tenziname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_Tenziname.ClientColor = System.Drawing.Color.White;
+            this.TB_Tenziname.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.TB_Tenziname.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.TB_Tenziname.DecimalPlace = 0;
+            this.TB_Tenziname.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.TB_Tenziname.IntegerPart = 0;
+            this.TB_Tenziname.IsCorrectDate = true;
+            this.TB_Tenziname.isEnterKeyDown = false;
+            this.TB_Tenziname.IsFirstTime = true;
+            this.TB_Tenziname.isMaxLengthErr = false;
+            this.TB_Tenziname.IsNumber = true;
+            this.TB_Tenziname.IsShop = false;
+            this.TB_Tenziname.Length = 80;
+            this.TB_Tenziname.Location = new System.Drawing.Point(79, 41);
+            this.TB_Tenziname.MaxLength = 80;
+            this.TB_Tenziname.MoveNext = true;
+            this.TB_Tenziname.Name = "TB_Tenziname";
+            this.TB_Tenziname.Size = new System.Drawing.Size(500, 19);
+            this.TB_Tenziname.TabIndex = 3;
+            this.TB_Tenziname.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.TB_Tenziname.UseColorSizMode = false;
+            // 
+            // TB_SKUname
+            // 
+            this.TB_SKUname.AllowMinus = false;
+            this.TB_SKUname.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.TB_SKUname.BackColor = System.Drawing.Color.White;
+            this.TB_SKUname.BorderColor = false;
+            this.TB_SKUname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_SKUname.ClientColor = System.Drawing.Color.White;
+            this.TB_SKUname.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.TB_SKUname.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.TB_SKUname.DecimalPlace = 0;
+            this.TB_SKUname.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.TB_SKUname.IntegerPart = 0;
+            this.TB_SKUname.IsCorrectDate = true;
+            this.TB_SKUname.isEnterKeyDown = false;
+            this.TB_SKUname.IsFirstTime = true;
+            this.TB_SKUname.isMaxLengthErr = false;
+            this.TB_SKUname.IsNumber = true;
+            this.TB_SKUname.IsShop = false;
+            this.TB_SKUname.Length = 80;
+            this.TB_SKUname.Location = new System.Drawing.Point(79, 131);
+            this.TB_SKUname.MaxLength = 80;
+            this.TB_SKUname.MoveNext = true;
+            this.TB_SKUname.Name = "TB_SKUname";
+            this.TB_SKUname.Size = new System.Drawing.Size(500, 19);
+            this.TB_SKUname.TabIndex = 7;
+            this.TB_SKUname.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.TB_SKUname.UseColorSizMode = false;
+            // 
+            // CB_Year
+            // 
+            this.CB_Year.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.CB_Year.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CB_Year.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.年度;
+            this.CB_Year.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.CB_Year.Flag = 0;
+            this.CB_Year.FormattingEnabled = true;
+            this.CB_Year.Length = 10;
+            this.CB_Year.Location = new System.Drawing.Point(79, 99);
+            this.CB_Year.MaxLength = 10;
+            this.CB_Year.MoveNext = true;
+            this.CB_Year.Name = "CB_Year";
+            this.CB_Year.Size = new System.Drawing.Size(121, 20);
+            this.CB_Year.TabIndex = 5;
+            // 
+            // CB_Season
+            // 
+            this.CB_Season.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.CB_Season.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CB_Season.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
+            this.CB_Season.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.CB_Season.Flag = 0;
+            this.CB_Season.FormattingEnabled = true;
+            this.CB_Season.Length = 10;
+            this.CB_Season.Location = new System.Drawing.Point(273, 100);
+            this.CB_Season.MaxLength = 10;
+            this.CB_Season.MoveNext = true;
+            this.CB_Season.Name = "CB_Season";
+            this.CB_Season.Size = new System.Drawing.Size(121, 20);
+            this.CB_Season.TabIndex = 6;
+            // 
+            // lbyear
+            // 
+            this.lbyear.AutoSize = true;
+            this.lbyear.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.lbyear.BackColor = System.Drawing.Color.Transparent;
+            this.lbyear.DefaultlabelSize = true;
+            this.lbyear.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.lbyear.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.lbyear.ForeColor = System.Drawing.Color.Black;
+            this.lbyear.Location = new System.Drawing.Point(32, 104);
+            this.lbyear.Name = "lbyear";
+            this.lbyear.Size = new System.Drawing.Size(44, 12);
+            this.lbyear.TabIndex = 789;
+            this.lbyear.Text = "年　度";
+            this.lbyear.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.lbyear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckM_Label7
+            // 
+            this.ckM_Label7.AutoSize = true;
+            this.ckM_Label7.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label7.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label7.DefaultlabelSize = true;
+            this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label7.Location = new System.Drawing.Point(214, 104);
+            this.ckM_Label7.Name = "ckM_Label7";
+            this.ckM_Label7.Size = new System.Drawing.Size(57, 12);
+            this.ckM_Label7.TabIndex = 790;
+            this.ckM_Label7.Text = "シーズン";
+            this.ckM_Label7.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // SC_segment
+            // 
+            this.SC_segment.AutoSize = true;
+            this.SC_segment.ChangeDate = "";
+            this.SC_segment.ChangeDateWidth = 100;
+            this.SC_segment.Code = "";
+            this.SC_segment.CodeWidth = 100;
+            this.SC_segment.CodeWidth1 = 100;
+            this.SC_segment.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_segment.DataCheck = false;
+            this.SC_segment.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_segment.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.SC_segment.IsCopy = false;
+            this.SC_segment.LabelText = "";
+            this.SC_segment.LabelVisible = true;
+            this.SC_segment.Location = new System.Drawing.Point(698, 65);
+            this.SC_segment.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_segment.Name = "SC_segment";
+            this.SC_segment.NameWidth = 280;
+            this.SC_segment.SearchEnable = true;
+            this.SC_segment.Size = new System.Drawing.Size(414, 27);
+            this.SC_segment.Stype = Search.CKM_SearchControl.SearchType.商品分類;
+            this.SC_segment.TabIndex = 9;
+            this.SC_segment.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_segment.UseChangeDate = false;
+            this.SC_segment.Value1 = null;
+            this.SC_segment.Value2 = null;
+            this.SC_segment.Value3 = null;
+            this.SC_segment.Enter += new System.EventHandler(this.SC_segment_Enter);
+            this.SC_segment.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SC_segment_KeyDown);
+            // 
+            // SC_Brand
+            // 
+            this.SC_Brand.AutoSize = true;
+            this.SC_Brand.ChangeDate = "";
+            this.SC_Brand.ChangeDateWidth = 100;
+            this.SC_Brand.Code = "";
+            this.SC_Brand.CodeWidth = 100;
+            this.SC_Brand.CodeWidth1 = 100;
+            this.SC_Brand.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_Brand.DataCheck = false;
+            this.SC_Brand.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_Brand.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.SC_Brand.IsCopy = false;
+            this.SC_Brand.LabelText = "";
+            this.SC_Brand.LabelVisible = true;
+            this.SC_Brand.Location = new System.Drawing.Point(698, 34);
+            this.SC_Brand.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_Brand.Name = "SC_Brand";
+            this.SC_Brand.NameWidth = 280;
+            this.SC_Brand.SearchEnable = true;
+            this.SC_Brand.Size = new System.Drawing.Size(414, 27);
+            this.SC_Brand.Stype = Search.CKM_SearchControl.SearchType.ブランド;
+            this.SC_Brand.TabIndex = 8;
+            this.SC_Brand.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_Brand.UseChangeDate = false;
+            this.SC_Brand.Value1 = null;
+            this.SC_Brand.Value2 = null;
+            this.SC_Brand.Value3 = null;
+            this.SC_Brand.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SC_Brand_KeyDown);
+            // 
+            // SC_Vendor
+            // 
+            this.SC_Vendor.AutoSize = true;
+            this.SC_Vendor.ChangeDate = "";
+            this.SC_Vendor.ChangeDateWidth = 100;
+            this.SC_Vendor.Code = "";
+            this.SC_Vendor.CodeWidth = 100;
+            this.SC_Vendor.CodeWidth1 = 100;
+            this.SC_Vendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_Vendor.DataCheck = false;
+            this.SC_Vendor.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_Vendor.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.SC_Vendor.IsCopy = false;
+            this.SC_Vendor.LabelText = "";
+            this.SC_Vendor.LabelVisible = true;
+            this.SC_Vendor.Location = new System.Drawing.Point(79, 65);
+            this.SC_Vendor.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_Vendor.Name = "SC_Vendor";
+            this.SC_Vendor.NameWidth = 310;
+            this.SC_Vendor.SearchEnable = true;
+            this.SC_Vendor.Size = new System.Drawing.Size(444, 27);
+            this.SC_Vendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
+            this.SC_Vendor.TabIndex = 4;
+            this.SC_Vendor.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_Vendor.UseChangeDate = false;
+            this.SC_Vendor.Value1 = null;
+            this.SC_Vendor.Value2 = null;
+            this.SC_Vendor.Value3 = null;
+            this.SC_Vendor.Enter += new System.EventHandler(this.SC_Vendor_Enter);
+            this.SC_Vendor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SC_Vendor_KeyDown);
+            // 
             // tankacd
             // 
             this.tankacd.DataPropertyName = "TankaCD";
@@ -552,6 +735,7 @@
             this.tenzikainame.DataPropertyName = "TenzikaiName";
             this.tenzikainame.HeaderText = "展示会名";
             this.tenzikainame.Name = "tenzikainame";
+            this.tenzikainame.Width = 250;
             // 
             // skucd
             // 
@@ -570,6 +754,7 @@
             this.skuname.DataPropertyName = "SKUName";
             this.skuname.HeaderText = "商品名";
             this.skuname.Name = "skuname";
+            this.skuname.Width = 300;
             // 
             // segment
             // 
@@ -610,202 +795,22 @@
             // insertdatetime
             // 
             this.insertdatetime.DataPropertyName = "InsertDateTime";
-            dataGridViewCellStyle7.Format = "d";
-            dataGridViewCellStyle7.NullValue = null;
-            this.insertdatetime.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.insertdatetime.DefaultCellStyle = dataGridViewCellStyle3;
             this.insertdatetime.HeaderText = "新規登録日";
             this.insertdatetime.Name = "insertdatetime";
+            this.insertdatetime.Width = 95;
             // 
             // updatedatetime
             // 
             this.updatedatetime.DataPropertyName = "UpdateDateTime";
-            dataGridViewCellStyle8.Format = "d";
-            dataGridViewCellStyle8.NullValue = null;
-            this.updatedatetime.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.updatedatetime.DefaultCellStyle = dataGridViewCellStyle4;
             this.updatedatetime.HeaderText = "最終変更日";
             this.updatedatetime.Name = "updatedatetime";
-            // 
-            // TB_Tenziname
-            // 
-            this.TB_Tenziname.AllowMinus = false;
-            this.TB_Tenziname.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.TB_Tenziname.BackColor = System.Drawing.Color.White;
-            this.TB_Tenziname.BorderColor = false;
-            this.TB_Tenziname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_Tenziname.ClientColor = System.Drawing.Color.White;
-            this.TB_Tenziname.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.TB_Tenziname.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.TB_Tenziname.DecimalPlace = 0;
-            this.TB_Tenziname.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.TB_Tenziname.IntegerPart = 0;
-            this.TB_Tenziname.IsCorrectDate = true;
-            this.TB_Tenziname.isEnterKeyDown = false;
-            this.TB_Tenziname.IsFirstTime = true;
-            this.TB_Tenziname.isMaxLengthErr = false;
-            this.TB_Tenziname.IsNumber = true;
-            this.TB_Tenziname.IsShop = false;
-            this.TB_Tenziname.Length = 80;
-            this.TB_Tenziname.Location = new System.Drawing.Point(79, 41);
-            this.TB_Tenziname.MaxLength = 80;
-            this.TB_Tenziname.MoveNext = true;
-            this.TB_Tenziname.Name = "TB_Tenziname";
-            this.TB_Tenziname.Size = new System.Drawing.Size(500, 19);
-            this.TB_Tenziname.TabIndex = 1;
-            this.TB_Tenziname.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.TB_Tenziname.UseColorSizMode = false;
-            // 
-            // TB_SKUname
-            // 
-            this.TB_SKUname.AllowMinus = false;
-            this.TB_SKUname.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.TB_SKUname.BackColor = System.Drawing.Color.White;
-            this.TB_SKUname.BorderColor = false;
-            this.TB_SKUname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_SKUname.ClientColor = System.Drawing.Color.White;
-            this.TB_SKUname.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.TB_SKUname.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.TB_SKUname.DecimalPlace = 0;
-            this.TB_SKUname.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.TB_SKUname.IntegerPart = 0;
-            this.TB_SKUname.IsCorrectDate = true;
-            this.TB_SKUname.isEnterKeyDown = false;
-            this.TB_SKUname.IsFirstTime = true;
-            this.TB_SKUname.isMaxLengthErr = false;
-            this.TB_SKUname.IsNumber = true;
-            this.TB_SKUname.IsShop = false;
-            this.TB_SKUname.Length = 80;
-            this.TB_SKUname.Location = new System.Drawing.Point(79, 131);
-            this.TB_SKUname.MaxLength = 80;
-            this.TB_SKUname.MoveNext = true;
-            this.TB_SKUname.Name = "TB_SKUname";
-            this.TB_SKUname.Size = new System.Drawing.Size(500, 19);
-            this.TB_SKUname.TabIndex = 5;
-            this.TB_SKUname.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.TB_SKUname.UseColorSizMode = false;
-            // 
-            // SC_segment
-            // 
-            this.SC_segment.AutoSize = true;
-            this.SC_segment.ChangeDate = "";
-            this.SC_segment.ChangeDateWidth = 100;
-            this.SC_segment.Code = "";
-            this.SC_segment.CodeWidth = 100;
-            this.SC_segment.CodeWidth1 = 100;
-            this.SC_segment.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_segment.DataCheck = false;
-            this.SC_segment.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_segment.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.SC_segment.IsCopy = false;
-            this.SC_segment.LabelText = "";
-            this.SC_segment.LabelVisible = true;
-            this.SC_segment.Location = new System.Drawing.Point(699, 65);
-            this.SC_segment.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_segment.Name = "SC_segment";
-            this.SC_segment.NameWidth = 280;
-            this.SC_segment.SearchEnable = true;
-            this.SC_segment.Size = new System.Drawing.Size(414, 27);
-            this.SC_segment.Stype = Search.CKM_SearchControl.SearchType.商品分類;
-            this.SC_segment.TabIndex = 7;
-            this.SC_segment.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_segment.UseChangeDate = false;
-            this.SC_segment.Value1 = null;
-            this.SC_segment.Value2 = null;
-            this.SC_segment.Value3 = null;
-            this.SC_segment.Enter += new System.EventHandler(this.SC_segment_Enter);
-            this.SC_segment.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SC_segment_KeyDown);
-            // 
-            // SC_Brand
-            // 
-            this.SC_Brand.AutoSize = true;
-            this.SC_Brand.ChangeDate = "";
-            this.SC_Brand.ChangeDateWidth = 100;
-            this.SC_Brand.Code = "";
-            this.SC_Brand.CodeWidth = 100;
-            this.SC_Brand.CodeWidth1 = 100;
-            this.SC_Brand.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_Brand.DataCheck = false;
-            this.SC_Brand.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_Brand.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.SC_Brand.IsCopy = false;
-            this.SC_Brand.LabelText = "";
-            this.SC_Brand.LabelVisible = true;
-            this.SC_Brand.Location = new System.Drawing.Point(699, 34);
-            this.SC_Brand.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_Brand.Name = "SC_Brand";
-            this.SC_Brand.NameWidth = 280;
-            this.SC_Brand.SearchEnable = true;
-            this.SC_Brand.Size = new System.Drawing.Size(414, 27);
-            this.SC_Brand.Stype = Search.CKM_SearchControl.SearchType.ブランド;
-            this.SC_Brand.TabIndex = 6;
-            this.SC_Brand.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_Brand.UseChangeDate = false;
-            this.SC_Brand.Value1 = null;
-            this.SC_Brand.Value2 = null;
-            this.SC_Brand.Value3 = null;
-            this.SC_Brand.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SC_Brand_KeyDown);
-            // 
-            // SC_Vendor
-            // 
-            this.SC_Vendor.AutoSize = true;
-            this.SC_Vendor.ChangeDate = "";
-            this.SC_Vendor.ChangeDateWidth = 100;
-            this.SC_Vendor.Code = "";
-            this.SC_Vendor.CodeWidth = 100;
-            this.SC_Vendor.CodeWidth1 = 100;
-            this.SC_Vendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_Vendor.DataCheck = false;
-            this.SC_Vendor.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_Vendor.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.SC_Vendor.IsCopy = false;
-            this.SC_Vendor.LabelText = "";
-            this.SC_Vendor.LabelVisible = true;
-            this.SC_Vendor.Location = new System.Drawing.Point(79, 65);
-            this.SC_Vendor.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_Vendor.Name = "SC_Vendor";
-            this.SC_Vendor.NameWidth = 310;
-            this.SC_Vendor.SearchEnable = true;
-            this.SC_Vendor.Size = new System.Drawing.Size(444, 27);
-            this.SC_Vendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.SC_Vendor.TabIndex = 2;
-            this.SC_Vendor.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_Vendor.UseChangeDate = false;
-            this.SC_Vendor.Value1 = null;
-            this.SC_Vendor.Value2 = null;
-            this.SC_Vendor.Value3 = null;
-            this.SC_Vendor.Enter += new System.EventHandler(this.SC_Vendor_Enter);
-            this.SC_Vendor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SC_Vendor_KeyDown);
-            // 
-            // CB_Season
-            // 
-            this.CB_Season.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.CB_Season.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CB_Season.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
-            this.CB_Season.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.CB_Season.Flag = 0;
-            this.CB_Season.FormattingEnabled = true;
-            this.CB_Season.Length = 10;
-            this.CB_Season.Location = new System.Drawing.Point(275, 100);
-            this.CB_Season.MaxLength = 10;
-            this.CB_Season.MoveNext = true;
-            this.CB_Season.Name = "CB_Season";
-            this.CB_Season.Size = new System.Drawing.Size(90, 20);
-            this.CB_Season.TabIndex = 4;
-            // 
-            // CB_Year
-            // 
-            this.CB_Year.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.CB_Year.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CB_Year.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.年度;
-            this.CB_Year.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.CB_Year.Flag = 0;
-            this.CB_Year.FormattingEnabled = true;
-            this.CB_Year.Length = 10;
-            this.CB_Year.Location = new System.Drawing.Point(82, 99);
-            this.CB_Year.MaxLength = 10;
-            this.CB_Year.MoveNext = true;
-            this.CB_Year.Name = "CB_Year";
-            this.CB_Year.Size = new System.Drawing.Size(90, 20);
-            this.CB_Year.TabIndex = 3;
+            this.updatedatetime.Width = 95;
             // 
             // Search_TenzikaiShouhin
             // 
@@ -831,8 +836,6 @@
         }
 
         #endregion
-        private CKM_Controls.CKM_Label LB_Season;
-        private CKM_Controls.CKM_Label ckM_Label10;
         private CKM_SearchControl SC_Vendor;
         private CKM_Controls.CKM_Label Lb_brand;
         private CKM_Controls.CKM_Label ckM_Label1;
@@ -854,6 +857,12 @@
         private CKM_Controls.CKM_TextBox TB_InsertDateTimeT;
         private System.Windows.Forms.Panel panel1;
         private CKM_Controls.CKM_GridView GV_TZshouhin;
+        private CKM_Controls.CKM_TextBox TB_SKUname;
+        private CKM_Controls.CKM_TextBox TB_Tenziname;
+        private CKM_Controls.CKM_ComboBox CB_Year;
+        private CKM_Controls.CKM_ComboBox CB_Season;
+        private CKM_Controls.CKM_Label ckM_Label7;
+        private CKM_Controls.CKM_Label lbyear;
         private System.Windows.Forms.DataGridViewTextBoxColumn tankacd;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenzikainame;
         private System.Windows.Forms.DataGridViewTextBoxColumn skucd;
@@ -867,9 +876,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn biko;
         private System.Windows.Forms.DataGridViewTextBoxColumn insertdatetime;
         private System.Windows.Forms.DataGridViewTextBoxColumn updatedatetime;
-        private CKM_Controls.CKM_TextBox TB_SKUname;
-        private CKM_Controls.CKM_TextBox TB_Tenziname;
-        private CKM_Controls.CKM_ComboBox CB_Season;
-        private CKM_Controls.CKM_ComboBox CB_Year;
     }
 }

@@ -229,6 +229,7 @@
     <ProjectReference Include="..\DL\DL.csproj">
       <Project>{9a22d9a9-e851-4765-8842-93fd4cb77300}</Project>
       <Name>DL</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{9dd6c82a-1899-478f-bc18-524ad0b0dcc8}</Project>
