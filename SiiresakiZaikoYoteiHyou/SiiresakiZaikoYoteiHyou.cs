@@ -154,6 +154,7 @@ namespace SiiresakiZaikoYoteiHyou
                 dmpe = new D_MonthlyPurchase_Entity();
                 dmpe = GetData();
                 DataTable dt = szybl.RPC_SiiresakiZaikoYoteiHyou(dmpe);
+                dt.Columns.Remove("Today");
                 if (dt.Rows.Count > 0)
                 {
                     DataTable dtExport = dt;
@@ -193,6 +194,7 @@ namespace SiiresakiZaikoYoteiHyou
                                 wb.Worksheet("worksheet").Cell(1, 4).Value = txtTargetDateTo.Text;
                                 wb.Worksheet("worksheet").Cell(2, 2).Value = cboStore.SelectedValue.ToString();
                                 wb.Worksheet("worksheet").Cell(2, 3).Value = cboStore.Text.ToString();
+                                wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;//ses
                                 wb.SaveAs(savedialog.FileName);
                                 szybl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
                             }

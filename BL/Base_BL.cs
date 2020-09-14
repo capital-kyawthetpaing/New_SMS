@@ -745,6 +745,25 @@ namespace BL
 
             return bdl.SelectData(dic, sp);
         }
+        public bool Fnc_Credit(Fnc_Credit_Entity fce)
+        {
+            Function_DL fdl = new Function_DL();
+            DataTable dt = fdl.Fnc_Credit(fce);
+
+            if (dt.Rows.Count > 0)
+            {
+                fce.CreditCheckKBN = dt.Rows[0]["CreditCheckKBN"].ToString();
+                fce.CreditMessage = dt.Rows[0]["CreditMessage"].ToString();
+                fce.SaikenGaku = dt.Rows[0]["SaikenGaku"].ToString();
+                fce.CreditAmount = dt.Rows[0]["CreditAmount"].ToString();
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         //public string GetConnectionString()
         //{

@@ -20,7 +20,7 @@ namespace DL
         /// <param name="ymd"></param>
         /// <param name="taxRateFLG"></param>
         /// <returns></returns>
-        public DataTable Fnc_TAXCalculation(int mode, decimal kingaku, string ymd, int taxRateFLG)
+        public DataTable Fnc_TAXCalculation(int mode,decimal kingaku, string ymd, int taxRateFLG)
         {
             string sp = "Fnc_TAXCalculation";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
@@ -30,7 +30,7 @@ namespace DL
                 { "@TaxRateFLG", new ValuePair { value1 = SqlDbType.TinyInt, value2 = taxRateFLG.ToString() } },
                 { "@Kingaku", new ValuePair { value1 = SqlDbType.Money, value2 = kingaku.ToString() } }
             };
-
+            
             return SelectData(dic, sp);
         }
 
@@ -70,10 +70,10 @@ namespace DL
                 { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = fre.StoreCD } },
                 { "@SoukoCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = fre.SoukoCD } },
                 { "@Suryo", new ValuePair { value1 = SqlDbType.Int, value2 = fre.Suryo } },
-                { "@DenType", new ValuePair { value1 = SqlDbType.TinyInt, value2 = fre.@DenType } },
-                { "@DenNo", new ValuePair { value1 = SqlDbType.VarChar, value2 = fre.@DenNo } },
-                { "@DenGyoNo", new ValuePair { value1 = SqlDbType.Int, value2 = fre.@DenGyoNo } },
-                { "@KariHikiateNo", new ValuePair { value1 = SqlDbType.VarChar, value2 = fre.@KariHikiateNo } }
+                { "@DenType", new ValuePair { value1 = SqlDbType.TinyInt, value2 = fre.DenType } },
+                { "@DenNo", new ValuePair { value1 = SqlDbType.VarChar, value2 = fre.DenNo } },
+                { "@DenGyoNo", new ValuePair { value1 = SqlDbType.Int, value2 = fre.DenGyoNo } },
+                { "@KariHikiateNo", new ValuePair { value1 = SqlDbType.VarChar, value2 = fre.KariHikiateNo } }
             };
 
             return SelectData(dic, sp);
@@ -106,6 +106,19 @@ namespace DL
                 { "@AdminNO", new ValuePair { value1 = SqlDbType.Int, value2 = fre.AdminNO } },
                 { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = fre.ChangeDate } },
                 { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = fre.StoreCD } }
+            };
+
+            return SelectData(dic, sp);
+        }
+        public DataTable Fnc_Credit(Fnc_Credit_Entity fce)
+        {
+            string sp = "Fnc_Credit";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 =fce.Operator } },
+                { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = fce.PC }},
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = fce.ChangeDate } },
+                { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = fce.CustomerCD } },
             };
 
             return SelectData(dic, sp);

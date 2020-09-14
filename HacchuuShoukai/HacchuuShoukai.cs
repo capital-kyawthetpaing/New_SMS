@@ -90,7 +90,7 @@ namespace HacchuuShoukai
 
                 this.SetFunctionLabel(EProMode.SHOW);
                 this.InitialControlArray();
-                
+
                 Btn_F10.Text = "出力(F10)";
 
                 //起動時共通処理
@@ -107,9 +107,8 @@ namespace HacchuuShoukai
                 ScJuchuuNO.Value1 = InOperatorCD;
                 ScJuchuuNO.Value2 = stores;
                 ScVendor.Value1 = "1";
-               
+
                 SetFuncKeyAll(this, "100001000010");
-               
                 Scr_Clr(0);
 
             }
@@ -139,10 +138,10 @@ namespace HacchuuShoukai
                 JuchuuNO = ScJuchuuNO.TxtCode.Text,
             };
 
-            if (CboArrivalPlan.SelectedIndex != -1)
+            if (CboArrivalPlan.SelectedIndex > 0)
                 doe.ArrivalPlanCD = CboArrivalPlan.SelectedValue.ToString();
 
-            if (CboSoukoName.SelectedIndex != -1)
+            if (CboSoukoName.SelectedIndex > 0)
                 doe.DestinationSoukoCD = CboSoukoName.SelectedValue.ToString();
 
             if (((CheckBox)detailControls[(int)EIndex.ChkMikakutei]).Checked)
@@ -438,7 +437,6 @@ namespace HacchuuShoukai
                 else
                 {
                     ctl.Text = "";
-                    ckM_TextBox2.Text = bbl.GetDate();
                 }
             }
 
@@ -451,6 +449,7 @@ namespace HacchuuShoukai
 
             //初期値セット
             string ymd = ssbl.GetDate();
+            detailControls[(int)EIndex.DayEnd].Text = ymd;
 
             //スタッフマスター(M_Staff)に存在すること
             //[M_Staff]
