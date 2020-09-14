@@ -193,14 +193,13 @@ namespace GetsujiShimeShori
             if (me.ClosePosition1.Equals("1") && me.ClosePosition2.Equals("1") && me.ClosePosition3.Equals("1") && me.ClosePosition4.Equals("1") && me.ClosePosition5.Equals("1")
                     && me.MonthlyClaimsFLG.Equals("1") && me.MonthlyDebtFLG.Equals("1") && me.MonthlyStockFLG.Equals("1"))
                 {
-
-                BtnKakutei.BackColor = Color.FromArgb(255, 192, 0);
+                BtnKakutei.BackColor = Color.FromArgb(255, 255, 0);
                 BtnKakutei.Enabled = true;
                 BtnKaijo.Enabled = true;
             }
             else
             {
-                BtnKakutei.BackColor = Color.FromArgb(255, 255, 0);
+                BtnKakutei.BackColor = Color.Silver;
                 BtnKakutei.Enabled = false;
                 BtnKaijo.Enabled = true;
             }
