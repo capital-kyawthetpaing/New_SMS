@@ -38,13 +38,13 @@ from M_TenzikaiShouhin mt
 where mt.DeleteFlg=0
 AND (@TenzikaiName IS NULL OR (mt.TenzikaiName LIKE '%'+@TenzikaiName+'%'))
 AND (@VendorCDFrom IS NULL OR (mt.VendorCD>=@VendorCDFrom))
-AND (@VendorCDTo IS NULL OR (mt.VendorCD>=@VendorCDTo))
+AND (@VendorCDTo IS NULL OR (mt.VendorCD<=@VendorCDTo))
 AND  mt.LastYearTerm=@LastYearTerm
 AND  mt.LastSeason=@LastSeason
-AND mt.InsertDateTime=@NStartDate
-AND mt.InsertDateTime=@NEndDate
-AND mt.UpdateDateTime=@LStartDate
-AND mt.UpdateDateTime=@LEndDate
+AND mt.InsertDateTime>=@NStartDate
+AND mt.InsertDateTime<=@NEndDate
+AND mt.UpdateDateTime>=@LStartDate
+AND mt.UpdateDateTime<=@LEndDate
 Group by
 mt.TenzikaiName,mt.VendorCD,mt.LastYearTerm,mt.LastSeason
 Order by mt.LastYearTerm,mt.LastSeason DESC,mt.TenzikaiName,mt.VendorCD ASC
