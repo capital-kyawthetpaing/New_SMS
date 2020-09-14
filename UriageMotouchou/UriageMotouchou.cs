@@ -260,7 +260,7 @@ namespace UriageMotouchou
                 CustomerCD = sc_Customer.TxtCode.Text,
                 StoreCD = cboStore.SelectedValue.ToString(),
                 TargetDateFrom = txtTagetFrom.Text + "/01",
-                TargetDateTo = Todate,
+                //TargetDateTo = Todate,
                 ChkValue =CheckValue()
             };
             return ume;

@@ -2987,7 +2987,7 @@ namespace TempoJuchuuNyuuryoku
                                 AdminNo = mGrid.g_DArray[row].AdminNO,
                                 ChangeDate = ymd,
                                 CustomerCD = detailControls[(int)EIndex.CustomerCD].Text,
-                                StoreCD = CboStoreCD.SelectedValue.ToString(),
+                                StoreCD = CboStoreCD.SelectedIndex > 0 ? CboStoreCD.SelectedValue.ToString() : "",
                                 SaleKbn = "0",
                                 Suryo = wSuu.ToString()
                             };
@@ -3342,7 +3342,7 @@ namespace TempoJuchuuNyuuryoku
                 {
                     AdminNO = mGrid.g_DArray[row].AdminNO,
                     ChangeDate = ymd,
-                    StoreCD = CboStoreCD.SelectedValue.ToString(),
+                    StoreCD = CboStoreCD.SelectedIndex > 0 ? CboStoreCD.SelectedValue.ToString() : "",
                     SoukoCD = mGrid.g_DArray[row].SoukoName,  
                     Suryo = bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu).ToString(),
                     DenType = "1",  //1(受注)
@@ -3442,7 +3442,7 @@ namespace TempoJuchuuNyuuryoku
                 //①JAN発注単価マスタ（店舗指定なし）
                 AdminNO = mGrid.g_DArray[row].AdminNO,
                 VendorCD = mGrid.g_DArray[row].VendorCD,
-                StoreCD = CboStoreCD.SelectedValue.ToString(),
+                StoreCD = CboStoreCD.SelectedIndex > 0 ? CboStoreCD.SelectedValue.ToString() :"",
                 ChangeDate = ymd
             };
 
@@ -3472,7 +3472,7 @@ namespace TempoJuchuuNyuuryoku
                         MakerItem = mGrid.g_DArray[row].MakerItem,
                         VendorCD = mGrid.g_DArray[row].VendorCD,
                         ChangeDate = ymd,
-                        StoreCD = CboStoreCD.SelectedValue.ToString()
+                        StoreCD = CboStoreCD.SelectedIndex >0 ? CboStoreCD.SelectedValue.ToString():""
                     };
 
                     ItemOrderPrice_BL ibl = new ItemOrderPrice_BL();
@@ -3564,7 +3564,7 @@ namespace TempoJuchuuNyuuryoku
                 AdminNo = mGrid.g_DArray[w_Row].AdminNO,
                 ChangeDate = ymd,
                 CustomerCD = detailControls[(int)EIndex.CustomerCD].Text,
-                StoreCD = CboStoreCD.SelectedValue.ToString(),
+                StoreCD = CboStoreCD.SelectedIndex > 0 ? CboStoreCD.SelectedValue.ToString() :"",
                 SaleKbn = "0",
                 Suryo = wSuu.ToString()
             };
@@ -4974,7 +4974,7 @@ namespace TempoJuchuuNyuuryoku
                                         AdminNo = mGrid.g_DArray[w_Row].AdminNO,
                                         ChangeDate = ymd,
                                         CustomerCD = detailControls[(int)EIndex.CustomerCD].Text,
-                                        StoreCD = CboStoreCD.SelectedValue.ToString(),
+                                        StoreCD = CboStoreCD.SelectedIndex >0? CboStoreCD.SelectedValue.ToString():"",
                                         SaleKbn = "0",
                                         Suryo = wSuu.ToString()
                                     };

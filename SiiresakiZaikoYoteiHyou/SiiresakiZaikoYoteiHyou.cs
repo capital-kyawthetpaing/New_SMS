@@ -181,8 +181,8 @@ namespace SiiresakiZaikoYoteiHyou
                            
                             worksheet = workbook.ActiveSheet;
                             worksheet.Name = "worksheet";
-                            Microsoft.Office.Interop.Excel.Range excelRange = worksheet.UsedRange;
-                            excelRange.Cells[6, 13].NumberFormat = "\"$\" #,##0.00";//
+                            //Microsoft.Office.Interop.Excel.Range excelRange = worksheet.UsedRange;
+                            //excelRange.Cells[6, 13].NumberFormat = "\"$\" #,##0.00";//
                             using (XLWorkbook wb = new XLWorkbook())
                             {
                                 wb.Worksheets.Add(dtExport,"worksheet");
@@ -197,6 +197,7 @@ namespace SiiresakiZaikoYoteiHyou
                                 wb.Worksheet("worksheet").Cell(2, 2).Value = cboStore.SelectedValue.ToString();
                                 wb.Worksheet("worksheet").Cell(2, 3).Value = cboStore.Text.ToString();
                                 wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;//
+                                wb.Worksheet("worksheet").Hide();
                                 wb.SaveAs(savedialog.FileName);
                                 szybl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
                             }
