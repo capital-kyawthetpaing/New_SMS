@@ -163,7 +163,7 @@ namespace UriageMotouchou
                         umtc_Report.SetDataSource(dtReport);
                         umtc_Report.Refresh();
                         umtc_Report.SetParameterValue("YYYYMMF", txtTagetFrom.Text);
-                        umtc_Report.SetParameterValue("PrintDateTime", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("hh:mm"));
+                        umtc_Report.SetParameterValue("PrintDateTime", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("HH:mm"));
                         umtc_Report.SetParameterValue("CustomerCD", sc_Customer.TxtCode.Text);
                         umtc_Report.SetParameterValue("CustName", sc_Customer.LabelText);
                         umtc_Report.SetParameterValue("StoreCD", cboStore.Text);
@@ -297,8 +297,8 @@ namespace UriageMotouchou
         private void sc_Customer_Enter(object sender, EventArgs e)
         {
             sc_Customer.Value1 = "1";
-            sc_Customer.Value2 = cboStore.SelectedValue.Equals("-1") ? "" : cboStore.SelectedValue.ToString();
-           // sc_Customer.ChangeDate = txtTagetFrom.Text;//月初
+            //sc_Customer.Value2 = cboStore.SelectedValue.Equals("-1") ? "" : cboStore.SelectedValue.ToString();
+            // sc_Customer.ChangeDate = txtTagetFrom.Text;//月初
             sc_Customer.ChangeDate = umbl.GetDate(txtTagetFrom.Text);
         }
         private void sc_Customer_CodeKeyDownEvent(object sender, KeyEventArgs e)
