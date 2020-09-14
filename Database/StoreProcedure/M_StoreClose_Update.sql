@@ -63,6 +63,33 @@ BEGIN
                   ,@Mode
             ;
         END
+        
+        --「確定する(翌月度へ)」
+        IF @KBN = 10
+        BEGIN
+            UPDATE M_Store SET
+                 [FiscalYYYYMM] = @FiscalYYYYMM 
+                ,[UpdateOperator] = @Operator
+                ,[UpdateDateTime] = @SYSDATETIME
+            FROM F_Store(GETDATE()) AS FS
+            WHERE FS.StoreCD = (CASE @Mode WHEN 1 THEN FS.StoreCD ELSE @StoreCD END)
+            AND FS.StoreCD = M_Store.StoreCD
+            AND FS.ChangeDate = M_Store.ChangeDate
+            ;
+        END
+        --「解除する(前月度へ)」
+        ELSE
+        BEGIN
+            UPDATE M_Store SET
+                 [FiscalYYYYMM] = convert(int,SUBSTRING(convert(varchar,DATEADD(MONTH,-1, convert(date,convert(varchar, @FiscalYYYYMM * 100 +1))),112),1,6)) 
+                ,[UpdateOperator] = @Operator
+                ,[UpdateDateTime] = @SYSDATETIME
+            FROM F_Store(GETDATE()) AS FS
+            WHERE FS.StoreCD = (CASE @Mode WHEN 1 THEN FS.StoreCD ELSE @StoreCD END)
+            AND FS.StoreCD = M_Store.StoreCD
+            AND FS.ChangeDate = M_Store.ChangeDate
+            ;        
+        END
     END
     ELSE
     BEGIN

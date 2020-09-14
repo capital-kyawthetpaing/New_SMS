@@ -135,20 +135,34 @@ namespace GetsujiShimeShori
             //if (CboStoreCD.SelectedValue == null)
             //    return;
 
+            M_Store_Entity mse = new M_Store_Entity();
+            mse.ChangeDate = gsbl.GetDate();
+            mse.StoreCD = CboStoreCD.SelectedIndex > 0 ? CboStoreCD.SelectedValue.ToString() : "";
+
+            if (Mode.Equals(1))
+            {
+                mse.StoreCD = gsbl.GetHonsha(mse);
+            }
+
+            Store_BL sbl = new Store_BL();
+            DataTable dt = sbl.M_Store_Select(mse);
+            if (dt.Rows.Count > 0)
+            {
+                lblChangeDate.Text = dt.Rows[0]["FiscalYYYYMM"].ToString().Substring(0, 4) + "/" + dt.Rows[0]["FiscalYYYYMM"].ToString().Substring(4, 2); 
+            }
+
             M_StoreClose_Entity me = new M_StoreClose_Entity
             {
-                StoreCD = CboStoreCD.SelectedValue == null ? "": CboStoreCD.SelectedValue.ToString(),
+                StoreCD = CboStoreCD.SelectedIndex > 0 ?  CboStoreCD.SelectedValue.ToString() : "",
                 FiscalYYYYMM = lblChangeDate.Text.Replace("/",""),
                 Operator = InOperatorCD,
                 Mode=Mode
             };
 
-            if(Mode.Equals(1))
-            {
-                M_Store_Entity mse = new M_Store_Entity();
-                mse.ChangeDate = gsbl.GetDate();
-                me.StoreCD = gsbl.GetHonsha(mse);
-            }
+            //if (Mode.Equals(1))
+            //{
+            //    me.StoreCD = gsbl.GetHonsha(mse);
+            //}
 
             bool  ret = gsbl.M_StoreClose_SelectAll(me);
 
@@ -221,14 +235,14 @@ namespace GetsujiShimeShori
             if (flg.Equals("0"))
             {
                 label.Text = "必要";
-                label.BackColor = Color.FromArgb(255, 255, 0);
+                label.BackColor = Color.FromArgb(255, 192, 0);
                 button.Enabled = true;
                 button.Text = "計算する";
             }
             else if (flg.Equals("1"))
             {
                 label.Text = "完了";
-                label.BackColor = Color.FromArgb(255, 192, 0);
+                label.BackColor = Color.FromArgb(255, 255, 0);
                 button.Enabled = true;
                 button.Text = "計算する";
             }
