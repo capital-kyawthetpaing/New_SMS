@@ -680,7 +680,10 @@ namespace GetsujiShimeShori
                     string FiscalYYYYMM =lblChangeDate.Text;
 
                     string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + ProcessMode + " " + FiscalYYYYMM;
-                    System.Diagnostics.Process.Start(filePath, cmdLine);
+                    System.Diagnostics.Process p = System.Diagnostics.Process.Start(filePath, cmdLine);
+
+                    p.WaitForExit();
+
                     return true;
                 }
                 else
