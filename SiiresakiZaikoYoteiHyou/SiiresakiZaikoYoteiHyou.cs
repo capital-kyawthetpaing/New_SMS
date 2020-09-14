@@ -181,6 +181,8 @@ namespace SiiresakiZaikoYoteiHyou
                            
                             worksheet = workbook.ActiveSheet;
                             worksheet.Name = "worksheet";
+                            //Microsoft.Office.Interop.Excel.Range excelRange = worksheet.UsedRange;
+                            //excelRange.Cells[6, 13].NumberFormat = "\"$\" #,##0.00";//
                             using (XLWorkbook wb = new XLWorkbook())
                             {
                                 wb.Worksheets.Add(dtExport,"worksheet");
@@ -189,12 +191,13 @@ namespace SiiresakiZaikoYoteiHyou
                                 wb.Worksheet("worksheet").Cell(1,1).Value = "年月：";
 
                                 wb.Worksheet("worksheet").Cell(2, 1).Value = "店舗:";
-                                wb.Worksheet("worksheet").Cell(1, 2).Value = txtTargetDateFrom.Text;
+                                wb.Worksheet("worksheet").Cell(1, 2).Value = "'" + txtTargetDateFrom.Text;
                                 wb.Worksheet("worksheet").Cell(1, 3).Value = "～";
-                                wb.Worksheet("worksheet").Cell(1, 4).Value = txtTargetDateTo.Text;
+                                wb.Worksheet("worksheet").Cell(1, 4).Value = "'" + txtTargetDateTo.Text;
                                 wb.Worksheet("worksheet").Cell(2, 2).Value = cboStore.SelectedValue.ToString();
                                 wb.Worksheet("worksheet").Cell(2, 3).Value = cboStore.Text.ToString();
-                                wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;//ses
+                                wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;//
+                                wb.Worksheet("worksheet").Hide();
                                 wb.SaveAs(savedialog.FileName);
                                 szybl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
                             }

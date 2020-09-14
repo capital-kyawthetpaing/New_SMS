@@ -24,15 +24,19 @@ namespace Search
             InitializeComponent();
             bbl = new Base_BL();
             bl = new Search_TenzikaiShouhin_BL();
+        }
+
+        public string parTzikaishouhinCD= "";
+        public string parTzikaishouhindName = "";
+        public string parChangeDate = "";
+        private void Search_TenzikaiShouhin_Load(object sender, EventArgs e)
+        {
             string ymd = bbl.GetDate();
             LB_ChangeDate.Text = ymd;
             CB_Year.Bind(ymd);
             CB_Season.Bind(ymd);
+            HeaderTitleText = "展示会商品検索";
         }
-        public string parTzikaishouhinCD= "";
-        public string parTzikaishouhindName = "";
-        public string parChangeDate = "";
-
         public override void FunctionProcess(int index)
         {
             
@@ -79,7 +83,7 @@ namespace Search
                 LastYearTerm=CB_Year.SelectedValue.ToString(),
                 LastSeason=CB_Season.SelectedValue.ToString(),
                 SKUName=TB_SKUname.Text,
-                BranCDFrom=SC_Brand.TxtCode.Text,
+                BranCDFrom= SC_Brand.TxtCode.Text,
                 SegmentCDFrom=SC_segment.TxtCode.Text,
                 InsertDateFrom=TB_InsertDateTimeF.Text,
                 InsertDateTo=TB_InsertDateTimeT.Text,
@@ -173,22 +177,37 @@ namespace Search
             }
         }
 
-        private void GV_TZshouhin_KeyUp(object sender, KeyEventArgs e)
-        {
-            MoveNextControl(e);
-        }
+       
 
         private void GV_TZshouhin_KeyDown(object sender, KeyEventArgs e)
         {
             GetData();
         }
 
-        private void SC_Vendor_KeyDown(object sender, KeyEventArgs e)
+      
+
+        private void SC_Vendor_Enter(object sender, EventArgs e)
         {
-            if(!String.IsNullOrEmpty(SC_Vendor.TxtCode.Text))
+            SC_Vendor.Value1 = "1";
+        }
+
+        
+        private void SC_segment_Enter(object sender, EventArgs e)
+        {
+            SC_segment.Value1 = "226";
+        }
+
+        private void Search_TenzikaiShouhin_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
+
+        private void SC_Vendor_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (!String.IsNullOrEmpty(SC_Vendor.TxtCode.Text))
             {
                 SC_Vendor.ChangeDate = bbl.GetDate();
-                if(!SC_Vendor.SelectData())
+                if (!SC_Vendor.SelectData())
                 {
                     bbl.ShowMessage("E101");
                     SC_Vendor.SetFocus(1);
@@ -196,17 +215,12 @@ namespace Search
             }
         }
 
-        private void SC_Vendor_Enter(object sender, EventArgs e)
+        private void SC_Brand_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            SC_Vendor.Value1 = "1";
-        }
-
-        private void SC_Brand_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(!String.IsNullOrEmpty(SC_Brand.TxtCode.Text))
+            if (!String.IsNullOrEmpty(SC_Brand.TxtCode.Text))
             {
                 SC_Brand.ChangeDate = bbl.GetDate();
-                if(!SC_Brand.SelectData())
+                if (!SC_Brand.SelectData())
                 {
                     bbl.ShowMessage("E101");
                     SC_Brand.SetFocus(1);
@@ -214,21 +228,47 @@ namespace Search
             }
         }
 
-        private void SC_segment_KeyDown(object sender, KeyEventArgs e)
+        private void SC_segment_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if(!string.IsNullOrEmpty(SC_segment.TxtCode.Text))
+            if (!string.IsNullOrEmpty(SC_segment.TxtCode.Text))
             {
                 SC_segment.ChangeDate = bbl.GetDate();
-                if(SC_segment.SelectData())
+                if (!SC_segment.SelectData())
                 {
                     bbl.ShowMessage("E101");
                     SC_segment.SetFocus(1);
                 }
             }
         }
-        private void SC_segment_Enter(object sender, EventArgs e)
+
+        private void TB_InsertDateTimeT_KeyDown(object sender, KeyEventArgs e)
         {
-            SC_segment.Value1 = "226";
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!String.IsNullOrEmpty(TB_InsertDateTimeF.Text) && !String.IsNullOrEmpty(TB_InsertDateTimeT.Text))
+                {
+                    if (Convert.ToDateTime(TB_InsertDateTimeF.Text) > Convert.ToDateTime(TB_InsertDateTimeT.Text))
+                    {
+                        bbl.ShowMessage("E104");
+                        TB_InsertDateTimeT.Focus();
+                    }
+                }
+            }
+        }
+
+        private void TB_UpdateDateTimeT_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!String.IsNullOrEmpty(TB_UpdateDateTimeF.Text) && !String.IsNullOrEmpty(TB_UpdateDateTimeT.Text))
+                {
+                    if (Convert.ToDateTime(TB_UpdateDateTimeF.Text) > Convert.ToDateTime(TB_UpdateDateTimeT.Text))
+                    {
+                        bbl.ShowMessage("E104");
+                        TB_UpdateDateTimeT.Focus();
+                    }
+                }
+            }
         }
     }
 }

@@ -103,10 +103,11 @@ BEGIN
                                                 WHERE A.SoukoCD = DH.DestinationSoukoCD AND A.DeleteFlg = 0 
                                                 AND A.ChangeDate <= DH.OrderDate
                                                 ORDER BY A.ChangeDate desc) 
-                                   WHEN 1 THEN (SELECT top 1 A.DeliveryName
-                                                FROM D_DeliveryPlan A 
-                                                WHERE A.DeliveryPlanNO = DJ.DeliveryPlanNO)
-                                                ELSE '' END) AS DeliveryName
+                                   WHEN 1 THEN DH.DestinationName ELSE '' END) AS DeliveryName
+                                                --(SELECT top 1 A.DeliveryName
+                                                --FROM D_DeliveryPlan A 
+                                                --WHERE A.DeliveryPlanNO = DJ.DeliveryPlanNO)
+                                                --ELSE '' END) AS DeliveryName
            
            ,DH.OrderWayKBN AS OrderWay                             
            ,(CASE DH.OrderWayKBN WHEN 1 THEN N'Net”­’' WHEN 2 THEN N'FAX”­’' WHEN 3 THEN N'EDI”­’' ELSE '' END) OrderWayKBN

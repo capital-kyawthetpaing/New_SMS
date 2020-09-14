@@ -100,9 +100,13 @@ namespace TenzikaiJuchuuJouhouHurikaeShori
                 ChangeDate = detailControls[(int)EIndex.TorokuDT].Text,
                 LastSeason = cboSeason.SelectedIndex > 0 ? cboSeason.SelectedValue.ToString(): null,
                 LastYearTerm = cboNendo.SelectedIndex > 0 ? cboNendo.SelectedValue.ToString() : null,
+                Operator = InOperatorCD,
+                PC = InPcID
             };
-            
-            if(RdoDelete.Checked)
+
+            GvDetail.DataSource = null;
+
+            if (RdoDelete.Checked)
             {
                 string errNo = "";
                 bool ret = ssbl.CheckTenzikaiJuchuu(me, out errNo);
@@ -135,8 +139,16 @@ namespace TenzikaiJuchuuJouhouHurikaeShori
                     //ssbl.ShowMessage("E128");
                 }
             }
-
-            RdoCreate.Focus();
+            if (RdoDelete.Checked)
+            {
+                bbl.ShowMessage("I102");
+                RdoDelete.Focus();
+            }
+            else
+            {
+                bbl.ShowMessage("I101");
+                RdoCreate.Focus();
+            }
         }
 
         private void InitialControlArray()
@@ -363,7 +375,7 @@ namespace TenzikaiJuchuuJouhouHurikaeShori
                     bool ret = CheckDetail(index);
                     if (ret)
                     {
-                        if(index.Equals((int)EIndex.RdoCreate) || index.Equals((int)EIndex.RdoDelete))
+                        if(index.Equals((int)EIndex.RdoCreate) )
                         {
                             detailControls[(int)EIndex.VendorCD].Focus();
                         }
@@ -412,6 +424,9 @@ namespace TenzikaiJuchuuJouhouHurikaeShori
             try
             {
                 detailControls[(int)EIndex.TorokuDT].Enabled = !RdoCreate.Checked;
+
+                if (!detailControls[(int)EIndex.TorokuDT].Enabled)
+                    detailControls[(int)EIndex.TorokuDT].Text = "";
             }
             catch (Exception ex)
             {
