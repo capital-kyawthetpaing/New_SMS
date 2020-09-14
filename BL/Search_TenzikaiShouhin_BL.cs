@@ -12,6 +12,7 @@ namespace BL
     public class Search_TenzikaiShouhin_BL:Base_BL
     {
         Search_TenzikaiShouhin_DL dl;
+       
 
         public Search_TenzikaiShouhin_BL()
         {

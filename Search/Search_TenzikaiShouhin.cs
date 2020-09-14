@@ -24,15 +24,18 @@ namespace Search
             InitializeComponent();
             bbl = new Base_BL();
             bl = new Search_TenzikaiShouhin_BL();
-            string ymd = bbl.GetDate();
-            LB_ChangeDate.Text = ymd;
-            CB_Year.Bind(ymd);
-            CB_Season.Bind(ymd);
         }
+
         public string parTzikaishouhinCD= "";
         public string parTzikaishouhindName = "";
         public string parChangeDate = "";
-
+        private void Search_TenzikaiShouhin_Load(object sender, EventArgs e)
+        {
+            string ymd = bbl.GetDate();
+            LB_ChangeDate.Text = ymd;
+            CB_Year1.Bind(ymd);
+            CB_Season1.Bind(ymd);
+        }
         public override void FunctionProcess(int index)
         {
             
@@ -76,8 +79,8 @@ namespace Search
             {
                 TenzikaiName=TB_Tenziname.Text,
                 VendorCD=SC_Vendor.TxtCode.Text,
-                LastYearTerm=CB_Year.SelectedValue.ToString(),
-                LastSeason=CB_Season.SelectedValue.ToString(),
+                LastYearTerm=CB_Year1.SelectedValue.ToString(),
+                LastSeason=CB_Season1.SelectedValue.ToString(),
                 SKUName=TB_SKUname.Text,
                 BranCDFrom=SC_Brand.TxtCode.Text,
                 SegmentCDFrom=SC_segment.TxtCode.Text,
@@ -100,7 +103,7 @@ namespace Search
                     return false;
                 }
             }
-            if (!RequireCheck(new Control[] { CB_Year, CB_Season })) //Step1
+            if (!RequireCheck(new Control[] { CB_Year1, CB_Season1 })) //Step1
                 return false;
 
 
@@ -173,10 +176,7 @@ namespace Search
             }
         }
 
-        private void GV_TZshouhin_KeyUp(object sender, KeyEventArgs e)
-        {
-            MoveNextControl(e);
-        }
+       
 
         private void GV_TZshouhin_KeyDown(object sender, KeyEventArgs e)
         {
@@ -230,5 +230,12 @@ namespace Search
         {
             SC_segment.Value1 = "226";
         }
+
+        private void Search_TenzikaiShouhin_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
+
+       
     }
 }
