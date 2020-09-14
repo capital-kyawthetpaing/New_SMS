@@ -106,8 +106,9 @@ namespace ZaikoShoukai
                 msInfo_Entity = GetInfoEntity();
                 msT_Entity = GetTagEntity();
                 ds_Entity = GetStockEntity();
-                
-                dtData = zaibl.ZaikoShoukai_Search(msku_Entity, msInfo_Entity, msT_Entity,ds_Entity, type);
+
+                // dtData = zaibl.ZaikoShoukai_Search(msku_Entity, msInfo_Entity, msT_Entity,ds_Entity, type);
+              //  dtData = zaibl.ZaikoShoukai_Search(null, null, null, null, null);
                 if (dtData.Rows.Count > 0)
                 {
                     GV_Zaiko.Refresh();

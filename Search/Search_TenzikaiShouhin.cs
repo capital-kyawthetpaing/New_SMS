@@ -24,15 +24,18 @@ namespace Search
             InitializeComponent();
             bbl = new Base_BL();
             bl = new Search_TenzikaiShouhin_BL();
+        }
+
+        public string parTzikaishouhinCD= "";
+        public string parTzikaishouhindName = "";
+        public string parChangeDate = "";
+        private void Search_TenzikaiShouhin_Load(object sender, EventArgs e)
+        {
             string ymd = bbl.GetDate();
             LB_ChangeDate.Text = ymd;
             CB_Year.Bind(ymd);
             CB_Season.Bind(ymd);
         }
-        public string parTzikaishouhinCD= "";
-        public string parTzikaishouhindName = "";
-        public string parChangeDate = "";
-
         public override void FunctionProcess(int index)
         {
             
@@ -173,10 +176,7 @@ namespace Search
             }
         }
 
-        private void GV_TZshouhin_KeyUp(object sender, KeyEventArgs e)
-        {
-            MoveNextControl(e);
-        }
+       
 
         private void GV_TZshouhin_KeyDown(object sender, KeyEventArgs e)
         {
@@ -229,6 +229,11 @@ namespace Search
         private void SC_segment_Enter(object sender, EventArgs e)
         {
             SC_segment.Value1 = "226";
+        }
+
+        private void Search_TenzikaiShouhin_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
         }
     }
 }

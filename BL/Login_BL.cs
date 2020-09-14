@@ -93,7 +93,7 @@ namespace BL
             return mse;
         }
 
-      
+
         /// <summary>
         /// For Default Souko Bind
         /// </summary>
@@ -262,7 +262,7 @@ namespace BL
             // 店舗レジで使用するプリンター名
             Base_DL.iniEntity.StorePrinterName = idl.IniReadValue("Printer", "StorePrinterName");
             if (Base_DL.iniEntity.IsDM_D30Used)
-            Base_DL.iniEntity.DefaultMessage = GetMessages();
+                Base_DL.iniEntity.DefaultMessage = GetMessages();
 
 
         }
@@ -302,7 +302,7 @@ namespace BL
             using (SqlConnection con = bdl.GetConnection())
             {
                 con.Open();
-                using (SqlCommand command = new SqlCommand("Update M_Multiporpose set Num1 = '"+val+"' where[Key] = '1' and Id = '326'", con))
+                using (SqlCommand command = new SqlCommand("Update M_Multiporpose set Num1 = '" + val + "' where[Key] = '1' and Id = '326'", con))
                 {
                     command.ExecuteNonQuery();
                 }
@@ -320,7 +320,7 @@ namespace BL
             {
                 try
                 {
-                 //   Kill(Path.GetFileNameWithoutExtension(pth));
+                    //   Kill(Path.GetFileNameWithoutExtension(pth));
                 }
                 catch { }
                 try
@@ -359,13 +359,13 @@ namespace BL
         }
         protected void Kill(string pth)
         {
-            Process[] processCollection = Process.GetProcessesByName(pth.Replace(".exe",""));
+            Process[] processCollection = Process.GetProcessesByName(pth.Replace(".exe", ""));
             foreach (Process p in processCollection)
             {
-                    p.Kill();
+                p.Kill();
             }
 
-            Process[] processCollections = Process.GetProcessesByName(pth+".exe");
+            Process[] processCollections = Process.GetProcessesByName(pth + ".exe");
             foreach (Process p in processCollections)
             {
                 p.Kill();
@@ -376,7 +376,7 @@ namespace BL
             Base_DL bdl = new Base_DL();
             var dt = new DataTable();
             var con = bdl.GetConnection();
-         //   
+            //   
             //SqlConnection conn = con;
             con.Open();
             SqlCommand command = new SqlCommand("Select Num1 from [M_Multiporpose] where [Key]='1' and Id='326'", con);
@@ -385,7 +385,7 @@ namespace BL
             con.Close();
             return dt.Rows.Count > 0 ? dt.Rows[0]["Num1"].ToString() : "0";
         }
-        
+
         public string GetInformationOfIniFileByKey(string key)
         {
             // INIﾌｧｲﾙ取得
