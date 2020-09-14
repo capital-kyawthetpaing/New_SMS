@@ -33,8 +33,8 @@ namespace Search
         {
             string ymd = bbl.GetDate();
             LB_ChangeDate.Text = ymd;
-            CB_Year1.Bind(ymd);
-            CB_Season1.Bind(ymd);
+            //CB_Year1.Bind(ymd);
+            //CB_Season1.Bind(ymd);
         }
         public override void FunctionProcess(int index)
         {
@@ -60,16 +60,16 @@ namespace Search
             if (ErrorCheck())
             {
                 mt = GetDataEntity();
-                DataTable dt = bl.M_Tenzikaishouhin_Search(mt);
-                if (dt.Rows.Count > 0)
-                {
-                    GV_TZshouhin.DataSource = dt;
-                }
-                else
-                {
-                    GV_TZshouhin.DataSource = null;
-                    bbl.ShowMessage("E128");
-                }
+               // DataTable dt = bl.M_Tenzikaishouhin_Search(mt);
+                //if (dt.Rows.Count > 0)
+                //{
+                //    GV_TZshouhin.DataSource = dt;
+                //}
+                //else
+                //{
+                //    GV_TZshouhin.DataSource = null;
+                //    bbl.ShowMessage("E128");
+                //}
             }
         }
 
@@ -79,8 +79,8 @@ namespace Search
             {
                 TenzikaiName=TB_Tenziname.Text,
                 VendorCD=SC_Vendor.TxtCode.Text,
-                LastYearTerm=CB_Year1.SelectedValue.ToString(),
-                LastSeason=CB_Season1.SelectedValue.ToString(),
+                //LastYearTerm=CB_Year1.SelectedValue.ToString(),
+                //LastSeason=CB_Season1.SelectedValue.ToString(),
                 SKUName=TB_SKUname.Text,
                 BranCDFrom=SC_Brand.TxtCode.Text,
                 SegmentCDFrom=SC_segment.TxtCode.Text,
@@ -103,8 +103,8 @@ namespace Search
                     return false;
                 }
             }
-            if (!RequireCheck(new Control[] { CB_Year1, CB_Season1 })) //Step1
-                return false;
+            //if (!RequireCheck(new Control[] { CB_Year1, CB_Season1 })) //Step1
+            //    return false;
 
 
             if (!String.IsNullOrEmpty(SC_Brand.TxtCode.Text))
