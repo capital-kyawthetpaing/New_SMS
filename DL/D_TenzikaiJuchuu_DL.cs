@@ -53,5 +53,26 @@ namespace DL
             UseTransaction = true;
             return InsertUpdateDeleteData(dic, sp);
         }
+
+        public DataTable D_TenzikaiJuchuu_SearchData(D_TenzikaiJuchuu_Entity dtje)
+        {
+            string sp = "D_TenzikaiJuchuu_SearchData";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@JuchuuDateFrom", new ValuePair { value1 = SqlDbType.Date, value2 = dtje.JuchuuDateFrom } },
+                { "@JuchuuDateTo", new ValuePair { value1 = SqlDbType.Date, value2 = dtje.JuchuuDateTo } },
+                { "@Year", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.year } },
+                { "@Season", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.season } },
+                { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.StaffCD } },
+                { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.CustomerCD } },
+                { "@VendorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.VendorCD } },
+                { "@ProductName", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.ProuductName } },
+                { "@ItemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.ItemCD } },
+                { "@SKUCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.SKUCD } },
+                { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.JanCD } },
+            };
+            return SelectData(dic, sp);
+        }
     }
 }
