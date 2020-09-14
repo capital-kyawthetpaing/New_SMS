@@ -18,6 +18,7 @@ namespace Search
         TenzikaiJuchuuNo_BL tzkjbl;
         M_Vendor_Entity mve;
         M_Customer_Entity mce;
+        D_TenzikaiJuchuu_Entity dtje;
         public Search_TenzikaiJuchuuNO()
         {
             InitializeComponent();
@@ -43,10 +44,29 @@ namespace Search
         {
             if (ErrorCheck(11))
             {
-                //mse = GetSearchInfo();
-                //DataTable dtSouko = ssbl.M_Souko_Search(mse);
-                //GvSouko.DataSource = dtSouko;
+                dtje = GetSearchInfo();
+                DataTable dtcus = tzkjbl.D_TenzikaiJuchuu_SearchData(dtje);
+                dgvTenzikai.DataSource = dtcus;
             }
+        }
+
+        private D_TenzikaiJuchuu_Entity GetSearchInfo()
+        {
+            dtje = new D_TenzikaiJuchuu_Entity
+            {
+                JuchuuDateFrom = txtOrderDateFrom.Text,
+                JuchuuDateTo = txtOrderDateTo.Text,
+                VendorCD = ScSupplier.TxtCode.Text,
+                year = cboYear.SelectedValue.ToString().Equals("-1") ? string.Empty : cboYear.SelectedValue.ToString(),
+                season = cboSeason.SelectedValue.Equals("-1") ? string.Empty : cboSeason.SelectedValue.ToString(),
+                StaffCD = scStaff.TxtCode.Text,
+                CustomerCD = ScCustomer.TxtCode.Text,
+                ProuductName = txtKanaName.Text,
+                ItemCD = ScItem.TxtCode.Text,
+                SKUCD = ScSKUCD.TxtCode.Text,
+                JanCD = ScJanCD.TxtCode.Text,
+            };
+            return dtje;
         }
 
         private bool ErrorCheck(int index)
