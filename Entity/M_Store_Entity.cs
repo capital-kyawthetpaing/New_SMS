@@ -42,7 +42,9 @@ namespace Entity
         public string KouzaCD { get; set; }
         public string ReceiptPrint { get; set; }
         public string MoveMailPatternCD { get; set; }
+
         public string Remarks { get; set; }
+        public string FiscalYYYYMM { get; set; }
 
         //検索用Entity
         public string DisplayKbn { get; set; }

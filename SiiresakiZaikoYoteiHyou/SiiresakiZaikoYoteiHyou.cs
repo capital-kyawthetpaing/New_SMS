@@ -154,6 +154,7 @@ namespace SiiresakiZaikoYoteiHyou
                 dmpe = new D_MonthlyPurchase_Entity();
                 dmpe = GetData();
                 DataTable dt = szybl.RPC_SiiresakiZaikoYoteiHyou(dmpe);
+                dt.Columns.Remove("Today");
                 if (dt.Rows.Count > 0)
                 {
                     DataTable dtExport = dt;
@@ -177,22 +178,29 @@ namespace SiiresakiZaikoYoteiHyou
                             Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
                             Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
                             Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-                           
+
                             worksheet = workbook.ActiveSheet;
                             worksheet.Name = "worksheet";
+                            Microsoft.Office.Interop.Excel.Range excelRange = worksheet.UsedRange;
+                            excelRange.NumberFormat = "#,###,###";//
                             using (XLWorkbook wb = new XLWorkbook())
                             {
+                                
                                 wb.Worksheets.Add(dtExport,"worksheet");
                                 wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
                                 wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
                                 wb.Worksheet("worksheet").Cell(1,1).Value = "年月：";
 
                                 wb.Worksheet("worksheet").Cell(2, 1).Value = "店舗:";
-                                wb.Worksheet("worksheet").Cell(1, 2).Value = txtTargetDateFrom.Text;
+                                wb.Worksheet("worksheet").Cell(1, 2).Value = "'" + txtTargetDateFrom.Text;
                                 wb.Worksheet("worksheet").Cell(1, 3).Value = "～";
-                                wb.Worksheet("worksheet").Cell(1, 4).Value = txtTargetDateTo.Text;
+                                wb.Worksheet("worksheet").Cell(1, 4).Value = "'" + txtTargetDateTo.Text;
                                 wb.Worksheet("worksheet").Cell(2, 2).Value = cboStore.SelectedValue.ToString();
                                 wb.Worksheet("worksheet").Cell(2, 3).Value = cboStore.Text.ToString();
+                                //wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;//
+                                //wb.Worksheet("worksheet").Hide();
+                                worksheet.Range["A3:D3"].Style.Color = Color.White;
+                                wb.Worksheet("worksheet").ShowGridLines = false;
                                 wb.SaveAs(savedialog.FileName);
                                 szybl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
                             }

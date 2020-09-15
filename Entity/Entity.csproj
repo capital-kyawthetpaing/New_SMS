@@ -101,9 +101,11 @@
     <Compile Include="D_StoreCalculation_Entity.cs" />
     <Compile Include="D_StorePayment_Entity.cs" />
     <Compile Include="D_TempoRegiRyousyuusyo_Entity.cs" />
+    <Compile Include="D_TenzikaiJuchuu_Entity.cs" />
     <Compile Include="D_WowmaRequest_Entity.cs" />
     <Compile Include="D_YahooCount_Entity.cs" />
     <Compile Include="D_YahooList_Entity.cs" />
+    <Compile Include="Fnc_Credit_Entity.cs" />
     <Compile Include="Fnc_PlanDate_Entity.cs" />
     <Compile Include="Fnc_Present_Entity.cs" />
     <Compile Include="Fnc_Reserve_Entity.cs" />

@@ -42,13 +42,13 @@
             this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
             this.ScVendor = new Search.CKM_SearchControl();
             this.GvDetail = new CKM_Controls.CKM_GridView();
-            this.colJuchuNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSKUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboNendo = new CKM_Controls.CKM_ComboBox();
             this.cboSeason = new CKM_Controls.CKM_ComboBox();
             this.RdoCreate = new CKM_Controls.CKM_RadioButton();
             this.RdoDelete = new CKM_Controls.CKM_RadioButton();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
+            this.colJuchuNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSKUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvDetail)).BeginInit();
             this.SuspendLayout();
@@ -244,6 +244,7 @@
             this.ckM_TextBox1.AllowMinus = false;
             this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
+            this.ckM_TextBox1.BorderColor = false;
             this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ckM_TextBox1.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -255,6 +256,7 @@
             this.ckM_TextBox1.IntegerPart = 0;
             this.ckM_TextBox1.IsCorrectDate = true;
             this.ckM_TextBox1.isEnterKeyDown = false;
+            this.ckM_TextBox1.IsFirstTime = true;
             this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
@@ -267,6 +269,7 @@
             this.ckM_TextBox1.TabIndex = 2;
             this.ckM_TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_TextBox1.UseColorSizMode = false;
             // 
             // ScVendor
             // 
@@ -336,23 +339,6 @@
             this.GvDetail.TabIndex = 2;
             this.GvDetail.UseRowNo = true;
             this.GvDetail.UseSetting = true;
-            // 
-            // colJuchuNO
-            // 
-            this.colJuchuNO.DataPropertyName = "JuchuNO";
-            this.colJuchuNO.HeaderText = "展示会受注番号";
-            this.colJuchuNO.Name = "colJuchuNO";
-            this.colJuchuNO.ReadOnly = true;
-            this.colJuchuNO.Width = 120;
-            // 
-            // colSKUName
-            // 
-            this.colSKUName.DataPropertyName = "SKUName";
-            this.colSKUName.HeaderText = "商品";
-            this.colSKUName.Name = "colSKUName";
-            this.colSKUName.ReadOnly = true;
-            this.colSKUName.Visible = false;
-            this.colSKUName.Width = 350;
             // 
             // cboNendo
             // 
@@ -434,6 +420,23 @@
             this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // colJuchuNO
+            // 
+            this.colJuchuNO.DataPropertyName = "TenzikaiJuchuuNO";
+            this.colJuchuNO.HeaderText = "展示会受注番号";
+            this.colJuchuNO.Name = "colJuchuNO";
+            this.colJuchuNO.ReadOnly = true;
+            this.colJuchuNO.Width = 120;
+            // 
+            // colSKUName
+            // 
+            this.colSKUName.DataPropertyName = "SKUName";
+            this.colSKUName.HeaderText = "商品";
+            this.colSKUName.Name = "colSKUName";
+            this.colSKUName.ReadOnly = true;
+            this.colSKUName.Visible = false;
+            this.colSKUName.Width = 350;
+            // 
             // TenzikaiJuchuuJouhouHurikaeShori
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -472,9 +475,9 @@
         private CKM_Controls.CKM_ComboBox cboSeason;
         private CKM_Controls.CKM_RadioButton RdoCreate;
         private CKM_Controls.CKM_RadioButton RdoDelete;
+        private CKM_Controls.CKM_Label ckM_Label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colJuchuNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSKUName;
-        private CKM_Controls.CKM_Label ckM_Label1;
     }
 }
 
