@@ -23,7 +23,7 @@ namespace TenzikaiJuchuuTourou
         private const short mc_L_END = 3; // ロック用
         private const string TempoNouhinsyo = "TenzikaiJuchuuTourou.exe";
         private string C_dt = "";
-
+        private int mTennic;
         private Control[] keyControls;
         private Control[] keyLabels;
         private Control[] detailControls;
@@ -65,6 +65,110 @@ namespace TenzikaiJuchuuTourou
         {
             InitializeComponent();
             C_dt = DateTime.Now.ToString("yyyy-MM-dd");
+        }
+        private void TenzikaiJuchuuTourou_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                InProgramID = ProID;
+                InProgramNM = ProNm;
+
+                this.SetFunctionLabel(EProMode.INPUT);
+                this.InitialControlArray();
+                addInfo = new FrmAddress();
+                // 明細部初期化
+                //this.S_SetInit_Grid();
+
+                Scr_Clr(0);
+
+                //起動時共通処理
+                base.StartProgram();
+                BindCombo();
+                //コンボボックス初期化
+                string ymd = bbl.GetDate();
+                // tubl = new TempoUriageNyuuryoku_BL();
+                //  CboStoreCD.Bind(ymd);
+                base.StartProgram();
+
+                mTennic = bbl.GetTennic();
+                //検索用のパラメータ設定
+                //    ScCustomerCD.Value1 = "1";
+                //   ScCustomerCD.Value2 = "";
+
+                Btn_F11.Text = "";
+                sc_shiiresaki.TxtCode.Focus();
+
+                //スタッフマスター(M_Staff)に存在すること
+                //[M_Staff]
+                M_Staff_Entity mse = new M_Staff_Entity
+                {
+                    StaffCD = InOperatorCD,
+                    ChangeDate = ymd
+                };
+                Staff_BL bl = new Staff_BL();
+                bool ret = bl.M_Staff_Select(mse);
+                //if (ret)
+                //{
+                //    CboStoreCD.SelectedValue = mse.StoreCD;
+                //    ScStaff.LabelText = mse.StaffName;
+                //}
+
+                detailControls[(int)Eindex.JuuChuuBi].Text = ymd;
+
+                //for (int W_CtlRow = 0; W_CtlRow <= mGrid.g_MK_Ctl_Row - 1; W_CtlRow++)
+                //{
+                //    CKM_Controls.CKM_ComboBox sctl = (CKM_Controls.CKM_ComboBox)mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.SoukoName, W_CtlRow].CellCtl;
+                //    sctl.Bind(ymd);
+                //}
+                string[] cmds = System.Environment.GetCommandLineArgs();
+                if (cmds.Length - 1 > (int)ECmdLine.PcID)
+                {
+                    string juchuNO = cmds[(int)ECmdLine.PcID + 1];   //
+                    ChangeOperationMode(EOperationMode.SHOW);
+                  //  keyControls[(int)Eindex.JuchuuNO].Text = juchuNO;
+                 //   CheckKey((int)EIndex.JuchuuNO, true);
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                EndSec();
+            }
+        }
+        private void ChangeOperationMode(EOperationMode mode)
+        {
+            OperationMode = mode; // (1:新規,2:修正,3;削除)
+
+            //排他処理を解除
+            //DeleteExclusive();
+
+            Scr_Clr(0);
+
+            //S_BodySeigyo(0, 0);
+            //S_BodySeigyo(0, 1);
+            ////配列の内容を画面にセット
+            //mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+            switch (mode)
+            {
+                case EOperationMode.INSERT:
+
+                    //ScStaff.TxtCode.Text = InOperatorCD;
+                    //ScStaff.LabelText = InOperatorName;
+                    //CboStoreCD.SelectedValue = StoreCD;
+
+                    detailControls[1].Focus();
+                    break;
+
+                case EOperationMode.UPDATE:
+                case EOperationMode.DELETE:
+                case EOperationMode.SHOW:
+                    keyControls[0].Focus();
+                    break;
+
+            }
+
         }
         private void InitialControlArray()
         {
@@ -207,7 +311,7 @@ namespace TenzikaiJuchuuTourou
             {
                 //エラー時共通処理
                 MessageBox.Show(ex.Message);
-                //EndSec();
+                EndSec();
             }
             //  throw new NotImplementedException();
         }
@@ -875,45 +979,80 @@ namespace TenzikaiJuchuuTourou
 
             }
         }
-        private void TenzikaiJuchuuTourou_Load(object sender, EventArgs e)
+        
+        private void Scr_Clr(short Kbn)
         {
-            try
+            //カスタムコントロールのLeave処理を先に走らせるため
+          //  IMT_DMY_0.Focus();
+
+            if (Kbn == 0)
             {
-                InProgramID = ProID;
-                InProgramNM = ProNm;
+                foreach (Control ctl in detailControls)
+                {
+                   
+                    if (ctl.GetType().Equals(typeof(CKM_Controls.CKM_CheckBox)))
+                    {
+                        ((CheckBox)ctl).Checked = false;
+                    }
+                    else
+                    {
+                            ctl.Text = "";
 
-                this.SetFunctionLabel(EProMode.INPUT);
-                this.InitialControlArray();
-                addInfo = new FrmAddress();
-                // 明細部初期化
-                //this.S_SetInit_Grid();
+                    }
+                }
 
-                //Scr_Clr(0);
+                //foreach (Control ctl in keyLabels)
+                //{
+                //    ((CKM_SearchControl)ctl).LabelText = "";
+                //}
 
-                //起動時共通処理
-                base.StartProgram();
-                BindCombo();
-                //コンボボックス初期化
-                //  string ymd = bbl.GetDate();
-                // tubl = new TempoUriageNyuuryoku_BL();
-                //  CboStoreCD.Bind(ymd);
-
-                //検索用のパラメータ設定
-                //    ScCustomerCD.Value1 = "1";
-                //   ScCustomerCD.Value2 = "";
-
-                Btn_F11.Text="";
-
-
-               // ChangeOperationMode(EOperationMode.INSERT);
+                lblDisp.Text = "未売上";
+              
+                
+              //  mTemporaryReserveNO = "";
             }
-            catch (Exception ex)
+
+            foreach (Control ctl in detailControls)
             {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-                EndSec();
+                if (ctl.GetType().Equals(typeof(CKM_Controls.CKM_CheckBox))) // Check all > Uncheck
+                {
+                    ((CheckBox)ctl).Checked = false;
+                }
+                else if (ctl.GetType().Equals(typeof(Panel)))   // Check only First
+                {
+                    kr_1.Checked = true;
+                  //  kr_2.Checked = false;
+                    hr_3.Checked = true;
+                   // hr_4.Checked = false;
+                }
+                else if (ctl.GetType().Equals(typeof(CKM_Controls.CKM_ComboBox)))
+                {
+                    ((CKM_Controls.CKM_ComboBox)ctl).SelectedIndex = -1;
+                }
+                else if (ctl.GetType().Equals(typeof(CKM_Controls.CKM_Button)))
+                {
+                    //顧客情報ALLクリア
+                    ClearCustomerInfo(0);
+                    ClearCustomerInfo(1);
+                }
+                else
+                {
+                    ctl.Text = "";
+                }
             }
+
+            foreach (Control ctl in detailLabels)
+            {
+                ((CKM_SearchControl)ctl).LabelText = "";
+            }
+            btn_Customer.Text = btn_Shipping.Text = "住所";
+            // mOldJyuchuDate = "";
+            //  S_Clear_Grid();   //画面クリア（明細部）
+
+
+            //   mOrderTaxTiming = 0;
         }
+        
         protected void BindCombo()
         {
             cbo_nendo.Bind(C_dt);
@@ -921,10 +1060,10 @@ namespace TenzikaiJuchuuTourou
             cbo_season.Bind(C_dt);
             cbo_yotei.Bind(C_dt);
         }
-        protected void EndSec()
-        {
-            this.Close();
-        }
+        //protected void EndSec()
+        //{
+        //    this.Close();
+        //}
 
         private void btn_Customer_Click(object sender, EventArgs e)
         {
@@ -970,6 +1109,23 @@ namespace TenzikaiJuchuuTourou
                 MessageBox.Show(ex.Message);
             }
             
+        }
+        protected override void EndSec()
+        {
+            try
+            {
+                //DeleteExclusive();
+            }
+            catch (Exception ex)
+            {
+                //例外は無視する
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
+
+            this.Close();
+            //アプリケーションを終了する
+            //Application.Exit();
+            //System.Environment.Exit(0);
         }
     }
 }

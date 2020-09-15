@@ -29,6 +29,19 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
+        public DataTable CheckTenzikaiJuchuu(M_TenzikaiShouhin_Entity me)
+        {
+            string sp = "CheckTenzikaiJuchuu";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@TorokuDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.ChangeDate } },
+                { "@VendorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.VendorCD } },
+                { "@LastYearTerm", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.LastYearTerm } },
+                { "@LastSeason", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.LastSeason } },
+            };
+            return SelectData(dic, sp);
+        }
 
         /// <summary>
         /// 展示会受注情報振替処理

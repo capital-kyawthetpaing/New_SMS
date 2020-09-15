@@ -47,12 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="A_A.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="A_A.Designer.cs">
-      <DependentUpon>A_A.cs</DependentUpon>
-    </Compile>
     <Compile Include="ClsGridHanbaiTankaTennic.cs" />
     <Compile Include="MasterTouroku_HanbaiTankaTennic.cs">
       <SubType>Form</SubType>
@@ -62,9 +56,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="A_A.resx">
-      <DependentUpon>A_A.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MasterTouroku_HanbaiTankaTennic.resx">
       <DependentUpon>MasterTouroku_HanbaiTankaTennic.cs</DependentUpon>
     </EmbeddedResource>
