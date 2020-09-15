@@ -278,7 +278,7 @@ namespace Base.Client
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void SubForm_KeyDown(object sender, KeyEventArgs e)
-        {
+    {
             try
             {
                 short KeyCode = System.Convert.ToInt16(e.KeyCode);
@@ -312,6 +312,7 @@ namespace Base.Client
                                 ButtonFunction(btn.Tag.ToString());
                             break;
                         case Keys.Enter:
+                            if (this.Name != "Search_TenzikaiShouhin")
                             MoveNextControl(e);
                             break;
                     }
@@ -451,6 +452,11 @@ namespace Base.Client
                 }
                 else if (ActiveControl is CKM_GridView)
                 { }
+
+                else if (ActiveControl is Panel)
+                {
+
+                }
                 else
                 {
                     if (this.Parent != null)

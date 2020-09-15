@@ -12,6 +12,7 @@ using CKM_Controls;
 using Entity;
 using BL;
 using Search;
+using System.Data.OleDb;
 //using TempoJuchuuNyuuryoku;
 
 namespace TenzikaiJuchuuTourou
@@ -30,6 +31,7 @@ namespace TenzikaiJuchuuTourou
         private Control[] detailLabels;
         private Control[] searchButtons;
         CKM_SearchControl mOldCustomerCD;
+        TenjikaiJuuChuu_BL tkb;
         private enum Eindex : int
         {
            SCTenjiKai,
@@ -90,7 +92,7 @@ namespace TenzikaiJuchuuTourou
                 //  CboStoreCD.Bind(ymd);
                 base.StartProgram();
 
-                mTennic = bbl.GetTennic();
+               // mTennic = bbl.GetTennic();
                 //検索用のパラメータ設定
                 //    ScCustomerCD.Value1 = "1";
                 //   ScCustomerCD.Value2 = "";
@@ -1126,6 +1128,97 @@ namespace TenzikaiJuchuuTourou
             //アプリケーションを終了する
             //Application.Exit();
             //System.Environment.Exit(0);
+        }
+
+        private void btn_Meisai_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.InitialDirectory = "C:\\ses\\";
+            openFileDialog1.FilterIndex = 2;
+            openFileDialog1.RestoreDirectory = true;
+            openFileDialog1.Filter = "Excel Worksheets|*.xlsx";
+            openFileDialog1.FileName = "";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                tkb = new TenjikaiJuuChuu_BL();
+                var dt = ConvertToDataTable(openFileDialog1.FileName);
+                var xml= bbl.DataTableToXml(dt);
+                var res = tkb.M_TenjiKaiJuuChuu_Select(xml);
+            }
+        }
+        private DataTable ConvertToDataTable(string FileName)
+
+        {
+            OleDbConnection oledbConn=null;
+            DataTable res = null;
+
+            try
+
+            {
+
+                string path = System.IO.Path.GetFullPath(FileName);
+
+                oledbConn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + path + ";Extended Properties='Excel 12.0;HDR=YES;IMEX=1;';");
+
+                oledbConn.Open();
+
+                OleDbCommand cmd = new OleDbCommand(); ;
+
+                OleDbDataAdapter oleda = new OleDbDataAdapter();
+
+                DataSet ds = new DataSet();
+
+                DataTable dt = oledbConn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+
+                string sheetName = string.Empty;
+
+                if (dt != null)
+
+                {
+
+                    sheetName = dt.Rows[0]["TABLE_NAME"].ToString();
+
+                }
+
+                cmd.Connection = oledbConn;
+
+                cmd.CommandType = CommandType.Text;
+
+                cmd.CommandText = "SELECT * FROM [" + sheetName + "]";
+
+                oleda = new OleDbDataAdapter(cmd);
+
+                oleda.Fill(ds, "excelData");
+
+                res = ds.Tables["excelData"];
+
+            }
+
+            catch (Exception ex)
+
+            {
+               // oledbConn.Close();
+            }
+
+            //finally
+
+            //{
+
+                oledbConn.Close();
+
+
+
+            res.Columns[res.Columns.Count-2].ColumnName = "希望日1";
+            res.Columns[res.Columns.Count-1].ColumnName = "希望日2";
+            foreach (DataColumn c in res.Columns)
+            {
+                c.ColumnName = c.ColumnName.Trim();
+            }
+            return res;
+
+        }
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }
