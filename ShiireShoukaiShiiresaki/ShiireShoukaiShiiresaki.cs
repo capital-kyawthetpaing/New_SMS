@@ -318,9 +318,6 @@ namespace ShiireShoukaiShiiresaki
 
         private bool ErrorCheck()
         {
-
-
-
             /// <remarks>仕入日(from)は仕入日(To)より大きいの場合エラーになる</remarks>
             //if (!string.IsNullOrWhiteSpace(txtPurchaseDateFrom.Text) && !string.IsNullOrWhiteSpace(txtPurchaseDateTo.Text))
             //{

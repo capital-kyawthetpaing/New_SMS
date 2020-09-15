@@ -37,7 +37,19 @@ namespace DL
             UseTransaction = true;
             return SelectData(dic, sp);
         }
+        public DataTable M_TenjiKaiJuuChuu_Select(string xml)
+        {
+            string sp = "M_TenjiKaiJuuChuu_Select";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@xml", new ValuePair { value1 = SqlDbType.Date, value2 = xml } }
+            };
 
-        
+            UseTransaction = true;
+            return SelectData(dic, sp);
+        }
+
+
+
     }
 }

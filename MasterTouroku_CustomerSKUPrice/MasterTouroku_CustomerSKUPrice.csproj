@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E47E175F-EE47-4FE8-9BB2-E4FCA9404374}</ProjectGuid>
+    <ProjectGuid>{77C90897-1D97-404C-8C3A-2EB5B262830F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>TenzikaiJuchuuTourou</RootNamespace>
-    <AssemblyName>TenzikaiJuchuuTourou</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <RootNamespace>MasterTouroku_CustomerSKUPrice</RootNamespace>
+    <AssemblyName>MasterTouroku_CustomerSKUPrice</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -32,12 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>TenzikaiJuchuuTourou.Program</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GridBase">
-      <HintPath>..\..\..\Projects\PP_Test\GBase\RDLL\GridBase.dll</HintPath>
+    <Reference Include="CSControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Base.Client\RequiredSource\CSControl.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,38 +50,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClsGridTenjikai.cs" />
-    <Compile Include="FrmAddress.cs">
+    <Compile Include="ClsGridCustomerSKUPric.cs" />
+    <Compile Include="MasterTouroku_CustomerSKUPrice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddress.Designer.cs">
-      <DependentUpon>FrmAddress.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Select_SKUForShukka.cs">
-      <SubType>Form</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Select_SKUForShukka.Designer.cs">
-      <DependentUpon>Select_SKUForShukka.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="TenzikaiJuchuuTourou.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TenzikaiJuchuuTourou.Designer.cs">
-      <DependentUpon>TenzikaiJuchuuTourou.cs</DependentUpon>
+    <Compile Include="MasterTouroku_CustomerSKUPrice.Designer.cs">
+      <DependentUpon>MasterTouroku_CustomerSKUPrice.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmAddress.resx">
-      <DependentUpon>FrmAddress.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Select_SKUForShukka.resx">
-      <DependentUpon>Select_SKUForShukka.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TenzikaiJuchuuTourou.resx">
-      <DependentUpon>TenzikaiJuchuuTourou.cs</DependentUpon>
+    <EmbeddedResource Include="MasterTouroku_CustomerSKUPrice.resx">
+      <DependentUpon>MasterTouroku_CustomerSKUPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -120,13 +97,13 @@
       <Project>{472a8d76-1ce3-430e-89fe-373d2f6b1031}</Project>
       <Name>CKM_Controls</Name>
     </ProjectReference>
+    <ProjectReference Include="..\clsGridBase\GridBase.csproj">
+      <Project>{86979b8d-b1ed-4342-a1d3-986c244e796a}</Project>
+      <Name>GridBase</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{9dd6c82a-1899-478f-bc18-524ad0b0dcc8}</Project>
       <Name>Entity</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Search\Search.csproj">
-      <Project>{83d6364b-73ea-4288-bce7-55a1119ee5a2}</Project>
-      <Name>Search</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

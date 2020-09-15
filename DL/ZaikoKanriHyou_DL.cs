@@ -22,6 +22,8 @@ namespace DL
                 { "@jan", new ValuePair { value1 = SqlDbType.VarChar, value2 =dpde.JanCD } },
                 { "@makeritem",new ValuePair{value1=SqlDbType.VarChar,value2=dpde.MakerItemCD} },
                 { "@itemName",new ValuePair{value1=SqlDbType.VarChar,value2=dpde.ITemName} },
+                { "@purchaseStartDate",new ValuePair{value1=SqlDbType.VarChar,value2=dpde.PurchaseStartDate} },
+                { "@purchaseEndDate",new ValuePair{value1=SqlDbType.VarChar,value2=dpde.PurchaseEndDate} },
                 { "@related",new ValuePair{value1=SqlDbType.VarChar,value2=chk.ToString()} }
             };
             UseTransaction = true;
