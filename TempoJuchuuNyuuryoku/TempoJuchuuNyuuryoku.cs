@@ -3256,7 +3256,7 @@ namespace TempoJuchuuNyuuryoku
                     //０の場合				メッセージ表示
                     if (orderUnitPrice.Equals(0))
                     {
-                        if (bbl.ShowMessage("Q306") != DialogResult.OK)
+                        if (bbl.ShowMessage("Q306") != DialogResult.Yes)
                             return false;
                     }
                     //０で無いかつ原価単価＝０の場合場合、入力された発注単価を原価単価にセットし、原価金額、粗利金額を再計算。
@@ -5053,6 +5053,7 @@ namespace TempoJuchuuNyuuryoku
                         //配列の内容を画面へセット
                         mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
+                        IMT_DMY_0.Focus();
                         //Focusセット処理
                         w_ActCtl.Focus();
                         return;
