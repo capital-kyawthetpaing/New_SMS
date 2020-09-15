@@ -256,7 +256,7 @@ namespace Search
 
         private void dgvTenzikai_KeyUp(object sender, KeyEventArgs e)
         {
-            //  MoveNextControl(e);
+              MoveNextControl(e);
         }
 
         private void panel1_Enter(object sender, EventArgs e)
