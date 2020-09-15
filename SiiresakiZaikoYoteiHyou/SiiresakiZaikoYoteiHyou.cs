@@ -50,7 +50,7 @@ namespace SiiresakiZaikoYoteiHyou
             txtTargetDateTo.Focus();
         }
         
-            private void SetRequiredField()
+        private void SetRequiredField()
         {
             txtTargetDateTo.Require(true);
             cboStore.Require(true);
@@ -178,13 +178,14 @@ namespace SiiresakiZaikoYoteiHyou
                             Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
                             Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
                             Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-                           
+
                             worksheet = workbook.ActiveSheet;
                             worksheet.Name = "worksheet";
-                            //Microsoft.Office.Interop.Excel.Range excelRange = worksheet.UsedRange;
-                            //excelRange.Cells[6, 13].NumberFormat = "\"$\" #,##0.00";//
+                            Microsoft.Office.Interop.Excel.Range excelRange = worksheet.UsedRange;
+                            excelRange.NumberFormat = "#,###,###";//
                             using (XLWorkbook wb = new XLWorkbook())
                             {
+                                
                                 wb.Worksheets.Add(dtExport,"worksheet");
                                 wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
                                 wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
@@ -196,8 +197,10 @@ namespace SiiresakiZaikoYoteiHyou
                                 wb.Worksheet("worksheet").Cell(1, 4).Value = "'" + txtTargetDateTo.Text;
                                 wb.Worksheet("worksheet").Cell(2, 2).Value = cboStore.SelectedValue.ToString();
                                 wb.Worksheet("worksheet").Cell(2, 3).Value = cboStore.Text.ToString();
-                                wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;//
-                                wb.Worksheet("worksheet").Hide();
+                                wb.Worksheet("worksheet").Row(3).InsertRowsAbove(1);
+                                wb.Worksheet("worksheet").Row(4).CopyTo(wb.Worksheet("worksheet").Row(3));
+                                wb.Worksheet("worksheet").Row(4).Delete();
+                                 wb.Worksheet("worksheet").ShowGridLines = false;
                                 wb.SaveAs(savedialog.FileName);
                                 szybl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
                             }
