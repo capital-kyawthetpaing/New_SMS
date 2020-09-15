@@ -197,10 +197,14 @@ namespace SiiresakiZaikoYoteiHyou
                                 wb.Worksheet("worksheet").Cell(1, 4).Value = "'" + txtTargetDateTo.Text;
                                 wb.Worksheet("worksheet").Cell(2, 2).Value = cboStore.SelectedValue.ToString();
                                 wb.Worksheet("worksheet").Cell(2, 3).Value = cboStore.Text.ToString();
+                                wb.Worksheet("worksheet").Row(3).InsertRowsAbove(1);
+                                wb.Worksheet("worksheet").Row(4).CopyTo(wb.Worksheet("worksheet").Row(3));
+                                wb.Worksheet("worksheet").Row(4).Delete();
+
                                 //wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;//
                                 //wb.Worksheet("worksheet").Hide();
                                 //worksheet.Range["A3:D3"].Style.Color = Color.White;
-                                wb.Worksheet("worksheet").ShowGridLines = false;
+                                 wb.Worksheet("worksheet").ShowGridLines = false;
                                 wb.SaveAs(savedialog.FileName);
                                 szybl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
                             }
