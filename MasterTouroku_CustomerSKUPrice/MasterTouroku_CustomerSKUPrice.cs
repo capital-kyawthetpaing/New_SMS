@@ -13,6 +13,10 @@ namespace MasterTouroku_CustomerSKUPrice
 {
     public partial class FrmMasterTouroku_CustomerSKUPrice : FrmMainForm
     {
+
+        private const string ProID = "MasterTouroku_CustomerSKUPrice";
+        private const string ProNm = "顧客別SKU販売単価マスタ";
+
         public FrmMasterTouroku_CustomerSKUPrice()
         {
             InitializeComponent();
