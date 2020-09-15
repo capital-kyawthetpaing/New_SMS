@@ -774,13 +774,14 @@
             this.color.DataPropertyName = "ColorName";
             this.color.HeaderText = "カラー";
             this.color.Name = "color";
+            this.color.Width = 135;
             // 
             // size
             // 
             this.size.DataPropertyName = "SizeName";
             this.size.HeaderText = "セイズ";
             this.size.Name = "size";
-            this.size.Width = 90;
+            this.size.Width = 140;
             // 
             // biko
             // 
@@ -817,6 +818,7 @@
             this.Controls.Add(this.panel1);
             this.F11Visible = true;
             this.F12Visible = true;
+            this.F9Visible = true;
             this.Name = "Search_TenzikaiShouhin";
             this.PanelHeaderHeight = 220;
             this.Text = "展示会商品検索";
