@@ -33,8 +33,7 @@
             // 
             // PanelHeader
             // 
-            this.PanelHeader.Location = new System.Drawing.Point(0, 0);
-            this.PanelHeader.Size = new System.Drawing.Size(1420, 48);
+            this.PanelHeader.Size = new System.Drawing.Size(1420, 0);
             // 
             // PanelSearch
             // 
