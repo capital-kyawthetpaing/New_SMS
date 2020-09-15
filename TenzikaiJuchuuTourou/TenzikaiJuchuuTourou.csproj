@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>TenzikaiJuchuuTourou.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="GridBase">
       <HintPath>..\..\..\Projects\PP_Test\GBase\RDLL\GridBase.dll</HintPath>
@@ -56,6 +59,14 @@
     <Compile Include="FrmAddress.Designer.cs">
       <DependentUpon>FrmAddress.cs</DependentUpon>
     </Compile>
+    <Compile Include="Select_SKUForShukka.cs">
+      <SubType>Form</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Select_SKUForShukka.Designer.cs">
+      <DependentUpon>Select_SKUForShukka.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="TenzikaiJuchuuTourou.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +77,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAddress.resx">
       <DependentUpon>FrmAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Select_SKUForShukka.resx">
+      <DependentUpon>Select_SKUForShukka.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="TenzikaiJuchuuTourou.resx">
       <DependentUpon>TenzikaiJuchuuTourou.cs</DependentUpon>
