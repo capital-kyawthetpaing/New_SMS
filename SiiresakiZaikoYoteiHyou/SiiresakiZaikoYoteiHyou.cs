@@ -200,7 +200,6 @@ namespace SiiresakiZaikoYoteiHyou
                                 wb.Worksheet("worksheet").Row(3).InsertRowsAbove(1);
                                 wb.Worksheet("worksheet").Row(4).CopyTo(wb.Worksheet("worksheet").Row(3));
                                 wb.Worksheet("worksheet").Row(4).Delete();
-
                                 //wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;//
                                 //wb.Worksheet("worksheet").Hide();
                                 //worksheet.Range["A3:D3"].Style.Color = Color.White;
