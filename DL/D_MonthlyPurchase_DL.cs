@@ -39,8 +39,8 @@ namespace DL
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 {"@StoreCD",new ValuePair{value1=SqlDbType.VarChar,value2=dmpe.StoreCD} },
-                {"@TargetSDate",new ValuePair{value1=SqlDbType.Int,value2=dmpe.YYYYMMS} },
-                {"@TargetEDate",new ValuePair{value1=SqlDbType.Int,value2=dmpe.YYYYMME} }
+                {"@TargetSDate",new ValuePair{value1=SqlDbType.Int,value2=dmpe.YYYYMMS.Replace("-","")} },
+                {"@TargetEDate",new ValuePair{value1=SqlDbType.Int,value2=dmpe.YYYYMME.Replace("-","")} }
             };
             return SelectData(dic, sp);
         }
