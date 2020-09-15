@@ -1255,7 +1255,7 @@
             this.SKUCDTo.Location = new System.Drawing.Point(847, 32);
             this.SKUCDTo.Margin = new System.Windows.Forms.Padding(0);
             this.SKUCDTo.Name = "SKUCDTo";
-            this.SKUCDTo.NameWidth = 350;
+            this.SKUCDTo.NameWidth = 0;
             this.SKUCDTo.SearchEnable = true;
             this.SKUCDTo.Size = new System.Drawing.Size(574, 27);
             this.SKUCDTo.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
@@ -1366,7 +1366,7 @@
             this.SKUCDFrom.Location = new System.Drawing.Point(564, 32);
             this.SKUCDFrom.Margin = new System.Windows.Forms.Padding(0);
             this.SKUCDFrom.Name = "SKUCDFrom";
-            this.SKUCDFrom.NameWidth = 350;
+            this.SKUCDFrom.NameWidth = 0;
             this.SKUCDFrom.SearchEnable = true;
             this.SKUCDFrom.Size = new System.Drawing.Size(574, 27);
             this.SKUCDFrom.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
