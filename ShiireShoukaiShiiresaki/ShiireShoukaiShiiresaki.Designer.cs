@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShiireShoukaiShiiresaki));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -43,7 +42,6 @@
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtPurchaseDateTo = new CKM_Controls.CKM_TextBox();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
-            this.scSupplier = new Search.CKM_SearchControl();
             this.ckM_Label4 = new CKM_Controls.CKM_Label();
             this.ComboStore = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
@@ -54,7 +52,6 @@
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
             this.txtPaymentDueDateFrom = new CKM_Controls.CKM_TextBox();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
-            this.scStaff = new Search.CKM_SearchControl();
             this.ckM_Label9 = new CKM_Controls.CKM_Label();
             this.txtDeliveryNoteNo = new CKM_Controls.CKM_TextBox();
             this.ckM_Label10 = new CKM_Controls.CKM_Label();
@@ -64,8 +61,6 @@
             this.chkUnpaid = new CKM_Controls.CKM_CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvPurchaseSearch = new CKM_Controls.CKM_GridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.PurchaseNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +74,10 @@
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.scStaff = new Search.CKM_SearchControl();
+            this.scSupplier = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -214,37 +213,6 @@
             this.ckM_Label3.Text = "仕入先";
             this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // scSupplier
-            // 
-            this.scSupplier.AutoSize = true;
-            this.scSupplier.ChangeDate = "";
-            this.scSupplier.ChangeDateWidth = 100;
-            this.scSupplier.Code = "";
-            this.scSupplier.CodeWidth = 100;
-            this.scSupplier.CodeWidth1 = 100;
-            this.scSupplier.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.scSupplier.DataCheck = false;
-            this.scSupplier.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.scSupplier.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.scSupplier.IsCopy = false;
-            this.scSupplier.LabelText = "";
-            this.scSupplier.LabelVisible = true;
-            this.scSupplier.Location = new System.Drawing.Point(479, 12);
-            this.scSupplier.Margin = new System.Windows.Forms.Padding(0);
-            this.scSupplier.Name = "scSupplier";
-            this.scSupplier.NameWidth = 310;
-            this.scSupplier.SearchEnable = true;
-            this.scSupplier.Size = new System.Drawing.Size(444, 27);
-            this.scSupplier.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.scSupplier.TabIndex = 13;
-            this.scSupplier.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.scSupplier.UseChangeDate = false;
-            this.scSupplier.Value1 = null;
-            this.scSupplier.Value2 = null;
-            this.scSupplier.Value3 = null;
-            this.scSupplier.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scSupplier_CodeKeyDownEvent);
-            this.scSupplier.Enter += new System.EventHandler(this.scSupplier_Enter);
             // 
             // ckM_Label4
             // 
@@ -470,36 +438,6 @@
             this.ckM_Label8.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // scStaff
-            // 
-            this.scStaff.AutoSize = true;
-            this.scStaff.ChangeDate = "";
-            this.scStaff.ChangeDateWidth = 100;
-            this.scStaff.Code = "";
-            this.scStaff.CodeWidth = 70;
-            this.scStaff.CodeWidth1 = 70;
-            this.scStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.scStaff.DataCheck = false;
-            this.scStaff.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.scStaff.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.scStaff.IsCopy = false;
-            this.scStaff.LabelText = "";
-            this.scStaff.LabelVisible = true;
-            this.scStaff.Location = new System.Drawing.Point(480, 37);
-            this.scStaff.Margin = new System.Windows.Forms.Padding(0);
-            this.scStaff.Name = "scStaff";
-            this.scStaff.NameWidth = 250;
-            this.scStaff.SearchEnable = true;
-            this.scStaff.Size = new System.Drawing.Size(354, 27);
-            this.scStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
-            this.scStaff.TabIndex = 15;
-            this.scStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.scStaff.UseChangeDate = false;
-            this.scStaff.Value1 = null;
-            this.scStaff.Value2 = null;
-            this.scStaff.Value3 = null;
-            this.scStaff.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scStaff_CodeKeyDownEvent);
-            // 
             // ckM_Label9
             // 
             this.ckM_Label9.AutoSize = true;
@@ -664,7 +602,7 @@
             this.dgvPurchaseSearch.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvPurchaseSearch.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -685,14 +623,6 @@
             this.Column11,
             this.Column12,
             this.Column13});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPurchaseSearch.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvPurchaseSearch.EnableHeadersVisualStyles = false;
             this.dgvPurchaseSearch.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvPurchaseSearch.Location = new System.Drawing.Point(32, 275);
@@ -705,23 +635,6 @@
             this.dgvPurchaseSearch.UseRowNo = false;
             this.dgvPurchaseSearch.UseSetting = true;
             this.dgvPurchaseSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPurchaseSearch_CellContentClick);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 220);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1713, 38);
-            this.panel2.TabIndex = 101;
-            // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1179, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(534, 38);
-            this.panel3.TabIndex = 0;
             // 
             // Column1
             // 
@@ -755,7 +668,7 @@
             this.Column4.Frozen = true;
             this.Column4.HeaderText = "仕入先";
             this.Column4.Name = "Column4";
-            this.Column4.Width = 420;
+            this.Column4.Width = 400;
             // 
             // Column5
             // 
@@ -787,7 +700,7 @@
             this.Column8.DataPropertyName = "CommentInStore";
             this.Column8.HeaderText = "備考";
             this.Column8.Name = "Column8";
-            this.Column8.Width = 1100;
+            this.Column8.Width = 1090;
             // 
             // Column9
             // 
@@ -812,7 +725,7 @@
             this.Column11.DataPropertyName = "DeliveryNo";
             this.Column11.HeaderText = "納品書番号";
             this.Column11.Name = "Column11";
-            this.Column11.Width = 130;
+            this.Column11.Width = 85;
             // 
             // Column12
             // 
@@ -826,7 +739,85 @@
             this.Column13.DataPropertyName = "StaffName";
             this.Column13.HeaderText = "担当スタッフ";
             this.Column13.Name = "Column13";
-            this.Column13.Width = 150;
+            this.Column13.Width = 250;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 220);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1713, 38);
+            this.panel2.TabIndex = 101;
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(1179, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(534, 38);
+            this.panel3.TabIndex = 0;
+            // 
+            // scStaff
+            // 
+            this.scStaff.AutoSize = true;
+            this.scStaff.ChangeDate = "";
+            this.scStaff.ChangeDateWidth = 100;
+            this.scStaff.Code = "";
+            this.scStaff.CodeWidth = 70;
+            this.scStaff.CodeWidth1 = 70;
+            this.scStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.scStaff.DataCheck = false;
+            this.scStaff.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scStaff.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.scStaff.IsCopy = false;
+            this.scStaff.LabelText = "";
+            this.scStaff.LabelVisible = true;
+            this.scStaff.Location = new System.Drawing.Point(480, 37);
+            this.scStaff.Margin = new System.Windows.Forms.Padding(0);
+            this.scStaff.Name = "scStaff";
+            this.scStaff.NameWidth = 250;
+            this.scStaff.SearchEnable = true;
+            this.scStaff.Size = new System.Drawing.Size(354, 27);
+            this.scStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
+            this.scStaff.TabIndex = 15;
+            this.scStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.scStaff.UseChangeDate = false;
+            this.scStaff.Value1 = null;
+            this.scStaff.Value2 = null;
+            this.scStaff.Value3 = null;
+            this.scStaff.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scStaff_CodeKeyDownEvent);
+            // 
+            // scSupplier
+            // 
+            this.scSupplier.AutoSize = true;
+            this.scSupplier.ChangeDate = "";
+            this.scSupplier.ChangeDateWidth = 100;
+            this.scSupplier.Code = "";
+            this.scSupplier.CodeWidth = 100;
+            this.scSupplier.CodeWidth1 = 100;
+            this.scSupplier.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.scSupplier.DataCheck = false;
+            this.scSupplier.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scSupplier.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.scSupplier.IsCopy = false;
+            this.scSupplier.LabelText = "";
+            this.scSupplier.LabelVisible = true;
+            this.scSupplier.Location = new System.Drawing.Point(479, 12);
+            this.scSupplier.Margin = new System.Windows.Forms.Padding(0);
+            this.scSupplier.Name = "scSupplier";
+            this.scSupplier.NameWidth = 310;
+            this.scSupplier.SearchEnable = true;
+            this.scSupplier.Size = new System.Drawing.Size(444, 27);
+            this.scSupplier.Stype = Search.CKM_SearchControl.SearchType.仕入先;
+            this.scSupplier.TabIndex = 13;
+            this.scSupplier.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.scSupplier.UseChangeDate = false;
+            this.scSupplier.Value1 = null;
+            this.scSupplier.Value2 = null;
+            this.scSupplier.Value3 = null;
+            this.scSupplier.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scSupplier_CodeKeyDownEvent);
+            this.scSupplier.Enter += new System.EventHandler(this.scSupplier_Enter);
             // 
             // ShiireShoukaiShiiresaki
             // 

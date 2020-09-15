@@ -19,6 +19,10 @@ namespace Search
         M_Vendor_Entity mve;
         M_Customer_Entity mce;
         D_TenzikaiJuchuu_Entity dtje;
+
+
+        public string OrderNum = string.Empty;
+
         public Search_TenzikaiJuchuuNO()
         {
             InitializeComponent();
@@ -38,6 +42,14 @@ namespace Search
             string ymd = bbl.GetDate();
             cboYear.Bind(ymd);
             cboSeason.Bind(ymd);
+        }
+
+        public override void FunctionProcess(int index)
+        {
+            if (index + 1 == 12)
+            {
+                GetData();
+            }
         }
 
         private void F11()
@@ -262,6 +274,25 @@ namespace Search
         private void panel1_Enter(object sender, EventArgs e)
         {
             cboSeason.Focus();
+        }
+
+        private void GetData()
+        {
+            if (dgvTenzikai.CurrentRow != null && dgvTenzikai.CurrentRow.Index >= 0)
+            {
+                OrderNum = dgvTenzikai.CurrentRow.Cells["colOrderNum"].Value.ToString();              
+                this.Close();
+            }
+        }
+
+        private void dgvTenzikai_DoubleClick(object sender, EventArgs e)
+        {
+            GetData();
+        }
+
+        private void Search_TenzikaiJuchuuNO_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
         }
     }
 }

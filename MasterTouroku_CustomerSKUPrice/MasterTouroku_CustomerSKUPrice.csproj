@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DA7C11D0-F345-4102-841C-5BB6CAD4BA68}</ProjectGuid>
+    <ProjectGuid>{77C90897-1D97-404C-8C3A-2EB5B262830F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WMasterTouroku_HanbaiTankaTennic</RootNamespace>
-    <AssemblyName>WMasterTouroku_HanbaiTankaTennic</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <RootNamespace>MasterTouroku_CustomerSKUPrice</RootNamespace>
+    <AssemblyName>MasterTouroku_CustomerSKUPrice</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CSControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Base.Client\RequiredSource\CSControl.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,17 +50,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClsGridHanbaiTankaTennic.cs" />
-    <Compile Include="MasterTouroku_HanbaiTankaTennic.cs">
+    <Compile Include="ClsGridCustomerSKUPric.cs" />
+    <Compile Include="MasterTouroku_CustomerSKUPrice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MasterTouroku_HanbaiTankaTennic.Designer.cs">
-      <DependentUpon>MasterTouroku_HanbaiTankaTennic.cs</DependentUpon>
+    <Compile Include="MasterTouroku_CustomerSKUPrice.Designer.cs">
+      <DependentUpon>MasterTouroku_CustomerSKUPrice.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MasterTouroku_HanbaiTankaTennic.resx">
-      <DependentUpon>MasterTouroku_HanbaiTankaTennic.cs</DependentUpon>
+    <EmbeddedResource Include="MasterTouroku_CustomerSKUPrice.resx">
+      <DependentUpon>MasterTouroku_CustomerSKUPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -67,7 +70,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -102,10 +104,6 @@
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{9dd6c82a-1899-478f-bc18-524ad0b0dcc8}</Project>
       <Name>Entity</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Search\Search.csproj">
-      <Project>{83d6364b-73ea-4288-bce7-55a1119ee5a2}</Project>
-      <Name>Search</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

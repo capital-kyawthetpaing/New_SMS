@@ -26,8 +26,9 @@ namespace Search
             bl = new Search_TenzikaiShouhin_BL();
         }
 
-        public string parTzikaishouhinCD= "";
-        public string parTzikaishouhindName = "";
+        public string parJanCD= "";
+        public string parSkuCD = "";
+        public string parSKUName = "";
         public string parChangeDate = "";
         private void Search_TenzikaiShouhin_Load(object sender, EventArgs e)
         {
@@ -164,8 +165,9 @@ namespace Search
             {
                 if (GV_TZshouhin.CurrentRow != null && GV_TZshouhin.CurrentRow.Index >= 0)
                 {
-                    parTzikaishouhinCD = GV_TZshouhin.CurrentRow.Cells["tankacd"].Value.ToString();
-                    parTzikaishouhindName = GV_TZshouhin.CurrentRow.Cells["TenzikaiName"].Value.ToString();
+                    parJanCD= GV_TZshouhin.CurrentRow.Cells["JANCD"].Value.ToString();
+                    parSkuCD = GV_TZshouhin.CurrentRow.Cells["SKUCD"].Value.ToString();
+                    parSKUName = GV_TZshouhin.CurrentRow.Cells["SKUName"].Value.ToString();
                     this.Close();
                 }
             }

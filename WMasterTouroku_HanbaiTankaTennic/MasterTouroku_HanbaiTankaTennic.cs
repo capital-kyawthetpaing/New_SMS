@@ -19,7 +19,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
     {
         private const string ProID = "MasterTouroku_HanbaiTankaTennic";
         private const string ProNm = "販売単価マスタ(テニック)";
-        private const short mc_L_END = 3;
+        //private const short mc_L_END = 3;
         SKUPrice_BL spb;
         DataTable dt;
         M_SKUPrice_Entity mse;
@@ -46,7 +46,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
         public MasterTouroku_HanbaiTankaTennic()
         {
             InitializeComponent();
-            // this.Vsb_Mei_0.MouseWheel+= new System.Windows.Forms.MouseEventHandler(this.Vsb_Mei_0_MouseWheel);
             spb = new SKUPrice_BL();
             dt = new DataTable();
             mse = new M_SKUPrice_Entity();
@@ -88,8 +87,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
         }
         private void Scr_Clr(short Kbn)  /// 0 is initial state
         {
-            //カスタムコントロールのLeave処理を先に走らせるため pnl_Header
-            //   IMT_DMY_0.Focus();
             var ctrl = GetAllControls(pnl_Header);
             if (Kbn == 0)
             {
@@ -111,39 +108,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     }
                 }
             }
-
-            //    foreach (Control ctl in keyLabels)
-            //    {
-            //        ((CKM_SearchControl)ctl).LabelText = "";
-            //    }
-
-            //}
-
-            //foreach (Control ctl in detailControls)
-            //{
-            //    if (ctl.GetType().Equals(typeof(CheckBox)))
-            //    {
-            //        ((CheckBox)ctl).Checked = false;
-            //    }
-            //    else if (ctl.GetType().Equals(typeof(RadioButton)))
-            //    {
-            //        ((RadioButton)ctl).Checked = true;
-            //    }
-            //    else
-            //    {
-            //        ctl.Text = "";
-            //    }
-            //}
-
-            //foreach (Control ctl in detailLabels)
-            //{
-            //    ((CKM_SearchControl)ctl).LabelText = "";
-            //}
-
             S_Clear_Grid();   //画面クリア（明細部）
-
-            //if (Kbn == 0)
-            //    SetEnabled();
         }
         private void InitialControlArray()
         {
@@ -358,10 +323,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 {
                     mGrid.g_DArray[w_Row].GYONO = (w_Row + 1).ToString();
                     //mGrid.g_DArray[w_Row].Rank1UnitPrice = "0";
-                    //mGrid.g_DArray[w_Row].Rank2UnitPrice = "0";
-                    //mGrid.g_DArray[w_Row].Rank3UnitPrice = "0";
-                    //mGrid.g_DArray[w_Row].Rank4UnitPrice = "0";
-                    //mGrid.g_DArray[w_Row].Rank5UnitPrice = "0";
                 }
             }
             else  // set Data from db
@@ -388,17 +349,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 }
             }
         }
-        //protected override void ExecDisp()
-        //{
-        //    for (int i = 0; i < keyControls.Length; i++)
-        //        if (CheckKey(i, false) == false)
-        //        {
-        //            keyControls[i].Focus();
-        //            return;
-        //        }
-        //    CheckData(true);
-        //}
-
         private bool CheckDetail(int index)
         {
             return CheckDetail(index, true);
@@ -661,9 +611,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 case 0:
                     {
                         txtStartDateFrom.Focus();
-                        //Scr_Lock(0, 0, 0);   // フレームのロック解除
-                        //Scr_Lock(1, mc_L_END, 1);  // フレームのロック
-                        //SetEnabled(); //radio button
                         this.Vsb_Mei_0.TabStop = false;
                         SetFuncKeyAll(this, "111111001010");
 
@@ -684,8 +631,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                                     for (int w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
                                     {
                                         switch (w_Col)
-                                        {
-                                            //case (int)ClsGridHanbaiTankaTennic.ColNO.SKUCD:  
+                                        { 
                                             case (int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate:
                                             case (int)ClsGridHanbaiTankaTennic.ColNO.EndChangeDate:
                                             case (int)ClsGridHanbaiTankaTennic.ColNO.UnitPrice:
@@ -708,19 +654,8 @@ namespace WMasterTouroku_HanbaiTankaTennic
                         else
                         {
                             txtStartDateFrom.Focus();
-
-                            //画面へデータセット後、明細部入力可、キー部入力不可
-                            //Scr_Lock(2, 3, 0);
-                            //Scr_Lock(0, 1, 1);
                             SetFuncKeyAll(this, "111111000001");
                             btnDisplay.Enabled = false;
-
-                            //if (radioButton2.Checked)
-                            //{
-                            //    //単価CD変更不可にする
-                            //    detailControls[(int)EIndex.TankaCD].Enabled = false;
-                            //    ScTanka.BtnSearch.Enabled = false;
-                            //}
                         }
                         break;
                     }
@@ -729,9 +664,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     {
                         if (pGrid == 1)
                         {
-                            // 使用可項目無  明細部スクロールのみ可
-                            // IMT_DMY_0.Focus()
-                            //SetFuncKeyAll(this, "000010000101", "11100000");
                             pnl_Body.Enabled = true;                  // ボディ部使用可
                             break;
                         }
@@ -1234,11 +1166,9 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     if (dt.Rows.Count > 0)
                     {
                         bbl.ShowMessage("E105");
-                       // IsEntered = true;
                          ct.Focus();
                         return;
                     }
-                    //IsEntered = false;
                 }
                 if (ct.Name.Contains("IMT_ENDDT_"))
                 {
