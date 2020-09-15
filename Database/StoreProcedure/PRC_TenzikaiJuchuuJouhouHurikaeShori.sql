@@ -63,6 +63,7 @@ BEGIN
     AND A.VendorCD = @VendorCD
     AND A.LastYearTerm = @LastYearTerm
     AND A.LastSeason = @LastSeason
+    GROUP BY A.TenzikaiJuchuuNO
     ORDER BY A.TenzikaiJuchuuNO
     ;
 
@@ -121,8 +122,8 @@ BEGIN
                     AND DT.VendorCD = (CASE WHEN @VendorCD <> '' THEN @VendorCD ELSE DT.VendorCD END)
                     AND DT.LastYearTerm = (CASE WHEN @LastYearTerm <> '' THEN @LastYearTerm ELSE DT.LastYearTerm END)
                     AND DT.LastSeason = (CASE WHEN @LastSeason <> '' THEN @LastSeason ELSE DT.LastSeason END)
-        			And DT.DeleteDateTime IS NULL
-        )	--Table_TenzikaiJuchuuNO 
+                    AND DT.DeleteDateTime IS NULL
+        )   --Table_TenzikaiJuchuuNO 
         AS B
         On A.TenzikaiJuchuuNO = B.TenzikaiJuchuuNO
         Where A.DeleteDateTime IS NULL
@@ -306,10 +307,10 @@ BEGIN
     
     --カーソル定義
     DECLARE CUR_Tenzi CURSOR FOR
-    	--一時ワークテーブル「D_TenzikaiJuchuu①」(テーブル転送仕様Ａで「D_TenzikaiJuchuu①」として使用)
+        --一時ワークテーブル「D_TenzikaiJuchuu①」(テーブル転送仕様Ａで「D_TenzikaiJuchuu①」として使用)
         SELECT
              DT.TenzikaiJuchuuNO    
-            ,MAX(DT.JuchuuDate) OVER(PARTITION BY DT.TenzikaiJuchuuNO)       AS JuchuuDate
+            ,DT.JuchuuDate
             ,DM.TenzikaiJuchuuRows
         FROM D_TenzikaiJuchuu AS DT
         LEFT OUTER JOIN D_TenzikaiJuchuuDetails AS DM
@@ -349,11 +350,11 @@ BEGIN
                                ON MT.ExhibitionCommonCD = F.ExhibitionCommonCD
                                WHERE F.DeleteFlg = 0
                                AND MT.JanCD = B.JanCD)
-        		AND A.JuchuuHurikaeZumiFLG = 0
+                AND A.JuchuuHurikaeZumiFLG = 0
                 AND A.VendorCD = @VendorCD
                 AND A.LastYearTerm = @LastYearTerm
                 AND A.LastSeason = @LastSeason
-        		AND A.TenzikaiJuchuuNO = DT.TenzikaiJuchuuNO
+                AND A.TenzikaiJuchuuNO = DT.TenzikaiJuchuuNO
         )
         ORDER BY DT.TenzikaiJuchuuNO, DM.TenzikaiJuchuuRows
         ;
@@ -605,7 +606,7 @@ BEGIN
                ,0   --GiftWrapCharge
                ,0   --InvoiceGaku
                ,DT.PaymentMethodCD
-               ,NULL    --PaymentPlanNO
+               ,0       --PaymentPlanNO
                ,0       --CardProgressKBN
                ,NULL    --CardCompany
                ,NULL    --CardNumber
@@ -903,7 +904,18 @@ BEGIN
               FROM D_JuchuuDetails AS DM
               WHERE DM.JuchuuNO = @JuchuuNO
               ;
-              
+            
+            --【D_TenzikaiJuchuu】 Table転送仕様Ｉ（更新（Update））
+            UPDATE D_TenzikaiJuchuu SET
+                [JuchuuHurikaeZumiFLG]  = 1
+               ,[JuchuuHurikaeDateTime] = @SYSDATETIME
+               ,[UpdateOperator]        = @Operator  
+               ,[UpdateDateTime]        = @SYSDATETIME
+            WHERE DeleteDateTime IS NULL
+            AND JuchuuHurikaeZumiFLG = 0
+            AND TenzikaiJuchuuNO = @TenzikaiJuchuuNO
+            ;
+
             -- ========= ループ内の実際の処理 ここまで===
             --次の行のデータを取得して変数へ値をセット
             FETCH NEXT FROM CUR_Tenzi
@@ -914,19 +926,6 @@ BEGIN
         --カーソルを閉じる
         CLOSE CUR_Tenzi;
         DEALLOCATE CUR_Tenzi;
-            
-        --【D_TenzikaiJuchuu】 Table転送仕様Ｉ（更新（Update））
-        UPDATE D_TenzikaiJuchuu SET
-            [JuchuuHurikaeZumiFLG]  = 1
-           ,[JuchuuHurikaeDateTime] = @SYSDATETIME
-           ,[UpdateOperator]        = @Operator  
-           ,[UpdateDateTime]        = @SYSDATETIME
-        WHERE DeleteDateTime IS NULL
-        AND VendorCD = (CASE WHEN @VendorCD <> '' THEN @VendorCD ELSE VendorCD END)
-        AND LastYearTerm = (CASE WHEN @LastYearTerm <> '' THEN @LastYearTerm ELSE LastYearTerm END)
-        AND LastSeason = (CASE WHEN @LastSeason <> '' THEN @LastSeason ELSE LastSeason END)
-        AND JuchuuHurikaeZumiFLG = 0
-        ;
 
     END
     

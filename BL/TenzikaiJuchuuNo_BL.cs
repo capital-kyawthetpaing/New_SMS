@@ -13,9 +13,15 @@ namespace BL
     {
         M_Customer_DL mcdl = new M_Customer_DL();
         M_Customer_Entity mce = new M_Customer_Entity();
+        D_TenzikaiJuchuu_DL dtjdl = new D_TenzikaiJuchuu_DL();
         public DataTable M_Customer_SelectForTenzikai(M_Customer_Entity mce)
         {
             return mcdl.M_Customer_SelectForTenzikai(mce);
+        }
+
+        public DataTable D_TenzikaiJuchuu_SearchData(D_TenzikaiJuchuu_Entity dtje)
+        {
+            return dtjdl.D_TenzikaiJuchuu_SearchData(dtje);
         }
     }
 }

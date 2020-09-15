@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtOrderDateTo = new CKM_Controls.CKM_TextBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtOrderDateFrom = new CKM_Controls.CKM_TextBox();
@@ -54,6 +55,7 @@
             this.ckM_Label11 = new CKM_Controls.CKM_Label();
             this.btnDisplay = new CKM_Controls.CKM_Button();
             this.dgvTenzikai = new CKM_Controls.CKM_GridView();
+            this.txtCustomerName = new CKM_Controls.CKM_TextBox();
             this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colOrderNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colOrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,7 +63,6 @@
             this.colYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSeason = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtCustomerName = new CKM_Controls.CKM_TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTenzikai)).BeginInit();
             this.SuspendLayout();
             // 
@@ -423,8 +424,8 @@
             this.ScItem.ChangeDate = "";
             this.ScItem.ChangeDateWidth = 100;
             this.ScItem.Code = "";
-            this.ScItem.CodeWidth = 600;
-            this.ScItem.CodeWidth1 = 600;
+            this.ScItem.CodeWidth = 100;
+            this.ScItem.CodeWidth1 = 100;
             this.ScItem.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScItem.DataCheck = false;
             this.ScItem.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -435,10 +436,10 @@
             this.ScItem.Location = new System.Drawing.Point(112, 279);
             this.ScItem.Margin = new System.Windows.Forms.Padding(0);
             this.ScItem.Name = "ScItem";
-            this.ScItem.NameWidth = 350;
+            this.ScItem.NameWidth = 140;
             this.ScItem.SearchEnable = true;
-            this.ScItem.Size = new System.Drawing.Size(633, 27);
-            this.ScItem.Stype = Search.CKM_SearchControl.SearchType.SKU_ITEM_CD;
+            this.ScItem.Size = new System.Drawing.Size(133, 27);
+            this.ScItem.Stype = Search.CKM_SearchControl.SearchType.Default;
             this.ScItem.TabIndex = 89;
             this.ScItem.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScItem.UseChangeDate = false;
@@ -469,8 +470,8 @@
             this.ScSKUCD.ChangeDate = "";
             this.ScSKUCD.ChangeDateWidth = 100;
             this.ScSKUCD.Code = "";
-            this.ScSKUCD.CodeWidth = 600;
-            this.ScSKUCD.CodeWidth1 = 600;
+            this.ScSKUCD.CodeWidth = 190;
+            this.ScSKUCD.CodeWidth1 = 190;
             this.ScSKUCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScSKUCD.DataCheck = false;
             this.ScSKUCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -483,8 +484,8 @@
             this.ScSKUCD.Name = "ScSKUCD";
             this.ScSKUCD.NameWidth = 350;
             this.ScSKUCD.SearchEnable = true;
-            this.ScSKUCD.Size = new System.Drawing.Size(633, 27);
-            this.ScSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
+            this.ScSKUCD.Size = new System.Drawing.Size(223, 27);
+            this.ScSKUCD.Stype = Search.CKM_SearchControl.SearchType.Default;
             this.ScSKUCD.TabIndex = 91;
             this.ScSKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScSKUCD.UseChangeDate = false;
@@ -583,7 +584,7 @@
             this.dgvTenzikai.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -598,6 +599,14 @@
             this.colYear,
             this.colSeason,
             this.colClient});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTenzikai.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTenzikai.EnableHeadersVisualStyles = false;
             this.dgvTenzikai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvTenzikai.Location = new System.Drawing.Point(12, 400);
@@ -609,47 +618,6 @@
             this.dgvTenzikai.UseRowNo = true;
             this.dgvTenzikai.UseSetting = true;
             this.dgvTenzikai.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvTenzikai_KeyUp);
-            // 
-            // colNo
-            // 
-            this.colNo.HeaderText = "No.";
-            this.colNo.Name = "colNo";
-            this.colNo.Width = 50;
-            // 
-            // colOrderNum
-            // 
-            this.colOrderNum.HeaderText = "展示会受注番号";
-            this.colOrderNum.Name = "colOrderNum";
-            this.colOrderNum.Width = 120;
-            // 
-            // colOrderDate
-            // 
-            this.colOrderDate.HeaderText = "受注日";
-            this.colOrderDate.Name = "colOrderDate";
-            // 
-            // colSupplier
-            // 
-            this.colSupplier.HeaderText = "仕入先";
-            this.colSupplier.Name = "colSupplier";
-            this.colSupplier.Width = 250;
-            // 
-            // colYear
-            // 
-            this.colYear.HeaderText = "年度";
-            this.colYear.Name = "colYear";
-            this.colYear.Width = 60;
-            // 
-            // colSeason
-            // 
-            this.colSeason.HeaderText = "シーズン";
-            this.colSeason.Name = "colSeason";
-            this.colSeason.Width = 60;
-            // 
-            // colClient
-            // 
-            this.colClient.HeaderText = "顧客";
-            this.colClient.Name = "colClient";
-            this.colClient.Width = 240;
             // 
             // txtCustomerName
             // 
@@ -681,6 +649,53 @@
             this.txtCustomerName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.txtCustomerName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtCustomerName.UseColorSizMode = false;
+            // 
+            // colNo
+            // 
+            this.colNo.HeaderText = "No.";
+            this.colNo.Name = "colNo";
+            this.colNo.Width = 50;
+            // 
+            // colOrderNum
+            // 
+            this.colOrderNum.DataPropertyName = "TenzikaiJuchuuNO";
+            this.colOrderNum.HeaderText = "展示会受注番号";
+            this.colOrderNum.Name = "colOrderNum";
+            this.colOrderNum.Width = 120;
+            // 
+            // colOrderDate
+            // 
+            this.colOrderDate.DataPropertyName = "JuchuuDate";
+            this.colOrderDate.HeaderText = "受注日";
+            this.colOrderDate.Name = "colOrderDate";
+            // 
+            // colSupplier
+            // 
+            this.colSupplier.DataPropertyName = "VendorName";
+            this.colSupplier.HeaderText = "仕入先";
+            this.colSupplier.Name = "colSupplier";
+            this.colSupplier.Width = 250;
+            // 
+            // colYear
+            // 
+            this.colYear.DataPropertyName = "LastYearTerm";
+            this.colYear.HeaderText = "年度";
+            this.colYear.Name = "colYear";
+            this.colYear.Width = 60;
+            // 
+            // colSeason
+            // 
+            this.colSeason.DataPropertyName = "LastSeason";
+            this.colSeason.HeaderText = "シーズン";
+            this.colSeason.Name = "colSeason";
+            this.colSeason.Width = 60;
+            // 
+            // colClient
+            // 
+            this.colClient.DataPropertyName = "CustomerName";
+            this.colClient.HeaderText = "顧客";
+            this.colClient.Name = "colClient";
+            this.colClient.Width = 240;
             // 
             // Search_TenzikaiJuchuuNO
             // 
@@ -777,6 +792,7 @@
         private CKM_Controls.CKM_Label ckM_Label11;
         private CKM_Controls.CKM_Button btnDisplay;
         private CKM_Controls.CKM_GridView dgvTenzikai;
+        private CKM_Controls.CKM_TextBox txtCustomerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOrderNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOrderDate;
@@ -784,6 +800,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colYear;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSeason;
         private System.Windows.Forms.DataGridViewTextBoxColumn colClient;
-        private CKM_Controls.CKM_TextBox txtCustomerName;
     }
 }
