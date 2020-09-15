@@ -199,7 +199,7 @@ namespace SiiresakiZaikoYoteiHyou
                                 wb.Worksheet("worksheet").Cell(2, 3).Value = cboStore.Text.ToString();
                                 //wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;//
                                 //wb.Worksheet("worksheet").Hide();
-                                worksheet.Range["A3:D3"].Style.Color = Color.White;
+                                //worksheet.Range["A3:D3"].Style.Color = Color.White;
                                 wb.Worksheet("worksheet").ShowGridLines = false;
                                 wb.SaveAs(savedialog.FileName);
                                 szybl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
