@@ -702,7 +702,7 @@ namespace Search
                 case SearchType.展示会商品:
                     txtCode.MaxLength = 13;
                     txtCode.Width = 100;
-                    lblName.Width = 310;
+                    lblName.Width = 350;
                     break;
             }
             //}
@@ -1787,8 +1787,8 @@ namespace Search
                         frmTenzikaishouhin.ShowDialog();
                         if (!frmTenzikaishouhin.flgCancel)
                         {
-                            txtCode.Text = frmTenzikaishouhin.parTzikaishouhinCD;
-                            lblName.Text = frmTenzikaishouhin.parTzikaishouhindName;
+                            txtCode.Text = frmTenzikaishouhin.parSkuCD;
+                            lblName.Text = frmTenzikaishouhin.parSKUName;
                             CheckBasedFormPanel();//PTK added
                         }
 
