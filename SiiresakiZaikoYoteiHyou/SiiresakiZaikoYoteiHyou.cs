@@ -167,13 +167,20 @@ namespace SiiresakiZaikoYoteiHyou
                     SaveFileDialog savedialog = new SaveFileDialog();
                     savedialog.Filter = "Excel Files|*.xlsx;";
                     savedialog.Title = "Save";
-                    savedialog.FileName = "仕入先在庫予定表";
-                    savedialog.InitialDirectory = folderPath;
-                    
+                    InProgramNM = "仕入先在庫予定表";
+                    string filePath = "";
+                    //if (!ShowSaveFileDialog(InProgramNM, out filePath, 1))
+                    //{
+                    //    return;
+                    //}
+                    ShowSaveFileDialog(InProgramNM, out filePath, 1);
+                    savedialog.FileName = filePath;
+                   // savedialog.FileName = "仕入先在庫予定表";
+                    savedialog.InitialDirectory = filePath;
                     savedialog.RestoreDirectory = true;
                     if (savedialog.ShowDialog() == DialogResult.OK)
                     {
-                        if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
+                        if (Path.GetExtension(savedialog.FileName).Contains(".xls"))
                         {
                             Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
                             Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
@@ -185,7 +192,6 @@ namespace SiiresakiZaikoYoteiHyou
                             excelRange.NumberFormat = "#,###,###";//
                             using (XLWorkbook wb = new XLWorkbook())
                             {
-                                
                                 wb.Worksheets.Add(dtExport,"worksheet");
                                 wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
                                 wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
