@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmShukkaShoukai));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.cboWarehouse = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -552,18 +552,18 @@
             this.dgvShukkaShoukai.AllowUserToAddRows = false;
             this.dgvShukkaShoukai.AllowUserToDeleteRows = false;
             this.dgvShukkaShoukai.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvShukkaShoukai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvShukkaShoukai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvShukkaShoukai.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvShukkaShoukai.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvShukkaShoukai.CheckCol")));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvShukkaShoukai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvShukkaShoukai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvShukkaShoukai.ColumnHeadersHeight = 25;
             this.dgvShukkaShoukai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colShippingN0,
@@ -580,14 +580,14 @@
             this.colCarrierName,
             this.colSalesDate,
             this.colStaffName});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvShukkaShoukai.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvShukkaShoukai.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvShukkaShoukai.EnableHeadersVisualStyles = false;
             this.dgvShukkaShoukai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvShukkaShoukai.Location = new System.Drawing.Point(29, 23);
@@ -800,8 +800,8 @@
             this.Sc_SKUCD.ChangeDate = "";
             this.Sc_SKUCD.ChangeDateWidth = 100;
             this.Sc_SKUCD.Code = "";
-            this.Sc_SKUCD.CodeWidth = 190;
-            this.Sc_SKUCD.CodeWidth1 = 190;
+            this.Sc_SKUCD.CodeWidth = 600;
+            this.Sc_SKUCD.CodeWidth1 = 600;
             this.Sc_SKUCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.Sc_SKUCD.DataCheck = false;
             this.Sc_SKUCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -814,7 +814,7 @@
             this.Sc_SKUCD.Name = "Sc_SKUCD";
             this.Sc_SKUCD.NameWidth = 350;
             this.Sc_SKUCD.SearchEnable = true;
-            this.Sc_SKUCD.Size = new System.Drawing.Size(223, 27);
+            this.Sc_SKUCD.Size = new System.Drawing.Size(633, 27);
             this.Sc_SKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
             this.Sc_SKUCD.TabIndex = 12;
             this.Sc_SKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -829,8 +829,8 @@
             this.Sc_Item.ChangeDate = "";
             this.Sc_Item.ChangeDateWidth = 100;
             this.Sc_Item.Code = "";
-            this.Sc_Item.CodeWidth = 190;
-            this.Sc_Item.CodeWidth1 = 190;
+            this.Sc_Item.CodeWidth = 600;
+            this.Sc_Item.CodeWidth1 = 600;
             this.Sc_Item.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.Sc_Item.DataCheck = false;
             this.Sc_Item.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -843,7 +843,7 @@
             this.Sc_Item.Name = "Sc_Item";
             this.Sc_Item.NameWidth = 350;
             this.Sc_Item.SearchEnable = true;
-            this.Sc_Item.Size = new System.Drawing.Size(223, 27);
+            this.Sc_Item.Size = new System.Drawing.Size(633, 27);
             this.Sc_Item.Stype = Search.CKM_SearchControl.SearchType.SKU_ITEM_CD;
             this.Sc_Item.TabIndex = 11;
             this.Sc_Item.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -859,7 +859,6 @@
             this.ClientSize = new System.Drawing.Size(1776, 961);
             this.Controls.Add(this.panelDetail);
             this.Location = new System.Drawing.Point(0, 0);
-            this.ModeVisible = true;
             this.Name = "FrmShukkaShoukai";
             this.PanelHeaderHeight = 250;
             this.Text = "ShukkaShoukai";

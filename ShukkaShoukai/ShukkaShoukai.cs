@@ -34,7 +34,7 @@ namespace ShukkaShoukai
         private void FrmShukkaShoukai_Load(object sender, EventArgs e)
         {
             InProgramID = "ShukkaShoukai";
-
+            
             StartProgram();
 
             F2Visible = false;
@@ -54,13 +54,13 @@ namespace ShukkaShoukai
 
             SC_Order.Value1 = InOperatorCD;
             SC_Order.Value2 = StoreCD;
-           
+            ModeVisible = false;
         }
 
         public void BindCombo()
         {
             cboWarehouse.Bind(string.Empty,"");
-            //cboWarehouse.SelectedValue = SoukoCD;
+            cboWarehouse.SelectedValue = SoukoCD;
             cboShipping.Bind(string.Empty,"");
             cboDestinationWarehouse.Bind(string.Empty,"");
         }

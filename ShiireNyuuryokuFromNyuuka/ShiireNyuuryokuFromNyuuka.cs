@@ -1369,7 +1369,8 @@ namespace ShiireNyuuryokuFromNyuuka
                     mGrid.g_DArray[i].PurchaseRows = Convert.ToInt16(row["PurchaseRows"]);
                     mGrid.g_DArray[i].OrderNO = row["OrderNO"].ToString();
                     mGrid.g_DArray[i].OrderRows = row["OrderRows"].ToString();
-                    
+                    mGrid.g_DArray[i].PurchaseZumiSu = Convert.ToInt16(row["PurchaseZumiSu"]);
+
                     if (m_MaxPurchaseGyoNo < mGrid.g_DArray[i].PurchaseRows)
                         m_MaxPurchaseGyoNo = mGrid.g_DArray[i].PurchaseRows;
 
@@ -1961,6 +1962,14 @@ namespace ShiireNyuuryokuFromNyuuka
                     {
                         //Ｅ１０２
                         bbl.ShowMessage("E102");
+                        return false;
+                    }
+
+                    //入力値 ＞ 入荷数－仕入済数 の場合、Error 「入力された値は入荷数を超えるため、入力できません。入荷数：{0}　仕入済数：{1}」
+                    if(bbl.Z_Set(mGrid.g_DArray[row].PurchaseSu) > bbl.Z_Set(mGrid.g_DArray[row].ArrivalSu)- bbl.Z_Set(mGrid.g_DArray[row].PurchaseZumiSu))
+                    {
+                        //Ｅ２６３
+                        bbl.ShowMessage("E263", bbl.Z_SetStr(mGrid.g_DArray[row].ArrivalSu), bbl.Z_SetStr(mGrid.g_DArray[row].PurchaseZumiSu));
                         return false;
                     }
                     break;
