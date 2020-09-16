@@ -276,7 +276,8 @@ namespace Search
             支払番号検索 ,//2020-01-27
             プログラムID, //SES
             商品分類,//SES
-            展示会名//Added by SES
+            展示会名,//Added by SES
+            JuchuuNO
         }
         [Browsable(true)]
         [Category("CKM Properties")]
@@ -704,6 +705,10 @@ namespace Search
                     txtCode.Width = 100;
                     lblName.Width = 350;
                     break;
+                case SearchType.JuchuuNO:
+                    txtCode.MaxLength = 6;
+                    txtCode.Width = 60;                
+                    break;
             }
             //}
             //else if (System.Diagnostics.Debugger.IsAttached)
@@ -956,6 +961,17 @@ namespace Search
                         lblName.Text = frmss.SoukoName;
                         txtChangeDate.Text = frmss.ChangeDate;
 
+                        CheckBasedFormPanel();//PTK added
+
+                    }
+                    break;
+                case SearchType.JuchuuNO:
+                    Search_TenzikaiJuchuuNO juchuu = new Search_TenzikaiJuchuuNO();
+                    juchuu.ShowDialog();
+                    if (!juchuu.flgCancel)
+                    {
+                        txtCode.Text = juchuu.OrderNum;
+                        
                         CheckBasedFormPanel();//PTK added
 
                     }
