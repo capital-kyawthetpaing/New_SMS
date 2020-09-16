@@ -20,7 +20,7 @@ namespace Search
         M_Customer_Entity mce;
         D_TenzikaiJuchuu_Entity dtje;
 
-
+        string year = string.Empty; string month = string.Empty; string day = string.Empty; string date = string.Empty;
         public string OrderNum = string.Empty;
 
         public Search_TenzikaiJuchuuNO()
@@ -33,7 +33,7 @@ namespace Search
             tzkjbl = new TenzikaiJuchuuNo_BL();
             mve = new M_Vendor_Entity();
             mce = new M_Customer_Entity();
-            txtOrderDateTo.Text = DateTime.Now.ToString();
+            txtOrderDateTo.Text = DateTime.Today.ToString("yyyy/MM/dd");            
             BindCombo();
         }
 
