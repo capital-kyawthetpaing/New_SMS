@@ -64,7 +64,7 @@
             this.ckM_Label18 = new CKM_Controls.CKM_Label();
             this.cboSeason = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label19 = new CKM_Controls.CKM_Label();
-            this.Sc_Competition = new Search.CKM_SearchControl();
+            this.Sc_Sports = new Search.CKM_SearchControl();
             this.ckM_Label20 = new CKM_Controls.CKM_Label();
             this.ckM_Label21 = new CKM_Controls.CKM_Label();
             this.ckM_Label22 = new CKM_Controls.CKM_Label();
@@ -832,35 +832,36 @@
             this.ckM_Label19.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Sc_Competition
+            // Sc_Sports
             // 
-            this.Sc_Competition.AutoSize = true;
-            this.Sc_Competition.ChangeDate = "";
-            this.Sc_Competition.ChangeDateWidth = 100;
-            this.Sc_Competition.Code = "";
-            this.Sc_Competition.CodeWidth = 50;
-            this.Sc_Competition.CodeWidth1 = 50;
-            this.Sc_Competition.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.Sc_Competition.DataCheck = false;
-            this.Sc_Competition.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.Sc_Competition.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.Sc_Competition.IsCopy = false;
-            this.Sc_Competition.LabelText = "";
-            this.Sc_Competition.LabelVisible = true;
-            this.Sc_Competition.Location = new System.Drawing.Point(722, 176);
-            this.Sc_Competition.Margin = new System.Windows.Forms.Padding(0);
-            this.Sc_Competition.Name = "Sc_Competition";
-            this.Sc_Competition.NameWidth = 280;
-            this.Sc_Competition.SearchEnable = true;
-            this.Sc_Competition.Size = new System.Drawing.Size(364, 32);
-            this.Sc_Competition.Stype = Search.CKM_SearchControl.SearchType.競技;
-            this.Sc_Competition.TabIndex = 24;
-            this.Sc_Competition.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.Sc_Competition.UseChangeDate = false;
-            this.Sc_Competition.Value1 = null;
-            this.Sc_Competition.Value2 = null;
-            this.Sc_Competition.Value3 = null;
-            this.Sc_Competition.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.Sc_Competition_CodeKeyDownEvent);
+            this.Sc_Sports.AutoSize = true;
+            this.Sc_Sports.ChangeDate = "";
+            this.Sc_Sports.ChangeDateWidth = 100;
+            this.Sc_Sports.Code = "";
+            this.Sc_Sports.CodeWidth = 50;
+            this.Sc_Sports.CodeWidth1 = 50;
+            this.Sc_Sports.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.Sc_Sports.DataCheck = false;
+            this.Sc_Sports.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.Sc_Sports.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.Sc_Sports.IsCopy = false;
+            this.Sc_Sports.LabelText = "";
+            this.Sc_Sports.LabelVisible = true;
+            this.Sc_Sports.Location = new System.Drawing.Point(722, 176);
+            this.Sc_Sports.Margin = new System.Windows.Forms.Padding(0);
+            this.Sc_Sports.Name = "Sc_Sports";
+            this.Sc_Sports.NameWidth = 280;
+            this.Sc_Sports.SearchEnable = true;
+            this.Sc_Sports.Size = new System.Drawing.Size(364, 32);
+            this.Sc_Sports.Stype = Search.CKM_SearchControl.SearchType.競技;
+            this.Sc_Sports.TabIndex = 24;
+            this.Sc_Sports.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.Sc_Sports.UseChangeDate = false;
+            this.Sc_Sports.Value1 = null;
+            this.Sc_Sports.Value2 = null;
+            this.Sc_Sports.Value3 = null;
+            this.Sc_Sports.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.Sc_Competition_CodeKeyDownEvent);
+            this.Sc_Sports.Enter += new System.EventHandler(this.Sc_Sports_Enter);
             // 
             // ckM_Label20
             // 
@@ -1308,7 +1309,7 @@
             this.panelDetail.Controls.Add(this.ckM_Label13);
             this.panelDetail.Controls.Add(this.ckM_Label20);
             this.panelDetail.Controls.Add(this.ckM_Label14);
-            this.panelDetail.Controls.Add(this.Sc_Competition);
+            this.panelDetail.Controls.Add(this.Sc_Sports);
             this.panelDetail.Controls.Add(this.ckM_Label15);
             this.panelDetail.Controls.Add(this.ckM_Label19);
             this.panelDetail.Controls.Add(this.ckM_Label16);
@@ -1385,7 +1386,7 @@
         private CKM_Controls.CKM_Label ckM_Label18;
         private CKM_Controls.CKM_ComboBox cboSeason;
         private CKM_Controls.CKM_Label ckM_Label19;
-        private Search.CKM_SearchControl Sc_Competition;
+        private Search.CKM_SearchControl Sc_Sports;
         private CKM_Controls.CKM_Label ckM_Label20;
         private CKM_Controls.CKM_Label ckM_Label21;
         private CKM_Controls.CKM_Label ckM_Label22;
