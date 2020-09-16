@@ -36,7 +36,7 @@ namespace TairyuZaikoHyou
             F2Visible = false;
             F3Visible = false;
             F4Visible = false;
-            F6Visible = false;
+            F5Visible = false;
             F7Visible = false;
             F8Visible = false;
             F10Visible = false;
@@ -46,8 +46,9 @@ namespace TairyuZaikoHyou
 
             BindCombo();
             SetRequireField();
+            Btn_F12.Text = "出力(F12)";
+            ModeVisible = false;
 
-            
         }
         public void BindCombo()
         {
