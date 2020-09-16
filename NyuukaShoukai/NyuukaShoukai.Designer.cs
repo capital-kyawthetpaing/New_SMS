@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNyuukaShoukai));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboWarehouse = new CKM_Controls.CKM_ComboBox();
             this.statusChk1 = new CKM_Controls.CKM_CheckBox();
             this.statusChk2 = new CKM_Controls.CKM_CheckBox();
@@ -179,6 +179,7 @@
             this.txtDeliveryNote.Size = new System.Drawing.Size(150, 19);
             this.txtDeliveryNote.TabIndex = 9;
             this.txtDeliveryNote.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDeliveryNote.UseColorSizMode = false;
             // 
             // ckM_Label1
             // 
@@ -595,6 +596,7 @@
             this.txtProductName.Size = new System.Drawing.Size(500, 19);
             this.txtProductName.TabIndex = 17;
             this.txtProductName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtProductName.UseColorSizMode = false;
             // 
             // ScSupplier
             // 
@@ -650,9 +652,10 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.dgvNyuukaShoukai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvNyuukaShoukai.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.dgvNyuukaShoukai.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvNyuukaShoukai.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -679,14 +682,6 @@
             this.colArrivalNO,
             this.colPurchaseNO,
             this.colVendor});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvNyuukaShoukai.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNyuukaShoukai.EnableHeadersVisualStyles = false;
             this.dgvNyuukaShoukai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvNyuukaShoukai.Location = new System.Drawing.Point(10, 267);
@@ -875,6 +870,7 @@
             this.txtArrivalDay1.TabIndex = 1;
             this.txtArrivalDay1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtArrivalDay1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtArrivalDay1.UseColorSizMode = false;
             // 
             // txtArrivalDay2
             // 
@@ -905,6 +901,7 @@
             this.txtArrivalDay2.TabIndex = 2;
             this.txtArrivalDay2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtArrivalDay2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtArrivalDay2.UseColorSizMode = false;
             this.txtArrivalDay2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtArrivalDay2_KeyDown);
             // 
             // txtStockDate1
@@ -936,6 +933,7 @@
             this.txtStockDate1.TabIndex = 3;
             this.txtStockDate1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtStockDate1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtStockDate1.UseColorSizMode = false;
             // 
             // txtStockDate2
             // 
@@ -966,6 +964,7 @@
             this.txtStockDate2.TabIndex = 4;
             this.txtStockDate2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtStockDate2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtStockDate2.UseColorSizMode = false;
             this.txtStockDate2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtStockDate2_KeyDown);
             // 
             // txtPurchaseDate1
@@ -997,6 +996,7 @@
             this.txtPurchaseDate1.TabIndex = 7;
             this.txtPurchaseDate1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPurchaseDate1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtPurchaseDate1.UseColorSizMode = false;
             // 
             // txtPurchaseDate2
             // 
@@ -1027,6 +1027,7 @@
             this.txtPurchaseDate2.TabIndex = 8;
             this.txtPurchaseDate2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPurchaseDate2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtPurchaseDate2.UseColorSizMode = false;
             this.txtPurchaseDate2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPurchaseDate2_KeyDown);
             // 
             // btnDisplay
