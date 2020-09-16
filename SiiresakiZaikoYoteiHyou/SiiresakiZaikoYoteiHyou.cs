@@ -167,20 +167,15 @@ namespace SiiresakiZaikoYoteiHyou
                     SaveFileDialog savedialog = new SaveFileDialog();
                     savedialog.Filter = "Excel Files|*.xlsx;";
                     savedialog.Title = "Save";
-                    InProgramNM = "仕入先在庫予定表";
-                    string filePath = "";
-                    //if (!ShowSaveFileDialog(InProgramNM, out filePath, 1))
-                    //{
-                    //    return;
-                    //}
-                    ShowSaveFileDialog(InProgramNM, out filePath, 1);
-                    savedialog.FileName = filePath;
-                   // savedialog.FileName = "仕入先在庫予定表";
-                    savedialog.InitialDirectory = filePath;
+                    InProgramNM= "仕入先在庫予定表";
+                    string cmdLine = InProgramNM + " " + DateTime.Now.ToString(" yyyyMMdd_HHmmss ") + " " + InOperatorCD;
+                    savedialog.FileName = cmdLine;
+                    // savedialog.FileName = "仕入先在庫予定表";
+                    savedialog.InitialDirectory = folderPath;
                     savedialog.RestoreDirectory = true;
                     if (savedialog.ShowDialog() == DialogResult.OK)
                     {
-                        if (Path.GetExtension(savedialog.FileName).Contains(".xls"))
+                        if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
                         {
                             Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
                             Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
