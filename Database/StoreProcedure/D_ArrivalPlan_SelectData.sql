@@ -124,6 +124,7 @@ BEGIN
                 WHERE DP.DeleteDateTime IS NULL
                 AND DP.AdminNO = @AdminNO
                 AND DP.LastestFLG = 1
+                AND DP.ArrivalPlanDate IS NOT NULL	--2020.09.16 add
                 AND DS.ArrivalYetFLG = 1	--Åö
                 AND DR.ReserveNO IS NOT NULL
             ) AS DR
@@ -132,6 +133,7 @@ BEGIN
         AND DH.AdminNO = @AdminNO
         AND DH.LastestFLG = 1
         AND DH.ArrivalSu = 0
+        AND DH.ArrivalPlanDate IS NOT NULL	--2020.09.16 add
         AND DH.DeleteDateTime IS NULL
     UNION ALL
         SELECT --Åyî≠íçÅz
@@ -222,6 +224,7 @@ BEGIN
                 WHERE DP.DeleteDateTime IS NULL
                 AND DP.AdminNO = @AdminNO
                 AND DP.LastestFLG = 1
+                AND DP.ArrivalPlanDate IS NOT NULL	--2020.09.16 add
                 AND DS.ArrivalYetFLG = 1	--Åö
                 --AND DO.LastApprovalDate IS NOT NULL
                 AND DO.ApprovalStageFLG >= 9
@@ -236,6 +239,7 @@ BEGIN
         AND DH.AdminNO = @AdminNO
         AND DH.LastestFLG = 1
         AND DH.ArrivalSu = 0
+        AND DH.ArrivalPlanDate IS NOT NULL	--2020.09.16 add
         AND DH.DeleteDateTime IS NULL
     UNION ALL
         SELECT --Åyà⁄ìÆÅz
@@ -314,6 +318,7 @@ BEGIN
                 WHERE DP.DeleteDateTime IS NULL
                 AND DP.AdminNO = @AdminNO
                 AND DP.LastestFLG = 1
+                AND DP.ArrivalPlanDate IS NOT NULL	--2020.09.16 add
                 AND DS.ArrivalYetFLG = 1	--Åö
                 AND DP.ArrivalPlanSu <> DS.ReserveSu + DS.InstructionSu + DS.ShippingSU
             ) AS DM
@@ -326,6 +331,7 @@ BEGIN
         AND DH.AdminNO = @AdminNO
         AND DH.LastestFLG = 1
         AND DH.ArrivalSu = 0
+        AND DH.ArrivalPlanDate IS NOT NULL	--2020.09.16 add
         AND DH.DeleteDateTime IS NULL
     
     ORDER BY KBN,JuchuuNO,JuchuuRows
