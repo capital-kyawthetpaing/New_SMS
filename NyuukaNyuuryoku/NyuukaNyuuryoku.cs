@@ -2632,7 +2632,7 @@ namespace NyuukaNyuuryoku
             //dt.Columns.Add("MoveRows", typeof(int));
             dt.Columns.Add("ArrivalPlanNO", typeof(string));
             dt.Columns.Add("StockNO", typeof(string));
-            dt.Columns.Add("ReserveNO", typeof(string));    //複数ある場合もあるのでこれは使用しない
+            dt.Columns.Add("ReserveNO", typeof(string));   
             dt.Columns.Add("CustomerCD", typeof(string));
             dt.Columns.Add("ArrivalSu", typeof(int));
             dt.Columns.Add("ArrivalPlanKBN", typeof(int));
