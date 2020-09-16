@@ -93,6 +93,7 @@ namespace Entity
 
         //入荷入力
         public string AdminNO { get; set; }
+        public string MakerItem { get; set; }
         public string SKUCD { get; set; }
         public string SKUName { get; set; }
         public string JANCD { get; set; }

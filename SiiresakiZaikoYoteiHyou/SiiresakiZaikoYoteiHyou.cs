@@ -167,9 +167,10 @@ namespace SiiresakiZaikoYoteiHyou
                     SaveFileDialog savedialog = new SaveFileDialog();
                     savedialog.Filter = "Excel Files|*.xlsx;";
                     savedialog.Title = "Save";
-                    savedialog.FileName = "仕入先在庫予定表";
+                    InProgramNM= "仕入先在庫予定表";
+                    string cmdLine = InProgramNM + " " + DateTime.Now.ToString(" yyyyMMdd_HHmmss ") + " " + InOperatorCD;
+                    savedialog.FileName = cmdLine;
                     savedialog.InitialDirectory = folderPath;
-                    
                     savedialog.RestoreDirectory = true;
                     if (savedialog.ShowDialog() == DialogResult.OK)
                     {
@@ -185,7 +186,6 @@ namespace SiiresakiZaikoYoteiHyou
                             excelRange.NumberFormat = "#,###,###";//
                             using (XLWorkbook wb = new XLWorkbook())
                             {
-                                
                                 wb.Worksheets.Add(dtExport,"worksheet");
                                 wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
                                 wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
@@ -200,7 +200,7 @@ namespace SiiresakiZaikoYoteiHyou
                                 wb.Worksheet("worksheet").Row(3).InsertRowsAbove(1);
                                 wb.Worksheet("worksheet").Row(4).CopyTo(wb.Worksheet("worksheet").Row(3));
                                 wb.Worksheet("worksheet").Row(4).Delete();
-                                 wb.Worksheet("worksheet").ShowGridLines = false;
+                                wb.Worksheet("worksheet").ShowGridLines = false;
                                 wb.SaveAs(savedialog.FileName);
                                 szybl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
                             }

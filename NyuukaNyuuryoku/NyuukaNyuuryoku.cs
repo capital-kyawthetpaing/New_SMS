@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 using BL;
@@ -1966,8 +1962,9 @@ namespace NyuukaNyuuryoku
                         mGrid2.g_DArray[i2].OrderTaxRitsu = row["OrderTaxRitsu"].ToString();
                         mGrid2.g_DArray[i2].OrderWayKBN = row["OrderWayKBN"].ToString();
                         mGrid2.g_DArray[i2].AliasKBN = row["AliasKBN"].ToString();
+                        mGrid2.g_DArray[i2].isCopy = false;
 
-                        m_dataCnt2 = i2 + 1;
+                         m_dataCnt2 = i2 + 1;
                         Grid_NotFocus2((int)ClsGridZaiko.ColNO.Number, i2);
                         i2++;
                     }
@@ -2320,6 +2317,7 @@ namespace NyuukaNyuuryoku
                                     mGrid2.g_DArray[i2].OrderTaxRitsu = row["OrderTaxRitsu"].ToString();
                                     mGrid2.g_DArray[i2].OrderWayKBN = row["OrderWayKBN"].ToString();
                                     mGrid2.g_DArray[i2].AliasKBN = row["AliasKBN"].ToString();
+                                    mGrid2.g_DArray[i2].isCopy = false;
 
                                     m_dataCnt2 = i2 + 1;
                                     Grid_NotFocus2((int)ClsGridZaiko.ColNO.Number, i2);
@@ -2699,6 +2697,36 @@ namespace NyuukaNyuuryoku
             }
             return dt;
         }
+        private DataTable GetGridCopyEntity()
+        {
+            DataTable dt = new DataTable();
+            Para_Add(dt);
+
+            int rowNo = 1;
+
+            for (int RW = 0; RW <= mGrid2.g_MK_Max_Row - 1; RW++)
+            {
+                //zが更新有効行数
+                if (!string.IsNullOrWhiteSpace( mGrid2.g_DArray[RW].Number) && bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) == 0 && mGrid2.g_DArray[RW].isCopy )
+                {
+                    dt.Rows.Add(2
+                        , rowNo
+                        , 2
+                        , mGrid2.g_DArray[RW].Number
+                        , mGrid2.g_DArray[RW].RowNo
+                        , mGrid2.g_DArray[RW].ArrivalPlanNO
+                        , mGrid2.g_DArray[RW].StockNO
+                        , mGrid2.g_DArray[RW].ReserveNO
+                        , mGrid2.g_DArray[RW].CustomerCD
+                        , bbl.Z_Set(mGrid2.g_DArray[RW].SURYO)
+                        , bbl.Z_Set(mGrid2.g_DArray[RW].ArrivalPlanKBN)
+                        , 0
+                        );
+                    rowNo++;
+                }
+            }
+            return dt;
+        }
         protected override void ExecSec()
         {
 
@@ -2795,6 +2823,13 @@ namespace NyuukaNyuuryoku
                 return;
             }
 
+            //F10：入荷予定ボタンで追加されたデータについて画面上の入荷数＝０であれば（追加したにもかかわらず、入荷数が指定されなかったら）そのRecordをDeleteする
+            DataTable dtCopy = GetGridCopyEntity();
+            if (dtCopy != null && dtCopy.Rows.Count > 0)
+            {
+                ret = nnbl.D_Order_Delete(dae, dtCopy, (short)OperationMode);
+            }
+
             if (OperationMode == EOperationMode.DELETE)
                 bbl.ShowMessage("I102");
             else
@@ -2877,6 +2912,9 @@ namespace NyuukaNyuuryoku
                     break;
             }
 
+            //追加入荷予定数＝画面.入荷総数－（ΣF10で追加した明細以外.入力した入荷数＋ΣF10で追加した明細の.予定数）							
+            //この結果の追加入荷予定数＞０の場合だけ追加する
+
             decimal OrderSuu = bbl.Z_Set(detailControls[(int)EIndex.Nyukasu].Text) - bbl.Z_Set(nyukaSu);
 
             D_Order_Entity de = new D_Order_Entity
@@ -2892,6 +2930,7 @@ namespace NyuukaNyuuryoku
 
                 JANCD = txtJANCD.Text,
                 AdminNO = mAdminNO,
+                MakerItem = lblMaker.Text,
                 SKUCD = lblSKUCD.Text,
                 SKUName = lblSKUName.Text,
                 ColorName = lblColorName.Text,
@@ -2939,6 +2978,7 @@ namespace NyuukaNyuuryoku
                 mGrid2.g_DArray[i2].OrderTaxRitsu = row["OrderTaxRitsu"].ToString();
                 mGrid2.g_DArray[i2].OrderWayKBN = row["OrderWayKBN"].ToString();
                 mGrid2.g_DArray[i2].AliasKBN = row["AliasKBN"].ToString();
+                mGrid2.g_DArray[i2].isCopy = true;
 
                 m_dataCnt2 = i2 + 1;
                 Grid_NotFocus2((int)ClsGridZaiko.ColNO.Number, i2);
@@ -3179,6 +3219,13 @@ namespace NyuukaNyuuryoku
         {
             try
             {
+                //F10：入荷予定ボタンで追加されたデータについて画面上の入荷数＝０であれば（追加したにもかかわらず、入荷数が指定されなかったら）そのRecordをDeleteする
+                DataTable dtCopy = GetGridCopyEntity();
+                if (dtCopy != null && dtCopy.Rows.Count > 0)
+                {
+                    bool ret = nnbl.D_Order_Delete(dae, dtCopy, (short)OperationMode);
+                }
+
                 DeleteExclusive();
             }
             catch(Exception ex)

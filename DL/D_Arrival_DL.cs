@@ -203,5 +203,31 @@ namespace DL
 
             return SelectData(dic, sp);
         }
+        /// <summary>
+        /// 入荷入力更新処理
+        /// NyuukaNyuuryokuより更新時に使用
+        /// </summary>
+        /// <param name="dme"></param>
+        /// <param name="operationMode"></param>
+        /// <returns></returns>
+        public bool D_Order_Delete(D_Arrival_Entity dme, DataTable dt, short operationMode)
+        {
+            string sp = "D_Order_Delete";
+
+            command = new SqlCommand(sp, GetConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandTimeout = 0;
+
+            AddParam(command, "@OperateMode", SqlDbType.Int, operationMode.ToString());
+       
+            AddParamForDataTable(command, "@Table", SqlDbType.Structured, dt);
+            AddParam(command, "@Operator", SqlDbType.VarChar, dme.InsertOperator);
+            AddParam(command, "@PC", SqlDbType.VarChar, dme.PC);
+       
+            UseTransaction = true;
+
+            string outPutParam = "";
+            return InsertUpdateDeleteData(sp, ref outPutParam);            
+        }
     }
 }

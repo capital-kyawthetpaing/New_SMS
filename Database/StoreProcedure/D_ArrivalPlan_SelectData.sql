@@ -124,6 +124,7 @@ BEGIN
                 WHERE DP.DeleteDateTime IS NULL
                 AND DP.AdminNO = @AdminNO
                 AND DP.LastestFLG = 1
+                AND DP.ArrivalPlanDate IS NOT NULL	--2020.09.16 add
                 AND DS.ArrivalYetFLG = 1	--Åö
                 AND DR.ReserveNO IS NOT NULL
             ) AS DR
@@ -132,6 +133,7 @@ BEGIN
         AND DH.AdminNO = @AdminNO
         AND DH.LastestFLG = 1
         AND DH.ArrivalSu = 0
+        AND DH.ArrivalPlanDate IS NOT NULL	--2020.09.16 add
         AND DH.DeleteDateTime IS NULL
     UNION ALL
         SELECT --Åyî≠íçÅz
@@ -174,7 +176,8 @@ BEGIN
                           WHERE A.VendorCD = DO.OrderCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DO.OrderDate
                           AND A.VendorFlg = 1
                           ORDER BY A.ChangeDate desc) AS VendorName_Souko
-                        ,DOM.OrderSu - isnull(W.ReserveSU,0) AS OrderSu
+                        --,DOM.OrderSu - isnull(W.ReserveSU,0) AS OrderSu
+                        ,DP.ArrivalPlanSu - ISNULL(W.ReserveSU,0) AS OrderSu
                         ,DR.ReserveSu
                         ,0 AS ArrivalSu
                         ,(CASE WHEN DOM.DirectFlg = 1 THEN 'ÅZ' ELSE '' END) DirectFlg_Order
@@ -222,6 +225,7 @@ BEGIN
                 WHERE DP.DeleteDateTime IS NULL
                 AND DP.AdminNO = @AdminNO
                 AND DP.LastestFLG = 1
+                AND DP.ArrivalPlanDate IS NOT NULL	--2020.09.16 add
                 AND DS.ArrivalYetFLG = 1	--Åö
                 --AND DO.LastApprovalDate IS NOT NULL
                 AND DO.ApprovalStageFLG >= 9
@@ -236,6 +240,7 @@ BEGIN
         AND DH.AdminNO = @AdminNO
         AND DH.LastestFLG = 1
         AND DH.ArrivalSu = 0
+        AND DH.ArrivalPlanDate IS NOT NULL	--2020.09.16 add
         AND DH.DeleteDateTime IS NULL
     UNION ALL
         SELECT --Åyà⁄ìÆÅz
@@ -277,7 +282,8 @@ BEGIN
                           FROM M_Souko A 
                           WHERE A.SoukoCD = DM.FromSoukoCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DM.MoveDate
                           ORDER BY A.ChangeDate desc) AS SoukoName
-                        ,DMM.MoveSu - isnull(W.ReserveSU,0) AS MoveSu
+                        --,DMM.MoveSu - isnull(W.ReserveSU,0) AS MoveSu
+                        ,DP.ArrivalPlanSu - ISNULL(W.ReserveSU,0) AS MoveSu
                         ,DR.ReserveSu
                         ,0	AS ArrivalSu
                           ,(SELECT top 1 (CASE WHEN A.DirectFlg = 1 THEN 'ÅZ' ELSE '' END) DirectFlg
@@ -314,6 +320,7 @@ BEGIN
                 WHERE DP.DeleteDateTime IS NULL
                 AND DP.AdminNO = @AdminNO
                 AND DP.LastestFLG = 1
+                AND DP.ArrivalPlanDate IS NOT NULL	--2020.09.16 add
                 AND DS.ArrivalYetFLG = 1	--Åö
                 AND DP.ArrivalPlanSu <> DS.ReserveSu + DS.InstructionSu + DS.ShippingSU
             ) AS DM
@@ -326,6 +333,7 @@ BEGIN
         AND DH.AdminNO = @AdminNO
         AND DH.LastestFLG = 1
         AND DH.ArrivalSu = 0
+        AND DH.ArrivalPlanDate IS NOT NULL	--2020.09.16 add
         AND DH.DeleteDateTime IS NULL
     
     ORDER BY KBN,JuchuuNO,JuchuuRows

@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Search_Tenzikai));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtDate = new CKM_Controls.CKM_TextBox();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -50,11 +51,11 @@
             this.ckM_Label10 = new CKM_Controls.CKM_Label();
             this.btnSearch = new CKM_Controls.CKM_Button();
             this.dgvSearch_Tenzikai = new CKM_Controls.CKM_GridView();
+            this.cbo_Season = new CKM_Controls.CKM_ComboBox();
             this.colTenzikaiName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVendorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLastYearTerm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSeason = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbo_Season = new CKM_Controls.CKM_ComboBox();
             this.scSupplierCDTo = new Search.CKM_SearchControl();
             this.scSupplierCDFrom = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
@@ -265,6 +266,7 @@
             this.cbo_Year.Name = "cbo_Year";
             this.cbo_Year.Size = new System.Drawing.Size(100, 20);
             this.cbo_Year.TabIndex = 9;
+            this.cbo_Year.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbo_Year_KeyDown);
             // 
             // ckM_Label6
             // 
@@ -292,7 +294,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(463, 47);
+            this.ckM_Label7.Location = new System.Drawing.Point(479, 47);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label7.TabIndex = 17;
@@ -309,7 +311,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(463, 79);
+            this.ckM_Label8.Location = new System.Drawing.Point(479, 79);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label8.TabIndex = 18;
@@ -337,7 +339,7 @@
             this.NRegistrationDateFrom.IsNumber = true;
             this.NRegistrationDateFrom.IsShop = false;
             this.NRegistrationDateFrom.Length = 10;
-            this.NRegistrationDateFrom.Location = new System.Drawing.Point(536, 43);
+            this.NRegistrationDateFrom.Location = new System.Drawing.Point(552, 43);
             this.NRegistrationDateFrom.MaxLength = 10;
             this.NRegistrationDateFrom.MoveNext = true;
             this.NRegistrationDateFrom.Name = "NRegistrationDateFrom";
@@ -367,7 +369,7 @@
             this.NRegistrationDateTo.IsNumber = true;
             this.NRegistrationDateTo.IsShop = false;
             this.NRegistrationDateTo.Length = 10;
-            this.NRegistrationDateTo.Location = new System.Drawing.Point(681, 43);
+            this.NRegistrationDateTo.Location = new System.Drawing.Point(697, 43);
             this.NRegistrationDateTo.MaxLength = 10;
             this.NRegistrationDateTo.MoveNext = true;
             this.NRegistrationDateTo.Name = "NRegistrationDateTo";
@@ -398,7 +400,7 @@
             this.LModifiedDateFrom.IsNumber = true;
             this.LModifiedDateFrom.IsShop = false;
             this.LModifiedDateFrom.Length = 10;
-            this.LModifiedDateFrom.Location = new System.Drawing.Point(536, 75);
+            this.LModifiedDateFrom.Location = new System.Drawing.Point(552, 75);
             this.LModifiedDateFrom.MaxLength = 10;
             this.LModifiedDateFrom.MoveNext = true;
             this.LModifiedDateFrom.Name = "LModifiedDateFrom";
@@ -428,7 +430,7 @@
             this.LModifiedDateTo.IsNumber = true;
             this.LModifiedDateTo.IsShop = false;
             this.LModifiedDateTo.Length = 10;
-            this.LModifiedDateTo.Location = new System.Drawing.Point(681, 75);
+            this.LModifiedDateTo.Location = new System.Drawing.Point(697, 75);
             this.LModifiedDateTo.MaxLength = 10;
             this.LModifiedDateTo.MoveNext = true;
             this.LModifiedDateTo.Name = "LModifiedDateTo";
@@ -448,7 +450,7 @@
             this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(649, 46);
+            this.ckM_Label9.Location = new System.Drawing.Point(665, 46);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label9.TabIndex = 23;
@@ -465,7 +467,7 @@
             this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label10.Location = new System.Drawing.Point(649, 78);
+            this.ckM_Label10.Location = new System.Drawing.Point(665, 78);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label10.TabIndex = 24;
@@ -483,7 +485,7 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnSearch.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnSearch.Location = new System.Drawing.Point(720, 111);
+            this.btnSearch.Location = new System.Drawing.Point(767, 111);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(1);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(118, 28);
@@ -497,24 +499,32 @@
             this.dgvSearch_Tenzikai.AllowUserToAddRows = false;
             this.dgvSearch_Tenzikai.AllowUserToDeleteRows = false;
             this.dgvSearch_Tenzikai.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvSearch_Tenzikai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvSearch_Tenzikai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvSearch_Tenzikai.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvSearch_Tenzikai.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvSearch_Tenzikai.CheckCol")));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSearch_Tenzikai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSearch_Tenzikai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvSearch_Tenzikai.ColumnHeadersHeight = 25;
             this.dgvSearch_Tenzikai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colTenzikaiName,
             this.colVendorName,
             this.colLastYearTerm,
             this.colSeason});
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSearch_Tenzikai.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvSearch_Tenzikai.EnableHeadersVisualStyles = false;
             this.dgvSearch_Tenzikai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvSearch_Tenzikai.Location = new System.Drawing.Point(12, 209);
@@ -526,6 +536,23 @@
             this.dgvSearch_Tenzikai.UseRowNo = true;
             this.dgvSearch_Tenzikai.UseSetting = false;
             this.dgvSearch_Tenzikai.DoubleClick += new System.EventHandler(this.dgvSearch_Tenzikai_DoubleClick);
+            // 
+            // cbo_Season
+            // 
+            this.cbo_Season.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbo_Season.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbo_Season.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
+            this.cbo_Season.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cbo_Season.Flag = 0;
+            this.cbo_Season.FormattingEnabled = true;
+            this.cbo_Season.Length = 10;
+            this.cbo_Season.Location = new System.Drawing.Point(247, 112);
+            this.cbo_Season.MaxLength = 10;
+            this.cbo_Season.MoveNext = true;
+            this.cbo_Season.Name = "cbo_Season";
+            this.cbo_Season.Size = new System.Drawing.Size(100, 20);
+            this.cbo_Season.TabIndex = 10;
+            this.cbo_Season.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbo_Year_KeyDown);
             // 
             // colTenzikaiName
             // 
@@ -553,23 +580,6 @@
             this.colSeason.DataPropertyName = "LastSeason";
             this.colSeason.HeaderText = "シーズン";
             this.colSeason.Name = "colSeason";
-            this.colSeason.Width = 110;
-            // 
-            // cbo_Season
-            // 
-            this.cbo_Season.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cbo_Season.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbo_Season.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
-            this.cbo_Season.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.cbo_Season.Flag = 0;
-            this.cbo_Season.FormattingEnabled = true;
-            this.cbo_Season.Length = 10;
-            this.cbo_Season.Location = new System.Drawing.Point(247, 112);
-            this.cbo_Season.MaxLength = 10;
-            this.cbo_Season.MoveNext = true;
-            this.cbo_Season.Name = "cbo_Season";
-            this.cbo_Season.Size = new System.Drawing.Size(100, 20);
-            this.cbo_Season.TabIndex = 10;
             // 
             // scSupplierCDTo
             // 
@@ -677,10 +687,10 @@
         private CKM_Controls.CKM_Label ckM_Label7;
         private CKM_Controls.CKM_Label ckM_Label6;
         private CKM_Controls.CKM_GridView dgvSearch_Tenzikai;
+        private CKM_Controls.CKM_ComboBox cbo_Season;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenzikaiName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVendorName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLastYearTerm;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSeason;
-        private CKM_Controls.CKM_ComboBox cbo_Season;
     }
 }
