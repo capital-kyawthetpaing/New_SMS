@@ -170,7 +170,6 @@ namespace SiiresakiZaikoYoteiHyou
                     InProgramNM= "仕入先在庫予定表";
                     string cmdLine = InProgramNM + " " + DateTime.Now.ToString(" yyyyMMdd_HHmmss ") + " " + InOperatorCD;
                     savedialog.FileName = cmdLine;
-                    // savedialog.FileName = "仕入先在庫予定表";
                     savedialog.InitialDirectory = folderPath;
                     savedialog.RestoreDirectory = true;
                     if (savedialog.ShowDialog() == DialogResult.OK)
@@ -201,7 +200,7 @@ namespace SiiresakiZaikoYoteiHyou
                                 wb.Worksheet("worksheet").Row(3).InsertRowsAbove(1);
                                 wb.Worksheet("worksheet").Row(4).CopyTo(wb.Worksheet("worksheet").Row(3));
                                 wb.Worksheet("worksheet").Row(4).Delete();
-                                 wb.Worksheet("worksheet").ShowGridLines = false;
+                                wb.Worksheet("worksheet").ShowGridLines = false;
                                 wb.SaveAs(savedialog.FileName);
                                 szybl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
                             }
