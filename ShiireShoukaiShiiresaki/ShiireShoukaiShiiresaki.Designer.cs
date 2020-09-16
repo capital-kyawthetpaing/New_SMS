@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShiireShoukaiShiiresaki));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -60,7 +61,11 @@
             this.chkPaid = new CKM_Controls.CKM_CheckBox();
             this.chkUnpaid = new CKM_Controls.CKM_CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.scStaff = new Search.CKM_SearchControl();
+            this.scSupplier = new Search.CKM_SearchControl();
             this.dgvPurchaseSearch = new CKM_Controls.CKM_GridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.PurchaseNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,10 +79,6 @@
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.scStaff = new Search.CKM_SearchControl();
-            this.scSupplier = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -589,175 +590,6 @@
             this.panel1.Size = new System.Drawing.Size(1710, 124);
             this.panel1.TabIndex = 0;
             // 
-            // dgvPurchaseSearch
-            // 
-            this.dgvPurchaseSearch.AllowUserToAddRows = false;
-            this.dgvPurchaseSearch.AllowUserToDeleteRows = false;
-            this.dgvPurchaseSearch.AllowUserToOrderColumns = true;
-            this.dgvPurchaseSearch.AllowUserToResizeColumns = false;
-            this.dgvPurchaseSearch.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvPurchaseSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPurchaseSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.dgvPurchaseSearch.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvPurchaseSearch.CheckCol")));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPurchaseSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPurchaseSearch.ColumnHeadersHeight = 25;
-            this.dgvPurchaseSearch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.PurchaseNO,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13});
-            this.dgvPurchaseSearch.EnableHeadersVisualStyles = false;
-            this.dgvPurchaseSearch.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.dgvPurchaseSearch.Location = new System.Drawing.Point(32, 275);
-            this.dgvPurchaseSearch.Name = "dgvPurchaseSearch";
-            this.dgvPurchaseSearch.RowHeadersVisible = false;
-            this.dgvPurchaseSearch.RowHeight_ = 20;
-            this.dgvPurchaseSearch.RowTemplate.Height = 20;
-            this.dgvPurchaseSearch.Size = new System.Drawing.Size(1650, 600);
-            this.dgvPurchaseSearch.TabIndex = 0;
-            this.dgvPurchaseSearch.UseRowNo = false;
-            this.dgvPurchaseSearch.UseSetting = true;
-            this.dgvPurchaseSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPurchaseSearch_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.Frozen = true;
-            this.Column1.HeaderText = "";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 50;
-            // 
-            // PurchaseNO
-            // 
-            this.PurchaseNO.DataPropertyName = "PurchaseNO";
-            this.PurchaseNO.Frozen = true;
-            this.PurchaseNO.HeaderText = "仕入番号";
-            this.PurchaseNO.Name = "PurchaseNO";
-            this.PurchaseNO.Width = 90;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "PurchaseDate";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column3.Frozen = true;
-            this.Column3.HeaderText = "仕入日";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 80;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "VendorName";
-            this.Column4.Frozen = true;
-            this.Column4.HeaderText = "仕入先";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 400;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "PurchaseGaku";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column5.HeaderText = "本体額";
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "PurchaseTax";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column6.HeaderText = "税額";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "TotalPurchaseGaku";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column7.HeaderText = "仕入額";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "CommentInStore";
-            this.Column8.HeaderText = "備考";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 1090;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "PaymentPlanDate";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column9.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Column9.HeaderText = "支払予定日";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 80;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "PayConfirmFinishedDate";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column10.DefaultCellStyle = dataGridViewCellStyle8;
-            this.Column10.HeaderText = "支払日";
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 80;
-            // 
-            // Column11
-            // 
-            this.Column11.DataPropertyName = "DeliveryNo";
-            this.Column11.HeaderText = "納品書番号";
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 85;
-            // 
-            // Column12
-            // 
-            this.Column12.DataPropertyName = "StoreName";
-            this.Column12.HeaderText = "店舗";
-            this.Column12.Name = "Column12";
-            this.Column12.Width = 250;
-            // 
-            // Column13
-            // 
-            this.Column13.DataPropertyName = "StaffName";
-            this.Column13.HeaderText = "担当スタッフ";
-            this.Column13.Name = "Column13";
-            this.Column13.Width = 250;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 220);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1713, 38);
-            this.panel2.TabIndex = 101;
-            // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1179, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(534, 38);
-            this.panel3.TabIndex = 0;
-            // 
             // scStaff
             // 
             this.scStaff.AutoSize = true;
@@ -818,6 +650,182 @@
             this.scSupplier.Value3 = null;
             this.scSupplier.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scSupplier_CodeKeyDownEvent);
             this.scSupplier.Enter += new System.EventHandler(this.scSupplier_Enter);
+            // 
+            // dgvPurchaseSearch
+            // 
+            this.dgvPurchaseSearch.AllowUserToAddRows = false;
+            this.dgvPurchaseSearch.AllowUserToDeleteRows = false;
+            this.dgvPurchaseSearch.AllowUserToOrderColumns = true;
+            this.dgvPurchaseSearch.AllowUserToResizeColumns = false;
+            this.dgvPurchaseSearch.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvPurchaseSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPurchaseSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.dgvPurchaseSearch.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvPurchaseSearch.CheckCol")));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPurchaseSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPurchaseSearch.ColumnHeadersHeight = 25;
+            this.dgvPurchaseSearch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.PurchaseNO,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column12,
+            this.Column13});
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPurchaseSearch.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvPurchaseSearch.EnableHeadersVisualStyles = false;
+            this.dgvPurchaseSearch.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.dgvPurchaseSearch.Location = new System.Drawing.Point(32, 275);
+            this.dgvPurchaseSearch.Name = "dgvPurchaseSearch";
+            this.dgvPurchaseSearch.RowHeadersVisible = false;
+            this.dgvPurchaseSearch.RowHeight_ = 20;
+            this.dgvPurchaseSearch.RowTemplate.Height = 20;
+            this.dgvPurchaseSearch.Size = new System.Drawing.Size(1650, 600);
+            this.dgvPurchaseSearch.TabIndex = 0;
+            this.dgvPurchaseSearch.UseRowNo = false;
+            this.dgvPurchaseSearch.UseSetting = true;
+            this.dgvPurchaseSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPurchaseSearch_CellContentClick);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 220);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1713, 38);
+            this.panel2.TabIndex = 101;
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(1179, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(534, 38);
+            this.panel3.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.Frozen = true;
+            this.Column1.HeaderText = "";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 50;
+            // 
+            // PurchaseNO
+            // 
+            this.PurchaseNO.DataPropertyName = "PurchaseNO";
+            this.PurchaseNO.Frozen = true;
+            this.PurchaseNO.HeaderText = "仕入番号";
+            this.PurchaseNO.Name = "PurchaseNO";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "PurchaseDate";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column3.Frozen = true;
+            this.Column3.HeaderText = "仕入日";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 80;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "VendorName";
+            this.Column4.Frozen = true;
+            this.Column4.HeaderText = "仕入先";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 410;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "PurchaseGaku";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column5.HeaderText = "本体額";
+            this.Column5.Name = "Column5";
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "PurchaseTax";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column6.HeaderText = "税額";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "TotalPurchaseGaku";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Column7.HeaderText = "仕入額";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "CommentInStore";
+            this.Column8.HeaderText = "備考";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 1100;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "PaymentPlanDate";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Column9.HeaderText = "支払予定日";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 90;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "PayConfirmFinishedDate";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Column10.HeaderText = "支払日";
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 90;
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "DeliveryNo";
+            this.Column11.HeaderText = "納品書番号";
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 95;
+            // 
+            // Column12
+            // 
+            this.Column12.DataPropertyName = "StoreName";
+            this.Column12.HeaderText = "店舗";
+            this.Column12.Name = "Column12";
+            this.Column12.Width = 260;
+            // 
+            // Column13
+            // 
+            this.Column13.DataPropertyName = "StaffName";
+            this.Column13.HeaderText = "担当スタッフ";
+            this.Column13.Name = "Column13";
+            this.Column13.Width = 260;
             // 
             // ShiireShoukaiShiiresaki
             // 
