@@ -1966,7 +1966,7 @@ namespace ShiireNyuuryokuFromNyuuka
                     }
 
                     //入力値 ＞ 入荷数－仕入済数 の場合、Error 「入力された値は入荷数を超えるため、入力できません。入荷数：{0}　仕入済数：{1}」
-                    if(bbl.Z_Set(mGrid.g_DArray[row].PurchaseSu) > bbl.Z_Set(mGrid.g_DArray[row].ArrivalSu)- bbl.Z_Set(mGrid.g_DArray[row].PurchaseZumiSu))
+                    if(bbl.Z_Set(mGrid.g_DArray[row].PurchaseSu) > bbl.Z_Set(mGrid.g_DArray[row].ArrivalSu)- mGrid.g_DArray[row].PurchaseZumiSu)
                     {
                         //Ｅ２６３
                         bbl.ShowMessage("E263", bbl.Z_SetStr(mGrid.g_DArray[row].ArrivalSu), bbl.Z_SetStr(mGrid.g_DArray[row].PurchaseZumiSu));
@@ -3166,7 +3166,7 @@ namespace ShiireNyuuryokuFromNyuuka
             {
                 ChangeBackColor(w_Row, 1);
                 //Onの時、仕入数以降、入力可
-                mGrid.g_DArray[w_Row].PurchaseSu = mGrid.g_DArray[w_Row].ArrivalSu;
+                mGrid.g_DArray[w_Row].PurchaseSu =bbl.Z_SetStr( bbl.Z_Set( mGrid.g_DArray[w_Row].ArrivalSu) - mGrid.g_DArray[w_Row].PurchaseZumiSu);
                 CheckGrid((int)ClsGridShiire.ColNO.PurchaseSu, w_Row);
             }
             else
