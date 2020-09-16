@@ -176,7 +176,8 @@ BEGIN
                           WHERE A.VendorCD = DO.OrderCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DO.OrderDate
                           AND A.VendorFlg = 1
                           ORDER BY A.ChangeDate desc) AS VendorName_Souko
-                        ,DOM.OrderSu - isnull(W.ReserveSU,0) AS OrderSu
+                        --,DOM.OrderSu - isnull(W.ReserveSU,0) AS OrderSu
+                        ,DP.ArrivalPlanSu - ISNULL(W.ReserveSU,0) AS OrderSu
                         ,DR.ReserveSu
                         ,0 AS ArrivalSu
                         ,(CASE WHEN DOM.DirectFlg = 1 THEN 'Z' ELSE '' END) DirectFlg_Order
@@ -281,7 +282,8 @@ BEGIN
                           FROM M_Souko A 
                           WHERE A.SoukoCD = DM.FromSoukoCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DM.MoveDate
                           ORDER BY A.ChangeDate desc) AS SoukoName
-                        ,DMM.MoveSu - isnull(W.ReserveSU,0) AS MoveSu
+                        --,DMM.MoveSu - isnull(W.ReserveSU,0) AS MoveSu
+                        ,DP.ArrivalPlanSu - ISNULL(W.ReserveSU,0) AS MoveSu
                         ,DR.ReserveSu
                         ,0	AS ArrivalSu
                           ,(SELECT top 1 (CASE WHEN A.DirectFlg = 1 THEN 'Z' ELSE '' END) DirectFlg
