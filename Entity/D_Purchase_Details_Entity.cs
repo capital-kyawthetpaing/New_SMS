@@ -27,7 +27,7 @@ namespace Entity
         public string Order_EDate { get; set; }
         public string SKUName { get; set; }
         public string CheckValue { get; set; }
-       
-       
+        public string PurchaseStartDate { get; set; }
+        public string PurchaseEndDate { get; set; }
     }
 }

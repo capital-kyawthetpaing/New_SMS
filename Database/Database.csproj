@@ -247,6 +247,7 @@
     <Content Include="StoreProcedure\D_Stock_Select.sql" />
     <Content Include="StoreProcedure\D_Stock_SelectRackNO.sql" />
     <Content Include="StoreProcedure\D_Stock_SelectSuryo.sql" />
+    <Content Include="StoreProcedure\D_Stock_SelectZaiko.sql" />
     <Content Include="StoreProcedure\D_Stock_Update.sql" />
     <Content Include="StoreProcedure\D_StoreCalculationDelete.sql" />
     <Content Include="StoreProcedure\D_StoreCalculation_Insert_Update.sql" />
@@ -504,6 +505,7 @@
     <Content Include="StoreProcedure\M_TanaDate_Select.sql" />
     <Content Include="StoreProcedure\M_TankaCD_Select.sql" />
     <Content Include="StoreProcedure\M_TankaCD_SelectAll.sql" />
+    <Content Include="StoreProcedure\M_Tenzikaishouhin_Search.sql" />
     <Content Include="StoreProcedure\M_TenzikaiShouhin_Select.sql" />
     <Content Include="StoreProcedure\M_Tenzikai_Search.sql" />
     <Content Include="StoreProcedure\M_VendorFTP_ForSelectFile.sql" />

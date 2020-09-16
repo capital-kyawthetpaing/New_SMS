@@ -235,6 +235,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.sc_Tenji = new Search.CKM_SearchControl();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.ckM_SearchControl1 = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnl_haisou.SuspendLayout();
@@ -254,12 +256,14 @@
             // 
             // PanelHeader
             // 
+            this.PanelHeader.Controls.Add(this.ckM_SearchControl1);
             this.PanelHeader.Controls.Add(this.sc_Tenji);
             this.PanelHeader.Controls.Add(this.ckM_Label1);
             this.PanelHeader.Size = new System.Drawing.Size(1787, 91);
             this.PanelHeader.TabIndex = 0;
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.sc_Tenji, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.ckM_SearchControl1, 0);
             // 
             // PanelSearch
             // 
@@ -462,6 +466,7 @@
             this.btn_Meisai.TabIndex = 24;
             this.btn_Meisai.Text = "明細取込";
             this.btn_Meisai.UseVisualStyleBackColor = false;
+            this.btn_Meisai.Click += new System.EventHandler(this.btn_Meisai_Click);
             // 
             // txt_HDenwa3
             // 
@@ -4908,6 +4913,39 @@
             this.sc_Tenji.Value3 = null;
             this.sc_Tenji.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TenzikaiJuchuuTourou_KeyDown);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // ckM_SearchControl1
+            // 
+            this.ckM_SearchControl1.AutoSize = true;
+            this.ckM_SearchControl1.ChangeDate = "";
+            this.ckM_SearchControl1.ChangeDateWidth = 100;
+            this.ckM_SearchControl1.Code = "";
+            this.ckM_SearchControl1.CodeWidth = 100;
+            this.ckM_SearchControl1.CodeWidth1 = 100;
+            this.ckM_SearchControl1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ckM_SearchControl1.DataCheck = false;
+            this.ckM_SearchControl1.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.ckM_SearchControl1.IsCopy = false;
+            this.ckM_SearchControl1.LabelText = "";
+            this.ckM_SearchControl1.LabelVisible = false;
+            this.ckM_SearchControl1.Location = new System.Drawing.Point(633, 1);
+            this.ckM_SearchControl1.Margin = new System.Windows.Forms.Padding(0);
+            this.ckM_SearchControl1.Name = "ckM_SearchControl1";
+            this.ckM_SearchControl1.NameWidth = 310;
+            this.ckM_SearchControl1.SearchEnable = true;
+            this.ckM_SearchControl1.Size = new System.Drawing.Size(133, 52);
+            this.ckM_SearchControl1.Stype = Search.CKM_SearchControl.SearchType.展示会商品;
+            this.ckM_SearchControl1.TabIndex = 101;
+            this.ckM_SearchControl1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ckM_SearchControl1.UseChangeDate = false;
+            this.ckM_SearchControl1.Value1 = null;
+            this.ckM_SearchControl1.Value2 = null;
+            this.ckM_SearchControl1.Value3 = null;
+            // 
             // TenzikaiJuchuuTourou
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -5165,6 +5203,8 @@
         private Search.CKM_SearchControl sc_Tenji;
         private System.Windows.Forms.Panel pnl_haisou;
         private System.Windows.Forms.Panel pnl_kokyakuu;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private Search.CKM_SearchControl ckM_SearchControl1;
     }
 }
 

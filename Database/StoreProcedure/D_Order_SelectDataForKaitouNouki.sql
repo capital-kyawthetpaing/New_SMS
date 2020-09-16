@@ -122,7 +122,7 @@ BEGIN
           ,ISNULL(DS.InstructionSu,0) AS InstructionSu
           ,DR.ReserveNO
           ,CONVERT(varchar,DA.ArrivalPlanDate,111) AS ArrivalPlanDate
-          ,DA.ArrivalPlanMonth      --ó\íËåé
+          ,ISNULL(DA.ArrivalPlanMonth,0) AS ArrivalPlanMonth      --ó\íËåé
           ,DA.ArrivalPlanCD       --ó\íËèÛãµ 
           ,DA.ArrivalPlanSu
                           
@@ -251,7 +251,7 @@ BEGIN
                 AND DA.ArrivalPlanKBN = 1
                 AND DA.ArrivalPlanCD IS NULL
                 AND DA.ArrivalPlanDate IS NULL
-                AND DA.ArrivalPlanMonth IS NULL
+                AND DA.ArrivalPlanMonth = 0
                 AND DA.DeleteDateTime IS NULL
             );
             
