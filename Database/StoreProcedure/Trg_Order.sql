@@ -62,13 +62,13 @@ BEGIN
            ,[StaffCD]
            ,[FirstArriveDate]
            ,[LastArriveDate]
-           ,[ArrivalPlanDate]
            ,[ApprovalDate]
            ,[LastApprovalDate]
            ,[LastApprovalStaffCD]
            ,[ApprovalStageFLG]
            ,[FirstPrintDate]
            ,[LastPrintDate]
+           ,[ArrivalPlanDate]
 
            ,[InsertOperator]
            ,[InsertDateTime]
@@ -106,13 +106,13 @@ BEGIN
            ,StaffCD
            ,FirstArriveDate
            ,LastArriveDate
-           ,ArrivalPlanDate
            ,ApprovalDate
            ,LastApprovalDate
            ,LastApprovalStaffCD
            ,ApprovalStageFLG
            ,FirstPrintDate
            ,LastPrintDate
+           ,ArrivalPlanDate
            ,InsertOperator
            ,InsertDateTime
            ,UpdateOperator
@@ -159,13 +159,13 @@ BEGIN
            ,[StaffCD]
            ,[FirstArriveDate]
            ,[LastArriveDate]
-           ,[ArrivalPlanDate]
            ,[ApprovalDate]
            ,[LastApprovalDate]
            ,[LastApprovalStaffCD]
            ,[ApprovalStageFLG]
            ,[FirstPrintDate]
            ,[LastPrintDate]
+           ,[ArrivalPlanDate]
            ,[InsertOperator]
            ,[InsertDateTime]
            ,[UpdateOperator]
@@ -202,13 +202,13 @@ BEGIN
            ,StaffCD
            ,FirstArriveDate
            ,LastArriveDate
-           ,ArrivalPlanDate
            ,ApprovalDate
            ,LastApprovalDate
            ,LastApprovalStaffCD
            ,ApprovalStageFLG
            ,FirstPrintDate
            ,LastPrintDate
+           ,ArrivalPlanDate
            ,InsertOperator
            ,InsertDateTime
            ,UpdateOperator
@@ -281,7 +281,7 @@ BEGIN
            ,[DeleteDateTime])
          SELECT (SELECT IDENT_CURRENT('L_OrderHistory'))
 --               ,ROW_NUMBER() OVER(ORDER BY OrderRows) 
-                ,OrderRows
+               ,OrderRows
                ,OrderNO
                ,OrderRows
                ,DisplayRows

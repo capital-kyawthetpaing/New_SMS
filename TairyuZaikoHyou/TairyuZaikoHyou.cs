@@ -36,7 +36,7 @@ namespace TairyuZaikoHyou
             F2Visible = false;
             F3Visible = false;
             F4Visible = false;
-            F6Visible = false;
+            F5Visible = false;
             F7Visible = false;
             F8Visible = false;
             F10Visible = false;
@@ -46,8 +46,9 @@ namespace TairyuZaikoHyou
 
             BindCombo();
             SetRequireField();
+            Btn_F12.Text = "出力(F12)";
+            ModeVisible = false;
 
-            
         }
         public void BindCombo()
         {
@@ -122,21 +123,21 @@ namespace TairyuZaikoHyou
                 }
             }
 
-            if(!string.IsNullOrEmpty(Sc_Competition.TxtCode.Text))
+            if(!string.IsNullOrEmpty(Sc_Sports.TxtCode.Text))
             {
-                mmpe.Key = Sc_Competition.TxtCode.Text;
+                mmpe.Key = Sc_Sports.TxtCode.Text;
                 mmpe.ID = "202";
                 DataTable dtCompetition = new DataTable();
                 dtCompetition = tzkbl.M_Multiporpose_CharSelect(mmpe);
                 if (dtCompetition.Rows.Count == 0)
                 {
                     tzkbl.ShowMessage("E101");
-                    Sc_Competition.SetFocus(1);
+                    Sc_Sports.SetFocus(1);
                     return false;
                 }
                 else
                 {
-                    Sc_Competition.LabelText = dtCompetition.Rows[0]["Char1"].ToString();
+                    Sc_Sports.LabelText = dtCompetition.Rows[0]["Char1"].ToString();
                 }
             }
 
@@ -194,7 +195,7 @@ namespace TairyuZaikoHyou
                     SKUCD = txtSKUCD.Text,
                     ITemCD = txtItem.Text,
                     MakerItem = txtManufactureCD.Text,
-                    SportsCD = Sc_Competition.TxtCode.Text,
+                    SportsCD = Sc_Sports.TxtCode.Text,
                     ReserveCD = cboReservation.SelectedValue.ToString(),
                     NoticesCD = cboNotices.SelectedValue.ToString(),
                     PostageCD = cboPostage.SelectedValue.ToString(),
@@ -306,24 +307,29 @@ namespace TairyuZaikoHyou
         {
             if(e.KeyCode == Keys.Enter)
             {
-                if (!string.IsNullOrEmpty(Sc_Competition.TxtCode.Text))
+                if (!string.IsNullOrEmpty(Sc_Sports.TxtCode.Text))
                 {
-                    mmpe.Key = Sc_Competition.TxtCode.Text;
+                    mmpe.Key = Sc_Sports.TxtCode.Text;
                     mmpe.ID = "202";
                     DataTable dtCompetition = new DataTable();
                     dtCompetition = tzkbl.M_Multiporpose_CharSelect(mmpe);
                     if (dtCompetition.Rows.Count == 0)
                     {
                         tzkbl.ShowMessage("E101");
-                        Sc_Competition.SetFocus(1);
+                        Sc_Sports.SetFocus(1);
                     }
                     else
                     {
-                        Sc_Competition.LabelText = dtCompetition.Rows[0]["Char1"].ToString();
+                        Sc_Sports.LabelText = dtCompetition.Rows[0]["Char1"].ToString();
                     }
                 }
             }
         }
 
+        private void Sc_Sports_Enter(object sender, EventArgs e)
+        {
+            Sc_Sports.ChangeDate = bbl.GetDate();
+            Sc_Sports.Value1 = "202";
+        }
     }
 }

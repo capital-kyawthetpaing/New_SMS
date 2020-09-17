@@ -312,7 +312,7 @@ namespace Base.Client
                                 ButtonFunction(btn.Tag.ToString());
                             break;
                         case Keys.Enter:
-                            if (this.Name != "Search_TenzikaiShouhin")
+                            if (this.Name != "Search_TenzikaiShouhin" && Name !="Search_Tenzikai")
                             MoveNextControl(e);
                             break;
                     }
@@ -456,6 +456,10 @@ namespace Base.Client
                 else if (ActiveControl is Panel)
                 {
 
+                }
+                else if (ActiveControl is CKMShop_ComboBox cb)
+                {
+                    
                 }
                 else
                 {

@@ -176,8 +176,9 @@ BEGIN
                           WHERE A.VendorCD = DO.OrderCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DO.OrderDate
                           AND A.VendorFlg = 1
                           ORDER BY A.ChangeDate desc) AS VendorName_Souko
-                        ,DOM.OrderSu - isnull(W.ReserveSU,0) AS OrderSu
-                        ,DR.ReserveSu
+                        --,DOM.OrderSu - isnull(W.ReserveSU,0) AS OrderSu
+                        ,DP.ArrivalPlanSu - ISNULL(W.ReserveSU,0) AS OrderSu
+                        --,DR.ReserveSu
                         ,0 AS ArrivalSu
                         ,(CASE WHEN DOM.DirectFlg = 1 THEN 'Z' ELSE '' END) DirectFlg_Order
                         ,CONVERT(varchar,DP.ArrivalPlanDate,111) As ArrivalPlanDate
@@ -188,7 +189,8 @@ BEGIN
                           AND A.VendorFlg = 1
                           ORDER BY A.ChangeDate desc) AS VendorName
                         ,DS.StockNO
-                        ,DR.ReserveNO
+                        --,DR.ReserveNO
+                        ,NULL AS ReserveNO
 
                         ,DOM.OrderUnitPrice
                         ,DOM.PriceOutTax
@@ -208,10 +210,10 @@ BEGIN
                                 AND D.DeleteDateTime IS NULL
                                 GROUP BY D.StockNO) AS W
                 ON W.StockNO = DS.StockNO
-                LEFT OUTER JOIN D_Reserve AS DR
-                ON DR.StockNO = DS.StockNO
-                AND DR.ReserveKBN = 1	--Žó’ˆø“–
-                AND DR.DeleteDateTime IS NULL
+                --LEFT OUTER JOIN D_Reserve AS DR
+                --ON DR.StockNO = DS.StockNO
+                --AND DR.ReserveKBN = 1	--Žó’ˆø“–
+                --AND DR.DeleteDateTime IS NULL
                 INNER JOIN D_OrderDetails AS DOM
                 ON DOM.OrderNO = DP.Number
                 AND DOM.OrderRows = DP.NumberRows
@@ -281,8 +283,9 @@ BEGIN
                           FROM M_Souko A 
                           WHERE A.SoukoCD = DM.FromSoukoCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DM.MoveDate
                           ORDER BY A.ChangeDate desc) AS SoukoName
-                        ,DMM.MoveSu - isnull(W.ReserveSU,0) AS MoveSu
-                        ,DR.ReserveSu
+                        --,DMM.MoveSu - isnull(W.ReserveSU,0) AS MoveSu
+                        ,DP.ArrivalPlanSu - ISNULL(W.ReserveSU,0) AS MoveSu
+                        --,DR.ReserveSu
                         ,0	AS ArrivalSu
                           ,(SELECT top 1 (CASE WHEN A.DirectFlg = 1 THEN 'Z' ELSE '' END) DirectFlg
                               FROM M_SKU A 
@@ -291,7 +294,8 @@ BEGIN
                               ORDER BY A.ChangeDate desc) AS DirectFlg_Move
                         ,CONVERT(varchar,DP.ArrivalPlanDate,111) As ArrivalPlanDate_Move
                         ,DS.StockNO
-                        ,DR.ReserveNO
+                        --,DR.ReserveNO
+                        ,NULL AS ReserveNO
 		                                        
                 FROM D_ArrivalPlan AS DP
                 LEFT OUTER JOIN D_Stock AS DS
@@ -303,10 +307,10 @@ BEGIN
                                 AND D.DeleteDateTime IS NULL
                                 GROUP BY D.StockNO) AS W
                 ON W.StockNO = DS.StockNO
-                LEFT OUTER JOIN D_Reserve AS DR
-                ON DR.StockNO = DS.StockNO
-                AND DR.ReserveKBN = 2	--ˆÚ“®ˆø“–
-                AND DR.DeleteDateTime IS NULL
+                --LEFT OUTER JOIN D_Reserve AS DR
+                --ON DR.StockNO = DS.StockNO
+                --AND DR.ReserveKBN = 2	--ˆÚ“®ˆø“–
+                --AND DR.DeleteDateTime IS NULL
                 INNER JOIN D_MoveDetails AS DMM
                 ON DMM.MoveNO = DP.Number
                 AND DMM.MoveRows = DP.NumberRows

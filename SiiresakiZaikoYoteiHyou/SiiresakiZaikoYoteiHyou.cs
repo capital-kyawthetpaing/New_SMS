@@ -167,20 +167,14 @@ namespace SiiresakiZaikoYoteiHyou
                     SaveFileDialog savedialog = new SaveFileDialog();
                     savedialog.Filter = "Excel Files|*.xlsx;";
                     savedialog.Title = "Save";
-                    InProgramNM = "仕入先在庫予定表";
-                    string filePath = "";
-                    //if (!ShowSaveFileDialog(InProgramNM, out filePath, 1))
-                    //{
-                    //    return;
-                    //}
-                    ShowSaveFileDialog(InProgramNM, out filePath, 1);
-                    savedialog.FileName = filePath;
-                   // savedialog.FileName = "仕入先在庫予定表";
-                    savedialog.InitialDirectory = filePath;
+                    InProgramNM= "仕入先在庫予定表";
+                    string cmdLine = InProgramNM + " " + DateTime.Now.ToString(" yyyyMMdd_HHmmss ") + " " + InOperatorCD;
+                    savedialog.FileName = cmdLine;
+                    savedialog.InitialDirectory = folderPath;
                     savedialog.RestoreDirectory = true;
                     if (savedialog.ShowDialog() == DialogResult.OK)
                     {
-                        if (Path.GetExtension(savedialog.FileName).Contains(".xls"))
+                        if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
                         {
                             Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
                             Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
@@ -190,6 +184,7 @@ namespace SiiresakiZaikoYoteiHyou
                             worksheet.Name = "worksheet";
                             Microsoft.Office.Interop.Excel.Range excelRange = worksheet.UsedRange;
                             excelRange.NumberFormat = "#,###,###";//
+                            //excelRange.Worksheet.ListObjects["worksheet"].TableStyle = "none";
                             using (XLWorkbook wb = new XLWorkbook())
                             {
                                 wb.Worksheets.Add(dtExport,"worksheet");
@@ -206,7 +201,9 @@ namespace SiiresakiZaikoYoteiHyou
                                 wb.Worksheet("worksheet").Row(3).InsertRowsAbove(1);
                                 wb.Worksheet("worksheet").Row(4).CopyTo(wb.Worksheet("worksheet").Row(3));
                                 wb.Worksheet("worksheet").Row(4).Delete();
-                                 wb.Worksheet("worksheet").ShowGridLines = false;
+                                wb.Worksheet("worksheet").ShowGridLines = false;
+                                wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;
+                                wb.Worksheet("worksheet").Tables.FirstOrDefault().Theme = XLTableTheme.None;
                                 wb.SaveAs(savedialog.FileName);
                                 szybl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
                             }

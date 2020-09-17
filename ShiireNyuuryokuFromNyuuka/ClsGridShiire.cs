@@ -46,6 +46,7 @@ namespace ShiireNyuuryokuFromNyuuka
             internal string SKUCD;
             internal string TaniCD;
             internal decimal PurchaseTax;   //税額(Hidden)
+            internal int PurchaseZumiSu;    //仕入済数（D_Arrival.PurchaseSu）
 
             internal int DiscountKbn;   //SKUマスタ値引き区分
             internal int VariousFLG;    //1:Various(諸口)

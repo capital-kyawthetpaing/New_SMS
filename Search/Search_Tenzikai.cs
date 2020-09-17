@@ -33,8 +33,6 @@ namespace Search
         {
             BindCombo();
             SetRequiredField();
-            scSupplierCDFrom.NameWidth = 0;
-            scSupplierCDTo.NameWidth = 0;
             txtDate.Focus();
         }
         public void BindCombo()
@@ -45,8 +43,8 @@ namespace Search
         }
         private void SetRequiredField()
         {
-            cbo_Year.Require(true);
-            cbo_Season.Require(true);
+           // cbo_Year.Require(true);
+          //  cbo_Season.Require(true);
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -202,7 +200,27 @@ namespace Search
         }
         private void Search_Tenzikai_KeyUp(object sender, KeyEventArgs e)
         {
+            if ((ActiveControl is CKM_Controls.CKM_ComboBox cb))
+            {
+                if (string.IsNullOrEmpty(cb.Text))
+                {
+                    return;
+                }
+            }
             MoveNextControl(e);
+        }
+
+        private void cbo_Year_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (string.IsNullOrWhiteSpace((sender as CKM_Controls.CKM_ComboBox).Text))
+                {
+                    bbl.ShowMessage("E102");
+                    (sender as CKM_Controls.CKM_ComboBox).Focus();
+                    return;
+                }
+            }
         }
     }
 }

@@ -2437,7 +2437,7 @@ namespace NyuukaNyuuryoku
                         {
                             if (mGrid2.g_DArray[RW].StockNO == stockNO)
                             {
-                                if (bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != bbl.Z_Set(mGrid2.g_DArray[row].ReserveSu))
+                                if (bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != bbl.Z_Set(mGrid2.g_DArray[RW].ReserveSu))
                                 {
                                     //Ｅ２５１
                                     bbl.ShowMessage("E251");
@@ -2505,7 +2505,7 @@ namespace NyuukaNyuuryoku
                         {
                             if (mGrid.g_DArray[RW].StockNO == stockNO)
                             {
-                                if (bbl.Z_Set(mGrid.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid.g_DArray[RW].ReserveSu) != bbl.Z_Set(mGrid.g_DArray[row].SURYO))
+                                if (bbl.Z_Set(mGrid.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid.g_DArray[RW].ReserveSu) != bbl.Z_Set(mGrid.g_DArray[RW].SURYO))
                                 {
                                     //Ｅ２５１
                                     bbl.ShowMessage("E251");
@@ -2632,7 +2632,7 @@ namespace NyuukaNyuuryoku
             //dt.Columns.Add("MoveRows", typeof(int));
             dt.Columns.Add("ArrivalPlanNO", typeof(string));
             dt.Columns.Add("StockNO", typeof(string));
-            dt.Columns.Add("ReserveNO", typeof(string));
+            dt.Columns.Add("ReserveNO", typeof(string));   
             dt.Columns.Add("CustomerCD", typeof(string));
             dt.Columns.Add("ArrivalSu", typeof(int));
             dt.Columns.Add("ArrivalPlanKBN", typeof(int));
@@ -2912,6 +2912,9 @@ namespace NyuukaNyuuryoku
                     break;
             }
 
+            //追加入荷予定数＝画面.入荷総数－（ΣF10で追加した明細以外.入力した入荷数＋ΣF10で追加した明細の.予定数）							
+            //この結果の追加入荷予定数＞０の場合だけ追加する
+
             decimal OrderSuu = bbl.Z_Set(detailControls[(int)EIndex.Nyukasu].Text) - bbl.Z_Set(nyukaSu);
 
             D_Order_Entity de = new D_Order_Entity
@@ -2927,6 +2930,7 @@ namespace NyuukaNyuuryoku
 
                 JANCD = txtJANCD.Text,
                 AdminNO = mAdminNO,
+                MakerItem = lblMaker.Text,
                 SKUCD = lblSKUCD.Text,
                 SKUName = lblSKUName.Text,
                 ColorName = lblColorName.Text,
