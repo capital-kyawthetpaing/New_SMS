@@ -273,19 +273,11 @@ namespace SaikenKanriHyou
             if (ErrorCheck())
             {
                 // レコード定義を行う
-                dtResult = CheckData();
-                
-                //dmc_e = GetDataInfo();
-                //dtResult = skh_bl.D_MonthlyClaims_Select(dmc_e);
+                M_StoreCheck();//exeRun
 
-                //if (dtResult == null)
-                //{
-                //    return;
-                //}
+                dtResult = CheckData();//Preview Data
                 if (dtResult.Rows.Count > 0) // 2020-06-19 saw
                 {
-                    //exeRun
-                    M_StoreCheck();
                     try
                     {
                         SaikenKanriHyou_Report skh_Report = new SaikenKanriHyou_Report();
