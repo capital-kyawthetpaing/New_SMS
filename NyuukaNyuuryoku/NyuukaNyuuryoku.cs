@@ -1758,15 +1758,18 @@ namespace NyuukaNyuuryoku
                 dtForUpdate = new DataTable();
             }
 
-            D_Exclusive_Entity dee = new D_Exclusive_Entity
+            if (mOldArrivalNO != "")
             {
-                DataKBN = (int)Exclusive_BL.DataKbn.Nyuka,
-                Number = mOldArrivalNO,
-            };
+                D_Exclusive_Entity dee = new D_Exclusive_Entity
+                {
+                    DataKBN = (int)Exclusive_BL.DataKbn.Nyuka,
+                    Number = mOldArrivalNO,
+                };
 
-            bool ret = ebl.D_Exclusive_Delete(dee);
+                bool ret = ebl.D_Exclusive_Delete(dee);
 
-            mOldArrivalNO = "";
+                mOldArrivalNO = "";
+            }
             
         }
         
@@ -2884,7 +2887,7 @@ namespace NyuukaNyuuryoku
                 case 1:
                     w_Row = w_CtlRow + Vsb_Mei_0.Value;
 
-                    nyukaSu = bbl.Z_Set(lblHikiate.Text) != 0 ? lblHikiate.Text : mGrid.g_DArray[w_Row].SURYO;
+                    nyukaSu = bbl.Z_SetStr(bbl.Z_Set(lblHikiate.Text) + bbl.Z_Set(lblZaiko.Text));// + bbl.Z_Set( mGrid.g_DArray[w_Row].ReserveSu));  
                     VendorCD = mGrid.g_DArray[w_Row].VendorCD;
                     VendorName = mGrid.g_DArray[w_Row].VendorName;
                     OrderUnitPrice = mGrid.g_DArray[w_Row].OrderUnitPrice;
@@ -2899,7 +2902,7 @@ namespace NyuukaNyuuryoku
                 case 2:
                     w_Row = w_CtlRow + Vsb_Mei_1.Value;
 
-                    nyukaSu = bbl.Z_Set(lblZaiko.Text) != 0 ? lblZaiko.Text : mGrid2.g_DArray[w_Row].SURYO;
+                    nyukaSu = bbl.Z_SetStr(bbl.Z_Set(lblHikiate.Text) + bbl.Z_Set(lblZaiko.Text) + bbl.Z_Set(mGrid2.g_DArray[w_Row].ReserveSu));
                     VendorCD = mGrid2.g_DArray[w_Row].VendorCD;
                     VendorName = mGrid2.g_DArray[w_Row].VendorName;
                     OrderUnitPrice = mGrid2.g_DArray[w_Row].OrderUnitPrice;
@@ -2914,8 +2917,9 @@ namespace NyuukaNyuuryoku
 
             //追加入荷予定数＝画面.入荷総数－（ΣF10で追加した明細以外.入力した入荷数＋ΣF10で追加した明細の.予定数）							
             //この結果の追加入荷予定数＞０の場合だけ追加する
-
-            decimal OrderSuu = bbl.Z_Set(detailControls[(int)EIndex.Nyukasu].Text) - bbl.Z_Set(nyukaSu);
+            decimal OrderSuu = bbl.Z_Set(detailControls[(int)EIndex.Nyukasu].Text) - bbl.Z_Set(nyukaSu) ;
+            if (OrderSuu <= 0)
+                return;
 
             D_Order_Entity de = new D_Order_Entity
             {
@@ -2960,7 +2964,7 @@ namespace NyuukaNyuuryoku
                 mGrid2.g_DArray[i2].CustomerCD = row["CustomerCD"].ToString();
                 mGrid2.g_DArray[i2].Customer = row["CustomerName2"].ToString();
                 //mGrid2.g_DArray[i2].OrderSu = bbl.Z_SetStr(row["HachuSu"]);   // 
-                mGrid2.g_DArray[i2].ReserveSu = bbl.Z_SetStr(row["ReserveSu"]);   //
+                mGrid2.g_DArray[i2].ReserveSu =bbl.Z_SetStr(row["ReserveSu"]);   //
                 mGrid2.g_DArray[i2].SURYO = bbl.Z_SetStr(row["DR_ArrivalSu"]);
                 mGrid2.g_DArray[i2].DirectFlg = row["DirectFlg"].ToString();
                 mGrid2.g_DArray[i2].DeliveryPlanDate = row["DeliveryPlanDate"].ToString();
