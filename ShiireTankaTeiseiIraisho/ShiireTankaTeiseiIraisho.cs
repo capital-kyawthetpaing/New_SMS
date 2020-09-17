@@ -342,7 +342,7 @@ namespace ShiireTankaTeiseiIraisho
 
                 // Excelを起動する
                 Microsoft.Office.Interop.Excel.Application objExcel = new Microsoft.Office.Interop.Excel.Application();
-                objExcel.Visible = true;
+                objExcel.Visible = false;
                 try
                 {
                     //待機状態
