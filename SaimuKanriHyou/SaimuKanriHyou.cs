@@ -258,10 +258,13 @@ namespace SaimuKanriHyou
                 if (chkBalancePrint.Checked == true)
                     chk = 1;
                 else chk = 0;
+
+
+                CheckBeforeExport();
                 dtExport = saimukanriBL.D_MonthlyDebt_CSV_Report(mde, chk);
                 if(dtExport.Rows.Count > 0 )
                 {
-                    CheckBeforeExport();
+                    //CheckBeforeExport();
                     try
                     {
                         SaimuKanriKyou_Report smkh_Report = new SaimuKanriKyou_Report();
@@ -282,7 +285,7 @@ namespace SaimuKanriHyou
                                 smkh_Report.SetParameterValue("lblToday", dtExport.Rows[0]["Today"].ToString() + "  " + dtExport.Rows[0]["Now"].ToString());
                                 crv = vr.CrystalReportViewer1;
                                 crv.ReportSource = smkh_Report;
-                                vr.ShowDialog();
+                                //vr.ShowDialog();
 
                                 try
                                 {

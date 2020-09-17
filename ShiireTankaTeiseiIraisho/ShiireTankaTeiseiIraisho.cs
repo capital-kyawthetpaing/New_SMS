@@ -103,7 +103,7 @@ namespace ShiireTankaTeiseiIraisho
                 this.InitialControlArray();
                 base.Btn_F10.Text = "";
                 base.Btn_F11.Text = "";
-
+                base.Btn_F12.Text = "出力(F12)";
                 //起動時共通処理
                 base.StartProgram();
 
@@ -342,7 +342,7 @@ namespace ShiireTankaTeiseiIraisho
 
                 // Excelを起動する
                 Microsoft.Office.Interop.Excel.Application objExcel = new Microsoft.Office.Interop.Excel.Application();
-                objExcel.Visible = true;
+                objExcel.Visible = false;
                 try
                 {
                     //待機状態

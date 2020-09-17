@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base.Client;
 using Entity;
@@ -243,6 +237,7 @@ namespace Search
             {
                tjbl.ShowMessage("E128");
                 GvDetail.DataSource = null;
+                detailControls[0].Focus();
             }
         }
         private void DetailControl_KeyDown(object sender, KeyEventArgs e)

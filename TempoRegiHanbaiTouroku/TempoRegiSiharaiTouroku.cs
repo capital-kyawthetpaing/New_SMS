@@ -80,8 +80,8 @@ namespace TempoRegiHanbaiTouroku
             this.cdo = cdo;
             InitializeComponent();
 
-            ckmShop_Label7.Visible = false;
-            lblZan.Visible = false;
+            //ckmShop_Label7.Visible = false;
+            //lblZan.Visible = false;
             ShowCloseMessage = false;
 
             OperationMode = mode;
