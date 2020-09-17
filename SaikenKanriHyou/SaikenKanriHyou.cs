@@ -302,7 +302,7 @@ namespace SaikenKanriHyou
                                 skh_Report.SetDataSource(dtResult);
                                 skh_Report.Refresh();
                                 skh_Report.SetParameterValue("YYYYMM", txtTargetdate.Text);
-                                skh_Report.SetParameterValue("PrintDateTime", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("hh:mm"));
+                                skh_Report.SetParameterValue("PrintDateTime", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("HH:mm"));
 
 
                                 crvr = vr.CrystalReportViewer1;

@@ -245,6 +245,7 @@
             this.txtTargetdate.TabIndex = 0;
             this.txtTargetdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTargetdate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTargetdate.UseColorSizMode = false;
             // 
             // lbltargetdate
             // 
