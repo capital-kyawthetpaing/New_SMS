@@ -2437,7 +2437,7 @@ namespace NyuukaNyuuryoku
                         {
                             if (mGrid2.g_DArray[RW].StockNO == stockNO)
                             {
-                                if (bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != bbl.Z_Set(mGrid2.g_DArray[row].ReserveSu))
+                                if (bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid2.g_DArray[RW].SURYO) != bbl.Z_Set(mGrid2.g_DArray[RW].ReserveSu))
                                 {
                                     //Ｅ２５１
                                     bbl.ShowMessage("E251");
@@ -2505,7 +2505,7 @@ namespace NyuukaNyuuryoku
                         {
                             if (mGrid.g_DArray[RW].StockNO == stockNO)
                             {
-                                if (bbl.Z_Set(mGrid.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid.g_DArray[RW].ReserveSu) != bbl.Z_Set(mGrid.g_DArray[row].SURYO))
+                                if (bbl.Z_Set(mGrid.g_DArray[RW].SURYO) != 0 && bbl.Z_Set(mGrid.g_DArray[RW].ReserveSu) != bbl.Z_Set(mGrid.g_DArray[RW].SURYO))
                                 {
                                     //Ｅ２５１
                                     bbl.ShowMessage("E251");
@@ -2632,7 +2632,7 @@ namespace NyuukaNyuuryoku
             //dt.Columns.Add("MoveRows", typeof(int));
             dt.Columns.Add("ArrivalPlanNO", typeof(string));
             dt.Columns.Add("StockNO", typeof(string));
-            dt.Columns.Add("ReserveNO", typeof(string));
+            dt.Columns.Add("ReserveNO", typeof(string));   
             dt.Columns.Add("CustomerCD", typeof(string));
             dt.Columns.Add("ArrivalSu", typeof(int));
             dt.Columns.Add("ArrivalPlanKBN", typeof(int));

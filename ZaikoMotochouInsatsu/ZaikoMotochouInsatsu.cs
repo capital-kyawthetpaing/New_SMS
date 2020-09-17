@@ -105,7 +105,8 @@ namespace ZaikoMotochouInsatsu
         {
             if (!RequireCheck(new Control[] { txtTargetPeriodF, txtTargetPeriodT, cboSouko }))
                 return false;
-            
+            if (!txtTargetPeriodF.YearMonthCheck())
+                return false;
             if(Convert.ToInt32((txtTargetPeriodF.Text.ToString().Replace("/",""))) > Convert.ToInt32(txtTargetPeriodT.Text.ToString().Replace("/",""))) //対象期間(From)の方が大きい場合Error
             {
                 zmibl.ShowMessage("E103");
@@ -138,7 +139,7 @@ namespace ZaikoMotochouInsatsu
         {
             if (PrintMode != EPrintMode.DIRECT)
                 return;
-
+            
             if (ErrorCheck())
             {
                 sku_data = M_SKU_data();
@@ -326,6 +327,7 @@ namespace ZaikoMotochouInsatsu
         {
             if(!string.IsNullOrWhiteSpace(txtTargetPeriodF.Text))
             {
+                txtTargetPeriodF.YearMonthCheck();
                 txtTargetPeriodT.Text = txtTargetPeriodF.Text;
             }
         }
@@ -357,8 +359,21 @@ namespace ZaikoMotochouInsatsu
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "1";
-            string cmdLine =  InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " +  Mode + " " + YYYYMM;//parameter
+            //string cmdLine =  InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " +  Mode + " " + YYYYMM;//parameter
+            string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
             System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+        }
+
+        private void chkPrintRelated_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkPrintRelated.Checked)
+            {
+                rdoITEM.Checked = true;
+            }
+            else
+            {
+                rdoITEM.Checked = false;
+            }
         }
     }
 }

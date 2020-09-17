@@ -282,7 +282,7 @@ namespace SaimuKanriHyou
                                 smkh_Report.SetParameterValue("lblToday", dtExport.Rows[0]["Today"].ToString() + "  " + dtExport.Rows[0]["Now"].ToString());
                                 crv = vr.CrystalReportViewer1;
                                 crv.ReportSource = smkh_Report;
-                                vr.ShowDialog();
+                                //vr.ShowDialog();
 
                                 try
                                 {

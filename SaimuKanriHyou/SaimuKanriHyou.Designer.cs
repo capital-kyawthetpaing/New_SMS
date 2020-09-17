@@ -210,6 +210,7 @@
             this.txtTargetYear.TabIndex = 0;
             this.txtTargetYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTargetYear.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTargetYear.UseColorSizMode = false;
             this.txtTargetYear.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTargetYear_KeyDown);
             // 
             // lblchk

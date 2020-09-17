@@ -184,6 +184,7 @@ namespace SiiresakiZaikoYoteiHyou
                             worksheet.Name = "worksheet";
                             Microsoft.Office.Interop.Excel.Range excelRange = worksheet.UsedRange;
                             excelRange.NumberFormat = "#,###,###";//
+                            //excelRange.Worksheet.ListObjects["worksheet"].TableStyle = "none";
                             using (XLWorkbook wb = new XLWorkbook())
                             {
                                 wb.Worksheets.Add(dtExport,"worksheet");
@@ -201,6 +202,8 @@ namespace SiiresakiZaikoYoteiHyou
                                 wb.Worksheet("worksheet").Row(4).CopyTo(wb.Worksheet("worksheet").Row(3));
                                 wb.Worksheet("worksheet").Row(4).Delete();
                                 wb.Worksheet("worksheet").ShowGridLines = false;
+                                wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;
+                                wb.Worksheet("worksheet").Tables.FirstOrDefault().Theme = XLTableTheme.None;
                                 wb.SaveAs(savedialog.FileName);
                                 szybl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
                             }
