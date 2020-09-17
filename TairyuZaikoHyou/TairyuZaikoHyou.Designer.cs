@@ -354,7 +354,7 @@
             this.txtProductName.BorderColor = false;
             this.txtProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProductName.ClientColor = System.Drawing.Color.White;
-            this.txtProductName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtProductName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtProductName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtProductName.DecimalPlace = 0;
             this.txtProductName.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -365,9 +365,9 @@
             this.txtProductName.isMaxLengthErr = false;
             this.txtProductName.IsNumber = true;
             this.txtProductName.IsShop = false;
-            this.txtProductName.Length = 10;
+            this.txtProductName.Length = 80;
             this.txtProductName.Location = new System.Drawing.Point(123, 124);
-            this.txtProductName.MaxLength = 10;
+            this.txtProductName.MaxLength = 80;
             this.txtProductName.MoveNext = true;
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(500, 19);
@@ -1200,6 +1200,7 @@
             this.chkPrint.TabIndex = 14;
             this.chkPrint.Text = "する";
             this.chkPrint.UseVisualStyleBackColor = true;
+            this.chkPrint.CheckedChanged += new System.EventHandler(this.chkPrint_CheckedChanged);
             // 
             // ckM_Label28
             // 
