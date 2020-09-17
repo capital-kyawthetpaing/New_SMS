@@ -298,6 +298,7 @@ namespace SaikenKanriHyou
 
 
                                 crvr = vr.CrystalReportViewer1;
+                                
                                 //out log before print
                                 if (DResult == DialogResult.Yes)
                                 {
@@ -323,9 +324,9 @@ namespace SaikenKanriHyou
                                         System.Drawing.Printing.PrintDocument pDoc = new System.Drawing.Printing.PrintDocument();
 
                                         CrystalDecisions.Shared.PrintLayoutSettings PrintLayout = new CrystalDecisions.Shared.PrintLayoutSettings();
+                                       // CrystalDecisions.Shared.PrintLayoutSettings PrintLayout = new CrystalDecisions.Shared.P
 
                                         System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
-
 
 
                                         skh_Report.PrintOptions.PrinterName = "\\\\dataserver\\Canon LBP2900";
