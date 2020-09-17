@@ -169,9 +169,11 @@
             this.rdoRecent = new CKM_Controls.CKM_RadioButton();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
+            this.pannel_Header = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.pnl_Body.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.pannel_Header.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -188,28 +190,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pannel_Header);
             this.panel1.Controls.Add(this.Vsb_Mei_0);
             this.panel1.Controls.Add(this.pnl_Body);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.btnDisplay);
-            this.panel1.Controls.Add(this.btnShow);
-            this.panel1.Controls.Add(this.txtItemName);
-            this.panel1.Controls.Add(this.ckM_Label8);
-            this.panel1.Controls.Add(this.ckM_Label7);
-            this.panel1.Controls.Add(this.ckM_Label6);
-            this.panel1.Controls.Add(this.ScSKUCD_End);
-            this.panel1.Controls.Add(this.ScSKUCD_Start);
-            this.panel1.Controls.Add(this.ckM_Label5);
-            this.panel1.Controls.Add(this.ScCustomer_End);
-            this.panel1.Controls.Add(this.ScCustomer_Start);
-            this.panel1.Controls.Add(this.ckM_Label4);
-            this.panel1.Controls.Add(this.ckM_Label3);
-            this.panel1.Controls.Add(this.txtEndDate);
-            this.panel1.Controls.Add(this.txtStartDate);
-            this.panel1.Controls.Add(this.rdoAll);
-            this.panel1.Controls.Add(this.rdoRecent);
-            this.panel1.Controls.Add(this.ckM_Label2);
-            this.panel1.Controls.Add(this.ckM_Label1);
             this.panel1.Location = new System.Drawing.Point(2, 55);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1580, 630);
@@ -2962,7 +2946,7 @@
             this.btnDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDisplay.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnDisplay.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnDisplay.Location = new System.Drawing.Point(1310, 69);
+            this.btnDisplay.Location = new System.Drawing.Point(1422, 64);
             this.btnDisplay.Margin = new System.Windows.Forms.Padding(1);
             this.btnDisplay.Name = "btnDisplay";
             this.btnDisplay.Size = new System.Drawing.Size(75, 25);
@@ -2980,7 +2964,7 @@
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnShow.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnShow.Location = new System.Drawing.Point(1230, 69);
+            this.btnShow.Location = new System.Drawing.Point(1334, 65);
             this.btnShow.Margin = new System.Windows.Forms.Padding(1);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(75, 25);
@@ -3008,7 +2992,7 @@
             this.txtItemName.IsNumber = true;
             this.txtItemName.IsShop = false;
             this.txtItemName.Length = 80;
-            this.txtItemName.Location = new System.Drawing.Point(671, 76);
+            this.txtItemName.Location = new System.Drawing.Point(746, 71);
             this.txtItemName.MaxLength = 80;
             this.txtItemName.MoveNext = true;
             this.txtItemName.Name = "txtItemName";
@@ -3027,7 +3011,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(622, 78);
+            this.ckM_Label8.Location = new System.Drawing.Point(700, 74);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label8.TabIndex = 15;
@@ -3044,7 +3028,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(927, 54);
+            this.ckM_Label7.Location = new System.Drawing.Point(1002, 46);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label7.TabIndex = 14;
@@ -3061,7 +3045,7 @@
             this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(625, 53);
+            this.ckM_Label6.Location = new System.Drawing.Point(700, 49);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(40, 12);
             this.ckM_Label6.TabIndex = 13;
@@ -3082,7 +3066,7 @@
             this.ScSKUCD_End.IsCopy = false;
             this.ScSKUCD_End.LabelText = "";
             this.ScSKUCD_End.LabelVisible = false;
-            this.ScSKUCD_End.Location = new System.Drawing.Point(980, 42);
+            this.ScSKUCD_End.Location = new System.Drawing.Point(1052, 38);
             this.ScSKUCD_End.Margin = new System.Windows.Forms.Padding(0);
             this.ScSKUCD_End.Name = "ScSKUCD_End";
             this.ScSKUCD_End.SearchEnable = true;
@@ -3108,7 +3092,7 @@
             this.ScSKUCD_Start.IsCopy = false;
             this.ScSKUCD_Start.LabelText = "";
             this.ScSKUCD_Start.LabelVisible = false;
-            this.ScSKUCD_Start.Location = new System.Drawing.Point(671, 42);
+            this.ScSKUCD_Start.Location = new System.Drawing.Point(745, 40);
             this.ScSKUCD_Start.Margin = new System.Windows.Forms.Padding(0);
             this.ScSKUCD_Start.Name = "ScSKUCD_Start";
             this.ScSKUCD_Start.SearchEnable = true;
@@ -3130,7 +3114,7 @@
             this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(262, 79);
+            this.ckM_Label5.Location = new System.Drawing.Point(251, 74);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label5.TabIndex = 10;
@@ -3151,7 +3135,7 @@
             this.ScCustomer_End.IsCopy = false;
             this.ScCustomer_End.LabelText = "";
             this.ScCustomer_End.LabelVisible = false;
-            this.ScCustomer_End.Location = new System.Drawing.Point(317, 70);
+            this.ScCustomer_End.Location = new System.Drawing.Point(306, 65);
             this.ScCustomer_End.Margin = new System.Windows.Forms.Padding(0);
             this.ScCustomer_End.Name = "ScCustomer_End";
             this.ScCustomer_End.SearchEnable = true;
@@ -3177,7 +3161,7 @@
             this.ScCustomer_Start.IsCopy = false;
             this.ScCustomer_Start.LabelText = "";
             this.ScCustomer_Start.LabelVisible = false;
-            this.ScCustomer_Start.Location = new System.Drawing.Point(116, 70);
+            this.ScCustomer_Start.Location = new System.Drawing.Point(105, 65);
             this.ScCustomer_Start.Margin = new System.Windows.Forms.Padding(0);
             this.ScCustomer_Start.Name = "ScCustomer_Start";
             this.ScCustomer_Start.SearchEnable = true;
@@ -3199,7 +3183,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(66, 78);
+            this.ckM_Label4.Location = new System.Drawing.Point(55, 73);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label4.TabIndex = 7;
@@ -3216,7 +3200,7 @@
             this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(262, 54);
+            this.ckM_Label3.Location = new System.Drawing.Point(251, 49);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label3.TabIndex = 6;
@@ -3244,7 +3228,7 @@
             this.txtEndDate.IsNumber = true;
             this.txtEndDate.IsShop = false;
             this.txtEndDate.Length = 10;
-            this.txtEndDate.Location = new System.Drawing.Point(318, 51);
+            this.txtEndDate.Location = new System.Drawing.Point(307, 46);
             this.txtEndDate.MaxLength = 10;
             this.txtEndDate.MoveNext = true;
             this.txtEndDate.Name = "txtEndDate";
@@ -3274,7 +3258,7 @@
             this.txtStartDate.IsNumber = true;
             this.txtStartDate.IsShop = false;
             this.txtStartDate.Length = 10;
-            this.txtStartDate.Location = new System.Drawing.Point(116, 51);
+            this.txtStartDate.Location = new System.Drawing.Point(105, 46);
             this.txtStartDate.MaxLength = 10;
             this.txtStartDate.MoveNext = true;
             this.txtStartDate.Name = "txtStartDate";
@@ -3288,7 +3272,7 @@
             // 
             this.rdoAll.AutoSize = true;
             this.rdoAll.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.rdoAll.Location = new System.Drawing.Point(737, 21);
+            this.rdoAll.Location = new System.Drawing.Point(811, 12);
             this.rdoAll.Name = "rdoAll";
             this.rdoAll.Size = new System.Drawing.Size(75, 16);
             this.rdoAll.TabIndex = 3;
@@ -3300,7 +3284,7 @@
             this.rdoRecent.AutoSize = true;
             this.rdoRecent.Checked = true;
             this.rdoRecent.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.rdoRecent.Location = new System.Drawing.Point(618, 21);
+            this.rdoRecent.Location = new System.Drawing.Point(692, 12);
             this.rdoRecent.Name = "rdoRecent";
             this.rdoRecent.Size = new System.Drawing.Size(114, 16);
             this.rdoRecent.TabIndex = 2;
@@ -3317,7 +3301,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(40, 54);
+            this.ckM_Label2.Location = new System.Drawing.Point(29, 49);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label2.TabIndex = 1;
@@ -3334,13 +3318,39 @@
             this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(557, 22);
+            this.ckM_Label1.Location = new System.Drawing.Point(631, 13);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label1.TabIndex = 0;
             this.ckM_Label1.Text = "表示内容";
             this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pannel_Header
+            // 
+            this.pannel_Header.Controls.Add(this.txtStartDate);
+            this.pannel_Header.Controls.Add(this.ckM_Label2);
+            this.pannel_Header.Controls.Add(this.txtEndDate);
+            this.pannel_Header.Controls.Add(this.ckM_Label3);
+            this.pannel_Header.Controls.Add(this.btnDisplay);
+            this.pannel_Header.Controls.Add(this.ckM_Label4);
+            this.pannel_Header.Controls.Add(this.btnShow);
+            this.pannel_Header.Controls.Add(this.ScCustomer_Start);
+            this.pannel_Header.Controls.Add(this.txtItemName);
+            this.pannel_Header.Controls.Add(this.ScCustomer_End);
+            this.pannel_Header.Controls.Add(this.ckM_Label8);
+            this.pannel_Header.Controls.Add(this.ckM_Label5);
+            this.pannel_Header.Controls.Add(this.ckM_Label7);
+            this.pannel_Header.Controls.Add(this.ScSKUCD_Start);
+            this.pannel_Header.Controls.Add(this.ckM_Label6);
+            this.pannel_Header.Controls.Add(this.ckM_Label1);
+            this.pannel_Header.Controls.Add(this.ScSKUCD_End);
+            this.pannel_Header.Controls.Add(this.rdoRecent);
+            this.pannel_Header.Controls.Add(this.rdoAll);
+            this.pannel_Header.Location = new System.Drawing.Point(13, 5);
+            this.pannel_Header.Name = "pannel_Header";
+            this.pannel_Header.Size = new System.Drawing.Size(1510, 130);
+            this.pannel_Header.TabIndex = 128;
             // 
             // FrmMasterTouroku_CustomerSKUPrice
             // 
@@ -3359,10 +3369,11 @@
             this.Load += new System.EventHandler(this.FrmMasterTouroku_CustomerSKUPrice_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.pnl_Body.ResumeLayout(false);
             this.pnl_Body.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.pannel_Header.ResumeLayout(false);
+            this.pannel_Header.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3511,6 +3522,7 @@
         private Search.CKM_SearchControl SC_Customer_4;
         private Search.CKM_SearchControl SC_Customer_5;
         private System.Windows.Forms.VScrollBar Vsb_Mei_0;
+        private System.Windows.Forms.Panel pannel_Header;
     }
 }
 

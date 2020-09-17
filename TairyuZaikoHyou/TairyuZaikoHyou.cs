@@ -191,8 +191,8 @@ namespace TairyuZaikoHyou
                     MainVendorCD = Sc_Maker.TxtCode.Text,
                     BrandCD = Sc_Brand.TxtCode.Text,
                     SKUName = txtProductName.Text,
-                    JanCD = txtJANCD.Text,
-                    SKUCD = txtSKUCD.Text,
+                    JanCD = ScJanCD.TxtCode.Text,
+                    SKUCD = ScSKUCD.TxtCode.Text,
                     ITemCD = txtItem.Text,
                     MakerItem = txtManufactureCD.Text,
                     SportsCD = Sc_Sports.TxtCode.Text,
@@ -330,6 +330,19 @@ namespace TairyuZaikoHyou
         {
             Sc_Sports.ChangeDate = bbl.GetDate();
             Sc_Sports.Value1 = "202";
+        }
+
+        private void chkPrint_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkPrint.Checked == true)
+            {
+                rdoItem.Checked = true;
+            }
+            else
+            {
+                rdoItem.Checked = false;
+                rdoProductCD.Checked = false;
+            }
         }
     }
 }

@@ -240,15 +240,17 @@
             this.chkPrintRelated.TabIndex = 7;
             this.chkPrintRelated.Text = " 関連印字する";
             this.chkPrintRelated.UseVisualStyleBackColor = true;
+            this.chkPrintRelated.CheckedChanged += new System.EventHandler(this.chkPrintRelated_CheckedChanged);
             // 
             // txtSKUName
             // 
             this.txtSKUName.AllowMinus = false;
             this.txtSKUName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSKUName.BackColor = System.Drawing.Color.White;
+            this.txtSKUName.BorderColor = false;
             this.txtSKUName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSKUName.ClientColor = System.Drawing.Color.White;
-            this.txtSKUName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtSKUName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtSKUName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtSKUName.DecimalPlace = 0;
             this.txtSKUName.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -267,6 +269,7 @@
             this.txtSKUName.Size = new System.Drawing.Size(500, 19);
             this.txtSKUName.TabIndex = 6;
             this.txtSKUName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSKUName.UseColorSizMode = false;
             // 
             // cboSouko
             // 
@@ -290,6 +293,7 @@
             this.txtTargetPeriodT.AllowMinus = false;
             this.txtTargetPeriodT.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTargetPeriodT.BackColor = System.Drawing.Color.White;
+            this.txtTargetPeriodT.BorderColor = false;
             this.txtTargetPeriodT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTargetPeriodT.ClientColor = System.Drawing.Color.White;
             this.txtTargetPeriodT.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -311,6 +315,7 @@
             this.txtTargetPeriodT.Size = new System.Drawing.Size(100, 19);
             this.txtTargetPeriodT.TabIndex = 9;
             this.txtTargetPeriodT.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTargetPeriodT.UseColorSizMode = false;
             this.txtTargetPeriodT.Visible = false;
             // 
             // txtTargetPeriodF
@@ -318,6 +323,7 @@
             this.txtTargetPeriodF.AllowMinus = false;
             this.txtTargetPeriodF.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTargetPeriodF.BackColor = System.Drawing.Color.White;
+            this.txtTargetPeriodF.BorderColor = false;
             this.txtTargetPeriodF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTargetPeriodF.ClientColor = System.Drawing.Color.White;
             this.txtTargetPeriodF.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -340,6 +346,7 @@
             this.txtTargetPeriodF.TabIndex = 0;
             this.txtTargetPeriodF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTargetPeriodF.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTargetPeriodF.UseColorSizMode = false;
             this.txtTargetPeriodF.Leave += new System.EventHandler(this.txtTargetPeriodF_Leave);
             // 
             // ckM_Label8

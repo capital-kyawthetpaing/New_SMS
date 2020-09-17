@@ -110,7 +110,7 @@ BEGIN
           ,(SELECT A.Char4 FROM M_MultiPorpose A WHERE A.ID='301' AND A.[Key] = DH.StoreCD) AS Print4
           ,(SELECT A.ZipCD1 + '-' + A.ZipCD2 + ' ' + Address1 + ' ' + Address2 FROM M_Control AS A WHERE A.[MainKey] = 1) AS ZIP
           ,(SELECT A.CompanyName FROM M_Control AS A WHERE A.[MainKey] = 1) AS CompanyName
-          ,(SELECT '‡„' + A.TelephoneNO + ' FAX' + A.FaxNO FROM M_Control AS A WHERE A.[MainKey] = 1) AS TEL
+          ,(SELECT '‡„' +' '+ A.TelephoneNO + ' FAX' +' '+ A.FaxNO FROM M_Control AS A WHERE A.[MainKey] = 1) AS TEL
           
       FROM D_Purchase DH
       INNER JOIN D_PurchaseDetails AS DM 
