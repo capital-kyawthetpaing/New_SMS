@@ -16,7 +16,6 @@ namespace Search
     public partial class Search_ZaikoIdouNO : FrmSubForm
     {
         private const string ProNm = "移動番号検索";
-
         private enum EIndex : int
         {
             DayStart,
@@ -196,6 +195,7 @@ namespace Search
             {
                zibl.ShowMessage("E128");
                 GvDetail.DataSource = null;
+                detailControls[0].Focus();
             }
         }
         private void DetailControl_KeyDown(object sender, KeyEventArgs e)
@@ -278,6 +278,9 @@ namespace Search
                     }
 
                     break;
+
+                case (int)EIndex.MovePurposeKBN:
+                        break;
 
                 case (int)EIndex.FromSoukoCD:
 
