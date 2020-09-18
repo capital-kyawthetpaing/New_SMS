@@ -20,7 +20,7 @@ namespace NyuukaNyuuryoku
             internal string RowNo;     // 
             internal string SURYO;      //入荷数
             internal string OrderSu;      //
-            internal string ReserveSu;      //
+            internal string ReserveSu;      //予定数
             internal string DirectFlg;      //
             internal string DeliveryPlanDate;
             internal string Customer;
@@ -42,6 +42,7 @@ namespace NyuukaNyuuryoku
             internal string OrderTaxRitsu;
             internal string OrderWayKBN;
             internal string AliasKBN;
+            internal bool isCopy;
         }
 
         //列番号定数

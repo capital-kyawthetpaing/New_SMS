@@ -204,7 +204,7 @@
             this.CB_Soko.MaxLength = 10;
             this.CB_Soko.MoveNext = true;
             this.CB_Soko.Name = "CB_Soko";
-            this.CB_Soko.Size = new System.Drawing.Size(170, 20);
+            this.CB_Soko.Size = new System.Drawing.Size(270, 20);
             this.CB_Soko.TabIndex = 1;
             this.CB_Soko.Tag = "";
             // 
@@ -217,7 +217,7 @@
             this.ckM_LB_Tanaban.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_Tanaban.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_Tanaban.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_Tanaban.Location = new System.Drawing.Point(388, 15);
+            this.ckM_LB_Tanaban.Location = new System.Drawing.Point(412, 14);
             this.ckM_LB_Tanaban.Name = "ckM_LB_Tanaban";
             this.ckM_LB_Tanaban.Size = new System.Drawing.Size(31, 12);
             this.ckM_LB_Tanaban.TabIndex = 4;
@@ -246,7 +246,7 @@
             this.TB_RackNoF.IsNumber = true;
             this.TB_RackNoF.IsShop = false;
             this.TB_RackNoF.Length = 10;
-            this.TB_RackNoF.Location = new System.Drawing.Point(422, 10);
+            this.TB_RackNoF.Location = new System.Drawing.Point(447, 10);
             this.TB_RackNoF.MaxLength = 10;
             this.TB_RackNoF.MoveNext = true;
             this.TB_RackNoF.Name = "TB_RackNoF";
@@ -264,7 +264,7 @@
             this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(518, 14);
+            this.ckM_Label3.Location = new System.Drawing.Point(530, 14);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label3.TabIndex = 6;
@@ -1572,7 +1572,7 @@
             this.ckM_LB_Kijunbi.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_Kijunbi.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_Kijunbi.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_Kijunbi.Location = new System.Drawing.Point(1286, 14);
+            this.ckM_LB_Kijunbi.Location = new System.Drawing.Point(1306, 14);
             this.ckM_LB_Kijunbi.Name = "ckM_LB_Kijunbi";
             this.ckM_LB_Kijunbi.Size = new System.Drawing.Size(44, 12);
             this.ckM_LB_Kijunbi.TabIndex = 88;
@@ -1720,7 +1720,7 @@
             this.LB_ChangeDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.LB_ChangeDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LB_ChangeDate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_ChangeDate.Location = new System.Drawing.Point(1334, 10);
+            this.LB_ChangeDate.Location = new System.Drawing.Point(1354, 10);
             this.LB_ChangeDate.Name = "LB_ChangeDate";
             this.LB_ChangeDate.Size = new System.Drawing.Size(80, 19);
             this.LB_ChangeDate.TabIndex = 94;
@@ -2026,7 +2026,7 @@
             this.商品名.HeaderText = "商品名";
             this.商品名.Name = "商品名";
             this.商品名.ReadOnly = true;
-            this.商品名.Width = 400;
+            this.商品名.Width = 650;
             // 
             // カラー
             // 
@@ -2034,7 +2034,7 @@
             this.カラー.HeaderText = "カラー";
             this.カラー.Name = "カラー";
             this.カラー.ReadOnly = true;
-            this.カラー.Width = 130;
+            this.カラー.Width = 135;
             // 
             // サイズ
             // 
@@ -2042,6 +2042,7 @@
             this.サイズ.HeaderText = "サイズ";
             this.サイズ.Name = "サイズ";
             this.サイズ.ReadOnly = true;
+            this.サイズ.Width = 140;
             // 
             // 店舗名
             // 
@@ -2049,6 +2050,7 @@
             this.店舗名.HeaderText = "店舗";
             this.店舗名.Name = "店舗名";
             this.店舗名.ReadOnly = true;
+            this.店舗名.Width = 260;
             // 
             // sokuname
             // 
@@ -2056,6 +2058,7 @@
             this.sokuname.HeaderText = "倉庫";
             this.sokuname.Name = "sokuname";
             this.sokuname.ReadOnly = true;
+            this.sokuname.Width = 260;
             // 
             // sokucd
             // 
@@ -2142,7 +2145,7 @@
             this.colBrand.HeaderText = "ブランド";
             this.colBrand.Name = "colBrand";
             this.colBrand.ReadOnly = true;
-            this.colBrand.Width = 150;
+            this.colBrand.Width = 250;
             // 
             // colItem
             // 
@@ -2158,7 +2161,7 @@
             this.メーカー商品CD.HeaderText = "メーカー商品CD";
             this.メーカー商品CD.Name = "メーカー商品CD";
             this.メーカー商品CD.ReadOnly = true;
-            this.メーカー商品CD.Width = 200;
+            this.メーカー商品CD.Width = 350;
             // 
             // 最速入荷日
             // 

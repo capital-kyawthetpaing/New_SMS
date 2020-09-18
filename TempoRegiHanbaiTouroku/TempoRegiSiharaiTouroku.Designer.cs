@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.txtDiscount = new CKM_Controls.CKM_TextBox();
-            this.ckmShop_Label7 = new CKM_Controls.CKMShop_Label();
             this.txtPoint = new CKM_Controls.CKM_TextBox();
             this.ckmShop_Label9 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label12 = new CKM_Controls.CKMShop_Label();
@@ -70,8 +69,6 @@
             this.lblShiharaiKei = new CKM_Controls.CKMShop_Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.lblMaeZan = new CKM_Controls.CKMShop_Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.lblZan = new CKM_Controls.CKMShop_Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.lblJuchuuTaxRitsu = new CKM_Controls.CKMShop_Label();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -81,7 +78,6 @@
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel13.SuspendLayout();
             this.SuspendLayout();
@@ -116,23 +112,6 @@
             this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtDiscount.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             this.txtDiscount.UseColorSizMode = false;
-            // 
-            // ckmShop_Label7
-            // 
-            this.ckmShop_Label7.AutoSize = true;
-            this.ckmShop_Label7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.ckmShop_Label7.BackColor = System.Drawing.Color.Transparent;
-            this.ckmShop_Label7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
-            this.ckmShop_Label7.FontBold = true;
-            this.ckmShop_Label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label7.Location = new System.Drawing.Point(626, 370);
-            this.ckmShop_Label7.Name = "ckmShop_Label7";
-            this.ckmShop_Label7.Size = new System.Drawing.Size(44, 30);
-            this.ckmShop_Label7.TabIndex = 28;
-            this.ckmShop_Label7.Text = "残";
-            this.ckmShop_Label7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
-            this.ckmShop_Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtPoint
             // 
@@ -935,31 +914,6 @@
             this.lblMaeZan.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblMaeZan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // panel11
-            // 
-            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel11.Controls.Add(this.lblZan);
-            this.panel11.Location = new System.Drawing.Point(688, 361);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(230, 42);
-            this.panel11.TabIndex = 110;
-            // 
-            // lblZan
-            // 
-            this.lblZan.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblZan.BackColor = System.Drawing.Color.Transparent;
-            this.lblZan.Font = new System.Drawing.Font("MS Gothic", 26F);
-            this.lblZan.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium0;
-            this.lblZan.FontBold = false;
-            this.lblZan.ForeColor = System.Drawing.Color.Black;
-            this.lblZan.Location = new System.Drawing.Point(36, 2);
-            this.lblZan.Name = "lblZan";
-            this.lblZan.Size = new System.Drawing.Size(200, 35);
-            this.lblZan.TabIndex = 94;
-            this.lblZan.Text = "999,999";
-            this.lblZan.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblZan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // panel12
             // 
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1018,7 +972,6 @@
             this.ClientSize = new System.Drawing.Size(1484, 811);
             this.Controls.Add(this.panel13);
             this.Controls.Add(this.panel12);
-            this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel2);
@@ -1054,13 +1007,11 @@
             this.Controls.Add(this.ckmShop_Label12);
             this.Controls.Add(this.txtPoint);
             this.Controls.Add(this.ckmShop_Label9);
-            this.Controls.Add(this.ckmShop_Label7);
             this.Controls.Add(this.txtDiscount);
             this.Name = "TempoRegiSiharaiTouroku";
             this.Text = "TempoRegiHanbaiTouroku";
             this.Load += new System.EventHandler(this.Form_Load);
             this.Controls.SetChildIndex(this.txtDiscount, 0);
-            this.Controls.SetChildIndex(this.ckmShop_Label7, 0);
             this.Controls.SetChildIndex(this.ckmShop_Label9, 0);
             this.Controls.SetChildIndex(this.txtPoint, 0);
             this.Controls.SetChildIndex(this.ckmShop_Label12, 0);
@@ -1096,7 +1047,6 @@
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.panel9, 0);
             this.Controls.SetChildIndex(this.panel10, 0);
-            this.Controls.SetChildIndex(this.panel11, 0);
             this.Controls.SetChildIndex(this.panel12, 0);
             this.Controls.SetChildIndex(this.panel13, 0);
             this.panel3.ResumeLayout(false);
@@ -1104,7 +1054,6 @@
             this.panel2.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1114,7 +1063,6 @@
 
         #endregion
         private CKM_Controls.CKM_TextBox txtDiscount;
-        private CKM_Controls.CKMShop_Label ckmShop_Label7;
         private CKM_Controls.CKM_TextBox txtPoint;
         private CKM_Controls.CKMShop_Label ckmShop_Label9;
         private CKM_Controls.CKMShop_Label ckmShop_Label12;
@@ -1155,8 +1103,6 @@
         private CKM_Controls.CKMShop_Label lblShiharaiKei;
         private System.Windows.Forms.Panel panel10;
         private CKM_Controls.CKMShop_Label lblMaeZan;
-        private System.Windows.Forms.Panel panel11;
-        private CKM_Controls.CKMShop_Label lblZan;
         private System.Windows.Forms.Panel panel12;
         private CKM_Controls.CKMShop_Label lblJuchuuTaxRitsu;
         private System.Windows.Forms.Panel panel13;

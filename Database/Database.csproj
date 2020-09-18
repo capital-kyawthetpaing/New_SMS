@@ -124,6 +124,7 @@
     <Content Include="StoreProcedure\D_Instruction_Select.sql" />
     <Content Include="StoreProcedure\D_Instruction_SelectAll.sql" />
     <Content Include="StoreProcedure\D_Instruction_SelectData.sql" />
+    <Content Include="StoreProcedure\D_Instruction_SelectDataFromJuchu.sql" />
     <Content Include="StoreProcedure\D_Instruction_Update.sql" />
     <Content Include="StoreProcedure\D_InventoryControl_Select.sql" />
     <Content Include="StoreProcedure\D_InventoryProcessing_Select.sql" />
@@ -247,6 +248,7 @@
     <Content Include="StoreProcedure\D_Stock_Select.sql" />
     <Content Include="StoreProcedure\D_Stock_SelectRackNO.sql" />
     <Content Include="StoreProcedure\D_Stock_SelectSuryo.sql" />
+    <Content Include="StoreProcedure\D_Stock_SelectZaiko.sql" />
     <Content Include="StoreProcedure\D_Stock_Update.sql" />
     <Content Include="StoreProcedure\D_StoreCalculationDelete.sql" />
     <Content Include="StoreProcedure\D_StoreCalculation_Insert_Update.sql" />
@@ -569,6 +571,7 @@
     <Content Include="StoreProcedure\PRC_ShiireNyuuryokuF.sql" />
     <Content Include="StoreProcedure\PRC_ShukkaNyuuryoku.sql" />
     <Content Include="StoreProcedure\PRC_ShukkaShijiTouroku.sql" />
+    <Content Include="StoreProcedure\PRC_ShukkaSiziTourokuFromJuchuu.sql" />
     <Content Include="StoreProcedure\PRC_ShukkaUriageUpdate.sql" />
     <Content Include="StoreProcedure\PRC_SiharaiToroku.sql" />
     <Content Include="StoreProcedure\PRC_TanaoroshiShimeShori.sql" />
@@ -577,6 +580,8 @@
     <Content Include="StoreProcedure\PRC_TempoRegiHanbaiTouroku.sql" />
     <Content Include="StoreProcedure\PRC_TempoShukkaNyuuryoku.sql" />
     <Content Include="StoreProcedure\PRC_TempoUriageNyuuryoku.sql" />
+    <Content Include="StoreProcedure\PRC_TenzikaiJuchuuJouhouHurikaeShori.sql" />
+    <Content Include="StoreProcedure\PRC_UriageNyuuryoku.sql" />
     <Content Include="StoreProcedure\PRC_ZaikoIdouIraiNyuuryoku.sql" />
     <Content Include="StoreProcedure\PRC_ZaikoIdouNyuuryoku.sql" />
     <Content Include="StoreProcedure\PRC_ZaikoIdou_A2B2.sql" />
@@ -591,6 +596,7 @@
     <Content Include="StoreProcedure\Search_PlanArrival.sql" />
     <Content Include="StoreProcedure\SelectApprovalData.sql" />
     <Content Include="StoreProcedure\SelectDataForNyukin.sql" />
+    <Content Include="StoreProcedure\SelectHonshaStore.sql" />
     <Content Include="StoreProcedure\SelectPrintData.sql" />
     <Content Include="StoreProcedure\Select_PaymentClose_ValueCheck.sql" />
     <Content Include="StoreProcedure\Select_SearchName.sql" />
@@ -605,6 +611,8 @@
     <Content Include="StoreProcedure\sp_upgraddiagrams.sql" />
     <Content Include="StoreProcedure\TanaireList_DataSelect.sql" />
     <Content Include="StoreProcedure\test.sql" />
+    <Content Include="StoreProcedure\Trg_DJuchuuDetails_Insert.sql" />
+    <Content Include="StoreProcedure\Trg_DJuchuuDetails_Update.sql" />
     <Content Include="StoreProcedure\Trg_Juchuu.sql" />
     <Content Include="StoreProcedure\Trg_Mitsumori.sql" />
     <Content Include="StoreProcedure\Trg_Order.sql" />

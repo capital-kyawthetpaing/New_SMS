@@ -399,6 +399,7 @@ namespace DL
             AddParam(command, "@SKUCD", SqlDbType.VarChar, de.SKUCD);
             AddParam(command, "@SKUName", SqlDbType.VarChar, de.SKUName);
             AddParam(command, "@JANCD", SqlDbType.VarChar, de.JANCD);
+            AddParam(command, "@MakerItem", SqlDbType.VarChar, de.MakerItem);
             AddParam(command, "@ColorName", SqlDbType.VarChar, de.ColorName);
             AddParam(command, "@SizeName", SqlDbType.VarChar, de.SizeName);
             AddParam(command, "@OrderSuu", SqlDbType.Int, de.OrderSuu);

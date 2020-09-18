@@ -1369,7 +1369,8 @@ namespace ShiireNyuuryokuFromNyuuka
                     mGrid.g_DArray[i].PurchaseRows = Convert.ToInt16(row["PurchaseRows"]);
                     mGrid.g_DArray[i].OrderNO = row["OrderNO"].ToString();
                     mGrid.g_DArray[i].OrderRows = row["OrderRows"].ToString();
-                    
+                    mGrid.g_DArray[i].PurchaseZumiSu = Convert.ToInt16(row["PurchaseZumiSu"]);
+
                     if (m_MaxPurchaseGyoNo < mGrid.g_DArray[i].PurchaseRows)
                         m_MaxPurchaseGyoNo = mGrid.g_DArray[i].PurchaseRows;
 
@@ -1912,7 +1913,7 @@ namespace ShiireNyuuryokuFromNyuuka
             if (!chkAll && !changeYmd)
             {
                 int w_CtlRow = row - Vsb_Mei_0.Value;
-                if (w_CtlRow < ClsGridShiire.gc_P_GYO)
+                if (w_CtlRow >= 0 && w_CtlRow < ClsGridShiire.gc_P_GYO)
                     if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
                 {
                     if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
@@ -1961,6 +1962,14 @@ namespace ShiireNyuuryokuFromNyuuka
                     {
                         //Ｅ１０２
                         bbl.ShowMessage("E102");
+                        return false;
+                    }
+
+                    //入力値 ＞ 入荷数－仕入済数 の場合、Error 「入力された値は入荷数を超えるため、入力できません。入荷数：{0}　仕入済数：{1}」
+                    if(bbl.Z_Set(mGrid.g_DArray[row].PurchaseSu) > bbl.Z_Set(mGrid.g_DArray[row].ArrivalSu)- mGrid.g_DArray[row].PurchaseZumiSu)
+                    {
+                        //Ｅ２６３
+                        bbl.ShowMessage("E263", bbl.Z_SetStr(mGrid.g_DArray[row].ArrivalSu), bbl.Z_SetStr(mGrid.g_DArray[row].PurchaseZumiSu));
                         return false;
                     }
                     break;
@@ -3157,7 +3166,7 @@ namespace ShiireNyuuryokuFromNyuuka
             {
                 ChangeBackColor(w_Row, 1);
                 //Onの時、仕入数以降、入力可
-                mGrid.g_DArray[w_Row].PurchaseSu = mGrid.g_DArray[w_Row].ArrivalSu;
+                mGrid.g_DArray[w_Row].PurchaseSu =bbl.Z_SetStr( bbl.Z_Set( mGrid.g_DArray[w_Row].ArrivalSu) - mGrid.g_DArray[w_Row].PurchaseZumiSu);
                 CheckGrid((int)ClsGridShiire.ColNO.PurchaseSu, w_Row);
             }
             else

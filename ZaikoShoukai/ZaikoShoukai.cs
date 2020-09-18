@@ -107,8 +107,8 @@ namespace ZaikoShoukai
                 msT_Entity = GetTagEntity();
                 ds_Entity = GetStockEntity();
 
-                // dtData = zaibl.ZaikoShoukai_Search(msku_Entity, msInfo_Entity, msT_Entity,ds_Entity, type);
-              //  dtData = zaibl.ZaikoShoukai_Search(null, null, null, null, null);
+                dtData = zaibl.ZaikoShoukai_Search(msku_Entity, msInfo_Entity, msT_Entity,ds_Entity, type);
+              
                 if (dtData.Rows.Count > 0)
                 {
                     GV_Zaiko.Refresh();
@@ -435,8 +435,6 @@ namespace ZaikoShoukai
             Maker.ChangeDate = bbl.GetDate();
             Maker.Value1 = "1";
         }
-
-        
         private void sku_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if(!String.IsNullOrEmpty(sku.TxtCode.Text))
