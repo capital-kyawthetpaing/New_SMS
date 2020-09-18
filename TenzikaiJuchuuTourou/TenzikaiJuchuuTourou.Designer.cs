@@ -72,7 +72,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.Vsb_Mei_0 = new System.Windows.Forms.VScrollBar();
             this.panel_5 = new System.Windows.Forms.Panel();
-            this.zeinutanka_5 = new CKM_Controls.CKM_TextBox();
+            this.zeinutanku_5 = new CKM_Controls.CKM_TextBox();
             this.zeinu_5 = new CKM_Controls.CKM_TextBox();
             this.kobetsuhanbai_5 = new CKM_Controls.CKM_TextBox();
             this.shagaibikou_5 = new CKM_Controls.CKM_TextBox();
@@ -98,9 +98,9 @@
             this.color_5 = new CKM_Controls.CKM_TextBox();
             this.shouhin_5 = new CKM_Controls.CKM_TextBox();
             this.scjan_5 = new Search.CKM_SearchControl();
-            this.label44 = new System.Windows.Forms.Label();
+            this.lbl_5 = new System.Windows.Forms.Label();
             this.panel_4 = new System.Windows.Forms.Panel();
-            this.zeinutanka_4 = new CKM_Controls.CKM_TextBox();
+            this.zeinutanku_4 = new CKM_Controls.CKM_TextBox();
             this.zeinu_4 = new CKM_Controls.CKM_TextBox();
             this.kobetsuhanbai_4 = new CKM_Controls.CKM_TextBox();
             this.shagaibikou_4 = new CKM_Controls.CKM_TextBox();
@@ -126,9 +126,9 @@
             this.color_4 = new CKM_Controls.CKM_TextBox();
             this.shouhin_4 = new CKM_Controls.CKM_TextBox();
             this.scjan_4 = new Search.CKM_SearchControl();
-            this.label40 = new System.Windows.Forms.Label();
+            this.lbl_4 = new System.Windows.Forms.Label();
             this.panel_3 = new System.Windows.Forms.Panel();
-            this.zeinutanka_3 = new CKM_Controls.CKM_TextBox();
+            this.zeinutanku_3 = new CKM_Controls.CKM_TextBox();
             this.zeinu_3 = new CKM_Controls.CKM_TextBox();
             this.kobetsuhanbai_3 = new CKM_Controls.CKM_TextBox();
             this.shagaibikou_3 = new CKM_Controls.CKM_TextBox();
@@ -154,9 +154,9 @@
             this.color_3 = new CKM_Controls.CKM_TextBox();
             this.shouhin_3 = new CKM_Controls.CKM_TextBox();
             this.scjan_3 = new Search.CKM_SearchControl();
-            this.label36 = new System.Windows.Forms.Label();
+            this.lbl_3 = new System.Windows.Forms.Label();
             this.panel_2 = new System.Windows.Forms.Panel();
-            this.zeinutanka_2 = new CKM_Controls.CKM_TextBox();
+            this.zeinutanku_2 = new CKM_Controls.CKM_TextBox();
             this.zeinu_2 = new CKM_Controls.CKM_TextBox();
             this.kobetsuhanbai_2 = new CKM_Controls.CKM_TextBox();
             this.shagaibikou_2 = new CKM_Controls.CKM_TextBox();
@@ -182,7 +182,7 @@
             this.color_2 = new CKM_Controls.CKM_TextBox();
             this.shouhin_2 = new CKM_Controls.CKM_TextBox();
             this.scjan_2 = new Search.CKM_SearchControl();
-            this.label32 = new System.Windows.Forms.Label();
+            this.lbl_2 = new System.Windows.Forms.Label();
             this.panel_1 = new System.Windows.Forms.Panel();
             this.zeinutanku_1 = new CKM_Controls.CKM_TextBox();
             this.kobetsuhanbai_1 = new CKM_Controls.CKM_TextBox();
@@ -236,7 +236,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.sc_Tenji = new Search.CKM_SearchControl();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.ckM_SearchControl1 = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnl_haisou.SuspendLayout();
@@ -256,14 +255,12 @@
             // 
             // PanelHeader
             // 
-            this.PanelHeader.Controls.Add(this.ckM_SearchControl1);
             this.PanelHeader.Controls.Add(this.sc_Tenji);
             this.PanelHeader.Controls.Add(this.ckM_Label1);
             this.PanelHeader.Size = new System.Drawing.Size(1787, 91);
             this.PanelHeader.TabIndex = 0;
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.sc_Tenji, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_SearchControl1, 0);
             // 
             // PanelSearch
             // 
@@ -1173,10 +1170,11 @@
             this.Vsb_Mei_0.Name = "Vsb_Mei_0";
             this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 320);
             this.Vsb_Mei_0.TabIndex = 310;
+            this.Vsb_Mei_0.ValueChanged += new System.EventHandler(this.Vsb_Mei_0_ValueChanged);
             // 
             // panel_5
             // 
-            this.panel_5.Controls.Add(this.zeinutanka_5);
+            this.panel_5.Controls.Add(this.zeinutanku_5);
             this.panel_5.Controls.Add(this.zeinu_5);
             this.panel_5.Controls.Add(this.kobetsuhanbai_5);
             this.panel_5.Controls.Add(this.shagaibikou_5);
@@ -1201,39 +1199,39 @@
             this.panel_5.Controls.Add(this.color_5);
             this.panel_5.Controls.Add(this.shouhin_5);
             this.panel_5.Controls.Add(this.scjan_5);
-            this.panel_5.Controls.Add(this.label44);
+            this.panel_5.Controls.Add(this.lbl_5);
             this.panel_5.Location = new System.Drawing.Point(2, 326);
             this.panel_5.Name = "panel_5";
             this.panel_5.Size = new System.Drawing.Size(1730, 60);
             this.panel_5.TabIndex = 309;
             // 
-            // zeinutanka_5
+            // zeinutanku_5
             // 
-            this.zeinutanka_5.AllowMinus = false;
-            this.zeinutanka_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.zeinutanka_5.BackColor = System.Drawing.Color.White;
-            this.zeinutanka_5.BorderColor = false;
-            this.zeinutanka_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.zeinutanka_5.ClientColor = System.Drawing.SystemColors.Window;
-            this.zeinutanka_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.zeinutanka_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.zeinutanka_5.DecimalPlace = 0;
-            this.zeinutanka_5.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.zeinutanka_5.IntegerPart = 0;
-            this.zeinutanka_5.IsCorrectDate = true;
-            this.zeinutanka_5.isEnterKeyDown = false;
-            this.zeinutanka_5.IsFirstTime = true;
-            this.zeinutanka_5.isMaxLengthErr = false;
-            this.zeinutanka_5.IsNumber = true;
-            this.zeinutanka_5.IsShop = false;
-            this.zeinutanka_5.Length = 32767;
-            this.zeinutanka_5.Location = new System.Drawing.Point(1668, 20);
-            this.zeinutanka_5.MoveNext = true;
-            this.zeinutanka_5.Name = "zeinutanka_5";
-            this.zeinutanka_5.Size = new System.Drawing.Size(60, 19);
-            this.zeinutanka_5.TabIndex = 318;
-            this.zeinutanka_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.zeinutanka_5.UseColorSizMode = false;
+            this.zeinutanku_5.AllowMinus = false;
+            this.zeinutanku_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.zeinutanku_5.BackColor = System.Drawing.Color.White;
+            this.zeinutanku_5.BorderColor = false;
+            this.zeinutanku_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.zeinutanku_5.ClientColor = System.Drawing.SystemColors.Window;
+            this.zeinutanku_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.zeinutanku_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.zeinutanku_5.DecimalPlace = 0;
+            this.zeinutanku_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.zeinutanku_5.IntegerPart = 0;
+            this.zeinutanku_5.IsCorrectDate = true;
+            this.zeinutanku_5.isEnterKeyDown = false;
+            this.zeinutanku_5.IsFirstTime = true;
+            this.zeinutanku_5.isMaxLengthErr = false;
+            this.zeinutanku_5.IsNumber = true;
+            this.zeinutanku_5.IsShop = false;
+            this.zeinutanku_5.Length = 32767;
+            this.zeinutanku_5.Location = new System.Drawing.Point(1668, 20);
+            this.zeinutanku_5.MoveNext = true;
+            this.zeinutanku_5.Name = "zeinutanku_5";
+            this.zeinutanku_5.Size = new System.Drawing.Size(60, 19);
+            this.zeinutanku_5.TabIndex = 318;
+            this.zeinutanku_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.zeinutanku_5.UseColorSizMode = false;
             // 
             // zeinu_5
             // 
@@ -1843,22 +1841,22 @@
             this.scjan_5.Value2 = null;
             this.scjan_5.Value3 = null;
             // 
-            // label44
+            // lbl_5
             // 
-            this.label44.BackColor = System.Drawing.Color.DarkGray;
-            this.label44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label44.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label44.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label44.Location = new System.Drawing.Point(0, 1);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(28, 19);
-            this.label44.TabIndex = 282;
-            this.label44.Text = "№";
-            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_5.BackColor = System.Drawing.Color.DarkGray;
+            this.lbl_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lbl_5.Location = new System.Drawing.Point(0, 1);
+            this.lbl_5.Name = "lbl_5";
+            this.lbl_5.Size = new System.Drawing.Size(28, 19);
+            this.lbl_5.TabIndex = 282;
+            this.lbl_5.Text = "5";
+            this.lbl_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel_4
             // 
-            this.panel_4.Controls.Add(this.zeinutanka_4);
+            this.panel_4.Controls.Add(this.zeinutanku_4);
             this.panel_4.Controls.Add(this.zeinu_4);
             this.panel_4.Controls.Add(this.kobetsuhanbai_4);
             this.panel_4.Controls.Add(this.shagaibikou_4);
@@ -1883,39 +1881,39 @@
             this.panel_4.Controls.Add(this.color_4);
             this.panel_4.Controls.Add(this.shouhin_4);
             this.panel_4.Controls.Add(this.scjan_4);
-            this.panel_4.Controls.Add(this.label40);
+            this.panel_4.Controls.Add(this.lbl_4);
             this.panel_4.Location = new System.Drawing.Point(2, 269);
             this.panel_4.Name = "panel_4";
             this.panel_4.Size = new System.Drawing.Size(1730, 60);
             this.panel_4.TabIndex = 308;
             // 
-            // zeinutanka_4
+            // zeinutanku_4
             // 
-            this.zeinutanka_4.AllowMinus = false;
-            this.zeinutanka_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.zeinutanka_4.BackColor = System.Drawing.Color.White;
-            this.zeinutanka_4.BorderColor = false;
-            this.zeinutanka_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.zeinutanka_4.ClientColor = System.Drawing.SystemColors.Window;
-            this.zeinutanka_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.zeinutanka_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.zeinutanka_4.DecimalPlace = 0;
-            this.zeinutanka_4.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.zeinutanka_4.IntegerPart = 0;
-            this.zeinutanka_4.IsCorrectDate = true;
-            this.zeinutanka_4.isEnterKeyDown = false;
-            this.zeinutanka_4.IsFirstTime = true;
-            this.zeinutanka_4.isMaxLengthErr = false;
-            this.zeinutanka_4.IsNumber = true;
-            this.zeinutanka_4.IsShop = false;
-            this.zeinutanka_4.Length = 32767;
-            this.zeinutanka_4.Location = new System.Drawing.Point(1668, 20);
-            this.zeinutanka_4.MoveNext = true;
-            this.zeinutanka_4.Name = "zeinutanka_4";
-            this.zeinutanka_4.Size = new System.Drawing.Size(60, 19);
-            this.zeinutanka_4.TabIndex = 318;
-            this.zeinutanka_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.zeinutanka_4.UseColorSizMode = false;
+            this.zeinutanku_4.AllowMinus = false;
+            this.zeinutanku_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.zeinutanku_4.BackColor = System.Drawing.Color.White;
+            this.zeinutanku_4.BorderColor = false;
+            this.zeinutanku_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.zeinutanku_4.ClientColor = System.Drawing.SystemColors.Window;
+            this.zeinutanku_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.zeinutanku_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.zeinutanku_4.DecimalPlace = 0;
+            this.zeinutanku_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.zeinutanku_4.IntegerPart = 0;
+            this.zeinutanku_4.IsCorrectDate = true;
+            this.zeinutanku_4.isEnterKeyDown = false;
+            this.zeinutanku_4.IsFirstTime = true;
+            this.zeinutanku_4.isMaxLengthErr = false;
+            this.zeinutanku_4.IsNumber = true;
+            this.zeinutanku_4.IsShop = false;
+            this.zeinutanku_4.Length = 32767;
+            this.zeinutanku_4.Location = new System.Drawing.Point(1668, 20);
+            this.zeinutanku_4.MoveNext = true;
+            this.zeinutanku_4.Name = "zeinutanku_4";
+            this.zeinutanku_4.Size = new System.Drawing.Size(60, 19);
+            this.zeinutanku_4.TabIndex = 318;
+            this.zeinutanku_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.zeinutanku_4.UseColorSizMode = false;
             // 
             // zeinu_4
             // 
@@ -2525,22 +2523,22 @@
             this.scjan_4.Value2 = null;
             this.scjan_4.Value3 = null;
             // 
-            // label40
+            // lbl_4
             // 
-            this.label40.BackColor = System.Drawing.Color.DarkGray;
-            this.label40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label40.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label40.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label40.Location = new System.Drawing.Point(0, 1);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(28, 19);
-            this.label40.TabIndex = 282;
-            this.label40.Text = "№";
-            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_4.BackColor = System.Drawing.Color.DarkGray;
+            this.lbl_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lbl_4.Location = new System.Drawing.Point(0, 1);
+            this.lbl_4.Name = "lbl_4";
+            this.lbl_4.Size = new System.Drawing.Size(28, 19);
+            this.lbl_4.TabIndex = 282;
+            this.lbl_4.Text = "4";
+            this.lbl_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel_3
             // 
-            this.panel_3.Controls.Add(this.zeinutanka_3);
+            this.panel_3.Controls.Add(this.zeinutanku_3);
             this.panel_3.Controls.Add(this.zeinu_3);
             this.panel_3.Controls.Add(this.kobetsuhanbai_3);
             this.panel_3.Controls.Add(this.shagaibikou_3);
@@ -2565,39 +2563,39 @@
             this.panel_3.Controls.Add(this.color_3);
             this.panel_3.Controls.Add(this.shouhin_3);
             this.panel_3.Controls.Add(this.scjan_3);
-            this.panel_3.Controls.Add(this.label36);
+            this.panel_3.Controls.Add(this.lbl_3);
             this.panel_3.Location = new System.Drawing.Point(2, 212);
             this.panel_3.Name = "panel_3";
             this.panel_3.Size = new System.Drawing.Size(1730, 60);
             this.panel_3.TabIndex = 307;
             // 
-            // zeinutanka_3
+            // zeinutanku_3
             // 
-            this.zeinutanka_3.AllowMinus = false;
-            this.zeinutanka_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.zeinutanka_3.BackColor = System.Drawing.Color.White;
-            this.zeinutanka_3.BorderColor = false;
-            this.zeinutanka_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.zeinutanka_3.ClientColor = System.Drawing.SystemColors.Window;
-            this.zeinutanka_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.zeinutanka_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.zeinutanka_3.DecimalPlace = 0;
-            this.zeinutanka_3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.zeinutanka_3.IntegerPart = 0;
-            this.zeinutanka_3.IsCorrectDate = true;
-            this.zeinutanka_3.isEnterKeyDown = false;
-            this.zeinutanka_3.IsFirstTime = true;
-            this.zeinutanka_3.isMaxLengthErr = false;
-            this.zeinutanka_3.IsNumber = true;
-            this.zeinutanka_3.IsShop = false;
-            this.zeinutanka_3.Length = 32767;
-            this.zeinutanka_3.Location = new System.Drawing.Point(1668, 20);
-            this.zeinutanka_3.MoveNext = true;
-            this.zeinutanka_3.Name = "zeinutanka_3";
-            this.zeinutanka_3.Size = new System.Drawing.Size(60, 19);
-            this.zeinutanka_3.TabIndex = 318;
-            this.zeinutanka_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.zeinutanka_3.UseColorSizMode = false;
+            this.zeinutanku_3.AllowMinus = false;
+            this.zeinutanku_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.zeinutanku_3.BackColor = System.Drawing.Color.White;
+            this.zeinutanku_3.BorderColor = false;
+            this.zeinutanku_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.zeinutanku_3.ClientColor = System.Drawing.SystemColors.Window;
+            this.zeinutanku_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.zeinutanku_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.zeinutanku_3.DecimalPlace = 0;
+            this.zeinutanku_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.zeinutanku_3.IntegerPart = 0;
+            this.zeinutanku_3.IsCorrectDate = true;
+            this.zeinutanku_3.isEnterKeyDown = false;
+            this.zeinutanku_3.IsFirstTime = true;
+            this.zeinutanku_3.isMaxLengthErr = false;
+            this.zeinutanku_3.IsNumber = true;
+            this.zeinutanku_3.IsShop = false;
+            this.zeinutanku_3.Length = 32767;
+            this.zeinutanku_3.Location = new System.Drawing.Point(1668, 20);
+            this.zeinutanku_3.MoveNext = true;
+            this.zeinutanku_3.Name = "zeinutanku_3";
+            this.zeinutanku_3.Size = new System.Drawing.Size(60, 19);
+            this.zeinutanku_3.TabIndex = 318;
+            this.zeinutanku_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.zeinutanku_3.UseColorSizMode = false;
             // 
             // zeinu_3
             // 
@@ -3207,22 +3205,22 @@
             this.scjan_3.Value2 = null;
             this.scjan_3.Value3 = null;
             // 
-            // label36
+            // lbl_3
             // 
-            this.label36.BackColor = System.Drawing.Color.DarkGray;
-            this.label36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label36.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label36.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label36.Location = new System.Drawing.Point(0, 1);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(28, 19);
-            this.label36.TabIndex = 282;
-            this.label36.Text = "№";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_3.BackColor = System.Drawing.Color.DarkGray;
+            this.lbl_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lbl_3.Location = new System.Drawing.Point(0, 1);
+            this.lbl_3.Name = "lbl_3";
+            this.lbl_3.Size = new System.Drawing.Size(28, 19);
+            this.lbl_3.TabIndex = 282;
+            this.lbl_3.Text = "3";
+            this.lbl_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel_2
             // 
-            this.panel_2.Controls.Add(this.zeinutanka_2);
+            this.panel_2.Controls.Add(this.zeinutanku_2);
             this.panel_2.Controls.Add(this.zeinu_2);
             this.panel_2.Controls.Add(this.kobetsuhanbai_2);
             this.panel_2.Controls.Add(this.shagaibikou_2);
@@ -3247,39 +3245,39 @@
             this.panel_2.Controls.Add(this.color_2);
             this.panel_2.Controls.Add(this.shouhin_2);
             this.panel_2.Controls.Add(this.scjan_2);
-            this.panel_2.Controls.Add(this.label32);
+            this.panel_2.Controls.Add(this.lbl_2);
             this.panel_2.Location = new System.Drawing.Point(2, 155);
             this.panel_2.Name = "panel_2";
             this.panel_2.Size = new System.Drawing.Size(1730, 60);
             this.panel_2.TabIndex = 306;
             // 
-            // zeinutanka_2
+            // zeinutanku_2
             // 
-            this.zeinutanka_2.AllowMinus = false;
-            this.zeinutanka_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.zeinutanka_2.BackColor = System.Drawing.Color.White;
-            this.zeinutanka_2.BorderColor = false;
-            this.zeinutanka_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.zeinutanka_2.ClientColor = System.Drawing.SystemColors.Window;
-            this.zeinutanka_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.zeinutanka_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.zeinutanka_2.DecimalPlace = 0;
-            this.zeinutanka_2.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.zeinutanka_2.IntegerPart = 0;
-            this.zeinutanka_2.IsCorrectDate = true;
-            this.zeinutanka_2.isEnterKeyDown = false;
-            this.zeinutanka_2.IsFirstTime = true;
-            this.zeinutanka_2.isMaxLengthErr = false;
-            this.zeinutanka_2.IsNumber = true;
-            this.zeinutanka_2.IsShop = false;
-            this.zeinutanka_2.Length = 32767;
-            this.zeinutanka_2.Location = new System.Drawing.Point(1668, 20);
-            this.zeinutanka_2.MoveNext = true;
-            this.zeinutanka_2.Name = "zeinutanka_2";
-            this.zeinutanka_2.Size = new System.Drawing.Size(60, 19);
-            this.zeinutanka_2.TabIndex = 318;
-            this.zeinutanka_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.zeinutanka_2.UseColorSizMode = false;
+            this.zeinutanku_2.AllowMinus = false;
+            this.zeinutanku_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.zeinutanku_2.BackColor = System.Drawing.Color.White;
+            this.zeinutanku_2.BorderColor = false;
+            this.zeinutanku_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.zeinutanku_2.ClientColor = System.Drawing.SystemColors.Window;
+            this.zeinutanku_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.zeinutanku_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.zeinutanku_2.DecimalPlace = 0;
+            this.zeinutanku_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.zeinutanku_2.IntegerPart = 0;
+            this.zeinutanku_2.IsCorrectDate = true;
+            this.zeinutanku_2.isEnterKeyDown = false;
+            this.zeinutanku_2.IsFirstTime = true;
+            this.zeinutanku_2.isMaxLengthErr = false;
+            this.zeinutanku_2.IsNumber = true;
+            this.zeinutanku_2.IsShop = false;
+            this.zeinutanku_2.Length = 32767;
+            this.zeinutanku_2.Location = new System.Drawing.Point(1668, 20);
+            this.zeinutanku_2.MoveNext = true;
+            this.zeinutanku_2.Name = "zeinutanku_2";
+            this.zeinutanku_2.Size = new System.Drawing.Size(60, 19);
+            this.zeinutanku_2.TabIndex = 318;
+            this.zeinutanku_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.zeinutanku_2.UseColorSizMode = false;
             // 
             // zeinu_2
             // 
@@ -3889,18 +3887,18 @@
             this.scjan_2.Value2 = null;
             this.scjan_2.Value3 = null;
             // 
-            // label32
+            // lbl_2
             // 
-            this.label32.BackColor = System.Drawing.Color.DarkGray;
-            this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label32.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label32.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label32.Location = new System.Drawing.Point(0, 1);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(28, 19);
-            this.label32.TabIndex = 282;
-            this.label32.Text = "№";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_2.BackColor = System.Drawing.Color.DarkGray;
+            this.lbl_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lbl_2.Location = new System.Drawing.Point(0, 1);
+            this.lbl_2.Name = "lbl_2";
+            this.lbl_2.Size = new System.Drawing.Size(28, 19);
+            this.lbl_2.TabIndex = 282;
+            this.lbl_2.Text = "2";
+            this.lbl_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel_1
             // 
@@ -4581,7 +4579,7 @@
             this.lbl_1.Name = "lbl_1";
             this.lbl_1.Size = new System.Drawing.Size(28, 19);
             this.lbl_1.TabIndex = 282;
-            this.lbl_1.Text = "№";
+            this.lbl_1.Text = "1";
             this.lbl_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label24
@@ -4918,34 +4916,6 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // ckM_SearchControl1
-            // 
-            this.ckM_SearchControl1.AutoSize = true;
-            this.ckM_SearchControl1.ChangeDate = "";
-            this.ckM_SearchControl1.ChangeDateWidth = 100;
-            this.ckM_SearchControl1.Code = "";
-            this.ckM_SearchControl1.CodeWidth = 100;
-            this.ckM_SearchControl1.CodeWidth1 = 100;
-            this.ckM_SearchControl1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_SearchControl1.DataCheck = false;
-            this.ckM_SearchControl1.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.ckM_SearchControl1.IsCopy = false;
-            this.ckM_SearchControl1.LabelText = "";
-            this.ckM_SearchControl1.LabelVisible = false;
-            this.ckM_SearchControl1.Location = new System.Drawing.Point(633, 1);
-            this.ckM_SearchControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.ckM_SearchControl1.Name = "ckM_SearchControl1";
-            this.ckM_SearchControl1.NameWidth = 310;
-            this.ckM_SearchControl1.SearchEnable = true;
-            this.ckM_SearchControl1.Size = new System.Drawing.Size(133, 52);
-            this.ckM_SearchControl1.Stype = Search.CKM_SearchControl.SearchType.展示会商品;
-            this.ckM_SearchControl1.TabIndex = 101;
-            this.ckM_SearchControl1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ckM_SearchControl1.UseChangeDate = false;
-            this.ckM_SearchControl1.Value1 = null;
-            this.ckM_SearchControl1.Value2 = null;
-            this.ckM_SearchControl1.Value3 = null;
-            // 
             // TenzikaiJuchuuTourou
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -5106,7 +5076,7 @@
         private CKM_Controls.CKM_TextBox color_5;
         private CKM_Controls.CKM_TextBox shouhin_5;
         private Search.CKM_SearchControl scjan_5;
-        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label lbl_5;
         private System.Windows.Forms.Panel panel_4;
         private CKM_Controls.CKM_TextBox kobetsuhanbai_4;
         private CKM_Controls.CKM_TextBox shagaibikou_4;
@@ -5131,7 +5101,7 @@
         private CKM_Controls.CKM_TextBox color_4;
         private CKM_Controls.CKM_TextBox shouhin_4;
         private Search.CKM_SearchControl scjan_4;
-        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label lbl_4;
         private System.Windows.Forms.Panel panel_3;
         private CKM_Controls.CKM_TextBox kobetsuhanbai_3;
         private CKM_Controls.CKM_TextBox shagaibikou_3;
@@ -5156,7 +5126,7 @@
         private CKM_Controls.CKM_TextBox color_3;
         private CKM_Controls.CKM_TextBox shouhin_3;
         private Search.CKM_SearchControl scjan_3;
-        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label lbl_3;
         private System.Windows.Forms.Panel panel_2;
         private CKM_Controls.CKM_TextBox kobetsuhanbai_2;
         private CKM_Controls.CKM_TextBox shagaibikou_2;
@@ -5181,15 +5151,15 @@
         private CKM_Controls.CKM_TextBox color_2;
         private CKM_Controls.CKM_TextBox shouhin_2;
         private Search.CKM_SearchControl scjan_2;
-        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label lbl_2;
         private System.Windows.Forms.VScrollBar Vsb_Mei_0;
-        private CKM_Controls.CKM_TextBox zeinutanka_5;
+        private CKM_Controls.CKM_TextBox zeinutanku_5;
         private CKM_Controls.CKM_TextBox zeinu_5;
-        private CKM_Controls.CKM_TextBox zeinutanka_4;
+        private CKM_Controls.CKM_TextBox zeinutanku_4;
         private CKM_Controls.CKM_TextBox zeinu_4;
-        private CKM_Controls.CKM_TextBox zeinutanka_3;
+        private CKM_Controls.CKM_TextBox zeinutanku_3;
         private CKM_Controls.CKM_TextBox zeinu_3;
-        private CKM_Controls.CKM_TextBox zeinutanka_2;
+        private CKM_Controls.CKM_TextBox zeinutanku_2;
         private CKM_Controls.CKM_TextBox zeinu_2;
         private CKM_Controls.CKM_TextBox zeinutanku_1;
         private CKM_Controls.CKM_Label ckM_Label11;
@@ -5204,7 +5174,6 @@
         private System.Windows.Forms.Panel pnl_haisou;
         private System.Windows.Forms.Panel pnl_kokyakuu;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private Search.CKM_SearchControl ckM_SearchControl1;
     }
 }
 
