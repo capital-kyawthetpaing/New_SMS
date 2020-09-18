@@ -15,6 +15,7 @@ namespace TenzikaiJuchuuTourou
             internal string GYONO;
             internal string SCJAN;
             internal string SKUCD;
+            internal string ShouName;
             internal string Color;
             internal string ColorName;
             internal string Size;
@@ -37,12 +38,15 @@ namespace TenzikaiJuchuuTourou
             internal string ShanaiBi;
             internal string ShagaiBi;
             internal string KobeTsu;
+            internal string TorokuFlg;
+            internal string TaxRateFlg;
         }
         internal enum ColNO : int
         {
             GYONO,
             SCJAN,
             SKUCD,
+            ShouName,
             Color,
             ColorName,
             Size,
@@ -65,11 +69,13 @@ namespace TenzikaiJuchuuTourou
             ShanaiBi,
             ShagaiBi,
             KobeTsu,
+            TorokuFlg,
+            TaxRateFlg,
             COUNT
         }
         internal ST_DArray_Grid[] g_DArray = null;
         internal const int gc_MaxCL = (int)ColNO.COUNT;
-        internal const int gc_P_GYO = 10;
+        internal const int gc_P_GYO = 5;
         internal const int gMxGyo = 999;
         internal short g_VSB_Flg;
         internal short g_InMoveFocus_Flg;
@@ -135,6 +141,16 @@ namespace TenzikaiJuchuuTourou
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
 
+                //ItemNmae
+                w_CtlCol = (int)ColNO.ShouName;
+
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].ShouName);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
                 //Color
                 w_CtlCol = (int)ColNO.Color;
 
@@ -368,6 +384,25 @@ namespace TenzikaiJuchuuTourou
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
 
+                //TorokuFlg
+                w_CtlCol = (int)ColNO.TorokuFlg;
+
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].TorokuFlg);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+
+                //TaxRate
+                w_CtlCol = (int)ColNO.TaxRateFlg;
+
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].TaxRateFlg);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
 
             }
         }
@@ -389,6 +424,10 @@ namespace TenzikaiJuchuuTourou
                 w_CtlCol = (int)ColNO.SKUCD;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SKUCD);
                 //SChangeDate
+                w_CtlCol = (int)ColNO.ShouName;
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].Color);
+
+                //
                 w_CtlCol = (int)ColNO.Color;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].Color);
                 //EChangeDate
@@ -451,6 +490,12 @@ namespace TenzikaiJuchuuTourou
                 //Remarks
                 w_CtlCol = (int)ColNO.KobeTsu;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].KobeTsu);
+
+                w_CtlCol = (int)ColNO.TorokuFlg;
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].TorokuFlg);
+
+                w_CtlCol = (int)ColNO.TaxRateFlg;
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].TaxRateFlg);
             }
         }
         //Chk/SC/Label/Text/DropBox

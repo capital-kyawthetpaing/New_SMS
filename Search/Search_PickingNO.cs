@@ -195,6 +195,7 @@ namespace Search
             {
                pnbl.ShowMessage("E128");
                 GvDetail.DataSource = null;
+                detailControls[0].Focus();
             }
         }
         private void DetailControl_KeyDown(object sender, KeyEventArgs e)

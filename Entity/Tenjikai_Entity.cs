@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-  public  class Tenjikai_Entity :Base_Entity
+    public class Tenjikai_Entity : Base_Entity
     {
 
         public string TenjiKaiOrderNo { get; set; }
@@ -17,19 +17,18 @@ namespace Entity
         public string JuchuuBi { get; set; }
         public string UriageYoteiBi { get; set; }
         public string TantouStaffu { get; set; }
-
-        public string Kokyaku { get; set;}
+        public string Kokyaku { get; set; }
         public string C_Sama { get; set; }
         public string C_OnChuu { get; set; }
         public string C_DenwaBangou { get; set; }
-
         public string HaisoSaki { get; set; }
         public string S_Sama { get; set; }
         public string S_OnChuu { get; set; }
         public string S_DenwaBangou { get; set; }
-
         public string YoteiKinShu { get; set; }
-
+        public string xml { get; set; }
+        public string KibouBi1 { get; set; }
+        public string KibouBi2 { get; set; }
 
     }
 }
