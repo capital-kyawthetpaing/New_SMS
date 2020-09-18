@@ -25,40 +25,39 @@ CREATE PROCEDURE [dbo].[Rpc_TenzikaiShouhinJouhouShuturyoku]
 @HanbaiYoteiDateMonth as int,
 @HanbaiYoteiDate as varchar(8)
 AS
+
 BEGIN
+SET NOCOUNT ON;
 	Select 
-	mt.JANCD AS 仮JANCD,
-	mt.SKUCD AS SKUCD,
-	mt.SKUName AS 商品名,
-	mt.SizeName AS サイズ,
-	mt.Colorname AS カラー,
-	mt.HanbaiYoteiDate AS 販売予定日,
+	JANCD AS 仮JANCD,
+	SKUCD AS SKUCD,
+	SKUName AS 商品名,
+	SizeName AS サイズ,
+	Colorname AS カラー,
+	HanbaiYoteiDate AS 販売予定日,
 	Concat(ISNULL(@HanbaiYoteiDateMonth, '')  , N'月' , ISNULL(@HanbaiYoteiDate, '') )as  '販売予定日',
 	'' AS 即納数,
 	'' AS 希望日1,
 	'' AS 希望日2,
 	(ISNULL(@LastYearTerm, '') + ISNULL(@LastSeason, '') + ISNULL(@JANCD, ''))As  '消さないでください'
-	from M_TenzikaiShouhin  mt
+	from M_TenzikaiShouhin  
 	where  DeleteFlg=0
-	AND    mt.VendorCD=@VendorCD
-	AND    mt.LastYearTerm=@LastYearTerm
-	AND    mt.LastSeason=@LastSeason
-	AND    (@BrandCDFrom IS NULL OR (mt.BrandCD>=@BrandCDFrom))
-    AND    (@BrandCDTo IS NULL OR (mt.BrandCD>=@BrandCDTo))
-	AND    (@SegmentCDFrom IS NULL OR (mt.SegmentCD>=@SegmentCDFrom))
-    AND    (@SegmentCDTo IS NULL OR (mt.SegmentCD>=@SegmentCDTo))
-	AND    (@TenzikaiName IS NULL OR   (mt.TenzikaiName LIKE '%'+@TenzikaiName+'%'))
+	AND    VendorCD=@VendorCD
+	AND    LastYearTerm=@LastYearTerm
+	AND    LastSeason=@LastSeason
+	AND    (@BrandCDFrom IS NULL OR (BrandCD>=@BrandCDFrom))
+    AND    (@BrandCDTo IS NULL OR (BrandCD>=@BrandCDTo))
+	AND    (@SegmentCDFrom IS NULL OR (SegmentCD>=@SegmentCDFrom))
+    AND    (@SegmentCDTo IS NULL OR (SegmentCD>=@SegmentCDTo))
+	AND    (@TenzikaiName IS NULL OR   (TenzikaiName LIKE '%'+@TenzikaiName+'%'))
 	Group BY
-	mt.JANCD,
-	mt.SKUCD,
-	mt.SKUName,
-	mt.SizeName,
-	mt.ColorName,
-	mt.HanbaiYoteiDate
+	JANCD,
+	SKUCD,
+	SKUName,
+	SizeName,
+	ColorName,
+	HanbaiYoteiDate
 	Order by
-	mt.JANCD,mt.SKUCD,mt.SKUName,mt.SizeName,mt.ColorName,mt.HanbaiYoteiDate  ASC
+	JANCD,SKUCD,SKUName,SizeName,ColorName,HanbaiYoteiDate  ASC
 
 END
-
-GO
-
