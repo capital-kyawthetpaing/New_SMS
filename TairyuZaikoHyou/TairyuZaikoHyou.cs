@@ -183,7 +183,7 @@ namespace TairyuZaikoHyou
                     RackNOTo = txtStorageTo.Text,
                     Keyword1 = (strlist.Length > 0) ? strlist[0].ToString() : "",
                     Keyword2 = (strlist.Length > 1) ? strlist[1].ToString() : "",
-                    Keyword3 = (strlist.Length > 2) ? strlist[2].ToString() : "",
+                    Keyword3 = (strlist.Length > 2) ? strlist[2].ToString() : "",   
                 };
 
                 mskue = new M_SKU_Entity
@@ -218,6 +218,15 @@ namespace TairyuZaikoHyou
                     TagName4 = cboTag4.SelectedValue.ToString(),
                     TagName5 = cboTag5.SelectedValue.ToString()
                 };
+
+                if (rdoOR.Checked == true)
+                {
+                    dse.type = "1";
+                }
+                else
+                {
+                    dse.type = "2";
+                }
 
                 DataTable dtSelect = new DataTable();
                 dtSelect = tzkbl.D_StockSelectForTairyuzaikohyo(dse, mskue, info, mtage);

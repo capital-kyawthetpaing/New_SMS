@@ -24,9 +24,9 @@ namespace BL
         {
             return tdl.ShuukaSouko(SouKoCD, ChangeDate);
         }
-        public DataTable M_TenjiKaiJuuChuu_Select(string xml)
+        public DataTable M_TenjiKaiJuuChuu_Select(Tenjikai_Entity tje)
         {
-            return tdl.M_TenjiKaiJuuChuu_Select(xml);
+            return tdl.M_TenjiKaiJuuChuu_Select(tje);
         }
     }
 }

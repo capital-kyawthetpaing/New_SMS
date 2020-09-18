@@ -279,6 +279,7 @@ namespace Search
                 btnSubF10.Enabled = false;
                 ssbl.ShowMessage("E128");
                 GvDetail.DataSource = null;
+                detailControls[0].Focus();
             }
         }
         protected override void ExecSec()

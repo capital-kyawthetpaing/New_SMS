@@ -62,6 +62,7 @@ namespace Entity
         public string Keyword1 { get; set; }
         public string Keyword2 { get; set; }
         public string Keyword3 { get; set; }
+        public string type { get; set; }
 
     }
 }
