@@ -37,12 +37,21 @@ namespace DL
             UseTransaction = true;
             return SelectData(dic, sp);
         }
-        public DataTable M_TenjiKaiJuuChuu_Select(string xml)
+        public DataTable M_TenjiKaiJuuChuu_Select(Tenjikai_Entity tje)
         {
             string sp = "M_TenjiKaiJuuChuu_Select";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@xml", new ValuePair { value1 = SqlDbType.Date, value2 = xml } }
+                 { "@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.xml } },
+                 { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Kokyaku } },
+                 { "@JuuChuuBi", new ValuePair { value1 = SqlDbType.Date, value2 = tje.JuchuuBi.Replace("/","-") } },
+                 { "@LastyearTerm", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Nendo } },
+                 { "@LastSeason", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.ShiZun } },
+                 { "@VendorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Shiiresaki } },
+                 { "@SoukoName", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.ShuuKaSouKo } },
+                 { "@DesiredDate1", new ValuePair { value1 = SqlDbType.Date, value2 = tje.KibouBi1 } },
+                 { "@DesiredDate2", new ValuePair { value1 = SqlDbType.Date, value2 = tje.KibouBi2 } },
+
             };
 
             UseTransaction = true;

@@ -94,7 +94,8 @@ BEGIN
           ,DM.DeliveryNo
           ,
 		  
-		  DM.ItemName as MakerItem
+		  --DM.ItemName as MakerItem
+		  DM.MakerItem
 		 -- (SELECT top 1 M.MakerItem 
            -- FROM M_SKU AS M 
            -- WHERE M.ChangeDate <= DH.PurchaseDate
@@ -115,8 +116,8 @@ BEGIN
       FROM D_Purchase DH
       INNER JOIN D_PurchaseDetails AS DM 
       ON DH.PurchaseNO = DM.PurchaseNO 
-      AND DM.PurchaserUnitPrice <> DM.OrderUnitPrice
-      AND DM.DifferenceFlg = 0
+      --AND DM.PurchaserUnitPrice <> DM.OrderUnitPrice
+      --AND DM.DifferenceFlg = 0
       AND DM.DeleteDateTime IS NULL
       LEFT OUTER JOIN D_Order AS DO
       ON DO.OrderNO = DM.OrderNO
@@ -131,7 +132,8 @@ BEGIN
       AND DH.StoreCD = @StoreCD
       AND DH.VendorCD = (CASE WHEN @VendorCD <> '' THEN @VendorCD ELSE DH.VendorCD END)
       AND ((@Flg1=1 AND DH.OutputDateTime IS NULL) OR (@Flg2=1 AND DH.OutputDateTime IS NOT NULL))
-      AND DH.DeleteDateTime IS NULL
+      AND DM.PurchaserUnitPrice <> DM.OrderUnitPrice
+      AND DM.DifferenceFlg = 0
       ORDER BY VendorCD, PurchaseDate, DeliveryNo, MakerItem
       ;
 
