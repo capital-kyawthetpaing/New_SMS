@@ -123,6 +123,7 @@ namespace DL
                    {"@TagName3",new ValuePair { value1=SqlDbType.VarChar,value2=tage.TagName3} },
                    {"@TagName4",new ValuePair { value1=SqlDbType.VarChar,value2=tage.TagName4} },
                    {"@TagName5",new ValuePair { value1=SqlDbType.Int,value2=tage.TagName5} },
+                   {"@Type",new ValuePair { value1=SqlDbType.TinyInt,value2=dse.type} },
                };
             return SelectData(dic, "D_StockSelectForTairyuzaikohyo");
         }
