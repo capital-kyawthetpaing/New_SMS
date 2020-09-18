@@ -94,7 +94,8 @@ BEGIN
           ,DM.DeliveryNo
           ,
 		  
-		  DM.ItemName as MakerItem
+		  --DM.ItemName as MakerItem
+		  DM.MakerItem
 		 -- (SELECT top 1 M.MakerItem 
            -- FROM M_SKU AS M 
            -- WHERE M.ChangeDate <= DH.PurchaseDate
