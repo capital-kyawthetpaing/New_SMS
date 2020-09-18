@@ -439,7 +439,7 @@ namespace TenzikaiJuchuuTourou
                     mGrid.g_DArray[c].KobeTsu = dr["_22kobetsuHanbai"].ToString();//
 
                     mGrid.g_DArray[c].TorokuFlg = dr["_23TorokuFlag"].ToString();//
-                    mGrid.g_DArray[c].TaxRateFlg = dr["_24TaxRateFlg"].ToString();//
+                    mGrid.g_DArray[c].TaxRateFlg = dr["_25TaxRateFlg"].ToString();//
                     c++;
                 }
             }
