@@ -1485,8 +1485,8 @@ namespace ShiireNyuuryokuFromNyuuka
                         mGrid.g_DArray[i].OrderUnitPrice = bbl.Z_SetStr(row["DO_OrderUnitPrice"]);   // 
                         mGrid.g_DArray[i].PurchaseUnitPrice = bbl.Z_SetStr(row["PurchaserUnitPrice"]);
                         mGrid.g_DArray[i].AdjustmentGaku = bbl.Z_SetStr(bbl.Z_Set(row["D_AdjustmentGaku"]));   // 
-                        mGrid.g_DArray[i].PurchaseGaku = bbl.Z_SetStr(row["D_PurchaseGaku"]);   // 
-                        mGrid.g_DArray[i].CalculationGaku = bbl.Z_SetStr(row["D_CalculationGaku"]);   // 
+                        mGrid.g_DArray[i].PurchaseGaku = bbl.Z_SetStr(bbl.Z_Set(row["PurchaseSu"])* bbl.Z_Set(row["PurchaserUnitPrice"]));   // Form.仕入数×	Form.単価
+                        mGrid.g_DArray[i].CalculationGaku = mGrid.g_DArray[i].PurchaseGaku;   // Form.仕入数×	Form.単価
 
                         mGrid.g_DArray[i].CommentInStore = row["D_CommentInStore"].ToString();   // 
                         mGrid.g_DArray[i].CommentOutStore = row["D_CommentOutStore"].ToString();   // 
