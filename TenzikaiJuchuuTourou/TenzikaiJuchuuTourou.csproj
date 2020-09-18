@@ -36,9 +36,6 @@
     <StartupObject>TenzikaiJuchuuTourou.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GridBase">
-      <HintPath>..\..\..\Projects\PP_Test\GBase\RDLL\GridBase.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -119,6 +116,10 @@
     <ProjectReference Include="..\CKM_Controls\CKM_Controls\CKM_Controls.csproj">
       <Project>{472a8d76-1ce3-430e-89fe-373d2f6b1031}</Project>
       <Name>CKM_Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsGridBase\GridBase.csproj">
+      <Project>{86979b8d-b1ed-4342-a1d3-986c244e796a}</Project>
+      <Name>GridBase</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{9dd6c82a-1899-478f-bc18-524ad0b0dcc8}</Project>

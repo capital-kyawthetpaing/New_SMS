@@ -28,7 +28,7 @@ namespace DL
             {
                  { "@Mode",new ValuePair {value1=SqlDbType.TinyInt,value2 = Mode} },
                  { "@StoreCD",new ValuePair {value1=SqlDbType.VarChar,value2=mse.StoreCD} },
-                 { "@YYYYMM",new ValuePair {value1=SqlDbType.Int,value2=mse.FiscalYYYYMM} }
+                 { "@YYYYMM",new ValuePair {value1=SqlDbType.Int,value2=mse.FiscalYYYYMM.Replace("-","")} }
             };
 
             return SelectData(dic, "M_StoreClose_Check");

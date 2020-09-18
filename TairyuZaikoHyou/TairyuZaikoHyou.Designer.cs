@@ -87,8 +87,8 @@
             this.rdoProductCD = new CKM_Controls.CKM_RadioButton();
             this.ckM_Label29 = new CKM_Controls.CKM_Label();
             this.panelDetail = new System.Windows.Forms.Panel();
-            this.ScJanCD = new Search.CKM_SearchControl();
             this.ScSKUCD = new Search.CKM_SearchControl();
+            this.ScJanCD = new Search.CKM_SearchControl();
             this.panelDetail.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1270,35 +1270,6 @@
             this.panelDetail.Size = new System.Drawing.Size(1581, 745);
             this.panelDetail.TabIndex = 0;
             // 
-            // ScJanCD
-            // 
-            this.ScJanCD.AutoSize = true;
-            this.ScJanCD.ChangeDate = "";
-            this.ScJanCD.ChangeDateWidth = 0;
-            this.ScJanCD.Code = "";
-            this.ScJanCD.CodeWidth = 110;
-            this.ScJanCD.CodeWidth1 = 110;
-            this.ScJanCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
-            this.ScJanCD.DataCheck = false;
-            this.ScJanCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ScJanCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.ScJanCD.IsCopy = false;
-            this.ScJanCD.LabelText = "";
-            this.ScJanCD.LabelVisible = false;
-            this.ScJanCD.Location = new System.Drawing.Point(123, 143);
-            this.ScJanCD.Margin = new System.Windows.Forms.Padding(0);
-            this.ScJanCD.Name = "ScJanCD";
-            this.ScJanCD.NameWidth = 190;
-            this.ScJanCD.SearchEnable = true;
-            this.ScJanCD.Size = new System.Drawing.Size(143, 27);
-            this.ScJanCD.Stype = Search.CKM_SearchControl.SearchType.JANCD;
-            this.ScJanCD.TabIndex = 7;
-            this.ScJanCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ScJanCD.UseChangeDate = false;
-            this.ScJanCD.Value1 = null;
-            this.ScJanCD.Value2 = null;
-            this.ScJanCD.Value3 = null;
-            // 
             // ScSKUCD
             // 
             this.ScSKUCD.AutoSize = true;
@@ -1327,6 +1298,35 @@
             this.ScSKUCD.Value1 = null;
             this.ScSKUCD.Value2 = null;
             this.ScSKUCD.Value3 = null;
+            // 
+            // ScJanCD
+            // 
+            this.ScJanCD.AutoSize = true;
+            this.ScJanCD.ChangeDate = "";
+            this.ScJanCD.ChangeDateWidth = 0;
+            this.ScJanCD.Code = "";
+            this.ScJanCD.CodeWidth = 110;
+            this.ScJanCD.CodeWidth1 = 110;
+            this.ScJanCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.ScJanCD.DataCheck = false;
+            this.ScJanCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScJanCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.ScJanCD.IsCopy = false;
+            this.ScJanCD.LabelText = "";
+            this.ScJanCD.LabelVisible = false;
+            this.ScJanCD.Location = new System.Drawing.Point(123, 143);
+            this.ScJanCD.Margin = new System.Windows.Forms.Padding(0);
+            this.ScJanCD.Name = "ScJanCD";
+            this.ScJanCD.NameWidth = 190;
+            this.ScJanCD.SearchEnable = true;
+            this.ScJanCD.Size = new System.Drawing.Size(143, 27);
+            this.ScJanCD.Stype = Search.CKM_SearchControl.SearchType.JANCD;
+            this.ScJanCD.TabIndex = 7;
+            this.ScJanCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScJanCD.UseChangeDate = false;
+            this.ScJanCD.Value1 = null;
+            this.ScJanCD.Value2 = null;
+            this.ScJanCD.Value3 = null;
             // 
             // FrmTairyuZaikoHyou
             // 
