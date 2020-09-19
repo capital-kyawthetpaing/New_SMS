@@ -1135,6 +1135,13 @@ namespace HenpinNyuuryoku
             }
             else
             {
+                if(bbl.Z_Set(dt.Rows[0]["ReturnsFlg"]) != 1)
+                {
+                    bbl.ShowMessage("E259", "返品番号");
+                    Scr_Clr(1);
+                    previousCtrl.Focus();
+                    return false;
+                }
                 //DeleteDateTime 「削除された返品番号」
                 if (!string.IsNullOrWhiteSpace(dt.Rows[0]["DeleteDateTime"].ToString()))
                 {
