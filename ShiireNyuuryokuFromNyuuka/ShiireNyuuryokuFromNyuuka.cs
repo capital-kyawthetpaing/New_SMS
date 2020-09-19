@@ -1585,7 +1585,7 @@ namespace ShiireNyuuryokuFromNyuuka
                         StoreCD = CboStoreCD.SelectedValue.ToString(),
                         FiscalYYYYMM = detailControls[index].Text.Replace("/", "").Substring(0, 6)
                     };
-                    ret = bbl.CheckStoreClose(mste,false,true,false,false,false);
+                    ret = bbl.CheckStoreClose(mste,false,true,false,false,true);
                     if (!ret)
                     {
                         return false;
