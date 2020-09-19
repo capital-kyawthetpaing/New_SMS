@@ -273,7 +273,6 @@
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_SearchControl1 = new Search.CKM_SearchControl();
-            this.ckM_TextBox8 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox18 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label15 = new CKM_Controls.CKM_Label();
             this.ckM_Label17 = new CKM_Controls.CKM_Label();
@@ -303,6 +302,7 @@
             this.ckM_Label14 = new CKM_Controls.CKM_Label();
             this.Btn_NoSelect = new CKM_Controls.CKM_Button();
             this.Btn_SelectAll = new CKM_Controls.CKM_Button();
+            this.lblKin4 = new System.Windows.Forms.Label();
             this.PanelHeader.SuspendLayout();
             this.Pnl_Body.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -7149,38 +7149,6 @@
             this.ckM_SearchControl1.Value2 = null;
             this.ckM_SearchControl1.Value3 = null;
             // 
-            // ckM_TextBox8
-            // 
-            this.ckM_TextBox8.AllowMinus = true;
-            this.ckM_TextBox8.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox8.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox8.BorderColor = false;
-            this.ckM_TextBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox8.ClientColor = System.Drawing.Color.White;
-            this.ckM_TextBox8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.ckM_TextBox8.DecimalPlace = 0;
-            this.ckM_TextBox8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ckM_TextBox8.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.ckM_TextBox8.IntegerPart = 9;
-            this.ckM_TextBox8.IsCorrectDate = true;
-            this.ckM_TextBox8.isEnterKeyDown = false;
-            this.ckM_TextBox8.IsFirstTime = true;
-            this.ckM_TextBox8.isMaxLengthErr = false;
-            this.ckM_TextBox8.IsNumber = true;
-            this.ckM_TextBox8.IsShop = false;
-            this.ckM_TextBox8.Length = 12;
-            this.ckM_TextBox8.Location = new System.Drawing.Point(1046, 671);
-            this.ckM_TextBox8.MaxLength = 12;
-            this.ckM_TextBox8.MoveNext = true;
-            this.ckM_TextBox8.Name = "ckM_TextBox8";
-            this.ckM_TextBox8.Size = new System.Drawing.Size(83, 19);
-            this.ckM_TextBox8.TabIndex = 31;
-            this.ckM_TextBox8.Text = "999,999,999";
-            this.ckM_TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.ckM_TextBox8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.ckM_TextBox8.UseColorSizMode = false;
-            // 
             // ckM_TextBox18
             // 
             this.ckM_TextBox18.AllowMinus = false;
@@ -7753,10 +7721,23 @@
             this.Btn_SelectAll.UseVisualStyleBackColor = false;
             this.Btn_SelectAll.Click += new System.EventHandler(this.Btn_SelectAll_Click);
             // 
+            // lblKin4
+            // 
+            this.lblKin4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblKin4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblKin4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKin4.Location = new System.Drawing.Point(1046, 673);
+            this.lblKin4.Name = "lblKin4";
+            this.lblKin4.Size = new System.Drawing.Size(85, 18);
+            this.lblKin4.TabIndex = 737;
+            this.lblKin4.Text = "999,999,999";
+            this.lblKin4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // ShiireNyuuryokuFromNyuuka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.lblKin4);
             this.Controls.Add(this.Btn_NoSelect);
             this.Controls.Add(this.Btn_SelectAll);
             this.Controls.Add(this.ckM_Label14);
@@ -7789,7 +7770,6 @@
             this.Controls.Add(this.ckM_Label17);
             this.Controls.Add(this.ckM_TextBox18);
             this.Controls.Add(this.ckM_Label15);
-            this.Controls.Add(this.ckM_TextBox8);
             this.Controls.Add(this.ckM_Label3);
             this.Controls.Add(this.ckM_Label5);
             this.Controls.Add(this.TxtRemark1);
@@ -7817,7 +7797,6 @@
             this.Controls.SetChildIndex(this.TxtRemark1, 0);
             this.Controls.SetChildIndex(this.ckM_Label5, 0);
             this.Controls.SetChildIndex(this.ckM_Label3, 0);
-            this.Controls.SetChildIndex(this.ckM_TextBox8, 0);
             this.Controls.SetChildIndex(this.ckM_Label15, 0);
             this.Controls.SetChildIndex(this.ckM_TextBox18, 0);
             this.Controls.SetChildIndex(this.ckM_Label17, 0);
@@ -7850,6 +7829,7 @@
             this.Controls.SetChildIndex(this.ckM_Label14, 0);
             this.Controls.SetChildIndex(this.Btn_SelectAll, 0);
             this.Controls.SetChildIndex(this.Btn_NoSelect, 0);
+            this.Controls.SetChildIndex(this.lblKin4, 0);
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();
             this.Pnl_Body.ResumeLayout(false);
@@ -7950,7 +7930,6 @@
         private System.Windows.Forms.Label label2;
         private CKM_Controls.CKM_Label ckM_Label3;
         private Search.CKM_SearchControl ckM_SearchControl1;
-        private CKM_Controls.CKM_TextBox ckM_TextBox8;
         private CKM_Controls.CKM_TextBox ckM_TextBox18;
         private CKM_Controls.CKM_Label ckM_Label15;
         private CKM_Controls.CKM_Label ckM_Label17;
@@ -8141,6 +8120,7 @@
         private CKM_Controls.CKM_TextBox IMN_SIRGK_0;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label lblKin4;
     }
 }
 
