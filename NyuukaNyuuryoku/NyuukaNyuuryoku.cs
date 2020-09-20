@@ -2394,8 +2394,8 @@ namespace NyuukaNyuuryoku
             w_Ret = mGrid2.F_MoveFocus((int)ClsGridZaiko.Gen_MK_FocusMove.MvSet, (int)ClsGridZaiko.Gen_MK_FocusMove.MvSet, w_Ctrl, -1, -1, this.ActiveControl, Vsb_Mei_1, pRow, pCol);
 
         }
-       
-        private bool CheckGrid(int col, int row, ref bool focus, bool chkAll=false, bool changeYmd=false)
+
+        private bool CheckGrid(int col, int row, ref bool focus, bool chkAll = false, bool changeYmd = false)
         {
 
             if (!chkAll && !changeYmd)
@@ -2403,10 +2403,10 @@ namespace NyuukaNyuuryoku
                 int w_CtlRow = row - Vsb_Mei_0.Value;
                 if (w_CtlRow < ClsGridHikiate.gc_P_GYO)
                     if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
-                {
-                    if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
-                        return false;
-                }
+                    {
+                        if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
+                            return false;
+                    }
             }
 
             switch (col)
@@ -2457,7 +2457,10 @@ namespace NyuukaNyuuryoku
 
             //各金額項目の再計算必要
             if (chkAll == false)
-                CalcKin();
+            {
+                if (!CalcKin())
+                    return false;
+            }
 
             //配列の内容を画面へセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);

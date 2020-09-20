@@ -41,6 +41,11 @@
             this.IMT_ITMCD_1 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMCD_2 = new CKM_Controls.CKM_TextBox();
             this.Pnl_Body = new System.Windows.Forms.Panel();
+            this.IMT_ITMCD_7 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ITMCD_6 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ITMCD_5 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ITMCD_4 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ITMCD_3 = new CKM_Controls.CKM_TextBox();
             this.IMT_ZEI_7 = new CKM_Controls.CKM_TextBox();
             this.IMT_ZEI_6 = new CKM_Controls.CKM_TextBox();
             this.IMT_ZEI_5 = new CKM_Controls.CKM_TextBox();
@@ -49,11 +54,6 @@
             this.IMT_ZEI_2 = new CKM_Controls.CKM_TextBox();
             this.IMT_ZEI_1 = new CKM_Controls.CKM_TextBox();
             this.IMT_ZEI_0 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ITMCD_7 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ITMCD_6 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ITMCD_5 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ITMCD_4 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ITMCD_3 = new CKM_Controls.CKM_TextBox();
             this.IMN_SIRGK_7 = new CKM_Controls.CKM_TextBox();
             this.IMN_SIRGK_6 = new CKM_Controls.CKM_TextBox();
             this.IMN_SIRGK_5 = new CKM_Controls.CKM_TextBox();
@@ -273,7 +273,6 @@
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_SearchControl1 = new Search.CKM_SearchControl();
-            this.ckM_TextBox8 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox18 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label15 = new CKM_Controls.CKM_Label();
             this.ckM_Label17 = new CKM_Controls.CKM_Label();
@@ -303,6 +302,7 @@
             this.ckM_Label14 = new CKM_Controls.CKM_Label();
             this.Btn_NoSelect = new CKM_Controls.CKM_Button();
             this.Btn_SelectAll = new CKM_Controls.CKM_Button();
+            this.lblKin4 = new System.Windows.Forms.Label();
             this.PanelHeader.SuspendLayout();
             this.Pnl_Body.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -327,10 +327,6 @@
             // PanelSearch
             // 
             this.PanelSearch.TabIndex = 7;
-            // 
-            // btnChangeIkkatuHacchuuMode
-            // 
-            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             // 
             // label4
             // 
@@ -653,14 +649,6 @@
             // 
             this.Pnl_Body.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.Pnl_Body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Pnl_Body.Controls.Add(this.IMT_ZEI_7);
-            this.Pnl_Body.Controls.Add(this.IMT_ZEI_6);
-            this.Pnl_Body.Controls.Add(this.IMT_ZEI_5);
-            this.Pnl_Body.Controls.Add(this.IMT_ZEI_4);
-            this.Pnl_Body.Controls.Add(this.IMT_ZEI_3);
-            this.Pnl_Body.Controls.Add(this.IMT_ZEI_2);
-            this.Pnl_Body.Controls.Add(this.IMT_ZEI_1);
-            this.Pnl_Body.Controls.Add(this.IMT_ZEI_0);
             this.Pnl_Body.Controls.Add(this.IMT_ITMCD_7);
             this.Pnl_Body.Controls.Add(this.IMT_ITMCD_6);
             this.Pnl_Body.Controls.Add(this.IMT_ITMCD_5);
@@ -669,6 +657,14 @@
             this.Pnl_Body.Controls.Add(this.IMT_ITMCD_0);
             this.Pnl_Body.Controls.Add(this.IMT_ITMCD_1);
             this.Pnl_Body.Controls.Add(this.IMT_ITMCD_2);
+            this.Pnl_Body.Controls.Add(this.IMT_ZEI_7);
+            this.Pnl_Body.Controls.Add(this.IMT_ZEI_6);
+            this.Pnl_Body.Controls.Add(this.IMT_ZEI_5);
+            this.Pnl_Body.Controls.Add(this.IMT_ZEI_4);
+            this.Pnl_Body.Controls.Add(this.IMT_ZEI_3);
+            this.Pnl_Body.Controls.Add(this.IMT_ZEI_2);
+            this.Pnl_Body.Controls.Add(this.IMT_ZEI_1);
+            this.Pnl_Body.Controls.Add(this.IMT_ZEI_0);
             this.Pnl_Body.Controls.Add(this.IMN_SIRGK_7);
             this.Pnl_Body.Controls.Add(this.IMN_SIRGK_6);
             this.Pnl_Body.Controls.Add(this.IMN_SIRGK_5);
@@ -851,262 +847,6 @@
             this.Pnl_Body.Size = new System.Drawing.Size(1363, 308);
             this.Pnl_Body.TabIndex = 0;
             // 
-            // IMT_ZEI_7
-            // 
-            this.IMT_ZEI_7.AllowMinus = false;
-            this.IMT_ZEI_7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ZEI_7.BackColor = System.Drawing.Color.Silver;
-            this.IMT_ZEI_7.BorderColor = false;
-            this.IMT_ZEI_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ZEI_7.ClientColor = System.Drawing.Color.White;
-            this.IMT_ZEI_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.IMT_ZEI_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ZEI_7.DecimalPlace = 0;
-            this.IMT_ZEI_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.IMT_ZEI_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMT_ZEI_7.IntegerPart = 0;
-            this.IMT_ZEI_7.IsCorrectDate = true;
-            this.IMT_ZEI_7.isEnterKeyDown = false;
-            this.IMT_ZEI_7.IsFirstTime = true;
-            this.IMT_ZEI_7.isMaxLengthErr = false;
-            this.IMT_ZEI_7.IsNumber = true;
-            this.IMT_ZEI_7.IsShop = false;
-            this.IMT_ZEI_7.Length = 5;
-            this.IMT_ZEI_7.Location = new System.Drawing.Point(1278, 285);
-            this.IMT_ZEI_7.MaxLength = 5;
-            this.IMT_ZEI_7.MoveNext = true;
-            this.IMT_ZEI_7.Name = "IMT_ZEI_7";
-            this.IMT_ZEI_7.Size = new System.Drawing.Size(39, 19);
-            this.IMT_ZEI_7.TabIndex = 682;
-            this.IMT_ZEI_7.Tag = "7";
-            this.IMT_ZEI_7.Text = "非課税";
-            this.IMT_ZEI_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_ZEI_7.UseColorSizMode = false;
-            // 
-            // IMT_ZEI_6
-            // 
-            this.IMT_ZEI_6.AllowMinus = false;
-            this.IMT_ZEI_6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ZEI_6.BackColor = System.Drawing.Color.Silver;
-            this.IMT_ZEI_6.BorderColor = false;
-            this.IMT_ZEI_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ZEI_6.ClientColor = System.Drawing.Color.White;
-            this.IMT_ZEI_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.IMT_ZEI_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ZEI_6.DecimalPlace = 0;
-            this.IMT_ZEI_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.IMT_ZEI_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMT_ZEI_6.IntegerPart = 0;
-            this.IMT_ZEI_6.IsCorrectDate = true;
-            this.IMT_ZEI_6.isEnterKeyDown = false;
-            this.IMT_ZEI_6.IsFirstTime = true;
-            this.IMT_ZEI_6.isMaxLengthErr = false;
-            this.IMT_ZEI_6.IsNumber = true;
-            this.IMT_ZEI_6.IsShop = false;
-            this.IMT_ZEI_6.Length = 5;
-            this.IMT_ZEI_6.Location = new System.Drawing.Point(1278, 247);
-            this.IMT_ZEI_6.MaxLength = 5;
-            this.IMT_ZEI_6.MoveNext = true;
-            this.IMT_ZEI_6.Name = "IMT_ZEI_6";
-            this.IMT_ZEI_6.Size = new System.Drawing.Size(39, 19);
-            this.IMT_ZEI_6.TabIndex = 681;
-            this.IMT_ZEI_6.Tag = "6";
-            this.IMT_ZEI_6.Text = "非課税";
-            this.IMT_ZEI_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_ZEI_6.UseColorSizMode = false;
-            // 
-            // IMT_ZEI_5
-            // 
-            this.IMT_ZEI_5.AllowMinus = false;
-            this.IMT_ZEI_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ZEI_5.BackColor = System.Drawing.Color.Silver;
-            this.IMT_ZEI_5.BorderColor = false;
-            this.IMT_ZEI_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ZEI_5.ClientColor = System.Drawing.Color.White;
-            this.IMT_ZEI_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.IMT_ZEI_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ZEI_5.DecimalPlace = 0;
-            this.IMT_ZEI_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.IMT_ZEI_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMT_ZEI_5.IntegerPart = 0;
-            this.IMT_ZEI_5.IsCorrectDate = true;
-            this.IMT_ZEI_5.isEnterKeyDown = false;
-            this.IMT_ZEI_5.IsFirstTime = true;
-            this.IMT_ZEI_5.isMaxLengthErr = false;
-            this.IMT_ZEI_5.IsNumber = true;
-            this.IMT_ZEI_5.IsShop = false;
-            this.IMT_ZEI_5.Length = 5;
-            this.IMT_ZEI_5.Location = new System.Drawing.Point(1278, 209);
-            this.IMT_ZEI_5.MaxLength = 5;
-            this.IMT_ZEI_5.MoveNext = true;
-            this.IMT_ZEI_5.Name = "IMT_ZEI_5";
-            this.IMT_ZEI_5.Size = new System.Drawing.Size(39, 19);
-            this.IMT_ZEI_5.TabIndex = 680;
-            this.IMT_ZEI_5.Tag = "5";
-            this.IMT_ZEI_5.Text = "非課税";
-            this.IMT_ZEI_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_ZEI_5.UseColorSizMode = false;
-            // 
-            // IMT_ZEI_4
-            // 
-            this.IMT_ZEI_4.AllowMinus = false;
-            this.IMT_ZEI_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ZEI_4.BackColor = System.Drawing.Color.Silver;
-            this.IMT_ZEI_4.BorderColor = false;
-            this.IMT_ZEI_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ZEI_4.ClientColor = System.Drawing.Color.White;
-            this.IMT_ZEI_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.IMT_ZEI_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ZEI_4.DecimalPlace = 0;
-            this.IMT_ZEI_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.IMT_ZEI_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMT_ZEI_4.IntegerPart = 0;
-            this.IMT_ZEI_4.IsCorrectDate = true;
-            this.IMT_ZEI_4.isEnterKeyDown = false;
-            this.IMT_ZEI_4.IsFirstTime = true;
-            this.IMT_ZEI_4.isMaxLengthErr = false;
-            this.IMT_ZEI_4.IsNumber = true;
-            this.IMT_ZEI_4.IsShop = false;
-            this.IMT_ZEI_4.Length = 5;
-            this.IMT_ZEI_4.Location = new System.Drawing.Point(1278, 171);
-            this.IMT_ZEI_4.MaxLength = 5;
-            this.IMT_ZEI_4.MoveNext = true;
-            this.IMT_ZEI_4.Name = "IMT_ZEI_4";
-            this.IMT_ZEI_4.Size = new System.Drawing.Size(39, 19);
-            this.IMT_ZEI_4.TabIndex = 679;
-            this.IMT_ZEI_4.Tag = "4";
-            this.IMT_ZEI_4.Text = "非課税";
-            this.IMT_ZEI_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_ZEI_4.UseColorSizMode = false;
-            // 
-            // IMT_ZEI_3
-            // 
-            this.IMT_ZEI_3.AllowMinus = false;
-            this.IMT_ZEI_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ZEI_3.BackColor = System.Drawing.Color.Silver;
-            this.IMT_ZEI_3.BorderColor = false;
-            this.IMT_ZEI_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ZEI_3.ClientColor = System.Drawing.Color.White;
-            this.IMT_ZEI_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.IMT_ZEI_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ZEI_3.DecimalPlace = 0;
-            this.IMT_ZEI_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.IMT_ZEI_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMT_ZEI_3.IntegerPart = 0;
-            this.IMT_ZEI_3.IsCorrectDate = true;
-            this.IMT_ZEI_3.isEnterKeyDown = false;
-            this.IMT_ZEI_3.IsFirstTime = true;
-            this.IMT_ZEI_3.isMaxLengthErr = false;
-            this.IMT_ZEI_3.IsNumber = true;
-            this.IMT_ZEI_3.IsShop = false;
-            this.IMT_ZEI_3.Length = 5;
-            this.IMT_ZEI_3.Location = new System.Drawing.Point(1278, 133);
-            this.IMT_ZEI_3.MaxLength = 5;
-            this.IMT_ZEI_3.MoveNext = true;
-            this.IMT_ZEI_3.Name = "IMT_ZEI_3";
-            this.IMT_ZEI_3.Size = new System.Drawing.Size(39, 19);
-            this.IMT_ZEI_3.TabIndex = 678;
-            this.IMT_ZEI_3.Tag = "3";
-            this.IMT_ZEI_3.Text = "非課税";
-            this.IMT_ZEI_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_ZEI_3.UseColorSizMode = false;
-            // 
-            // IMT_ZEI_2
-            // 
-            this.IMT_ZEI_2.AllowMinus = false;
-            this.IMT_ZEI_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ZEI_2.BackColor = System.Drawing.Color.Silver;
-            this.IMT_ZEI_2.BorderColor = false;
-            this.IMT_ZEI_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ZEI_2.ClientColor = System.Drawing.Color.White;
-            this.IMT_ZEI_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.IMT_ZEI_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ZEI_2.DecimalPlace = 0;
-            this.IMT_ZEI_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.IMT_ZEI_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMT_ZEI_2.IntegerPart = 0;
-            this.IMT_ZEI_2.IsCorrectDate = true;
-            this.IMT_ZEI_2.isEnterKeyDown = false;
-            this.IMT_ZEI_2.IsFirstTime = true;
-            this.IMT_ZEI_2.isMaxLengthErr = false;
-            this.IMT_ZEI_2.IsNumber = true;
-            this.IMT_ZEI_2.IsShop = false;
-            this.IMT_ZEI_2.Length = 5;
-            this.IMT_ZEI_2.Location = new System.Drawing.Point(1278, 95);
-            this.IMT_ZEI_2.MaxLength = 5;
-            this.IMT_ZEI_2.MoveNext = true;
-            this.IMT_ZEI_2.Name = "IMT_ZEI_2";
-            this.IMT_ZEI_2.Size = new System.Drawing.Size(39, 19);
-            this.IMT_ZEI_2.TabIndex = 677;
-            this.IMT_ZEI_2.Tag = "2";
-            this.IMT_ZEI_2.Text = "非課税";
-            this.IMT_ZEI_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_ZEI_2.UseColorSizMode = false;
-            // 
-            // IMT_ZEI_1
-            // 
-            this.IMT_ZEI_1.AllowMinus = false;
-            this.IMT_ZEI_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ZEI_1.BackColor = System.Drawing.Color.Silver;
-            this.IMT_ZEI_1.BorderColor = false;
-            this.IMT_ZEI_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ZEI_1.ClientColor = System.Drawing.Color.White;
-            this.IMT_ZEI_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.IMT_ZEI_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ZEI_1.DecimalPlace = 0;
-            this.IMT_ZEI_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.IMT_ZEI_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMT_ZEI_1.IntegerPart = 0;
-            this.IMT_ZEI_1.IsCorrectDate = true;
-            this.IMT_ZEI_1.isEnterKeyDown = false;
-            this.IMT_ZEI_1.IsFirstTime = true;
-            this.IMT_ZEI_1.isMaxLengthErr = false;
-            this.IMT_ZEI_1.IsNumber = true;
-            this.IMT_ZEI_1.IsShop = false;
-            this.IMT_ZEI_1.Length = 5;
-            this.IMT_ZEI_1.Location = new System.Drawing.Point(1278, 57);
-            this.IMT_ZEI_1.MaxLength = 5;
-            this.IMT_ZEI_1.MoveNext = true;
-            this.IMT_ZEI_1.Name = "IMT_ZEI_1";
-            this.IMT_ZEI_1.Size = new System.Drawing.Size(39, 19);
-            this.IMT_ZEI_1.TabIndex = 676;
-            this.IMT_ZEI_1.Tag = "1";
-            this.IMT_ZEI_1.Text = "非課税";
-            this.IMT_ZEI_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_ZEI_1.UseColorSizMode = false;
-            // 
-            // IMT_ZEI_0
-            // 
-            this.IMT_ZEI_0.AllowMinus = false;
-            this.IMT_ZEI_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ZEI_0.BackColor = System.Drawing.Color.Silver;
-            this.IMT_ZEI_0.BorderColor = false;
-            this.IMT_ZEI_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ZEI_0.ClientColor = System.Drawing.Color.White;
-            this.IMT_ZEI_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.IMT_ZEI_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ZEI_0.DecimalPlace = 0;
-            this.IMT_ZEI_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.IMT_ZEI_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMT_ZEI_0.IntegerPart = 0;
-            this.IMT_ZEI_0.IsCorrectDate = true;
-            this.IMT_ZEI_0.isEnterKeyDown = false;
-            this.IMT_ZEI_0.IsFirstTime = true;
-            this.IMT_ZEI_0.isMaxLengthErr = false;
-            this.IMT_ZEI_0.IsNumber = true;
-            this.IMT_ZEI_0.IsShop = false;
-            this.IMT_ZEI_0.Length = 5;
-            this.IMT_ZEI_0.Location = new System.Drawing.Point(1278, 19);
-            this.IMT_ZEI_0.MaxLength = 5;
-            this.IMT_ZEI_0.MoveNext = true;
-            this.IMT_ZEI_0.Name = "IMT_ZEI_0";
-            this.IMT_ZEI_0.Size = new System.Drawing.Size(39, 19);
-            this.IMT_ZEI_0.TabIndex = 675;
-            this.IMT_ZEI_0.Tag = "0";
-            this.IMT_ZEI_0.Text = "非課税";
-            this.IMT_ZEI_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_ZEI_0.UseColorSizMode = false;
-            // 
             // IMT_ITMCD_7
             // 
             this.IMT_ITMCD_7.AllowMinus = false;
@@ -1266,6 +1006,262 @@
             this.IMT_ITMCD_3.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
             this.IMT_ITMCD_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.IMT_ITMCD_3.UseColorSizMode = false;
+            // 
+            // IMT_ZEI_7
+            // 
+            this.IMT_ZEI_7.AllowMinus = false;
+            this.IMT_ZEI_7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_ZEI_7.BackColor = System.Drawing.Color.Silver;
+            this.IMT_ZEI_7.BorderColor = false;
+            this.IMT_ZEI_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ZEI_7.ClientColor = System.Drawing.Color.White;
+            this.IMT_ZEI_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.IMT_ZEI_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_ZEI_7.DecimalPlace = 0;
+            this.IMT_ZEI_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.IMT_ZEI_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.IMT_ZEI_7.IntegerPart = 0;
+            this.IMT_ZEI_7.IsCorrectDate = true;
+            this.IMT_ZEI_7.isEnterKeyDown = false;
+            this.IMT_ZEI_7.IsFirstTime = true;
+            this.IMT_ZEI_7.isMaxLengthErr = false;
+            this.IMT_ZEI_7.IsNumber = true;
+            this.IMT_ZEI_7.IsShop = false;
+            this.IMT_ZEI_7.Length = 5;
+            this.IMT_ZEI_7.Location = new System.Drawing.Point(1278, 285);
+            this.IMT_ZEI_7.MaxLength = 5;
+            this.IMT_ZEI_7.MoveNext = true;
+            this.IMT_ZEI_7.Name = "IMT_ZEI_7";
+            this.IMT_ZEI_7.Size = new System.Drawing.Size(36, 19);
+            this.IMT_ZEI_7.TabIndex = 682;
+            this.IMT_ZEI_7.Tag = "7";
+            this.IMT_ZEI_7.Text = "XXXX";
+            this.IMT_ZEI_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ZEI_7.UseColorSizMode = false;
+            // 
+            // IMT_ZEI_6
+            // 
+            this.IMT_ZEI_6.AllowMinus = false;
+            this.IMT_ZEI_6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_ZEI_6.BackColor = System.Drawing.Color.Silver;
+            this.IMT_ZEI_6.BorderColor = false;
+            this.IMT_ZEI_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ZEI_6.ClientColor = System.Drawing.Color.White;
+            this.IMT_ZEI_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.IMT_ZEI_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_ZEI_6.DecimalPlace = 0;
+            this.IMT_ZEI_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.IMT_ZEI_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.IMT_ZEI_6.IntegerPart = 0;
+            this.IMT_ZEI_6.IsCorrectDate = true;
+            this.IMT_ZEI_6.isEnterKeyDown = false;
+            this.IMT_ZEI_6.IsFirstTime = true;
+            this.IMT_ZEI_6.isMaxLengthErr = false;
+            this.IMT_ZEI_6.IsNumber = true;
+            this.IMT_ZEI_6.IsShop = false;
+            this.IMT_ZEI_6.Length = 5;
+            this.IMT_ZEI_6.Location = new System.Drawing.Point(1278, 247);
+            this.IMT_ZEI_6.MaxLength = 5;
+            this.IMT_ZEI_6.MoveNext = true;
+            this.IMT_ZEI_6.Name = "IMT_ZEI_6";
+            this.IMT_ZEI_6.Size = new System.Drawing.Size(36, 19);
+            this.IMT_ZEI_6.TabIndex = 681;
+            this.IMT_ZEI_6.Tag = "6";
+            this.IMT_ZEI_6.Text = "XXXX";
+            this.IMT_ZEI_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ZEI_6.UseColorSizMode = false;
+            // 
+            // IMT_ZEI_5
+            // 
+            this.IMT_ZEI_5.AllowMinus = false;
+            this.IMT_ZEI_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_ZEI_5.BackColor = System.Drawing.Color.Silver;
+            this.IMT_ZEI_5.BorderColor = false;
+            this.IMT_ZEI_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ZEI_5.ClientColor = System.Drawing.Color.White;
+            this.IMT_ZEI_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.IMT_ZEI_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_ZEI_5.DecimalPlace = 0;
+            this.IMT_ZEI_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.IMT_ZEI_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.IMT_ZEI_5.IntegerPart = 0;
+            this.IMT_ZEI_5.IsCorrectDate = true;
+            this.IMT_ZEI_5.isEnterKeyDown = false;
+            this.IMT_ZEI_5.IsFirstTime = true;
+            this.IMT_ZEI_5.isMaxLengthErr = false;
+            this.IMT_ZEI_5.IsNumber = true;
+            this.IMT_ZEI_5.IsShop = false;
+            this.IMT_ZEI_5.Length = 5;
+            this.IMT_ZEI_5.Location = new System.Drawing.Point(1278, 209);
+            this.IMT_ZEI_5.MaxLength = 5;
+            this.IMT_ZEI_5.MoveNext = true;
+            this.IMT_ZEI_5.Name = "IMT_ZEI_5";
+            this.IMT_ZEI_5.Size = new System.Drawing.Size(36, 19);
+            this.IMT_ZEI_5.TabIndex = 680;
+            this.IMT_ZEI_5.Tag = "5";
+            this.IMT_ZEI_5.Text = "XXXX";
+            this.IMT_ZEI_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ZEI_5.UseColorSizMode = false;
+            // 
+            // IMT_ZEI_4
+            // 
+            this.IMT_ZEI_4.AllowMinus = false;
+            this.IMT_ZEI_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_ZEI_4.BackColor = System.Drawing.Color.Silver;
+            this.IMT_ZEI_4.BorderColor = false;
+            this.IMT_ZEI_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ZEI_4.ClientColor = System.Drawing.Color.White;
+            this.IMT_ZEI_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.IMT_ZEI_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_ZEI_4.DecimalPlace = 0;
+            this.IMT_ZEI_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.IMT_ZEI_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.IMT_ZEI_4.IntegerPart = 0;
+            this.IMT_ZEI_4.IsCorrectDate = true;
+            this.IMT_ZEI_4.isEnterKeyDown = false;
+            this.IMT_ZEI_4.IsFirstTime = true;
+            this.IMT_ZEI_4.isMaxLengthErr = false;
+            this.IMT_ZEI_4.IsNumber = true;
+            this.IMT_ZEI_4.IsShop = false;
+            this.IMT_ZEI_4.Length = 5;
+            this.IMT_ZEI_4.Location = new System.Drawing.Point(1278, 171);
+            this.IMT_ZEI_4.MaxLength = 5;
+            this.IMT_ZEI_4.MoveNext = true;
+            this.IMT_ZEI_4.Name = "IMT_ZEI_4";
+            this.IMT_ZEI_4.Size = new System.Drawing.Size(36, 19);
+            this.IMT_ZEI_4.TabIndex = 679;
+            this.IMT_ZEI_4.Tag = "4";
+            this.IMT_ZEI_4.Text = "XXXX";
+            this.IMT_ZEI_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ZEI_4.UseColorSizMode = false;
+            // 
+            // IMT_ZEI_3
+            // 
+            this.IMT_ZEI_3.AllowMinus = false;
+            this.IMT_ZEI_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_ZEI_3.BackColor = System.Drawing.Color.Silver;
+            this.IMT_ZEI_3.BorderColor = false;
+            this.IMT_ZEI_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ZEI_3.ClientColor = System.Drawing.Color.White;
+            this.IMT_ZEI_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.IMT_ZEI_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_ZEI_3.DecimalPlace = 0;
+            this.IMT_ZEI_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.IMT_ZEI_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.IMT_ZEI_3.IntegerPart = 0;
+            this.IMT_ZEI_3.IsCorrectDate = true;
+            this.IMT_ZEI_3.isEnterKeyDown = false;
+            this.IMT_ZEI_3.IsFirstTime = true;
+            this.IMT_ZEI_3.isMaxLengthErr = false;
+            this.IMT_ZEI_3.IsNumber = true;
+            this.IMT_ZEI_3.IsShop = false;
+            this.IMT_ZEI_3.Length = 5;
+            this.IMT_ZEI_3.Location = new System.Drawing.Point(1278, 133);
+            this.IMT_ZEI_3.MaxLength = 5;
+            this.IMT_ZEI_3.MoveNext = true;
+            this.IMT_ZEI_3.Name = "IMT_ZEI_3";
+            this.IMT_ZEI_3.Size = new System.Drawing.Size(36, 19);
+            this.IMT_ZEI_3.TabIndex = 678;
+            this.IMT_ZEI_3.Tag = "3";
+            this.IMT_ZEI_3.Text = "XXXX";
+            this.IMT_ZEI_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ZEI_3.UseColorSizMode = false;
+            // 
+            // IMT_ZEI_2
+            // 
+            this.IMT_ZEI_2.AllowMinus = false;
+            this.IMT_ZEI_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_ZEI_2.BackColor = System.Drawing.Color.Silver;
+            this.IMT_ZEI_2.BorderColor = false;
+            this.IMT_ZEI_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ZEI_2.ClientColor = System.Drawing.Color.White;
+            this.IMT_ZEI_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.IMT_ZEI_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_ZEI_2.DecimalPlace = 0;
+            this.IMT_ZEI_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.IMT_ZEI_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.IMT_ZEI_2.IntegerPart = 0;
+            this.IMT_ZEI_2.IsCorrectDate = true;
+            this.IMT_ZEI_2.isEnterKeyDown = false;
+            this.IMT_ZEI_2.IsFirstTime = true;
+            this.IMT_ZEI_2.isMaxLengthErr = false;
+            this.IMT_ZEI_2.IsNumber = true;
+            this.IMT_ZEI_2.IsShop = false;
+            this.IMT_ZEI_2.Length = 5;
+            this.IMT_ZEI_2.Location = new System.Drawing.Point(1278, 95);
+            this.IMT_ZEI_2.MaxLength = 5;
+            this.IMT_ZEI_2.MoveNext = true;
+            this.IMT_ZEI_2.Name = "IMT_ZEI_2";
+            this.IMT_ZEI_2.Size = new System.Drawing.Size(36, 19);
+            this.IMT_ZEI_2.TabIndex = 677;
+            this.IMT_ZEI_2.Tag = "2";
+            this.IMT_ZEI_2.Text = "XXXX";
+            this.IMT_ZEI_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ZEI_2.UseColorSizMode = false;
+            // 
+            // IMT_ZEI_1
+            // 
+            this.IMT_ZEI_1.AllowMinus = false;
+            this.IMT_ZEI_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_ZEI_1.BackColor = System.Drawing.Color.Silver;
+            this.IMT_ZEI_1.BorderColor = false;
+            this.IMT_ZEI_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ZEI_1.ClientColor = System.Drawing.Color.White;
+            this.IMT_ZEI_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.IMT_ZEI_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_ZEI_1.DecimalPlace = 0;
+            this.IMT_ZEI_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.IMT_ZEI_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.IMT_ZEI_1.IntegerPart = 0;
+            this.IMT_ZEI_1.IsCorrectDate = true;
+            this.IMT_ZEI_1.isEnterKeyDown = false;
+            this.IMT_ZEI_1.IsFirstTime = true;
+            this.IMT_ZEI_1.isMaxLengthErr = false;
+            this.IMT_ZEI_1.IsNumber = true;
+            this.IMT_ZEI_1.IsShop = false;
+            this.IMT_ZEI_1.Length = 5;
+            this.IMT_ZEI_1.Location = new System.Drawing.Point(1278, 57);
+            this.IMT_ZEI_1.MaxLength = 5;
+            this.IMT_ZEI_1.MoveNext = true;
+            this.IMT_ZEI_1.Name = "IMT_ZEI_1";
+            this.IMT_ZEI_1.Size = new System.Drawing.Size(36, 19);
+            this.IMT_ZEI_1.TabIndex = 676;
+            this.IMT_ZEI_1.Tag = "1";
+            this.IMT_ZEI_1.Text = "XXXX";
+            this.IMT_ZEI_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ZEI_1.UseColorSizMode = false;
+            // 
+            // IMT_ZEI_0
+            // 
+            this.IMT_ZEI_0.AllowMinus = false;
+            this.IMT_ZEI_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_ZEI_0.BackColor = System.Drawing.Color.Silver;
+            this.IMT_ZEI_0.BorderColor = false;
+            this.IMT_ZEI_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ZEI_0.ClientColor = System.Drawing.Color.White;
+            this.IMT_ZEI_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.IMT_ZEI_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_ZEI_0.DecimalPlace = 0;
+            this.IMT_ZEI_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.IMT_ZEI_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.IMT_ZEI_0.IntegerPart = 0;
+            this.IMT_ZEI_0.IsCorrectDate = true;
+            this.IMT_ZEI_0.isEnterKeyDown = false;
+            this.IMT_ZEI_0.IsFirstTime = true;
+            this.IMT_ZEI_0.isMaxLengthErr = false;
+            this.IMT_ZEI_0.IsNumber = true;
+            this.IMT_ZEI_0.IsShop = false;
+            this.IMT_ZEI_0.Length = 5;
+            this.IMT_ZEI_0.Location = new System.Drawing.Point(1278, 19);
+            this.IMT_ZEI_0.MaxLength = 5;
+            this.IMT_ZEI_0.MoveNext = true;
+            this.IMT_ZEI_0.Name = "IMT_ZEI_0";
+            this.IMT_ZEI_0.Size = new System.Drawing.Size(36, 19);
+            this.IMT_ZEI_0.TabIndex = 675;
+            this.IMT_ZEI_0.Tag = "0";
+            this.IMT_ZEI_0.Text = "非課税";
+            this.IMT_ZEI_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ZEI_0.UseColorSizMode = false;
             // 
             // IMN_SIRGK_7
             // 
@@ -2935,7 +2931,7 @@
             this.IMN_WEBPR2_7.MaxLength = 100;
             this.IMN_WEBPR2_7.MoveNext = true;
             this.IMN_WEBPR2_7.Name = "IMN_WEBPR2_7";
-            this.IMN_WEBPR2_7.Size = new System.Drawing.Size(105, 19);
+            this.IMN_WEBPR2_7.Size = new System.Drawing.Size(110, 19);
             this.IMN_WEBPR2_7.TabIndex = 626;
             this.IMN_WEBPR2_7.Tag = "7";
             this.IMN_WEBPR2_7.Text = "XXXXXXXX10XXXX5";
@@ -3124,12 +3120,12 @@
             this.IMT_JUONO_7.IsNumber = true;
             this.IMT_JUONO_7.IsShop = false;
             this.IMT_JUONO_7.Length = 20;
-            this.IMT_JUONO_7.Location = new System.Drawing.Point(320, 266);
+            this.IMT_JUONO_7.Location = new System.Drawing.Point(325, 266);
             this.IMT_JUONO_7.MaxLength = 20;
             this.IMT_JUONO_7.MoveNext = true;
             this.IMT_JUONO_7.Name = "IMT_JUONO_7";
             this.IMT_JUONO_7.ReadOnly = true;
-            this.IMT_JUONO_7.Size = new System.Drawing.Size(183, 19);
+            this.IMT_JUONO_7.Size = new System.Drawing.Size(178, 19);
             this.IMT_JUONO_7.TabIndex = 633;
             this.IMT_JUONO_7.Tag = "7";
             this.IMT_JUONO_7.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
@@ -3373,7 +3369,7 @@
             this.IMN_WEBPR2_6.MaxLength = 100;
             this.IMN_WEBPR2_6.MoveNext = true;
             this.IMN_WEBPR2_6.Name = "IMN_WEBPR2_6";
-            this.IMN_WEBPR2_6.Size = new System.Drawing.Size(105, 19);
+            this.IMN_WEBPR2_6.Size = new System.Drawing.Size(110, 19);
             this.IMN_WEBPR2_6.TabIndex = 607;
             this.IMN_WEBPR2_6.Tag = "6";
             this.IMN_WEBPR2_6.Text = "XXXXXXXX10XXXX5";
@@ -3562,12 +3558,12 @@
             this.IMT_JUONO_6.IsNumber = true;
             this.IMT_JUONO_6.IsShop = false;
             this.IMT_JUONO_6.Length = 20;
-            this.IMT_JUONO_6.Location = new System.Drawing.Point(320, 228);
+            this.IMT_JUONO_6.Location = new System.Drawing.Point(325, 228);
             this.IMT_JUONO_6.MaxLength = 20;
             this.IMT_JUONO_6.MoveNext = true;
             this.IMT_JUONO_6.Name = "IMT_JUONO_6";
             this.IMT_JUONO_6.ReadOnly = true;
-            this.IMT_JUONO_6.Size = new System.Drawing.Size(183, 19);
+            this.IMT_JUONO_6.Size = new System.Drawing.Size(178, 19);
             this.IMT_JUONO_6.TabIndex = 614;
             this.IMT_JUONO_6.Tag = "6";
             this.IMT_JUONO_6.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
@@ -3811,7 +3807,7 @@
             this.IMN_WEBPR2_5.MaxLength = 100;
             this.IMN_WEBPR2_5.MoveNext = true;
             this.IMN_WEBPR2_5.Name = "IMN_WEBPR2_5";
-            this.IMN_WEBPR2_5.Size = new System.Drawing.Size(105, 19);
+            this.IMN_WEBPR2_5.Size = new System.Drawing.Size(110, 19);
             this.IMN_WEBPR2_5.TabIndex = 588;
             this.IMN_WEBPR2_5.Tag = "5";
             this.IMN_WEBPR2_5.Text = "XXXXXXXX10XXXX5";
@@ -4000,12 +3996,12 @@
             this.IMT_JUONO_5.IsNumber = true;
             this.IMT_JUONO_5.IsShop = false;
             this.IMT_JUONO_5.Length = 20;
-            this.IMT_JUONO_5.Location = new System.Drawing.Point(320, 190);
+            this.IMT_JUONO_5.Location = new System.Drawing.Point(325, 190);
             this.IMT_JUONO_5.MaxLength = 20;
             this.IMT_JUONO_5.MoveNext = true;
             this.IMT_JUONO_5.Name = "IMT_JUONO_5";
             this.IMT_JUONO_5.ReadOnly = true;
-            this.IMT_JUONO_5.Size = new System.Drawing.Size(183, 19);
+            this.IMT_JUONO_5.Size = new System.Drawing.Size(178, 19);
             this.IMT_JUONO_5.TabIndex = 595;
             this.IMT_JUONO_5.Tag = "5";
             this.IMT_JUONO_5.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
@@ -4249,7 +4245,7 @@
             this.IMN_WEBPR2_4.MaxLength = 100;
             this.IMN_WEBPR2_4.MoveNext = true;
             this.IMN_WEBPR2_4.Name = "IMN_WEBPR2_4";
-            this.IMN_WEBPR2_4.Size = new System.Drawing.Size(105, 19);
+            this.IMN_WEBPR2_4.Size = new System.Drawing.Size(110, 19);
             this.IMN_WEBPR2_4.TabIndex = 569;
             this.IMN_WEBPR2_4.Tag = "4";
             this.IMN_WEBPR2_4.Text = "XXXXXXXX10XXXX5";
@@ -4438,12 +4434,12 @@
             this.IMT_JUONO_4.IsNumber = true;
             this.IMT_JUONO_4.IsShop = false;
             this.IMT_JUONO_4.Length = 20;
-            this.IMT_JUONO_4.Location = new System.Drawing.Point(320, 152);
+            this.IMT_JUONO_4.Location = new System.Drawing.Point(325, 152);
             this.IMT_JUONO_4.MaxLength = 20;
             this.IMT_JUONO_4.MoveNext = true;
             this.IMT_JUONO_4.Name = "IMT_JUONO_4";
             this.IMT_JUONO_4.ReadOnly = true;
-            this.IMT_JUONO_4.Size = new System.Drawing.Size(183, 19);
+            this.IMT_JUONO_4.Size = new System.Drawing.Size(178, 19);
             this.IMT_JUONO_4.TabIndex = 576;
             this.IMT_JUONO_4.Tag = "4";
             this.IMT_JUONO_4.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
@@ -4687,7 +4683,7 @@
             this.IMN_WEBPR2_3.MaxLength = 100;
             this.IMN_WEBPR2_3.MoveNext = true;
             this.IMN_WEBPR2_3.Name = "IMN_WEBPR2_3";
-            this.IMN_WEBPR2_3.Size = new System.Drawing.Size(105, 19);
+            this.IMN_WEBPR2_3.Size = new System.Drawing.Size(110, 19);
             this.IMN_WEBPR2_3.TabIndex = 549;
             this.IMN_WEBPR2_3.Tag = "3";
             this.IMN_WEBPR2_3.Text = "XXXXXXXX10XXXX5";
@@ -4876,12 +4872,12 @@
             this.IMT_JUONO_3.IsNumber = true;
             this.IMT_JUONO_3.IsShop = false;
             this.IMT_JUONO_3.Length = 20;
-            this.IMT_JUONO_3.Location = new System.Drawing.Point(320, 114);
+            this.IMT_JUONO_3.Location = new System.Drawing.Point(325, 114);
             this.IMT_JUONO_3.MaxLength = 20;
             this.IMT_JUONO_3.MoveNext = true;
             this.IMT_JUONO_3.Name = "IMT_JUONO_3";
             this.IMT_JUONO_3.ReadOnly = true;
-            this.IMT_JUONO_3.Size = new System.Drawing.Size(183, 19);
+            this.IMT_JUONO_3.Size = new System.Drawing.Size(178, 19);
             this.IMT_JUONO_3.TabIndex = 557;
             this.IMT_JUONO_3.Tag = "3";
             this.IMT_JUONO_3.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
@@ -5224,7 +5220,7 @@
             this.IMN_WEBPR2_2.MaxLength = 100;
             this.IMN_WEBPR2_2.MoveNext = true;
             this.IMN_WEBPR2_2.Name = "IMN_WEBPR2_2";
-            this.IMN_WEBPR2_2.Size = new System.Drawing.Size(105, 19);
+            this.IMN_WEBPR2_2.Size = new System.Drawing.Size(110, 19);
             this.IMN_WEBPR2_2.TabIndex = 39;
             this.IMN_WEBPR2_2.Tag = "2";
             this.IMN_WEBPR2_2.Text = "XXXXXXXX10XXXX5";
@@ -5256,7 +5252,7 @@
             this.IMN_WEBPR2_1.MaxLength = 100;
             this.IMN_WEBPR2_1.MoveNext = true;
             this.IMN_WEBPR2_1.Name = "IMN_WEBPR2_1";
-            this.IMN_WEBPR2_1.Size = new System.Drawing.Size(105, 19);
+            this.IMN_WEBPR2_1.Size = new System.Drawing.Size(110, 19);
             this.IMN_WEBPR2_1.TabIndex = 26;
             this.IMN_WEBPR2_1.Tag = "1";
             this.IMN_WEBPR2_1.Text = "XXXXXXXX10XXXX5";
@@ -5284,11 +5280,11 @@
             this.IMN_WEBPR2_0.IsNumber = true;
             this.IMN_WEBPR2_0.IsShop = false;
             this.IMN_WEBPR2_0.Length = 100;
-            this.IMN_WEBPR2_0.Location = new System.Drawing.Point(212, 0);
+            this.IMN_WEBPR2_0.Location = new System.Drawing.Point(215, 0);
             this.IMN_WEBPR2_0.MaxLength = 100;
             this.IMN_WEBPR2_0.MoveNext = true;
             this.IMN_WEBPR2_0.Name = "IMN_WEBPR2_0";
-            this.IMN_WEBPR2_0.Size = new System.Drawing.Size(108, 19);
+            this.IMN_WEBPR2_0.Size = new System.Drawing.Size(110, 19);
             this.IMN_WEBPR2_0.TabIndex = 12;
             this.IMN_WEBPR2_0.Tag = "0";
             this.IMN_WEBPR2_0.Text = "XXXXXXXX10XXXX5";
@@ -5705,12 +5701,12 @@
             this.IMT_JUONO_0.IsNumber = true;
             this.IMT_JUONO_0.IsShop = false;
             this.IMT_JUONO_0.Length = 20;
-            this.IMT_JUONO_0.Location = new System.Drawing.Point(320, 0);
+            this.IMT_JUONO_0.Location = new System.Drawing.Point(325, 0);
             this.IMT_JUONO_0.MaxLength = 20;
             this.IMT_JUONO_0.MoveNext = true;
             this.IMT_JUONO_0.Name = "IMT_JUONO_0";
             this.IMT_JUONO_0.ReadOnly = true;
-            this.IMT_JUONO_0.Size = new System.Drawing.Size(183, 19);
+            this.IMT_JUONO_0.Size = new System.Drawing.Size(178, 19);
             this.IMT_JUONO_0.TabIndex = 534;
             this.IMT_JUONO_0.Tag = "0";
             this.IMT_JUONO_0.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
@@ -5737,12 +5733,12 @@
             this.IMT_JUONO_1.IsNumber = true;
             this.IMT_JUONO_1.IsShop = false;
             this.IMT_JUONO_1.Length = 20;
-            this.IMT_JUONO_1.Location = new System.Drawing.Point(320, 38);
+            this.IMT_JUONO_1.Location = new System.Drawing.Point(325, 38);
             this.IMT_JUONO_1.MaxLength = 20;
             this.IMT_JUONO_1.MoveNext = true;
             this.IMT_JUONO_1.Name = "IMT_JUONO_1";
             this.IMT_JUONO_1.ReadOnly = true;
-            this.IMT_JUONO_1.Size = new System.Drawing.Size(183, 19);
+            this.IMT_JUONO_1.Size = new System.Drawing.Size(178, 19);
             this.IMT_JUONO_1.TabIndex = 535;
             this.IMT_JUONO_1.Tag = "1";
             this.IMT_JUONO_1.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
@@ -5769,12 +5765,12 @@
             this.IMT_JUONO_2.IsNumber = true;
             this.IMT_JUONO_2.IsShop = false;
             this.IMT_JUONO_2.Length = 20;
-            this.IMT_JUONO_2.Location = new System.Drawing.Point(320, 76);
+            this.IMT_JUONO_2.Location = new System.Drawing.Point(325, 76);
             this.IMT_JUONO_2.MaxLength = 20;
             this.IMT_JUONO_2.MoveNext = true;
             this.IMT_JUONO_2.Name = "IMT_JUONO_2";
             this.IMT_JUONO_2.ReadOnly = true;
-            this.IMT_JUONO_2.Size = new System.Drawing.Size(183, 19);
+            this.IMT_JUONO_2.Size = new System.Drawing.Size(178, 19);
             this.IMT_JUONO_2.TabIndex = 536;
             this.IMT_JUONO_2.Tag = "2";
             this.IMT_JUONO_2.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
@@ -6284,9 +6280,9 @@
             this.CHK_EDICK_7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_7.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_7.Location = new System.Drawing.Point(1317, 285);
+            this.CHK_EDICK_7.Location = new System.Drawing.Point(1309, 285);
             this.CHK_EDICK_7.Name = "CHK_EDICK_7";
-            this.CHK_EDICK_7.Size = new System.Drawing.Size(25, 18);
+            this.CHK_EDICK_7.Size = new System.Drawing.Size(33, 18);
             this.CHK_EDICK_7.TabIndex = 642;
             this.CHK_EDICK_7.Tag = "7";
             this.CHK_EDICK_7.Text = "　";
@@ -6300,9 +6296,9 @@
             this.CHK_EDICK_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_6.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_6.Location = new System.Drawing.Point(1317, 247);
+            this.CHK_EDICK_6.Location = new System.Drawing.Point(1309, 247);
             this.CHK_EDICK_6.Name = "CHK_EDICK_6";
-            this.CHK_EDICK_6.Size = new System.Drawing.Size(25, 18);
+            this.CHK_EDICK_6.Size = new System.Drawing.Size(33, 18);
             this.CHK_EDICK_6.TabIndex = 641;
             this.CHK_EDICK_6.Tag = "6";
             this.CHK_EDICK_6.Text = "　";
@@ -6316,9 +6312,9 @@
             this.CHK_EDICK_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_5.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_5.Location = new System.Drawing.Point(1317, 209);
+            this.CHK_EDICK_5.Location = new System.Drawing.Point(1309, 209);
             this.CHK_EDICK_5.Name = "CHK_EDICK_5";
-            this.CHK_EDICK_5.Size = new System.Drawing.Size(25, 18);
+            this.CHK_EDICK_5.Size = new System.Drawing.Size(33, 18);
             this.CHK_EDICK_5.TabIndex = 640;
             this.CHK_EDICK_5.Tag = "5";
             this.CHK_EDICK_5.Text = "　";
@@ -6332,9 +6328,9 @@
             this.CHK_EDICK_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_4.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_4.Location = new System.Drawing.Point(1317, 171);
+            this.CHK_EDICK_4.Location = new System.Drawing.Point(1309, 171);
             this.CHK_EDICK_4.Name = "CHK_EDICK_4";
-            this.CHK_EDICK_4.Size = new System.Drawing.Size(25, 18);
+            this.CHK_EDICK_4.Size = new System.Drawing.Size(33, 18);
             this.CHK_EDICK_4.TabIndex = 639;
             this.CHK_EDICK_4.Tag = "4";
             this.CHK_EDICK_4.Text = "　";
@@ -6348,9 +6344,9 @@
             this.CHK_EDICK_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_3.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_3.Location = new System.Drawing.Point(1317, 133);
+            this.CHK_EDICK_3.Location = new System.Drawing.Point(1309, 133);
             this.CHK_EDICK_3.Name = "CHK_EDICK_3";
-            this.CHK_EDICK_3.Size = new System.Drawing.Size(25, 18);
+            this.CHK_EDICK_3.Size = new System.Drawing.Size(33, 18);
             this.CHK_EDICK_3.TabIndex = 638;
             this.CHK_EDICK_3.Tag = "3";
             this.CHK_EDICK_3.Text = "　";
@@ -6364,9 +6360,9 @@
             this.CHK_EDICK_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_2.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_2.Location = new System.Drawing.Point(1317, 95);
+            this.CHK_EDICK_2.Location = new System.Drawing.Point(1309, 95);
             this.CHK_EDICK_2.Name = "CHK_EDICK_2";
-            this.CHK_EDICK_2.Size = new System.Drawing.Size(25, 18);
+            this.CHK_EDICK_2.Size = new System.Drawing.Size(33, 18);
             this.CHK_EDICK_2.TabIndex = 637;
             this.CHK_EDICK_2.Tag = "2";
             this.CHK_EDICK_2.Text = "　";
@@ -6380,9 +6376,9 @@
             this.CHK_EDICK_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_1.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_1.Location = new System.Drawing.Point(1317, 57);
+            this.CHK_EDICK_1.Location = new System.Drawing.Point(1309, 57);
             this.CHK_EDICK_1.Name = "CHK_EDICK_1";
-            this.CHK_EDICK_1.Size = new System.Drawing.Size(25, 18);
+            this.CHK_EDICK_1.Size = new System.Drawing.Size(33, 18);
             this.CHK_EDICK_1.TabIndex = 636;
             this.CHK_EDICK_1.Tag = "1";
             this.CHK_EDICK_1.Text = "　";
@@ -6396,9 +6392,9 @@
             this.CHK_EDICK_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_0.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_0.Location = new System.Drawing.Point(1317, 19);
+            this.CHK_EDICK_0.Location = new System.Drawing.Point(1309, 19);
             this.CHK_EDICK_0.Name = "CHK_EDICK_0";
-            this.CHK_EDICK_0.Size = new System.Drawing.Size(25, 18);
+            this.CHK_EDICK_0.Size = new System.Drawing.Size(33, 18);
             this.CHK_EDICK_0.TabIndex = 635;
             this.CHK_EDICK_0.Tag = "0";
             this.CHK_EDICK_0.Text = "　";
@@ -6689,9 +6685,9 @@
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label7.Location = new System.Drawing.Point(320, 2);
+            this.label7.Location = new System.Drawing.Point(326, 2);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(184, 16);
+            this.label7.Size = new System.Drawing.Size(178, 16);
             this.label7.TabIndex = 300;
             this.label7.Text = "メーカー商品CD";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -6769,7 +6765,7 @@
             this.label21.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label21.Location = new System.Drawing.Point(216, 2);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(104, 16);
+            this.label21.Size = new System.Drawing.Size(110, 16);
             this.label21.TabIndex = 284;
             this.label21.Text = "納品書番号";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -7059,6 +7055,7 @@
             this.lblKin3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblKin3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKin3.Location = new System.Drawing.Point(1217, 650);
+            this.lblKin3.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.lblKin3.Name = "lblKin3";
             this.lblKin3.Size = new System.Drawing.Size(85, 18);
             this.lblKin3.TabIndex = 3;
@@ -7151,37 +7148,6 @@
             this.ckM_SearchControl1.Value1 = null;
             this.ckM_SearchControl1.Value2 = null;
             this.ckM_SearchControl1.Value3 = null;
-            // 
-            // ckM_TextBox8
-            // 
-            this.ckM_TextBox8.AllowMinus = true;
-            this.ckM_TextBox8.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox8.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox8.BorderColor = false;
-            this.ckM_TextBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox8.ClientColor = System.Drawing.Color.White;
-            this.ckM_TextBox8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.ckM_TextBox8.DecimalPlace = 0;
-            this.ckM_TextBox8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ckM_TextBox8.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.ckM_TextBox8.IntegerPart = 9;
-            this.ckM_TextBox8.IsCorrectDate = true;
-            this.ckM_TextBox8.isEnterKeyDown = false;
-            this.ckM_TextBox8.IsFirstTime = true;
-            this.ckM_TextBox8.isMaxLengthErr = false;
-            this.ckM_TextBox8.IsNumber = true;
-            this.ckM_TextBox8.IsShop = false;
-            this.ckM_TextBox8.Length = 12;
-            this.ckM_TextBox8.Location = new System.Drawing.Point(1046, 671);
-            this.ckM_TextBox8.MaxLength = 12;
-            this.ckM_TextBox8.MoveNext = true;
-            this.ckM_TextBox8.Name = "ckM_TextBox8";
-            this.ckM_TextBox8.Size = new System.Drawing.Size(83, 19);
-            this.ckM_TextBox8.TabIndex = 31;
-            this.ckM_TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.ckM_TextBox8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.ckM_TextBox8.UseColorSizMode = false;
             // 
             // ckM_TextBox18
             // 
@@ -7601,6 +7567,7 @@
             this.ckM_TextBox5.Name = "ckM_TextBox5";
             this.ckM_TextBox5.Size = new System.Drawing.Size(83, 19);
             this.ckM_TextBox5.TabIndex = 32;
+            this.ckM_TextBox5.Text = "999,999,999";
             this.ckM_TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ckM_TextBox5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox5.UseColorSizMode = false;
@@ -7754,10 +7721,23 @@
             this.Btn_SelectAll.UseVisualStyleBackColor = false;
             this.Btn_SelectAll.Click += new System.EventHandler(this.Btn_SelectAll_Click);
             // 
+            // lblKin4
+            // 
+            this.lblKin4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblKin4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblKin4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKin4.Location = new System.Drawing.Point(1046, 673);
+            this.lblKin4.Name = "lblKin4";
+            this.lblKin4.Size = new System.Drawing.Size(85, 18);
+            this.lblKin4.TabIndex = 737;
+            this.lblKin4.Text = "999,999,999";
+            this.lblKin4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // ShiireNyuuryokuFromNyuuka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.lblKin4);
             this.Controls.Add(this.Btn_NoSelect);
             this.Controls.Add(this.Btn_SelectAll);
             this.Controls.Add(this.ckM_Label14);
@@ -7790,7 +7770,6 @@
             this.Controls.Add(this.ckM_Label17);
             this.Controls.Add(this.ckM_TextBox18);
             this.Controls.Add(this.ckM_Label15);
-            this.Controls.Add(this.ckM_TextBox8);
             this.Controls.Add(this.ckM_Label3);
             this.Controls.Add(this.ckM_Label5);
             this.Controls.Add(this.TxtRemark1);
@@ -7818,7 +7797,6 @@
             this.Controls.SetChildIndex(this.TxtRemark1, 0);
             this.Controls.SetChildIndex(this.ckM_Label5, 0);
             this.Controls.SetChildIndex(this.ckM_Label3, 0);
-            this.Controls.SetChildIndex(this.ckM_TextBox8, 0);
             this.Controls.SetChildIndex(this.ckM_Label15, 0);
             this.Controls.SetChildIndex(this.ckM_TextBox18, 0);
             this.Controls.SetChildIndex(this.ckM_Label17, 0);
@@ -7851,6 +7829,7 @@
             this.Controls.SetChildIndex(this.ckM_Label14, 0);
             this.Controls.SetChildIndex(this.Btn_SelectAll, 0);
             this.Controls.SetChildIndex(this.Btn_NoSelect, 0);
+            this.Controls.SetChildIndex(this.lblKin4, 0);
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();
             this.Pnl_Body.ResumeLayout(false);
@@ -7951,7 +7930,6 @@
         private System.Windows.Forms.Label label2;
         private CKM_Controls.CKM_Label ckM_Label3;
         private Search.CKM_SearchControl ckM_SearchControl1;
-        private CKM_Controls.CKM_TextBox ckM_TextBox8;
         private CKM_Controls.CKM_TextBox ckM_TextBox18;
         private CKM_Controls.CKM_Label ckM_Label15;
         private CKM_Controls.CKM_Label ckM_Label17;
@@ -8142,6 +8120,7 @@
         private CKM_Controls.CKM_TextBox IMN_SIRGK_0;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label lblKin4;
     }
 }
 

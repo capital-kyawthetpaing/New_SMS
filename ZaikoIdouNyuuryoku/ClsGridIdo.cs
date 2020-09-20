@@ -52,7 +52,7 @@ namespace ZaikoIdouNyuuryoku
             internal string ToRackNO;
             internal decimal EvaluationPrice;
             internal string VendorCD;
-
+            internal string VendorName;
             internal string ReserveNO;
             //internal string /*WarehousingNO*/;
 
