@@ -1760,25 +1760,27 @@ namespace ZaikoIdouNyuuryoku
                                         //Ｅ１９３
                                         bbl.ShowMessage("E193");
 
-                                        mse.AdminNO = "";
-                                        dt = mbl.M_SKU_SelectAll(mse);
-                                        using (Select_SKU frmSKU = new Select_SKU())
-                                        {
-                                            frmSKU.parJANCD = dt.Rows[0]["JanCD"].ToString();
-                                            frmSKU.parChangeDate = detailControls[(int)EIndex.MoveDate].Text;
-                                            frmSKU.ShowDialog();
+                                        //mse.AdminNO = "";
+                                        //dt = mbl.M_SKU_SelectAll(mse);
+                                        //using (Select_SKU frmSKU = new Select_SKU())
+                                        //{
+                                        //    frmSKU.parJANCD = dt.Rows[0]["JanCD"].ToString();
+                                        //    frmSKU.parChangeDate = detailControls[(int)EIndex.MoveDate].Text;
+                                        //    frmSKU.ShowDialog();
 
-                                            if (!frmSKU.flgCancel)
-                                            {
-                                                selectRow = dt.Select(" AdminNO = " + frmSKU.parAdminNO)[0];
-                                            }
-                                            else
-                                            {
-                                                return false;
-                                            }
-                                        }
+                                        //    if (!frmSKU.flgCancel)
+                                        //    {
+                                        //        selectRow = dt.Select(" AdminNO = " + frmSKU.parAdminNO)[0];
+                                        //    }
+                                        //    else
+                                        //    {
+                                        //        return false;
+                                        //    }
+                                        //}
                                         //bbl.ShowMessage("E105");
                                         //return false;
+                                        RW = -1;
+                                        return false;
                                     }
                                 }
                             }
