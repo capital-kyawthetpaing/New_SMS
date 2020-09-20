@@ -88,7 +88,6 @@
             this.hacchutanka_5 = new CKM_Controls.CKM_TextBox();
             this.empty_5 = new System.Windows.Forms.Label();
             this.shuukasouko_5 = new CKM_Controls.CKM_ComboBox();
-            this.choukusou_5 = new CKM_Controls.CKM_TextBox();
             this.shuukayotei_5 = new CKM_Controls.CKM_TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.chk_5 = new CKM_Controls.CKM_CheckBox();
@@ -116,7 +115,6 @@
             this.hacchutanka_4 = new CKM_Controls.CKM_TextBox();
             this.empty_4 = new System.Windows.Forms.Label();
             this.shuukasouko_4 = new CKM_Controls.CKM_ComboBox();
-            this.choukusou_4 = new CKM_Controls.CKM_TextBox();
             this.shuukayotei_4 = new CKM_Controls.CKM_TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.chk_4 = new CKM_Controls.CKM_CheckBox();
@@ -144,7 +142,6 @@
             this.hacchutanka_3 = new CKM_Controls.CKM_TextBox();
             this.empty_3 = new System.Windows.Forms.Label();
             this.shuukasouko_3 = new CKM_Controls.CKM_ComboBox();
-            this.choukusou_3 = new CKM_Controls.CKM_TextBox();
             this.shuukayotei_3 = new CKM_Controls.CKM_TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.chk_3 = new CKM_Controls.CKM_CheckBox();
@@ -172,7 +169,6 @@
             this.hacchutanka_2 = new CKM_Controls.CKM_TextBox();
             this.empty_2 = new System.Windows.Forms.Label();
             this.shuukasouko_2 = new CKM_Controls.CKM_ComboBox();
-            this.choukusou_2 = new CKM_Controls.CKM_TextBox();
             this.shuukayotei_2 = new CKM_Controls.CKM_TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.chk_2 = new CKM_Controls.CKM_CheckBox();
@@ -200,7 +196,6 @@
             this.hacchutanka_1 = new CKM_Controls.CKM_TextBox();
             this.empty_1 = new System.Windows.Forms.Label();
             this.shuukasouko_1 = new CKM_Controls.CKM_ComboBox();
-            this.choukusou_1 = new CKM_Controls.CKM_TextBox();
             this.shuukayotei_1 = new CKM_Controls.CKM_TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.chk_1 = new CKM_Controls.CKM_CheckBox();
@@ -236,6 +231,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.sc_Tenji = new Search.CKM_SearchControl();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.choukusou_1 = new GridControl.clsGridCheckBox();
+            this.choukusou_2 = new GridControl.clsGridCheckBox();
+            this.choukusou_3 = new GridControl.clsGridCheckBox();
+            this.choukusou_4 = new GridControl.clsGridCheckBox();
+            this.choukusou_5 = new GridControl.clsGridCheckBox();
             this.PanelHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnl_haisou.SuspendLayout();
@@ -1174,6 +1174,7 @@
             // 
             // panel_5
             // 
+            this.panel_5.Controls.Add(this.choukusou_5);
             this.panel_5.Controls.Add(this.zeinutanku_5);
             this.panel_5.Controls.Add(this.zeinu_5);
             this.panel_5.Controls.Add(this.kobetsuhanbai_5);
@@ -1190,7 +1191,6 @@
             this.panel_5.Controls.Add(this.hacchutanka_5);
             this.panel_5.Controls.Add(this.empty_5);
             this.panel_5.Controls.Add(this.shuukasouko_5);
-            this.panel_5.Controls.Add(this.choukusou_5);
             this.panel_5.Controls.Add(this.shuukayotei_5);
             this.panel_5.Controls.Add(this.panel8);
             this.panel_5.Controls.Add(this.sizename_5);
@@ -1596,34 +1596,6 @@
             this.shuukasouko_5.Size = new System.Drawing.Size(200, 20);
             this.shuukasouko_5.TabIndex = 293;
             // 
-            // choukusou_5
-            // 
-            this.choukusou_5.AllowMinus = false;
-            this.choukusou_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.choukusou_5.BackColor = System.Drawing.Color.White;
-            this.choukusou_5.BorderColor = false;
-            this.choukusou_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.choukusou_5.ClientColor = System.Drawing.SystemColors.Window;
-            this.choukusou_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.choukusou_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.choukusou_5.DecimalPlace = 0;
-            this.choukusou_5.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.choukusou_5.IntegerPart = 0;
-            this.choukusou_5.IsCorrectDate = true;
-            this.choukusou_5.isEnterKeyDown = false;
-            this.choukusou_5.IsFirstTime = true;
-            this.choukusou_5.isMaxLengthErr = false;
-            this.choukusou_5.IsNumber = true;
-            this.choukusou_5.IsShop = false;
-            this.choukusou_5.Length = 32767;
-            this.choukusou_5.Location = new System.Drawing.Point(128, 20);
-            this.choukusou_5.MoveNext = true;
-            this.choukusou_5.Name = "choukusou_5";
-            this.choukusou_5.Size = new System.Drawing.Size(80, 19);
-            this.choukusou_5.TabIndex = 292;
-            this.choukusou_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.choukusou_5.UseColorSizMode = false;
-            // 
             // shuukayotei_5
             // 
             this.shuukayotei_5.AllowMinus = false;
@@ -1856,6 +1828,7 @@
             // 
             // panel_4
             // 
+            this.panel_4.Controls.Add(this.choukusou_4);
             this.panel_4.Controls.Add(this.zeinutanku_4);
             this.panel_4.Controls.Add(this.zeinu_4);
             this.panel_4.Controls.Add(this.kobetsuhanbai_4);
@@ -1872,7 +1845,6 @@
             this.panel_4.Controls.Add(this.hacchutanka_4);
             this.panel_4.Controls.Add(this.empty_4);
             this.panel_4.Controls.Add(this.shuukasouko_4);
-            this.panel_4.Controls.Add(this.choukusou_4);
             this.panel_4.Controls.Add(this.shuukayotei_4);
             this.panel_4.Controls.Add(this.panel7);
             this.panel_4.Controls.Add(this.sizename_4);
@@ -2278,34 +2250,6 @@
             this.shuukasouko_4.Size = new System.Drawing.Size(200, 20);
             this.shuukasouko_4.TabIndex = 293;
             // 
-            // choukusou_4
-            // 
-            this.choukusou_4.AllowMinus = false;
-            this.choukusou_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.choukusou_4.BackColor = System.Drawing.Color.White;
-            this.choukusou_4.BorderColor = false;
-            this.choukusou_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.choukusou_4.ClientColor = System.Drawing.SystemColors.Window;
-            this.choukusou_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.choukusou_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.choukusou_4.DecimalPlace = 0;
-            this.choukusou_4.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.choukusou_4.IntegerPart = 0;
-            this.choukusou_4.IsCorrectDate = true;
-            this.choukusou_4.isEnterKeyDown = false;
-            this.choukusou_4.IsFirstTime = true;
-            this.choukusou_4.isMaxLengthErr = false;
-            this.choukusou_4.IsNumber = true;
-            this.choukusou_4.IsShop = false;
-            this.choukusou_4.Length = 32767;
-            this.choukusou_4.Location = new System.Drawing.Point(128, 20);
-            this.choukusou_4.MoveNext = true;
-            this.choukusou_4.Name = "choukusou_4";
-            this.choukusou_4.Size = new System.Drawing.Size(80, 19);
-            this.choukusou_4.TabIndex = 292;
-            this.choukusou_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.choukusou_4.UseColorSizMode = false;
-            // 
             // shuukayotei_4
             // 
             this.shuukayotei_4.AllowMinus = false;
@@ -2538,6 +2482,7 @@
             // 
             // panel_3
             // 
+            this.panel_3.Controls.Add(this.choukusou_3);
             this.panel_3.Controls.Add(this.zeinutanku_3);
             this.panel_3.Controls.Add(this.zeinu_3);
             this.panel_3.Controls.Add(this.kobetsuhanbai_3);
@@ -2554,7 +2499,6 @@
             this.panel_3.Controls.Add(this.hacchutanka_3);
             this.panel_3.Controls.Add(this.empty_3);
             this.panel_3.Controls.Add(this.shuukasouko_3);
-            this.panel_3.Controls.Add(this.choukusou_3);
             this.panel_3.Controls.Add(this.shuukayotei_3);
             this.panel_3.Controls.Add(this.panel6);
             this.panel_3.Controls.Add(this.sizename_3);
@@ -2960,34 +2904,6 @@
             this.shuukasouko_3.Size = new System.Drawing.Size(200, 20);
             this.shuukasouko_3.TabIndex = 293;
             // 
-            // choukusou_3
-            // 
-            this.choukusou_3.AllowMinus = false;
-            this.choukusou_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.choukusou_3.BackColor = System.Drawing.Color.White;
-            this.choukusou_3.BorderColor = false;
-            this.choukusou_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.choukusou_3.ClientColor = System.Drawing.SystemColors.Window;
-            this.choukusou_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.choukusou_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.choukusou_3.DecimalPlace = 0;
-            this.choukusou_3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.choukusou_3.IntegerPart = 0;
-            this.choukusou_3.IsCorrectDate = true;
-            this.choukusou_3.isEnterKeyDown = false;
-            this.choukusou_3.IsFirstTime = true;
-            this.choukusou_3.isMaxLengthErr = false;
-            this.choukusou_3.IsNumber = true;
-            this.choukusou_3.IsShop = false;
-            this.choukusou_3.Length = 32767;
-            this.choukusou_3.Location = new System.Drawing.Point(128, 20);
-            this.choukusou_3.MoveNext = true;
-            this.choukusou_3.Name = "choukusou_3";
-            this.choukusou_3.Size = new System.Drawing.Size(80, 19);
-            this.choukusou_3.TabIndex = 292;
-            this.choukusou_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.choukusou_3.UseColorSizMode = false;
-            // 
             // shuukayotei_3
             // 
             this.shuukayotei_3.AllowMinus = false;
@@ -3220,6 +3136,7 @@
             // 
             // panel_2
             // 
+            this.panel_2.Controls.Add(this.choukusou_2);
             this.panel_2.Controls.Add(this.zeinutanku_2);
             this.panel_2.Controls.Add(this.zeinu_2);
             this.panel_2.Controls.Add(this.kobetsuhanbai_2);
@@ -3236,7 +3153,6 @@
             this.panel_2.Controls.Add(this.hacchutanka_2);
             this.panel_2.Controls.Add(this.empty_2);
             this.panel_2.Controls.Add(this.shuukasouko_2);
-            this.panel_2.Controls.Add(this.choukusou_2);
             this.panel_2.Controls.Add(this.shuukayotei_2);
             this.panel_2.Controls.Add(this.panel5);
             this.panel_2.Controls.Add(this.sizename_2);
@@ -3642,34 +3558,6 @@
             this.shuukasouko_2.Size = new System.Drawing.Size(200, 20);
             this.shuukasouko_2.TabIndex = 293;
             // 
-            // choukusou_2
-            // 
-            this.choukusou_2.AllowMinus = false;
-            this.choukusou_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.choukusou_2.BackColor = System.Drawing.Color.White;
-            this.choukusou_2.BorderColor = false;
-            this.choukusou_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.choukusou_2.ClientColor = System.Drawing.SystemColors.Window;
-            this.choukusou_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.choukusou_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.choukusou_2.DecimalPlace = 0;
-            this.choukusou_2.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.choukusou_2.IntegerPart = 0;
-            this.choukusou_2.IsCorrectDate = true;
-            this.choukusou_2.isEnterKeyDown = false;
-            this.choukusou_2.IsFirstTime = true;
-            this.choukusou_2.isMaxLengthErr = false;
-            this.choukusou_2.IsNumber = true;
-            this.choukusou_2.IsShop = false;
-            this.choukusou_2.Length = 32767;
-            this.choukusou_2.Location = new System.Drawing.Point(128, 20);
-            this.choukusou_2.MoveNext = true;
-            this.choukusou_2.Name = "choukusou_2";
-            this.choukusou_2.Size = new System.Drawing.Size(80, 19);
-            this.choukusou_2.TabIndex = 292;
-            this.choukusou_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.choukusou_2.UseColorSizMode = false;
-            // 
             // shuukayotei_2
             // 
             this.shuukayotei_2.AllowMinus = false;
@@ -3902,6 +3790,7 @@
             // 
             // panel_1
             // 
+            this.panel_1.Controls.Add(this.choukusou_1);
             this.panel_1.Controls.Add(this.zeinutanku_1);
             this.panel_1.Controls.Add(this.kobetsuhanbai_1);
             this.panel_1.Controls.Add(this.shagaibikou_1);
@@ -3918,7 +3807,6 @@
             this.panel_1.Controls.Add(this.hacchutanka_1);
             this.panel_1.Controls.Add(this.empty_1);
             this.panel_1.Controls.Add(this.shuukasouko_1);
-            this.panel_1.Controls.Add(this.choukusou_1);
             this.panel_1.Controls.Add(this.shuukayotei_1);
             this.panel_1.Controls.Add(this.panel4);
             this.panel_1.Controls.Add(this.sizename_1);
@@ -4323,34 +4211,6 @@
             this.shuukasouko_1.Name = "shuukasouko_1";
             this.shuukasouko_1.Size = new System.Drawing.Size(200, 20);
             this.shuukasouko_1.TabIndex = 293;
-            // 
-            // choukusou_1
-            // 
-            this.choukusou_1.AllowMinus = false;
-            this.choukusou_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.choukusou_1.BackColor = System.Drawing.Color.White;
-            this.choukusou_1.BorderColor = false;
-            this.choukusou_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.choukusou_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.choukusou_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.choukusou_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.choukusou_1.DecimalPlace = 0;
-            this.choukusou_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.choukusou_1.IntegerPart = 0;
-            this.choukusou_1.IsCorrectDate = true;
-            this.choukusou_1.isEnterKeyDown = false;
-            this.choukusou_1.IsFirstTime = true;
-            this.choukusou_1.isMaxLengthErr = false;
-            this.choukusou_1.IsNumber = true;
-            this.choukusou_1.IsShop = false;
-            this.choukusou_1.Length = 32767;
-            this.choukusou_1.Location = new System.Drawing.Point(128, 20);
-            this.choukusou_1.MoveNext = true;
-            this.choukusou_1.Name = "choukusou_1";
-            this.choukusou_1.Size = new System.Drawing.Size(80, 19);
-            this.choukusou_1.TabIndex = 292;
-            this.choukusou_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.choukusou_1.UseColorSizMode = false;
             // 
             // shuukayotei_1
             // 
@@ -4916,6 +4776,51 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
+            // choukusou_1
+            // 
+            this.choukusou_1.Location = new System.Drawing.Point(128, 22);
+            this.choukusou_1.Name = "choukusou_1";
+            this.choukusou_1.Size = new System.Drawing.Size(80, 19);
+            this.choukusou_1.TabIndex = 103;
+            this.choukusou_1.Text = "    直送";
+            this.choukusou_1.UseVisualStyleBackColor = true;
+            // 
+            // choukusou_2
+            // 
+            this.choukusou_2.Location = new System.Drawing.Point(128, 21);
+            this.choukusou_2.Name = "choukusou_2";
+            this.choukusou_2.Size = new System.Drawing.Size(80, 19);
+            this.choukusou_2.TabIndex = 319;
+            this.choukusou_2.Text = "    直送";
+            this.choukusou_2.UseVisualStyleBackColor = true;
+            // 
+            // choukusou_3
+            // 
+            this.choukusou_3.Location = new System.Drawing.Point(128, 21);
+            this.choukusou_3.Name = "choukusou_3";
+            this.choukusou_3.Size = new System.Drawing.Size(80, 19);
+            this.choukusou_3.TabIndex = 319;
+            this.choukusou_3.Text = "    直送";
+            this.choukusou_3.UseVisualStyleBackColor = true;
+            // 
+            // choukusou_4
+            // 
+            this.choukusou_4.Location = new System.Drawing.Point(128, 20);
+            this.choukusou_4.Name = "choukusou_4";
+            this.choukusou_4.Size = new System.Drawing.Size(80, 19);
+            this.choukusou_4.TabIndex = 319;
+            this.choukusou_4.Text = "    直送";
+            this.choukusou_4.UseVisualStyleBackColor = true;
+            // 
+            // choukusou_5
+            // 
+            this.choukusou_5.Location = new System.Drawing.Point(128, 19);
+            this.choukusou_5.Name = "choukusou_5";
+            this.choukusou_5.Size = new System.Drawing.Size(80, 19);
+            this.choukusou_5.TabIndex = 319;
+            this.choukusou_5.Text = "    直送";
+            this.choukusou_5.UseVisualStyleBackColor = true;
+            // 
             // TenzikaiJuchuuTourou
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -5044,7 +4949,6 @@
         private CKM_Controls.CKM_TextBox hacchutanka_1;
         private System.Windows.Forms.Label empty_1;
         private CKM_Controls.CKM_ComboBox shuukasouko_1;
-        private CKM_Controls.CKM_TextBox choukusou_1;
         private CKM_Controls.CKM_TextBox shuukayotei_1;
         private System.Windows.Forms.Panel panel4;
         private CKM_Controls.CKM_TextBox sizename_1;
@@ -5067,7 +4971,6 @@
         private CKM_Controls.CKM_TextBox hacchutanka_5;
         private System.Windows.Forms.Label empty_5;
         private CKM_Controls.CKM_ComboBox shuukasouko_5;
-        private CKM_Controls.CKM_TextBox choukusou_5;
         private CKM_Controls.CKM_TextBox shuukayotei_5;
         private System.Windows.Forms.Panel panel8;
         private CKM_Controls.CKM_TextBox sizename_5;
@@ -5092,7 +4995,6 @@
         private CKM_Controls.CKM_TextBox hacchutanka_4;
         private System.Windows.Forms.Label empty_4;
         private CKM_Controls.CKM_ComboBox shuukasouko_4;
-        private CKM_Controls.CKM_TextBox choukusou_4;
         private CKM_Controls.CKM_TextBox shuukayotei_4;
         private System.Windows.Forms.Panel panel7;
         private CKM_Controls.CKM_TextBox sizename_4;
@@ -5117,7 +5019,6 @@
         private CKM_Controls.CKM_TextBox hacchutanka_3;
         private System.Windows.Forms.Label empty_3;
         private CKM_Controls.CKM_ComboBox shuukasouko_3;
-        private CKM_Controls.CKM_TextBox choukusou_3;
         private CKM_Controls.CKM_TextBox shuukayotei_3;
         private System.Windows.Forms.Panel panel6;
         private CKM_Controls.CKM_TextBox sizename_3;
@@ -5142,7 +5043,6 @@
         private CKM_Controls.CKM_TextBox hacchutanka_2;
         private System.Windows.Forms.Label empty_2;
         private CKM_Controls.CKM_ComboBox shuukasouko_2;
-        private CKM_Controls.CKM_TextBox choukusou_2;
         private CKM_Controls.CKM_TextBox shuukayotei_2;
         private System.Windows.Forms.Panel panel5;
         private CKM_Controls.CKM_TextBox sizename_2;
@@ -5174,6 +5074,11 @@
         private System.Windows.Forms.Panel pnl_haisou;
         private System.Windows.Forms.Panel pnl_kokyakuu;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private GridControl.clsGridCheckBox choukusou_5;
+        private GridControl.clsGridCheckBox choukusou_4;
+        private GridControl.clsGridCheckBox choukusou_3;
+        private GridControl.clsGridCheckBox choukusou_2;
+        private GridControl.clsGridCheckBox choukusou_1;
     }
 }
 
