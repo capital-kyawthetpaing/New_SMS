@@ -21,7 +21,7 @@ namespace TenzikaiJuchuuTourou
             internal string Size;
             internal string SizeName;
             internal string ShuukaYo;
-            internal string ChoukuSou;
+            internal bool ChoukuSou;
             internal string ShuukaSou;
             internal string Empty;
             internal string HacchuTanka;
@@ -34,12 +34,18 @@ namespace TenzikaiJuchuuTourou
             internal string ArariGaku;
             internal string ZeiNu;
             internal string ZeinuTanku;
-            internal string Chk;
+            internal bool Chk;
             internal string ShanaiBi;
             internal string ShagaiBi;
             internal string KobeTsu;
             internal string TorokuFlg;
             internal string TaxRateFlg;
+        }
+        private enum EsearchKbn : short
+        {
+            Null,
+            Product,
+            Vendor
         }
         internal enum ColNO : int
         {

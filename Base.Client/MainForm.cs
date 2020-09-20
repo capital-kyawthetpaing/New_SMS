@@ -626,7 +626,10 @@ namespace Base.Client
                     ((CKM_CheckBox)ctrl).Enabled = false;
                 else if (ctrl is Panel)
                     DisablePanel(ctrl as Panel);
-             
+                else if (ctrl is Button)
+                    ((Button)ctrl).Enabled = false;
+                else if (ctrl is CKM_Button)
+                    ((CKM_Button)ctrl).Enabled = false;
             }
         }
 
