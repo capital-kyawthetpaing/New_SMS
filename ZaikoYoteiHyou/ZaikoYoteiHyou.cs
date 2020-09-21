@@ -278,7 +278,7 @@ namespace ZaikoYoteiHyou
                         {
                             case EPrintMode.DIRECT:
                                 ret = bbl.ShowMessage("Q202");
-                                if (ret == DialogResult.No)
+                                if (ret == DialogResult.Cancel)
                                 {
                                     return;
                                 }
