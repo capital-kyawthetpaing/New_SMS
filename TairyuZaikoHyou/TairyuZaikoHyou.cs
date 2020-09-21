@@ -11,6 +11,9 @@ using Base.Client;
 using BL;
 using Entity;
 using CKM_Controls;
+using System.IO;
+using ClosedXML.Excel;
+using System.Diagnostics;
 
 namespace TairyuZaikoHyou
 {
@@ -99,7 +102,10 @@ namespace TairyuZaikoHyou
                 case 11:               
                     break;
                 case 12:
-                    F12();
+                    if (bbl.ShowMessage("Q201") == DialogResult.Yes)
+                    {
+                        F12();
+                    }
                     break;
             }
         }
@@ -232,18 +238,83 @@ namespace TairyuZaikoHyou
                 dtSelect = tzkbl.D_StockSelectForTairyuzaikohyo(dse, mskue, info, mtage);
                 if (dtSelect.Rows.Count > 0)
                 {
-                  
-                    try
-                    {
 
-                    }
-                    finally
+                    DataTable dtExport = dtSelect;
+                    dtExport = ChangeDataColumnName(dtExport);
+                    string folderPath = "C:\\PNZ";
+                    if (!Directory.Exists(folderPath))
                     {
-                        //画面はそのまま
-                        txtTargetDays.Focus();
+                        Directory.CreateDirectory(folderPath);
                     }
+                    SaveFileDialog savedialog = new SaveFileDialog();
+                    savedialog.Filter = "Excel Files|*.xlsx;";
+                    savedialog.Title = "Save";
+                    InProgramNM = "滞留在庫表";
+                    string cmdLine = InProgramNM + " " + DateTime.Now.ToString(" yyyyMMdd_HHmmss ") + " " + InOperatorCD;
+                    savedialog.FileName = cmdLine;
+                    savedialog.InitialDirectory = folderPath;
+                    savedialog.RestoreDirectory = true;
+                    if (savedialog.ShowDialog() == DialogResult.OK)
+                    {
+                        if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
+                        {
+                            Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+                            Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+                            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+
+                            worksheet = workbook.ActiveSheet;
+                            worksheet.Name = "worksheet";
+                            Microsoft.Office.Interop.Excel.Range excelRange = worksheet.UsedRange;
+                            excelRange.NumberFormat = "#,###,###";//
+                            //excelRange.Worksheet.ListObjects["worksheet"].TableStyle = "none";
+                            using (XLWorkbook wb = new XLWorkbook())
+                            {
+                                wb.Worksheets.Add(dtExport, "worksheet");
+                                wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
+                                wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
+                                wb.Worksheet("worksheet").Cell(1, 1).Value = "滞留在庫表：";
+                                wb.Worksheet("worksheet").Cell(2, 1).Value = "対象日数:";
+                                wb.Worksheet("worksheet").Cell(3, 1).Value = "倉庫:";
+
+                                wb.Worksheet("worksheet").Cell(2, 2).Value = "'" + txtTargetDays.Text;
+
+                                wb.Worksheet("worksheet").Cell(3, 2).Value = cboWarehouse.SelectedValue.ToString();
+                                
+                                wb.Worksheet("worksheet").Row(4).InsertRowsAbove(1);
+                                wb.Worksheet("worksheet").Row(5).CopyTo(wb.Worksheet("worksheet").Row(3));
+                                wb.Worksheet("worksheet").Row(4).Delete();
+                                wb.Worksheet("worksheet").ShowGridLines = false;
+                                wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;
+                                wb.Worksheet("worksheet").Tables.FirstOrDefault().Theme = XLTableTheme.None;
+                                wb.SaveAs(savedialog.FileName);
+                                tzkbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
+                            }
+                            Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                        }
+                    }
+                   
+                        txtTargetDays.Focus();
+                  
                 }
             }
+        }
+
+        protected DataTable ChangeDataColumnName(DataTable dtAdd)
+        {
+            dtAdd.Columns["VendorCD"].ColumnName = "滞留日数";
+            dtAdd.Columns["VendorName"].ColumnName = "SKUCD";
+            dtAdd.Columns["LastMonthQuantity"].ColumnName = "JANCD";
+            dtAdd.Columns["LastMonthAmount"].ColumnName = "商品名";
+            dtAdd.Columns["ThisMonthPurchaseQ"].ColumnName = "カラー";
+            dtAdd.Columns["ThisMonthPurchaseA"].ColumnName = "サイズ";
+            dtAdd.Columns["ThisMonthCustPurchaseQ"].ColumnName = "ブランド";
+            dtAdd.Columns["ThisMonthCustPurchaseA"].ColumnName = "競技";
+            dtAdd.Columns["ThisMonthPurchasePlanQ"].ColumnName = "最終入荷日";
+            dtAdd.Columns["ThisMonthPurchasePlanA"].ColumnName = "最終出荷日";
+            dtAdd.Columns["ThisMonthSalesQ"].ColumnName = "在庫数";
+            
+            //dtAdd.Columns.RemoveAt(2);
+            return dtAdd;
         }
 
         private void CheckBeforeExport()
