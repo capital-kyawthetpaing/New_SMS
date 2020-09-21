@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -161,9 +162,9 @@ namespace UriageMotouchou
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "1";
             string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;
-            System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            Process p= System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            p.WaitForExit();
         }
-
         private void PrintDataSelect()
         {
             try
@@ -174,7 +175,7 @@ namespace UriageMotouchou
                 {
                     case EPrintMode.DIRECT:
                         DResult = bbl.ShowMessage("Q201");
-                        if (DResult == DialogResult.Cancel)
+                        if (DResult == DialogResult.No)
                         {
                             return;
                         }
