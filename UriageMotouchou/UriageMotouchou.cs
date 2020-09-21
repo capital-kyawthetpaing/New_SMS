@@ -119,14 +119,16 @@ namespace UriageMotouchou
                 dtReport = umbl.UriageMotochou_PrintSelect(ume);
                 if (dtReport.Rows.Count > 0)
                 {
-                    msce = new M_StoreClose_Entity();
-                    msce = GetStoreClose_Data();
-                    if (umbl.M_StoreClose_Check(msce, "1").Rows.Count > 0)
-                    {
-                        string ProgramID = "GetsujiZaikoKeisanSyori";
-                        OpenForm(ProgramID, msce.FiscalYYYYMM);
-                        PrintDataSelect();
-                    }
+                    //msce = new M_StoreClose_Entity();
+                    //msce = GetStoreClose_Data();
+                    //if (umbl.M_StoreClose_Check(msce, "1").Rows.Count > 0)
+                    //{
+                    //    string ProgramID = "GetsujiZaikoKeisanSyori";
+                    //    OpenForm(ProgramID, msce.FiscalYYYYMM);
+                    //    PrintDataSelect();
+                    //}
+                    CheckBeforeExport();
+                    PrintDataSelect();
                 }
                 else
                 {
@@ -135,8 +137,25 @@ namespace UriageMotouchou
                 }
             }
         }
-
-        private void OpenForm(string programID, string YYYYMM)
+        private void CheckBeforeExport()
+        {
+            msce = new M_StoreClose_Entity();
+            msce = GetStoreClose_Data();
+            if (umbl.M_StoreClose_Check(msce, "1").Rows.Count > 0)
+            {
+                string ProgramID = "GetsujiZaikoKeisanSyori";
+                RunConsole(ProgramID, msce.FiscalYYYYMM);
+            }
+        }
+        //private void OpenForm(string programID, string YYYYMM)
+        //{
+        //    System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+        //    string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
+        //    string Mode = "1";
+        //    string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;
+        //    System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+        //}
+        private void RunConsole(string programID, string YYYYMM)
         {
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
@@ -159,7 +178,6 @@ namespace UriageMotouchou
                         {
                             return;
                         }
-
                         umtc_Report.SetDataSource(dtReport);
                         umtc_Report.Refresh();
                         umtc_Report.SetParameterValue("YYYYMMF", txtTagetFrom.Text);
