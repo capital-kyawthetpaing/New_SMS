@@ -286,7 +286,7 @@ namespace SaikenKanriHyou
                         {
                             case EPrintMode.DIRECT:
                                 DResult = bbl.ShowMessage("Q201");
-                                if (DResult == DialogResult.Cancel)
+                                if (DResult == DialogResult.No)
                                 {
                                     return;
                                 }
