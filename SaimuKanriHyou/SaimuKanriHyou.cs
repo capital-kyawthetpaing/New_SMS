@@ -382,7 +382,10 @@ namespace SaimuKanriHyou
             string Mode = "1";
             //string cmdLine =  InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + Mode + " " + YYYYMM;//parameter
             string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + Mode + " " + YYYYMM;
-            System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            Process p=System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+
+            p.WaitForExit();          
+
         }
 
         #region GetDataInfo

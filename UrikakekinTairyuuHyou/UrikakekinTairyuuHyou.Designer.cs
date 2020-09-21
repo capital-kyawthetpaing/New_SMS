@@ -121,6 +121,7 @@
             this.txtDate.TabIndex = 0;
             this.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDate.UseColorSizMode = false;
             // 
             // ckM_Label1
             // 

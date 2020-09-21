@@ -348,7 +348,9 @@ namespace ZaikoMotochouInsatsu
             string Mode = "1";
             //string cmdLine =  InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " +  Mode + " " + YYYYMM;//parameter
             string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
-            System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            Process p=  System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+          
+            p.WaitForExit();
         }
 
         private void chkPrintRelated_CheckedChanged(object sender, EventArgs e)

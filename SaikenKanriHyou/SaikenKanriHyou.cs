@@ -156,7 +156,8 @@ namespace SaikenKanriHyou
             string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + Mode + " " + YYYYMM;
             try
             {
-                System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                Process p=System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                p.WaitForExit();
             }
             catch
             {
