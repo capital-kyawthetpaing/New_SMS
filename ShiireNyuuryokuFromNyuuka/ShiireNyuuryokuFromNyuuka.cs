@@ -39,7 +39,6 @@ namespace ShiireNyuuryokuFromNyuuka
             Maker,
             VendorDeliveryNo,
             RemarksInStore,
-            AdjustmentGaku,
             PurchaseTax
         }
         private enum ETaxRateFLG : short
@@ -1084,7 +1083,7 @@ namespace ShiireNyuuryokuFromNyuuka
             keyLabels = new Control[] {  };
             detailControls = new Control[] { ScCalledVendorCD.TxtCode, ScVendorCD.TxtCode, ckM_TextBox1, ckM_TextBox2, ScStaff.TxtCode
                          ,ckM_TextBox4, ckM_TextBox3,ckM_CheckBox3, ckM_CheckBox4, panel1,ScMaker.TxtCode, ckM_TextBox18                          
-                         ,TxtRemark1, ckM_TextBox8, ckM_TextBox5 };
+                         ,TxtRemark1, ckM_TextBox5 };
             detailLabels = new Control[] { ScCalledVendorCD, ScVendorCD, ScStaff };
             searchButtons = new Control[] { ScCalledVendorCD.BtnSearch,ScVendorCD.BtnSearch, ScStaff.BtnSearch};
 
@@ -1318,12 +1317,12 @@ namespace ShiireNyuuryokuFromNyuuka
 
                         //【Data Area Footer】
                         detailControls[(int)EIndex.RemarksInStore].Text = row["CommentInStore"].ToString();
-                        detailControls[(int)EIndex.AdjustmentGaku].Text = bbl.Z_SetStr(row["AdjustmentGaku"]);
                         detailControls[(int)EIndex.PurchaseTax].Text = bbl.Z_SetStr(row["PurchaseTax"]);
 
                         lblKin1.Text = bbl.Z_SetStr(row["AdjustmentGaku"]);
                         lblKin2.Text = bbl.Z_SetStr(row["CalculationGaku"]);
                         lblKin3.Text = bbl.Z_SetStr(row["PurchaseGaku"]);
+                        lblKin4.Text = bbl.Z_SetStr(row["AdjustmentGaku"]);
 
                         //明細なしの場合
                         if (bbl.Z_Set(row["PurchaseRows"]) == 0)
@@ -1485,8 +1484,8 @@ namespace ShiireNyuuryokuFromNyuuka
                         mGrid.g_DArray[i].OrderUnitPrice = bbl.Z_SetStr(row["DO_OrderUnitPrice"]);   // 
                         mGrid.g_DArray[i].PurchaseUnitPrice = bbl.Z_SetStr(row["PurchaserUnitPrice"]);
                         mGrid.g_DArray[i].AdjustmentGaku = bbl.Z_SetStr(bbl.Z_Set(row["D_AdjustmentGaku"]));   // 
-                        mGrid.g_DArray[i].PurchaseGaku = bbl.Z_SetStr(row["D_PurchaseGaku"]);   // 
-                        mGrid.g_DArray[i].CalculationGaku = bbl.Z_SetStr(row["D_CalculationGaku"]);   // 
+                        mGrid.g_DArray[i].PurchaseGaku = bbl.Z_SetStr(bbl.Z_Set(row["PurchaseSu"])* bbl.Z_Set(row["PurchaserUnitPrice"]));   // Form.仕入数×	Form.単価
+                        mGrid.g_DArray[i].CalculationGaku = mGrid.g_DArray[i].PurchaseGaku;   // Form.仕入数×	Form.単価
 
                         mGrid.g_DArray[i].CommentInStore = row["D_CommentInStore"].ToString();   // 
                         mGrid.g_DArray[i].CommentOutStore = row["D_CommentOutStore"].ToString();   // 
@@ -1585,7 +1584,7 @@ namespace ShiireNyuuryokuFromNyuuka
                         StoreCD = CboStoreCD.SelectedValue.ToString(),
                         FiscalYYYYMM = detailControls[index].Text.Replace("/", "").Substring(0, 6)
                     };
-                    ret = bbl.CheckStoreClose(mste,false,true,false,false,false);
+                    ret = bbl.CheckStoreClose(mste,false,true,false,false,true);
                     if (!ret)
                     {
                         return false;
@@ -2082,7 +2081,7 @@ namespace ShiireNyuuryokuFromNyuuka
                     sumKin += bbl.Z_Set(mGrid.g_DArray[RW].AdjustmentGaku);
                 }
             }
-            detailControls[(int)EIndex.AdjustmentGaku].Text = bbl.Z_SetStr(sumKin);
+            lblKin4.Text = bbl.Z_SetStr(sumKin);
         }
         private void CalcZei()
         {
@@ -2148,7 +2147,7 @@ namespace ShiireNyuuryokuFromNyuuka
                 StaffCD = detailControls[(int)EIndex.StaffCD].Text,
 
                 CalculationGaku = bbl.Z_SetStr(lblKin2.Text),
-                AdjustmentGaku = detailControls[(int)EIndex.AdjustmentGaku].Text,
+                AdjustmentGaku = lblKin4.Text,
                 PurchaseGaku = bbl.Z_SetStr(lblKin3.Text),
                 PurchaseTax = detailControls[(int)EIndex.PurchaseTax].Text,
 
@@ -2347,7 +2346,7 @@ namespace ShiireNyuuryokuFromNyuuka
                 }
             }
             //「はい」押下時のみ、以下の処理へ
-            if(bbl.Z_Set(detailControls[(int)EIndex.AdjustmentGaku].Text) != sumKin)
+            if(bbl.Z_Set(lblKin4.Text) != sumKin)
             {
                 //Ｑ３１４
                 if (bbl.ShowMessage("Q314") != DialogResult.Yes)
@@ -2494,6 +2493,7 @@ namespace ShiireNyuuryokuFromNyuuka
             lblKin1.Text = "";
             lblKin2.Text = "";
             lblKin3.Text = "";
+            lblKin4.Text = "";
 
             //SetEnabled(EIndex.CheckBox3, false);
             //SetEnabled(EIndex.CheckBox4, false);

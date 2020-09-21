@@ -38,7 +38,7 @@ namespace HenpinNyuuryoku
             Maker,
             VendorDeliveryNo,
             RemarksInStore,
-            AdjustmentGaku,
+            //AdjustmentGaku,
             PurchaseTax
         }
 
@@ -938,7 +938,7 @@ namespace HenpinNyuuryoku
                 
                 Btn_F7.Text = "";
                 Btn_F8.Text = "";
-                Btn_F10.Text = "納品データ(F10)";
+                Btn_F10.Text = "納品ﾃﾞｰﾀ(F10)";
                 Btn_F11.Text = "表示(F11)";
 
                 //コンボボックス初期化
@@ -986,7 +986,7 @@ namespace HenpinNyuuryoku
             keyLabels = new Control[] {  };
             detailControls = new Control[] { ScVendorCD.TxtCode, ckM_TextBox1, ckM_TextBox2, ScStaff.TxtCode
                          ,ckM_TextBox4, ckM_TextBox3,ScMaker.TxtCode, ckM_TextBox18                          
-                         ,TxtRemark1, ckM_TextBox8, ckM_TextBox5 };
+                         ,TxtRemark1, ckM_TextBox5 };
             detailLabels = new Control[] { ScVendorCD, ScStaff , ScMaker };
             searchButtons = new Control[] { ScVendorCD.BtnSearch, ScStaff.BtnSearch};
 
@@ -1135,6 +1135,13 @@ namespace HenpinNyuuryoku
             }
             else
             {
+                if(bbl.Z_Set(dt.Rows[0]["ReturnsFlg"]) != 1)
+                {
+                    bbl.ShowMessage("E259", "返品番号");
+                    Scr_Clr(1);
+                    previousCtrl.Focus();
+                    return false;
+                }
                 //DeleteDateTime 「削除された返品番号」
                 if (!string.IsNullOrWhiteSpace(dt.Rows[0]["DeleteDateTime"].ToString()))
                 {
@@ -1209,12 +1216,12 @@ namespace HenpinNyuuryoku
 
                         //【Data Area Footer】
                         detailControls[(int)EIndex.RemarksInStore].Text = row["CommentInStore"].ToString();
-                        detailControls[(int)EIndex.AdjustmentGaku].Text = bbl.Z_SetStr(row["AdjustmentGaku"]);
                         detailControls[(int)EIndex.PurchaseTax].Text = bbl.Z_SetStr(row["PurchaseTax"]);
 
                         //lblKin1.Text = bbl.Z_SetStr(row["AdjustmentGaku"]);
                         lblKin2.Text = bbl.Z_SetStr(row["CalculationGaku"]);
                         lblKin3.Text = bbl.Z_SetStr(row["PurchaseGaku"]);
+                        lblKin4.Text = bbl.Z_SetStr(row["AdjustmentGaku"]);
 
                         //明細なしの場合
                         if (bbl.Z_Set(row["PurchaseRows"]) == 0)
@@ -1925,7 +1932,7 @@ namespace HenpinNyuuryoku
                 StaffCD = detailControls[(int)EIndex.StaffCD].Text,
 
                 CalculationGaku = bbl.Z_SetStr(lblKin2.Text),
-                AdjustmentGaku = detailControls[(int)EIndex.AdjustmentGaku].Text,
+                AdjustmentGaku =lblKin4.Text,
                 PurchaseGaku = bbl.Z_SetStr(lblKin3.Text),
                 PurchaseTax = detailControls[(int)EIndex.PurchaseTax].Text,
 
@@ -2119,7 +2126,7 @@ namespace HenpinNyuuryoku
                 }
             }
             //「はい」押下時のみ、以下の処理へ
-            if(bbl.Z_Set(detailControls[(int)EIndex.AdjustmentGaku].Text) != sumKin)
+            if(bbl.Z_Set(lblKin4.Text) != sumKin)
             {
                 //Ｑ３１４
                 if (bbl.ShowMessage("Q314") != DialogResult.Yes)
@@ -2264,6 +2271,7 @@ namespace HenpinNyuuryoku
             lblZei.Text = "";
             lblKin2.Text = "";
             lblKin3.Text = "";
+            lblKin4.Text = "";
         }
 
         /// <summary>
@@ -2808,7 +2816,7 @@ namespace HenpinNyuuryoku
                                     }
                                 }
 
-                                detailControls[(int)EIndex.AdjustmentGaku].Text = bbl.Z_SetStr(sumKin);
+                                lblKin4.Text = bbl.Z_SetStr(sumKin);
                                 break;
                         }
                     }
@@ -2968,11 +2976,17 @@ namespace HenpinNyuuryoku
             {
                 ChangeBackColor(w_Row, 1);
                 //Onの時、仕入数以降、入力可
+                CheckGrid((int)ClsGridShiire.ColNO.PurchaseSu, w_Row);
             }
             else
             {
                 //Offの時、仕入数以降、入力不可
                 ChangeBackColor(w_Row);
+                //チェックOFFの場合、返品数０にして調整額０、返品額０にしてください
+                mGrid.g_DArray[w_Row].PurchaseSu = "0";
+                mGrid.g_DArray[w_Row].AdjustmentGaku = "0";
+                mGrid.g_DArray[w_Row].PurchaseGaku = "0";
+                CheckGrid((int)ClsGridShiire.ColNO.PurchaseSu, w_Row);
             }
 
             Grid_NotFocus((int)ClsGridShiire.ColNO.Chk, w_Row);
@@ -3010,8 +3024,16 @@ namespace HenpinNyuuryoku
                     case (int)ClsGridShiire.ColNO.CalculationGaku:
                     case (int)ClsGridShiire.ColNO.PurchaseGaku:
                         {
-                            //mGrid.g_MK_State[w_Col, w_Row].Cell_Color = backCL;
                             mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
+
+                            if (kbn == 1)
+                            {
+                                mGrid.g_MK_State[w_Col, w_Row].Cell_Color = backCL;
+                            }
+                            else
+                            {
+                                mGrid.g_MK_State[w_Col, w_Row].Cell_Color = System.Drawing.Color.Empty;
+                            }
                             break;
                         }
                 }

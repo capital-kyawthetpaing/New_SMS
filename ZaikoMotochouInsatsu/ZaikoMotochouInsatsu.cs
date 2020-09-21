@@ -147,11 +147,12 @@ namespace ZaikoMotochouInsatsu
 
                 chk = Check_ITemORMakerItem();
                 dtReport = new DataTable();
+                CheckBeforeExport();
                 dtReport = zmibl.ZaikoMotochoulnsatsu_Report(sku_data, dms, chk);
 
                 if (dtReport.Rows.Count > 0)
                 {
-                    CheckBeforeExport();
+                  
                     try
                     {
                         ZaikoMotochoulnsatsu_Report zm_report = new ZaikoMotochoulnsatsu_Report();
@@ -164,37 +165,23 @@ namespace ZaikoMotochouInsatsu
                                 {
                                     return;
                                 }
-                                // 印字データをセット
-                                zm_report.SetDataSource(dtReport);
-                                zm_report.Refresh();
-                                zm_report.SetParameterValue("lblYearMonth", txtTargetPeriodF.Text + "  ～  " + txtTargetPeriodT.Text);
-                                zm_report.SetParameterValue("lblSouko", cboSouko.SelectedValue.ToString() + " " + cboSouko.Text);
-                                zm_report.SetParameterValue("lblToday", DateTime.Now.ToString("yyyy/MM/dd") + "  " + DateTime.Now.ToString("HH:mm"));
-                                //zm_report.SetParameterValue("lblSKU", dtReport.Rows[0]["SKUCD"].ToString());
-                               // zm_report.SetParameterValue("lblJANCD", dtReport.Rows[0]["JANCD"].ToString());
-                               // zm_report.SetParameterValue("lblCSB", dtReport.Rows[0]["ColorName"].ToString() + " " + dtReport.Rows[0]["SizeName"].ToString() + " " + dtReport.Rows[0]["BrandName"].ToString());
-
-                                vr.CrystalReportViewer1.ReportSource = zm_report;
-                                //vr.ShowDialog();
-
-                                try
-                                {
-
-                                    //  crv = vr.CrystalReportViewer1;
-                                }
-                                catch (Exception ex)
-                                {
-                                    var msg = ex.Message;
-                                }
                                 //out log before print
                                 if (DResult == DialogResult.Yes)
                                 {
-
                                     //印刷処理プレビュー
                                     vr = new Viewer();
                                     vr.CrystalReportViewer1.ShowPrintButton = true;
-                                    vr.CrystalReportViewer1.ReportSource = zm_report;
+                                    // 印字データをセット
+                                    zm_report.SetDataSource(dtReport);
+                                    zm_report.Refresh();
+                                    zm_report.SetParameterValue("lblYearMonth", txtTargetPeriodF.Text + "  ～  " + txtTargetPeriodT.Text);
+                                    zm_report.SetParameterValue("lblSouko", cboSouko.SelectedValue.ToString() + " " + cboSouko.Text);
+                                    zm_report.SetParameterValue("lblToday", DateTime.Now.ToString("yyyy/MM/dd") + "  " + DateTime.Now.ToString("HH:mm"));
+                                    //zm_report.SetParameterValue("lblSKU", dtReport.Rows[0]["SKUCD"].ToString());
+                                    // zm_report.SetParameterValue("lblJANCD", dtReport.Rows[0]["JANCD"].ToString());
+                                    // zm_report.SetParameterValue("lblCSB", dtReport.Rows[0]["ColorName"].ToString() + " " + dtReport.Rows[0]["SizeName"].ToString() + " " + dtReport.Rows[0]["BrandName"].ToString());
 
+                                    vr.CrystalReportViewer1.ReportSource = zm_report;
                                     vr.ShowDialog();
 
                                 }

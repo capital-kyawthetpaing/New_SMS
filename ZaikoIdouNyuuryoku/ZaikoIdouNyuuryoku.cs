@@ -868,6 +868,7 @@ namespace ZaikoIdouNyuuryoku
 
                 // 明細部初期化
                 this.S_SetInit_Grid();
+                Scr_Clr(0);
 
                 //起動時共通処理
                 base.StartProgram();
@@ -882,7 +883,7 @@ namespace ZaikoIdouNyuuryoku
                 zibl = new ZaikoIdouNyuuryoku_BL();
                 CboStoreCD.Bind(ymd, "2");
                 CboIdoKbn.Bind(ymd);
-                CboSoukoCD.Bind(ymd, "8");
+                //CboSoukoCD.Bind(ymd, "8");
                 CboFromSoukoCD.Bind(ymd);
                 CboToSoukoCD.Bind(ymd);
 
@@ -895,6 +896,7 @@ namespace ZaikoIdouNyuuryoku
                 ScRequestNO.Value1 = InOperatorCD;
                 ScRequestNO.Value2 = stores;
 
+                ScVendorCD.Value1 = "1";
                 ScStaff.TxtCode.Text = InOperatorCD;
 
                 //スタッフマスター(M_Staff)に存在すること
@@ -956,9 +958,9 @@ namespace ZaikoIdouNyuuryoku
             keyLabels = new Control[] { };
             detailControls = new Control[] { ckM_TextBox1, CboIdoKbn, ckM_CheckBox3, ScStaff.TxtCode, CboFromSoukoCD, CboToSoukoCD
                          ,ckM_TextBox4, ckM_CheckBox4, SC_ITEM_0.TxtCode, ScFromRackNo.TxtCode,SC_ITEM_1.TxtCode, ckM_TextBox8, ScToRackNo.TxtCode,  ckM_TextBox2
-                         , ckM_TextBox5, CboSoukoCD, TxtRemark1};
-            detailLabels = new Control[] { ScStaff };
-            searchButtons = new Control[] { ScStaff.BtnSearch };
+                         , ckM_TextBox5, ScVendorCD.TxtCode, TxtRemark1};
+            detailLabels = new Control[] { ScStaff , ScVendorCD };
+            searchButtons = new Control[] { ScStaff.BtnSearch , ScVendorCD .BtnSearch};
 
             //イベント付与
             foreach (Control ctl in keyControls)
@@ -1486,6 +1488,7 @@ namespace ZaikoIdouNyuuryoku
                                     return false;
 
                         mOldMoveDate = detailControls[index].Text;
+                        ScVendorCD.ChangeDate = mOldMoveDate;
                     }
 
                     break;
@@ -1757,25 +1760,27 @@ namespace ZaikoIdouNyuuryoku
                                         //Ｅ１９３
                                         bbl.ShowMessage("E193");
 
-                                        mse.AdminNO = "";
-                                        dt = mbl.M_SKU_SelectAll(mse);
-                                        using (Select_SKU frmSKU = new Select_SKU())
-                                        {
-                                            frmSKU.parJANCD = dt.Rows[0]["JanCD"].ToString();
-                                            frmSKU.parChangeDate = detailControls[(int)EIndex.MoveDate].Text;
-                                            frmSKU.ShowDialog();
+                                        //mse.AdminNO = "";
+                                        //dt = mbl.M_SKU_SelectAll(mse);
+                                        //using (Select_SKU frmSKU = new Select_SKU())
+                                        //{
+                                        //    frmSKU.parJANCD = dt.Rows[0]["JanCD"].ToString();
+                                        //    frmSKU.parChangeDate = detailControls[(int)EIndex.MoveDate].Text;
+                                        //    frmSKU.ShowDialog();
 
-                                            if (!frmSKU.flgCancel)
-                                            {
-                                                selectRow = dt.Select(" AdminNO = " + frmSKU.parAdminNO)[0];
-                                            }
-                                            else
-                                            {
-                                                return false;
-                                            }
-                                        }
+                                        //    if (!frmSKU.flgCancel)
+                                        //    {
+                                        //        selectRow = dt.Select(" AdminNO = " + frmSKU.parAdminNO)[0];
+                                        //    }
+                                        //    else
+                                        //    {
+                                        //        return false;
+                                        //    }
+                                        //}
                                         //bbl.ShowMessage("E105");
                                         //return false;
+                                        RW = -1;
+                                        return false;
                                     }
                                 }
                             }
@@ -2058,7 +2063,7 @@ namespace ZaikoIdouNyuuryoku
                         //入力必須(Entry required)
                         if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                         {
-                            CboSoukoCD.MoveNext = false;
+                            //CboSoukoCD.MoveNext = false;
                             //Ｅ１０２
                             bbl.ShowMessage("E102");
                             return false;
@@ -2066,7 +2071,7 @@ namespace ZaikoIdouNyuuryoku
 
                         if (!CheckDependsOnDate(index))
                         {
-                            CboSoukoCD.MoveNext = false; 
+                            //CboSoukoCD.MoveNext = false; 
                             return false;
                         }
                     }
@@ -2138,9 +2143,9 @@ namespace ZaikoIdouNyuuryoku
                     //[M_Souko_Select]
                     M_Souko_Entity msoe = new M_Souko_Entity();
                     msoe.ChangeDate = ymd;
-                    if(index == (int)EIndex.ToSoukoCD)
+                    if (index == (int)EIndex.ToSoukoCD)
                     {
-                        msoe.SoukoCD = CboToSoukoCD.SelectedValue.ToString();                       
+                        msoe.SoukoCD = CboToSoukoCD.SelectedValue.ToString();
                     }
                     else
                     {
@@ -2228,7 +2233,7 @@ namespace ZaikoIdouNyuuryoku
                         SoukoCD = CboFromSoukoCD.SelectedValue.ToString(),
                         TanaCD = detailControls[index].Text,
                         ChangeDate = ymd
-                        };
+                    };
                     ret = zibl.M_Location_SelectData(mle);
                     if (!ret)
                     {
@@ -2243,7 +2248,7 @@ namespace ZaikoIdouNyuuryoku
                     //倉庫棚番マスタに存在しない場合、Error
                     M_Location_Entity mlet = new M_Location_Entity
                     {
-                        SoukoCD = CboToSoukoCD.Enabled ? CboToSoukoCD.SelectedValue.ToString(): CboFromSoukoCD.SelectedValue.ToString(),
+                        SoukoCD = CboToSoukoCD.Enabled ? CboToSoukoCD.SelectedValue.ToString() : CboFromSoukoCD.SelectedValue.ToString(),
                         TanaCD = detailControls[index].Text,
                         ChangeDate = ymd
                     };
@@ -2257,17 +2262,38 @@ namespace ZaikoIdouNyuuryoku
                     break;
 
                 case (int)EIndex.HenpinSaki:
-                    //移動先倉庫は返品倉庫でない場合、Error
-                    M_Souko_Entity msoe2 = new M_Souko_Entity();
-                    msoe2.ChangeDate = ymd;
-                    msoe2.SoukoType = "8";
-                    msoe2.DeleteFlg = "0";
-                    DataTable dtNSoukoH = zibl.M_Souko_BindForHenpin(msoe2);
-                    DataRow[] rows = dtNSoukoH.Select("SoukoCD = '" + CboSoukoCD.SelectedValue.ToString() + "'");
-                    if (rows.Length == 0)
+                    ////移動先倉庫は返品倉庫でない場合、Error
+                    //M_Souko_Entity msoe2 = new M_Souko_Entity();
+                    //msoe2.ChangeDate = ymd;
+                    //msoe2.SoukoType = "8";
+                    //msoe2.DeleteFlg = "0";
+                    //DataTable dtNSoukoH = zibl.M_Souko_BindForHenpin(msoe2);
+                    //DataRow[] rows = dtNSoukoH.Select("SoukoCD = '" + CboSoukoCD.SelectedValue.ToString() + "'");
+                    //if (rows.Length == 0)
+                    //{
+                    //    //Ｅ２０８
+                    //    bbl.ShowMessage("E208");
+                    //    return false;
+                    //}
+                    //[M_Vendor_Select]
+                    M_Vendor_Entity mve = new M_Vendor_Entity
                     {
-                        //Ｅ２０８
-                        bbl.ShowMessage("E208");
+                        VendorCD = detailControls[index].Text,
+                        ChangeDate = ymd,
+                        VendorFlg = "1"
+                    };
+
+                    Vendor_BL sbl = new Vendor_BL();
+                    ret = sbl.M_Vendor_SelectTop1(mve);
+
+                    if (ret)
+                    {
+                        ScVendorCD.LabelText = mve.VendorName;
+                    }
+                    else
+                    {
+                        ScVendorCD.LabelText = "";  
+                        bbl.ShowMessage("E101");
                         return false;
                     }
                     break;
@@ -3433,14 +3459,14 @@ namespace ZaikoIdouNyuuryoku
                         }
                     }
 
-                    //その店舗で返品倉庫がひとつしかない場合は自動で表示する
-                    if (CboSoukoCD.DataSource != null)
-                    {
-                        if (((DataTable)CboSoukoCD.DataSource).Rows.Count == 2)
-                        {
-                            CboSoukoCD.SelectedIndex = 1;
-                        }
-                    }
+                    ////その店舗で返品倉庫がひとつしかない場合は自動で表示する
+                    //if (CboSoukoCD.DataSource != null)
+                    //{
+                    //    if (((DataTable)CboSoukoCD.DataSource).Rows.Count == 2)
+                    //    {
+                    //        CboSoukoCD.SelectedIndex = 1;
+                    //    }
+                    //}
                     break;
             }
         }
@@ -3566,7 +3592,9 @@ namespace ZaikoIdouNyuuryoku
             detailControls[(int)EIndex.ExpectReturnDate].Text = mGrid.g_DArray[row].ExpectReturnDate;
             detailControls[(int)EIndex.EvaluationPrice].Text =bbl.Z_SetStr( mGrid.g_DArray[row].EvaluationPrice);
             detailControls[(int)EIndex.RemarksInStore].Text = mGrid.g_DArray[row].CommentInStore;
-            CboSoukoCD.SelectedValue = mGrid.g_DArray[row].VendorCD;
+            //CboSoukoCD.SelectedValue = mGrid.g_DArray[row].VendorCD;
+            detailControls[(int)EIndex.HenpinSaki].Text = mGrid.g_DArray[row].VendorCD;
+            ScVendorCD.LabelText = mGrid.g_DArray[row].VendorName;
 
             detailControls[(int)EIndex.Gyono].Focus();
         }
@@ -3624,11 +3652,12 @@ namespace ZaikoIdouNyuuryoku
                 mGrid.g_DArray[row].ToRackNO = detailControls[(int)EIndex.ToRackNO].Text;
                 mGrid.g_DArray[row].ExpectReturnDate = detailControls[(int)EIndex.ExpectReturnDate].Text;
                 mGrid.g_DArray[row].CommentInStore = detailControls[(int)EIndex.RemarksInStore].Text;
-
-                if (CboSoukoCD.SelectedIndex > 0)
-                    mGrid.g_DArray[row].VendorCD = CboSoukoCD.SelectedValue.ToString();
-                else
-                    mGrid.g_DArray[row].VendorCD = "";
+                mGrid.g_DArray[row].VendorCD = detailControls[(int)EIndex.HenpinSaki].Text;
+                mGrid.g_DArray[row].VendorName = ScVendorCD.LabelText;
+                //if (CboSoukoCD.SelectedIndex > 0)
+                //    mGrid.g_DArray[row].VendorCD = CboSoukoCD.SelectedValue.ToString();
+                //else
+                //    mGrid.g_DArray[row].VendorCD = "";
             }
 
             //配列の内容を画面へセット
@@ -3703,6 +3732,7 @@ namespace ZaikoIdouNyuuryoku
             lblIraiSu.Text = "";
             lblGeneralPriceOutTax.Text = "";
             lblExpectReturnDate.Text = "";
+            ScVendorCD.LabelText = "";
 
             mAdminNO = "";
             mAdminNOF = "";

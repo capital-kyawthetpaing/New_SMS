@@ -36,6 +36,11 @@
     <StartupObject>TenzikaiJuchuuTourou.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GridControl, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\GridControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

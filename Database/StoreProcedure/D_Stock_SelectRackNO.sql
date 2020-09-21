@@ -28,6 +28,7 @@ BEGIN
     AND DS.DeleteDateTime is null 
     AND DS.AllowableSu > 0 
     AND DS.ArrivalYetFlg = 0    
+    AND DS.RackNO is not null
 	GROUP BY DS.RackNO
     ;
 END
