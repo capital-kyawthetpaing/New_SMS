@@ -232,7 +232,7 @@ namespace TairyuZaikoHyou
                 dtSelect = tzkbl.D_StockSelectForTairyuzaikohyo(dse, mskue, info, mtage);
                 if (dtSelect.Rows.Count > 0)
                 {
-                    //CheckBeforeExport();
+                  
                     try
                     {
 
