@@ -710,6 +710,23 @@ namespace IkkatuHacchuuNyuuryoku
                                         return;
                                     }
                                 }
+                                //発注数が発注ロット単位でない場合、メッセージ表示
+                                var mbl = new SKU_BL();
+                                var mse = new M_SKU_Entity();
+                                mse.AdminNO = mGrid.g_DArray[w_Row].AdminNO;
+                                mse.ChangeDate = this.txtHacchuuDate.Text;
+                                DataTable dt = mbl.M_SKU_SelectAll(mse);
+                                if (dt.Rows.Count > 0)
+                                {
+                                    int lot = int.Parse(dt.Rows[0]["OrderLot"].ToString());
+                                    if (lot > 0 && intSu % int.Parse(dt.Rows[0]["OrderLot"].ToString()) > 0)
+                                    {
+                                        if (bbl.ShowMessage("Q319") != DialogResult.Yes)
+                                        {
+                                            return;
+                                        }
+                                    }
+                                }
                                 if (mGrid.g_DArray[w_Row].HacchuuSuu != mGrid.g_DArray[w_Row].preHacchuuSuu)
                                 {
                                     //入力された場合、金額再計算
