@@ -192,7 +192,7 @@ BEGIN
 
     SET NOCOUNT ON;
     
-    --在庫データ
+     --在庫データ
     WITH ZAIKO AS (
         SELECT *
           FROM (
@@ -279,7 +279,7 @@ BEGIN
               AND ISNULL(ZAI.OrderCD,'') = (CASE WHEN ISNULL(@OrderCD,'') <> '' THEN @OrderCD ELSE ISNULL(ZAI.OrderCD,'') END)
               AND ISNULL(ZAI.OrderNO,'') = (CASE WHEN ISNULL(@OrderNO,'') <> '' THEN @OrderNO ELSE ISNULL(ZAI.OrderNO,'') END)
               AND (((ISNULL(@OrderCD,'') <> '' or ISNULL(@OrderNO,'') <> '') AND ISNULL(ZAI.ArrivalPlanKBN,0) <> 3) OR (0 = 0))
-    )
+    )    
     --受注データ
     , JUCHUU AS (
            SELECT DJD.JuchuuNO
@@ -289,7 +289,9 @@ BEGIN
                  ,DJ.CustomerName
                  ,DJD.JuchuuSuu
                  ,DJ.JuchuuKBN
+                 ,DJD.SKUCD
                  ,DJD.AdminNo
+                 ,DJD.JanCD
                  ,DR.ReserveSu AS AllReserveSu
                  ,DR.ShippingSu AS AllShippingSu    
              FROM D_JuchuuDetails DJD
@@ -323,7 +325,9 @@ BEGIN
                  ,MS.SoukoName AS CustomerName
                  ,DMD.MoveSu AS JuchuuSuu
                  ,4 AS JuchuuKBN
+                 ,DMD.SKUCD
                  ,DMD.AdminNo    
+                 ,DMD.JanCD
                  ,DR.ReserveSu AS AllReserveSu
                  ,DR.ShippingSu AS AllShippingSu
             FROM D_MoveDetails AS DMD                                                                                            
@@ -382,9 +386,9 @@ BEGIN
               ,JUC.JuchuuNO
               ,JUC.JuchuuRows
               ,ZAI.SoukoCD
-              ,ZAI.SKUCD
-              ,ZAI.AdminNO
-              ,ZAI.JanCD
+              ,JUC.SKUCD
+              ,JUC.AdminNO
+              ,JUC.JanCD
               ,ISNULL(RE.ReserveSu,0) AS ReserveSu
               ,ISNULL(RE.ReserveSu,0) AS SelectReserveSu
               ,RE.ShippingOrderNO
@@ -399,8 +403,8 @@ BEGIN
               ,ISNULL(JUC.AllReserveSu,0) AS AllReserveSu
               ,ISNULL(JUC.AllShippingSu,0) AS AllShippingSu
               ,JUC.JuchuuKBN
-        FROM ZAIKO AS ZAI
-        INNER JOIN JUCHUU AS JUC ON ZAI.AdminNO = JUC.AdminNo 
+        FROM JUCHUU AS JUC
+        LEFT JOIN ZAIKO AS ZAI ON JUC.AdminNO = ZAI.AdminNo 
         LEFT JOIN (
                     SELECT  DR.StockNO
                            ,DR.ReserveNO
@@ -429,9 +433,9 @@ BEGIN
               ,IDO.JuchuuNO
               ,IDO.JuchuuRows
               ,ZAI.SoukoCD
-              ,ZAI.SKUCD
-              ,ZAI.AdminNO
-              ,ZAI.JanCD
+              ,IDO.SKUCD
+              ,IDO.AdminNO
+              ,IDO.JanCD
               ,ISNULL(RE.ReserveSu,0) AS ReserveSu
               ,ISNULL(RE.ReserveSu,0) AS SelectReserveSu
               ,RE.ShippingOrderNO
@@ -446,8 +450,8 @@ BEGIN
               ,ISNULL(IDO.AllReserveSu,0) AS AllReserveSu
               ,ISNULL(IDO.AllShippingSu,0) AS AllShippingSu
               ,IDO.JuchuuKBN
-        FROM ZAIKO AS ZAI
-        INNER JOIN IDOU AS IDO ON ZAI.AdminNO = IDO.AdminNo 
+        FROM IDOU AS IDO
+        LEFT JOIN ZAIKO AS ZAI ON IDO.AdminNO = ZAI.AdminNo 
         LEFT JOIN (
                      SELECT  DR.StockNO
                             ,DR.ReserveNO
