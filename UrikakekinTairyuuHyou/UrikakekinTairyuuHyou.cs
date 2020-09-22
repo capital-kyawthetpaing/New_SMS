@@ -125,16 +125,36 @@ namespace UrikakekinTairyuuHyou
             return msce;
         }
 
+        private void OpenForm(string programID, string YYYYMM)
+        {
+            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
+            string Mode = "1";
+            //string cmdLine =  InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + Mode + " " + YYYYMM;//parameter
+            string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + Mode + " " + YYYYMM;
+            try
+            {
+                Process p = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                p.WaitForExit();
+            }
+            catch
+            {
+                //skh_bl.ShowMessage("E138");
+            }
+
+        }
         public bool CheckBeforeExport()
         {
             msce = new M_StoreClose_Entity();
             msce = GetStoreClose_Data();
             if (ukkthbl.M_StoreClose_Check(msce, "1").Rows.Count > 0)
             {
-                //    if (bbl.ShowMessage("Q205") == DialogResult.Yes)
-                //    {
+                string ProgramID = "GetsujiSaikenKeisanSyori";
 
-                //    }
+                //残す部分
+                //NoFilePathcase
+                OpenForm(ProgramID, msce.FiscalYYYYMM);
+                //月次処理（債権集計処理）を起動する 
                 return true;
             }
             return false;
@@ -379,6 +399,7 @@ namespace UrikakekinTairyuuHyou
                
                 try
                 {
+                    CheckBeforeExport();
                     if (dtPrint == null || dtPrint.Rows.Count<=0)
                     {
                         bbl.ShowMessage("E128");
