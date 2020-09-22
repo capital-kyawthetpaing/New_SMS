@@ -346,10 +346,13 @@ namespace SiiresakiZaikoYoteiHyou
             string Mode = "1";
             string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + " " + Mode + " " + YYYYMMS;//parameter
             //string str = "GetsujiZaikoKeisanSyori,GetsujiShiireKeisanSyori";
-            System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            //System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
             //System.Diagnostics.Process.Start(filePath+@"\"+str.Substring(0,22)+".exe",cmdLine+"");
             //System.Diagnostics.Process.Start(filePath+@"\"+str.Substring(24,23)+".exe",cmdLine+"");
-            System.Diagnostics.Process.Start(filePath+@"\"+programID1+".exe",cmdLine+"");
+            Process p1 = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            Process p2= System.Diagnostics.Process.Start(filePath + @"\" + programID1 + ".exe", cmdLine + "");
+            p2.WaitForExit();
+            p1.WaitForExit();
         }
        
         private void SiiresakiZaikoYoteiHyou_KeyUp(object sender, KeyEventArgs e)
