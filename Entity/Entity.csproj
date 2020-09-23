@@ -122,6 +122,7 @@
     <Compile Include="M_Carrier_Entity.cs" />
     <Compile Include="M_Control_Entity.cs" />
     <Compile Include="M_Conversion_Entity.cs" />
+    <Compile Include="M_CustomerSKUPrice_Entity.cs" />
     <Compile Include="M_Customer_Entity.cs" />
     <Compile Include="M_DenominationKBN_Entity.cs" />
     <Compile Include="M_FiscalYear_Entity.cs" />

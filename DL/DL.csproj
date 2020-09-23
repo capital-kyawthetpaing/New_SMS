@@ -126,6 +126,7 @@
     <Compile Include="M_Calendar_DL.cs" />
     <Compile Include="M_Carrier_DL.cs" />
     <Compile Include="M_Control_DL.cs" />
+    <Compile Include="M_CustomerSKUPrice_DL.cs" />
     <Compile Include="M_DenominationKBN_DL.cs" />
     <Compile Include="M_FiscalYear_DL.cs" />
     <Compile Include="M_Hanyou_DL.cs" />
