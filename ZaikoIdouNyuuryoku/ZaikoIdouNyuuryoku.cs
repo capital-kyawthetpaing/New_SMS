@@ -1264,6 +1264,7 @@ namespace ZaikoIdouNyuuryoku
                     mGrid.g_DArray[i].IraiSu = bbl.Z_SetStr(row["RequestSu"]);   // 
                     //mGrid.g_DArray[i].ExpectReturnDate = row["ExpectReturnDate"].ToString();
                     mGrid.g_DArray[i].ExpectReturnDate = row["ExpectedDate"].ToString();
+                    mGrid.g_DArray[i].EvaluationPrice = bbl.Z_Set(row["EvaluationPrice"]);
 
                     mGrid.g_DArray[i].FromRackNO = row["FromRackNO"].ToString();
                     mGrid.g_DArray[i].ToRackNO = row["ToRackNO"].ToString(); 
