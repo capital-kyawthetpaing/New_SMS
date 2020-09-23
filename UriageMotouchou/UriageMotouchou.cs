@@ -142,7 +142,7 @@ namespace UriageMotouchou
         {
             msce = new M_StoreClose_Entity();
             msce = GetStoreClose_Data();
-            if (umbl.M_StoreClose_Check(msce, "1").Rows.Count > 0)
+            if (umbl.M_StoreClose_Check(msce, "4").Rows.Count > 0)
             {
                 string ProgramID = "GetsujiZaikoKeisanSyori";
                 RunConsole(ProgramID, msce.FiscalYYYYMM);

@@ -902,7 +902,7 @@ namespace HikiateHenkouNyuuryoku
             mGrid2.F_CtrlArray_MK(mGrid2.g_MK_Ctl_Col, mGrid2.g_MK_Ctl_Row);
 
             // 1行目
-            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 0].CellCtl = IMT_ZAGYO_0;
+            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 0].CellCtl = IMT_JUGYO_0;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.JuchuuDate, 0].CellCtl = IMT_JYUDT_0;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerCD, 0].CellCtl = IMT_CUSCD_0;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerName, 0].CellCtl = IMT_CUSNM_0;
@@ -912,7 +912,7 @@ namespace HikiateHenkouNyuuryoku
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.InstructionSu, 0].CellCtl = IMN_JSJSU_0;
 
             // 2行目
-            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 1].CellCtl = IMT_ZAGYO_1;
+            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 1].CellCtl = IMT_JUGYO_1;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.JuchuuDate, 1].CellCtl = IMT_JYUDT_1;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerCD, 1].CellCtl = IMT_CUSCD_1;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerName, 1].CellCtl = IMT_CUSNM_1;
@@ -922,7 +922,7 @@ namespace HikiateHenkouNyuuryoku
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.InstructionSu, 1].CellCtl = IMN_JSJSU_1;
 
             // 3行目
-            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 2].CellCtl = IMT_ZAGYO_2;
+            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 2].CellCtl = IMT_JUGYO_2;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.JuchuuDate, 2].CellCtl = IMT_JYUDT_2;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerCD, 2].CellCtl = IMT_CUSCD_2;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerName, 2].CellCtl = IMT_CUSNM_2;
@@ -932,7 +932,7 @@ namespace HikiateHenkouNyuuryoku
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.InstructionSu, 2].CellCtl = IMN_JSJSU_2;
 
             // 4行目
-            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 3].CellCtl = IMT_ZAGYO_3;
+            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 3].CellCtl = IMT_JUGYO_3;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.JuchuuDate, 3].CellCtl = IMT_JYUDT_3;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerCD, 3].CellCtl = IMT_CUSCD_3;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerName, 3].CellCtl = IMT_CUSNM_3;
@@ -942,7 +942,7 @@ namespace HikiateHenkouNyuuryoku
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.InstructionSu, 3].CellCtl = IMN_JSJSU_3;
 
             // 5行目
-            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 4].CellCtl = IMT_ZAGYO_4;
+            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 4].CellCtl = IMT_JUGYO_4;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.JuchuuDate, 4].CellCtl = IMT_JYUDT_4;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerCD, 4].CellCtl = IMT_CUSCD_4;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerName, 4].CellCtl = IMT_CUSNM_4;
@@ -952,7 +952,7 @@ namespace HikiateHenkouNyuuryoku
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.InstructionSu, 4].CellCtl = IMN_JSJSU_4;
 
             // 6行目
-            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 5].CellCtl = IMT_ZAGYO_5;
+            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 5].CellCtl = IMT_JUGYO_5;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.JuchuuDate, 5].CellCtl = IMT_JYUDT_5;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerCD, 5].CellCtl = IMT_CUSCD_5;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerName, 5].CellCtl = IMT_CUSNM_5;
@@ -962,7 +962,7 @@ namespace HikiateHenkouNyuuryoku
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.InstructionSu, 5].CellCtl = IMN_JSJSU_5;
 
             // 7行目
-            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 6].CellCtl = IMT_ZAGYO_6;
+            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 6].CellCtl = IMT_JUGYO_6;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.JuchuuDate, 6].CellCtl = IMT_JYUDT_6;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerCD, 6].CellCtl = IMT_CUSCD_6;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerName, 6].CellCtl = IMT_CUSNM_6;
@@ -972,7 +972,7 @@ namespace HikiateHenkouNyuuryoku
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.InstructionSu, 6].CellCtl = IMN_JSJSU_6;
 
             // 8行目
-            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 7].CellCtl = IMT_ZAGYO_7;
+            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 7].CellCtl = IMT_JUGYO_7;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.JuchuuDate, 7].CellCtl = IMT_JYUDT_7;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerCD, 7].CellCtl = IMT_CUSCD_7;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerName, 7].CellCtl = IMT_CUSNM_7;
@@ -982,7 +982,7 @@ namespace HikiateHenkouNyuuryoku
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.InstructionSu, 7].CellCtl = IMN_JSJSU_7;
 
             // 9行目
-            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 8].CellCtl = IMT_ZAGYO_8;
+            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 8].CellCtl = IMT_JUGYO_8;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.JuchuuDate, 8].CellCtl = IMT_JYUDT_8;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerCD, 8].CellCtl = IMT_CUSCD_8;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerName, 8].CellCtl = IMT_CUSNM_8;
@@ -992,7 +992,7 @@ namespace HikiateHenkouNyuuryoku
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.InstructionSu, 8].CellCtl = IMN_JSJSU_8;
 
             // 10行目
-            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 9].CellCtl = IMT_ZAGYO_9;
+            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 9].CellCtl = IMT_JUGYO_9;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.JuchuuDate, 9].CellCtl = IMT_JYUDT_9;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerCD, 9].CellCtl = IMT_CUSCD_9;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerName, 9].CellCtl = IMT_CUSNM_9;
@@ -1002,7 +1002,7 @@ namespace HikiateHenkouNyuuryoku
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.InstructionSu, 9].CellCtl = IMN_JSJSU_9;
 
             // 11行目
-            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 10].CellCtl = IMT_ZAGYO_10;
+            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 10].CellCtl = IMT_JUGYO_10;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.JuchuuDate, 10].CellCtl = IMT_JYUDT_10;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerCD, 10].CellCtl = IMT_CUSCD_10;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerName, 10].CellCtl = IMT_CUSNM_10;
@@ -1012,7 +1012,7 @@ namespace HikiateHenkouNyuuryoku
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.InstructionSu, 10].CellCtl = IMN_JSJSU_10;
 
             // 12行目
-            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 11].CellCtl = IMT_ZAGYO_11;
+            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 11].CellCtl = IMT_JUGYO_11;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.JuchuuDate, 11].CellCtl = IMT_JYUDT_11;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerCD, 11].CellCtl = IMT_CUSCD_11;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerName, 11].CellCtl = IMT_CUSNM_11;
@@ -1022,7 +1022,7 @@ namespace HikiateHenkouNyuuryoku
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.InstructionSu, 11].CellCtl = IMN_JSJSU_11;
 
             // 13行目
-            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 12].CellCtl = IMT_ZAGYO_12;
+            mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.GYONO, 12].CellCtl = IMT_JUGYO_12;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.JuchuuDate, 12].CellCtl = IMT_JYUDT_12;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerCD, 12].CellCtl = IMT_CUSCD_12;
             mGrid2.g_MK_Ctrl[(int)ClsGridHikiate.ColNO.CustomerName, 12].CellCtl = IMT_CUSNM_12;
@@ -2305,7 +2305,8 @@ namespace HikiateHenkouNyuuryoku
         /// <summary>
         /// 表示用ワークテーブル追加処理
         /// </summary>
-        private void InsertDispTable()
+        /// <param name="isFirst">初期表示フラグ</param>
+        private void InsertDispTable(bool isFirst = false)
         {
             //表示用テーブルクリア
             zaikoDispTbl.Clear();
@@ -2320,6 +2321,16 @@ namespace HikiateHenkouNyuuryoku
             this.GetEntity(); 
             zaikoTbl = hhbl.D_Stock_SelectForHikiateZaiko(hhe);
             juchuuTbl = hhbl.D_Stock_SelectForHikiateJuchuu(hhe);
+
+            // 初期表示処理にて在庫テーブルがない場合、受注モードに切り替える
+            if (isFirst)
+            {
+                if (zaikoTbl.Rows.Count == 0)
+                {
+                    //受注から引当モード
+                    this.ChangeOperationMode(EOpeMode.JUCHUU);
+                }
+            }
 
             //ワークテーブルより表示用テーブルにセット
             if (mOpeMode == EOpeMode.ZAIKO)
@@ -2563,9 +2574,9 @@ namespace HikiateHenkouNyuuryoku
             this.ChangeOperationMode(EOpeMode.ZAIKO);
 
             //表示用ワークテーブル追加
-            this.InsertDispTable();
+            this.InsertDispTable(true);
 
-            if (zaikoTbl.Rows.Count == 0)
+            if (zaikoTbl.Rows.Count == 0 && juchuuTbl.Rows.Count == 0)
             {
                 bbl.ShowMessage("E128");
                 headControls[(int)HIndex.SKUCD].Focus();
@@ -2576,7 +2587,7 @@ namespace HikiateHenkouNyuuryoku
             this.Scr_Lock(0);
 
             //在庫明細表示     
-            this.DispDetail((short)EOpeMode.ZAIKO, true);
+            this.DispDetail((short)mOpeMode, true);
 
             //引当(F3)を可能にする
             this.SetFuncKey(this, 2, true);
@@ -3263,8 +3274,12 @@ namespace HikiateHenkouNyuuryoku
             this.ClearZaikoInfo();
             this.ClearJuchuuInfo();
 
-            S_Clear_Grid();   //画面クリア（明細部）
-            S_Clear_Grid2();   //画面クリア（明細部）
+            if (Kbn == 0)
+            {
+                S_Clear_Grid();   //画面クリア（明細部）
+                S_Clear_Grid2();   //画面クリア（明細部）
+            }
+            
 
        }
 
@@ -3518,10 +3533,10 @@ namespace HikiateHenkouNyuuryoku
 
         private void ZaikoControl_Leave(object sender, EventArgs e)
         {
-            Control w_ActCtl;
-            w_ActCtl = (Control)sender;
-            // 背景色
-            w_ActCtl.BackColor = SystemColors.Window;
+            //Control w_ActCtl;
+            //w_ActCtl = (Control)sender;
+            //// 背景色
+            //w_ActCtl.BackColor = SystemColors.Window;
         }
 
         private void ZaikoControl_KeyDown(object sender, KeyEventArgs e)
