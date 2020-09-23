@@ -336,6 +336,7 @@
             this.btnDisplay.TabIndex = 18;
             this.btnDisplay.Text = "表示";
             this.btnDisplay.UseVisualStyleBackColor = false;
+            this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
             // 
             // ckM_Label4
             // 
@@ -371,6 +372,7 @@
             this.btnShow.TabIndex = 17;
             this.btnShow.Text = "明細取込";
             this.btnShow.UseVisualStyleBackColor = false;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // ScCustomer_Start
             // 

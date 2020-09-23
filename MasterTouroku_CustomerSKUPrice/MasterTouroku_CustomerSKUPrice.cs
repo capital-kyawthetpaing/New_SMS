@@ -21,6 +21,8 @@ namespace MasterTouroku_CustomerSKUPrice
 
         private const string ProID = "MasterTouroku_CustomerSKUPrice";
         private const string ProNm = "顧客別SKU販売単価マスタ";
+        MasterTouroku_CustomerSKUPrice_BL mcskupbl;
+        M_CustomerSKUPrice_Entity mcskue;
 
         //private Control[] keyControls;
         //private Control[] keyLabels;
@@ -52,6 +54,8 @@ namespace MasterTouroku_CustomerSKUPrice
         {
             InitializeComponent();
             mGrid = new ClsGridCustomerSKUPric();
+            mcskupbl = new MasterTouroku_CustomerSKUPrice_BL();
+            mcskue = new M_CustomerSKUPrice_Entity();
         }
 
         private void FrmMasterTouroku_CustomerSKUPrice_Load(object sender, EventArgs e)
@@ -1092,5 +1096,91 @@ namespace MasterTouroku_CustomerSKUPrice
             }
         }
 
-    }
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                base.FunctionProcess(FuncDisp - 1);
+
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
+
+        private void btnDisplay_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                base.FunctionProcess(FuncDisp - 1);
+
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
+
+        protected override void ExecDisp()
+        {
+            if (OperationMode != EOperationMode.INSERT)
+            {
+                if(ErrorCheck(11))
+                {
+                    mcskue = new M_CustomerSKUPrice_Entity
+                    {
+                        TekiyouKaisiDate = txtStartDate.Text,
+                    };
+                }
+            }
+                CheckData(true);
+        }
+
+        public void CheckData(bool set, bool copy= false)
+        {
+            
+        }
+
+        public bool ErrorCheck(int mode)
+        {
+            if (!txtStartDate.DateCheck())
+                return false;
+            if (!txtEndDate.DateCheck())
+                return false;
+
+            int result = txtStartDate.Text.CompareTo(txtEndDate.Text);
+            if (result > 0)
+            {
+                bbl.ShowMessage("E104");
+                txtStartDate.Focus();
+                return false;
+            }
+
+            int result1 = ScCustomer_Start.TxtCode.Text.CompareTo(ScCustomer_End.TxtCode.Text);
+            if (result1 > 0)
+            {
+                bbl.ShowMessage("E104");
+                ScCustomer_Start.SetFocus(1);
+                return false;
+            }
+
+            int skuresult = ScSKUCD_Start.TxtCode.Text.CompareTo(ScSKUCD_End.TxtCode.Text);
+            if (skuresult > 0)
+            {
+                bbl.ShowMessage("E104");
+                ScSKUCD_Start.SetFocus(1);
+                return false;
+            }
+            if(mode==2)
+            {
+
+            }
+            return true;
+        }
+     }
 }

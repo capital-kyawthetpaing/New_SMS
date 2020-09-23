@@ -332,7 +332,7 @@ namespace SiiresakiZaikoYoteiHyou
             msce = new M_StoreClose_Entity();
             msce = GetStoreClose_Data();
 
-            if (szybl.M_StoreClose_Check(msce, "3").Rows.Count > 0)
+            if (szybl.M_StoreClose_Check(msce, "5").Rows.Count > 0)
             {
                 string ProgramID = "GetsujiZaikoKeisanSyori";
                 string ProgramID1 = "GetsujiShiireKeisanSyori";
@@ -346,10 +346,13 @@ namespace SiiresakiZaikoYoteiHyou
             string Mode = "1";
             string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + " " + Mode + " " + YYYYMMS;//parameter
             //string str = "GetsujiZaikoKeisanSyori,GetsujiShiireKeisanSyori";
-            System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            //System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
             //System.Diagnostics.Process.Start(filePath+@"\"+str.Substring(0,22)+".exe",cmdLine+"");
             //System.Diagnostics.Process.Start(filePath+@"\"+str.Substring(24,23)+".exe",cmdLine+"");
-            System.Diagnostics.Process.Start(filePath+@"\"+programID1+".exe",cmdLine+"");
+            Process p1 = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            Process p2= System.Diagnostics.Process.Start(filePath + @"\" + programID1 + ".exe", cmdLine + "");
+            p2.WaitForExit();
+            p1.WaitForExit();
         }
        
         private void SiiresakiZaikoYoteiHyou_KeyUp(object sender, KeyEventArgs e)

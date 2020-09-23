@@ -213,7 +213,7 @@ namespace ZaikoKanriHyou
                                 zkh_Report.Refresh();
                                 zkh_Report.SetParameterValue("lblDate", txtTargetDate.Text);
                                 zkh_Report.SetParameterValue("lblSouko", cboSouko.SelectedValue.ToString() + "   " + cboSouko.Text);
-                                zkh_Report.SetParameterValue("lblToday", dt.Rows[0]["Today"].ToString() + "  " + dt.Rows[0]["Now"].ToString());
+                                zkh_Report.SetParameterValue("lblToday", dt.Rows[0]["Today"].ToString() + "  " + DateTime.Now.ToString("HH:mm"));
                                 try
                                 {
                                     
@@ -293,9 +293,10 @@ namespace ZaikoKanriHyou
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "1";
-            //string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
             string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
-            System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            //System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            Process p = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            p.WaitForExit();
         }
 
         private void ZaikoKanriHyou_KeyUp(object sender, KeyEventArgs e)
