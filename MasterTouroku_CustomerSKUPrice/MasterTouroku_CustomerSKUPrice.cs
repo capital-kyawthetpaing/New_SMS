@@ -1092,5 +1092,45 @@ namespace MasterTouroku_CustomerSKUPrice
             }
         }
 
-    }
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                base.FunctionProcess(FuncDisp - 1);
+
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
+
+        private void btnDisplay_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                base.FunctionProcess(FuncDisp - 1);
+
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
+
+        protected override void ExecDisp()
+        {
+            if (OperationMode != EOperationMode.INSERT)
+                CheckData(true);
+        }
+
+        public void CheckData(bool set, bool copy= false)
+        {
+
+        }
+     }
 }

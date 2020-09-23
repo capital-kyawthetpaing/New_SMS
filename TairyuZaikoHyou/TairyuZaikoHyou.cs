@@ -11,6 +11,10 @@ using Base.Client;
 using BL;
 using Entity;
 using CKM_Controls;
+using System.IO;
+using ClosedXML.Excel;
+using System.Diagnostics;
+using ElencySolutions.CsvHelper;
 
 namespace TairyuZaikoHyou
 {
@@ -99,7 +103,10 @@ namespace TairyuZaikoHyou
                 case 11:               
                     break;
                 case 12:
-                    F12();
+                    if (bbl.ShowMessage("Q201") == DialogResult.Yes)
+                    {
+                        F12();
+                    }
                     break;
             }
         }
@@ -185,6 +192,10 @@ namespace TairyuZaikoHyou
                     Keyword2 = (strlist.Length > 1) ? strlist[1].ToString() : "",
                     Keyword3 = (strlist.Length > 2) ? strlist[2].ToString() : "",   
                 };
+                if(dse.SoukoCD == "-1")
+                {
+                    dse.SoukoCD = null;
+                }
 
                 mskue = new M_SKU_Entity
                 {
@@ -199,8 +210,24 @@ namespace TairyuZaikoHyou
                     ReserveCD = cboReservation.SelectedValue.ToString(),
                     NoticesCD = cboNotices.SelectedValue.ToString(),
                     PostageCD = cboPostage.SelectedValue.ToString(),
-                    OrderAttentionCD = cboOrder.ToString()
+                    OrderAttentionCD = cboOrder.SelectedValue.ToString()
                 };
+                if(mskue.ReserveCD == "-1")
+                {
+                    mskue.ReserveCD = null;
+                }
+                if(mskue.NoticesCD == "-1")
+                {
+                    mskue.NoticesCD = null;
+                }
+                if (mskue.PostageCD == "-1")
+                {
+                    mskue.PostageCD = null;
+                }
+                if (mskue.OrderAttentionCD == "-1")
+                {
+                    mskue.OrderAttentionCD = null;
+                }
 
                 info = new M_SKUInfo_Entity
                 {
@@ -210,6 +237,15 @@ namespace TairyuZaikoHyou
                     InstructionsNO = txtInstructionNo.Text,
                 };
 
+                if(info.YearTerm == "-1")
+                {
+                    info.YearTerm = null;
+                }
+                if (info.Season == "-1")
+                {
+                    info.Season = null;
+                }
+
                 mtage = new M_SKUTag_Entity
                 {
                     TagName1 = cboTag1.SelectedValue.ToString(),
@@ -218,6 +254,27 @@ namespace TairyuZaikoHyou
                     TagName4 = cboTag4.SelectedValue.ToString(),
                     TagName5 = cboTag5.SelectedValue.ToString()
                 };
+                
+                if(mtage.TagName1 == "-1")
+                {
+                    mtage.TagName1 = null;
+                }
+                if (mtage.TagName2 == "-1")
+                {
+                    mtage.TagName2 = null;
+                }
+                if (mtage.TagName3 == "-1")
+                {
+                    mtage.TagName3 = null;
+                }
+                if (mtage.TagName4 == "-1")
+                {
+                    mtage.TagName4 = null;
+                }
+                if (mtage.TagName5 == "-1")
+                {
+                    mtage.TagName5 = null;
+                }
 
                 if (rdoOR.Checked == true)
                 {
@@ -232,18 +289,94 @@ namespace TairyuZaikoHyou
                 dtSelect = tzkbl.D_StockSelectForTairyuzaikohyo(dse, mskue, info, mtage);
                 if (dtSelect.Rows.Count > 0)
                 {
-                    //CheckBeforeExport();
+                    CheckBeforeExport();
                     try
                     {
+                        ChangeDataColumnName(dtSelect);                     
 
+                        string Folderpath = "C:\\CSV\\";
+                        if (!string.IsNullOrWhiteSpace(Folderpath))
+                            {
+                                if (!Directory.Exists(Folderpath))
+                                {
+                                    Directory.CreateDirectory(Folderpath);
+                                }
+                                #region CSV,Excel create and save00
+                                SaveFileDialog savedialog = new SaveFileDialog();
+                                savedialog.Filter = "Csv|*.csv|Excel|*.xls";
+
+                                savedialog.Title = "Save";
+                                InProgramNM = "滞留在庫表";
+                                string cmdLine = InProgramNM + " " + DateTime.Now.ToString(" yyyyMMdd_HHmmss ") + " " + InOperatorCD;
+                                savedialog.FileName = cmdLine;
+                                savedialog.InitialDirectory = Folderpath;
+                                savedialog.RestoreDirectory = true;
+                                if (savedialog.ShowDialog() == DialogResult.OK)
+                                {
+                                    if (Path.GetExtension(savedialog.FileName).Contains("csv"))
+                                    {
+
+                                    ////before your loop
+                                    //var csv = new StringBuilder();
+
+                                    ////in your loop
+                                    //var first = "滞留在庫表：";                                  
+                                    ////Suggestion made by KyleMit
+                                    //var newLine = string.Format("{0}", first);
+                                    //csv.AppendLine(newLine);
+                                    //var sname = "対象日数:";
+                                    //var svalue = txtTargetDays.Text;
+                                    //var second = string.Format("{0},{1}", sname,svalue);
+                                    //csv.AppendLine(second);
+                                    //var trname = "倉庫:";
+                                    //var trvalue = cboWarehouse.SelectedValue.ToString();
+                                    //var third = string.Format("{0},{1}", trname, trvalue);
+                                    //csv.AppendLine(third);
+
+                                    ////after your loop
+                                    //File.WriteAllText(Folderpath, csv.ToString());
+
+                                    CsvWriter csvwriter = new CsvWriter();
+                                        csvwriter.WriteCsv(dtSelect, savedialog.FileName, Encoding.GetEncoding(932));                                  
+                                    }
+                                    else
+                                    {
+                                        XLWorkbook wb = new XLWorkbook();
+                                        wb.Worksheets.Add(dtSelect, "Sheet1");
+                                        wb.SaveAs(savedialog.FileName);
+                                    }
+
+                                    Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                                }
+                                #endregion
+                        }
+                        
                     }
                     finally
                     {
-                        //画面はそのまま
                         txtTargetDays.Focus();
                     }
+
                 }
             }
+        }
+
+        protected DataTable ChangeDataColumnName(DataTable dtAdd)
+        {
+            dtAdd.Columns["DaysCalculation"].ColumnName = "滞留日数";
+            dtAdd.Columns["SKUCD"].ColumnName = "SKUCD";
+            dtAdd.Columns["JanCD"].ColumnName = "JANCD";
+            dtAdd.Columns["SKUName"].ColumnName = "商品名";
+            dtAdd.Columns["ColorName"].ColumnName = "カラー";
+            dtAdd.Columns["SizeName"].ColumnName = "サイズ";
+            dtAdd.Columns["BrandName"].ColumnName = "ブランド";
+            dtAdd.Columns["Char1"].ColumnName = "競技";
+            dtAdd.Columns["ArrivalDate"].ColumnName = "最終入荷日";
+            dtAdd.Columns["ShippingDate"].ColumnName = "最終出荷日";
+            dtAdd.Columns["StockSu"].ColumnName = "在庫数";
+            
+            //dtAdd.Columns.RemoveAt(2);
+            return dtAdd;
         }
 
         private void CheckBeforeExport()
@@ -262,8 +395,10 @@ namespace TairyuZaikoHyou
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "1";
-            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
-            System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
+            //System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            Process p = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            p.WaitForExit();
         }
 
         private M_StoreClose_Entity GetStoreClose_Data()
