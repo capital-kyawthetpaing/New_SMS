@@ -285,7 +285,6 @@ namespace ZaikoKanriHyou
             if (zkhbl.M_StoreClose_Check(msce, "3").Rows.Count > 0)
             {
                 string ProgramID = "GetsujiZaikoKeisanSyori";
-
                 RunConsole(ProgramID, msce.FiscalYYYYMM);
             }
         }
