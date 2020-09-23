@@ -1,16 +1,21 @@
---  ======================================================================  
---       Program Call    î≠íçèë  
---       Program ID      Hacchuusho
---       Create date:    2019.01.09
---    ======================================================================  
-  
+
 IF EXISTS (select * from sys.objects where name = 'PRC_Hacchuusho_SelectData')
 begin
     DROP PROCEDURE PRC_Hacchuusho_SelectData
 end
 GO
+/****** Object:  StoredProcedure [dbo].[PRC_Hacchuusho_SelectData]    Script Date: 2020/09/23 16:53:51 ******/
 
-CREATE PROCEDURE PRC_Hacchuusho_SelectData(
+
+/****** Object:  StoredProcedure [dbo].[PRC_Hacchuusho_SelectData]    Script Date: 2020/09/23 16:53:51 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER OFF
+GO
+
+
+CREATE PROCEDURE [dbo].[PRC_Hacchuusho_SelectData](
  @p_StoreCD                             varchar(4)
 ,@p_InsatuTaishou_Mihakkou              bit
 ,@p_InsatuTaishou_Saihakkou             bit
@@ -145,7 +150,7 @@ BEGIN
                                        AND DODH.ReturnFLG = 0
                                     THEN 2
                                   WHEN DODH.DestinationKBN = 1
-                                       AND DODH.OrderWayKBN = 2
+                                   --    AND DODH.OrderWayKBN = 2
                                        AND DODH.ReturnFLG = 0
                                     THEN 3
                                   WHEN DODH.ReturnFLG = 1
@@ -184,3 +189,6 @@ BEGIN
             ,MAIN.DetailGyouNO
 
 END
+GO
+
+
