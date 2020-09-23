@@ -1510,9 +1510,16 @@ namespace ShiireNyuuryoku
             }
             else
             {
-                if(!dt.Rows[0]["ProcessKBN"].ToString().Equals("2"))
+                if(dt.Rows[0]["ProcessKBN"].ToString().Equals("1"))
                 {
                     bbl.ShowMessage("E260");
+                    Scr_Clr(1);
+                    previousCtrl.Focus();
+                    return false;
+                }
+                else if (dt.Rows[0]["ProcessKBN"].ToString().Equals("3"))
+                {
+                    bbl.ShowMessage("E264");
                     Scr_Clr(1);
                     previousCtrl.Focus();
                     return false;
