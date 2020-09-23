@@ -2035,7 +2035,7 @@ namespace ZaikoIdouNyuuryoku
                         };
 
                         DataTable dt = zibl.D_Stock_SelectZaiko(dse);
-                        if (dt.Rows.Count != 0)
+                        if (dt.Rows.Count != 0 && OperationMode == EOperationMode.INSERT)
                         {
                             if (bbl.Z_Set(detailControls[index].Text) != 0)
                             {
