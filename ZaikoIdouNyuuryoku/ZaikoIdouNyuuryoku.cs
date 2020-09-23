@@ -1264,6 +1264,7 @@ namespace ZaikoIdouNyuuryoku
                     mGrid.g_DArray[i].IraiSu = bbl.Z_SetStr(row["RequestSu"]);   // 
                     //mGrid.g_DArray[i].ExpectReturnDate = row["ExpectReturnDate"].ToString();
                     mGrid.g_DArray[i].ExpectReturnDate = row["ExpectedDate"].ToString();
+                    mGrid.g_DArray[i].EvaluationPrice = bbl.Z_Set(row["EvaluationPrice"]);
 
                     mGrid.g_DArray[i].FromRackNO = row["FromRackNO"].ToString();
                     mGrid.g_DArray[i].ToRackNO = row["ToRackNO"].ToString(); 
@@ -2035,7 +2036,7 @@ namespace ZaikoIdouNyuuryoku
                         };
 
                         DataTable dt = zibl.D_Stock_SelectZaiko(dse);
-                        if (dt.Rows.Count != 0)
+                        if (dt.Rows.Count != 0 && OperationMode == EOperationMode.INSERT)
                         {
                             if (bbl.Z_Set(detailControls[index].Text) != 0)
                             {

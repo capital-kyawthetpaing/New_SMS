@@ -12,7 +12,7 @@
   <xs:element name="DT_SaikenKanriHyou" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DT_SaikenKanriHyou" msprop:Generator_UserDSName="DT_SaikenKanriHyou">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SaikenKanriHyou" msprop:Generator_TableClassName="SaikenKanriHyouDataTable" msprop:Generator_TableVarName="tableSaikenKanriHyou" msprop:Generator_TablePropName="SaikenKanriHyou" msprop:Generator_RowDeletingName="SaikenKanriHyouRowDeleting" msprop:Generator_RowChangingName="SaikenKanriHyouRowChanging" msprop:Generator_RowEvHandlerName="SaikenKanriHyouRowChangeEventHandler" msprop:Generator_RowDeletedName="SaikenKanriHyouRowDeleted" msprop:Generator_UserTableName="SaikenKanriHyou" msprop:Generator_RowChangedName="SaikenKanriHyouRowChanged" msprop:Generator_RowEvArgName="SaikenKanriHyouRowChangeEvent" msprop:Generator_RowClassName="SaikenKanriHyouRow">
+        <xs:element name="SaikenKanriHyou" msprop:Generator_TableClassName="SaikenKanriHyouDataTable" msprop:Generator_TableVarName="tableSaikenKanriHyou" msprop:Generator_RowChangedName="SaikenKanriHyouRowChanged" msprop:Generator_TablePropName="SaikenKanriHyou" msprop:Generator_RowDeletingName="SaikenKanriHyouRowDeleting" msprop:Generator_RowChangingName="SaikenKanriHyouRowChanging" msprop:Generator_RowEvHandlerName="SaikenKanriHyouRowChangeEventHandler" msprop:Generator_RowDeletedName="SaikenKanriHyouRowDeleted" msprop:Generator_RowClassName="SaikenKanriHyouRow" msprop:Generator_UserTableName="SaikenKanriHyou" msprop:Generator_RowEvArgName="SaikenKanriHyouRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="店舗CD" msprop:Generator_ColumnVarNameInTable="column店舗CD" msprop:Generator_ColumnPropNameInRow="店舗CD" msprop:Generator_ColumnPropNameInTable="店舗CDColumn" msprop:Generator_UserColumnName="店舗CD" type="xs:string" minOccurs="0" />
@@ -26,6 +26,8 @@
               <xs:element name="うち相殺額" msprop:Generator_ColumnVarNameInTable="columnうち相殺額" msprop:Generator_ColumnPropNameInRow="うち相殺額" msprop:Generator_ColumnPropNameInTable="うち相殺額Column" msprop:Generator_UserColumnName="うち相殺額" type="xs:string" minOccurs="0" />
               <xs:element name="当月債権額" msprop:Generator_ColumnVarNameInTable="column当月債権額" msprop:Generator_ColumnPropNameInRow="当月債権額" msprop:Generator_ColumnPropNameInTable="当月債権額Column" msprop:Generator_UserColumnName="当月債権額" type="xs:string" minOccurs="0" />
               <xs:element name="CustomerCD" msprop:Generator_ColumnVarNameInTable="columnCustomerCD" msprop:Generator_ColumnPropNameInRow="CustomerCD" msprop:Generator_ColumnPropNameInTable="CustomerCDColumn" msprop:Generator_UserColumnName="CustomerCD" type="xs:string" minOccurs="0" />
+              <xs:element name="債権消込額" msprop:Generator_ColumnVarNameInTable="column債権消込額" msprop:Generator_ColumnPropNameInRow="債権消込額" msprop:Generator_ColumnPropNameInTable="債権消込額Column" msprop:Generator_UserColumnName="債権消込額" type="xs:string" minOccurs="0" />
+              <xs:element name="当月前受残" msprop:Generator_ColumnVarNameInTable="column当月前受残" msprop:Generator_ColumnPropNameInRow="当月前受残" msprop:Generator_ColumnPropNameInTable="当月前受残Column" msprop:Generator_UserColumnName="当月前受残" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
