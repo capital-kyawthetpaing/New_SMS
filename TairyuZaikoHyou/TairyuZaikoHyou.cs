@@ -103,10 +103,7 @@ namespace TairyuZaikoHyou
                 case 11:               
                     break;
                 case 12:
-                    if (bbl.ShowMessage("Q201") == DialogResult.Yes)
-                    {
-                        F12();
-                    }
+                    F12();
                     break;
             }
         }
@@ -289,13 +286,15 @@ namespace TairyuZaikoHyou
                 dtSelect = tzkbl.D_StockSelectForTairyuzaikohyo(dse, mskue, info, mtage);
                 if (dtSelect.Rows.Count > 0)
                 {
-                    CheckBeforeExport();
-                    try
+                    if (bbl.ShowMessage("Q201") == DialogResult.Yes)
                     {
-                        ChangeDataColumnName(dtSelect);                     
+                        CheckBeforeExport();
+                        try
+                        {
+                            ChangeDataColumnName(dtSelect);
 
-                        string Folderpath = "C:\\CSV\\";
-                        if (!string.IsNullOrWhiteSpace(Folderpath))
+                            string Folderpath = "C:\\CSV\\";
+                            if (!string.IsNullOrWhiteSpace(Folderpath))
                             {
                                 if (!Directory.Exists(Folderpath))
                                 {
@@ -316,28 +315,16 @@ namespace TairyuZaikoHyou
                                     if (Path.GetExtension(savedialog.FileName).Contains("csv"))
                                     {
 
-                                    ////before your loop
-                                    //var csv = new StringBuilder();
+                                        ////after your loop
+                                        //File.WriteAllText(Folderpath, csv.ToString());
+                                        var utf8WithoutBom = new System.Text.UTF8Encoding(false);
+                                        using (StreamWriter writer = new StreamWriter(Folderpath + cmdLine + ".csv", false, utf8WithoutBom))
+                                        {
+                                            WriteDataTable(dtSelect, writer, true);
+                                        }
 
-                                    ////in your loop
-                                    //var first = "滞留在庫表：";                                  
-                                    ////Suggestion made by KyleMit
-                                    //var newLine = string.Format("{0}", first);
-                                    //csv.AppendLine(newLine);
-                                    //var sname = "対象日数:";
-                                    //var svalue = txtTargetDays.Text;
-                                    //var second = string.Format("{0},{1}", sname,svalue);
-                                    //csv.AppendLine(second);
-                                    //var trname = "倉庫:";
-                                    //var trvalue = cboWarehouse.SelectedValue.ToString();
-                                    //var third = string.Format("{0},{1}", trname, trvalue);
-                                    //csv.AppendLine(third);
-
-                                    ////after your loop
-                                    //File.WriteAllText(Folderpath, csv.ToString());
-
-                                    CsvWriter csvwriter = new CsvWriter();
-                                        csvwriter.WriteCsv(dtSelect, savedialog.FileName, Encoding.GetEncoding(932));                                  
+                                        //CsvWriter csvwriter = new CsvWriter();
+                                        //    csvwriter.WriteCsv(dtSelect, savedialog.FileName, Encoding.GetEncoding(932));                                  
                                     }
                                     else
                                     {
@@ -349,16 +336,61 @@ namespace TairyuZaikoHyou
                                     Process.Start(Path.GetDirectoryName(savedialog.FileName));
                                 }
                                 #endregion
-                        }
-                        
-                    }
-                    finally
-                    {
-                        txtTargetDays.Focus();
-                    }
+                            }
 
+                        }
+                        finally
+                        {
+                            txtTargetDays.Focus();
+                        }
+                    }
+                  
+                }
+                else
+                {
+                    tzkbl.ShowMessage("E128");
+                    txtTargetDays.Focus();
                 }
             }
+        }
+
+        public void WriteDataTable(DataTable dt, TextWriter writer, bool includeHeaders)
+        {
+
+            string[] item1 = new string[1];
+            item1[0] = "滞留在庫表：";
+            writer.WriteLine(String.Join(",", item1));
+
+            string[] item2 = new string[2];
+            item2[0] = "対象日数:";
+            item2[1] = txtTargetDays.Text;
+            writer.WriteLine(String.Join(",", item2));
+
+            string[] item3 = new string[2];
+            item3[0] = "倉庫:";
+            item2[1] = cboWarehouse.SelectedValue.ToString();
+            writer.WriteLine(String.Join(",", item3));
+
+            if (includeHeaders)
+            {
+                List<string> headerValues = new List<string>();
+
+                foreach (DataColumn column in dt.Columns)
+                {
+                    headerValues.Add(column.ColumnName);
+                }
+                StringBuilder builder = new StringBuilder();
+                writer.WriteLine(String.Join(",", headerValues.ToArray()));
+            }
+
+            string[] item4 = null;
+            foreach (DataRow row in dt.Rows)
+            {
+                item4 = row.ItemArray.Select(o => o.ToString()).ToArray();
+                writer.WriteLine(String.Join(",", item4));
+            }
+
+            writer.Flush();
         }
 
         protected DataTable ChangeDataColumnName(DataTable dtAdd)

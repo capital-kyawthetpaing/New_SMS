@@ -147,7 +147,7 @@ namespace UrikakekinTairyuuHyou
         {
             msce = new M_StoreClose_Entity();
             msce = GetStoreClose_Data();
-            if (ukkthbl.M_StoreClose_Check(msce, "1").Rows.Count > 0)
+            if (ukkthbl.M_StoreClose_Check(msce, "4").Rows.Count > 0)
             {
                 string ProgramID = "GetsujiSaikenKeisanSyori";
 
