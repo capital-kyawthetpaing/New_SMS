@@ -22,6 +22,7 @@ namespace MasterTouroku_CustomerSKUPrice
         private const string ProID = "MasterTouroku_CustomerSKUPrice";
         private const string ProNm = "顧客別SKU販売単価マスタ";
         MasterTouroku_CustomerSKUPrice_BL mcskupbl;
+        M_CustomerSKUPrice_Entity mcskue;
 
         //private Control[] keyControls;
         //private Control[] keyLabels;
@@ -54,6 +55,7 @@ namespace MasterTouroku_CustomerSKUPrice
             InitializeComponent();
             mGrid = new ClsGridCustomerSKUPric();
             mcskupbl = new MasterTouroku_CustomerSKUPrice_BL();
+            mcskue = new M_CustomerSKUPrice_Entity();
         }
 
         private void FrmMasterTouroku_CustomerSKUPrice_Load(object sender, EventArgs e)
@@ -1128,7 +1130,13 @@ namespace MasterTouroku_CustomerSKUPrice
         {
             if (OperationMode != EOperationMode.INSERT)
             {
-
+                if(ErrorCheck(11))
+                {
+                    mcskue = new M_CustomerSKUPrice_Entity
+                    {
+                        TekiyouKaisiDate = txtStartDate.Text,
+                    };
+                }
             }
                 CheckData(true);
         }
@@ -1138,7 +1146,7 @@ namespace MasterTouroku_CustomerSKUPrice
             
         }
 
-        public bool ErrorCheck()
+        public bool ErrorCheck(int mode)
         {
             if (!txtStartDate.DateCheck())
                 return false;
@@ -1167,6 +1175,10 @@ namespace MasterTouroku_CustomerSKUPrice
                 bbl.ShowMessage("E104");
                 ScSKUCD_Start.SetFocus(1);
                 return false;
+            }
+            if(mode==2)
+            {
+
             }
             return true;
         }
