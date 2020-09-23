@@ -1,16 +1,19 @@
-USE [CapitalSMS]
+IF EXISTS (select * from sys.objects where name = 'PRC_IkkatuHacchuuNyuuryoku_Register')
+begin
+    DROP PROCEDURE PRC_Hacchuusho_SelectData
+end
 GO
 
-/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]    Script Date: 2020/08/18 14:00:11 ******/
-DROP PROCEDURE [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]
-GO
+/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]    Script Date: 2020/09/23 20:14:43 ******/
 
-/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]    Script Date: 2020/08/18 14:00:11 ******/
+
+/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]    Script Date: 2020/09/23 20:14:43 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER OFF
 GO
+
 
 
 
@@ -303,8 +306,8 @@ BEGIN
           ,OrderWayKBN                  = CASE WHEN @p_IkkatuHacchuuMode = '0' THEN '1' ELSE '2' END
           ,OrderCD                      = MAIN.SiiresakiCD    
           ,OrderPerson                  = null
-          ,AliasKBN                     = '0'    
-          ,DestinationKBN               = CASE WHEN MAX(MAIN.ChokusouFLG) = 'Åõ' THEN 2 ELSE 1 END    
+          ,AliasKBN                     = '1'    
+          ,DestinationKBN               = CASE WHEN MAX(MAIN.ChokusouFLG) = 'Åõ' THEN 1 ELSE 2 END    
           ,DestinationName              = MAIN.NounyuusakiName    
           ,DestinationZip1CD            = MAX(MAIN.NounyuusakiYuubinNO1)    
           ,DestinationZip2CD            = MAX(MAIN.NounyuusakiYuubinNO2)    

@@ -140,6 +140,7 @@ namespace CKM_Controls
             White,
             Green,
             DarkGreen,
+            DarkGrey
         }
         [Browsable(true)]
         [Category("CKM Properties")]
@@ -162,6 +163,9 @@ namespace CKM_Controls
                         break;
                     case CKM_Color.DarkGreen:
                         this.BackColor = Color.FromArgb(84, 130, 53);
+                        break;
+                    case CKM_Color.DarkGrey:
+                        this.BackColor = Color.DarkGray;
                         break;
 
                 }
@@ -245,7 +249,10 @@ namespace CKM_Controls
         protected override void OnEnabledChanged(EventArgs e)
         {
             if (!Enabled)
-                this.BackColor = SystemColors.Control;
+                //if (Name.Contains("ararigaku"))
+                //    BackColor = Color.DarkGray;
+                //else
+                    this.BackColor = SystemColors.Control;
             else
                 this.BackColor = SystemColors.Window;
 
