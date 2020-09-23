@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BL;
 using Entity;
 using System.Data;
-using System.Threading;
-using System.Net;
-using System.IO;
-using System.Collections;
 
 using Base.Client;
 
@@ -58,6 +50,7 @@ namespace GetsujiZaikoKeisanSyori
                 if (Mode.Equals(1))
                 {
                     //Mode		＝	1	の場合			(＝ALL店舗）	
+                    me.StoreCD = "";
 
                 }
                 else if(Mode.Equals(2))
@@ -66,8 +59,17 @@ namespace GetsujiZaikoKeisanSyori
                     me.StoreCD = InStoreCD;
 
                 }
+                me.FiscalYYYYMM = InFiscalYYYYMM;
+
                 bool ret= gsbl.M_StoreClose_SelectAll(me);
-                if(ret)
+
+                if (!ret)
+                {
+                    //Insertしたあとに再度Select
+                    ret = gsbl.M_StoreClose_SelectAll(me);
+                }
+
+                if (ret)
                 {
                     //FiscalYYYYMM＜Parameter受取	FiscalYYYYMM
                     //またはFiscalYYYYMM＝Parameter受取	FiscalYYYYMM＆	ClosePosition5＝0なら
