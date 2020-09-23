@@ -332,7 +332,7 @@ namespace SiiresakiZaikoYoteiHyou
             msce = new M_StoreClose_Entity();
             msce = GetStoreClose_Data();
 
-            if (szybl.M_StoreClose_Check(msce, "3").Rows.Count > 0)
+            if (szybl.M_StoreClose_Check(msce, "5").Rows.Count > 0)
             {
                 string ProgramID = "GetsujiZaikoKeisanSyori";
                 string ProgramID1 = "GetsujiShiireKeisanSyori";
