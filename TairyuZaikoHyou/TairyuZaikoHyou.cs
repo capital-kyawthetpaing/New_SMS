@@ -286,9 +286,9 @@ namespace TairyuZaikoHyou
                 dtSelect = tzkbl.D_StockSelectForTairyuzaikohyo(dse, mskue, info, mtage);
                 if (dtSelect.Rows.Count > 0)
                 {
+                    CheckBeforeExport();
                     if (bbl.ShowMessage("Q201") == DialogResult.Yes)
                     {
-                        CheckBeforeExport();
                         try
                         {
                             ChangeDataColumnName(dtSelect);
@@ -416,7 +416,7 @@ namespace TairyuZaikoHyou
             msce = new M_StoreClose_Entity();
             msce = GetStoreClose_Data();
 
-            if (tzkbl.M_StoreClose_Check(msce, "2").Rows.Count > 0)
+            if (tzkbl.M_StoreClose_Check(msce, "3").Rows.Count > 0)
             {
                 string ProgramID = "GetsujiZaikoKeisanSyori";
                 RunConsole(ProgramID, msce.FiscalYYYYMM);
