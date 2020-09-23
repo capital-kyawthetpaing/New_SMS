@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 using BL;
@@ -1272,7 +1269,7 @@ namespace HenpinNyuuryoku
                 mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
 
             }
-            CalcKin();
+            //CalcKin();
 
             if (OperationMode == EOperationMode.UPDATE )
             {
@@ -1774,7 +1771,7 @@ namespace HenpinNyuuryoku
             if (!chkAll && !changeYmd)
             {
                 int w_CtlRow = row - Vsb_Mei_0.Value;
-                if (w_CtlRow < ClsGridShiire.gc_P_GYO)
+                if (w_CtlRow < ClsGridShiire.gc_P_GYO && w_CtlRow >=0)
                     if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
                 {
                     if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
@@ -1894,10 +1891,12 @@ namespace HenpinNyuuryoku
         /// <summary>
         /// Footer部 金額計算処理
         /// </summary>
-        private void CalcKin()
+        private void CalcKin(bool chkAll = false)
         {	
             decimal kin2 = 0;   //計算仕入額=Form.Detail.計算仕入額	のTotal
             decimal kin3 = 0;   //仕入額= Form.Detail.仕入額のTotal	
+            decimal kin4 = 0;   //調整額= Form.Detail.調整額のTotal	
+            decimal sumZei = 0;
 
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
             {
@@ -1905,13 +1904,18 @@ namespace HenpinNyuuryoku
                 {
                     kin2 += bbl.Z_Set(mGrid.g_DArray[RW].CalculationGaku);
                     kin3 += bbl.Z_Set(mGrid.g_DArray[RW].PurchaseGaku);
+                    kin4 += bbl.Z_Set(mGrid.g_DArray[RW].AdjustmentGaku);
+                    sumZei += bbl.Z_Set(mGrid.g_DArray[RW].PurchaseTax);
                 }
             }
 
             //Footer部
             lblKin2.Text = string.Format("{0:#,##0}", kin2);
             lblKin3.Text = string.Format("{0:#,##0}", kin3);
+            lblKin4.Text = string.Format("{0:#,##0}", kin4);
 
+            if(!chkAll)
+                detailControls[(int)EIndex.PurchaseTax].Text = string.Format("{0:#,##0}", sumZei);
         }
 
         /// <summary>
@@ -2101,7 +2105,7 @@ namespace HenpinNyuuryoku
                 }
 
                 //各金額項目の再計算必要
-                CalcKin();
+                CalcKin(true);
 
             }
 
@@ -2760,6 +2764,7 @@ namespace HenpinNyuuryoku
                         {
                             case (int)ClsGridShiire.ColNO.PurchaseSu:
                             case (int)ClsGridShiire.ColNO.PurchaserUnitPrice:
+                            case (int)ClsGridShiire.ColNO.AdjustmentGaku:
                                 //Form.Hedder.税計算が「明細単位」・「締単位」の場合
                                 if (mTaxTiming == "1" || mTaxTiming == "3")
                                 {
@@ -2803,20 +2808,21 @@ namespace HenpinNyuuryoku
                                     detailControls[(int)EIndex.PurchaseTax].Text = bbl.Z_SetStr(zei+zei2);
 
                                 }
-                                break;
 
-                            case (int)ClsGridShiire.ColNO.AdjustmentGaku:
-                                //Form.Detail.調整額のTotal	(調整額が変わった時のみ再計算、表示）	
-                                decimal sumKin = 0;
-                                for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+                                if (CL == (int)ClsGridShiire.ColNO.AdjustmentGaku)
                                 {
-                                    if (mGrid.g_DArray[RW].Chk || OperationMode != EOperationMode.INSERT)
+                                    //Form.Detail.調整額のTotal	(調整額が変わった時のみ再計算、表示）	
+                                    decimal sumKin = 0;
+                                    for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
                                     {
-                                        sumKin += bbl.Z_Set(mGrid.g_DArray[RW].AdjustmentGaku);
+                                        if (mGrid.g_DArray[RW].Chk || OperationMode != EOperationMode.INSERT)
+                                        {
+                                            sumKin += bbl.Z_Set(mGrid.g_DArray[RW].AdjustmentGaku);
+                                        }
                                     }
-                                }
 
-                                lblKin4.Text = bbl.Z_SetStr(sumKin);
+                                    lblKin4.Text = bbl.Z_SetStr(sumKin);
+                                }
                                 break;
                         }
                     }

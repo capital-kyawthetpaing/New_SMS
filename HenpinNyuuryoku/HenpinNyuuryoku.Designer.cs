@@ -6044,8 +6044,9 @@
             this.ckM_TextBox5.MaxLength = 12;
             this.ckM_TextBox5.MoveNext = true;
             this.ckM_TextBox5.Name = "ckM_TextBox5";
-            this.ckM_TextBox5.Size = new System.Drawing.Size(85, 19);
+            this.ckM_TextBox5.Size = new System.Drawing.Size(83, 19);
             this.ckM_TextBox5.TabIndex = 32;
+            this.ckM_TextBox5.Text = "1230";
             this.ckM_TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ckM_TextBox5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox5.UseColorSizMode = false;
