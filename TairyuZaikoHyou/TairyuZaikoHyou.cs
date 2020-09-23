@@ -316,25 +316,25 @@ namespace TairyuZaikoHyou
                                     if (Path.GetExtension(savedialog.FileName).Contains("csv"))
                                     {
 
-                                    //before your loop
-                                    var csv = new StringBuilder();
+                                    ////before your loop
+                                    //var csv = new StringBuilder();
 
-                                    //in your loop
-                                    var first = "滞留在庫表：";                                  
-                                    //Suggestion made by KyleMit
-                                    var newLine = string.Format("{0}", first);
-                                    csv.AppendLine(newLine);
-                                    var sname = "対象日数:";
-                                    var svalue = txtTargetDays.Text;
-                                    var second = string.Format("{0},{1}", sname,svalue);
-                                    csv.AppendLine(second);
-                                    var trname = "倉庫:";
-                                    var trvalue = cboWarehouse.SelectedValue.ToString();
-                                    var third = string.Format("{0},{1}", trname, trvalue);
-                                    csv.AppendLine(third);
+                                    ////in your loop
+                                    //var first = "滞留在庫表：";                                  
+                                    ////Suggestion made by KyleMit
+                                    //var newLine = string.Format("{0}", first);
+                                    //csv.AppendLine(newLine);
+                                    //var sname = "対象日数:";
+                                    //var svalue = txtTargetDays.Text;
+                                    //var second = string.Format("{0},{1}", sname,svalue);
+                                    //csv.AppendLine(second);
+                                    //var trname = "倉庫:";
+                                    //var trvalue = cboWarehouse.SelectedValue.ToString();
+                                    //var third = string.Format("{0},{1}", trname, trvalue);
+                                    //csv.AppendLine(third);
 
-                                    //after your loop
-                                    File.WriteAllText(Folderpath, csv.ToString());
+                                    ////after your loop
+                                    //File.WriteAllText(Folderpath, csv.ToString());
 
                                     CsvWriter csvwriter = new CsvWriter();
                                         csvwriter.WriteCsv(dtSelect, savedialog.FileName, Encoding.GetEncoding(932));                                  
