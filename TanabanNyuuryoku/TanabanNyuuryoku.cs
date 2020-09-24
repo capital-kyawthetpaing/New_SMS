@@ -220,7 +220,10 @@ namespace TanabanNyuuryoku
                                
                 }
 
-                if(!string.IsNullOrWhiteSpace (ScStorage.TxtCode.Text))
+                if (!RequireCheck(new Control[] { ScStorage.TxtCode }))
+                    return false;
+
+                if (!string.IsNullOrWhiteSpace (ScStorage.TxtCode.Text))
                 { 
                     mle.SoukoCD = cboWarehouse.SelectedValue.ToString();
                     mle.TanaCD = ScStorage.TxtCode.Text;
@@ -233,11 +236,10 @@ namespace TanabanNyuuryoku
                         return false;
                     }
                 }
+
+
                
 
-                //if (!RequireCheck(new Control[] { ScStorage.TxtCode }))
-                //    return false;
-               
             }
             else if (index == 12)
             {
@@ -508,6 +510,11 @@ namespace TanabanNyuuryoku
                         ScStorage.SetFocus(1);                     
                     }
 
+                }
+                else
+                {
+                    tnbnBL.ShowMessage("E102");
+                    ScStorage.SetFocus(1);
                 }
             }
         }
