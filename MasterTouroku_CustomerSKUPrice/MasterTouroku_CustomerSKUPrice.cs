@@ -280,7 +280,7 @@ namespace MasterTouroku_CustomerSKUPrice
             // データ保持用配列の宣言
             mGrid.g_DArray = new ClsGridCustomerSKUPric.ST_DArray_Grid[mGrid.g_MK_Max_Row];
 
-            //SetMultiColNo();
+            SetMultiColNo();
             // 行の色
             // 何行で色が切り替わるかの設定。  ここでは 2行一組で繰り返すので 2行分だけ設定
             mGrid.g_MK_CtlRowBkColor.Add(ClsGridBase.WHColor);//, "0");        // 1行目(奇数行) 白
@@ -607,10 +607,10 @@ namespace MasterTouroku_CustomerSKUPrice
                     mGrid.g_DArray[c].CustomerName = dr["CustomerName"].ToString();
                     mGrid.g_DArray[c].TekiyouKaisiDate = dr["TekiyouKaisiDate"].ToString();
                     mGrid.g_DArray[c].TekiyouShuuryouDate = dr["TekiyouShuuryouDate"].ToString();
+                    mGrid.g_DArray[c].AdminNO = dr["AdminNo"].ToString();
                     mGrid.g_DArray[c].JANCD = dr["JanCD"].ToString();
                     mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
-                    mGrid.g_DArray[c].SKUName = dr["SKUName"].ToString();
-                    mGrid.g_DArray[c].AdminNO = dr["AdminNo"].ToString();
+                    mGrid.g_DArray[c].SKUName = dr["SKUName"].ToString(); 
                     mGrid.g_DArray[c].SalePriceOutTax = dr["SalePriceOutTax"].ToString();
                     mGrid.g_DArray[c].Remarks = dr["Remarks"].ToString();
                     c++;
