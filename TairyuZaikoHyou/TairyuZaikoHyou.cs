@@ -108,6 +108,7 @@ namespace TairyuZaikoHyou
             }
         }
 
+
         public bool ErrorCheck()
         {
            if(String.IsNullOrWhiteSpace(txtTargetDays.Text))
