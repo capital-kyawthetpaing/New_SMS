@@ -268,7 +268,8 @@ namespace Search
             展示会商品,
             //<----------- 2019.12.05
             /*ItemMulti,*/
-            //SKUMulti,
+            ITEMMulti,
+            SKUMulti,
             JANMulti,
             //........>
             Location,//---2019.12.09
@@ -652,16 +653,16 @@ namespace Search
                     txtCode.Width = 100;
                     lblName.Width = 600;
                     break;
-                //case SearchType.ItemMulti: //2019.12.05
-                //    txtCode.MaxLength = 309;
-                //    txtCode.Width = 600;
-                //    lblName.Width = 280;
-                //    break;
-                //case SearchType.SKUMulti: //2019.12.05
-                //    txtCode.MaxLength = 309;
-                //    txtCode.Width = 600;
-                //    lblName.Width = 280;
-                //    break;
+                case SearchType.ITEMMulti: //2020/09/24
+                    txtCode.MaxLength = 309;
+                    txtCode.Width = 600;
+                    lblName.Width = 280;
+                    break;
+                case SearchType.SKUMulti: //2020/09/24
+                    txtCode.MaxLength = 309;
+                    txtCode.Width = 600;
+                    lblName.Width = 280;
+                    break;
                 case SearchType.JANMulti: //2019.12.05
                     txtCode.MaxLength = 139;
                     txtCode.Width = 600;
@@ -802,9 +803,35 @@ namespace Search
         {
             switch (Stype)
             {
-                //case SearchType.ItemMulti:
-                case SearchType.JANMulti:
+                //case SearchType.ITEMMulti:
                 //case SearchType.SKUMulti:
+                case SearchType.JANMulti:
+                    if (TxtCode.Text.Contains(","))
+                    {
+                        string a = TxtCode.Text;
+                        string[] arr = a.Split(',');
+                        if (arr.Length >= 10)
+                        {
+                            bbl.ShowMessage("E187");
+                            TxtCode.Focus();
+                            return false;
+                        }
+                    }
+                    break;
+                case SearchType.ITEMMulti:
+                    if (TxtCode.Text.Contains(","))
+                    {
+                        string a = TxtCode.Text;
+                        string[] arr = a.Split(',');
+                        if (arr.Length >= 10)
+                        {
+                            bbl.ShowMessage("E187");
+                            TxtCode.Focus();
+                            return false;
+                        }
+                    }
+                    break;
+                case SearchType.SKUMulti:
                     if (TxtCode.Text.Contains(","))
                     {
                         string a = TxtCode.Text;
@@ -1712,38 +1739,40 @@ namespace Search
                     }
                     break;
 
-                //case SearchType.ItemMulti:
-                //    using (Search_Product frmMakerItem = new Search_Product(changedate))
-                //    {
-                //        frmMakerItem.Mode = "1";
-                //        frmMakerItem.MakerItem = txtCode.Text;
+                case SearchType.ITEMMulti:
+                    using (Search_Product frmMakerItem = new Search_Product(changedate))
+                    {
+                        frmMakerItem.Mode = "6";
+                        frmMakerItem.ITEM = txtCode.Text;
+                        frmMakerItem.ShowDialog();
 
+                        if (!frmMakerItem.flgCancel)
+                        {
+                            txtCode.Text = frmMakerItem.ITEM;
+                            txtChangeDate.Text = frmMakerItem.ChangeDate;
+                            if (!string.IsNullOrWhiteSpace(TxtCode.Text))
+                                CheckBasedFormPanel();
 
-                //        frmMakerItem.ShowDialog();
-                //        if (!frmMakerItem.flgCancel)
-                //        {
-                //            txtCode.Text = frmMakerItem.MakerItem;
-                //            txtChangeDate.Text = frmMakerItem.ChangeDate;
-                //            CheckBasedFormPanel();//PTK added
-                //        }
-                //    }
-                //    break;
-                    
-                //case SearchType.SKUMulti:
-                //    using (Search_Product frmSKUCD = new Search_Product(changedate))
-                //    {
-                //        frmSKUCD.Mode = "2";
-                //        frmSKUCD.SKUCD = txtCode.Text;
-                //        frmSKUCD.ShowDialog();
+                        }
+                    }
+                    break;
 
-                //        if (!frmSKUCD.flgCancel)
-                //        {
-                //            txtCode.Text = frmSKUCD.SKUCD;
-                //            txtChangeDate.Text = frmSKUCD.ChangeDate;
-                //            CheckBasedFormPanel();//PTK added
-                //        }
-                //    }
-                //    break;
+                case SearchType.SKUMulti:
+                    using (Search_Product frmSKUCD = new Search_Product(changedate))
+                    {
+                        frmSKUCD.Mode = "7";
+                        frmSKUCD.SKUCD = txtCode.Text;
+                        frmSKUCD.ShowDialog();
+
+                        if (!frmSKUCD.flgCancel)
+                        {
+                            txtCode.Text = frmSKUCD.SKUCD;
+                            txtChangeDate.Text = frmSKUCD.ChangeDate;
+                            CheckBasedFormPanel();
+                        }
+                    }
+                    break;
+
                 case SearchType.支払処理:
                     using (FrmSearch_SiharaiNO frmsiharaino = new FrmSearch_SiharaiNO())
                     {
