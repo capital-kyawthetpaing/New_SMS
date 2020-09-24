@@ -72,6 +72,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.Vsb_Mei_0 = new System.Windows.Forms.VScrollBar();
             this.panel_5 = new System.Windows.Forms.Panel();
+            this.choukusou_5 = new GridControl.clsGridCheckBox();
             this.zeinutanku_5 = new CKM_Controls.CKM_TextBox();
             this.zeinu_5 = new CKM_Controls.CKM_TextBox();
             this.kobetsuhanbai_5 = new CKM_Controls.CKM_TextBox();
@@ -90,7 +91,7 @@
             this.shuukasouko_5 = new CKM_Controls.CKM_ComboBox();
             this.shuukayotei_5 = new CKM_Controls.CKM_TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.chk_5 = new CKM_Controls.CKM_CheckBox();
+            this.chk_5 = new GridControl.clsGridCheckBox();
             this.sizename_5 = new CKM_Controls.CKM_TextBox();
             this.size_5 = new CKM_Controls.CKM_TextBox();
             this.colorname_5 = new CKM_Controls.CKM_TextBox();
@@ -99,6 +100,7 @@
             this.scjan_5 = new Search.CKM_SearchControl();
             this.lbl_5 = new System.Windows.Forms.Label();
             this.panel_4 = new System.Windows.Forms.Panel();
+            this.choukusou_4 = new GridControl.clsGridCheckBox();
             this.zeinutanku_4 = new CKM_Controls.CKM_TextBox();
             this.zeinu_4 = new CKM_Controls.CKM_TextBox();
             this.kobetsuhanbai_4 = new CKM_Controls.CKM_TextBox();
@@ -117,7 +119,7 @@
             this.shuukasouko_4 = new CKM_Controls.CKM_ComboBox();
             this.shuukayotei_4 = new CKM_Controls.CKM_TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.chk_4 = new CKM_Controls.CKM_CheckBox();
+            this.chk_4 = new GridControl.clsGridCheckBox();
             this.sizename_4 = new CKM_Controls.CKM_TextBox();
             this.size_4 = new CKM_Controls.CKM_TextBox();
             this.colorname_4 = new CKM_Controls.CKM_TextBox();
@@ -126,6 +128,7 @@
             this.scjan_4 = new Search.CKM_SearchControl();
             this.lbl_4 = new System.Windows.Forms.Label();
             this.panel_3 = new System.Windows.Forms.Panel();
+            this.choukusou_3 = new GridControl.clsGridCheckBox();
             this.zeinutanku_3 = new CKM_Controls.CKM_TextBox();
             this.zeinu_3 = new CKM_Controls.CKM_TextBox();
             this.kobetsuhanbai_3 = new CKM_Controls.CKM_TextBox();
@@ -144,7 +147,7 @@
             this.shuukasouko_3 = new CKM_Controls.CKM_ComboBox();
             this.shuukayotei_3 = new CKM_Controls.CKM_TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.chk_3 = new CKM_Controls.CKM_CheckBox();
+            this.chk_3 = new GridControl.clsGridCheckBox();
             this.sizename_3 = new CKM_Controls.CKM_TextBox();
             this.size_3 = new CKM_Controls.CKM_TextBox();
             this.colorname_3 = new CKM_Controls.CKM_TextBox();
@@ -153,6 +156,7 @@
             this.scjan_3 = new Search.CKM_SearchControl();
             this.lbl_3 = new System.Windows.Forms.Label();
             this.panel_2 = new System.Windows.Forms.Panel();
+            this.choukusou_2 = new GridControl.clsGridCheckBox();
             this.zeinutanku_2 = new CKM_Controls.CKM_TextBox();
             this.zeinu_2 = new CKM_Controls.CKM_TextBox();
             this.kobetsuhanbai_2 = new CKM_Controls.CKM_TextBox();
@@ -171,7 +175,7 @@
             this.shuukasouko_2 = new CKM_Controls.CKM_ComboBox();
             this.shuukayotei_2 = new CKM_Controls.CKM_TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.chk_2 = new CKM_Controls.CKM_CheckBox();
+            this.chk_2 = new GridControl.clsGridCheckBox();
             this.sizename_2 = new CKM_Controls.CKM_TextBox();
             this.size_2 = new CKM_Controls.CKM_TextBox();
             this.colorname_2 = new CKM_Controls.CKM_TextBox();
@@ -180,6 +184,7 @@
             this.scjan_2 = new Search.CKM_SearchControl();
             this.lbl_2 = new System.Windows.Forms.Label();
             this.panel_1 = new System.Windows.Forms.Panel();
+            this.choukusou_1 = new GridControl.clsGridCheckBox();
             this.zeinutanku_1 = new CKM_Controls.CKM_TextBox();
             this.kobetsuhanbai_1 = new CKM_Controls.CKM_TextBox();
             this.shagaibikou_1 = new CKM_Controls.CKM_TextBox();
@@ -198,7 +203,7 @@
             this.shuukasouko_1 = new CKM_Controls.CKM_ComboBox();
             this.shuukayotei_1 = new CKM_Controls.CKM_TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.chk_1 = new CKM_Controls.CKM_CheckBox();
+            this.chk_1 = new GridControl.clsGridCheckBox();
             this.sizename_1 = new CKM_Controls.CKM_TextBox();
             this.size_1 = new CKM_Controls.CKM_TextBox();
             this.colorname_1 = new CKM_Controls.CKM_TextBox();
@@ -231,11 +236,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.sc_Tenji = new Search.CKM_SearchControl();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.choukusou_1 = new GridControl.clsGridCheckBox();
-            this.choukusou_2 = new GridControl.clsGridCheckBox();
-            this.choukusou_3 = new GridControl.clsGridCheckBox();
-            this.choukusou_4 = new GridControl.clsGridCheckBox();
-            this.choukusou_5 = new GridControl.clsGridCheckBox();
             this.PanelHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnl_haisou.SuspendLayout();
@@ -1162,7 +1162,7 @@
             this.panel2.Location = new System.Drawing.Point(24, 390);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1760, 400);
-            this.panel2.TabIndex = 102;
+            this.panel2.TabIndex = 25;
             // 
             // Vsb_Mei_0
             // 
@@ -1204,6 +1204,15 @@
             this.panel_5.Name = "panel_5";
             this.panel_5.Size = new System.Drawing.Size(1730, 60);
             this.panel_5.TabIndex = 309;
+            // 
+            // choukusou_5
+            // 
+            this.choukusou_5.Location = new System.Drawing.Point(129, 20);
+            this.choukusou_5.Name = "choukusou_5";
+            this.choukusou_5.Size = new System.Drawing.Size(79, 18);
+            this.choukusou_5.TabIndex = 319;
+            this.choukusou_5.Text = "   直送";
+            this.choukusou_5.UseVisualStyleBackColor = true;
             // 
             // zeinutanku_5
             // 
@@ -1636,12 +1645,10 @@
             // chk_5
             // 
             this.chk_5.AutoSize = true;
-            this.chk_5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.chk_5.Location = new System.Drawing.Point(7, 11);
+            this.chk_5.Location = new System.Drawing.Point(7, 12);
             this.chk_5.Name = "chk_5";
-            this.chk_5.Size = new System.Drawing.Size(31, 16);
-            this.chk_5.TabIndex = 104;
-            this.chk_5.Text = " ";
+            this.chk_5.Size = new System.Drawing.Size(15, 14);
+            this.chk_5.TabIndex = 1;
             this.chk_5.UseVisualStyleBackColor = true;
             // 
             // sizename_5
@@ -1858,6 +1865,15 @@
             this.panel_4.Name = "panel_4";
             this.panel_4.Size = new System.Drawing.Size(1730, 60);
             this.panel_4.TabIndex = 308;
+            // 
+            // choukusou_4
+            // 
+            this.choukusou_4.Location = new System.Drawing.Point(129, 20);
+            this.choukusou_4.Name = "choukusou_4";
+            this.choukusou_4.Size = new System.Drawing.Size(79, 18);
+            this.choukusou_4.TabIndex = 319;
+            this.choukusou_4.Text = "   直送";
+            this.choukusou_4.UseVisualStyleBackColor = true;
             // 
             // zeinutanku_4
             // 
@@ -2290,12 +2306,10 @@
             // chk_4
             // 
             this.chk_4.AutoSize = true;
-            this.chk_4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.chk_4.Location = new System.Drawing.Point(7, 11);
+            this.chk_4.Location = new System.Drawing.Point(7, 12);
             this.chk_4.Name = "chk_4";
-            this.chk_4.Size = new System.Drawing.Size(31, 16);
-            this.chk_4.TabIndex = 104;
-            this.chk_4.Text = " ";
+            this.chk_4.Size = new System.Drawing.Size(15, 14);
+            this.chk_4.TabIndex = 1;
             this.chk_4.UseVisualStyleBackColor = true;
             // 
             // sizename_4
@@ -2512,6 +2526,15 @@
             this.panel_3.Name = "panel_3";
             this.panel_3.Size = new System.Drawing.Size(1730, 60);
             this.panel_3.TabIndex = 307;
+            // 
+            // choukusou_3
+            // 
+            this.choukusou_3.Location = new System.Drawing.Point(129, 21);
+            this.choukusou_3.Name = "choukusou_3";
+            this.choukusou_3.Size = new System.Drawing.Size(79, 18);
+            this.choukusou_3.TabIndex = 319;
+            this.choukusou_3.Text = "   直送";
+            this.choukusou_3.UseVisualStyleBackColor = true;
             // 
             // zeinutanku_3
             // 
@@ -2944,12 +2967,10 @@
             // chk_3
             // 
             this.chk_3.AutoSize = true;
-            this.chk_3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.chk_3.Location = new System.Drawing.Point(7, 11);
+            this.chk_3.Location = new System.Drawing.Point(7, 12);
             this.chk_3.Name = "chk_3";
-            this.chk_3.Size = new System.Drawing.Size(31, 16);
-            this.chk_3.TabIndex = 104;
-            this.chk_3.Text = " ";
+            this.chk_3.Size = new System.Drawing.Size(15, 14);
+            this.chk_3.TabIndex = 1;
             this.chk_3.UseVisualStyleBackColor = true;
             // 
             // sizename_3
@@ -3166,6 +3187,15 @@
             this.panel_2.Name = "panel_2";
             this.panel_2.Size = new System.Drawing.Size(1730, 60);
             this.panel_2.TabIndex = 306;
+            // 
+            // choukusou_2
+            // 
+            this.choukusou_2.Location = new System.Drawing.Point(129, 21);
+            this.choukusou_2.Name = "choukusou_2";
+            this.choukusou_2.Size = new System.Drawing.Size(79, 18);
+            this.choukusou_2.TabIndex = 319;
+            this.choukusou_2.Text = "   直送";
+            this.choukusou_2.UseVisualStyleBackColor = true;
             // 
             // zeinutanku_2
             // 
@@ -3598,12 +3628,10 @@
             // chk_2
             // 
             this.chk_2.AutoSize = true;
-            this.chk_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.chk_2.Location = new System.Drawing.Point(7, 11);
+            this.chk_2.Location = new System.Drawing.Point(7, 12);
             this.chk_2.Name = "chk_2";
-            this.chk_2.Size = new System.Drawing.Size(31, 16);
-            this.chk_2.TabIndex = 104;
-            this.chk_2.Text = " ";
+            this.chk_2.Size = new System.Drawing.Size(15, 14);
+            this.chk_2.TabIndex = 1;
             this.chk_2.UseVisualStyleBackColor = true;
             // 
             // sizename_2
@@ -3821,14 +3849,23 @@
             this.panel_1.Size = new System.Drawing.Size(1730, 60);
             this.panel_1.TabIndex = 305;
             // 
+            // choukusou_1
+            // 
+            this.choukusou_1.Location = new System.Drawing.Point(129, 21);
+            this.choukusou_1.Name = "choukusou_1";
+            this.choukusou_1.Size = new System.Drawing.Size(79, 18);
+            this.choukusou_1.TabIndex = 103;
+            this.choukusou_1.Text = "   直送";
+            this.choukusou_1.UseVisualStyleBackColor = true;
+            // 
             // zeinutanku_1
             // 
             this.zeinutanku_1.AllowMinus = false;
-            this.zeinutanku_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.zeinutanku_1.BackColor = System.Drawing.Color.White;
+            this.zeinutanku_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
+            this.zeinutanku_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.zeinutanku_1.BorderColor = false;
             this.zeinutanku_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.zeinutanku_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.zeinutanku_1.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.zeinutanku_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.zeinutanku_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.zeinutanku_1.DecimalPlace = 0;
@@ -3936,11 +3973,11 @@
             // zeinu_1
             // 
             this.zeinu_1.AllowMinus = false;
-            this.zeinu_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.zeinu_1.BackColor = System.Drawing.Color.White;
+            this.zeinu_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
+            this.zeinu_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.zeinu_1.BorderColor = false;
             this.zeinu_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.zeinu_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.zeinu_1.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.zeinu_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.zeinu_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.zeinu_1.DecimalPlace = 0;
@@ -3964,11 +4001,11 @@
             // ararigaku_1
             // 
             this.ararigaku_1.AllowMinus = false;
-            this.ararigaku_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ararigaku_1.BackColor = System.Drawing.Color.White;
+            this.ararigaku_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
+            this.ararigaku_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.ararigaku_1.BorderColor = false;
             this.ararigaku_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ararigaku_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.ararigaku_1.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.ararigaku_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ararigaku_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ararigaku_1.DecimalPlace = 0;
@@ -3992,11 +4029,11 @@
             // zeikomijuchuugaku_1
             // 
             this.zeikomijuchuugaku_1.AllowMinus = false;
-            this.zeikomijuchuugaku_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.zeikomijuchuugaku_1.BackColor = System.Drawing.Color.White;
+            this.zeikomijuchuugaku_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
+            this.zeikomijuchuugaku_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.zeikomijuchuugaku_1.BorderColor = false;
             this.zeikomijuchuugaku_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.zeikomijuchuugaku_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.zeikomijuchuugaku_1.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.zeikomijuchuugaku_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.zeikomijuchuugaku_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.zeikomijuchuugaku_1.DecimalPlace = 0;
@@ -4020,11 +4057,11 @@
             // zeinuJuchuugaka_1
             // 
             this.zeinuJuchuugaka_1.AllowMinus = false;
-            this.zeinuJuchuugaka_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.zeinuJuchuugaka_1.BackColor = System.Drawing.Color.White;
+            this.zeinuJuchuugaka_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
+            this.zeinuJuchuugaka_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.zeinuJuchuugaka_1.BorderColor = false;
             this.zeinuJuchuugaka_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.zeinuJuchuugaka_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.zeinuJuchuugaka_1.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.zeinuJuchuugaka_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.zeinuJuchuugaka_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.zeinuJuchuugaka_1.DecimalPlace = 0;
@@ -4252,12 +4289,10 @@
             // chk_1
             // 
             this.chk_1.AutoSize = true;
-            this.chk_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.chk_1.Location = new System.Drawing.Point(7, 13);
+            this.chk_1.Location = new System.Drawing.Point(7, 10);
             this.chk_1.Name = "chk_1";
-            this.chk_1.Size = new System.Drawing.Size(31, 16);
-            this.chk_1.TabIndex = 103;
-            this.chk_1.Text = " ";
+            this.chk_1.Size = new System.Drawing.Size(15, 14);
+            this.chk_1.TabIndex = 0;
             this.chk_1.UseVisualStyleBackColor = true;
             // 
             // sizename_1
@@ -4776,51 +4811,6 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // choukusou_1
-            // 
-            this.choukusou_1.Location = new System.Drawing.Point(128, 22);
-            this.choukusou_1.Name = "choukusou_1";
-            this.choukusou_1.Size = new System.Drawing.Size(80, 19);
-            this.choukusou_1.TabIndex = 103;
-            this.choukusou_1.Text = "    直送";
-            this.choukusou_1.UseVisualStyleBackColor = true;
-            // 
-            // choukusou_2
-            // 
-            this.choukusou_2.Location = new System.Drawing.Point(128, 21);
-            this.choukusou_2.Name = "choukusou_2";
-            this.choukusou_2.Size = new System.Drawing.Size(80, 19);
-            this.choukusou_2.TabIndex = 319;
-            this.choukusou_2.Text = "    直送";
-            this.choukusou_2.UseVisualStyleBackColor = true;
-            // 
-            // choukusou_3
-            // 
-            this.choukusou_3.Location = new System.Drawing.Point(128, 21);
-            this.choukusou_3.Name = "choukusou_3";
-            this.choukusou_3.Size = new System.Drawing.Size(80, 19);
-            this.choukusou_3.TabIndex = 319;
-            this.choukusou_3.Text = "    直送";
-            this.choukusou_3.UseVisualStyleBackColor = true;
-            // 
-            // choukusou_4
-            // 
-            this.choukusou_4.Location = new System.Drawing.Point(128, 20);
-            this.choukusou_4.Name = "choukusou_4";
-            this.choukusou_4.Size = new System.Drawing.Size(80, 19);
-            this.choukusou_4.TabIndex = 319;
-            this.choukusou_4.Text = "    直送";
-            this.choukusou_4.UseVisualStyleBackColor = true;
-            // 
-            // choukusou_5
-            // 
-            this.choukusou_5.Location = new System.Drawing.Point(128, 19);
-            this.choukusou_5.Name = "choukusou_5";
-            this.choukusou_5.Size = new System.Drawing.Size(80, 19);
-            this.choukusou_5.TabIndex = 319;
-            this.choukusou_5.Text = "    直送";
-            this.choukusou_5.UseVisualStyleBackColor = true;
-            // 
             // TenzikaiJuchuuTourou
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -5065,11 +5055,6 @@
         private CKM_Controls.CKM_Label ckM_Label11;
         private CKM_Controls.CKM_Label ckM_Label10;
         private CKM_Controls.CKM_Label ckM_Label9;
-        private CKM_Controls.CKM_CheckBox chk_5;
-        private CKM_Controls.CKM_CheckBox chk_4;
-        private CKM_Controls.CKM_CheckBox chk_3;
-        private CKM_Controls.CKM_CheckBox chk_2;
-        private CKM_Controls.CKM_CheckBox chk_1;
         private Search.CKM_SearchControl sc_Tenji;
         private System.Windows.Forms.Panel pnl_haisou;
         private System.Windows.Forms.Panel pnl_kokyakuu;
@@ -5079,6 +5064,11 @@
         private GridControl.clsGridCheckBox choukusou_3;
         private GridControl.clsGridCheckBox choukusou_2;
         private GridControl.clsGridCheckBox choukusou_1;
+        private GridControl.clsGridCheckBox chk_5;
+        private GridControl.clsGridCheckBox chk_4;
+        private GridControl.clsGridCheckBox chk_3;
+        private GridControl.clsGridCheckBox chk_2;
+        private GridControl.clsGridCheckBox chk_1;
     }
 }
 
