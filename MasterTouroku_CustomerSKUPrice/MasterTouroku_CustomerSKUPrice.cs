@@ -1132,10 +1132,20 @@ namespace MasterTouroku_CustomerSKUPrice
             {
                 if(ErrorCheck(11))
                 {
-                    mcskue = new M_CustomerSKUPrice_Entity
+                    mcskue = GetSKUPriceInfo();
+                    DataTable dtSKUPrice = mcskupbl.M_CustomerSKUPriceSelectData(mcskue);
+                   
+                    if (dtSKUPrice.Rows.Count > 0)
                     {
-                        TekiyouKaisiDate = txtStartDate.Text,
-                    };
+
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E128");
+                        Scr_Clr(1);
+                        previousCtrl.Focus();
+                    }
+
                 }
             }
                 CheckData(true);
@@ -1181,6 +1191,22 @@ namespace MasterTouroku_CustomerSKUPrice
 
             }
             return true;
+        }
+
+        public M_CustomerSKUPrice_Entity GetSKUPriceInfo()
+        {
+            mcskue = new M_CustomerSKUPrice_Entity
+            {
+                TekiyouKaisiDate_From = txtStartDate.Text,
+                TekiyouKaisiDate_To = txtEndDate.Text,
+                CustomerCD_From = ScCustomer_Start.TxtCode.Text,
+                CustomerCD_To = ScCustomer_End.TxtCode.Text,
+                SKUCD_From = ScSKUCD_Start.TxtCode.Text,
+                SKUCD_To = ScSKUCD_End.TxtCode.Text,
+                SKUName = txtItemName.Text,
+                DisplayKBN = rdoRecent.Checked? "0" : "1",
+            };
+            return mcskue;
         }
      }
 }

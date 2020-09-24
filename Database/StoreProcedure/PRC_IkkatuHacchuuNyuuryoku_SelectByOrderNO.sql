@@ -1,10 +1,9 @@
 
-IF EXISTS (select * from sys.objects where name = 'PRC_IkkatuHacchuuNyuuryoku_SelectByOrderNO')
-begin
-    DROP PROCEDURE PRC_Hacchuusho_SelectData
-end
+/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_SelectByOrderNO]    Script Date: 2020/09/24 11:37:42 ******/
+DROP PROCEDURE [dbo].[PRC_IkkatuHacchuuNyuuryoku_SelectByOrderNO]
 GO
-/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_SelectByOrderNO]    Script Date: 2020/09/23 20:15:43 ******/
+
+/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_SelectByOrderNO]    Script Date: 2020/09/24 11:37:42 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -12,7 +11,8 @@ SET QUOTED_IDENTIFIER OFF
 GO
 
 
-Create PROCEDURE [dbo].[PRC_IkkatuHacchuuNyuuryoku_SelectByOrderNO](
+
+CREATE PROCEDURE [dbo].[PRC_IkkatuHacchuuNyuuryoku_SelectByOrderNO](
  @p_OrderNO                 varchar(11) 
 ,@p_OrderProcessNO          varchar(11) 
 )
