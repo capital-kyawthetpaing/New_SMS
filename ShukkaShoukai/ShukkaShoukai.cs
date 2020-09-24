@@ -470,14 +470,14 @@ namespace ShukkaShoukai
                     dtJuChuu = skskbl.D_Juchuu_DataSelect_ForShukkaShoukai(dje);
                     if (dtJuChuu.Rows.Count == 0)
                     {
-                        skskbl.ShowMessage("E138");
+                        skskbl.ShowMessage("E138","受注番号");
                         SC_Order.Focus();
                     }
                     else
                     {
                         if (!string.IsNullOrWhiteSpace(dtJuChuu.Rows[0]["DeleteDateTime"].ToString()))
                         {
-                            skskbl.ShowMessage("E140");
+                            skskbl.ShowMessage("E140","受注番号");
                             SC_Order.Focus();
                         }
                         else
@@ -490,7 +490,7 @@ namespace ShukkaShoukai
                             dtAuthorization = skskbl.M_StoreAuthorizations_Select(msae);
                             if (dtAuthorization.Rows.Count == 0)
                             {
-                                skskbl.ShowMessage("E139");
+                                skskbl.ShowMessage("E139","受注番号");
                                 SC_Order.Focus();
                             }
                             else
