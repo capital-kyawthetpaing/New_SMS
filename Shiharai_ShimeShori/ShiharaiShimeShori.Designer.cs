@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Shiharai_ShimeShori));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPaymentClose = new CKM_Controls.CKM_GridView();
             this.panelNormal = new System.Windows.Forms.Panel();
             this.Shiiresaki = new Search.CKM_SearchControl();
@@ -75,17 +76,18 @@
             this.dgvPaymentClose.AllowUserToAddRows = false;
             this.dgvPaymentClose.AllowUserToDeleteRows = false;
             this.dgvPaymentClose.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvPaymentClose.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvPaymentClose.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPaymentClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPaymentClose.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPaymentClose.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvPaymentClose.CheckCol")));
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPaymentClose.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvPaymentClose.ColumnHeadersHeight = 25;
             this.dgvPaymentClose.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colDateTime,
@@ -93,14 +95,14 @@
             this.PaymentCD,
             this.PaymentName,
             this.colProcess});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPaymentClose.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPaymentClose.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvPaymentClose.EnableHeadersVisualStyles = false;
             this.dgvPaymentClose.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvPaymentClose.Location = new System.Drawing.Point(87, 221);
@@ -137,6 +139,7 @@
             this.Shiiresaki.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.Shiiresaki.DataCheck = false;
             this.Shiiresaki.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.Shiiresaki.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.Shiiresaki.IsCopy = false;
             this.Shiiresaki.LabelText = "";
             this.Shiiresaki.LabelVisible = true;
@@ -178,6 +181,7 @@
             this.txtPayCloseDate.AllowMinus = false;
             this.txtPayCloseDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPayCloseDate.BackColor = System.Drawing.Color.White;
+            this.txtPayCloseDate.BorderColor = false;
             this.txtPayCloseDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPayCloseDate.ClientColor = System.Drawing.Color.White;
             this.txtPayCloseDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -187,6 +191,7 @@
             this.txtPayCloseDate.IntegerPart = 0;
             this.txtPayCloseDate.IsCorrectDate = true;
             this.txtPayCloseDate.isEnterKeyDown = false;
+            this.txtPayCloseDate.IsFirstTime = true;
             this.txtPayCloseDate.isMaxLengthErr = false;
             this.txtPayCloseDate.IsNumber = true;
             this.txtPayCloseDate.IsShop = false;
@@ -199,6 +204,7 @@
             this.txtPayCloseDate.TabIndex = 11;
             this.txtPayCloseDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPayCloseDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtPayCloseDate.UseColorSizMode = false;
             this.txtPayCloseDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPayCloseDate_KeyDown);
             // 
             // ckM_Label1
@@ -275,8 +281,8 @@
             // colDateTime
             // 
             this.colDateTime.DataPropertyName = "PayCloseProcessingDateTime";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colDateTime.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colDateTime.DefaultCellStyle = dataGridViewCellStyle10;
             this.colDateTime.HeaderText = "処理日時";
             this.colDateTime.Name = "colDateTime";
             this.colDateTime.Width = 200;
@@ -284,9 +290,9 @@
             // colDate
             // 
             this.colDate.DataPropertyName = "PayCloseDate";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.colDate.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.colDate.DefaultCellStyle = dataGridViewCellStyle11;
             this.colDate.HeaderText = "  締年月日";
             this.colDate.Name = "colDate";
             this.colDate.Width = 200;
@@ -294,28 +300,28 @@
             // PaymentCD
             // 
             this.PaymentCD.DataPropertyName = "PayeeCD";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.PaymentCD.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.PaymentCD.DefaultCellStyle = dataGridViewCellStyle12;
             this.PaymentCD.HeaderText = "支払先";
             this.PaymentCD.Name = "PaymentCD";
-            this.PaymentCD.Width = 200;
+            this.PaymentCD.Width = 150;
             // 
             // PaymentName
             // 
             this.PaymentName.DataPropertyName = "VendorName";
             this.PaymentName.HeaderText = "";
             this.PaymentName.Name = "PaymentName";
-            this.PaymentName.Width = 250;
+            this.PaymentName.Width = 350;
             // 
             // colProcess
             // 
             this.colProcess.DataPropertyName = "ProcessingKBN";
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.colProcess.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.colProcess.DefaultCellStyle = dataGridViewCellStyle13;
             this.colProcess.HeaderText = "処理";
             this.colProcess.Name = "colProcess";
-            this.colProcess.Width = 250;
+            this.colProcess.Width = 200;
             // 
             // Shiharai_ShimeShori
             // 
