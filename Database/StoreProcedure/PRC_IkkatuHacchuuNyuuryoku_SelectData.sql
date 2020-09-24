@@ -1,14 +1,15 @@
 
-/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_SelectData]    Script Date: 2020/08/18 17:26:38 ******/
+/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_SelectData]    Script Date: 2020/09/24 14:18:16 ******/
 DROP PROCEDURE [dbo].[PRC_IkkatuHacchuuNyuuryoku_SelectData]
 GO
 
-/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_SelectData]    Script Date: 2020/08/18 17:26:38 ******/
+/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_SelectData]    Script Date: 2020/09/24 14:18:16 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER OFF
 GO
+
 
   
 CREATE PROCEDURE [dbo].[PRC_IkkatuHacchuuNyuuryoku_SelectData](  
@@ -151,13 +152,17 @@ BEGIN
                             WHEN MSKU.TaxRateFLG = 2 THEN MSAT.TaxRate2 / 100    
                                                      ELSE 0    
                        END Value)SUB_TaxRate    
-    OUTER APPLY (SELECT ISNULL(SUM(DARP.ArrivalSu),0)ArrivalSu    
+     --20200924 OUTER APPLY (SELECT ISNULL(SUM(DARP.ArrivalSu),0)ArrivalSu    
+    OUTER APPLY (SELECT ISNULL(SUM(DARP.ArrivalPlanSu),0)ArrivalPlanSu    --
                  FROM D_ArrivalPlan DARP    
                   WHERE DARP.ArrivalPlanKBN  = 1    
                     AND DARP.Number          = DORD.OrderNO    
                     AND DARP.NumberRows      = DORD.OrderRows    
-                    AND DARP.ArrivalPlanDate IS NULL     
-                    AND DARP.DeleteDateTime  IS NOT NULL    
+     --20200924               AND DARP.ArrivalPlanDate IS NULL     
+     --20200924               AND DARP.DeleteDateTime  IS NOT NULL    
+                    AND DARP.ArrivalPlanDate IS NOT NULL      --
+                    AND DARP.DeleteDateTime  IS NULL		  --	
+
                 )DARP    
     WHERE DJUD.DeleteDateTime IS NULL    
       AND (@p_VendorCD IS NULL OR DJUD.VendorCD = @p_VendorCD)
@@ -192,7 +197,8 @@ BEGIN
                   AND DORD.JuchuuRows IS NULL    
                  )    
                  OR    
-                 (DJUD.JuchuuSuu > (DJUD.HikiateSu + DARP.ArrivalSu)    
+     --20200924            (DJUD.JuchuuSuu > (DJUD.HikiateSu + DARP.ArrivalSu)    
+                 (DJUD.JuchuuSuu > (DJUD.HikiateSu + DARP.ArrivalPlanSu)   --
                   AND DORD.JuchuuRows IS NOT NULL    
                  )    
                 )    

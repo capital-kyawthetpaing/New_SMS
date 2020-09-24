@@ -26,6 +26,7 @@ namespace Entity
         public string SKUCD_To { get; set; }
         public string CustomerCD_From { get; set; }
         public string CustomerCD_To { get; set; }
+        public string DisplayKBN { get; set; }
 
     }
 }
