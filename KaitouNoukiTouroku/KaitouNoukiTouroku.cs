@@ -1176,7 +1176,7 @@ namespace KaitouNoukiTouroku
                         mGrid.g_DArray[i].OrderDate = row["OrderDate"].ToString();
 
                         //隠し項目
-                        mGrid.g_DArray[i].DetailGyoNo =Convert.ToInt16( row["ROWNUM"]);
+                        mGrid.g_DArray[i].DetailGyoNo =Convert.ToInt16(row["ROWNUM"]);
                         mGrid.g_DArray[i].GyoCount = Convert.ToInt16(row["CNT"]);
                         mGrid.g_DArray[i].OrderRows = row["OrderRows"].ToString();
                         mGrid.g_DArray[i].JuchuuNO = row["JuchuuNO"].ToString();
@@ -2572,6 +2572,13 @@ namespace KaitouNoukiTouroku
 
                 if (!frm.flgCancel)
                 {
+                    //新規で追加した行を行削除した場合にはDataTableより削除
+                    DataRow[] delRows = dtOrder.Select("OrderNo ='" + mGrid.g_DArray[w_Row].OrderNo + "' AND OrderRows =" + mGrid.g_DArray[w_Row].OrderRows + " AND ROWNUM > CNT AND UpdateFlg = 2");
+                    foreach(DataRow dRow in delRows)
+                    {
+                        dtOrder.Rows.Remove(dRow);
+                    }
+
                     mGrid.g_DArray[w_Row].GyoCount = frm.GyoCount;
 
                     rows = dtOrder.Select("OrderNo ='" + mGrid.g_DArray[w_Row].OrderNo + "' AND OrderRows =" + mGrid.g_DArray[w_Row].OrderRows + " AND ROWNUM =1");
