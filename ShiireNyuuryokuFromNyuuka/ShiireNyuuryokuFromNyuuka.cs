@@ -1234,9 +1234,16 @@ namespace ShiireNyuuryokuFromNyuuka
             }
             else
             {
-                if (!dt.Rows[0]["ProcessKBN"].ToString().Equals("1"))
+                if (dt.Rows[0]["ProcessKBN"].ToString().Equals("2"))
                 {
                     bbl.ShowMessage("E259");
+                    Scr_Clr(1);
+                    previousCtrl.Focus();
+                    return false;
+                }
+                else if (dt.Rows[0]["ProcessKBN"].ToString().Equals("3"))
+                {
+                    bbl.ShowMessage("E264");
                     Scr_Clr(1);
                     previousCtrl.Focus();
                     return false;

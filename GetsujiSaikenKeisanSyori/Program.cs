@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BL;
 using Entity;
-using System.Data;
-using System.Threading;
-using System.Net;
-using System.IO;
-using System.Collections;
 
 using Base.Client;
 
@@ -27,7 +18,6 @@ namespace GetsujiSaikenKeisanSyori
         static string InProcessMode;
         static string InFiscalYYYYMM;
 
-        static DataTable dtMulti;
         static void Main(string[] args)
         {
             Console.Title = "GetsujiSaikenKeisanSyori";
@@ -58,6 +48,7 @@ namespace GetsujiSaikenKeisanSyori
                 if (Mode.Equals(1))
                 {
                     //Mode		＝	1	の場合			(＝ALL店舗）	
+                    me.StoreCD = "";
 
                 }
                 else if(Mode.Equals(2))
@@ -66,8 +57,17 @@ namespace GetsujiSaikenKeisanSyori
                     me.StoreCD = InStoreCD;
 
                 }
+                me.FiscalYYYYMM = InFiscalYYYYMM;
+
                 bool ret= gsbl.M_StoreClose_SelectAll(me);
-                if(ret)
+
+                if (!ret)
+                {
+                    //Insertしたあとに再度Select
+                    ret = gsbl.M_StoreClose_SelectAll(me);
+                }
+
+                if (ret)
                 {
                     //FiscalYYYYMM＜Parameter受取	FiscalYYYYMM
                     //またはFiscalYYYYMM＝Parameter受取	FiscalYYYYMM＆	ClosePosition1＝0＆	ClosePosition3＝0なら

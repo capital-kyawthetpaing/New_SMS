@@ -1,16 +1,18 @@
---  ======================================================================  
---       Program Call    àÍäáî≠íçì¸óÕ  
---       Program ID      IkkatuHacchuuNyuuryoku
---       Create date:    2019.10.09
---    ======================================================================  
-  
+
 IF EXISTS (select * from sys.objects where name = 'PRC_IkkatuHacchuuNyuuryoku_SelectByOrderNO')
 begin
-    DROP PROCEDURE PRC_IkkatuHacchuuNyuuryoku_SelectByOrderNO
+    DROP PROCEDURE PRC_Hacchuusho_SelectData
 end
 GO
+/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_SelectByOrderNO]    Script Date: 2020/09/23 20:15:43 ******/
+SET ANSI_NULLS ON
+GO
 
-CREATE PROCEDURE PRC_IkkatuHacchuuNyuuryoku_SelectByOrderNO(
+SET QUOTED_IDENTIFIER OFF
+GO
+
+
+Create PROCEDURE [dbo].[PRC_IkkatuHacchuuNyuuryoku_SelectByOrderNO](
  @p_OrderNO                 varchar(11) 
 ,@p_OrderProcessNO          varchar(11) 
 )
@@ -111,6 +113,9 @@ BEGIN
       AND DODH.DeleteDateTime IS NULL
       AND DODH.OrderProcessNO IS NOT NULL
 
-    ORDER BY DODD.OrderRows
+    ORDER BY DODD.OrderNO, DODD.OrderRows
 
 END
+GO
+
+

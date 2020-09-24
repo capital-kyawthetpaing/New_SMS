@@ -103,13 +103,11 @@ namespace TairyuZaikoHyou
                 case 11:               
                     break;
                 case 12:
-                    if (bbl.ShowMessage("Q201") == DialogResult.Yes)
-                    {
-                        F12();
-                    }
+                    F12();
                     break;
             }
         }
+
 
         public bool ErrorCheck()
         {
@@ -290,12 +288,14 @@ namespace TairyuZaikoHyou
                 if (dtSelect.Rows.Count > 0)
                 {
                     CheckBeforeExport();
-                    try
+                    if (bbl.ShowMessage("Q201") == DialogResult.Yes)
                     {
-                        ChangeDataColumnName(dtSelect);
+                        try
+                        {
+                            ChangeDataColumnName(dtSelect);
 
-                        string Folderpath = "C:\\CSV\\";
-                        if (!string.IsNullOrWhiteSpace(Folderpath))
+                            string Folderpath = "C:\\CSV\\";
+                            if (!string.IsNullOrWhiteSpace(Folderpath))
                             {
                                 if (!Directory.Exists(Folderpath))
                                 {
@@ -316,16 +316,16 @@ namespace TairyuZaikoHyou
                                     if (Path.GetExtension(savedialog.FileName).Contains("csv"))
                                     {
 
-                                    ////after your loop
-                                    //File.WriteAllText(Folderpath, csv.ToString());
-                                    var utf8WithoutBom = new System.Text.UTF8Encoding(false);
-                                    using (StreamWriter writer = new StreamWriter(Folderpath + cmdLine + ".csv", false, utf8WithoutBom))
-                                    {
-                                        WriteDataTable(dtSelect, writer, true);
-                                    }
+                                        ////after your loop
+                                        //File.WriteAllText(Folderpath, csv.ToString());
+                                        var utf8WithoutBom = new System.Text.UTF8Encoding(false);
+                                        using (StreamWriter writer = new StreamWriter(Folderpath + cmdLine + ".csv", false, utf8WithoutBom))
+                                        {
+                                            WriteDataTable(dtSelect, writer, true);
+                                        }
 
-                                    //CsvWriter csvwriter = new CsvWriter();
-                                    //    csvwriter.WriteCsv(dtSelect, savedialog.FileName, Encoding.GetEncoding(932));                                  
+                                        //CsvWriter csvwriter = new CsvWriter();
+                                        //    csvwriter.WriteCsv(dtSelect, savedialog.FileName, Encoding.GetEncoding(932));                                  
                                     }
                                     else
                                     {
@@ -334,17 +334,23 @@ namespace TairyuZaikoHyou
                                         wb.SaveAs(savedialog.FileName);
                                     }
 
-                                Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                                    Process.Start(Path.GetDirectoryName(savedialog.FileName));
                                 }
                                 #endregion
-                        }
-                        
-                    }
-                    finally
-                    {
-                        txtTargetDays.Focus();
-                    }
+                            }
 
+                        }
+                        finally
+                        {
+                            txtTargetDays.Focus();
+                        }
+                    }
+                  
+                }
+                else
+                {
+                    tzkbl.ShowMessage("E128");
+                    txtTargetDays.Focus();
                 }
             }
         }
@@ -411,7 +417,7 @@ namespace TairyuZaikoHyou
             msce = new M_StoreClose_Entity();
             msce = GetStoreClose_Data();
 
-            if (tzkbl.M_StoreClose_Check(msce, "2").Rows.Count > 0)
+            if (tzkbl.M_StoreClose_Check(msce, "3").Rows.Count > 0)
             {
                 string ProgramID = "GetsujiZaikoKeisanSyori";
                 RunConsole(ProgramID, msce.FiscalYYYYMM);

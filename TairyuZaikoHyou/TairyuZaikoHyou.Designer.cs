@@ -1019,6 +1019,7 @@
             // rdoOR
             // 
             this.rdoOR.AutoSize = true;
+            this.rdoOR.Checked = true;
             this.rdoOR.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.rdoOR.Location = new System.Drawing.Point(122, 194);
             this.rdoOR.Name = "rdoOR";
@@ -1036,7 +1037,6 @@
             this.rdoAND.Name = "rdoAND";
             this.rdoAND.Size = new System.Drawing.Size(345, 16);
             this.rdoAND.TabIndex = 11;
-            this.rdoAND.TabStop = true;
             this.rdoAND.Text = " and　　\",\"で区切ることで複数キーワードの指定可能";
             this.rdoAND.UseVisualStyleBackColor = true;
             // 
@@ -1169,7 +1169,6 @@
             this.rdoItem.Name = "rdoItem";
             this.rdoItem.Size = new System.Drawing.Size(51, 16);
             this.rdoItem.TabIndex = 15;
-            this.rdoItem.TabStop = true;
             this.rdoItem.Text = "ITEM";
             this.rdoItem.UseVisualStyleBackColor = true;
             // 
@@ -1181,7 +1180,6 @@
             this.rdoProductCD.Name = "rdoProductCD";
             this.rdoProductCD.Size = new System.Drawing.Size(115, 16);
             this.rdoProductCD.TabIndex = 16;
-            this.rdoProductCD.TabStop = true;
             this.rdoProductCD.Text = "メーカー商品CD";
             this.rdoProductCD.UseVisualStyleBackColor = true;
             // 

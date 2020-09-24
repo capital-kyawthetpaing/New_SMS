@@ -1132,9 +1132,16 @@ namespace HenpinNyuuryoku
             }
             else
             {
-                if(bbl.Z_Set(dt.Rows[0]["ReturnsFlg"]) != 1)
+                if(bbl.Z_Set(dt.Rows[0]["ProcessKBN"]) == 1)
                 {
-                    bbl.ShowMessage("E259", "返品番号");
+                    bbl.ShowMessage("E260");
+                    Scr_Clr(1);
+                    previousCtrl.Focus();
+                    return false;
+                }
+                else if (bbl.Z_Set(dt.Rows[0]["ProcessKBN"]) ==2)
+                {
+                    bbl.ShowMessage("E259");
                     Scr_Clr(1);
                     previousCtrl.Focus();
                     return false;

@@ -42,6 +42,7 @@ namespace Shiharai_ShimeShori
             F7Visible = false;
             F8Visible = false;
             F10Visible = false;
+            txtPayCloseDate.Text = bbl.GetDate();
         }
         private void RequireFields()
         {
@@ -240,6 +241,7 @@ namespace Shiharai_ShimeShori
                     txtPayCloseDate.Text = string.Empty;
                     Shiiresaki.TxtCode.Text = string.Empty;
                     Shiiresaki.LabelText = string.Empty;
+                    txtPayCloseDate.Text = bbl.GetDate();
                     F2Visible = false;
                     F3Visible = false;
                     F4Visible = false;
@@ -346,5 +348,7 @@ namespace Shiharai_ShimeShori
             Shiiresaki.ChangeDate = String.IsNullOrEmpty(txtPayCloseDate.Text) ? bbl.GetDate() : txtPayCloseDate.Text;
             Shiiresaki.Value1 = "3";
         }
+
+        
     }
 }
