@@ -145,6 +145,13 @@ namespace SiharaiTouroku
             dtIDName1 = shnbl.M_Multipurpose_SelectIDName("217");
             dtIDName2 = shnbl.M_Multipurpose_SelectIDName("218");
 
+            if(dtIDName1.Rows.Count == 0 || dtIDName2.Rows.Count ==0)
+            {
+                bbl.ShowMessage("E101");
+                EndSec();
+                return;
+            }
+
             SC_HanyouKeyStart1.Value1 = dtIDName1.Rows[0]["ID"].ToString();
             SC_HanyouKeyStart1.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
 
