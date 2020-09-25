@@ -517,7 +517,7 @@ namespace UrikakekinTairyuuHyou
                 }
                 finally
                 {
-
+                    txtDate.Focus();
                 }
             }
         }
