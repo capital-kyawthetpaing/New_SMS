@@ -61,7 +61,7 @@ namespace MasterTouroku_CustomerSKUPrice
         private void FrmMasterTouroku_CustomerSKUPrice_Load(object sender, EventArgs e)
         {
             InProgramID = ProID;
-            SetFunctionLabel(EProMode.MENTE);
+            SetFunctionLabel(EProMode.INPUT);
 
             InitialControlArray();
 
