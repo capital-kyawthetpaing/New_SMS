@@ -2917,41 +2917,41 @@ namespace MasterTouroku_HacchuuPrice
 
         private void GvItem_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            //int row = e.RowIndex;
-            //int col = e.ColumnIndex;
+            int row = e.RowIndex;
+            int col = e.ColumnIndex;
 
-            //switch (col)
-            //{
-            //    case (int)IColNo.ChangeDate:
-            //        string ymd = bbl.FormatDate(GvItem.Rows[row].Cells[col].Value.ToString());
-            //        if (bbl.CheckDate(ymd))
-            //        {
-            //            GvItem.Rows[row].Cells[col].Value = ymd;
+            switch (col)
+            {
+                case (int)IColNo.ChangeDate:
+                    string ymd = bbl.FormatDate(GvItem.Rows[row].Cells[col].Value.ToString());
+                    if (bbl.CheckDate(ymd))
+                    {
+                        GvItem.Rows[row].Cells[col].Value = ymd;
 
-            //            //M_ITEMより再表示
-            //            this.DispFromItemForDetail(row, ymd);
+                        //M_ITEMより再表示
+                        this.DispFromItemForDetail(row, ymd);
 
-            //            dtITEM.Rows[row]["UpdateOperator"] = InOperatorCD;
-            //            dtITEM.Rows[row]["UpdateDateTime"] = mUpdateDateTime;
-            //        }
+                        dtITEM.Rows[row]["UpdateOperator"] = InOperatorCD;
+                        dtITEM.Rows[row]["UpdateDateTime"] = mUpdateDateTime;
+                    }
 
-            //        break;
+                    break;
 
-            //    case (int)IColNo.Rate:
+                case (int)IColNo.Rate:
 
-            //        if (bbl.Z_Set(GvItem.Rows[row].Cells[col].Value) != bbl.Z_Set(dtITEM.Rows[row]["OldRate"]))
-            //        {
-            //            //税抜発注額＝税抜定価×（画面.掛率÷100）
-            //            GvItem.Rows[row].Cells[(int)IColNo.PriceWithoutTax].Value = GetResultWithHasuKbn((int)HASU_KBN.KIRISUTE, bbl.Z_Set(GvItem.Rows[row].Cells[(int)IColNo.PriceOutTax].Value)
-            //                                                                    * bbl.Z_Set(GvItem.Rows[row].Cells[col].Value) / 100);
-            //        }
-            //        dtITEM.Rows[row]["OldRate"] = bbl.Z_Set(GvItem.Rows[row].Cells[col].Value);
+                    if (bbl.Z_Set(GvItem.Rows[row].Cells[col].Value) != bbl.Z_Set(dtITEM.Rows[row]["OldRate"]))
+                    {
+                        //税抜発注額＝税抜定価×（画面.掛率÷100）
+                        GvItem.Rows[row].Cells[(int)IColNo.PriceWithoutTax].Value = GetResultWithHasuKbn((int)HASU_KBN.KIRISUTE, bbl.Z_Set(GvItem.Rows[row].Cells[(int)IColNo.PriceOutTax].Value)
+                                                                                * bbl.Z_Set(GvItem.Rows[row].Cells[col].Value) / 100);
+                    }
+                    dtITEM.Rows[row]["OldRate"] = bbl.Z_Set(GvItem.Rows[row].Cells[col].Value);
 
-            //        dtITEM.Rows[row]["UpdateOperator"] = InOperatorCD;
-            //        dtITEM.Rows[row]["UpdateDateTime"] = mUpdateDateTime;
+                    dtITEM.Rows[row]["UpdateOperator"] = InOperatorCD;
+                    dtITEM.Rows[row]["UpdateDateTime"] = mUpdateDateTime;
 
-            //        break;
-            //}
+                    break;
+            }
 
         }
 
@@ -3107,49 +3107,7 @@ namespace MasterTouroku_HacchuuPrice
 
         #endregion
 
-        private void GvItem_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            int row = e.RowIndex;
-            int col = e.ColumnIndex;
-
-            if (row < 0)
-            {
-                return;
-            }
-
-            switch (col)
-            {
-                case (int)IColNo.ChangeDate:
-                    string ymd = bbl.FormatDate(GvItem.Rows[row].Cells[col].Value.ToString());
-                    if (bbl.CheckDate(ymd))
-                    {
-                        GvItem.Rows[row].Cells[col].Value = ymd;
-
-                        //M_ITEMより再表示
-                        this.DispFromItemForDetail(row, ymd);
-
-                        dtITEM.Rows[row]["UpdateOperator"] = InOperatorCD;
-                        dtITEM.Rows[row]["UpdateDateTime"] = mUpdateDateTime;
-                    }
-
-                    break;
-
-                case (int)IColNo.Rate:
-
-                    if (bbl.Z_Set(GvItem.Rows[row].Cells[col].Value) != bbl.Z_Set(dtITEM.Rows[row]["OldRate"]))
-                    {
-                        //税抜発注額＝税抜定価×（画面.掛率÷100）
-                        GvItem.Rows[row].Cells[(int)IColNo.PriceWithoutTax].Value = GetResultWithHasuKbn((int)HASU_KBN.KIRISUTE, bbl.Z_Set(GvItem.Rows[row].Cells[(int)IColNo.PriceOutTax].Value)
-                                                                                * bbl.Z_Set(GvItem.Rows[row].Cells[col].Value) / 100);
-                    }
-                    dtITEM.Rows[row]["OldRate"] = bbl.Z_Set(GvItem.Rows[row].Cells[col].Value);
-
-                    dtITEM.Rows[row]["UpdateOperator"] = InOperatorCD;
-                    dtITEM.Rows[row]["UpdateDateTime"] = mUpdateDateTime;
-
-                    break;
-            }
-        }
+        
     }
 }
 
