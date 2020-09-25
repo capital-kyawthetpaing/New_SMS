@@ -28,5 +28,13 @@ namespace BL
         {
             return tdl.M_TenjiKaiJuuChuu_Select(tje);
         }
+        public DataTable M_TeniKaiSelectbyJAN(Tenjikai_Entity tje)
+        {
+            return tdl.M_TeniKaiSelectbyJAN(tje);
+        }
+        public DataTable GetTaxRate(string taxflg,string changeDtae)
+        {
+            return tdl.GetTaxRate(taxflg, changeDtae);
+        }
     }
 }
