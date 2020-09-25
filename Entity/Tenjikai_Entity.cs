@@ -8,6 +8,7 @@ namespace Entity
 {
     public class Tenjikai_Entity : Base_Entity
     {
+        public string JanCD { get; set; }
 
         public string TenjiKaiOrderNo { get; set; }
         public string Shiiresaki { get; set; }

@@ -82,14 +82,14 @@
             this.txtManufactureCD = new CKM_Controls.CKM_TextBox();
             this.txtItem = new CKM_Controls.CKM_TextBox();
             this.panelDetail = new System.Windows.Forms.Panel();
-            this.ScSKUCD = new Search.CKM_SearchControl();
-            this.ScJanCD = new Search.CKM_SearchControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ckM_Label29 = new CKM_Controls.CKM_Label();
             this.rdoProductCD = new CKM_Controls.CKM_RadioButton();
             this.rdoItem = new CKM_Controls.CKM_RadioButton();
             this.ckM_Label28 = new CKM_Controls.CKM_Label();
             this.chkPrint = new CKM_Controls.CKM_CheckBox();
+            this.ScSKUCD = new Search.CKM_SearchControl();
+            this.ScJanCD = new Search.CKM_SearchControl();
             this.panelDetail.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -1198,6 +1198,88 @@
             this.panelDetail.Size = new System.Drawing.Size(1581, 745);
             this.panelDetail.TabIndex = 0;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.ckM_Label29);
+            this.panel1.Controls.Add(this.rdoProductCD);
+            this.panel1.Controls.Add(this.rdoItem);
+            this.panel1.Controls.Add(this.ckM_Label28);
+            this.panel1.Controls.Add(this.chkPrint);
+            this.panel1.Location = new System.Drawing.Point(19, 269);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1000, 50);
+            this.panel1.TabIndex = 73;
+            // 
+            // ckM_Label29
+            // 
+            this.ckM_Label29.AutoSize = true;
+            this.ckM_Label29.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label29.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label29.DefaultlabelSize = true;
+            this.ckM_Label29.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label29.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label29.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label29.Location = new System.Drawing.Point(445, 8);
+            this.ckM_Label29.Name = "ckM_Label29";
+            this.ckM_Label29.Size = new System.Drawing.Size(425, 12);
+            this.ckM_Label29.TabIndex = 77;
+            this.ckM_Label29.Text = "検索された商品と同じITEM(メーカー商品CD)の商品も同時に出力する。";
+            this.ckM_Label29.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // rdoProductCD
+            // 
+            this.rdoProductCD.AutoSize = true;
+            this.rdoProductCD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.rdoProductCD.Location = new System.Drawing.Point(287, 6);
+            this.rdoProductCD.Name = "rdoProductCD";
+            this.rdoProductCD.Size = new System.Drawing.Size(115, 16);
+            this.rdoProductCD.TabIndex = 75;
+            this.rdoProductCD.Text = "メーカー商品CD";
+            this.rdoProductCD.UseVisualStyleBackColor = true;
+            this.rdoProductCD.CheckedChanged += new System.EventHandler(this.rdoProductCD_CheckedChanged);
+            // 
+            // rdoItem
+            // 
+            this.rdoItem.AutoSize = true;
+            this.rdoItem.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.rdoItem.Location = new System.Drawing.Point(177, 7);
+            this.rdoItem.Name = "rdoItem";
+            this.rdoItem.Size = new System.Drawing.Size(51, 16);
+            this.rdoItem.TabIndex = 74;
+            this.rdoItem.Text = "ITEM";
+            this.rdoItem.UseVisualStyleBackColor = true;
+            this.rdoItem.CheckedChanged += new System.EventHandler(this.rdoItem_CheckedChanged);
+            // 
+            // ckM_Label28
+            // 
+            this.ckM_Label28.AutoSize = true;
+            this.ckM_Label28.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label28.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label28.DefaultlabelSize = true;
+            this.ckM_Label28.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label28.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label28.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label28.Location = new System.Drawing.Point(43, 8);
+            this.ckM_Label28.Name = "ckM_Label28";
+            this.ckM_Label28.Size = new System.Drawing.Size(57, 12);
+            this.ckM_Label28.TabIndex = 76;
+            this.ckM_Label28.Text = "関連検索";
+            this.ckM_Label28.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // chkPrint
+            // 
+            this.chkPrint.AutoSize = true;
+            this.chkPrint.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.chkPrint.Location = new System.Drawing.Point(101, 7);
+            this.chkPrint.Name = "chkPrint";
+            this.chkPrint.Size = new System.Drawing.Size(50, 16);
+            this.chkPrint.TabIndex = 73;
+            this.chkPrint.Text = "する";
+            this.chkPrint.UseVisualStyleBackColor = true;
+            this.chkPrint.CheckedChanged += new System.EventHandler(this.chkPrint_CheckedChanged);
+            // 
             // ScSKUCD
             // 
             this.ScSKUCD.AutoSize = true;
@@ -1255,86 +1337,6 @@
             this.ScJanCD.Value1 = null;
             this.ScJanCD.Value2 = null;
             this.ScJanCD.Value3 = null;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.ckM_Label29);
-            this.panel1.Controls.Add(this.rdoProductCD);
-            this.panel1.Controls.Add(this.rdoItem);
-            this.panel1.Controls.Add(this.ckM_Label28);
-            this.panel1.Controls.Add(this.chkPrint);
-            this.panel1.Location = new System.Drawing.Point(19, 269);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 50);
-            this.panel1.TabIndex = 73;
-            // 
-            // ckM_Label29
-            // 
-            this.ckM_Label29.AutoSize = true;
-            this.ckM_Label29.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label29.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label29.DefaultlabelSize = true;
-            this.ckM_Label29.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label29.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label29.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label29.Location = new System.Drawing.Point(445, 8);
-            this.ckM_Label29.Name = "ckM_Label29";
-            this.ckM_Label29.Size = new System.Drawing.Size(425, 12);
-            this.ckM_Label29.TabIndex = 77;
-            this.ckM_Label29.Text = "検索された商品と同じITEM(メーカー商品CD)の商品も同時に出力する。";
-            this.ckM_Label29.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // rdoProductCD
-            // 
-            this.rdoProductCD.AutoSize = true;
-            this.rdoProductCD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.rdoProductCD.Location = new System.Drawing.Point(287, 6);
-            this.rdoProductCD.Name = "rdoProductCD";
-            this.rdoProductCD.Size = new System.Drawing.Size(115, 16);
-            this.rdoProductCD.TabIndex = 75;
-            this.rdoProductCD.Text = "メーカー商品CD";
-            this.rdoProductCD.UseVisualStyleBackColor = true;
-            // 
-            // rdoItem
-            // 
-            this.rdoItem.AutoSize = true;
-            this.rdoItem.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.rdoItem.Location = new System.Drawing.Point(177, 7);
-            this.rdoItem.Name = "rdoItem";
-            this.rdoItem.Size = new System.Drawing.Size(51, 16);
-            this.rdoItem.TabIndex = 74;
-            this.rdoItem.Text = "ITEM";
-            this.rdoItem.UseVisualStyleBackColor = true;
-            // 
-            // ckM_Label28
-            // 
-            this.ckM_Label28.AutoSize = true;
-            this.ckM_Label28.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label28.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label28.DefaultlabelSize = true;
-            this.ckM_Label28.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label28.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label28.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label28.Location = new System.Drawing.Point(43, 8);
-            this.ckM_Label28.Name = "ckM_Label28";
-            this.ckM_Label28.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label28.TabIndex = 76;
-            this.ckM_Label28.Text = "関連検索";
-            this.ckM_Label28.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // chkPrint
-            // 
-            this.chkPrint.AutoSize = true;
-            this.chkPrint.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.chkPrint.Location = new System.Drawing.Point(101, 7);
-            this.chkPrint.Name = "chkPrint";
-            this.chkPrint.Size = new System.Drawing.Size(50, 16);
-            this.chkPrint.TabIndex = 73;
-            this.chkPrint.Text = "する";
-            this.chkPrint.UseVisualStyleBackColor = true;
-            this.chkPrint.CheckedChanged += new System.EventHandler(this.chkPrint_CheckedChanged);
             // 
             // FrmTairyuZaikoHyou
             // 

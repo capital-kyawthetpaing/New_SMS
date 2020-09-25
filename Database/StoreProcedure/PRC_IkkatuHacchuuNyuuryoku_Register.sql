@@ -1,18 +1,15 @@
-IF EXISTS (select * from sys.objects where name = 'PRC_IkkatuHacchuuNyuuryoku_Register')
-begin
-    DROP PROCEDURE PRC_Hacchuusho_SelectData
-end
+
+/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]    Script Date: 2020/09/25 11:36:50 ******/
+DROP PROCEDURE [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]
 GO
 
-/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]    Script Date: 2020/09/23 20:14:43 ******/
-
-
-/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]    Script Date: 2020/09/23 20:14:43 ******/
+/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]    Script Date: 2020/09/25 11:36:50 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER OFF
 GO
+
 
 
 
