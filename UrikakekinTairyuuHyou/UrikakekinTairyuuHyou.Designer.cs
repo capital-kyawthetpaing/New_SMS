@@ -146,13 +146,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1776, 961);
             this.Controls.Add(this.panel1);
-            this.F11Visible = false;
+            this.F10Visible = false;
             this.F2Visible = false;
             this.F3Visible = false;
             this.F4Visible = false;
             this.F5Visible = false;
             this.F7Visible = false;
             this.F8Visible = false;
+            this.F9Visible = false;
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
             this.Name = "UrikakekinTairyuuHyou";
