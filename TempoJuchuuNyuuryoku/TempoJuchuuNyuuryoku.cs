@@ -3096,7 +3096,6 @@ namespace TempoJuchuuNyuuryoku
                             bbl.ShowMessage("E102");
                             return false;
                         }
-
                     }
                     break;
 
@@ -3260,7 +3259,7 @@ namespace TempoJuchuuNyuuryoku
                             return false;
                     }
                     //０で無いかつ原価単価＝０の場合場合、入力された発注単価を原価単価にセットし、原価金額、粗利金額を再計算。
-                    else if (!chkAll && bbl.Z_Set(mGrid.g_DArray[row].CostUnitPrice) == 0)
+                    else if (bbl.Z_Set(mGrid.g_DArray[row].CostUnitPrice) == 0)//!chkAll && 
                     {
                         mGrid.g_DArray[row].CostUnitPrice = mGrid.g_DArray[row].OrderUnitPrice;
                         mGrid.g_DArray[row].CostGaku = string.Format("{0:#,##0}", orderUnitPrice * bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu));
@@ -3654,7 +3653,9 @@ namespace TempoJuchuuNyuuryoku
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
             {
                 if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JanCD) == false)
-                {
+                {    
+                    //原価額←原価単価×Form.Detail.数
+                    mGrid.g_DArray[RW].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[RW].CostUnitPrice) * bbl.Z_Set(mGrid.g_DArray[RW].JuchuuSuu));
                     //粗利額←⑦Form.Detail.税抜販売額－⑩Form.Detail.原価額
                     mGrid.g_DArray[RW].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[RW].CostGaku));
 
@@ -4111,6 +4112,8 @@ namespace TempoJuchuuNyuuryoku
                 ////各金額項目の再計算必要
                 CalcKin();
 
+                //配列の内容を画面へセット
+                mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
             }
 
             //M_Control.Tennic＝1 の場合、

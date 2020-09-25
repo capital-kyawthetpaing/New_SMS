@@ -47,11 +47,17 @@ namespace TairyuZaikoHyou
             F11Visible = false;
 
             StartProgram();
-
+            
             BindCombo();
             SetRequireField();
             Btn_F12.Text = "出力(F12)";
             ModeVisible = false;
+
+            rdoOR.Checked = true;
+            rdoAND.Checked = false;
+            chkPrint.Checked = false;
+            rdoItem.Checked = false;
+            rdoProductCD.Checked = false;
 
         }
         public void BindCombo()
@@ -108,6 +114,7 @@ namespace TairyuZaikoHyou
             }
         }
 
+
         public bool ErrorCheck()
         {
            if(String.IsNullOrWhiteSpace(txtTargetDays.Text))
@@ -152,11 +159,7 @@ namespace TairyuZaikoHyou
                     tzkbl.ShowMessage("E102");
                     txtItem.Focus();
                     return false;
-                }
-                else
-                {
-
-                }
+                }               
             }
 
             if(rdoProductCD.Checked)

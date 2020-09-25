@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
-using Entity;
 using Base.Client;
 
 namespace KaitouNoukiTouroku
@@ -81,6 +74,9 @@ namespace KaitouNoukiTouroku
             DataRows = de.DtDetail.Select("OrderNo ='" + de.OrderNo + "' AND OrderRows =" + de.OrderRows , "ROWNUM");
             foreach (DataRow row in DataRows)
             {
+                if (knbl.Z_Set(row["UpdateFlg"]) == 2)
+                    continue;
+
                 if (knbl.Z_Set(row["ArrivalPlanSu"]) != 0)
                     detailControls[(int)EIndex.Suryo1 + 4 * count].Text = knbl.Z_SetStr( row["ArrivalPlanSu"]);
 

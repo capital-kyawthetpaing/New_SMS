@@ -1,6 +1,3 @@
-USE [CapitalSMS]
-GO
-
 /****** Object:  StoredProcedure [dbo].[D_Stock_SelectZaiko]    Script Date: 2020/09/11 10:54:45 ******/
 DROP PROCEDURE [dbo].[D_Stock_SelectZaiko]
 GO

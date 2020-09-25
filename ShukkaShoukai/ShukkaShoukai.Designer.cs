@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmShukkaShoukai));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.cboWarehouse = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -190,7 +190,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(995, 16);
+            this.ckM_Label2.Location = new System.Drawing.Point(996, 14);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label2.TabIndex = 27;
@@ -470,7 +470,7 @@
             this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label10.Location = new System.Drawing.Point(1013, 67);
+            this.ckM_Label10.Location = new System.Drawing.Point(1013, 68);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(40, 12);
             this.ckM_Label10.TabIndex = 20;
@@ -487,7 +487,7 @@
             this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(1019, 41);
+            this.ckM_Label9.Location = new System.Drawing.Point(1020, 42);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(33, 12);
             this.ckM_Label9.TabIndex = 19;
@@ -552,18 +552,18 @@
             this.dgvShukkaShoukai.AllowUserToAddRows = false;
             this.dgvShukkaShoukai.AllowUserToDeleteRows = false;
             this.dgvShukkaShoukai.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvShukkaShoukai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvShukkaShoukai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvShukkaShoukai.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvShukkaShoukai.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvShukkaShoukai.CheckCol")));
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvShukkaShoukai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvShukkaShoukai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvShukkaShoukai.ColumnHeadersHeight = 25;
             this.dgvShukkaShoukai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colShippingN0,
@@ -580,14 +580,14 @@
             this.colCarrierName,
             this.colSalesDate,
             this.colStaffName});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvShukkaShoukai.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvShukkaShoukai.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvShukkaShoukai.EnableHeadersVisualStyles = false;
             this.dgvShukkaShoukai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvShukkaShoukai.Location = new System.Drawing.Point(29, 23);
@@ -812,10 +812,10 @@
             this.Sc_SKUCD.Location = new System.Drawing.Point(1056, 59);
             this.Sc_SKUCD.Margin = new System.Windows.Forms.Padding(0);
             this.Sc_SKUCD.Name = "Sc_SKUCD";
-            this.Sc_SKUCD.NameWidth = 350;
+            this.Sc_SKUCD.NameWidth = 280;
             this.Sc_SKUCD.SearchEnable = true;
             this.Sc_SKUCD.Size = new System.Drawing.Size(633, 27);
-            this.Sc_SKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
+            this.Sc_SKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUMulti;
             this.Sc_SKUCD.TabIndex = 12;
             this.Sc_SKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.Sc_SKUCD.UseChangeDate = false;
@@ -838,13 +838,13 @@
             this.Sc_Item.IsCopy = false;
             this.Sc_Item.LabelText = "";
             this.Sc_Item.LabelVisible = false;
-            this.Sc_Item.Location = new System.Drawing.Point(1055, 33);
+            this.Sc_Item.Location = new System.Drawing.Point(1056, 33);
             this.Sc_Item.Margin = new System.Windows.Forms.Padding(0);
             this.Sc_Item.Name = "Sc_Item";
-            this.Sc_Item.NameWidth = 350;
+            this.Sc_Item.NameWidth = 280;
             this.Sc_Item.SearchEnable = true;
             this.Sc_Item.Size = new System.Drawing.Size(633, 27);
-            this.Sc_Item.Stype = Search.CKM_SearchControl.SearchType.SKU_ITEM_CD;
+            this.Sc_Item.Stype = Search.CKM_SearchControl.SearchType.ITEMMulti;
             this.Sc_Item.TabIndex = 11;
             this.Sc_Item.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.Sc_Item.UseChangeDate = false;
@@ -859,6 +859,7 @@
             this.ClientSize = new System.Drawing.Size(1776, 961);
             this.Controls.Add(this.panelDetail);
             this.Location = new System.Drawing.Point(0, 0);
+            this.ModeVisible = true;
             this.Name = "FrmShukkaShoukai";
             this.PanelHeaderHeight = 250;
             this.Text = "ShukkaShoukai";

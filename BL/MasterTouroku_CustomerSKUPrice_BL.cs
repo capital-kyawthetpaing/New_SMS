@@ -16,5 +16,10 @@ namespace BL
         {
             mcskupdl = new M_CustomerSKUPrice_DL();
         }
+
+        public DataTable M_CustomerSKUPriceSelectData(M_CustomerSKUPrice_Entity mcskue)
+        {
+            return mcskupdl.M_CustomerSKUPriceSelectData(mcskue);
+        }
     }
 }
