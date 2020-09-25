@@ -2731,21 +2731,21 @@ namespace HenpinNyuuryoku
                     switch (CL)
                     {
                         case (int)ClsGridShiire.ColNO.PurchaseSu:
-                            if (!mGrid.g_DArray[w_Row].PurchaseSu.Equals(w_ActCtl.Text))
+                            if (mGrid.g_DArray[w_Row].PurchaseSu != w_ActCtl.Text)
                             {
                                 changeFlg = true;
                             }
                             break;
 
                         case (int)ClsGridShiire.ColNO.PurchaserUnitPrice:
-                            if (!mGrid.g_DArray[w_Row].PurchaserUnitPrice.Equals(w_ActCtl.Text))
+                            if (mGrid.g_DArray[w_Row].PurchaserUnitPrice != w_ActCtl.Text)
                             {
                                 changeFlg = true;
                             }
                             break;
 
                         case (int)ClsGridShiire.ColNO.AdjustmentGaku:
-                            if (!mGrid.g_DArray[w_Row].AdjustmentGaku.Equals(w_ActCtl.Text))
+                            if (mGrid.g_DArray[w_Row].AdjustmentGaku != w_ActCtl.Text)
                             {
                                 changeFlg = true;
                             }
