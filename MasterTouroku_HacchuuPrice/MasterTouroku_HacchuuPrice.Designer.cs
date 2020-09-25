@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterTouroku_HacchuuPrice));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -38,15 +39,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.panelDetail = new System.Windows.Forms.Panel();
@@ -1622,7 +1624,7 @@
             this.GvItem.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("GvItem.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1643,6 +1645,14 @@
             this.colPriceOutTax,
             this.colRate,
             this.colPriceWithoutTax});
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GvItem.DefaultCellStyle = dataGridViewCellStyle10;
             this.GvItem.EnableHeadersVisualStyles = false;
             this.GvItem.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvItem.Location = new System.Drawing.Point(14, 315);
@@ -1650,12 +1660,12 @@
             this.GvItem.Name = "GvItem";
             this.GvItem.RowHeadersWidth = 30;
             this.GvItem.RowHeight_ = 20;
+            this.GvItem.RowTemplate.Height = 20;
             this.GvItem.Size = new System.Drawing.Size(1350, 280);
             this.GvItem.TabIndex = 61;
             this.GvItem.UseRowNo = true;
             this.GvItem.UseSetting = true;
             this.GvItem.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvItem_CellEndEdit);
-            this.GvItem.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvItem_CellValueChanged);
             this.GvItem.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GvItem_ColumnHeaderMouseClick);
             this.GvItem.CurrentCellChanged += new System.EventHandler(this.GvItem_CurrentCellChanged);
             this.GvItem.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.GvItem_DataError);
@@ -1776,18 +1786,18 @@
             this.GvSku.AllowUserToAddRows = false;
             this.GvSku.AllowUserToDeleteRows = false;
             this.GvSku.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GvSku.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GvSku.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.GvSku.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvSku.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("GvSku.CheckCol")));
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GvSku.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GvSku.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.GvSku.ColumnHeadersHeight = 25;
             this.GvSku.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCheck2,
@@ -1801,6 +1811,14 @@
             this.colPriceOutTax2,
             this.colRate2,
             this.colPriceWithoutTax2});
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GvSku.DefaultCellStyle = dataGridViewCellStyle20;
             this.GvSku.EnableHeadersVisualStyles = false;
             this.GvSku.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvSku.Location = new System.Drawing.Point(14, 315);
@@ -1808,6 +1826,7 @@
             this.GvSku.Name = "GvSku";
             this.GvSku.RowHeadersWidth = 30;
             this.GvSku.RowHeight_ = 20;
+            this.GvSku.RowTemplate.Height = 20;
             this.GvSku.Size = new System.Drawing.Size(1350, 280);
             this.GvSku.TabIndex = 62;
             this.GvSku.UseRowNo = true;
@@ -1842,8 +1861,8 @@
             // colITemName2
             // 
             this.colITemName2.DataPropertyName = "ITemName";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colITemName2.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colITemName2.DefaultCellStyle = dataGridViewCellStyle13;
             this.colITemName2.HeaderText = "商品名";
             this.colITemName2.Name = "colITemName2";
             this.colITemName2.Width = 320;
@@ -1851,8 +1870,8 @@
             // colSizeName
             // 
             this.colSizeName.DataPropertyName = "SizeName";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colSizeName.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colSizeName.DefaultCellStyle = dataGridViewCellStyle14;
             this.colSizeName.HeaderText = "サイズ";
             this.colSizeName.Name = "colSizeName";
             this.colSizeName.Width = 110;
@@ -1860,8 +1879,8 @@
             // colColorName
             // 
             this.colColorName.DataPropertyName = "ColorName";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colColorName.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colColorName.DefaultCellStyle = dataGridViewCellStyle15;
             this.colColorName.HeaderText = "カラー";
             this.colColorName.Name = "colColorName";
             this.colColorName.Width = 110;
@@ -1876,10 +1895,10 @@
             // colChangeDate2
             // 
             this.colChangeDate2.DataPropertyName = "ChangeDate";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.Format = "d";
-            dataGridViewCellStyle15.NullValue = null;
-            this.colChangeDate2.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.Format = "d";
+            dataGridViewCellStyle16.NullValue = null;
+            this.colChangeDate2.DefaultCellStyle = dataGridViewCellStyle16;
             this.colChangeDate2.HeaderText = "改定日";
             this.colChangeDate2.MaxInputLength = 10;
             this.colChangeDate2.Name = "colChangeDate2";
@@ -1888,10 +1907,10 @@
             // colPriceOutTax2
             // 
             this.colPriceOutTax2.DataPropertyName = "PriceOutTax";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle16.Format = "N0";
-            dataGridViewCellStyle16.NullValue = null;
-            this.colPriceOutTax2.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle17.Format = "N0";
+            dataGridViewCellStyle17.NullValue = null;
+            this.colPriceOutTax2.DefaultCellStyle = dataGridViewCellStyle17;
             this.colPriceOutTax2.HeaderText = "定価(税抜)";
             this.colPriceOutTax2.Name = "colPriceOutTax2";
             this.colPriceOutTax2.Width = 80;
@@ -1899,10 +1918,10 @@
             // colRate2
             // 
             this.colRate2.DataPropertyName = "Rate";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle17.Format = "N2";
-            dataGridViewCellStyle17.NullValue = null;
-            this.colRate2.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle18.Format = "N2";
+            dataGridViewCellStyle18.NullValue = null;
+            this.colRate2.DefaultCellStyle = dataGridViewCellStyle18;
             this.colRate2.HeaderText = "掛率";
             this.colRate2.Name = "colRate2";
             this.colRate2.Width = 60;
@@ -1910,10 +1929,10 @@
             // colPriceWithoutTax2
             // 
             this.colPriceWithoutTax2.DataPropertyName = "PriceWithoutTax";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle18.Format = "N0";
-            dataGridViewCellStyle18.NullValue = "0";
-            this.colPriceWithoutTax2.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle19.Format = "N0";
+            dataGridViewCellStyle19.NullValue = "0";
+            this.colPriceWithoutTax2.DefaultCellStyle = dataGridViewCellStyle19;
             this.colPriceWithoutTax2.HeaderText = "発注単価";
             this.colPriceWithoutTax2.Name = "colPriceWithoutTax2";
             // 
