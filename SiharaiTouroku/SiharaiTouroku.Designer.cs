@@ -308,6 +308,7 @@
             this.dgvPayment.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPayment_CellDoubleClick);
             this.dgvPayment.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPayment_CellValueChanged);
             this.dgvPayment.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvPayment_CurrentCellDirtyStateChanged);
+            this.dgvPayment.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvPayment_DataError);
             // 
             // colChk
             // 
@@ -533,6 +534,7 @@
             this.ScStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStaff.DataCheck = false;
             this.ScStaff.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScStaff.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScStaff.IsCopy = false;
             this.ScStaff.LabelText = "";
             this.ScStaff.LabelVisible = true;
@@ -556,6 +558,7 @@
             this.txtPaymentDate.AllowMinus = false;
             this.txtPaymentDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPaymentDate.BackColor = System.Drawing.Color.White;
+            this.txtPaymentDate.BorderColor = false;
             this.txtPaymentDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPaymentDate.ClientColor = System.Drawing.Color.White;
             this.txtPaymentDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -565,6 +568,7 @@
             this.txtPaymentDate.IntegerPart = 0;
             this.txtPaymentDate.IsCorrectDate = true;
             this.txtPaymentDate.isEnterKeyDown = false;
+            this.txtPaymentDate.IsFirstTime = true;
             this.txtPaymentDate.isMaxLengthErr = false;
             this.txtPaymentDate.IsNumber = true;
             this.txtPaymentDate.IsShop = false;
@@ -578,6 +582,7 @@
             this.txtPaymentDate.TabIndex = 0;
             this.txtPaymentDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPaymentDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtPaymentDate.UseColorSizMode = false;
             this.txtPaymentDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPaymentDate_KeyDown);
             // 
             // cboPaymentType
@@ -711,6 +716,7 @@
             this.txtBillSettleDate.AllowMinus = false;
             this.txtBillSettleDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtBillSettleDate.BackColor = System.Drawing.Color.White;
+            this.txtBillSettleDate.BorderColor = false;
             this.txtBillSettleDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBillSettleDate.ClientColor = System.Drawing.Color.White;
             this.txtBillSettleDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -720,6 +726,7 @@
             this.txtBillSettleDate.IntegerPart = 0;
             this.txtBillSettleDate.IsCorrectDate = true;
             this.txtBillSettleDate.isEnterKeyDown = false;
+            this.txtBillSettleDate.IsFirstTime = true;
             this.txtBillSettleDate.isMaxLengthErr = false;
             this.txtBillSettleDate.IsNumber = true;
             this.txtBillSettleDate.IsShop = false;
@@ -733,6 +740,7 @@
             this.txtBillSettleDate.TabIndex = 4;
             this.txtBillSettleDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBillSettleDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtBillSettleDate.UseColorSizMode = false;
             this.txtBillSettleDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBillSettleDate_KeyDown);
             // 
             // btnSelectAll
@@ -792,6 +800,7 @@
             this.txtDueDate2.AllowMinus = false;
             this.txtDueDate2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtDueDate2.BackColor = System.Drawing.Color.White;
+            this.txtDueDate2.BorderColor = false;
             this.txtDueDate2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDueDate2.ClientColor = System.Drawing.Color.White;
             this.txtDueDate2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -801,6 +810,7 @@
             this.txtDueDate2.IntegerPart = 0;
             this.txtDueDate2.IsCorrectDate = true;
             this.txtDueDate2.isEnterKeyDown = false;
+            this.txtDueDate2.IsFirstTime = true;
             this.txtDueDate2.isMaxLengthErr = false;
             this.txtDueDate2.IsNumber = true;
             this.txtDueDate2.IsShop = false;
@@ -813,6 +823,7 @@
             this.txtDueDate2.TabIndex = 4;
             this.txtDueDate2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDueDate2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDueDate2.UseColorSizMode = false;
             this.txtDueDate2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDueDate2_KeyDown);
             // 
             // txtDueDate1
@@ -820,6 +831,7 @@
             this.txtDueDate1.AllowMinus = false;
             this.txtDueDate1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtDueDate1.BackColor = System.Drawing.Color.White;
+            this.txtDueDate1.BorderColor = false;
             this.txtDueDate1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDueDate1.ClientColor = System.Drawing.Color.White;
             this.txtDueDate1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -829,6 +841,7 @@
             this.txtDueDate1.IntegerPart = 0;
             this.txtDueDate1.IsCorrectDate = true;
             this.txtDueDate1.isEnterKeyDown = false;
+            this.txtDueDate1.IsFirstTime = true;
             this.txtDueDate1.isMaxLengthErr = false;
             this.txtDueDate1.IsNumber = true;
             this.txtDueDate1.IsShop = false;
@@ -841,6 +854,7 @@
             this.txtDueDate1.TabIndex = 3;
             this.txtDueDate1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDueDate1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDueDate1.UseColorSizMode = false;
             // 
             // ckM_Label6
             // 
@@ -974,6 +988,7 @@
             this.ScPaymentNum.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScPaymentNum.DataCheck = false;
             this.ScPaymentNum.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScPaymentNum.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScPaymentNum.IsCopy = false;
             this.ScPaymentNum.LabelText = "";
             this.ScPaymentNum.LabelVisible = false;
@@ -1003,6 +1018,7 @@
             this.ScPaymentProcessNum.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScPaymentProcessNum.DataCheck = false;
             this.ScPaymentProcessNum.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScPaymentProcessNum.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScPaymentProcessNum.IsCopy = false;
             this.ScPaymentProcessNum.LabelText = "";
             this.ScPaymentProcessNum.LabelVisible = false;
@@ -1032,6 +1048,7 @@
             this.ScPayee.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScPayee.DataCheck = false;
             this.ScPayee.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScPayee.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScPayee.IsCopy = false;
             this.ScPayee.LabelText = "";
             this.ScPayee.LabelVisible = true;

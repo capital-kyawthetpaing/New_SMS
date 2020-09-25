@@ -1410,5 +1410,26 @@ namespace SiharaiTouroku
             }
         }
 
+        private void dgvPayment_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try
+            {
+                //if (e.Exception != null)
+                //{
+                //    MessageBox.Show(this,
+                //        string.Format("({0}, {1}) のセルでエラーが発生しました。\n\n説明: {2}",
+                //        e.ColumnIndex, e.RowIndex, e.Exception.Message),
+                //        "エラーが発生しました",
+                //        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
+
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
     }
 }
