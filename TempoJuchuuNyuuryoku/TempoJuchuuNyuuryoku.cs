@@ -4999,7 +4999,10 @@ namespace TempoJuchuuNyuuryoku
                                         }
 
                                         //原価単価=Function_単価取得.out原価単価	
-                                        mGrid.g_DArray[w_Row].CostUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.GenkaTanka));
+                                        if (bbl.Z_Set(fue.GenkaTanka) ==0)
+                                            mGrid.g_DArray[w_Row].CostUnitPrice = mGrid.g_DArray[w_Row].OrderUnitPrice;
+                                        else
+                                            mGrid.g_DArray[w_Row].CostUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.GenkaTanka));
                                     }
                                     else
                                     {
