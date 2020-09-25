@@ -14,7 +14,7 @@ namespace TenzikaiJuchuuTourou
         {
             internal string GYONO;
             internal string SCJAN;
-            internal string AdminNo;
+            internal string AdminNo; // Hidden
             internal string SKUCD;
             internal string ShouName;
             internal string Color;
@@ -29,6 +29,7 @@ namespace TenzikaiJuchuuTourou
             internal string NyuuKayo;
             internal string JuchuuSuu;
             internal string TenI;
+            internal string TeniName;
             internal string HanbaiTanka;
             internal string ZeinuJuchuu;
             internal string zeikomijuchuu;
@@ -39,8 +40,10 @@ namespace TenzikaiJuchuuTourou
             internal string ShanaiBi;
             internal string ShagaiBi;
             internal string KobeTsu;
-            internal string TorokuFlg;
-            internal string TaxRateFlg;
+            internal string TorokuFlg; // hidden
+            internal string TaxRateFlg; //hidden
+            internal string Tsuujou; // hidden
+            internal string Keigen;// hidden
         }
         private enum EsearchKbn : short
         {

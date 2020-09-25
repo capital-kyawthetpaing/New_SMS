@@ -154,7 +154,7 @@ namespace SiiresakiZaikoYoteiHyou
                 dmpe = new D_MonthlyPurchase_Entity();
                 dmpe = GetData();
                 DataTable dt = szybl.RPC_SiiresakiZaikoYoteiHyou(dmpe);
-                dt.Columns.Remove("Today");
+               // dt.Columns.Remove("Today");
                 if (dt.Rows.Count > 0)
                 {
                     DataTable dtExport = dt;

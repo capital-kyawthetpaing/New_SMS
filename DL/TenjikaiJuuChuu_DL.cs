@@ -13,7 +13,18 @@ namespace DL
         {
 
         }
+        public DataTable GetTaxRate(string Flg, string Date)
+        {
+            string sp = "GetMaxTaxRate";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@Flg", new ValuePair { value1 = SqlDbType.Date, value2 = Flg } },
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = Date } },
+            };
 
+            UseTransaction = true;
+            return SelectData(dic, sp);
+        }
         public DataTable JuuChuuCheck(string Bi)
         {
             string sp = "JuuChuuBiCheck";
@@ -52,6 +63,23 @@ namespace DL
                  { "@DesiredDate1", new ValuePair { value1 = SqlDbType.Date, value2 = tje.KibouBi1 } },
                  { "@DesiredDate2", new ValuePair { value1 = SqlDbType.Date, value2 = tje.KibouBi2 } },
 
+            };
+
+            UseTransaction = true;
+            return SelectData(dic, sp);
+        }
+
+        public DataTable M_TeniKaiSelectbyJAN(Tenjikai_Entity tje)
+        {
+            string sp = "M_TeniKaiSelectbyJAN";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                 { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Kokyaku } },
+                 { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 =  tje.JanCD } },
+                 { "@LastYearTerm", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Nendo } },
+                 { "@LastSeason", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.ShiZun } },
+                 { "@VendorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Shiiresaki } },
+                 { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = tje.ChangeDate.Replace("/","-") } },
             };
 
             UseTransaction = true;

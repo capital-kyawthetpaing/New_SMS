@@ -1029,14 +1029,14 @@ namespace ShiireNyuuryoku
                 bool needDelFlg = false;
 
                 //①form.Detail.出荷済みFLG(Hidden)	＝	1の時エラー	→行削除不可
-                if(mGrid.g_DArray[w_Row].SyukkazumiFlg.Equals("1"))
+                if(mGrid.g_DArray[w_Row].SyukkazumiFlg == "1")
                 {
                     //Ｅ１５９	
                     bbl.ShowMessage("E159");
                     return;
                 }
                 //②form.Detail.出荷指示済みFLG(Hidden)	＝	1の時 警告	
-                if (mGrid.g_DArray[w_Row].SyukkaSijizumiFlg.Equals("1"))
+                if (mGrid.g_DArray[w_Row].SyukkaSijizumiFlg == "1")
                 {
                     //Ｑ３０７
                     if (bbl.ShowMessage("Q307") != DialogResult.Yes)
@@ -1044,7 +1044,7 @@ namespace ShiireNyuuryoku
                     needDelFlg = true;
                 }
                 //③上記以外で、form.Detail.ピッキング済みFLG(Hidden)＝	1の時	警告
-                else if (mGrid.g_DArray[w_Row].PickingzumiFlg.Equals("1"))
+                else if (mGrid.g_DArray[w_Row].PickingzumiFlg == "1")
                 {
                     //Ｑ３０８
                     if (bbl.ShowMessage("Q308") != DialogResult.Yes)
@@ -1052,7 +1052,7 @@ namespace ShiireNyuuryoku
                     needDelFlg = true;
                 }
                 //④上記以外で、form.Detail.引当済みFLG(Hidden)	＝	1の時 警告
-                else if (mGrid.g_DArray[w_Row].HikiatezumiFlg.Equals("1"))
+                else if (mGrid.g_DArray[w_Row].HikiatezumiFlg == "1")
                 {
                     //Ｑ３０９
                     if (bbl.ShowMessage("Q309") != DialogResult.Yes)
@@ -1282,6 +1282,7 @@ namespace ShiireNyuuryoku
 
                 // 明細部初期化
                 this.S_SetInit_Grid();
+                Scr_Clr(0);
 
                 //起動時共通処理
                 base.StartProgram();
@@ -3213,21 +3214,21 @@ namespace ShiireNyuuryoku
                     switch (CL)
                     {
                         case (int)ClsGridShiire.ColNO.PurchaseSu:
-                            if (!mGrid.g_DArray[w_Row].PurchaseSu.Equals(w_ActCtl.Text))
+                            if (mGrid.g_DArray[w_Row].PurchaseSu != w_ActCtl.Text)
                             {
                                 changeFlg = true;
                             }
                             break;
 
                         case (int)ClsGridShiire.ColNO.PurchaseUnitPrice:
-                            if (!mGrid.g_DArray[w_Row].PurchaseUnitPrice.Equals(w_ActCtl.Text))
+                            if (mGrid.g_DArray[w_Row].PurchaseUnitPrice != w_ActCtl.Text)
                             {
                                 changeFlg = true;
                             }
                             break;
 
                         case (int)ClsGridShiire.ColNO.AdjustmentGaku:
-                            if (!mGrid.g_DArray[w_Row].AdjustmentGaku.Equals(w_ActCtl.Text))
+                            if (mGrid.g_DArray[w_Row].AdjustmentGaku != w_ActCtl.Text)
                             {
                                 changeFlg = true;
                             }
