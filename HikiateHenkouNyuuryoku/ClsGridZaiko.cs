@@ -31,6 +31,7 @@ namespace HikiateHenkouNyuuryoku
             internal string ArrivalDate;                // 入荷日
             internal string StockNO;                    // 在庫番号
             internal string SelectReserveSu;            // 読込時引当数
+            internal string SelectAllowableSu;          // 読込時引当可能数
             internal string AnotherStoreAllowableSu;    // 他店舗引当可能数
 
         }
