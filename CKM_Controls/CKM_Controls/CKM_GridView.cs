@@ -507,7 +507,12 @@ namespace CKM_Controls
                             else
                                 this.OnValidating(new CancelEventArgs(false));
                         }
-                            break;
+                        else
+                        {
+                            direction = Keys.Tab;
+                            reverseKey = Keys.Shift | Keys.Tab;
+                        }
+                        break;
                         
                     case Keys.ProcessKey:
                         return base.ProcessCmdKey(ref msg, keyData);
