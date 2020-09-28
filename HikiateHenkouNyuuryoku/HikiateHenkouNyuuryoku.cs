@@ -1998,7 +1998,7 @@ namespace HikiateHenkouNyuuryoku
                         //引当数＞受注数
                         if (reserveSu > bbl.Z_Set(mGrid2.g_DArray[mHikiateCurrentRow].JuchuuSuu))
                         {
-                            bbl.ShowMessage("E223");
+                            bbl.ShowMessage("E223", bbl.Z_SetStr(reserveSu), bbl.Z_SetStr(mGrid2.g_DArray[mHikiateCurrentRow].JuchuuSuu));
                             return false;
                         }
 
@@ -2014,11 +2014,16 @@ namespace HikiateHenkouNyuuryoku
                         mGrid2.g_DArray[mHikiateCurrentRow].ReserveSu = (bbl.Z_Set(mGrid2.g_DArray[mHikiateCurrentRow].ReserveSu) + bbl.Z_Set(updateSu)).ToString();
                         mGrid2.S_DispFromArray(Vsb_Mei_1.Value, ref Vsb_Mei_1);
 
+                        // 引当可能数を表示
+                        mGrid.g_DArray[row].AllowableSu = (bbl.Z_Set(mGrid.g_DArray[row].SelectAllowableSu) - updateSu).ToString();
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
                         //表示用ワークテーブルに反映
                         this.UpdateWorkTable(row, updateSu);
 
                         //前回との差数をワークテーブルに更新するため、今回入力数を退避
                         mGrid.g_DArray[row].SelectReserveSu = mGrid.g_DArray[row].ReserveSu;
+                        mGrid.g_DArray[row].SelectAllowableSu = mGrid.g_DArray[row].AllowableSu;
 
                         //フッタ部引当数
                         this.CalcKei();
@@ -2074,7 +2079,7 @@ namespace HikiateHenkouNyuuryoku
 
                         if (allReserveSu  + bbl.Z_Set(mGrid2.g_DArray[row].ReserveSu) > bbl.Z_Set(mGrid2.g_DArray[row].JuchuuSuu))
                         {
-                            bbl.ShowMessage("E223");
+                            bbl.ShowMessage("E223", bbl.Z_SetStr(allReserveSu + bbl.Z_Set(mGrid2.g_DArray[row].ReserveSu)), bbl.Z_SetStr(mGrid2.g_DArray[row].JuchuuSuu));
                             return false;
                         }
 
@@ -2097,6 +2102,7 @@ namespace HikiateHenkouNyuuryoku
                         }
 
                         mGrid.g_DArray[mZaikoCurrentRow].ReserveSu = (bbl.Z_Set(mGrid.g_DArray[mZaikoCurrentRow].SelectReserveSu) + bbl.Z_Set(updateSu)).ToString();
+                        mGrid.g_DArray[mZaikoCurrentRow].AllowableSu = (bbl.Z_Set(mGrid.g_DArray[mZaikoCurrentRow].SelectAllowableSu) - bbl.Z_Set(updateSu)).ToString();
                         mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
                         //ワークテーブルに反映
@@ -2127,7 +2133,7 @@ namespace HikiateHenkouNyuuryoku
 
             w_Ctrl = juchuuControls[(int)JIndex.JuchuuDateFrom];
 
-            IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
+            //IMT_DMY_0.Focus();       // エラー内容をハイライトにするため　→エラーメッセージが何度も出るため、削除
             w_Ret = mGrid.F_MoveFocus((int)ClsGridZaiko.Gen_MK_FocusMove.MvSet, (int)ClsGridZaiko.Gen_MK_FocusMove.MvSet, w_Ctrl, -1, -1, this.ActiveControl, Vsb_Mei_0, pRow, pCol);
 
         }
@@ -2142,7 +2148,7 @@ namespace HikiateHenkouNyuuryoku
 
             w_Ctrl = zaikoControls[(int)ZIndex.OrderDateFrom];
 
-            IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
+            //IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
             w_Ret = mGrid2.F_MoveFocus((int)ClsGridHikiate.Gen_MK_FocusMove.MvSet, (int)ClsGridHikiate.Gen_MK_FocusMove.MvSet, w_Ctrl, -1, -1, this.ActiveControl, Vsb_Mei_1, pRow, pCol);
 
         }
@@ -2254,6 +2260,7 @@ namespace HikiateHenkouNyuuryoku
             dt.Columns.Add("ArrivalDate", typeof(string));
             dt.Columns.Add("StockNO", typeof(string));
             dt.Columns.Add("SelectReserveSu", typeof(Int32));
+            dt.Columns.Add("SelectAllowableSu", typeof(Int32));
             dt.Columns.Add("AnotherStoreAllowableSu", typeof(Int32));
 
             //dt.Columns.Add("SoukoCD", typeof(string));
@@ -2316,15 +2323,15 @@ namespace HikiateHenkouNyuuryoku
             mHikiateCurrentRow = -1;
 
             Btn_F10.Enabled = false;
-
-            //データ抽出
-            this.GetEntity(); 
-            zaikoTbl = hhbl.D_Stock_SelectForHikiateZaiko(hhe);
-            juchuuTbl = hhbl.D_Stock_SelectForHikiateJuchuu(hhe);
-
-            // 初期表示処理にて在庫テーブルがない場合、受注モードに切り替える
+            
             if (isFirst)
             {
+                //データ抽出
+                this.GetEntity(); 
+                zaikoTbl = hhbl.D_Stock_SelectForHikiateZaiko(hhe);
+                juchuuTbl = hhbl.D_Stock_SelectForHikiateJuchuu(hhe);
+
+                // 初期表示処理にて在庫テーブルがない場合、受注モードに切り替える
                 if (zaikoTbl.Rows.Count == 0)
                 {
                     //受注から引当モード
@@ -2355,6 +2362,7 @@ namespace HikiateHenkouNyuuryoku
                         , row["ArrivalDate"].ToString() == "" ? null : row["ArrivalDate"].ToString()
                         , row["StockNO"].ToString()
                         , bbl.Z_Set(row["SelectReserveSu"])
+                        , bbl.Z_Set(row["SelectAllowableSu"])
                         , bbl.Z_Set(row["AnotherStoreAllowableSu"])                        
 
                         //, row["SoukoCD"].ToString()
@@ -2436,17 +2444,17 @@ namespace HikiateHenkouNyuuryoku
                 foreach (DataRow row in zaikoTbl.Rows)
                 {
                     if (row["StockNO"].ToString() == stockNO)
-                    {
-                        //row["AllowableSu"] = bbl.Z_Set(row["AllowableSu"]) + updateSu;
-                        //row["AnotherStoreAllowableSu"] = bbl.Z_Set(row["AnotherStoreAllowableSu"]) + updateSu;
+                    {                       
                         //受注状況の読込時引当数と引当数との差の合計を更新
                         row["ReserveSu"] = bbl.Z_Set(row["SelectReserveSu"]) + updateSu;
+                        row["AllowableSu"] = bbl.Z_Set(row["SelectAllowableSu"]) - updateSu;
+                        //row["AnotherStoreAllowableSu"] = bbl.Z_Set(row["AnotherStoreAllowableSu"]) - updateSu;
                     }
                 }
 
                 //受注ワークテーブル
-                if (bbl.Z_Set(mGrid2.g_DArray[currentRow].ReserveSu) != bbl.Z_Set(mGrid2.g_DArray[currentRow].SelectReserveSu))
-                {
+                //if (bbl.Z_Set(mGrid2.g_DArray[currentRow].ReserveSu) != bbl.Z_Set(mGrid2.g_DArray[currentRow].SelectReserveSu))
+                //{
                     bool blnExist = false;
                     short reserveKbn = 0;
 
@@ -2485,7 +2493,7 @@ namespace HikiateHenkouNyuuryoku
 
 
                     }
-                }
+                //}
             }
             else
             {
@@ -2500,11 +2508,11 @@ namespace HikiateHenkouNyuuryoku
                     foreach (DataRow row in zaikoTbl.Rows)
                     {
                         if (row["StockNO"].ToString() == stockNO)
-                        {
-                            //row["AllowableSu"] = bbl.Z_Set(row["AllowableSu"]) + updateSu;
-                            //row["AnotherStoreAllowableSu"] = bbl.Z_Set(row["AnotherStoreAllowableSu"]) + updateSu;
+                        {  
                             //各行の前回入力時との差数を更新
                             row["ReserveSu"] = bbl.Z_Set(row["ReserveSu"]) + updateSu;
+                            row["AllowableSu"] = bbl.Z_Set(row["AllowableSu"]) - updateSu;
+                            //row["AnotherStoreAllowableSu"] = bbl.Z_Set(row["AnotherStoreAllowableSu"]) - updateSu;
                         }
                     }
 
@@ -2706,7 +2714,7 @@ namespace HikiateHenkouNyuuryoku
 
                 juchuuDispTbl.Clear();
 
-                foreach (DataRow row in juchuuTbl.Select("", "JuchuuNO, JuchuuRows"))
+                foreach (DataRow row in juchuuTbl.Select("", "JuchuuDate, JuchuuNO, JuchuuRows"))
                 {
                     if (juchuuNo != row["JuchuuNO"].ToString() || juchuuRows != bbl.Z_Set(row["JuchuuRows"]))
                     {
@@ -2791,6 +2799,7 @@ namespace HikiateHenkouNyuuryoku
                         , row["ArrivalDate"].ToString() == "" ? null : row["ArrivalDate"].ToString()
                         , row["StockNO"].ToString()
                         , reserveSu
+                        , bbl.Z_Set(row["AllowableSu"])
                         , bbl.Z_Set(row["AnotherStoreAllowableSu"])
                        );
                 }
@@ -2805,50 +2814,50 @@ namespace HikiateHenkouNyuuryoku
         {
             try
             {
-                //if (mOpeMode == EOpeMode.JUCHUU)
-                //{
-                //    // 明細部  画面の範囲の内容を配列にセット
-                //    mGrid.S_DispToArray(Vsb_Mei_0.Value);
+                if (mOpeMode == EOpeMode.JUCHUU)
+                {
+                    // 明細部  画面の範囲の内容を配列にセット
+                    mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
-                //    //明細部チェック
-                //    for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
-                //    {
-                //        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].StockNO) == false)
-                //        {
-                //            for (int CL = (int)ClsGridZaiko.ColNO.ReserveSu; CL < (int)ClsGridZaiko.ColNO.COUNT; CL++)
-                //            {
-                //                if (CheckGrid(CL, RW, true) == false)
-                //                {
-                //                    //Focusセット処理
-                //                    ERR_FOCUS_GRID_SUB(CL, RW);
-                //                    return;
-                //                }
-                //            }
-                //        }
-                //    }
-                //}
-                //else
-                //{
-                //    // 明細部  画面の範囲の内容を配列にセット
-                //    mGrid2.S_DispToArray(Vsb_Mei_1.Value);
+                    //明細部チェック
+                    for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+                    {
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].StockNO) == false)
+                        {
+                            for (int CL = (int)ClsGridZaiko.ColNO.ReserveSu; CL < (int)ClsGridZaiko.ColNO.COUNT; CL++)
+                            {
+                                if (CheckGrid(CL, RW, true) == false)
+                                {
+                                    //Focusセット処理
+                                    ERR_FOCUS_GRID_SUB(CL, RW);
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    // 明細部  画面の範囲の内容を配列にセット
+                    mGrid2.S_DispToArray(Vsb_Mei_1.Value);
 
-                //    //明細部チェック
-                //    for (int RW = 0; RW <= mGrid2.g_MK_Max_Row - 1; RW++)
-                //    {
-                //        if (string.IsNullOrWhiteSpace(mGrid2.g_DArray[RW].JuchuuNO) == false)
-                //        {
-                //            for (int CL = (int)ClsGridHikiate.ColNO.ReserveSu; CL < (int)ClsGridHikiate.ColNO.COUNT; CL++)
-                //            {
-                //                if (CheckGrid2(CL, RW, true) == false)
-                //                {
-                //                    //Focusセット処理
-                //                    ERR_FOCUS_GRID2_SUB(CL, RW);
-                //                    return;
-                //                }
-                //            }
-                //        }
-                //    }
-                //}
+                    //明細部チェック
+                    for (int RW = 0; RW <= mGrid2.g_MK_Max_Row - 1; RW++)
+                    {
+                        if (string.IsNullOrWhiteSpace(mGrid2.g_DArray[RW].JuchuuNO) == false)
+                        {
+                            for (int CL = (int)ClsGridHikiate.ColNO.ReserveSu; CL < (int)ClsGridHikiate.ColNO.COUNT; CL++)
+                            {
+                                if (CheckGrid2(CL, RW, true) == false)
+                                {
+                                    //Focusセット処理
+                                    ERR_FOCUS_GRID2_SUB(CL, RW);
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
 
                 //Ｑ１０１		
                 if (bbl.ShowMessage("Q101") != DialogResult.Yes)
@@ -2965,7 +2974,7 @@ namespace HikiateHenkouNyuuryoku
                 this.ChangeOperationMode(EOpeMode.ZAIKO);
 
                 //表示用ワークテーブル追加
-                this.InsertDispTable();
+                this.InsertDispTable(true);
 
                 if (zaikoTbl.Rows.Count == 0)
                 {
@@ -3072,6 +3081,8 @@ namespace HikiateHenkouNyuuryoku
                     ModeColor = Color.FromArgb(0, 176, 240);
                     ModeText = "在庫";
                     Scr_Clr(1);
+                    lblArrow.Text = "▶";
+                    lblArrow.ForeColor = Color.FromArgb(0, 176, 240);
                     break;
 
                 case EOpeMode.JUCHUU:
@@ -3079,8 +3090,13 @@ namespace HikiateHenkouNyuuryoku
                     ModeColor = Color.FromArgb(255, 255, 0);
                     ModeText = "受注";
                     Scr_Clr(2);
+                    lblArrow.Text = "◀";
+                    lblArrow.ForeColor = Color.FromArgb(255, 255, 0);
                     break;
             }
+
+            lblZaikoMode.Visible = mOpeMode.Equals(EOpeMode.ZAIKO);
+            lblJuchuuMode.Visible = mOpeMode.Equals(EOpeMode.JUCHUU);
 
         }
 
@@ -3123,6 +3139,7 @@ namespace HikiateHenkouNyuuryoku
                     mGrid.g_DArray[i].ArrivalDate = row["ArrivalDate"].ToString();
                     mGrid.g_DArray[i].StockNO = row["StockNO"].ToString();
                     mGrid.g_DArray[i].SelectReserveSu = bbl.Z_SetStr(row["SelectReserveSu"]);
+                    mGrid.g_DArray[i].SelectAllowableSu = bbl.Z_SetStr(row["SelectAllowableSu"]);
                     mGrid.g_DArray[i].AnotherStoreAllowableSu = bbl.Z_SetStr(row["AnotherStoreAllowableSu"]);
 
                     m_dataCnt = i + 1;

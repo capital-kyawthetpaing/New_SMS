@@ -929,6 +929,7 @@ namespace HenpinNyuuryoku
 
                 // 明細部初期化
                 this.S_SetInit_Grid();
+                Scr_Clr(0);
 
                 //起動時共通処理
                 base.StartProgram();
@@ -965,6 +966,16 @@ namespace HenpinNyuuryoku
                     CboStoreCD.SelectedValue = mse.StoreCD;
                     InStoreCD = mse.StoreCD;
                     ScStaff.LabelText = mse.StaffName;
+                }
+                //他のプログラムから起動された場合、照会モードで起動
+                //コマンドライン引数を配列で取得する
+                string[] cmds = System.Environment.GetCommandLineArgs();
+                if (cmds.Length - 1 > (int)ECmdLine.PcID)
+                {
+                    string shiireNO = cmds[(int)ECmdLine.PcID + 1];   //
+                    ChangeOperationMode(EOperationMode.UPDATE);
+                    keyControls[(int)EIndex.PurchaseNO].Text = shiireNO;
+                    CheckKey((int)EIndex.PurchaseNO, true);
                 }
 
             }
@@ -1865,7 +1876,7 @@ namespace HenpinNyuuryoku
                     mGrid.g_DArray[row].PurchaseGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].CalculationGaku) + bbl.Z_Set(mGrid.g_DArray[row].AdjustmentGaku)); 
                      //消費税額(Hidden)←Function_消費税計算.out金額１	
                      decimal zei;
-                    decimal zeikomi = bbl.GetZeikomiKingaku(bbl.Z_Set(mGrid.g_DArray[row].CalculationGaku), mGrid.g_DArray[row].TaxRateFLG,out zei, ymd);
+                    decimal zeikomi = bbl.GetZeikomiKingaku(bbl.Z_Set(mGrid.g_DArray[row].PurchaseGaku), mGrid.g_DArray[row].TaxRateFLG,out zei, ymd);
                     mGrid.g_DArray[row].PurchaseTax = zei;
                     mGrid.g_DArray[row].PurchaseGaku10 = 0;
                     mGrid.g_DArray[row].PurchaseGaku8 = 0;
@@ -1873,12 +1884,12 @@ namespace HenpinNyuuryoku
                     //通常税率仕入額(Hidden)M_SKU.TaxRateFLG＝1	の時の仕入額
                     if (mGrid.g_DArray[row].TaxRateFLG.Equals(1))
                     {
-                        mGrid.g_DArray[row].PurchaseGaku10 =bbl.Z_Set( mGrid.g_DArray[row].CalculationGaku);
+                        mGrid.g_DArray[row].PurchaseGaku10 =bbl.Z_Set( mGrid.g_DArray[row].PurchaseGaku);
                     }
                     //軽減税率仕入額(Hidden)M_SKU.TaxRateFLG＝2	の時の仕入額
                     else if (mGrid.g_DArray[row].TaxRateFLG.Equals(2))
                     {
-                        mGrid.g_DArray[row].PurchaseGaku8 = bbl.Z_Set(mGrid.g_DArray[row].CalculationGaku);
+                        mGrid.g_DArray[row].PurchaseGaku8 = bbl.Z_Set(mGrid.g_DArray[row].PurchaseGaku);
                     }
 
                     //各金額項目の再計算必要
@@ -2731,21 +2742,21 @@ namespace HenpinNyuuryoku
                     switch (CL)
                     {
                         case (int)ClsGridShiire.ColNO.PurchaseSu:
-                            if (!mGrid.g_DArray[w_Row].PurchaseSu.Equals(w_ActCtl.Text))
+                            if (mGrid.g_DArray[w_Row].PurchaseSu != w_ActCtl.Text)
                             {
                                 changeFlg = true;
                             }
                             break;
 
                         case (int)ClsGridShiire.ColNO.PurchaserUnitPrice:
-                            if (!mGrid.g_DArray[w_Row].PurchaserUnitPrice.Equals(w_ActCtl.Text))
+                            if (mGrid.g_DArray[w_Row].PurchaserUnitPrice != w_ActCtl.Text)
                             {
                                 changeFlg = true;
                             }
                             break;
 
                         case (int)ClsGridShiire.ColNO.AdjustmentGaku:
-                            if (!mGrid.g_DArray[w_Row].AdjustmentGaku.Equals(w_ActCtl.Text))
+                            if (mGrid.g_DArray[w_Row].AdjustmentGaku != w_ActCtl.Text)
                             {
                                 changeFlg = true;
                             }

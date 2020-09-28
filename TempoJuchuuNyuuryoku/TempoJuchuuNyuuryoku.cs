@@ -1165,7 +1165,7 @@ namespace TempoJuchuuNyuuryoku
 
             //明細が出荷済の受注明細、または、売上済の受注明細である場合、削除できない（F7ボタンを使えないようにする）
             //出荷済・売上済の場合は行削除不可
-            if (mGrid.g_DArray[w_Row].Syukka.Equals("出荷済") || mGrid.g_DArray[w_Row].Syukka.Equals("売上済"))
+            if (mGrid.g_DArray[w_Row].Syukka == "出荷済" || mGrid.g_DArray[w_Row].Syukka =="売上済")
                 return;
 
             for (int i = w_Row; i < mGrid.g_MK_Max_Row - 1; i++)
@@ -1190,8 +1190,8 @@ namespace TempoJuchuuNyuuryoku
             //フォーカスセット
             IMT_DMY_0.Focus();
 
-                //現在行へ
-                mGrid.F_MoveFocus((int)ClsGridJuchuu.Gen_MK_FocusMove.MvSet, (int)ClsGridJuchuu.Gen_MK_FocusMove.MvNxt, mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl, w_Row, col, ActiveControl, Vsb_Mei_0, w_Row, col);
+            //現在行へ
+            mGrid.F_MoveFocus((int)ClsGridJuchuu.Gen_MK_FocusMove.MvSet, (int)ClsGridJuchuu.Gen_MK_FocusMove.MvNxt, mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl, w_Row, col, ActiveControl, Vsb_Mei_0, w_Row, col);
 
         }
 
@@ -4926,21 +4926,21 @@ namespace TempoJuchuuNyuuryoku
                     switch (CL)
                     {
                         case (int)ClsGridJuchuu.ColNO.JuchuuSuu:
-                            if (!mGrid.g_DArray[w_Row].JuchuuSuu.Equals(w_ActCtl.Text))
+                            if (mGrid.g_DArray[w_Row].JuchuuSuu != w_ActCtl.Text)
                             {
                                 changeFlg = true;
                             }
                             break;
 
                         case (int)ClsGridJuchuu.ColNO.JuchuuUnitPrice: //販売単価
-                            if (!mGrid.g_DArray[w_Row].JuchuuUnitPrice.Equals(w_ActCtl.Text))
+                            if (mGrid.g_DArray[w_Row].JuchuuUnitPrice != w_ActCtl.Text)
                             {
                                 changeFlg = true;
                             }
                             break;
 
                         case (int)ClsGridJuchuu.ColNO.CostUnitPrice: //原価単価
-                            if (!mGrid.g_DArray[w_Row].CostUnitPrice.Equals(w_ActCtl.Text))
+                            if (mGrid.g_DArray[w_Row].CostUnitPrice != w_ActCtl.Text)
                             {
                                 changeFlg = true;
                             }
@@ -4999,7 +4999,10 @@ namespace TempoJuchuuNyuuryoku
                                         }
 
                                         //原価単価=Function_単価取得.out原価単価	
-                                        mGrid.g_DArray[w_Row].CostUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.GenkaTanka));
+                                        if (bbl.Z_Set(fue.GenkaTanka) ==0)
+                                            mGrid.g_DArray[w_Row].CostUnitPrice = mGrid.g_DArray[w_Row].OrderUnitPrice;
+                                        else
+                                            mGrid.g_DArray[w_Row].CostUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.GenkaTanka));
                                     }
                                     else
                                     {

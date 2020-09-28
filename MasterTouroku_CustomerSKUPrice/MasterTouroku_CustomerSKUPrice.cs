@@ -61,7 +61,7 @@ namespace MasterTouroku_CustomerSKUPrice
         private void FrmMasterTouroku_CustomerSKUPrice_Load(object sender, EventArgs e)
         {
             InProgramID = ProID;
-            SetFunctionLabel(EProMode.MENTE);
+            SetFunctionLabel(EProMode.INPUT);
 
             InitialControlArray();
 
@@ -193,12 +193,7 @@ namespace MasterTouroku_CustomerSKUPrice
         {
             detailControls = new Control[] { txtStartDate, txtEndDate, ScCustomer_Start.TxtCode,ScCustomer_End.TxtCode, ScSKUCD_Start.TxtCode,ScSKUCD_End.TxtCode,txtItemName };
 
-            ////イベント付与
-            //foreach (Control ctl in keyControls)
-            //{
-            //    ctl.KeyDown += new System.Windows.Forms.KeyEventHandler(KeyControl_KeyDown);
-            //    ctl.Enter += new System.EventHandler(KeyControl_Enter);
-            //}
+            
             //foreach (Control ctl in detailControls)
             //{
             //    ctl.KeyDown += new System.Windows.Forms.KeyEventHandler(DetailControl_KeyDown);

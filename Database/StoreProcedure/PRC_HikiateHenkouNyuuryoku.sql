@@ -144,6 +144,7 @@ BEGIN
           ,ZAI.StockSu
           ,ZAI.PlanSu
           ,ZAI.AllowableSu
+          ,ZAI.AllowableSu AS SelectAllowableSu
           ,ZAI.AnotherStoreAllowableSu
           ,ZAI.ReserveSu
           ,ZAI.ReserveSu AS SelectReserveSu
@@ -505,6 +506,7 @@ CREATE TYPE T_Zaiko AS TABLE
     [StockSu] [int] ,
     [PlanSu] [int] ,
     [AllowableSu] [int] ,
+    [SelectAllowableSu] [int] ,
     [AnotherStoreAllowableSu] [int] ,
     [ReserveSu] [int] ,
     [SelectReserveSu] [int] ,
@@ -589,7 +591,8 @@ BEGIN
     -- 在庫テーブル（テーブル転送仕様A）
     UPDATE D_Stock
        SET ReserveSu = tbl.ReserveSu
-          ,AllowableSu = tbl.AllowableSu + tbl.SelectReserveSu - tbl.ReserveSu
+          ,AllowableSu = tbl.AllowableSu
+          --,AllowableSu = tbl.AllowableSu + tbl.SelectReserveSu - tbl.ReserveSu
           ,AnotherStoreAllowableSu = tbl.AnotherStoreAllowableSu  + tbl.SelectReserveSu - tbl.ReserveSu
           ,UpdateOperator  =  @Operator  
           ,UpdateDateTime  =  @SYSDATETIME

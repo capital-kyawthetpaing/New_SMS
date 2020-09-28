@@ -40,15 +40,9 @@ namespace UrikakekinTairyuuHyou
             StartProgram();
 
             ModeVisible = false;
-            Btn_F2.Text = string.Empty;
-            Btn_F9.Text = string.Empty;
-            //Btn_F10.Text = string.Empty;
-            Btn_F11.Text = string.Empty;
-
-            Btn_F10.Text = "出力(F10)";
-
+            Btn_F10.Text = string.Empty;
+            Btn_F11.Text = "Excel(F11)";
             BindData();
-            
             SetRequireField();
         }
 
@@ -105,9 +99,9 @@ namespace UrikakekinTairyuuHyou
                         break;
                     }
 
-                case 9: //F11
-                    ExcelExport(); break;
-              
+                case 10: //F11
+                    ExcelExport();
+                    break;
             }
         }
         protected override void EndSec()
@@ -162,10 +156,9 @@ namespace UrikakekinTairyuuHyou
 
         public void ExcelExport()
         {
-            if(ErrorCheck())
-            {
-                if(CheckBeforeExport())
-                {
+              if(ErrorCheck())
+              {
+                    CheckBeforeExport();
                     if (bbl.ShowMessage("Q205") == DialogResult.Yes)
                     {
                         msce = new M_StoreClose_Entity();
@@ -184,10 +177,6 @@ namespace UrikakekinTairyuuHyou
                                 strmonth[i] = dtime.AddMonths(-i).ToString("yyyy/MM/dd").Substring(0, 7).ToString();
                             }
                         }
-
-                       
-                        
-
                         DataTable dt=ukkthbl.Select_DataToExport(msce);
                         //DataRow dr = dt.NewRow();
                         //dr["CustomerCD"] = "";
@@ -329,11 +318,7 @@ namespace UrikakekinTairyuuHyou
                                         wb.Worksheet("worksheet").Cell(4, 2).Value = " ";
                                         wb.Worksheet("worksheet").Cell(4, 3).Value = " ";
                                         wb.Worksheet("worksheet").Cell(4, 16).Value = "売掛月数";
-                                        
                                         wb.Worksheet("worksheet").Hide();
-
-                                        
-
                                         //wb.Worksheet("worksheet").Cell(3, 4).Value = "'" + strmonth[11].ToString();
                                         //wb.Worksheet("worksheet").Cell(3, 5).Value = "'" + strmonth[10].ToString();
                                         //wb.Worksheet("worksheet").Cell(3, 6).Value = "'" + strmonth[9].ToString();
@@ -368,8 +353,7 @@ namespace UrikakekinTairyuuHyou
                             txtDate.Focus();
                         }
                     }
-                }
-            }
+              }
         }
 
         protected override void PrintSec()
@@ -533,7 +517,7 @@ namespace UrikakekinTairyuuHyou
                 }
                 finally
                 {
-
+                    txtDate.Focus();
                 }
             }
         }

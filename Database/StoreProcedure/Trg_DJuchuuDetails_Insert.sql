@@ -1,5 +1,6 @@
 
 
+
 /****** Object:  Trigger [Trg_DJuchuuDetails_Insert]    Script Date: 2020/09/24 11:13:42 ******/
 DROP TRIGGER [dbo].[Trg_DJuchuuDetails_Insert]
 GO
@@ -24,6 +25,7 @@ AS
 --********************************************--
 BEGIN
 
+--test12345
     INSERT INTO [L_JuchuuDetailsHistory]
            ([HistorySEQ]
        --    ,[HistorySEQRows]
