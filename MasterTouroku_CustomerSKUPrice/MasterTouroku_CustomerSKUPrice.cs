@@ -574,7 +574,7 @@ namespace MasterTouroku_CustomerSKUPrice
                         c.TxtCode.Text = "";
                         c.LabelText = "";
                     }
-                    else if (ctrl is CKM_RadioButton cr && cr.Name == "ckM_RadioButton1")
+                    else if (ctrl is CKM_RadioButton cr && cr.Name == "rdoRecent")
                     {
                         cr.Checked = true;
                     }
@@ -1132,13 +1132,13 @@ namespace MasterTouroku_CustomerSKUPrice
                    
                     if (dtSKUPrice.Rows.Count > 0)
                     {
-
+                        SetMultiColNo(dtSKUPrice);
                     }
                     else
                     {
                         bbl.ShowMessage("E128");
                         Scr_Clr(1);
-                        previousCtrl.Focus();
+                        txtStartDate.Focus();
                     }
 
                 }
