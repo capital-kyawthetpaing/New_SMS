@@ -18,7 +18,7 @@ namespace DL
             string sp = "GetMaxTaxRate";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@Flg", new ValuePair { value1 = SqlDbType.Date, value2 = Flg } },
+                { "@Flg", new ValuePair { value1 = SqlDbType.VarChar, value2 = Flg } },
                 { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = Date } },
             };
 
