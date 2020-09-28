@@ -385,26 +385,56 @@ namespace ShiireShoukaiShiiresaki
             }
 
             /// <remarks>仕入先CDが存在しない場合エラーになる</remarks>
+            //if (!string.IsNullOrEmpty(scSupplier.TxtCode.Text))
+            //{
+            //    if (!scSupplier.IsExists(2))
+            //    {
+            //        dpurchase_bl.ShowMessage("E101");
+            //        scSupplier.SetFocus(1);
+            //        return false;
+            //    }
+            //}
+            scSupplier.ChangeDate = bbl.GetDate();
             if (!string.IsNullOrEmpty(scSupplier.TxtCode.Text))
             {
-                if (!scSupplier.IsExists(2))
+                if (scSupplier.SelectData())
                 {
-                    dpurchase_bl.ShowMessage("E101");
+                    scSupplier.Value1 = scSupplier.TxtCode.Text;
+                    scSupplier.Value2 = scSupplier.LabelText;
+                }
+                else
+                {
+                    bbl.ShowMessage("E101");
                     scSupplier.SetFocus(1);
                     return false;
                 }
             }
 
-            /// <remarks>スタッフCDが存在しない場合エラーになる</remarks>
+            scStaff.ChangeDate = bbl.GetDate();
             if (!string.IsNullOrEmpty(scStaff.TxtCode.Text))
             {
-                if (!scStaff.IsExists(2))
+                if (scStaff.SelectData())
                 {
-                    dpurchase_bl.ShowMessage("E101");
+                    scStaff.Value1 = scStaff.TxtCode.Text;
+                    scStaff.Value2 = scStaff.LabelText;
+                }
+                else
+                {
+                    bbl.ShowMessage("E101");
                     scStaff.SetFocus(1);
                     return false;
                 }
             }
+            /// <remarks>スタッフCDが存在しない場合エラーになる</remarks>
+            //if (!string.IsNullOrEmpty(scStaff.TxtCode.Text))
+            //{
+            //    if (!scStaff.IsExists(2))
+            //    {
+            //        dpurchase_bl.ShowMessage("E101");
+            //        scStaff.SetFocus(1);
+            //        return false;
+            //    }
+            //}
 
             /// <remarks>店舗名を選択した場合、権限があるかとかをチェックする</remarks>
             //if (!CboStore_ErrorCheck())
