@@ -401,7 +401,7 @@ namespace SiharaiTouroku
                     return;
                 }
                 else
-                {
+                {                
                     dtPay1Detail = sibl.D_PayPlan_SelectDetail(dppe);
 
                     //テーブル転送仕様Ｘに従って排他テーブルに追加（D_PayPlan.Number）
@@ -808,9 +808,25 @@ namespace SiharaiTouroku
                             bbl.ShowMessage("E115");
                             return false;
                         }
+                        bool ret;
 
+                        if (OperationMode == EOperationMode.DELETE)
+                        {
+                            //店舗の締日チェック
+                            //店舗締マスターで判断
+                            M_StoreClose_Entity msce = new M_StoreClose_Entity
+                            {
+                                StoreCD = StoreCD,
+                                FiscalYYYYMM = dtPayplan.Rows[0]["PayDate"].ToString().Replace("/", "").Substring(0, 6)
+                            };
+                            ret = bbl.CheckStoreClose(msce, false, false, false, true, false);
+                            if (!ret)
+                            {
+                                return false;
+                            }
+                        }
                         //排他処理
-                        bool ret = SelectAndInsertExclusive(Exclusive_BL.DataKbn.Shiharai, ScPaymentNum.TxtCode.Text);
+                        ret = SelectAndInsertExclusive(Exclusive_BL.DataKbn.Shiharai, ScPaymentNum.TxtCode.Text);
                         if (!ret)
                             return false;
 
