@@ -1414,14 +1414,14 @@ namespace SiharaiTouroku
         {
             try
             {
-                //if (e.Exception != null)
-                //{
-                //    MessageBox.Show(this,
-                //        string.Format("({0}, {1}) のセルでエラーが発生しました。\n\n説明: {2}",
-                //        e.ColumnIndex, e.RowIndex, e.Exception.Message),
-                //        "エラーが発生しました",
-                //        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
+                if (e.Exception != null)
+                {
+                    //MessageBox.Show(this,
+                    //    string.Format("({0}, {1}) のセルでエラーが発生しました。\n\n説明: {2}",
+                    //    e.ColumnIndex, e.RowIndex, e.Exception.Message),
+                    //    "エラーが発生しました",
+                    //    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
             catch (Exception ex)
