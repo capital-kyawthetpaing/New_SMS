@@ -423,6 +423,7 @@ namespace TanabanNyuuryoku
                     if (Convert.ToBoolean(row.Cells["colChk"].EditedFormattedValue) == true)
                     {
                         row.Cells["colRackNo1"].Value = ScStorage.TxtCode.Text;
+                        row.Cells["colChk"].Value = false;
                     }
                 }
             }
