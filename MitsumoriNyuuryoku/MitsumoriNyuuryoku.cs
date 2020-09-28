@@ -1228,6 +1228,7 @@ namespace MitsumoriNyuuryoku
             }
             foreach (Control ctl in detailControls)
             {
+
                 ctl.KeyDown += new System.Windows.Forms.KeyEventHandler(DetailControl_KeyDown);
                 ctl.Enter += new System.EventHandler(DetailControl_Enter);
             }
