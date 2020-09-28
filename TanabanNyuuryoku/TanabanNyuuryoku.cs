@@ -291,8 +291,6 @@ namespace TanabanNyuuryoku
                     return false;
                 }
               
-               
-                    
             }
             return true;
         }
