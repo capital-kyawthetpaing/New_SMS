@@ -25,6 +25,8 @@ namespace TenzikaiJuchuuTourou
         private const string TempoNouhinsyo = "TenzikaiJuchuuTourou.exe";
         private string C_dt = "";
         private int mTennic;
+        private int mTaxTiming;
+        private int mTaxFractionKBN;
         private Control[] keyControls;
         private Control[] keyLabels;
         private Control[] detailControls;
@@ -1204,8 +1206,8 @@ namespace TenzikaiJuchuuTourou
                 mGrid.g_DArray[row].ArariGaku = bbl.Z_SetStr(val1);
             }
             //same with hanbai Tanka
-            mGrid.g_DArray[row].Tsuujou = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].zeikomijuchuu) -bbl.Z_Set(mGrid.g_DArray[row].ZeinuJuchuu));  // normalTax 5
-            mGrid.g_DArray[row].Keigen = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].zeikomijuchuu) - bbl.Z_Set(mGrid.g_DArray[row].ZeinuJuchuu)); // ReduceTax 6
+            mGrid.g_DArray[row].Tsuujou = bbl.Z_Set(bbl.Z_Set(mGrid.g_DArray[row].zeikomijuchuu) -bbl.Z_Set(mGrid.g_DArray[row].ZeinuJuchuu));  // normalTax 5
+            mGrid.g_DArray[row].Keigen = bbl.Z_Set(bbl.Z_Set(mGrid.g_DArray[row].zeikomijuchuu) - bbl.Z_Set(mGrid.g_DArray[row].ZeinuJuchuu)); // ReduceTax 6
 
 
         }
@@ -1879,6 +1881,8 @@ namespace TenzikaiJuchuuTourou
                             detailControls[index].Focus();
                             return false;
                         }
+                        mTaxTiming = Convert.ToInt16(mce.TaxTiming);
+                        mTaxFractionKBN = Convert.ToInt16(mce.TaxFractionKBN);
                         if (kbn.Equals(0))
                         {                                //住所情報セット
                             addInfo.ade.VariousFLG = mce.VariousFLG;
@@ -2835,12 +2839,110 @@ namespace TenzikaiJuchuuTourou
 
             // CheckHikiate(w_Row, ymd);
             Grid_NotFocus(col, w_Row);
-           // CalcKin();
+            CalcKin();
 
             //配列の内容を画面へセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
             mGrid.F_MoveFocus((int)ClsGridTenjikai.Gen_MK_FocusMove.MvSet, (int)ClsGridTenjikai.Gen_MK_FocusMove.MvSet,sc_shiiresaki, w_Row, col, ActiveControl, Vsb_Mei_0, w_Row, col);
+        }
+        private void CalcKin()
+        {
+            decimal ExcAmt = 0;
+            decimal IncAmt = 0;
+            decimal CostAmt = 0;
+            decimal GrossAmt = 0;
+            decimal CsumAmt = 0;
+            decimal NmalAmt = 0;
+            decimal RdueAmt = 0;
+
+            decimal kin1 = 0;
+            decimal kin2 = 0;
+            decimal kin3 = 0;
+            decimal kin4 = 0;
+            decimal kin5 = 0;
+            decimal zei10 = 0;  //tsuujou
+            decimal zei8 = 0;  // keijen
+
+            decimal kin10 = 0;
+            decimal kin8 = 0;
+            int zeiritsu10 = 0;
+            int zeiritsu8 = 0;
+            int maxKinRowNo = 0;
+            decimal maxKin = 0;
+
+            decimal kinOrder10 = 0;      //発注通常税額(Hidden)
+            decimal kinOrder8 = 0;      //発注軽減税額(Hidden)
+
+            for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+            {
+                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].SCJAN) == false)
+                {
+                  ExcAmt += bbl.Z_Set(mGrid.g_DArray[RW].ZeinuJuchuu); // 1
+                  IncAmt += bbl.Z_Set(mGrid.g_DArray[RW].zeikomijuchuu); //2
+                  CostAmt += bbl.Z_Set(mGrid.g_DArray[RW].HacchuTanka) * bbl.Z_Set(mGrid.g_DArray[RW].JuchuuSuu);
+
+                    zei10 += bbl.Z_Set(mGrid.g_DArray[RW].Tsuujou);
+                    zei8 += bbl.Z_Set(mGrid.g_DArray[RW].Keigen);
+
+                    if (mTaxTiming.Equals("2"))
+                    {
+                        if (mGrid.g_DArray[RW].TaxRateFlg.Equals("1"))
+                        {
+                            kin10 += bbl.Z_Set(mGrid.g_DArray[RW].ZeinuJuchuu);
+                            if (zeiritsu10 == 0 && !string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].ZeinuTanku))
+                                zeiritsu10 = Convert.ToInt16(mGrid.g_DArray[RW].ZeinuTanku.Replace("%", ""));
+                        }
+                        else if (mGrid.g_DArray[RW].TaxRateFlg.Equals("2"))
+                        {
+                            kin8 += bbl.Z_Set(mGrid.g_DArray[RW].ZeinuJuchuu);
+                            if (zeiritsu8 == 0 && !string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].ZeinuTanku))
+                                zeiritsu8 = Convert.ToInt16(mGrid.g_DArray[RW].ZeinuTanku.Replace("%", ""));
+                        }
+
+                        if (maxKin < bbl.Z_Set(mGrid.g_DArray[RW].zeikomijuchuu))
+                        {
+                            maxKin = bbl.Z_Set(mGrid.g_DArray[RW].zeikomijuchuu);
+                            maxKinRowNo = RW;
+                        }
+                    }
+                }
+            }
+
+            GrossAmt = ExcAmt - CostAmt;
+
+            if (Convert.ToInt32(mTaxTiming) == 1 || Convert.ToInt32(mTaxTiming) == 3)
+            {
+                CsumAmt = zei10 + zei8;
+                NmalAmt = bbl.Z_Set(zei10);
+                RdueAmt = bbl.Z_Set(zei8);
+            }
+            else if (Convert.ToInt32(mTaxTiming) == 2)
+            {
+                kin10 = GetResultWithHasuKbn(mTaxFractionKBN, kin10 * zeiritsu10 / 100);
+                kin8 = GetResultWithHasuKbn(mTaxFractionKBN, kin8 * zeiritsu8 / 100);
+
+                decimal sagaku = (kin10 + kin8) - (zei10 + zei8);
+                CsumAmt = kin10 + kin8;
+                if (sagaku != 0)
+                {
+                    mGrid.g_DArray[maxKinRowNo].zeikomijuchuu = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[maxKinRowNo].zeikomijuchuu) + sagaku);  // Add percent Error Amount in the Max row or first line if same 
+                    IncAmt += sagaku;  //Add percent Error Amount
+                    if (mGrid.g_DArray[maxKinRowNo].TaxRateFlg.Equals("1"))
+                    {
+                        mGrid.g_DArray[maxKinRowNo].Tsuujou = mGrid.g_DArray[maxKinRowNo].Tsuujou + sagaku;
+                    }
+                    else if (mGrid.g_DArray[maxKinRowNo].TaxRateFlg.Equals("2"))
+                    {
+                        mGrid.g_DArray[maxKinRowNo].Keigen = mGrid.g_DArray[maxKinRowNo].Keigen + sagaku;
+                    }
+                    CsumAmt += sagaku;
+                }
+                NmalAmt = kin10;
+                RdueAmt = kin8;
+            }
+
+
         }
         private void DEL_SUB()
         {
@@ -2876,7 +2978,7 @@ namespace TenzikaiJuchuuTourou
                 mGrid.g_DArray[i].GYONO = w_Gyo.ToString();          //行番号
             }
 
-           // CalcKin();
+            // CalcKin();
 
             int col = (int)ClsGridTenjikai.ColNO.SCJAN;
             Grid_NotFocus(col, w_Row);
@@ -2885,7 +2987,7 @@ namespace TenzikaiJuchuuTourou
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
             //フォーカスセット
-              scjan_1.TxtCode.Focus();
+            scjan_1.TxtCode.Focus();
 
             //現在行へ
             mGrid.F_MoveFocus((int)ClsGridTenjikai.Gen_MK_FocusMove.MvSet, (int)ClsGridTenjikai.Gen_MK_FocusMove.MvNxt, mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl, w_Row, col, ActiveControl, Vsb_Mei_0, w_Row, col);

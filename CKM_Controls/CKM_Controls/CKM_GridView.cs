@@ -507,7 +507,12 @@ namespace CKM_Controls
                             else
                                 this.OnValidating(new CancelEventArgs(false));
                         }
-                            break;
+                        else
+                        {
+                            direction = Keys.Tab;
+                            reverseKey = Keys.Shift | Keys.Tab;
+                        }
+                        break;
                         
                     case Keys.ProcessKey:
                         return base.ProcessCmdKey(ref msg, keyData);
@@ -786,94 +791,109 @@ namespace CKM_Controls
 
         protected override void OnCellPainting(DataGridViewCellPaintingEventArgs e)
         {
-            if (UseRow)
-            { 
-                //列ヘッダーかどうか調べる
-                if (e.ColumnIndex < 0 && e.RowIndex >= 0)
+            try
+            {
+                if (UseRow)
                 {
-                    //セルを描画する
-                    e.Paint(e.ClipBounds, DataGridViewPaintParts.All);
+                    //列ヘッダーかどうか調べる
+                    if (e.ColumnIndex < 0 && e.RowIndex >= 0)
+                    {
+                        //セルを描画する
+                        e.Paint(e.ClipBounds, DataGridViewPaintParts.All);
 
-                    //行番号を描画する範囲を決定する
-                    //e.AdvancedBorderStyleやe.CellStyle.Paddingは無視しています
-                    Rectangle indexRect = e.CellBounds;
-                    indexRect.Inflate(-2, -2);
-                    //行番号を描画する
-                    TextRenderer.DrawText(e.Graphics,
-                        (e.RowIndex + 1).ToString(),
-                        e.CellStyle.Font,
-                        indexRect,
-                        e.CellStyle.ForeColor,
-                        TextFormatFlags.Right | TextFormatFlags.VerticalCenter);
-                    //描画が完了したことを知らせる
-                    e.Handled = true;
+                        //行番号を描画する範囲を決定する
+                        //e.AdvancedBorderStyleやe.CellStyle.Paddingは無視しています
+                        Rectangle indexRect = e.CellBounds;
+                        indexRect.Inflate(-2, -2);
+                        //行番号を描画する
+                        TextRenderer.DrawText(e.Graphics,
+                            (e.RowIndex + 1).ToString(),
+                            e.CellStyle.Font,
+                            indexRect,
+                            e.CellStyle.ForeColor,
+                            TextFormatFlags.Right | TextFormatFlags.VerticalCenter);
+                        //描画が完了したことを知らせる
+                        e.Handled = true;
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
         protected override void OnDataBindingComplete(DataGridViewBindingCompleteEventArgs e)
         {
-           if (DataSource != null)
-            {
-                this.Focus();
-            }
+            //NO1816
+            //   if (DataSource != null)
+            //    {
+            //        this.Focus();
+            //    }
             base.OnDataBindingComplete(e);
         }
         protected override void OnCellFormatting(DataGridViewCellFormattingEventArgs e)
         {
             base.OnCellFormatting(e);
-            if (e.CellStyle.BackColor != Color.Yellow)
-            {
-                if (!string.IsNullOrWhiteSpace(DisablecolName))
-                {
-                    if (DisablecolName.Equals("*"))
-                    {
-                        e.CellStyle.BackColor = Color.FromArgb(217, 217, 217);
-                    }
-                    else
-                    {
-                        string[] arr = this.DisablecolName.Split(',');
-                        ArrayList arrlst = new ArrayList();
-                        arrlst.AddRange(arr);
 
-                        if (arrlst.Contains(this.Columns[e.ColumnIndex].Name))
+            try
+            {
+                if (e.CellStyle.BackColor != Color.Yellow)
+                {
+                    if (!string.IsNullOrWhiteSpace(DisablecolName))
+                    {
+                        if (DisablecolName.Equals("*"))
                         {
                             e.CellStyle.BackColor = Color.FromArgb(217, 217, 217);
                         }
                         else
+                        {
+                            string[] arr = this.DisablecolName.Split(',');
+                            ArrayList arrlst = new ArrayList();
+                            arrlst.AddRange(arr);
+
+                            if (arrlst.Contains(this.Columns[e.ColumnIndex].Name))
+                            {
+                                e.CellStyle.BackColor = Color.FromArgb(217, 217, 217);
+                            }
+                            else
+                            {
+                                if (e.RowIndex % 2 != 0)
+                                    e.CellStyle.BackColor = Color.FromArgb(221, 235, 247);
+                                else e.CellStyle.BackColor = SystemColors.Window;
+                            }
+                        }
+                    }
+                    else if (!string.IsNullOrWhiteSpace(EnablecolName))
+                    {
+                        if (EnablecolName.Equals("*"))
                         {
                             if (e.RowIndex % 2 != 0)
-                                e.CellStyle.BackColor = Color.FromArgb(221, 235, 247); 
+                                e.CellStyle.BackColor = Color.FromArgb(221, 235, 247);
                             else e.CellStyle.BackColor = SystemColors.Window;
-                        }
-                    }
-                }
-                else if (!string.IsNullOrWhiteSpace(EnablecolName))
-                {
-                    if (EnablecolName.Equals("*"))
-                    {
-                        if (e.RowIndex % 2 != 0)
-                            e.CellStyle.BackColor = Color.FromArgb(221, 235, 247);
-                        else e.CellStyle.BackColor = SystemColors.Window;
-                    }
-                    else
-                    {
-                        string[] arr = this.EnablecolName.Split(',');
-                        ArrayList arrlst = new ArrayList();
-                        arrlst.AddRange(arr);
-
-                        if (arrlst.Contains(this.Columns[e.ColumnIndex].Name))
-                        {
-                            e.CellStyle.BackColor = SystemColors.Window;
                         }
                         else
                         {
-                            e.CellStyle.BackColor = Color.FromArgb(217, 217, 217);
+                            string[] arr = this.EnablecolName.Split(',');
+                            ArrayList arrlst = new ArrayList();
+                            arrlst.AddRange(arr);
+
+                            if (arrlst.Contains(this.Columns[e.ColumnIndex].Name))
+                            {
+                                e.CellStyle.BackColor = SystemColors.Window;
+                            }
+                            else
+                            {
+                                e.CellStyle.BackColor = Color.FromArgb(217, 217, 217);
+                            }
                         }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
-        
         private bool TanaCheck( string colname, string Val= null)
         {
             int e = 0;

@@ -34,6 +34,7 @@ namespace SiharaiTouroku
         DataTable dt4Detail = new DataTable(); // detail for form2(insert mode)
 
         private string mOldPayNo = "";    //排他処理のため使用
+        private DataTable dtForUpdate;  //排他用   
 
         public FrmSiharaiTouroku()
         {
@@ -144,10 +145,25 @@ namespace SiharaiTouroku
         /// </summary>
         private void DeleteExclusive()
         {
-            if (mOldPayNo == "" && dtPayplan == null)
+            if (mOldPayNo == "" && dtPayplan == null && dtForUpdate == null)
                 return;
 
             Exclusive_BL ebl = new Exclusive_BL();
+
+            if (dtForUpdate != null)
+            {
+                foreach (DataRow dr in dtForUpdate.Rows)
+                {
+                    D_Exclusive_Entity de = new D_Exclusive_Entity
+                    {
+                        DataKBN = Convert.ToInt16(dr["kbn"]),
+                        Number = dr["no"].ToString()
+                    };
+
+                    ebl.D_Exclusive_Delete(de);
+                }
+                dtForUpdate = new DataTable();
+            }
             if (mOldPayNo != "")
             {
                 D_Exclusive_Entity dee = new D_Exclusive_Entity
@@ -175,12 +191,12 @@ namespace SiharaiTouroku
             }
             mOldPayNo = "";
         }
-        private bool SelectAndInsertExclusive()
+        private bool SelectAndInsertExclusive(Exclusive_BL.DataKbn kbn, string No)
         {
-            if (OperationMode == EOperationMode.SHOW || OperationMode == EOperationMode.INSERT)
+            if (OperationMode == EOperationMode.SHOW)
                 return true;
 
-            if (string.IsNullOrWhiteSpace(ScPaymentNum.TxtCode.Text))
+            if (string.IsNullOrWhiteSpace(No))
                 return true;
 
             //排他Tableに該当番号が存在するとError
@@ -188,8 +204,8 @@ namespace SiharaiTouroku
             Exclusive_BL ebl = new Exclusive_BL();
             D_Exclusive_Entity dee = new D_Exclusive_Entity
             {
-                DataKBN = (int)Exclusive_BL.DataKbn.Shiharai,
-                Number = ScPaymentNum.TxtCode.Text,
+                DataKBN = (int)kbn,
+                Number = No,
                 Program = this.InProgramID,
                 Operator = this.InOperatorCD,
                 PC = this.InPcID
@@ -385,8 +401,37 @@ namespace SiharaiTouroku
                     return;
                 }
                 else
-                { 
+                {                
                     dtPay1Detail = sibl.D_PayPlan_SelectDetail(dppe);
+
+                    //テーブル転送仕様Ｘに従って排他テーブルに追加（D_PayPlan.Number）
+                    DeleteExclusive();
+
+                    dtForUpdate = new DataTable();
+                    dtForUpdate.Columns.Add("kbn", Type.GetType("System.String"));
+                    dtForUpdate.Columns.Add("no", Type.GetType("System.String"));
+
+                    bool ret;
+
+                    //排他処理
+                    foreach (DataRow row in dtPay1Detail.Rows)
+                    {
+                        if (mOldPayNo != row["Number"].ToString())
+                        {
+                            ret = SelectAndInsertExclusive(Exclusive_BL.DataKbn.Shiire, row["Number"].ToString());
+                            if (!ret)
+                                return;
+
+                            mOldPayNo = row["Number"].ToString();
+
+                            // データを追加
+                            DataRow rowForUpdate;
+                            rowForUpdate = dtForUpdate.NewRow();
+                            rowForUpdate["kbn"] = (int)Exclusive_BL.DataKbn.Shiire;
+                            rowForUpdate["no"] = mOldPayNo;
+                            dtForUpdate.Rows.Add(rowForUpdate);
+                        }
+                    }
 
                     dgvPayment.DataSource = dtPayplan;
                     for (int i = 1; i < dgvPayment.Columns.Count; i++)
@@ -763,9 +808,25 @@ namespace SiharaiTouroku
                             bbl.ShowMessage("E115");
                             return false;
                         }
+                        bool ret;
 
+                        if (OperationMode == EOperationMode.DELETE)
+                        {
+                            //店舗の締日チェック
+                            //店舗締マスターで判断
+                            M_StoreClose_Entity msce = new M_StoreClose_Entity
+                            {
+                                StoreCD = StoreCD,
+                                FiscalYYYYMM = dtPayplan.Rows[0]["PayDate"].ToString().Replace("/", "").Substring(0, 6)
+                            };
+                            ret = bbl.CheckStoreClose(msce, false, false, false, true, false);
+                            if (!ret)
+                            {
+                                return false;
+                            }
+                        }
                         //排他処理
-                        bool ret = SelectAndInsertExclusive();
+                        ret = SelectAndInsertExclusive(Exclusive_BL.DataKbn.Shiharai, ScPaymentNum.TxtCode.Text);
                         if (!ret)
                             return false;
 
@@ -1410,5 +1471,26 @@ namespace SiharaiTouroku
             }
         }
 
+        private void dgvPayment_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try
+            {
+                if (e.Exception != null)
+                {
+                    //MessageBox.Show(this,
+                    //    string.Format("({0}, {1}) のセルでエラーが発生しました。\n\n説明: {2}",
+                    //    e.ColumnIndex, e.RowIndex, e.Exception.Message),
+                    //    "エラーが発生しました",
+                    //    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
     }
 }

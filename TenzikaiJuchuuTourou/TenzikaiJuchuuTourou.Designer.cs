@@ -236,6 +236,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.sc_Tenji = new Search.CKM_SearchControl();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.hdn_ExcAmt = new System.Windows.Forms.Label();
+            this.hdn_IncAmt = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.hdn_CostAmt = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.hdn_NmalAmt = new System.Windows.Forms.Label();
+            this.hdn_CsumAmt = new System.Windows.Forms.Label();
             this.PanelHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnl_haisou.SuspendLayout();
@@ -1159,7 +1166,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(24, 390);
+            this.panel2.Location = new System.Drawing.Point(24, 357);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1760, 400);
             this.panel2.TabIndex = 25;
@@ -4811,11 +4818,88 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
+            // hdn_ExcAmt
+            // 
+            this.hdn_ExcAmt.AutoSize = true;
+            this.hdn_ExcAmt.Location = new System.Drawing.Point(960, 760);
+            this.hdn_ExcAmt.Name = "hdn_ExcAmt";
+            this.hdn_ExcAmt.Size = new System.Drawing.Size(65, 12);
+            this.hdn_ExcAmt.TabIndex = 100;
+            this.hdn_ExcAmt.Text = "hdn_ExcAmt";
+            this.hdn_ExcAmt.Visible = false;
+            // 
+            // hdn_IncAmt
+            // 
+            this.hdn_IncAmt.AutoSize = true;
+            this.hdn_IncAmt.Location = new System.Drawing.Point(1083, 760);
+            this.hdn_IncAmt.Name = "hdn_IncAmt";
+            this.hdn_IncAmt.Size = new System.Drawing.Size(65, 12);
+            this.hdn_IncAmt.TabIndex = 101;
+            this.hdn_IncAmt.Text = "hdn_IncAmt";
+            this.hdn_IncAmt.Visible = false;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(1336, 760);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(77, 12);
+            this.label26.TabIndex = 103;
+            this.label26.Text = "hdn_GrossAmt";
+            this.label26.Visible = false;
+            // 
+            // hdn_CostAmt
+            // 
+            this.hdn_CostAmt.AutoSize = true;
+            this.hdn_CostAmt.Location = new System.Drawing.Point(1218, 760);
+            this.hdn_CostAmt.Name = "hdn_CostAmt";
+            this.hdn_CostAmt.Size = new System.Drawing.Size(71, 12);
+            this.hdn_CostAmt.TabIndex = 102;
+            this.hdn_CostAmt.Text = "hdn_CostAmt";
+            this.hdn_CostAmt.Visible = false;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(1694, 760);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(65, 12);
+            this.label28.TabIndex = 106;
+            this.label28.Text = "hdn_RduAmt";
+            this.label28.Visible = false;
+            // 
+            // hdn_NmalAmt
+            // 
+            this.hdn_NmalAmt.AutoSize = true;
+            this.hdn_NmalAmt.Location = new System.Drawing.Point(1591, 760);
+            this.hdn_NmalAmt.Name = "hdn_NmalAmt";
+            this.hdn_NmalAmt.Size = new System.Drawing.Size(71, 12);
+            this.hdn_NmalAmt.TabIndex = 105;
+            this.hdn_NmalAmt.Text = "hdn_NmalAmt";
+            this.hdn_NmalAmt.Visible = false;
+            // 
+            // hdn_CsumAmt
+            // 
+            this.hdn_CsumAmt.AutoSize = true;
+            this.hdn_CsumAmt.Location = new System.Drawing.Point(1458, 760);
+            this.hdn_CsumAmt.Name = "hdn_CsumAmt";
+            this.hdn_CsumAmt.Size = new System.Drawing.Size(71, 12);
+            this.hdn_CsumAmt.TabIndex = 104;
+            this.hdn_CsumAmt.Text = "hdn_CsumAmt";
+            this.hdn_CsumAmt.Visible = false;
+            // 
             // TenzikaiJuchuuTourou
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1789, 822);
+            this.Controls.Add(this.label28);
+            this.Controls.Add(this.hdn_NmalAmt);
+            this.Controls.Add(this.hdn_CsumAmt);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.hdn_CostAmt);
+            this.Controls.Add(this.hdn_IncAmt);
+            this.Controls.Add(this.hdn_ExcAmt);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Location = new System.Drawing.Point(0, 0);
@@ -4825,6 +4909,13 @@
             this.Load += new System.EventHandler(this.TenzikaiJuchuuTourou_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.hdn_ExcAmt, 0);
+            this.Controls.SetChildIndex(this.hdn_IncAmt, 0);
+            this.Controls.SetChildIndex(this.hdn_CostAmt, 0);
+            this.Controls.SetChildIndex(this.label26, 0);
+            this.Controls.SetChildIndex(this.hdn_CsumAmt, 0);
+            this.Controls.SetChildIndex(this.hdn_NmalAmt, 0);
+            this.Controls.SetChildIndex(this.label28, 0);
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -5069,6 +5160,13 @@
         private GridControl.clsGridCheckBox chk_3;
         private GridControl.clsGridCheckBox chk_2;
         private GridControl.clsGridCheckBox chk_1;
+        private System.Windows.Forms.Label hdn_ExcAmt;
+        private System.Windows.Forms.Label hdn_IncAmt;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label hdn_CostAmt;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label hdn_NmalAmt;
+        private System.Windows.Forms.Label hdn_CsumAmt;
     }
 }
 

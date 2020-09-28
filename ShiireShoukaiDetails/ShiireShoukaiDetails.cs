@@ -39,14 +39,12 @@ namespace ShiireShoukaiDetails
             Btn_F10.Text = "出力(F10)";
             Btn_F10.Enabled = false;
             BindCombo();
-            RequiredField();           
-           // this.cboStore.SelectedIndexChanged += CboStore_SelectedIndexChanged;
+            RequiredField();
+            // this.cboStore.SelectedIndexChanged += CboStore_SelectedIndexChanged;
             cboStore.SelectedValue = StoreCD;
             scItem.CodeWidth = 600;
             scSkuCD.CodeWidth = 600;
-            dgv_PurchaseDetails.AllowUserToAddRows = false;
             ModeVisible = false;
-            //dgv_PurchaseDetails.DisabledColumn("button,PurchaseNO,SupplierDate,Supplier,SKUCD,JANCD,makerCD,ItemName,ColorSize,Remark1,ParchaseCount,PurchaseUnitPrice,ParchaseAmount,OrderCount1,OrderUnitPrice1,OrderAmount1,OrderDate1,OrderNumber,ArrivalPlanDate,DestinationName,Stroe,StaffOperator,PaymentPlanDate,PayConfirmFinishedDate,DeliveryNo");
         }
 
         /// <summary>
@@ -384,23 +382,43 @@ namespace ShiireShoukaiDetails
                }
                 
             }
-
+            //if (!string.IsNullOrEmpty(scMakerCD.TxtCode.Text))
+            //{
+            //    scMakerCD.ChangeDate = DateTime.Today.ToShortDateString();
+            //    if (!scMakerCD.IsExists(2))
+            //    {
+            //        ssdbl.ShowMessage("E101");
+            //        scMakerCD.SetFocus(1);
+            //        return false;
+            //    }
+            //}
+            scMakerCD.ChangeDate = bbl.GetDate();
             if (!string.IsNullOrEmpty(scMakerCD.TxtCode.Text))
             {
-                scMakerCD.ChangeDate = DateTime.Today.ToShortDateString();
-                if (!scMakerCD.IsExists(2))
+                if (scMakerCD.SelectData())
                 {
-                    ssdbl.ShowMessage("E101");
+                    scMakerCD.Value1 = scMakerCD.TxtCode.Text;
+                    scMakerCD.Value2 = scMakerCD.LabelText;
+                }
+                else
+                {
+                    bbl.ShowMessage("E101");
                     scMakerCD.SetFocus(1);
                     return false;
                 }
             }
 
+            scStaffCD.ChangeDate = bbl.GetDate();
             if (!string.IsNullOrEmpty(scStaffCD.TxtCode.Text))
             {
-                if (!scStaffCD.IsExists(2))
+                if (scStaffCD.SelectData())
                 {
-                    ssdbl.ShowMessage("E101");
+                    scStaffCD.Value1 = scStaffCD.TxtCode.Text;
+                    scStaffCD.Value2 = scStaffCD.LabelText;
+                }
+                else
+                {
+                    bbl.ShowMessage("E101");
                     scStaffCD.SetFocus(1);
                     return false;
                 }

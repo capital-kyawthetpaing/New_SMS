@@ -2133,7 +2133,7 @@ namespace HikiateHenkouNyuuryoku
 
             w_Ctrl = juchuuControls[(int)JIndex.JuchuuDateFrom];
 
-            IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
+            //IMT_DMY_0.Focus();       // エラー内容をハイライトにするため　→エラーメッセージが何度も出るため、削除
             w_Ret = mGrid.F_MoveFocus((int)ClsGridZaiko.Gen_MK_FocusMove.MvSet, (int)ClsGridZaiko.Gen_MK_FocusMove.MvSet, w_Ctrl, -1, -1, this.ActiveControl, Vsb_Mei_0, pRow, pCol);
 
         }
@@ -2148,7 +2148,7 @@ namespace HikiateHenkouNyuuryoku
 
             w_Ctrl = zaikoControls[(int)ZIndex.OrderDateFrom];
 
-            IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
+            //IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
             w_Ret = mGrid2.F_MoveFocus((int)ClsGridHikiate.Gen_MK_FocusMove.MvSet, (int)ClsGridHikiate.Gen_MK_FocusMove.MvSet, w_Ctrl, -1, -1, this.ActiveControl, Vsb_Mei_1, pRow, pCol);
 
         }
@@ -2814,50 +2814,50 @@ namespace HikiateHenkouNyuuryoku
         {
             try
             {
-                //if (mOpeMode == EOpeMode.JUCHUU)
-                //{
-                //    // 明細部  画面の範囲の内容を配列にセット
-                //    mGrid.S_DispToArray(Vsb_Mei_0.Value);
+                if (mOpeMode == EOpeMode.JUCHUU)
+                {
+                    // 明細部  画面の範囲の内容を配列にセット
+                    mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
-                //    //明細部チェック
-                //    for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
-                //    {
-                //        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].StockNO) == false)
-                //        {
-                //            for (int CL = (int)ClsGridZaiko.ColNO.ReserveSu; CL < (int)ClsGridZaiko.ColNO.COUNT; CL++)
-                //            {
-                //                if (CheckGrid(CL, RW, true) == false)
-                //                {
-                //                    //Focusセット処理
-                //                    ERR_FOCUS_GRID_SUB(CL, RW);
-                //                    return;
-                //                }
-                //            }
-                //        }
-                //    }
-                //}
-                //else
-                //{
-                //    // 明細部  画面の範囲の内容を配列にセット
-                //    mGrid2.S_DispToArray(Vsb_Mei_1.Value);
+                    //明細部チェック
+                    for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+                    {
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].StockNO) == false)
+                        {
+                            for (int CL = (int)ClsGridZaiko.ColNO.ReserveSu; CL < (int)ClsGridZaiko.ColNO.COUNT; CL++)
+                            {
+                                if (CheckGrid(CL, RW, true) == false)
+                                {
+                                    //Focusセット処理
+                                    ERR_FOCUS_GRID_SUB(CL, RW);
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    // 明細部  画面の範囲の内容を配列にセット
+                    mGrid2.S_DispToArray(Vsb_Mei_1.Value);
 
-                //    //明細部チェック
-                //    for (int RW = 0; RW <= mGrid2.g_MK_Max_Row - 1; RW++)
-                //    {
-                //        if (string.IsNullOrWhiteSpace(mGrid2.g_DArray[RW].JuchuuNO) == false)
-                //        {
-                //            for (int CL = (int)ClsGridHikiate.ColNO.ReserveSu; CL < (int)ClsGridHikiate.ColNO.COUNT; CL++)
-                //            {
-                //                if (CheckGrid2(CL, RW, true) == false)
-                //                {
-                //                    //Focusセット処理
-                //                    ERR_FOCUS_GRID2_SUB(CL, RW);
-                //                    return;
-                //                }
-                //            }
-                //        }
-                //    }
-                //}
+                    //明細部チェック
+                    for (int RW = 0; RW <= mGrid2.g_MK_Max_Row - 1; RW++)
+                    {
+                        if (string.IsNullOrWhiteSpace(mGrid2.g_DArray[RW].JuchuuNO) == false)
+                        {
+                            for (int CL = (int)ClsGridHikiate.ColNO.ReserveSu; CL < (int)ClsGridHikiate.ColNO.COUNT; CL++)
+                            {
+                                if (CheckGrid2(CL, RW, true) == false)
+                                {
+                                    //Focusセット処理
+                                    ERR_FOCUS_GRID2_SUB(CL, RW);
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
 
                 //Ｑ１０１		
                 if (bbl.ShowMessage("Q101") != DialogResult.Yes)
