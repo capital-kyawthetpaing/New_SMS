@@ -58,6 +58,8 @@ namespace TanabanNyuuryoku
             SetRequireField();
 
             txtArrivalDateFrom.Focus();
+
+            dgvTanaban.CheckCol.Add("colRackNo1");
         }
 
         private void BindCombo()
@@ -216,12 +218,11 @@ namespace TanabanNyuuryoku
                         tnbnBL.ShowMessage("E111");
                         chkNotRegister.Focus();
                         return false;
-                    }
-                               
+                    }               
                 }
 
-                if (!RequireCheck(new Control[] { ScStorage.TxtCode }))
-                    return false;
+                //if (!RequireCheck(new Control[] { ScStorage.TxtCode }))
+                //    return false;
 
                 if (!string.IsNullOrWhiteSpace (ScStorage.TxtCode.Text))
                 { 
@@ -236,9 +237,6 @@ namespace TanabanNyuuryoku
                         return false;
                     }
                 }
-
-
-               
 
             }
             else if (index == 12)
@@ -511,11 +509,11 @@ namespace TanabanNyuuryoku
                     }
 
                 }
-                else
-                {
-                    tnbnBL.ShowMessage("E102");
-                    ScStorage.SetFocus(1);
-                }
+                //else
+                //{
+                //    tnbnBL.ShowMessage("E102");
+                //    ScStorage.SetFocus(1);
+                //}
             }
         }
 
@@ -548,6 +546,20 @@ namespace TanabanNyuuryoku
             //    }
             //}
         }
+
+        private void dgvTanaban_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (dgvTanaban.Columns[e.ColumnIndex].Name == "colRackNo1")
+            {
+                string rate = dgvTanaban.Rows[e.RowIndex].Cells["colRackNo1"].EditedFormattedValue.ToString();
+                if (String.IsNullOrEmpty(rate))
+                {
+                    tnbnBL.ShowMessage("E102");
+                    dgvTanaban.RefreshEdit();
+                }
+            }
+        }
+
         //private void CheckRowAdd(DataGridViewRow row)
         //{
         //    if(row.Index == dgvTanaban.Rows.Count -1)
