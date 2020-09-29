@@ -382,6 +382,7 @@ namespace SiharaiTouroku
                         {
                             row.Cells["colChk"].Value = 0;
                         }
+                        dgvPayment.Refresh();
                     }
                     //}
                     LabelDataBind();
