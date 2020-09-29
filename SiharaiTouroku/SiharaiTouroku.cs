@@ -382,6 +382,7 @@ namespace SiharaiTouroku
                         {
                             row.Cells["colChk"].Value = 0;
                         }
+                        dgvPayment.Refresh();
                     }
                     //}
                     LabelDataBind();
@@ -577,28 +578,46 @@ namespace SiharaiTouroku
 
         private void ScPayee_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            //Enterキー押下時処理
-            //Returnキーが押されているか調べる
-            //AltかCtrlキーが押されている時は、本来の動作をさせる
-            if ((e.KeyCode == Keys.Return) &&
-                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+            try
             {
-                F11();
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                        ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+                {
+                    F11();
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
             }
         }
 
         private void ScStaff_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            //Enterキー押下時処理
-            //Returnキーが押されているか調べる
-            //AltかCtrlキーが押されている時は、本来の動作をさせる
-            if ((e.KeyCode == Keys.Return) &&
-                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+            try
             {
-                if (!CheckStaff())
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                        ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
                 {
-                    ScStaff.SetFocus(1);
+                    if (!CheckStaff())
+                    {
+                        ScStaff.SetFocus(1);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
             }
         }
 
@@ -693,6 +712,7 @@ namespace SiharaiTouroku
                                 BankCD = dtSiharai2.Rows[0]["BankCD"].ToString(),
                                 BranchCD = dtSiharai2.Rows[0]["BranchCD"].ToString(),
                                 Amount = lblPayGaku.Text.Replace(",", ""),
+                                ChangeDate = txtPaymentDate.Text,
                             };
                             DataTable dt = sibl.M_Kouza_FeeSelect(mke);
                             if (dt.Rows.Count > 0)
