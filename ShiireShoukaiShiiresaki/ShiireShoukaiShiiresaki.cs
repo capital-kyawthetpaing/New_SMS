@@ -148,6 +148,7 @@ namespace ShiireShoukaiShiiresaki
                 {
                     dpurchase_bl.ShowMessage("E128");
                     dgvPurchaseSearch.DataSource = null;
+                    txtPurchaseDateFrom.Focus();
                 }
             }
         }
