@@ -127,10 +127,10 @@ namespace ShiireShoukaiShiiresaki
                     M_Vendor_Entity mve = new M_Vendor_Entity()
                     {
                         VendorCD = scSupplier.TxtCode.Text,
-                        ChangeDate=scSupplier.ChangeDate.ToString()
+                        ChangeDate = scSupplier.ChangeDate.ToString()
                     };
                     string aa = scSupplier.TxtCode.Text;
-                     payeeflg = dpurchase_bl.SelectPayeeFlg(mve);
+                    payeeflg = dpurchase_bl.SelectPayeeFlg(mve);
                 }
                 dpde = GetSearchInfo();
 
@@ -148,6 +148,7 @@ namespace ShiireShoukaiShiiresaki
                 {
                     dpurchase_bl.ShowMessage("E128");
                     dgvPurchaseSearch.DataSource = null;
+                    txtPurchaseDateFrom.Focus();
                 }
             }
         }
