@@ -13,6 +13,7 @@ namespace TenzikaiJuchuuTourou
         internal struct ST_DArray_Grid
         {
             internal string GYONO;
+            internal bool Chk;
             internal string SCJAN;
             internal string AdminNo; // Hidden
             internal string SKUCD;
@@ -36,7 +37,7 @@ namespace TenzikaiJuchuuTourou
             internal string ArariGaku;
             internal string ZeiNu;
             internal string ZeinuTanku;
-            internal bool Chk;
+            //internal bool Chk;
             internal string ShanaiBi;
             internal string ShagaiBi;
             internal string KobeTsu;
@@ -54,6 +55,7 @@ namespace TenzikaiJuchuuTourou
         internal enum ColNO : int
         {
             GYONO,
+            Chk,
             SCJAN,
            // AdminNo,
             SKUCD,
@@ -76,7 +78,7 @@ namespace TenzikaiJuchuuTourou
             ArariGaku,
             ZeiNu,
             ZeinuTanku,
-            Chk,
+            ///Chk,
             ShanaiBi,
             ShagaiBi,
             KobeTsu,

@@ -291,8 +291,6 @@ namespace TanabanNyuuryoku
                     return false;
                 }
               
-               
-                    
             }
             return true;
         }
@@ -557,6 +555,21 @@ namespace TanabanNyuuryoku
                 {
                     tnbnBL.ShowMessage("E102");
                     dgvTanaban.RefreshEdit();
+                }
+                else
+                {
+                    mle = new M_Location_Entity();
+                    tnbnBL = new TanabanNyuuryoku_BL();
+
+                    mle.SoukoCD = cboWarehouse.SelectedValue.ToString();
+                    mle.TanaCD = rate;
+                    DataTable dtLocation = new DataTable();
+                    dtLocation = tnbnBL.M_LocationTana_Select(mle);
+                    if (dtLocation.Rows.Count == 0)
+                    {
+                        tnbnBL.ShowMessage("E101");
+                        dgvTanaban.RefreshEdit();
+                    }
                 }
             }
         }
