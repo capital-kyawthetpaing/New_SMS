@@ -657,7 +657,6 @@
             this.dgvPurchaseSearch.AllowUserToAddRows = false;
             this.dgvPurchaseSearch.AllowUserToDeleteRows = false;
             this.dgvPurchaseSearch.AllowUserToOrderColumns = true;
-            this.dgvPurchaseSearch.AllowUserToResizeColumns = false;
             this.dgvPurchaseSearch.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.dgvPurchaseSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -762,6 +761,7 @@
             this.Column5.DataPropertyName = "PurchaseGaku";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.Column5.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column5.Frozen = true;
             this.Column5.HeaderText = "本体額";
             this.Column5.Name = "Column5";
             this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
