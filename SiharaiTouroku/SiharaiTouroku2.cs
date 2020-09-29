@@ -30,6 +30,9 @@ namespace SiharaiTouroku
         private string kouzaCD = string.Empty;
         private string payeeCD = string.Empty;
         private string payPlanDate = string.Empty;
+
+        private decimal mOldFurikomiGaku;
+
         public SiharaiTouroku_2(D_Pay_Entity dpe1, DataTable dt, DataTable dtDetail)
         {
             InitializeComponent();
@@ -74,9 +77,12 @@ namespace SiharaiTouroku
 
                 dgvSearchPayment.ReadOnly = false;
                 for (int i = 1; i < dgvSearchPayment.Columns.Count; i++)
-                    if(i != 5)  //今回支払額
-                    dgvSearchPayment.Columns[i].ReadOnly = true;
+                {
+                    if (i != 5)  //今回支払額
+                        dgvSearchPayment.Columns[i].ReadOnly = true;
 
+                    dgvSearchPayment.Columns[i].Resizable =  DataGridViewTriState.False;
+                }
                 BindData();
 
                 LabelDataBind();
@@ -749,18 +755,20 @@ namespace SiharaiTouroku
         public void Select_KouzaFee()
         {
             if (!string.IsNullOrWhiteSpace(SC_BankCD.TxtCode.Text) && !string.IsNullOrWhiteSpace(SC_BranchCD.TxtCode.Text)
-                             && !string.IsNullOrWhiteSpace(txtFeeKBN.Text) && bbl.Z_Set(txtAmount.Text).Equals(0))
+                             && !string.IsNullOrWhiteSpace(txtFeeKBN.Text) && (bbl.Z_Set(txtAmount.Text).Equals(0) || mOldFurikomiGaku != bbl.Z_Set(txtTransferAmount.Text)))
             {
                 M_Kouza_Entity mkze = new M_Kouza_Entity
                 {
                     KouzaCD = kouzaCD,
                     BankCD = SC_BankCD.TxtCode.Text,
                     BranchCD = SC_BranchCD.TxtCode.Text,
-                    Amount = lblPayGaku.Text.Replace(",", ""),
+                    Amount = txtTransferAmount.Text.Replace(",", ""),
+//                    lblPayGaku.Text.Replace(",", ""),
 
                 };
                 DataTable dt=shnbl.M_Kouza_FeeSelect(mkze);
                 txtAmount.Text =bbl.Z_SetStr(dt.Rows[0]["Fee"]);
+                mOldFurikomiGaku =bbl.Z_Set(txtTransferAmount.Text);
             }
 
         }

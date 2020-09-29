@@ -366,17 +366,23 @@ namespace SiharaiTouroku
 
                     //if (OperationMode == EOperationMode.INSERT)
                     //{
-                        SiharaiTouroku_2 f2 = new SiharaiTouroku_2(dpe, dtPayplan, dtPay1Detail);
-                        f2.ProID = InProgramID;
-                        f2.ProName = made.ProgramName;
-                        f2.Operator = InOperatorCD;
+                    SiharaiTouroku_2 f2 = new SiharaiTouroku_2(dpe, dtPayplan, dtPay1Detail);
+                    f2.ProID = InProgramID;
+                    f2.ProName = made.ProgramName;
+                    f2.Operator = InOperatorCD;
 
-                        f2.ShowDialog();
-                        if (!f2.flgCancel)
+                    f2.ShowDialog();
+                    if (!f2.flgCancel)
+                    {
+                        dtPayplan = f2.dtGdv;
+                        dtPay1Detail = f2.dtDetails;
+
+                        //支払総額がゼロの状態で確定した場合、第一画面の該当行のチェックを外す
+                        if (bbl.Z_Set(row.Cells["colPaymenttime"].Value) == 0)
                         {
-                            dtPayplan = f2.dtGdv;
-                            dtPay1Detail = f2.dtDetails;
+                            row.Cells["colChk"].Value = 0;
                         }
+                    }
                     //}
                     LabelDataBind();
                 }
@@ -693,8 +699,8 @@ namespace SiharaiTouroku
                                 dgvPayment.Rows[rowIndex].Cells["colTransferFee"].Value = dt.Rows[0]["Fee"].ToString();
                         }
 
-                        dgvPayment.Rows[rowIndex].Cells["colPaymenttime"].Value = Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
-                        dgvPayment.Rows[rowIndex].Cells["colTransferAmount"].Value = Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
+                        dgvPayment.Rows[rowIndex].Cells["colPaymenttime"].Value = bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
+                        dgvPayment.Rows[rowIndex].Cells["colTransferAmount"].Value = bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
 
                         dgvPayment.Rows[rowIndex].Cells["colUnpaidAmount"].Value = "0";
                         dgvPayment.Rows[rowIndex].Cells["colOtherThanTransfer"].Value = "0";
@@ -702,11 +708,11 @@ namespace SiharaiTouroku
                     }
                     else
                     {
-                        dgvPayment.Rows[rowIndex].Cells["colPaymenttime"].Value = Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
+                        dgvPayment.Rows[rowIndex].Cells["colPaymenttime"].Value = bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
                         dgvPayment.Rows[rowIndex].Cells["colTransferAmount"].Value = "0";
                         dgvPayment.Rows[rowIndex].Cells["colTransferFee"].Value = "0";
                         dgvPayment.Rows[rowIndex].Cells["colUnpaidAmount"].Value = "0";
-                        dgvPayment.Rows[rowIndex].Cells["colOtherThanTransfer"].Value = Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
+                        dgvPayment.Rows[rowIndex].Cells["colOtherThanTransfer"].Value = bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
                     }
 
                     if (dtPay1Detail != null && dtPay1Detail.Rows.Count > 0)
@@ -725,7 +731,7 @@ namespace SiharaiTouroku
             {
                 //OFFにした明細に対して、今回支払額＝0、未支払額＝支払予定額-支払済額とし、第二画面の全入力項目をクリア
                 dgvPayment.Rows[rowIndex].Cells["colPaymenttime"].Value = "0";
-                dgvPayment.Rows[rowIndex].Cells["colUnpaidAmount"].Value = Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
+                dgvPayment.Rows[rowIndex].Cells["colUnpaidAmount"].Value = bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
 
                 if (dtPay1Detail != null)
                 {
@@ -1048,16 +1054,16 @@ namespace SiharaiTouroku
         /// </summary>
         public void LabelDataBind()
         {
-            int sum1 = 0, sum2 = 0, sum3 = 0, sum4 = 0, sum5 = 0, sum6 = 0, sum7 = 0;
+            decimal sum1 = 0, sum2 = 0, sum3 = 0, sum4 = 0, sum5 = 0, sum6 = 0, sum7 = 0;
             for (int i = 0; i < dgvPayment.Rows.Count; ++i)
             {
-                sum1 += Convert.ToInt32(dgvPayment.Rows[i].Cells[4].Value);
-                sum2 += Convert.ToInt32(dgvPayment.Rows[i].Cells[5].Value);
-                sum3 += Convert.ToInt32(dgvPayment.Rows[i].Cells[6].Value);
-                sum4 += Convert.ToInt32(dgvPayment.Rows[i].Cells[7].Value);
-                sum5 += Convert.ToInt32(dgvPayment.Rows[i].Cells[8].Value);
-                sum6 += Convert.ToInt32(dgvPayment.Rows[i].Cells[10].Value);
-                sum7 += Convert.ToInt32(dgvPayment.Rows[i].Cells[11].Value);
+                sum1 +=  bbl.Z_Set(dgvPayment.Rows[i].Cells[4].Value);
+                sum2 +=  bbl.Z_Set(dgvPayment.Rows[i].Cells[5].Value);
+                sum3 +=  bbl.Z_Set(dgvPayment.Rows[i].Cells[6].Value);
+                sum4 +=  bbl.Z_Set(dgvPayment.Rows[i].Cells[7].Value);
+                sum5 +=  bbl.Z_Set(dgvPayment.Rows[i].Cells[8].Value);
+                sum6 +=  bbl.Z_Set(dgvPayment.Rows[i].Cells[10].Value);
+                sum7 +=  bbl.Z_Set(dgvPayment.Rows[i].Cells[11].Value);
 
             }
             lblPayPlanGaku.Text = sum1.ToString("#,##0");
