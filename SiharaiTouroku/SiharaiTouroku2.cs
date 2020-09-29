@@ -764,6 +764,7 @@ namespace SiharaiTouroku
                     BranchCD = SC_BranchCD.TxtCode.Text,
                     Amount = txtTransferAmount.Text.Replace(",", ""),
 //                    lblPayGaku.Text.Replace(",", ""),
+                    ChangeDate = dpe.PayDate,
 
                 };
                 DataTable dt=shnbl.M_Kouza_FeeSelect(mkze);
