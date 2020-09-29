@@ -334,6 +334,7 @@
             this.txtEndDate.TabIndex = 1;
             this.txtEndDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtEndDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtEndDate.UseColorSizMode = false;
             this.txtEndDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEndDate_KeyDown);
             // 
             // txtStartDate
@@ -364,6 +365,7 @@
             this.txtStartDate.TabIndex = 0;
             this.txtStartDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtStartDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtStartDate.UseColorSizMode = false;
             // 
             // FrmTanaireList
             // 

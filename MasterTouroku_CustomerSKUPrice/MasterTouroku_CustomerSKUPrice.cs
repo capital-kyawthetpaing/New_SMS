@@ -61,98 +61,98 @@ namespace MasterTouroku_CustomerSKUPrice
         private void FrmMasterTouroku_CustomerSKUPrice_Load(object sender, EventArgs e)
         {
             InProgramID = ProID;
-            SetFunctionLabel(EProMode.INPUT);
+            SetFunctionLabel(EProMode.MENTE);
 
-            InitialControlArray();
+            //InitialControlArray();
 
-            S_SetInit_Grid();
+           // S_SetInit_Grid();
 
             StartProgram();
             txtStartDate.Focus();
             
-            Clear(pnl_Body);
-            Scr_Clr(0);
+            //Clear(pnl_Body);
+            //Scr_Clr(0);
         }
 
-        public override void FunctionProcess(int Index)
-        {
-            base.FunctionProcess(Index);
+        //public override void FunctionProcess(int Index)
+        //{
+        //    base.FunctionProcess(Index);
 
-            switch (Index)
-            {
-                case 0: // F1:終了
-                    {
-                        break;
-                    }
-                case 1:     //F2:新規
-                case 2:     //F3:変更
-                case 3:     //F4:削除
-                case 4:     //F5:照会
-                    {
-                        ChangeOperationMode((EOperationMode)Index);
+        //    switch (Index)
+        //    {
+        //        case 0: // F1:終了
+        //            {
+        //                break;
+        //            }
+        //        case 1:     //F2:新規
+        //        case 2:     //F3:変更
+        //        case 3:     //F4:削除
+        //        case 4:     //F5:照会
+        //            {
+        //                ChangeOperationMode((EOperationMode)Index);
 
-                        break;
-                    }
-                case 5: //F6:キャンセル
-                    {
-                        //Ｑ００４				
-                        if (bbl.ShowMessage("Q004") != DialogResult.Yes)
-                            return;
+        //                break;
+        //            }
+        //        case 5: //F6:キャンセル
+        //            {
+        //                //Ｑ００４				
+        //                if (bbl.ShowMessage("Q004") != DialogResult.Yes)
+        //                    return;
 
-                        ChangeOperationMode(base.OperationMode);
+        //                ChangeOperationMode(base.OperationMode);
 
-                        break;
-                    }
-                case 6://F7:行削除
-                   // ADD_SUB();
-                    break;
+        //                break;
+        //            }
+        //        case 6://F7:行削除
+        //           // ADD_SUB();
+        //            break;
 
-                case 7://F8:行追加
-                    //DEL_SUB();
-                    break;
+        //        case 7://F8:行追加
+        //            //DEL_SUB();
+        //            break;
 
-                case 9://F10複写
-                    //CPY_SUB();
-                    break;
+        //        case 9://F10複写
+        //            //CPY_SUB();
+        //            break;
 
-                //case 8: //F9:検索
-                //    EsearchKbn kbn = EsearchKbn.Null;
-                //    if (mGrid.F_Search_Ctrl_MK(ActiveControl, out int w_Col, out int w_CtlRow) == false)
-                //    {
-                //        return;
-                //    }
+        //        //case 8: //F9:検索
+        //        //    EsearchKbn kbn = EsearchKbn.Null;
+        //        //    if (mGrid.F_Search_Ctrl_MK(ActiveControl, out int w_Col, out int w_CtlRow) == false)
+        //        //    {
+        //        //        return;
+        //        //    }
 
-                //    if (w_Col == (int)ClsGridMitsumori.ColNO.JanCD)
-                //        //商品検索
-                //        kbn = EsearchKbn.Product;
+        //        //    if (w_Col == (int)ClsGridMitsumori.ColNO.JanCD)
+        //        //        //商品検索
+        //        //        kbn = EsearchKbn.Product;
                     
 
-                //    if (kbn != EsearchKbn.Null)
-                //        SearchData(kbn, previousCtrl);
+        //        //    if (kbn != EsearchKbn.Null)
+        //        //        SearchData(kbn, previousCtrl);
 
-                //    break;
+        //        //    break;
 
-                case 11:    //F12:登録
-                    {
-                        if (OperationMode == EOperationMode.DELETE)
-                        { //Ｑ１０２		
-                            if (bbl.ShowMessage("Q102") != DialogResult.Yes)
-                                return;
-                        }
-                        else
-                        {
-                            //Ｑ１０１		
-                            if (bbl.ShowMessage("Q101") != DialogResult.Yes)
-                                return;
-                        }
+        //        case 11:    //F12:登録
+        //            {
+        //                if (OperationMode == EOperationMode.DELETE)
+        //                { //Ｑ１０２		
+        //                    if (bbl.ShowMessage("Q102") != DialogResult.Yes)
+        //                        return;
+        //                }
+        //                else
+        //                {
+        //                    //Ｑ１０１		
+        //                    if (bbl.ShowMessage("Q101") != DialogResult.Yes)
+        //                        return;
+        //                }
 
 
-                        this.ExecSec();
-                        break;
-                    }
-            }   //switch end
+        //                this.ExecSec();
+        //                break;
+        //            }
+        //    }   //switch end
 
-        }
+        //}
 
         private void ChangeOperationMode(EOperationMode mode)
         {
