@@ -1203,5 +1203,10 @@ namespace MasterTouroku_CustomerSKUPrice
             };
             return mcskue;
         }
-     }
+
+        protected override void EndSec()
+        {
+            this.Close();
+        }
+    }
 }
