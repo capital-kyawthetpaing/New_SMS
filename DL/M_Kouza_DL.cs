@@ -232,6 +232,7 @@ namespace DL
                 { "@BankCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mkze.BankCD } },
                 { "@BranchCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mkze.BranchCD } },
                 { "@Amount", new ValuePair { value1 = SqlDbType.Money, value2 = mkze.Amount } },
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = mkze.ChangeDate } },
 
             };
             return SelectData(dic, "M_Kouza_FeeSelect");
