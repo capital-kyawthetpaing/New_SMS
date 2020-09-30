@@ -16,6 +16,7 @@ namespace Search
         string FieldsName = string.Empty;
         string TableName = string.Empty;
         string Condition = string.Empty;
+        public string test { get; set; }
 
         [Browsable(true)]
         [Category("CKM Event")]

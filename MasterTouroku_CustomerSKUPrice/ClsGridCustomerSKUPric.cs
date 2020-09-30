@@ -26,6 +26,7 @@ namespace MasterTouroku_CustomerSKUPrice
 
             //隠し項目
             internal string AdminNO;    //M_SKU.AdminNO
+            internal string OldJanCD;
 
         }
 
