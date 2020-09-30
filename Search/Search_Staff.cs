@@ -168,6 +168,9 @@ namespace Search
 
         protected override void ExecSec()
         {
+            if (dgvDetail.CurrentRow is null)
+                return;
+
             parStaffCD = dgvDetail.CurrentRow.Cells["colStaffCD"].Value.ToString();
             parStaffName = dgvDetail.CurrentRow.Cells["colStaffName"].Value.ToString();
             parChangeDate = dgvDetail.CurrentRow.Cells["ColChangeDate"].Value.ToString();
