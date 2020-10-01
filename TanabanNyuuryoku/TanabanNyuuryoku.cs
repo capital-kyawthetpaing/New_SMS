@@ -554,7 +554,7 @@ namespace TanabanNyuuryoku
                 if (String.IsNullOrEmpty(rate))
                 {
                     tnbnBL.ShowMessage("E102");
-                    dgvTanaban.RefreshEdit();
+                    //dgvTanaban.RefreshEdit();
                 }
                 else
                 {
@@ -568,7 +568,7 @@ namespace TanabanNyuuryoku
                     if (dtLocation.Rows.Count == 0)
                     {
                         tnbnBL.ShowMessage("E101");
-                        dgvTanaban.RefreshEdit();
+                        //dgvTanaban.RefreshEdit();
                     }
                 }
             }
