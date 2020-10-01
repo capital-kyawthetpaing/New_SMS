@@ -2193,6 +2193,7 @@ namespace TempoJuchuuNyuuryoku
                     if (ret)
                     {
                         mGrid.g_DArray[i].CostUnitPrice = bbl.Z_SetStr(msce.LastCost);
+                        mGrid.g_DArray[i].GetCostUnitPrice = bbl.Z_Set(msce.LastCost);
                         mGrid.g_DArray[i].CostGaku = bbl.Z_SetStr(bbl.Z_Set(msce.LastCost) * bbl.Z_Set(row["MitsumoriSuu"]));   //  
                     }
 
@@ -3009,6 +3010,7 @@ namespace TempoJuchuuNyuuryoku
 
                                 //原価単価=Function_単価取得.out原価単価	
                                 mGrid.g_DArray[row].CostUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.GenkaTanka));
+                                mGrid.g_DArray[row].GetCostUnitPrice = bbl.Z_Set(fue.GenkaTanka);
                             }
                             else
                             {
@@ -3016,6 +3018,7 @@ namespace TempoJuchuuNyuuryoku
                                 mGrid.g_DArray[row].JuchuuUnitPrice = "0";
                                 //原価単価
                                 mGrid.g_DArray[row].CostUnitPrice = "0";
+                                mGrid.g_DArray[row].GetCostUnitPrice = 0;
                             }
 
                             //	(Form.受注数＝Null	の場合は×１とする)
@@ -3259,7 +3262,7 @@ namespace TempoJuchuuNyuuryoku
                             return false;
                     }
                     //０で無いかつ原価単価＝０の場合場合、入力された発注単価を原価単価にセットし、原価金額、粗利金額を再計算。
-                    else if (bbl.Z_Set(mGrid.g_DArray[row].CostUnitPrice) == 0)//!chkAll && 
+                    else if (bbl.Z_Set(mGrid.g_DArray[row].CostUnitPrice) == 0 || mGrid.g_DArray[row].GetCostUnitPrice == 0)//!chkAll && 
                     {
                         mGrid.g_DArray[row].CostUnitPrice = mGrid.g_DArray[row].OrderUnitPrice;
                         mGrid.g_DArray[row].CostGaku = string.Format("{0:#,##0}", orderUnitPrice * bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu));
