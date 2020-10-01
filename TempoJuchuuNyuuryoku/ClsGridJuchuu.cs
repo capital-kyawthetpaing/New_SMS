@@ -67,6 +67,7 @@ namespace TempoJuchuuNyuuryoku
             internal int ZaikoKBN;  //M_SKU.在庫区分
             internal string KariHikiateNO;  //仮引当番号
             internal bool NotReCalc;//単価再計算しない場合はTrue
+            internal decimal GetCostUnitPrice;      //原価単価 
             internal int copyJuchuGyoNO;    //複写元受注行番号(Hidden)単価再計算をするかどうかの判断するためだけの情報
             //internal decimal OrderTax;          //通常税額(Hidden)
             //internal decimal KeigenOrderTax;    //軽減税額(Hidden)
