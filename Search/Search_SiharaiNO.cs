@@ -83,40 +83,53 @@ namespace Search
                     return false;
                 }
             }
-
-            mve.VendorCD = Sc_PaymentDestination.TxtCode.Text;
-            mve.ChangeDate = DateTime.Today.ToShortDateString();
-            mve.PayeeFlg = "1";
-            DataTable dtvendor = new DataTable();
-            dtvendor = ssnbl.M_Vendor_Select(mve);
-            if (dtvendor.Rows.Count == 0)
+            if (!string.IsNullOrWhiteSpace(Sc_PaymentDestination.TxtCode.Text))
             {
-                ssnbl.ShowMessage("E101");
-                Sc_PaymentDestination.Focus();
-                return false;
+                mve.VendorCD = Sc_PaymentDestination.TxtCode.Text;
+                mve.ChangeDate = DateTime.Today.ToShortDateString();
+                mve.PayeeFlg = "1";
+                DataTable dtvendor = new DataTable();
+                dtvendor = ssnbl.M_Vendor_Select(mve);
+                if (dtvendor.Rows.Count == 0)
+                {
+                    ssnbl.ShowMessage("E101");
+                    Sc_PaymentDestination.Focus();
+                    return false;
+                }
+                else
+                {
+                    Sc_PaymentDestination.LabelText = dtvendor.Rows[0]["VendorName"].ToString();
+                }
             }
             else
             {
-                Sc_PaymentDestination.LabelText = dtvendor.Rows[0]["VendorName"].ToString();
+                Sc_PaymentDestination.LabelText = "";
             }
             return true;
         }
 
         private void Sc_PaymentDestination_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            mve.VendorCD = Sc_PaymentDestination.TxtCode.Text;
-            mve.ChangeDate = DateTime.Today.ToShortDateString();
-            mve.PayeeFlg = "1";
-            DataTable dtvendor = new DataTable();
-            dtvendor = ssnbl.M_Vendor_Select(mve);
-            if(dtvendor.Rows.Count == 0)
+            if (!string.IsNullOrWhiteSpace(Sc_PaymentDestination.TxtCode.Text))
             {
-                ssnbl.ShowMessage("E101");
-                Sc_PaymentDestination.Focus();
+                mve.VendorCD = Sc_PaymentDestination.TxtCode.Text;
+                mve.ChangeDate = DateTime.Today.ToShortDateString();
+                mve.PayeeFlg = "1";
+                DataTable dtvendor = new DataTable();
+                dtvendor = ssnbl.M_Vendor_Select(mve);
+                if (dtvendor.Rows.Count == 0)
+                {
+                    ssnbl.ShowMessage("E101");
+                    Sc_PaymentDestination.Focus();
+                }
+                else
+                {
+                    Sc_PaymentDestination.LabelText = dtvendor.Rows[0]["VendorName"].ToString();
+                }
             }
             else
             {
-                Sc_PaymentDestination.LabelText = dtvendor.Rows[0]["VendorName"].ToString();
+                Sc_PaymentDestination.LabelText = "";
             }
         }
 
@@ -148,7 +161,8 @@ namespace Search
                 dpe.PayeeCD = Sc_PaymentDestination.TxtCode.Text;
                 DataTable dt = new DataTable();
                 dt = ssnbl.D_Pay_SelectForSiharaiNo(dpe);
-                if(dt.Rows.Count == 0)
+
+                if (dt.Rows.Count == 0)
                 {
                     ssnbl.ShowMessage("E128");
                     dgvSiharaiNO.DataSource = null;
@@ -156,10 +170,11 @@ namespace Search
                 }
                 else
                 {
+                    dgvSiharaiNO.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                     dgvSiharaiNO.DataSource = dt;
+                    dgvSiharaiNO.Enabled = true;
+                    dgvSiharaiNO.Focus();
                 }
-              
-
             }
         }
 
@@ -167,7 +182,7 @@ namespace Search
         {
             if (dgvSiharaiNO.CurrentRow != null && dgvSiharaiNO.CurrentRow.Index >= 0)
             {
-                ID = dgvSiharaiNO.CurrentRow.Cells["colSiharaiNO"].Value.ToString();
+                ID = dgvSiharaiNO.CurrentRow.Cells["colPaymentNO"].Value.ToString();
                 date = dgvSiharaiNO.CurrentRow.Cells["colPaymentDate"].Value.ToString();
                 parName = dgvSiharaiNO.CurrentRow.Cells["colPayeeName"].Value.ToString();
                 this.Close();
@@ -187,7 +202,7 @@ namespace Search
         private void dgvSiharaiNO_Paint(object sender, PaintEventArgs e)
         {
             string[] data = { "No.", "支払処理番号", "支払先" };
-            for(int j = 4; j < 6; )
+            for (int j = 4; j < 6;)
             {
                 Rectangle r1 = this.dgvSiharaiNO.GetCellDisplayRectangle(j, -1, true);
                 int w1 = this.dgvSiharaiNO.GetCellDisplayRectangle(j + 1, -1, true).Width;

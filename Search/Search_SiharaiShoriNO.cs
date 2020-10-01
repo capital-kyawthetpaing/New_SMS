@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base.Client;
 using BL;
@@ -129,16 +123,20 @@ namespace Search
                 dpe = GetData();
                 DataTable dt = new DataTable();
                 dt = sssbl.D_Pay_Search(dpe);
-                if(dt.Rows.Count > 0)
+
+                if (dt.Rows.Count > 0)
                 {
+                    dgvSiharaiShoriNO.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                     dgvSiharaiShoriNO.DataSource = dt;
+                    dgvSiharaiShoriNO.Enabled = true;
+                    dgvSiharaiShoriNO.Focus();
                 }
                 else
                 {
                     sssbl.ShowMessage("E128");
                     dgvSiharaiShoriNO.DataSource = null;
                     txtPaymentDateFrom.Focus();
-                }              
+                }
             }
                
         }
