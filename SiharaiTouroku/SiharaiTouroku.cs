@@ -458,12 +458,11 @@ namespace SiharaiTouroku
                     Btn_F7.Enabled = true;         
 
                     EnablePanel(PanelDetail);
-                    btnSelectAll.Enabled = true;
-                    btnReleaseAll.Enabled = true;
-                    F12Enable = true;
-
+                                            btnSelectAll.Enabled = true;
+                        btnReleaseAll.Enabled = true;
+                        F12Enable = true;                    
                     txtPaymentDate.Focus();
-                }
+                                    }
             }
         }
 
@@ -817,7 +816,7 @@ namespace SiharaiTouroku
                     {
                         if (!string.IsNullOrWhiteSpace(dtPayplan.Rows[0]["DeleteDateTime"].ToString()))
                         {
-                            sibl.ShowMessage("E140");
+                            sibl.ShowMessage("E140", "支払番号");
                             ScPaymentNum.SetFocus(1);
                             return false;
                         }
@@ -1057,14 +1056,22 @@ namespace SiharaiTouroku
                 Btn_F7.Enabled = true;
 
                 EnablePanel(PanelDetail);
-                btnSelectAll.Enabled = false;
-                btnReleaseAll.Enabled = false;
-                cboPaymentType.Enabled = false;
-                cboPaymentSourceAcc.Enabled = false;
-                txtBillSettleDate.Enabled = false;
 
-                F12Enable = true;
-                DisablePanel(PanelHeader);
+                if (OperationMode == EOperationMode.SHOW)
+                {
+                    dgvPayment.Focus();
+                }
+                else
+                {
+                    btnSelectAll.Enabled = false;
+                    btnReleaseAll.Enabled = false;
+                    cboPaymentType.Enabled = false;
+                    cboPaymentSourceAcc.Enabled = false;
+                    txtBillSettleDate.Enabled = false;
+
+                    F12Enable = true;
+                    DisablePanel(PanelHeader);
+                }
             }
             return true;
         }

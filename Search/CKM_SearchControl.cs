@@ -691,7 +691,7 @@ namespace Search
                     break;
 
                 case SearchType.商品分類://SES
-                    TxtCode.MaxLength = 6;
+                    TxtCode.MaxLength = 5;
                     TxtCode.Width = 100;
                     lblName.Width = 280;
                     break;
