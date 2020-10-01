@@ -50,6 +50,10 @@ namespace Search
                 if(dtCustomer.Rows.Count>0)
                 {
                     gv_CustomerSearch.DataSource = dtCustomer;
+                    gv_CustomerSearch.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                    gv_CustomerSearch.CurrentRow.Selected = true;
+                    gv_CustomerSearch.Enabled = true;
+                    gv_CustomerSearch.Focus();
                 }
                 else
                 {

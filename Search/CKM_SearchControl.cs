@@ -239,6 +239,7 @@ namespace Search
             出荷番号,
             倉庫棚番,
             得意先,
+            得意先_Detail,
 
             JANCD,
             JANCD_Detail,   //JANCDだけでなくAdminNOも値を取得したい場合は個々のプログラムで検索を実装
@@ -544,6 +545,7 @@ namespace Search
                     lblName.Width = 600;
                     break;
                 case SearchType.得意先:
+                case SearchType.得意先_Detail:
                     txtCode.MaxLength = 13;
                     txtCode.Width = 100;
                     lblName.Width = 500;    //400では全桁表示されないので変更
