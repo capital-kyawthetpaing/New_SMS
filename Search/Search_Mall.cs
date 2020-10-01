@@ -106,6 +106,9 @@ namespace Search
 
         protected override void ExecSec()
         {
+            if (dgvDetail.CurrentRow is null)
+                return;
+
             parKey = dgvDetail.CurrentRow.Cells["ColKEY"].Value.ToString();
             parChar1 = dgvDetail.CurrentRow.Cells["colChar1"].Value.ToString();
             EndSec();

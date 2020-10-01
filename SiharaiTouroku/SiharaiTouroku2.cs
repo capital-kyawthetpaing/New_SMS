@@ -513,7 +513,7 @@ namespace SiharaiTouroku
                                             + bbl.Z_Set(txtOffsetGaku.Text) + bbl.Z_Set(txtBill.Text)
                                             + bbl.Z_Set(txtElectronicBone.Text) + bbl.Z_Set(txtOther1.Text) + bbl.Z_Set(txtOther2.Text))
             {
-                bbl.ShowMessage("E195");
+                bbl.ShowMessage("E195", "支払総額", "入力された金種毎の合計金額");
                 txtTransferAmount.Focus();
                 return false;
             }

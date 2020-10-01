@@ -9,30 +9,36 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base.Client;
 using BL;
+using Entity;
+using GridBase;
 
 
 namespace MasterTouroku_TenzikaiShouhin
 {
     public partial class MasterTouroku_TenzikaiShouhin : FrmMainForm
     {
-
-
+        MasterTouroku_TenzikaiShouhin_BL tbl;
         Base_BL bl;
+        M_TenzikaiShouhin_Entity mt;
 
         public MasterTouroku_TenzikaiShouhin()
         {
             
             InitializeComponent();
             bl = new Base_BL();
+            tbl = new MasterTouroku_TenzikaiShouhin_BL();
+            mt = new M_TenzikaiShouhin_Entity();
         }
 
         private void MasterTouroku_TenzikaiShouhin_Load(object sender, EventArgs e)
         {
+            InProgramID = "MasterTouroku_TenzikaiShouhin";
+            StartProgram();
             string ymd = bl.GetDate();
-            //CB_Year.Bind(ymd);
-            //CB_Season.Bind(ymd);
-            //CB_copyseason.Bind(ymd);
-            //CB_Copyyear.Bind(ymd);
+            CB_Year.Bind(ymd);
+            CB_Season.Bind(ymd);
+            CB_copyseason.Bind(ymd);
+            CB_Copyyear.Bind(ymd);
 
         }
 
@@ -44,9 +50,34 @@ namespace MasterTouroku_TenzikaiShouhin
         }
         public override void FunctionProcess(int Index)
         {
-           
-
-
+            switch (Index + 1)
+            {
+                case 2:
+                    ChangeMode(EOperationMode.INSERT);
+                    break;
+                case 3:
+                    ChangeMode(EOperationMode.UPDATE);
+                    break;
+                case 4:
+                    ChangeMode(EOperationMode.DELETE);
+                    break;
+                case 5:
+                    ChangeMode(EOperationMode.SHOW);
+                    break;
+                case 6:
+                    if (bbl.ShowMessage("Q004") == DialogResult.Yes)
+                    {
+                        ChangeMode(OperationMode);
+                       // ginKou_CD.SetFocus(1);
+                    }
+                    break;
+                case 11:
+                   // F11();
+                    break;
+                case 12:
+                   // F12();
+                    break;
+            }
         }
         protected override void EndSec()
         {
@@ -175,7 +206,83 @@ namespace MasterTouroku_TenzikaiShouhin
 
         private void SC_copoysegmet_Enter(object sender, EventArgs e)
         {
-            SC_copoysegmet.Value1 = "226";
+            SC_copysegmet.Value1 = "226";
+        }
+
+        private void BT_Display_Click(object sender, EventArgs e)
+        {
+            if(!String.IsNullOrEmpty(SC_CopyTenzikai.TxtCode.Text))
+            {
+                mt = GetData();
+                
+                DataTable dt = tbl.Mastertoroku_Tenzikaishouhin_Select(mt,"1");
+            }
+          
+        }
+
+        
+        public M_TenzikaiShouhin_Entity GetData()
+        {
+            mt = new M_TenzikaiShouhin_Entity()
+            {
+
+                TenzikaiNameCopy = SC_Tenzikai.LabelText,
+                VendorCDCopy = SC_Vendor.TxtCode.Text,
+                BrandCDCopy = SC_Brand.TxtCode.Text,
+                SegmentCDCopy = SC_Segment.TxtCode.Text,
+                LastYearTermCopy = CB_Year.Text,
+                LastSeasonCopy = CB_Season.Text,
+                TenzikaiName = SC_Tenzikai.LabelText,
+                VendorCD = SC_Vendor.TxtCode.Text,
+                BranCDFrom = SC_Brand.TxtCode.Text,
+                SegmentCDFrom = SC_Segment.TxtCode.Text,
+                LastYearTerm = CB_Year.Text,
+                LastSeason = CB_Season.Text,
+            };
+
+            return mt;
+        }
+
+        private void ChangeMode(EOperationMode OperationMode)
+        {
+            base.OperationMode = OperationMode;
+            switch (OperationMode)
+            {
+
+                case EOperationMode.INSERT:
+                    F9Visible = false;
+                    Clear(PanelHeader);
+                    //Clear(PanelDetail);
+                    //EnablePanel(PanelHeader);
+                    //ginKou_CD.SearchEnable = false;
+                    //DisablePanel(PanelDetail);
+                    //BtnF11Show.Enabled = F11Enable = true;
+                    //copy_ginKou_CD.SearchEnable = true;
+                    F9Visible = false;
+                    break;
+                case EOperationMode.UPDATE:
+                case EOperationMode.DELETE:
+                case EOperationMode.SHOW:
+                    Clear(PanelHeader);
+                    //Clear(PanelDetail);
+                    //EnablePanel(PanelHeader);
+                    //DisablePanel(panelCopy);
+                    //Btn_F11.Enabled = true;
+                    //BtnF11Show.Enabled = true;
+                    //DisablePanel(PanelDetail);
+                    //ginKou_CD.SearchEnable = true;
+                    //copy_ginKou_CD.SearchEnable = false;
+                    F9Visible = true;
+                    break;
+            }
+            //ginKou_CD.SetFocus(1);
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+
+
         }
     }
 }

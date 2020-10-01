@@ -29,6 +29,7 @@ namespace ShiireShoukaiShiiresaki
         Base_BL bbl = new Base_BL();
         private const string ShiireNyuuryokuFromNyuuka = "ShiireNyuuryokuFromNyuuka.exe";
         private const string ShiireNyuuryoku = "ShiireNyuuryoku.exe";
+        private const string HenpinNyuuryoku = "HenpinNyuuryoku.exe";
         public ShiireShoukaiShiiresaki()
         {
             InitializeComponent();
@@ -555,10 +556,20 @@ namespace ShiireShoukaiShiiresaki
                                 System.Diagnostics.Process.Start(filePath, cmdLine);
                             }
                         }
-                        else
+                        else if (dt.Rows[0]["ProcessKBN"].ToString().Equals("2"))
                         {
                             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
                             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + ShiireNyuuryoku;
+                            if (System.IO.File.Exists(filePath))
+                            {
+                                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + PurchaseNO;
+                                System.Diagnostics.Process.Start(filePath, cmdLine);
+                            }
+                        }
+                        else if (dt.Rows[0]["ProcessKBN"].ToString().Equals("3"))
+                        {
+                            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + HenpinNyuuryoku;
                             if (System.IO.File.Exists(filePath))
                             {
                                 string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + PurchaseNO;
