@@ -66,6 +66,10 @@ namespace SiharaiTouroku
                 Btn_F9.Text = "";
                 Btn_F10.Text = "";
                 Btn_F11.Text = "";
+
+                if (OperationMode == EOperationMode.SHOW)
+                    Btn_F12.Text = "";
+                else
                 Btn_F12.Text = "登録(F12)";
 
                 //起動時共通処理

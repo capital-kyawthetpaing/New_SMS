@@ -370,6 +370,7 @@ namespace SiharaiTouroku
                     f2.ProID = InProgramID;
                     f2.ProName = made.ProgramName;
                     f2.Operator = InOperatorCD;
+                    f2.OperationMode = this.OperationMode;
 
                     f2.ShowDialog();
                     if (!f2.flgCancel)
@@ -408,7 +409,7 @@ namespace SiharaiTouroku
                     return;
                 }
                 else
-                {                
+                {
                     dtPay1Detail = sibl.D_PayPlan_SelectDetail(dppe);
 
                     //テーブル転送仕様Ｘに従って排他テーブルに追加（D_PayPlan.Number）
@@ -441,8 +442,6 @@ namespace SiharaiTouroku
                     }
 
                     dgvPayment.DataSource = dtPayplan;
-                    for (int i = 1; i < dgvPayment.Columns.Count; i++)
-                        dgvPayment.Columns[i].ReadOnly = true;
 
                     txtPaymentDate.Text = sibl.GetDate();
                     ScStaff.TxtCode.Text = InOperatorCD;
@@ -455,14 +454,17 @@ namespace SiharaiTouroku
                     dgvPayment.Rows[0].Selected = true;
                     LabelDataBind();
 
-                    Btn_F7.Enabled = true;         
+                    Btn_F7.Enabled = true;
 
                     EnablePanel(PanelDetail);
-                                            btnSelectAll.Enabled = true;
-                        btnReleaseAll.Enabled = true;
-                        F12Enable = true;                    
+                    for (int i = 1; i < dgvPayment.Columns.Count; i++)
+                        dgvPayment.Columns[i].ReadOnly = true;
+
+                    btnSelectAll.Enabled = true;
+                    btnReleaseAll.Enabled = true;
+                    F12Enable = true;
                     txtPaymentDate.Focus();
-                                    }
+                }
             }
         }
 
@@ -1045,6 +1047,7 @@ namespace SiharaiTouroku
             if (dtPayplan.Rows.Count > 0)//dtPay1
             {
                 dgvPayment.DataSource = dtPayplan;// dtPay1;
+
                 txtPaymentDate.Text = dtPayplan.Rows[0]["PayDate"].ToString();
                 ScStaff.TxtCode.Text = dtPayplan.Rows[0]["StaffCD"].ToString();
                 ScStaff.LabelText = dtPayplan.Rows[0]["StaffName"].ToString();
@@ -1056,6 +1059,9 @@ namespace SiharaiTouroku
                 Btn_F7.Enabled = true;
 
                 EnablePanel(PanelDetail);
+
+                for (int i = 1; i < dgvPayment.Columns.Count; i++)
+                    dgvPayment.Columns[i].ReadOnly = true;
 
                 if (OperationMode == EOperationMode.SHOW)
                 {
