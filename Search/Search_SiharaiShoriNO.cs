@@ -115,7 +115,10 @@ namespace Search
             return dpe;
 
         }
-
+        protected override void ExecDisp()
+        {
+            F11();
+        }
         public void F11()
         {
             if (ErrorCheck())
