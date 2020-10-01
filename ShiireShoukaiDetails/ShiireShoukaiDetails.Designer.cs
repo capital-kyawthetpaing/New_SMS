@@ -1003,6 +1003,7 @@
             this.ParchaseCount.DataPropertyName = "PurchaseSu";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = "0";
             this.ParchaseCount.DefaultCellStyle = dataGridViewCellStyle4;
             this.ParchaseCount.HeaderText = "仕入数";
             this.ParchaseCount.Name = "ParchaseCount";
@@ -1012,7 +1013,7 @@
             this.PurchaseUnitPrice.DataPropertyName = "PurchaserUnitPrice";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle5.Format = "N0";
-            dataGridViewCellStyle5.NullValue = null;
+            dataGridViewCellStyle5.NullValue = "0";
             this.PurchaseUnitPrice.DefaultCellStyle = dataGridViewCellStyle5;
             this.PurchaseUnitPrice.HeaderText = "仕入単価";
             this.PurchaseUnitPrice.Name = "PurchaseUnitPrice";
@@ -1022,7 +1023,7 @@
             this.ParchaseAmount.DataPropertyName = "PurchaseGaku";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = null;
+            dataGridViewCellStyle6.NullValue = "0";
             this.ParchaseAmount.DefaultCellStyle = dataGridViewCellStyle6;
             this.ParchaseAmount.HeaderText = "仕入額";
             this.ParchaseAmount.Name = "ParchaseAmount";
@@ -1032,7 +1033,7 @@
             this.OrderCount1.DataPropertyName = "OrderSu";
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle7.Format = "N0";
-            dataGridViewCellStyle7.NullValue = null;
+            dataGridViewCellStyle7.NullValue = "0";
             this.OrderCount1.DefaultCellStyle = dataGridViewCellStyle7;
             this.OrderCount1.HeaderText = "発注数";
             this.OrderCount1.Name = "OrderCount1";
@@ -1042,7 +1043,7 @@
             this.OrderUnitPrice1.DataPropertyName = "OrderUnitPrice";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle8.Format = "N0";
-            dataGridViewCellStyle8.NullValue = null;
+            dataGridViewCellStyle8.NullValue = "0";
             this.OrderUnitPrice1.DefaultCellStyle = dataGridViewCellStyle8;
             this.OrderUnitPrice1.HeaderText = "発注単価";
             this.OrderUnitPrice1.Name = "OrderUnitPrice1";
@@ -1052,7 +1053,7 @@
             this.OrderAmount1.DataPropertyName = "OrderHontaiGaku";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle9.Format = "N0";
-            dataGridViewCellStyle9.NullValue = null;
+            dataGridViewCellStyle9.NullValue = "0";
             this.OrderAmount1.DefaultCellStyle = dataGridViewCellStyle9;
             this.OrderAmount1.HeaderText = "発注額";
             this.OrderAmount1.Name = "OrderAmount1";
