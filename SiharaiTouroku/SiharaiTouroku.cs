@@ -34,6 +34,7 @@ namespace SiharaiTouroku
         DataTable dt4Detail = new DataTable(); // detail for form2(insert mode)
 
         private string mOldPayNo = "";    //排他処理のため使用
+        private DataTable dtForUpdate;  //排他用   
 
         public FrmSiharaiTouroku()
         {
@@ -144,10 +145,25 @@ namespace SiharaiTouroku
         /// </summary>
         private void DeleteExclusive()
         {
-            if (mOldPayNo == "" && dtPayplan == null)
+            if (mOldPayNo == "" && dtPayplan == null && dtForUpdate == null)
                 return;
 
             Exclusive_BL ebl = new Exclusive_BL();
+
+            if (dtForUpdate != null)
+            {
+                foreach (DataRow dr in dtForUpdate.Rows)
+                {
+                    D_Exclusive_Entity de = new D_Exclusive_Entity
+                    {
+                        DataKBN = Convert.ToInt16(dr["kbn"]),
+                        Number = dr["no"].ToString()
+                    };
+
+                    ebl.D_Exclusive_Delete(de);
+                }
+                dtForUpdate = new DataTable();
+            }
             if (mOldPayNo != "")
             {
                 D_Exclusive_Entity dee = new D_Exclusive_Entity
@@ -175,12 +191,12 @@ namespace SiharaiTouroku
             }
             mOldPayNo = "";
         }
-        private bool SelectAndInsertExclusive()
+        private bool SelectAndInsertExclusive(Exclusive_BL.DataKbn kbn, string No)
         {
-            if (OperationMode == EOperationMode.SHOW || OperationMode == EOperationMode.INSERT)
+            if (OperationMode == EOperationMode.SHOW)
                 return true;
 
-            if (string.IsNullOrWhiteSpace(ScPaymentNum.TxtCode.Text))
+            if (string.IsNullOrWhiteSpace(No))
                 return true;
 
             //排他Tableに該当番号が存在するとError
@@ -188,8 +204,8 @@ namespace SiharaiTouroku
             Exclusive_BL ebl = new Exclusive_BL();
             D_Exclusive_Entity dee = new D_Exclusive_Entity
             {
-                DataKBN = (int)Exclusive_BL.DataKbn.Shiharai,
-                Number = ScPaymentNum.TxtCode.Text,
+                DataKBN = (int)kbn,
+                Number = No,
                 Program = this.InProgramID,
                 Operator = this.InOperatorCD,
                 PC = this.InPcID
@@ -350,17 +366,24 @@ namespace SiharaiTouroku
 
                     //if (OperationMode == EOperationMode.INSERT)
                     //{
-                        SiharaiTouroku_2 f2 = new SiharaiTouroku_2(dpe, dtPayplan, dtPay1Detail);
-                        f2.ProID = InProgramID;
-                        f2.ProName = made.ProgramName;
-                        f2.Operator = InOperatorCD;
+                    SiharaiTouroku_2 f2 = new SiharaiTouroku_2(dpe, dtPayplan, dtPay1Detail);
+                    f2.ProID = InProgramID;
+                    f2.ProName = made.ProgramName;
+                    f2.Operator = InOperatorCD;
 
-                        f2.ShowDialog();
-                        if (!f2.flgCancel)
+                    f2.ShowDialog();
+                    if (!f2.flgCancel)
+                    {
+                        dtPayplan = f2.dtGdv;
+                        dtPay1Detail = f2.dtDetails;
+
+                        //支払総額がゼロの状態で確定した場合、第一画面の該当行のチェックを外す
+                        if (bbl.Z_Set(row.Cells["colPaymenttime"].Value) == 0)
                         {
-                            dtPayplan = f2.dtGdv;
-                            dtPay1Detail = f2.dtDetails;
+                            row.Cells["colChk"].Value = 0;
                         }
+                        dgvPayment.Refresh();
+                    }
                     //}
                     LabelDataBind();
                 }
@@ -385,8 +408,37 @@ namespace SiharaiTouroku
                     return;
                 }
                 else
-                { 
+                {                
                     dtPay1Detail = sibl.D_PayPlan_SelectDetail(dppe);
+
+                    //テーブル転送仕様Ｘに従って排他テーブルに追加（D_PayPlan.Number）
+                    DeleteExclusive();
+
+                    dtForUpdate = new DataTable();
+                    dtForUpdate.Columns.Add("kbn", Type.GetType("System.String"));
+                    dtForUpdate.Columns.Add("no", Type.GetType("System.String"));
+
+                    bool ret;
+
+                    //排他処理
+                    foreach (DataRow row in dtPay1Detail.Rows)
+                    {
+                        if (mOldPayNo != row["Number"].ToString())
+                        {
+                            ret = SelectAndInsertExclusive(Exclusive_BL.DataKbn.Shiire, row["Number"].ToString());
+                            if (!ret)
+                                return;
+
+                            mOldPayNo = row["Number"].ToString();
+
+                            // データを追加
+                            DataRow rowForUpdate;
+                            rowForUpdate = dtForUpdate.NewRow();
+                            rowForUpdate["kbn"] = (int)Exclusive_BL.DataKbn.Shiire;
+                            rowForUpdate["no"] = mOldPayNo;
+                            dtForUpdate.Rows.Add(rowForUpdate);
+                        }
+                    }
 
                     dgvPayment.DataSource = dtPayplan;
                     for (int i = 1; i < dgvPayment.Columns.Count; i++)
@@ -526,28 +578,46 @@ namespace SiharaiTouroku
 
         private void ScPayee_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            //Enterキー押下時処理
-            //Returnキーが押されているか調べる
-            //AltかCtrlキーが押されている時は、本来の動作をさせる
-            if ((e.KeyCode == Keys.Return) &&
-                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+            try
             {
-                F11();
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                        ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+                {
+                    F11();
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
             }
         }
 
         private void ScStaff_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            //Enterキー押下時処理
-            //Returnキーが押されているか調べる
-            //AltかCtrlキーが押されている時は、本来の動作をさせる
-            if ((e.KeyCode == Keys.Return) &&
-                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+            try
             {
-                if (!CheckStaff())
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                        ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
                 {
-                    ScStaff.SetFocus(1);
+                    if (!CheckStaff())
+                    {
+                        ScStaff.SetFocus(1);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
             }
         }
 
@@ -642,14 +712,15 @@ namespace SiharaiTouroku
                                 BankCD = dtSiharai2.Rows[0]["BankCD"].ToString(),
                                 BranchCD = dtSiharai2.Rows[0]["BranchCD"].ToString(),
                                 Amount = lblPayGaku.Text.Replace(",", ""),
+                                ChangeDate = txtPaymentDate.Text,
                             };
                             DataTable dt = sibl.M_Kouza_FeeSelect(mke);
                             if (dt.Rows.Count > 0)
                                 dgvPayment.Rows[rowIndex].Cells["colTransferFee"].Value = dt.Rows[0]["Fee"].ToString();
                         }
 
-                        dgvPayment.Rows[rowIndex].Cells["colPaymenttime"].Value = Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
-                        dgvPayment.Rows[rowIndex].Cells["colTransferAmount"].Value = Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
+                        dgvPayment.Rows[rowIndex].Cells["colPaymenttime"].Value = bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
+                        dgvPayment.Rows[rowIndex].Cells["colTransferAmount"].Value = bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
 
                         dgvPayment.Rows[rowIndex].Cells["colUnpaidAmount"].Value = "0";
                         dgvPayment.Rows[rowIndex].Cells["colOtherThanTransfer"].Value = "0";
@@ -657,11 +728,11 @@ namespace SiharaiTouroku
                     }
                     else
                     {
-                        dgvPayment.Rows[rowIndex].Cells["colPaymenttime"].Value = Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
+                        dgvPayment.Rows[rowIndex].Cells["colPaymenttime"].Value = bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
                         dgvPayment.Rows[rowIndex].Cells["colTransferAmount"].Value = "0";
                         dgvPayment.Rows[rowIndex].Cells["colTransferFee"].Value = "0";
                         dgvPayment.Rows[rowIndex].Cells["colUnpaidAmount"].Value = "0";
-                        dgvPayment.Rows[rowIndex].Cells["colOtherThanTransfer"].Value = Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
+                        dgvPayment.Rows[rowIndex].Cells["colOtherThanTransfer"].Value = bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
                     }
 
                     if (dtPay1Detail != null && dtPay1Detail.Rows.Count > 0)
@@ -680,7 +751,7 @@ namespace SiharaiTouroku
             {
                 //OFFにした明細に対して、今回支払額＝0、未支払額＝支払予定額-支払済額とし、第二画面の全入力項目をクリア
                 dgvPayment.Rows[rowIndex].Cells["colPaymenttime"].Value = "0";
-                dgvPayment.Rows[rowIndex].Cells["colUnpaidAmount"].Value = Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
+                dgvPayment.Rows[rowIndex].Cells["colUnpaidAmount"].Value = bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
 
                 if (dtPay1Detail != null)
                 {
@@ -763,9 +834,25 @@ namespace SiharaiTouroku
                             bbl.ShowMessage("E115");
                             return false;
                         }
+                        bool ret;
 
+                        if (OperationMode == EOperationMode.DELETE)
+                        {
+                            //店舗の締日チェック
+                            //店舗締マスターで判断
+                            M_StoreClose_Entity msce = new M_StoreClose_Entity
+                            {
+                                StoreCD = StoreCD,
+                                FiscalYYYYMM = dtPayplan.Rows[0]["PayDate"].ToString().Replace("/", "").Substring(0, 6)
+                            };
+                            ret = bbl.CheckStoreClose(msce, false, false, false, true, false);
+                            if (!ret)
+                            {
+                                return false;
+                            }
+                        }
                         //排他処理
-                        bool ret = SelectAndInsertExclusive();
+                        ret = SelectAndInsertExclusive(Exclusive_BL.DataKbn.Shiharai, ScPaymentNum.TxtCode.Text);
                         if (!ret)
                             return false;
 
@@ -987,16 +1074,16 @@ namespace SiharaiTouroku
         /// </summary>
         public void LabelDataBind()
         {
-            int sum1 = 0, sum2 = 0, sum3 = 0, sum4 = 0, sum5 = 0, sum6 = 0, sum7 = 0;
+            decimal sum1 = 0, sum2 = 0, sum3 = 0, sum4 = 0, sum5 = 0, sum6 = 0, sum7 = 0;
             for (int i = 0; i < dgvPayment.Rows.Count; ++i)
             {
-                sum1 += Convert.ToInt32(dgvPayment.Rows[i].Cells[4].Value);
-                sum2 += Convert.ToInt32(dgvPayment.Rows[i].Cells[5].Value);
-                sum3 += Convert.ToInt32(dgvPayment.Rows[i].Cells[6].Value);
-                sum4 += Convert.ToInt32(dgvPayment.Rows[i].Cells[7].Value);
-                sum5 += Convert.ToInt32(dgvPayment.Rows[i].Cells[8].Value);
-                sum6 += Convert.ToInt32(dgvPayment.Rows[i].Cells[10].Value);
-                sum7 += Convert.ToInt32(dgvPayment.Rows[i].Cells[11].Value);
+                sum1 +=  bbl.Z_Set(dgvPayment.Rows[i].Cells[4].Value);
+                sum2 +=  bbl.Z_Set(dgvPayment.Rows[i].Cells[5].Value);
+                sum3 +=  bbl.Z_Set(dgvPayment.Rows[i].Cells[6].Value);
+                sum4 +=  bbl.Z_Set(dgvPayment.Rows[i].Cells[7].Value);
+                sum5 +=  bbl.Z_Set(dgvPayment.Rows[i].Cells[8].Value);
+                sum6 +=  bbl.Z_Set(dgvPayment.Rows[i].Cells[10].Value);
+                sum7 +=  bbl.Z_Set(dgvPayment.Rows[i].Cells[11].Value);
 
             }
             lblPayPlanGaku.Text = sum1.ToString("#,##0");
@@ -1410,5 +1497,26 @@ namespace SiharaiTouroku
             }
         }
 
+        private void dgvPayment_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try
+            {
+                if (e.Exception != null)
+                {
+                    //MessageBox.Show(this,
+                    //    string.Format("({0}, {1}) のセルでエラーが発生しました。\n\n説明: {2}",
+                    //    e.ColumnIndex, e.RowIndex, e.Exception.Message),
+                    //    "エラーが発生しました",
+                    //    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
     }
 }

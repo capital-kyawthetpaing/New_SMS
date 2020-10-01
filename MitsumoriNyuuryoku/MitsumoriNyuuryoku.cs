@@ -1039,8 +1039,8 @@ namespace MitsumoriNyuuryoku
             //フォーカスセット
             IMT_DMY_0.Focus();
 
-                //現在行へ
-                mGrid.F_MoveFocus((int)ClsGridMitsumori.Gen_MK_FocusMove.MvSet, (int)ClsGridMitsumori.Gen_MK_FocusMove.MvNxt, mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl, w_Row, col, ActiveControl, Vsb_Mei_0, w_Row, col);
+            //現在行へ
+            mGrid.F_MoveFocus((int)ClsGridMitsumori.Gen_MK_FocusMove.MvSet, (int)ClsGridMitsumori.Gen_MK_FocusMove.MvNxt, mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl, w_Row, col, ActiveControl, Vsb_Mei_0, w_Row, col);
 
         }
 
@@ -1228,6 +1228,7 @@ namespace MitsumoriNyuuryoku
             }
             foreach (Control ctl in detailControls)
             {
+
                 ctl.KeyDown += new System.Windows.Forms.KeyEventHandler(DetailControl_KeyDown);
                 ctl.Enter += new System.EventHandler(DetailControl_Enter);
             }
@@ -3163,10 +3164,10 @@ namespace MitsumoriNyuuryoku
                     ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
                 {
                     //どの項目か判別
-                    int CL=-1;
+                    int CL = -1;
                     string ctlName = "";
                     if (w_ActCtl.Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
-                        ctlName= w_ActCtl.Parent.Name.Substring(0, w_ActCtl.Parent.Name.LastIndexOf("_"));
+                        ctlName = w_ActCtl.Parent.Name.Substring(0, w_ActCtl.Parent.Name.LastIndexOf("_"));
                     else
                         ctlName = w_ActCtl.Name.Substring(0, w_ActCtl.Name.LastIndexOf("_"));
 
@@ -3217,21 +3218,21 @@ namespace MitsumoriNyuuryoku
                     switch (CL)
                     {
                         case (int)ClsGridMitsumori.ColNO.MitsumoriSuu:
-                            if (!mGrid.g_DArray[w_Row].MitsumoriSuu.Equals(w_ActCtl.Text))
+                            if (mGrid.g_DArray[w_Row].MitsumoriSuu != w_ActCtl.Text)
                             {
                                 changeFlg = true;
                             }
                             break;
 
                         case (int)ClsGridMitsumori.ColNO.MitsumoriUnitPrice: //販売単価 
-                            if (!mGrid.g_DArray[w_Row].MitsumoriUnitPrice.Equals(w_ActCtl.Text))
+                            if (mGrid.g_DArray[w_Row].MitsumoriUnitPrice != w_ActCtl.Text)
                             {
                                 changeFlg = true;
                             }
                             break;
 
                         case (int)ClsGridMitsumori.ColNO.CostUnitPrice: //原価単価
-                            if (!mGrid.g_DArray[w_Row].CostUnitPrice.Equals(w_ActCtl.Text))
+                            if (mGrid.g_DArray[w_Row].CostUnitPrice != w_ActCtl.Text)
                             {
                                 changeFlg = true;
                             }
@@ -3308,7 +3309,7 @@ namespace MitsumoriNyuuryoku
                                     CalcZei(w_Row);
                                 }
                                 break;
-                            
+
                             case (int)ClsGridMitsumori.ColNO.MitsumoriUnitPrice: //販売単価 
                                 {
                                     string tanka = mGrid.g_DArray[w_Row].MitsumoriUnitPrice;
@@ -3333,7 +3334,7 @@ namespace MitsumoriNyuuryoku
                     }
 
                     if (CL == -1)
-                    return;
+                        return;
 
                     //チェック処理
                     if (CheckGrid(CL, w_Row) == false)
@@ -3365,8 +3366,13 @@ namespace MitsumoriNyuuryoku
                         return;
                     }
 
-                    if (CL == (int)ClsGridMitsumori.ColNO.NotPrintFLG )
-                        S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+                    if (CL == (int)ClsGridMitsumori.ColNO.NotPrintFLG)
+                    {
+                        if (e.Shift)
+                            S_Grid_0_Event_ShiftTab(CL, w_Row, w_ActCtl, w_ActCtl);
+                        else
+                            S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+                    }
                 }
             }
             catch (Exception ex)
@@ -3515,6 +3521,7 @@ namespace MitsumoriNyuuryoku
                 detailControls[(int)EIndex.CustomerName2].Text = "";
             }
         }
+
     }
 }
 

@@ -1,10 +1,11 @@
 
 
-/****** Object:  Trigger [Trg_DJuchuuDetails_Insert]    Script Date: 2020/09/16 17:45:32 ******/
+
+/****** Object:  Trigger [Trg_DJuchuuDetails_Insert]    Script Date: 2020/09/24 11:13:42 ******/
 DROP TRIGGER [dbo].[Trg_DJuchuuDetails_Insert]
 GO
 
-/****** Object:  Trigger [dbo].[Trg_DJuchuuDetails_Insert]    Script Date: 2020/09/16 17:45:32 ******/
+/****** Object:  Trigger [dbo].[Trg_DJuchuuDetails_Insert]    Script Date: 2020/09/24 11:13:42 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -24,9 +25,10 @@ AS
 --********************************************--
 BEGIN
 
+--test12345
     INSERT INTO [L_JuchuuDetailsHistory]
            ([HistorySEQ]
- --          ,[HistorySEQRows]
+       --    ,[HistorySEQRows]
            ,[JuchuuNO]
            ,[JuchuuRows]
            ,[DisplayRows]

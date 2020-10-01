@@ -993,6 +993,7 @@ namespace MasterTouroku_HacchuuPrice
                     int row = (int)bbl.Z_Set(selectDt[0]["TempKey"]);
 
                     dtITEM.Rows[row - 1]["Rate"] = bbl.Z_Set(copyControls[(int)CIndex.CopyRate].Text);
+                    dtITEM.Rows[row - 1]["OldRate"] = bbl.Z_Set(copyControls[(int)CIndex.CopyRate].Text);
                     dtITEM.Rows[row - 1]["PriceWithoutTax"] = priceWithoutTax;
                     dtITEM.Rows[row - 1]["UpdateOperator"] = InOperatorCD;
                     dtITEM.Rows[row - 1]["UpdateDateTime"] = mUpdateDateTime;
@@ -1013,6 +1014,7 @@ namespace MasterTouroku_HacchuuPrice
                         priceWithoutTax = GetResultWithHasuKbn((int)HASU_KBN.KIRISUTE, bbl.Z_Set(drSKU["PriceOutTax"]) * bbl.Z_Set(copyControls[(int)CIndex.CopyRate].Text) / 100);
 
                         dtSKU.Rows[row - 1]["Rate"] = bbl.Z_Set(copyControls[(int)CIndex.CopyRate].Text);
+                        dtSKU.Rows[row - 1]["OldRate"] = bbl.Z_Set(copyControls[(int)CIndex.CopyRate].Text);
                         dtSKU.Rows[row - 1]["PriceWithoutTax"] = priceWithoutTax;
                         dtSKU.Rows[row - 1]["UpdateOperator"] = InOperatorCD;
                         dtSKU.Rows[row - 1]["UpdateDateTime"] = mUpdateDateTime;
@@ -3102,9 +3104,10 @@ namespace MasterTouroku_HacchuuPrice
             this.ExecInput();
         }
 
+
         #endregion
 
-
+        
     }
 }
 

@@ -42,12 +42,22 @@ namespace MasterTouroku_CustomerSKUPrice
             CustomerName,
             TekiyouKaisiDate,
             TekiyouShuuryouDate,
+
+            Date = 0,
+
             AdminNO,
             JANCD,
             SKUCD,
             SKUName,
             SalePriceOutTax,
             Remarks
+        }
+
+        private enum EsearchKbn : short
+        {
+            Null,
+            Product,
+            Customer
         }
 
         public FrmMasterTouroku_CustomerSKUPrice()
@@ -69,7 +79,7 @@ namespace MasterTouroku_CustomerSKUPrice
 
             StartProgram();
             txtStartDate.Focus();
-            
+
             Clear(pnl_Body);
             Scr_Clr(0);
         }
@@ -104,7 +114,7 @@ namespace MasterTouroku_CustomerSKUPrice
                         break;
                     }
                 case 6://F7:行削除
-                   // ADD_SUB();
+                       // ADD_SUB();
                     break;
 
                 case 7://F8:行追加
@@ -115,22 +125,23 @@ namespace MasterTouroku_CustomerSKUPrice
                     //CPY_SUB();
                     break;
 
-                //case 8: //F9:検索
-                //    EsearchKbn kbn = EsearchKbn.Null;
-                //    if (mGrid.F_Search_Ctrl_MK(ActiveControl, out int w_Col, out int w_CtlRow) == false)
-                //    {
-                //        return;
-                //    }
+                case 8: //F9:検索
+                    EsearchKbn kbn = EsearchKbn.Null;
+                    if (mGrid.F_Search_Ctrl_MK(ActiveControl, out int w_Col, out int w_CtlRow) == false)
+                    {
+                        return;
+                    }
 
-                //    if (w_Col == (int)ClsGridMitsumori.ColNO.JanCD)
-                //        //商品検索
-                //        kbn = EsearchKbn.Product;
-                    
+                    if (w_Col == (int)ClsGridCustomerSKUPric.ColNO.JANCD)
+                        //商品検索
+                        kbn = EsearchKbn.Product;
+                    if (w_Col == (int)ClsGridCustomerSKUPric.ColNO.CustomerCD)
+                        kbn = EsearchKbn.Customer;
 
-                //    if (kbn != EsearchKbn.Null)
-                //        SearchData(kbn, previousCtrl);
+                        if (kbn != EsearchKbn.Null)
+                            SearchData(kbn, previousCtrl);
 
-                //    break;
+                    break;
 
                 case 11:    //F12:登録
                     {
@@ -193,12 +204,7 @@ namespace MasterTouroku_CustomerSKUPrice
         {
             detailControls = new Control[] { txtStartDate, txtEndDate, ScCustomer_Start.TxtCode,ScCustomer_End.TxtCode, ScSKUCD_Start.TxtCode,ScSKUCD_End.TxtCode,txtItemName };
 
-            ////イベント付与
-            //foreach (Control ctl in keyControls)
-            //{
-            //    ctl.KeyDown += new System.Windows.Forms.KeyEventHandler(KeyControl_KeyDown);
-            //    ctl.Enter += new System.EventHandler(KeyControl_Enter);
-            //}
+            
             //foreach (Control ctl in detailControls)
             //{
             //    ctl.KeyDown += new System.Windows.Forms.KeyEventHandler(DetailControl_KeyDown);
@@ -280,7 +286,7 @@ namespace MasterTouroku_CustomerSKUPrice
             // データ保持用配列の宣言
             mGrid.g_DArray = new ClsGridCustomerSKUPric.ST_DArray_Grid[mGrid.g_MK_Max_Row];
 
-            //SetMultiColNo();
+            SetMultiColNo();
             // 行の色
             // 何行で色が切り替わるかの設定。  ここでは 2行一組で繰り返すので 2行分だけ設定
             mGrid.g_MK_CtlRowBkColor.Add(ClsGridBase.WHColor);//, "0");        // 1行目(奇数行) 白
@@ -579,7 +585,7 @@ namespace MasterTouroku_CustomerSKUPrice
                         c.TxtCode.Text = "";
                         c.LabelText = "";
                     }
-                    else if (ctrl is CKM_RadioButton cr && cr.Name == "ckM_RadioButton1")
+                    else if (ctrl is CKM_RadioButton cr && cr.Name == "rdoRecent")
                     {
                         cr.Checked = true;
                     }
@@ -607,10 +613,10 @@ namespace MasterTouroku_CustomerSKUPrice
                     mGrid.g_DArray[c].CustomerName = dr["CustomerName"].ToString();
                     mGrid.g_DArray[c].TekiyouKaisiDate = dr["TekiyouKaisiDate"].ToString();
                     mGrid.g_DArray[c].TekiyouShuuryouDate = dr["TekiyouShuuryouDate"].ToString();
+                    mGrid.g_DArray[c].AdminNO = dr["AdminNo"].ToString();
                     mGrid.g_DArray[c].JANCD = dr["JanCD"].ToString();
                     mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
-                    mGrid.g_DArray[c].SKUName = dr["SKUName"].ToString();
-                    mGrid.g_DArray[c].AdminNO = dr["AdminNo"].ToString();
+                    mGrid.g_DArray[c].SKUName = dr["SKUName"].ToString(); 
                     mGrid.g_DArray[c].SalePriceOutTax = dr["SalePriceOutTax"].ToString();
                     mGrid.g_DArray[c].Remarks = dr["Remarks"].ToString();
                     c++;
@@ -917,7 +923,7 @@ namespace MasterTouroku_CustomerSKUPrice
                                 Scr_Lock(0, 0, 0);
 
                                 //Scr_Lock(1, mc_L_END, 0);  // フレームのロック解除
-                                //detailControls[(int)EIndex.MitsumoriDate].Text = bbl.GetDate();
+                                detailControls[(int)EIndex.Date].Text = bbl.GetDate();
                                 F9Visible = false;
 
                                 SetFuncKeyAll(this, "111111001001");
@@ -1132,10 +1138,20 @@ namespace MasterTouroku_CustomerSKUPrice
             {
                 if(ErrorCheck(11))
                 {
-                    mcskue = new M_CustomerSKUPrice_Entity
+                    mcskue = GetSKUPriceInfo();
+                    DataTable dtSKUPrice = mcskupbl.M_CustomerSKUPriceSelectData(mcskue);
+                   
+                    if (dtSKUPrice.Rows.Count > 0)
                     {
-                        TekiyouKaisiDate = txtStartDate.Text,
-                    };
+                        SetMultiColNo(dtSKUPrice);
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E128");
+                        Scr_Clr(1);
+                        txtStartDate.Focus();
+                    }
+
                 }
             }
                 CheckData(true);
@@ -1182,5 +1198,106 @@ namespace MasterTouroku_CustomerSKUPrice
             }
             return true;
         }
-     }
+
+        public M_CustomerSKUPrice_Entity GetSKUPriceInfo()
+        {
+            mcskue = new M_CustomerSKUPrice_Entity
+            {
+                TekiyouKaisiDate_From = txtStartDate.Text,
+                TekiyouKaisiDate_To = txtEndDate.Text,
+                CustomerCD_From = ScCustomer_Start.TxtCode.Text,
+                CustomerCD_To = ScCustomer_End.TxtCode.Text,
+                SKUCD_From = ScSKUCD_Start.TxtCode.Text,
+                SKUCD_To = ScSKUCD_End.TxtCode.Text,
+                SKUName = txtItemName.Text,
+                DisplayKBN = rdoRecent.Checked? "0" : "1",
+            };
+            return mcskue;
+        }
+
+        private void SearchData(EsearchKbn kbn, Control setCtl)
+        {
+            switch (kbn)
+            {
+                case EsearchKbn.Product:
+                    int w_Row;
+
+                    if (mGrid.F_Search_Ctrl_MK(ActiveControl, out int w_Col, out int w_CtlRow) == false)
+                    {
+                        return;
+                    }
+
+                    w_Row = w_CtlRow + Vsb_Mei_0.Value;
+
+                    //画面より配列セット 
+                    mGrid.S_DispToArray(Vsb_Mei_0.Value);
+
+                    using (Search_Product frmProduct = new Search_Product(detailControls[(int)EIndex.Date].Text))
+                    {
+                        frmProduct.SKUCD = mGrid.g_DArray[w_Row].SKUCD;
+                        //frmProduct.ITEM = mGrid.g_DArray[w_Row].item;
+                        //frmProduct.MakerItem = mGrid.g_DArray[w_Row].SKUCD;
+                        frmProduct.JANCD = mGrid.g_DArray[w_Row].JANCD;
+                        frmProduct.ShowDialog();
+
+                        if (!frmProduct.flgCancel)
+                        {
+                            mGrid.g_DArray[w_Row].JANCD = frmProduct.JANCD;
+                            //mGrid.g_DArray[w_Row].OldJanCD = frmProduct.JANCD;
+                            mGrid.g_DArray[w_Row].SKUCD = frmProduct.SKUCD;
+                            mGrid.g_DArray[w_Row].AdminNO = frmProduct.AdminNO;
+
+                            //CheckGrid((int)ClsGridMitsumori.ColNO.JanCD, w_Row, false, true);
+
+                            //配列の内容を画面へセット
+                            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+                            SendKeys.Send("{ENTER}");
+                        }
+                    }
+                    break;
+
+                case EsearchKbn.Customer:
+                    int wc_Row;
+
+                    if (mGrid.F_Search_Ctrl_MK(ActiveControl, out int wc_Col, out int wc_CtlRow) == false)
+                    {
+                        return;
+                    }
+
+                    wc_Row = wc_CtlRow + Vsb_Mei_0.Value;
+
+                    //画面より配列セット 
+                    mGrid.S_DispToArray(Vsb_Mei_0.Value);
+                    using (FrmSearch_Customer frmCustomer = new FrmSearch_Customer(detailControls[(int)EIndex.Date].Text,"1",StoreCD))
+                    {
+                        //frmCustomer.CustomerCD=mGrid.g_DArray[wc_Row].CustomerCD;
+                        frmCustomer.ShowDialog();
+
+                        if (!frmCustomer.flgCancel)
+                        {
+                            mGrid.g_DArray[wc_Row].CustomerCD = frmCustomer.CustomerCD;
+                            mGrid.g_DArray[wc_Row].CustomerName = frmCustomer.CustName;
+                            //mGrid.g_DArray[wc_Row].AdminNO = frmCustomer.AdminNO;
+
+                            //CheckGrid((int)ClsGridMitsumori.ColNO.JanCD, w_Row, false, true);
+
+                            //配列の内容を画面へセット
+                            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+                            SendKeys.Send("{ENTER}");
+                        }
+                    }
+
+                    break;
+                    
+            }
+
+        }
+
+        protected override void EndSec()
+        {
+            this.Close();
+        }
+    }
 }

@@ -165,6 +165,7 @@
     <Content Include="StoreProcedure\D_Move_SelectData.sql" />
     <Content Include="StoreProcedure\D_NyuukinIchihanyou_Log.sql" />
     <Content Include="StoreProcedure\D_NyuuKinPrint.sql" />
+    <Content Include="StoreProcedure\D_Order_Delete.sql" />
     <Content Include="StoreProcedure\D_Order_ExecForNyuka.sql" />
     <Content Include="StoreProcedure\D_Order_SelectAll.sql" />
     <Content Include="StoreProcedure\D_Order_SelectAllForEDIHacchuu.sql" />
@@ -259,6 +260,7 @@
     <Content Include="StoreProcedure\D_Store_Calculation_SelectForSeiSan.sql" />
     <Content Include="StoreProcedure\D_WowmaJuchuuDetails_Insert.sql" />
     <Content Include="StoreProcedure\D_WowmaJuchuu_Insert.sql" />
+    <Content Include="StoreProcedure\Fnc_Credit.sql" />
     <Content Include="StoreProcedure\Fnc_GetNumber.sql" />
     <Content Include="StoreProcedure\Fnc_M_ItemOrderPrice_SelectLatest.sql" />
     <Content Include="StoreProcedure\Fnc_M_JANOrderPrice_SelectLatest.sql" />

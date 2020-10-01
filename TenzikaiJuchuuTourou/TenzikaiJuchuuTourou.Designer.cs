@@ -236,6 +236,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.sc_Tenji = new Search.CKM_SearchControl();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.hdn_ExcAmt = new System.Windows.Forms.Label();
+            this.hdn_IncAmt = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.hdn_CostAmt = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.hdn_NmalAmt = new System.Windows.Forms.Label();
+            this.hdn_CsumAmt = new System.Windows.Forms.Label();
             this.PanelHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnl_haisou.SuspendLayout();
@@ -1159,7 +1166,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(24, 390);
+            this.panel2.Location = new System.Drawing.Point(24, 357);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1760, 400);
             this.panel2.TabIndex = 25;
@@ -1447,7 +1454,7 @@
             this.hanbaitanka_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hanbaitanka_5.ClientColor = System.Drawing.SystemColors.Window;
             this.hanbaitanka_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.hanbaitanka_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.hanbaitanka_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.hanbaitanka_5.DecimalPlace = 0;
             this.hanbaitanka_5.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.hanbaitanka_5.IntegerPart = 0;
@@ -1457,12 +1464,14 @@
             this.hanbaitanka_5.isMaxLengthErr = false;
             this.hanbaitanka_5.IsNumber = true;
             this.hanbaitanka_5.IsShop = false;
-            this.hanbaitanka_5.Length = 32767;
+            this.hanbaitanka_5.Length = 9;
             this.hanbaitanka_5.Location = new System.Drawing.Point(1128, 20);
+            this.hanbaitanka_5.MaxLength = 9;
             this.hanbaitanka_5.MoveNext = true;
             this.hanbaitanka_5.Name = "hanbaitanka_5";
             this.hanbaitanka_5.Size = new System.Drawing.Size(120, 19);
             this.hanbaitanka_5.TabIndex = 308;
+            this.hanbaitanka_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hanbaitanka_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.hanbaitanka_5.UseColorSizMode = false;
             // 
@@ -1485,9 +1494,9 @@
             this.sku_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sku_5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sku_5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.sku_5.Location = new System.Drawing.Point(159, 1);
+            this.sku_5.Location = new System.Drawing.Point(166, 1);
             this.sku_5.Name = "sku_5";
-            this.sku_5.Size = new System.Drawing.Size(350, 19);
+            this.sku_5.Size = new System.Drawing.Size(345, 19);
             this.sku_5.TabIndex = 306;
             this.sku_5.Text = " ";
             this.sku_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1501,7 +1510,7 @@
             this.juchuusuu_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.juchuusuu_5.ClientColor = System.Drawing.SystemColors.Window;
             this.juchuusuu_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.juchuusuu_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.juchuusuu_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.juchuusuu_5.DecimalPlace = 0;
             this.juchuusuu_5.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.juchuusuu_5.IntegerPart = 0;
@@ -1511,12 +1520,14 @@
             this.juchuusuu_5.isMaxLengthErr = false;
             this.juchuusuu_5.IsNumber = true;
             this.juchuusuu_5.IsShop = false;
-            this.juchuusuu_5.Length = 32767;
+            this.juchuusuu_5.Length = 9;
             this.juchuusuu_5.Location = new System.Drawing.Point(1008, 20);
+            this.juchuusuu_5.MaxLength = 9;
             this.juchuusuu_5.MoveNext = true;
             this.juchuusuu_5.Name = "juchuusuu_5";
             this.juchuusuu_5.Size = new System.Drawing.Size(80, 19);
             this.juchuusuu_5.TabIndex = 297;
+            this.juchuusuu_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.juchuusuu_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.juchuusuu_5.UseColorSizMode = false;
             // 
@@ -1529,7 +1540,7 @@
             this.nyuukayotei_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nyuukayotei_5.ClientColor = System.Drawing.SystemColors.Window;
             this.nyuukayotei_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.nyuukayotei_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.nyuukayotei_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.nyuukayotei_5.DecimalPlace = 0;
             this.nyuukayotei_5.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.nyuukayotei_5.IntegerPart = 0;
@@ -1539,12 +1550,14 @@
             this.nyuukayotei_5.isMaxLengthErr = false;
             this.nyuukayotei_5.IsNumber = true;
             this.nyuukayotei_5.IsShop = false;
-            this.nyuukayotei_5.Length = 32767;
+            this.nyuukayotei_5.Length = 10;
             this.nyuukayotei_5.Location = new System.Drawing.Point(908, 20);
+            this.nyuukayotei_5.MaxLength = 10;
             this.nyuukayotei_5.MoveNext = true;
             this.nyuukayotei_5.Name = "nyuukayotei_5";
             this.nyuukayotei_5.Size = new System.Drawing.Size(100, 19);
             this.nyuukayotei_5.TabIndex = 296;
+            this.nyuukayotei_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nyuukayotei_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.nyuukayotei_5.UseColorSizMode = false;
             // 
@@ -1557,7 +1570,7 @@
             this.hacchutanka_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hacchutanka_5.ClientColor = System.Drawing.SystemColors.Window;
             this.hacchutanka_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.hacchutanka_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.hacchutanka_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.hacchutanka_5.DecimalPlace = 0;
             this.hacchutanka_5.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.hacchutanka_5.IntegerPart = 0;
@@ -1567,12 +1580,14 @@
             this.hacchutanka_5.isMaxLengthErr = false;
             this.hacchutanka_5.IsNumber = true;
             this.hacchutanka_5.IsShop = false;
-            this.hacchutanka_5.Length = 32767;
+            this.hacchutanka_5.Length = 9;
             this.hacchutanka_5.Location = new System.Drawing.Point(808, 20);
+            this.hacchutanka_5.MaxLength = 9;
             this.hacchutanka_5.MoveNext = true;
             this.hacchutanka_5.Name = "hacchutanka_5";
             this.hacchutanka_5.Size = new System.Drawing.Size(100, 19);
             this.hacchutanka_5.TabIndex = 295;
+            this.hacchutanka_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hacchutanka_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.hacchutanka_5.UseColorSizMode = false;
             // 
@@ -1614,7 +1629,7 @@
             this.shuukayotei_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.shuukayotei_5.ClientColor = System.Drawing.SystemColors.Window;
             this.shuukayotei_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.shuukayotei_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.shuukayotei_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.shuukayotei_5.DecimalPlace = 0;
             this.shuukayotei_5.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.shuukayotei_5.IntegerPart = 0;
@@ -1624,12 +1639,14 @@
             this.shuukayotei_5.isMaxLengthErr = false;
             this.shuukayotei_5.IsNumber = true;
             this.shuukayotei_5.IsShop = false;
-            this.shuukayotei_5.Length = 32767;
+            this.shuukayotei_5.Length = 10;
             this.shuukayotei_5.Location = new System.Drawing.Point(28, 20);
+            this.shuukayotei_5.MaxLength = 10;
             this.shuukayotei_5.MoveNext = true;
             this.shuukayotei_5.Name = "shuukayotei_5";
             this.shuukayotei_5.Size = new System.Drawing.Size(100, 19);
             this.shuukayotei_5.TabIndex = 291;
+            this.shuukayotei_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.shuukayotei_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shuukayotei_5.UseColorSizMode = false;
             // 
@@ -1771,7 +1788,7 @@
             this.shouhin_5.BorderColor = false;
             this.shouhin_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.shouhin_5.ClientColor = System.Drawing.SystemColors.Window;
-            this.shouhin_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.shouhin_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.shouhin_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.shouhin_5.DecimalPlace = 0;
             this.shouhin_5.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1782,8 +1799,9 @@
             this.shouhin_5.isMaxLengthErr = false;
             this.shouhin_5.IsNumber = true;
             this.shouhin_5.IsShop = false;
-            this.shouhin_5.Length = 32767;
+            this.shouhin_5.Length = 80;
             this.shouhin_5.Location = new System.Drawing.Point(509, 1);
+            this.shouhin_5.MaxLength = 80;
             this.shouhin_5.MoveNext = true;
             this.shouhin_5.Name = "shouhin_5";
             this.shouhin_5.Size = new System.Drawing.Size(620, 19);
@@ -2108,7 +2126,7 @@
             this.hanbaitanka_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hanbaitanka_4.ClientColor = System.Drawing.SystemColors.Window;
             this.hanbaitanka_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.hanbaitanka_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.hanbaitanka_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.hanbaitanka_4.DecimalPlace = 0;
             this.hanbaitanka_4.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.hanbaitanka_4.IntegerPart = 0;
@@ -2118,12 +2136,14 @@
             this.hanbaitanka_4.isMaxLengthErr = false;
             this.hanbaitanka_4.IsNumber = true;
             this.hanbaitanka_4.IsShop = false;
-            this.hanbaitanka_4.Length = 32767;
+            this.hanbaitanka_4.Length = 9;
             this.hanbaitanka_4.Location = new System.Drawing.Point(1128, 20);
+            this.hanbaitanka_4.MaxLength = 9;
             this.hanbaitanka_4.MoveNext = true;
             this.hanbaitanka_4.Name = "hanbaitanka_4";
             this.hanbaitanka_4.Size = new System.Drawing.Size(120, 19);
             this.hanbaitanka_4.TabIndex = 308;
+            this.hanbaitanka_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hanbaitanka_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.hanbaitanka_4.UseColorSizMode = false;
             // 
@@ -2146,9 +2166,9 @@
             this.sku_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sku_4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sku_4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.sku_4.Location = new System.Drawing.Point(159, 1);
+            this.sku_4.Location = new System.Drawing.Point(166, 1);
             this.sku_4.Name = "sku_4";
-            this.sku_4.Size = new System.Drawing.Size(350, 19);
+            this.sku_4.Size = new System.Drawing.Size(345, 19);
             this.sku_4.TabIndex = 306;
             this.sku_4.Text = " ";
             this.sku_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2162,7 +2182,7 @@
             this.juchuusuu_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.juchuusuu_4.ClientColor = System.Drawing.SystemColors.Window;
             this.juchuusuu_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.juchuusuu_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.juchuusuu_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.juchuusuu_4.DecimalPlace = 0;
             this.juchuusuu_4.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.juchuusuu_4.IntegerPart = 0;
@@ -2172,12 +2192,14 @@
             this.juchuusuu_4.isMaxLengthErr = false;
             this.juchuusuu_4.IsNumber = true;
             this.juchuusuu_4.IsShop = false;
-            this.juchuusuu_4.Length = 32767;
+            this.juchuusuu_4.Length = 9;
             this.juchuusuu_4.Location = new System.Drawing.Point(1008, 20);
+            this.juchuusuu_4.MaxLength = 9;
             this.juchuusuu_4.MoveNext = true;
             this.juchuusuu_4.Name = "juchuusuu_4";
             this.juchuusuu_4.Size = new System.Drawing.Size(80, 19);
             this.juchuusuu_4.TabIndex = 297;
+            this.juchuusuu_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.juchuusuu_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.juchuusuu_4.UseColorSizMode = false;
             // 
@@ -2190,7 +2212,7 @@
             this.nyuukayotei_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nyuukayotei_4.ClientColor = System.Drawing.SystemColors.Window;
             this.nyuukayotei_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.nyuukayotei_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.nyuukayotei_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.nyuukayotei_4.DecimalPlace = 0;
             this.nyuukayotei_4.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.nyuukayotei_4.IntegerPart = 0;
@@ -2200,12 +2222,14 @@
             this.nyuukayotei_4.isMaxLengthErr = false;
             this.nyuukayotei_4.IsNumber = true;
             this.nyuukayotei_4.IsShop = false;
-            this.nyuukayotei_4.Length = 32767;
+            this.nyuukayotei_4.Length = 10;
             this.nyuukayotei_4.Location = new System.Drawing.Point(908, 20);
+            this.nyuukayotei_4.MaxLength = 10;
             this.nyuukayotei_4.MoveNext = true;
             this.nyuukayotei_4.Name = "nyuukayotei_4";
             this.nyuukayotei_4.Size = new System.Drawing.Size(100, 19);
             this.nyuukayotei_4.TabIndex = 296;
+            this.nyuukayotei_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nyuukayotei_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.nyuukayotei_4.UseColorSizMode = false;
             // 
@@ -2218,7 +2242,7 @@
             this.hacchutanka_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hacchutanka_4.ClientColor = System.Drawing.SystemColors.Window;
             this.hacchutanka_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.hacchutanka_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.hacchutanka_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.hacchutanka_4.DecimalPlace = 0;
             this.hacchutanka_4.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.hacchutanka_4.IntegerPart = 0;
@@ -2228,12 +2252,14 @@
             this.hacchutanka_4.isMaxLengthErr = false;
             this.hacchutanka_4.IsNumber = true;
             this.hacchutanka_4.IsShop = false;
-            this.hacchutanka_4.Length = 32767;
+            this.hacchutanka_4.Length = 9;
             this.hacchutanka_4.Location = new System.Drawing.Point(808, 20);
+            this.hacchutanka_4.MaxLength = 9;
             this.hacchutanka_4.MoveNext = true;
             this.hacchutanka_4.Name = "hacchutanka_4";
             this.hacchutanka_4.Size = new System.Drawing.Size(100, 19);
             this.hacchutanka_4.TabIndex = 295;
+            this.hacchutanka_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hacchutanka_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.hacchutanka_4.UseColorSizMode = false;
             // 
@@ -2275,7 +2301,7 @@
             this.shuukayotei_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.shuukayotei_4.ClientColor = System.Drawing.SystemColors.Window;
             this.shuukayotei_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.shuukayotei_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.shuukayotei_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.shuukayotei_4.DecimalPlace = 0;
             this.shuukayotei_4.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.shuukayotei_4.IntegerPart = 0;
@@ -2285,12 +2311,14 @@
             this.shuukayotei_4.isMaxLengthErr = false;
             this.shuukayotei_4.IsNumber = true;
             this.shuukayotei_4.IsShop = false;
-            this.shuukayotei_4.Length = 32767;
+            this.shuukayotei_4.Length = 10;
             this.shuukayotei_4.Location = new System.Drawing.Point(28, 20);
+            this.shuukayotei_4.MaxLength = 10;
             this.shuukayotei_4.MoveNext = true;
             this.shuukayotei_4.Name = "shuukayotei_4";
             this.shuukayotei_4.Size = new System.Drawing.Size(100, 19);
             this.shuukayotei_4.TabIndex = 291;
+            this.shuukayotei_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.shuukayotei_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shuukayotei_4.UseColorSizMode = false;
             // 
@@ -2432,7 +2460,7 @@
             this.shouhin_4.BorderColor = false;
             this.shouhin_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.shouhin_4.ClientColor = System.Drawing.SystemColors.Window;
-            this.shouhin_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.shouhin_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.shouhin_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.shouhin_4.DecimalPlace = 0;
             this.shouhin_4.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -2443,8 +2471,9 @@
             this.shouhin_4.isMaxLengthErr = false;
             this.shouhin_4.IsNumber = true;
             this.shouhin_4.IsShop = false;
-            this.shouhin_4.Length = 32767;
+            this.shouhin_4.Length = 80;
             this.shouhin_4.Location = new System.Drawing.Point(509, 1);
+            this.shouhin_4.MaxLength = 80;
             this.shouhin_4.MoveNext = true;
             this.shouhin_4.Name = "shouhin_4";
             this.shouhin_4.Size = new System.Drawing.Size(620, 19);
@@ -2769,7 +2798,7 @@
             this.hanbaitanka_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hanbaitanka_3.ClientColor = System.Drawing.SystemColors.Window;
             this.hanbaitanka_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.hanbaitanka_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.hanbaitanka_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.hanbaitanka_3.DecimalPlace = 0;
             this.hanbaitanka_3.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.hanbaitanka_3.IntegerPart = 0;
@@ -2779,12 +2808,14 @@
             this.hanbaitanka_3.isMaxLengthErr = false;
             this.hanbaitanka_3.IsNumber = true;
             this.hanbaitanka_3.IsShop = false;
-            this.hanbaitanka_3.Length = 32767;
+            this.hanbaitanka_3.Length = 9;
             this.hanbaitanka_3.Location = new System.Drawing.Point(1128, 20);
+            this.hanbaitanka_3.MaxLength = 9;
             this.hanbaitanka_3.MoveNext = true;
             this.hanbaitanka_3.Name = "hanbaitanka_3";
             this.hanbaitanka_3.Size = new System.Drawing.Size(120, 19);
             this.hanbaitanka_3.TabIndex = 308;
+            this.hanbaitanka_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hanbaitanka_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.hanbaitanka_3.UseColorSizMode = false;
             // 
@@ -2807,9 +2838,9 @@
             this.sku_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sku_3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sku_3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.sku_3.Location = new System.Drawing.Point(159, 1);
+            this.sku_3.Location = new System.Drawing.Point(166, 1);
             this.sku_3.Name = "sku_3";
-            this.sku_3.Size = new System.Drawing.Size(350, 19);
+            this.sku_3.Size = new System.Drawing.Size(345, 19);
             this.sku_3.TabIndex = 306;
             this.sku_3.Text = " ";
             this.sku_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2823,7 +2854,7 @@
             this.juchuusuu_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.juchuusuu_3.ClientColor = System.Drawing.SystemColors.Window;
             this.juchuusuu_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.juchuusuu_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.juchuusuu_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.juchuusuu_3.DecimalPlace = 0;
             this.juchuusuu_3.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.juchuusuu_3.IntegerPart = 0;
@@ -2833,12 +2864,14 @@
             this.juchuusuu_3.isMaxLengthErr = false;
             this.juchuusuu_3.IsNumber = true;
             this.juchuusuu_3.IsShop = false;
-            this.juchuusuu_3.Length = 32767;
+            this.juchuusuu_3.Length = 9;
             this.juchuusuu_3.Location = new System.Drawing.Point(1008, 20);
+            this.juchuusuu_3.MaxLength = 9;
             this.juchuusuu_3.MoveNext = true;
             this.juchuusuu_3.Name = "juchuusuu_3";
             this.juchuusuu_3.Size = new System.Drawing.Size(80, 19);
             this.juchuusuu_3.TabIndex = 297;
+            this.juchuusuu_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.juchuusuu_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.juchuusuu_3.UseColorSizMode = false;
             // 
@@ -2851,7 +2884,7 @@
             this.nyuukayotei_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nyuukayotei_3.ClientColor = System.Drawing.SystemColors.Window;
             this.nyuukayotei_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.nyuukayotei_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.nyuukayotei_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.nyuukayotei_3.DecimalPlace = 0;
             this.nyuukayotei_3.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.nyuukayotei_3.IntegerPart = 0;
@@ -2861,12 +2894,14 @@
             this.nyuukayotei_3.isMaxLengthErr = false;
             this.nyuukayotei_3.IsNumber = true;
             this.nyuukayotei_3.IsShop = false;
-            this.nyuukayotei_3.Length = 32767;
+            this.nyuukayotei_3.Length = 10;
             this.nyuukayotei_3.Location = new System.Drawing.Point(908, 20);
+            this.nyuukayotei_3.MaxLength = 10;
             this.nyuukayotei_3.MoveNext = true;
             this.nyuukayotei_3.Name = "nyuukayotei_3";
             this.nyuukayotei_3.Size = new System.Drawing.Size(100, 19);
             this.nyuukayotei_3.TabIndex = 296;
+            this.nyuukayotei_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nyuukayotei_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.nyuukayotei_3.UseColorSizMode = false;
             // 
@@ -2879,7 +2914,7 @@
             this.hacchutanka_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hacchutanka_3.ClientColor = System.Drawing.SystemColors.Window;
             this.hacchutanka_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.hacchutanka_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.hacchutanka_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.hacchutanka_3.DecimalPlace = 0;
             this.hacchutanka_3.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.hacchutanka_3.IntegerPart = 0;
@@ -2889,12 +2924,14 @@
             this.hacchutanka_3.isMaxLengthErr = false;
             this.hacchutanka_3.IsNumber = true;
             this.hacchutanka_3.IsShop = false;
-            this.hacchutanka_3.Length = 32767;
+            this.hacchutanka_3.Length = 9;
             this.hacchutanka_3.Location = new System.Drawing.Point(808, 20);
+            this.hacchutanka_3.MaxLength = 9;
             this.hacchutanka_3.MoveNext = true;
             this.hacchutanka_3.Name = "hacchutanka_3";
             this.hacchutanka_3.Size = new System.Drawing.Size(100, 19);
             this.hacchutanka_3.TabIndex = 295;
+            this.hacchutanka_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hacchutanka_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.hacchutanka_3.UseColorSizMode = false;
             // 
@@ -2936,7 +2973,7 @@
             this.shuukayotei_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.shuukayotei_3.ClientColor = System.Drawing.SystemColors.Window;
             this.shuukayotei_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.shuukayotei_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.shuukayotei_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.shuukayotei_3.DecimalPlace = 0;
             this.shuukayotei_3.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.shuukayotei_3.IntegerPart = 0;
@@ -2946,12 +2983,14 @@
             this.shuukayotei_3.isMaxLengthErr = false;
             this.shuukayotei_3.IsNumber = true;
             this.shuukayotei_3.IsShop = false;
-            this.shuukayotei_3.Length = 32767;
+            this.shuukayotei_3.Length = 10;
             this.shuukayotei_3.Location = new System.Drawing.Point(28, 20);
+            this.shuukayotei_3.MaxLength = 10;
             this.shuukayotei_3.MoveNext = true;
             this.shuukayotei_3.Name = "shuukayotei_3";
             this.shuukayotei_3.Size = new System.Drawing.Size(100, 19);
             this.shuukayotei_3.TabIndex = 291;
+            this.shuukayotei_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.shuukayotei_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shuukayotei_3.UseColorSizMode = false;
             // 
@@ -3093,7 +3132,7 @@
             this.shouhin_3.BorderColor = false;
             this.shouhin_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.shouhin_3.ClientColor = System.Drawing.SystemColors.Window;
-            this.shouhin_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.shouhin_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.shouhin_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.shouhin_3.DecimalPlace = 0;
             this.shouhin_3.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -3104,8 +3143,9 @@
             this.shouhin_3.isMaxLengthErr = false;
             this.shouhin_3.IsNumber = true;
             this.shouhin_3.IsShop = false;
-            this.shouhin_3.Length = 32767;
+            this.shouhin_3.Length = 80;
             this.shouhin_3.Location = new System.Drawing.Point(509, 1);
+            this.shouhin_3.MaxLength = 80;
             this.shouhin_3.MoveNext = true;
             this.shouhin_3.Name = "shouhin_3";
             this.shouhin_3.Size = new System.Drawing.Size(620, 19);
@@ -3430,7 +3470,7 @@
             this.hanbaitanka_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hanbaitanka_2.ClientColor = System.Drawing.SystemColors.Window;
             this.hanbaitanka_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.hanbaitanka_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.hanbaitanka_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.hanbaitanka_2.DecimalPlace = 0;
             this.hanbaitanka_2.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.hanbaitanka_2.IntegerPart = 0;
@@ -3440,12 +3480,14 @@
             this.hanbaitanka_2.isMaxLengthErr = false;
             this.hanbaitanka_2.IsNumber = true;
             this.hanbaitanka_2.IsShop = false;
-            this.hanbaitanka_2.Length = 32767;
+            this.hanbaitanka_2.Length = 9;
             this.hanbaitanka_2.Location = new System.Drawing.Point(1128, 20);
+            this.hanbaitanka_2.MaxLength = 9;
             this.hanbaitanka_2.MoveNext = true;
             this.hanbaitanka_2.Name = "hanbaitanka_2";
             this.hanbaitanka_2.Size = new System.Drawing.Size(120, 19);
             this.hanbaitanka_2.TabIndex = 308;
+            this.hanbaitanka_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hanbaitanka_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.hanbaitanka_2.UseColorSizMode = false;
             // 
@@ -3468,9 +3510,9 @@
             this.sku_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sku_2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sku_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.sku_2.Location = new System.Drawing.Point(159, 1);
+            this.sku_2.Location = new System.Drawing.Point(166, 1);
             this.sku_2.Name = "sku_2";
-            this.sku_2.Size = new System.Drawing.Size(350, 19);
+            this.sku_2.Size = new System.Drawing.Size(345, 19);
             this.sku_2.TabIndex = 306;
             this.sku_2.Text = " ";
             this.sku_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3484,7 +3526,7 @@
             this.juchuusuu_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.juchuusuu_2.ClientColor = System.Drawing.SystemColors.Window;
             this.juchuusuu_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.juchuusuu_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.juchuusuu_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.juchuusuu_2.DecimalPlace = 0;
             this.juchuusuu_2.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.juchuusuu_2.IntegerPart = 0;
@@ -3494,12 +3536,14 @@
             this.juchuusuu_2.isMaxLengthErr = false;
             this.juchuusuu_2.IsNumber = true;
             this.juchuusuu_2.IsShop = false;
-            this.juchuusuu_2.Length = 32767;
+            this.juchuusuu_2.Length = 9;
             this.juchuusuu_2.Location = new System.Drawing.Point(1008, 20);
+            this.juchuusuu_2.MaxLength = 9;
             this.juchuusuu_2.MoveNext = true;
             this.juchuusuu_2.Name = "juchuusuu_2";
             this.juchuusuu_2.Size = new System.Drawing.Size(80, 19);
             this.juchuusuu_2.TabIndex = 297;
+            this.juchuusuu_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.juchuusuu_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.juchuusuu_2.UseColorSizMode = false;
             // 
@@ -3512,7 +3556,7 @@
             this.nyuukayotei_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nyuukayotei_2.ClientColor = System.Drawing.SystemColors.Window;
             this.nyuukayotei_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.nyuukayotei_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.nyuukayotei_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.nyuukayotei_2.DecimalPlace = 0;
             this.nyuukayotei_2.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.nyuukayotei_2.IntegerPart = 0;
@@ -3522,12 +3566,14 @@
             this.nyuukayotei_2.isMaxLengthErr = false;
             this.nyuukayotei_2.IsNumber = true;
             this.nyuukayotei_2.IsShop = false;
-            this.nyuukayotei_2.Length = 32767;
+            this.nyuukayotei_2.Length = 10;
             this.nyuukayotei_2.Location = new System.Drawing.Point(908, 20);
+            this.nyuukayotei_2.MaxLength = 10;
             this.nyuukayotei_2.MoveNext = true;
             this.nyuukayotei_2.Name = "nyuukayotei_2";
             this.nyuukayotei_2.Size = new System.Drawing.Size(100, 19);
             this.nyuukayotei_2.TabIndex = 296;
+            this.nyuukayotei_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nyuukayotei_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.nyuukayotei_2.UseColorSizMode = false;
             // 
@@ -3540,7 +3586,7 @@
             this.hacchutanka_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hacchutanka_2.ClientColor = System.Drawing.SystemColors.Window;
             this.hacchutanka_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.hacchutanka_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.hacchutanka_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.hacchutanka_2.DecimalPlace = 0;
             this.hacchutanka_2.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.hacchutanka_2.IntegerPart = 0;
@@ -3550,12 +3596,14 @@
             this.hacchutanka_2.isMaxLengthErr = false;
             this.hacchutanka_2.IsNumber = true;
             this.hacchutanka_2.IsShop = false;
-            this.hacchutanka_2.Length = 32767;
+            this.hacchutanka_2.Length = 9;
             this.hacchutanka_2.Location = new System.Drawing.Point(808, 20);
+            this.hacchutanka_2.MaxLength = 9;
             this.hacchutanka_2.MoveNext = true;
             this.hacchutanka_2.Name = "hacchutanka_2";
             this.hacchutanka_2.Size = new System.Drawing.Size(100, 19);
             this.hacchutanka_2.TabIndex = 295;
+            this.hacchutanka_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hacchutanka_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.hacchutanka_2.UseColorSizMode = false;
             // 
@@ -3597,7 +3645,7 @@
             this.shuukayotei_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.shuukayotei_2.ClientColor = System.Drawing.SystemColors.Window;
             this.shuukayotei_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.shuukayotei_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.shuukayotei_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.shuukayotei_2.DecimalPlace = 0;
             this.shuukayotei_2.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.shuukayotei_2.IntegerPart = 0;
@@ -3607,12 +3655,14 @@
             this.shuukayotei_2.isMaxLengthErr = false;
             this.shuukayotei_2.IsNumber = true;
             this.shuukayotei_2.IsShop = false;
-            this.shuukayotei_2.Length = 32767;
+            this.shuukayotei_2.Length = 10;
             this.shuukayotei_2.Location = new System.Drawing.Point(28, 20);
+            this.shuukayotei_2.MaxLength = 10;
             this.shuukayotei_2.MoveNext = true;
             this.shuukayotei_2.Name = "shuukayotei_2";
             this.shuukayotei_2.Size = new System.Drawing.Size(100, 19);
             this.shuukayotei_2.TabIndex = 291;
+            this.shuukayotei_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.shuukayotei_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shuukayotei_2.UseColorSizMode = false;
             // 
@@ -3754,7 +3804,7 @@
             this.shouhin_2.BorderColor = false;
             this.shouhin_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.shouhin_2.ClientColor = System.Drawing.SystemColors.Window;
-            this.shouhin_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.shouhin_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.shouhin_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.shouhin_2.DecimalPlace = 0;
             this.shouhin_2.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -3765,8 +3815,9 @@
             this.shouhin_2.isMaxLengthErr = false;
             this.shouhin_2.IsNumber = true;
             this.shouhin_2.IsShop = false;
-            this.shouhin_2.Length = 32767;
+            this.shouhin_2.Length = 80;
             this.shouhin_2.Location = new System.Drawing.Point(509, 1);
+            this.shouhin_2.MaxLength = 80;
             this.shouhin_2.MoveNext = true;
             this.shouhin_2.Name = "shouhin_2";
             this.shouhin_2.Size = new System.Drawing.Size(620, 19);
@@ -4091,7 +4142,7 @@
             this.hanbaitanka_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hanbaitanka_1.ClientColor = System.Drawing.SystemColors.Window;
             this.hanbaitanka_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.hanbaitanka_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.hanbaitanka_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.hanbaitanka_1.DecimalPlace = 0;
             this.hanbaitanka_1.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.hanbaitanka_1.IntegerPart = 0;
@@ -4101,12 +4152,14 @@
             this.hanbaitanka_1.isMaxLengthErr = false;
             this.hanbaitanka_1.IsNumber = true;
             this.hanbaitanka_1.IsShop = false;
-            this.hanbaitanka_1.Length = 32767;
+            this.hanbaitanka_1.Length = 9;
             this.hanbaitanka_1.Location = new System.Drawing.Point(1128, 20);
+            this.hanbaitanka_1.MaxLength = 9;
             this.hanbaitanka_1.MoveNext = true;
             this.hanbaitanka_1.Name = "hanbaitanka_1";
             this.hanbaitanka_1.Size = new System.Drawing.Size(120, 19);
             this.hanbaitanka_1.TabIndex = 308;
+            this.hanbaitanka_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hanbaitanka_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.hanbaitanka_1.UseColorSizMode = false;
             // 
@@ -4129,9 +4182,9 @@
             this.sku_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sku_1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sku_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.sku_1.Location = new System.Drawing.Point(159, 1);
+            this.sku_1.Location = new System.Drawing.Point(166, 1);
             this.sku_1.Name = "sku_1";
-            this.sku_1.Size = new System.Drawing.Size(350, 19);
+            this.sku_1.Size = new System.Drawing.Size(345, 19);
             this.sku_1.TabIndex = 306;
             this.sku_1.Text = " ";
             this.sku_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4145,7 +4198,7 @@
             this.juchuusuu_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.juchuusuu_1.ClientColor = System.Drawing.SystemColors.Window;
             this.juchuusuu_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.juchuusuu_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.juchuusuu_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.juchuusuu_1.DecimalPlace = 0;
             this.juchuusuu_1.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.juchuusuu_1.IntegerPart = 0;
@@ -4155,12 +4208,14 @@
             this.juchuusuu_1.isMaxLengthErr = false;
             this.juchuusuu_1.IsNumber = true;
             this.juchuusuu_1.IsShop = false;
-            this.juchuusuu_1.Length = 32767;
+            this.juchuusuu_1.Length = 9;
             this.juchuusuu_1.Location = new System.Drawing.Point(1008, 20);
+            this.juchuusuu_1.MaxLength = 9;
             this.juchuusuu_1.MoveNext = true;
             this.juchuusuu_1.Name = "juchuusuu_1";
             this.juchuusuu_1.Size = new System.Drawing.Size(80, 19);
             this.juchuusuu_1.TabIndex = 297;
+            this.juchuusuu_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.juchuusuu_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.juchuusuu_1.UseColorSizMode = false;
             // 
@@ -4173,7 +4228,7 @@
             this.nyuukayotei_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nyuukayotei_1.ClientColor = System.Drawing.SystemColors.Window;
             this.nyuukayotei_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.nyuukayotei_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.nyuukayotei_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.nyuukayotei_1.DecimalPlace = 0;
             this.nyuukayotei_1.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.nyuukayotei_1.IntegerPart = 0;
@@ -4183,12 +4238,14 @@
             this.nyuukayotei_1.isMaxLengthErr = false;
             this.nyuukayotei_1.IsNumber = true;
             this.nyuukayotei_1.IsShop = false;
-            this.nyuukayotei_1.Length = 32767;
+            this.nyuukayotei_1.Length = 10;
             this.nyuukayotei_1.Location = new System.Drawing.Point(908, 20);
+            this.nyuukayotei_1.MaxLength = 10;
             this.nyuukayotei_1.MoveNext = true;
             this.nyuukayotei_1.Name = "nyuukayotei_1";
             this.nyuukayotei_1.Size = new System.Drawing.Size(100, 19);
             this.nyuukayotei_1.TabIndex = 296;
+            this.nyuukayotei_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nyuukayotei_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.nyuukayotei_1.UseColorSizMode = false;
             // 
@@ -4201,7 +4258,7 @@
             this.hacchutanka_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hacchutanka_1.ClientColor = System.Drawing.SystemColors.Window;
             this.hacchutanka_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.hacchutanka_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.hacchutanka_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.hacchutanka_1.DecimalPlace = 0;
             this.hacchutanka_1.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.hacchutanka_1.IntegerPart = 0;
@@ -4211,12 +4268,14 @@
             this.hacchutanka_1.isMaxLengthErr = false;
             this.hacchutanka_1.IsNumber = true;
             this.hacchutanka_1.IsShop = false;
-            this.hacchutanka_1.Length = 32767;
+            this.hacchutanka_1.Length = 9;
             this.hacchutanka_1.Location = new System.Drawing.Point(808, 20);
+            this.hacchutanka_1.MaxLength = 9;
             this.hacchutanka_1.MoveNext = true;
             this.hacchutanka_1.Name = "hacchutanka_1";
             this.hacchutanka_1.Size = new System.Drawing.Size(100, 19);
             this.hacchutanka_1.TabIndex = 295;
+            this.hacchutanka_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hacchutanka_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.hacchutanka_1.UseColorSizMode = false;
             // 
@@ -4258,7 +4317,7 @@
             this.shuukayotei_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.shuukayotei_1.ClientColor = System.Drawing.SystemColors.Window;
             this.shuukayotei_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.shuukayotei_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.shuukayotei_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.shuukayotei_1.DecimalPlace = 0;
             this.shuukayotei_1.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.shuukayotei_1.IntegerPart = 0;
@@ -4268,12 +4327,14 @@
             this.shuukayotei_1.isMaxLengthErr = false;
             this.shuukayotei_1.IsNumber = true;
             this.shuukayotei_1.IsShop = false;
-            this.shuukayotei_1.Length = 32767;
+            this.shuukayotei_1.Length = 10;
             this.shuukayotei_1.Location = new System.Drawing.Point(28, 20);
+            this.shuukayotei_1.MaxLength = 10;
             this.shuukayotei_1.MoveNext = true;
             this.shuukayotei_1.Name = "shuukayotei_1";
             this.shuukayotei_1.Size = new System.Drawing.Size(100, 19);
             this.shuukayotei_1.TabIndex = 291;
+            this.shuukayotei_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.shuukayotei_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shuukayotei_1.UseColorSizMode = false;
             // 
@@ -4415,7 +4476,7 @@
             this.shouhin_1.BorderColor = false;
             this.shouhin_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.shouhin_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.shouhin_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.shouhin_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.shouhin_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.shouhin_1.DecimalPlace = 0;
             this.shouhin_1.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -4426,8 +4487,9 @@
             this.shouhin_1.isMaxLengthErr = false;
             this.shouhin_1.IsNumber = true;
             this.shouhin_1.IsShop = false;
-            this.shouhin_1.Length = 32767;
+            this.shouhin_1.Length = 80;
             this.shouhin_1.Location = new System.Drawing.Point(509, 1);
+            this.shouhin_1.MaxLength = 80;
             this.shouhin_1.MoveNext = true;
             this.shouhin_1.Name = "shouhin_1";
             this.shouhin_1.Size = new System.Drawing.Size(620, 19);
@@ -4811,11 +4873,88 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
+            // hdn_ExcAmt
+            // 
+            this.hdn_ExcAmt.AutoSize = true;
+            this.hdn_ExcAmt.Location = new System.Drawing.Point(960, 760);
+            this.hdn_ExcAmt.Name = "hdn_ExcAmt";
+            this.hdn_ExcAmt.Size = new System.Drawing.Size(65, 12);
+            this.hdn_ExcAmt.TabIndex = 100;
+            this.hdn_ExcAmt.Text = "hdn_ExcAmt";
+            this.hdn_ExcAmt.Visible = false;
+            // 
+            // hdn_IncAmt
+            // 
+            this.hdn_IncAmt.AutoSize = true;
+            this.hdn_IncAmt.Location = new System.Drawing.Point(1083, 760);
+            this.hdn_IncAmt.Name = "hdn_IncAmt";
+            this.hdn_IncAmt.Size = new System.Drawing.Size(65, 12);
+            this.hdn_IncAmt.TabIndex = 101;
+            this.hdn_IncAmt.Text = "hdn_IncAmt";
+            this.hdn_IncAmt.Visible = false;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(1336, 760);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(77, 12);
+            this.label26.TabIndex = 103;
+            this.label26.Text = "hdn_GrossAmt";
+            this.label26.Visible = false;
+            // 
+            // hdn_CostAmt
+            // 
+            this.hdn_CostAmt.AutoSize = true;
+            this.hdn_CostAmt.Location = new System.Drawing.Point(1218, 760);
+            this.hdn_CostAmt.Name = "hdn_CostAmt";
+            this.hdn_CostAmt.Size = new System.Drawing.Size(71, 12);
+            this.hdn_CostAmt.TabIndex = 102;
+            this.hdn_CostAmt.Text = "hdn_CostAmt";
+            this.hdn_CostAmt.Visible = false;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(1694, 760);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(65, 12);
+            this.label28.TabIndex = 106;
+            this.label28.Text = "hdn_RduAmt";
+            this.label28.Visible = false;
+            // 
+            // hdn_NmalAmt
+            // 
+            this.hdn_NmalAmt.AutoSize = true;
+            this.hdn_NmalAmt.Location = new System.Drawing.Point(1591, 760);
+            this.hdn_NmalAmt.Name = "hdn_NmalAmt";
+            this.hdn_NmalAmt.Size = new System.Drawing.Size(71, 12);
+            this.hdn_NmalAmt.TabIndex = 105;
+            this.hdn_NmalAmt.Text = "hdn_NmalAmt";
+            this.hdn_NmalAmt.Visible = false;
+            // 
+            // hdn_CsumAmt
+            // 
+            this.hdn_CsumAmt.AutoSize = true;
+            this.hdn_CsumAmt.Location = new System.Drawing.Point(1458, 760);
+            this.hdn_CsumAmt.Name = "hdn_CsumAmt";
+            this.hdn_CsumAmt.Size = new System.Drawing.Size(71, 12);
+            this.hdn_CsumAmt.TabIndex = 104;
+            this.hdn_CsumAmt.Text = "hdn_CsumAmt";
+            this.hdn_CsumAmt.Visible = false;
+            // 
             // TenzikaiJuchuuTourou
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1789, 822);
+            this.Controls.Add(this.label28);
+            this.Controls.Add(this.hdn_NmalAmt);
+            this.Controls.Add(this.hdn_CsumAmt);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.hdn_CostAmt);
+            this.Controls.Add(this.hdn_IncAmt);
+            this.Controls.Add(this.hdn_ExcAmt);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Location = new System.Drawing.Point(0, 0);
@@ -4825,6 +4964,13 @@
             this.Load += new System.EventHandler(this.TenzikaiJuchuuTourou_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.hdn_ExcAmt, 0);
+            this.Controls.SetChildIndex(this.hdn_IncAmt, 0);
+            this.Controls.SetChildIndex(this.hdn_CostAmt, 0);
+            this.Controls.SetChildIndex(this.label26, 0);
+            this.Controls.SetChildIndex(this.hdn_CsumAmt, 0);
+            this.Controls.SetChildIndex(this.hdn_NmalAmt, 0);
+            this.Controls.SetChildIndex(this.label28, 0);
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -5069,6 +5215,13 @@
         private GridControl.clsGridCheckBox chk_3;
         private GridControl.clsGridCheckBox chk_2;
         private GridControl.clsGridCheckBox chk_1;
+        private System.Windows.Forms.Label hdn_ExcAmt;
+        private System.Windows.Forms.Label hdn_IncAmt;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label hdn_CostAmt;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label hdn_NmalAmt;
+        private System.Windows.Forms.Label hdn_CsumAmt;
     }
 }
 

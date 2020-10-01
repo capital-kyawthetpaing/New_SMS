@@ -154,7 +154,7 @@ namespace SiiresakiZaikoYoteiHyou
                 dmpe = new D_MonthlyPurchase_Entity();
                 dmpe = GetData();
                 DataTable dt = szybl.RPC_SiiresakiZaikoYoteiHyou(dmpe);
-                dt.Columns.Remove("Today");
+               // dt.Columns.Remove("Today");
                 if (dt.Rows.Count > 0)
                 {
                     DataTable dtExport = dt;
@@ -264,7 +264,8 @@ namespace SiiresakiZaikoYoteiHyou
                                 szy_Report.SetParameterValue("lblDateFrom", txtTargetDateFrom.Text);
                                 szy_Report.SetParameterValue("lblDateTo",txtTargetDateTo.Text);
                                 szy_Report.SetParameterValue("lblStore", cboStore.SelectedValue.ToString() + "   " + cboStore.Text);
-                                szy_Report.SetParameterValue("lblToday", dt.Rows[0]["Today"].ToString());
+                                //szy_Report.SetParameterValue("lblToday", dt.Rows[0]["Today"].ToString());
+                                szy_Report.SetParameterValue("lblToday", DateTime.Now.ToString("yyyy/MM/dd") + "  " + DateTime.Now.ToString("HH:mm"));
                                 try
                                 {
 

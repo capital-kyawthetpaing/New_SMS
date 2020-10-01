@@ -47,11 +47,17 @@ namespace TairyuZaikoHyou
             F11Visible = false;
 
             StartProgram();
-
+            
             BindCombo();
             SetRequireField();
             Btn_F12.Text = "出力(F12)";
             ModeVisible = false;
+
+            rdoOR.Checked = true;
+            rdoAND.Checked = false;
+            chkPrint.Checked = false;
+            rdoItem.Checked = false;
+            rdoProductCD.Checked = false;
 
         }
         public void BindCombo()
@@ -146,29 +152,25 @@ namespace TairyuZaikoHyou
                 }
             }
 
-            if(rdoItem.Checked)
-            {
-                if(string.IsNullOrWhiteSpace(txtItem.Text))
-                {
-                    tzkbl.ShowMessage("E102");
-                    txtItem.Focus();
-                    return false;
-                }
-                else
-                {
+            //if(rdoItem.Checked)
+            //{
+            //    if(string.IsNullOrWhiteSpace(txtItem.Text))
+            //    {
+            //        tzkbl.ShowMessage("E102");
+            //        txtItem.Focus();
+            //        return false;
+            //    }               
+            //}
 
-                }
-            }
-
-            if(rdoProductCD.Checked)
-            {
-                if(string.IsNullOrWhiteSpace(txtManufactureCD.Text))
-                {
-                    tzkbl.ShowMessage("E102");
-                    txtManufactureCD.Focus();
-                    return false;
-                }
-            }
+            //if(rdoProductCD.Checked)
+            //{
+            //    if(string.IsNullOrWhiteSpace(txtManufactureCD.Text))
+            //    {
+            //        tzkbl.ShowMessage("E102");
+            //        txtManufactureCD.Focus();
+            //        return false;
+            //    }
+            //}
 
             return true;
         }
@@ -511,7 +513,7 @@ namespace TairyuZaikoHyou
 
         private void chkPrint_CheckedChanged(object sender, EventArgs e)
         {
-            if(chkPrint.Checked == true)
+            if (chkPrint.Checked == true)
             {
                 rdoItem.Checked = true;
             }
@@ -519,6 +521,30 @@ namespace TairyuZaikoHyou
             {
                 rdoItem.Checked = false;
                 rdoProductCD.Checked = false;
+            }
+        }
+
+        private void rdoItem_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rdoItem.Checked == true)
+            {
+                if(chkPrint.Checked == false)
+                {
+                    tzkbl.ShowMessage("E102");
+                    chkPrint.Focus();
+                }
+            }
+        }
+
+        private void rdoProductCD_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoProductCD.Checked == true)
+            {
+                if (chkPrint.Checked == false)
+                {
+                    tzkbl.ShowMessage("E102");
+                    chkPrint.Focus();
+                }
             }
         }
     }

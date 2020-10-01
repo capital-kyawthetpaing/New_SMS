@@ -13,8 +13,9 @@ namespace TenzikaiJuchuuTourou
         internal struct ST_DArray_Grid
         {
             internal string GYONO;
+            internal bool Chk;
             internal string SCJAN;
-            internal string AdminNo;
+            internal string AdminNo; // Hidden
             internal string SKUCD;
             internal string ShouName;
             internal string Color;
@@ -29,18 +30,21 @@ namespace TenzikaiJuchuuTourou
             internal string NyuuKayo;
             internal string JuchuuSuu;
             internal string TenI;
+            internal string TeniName;
             internal string HanbaiTanka;
             internal string ZeinuJuchuu;
             internal string zeikomijuchuu;
             internal string ArariGaku;
             internal string ZeiNu;
             internal string ZeinuTanku;
-            internal bool Chk;
+            //internal bool Chk;
             internal string ShanaiBi;
             internal string ShagaiBi;
             internal string KobeTsu;
-            internal string TorokuFlg;
-            internal string TaxRateFlg;
+            internal string TorokuFlg; // hidden
+            internal string TaxRateFlg; //hidden
+            internal decimal Tsuujou; // hidden
+            internal decimal Keigen;// hidden
         }
         private enum EsearchKbn : short
         {
@@ -51,6 +55,7 @@ namespace TenzikaiJuchuuTourou
         internal enum ColNO : int
         {
             GYONO,
+            Chk,
             SCJAN,
            // AdminNo,
             SKUCD,
@@ -73,7 +78,7 @@ namespace TenzikaiJuchuuTourou
             ArariGaku,
             ZeiNu,
             ZeinuTanku,
-            Chk,
+            ///Chk,
             ShanaiBi,
             ShagaiBi,
             KobeTsu,

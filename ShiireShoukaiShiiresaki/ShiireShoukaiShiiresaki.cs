@@ -29,6 +29,7 @@ namespace ShiireShoukaiShiiresaki
         Base_BL bbl = new Base_BL();
         private const string ShiireNyuuryokuFromNyuuka = "ShiireNyuuryokuFromNyuuka.exe";
         private const string ShiireNyuuryoku = "ShiireNyuuryoku.exe";
+        private const string HenpinNyuuryoku = "HenpinNyuuryoku.exe";
         public ShiireShoukaiShiiresaki()
         {
             InitializeComponent();
@@ -127,10 +128,10 @@ namespace ShiireShoukaiShiiresaki
                     M_Vendor_Entity mve = new M_Vendor_Entity()
                     {
                         VendorCD = scSupplier.TxtCode.Text,
-                        ChangeDate=scSupplier.ChangeDate.ToString()
+                        ChangeDate = scSupplier.ChangeDate.ToString()
                     };
                     string aa = scSupplier.TxtCode.Text;
-                     payeeflg = dpurchase_bl.SelectPayeeFlg(mve);
+                    payeeflg = dpurchase_bl.SelectPayeeFlg(mve);
                 }
                 dpde = GetSearchInfo();
 
@@ -148,6 +149,7 @@ namespace ShiireShoukaiShiiresaki
                 {
                     dpurchase_bl.ShowMessage("E128");
                     dgvPurchaseSearch.DataSource = null;
+                    txtPurchaseDateFrom.Focus();
                 }
             }
         }
@@ -385,26 +387,56 @@ namespace ShiireShoukaiShiiresaki
             }
 
             /// <remarks>仕入先CDが存在しない場合エラーになる</remarks>
+            //if (!string.IsNullOrEmpty(scSupplier.TxtCode.Text))
+            //{
+            //    if (!scSupplier.IsExists(2))
+            //    {
+            //        dpurchase_bl.ShowMessage("E101");
+            //        scSupplier.SetFocus(1);
+            //        return false;
+            //    }
+            //}
+            scSupplier.ChangeDate = bbl.GetDate();
             if (!string.IsNullOrEmpty(scSupplier.TxtCode.Text))
             {
-                if (!scSupplier.IsExists(2))
+                if (scSupplier.SelectData())
                 {
-                    dpurchase_bl.ShowMessage("E101");
+                    scSupplier.Value1 = scSupplier.TxtCode.Text;
+                    scSupplier.Value2 = scSupplier.LabelText;
+                }
+                else
+                {
+                    bbl.ShowMessage("E101");
                     scSupplier.SetFocus(1);
                     return false;
                 }
             }
 
-            /// <remarks>スタッフCDが存在しない場合エラーになる</remarks>
+            scStaff.ChangeDate = bbl.GetDate();
             if (!string.IsNullOrEmpty(scStaff.TxtCode.Text))
             {
-                if (!scStaff.IsExists(2))
+                if (scStaff.SelectData())
                 {
-                    dpurchase_bl.ShowMessage("E101");
+                    scStaff.Value1 = scStaff.TxtCode.Text;
+                    scStaff.Value2 = scStaff.LabelText;
+                }
+                else
+                {
+                    bbl.ShowMessage("E101");
                     scStaff.SetFocus(1);
                     return false;
                 }
             }
+            /// <remarks>スタッフCDが存在しない場合エラーになる</remarks>
+            //if (!string.IsNullOrEmpty(scStaff.TxtCode.Text))
+            //{
+            //    if (!scStaff.IsExists(2))
+            //    {
+            //        dpurchase_bl.ShowMessage("E101");
+            //        scStaff.SetFocus(1);
+            //        return false;
+            //    }
+            //}
 
             /// <remarks>店舗名を選択した場合、権限があるかとかをチェックする</remarks>
             //if (!CboStore_ErrorCheck())
@@ -524,10 +556,20 @@ namespace ShiireShoukaiShiiresaki
                                 System.Diagnostics.Process.Start(filePath, cmdLine);
                             }
                         }
-                        else
+                        else if (dt.Rows[0]["ProcessKBN"].ToString().Equals("2"))
                         {
                             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
                             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + ShiireNyuuryoku;
+                            if (System.IO.File.Exists(filePath))
+                            {
+                                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + PurchaseNO;
+                                System.Diagnostics.Process.Start(filePath, cmdLine);
+                            }
+                        }
+                        else if (dt.Rows[0]["ProcessKBN"].ToString().Equals("3"))
+                        {
+                            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + HenpinNyuuryoku;
                             if (System.IO.File.Exists(filePath))
                             {
                                 string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + PurchaseNO;

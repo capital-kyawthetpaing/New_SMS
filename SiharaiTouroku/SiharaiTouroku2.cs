@@ -30,6 +30,9 @@ namespace SiharaiTouroku
         private string kouzaCD = string.Empty;
         private string payeeCD = string.Empty;
         private string payPlanDate = string.Empty;
+
+        private decimal mOldFurikomiGaku;
+
         public SiharaiTouroku_2(D_Pay_Entity dpe1, DataTable dt, DataTable dtDetail)
         {
             InitializeComponent();
@@ -74,9 +77,12 @@ namespace SiharaiTouroku
 
                 dgvSearchPayment.ReadOnly = false;
                 for (int i = 1; i < dgvSearchPayment.Columns.Count; i++)
-                    if(i != 5)  //今回支払額
-                    dgvSearchPayment.Columns[i].ReadOnly = true;
+                {
+                    if (i != 5)  //今回支払額
+                        dgvSearchPayment.Columns[i].ReadOnly = true;
 
+                    dgvSearchPayment.Columns[i].Resizable =  DataGridViewTriState.False;
+                }
                 BindData();
 
                 LabelDataBind();
@@ -144,6 +150,13 @@ namespace SiharaiTouroku
         {
             dtIDName1 = shnbl.M_Multipurpose_SelectIDName("217");
             dtIDName2 = shnbl.M_Multipurpose_SelectIDName("218");
+
+            if(dtIDName1.Rows.Count == 0 || dtIDName2.Rows.Count ==0)
+            {
+                bbl.ShowMessage("E101");
+                EndSec();
+                return;
+            }
 
             SC_HanyouKeyStart1.Value1 = dtIDName1.Rows[0]["ID"].ToString();
             SC_HanyouKeyStart1.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
@@ -333,8 +346,10 @@ namespace SiharaiTouroku
                 Clear();
             if (Index + 1 == 12)
             {
-                if(ErrorCheck())
+                if (ErrorCheck())
+                {
                     SendData();
+                }
             }
                 
         }
@@ -493,7 +508,17 @@ namespace SiharaiTouroku
                 return false;
             }
 
-           return true;
+            //支払総額≠振込額＋現金＋売掛相殺＋手形＋電債＋その他①＋その他②の場合、Error
+            if (bbl.Z_Set(lblPayGaku.Text) != bbl.Z_Set(txtTransferAmount.Text) + bbl.Z_Set(txtCash.Text)
+                                            + bbl.Z_Set(txtOffsetGaku.Text) + bbl.Z_Set(txtBill.Text)
+                                            + bbl.Z_Set(txtElectronicBone.Text) + bbl.Z_Set(txtOther1.Text) + bbl.Z_Set(txtOther2.Text))
+            {
+                bbl.ShowMessage("E195", "支払総額", "入力された金種毎の合計金額");
+                txtTransferAmount.Focus();
+                return false;
+            }
+
+            return true;
         }       
 
         /// <summary>
@@ -742,18 +767,21 @@ namespace SiharaiTouroku
         public void Select_KouzaFee()
         {
             if (!string.IsNullOrWhiteSpace(SC_BankCD.TxtCode.Text) && !string.IsNullOrWhiteSpace(SC_BranchCD.TxtCode.Text)
-                             && !string.IsNullOrWhiteSpace(txtFeeKBN.Text) && bbl.Z_Set(txtAmount.Text).Equals(0))
+                             && !string.IsNullOrWhiteSpace(txtFeeKBN.Text) && (bbl.Z_Set(txtAmount.Text).Equals(0) || mOldFurikomiGaku != bbl.Z_Set(txtTransferAmount.Text)))
             {
                 M_Kouza_Entity mkze = new M_Kouza_Entity
                 {
                     KouzaCD = kouzaCD,
                     BankCD = SC_BankCD.TxtCode.Text,
                     BranchCD = SC_BranchCD.TxtCode.Text,
-                    Amount = lblPayGaku.Text.Replace(",", ""),
+                    Amount = txtTransferAmount.Text.Replace(",", ""),
+//                    lblPayGaku.Text.Replace(",", ""),
+                    ChangeDate = dpe.PayDate,
 
                 };
                 DataTable dt=shnbl.M_Kouza_FeeSelect(mkze);
                 txtAmount.Text =bbl.Z_SetStr(dt.Rows[0]["Fee"]);
+                mOldFurikomiGaku =bbl.Z_Set(txtTransferAmount.Text);
             }
 
         }

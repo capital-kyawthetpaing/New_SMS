@@ -417,7 +417,28 @@ namespace Search
                             GvDetail.Columns[i].ReadOnly = true;
                     }
                 }
-
+                else if(Mode == "6")
+                {
+                    GvDetail.ReadOnly = false;
+                    for (int i = 0; i < GvDetail.ColumnCount; i++)
+                    {
+                        if (i.Equals(0))
+                            GvDetail.Columns[i].ReadOnly = false;
+                        else
+                            GvDetail.Columns[i].ReadOnly = true;
+                    }
+                }
+                else if (Mode == "7")
+                {
+                    GvDetail.ReadOnly = false;
+                    for (int i = 0; i < GvDetail.ColumnCount; i++)
+                    {
+                        if (i.Equals(0))
+                            GvDetail.Columns[i].ReadOnly = false;
+                        else
+                            GvDetail.Columns[i].ReadOnly = true;
+                    }
+                }
                 GvDetail.Enabled = true;
                 GvDetail.Focus();
             }
@@ -736,6 +757,30 @@ namespace Search
                         }
                     }
                 }
+                else if (Mode == "6")
+                {
+                    ITEM = "";
+                    for (int i = 0; i < GvDetail.RowCount; i++)
+                    {
+                        if (GvDetail.Rows[i].Cells["colCheck"].Value != null && GvDetail.Rows[i].Cells["colCheck"].Value.Equals(true))
+                        {
+                            list.Add(GvDetail.Rows[i].Cells["ITEMCD"].Value.ToString());
+                            ITEM += (ITEM != "" ? "," : "") + GvDetail.Rows[i].Cells["ITEMCD"].Value.ToString();
+                        }
+                    }
+                }
+                else if (Mode == "7")
+                {
+                    SKUCD = "";
+                    for (int i = 0; i < GvDetail.RowCount; i++)
+                    {
+                        if (GvDetail.Rows[i].Cells["colCheck"].Value != null && GvDetail.Rows[i].Cells["colCheck"].Value.Equals(true))
+                        {
+                            list.Add(GvDetail.Rows[i].Cells["colSKUCD"].Value.ToString());
+                            SKUCD += (SKUCD != "" ? "," : "") + GvDetail.Rows[i].Cells["colSKUCD"].Value.ToString();
+                        }
+                    }
+                }
             }
         }
 
@@ -781,9 +826,8 @@ namespace Search
             try
             {
                 //パラメータ　検索モード＝5の場合のみ入力可能に
-                if (Mode != "5")
+                if (Mode != "5" && Mode !="6" && Mode !="7")
                     colCheck.Visible = false;
-
                 Scr_Clr();
 
             }

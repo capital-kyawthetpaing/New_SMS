@@ -81,9 +81,9 @@ namespace DL
             if (dbType == SqlDbType.Date)
                 value = value.Replace("/", "-");
             if (string.IsNullOrWhiteSpace(value))
-                cmd.Parameters.Add(key, dbType).Value = DBNull.Value;
+                cmd.Parameters.Add(key.Replace("_NoTrim", ""), dbType).Value = DBNull.Value;
             else
-                cmd.Parameters.Add(key, dbType).Value = value.Trim();
+                cmd.Parameters.Add(key.Replace("_NoTrim", ""), dbType).Value = key.Contains("_NoTrim") ? value : value.Trim();
         }
 
         protected void AddParamForDataTable(SqlCommand cmd, string key, SqlDbType dbType, DataTable dt)
