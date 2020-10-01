@@ -35,5 +35,15 @@ namespace Entity
         public string InsertDateTo { get; set; }
         public string UpdateDateFrom { get; set; }
         public string UpdateDateTo { get; set; }
+
+        public string TenzikaiNameCopy { get; set; }
+        public string VendorCDCopy { get; set; }
+        public string LastYearTermCopy { get; set; }
+        public string LastSeasonCopy { get; set; }
+        public string BrandCDCopy { get; set; }
+
+        public string SegmentCDCopy { get; set; }
+
+
     }
 }

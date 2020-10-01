@@ -104,5 +104,16 @@ namespace DL
             };
             return SelectData(dic, "D_PayPlan_SelectDetail");
         }
+        public DataTable D_PayPlanValue_Select(D_PayPlan_Entity dpp_e,string type)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+
+                 {"@PaymentCloseDate",new ValuePair {value1 = SqlDbType.Date,value2 = dpp_e.PayCloseDate} },
+                 {"@PayeeCD",new ValuePair {value1 = SqlDbType.VarChar,value2 = dpp_e.PayeeCD} },
+                 {"@Type",new ValuePair {value1 = SqlDbType.VarChar,value2 = type} }
+            };
+            return SelectData(dic, "D_PayPlanValue_Select");
+        }
     }
 }
