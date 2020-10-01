@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMasterTouroku_HanbaiTankaKakeritsu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboSeasonCopy = new CKM_Controls.CKM_ComboBox();
             this.cboYearCopy = new CKM_Controls.CKM_ComboBox();
@@ -164,7 +165,7 @@
             this.cboSeasonCopy.FormattingEnabled = true;
             this.cboSeasonCopy.Length = 10;
             this.cboSeasonCopy.Location = new System.Drawing.Point(914, 109);
-            this.cboSeasonCopy.MaxLength = 10;
+            this.cboSeasonCopy.MaxLength = 6;
             this.cboSeasonCopy.MoveNext = true;
             this.cboSeasonCopy.Name = "cboSeasonCopy";
             this.cboSeasonCopy.Size = new System.Drawing.Size(70, 20);
@@ -181,7 +182,7 @@
             this.cboYearCopy.FormattingEnabled = true;
             this.cboYearCopy.Length = 7;
             this.cboYearCopy.Location = new System.Drawing.Point(699, 108);
-            this.cboYearCopy.MaxLength = 7;
+            this.cboYearCopy.MaxLength = 6;
             this.cboYearCopy.MoveNext = true;
             this.cboYearCopy.Name = "cboYearCopy";
             this.cboYearCopy.Size = new System.Drawing.Size(70, 20);
@@ -192,18 +193,18 @@
             this.gdvHanbaiTankaKakeritsu.AllowUserToAddRows = false;
             this.gdvHanbaiTankaKakeritsu.AllowUserToDeleteRows = false;
             this.gdvHanbaiTankaKakeritsu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.gdvHanbaiTankaKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.gdvHanbaiTankaKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle36;
             this.gdvHanbaiTankaKakeritsu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gdvHanbaiTankaKakeritsu.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("gdvHanbaiTankaKakeritsu.CheckCol")));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gdvHanbaiTankaKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gdvHanbaiTankaKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
             this.gdvHanbaiTankaKakeritsu.ColumnHeadersHeight = 25;
             this.gdvHanbaiTankaKakeritsu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colchk,
@@ -218,6 +219,14 @@
             this.colStartDate,
             this.colEndDate,
             this.colRate});
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gdvHanbaiTankaKakeritsu.DefaultCellStyle = dataGridViewCellStyle39;
             this.gdvHanbaiTankaKakeritsu.EnableHeadersVisualStyles = false;
             this.gdvHanbaiTankaKakeritsu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gdvHanbaiTankaKakeritsu.Location = new System.Drawing.Point(25, 177);
@@ -317,10 +326,10 @@
             // colRate
             // 
             this.colRate.DataPropertyName = "Rate";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = "0";
-            this.colRate.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle38.Format = "N2";
+            dataGridViewCellStyle38.NullValue = "0";
+            this.colRate.DefaultCellStyle = dataGridViewCellStyle38;
             this.colRate.HeaderText = "掛率";
             this.colRate.MaxInputLength = 6;
             this.colRate.Name = "colRate";
@@ -430,7 +439,7 @@
             this.cboSeason.FormattingEnabled = true;
             this.cboSeason.Length = 10;
             this.cboSeason.Location = new System.Drawing.Point(287, 109);
-            this.cboSeason.MaxLength = 10;
+            this.cboSeason.MaxLength = 6;
             this.cboSeason.MoveNext = true;
             this.cboSeason.Name = "cboSeason";
             this.cboSeason.Size = new System.Drawing.Size(70, 20);
@@ -446,7 +455,7 @@
             this.cboYear.FormattingEnabled = true;
             this.cboYear.Length = 7;
             this.cboYear.Location = new System.Drawing.Point(134, 109);
-            this.cboYear.MaxLength = 7;
+            this.cboYear.MaxLength = 6;
             this.cboYear.MoveNext = true;
             this.cboYear.Name = "cboYear";
             this.cboYear.Size = new System.Drawing.Size(70, 20);
@@ -501,9 +510,9 @@
             this.txtPriceOutTaxTo.isMaxLengthErr = false;
             this.txtPriceOutTaxTo.IsNumber = true;
             this.txtPriceOutTaxTo.IsShop = false;
-            this.txtPriceOutTaxTo.Length = 10;
+            this.txtPriceOutTaxTo.Length = 9;
             this.txtPriceOutTaxTo.Location = new System.Drawing.Point(263, 136);
-            this.txtPriceOutTaxTo.MaxLength = 10;
+            this.txtPriceOutTaxTo.MaxLength = 9;
             this.txtPriceOutTaxTo.MoveNext = true;
             this.txtPriceOutTaxTo.Name = "txtPriceOutTaxTo";
             this.txtPriceOutTaxTo.Size = new System.Drawing.Size(100, 19);
@@ -532,9 +541,9 @@
             this.txtPriceOutTaxFrom.isMaxLengthErr = false;
             this.txtPriceOutTaxFrom.IsNumber = true;
             this.txtPriceOutTaxFrom.IsShop = false;
-            this.txtPriceOutTaxFrom.Length = 10;
+            this.txtPriceOutTaxFrom.Length = 9;
             this.txtPriceOutTaxFrom.Location = new System.Drawing.Point(132, 136);
-            this.txtPriceOutTaxFrom.MaxLength = 10;
+            this.txtPriceOutTaxFrom.MaxLength = 9;
             this.txtPriceOutTaxFrom.MoveNext = true;
             this.txtPriceOutTaxFrom.Name = "txtPriceOutTaxFrom";
             this.txtPriceOutTaxFrom.Size = new System.Drawing.Size(100, 19);
@@ -558,7 +567,7 @@
             this.ScSegmentCopy.IsCopy = false;
             this.ScSegmentCopy.LabelText = "";
             this.ScSegmentCopy.LabelVisible = true;
-            this.ScSegmentCopy.Location = new System.Drawing.Point(697, 79);
+            this.ScSegmentCopy.Location = new System.Drawing.Point(699, 79);
             this.ScSegmentCopy.Margin = new System.Windows.Forms.Padding(0);
             this.ScSegmentCopy.Name = "ScSegmentCopy";
             this.ScSegmentCopy.NameWidth = 280;
@@ -589,7 +598,7 @@
             this.ScBrandCopy.IsCopy = false;
             this.ScBrandCopy.LabelText = "";
             this.ScBrandCopy.LabelVisible = true;
-            this.ScBrandCopy.Location = new System.Drawing.Point(697, 54);
+            this.ScBrandCopy.Location = new System.Drawing.Point(699, 54);
             this.ScBrandCopy.Margin = new System.Windows.Forms.Padding(0);
             this.ScBrandCopy.Name = "ScBrandCopy";
             this.ScBrandCopy.NameWidth = 280;
@@ -619,7 +628,7 @@
             this.ScTankaCopy.IsCopy = false;
             this.ScTankaCopy.LabelText = "";
             this.ScTankaCopy.LabelVisible = true;
-            this.ScTankaCopy.Location = new System.Drawing.Point(697, 29);
+            this.ScTankaCopy.Location = new System.Drawing.Point(699, 29);
             this.ScTankaCopy.Margin = new System.Windows.Forms.Padding(0);
             this.ScTankaCopy.Name = "ScTankaCopy";
             this.ScTankaCopy.NameWidth = 140;
@@ -745,7 +754,7 @@
             this.txtDateCopy.IsNumber = true;
             this.txtDateCopy.IsShop = false;
             this.txtDateCopy.Length = 10;
-            this.txtDateCopy.Location = new System.Drawing.Point(697, 9);
+            this.txtDateCopy.Location = new System.Drawing.Point(699, 9);
             this.txtDateCopy.MaxLength = 10;
             this.txtDateCopy.MoveNext = true;
             this.txtDateCopy.Name = "txtDateCopy";
@@ -858,7 +867,7 @@
             this.ckM_Label13.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label13.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label13.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label13.Location = new System.Drawing.Point(623, 113);
+            this.ckM_Label13.Location = new System.Drawing.Point(626, 113);
             this.ckM_Label13.Name = "ckM_Label13";
             this.ckM_Label13.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label13.TabIndex = 13;
@@ -875,7 +884,7 @@
             this.ckM_Label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label12.Location = new System.Drawing.Point(585, 88);
+            this.ckM_Label12.Location = new System.Drawing.Point(587, 88);
             this.ckM_Label12.Name = "ckM_Label12";
             this.ckM_Label12.Size = new System.Drawing.Size(109, 12);
             this.ckM_Label12.TabIndex = 12;
@@ -892,7 +901,7 @@
             this.ckM_Label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label11.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label11.Location = new System.Drawing.Point(584, 62);
+            this.ckM_Label11.Location = new System.Drawing.Point(586, 62);
             this.ckM_Label11.Name = "ckM_Label11";
             this.ckM_Label11.Size = new System.Drawing.Size(110, 12);
             this.ckM_Label11.TabIndex = 11;
@@ -909,7 +918,7 @@
             this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label10.Location = new System.Drawing.Point(611, 38);
+            this.ckM_Label10.Location = new System.Drawing.Point(613, 38);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(83, 12);
             this.ckM_Label10.TabIndex = 10;
@@ -1028,7 +1037,7 @@
             this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(585, 12);
+            this.ckM_Label3.Location = new System.Drawing.Point(587, 12);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(109, 12);
             this.ckM_Label3.TabIndex = 3;
@@ -1145,10 +1154,10 @@
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "Rate";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = "0";
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle40.Format = "N2";
+            dataGridViewCellStyle40.NullValue = "0";
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle40;
             this.dataGridViewTextBoxColumn11.HeaderText = "掛率";
             this.dataGridViewTextBoxColumn11.MaxInputLength = 8;
             this.dataGridViewTextBoxColumn11.MinimumWidth = 3;

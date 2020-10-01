@@ -54,10 +54,10 @@ BEGIN
 										where fsprice.StoreCD ='0000'
 										and fsprice.DeleteFLG=0
 										and (@StartChangeDate IS NULL OR (fsprice.ChangeDate>=@StartChangeDate))
-										and (@EndChangeDate IS NULL OR (fsprice.ChangeDate>=@EndChangeDate))
+										and (@EndChangeDate IS NULL OR (fsprice.ChangeDate<=@EndChangeDate))
 										and fs.ChangeDate <= fsprice.ChangeDate
 										and (@SKUCDFrom IS NULL OR (fs.SKUCD>=@SKUCDFrom))
-										and (@SKUCDTo IS NULL OR (fs.SKUCD>=@SKUCDTo))
+										and (@SKUCDTo IS NULL OR (fs.SKUCD<=@SKUCDTo))
 										and  fs.BrandCD=@BrandCD
 										and (@SKUName IS NULL OR   (fs.SKUName LIKE '%'+@SKUName+'%'))
 										and fs.ExhibitionSegmentCD=@SegmentCD
@@ -137,10 +137,10 @@ BEGIN
 										where fsprice.StoreCD ='0000'
 										and fsprice.DeleteFLG=0
 										and (@StartChangeDate IS NULL OR (fsprice.ChangeDate>=@StartChangeDate))
-										and (@EndChangeDate IS NULL OR (fsprice.ChangeDate>=@EndChangeDate))
+										and (@EndChangeDate IS NULL OR (fsprice.ChangeDate<=@EndChangeDate))
 										and fs.ChangeDate <= fsprice.ChangeDate
 										and (@SKUCDFrom IS NULL OR (fs.SKUCD>=@SKUCDFrom))
-										and (@SKUCDTo IS NULL OR (fs.SKUCD>=@SKUCDTo))
+										and (@SKUCDTo IS NULL OR (fs.SKUCD<=@SKUCDTo))
 										and  fs.BrandCD=@BrandCD
 										and (@SKUName IS NULL OR   (fs.SKUName LIKE '%'+@SKUName+'%'))
 										and fs.ExhibitionSegmentCD=@SegmentCD

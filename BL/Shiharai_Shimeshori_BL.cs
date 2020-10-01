@@ -13,11 +13,14 @@ namespace BL
     {
        
         D_PayCloseHistory_DL dpch_DL;
+        D_PayPlan_DL dpp_dl;
+        
         Base_BL bbl;
         public Shiharai_Shimeshori_BL()
         {
             bbl = new Base_BL();
             dpch_DL = new D_PayCloseHistory_DL();
+            dpp_dl = new D_PayPlan_DL();
         }
 
         public DataTable D_PayClose_Search(D_PayCloseHistory_Entity dpdpch_entity)
@@ -41,5 +44,14 @@ namespace BL
         {
             return bbl.SimpleSelect1("49", ChangeDate);
         }
+
+
+        public DataTable D_PayPlanValue_Select(D_PayPlan_Entity ddp_e,String type)
+        {
+            return dpp_dl.D_PayPlanValue_Select(ddp_e,type);
+        }
+
+
+
     }
 }

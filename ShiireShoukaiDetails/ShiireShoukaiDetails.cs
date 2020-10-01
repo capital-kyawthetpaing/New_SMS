@@ -23,6 +23,7 @@ namespace ShiireShoukaiDetails
         Base_BL bbl ;
         private const string ShiireNyuuryokuFromNyuuka = "ShiireNyuuryokuFromNyuuka.exe";
         private const string ShiireNyuuryoku = "ShiireNyuuryoku.exe";
+        private const string HenpinNyuuryoku = "HenpinNyuuryoku.exe";
         public ShiireShoukaiDetails()
         {
             InitializeComponent();
@@ -527,13 +528,23 @@ namespace ShiireShoukaiDetails
                                 System.Diagnostics.Process.Start(filePath, cmdLine);
                             }
                         }
-                        else
+                        else if(dt.Rows[0]["ProcessKBN"].ToString().Equals("2"))
                         {
                             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
                             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + ShiireNyuuryoku;
                             if (System.IO.File.Exists(filePath))
                             {
                                 string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " "+ PurchaseNO;
+                                System.Diagnostics.Process.Start(filePath, cmdLine);
+                            }
+                        }
+                        else if (dt.Rows[0]["ProcessKBN"].ToString().Equals("3"))
+                        {
+                            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + HenpinNyuuryoku;
+                            if (System.IO.File.Exists(filePath))
+                            {
+                                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + PurchaseNO;
                                 System.Diagnostics.Process.Start(filePath, cmdLine);
                             }
                         }
