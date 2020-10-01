@@ -178,6 +178,7 @@
     <Content Include="StoreProcedure\D_Order_SelectForReport.sql" />
     <Content Include="StoreProcedure\D_PayClose_Search.sql" />
     <Content Include="StoreProcedure\D_PaymentConfirm_SelectForPrint.sql" />
+    <Content Include="StoreProcedure\D_PayPlanValue_Select.sql" />
     <Content Include="StoreProcedure\D_PayPlan_Delete.sql" />
     <Content Include="StoreProcedure\D_PayPlan_Insert.sql" />
     <Content Include="StoreProcedure\D_PayPlan_Select.sql" />
