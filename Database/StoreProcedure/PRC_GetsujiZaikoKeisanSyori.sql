@@ -1,20 +1,21 @@
- BEGIN TRY 
- Drop Procedure dbo.[PRC_GetsujiZaikoKeisanSyori]
-END try
-BEGIN CATCH END CATCH 
 
-/****** Object:  StoredProcedure [dbo].[PRC_GetsujiZaikoKeisanSyori]    Script Date: 2019/09/15 19:54:54 ******/
+/****** Object:  StoredProcedure [dbo].[PRC_GetsujiZaikoKeisanSyori]    Script Date: 2020/10/01 19:38:28 ******/
+DROP PROCEDURE [dbo].[PRC_GetsujiZaikoKeisanSyori]
+GO
+
+/****** Object:  StoredProcedure [dbo].[PRC_GetsujiZaikoKeisanSyori]    Script Date: 2020/10/01 19:38:28 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
+
 --  ======================================================================
 --       Program Call    月次在庫計算処理
 --       Program ID      GetsujiZaikoKeisanSyori
 --       Create date:    2020.2.9
 --    ======================================================================
-CREATE PROCEDURE [PRC_GetsujiZaikoKeisanSyori]
+CREATE PROCEDURE [dbo].[PRC_GetsujiZaikoKeisanSyori]
     (    
     @FiscalYYYYMM int,
     @StoreCD  varchar(4),
@@ -90,7 +91,7 @@ BEGIN
         AND MS.ChangeDate = MSS.ChangeDate
         WHERE MS.StoreCD = (CASE WHEN @StoreCD <> '' THEN @StoreCD ELSE MS.StoreCD END)
         AND SUBSTRING(CONVERT(varchar,DW.WarehousingDate,111),1,7) = @W_FiscalYYYYMM
-        AND DW.WarehousingKBN IN (11,13,15,16,17,18)
+        AND DW.WarehousingKBN IN (11,12,13,14,31,32,16,26,17,18,41,42,43,44)
     ) AS DW
     WHERE DW.WarehousingNO = [D_Warehousing].WarehousingNO
     ;
@@ -220,15 +221,15 @@ BEGIN
            ,[ThisMonthReturnsA] = DS.ThisMonthReturnsA
            ,[ThisMonthShippingQ] = DS.ThisMonthShippingQ
            ,[ThisMonthSalesQ] = DS.ThisMonthSalesQ
-
+           ,[ThisMonthSalesA] = 0
            ,[ThisMonthMoveOutQ] = DS.ThisMonthMoveOutQ
            ,[ThisMonthMoveOutA] = DS.ThisMonthMoveOutA
            ,[ThisMonthMoveInQ] = DS.ThisMonthMoveInQ
            ,[ThisMonthMoveInA] = DS.ThisMonthMoveInA
            ,[ThisMonthAnyOutQ] = DS.ThisMonthAnyOutQ
-
+           ,[ThisMonthAnyOutA] = 0
            ,[ThisMonthAnyInQ] = DS.ThisMonthAnyInQ
-           
+           ,[ThisMonthAnyInA] = 0          
            ,[ThisMonthAdjustQ] = DS.ThisMonthAdjustQ
            ,[ThisMonthAdjustA] = DS.ThisMonthAdjustA
            ,[ThisMonthMarkDownA] = DS.ThisMonthMarkDownA
@@ -242,19 +243,28 @@ BEGIN
                     ,SUM((CASE DS.WarehousingKBN WHEN 21 THEN DS.Quantity ELSE 0 END)) AS ThisMonthReturnsQ
                     ,SUM((CASE DS.WarehousingKBN WHEN 21 THEN DS.Amount   ELSE 0 END)) AS ThisMonthReturnsA
                     ,SUM((CASE DS.WarehousingKBN WHEN 3  THEN DS.Quantity ELSE 0 END)) AS ThisMonthShippingQ
-                    ,SUM((CASE DS.WarehousingKBN WHEN 23 THEN DS.Quantity WHEN 24 THEN DS.Quantity 
-                                                 WHEN 25 THEN DS.Quantity ELSE 0 END)) AS ThisMonthSalesQ
-                    ,SUM((CASE DS.WarehousingKBN WHEN 11 THEN DS.Quantity WHEN 16 THEN DS.Quantity 
-                                                 ELSE 0 END)) AS ThisMonthMoveOutQ
-                    ,SUM((CASE DS.WarehousingKBN WHEN 11 THEN DS.Amount WHEN 16 THEN DS.Amount 
+                    ,SUM((CASE DS.WarehousingKBN WHEN 3  THEN DS.Quantity WHEN 23 THEN DS.Quantity 
+												 WHEN 24 THEN DS.Quantity 
+												 WHEN 25 THEN DS.Quantity ELSE 0 END)) AS ThisMonthSalesQ
+                    ,SUM((CASE DS.WarehousingKBN WHEN 11 THEN DS.Quantity WHEN 12 THEN DS.Quantity
+												 WHEN 41 THEN DS.Quantity WHEN 42 THEN DS.Quantity
+												 WHEN 16 THEN DS.Quantity 
+												 ELSE 0 END)) AS ThisMonthMoveOutQ
+                    ,SUM((CASE DS.WarehousingKBN WHEN 11 THEN DS.Amount WHEN 12 THEN DS.Amount
+												 WHEN 41 THEN DS.Amount WHEN 42 THEN DS.Amount
+												 WHEN 16 THEN DS.Amount 
                                                  ELSE 0 END)) AS ThisMonthMoveOutA
-                    ,SUM((CASE DS.WarehousingKBN WHEN 13 THEN DS.Quantity WHEN 16 THEN DS.Quantity 
+                    ,SUM((CASE DS.WarehousingKBN WHEN 13 THEN DS.Quantity WHEN 14 THEN DS.Quantity 
+                                                 WHEN 43 THEN DS.Quantity WHEN 44 THEN DS.Quantity
+												 WHEN 26 THEN DS.Quantity 
                                                  ELSE 0 END)) AS ThisMonthMoveInQ
-                    ,SUM((CASE DS.WarehousingKBN WHEN 13 THEN DS.Amount WHEN 16 THEN DS.Amount 
-                                                 ELSE 0 END)) AS ThisMonthMoveInA
-                    ,SUM((CASE DS.WarehousingKBN WHEN 15 THEN DS.Quantity WHEN 18 THEN DS.Quantity 
+                    ,SUM((CASE DS.WarehousingKBN WHEN 13 THEN DS.Amount WHEN 14 THEN DS.Amount 
+                                                 WHEN 43 THEN DS.Amount WHEN 44 THEN DS.Amount
+												 WHEN 26 THEN DS.Amount 
+												 ELSE 0 END)) AS ThisMonthMoveInA
+                    ,SUM((CASE DS.WarehousingKBN WHEN 31 THEN DS.Quantity WHEN 18 THEN DS.Quantity 
                                                  ELSE 0 END)) AS ThisMonthAnyOutQ
-                    ,SUM((CASE DS.WarehousingKBN WHEN 15 THEN DS.Quantity WHEN 17 THEN DS.Quantity 
+                    ,SUM((CASE DS.WarehousingKBN WHEN 32 THEN DS.Quantity WHEN 17 THEN DS.Quantity 
                                                  ELSE 0 END)) AS ThisMonthAnyInQ
                     ,SUM((CASE DS.WarehousingKBN WHEN 19 THEN DS.Quantity WHEN 20 THEN DS.Quantity 
                                                  ELSE 0 END)) AS ThisMonthAdjustQ
@@ -337,27 +347,36 @@ BEGIN
             ,SUM((CASE DS.WarehousingKBN WHEN 21 THEN DS.Quantity ELSE 0 END)) AS ThisMonthReturnsQ
             ,SUM((CASE DS.WarehousingKBN WHEN 21 THEN DS.Amount   ELSE 0 END)) AS ThisMonthReturnsA
             ,SUM((CASE DS.WarehousingKBN WHEN 3  THEN DS.Quantity ELSE 0 END)) AS ThisMonthShippingQ
-            ,SUM((CASE DS.WarehousingKBN WHEN 23 THEN DS.Quantity WHEN 24 THEN DS.Quantity 
-                                         WHEN 25 THEN DS.Quantity ELSE 0 END)) AS ThisMonthSalesQ
-            ,0 AS ThisMonthSalesA
-            ,SUM((CASE DS.WarehousingKBN WHEN 11 THEN DS.Quantity WHEN 16 THEN DS.Quantity 
-                                         ELSE 0 END)) AS ThisMonthMoveOutQ
-            ,SUM((CASE DS.WarehousingKBN WHEN 11 THEN DS.Amount WHEN 16 THEN DS.Amount 
-                                         ELSE 0 END)) AS ThisMonthMoveOutA
-            ,SUM((CASE DS.WarehousingKBN WHEN 13 THEN DS.Quantity WHEN 16 THEN DS.Quantity 
-                                         ELSE 0 END)) AS ThisMonthMoveInQ
-            ,SUM((CASE DS.WarehousingKBN WHEN 13 THEN DS.Amount WHEN 16 THEN DS.Amount 
-                                         ELSE 0 END)) AS ThisMonthMoveInA
-            ,SUM((CASE DS.WarehousingKBN WHEN 15 THEN DS.Quantity WHEN 18 THEN DS.Quantity 
-                                         ELSE 0 END)) AS ThisMonthAnyOutQ
-            ,0 AS ThisMonthAnyOutA
-            ,SUM((CASE DS.WarehousingKBN WHEN 15 THEN DS.Quantity WHEN 17 THEN DS.Quantity 
-                                         ELSE 0 END)) AS ThisMonthAnyInQ
-            ,0 AS ThisMonthAnyInA
+            ,SUM((CASE DS.WarehousingKBN WHEN 3  THEN DS.Quantity WHEN 23 THEN DS.Quantity 
+												 WHEN 24 THEN DS.Quantity 
+												 WHEN 25 THEN DS.Quantity ELSE 0 END)) AS ThisMonthSalesQ
+			,0
+            ,SUM((CASE DS.WarehousingKBN WHEN 13 THEN DS.Quantity WHEN 14 THEN DS.Quantity 
+                                                 WHEN 43 THEN DS.Quantity WHEN 44 THEN DS.Quantity
+												 WHEN 16 THEN DS.Quantity 
+												 ELSE 0 END)) AS ThisMonthMoveOutQ
+            ,SUM((CASE DS.WarehousingKBN WHEN 13 THEN DS.Amount WHEN 14 THEN DS.Amount 
+                                                 WHEN 43 THEN DS.Amount WHEN 44 THEN DS.Amount
+												 WHEN 16 THEN DS.Amount 
+                                                 ELSE 0 END)) AS ThisMonthMoveOutA
+            ,SUM((CASE DS.WarehousingKBN WHEN 11 THEN DS.Quantity WHEN 12 THEN DS.Quantity
+												 WHEN 41 THEN DS.Quantity WHEN 42 THEN DS.Quantity
+												 WHEN 26 THEN DS.Quantity 
+                                                 ELSE 0 END)) AS ThisMonthMoveInQ
+            ,SUM((CASE DS.WarehousingKBN WHEN 11 THEN DS.Amount WHEN 12 THEN DS.Amount
+												 WHEN 41 THEN DS.Amount WHEN 42 THEN DS.Amount
+												 WHEN 26 THEN DS.Amount 
+												 ELSE 0 END)) AS ThisMonthMoveInA
+            ,SUM((CASE DS.WarehousingKBN WHEN 31 THEN DS.Quantity WHEN 18 THEN DS.Quantity 
+                                                 ELSE 0 END)) AS ThisMonthAnyOutQ
+			,0
+            ,SUM((CASE DS.WarehousingKBN WHEN 32 THEN DS.Quantity WHEN 17 THEN DS.Quantity 
+                                                 ELSE 0 END)) AS ThisMonthAnyInQ
+			,0
             ,SUM((CASE DS.WarehousingKBN WHEN 19 THEN DS.Quantity WHEN 20 THEN DS.Quantity 
-                                         ELSE 0 END)) AS ThisMonthAdjustQ
+                                                 ELSE 0 END)) AS ThisMonthAdjustQ
             ,SUM((CASE DS.WarehousingKBN WHEN 19 THEN DS.Amount WHEN 20 THEN DS.Amount 
-                                         ELSE 0 END)) AS ThisMonthAdjustA
+                                                 ELSE 0 END)) AS ThisMonthAdjustA
             ,SUM((CASE DS.WarehousingKBN WHEN 40 THEN DS.Amount ELSE 0 END)) AS ThisMonthMarkDownA
             ,0 AS ThisMonthQuantity
             ,0 AS ThisMonthInventry
@@ -386,27 +405,27 @@ BEGIN
                 WHERE DM.AdminNO = DS.AdminNO
                 AND DM.SoukoCD = DS.SoukoCD
                 AND DM.YYYYMM = CONVERT(int,REPLACE(@W_FiscalYYYYMM,'/','')))
-        GROUP BY DS.AdminNO, DS.SoukoCD--, DS.WarehousingKBN
+        GROUP BY DS.AdminNO, DS.SoukoCD--,DS.WarehousingKBN
         ;
 
         --Table転送仕様Ｃ
         --今今月(@FiscalYYYYMM)のデータから在庫情報を更新する
         UPDATE [D_MonthlyStock] SET
             [ThisMonthQuantity] = LastMonthQuantity + ThisMonthPurchaseQ 
-                                - ThisMonthReturnsQ - ThisMonthSalesQ - ThisMonthMoveOutQ
+                                - ThisMonthReturnsQ - ThisMonthSalesQ + ThisMonthMoveOutQ
                                 + ThisMonthMoveInQ
-                                - ThisMonthAnyOutQ
+                                + ThisMonthAnyOutQ
                                 + ThisMonthAnyInQ + ThisMonthAdjustQ
            ,[ThisMonthInventry] = LastMonthInventry + ThisMonthArrivalQ
-                                - ThisMonthReturnsQ - ThisMonthSalesQ - ThisMonthMoveOutQ
+                                - ThisMonthReturnsQ - ThisMonthSalesQ + ThisMonthMoveOutQ
                                 + ThisMonthMoveInQ
-                                - ThisMonthAnyOutQ
+                                + ThisMonthAnyOutQ
                                 + ThisMonthAnyInQ + ThisMonthAdjustQ
            ,[ThisMonthCalculationQ] = LastMonthQuantity + ThisMonthPurchaseQ
-                                    - ThisMonthReturnsQ - ThisMonthMoveOutQ
+                                    - ThisMonthReturnsQ + ThisMonthMoveOutQ
                                     + ThisMonthMoveInQ + ThisMonthAdjustQ
            ,[ThisMonthCalculationA] = LastMonthAmount + ThisMonthPurchaseA
-                                    - ThisMonthReturnsA - ThisMonthMoveOutA
+                                    - ThisMonthReturnsA + ThisMonthMoveOutA
                                     + ThisMonthMoveInA + ThisMonthAdjustA + ThisMonthMarkDownA
            ,[ThisMonthCost] = (CASE ThisMonthCalculationQ WHEN 0 THEN
                              ISNULL((CASE ThisMonthCost WHEN 0 THEN (SELECT top 1 A.OrderPriceWithoutTax FROM M_SKU AS A 
@@ -418,7 +437,7 @@ BEGIN
                         
            --,[ThisMonthAmount] = ThisMonthQuantity * ThisMonthCost
            ,[ThisMonthAmount] = LastMonthAmount + ThisMonthPurchaseA
-                              - ThisMonthReturnsA - ThisMonthMoveOutA
+                              - ThisMonthReturnsA + ThisMonthMoveOutA
                               + ThisMonthMoveInA + ThisMonthAdjustA + ThisMonthMarkDownA
            ,[UpdateOperator] = @Operator
            ,[UpdateDateTime] = @SYSDATETIME
@@ -499,4 +518,5 @@ END
 
 
 GO
+
 
