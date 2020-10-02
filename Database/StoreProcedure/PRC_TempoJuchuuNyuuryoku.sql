@@ -1835,7 +1835,7 @@ BEGIN
                     @DeliveryPlanNO		--(CASE @OperateMode WHEN 1 THEN @DeliveryPlanNO ELSE (SELECT DD.DeliveryPlanNO FROM D_DeliveryPlan AS DD WHERE @JuchuuNO = DD.[Number])  END)
                    ,tbl.JuchuuRows AS DeliveryPlanRows
                    ,@tblJuchuuNO AS Number
-                   ,tbl.JuchuuRows  As NumberRows
+                   ,1 As NumberRows
                    ,tbl.CommentInStore
                    ,tbl.CommentOutStore
                    ,(CASE DM.DirectFLG WHEN 1 THEN 1 ELSE DM.HikiateFLG END)
