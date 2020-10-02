@@ -92,7 +92,25 @@ namespace Search
                 mse = GetData();
                 DataTable dt = new DataTable();
                 dt = scbl.M_Carrier_Search(mse);
-                gvShipping.DataSource = dt;
+                if (dt.Rows.Count > 0)
+                {
+                    gvShipping.DataSource = dt;
+                    gvShipping.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                    gvShipping.CurrentRow.Selected = true;
+                    gvShipping.Enabled = true;
+                    gvShipping.Focus();
+                }
+                else
+                {
+                    scbl.ShowMessage("E128");
+                    gvShipping.DataSource = null;
+                    txtShippingFrom.Focus();
+                }
+
+            }
+            else
+            {
+                gvShipping.DataSource = null;
             }
         }
 

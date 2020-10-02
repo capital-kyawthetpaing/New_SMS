@@ -2015,7 +2015,7 @@
             this.colSKUCD.HeaderText = "SKUCD";
             this.colSKUCD.Name = "colSKUCD";
             this.colSKUCD.ReadOnly = true;
-            this.colSKUCD.Width = 130;
+            this.colSKUCD.Width = 150;
             // 
             // 商品名
             // 
