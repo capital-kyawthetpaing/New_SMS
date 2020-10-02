@@ -712,7 +712,7 @@ namespace SiharaiTouroku
                                 KouzaCD = dtSiharai2.Rows[0]["KouzaCD"].ToString(), // cboPaymentSourceAcc.SelectedValue.ToString(),
                                 BankCD = dtSiharai2.Rows[0]["BankCD"].ToString(),
                                 BranchCD = dtSiharai2.Rows[0]["BranchCD"].ToString(),
-                                Amount = lblPayGaku.Text.Replace(",", ""),
+                                Amount = dtSiharai2.Rows[0]["TransferGaku"].ToString(),
                                 ChangeDate = txtPaymentDate.Text,
                             };
                             DataTable dt = sibl.M_Kouza_FeeSelect(mke);
