@@ -86,6 +86,10 @@ namespace Search
             {
                 GV_PlanArrival.Refresh();
                 GV_PlanArrival.DataSource = dt;
+                GV_PlanArrival.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                GV_PlanArrival.CurrentRow.Selected = true;
+                GV_PlanArrival.Enabled = true;
+                GV_PlanArrival.Focus();
             }
             else
             {

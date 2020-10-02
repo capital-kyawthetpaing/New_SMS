@@ -66,6 +66,10 @@ namespace Search
                 if (dt.Rows.Count > 0)
                 {
                     GV_TZshouhin.DataSource = dt;
+                    GV_TZshouhin.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                    GV_TZshouhin.CurrentRow.Selected = true;
+                    GV_TZshouhin.Enabled = true;
+                    GV_TZshouhin.Focus();
                 }
                 else
                 {

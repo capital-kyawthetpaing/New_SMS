@@ -76,6 +76,10 @@ namespace Search
                 if(dt.Rows.Count>0)
                 {
                     dgvSearch_Tenzikai.DataSource = dt;
+                    dgvSearch_Tenzikai.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                    dgvSearch_Tenzikai.CurrentRow.Selected = true;
+                    dgvSearch_Tenzikai.Enabled = true;
+                    dgvSearch_Tenzikai.Focus();
                 }
                 else
                 {
