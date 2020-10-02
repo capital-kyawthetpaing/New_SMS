@@ -129,8 +129,9 @@ namespace Search
                 ID = gvShipping.CurrentRow.Cells["colCD"].Value.ToString();
                 date = gvShipping.CurrentRow.Cells["colDate"].Value.ToString();
                 parName = gvShipping.CurrentRow.Cells["colName"].Value.ToString();
-                this.Close();
+               
             }
+            this.Close();
         }
 
         private void gvShipping_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
