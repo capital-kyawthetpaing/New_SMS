@@ -45,7 +45,20 @@ namespace Search
             {
                 mse = GetSearchInfo();
                 DataTable dtSouko = ssbl.M_Souko_Search(mse);
-                GvSouko.DataSource = dtSouko;
+                if(dtSouko.Rows.Count >0)
+                {
+                    GvSouko.DataSource = dtSouko;
+                    GvSouko.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                    GvSouko.CurrentRow.Selected = true;
+                    GvSouko.Enabled = true;
+                    GvSouko.Focus();
+                }
+                else
+                {
+                    GvSouko.DataSource = null;
+                    ssbl.ShowMessage("E128");
+
+                }
             }
         }
 

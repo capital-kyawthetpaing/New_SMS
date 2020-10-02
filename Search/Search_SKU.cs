@@ -31,7 +31,11 @@ namespace Search
             //this.Text = ProNm;
             ProgramName = "SKU選択";
             GvMultiSKU.DataSource = dtSKU;
-            
+            GvMultiSKU.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+            GvMultiSKU.CurrentRow.Selected = true;
+            GvMultiSKU.Enabled = true;
+            GvMultiSKU.Focus();
+
         }
 
         private void GvMultiSKU_DoubleClick(object sender, EventArgs e)

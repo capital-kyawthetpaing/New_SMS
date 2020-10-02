@@ -29,6 +29,7 @@ namespace MasterTouroku_TenzikaiShouhin
         private Control[] detailControls;
         private Control[] detailLabels;
         private Control[] searchButtons;
+        ClsGridMasterTanzi mGrid = new ClsGridMasterTanzi();
         public MasterTouroku_TenzikaiShouhin()
         {
             
@@ -52,7 +53,12 @@ namespace MasterTouroku_TenzikaiShouhin
 
         private void BindCombo_Details()
         {
-          
+            for (int W_CtlRow = 0; W_CtlRow <= mGrid.g_MK_Ctl_Row - 1; W_CtlRow++)
+            {
+                //CKM_Controls.CKM_ComboBox sctl = (CKM_Controls.CKM_ComboBox)mGrid.g_MK_Ctrl[(int)ClsGridMasterTanzi.ColNO.ShuukaSou, W_CtlRow].CellCtl;
+                //sctl.Cbo_Type = CKM_ComboBox.CboType.出荷倉庫;
+                //sctl.Bind(bbl.GetDate());
+            }
         }
         private void MasterTouroku_TenzikaiShouhin_KeyUp(object sender, KeyEventArgs e)
         {
