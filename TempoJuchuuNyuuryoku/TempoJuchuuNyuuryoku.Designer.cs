@@ -350,17 +350,13 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.PanelSearch.TabIndex = 7;
             // 
-            // btnChangeIkkatuHacchuuMode
-            // 
-            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.DefaultlabelSize = true;
-            this.label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(1025, 11);
@@ -375,7 +371,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblSkuCD.AutoSize = true;
             this.lblSkuCD.BackColor = System.Drawing.Color.Transparent;
-            this.lblSkuCD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblSkuCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblSkuCD.Location = new System.Drawing.Point(52, 120);
             this.lblSkuCD.Name = "lblSkuCD";
             this.lblSkuCD.Size = new System.Drawing.Size(31, 12);
@@ -389,7 +385,7 @@ namespace TempoJuchuuNyuuryoku
             this.label9.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.DefaultlabelSize = true;
-            this.label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(448, 99);
@@ -406,7 +402,7 @@ namespace TempoJuchuuNyuuryoku
             this.label11.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.DefaultlabelSize = true;
-            this.label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(39, 96);
@@ -423,7 +419,7 @@ namespace TempoJuchuuNyuuryoku
             this.label20.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.DefaultlabelSize = true;
-            this.label20.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label20.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label20.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label20.ForeColor = System.Drawing.Color.Black;
             this.label20.Location = new System.Drawing.Point(247, 121);
@@ -445,7 +441,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_KAIDT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_KAIDT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_KAIDT_1.DecimalPlace = 0;
-            this.IMT_KAIDT_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_KAIDT_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_KAIDT_1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_KAIDT_1.IntegerPart = 0;
             this.IMT_KAIDT_1.IsCorrectDate = true;
@@ -477,7 +473,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Text_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_Text_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_Text_4.DecimalPlace = 0;
-            this.ckM_Text_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_Text_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_Text_4.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_Text_4.IntegerPart = 0;
             this.ckM_Text_4.IsCorrectDate = true;
@@ -508,7 +504,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_KAIDT_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_KAIDT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_KAIDT_0.DecimalPlace = 0;
-            this.IMT_KAIDT_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_KAIDT_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_KAIDT_0.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_KAIDT_0.IntegerPart = 0;
             this.IMT_KAIDT_0.IsCorrectDate = true;
@@ -540,7 +536,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_REMAK_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_REMAK_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMAK_2.DecimalPlace = 0;
-            this.IMT_REMAK_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMAK_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_2.IntegerPart = 0;
             this.IMT_REMAK_2.IsCorrectDate = true;
@@ -572,7 +568,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_REMAK_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_REMAK_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMAK_1.DecimalPlace = 0;
-            this.IMT_REMAK_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMAK_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_1.IntegerPart = 0;
             this.IMT_REMAK_1.IsCorrectDate = true;
@@ -604,7 +600,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_REMAK_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_REMAK_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMAK_0.DecimalPlace = 0;
-            this.IMT_REMAK_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMAK_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_0.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_0.IntegerPart = 0;
             this.IMT_REMAK_0.IsCorrectDate = true;
@@ -636,7 +632,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ITMCD_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_0.DecimalPlace = 0;
-            this.IMT_ITMCD_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMCD_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMCD_0.IntegerPart = 0;
             this.IMT_ITMCD_0.IsCorrectDate = true;
             this.IMT_ITMCD_0.isEnterKeyDown = false;
@@ -668,7 +664,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ITMCD_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_1.DecimalPlace = 0;
-            this.IMT_ITMCD_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMCD_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMCD_1.IntegerPart = 0;
             this.IMT_ITMCD_1.IsCorrectDate = true;
             this.IMT_ITMCD_1.isEnterKeyDown = false;
@@ -700,7 +696,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ITMCD_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_2.DecimalPlace = 0;
-            this.IMT_ITMCD_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMCD_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMCD_2.IntegerPart = 0;
             this.IMT_ITMCD_2.IsCorrectDate = true;
             this.IMT_ITMCD_2.isEnterKeyDown = false;
@@ -725,6 +721,9 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.Pnl_Body.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.Pnl_Body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Pnl_Body.Controls.Add(this.IMT_VENNM_0);
+            this.Pnl_Body.Controls.Add(this.IMT_VENNM_1);
+            this.Pnl_Body.Controls.Add(this.IMT_VENNM_2);
             this.Pnl_Body.Controls.Add(this.IMN_ORTAN_2);
             this.Pnl_Body.Controls.Add(this.IMN_ORTAN_1);
             this.Pnl_Body.Controls.Add(this.IMN_ORTAN_0);
@@ -849,9 +848,6 @@ namespace TempoJuchuuNyuuryoku
             this.Pnl_Body.Controls.Add(this.IMT_VENCD_0);
             this.Pnl_Body.Controls.Add(this.IMT_VENCD_1);
             this.Pnl_Body.Controls.Add(this.IMT_VENCD_2);
-            this.Pnl_Body.Controls.Add(this.IMT_VENNM_0);
-            this.Pnl_Body.Controls.Add(this.IMT_VENNM_1);
-            this.Pnl_Body.Controls.Add(this.IMT_VENNM_2);
             this.Pnl_Body.Location = new System.Drawing.Point(1, 66);
             this.Pnl_Body.Name = "Pnl_Body";
             this.Pnl_Body.Size = new System.Drawing.Size(1363, 232);
@@ -868,7 +864,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_ORTAN_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_ORTAN_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_ORTAN_2.DecimalPlace = 0;
-            this.IMN_ORTAN_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_ORTAN_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_ORTAN_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_ORTAN_2.IntegerPart = 0;
             this.IMN_ORTAN_2.IsCorrectDate = true;
@@ -901,7 +897,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_ORTAN_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_ORTAN_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_ORTAN_1.DecimalPlace = 0;
-            this.IMN_ORTAN_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_ORTAN_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_ORTAN_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_ORTAN_1.IntegerPart = 0;
             this.IMN_ORTAN_1.IsCorrectDate = true;
@@ -934,7 +930,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_ORTAN_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_ORTAN_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_ORTAN_0.DecimalPlace = 0;
-            this.IMN_ORTAN_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_ORTAN_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_ORTAN_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_ORTAN_0.IntegerPart = 0;
             this.IMN_ORTAN_0.IsCorrectDate = true;
@@ -967,7 +963,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SPDAT_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_SPDAT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_SPDAT_2.DecimalPlace = 0;
-            this.IMT_SPDAT_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_SPDAT_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_SPDAT_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_SPDAT_2.IntegerPart = 0;
             this.IMT_SPDAT_2.IsCorrectDate = true;
@@ -1000,7 +996,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SPDAT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_SPDAT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_SPDAT_1.DecimalPlace = 0;
-            this.IMT_SPDAT_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_SPDAT_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_SPDAT_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_SPDAT_1.IntegerPart = 0;
             this.IMT_SPDAT_1.IsCorrectDate = true;
@@ -1033,7 +1029,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SPDAT_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_SPDAT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_SPDAT_0.DecimalPlace = 0;
-            this.IMT_SPDAT_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_SPDAT_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_SPDAT_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_SPDAT_0.IntegerPart = 0;
             this.IMT_SPDAT_0.IsCorrectDate = true;
@@ -1060,7 +1056,7 @@ namespace TempoJuchuuNyuuryoku
             this.CHK_Express_2.BackColor = System.Drawing.Color.White;
             this.CHK_Express_2.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CHK_Express_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_Express_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_Express_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.CHK_Express_2.ForeColor = System.Drawing.Color.Black;
             this.CHK_Express_2.Location = new System.Drawing.Point(93, 172);
             this.CHK_Express_2.Name = "CHK_Express_2";
@@ -1075,7 +1071,7 @@ namespace TempoJuchuuNyuuryoku
             this.CHK_Express_1.BackColor = System.Drawing.Color.White;
             this.CHK_Express_1.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CHK_Express_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_Express_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_Express_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.CHK_Express_1.ForeColor = System.Drawing.Color.Black;
             this.CHK_Express_1.Location = new System.Drawing.Point(93, 96);
             this.CHK_Express_1.Name = "CHK_Express_1";
@@ -1090,7 +1086,7 @@ namespace TempoJuchuuNyuuryoku
             this.CHK_Express_0.BackColor = System.Drawing.Color.White;
             this.CHK_Express_0.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CHK_Express_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_Express_0.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_Express_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.CHK_Express_0.ForeColor = System.Drawing.Color.Black;
             this.CHK_Express_0.Location = new System.Drawing.Point(93, 20);
             this.CHK_Express_0.Name = "CHK_Express_0";
@@ -1104,7 +1100,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.CHK_FUYO_2.BackColor = System.Drawing.Color.White;
             this.CHK_FUYO_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_FUYO_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_FUYO_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.CHK_FUYO_2.ForeColor = System.Drawing.Color.Black;
             this.CHK_FUYO_2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CHK_FUYO_2.Location = new System.Drawing.Point(29, 172);
@@ -1120,7 +1116,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.CHK_FUYO_1.BackColor = System.Drawing.Color.White;
             this.CHK_FUYO_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_FUYO_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_FUYO_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.CHK_FUYO_1.ForeColor = System.Drawing.Color.Black;
             this.CHK_FUYO_1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CHK_FUYO_1.Location = new System.Drawing.Point(29, 96);
@@ -1136,7 +1132,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.CHK_FUYO_0.BackColor = System.Drawing.Color.White;
             this.CHK_FUYO_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_FUYO_0.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_FUYO_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.CHK_FUYO_0.ForeColor = System.Drawing.Color.Black;
             this.CHK_FUYO_0.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CHK_FUYO_0.Location = new System.Drawing.Point(29, 20);
@@ -1152,7 +1148,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.CHK_Tyokuso_2.BackColor = System.Drawing.Color.White;
             this.CHK_Tyokuso_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_Tyokuso_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_Tyokuso_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.CHK_Tyokuso_2.ForeColor = System.Drawing.Color.Black;
             this.CHK_Tyokuso_2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CHK_Tyokuso_2.Location = new System.Drawing.Point(209, 172);
@@ -1168,7 +1164,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.CHK_Tyokuso_1.BackColor = System.Drawing.Color.White;
             this.CHK_Tyokuso_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_Tyokuso_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_Tyokuso_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.CHK_Tyokuso_1.ForeColor = System.Drawing.Color.Black;
             this.CHK_Tyokuso_1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CHK_Tyokuso_1.Location = new System.Drawing.Point(209, 96);
@@ -1184,7 +1180,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.CHK_Tyokuso_0.BackColor = System.Drawing.Color.White;
             this.CHK_Tyokuso_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_Tyokuso_0.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_Tyokuso_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.CHK_Tyokuso_0.ForeColor = System.Drawing.Color.Black;
             this.CHK_Tyokuso_0.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CHK_Tyokuso_0.Location = new System.Drawing.Point(209, 20);
@@ -1200,7 +1196,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.CHK_PRINT_2.BackColor = System.Drawing.Color.White;
             this.CHK_PRINT_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_PRINT_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_PRINT_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.CHK_PRINT_2.ForeColor = System.Drawing.Color.Black;
             this.CHK_PRINT_2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CHK_PRINT_2.Location = new System.Drawing.Point(872, 153);
@@ -1216,7 +1212,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.CHK_PRINT_1.BackColor = System.Drawing.Color.White;
             this.CHK_PRINT_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_PRINT_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_PRINT_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.CHK_PRINT_1.ForeColor = System.Drawing.Color.Black;
             this.CHK_PRINT_1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CHK_PRINT_1.Location = new System.Drawing.Point(872, 77);
@@ -1232,7 +1228,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.CHK_PRINT_0.BackColor = System.Drawing.Color.White;
             this.CHK_PRINT_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_PRINT_0.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_PRINT_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.CHK_PRINT_0.ForeColor = System.Drawing.Color.Black;
             this.CHK_PRINT_0.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CHK_PRINT_0.Location = new System.Drawing.Point(872, 1);
@@ -1255,7 +1251,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_HIKAT_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_HIKAT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_HIKAT_2.DecimalPlace = 0;
-            this.IMT_HIKAT_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_HIKAT_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_HIKAT_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_HIKAT_2.IntegerPart = 0;
             this.IMT_HIKAT_2.IsCorrectDate = true;
@@ -1288,7 +1284,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_HIKAT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_HIKAT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_HIKAT_1.DecimalPlace = 0;
-            this.IMT_HIKAT_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_HIKAT_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_HIKAT_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_HIKAT_1.IntegerPart = 0;
             this.IMT_HIKAT_1.IsCorrectDate = true;
@@ -1321,7 +1317,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_HIKAT_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_HIKAT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_HIKAT_0.DecimalPlace = 0;
-            this.IMT_HIKAT_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_HIKAT_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_HIKAT_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_HIKAT_0.IntegerPart = 0;
             this.IMT_HIKAT_0.IsCorrectDate = true;
@@ -1354,7 +1350,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_JUONO_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_JUONO_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JUONO_0.DecimalPlace = 0;
-            this.IMT_JUONO_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_JUONO_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_JUONO_0.IntegerPart = 0;
             this.IMT_JUONO_0.IsCorrectDate = true;
             this.IMT_JUONO_0.isEnterKeyDown = false;
@@ -1386,7 +1382,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_JUONO_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_JUONO_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JUONO_1.DecimalPlace = 0;
-            this.IMT_JUONO_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_JUONO_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_JUONO_1.IntegerPart = 0;
             this.IMT_JUONO_1.IsCorrectDate = true;
             this.IMT_JUONO_1.isEnterKeyDown = false;
@@ -1418,7 +1414,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_JUONO_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_JUONO_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JUONO_2.DecimalPlace = 0;
-            this.IMT_JUONO_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_JUONO_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_JUONO_2.IntegerPart = 0;
             this.IMT_JUONO_2.IsCorrectDate = true;
             this.IMT_JUONO_2.isEnterKeyDown = false;
@@ -1504,7 +1500,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER2_2.DecimalPlace = 0;
-            this.IMN_GENER2_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER2_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER2_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER2_2.IntegerPart = 0;
             this.IMN_GENER2_2.IsCorrectDate = true;
@@ -1537,7 +1533,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_TEIKA_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_TEIKA_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_TEIKA_2.DecimalPlace = 0;
-            this.IMN_TEIKA_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_TEIKA_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_TEIKA_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_TEIKA_2.IntegerPart = 0;
             this.IMN_TEIKA_2.IsCorrectDate = true;
@@ -1570,7 +1566,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER_2.DecimalPlace = 0;
-            this.IMN_GENER_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER_2.IntegerPart = 0;
             this.IMN_GENER_2.IsCorrectDate = true;
@@ -1603,7 +1599,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_MEMBR_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_2.DecimalPlace = 0;
-            this.IMN_MEMBR_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_MEMBR_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_MEMBR_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_MEMBR_2.IntegerPart = 0;
             this.IMN_MEMBR_2.IsCorrectDate = true;
@@ -1635,7 +1631,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER2_1.DecimalPlace = 0;
-            this.IMN_GENER2_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER2_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER2_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER2_1.IntegerPart = 0;
             this.IMN_GENER2_1.IsCorrectDate = true;
@@ -1668,7 +1664,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_TEIKA_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_TEIKA_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_TEIKA_1.DecimalPlace = 0;
-            this.IMN_TEIKA_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_TEIKA_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_TEIKA_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_TEIKA_1.IntegerPart = 0;
             this.IMN_TEIKA_1.IsCorrectDate = true;
@@ -1701,7 +1697,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER_1.DecimalPlace = 0;
-            this.IMN_GENER_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER_1.IntegerPart = 0;
             this.IMN_GENER_1.IsCorrectDate = true;
@@ -1734,7 +1730,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_MEMBR_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_1.DecimalPlace = 0;
-            this.IMN_MEMBR_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_MEMBR_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_MEMBR_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_MEMBR_1.IntegerPart = 0;
             this.IMN_MEMBR_1.IsCorrectDate = true;
@@ -1766,7 +1762,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER2_0.DecimalPlace = 0;
-            this.IMN_GENER2_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER2_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER2_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER2_0.IntegerPart = 0;
             this.IMN_GENER2_0.IsCorrectDate = true;
@@ -1799,7 +1795,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER_0.DecimalPlace = 0;
-            this.IMN_GENER_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER_0.IntegerPart = 0;
             this.IMN_GENER_0.IsCorrectDate = true;
@@ -1832,7 +1828,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_MEMBR_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_0.DecimalPlace = 0;
-            this.IMN_MEMBR_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_MEMBR_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_MEMBR_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_MEMBR_0.IntegerPart = 0;
             this.IMN_MEMBR_0.IsCorrectDate = true;
@@ -1864,7 +1860,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_TEIKA_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_TEIKA_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_TEIKA_0.DecimalPlace = 0;
-            this.IMN_TEIKA_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_TEIKA_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_TEIKA_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_TEIKA_0.IntegerPart = 0;
             this.IMN_TEIKA_0.IsCorrectDate = true;
@@ -1897,7 +1893,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_NYUKA_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_NYUKA_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_NYUKA_2.DecimalPlace = 0;
-            this.IMT_NYUKA_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_NYUKA_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_NYUKA_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_NYUKA_2.IntegerPart = 0;
             this.IMT_NYUKA_2.IsCorrectDate = true;
@@ -1929,7 +1925,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SYUKA_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_SYUKA_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_SYUKA_2.DecimalPlace = 0;
-            this.IMT_SYUKA_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_SYUKA_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_SYUKA_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_SYUKA_2.IntegerPart = 0;
             this.IMT_SYUKA_2.IsCorrectDate = true;
@@ -1961,7 +1957,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_NYUKA_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_NYUKA_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_NYUKA_1.DecimalPlace = 0;
-            this.IMT_NYUKA_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_NYUKA_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_NYUKA_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_NYUKA_1.IntegerPart = 0;
             this.IMT_NYUKA_1.IsCorrectDate = true;
@@ -1993,7 +1989,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SYUKA_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_SYUKA_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_SYUKA_1.DecimalPlace = 0;
-            this.IMT_SYUKA_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_SYUKA_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_SYUKA_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_SYUKA_1.IntegerPart = 0;
             this.IMT_SYUKA_1.IsCorrectDate = true;
@@ -2025,7 +2021,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_NYUKA_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_NYUKA_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_NYUKA_0.DecimalPlace = 0;
-            this.IMT_NYUKA_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_NYUKA_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_NYUKA_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_NYUKA_0.IntegerPart = 0;
             this.IMT_NYUKA_0.IsCorrectDate = true;
@@ -2057,7 +2053,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SYUKA_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_SYUKA_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_SYUKA_0.DecimalPlace = 0;
-            this.IMT_SYUKA_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_SYUKA_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_SYUKA_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_SYUKA_0.IntegerPart = 0;
             this.IMT_SYUKA_0.IsCorrectDate = true;
@@ -2089,7 +2085,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_COLDT_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_COLDT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_COLDT_2.DecimalPlace = 0;
-            this.IMT_COLDT_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_COLDT_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_COLDT_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_COLDT_2.IntegerPart = 0;
             this.IMT_COLDT_2.IsCorrectDate = true;
@@ -2122,7 +2118,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_PAYDT_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_PAYDT_2.DecimalPlace = 0;
-            this.IMT_PAYDT_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_PAYDT_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_PAYDT_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_PAYDT_2.IntegerPart = 0;
             this.IMT_PAYDT_2.IsCorrectDate = true;
@@ -2155,7 +2151,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ARIDT_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT_2.DecimalPlace = 0;
-            this.IMT_ARIDT_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ARIDT_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ARIDT_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ARIDT_2.IntegerPart = 0;
             this.IMT_ARIDT_2.IsCorrectDate = true;
@@ -2188,7 +2184,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_COLDT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_COLDT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_COLDT_1.DecimalPlace = 0;
-            this.IMT_COLDT_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_COLDT_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_COLDT_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_COLDT_1.IntegerPart = 0;
             this.IMT_COLDT_1.IsCorrectDate = true;
@@ -2221,7 +2217,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_PAYDT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_PAYDT_1.DecimalPlace = 0;
-            this.IMT_PAYDT_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_PAYDT_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_PAYDT_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_PAYDT_1.IntegerPart = 0;
             this.IMT_PAYDT_1.IsCorrectDate = true;
@@ -2254,7 +2250,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ARIDT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT_1.DecimalPlace = 0;
-            this.IMT_ARIDT_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ARIDT_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ARIDT_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ARIDT_1.IntegerPart = 0;
             this.IMT_ARIDT_1.IsCorrectDate = true;
@@ -2287,7 +2283,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_COLDT_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_COLDT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_COLDT_0.DecimalPlace = 0;
-            this.IMT_COLDT_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_COLDT_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_COLDT_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_COLDT_0.IntegerPart = 0;
             this.IMT_COLDT_0.IsCorrectDate = true;
@@ -2320,7 +2316,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_PAYDT_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_PAYDT_0.DecimalPlace = 0;
-            this.IMT_PAYDT_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_PAYDT_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_PAYDT_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_PAYDT_0.IntegerPart = 0;
             this.IMT_PAYDT_0.IsCorrectDate = true;
@@ -2353,7 +2349,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ARIDT_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT_0.DecimalPlace = 0;
-            this.IMT_ARIDT_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ARIDT_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ARIDT_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ARIDT_0.IntegerPart = 0;
             this.IMT_ARIDT_0.IsCorrectDate = true;
@@ -2387,7 +2383,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox3.DecimalPlace = 0;
             this.ckM_TextBox3.Enabled = false;
-            this.ckM_TextBox3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox3.IntegerPart = 0;
             this.ckM_TextBox3.IsCorrectDate = true;
@@ -2422,7 +2418,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox4.DecimalPlace = 0;
             this.ckM_TextBox4.Enabled = false;
-            this.ckM_TextBox4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox4.IntegerPart = 0;
             this.ckM_TextBox4.IsCorrectDate = true;
@@ -2457,7 +2453,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox12.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox12.DecimalPlace = 0;
             this.ckM_TextBox12.Enabled = false;
-            this.ckM_TextBox12.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox12.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox12.IntegerPart = 0;
             this.ckM_TextBox12.IsCorrectDate = true;
@@ -2491,7 +2487,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ITMNM_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ITMNM_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMNM_2.DecimalPlace = 0;
-            this.IMT_ITMNM_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMNM_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMNM_2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_ITMNM_2.IntegerPart = 0;
             this.IMT_ITMNM_2.IsCorrectDate = true;
@@ -2523,7 +2519,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ITMNM_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ITMNM_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMNM_1.DecimalPlace = 0;
-            this.IMT_ITMNM_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMNM_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMNM_1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_ITMNM_1.IntegerPart = 0;
             this.IMT_ITMNM_1.IsCorrectDate = true;
@@ -2555,7 +2551,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ITMNM_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ITMNM_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMNM_0.DecimalPlace = 0;
-            this.IMT_ITMNM_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMNM_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMNM_0.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_ITMNM_0.IntegerPart = 0;
             this.IMT_ITMNM_0.IsCorrectDate = true;
@@ -2579,7 +2575,7 @@ namespace TempoJuchuuNyuuryoku
             // BTN_Zaiko_2
             // 
             this.BTN_Zaiko_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.BTN_Zaiko_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.BTN_Zaiko_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.BTN_Zaiko_2.Location = new System.Drawing.Point(1273, 151);
             this.BTN_Zaiko_2.Margin = new System.Windows.Forms.Padding(0);
             this.BTN_Zaiko_2.Name = "BTN_Zaiko_2";
@@ -2592,7 +2588,7 @@ namespace TempoJuchuuNyuuryoku
             // BTN_Zaiko_1
             // 
             this.BTN_Zaiko_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.BTN_Zaiko_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.BTN_Zaiko_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.BTN_Zaiko_1.Location = new System.Drawing.Point(1273, 75);
             this.BTN_Zaiko_1.Margin = new System.Windows.Forms.Padding(0);
             this.BTN_Zaiko_1.Name = "BTN_Zaiko_1";
@@ -2605,7 +2601,7 @@ namespace TempoJuchuuNyuuryoku
             // BTN_Zaiko_0
             // 
             this.BTN_Zaiko_0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.BTN_Zaiko_0.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.BTN_Zaiko_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.BTN_Zaiko_0.Location = new System.Drawing.Point(1273, -1);
             this.BTN_Zaiko_0.Margin = new System.Windows.Forms.Padding(0);
             this.BTN_Zaiko_0.Name = "BTN_Zaiko_0";
@@ -2618,7 +2614,7 @@ namespace TempoJuchuuNyuuryoku
             // BTN_Site_2
             // 
             this.BTN_Site_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.BTN_Site_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.BTN_Site_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.BTN_Site_2.Location = new System.Drawing.Point(1226, 151);
             this.BTN_Site_2.Margin = new System.Windows.Forms.Padding(0);
             this.BTN_Site_2.Name = "BTN_Site_2";
@@ -2631,7 +2627,7 @@ namespace TempoJuchuuNyuuryoku
             // BTN_Site_1
             // 
             this.BTN_Site_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.BTN_Site_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.BTN_Site_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.BTN_Site_1.Location = new System.Drawing.Point(1226, 75);
             this.BTN_Site_1.Margin = new System.Windows.Forms.Padding(0);
             this.BTN_Site_1.Name = "BTN_Site_1";
@@ -2644,7 +2640,7 @@ namespace TempoJuchuuNyuuryoku
             // BTN_Site_0
             // 
             this.BTN_Site_0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.BTN_Site_0.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.BTN_Site_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.BTN_Site_0.Location = new System.Drawing.Point(1226, -1);
             this.BTN_Site_0.Margin = new System.Windows.Forms.Padding(0);
             this.BTN_Site_0.Name = "BTN_Site_0";
@@ -2666,7 +2662,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox15.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox15.DecimalPlace = 0;
             this.ckM_TextBox15.Enabled = false;
-            this.ckM_TextBox15.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox15.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox15.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox15.IntegerPart = 0;
             this.ckM_TextBox15.IsCorrectDate = true;
@@ -2701,7 +2697,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox16.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox16.DecimalPlace = 0;
             this.ckM_TextBox16.Enabled = false;
-            this.ckM_TextBox16.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox16.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox16.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox16.IntegerPart = 0;
             this.ckM_TextBox16.IsCorrectDate = true;
@@ -2736,7 +2732,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox17.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox17.DecimalPlace = 0;
             this.ckM_TextBox17.Enabled = false;
-            this.ckM_TextBox17.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox17.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox17.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox17.IntegerPart = 0;
             this.ckM_TextBox17.IsCorrectDate = true;
@@ -2771,7 +2767,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ZEIRT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZEIRT_2.DecimalPlace = 0;
             this.IMT_ZEIRT_2.Enabled = false;
-            this.IMT_ZEIRT_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ZEIRT_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ZEIRT_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ZEIRT_2.IntegerPart = 0;
             this.IMT_ZEIRT_2.IsCorrectDate = true;
@@ -2806,7 +2802,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ZEIRT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZEIRT_1.DecimalPlace = 0;
             this.IMT_ZEIRT_1.Enabled = false;
-            this.IMT_ZEIRT_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ZEIRT_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ZEIRT_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ZEIRT_1.IntegerPart = 0;
             this.IMT_ZEIRT_1.IsCorrectDate = true;
@@ -2841,7 +2837,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ZKDIS_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZKDIS_2.DecimalPlace = 0;
             this.IMT_ZKDIS_2.Enabled = false;
-            this.IMT_ZKDIS_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ZKDIS_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ZKDIS_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ZKDIS_2.IntegerPart = 0;
             this.IMT_ZKDIS_2.IsCorrectDate = true;
@@ -2876,7 +2872,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ZKDIS_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZKDIS_1.DecimalPlace = 0;
             this.IMT_ZKDIS_1.Enabled = false;
-            this.IMT_ZKDIS_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ZKDIS_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ZKDIS_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ZKDIS_1.IntegerPart = 0;
             this.IMT_ZKDIS_1.IsCorrectDate = true;
@@ -2911,7 +2907,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ZKDIS_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZKDIS_0.DecimalPlace = 0;
             this.IMT_ZKDIS_0.Enabled = false;
-            this.IMT_ZKDIS_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ZKDIS_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ZKDIS_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ZKDIS_0.IntegerPart = 0;
             this.IMT_ZKDIS_0.IsCorrectDate = true;
@@ -2946,7 +2942,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ZEIRT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZEIRT_0.DecimalPlace = 0;
             this.IMT_ZEIRT_0.Enabled = false;
-            this.IMT_ZEIRT_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ZEIRT_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ZEIRT_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ZEIRT_0.IntegerPart = 0;
             this.IMT_ZEIRT_0.IsCorrectDate = true;
@@ -2980,7 +2976,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_KAIDT_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_KAIDT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_KAIDT_2.DecimalPlace = 0;
-            this.IMT_KAIDT_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_KAIDT_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_KAIDT_2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_KAIDT_2.IntegerPart = 0;
             this.IMT_KAIDT_2.IsCorrectDate = true;
@@ -3012,7 +3008,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_WEBPR2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR2_2.DecimalPlace = 0;
-            this.IMN_WEBPR2_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_WEBPR2_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_WEBPR2_2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_WEBPR2_2.IntegerPart = 0;
             this.IMN_WEBPR2_2.IsCorrectDate = true;
@@ -3044,7 +3040,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_WEBPR2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR2_1.DecimalPlace = 0;
-            this.IMN_WEBPR2_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_WEBPR2_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_WEBPR2_1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_WEBPR2_1.IntegerPart = 0;
             this.IMN_WEBPR2_1.IsCorrectDate = true;
@@ -3076,7 +3072,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_WEBPR2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR2_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR2_0.DecimalPlace = 0;
-            this.IMN_WEBPR2_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_WEBPR2_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_WEBPR2_0.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_WEBPR2_0.IntegerPart = 0;
             this.IMN_WEBPR2_0.IsCorrectDate = true;
@@ -3108,7 +3104,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_SALEP2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP2_2.DecimalPlace = 0;
-            this.IMN_SALEP2_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SALEP2_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SALEP2_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SALEP2_2.IntegerPart = 0;
             this.IMN_SALEP2_2.IsCorrectDate = true;
@@ -3141,7 +3137,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_SALEP2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP2_1.DecimalPlace = 0;
-            this.IMN_SALEP2_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SALEP2_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SALEP2_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SALEP2_1.IntegerPart = 0;
             this.IMN_SALEP2_1.IsCorrectDate = true;
@@ -3174,7 +3170,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_SALEP2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP2_0.DecimalPlace = 0;
-            this.IMN_SALEP2_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SALEP2_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SALEP2_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SALEP2_0.IntegerPart = 0;
             this.IMN_SALEP2_0.IsCorrectDate = true;
@@ -3208,7 +3204,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox9.DecimalPlace = 0;
             this.ckM_TextBox9.Enabled = false;
-            this.ckM_TextBox9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox9.IntegerPart = 0;
             this.ckM_TextBox9.IsCorrectDate = true;
             this.ckM_TextBox9.isEnterKeyDown = false;
@@ -3240,7 +3236,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox10.DecimalPlace = 0;
             this.ckM_TextBox10.Enabled = false;
-            this.ckM_TextBox10.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox10.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox10.IntegerPart = 0;
             this.ckM_TextBox10.IsCorrectDate = true;
             this.ckM_TextBox10.isEnterKeyDown = false;
@@ -3272,7 +3268,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox11.DecimalPlace = 0;
             this.ckM_TextBox11.Enabled = false;
-            this.ckM_TextBox11.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox11.IntegerPart = 0;
             this.ckM_TextBox11.IsCorrectDate = true;
             this.ckM_TextBox11.isEnterKeyDown = false;
@@ -3302,7 +3298,7 @@ namespace TempoJuchuuNyuuryoku
             this.SC_ITEM_0.CodeWidth1 = 110;
             this.SC_ITEM_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_0.DataCheck = false;
-            this.SC_ITEM_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_ITEM_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_0.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_0.IsCopy = false;
             this.SC_ITEM_0.LabelText = "";
@@ -3341,7 +3337,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENKA_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENKA_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENKA_2.DecimalPlace = 0;
-            this.IMN_GENKA_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENKA_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENKA_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENKA_2.IntegerPart = 0;
             this.IMN_GENKA_2.IsCorrectDate = true;
@@ -3375,7 +3371,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENKA_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENKA_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENKA_1.DecimalPlace = 0;
-            this.IMN_GENKA_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENKA_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENKA_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENKA_1.IntegerPart = 0;
             this.IMN_GENKA_1.IsCorrectDate = true;
@@ -3409,7 +3405,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_TEIKA2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_TEIKA2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_TEIKA2_2.DecimalPlace = 0;
-            this.IMN_TEIKA2_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_TEIKA2_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_TEIKA2_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_TEIKA2_2.IntegerPart = 0;
             this.IMN_TEIKA2_2.IsCorrectDate = true;
@@ -3443,7 +3439,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_CLINT_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT_2.DecimalPlace = 0;
-            this.IMN_CLINT_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CLINT_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CLINT_2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_CLINT_2.IntegerPart = 0;
             this.IMN_CLINT_2.IsCorrectDate = true;
@@ -3475,7 +3471,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_WEBPR_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR_2.DecimalPlace = 0;
-            this.IMN_WEBPR_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_WEBPR_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_WEBPR_2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_WEBPR_2.IntegerPart = 0;
             this.IMN_WEBPR_2.IsCorrectDate = true;
@@ -3507,7 +3503,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_TEIKA2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_TEIKA2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_TEIKA2_1.DecimalPlace = 0;
-            this.IMN_TEIKA2_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_TEIKA2_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_TEIKA2_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_TEIKA2_1.IntegerPart = 0;
             this.IMN_TEIKA2_1.IsCorrectDate = true;
@@ -3541,7 +3537,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_CLINT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT_1.DecimalPlace = 0;
-            this.IMN_CLINT_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CLINT_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CLINT_1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_CLINT_1.IntegerPart = 0;
             this.IMN_CLINT_1.IsCorrectDate = true;
@@ -3573,7 +3569,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_WEBPR_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR_1.DecimalPlace = 0;
-            this.IMN_WEBPR_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_WEBPR_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_WEBPR_1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_WEBPR_1.IntegerPart = 0;
             this.IMN_WEBPR_1.IsCorrectDate = true;
@@ -3605,7 +3601,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_TEIKA2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_TEIKA2_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_TEIKA2_0.DecimalPlace = 0;
-            this.IMN_TEIKA2_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_TEIKA2_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_TEIKA2_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_TEIKA2_0.IntegerPart = 0;
             this.IMN_TEIKA2_0.IsCorrectDate = true;
@@ -3672,7 +3668,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENKA_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENKA_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENKA_0.DecimalPlace = 0;
-            this.IMN_GENKA_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENKA_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENKA_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENKA_0.IntegerPart = 0;
             this.IMN_GENKA_0.IsCorrectDate = true;
@@ -3706,7 +3702,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_CLINT_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT_0.DecimalPlace = 0;
-            this.IMN_CLINT_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CLINT_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CLINT_0.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_CLINT_0.IntegerPart = 0;
             this.IMN_CLINT_0.IsCorrectDate = true;
@@ -3738,7 +3734,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_WEBPR_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR_0.DecimalPlace = 0;
-            this.IMN_WEBPR_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_WEBPR_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_WEBPR_0.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_WEBPR_0.IntegerPart = 0;
             this.IMN_WEBPR_0.IsCorrectDate = true;
@@ -3770,7 +3766,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_JANCD_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_JANCD_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JANCD_0.DecimalPlace = 0;
-            this.IMT_JANCD_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_JANCD_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_JANCD_0.IntegerPart = 0;
             this.IMT_JANCD_0.IsCorrectDate = true;
             this.IMT_JANCD_0.isEnterKeyDown = false;
@@ -3802,7 +3798,7 @@ namespace TempoJuchuuNyuuryoku
             this.SC_ITEM_1.CodeWidth1 = 110;
             this.SC_ITEM_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_1.DataCheck = false;
-            this.SC_ITEM_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_ITEM_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_1.IsCopy = false;
             this.SC_ITEM_1.LabelText = "";
@@ -3833,7 +3829,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_JANCD_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_JANCD_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JANCD_1.DecimalPlace = 0;
-            this.IMT_JANCD_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_JANCD_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_JANCD_1.IntegerPart = 0;
             this.IMT_JANCD_1.IsCorrectDate = true;
             this.IMT_JANCD_1.isEnterKeyDown = false;
@@ -3865,7 +3861,7 @@ namespace TempoJuchuuNyuuryoku
             this.SC_ITEM_2.CodeWidth1 = 110;
             this.SC_ITEM_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_2.DataCheck = false;
-            this.SC_ITEM_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_ITEM_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_2.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_2.IsCopy = false;
             this.SC_ITEM_2.LabelText = "";
@@ -3896,7 +3892,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_JANCD_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_JANCD_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JANCD_2.DecimalPlace = 0;
-            this.IMT_JANCD_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_JANCD_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_JANCD_2.IntegerPart = 0;
             this.IMT_JANCD_2.IsCorrectDate = true;
             this.IMT_JANCD_2.isEnterKeyDown = false;
@@ -3929,7 +3925,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_CLINT2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT2_2.DecimalPlace = 0;
-            this.IMN_CLINT2_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CLINT2_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CLINT2_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_CLINT2_2.IntegerPart = 0;
             this.IMN_CLINT2_2.IsCorrectDate = true;
@@ -3962,7 +3958,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_CLINT2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT2_1.DecimalPlace = 0;
-            this.IMN_CLINT2_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CLINT2_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CLINT2_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_CLINT2_1.IntegerPart = 0;
             this.IMN_CLINT2_1.IsCorrectDate = true;
@@ -3995,7 +3991,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_CLINT2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT2_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT2_0.DecimalPlace = 0;
-            this.IMN_CLINT2_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CLINT2_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CLINT2_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_CLINT2_0.IntegerPart = 0;
             this.IMN_CLINT2_0.IsCorrectDate = true;
@@ -4028,7 +4024,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_SALEP_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP_2.DecimalPlace = 0;
-            this.IMN_SALEP_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SALEP_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SALEP_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SALEP_2.IntegerPart = 0;
             this.IMN_SALEP_2.IsCorrectDate = true;
@@ -4062,7 +4058,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_SALEP_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP_1.DecimalPlace = 0;
-            this.IMN_SALEP_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SALEP_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SALEP_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SALEP_1.IntegerPart = 0;
             this.IMN_SALEP_1.IsCorrectDate = true;
@@ -4096,7 +4092,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_SALEP_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP_0.DecimalPlace = 0;
-            this.IMN_SALEP_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SALEP_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SALEP_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SALEP_0.IntegerPart = 0;
             this.IMN_SALEP_0.IsCorrectDate = true;
@@ -4129,7 +4125,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_VENCD_0.CodeWidth1 = 100;
             this.IMT_VENCD_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_VENCD_0.DataCheck = false;
-            this.IMT_VENCD_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_VENCD_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_VENCD_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_VENCD_0.IsCopy = false;
             this.IMT_VENCD_0.LabelText = "";
@@ -4158,7 +4154,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_VENCD_1.CodeWidth1 = 100;
             this.IMT_VENCD_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_VENCD_1.DataCheck = false;
-            this.IMT_VENCD_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_VENCD_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_VENCD_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_VENCD_1.IsCopy = false;
             this.IMT_VENCD_1.LabelText = "";
@@ -4187,7 +4183,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_VENCD_2.CodeWidth1 = 100;
             this.IMT_VENCD_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_VENCD_2.DataCheck = false;
-            this.IMT_VENCD_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_VENCD_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_VENCD_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_VENCD_2.IsCopy = false;
             this.IMT_VENCD_2.LabelText = "";
@@ -4217,7 +4213,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_VENNM_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_VENNM_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_VENNM_0.DecimalPlace = 0;
-            this.IMT_VENNM_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_VENNM_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_VENNM_0.IntegerPart = 0;
             this.IMT_VENNM_0.IsCorrectDate = true;
             this.IMT_VENNM_0.isEnterKeyDown = false;
@@ -4226,12 +4222,12 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_VENNM_0.IsNumber = true;
             this.IMT_VENNM_0.IsShop = false;
             this.IMT_VENNM_0.Length = 80;
-            this.IMT_VENNM_0.Location = new System.Drawing.Point(389, 38);
+            this.IMT_VENNM_0.Location = new System.Drawing.Point(388, 38);
             this.IMT_VENNM_0.MaxLength = 80;
             this.IMT_VENNM_0.MoveNext = true;
             this.IMT_VENNM_0.Name = "IMT_VENNM_0";
             this.IMT_VENNM_0.ReadOnly = true;
-            this.IMT_VENNM_0.Size = new System.Drawing.Size(244, 19);
+            this.IMT_VENNM_0.Size = new System.Drawing.Size(245, 19);
             this.IMT_VENNM_0.TabIndex = 526;
             this.IMT_VENNM_0.Tag = "0";
             this.IMT_VENNM_0.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20";
@@ -4249,7 +4245,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_VENNM_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_VENNM_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_VENNM_1.DecimalPlace = 0;
-            this.IMT_VENNM_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_VENNM_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_VENNM_1.IntegerPart = 0;
             this.IMT_VENNM_1.IsCorrectDate = true;
             this.IMT_VENNM_1.isEnterKeyDown = false;
@@ -4258,12 +4254,12 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_VENNM_1.IsNumber = true;
             this.IMT_VENNM_1.IsShop = false;
             this.IMT_VENNM_1.Length = 80;
-            this.IMT_VENNM_1.Location = new System.Drawing.Point(389, 114);
+            this.IMT_VENNM_1.Location = new System.Drawing.Point(388, 114);
             this.IMT_VENNM_1.MaxLength = 80;
             this.IMT_VENNM_1.MoveNext = true;
             this.IMT_VENNM_1.Name = "IMT_VENNM_1";
             this.IMT_VENNM_1.ReadOnly = true;
-            this.IMT_VENNM_1.Size = new System.Drawing.Size(244, 19);
+            this.IMT_VENNM_1.Size = new System.Drawing.Size(245, 19);
             this.IMT_VENNM_1.TabIndex = 527;
             this.IMT_VENNM_1.Tag = "1";
             this.IMT_VENNM_1.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
@@ -4281,7 +4277,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_VENNM_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_VENNM_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_VENNM_2.DecimalPlace = 0;
-            this.IMT_VENNM_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_VENNM_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_VENNM_2.IntegerPart = 0;
             this.IMT_VENNM_2.IsCorrectDate = true;
             this.IMT_VENNM_2.isEnterKeyDown = false;
@@ -4290,12 +4286,12 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_VENNM_2.IsNumber = true;
             this.IMT_VENNM_2.IsShop = false;
             this.IMT_VENNM_2.Length = 80;
-            this.IMT_VENNM_2.Location = new System.Drawing.Point(389, 190);
+            this.IMT_VENNM_2.Location = new System.Drawing.Point(388, 190);
             this.IMT_VENNM_2.MaxLength = 80;
             this.IMT_VENNM_2.MoveNext = true;
             this.IMT_VENNM_2.Name = "IMT_VENNM_2";
             this.IMT_VENNM_2.ReadOnly = true;
-            this.IMT_VENNM_2.Size = new System.Drawing.Size(244, 19);
+            this.IMT_VENNM_2.Size = new System.Drawing.Size(245, 19);
             this.IMT_VENNM_2.TabIndex = 528;
             this.IMT_VENNM_2.Tag = "2";
             this.IMT_VENNM_2.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
@@ -4308,7 +4304,7 @@ namespace TempoJuchuuNyuuryoku
             this.label31.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label31.BackColor = System.Drawing.Color.Transparent;
             this.label31.DefaultlabelSize = true;
-            this.label31.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label31.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label31.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label31.ForeColor = System.Drawing.Color.Black;
             this.label31.Location = new System.Drawing.Point(1136, 352);
@@ -4325,7 +4321,7 @@ namespace TempoJuchuuNyuuryoku
             this.label33.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label33.BackColor = System.Drawing.Color.Transparent;
             this.label33.DefaultlabelSize = true;
-            this.label33.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label33.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label33.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label33.ForeColor = System.Drawing.Color.Black;
             this.label33.Location = new System.Drawing.Point(1143, 330);
@@ -4347,7 +4343,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox6.DecimalPlace = 0;
-            this.ckM_TextBox6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox6.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ckM_TextBox6.IntegerPart = 0;
             this.ckM_TextBox6.IsCorrectDate = true;
@@ -4378,7 +4374,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox5.DecimalPlace = 0;
-            this.ckM_TextBox5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox5.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ckM_TextBox5.IntegerPart = 0;
             this.ckM_TextBox5.IsCorrectDate = true;
@@ -4406,7 +4402,7 @@ namespace TempoJuchuuNyuuryoku
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.DefaultlabelSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(28, 31);
@@ -4423,7 +4419,7 @@ namespace TempoJuchuuNyuuryoku
             this.label27.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label27.BackColor = System.Drawing.Color.Transparent;
             this.label27.DefaultlabelSize = true;
-            this.label27.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label27.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label27.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label27.ForeColor = System.Drawing.Color.Black;
             this.label27.Location = new System.Drawing.Point(257, 13);
@@ -4444,7 +4440,7 @@ namespace TempoJuchuuNyuuryoku
             this.ScCustomer.CodeWidth1 = 100;
             this.ScCustomer.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCustomer.DataCheck = true;
-            this.ScCustomer.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScCustomer.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScCustomer.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScCustomer.IsCopy = false;
             this.ScCustomer.LabelText = "";
@@ -4513,7 +4509,7 @@ namespace TempoJuchuuNyuuryoku
             this.label35.BackColor = System.Drawing.Color.DarkGray;
             this.label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label35.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label35.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label35.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label35.Location = new System.Drawing.Point(1089, 34);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(75, 16);
@@ -4526,7 +4522,7 @@ namespace TempoJuchuuNyuuryoku
             this.label29.BackColor = System.Drawing.Color.DarkGray;
             this.label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label29.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label29.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label29.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label29.Location = new System.Drawing.Point(211, 18);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(46, 16);
@@ -4539,7 +4535,7 @@ namespace TempoJuchuuNyuuryoku
             this.label30.BackColor = System.Drawing.Color.DarkGray;
             this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label30.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label30.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label30.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label30.Location = new System.Drawing.Point(93, 18);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(37, 16);
@@ -4552,7 +4548,7 @@ namespace TempoJuchuuNyuuryoku
             this.label32.BackColor = System.Drawing.Color.DarkGray;
             this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label32.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label32.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label32.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label32.Location = new System.Drawing.Point(130, 18);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(81, 16);
@@ -4565,7 +4561,7 @@ namespace TempoJuchuuNyuuryoku
             this.label12.BackColor = System.Drawing.Color.DarkGray;
             this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label12.Location = new System.Drawing.Point(28, 18);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(65, 16);
@@ -4578,7 +4574,7 @@ namespace TempoJuchuuNyuuryoku
             this.label7.BackColor = System.Drawing.Color.DarkGray;
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label7.Location = new System.Drawing.Point(873, 2);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 16);
@@ -4591,7 +4587,7 @@ namespace TempoJuchuuNyuuryoku
             this.label23.BackColor = System.Drawing.Color.DarkGray;
             this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label23.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label23.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label23.Location = new System.Drawing.Point(1089, 18);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(75, 16);
@@ -4604,7 +4600,7 @@ namespace TempoJuchuuNyuuryoku
             this.label15.BackColor = System.Drawing.Color.DarkGray;
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label15.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label15.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label15.Location = new System.Drawing.Point(1032, 18);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(57, 16);
@@ -4617,7 +4613,7 @@ namespace TempoJuchuuNyuuryoku
             this.label16.BackColor = System.Drawing.Color.DarkGray;
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label16.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label16.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label16.Location = new System.Drawing.Point(976, 18);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(56, 16);
@@ -4630,7 +4626,7 @@ namespace TempoJuchuuNyuuryoku
             this.label10.BackColor = System.Drawing.Color.DarkGray;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label10.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label10.Location = new System.Drawing.Point(1164, 18);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(72, 16);
@@ -4643,7 +4639,7 @@ namespace TempoJuchuuNyuuryoku
             this.label48.BackColor = System.Drawing.Color.DarkGray;
             this.label48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label48.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label48.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label48.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label48.Location = new System.Drawing.Point(865, 34);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(111, 16);
@@ -4656,7 +4652,7 @@ namespace TempoJuchuuNyuuryoku
             this.label49.BackColor = System.Drawing.Color.DarkGray;
             this.label49.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label49.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label49.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label49.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label49.Location = new System.Drawing.Point(976, 34);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(113, 16);
@@ -4669,7 +4665,7 @@ namespace TempoJuchuuNyuuryoku
             this.label42.BackColor = System.Drawing.Color.DarkGray;
             this.label42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label42.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label42.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label42.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label42.Location = new System.Drawing.Point(788, 34);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(77, 16);
@@ -4682,7 +4678,7 @@ namespace TempoJuchuuNyuuryoku
             this.label46.BackColor = System.Drawing.Color.DarkGray;
             this.label46.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label46.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label46.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label46.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label46.Location = new System.Drawing.Point(635, 34);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(76, 16);
@@ -4695,7 +4691,7 @@ namespace TempoJuchuuNyuuryoku
             this.label47.BackColor = System.Drawing.Color.DarkGray;
             this.label47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label47.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label47.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label47.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label47.Location = new System.Drawing.Point(711, 34);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(77, 16);
@@ -4708,7 +4704,7 @@ namespace TempoJuchuuNyuuryoku
             this.label41.BackColor = System.Drawing.Color.DarkGray;
             this.label41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label41.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label41.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label41.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label41.Location = new System.Drawing.Point(1313, 34);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(30, 16);
@@ -4721,7 +4717,7 @@ namespace TempoJuchuuNyuuryoku
             this.label43.BackColor = System.Drawing.Color.DarkGray;
             this.label43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label43.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label43.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label43.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label43.Location = new System.Drawing.Point(257, 34);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(378, 16);
@@ -4734,7 +4730,7 @@ namespace TempoJuchuuNyuuryoku
             this.label44.BackColor = System.Drawing.Color.DarkGray;
             this.label44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label44.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label44.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label44.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label44.Location = new System.Drawing.Point(180, 34);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(77, 16);
@@ -4747,7 +4743,7 @@ namespace TempoJuchuuNyuuryoku
             this.label45.BackColor = System.Drawing.Color.DarkGray;
             this.label45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label45.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label45.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label45.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label45.Location = new System.Drawing.Point(28, 34);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(152, 16);
@@ -4760,7 +4756,7 @@ namespace TempoJuchuuNyuuryoku
             this.label6.BackColor = System.Drawing.Color.DarkGray;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label6.Location = new System.Drawing.Point(1275, 2);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 16);
@@ -4773,7 +4769,7 @@ namespace TempoJuchuuNyuuryoku
             this.label28.BackColor = System.Drawing.Color.DarkGray;
             this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label28.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label28.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label28.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label28.Location = new System.Drawing.Point(1228, 2);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(47, 16);
@@ -4786,7 +4782,7 @@ namespace TempoJuchuuNyuuryoku
             this.label19.BackColor = System.Drawing.Color.DarkGray;
             this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label19.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label19.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label19.Location = new System.Drawing.Point(1313, 50);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(30, 16);
@@ -4799,7 +4795,7 @@ namespace TempoJuchuuNyuuryoku
             this.label22.BackColor = System.Drawing.Color.DarkGray;
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label22.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label22.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label22.Location = new System.Drawing.Point(1322, 2);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(21, 16);
@@ -4812,7 +4808,7 @@ namespace TempoJuchuuNyuuryoku
             this.label25.BackColor = System.Drawing.Color.DarkGray;
             this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label25.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label25.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label25.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label25.Location = new System.Drawing.Point(1313, 18);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(30, 16);
@@ -4825,7 +4821,7 @@ namespace TempoJuchuuNyuuryoku
             this.label26.BackColor = System.Drawing.Color.DarkGray;
             this.label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label26.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label26.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label26.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label26.Location = new System.Drawing.Point(1164, 34);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(72, 16);
@@ -4838,7 +4834,7 @@ namespace TempoJuchuuNyuuryoku
             this.label17.BackColor = System.Drawing.Color.DarkGray;
             this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label17.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label17.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label17.Location = new System.Drawing.Point(1236, 50);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(77, 16);
@@ -4851,7 +4847,7 @@ namespace TempoJuchuuNyuuryoku
             this.label21.BackColor = System.Drawing.Color.DarkGray;
             this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label21.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label21.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label21.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label21.Location = new System.Drawing.Point(818, 50);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(418, 16);
@@ -4864,7 +4860,7 @@ namespace TempoJuchuuNyuuryoku
             this.label5.BackColor = System.Drawing.Color.DarkGray;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label5.Location = new System.Drawing.Point(427, 50);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(391, 16);
@@ -4877,7 +4873,7 @@ namespace TempoJuchuuNyuuryoku
             this.label2.BackColor = System.Drawing.Color.DarkGray;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label2.Location = new System.Drawing.Point(28, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(399, 16);
@@ -4890,7 +4886,7 @@ namespace TempoJuchuuNyuuryoku
             this.lblSyoName.BackColor = System.Drawing.Color.DarkGray;
             this.lblSyoName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSyoName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblSyoName.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblSyoName.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblSyoName.Location = new System.Drawing.Point(257, 18);
             this.lblSyoName.Name = "lblSyoName";
             this.lblSyoName.Size = new System.Drawing.Size(719, 16);
@@ -4902,7 +4898,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label2.BackColor = System.Drawing.Color.DarkGray;
             this.ckM_Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ckM_Label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ckM_Label2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.ckM_Label2.Location = new System.Drawing.Point(0, 2);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(28, 64);
@@ -4915,7 +4911,7 @@ namespace TempoJuchuuNyuuryoku
             this.label3.BackColor = System.Drawing.Color.DarkGray;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label3.Location = new System.Drawing.Point(933, 2);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 16);
@@ -4928,7 +4924,7 @@ namespace TempoJuchuuNyuuryoku
             this.label24.BackColor = System.Drawing.Color.DarkGray;
             this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label24.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label24.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label24.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label24.Location = new System.Drawing.Point(1236, 18);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(77, 16);
@@ -4941,7 +4937,7 @@ namespace TempoJuchuuNyuuryoku
             this.label18.BackColor = System.Drawing.Color.DarkGray;
             this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label18.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label18.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label18.Location = new System.Drawing.Point(961, 2);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(134, 16);
@@ -4954,7 +4950,7 @@ namespace TempoJuchuuNyuuryoku
             this.label13.BackColor = System.Drawing.Color.DarkGray;
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label13.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label13.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label13.Location = new System.Drawing.Point(1236, 34);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(77, 16);
@@ -4967,7 +4963,7 @@ namespace TempoJuchuuNyuuryoku
             this.label8.BackColor = System.Drawing.Color.DarkGray;
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label8.Location = new System.Drawing.Point(1095, 2);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(133, 16);
@@ -4980,7 +4976,7 @@ namespace TempoJuchuuNyuuryoku
             this.lblGridSkuCD.BackColor = System.Drawing.Color.DarkGray;
             this.lblGridSkuCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblGridSkuCD.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblGridSkuCD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblGridSkuCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblGridSkuCD.Location = new System.Drawing.Point(28, 2);
             this.lblGridSkuCD.Name = "lblGridSkuCD";
             this.lblGridSkuCD.Size = new System.Drawing.Size(845, 16);
@@ -5006,7 +5002,7 @@ namespace TempoJuchuuNyuuryoku
             this.ScCopyJuchuuNO.CodeWidth1 = 100;
             this.ScCopyJuchuuNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCopyJuchuuNO.DataCheck = true;
-            this.ScCopyJuchuuNO.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScCopyJuchuuNO.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScCopyJuchuuNO.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScCopyJuchuuNO.IsCopy = true;
             this.ScCopyJuchuuNO.LabelText = "";
@@ -5035,7 +5031,7 @@ namespace TempoJuchuuNyuuryoku
             this.ScJuchuuNO.CodeWidth1 = 100;
             this.ScJuchuuNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScJuchuuNO.DataCheck = false;
-            this.ScJuchuuNO.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScJuchuuNO.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScJuchuuNO.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScJuchuuNO.IsCopy = false;
             this.ScJuchuuNO.LabelText = "";
@@ -5064,7 +5060,7 @@ namespace TempoJuchuuNyuuryoku
             this.ScStaff.CodeWidth1 = 70;
             this.ScStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStaff.DataCheck = false;
-            this.ScStaff.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScStaff.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScStaff.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScStaff.IsCopy = false;
             this.ScStaff.LabelText = "";
@@ -5107,7 +5103,7 @@ namespace TempoJuchuuNyuuryoku
             this.LblJuchuNo.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.LblJuchuNo.BackColor = System.Drawing.Color.Transparent;
             this.LblJuchuNo.DefaultlabelSize = true;
-            this.LblJuchuNo.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.LblJuchuNo.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.LblJuchuNo.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.LblJuchuNo.ForeColor = System.Drawing.Color.Black;
             this.LblJuchuNo.Location = new System.Drawing.Point(26, 11);
@@ -5124,7 +5120,7 @@ namespace TempoJuchuuNyuuryoku
             this.LblCopyJuchuNo.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.LblCopyJuchuNo.BackColor = System.Drawing.Color.Transparent;
             this.LblCopyJuchuNo.DefaultlabelSize = true;
-            this.LblCopyJuchuNo.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.LblCopyJuchuNo.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.LblCopyJuchuNo.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.LblCopyJuchuNo.ForeColor = System.Drawing.Color.Black;
             this.LblCopyJuchuNo.Location = new System.Drawing.Point(256, 11);
@@ -5145,7 +5141,7 @@ namespace TempoJuchuuNyuuryoku
             this.ScMitsumoriNO.CodeWidth1 = 100;
             this.ScMitsumoriNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScMitsumoriNO.DataCheck = false;
-            this.ScMitsumoriNO.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScMitsumoriNO.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScMitsumoriNO.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScMitsumoriNO.IsCopy = false;
             this.ScMitsumoriNO.LabelText = "";
@@ -5176,7 +5172,7 @@ namespace TempoJuchuuNyuuryoku
             // radioOnchu
             // 
             this.radioOnchu.BackColor = System.Drawing.Color.Transparent;
-            this.radioOnchu.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.radioOnchu.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.radioOnchu.Location = new System.Drawing.Point(61, 3);
             this.radioOnchu.Name = "radioOnchu";
             this.radioOnchu.Size = new System.Drawing.Size(50, 16);
@@ -5189,7 +5185,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.radioSama.BackColor = System.Drawing.Color.Transparent;
             this.radioSama.Checked = true;
-            this.radioSama.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.radioSama.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.radioSama.Location = new System.Drawing.Point(7, 3);
             this.radioSama.Name = "radioSama";
             this.radioSama.Size = new System.Drawing.Size(34, 16);
@@ -5208,7 +5204,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_SearchControl3.CodeWidth1 = 100;
             this.ckM_SearchControl3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl3.DataCheck = false;
-            this.ckM_SearchControl3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_SearchControl3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_SearchControl3.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ckM_SearchControl3.IsCopy = false;
             this.ckM_SearchControl3.LabelText = "";
@@ -5238,7 +5234,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox1.DecimalPlace = 0;
-            this.ckM_TextBox1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox1.IntegerPart = 0;
             this.ckM_TextBox1.IsCorrectDate = true;
@@ -5265,7 +5261,7 @@ namespace TempoJuchuuNyuuryoku
             this.TxtRemark1.BackColor = System.Drawing.Color.White;
             this.TxtRemark1.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
             this.TxtRemark1.F_focus = false;
-            this.TxtRemark1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.TxtRemark1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.TxtRemark1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TxtRemark1.Length = 250;
             this.TxtRemark1.Location = new System.Drawing.Point(92, 656);
@@ -5285,7 +5281,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblTankaName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblTankaName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTankaName.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTankaName.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTankaName.Location = new System.Drawing.Point(307, 118);
             this.lblTankaName.Name = "lblTankaName";
             this.lblTankaName.Size = new System.Drawing.Size(85, 18);
@@ -5301,7 +5297,7 @@ namespace TempoJuchuuNyuuryoku
             this.btnAddress.DefaultBtnSize = false;
             this.btnAddress.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnAddress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddress.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btnAddress.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.btnAddress.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.btnAddress.Location = new System.Drawing.Point(599, 136);
             this.btnAddress.Margin = new System.Windows.Forms.Padding(1);
@@ -5316,7 +5312,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblLastSalesDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblLastSalesDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLastSalesDate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastSalesDate.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLastSalesDate.Location = new System.Drawing.Point(479, 118);
             this.lblLastSalesDate.Name = "lblLastSalesDate";
             this.lblLastSalesDate.Size = new System.Drawing.Size(85, 18);
@@ -5328,7 +5324,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblStoreName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblStoreName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblStoreName.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStoreName.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStoreName.Location = new System.Drawing.Point(584, 118);
             this.lblStoreName.Name = "lblStoreName";
             this.lblStoreName.Size = new System.Drawing.Size(110, 18);
@@ -5342,7 +5338,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label6.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label6.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label6.DefaultlabelSize = true;
-            this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label6.Location = new System.Drawing.Point(416, 121);
@@ -5416,7 +5412,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label32.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label32.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label32.DefaultlabelSize = true;
-            this.ckM_Label32.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label32.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label32.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label32.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label32.Location = new System.Drawing.Point(944, 372);
@@ -5432,7 +5428,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblKin13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblKin13.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKin13.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKin13.Location = new System.Drawing.Point(1018, 369);
             this.lblKin13.Name = "lblKin13";
             this.lblKin13.Size = new System.Drawing.Size(78, 18);
@@ -5449,7 +5445,7 @@ namespace TempoJuchuuNyuuryoku
             this.BtnSubF11.DefaultBtnSize = true;
             this.BtnSubF11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnSubF11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSubF11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnSubF11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.BtnSubF11.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.BtnSubF11.Location = new System.Drawing.Point(1249, 370);
             this.BtnSubF11.Margin = new System.Windows.Forms.Padding(1);
@@ -5483,7 +5479,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label30.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label30.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label30.DefaultlabelSize = true;
-            this.ckM_Label30.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label30.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label30.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label30.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label30.Location = new System.Drawing.Point(31, 309);
@@ -5500,7 +5496,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label29.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label29.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label29.DefaultlabelSize = true;
-            this.ckM_Label29.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label29.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label29.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label29.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label29.Location = new System.Drawing.Point(31, 331);
@@ -5517,7 +5513,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_MultiLineTextBox1.BackColor = System.Drawing.Color.White;
             this.ckM_MultiLineTextBox1.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
             this.ckM_MultiLineTextBox1.F_focus = false;
-            this.ckM_MultiLineTextBox1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_MultiLineTextBox1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_MultiLineTextBox1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_MultiLineTextBox1.Length = 250;
             this.ckM_MultiLineTextBox1.Location = new System.Drawing.Point(91, 329);
@@ -5539,7 +5535,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label27.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label27.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label27.DefaultlabelSize = true;
-            this.ckM_Label27.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label27.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label27.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label27.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label27.Location = new System.Drawing.Point(559, 309);
@@ -5554,7 +5550,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblKin6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblKin6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKin6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKin6.Location = new System.Drawing.Point(633, 306);
             this.lblKin6.Name = "lblKin6";
             this.lblKin6.Size = new System.Drawing.Size(78, 18);
@@ -5568,7 +5564,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label28.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label28.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label28.DefaultlabelSize = true;
-            this.ckM_Label28.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label28.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label28.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label28.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label28.Location = new System.Drawing.Point(418, 309);
@@ -5583,7 +5579,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblKin5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblKin5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKin5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKin5.Location = new System.Drawing.Point(467, 306);
             this.lblKin5.Name = "lblKin5";
             this.lblKin5.Size = new System.Drawing.Size(78, 18);
@@ -5597,7 +5593,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label23.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label23.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label23.DefaultlabelSize = true;
-            this.ckM_Label23.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label23.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label23.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label23.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label23.Location = new System.Drawing.Point(572, 372);
@@ -5612,7 +5608,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblKin9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblKin9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKin9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKin9.Location = new System.Drawing.Point(632, 369);
             this.lblKin9.Name = "lblKin9";
             this.lblKin9.Size = new System.Drawing.Size(78, 18);
@@ -5626,7 +5622,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label24.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label24.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label24.DefaultlabelSize = true;
-            this.ckM_Label24.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label24.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label24.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label24.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label24.Location = new System.Drawing.Point(585, 351);
@@ -5641,7 +5637,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblKin8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblKin8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKin8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKin8.Location = new System.Drawing.Point(632, 348);
             this.lblKin8.Name = "lblKin8";
             this.lblKin8.Size = new System.Drawing.Size(78, 18);
@@ -5655,7 +5651,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label25.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label25.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label25.DefaultlabelSize = true;
-            this.ckM_Label25.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label25.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label25.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label25.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label25.Location = new System.Drawing.Point(585, 330);
@@ -5670,7 +5666,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblKin7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblKin7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKin7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKin7.Location = new System.Drawing.Point(632, 327);
             this.lblKin7.Name = "lblKin7";
             this.lblKin7.Size = new System.Drawing.Size(78, 18);
@@ -5684,7 +5680,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label22.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label22.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label22.DefaultlabelSize = true;
-            this.ckM_Label22.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label22.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label22.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label22.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label22.Location = new System.Drawing.Point(762, 372);
@@ -5699,7 +5695,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblKin12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblKin12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKin12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKin12.Location = new System.Drawing.Point(823, 369);
             this.lblKin12.Name = "lblKin12";
             this.lblKin12.Size = new System.Drawing.Size(78, 18);
@@ -5713,7 +5709,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label21.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label21.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label21.DefaultlabelSize = true;
-            this.ckM_Label21.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label21.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label21.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label21.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label21.Location = new System.Drawing.Point(762, 351);
@@ -5728,7 +5724,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblKin11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblKin11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKin11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKin11.Location = new System.Drawing.Point(823, 348);
             this.lblKin11.Name = "lblKin11";
             this.lblKin11.Size = new System.Drawing.Size(78, 18);
@@ -5742,7 +5738,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label20.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label20.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label20.DefaultlabelSize = true;
-            this.ckM_Label20.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label20.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label20.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label20.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label20.Location = new System.Drawing.Point(762, 330);
@@ -5757,7 +5753,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblKin10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblKin10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKin10.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKin10.Location = new System.Drawing.Point(823, 327);
             this.lblKin10.Name = "lblKin10";
             this.lblKin10.Size = new System.Drawing.Size(78, 18);
@@ -5771,7 +5767,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label10.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label10.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label10.DefaultlabelSize = true;
-            this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label10.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label10.Location = new System.Drawing.Point(1211, 310);
@@ -5786,7 +5782,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblKin4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblKin4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKin4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKin4.Location = new System.Drawing.Point(1259, 307);
             this.lblKin4.Name = "lblKin4";
             this.lblKin4.Size = new System.Drawing.Size(78, 18);
@@ -5800,7 +5796,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label9.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label9.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label9.DefaultlabelSize = true;
-            this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label9.Location = new System.Drawing.Point(970, 310);
@@ -5815,7 +5811,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblKin3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblKin3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKin3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKin3.Location = new System.Drawing.Point(1018, 307);
             this.lblKin3.Name = "lblKin3";
             this.lblKin3.Size = new System.Drawing.Size(78, 18);
@@ -5829,7 +5825,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label8.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label8.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label8.DefaultlabelSize = true;
-            this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label8.Location = new System.Drawing.Point(749, 309);
@@ -5844,7 +5840,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblKin2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblKin2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKin2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKin2.Location = new System.Drawing.Point(823, 306);
             this.lblKin2.Name = "lblKin2";
             this.lblKin2.Size = new System.Drawing.Size(78, 18);
@@ -5858,7 +5854,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label7.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label7.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label7.DefaultlabelSize = true;
-            this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label7.Location = new System.Drawing.Point(247, 310);
@@ -5873,7 +5869,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblKin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblKin1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKin1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKin1.Location = new System.Drawing.Point(321, 307);
             this.lblKin1.Name = "lblKin1";
             this.lblKin1.Size = new System.Drawing.Size(78, 18);
@@ -5905,7 +5901,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label14.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label14.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label14.DefaultlabelSize = true;
-            this.ckM_Label14.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label14.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label14.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label14.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label14.Location = new System.Drawing.Point(200, 96);
@@ -5922,7 +5918,7 @@ namespace TempoJuchuuNyuuryoku
             this.TxtRemark2.BackColor = System.Drawing.Color.White;
             this.TxtRemark2.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
             this.TxtRemark2.F_focus = false;
-            this.TxtRemark2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.TxtRemark2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.TxtRemark2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TxtRemark2.Length = 250;
             this.TxtRemark2.Location = new System.Drawing.Point(634, 656);
@@ -5944,7 +5940,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label5.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label5.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label5.DefaultlabelSize = true;
-            this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label5.Location = new System.Drawing.Point(893, 96);
@@ -5966,7 +5962,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_TextBox7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox7.DecimalPlace = 0;
-            this.ckM_TextBox7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox7.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_TextBox7.IntegerPart = 0;
             this.ckM_TextBox7.IsCorrectDate = true;
@@ -6018,7 +6014,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label3.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label3.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label3.DefaultlabelSize = true;
-            this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label3.Location = new System.Drawing.Point(31, 660);
@@ -6035,7 +6031,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label11.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label11.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label11.DefaultlabelSize = true;
-            this.ckM_Label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label11.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label11.Location = new System.Drawing.Point(573, 660);
@@ -6052,7 +6048,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label12.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label12.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label12.DefaultlabelSize = true;
-            this.ckM_Label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label12.Location = new System.Drawing.Point(517, 11);
@@ -6073,7 +6069,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_SearchControl1.CodeWidth1 = 100;
             this.ckM_SearchControl1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl1.DataCheck = false;
-            this.ckM_SearchControl1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_SearchControl1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_SearchControl1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ckM_SearchControl1.IsCopy = false;
             this.ckM_SearchControl1.LabelText = "";
@@ -6098,7 +6094,7 @@ namespace TempoJuchuuNyuuryoku
             this.LblMotoJuchuNo.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.LblMotoJuchuNo.BackColor = System.Drawing.Color.Transparent;
             this.LblMotoJuchuNo.DefaultlabelSize = true;
-            this.LblMotoJuchuNo.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.LblMotoJuchuNo.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.LblMotoJuchuNo.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.LblMotoJuchuNo.ForeColor = System.Drawing.Color.Black;
             this.LblMotoJuchuNo.Location = new System.Drawing.Point(797, 12);
@@ -6119,7 +6115,7 @@ namespace TempoJuchuuNyuuryoku
             this.ScMotoJuchuNo.CodeWidth1 = 100;
             this.ScMotoJuchuNo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScMotoJuchuNo.DataCheck = false;
-            this.ScMotoJuchuNo.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScMotoJuchuNo.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScMotoJuchuNo.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScMotoJuchuNo.IsCopy = false;
             this.ScMotoJuchuNo.LabelText = "";
@@ -6149,7 +6145,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.ckM_TextBox8.DecimalPlace = 0;
-            this.ckM_TextBox8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox8.IntegerPart = 0;
             this.ckM_TextBox8.IsCorrectDate = false;
@@ -6179,7 +6175,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox13.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox13.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.ckM_TextBox13.DecimalPlace = 0;
-            this.ckM_TextBox13.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox13.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox13.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox13.IntegerPart = 0;
             this.ckM_TextBox13.IsCorrectDate = false;
@@ -6209,7 +6205,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox18.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox18.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.ckM_TextBox18.DecimalPlace = 0;
-            this.ckM_TextBox18.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox18.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ckM_TextBox18.IntegerPart = 0;
             this.ckM_TextBox18.IsCorrectDate = false;
@@ -6235,7 +6231,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label15.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label15.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label15.DefaultlabelSize = true;
-            this.ckM_Label15.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label15.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label15.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label15.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label15.Location = new System.Drawing.Point(476, 161);
@@ -6250,7 +6246,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblPoint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblPoint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblPoint.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPoint.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPoint.Location = new System.Drawing.Point(755, 138);
             this.lblPoint.Name = "lblPoint";
             this.lblPoint.Size = new System.Drawing.Size(85, 18);
@@ -6265,7 +6261,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label16.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label16.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label16.DefaultlabelSize = true;
-            this.ckM_Label16.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label16.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label16.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label16.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label16.Location = new System.Drawing.Point(684, 141);
@@ -6283,7 +6279,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label17.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label17.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label17.DefaultlabelSize = true;
-            this.ckM_Label17.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label17.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label17.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label17.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label17.Location = new System.Drawing.Point(1183, 655);
@@ -6298,7 +6294,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblDay1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblDay1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDay1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDay1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDay1.Location = new System.Drawing.Point(1241, 652);
             this.lblDay1.Name = "lblDay1";
             this.lblDay1.Size = new System.Drawing.Size(85, 18);
@@ -6312,7 +6308,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label18.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label18.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label18.DefaultlabelSize = true;
-            this.ckM_Label18.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label18.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label18.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label18.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label18.Location = new System.Drawing.Point(1117, 678);
@@ -6327,7 +6323,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblDay2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblDay2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDay2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDay2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDay2.Location = new System.Drawing.Point(1241, 675);
             this.lblDay2.Name = "lblDay2";
             this.lblDay2.Size = new System.Drawing.Size(85, 18);
@@ -6341,7 +6337,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label19.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label19.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label19.DefaultlabelSize = true;
-            this.ckM_Label19.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label19.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label19.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label19.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label19.Location = new System.Drawing.Point(1170, 700);
@@ -6356,7 +6352,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.lblDay3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblDay3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDay3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDay3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDay3.Location = new System.Drawing.Point(1241, 697);
             this.lblDay3.Name = "lblDay3";
             this.lblDay3.Size = new System.Drawing.Size(85, 18);
@@ -6367,7 +6363,7 @@ namespace TempoJuchuuNyuuryoku
             // ckM_CheckBox1
             // 
             this.ckM_CheckBox1.AutoSize = true;
-            this.ckM_CheckBox1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_CheckBox1.Location = new System.Drawing.Point(717, 10);
             this.ckM_CheckBox1.Name = "ckM_CheckBox1";
             this.ckM_CheckBox1.Size = new System.Drawing.Size(50, 16);
@@ -6388,7 +6384,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox14.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox14.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.ckM_TextBox14.DecimalPlace = 0;
-            this.ckM_TextBox14.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox14.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox14.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox14.IntegerPart = 0;
             this.ckM_TextBox14.IsCorrectDate = false;
@@ -6418,7 +6414,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox19.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox19.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.ckM_TextBox19.DecimalPlace = 0;
-            this.ckM_TextBox19.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox19.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox19.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox19.IntegerPart = 0;
             this.ckM_TextBox19.IsCorrectDate = false;
@@ -6448,7 +6444,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox20.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox20.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.ckM_TextBox20.DecimalPlace = 0;
-            this.ckM_TextBox20.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox20.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox20.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ckM_TextBox20.IntegerPart = 0;
             this.ckM_TextBox20.IsCorrectDate = false;
@@ -6474,7 +6470,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label31.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label31.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label31.DefaultlabelSize = true;
-            this.ckM_Label31.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label31.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label31.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label31.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label31.Location = new System.Drawing.Point(476, 223);
@@ -6493,7 +6489,7 @@ namespace TempoJuchuuNyuuryoku
             this.btnAddress2.DefaultBtnSize = false;
             this.btnAddress2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnAddress2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddress2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btnAddress2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.btnAddress2.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.btnAddress2.Location = new System.Drawing.Point(599, 198);
             this.btnAddress2.Margin = new System.Windows.Forms.Padding(1);
@@ -6515,7 +6511,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox21.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_TextBox21.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox21.DecimalPlace = 0;
-            this.ckM_TextBox21.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox21.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox21.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_TextBox21.IntegerPart = 0;
             this.ckM_TextBox21.IsCorrectDate = true;
@@ -6546,7 +6542,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox22.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_TextBox22.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox22.DecimalPlace = 0;
-            this.ckM_TextBox22.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox22.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox22.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_TextBox22.IntegerPart = 0;
             this.ckM_TextBox22.IsCorrectDate = true;
@@ -6576,7 +6572,7 @@ namespace TempoJuchuuNyuuryoku
             this.ScDeliveryCD.CodeWidth1 = 100;
             this.ScDeliveryCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScDeliveryCD.DataCheck = true;
-            this.ScDeliveryCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScDeliveryCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScDeliveryCD.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScDeliveryCD.IsCopy = false;
             this.ScDeliveryCD.LabelText = "";
@@ -6599,7 +6595,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label14.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label14.Location = new System.Drawing.Point(40, 183);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(44, 12);
@@ -6619,7 +6615,7 @@ namespace TempoJuchuuNyuuryoku
             // radioOnchuD
             // 
             this.radioOnchuD.BackColor = System.Drawing.Color.Transparent;
-            this.radioOnchuD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.radioOnchuD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.radioOnchuD.Location = new System.Drawing.Point(61, 3);
             this.radioOnchuD.Name = "radioOnchuD";
             this.radioOnchuD.Size = new System.Drawing.Size(50, 16);
@@ -6632,7 +6628,7 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.radioSamaD.BackColor = System.Drawing.Color.Transparent;
             this.radioSamaD.Checked = true;
-            this.radioSamaD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.radioSamaD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.radioSamaD.Location = new System.Drawing.Point(7, 3);
             this.radioSamaD.Name = "radioSamaD";
             this.radioSamaD.Size = new System.Drawing.Size(34, 16);
@@ -6649,7 +6645,7 @@ namespace TempoJuchuuNyuuryoku
             this.Btn_SelectAll.DefaultBtnSize = false;
             this.Btn_SelectAll.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Btn_SelectAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_SelectAll.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.Btn_SelectAll.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.Btn_SelectAll.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.Btn_SelectAll.Location = new System.Drawing.Point(1082, 217);
             this.Btn_SelectAll.Margin = new System.Windows.Forms.Padding(1);
@@ -6668,7 +6664,7 @@ namespace TempoJuchuuNyuuryoku
             this.Btn_NoSelect.DefaultBtnSize = false;
             this.Btn_NoSelect.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Btn_NoSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_NoSelect.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.Btn_NoSelect.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.Btn_NoSelect.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.Btn_NoSelect.Location = new System.Drawing.Point(1223, 217);
             this.Btn_NoSelect.Margin = new System.Windows.Forms.Padding(1);
@@ -6685,7 +6681,7 @@ namespace TempoJuchuuNyuuryoku
             this.LblMotoJuchuNoT.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.LblMotoJuchuNoT.BackColor = System.Drawing.Color.Transparent;
             this.LblMotoJuchuNoT.DefaultlabelSize = true;
-            this.LblMotoJuchuNoT.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.LblMotoJuchuNoT.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.LblMotoJuchuNoT.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.LblMotoJuchuNoT.ForeColor = System.Drawing.Color.Black;
             this.LblMotoJuchuNoT.Location = new System.Drawing.Point(771, 12);
@@ -6702,7 +6698,7 @@ namespace TempoJuchuuNyuuryoku
             this.LblCopyJuchuNoT.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.LblCopyJuchuNoT.BackColor = System.Drawing.Color.Transparent;
             this.LblCopyJuchuNoT.DefaultlabelSize = true;
-            this.LblCopyJuchuNoT.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.LblCopyJuchuNoT.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.LblCopyJuchuNoT.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.LblCopyJuchuNoT.ForeColor = System.Drawing.Color.Black;
             this.LblCopyJuchuNoT.Location = new System.Drawing.Point(230, 11);
@@ -6719,7 +6715,7 @@ namespace TempoJuchuuNyuuryoku
             this.LblJuchuNoT.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.LblJuchuNoT.BackColor = System.Drawing.Color.Transparent;
             this.LblJuchuNoT.DefaultlabelSize = true;
-            this.LblJuchuNoT.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.LblJuchuNoT.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.LblJuchuNoT.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.LblJuchuNoT.ForeColor = System.Drawing.Color.Black;
             this.LblJuchuNoT.Location = new System.Drawing.Point(0, 11);
