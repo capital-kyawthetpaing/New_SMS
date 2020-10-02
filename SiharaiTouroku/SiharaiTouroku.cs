@@ -712,7 +712,7 @@ namespace SiharaiTouroku
                                 KouzaCD = dtSiharai2.Rows[0]["KouzaCD"].ToString(), // cboPaymentSourceAcc.SelectedValue.ToString(),
                                 BankCD = dtSiharai2.Rows[0]["BankCD"].ToString(),
                                 BranchCD = dtSiharai2.Rows[0]["BranchCD"].ToString(),
-                                Amount = lblPayGaku.Text.Replace(",", ""),
+                                Amount = dtSiharai2.Rows[0]["TransferGaku"].ToString(),
                                 ChangeDate = txtPaymentDate.Text,
                             };
                             DataTable dt = sibl.M_Kouza_FeeSelect(mke);
@@ -885,6 +885,9 @@ namespace SiharaiTouroku
             }
             else if (index == 12)
             {
+                if (OperationMode == EOperationMode.SHOW)
+                    return true;
+
                 if (!CheckPaymentDate())
                     return false;
 
@@ -1058,17 +1061,19 @@ namespace SiharaiTouroku
 
                 Btn_F7.Enabled = true;
 
-                EnablePanel(PanelDetail);
-
-                for (int i = 1; i < dgvPayment.Columns.Count; i++)
-                    dgvPayment.Columns[i].ReadOnly = true;
-
                 if (OperationMode == EOperationMode.SHOW)
                 {
+                    dgvPayment.Enabled = true;
+                    for (int i = 0; i < dgvPayment.Columns.Count; i++)
+                        dgvPayment.Columns[i].ReadOnly = true;
                     dgvPayment.Focus();
                 }
                 else
                 {
+                    EnablePanel(PanelDetail);
+                    for (int i = 1; i < dgvPayment.Columns.Count; i++)
+                        dgvPayment.Columns[i].ReadOnly = true;
+
                     btnSelectAll.Enabled = false;
                     btnReleaseAll.Enabled = false;
                     cboPaymentType.Enabled = false;
@@ -1078,6 +1083,7 @@ namespace SiharaiTouroku
                     F12Enable = true;
                     DisablePanel(PanelHeader);
                 }
+
             }
             return true;
         }

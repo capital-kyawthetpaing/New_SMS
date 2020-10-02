@@ -93,7 +93,25 @@ namespace Search
                 mve = GetData();
                 DataTable dt = new DataTable();
                 dt = ssbl.M_Vendor_Search(mve);
-                gvSupplier.DataSource = dt;
+                if (dt.Rows.Count > 0)
+                {
+                    gvSupplier.DataSource = dt;
+                    gvSupplier.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                    gvSupplier.CurrentRow.Selected = true;
+                    gvSupplier.Enabled = true;
+                    gvSupplier.Focus();
+                }
+                else
+                {
+                    ssbl.ShowMessage("E128");
+                    gvSupplier.DataSource = null;
+                    txtSupplierFrom.Focus();
+                }
+                
+            }
+            else
+            {
+                gvSupplier.DataSource = null;
             }
         }
 

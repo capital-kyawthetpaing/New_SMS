@@ -2047,7 +2047,7 @@
             this.店舗名.HeaderText = "店舗";
             this.店舗名.Name = "店舗名";
             this.店舗名.ReadOnly = true;
-            this.店舗名.Width = 260;
+            this.店舗名.Width = 110;
             // 
             // sokuname
             // 
@@ -2055,7 +2055,7 @@
             this.sokuname.HeaderText = "倉庫";
             this.sokuname.Name = "sokuname";
             this.sokuname.ReadOnly = true;
-            this.sokuname.Width = 260;
+            this.sokuname.Width = 120;
             // 
             // sokucd
             // 
