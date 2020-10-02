@@ -93,7 +93,15 @@ namespace SiharaiTouroku
 
                 SelectKeyData();
 
-                txtTransferAmount.Focus();
+                if (OperationMode == EOperationMode.SHOW)
+                {
+                    DisablePanel(panelDetail);
+                    dgvSearchPayment.Enabled = true;
+                    dgvSearchPayment.ReadOnly = true;
+                    dgvSearchPayment.Focus();
+                }
+                else
+                    txtTransferAmount.Focus();
             }
             catch (Exception ex)
             {
