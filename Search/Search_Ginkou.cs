@@ -41,8 +41,19 @@ namespace Search
             {
                 mbe = GetSearchInfo();
                 DataTable dtBank = sgbl.M_Bank_Search(mbe);
-                GdvGinkou.DataSource = dtBank;
-          
+                if(dtBank.Rows.Count >0)
+                {
+                    GdvGinkou.DataSource = dtBank;
+                    GdvGinkou.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                    GdvGinkou.CurrentRow.Selected = true;
+                    GdvGinkou.Enabled = true;
+                    GdvGinkou.Focus();
+                }
+                else
+                {
+                    GdvGinkou.DataSource = null;
+                    sgbl.ShowMessage("E128");
+                }
             }
         }
 
