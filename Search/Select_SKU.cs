@@ -62,6 +62,11 @@ namespace Search
                 return false;
 
             dgvDetail.DataSource = dt;
+            dgvDetail.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+            dgvDetail.CurrentRow.Selected = true;
+            dgvDetail.Enabled = true;
+            dgvDetail.Focus();
+
             return true;
         }
 

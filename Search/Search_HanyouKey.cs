@@ -79,6 +79,7 @@ namespace Search
                 return false;
 
             dgvDetail.DataSource = dt;
+
             return true;
         }
 
