@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ZaikoShoukai));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -1510,7 +1509,7 @@
             this.GV_Zaiko.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("GV_Zaiko.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1540,14 +1539,6 @@
             this.基準在庫,
             this.販売定価,
             this.標準原価});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GV_Zaiko.DefaultCellStyle = dataGridViewCellStyle11;
             this.GV_Zaiko.EnableHeadersVisualStyles = false;
             this.GV_Zaiko.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_Zaiko.Location = new System.Drawing.Point(20, 438);
@@ -1750,6 +1741,7 @@
             this.sku.Size = new System.Drawing.Size(223, 27);
             this.sku.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
             this.sku.TabIndex = 9;
+            this.sku.test = null;
             this.sku.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.sku.UseChangeDate = false;
             this.sku.Value1 = null;
@@ -1780,6 +1772,7 @@
             this.jan.Size = new System.Drawing.Size(143, 27);
             this.jan.Stype = Search.CKM_SearchControl.SearchType.JANCD;
             this.jan.TabIndex = 8;
+            this.jan.test = null;
             this.jan.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.jan.UseChangeDate = false;
             this.jan.Value1 = null;
@@ -1903,6 +1896,7 @@
             this.SearchBrand.Size = new System.Drawing.Size(414, 27);
             this.SearchBrand.Stype = Search.CKM_SearchControl.SearchType.ブランド;
             this.SearchBrand.TabIndex = 6;
+            this.SearchBrand.test = null;
             this.SearchBrand.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SearchBrand.UseChangeDate = false;
             this.SearchBrand.Value1 = null;
@@ -1933,6 +1927,7 @@
             this.Sports.Size = new System.Drawing.Size(364, 27);
             this.Sports.Stype = Search.CKM_SearchControl.SearchType.競技;
             this.Sports.TabIndex = 20;
+            this.Sports.test = null;
             this.Sports.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.Sports.UseChangeDate = false;
             this.Sports.Value1 = null;
@@ -1964,6 +1959,7 @@
             this.Maker.Size = new System.Drawing.Size(444, 27);
             this.Maker.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.Maker.TabIndex = 5;
+            this.Maker.test = null;
             this.Maker.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.Maker.UseChangeDate = false;
             this.Maker.Value1 = null;
@@ -1995,6 +1991,7 @@
             this.Shiiresaki.Size = new System.Drawing.Size(444, 27);
             this.Shiiresaki.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.Shiiresaki.TabIndex = 4;
+            this.Shiiresaki.test = null;
             this.Shiiresaki.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.Shiiresaki.UseChangeDate = false;
             this.Shiiresaki.Value1 = null;
@@ -2050,7 +2047,7 @@
             this.店舗名.HeaderText = "店舗";
             this.店舗名.Name = "店舗名";
             this.店舗名.ReadOnly = true;
-            this.店舗名.Width = 260;
+            this.店舗名.Width = 110;
             // 
             // sokuname
             // 
@@ -2058,7 +2055,7 @@
             this.sokuname.HeaderText = "倉庫";
             this.sokuname.Name = "sokuname";
             this.sokuname.ReadOnly = true;
-            this.sokuname.Width = 260;
+            this.sokuname.Width = 120;
             // 
             // sokucd
             // 
