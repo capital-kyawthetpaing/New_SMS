@@ -1966,6 +1966,8 @@ namespace TempoJuchuuNyuuryoku
             else if(OperationMode == EOperationMode.INSERT)
             {
                 //複写コピー後
+                //画面へデータセット後、明細部入力可
+                Scr_Lock(2, 3, 0);
                 S_BodySeigyo(0, 1);
                 //配列の内容を画面にセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
@@ -2232,6 +2234,8 @@ namespace TempoJuchuuNyuuryoku
             else if (OperationMode == EOperationMode.INSERT)
             {
                 //複写コピー後
+                //画面へデータセット後、明細部入力可
+                Scr_Lock(2, 3, 0);
                 S_BodySeigyo(1, 1);
                 //配列の内容を画面にセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);

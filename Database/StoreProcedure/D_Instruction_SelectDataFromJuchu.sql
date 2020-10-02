@@ -67,9 +67,11 @@ BEGIN
                     ,DH.DeliveryCD
                     ,DH.DeliveryName
                     ,DH.DeliveryAddress1
-                    ,(CASE WHEN DM.ShippingPlanDate IS NULL THEN NULL 
-                           ELSE (CASE WHEN DATEADD(DAY,-1*ISNULL(MZ.CarrierLeadDay,0),DM.ShippingPlanDate) < SYSDATETIME() THEN CONVERT(varchar, SYSDATETIME(),111)
-                                      ELSE CONVERT(varchar, DM.ShippingPlanDate,111) END)  END) AS DeliveryPlanDate	--o‰×—\’è“ú
+                    --,(CASE WHEN DM.ShippingPlanDate IS NULL THEN NULL 
+                    --       ELSE (CASE WHEN DATEADD(DAY,-1*ISNULL(MZ.CarrierLeadDay,0),DM.ShippingPlanDate) < SYSDATETIME() THEN CONVERT(varchar, SYSDATETIME(),111)
+                    --                  ELSE CONVERT(varchar, DM.ShippingPlanDate,111) END)  END) AS DeliveryPlanDate	--o‰×—\’è“ú
+                    ,(CASE WHEN DM.ShippingPlanDate IS NULL THEN CONVERT(varchar, GETDATE(), 111)
+                      ELSE CONVERT(varchar, DM.ShippingPlanDate,111) END) AS DeliveryPlanDate
                     
                     --–¢“ü‹à
                     ,DH.InvoiceGaku
