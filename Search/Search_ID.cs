@@ -48,7 +48,25 @@ namespace Search
                 mhe = GetData();
                 DataTable dtHanyou = new DataTable();
                 dtHanyou = shbl.M_Hanyou_IDSearch(mhe);
-                GvID.DataSource = dtHanyou;
+                if(dtHanyou.Rows.Count > 0)
+                {
+                    GvID.DataSource = dtHanyou;
+                    GvID.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                    GvID.CurrentRow.Selected = true;
+                    GvID.Enabled = true;
+                    GvID.Focus();
+                }
+                else
+                {
+                    shbl.ShowMessage("E128");
+                    GvID.DataSource = null;
+                    txtID1.Focus();
+                }
+               
+            }
+            else
+            {
+                GvID.DataSource = null;
             }
         }
 
