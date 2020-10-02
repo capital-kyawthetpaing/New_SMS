@@ -37,7 +37,7 @@ namespace Search
             {
                 mbse = GetSearchInfo();
                 DataTable dtShiten = sgsbl.M_BankShiten_Search(mbse);
-                if (GvShiten.Rows.Count > 0)
+                if (dtShiten.Rows.Count > 0)
                 {
                     GvShiten.DataSource = dtShiten;
                     GvShiten.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
