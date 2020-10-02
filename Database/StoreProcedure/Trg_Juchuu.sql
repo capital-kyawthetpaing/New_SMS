@@ -4,8 +4,7 @@ GO
 DROP TRIGGER Trg_DJuchuu_Update
 GO
 
-DROP TRIGGER Trg_DJuchuuDetails_Update
-GO
+
 
 DROP TRIGGER Trg_DStoreJuchuu_Insert
 GO
