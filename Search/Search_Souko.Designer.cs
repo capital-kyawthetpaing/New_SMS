@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSearch_Souko));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.lblChangeDate = new System.Windows.Forms.Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -186,6 +186,7 @@
             this.TxtSoukoCDFrom.AllowMinus = false;
             this.TxtSoukoCDFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TxtSoukoCDFrom.BackColor = System.Drawing.Color.White;
+            this.TxtSoukoCDFrom.BorderColor = false;
             this.TxtSoukoCDFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtSoukoCDFrom.ClientColor = System.Drawing.Color.White;
             this.TxtSoukoCDFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -196,6 +197,7 @@
             this.TxtSoukoCDFrom.IntegerPart = 0;
             this.TxtSoukoCDFrom.IsCorrectDate = true;
             this.TxtSoukoCDFrom.isEnterKeyDown = false;
+            this.TxtSoukoCDFrom.IsFirstTime = true;
             this.TxtSoukoCDFrom.isMaxLengthErr = false;
             this.TxtSoukoCDFrom.IsNumber = true;
             this.TxtSoukoCDFrom.IsShop = false;
@@ -207,12 +209,14 @@
             this.TxtSoukoCDFrom.Size = new System.Drawing.Size(54, 19);
             this.TxtSoukoCDFrom.TabIndex = 3;
             this.TxtSoukoCDFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.TxtSoukoCDFrom.UseColorSizMode = false;
             // 
             // TxtSoukoCDTo
             // 
             this.TxtSoukoCDTo.AllowMinus = false;
             this.TxtSoukoCDTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TxtSoukoCDTo.BackColor = System.Drawing.Color.White;
+            this.TxtSoukoCDTo.BorderColor = false;
             this.TxtSoukoCDTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtSoukoCDTo.ClientColor = System.Drawing.Color.White;
             this.TxtSoukoCDTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -223,6 +227,7 @@
             this.TxtSoukoCDTo.IntegerPart = 0;
             this.TxtSoukoCDTo.IsCorrectDate = true;
             this.TxtSoukoCDTo.isEnterKeyDown = false;
+            this.TxtSoukoCDTo.IsFirstTime = true;
             this.TxtSoukoCDTo.isMaxLengthErr = false;
             this.TxtSoukoCDTo.IsNumber = true;
             this.TxtSoukoCDTo.IsShop = false;
@@ -234,6 +239,7 @@
             this.TxtSoukoCDTo.Size = new System.Drawing.Size(54, 19);
             this.TxtSoukoCDTo.TabIndex = 4;
             this.TxtSoukoCDTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.TxtSoukoCDTo.UseColorSizMode = false;
             this.TxtSoukoCDTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSoukoCDTo_KeyDown);
             // 
             // ckM_Label4
@@ -258,6 +264,7 @@
             this.TxtSoukoName.AllowMinus = false;
             this.TxtSoukoName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TxtSoukoName.BackColor = System.Drawing.Color.White;
+            this.TxtSoukoName.BorderColor = false;
             this.TxtSoukoName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtSoukoName.ClientColor = System.Drawing.Color.White;
             this.TxtSoukoName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -268,6 +275,7 @@
             this.TxtSoukoName.IntegerPart = 0;
             this.TxtSoukoName.IsCorrectDate = true;
             this.TxtSoukoName.isEnterKeyDown = false;
+            this.TxtSoukoName.IsFirstTime = true;
             this.TxtSoukoName.isMaxLengthErr = false;
             this.TxtSoukoName.IsNumber = true;
             this.TxtSoukoName.IsShop = false;
@@ -279,6 +287,7 @@
             this.TxtSoukoName.Size = new System.Drawing.Size(280, 19);
             this.TxtSoukoName.TabIndex = 5;
             this.TxtSoukoName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.TxtSoukoName.UseColorSizMode = false;
             // 
             // ckM_Label5
             // 
@@ -394,9 +403,10 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.GvSouko.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GvSouko.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.GvSouko.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("GvSouko.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -410,18 +420,11 @@
             this.colStoreName,
             this.colSoukoType,
             this.colChangeDate});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GvSouko.DefaultCellStyle = dataGridViewCellStyle3;
             this.GvSouko.EnableHeadersVisualStyles = false;
             this.GvSouko.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvSouko.Location = new System.Drawing.Point(9, 248);
             this.GvSouko.Name = "GvSouko";
+            this.GvSouko.RowHeight_ = 20;
             this.GvSouko.Size = new System.Drawing.Size(931, 387);
             this.GvSouko.TabIndex = 1;
             this.GvSouko.UseRowNo = true;
@@ -452,7 +455,7 @@
             this.colSoukoName.HeaderText = "倉庫名";
             this.colSoukoName.Name = "colSoukoName";
             this.colSoukoName.ReadOnly = true;
-            this.colSoukoName.Width = 400;
+            this.colSoukoName.Width = 320;
             // 
             // colStoreName
             // 
@@ -460,7 +463,7 @@
             this.colStoreName.HeaderText = "店舗ストア";
             this.colStoreName.Name = "colStoreName";
             this.colStoreName.ReadOnly = true;
-            this.colStoreName.Width = 150;
+            this.colStoreName.Width = 280;
             // 
             // colSoukoType
             // 
@@ -468,6 +471,7 @@
             this.colSoukoType.HeaderText = "倉庫種別";
             this.colSoukoType.Name = "colSoukoType";
             this.colSoukoType.ReadOnly = true;
+            this.colSoukoType.Width = 120;
             // 
             // colChangeDate
             // 
@@ -483,6 +487,7 @@
             this.ClientSize = new System.Drawing.Size(954, 682);
             this.Controls.Add(this.GvSouko);
             this.F11Visible = true;
+            this.F12Visible = true;
             this.F9Visible = true;
             this.Name = "FrmSearch_Souko";
             this.PanelHeaderHeight = 240;

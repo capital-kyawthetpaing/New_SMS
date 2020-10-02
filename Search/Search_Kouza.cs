@@ -151,11 +151,15 @@ namespace Search
 
         protected override void ExecSec()
         {
-            parKouzaCD = dgvDetail.CurrentRow.Cells["colKouzaCD"].Value.ToString();
-            parChangeDate = dgvDetail.CurrentRow.Cells["ColChangeDate"].Value.ToString();
-            parKouzaName = dgvDetail.CurrentRow.Cells["colKouzaName"].Value.ToString();
+            if (dgvDetail.CurrentRow != null && dgvDetail.CurrentRow.Index >= 0)
+            {
+                parKouzaCD = dgvDetail.CurrentRow.Cells["colKouzaCD"].Value.ToString();
+                parChangeDate = dgvDetail.CurrentRow.Cells["ColChangeDate"].Value.ToString();
+                parKouzaName = dgvDetail.CurrentRow.Cells["colKouzaName"].Value.ToString();
+                
+            }
+            this.Close();
 
-            EndSec();
         }
 
         protected override void ExecDisp()
