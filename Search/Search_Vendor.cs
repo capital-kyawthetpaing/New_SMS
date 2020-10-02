@@ -57,6 +57,10 @@ namespace Search
                 if (dt.Rows.Count > 0)
                 {
                     dgvSearchVendor.DataSource = dt;
+                    dgvSearchVendor.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                    dgvSearchVendor.CurrentRow.Selected = true;
+                    dgvSearchVendor.Enabled = true;
+                    dgvSearchVendor.Focus();
                 }
                 else
                 {

@@ -1171,6 +1171,7 @@
             this.scSegmentCD.Size = new System.Drawing.Size(414, 27);
             this.scSegmentCD.Stype = Search.CKM_SearchControl.SearchType.商品分類;
             this.scSegmentCD.TabIndex = 125;
+            this.scSegmentCD.test = null;
             this.scSegmentCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSegmentCD.UseChangeDate = false;
             this.scSegmentCD.Value1 = null;
@@ -1260,6 +1261,7 @@
             this.SKUCDTo.Size = new System.Drawing.Size(223, 27);
             this.SKUCDTo.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
             this.SKUCDTo.TabIndex = 127;
+            this.SKUCDTo.test = null;
             this.SKUCDTo.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SKUCDTo.UseChangeDate = false;
             this.SKUCDTo.Value1 = null;
@@ -1371,6 +1373,7 @@
             this.SKUCDFrom.Size = new System.Drawing.Size(223, 27);
             this.SKUCDFrom.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
             this.SKUCDFrom.TabIndex = 126;
+            this.SKUCDFrom.test = null;
             this.SKUCDFrom.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SKUCDFrom.UseChangeDate = false;
             this.SKUCDFrom.Value1 = null;
@@ -1400,6 +1403,7 @@
             this.scBrandCD.Size = new System.Drawing.Size(414, 27);
             this.scBrandCD.Stype = Search.CKM_SearchControl.SearchType.ブランド;
             this.scBrandCD.TabIndex = 124;
+            this.scBrandCD.test = null;
             this.scBrandCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scBrandCD.UseChangeDate = false;
             this.scBrandCD.Value1 = null;

@@ -330,7 +330,7 @@
             this.btnDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDisplay.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnDisplay.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnDisplay.Location = new System.Drawing.Point(1422, 64);
+            this.btnDisplay.Location = new System.Drawing.Point(1422, 65);
             this.btnDisplay.Margin = new System.Windows.Forms.Padding(1);
             this.btnDisplay.Name = "btnDisplay";
             this.btnDisplay.Size = new System.Drawing.Size(75, 25);
@@ -429,7 +429,7 @@
             this.txtItemName.MaxLength = 80;
             this.txtItemName.MoveNext = true;
             this.txtItemName.Name = "txtItemName";
-            this.txtItemName.Size = new System.Drawing.Size(530, 19);
+            this.txtItemName.Size = new System.Drawing.Size(500, 19);
             this.txtItemName.TabIndex = 16;
             this.txtItemName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.txtItemName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -508,7 +508,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(1002, 46);
+            this.ckM_Label7.Location = new System.Drawing.Point(984, 47);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label7.TabIndex = 14;
@@ -595,7 +595,7 @@
             this.ScSKUCD_End.IsCopy = false;
             this.ScSKUCD_End.LabelText = "";
             this.ScSKUCD_End.LabelVisible = false;
-            this.ScSKUCD_End.Location = new System.Drawing.Point(1052, 38);
+            this.ScSKUCD_End.Location = new System.Drawing.Point(1022, 38);
             this.ScSKUCD_End.Margin = new System.Windows.Forms.Padding(0);
             this.ScSKUCD_End.Name = "ScSKUCD_End";
             this.ScSKUCD_End.NameWidth = 350;
@@ -1884,7 +1884,7 @@
             this.SC_Customer_6.NameWidth = 500;
             this.SC_Customer_6.SearchEnable = true;
             this.SC_Customer_6.Size = new System.Drawing.Size(133, 27);
-            this.SC_Customer_6.Stype = Search.CKM_SearchControl.SearchType.得意先;
+            this.SC_Customer_6.Stype = Search.CKM_SearchControl.SearchType.得意先_Detail;
             this.SC_Customer_6.TabIndex = 189;
             this.SC_Customer_6.test = null;
             this.SC_Customer_6.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -1945,7 +1945,7 @@
             this.SC_Customer_7.NameWidth = 500;
             this.SC_Customer_7.SearchEnable = true;
             this.SC_Customer_7.Size = new System.Drawing.Size(133, 27);
-            this.SC_Customer_7.Stype = Search.CKM_SearchControl.SearchType.得意先;
+            this.SC_Customer_7.Stype = Search.CKM_SearchControl.SearchType.得意先_Detail;
             this.SC_Customer_7.TabIndex = 200;
             this.SC_Customer_7.test = null;
             this.SC_Customer_7.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -1975,7 +1975,7 @@
             this.SC_Customer_8.NameWidth = 500;
             this.SC_Customer_8.SearchEnable = true;
             this.SC_Customer_8.Size = new System.Drawing.Size(133, 27);
-            this.SC_Customer_8.Stype = Search.CKM_SearchControl.SearchType.得意先;
+            this.SC_Customer_8.Stype = Search.CKM_SearchControl.SearchType.得意先_Detail;
             this.SC_Customer_8.TabIndex = 211;
             this.SC_Customer_8.test = null;
             this.SC_Customer_8.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -2005,7 +2005,7 @@
             this.SC_Customer_9.NameWidth = 500;
             this.SC_Customer_9.SearchEnable = true;
             this.SC_Customer_9.Size = new System.Drawing.Size(133, 27);
-            this.SC_Customer_9.Stype = Search.CKM_SearchControl.SearchType.得意先;
+            this.SC_Customer_9.Stype = Search.CKM_SearchControl.SearchType.得意先_Detail;
             this.SC_Customer_9.TabIndex = 222;
             this.SC_Customer_9.test = null;
             this.SC_Customer_9.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -2799,6 +2799,7 @@
             this.IMT_ITMCD_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_1.DecimalPlace = 0;
+            this.IMT_ITMCD_1.Enabled = false;
             this.IMT_ITMCD_1.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.IMT_ITMCD_1.IntegerPart = 0;
             this.IMT_ITMCD_1.IsCorrectDate = true;
@@ -3141,7 +3142,7 @@
             this.SC_Customer_0.NameWidth = 500;
             this.SC_Customer_0.SearchEnable = true;
             this.SC_Customer_0.Size = new System.Drawing.Size(133, 27);
-            this.SC_Customer_0.Stype = Search.CKM_SearchControl.SearchType.得意先;
+            this.SC_Customer_0.Stype = Search.CKM_SearchControl.SearchType.得意先_Detail;
             this.SC_Customer_0.TabIndex = 29;
             this.SC_Customer_0.test = null;
             this.SC_Customer_0.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -3171,7 +3172,7 @@
             this.SC_Customer_1.NameWidth = 500;
             this.SC_Customer_1.SearchEnable = true;
             this.SC_Customer_1.Size = new System.Drawing.Size(133, 27);
-            this.SC_Customer_1.Stype = Search.CKM_SearchControl.SearchType.得意先;
+            this.SC_Customer_1.Stype = Search.CKM_SearchControl.SearchType.得意先_Detail;
             this.SC_Customer_1.TabIndex = 134;
             this.SC_Customer_1.test = null;
             this.SC_Customer_1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -3232,7 +3233,7 @@
             this.SC_Customer_2.NameWidth = 500;
             this.SC_Customer_2.SearchEnable = true;
             this.SC_Customer_2.Size = new System.Drawing.Size(133, 27);
-            this.SC_Customer_2.Stype = Search.CKM_SearchControl.SearchType.得意先;
+            this.SC_Customer_2.Stype = Search.CKM_SearchControl.SearchType.得意先_Detail;
             this.SC_Customer_2.TabIndex = 145;
             this.SC_Customer_2.test = null;
             this.SC_Customer_2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -3262,7 +3263,7 @@
             this.SC_Customer_3.NameWidth = 500;
             this.SC_Customer_3.SearchEnable = true;
             this.SC_Customer_3.Size = new System.Drawing.Size(133, 27);
-            this.SC_Customer_3.Stype = Search.CKM_SearchControl.SearchType.得意先;
+            this.SC_Customer_3.Stype = Search.CKM_SearchControl.SearchType.得意先_Detail;
             this.SC_Customer_3.TabIndex = 156;
             this.SC_Customer_3.test = null;
             this.SC_Customer_3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -3292,7 +3293,7 @@
             this.SC_Customer_4.NameWidth = 500;
             this.SC_Customer_4.SearchEnable = true;
             this.SC_Customer_4.Size = new System.Drawing.Size(133, 27);
-            this.SC_Customer_4.Stype = Search.CKM_SearchControl.SearchType.得意先;
+            this.SC_Customer_4.Stype = Search.CKM_SearchControl.SearchType.得意先_Detail;
             this.SC_Customer_4.TabIndex = 167;
             this.SC_Customer_4.test = null;
             this.SC_Customer_4.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -3322,7 +3323,7 @@
             this.SC_Customer_5.NameWidth = 500;
             this.SC_Customer_5.SearchEnable = true;
             this.SC_Customer_5.Size = new System.Drawing.Size(133, 27);
-            this.SC_Customer_5.Stype = Search.CKM_SearchControl.SearchType.得意先;
+            this.SC_Customer_5.Stype = Search.CKM_SearchControl.SearchType.得意先_Detail;
             this.SC_Customer_5.TabIndex = 178;
             this.SC_Customer_5.test = null;
             this.SC_Customer_5.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -3469,6 +3470,7 @@
             this.PanelHeaderHeight = 50;
             this.Text = "顧客別SKU販売単価マスタ";
             this.Load += new System.EventHandler(this.FrmMasterTouroku_CustomerSKUPrice_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmMasterTouroku_CustomerSKUPrice_KeyUp);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.pannel_Header.ResumeLayout(false);

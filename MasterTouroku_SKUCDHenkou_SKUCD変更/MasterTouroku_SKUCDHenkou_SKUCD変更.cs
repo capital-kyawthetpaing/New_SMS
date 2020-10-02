@@ -392,20 +392,19 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
         }
         protected override void EndSec()
         {
-            base.EndSec();
+            this.Close();
         }
 
         public override void FunctionProcess(int Index)
         {
             CKM_SearchControl sc = new CKM_SearchControl();
             switch (Index + 1)
-            {
+            {             
                 case 2:
                     ChangeMode(EOperationMode.INSERT);
                     break;
                 case 3:
                     ChangeMode(EOperationMode.UPDATE);
-                    
                     break;
                 case 4:
                 case 5:
