@@ -37,7 +37,20 @@ namespace Search
             {
                 mbse = GetSearchInfo();
                 DataTable dtShiten = sgsbl.M_BankShiten_Search(mbse);
-                GvShiten.DataSource = dtShiten;
+                if (GvShiten.Rows.Count > 0)
+                {
+                    GvShiten.DataSource = dtShiten;
+                    GvShiten.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                    GvShiten.CurrentRow.Selected = true;
+                    GvShiten.Enabled = true;
+                    GvShiten.Focus();
+                }
+                else
+                {
+                    GvShiten.DataSource = null;
+                    sgsbl.ShowMessage("E128");
+                }
+               
             }
         }
 
