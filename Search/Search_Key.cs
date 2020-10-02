@@ -68,7 +68,24 @@ namespace Search
                 mhe = GetData();
                 DataTable dtHanyou = new DataTable();
                 dtHanyou = shbl.M_Hanyou_KeySearch(mhe);
-                GvKey.DataSource = dtHanyou;
+                if (dtHanyou.Rows.Count > 0)
+                {
+                    GvKey.DataSource = dtHanyou;
+                    GvKey.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                    GvKey.CurrentRow.Selected = true;
+                    GvKey.Enabled = true;
+                    GvKey.Focus();
+                }
+                else
+                {
+                    shbl.ShowMessage("E128");
+                    GvKey.DataSource = null;
+                    txtKey1.Focus();
+                }               
+            }
+            else
+            {
+                GvKey.DataSource = null;
             }
         }
 

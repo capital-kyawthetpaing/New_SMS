@@ -44,6 +44,10 @@ namespace Search
             if (dt.Rows.Count > 0)
             {
                 dgvSearchProgram.DataSource = dt;
+                dgvSearchProgram.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                dgvSearchProgram.CurrentRow.Selected = true;
+                dgvSearchProgram.Enabled = true;
+                dgvSearchProgram.Focus();
             }
             else
             {
