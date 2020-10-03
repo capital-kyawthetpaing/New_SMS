@@ -113,8 +113,8 @@ BEGIN
     DECLARE @BreakKey   varchar(35);
     DECLARE @tblRows int;
     DECLARE @tblUpdateFlg int;
-	DECLARE @PayNORows int;
-	
+    DECLARE @PayNORows int;
+    
     DECLARE @StoreCD   varchar(4);
     
     SET @StoreCD = (SELECT top 1 A.StoreCD 
@@ -159,7 +159,7 @@ BEGIN
     BEGIN
         SET @OperateModeNm = 'ïœçX';
 
-		--Tableì]ëóédólÇ`
+        --Tableì]ëóédólÇ`
         UPDATE [D_Pay]
            SET [InputDateTime] = @SYSDATETIME
               ,[StaffCD]          = @StaffCD
@@ -221,9 +221,9 @@ BEGIN
     --êVãKÅFèCê≥--
     IF @OperateMode <= 2
     BEGIN
-    	IF @OperateMode = 1
-    	BEGIN
-        	SET @OperateModeNm = 'êVãK';
+        IF @OperateMode = 1
+        BEGIN
+            SET @OperateModeNm = 'êVãK';
 
             --ì`ï[î‘çÜçÃî‘
             EXEC Fnc_GetNumber
@@ -375,16 +375,16 @@ BEGIN
                        ,NULL
                     FROM @Table AS tbl
                     LEFT OUTER JOIN (SELECT DP.PayeeCD, DP.PayPlanDate
-                    	,MAX(DP.PayCloseNO) AS PayCloseNO
-                    	,MAX(DP.PayCloseDate) AS PayCloseDate
-                    	,SUM(ISNULL(DP.HontaiGaku8,0)) AS HontaiGaku8
-                        ,SUM(ISNULL(DP.HontaiGaku10,0)) AS HontaiGaku10
-                        ,SUM(ISNULL(DP.TaxGaku8,0)) AS TaxGaku8
-                        ,SUM(ISNULL(DP.TaxGaku10,0)) AS TaxGaku10
-	                    FROM D_PayPlan AS DP
-	                    WHERE DP.DeleteDateTime IS NULL
-                    	AND DP.PayConfirmFinishedKBN = 0
-                    	GROUP BY DP.PayeeCD, DP.PayPlanDate
+                                           ,MAX(DP.PayCloseNO) AS PayCloseNO
+                                           ,MAX(DP.PayCloseDate) AS PayCloseDate
+                                           ,SUM(ISNULL(DP.HontaiGaku8,0)) AS HontaiGaku8
+                                           ,SUM(ISNULL(DP.HontaiGaku10,0)) AS HontaiGaku10
+                                           ,SUM(ISNULL(DP.TaxGaku8,0)) AS TaxGaku8
+                                           ,SUM(ISNULL(DP.TaxGaku10,0)) AS TaxGaku10
+                                    FROM D_PayPlan AS DP
+                                    WHERE DP.DeleteDateTime IS NULL
+                                    AND DP.PayConfirmFinishedKBN = 0
+                                    GROUP BY DP.PayeeCD, DP.PayPlanDate
                     )AS DP            
                     ON DP.PayeeCD = tbl.PayeeCD
                     AND DP.PayPlanDate = tbl.PayPlanDate
@@ -494,9 +494,9 @@ BEGIN
             ,[UpdateOperator]     =  @Operator  
             ,[UpdateDateTime]     =  @SYSDATETIME
         FROM (SELECT A.PayeeCD, SUM(A.PayGaku) AS PayGaku 
-                ,SUM(A.OffsetGaku) AS OffsetGaku
-                FROM @Table AS A
-                GROUP BY A.PayeeCD) AS tbl
+                    ,SUM(A.OffsetGaku) AS OffsetGaku
+              FROM @Table AS A
+              GROUP BY A.PayeeCD) AS tbl
         WHERE [D_MonthlyDebt].[YYYYMM] = CONVERT(int, SUBSTRING(@PayDate,1,4) + SUBSTRING(@PayDate,6,2))
         AND [D_MonthlyDebt].[StoreCD] = @StoreCD
         AND [D_MonthlyDebt].[PayeeCD] = tbl.PayeeCD
@@ -548,9 +548,9 @@ BEGIN
            ,NULL                  
            ,NULL
       FROM (SELECT A.PayeeCD, SUM(A.PayGaku) AS PayGaku 
-                ,SUM(A.OffsetGaku) AS OffsetGaku
-                FROM @Table AS A
-                GROUP BY A.PayeeCD) AS tbl
+                  ,SUM(A.OffsetGaku) AS OffsetGaku
+            FROM @Table AS A
+            GROUP BY A.PayeeCD) AS tbl
       WHERE NOT EXISTS(SELECT 1 FROM D_MonthlyDebt AS D
                         WHERE D.[YYYYMM] = CONVERT(int, SUBSTRING(@PayDate,1,4) + SUBSTRING(@PayDate,6,2))
                         AND D.[StoreCD] = @StoreCD
@@ -608,13 +608,13 @@ BEGIN
         BEGIN
             Update D_PayPlan
                 set 
-                PayConfirmGaku = (-1) * dpd.PayGaku,
+                PayConfirmGaku = PayConfirmGaku + (-1) * dpd.PayGaku,
                 PayConfirmFinishedKBN = 0,
                 UpdateOperator = @Operator,
                 UpdateDateTime = @SYSDATETIME
             from D_PayPlan as dpp 
-            inner join D_PayDetails dpd
-            on dpd.PayPlanNO =  dpp.PayPlanNO
+            inner join D_PayDetails as dpd
+            on dpd.PayPlanNO = dpp.PayPlanNO
             Where dpd.PayNO = @PayNO
             ;
         END
@@ -622,7 +622,7 @@ BEGIN
         BEGIN
             Update D_PayPlan
                 set 
-                PayConfirmGaku = (-1) * dpd.PayGaku,
+                PayConfirmGaku = PayConfirmGaku + (-1) * dpd.PayGaku,
                 PayConfirmFinishedKBN = 0,
                 UpdateOperator = @Operator,
                 UpdateDateTime = @SYSDATETIME

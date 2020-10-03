@@ -174,6 +174,9 @@ namespace Search
 
         protected override void ExecSec()
         {
+            if (dgvDetail.CurrentRow == null)
+                return;
+
             parStoreCD = dgvDetail.CurrentRow.Cells["colStoreCD"].Value.ToString();
             parChangeDate = dgvDetail.CurrentRow.Cells["ColChangeDate"].Value.ToString();
             parStoreName = dgvDetail.CurrentRow.Cells["colStoreName"].Value.ToString();

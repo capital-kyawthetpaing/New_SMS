@@ -166,6 +166,10 @@ namespace Search
 
         protected override void ExecSec()
         {
+
+            if (dgvDetail.CurrentRow is null)
+                return;
+
             parTankaCD = dgvDetail.CurrentRow.Cells["colTankaCD"].Value.ToString();
             parChangeDate = dgvDetail.CurrentRow.Cells["ColChangeDate"].Value.ToString();
             parTankaName = dgvDetail.CurrentRow.Cells["colTankaName"].Value.ToString(); ;    //2019.6.11 add

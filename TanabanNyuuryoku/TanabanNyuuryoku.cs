@@ -256,43 +256,50 @@ namespace TanabanNyuuryoku
                 //        return false;
                 //    }
                 //}
-                if(dgvTanaban.Rows.Count > 0 )
-                {
-                    foreach (DataGridViewRow row in dgvTanaban.Rows)
-                    {
-                        string tana = row.Cells["colRackNo1"].Value.ToString();
-                        if (string.IsNullOrWhiteSpace(tana))
-                        {
-                            tnbnBL.ShowMessage("E102");
-                            dgvTanaban.ClearSelection();
-                            row.Cells["colRackNo1"].Selected = true;
-                            return false;
-                        }
-                        else
-                        {
-                            mle.SoukoCD = cboWarehouse.SelectedValue.ToString();
-                            mle.TanaCD = tana;
-                            DataTable dtLocation = new DataTable();
-                            dtLocation = tnbnBL.M_LocationTana_Select(mle);
-                            if (dtLocation.Rows.Count == 0)
-                            {
-                                tnbnBL.ShowMessage("E101");
-                                dgvTanaban.ClearSelection();
-                                row.Cells["colRackNo1"].Selected = true;
-                                return false;
-                            }
-                        }
-                    }
-                }
-                else
+
+
+                //if(dgvTanaban.Rows.Count > 0 )
+                //{
+                //    foreach (DataGridViewRow row in dgvTanaban.Rows)
+                //    {
+                //        string tana = row.Cells["colRackNo1"].Value.ToString();
+                //        if (string.IsNullOrWhiteSpace(tana))
+                //        {
+                //            tnbnBL.ShowMessage("E102");
+                //            dgvTanaban.ClearSelection();
+                //            row.Cells["colRackNo1"].Selected = true;
+                //            return false;
+                //        }
+                //        else
+                //        {
+                //            mle.SoukoCD = cboWarehouse.SelectedValue.ToString();
+                //            mle.TanaCD = tana;
+                //            DataTable dtLocation = new DataTable();
+                //            dtLocation = tnbnBL.M_LocationTana_Select(mle);
+                //            if (dtLocation.Rows.Count == 0)
+                //            {
+                //                tnbnBL.ShowMessage("E101");
+                //                dgvTanaban.ClearSelection();
+                //                row.Cells["colRackNo1"].Selected = true;
+                //                return false;
+                //            }
+                //        }
+                //    }
+                //}
+                //else
+                //{
+                //    tnbnBL.ShowMessage("E128");
+                //    txtArrivalDateFrom.Focus();
+                //    return false;
+                //} //02.10.2020 pnz
+
+                if (dgvTanaban.Rows.Count == 0)
                 {
                     tnbnBL.ShowMessage("E128");
                     txtArrivalDateFrom.Focus();
                     return false;
                 }
               
-               
-                    
             }
             return true;
         }
@@ -550,13 +557,15 @@ namespace TanabanNyuuryoku
 
         private void dgvTanaban_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
+            //if (dgvTanaban.Rows[e.RowIndex].Cells["colRackNo1"].KeyEntersEditMode.ToString())
+
             if (dgvTanaban.Columns[e.ColumnIndex].Name == "colRackNo1")
             {
                 string rate = dgvTanaban.Rows[e.RowIndex].Cells["colRackNo1"].EditedFormattedValue.ToString();
                 if (String.IsNullOrEmpty(rate))
                 {
                     tnbnBL.ShowMessage("E102");
-                    dgvTanaban.RefreshEdit();
+                    //dgvTanaban.RefreshEdit();
                 }
                 else
                 {
@@ -570,10 +579,12 @@ namespace TanabanNyuuryoku
                     if (dtLocation.Rows.Count == 0)
                     {
                         tnbnBL.ShowMessage("E101");
-                        dgvTanaban.RefreshEdit();
+                        //dgvTanaban.RefreshEdit();
                     }
                 }
             }
+
+          
         }
 
         //private void CheckRowAdd(DataGridViewRow row)

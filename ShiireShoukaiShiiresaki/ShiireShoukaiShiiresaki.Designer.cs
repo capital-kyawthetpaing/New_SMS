@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShiireShoukaiShiiresaki));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtPurchaseDateFrom = new CKM_Controls.CKM_TextBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -64,8 +63,6 @@
             this.scStaff = new Search.CKM_SearchControl();
             this.scSupplier = new Search.CKM_SearchControl();
             this.dgvPurchaseSearch = new CKM_Controls.CKM_GridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.PurchaseNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +76,8 @@
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -468,6 +467,7 @@
             this.txtDeliveryNoteNo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtDeliveryNoteNo.DecimalPlace = 0;
             this.txtDeliveryNoteNo.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtDeliveryNoteNo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtDeliveryNoteNo.IntegerPart = 0;
             this.txtDeliveryNoteNo.IsCorrectDate = true;
             this.txtDeliveryNoteNo.isEnterKeyDown = false;
@@ -480,7 +480,7 @@
             this.txtDeliveryNoteNo.MaxLength = 15;
             this.txtDeliveryNoteNo.MoveNext = true;
             this.txtDeliveryNoteNo.Name = "txtDeliveryNoteNo";
-            this.txtDeliveryNoteNo.Size = new System.Drawing.Size(108, 19);
+            this.txtDeliveryNoteNo.Size = new System.Drawing.Size(118, 19);
             this.txtDeliveryNoteNo.TabIndex = 17;
             this.txtDeliveryNoteNo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtDeliveryNoteNo.UseColorSizMode = false;
@@ -613,6 +613,7 @@
             this.scStaff.Size = new System.Drawing.Size(354, 27);
             this.scStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.scStaff.TabIndex = 15;
+            this.scStaff.test = null;
             this.scStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scStaff.UseChangeDate = false;
             this.scStaff.Value1 = null;
@@ -643,6 +644,7 @@
             this.scSupplier.Size = new System.Drawing.Size(444, 27);
             this.scSupplier.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.scSupplier.TabIndex = 13;
+            this.scSupplier.test = null;
             this.scSupplier.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSupplier.UseChangeDate = false;
             this.scSupplier.Value1 = null;
@@ -656,20 +658,19 @@
             this.dgvPurchaseSearch.AllowUserToAddRows = false;
             this.dgvPurchaseSearch.AllowUserToDeleteRows = false;
             this.dgvPurchaseSearch.AllowUserToOrderColumns = true;
-            this.dgvPurchaseSearch.AllowUserToResizeColumns = false;
             this.dgvPurchaseSearch.AllowUserToResizeRows = false;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvPurchaseSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvPurchaseSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
             this.dgvPurchaseSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvPurchaseSearch.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvPurchaseSearch.CheckCol")));
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPurchaseSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPurchaseSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.dgvPurchaseSearch.ColumnHeadersHeight = 25;
             this.dgvPurchaseSearch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -685,14 +686,6 @@
             this.Column11,
             this.Column12,
             this.Column13});
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPurchaseSearch.DefaultCellStyle = dataGridViewCellStyle36;
             this.dgvPurchaseSearch.EnableHeadersVisualStyles = false;
             this.dgvPurchaseSearch.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvPurchaseSearch.Location = new System.Drawing.Point(35, 275);
@@ -705,23 +698,6 @@
             this.dgvPurchaseSearch.UseRowNo = false;
             this.dgvPurchaseSearch.UseSetting = true;
             this.dgvPurchaseSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPurchaseSearch_CellContentClick);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 220);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1713, 38);
-            this.panel2.TabIndex = 101;
-            // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1179, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(534, 38);
-            this.panel3.TabIndex = 0;
             // 
             // Column1
             // 
@@ -741,8 +717,8 @@
             // Column3
             // 
             this.Column3.DataPropertyName = "PurchaseDate";
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle27;
             this.Column3.Frozen = true;
             this.Column3.HeaderText = "仕入日";
             this.Column3.Name = "Column3";
@@ -759,8 +735,11 @@
             // Column5
             // 
             this.Column5.DataPropertyName = "PurchaseGaku";
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle28.Format = "N0";
+            dataGridViewCellStyle28.NullValue = "0";
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle28;
+            this.Column5.Frozen = true;
             this.Column5.HeaderText = "本体額";
             this.Column5.Name = "Column5";
             this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -768,16 +747,20 @@
             // Column6
             // 
             this.Column6.DataPropertyName = "PurchaseTax";
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle29.Format = "N0";
+            dataGridViewCellStyle29.NullValue = "0";
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle29;
             this.Column6.HeaderText = "税額";
             this.Column6.Name = "Column6";
             // 
             // Column7
             // 
             this.Column7.DataPropertyName = "TotalPurchaseGaku";
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle30.Format = "N0";
+            dataGridViewCellStyle30.NullValue = "0";
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle30;
             this.Column7.HeaderText = "仕入額";
             this.Column7.Name = "Column7";
             // 
@@ -791,8 +774,8 @@
             // Column9
             // 
             this.Column9.DataPropertyName = "PaymentPlanDate";
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column9.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle31;
             this.Column9.HeaderText = "支払予定日";
             this.Column9.Name = "Column9";
             this.Column9.Width = 90;
@@ -800,8 +783,8 @@
             // Column10
             // 
             this.Column10.DataPropertyName = "PayConfirmFinishedDate";
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column10.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle32;
             this.Column10.HeaderText = "支払日";
             this.Column10.Name = "Column10";
             this.Column10.Width = 90;
@@ -826,6 +809,23 @@
             this.Column13.HeaderText = "担当スタッフ";
             this.Column13.Name = "Column13";
             this.Column13.Width = 260;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 220);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1713, 38);
+            this.panel2.TabIndex = 101;
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(1179, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(534, 38);
+            this.panel3.TabIndex = 0;
             // 
             // ShiireShoukaiShiiresaki
             // 

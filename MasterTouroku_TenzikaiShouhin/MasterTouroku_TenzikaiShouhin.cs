@@ -9,173 +9,76 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base.Client;
 using BL;
+using Entity;
+using GridBase;
 
 
 namespace MasterTouroku_TenzikaiShouhin
 {
     public partial class MasterTouroku_TenzikaiShouhin : FrmMainForm
     {
-
-
+        MasterTouroku_TenzikaiShouhin_BL tbl;
+        private const string ProID = "MasterTouroku_TenzikaiShouhin";
+        private const string ProNm = "展示会受注登録";
+        private const short mc_L_END = 3; // ロック用
+        private const string TempoNouhinsyo = "TenzikaiJuchuuTourou.exe";
         Base_BL bl;
-
+        M_TenzikaiShouhin_Entity mt;
+        private Control[] keyControls;
+        private Control[] keyLabels;
+        private Control[] detailControls;
+        private Control[] detailLabels;
+        private Control[] searchButtons;
+        ClsGridMasterTanzi mGrid = new ClsGridMasterTanzi();
         public MasterTouroku_TenzikaiShouhin()
         {
             
             InitializeComponent();
             bl = new Base_BL();
+            tbl = new MasterTouroku_TenzikaiShouhin_BL();
+            mt = new M_TenzikaiShouhin_Entity();
         }
 
         private void MasterTouroku_TenzikaiShouhin_Load(object sender, EventArgs e)
         {
+            InProgramID = "MasterTouroku_TenzikaiShouhin";
+            StartProgram();
             string ymd = bl.GetDate();
-            //CB_Year.Bind(ymd);
-            //CB_Season.Bind(ymd);
-            //CB_copyseason.Bind(ymd);
-            //CB_Copyyear.Bind(ymd);
+            CB_Year.Bind(ymd);
+            CB_Season.Bind(ymd);
+            CB_copyseason.Bind(ymd);
+            CB_Copyyear.Bind(ymd);
 
         }
 
-
+        private void BindCombo_Details()
+        {
+            for (int W_CtlRow = 0; W_CtlRow <= mGrid.g_MK_Ctl_Row - 1; W_CtlRow++)
+            {
+                //CKM_Controls.CKM_ComboBox sctl = (CKM_Controls.CKM_ComboBox)mGrid.g_MK_Ctrl[(int)ClsGridMasterTanzi.ColNO.ShuukaSou, W_CtlRow].CellCtl;
+                //sctl.Cbo_Type = CKM_ComboBox.CboType.出荷倉庫;
+                //sctl.Bind(bbl.GetDate());
+            }
+        }
         private void MasterTouroku_TenzikaiShouhin_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
 
         }
-        public override void FunctionProcess(int Index)
+
+      
+
+        private void InitialControlArray()
         {
-           
 
-
-        }
-        protected override void EndSec()
-        {
-            this.Close();
-        }
-
-        private void SC_Vendor_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (!String.IsNullOrEmpty(SC_Vendor.TxtCode.Text))
-            {
-                SC_Vendor.ChangeDate = bbl.GetDate();
-                if (!SC_Vendor.SelectData())
-                {
-                    bbl.ShowMessage("E101");
-                    SC_Vendor.SetFocus(1);
-                }
-            }
-
+            detailControls = new Control[] { SC_Tenzikai.TxtCode, SC_Brand.TxtCode,SC_Segment.TxtCode,SC_Vendor.TxtCode,SC_CopyTenzikai.TxtCode,SC_CopyVendor.TxtCode,
+                SC_copybrand.TxtCode,SC_copysegmet.TxtCode,CB_Season,CB_Year,CB_Copyyear,CB_copyseason,TB_InsertDateTimeF};
+            detailLabels = new Control[] { };
+            searchButtons = new Control[] { SC_Tenzikai.BtnSearch, SC_Vendor.BtnSearch, SC_Brand.BtnSearch, SC_Segment.BtnSearch, SC_CopyTenzikai.BtnSearch ,
+                                            SC_CopyVendor.BtnSearch,SC_copybrand.BtnSearch,SC_copysegmet.BtnSearch };
+                                         
+            //  sc_Tenji.KeyDown += TenzikaiJuchuuTourou_KeyDown;
         }
 
-        private void SC_Brand_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (!String.IsNullOrEmpty(SC_Brand.TxtCode.Text))
-            {
-                SC_Brand.ChangeDate = bbl.GetDate();
-                if (!SC_Brand.SelectData())
-                {
-                    bbl.ShowMessage("E101");
-                    SC_Brand.SetFocus(1);
-                }
-            }
-        }
-
-        private void SC_Segment_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (!String.IsNullOrEmpty(SC_Segment.TxtCode.Text))
-            {
-                SC_Segment.ChangeDate = bbl.GetDate();
-                if (!SC_Segment.SelectData())
-                {
-                    bbl.ShowMessage("E101");
-                    SC_Segment.SetFocus(1);
-                }
-            }
-        }
-
-        private void SC_Tenzikai_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (!String.IsNullOrEmpty(SC_Tenzikai.TxtCode.Text))
-            {
-                SC_Tenzikai.ChangeDate = bbl.GetDate();
-                if (!SC_Tenzikai.SelectData())
-                {
-                    bbl.ShowMessage("E101");
-                    SC_Tenzikai.SetFocus(1);
-                }
-            }
-        }
-
-        private void SC_Vendor_Enter(object sender, EventArgs e)
-        {
-            SC_Vendor.Value1 = "1";
-        }
-
-        private void SC_Segment_Enter(object sender, EventArgs e)
-        {
-            SC_Segment.Value1 = "226";
-        }
-
-        private void SC_CopyTenzikai_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (!String.IsNullOrEmpty(SC_CopyTenzikai.TxtCode.Text))
-            {
-                SC_CopyTenzikai.ChangeDate = bbl.GetDate();
-                if (!SC_CopyTenzikai.SelectData())
-                {
-                    bbl.ShowMessage("E101");
-                    SC_CopyTenzikai.SetFocus(1);
-                }
-            }
-        }
-
-        private void SC_CopyVendor_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (!String.IsNullOrEmpty(SC_CopyVendor.TxtCode.Text))
-            {
-                SC_CopyVendor.ChangeDate = bbl.GetDate();
-                if (!SC_CopyVendor.SelectData())
-                {
-                    bbl.ShowMessage("E101");
-                    SC_CopyVendor.SetFocus(1);
-                }
-            }
-        }
-
-        private void SC_copybrand_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (!String.IsNullOrEmpty(SC_copybrand.TxtCode.Text))
-            {
-                SC_copybrand.ChangeDate = bbl.GetDate();
-                if (!SC_copybrand.SelectData())
-                {
-                    bbl.ShowMessage("E101");
-                    SC_copybrand.SetFocus(1);
-                }
-            }
-        }
-
-        private void SC_copoysegmet_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (!String.IsNullOrEmpty(SC_Tenzikai.TxtCode.Text))
-            {
-                SC_Tenzikai.ChangeDate = bbl.GetDate();
-                if (!SC_Tenzikai.SelectData())
-                {
-                    bbl.ShowMessage("E101");
-                    SC_Tenzikai.SetFocus(1);
-                }
-            }
-        }
-
-        private void SC_CopyVendor_Enter(object sender, EventArgs e)
-        {
-            SC_CopyVendor.Value1 = "1";
-        }
-
-        private void SC_copoysegmet_Enter(object sender, EventArgs e)
-        {
-            SC_copoysegmet.Value1 = "226";
-        }
     }
 }

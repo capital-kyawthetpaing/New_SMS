@@ -89,7 +89,7 @@
             this.ckM_Label1.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label1.DefaultlabelSize = true;
-            this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label1.Location = new System.Drawing.Point(55, 22);
@@ -105,20 +105,22 @@
             this.txtPaymentDateFrom.AllowMinus = false;
             this.txtPaymentDateFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPaymentDateFrom.BackColor = System.Drawing.Color.White;
+            this.txtPaymentDateFrom.BorderColor = false;
             this.txtPaymentDateFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPaymentDateFrom.ClientColor = System.Drawing.Color.White;
             this.txtPaymentDateFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPaymentDateFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPaymentDateFrom.DecimalPlace = 0;
-            this.txtPaymentDateFrom.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtPaymentDateFrom.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtPaymentDateFrom.IntegerPart = 0;
             this.txtPaymentDateFrom.IsCorrectDate = true;
             this.txtPaymentDateFrom.isEnterKeyDown = false;
+            this.txtPaymentDateFrom.IsFirstTime = true;
             this.txtPaymentDateFrom.isMaxLengthErr = false;
             this.txtPaymentDateFrom.IsNumber = true;
             this.txtPaymentDateFrom.IsShop = false;
             this.txtPaymentDateFrom.Length = 8;
-            this.txtPaymentDateFrom.Location = new System.Drawing.Point(105, 20);
+            this.txtPaymentDateFrom.Location = new System.Drawing.Point(105, 19);
             this.txtPaymentDateFrom.MaxLength = 8;
             this.txtPaymentDateFrom.MoveNext = true;
             this.txtPaymentDateFrom.Name = "txtPaymentDateFrom";
@@ -126,26 +128,29 @@
             this.txtPaymentDateFrom.TabIndex = 0;
             this.txtPaymentDateFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPaymentDateFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtPaymentDateFrom.UseColorSizMode = false;
             // 
             // txtPaymentDateTo
             // 
             this.txtPaymentDateTo.AllowMinus = false;
             this.txtPaymentDateTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPaymentDateTo.BackColor = System.Drawing.Color.White;
+            this.txtPaymentDateTo.BorderColor = false;
             this.txtPaymentDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPaymentDateTo.ClientColor = System.Drawing.Color.White;
             this.txtPaymentDateTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPaymentDateTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPaymentDateTo.DecimalPlace = 0;
-            this.txtPaymentDateTo.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtPaymentDateTo.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtPaymentDateTo.IntegerPart = 0;
             this.txtPaymentDateTo.IsCorrectDate = true;
             this.txtPaymentDateTo.isEnterKeyDown = false;
+            this.txtPaymentDateTo.IsFirstTime = true;
             this.txtPaymentDateTo.isMaxLengthErr = false;
             this.txtPaymentDateTo.IsNumber = true;
             this.txtPaymentDateTo.IsShop = false;
             this.txtPaymentDateTo.Length = 8;
-            this.txtPaymentDateTo.Location = new System.Drawing.Point(269, 22);
+            this.txtPaymentDateTo.Location = new System.Drawing.Point(261, 19);
             this.txtPaymentDateTo.MaxLength = 8;
             this.txtPaymentDateTo.MoveNext = true;
             this.txtPaymentDateTo.Name = "txtPaymentDateTo";
@@ -153,6 +158,7 @@
             this.txtPaymentDateTo.TabIndex = 1;
             this.txtPaymentDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPaymentDateTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtPaymentDateTo.UseColorSizMode = false;
             this.txtPaymentDateTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPaymentDateTo_KeyDown);
             // 
             // txtPaymentInputDateFrom
@@ -160,20 +166,22 @@
             this.txtPaymentInputDateFrom.AllowMinus = false;
             this.txtPaymentInputDateFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPaymentInputDateFrom.BackColor = System.Drawing.Color.White;
+            this.txtPaymentInputDateFrom.BorderColor = false;
             this.txtPaymentInputDateFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPaymentInputDateFrom.ClientColor = System.Drawing.Color.White;
             this.txtPaymentInputDateFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPaymentInputDateFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPaymentInputDateFrom.DecimalPlace = 0;
-            this.txtPaymentInputDateFrom.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtPaymentInputDateFrom.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtPaymentInputDateFrom.IntegerPart = 0;
             this.txtPaymentInputDateFrom.IsCorrectDate = true;
             this.txtPaymentInputDateFrom.isEnterKeyDown = false;
+            this.txtPaymentInputDateFrom.IsFirstTime = true;
             this.txtPaymentInputDateFrom.isMaxLengthErr = false;
             this.txtPaymentInputDateFrom.IsNumber = true;
             this.txtPaymentInputDateFrom.IsShop = false;
             this.txtPaymentInputDateFrom.Length = 8;
-            this.txtPaymentInputDateFrom.Location = new System.Drawing.Point(105, 47);
+            this.txtPaymentInputDateFrom.Location = new System.Drawing.Point(105, 49);
             this.txtPaymentInputDateFrom.MaxLength = 8;
             this.txtPaymentInputDateFrom.MoveNext = true;
             this.txtPaymentInputDateFrom.Name = "txtPaymentInputDateFrom";
@@ -181,26 +189,29 @@
             this.txtPaymentInputDateFrom.TabIndex = 2;
             this.txtPaymentInputDateFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPaymentInputDateFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtPaymentInputDateFrom.UseColorSizMode = false;
             // 
             // txtPaymentInputDateTo
             // 
             this.txtPaymentInputDateTo.AllowMinus = false;
             this.txtPaymentInputDateTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPaymentInputDateTo.BackColor = System.Drawing.Color.White;
+            this.txtPaymentInputDateTo.BorderColor = false;
             this.txtPaymentInputDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPaymentInputDateTo.ClientColor = System.Drawing.Color.White;
             this.txtPaymentInputDateTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPaymentInputDateTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPaymentInputDateTo.DecimalPlace = 0;
-            this.txtPaymentInputDateTo.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtPaymentInputDateTo.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtPaymentInputDateTo.IntegerPart = 0;
             this.txtPaymentInputDateTo.IsCorrectDate = true;
             this.txtPaymentInputDateTo.isEnterKeyDown = false;
+            this.txtPaymentInputDateTo.IsFirstTime = true;
             this.txtPaymentInputDateTo.isMaxLengthErr = false;
             this.txtPaymentInputDateTo.IsNumber = true;
             this.txtPaymentInputDateTo.IsShop = false;
             this.txtPaymentInputDateTo.Length = 8;
-            this.txtPaymentInputDateTo.Location = new System.Drawing.Point(269, 47);
+            this.txtPaymentInputDateTo.Location = new System.Drawing.Point(261, 49);
             this.txtPaymentInputDateTo.MaxLength = 8;
             this.txtPaymentInputDateTo.MoveNext = true;
             this.txtPaymentInputDateTo.Name = "txtPaymentInputDateTo";
@@ -208,6 +219,7 @@
             this.txtPaymentInputDateTo.TabIndex = 3;
             this.txtPaymentInputDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPaymentInputDateTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtPaymentInputDateTo.UseColorSizMode = false;
             this.txtPaymentInputDateTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPaymentInputDateTo_KeyDown);
             // 
             // ckM_Label2
@@ -216,10 +228,10 @@
             this.ckM_Label2.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label2.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label2.DefaultlabelSize = true;
-            this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(224, 24);
+            this.ckM_Label2.Location = new System.Drawing.Point(224, 22);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label2.TabIndex = 7;
@@ -233,10 +245,10 @@
             this.ckM_Label3.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label3.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label3.DefaultlabelSize = true;
-            this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(224, 51);
+            this.ckM_Label3.Location = new System.Drawing.Point(224, 52);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label3.TabIndex = 9;
@@ -250,7 +262,7 @@
             this.ckM_Label4.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label4.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label4.DefaultlabelSize = true;
-            this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label4.Location = new System.Drawing.Point(29, 52);
@@ -267,7 +279,7 @@
             this.ckM_Label5.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label5.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label5.DefaultlabelSize = true;
-            this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label5.Location = new System.Drawing.Point(55, 84);
@@ -286,9 +298,9 @@
             this.btnShow.DefaultBtnSize = true;
             this.btnShow.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShow.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btnShow.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.btnShow.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnShow.Location = new System.Drawing.Point(866, 107);
+            this.btnShow.Location = new System.Drawing.Point(866, 100);
             this.btnShow.Margin = new System.Windows.Forms.Padding(1);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(118, 28);
@@ -304,10 +316,11 @@
             this.dgvSiharaiNO.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.dgvSiharaiNO.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSiharaiNO.AutoGenerateColumns = false;
             this.dgvSiharaiNO.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -326,7 +339,7 @@
             this.colOtherThanTransfer});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -334,9 +347,9 @@
             this.dgvSiharaiNO.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSiharaiNO.EnableHeadersVisualStyles = false;
             this.dgvSiharaiNO.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.dgvSiharaiNO.Location = new System.Drawing.Point(31, 205);
+            this.dgvSiharaiNO.Location = new System.Drawing.Point(31, 197);
             this.dgvSiharaiNO.Name = "dgvSiharaiNO";
-            this.dgvSiharaiNO.RowHeight_ = 20;
+            this.dgvSiharaiNO.ReadOnly = true;
             this.dgvSiharaiNO.Size = new System.Drawing.Size(953, 400);
             this.dgvSiharaiNO.TabIndex = 0;
             this.dgvSiharaiNO.UseRowNo = true;
@@ -350,6 +363,7 @@
             this.colTransactionNo.HeaderText = "支払処理番号";
             this.colTransactionNo.MaxInputLength = 11;
             this.colTransactionNo.Name = "colTransactionNo";
+            this.colTransactionNo.ReadOnly = true;
             this.colTransactionNo.Width = 110;
             // 
             // colPaymentNO
@@ -358,6 +372,7 @@
             this.colPaymentNO.HeaderText = "支払番号";
             this.colPaymentNO.MaxInputLength = 11;
             this.colPaymentNO.Name = "colPaymentNO";
+            this.colPaymentNO.ReadOnly = true;
             this.colPaymentNO.Width = 110;
             // 
             // colPaymentDate
@@ -366,6 +381,7 @@
             this.colPaymentDate.HeaderText = "支払日";
             this.colPaymentDate.MaxInputLength = 8;
             this.colPaymentDate.Name = "colPaymentDate";
+            this.colPaymentDate.ReadOnly = true;
             this.colPaymentDate.Width = 80;
             // 
             // colPaymentEntryDate
@@ -374,7 +390,7 @@
             this.colPaymentEntryDate.HeaderText = "支払入力日";
             this.colPaymentEntryDate.MaxInputLength = 8;
             this.colPaymentEntryDate.Name = "colPaymentEntryDate";
-            this.colPaymentEntryDate.Width = 80;
+            this.colPaymentEntryDate.ReadOnly = true;
             // 
             // colPayeeCD
             // 
@@ -382,6 +398,7 @@
             this.colPayeeCD.HeaderText = "支払先CD";
             this.colPayeeCD.MaxInputLength = 13;
             this.colPayeeCD.Name = "colPayeeCD";
+            this.colPayeeCD.ReadOnly = true;
             this.colPayeeCD.Width = 130;
             // 
             // colPayeeName
@@ -390,6 +407,7 @@
             this.colPayeeName.HeaderText = "支払先名";
             this.colPayeeName.MaxInputLength = 80;
             this.colPayeeName.Name = "colPayeeName";
+            this.colPayeeName.ReadOnly = true;
             this.colPayeeName.Width = 400;
             // 
             // colAmountOfPayment
@@ -398,6 +416,7 @@
             this.colAmountOfPayment.HeaderText = "支払額";
             this.colAmountOfPayment.MaxInputLength = 8;
             this.colAmountOfPayment.Name = "colAmountOfPayment";
+            this.colAmountOfPayment.ReadOnly = true;
             this.colAmountOfPayment.Width = 80;
             // 
             // colTransferAmount
@@ -406,6 +425,7 @@
             this.colTransferAmount.HeaderText = "振込額";
             this.colTransferAmount.MaxInputLength = 8;
             this.colTransferAmount.Name = "colTransferAmount";
+            this.colTransferAmount.ReadOnly = true;
             this.colTransferAmount.Width = 80;
             // 
             // colOtherThanTransfer
@@ -414,6 +434,7 @@
             this.colOtherThanTransfer.HeaderText = "振込以外";
             this.colOtherThanTransfer.MaxInputLength = 8;
             this.colOtherThanTransfer.Name = "colOtherThanTransfer";
+            this.colOtherThanTransfer.ReadOnly = true;
             this.colOtherThanTransfer.Width = 80;
             // 
             // Sc_PaymentDestination
@@ -426,11 +447,12 @@
             this.Sc_PaymentDestination.CodeWidth1 = 100;
             this.Sc_PaymentDestination.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.Sc_PaymentDestination.DataCheck = false;
-            this.Sc_PaymentDestination.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.Sc_PaymentDestination.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.Sc_PaymentDestination.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.Sc_PaymentDestination.IsCopy = false;
             this.Sc_PaymentDestination.LabelText = "";
             this.Sc_PaymentDestination.LabelVisible = true;
-            this.Sc_PaymentDestination.Location = new System.Drawing.Point(105, 75);
+            this.Sc_PaymentDestination.Location = new System.Drawing.Point(105, 76);
             this.Sc_PaymentDestination.Margin = new System.Windows.Forms.Padding(0);
             this.Sc_PaymentDestination.Name = "Sc_PaymentDestination";
             this.Sc_PaymentDestination.NameWidth = 310;
@@ -449,9 +471,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 754);
+            this.ClientSize = new System.Drawing.Size(1004, 649);
             this.Controls.Add(this.dgvSiharaiNO);
             this.F11Visible = true;
+            this.F12Visible = true;
             this.F9Visible = true;
             this.Name = "FrmSearch_SiharaiNO";
             this.PanelHeaderHeight = 180;

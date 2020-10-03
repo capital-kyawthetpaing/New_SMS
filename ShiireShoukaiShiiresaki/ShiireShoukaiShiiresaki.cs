@@ -29,6 +29,7 @@ namespace ShiireShoukaiShiiresaki
         Base_BL bbl = new Base_BL();
         private const string ShiireNyuuryokuFromNyuuka = "ShiireNyuuryokuFromNyuuka.exe";
         private const string ShiireNyuuryoku = "ShiireNyuuryoku.exe";
+        private const string HenpinNyuuryoku = "HenpinNyuuryoku.exe";
         public ShiireShoukaiShiiresaki()
         {
             InitializeComponent();
@@ -127,10 +128,10 @@ namespace ShiireShoukaiShiiresaki
                     M_Vendor_Entity mve = new M_Vendor_Entity()
                     {
                         VendorCD = scSupplier.TxtCode.Text,
-                        ChangeDate=scSupplier.ChangeDate.ToString()
+                        ChangeDate = scSupplier.ChangeDate.ToString()
                     };
                     string aa = scSupplier.TxtCode.Text;
-                     payeeflg = dpurchase_bl.SelectPayeeFlg(mve);
+                    payeeflg = dpurchase_bl.SelectPayeeFlg(mve);
                 }
                 dpde = GetSearchInfo();
 
@@ -148,6 +149,7 @@ namespace ShiireShoukaiShiiresaki
                 {
                     dpurchase_bl.ShowMessage("E128");
                     dgvPurchaseSearch.DataSource = null;
+                    txtPurchaseDateFrom.Focus();
                 }
             }
         }
@@ -554,10 +556,20 @@ namespace ShiireShoukaiShiiresaki
                                 System.Diagnostics.Process.Start(filePath, cmdLine);
                             }
                         }
-                        else
+                        else if (dt.Rows[0]["ProcessKBN"].ToString().Equals("2"))
                         {
                             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
                             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + ShiireNyuuryoku;
+                            if (System.IO.File.Exists(filePath))
+                            {
+                                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + PurchaseNO;
+                                System.Diagnostics.Process.Start(filePath, cmdLine);
+                            }
+                        }
+                        else if (dt.Rows[0]["ProcessKBN"].ToString().Equals("3"))
+                        {
+                            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + HenpinNyuuryoku;
                             if (System.IO.File.Exists(filePath))
                             {
                                 string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + PurchaseNO;

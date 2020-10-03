@@ -50,6 +50,10 @@ namespace Search
                 if(dtCustomer.Rows.Count>0)
                 {
                     gv_CustomerSearch.DataSource = dtCustomer;
+                    gv_CustomerSearch.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                    gv_CustomerSearch.CurrentRow.Selected = true;
+                    gv_CustomerSearch.Enabled = true;
+                    gv_CustomerSearch.Focus();
                 }
                 else
                 {
@@ -153,8 +157,9 @@ namespace Search
                 ChangeDate = gv_CustomerSearch.CurrentRow.Cells["colRefDate"].Value.ToString();
                 CustomerCD = gv_CustomerSearch.CurrentRow.Cells["CustomerNo"].Value.ToString();
                 CustName = gv_CustomerSearch.CurrentRow.Cells["CustomerName"].Value.ToString();
-                this.Close();
+                
             }
+            this.Close();
         }
         private void BindStore(string changedate,string scd)
         {

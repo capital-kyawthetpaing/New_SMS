@@ -44,6 +44,10 @@ namespace Search
             if (dt.Rows.Count > 0)
             {
                 dgvSearchProgram.DataSource = dt;
+                dgvSearchProgram.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                dgvSearchProgram.CurrentRow.Selected = true;
+                dgvSearchProgram.Enabled = true;
+                dgvSearchProgram.Focus();
             }
             else
             {
@@ -88,8 +92,9 @@ namespace Search
             if (dgvSearchProgram.CurrentRow != null && dgvSearchProgram.CurrentRow.Index >= 0)
             {
                 ProgramID = dgvSearchProgram.CurrentRow.Cells["colProgramID"].Value.ToString();
-                this.Close();
+               
             }
+            this.Close();
         }
 
         private void Search_Program_KeyUp(object sender, KeyEventArgs e)

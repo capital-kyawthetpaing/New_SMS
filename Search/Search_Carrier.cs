@@ -92,7 +92,25 @@ namespace Search
                 mse = GetData();
                 DataTable dt = new DataTable();
                 dt = scbl.M_Carrier_Search(mse);
-                gvShipping.DataSource = dt;
+                if (dt.Rows.Count > 0)
+                {
+                    gvShipping.DataSource = dt;
+                    gvShipping.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                    gvShipping.CurrentRow.Selected = true;
+                    gvShipping.Enabled = true;
+                    gvShipping.Focus();
+                }
+                else
+                {
+                    scbl.ShowMessage("E128");
+                    gvShipping.DataSource = null;
+                    txtShippingFrom.Focus();
+                }
+
+            }
+            else
+            {
+                gvShipping.DataSource = null;
             }
         }
 
@@ -111,8 +129,9 @@ namespace Search
                 ID = gvShipping.CurrentRow.Cells["colCD"].Value.ToString();
                 date = gvShipping.CurrentRow.Cells["colDate"].Value.ToString();
                 parName = gvShipping.CurrentRow.Cells["colName"].Value.ToString();
-                this.Close();
+               
             }
+            this.Close();
         }
 
         private void gvShipping_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

@@ -41,8 +41,19 @@ namespace Search
             {
                 mbe = GetSearchInfo();
                 DataTable dtBank = sgbl.M_Bank_Search(mbe);
-                GdvGinkou.DataSource = dtBank;
-          
+                if(dtBank.Rows.Count >0)
+                {
+                    GdvGinkou.DataSource = dtBank;
+                    GdvGinkou.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                    GdvGinkou.CurrentRow.Selected = true;
+                    GdvGinkou.Enabled = true;
+                    GdvGinkou.Focus();
+                }
+                else
+                {
+                    GdvGinkou.DataSource = null;
+                    sgbl.ShowMessage("E128");
+                }
             }
         }
 
@@ -103,8 +114,9 @@ namespace Search
                 BankName = GdvGinkou.CurrentRow.Cells["colBankName"].Value.ToString();
                 //ChangeDate = lblChangeDate.Text; 
                 ChangeDate=GdvGinkou.CurrentRow.Cells["colChangeDate"].Value.ToString();
-                this.Close();
+                
             }
+            this.Close();
         }
 
         private void FrmSearch_Ginkou_KeyUp(object sender, KeyEventArgs e)

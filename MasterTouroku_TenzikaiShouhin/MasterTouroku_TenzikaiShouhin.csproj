@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -49,6 +49,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\Debug\Entity.dll</HintPath>
     </Reference>
+    <Reference Include="GridBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\GridBase.dll</HintPath>
+    </Reference>
+    <Reference Include="GridControl, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\GridControl.dll</HintPath>
+    </Reference>
     <Reference Include="Search">
       <HintPath>..\bin\Debug\Search.dll</HintPath>
     </Reference>
@@ -65,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClsGridMasterTanzi.cs" />
     <Compile Include="MasterTouroku_TenzikaiShouhin.cs">
       <SubType>Form</SubType>
     </Compile>

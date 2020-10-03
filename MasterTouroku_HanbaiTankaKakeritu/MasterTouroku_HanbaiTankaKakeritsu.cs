@@ -66,28 +66,68 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
         {
             if (!RequireCheck(new Control[] { txtFromDate, ScTanka.TxtCode }))
                 return false;
-            if (!ScTanka.IsExists(2))
+            //if (!ScTanka.IsExists(2))
+            //{
+            //    bbl.ShowMessage("E101");
+            //    ScTanka.SetFocus(1);
+            //    return false;
+            //}
+            
+            ScTanka.ChangeDate = bbl.GetDate();//ses
+            if (!string.IsNullOrEmpty(ScTanka.TxtCode.Text))
             {
-                bbl.ShowMessage("E101");
-                ScTanka.SetFocus(1);
-                return false;
+                if (ScTanka.SelectData())
+                {
+                    ScTanka.Value1 = ScTanka.TxtCode.Text;
+                    ScTanka.Value2 = ScTanka.LabelText;
+                }
+                else
+                {
+                    bbl.ShowMessage("E101");
+                    ScTanka.SetFocus(1);
+                    return false;
+                }
             }
-            if (!string.IsNullOrWhiteSpace(ScBrand.TxtCode.Text))
-                if (!ScBrand.IsExists(2))
+            
+            ScBrand.ChangeDate = bbl.GetDate();//ses
+            if (!string.IsNullOrEmpty(ScBrand.TxtCode.Text))
+            {
+                if (ScBrand.SelectData())
+                {
+                    ScBrand.Value1 = ScBrand.TxtCode.Text;
+                    ScBrand.Value2 = ScBrand.LabelText;
+                }
+                else
                 {
                     bbl.ShowMessage("E101");
                     ScBrand.SetFocus(1);
                     return false;
                 }
+            }
 
-            if (!string.IsNullOrWhiteSpace(ScSegment.TxtCode.Text))
-                if (!ScSegment.IsExists(2))
+            ScSegment.ChangeDate = bbl.GetDate();//ses
+            if (!string.IsNullOrEmpty(ScSegment.TxtCode.Text))
+            {
+                if (ScSegment.SelectData())
+                {
+                    ScSegment.Value1 = ScSegment.TxtCode.Text;
+                    ScSegment.Value2 = ScSegment.LabelText;
+                }
+                else
                 {
                     bbl.ShowMessage("E101");
                     ScSegment.SetFocus(1);
                     return false;
                 }
-
+            }
+            //if (!string.IsNullOrWhiteSpace(ScSegment.TxtCode.Text))
+            //    if (!ScSegment.IsExists(2))
+            //    {
+            //        bbl.ShowMessage("E101");
+            //        ScSegment.SetFocus(1);
+            //        return false;
+            //    }
+            
             if (!string.IsNullOrWhiteSpace(txtPriceOutTaxFrom.Text))
             {
                 int str2 = 0;
@@ -368,9 +408,9 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
                     if (str1 > str2)
                     {
                         bbl.ShowMessage("E104");
-                        txtToDate.Focus();
+                        //txtToDate.Focus();
+                        txtPriceOutTaxTo.Focus();//ses
                     }
-
                 }
             }
         }

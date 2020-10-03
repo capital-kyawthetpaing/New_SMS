@@ -37,7 +37,20 @@ namespace Search
             {
                 mbse = GetSearchInfo();
                 DataTable dtShiten = sgsbl.M_BankShiten_Search(mbse);
-                GvShiten.DataSource = dtShiten;
+                if (dtShiten.Rows.Count > 0)
+                {
+                    GvShiten.DataSource = dtShiten;
+                    GvShiten.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                    GvShiten.CurrentRow.Selected = true;
+                    GvShiten.Enabled = true;
+                    GvShiten.Focus();
+                }
+                else
+                {
+                    GvShiten.DataSource = null;
+                    sgsbl.ShowMessage("E128");
+                }
+               
             }
         }
 
@@ -93,8 +106,9 @@ namespace Search
                 BranchName = GvShiten.CurrentRow.Cells["colBranchName"].Value.ToString();
                 //ChangeDate = lblChangeDate.Text; //GvShiten.CurrentRow.Cells["colChangeDate"].Value.ToString();
                 ChangeDate= GvShiten.CurrentRow.Cells["colChangeDate"].Value.ToString();
-                this.Close();
+               
             }
+            this.Close();
         }
 
         private void FrmSearch_GinkouShiten_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
