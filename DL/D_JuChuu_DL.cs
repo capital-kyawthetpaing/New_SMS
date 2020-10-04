@@ -121,6 +121,8 @@ namespace DL
                 { "@SKUCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUCD } },
                 { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.JanCD } },
 
+                { "@JuchuuProcessNOFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuuProcessNOFrom } },
+                { "@JuchuuProcessNOTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuuProcessNOTo } },
                 { "@JuchuuNOFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuuNOFrom } },
                 { "@JuchuuNOTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuuNOTo } },
                 { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.Operator} },
@@ -522,5 +524,6 @@ namespace DL
 
             return SelectData(dic, sp);
         }
+
     }
 }
