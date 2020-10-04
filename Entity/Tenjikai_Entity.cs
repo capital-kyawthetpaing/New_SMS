@@ -30,6 +30,46 @@ namespace Entity
         public string xml { get; set; }
         public string KibouBi1 { get; set; }
         public string KibouBi2 { get; set; }
-
+        public string K_Zip1 { get; set; }
+        public string K_Zip2 { get; set; }
+        public string H_Zip1 { get; set; }
+        public string H_Zip2 { get; set; }
+        public string K_Address1 { get; set; }
+        public string K_Address2 { get; set; }
+        public string H_Address1 { get; set; }
+        public string H_Address2 { get; set; }
+        public string K_Name1 { get; set; }
+        public string K_name2 { get; set; }
+        public string K_Denwa1 { get; set; }
+        public string K_Denwa2 { get; set; }
+        public string K_Denwa3 { get; set; }
+        public string H_Name1 { get; set; }
+        public string H_name2 { get; set; }
+        public string H_Denwa1 { get; set; }
+        public string H_Denwa2 { get; set; }
+        public string H_Denwa3 { get; set; }
+        public string K_radio { get; set; }
+        public string H_radio { get; set; }
+        public string ZeiKomi { get; set; }
+        public string Zeinu { get; set; }
+        public string Keijen { get; set; }
+        public string Tsuujou { get; set; }
+        public string ArariGaku { get; set; }
+        public string GenkaGaku { get; set; }
+        public string KDenwa21 { get; set; }
+        public string KDenwa22 { get; set; }
+        public string KDenwa23 { get; set; }
+        public string KkanaMei { get; set; }
+        public string HDenwa21 { get; set; }
+        public string HDenwa22 { get; set; }
+        public string HDenwa23 { get; set; }
+        public string HkanaMei { get; set; }
+        public string Sumi { get; set; }
+        public string Nichi { get; set; }
+        public string InsertOpt { get; set; }
+        public string InsertDt { get; set; }
+        public string DeleteOpt { get; set; }
+        public string DeleteDt { get; set; }
+        public string StoreCD { get; set; }
     }
 }

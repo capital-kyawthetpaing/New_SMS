@@ -114,8 +114,9 @@ namespace Search
             {
                 ID = GvID.CurrentRow.Cells["colID"].Value.ToString();
                 IDName = GvID.CurrentRow.Cells["colIDName"].Value.ToString();
-                this.Close();
+                
             }
+            this.Close();
         }
 
         private void GvID_DoubleClick(object sender, EventArgs e)

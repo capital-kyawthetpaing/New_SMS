@@ -15,6 +15,10 @@ namespace BL
         {
 
         }
+        public bool D_TenjiInsert( Tenjikai_Entity tje, string xml )
+        {
+            return tdl.D_TenjiInsert(tje,xml);
+        }
         public DataTable JuuChuuCheck(string JuuChuuBi)
         {
            return tdl.JuuChuuCheck(JuuChuuBi);
@@ -35,6 +39,10 @@ namespace BL
         public DataTable GetTaxRate(string taxflg,string changeDtae)
         {
             return tdl.GetTaxRate(taxflg, changeDtae);
+        }
+        public bool Check_DTenjikaiJuuchuu(string tkb)
+        {
+            return tdl.Check_DTenjikaiJuuchuu(tkb).Rows.Count > 0 ?  true : false;
         }
     }
 }

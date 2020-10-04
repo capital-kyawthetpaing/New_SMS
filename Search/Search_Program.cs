@@ -92,8 +92,9 @@ namespace Search
             if (dgvSearchProgram.CurrentRow != null && dgvSearchProgram.CurrentRow.Index >= 0)
             {
                 ProgramID = dgvSearchProgram.CurrentRow.Cells["colProgramID"].Value.ToString();
-                this.Close();
+               
             }
+            this.Close();
         }
 
         private void Search_Program_KeyUp(object sender, KeyEventArgs e)

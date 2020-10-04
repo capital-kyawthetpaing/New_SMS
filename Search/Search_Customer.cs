@@ -157,8 +157,9 @@ namespace Search
                 ChangeDate = gv_CustomerSearch.CurrentRow.Cells["colRefDate"].Value.ToString();
                 CustomerCD = gv_CustomerSearch.CurrentRow.Cells["CustomerNo"].Value.ToString();
                 CustName = gv_CustomerSearch.CurrentRow.Cells["CustomerName"].Value.ToString();
-                this.Close();
+                
             }
+            this.Close();
         }
         private void BindStore(string changedate,string scd)
         {

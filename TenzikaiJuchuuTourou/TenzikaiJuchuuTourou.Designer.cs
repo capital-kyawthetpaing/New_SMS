@@ -238,11 +238,12 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.hdn_ExcAmt = new System.Windows.Forms.Label();
             this.hdn_IncAmt = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.hdn_GrossAmt = new System.Windows.Forms.Label();
             this.hdn_CostAmt = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.hdn_RduAmt = new System.Windows.Forms.Label();
             this.hdn_NmalAmt = new System.Windows.Forms.Label();
             this.hdn_CsumAmt = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.PanelHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnl_haisou.SuspendLayout();
@@ -296,6 +297,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.pnl_haisou);
             this.panel1.Controls.Add(this.pnl_kokyakuu);
             this.panel1.Controls.Add(this.ckM_Label11);
@@ -3902,7 +3904,7 @@
             // 
             // choukusou_1
             // 
-            this.choukusou_1.Location = new System.Drawing.Point(129, 21);
+            this.choukusou_1.Location = new System.Drawing.Point(128, 21);
             this.choukusou_1.Name = "choukusou_1";
             this.choukusou_1.Size = new System.Drawing.Size(79, 18);
             this.choukusou_1.TabIndex = 103;
@@ -4893,15 +4895,15 @@
             this.hdn_IncAmt.Text = "hdn_IncAmt";
             this.hdn_IncAmt.Visible = false;
             // 
-            // label26
+            // hdn_GrossAmt
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(1336, 760);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(77, 12);
-            this.label26.TabIndex = 103;
-            this.label26.Text = "hdn_GrossAmt";
-            this.label26.Visible = false;
+            this.hdn_GrossAmt.AutoSize = true;
+            this.hdn_GrossAmt.Location = new System.Drawing.Point(1336, 760);
+            this.hdn_GrossAmt.Name = "hdn_GrossAmt";
+            this.hdn_GrossAmt.Size = new System.Drawing.Size(77, 12);
+            this.hdn_GrossAmt.TabIndex = 103;
+            this.hdn_GrossAmt.Text = "hdn_GrossAmt";
+            this.hdn_GrossAmt.Visible = false;
             // 
             // hdn_CostAmt
             // 
@@ -4913,15 +4915,15 @@
             this.hdn_CostAmt.Text = "hdn_CostAmt";
             this.hdn_CostAmt.Visible = false;
             // 
-            // label28
+            // hdn_RduAmt
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(1694, 760);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(65, 12);
-            this.label28.TabIndex = 106;
-            this.label28.Text = "hdn_RduAmt";
-            this.label28.Visible = false;
+            this.hdn_RduAmt.AutoSize = true;
+            this.hdn_RduAmt.Location = new System.Drawing.Point(1694, 760);
+            this.hdn_RduAmt.Name = "hdn_RduAmt";
+            this.hdn_RduAmt.Size = new System.Drawing.Size(65, 12);
+            this.hdn_RduAmt.TabIndex = 106;
+            this.hdn_RduAmt.Text = "hdn_RduAmt";
+            this.hdn_RduAmt.Visible = false;
             // 
             // hdn_NmalAmt
             // 
@@ -4943,15 +4945,25 @@
             this.hdn_CsumAmt.Text = "hdn_CsumAmt";
             this.hdn_CsumAmt.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(597, 74);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 138;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // TenzikaiJuchuuTourou
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1789, 822);
-            this.Controls.Add(this.label28);
+            this.Controls.Add(this.hdn_RduAmt);
             this.Controls.Add(this.hdn_NmalAmt);
             this.Controls.Add(this.hdn_CsumAmt);
-            this.Controls.Add(this.label26);
+            this.Controls.Add(this.hdn_GrossAmt);
             this.Controls.Add(this.hdn_CostAmt);
             this.Controls.Add(this.hdn_IncAmt);
             this.Controls.Add(this.hdn_ExcAmt);
@@ -4967,10 +4979,10 @@
             this.Controls.SetChildIndex(this.hdn_ExcAmt, 0);
             this.Controls.SetChildIndex(this.hdn_IncAmt, 0);
             this.Controls.SetChildIndex(this.hdn_CostAmt, 0);
-            this.Controls.SetChildIndex(this.label26, 0);
+            this.Controls.SetChildIndex(this.hdn_GrossAmt, 0);
             this.Controls.SetChildIndex(this.hdn_CsumAmt, 0);
             this.Controls.SetChildIndex(this.hdn_NmalAmt, 0);
-            this.Controls.SetChildIndex(this.label28, 0);
+            this.Controls.SetChildIndex(this.hdn_RduAmt, 0);
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -5217,11 +5229,12 @@
         private GridControl.clsGridCheckBox chk_1;
         private System.Windows.Forms.Label hdn_ExcAmt;
         private System.Windows.Forms.Label hdn_IncAmt;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label hdn_GrossAmt;
         private System.Windows.Forms.Label hdn_CostAmt;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label hdn_RduAmt;
         private System.Windows.Forms.Label hdn_NmalAmt;
         private System.Windows.Forms.Label hdn_CsumAmt;
+        private System.Windows.Forms.Button button1;
     }
 }
 
