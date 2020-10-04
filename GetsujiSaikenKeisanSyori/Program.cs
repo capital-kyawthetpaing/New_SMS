@@ -96,7 +96,7 @@ namespace GetsujiSaikenKeisanSyori
                         PC = Login_BL.GetHostName(),
                         Operator = InOperatorCD,
                         YYYYMM = InFiscalYYYYMM,
-                        StoreCD = InStoreCD,
+                        StoreCD = me.StoreCD,
                         Mode = Mode
                     };
 
