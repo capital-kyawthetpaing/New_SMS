@@ -79,6 +79,7 @@ namespace MasterTouroku_CustomerSKUPrice
 
             StartProgram();
             txtStartDate.Focus();
+            detailControls[(int)EIndex.Date].Text = bbl.GetDate();
 
             Clear(pnl_Body);
             Scr_Clr(0);
@@ -193,7 +194,7 @@ namespace MasterTouroku_CustomerSKUPrice
                 case EOperationMode.UPDATE:
                 case EOperationMode.DELETE:
                 case EOperationMode.SHOW:
-                    //keyControls[0].Focus();
+                    detailControls[0].Focus();
                     break;
 
             }
@@ -208,7 +209,7 @@ namespace MasterTouroku_CustomerSKUPrice
             foreach (Control ctl in detailControls)
             {
                 ctl.KeyDown += new System.Windows.Forms.KeyEventHandler(DetailControl_KeyDown);
-               // ctl.Enter += new System.EventHandler(DetailControl_Enter);
+                //ctl.Enter += new System.EventHandler(DetailControl_Enter);
             }
 
             //rdoRecent.CheckedChanged += new System.EventHandler(RadioButton_CheckedChanged);
@@ -965,7 +966,7 @@ namespace MasterTouroku_CustomerSKUPrice
                                 Scr_Lock(0, 0, 0);
 
                                 //Scr_Lock(1, mc_L_END, 0);  // フレームのロック解除
-                                detailControls[(int)EIndex.Date].Text = bbl.GetDate();
+                               // detailControls[(int)EIndex.Date].Text = bbl.GetDate();
                                 F9Visible = false;
 
                                 SetFuncKeyAll(this, "111111001001");
@@ -1191,6 +1192,8 @@ namespace MasterTouroku_CustomerSKUPrice
                     if (dtSKUPrice.Rows.Count > 0)
                     {
                         SetMultiColNo(dtSKUPrice);
+                        S_BodySeigyo(2, 2);
+                        mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
                     }
                     else
                     {
@@ -1453,7 +1456,7 @@ namespace MasterTouroku_CustomerSKUPrice
 
                         mGrid.g_DArray[row].OldJanCD = mGrid.g_DArray[row].JANCD;
 
-                       // Grid_NotFocus(0, row);
+                        Grid_NotFocus(0, row);
                     }
 
                     if(!string.IsNullOrWhiteSpace(mGrid.g_DArray[row].CustomerCD) && !string.IsNullOrWhiteSpace(mGrid.g_DArray[row].TekiyouKaisiDate))
@@ -1473,6 +1476,48 @@ namespace MasterTouroku_CustomerSKUPrice
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
             return true;
+        }
+
+
+        private void Grid_NotFocus(int pCol, int pRow)
+        {
+            // ﾌｫｰｶｽをはじく
+            int w_Col;
+            //bool w_AllFlg = false;
+            int w_CtlRow;
+
+            if (OperationMode >= EOperationMode.DELETE)
+                return;
+
+            if (m_EnableCnt - 1 < pRow)
+                return;
+
+            w_CtlRow = pRow - Vsb_Mei_0.Value;
+            if (w_CtlRow >= 0 && w_CtlRow <= mGrid.g_MK_Ctl_Row - 1)
+                //画面範囲の時
+                //配列の内容を画面にセット
+                mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0, w_CtlRow, w_CtlRow);
+
+
+            //w_AllFlg = true;
+
+            for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
+                switch (w_Col)
+                {
+                    case (int)ClsGridCustomerSKUPric.ColNO.CustomerName:
+                        mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                        mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = true;
+                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
+                        break;
+                    case (int)ClsGridCustomerSKUPric.ColNO.SKUName:
+                    case (int)ClsGridCustomerSKUPric.ColNO.SKUCD:
+                        mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                        mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = true;
+                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
+                        break;
+                }
+
+
         }
 
         protected override void EndSec()
