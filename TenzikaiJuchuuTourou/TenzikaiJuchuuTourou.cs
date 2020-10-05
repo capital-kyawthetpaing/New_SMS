@@ -1727,32 +1727,49 @@ namespace TenzikaiJuchuuTourou
             // Alt or Ctrl key is pressed, do the original operation
             try
             {
-                if ((e.KeyCode == Keys.Return) &&
-                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+                if ((e.KeyCode == Keys.Return) && ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
                 {
+
                     int index = Array.IndexOf(detailControls, sender);
-                    bool ret = CheckDetail(index);
-                    if (ret)
+                    if (index == (int)Eindex.SCTenjiKai)
                     {
-                        if (index == (int)Eindex.KDenwa3 || index == (int)Eindex.HDenwa3 || index == (int)(Eindex.YoteiKinShuu))
-                        //明細の先頭項目へ
+                        bool ret = CheckKey(index);
+                        if (ret)
                         {
-                            MoveNextControl(e);
-                            //   mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridJuchuu.ColNO.JanCD);
-                        }
-                        else if (detailControls.Length - 1 > index)
-                        {
-                            if (detailControls[index + 1].CanFocus)
-                                detailControls[index + 1].Focus();
-                            else
-                                //あたかもTabキーが押されたかのようにする
-                                //Shiftが押されている時は前のコントロールのフォーカスを移動
-                                ProcessTabKey(!e.Shift);
+                            tkb = new TenjikaiJuuChuu_BL();
+                            tje = new Tenjikai_Entity() {
+                                TenjiKaiOrderNo = detailControls[(int)Eindex.SCTenjiKai].Text
+                            };
+
+                            var dr = tkb.Select_TenjiData(tje, out DataTable GridDt);
+                            
                         }
                     }
                     else
                     {
-                        //((Control)sender).Focus();
+                        bool ret = CheckDetail(index);
+                        if (ret)
+                        {
+                            if (index == (int)Eindex.KDenwa3 || index == (int)Eindex.HDenwa3 || index == (int)(Eindex.YoteiKinShuu))
+                            //明細の先頭項目へ
+                            {
+                                MoveNextControl(e);
+                                //   mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridJuchuu.ColNO.JanCD);
+                            }
+                            else if (detailControls.Length - 1 > index)
+                            {
+                                if (detailControls[index + 1].CanFocus)
+                                    detailControls[index + 1].Focus();
+                                else
+                                    //あたかもTabキーが押されたかのようにする
+                                    //Shiftが押されている時は前のコントロールのフォーカスを移動
+                                    ProcessTabKey(!e.Shift);
+                            }
+                        }
+                        else
+                        {
+                            //((Control)sender).Focus();
+                        }
                     }
                 }
 
@@ -1761,7 +1778,7 @@ namespace TenzikaiJuchuuTourou
             {
                 //エラー時共通処理
                 MessageBox.Show(ex.Message);
-                EndSec();
+                //EndSec();
             }
             //  throw new NotImplementedException();
         }
@@ -3133,15 +3150,39 @@ namespace TenzikaiJuchuuTourou
             {
 
 
+                tkb = new TenjikaiJuuChuu_BL();
                 //入力必須(Entry required)
-                if (string.IsNullOrWhiteSpace(keyControls[(int)Eindex.SCTenjiKai].Text))
+                if (string.IsNullOrWhiteSpace(detailControls[(int)Eindex.SCTenjiKai].Text))
                 {
                     //Ｅ１０２
                     bbl.ShowMessage("E102");
                     return false;
                 }
-                tkb = new TenjikaiJuuChuu_BL();
                 var res = tkb.Check_DTenjikaiJuuchuu((detailControls[(int)Eindex.SCTenjiKai]).Text);
+                if (res.Rows.Count ==0)
+                {
+
+                    //Check Tenji
+                    bbl.ShowMessage("E142");
+                    return false;
+                }
+                if (res.Rows[0]["DeleteDateTime"].ToString() != "")
+                {
+
+                    //Check deleteDateTime
+                    bbl.ShowMessage("E144");
+                    return false;
+                }
+
+                // E143 // Already Checked in Main M_StoreAuthor:
+
+                if (res.Select("JuchuuHurikaeZumiFLG = 1") == null)
+                {
+                    //Check deleteDateTime
+                    bbl.ShowMessage("E256");
+                    return false;
+                }
+
                 //排他処理
                 //bool ret = SelectAndInsertExclusive();
                 //if (!ret)

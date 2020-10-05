@@ -71,5 +71,10 @@ namespace Entity
         public string DeleteOpt { get; set; }
         public string DeleteDt { get; set; }
         public string StoreCD { get; set; }
+        public string CVFlg { get; set; }
+        public string DVFlg { get; set; }
+        public string CKBN { get; set; }
+        public string HKBN { get; set; }
+        public string StaffName { get; set; }
     }
 }

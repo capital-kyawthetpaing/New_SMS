@@ -171,7 +171,8 @@ namespace ZaikoKanriHyou
             if (PrintMode != EPrintMode.DIRECT)
                 return;
             if (ErrorCheck())
-            {   
+            {
+                CheckBeforeExport();
                 dpde = new D_Purchase_Details_Entity();
                 dmse = new D_MonthlyStock_Entity();
                 dpde = PurchaseDetailInfo();
@@ -191,12 +192,11 @@ namespace ZaikoKanriHyou
                 {
                     chk = 3;
                 }
-
                 DataTable dt = zkhbl.RPC_ZaikoKanriHyou(dpde, dmse,chk);
                 
                 if (dt.Rows.Count > 0)
                 {
-                     CheckBeforeExport();
+                     
                     try
                     {
                         ZaikoKanriHyou_Report zkh_Report = new ZaikoKanriHyou_Report();

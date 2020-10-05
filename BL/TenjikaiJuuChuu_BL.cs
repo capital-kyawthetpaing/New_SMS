@@ -15,6 +15,60 @@ namespace BL
         {
 
         }
+        public bool Select_TenjiData(Tenjikai_Entity tje,out DataTable GridDt)
+        {
+            var ds = tdl.Select_TenjiData(tje) ;
+            if (ds.Tables.Count == 2 && ds.Tables[0].Rows.Count > 0 && ds.Tables[1].Rows.Count > 0)
+            {
+                GridDt = ds.Tables[1];
+                var dtDetail = ds.Tables[0];
+                tje = new Tenjikai_Entity() {
+
+                    Shiiresaki=  dtDetail.Rows[0]["VendorCD"].ToString(),
+                    Nendo = dtDetail.Rows[0]["LastYearTerm"].ToString(),
+                    ShiZun = dtDetail.Rows[0]["LastSeason"].ToString(),
+                    JuchuuBi= dtDetail.Rows[0]["JuChuuDate"].ToString(),
+                    UriageYoteiBi =dtDetail.Rows[0]["SalesPlanDate"].ToString(),
+                    ShuuKaSouKo = dtDetail.Rows[0]["SoukoName"].ToString(),
+                    TantouStaffu = dtDetail.Rows[0]["StaffCD"].ToString(),
+                    StaffName= dtDetail.Rows[0]["StaffName"].ToString(),
+
+                    CVFlg = dtDetail.Rows[0]["CustomerVariousFlg"].ToString(),// To make enable disable 0 > Dis 1 > Ena
+                    Kokyaku = dtDetail.Rows[0]["CustomerCD"].ToString(),
+                    K_Name1 = dtDetail.Rows[0]["CustomerName"].ToString(),
+                    K_name2 = dtDetail.Rows[0]["CustomerName2"].ToString(),
+                    K_Address1 = dtDetail.Rows[0]["CAddress1"].ToString(),
+                    K_Address2 = dtDetail.Rows[0]["CAddress2"].ToString(),
+                    K_Denwa1 = dtDetail.Rows[0]["CTel11"].ToString(),
+                    K_Denwa2 = dtDetail.Rows[0]["CTel12"].ToString(),
+                    K_Denwa3 = dtDetail.Rows[0]["CTel13"].ToString(),
+                    K_Zip1 = dtDetail.Rows[0]["CZipCD1"].ToString(),
+                    K_Zip2 = dtDetail.Rows[0]["CZipCD2"].ToString(),
+                    CKBN=  dtDetail.Rows[0]["CKBN"].ToString(),
+
+                    DVFlg = dtDetail.Rows[0]["DeliveryVariousFlg"].ToString(), // To make enable disable 0 > Dis 1 > Ena
+                    HaisoSaki = dtDetail.Rows[0]["DeliveryCD"].ToString(),
+                    H_Name1 = dtDetail.Rows[0]["DeliveryName"].ToString(),
+                    H_name2 = dtDetail.Rows[0]["DeliveryName2"].ToString(),
+                    H_Address1 = dtDetail.Rows[0]["DeliveryAddress1"].ToString(),
+                    H_Address2 = dtDetail.Rows[0]["DeliveryAddress2"].ToString(),
+                    H_Denwa1 = dtDetail.Rows[0]["DeliveryTel11"].ToString(),
+                    H_Denwa2 = dtDetail.Rows[0]["DeliveryTel12"].ToString(),
+                    H_Denwa3 = dtDetail.Rows[0]["DeliveryTel13"].ToString(),
+                    H_Zip1 = dtDetail.Rows[0]["DeliveryZipCD1"].ToString(),
+                    H_Zip2 = dtDetail.Rows[0]["DeliveryZipCD2"].ToString(),
+                    HKBN = dtDetail.Rows[0]["HKBN"].ToString(),
+
+                    YoteiKinShu = dtDetail.Rows[0]["PaymentMethodCD"].ToString(),
+                };
+            }
+            else
+            {
+                GridDt = null;
+                return false;
+            }
+            return true;
+        }
         public bool D_TenjiInsert( Tenjikai_Entity tje, string xml )
         {
             return tdl.D_TenjiInsert(tje,xml);
@@ -40,9 +94,9 @@ namespace BL
         {
             return tdl.GetTaxRate(taxflg, changeDtae);
         }
-        public bool Check_DTenjikaiJuuchuu(string tkb)
+        public DataTable Check_DTenjikaiJuuchuu(string tkb)
         {
-            return tdl.Check_DTenjikaiJuuchuu(tkb).Rows.Count > 0 ?  true : false;
+            return tdl.Check_DTenjikaiJuuchuu(tkb);
         }
     }
 }
