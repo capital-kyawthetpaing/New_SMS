@@ -60,6 +60,8 @@ namespace Search
             BillingDateTo,
             CollectDateFrom,
             CollectDateTo,
+            JuchuProcessNOFrom,
+            JuchuProcessNOTo,
             JuchuNoFrom,
             JuchuNoTo,
 
@@ -128,6 +130,8 @@ namespace Search
                 BillingCloseDateTo = detailControls[(int)EIndex.BillingDateTo].Text,
                 CollectClearDateFrom = detailControls[(int)EIndex.CollectDateFrom].Text,
                 CollectClearDateTo = detailControls[(int)EIndex.CollectDateTo].Text,
+                JuchuuProcessNOFrom = detailControls[(int)EIndex.JuchuProcessNOFrom].Text,
+                JuchuuProcessNOTo = detailControls[(int)EIndex.JuchuProcessNOTo].Text,
                 JuchuuNOFrom = detailControls[(int)EIndex.JuchuNoFrom].Text,
                 JuchuuNOTo = detailControls[(int)EIndex.JuchuNoTo].Text,
 
@@ -314,7 +318,7 @@ namespace Search
                  ,ScCustomer.TxtCode,txtCustomerName, ckM_TextBox4,ckM_TextBox8, ckM_TextBox3,ckM_TextBox15
                  ,ScVendor.TxtCode,txtVendorName, ScStaff.TxtCode
                   ,ckM_TextBox1, ckM_TextBox2, ckM_TextBox10, ckM_TextBox9
-                 ,ckM_TextBox14, ckM_TextBox13,ckM_TextBox12, ckM_TextBox11,ckM_TextBox17,ckM_TextBox16
+                 ,ckM_TextBox14, ckM_TextBox13,ckM_TextBox12, ckM_TextBox11,ckM_TextBox17,ckM_TextBox16,ckM_TextBox19,ckM_TextBox18
                  , ckM_TextBox6, ckM_TextBox7, ckM_TextBox5
                  };
 
@@ -382,13 +386,15 @@ namespace Search
                     }
 
                     break;
+                case (int)EIndex.JuchuProcessNOFrom:
+                case (int)EIndex.JuchuProcessNOTo:
                 case (int)EIndex.JuchuNoFrom:
                 case (int)EIndex.JuchuNoTo:
                     if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                         return true;
 
                     //(From) ≧ (To)である場合Error
-                    if (index == (int)EIndex.JuchuNoTo)
+                    if (index == (int)EIndex.JuchuNoTo || index == (int)EIndex.JuchuProcessNOTo)
                     {
                         if (!string.IsNullOrWhiteSpace(detailControls[index - 1].Text) && !string.IsNullOrWhiteSpace(detailControls[index].Text))
                         {
@@ -756,8 +762,6 @@ namespace Search
                     case (int)EIndex.VendorCD:
                     case (int)EIndex.CustomerCD:
                     case (int)EIndex.StaffCD:
-                    case (int)EIndex.JuchuNoFrom:
-                    case (int)EIndex.JuchuNoTo:
                     case (int)EIndex.SKUCD:
                         case (int)EIndex.JanCD:
                         F9Visible = true;

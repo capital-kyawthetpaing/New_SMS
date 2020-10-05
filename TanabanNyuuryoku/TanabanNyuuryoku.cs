@@ -587,6 +587,13 @@ namespace TanabanNyuuryoku
           
         }
 
+        private void dgvTanaban_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvTanaban.CurrentRow.Cells["colRackNo1"].Selected = true;
+            //dgvTanaban.CurrentRow.Cells["colRackNo1"].Value.ToString().Length;
+            dgvTanaban.BeginEdit(true);
+        }
+
         //private void CheckRowAdd(DataGridViewRow row)
         //{
         //    if(row.Index == dgvTanaban.Rows.Count -1)
