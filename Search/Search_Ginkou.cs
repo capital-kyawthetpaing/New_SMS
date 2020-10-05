@@ -114,8 +114,9 @@ namespace Search
                 BankName = GdvGinkou.CurrentRow.Cells["colBankName"].Value.ToString();
                 //ChangeDate = lblChangeDate.Text; 
                 ChangeDate=GdvGinkou.CurrentRow.Cells["colChangeDate"].Value.ToString();
-                this.Close();
+                
             }
+            this.Close();
         }
 
         private void FrmSearch_Ginkou_KeyUp(object sender, KeyEventArgs e)

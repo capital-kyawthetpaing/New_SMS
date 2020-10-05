@@ -199,6 +199,7 @@
             this.dgvTanaban.UseRowNo = true;
             this.dgvTanaban.UseSetting = true;
             this.dgvTanaban.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTanaban_CellContentClick);
+            this.dgvTanaban.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTanaban_CellEnter);
             this.dgvTanaban.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvTanaban_CellValidating);
             this.dgvTanaban.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvTanaban_Paint);
             this.dgvTanaban.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvTanaban_KeyDown);

@@ -2140,7 +2140,7 @@ namespace ShukkaSiziTourokuFromJuchuu
             string syukkaName = mGrid.g_DArray[row].DeliveryName;
             string syukkaDate = mGrid.g_DArray[row].DeliveryPlanDate;
             decimal sum = 0;
-            int firstRow = 0;
+            int firstRow = -1;
 
             //出荷CheckBoxをONにした場合、(When the shipping CheckBox is turned ON,)
             //同一出荷先/出荷予定日の受注明細を集計し、合計税抜受注額を算出する。
@@ -2152,7 +2152,7 @@ namespace ShukkaSiziTourokuFromJuchuu
                     {
                         sum += bbl.Z_Set(mGrid.g_DArray[RW].Hanbaigaku);
 
-                        if(firstRow==0)
+                        if(firstRow==-1)
                             firstRow = RW;
                     }
                 }
@@ -2179,7 +2179,7 @@ namespace ShukkaSiziTourokuFromJuchuu
                         ChangeCheckUntin(true, row);
                         return;
                     }
-                    else
+                    else if(firstRow >= 0)
                     {
                         mGrid.g_DArray[firstRow].ChkUntin = true;
                         ChangeCheckUntin(true, firstRow);

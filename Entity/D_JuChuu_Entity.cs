@@ -123,7 +123,9 @@ namespace Entity
 
         //照会用Entity
         public string KanaName { get; set; }
-        public string VendorCD { get; set; }
+        public string VendorCD { get; set; }        
+        public string JuchuuProcessNOFrom { get; set; }
+        public string JuchuuProcessNOTo { get; set; }
         public string JuchuuNOFrom { get; set; }
         public string JuchuuNOTo { get; set; }
         public string SalesDateFrom  { get; set; }

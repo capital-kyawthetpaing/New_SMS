@@ -3291,12 +3291,8 @@ namespace HikiateHenkouNyuuryoku
             this.ClearZaikoInfo();
             this.ClearJuchuuInfo();
 
-            if (Kbn == 0)
-            {
-                S_Clear_Grid();   //画面クリア（明細部）
-                S_Clear_Grid2();   //画面クリア（明細部）
-            }
-            
+            S_Clear_Grid();   //画面クリア（明細部）
+            S_Clear_Grid2();   //画面クリア（明細部）         
 
        }
 
