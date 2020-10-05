@@ -1317,7 +1317,7 @@ BEGIN
                                            WHEN @KBN_CHOSEI_ADD THEN @FromStoreCD
                                            WHEN @KBN_CHOSEI_DEL THEN @FromStoreCD
                                            WHEN @KBN_LOCATION   THEN @FromStoreCD
-                                           WHEN @KBN_HENPIN     THEN @FromStoreCD
+                                           WHEN @KBN_HENPIN     THEN @ToStoreCD		--2020.10.6
                                            WHEN @KBN_TENPOKAN   THEN @ToStoreCD
                                            ELSE NULL END)	--ToStoreCD
                    ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN @ToSoukoCD
@@ -1325,7 +1325,7 @@ BEGIN
                                            WHEN @KBN_CHOSEI_ADD THEN @FromSoukoCD
                                            WHEN @KBN_CHOSEI_DEL THEN @FromSoukoCD
                                            WHEN @KBN_LOCATION   THEN @FromSoukoCD
-                                           WHEN @KBN_HENPIN     THEN @FromSoukoCD
+                                           WHEN @KBN_HENPIN     THEN @ToSoukoCD		--2020.10.6
                                            WHEN @KBN_TENPOKAN   THEN @ToSoukoCD
                                            ELSE NULL END)	--ToSoukoCD
                    ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN tbl.ToRackNO
@@ -2180,7 +2180,7 @@ BEGIN
                                                        WHEN @KBN_CHOSEI_ADD THEN @FromStoreCD
                                                        WHEN @KBN_CHOSEI_DEL THEN @FromStoreCD
                                                        WHEN @KBN_LOCATION   THEN @FromStoreCD
-                                                       WHEN @KBN_HENPIN     THEN @FromStoreCD
+                                                       WHEN @KBN_HENPIN     THEN @ToStoreCD		--2020.10.6
                                                        WHEN @KBN_TENPOKAN   THEN @ToStoreCD
                                                        ELSE NULL END)
                                ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN @ToSoukoCD
@@ -2188,7 +2188,7 @@ BEGIN
                                                        WHEN @KBN_CHOSEI_ADD THEN @FromSoukoCD
                                                        WHEN @KBN_CHOSEI_DEL THEN @FromSoukoCD
                                                        WHEN @KBN_LOCATION   THEN @FromSoukoCD
-                                                       WHEN @KBN_HENPIN     THEN @FromSoukoCD
+                                                       WHEN @KBN_HENPIN     THEN @ToSoukoCD		--2020.10.6
                                                        WHEN @KBN_TENPOKAN   THEN @ToSoukoCD
                                                        ELSE NULL END)
                                ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN tbl.ToRackNO
@@ -2864,14 +2864,14 @@ BEGIN
                                                    WHEN @KBN_CHOSEI_ADD THEN @FromStoreCD
                                                    WHEN @KBN_CHOSEI_DEL THEN @FromStoreCD
                                                    WHEN @KBN_LOCATION   THEN @FromStoreCD
-                                                   WHEN @KBN_HENPIN     THEN @FromStoreCD
+                                                   WHEN @KBN_HENPIN     THEN @ToStoreCD		--2020.10.6
                                                    ELSE NULL END)	--ToStoreCD
                            ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN @ToSoukoCD
                                                    WHEN @KBN_SYOCD      THEN @FromSoukoCD
                                                    WHEN @KBN_CHOSEI_ADD THEN @FromSoukoCD
                                                    WHEN @KBN_CHOSEI_DEL THEN @FromSoukoCD
                                                    WHEN @KBN_LOCATION   THEN @FromSoukoCD
-                                                   WHEN @KBN_HENPIN     THEN @FromSoukoCD
+                                                   WHEN @KBN_HENPIN     THEN @ToSoukoCD		--2020.10.6
                                                    ELSE NULL END)	--ToSoukoCD
                            ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN tbl.ToRackNO
                                                    WHEN @KBN_SYOCD      THEN tbl.FromRackNO
@@ -2882,10 +2882,10 @@ BEGIN
                                                    ELSE NULL END)	--ToRackNO
                            
                            ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN @ToStockNO    -- (D_Stock)●(移動先)と同じ値
-                                                   WHEN @KBN_SYOCD      THEN @StockNO   --(D_Stock)☆(移動元)と同じ値
-                                                   WHEN @KBN_CHOSEI_ADD THEN @StockNO  --(D_Stock)☆(移動元)と同じ値
-                                                   WHEN @KBN_CHOSEI_DEL THEN @StockNO  --(D_Stock)☆(移動元)と同じ値
-                                                   WHEN @KBN_LOCATION   THEN @StockNO    --(D_Stock)☆(移動元)と同じ値
+                                                   WHEN @KBN_SYOCD      THEN @StockNO      --(D_Stock)☆(移動元)と同じ値
+                                                   WHEN @KBN_CHOSEI_ADD THEN @StockNO      --(D_Stock)☆(移動元)と同じ値
+                                                   WHEN @KBN_CHOSEI_DEL THEN @StockNO      --(D_Stock)☆(移動元)と同じ値
+                                                   WHEN @KBN_LOCATION   THEN @StockNO      --(D_Stock)☆(移動元)と同じ値
                                                    WHEN @KBN_HENPIN     THEN @ToStockNO    -- (D_Stock)●(移動先)と同じ値
                                                    ELSE NULL END)  --ToStockNO
                            ,@FromStoreCD	--FromStoreCD
@@ -2895,8 +2895,8 @@ BEGIN
                                                    ELSE NULL END)    --CustomerCD
                            ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN @WUpdSu * (-1)   --Quantity
                                                    WHEN @KBN_SYOCD      THEN @WUpdSu * (-1)   --Quantity
-                                                   WHEN @KBN_CHOSEI_ADD THEN @WUpdSu   --移動数(プラス値とする)
-                                                   WHEN @KBN_CHOSEI_DEL THEN @WUpdSu   --移動数(プラス値とする)
+                                                   WHEN @KBN_CHOSEI_ADD THEN @WUpdSu          --移動数(プラス値とする)
+                                                   WHEN @KBN_CHOSEI_DEL THEN @WUpdSu          --移動数(プラス値とする)
                                                    WHEN @KBN_LOCATION   THEN @WUpdSu * (-1)   --Quantity
                                                    WHEN @KBN_HENPIN     THEN @WUpdSu * (-1)   --Quantity
                                                    ELSE @WUpdSu END) 
