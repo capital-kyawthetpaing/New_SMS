@@ -148,6 +148,22 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
             if (!RequireCheck(new Control[] { ScTankaCopy.TxtCode }, txtDateCopy))
                 return false;
 
+            ScTankaCopy.ChangeDate = bbl.GetDate();//ses
+            if (!string.IsNullOrEmpty(ScTankaCopy.TxtCode.Text))
+            {
+                if (ScTankaCopy.SelectData())
+                {
+                    ScTankaCopy.Value1 = ScTankaCopy.TxtCode.Text;
+                    ScTankaCopy.Value2 = ScTankaCopy.LabelText;
+                }
+                else
+                {
+                    bbl.ShowMessage("E101");
+                    ScTankaCopy.SetFocus(1);
+                    return false;
+                }
+            }
+
             ScSegmentCopy.ChangeDate = bbl.GetDate();//ses
             if (!string.IsNullOrEmpty(ScSegmentCopy.TxtCode.Text))
             {
