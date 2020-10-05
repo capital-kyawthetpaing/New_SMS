@@ -139,7 +139,7 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
                 if (str1 > str2)
                 {
                     bbl.ShowMessage("E104");
-                    txtToDate.Focus();
+                    txtPriceOutTaxTo.Focus();
                     return false;
                 }
 
@@ -273,7 +273,6 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
                 else if (OperationMode == EOperationMode.UPDATE)
                 {
                     Display(2);
-
                 }
             }
             
