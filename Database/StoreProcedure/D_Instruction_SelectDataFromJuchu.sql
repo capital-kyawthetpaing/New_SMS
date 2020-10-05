@@ -122,10 +122,6 @@ BEGIN
               ON DD.Number = DM.JuchuuNo
              AND DD.NumberRows = DM.JuchuuRows
            --AND DD.DeleteDateTime IS NULL
-           INNER JOIN D_Reserve AS DR
-              ON DR.Number = DM.JuchuuNo
-             AND DR.NumberRows = DM.JuchuuRows
-             AND DR.DeleteDateTime IS NULL
             LEFT OUTER JOIN M_ZipCode AS MZ
               ON MZ.ZipCD1 = DH.DeliveryZipCD1
              AND MZ.ZipCD2 = DH.DeliveryZipCD2
@@ -173,6 +169,11 @@ BEGIN
             AND NOT EXISTS(SELECT 1 FROM D_Instruction AS DI
                            WHERE DI.DeliveryPlanNO = DD.DeliveryPlanNO     --èoâ◊éwé¶ñ¢çÏê¨
                            AND DI.DeleteDateTime IS NULL)
+                           
+            AND EXISTS(SELECT DR.ReserveNO FROM D_Reserve AS DR
+                       WHERE DR.Number = DM.JuchuuNo
+                       AND DR.NumberRows = DM.JuchuuRows
+                       AND DR.DeleteDateTime IS NULL)
 
         ) AS DJ
         
