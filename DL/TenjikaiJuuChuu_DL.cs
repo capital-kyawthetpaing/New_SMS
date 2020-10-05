@@ -13,6 +13,18 @@ namespace DL
         {
 
         }
+        //Select_TenjiData
+        public DataSet Select_TenjiData(Tenjikai_Entity tje)
+        {
+            string sp = "Select_TenjiDataSet";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@TenjiNo", new ValuePair { value1 = SqlDbType.VarChar, value2 =  tje.TenjiKaiOrderNo } },
+            };
+
+            UseTransaction = true;
+            return SelectSetData(dic, sp);
+        }
         public bool D_TenjiInsert(Tenjikai_Entity tje, string xml)
         {
            

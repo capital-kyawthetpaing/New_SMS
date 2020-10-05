@@ -116,6 +116,32 @@ namespace DL
             }
             return dt;
         }
+        public DataSet SelectSetData(Dictionary<string, ValuePair> dic, string sp)
+        {
+
+            DataSet dt = new DataSet();
+            try
+            {
+                command = new SqlCommand(sp, GetConnection())
+                {
+                    CommandType = CommandType.StoredProcedure,
+                };
+                foreach (KeyValuePair<string, ValuePair> pair in dic)
+                {
+                    ValuePair vp = pair.Value;
+                    AddParam(command, pair.Key, vp.value1, vp.value2);
+                }
+                command.CommandTimeout = string.IsNullOrWhiteSpace(iniEntity.TimeoutValues) ? 0 : Convert.ToInt32(iniEntity.TimeoutValues);
+                adapter = new SqlDataAdapter(command);
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                //var msg = ex.Message;
+                throw ex;
+            }
+            return dt;
+        }
         /// <summary>
         /// ktp 2019-05-29 to select easily 
         /// </summary>
