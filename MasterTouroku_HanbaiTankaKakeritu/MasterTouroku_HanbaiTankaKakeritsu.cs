@@ -169,7 +169,7 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
             {
                 if (ScSegmentCopy.SelectData())
                 {
-                    ScSegmentCopy.Value1 = ScSegmentCopy.TxtCode.Text;
+                    ScSegmentCopy.Value1 = ScSegmentCopy.TxtCode.Text; 
                     ScSegmentCopy.Value2 = ScSegment.LabelText;
                 }
                 else
