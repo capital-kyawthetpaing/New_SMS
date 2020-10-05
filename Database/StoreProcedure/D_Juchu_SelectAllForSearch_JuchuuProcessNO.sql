@@ -1048,9 +1048,7 @@ BEGIN
             ,(CASE WHEN  (DM.JuchuuNO = DH.JuchuuNO AND DH.JuchuuRows = DM.JuchuuRows) THEN
                    DH.JuchuuDate
                    ELSE '' END) AS JuchuuDate
-            ,(CASE WHEN  (DM.JuchuuNO = DH.JuchuuNO AND DH.JuchuuRows = DM.JuchuuRows) THEN
-                   DH.JuchuuNO
-                   ELSE '' END) AS JuchuuNO
+            ,DH.JuchuuNO AS JuchuuNO
             ,(CASE WHEN  (DM.JuchuuNO = DH.JuchuuNO AND DH.JuchuuRows = DM.JuchuuRows) THEN
                    DH.JuchuuProcessNO
                    ELSE '' END) AS JuchuuProcessNO
