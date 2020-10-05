@@ -1225,11 +1225,18 @@ namespace ShukkaSiziTourokuFromJuchuu
 
                 case (int)EIndex.PlanDateFrom:
                 case (int)EIndex.PlanDateTo:
-                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    if (index.Equals((int)EIndex.PlanDateFrom) && string.IsNullOrWhiteSpace(detailControls[index].Text))
                         return true;
+                    if (index.Equals((int)EIndex.PlanDateTo) && string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    {
+                        if (!RequireCheck(new Control[] { detailControls[index] }))
+                        {
+                            return false;
+                        }
+                    }
 
                     strYmd = bbl.FormatDate(detailControls[index].Text);
-
+                     
                     //日付として正しいこと(Be on the correct date)Ｅ１０３
                     if (!bbl.CheckDate(strYmd))
                     {
@@ -1491,7 +1498,7 @@ namespace ShukkaSiziTourokuFromJuchuu
                 //Form.Detail.出荷CheckBox＝ONの行のエラーチェック
                 if (mGrid.g_DArray[RW].ChkSyukka)
                 {
-                    for (int CL = (int)ClsGridShukka.ColNO.DeliveryPlanDate; CL < (int)ClsGridShukka.ColNO.COUNT; CL++)
+                    for (int CL = (int)ClsGridShukka.ColNO.DeliveryName; CL < (int)ClsGridShukka.ColNO.COUNT; CL++)
                     {
                         if (CheckGrid(CL, RW, true) == false)
                         {
