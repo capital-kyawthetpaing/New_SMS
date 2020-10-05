@@ -72,7 +72,6 @@ BEGIN
                     --                  ELSE CONVERT(varchar, DM.ShippingPlanDate,111) END)  END) AS DeliveryPlanDate	--èoâ◊ó\íËì˙
                     ,(CASE WHEN DM.ShippingPlanDate IS NULL THEN CONVERT(varchar, GETDATE(), 111)
                       ELSE CONVERT(varchar, DM.ShippingPlanDate,111) END) AS DeliveryPlanDate
-                    
                     --ñ¢ì¸ã‡
                     ,DH.InvoiceGaku
                     ,DB1.TotalCollectAmount AS TotalCollectAmount_DB1	 --D_CollectBillingá@
@@ -123,6 +122,10 @@ BEGIN
               ON DD.Number = DM.JuchuuNo
              AND DD.NumberRows = DM.JuchuuRows
            --AND DD.DeleteDateTime IS NULL
+           INNER JOIN D_Reserve AS DR
+              ON DR.Number = DM.JuchuuNo
+             AND DR.NumberRows = DM.JuchuuRows
+             AND DR.DeleteDateTime IS NULL
             LEFT OUTER JOIN M_ZipCode AS MZ
               ON MZ.ZipCD1 = DH.DeliveryZipCD1
              AND MZ.ZipCD2 = DH.DeliveryZipCD2
