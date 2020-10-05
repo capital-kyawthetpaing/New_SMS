@@ -709,9 +709,9 @@ namespace Search
                     txtCode.Width = 100;
                     lblName.Width = 350;
                     break;
-                case SearchType.JuchuuNO:
-                    txtCode.MaxLength = 6;
-                    txtCode.Width = 60;                
+                case SearchType.JuchuuNO: // Pyoung Gyi Max Length>11/ txtWidth>100 Change htar tal // by PTK
+                    txtCode.MaxLength = 11;
+                    txtCode.Width = 100;                
                     break;
             }
             //}

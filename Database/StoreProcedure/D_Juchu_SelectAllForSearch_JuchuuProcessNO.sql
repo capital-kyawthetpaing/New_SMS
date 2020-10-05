@@ -56,6 +56,8 @@ CREATE PROCEDURE D_Juchu_SelectAllForSearch_JuchuuProcessNO(
     @SKUCD varchar(300),            --カンマ区切り
     @JanCD varchar(300),        --カンマ区切り
     
+    @JuchuuProcessNOFrom  varchar(11),
+    @JuchuuProcessNOTo varchar(11),
     @JuchuuNOFrom  varchar(11),
     @JuchuuNOTo varchar(11),
     @Operator  varchar(10)
@@ -282,12 +284,14 @@ BEGIN
                      
     WHERE DH.JuchuuDate >= (CASE WHEN @JuchuuDateFrom <> '' THEN CONVERT(DATE, @JuchuuDateFrom) ELSE DH.JuchuuDate END)
         AND DH.JuchuuDate <= (CASE WHEN @JuchuuDateTo <> '' THEN CONVERT(DATE, @JuchuuDateTo) ELSE DH.JuchuuDate END)
-        AND DH.JuchuuProcessNO >= (CASE WHEN @JuchuuNOFrom <> '' THEN @JuchuuNOFrom ELSE DH.JuchuuProcessNO END)
-        AND DH.JuchuuProcessNO <= (CASE WHEN @JuchuuNOTo <> '' THEN @JuchuuNOTo ELSE DH.JuchuuProcessNO END)
+        AND DH.JuchuuProcessNO >= (CASE WHEN @JuchuuProcessNOFrom <> '' THEN @JuchuuProcessNOFrom ELSE DH.JuchuuProcessNO END)
+        AND DH.JuchuuProcessNO <= (CASE WHEN @JuchuuProcessNOTo <> '' THEN @JuchuuProcessNOTo ELSE DH.JuchuuProcessNO END)
+        AND DH.JuchuuNO >= (CASE WHEN @JuchuuNOFrom <> '' THEN @JuchuuNOFrom ELSE DH.JuchuuNO END)
+        AND DH.JuchuuNO <= (CASE WHEN @JuchuuNOTo <> '' THEN @JuchuuNOTo ELSE DH.JuchuuNO END)
         AND DH.CustomerCD = (CASE WHEN @CustomerCD <> '' THEN @CustomerCD ELSE DH.CustomerCD END)
         AND DH.StoreCD = (CASE WHEN @StoreCD <> '' THEN @StoreCD ELSE DH.StoreCD END)
         AND DH.StaffCD = (CASE WHEN @StaffCD <> '' THEN @StaffCD ELSE DH.StaffCD END)
-		AND DH.JuchuuKBN IN (@ChkGaisho, @ChkTento, @ChkWeb)
+        AND DH.JuchuuKBN IN (@ChkGaisho, @ChkTento, @ChkWeb)
         AND DH.DeleteDateTime IS NULL
         AND DH.JuchuuProcessNO IS NOT NULL
 
@@ -535,8 +539,8 @@ BEGIN
                     AND DP.JuchuuNO = DM.JuchuuNO
                     AND DP.JuchuuRows = DM.JuchuuRows
                     )
-			);
-			
+            );
+            
             UPDATE #TableForJuchuuProcessNO
             SET DelFlg = 0
             WHERE EXISTS(
@@ -572,7 +576,7 @@ BEGIN
             AND DM.JuchuuRows = #TableForJuchuuProcessNO.JuchuuRows 
             AND DB.BillingGaku = DM.JuchuuGaku
             AND DC.CollectAmount <> DM.JuchuuGaku
-			);
+            );
         END
         
         
@@ -638,7 +642,7 @@ BEGIN
             AND DM.JuchuuRows = #TableForJuchuuProcessNO.JuchuuRows 
             AND DB.OrderSu < DM.JuchuuSuu
             AND DM.HikiateFLG <> 1
-			);
+            );
 
         END
         
@@ -707,7 +711,7 @@ BEGIN
                     	OR
                     	MM.Num2 IN (1,2,4,6))
                     )
-			);
+            );
         END
         
         --未入荷ON
@@ -743,12 +747,12 @@ BEGIN
                     AND DO.JuchuuRows = DM.JuchuuRows
                     
                     AND (DA.ArrivalPlanDate IS NOT NULL
-						OR (ISNULL(DA.ArrivalPlanMonth,0) <> 0
-                    	AND	MM.Num2 IN (1,2,4,6)))
+                        OR (ISNULL(DA.ArrivalPlanMonth,0) <> 0
+                        AND MM.Num2 IN (1,2,4,6)))
                     --①のD_ArrivalPlanに対して、入荷が未だのものがある
                     AND DA.ArrivalPlanSu<> DA.ArrivalSu
                     )
-			);
+            );
         END
 
         --未仕入ON
@@ -1027,29 +1031,27 @@ BEGIN
     END;
     
     SELECT (CASE WHEN  (DM.JuchuuNO = DH.JuchuuNO AND DH.JuchuuRows = DM.JuchuuRows) THEN
-                DH.StoreCD
-                ELSE '' END) AS StoreCD
+                 DH.StoreCD
+                 ELSE '' END) AS StoreCD
             ,(CASE WHEN  (DM.JuchuuNO = DH.JuchuuNO AND DH.JuchuuRows = DM.JuchuuRows) THEN
-                DH.StoreName
-                ELSE '' END) AS StoreName
+                   DH.StoreName
+                   ELSE '' END) AS StoreName
             ,(CASE WHEN  (DM.JuchuuNO = DH.JuchuuNO AND DH.JuchuuRows = DM.JuchuuRows) THEN
-                DH.CustomerCD
-                ELSE '' END) AS CustomerCD
+                   DH.CustomerCD
+                   ELSE '' END) AS CustomerCD
             ,(CASE WHEN  (DM.JuchuuNO = DH.JuchuuNO AND DH.JuchuuRows = DM.JuchuuRows) THEN
-                DH.CustomerName
-                ELSE '' END) AS CustomerName
+                   DH.CustomerName
+                   ELSE '' END) AS CustomerName
             ,(CASE WHEN  (DM.JuchuuNO = DH.JuchuuNO AND DH.JuchuuRows = DM.JuchuuRows) THEN
-                DH.TEL
-                ELSE '' END) AS TEL
+                   DH.TEL
+                   ELSE '' END) AS TEL
             ,(CASE WHEN  (DM.JuchuuNO = DH.JuchuuNO AND DH.JuchuuRows = DM.JuchuuRows) THEN
-                DH.JuchuuDate
-                ELSE '' END) AS JuchuuDate
+                   DH.JuchuuDate
+                   ELSE '' END) AS JuchuuDate
+            ,DH.JuchuuNO AS JuchuuNO
             ,(CASE WHEN  (DM.JuchuuNO = DH.JuchuuNO AND DH.JuchuuRows = DM.JuchuuRows) THEN
-                DH.JuchuuNO
-                ELSE '' END) AS JuchuuNO
-            ,(CASE WHEN  (DM.JuchuuNO = DH.JuchuuNO AND DH.JuchuuRows = DM.JuchuuRows) THEN
-                DH.JuchuuProcessNO
-                ELSE '' END) AS JuchuuProcessNO
+                   DH.JuchuuProcessNO
+                   ELSE '' END) AS JuchuuProcessNO
             ,DH.SKUName
             ,DH.JANCD
             ,DH.SizeName
@@ -1059,44 +1061,44 @@ BEGIN
             ,DH.JuchuuGaku
              
             ,(CASE WHEN (DM.JuchuuNO = DH.JuchuuNO AND DH.JuchuuRows = DM.JuchuuRows) THEN
-            	DH.CommentOutStore
-            	ELSE '' END) AS CommentOutStore
+                   DH.CommentOutStore
+                   ELSE '' END) AS CommentOutStore
             ,(CASE WHEN (DM.JuchuuNO = DH.JuchuuNO AND DH.JuchuuRows = DM.JuchuuRows) THEN
-                DH.CommentInStore
-                ELSE '' END) AS CommentInStore
+                   DH.CommentInStore
+                   ELSE '' END) AS CommentInStore
             ,DH.CommentOutStoreM
             ,DH.CommentInStoreM
             ,(CASE WHEN (DM.JuchuuNO = DH.JuchuuNO AND DH.JuchuuRows = DM.JuchuuRows) THEN
-                DH.StaffName
-                ELSE '' END) AS StaffName
+                   DH.StaffName
+                   ELSE '' END) AS StaffName
             ,(CASE WHEN (DM.JuchuuNO = DH.JuchuuNO AND DH.JuchuuRows = DM.JuchuuRows) THEN
-                DH.DenominationName
-                ELSE '' END) AS DenominationName
+                   DH.DenominationName
+                   ELSE '' END) AS DenominationName
             ,(CASE WHEN (DM.JuchuuNO = DH.JuchuuNO AND DH.JuchuuRows = DM.JuchuuRows) THEN
-                DH.CollectAmount
-                ELSE '' END) AS CollectAmount
+                   DH.CollectAmount
+                   ELSE '' END) AS CollectAmount
             ,DH.OrderDate
             ,DH.OrderCD
             ,DH.OrderName
             ,DH.ArrivalPlanDate
             ,DH.ArrivalDate
             ,(CASE WHEN (DM.JuchuuNO = DH.JuchuuNO AND DH.JuchuuRows = DM.JuchuuRows) THEN
-                DH.SalesDate
-                ELSE '' END) AS SalesDate
+                   DH.SalesDate
+                   ELSE '' END) AS SalesDate
             ,(CASE WHEN  (DM.JuchuuNO = DH.JuchuuNO AND DH.JuchuuRows = DM.JuchuuRows) THEN
-                DH.BillingCloseDate
-                ELSE '' END) AS BillingCloseDate
+                   DH.BillingCloseDate
+                   ELSE '' END) AS BillingCloseDate
             ,(CASE WHEN  (DM.JuchuuNO = DH.JuchuuNO AND DH.JuchuuRows = DM.JuchuuRows) THEN
-                DH.CollectClearDate
-                ELSE '' END) AS CollectClearDate
+                   DH.CollectClearDate
+                   ELSE '' END) AS CollectClearDate
             
     FROM #TableForJuchuuProcessNO AS DH
     LEFT OUTER JOIN (SELECT JuchuuProcessNO, JuchuuNO, JuchuuRows
-                ,ROW_NUMBER() OVER(PARTITION BY JuchuuProcessNO ORDER BY JuchuuNO,JuchuuRows) AS ROWNO
-                FROM #TableForJuchuuProcessNO)AS DM 
-                ON DM.JuchuuProcessNO = DH.JuchuuProcessNO
-                AND DM.JuchuuNO = DH.JuchuuNO
-                AND DM.ROWNO = 1
+                           ,ROW_NUMBER() OVER(PARTITION BY JuchuuProcessNO ORDER BY JuchuuNO,JuchuuRows) AS ROWNO
+                     FROM #TableForJuchuuProcessNO)AS DM 
+                     ON DM.JuchuuProcessNO = DH.JuchuuProcessNO
+                     AND DM.JuchuuNO = DH.JuchuuNO
+                     AND DM.ROWNO = 1
     ORDER BY DH.JuchuuProcessNO, DH.JuchuuNO
     ;
 END

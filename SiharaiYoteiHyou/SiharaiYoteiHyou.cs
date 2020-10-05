@@ -61,7 +61,7 @@ namespace SiharaiYoteiHyou
             RdoUnpaid.Checked = true;
             chkExpense.Checked = true;
             chkPurchase.Checked = true;
-            scPaymentDestinaion.TxtCode.Require(true);
+            //scPaymentDestinaion.TxtCode.Require(true);
             comboStore.Require(true);
         }
 
