@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMasterTouroku_HanbaiTankaKakeritsu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboSeasonCopy = new CKM_Controls.CKM_ComboBox();
             this.cboYearCopy = new CKM_Controls.CKM_ComboBox();
@@ -193,18 +192,18 @@
             this.gdvHanbaiTankaKakeritsu.AllowUserToAddRows = false;
             this.gdvHanbaiTankaKakeritsu.AllowUserToDeleteRows = false;
             this.gdvHanbaiTankaKakeritsu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.gdvHanbaiTankaKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.gdvHanbaiTankaKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gdvHanbaiTankaKakeritsu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gdvHanbaiTankaKakeritsu.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("gdvHanbaiTankaKakeritsu.CheckCol")));
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gdvHanbaiTankaKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gdvHanbaiTankaKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gdvHanbaiTankaKakeritsu.ColumnHeadersHeight = 25;
             this.gdvHanbaiTankaKakeritsu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colchk,
@@ -219,14 +218,6 @@
             this.colStartDate,
             this.colEndDate,
             this.colRate});
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle39.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gdvHanbaiTankaKakeritsu.DefaultCellStyle = dataGridViewCellStyle39;
             this.gdvHanbaiTankaKakeritsu.EnableHeadersVisualStyles = false;
             this.gdvHanbaiTankaKakeritsu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gdvHanbaiTankaKakeritsu.Location = new System.Drawing.Point(25, 177);
@@ -326,10 +317,10 @@
             // colRate
             // 
             this.colRate.DataPropertyName = "Rate";
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle38.Format = "N2";
-            dataGridViewCellStyle38.NullValue = "0";
-            this.colRate.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.colRate.DefaultCellStyle = dataGridViewCellStyle3;
             this.colRate.HeaderText = "掛率";
             this.colRate.MaxInputLength = 6;
             this.colRate.Name = "colRate";
@@ -575,6 +566,7 @@
             this.ScSegmentCopy.Size = new System.Drawing.Size(414, 27);
             this.ScSegmentCopy.Stype = Search.CKM_SearchControl.SearchType.商品分類;
             this.ScSegmentCopy.TabIndex = 12;
+            this.ScSegmentCopy.test = null;
             this.ScSegmentCopy.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScSegmentCopy.UseChangeDate = false;
             this.ScSegmentCopy.Value1 = null;
@@ -606,6 +598,7 @@
             this.ScBrandCopy.Size = new System.Drawing.Size(414, 27);
             this.ScBrandCopy.Stype = Search.CKM_SearchControl.SearchType.ブランド;
             this.ScBrandCopy.TabIndex = 11;
+            this.ScBrandCopy.test = null;
             this.ScBrandCopy.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScBrandCopy.UseChangeDate = false;
             this.ScBrandCopy.Value1 = null;
@@ -636,6 +629,7 @@
             this.ScTankaCopy.Size = new System.Drawing.Size(274, 27);
             this.ScTankaCopy.Stype = Search.CKM_SearchControl.SearchType.単価設定;
             this.ScTankaCopy.TabIndex = 10;
+            this.ScTankaCopy.test = null;
             this.ScTankaCopy.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScTankaCopy.UseChangeDate = false;
             this.ScTankaCopy.Value1 = null;
@@ -666,6 +660,7 @@
             this.ScSegment.Size = new System.Drawing.Size(414, 27);
             this.ScSegment.Stype = Search.CKM_SearchControl.SearchType.商品分類;
             this.ScSegment.TabIndex = 4;
+            this.ScSegment.test = null;
             this.ScSegment.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScSegment.UseChangeDate = false;
             this.ScSegment.Value1 = null;
@@ -697,6 +692,7 @@
             this.ScBrand.Size = new System.Drawing.Size(414, 27);
             this.ScBrand.Stype = Search.CKM_SearchControl.SearchType.ブランド;
             this.ScBrand.TabIndex = 3;
+            this.ScBrand.test = null;
             this.ScBrand.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScBrand.UseChangeDate = false;
             this.ScBrand.Value1 = null;
@@ -727,6 +723,7 @@
             this.ScTanka.Size = new System.Drawing.Size(274, 27);
             this.ScTanka.Stype = Search.CKM_SearchControl.SearchType.単価設定;
             this.ScTanka.TabIndex = 2;
+            this.ScTanka.test = null;
             this.ScTanka.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScTanka.UseChangeDate = false;
             this.ScTanka.Value1 = null;
@@ -1154,10 +1151,10 @@
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "Rate";
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle40.Format = "N2";
-            dataGridViewCellStyle40.NullValue = "0";
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = "0";
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn11.HeaderText = "掛率";
             this.dataGridViewTextBoxColumn11.MaxInputLength = 8;
             this.dataGridViewTextBoxColumn11.MinimumWidth = 3;
