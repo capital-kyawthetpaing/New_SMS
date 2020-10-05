@@ -3229,7 +3229,18 @@ namespace ZaikoIdouNyuuryoku
         private void CboToSoukoCD_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (CboToSoukoCD.SelectedIndex > 0)
-                ScToRackNo.Value1 = CboToSoukoCD.SelectedValue.ToString();
+            {
+                if(mIdoType !=EIdoType.棚番変更)
+                    ScToRackNo.Value1 = CboToSoukoCD.SelectedValue.ToString();
+            }
+        }
+
+        private void CboFromSoukoCD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            {
+                if (mIdoType == EIdoType.棚番変更)
+                    ScToRackNo.Value1 = CboFromSoukoCD.SelectedValue.ToString();
+            }
         }
         #endregion
 
@@ -3262,6 +3273,8 @@ namespace ZaikoIdouNyuuryoku
 
                                 default:
                                     detailControls[i].Enabled = true;
+                                    if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                        ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = true;
                                     break;
                             }
                         }
@@ -3281,6 +3294,8 @@ namespace ZaikoIdouNyuuryoku
                                 case (int)EIndex.HenpinSaki:
                                     detailControls[i].Enabled = false;
                                     detailControls[i].Text = "";
+                                    if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                        ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = false;
                                     break;
 
                                 default:
@@ -3309,6 +3324,8 @@ namespace ZaikoIdouNyuuryoku
                             case (int)EIndex.HenpinSaki:
                                 detailControls[i].Enabled = false;
                                 detailControls[i].Text = "";
+                                if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = false;
                                 break;
 
                             default:
@@ -3337,6 +3354,8 @@ namespace ZaikoIdouNyuuryoku
                             case (int)EIndex.HenpinSaki:
                                 detailControls[i].Enabled = false;
                                 detailControls[i].Text = "";
+                                if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = false;
                                 break;
 
                             default:
@@ -3366,6 +3385,8 @@ namespace ZaikoIdouNyuuryoku
                             case (int)EIndex.HenpinSaki:
                                 detailControls[i].Enabled = false;
                                 detailControls[i].Text = "";
+                                if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = false;
                                 break;
 
                             default:
@@ -3396,6 +3417,8 @@ namespace ZaikoIdouNyuuryoku
                             case (int)EIndex.HenpinSaki:
                                 detailControls[i].Enabled = false;
                                 detailControls[i].Text = "";
+                                if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = false;
                                 break;
 
                             default:
@@ -3425,6 +3448,8 @@ namespace ZaikoIdouNyuuryoku
                             case (int)EIndex.HenpinSaki:
                                 detailControls[i].Enabled = false;
                                 detailControls[i].Text = "";
+                                if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = false;
                                 break;
 
                             default:
@@ -3450,6 +3475,8 @@ namespace ZaikoIdouNyuuryoku
                             case (int)EIndex.JANCD_F:
                                 detailControls[i].Enabled = false;
                                 detailControls[i].Text = "";
+                                if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = false;
                                 break;
 
                             default:
@@ -3839,8 +3866,6 @@ namespace ZaikoIdouNyuuryoku
                 }
             }
         }
-
-     
     }
 }
 
