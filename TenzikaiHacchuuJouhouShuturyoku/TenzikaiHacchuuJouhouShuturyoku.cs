@@ -112,7 +112,7 @@ namespace TenzikaiHacchuuJouhouShuturyoku
                 return false;
             else
             {
-                if (!ScSupplier.SelectData())
+                if (!ScSupplier.IsExists(2))
                 {
                     tzbl.ShowMessage("E101");
                     ScSupplier.SetFocus(1);
@@ -136,17 +136,18 @@ namespace TenzikaiHacchuuJouhouShuturyoku
 
             if(!string.IsNullOrWhiteSpace(ScBrandCD.TxtCode.Text))
             {
-                if (!ScBrandCD.SelectData())
+                if (!ScBrandCD.IsExists(2))
                 {
                     tzbl.ShowMessage("E101");
                     ScSupplier.SetFocus(1);
                     return false;
                 }
+                
             }
 
             if (!string.IsNullOrWhiteSpace(ScSegmentCD.TxtCode.Text))
             {
-                if (!ScSegmentCD.SelectData())
+                if (!ScSegmentCD.IsExists(2))
                 {
                     tzbl.ShowMessage("E101");
                     ScSupplier.SetFocus(1);
@@ -168,5 +169,75 @@ namespace TenzikaiHacchuuJouhouShuturyoku
             return true;
         }
 
+        private void ScSegmentCD_Enter(object sender, EventArgs e)
+        {
+            ScSegmentCD.Value1 = "226";
+        }
+
+
+        private void ScSupplier_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (!String.IsNullOrEmpty(ScSupplier.TxtCode.Text))
+            {
+                ScSupplier.ChangeDate = bbl.GetDate();
+                if (!ScSupplier.SelectData())
+                {
+                    bbl.ShowMessage("E101");
+                    ScSupplier.SetFocus(1);
+                }
+            }
+        }
+
+        private void ScBrandCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (!String.IsNullOrEmpty(ScBrandCD.TxtCode.Text))
+            {
+                ScBrandCD.ChangeDate = bbl.GetDate();
+                if (!ScBrandCD.SelectData())
+                {
+                    bbl.ShowMessage("E101");
+                    ScBrandCD.SetFocus(1);
+                }
+            }
+        }
+
+        private void ScSegmentCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (!String.IsNullOrEmpty(ScSegmentCD.TxtCode.Text))
+            {
+                ScSegmentCD.ChangeDate = bbl.GetDate();
+                if (!ScSegmentCD.SelectData())
+                {
+                    bbl.ShowMessage("E101");
+                    ScSegmentCD.SetFocus(1);
+                }
+            }
+        }
+
+        private void ScExhibitionCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (!String.IsNullOrEmpty(ScExhibitionCD.TxtCode.Text))
+            {
+                ScExhibitionCD.ChangeDate = bbl.GetDate();
+                if (!ScExhibitionCD.SelectData())
+                {
+                    bbl.ShowMessage("E101");
+                    ScExhibitionCD.SetFocus(1);
+                }
+            }
+        }
+
+        private void ScClient2_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if(!string.IsNullOrWhiteSpace(ScClient2.TxtCode.Text))
+            {
+                int result = ScClient1.TxtCode.Text.CompareTo(ScClient2.TxtCode.Text);
+                if(result > 0)
+                {
+                    bbl.ShowMessage("E104");
+                    ScClient2.SetFocus(1);
+                }
+            }
+        }
     }
 }
