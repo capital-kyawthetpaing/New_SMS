@@ -431,7 +431,6 @@
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(500, 19);
             this.txtItemName.TabIndex = 16;
-            this.txtItemName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.txtItemName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtItemName.UseColorSizMode = false;
             // 
