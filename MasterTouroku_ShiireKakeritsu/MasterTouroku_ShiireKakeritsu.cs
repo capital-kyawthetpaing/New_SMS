@@ -1155,27 +1155,27 @@ namespace MasterTouroku_ShiireKakeritsu
             MoveNextControl(e);
         }
 
-        private void dgv_ShiireKakeritsu_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            try
-            {
-                if (Convert.ToInt32(dgv_ShiireKakeritsu.CurrentCell.EditedFormattedValue) < 256 && Convert.ToInt32(dgv_ShiireKakeritsu.CurrentCell.EditedFormattedValue) > 0)
-                {
-                    return;
-                }
-                else
-                {
-                    MessageBox.Show("Enter valid number. . . ");
-                    dgv_ShiireKakeritsu.CurrentCell.Value = 0;
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Enter valid number. . . ");
-                dgv_ShiireKakeritsu.CurrentCell.Value = 0;
-            }
-            dgv_ShiireKakeritsu.RefreshEdit();
-        }
+        //private void dgv_ShiireKakeritsu_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (Convert.ToInt32(dgv_ShiireKakeritsu.CurrentCell.EditedFormattedValue) < 256 && Convert.ToInt32(dgv_ShiireKakeritsu.CurrentCell.EditedFormattedValue) > 0)
+        //        {
+        //            return;
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Enter valid number. . . ");
+        //            dgv_ShiireKakeritsu.CurrentCell.Value = 0;
+        //        }
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        MessageBox.Show("Enter valid number. . . ");
+        //        dgv_ShiireKakeritsu.CurrentCell.Value = 0;
+        //    }
+        //    dgv_ShiireKakeritsu.RefreshEdit();
+        //}
 
         private void dgv_ShiireKakeritsu_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
@@ -1193,7 +1193,6 @@ namespace MasterTouroku_ShiireKakeritsu
                             {
                                 MessageBox.Show("enter valid no");
                                 dgv_ShiireKakeritsu.RefreshEdit();
-
                             }
                         }
                     }
