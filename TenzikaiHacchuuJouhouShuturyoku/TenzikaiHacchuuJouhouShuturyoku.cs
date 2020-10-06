@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base.Client;
+using BL;
 
 namespace TenzikaiHacchuuJouhouShuturyoku
 {
     public partial class FrmTenzikaiHacchuuJouhouShuturyoku : FrmMainForm
     {
+        TenzikaiHacchuuJouhouShuturyoku_BL tzbl = new TenzikaiHacchuuJouhouShuturyoku_BL();
+
         public FrmTenzikaiHacchuuJouhouShuturyoku()
         {
             InitializeComponent();
@@ -111,22 +114,22 @@ namespace TenzikaiHacchuuJouhouShuturyoku
             {
                 if (!ScSupplier.SelectData())
                 {
-                    //mtsbl.ShowMessage("E101");
+                    tzbl.ShowMessage("E101");
                     ScSupplier.SetFocus(1);
                     return false;
                 }
             }
 
             if(cboYear.SelectedValue.ToString() == "-1")
-            {
-                //102
+            {               
+                tzbl.ShowMessage("E102");
                 cboYear.Focus();
                 return false;
             }
 
             if (cboSeason.SelectedValue.ToString() == "-1")
             {
-                //102
+                tzbl.ShowMessage("E102");
                 cboSeason.Focus();
                 return false;
             }
@@ -135,8 +138,29 @@ namespace TenzikaiHacchuuJouhouShuturyoku
             {
                 if (!ScBrandCD.SelectData())
                 {
-                    //mtsbl.ShowMessage("E101");
+                    tzbl.ShowMessage("E101");
                     ScSupplier.SetFocus(1);
+                    return false;
+                }
+            }
+
+            if (!string.IsNullOrWhiteSpace(ScSegmentCD.TxtCode.Text))
+            {
+                if (!ScSegmentCD.SelectData())
+                {
+                    tzbl.ShowMessage("E101");
+                    ScSupplier.SetFocus(1);
+                    return false;
+                }
+            }
+
+            if(!string.IsNullOrWhiteSpace(ScClient2.TxtCode.Text))
+            {
+                int result = ScClient1.TxtCode.Text.CompareTo(ScClient2.TxtCode.Text);
+                if (result > 0)
+                {
+                    tzbl.ShowMessage("E104");
+                    ScClient2.SetFocus(1);
                     return false;
                 }
             }
