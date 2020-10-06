@@ -16,7 +16,8 @@ namespace TenzikaiHacchuuJouhouShuturyoku
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TenzikaiHacchuuJouhouShuturyoku());
+            Application.Run(new FrmTenzikaiHacchuuJouhouShuturyoku());
+           
         }
     }
 }
