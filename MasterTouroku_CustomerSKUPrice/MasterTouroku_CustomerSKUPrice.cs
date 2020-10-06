@@ -38,8 +38,16 @@ namespace MasterTouroku_CustomerSKUPrice
 
         private enum EIndex : int
         {
+            DateStart,
+            DateEnd,
+            CustomerCD_Start,
+            CustomerCD_End,
+            SKUCD_Start,
+            SKUCD_End,
+
             CustomerCD,
             CustomerName,
+
             TekiyouKaisiDate,
             TekiyouShuuryouDate,
 
@@ -79,7 +87,7 @@ namespace MasterTouroku_CustomerSKUPrice
 
             StartProgram();
             txtStartDate.Focus();
-            detailControls[(int)EIndex.Date].Text = bbl.GetDate();
+            //detailControls[(int)EIndex.Date].Text = bbl.GetDate();
 
             Clear(pnl_Body);
             Scr_Clr(0);
@@ -209,14 +217,14 @@ namespace MasterTouroku_CustomerSKUPrice
             foreach (Control ctl in detailControls)
             {
                 ctl.KeyDown += new System.Windows.Forms.KeyEventHandler(DetailControl_KeyDown);
-                //ctl.Enter += new System.EventHandler(DetailControl_Enter);
+                ctl.Enter += new System.EventHandler(DetailControl_Enter);
             }
 
-            //rdoRecent.CheckedChanged += new System.EventHandler(RadioButton_CheckedChanged);
-            //rdoAll.CheckedChanged += new System.EventHandler(RadioButton_CheckedChanged);
+            rdoRecent.CheckedChanged += new System.EventHandler(RadioButton_CheckedChanged);
+            rdoAll.CheckedChanged += new System.EventHandler(RadioButton_CheckedChanged);
 
-            //rdoRecent.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
-            //rdoAll.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
+            rdoRecent.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
+            rdoAll.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
         }
 
         private void S_SetInit_Grid()
@@ -573,33 +581,22 @@ namespace MasterTouroku_CustomerSKUPrice
         {
             try
             {
-                //Enterキー押下時処理
-                //Returnキーが押されているか調べる
-                //AltかCtrlキーが押されている時は、本来の動作をさせる
                 if ((e.KeyCode == Keys.Return) &&
                     ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
                 {
                     int index = Array.IndexOf(detailControls, sender);
-                    //bool ret = CheckDetail(index);
-                    //if (ret)
-                    //{
-                    //    if (index == (int)EIndex.ValidityPeriod)
-                    //        明細の先頭項目へ
-                    //        mGrid.F_MoveFocus((int)ClsGridCustomerSKUPric.Gen_MK_FocusMove.MvSet, (int)ClsGridCustomerSKUPric.Gen_MK_FocusMove.MvNxt, this.ActiveControl, -1, -1, this.ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridCustomerSKUPric.ColNO.TekiyouKaisiDate);
-                    //    else if (detailControls.Length - 1 > index)
-                    //    {
-                    //        if (detailControls[index + 1].CanFocus)
-                    //            detailControls[index + 1].Focus();
-                    //        else
-                    //            あたかもTabキーが押されたかのようにする
-                    //            Shiftが押されている時は前のコントロールのフォーカスを移動
-                    //            this.ProcessTabKey(!e.Shift);
-                    //    }
-                    //}
-                    //else
-                    //{
-                    //    ((Control)sender).Focus();
-                    //}
+                    bool ret = CheckDetail(index);
+                    if (ret)
+                    {
+                        if (detailControls.Length - 1 > index)
+                        {
+                            if (detailControls[index + 1].CanFocus)
+                                detailControls[index + 1].Focus();
+                            else
+                                this.ProcessTabKey(!e.Shift);
+                        }
+                    }
+                   
                 }
 
             }
@@ -609,6 +606,55 @@ namespace MasterTouroku_CustomerSKUPrice
                 MessageBox.Show(ex.Message);
                 //EndSec();
             }
+        }
+
+        private void DetailControl_Enter(object sender, EventArgs e)
+        {
+            try
+            {
+                previousCtrl = this.ActiveControl;
+                SetFuncKeyAll(this, "111111001001");
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void RadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        private void RadioButton_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                        ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+                {
+                    detailControls[(int)EIndex.DateStart].Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void Scr_Clr(short Kbn)  /// 0 is initial state
@@ -652,6 +698,7 @@ namespace MasterTouroku_CustomerSKUPrice
                 int c = 0;
                 foreach (DataRow dr in dt.Rows)
                 {
+                    detailControls[(int)EIndex.Date].Text = bbl.GetDate();
                     mGrid.g_DArray[c].CustomerCD = dr["CustomerCD"].ToString();
                     mGrid.g_DArray[c].CustomerName = dr["CustomerName"].ToString();
                     mGrid.g_DArray[c].TekiyouKaisiDate = dr["TekiyouKaisiDate"].ToString();
@@ -1184,32 +1231,33 @@ namespace MasterTouroku_CustomerSKUPrice
         {
             if (OperationMode != EOperationMode.INSERT)
             {
-                if(ErrorCheck(11))
-                {
-                    mcskue = GetSKUPriceInfo();
-                    DataTable dtSKUPrice = mcskupbl.M_CustomerSKUPriceSelectData(mcskue);
-                   
-                    if (dtSKUPrice.Rows.Count > 0)
-                    {
-                        SetMultiColNo(dtSKUPrice);
-                        S_BodySeigyo(2, 2);
-                        mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
-                    }
-                    else
-                    {
-                        bbl.ShowMessage("E128");
-                        Scr_Clr(1);
-                        txtStartDate.Focus();
-                    }
-
-                }
-            }
                 CheckData(true);
+            }
+                
         }
 
         public void CheckData(bool set, bool copy= false)
         {
-            
+            if (ErrorCheck(11))
+            {
+                mcskue = GetSKUPriceInfo();
+                DataTable dtSKUPrice = mcskupbl.M_CustomerSKUPriceSelectData(mcskue);
+
+                if (dtSKUPrice.Rows.Count > 0)
+                {
+                    S_Clear_Grid();
+                    SetMultiColNo(dtSKUPrice);
+                    S_BodySeigyo(2, 2);
+                    mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
+                }
+                else
+                {
+                    bbl.ShowMessage("E128");
+                    Scr_Clr(1);
+                    txtStartDate.Focus();
+                }
+
+            }
         }
 
         public bool ErrorCheck(int mode)
@@ -1218,29 +1266,74 @@ namespace MasterTouroku_CustomerSKUPrice
                 return false;
             if (!txtEndDate.DateCheck())
                 return false;
-
-            int result = txtStartDate.Text.CompareTo(txtEndDate.Text);
-            if (result > 0)
+            if(!string.IsNullOrWhiteSpace(txtStartDate.Text) && !string.IsNullOrWhiteSpace(txtEndDate.Text))
             {
-                bbl.ShowMessage("E104");
-                txtStartDate.Focus();
-                return false;
+                int result = txtStartDate.Text.CompareTo(txtEndDate.Text);
+                if (result > 0)
+                {
+                    bbl.ShowMessage("E104");
+                    txtStartDate.Focus();
+                    return false;
+                }
+            }
+            if(!string.IsNullOrWhiteSpace(ScCustomer_Start.TxtCode.Text))
+            {
+                if(ScCustomer_Start.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    ScCustomer_Start.SetFocus(1);
+                    return false;
+                }
             }
 
-            int result1 = ScCustomer_Start.TxtCode.Text.CompareTo(ScCustomer_End.TxtCode.Text);
-            if (result1 > 0)
+            if (!string.IsNullOrWhiteSpace(ScCustomer_End.TxtCode.Text))
             {
-                bbl.ShowMessage("E104");
-                ScCustomer_Start.SetFocus(1);
-                return false;
+                if (ScCustomer_End.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    ScCustomer_End.SetFocus(1);
+                    return false;
+                }
             }
 
-            int skuresult = ScSKUCD_Start.TxtCode.Text.CompareTo(ScSKUCD_End.TxtCode.Text);
-            if (skuresult > 0)
+            if (!string.IsNullOrWhiteSpace(ScCustomer_End.TxtCode.Text) && !string.IsNullOrWhiteSpace(ScCustomer_End.TxtCode.Text))
             {
-                bbl.ShowMessage("E104");
-                ScSKUCD_Start.SetFocus(1);
-                return false;
+                int result1 = ScCustomer_Start.TxtCode.Text.CompareTo(ScCustomer_End.TxtCode.Text);
+                if (result1 > 0)
+                {
+                    bbl.ShowMessage("E104");
+                    ScCustomer_Start.SetFocus(1);
+                    return false;
+                }
+            }
+
+            if (!string.IsNullOrWhiteSpace(ScSKUCD_Start.TxtCode.Text))
+            {
+                if (ScSKUCD_Start.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    ScSKUCD_Start.SetFocus(1);
+                    return false;
+                }
+            }
+            if (!string.IsNullOrWhiteSpace(ScSKUCD_End.TxtCode.Text))
+            {
+                if (ScSKUCD_End.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    ScSKUCD_End.SetFocus(1);
+                    return false;
+                }
+            }
+            if (!string.IsNullOrWhiteSpace(ScCustomer_End.TxtCode.Text) && !string.IsNullOrWhiteSpace(ScCustomer_End.TxtCode.Text))
+            {
+                int skuresult = ScSKUCD_Start.TxtCode.Text.CompareTo(ScSKUCD_End.TxtCode.Text);
+                if (skuresult > 0)
+                {
+                    bbl.ShowMessage("E104");
+                    ScSKUCD_Start.SetFocus(1);
+                    return false;
+                }
             }
             if(mode==2)
             {
@@ -1249,6 +1342,154 @@ namespace MasterTouroku_CustomerSKUPrice
             return true;
         }
 
+
+        private bool CheckDetail(int index)
+        {
+            switch (index)
+            {
+                case (int)EIndex.DateStart:
+                case (int)EIndex.DateEnd:
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                        return true;
+                    detailControls[index].Text = bbl.FormatDate(detailControls[index].Text);
+
+                    //日付として正しいこと(Be on the correct date)Ｅ１０３
+                    if (!bbl.CheckDate(detailControls[index].Text))
+                    {
+                        //Ｅ１０３
+                        bbl.ShowMessage("E103");
+                        return false;
+                    }
+                    if (index == (int)EIndex.DateEnd)
+                    {
+                        if (!string.IsNullOrWhiteSpace(detailControls[index - 1].Text) && !string.IsNullOrWhiteSpace(detailControls[index].Text))
+                        {
+                            int result = detailControls[index].Text.CompareTo(detailControls[index - 1].Text);
+                            if (result < 0)
+                            {
+                                bbl.ShowMessage("E104");
+                                detailControls[index].Focus();
+                                return false;
+                            }
+                        }
+                    }
+                       
+
+                    break;
+                case (int)EIndex.CustomerCD_Start:
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    {
+                        ScCustomer_Start.LabelText = "";
+                        return true;
+                    }
+
+                    //[M_Customer_Select]
+                    M_Customer_Entity mce = new M_Customer_Entity
+                    {
+                        CustomerCD = detailControls[index].Text,
+                        ChangeDate = bbl.GetDate()     // detailControls[(int)EIndex.MitsumoriDate].Text
+                    };
+                    Customer_BL sbl = new Customer_BL();
+                    bool ret = sbl.M_Customer_Select(mce);
+                    if (ret)
+                    {
+                        ScCustomer_Start.LabelText = mce.CustomerName;
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E101");
+                        ScCustomer_Start.LabelText = "";
+                        return false;
+                    }
+
+                    break;
+                case (int)EIndex.CustomerCD_End:
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    {
+                        ScCustomer_End.LabelText = "";
+                        return true;
+                    }
+
+                    //[M_Customer_Select]
+                    M_Customer_Entity mcee = new M_Customer_Entity
+                    {
+                        CustomerCD = detailControls[index].Text,
+                        ChangeDate = bbl.GetDate()     // detailControls[(int)EIndex.MitsumoriDate].Text
+                    };
+                    Customer_BL sble = new Customer_BL();
+                    bool rete = sble.M_Customer_Select(mcee);
+                    if (rete)
+                    {
+                        ScCustomer_End.LabelText = mcee.CustomerName;
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E101");
+                        ScCustomer_End.LabelText = "";
+                        return false;
+                    }
+                    if (index == (int)EIndex.CustomerCD_End)
+                    {
+                        if (!string.IsNullOrWhiteSpace(detailControls[index - 1].Text) && !string.IsNullOrWhiteSpace(detailControls[index].Text))
+                        {
+                            int result = detailControls[index].Text.CompareTo(detailControls[index - 1].Text);
+                            if (result < 0)
+                            {
+                                bbl.ShowMessage("E104");
+                                detailControls[index].Focus();
+                                return false;
+                            }
+                        }
+                    }
+
+                    break;
+                case (int)EIndex.SKUCD_Start:
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    {
+                        ScSKUCD_Start.LabelText = "";
+                        return true;
+                    }
+                    if (!ScSKUCD_Start.SelectData())
+                    {
+                        bbl.ShowMessage("E101");
+                        ScSKUCD_Start.SetFocus(1);
+                        return false;
+                    }
+
+                    break;
+
+                case (int)EIndex.SKUCD_End:
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    {
+                        ScSKUCD_End.LabelText = "";
+                        return true;
+                    }
+                    if (!ScSKUCD_End.SelectData())
+                    {
+                        bbl.ShowMessage("E101");
+                        ScSKUCD_End.SetFocus(1);
+                        return false;
+                    }
+
+                    if (index == (int)EIndex.SKUCD_End)
+                    {
+                        if (!string.IsNullOrWhiteSpace(detailControls[index - 1].Text) && !string.IsNullOrWhiteSpace(detailControls[index].Text))
+                        {
+                            int result = detailControls[index].Text.CompareTo(detailControls[index - 1].Text);
+                            if (result < 0)
+                            {
+                                bbl.ShowMessage("E104");
+                                detailControls[index].Focus();
+                                return false;
+                            }
+                        }
+                    }
+                        break;
+
+            }
+
+            return true;
+        }
         public M_CustomerSKUPrice_Entity GetSKUPriceInfo()
         {
             mcskue = new M_CustomerSKUPrice_Entity
@@ -1282,7 +1523,7 @@ namespace MasterTouroku_CustomerSKUPrice
                     //画面より配列セット 
                     mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
-                    using (Search_Product frmProduct = new Search_Product(detailControls[(int)EIndex.Date].Text))
+                    using (Search_Product frmProduct = new Search_Product(bbl.GetDate()))
                     {
                         frmProduct.SKUCD = mGrid.g_DArray[w_Row].SKUCD;
                         frmProduct.JANCD = mGrid.g_DArray[w_Row].JANCD;
@@ -1318,7 +1559,7 @@ namespace MasterTouroku_CustomerSKUPrice
 
                     //画面より配列セット 
                     mGrid.S_DispToArray(Vsb_Mei_0.Value);
-                    using (FrmSearch_Customer frmCustomer = new FrmSearch_Customer(detailControls[(int)EIndex.Date].Text,"1",StoreCD))
+                    using (FrmSearch_Customer frmCustomer = new FrmSearch_Customer(bbl.GetDate(),"1",StoreCD))
                     {
                         //frmCustomer.CustomerCD=mGrid.g_DArray[wc_Row].CustomerCD;
                         frmCustomer.ShowDialog();
