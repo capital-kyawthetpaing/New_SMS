@@ -2158,10 +2158,15 @@ namespace ShukkaSiziTourokuFromJuchuu
                     if (mGrid.g_DArray[RW].DeliveryName == syukkaName && mGrid.g_DArray[RW].DeliveryPlanDate == syukkaDate)
                     {
                         sum += bbl.Z_Set(mGrid.g_DArray[RW].Hanbaigaku);
+                        mGrid.g_DArray[RW].HanbaigakuSum = bbl.Z_SetStr( sum);
 
-                        if(firstRow==-1)
+                        if (firstRow==-1)
                             firstRow = RW;
                     }
+                }
+                else if(!mGrid.g_DArray[RW].ChkSyukka)
+                {
+                    mGrid.g_DArray[RW].HanbaigakuSum = "";
                 }
             }
 

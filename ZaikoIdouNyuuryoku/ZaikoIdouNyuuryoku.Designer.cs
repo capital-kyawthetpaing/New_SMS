@@ -2762,6 +2762,7 @@
             this.CboFromSoukoCD.Name = "CboFromSoukoCD";
             this.CboFromSoukoCD.Size = new System.Drawing.Size(210, 20);
             this.CboFromSoukoCD.TabIndex = 8;
+            this.CboFromSoukoCD.SelectedIndexChanged += new System.EventHandler(this.CboFromSoukoCD_SelectedIndexChanged);
             // 
             // panel4
             // 
