@@ -20,7 +20,7 @@ namespace ShukkaSiziTourokuFromJuchuu
             internal bool ChkUntin;
             internal bool ChkShikyu;
             internal bool ChkMinyukin;
-            internal string Hanbaigaku;     //着指定日時
+            internal string HanbaigakuSum;     //
             internal string JuchuNo;      // 
             internal string DeliveryAddress1;      // 
             internal string PrintDate;      // 
@@ -50,6 +50,7 @@ namespace ShukkaSiziTourokuFromJuchuu
             internal int Kbn;   //1:出荷指示未作成分(受注から),2:出荷指示未作成分,3:出荷指示作成済分
             internal int PinkFont;
             internal int Update;
+            internal string Hanbaigaku;     //
 
         }
 
@@ -322,7 +323,7 @@ namespace ShukkaSiziTourokuFromJuchuu
 
                 w_CtlCol = (int)ColNO.Hanbaigaku;    //支払予定日
 
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].Hanbaigaku);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].HanbaigakuSum);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
@@ -461,7 +462,7 @@ namespace ShukkaSiziTourokuFromJuchuu
                             g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].DeliveryPlanDate);
                             break;
                         case (int)ColNO.Hanbaigaku:    //出荷予定日
-                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].Hanbaigaku);
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].HanbaigakuSum);
                             break;
 
                         case (int)ColNO.JanCD:

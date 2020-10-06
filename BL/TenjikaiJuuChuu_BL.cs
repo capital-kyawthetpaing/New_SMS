@@ -22,45 +22,48 @@ namespace BL
             {
                 GridDt = ds.Tables[1];
                 var dtDetail = ds.Tables[0];
-                tje = new Tenjikai_Entity() {
+             var   tjei = new Tenjikai_Entity();
+                 {
 
-                    Shiiresaki=  dtDetail.Rows[0]["VendorCD"].ToString(),
-                    Nendo = dtDetail.Rows[0]["LastYearTerm"].ToString(),
-                    ShiZun = dtDetail.Rows[0]["LastSeason"].ToString(),
-                    JuchuuBi= dtDetail.Rows[0]["JuChuuDate"].ToString(),
-                    UriageYoteiBi =dtDetail.Rows[0]["SalesPlanDate"].ToString(),
-                    ShuuKaSouKo = dtDetail.Rows[0]["SoukoName"].ToString(),
-                    TantouStaffu = dtDetail.Rows[0]["StaffCD"].ToString(),
-                    StaffName= dtDetail.Rows[0]["StaffName"].ToString(),
+                    tje.Shiiresaki = dtDetail.Rows[0]["VendorCD"].ToString();
+                    tje.Nendo = dtDetail.Rows[0]["LastYearTerm"].ToString();
+                    tje.ShiZun = dtDetail.Rows[0]["LastSeason"].ToString();
+                    tje.JuchuuBi = dtDetail.Rows[0]["JuChuuDate"].ToString();
+                    tje.UriageYoteiBi = dtDetail.Rows[0]["SalesPlanDate"].ToString();
+                    tje.ShuuKaSouKo = dtDetail.Rows[0]["SoukoName"].ToString();
+                    tje.SouKoCD = dtDetail.Rows[0]["SoukoCD"].ToString();
+                    tje.TantouStaffu = dtDetail.Rows[0]["StaffCD"].ToString();
+                    tje.StaffName = dtDetail.Rows[0]["StaffName"].ToString();
 
-                    CVFlg = dtDetail.Rows[0]["CustomerVariousFlg"].ToString(),// To make enable disable 0 > Dis 1 > Ena
-                    Kokyaku = dtDetail.Rows[0]["CustomerCD"].ToString(),
-                    K_Name1 = dtDetail.Rows[0]["CustomerName"].ToString(),
-                    K_name2 = dtDetail.Rows[0]["CustomerName2"].ToString(),
-                    K_Address1 = dtDetail.Rows[0]["CAddress1"].ToString(),
-                    K_Address2 = dtDetail.Rows[0]["CAddress2"].ToString(),
-                    K_Denwa1 = dtDetail.Rows[0]["CTel11"].ToString(),
-                    K_Denwa2 = dtDetail.Rows[0]["CTel12"].ToString(),
-                    K_Denwa3 = dtDetail.Rows[0]["CTel13"].ToString(),
-                    K_Zip1 = dtDetail.Rows[0]["CZipCD1"].ToString(),
-                    K_Zip2 = dtDetail.Rows[0]["CZipCD2"].ToString(),
-                    CKBN=  dtDetail.Rows[0]["CKBN"].ToString(),
+                    tje.CVFlg = dtDetail.Rows[0]["CustomerVariousFlg"].ToString();// To make enable disable 0 > Dis 1 > Ena
+                    tje.Kokyaku = dtDetail.Rows[0]["CustomerCD"].ToString();
+                    tje.K_Name1 = dtDetail.Rows[0]["CustomerName"].ToString();
+                    tje.K_name2 = dtDetail.Rows[0]["CustomerName2"].ToString();
+                    tje.K_Address1 = dtDetail.Rows[0]["CAddress1"].ToString();
+                    tje.K_Address2 = dtDetail.Rows[0]["CAddress2"].ToString();
+                    tje.K_Denwa1 = dtDetail.Rows[0]["CTel11"].ToString();
+                    tje.K_Denwa2 = dtDetail.Rows[0]["CTel12"].ToString();
+                    tje.K_Denwa3 = dtDetail.Rows[0]["CTel13"].ToString();
+                    tje.K_Zip1 = dtDetail.Rows[0]["CZipCD1"].ToString();
+                    tje.K_Zip2 = dtDetail.Rows[0]["CZipCD2"].ToString();
+                    tje.CKBN = dtDetail.Rows[0]["CKBN"].ToString();
 
-                    DVFlg = dtDetail.Rows[0]["DeliveryVariousFlg"].ToString(), // To make enable disable 0 > Dis 1 > Ena
-                    HaisoSaki = dtDetail.Rows[0]["DeliveryCD"].ToString(),
-                    H_Name1 = dtDetail.Rows[0]["DeliveryName"].ToString(),
-                    H_name2 = dtDetail.Rows[0]["DeliveryName2"].ToString(),
-                    H_Address1 = dtDetail.Rows[0]["DeliveryAddress1"].ToString(),
-                    H_Address2 = dtDetail.Rows[0]["DeliveryAddress2"].ToString(),
-                    H_Denwa1 = dtDetail.Rows[0]["DeliveryTel11"].ToString(),
-                    H_Denwa2 = dtDetail.Rows[0]["DeliveryTel12"].ToString(),
-                    H_Denwa3 = dtDetail.Rows[0]["DeliveryTel13"].ToString(),
-                    H_Zip1 = dtDetail.Rows[0]["DeliveryZipCD1"].ToString(),
-                    H_Zip2 = dtDetail.Rows[0]["DeliveryZipCD2"].ToString(),
-                    HKBN = dtDetail.Rows[0]["HKBN"].ToString(),
+                    tje.DVFlg = dtDetail.Rows[0]["DeliveryVariousFlg"].ToString(); // To make enable disable 0 > Dis 1 > Ena
+                    tje.HaisoSaki = dtDetail.Rows[0]["DeliveryCD"].ToString();
+                    tje.H_Name1 = dtDetail.Rows[0]["DeliveryName"].ToString();
+                    tje.H_name2 = dtDetail.Rows[0]["DeliveryName2"].ToString();
+                    tje.H_Address1 = dtDetail.Rows[0]["DeliveryAddress1"].ToString();
+                    tje.H_Address2 = dtDetail.Rows[0]["DeliveryAddress2"].ToString();
+                    tje.H_Denwa1 = dtDetail.Rows[0]["DeliveryTel11"].ToString();
+                    tje.H_Denwa2 = dtDetail.Rows[0]["DeliveryTel12"].ToString();
+                    tje.H_Denwa3 = dtDetail.Rows[0]["DeliveryTel13"].ToString();
+                    tje.H_Zip1 = dtDetail.Rows[0]["DeliveryZipCD1"].ToString();
+                    tje.H_Zip2 = dtDetail.Rows[0]["DeliveryZipCD2"].ToString();
+                    tje.HKBN = dtDetail.Rows[0]["DKBN"].ToString();
 
-                    YoteiKinShu = dtDetail.Rows[0]["PaymentMethodCD"].ToString(),
+                    tje.YoteiKinShu = dtDetail.Rows[0]["PaymentMethodCD"].ToString();
                 };
+              //  tje = tjei;
             }
             else
             {
@@ -72,6 +75,14 @@ namespace BL
         public bool D_TenjiInsert( Tenjikai_Entity tje, string xml )
         {
             return tdl.D_TenjiInsert(tje,xml);
+        }
+        public bool D_TenjiUpdate(Tenjikai_Entity tje, string xml)
+        {
+            return tdl.D_TenjiUpdate(tje, xml);
+        }
+        public bool D_TenjiDelete(Tenjikai_Entity tje, string xml)
+        {
+            return tdl.D_TenjiDelete(tje, xml);
         }
         public DataTable JuuChuuCheck(string JuuChuuBi)
         {

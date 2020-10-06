@@ -237,9 +237,7 @@
             this.gdvHanbaiTankaKakeritsu.TabIndex = 20;
             this.gdvHanbaiTankaKakeritsu.UseRowNo = true;
             this.gdvHanbaiTankaKakeritsu.UseSetting = true;
-            this.gdvHanbaiTankaKakeritsu.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdvHanbaiTankaKakeritsu_CellValidated);
             this.gdvHanbaiTankaKakeritsu.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.gdvHanbaiTankaKakeritsu_CellValidating);
-            this.gdvHanbaiTankaKakeritsu.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.gdvHanbaiTankaKakeritsu_DataError);
             // 
             // colchk
             // 
@@ -438,7 +436,7 @@
             this.cboSeason.Flag = 0;
             this.cboSeason.FormattingEnabled = true;
             this.cboSeason.Length = 10;
-            this.cboSeason.Location = new System.Drawing.Point(287, 109);
+            this.cboSeason.Location = new System.Drawing.Point(312, 109);
             this.cboSeason.MaxLength = 6;
             this.cboSeason.MoveNext = true;
             this.cboSeason.Name = "cboSeason";
@@ -542,7 +540,7 @@
             this.txtPriceOutTaxFrom.IsNumber = true;
             this.txtPriceOutTaxFrom.IsShop = false;
             this.txtPriceOutTaxFrom.Length = 9;
-            this.txtPriceOutTaxFrom.Location = new System.Drawing.Point(132, 136);
+            this.txtPriceOutTaxFrom.Location = new System.Drawing.Point(134, 136);
             this.txtPriceOutTaxFrom.MaxLength = 9;
             this.txtPriceOutTaxFrom.MoveNext = true;
             this.txtPriceOutTaxFrom.Name = "txtPriceOutTaxFrom";
@@ -941,7 +939,7 @@
             this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(227, 113);
+            this.ckM_Label9.Location = new System.Drawing.Point(252, 113);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label9.TabIndex = 9;
@@ -958,7 +956,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(73, 139);
+            this.ckM_Label8.Location = new System.Drawing.Point(74, 139);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label8.TabIndex = 8;
