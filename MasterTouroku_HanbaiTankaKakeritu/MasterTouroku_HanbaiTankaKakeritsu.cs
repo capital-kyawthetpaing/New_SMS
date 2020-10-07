@@ -139,7 +139,7 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
                 if (str1 > str2)
                 {
                     bbl.ShowMessage("E104");
-                    txtToDate.Focus();
+                    txtPriceOutTaxTo.Focus();
                     return false;
                 }
 
@@ -148,6 +148,54 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
             if (!RequireCheck(new Control[] { ScTankaCopy.TxtCode }, txtDateCopy))
                 return false;
 
+            ScTankaCopy.ChangeDate = bbl.GetDate();//ses
+            if (!string.IsNullOrEmpty(ScTankaCopy.TxtCode.Text))
+            {
+                if (ScTankaCopy.SelectData())
+                {
+                    ScTankaCopy.Value1 = ScTankaCopy.TxtCode.Text;
+                    ScTankaCopy.Value2 = ScTankaCopy.LabelText;
+                }
+                else
+                {
+                    bbl.ShowMessage("E101");
+                    ScTankaCopy.SetFocus(1);
+                    return false;
+                }
+            }
+
+            ScSegmentCopy.ChangeDate = bbl.GetDate();//ses
+            if (!string.IsNullOrEmpty(ScSegmentCopy.TxtCode.Text))
+            {
+                if (ScSegmentCopy.SelectData())
+                {
+                    ScSegmentCopy.Value1 = ScSegmentCopy.TxtCode.Text; 
+                    ScSegmentCopy.Value2 = ScSegment.LabelText;
+                }
+                else
+                {
+                    bbl.ShowMessage("E101");
+                    ScSegmentCopy.SetFocus(1);
+                    return false;
+                }
+            }
+
+
+            ScBrandCopy.ChangeDate = bbl.GetDate();//ses
+            if (!string.IsNullOrEmpty(ScBrandCopy.TxtCode.Text))
+            {
+                if (ScBrandCopy.SelectData())
+                {
+                    ScBrandCopy.Value1 = ScBrandCopy.TxtCode.Text;
+                    ScBrandCopy.Value2 = ScBrandCopy.LabelText;
+                }
+                else
+                {
+                    bbl.ShowMessage("E101");
+                    ScBrandCopy.SetFocus(1);
+                    return false;
+                }
+            }
             return true;
         }
 
@@ -225,7 +273,6 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
                 else if (OperationMode == EOperationMode.UPDATE)
                 {
                     Display(2);
-
                 }
             }
             
@@ -639,7 +686,6 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
                             {
                                 MessageBox.Show("enter valid no");
                                 gdvHanbaiTankaKakeritsu.RefreshEdit();
-
                             }
                         }
                     }
@@ -659,65 +705,26 @@ namespace MasterTouroku_HanbaiTankaKakeritsu
             }
         }
 
-        private void gdvHanbaiTankaKakeritsu_CellValidated(object sender, DataGridViewCellEventArgs e)
-        {
-            //if (gdvHanbaiTankaKakeritsu.Columns[e.ColumnIndex].Name == "colRate")
-            //{
-            //    string rate = gdvHanbaiTankaKakeritsu.Rows[e.RowIndex].Cells["colRate"].Value.ToString();
-            //    if (!String.IsNullOrEmpty(rate))
-            //    {
-            //        if (!rate.Contains("."))
-            //        {
-            //            var isNumeric = int.TryParse(rate, out int n);
-            //            if (isNumeric)
-            //            {
-            //                if (rate.Length > 3)
-            //                {
-            //                    MessageBox.Show("enter valid no");
-            //                    //gdvHanbaiTankaKakeritsu.RefreshEdit();
-            //                    gdvHanbaiTankaKakeritsu.CurrentCell = gdvHanbaiTankaKakeritsu.Rows[e.RowIndex].Cells["colRate"];
-
-            //                }
-            //            }
-            //        }
-            //        else
-            //        {
-            //            int x = rate.IndexOf('.');
-            //            int count = rate.Count(f => f == '.');
-            //            string charre = rate.Remove(x, count);
-            //            var isNumeric = int.TryParse(charre, out int n);
-            //            if (count != 1 || x >= 4)
-            //            {
-            //                MessageBox.Show("enter valid no");
-            //               // gdvHanbaiTankaKakeritsu.RefreshEdit();
-            //                gdvHanbaiTankaKakeritsu.CurrentCell = gdvHanbaiTankaKakeritsu.Rows[e.RowIndex].Cells["colRate"];
-
-            //            }
-            //        }
-            //    }
-            //}
-        }
-
-        private void gdvHanbaiTankaKakeritsu_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            try
-            {
-                if (Convert.ToInt32(gdvHanbaiTankaKakeritsu.CurrentCell.EditedFormattedValue) < 256 && Convert.ToInt32(gdvHanbaiTankaKakeritsu.CurrentCell.EditedFormattedValue) > 0)
-                {
-                    return;
-                }
-                else
-                {
-                    MessageBox.Show("Enter valid number. . . ");
-                    gdvHanbaiTankaKakeritsu.CurrentCell.Value = 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Enter valid number. . . ");
-                gdvHanbaiTankaKakeritsu.CurrentCell.Value = 0;
-            }
-            gdvHanbaiTankaKakeritsu.RefreshEdit();
-        }
+        //private void gdvHanbaiTankaKakeritsu_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (Convert.ToInt32(gdvHanbaiTankaKakeritsu.CurrentCell.EditedFormattedValue) < 256 && Convert.ToInt32(gdvHanbaiTankaKakeritsu.CurrentCell.EditedFormattedValue) > 0)
+        //        {
+        //            return;
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Enter valid number. . . ");
+        //            gdvHanbaiTankaKakeritsu.CurrentCell.Value = 0;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Enter valid number. . . ");
+        //        gdvHanbaiTankaKakeritsu.CurrentCell.Value = 0;
+        //    }
+        //    gdvHanbaiTankaKakeritsu.RefreshEdit();
+        //}
     }
 }

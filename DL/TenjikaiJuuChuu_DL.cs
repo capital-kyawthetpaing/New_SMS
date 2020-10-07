@@ -25,6 +25,156 @@ namespace DL
             UseTransaction = true;
             return SelectSetData(dic, sp);
         }
+        public bool D_TenjiDelete(Tenjikai_Entity tje, string xml)
+        {
+            string sp = "D_TenjiI_Details_Delete";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = xml} },
+                { "@TenjiCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.TenjiKaiOrderNo} },
+                { "@JuchuuBi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.JuchuuBi } },
+                { "@ShuuKaSouKo", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.ShuuKaSouKo } },
+                { "@TantouStaffu", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.TantouStaffu } },
+                { "@Shiiresaki", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Shiiresaki } },
+                { "@Nendo", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Nendo } },
+                { "@ShiZun", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.ShiZun } },
+                { "@Kokyaku", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Kokyaku } },
+                { "@K_Name1", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.K_Name1 } },
+                { "@K_name2", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.K_name2 } },
+                { "@K_radio", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.K_radio } },
+                { "@K_Zip1", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.K_Zip1 } },
+                { "@K_Zip2", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.K_Zip2 } },
+                { "@K_Address1", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.K_Address1 } },
+                { "@K_Address2", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.K_Address2 } },
+                { "@K_Denwa1", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.K_Denwa1 } },
+                { "@K_Denwa2", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.K_Denwa2 } },
+                { "@K_Denwa3", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.K_Denwa3 } },
+                { "@KDenwa21", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.KDenwa21 } },
+                { "@KDenwa22", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.KDenwa22 } },
+                { "@KDenwa23", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.KDenwa23 } },
+                { "@KkanaMei", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.KkanaMei } },
+                { "@HaisoSaki", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.HaisoSaki } },
+                { "@H_Name1", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.H_Name1 } },
+                { "@H_name2", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.H_name2 } },
+                { "@H_radio", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.H_radio } },
+                { "@H_Zip1", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.H_Zip1 } },
+                { "@H_Zip2", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.H_Zip2 } },
+                { "@H_Address1", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.H_Address1 } },
+                { "@H_Address2", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.H_Address2 } },
+                { "@H_Denwa1", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.H_Denwa1 } },
+                { "@H_Denwa2", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.H_Denwa2 } },
+                { "@H_Denwa3", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.H_Denwa3 } },
+                { "@HDenwa21", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.HDenwa21 } },
+                { "@HDenwa22", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.HDenwa22 } },
+                { "@HDenwa23", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.HDenwa23 } },
+                { "@HkanaMei", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.HkanaMei } },
+
+                { "@ZeiKomi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.ZeiKomi } },
+                { "@Zeinu", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Zeinu } },
+                { "@Keijen", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Keijen } },
+                { "@Tsuujou", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Tsuujou } },
+                { "@ZeiKomiSou", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.ZeiKomi } },
+                { "@GenkaGaku", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.GenkaGaku } },
+                { "@ArariGaku", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.ArariGaku } },
+                { "@YoteiKinShu", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.YoteiKinShu } },
+                { "@UriageYoteiBi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.UriageYoteiBi } },
+                { "@Sumi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Sumi } },
+                { "@Nichi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Nichi } },
+                { "@InsertOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertOpt } },
+                { "@InsertDt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertDt } },
+                //{ "@InsertOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertOpt } },
+                //{ "@InsertDt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertDt } },
+                { "@DeleteOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.DeleteOpt } },
+                { "@DeleteDt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.DeleteDt } },
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.StoreCD } },
+                    };
+            UseTransaction = true;
+            try
+            {
+                return InsertUpdateDeleteData(dic, sp);
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.StackTrace;
+
+                return false;
+            }
+        }
+        public bool D_TenjiUpdate(Tenjikai_Entity tje, string xml)
+        {
+            string sp = "D_TenjiI_Details_Update";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = xml} },
+                { "@TenjiCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.TenjiKaiOrderNo} },
+                { "@JuchuuBi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.JuchuuBi } },
+                { "@ShuuKaSouKo", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.ShuuKaSouKo } },
+                { "@TantouStaffu", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.TantouStaffu } },
+                { "@Shiiresaki", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Shiiresaki } },
+                { "@Nendo", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Nendo } },
+                { "@ShiZun", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.ShiZun } },
+                { "@Kokyaku", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Kokyaku } },
+                { "@K_Name1", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.K_Name1 } },
+                { "@K_name2", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.K_name2 } },
+                { "@K_radio", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.K_radio } },
+                { "@K_Zip1", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.K_Zip1 } },
+                { "@K_Zip2", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.K_Zip2 } },
+                { "@K_Address1", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.K_Address1 } },
+                { "@K_Address2", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.K_Address2 } },
+                { "@K_Denwa1", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.K_Denwa1 } },
+                { "@K_Denwa2", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.K_Denwa2 } },
+                { "@K_Denwa3", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.K_Denwa3 } },
+                { "@KDenwa21", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.KDenwa21 } },
+                { "@KDenwa22", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.KDenwa22 } },
+                { "@KDenwa23", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.KDenwa23 } },
+                { "@KkanaMei", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.KkanaMei } },
+                { "@HaisoSaki", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.HaisoSaki } },
+                { "@H_Name1", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.H_Name1 } },
+                { "@H_name2", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.H_name2 } },
+                { "@H_radio", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.H_radio } },
+                { "@H_Zip1", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.H_Zip1 } },
+                { "@H_Zip2", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.H_Zip2 } },
+                { "@H_Address1", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.H_Address1 } },
+                { "@H_Address2", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.H_Address2 } },
+                { "@H_Denwa1", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.H_Denwa1 } },
+                { "@H_Denwa2", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.H_Denwa2 } },
+                { "@H_Denwa3", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.H_Denwa3 } },
+                { "@HDenwa21", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.HDenwa21 } },
+                { "@HDenwa22", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.HDenwa22 } },
+                { "@HDenwa23", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.HDenwa23 } },
+                { "@HkanaMei", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.HkanaMei } },
+
+                { "@ZeiKomi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.ZeiKomi } },
+                { "@Zeinu", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Zeinu } },
+                { "@Keijen", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Keijen } },
+                { "@Tsuujou", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Tsuujou } },
+                { "@ZeiKomiSou", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.ZeiKomi } },
+                { "@GenkaGaku", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.GenkaGaku } },
+                { "@ArariGaku", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.ArariGaku } },
+                { "@YoteiKinShu", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.YoteiKinShu } },
+                { "@UriageYoteiBi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.UriageYoteiBi } },
+                { "@Sumi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Sumi } },
+                { "@Nichi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Nichi } },
+                { "@InsertOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertOpt } },
+                { "@InsertDt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertDt } },
+                //{ "@InsertOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertOpt } },
+                //{ "@InsertDt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertDt } },
+                { "@DeleteOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.DeleteOpt } },
+                { "@DeleteDt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.DeleteDt } },
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.StoreCD } },
+                    };
+            UseTransaction = true;
+            try
+            {
+                return InsertUpdateDeleteData(dic, sp);
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.StackTrace;
+
+                return false;
+            }
+        }
         public bool D_TenjiInsert(Tenjikai_Entity tje, string xml)
         {
            
@@ -157,7 +307,6 @@ namespace DL
             UseTransaction = true;
             return SelectData(dic, sp);
         }
-
         public DataTable M_TeniKaiSelectbyJAN(Tenjikai_Entity tje)
         {
             string sp = "M_TeniKaiSelectbyJAN";

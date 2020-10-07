@@ -30,8 +30,8 @@ BEGIN
 
 		select CustomerCD
 		,CustomerName
-		,TekiyouKaisiDate
-		,TekiyouShuuryouDate
+		,CONVERT(VARCHAR(10), TekiyouKaisiDate , 111) as TekiyouKaisiDate
+		,CONVERT(VARCHAR(10), TekiyouShuuryouDate , 111) as TekiyouShuuryouDate
 		,AdminNO
 		,JanCD
 		,SKUCD
@@ -54,8 +54,8 @@ BEGIN
 	Begin
 		select CustomerCD
 		,CustomerName
-		,TekiyouKaisiDate
-		,TekiyouShuuryouDate
+		,CONVERT(VARCHAR(10), TekiyouKaisiDate , 111) as TekiyouKaisiDate
+		,CONVERT(VARCHAR(10), TekiyouShuuryouDate , 111) as TekiyouShuuryouDate
 		,AdminNO
 		,JanCD
 		,SKUCD
