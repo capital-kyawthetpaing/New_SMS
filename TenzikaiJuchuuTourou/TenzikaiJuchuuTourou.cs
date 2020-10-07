@@ -30,6 +30,7 @@ namespace TenzikaiJuchuuTourou
         private Control[] keyControls;
         private Control[] keyLabels;
         private Control[] detailControls;
+        private string mOldJyuchuNo = "";
         private Control[] detailLabels;
         private Control[] searchButtons;
         private string KibouBi1 = "";
@@ -157,6 +158,7 @@ namespace TenzikaiJuchuuTourou
                 Btn_F7.Text =  "行追加(F7)";
                 Btn_F8.Text = "行削除(F8)";
                 Btn_F10.Text = "行複写(F10)";
+                Btn_F1.Enter += Btn_F1_Enter;
             }
             catch (Exception ex)
             {
@@ -165,12 +167,19 @@ namespace TenzikaiJuchuuTourou
                 //EndSec();
             }
         }
+
+        private void Btn_F1_Enter(object sender, EventArgs e)
+        {
+            previousCtrl = this.ActiveControl;
+            SetFuncKeyAll(this, "111111001011");
+        }
+
         private void ChangeOperationMode(EOperationMode mode)
         {
             OperationMode = mode; // (1:新規,2:修正,3;削除)
 
             //排他処理を解除
-            //DeleteExclusive();
+            DeleteExclusive();
 
             Scr_Clr(0);
 
@@ -185,8 +194,10 @@ namespace TenzikaiJuchuuTourou
                     
                  //   detailControls[(int)Eindex.JuuChuuBi].Focus();
                     detailControls[(int)Eindex.SCTenjiKai].Enabled = false; ;
+                    sc_Tenji.BtnSearch.Enabled = false;
                     detailControls[(int)Eindex.SCShiiresaki].Focus();
                     btn_Meisai.Enabled = true;
+                   
                     break;
 
                 case EOperationMode.UPDATE:
@@ -549,10 +560,10 @@ namespace TenzikaiJuchuuTourou
 
                         if (!frmProduct.flgCancel)
                         {
-                            mGrid.g_DArray[w_Row].SCJAN = frmProduct.JANCD;
-                         //   mGrid.g_DArray[w_Row].OldJanCD = frmProduct.JANCD;
-                            mGrid.g_DArray[w_Row].SKUCD = frmProduct.SKUCD;
-                           // mGrid.g_DArray[w_Row].AdminNO = frmProduct.AdminNO;
+                           mGrid.g_DArray[w_Row].SCJAN = frmProduct.JANCD;
+                           mGrid.g_DArray[w_Row].OldJanCD = frmProduct.JANCD;
+                           mGrid.g_DArray[w_Row].SKUCD = frmProduct.SKUCD;
+                           mGrid.g_DArray[w_Row].AdminNo = frmProduct.AdminNO;
 
                             CheckGrid((int)ClsGridTenjikai.ColNO.SCJAN, w_Row, false, true);
 
@@ -873,7 +884,7 @@ namespace TenzikaiJuchuuTourou
             if (string.IsNullOrWhiteSpace(ymd))
                 ymd = bbl.GetDate();
 
-            if (!chkAll && !changeYmd)
+            if (!chkAll && !changeYmd)  // check length
             {
                 int w_CtlRow = row - Vsb_Mei_0.Value;
                 if (w_CtlRow < ClsGridTenjikai.gc_P_GYO)
@@ -882,18 +893,22 @@ namespace TenzikaiJuchuuTourou
                         if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
                             return false;
                     }
+
             }
-            if (chkAll)
-                if (!mGrid.g_DArray[row].Chk || string.IsNullOrEmpty(mGrid.g_DArray[row].SCJAN))
-                {
-                    return true; 
-                } 
+            //if (chkAll)
+            if (!mGrid.g_DArray[row].Chk || string.IsNullOrEmpty(mGrid.g_DArray[row].SCJAN))    // Neglect uncheck / Null or string JanCd
+            {
+                return true;
+            }
             switch (col)
             {
                 case (int)ClsGridTenjikai.ColNO.SCJAN:
                     //販売単価 複写元受注番号が入力されている場合は、以下のメッセージを表示後、その回答によって扱いを変える
-                   
-
+                    if (!changeYmd)
+                    {
+                        if (mGrid.g_DArray[row].SCJAN == mGrid.g_DArray[row].OldJanCD)      //chkAll &&  change/ no need to check if unchanged
+                            return true;
+                    }
                     //入力無くても良い(It is not necessary to input)
                     if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].SCJAN))
                     {
@@ -901,105 +916,117 @@ namespace TenzikaiJuchuuTourou
                         Grid_Gyo_Clr(row);
                         return true;
                     }
-                    if (!chkAll)
+                    //if (!chkAll)
+                    //{
+                    //入力がある場合、SKUマスターに存在すること
+                    //[M_SKU]
+                    M_SKU_Entity mse = new M_SKU_Entity
                     {
-                        //入力がある場合、SKUマスターに存在すること
-                        //[M_SKU]
-                        M_SKU_Entity mse = new M_SKU_Entity
-                        {
-                            JanCD = mGrid.g_DArray[row].SCJAN,
-                            ChangeDate = ymd
-                        };
+                        JanCD = mGrid.g_DArray[row].SCJAN,
+                        ChangeDate = ymd
+                    };
+                    if (mGrid.g_DArray[row].SCJAN == mGrid.g_DArray[row].OldJanCD || string.IsNullOrWhiteSpace(mGrid.g_DArray[row].OldJanCD))
+                    {
+                        mse.SKUCD = mGrid.g_DArray[row].SKUCD;
+                        mse.AdminNO = mGrid.g_DArray[row].AdminNo;
+                    }
 
-                        SKU_BL mbl = new SKU_BL();
-                        DataTable dt = mbl.M_SKU_SelectAll(mse);
-                        DataRow selectRow = null;
+                    if (mGrid.g_DArray[row].SCJAN != mGrid.g_DArray[row].OldJanCD)
+                    {
+                        //JANCD変更時は単価再計算するように
+                        mGrid.g_DArray[row].NotReCalc = false;
+                    }
+                    SKU_BL mbl = new SKU_BL();
+                    DataTable dt = mbl.M_SKU_SelectAll(mse);
+                    DataRow selectRow = null;
 
-                        if (dt.Rows.Count == 0)
+                    if (dt.Rows.Count == 0)
+                    {
+                        var val = GetTenji(row);
+                        if (!val)
                         {
-                            var val = GetTenji(row);
-                            if (!val)
+                            //Ｅ１０7
+                            bbl.ShowMessage("E107");
+                            return false;
+                        }
+                    }
+                    else if (dt.Rows.Count == 1)
+                    {
+                        selectRow = dt.Rows[0];
+                    }
+                    else
+                    {
+                        //JANCDでSKUCDが複数存在する場合（If there is more than one）
+                        using (Select_SKU frmSKU = new Select_SKU())
+                        {
+                            frmSKU.parJANCD = dt.Rows[0]["JanCD"].ToString();
+                            frmSKU.parChangeDate = ymd;
+                            frmSKU.ShowDialog();
+
+                            if (!frmSKU.flgCancel)
                             {
-                                //Ｅ１０7
-                                bbl.ShowMessage("E107");
-                                return false;
+                                selectRow = dt.Select(" AdminNO = " + frmSKU.parAdminNO)[0];
                             }
                         }
-                        else if (dt.Rows.Count == 1)
+
+                    }
+
+                    if (selectRow != null)
+                    {
+                        //JANCDでSKUCDが１つだけ存在する場合（If there is only one）
+                        // mGrid.g_DArray[row].SCJAN = selectRow["JanCD"].ToString();
+                        mGrid.g_DArray[row].SKUCD = selectRow["SKUCD"].ToString();
+                        mGrid.g_DArray[row].ShouName = selectRow["SKUName"].ToString();
+                        mGrid.g_DArray[row].Color = selectRow["ColorNO"].ToString();
+                        mGrid.g_DArray[row].ColorName = selectRow["ColorName"].ToString() == "1" ? "〇" : "";
+                        mGrid.g_DArray[row].Size = selectRow["SizeNo"].ToString();
+                        mGrid.g_DArray[row].SizeName = selectRow["SizeName"].ToString();
+
+                        //AdminNo
+                        mGrid.g_DArray[row].AdminNo = selectRow["AdminNO"].ToString();
+
+                        //[M_JANOrderPrice]
+                        M_JANOrderPrice_Entity mje = new M_JANOrderPrice_Entity
                         {
-                            selectRow = dt.Rows[0];
+
+                            //①JAN発注単価マスタ（店舗指定なし）
+                            AdminNO = mGrid.g_DArray[row].AdminNo,
+                            VendorCD = detailControls[(int)Eindex.SCShiiresaki].Text,
+                            StoreCD = "0000",
+                            ChangeDate = !String.IsNullOrWhiteSpace(detailControls[(int)Eindex.JuuChuuBi].Text) ? detailControls[(int)Eindex.JuuChuuBi].Text : ymd,
+                        };
+
+                        JANOrderPrice_BL jbl = new JANOrderPrice_BL();
+                        ret = jbl.M_JANOrderPrice_Select(mje);
+                        if (ret)
+                        {
+                            mGrid.g_DArray[row].HacchuTanka = bbl.Z_SetStr(mje.PriceWithoutTax);
                         }
                         else
                         {
-                            //JANCDでSKUCDが複数存在する場合（If there is more than one）
-                            using (Select_SKU frmSKU = new Select_SKU())
-                            {
-                                frmSKU.parJANCD = dt.Rows[0]["JanCD"].ToString();
-                                frmSKU.parChangeDate = ymd;
-                                frmSKU.ShowDialog();
-
-                                if (!frmSKU.flgCancel)
-                                {
-                                    selectRow = dt.Select(" AdminNO = " + frmSKU.parAdminNO)[0];
-                                }
-                            }
-
-                        }
-
-                        if (selectRow != null)
-                        {
-                            //JANCDでSKUCDが１つだけ存在する場合（If there is only one）
-                            // mGrid.g_DArray[row].SCJAN = selectRow["JanCD"].ToString();
-                            mGrid.g_DArray[row].SKUCD = selectRow["SKUCD"].ToString();
-                            mGrid.g_DArray[row].ShouName = selectRow["SKUName"].ToString();
-                            mGrid.g_DArray[row].Color = selectRow["ColorNO"].ToString();
-                            mGrid.g_DArray[row].ColorName = selectRow["ColorName"].ToString() == "1" ? "〇" : "";
-                            mGrid.g_DArray[row].Size = selectRow["SizeNo"].ToString();
-                            mGrid.g_DArray[row].SizeName = selectRow["SizeName"].ToString();
-
-                            //AdminNo
-                            mGrid.g_DArray[row].AdminNo = selectRow["AdminNO"].ToString();
-
-                            //[M_JANOrderPrice]
-                            M_JANOrderPrice_Entity mje = new M_JANOrderPrice_Entity
+                            //[M_ItemOrderPrice]
+                            M_ItemOrderPrice_Entity mje2 = new M_ItemOrderPrice_Entity
                             {
 
-                                //①JAN発注単価マスタ（店舗指定なし）
-                                AdminNO = mGrid.g_DArray[row].AdminNo,
+                                //③	ITEM発注単価マスター（店舗指定あり）	
+                                MakerItem = selectRow["MakerItem"].ToString(),
                                 VendorCD = detailControls[(int)Eindex.SCShiiresaki].Text,
-                                StoreCD = "0000",
                                 ChangeDate = !String.IsNullOrWhiteSpace(detailControls[(int)Eindex.JuuChuuBi].Text) ? detailControls[(int)Eindex.JuuChuuBi].Text : ymd,
+                                StoreCD = "0000"
                             };
 
-                            JANOrderPrice_BL jbl = new JANOrderPrice_BL();
-                            ret = jbl.M_JANOrderPrice_Select(mje);
+                            ItemOrderPrice_BL ibl = new ItemOrderPrice_BL();
+                            ret = ibl.M_ItemOrderPrice_Select(mje2);
                             if (ret)
                             {
-                                mGrid.g_DArray[row].HacchuTanka = bbl.Z_SetStr(mje.PriceWithoutTax);
+                                mGrid.g_DArray[row].HacchuTanka = bbl.Z_SetStr(mje2.PriceWithoutTax);
                             }
                             else
-                            {
-                                //[M_ItemOrderPrice]
-                                M_ItemOrderPrice_Entity mje2 = new M_ItemOrderPrice_Entity
-                                {
+                                mGrid.g_DArray[row].HacchuTanka = "0";
 
-                                    //③	ITEM発注単価マスター（店舗指定あり）	
-                                    MakerItem = selectRow["MakerItem"].ToString(),
-                                    VendorCD = detailControls[(int)Eindex.SCShiiresaki].Text,
-                                    ChangeDate = !String.IsNullOrWhiteSpace(detailControls[(int)Eindex.JuuChuuBi].Text) ? detailControls[(int)Eindex.JuuChuuBi].Text : ymd,
-                                    StoreCD = "0000"
-                                };
-
-                                ItemOrderPrice_BL ibl = new ItemOrderPrice_BL();
-                                ret = ibl.M_ItemOrderPrice_Select(mje2);
-                                if (ret)
-                                {
-                                    mGrid.g_DArray[row].HacchuTanka = bbl.Z_SetStr(mje2.PriceWithoutTax);
-                                }
-                                else
-                                    mGrid.g_DArray[row].HacchuTanka = "0";
-
-                            }
+                        }
+                        if (mGrid.g_DArray[row].NotReCalc != true) // false > to recalculate on JanCD Change
+                        {
                             //Function_単価取得.
                             Fnc_UnitPrice_Entity fue = new Fnc_UnitPrice_Entity
                             {
@@ -1016,17 +1043,20 @@ namespace TenzikaiJuchuuTourou
                             {
                                 mGrid.g_DArray[row].HanbaiTanka = bbl.Z_SetStr(fue.ZeinukiTanka);
                             }
-                            //Tani
-                            mGrid.g_DArray[row].TenI = selectRow["TaniCD"].ToString();
-                            mGrid.g_DArray[row].TeniName = selectRow["TaniName"].ToString();
-                            //TaxRate
-                            mGrid.g_DArray[row].TaxRateFlg = Convert.ToInt16(selectRow["TaxRateFLG"].ToString()).ToString();
+                            CalcZei(row, col);
                         }
-                        //  CalcZei(row, (int)ClsGridTenjikai.ColNO.SCJAN);
-                        Grid_NotFocus(col, row);
-
-                        //}
+                        mGrid.g_DArray[row].TenI = selectRow["TaniCD"].ToString();
+                        mGrid.g_DArray[row].TeniName = selectRow["TaniName"].ToString();
+                        //TaxRate
+                        mGrid.g_DArray[row].TaxRateFlg = Convert.ToInt16(selectRow["TaxRateFLG"].ToString()).ToString();
+                        mGrid.g_DArray[row].OldJanCD = mGrid.g_DArray[row].SCJAN;
                     }
+
+                    //  CalcZei(row, (int)ClsGridTenjikai.ColNO.SCJAN);
+                    Grid_NotFocus(col, row);
+
+                    //}
+                    //}
                     break;
 
                 case (int)ClsGridTenjikai.ColNO.ShouName:
@@ -1075,7 +1105,7 @@ namespace TenzikaiJuchuuTourou
                     bool Check = mGrid.g_DArray[row].ChoukuSou;
                     if (Check)
                     {
-                     //
+                        //
                     }
                     break;
 
@@ -1131,8 +1161,8 @@ namespace TenzikaiJuchuuTourou
                     break;
 
                 case (int)ClsGridTenjikai.ColNO.HacchuTanka://発注単価
-                                                             //入力無くても良い(It is not necessary to input)
-                                                             //入力無い場合、0とする（When there is no input, it is set to 0）
+                                                            //入力無くても良い(It is not necessary to input)
+                                                            //入力無い場合、0とする（When there is no input, it is set to 0）
                     decimal orderUnitPrice = bbl.Z_Set(mGrid.g_DArray[row].HacchuTanka);
                     mGrid.g_DArray[row].HacchuTanka = bbl.Z_SetStr(orderUnitPrice);
 
@@ -1155,7 +1185,7 @@ namespace TenzikaiJuchuuTourou
                 case (int)ClsGridTenjikai.ColNO.JuchuuSuu:
                     decimal JuchuuSuu = bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu);
                     mGrid.g_DArray[row].JuchuuSuu = bbl.Z_SetStr(JuchuuSuu);
-                   
+
                     //０の場合				メッセージ表示
                     if (!chkAll)
                         if (JuchuuSuu.Equals(0))
@@ -1184,10 +1214,10 @@ namespace TenzikaiJuchuuTourou
                     break;
 
             }
-           
+
             if (chkAll == false)
                 CalcKin();
-           // CalcKin(row, col);
+            // CalcKin(row, col);
             //配列の内容を画面へセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
@@ -1463,7 +1493,7 @@ namespace TenzikaiJuchuuTourou
             try
             {
                 previousCtrl = this.ActiveControl;
-
+                SetFuncKeyAll(this, "111111110101");
                 int w_Row;
                 Control w_ActCtl;
 
@@ -1586,6 +1616,7 @@ namespace TenzikaiJuchuuTourou
         }
         private void SetMultiColNo(DataTable dt = null)
         {
+            S_Clear_Grid();
             if (dt == null)
             {
                 for (int w_Row = 0; w_Row < 999; w_Row++)
@@ -1611,7 +1642,7 @@ namespace TenzikaiJuchuuTourou
                         mGrid.g_DArray[c].SizeName = dr["SizeName"].ToString();
                         mGrid.g_DArray[c].ShuukaYo = dr["ShippingPlanDate"].ToString();
                         (mGrid.g_DArray[c].ShuukaSou) = dr["SoukoCD"].ToString();
-                        // mGrid.g_DArray[c].Empty = dr["_3SKUName"].ToString();
+                         mGrid.g_DArray[c].AdminNo = dr["AdminNo"].ToString();
 
                         mGrid.g_DArray[c].HacchuTanka = bbl.Z_SetStr(dr["OrderUnitPrice"].ToString());//
                         mGrid.g_DArray[c].NyuuKayo = dr["ArrivePlanDate"].ToString();//
@@ -1778,6 +1809,8 @@ namespace TenzikaiJuchuuTourou
 
                 }
             }
+            previousCtrl = this.ActiveControl;
+            SetFuncKeyAll(this, "111111001001");
             if (ActiveControl is  CKM_SearchControl cs && cs.Name == "sc_Tenji")
             {
                 previousCtrl = this.ActiveControl;
@@ -1811,6 +1844,7 @@ namespace TenzikaiJuchuuTourou
                         bool ret = CheckKey(index);
                         if (ret)
                         {
+                            ChangeFunKeys();
                             tkb = new TenjikaiJuuChuu_BL();
                             tje = new Tenjikai_Entity() {
                                 TenjiKaiOrderNo = detailControls[(int)Eindex.SCTenjiKai].Text
@@ -1826,13 +1860,18 @@ namespace TenzikaiJuchuuTourou
                                 {
                                     SetTenjiGrid(GridDt);
                                     panel1.Enabled = false;
-                                    S_BodySeigyo(1, 1);
+                                   // S_BodySeigyo(1, 1);
+                                    S_BodySeigyo(4, 1);
+                                    sc_Tenji.Enabled = sc_Tenji.BtnSearch.Enabled = true;
+
                                 }
                                 else if ( OperationMode == EOperationMode.UPDATE)
                                 {
                                     SetTenjiGrid(GridDt,true);
                                     S_BodySeigyo(1,0);
                                     S_BodySeigyo(1, 1);
+                                    sc_Tenji.Enabled = sc_Tenji.BtnSearch.Enabled = false;
+                                    
                                 }
                             }
                         }
@@ -2054,6 +2093,7 @@ namespace TenzikaiJuchuuTourou
         {
             detailControls[(int)Eindex.SCShiiresaki].Text = tje.Shiiresaki;
             CheckDetail((int)Eindex.SCShiiresaki);
+           
             ((CKM_ComboBox)detailControls[(int)Eindex.Nendo]).SelectedValue = tje.Nendo;
             ((CKM_ComboBox)detailControls[(int)Eindex.ShiSon]).SelectedValue = tje.ShiZun;
             ((CKM_ComboBox)detailControls[(int)Eindex.ShuukaSouko]).SelectedValue = tje.SouKoCD;
@@ -2064,6 +2104,7 @@ namespace TenzikaiJuchuuTourou
 
 
             (detailControls[(int)Eindex.SCKokyakuu]).Text = tje.Kokyaku;
+            CheckDetail((int)Eindex.SCKokyakuu);
             (detailControls[(int)Eindex.KJuShou1]).Text = tje.K_Name1;
             (detailControls[(int)Eindex.KJuShou2]).Text = tje.K_name2;
             (detailControls[(int)Eindex.KDenwa1]).Text = tje.K_Denwa1;
@@ -2932,12 +2973,12 @@ namespace TenzikaiJuchuuTourou
         {
             try
             {
-                addInfo.ade.CustomerCD = detailControls[(int)(Eindex.SCHaiSoSaki)].Text;
-                addInfo.ade.CustomerName = detailControls[(int)Eindex.HJuShou1].Text;
-                addInfo.ade.CustomerName2 = detailControls[(int)Eindex.HJuShou2].Text;
-                addInfo.ade.Tel11 = detailControls[(int)Eindex.HDenwa1].Text;
-                addInfo.ade.Tel12 = detailControls[(int)Eindex.HDenwa2].Text;
-                addInfo.ade.Tel13 = detailControls[(int)Eindex.HDenwa3].Text;
+                addInfo.adeD.CustomerCD = detailControls[(int)(Eindex.SCHaiSoSaki)].Text;
+                addInfo.adeD.CustomerName = detailControls[(int)Eindex.HJuShou1].Text;
+                addInfo.adeD.CustomerName2 = detailControls[(int)Eindex.HJuShou2].Text;
+                addInfo.adeD.Tel11 = detailControls[(int)Eindex.HDenwa1].Text;
+                addInfo.adeD.Tel12 = detailControls[(int)Eindex.HDenwa2].Text;
+                addInfo.adeD.Tel13 = detailControls[(int)Eindex.HDenwa3].Text;
                 addInfo.kbn = 1;
                 addInfo.ShowDialog();
 
@@ -2954,7 +2995,7 @@ namespace TenzikaiJuchuuTourou
         {
             try
             {
-                //DeleteExclusive();
+                DeleteExclusive();
             }
             catch (Exception ex)
             {
@@ -2970,6 +3011,10 @@ namespace TenzikaiJuchuuTourou
 
         public void btn_Meisai_Click(object sender, EventArgs e)
         {
+            if (!CheckKey(-1))
+            {
+                return;
+            }
             openFileDialog1.InitialDirectory = "C:\\ses\\";
             openFileDialog1.FilterIndex = 2;
             openFileDialog1.RestoreDirectory = true;
@@ -2994,6 +3039,8 @@ namespace TenzikaiJuchuuTourou
                 };
                 var resTable = tkb.M_TenjiKaiJuuChuu_Select(tje);
                 MesaiHyouJi(resTable);
+                S_BodySeigyo(0, 1);
+                mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
             }
         }
         private void MesaiHyouJi(DataTable dt)
@@ -3006,7 +3053,7 @@ namespace TenzikaiJuchuuTourou
             if(IsShow)
             S_BodySeigyo(1, 1);
             mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
-            DisablePanel(PanelHeader);
+           // DisablePanel(PanelHeader);
             chk_1.Focus();
         }
         private DataTable ConvertToDataTable(string FileName)
@@ -3212,6 +3259,7 @@ namespace TenzikaiJuchuuTourou
                             btn_Customer.Enabled = Kbn == 0 ? true : false;
                             btn_Shipping.Enabled = Kbn == 0 ? true : false;
                             panel1.Enabled = Kbn == 0 ? true : false;
+                            panel2.Enabled = Kbn == 0 ? true : false;
                             if (OperationMode == EOperationMode.UPDATE)
                             if (Kbn == 0)
                             {
@@ -3243,7 +3291,7 @@ namespace TenzikaiJuchuuTourou
                                     break;
 
                                 // 'Jancd列入力可 (Jancdを入力した時点で他の列が入力可になるため)
-                                if (OperationMode != EOperationMode.SHOW && OperationMode != EOperationMode.DELETE)
+                                //  if (OperationMode != EOperationMode.SHOW && OperationMode != EOperationMode.DELETE)
                                 mGrid.g_MK_State[(int)ClsGridTenjikai.ColNO.SCJAN, w_Row].Cell_Enabled = true;
                             }
 
@@ -3287,14 +3335,19 @@ namespace TenzikaiJuchuuTourou
                             {
                                 if (m_EnableCnt - 1 < w_Row)
                                     break;
+                                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].SCJAN))
+                                {
+                                    mGrid.g_MK_State[(int)ClsGridTenjikai.ColNO.SCJAN, w_Row].Cell_Enabled = true;
+                                    continue;
+                                }
                                 if (!String.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].SKUCD))
                                 {
                                     for (int w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
                                     {
                                         switch (w_Col)
                                         {
-                                            case (int)ClsGridTenjikai.ColNO.SCJAN:
-                                            case (int)ClsGridTenjikai.ColNO.ShouName:
+                                            //case (int)ClsGridTenjikai.ColNO.SCJAN:
+                                            //case (int)ClsGridTenjikai.ColNO.ShouName:
                                             //case (int)ClsGridTenjikai.ColNO.Color:
                                             //case (int)ClsGridTenjikai.ColNO.ColorName:
                                             //case (int)ClsGridTenjikai.ColNO.Size:
@@ -3313,13 +3366,21 @@ namespace TenzikaiJuchuuTourou
                                             //case (int)ClsGridTenjikai.ColNO.ZeiNu:
                                             //case (int)ClsGridTenjikai.ColNO.ZeinuTanku:
                                             case (int)ClsGridTenjikai.ColNO.Chk:
-                                            //case (int)ClsGridTenjikai.ColNO.ShanaiBi:
-                                            //case (int)ClsGridTenjikai.ColNO.ShagaiBi:
-                                            //case (int)ClsGridTenjikai.ColNO.KobeTsu:
+                                                //case (int)ClsGridTenjikai.ColNO.ShanaiBi:
+                                                //case (int)ClsGridTenjikai.ColNO.ShagaiBi:
+                                                //case (int)ClsGridTenjikai.ColNO.KobeTsu:
                                                 {
                                                     mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
                                                     break;
                                                 }
+
+                                            case (int)ClsGridTenjikai.ColNO.SCJAN:
+                                            case (int)ClsGridTenjikai.ColNO.ShouName:
+                                                {
+                                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = false;
+                                                    break;
+                                                }
+
                                         }
                                     }
                                 }
@@ -3327,9 +3388,9 @@ namespace TenzikaiJuchuuTourou
                         }
                         else
                         {
-                            // txtStartDateFrom.Focus();
+                            Scr_Lock(2, 3, 0);
+                            Scr_Lock(0, 1, 1);
                             SetFuncKeyAll(this, "111111000001");
-                            // btnDisplay.Enabled = false;
                         }
                         break;
                     }
@@ -3343,19 +3404,20 @@ namespace TenzikaiJuchuuTourou
                         }
                         else
                         {
-                           //   Scr_Lock(0, 0, 0);
+                            //   Scr_Lock(0, 0, 0);
 
 
                             if (OperationMode == EOperationMode.DELETE)
                             {
-                               // Scr_Lock(1, 3, 1);
-                                SetFuncKeyAll(this, "111111000011");
-                                if (OperationMode != EOperationMode.DELETE)
-                                 Scr_Lock(0, 3, 1);
+                                //Scr_Lock(1, 3, 1);
+                                SetFuncKeyAll(this, "111111000001");
+
+                                Scr_Lock(0, 0, 1);
                             }
                             else
                             {
-                                SetFuncKeyAll(this, "111111000010");
+
+                                SetFuncKeyAll(this, "111111000000");
                             }
 
                             // 削除時のみ、明細を参照できるように、スクロールバーのTabStopをTrueにする
@@ -3382,6 +3444,15 @@ namespace TenzikaiJuchuuTourou
                         }
 
                     }
+                    else
+                        for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
+                        {
+                            if (m_EnableCnt - 1 < w_Row)
+                                break;
+
+                            // 'Jancd列入力可 (Jancdを入力した時点で他の列が入力可になるため)
+                            mGrid.g_MK_State[(int)ClsGridTenjikai.ColNO.SCJAN, w_Row].Cell_Enabled = true;
+                        }
                     Vsb_Mei_0.TabStop = true;
                     break;
                 default:
@@ -3389,7 +3460,7 @@ namespace TenzikaiJuchuuTourou
                         break;
                     }
             }
-            
+
         }
         public override void FunctionProcess(int Index)
         {
@@ -3470,8 +3541,7 @@ namespace TenzikaiJuchuuTourou
                         this.ExecSec();
                         break;
                     }
-            }   //switch end
-            ChangeFunKeys();
+            }   
         }
         private bool CheckKey(int index, bool set = true)
         {
@@ -3538,7 +3608,7 @@ namespace TenzikaiJuchuuTourou
                     bbl.ShowMessage("E256");
                     return false;
                 }
-
+                bool ret = SelectAndInsertExclusive();
                 //排他処理
                 //bool ret = SelectAndInsertExclusive();
                 //if (!ret)
@@ -3621,7 +3691,7 @@ namespace TenzikaiJuchuuTourou
             //        }
             //}
 
-            if (OperationMode != EOperationMode.DELETE)  // DetailsControl
+            if (OperationMode != EOperationMode.DELETE && OperationMode != EOperationMode.SHOW)  // DetailsControl
             {
                 for (int i = 0; i < detailControls.Length; i++)
                     if (CheckDetail(i, false) == false)
@@ -3629,14 +3699,7 @@ namespace TenzikaiJuchuuTourou
                         detailControls[i].Focus();
                         return;
                     }
-
-                //dje = new D_Juchuu_Entity();
-                //dje.JuchuuNO = keyControls[(int)EIndex.JuchuuNO].Text == "" ? mTemporaryReserveNO : keyControls[(int)EIndex.JuchuuNO].Text;
-
-                ////D_TemporaryReserveをDelete
-                //mibl.DeleteTemporaryReserve(dje);
-
-                //// 明細部  画面の範囲の内容を配列にセット
+                
                 mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
                 ////明細部チェック
@@ -3730,65 +3793,15 @@ namespace TenzikaiJuchuuTourou
                     return;
                 }
             }
-            //M_Control.Tennic＝1 の場合、
-            //if (mTennic.Equals(1))
-            //{
-                //与信チェックを行う
-                //Function_与信チェックより以下情報を取得する
-                //Fnc_Credit_Entity fce = new Fnc_Credit_Entity
-                //{
-                //    Operator = InOperatorCD,
-                //    PC = InPcID,
-                //    //ChangeDate = detailControls[(int)EIndex.JuchuuDate].Text,
-                //    //CustomerCD = detailControls[(int)EIndex.CustomerCD].Text,
-                //};
+           
 
-                //bool ret = bbl.Fnc_Credit(fce);
-                //if (ret)
-                //{
-                //    //out与信チェック区分 0:なし、1:警告、2:エラー
-                //    if (fce.CreditCheckKBN.Equals("0"))
-                //    {
-                //        //●与信チェック区分＝0の場合、処理なし 次工程へ
-
-                //    }
-                    //else if (fce.CreditCheckKBN.Equals("1"))
-                    //{
-                    //    //●与信チェック区分＝1の場合、
-                    //    //●与信限度額<●総債権額＋Footer.税込売上額の場合、警告表示			
-                    //    if (bbl.Z_Set(fce.CreditAmount) < bbl.Z_Set(fce.SaikenGaku) + bbl.Z_Set(lblKin6.Text))
-                    //    {
-                    //        if (bbl.ShowMessage("Q324", bbl.Z_SetStr(fce.CreditAmount), bbl.Z_SetStr(fce.SaikenGaku), bbl.Z_SetStr(lblKin6.Text), fce.CreditMessage) != DialogResult.Yes)
-                    //            return;
-                    //    }
-                    //}
-                    //else if (fce.CreditCheckKBN.Equals("2"))
-                    //{
-                    //    //●与信チェック区分＝2の場合、
-                    //    //●与信限度額<●総債権額＋Footer.税込売上額の場合、警告表示			
-                    //    if (bbl.Z_Set(fce.CreditAmount) < bbl.Z_Set(fce.SaikenGaku) + bbl.Z_Set(lblKin6.Text))
-                    //    {
-                    //        bbl.ShowMessage("E261", bbl.Z_SetStr(fce.CreditAmount), bbl.Z_SetStr(fce.SaikenGaku), bbl.Z_SetStr(lblKin6.Text), fce.CreditMessage);
-                    //        return;
-                    //    }
-                    //}
-
-                //}
-            //}
-
-            //DataTable dt = GetGridEntity();
-
-            ////更新処理
-            //dje = GetEntity();
-            //mibl.Juchu_Exec(dje, dt, (short)OperationMode);
-
-            //if (OperationMode == EOperationMode.DELETE)
-            //    bbl.ShowMessage("I102");
-            //else
-            //    bbl.ShowMessage("I101");
+            if (OperationMode == EOperationMode.DELETE)
+                bbl.ShowMessage("I102");
+            else
+                bbl.ShowMessage("I101");
 
             //更新後画面クリア
-        //    ChangeOperationMode(OperationMode);
+            ChangeOperationMode(OperationMode);
         }
         private void CPY_SUB()
         {
@@ -4183,6 +4196,7 @@ namespace TenzikaiJuchuuTourou
                 InsertOperator=  InOperatorCD,
                 DeleteDt= dt,
                 StoreCD=  StoreCD,
+                Program= InProgramID
             };
 
             return tje;
@@ -4191,6 +4205,60 @@ namespace TenzikaiJuchuuTourou
         private void button1_Click(object sender, EventArgs e)
         {
             var val = detailControls[(int)Eindex.SCShiiresaki].Text;
+        }
+
+        private void DeleteExclusive()
+        {
+            if (mOldJyuchuNo == "")
+                return;
+
+            Exclusive_BL ebl = new Exclusive_BL();
+            D_Exclusive_Entity dee = new D_Exclusive_Entity
+            {
+                DataKBN = (int)Exclusive_BL.DataKbn.TenjiNo,
+                Number = mOldJyuchuNo,
+            };
+
+            bool ret = ebl.D_Exclusive_Delete(dee);
+
+            mOldJyuchuNo = "";
+        }
+        private bool SelectAndInsertExclusive()
+        {
+            if (OperationMode == EOperationMode.SHOW || OperationMode == EOperationMode.INSERT) // Will work and hold CD When Delete or Update 
+                return true;
+
+            DeleteExclusive();
+
+            if (string.IsNullOrWhiteSpace(detailControls[(int)Eindex.SCTenjiKai].Text))
+                return true;
+
+            //排他Tableに該当番号が存在するとError
+            //[D_Exclusive]
+            Exclusive_BL ebl = new Exclusive_BL();
+            D_Exclusive_Entity dee = new D_Exclusive_Entity
+            {
+                DataKBN = (int)Exclusive_BL.DataKbn.TenjiNo,
+                Number = detailControls[(int)Eindex.SCTenjiKai].Text,
+                Program = this.InProgramID,
+                Operator = this.InOperatorCD,
+                PC = this.InPcID
+            };
+
+            DataTable dt = ebl.D_Exclusive_Select(dee);
+
+            if (dt.Rows.Count > 0)
+            {
+                bbl.ShowMessage("S004", dt.Rows[0]["Program"].ToString(), dt.Rows[0]["Operator"].ToString());
+                detailControls[(int)Eindex.SCTenjiKai].Focus();
+                return false;
+            }
+            else
+            {
+                bool ret = ebl.D_Exclusive_Insert(dee);
+                mOldJyuchuNo = detailControls[(int)Eindex.SCTenjiKai].Text;
+                return ret;
+            }
         }
     }
 }
