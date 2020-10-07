@@ -10,6 +10,6 @@ namespace BL
 {
     public class TenzikaiHacchuuJouhouShuturyoku_BL:Base_BL
     {
-
+        
     }
 }

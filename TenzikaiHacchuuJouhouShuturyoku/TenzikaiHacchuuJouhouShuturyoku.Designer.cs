@@ -273,7 +273,7 @@
             this.ScSegmentCD.Value3 = null;
             this.ScSegmentCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScSegmentCD_CodeKeyDownEvent);
             this.ScSegmentCD.Enter += new System.EventHandler(this.ScSegmentCD_Enter);
-            this.ScSegmentCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ScSegmentCD_KeyDown);
+            //this.ScSegmentCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ScSegmentCD_KeyDown);
             // 
             // ckM_Label5
             // 

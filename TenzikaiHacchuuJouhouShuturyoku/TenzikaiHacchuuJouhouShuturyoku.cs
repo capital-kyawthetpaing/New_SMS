@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base.Client;
 using BL;
+using Entity;
 
 namespace TenzikaiHacchuuJouhouShuturyoku
 {
     public partial class FrmTenzikaiHacchuuJouhouShuturyoku : FrmMainForm
     {
         TenzikaiHacchuuJouhouShuturyoku_BL tzbl = new TenzikaiHacchuuJouhouShuturyoku_BL();
+        D_TenzikaiJuchuu_Entity dtje = new D_TenzikaiJuchuu_Entity();
 
         public FrmTenzikaiHacchuuJouhouShuturyoku()
         {
@@ -103,8 +105,26 @@ namespace TenzikaiHacchuuJouhouShuturyoku
 
         public void F10()
         {
+            if(ErrorCheck())
+            {
+                if (bbl.ShowMessage("Q201") == DialogResult.Yes)
+                {
+                    dtje = new D_TenzikaiJuchuu_Entity
+                    {
+                        VendorCD = ScSupplier.TxtCode.Text,
+                        LastYearTerm = cboYear.SelectedValue.ToString(),
+                        season = cboSeason.SelectedValue.ToString(),
+                        CustomerCDFrom = ScClient1.TxtCode.Text,
+                        CustomerCDTo = ScClient2.TxtCode.Text
+                    };
+                    DataTable dttenzi = new DataTable();
+                    //dttenzi = tzbl.
 
+                }
+            }
         }
+
+        
 
         public bool ErrorCheck()
         {
