@@ -21,6 +21,11 @@ namespace Entity
         public string ItemCD { get; set; }
         public string year { get; set; }
         public string season { get; set; }
+        public string CustomerCDFrom { get; set; }
+        public string CustomerCDTo { get; set; }
+        public string BrandCD { get; set; }
+        public string SegmentCD { get; set; }
+        public string ExhibitionName { get; set; }
 
     }
 }

@@ -3870,6 +3870,7 @@
             this.CboIdoKbn.Name = "CboIdoKbn";
             this.CboIdoKbn.Size = new System.Drawing.Size(156, 20);
             this.CboIdoKbn.TabIndex = 5;
+            this.CboIdoKbn.SelectedIndexChanged += new System.EventHandler(this.CboIdoKbn_SelectedIndexChanged);
             // 
             // label29
             // 
