@@ -12,6 +12,7 @@ namespace TenzikaiJuchuuTourou
 
         internal struct ST_DArray_Grid
         {
+            internal string TenjiRow;
             internal string GYONO;
             internal bool Chk;
             internal string SCJAN;

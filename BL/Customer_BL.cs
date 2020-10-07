@@ -136,5 +136,52 @@ namespace BL
         {
             return mmdl.M_Customer_Exec(me, operationMode);
         }
+
+        public bool M_Customer_Select_Update(string No,M_Customer_Entity mce,short kbn = 0, bool IsUpdate=false)
+        {
+            var tbl = new TenjikaiJuuChuu_BL();
+            var tje = new Tenjikai_Entity() { TenjiKaiOrderNo = No };
+
+            var res = tbl.Select_TenjiData(tje, out DataTable GridDt);
+            var cs = M_Customer_Select(mce,1);
+            if (res)
+            {
+                if (kbn == 0)  // Kokyaku
+                {
+                    mce.Tel11 = tje.K_Denwa1;
+                    mce.Tel12 = tje.K_Denwa2;
+                    mce.Tel13 = tje.K_Denwa3;
+                    mce.ZipCD1 = tje.K_Zip1;
+                    mce.ZipCD2 = tje.K_Zip2;
+                    mce.Address1 = tje.K_Address1;
+                    mce.Address2 = tje.K_Address2;
+                    mce.CustomerName = tje.K_Name1;
+                    mce.VariousFLG = tje.CVFlg;
+                    mce.AliasKBN = tje.CKBN == "様" ? "1" : "0";
+                    //mce.TaxTiming = "";
+                    //mce.TaxFractionKBN = "";
+                }
+                else  // Haisou
+                {
+                    mce.Tel11 = tje.H_Denwa1;
+                    mce.Tel12 = tje.H_Denwa2;
+                    mce.Tel13 = tje.H_Denwa3;
+                    mce.ZipCD1 = tje.H_Zip1;
+                    mce.ZipCD2 = tje.H_Zip2;
+                    mce.Address1 = tje.H_Address1;
+                    mce.Address2 = tje.H_Address2;
+                    mce.CustomerName = tje.H_Name1;
+                    mce.VariousFLG = tje.DVFlg;
+                    mce.AliasKBN = tje.HKBN == "様" ? "1" : "0";
+                    //mce.TaxTiming = "";
+                    //mce.TaxFractionKBN = "";
+                }
+
+
+            }
+            else
+                return false;
+            return true;
+        }
     }
 }

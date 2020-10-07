@@ -14,6 +14,7 @@ namespace Entity
         public string Shiiresaki { get; set; }
         public string Nendo { get; set; }
         public string ShuuKaSouKo { get; set; }
+        public string SouKoCD { get; set; }
         public string ShiZun { get; set; }
         public string JuchuuBi { get; set; }
         public string UriageYoteiBi { get; set; }
