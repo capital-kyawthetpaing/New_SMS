@@ -68,6 +68,10 @@ namespace Search
                 if (dt != null)
                 {
                     dgvKaniiKensaku.DataSource = dt;
+                    dgvKaniiKensaku.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect; //2020-10-07
+                    dgvKaniiKensaku.CurrentRow.Selected = true; //2020-10-07
+                    dgvKaniiKensaku.Enabled = true; //2020-10-07
+                    dgvKaniiKensaku.Focus(); //2020-10-07
                     //txtZipCD.Focus();
                 }
             }
