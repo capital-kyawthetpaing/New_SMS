@@ -60,7 +60,6 @@
             this.Lb_brand = new CKM_Controls.CKM_Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Vsb_Mei_0 = new System.Windows.Forms.VScrollBar();
-            this.chk_5 = new GridControl.clsGridCheckBox();
             this.scjan_5 = new Search.CKM_SearchControl();
             this.remark_5 = new CKM_Controls.CKM_TextBox();
             this.label37 = new System.Windows.Forms.Label();
@@ -82,13 +81,11 @@
             this.hyoteidatem_5 = new CKM_Controls.CKM_TextBox();
             this.sizeName_5 = new CKM_Controls.CKM_TextBox();
             this.colcd_5 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox87 = new CKM_Controls.CKM_TextBox();
-            this.label40 = new System.Windows.Forms.Label();
+            this.LB_5 = new System.Windows.Forms.Label();
             this.shouhin_5 = new CKM_Controls.CKM_TextBox();
             this.sizecd_5 = new CKM_Controls.CKM_TextBox();
             this.sku_5 = new CKM_Controls.CKM_TextBox();
             this.colorName_5 = new CKM_Controls.CKM_TextBox();
-            this.chk_4 = new GridControl.clsGridCheckBox();
             this.scjan_4 = new Search.CKM_SearchControl();
             this.remark_4 = new CKM_Controls.CKM_TextBox();
             this.label33 = new System.Windows.Forms.Label();
@@ -110,13 +107,11 @@
             this.hyoteidatem_4 = new CKM_Controls.CKM_TextBox();
             this.sizeName_4 = new CKM_Controls.CKM_TextBox();
             this.colcd_4 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox68 = new CKM_Controls.CKM_TextBox();
-            this.label36 = new System.Windows.Forms.Label();
+            this.LB_4 = new System.Windows.Forms.Label();
             this.shouhin_4 = new CKM_Controls.CKM_TextBox();
             this.sizecd_4 = new CKM_Controls.CKM_TextBox();
             this.sku_4 = new CKM_Controls.CKM_TextBox();
             this.colorName_4 = new CKM_Controls.CKM_TextBox();
-            this.chk_3 = new GridControl.clsGridCheckBox();
             this.scjan_3 = new Search.CKM_SearchControl();
             this.remark_3 = new CKM_Controls.CKM_TextBox();
             this.label26 = new System.Windows.Forms.Label();
@@ -138,13 +133,11 @@
             this.hyoteidatem_3 = new CKM_Controls.CKM_TextBox();
             this.sizeName_3 = new CKM_Controls.CKM_TextBox();
             this.colcd_3 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox49 = new CKM_Controls.CKM_TextBox();
-            this.label31 = new System.Windows.Forms.Label();
+            this.LB_3 = new System.Windows.Forms.Label();
             this.shouhin_3 = new CKM_Controls.CKM_TextBox();
             this.sizecd_3 = new CKM_Controls.CKM_TextBox();
             this.sku_3 = new CKM_Controls.CKM_TextBox();
             this.colorName_3 = new CKM_Controls.CKM_TextBox();
-            this.chk_2 = new GridControl.clsGridCheckBox();
             this.scjan_2 = new Search.CKM_SearchControl();
             this.remark_2 = new CKM_Controls.CKM_TextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -166,8 +159,7 @@
             this.hyoteidatem_2 = new CKM_Controls.CKM_TextBox();
             this.sizeName_2 = new CKM_Controls.CKM_TextBox();
             this.colcd_2 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox30 = new CKM_Controls.CKM_TextBox();
-            this.label25 = new System.Windows.Forms.Label();
+            this.LB_2 = new System.Windows.Forms.Label();
             this.shouhin_2 = new CKM_Controls.CKM_TextBox();
             this.sizecd_2 = new CKM_Controls.CKM_TextBox();
             this.sku_2 = new CKM_Controls.CKM_TextBox();
@@ -194,8 +186,7 @@
             this.hyoteidatem_1 = new CKM_Controls.CKM_TextBox();
             this.sizeName_1 = new CKM_Controls.CKM_TextBox();
             this.colcd_1 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LB_1 = new System.Windows.Forms.Label();
             this.shouhin_1 = new CKM_Controls.CKM_TextBox();
             this.sizecd_1 = new CKM_Controls.CKM_TextBox();
             this.sku_1 = new CKM_Controls.CKM_TextBox();
@@ -223,9 +214,32 @@
             this.label8 = new System.Windows.Forms.Label();
             this.lblGridSkuCD = new System.Windows.Forms.Label();
             this.IMT_DMY_0 = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.chk_2 = new GridControl.clsGridCheckBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.chk_3 = new GridControl.clsGridCheckBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.clsGridCheckBox3 = new GridControl.clsGridCheckBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.clsGridCheckBox4 = new GridControl.clsGridCheckBox();
+            this.chk_4 = new GridControl.clsGridCheckBox();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.clsGridCheckBox6 = new GridControl.clsGridCheckBox();
+            this.chk_5 = new GridControl.clsGridCheckBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -475,8 +489,8 @@
             this.SC_CopyTenzikai.ChangeDate = "";
             this.SC_CopyTenzikai.ChangeDateWidth = 100;
             this.SC_CopyTenzikai.Code = "";
-            this.SC_CopyTenzikai.CodeWidth = 100;
-            this.SC_CopyTenzikai.CodeWidth1 = 100;
+            this.SC_CopyTenzikai.CodeWidth = 400;
+            this.SC_CopyTenzikai.CodeWidth1 = 400;
             this.SC_CopyTenzikai.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_CopyTenzikai.DataCheck = false;
             this.SC_CopyTenzikai.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -487,9 +501,9 @@
             this.SC_CopyTenzikai.Location = new System.Drawing.Point(711, 17);
             this.SC_CopyTenzikai.Margin = new System.Windows.Forms.Padding(0);
             this.SC_CopyTenzikai.Name = "SC_CopyTenzikai";
-            this.SC_CopyTenzikai.NameWidth = 350;
+            this.SC_CopyTenzikai.NameWidth = 180;
             this.SC_CopyTenzikai.SearchEnable = true;
-            this.SC_CopyTenzikai.Size = new System.Drawing.Size(133, 27);
+            this.SC_CopyTenzikai.Size = new System.Drawing.Size(433, 27);
             this.SC_CopyTenzikai.Stype = Search.CKM_SearchControl.SearchType.展示会商品;
             this.SC_CopyTenzikai.TabIndex = 7;
             this.SC_CopyTenzikai.test = null;
@@ -727,23 +741,24 @@
             // 
             this.SC_Tenzikai.AutoSize = true;
             this.SC_Tenzikai.ChangeDate = "";
-            this.SC_Tenzikai.ChangeDateWidth = 100;
+            this.SC_Tenzikai.ChangeDateWidth = 0;
             this.SC_Tenzikai.Code = "";
-            this.SC_Tenzikai.CodeWidth = 100;
-            this.SC_Tenzikai.CodeWidth1 = 100;
-            this.SC_Tenzikai.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.SC_Tenzikai.CodeWidth = 400;
+            this.SC_Tenzikai.CodeWidth1 = 400;
+            this.SC_Tenzikai.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_Tenzikai.DataCheck = false;
             this.SC_Tenzikai.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.SC_Tenzikai.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.SC_Tenzikai.IsCopy = false;
             this.SC_Tenzikai.LabelText = "";
             this.SC_Tenzikai.LabelVisible = false;
-            this.SC_Tenzikai.Location = new System.Drawing.Point(74, 5);
+            this.SC_Tenzikai.Location = new System.Drawing.Point(81, 5);
             this.SC_Tenzikai.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Tenzikai.Name = "SC_Tenzikai";
-            this.SC_Tenzikai.NameWidth = 350;
+            this.SC_Tenzikai.NameWidth = 180;
+            this.SC_Tenzikai.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.SC_Tenzikai.SearchEnable = true;
-            this.SC_Tenzikai.Size = new System.Drawing.Size(133, 27);
+            this.SC_Tenzikai.Size = new System.Drawing.Size(433, 27);
             this.SC_Tenzikai.Stype = Search.CKM_SearchControl.SearchType.展示会商品;
             this.SC_Tenzikai.TabIndex = 1;
             this.SC_Tenzikai.test = null;
@@ -752,6 +767,7 @@
             this.SC_Tenzikai.Value1 = null;
             this.SC_Tenzikai.Value2 = null;
             this.SC_Tenzikai.Value3 = null;
+            this.SC_Tenzikai.Load += new System.EventHandler(this.SC_Tenzikai_Load);
             // 
             // ckM_Label6
             // 
@@ -888,8 +904,12 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel10);
+            this.panel3.Controls.Add(this.panel8);
+            this.panel3.Controls.Add(this.panel6);
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.Vsb_Mei_0);
-            this.panel3.Controls.Add(this.chk_5);
             this.panel3.Controls.Add(this.scjan_5);
             this.panel3.Controls.Add(this.remark_5);
             this.panel3.Controls.Add(this.label37);
@@ -911,13 +931,11 @@
             this.panel3.Controls.Add(this.hyoteidatem_5);
             this.panel3.Controls.Add(this.sizeName_5);
             this.panel3.Controls.Add(this.colcd_5);
-            this.panel3.Controls.Add(this.ckM_TextBox87);
-            this.panel3.Controls.Add(this.label40);
+            this.panel3.Controls.Add(this.LB_5);
             this.panel3.Controls.Add(this.shouhin_5);
             this.panel3.Controls.Add(this.sizecd_5);
             this.panel3.Controls.Add(this.sku_5);
             this.panel3.Controls.Add(this.colorName_5);
-            this.panel3.Controls.Add(this.chk_4);
             this.panel3.Controls.Add(this.scjan_4);
             this.panel3.Controls.Add(this.remark_4);
             this.panel3.Controls.Add(this.label33);
@@ -939,13 +957,11 @@
             this.panel3.Controls.Add(this.hyoteidatem_4);
             this.panel3.Controls.Add(this.sizeName_4);
             this.panel3.Controls.Add(this.colcd_4);
-            this.panel3.Controls.Add(this.ckM_TextBox68);
-            this.panel3.Controls.Add(this.label36);
+            this.panel3.Controls.Add(this.LB_4);
             this.panel3.Controls.Add(this.shouhin_4);
             this.panel3.Controls.Add(this.sizecd_4);
             this.panel3.Controls.Add(this.sku_4);
             this.panel3.Controls.Add(this.colorName_4);
-            this.panel3.Controls.Add(this.chk_3);
             this.panel3.Controls.Add(this.scjan_3);
             this.panel3.Controls.Add(this.remark_3);
             this.panel3.Controls.Add(this.label26);
@@ -967,13 +983,11 @@
             this.panel3.Controls.Add(this.hyoteidatem_3);
             this.panel3.Controls.Add(this.sizeName_3);
             this.panel3.Controls.Add(this.colcd_3);
-            this.panel3.Controls.Add(this.ckM_TextBox49);
-            this.panel3.Controls.Add(this.label31);
+            this.panel3.Controls.Add(this.LB_3);
             this.panel3.Controls.Add(this.shouhin_3);
             this.panel3.Controls.Add(this.sizecd_3);
             this.panel3.Controls.Add(this.sku_3);
             this.panel3.Controls.Add(this.colorName_3);
-            this.panel3.Controls.Add(this.chk_2);
             this.panel3.Controls.Add(this.scjan_2);
             this.panel3.Controls.Add(this.remark_2);
             this.panel3.Controls.Add(this.label19);
@@ -995,13 +1009,11 @@
             this.panel3.Controls.Add(this.hyoteidatem_2);
             this.panel3.Controls.Add(this.sizeName_2);
             this.panel3.Controls.Add(this.colcd_2);
-            this.panel3.Controls.Add(this.ckM_TextBox30);
-            this.panel3.Controls.Add(this.label25);
+            this.panel3.Controls.Add(this.LB_2);
             this.panel3.Controls.Add(this.shouhin_2);
             this.panel3.Controls.Add(this.sizecd_2);
             this.panel3.Controls.Add(this.sku_2);
             this.panel3.Controls.Add(this.colorName_2);
-            this.panel3.Controls.Add(this.chk_1);
             this.panel3.Controls.Add(this.scjan_1);
             this.panel3.Controls.Add(this.remark_1);
             this.panel3.Controls.Add(this.label17);
@@ -1023,8 +1035,7 @@
             this.panel3.Controls.Add(this.hyoteidatem_1);
             this.panel3.Controls.Add(this.sizeName_1);
             this.panel3.Controls.Add(this.colcd_1);
-            this.panel3.Controls.Add(this.ckM_TextBox1);
-            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.LB_1);
             this.panel3.Controls.Add(this.shouhin_1);
             this.panel3.Controls.Add(this.sizecd_1);
             this.panel3.Controls.Add(this.sku_1);
@@ -1041,15 +1052,6 @@
             this.Vsb_Mei_0.Name = "Vsb_Mei_0";
             this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 220);
             this.Vsb_Mei_0.TabIndex = 651;
-            // 
-            // chk_5
-            // 
-            this.chk_5.AutoSize = true;
-            this.chk_5.Location = new System.Drawing.Point(73, 226);
-            this.chk_5.Name = "chk_5";
-            this.chk_5.Size = new System.Drawing.Size(15, 14);
-            this.chk_5.TabIndex = 650;
-            this.chk_5.UseVisualStyleBackColor = true;
             // 
             // scjan_5
             // 
@@ -1648,49 +1650,18 @@
             this.colcd_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.colcd_5.UseColorSizMode = false;
             // 
-            // ckM_TextBox87
+            // LB_5
             // 
-            this.ckM_TextBox87.AllowMinus = false;
-            this.ckM_TextBox87.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox87.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox87.BorderColor = false;
-            this.ckM_TextBox87.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox87.ClientColor = System.Drawing.Color.White;
-            this.ckM_TextBox87.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.ckM_TextBox87.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox87.DecimalPlace = 0;
-            this.ckM_TextBox87.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox87.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.ckM_TextBox87.IntegerPart = 0;
-            this.ckM_TextBox87.IsCorrectDate = true;
-            this.ckM_TextBox87.isEnterKeyDown = false;
-            this.ckM_TextBox87.IsFirstTime = true;
-            this.ckM_TextBox87.isMaxLengthErr = false;
-            this.ckM_TextBox87.IsNumber = true;
-            this.ckM_TextBox87.IsShop = false;
-            this.ckM_TextBox87.Length = 100;
-            this.ckM_TextBox87.Location = new System.Drawing.Point(28, 223);
-            this.ckM_TextBox87.MaxLength = 100;
-            this.ckM_TextBox87.MoveNext = true;
-            this.ckM_TextBox87.Name = "ckM_TextBox87";
-            this.ckM_TextBox87.Size = new System.Drawing.Size(110, 19);
-            this.ckM_TextBox87.TabIndex = 628;
-            this.ckM_TextBox87.Tag = "0";
-            this.ckM_TextBox87.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.ckM_TextBox87.UseColorSizMode = false;
-            // 
-            // label40
-            // 
-            this.label40.BackColor = System.Drawing.Color.DarkGray;
-            this.label40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label40.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label40.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label40.Location = new System.Drawing.Point(1, 224);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(28, 40);
-            this.label40.TabIndex = 627;
-            this.label40.Text = "5";
-            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LB_5.BackColor = System.Drawing.Color.DarkGray;
+            this.LB_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LB_5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.LB_5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.LB_5.Location = new System.Drawing.Point(1, 224);
+            this.LB_5.Name = "LB_5";
+            this.LB_5.Size = new System.Drawing.Size(28, 40);
+            this.LB_5.TabIndex = 627;
+            this.LB_5.Text = "5";
+            this.LB_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // shouhin_5
             // 
@@ -1754,6 +1725,7 @@
             this.sizecd_5.Tag = "0";
             this.sizecd_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.sizecd_5.UseColorSizMode = false;
+            this.sizecd_5.TextChanged += new System.EventHandler(this.sizecd_5_TextChanged);
             // 
             // sku_5
             // 
@@ -1817,15 +1789,6 @@
             this.colorName_5.Tag = "0";
             this.colorName_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.colorName_5.UseColorSizMode = false;
-            // 
-            // chk_4
-            // 
-            this.chk_4.AutoSize = true;
-            this.chk_4.Location = new System.Drawing.Point(73, 187);
-            this.chk_4.Name = "chk_4";
-            this.chk_4.Size = new System.Drawing.Size(15, 14);
-            this.chk_4.TabIndex = 622;
-            this.chk_4.UseVisualStyleBackColor = true;
             // 
             // scjan_4
             // 
@@ -2424,49 +2387,18 @@
             this.colcd_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.colcd_4.UseColorSizMode = false;
             // 
-            // ckM_TextBox68
+            // LB_4
             // 
-            this.ckM_TextBox68.AllowMinus = false;
-            this.ckM_TextBox68.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox68.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox68.BorderColor = false;
-            this.ckM_TextBox68.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox68.ClientColor = System.Drawing.Color.White;
-            this.ckM_TextBox68.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.ckM_TextBox68.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox68.DecimalPlace = 0;
-            this.ckM_TextBox68.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox68.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.ckM_TextBox68.IntegerPart = 0;
-            this.ckM_TextBox68.IsCorrectDate = true;
-            this.ckM_TextBox68.isEnterKeyDown = false;
-            this.ckM_TextBox68.IsFirstTime = true;
-            this.ckM_TextBox68.isMaxLengthErr = false;
-            this.ckM_TextBox68.IsNumber = true;
-            this.ckM_TextBox68.IsShop = false;
-            this.ckM_TextBox68.Length = 100;
-            this.ckM_TextBox68.Location = new System.Drawing.Point(28, 184);
-            this.ckM_TextBox68.MaxLength = 100;
-            this.ckM_TextBox68.MoveNext = true;
-            this.ckM_TextBox68.Name = "ckM_TextBox68";
-            this.ckM_TextBox68.Size = new System.Drawing.Size(110, 19);
-            this.ckM_TextBox68.TabIndex = 600;
-            this.ckM_TextBox68.Tag = "0";
-            this.ckM_TextBox68.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.ckM_TextBox68.UseColorSizMode = false;
-            // 
-            // label36
-            // 
-            this.label36.BackColor = System.Drawing.Color.DarkGray;
-            this.label36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label36.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label36.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label36.Location = new System.Drawing.Point(1, 185);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(28, 40);
-            this.label36.TabIndex = 599;
-            this.label36.Text = "4";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LB_4.BackColor = System.Drawing.Color.DarkGray;
+            this.LB_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LB_4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.LB_4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.LB_4.Location = new System.Drawing.Point(1, 185);
+            this.LB_4.Name = "LB_4";
+            this.LB_4.Size = new System.Drawing.Size(28, 40);
+            this.LB_4.TabIndex = 599;
+            this.LB_4.Text = "4";
+            this.LB_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // shouhin_4
             // 
@@ -2593,15 +2525,6 @@
             this.colorName_4.Tag = "0";
             this.colorName_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.colorName_4.UseColorSizMode = false;
-            // 
-            // chk_3
-            // 
-            this.chk_3.AutoSize = true;
-            this.chk_3.Location = new System.Drawing.Point(73, 149);
-            this.chk_3.Name = "chk_3";
-            this.chk_3.Size = new System.Drawing.Size(15, 14);
-            this.chk_3.TabIndex = 594;
-            this.chk_3.UseVisualStyleBackColor = true;
             // 
             // scjan_3
             // 
@@ -3040,7 +2963,7 @@
             this.shiire_3.IsNumber = true;
             this.shiire_3.IsShop = false;
             this.shiire_3.Length = 100;
-            this.shiire_3.Location = new System.Drawing.Point(28, 165);
+            this.shiire_3.Location = new System.Drawing.Point(28, 164);
             this.shiire_3.MaxLength = 100;
             this.shiire_3.MoveNext = true;
             this.shiire_3.Name = "shiire_3";
@@ -3200,49 +3123,18 @@
             this.colcd_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.colcd_3.UseColorSizMode = false;
             // 
-            // ckM_TextBox49
+            // LB_3
             // 
-            this.ckM_TextBox49.AllowMinus = false;
-            this.ckM_TextBox49.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox49.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox49.BorderColor = false;
-            this.ckM_TextBox49.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox49.ClientColor = System.Drawing.Color.White;
-            this.ckM_TextBox49.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.ckM_TextBox49.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox49.DecimalPlace = 0;
-            this.ckM_TextBox49.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox49.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.ckM_TextBox49.IntegerPart = 0;
-            this.ckM_TextBox49.IsCorrectDate = true;
-            this.ckM_TextBox49.isEnterKeyDown = false;
-            this.ckM_TextBox49.IsFirstTime = true;
-            this.ckM_TextBox49.isMaxLengthErr = false;
-            this.ckM_TextBox49.IsNumber = true;
-            this.ckM_TextBox49.IsShop = false;
-            this.ckM_TextBox49.Length = 100;
-            this.ckM_TextBox49.Location = new System.Drawing.Point(28, 146);
-            this.ckM_TextBox49.MaxLength = 100;
-            this.ckM_TextBox49.MoveNext = true;
-            this.ckM_TextBox49.Name = "ckM_TextBox49";
-            this.ckM_TextBox49.Size = new System.Drawing.Size(110, 19);
-            this.ckM_TextBox49.TabIndex = 572;
-            this.ckM_TextBox49.Tag = "0";
-            this.ckM_TextBox49.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.ckM_TextBox49.UseColorSizMode = false;
-            // 
-            // label31
-            // 
-            this.label31.BackColor = System.Drawing.Color.DarkGray;
-            this.label31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label31.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label31.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label31.Location = new System.Drawing.Point(1, 145);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(28, 40);
-            this.label31.TabIndex = 571;
-            this.label31.Text = "3";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LB_3.BackColor = System.Drawing.Color.DarkGray;
+            this.LB_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LB_3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.LB_3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.LB_3.Location = new System.Drawing.Point(1, 145);
+            this.LB_3.Name = "LB_3";
+            this.LB_3.Size = new System.Drawing.Size(28, 40);
+            this.LB_3.TabIndex = 571;
+            this.LB_3.Text = "3";
+            this.LB_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // shouhin_3
             // 
@@ -3369,15 +3261,6 @@
             this.colorName_3.Tag = "0";
             this.colorName_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.colorName_3.UseColorSizMode = false;
-            // 
-            // chk_2
-            // 
-            this.chk_2.AutoSize = true;
-            this.chk_2.Location = new System.Drawing.Point(72, 99);
-            this.chk_2.Name = "chk_2";
-            this.chk_2.Size = new System.Drawing.Size(15, 14);
-            this.chk_2.TabIndex = 566;
-            this.chk_2.UseVisualStyleBackColor = true;
             // 
             // scjan_2
             // 
@@ -3976,49 +3859,18 @@
             this.colcd_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.colcd_2.UseColorSizMode = false;
             // 
-            // ckM_TextBox30
+            // LB_2
             // 
-            this.ckM_TextBox30.AllowMinus = false;
-            this.ckM_TextBox30.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox30.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox30.BorderColor = false;
-            this.ckM_TextBox30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox30.ClientColor = System.Drawing.Color.White;
-            this.ckM_TextBox30.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.ckM_TextBox30.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox30.DecimalPlace = 0;
-            this.ckM_TextBox30.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox30.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.ckM_TextBox30.IntegerPart = 0;
-            this.ckM_TextBox30.IsCorrectDate = true;
-            this.ckM_TextBox30.isEnterKeyDown = false;
-            this.ckM_TextBox30.IsFirstTime = true;
-            this.ckM_TextBox30.isMaxLengthErr = false;
-            this.ckM_TextBox30.IsNumber = true;
-            this.ckM_TextBox30.IsShop = false;
-            this.ckM_TextBox30.Length = 100;
-            this.ckM_TextBox30.Location = new System.Drawing.Point(27, 98);
-            this.ckM_TextBox30.MaxLength = 100;
-            this.ckM_TextBox30.MoveNext = true;
-            this.ckM_TextBox30.Name = "ckM_TextBox30";
-            this.ckM_TextBox30.Size = new System.Drawing.Size(110, 19);
-            this.ckM_TextBox30.TabIndex = 544;
-            this.ckM_TextBox30.Tag = "0";
-            this.ckM_TextBox30.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.ckM_TextBox30.UseColorSizMode = false;
-            // 
-            // label25
-            // 
-            this.label25.BackColor = System.Drawing.Color.DarkGray;
-            this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label25.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label25.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label25.Location = new System.Drawing.Point(0, 99);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(28, 40);
-            this.label25.TabIndex = 543;
-            this.label25.Text = "2";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LB_2.BackColor = System.Drawing.Color.DarkGray;
+            this.LB_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LB_2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.LB_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.LB_2.Location = new System.Drawing.Point(0, 99);
+            this.LB_2.Name = "LB_2";
+            this.LB_2.Size = new System.Drawing.Size(28, 40);
+            this.LB_2.TabIndex = 543;
+            this.LB_2.Text = "2";
+            this.LB_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // shouhin_2
             // 
@@ -4149,7 +4001,7 @@
             // chk_1
             // 
             this.chk_1.AutoSize = true;
-            this.chk_1.Location = new System.Drawing.Point(73, 61);
+            this.chk_1.Location = new System.Drawing.Point(41, 4);
             this.chk_1.Name = "chk_1";
             this.chk_1.Size = new System.Drawing.Size(15, 14);
             this.chk_1.TabIndex = 538;
@@ -4592,7 +4444,7 @@
             this.shiire_1.IsNumber = true;
             this.shiire_1.IsShop = false;
             this.shiire_1.Length = 100;
-            this.shiire_1.Location = new System.Drawing.Point(28, 79);
+            this.shiire_1.Location = new System.Drawing.Point(28, 77);
             this.shiire_1.MaxLength = 100;
             this.shiire_1.MoveNext = true;
             this.shiire_1.Name = "shiire_1";
@@ -4752,49 +4604,18 @@
             this.colcd_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.colcd_1.UseColorSizMode = false;
             // 
-            // ckM_TextBox1
+            // LB_1
             // 
-            this.ckM_TextBox1.AllowMinus = false;
-            this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox1.BorderColor = false;
-            this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox1.ClientColor = System.Drawing.Color.White;
-            this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox1.DecimalPlace = 0;
-            this.ckM_TextBox1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.ckM_TextBox1.IntegerPart = 0;
-            this.ckM_TextBox1.IsCorrectDate = true;
-            this.ckM_TextBox1.isEnterKeyDown = false;
-            this.ckM_TextBox1.IsFirstTime = true;
-            this.ckM_TextBox1.isMaxLengthErr = false;
-            this.ckM_TextBox1.IsNumber = true;
-            this.ckM_TextBox1.IsShop = false;
-            this.ckM_TextBox1.Length = 100;
-            this.ckM_TextBox1.Location = new System.Drawing.Point(28, 58);
-            this.ckM_TextBox1.MaxLength = 100;
-            this.ckM_TextBox1.MoveNext = true;
-            this.ckM_TextBox1.Name = "ckM_TextBox1";
-            this.ckM_TextBox1.Size = new System.Drawing.Size(110, 19);
-            this.ckM_TextBox1.TabIndex = 512;
-            this.ckM_TextBox1.Tag = "0";
-            this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.ckM_TextBox1.UseColorSizMode = false;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.DarkGray;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(1, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 40);
-            this.label2.TabIndex = 511;
-            this.label2.Text = "1";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LB_1.BackColor = System.Drawing.Color.DarkGray;
+            this.LB_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LB_1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.LB_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.LB_1.Location = new System.Drawing.Point(1, 57);
+            this.LB_1.Name = "LB_1";
+            this.LB_1.Size = new System.Drawing.Size(28, 40);
+            this.LB_1.TabIndex = 511;
+            this.LB_1.Text = "1";
+            this.LB_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // shouhin_1
             // 
@@ -5232,6 +5053,144 @@
             this.IMT_DMY_0.TabIndex = 281;
             this.IMT_DMY_0.TabStop = false;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.chk_1);
+            this.panel2.Location = new System.Drawing.Point(31, 57);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(110, 18);
+            this.panel2.TabIndex = 652;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.chk_2);
+            this.panel5.Location = new System.Drawing.Point(28, 97);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(110, 18);
+            this.panel5.TabIndex = 653;
+            // 
+            // chk_2
+            // 
+            this.chk_2.AutoSize = true;
+            this.chk_2.Location = new System.Drawing.Point(41, 3);
+            this.chk_2.Name = "chk_2";
+            this.chk_2.Size = new System.Drawing.Size(15, 14);
+            this.chk_2.TabIndex = 538;
+            this.chk_2.UseVisualStyleBackColor = true;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Controls.Add(this.chk_3);
+            this.panel6.Location = new System.Drawing.Point(29, 145);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(110, 17);
+            this.panel6.TabIndex = 654;
+            // 
+            // chk_3
+            // 
+            this.chk_3.AutoSize = true;
+            this.chk_3.Location = new System.Drawing.Point(41, 4);
+            this.chk_3.Name = "chk_3";
+            this.chk_3.Size = new System.Drawing.Size(15, 14);
+            this.chk_3.TabIndex = 538;
+            this.chk_3.UseVisualStyleBackColor = true;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Controls.Add(this.clsGridCheckBox3);
+            this.panel7.Location = new System.Drawing.Point(8, 46);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(110, 20);
+            this.panel7.TabIndex = 653;
+            // 
+            // clsGridCheckBox3
+            // 
+            this.clsGridCheckBox3.AutoSize = true;
+            this.clsGridCheckBox3.Location = new System.Drawing.Point(41, 4);
+            this.clsGridCheckBox3.Name = "clsGridCheckBox3";
+            this.clsGridCheckBox3.Size = new System.Drawing.Size(15, 14);
+            this.clsGridCheckBox3.TabIndex = 538;
+            this.clsGridCheckBox3.UseVisualStyleBackColor = true;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.Controls.Add(this.panel9);
+            this.panel8.Controls.Add(this.chk_4);
+            this.panel8.Location = new System.Drawing.Point(28, 182);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(110, 17);
+            this.panel8.TabIndex = 655;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.Controls.Add(this.clsGridCheckBox4);
+            this.panel9.Location = new System.Drawing.Point(8, 46);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(110, 20);
+            this.panel9.TabIndex = 653;
+            // 
+            // clsGridCheckBox4
+            // 
+            this.clsGridCheckBox4.AutoSize = true;
+            this.clsGridCheckBox4.Location = new System.Drawing.Point(41, 4);
+            this.clsGridCheckBox4.Name = "clsGridCheckBox4";
+            this.clsGridCheckBox4.Size = new System.Drawing.Size(15, 14);
+            this.clsGridCheckBox4.TabIndex = 538;
+            this.clsGridCheckBox4.UseVisualStyleBackColor = true;
+            // 
+            // chk_4
+            // 
+            this.chk_4.AutoSize = true;
+            this.chk_4.Location = new System.Drawing.Point(41, 2);
+            this.chk_4.Name = "chk_4";
+            this.chk_4.Size = new System.Drawing.Size(15, 14);
+            this.chk_4.TabIndex = 538;
+            this.chk_4.UseVisualStyleBackColor = true;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.White;
+            this.panel10.Controls.Add(this.panel11);
+            this.panel10.Controls.Add(this.chk_5);
+            this.panel10.Location = new System.Drawing.Point(28, 223);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(110, 17);
+            this.panel10.TabIndex = 656;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.White;
+            this.panel11.Controls.Add(this.clsGridCheckBox6);
+            this.panel11.Location = new System.Drawing.Point(8, 46);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(110, 20);
+            this.panel11.TabIndex = 653;
+            // 
+            // clsGridCheckBox6
+            // 
+            this.clsGridCheckBox6.AutoSize = true;
+            this.clsGridCheckBox6.Location = new System.Drawing.Point(41, 4);
+            this.clsGridCheckBox6.Name = "clsGridCheckBox6";
+            this.clsGridCheckBox6.Size = new System.Drawing.Size(15, 14);
+            this.clsGridCheckBox6.TabIndex = 538;
+            this.clsGridCheckBox6.UseVisualStyleBackColor = true;
+            // 
+            // chk_5
+            // 
+            this.chk_5.AutoSize = true;
+            this.chk_5.Location = new System.Drawing.Point(41, 4);
+            this.chk_5.Name = "chk_5";
+            this.chk_5.Size = new System.Drawing.Size(15, 14);
+            this.chk_5.TabIndex = 538;
+            this.chk_5.UseVisualStyleBackColor = true;
+            // 
             // MasterTouroku_TenzikaiShouhin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -5254,6 +5213,22 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5319,7 +5294,7 @@
         private CKM_Controls.CKM_TextBox sizecd_1;
         private CKM_Controls.CKM_TextBox sku_1;
         private CKM_Controls.CKM_TextBox colorName_1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LB_1;
         private CKM_Controls.CKM_TextBox colcd_1;
         private CKM_Controls.CKM_TextBox sizeName_1;
         private System.Windows.Forms.Label label5;
@@ -5341,9 +5316,7 @@
         private Search.CKM_SearchControl scjan_1;
         private CKM_Controls.CKM_TextBox joutai_1;
         private CKM_Controls.CKM_TextBox shiire_1;
-        private CKM_Controls.CKM_TextBox ckM_TextBox1;
         private GridControl.clsGridCheckBox chk_1;
-        private GridControl.clsGridCheckBox chk_5;
         private Search.CKM_SearchControl scjan_5;
         private CKM_Controls.CKM_TextBox remark_5;
         private System.Windows.Forms.Label label37;
@@ -5365,13 +5338,11 @@
         private CKM_Controls.CKM_TextBox hyoteidatem_5;
         private CKM_Controls.CKM_TextBox sizeName_5;
         private CKM_Controls.CKM_TextBox colcd_5;
-        private CKM_Controls.CKM_TextBox ckM_TextBox87;
-        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label LB_5;
         private CKM_Controls.CKM_TextBox shouhin_5;
         private CKM_Controls.CKM_TextBox sizecd_5;
         private CKM_Controls.CKM_TextBox sku_5;
         private CKM_Controls.CKM_TextBox colorName_5;
-        private GridControl.clsGridCheckBox chk_4;
         private Search.CKM_SearchControl scjan_4;
         private CKM_Controls.CKM_TextBox remark_4;
         private System.Windows.Forms.Label label33;
@@ -5393,13 +5364,11 @@
         private CKM_Controls.CKM_TextBox hyoteidatem_4;
         private CKM_Controls.CKM_TextBox sizeName_4;
         private CKM_Controls.CKM_TextBox colcd_4;
-        private CKM_Controls.CKM_TextBox ckM_TextBox68;
-        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label LB_4;
         private CKM_Controls.CKM_TextBox shouhin_4;
         private CKM_Controls.CKM_TextBox sizecd_4;
         private CKM_Controls.CKM_TextBox sku_4;
         private CKM_Controls.CKM_TextBox colorName_4;
-        private GridControl.clsGridCheckBox chk_3;
         private Search.CKM_SearchControl scjan_3;
         private CKM_Controls.CKM_TextBox remark_3;
         private System.Windows.Forms.Label label26;
@@ -5421,13 +5390,11 @@
         private CKM_Controls.CKM_TextBox hyoteidatem_3;
         private CKM_Controls.CKM_TextBox sizeName_3;
         private CKM_Controls.CKM_TextBox colcd_3;
-        private CKM_Controls.CKM_TextBox ckM_TextBox49;
-        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label LB_3;
         private CKM_Controls.CKM_TextBox shouhin_3;
         private CKM_Controls.CKM_TextBox sizecd_3;
         private CKM_Controls.CKM_TextBox sku_3;
         private CKM_Controls.CKM_TextBox colorName_3;
-        private GridControl.clsGridCheckBox chk_2;
         private Search.CKM_SearchControl scjan_2;
         private CKM_Controls.CKM_TextBox remark_2;
         private System.Windows.Forms.Label label19;
@@ -5449,12 +5416,26 @@
         private CKM_Controls.CKM_TextBox hyoteidatem_2;
         private CKM_Controls.CKM_TextBox sizeName_2;
         private CKM_Controls.CKM_TextBox colcd_2;
-        private CKM_Controls.CKM_TextBox ckM_TextBox30;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label LB_2;
         private CKM_Controls.CKM_TextBox shouhin_2;
         private CKM_Controls.CKM_TextBox sizecd_2;
         private CKM_Controls.CKM_TextBox sku_2;
         private CKM_Controls.CKM_TextBox colorName_2;
         private System.Windows.Forms.VScrollBar Vsb_Mei_0;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel11;
+        private GridControl.clsGridCheckBox clsGridCheckBox6;
+        private GridControl.clsGridCheckBox chk_5;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
+        private GridControl.clsGridCheckBox clsGridCheckBox4;
+        private GridControl.clsGridCheckBox chk_4;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private GridControl.clsGridCheckBox clsGridCheckBox3;
+        private GridControl.clsGridCheckBox chk_3;
+        private System.Windows.Forms.Panel panel5;
+        private GridControl.clsGridCheckBox chk_2;
     }
 }
