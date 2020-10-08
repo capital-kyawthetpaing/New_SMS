@@ -1808,11 +1808,17 @@ namespace TenzikaiJuchuuTourou
 
                 if (p.Name == "pnl_kokyakuu")
                 {
-                    kr_1.Focus();
+                    if (kr_1.Checked)
+                        kr_1.Focus();
+                    else
+                        kr_2.Focus();
                 }
                 else if (p.Name == "pnl_haisou")
                 {
-                    hr_3.Focus();
+                    if (hr_3.Checked)
+                        hr_3.Focus();
+                    else
+                        hr_4.Focus();
 
                 }
             }
@@ -3060,8 +3066,9 @@ namespace TenzikaiJuchuuTourou
             if(IsShow)
             S_BodySeigyo(1, 1);
             mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
+            SelectNextControl(ActiveControl,true,true,true,true);
            // DisablePanel(PanelHeader);
-            chk_1.Focus();
+            ///chk_1.Focus();
         }
         private DataTable ConvertToDataTable(string FileName)
         {

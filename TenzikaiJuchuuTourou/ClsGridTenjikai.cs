@@ -58,7 +58,7 @@ namespace TenzikaiJuchuuTourou
         internal enum ColNO : int
         {
             GYONO,
-            Chk,
+            //Chk,
             SCJAN,
            // AdminNo,
             SKUCD,
@@ -67,6 +67,7 @@ namespace TenzikaiJuchuuTourou
             ColorName,
             Size,
             SizeName,
+            Chk,
             ShuukaYo,
             ChoukuSou,
             ShuukaSou,
