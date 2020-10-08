@@ -41,6 +41,7 @@ namespace TenzikaiHacchuuJouhouShuturyoku
             F8Visible = false;
             Btn_F10.Text = "データ出力(F10)";
             F12Visible = false;
+            F11Visible = false;
 
             BindCombo();
             ScSupplier.SetFocus(1);

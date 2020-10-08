@@ -106,6 +106,7 @@
             this.ckM_SearchControl1.Size = new System.Drawing.Size(433, 27);
             this.ckM_SearchControl1.Stype = Search.CKM_SearchControl.SearchType.展示会名;
             this.ckM_SearchControl1.TabIndex = 15;
+            this.ckM_SearchControl1.test = null;
             this.ckM_SearchControl1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ckM_SearchControl1.UseChangeDate = false;
             this.ckM_SearchControl1.Value1 = null;
@@ -135,6 +136,7 @@
             this.scSegmentCDTo.Size = new System.Drawing.Size(133, 27);
             this.scSegmentCDTo.Stype = Search.CKM_SearchControl.SearchType.商品分類;
             this.scSegmentCDTo.TabIndex = 14;
+            this.scSegmentCDTo.test = null;
             this.scSegmentCDTo.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSegmentCDTo.UseChangeDate = false;
             this.scSegmentCDTo.Value1 = null;
@@ -184,6 +186,7 @@
             this.scSegmentCDFrom.Size = new System.Drawing.Size(133, 27);
             this.scSegmentCDFrom.Stype = Search.CKM_SearchControl.SearchType.商品分類;
             this.scSegmentCDFrom.TabIndex = 12;
+            this.scSegmentCDFrom.test = null;
             this.scSegmentCDFrom.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSegmentCDFrom.UseChangeDate = false;
             this.scSegmentCDFrom.Value1 = null;
@@ -232,6 +235,7 @@
             this.scBrandCDTo.Size = new System.Drawing.Size(133, 27);
             this.scBrandCDTo.Stype = Search.CKM_SearchControl.SearchType.ブランド;
             this.scBrandCDTo.TabIndex = 10;
+            this.scBrandCDTo.test = null;
             this.scBrandCDTo.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scBrandCDTo.UseChangeDate = false;
             this.scBrandCDTo.Value1 = null;
@@ -263,6 +267,7 @@
             this.scBrandCDFrom.Size = new System.Drawing.Size(133, 27);
             this.scBrandCDFrom.Stype = Search.CKM_SearchControl.SearchType.ブランド;
             this.scBrandCDFrom.TabIndex = 9;
+            this.scBrandCDFrom.test = null;
             this.scBrandCDFrom.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scBrandCDFrom.UseChangeDate = false;
             this.scBrandCDFrom.Value1 = null;
@@ -342,6 +347,7 @@
             this.scSupplierCD.Size = new System.Drawing.Size(444, 27);
             this.scSupplierCD.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.scSupplierCD.TabIndex = 5;
+            this.scSupplierCD.test = null;
             this.scSupplierCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSupplierCD.UseChangeDate = false;
             this.scSupplierCD.Value1 = null;
