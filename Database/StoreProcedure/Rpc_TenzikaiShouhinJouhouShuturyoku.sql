@@ -46,9 +46,9 @@ SET NOCOUNT ON;
 	AND    LastYearTerm=@LastYearTerm
 	AND    LastSeason=@LastSeason
 	AND    (@BrandCDFrom IS NULL OR (BrandCD>=@BrandCDFrom))
-    AND    (@BrandCDTo IS NULL OR (BrandCD>=@BrandCDTo))
+    AND    (@BrandCDTo IS NULL OR (BrandCD<=@BrandCDTo))
 	AND    (@SegmentCDFrom IS NULL OR (SegmentCD>=@SegmentCDFrom))
-    AND    (@SegmentCDTo IS NULL OR (SegmentCD>=@SegmentCDTo))
+    AND    (@SegmentCDTo IS NULL OR (SegmentCD<=@SegmentCDTo))
 	AND    (@TenzikaiName IS NULL OR   (TenzikaiName LIKE '%'+@TenzikaiName+'%'))
 	Group BY
 	JANCD,
