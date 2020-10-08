@@ -46,6 +46,8 @@ namespace TenzikaiJuchuuTourou
             internal string TaxRateFlg; //hidden
             internal decimal Tsuujou; // hidden
             internal decimal Keigen;// hidden
+            internal string OldJanCD;
+            internal bool NotReCalc;
         }
         private enum EsearchKbn : short
         {
