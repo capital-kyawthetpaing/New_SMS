@@ -705,9 +705,10 @@ namespace Search
                     break;
 
                 case SearchType.展示会商品:
-                    txtCode.MaxLength = 13;
-                    txtCode.Width = 100;
-                    lblName.Width = 350;
+                    TxtCode.MaxLength = 40;
+                    TxtCode.Width = 400;
+                    lblName.Width = 180;
+
                     break;
                 case SearchType.JuchuuNO: // Pyoung Gyi Max Length>11/ txtWidth>100 Change htar tal // by PTK
                     txtCode.MaxLength = 11;
@@ -1835,8 +1836,9 @@ namespace Search
                         frmTenzikaishouhin.ShowDialog();
                         if (!frmTenzikaishouhin.flgCancel)
                         {
-                            txtCode.Text = frmTenzikaishouhin.parSkuCD;
-                            lblName.Text = frmTenzikaishouhin.parSKUName;
+                             //txtCode.Text = frmTenzikaishouhin.parSkuCD;
+                            txtCode.Text = frmTenzikaishouhin.parSKUName;
+                           // lblName.Text = frmTenzikaishouhin.parSKUName;
                             CheckBasedFormPanel();//PTK added
                         }
 
