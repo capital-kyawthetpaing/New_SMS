@@ -144,6 +144,8 @@ namespace BL
 
             var res = tbl.Select_TenjiData(tje, out DataTable GridDt);
             var cs = M_Customer_Select(mce,1);
+            if (!cs)
+                return false;
             if (res)
             {
                 if (kbn == 0)  // Kokyaku

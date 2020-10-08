@@ -29,16 +29,16 @@ AS
 BEGIN
 SET NOCOUNT ON;
 	Select 
-	JANCD AS 仮JANCD,
-	SKUCD AS SKUCD,
-	SKUName AS 商品名,
-	SizeName AS サイズ,
-	Colorname AS カラー,
-	HanbaiYoteiDate AS 販売予定日,
+	JANCD AS '仮JANCD',
+	SKUCD AS 'SKUCD',
+	SKUName AS '商品名',
+	SizeName AS 'サイズ',
+	Colorname AS 'カラー',
+	HanbaiYoteiDate AS '販売予定日',
 	Concat(ISNULL(@HanbaiYoteiDateMonth, '')  , N'月' , ISNULL(@HanbaiYoteiDate, '') )as  '販売予定日',
-	'' AS 即納数,
-	'' AS 希望日1,
-	'' AS 希望日2,
+	'' AS '即納数',
+	'' AS '希望日1',
+	'' AS '希望日2',
 	(ISNULL(@LastYearTerm, '') + ISNULL(@LastSeason, '') + ISNULL(@JANCD, ''))As  '消さないでください'
 	from M_TenzikaiShouhin
 	where  DeleteFlg=0

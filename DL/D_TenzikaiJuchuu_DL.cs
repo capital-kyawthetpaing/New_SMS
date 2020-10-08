@@ -86,6 +86,25 @@ namespace DL
                 { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.JanCD } },
             };
             return SelectData(dic, sp);
-        }
+        } //pnz
+
+        public DataTable D_TenzikaiJuchuu_SelectForExcel(D_TenzikaiJuchuu_Entity dtje,int chk)
+        {
+            string sp = "D_TenzikaiJuchuu_SelectForExcel";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@VendorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.VendorCD } },
+                { "@Year", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.year } },
+                { "@Season", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.season } },
+                { "@CustomerCDFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.CustomerCDFrom } },
+                { "@CustomerCDTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.CustomerCDTo } },
+                { "@TenzikaiName", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.ExhibitionName } },
+                { "@BrandCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.BrandCD } },
+                { "@SegmentCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.SegmentCD } },
+                { "@Chk", new ValuePair { value1 = SqlDbType.VarChar, value2 = chk.ToString() } },
+            };
+            return SelectData(dic, sp);
+        } //pnz
     }
 }

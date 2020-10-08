@@ -16,7 +16,7 @@ namespace DL
         //Select_TenjiData
         public DataSet Select_TenjiData(Tenjikai_Entity tje)
         {
-            string sp = "Select_TenjiDataSet";
+            string sp = "M_TenjiDataSet_Select";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@TenjiNo", new ValuePair { value1 = SqlDbType.VarChar, value2 =  tje.TenjiKaiOrderNo } },
@@ -80,13 +80,18 @@ namespace DL
                 { "@UriageYoteiBi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.UriageYoteiBi } },
                 { "@Sumi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Sumi } },
                 { "@Nichi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Nichi } },
-                { "@InsertOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertOpt } },
+                { "@InsertOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertOperator } },
                 { "@InsertDt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertDt } },
                 //{ "@InsertOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertOpt } },
                 //{ "@InsertDt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertDt } },
-                { "@DeleteOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.DeleteOpt } },
-                { "@DeleteDt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.DeleteDt } },
+                { "@DeleteOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = null } },
+                { "@DeleteDt", new ValuePair { value1 = SqlDbType.VarChar, value2 =null } },
                 { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.StoreCD } },
+                { "@InsertOperator", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertOperator } },
+                { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.PC } },
+                { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Program  } },
+                { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = "削除" } },
+                { "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.ProgramID } },
                     };
             UseTransaction = true;
             try
@@ -155,13 +160,19 @@ namespace DL
                 { "@UriageYoteiBi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.UriageYoteiBi } },
                 { "@Sumi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Sumi } },
                 { "@Nichi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Nichi } },
-                { "@InsertOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertOpt } },
+                { "@InsertOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertOperator } },
                 { "@InsertDt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertDt } },
                 //{ "@InsertOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertOpt } },
                 //{ "@InsertDt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertDt } },
-                { "@DeleteOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.DeleteOpt } },
-                { "@DeleteDt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.DeleteDt } },
+                { "@DeleteOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = null } },
+                { "@DeleteDt", new ValuePair { value1 = SqlDbType.VarChar, value2 = null } },
                 { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.StoreCD } },
+                { "@InsertOperator", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertOperator } },
+                { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.PC } },
+                { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Program } },
+                { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = "変更" } },
+                { "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.ProgramID } },
+
                     };
             UseTransaction = true;
             try
@@ -175,6 +186,7 @@ namespace DL
                 return false;
             }
         }
+
         public bool D_TenjiInsert(Tenjikai_Entity tje, string xml)
         {
            
@@ -230,14 +242,20 @@ namespace DL
                 { "@UriageYoteiBi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.UriageYoteiBi } },
                 { "@Sumi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Sumi } },
                 { "@Nichi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Nichi } },
-                { "@InsertOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertOpt } },
+                { "@InsertOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertOperator } },
                 { "@InsertDt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertDt } },
                 //{ "@InsertOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertOpt } },
                 //{ "@InsertDt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertDt } },
-                { "@DeleteOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.DeleteOpt } },
-                { "@DeleteDt", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.DeleteDt } },
+                { "@DeleteOpt", new ValuePair { value1 = SqlDbType.VarChar, value2 = null } },
+                { "@DeleteDt", new ValuePair { value1 = SqlDbType.VarChar, value2 =  null } },
                 { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.StoreCD } },
 
+                { "@InsertOperator", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.InsertOperator } },
+                { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.PC } },
+                { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 =  tje.Program } },
+                { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = "新規" } },
+                { "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.ProgramID } },
+              
 
             };
             UseTransaction = true;
@@ -252,6 +270,7 @@ namespace DL
                 return false;
             }
         }
+
         public DataTable GetTaxRate(string Flg, string Date)
         {
             string sp = "GetMaxTaxRate";
