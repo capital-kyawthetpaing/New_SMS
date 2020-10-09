@@ -15,6 +15,7 @@ using ClosedXML.Excel;
 using System.Diagnostics;
 
 namespace TenzikaiHacchuuJouhouShuturyoku
+
 {
     public partial class FrmTenzikaiHacchuuJouhouShuturyoku : FrmMainForm
     {
@@ -124,6 +125,11 @@ namespace TenzikaiHacchuuJouhouShuturyoku
                         BrandCD = ScBrandCD.TxtCode.Text,
                         SegmentCD = ScSegmentCD.TxtCode.Text,
                         ExhibitionName = ScExhibitionCD.TxtCode.Text,
+                        ProgramID = InProgramID,
+                        Operator = InOperatorCD,
+                        PC = InPcID,
+                        ProcessMode = string.Empty,
+                        Key = string.Empty
                     };
                     if (rdoCustomer.Checked == true)
                     {
