@@ -1106,8 +1106,20 @@ namespace TenzikaiJuchuuTourou
                     bool Check = mGrid.g_DArray[row].ChoukuSou;
                     if (Check)
                     {
+                       //mGrid.g_MK_State[(int)ClsGridTenjikai.ColNO.ChoukuSou, row].Cell_ReadOnly = false;
+                       // mGrid.g_MK_State[(int)ClsGridTenjikai.ColNO.ChoukuSou, row].Cell_Enabled = true;
+                       // mGrid.g_DArray[row].ChoukuSou = false;
                         //
                     }
+                    else
+                    {
+                        //mGrid.g_MK_State[(int)ClsGridTenjikai.ColNO.ChoukuSou, row].Cell_ReadOnly = false;
+                        //mGrid.g_MK_State[(int)ClsGridTenjikai.ColNO.ChoukuSou, row].Cell_Enabled = true;
+                        //mGrid.g_DArray[row].ChoukuSou = true;
+
+                    }
+                  //  mGrid.S_DispFromArray(Vsb_Mei_0.Value,ref Vsb_Mei_0);
+
                     break;
 
                 case (int)ClsGridTenjikai.ColNO.ShuukaYo:
@@ -1617,7 +1629,7 @@ namespace TenzikaiJuchuuTourou
         }
         private void SetMultiColNo(DataTable dt = null)
         {
-            S_Clear_Grid();
+           
             if (dt == null)
             {
                 for (int w_Row = 0; w_Row < 999; w_Row++)
@@ -1630,21 +1642,24 @@ namespace TenzikaiJuchuuTourou
             {
                 if (dt.TableName == "Table1")  // Update Dt
                 {
+                    S_Clear_Grid();
+
                     int c = 0;
+                   
                     foreach (DataRow dr in dt.Rows)   // 
                     {
-                        mGrid.g_DArray[c].TenjiRow  = dr["TenjiRow"].ToString();
+                        mGrid.g_DArray[c].TenjiRow = dr["TenjiRow"].ToString();
                         mGrid.g_DArray[c].SCJAN = mGrid.g_DArray[c].OldJanCD = dr["JANCD"].ToString();
                         mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
                         mGrid.g_DArray[c].ShouName = dr["SKUName"].ToString();
-                        CheckGrid((int)ClsGridTenjikai.ColNO.SCJAN, c,true);
+                        CheckGrid((int)ClsGridTenjikai.ColNO.SCJAN, c, true);
                         mGrid.g_DArray[c].Color = dr["ColorNO"].ToString();
                         mGrid.g_DArray[c].ColorName = dr["ColorName"].ToString();
                         mGrid.g_DArray[c].Size = dr["SizeNO"].ToString();
                         mGrid.g_DArray[c].SizeName = dr["SizeName"].ToString();
                         mGrid.g_DArray[c].ShuukaYo = dr["ShippingPlanDate"].ToString();
                         (mGrid.g_DArray[c].ShuukaSou) = dr["SoukoCD"].ToString();
-                         mGrid.g_DArray[c].AdminNo = dr["AdminNo"].ToString();
+                        mGrid.g_DArray[c].AdminNo = dr["AdminNo"].ToString();
                         mGrid.g_DArray[c].Chk = true;
                         mGrid.g_DArray[c].HacchuTanka = bbl.Z_SetStr(dr["OrderUnitPrice"].ToString());//
                         mGrid.g_DArray[c].NyuuKayo = dr["ArrivePlanDate"].ToString();//
@@ -1657,14 +1672,14 @@ namespace TenzikaiJuchuuTourou
                         mGrid.g_DArray[c].zeikomijuchuu = bbl.Z_SetStr(dr["JuchuuGaku"].ToString());//
                         mGrid.g_DArray[c].ArariGaku = bbl.Z_SetStr(dr["ProfitGaku"].ToString());//
                         mGrid.g_DArray[c].ZeiNu = dr["ZeiHyouki"].ToString();//
-                        mGrid.g_DArray[c].ZeinuTanku = dr["JuchuuTaxRitsu"].ToString() +"%" ;//
+                        mGrid.g_DArray[c].ZeinuTanku = dr["JuchuuTaxRitsu"].ToString() + "%";//
 
                         // mGrid.g_DArray[c].Chk = dr["_3SKUName"].ToString();   
                         mGrid.g_DArray[c].ShanaiBi = dr["CommentOutStore"].ToString();//
                         mGrid.g_DArray[c].ShagaiBi = dr["CommentInStore"].ToString();//
                         mGrid.g_DArray[c].KobeTsu = dr["IndividualClientName"].ToString();//
 
-                        mGrid.g_DArray[c].ChoukuSou =dr["DirectFLG"].ToString().Equals("0")?false:true;//
+                        mGrid.g_DArray[c].ChoukuSou = dr["DirectFLG"].ToString().Equals("0") ? false : true;//
                         mGrid.g_DArray[c].TorokuFlg = dr["TorokuFlg"].ToString();//
                         mGrid.g_DArray[c].TaxRateFlg = dr["TaxRateFLG"].ToString();//
                         c++;
@@ -1672,7 +1687,33 @@ namespace TenzikaiJuchuuTourou
                 }
                 else
                 {
+                    int Res_Gyo = 0;
+                    if (OperationMode == EOperationMode.UPDATE)
+                    {
+                        
+                        int w_Gyo = 0;
+
+                        for (int i = mGrid.g_MK_Max_Row - 1; i >= 0; i--)
+                        {
+                            if (i == 4)
+                            {
+
+                            }
+                            if (!string.IsNullOrEmpty(mGrid.g_DArray[i].SCJAN) )
+                            {
+                                Res_Gyo = i;
+                                break;
+                            }
+                            w_Gyo = Convert.ToInt16(mGrid.g_DArray[i].GYONO);
+                        }
+                    }
+                    else
+                        S_Clear_Grid();
                     int c = 0;
+                    if (Res_Gyo != 0)
+                    {
+                        c += (Res_Gyo+1);
+                    }
                     foreach (DataRow dr in dt.Rows)   // Meisai Dt
                     {
                         mGrid.g_DArray[c].SCJAN = mGrid.g_DArray[c].OldJanCD = dr["_1JanCD"].ToString();
@@ -1884,7 +1925,10 @@ namespace TenzikaiJuchuuTourou
                                     S_BodySeigyo(1,0);
                                     S_BodySeigyo(1, 1);
                                     sc_Tenji.Enabled = sc_Tenji.BtnSearch.Enabled = false;
-                                    
+                                    btn_Meisai.Enabled = true;
+
+                                    // Count from --last row.
+                                    // and rebind grid
                                 }
                             }
                         }
@@ -2104,6 +2148,15 @@ namespace TenzikaiJuchuuTourou
         }
         private void SetTenJiDetails(int index, Tenjikai_Entity tje, DataTable Detail)
         {
+            (detailControls[(int)Eindex.SCKokyakuu]).Text = tje.Kokyaku;
+            CheckDetail((int)Eindex.SCKokyakuu);
+            (detailControls[(int)Eindex.KJuShou1]).Text = tje.K_Name1;
+            (detailControls[(int)Eindex.KJuShou2]).Text = tje.K_name2;
+            (detailControls[(int)Eindex.KDenwa1]).Text = tje.K_Denwa1;
+            (detailControls[(int)Eindex.KDenwa2]).Text = tje.K_Denwa2;
+            (detailControls[(int)Eindex.KDenwa3]).Text = tje.K_Denwa3;
+
+
             detailControls[(int)Eindex.SCShiiresaki].Text = tje.Shiiresaki;
             CheckDetail((int)Eindex.SCShiiresaki);
            
@@ -2116,13 +2169,7 @@ namespace TenzikaiJuchuuTourou
             ((CKM_SearchControl)(detailControls[(int)Eindex.SCTentouStaffu].Parent)).LabelText = tje.StaffName;
 
 
-            (detailControls[(int)Eindex.SCKokyakuu]).Text = tje.Kokyaku;
-            CheckDetail((int)Eindex.SCKokyakuu);
-            (detailControls[(int)Eindex.KJuShou1]).Text = tje.K_Name1;
-            (detailControls[(int)Eindex.KJuShou2]).Text = tje.K_name2;
-            (detailControls[(int)Eindex.KDenwa1]).Text = tje.K_Denwa1;
-            (detailControls[(int)Eindex.KDenwa2]).Text = tje.K_Denwa2;
-            (detailControls[(int)Eindex.KDenwa3]).Text = tje.K_Denwa3;
+          
 
             if (tje.CKBN == "様")
             {
@@ -2141,7 +2188,7 @@ namespace TenzikaiJuchuuTourou
             (detailControls[(int)Eindex.HDenwa2]).Text = tje.H_Denwa2;
             (detailControls[(int)Eindex.HDenwa3]).Text = tje.H_Denwa3;
 
-            if (tje.CKBN == "様")
+            if (tje.HKBN == "様")
             {
                 hr_3.Checked = true;
                 hr_4.Checked = false;
@@ -2883,7 +2930,7 @@ namespace TenzikaiJuchuuTourou
                            , mGrid.g_DArray[RW].GYONO
                            , mGrid.g_DArray[RW].Chk ? "1" : "0"
                            , mGrid.g_DArray[RW].SCJAN
-                           , mGrid.g_DArray[RW].AdminNo == "" ? null : mGrid.g_DArray[RW].AdminNo
+                           , mGrid.g_DArray[RW].AdminNo == "" ? "0" : mGrid.g_DArray[RW].AdminNo==null? "0": mGrid.g_DArray[RW].AdminNo   // Changed value as from null to 0 default as doc mentioned 
                            , mGrid.g_DArray[RW].SKUCD
                            , mGrid.g_DArray[RW].ShouName == "" ? null : mGrid.g_DArray[RW].ShouName
                            , mGrid.g_DArray[RW].Color == "" ? null : mGrid.g_DArray[RW].Color
@@ -3046,7 +3093,7 @@ namespace TenzikaiJuchuuTourou
                     Nendo = detailControls[(int)Eindex.Nendo].Text,
                     ShiZun = detailControls[(int)Eindex.ShiSon].Text,
                     Shiiresaki = detailControls[(int)Eindex.SCShiiresaki].Text,
-                    ShuuKaSouKo = detailControls[(int)Eindex.ShuukaSouko].Text,
+                    ShuuKaSouKo = ((CKM_ComboBox)detailControls[(int)Eindex.ShuukaSouko]).SelectedValue.ToString(),
                     KibouBi1 = this.KibouBi1,
                     KibouBi2 = this.KibouBi2
                 };
@@ -3054,6 +3101,7 @@ namespace TenzikaiJuchuuTourou
                 MesaiHyouJi(resTable);
                 S_BodySeigyo(0, 1);
                 mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
+                SelectNextControl(ActiveControl, true, true, true, true);
             }
         }
         private void MesaiHyouJi(DataTable dt)
@@ -3066,7 +3114,7 @@ namespace TenzikaiJuchuuTourou
             if(IsShow)
             S_BodySeigyo(1, 1);
             mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
-            SelectNextControl(ActiveControl,true,true,true,true);
+            
            // DisablePanel(PanelHeader);
             ///chk_1.Focus();
         }
@@ -3685,8 +3733,10 @@ namespace TenzikaiJuchuuTourou
             }
 
         }
+        private bool IsExecutedTriggered = false;
         protected override void ExecSec()
         {
+            
 
             if (OperationMode != EOperationMode.SHOW) // KeysControl
             {
@@ -3695,25 +3745,22 @@ namespace TenzikaiJuchuuTourou
                     return;
                 }
             }
-            //else
-            //{
-            //    for (int i = 0; i < keyControls.Length; i++)
-            //        if (CheckKey(i, false) == false)
-            //        {
-            //            keyControls[i].Focus();
-            //            return;
-            //        }
-            //}
-
-            if (OperationMode != EOperationMode.DELETE && OperationMode != EOperationMode.SHOW)  // DetailsControl
+            IsExecutedTriggered = true;
+            if (OperationMode != EOperationMode.DELETE && OperationMode != EOperationMode.SHOW )  // DetailsControl
             {
+                if (OperationMode != EOperationMode.UPDATE)
                 for (int i = 0; i < detailControls.Length; i++)
+                {
+                    IsExecutedTriggered = true;
+                    
                     if (CheckDetail(i, false) == false)
                     {
                         detailControls[i].Focus();
+                        IsExecutedTriggered = false;
                         return;
                     }
-                
+                    IsExecutedTriggered = false;
+                }
                 mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
                 ////明細部チェック
@@ -3753,6 +3800,7 @@ namespace TenzikaiJuchuuTourou
                 if (TenjiInsert)
                 {
                     bbl.ShowMessage("I101");
+                    ChangeOperationMode(OperationMode);
                     detailControls[(int)Eindex.SCShiiresaki].Focus();
                     return;
                 }
@@ -3777,6 +3825,7 @@ namespace TenzikaiJuchuuTourou
                 if (TenjiUpdate)
                 {
                     bbl.ShowMessage("I101");
+                    ChangeOperationMode(OperationMode);
                     return;
                 }
                 else
@@ -3799,6 +3848,7 @@ namespace TenzikaiJuchuuTourou
                 if (resDelete)
                 {
                     bbl.ShowMessage("I101");
+                    ChangeOperationMode(OperationMode);
                     return;
                 }
                 else
@@ -3809,13 +3859,13 @@ namespace TenzikaiJuchuuTourou
             }
            
 
-            if (OperationMode == EOperationMode.DELETE)
-                bbl.ShowMessage("I102");
-            else
-                bbl.ShowMessage("I101");
+            //if (OperationMode == EOperationMode.DELETE)
+            //    bbl.ShowMessage("I102");
+            //else
+            //    bbl.ShowMessage("I101");
 
-            //更新後画面クリア
-            ChangeOperationMode(OperationMode);
+            ////更新後画面クリア
+            //ChangeOperationMode(OperationMode);
         }
         private void CPY_SUB()
         {
@@ -3853,7 +3903,7 @@ namespace TenzikaiJuchuuTourou
 
                 //退避内容を戻す
                 mGrid.g_DArray[i].GYONO = w_Gyo.ToString();          //行番号
-
+                mGrid.g_DArray[i].TenjiRow = null;
                 //if (i.Equals(w_Row))
                 //{
                 //    //前の行をコピーしてできた新しい行
@@ -4033,15 +4083,15 @@ namespace TenzikaiJuchuuTourou
                                 if (mGrid.g_DArray[pRow].GYONO == "0")
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
-                                    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
+                                    //mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
                                 }
                                 else
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
-                                    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
+                                   // mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
                                 }
                                 break;
-
+                            case (int)ClsGridTenjikai.ColNO.Chk:
                             case (int)ClsGridTenjikai.ColNO.JuchuuSuu:
                             case (int)ClsGridTenjikai.ColNO.ShouName:
                             case (int)ClsGridTenjikai.ColNO.ShuukaYo:
@@ -4211,6 +4261,7 @@ namespace TenzikaiJuchuuTourou
                 DeleteDt= dt,
                 StoreCD=  StoreCD,
                 Program= InProgramID
+                ,PC= this.InPcID
             };
 
             return tje;
