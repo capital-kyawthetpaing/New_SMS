@@ -111,14 +111,16 @@ namespace SaimuKanriHyou
                 return false;
             }
 
-            if (!string.IsNullOrWhiteSpace(scVendor.Code)) //Check for 支払先
+            if (!string.IsNullOrWhiteSpace(scVendor.Code))
             {
-                if (saimukanriBL.SimpleSelect1("44", txtTargetYear.Text + "/01" , scVendor.Code).Rows.Count < 1)
+                DataTable dtVendor = saimukanriBL.SimpleSelect1("44", txtTargetYear.Text + "/01", scVendor.Code);
+                if (dtVendor.Rows.Count < 1)
                 {
                     saimukanriBL.ShowMessage("E101");
                     scVendor.SetFocus(1);
                     return false;
                 }
+                else scVendor.LabelText = dtVendor.Rows[0]["VendorName"].ToString();
             }
             return true;
         }
