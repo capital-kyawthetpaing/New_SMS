@@ -113,6 +113,7 @@
             this.scJANCD.Size = new System.Drawing.Size(633, 27);
             this.scJANCD.Stype = Search.CKM_SearchControl.SearchType.JANMulti;
             this.scJANCD.TabIndex = 5;
+            this.scJANCD.test = null;
             this.scJANCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scJANCD.UseChangeDate = false;
             this.scJANCD.Value1 = null;
@@ -125,8 +126,8 @@
             this.scSKUCD.ChangeDate = "";
             this.scSKUCD.ChangeDateWidth = 100;
             this.scSKUCD.Code = "";
-            this.scSKUCD.CodeWidth = 190;
-            this.scSKUCD.CodeWidth1 = 190;
+            this.scSKUCD.CodeWidth = 600;
+            this.scSKUCD.CodeWidth1 = 600;
             this.scSKUCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSKUCD.DataCheck = false;
             this.scSKUCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -137,11 +138,12 @@
             this.scSKUCD.Location = new System.Drawing.Point(150, 143);
             this.scSKUCD.Margin = new System.Windows.Forms.Padding(0);
             this.scSKUCD.Name = "scSKUCD";
-            this.scSKUCD.NameWidth = 350;
+            this.scSKUCD.NameWidth = 280;
             this.scSKUCD.SearchEnable = true;
-            this.scSKUCD.Size = new System.Drawing.Size(223, 27);
-            this.scSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
+            this.scSKUCD.Size = new System.Drawing.Size(633, 27);
+            this.scSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUMulti;
             this.scSKUCD.TabIndex = 4;
+            this.scSKUCD.test = null;
             this.scSKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSKUCD.UseChangeDate = false;
             this.scSKUCD.Value1 = null;
@@ -154,8 +156,8 @@
             this.scITEM.ChangeDate = "";
             this.scITEM.ChangeDateWidth = 100;
             this.scITEM.Code = "";
-            this.scITEM.CodeWidth = 190;
-            this.scITEM.CodeWidth1 = 190;
+            this.scITEM.CodeWidth = 600;
+            this.scITEM.CodeWidth1 = 600;
             this.scITEM.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scITEM.DataCheck = false;
             this.scITEM.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -166,11 +168,12 @@
             this.scITEM.Location = new System.Drawing.Point(150, 119);
             this.scITEM.Margin = new System.Windows.Forms.Padding(0);
             this.scITEM.Name = "scITEM";
-            this.scITEM.NameWidth = 350;
+            this.scITEM.NameWidth = 280;
             this.scITEM.SearchEnable = true;
-            this.scITEM.Size = new System.Drawing.Size(223, 27);
-            this.scITEM.Stype = Search.CKM_SearchControl.SearchType.SKU_ITEM_CD;
+            this.scITEM.Size = new System.Drawing.Size(633, 27);
+            this.scITEM.Stype = Search.CKM_SearchControl.SearchType.ITEMMulti;
             this.scITEM.TabIndex = 3;
+            this.scITEM.test = null;
             this.scITEM.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scITEM.UseChangeDate = false;
             this.scITEM.Value1 = null;
@@ -200,6 +203,7 @@
             this.scMakerShohinCD.Size = new System.Drawing.Size(223, 28);
             this.scMakerShohinCD.Stype = Search.CKM_SearchControl.SearchType.MakerItem;
             this.scMakerShohinCD.TabIndex = 2;
+            this.scMakerShohinCD.test = null;
             this.scMakerShohinCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scMakerShohinCD.UseChangeDate = false;
             this.scMakerShohinCD.Value1 = null;
@@ -275,7 +279,7 @@
             // 
             this.cboSouko.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cboSouko.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboSouko.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.SoukoAll;
+            this.cboSouko.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.WarehouseSelectAll;
             this.cboSouko.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
             this.cboSouko.Flag = 0;
             this.cboSouko.FormattingEnabled = true;
