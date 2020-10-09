@@ -42,11 +42,8 @@ namespace ZaikoKanriHyou
             SetRequiredField();
             SetFunctionLabel(EProMode.PRINT);
             Btn_F10.Text = "";
-            cboSouko.Bind(string.Empty);
+            cboSouko.Bind(string.Empty, "");
             cboSouko.SelectedValue = SoukoCD;
-            F11Visible = false;
-            scITEM.CodeWidth = 600;
-            scSKUCD.CodeWidth = 600;
             scMakerShohinCD.CodeWidth = 600;
             txtTargetDate.Text = DateTime.Now.ToString("yyyy/MM");
         }
@@ -116,10 +113,11 @@ namespace ZaikoKanriHyou
             dpde = new D_Purchase_Details_Entity()
             {
                 ChangeDate = txtTargetDate.Text + lastday,
-                ItemCD = scMakerShohinCD.Code,
-                SKUCD = scSKUCD.Code,
-                JanCD = scJANCD.Code,
-                MakerItemCD = scITEM.Code,
+                MakerItemCD= scMakerShohinCD.TxtCode.Text,
+                ItemCD = scITEM.TxtCode.Text,
+                SKUCD = scSKUCD.TxtCode.Text,
+                JanCD = scJANCD.TxtCode.Text,
+                //MakerItemCD = scITEM.TxtCode.Text,
                 ITemName = txtSKUName.Text
             };
             return dpde;

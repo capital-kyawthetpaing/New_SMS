@@ -733,6 +733,7 @@ namespace KeihiNyuuryoku
             var tb = (DataTable)dgvKehiNyuuryoku.DataSource;
             tb.AcceptChanges();
             BindTotalGaku(tb);
+            dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku.Rows[row - 1].Cells[0];//ses
         }
 
         private void F8() // Insert new row upon current row
