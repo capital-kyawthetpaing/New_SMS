@@ -44,8 +44,6 @@ namespace ZaikoMotochouInsatsu
             Btn_F11.Text = string.Empty;
             Btn_F10.Text = string.Empty;
             scMakerShohinCD.CodeWidth = 600;
-            scITEM.CodeWidth = 600;
-            scSKUCD.CodeWidth = 600;
         }
         private void SetRequireField()
         {
