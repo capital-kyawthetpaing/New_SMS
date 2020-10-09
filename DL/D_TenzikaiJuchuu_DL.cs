@@ -103,6 +103,12 @@ namespace DL
                 { "@BrandCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.BrandCD } },
                 { "@SegmentCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.SegmentCD } },
                 { "@Chk", new ValuePair { value1 = SqlDbType.VarChar, value2 = chk.ToString() } },
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.Operator } },
+                { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.ProgramID } },
+                { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.PC } },
+                { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.ProcessMode } },
+                { "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.Key } }
+                
             };
             return SelectData(dic, sp);
         } //pnz
