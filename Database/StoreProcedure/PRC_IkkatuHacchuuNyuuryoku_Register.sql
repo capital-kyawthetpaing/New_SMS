@@ -3,16 +3,66 @@
 DROP PROCEDURE [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]
 GO
 
+/****** Object:  UserDefinedTableType [dbo].[T_IkkatuHacchuuNyuuryoku]    Script Date: 2020/10/12 4:33:52 ******/
+DROP TYPE [dbo].[T_IkkatuHacchuuNyuuryoku]
+GO
+
+/****** Object:  UserDefinedTableType [dbo].[T_IkkatuHacchuuNyuuryoku]    Script Date: 2020/10/12 4:33:52 ******/
+CREATE TYPE [dbo].[T_IkkatuHacchuuNyuuryoku] AS TABLE(
+	[GyouNO] [varchar](100) NULL,
+	[HacchuuNO] [varchar](100) NULL,
+	[SiiresakiCD] [varchar](100) NULL,
+	[SiiresakiName] [varchar](100) NULL,
+	[ChokusouFLG] [varchar](100) NULL,
+	[NetFLG] [varchar](100) NULL,
+	[NounyuusakiName] [varchar](100) NULL,
+	[NounyuusakiJuusho] [varchar](200) NULL,
+	[JuchuuNO] [varchar](100) NULL,
+	[SKUCD] [varchar](100) NULL,
+	[JANCD] [varchar](100) NULL,
+	[ShouhinName] [varchar](100) NULL,
+	[BrandName] [varchar](100) NULL,
+	[SizeName] [varchar](100) NULL,
+	[ColorName] [varchar](100) NULL,
+	[HacchuuChuuiZikou] [varchar](100) NULL,
+	[EDIFLG] [varchar](100) NULL,
+	[MakerShouhinCD] [varchar](100) NULL,
+	[KibouNouki] [varchar](100) NULL,
+	[ShanaiBikou] [varchar](100) NULL,
+	[ShagaiBikou] [varchar](100) NULL,
+	[TaniName] [varchar](100) NULL,
+	[HacchuuSuu] [varchar](100) NULL,
+	[HacchuuTanka] [varchar](100) NULL,
+	[Hacchuugaku] [varchar](100) NULL,
+	[TaishouFLG] [varchar](100) NULL,
+	[NounyuusakiYuubinNO1] [varchar](100) NULL,
+	[NounyuusakiYuubinNO2] [varchar](100) NULL,
+	[NounyuusakiJuusho1] [varchar](100) NULL,
+	[NounyuusakiJuusho2] [varchar](100) NULL,
+	[NounyuusakiMailAddress] [varchar](100) NULL,
+	[NounyuusakiTELNO] [varchar](100) NULL,
+	[NounyuusakiFAXNO] [varchar](100) NULL,
+	[SoukoCD] [varchar](100) NULL,
+	[TaxRate] [varchar](100) NULL,
+	[JuchuuRows] [varchar](100) NULL,
+	[VariousFLG] [varchar](100) NULL,
+	[AdminNO] [varchar](100) NULL,
+	[SKUName] [varchar](100) NULL,
+	[Teika] [varchar](100) NULL,
+	[Kakeritu] [varchar](100) NULL,
+	[HacchuuShouhizeigaku] [varchar](100) NULL,
+	[TaniCD] [varchar](100) NULL,
+	[OrderRows] [varchar](100) NULL,
+	[IsYuukouTaishouFLG] [varchar](100) NULL
+)
+GO
+
 /****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register]    Script Date: 2020/09/25 11:36:50 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER OFF
 GO
-
-
-
-
 
 CREATE PROCEDURE [dbo].[PRC_IkkatuHacchuuNyuuryoku_Register](
      @p_OperateMode               int                  -- èàóùãÊï™Åi1:êVãK 2:èCê≥ 3:çÌèúÅj  
