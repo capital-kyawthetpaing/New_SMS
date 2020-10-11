@@ -1187,7 +1187,7 @@ namespace TenzikaiJuchuuTourou
                                 return false;
                         }
                     //０で無いかつ原価単価＝０の場合場合、入力された発注単価を原価単価にセットし、原価金額、粗利金額を再計算。
-                    var val1 = (bbl.Z_Set(mGrid.g_DArray[row].ZeinuJuchuu) - bbl.Z_Set(mGrid.g_DArray[row].HacchuTanka)) * bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu);
+                    var val1 = bbl.Z_Set(mGrid.g_DArray[row].ZeinuJuchuu) - ((bbl.Z_Set(mGrid.g_DArray[row].HacchuTanka)) * bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu));
                     mGrid.g_DArray[row].ArariGaku = bbl.Z_SetStr(val1);
                     break;
 
@@ -1223,7 +1223,7 @@ namespace TenzikaiJuchuuTourou
                     break;
                 //case (int)ClsGridTenjikai.ColNO.SCJAN:
                 case (int)ClsGridTenjikai.ColNO.HacchuTanka:
-                    CalcZei(row, col);
+                    //CalcZei(row, col);
                     break;
 
             }
@@ -1276,7 +1276,7 @@ namespace TenzikaiJuchuuTourou
                     zei10 += bbl.Z_Set(mGrid.g_DArray[RW].Tsuujou);
                     zei8 += bbl.Z_Set(mGrid.g_DArray[RW].Keigen);
 
-                    if (mTaxTiming.Equals("2"))
+                    if (mTaxTiming.Equals(2))
                     {
                         if (mGrid.g_DArray[RW].TaxRateFlg.Equals("1"))
                         {
@@ -1321,11 +1321,11 @@ namespace TenzikaiJuchuuTourou
                     IncAmt += sagaku;  //Add percent Error Amount
                     if (mGrid.g_DArray[maxKinRowNo].TaxRateFlg.Equals("1"))
                     {
-                        mGrid.g_DArray[maxKinRowNo].Tsuujou = mGrid.g_DArray[maxKinRowNo].Tsuujou + sagaku;
+                        mGrid.g_DArray[maxKinRowNo].Tsuujou = mGrid.g_DArray[maxKinRowNo].Tsuujou + sagaku; // Add percent Error In most biggest
                     }
                     else if (mGrid.g_DArray[maxKinRowNo].TaxRateFlg.Equals("2"))
                     {
-                        mGrid.g_DArray[maxKinRowNo].Keigen = mGrid.g_DArray[maxKinRowNo].Keigen + sagaku;
+                        mGrid.g_DArray[maxKinRowNo].Keigen = mGrid.g_DArray[maxKinRowNo].Keigen + sagaku;// Add percent Error In most biggest
                     }
                     CsumAmt += sagaku;
                 }
@@ -1385,7 +1385,7 @@ namespace TenzikaiJuchuuTourou
             }
             if (IsHanBai)
             {
-                var val1 = (bbl.Z_Set(mGrid.g_DArray[row].ZeinuJuchuu) - bbl.Z_Set(mGrid.g_DArray[row].HacchuTanka)) * bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu);
+                var val1 = bbl.Z_Set(mGrid.g_DArray[row].ZeinuJuchuu) - (bbl.Z_Set(mGrid.g_DArray[row].HacchuTanka) * bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu));
                 mGrid.g_DArray[row].ArariGaku = bbl.Z_SetStr(val1);
             }
 
@@ -1666,7 +1666,7 @@ namespace TenzikaiJuchuuTourou
                         mGrid.g_DArray[c].JuchuuSuu = bbl.Z_SetStr(dr["JuchuuSuu"].ToString());//
                         mGrid.g_DArray[c].TenI = dr["Tani"].ToString();//
                         mGrid.g_DArray[c].HanbaiTanka = bbl.Z_SetStr(dr["JuchuuUnitPrice"].ToString());//
-                        CheckGrid((int)ClsGridTenjikai.ColNO.HanbaiTanka, c, true);
+                        //CheckGrid((int)ClsGridTenjikai.ColNO.HanbaiTanka, c, true);
 
                         mGrid.g_DArray[c].ZeinuJuchuu = bbl.Z_SetStr(dr["JuchuuHontaiGaku"].ToString());//
                         mGrid.g_DArray[c].zeikomijuchuu = bbl.Z_SetStr(dr["JuchuuGaku"].ToString());//
@@ -1733,7 +1733,7 @@ namespace TenzikaiJuchuuTourou
                         mGrid.g_DArray[c].JuchuuSuu = dr["_12SoukunoSu"].ToString();//
                         mGrid.g_DArray[c].TenI = dr["_13TaniCD"].ToString();//
                         mGrid.g_DArray[c].HanbaiTanka = dr["_14SalePriceOutTax"].ToString();//
-
+                       // CalcZei(c,(int)ClsGridTenjikai.ColNO.HanbaiTanka, true);
                         mGrid.g_DArray[c].ZeinuJuchuu = dr["_15OrderExcTax"].ToString();//
                         mGrid.g_DArray[c].zeikomijuchuu = dr["_16OrderIncTax"].ToString();//
                         mGrid.g_DArray[c].ArariGaku = dr["_17TotalProfit"].ToString();//
