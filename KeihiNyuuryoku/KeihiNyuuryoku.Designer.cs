@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKeihiNyuuryoku));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelDetail = new System.Windows.Forms.Panel();
@@ -36,6 +37,10 @@
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.chkRegularFlg = new CKM_Controls.CKM_CheckBox();
             this.dgvKehiNyuuryoku = new CKM_Controls.CKM_GridView();
+            this.colCostCD = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colSummary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDepartment = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colCostGaku = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
             this.ScStaff = new Search.CKM_SearchControl();
@@ -51,10 +56,6 @@
             this.PanelCopy = new System.Windows.Forms.Panel();
             this.ScCost_Copy = new Search.CKM_SearchControl();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
-            this.colCostCD = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colSummary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDepartment = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colCostGaku = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKehiNyuuryoku)).BeginInit();
@@ -155,6 +156,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.dgvKehiNyuuryoku.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvKehiNyuuryoku.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.dgvKehiNyuuryoku.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvKehiNyuuryoku.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
@@ -182,6 +184,46 @@
             this.dgvKehiNyuuryoku.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKehiNyuuryoku_CellEndEdit);
             this.dgvKehiNyuuryoku.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvKehiNyuuryoku_DataBindingComplete);
             this.dgvKehiNyuuryoku.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvKehiNyuuryoku_DataError);
+            //this.dgvKehiNyuuryoku.Leave += new System.EventHandler(this.dgvKehiNyuuryoku_Leave);
+            // 
+            // colCostCD
+            // 
+            this.colCostCD.DataPropertyName = "CostCD";
+            this.colCostCD.HeaderText = "経費CD";
+            this.colCostCD.MinimumWidth = 170;
+            this.colCostCD.Name = "colCostCD";
+            this.colCostCD.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCostCD.Width = 170;
+            // 
+            // colSummary
+            // 
+            this.colSummary.DataPropertyName = "Summary";
+            this.colSummary.HeaderText = "摘要";
+            this.colSummary.MaxInputLength = 100;
+            this.colSummary.Name = "colSummary";
+            this.colSummary.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colSummary.Width = 800;
+            // 
+            // colDepartment
+            // 
+            this.colDepartment.HeaderText = "部門";
+            this.colDepartment.Name = "colDepartment";
+            this.colDepartment.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDepartment.Width = 180;
+            // 
+            // colCostGaku
+            // 
+            this.colCostGaku.DataPropertyName = "CostGaku";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.colCostGaku.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colCostGaku.HeaderText = "税込支払額";
+            this.colCostGaku.MaxInputLength = 12;
+            this.colCostGaku.Name = "colCostGaku";
+            this.colCostGaku.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCostGaku.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colCostGaku.Width = 90;
             // 
             // ckM_Label7
             // 
@@ -240,6 +282,7 @@
             this.ScStaff.Size = new System.Drawing.Size(354, 27);
             this.ScStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.ScStaff.TabIndex = 8;
+            this.ScStaff.test = null;
             this.ScStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScStaff.UseChangeDate = false;
             this.ScStaff.Value1 = null;
@@ -269,6 +312,7 @@
             this.txtShihraiYoteiDate.AllowMinus = false;
             this.txtShihraiYoteiDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShihraiYoteiDate.BackColor = System.Drawing.Color.White;
+            this.txtShihraiYoteiDate.BorderColor = false;
             this.txtShihraiYoteiDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtShihraiYoteiDate.ClientColor = System.Drawing.Color.White;
             this.txtShihraiYoteiDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -292,6 +336,7 @@
             this.txtShihraiYoteiDate.TabIndex = 6;
             this.txtShihraiYoteiDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtShihraiYoteiDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtShihraiYoteiDate.UseColorSizMode = false;
             // 
             // ckM_Label4
             // 
@@ -315,6 +360,7 @@
             this.txtKeijouDate.AllowMinus = false;
             this.txtKeijouDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKeijouDate.BackColor = System.Drawing.Color.White;
+            this.txtKeijouDate.BorderColor = false;
             this.txtKeijouDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKeijouDate.ClientColor = System.Drawing.Color.White;
             this.txtKeijouDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -337,6 +383,7 @@
             this.txtKeijouDate.TabIndex = 4;
             this.txtKeijouDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtKeijouDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtKeijouDate.UseColorSizMode = false;
             this.txtKeijouDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtKeijouDate_KeyDown);
             // 
             // ckM_Label3
@@ -379,6 +426,7 @@
             this.ScVendor.Size = new System.Drawing.Size(444, 27);
             this.ScVendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.ScVendor.TabIndex = 2;
+            this.ScVendor.test = null;
             this.ScVendor.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScVendor.UseChangeDate = false;
             this.ScVendor.Value1 = null;
@@ -420,6 +468,7 @@
             this.ScCost.Size = new System.Drawing.Size(133, 27);
             this.ScCost.Stype = Search.CKM_SearchControl.SearchType.経費番号;
             this.ScCost.TabIndex = 14;
+            this.ScCost.test = null;
             this.ScCost.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCost.UseChangeDate = false;
             this.ScCost.Value1 = null;
@@ -477,6 +526,7 @@
             this.ScCost_Copy.Size = new System.Drawing.Size(133, 27);
             this.ScCost_Copy.Stype = Search.CKM_SearchControl.SearchType.経費番号;
             this.ScCost_Copy.TabIndex = 14;
+            this.ScCost_Copy.test = null;
             this.ScCost_Copy.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCost_Copy.UseChangeDate = false;
             this.ScCost_Copy.Value1 = null;
@@ -500,45 +550,6 @@
             this.ckM_Label2.Text = "複写経費番号";
             this.ckM_Label2.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // colCostCD
-            // 
-            this.colCostCD.DataPropertyName = "CostCD";
-            this.colCostCD.HeaderText = "経費CD";
-            this.colCostCD.MinimumWidth = 170;
-            this.colCostCD.Name = "colCostCD";
-            this.colCostCD.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colCostCD.Width = 170;
-            // 
-            // colSummary
-            // 
-            this.colSummary.DataPropertyName = "Summary";
-            this.colSummary.HeaderText = "摘要";
-            this.colSummary.MaxInputLength = 100;
-            this.colSummary.Name = "colSummary";
-            this.colSummary.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colSummary.Width = 800;
-            // 
-            // colDepartment
-            // 
-            this.colDepartment.HeaderText = "部門";
-            this.colDepartment.Name = "colDepartment";
-            this.colDepartment.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colDepartment.Width = 180;
-            // 
-            // colCostGaku
-            // 
-            this.colCostGaku.DataPropertyName = "CostGaku";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = "0";
-            this.colCostGaku.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colCostGaku.HeaderText = "税込支払額";
-            this.colCostGaku.MaxInputLength = 12;
-            this.colCostGaku.Name = "colCostGaku";
-            this.colCostGaku.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colCostGaku.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colCostGaku.Width = 90;
             // 
             // frmKeihiNyuuryoku
             // 
