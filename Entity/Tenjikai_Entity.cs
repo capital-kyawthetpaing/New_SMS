@@ -77,5 +77,6 @@ namespace Entity
         public string CKBN { get; set; }
         public string HKBN { get; set; }
         public string StaffName { get; set; }
+        public string Program { get; set; }
     }
 }

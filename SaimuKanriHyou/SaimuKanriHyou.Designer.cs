@@ -174,6 +174,7 @@
             this.scVendor.Size = new System.Drawing.Size(444, 28);
             this.scVendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.scVendor.TabIndex = 2;
+            this.scVendor.test = null;
             this.scVendor.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scVendor.UseChangeDate = false;
             this.scVendor.Value1 = null;

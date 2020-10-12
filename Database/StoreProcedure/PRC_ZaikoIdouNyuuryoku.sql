@@ -572,8 +572,7 @@ BEGIN
                ,1  --DeleteFlg
                ,@MoveNO  --NumberÅö
                ,tbl.MoveRows --NumberRowÅ°
-               ,(CASE @MovePurposeType WHEN @KBN_SYOCD      THEN tbl.NewJanCD
-                                       ELSE NULL END)	--VendorCD
+               ,NULL	--VendorCD
                ,DW.ToStoreCD
                ,DW.ToSoukoCD
                ,DW.ToRackNO
@@ -581,7 +580,8 @@ BEGIN
                ,DW.FromStoreCD
                ,DW.FromSoukoCD
                ,DW.FromRackNO
-               ,NULL    --CustomerCD
+               ,(CASE @MovePurposeType WHEN @KBN_SYOCD      THEN tbl.NewJanCD
+                                       ELSE NULL END)    --CustomerCD
                ,DW.Quantity * (-1)
                ,@Program  --Program
                
@@ -1308,8 +1308,7 @@ BEGIN
                    ,0  --DeleteFlg
                    ,@NewMoveNO  --Number
                    ,tbl.MoveRows --NumberRow
-                   ,(CASE @MovePurposeType WHEN @KBN_SYOCD      THEN tbl.NewJanCD
-                                           ELSE NULL END)    --VendorCD
+                   ,NULL    --VendorCD
                    
                    ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN @ToStoreCD
                                            WHEN @KBN_SYOCD      THEN @FromStoreCD
@@ -1347,7 +1346,7 @@ BEGIN
                    ,@FromStoreCD	--FromStoreCD
                    ,@FromSoukoCD	--FromSoukoCD
                    ,tbl.FromRackNO	--FromRackNO
-                   ,(CASE @MovePurposeType WHEN @KBN_SYOCD      THEN tbl.NewAdminNO
+                   ,(CASE @MovePurposeType WHEN @KBN_SYOCD      THEN tbl.NewJanCD
                                            ELSE NULL END)    --CustomerCD
                    ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN @WUpdSu * (-1)   --Quantity
                                            WHEN @KBN_SYOCD      THEN @WUpdSu * (-1)   --Quantity
@@ -1430,8 +1429,7 @@ BEGIN
                        ,0  --DeleteFlg
                        ,@NewMoveNO  --Number
                        ,tbl.MoveRows --NumberRow
-                       ,(CASE @MovePurposeType WHEN @KBN_SYOCD    THEN tbl.JanCD
-                                               ELSE NULL END)    --VendorCD
+                       ,NULL     --VendorCD
                        ,(CASE @MovePurposeType WHEN @KBN_TENPONAI THEN @ToStoreCD
                                                WHEN @KBN_SYOCD    THEN @FromStoreCD
                                                WHEN @KBN_LOCATION THEN @FromStoreCD

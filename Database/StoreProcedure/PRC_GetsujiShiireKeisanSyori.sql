@@ -330,12 +330,13 @@ BEGIN
         
         WHERE MS.StoreCD = (CASE WHEN @StoreCD <> '' THEN @StoreCD ELSE MS.StoreCD END)
         AND SUBSTRING(CONVERT(varchar,DS.WarehousingDate,111),1,7) = @W_FiscalYYYYMM
-            
-        AND NOT EXISTS(SELECT DM.AdminNO FROM D_MonthlyPurchase AS DM
-                WHERE DM.AdminNO = DS.AdminNO
-                AND DM.StoreCD = MS.StoreCD
-                AND DM.VendorCD = ISNULL(DS.VendorCD,SK.MainVendorCD)
-                AND DM.YYYYMM = CONVERT(int,REPLACE(@W_FiscalYYYYMM,'/','')))
+        AND ISNULL(DS.VendorCD,ISNULL(SK.MainVendorCD,'')) <> ''
+        
+        AND NOT EXISTS(SELECT A.AdminNO FROM D_MonthlyPurchase AS A
+                       WHERE A.AdminNO = DS.AdminNO
+                       AND A.StoreCD = MS.StoreCD
+                       AND A.VendorCD = ISNULL(DS.VendorCD,SK.MainVendorCD)
+                       AND A.YYYYMM = CONVERT(int,REPLACE(@W_FiscalYYYYMM,'/','')))
         GROUP BY DS.AdminNO, MS.StoreCD, ISNULL(DS.VendorCD,SK.MainVendorCD)--, DS.WarehousingKBN
         ;
 
@@ -421,9 +422,9 @@ BEGIN
            ,[UpdateDateTime])
         SELECT DS.OrderCD
             ,MAX(MS.StoreCD) AS StoreCD
-    		,CONVERT(int,REPLACE(@W_FiscalYYYYMM,'/','')) AS YYYYMM
+            ,CONVERT(int,REPLACE(@W_FiscalYYYYMM,'/','')) AS YYYYMM
             ,MAX(DS.SKUCD) AS SKUCD
-        	,DS.AdminNO
+            ,DS.AdminNO
             ,MAX(DS.JanCD) AS JanCD
             ,0 AS LastMonthQuantity
             ,0 AS LastMonthAmount
@@ -434,9 +435,9 @@ BEGIN
             ,0 AS ThisMonthCustPurchaseQ
             ,0 AS ThisMonthCustPurchaseA
             ,SUM((CASE WHEN ISNULL(DM.OrderNO,'') = '' THEN DS.ArrivalPlanSu 
-            	WHEN DP.PurchaseDate > @W_FiscalYYYYMMDD THEN DS.ArrivalPlanSu ELSE 0 END)) AS ThisMonthPurchasePlanQ
+                       WHEN DP.PurchaseDate > @W_FiscalYYYYMMDD THEN DS.ArrivalPlanSu ELSE 0 END)) AS ThisMonthPurchasePlanQ
             ,SUM((CASE WHEN ISNULL(DM.OrderNO,'') = '' THEN DS.ArrivalPlanSu 
-            	WHEN DP.PurchaseDate > @W_FiscalYYYYMMDD THEN DS.ArrivalPlanSu ELSE 0 END)*DO.OrderUnitPrice) AS ThisMonthPurchasePlanA
+                       WHEN DP.PurchaseDate > @W_FiscalYYYYMMDD THEN DS.ArrivalPlanSu ELSE 0 END)*DO.OrderUnitPrice) AS ThisMonthPurchasePlanA
             ,0 AS ThisMonthSalesQ
             ,0 AS ThisMonthSalesA
             ,0 AS ThisMonthCustSalesQ
@@ -482,28 +483,28 @@ BEGIN
         AND SUBSTRING(CONVERT(varchar,DS.CalcuArrivalPlanDate,111),1,7) = @W_FiscalYYYYMM
         AND DS.ArrivalPlanKBN = 1
             
-        AND NOT EXISTS(SELECT DM.AdminNO FROM D_MonthlyPurchase AS DM
-                WHERE DM.AdminNO = DS.AdminNO
-                AND DM.StoreCD = MS.StoreCD
-                AND DM.VendorCD = DS.OrderCD
-                AND DM.YYYYMM = CONVERT(int,REPLACE(@W_FiscalYYYYMM,'/','')))
+        AND NOT EXISTS(SELECT A.AdminNO FROM D_MonthlyPurchase AS A
+                       WHERE A.AdminNO = DS.AdminNO
+                       AND A.StoreCD = MS.StoreCD
+                       AND A.VendorCD = DS.OrderCD
+                       AND A.YYYYMM = CONVERT(int,REPLACE(@W_FiscalYYYYMM,'/','')))
         GROUP BY DS.AdminNO, DS.SoukoCD, DS.SKUCD, DS.JanCD, DS.OrderCD
         ;
         
         --Table“]‘—Žd—l‚c
         --ƒe[ƒuƒ‹“]‘—Žd—l‚c@”„ã—\’è
-		UPDATE [D_MonthlyPurchase] SET
+        UPDATE [D_MonthlyPurchase] SET
             [ThisMonthSalesPlanQ] = DS.ThisMonthSalesPlanQ
             ,[ThisMonthSalesPlanA] = DS.ThisMonthSalesPlanA
            ,[UpdateOperator] = @Operator
            ,[UpdateDateTime] = @SYSDATETIME
         FROM (SELECT DM.AdminNO, DM.SKUCD, DM.JanCD
             ,ISNULL(DM.VendorCD,SK.MainVendorCD) AS VendorCD
-        	,DJ.StoreCD
+            ,DJ.StoreCD
             ,SUM((CASE WHEN ISNULL(DS.JuchuuNO,'') = '' THEN DM.JuchuuSuu
-            	WHEN DH.SalesDate > @W_FiscalYYYYMMDD THEN DM.JuchuuSuu ELSE 0 END)) AS ThisMonthSalesPlanQ
-        	,SUM((CASE WHEN ISNULL(DS.JuchuuNO,'') = '' THEN DM.CostGaku 
-            	WHEN DH.SalesDate > @W_FiscalYYYYMMDD THEN DM.CostGaku ELSE 0 END)) AS ThisMonthSalesPlanA
+                       WHEN DH.SalesDate > @W_FiscalYYYYMMDD THEN DM.JuchuuSuu ELSE 0 END)) AS ThisMonthSalesPlanQ
+            ,SUM((CASE WHEN ISNULL(DS.JuchuuNO,'') = '' THEN DM.CostGaku 
+                       WHEN DH.SalesDate > @W_FiscalYYYYMMDD THEN DM.CostGaku ELSE 0 END)) AS ThisMonthSalesPlanA
 
             FROM D_Juchuu AS DJ
             LEFT OUTER JOIN D_JuchuuDetails AS DM
@@ -520,7 +521,7 @@ BEGIN
             AND DH.DeleteDateTime IS NULL
             
             LEFT OUTER JOIN F_SKU(@W_FiscalYYYYMMDD) AS SK
-        	ON SK.AdminNO = DM.AdminNO
+            ON SK.AdminNO = DM.AdminNO
             AND SK.DeleteFlg = 0
 
             WHERE DJ.StoreCD = (CASE WHEN @StoreCD <> '' THEN @StoreCD ELSE DJ.StoreCD END)
@@ -621,18 +622,19 @@ BEGIN
         AND DH.DeleteDateTime IS NULL
             
         LEFT OUTER JOIN F_SKU(@W_FiscalYYYYMMDD) AS SK
-    	ON SK.AdminNO = DM.AdminNO
+        ON SK.AdminNO = DM.AdminNO
         AND SK.DeleteFlg = 0
 
         WHERE DJ.StoreCD = (CASE WHEN @StoreCD <> '' THEN @StoreCD ELSE DJ.StoreCD END)
         AND SUBSTRING(CONVERT(varchar,DJ.SalesPlanDate,111),1,7) = @W_FiscalYYYYMM
         AND DJ.DeleteDateTime IS NULL
-            
-        AND NOT EXISTS(SELECT DM.AdminNO FROM D_MonthlyPurchase AS DM
-                WHERE DM.AdminNO = DM.AdminNO
-                AND DM.StoreCD = DJ.StoreCD
-                AND DM.VendorCD = ISNULL(DM.VendorCD,SK.MainVendorCD)
-                AND DM.YYYYMM = CONVERT(int,REPLACE(@W_FiscalYYYYMM,'/','')))
+        AND ISNULL(DM.VendorCD,ISNULL(SK.MainVendorCD,'')) <> ''
+        
+        AND NOT EXISTS(SELECT DM.AdminNO FROM D_MonthlyPurchase AS A
+                       WHERE A.AdminNO = DM.AdminNO
+                       AND A.StoreCD = DJ.StoreCD
+                       AND A.VendorCD = ISNULL(DM.VendorCD,SK.MainVendorCD)
+                       AND A.YYYYMM = CONVERT(int,REPLACE(@W_FiscalYYYYMM,'/','')))
 
         GROUP BY DJ.StoreCD, DM.AdminNO, DM.SKUCD, DM.JanCD, ISNULL(DM.VendorCD,SK.MainVendorCD)
         ;
@@ -756,10 +758,10 @@ BEGIN
         AND DS.ReturnPlanSu > DS.ReturnSu
         
         AND NOT EXISTS(SELECT DM.AdminNO FROM D_MonthlyPurchase AS DM
-                WHERE DM.AdminNO = DS.AdminNO
-                AND DM.StoreCD = MS.StoreCD
-                AND DM.VendorCD = DS.VendorCD
-                AND DM.YYYYMM = CONVERT(int,REPLACE(@W_FiscalYYYYMM,'/','')))
+                       WHERE DM.AdminNO = DS.AdminNO
+                       AND DM.StoreCD = MS.StoreCD
+                       AND DM.VendorCD = DS.VendorCD
+                       AND DM.YYYYMM = CONVERT(int,REPLACE(@W_FiscalYYYYMM,'/','')))
 
         GROUP BY MS.StoreCD, DS.AdminNO, DS.SKUCD, DS.JanCD, DS.VendorCD
         ;

@@ -208,6 +208,7 @@
     <Compile Include="TempoRejiPointSettei_BL.cs" />
     <Compile Include="TempoShukkaNyuuryoku_BL.cs" />
     <Compile Include="TempoUriageNyuuryoku_BL.cs" />
+    <Compile Include="TenzikaiHacchuuJouhouShuturyoku_BL.cs" />
     <Compile Include="TenzikaiJuchuuJouhouHurikaeShori_BL.cs" />
     <Compile Include="TenzikaiJuchuuNo_BL.cs" />
     <Compile Include="TenjikaiJuuChuu_BL.cs" />

@@ -192,6 +192,7 @@
             this.ScClient2.Value1 = null;
             this.ScClient2.Value2 = null;
             this.ScClient2.Value3 = null;
+            this.ScClient2.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScClient2_CodeKeyDownEvent);
             // 
             // ScExhibitionCD
             // 
@@ -222,6 +223,7 @@
             this.ScExhibitionCD.Value1 = null;
             this.ScExhibitionCD.Value2 = null;
             this.ScExhibitionCD.Value3 = null;
+            this.ScExhibitionCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScExhibitionCD_CodeKeyDownEvent);
             // 
             // ckM_Label6
             // 
@@ -269,6 +271,9 @@
             this.ScSegmentCD.Value1 = null;
             this.ScSegmentCD.Value2 = null;
             this.ScSegmentCD.Value3 = null;
+            this.ScSegmentCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScSegmentCD_CodeKeyDownEvent);
+            this.ScSegmentCD.Enter += new System.EventHandler(this.ScSegmentCD_Enter);
+            //this.ScSegmentCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ScSegmentCD_KeyDown);
             // 
             // ckM_Label5
             // 
@@ -396,6 +401,7 @@
             this.ScBrandCD.Value1 = null;
             this.ScBrandCD.Value2 = null;
             this.ScBrandCD.Value3 = null;
+            this.ScBrandCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScBrandCD_CodeKeyDownEvent);
             // 
             // Sc_BrandCD
             // 
@@ -443,6 +449,7 @@
             this.ScSupplier.Value1 = null;
             this.ScSupplier.Value2 = null;
             this.ScSupplier.Value3 = null;
+            this.ScSupplier.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScSupplier_CodeKeyDownEvent);
             // 
             // ckM_Label8
             // 

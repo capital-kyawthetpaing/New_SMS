@@ -31,6 +31,7 @@ namespace BL
             , Kessai//14：決済取込
             , SyukkaShiji//15：出荷指示
             , Syukka//16：出荷
+            ,TenjiNo=32//32 TenjiCD 
         }
 
         D_Exclusive_DL mdl;

@@ -1,3 +1,6 @@
+DROP TYPE [dbo].[T_Juchuu]
+GO
+
 DROP  PROCEDURE [dbo].[D_Juchuu_SelectData]
 GO
 DROP  PROCEDURE [dbo].[CheckJuchuData]

@@ -3242,6 +3242,12 @@ namespace ZaikoIdouNyuuryoku
                     ScToRackNo.Value1 = CboFromSoukoCD.SelectedValue.ToString();
             }
         }
+
+        private void CboIdoKbn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CboIdoKbn.DataSource != null && CboIdoKbn.SelectedIndex >0)
+                CheckDetail((int)EIndex.MovePurposeKBN);
+        }
         #endregion
 
         private void SetEnabled(EIdoType kbn)
@@ -3866,6 +3872,7 @@ namespace ZaikoIdouNyuuryoku
                 }
             }
         }
+
     }
 }
 

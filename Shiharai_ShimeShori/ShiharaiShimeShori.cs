@@ -191,32 +191,7 @@ namespace Shiharai_ShimeShori
 
                         if (bbl.ShowMessage("Q101") == DialogResult.Yes)
                         {
-                            //if(!String.IsNullOrEmpty(Shiiresaki.TxtCode.Text))
-                            //{
-                            //    if (sss_bl.Insert_ShiHaRaiShime_PaymentClose(dpch_entity, 1))
-                            //    {
-                            //        sss_bl.ShowMessage("I101");
-                            //        //DeleteExclusive(1);
-                            //        ChangeMode(EOperationMode.INSERT);
-                            //    }
-                            //}
-                            //else
-                            //{
-                            //    //dpp_e = GetPayPlan();
-                            //    //DataTable dtpayee = sss_bl.D_PayPlanValue_Select(dpp_e, "3");
-                            //    //if(dtpayee.Rows.Count >0)
-                            //    //{
-                            //    //  for(int i=0 ;i < dtpayee.Rows.Count ;i++)
-                            //    //    {
-                            //    //        if (sss_bl.Insert_ShiHaRaiShime_PaymentClose(dpch_entity, 1))
-                            //    //        {
-                            //    //            sss_bl.ShowMessage("I101");
-                            //    //            //DeleteExclusive(1);
-                            //    //            ChangeMode(EOperationMode.INSERT);
-                            //    //        }
-                            //    //    }
-                            //    //}
-                            //}
+                           
 
                             dpp_e = GetPayPlan();
                             DataTable dtpayee = sss_bl.D_PayPlanValue_Select(dpp_e, "3");
@@ -316,6 +291,7 @@ namespace Shiharai_ShimeShori
         }
         private bool ErrorCheck(int Type)
         {
+            dpch_entity = GetDataEntity();
             if (!string.IsNullOrEmpty(Shiiresaki.TxtCode.Text))
             {
                 if (!Shiiresaki.IsExists(2))
@@ -329,22 +305,20 @@ namespace Shiharai_ShimeShori
             switch (Type)
             {
                 case 1:
-                    if (!RequireCheck(new Control[] { txtPayCloseDate })) //Step1
+                    if (!RequireCheck(new Control[] { txtPayCloseDate })) 
                         return false;
 
-
-
-
-                    if (!sss_bl.Select_PaymentClose(dpch_entity, 1))//Step2
-                    {
-                        sss_bl.ShowMessage("S013");
-                        cboProcessType.Focus();
-                        return false;
-                    }
 
                     if (sss_bl.Select_PaymentClose(dpch_entity, 2))
                     {
                         sss_bl.ShowMessage("S014");
+                        cboProcessType.Focus();
+                        return false;
+                    }
+
+                    if (!sss_bl.Select_PaymentClose(dpch_entity, 1))
+                    {
+                        sss_bl.ShowMessage("S013");
                         cboProcessType.Focus();
                         return false;
                     }
@@ -363,18 +337,19 @@ namespace Shiharai_ShimeShori
                     if (!RequireCheck(new Control[] { txtPayCloseDate })) 
                         return false;
 
-                    if (!sss_bl.Select_PaymentClose(dpch_entity, 3))
-                    {
-                        sss_bl.ShowMessage("S013");
-                        cboProcessType.Focus();
-                        return false;
-                    }
                     if (sss_bl.Select_PaymentClose(dpch_entity, 4))
                     {
                         sss_bl.ShowMessage("S015");
                         cboProcessType.Focus();
                         return false;
                     }
+                    if (!sss_bl.Select_PaymentClose(dpch_entity, 3))
+                    {
+                        sss_bl.ShowMessage("S013");
+                        cboProcessType.Focus();
+                        return false;
+                    }
+                   
                     //if (sss_bl.Select_PaymentClose(dpch_entity, 6))
                     //{
                     //    sss_bl.ShowMessage("S004");

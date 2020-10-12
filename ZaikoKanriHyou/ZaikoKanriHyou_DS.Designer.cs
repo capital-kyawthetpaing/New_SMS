@@ -329,6 +329,8 @@ namespace ZaikoKanriHyou {
             
             private global::System.Data.DataColumn columnThisMonthShippingQ;
             
+            private global::System.Data.DataColumn columnThisMonthAmount;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DT_D_PurchaseDataTable() {
@@ -564,6 +566,14 @@ namespace ZaikoKanriHyou {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ThisMonthAmountColumn {
+                get {
+                    return this.columnThisMonthAmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -624,7 +634,8 @@ namespace ZaikoKanriHyou {
                         string AveragePurchaseGaku, 
                         string Expense, 
                         string ColorSize, 
-                        string ThisMonthShippingQ) {
+                        string ThisMonthShippingQ, 
+                        string ThisMonthAmount) {
                 DT_D_PurchaseRow rowDT_D_PurchaseRow = ((DT_D_PurchaseRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         YYYYMM,
@@ -651,7 +662,8 @@ namespace ZaikoKanriHyou {
                         AveragePurchaseGaku,
                         Expense,
                         ColorSize,
-                        ThisMonthShippingQ};
+                        ThisMonthShippingQ,
+                        ThisMonthAmount};
                 rowDT_D_PurchaseRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDT_D_PurchaseRow);
                 return rowDT_D_PurchaseRow;
@@ -699,6 +711,7 @@ namespace ZaikoKanriHyou {
                 this.columnExpense = base.Columns["Expense"];
                 this.columnColorSize = base.Columns["ColorSize"];
                 this.columnThisMonthShippingQ = base.Columns["ThisMonthShippingQ"];
+                this.columnThisMonthAmount = base.Columns["ThisMonthAmount"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -754,6 +767,8 @@ namespace ZaikoKanriHyou {
                 base.Columns.Add(this.columnColorSize);
                 this.columnThisMonthShippingQ = new global::System.Data.DataColumn("ThisMonthShippingQ", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnThisMonthShippingQ);
+                this.columnThisMonthAmount = new global::System.Data.DataColumn("ThisMonthAmount", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnThisMonthAmount);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1296,6 +1311,22 @@ namespace ZaikoKanriHyou {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ThisMonthAmount {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_D_Purchase.ThisMonthAmountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthAmount\' in table \'DT_D_Purchase\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_D_Purchase.ThisMonthAmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsYYYYMMNull() {
                 return this.IsNull(this.tableDT_D_Purchase.YYYYMMColumn);
             }
@@ -1592,6 +1623,18 @@ namespace ZaikoKanriHyou {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetThisMonthShippingQNull() {
                 this[this.tableDT_D_Purchase.ThisMonthShippingQColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsThisMonthAmountNull() {
+                return this.IsNull(this.tableDT_D_Purchase.ThisMonthAmountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetThisMonthAmountNull() {
+                this[this.tableDT_D_Purchase.ThisMonthAmountColumn] = global::System.Convert.DBNull;
             }
         }
         

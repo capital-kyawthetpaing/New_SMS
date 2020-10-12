@@ -1,3 +1,6 @@
+DROP TYPE [dbo].[T_IdoIrai]
+GO
+
 BEGIN TRY 
  Drop PROCEDURE dbo.[D_MoveRequest_SelectDataForIdouIrai]
 END try
