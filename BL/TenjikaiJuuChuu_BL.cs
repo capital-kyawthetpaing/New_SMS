@@ -109,5 +109,14 @@ namespace BL
         {
             return tdl.Check_DTenjikaiJuuchuu(tkb);
         }
+        public string D_TeniSelectbyTaniCD(string tkb)
+        {
+            var dt= tdl.D_TeniSelectbyTaniCD(tkb);
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["Char1"].ToString();
+            }
+            return "" ;
+        }
     }
 }
