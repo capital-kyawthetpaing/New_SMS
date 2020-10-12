@@ -340,6 +340,8 @@ namespace Search
                 //        }
                 //    }
                 //}
+
+                #region Close by ETZ 
                 //if (!string.IsNullOrWhiteSpace(detailControls[(int)EIndex.MakerItem].Text))
                 //{
                 //    string[] makerDt = detailControls[(int)EIndex.MakerItem].Text.Split(',');
@@ -355,52 +357,54 @@ namespace Search
                 //        }
                 //    }
                 //}
-                if (ChkSearch.Checked)
-                {
-                    string[] item = new string[dt.Rows.Count];
-                    int itemCount = 0;
+                //if (ChkSearch.Checked)
+                //{
+                //    string[] item = new string[dt.Rows.Count];
+                //    int itemCount = 0;
 
-                    if (ckM_RadioButton3.Checked)
-                    {
-                        foreach (DataRow dr in dt.Rows)
-                        {
-                            int index = Array.IndexOf(item, dr["ItemCD"].ToString());
-                            if (index < 0)
-                            {
-                                item[itemCount] = dr["ItemCD"].ToString();
-                                itemCount++;
-                            }
-                        }
-                        string val = "";
-                        for (int i = 0; i < itemCount; i++)
-                            if (i == 0)
-                                val += item[i];
-                            else
-                                val += "," + item[i];
+                //    if (ckM_RadioButton3.Checked)
+                //    {
+                //        foreach (DataRow dr in dt.Rows)
+                //        {
+                //            int index = Array.IndexOf(item, dr["ItemCD"].ToString());
+                //            if (index < 0)
+                //            {
+                //                item[itemCount] = dr["ItemCD"].ToString();
+                //                itemCount++;
+                //            }
+                //        }
+                //        string val = "";
+                //        for (int i = 0; i < itemCount; i++)
+                //            if (i == 0)
+                //                val += item[i];
+                //            else
+                //                val += "," + item[i];
 
-                        detailControls[(int)EIndex.ITemCD].Text = val;
-                    }
-                    else
-                    {
-                        foreach (DataRow dr in dt.Rows)
-                        {
-                            int index = Array.IndexOf(item, dr["MakerItem"].ToString());
-                            if (index < 0)
-                            {
-                                item[itemCount] = dr["MakerItem"].ToString();
-                                itemCount++;
-                            }
-                        }
-                        string val = "";
-                        for (int i = 0; i < itemCount; i++)
-                            if (i == 0)
-                                val += item[i];
-                            else
-                                val += "," + item[i];
+                //       // detailControls[(int)EIndex.ITemCD].Text = val;
+                //    }
+                //    else
+                //    {
+                //        foreach (DataRow dr in dt.Rows)
+                //        {
+                //            int index = Array.IndexOf(item, dr["MakerItem"].ToString());
+                //            if (index < 0)
+                //            {
+                //                item[itemCount] = dr["MakerItem"].ToString();
+                //                itemCount++;
+                //            }
+                //        }
+                //        string val = "";
+                //        for (int i = 0; i < itemCount; i++)
+                //            if (i == 0)
+                //                val += item[i];
+                //            else
+                //                val += "," + item[i];
 
-                        detailControls[(int)EIndex.MakerItem].Text = val;
-                    }
-                }
+                //       // detailControls[(int)EIndex.MakerItem].Text = val;
+                //    }
+                //}
+                #endregion
+
                 GvDetail.DataSource = dt;
                 GvDetail.ScrollBars = ScrollBars.Both;
                 GvDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;

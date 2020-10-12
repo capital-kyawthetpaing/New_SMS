@@ -1282,13 +1282,13 @@ namespace TenzikaiJuchuuTourou
                         {
                             kin10 += bbl.Z_Set(mGrid.g_DArray[RW].ZeinuJuchuu);
                             if (zeiritsu10 == 0 && !string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].ZeinuTanku))
-                                zeiritsu10 = Convert.ToInt16(mGrid.g_DArray[RW].ZeinuTanku.Replace("%", ""));
+                                zeiritsu10 = Convert.ToInt16(mGrid.g_DArray[RW].ZeinuTanku.Trim().Replace("%", "").Replace("％","").Replace(".0", ""));
                         }
                         else if (mGrid.g_DArray[RW].TaxRateFlg.Equals("2"))
                         {
                             kin8 += bbl.Z_Set(mGrid.g_DArray[RW].ZeinuJuchuu);
                             if (zeiritsu8 == 0 && !string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].ZeinuTanku))
-                                zeiritsu8 = Convert.ToInt16(mGrid.g_DArray[RW].ZeinuTanku.Replace("%", ""));
+                                zeiritsu8 = Convert.ToInt16(mGrid.g_DArray[RW].ZeinuTanku.Trim().Replace("%", "").Replace("％", "").Replace(".0", ""));
                         }
 
                         if (maxKin < bbl.Z_Set(mGrid.g_DArray[RW].zeikomijuchuu))
@@ -2950,7 +2950,7 @@ namespace TenzikaiJuchuuTourou
                            , mGrid.g_DArray[RW].zeikomijuchuu.ToString().Replace(",", "") == "" ? null : mGrid.g_DArray[RW].zeikomijuchuu.ToString().Replace(",", "")
                            , mGrid.g_DArray[RW].ArariGaku.ToString().Replace(",", "") == "" ? null : mGrid.g_DArray[RW].ArariGaku.ToString().Replace(",", "")
                            , mGrid.g_DArray[RW].ZeiNu.ToString().Replace(",", "") == "" ? null : mGrid.g_DArray[RW].ZeiNu.ToString().Replace(",", "")
-                           , mGrid.g_DArray[RW].ZeinuTanku.ToString().Replace(",", "").Replace("%","") == "" ? null : mGrid.g_DArray[RW].ZeinuTanku.ToString().Replace(",", "").Replace("%", "")
+                           , mGrid.g_DArray[RW].ZeinuTanku.ToString().Replace(",", "").Replace("%","").Replace("％", "") == "" ? null : mGrid.g_DArray[RW].ZeinuTanku.ToString().Replace(",", "").Replace("%", "").Replace("％", "")
                            , mGrid.g_DArray[RW].ShanaiBi == "" ? null : mGrid.g_DArray[RW].ShanaiBi
                            , mGrid.g_DArray[RW].ShagaiBi == "" ? null : mGrid.g_DArray[RW].ShagaiBi
                            , mGrid.g_DArray[RW].KobeTsu == "" ? null : mGrid.g_DArray[RW].KobeTsu

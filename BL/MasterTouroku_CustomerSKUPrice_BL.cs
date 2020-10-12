@@ -21,5 +21,11 @@ namespace BL
         {
             return mcskupdl.M_CustomerSKUPriceSelectData(mcskue);
         }
+
+        public bool CustomerSKUPrice_Exec(M_CustomerSKUPrice_Entity mcskue,int mode)
+        {
+            mcskue.xml1 = DataTableToXml(mcskue.dt1);
+            return mcskupdl.M_CustomerSKUPrice_Exec(mcskue,mode);
+        }
     }
 }
