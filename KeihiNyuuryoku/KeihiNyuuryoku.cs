@@ -614,7 +614,7 @@ namespace KeihiNyuuryoku
                       khnyk_BL.ShowMessage("E102");
                     //dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colDepartment"];
                     dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colDepartment"].Selected = true;
-                }
+                   }
                }
             //else if (e.ColumnIndex == dgvKehiNyuuryoku.Columns["colDepartment"].Index)
             //{
@@ -752,22 +752,6 @@ namespace KeihiNyuuryoku
                 //dgvKehiNyuuryoku.Rows[dgvKehiNyuuryoku.Rows.Count - 1].Selected = true;
                 dgvKehiNyuuryoku.Rows[i].Cells[0].Selected = true;
                 dgvKehiNyuuryoku.Focus();
-            }
-        }
-
-        private void dgvKehiNyuuryoku_Leave(object sender, DataGridViewCellEventArgs e)
-        {
-            if ((sender as DataGridView).CurrentCell is DataGridViewTextBoxCell)
-            {
-                if (dgvKehiNyuuryoku.CurrentCell == dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostCD"])
-                {
-                    if (!string.IsNullOrWhiteSpace(dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostCD"].Value.ToString()) && string.IsNullOrWhiteSpace(dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostCD"].Value.ToString()))
-                    {
-                        khnyk_BL.ShowMessage("E102");
-                        dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostCD"];
-                        // dgvYuubinBangou.BeginEdit(true);
-                    }
-                }
             }
         }
 
