@@ -23,6 +23,9 @@ namespace Entity
         public string season { get; set; }
         public string CustomerCDFrom { get; set; }
         public string CustomerCDTo { get; set; }
+        public string BrandCD { get; set; }
+        public string SegmentCD { get; set; }
+        public string ExhibitionName { get; set; }
 
     }
 }

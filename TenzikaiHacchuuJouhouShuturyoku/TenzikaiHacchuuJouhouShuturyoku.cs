@@ -10,13 +10,18 @@ using System.Windows.Forms;
 using Base.Client;
 using BL;
 using Entity;
+using System.IO;
+using ClosedXML.Excel;
+using System.Diagnostics;
 
 namespace TenzikaiHacchuuJouhouShuturyoku
+
 {
     public partial class FrmTenzikaiHacchuuJouhouShuturyoku : FrmMainForm
     {
         TenzikaiHacchuuJouhouShuturyoku_BL tzbl = new TenzikaiHacchuuJouhouShuturyoku_BL();
         D_TenzikaiJuchuu_Entity dtje = new D_TenzikaiJuchuu_Entity();
+        int chk = 0;string filename = string.Empty;
 
         public FrmTenzikaiHacchuuJouhouShuturyoku()
         {
@@ -37,6 +42,7 @@ namespace TenzikaiHacchuuJouhouShuturyoku
             F8Visible = false;
             Btn_F10.Text = "データ出力(F10)";
             F12Visible = false;
+            F11Visible = false;
 
             BindCombo();
             ScSupplier.SetFocus(1);
@@ -115,10 +121,68 @@ namespace TenzikaiHacchuuJouhouShuturyoku
                         LastYearTerm = cboYear.SelectedValue.ToString(),
                         season = cboSeason.SelectedValue.ToString(),
                         CustomerCDFrom = ScClient1.TxtCode.Text,
-                        CustomerCDTo = ScClient2.TxtCode.Text
+                        CustomerCDTo = ScClient2.TxtCode.Text,
+                        BrandCD = ScBrandCD.TxtCode.Text,
+                        SegmentCD = ScSegmentCD.TxtCode.Text,
+                        ExhibitionName = ScExhibitionCD.TxtCode.Text,
+                        ProgramID = InProgramID,
+                        Operator = InOperatorCD,
+                        PC = InPcID,
+                        ProcessMode = string.Empty,
+                        Key = string.Empty
                     };
-                    DataTable dttenzi = new DataTable();
-                    //dttenzi = tzbl.
+                    if (rdoCustomer.Checked == true)
+                    {
+                        chk = 1;
+                    }
+                    else if (rdoProduct.Checked == true)
+                    {
+                        chk = 2;
+                    }
+                    DataTable dttenzi = new DataTable();                   
+                    dttenzi = tzbl.D_TenzikaiJuchuu_SelectForExcel(dtje,chk);
+                    if(dttenzi.Rows.Count > 0)
+                    {
+                        filename = dttenzi.Rows[0]["TenzikaiName"].ToString();
+                        if (dttenzi.Columns.Contains("TenzikaiName"))
+                        {
+                            dttenzi.Columns.Remove("TenzikaiName");
+                        }
+                        string folderPath = "C:\\Excel\\";
+                        if (!Directory.Exists(folderPath))
+                        {
+                            Directory.CreateDirectory(folderPath);
+                        }
+                        SaveFileDialog savedialog = new SaveFileDialog();
+                        savedialog.Filter = "Excel Files|*.xlsx;";
+                        savedialog.Title = "Save";
+                        savedialog.FileName = filename;
+                        savedialog.InitialDirectory = folderPath;
+
+                        savedialog.RestoreDirectory = true;
+
+                        if (savedialog.ShowDialog() == DialogResult.OK)
+                        {
+                            if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
+                            {
+                                Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+                                Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+                                Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+
+                                worksheet = workbook.ActiveSheet;
+                                worksheet.Name = "worksheet";
+
+                                using (XLWorkbook wb = new XLWorkbook())
+                                {
+                                    wb.Worksheets.Add(dttenzi, "worksheet");
+                                    wb.SaveAs(savedialog.FileName);
+                                    bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
+                                }
+
+                                Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                            }
+                        }
+                    }
 
                 }
             }

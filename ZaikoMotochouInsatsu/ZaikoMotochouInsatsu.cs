@@ -44,8 +44,6 @@ namespace ZaikoMotochouInsatsu
             Btn_F11.Text = string.Empty;
             Btn_F10.Text = string.Empty;
             scMakerShohinCD.CodeWidth = 600;
-            scITEM.CodeWidth = 600;
-            scSKUCD.CodeWidth = 600;
         }
         private void SetRequireField()
         {
@@ -114,12 +112,12 @@ namespace ZaikoMotochouInsatsu
             }
 
             //ErrorChecks for cboSouko (倉庫) are left
-            //if (!base.CheckAvailableStores(cboSouko.SelectedValue.ToString())) // Check for 店舗 (ComboBox)
-            //{
-            //    zmibl.ShowMessage("E141");
-            //    cboSouko.Focus();
-            //    return false;
-            //}
+            if (!base.CheckAvailableStores(cboSouko.SelectedValue.ToString())) // Check for 店舗 (ComboBox)
+            {
+                zmibl.ShowMessage("E141");
+                cboSouko.Focus();
+                return false;
+            }
 
             if ((chkPrintRelated.Checked == true) )
             {
@@ -238,6 +236,7 @@ namespace ZaikoMotochouInsatsu
                 else
                 {
                     bbl.ShowMessage("E128");
+                    txtTargetPeriodF.Focus();
                 }
             }
         }

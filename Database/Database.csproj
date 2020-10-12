@@ -258,6 +258,7 @@
     <Content Include="StoreProcedure\D_StorePayment_Select.sql" />
     <Content Include="StoreProcedure\D_Store_CalculationSelect.sql" />
     <Content Include="StoreProcedure\D_Store_Calculation_SelectForSeiSan.sql" />
+    <Content Include="StoreProcedure\D_TenzikaiJuchuu_SelectForExcel.sql" />
     <Content Include="StoreProcedure\D_WowmaJuchuuDetails_Insert.sql" />
     <Content Include="StoreProcedure\D_WowmaJuchuu_Insert.sql" />
     <Content Include="StoreProcedure\Fnc_Credit.sql" />

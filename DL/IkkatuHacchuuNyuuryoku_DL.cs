@@ -18,7 +18,7 @@ namespace DL
         /// <param name="vendorCD"></param>
         /// <param name="storeCD"></param>
         /// <returns></returns>
-        public DataTable PRC_IkkatuHacchuuNyuuryoku_SelectData(string ikkatuHacchuuMode, string hacchuuDate, string vendorCD,string juchuuStaffCD, string storeCD)
+        public DataTable PRC_IkkatuHacchuuNyuuryoku_SelectData(string ikkatuHacchuuMode, string hacchuuDate, string vendorCD,string juchuuStaffCD, string storeCD, string isSaiHacchuu)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
@@ -27,6 +27,7 @@ namespace DL
                 { "@p_VendorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = vendorCD } },
                 { "@p_JuchuuStaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = juchuuStaffCD } },
                 { "@p_StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = storeCD } },
+                { "@p_IsSaiHacchuu", new ValuePair { value1 = SqlDbType.VarChar, value2 = isSaiHacchuu } },
             };
             return SelectData(dic, "PRC_IkkatuHacchuuNyuuryoku_SelectData");
         }

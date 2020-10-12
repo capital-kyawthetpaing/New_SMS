@@ -18,6 +18,7 @@ CREATE PROCEDURE [dbo].[PRC_IkkatuHacchuuNyuuryoku_SelectData](
 ,@p_VendorCD                 varchar(13)   
 ,@p_JuchuuStaffCD            varchar(13)   
 ,@p_StoreCD                  varchar(4)  
+,@p_IsSaiHacchuu             varchar(1)  
 )  
 AS  
 BEGIN  
@@ -29,7 +30,7 @@ BEGIN
                                                      END    
            END AS TaishouFLG    
           ,CAST(1 AS bit) AS TaishouFLG    
-          ,CAST(NULL AS varchar) AS HacchuuNO    
+          ,DORD_Latest.OrderNO AS HacchuuNO    
           ,DJUD.VendorCD   AS SiiresakiCD    
           ,MVEN.VendorName AS SiiresakiName    
           ,CASE WHEN DJUD.DirectFlg = 1 THEN '›' ELSE NULL END AS ChokusouFLG    
@@ -97,7 +98,7 @@ BEGIN
                          FROM D_LastOrder DLOD    
                        )SUB    
                 WHERE num = 1    
-              )SUB    
+              )SUB
     ON  SUB.JuchuuNO = DJUD.JuchuuNO    
     AND SUB.JuchuuRows = DJUD.JuchuuRows    
     LEFT JOIN D_OrderDetails DORD    
@@ -164,6 +165,15 @@ BEGIN
                     AND DARP.DeleteDateTime  IS NULL		  --	
 
                 )DARP    
+    OUTER APPLY(SELECT TOP 1 DORD_SUB.OrderNO
+                  FROM D_OrderDetails DORD_SUB
+                 WHERE @p_IsSaiHacchuu = '1'
+                   AND DJUD.JuchuuSuu > (DJUD.HikiateSu + DARP.ArrivalPlanSu)
+                   AND DORD.JuchuuRows IS NOT NULL
+                   AND DJUD.JuchuuNO = DORD_SUB.JuchuuNO
+                   AND DJUD.JuchuuRows = DORD_SUB.JuchuuRows   
+                 ORDER BY DORD_SUB.InsertDateTime DESC
+               )DORD_Latest
     WHERE DJUD.DeleteDateTime IS NULL    
       AND (@p_VendorCD IS NULL OR DJUD.VendorCD = @p_VendorCD)
       AND DJUD.NotOrderFlg = 0
@@ -189,6 +199,7 @@ BEGIN
             AND MSKU.NoNetOrderFlg = 0    
             AND DORD.JuchuuRows IS NULL    
             AND DJUD.JuchuuSuu > DJUD.HikiateSu    
+            AND MVEN.NetFlg = 1
            )    
             OR    
            (@p_IkkatuHacchuuMode = '1'    
@@ -198,7 +209,8 @@ BEGIN
                  )    
                  OR    
      --20200924            (DJUD.JuchuuSuu > (DJUD.HikiateSu + DARP.ArrivalSu)    
-                 (DJUD.JuchuuSuu > (DJUD.HikiateSu + DARP.ArrivalPlanSu)   --
+                 (@p_IsSaiHacchuu = '1'
+                  AND DJUD.JuchuuSuu > (DJUD.HikiateSu + DARP.ArrivalPlanSu)   --
                   AND DORD.JuchuuRows IS NOT NULL    
                  )    
                 )    

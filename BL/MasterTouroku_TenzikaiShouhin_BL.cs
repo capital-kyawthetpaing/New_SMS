@@ -16,7 +16,8 @@ namespace BL
        {
 
             return dl.Mastertoroku_Tenzikaishouhin_Select(mt,mode);
-                
-       }
+
+
+        }
    }
 }
