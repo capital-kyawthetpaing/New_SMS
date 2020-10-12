@@ -95,7 +95,7 @@ namespace DL
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@VendorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.VendorCD } },
-                { "@Year", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.year } },
+                { "@Year", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.LastYearTerm } },
                 { "@Season", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.season } },
                 { "@CustomerCDFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.CustomerCDFrom } },
                 { "@CustomerCDTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dtje.CustomerCDTo } },

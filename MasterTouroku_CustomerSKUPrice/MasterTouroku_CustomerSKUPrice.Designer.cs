@@ -192,7 +192,6 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.pannel_Header);
-            this.panel1.Controls.Add(this.Vsb_Mei_0);
             this.panel1.Controls.Add(this.pnl_Body);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(2, 55);
@@ -635,15 +634,17 @@
             // 
             // Vsb_Mei_0
             // 
-            this.Vsb_Mei_0.Location = new System.Drawing.Point(1522, 176);
+            this.Vsb_Mei_0.Location = new System.Drawing.Point(1507, 0);
             this.Vsb_Mei_0.Name = "Vsb_Mei_0";
-            this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 385);
+            this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 378);
             this.Vsb_Mei_0.TabIndex = 127;
+            this.Vsb_Mei_0.ValueChanged += new System.EventHandler(this.Vsb_Mei_0_ValueChanged);
             // 
             // pnl_Body
             // 
             this.pnl_Body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnl_Body.Controls.Add(this.Space_9);
+            this.pnl_Body.Controls.Add(this.Vsb_Mei_0);
             this.pnl_Body.Controls.Add(this.IMT_PRICE_9);
             this.pnl_Body.Controls.Add(this.IMT_REMARK_9);
             this.pnl_Body.Controls.Add(this.IMT_ITMNM_9);
@@ -755,7 +756,7 @@
             this.pnl_Body.Controls.Add(this.SC_Customer_5);
             this.pnl_Body.Location = new System.Drawing.Point(12, 175);
             this.pnl_Body.Name = "pnl_Body";
-            this.pnl_Body.Size = new System.Drawing.Size(1510, 384);
+            this.pnl_Body.Size = new System.Drawing.Size(1530, 384);
             this.pnl_Body.TabIndex = 126;
             // 
             // Space_9
