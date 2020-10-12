@@ -1035,35 +1035,22 @@ namespace IkkatuHacchuuNyuuryoku
         /// </summary>
         protected override void ExecSec()
         {
-            //if (OperationMode == EOperationMode.INSERT)
-            //{
-            //    if (CheckKey((int)EIndex.StoreCD, false) == false)
-            //    {
-            //        return;
-            //    }
-            //}
-            //else
-            //{
-            //    for (int i = 0; i < keyControls.Length; i++)
-            //    {
-            //        if (CheckKey(i, false) == false)
-            //        {
-            //            keyControls[i].Focus();
-            //            return;
-            //        }
-            //    }
-            //}
+            if (OperationMode != EOperationMode.DELETE)
+            {
+                if (CheckKey((int)EIndex.StoreCD, false) == false)
+                {
+                    return;
+                }
+
+                if (CheckDetail((int)EIndex.HacchuuDate, false) == false)
+                {
+                    detailControls[(int)EIndex.HacchuuDate].Focus();
+                    return;
+                }
+            }
 
             if (OperationMode != EOperationMode.DELETE)
             {
-                //for (int i = 0; i < detailControls.Length; i++)
-                //{
-                //    if (CheckDetail(i, false) == false)
-                //    {
-                //        detailControls[i].Focus();
-                //        return;
-                //    }
-                //}
                 // 明細部  画面の範囲の内容を配列にセット
                 mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
@@ -1071,14 +1058,8 @@ namespace IkkatuHacchuuNyuuryoku
                 for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
                 {
                     //m_dataCntが更新有効行数
-                    if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].SiiresakiCD) == false
-                        || bbl.Z_Set(mGrid.g_DArray[RW].HacchuuSuu) != 0
-                        || bbl.Z_Set(mGrid.g_DArray[RW].HacchuuTanka) != 0
-                        || bbl.Z_Set(mGrid.g_DArray[RW].Hacchuugaku) != 0
-                        )
+                    if (mGrid.g_DArray[RW].TaishouFLG == "True")
                     {
-                        if (mGrid.g_DArray[RW].TaishouFLG == "False") continue;
-
                         for (int CL = (int)ClsGridIkkatuHacchuu.ColNO.SiiresakiCD; CL < (int)ClsGridIkkatuHacchuu.ColNO.COUNT; CL++)
                         {
                             if (CheckGrid(CL, RW, true) == false)
@@ -1189,6 +1170,7 @@ namespace IkkatuHacchuuNyuuryoku
 
             for (int RW = 0; RW <= maxrow; RW++)
             {
+                if (mGrid.g_DArray[RW].IsYuukouTaishouFLG != "True") continue;
                 mGrid.g_DArray[RW].TaishouFLG = "True";
             }
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
@@ -1241,6 +1223,7 @@ namespace IkkatuHacchuuNyuuryoku
 
             for (int RW = 0; RW <= maxrow; RW++)
             {
+                if (mGrid.g_DArray[RW].IsYuukouTaishouFLG != "True") continue;
                 mGrid.g_DArray[RW].TaishouFLG = "False";
             }
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
@@ -1261,16 +1244,17 @@ namespace IkkatuHacchuuNyuuryoku
                 this.lblIkkatuHacchuuMode.Text = "Net発注";
                 this.lblIkkatuHacchuuMode.BackColor = System.Drawing.Color.Lime;
                 this.ikkatuHacchuuMode = IkkatuHacchuuMode.NetHacchuu;
-                this.btnChangeIkkatuHacchuuMode.Text = "FAX発注(F11)";
+                this.btnChangeIkkatuHacchuuMode.Text = "FAX発注";
             }
             else
             {
                 this.lblIkkatuHacchuuMode.Text = "FAX発注";
                 this.lblIkkatuHacchuuMode.BackColor = System.Drawing.Color.Cyan;
                 this.ikkatuHacchuuMode = IkkatuHacchuuMode.FAXHacchuu;
-                this.btnChangeIkkatuHacchuuMode.Text = "Net発注(F11)";
+                this.btnChangeIkkatuHacchuuMode.Text = "Net発注";
             }
-            this.ScSiiresakiCD.Focus();
+
+            this.ChangeOperationMode(this.OperationMode);
         }
 
         #endregion
@@ -1976,12 +1960,7 @@ namespace IkkatuHacchuuNyuuryoku
             S_Clear_Grid();   //画面クリア（明細部）
 
             lblHacchuugakuSum.Text = string.Empty;
-            //lblKin2.Text = string.Empty;
-            //lblKin3.Text = string.Empty;
-            //lblKin4.Text = string.Empty;
-            //TxtRemark1.Text = string.Empty;
-            //TxtRemark2.Text = string.Empty;
-            //ChkPrint.Checked = false;
+            this.chkSaiHacchuu.Checked = false;
         }
 
         #endregion
@@ -2034,6 +2013,7 @@ namespace IkkatuHacchuuNyuuryoku
                     this.ScJuchuuStaff.Enabled = true;
                     this.ScHacchuuNO.Enabled = false;
                     this.ScHacchuuShoriNO.Enabled = false;
+                    this.chkSaiHacchuu.Enabled = false;
                 }
                 else
                 {
@@ -2042,6 +2022,7 @@ namespace IkkatuHacchuuNyuuryoku
                     this.ScJuchuuStaff.Enabled = true;
                     this.ScHacchuuNO.Enabled = false;
                     this.ScHacchuuShoriNO.Enabled = false;
+                    this.chkSaiHacchuu.Enabled = true;
                 }
             }
             else if (OperationMode == EOperationMode.UPDATE)
@@ -2054,6 +2035,7 @@ namespace IkkatuHacchuuNyuuryoku
                     this.ScHacchuuNO.Enabled = true;
                     this.ScHacchuuShoriNO.Enabled = true;
                     this.ScSiiresakiCD.Clear();
+                    this.chkSaiHacchuu.Enabled = false;
                 }
                 else
                 {
@@ -2063,6 +2045,7 @@ namespace IkkatuHacchuuNyuuryoku
                     this.ScHacchuuNO.Enabled = true;
                     this.ScHacchuuShoriNO.Enabled = true;
                     this.ScSiiresakiCD.Clear();
+                    this.chkSaiHacchuu.Enabled = false;
                 }
             }
             else if (OperationMode == EOperationMode.DELETE || OperationMode == EOperationMode.SHOW)
@@ -2075,6 +2058,7 @@ namespace IkkatuHacchuuNyuuryoku
                     this.ScHacchuuNO.Enabled = true;
                     this.ScHacchuuShoriNO.Enabled = true;
                     this.ScSiiresakiCD.Clear();
+                    this.chkSaiHacchuu.Enabled = false;
                 }
                 else
                 {
@@ -2084,6 +2068,7 @@ namespace IkkatuHacchuuNyuuryoku
                     this.ScHacchuuNO.Enabled = true;
                     this.ScHacchuuShoriNO.Enabled = true;
                     this.ScSiiresakiCD.Clear();
+                    this.chkSaiHacchuu.Enabled = false;
                 }
             }
         }
@@ -2271,7 +2256,9 @@ namespace IkkatuHacchuuNyuuryoku
                                                                          , txtHacchuuDate.Text
                                                                          , ScSiiresakiCD.TxtCode.Text.ToStringOrNull()
                                                                          , ScJuchuuStaff.TxtCode.Text.ToStringOrNull()
-                                                                         , CboStoreCD.SelectedValue.ToStringOrNull());
+                                                                         , CboStoreCD.SelectedValue.ToStringOrNull()
+                                                                         , chkSaiHacchuu.Checked == true ? "1" : "0"
+                                                                         );
             }
             else if (OperationMode == EOperationMode.UPDATE || OperationMode == EOperationMode.DELETE || OperationMode == EOperationMode.SHOW)
             {
@@ -2283,8 +2270,15 @@ namespace IkkatuHacchuuNyuuryoku
             if (dt.Rows.Count == 0)
             {
                 bbl.ShowMessage("E128");
-                //Scr_Clr(1);
-                previousCtrl.Focus();
+                Scr_Clr(1);
+                if (OperationMode == EOperationMode.INSERT)
+                {
+                    this.ScSiiresakiCD.Focus();
+                }
+                else
+                {
+                    this.ScHacchuuNO.Focus();
+                }
                 return false;
             }
             else
@@ -2294,14 +2288,14 @@ namespace IkkatuHacchuuNyuuryoku
                     this.lblIkkatuHacchuuMode.Text = "Net発注";
                     this.lblIkkatuHacchuuMode.BackColor = System.Drawing.Color.Lime;
                     this.ikkatuHacchuuMode = IkkatuHacchuuMode.NetHacchuu;
-                    this.btnChangeIkkatuHacchuuMode.Text = "FAX発注(F11)";
+                    this.btnChangeIkkatuHacchuuMode.Text = "FAX発注";
                 }
                 else
                 {
                     this.lblIkkatuHacchuuMode.Text = "FAX発注";
                     this.lblIkkatuHacchuuMode.BackColor = System.Drawing.Color.Cyan;
                     this.ikkatuHacchuuMode = IkkatuHacchuuMode.FAXHacchuu;
-                    this.btnChangeIkkatuHacchuuMode.Text = "Net発注(F11)";
+                    this.btnChangeIkkatuHacchuuMode.Text = "Net発注";
                 }
 
                 ////DeleteDateTime 「削除された見積番号」
@@ -3282,13 +3276,15 @@ namespace IkkatuHacchuuNyuuryoku
                                     switch (w_Col)
                                     {
                                         case (int)ClsGridIkkatuHacchuu.ColNO.TaishouFLG:
-                                            mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = OperationMode == EOperationMode.INSERT || mGrid.g_DArray[w_Row].IsYuukouTaishouFLG == "True" ? true : false;
+                                            mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = mGrid.g_DArray[w_Row].IsYuukouTaishouFLG == "True" ? true : false;
                                             break;
                                         case (int)ClsGridIkkatuHacchuu.ColNO.SiiresakiCD:
                                             mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = OperationMode == EOperationMode.INSERT ? true : false;
                                             mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = OperationMode == EOperationMode.INSERT ? false : true;
                                             break;
                                         case (int)ClsGridIkkatuHacchuu.ColNO.EDIFLG:
+                                            mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = mGrid.g_DArray[w_Row].IsYuukouTaishouFLG == "True" ? true : false;
+                                            break;
                                         case (int)ClsGridIkkatuHacchuu.ColNO.KibouNouki:
                                         case (int)ClsGridIkkatuHacchuu.ColNO.ShanaiBikou:
                                         case (int)ClsGridIkkatuHacchuu.ColNO.ShagaiBikou:
