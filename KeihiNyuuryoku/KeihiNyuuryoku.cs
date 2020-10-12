@@ -49,7 +49,8 @@ namespace KeihiNyuuryoku
         private void FormLoadEvent(object sender, EventArgs e)
         {
             InProgramID = "KeihiNyuuryoku";
-            SetFunctionLabel(EProMode.KehiNyuuryoku);
+            //SetFunctionLabel(EProMode.KehiNyuuryoku);
+            SetFunctionLabel(EProMode.MENTE);
             StartProgram();
             SetRequireField();
             
@@ -70,6 +71,8 @@ namespace KeihiNyuuryoku
             ScStaff.LabelText = Bind_StaffName(ScStaff.Code);
             txtKeijouDate.Text = System.DateTime.Now.ToString("yyyy/MM/dd");
             ScVendor.SetFocus(1);
+            dgvKehiNyuuryoku.CheckCol.Add("colCostCD");
+            dgvKehiNyuuryoku.CheckCol.Add("colDepartment");
         }
 
         private void CreateDataTable()
@@ -592,50 +595,37 @@ namespace KeihiNyuuryoku
 
         private void dgvKehiNyuuryoku_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            //if ((sender as DataGridView).CurrentCell is DataGridViewTextBoxCell)
-            //{
-                //if (e.ColumnIndex == dgvKehiNyuuryoku.Columns["colCostCD"].Index)
-                //{
-                if (dgvKehiNyuuryoku.CurrentCell == dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostCD"])
+            if (e.ColumnIndex == dgvKehiNyuuryoku.Columns["colCostCD"].Index)
+            {
+                if (string.IsNullOrWhiteSpace(dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostCD"].Value.ToString()))
                 {
-                    if(string.IsNullOrWhiteSpace(dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostCD"].Value.ToString()))
-                    {
-                        khnyk_BL.ShowMessage("E102");
+                    khnyk_BL.ShowMessage("E102");
                     //dgvKehiNyuuryoku.CurrentCell.Selected = true;
                     //dgvKehiNyuuryoku.NotifyCurrentCellDirty(true);
                     //dgvKehiNyuuryoku.BeginEdit(true);
                     dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostCD"];
-                    }
                 }
-               else if (dgvKehiNyuuryoku.CurrentCell == dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colDepartment"])
-               {
-                   if (string.IsNullOrWhiteSpace(dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colDepartment"].Value.ToString()))
-                   {
-                      khnyk_BL.ShowMessage("E102");
-                    //dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colDepartment"];
-                    dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colDepartment"].Selected = true;
-                   }
-               }
-            //else if (e.ColumnIndex == dgvKehiNyuuryoku.Columns["colDepartment"].Index)
-            //{
-            //    if (string.IsNullOrWhiteSpace(dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colDepartment"].Value.ToString()))
-            //    {
-            //        khnyk_BL.ShowMessage("E102");
-            //        dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colDepartment"];
-            //    }
-            //}
-            else if (e.ColumnIndex == dgvKehiNyuuryoku.Columns["colCostGaku"].Index)
+            }
+            else if (e.ColumnIndex == dgvKehiNyuuryoku.Columns["colDepartment"].Index)
+            {
+                if (string.IsNullOrWhiteSpace(dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colDepartment"].Value.ToString()))
                 {
-                    if (dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostGaku"].Value.ToString().Contains("-"))
-                        dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostGaku"].Style.ForeColor = Color.Red;
-                    else
-                        dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostGaku"].Style.ForeColor = Color.Black;
-
-                    BindTotalGaku(dt);
+                    khnyk_BL.ShowMessage("E102");
+                    dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colDepartment"];
                 }
-            //}
+            }
+            else if (e.ColumnIndex == dgvKehiNyuuryoku.Columns["colCostGaku"].Index)
+            {
+                if (dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostGaku"].Value.ToString().Contains("-"))
+                    dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostGaku"].Style.ForeColor = Color.Red;
+                else
+                    dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostGaku"].Style.ForeColor = Color.Black;
+
+                BindTotalGaku(dt);
+            }
+
         }
-        
+
         private void frmKeihiNyuuryoku_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
@@ -753,6 +743,58 @@ namespace KeihiNyuuryoku
                 dgvKehiNyuuryoku.Rows[i].Cells[0].Selected = true;
                 dgvKehiNyuuryoku.Focus();
             }
+        }
+
+        private void dgvKehiNyuuryoku_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            //if (dgvKehiNyuuryoku.Columns[e.ColumnIndex].Name == "colCostCD")
+            //{
+            //if (dgvKehiNyuuryoku.CurrentCell == dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostCD"])
+            //{
+            //    if (string.IsNullOrWhiteSpace(dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostCD"].Value.ToString()))
+            //    {
+            //        khnyk_BL.ShowMessage("E102");
+            //        dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostCD"];
+            //    }
+            //}
+            //else if (dgvKehiNyuuryoku.CurrentCell == dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colDepartment"])
+            //{
+            //    if (string.IsNullOrWhiteSpace(dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colDepartment"].Value.ToString()))
+            //    {
+            //        khnyk_BL.ShowMessage("E102");
+            //        dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colDepartment"];
+            //    }
+            //}
+            //}
+            if (e.ColumnIndex == dgvKehiNyuuryoku.Columns["colCostCD"].Index)
+            {
+                if (string.IsNullOrWhiteSpace(dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostCD"].Value.ToString()))
+                {
+                    khnyk_BL.ShowMessage("E102");
+                    //dgvKehiNyuuryoku.CurrentCell.Selected = true;
+                    //dgvKehiNyuuryoku.NotifyCurrentCellDirty(true);
+                    //dgvKehiNyuuryoku.BeginEdit(true);
+                    dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostCD"];
+                }
+            }
+            else if (e.ColumnIndex == dgvKehiNyuuryoku.Columns["colDepartment"].Index)
+            {
+                if (string.IsNullOrWhiteSpace(dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colDepartment"].Value.ToString()))
+                {
+                    khnyk_BL.ShowMessage("E102");
+                    dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colDepartment"];
+                }
+            }
+            else if (e.ColumnIndex == dgvKehiNyuuryoku.Columns["colCostGaku"].Index)
+            {
+                if (dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostGaku"].Value.ToString().Contains("-"))
+                    dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostGaku"].Style.ForeColor = Color.Red;
+                else
+                    dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostGaku"].Style.ForeColor = Color.Black;
+
+                BindTotalGaku(dt);
+            }
+
         }
 
         private void F8() // Insert new row upon current row
