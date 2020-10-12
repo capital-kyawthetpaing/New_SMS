@@ -27,5 +27,23 @@ namespace DL
             };
             return SelectData(dic, "M_CustomerSKUPriceSelectData");
         }
+
+        public bool M_CustomerSKUPrice_Exec(M_CustomerSKUPrice_Entity mcskue,int mode)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@xmlCustSKUPrice", new ValuePair { value1 = SqlDbType.VarChar, value2 = mcskue.xml1} },
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mcskue.InsertOperator } },
+                { "@Pc", new ValuePair { value1 = SqlDbType.VarChar, value2 = mcskue.PC} },
+                { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = mcskue.ProcessMode} },
+                { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = mcskue.ProcessMode} },
+                { "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = mcskue.Key } },
+                { "@Mode", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mode.ToString() } }
+
+        };
+            UseTransaction = true;
+            return InsertUpdateDeleteData(dic, "M_CustomerSKUPrice_InsertUpdate");
+
+        }
     }
 }

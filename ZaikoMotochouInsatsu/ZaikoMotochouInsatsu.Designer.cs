@@ -113,6 +113,7 @@
             this.scJANCD.Size = new System.Drawing.Size(633, 27);
             this.scJANCD.Stype = Search.CKM_SearchControl.SearchType.JANMulti;
             this.scJANCD.TabIndex = 5;
+            this.scJANCD.test = null;
             this.scJANCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scJANCD.UseChangeDate = false;
             this.scJANCD.Value1 = null;
@@ -142,6 +143,7 @@
             this.scSKUCD.Size = new System.Drawing.Size(223, 27);
             this.scSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
             this.scSKUCD.TabIndex = 4;
+            this.scSKUCD.test = null;
             this.scSKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSKUCD.UseChangeDate = false;
             this.scSKUCD.Value1 = null;
@@ -171,6 +173,7 @@
             this.scITEM.Size = new System.Drawing.Size(223, 27);
             this.scITEM.Stype = Search.CKM_SearchControl.SearchType.SKU_ITEM_CD;
             this.scITEM.TabIndex = 3;
+            this.scITEM.test = null;
             this.scITEM.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scITEM.UseChangeDate = false;
             this.scITEM.Value1 = null;
@@ -200,6 +203,7 @@
             this.scMakerShohinCD.Size = new System.Drawing.Size(223, 28);
             this.scMakerShohinCD.Stype = Search.CKM_SearchControl.SearchType.MakerItem;
             this.scMakerShohinCD.TabIndex = 2;
+            this.scMakerShohinCD.test = null;
             this.scMakerShohinCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scMakerShohinCD.UseChangeDate = false;
             this.scMakerShohinCD.Value1 = null;

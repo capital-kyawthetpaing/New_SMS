@@ -33,17 +33,15 @@ namespace MasterTouroku_CustomerSKUPrice
         internal enum ColNO : int
         {
             GYONO,
-            CustomerCD,
-            CustomerName,
             TekiyouKaisiDate,
             TekiyouShuuryouDate,
-            //AdminNO,
+            CustomerCD,
+            CustomerName,
+            Remarks,
             JANCD,
             SKUCD,
             SKUName,
-            SalePriceOutTax,
-            Remarks,
-
+            SalePriceOutTax, 
             Space1,
             COUNT
         }
