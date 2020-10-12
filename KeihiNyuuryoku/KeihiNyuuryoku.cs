@@ -24,6 +24,7 @@ namespace KeihiNyuuryoku
         string keijoudate, staffName = string.Empty;
         decimal TotalGaku;
         DataTable dtcost, dtcontrol, dtpayplan, dtVendor, dtStaff, dt;
+        private int i;
 
         public frmKeihiNyuuryoku()
         {
@@ -724,7 +725,10 @@ namespace KeihiNyuuryoku
             ScVendor.ChangeDate = keijoudate;
             ScVendor.Value1 = "2";
         }
-
+        public bool EditLastRowEntered()
+        {
+            return true;
+        }
         private void F7() // Delete current row and recalculate the TotalGaku
         {
             int row = dgvKehiNyuuryoku.CurrentCell.RowIndex;
@@ -733,7 +737,15 @@ namespace KeihiNyuuryoku
             var tb = (DataTable)dgvKehiNyuuryoku.DataSource;
             tb.AcceptChanges();
             BindTotalGaku(tb);
-            dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku.Rows[row - 1].Cells[0];//ses
+            //dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku.Rows[row - 1].Cells[0];//ses
+            //dgvKehiNyuuryoku.Rows[dgvKehiNyuuryoku.Rows.Count - 1].Selected = true;
+
+            for (int i = 0; i < (tb.Rows.Count); i++)
+            {
+                //dgvKehiNyuuryoku.Rows[dgvKehiNyuuryoku.Rows.Count - 1].Selected = true;
+                dgvKehiNyuuryoku.Rows[i].Cells[0].Selected = true;
+                dgvKehiNyuuryoku.Focus();
+            }
         }
 
         private void F8() // Insert new row upon current row
