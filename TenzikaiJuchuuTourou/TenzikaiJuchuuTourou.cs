@@ -432,6 +432,14 @@ namespace TenzikaiJuchuuTourou
                         case (int)ClsGridTenjikai.ColNO.ZeinuTanku:
                             ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).Back_Color =  CKM_TextBox.CKM_Color.DarkGrey ;
                             break;
+                        case (int)ClsGridTenjikai.ColNO.ShagaiBi:
+                        case (int)ClsGridTenjikai.ColNO.ShanaiBi:
+                        case (int)ClsGridTenjikai.ColNO.KobeTsu:
+                            ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).MaxLength = 80;
+                            ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).Ctrl_Type =  CKM_TextBox.Type.Normal;
+                            ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).Ctrl_Byte =  CKM_TextBox.Bytes.半全角;
+                            break;
+
                     }
 
                     mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl.TabIndex = tabindex;
@@ -647,6 +655,16 @@ namespace TenzikaiJuchuuTourou
                             break;
                         case "chk":
                             CL = (int)ClsGridTenjikai.ColNO.Chk;
+                            break;
+                        case "shanaibikou":
+                            CL = (int)ClsGridTenjikai.ColNO.ShanaiBi;
+                            break;
+
+                        case "shagaibikou":
+                            CL = (int)ClsGridTenjikai.ColNO.ShagaiBi;
+                            break;
+                        case "kobetsuhanbai":
+                            CL = (int)ClsGridTenjikai.ColNO.KobeTsu;
                             break;
                             //if (w_Row == m_dataCnt - 1)
                             //if (w_Row == mGrid.g_MK_Max_Row - 1)
@@ -867,7 +885,9 @@ namespace TenzikaiJuchuuTourou
                 mGrid.g_DArray[row].AdminNo = selectRow["AdminNO"].ToString();
                 mGrid.g_DArray[row].HacchuTanka = bbl.Z_SetStr(selectRow["ShiireTanka"].ToString());
                 mGrid.g_DArray[row].HanbaiTanka = bbl.Z_SetStr(selectRow["SalePriceOutTax"].ToString());
-                mGrid.g_DArray[row].TenI = selectRow["TaniCD"].ToString(); // Name
+                // mGrid.g_DArray[row].TenI = selectRow["TaniCD"].ToString(); // Name
+                mGrid.g_DArray[row].TaniHDN = selectRow["TaniCD"].ToString();
+                mGrid.g_DArray[row].TenI = tkb.D_TeniSelectbyTaniCD(mGrid.g_DArray[row].TaniHDN);
                 mGrid.g_DArray[row].TeniName = selectRow["TaniName"].ToString();
                 mGrid.g_DArray[row].TaxRateFlg = Convert.ToInt16(selectRow["TaxRateFlg"].ToString()).ToString();
             }
@@ -1044,7 +1064,8 @@ namespace TenzikaiJuchuuTourou
                             }
                             CalcZei(row, col);
                         }
-                        mGrid.g_DArray[row].TenI = selectRow["TaniCD"].ToString();
+                        mGrid.g_DArray[row].TaniHDN = selectRow["TaniCD"].ToString();
+                        mGrid.g_DArray[row].TenI = tkb.D_TeniSelectbyTaniCD(mGrid.g_DArray[row].TaniHDN);
                         mGrid.g_DArray[row].TeniName = selectRow["TaniName"].ToString();
                         //TaxRate
                         mGrid.g_DArray[row].TaxRateFlg = Convert.ToInt16(selectRow["TaxRateFLG"].ToString()).ToString();
@@ -1282,13 +1303,13 @@ namespace TenzikaiJuchuuTourou
                         {
                             kin10 += bbl.Z_Set(mGrid.g_DArray[RW].ZeinuJuchuu);
                             if (zeiritsu10 == 0 && !string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].ZeinuTanku))
-                                zeiritsu10 = Convert.ToInt16(mGrid.g_DArray[RW].ZeinuTanku.Replace("%", ""));
+                                zeiritsu10 = Convert.ToInt16(mGrid.g_DArray[RW].ZeinuTanku.Trim().Replace("%", "").Replace("％","").Replace(".0", ""));
                         }
                         else if (mGrid.g_DArray[RW].TaxRateFlg.Equals("2"))
                         {
                             kin8 += bbl.Z_Set(mGrid.g_DArray[RW].ZeinuJuchuu);
                             if (zeiritsu8 == 0 && !string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].ZeinuTanku))
-                                zeiritsu8 = Convert.ToInt16(mGrid.g_DArray[RW].ZeinuTanku.Replace("%", ""));
+                                zeiritsu8 = Convert.ToInt16(mGrid.g_DArray[RW].ZeinuTanku.Trim().Replace("%", "").Replace("％", "").Replace(".0", ""));
                         }
 
                         if (maxKin < bbl.Z_Set(mGrid.g_DArray[RW].zeikomijuchuu))
@@ -1629,7 +1650,8 @@ namespace TenzikaiJuchuuTourou
         }
         private void SetMultiColNo(DataTable dt = null)
         {
-           
+            tkb = new TenjikaiJuuChuu_BL();
+
             if (dt == null)
             {
                 for (int w_Row = 0; w_Row < 999; w_Row++)
@@ -1664,7 +1686,9 @@ namespace TenzikaiJuchuuTourou
                         mGrid.g_DArray[c].HacchuTanka = bbl.Z_SetStr(dr["OrderUnitPrice"].ToString());//
                         mGrid.g_DArray[c].NyuuKayo = dr["ArrivePlanDate"].ToString();//
                         mGrid.g_DArray[c].JuchuuSuu = bbl.Z_SetStr(dr["JuchuuSuu"].ToString());//
-                        mGrid.g_DArray[c].TenI = dr["Tani"].ToString();//
+                        // mGrid.g_DArray[c].TenI = dr["Tani"].ToString();//
+                        mGrid.g_DArray[c].TaniHDN = dr["Tani"].ToString();//
+                        mGrid.g_DArray[c].TenI = tkb.D_TeniSelectbyTaniCD(mGrid.g_DArray[c].TaniHDN);
                         mGrid.g_DArray[c].HanbaiTanka = bbl.Z_SetStr(dr["JuchuuUnitPrice"].ToString());//
                         //CheckGrid((int)ClsGridTenjikai.ColNO.HanbaiTanka, c, true);
 
@@ -1688,7 +1712,7 @@ namespace TenzikaiJuchuuTourou
                 else
                 {
                     int Res_Gyo = 0;
-                    if (OperationMode == EOperationMode.UPDATE)
+                    if (OperationMode == EOperationMode.UPDATE || OperationMode == EOperationMode.INSERT)
                     {
                         
                         int w_Gyo = 0;
@@ -1731,7 +1755,8 @@ namespace TenzikaiJuchuuTourou
                         mGrid.g_DArray[c].HacchuTanka = dr["_10SiireTanka"].ToString();//
                         mGrid.g_DArray[c].NyuuKayo = dr["_11NyuukaYoteiHyou"].ToString();//
                         mGrid.g_DArray[c].JuchuuSuu = dr["_12SoukunoSu"].ToString();//
-                        mGrid.g_DArray[c].TenI = dr["_13TaniCD"].ToString();//
+                        mGrid.g_DArray[c].TaniHDN = dr["_13TaniCD"].ToString();//
+                        mGrid.g_DArray[c].TenI = tkb.D_TeniSelectbyTaniCD(mGrid.g_DArray[c].TaniHDN);
                         mGrid.g_DArray[c].HanbaiTanka = dr["_14SalePriceOutTax"].ToString();//
                        // CalcZei(c,(int)ClsGridTenjikai.ColNO.HanbaiTanka, true);
                         mGrid.g_DArray[c].ZeinuJuchuu = dr["_15OrderExcTax"].ToString();//
@@ -2736,6 +2761,10 @@ namespace TenzikaiJuchuuTourou
                     {
                         ((CheckBox)ctl).Checked = false;
                     }
+                    else if (ctl.Parent is CKM_SearchControl cs)
+                    {
+                        cs.LabelText = "";
+                    }
                     else if (ctl.GetType().Equals(typeof(Panel)))   // Check only First
                     {
                         kr_1.Checked = true;
@@ -2749,7 +2778,8 @@ namespace TenzikaiJuchuuTourou
                         {
                             ((CKM_Controls.CKM_ComboBox)ctl).SelectedIndex = -1;
                         }
-                        catch {
+                        catch
+                        {
                             ((CKM_Controls.CKM_ComboBox)ctl).SelectedValue = -1;
                         }
                     }
@@ -2943,14 +2973,14 @@ namespace TenzikaiJuchuuTourou
                            , mGrid.g_DArray[RW].HacchuTanka.ToString().Replace(",", "")
                            , mGrid.g_DArray[RW].NyuuKayo
                            , mGrid.g_DArray[RW].JuchuuSuu.ToString().Replace(",", "")
-                           , mGrid.g_DArray[RW].TenI == "" ? null : mGrid.g_DArray[RW].TenI
+                           , mGrid.g_DArray[RW].TaniHDN == "" ? null : mGrid.g_DArray[RW].TaniHDN
                            , mGrid.g_DArray[RW].TeniName == "" ? null : mGrid.g_DArray[RW].TeniName
                            , mGrid.g_DArray[RW].HanbaiTanka.ToString().Replace(",", "")
                            , mGrid.g_DArray[RW].ZeinuJuchuu.ToString().Replace(",", "") == "" ? null : mGrid.g_DArray[RW].ZeinuJuchuu.ToString().Replace(",", "")
                            , mGrid.g_DArray[RW].zeikomijuchuu.ToString().Replace(",", "") == "" ? null : mGrid.g_DArray[RW].zeikomijuchuu.ToString().Replace(",", "")
                            , mGrid.g_DArray[RW].ArariGaku.ToString().Replace(",", "") == "" ? null : mGrid.g_DArray[RW].ArariGaku.ToString().Replace(",", "")
                            , mGrid.g_DArray[RW].ZeiNu.ToString().Replace(",", "") == "" ? null : mGrid.g_DArray[RW].ZeiNu.ToString().Replace(",", "")
-                           , mGrid.g_DArray[RW].ZeinuTanku.ToString().Replace(",", "").Replace("%","") == "" ? null : mGrid.g_DArray[RW].ZeinuTanku.ToString().Replace(",", "").Replace("%", "")
+                           , mGrid.g_DArray[RW].ZeinuTanku.ToString().Replace(",", "").Replace("%","").Replace("％", "") == "" ? null : mGrid.g_DArray[RW].ZeinuTanku.ToString().Replace(",", "").Replace("%", "").Replace("％", "")
                            , mGrid.g_DArray[RW].ShanaiBi == "" ? null : mGrid.g_DArray[RW].ShanaiBi
                            , mGrid.g_DArray[RW].ShagaiBi == "" ? null : mGrid.g_DArray[RW].ShagaiBi
                            , mGrid.g_DArray[RW].KobeTsu == "" ? null : mGrid.g_DArray[RW].KobeTsu
@@ -3428,9 +3458,9 @@ namespace TenzikaiJuchuuTourou
                                             //case (int)ClsGridTenjikai.ColNO.ZeiNu:
                                             //case (int)ClsGridTenjikai.ColNO.ZeinuTanku:
                                             case (int)ClsGridTenjikai.ColNO.Chk:
-                                                //case (int)ClsGridTenjikai.ColNO.ShanaiBi:
-                                                //case (int)ClsGridTenjikai.ColNO.ShagaiBi:
-                                                //case (int)ClsGridTenjikai.ColNO.KobeTsu:
+                                            case (int)ClsGridTenjikai.ColNO.ShanaiBi:
+                                            case (int)ClsGridTenjikai.ColNO.ShagaiBi:
+                                            case (int)ClsGridTenjikai.ColNO.KobeTsu:
                                                 {
                                                     mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
                                                     break;
