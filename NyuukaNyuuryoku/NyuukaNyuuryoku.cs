@@ -2607,10 +2607,10 @@ namespace NyuukaNyuuryoku
             dae = new D_Arrival_Entity
             {
                 ArrivalNO = keyControls[(int)EIndex.ArrivalNO].Text,
-                StoreCD = CboStoreCD.SelectedValue.ToString(),
+                StoreCD = CboStoreCD.SelectedIndex>0 ? CboStoreCD.SelectedValue.ToString() :"",
                 ArrivalDate = detailControls[(int)EIndex.ArrivalDate].Text,
                 VendorDeliveryNo = detailControls[(int)EIndex.VendorDeliveryNo].Text,
-                SoukoCD = CboSoukoName.SelectedValue.ToString(),
+                SoukoCD = CboSoukoName.SelectedIndex > 0 ? CboSoukoName.SelectedValue.ToString():"",
                 ArrivalSu = txtSu.Text,
                 JanCD = txtJANCD.Text,
                 AdminNO = mAdminNO,
@@ -3230,6 +3230,7 @@ namespace NyuukaNyuuryoku
                 DataTable dtCopy = GetGridCopyEntity();
                 if (dtCopy != null && dtCopy.Rows.Count > 0)
                 {
+                    dae = GetEntity();
                     bool ret = nnbl.D_Order_Delete(dae, dtCopy, (short)OperationMode);
                 }
 
