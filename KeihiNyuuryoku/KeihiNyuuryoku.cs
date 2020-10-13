@@ -49,8 +49,8 @@ namespace KeihiNyuuryoku
         private void FormLoadEvent(object sender, EventArgs e)
         {
             InProgramID = "KeihiNyuuryoku";
-            //SetFunctionLabel(EProMode.KehiNyuuryoku);
-            SetFunctionLabel(EProMode.MENTE);
+            SetFunctionLabel(EProMode.KehiNyuuryoku);
+            //SetFunctionLabel(EProMode.MENTE);
             StartProgram();
             SetRequireField();
             
