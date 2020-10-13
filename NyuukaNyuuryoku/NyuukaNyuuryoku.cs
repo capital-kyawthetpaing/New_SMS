@@ -3527,7 +3527,7 @@ namespace NyuukaNyuuryoku
                         //配列の内容を画面へセット
                         mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
-                        if(focus)
+                        if (focus)
                             //Focusセット処理
                             w_ActCtl.Focus();
                         return;
@@ -3553,7 +3553,12 @@ namespace NyuukaNyuuryoku
                     }
 
                     if (CL == (int)ClsGridHikiate.ColNO.Check)
-                        S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+                    {
+                        if (e.Shift)
+                            S_Grid_0_Event_ShiftTab(CL, w_Row, w_ActCtl, w_ActCtl);
+                        else
+                            S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+                    }
                 }
             }
             catch (Exception ex)
@@ -3683,7 +3688,12 @@ namespace NyuukaNyuuryoku
                     }
 
                     if (CL == (int)ClsGridZaiko.ColNO.Check)
-                        S_Grid_1_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+                    {
+                        if (e.Shift)
+                            S_Grid_1_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+                        else
+                            S_Grid_1_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+                    }
                 }
             }
             catch (Exception ex)
