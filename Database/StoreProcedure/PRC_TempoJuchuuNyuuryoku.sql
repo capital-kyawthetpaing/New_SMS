@@ -1,5 +1,4 @@
-DROP TYPE [dbo].[T_Juchuu]
-GO
+
 
 DROP  PROCEDURE [dbo].[D_Juchuu_SelectData]
 GO
@@ -9,7 +8,8 @@ DROP  PROCEDURE [dbo].[CheckJuchuDetailsData]
 GO
 DROP  PROCEDURE [dbo].[PRC_TempoJuchuuNyuuryoku]
 GO
-
+DROP TYPE [dbo].[T_Juchuu]
+GO
 
 --  ======================================================================
 --       Program Call    ó’“ü—Í
@@ -829,7 +829,7 @@ BEGIN
             DEALLOCATE CUR_UPD;
              
              
-             --ƒe[ƒuƒ‹“]‘—d—l‚g'iíœˆ—j
+             --ƒe[ƒuƒ‹“]‘—d—l‚gEiíœˆ—j
              --yD_Reservez
              DELETE FROM D_Reserve
              WHERE ReserveKBN = 1

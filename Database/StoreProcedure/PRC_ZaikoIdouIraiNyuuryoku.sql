@@ -1,5 +1,4 @@
-DROP TYPE [dbo].[T_IdoIrai]
-GO
+
 
 BEGIN TRY 
  Drop PROCEDURE dbo.[D_MoveRequest_SelectDataForIdouIrai]
@@ -14,6 +13,8 @@ BEGIN TRY
  Drop PROCEDURE dbo.[PRC_ZaikoIdouIraiNyuuryoku]
 END try
 BEGIN CATCH END CATCH 
+DROP TYPE [dbo].[T_IdoIrai]
+GO
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON

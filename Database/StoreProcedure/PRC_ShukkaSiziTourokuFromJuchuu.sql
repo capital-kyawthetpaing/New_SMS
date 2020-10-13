@@ -1,7 +1,8 @@
-DROP TYPE [dbo].[T_ShukkaSFJ]
-GO
+
 /****** Object:  StoredProcedure [dbo].[PRC_ShukkaSiziTourokuFromJuchuu]    Script Date: 6/11/2019 2:21:19 PM ******/
 DROP PROCEDURE [PRC_ShukkaSiziTourokuFromJuchuu]
+GO
+DROP TYPE [dbo].[T_ShukkaSFJ]
 GO
 
 /****** Object:  StoredProcedure [dbo].[PRC_ShukkaSiziTourokuFromJuchuu]    Script Date: 2019/09/15 19:54:54 ******/

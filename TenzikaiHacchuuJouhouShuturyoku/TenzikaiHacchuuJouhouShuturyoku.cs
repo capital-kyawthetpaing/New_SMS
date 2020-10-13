@@ -269,7 +269,12 @@ namespace TenzikaiHacchuuJouhouShuturyoku
                     bbl.ShowMessage("E101");
                     ScSupplier.SetFocus(1);
                 }
+                else
+                {
+                    cboYear.Focus();
+                }
             }
+            
         }
 
         private void ScBrandCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
@@ -322,6 +327,11 @@ namespace TenzikaiHacchuuJouhouShuturyoku
                     ScClient2.SetFocus(1);
                 }
             }
+        }
+
+        private void FrmTenzikaiHacchuuJouhouShuturyoku_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
         }
     }
 }
