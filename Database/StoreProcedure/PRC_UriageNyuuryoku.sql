@@ -1,5 +1,4 @@
-DROP TYPE [dbo].[T_Uriage]
-GO
+
 
 DROP  PROCEDURE [dbo].[D_Sales_SelectDataForUriageNyuuryoku]
 GO
@@ -7,7 +6,8 @@ DROP  PROCEDURE [dbo].[CheckSalesData]
 GO
 DROP  PROCEDURE [dbo].[PRC_UriageNyuuryoku]
 GO
-
+DROP TYPE [dbo].[T_Uriage]
+GO
 
 --  ======================================================================
 --       Program Call    îÑè„ì¸óÕ
