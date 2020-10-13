@@ -752,6 +752,9 @@ namespace SiharaiTouroku
             {
                 //OFFにした明細に対して、今回支払額＝0、未支払額＝支払予定額-支払済額とし、第二画面の全入力項目をクリア
                 dgvPayment.Rows[rowIndex].Cells["colPaymenttime"].Value = "0";
+                dgvPayment.Rows[rowIndex].Cells["colTransferAmount"].Value = "0";  //振込額
+                dgvPayment.Rows[rowIndex].Cells["colTransferFee"].Value = "0";  //振込手数料
+                dgvPayment.Rows[rowIndex].Cells["colOtherThanTransfer"].Value = "0";  //振込以外
                 dgvPayment.Rows[rowIndex].Cells["colUnpaidAmount"].Value = bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - bbl.Z_Set(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
 
                 if (dtPay1Detail != null)
