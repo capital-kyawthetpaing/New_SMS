@@ -354,6 +354,17 @@ namespace DL
             return SelectData(dic, sp);
         }
 
+        public DataTable D_TeniSelectbyTaniCD (string TaniCD)
+        {
+            string sp = "D_TeniSelectbyTaniCD";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                 { "@TeniCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = TaniCD } },
+            };
+
+            UseTransaction = true;
+            return SelectData(dic, sp);
+        }
 
 
     }
