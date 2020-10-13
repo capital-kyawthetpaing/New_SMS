@@ -479,6 +479,7 @@
             this.PanelHeaderHeight = 80;
             this.Text = "TenzikaiHacchuuJouhouShuturyoku";
             this.Load += new System.EventHandler(this.FrmTenzikaiHacchuuJouhouShuturyoku_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmTenzikaiHacchuuJouhouShuturyoku_KeyUp);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
