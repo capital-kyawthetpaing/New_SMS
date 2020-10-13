@@ -74,6 +74,11 @@ namespace Search
 
         public bool ErrorCheck()
         {
+            if (!txtPaymentDateFrom.DateCheck())
+                return false;
+            if (!txtPaymentDateTo.DateCheck())
+                return false;
+
             if (!string.IsNullOrWhiteSpace(txtPaymentDateTo.Text))
             {
                 int result = txtPaymentDateFrom.Text.CompareTo(txtPaymentDateTo.Text);
@@ -84,6 +89,11 @@ namespace Search
                     return false;
                 }
             }
+
+            if (!txtPaymentInputDateFrom.DateCheck())
+                return false;
+            if (!txtPaymentInputDateTo.DateCheck())
+                return false;
 
             if (!string.IsNullOrWhiteSpace(txtPaymentInputDateTo.Text))
             {

@@ -96,6 +96,7 @@ namespace SiharaiTouroku
                 if (OperationMode == EOperationMode.SHOW)
                 {
                     DisablePanel(panelDetail);
+                    dgvSearchPayment.Columns[0].ReadOnly = true;
                     dgvSearchPayment.Enabled = true;
                     dgvSearchPayment.ReadOnly = true;
                     dgvSearchPayment.Focus();
