@@ -4534,7 +4534,7 @@
             this.scjan_1.SearchEnable = true;
             this.scjan_1.Size = new System.Drawing.Size(133, 27);
             this.scjan_1.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.scjan_1.TabIndex = 283;
+            this.scjan_1.TabIndex = 1;
             this.scjan_1.test = null;
             this.scjan_1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scjan_1.UseChangeDate = false;
