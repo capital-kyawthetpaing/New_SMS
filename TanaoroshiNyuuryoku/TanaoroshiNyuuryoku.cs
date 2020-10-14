@@ -193,7 +193,12 @@ namespace TanaoroshiNyuuryoku
                         GvDetail.Columns[i].ReadOnly = true;
                     }
                 }
-            }
+                foreach (Control ctl in detailControls)
+                {
+                    ctl.Enabled = false;
+                }
+
+                }
             else
             {
                 bbl.ShowMessage("E128");
@@ -282,6 +287,8 @@ namespace TanaoroshiNyuuryoku
             {
                 foreach (Control ctl in detailControls)
                 {
+                    ctl.Enabled = true;
+
                     if (ctl.GetType().Equals(typeof(CKM_Controls.CKM_CheckBox)))
                     {
                         ((CheckBox)ctl).Checked = false;
