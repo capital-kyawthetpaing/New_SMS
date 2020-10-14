@@ -61,7 +61,8 @@ namespace TenzikaiHacchuuJouhouShuturyoku
         public void SetRequiredField()
         {
             ScSupplier.TxtCode.Require(true);
-
+            cboYear.Require(true);
+            cboSeason.Require(true);
         }
 
         protected override void EndSec()
@@ -204,19 +205,8 @@ namespace TenzikaiHacchuuJouhouShuturyoku
                 }
             }
 
-            if(cboYear.SelectedValue.ToString() == "-1")
-            {               
-                tzbl.ShowMessage("E102");
-                cboYear.Focus();
+            if (!RequireCheck(new Control[] { cboYear, cboSeason }))
                 return false;
-            }
-
-            if (cboSeason.SelectedValue.ToString() == "-1")
-            {
-                tzbl.ShowMessage("E102");
-                cboSeason.Focus();
-                return false;
-            }
 
             if(!string.IsNullOrWhiteSpace(ScBrandCD.TxtCode.Text))
             {
