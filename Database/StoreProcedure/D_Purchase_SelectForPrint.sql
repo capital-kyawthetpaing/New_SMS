@@ -36,12 +36,23 @@ BEGIN
           ,DH.ProcessKBN
           ,DH.ReturnsFlg
           ,DH.VendorCD
-          ,(SELECT top 1 A.VendorName
-          FROM M_Vendor A 
-          WHERE A.VendorCD = DH.VendorCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DH.PurchaseDate
-		  AND A.VendorFlg = 1
-          ORDER BY A.ChangeDate desc) 
-          + (CASE ISNULL(DO.AliasKBN,0) WHEN 2 THEN ' 御中' ELSE '' END) AS VendorName 
+    --      ,(SELECT top 1 A.VendorName
+    --      FROM M_Vendor A 
+    --      WHERE A.VendorCD = DH.VendorCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DH.PurchaseDate
+		  --AND A.VendorFlg = 1
+    --      ORDER BY A.ChangeDate desc) 
+    --      + (CASE ISNULL(DO.AliasKBN,0) WHEN 2 THEN ' 御中' ELSE '' END) AS VendorName 
+			, (Case 
+			 when Do.AliasKBN = 2 and DO.OrderPerSon is null then
+			 (SELECT top 1 A.VendorName FROM M_Vendor A   WHERE A.VendorCD = DH.VendorCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DH.PurchaseDate AND A.VendorFlg = 1   ORDER BY A.ChangeDate desc) + ' 御中'
+			 when Do.AliasKBN = 2 and DO.OrderPerSon is not null then
+		   (SELECT top 1 A.VendorName FROM M_Vendor A   WHERE A.VendorCD = DH.VendorCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DH.PurchaseDate AND A.VendorFlg = 1   ORDER BY A.ChangeDate desc) 
+			 when Do.AliasKBN <> 2 and DO.OrderPerSon is null then
+		    (SELECT top 1 A.VendorName FROM M_Vendor A   WHERE A.VendorCD = DH.VendorCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DH.PurchaseDate AND A.VendorFlg = 1   ORDER BY A.ChangeDate desc) + ' 様'
+			when Do.AliasKBN <> 2 and DO.OrderPerSon is not null then
+		      (SELECT top 1 A.VendorName FROM M_Vendor A   WHERE A.VendorCD = DH.VendorCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DH.PurchaseDate AND A.VendorFlg = 1   ORDER BY A.ChangeDate desc)
+			end) as VendorName
+			,ISNULL(DO.OrderPerson,'') +(CASE ISNULL(DO.OrderPerson,0) WHEN 1 THEN ' 様' ELSE '' END) as OrderPerson
           ,DH.CalledVendorCD
           ,(SELECT top 1 A.VendorName
           FROM M_Vendor A 
@@ -103,7 +114,7 @@ BEGIN
             --  AND M.DeleteFlg = 0
             -- ORDER BY M.ChangeDate desc) AS MakerItem
           ,DA.VendorDeliveryNo
-          ,ISNULL(DO.OrderPerson,'') + (CASE ISNULL(DO.AliasKBN,0) WHEN 1 THEN ' 様' ELSE '' END) AS OrderPerson
+        --  ,ISNULL(DO.OrderPerson,'') + (CASE ISNULL(DO.AliasKBN,0) WHEN 1 THEN ' 様' ELSE '' END) AS OrderPerson
 
           ,(SELECT A.Char1 FROM M_MultiPorpose A WHERE A.ID='301' AND A.[Key] = DH.StoreCD) AS Print1
           ,(SELECT A.Char2 FROM M_MultiPorpose A WHERE A.ID='301' AND A.[Key] = DH.StoreCD) AS Print2
@@ -136,6 +147,8 @@ BEGIN
       AND DM.DifferenceFlg = 0
       ORDER BY VendorCD, PurchaseDate, DeliveryNo, MakerItem
       ;
+
+END
 
 END
 
