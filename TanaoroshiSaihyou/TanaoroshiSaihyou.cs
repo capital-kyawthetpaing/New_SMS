@@ -553,6 +553,9 @@ namespace TanaoroshiSaihyou
 
 
             //初期値セット
+            if (CboSoukoCD.Items.Count > 1)
+                CboSoukoCD.SelectedIndex = 1;
+
             string ymd = tabl.GetDate();
 
             detailControls[(int)EIndex.InventoryDate].Text = ymd;
