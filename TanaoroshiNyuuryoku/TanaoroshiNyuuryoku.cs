@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 using BL;
 using Entity;
 using Base.Client;
+
 
 namespace TanaoroshiNyuuryoku
 {
@@ -70,7 +67,7 @@ namespace TanaoroshiNyuuryoku
                 base.StartProgram();
                 Btn_F9.Text = "";
                 Btn_F9.Enabled = false;
-                Btn_F12.Text = "F12:登録";
+                Btn_F12.Text = "登録(F12)";
                 SetFuncKeyAll(this, "100001000011");
 
                 //コンボボックス初期化
@@ -119,7 +116,6 @@ namespace TanaoroshiNyuuryoku
         /// <returns></returns>
         private bool CheckDetail(int index)
         {
-
             switch (index)
             {
                 case (int)EIndex.SoukoCD:
@@ -301,6 +297,8 @@ namespace TanaoroshiNyuuryoku
             GvDetail.DataSource = null;
             GvDetail.Enabled = false;
 
+            if (CboSoukoCD.Items.Count > 1)
+                CboSoukoCD.SelectedIndex = 1;
             string ymd = bbl.GetDate();
             detailControls[(int)EIndex.InventoryDate].Text = ymd;
             detailControls[(int)EIndex.SoukoCD].Focus();
