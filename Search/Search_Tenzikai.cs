@@ -43,8 +43,8 @@ namespace Search
         }
         private void SetRequiredField()
         {
-           // cbo_Year.Require(true);
-          //  cbo_Season.Require(true);
+            cbo_Year.Require(true);
+            cbo_Season.Require(true);
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
