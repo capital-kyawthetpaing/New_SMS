@@ -295,15 +295,15 @@ namespace TenzikaiHacchuuJouhouShuturyoku
 
         private void ScExhibitionCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if (!String.IsNullOrEmpty(ScExhibitionCD.TxtCode.Text))
-            {
-                ScExhibitionCD.ChangeDate = bbl.GetDate();
-                if (!ScExhibitionCD.SelectData())
-                {
-                    bbl.ShowMessage("E101");
-                    ScExhibitionCD.SetFocus(1);
-                }
-            }
+            //if (!String.IsNullOrEmpty(ScExhibitionCD.TxtCode.Text))
+            //{
+            //    ScExhibitionCD.ChangeDate = bbl.GetDate();
+            //    if (!ScExhibitionCD.SelectData())
+            //    {
+            //        bbl.ShowMessage("E101");
+            //        ScExhibitionCD.SetFocus(1);
+            //    }
+            //}
         }
 
         private void ScClient2_CodeKeyDownEvent(object sender, KeyEventArgs e)

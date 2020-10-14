@@ -3149,7 +3149,10 @@ namespace TenzikaiJuchuuTourou
             {
                 tkb = new TenjikaiJuuChuu_BL();
                 var dt = ConvertToDataTable(openFileDialog1.FileName);
-
+                if (dt == null)
+                {
+                    return;
+                }
                 tje = new Tenjikai_Entity
                 {
                     xml = bbl.DataTableToXml(dt),
@@ -3193,53 +3196,44 @@ namespace TenzikaiJuchuuTourou
             try
 
             {
+               
+                    string path = System.IO.Path.GetFullPath(FileName);
 
-                string path = System.IO.Path.GetFullPath(FileName);
+                    oledbConn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + path + ";Extended Properties='Excel 12.0;HDR=YES;IMEX=1;';");
 
-                oledbConn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + path + ";Extended Properties='Excel 12.0;HDR=YES;IMEX=1;';");
+                    oledbConn.Open();
 
-                oledbConn.Open();
+                    OleDbCommand cmd = new OleDbCommand(); ;
 
-                OleDbCommand cmd = new OleDbCommand(); ;
+                    OleDbDataAdapter oleda = new OleDbDataAdapter();
 
-                OleDbDataAdapter oleda = new OleDbDataAdapter();
+                    DataSet ds = new DataSet();
 
-                DataSet ds = new DataSet();
+                    DataTable dt = oledbConn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+                    string sheetName = string.Empty;
+                    if (dt != null)
+                    {
+                        sheetName = dt.Rows[0]["TABLE_NAME"].ToString();
+                    }
+                    cmd.Connection = oledbConn;
 
-                DataTable dt = oledbConn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+                    cmd.CommandType = CommandType.Text;
 
-                string sheetName = string.Empty;
+                    cmd.CommandText = "SELECT * FROM [" + sheetName + "]";
 
-                if (dt != null)
+                    oleda = new OleDbDataAdapter(cmd);
 
-                {
+                    oleda.Fill(ds, "excelData");
 
-                    sheetName = dt.Rows[0]["TABLE_NAME"].ToString();
-
+                    res = ds.Tables["excelData"];
                 }
-
-                cmd.Connection = oledbConn;
-
-                cmd.CommandType = CommandType.Text;
-
-                cmd.CommandText = "SELECT * FROM [" + sheetName + "]";
-
-                oleda = new OleDbDataAdapter(cmd);
-
-                oleda.Fill(ds, "excelData");
-
-                res = ds.Tables["excelData"];
-
-            }
 
             catch (Exception ex)
             {
-                // oledbConn.Close();
+                bbl.ShowMessage("E137");
+                return null;
             }
-
             oledbConn.Close();
-
-
             KibouBi1 = res.Columns[res.Columns.Count - 2].ColumnName;
             KibouBi2 = res.Columns[res.Columns.Count - 1].ColumnName;
             res.Columns[res.Columns.Count - 2].ColumnName = "希望日1";
@@ -3248,6 +3242,13 @@ namespace TenzikaiJuchuuTourou
             {
                 c.ColumnName = c.ColumnName.Trim();
             }
+
+            if (res.Rows.Count > 0)
+            {
+                MessageBox.Show("No Data Exist");
+                return null;
+            }
+
             return res;
 
         }
