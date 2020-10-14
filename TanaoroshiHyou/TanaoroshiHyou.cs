@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 using BL;
@@ -347,38 +343,41 @@ namespace TanaoroshiHyou
             //初期値セット
             string ymd = tabl.GetDate();
 
-            //スタッフマスター(M_Staff)に存在すること
-            //[M_Staff]
-            M_Staff_Entity mse = new M_Staff_Entity
-            {
-                StaffCD = InOperatorCD,
-                ChangeDate = tabl.GetDate()
-            };
-            Staff_BL bl = new Staff_BL();
-            bool ret = bl.M_Staff_Select(mse);
-            if (ret)
-            {
-                CboSoukoCD.SelectedValue = mse.StoreCD;
-            }
+            ////スタッフマスター(M_Staff)に存在すること
+            ////[M_Staff]
+            //M_Staff_Entity mse = new M_Staff_Entity
+            //{
+            //    StaffCD = InOperatorCD,
+            //    ChangeDate = tabl.GetDate()
+            //};
+            //Staff_BL bl = new Staff_BL();
+            //bool ret = bl.M_Staff_Select(mse);
+            ////if (ret)
+            ////{
+            ////    CboSoukoCD.SelectedValue = mse.StoreCD;
+            ////}
 
-            //[M_Store]
-            M_Store_Entity mse2 = new M_Store_Entity
-            {
-                StoreCD = mse.StoreCD,
-                ChangeDate = ymd
-            };
-            Store_BL sbl = new Store_BL();
-            DataTable dt = sbl.M_Store_Select(mse2);
-            if (dt.Rows.Count > 0)
-            {
-            }
-            else
-            {
-                bbl.ShowMessage("E133");
-                EndSec();
-            }
+            ////[M_Store]
+            //M_Store_Entity mse2 = new M_Store_Entity
+            //{
+            //    StoreCD = mse.StoreCD,
+            //    ChangeDate = ymd
+            //};
+            //Store_BL sbl = new Store_BL();
+            //DataTable dt = sbl.M_Store_Select(mse2);
+            //if (dt.Rows.Count > 0)
+            //{
+            //}
+            //else
+            //{
+            //    bbl.ShowMessage("E133");
+            //    EndSec();
+            //}
 
             //初期値
+            if (CboSoukoCD.Items.Count > 1)
+                CboSoukoCD.SelectedIndex = 1;
+
             detailControls[(int)EIndex.InventoryDate].Text = ymd;
 
             detailControls[0].Focus();
