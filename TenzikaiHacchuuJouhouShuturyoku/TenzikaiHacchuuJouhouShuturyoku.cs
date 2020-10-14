@@ -176,6 +176,7 @@ namespace TenzikaiHacchuuJouhouShuturyoku
                                 using (XLWorkbook wb = new XLWorkbook())
                                 {
                                     wb.Worksheets.Add(dttenzi, "worksheet");
+                                    wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;
                                     wb.SaveAs(savedialog.FileName);
                                     bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
                                 }
