@@ -89,6 +89,7 @@ namespace TanaoroshiSaihyou
                 base.Btn_F9.Enabled = false;
                 base.Btn_F10.Text = "";
                 base.Btn_F11.Text = "";
+                base.Btn_F12.Text = "出力(F12)";
 
                 //起動時共通処理
                 base.StartProgram();    
