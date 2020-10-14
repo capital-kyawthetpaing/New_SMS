@@ -61,7 +61,8 @@ namespace TenzikaiHacchuuJouhouShuturyoku
         public void SetRequiredField()
         {
             ScSupplier.TxtCode.Require(true);
-
+            cboYear.Require(true);
+            cboSeason.Require(true);
         }
 
         protected override void EndSec()
@@ -175,6 +176,7 @@ namespace TenzikaiHacchuuJouhouShuturyoku
                                 using (XLWorkbook wb = new XLWorkbook())
                                 {
                                     wb.Worksheets.Add(dttenzi, "worksheet");
+                                    wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;
                                     wb.SaveAs(savedialog.FileName);
                                     bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
                                 }
@@ -204,19 +206,8 @@ namespace TenzikaiHacchuuJouhouShuturyoku
                 }
             }
 
-            if(cboYear.SelectedValue.ToString() == "-1")
-            {               
-                tzbl.ShowMessage("E102");
-                cboYear.Focus();
+            if (!RequireCheck(new Control[] { cboYear, cboSeason }))
                 return false;
-            }
-
-            if (cboSeason.SelectedValue.ToString() == "-1")
-            {
-                tzbl.ShowMessage("E102");
-                cboSeason.Focus();
-                return false;
-            }
 
             if(!string.IsNullOrWhiteSpace(ScBrandCD.TxtCode.Text))
             {
@@ -305,15 +296,15 @@ namespace TenzikaiHacchuuJouhouShuturyoku
 
         private void ScExhibitionCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if (!String.IsNullOrEmpty(ScExhibitionCD.TxtCode.Text))
-            {
-                ScExhibitionCD.ChangeDate = bbl.GetDate();
-                if (!ScExhibitionCD.SelectData())
-                {
-                    bbl.ShowMessage("E101");
-                    ScExhibitionCD.SetFocus(1);
-                }
-            }
+            //if (!String.IsNullOrEmpty(ScExhibitionCD.TxtCode.Text))
+            //{
+            //    ScExhibitionCD.ChangeDate = bbl.GetDate();
+            //    if (!ScExhibitionCD.SelectData())
+            //    {
+            //        bbl.ShowMessage("E101");
+            //        ScExhibitionCD.SetFocus(1);
+            //    }
+            //}
         }
 
         private void ScClient2_CodeKeyDownEvent(object sender, KeyEventArgs e)
