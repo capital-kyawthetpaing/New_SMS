@@ -98,7 +98,9 @@ BEGIN
                AND AccountingDate <= convert(date, @DateTo)
            ) H1;
 --Temp_D_DepositHistory0にIndex（Number）をつけたほうがよい？★
-
+    -- インデックスindex1作成
+    CREATE CLUSTERED INDEX index_D_DepositHistory0 on [#Temp_D_DepositHistory0] ([Number]);
+    
     -- 【販売】ワークテーブル１作成
     SELECT * 
       INTO #Temp_D_DepositHistory1

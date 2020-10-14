@@ -41,31 +41,19 @@ BEGIN
           ,store.ReceiptPrint StoreReceiptPrint                                        -- 店舗レシート表記
       FROM D_DepositHistory history
       LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
-      LEFT OUTER JOIN (
-                       SELECT ROW_NUMBER() OVER(PARTITION BY StoreCD ORDER BY ChangeDate DESC) as RANK
-                             ,StoreCD
-                             ,ReceiptPrint
-                             ,DeleteFlg 
-                         FROM M_Store 
-                      ) store ON store.RANK = 1
-                             AND store.StoreCD = history.StoreCD
-      LEFT OUTER JOIN (
-                       SELECT ROW_NUMBER() OVER(PARTITION BY StaffCD ORDER BY ChangeDate DESC) AS RANK
-                             ,StaffCD
-                             ,StoreCD
-                             ,ReceiptPrint
-                             ,DeleteFlg
-                         FROM M_Staff
-                      ) staff ON staff.RANK = 1
-                             AND staff.StoreCD = history.StoreCD
-                             AND staff.StaffCD = @StaffCD
+      LEFT OUTER JOIN F_Store(CONVERT(DATE, GETDATE())) AS store
+        ON store.StoreCD = history.StoreCD
+       AND store.DeleteFlg = 0
+      LEFT OUTER JOIN F_Staff(CONVERT(DATE, GETDATE())) AS staff
+        ON staff.StoreCD = history.StoreCD
+       AND staff.StaffCD = @StaffCD
+       AND staff.DeleteFlg = 0
+       
      WHERE history.DataKBN = 3
        AND history.DepositKBN = 2
        AND history.DepositNO = @DepositNO
        AND history.CancelKBN = 0
        AND history.CustomerCD IS NULL
-       AND store.DeleteFlg <> 1
-       AND staff.DeleteFlg <> 1
            ;
 END
 
