@@ -97,6 +97,7 @@ BEGIN
                AND AccountingDate >= convert(date, @DateFrom)
                AND AccountingDate <= convert(date, @DateTo)
            ) H1;
+--Temp_D_DepositHistory0にIndex（Number）をつけたほうがよい？★
 
     -- 【販売】ワークテーブル１作成
     SELECT * 
@@ -109,11 +110,11 @@ BEGIN
                   ,history.JanCD                                                -- JanCD
                   ,(SELECT top 1 sku.SKUShortName
                     FROM M_SKU AS sku
-                    WHERE sku.JanCD = history.JanCD       --AdminNOでなくてよい？
-                   AND sku.SKUCD = history.SKUCD
-                   AND sku.DeleteFlg = 0
-                   AND sku.ChangeDate <= history.AccountingDate
-                   ORDER BY sku.ChangeDate DESC
+                    WHERE sku.JanCD = history.JanCD       --AdminNOでなくてよい？★
+                    AND sku.SKUCD = history.SKUCD
+                    AND sku.DeleteFlg = 0
+                    AND sku.ChangeDate <= history.AccountingDate
+                    ORDER BY sku.ChangeDate DESC
                    ) As SKUShortName                                            -- 商品名
                   ,CASE
                      WHEN history.SalesSU = 1 THEN NULL
@@ -254,15 +255,15 @@ BEGIN
                   ,NULL ChangePreparationAmount10                                          -- 釣銭準備額10
                   ,D.Remark ChangePreparationRemark                                        -- 釣銭準備備考
               FROM #Temp_D_DepositHistory0 D
-             WHERE D.DepositNO IN (
+              INNER JOIN (
                                    SELECT MAX(history.DepositNO) DepositNO
                                      FROM #Temp_D_DepositHistory0 history
-                                     LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
                                     WHERE history.DataKBN = 3
                                       AND history.DepositKBN = 6
                                       AND history.CancelKBN = 0
                                     GROUP BY history.AccountingDate
-                                  )
+                                  ) AS DD
+              ON DD.DepositNO = D.DepositNO
            ) D4;
 
     -- 【雑入金】ワークテーブル５作成
@@ -1215,7 +1216,7 @@ BEGIN
           ,A.DepositDate                                         -- 発行日
           ,ROW_NUMBER() OVER(
                PARTITION BY A.StoreCD 
-                   ORDER BY A.IssueDate, A.DepositNO
+                   ORDER BY A.IssueDate, A.DepositNO             -- レシートと順番を同じにする
            ) AS DetailOrder                                      -- 明細表示順
           ,A.JanCD                                               -- JANCD
           ,A.SKUShortName                                        -- 商品名
