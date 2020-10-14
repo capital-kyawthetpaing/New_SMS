@@ -258,6 +258,11 @@
     <Content Include="StoreProcedure\D_StorePayment_Select.sql" />
     <Content Include="StoreProcedure\D_Store_CalculationSelect.sql" />
     <Content Include="StoreProcedure\D_Store_Calculation_SelectForSeiSan.sql" />
+    <Content Include="StoreProcedure\D_TeniKaiSelectbyJAN.sql" />
+    <Content Include="StoreProcedure\D_TeniSelectbyTaniCD.sql" />
+    <Content Include="StoreProcedure\D_TenjiI_Details_Delete.sql" />
+    <Content Include="StoreProcedure\D_TenjiI_Details_insert.sql" />
+    <Content Include="StoreProcedure\D_TenjiI_Details_Update.sql" />
     <Content Include="StoreProcedure\D_TenzikaiJuchuu_SelectForExcel.sql" />
     <Content Include="StoreProcedure\D_WowmaJuchuuDetails_Insert.sql" />
     <Content Include="StoreProcedure\D_WowmaJuchuu_Insert.sql" />
@@ -283,6 +288,7 @@
     <Content Include="StoreProcedure\Function_GetName_ReturnValue.sql" />
     <Content Include="StoreProcedure\F_SKU.sql" />
     <Content Include="StoreProcedure\GetJuchuuNO.sql" />
+    <Content Include="StoreProcedure\GetMaxTaxRate.sql" />
     <Content Include="StoreProcedure\GetNouki.sql" />
     <Content Include="StoreProcedure\GetTemporaryReserveNO.sql" />
     <Content Include="StoreProcedure\Get_ShihraiYoteibi.sql" />
@@ -462,6 +468,7 @@
     <Content Include="StoreProcedure\M_Souko_BindForNyuuka.sql" />
     <Content Include="StoreProcedure\M_Souko_BindForShukka.sql" />
     <Content Include="StoreProcedure\M_Souko_BindForTanaoroshi.sql" />
+    <Content Include="StoreProcedure\M_Souko_BindForTenJiShukka.sql" />
     <Content Include="StoreProcedure\M_Souko_BindForZaikoshoukai.sql" />
     <Content Include="StoreProcedure\M_Souko_Delete.sql" />
     <Content Include="StoreProcedure\M_Souko_InitSelect.sql" />
@@ -510,6 +517,8 @@
     <Content Include="StoreProcedure\M_TanaDate_Select.sql" />
     <Content Include="StoreProcedure\M_TankaCD_Select.sql" />
     <Content Include="StoreProcedure\M_TankaCD_SelectAll.sql" />
+    <Content Include="StoreProcedure\M_TeniKaiSelectbyJAN.sql" />
+    <Content Include="StoreProcedure\M_TenjiDataSet_Select.sql" />
     <Content Include="StoreProcedure\M_Tenzikaishouhin_Search.sql" />
     <Content Include="StoreProcedure\M_TenzikaiShouhin_Select.sql" />
     <Content Include="StoreProcedure\M_Tenzikai_Search.sql" />
