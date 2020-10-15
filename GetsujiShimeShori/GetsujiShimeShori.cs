@@ -669,6 +669,8 @@ namespace GetsujiShimeShori
         {
             try
             {
+                this.Cursor = Cursors.WaitCursor;
+                          
                 //EXEが存在しない時ｴﾗｰ
                 // 実行モジュールと同一フォルダのファイルを取得
                 System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
@@ -680,10 +682,17 @@ namespace GetsujiShimeShori
                     string FiscalYYYYMM =lblChangeDate.Text;
 
                     string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + ProcessMode + " " + FiscalYYYYMM;
-                    System.Diagnostics.Process p = System.Diagnostics.Process.Start(filePath, cmdLine);
+                    //System.Diagnostics.Process p = System.Diagnostics.Process.Start(filePath, cmdLine);
+                    System.Diagnostics.ProcessStartInfo psInfo = new System.Diagnostics.ProcessStartInfo();
+                    psInfo.FileName = filePath; // 実行するファイル
+                    psInfo.Arguments = cmdLine;
+                    psInfo.CreateNoWindow = true; // コンソール・ウィンドウを開かない
+                    psInfo.UseShellExecute = false; // シェル機能を使用しない
+                    System.Diagnostics.Process p = System.Diagnostics.Process.Start(psInfo);
 
                     p.WaitForExit();
 
+                    this.Cursor = Cursors.Default;
                     return true;
                 }
                 else
@@ -699,6 +708,8 @@ namespace GetsujiShimeShori
                 MessageBox.Show(ex.Message);
                 //EndSec();
             }
+
+            this.Cursor = Cursors.Default;
             return false;
         }
     }

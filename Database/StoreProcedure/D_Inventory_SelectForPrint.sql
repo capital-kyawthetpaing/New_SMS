@@ -5,11 +5,11 @@ GO
 /****** Object:  StoredProcedure [D_Inventory_SelectForPrint]    */
 CREATE PROCEDURE D_Inventory_SelectForPrint(
     -- Add the parameters for the stored procedure here
-    @SoukoCD  varchar(6),
+    @SoukoCD        varchar(6),
     @InventoryDate  varchar(10),
-    @ChkSaiOnly tinyint,
-    @KbnSai tinyint,	--ç∑àŸï\ÇÃèÍçáÇPÅAíIâµï\ÇÃèÍçáÇO
-    @ChkKinyu tinyint	-- íIâµãLì¸ï\ÇÃèÍçá2
+    @ChkSaiOnly     tinyint,
+    @KbnSai         tinyint,    -- ç∑àŸï\ÇÃèÍçáÇPÅAíIâµï\ÇÃèÍçáÇO
+    @ChkKinyu       tinyint     -- íIâµãLì¸ï\ÇÃèÍçá2
 )AS
 BEGIN
     -- SET NOCOUNT ON added to prevent extra result sets from
@@ -60,7 +60,7 @@ BEGIN
             AND DC.RackNO = DI.RackNO
             AND DC.InventoryDate = DI.InventoryDate
             AND DC.InventoryNO = DI.InventoryNO
-            AND DC.InventoryKBN = 1
+            AND DC.InventoryKBN <> 2
 
             WHERE DI.DeleteDateTime IS NULL
             AND DI.SoukoCD = @SoukoCD
@@ -110,7 +110,7 @@ BEGIN
             AND DC.RackNO = DI.RackNO
             AND DC.InventoryDate = DI.InventoryDate
             AND DC.InventoryNO = DI.InventoryNO
-            AND DC.InventoryKBN = 1
+            AND DC.InventoryKBN <> 2
 
             WHERE DI.DeleteDateTime IS NULL
             AND DI.SoukoCD = @SoukoCD
@@ -167,7 +167,7 @@ BEGIN
         AND DC.RackNO = DI.RackNO
         AND DC.InventoryDate = DI.InventoryDate
         AND DC.InventoryNO = DI.InventoryNO
-        AND DC.InventoryKBN = 1
+        AND DC.InventoryKBN <> 2
 
         WHERE DI.DeleteDateTime IS NULL
         AND DI.SoukoCD = @SoukoCD
