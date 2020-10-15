@@ -112,8 +112,7 @@ BEGIN
                   ,history.JanCD                                                -- JanCD
                   ,(SELECT top 1 sku.SKUShortName
                     FROM M_SKU AS sku
-                    WHERE sku.JanCD = history.JanCD       --AdminNOÇ≈Ç»Ç≠ÇƒÇÊÇ¢ÅHÅö
-                    AND sku.SKUCD = history.SKUCD
+                    WHERE sku.AdminNO = history.AdminNO
                     AND sku.DeleteFlg = 0
                     AND sku.ChangeDate <= history.AccountingDate
                     ORDER BY sku.ChangeDate DESC
