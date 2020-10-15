@@ -326,7 +326,7 @@ namespace TanaoroshiShimeShori
                         int result = detailControls[index].Text.CompareTo(detailControls[index - 1].Text);
                         if (result < 0)
                         {
-                            bbl.ShowMessage("E104");
+                            bbl.ShowMessage("E197");
                             detailControls[index].Focus();
                             return false;
                         }
@@ -452,10 +452,15 @@ namespace TanaoroshiShimeShori
                         {
                             if (detailControls[index + 1].CanFocus)
                                 detailControls[index + 1].Focus();
+
                             else
                                 //あたかもTabキーが押されたかのようにする
                                 //Shiftが押されている時は前のコントロールのフォーカスを移動
                                 this.ProcessTabKey(!e.Shift);
+                        }
+                        else
+                        {
+                            Btn_F1.Focus();
                         }
                     }
                     else
