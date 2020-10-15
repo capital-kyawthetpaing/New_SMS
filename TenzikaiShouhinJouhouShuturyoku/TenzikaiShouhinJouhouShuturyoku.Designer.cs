@@ -78,7 +78,7 @@
             this.panelDetail.Controls.Add(this.ckM_Label3);
             this.panelDetail.Controls.Add(this.ckM_Label2);
             this.panelDetail.Controls.Add(this.lblSupplier);
-            this.panelDetail.Location = new System.Drawing.Point(-1, 53);
+            this.panelDetail.Location = new System.Drawing.Point(0, 53);
             this.panelDetail.Name = "panelDetail";
             this.panelDetail.Size = new System.Drawing.Size(1714, 850);
             this.panelDetail.TabIndex = 100;
@@ -89,8 +89,8 @@
             this.ckM_SearchControl1.ChangeDate = "";
             this.ckM_SearchControl1.ChangeDateWidth = 100;
             this.ckM_SearchControl1.Code = "";
-            this.ckM_SearchControl1.CodeWidth = 400;
-            this.ckM_SearchControl1.CodeWidth1 = 400;
+            this.ckM_SearchControl1.CodeWidth = 500;
+            this.ckM_SearchControl1.CodeWidth1 = 500;
             this.ckM_SearchControl1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl1.DataCheck = false;
             this.ckM_SearchControl1.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -103,7 +103,7 @@
             this.ckM_SearchControl1.Name = "ckM_SearchControl1";
             this.ckM_SearchControl1.NameWidth = 180;
             this.ckM_SearchControl1.SearchEnable = true;
-            this.ckM_SearchControl1.Size = new System.Drawing.Size(433, 27);
+            this.ckM_SearchControl1.Size = new System.Drawing.Size(533, 27);
             this.ckM_SearchControl1.Stype = Search.CKM_SearchControl.SearchType.展示会名;
             this.ckM_SearchControl1.TabIndex = 15;
             this.ckM_SearchControl1.test = null;
@@ -119,8 +119,8 @@
             this.scSegmentCDTo.ChangeDate = "";
             this.scSegmentCDTo.ChangeDateWidth = 100;
             this.scSegmentCDTo.Code = "";
-            this.scSegmentCDTo.CodeWidth = 100;
-            this.scSegmentCDTo.CodeWidth1 = 100;
+            this.scSegmentCDTo.CodeWidth = 60;
+            this.scSegmentCDTo.CodeWidth1 = 60;
             this.scSegmentCDTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSegmentCDTo.DataCheck = false;
             this.scSegmentCDTo.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -128,12 +128,12 @@
             this.scSegmentCDTo.IsCopy = false;
             this.scSegmentCDTo.LabelText = "";
             this.scSegmentCDTo.LabelVisible = false;
-            this.scSegmentCDTo.Location = new System.Drawing.Point(400, 122);
+            this.scSegmentCDTo.Location = new System.Drawing.Point(353, 122);
             this.scSegmentCDTo.Margin = new System.Windows.Forms.Padding(0);
             this.scSegmentCDTo.Name = "scSegmentCDTo";
             this.scSegmentCDTo.NameWidth = 280;
             this.scSegmentCDTo.SearchEnable = true;
-            this.scSegmentCDTo.Size = new System.Drawing.Size(133, 27);
+            this.scSegmentCDTo.Size = new System.Drawing.Size(93, 27);
             this.scSegmentCDTo.Stype = Search.CKM_SearchControl.SearchType.商品分類;
             this.scSegmentCDTo.TabIndex = 14;
             this.scSegmentCDTo.test = null;
@@ -155,7 +155,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(356, 130);
+            this.ckM_Label7.Location = new System.Drawing.Point(314, 130);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label7.TabIndex = 13;
@@ -169,8 +169,8 @@
             this.scSegmentCDFrom.ChangeDate = "";
             this.scSegmentCDFrom.ChangeDateWidth = 100;
             this.scSegmentCDFrom.Code = "";
-            this.scSegmentCDFrom.CodeWidth = 100;
-            this.scSegmentCDFrom.CodeWidth1 = 100;
+            this.scSegmentCDFrom.CodeWidth = 60;
+            this.scSegmentCDFrom.CodeWidth1 = 60;
             this.scSegmentCDFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSegmentCDFrom.DataCheck = false;
             this.scSegmentCDFrom.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -183,7 +183,7 @@
             this.scSegmentCDFrom.Name = "scSegmentCDFrom";
             this.scSegmentCDFrom.NameWidth = 280;
             this.scSegmentCDFrom.SearchEnable = true;
-            this.scSegmentCDFrom.Size = new System.Drawing.Size(133, 27);
+            this.scSegmentCDFrom.Size = new System.Drawing.Size(93, 27);
             this.scSegmentCDFrom.Stype = Search.CKM_SearchControl.SearchType.商品分類;
             this.scSegmentCDFrom.TabIndex = 12;
             this.scSegmentCDFrom.test = null;
@@ -204,7 +204,7 @@
             this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(356, 97);
+            this.ckM_Label6.Location = new System.Drawing.Point(359, 97);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label6.TabIndex = 11;
@@ -305,7 +305,7 @@
             this.cbo_Season.MaxLength = 10;
             this.cbo_Season.MoveNext = true;
             this.cbo_Season.Name = "cbo_Season";
-            this.cbo_Season.Size = new System.Drawing.Size(100, 20);
+            this.cbo_Season.Size = new System.Drawing.Size(75, 20);
             this.cbo_Season.TabIndex = 7;
             // 
             // cbo_Year
@@ -321,7 +321,7 @@
             this.cbo_Year.MaxLength = 10;
             this.cbo_Year.MoveNext = true;
             this.cbo_Year.Name = "cbo_Year";
-            this.cbo_Year.Size = new System.Drawing.Size(100, 20);
+            this.cbo_Year.Size = new System.Drawing.Size(75, 20);
             this.cbo_Year.TabIndex = 6;
             // 
             // scSupplierCD

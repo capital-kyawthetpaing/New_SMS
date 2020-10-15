@@ -86,7 +86,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 80);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1684, 949);
-            this.panel1.TabIndex = 100;
+            this.panel1.TabIndex = 0;
             // 
             // ckM_Label11
             // 
@@ -119,7 +119,7 @@
             this.cboYear.MoveNext = true;
             this.cboYear.Name = "cboYear";
             this.cboYear.Size = new System.Drawing.Size(121, 20);
-            this.cboYear.TabIndex = 36;
+            this.cboYear.TabIndex = 1;
             // 
             // rdoProduct
             // 
@@ -128,7 +128,7 @@
             this.rdoProduct.Location = new System.Drawing.Point(186, 296);
             this.rdoProduct.Name = "rdoProduct";
             this.rdoProduct.Size = new System.Drawing.Size(62, 16);
-            this.rdoProduct.TabIndex = 35;
+            this.rdoProduct.TabIndex = 9;
             this.rdoProduct.TabStop = true;
             this.rdoProduct.Text = "商品別";
             this.rdoProduct.UseVisualStyleBackColor = true;
@@ -141,7 +141,7 @@
             this.rdoCustomer.Location = new System.Drawing.Point(43, 295);
             this.rdoCustomer.Name = "rdoCustomer";
             this.rdoCustomer.Size = new System.Drawing.Size(75, 16);
-            this.rdoCustomer.TabIndex = 33;
+            this.rdoCustomer.TabIndex = 8;
             this.rdoCustomer.TabStop = true;
             this.rdoCustomer.Text = "得意先別";
             this.rdoCustomer.UseVisualStyleBackColor = true;
@@ -185,7 +185,7 @@
             this.ScClient2.SearchEnable = true;
             this.ScClient2.Size = new System.Drawing.Size(133, 27);
             this.ScClient2.Stype = Search.CKM_SearchControl.SearchType.得意先;
-            this.ScClient2.TabIndex = 30;
+            this.ScClient2.TabIndex = 7;
             this.ScClient2.test = null;
             this.ScClient2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScClient2.UseChangeDate = false;
@@ -216,7 +216,7 @@
             this.ScExhibitionCD.SearchEnable = true;
             this.ScExhibitionCD.Size = new System.Drawing.Size(433, 27);
             this.ScExhibitionCD.Stype = Search.CKM_SearchControl.SearchType.展示会名;
-            this.ScExhibitionCD.TabIndex = 28;
+            this.ScExhibitionCD.TabIndex = 5;
             this.ScExhibitionCD.test = null;
             this.ScExhibitionCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScExhibitionCD.UseChangeDate = false;
@@ -264,7 +264,7 @@
             this.ScSegmentCD.SearchEnable = true;
             this.ScSegmentCD.Size = new System.Drawing.Size(414, 27);
             this.ScSegmentCD.Stype = Search.CKM_SearchControl.SearchType.商品分類;
-            this.ScSegmentCD.TabIndex = 26;
+            this.ScSegmentCD.TabIndex = 4;
             this.ScSegmentCD.test = null;
             this.ScSegmentCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScSegmentCD.UseChangeDate = false;
@@ -273,7 +273,6 @@
             this.ScSegmentCD.Value3 = null;
             this.ScSegmentCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScSegmentCD_CodeKeyDownEvent);
             this.ScSegmentCD.Enter += new System.EventHandler(this.ScSegmentCD_Enter);
-            //this.ScSegmentCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ScSegmentCD_KeyDown);
             // 
             // ckM_Label5
             // 
@@ -323,7 +322,7 @@
             this.cboSeason.MoveNext = true;
             this.cboSeason.Name = "cboSeason";
             this.cboSeason.Size = new System.Drawing.Size(121, 20);
-            this.cboSeason.TabIndex = 24;
+            this.cboSeason.TabIndex = 2;
             // 
             // ScClient1
             // 
@@ -347,7 +346,7 @@
             this.ScClient1.SearchEnable = true;
             this.ScClient1.Size = new System.Drawing.Size(133, 27);
             this.ScClient1.Stype = Search.CKM_SearchControl.SearchType.得意先;
-            this.ScClient1.TabIndex = 20;
+            this.ScClient1.TabIndex = 6;
             this.ScClient1.test = null;
             this.ScClient1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScClient1.UseChangeDate = false;
@@ -394,7 +393,7 @@
             this.ScBrandCD.SearchEnable = true;
             this.ScBrandCD.Size = new System.Drawing.Size(414, 27);
             this.ScBrandCD.Stype = Search.CKM_SearchControl.SearchType.ブランド;
-            this.ScBrandCD.TabIndex = 18;
+            this.ScBrandCD.TabIndex = 3;
             this.ScBrandCD.test = null;
             this.ScBrandCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScBrandCD.UseChangeDate = false;
@@ -442,7 +441,7 @@
             this.ScSupplier.SearchEnable = true;
             this.ScSupplier.Size = new System.Drawing.Size(444, 27);
             this.ScSupplier.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.ScSupplier.TabIndex = 16;
+            this.ScSupplier.TabIndex = 0;
             this.ScSupplier.test = null;
             this.ScSupplier.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScSupplier.UseChangeDate = false;
@@ -480,6 +479,7 @@
             this.PanelHeaderHeight = 80;
             this.Text = "TenzikaiHacchuuJouhouShuturyoku";
             this.Load += new System.EventHandler(this.FrmTenzikaiHacchuuJouhouShuturyoku_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmTenzikaiHacchuuJouhouShuturyoku_KeyUp);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

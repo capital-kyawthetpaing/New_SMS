@@ -2607,10 +2607,10 @@ namespace NyuukaNyuuryoku
             dae = new D_Arrival_Entity
             {
                 ArrivalNO = keyControls[(int)EIndex.ArrivalNO].Text,
-                StoreCD = CboStoreCD.SelectedValue.ToString(),
+                StoreCD = CboStoreCD.SelectedIndex>0 ? CboStoreCD.SelectedValue.ToString() :"",
                 ArrivalDate = detailControls[(int)EIndex.ArrivalDate].Text,
                 VendorDeliveryNo = detailControls[(int)EIndex.VendorDeliveryNo].Text,
-                SoukoCD = CboSoukoName.SelectedValue.ToString(),
+                SoukoCD = CboSoukoName.SelectedIndex > 0 ? CboSoukoName.SelectedValue.ToString():"",
                 ArrivalSu = txtSu.Text,
                 JanCD = txtJANCD.Text,
                 AdminNO = mAdminNO,
@@ -3230,6 +3230,7 @@ namespace NyuukaNyuuryoku
                 DataTable dtCopy = GetGridCopyEntity();
                 if (dtCopy != null && dtCopy.Rows.Count > 0)
                 {
+                    dae = GetEntity();
                     bool ret = nnbl.D_Order_Delete(dae, dtCopy, (short)OperationMode);
                 }
 
@@ -3526,7 +3527,7 @@ namespace NyuukaNyuuryoku
                         //配列の内容を画面へセット
                         mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
-                        if(focus)
+                        if (focus)
                             //Focusセット処理
                             w_ActCtl.Focus();
                         return;
@@ -3552,7 +3553,12 @@ namespace NyuukaNyuuryoku
                     }
 
                     if (CL == (int)ClsGridHikiate.ColNO.Check)
-                        S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+                    {
+                        if (e.Shift)
+                            S_Grid_0_Event_ShiftTab(CL, w_Row, w_ActCtl, w_ActCtl);
+                        else
+                            S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+                    }
                 }
             }
             catch (Exception ex)
@@ -3682,7 +3688,12 @@ namespace NyuukaNyuuryoku
                     }
 
                     if (CL == (int)ClsGridZaiko.ColNO.Check)
-                        S_Grid_1_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+                    {
+                        if (e.Shift)
+                            S_Grid_1_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+                        else
+                            S_Grid_1_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+                    }
                 }
             }
             catch (Exception ex)

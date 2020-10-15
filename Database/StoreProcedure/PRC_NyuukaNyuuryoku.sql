@@ -596,17 +596,23 @@ BEGIN
 	BEGIN
         --yD_ArrivalPlanz     Update/Delete   Table“]‘—Žd—l‚b‡A
         UPDATE [D_ArrivalPlan] SET
-           [ArrivalPlanSu]  = D_ArrivalPlan.[ArrivalPlanSu] + tbl.ArrivalSu
+           [ArrivalPlanSu]  = D_ArrivalPlan.[ArrivalPlanSu] + ISNULL(DS2.ArrivalPlanSu)		--š
           ,[ArrivalSu]      = D_ArrivalPlan.[ArrivalSu] - tbl.ArrivalSu
-          ,[UpdateOperator] =  @Operator  
-          ,[UpdateDateTime] =  @SYSDATETIME
+          ,[UpdateOperator] = @Operator  
+          ,[UpdateDateTime] = @SYSDATETIME
         
-         FROM (SELECT tbl.ArrivalPlanNO, SUM(tbl.ArrivalSu) AS ArrivalSu
-                FROM @Table AS tbl
-                WHERE tbl.UpdateFlg >= 0
-                GROUP BY tbl.ArrivalPlanNO
-         ) AS tbl
-         WHERE tbl.ArrivalPlanNO = D_ArrivalPlan.ArrivalPlanNO
+        FROM (SELECT tbl.ArrivalPlanNO, SUM(tbl.ArrivalSu) AS ArrivalSu
+              FROM @Table AS tbl
+              WHERE tbl.UpdateFlg >= 0
+              GROUP BY tbl.ArrivalPlanNO
+        ) AS tbl
+        LEFT OUTER JOIN (SELECT D.OriginalArrivalPlanNO
+                              , SUM(D.ArrivalPlanSu) AS ArrivalPlanSu
+                         FROM D_ArrivalPlan D
+                         GROUP BY D.OriginalArrivalPlanNO
+        )AS DS2
+        ON DS2.OriginalArrivalPlanNO = tbl.ArrivalPlanNO
+        WHERE tbl.ArrivalPlanNO = D_ArrivalPlan.ArrivalPlanNO
         ;
         
         --yD_ArrivalPlanz  •ªŠ„•ªíœiDeletej
@@ -623,12 +629,12 @@ BEGIN
                [ArrivalYetFLG]  = 1
               ,[ArrivalDate]    = NULL
               ,[StockSu]        = [D_Stock].[StockSu] - tbl.ArrivalSu
-              ,[PlanSu]         =  tbl.ArrivalSu + ISNULL(DS2.PlanSu,0)
+              ,[PlanSu]         = tbl.ArrivalSu + ISNULL(DS2.PlanSu,0)
               ,[AllowableSu]    = [D_Stock].[AllowableSu] + ISNULL(DS2.PlanSu,0)
               ,[AnotherStoreAllowableSu] = [D_Stock].[AnotherStoreAllowableSu] + ISNULL(DS2.AnotherStoreAllowableSu,0)
               ,[ReserveSu]      = [D_Stock].[ReserveSu] - tbl.ArrivalSu + ISNULL(DS2.ReserveSu,0)
-              ,[UpdateOperator] =  @Operator  
-              ,[UpdateDateTime] =  @SYSDATETIME
+              ,[UpdateOperator] = @Operator  
+              ,[UpdateDateTime] = @SYSDATETIME
               
          FROM (SELECT tbl.StockNO, SUM(tbl.ArrivalSu) AS ArrivalSu
                 FROM @Table AS tbl
@@ -658,9 +664,9 @@ BEGIN
         --yD_Reservez         Update/Delete   Table“]‘—Žd—l‚d‡A
         UPDATE [D_Reserve] SET
                [ShippingPossibleDate] = NULL
-              ,[ShippingPossibleSU] = [ShippingPossibleSU] - tbl.ArrivalSu
-              ,[UpdateOperator]     =  @Operator  
-              ,[UpdateDateTime]     =  @SYSDATETIME
+              ,[ShippingPossibleSU]   = [ShippingPossibleSU] - tbl.ArrivalSu
+              ,[UpdateOperator]       =  @Operator  
+              ,[UpdateDateTime]       =  @SYSDATETIME
               
         FROM @Table AS tbl
         WHERE tbl.ReserveNO = D_Reserve.ReserveNO
@@ -711,7 +717,7 @@ BEGIN
        ,[DeleteOperator]
        ,[DeleteDateTime])
     SELECT (CASE WHEN @OperateMode = 3 THEN (CASE WHEN @ArrivalDate > @SYSDATE THEN @ArrivalDate ELSE @SYSDATE END)
-    			 ELSE @ArrivalDate END)	--WarehousingDate
+                 ELSE @ArrivalDate END)	--WarehousingDate
        ,@SoukoCD
        ,NULL	--RackNO
        ,@StockNO
@@ -783,21 +789,21 @@ BEGIN
        ,@JanCD
        ,@AdminNO
        ,@SKUCD
- --      ,14	--WarehousingKBN
-		,41		--2020/10/01 Fukuda 
- ,(CASE WHEN @OperateMode = 3 THEN 1 ELSE 0 END)	--DeleteFlg
+ --      ,14    --WarehousingKBN
+        ,41     --2020/10/01 Fukuda 
+       ,(CASE WHEN @OperateMode = 3 THEN 1 ELSE 0 END)	--DeleteFlg
        ,@ArrivalNO	--Number
-       ,tbl.ArrivalRows	--NumberRow
-       ,NULL	--VendorCD
-       ,NULL	--ToStoreCD
-       ,NULL	--ToSoukoCD
-       ,NULL	--ToRackNO
-       ,NULL	--ToStockNO
+       ,tbl.ArrivalRows --NumberRow
+       ,NULL    --VendorCD
+       ,NULL    --ToStoreCD
+       ,NULL    --ToSoukoCD
+       ,NULL    --ToRackNO
+       ,NULL    --ToStockNO
        ,(SELECT top 1 M.StoreCD
-                        FROM M_Souko AS M
-                        WHERE M.SoukoCD = @SoukoCD
-                        AND M.ChangeDate <= @ArrivalDate
-                        ORDER BY M.ChangeDate desc)  --FromStoreCD
+         FROM M_Souko AS M
+         WHERE M.SoukoCD = @SoukoCD
+         AND M.ChangeDate <= @ArrivalDate
+         ORDER BY M.ChangeDate desc)  --FromStoreCD
        ,@SoukoCD	--FromSoukoCD]
        ,NULL	--FromRackNO
        ,tbl.CustomerCD
@@ -818,16 +824,16 @@ BEGIN
     
     --ƒJ[ƒ\ƒ‹’è‹`
     DECLARE CUR_AAA CURSOR FOR
-        SELECT tbl.OrderNO, tbl.OrderRows, tbl.ArrivalSu
-        FROM @Table AS tbl
-        WHERE tbl.DataKbn > 1
+            SELECT tbl.OrderNO, tbl.OrderRows, tbl.ArrivalSu
+            FROM @Table AS tbl
+            WHERE tbl.DataKbn > 1
         UNION ALL
-        SELECT DO.OrderNO, DO.OrderRows, tbl.ArrivalSu
-        FROM @Table AS tbl
-        INNER JOIN D_OrderDetails AS DO
-        ON DO.JuchuuNO = tbl.OrderNO
-        AND DO.JuchuuRows = tbl.OrderRows
-        WHERE tbl.DataKbn = 1
+            SELECT DO.OrderNO, DO.OrderRows, tbl.ArrivalSu
+            FROM @Table AS tbl
+            INNER JOIN D_OrderDetails AS DO
+            ON DO.JuchuuNO = tbl.OrderNO
+            AND DO.JuchuuRows = tbl.OrderRows
+            WHERE tbl.DataKbn = 1
         ORDER BY OrderNO, OrderRows
         ;
     

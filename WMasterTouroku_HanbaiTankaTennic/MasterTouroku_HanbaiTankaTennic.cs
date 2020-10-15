@@ -1494,22 +1494,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 }
             }
         }
-
-        private void SKUCDTo_KeyDown_1(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (!string.IsNullOrEmpty(SKUCDFrom.TxtCode.Text) && !string.IsNullOrEmpty(SKUCDTo.TxtCode.Text))
-                {
-                    if (string.Compare(SKUCDFrom.TxtCode.Text, SKUCDTo.TxtCode.Text) == 1)
-                    {
-                        bbl.ShowMessage("E104");
-                        SKUCDTo.Focus();
-                    }
-                }
-            }
-        }
-
         private void btnDisplay_Click(object sender, EventArgs e)
         {
             F11();
@@ -1547,6 +1531,20 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     {
                         bbl.ShowMessage("E101");
                         scBrandCD.SetFocus(1);
+                    }
+                }
+            }
+        }
+        private void SKUCDTo_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrEmpty(SKUCDFrom.TxtCode.Text) && !string.IsNullOrEmpty(SKUCDTo.TxtCode.Text))
+                {
+                    if (string.Compare(SKUCDFrom.TxtCode.Text, SKUCDTo.TxtCode.Text) == 1)
+                    {
+                        bbl.ShowMessage("E104");
+                        SKUCDTo.Focus();
                     }
                 }
             }

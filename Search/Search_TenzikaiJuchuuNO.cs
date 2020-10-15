@@ -240,7 +240,7 @@ namespace Search
                     ScCustomer.ChangeDate = txtOrderDateTo.Text;
                 }
                 mce.CustomerCD = ScCustomer.TxtCode.Text;
-                mce.ChangeDate = ScCustomer.ChangeDate;
+                mce.ChangeDate = txtOrderDateTo.Text;
                 DataTable dtcus = new DataTable();
                 dtcus = tzkjbl.M_Customer_SelectForTenzikai(mce);
                 if(dtcus.Rows.Count > 0)
