@@ -436,7 +436,7 @@ BEGIN
                     SELECT @InventoryDate --WarehousingDate
                        ,DS.SoukoCD
                        ,DS.RackNO
-                       ,@StockNO
+                       ,@StockNO_B
                        ,DS.JanCD
                        ,DS.AdminNO
                        ,DS.SKUCD
@@ -513,12 +513,12 @@ BEGIN
         CLOSE CUR_AAA;
         DEALLOCATE CUR_AAA;
     END
-	
-	
+    
+    
     --【L_Log】INSERT
     --処理履歴データへ更新
     SET @KeyItem = CONVERT(varchar,@Syori) + ',' + @SoukoCD 
-            + ',' + @InventoryDate + ',' + ISNULL(@FromRackNO,'') + ',' + ISNULL(@ToRackNO,'');
+                 + ',' + @InventoryDate + ',' + ISNULL(@FromRackNO,'') + ',' + ISNULL(@ToRackNO,'');
         
     EXEC L_Log_Insert_SP
         @SYSDATETIME,
