@@ -201,12 +201,16 @@ namespace TanaoroshiShimeShori
 
                     //以下の条件でデータが存在しない時、エラー		
                     //①	※棚卸未処理
-                    de.InventoryKBN = "1";
+                    de.InventoryKBN = "";
                     ret = tabl.D_InventoryProcessing_Select(de);
                     if (!ret)
-                    {
-                        bbl.ShowMessage("S020");
-                        return;
+                    {       
+                        //InventoryKBN<>1の時エラー
+                        if (!de.InventoryKBN.Equals("1"))
+                        {
+                            bbl.ShowMessage("S020");
+                            return;
+                        }
                     }
 
                     //以下の条件でデータが存在すれば、エラー		
