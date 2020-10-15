@@ -110,7 +110,7 @@ BEGIN
             AND DC.RackNO = DI.RackNO
             AND DC.InventoryDate = DI.InventoryDate
             AND DC.InventoryNO = DI.InventoryNO
-            AND DC.InventoryKBN <> 2
+            AND DC.InventoryKBN = 1
 
             WHERE DI.DeleteDateTime IS NULL
             AND DI.SoukoCD = @SoukoCD
@@ -135,7 +135,7 @@ BEGIN
           ,DI.AdminNO
           ,DI.JanCD
           ,DI.TheoreticalQuantity
-          ,DI.ActualQuantity
+          ,(CASE @ChkKinyu WHEN 2 THEN NULL ELSE DI.ActualQuantity END) AS ActualQuantity
           ,DI.DifferenceQuantity
           ,DI.InventoryNO
           ,(SELECT top 1 M.SKUName FROM M_SKU AS M 

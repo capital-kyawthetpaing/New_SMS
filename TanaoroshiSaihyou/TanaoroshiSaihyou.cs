@@ -347,6 +347,9 @@ namespace TanaoroshiSaihyou
                                 objWorkBook.Sheets[1].Cells[(int)ERow.Title + (page - 1) * GYO_COUNT, (int)ECell.TheoreticalQuantity] = "理論在庫";
                                 objWorkBook.Sheets[1].Cells[(int)ERow.Title + (page - 1) * GYO_COUNT, (int)ECell.ActualQuantity] = "在庫数";
                                 objWorkBook.Sheets[1].Cells[(int)ERow.Title + (page - 1) * GYO_COUNT, (int)ECell.DifferenceQuantity] = "差異";
+
+                                objWorkBook.Sheets[1].Columns[(int)ECell.SKUCD].NumberFormat = "@";
+                                objWorkBook.Sheets[1].Columns[(int)ECell.JANCD].NumberFormat = "@";
                             }
 
                             objWorkBook.Sheets[1].Cells[currentRow, (int)ECell.RackNO] = row["RackNO"].ToString();
