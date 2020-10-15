@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Search_Tenzikai));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtDate = new CKM_Controls.CKM_TextBox();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -51,11 +50,11 @@
             this.ckM_Label10 = new CKM_Controls.CKM_Label();
             this.btnSearch = new CKM_Controls.CKM_Button();
             this.dgvSearch_Tenzikai = new CKM_Controls.CKM_GridView();
-            this.cbo_Season = new CKM_Controls.CKM_ComboBox();
             this.colTenzikaiName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVendorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLastYearTerm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSeason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbo_Season = new CKM_Controls.CKM_ComboBox();
             this.scSupplierCDTo = new Search.CKM_SearchControl();
             this.scSupplierCDFrom = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
@@ -85,7 +84,7 @@
             this.PanelHeader.Controls.Add(this.ckM_Label3);
             this.PanelHeader.Controls.Add(this.ckM_Label1);
             this.PanelHeader.Controls.Add(this.ckM_Label2);
-            this.PanelHeader.Size = new System.Drawing.Size(916, 158);
+            this.PanelHeader.Size = new System.Drawing.Size(916, 128);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label2, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label3, 0);
@@ -128,7 +127,7 @@
             this.txtDate.IsNumber = true;
             this.txtDate.IsShop = false;
             this.txtDate.Length = 32767;
-            this.txtDate.Location = new System.Drawing.Point(78, 12);
+            this.txtDate.Location = new System.Drawing.Point(78, 11);
             this.txtDate.MoveNext = true;
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(100, 19);
@@ -146,7 +145,7 @@
             this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(31, 15);
+            this.ckM_Label1.Location = new System.Drawing.Point(31, 14);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label1.TabIndex = 6;
@@ -163,7 +162,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(18, 46);
+            this.ckM_Label2.Location = new System.Drawing.Point(18, 41);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label2.TabIndex = 7;
@@ -180,7 +179,7 @@
             this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(31, 79);
+            this.ckM_Label3.Location = new System.Drawing.Point(31, 70);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label3.TabIndex = 8;
@@ -197,7 +196,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(31, 115);
+            this.ckM_Label4.Location = new System.Drawing.Point(31, 99);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label4.TabIndex = 9;
@@ -225,11 +224,11 @@
             this.txtExhibitionName.IsNumber = true;
             this.txtExhibitionName.IsShop = false;
             this.txtExhibitionName.Length = 40;
-            this.txtExhibitionName.Location = new System.Drawing.Point(78, 43);
+            this.txtExhibitionName.Location = new System.Drawing.Point(78, 38);
             this.txtExhibitionName.MaxLength = 40;
             this.txtExhibitionName.MoveNext = true;
             this.txtExhibitionName.Name = "txtExhibitionName";
-            this.txtExhibitionName.Size = new System.Drawing.Size(300, 19);
+            this.txtExhibitionName.Size = new System.Drawing.Size(310, 19);
             this.txtExhibitionName.TabIndex = 6;
             this.txtExhibitionName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtExhibitionName.UseColorSizMode = false;
@@ -243,7 +242,7 @@
             this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(221, 79);
+            this.ckM_Label5.Location = new System.Drawing.Point(214, 70);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label5.TabIndex = 12;
@@ -260,11 +259,11 @@
             this.cbo_Year.Flag = 0;
             this.cbo_Year.FormattingEnabled = true;
             this.cbo_Year.Length = 10;
-            this.cbo_Year.Location = new System.Drawing.Point(78, 111);
+            this.cbo_Year.Location = new System.Drawing.Point(78, 95);
             this.cbo_Year.MaxLength = 10;
             this.cbo_Year.MoveNext = true;
             this.cbo_Year.Name = "cbo_Year";
-            this.cbo_Year.Size = new System.Drawing.Size(100, 20);
+            this.cbo_Year.Size = new System.Drawing.Size(75, 20);
             this.cbo_Year.TabIndex = 9;
             this.cbo_Year.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbo_Year_KeyDown);
             // 
@@ -277,7 +276,7 @@
             this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(187, 116);
+            this.ckM_Label6.Location = new System.Drawing.Point(178, 100);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label6.TabIndex = 15;
@@ -294,7 +293,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(479, 47);
+            this.ckM_Label7.Location = new System.Drawing.Point(515, 42);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label7.TabIndex = 17;
@@ -311,7 +310,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(479, 79);
+            this.ckM_Label8.Location = new System.Drawing.Point(515, 70);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label8.TabIndex = 18;
@@ -339,7 +338,7 @@
             this.NRegistrationDateFrom.IsNumber = true;
             this.NRegistrationDateFrom.IsShop = false;
             this.NRegistrationDateFrom.Length = 10;
-            this.NRegistrationDateFrom.Location = new System.Drawing.Point(552, 43);
+            this.NRegistrationDateFrom.Location = new System.Drawing.Point(588, 38);
             this.NRegistrationDateFrom.MaxLength = 10;
             this.NRegistrationDateFrom.MoveNext = true;
             this.NRegistrationDateFrom.Name = "NRegistrationDateFrom";
@@ -369,7 +368,7 @@
             this.NRegistrationDateTo.IsNumber = true;
             this.NRegistrationDateTo.IsShop = false;
             this.NRegistrationDateTo.Length = 10;
-            this.NRegistrationDateTo.Location = new System.Drawing.Point(697, 43);
+            this.NRegistrationDateTo.Location = new System.Drawing.Point(717, 38);
             this.NRegistrationDateTo.MaxLength = 10;
             this.NRegistrationDateTo.MoveNext = true;
             this.NRegistrationDateTo.Name = "NRegistrationDateTo";
@@ -400,7 +399,7 @@
             this.LModifiedDateFrom.IsNumber = true;
             this.LModifiedDateFrom.IsShop = false;
             this.LModifiedDateFrom.Length = 10;
-            this.LModifiedDateFrom.Location = new System.Drawing.Point(552, 75);
+            this.LModifiedDateFrom.Location = new System.Drawing.Point(588, 66);
             this.LModifiedDateFrom.MaxLength = 10;
             this.LModifiedDateFrom.MoveNext = true;
             this.LModifiedDateFrom.Name = "LModifiedDateFrom";
@@ -430,7 +429,7 @@
             this.LModifiedDateTo.IsNumber = true;
             this.LModifiedDateTo.IsShop = false;
             this.LModifiedDateTo.Length = 10;
-            this.LModifiedDateTo.Location = new System.Drawing.Point(697, 75);
+            this.LModifiedDateTo.Location = new System.Drawing.Point(717, 66);
             this.LModifiedDateTo.MaxLength = 10;
             this.LModifiedDateTo.MoveNext = true;
             this.LModifiedDateTo.Name = "LModifiedDateTo";
@@ -450,7 +449,7 @@
             this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(665, 46);
+            this.ckM_Label9.Location = new System.Drawing.Point(693, 42);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label9.TabIndex = 23;
@@ -467,7 +466,7 @@
             this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label10.Location = new System.Drawing.Point(665, 78);
+            this.ckM_Label10.Location = new System.Drawing.Point(693, 70);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label10.TabIndex = 24;
@@ -485,10 +484,10 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnSearch.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnSearch.Location = new System.Drawing.Point(767, 111);
+            this.btnSearch.Location = new System.Drawing.Point(790, 93);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(1);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(118, 28);
+            this.btnSearch.Size = new System.Drawing.Size(98, 26);
             this.btnSearch.TabIndex = 25;
             this.btnSearch.Text = "表示(F11)";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -499,60 +498,35 @@
             this.dgvSearch_Tenzikai.AllowUserToAddRows = false;
             this.dgvSearch_Tenzikai.AllowUserToDeleteRows = false;
             this.dgvSearch_Tenzikai.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvSearch_Tenzikai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvSearch_Tenzikai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSearch_Tenzikai.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvSearch_Tenzikai.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvSearch_Tenzikai.CheckCol")));
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSearch_Tenzikai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSearch_Tenzikai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSearch_Tenzikai.ColumnHeadersHeight = 25;
             this.dgvSearch_Tenzikai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colTenzikaiName,
             this.colVendorName,
             this.colLastYearTerm,
             this.colSeason});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSearch_Tenzikai.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvSearch_Tenzikai.EnableHeadersVisualStyles = false;
             this.dgvSearch_Tenzikai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.dgvSearch_Tenzikai.Location = new System.Drawing.Point(12, 209);
+            this.dgvSearch_Tenzikai.Location = new System.Drawing.Point(12, 183);
             this.dgvSearch_Tenzikai.Name = "dgvSearch_Tenzikai";
             this.dgvSearch_Tenzikai.RowHeight_ = 20;
             this.dgvSearch_Tenzikai.RowTemplate.Height = 20;
-            this.dgvSearch_Tenzikai.Size = new System.Drawing.Size(876, 290);
+            this.dgvSearch_Tenzikai.Size = new System.Drawing.Size(876, 324);
             this.dgvSearch_Tenzikai.TabIndex = 5;
             this.dgvSearch_Tenzikai.UseRowNo = true;
             this.dgvSearch_Tenzikai.UseSetting = false;
             this.dgvSearch_Tenzikai.DoubleClick += new System.EventHandler(this.dgvSearch_Tenzikai_DoubleClick);
-            // 
-            // cbo_Season
-            // 
-            this.cbo_Season.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cbo_Season.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbo_Season.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
-            this.cbo_Season.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.cbo_Season.Flag = 0;
-            this.cbo_Season.FormattingEnabled = true;
-            this.cbo_Season.Length = 10;
-            this.cbo_Season.Location = new System.Drawing.Point(247, 112);
-            this.cbo_Season.MaxLength = 10;
-            this.cbo_Season.MoveNext = true;
-            this.cbo_Season.Name = "cbo_Season";
-            this.cbo_Season.Size = new System.Drawing.Size(100, 20);
-            this.cbo_Season.TabIndex = 10;
-            this.cbo_Season.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbo_Year_KeyDown);
             // 
             // colTenzikaiName
             // 
@@ -581,6 +555,23 @@
             this.colSeason.HeaderText = "シーズン";
             this.colSeason.Name = "colSeason";
             // 
+            // cbo_Season
+            // 
+            this.cbo_Season.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbo_Season.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbo_Season.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
+            this.cbo_Season.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cbo_Season.Flag = 0;
+            this.cbo_Season.FormattingEnabled = true;
+            this.cbo_Season.Length = 10;
+            this.cbo_Season.Location = new System.Drawing.Point(238, 96);
+            this.cbo_Season.MaxLength = 10;
+            this.cbo_Season.MoveNext = true;
+            this.cbo_Season.Name = "cbo_Season";
+            this.cbo_Season.Size = new System.Drawing.Size(75, 20);
+            this.cbo_Season.TabIndex = 10;
+            this.cbo_Season.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbo_Year_KeyDown);
+            // 
             // scSupplierCDTo
             // 
             this.scSupplierCDTo.AutoSize = true;
@@ -596,7 +587,7 @@
             this.scSupplierCDTo.IsCopy = false;
             this.scSupplierCDTo.LabelText = "";
             this.scSupplierCDTo.LabelVisible = false;
-            this.scSupplierCDTo.Location = new System.Drawing.Point(248, 70);
+            this.scSupplierCDTo.Location = new System.Drawing.Point(238, 61);
             this.scSupplierCDTo.Margin = new System.Windows.Forms.Padding(0);
             this.scSupplierCDTo.Name = "scSupplierCDTo";
             this.scSupplierCDTo.NameWidth = 310;
@@ -604,6 +595,7 @@
             this.scSupplierCDTo.Size = new System.Drawing.Size(133, 27);
             this.scSupplierCDTo.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.scSupplierCDTo.TabIndex = 8;
+            this.scSupplierCDTo.test = null;
             this.scSupplierCDTo.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSupplierCDTo.UseChangeDate = false;
             this.scSupplierCDTo.Value1 = null;
@@ -626,7 +618,7 @@
             this.scSupplierCDFrom.IsCopy = false;
             this.scSupplierCDFrom.LabelText = "";
             this.scSupplierCDFrom.LabelVisible = false;
-            this.scSupplierCDFrom.Location = new System.Drawing.Point(78, 70);
+            this.scSupplierCDFrom.Location = new System.Drawing.Point(78, 61);
             this.scSupplierCDFrom.Margin = new System.Windows.Forms.Padding(0);
             this.scSupplierCDFrom.Name = "scSupplierCDFrom";
             this.scSupplierCDFrom.NameWidth = 310;
@@ -634,6 +626,7 @@
             this.scSupplierCDFrom.Size = new System.Drawing.Size(133, 27);
             this.scSupplierCDFrom.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.scSupplierCDFrom.TabIndex = 7;
+            this.scSupplierCDFrom.test = null;
             this.scSupplierCDFrom.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSupplierCDFrom.UseChangeDate = false;
             this.scSupplierCDFrom.Value1 = null;
@@ -650,7 +643,7 @@
             this.F12Visible = true;
             this.F9Visible = true;
             this.Name = "Search_Tenzikai";
-            this.PanelHeaderHeight = 200;
+            this.PanelHeaderHeight = 170;
             this.ProgramName = "展示会検索";
             this.Text = "Search_Tenzikai";
             this.Load += new System.EventHandler(this.Search_Tenzikai_Load);
