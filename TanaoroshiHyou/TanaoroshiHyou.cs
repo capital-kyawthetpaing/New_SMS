@@ -69,7 +69,7 @@ namespace TanaoroshiHyou
                 Staff_BL bl = new Staff_BL();
                 bool ret = bl.M_Staff_Select(mse);
 
-                CboSoukoCD.Bind(ymd, mse.StoreCD);
+                CboSoukoCD.Bind(ymd, InOperatorCD);
 
                 SetFuncKeyAll(this, "100001000011");
                 Scr_Clr(0);

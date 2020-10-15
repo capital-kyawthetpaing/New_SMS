@@ -84,7 +84,7 @@ namespace TanaoroshiNyuuryoku
                 Staff_BL bl = new Staff_BL();
                 bool ret = bl.M_Staff_Select(mse);
 
-                CboSoukoCD.Bind(ymd, mse.StoreCD);
+                CboSoukoCD.Bind(ymd, InOperatorCD);
                 
                 Scr_Clr(0);
             }

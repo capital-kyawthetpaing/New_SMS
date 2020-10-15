@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 using BL;
 using Entity;
 using Base.Client;
 using Search;
-using System.Runtime.InteropServices; //EXCEL出力(必要)
-using Microsoft.Office.Interop;//EXCEL出力(必要)
 
 namespace TanaoroshiSaihyou
 {
@@ -107,7 +101,7 @@ namespace TanaoroshiSaihyou
                 Staff_BL bl = new Staff_BL();
                 bool ret = bl.M_Staff_Select(mse);
 
-                CboSoukoCD.Bind(ymd, mse.StoreCD);
+                CboSoukoCD.Bind(ymd, InOperatorCD);
 
                 SetFuncKeyAll(this, "100001000001");
                 Scr_Clr(0);

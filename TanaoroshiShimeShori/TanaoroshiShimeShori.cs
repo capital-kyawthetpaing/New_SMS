@@ -76,7 +76,7 @@ namespace TanaoroshiShimeShori
 
                 InStoreCD = mse.StoreCD;
 
-                CboSoukoName.Bind(ymd, InStoreCD);
+                CboSoukoName.Bind(ymd, InOperatorCD);
                 BindCombo("KBN", "Name");
                 
                 SetFuncKeyAll(this, "100001000001");
