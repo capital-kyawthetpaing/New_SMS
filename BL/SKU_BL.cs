@@ -156,5 +156,10 @@ namespace BL
             return mdl.M_SKU_Exec(me, operationMode);
         }
 
+        public DataTable M_SKU_SelectByJanCD_ForTenzikaishouhin(M_SKU_Entity mse)
+        {
+            return mdl.M_SKU_SelectByJanCD_ForTenzikaishouhin(mse);
+        }
+
     }
 }
