@@ -87,6 +87,7 @@ namespace TenzikaiJuchuuTourou
         {
             InitializeComponent();
             C_dt = DateTime.Now.ToString("yyyy-MM-dd");
+             
         }
         private enum EsearchKbn : short
         {

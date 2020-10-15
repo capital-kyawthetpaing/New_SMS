@@ -419,7 +419,7 @@ namespace Search
                     break;
                 case SearchType.Supplier:
                     TxtCode.MaxLength = 13;
-                    TxtCode.Width = 130;
+                    TxtCode.Width = 100;
                     lblName.Width = 320;
                     break;
                  case SearchType.仕入先PayeeFlg:
