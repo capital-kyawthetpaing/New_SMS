@@ -110,7 +110,7 @@ BEGIN
             AND DC.RackNO = DI.RackNO
             AND DC.InventoryDate = DI.InventoryDate
             AND DC.InventoryNO = DI.InventoryNO
-            AND DC.InventoryKBN <> 2
+            AND DC.InventoryKBN = 1
 
             WHERE DI.DeleteDateTime IS NULL
             AND DI.SoukoCD = @SoukoCD
