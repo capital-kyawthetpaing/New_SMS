@@ -89,7 +89,7 @@ namespace MasterTouroku_TenzikaiShouhin
             this.SetFunctionLabel(EProMode.INPUT);
             this.InitialControlArray();
             this.S_SetInit_Grid();
-
+            SC_CopyTenzikai.TxtCode.MaxLength = 500;
            // Scr_Clr(0);
 
             BindCombo_Details();
@@ -295,8 +295,8 @@ namespace MasterTouroku_TenzikaiShouhin
             {
                 case EOperationMode.INSERT:
                     F9Visible = false;
-                   // Clear(panel1);
-                    //Clear(panel3);
+                    Clear(panel1);
+                    Clear(panel3);
                     EnablePanel(PanelHeader);
 
                     F9Visible = false;
@@ -304,15 +304,7 @@ namespace MasterTouroku_TenzikaiShouhin
                 case EOperationMode.UPDATE:
                 case EOperationMode.DELETE:
                 case EOperationMode.SHOW:
-                    //Clear(PanelHeader);
-                    //Clear(PanelDetail);
-                    // EnablePanel(PanelHeader);
-                    //DisablePanel(panelCopy);
-                    // Btn_F11.Enabled = true;
-                    // BtnF11Show.Enabled = true;
-                    //DisablePanel(PanelDetail);
-                    // ginKou_CD.SearchEnable = true;
-                    //copy_ginKou_CD.SearchEnable = false;
+                    
                     F9Visible = true;
                     break;
             }
@@ -429,17 +421,10 @@ namespace MasterTouroku_TenzikaiShouhin
                         }
                     }
                 }
-            }  // handler Created
-
-            // 明細部の状態(初期状態) をセット 
-            mGrid.g_MK_State = new ClsGridMasterTanzi.ST_State_GridKihon[mGrid.g_MK_Ctl_Col, mGrid.g_MK_Max_Row]; // Cell Format
-
-
-            // データ保持用配列の宣言
-            mGrid.g_DArray = new ClsGridMasterTanzi.ST_DArray_Grid[mGrid.g_MK_Max_Row];  // Stored Array
+            }  
+            mGrid.g_MK_State = new ClsGridMasterTanzi.ST_State_GridKihon[mGrid.g_MK_Ctl_Col, mGrid.g_MK_Max_Row]; 
+            mGrid.g_DArray = new ClsGridMasterTanzi.ST_DArray_Grid[mGrid.g_MK_Max_Row];  
             SetMultiColNo();
-            // 行の色
-            // 何行で色が切り替わるかの設定。  ここでは 2行一組で繰り返すので 2行分だけ設定
             mGrid.g_MK_CtlRowBkColor.Add(ClsGridMasterTanzi.WHColor);//, "0");        // 1行目(奇数行) 白
             mGrid.g_MK_CtlRowBkColor.Add(ClsGridMasterTanzi.GridColor);//, "1");      // 2行目(偶数行) 水色
 
@@ -488,17 +473,16 @@ namespace MasterTouroku_TenzikaiShouhin
                         case (int)ClsGridMasterTanzi.ColNO.BrandCD:
                             ((((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl))).TxtCode.MaxLength = 6;
                             ((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).Stype = CKM_SearchControl.SearchType.ブランド;
-                           // ((((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl))).TxtCode.Width = 80;
                             break;
                         case (int)ClsGridMasterTanzi.ColNO.SegmentCD:
                             ((((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl))).TxtCode.MaxLength = 6;
+                            ((((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl))).TxtCode.Width = 50;
                             ((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).Stype = CKM_SearchControl.SearchType.商品分類;
-                            //((((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl))).TxtCode.Width = 50;
                             break;
                         case (int)ClsGridMasterTanzi.ColNO.TaniCD:
-                            ((((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl))).TxtCode.MaxLength = 6;
-                            //((((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl))).TxtCode.Width = 50;
-                            //  ((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).Stype = CKM_SearchControl.SearchType.Ta;
+                            ((((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl))).TxtCode.MaxLength = 2;
+                            ((((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl))).TxtCode.Width = 30;
+                            ((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).Stype = CKM_SearchControl.SearchType.単位;
                             break;
                     }
                   
@@ -644,9 +628,6 @@ namespace MasterTouroku_TenzikaiShouhin
                         case "shiiretanka":
                             CL = (int)ClsGridMasterTanzi.ColNO.Shiiretanka;
                             break;
-                        //case "IMN_ORGAK":
-                        //    CL = (int)ClsGridJuchuu.ColNO.OrderGaku;
-                        //    break;
                         case "joutaitanka":
                             CL = (int)ClsGridMasterTanzi.ColNO.JoutaiTanka;
                             break;
@@ -906,14 +887,13 @@ namespace MasterTouroku_TenzikaiShouhin
         }
         private void BT_Display_Click(object sender, EventArgs e)
         {
-            //if (!CheckKey(-1) || !CheckKey(1))
-            //{
-            //    return;
-            //}
-           
             switch (OperationMode)
             {
                 case EOperationMode.INSERT:
+                    if (!CheckKey(-1) || !CheckKey(1))
+                    {
+                        return;
+                    }
                     if (!String.IsNullOrEmpty(SC_CopyTenzikai.TxtCode.Text))
                     {
                         mt = new M_TenzikaiShouhin_Entity
@@ -1130,57 +1110,76 @@ namespace MasterTouroku_TenzikaiShouhin
 
                     DataTable dt = tbl.M_Tenzikaishouhin_SelectForJancd(mt);
                     DataTable dtsku = null;
-                    //if (dt.Rows.Count > 0)
-                    //{
-                    //    tbl.ShowMessage("E107");
-                    //}
-                    //else
-                    //{
-                    //    M_SKU_Entity msku = new M_SKU_Entity
-                    //    {
-                    //        JanCD = mGrid.g_DArray[row].JANCD,
-                    //    };
-                    //    SKU_BL mbl = new SKU_BL();
-                    //    dtsku = mbl.M_SKU_SelectByJanCD_ForTenzikaishouhin(msku);
-                    //}
+                    if (dt.Rows.Count > 0)
+                    {
+                        tbl.ShowMessage("E107");
+                    }
+                    else
+                    {
+                        M_SKU_Entity msku = new M_SKU_Entity
+                        {
+                            JanCD = mGrid.g_DArray[row].JANCD,
+                        };
+                        SKU_BL mbl = new SKU_BL();
+                        dtsku = mbl.M_SKU_SelectByJanCD_ForTenzikaishouhin(msku);
+                    }
 
                     DataRow selectRow = null;
                    
-                    if (dt != null)
+                    if (dtsku != null)
                     {
-                        selectRow = dt.Rows[0];
+                        selectRow = dtsku.Rows[0];
                     }
                     if (selectRow != null)
                     {
+                       
                         mGrid.g_DArray[row].SKUCD = selectRow["SKUCD"].ToString();
                         mGrid.g_DArray[row].SKUName = selectRow["SKUName"].ToString();
                         mGrid.g_DArray[row].ColorCD = selectRow["ColorNO"].ToString();
                         mGrid.g_DArray[row].ColorName = selectRow["ColorName"].ToString();
                         mGrid.g_DArray[row].SizeCD = selectRow["SizeNo"].ToString();
                         mGrid.g_DArray[row].SizeName = selectRow["SizeName"].ToString();
-                        mGrid.g_DArray[row].HanbaiYoteiDateMonth = selectRow["HanbaiYoteiDateMonth"].ToString();
-                        mGrid.g_DArray[row].HanbaiYoteiBi = selectRow["HanbaiYoteiDate"].ToString();
-                        mGrid.g_DArray[row].Shiiretanka = selectRow["SiireTanka"].ToString();
+                       // mGrid.g_DArray[row].HanbaiYoteiDateMonth = selectRow["HanbaiYoteiDateMonth"].ToString();
+                       // mGrid.g_DArray[row].HanbaiYoteiBi = selectRow["HanbaiYoteiDate"].ToString();
+                      //  mGrid.g_DArray[row].Shiiretanka = selectRow["SiireTanka"].ToString();
                         mGrid.g_DArray[row].JoutaiTanka = selectRow["JoudaiTanka"].ToString();
-                        mGrid.g_DArray[row].SalePriceOutTax = selectRow["SalePriceOutTax"].ToString();
-                        mGrid.g_DArray[row].SalePriceOutTax1 = selectRow["TankKa1"].ToString();
-                        mGrid.g_DArray[row].SalePriceOutTax2 = selectRow["TankKa2"].ToString();
-                        mGrid.g_DArray[row].SalePriceOutTax3 = selectRow["TankKa3"].ToString();
-                        mGrid.g_DArray[row].SalePriceOutTax4 = selectRow["TankKa4"].ToString();
-                        mGrid.g_DArray[row].SalePriceOutTax5 = selectRow["TankKa5"].ToString();
-                        mGrid.g_DArray[row].BrandCD = selectRow["BrandCD"].ToString();
-                        mGrid.g_DArray[row].SegmentCD = selectRow["SegmentCD"].ToString();
-                        mGrid.g_DArray[row].TaniCD = selectRow["TaniCD"].ToString();
-                        mGrid.g_DArray[row].TaxRateFlg = selectRow["TaxRateFlg"].ToString();
-                        mGrid.g_DArray[row].Remarks = selectRow["Remarks"].ToString();
+                        //mGrid.g_DArray[row].SalePriceOutTax = selectRow["SalePriceOutTax"].ToString();
+                        //mGrid.g_DArray[row].SalePriceOutTax1 = selectRow["TankKa1"].ToString();
+                        //mGrid.g_DArray[row].SalePriceOutTax2 = selectRow["TankKa2"].ToString();
+                        //mGrid.g_DArray[row].SalePriceOutTax3 = selectRow["TankKa3"].ToString();
+                        //mGrid.g_DArray[row].SalePriceOutTax4 = selectRow["TankKa4"].ToString();
+                        //mGrid.g_DArray[row].SalePriceOutTax5 = selectRow["TankKa5"].ToString();
+                        //mGrid.g_DArray[row].BrandCD = selectRow["BrandCD"].ToString();
+                        //mGrid.g_DArray[row].SegmentCD = selectRow["SegmentCD"].ToString();
+                        //mGrid.g_DArray[row].TaniCD = selectRow["TaniCD"].ToString();
+                        //mGrid.g_DArray[row].TaxRateFlg = selectRow["TaxRateFlg"].ToString();
+                        //mGrid.g_DArray[row].Remarks = selectRow["Remarks"].ToString();
                         //mGrid.g_DArray[row]. = Convert.ToInt16(selectRow["ExhibitionCommonCD"].ToString()).ToString();
                     }
+
+
                     Grid_NotFocus(col, row);
                     break;
 
+                case (int)ClsGridMasterTanzi.ColNO.SKUCD:
+                    if (mGrid.g_MK_State[col, row].Cell_Enabled)
+                    {
+                        //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].SKUCD))
+                        {
+                            //Ｅ１０２
+                            bbl.ShowMessage("E102");
+                            return false;
+                        }
+                        mGrid.g_DArray[row].SKUCD = ActiveControl.Text;
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    }
+                    break;
                 case (int)ClsGridMasterTanzi.ColNO.SKUName:
                     if (mGrid.g_MK_State[col, row].Cell_Enabled)
                     {
+
+
                         //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
                         if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].SKUName))
                         {
@@ -1189,6 +1188,174 @@ namespace MasterTouroku_TenzikaiShouhin
                             return false;
                         }
                         mGrid.g_DArray[row].SKUName = ActiveControl.Text;
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    }
+                    break;
+                case (int)ClsGridMasterTanzi.ColNO.ColorCD:
+                    if (mGrid.g_MK_State[col, row].Cell_Enabled)
+                    {
+                        //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].ColorCD))
+                        {
+                            //Ｅ１０２
+                            bbl.ShowMessage("E102");
+                            return false;
+                        }
+                        mGrid.g_DArray[row].ColorCD = ActiveControl.Text;
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    }
+                    break;
+                case (int)ClsGridMasterTanzi.ColNO.ColorName:
+                    if (mGrid.g_MK_State[col, row].Cell_Enabled)
+                    {
+                        //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].ColorName))
+                        {
+                            //Ｅ１０２
+                            bbl.ShowMessage("E102");
+                            return false;
+                        }
+                        mGrid.g_DArray[row].ColorName = ActiveControl.Text;
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    }
+                    break;
+                case (int)ClsGridMasterTanzi.ColNO.SizeCD:
+                    if (mGrid.g_MK_State[col, row].Cell_Enabled)
+                    {
+                        //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].SizeCD))
+                        {
+                            //Ｅ１０２
+                            bbl.ShowMessage("E102");
+                            return false;
+                        }
+                        mGrid.g_DArray[row].SizeCD = ActiveControl.Text;
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    }
+                    break;
+                case (int)ClsGridMasterTanzi.ColNO.SizeName:
+                    if (mGrid.g_MK_State[col, row].Cell_Enabled)
+                    {
+                        //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].SizeName))
+                        {
+                            //Ｅ１０２
+                            bbl.ShowMessage("E102");
+                            return false;
+                        }
+                        mGrid.g_DArray[row].SizeName = ActiveControl.Text;
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    }
+                    break;
+                case (int)ClsGridMasterTanzi.ColNO.Shiiretanka:
+                    if (mGrid.g_MK_State[col, row].Cell_Enabled)
+                    {
+                        //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].Shiiretanka))
+                        {
+                            //Ｅ１０２
+                            bbl.ShowMessage("E102");
+                            return false;
+                        }
+                        mGrid.g_DArray[row].Shiiretanka = ActiveControl.Text;
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    }
+                    break;
+                case (int)ClsGridMasterTanzi.ColNO.JoutaiTanka:
+                    if (mGrid.g_MK_State[col, row].Cell_Enabled)
+                    {
+                        //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].JoutaiTanka))
+                        {
+                            //Ｅ１０２
+                            bbl.ShowMessage("E102");
+                            return false;
+                        }
+                        mGrid.g_DArray[row].JoutaiTanka = ActiveControl.Text;
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    }
+                    break;
+                case (int)ClsGridMasterTanzi.ColNO.SalePriceOutTax:
+                    if (mGrid.g_MK_State[col, row].Cell_Enabled)
+                    {
+                        //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].SalePriceOutTax))
+                        {
+                            //Ｅ１０２
+                            bbl.ShowMessage("E102");
+                            return false;
+                        }
+                        mGrid.g_DArray[row].SalePriceOutTax = ActiveControl.Text;
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    }
+                    break;
+                case (int)ClsGridMasterTanzi.ColNO.SalePriceOutTax1:
+                    if (mGrid.g_MK_State[col, row].Cell_Enabled)
+                    {
+                        //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].SalePriceOutTax1))
+                        {
+                            //Ｅ１０２
+                            bbl.ShowMessage("E102");
+                            return false;
+                        }
+                        mGrid.g_DArray[row].SalePriceOutTax1 = ActiveControl.Text;
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    }
+                    break;
+                case (int)ClsGridMasterTanzi.ColNO.BrandCD:
+                    if (mGrid.g_MK_State[col, row].Cell_Enabled)
+                    {
+                        //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].BrandCD))
+                        {
+                            //Ｅ１０２
+                            bbl.ShowMessage("E102");
+                            return false;
+                        }
+                        mGrid.g_DArray[row].BrandCD = ActiveControl.Text;
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    }
+                    break;
+                case (int)ClsGridMasterTanzi.ColNO.SegmentCD:
+                    if (mGrid.g_MK_State[col, row].Cell_Enabled)
+                    {
+                        //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].SegmentCD))
+                        {
+                            //Ｅ１０２
+                            bbl.ShowMessage("E102");
+                            return false;
+                        }
+                        mGrid.g_DArray[row].SegmentCD = ActiveControl.Text;
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    }
+                    break;
+                case (int)ClsGridMasterTanzi.ColNO.TaniCD:
+                    if (mGrid.g_MK_State[col, row].Cell_Enabled)
+                    {
+                        //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].TaniCD))
+                        {
+                            //Ｅ１０２
+                            bbl.ShowMessage("E102");
+                            return false;
+                        }
+                        mGrid.g_DArray[row].TaniCD = ActiveControl.Text;
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    }
+                    break;
+                case (int)ClsGridMasterTanzi.ColNO.TaxRateFlg:
+                    if (mGrid.g_MK_State[col, row].Cell_Enabled)
+                    {
+                        //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].TaxRateFlg))
+                        {
+                            //Ｅ１０２
+                            bbl.ShowMessage("E102");
+                            return false;
+                        }
+                        mGrid.g_DArray[row].TaxRateFlg = ActiveControl.Text;
                         mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                     }
                     break;
@@ -1692,7 +1859,6 @@ namespace MasterTouroku_TenzikaiShouhin
                 for (int w_Row = 0; w_Row < 999; w_Row++)
                 {
                     mGrid.g_DArray[w_Row].GYONO = (w_Row + 1).ToString();
-                    //mGrid.g_DArray[w_Row].Rank1UnitPrice = "0";
                 }
             }
             else  // set Data from db
@@ -1721,14 +1887,10 @@ namespace MasterTouroku_TenzikaiShouhin
                     mGrid.g_DArray[c].SalePriceOutTax4 = dr["TankKa4"].ToString();//
                     mGrid.g_DArray[c].SalePriceOutTax5 = dr["TankKa5"].ToString();//
                     mGrid.g_DArray[c].BrandCD = dr["BrandCD"].ToString();//
-                    mGrid.g_DArray[c].SegmentCD = dr["SegmentCD"].ToString();//
-
-                    // mGrid.g_DArray[c].Chk = dr["_3SKUName"].ToString();   
+                    mGrid.g_DArray[c].SegmentCD = dr["SegmentCD"].ToString();
                     mGrid.g_DArray[c].TaniCD = dr["TaniCD"].ToString();//
                     mGrid.g_DArray[c].TaxRateFlg = dr["TaxRateFlg"].ToString();//
                     mGrid.g_DArray[c].Remarks = dr["Remarks"].ToString();//
-
-
                     c++;
                 }
             }
@@ -2041,7 +2203,6 @@ namespace MasterTouroku_TenzikaiShouhin
                 //        mGrid.g_DArray[w_Row].ArrivePlanDate = "";
                 //        mGrid.g_DArray[w_Row].KariHikiateNO = "";
                 //    }
-
                 //}
 
                 //配列の内容を画面へセット
@@ -2197,14 +2358,16 @@ namespace MasterTouroku_TenzikaiShouhin
                   DataTable  dtExcel = new DataTable();
                     dtExcel = ReadExcel(filePath, fileExt);
                    if(dtExcel != null)
+                   {
+                        MesaiHyouJi(dtExcel);
+                        S_BodySeigyo(4, 0);
+                   }
+                    else
                     {
-
+                        tbl.ShowMessage("E128");
                     }
-
                 }
-                
             }
-           
         }
 
         public DataTable ReadExcel(string fileName, string fileExt)
