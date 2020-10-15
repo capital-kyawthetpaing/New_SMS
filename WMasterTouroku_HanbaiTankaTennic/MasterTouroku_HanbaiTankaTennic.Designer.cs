@@ -62,7 +62,6 @@
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
             this.txtSKUName = new CKM_Controls.CKM_TextBox();
             this.ckM_RadioButton2 = new CKM_Controls.CKM_RadioButton();
-            this.SKUCDTo = new Search.CKM_SearchControl();
             this.RadioButton1 = new CKM_Controls.CKM_RadioButton();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -389,6 +388,7 @@
             this.panel158 = new System.Windows.Forms.Panel();
             this.panel159 = new System.Windows.Forms.Panel();
             this.panel160 = new System.Windows.Forms.Panel();
+            this.SKUCDTo = new Search.CKM_SearchControl();
             this.panel1.SuspendLayout();
             this.panel10_2.SuspendLayout();
             this.panel42.SuspendLayout();
@@ -1010,6 +1010,7 @@
             // 
             // pnl_Header
             // 
+            this.pnl_Header.Controls.Add(this.SKUCDTo);
             this.pnl_Header.Controls.Add(this.btnDisplay);
             this.pnl_Header.Controls.Add(this.ckM_TextBox5);
             this.pnl_Header.Controls.Add(this.ckM_Label8);
@@ -1019,7 +1020,6 @@
             this.pnl_Header.Controls.Add(this.ckM_Label6);
             this.pnl_Header.Controls.Add(this.txtSKUName);
             this.pnl_Header.Controls.Add(this.ckM_RadioButton2);
-            this.pnl_Header.Controls.Add(this.SKUCDTo);
             this.pnl_Header.Controls.Add(this.RadioButton1);
             this.pnl_Header.Controls.Add(this.ckM_Label5);
             this.pnl_Header.Controls.Add(this.ckM_Label2);
@@ -1047,10 +1047,10 @@
             this.btnDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDisplay.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnDisplay.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnDisplay.Location = new System.Drawing.Point(847, 94);
+            this.btnDisplay.Location = new System.Drawing.Point(854, 94);
             this.btnDisplay.Margin = new System.Windows.Forms.Padding(1);
             this.btnDisplay.Name = "btnDisplay";
-            this.btnDisplay.Size = new System.Drawing.Size(118, 28);
+            this.btnDisplay.Size = new System.Drawing.Size(118, 24);
             this.btnDisplay.TabIndex = 142;
             this.btnDisplay.Text = "表示";
             this.btnDisplay.UseVisualStyleBackColor = false;
@@ -1080,7 +1080,7 @@
             this.ckM_TextBox5.MaxLength = 5;
             this.ckM_TextBox5.MoveNext = true;
             this.ckM_TextBox5.Name = "ckM_TextBox5";
-            this.ckM_TextBox5.Size = new System.Drawing.Size(85, 19);
+            this.ckM_TextBox5.Size = new System.Drawing.Size(60, 19);
             this.ckM_TextBox5.TabIndex = 130;
             this.ckM_TextBox5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox5.UseColorSizMode = false;
@@ -1126,7 +1126,7 @@
             this.ckM_TextBox4.MaxLength = 5;
             this.ckM_TextBox4.MoveNext = true;
             this.ckM_TextBox4.Name = "ckM_TextBox4";
-            this.ckM_TextBox4.Size = new System.Drawing.Size(85, 19);
+            this.ckM_TextBox4.Size = new System.Drawing.Size(60, 19);
             this.ckM_TextBox4.TabIndex = 129;
             this.ckM_TextBox4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ckM_TextBox4.UseColorSizMode = false;
@@ -1154,8 +1154,8 @@
             this.scSegmentCD.ChangeDate = "";
             this.scSegmentCD.ChangeDateWidth = 100;
             this.scSegmentCD.Code = "";
-            this.scSegmentCD.CodeWidth = 100;
-            this.scSegmentCD.CodeWidth1 = 100;
+            this.scSegmentCD.CodeWidth = 60;
+            this.scSegmentCD.CodeWidth1 = 60;
             this.scSegmentCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSegmentCD.DataCheck = false;
             this.scSegmentCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1166,9 +1166,9 @@
             this.scSegmentCD.Location = new System.Drawing.Point(81, 89);
             this.scSegmentCD.Margin = new System.Windows.Forms.Padding(0);
             this.scSegmentCD.Name = "scSegmentCD";
-            this.scSegmentCD.NameWidth = 280;
+            this.scSegmentCD.NameWidth = 250;
             this.scSegmentCD.SearchEnable = true;
-            this.scSegmentCD.Size = new System.Drawing.Size(414, 27);
+            this.scSegmentCD.Size = new System.Drawing.Size(374, 27);
             this.scSegmentCD.Stype = Search.CKM_SearchControl.SearchType.商品分類;
             this.scSegmentCD.TabIndex = 125;
             this.scSegmentCD.test = null;
@@ -1230,7 +1230,7 @@
             // 
             this.ckM_RadioButton2.AutoSize = true;
             this.ckM_RadioButton2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_RadioButton2.Location = new System.Drawing.Point(684, 9);
+            this.ckM_RadioButton2.Location = new System.Drawing.Point(658, 9);
             this.ckM_RadioButton2.Name = "ckM_RadioButton2";
             this.ckM_RadioButton2.Size = new System.Drawing.Size(75, 16);
             this.ckM_RadioButton2.TabIndex = 135;
@@ -1238,43 +1238,12 @@
             this.ckM_RadioButton2.Text = "全件表示";
             this.ckM_RadioButton2.UseVisualStyleBackColor = true;
             // 
-            // SKUCDTo
-            // 
-            this.SKUCDTo.AutoSize = true;
-            this.SKUCDTo.ChangeDate = "";
-            this.SKUCDTo.ChangeDateWidth = 100;
-            this.SKUCDTo.Code = "";
-            this.SKUCDTo.CodeWidth = 190;
-            this.SKUCDTo.CodeWidth1 = 190;
-            this.SKUCDTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SKUCDTo.DataCheck = false;
-            this.SKUCDTo.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SKUCDTo.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.SKUCDTo.IsCopy = false;
-            this.SKUCDTo.LabelText = "";
-            this.SKUCDTo.LabelVisible = false;
-            this.SKUCDTo.Location = new System.Drawing.Point(881, 32);
-            this.SKUCDTo.Margin = new System.Windows.Forms.Padding(0);
-            this.SKUCDTo.Name = "SKUCDTo";
-            this.SKUCDTo.NameWidth = 350;
-            this.SKUCDTo.SearchEnable = true;
-            this.SKUCDTo.Size = new System.Drawing.Size(223, 27);
-            this.SKUCDTo.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
-            this.SKUCDTo.TabIndex = 127;
-            this.SKUCDTo.test = null;
-            this.SKUCDTo.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SKUCDTo.UseChangeDate = false;
-            this.SKUCDTo.Value1 = null;
-            this.SKUCDTo.Value2 = null;
-            this.SKUCDTo.Value3 = null;
-            this.SKUCDTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SKUCDTo_KeyDown_1);
-            // 
             // RadioButton1
             // 
             this.RadioButton1.AutoSize = true;
             this.RadioButton1.Checked = true;
             this.RadioButton1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.RadioButton1.Location = new System.Drawing.Point(564, 9);
+            this.RadioButton1.Location = new System.Drawing.Point(538, 9);
             this.RadioButton1.Name = "RadioButton1";
             this.RadioButton1.Size = new System.Drawing.Size(114, 16);
             this.RadioButton1.TabIndex = 121;
@@ -1308,7 +1277,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(504, 10);
+            this.ckM_Label2.Location = new System.Drawing.Point(478, 10);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label2.TabIndex = 134;
@@ -1325,7 +1294,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(823, 40);
+            this.ckM_Label4.Location = new System.Drawing.Point(813, 40);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label4.TabIndex = 137;
@@ -7287,6 +7256,36 @@
             this.panel160.Size = new System.Drawing.Size(1317, 38);
             this.panel160.TabIndex = 164;
             // 
+            // SKUCDTo
+            // 
+            this.SKUCDTo.AutoSize = true;
+            this.SKUCDTo.ChangeDate = "";
+            this.SKUCDTo.ChangeDateWidth = 100;
+            this.SKUCDTo.Code = "";
+            this.SKUCDTo.CodeWidth = 190;
+            this.SKUCDTo.CodeWidth1 = 190;
+            this.SKUCDTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SKUCDTo.DataCheck = false;
+            this.SKUCDTo.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.SKUCDTo.IsCopy = false;
+            this.SKUCDTo.LabelText = "";
+            this.SKUCDTo.LabelVisible = false;
+            this.SKUCDTo.Location = new System.Drawing.Point(854, 30);
+            this.SKUCDTo.Margin = new System.Windows.Forms.Padding(0);
+            this.SKUCDTo.Name = "SKUCDTo";
+            this.SKUCDTo.NameWidth = 350;
+            this.SKUCDTo.SearchEnable = true;
+            this.SKUCDTo.Size = new System.Drawing.Size(223, 27);
+            this.SKUCDTo.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
+            this.SKUCDTo.TabIndex = 127;
+            this.SKUCDTo.test = null;
+            this.SKUCDTo.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SKUCDTo.UseChangeDate = false;
+            this.SKUCDTo.Value1 = null;
+            this.SKUCDTo.Value2 = null;
+            this.SKUCDTo.Value3 = null;
+            this.SKUCDTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SKUCDTo_KeyDown_1);
+            // 
             // MasterTouroku_HanbaiTankaTennic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -7426,7 +7425,6 @@
         private CKM_Controls.CKM_Label ckM_Label6;
         private CKM_Controls.CKM_TextBox txtSKUName;
         private CKM_Controls.CKM_RadioButton ckM_RadioButton2;
-        private Search.CKM_SearchControl SKUCDTo;
         private CKM_Controls.CKM_RadioButton RadioButton1;
         private CKM_Controls.CKM_Label ckM_Label5;
         private CKM_Controls.CKM_Label ckM_Label2;
@@ -7758,6 +7756,7 @@
         private System.Windows.Forms.Panel panel158;
         private System.Windows.Forms.Panel panel159;
         private System.Windows.Forms.Panel panel160;
+        private Search.CKM_SearchControl SKUCDTo;
     }
 }
 
