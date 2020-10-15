@@ -694,13 +694,13 @@ namespace Search
 
                 case SearchType.商品分類://SES
                     TxtCode.MaxLength = 5;
-                    TxtCode.Width = 100;
+                    TxtCode.Width = 60;
                     lblName.Width = 280;
                     break;
 
                 case SearchType.展示会名://ses 9/7/2020
                     TxtCode.MaxLength = 40;
-                    TxtCode.Width = 400;
+                    TxtCode.Width = 500;
                     lblName.Width = 180;
                     break;
 
