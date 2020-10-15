@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using BL;
 using Entity;
 using Base.Client;
-
+using Search;
 
 namespace TanaoroshiNyuuryoku
 {
@@ -21,9 +21,20 @@ namespace TanaoroshiNyuuryoku
         private enum EIndex : int
         {
             SoukoCD,
-            InventoryDate
+            InventoryDate,
+            RackNO,  //棚番
+            JANCD,
+            Suryo   //在庫数量
         }
 
+        /// <summary>
+        /// 検索の種類
+        /// </summary>
+        private enum EsearchKbn : short
+        {
+            Null,
+            Product
+        }
         private enum EColNo : int
         {
             RackNO,
@@ -44,9 +55,7 @@ namespace TanaoroshiNyuuryoku
        
         private Tanaoroshi_BL tabl;
         private D_Inventory_Entity doe;
-        
-        private System.Windows.Forms.Control previousCtrl; // ｶｰｿﾙの元の位置を待避
-        
+        private string mAdminNO;
 
         public TanaoroshiNyuuryoku()
         {
@@ -67,6 +76,7 @@ namespace TanaoroshiNyuuryoku
                 base.StartProgram();
                 Btn_F9.Text = "";
                 Btn_F9.Enabled = false;
+                Btn_F10.Text = "取込(F10)";
                 Btn_F12.Text = "登録(F12)";
                 SetFuncKeyAll(this, "100001000011");
 
@@ -85,7 +95,7 @@ namespace TanaoroshiNyuuryoku
                 bool ret = bl.M_Staff_Select(mse);
 
                 CboSoukoCD.Bind(ymd, InOperatorCD);
-                
+                 
                 Scr_Clr(0);
             }
             catch (Exception ex)
@@ -99,7 +109,7 @@ namespace TanaoroshiNyuuryoku
 
         private void InitialControlArray()
         {
-            detailControls = new Control[] { CboSoukoCD, ckM_TextBox1 };
+            detailControls = new Control[] { CboSoukoCD, ckM_TextBox1, ScFromRackNo.TxtCode, SC_ITEM_0.TxtCode, ckM_TextBox8 };
 
             //イベント付与
             foreach (Control ctl in detailControls)
@@ -107,8 +117,9 @@ namespace TanaoroshiNyuuryoku
                 ctl.KeyDown += new System.Windows.Forms.KeyEventHandler(DetailControl_KeyDown);
                 ctl.Enter += new System.EventHandler(DetailControl_Enter);
             }
+            SC_ITEM_0.BtnSearch.Click += new System.EventHandler(BtnSearch_Click);
         }
-        
+
         /// <summary>
         /// コードチェック
         /// </summary>
@@ -116,6 +127,8 @@ namespace TanaoroshiNyuuryoku
         /// <returns></returns>
         private bool CheckDetail(int index)
         {
+            string ymd = bbl.GetDate();
+
             switch (index)
             {
                 case (int)EIndex.SoukoCD:
@@ -153,10 +166,112 @@ namespace TanaoroshiNyuuryoku
                     }
                     break;
 
-            }
+                case (int)EIndex.RackNO:
+                    //入力必須(Entry required)
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    {
+                        return true;
+                    }
 
+                    //倉庫棚番マスタに存在しない場合、Error
+                    M_Location_Entity mle = new M_Location_Entity
+                    {
+                        SoukoCD = CboSoukoCD.SelectedIndex > 0 ? CboSoukoCD.SelectedValue.ToString() : "",
+                        TanaCD = detailControls[index].Text,
+                        ChangeDate = ymd
+                    };
+                    bool ret = tabl.M_Location_SelectData(mle);
+                    if (!ret)
+                    {
+                        bbl.ShowMessage("E101");
+                        return false;
+                    }
+                    break;
+
+                case (int)EIndex.Suryo:
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    {
+                        detailControls[(int)EIndex.RackNO].Text = "";
+                        detailControls[(int)EIndex.JANCD].Text = "";
+                        ClearLabel();
+                        return true;
+                    }
+                    if (!RequireCheck(new Control[] { detailControls[(int)EIndex.RackNO] }))
+                    {
+                        return false;
+                    }
+                    if (!RequireCheck(new Control[] { detailControls[(int)EIndex.JANCD] }))
+                    {
+                        return false;
+                    }
+                    //入力された場合でエラーがないとき
+                    //Footerの「棚番」「JANCD」の組み合わせが既に明細内に存在するときエラー
+                    foreach (DataRow rw in ((DataTable)GvDetail.DataSource).Rows)
+                    {
+                        if (detailControls[(int)EIndex.RackNO].Text.Equals(rw["RackNO"].ToString()) && detailControls[(int)EIndex.JANCD].Text.Equals(rw["JANCD"].ToString()))
+                        {
+                            //Ｅ１９３
+                            bbl.ShowMessage("E265");
+                            return false;
+                        }
+                    }
+                        break;
+
+                case (int)EIndex.JANCD:
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    {
+                        ClearLabel();
+                        return true;
+                    }
+
+                    //入力がある場合、SKUマスターに存在すること
+                    //[M_SKU]
+                    M_SKU_Entity mse = new M_SKU_Entity
+                    {
+                        JanCD = detailControls[index].Text,
+                        SetKBN = "0",
+                        ChangeDate = ymd
+                    };
+
+                    SKU_BL mbl = new SKU_BL();
+                    DataTable dt = mbl.M_SKU_SelectAll(mse);
+                    DataRow selectRow = null;
+
+                    if (dt.Rows.Count == 0)
+                    {
+                        //Ｅ１０１
+                        bbl.ShowMessage("E101");
+                        ClearLabel();
+                        return false;
+                    }
+                    else
+                    {
+                        selectRow = dt.Rows[0];
+                    }
+
+                    if (selectRow != null)
+                    {
+                        DataRow row = ((DataTable)GvDetail.DataSource).NewRow();
+                       mAdminNO = selectRow["AdminNO"].ToString();
+                        lblSKUCD.Text = selectRow["SKUCD"].ToString();
+                        lblSKUName.Text = selectRow["SKUName"].ToString();
+                        lblColorName.Text = selectRow["ColorName"].ToString();
+                        lblSizeName.Text = selectRow["SizeName"].ToString();
+
+                    }
+                    break;
+
+            }
             return true;
 
+        }
+        private void ClearLabel()
+        {
+            mAdminNO = "";
+            lblSKUCD.Text = "";
+            lblSKUName.Text = "";
+            lblColorName.Text = "";
+            lblSizeName.Text = "";
         }
         protected override void ExecDisp()
         {
@@ -193,11 +308,20 @@ namespace TanaoroshiNyuuryoku
                         GvDetail.Columns[i].ReadOnly = true;
                     }
                 }
-                foreach (Control ctl in detailControls)
+                for (int i = 0; i <= (int)EIndex.Suryo; i++)
                 {
-                    ctl.Enabled = false;
+                    switch (i)
+                    {
+                        case (int)EIndex.SoukoCD:
+                        case (int)EIndex.InventoryDate:
+                            detailControls[i].Enabled = false;
+                            break;
+                        default:
+                            detailControls[i].Enabled = true;
+                            break;
+                    }
                 }
-
+                ScFromRackNo.Value1 = CboSoukoCD.SelectedValue.ToString();
                 }
             else
             {
@@ -229,6 +353,69 @@ namespace TanaoroshiNyuuryoku
                 MessageBox.Show(ex.Message);
                 //EndSec();
             }
+        }
+        private void DataToGrid()
+        {
+            //openFileDialog1.InitialDirectory = "C:\\ses\\";
+            //openFileDialog1.FilterIndex = 2;
+            //openFileDialog1.RestoreDirectory = true;
+            //openFileDialog1.Filter = "Excel Worksheets|*.xlsx";
+            //openFileDialog1.FileName = "";
+            //if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            //{
+            //    TenjikaiJuuChuu_BL tkb = new TenjikaiJuuChuu_BL();
+            //    var dt = ConvertToDataTable(openFileDialog1.FileName);
+
+            //    Tenjikai_Entity tje = new Tenjikai_Entity
+            //    {
+            //        xml = bbl.DataTableToXml(dt),
+            //        Kokyaku = detailControls[(int)EIndex.CustomerCD].Text,
+            //        JuchuuBi = detailControls[(int)EIndex.JuchuuDate].Text,
+            //        Nendo = detailControls[(int)EIndex.Nendo].Text,
+            //        ShiZun = detailControls[(int)EIndex.ShiSon].Text,
+            //        Shiiresaki = detailControls[(int)EIndex.SCShiiresaki].Text,
+            //        ShuuKaSouKo = detailControls[(int)EIndex.ShuukaSouko].Text,
+            //        KibouBi1 = this.KibouBi1,
+            //        KibouBi2 = this.KibouBi2
+            //    };
+            //    var resTable = tkb.M_TenjiKaiJuuChuu_Select(tje);
+            //    MesaiHyouJi(resTable);
+            //}
+        }
+        /// <summary>
+        /// 検索フォーム起動処理
+        /// </summary>
+        /// <param name="kbn"></param>
+        /// <param name="setCtl"></param>
+        private void SearchData(EsearchKbn kbn, Control setCtl)
+        {
+            switch (kbn)
+            {
+                case EsearchKbn.Product:
+                    using (Search_Product frmProduct = new Search_Product(detailControls[(int)EIndex.InventoryDate].Text))
+                    {
+                            frmProduct.SKUCD = lblSKUCD.Text;
+                            frmProduct.JANCD = detailControls[(int)EIndex.JANCD].Text;
+
+                        frmProduct.ShowDialog();
+
+                        if (!frmProduct.flgCancel)
+                        {
+                            ((Search.CKM_SearchControl)setCtl).TxtCode.Text = frmProduct.JANCD;
+
+                            detailControls[(int)EIndex.JANCD].Text = frmProduct.JANCD;
+                            lblSKUCD.Text = frmProduct.SKUCD;
+                            mAdminNO = frmProduct.AdminNO;
+
+                            setCtl.Focus();
+
+                            //CheckDetail((int)EIndex.JANCD, true);
+                            SendKeys.Send("{ENTER}");
+                        }
+                    }
+                    break;
+            }
+
         }
         private DataTable GetGridEntity()
         {
@@ -300,6 +487,7 @@ namespace TanaoroshiNyuuryoku
                 }
 
             }
+            ClearLabel();
 
             GvDetail.DataSource = null;
             GvDetail.Enabled = false;
@@ -342,7 +530,21 @@ namespace TanaoroshiNyuuryoku
 
                         break;
                     }
+                case 8: //F9:検索
+                    if (PreviousCtrl.Name.Equals(SC_ITEM_0.Name))
+                    {
+                        //商品検索
+                        SearchData(EsearchKbn.Product, PreviousCtrl);
+                    }
 
+                    break;
+                case 9: //F10:取込
+                    {
+                        this.Cursor = Cursors.WaitCursor;
+                        DataToGrid();
+                        this.Cursor = Cursors.Default;
+                        break;
+                    }
                 case 11:    //F12:登録
                     {
 
@@ -388,6 +590,10 @@ namespace TanaoroshiNyuuryoku
                         {
                            BtnSubF11.Focus();
                         }
+                        else if (index == (int)EIndex.Suryo)
+                        {
+                            btnAdd.Focus();
+                        }
                         else
                             detailControls[index + 1].Focus();
 
@@ -412,7 +618,7 @@ namespace TanaoroshiNyuuryoku
         {
             try
             {
-                previousCtrl = this.ActiveControl;
+                PreviousCtrl = this.ActiveControl;
             }
 
             catch (Exception ex)
@@ -441,7 +647,58 @@ namespace TanaoroshiNyuuryoku
                 //EndSec();
             }
         }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRow row = ((DataTable)GvDetail.DataSource).NewRow();
+                row["AdminNO"] = mAdminNO;
+                row["JANCD"] = detailControls[(int)EIndex.JANCD].Text;
+                row["SKUCD"] = lblSKUCD.Text;
+                row["SKUName"] = lblSKUName.Text;
+                row["ColorName"] = lblColorName.Text;
+                row["SizeName"] = lblSizeName.Text;
+                row["ActualQuantity"] = bbl.Z_SetStr( detailControls[(int)EIndex.Suryo].Text);
+                row["RackNO"] = detailControls[(int)EIndex.RackNO].Text;
+                ((DataTable)GvDetail.DataSource).Rows.Add(row);
 
+                detailControls[(int)EIndex.RackNO].Focus();
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EsearchKbn kbn = EsearchKbn.Null;
+                Control setCtl = null;
+                Control sc = ((Control)sender).Parent;
+
+                //検索ボタンClick時
+                if (((Search.CKM_SearchControl)sc).Name.Substring(0, 3).Equals("SC_"))
+                {
+                    //商品検索
+                    kbn = EsearchKbn.Product;
+                }
+
+                setCtl = PreviousCtrl;
+
+
+                if (kbn != EsearchKbn.Null)
+                    SearchData(kbn, setCtl);
+
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void GvDetail_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             DataTable dt = (DataTable)GvDetail.DataSource;
@@ -452,6 +709,7 @@ namespace TanaoroshiNyuuryoku
             }
         }
         #endregion
+
     }
 }
 
