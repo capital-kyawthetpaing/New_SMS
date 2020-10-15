@@ -695,7 +695,8 @@ namespace Search
                 case SearchType.商品分類://SES
                     TxtCode.MaxLength = 5;
                     TxtCode.Width = 60;
-                    lblName.Width = 280;
+                    lblName.Width = 250;
+
                     break;
 
                 case SearchType.展示会名://ses 9/7/2020
