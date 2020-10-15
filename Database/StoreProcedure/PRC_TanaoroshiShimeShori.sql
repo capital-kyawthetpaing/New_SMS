@@ -227,14 +227,14 @@ BEGIN
             SELECT DI.DifferenceQuantity
                   ,DI.RackNO          
                   ,DI.AdminNO     
-                FROM D_Inventory AS DI
-              WHERE DI.SoukoCD = @SoukoCD
-                AND DI.InventoryDate = @InventoryDate
-                AND ISNULL(DI.RackNO,'') >= (CASE WHEN ISNULL(@FromRackNO,'') <> '' THEN @FromRackNO ELSE ISNULL(DI.RackNO,'') END)
-                AND ISNULL(DI.RackNO,'') <= (CASE WHEN ISNULL(@ToRackNO,'') <> '' THEN @ToRackNO ELSE ISNULL(DI.RackNO,'') END)
-                AND DI.DifferenceQuantity <> 0
-                ORDER BY DI.RackNO
-                ;
+              FROM D_Inventory AS DI
+             WHERE DI.SoukoCD = @SoukoCD
+               AND DI.InventoryDate = @InventoryDate
+               AND ISNULL(DI.RackNO,'') >= (CASE WHEN ISNULL(@FromRackNO,'') <> '' THEN @FromRackNO ELSE ISNULL(DI.RackNO,'') END)
+               AND ISNULL(DI.RackNO,'') <= (CASE WHEN ISNULL(@ToRackNO,'') <> '' THEN @ToRackNO ELSE ISNULL(DI.RackNO,'') END)
+               AND DI.DifferenceQuantity <> 0
+             ORDER BY DI.RackNO
+               ;
                 
         --ÉJÅ[É\ÉãÉIÅ[ÉvÉì
         OPEN CUR_AAA;
@@ -316,23 +316,23 @@ BEGIN
                    ,DS.JanCD
                    ,DS.AdminNO
                    ,DS.SKUCD
-                   ,17   --WarehousingKBN   DifferenceQuantityÅÑ0ÇÃéû 17:íIâµâ¡éZÅA
-                   ,0  --DeleteFlg
-                   ,@InventoryNO  --Number
-                   ,0 --NumberRow
-                   ,NULL    --VendorCD
-                   ,NULL    --ToStoreCD
-                   ,NULL    --ToSoukoCD
-                   ,NULL    --ToRackNO
-                   ,NULL    --ToStockNO
-                   ,NULL    --FromStoreCD
-                   ,NULL    --FromSoukoCD]
-                   ,NULL    --FromRackNO
-                   ,NULL    --CustomerCD
+                   ,17                    --WarehousingKBN   DifferenceQuantityÅÑ0ÇÃéû 17:íIâµâ¡éZÅA
+                   ,0                     --DeleteFlg
+                   ,@InventoryNO          --Number
+                   ,0                     --NumberRow
+                   ,NULL                  --VendorCD
+                   ,NULL                  --ToStoreCD
+                   ,NULL                  --ToSoukoCD
+                   ,NULL                  --ToRackNO
+                   ,NULL                  --ToStockNO
+                   ,NULL                  --FromStoreCD
+                   ,NULL                  --FromSoukoCD]
+                   ,NULL                  --FromRackNO
+                   ,NULL                  --CustomerCD
                    ,@DifferenceQuantity   --Quantity
-                   ,0       --UnitPrice
-                   ,0       --Amount
-                   ,@Program  --Program
+                   ,0                     --UnitPrice
+                   ,0                     --Amount
+                   ,@Program              --Program
                    
                    ,@Operator  
                    ,@SYSDATETIME
@@ -440,24 +440,24 @@ BEGIN
                        ,DS.JanCD
                        ,DS.AdminNO
                        ,DS.SKUCD
-                       ,18   --WarehousingKBN   DifferenceQuantityÅÉ0ÇÃéû 18:íIâµå∏éZ
-                       ,0  --DeleteFlg
+                       ,18            --WarehousingKBN   DifferenceQuantityÅÉ0ÇÃéû 18:íIâµå∏éZ
+                       ,0             --DeleteFlg
                        ,@InventoryNO  --Number
-                       ,0 --NumberRow
-                       ,NULL    --VendorCD
-                       ,NULL    --ToStoreCD
-                       ,NULL    --ToSoukoCD
-                       ,NULL    --ToRackNO
-                       ,NULL    --ToStockNO
-                       ,NULL    --FromStoreCD
-                       ,NULL    --FromSoukoCD]
-                       ,NULL    --FromRackNO
-                       ,NULL    --CustomerCD
+                       ,0             --NumberRow
+                       ,NULL          --VendorCD
+                       ,NULL          --ToStoreCD
+                       ,NULL          --ToSoukoCD
+                       ,NULL          --ToRackNO
+                       ,NULL          --ToStockNO
+                       ,NULL          --FromStoreCD
+                       ,NULL          --FromSoukoCD]
+                       ,NULL          --FromRackNO
+                       ,NULL          --CustomerCD
                        ,-1*@AjustSu   --Quantity Åöç›å…í≤êÆêî
-                                            --DifferenceQuantityÅÉ0ÇÃéûÇÕÅAÅ~(-1)
-                       ,0       --UnitPrice
-                       ,0       --Amount
-                       ,@Program  --Program
+                                      --DifferenceQuantityÅÉ0ÇÃéûÇÕÅAÅ~(-1)
+                       ,0             --UnitPrice
+                       ,0             --Amount
+                       ,@Program      --Program
                        
                        ,@Operator  
                        ,@SYSDATETIME
