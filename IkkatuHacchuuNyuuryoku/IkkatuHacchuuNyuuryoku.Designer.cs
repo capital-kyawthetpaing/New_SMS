@@ -375,6 +375,7 @@
             this.BtnSubF11 = new CKM_Controls.CKM_Button();
             this.ScJuchuuStaff = new Search.CKM_SearchControl();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
+            this.chkSaiHacchuu = new CKM_Controls.CKM_CheckBox();
             this.PanelHeader.SuspendLayout();
             this.Pnl_Body.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -401,6 +402,7 @@
             // btnChangeIkkatuHacchuuMode
             // 
             this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnChangeIkkatuHacchuuMode.Size = new System.Drawing.Size(149, 28);
             this.btnChangeIkkatuHacchuuMode.Click += new System.EventHandler(this.BtnChangeIkkatuHacchuuMode_Click);
             // 
             // label4
@@ -475,6 +477,7 @@
             this.txtShanaiBikou_0.AllowMinus = false;
             this.txtShanaiBikou_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShanaiBikou_0.BackColor = System.Drawing.Color.White;
+            this.txtShanaiBikou_0.BorderColor = false;
             this.txtShanaiBikou_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtShanaiBikou_0.ClientColor = System.Drawing.Color.White;
             this.txtShanaiBikou_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -500,6 +503,7 @@
             this.txtShanaiBikou_0.Tag = "0";
             this.txtShanaiBikou_0.Text = "社内備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.txtShanaiBikou_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtShanaiBikou_0.UseColorSizMode = false;
             // 
             // Pnl_Body
             // 
@@ -807,6 +811,7 @@
             this.txtHacchuuNO_5.AllowMinus = false;
             this.txtHacchuuNO_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuNO_5.BackColor = System.Drawing.Color.Silver;
+            this.txtHacchuuNO_5.BorderColor = false;
             this.txtHacchuuNO_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuNO_5.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuNO_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -833,12 +838,14 @@
             this.txtHacchuuNO_5.Tag = "0";
             this.txtHacchuuNO_5.Text = "XXXXXXXXX11";
             this.txtHacchuuNO_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuNO_5.UseColorSizMode = false;
             // 
             // txtNounyuusakiTELNO_5
             // 
             this.txtNounyuusakiTELNO_5.AllowMinus = false;
             this.txtNounyuusakiTELNO_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiTELNO_5.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiTELNO_5.BorderColor = false;
             this.txtNounyuusakiTELNO_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiTELNO_5.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiTELNO_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -864,6 +871,7 @@
             this.txtNounyuusakiTELNO_5.Tag = "4";
             this.txtNounyuusakiTELNO_5.Text = "納入先TELNO";
             this.txtNounyuusakiTELNO_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiTELNO_5.UseColorSizMode = false;
             this.txtNounyuusakiTELNO_5.Visible = false;
             // 
             // ckM_Label7
@@ -889,6 +897,7 @@
             this.txtNounyuusakiMailAddress_5.AllowMinus = false;
             this.txtNounyuusakiMailAddress_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiMailAddress_5.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiMailAddress_5.BorderColor = false;
             this.txtNounyuusakiMailAddress_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiMailAddress_5.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiMailAddress_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -914,6 +923,7 @@
             this.txtNounyuusakiMailAddress_5.Tag = "4";
             this.txtNounyuusakiMailAddress_5.Text = "納入先メールアドレス";
             this.txtNounyuusakiMailAddress_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiMailAddress_5.UseColorSizMode = false;
             this.txtNounyuusakiMailAddress_5.Visible = false;
             // 
             // lblHacchuugakuSum
@@ -934,6 +944,7 @@
             this.txtNounyuusakiJuusho2_5.AllowMinus = false;
             this.txtNounyuusakiJuusho2_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiJuusho2_5.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiJuusho2_5.BorderColor = false;
             this.txtNounyuusakiJuusho2_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiJuusho2_5.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiJuusho2_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -959,6 +970,7 @@
             this.txtNounyuusakiJuusho2_5.Tag = "4";
             this.txtNounyuusakiJuusho2_5.Text = "納入先住所2";
             this.txtNounyuusakiJuusho2_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiJuusho2_5.UseColorSizMode = false;
             this.txtNounyuusakiJuusho2_5.Visible = false;
             // 
             // txtNounyuusakiJuusho1_5
@@ -966,6 +978,7 @@
             this.txtNounyuusakiJuusho1_5.AllowMinus = false;
             this.txtNounyuusakiJuusho1_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiJuusho1_5.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiJuusho1_5.BorderColor = false;
             this.txtNounyuusakiJuusho1_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiJuusho1_5.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiJuusho1_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -991,6 +1004,7 @@
             this.txtNounyuusakiJuusho1_5.Tag = "4";
             this.txtNounyuusakiJuusho1_5.Text = "納入先住所1";
             this.txtNounyuusakiJuusho1_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiJuusho1_5.UseColorSizMode = false;
             this.txtNounyuusakiJuusho1_5.Visible = false;
             // 
             // txtIsYuukouTaishouFLG_5
@@ -998,6 +1012,7 @@
             this.txtIsYuukouTaishouFLG_5.AllowMinus = false;
             this.txtIsYuukouTaishouFLG_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtIsYuukouTaishouFLG_5.BackColor = System.Drawing.Color.Silver;
+            this.txtIsYuukouTaishouFLG_5.BorderColor = false;
             this.txtIsYuukouTaishouFLG_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIsYuukouTaishouFLG_5.ClientColor = System.Drawing.Color.White;
             this.txtIsYuukouTaishouFLG_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1023,6 +1038,7 @@
             this.txtIsYuukouTaishouFLG_5.Tag = "0";
             this.txtIsYuukouTaishouFLG_5.Text = "IsYuukouTaishouFLG";
             this.txtIsYuukouTaishouFLG_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtIsYuukouTaishouFLG_5.UseColorSizMode = false;
             this.txtIsYuukouTaishouFLG_5.Visible = false;
             // 
             // txtOrderRows_5
@@ -1030,6 +1046,7 @@
             this.txtOrderRows_5.AllowMinus = false;
             this.txtOrderRows_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtOrderRows_5.BackColor = System.Drawing.Color.Silver;
+            this.txtOrderRows_5.BorderColor = false;
             this.txtOrderRows_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOrderRows_5.ClientColor = System.Drawing.Color.White;
             this.txtOrderRows_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1055,6 +1072,7 @@
             this.txtOrderRows_5.Tag = "4";
             this.txtOrderRows_5.Text = "OrderRows";
             this.txtOrderRows_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtOrderRows_5.UseColorSizMode = false;
             this.txtOrderRows_5.Visible = false;
             // 
             // txtTaniCD_5
@@ -1062,6 +1080,7 @@
             this.txtTaniCD_5.AllowMinus = false;
             this.txtTaniCD_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTaniCD_5.BackColor = System.Drawing.Color.Silver;
+            this.txtTaniCD_5.BorderColor = false;
             this.txtTaniCD_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaniCD_5.ClientColor = System.Drawing.Color.White;
             this.txtTaniCD_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1087,6 +1106,7 @@
             this.txtTaniCD_5.Tag = "4";
             this.txtTaniCD_5.Text = "単位コード";
             this.txtTaniCD_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTaniCD_5.UseColorSizMode = false;
             this.txtTaniCD_5.Visible = false;
             // 
             // txtHacchuuShouhizeigaku_5
@@ -1094,6 +1114,7 @@
             this.txtHacchuuShouhizeigaku_5.AllowMinus = false;
             this.txtHacchuuShouhizeigaku_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuShouhizeigaku_5.BackColor = System.Drawing.Color.Silver;
+            this.txtHacchuuShouhizeigaku_5.BorderColor = false;
             this.txtHacchuuShouhizeigaku_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuShouhizeigaku_5.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuShouhizeigaku_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1119,6 +1140,7 @@
             this.txtHacchuuShouhizeigaku_5.Tag = "4";
             this.txtHacchuuShouhizeigaku_5.Text = "消費税額";
             this.txtHacchuuShouhizeigaku_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuShouhizeigaku_5.UseColorSizMode = false;
             this.txtHacchuuShouhizeigaku_5.Visible = false;
             // 
             // txtKakeritu_5
@@ -1126,6 +1148,7 @@
             this.txtKakeritu_5.AllowMinus = false;
             this.txtKakeritu_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKakeritu_5.BackColor = System.Drawing.Color.Silver;
+            this.txtKakeritu_5.BorderColor = false;
             this.txtKakeritu_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKakeritu_5.ClientColor = System.Drawing.Color.White;
             this.txtKakeritu_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1151,6 +1174,7 @@
             this.txtKakeritu_5.Tag = "4";
             this.txtKakeritu_5.Text = "掛率";
             this.txtKakeritu_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtKakeritu_5.UseColorSizMode = false;
             this.txtKakeritu_5.Visible = false;
             // 
             // txtTeika_5
@@ -1158,6 +1182,7 @@
             this.txtTeika_5.AllowMinus = false;
             this.txtTeika_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTeika_5.BackColor = System.Drawing.Color.Silver;
+            this.txtTeika_5.BorderColor = false;
             this.txtTeika_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTeika_5.ClientColor = System.Drawing.Color.White;
             this.txtTeika_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1183,6 +1208,7 @@
             this.txtTeika_5.Tag = "4";
             this.txtTeika_5.Text = "定価";
             this.txtTeika_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTeika_5.UseColorSizMode = false;
             this.txtTeika_5.Visible = false;
             // 
             // txtSKUName_5
@@ -1190,6 +1216,7 @@
             this.txtSKUName_5.AllowMinus = false;
             this.txtSKUName_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSKUName_5.BackColor = System.Drawing.Color.Silver;
+            this.txtSKUName_5.BorderColor = false;
             this.txtSKUName_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSKUName_5.ClientColor = System.Drawing.Color.White;
             this.txtSKUName_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1215,6 +1242,7 @@
             this.txtSKUName_5.Tag = "4";
             this.txtSKUName_5.Text = "SKUName";
             this.txtSKUName_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSKUName_5.UseColorSizMode = false;
             this.txtSKUName_5.Visible = false;
             // 
             // txtAdminNO_5
@@ -1222,6 +1250,7 @@
             this.txtAdminNO_5.AllowMinus = false;
             this.txtAdminNO_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtAdminNO_5.BackColor = System.Drawing.Color.Silver;
+            this.txtAdminNO_5.BorderColor = false;
             this.txtAdminNO_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAdminNO_5.ClientColor = System.Drawing.Color.White;
             this.txtAdminNO_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1247,6 +1276,7 @@
             this.txtAdminNO_5.Tag = "4";
             this.txtAdminNO_5.Text = "AdminNO";
             this.txtAdminNO_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtAdminNO_5.UseColorSizMode = false;
             this.txtAdminNO_5.Visible = false;
             // 
             // txtVariousFLG_5
@@ -1254,6 +1284,7 @@
             this.txtVariousFLG_5.AllowMinus = false;
             this.txtVariousFLG_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtVariousFLG_5.BackColor = System.Drawing.Color.Silver;
+            this.txtVariousFLG_5.BorderColor = false;
             this.txtVariousFLG_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVariousFLG_5.ClientColor = System.Drawing.Color.White;
             this.txtVariousFLG_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1279,6 +1310,7 @@
             this.txtVariousFLG_5.Tag = "4";
             this.txtVariousFLG_5.Text = "VariousFLG";
             this.txtVariousFLG_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtVariousFLG_5.UseColorSizMode = false;
             this.txtVariousFLG_5.Visible = false;
             // 
             // txtJuchuuRows_5
@@ -1286,6 +1318,7 @@
             this.txtJuchuuRows_5.AllowMinus = false;
             this.txtJuchuuRows_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtJuchuuRows_5.BackColor = System.Drawing.Color.Silver;
+            this.txtJuchuuRows_5.BorderColor = false;
             this.txtJuchuuRows_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJuchuuRows_5.ClientColor = System.Drawing.Color.White;
             this.txtJuchuuRows_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1311,6 +1344,7 @@
             this.txtJuchuuRows_5.Tag = "4";
             this.txtJuchuuRows_5.Text = "受注明細連番";
             this.txtJuchuuRows_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtJuchuuRows_5.UseColorSizMode = false;
             this.txtJuchuuRows_5.Visible = false;
             // 
             // txtNounyuusakiYuubinNO2_5
@@ -1318,6 +1352,7 @@
             this.txtNounyuusakiYuubinNO2_5.AllowMinus = false;
             this.txtNounyuusakiYuubinNO2_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiYuubinNO2_5.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiYuubinNO2_5.BorderColor = false;
             this.txtNounyuusakiYuubinNO2_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiYuubinNO2_5.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiYuubinNO2_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1343,6 +1378,7 @@
             this.txtNounyuusakiYuubinNO2_5.Tag = "4";
             this.txtNounyuusakiYuubinNO2_5.Text = "納入先郵便NO2";
             this.txtNounyuusakiYuubinNO2_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiYuubinNO2_5.UseColorSizMode = false;
             this.txtNounyuusakiYuubinNO2_5.Visible = false;
             // 
             // txtNounyuusakiYuubinNO1_5
@@ -1350,6 +1386,7 @@
             this.txtNounyuusakiYuubinNO1_5.AllowMinus = false;
             this.txtNounyuusakiYuubinNO1_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiYuubinNO1_5.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiYuubinNO1_5.BorderColor = false;
             this.txtNounyuusakiYuubinNO1_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiYuubinNO1_5.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiYuubinNO1_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1375,6 +1412,7 @@
             this.txtNounyuusakiYuubinNO1_5.Tag = "4";
             this.txtNounyuusakiYuubinNO1_5.Text = "納入先郵便NO1";
             this.txtNounyuusakiYuubinNO1_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiYuubinNO1_5.UseColorSizMode = false;
             this.txtNounyuusakiYuubinNO1_5.Visible = false;
             // 
             // txtTaxRate_5
@@ -1382,6 +1420,7 @@
             this.txtTaxRate_5.AllowMinus = false;
             this.txtTaxRate_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTaxRate_5.BackColor = System.Drawing.Color.Silver;
+            this.txtTaxRate_5.BorderColor = false;
             this.txtTaxRate_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaxRate_5.ClientColor = System.Drawing.Color.White;
             this.txtTaxRate_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1407,6 +1446,7 @@
             this.txtTaxRate_5.Tag = "4";
             this.txtTaxRate_5.Text = "消費税率";
             this.txtTaxRate_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTaxRate_5.UseColorSizMode = false;
             this.txtTaxRate_5.Visible = false;
             // 
             // txtSoukoCD_5
@@ -1414,6 +1454,7 @@
             this.txtSoukoCD_5.AllowMinus = false;
             this.txtSoukoCD_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSoukoCD_5.BackColor = System.Drawing.Color.Silver;
+            this.txtSoukoCD_5.BorderColor = false;
             this.txtSoukoCD_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSoukoCD_5.ClientColor = System.Drawing.Color.White;
             this.txtSoukoCD_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1439,6 +1480,7 @@
             this.txtSoukoCD_5.Tag = "4";
             this.txtSoukoCD_5.Text = "倉庫コード";
             this.txtSoukoCD_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSoukoCD_5.UseColorSizMode = false;
             this.txtSoukoCD_5.Visible = false;
             // 
             // txtNounyuusakiFAXNO_5
@@ -1446,6 +1488,7 @@
             this.txtNounyuusakiFAXNO_5.AllowMinus = false;
             this.txtNounyuusakiFAXNO_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiFAXNO_5.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiFAXNO_5.BorderColor = false;
             this.txtNounyuusakiFAXNO_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiFAXNO_5.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiFAXNO_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1471,6 +1514,7 @@
             this.txtNounyuusakiFAXNO_5.Tag = "4";
             this.txtNounyuusakiFAXNO_5.Text = "納入先FAXNO";
             this.txtNounyuusakiFAXNO_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiFAXNO_5.UseColorSizMode = false;
             this.txtNounyuusakiFAXNO_5.Visible = false;
             // 
             // txtNounyuusakiTELNO_4
@@ -1478,6 +1522,7 @@
             this.txtNounyuusakiTELNO_4.AllowMinus = false;
             this.txtNounyuusakiTELNO_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiTELNO_4.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiTELNO_4.BorderColor = false;
             this.txtNounyuusakiTELNO_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiTELNO_4.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiTELNO_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1503,6 +1548,7 @@
             this.txtNounyuusakiTELNO_4.Tag = "4";
             this.txtNounyuusakiTELNO_4.Text = "納入先TELNO";
             this.txtNounyuusakiTELNO_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiTELNO_4.UseColorSizMode = false;
             this.txtNounyuusakiTELNO_4.Visible = false;
             // 
             // txtNounyuusakiMailAddress_4
@@ -1510,6 +1556,7 @@
             this.txtNounyuusakiMailAddress_4.AllowMinus = false;
             this.txtNounyuusakiMailAddress_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiMailAddress_4.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiMailAddress_4.BorderColor = false;
             this.txtNounyuusakiMailAddress_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiMailAddress_4.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiMailAddress_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1535,6 +1582,7 @@
             this.txtNounyuusakiMailAddress_4.Tag = "4";
             this.txtNounyuusakiMailAddress_4.Text = "納入先メールアドレス";
             this.txtNounyuusakiMailAddress_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiMailAddress_4.UseColorSizMode = false;
             this.txtNounyuusakiMailAddress_4.Visible = false;
             // 
             // txtNounyuusakiJuusho2_4
@@ -1542,6 +1590,7 @@
             this.txtNounyuusakiJuusho2_4.AllowMinus = false;
             this.txtNounyuusakiJuusho2_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiJuusho2_4.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiJuusho2_4.BorderColor = false;
             this.txtNounyuusakiJuusho2_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiJuusho2_4.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiJuusho2_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1567,6 +1616,7 @@
             this.txtNounyuusakiJuusho2_4.Tag = "4";
             this.txtNounyuusakiJuusho2_4.Text = "納入先住所2";
             this.txtNounyuusakiJuusho2_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiJuusho2_4.UseColorSizMode = false;
             this.txtNounyuusakiJuusho2_4.Visible = false;
             // 
             // txtNounyuusakiJuusho1_4
@@ -1574,6 +1624,7 @@
             this.txtNounyuusakiJuusho1_4.AllowMinus = false;
             this.txtNounyuusakiJuusho1_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiJuusho1_4.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiJuusho1_4.BorderColor = false;
             this.txtNounyuusakiJuusho1_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiJuusho1_4.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiJuusho1_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1599,6 +1650,7 @@
             this.txtNounyuusakiJuusho1_4.Tag = "4";
             this.txtNounyuusakiJuusho1_4.Text = "納入先住所1";
             this.txtNounyuusakiJuusho1_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiJuusho1_4.UseColorSizMode = false;
             this.txtNounyuusakiJuusho1_4.Visible = false;
             // 
             // txtNounyuusakiTELNO_3
@@ -1606,6 +1658,7 @@
             this.txtNounyuusakiTELNO_3.AllowMinus = false;
             this.txtNounyuusakiTELNO_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiTELNO_3.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiTELNO_3.BorderColor = false;
             this.txtNounyuusakiTELNO_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiTELNO_3.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiTELNO_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1631,6 +1684,7 @@
             this.txtNounyuusakiTELNO_3.Tag = "3";
             this.txtNounyuusakiTELNO_3.Text = "納入先TELNO";
             this.txtNounyuusakiTELNO_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiTELNO_3.UseColorSizMode = false;
             this.txtNounyuusakiTELNO_3.Visible = false;
             // 
             // txtNounyuusakiMailAddress_3
@@ -1638,6 +1692,7 @@
             this.txtNounyuusakiMailAddress_3.AllowMinus = false;
             this.txtNounyuusakiMailAddress_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiMailAddress_3.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiMailAddress_3.BorderColor = false;
             this.txtNounyuusakiMailAddress_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiMailAddress_3.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiMailAddress_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1663,6 +1718,7 @@
             this.txtNounyuusakiMailAddress_3.Tag = "3";
             this.txtNounyuusakiMailAddress_3.Text = "納入先メールアドレス";
             this.txtNounyuusakiMailAddress_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiMailAddress_3.UseColorSizMode = false;
             this.txtNounyuusakiMailAddress_3.Visible = false;
             // 
             // txtNounyuusakiJuusho2_3
@@ -1670,6 +1726,7 @@
             this.txtNounyuusakiJuusho2_3.AllowMinus = false;
             this.txtNounyuusakiJuusho2_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiJuusho2_3.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiJuusho2_3.BorderColor = false;
             this.txtNounyuusakiJuusho2_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiJuusho2_3.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiJuusho2_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1695,6 +1752,7 @@
             this.txtNounyuusakiJuusho2_3.Tag = "3";
             this.txtNounyuusakiJuusho2_3.Text = "納入先住所2";
             this.txtNounyuusakiJuusho2_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiJuusho2_3.UseColorSizMode = false;
             this.txtNounyuusakiJuusho2_3.Visible = false;
             // 
             // txtNounyuusakiJuusho1_3
@@ -1702,6 +1760,7 @@
             this.txtNounyuusakiJuusho1_3.AllowMinus = false;
             this.txtNounyuusakiJuusho1_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiJuusho1_3.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiJuusho1_3.BorderColor = false;
             this.txtNounyuusakiJuusho1_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiJuusho1_3.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiJuusho1_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1727,6 +1786,7 @@
             this.txtNounyuusakiJuusho1_3.Tag = "3";
             this.txtNounyuusakiJuusho1_3.Text = "納入先住所1";
             this.txtNounyuusakiJuusho1_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiJuusho1_3.UseColorSizMode = false;
             this.txtNounyuusakiJuusho1_3.Visible = false;
             // 
             // txtNounyuusakiTELNO_2
@@ -1734,6 +1794,7 @@
             this.txtNounyuusakiTELNO_2.AllowMinus = false;
             this.txtNounyuusakiTELNO_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiTELNO_2.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiTELNO_2.BorderColor = false;
             this.txtNounyuusakiTELNO_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiTELNO_2.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiTELNO_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1759,6 +1820,7 @@
             this.txtNounyuusakiTELNO_2.Tag = "5";
             this.txtNounyuusakiTELNO_2.Text = "納入先TELNO";
             this.txtNounyuusakiTELNO_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiTELNO_2.UseColorSizMode = false;
             this.txtNounyuusakiTELNO_2.Visible = false;
             // 
             // txtNounyuusakiMailAddress_2
@@ -1766,6 +1828,7 @@
             this.txtNounyuusakiMailAddress_2.AllowMinus = false;
             this.txtNounyuusakiMailAddress_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiMailAddress_2.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiMailAddress_2.BorderColor = false;
             this.txtNounyuusakiMailAddress_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiMailAddress_2.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiMailAddress_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1791,6 +1854,7 @@
             this.txtNounyuusakiMailAddress_2.Tag = "2";
             this.txtNounyuusakiMailAddress_2.Text = "納入先メールアドレス";
             this.txtNounyuusakiMailAddress_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiMailAddress_2.UseColorSizMode = false;
             this.txtNounyuusakiMailAddress_2.Visible = false;
             // 
             // txtNounyuusakiJuusho2_2
@@ -1798,6 +1862,7 @@
             this.txtNounyuusakiJuusho2_2.AllowMinus = false;
             this.txtNounyuusakiJuusho2_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiJuusho2_2.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiJuusho2_2.BorderColor = false;
             this.txtNounyuusakiJuusho2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiJuusho2_2.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiJuusho2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1823,6 +1888,7 @@
             this.txtNounyuusakiJuusho2_2.Tag = "2";
             this.txtNounyuusakiJuusho2_2.Text = "納入先住所2";
             this.txtNounyuusakiJuusho2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiJuusho2_2.UseColorSizMode = false;
             this.txtNounyuusakiJuusho2_2.Visible = false;
             // 
             // txtNounyuusakiJuusho1_2
@@ -1830,6 +1896,7 @@
             this.txtNounyuusakiJuusho1_2.AllowMinus = false;
             this.txtNounyuusakiJuusho1_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiJuusho1_2.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiJuusho1_2.BorderColor = false;
             this.txtNounyuusakiJuusho1_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiJuusho1_2.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiJuusho1_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1855,6 +1922,7 @@
             this.txtNounyuusakiJuusho1_2.Tag = "2";
             this.txtNounyuusakiJuusho1_2.Text = "納入先住所1";
             this.txtNounyuusakiJuusho1_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiJuusho1_2.UseColorSizMode = false;
             this.txtNounyuusakiJuusho1_2.Visible = false;
             // 
             // txtNounyuusakiMailAddress_1
@@ -1862,6 +1930,7 @@
             this.txtNounyuusakiMailAddress_1.AllowMinus = false;
             this.txtNounyuusakiMailAddress_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiMailAddress_1.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiMailAddress_1.BorderColor = false;
             this.txtNounyuusakiMailAddress_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiMailAddress_1.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiMailAddress_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1887,6 +1956,7 @@
             this.txtNounyuusakiMailAddress_1.Tag = "1";
             this.txtNounyuusakiMailAddress_1.Text = "納入先メールアドレス";
             this.txtNounyuusakiMailAddress_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiMailAddress_1.UseColorSizMode = false;
             this.txtNounyuusakiMailAddress_1.Visible = false;
             // 
             // txtNounyuusakiJuusho2_1
@@ -1894,6 +1964,7 @@
             this.txtNounyuusakiJuusho2_1.AllowMinus = false;
             this.txtNounyuusakiJuusho2_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiJuusho2_1.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiJuusho2_1.BorderColor = false;
             this.txtNounyuusakiJuusho2_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiJuusho2_1.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiJuusho2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1919,6 +1990,7 @@
             this.txtNounyuusakiJuusho2_1.Tag = "1";
             this.txtNounyuusakiJuusho2_1.Text = "納入先住所2";
             this.txtNounyuusakiJuusho2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiJuusho2_1.UseColorSizMode = false;
             this.txtNounyuusakiJuusho2_1.Visible = false;
             // 
             // txtNounyuusakiJuusho1_1
@@ -1926,6 +1998,7 @@
             this.txtNounyuusakiJuusho1_1.AllowMinus = false;
             this.txtNounyuusakiJuusho1_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiJuusho1_1.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiJuusho1_1.BorderColor = false;
             this.txtNounyuusakiJuusho1_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiJuusho1_1.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiJuusho1_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1951,6 +2024,7 @@
             this.txtNounyuusakiJuusho1_1.Tag = "1";
             this.txtNounyuusakiJuusho1_1.Text = "納入先住所1";
             this.txtNounyuusakiJuusho1_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiJuusho1_1.UseColorSizMode = false;
             this.txtNounyuusakiJuusho1_1.Visible = false;
             // 
             // txtNounyuusakiMailAddress_0
@@ -1958,6 +2032,7 @@
             this.txtNounyuusakiMailAddress_0.AllowMinus = false;
             this.txtNounyuusakiMailAddress_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiMailAddress_0.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiMailAddress_0.BorderColor = false;
             this.txtNounyuusakiMailAddress_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiMailAddress_0.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiMailAddress_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -1983,6 +2058,7 @@
             this.txtNounyuusakiMailAddress_0.Tag = "0";
             this.txtNounyuusakiMailAddress_0.Text = "納入先メールアドレス";
             this.txtNounyuusakiMailAddress_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiMailAddress_0.UseColorSizMode = false;
             this.txtNounyuusakiMailAddress_0.Visible = false;
             // 
             // txtNounyuusakiJuusho2_0
@@ -1990,6 +2066,7 @@
             this.txtNounyuusakiJuusho2_0.AllowMinus = false;
             this.txtNounyuusakiJuusho2_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiJuusho2_0.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiJuusho2_0.BorderColor = false;
             this.txtNounyuusakiJuusho2_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiJuusho2_0.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiJuusho2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2015,6 +2092,7 @@
             this.txtNounyuusakiJuusho2_0.Tag = "0";
             this.txtNounyuusakiJuusho2_0.Text = "納入先住所2";
             this.txtNounyuusakiJuusho2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiJuusho2_0.UseColorSizMode = false;
             this.txtNounyuusakiJuusho2_0.Visible = false;
             // 
             // txtNounyuusakiJuusho1_0
@@ -2022,6 +2100,7 @@
             this.txtNounyuusakiJuusho1_0.AllowMinus = false;
             this.txtNounyuusakiJuusho1_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiJuusho1_0.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiJuusho1_0.BorderColor = false;
             this.txtNounyuusakiJuusho1_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiJuusho1_0.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiJuusho1_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2047,6 +2126,7 @@
             this.txtNounyuusakiJuusho1_0.Tag = "0";
             this.txtNounyuusakiJuusho1_0.Text = "納入先住所1";
             this.txtNounyuusakiJuusho1_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiJuusho1_0.UseColorSizMode = false;
             this.txtNounyuusakiJuusho1_0.Visible = false;
             // 
             // label44
@@ -2264,6 +2344,7 @@
             this.txtShanaiBikou_3.AllowMinus = false;
             this.txtShanaiBikou_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShanaiBikou_3.BackColor = System.Drawing.Color.White;
+            this.txtShanaiBikou_3.BorderColor = false;
             this.txtShanaiBikou_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtShanaiBikou_3.ClientColor = System.Drawing.Color.White;
             this.txtShanaiBikou_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -2289,12 +2370,14 @@
             this.txtShanaiBikou_3.Tag = "3";
             this.txtShanaiBikou_3.Text = "社内備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.txtShanaiBikou_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtShanaiBikou_3.UseColorSizMode = false;
             // 
             // txtShanaiBikou_2
             // 
             this.txtShanaiBikou_2.AllowMinus = false;
             this.txtShanaiBikou_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShanaiBikou_2.BackColor = System.Drawing.Color.White;
+            this.txtShanaiBikou_2.BorderColor = false;
             this.txtShanaiBikou_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtShanaiBikou_2.ClientColor = System.Drawing.Color.White;
             this.txtShanaiBikou_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -2320,12 +2403,14 @@
             this.txtShanaiBikou_2.Tag = "2";
             this.txtShanaiBikou_2.Text = "社内備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.txtShanaiBikou_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtShanaiBikou_2.UseColorSizMode = false;
             // 
             // txtKibouNouki_0
             // 
             this.txtKibouNouki_0.AllowMinus = false;
             this.txtKibouNouki_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKibouNouki_0.BackColor = System.Drawing.Color.White;
+            this.txtKibouNouki_0.BorderColor = false;
             this.txtKibouNouki_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKibouNouki_0.ClientColor = System.Drawing.Color.White;
             this.txtKibouNouki_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2352,12 +2437,14 @@
             this.txtKibouNouki_0.Text = "yyyy/MM/dd";
             this.txtKibouNouki_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtKibouNouki_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtKibouNouki_0.UseColorSizMode = false;
             // 
             // txtMakerShouhinCD_0
             // 
             this.txtMakerShouhinCD_0.AllowMinus = false;
             this.txtMakerShouhinCD_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtMakerShouhinCD_0.BackColor = System.Drawing.Color.Silver;
+            this.txtMakerShouhinCD_0.BorderColor = false;
             this.txtMakerShouhinCD_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMakerShouhinCD_0.ClientColor = System.Drawing.Color.White;
             this.txtMakerShouhinCD_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2383,12 +2470,14 @@
             this.txtMakerShouhinCD_0.Tag = "0";
             this.txtMakerShouhinCD_0.Text = "XXXXXXXXX1XXXXXXXXX2XXX4";
             this.txtMakerShouhinCD_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtMakerShouhinCD_0.UseColorSizMode = false;
             // 
             // txtKibouNouki_3
             // 
             this.txtKibouNouki_3.AllowMinus = false;
             this.txtKibouNouki_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKibouNouki_3.BackColor = System.Drawing.Color.White;
+            this.txtKibouNouki_3.BorderColor = false;
             this.txtKibouNouki_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKibouNouki_3.ClientColor = System.Drawing.Color.White;
             this.txtKibouNouki_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2415,12 +2504,14 @@
             this.txtKibouNouki_3.Text = "yyyy/MM/dd";
             this.txtKibouNouki_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtKibouNouki_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtKibouNouki_3.UseColorSizMode = false;
             // 
             // txtMakerShouhinCD_3
             // 
             this.txtMakerShouhinCD_3.AllowMinus = false;
             this.txtMakerShouhinCD_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtMakerShouhinCD_3.BackColor = System.Drawing.Color.Silver;
+            this.txtMakerShouhinCD_3.BorderColor = false;
             this.txtMakerShouhinCD_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMakerShouhinCD_3.ClientColor = System.Drawing.Color.White;
             this.txtMakerShouhinCD_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2446,12 +2537,14 @@
             this.txtMakerShouhinCD_3.Tag = "0";
             this.txtMakerShouhinCD_3.Text = "XXXXXXXXX1XXXXXXXXX2XXX4";
             this.txtMakerShouhinCD_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtMakerShouhinCD_3.UseColorSizMode = false;
             // 
             // txtKibouNouki_2
             // 
             this.txtKibouNouki_2.AllowMinus = false;
             this.txtKibouNouki_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKibouNouki_2.BackColor = System.Drawing.Color.White;
+            this.txtKibouNouki_2.BorderColor = false;
             this.txtKibouNouki_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKibouNouki_2.ClientColor = System.Drawing.Color.White;
             this.txtKibouNouki_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2478,12 +2571,14 @@
             this.txtKibouNouki_2.Text = "yyyy/MM/dd";
             this.txtKibouNouki_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtKibouNouki_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtKibouNouki_2.UseColorSizMode = false;
             // 
             // txtMakerShouhinCD_2
             // 
             this.txtMakerShouhinCD_2.AllowMinus = false;
             this.txtMakerShouhinCD_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtMakerShouhinCD_2.BackColor = System.Drawing.Color.Silver;
+            this.txtMakerShouhinCD_2.BorderColor = false;
             this.txtMakerShouhinCD_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMakerShouhinCD_2.ClientColor = System.Drawing.Color.White;
             this.txtMakerShouhinCD_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2509,12 +2604,14 @@
             this.txtMakerShouhinCD_2.Tag = "0";
             this.txtMakerShouhinCD_2.Text = "XXXXXXXXX1XXXXXXXXX2XXX4";
             this.txtMakerShouhinCD_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtMakerShouhinCD_2.UseColorSizMode = false;
             // 
             // txtShanaiBikou_1
             // 
             this.txtShanaiBikou_1.AllowMinus = false;
             this.txtShanaiBikou_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShanaiBikou_1.BackColor = System.Drawing.Color.White;
+            this.txtShanaiBikou_1.BorderColor = false;
             this.txtShanaiBikou_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtShanaiBikou_1.ClientColor = System.Drawing.Color.White;
             this.txtShanaiBikou_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -2540,12 +2637,14 @@
             this.txtShanaiBikou_1.Tag = "1";
             this.txtShanaiBikou_1.Text = "社内備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.txtShanaiBikou_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtShanaiBikou_1.UseColorSizMode = false;
             // 
             // txtMakerShouhinCD_1
             // 
             this.txtMakerShouhinCD_1.AllowMinus = false;
             this.txtMakerShouhinCD_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtMakerShouhinCD_1.BackColor = System.Drawing.Color.Silver;
+            this.txtMakerShouhinCD_1.BorderColor = false;
             this.txtMakerShouhinCD_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMakerShouhinCD_1.ClientColor = System.Drawing.Color.White;
             this.txtMakerShouhinCD_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2571,12 +2670,14 @@
             this.txtMakerShouhinCD_1.Tag = "0";
             this.txtMakerShouhinCD_1.Text = "XXXXXXXXX1XXXXXXXXX2XXX4";
             this.txtMakerShouhinCD_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtMakerShouhinCD_1.UseColorSizMode = false;
             // 
             // txtKibouNouki_1
             // 
             this.txtKibouNouki_1.AllowMinus = false;
             this.txtKibouNouki_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKibouNouki_1.BackColor = System.Drawing.Color.White;
+            this.txtKibouNouki_1.BorderColor = false;
             this.txtKibouNouki_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKibouNouki_1.ClientColor = System.Drawing.Color.White;
             this.txtKibouNouki_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2603,12 +2704,14 @@
             this.txtKibouNouki_1.Text = "yyyy/MM/dd";
             this.txtKibouNouki_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtKibouNouki_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtKibouNouki_1.UseColorSizMode = false;
             // 
             // txtKibouNouki_4
             // 
             this.txtKibouNouki_4.AllowMinus = false;
             this.txtKibouNouki_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKibouNouki_4.BackColor = System.Drawing.Color.White;
+            this.txtKibouNouki_4.BorderColor = false;
             this.txtKibouNouki_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKibouNouki_4.ClientColor = System.Drawing.Color.White;
             this.txtKibouNouki_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2635,12 +2738,14 @@
             this.txtKibouNouki_4.Text = "yyyy/MM/dd";
             this.txtKibouNouki_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtKibouNouki_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtKibouNouki_4.UseColorSizMode = false;
             // 
             // txtHacchuuChuuiZikou_4
             // 
             this.txtHacchuuChuuiZikou_4.AllowMinus = false;
             this.txtHacchuuChuuiZikou_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuChuuiZikou_4.BackColor = System.Drawing.Color.Silver;
+            this.txtHacchuuChuuiZikou_4.BorderColor = false;
             this.txtHacchuuChuuiZikou_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuChuuiZikou_4.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuChuuiZikou_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2666,12 +2771,14 @@
             this.txtHacchuuChuuiZikou_4.Tag = "1";
             this.txtHacchuuChuuiZikou_4.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3";
             this.txtHacchuuChuuiZikou_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuChuuiZikou_4.UseColorSizMode = false;
             // 
             // txtShanaiBikou_4
             // 
             this.txtShanaiBikou_4.AllowMinus = false;
             this.txtShanaiBikou_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShanaiBikou_4.BackColor = System.Drawing.Color.White;
+            this.txtShanaiBikou_4.BorderColor = false;
             this.txtShanaiBikou_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtShanaiBikou_4.ClientColor = System.Drawing.Color.White;
             this.txtShanaiBikou_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -2697,12 +2804,14 @@
             this.txtShanaiBikou_4.Tag = "4";
             this.txtShanaiBikou_4.Text = "社内備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.txtShanaiBikou_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtShanaiBikou_4.UseColorSizMode = false;
             // 
             // txtMakerShouhinCD_4
             // 
             this.txtMakerShouhinCD_4.AllowMinus = false;
             this.txtMakerShouhinCD_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtMakerShouhinCD_4.BackColor = System.Drawing.Color.Silver;
+            this.txtMakerShouhinCD_4.BorderColor = false;
             this.txtMakerShouhinCD_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMakerShouhinCD_4.ClientColor = System.Drawing.Color.White;
             this.txtMakerShouhinCD_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2728,12 +2837,14 @@
             this.txtMakerShouhinCD_4.Tag = "0";
             this.txtMakerShouhinCD_4.Text = "XXXXXXXXX1XXXXXXXXX2XXX4";
             this.txtMakerShouhinCD_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtMakerShouhinCD_4.UseColorSizMode = false;
             // 
             // txtTaniName_4
             // 
             this.txtTaniName_4.AllowMinus = false;
             this.txtTaniName_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTaniName_4.BackColor = System.Drawing.Color.Silver;
+            this.txtTaniName_4.BorderColor = false;
             this.txtTaniName_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaniName_4.ClientColor = System.Drawing.Color.White;
             this.txtTaniName_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2759,12 +2870,14 @@
             this.txtTaniName_4.Tag = "1";
             this.txtTaniName_4.Text = "XXXXXX";
             this.txtTaniName_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTaniName_4.UseColorSizMode = false;
             // 
             // txtHacchuugaku_4
             // 
             this.txtHacchuugaku_4.AllowMinus = false;
             this.txtHacchuugaku_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuugaku_4.BackColor = System.Drawing.Color.White;
+            this.txtHacchuugaku_4.BorderColor = false;
             this.txtHacchuugaku_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuugaku_4.ClientColor = System.Drawing.Color.White;
             this.txtHacchuugaku_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2791,12 +2904,14 @@
             this.txtHacchuugaku_4.Text = "-999,999,999";
             this.txtHacchuugaku_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHacchuugaku_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuugaku_4.UseColorSizMode = false;
             // 
             // txtHacchuuTanka_4
             // 
             this.txtHacchuuTanka_4.AllowMinus = false;
             this.txtHacchuuTanka_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuTanka_4.BackColor = System.Drawing.Color.White;
+            this.txtHacchuuTanka_4.BorderColor = false;
             this.txtHacchuuTanka_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuTanka_4.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuTanka_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2823,12 +2938,14 @@
             this.txtHacchuuTanka_4.Text = "-999,999,999";
             this.txtHacchuuTanka_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHacchuuTanka_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuTanka_4.UseColorSizMode = false;
             // 
             // txtHacchuuSuu_4
             // 
             this.txtHacchuuSuu_4.AllowMinus = false;
             this.txtHacchuuSuu_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuSuu_4.BackColor = System.Drawing.Color.White;
+            this.txtHacchuuSuu_4.BorderColor = false;
             this.txtHacchuuSuu_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuSuu_4.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuSuu_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2855,12 +2972,14 @@
             this.txtHacchuuSuu_4.Text = "99,999";
             this.txtHacchuuSuu_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHacchuuSuu_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuSuu_4.UseColorSizMode = false;
             // 
             // txtColorName_4
             // 
             this.txtColorName_4.AllowMinus = false;
             this.txtColorName_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtColorName_4.BackColor = System.Drawing.Color.Silver;
+            this.txtColorName_4.BorderColor = false;
             this.txtColorName_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtColorName_4.ClientColor = System.Drawing.Color.White;
             this.txtColorName_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2886,12 +3005,14 @@
             this.txtColorName_4.Tag = "1";
             this.txtColorName_4.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtColorName_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtColorName_4.UseColorSizMode = false;
             // 
             // txtSizeName_4
             // 
             this.txtSizeName_4.AllowMinus = false;
             this.txtSizeName_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSizeName_4.BackColor = System.Drawing.Color.Silver;
+            this.txtSizeName_4.BorderColor = false;
             this.txtSizeName_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSizeName_4.ClientColor = System.Drawing.Color.White;
             this.txtSizeName_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2917,12 +3038,14 @@
             this.txtSizeName_4.Tag = "1";
             this.txtSizeName_4.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtSizeName_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSizeName_4.UseColorSizMode = false;
             // 
             // txtBrandName_4
             // 
             this.txtBrandName_4.AllowMinus = false;
             this.txtBrandName_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtBrandName_4.BackColor = System.Drawing.Color.Silver;
+            this.txtBrandName_4.BorderColor = false;
             this.txtBrandName_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBrandName_4.ClientColor = System.Drawing.Color.White;
             this.txtBrandName_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2948,12 +3071,14 @@
             this.txtBrandName_4.Tag = "1";
             this.txtBrandName_4.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3";
             this.txtBrandName_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtBrandName_4.UseColorSizMode = false;
             // 
             // txtShouhinName_4
             // 
             this.txtShouhinName_4.AllowMinus = false;
             this.txtShouhinName_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShouhinName_4.BackColor = System.Drawing.Color.Silver;
+            this.txtShouhinName_4.BorderColor = false;
             this.txtShouhinName_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtShouhinName_4.ClientColor = System.Drawing.Color.White;
             this.txtShouhinName_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -2979,12 +3104,14 @@
             this.txtShouhinName_4.Tag = "4";
             this.txtShouhinName_4.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3XXXXXXXXX4";
             this.txtShouhinName_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtShouhinName_4.UseColorSizMode = false;
             // 
             // txtJANCD_4
             // 
             this.txtJANCD_4.AllowMinus = false;
             this.txtJANCD_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtJANCD_4.BackColor = System.Drawing.Color.Silver;
+            this.txtJANCD_4.BorderColor = false;
             this.txtJANCD_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJANCD_4.ClientColor = System.Drawing.Color.White;
             this.txtJANCD_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3010,12 +3137,14 @@
             this.txtJANCD_4.Tag = "0";
             this.txtJANCD_4.Text = "XXXXXXXXX1XX3";
             this.txtJANCD_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtJANCD_4.UseColorSizMode = false;
             // 
             // txtSKUCD_4
             // 
             this.txtSKUCD_4.AllowMinus = false;
             this.txtSKUCD_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSKUCD_4.BackColor = System.Drawing.Color.Silver;
+            this.txtSKUCD_4.BorderColor = false;
             this.txtSKUCD_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSKUCD_4.ClientColor = System.Drawing.Color.White;
             this.txtSKUCD_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3041,12 +3170,14 @@
             this.txtSKUCD_4.Tag = "0";
             this.txtSKUCD_4.Text = "XXXXXXXXX1XXXXXXXXX2X2";
             this.txtSKUCD_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSKUCD_4.UseColorSizMode = false;
             // 
             // txtJuchuuNO_4
             // 
             this.txtJuchuuNO_4.AllowMinus = false;
             this.txtJuchuuNO_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtJuchuuNO_4.BackColor = System.Drawing.Color.Silver;
+            this.txtJuchuuNO_4.BorderColor = false;
             this.txtJuchuuNO_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJuchuuNO_4.ClientColor = System.Drawing.Color.White;
             this.txtJuchuuNO_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3073,12 +3204,14 @@
             this.txtJuchuuNO_4.Tag = "0";
             this.txtJuchuuNO_4.Text = "XXXXXXXXX11";
             this.txtJuchuuNO_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtJuchuuNO_4.UseColorSizMode = false;
             // 
             // txtNounyuusakiJuusho_4
             // 
             this.txtNounyuusakiJuusho_4.AllowMinus = false;
             this.txtNounyuusakiJuusho_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiJuusho_4.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiJuusho_4.BorderColor = false;
             this.txtNounyuusakiJuusho_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiJuusho_4.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiJuusho_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3104,12 +3237,14 @@
             this.txtNounyuusakiJuusho_4.Tag = "1";
             this.txtNounyuusakiJuusho_4.Text = "ＸＸＸＸＸＸＸＸＸ１ＸＸＸＸＸＸＸＸＸ２ＸＸＸＸＸＸＸＸＸ３ＸＸＸＸＸＸＸＸＸ４";
             this.txtNounyuusakiJuusho_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiJuusho_4.UseColorSizMode = false;
             // 
             // txtNounyuusakiName_4
             // 
             this.txtNounyuusakiName_4.AllowMinus = false;
             this.txtNounyuusakiName_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiName_4.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiName_4.BorderColor = false;
             this.txtNounyuusakiName_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiName_4.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiName_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3135,12 +3270,14 @@
             this.txtNounyuusakiName_4.Tag = "1";
             this.txtNounyuusakiName_4.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtNounyuusakiName_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiName_4.UseColorSizMode = false;
             // 
             // txtNetFLG_4
             // 
             this.txtNetFLG_4.AllowMinus = false;
             this.txtNetFLG_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNetFLG_4.BackColor = System.Drawing.Color.Silver;
+            this.txtNetFLG_4.BorderColor = false;
             this.txtNetFLG_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNetFLG_4.ClientColor = System.Drawing.Color.White;
             this.txtNetFLG_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -3167,12 +3304,14 @@
             this.txtNetFLG_4.Text = "×";
             this.txtNetFLG_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNetFLG_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNetFLG_4.UseColorSizMode = false;
             // 
             // txtChokusouFLG_4
             // 
             this.txtChokusouFLG_4.AllowMinus = false;
             this.txtChokusouFLG_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtChokusouFLG_4.BackColor = System.Drawing.Color.Silver;
+            this.txtChokusouFLG_4.BorderColor = false;
             this.txtChokusouFLG_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtChokusouFLG_4.ClientColor = System.Drawing.Color.White;
             this.txtChokusouFLG_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -3199,12 +3338,14 @@
             this.txtChokusouFLG_4.Text = "〇";
             this.txtChokusouFLG_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChokusouFLG_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtChokusouFLG_4.UseColorSizMode = false;
             // 
             // txtSiiresakiName_4
             // 
             this.txtSiiresakiName_4.AllowMinus = false;
             this.txtSiiresakiName_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSiiresakiName_4.BackColor = System.Drawing.Color.Silver;
+            this.txtSiiresakiName_4.BorderColor = false;
             this.txtSiiresakiName_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSiiresakiName_4.ClientColor = System.Drawing.Color.White;
             this.txtSiiresakiName_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3230,12 +3371,14 @@
             this.txtSiiresakiName_4.Tag = "1";
             this.txtSiiresakiName_4.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtSiiresakiName_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSiiresakiName_4.UseColorSizMode = false;
             // 
             // txtHacchuuNO_4
             // 
             this.txtHacchuuNO_4.AllowMinus = false;
             this.txtHacchuuNO_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuNO_4.BackColor = System.Drawing.Color.Silver;
+            this.txtHacchuuNO_4.BorderColor = false;
             this.txtHacchuuNO_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuNO_4.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuNO_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3262,6 +3405,7 @@
             this.txtHacchuuNO_4.Tag = "0";
             this.txtHacchuuNO_4.Text = "XXXXXXXXX11";
             this.txtHacchuuNO_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuNO_4.UseColorSizMode = false;
             // 
             // scSiiresakiCD_4
             // 
@@ -3287,6 +3431,7 @@
             this.scSiiresakiCD_4.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.scSiiresakiCD_4.TabIndex = 609;
             this.scSiiresakiCD_4.Tag = "4";
+            this.scSiiresakiCD_4.test = null;
             this.scSiiresakiCD_4.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSiiresakiCD_4.UseChangeDate = false;
             this.scSiiresakiCD_4.Value1 = null;
@@ -3298,6 +3443,7 @@
             this.txtShagaiBikou_4.AllowMinus = false;
             this.txtShagaiBikou_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShagaiBikou_4.BackColor = System.Drawing.Color.White;
+            this.txtShagaiBikou_4.BorderColor = false;
             this.txtShagaiBikou_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtShagaiBikou_4.ClientColor = System.Drawing.Color.White;
             this.txtShagaiBikou_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -3323,6 +3469,7 @@
             this.txtShagaiBikou_4.Tag = "4";
             this.txtShagaiBikou_4.Text = "社外備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.txtShagaiBikou_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtShagaiBikou_4.UseColorSizMode = false;
             // 
             // chkEDIFLG_4
             // 
@@ -3342,6 +3489,7 @@
             this.txtHacchuuChuuiZikou_3.AllowMinus = false;
             this.txtHacchuuChuuiZikou_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuChuuiZikou_3.BackColor = System.Drawing.Color.Silver;
+            this.txtHacchuuChuuiZikou_3.BorderColor = false;
             this.txtHacchuuChuuiZikou_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuChuuiZikou_3.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuChuuiZikou_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3367,12 +3515,14 @@
             this.txtHacchuuChuuiZikou_3.Tag = "1";
             this.txtHacchuuChuuiZikou_3.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3";
             this.txtHacchuuChuuiZikou_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuChuuiZikou_3.UseColorSizMode = false;
             // 
             // txtTaniName_3
             // 
             this.txtTaniName_3.AllowMinus = false;
             this.txtTaniName_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTaniName_3.BackColor = System.Drawing.Color.Silver;
+            this.txtTaniName_3.BorderColor = false;
             this.txtTaniName_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaniName_3.ClientColor = System.Drawing.Color.White;
             this.txtTaniName_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3398,12 +3548,14 @@
             this.txtTaniName_3.Tag = "1";
             this.txtTaniName_3.Text = "XXXXXX";
             this.txtTaniName_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTaniName_3.UseColorSizMode = false;
             // 
             // txtHacchuugaku_3
             // 
             this.txtHacchuugaku_3.AllowMinus = false;
             this.txtHacchuugaku_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuugaku_3.BackColor = System.Drawing.Color.White;
+            this.txtHacchuugaku_3.BorderColor = false;
             this.txtHacchuugaku_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuugaku_3.ClientColor = System.Drawing.Color.White;
             this.txtHacchuugaku_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3430,12 +3582,14 @@
             this.txtHacchuugaku_3.Text = "-999,999,999";
             this.txtHacchuugaku_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHacchuugaku_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuugaku_3.UseColorSizMode = false;
             // 
             // txtHacchuuTanka_3
             // 
             this.txtHacchuuTanka_3.AllowMinus = false;
             this.txtHacchuuTanka_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuTanka_3.BackColor = System.Drawing.Color.White;
+            this.txtHacchuuTanka_3.BorderColor = false;
             this.txtHacchuuTanka_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuTanka_3.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuTanka_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3462,12 +3616,14 @@
             this.txtHacchuuTanka_3.Text = "-999,999,999";
             this.txtHacchuuTanka_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHacchuuTanka_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuTanka_3.UseColorSizMode = false;
             // 
             // txtHacchuuSuu_3
             // 
             this.txtHacchuuSuu_3.AllowMinus = false;
             this.txtHacchuuSuu_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuSuu_3.BackColor = System.Drawing.Color.White;
+            this.txtHacchuuSuu_3.BorderColor = false;
             this.txtHacchuuSuu_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuSuu_3.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuSuu_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3494,12 +3650,14 @@
             this.txtHacchuuSuu_3.Text = "99,999";
             this.txtHacchuuSuu_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHacchuuSuu_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuSuu_3.UseColorSizMode = false;
             // 
             // txtColorName_3
             // 
             this.txtColorName_3.AllowMinus = false;
             this.txtColorName_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtColorName_3.BackColor = System.Drawing.Color.Silver;
+            this.txtColorName_3.BorderColor = false;
             this.txtColorName_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtColorName_3.ClientColor = System.Drawing.Color.White;
             this.txtColorName_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3525,12 +3683,14 @@
             this.txtColorName_3.Tag = "1";
             this.txtColorName_3.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtColorName_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtColorName_3.UseColorSizMode = false;
             // 
             // txtSizeName_3
             // 
             this.txtSizeName_3.AllowMinus = false;
             this.txtSizeName_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSizeName_3.BackColor = System.Drawing.Color.Silver;
+            this.txtSizeName_3.BorderColor = false;
             this.txtSizeName_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSizeName_3.ClientColor = System.Drawing.Color.White;
             this.txtSizeName_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3556,12 +3716,14 @@
             this.txtSizeName_3.Tag = "1";
             this.txtSizeName_3.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtSizeName_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSizeName_3.UseColorSizMode = false;
             // 
             // txtBrandName_3
             // 
             this.txtBrandName_3.AllowMinus = false;
             this.txtBrandName_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtBrandName_3.BackColor = System.Drawing.Color.Silver;
+            this.txtBrandName_3.BorderColor = false;
             this.txtBrandName_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBrandName_3.ClientColor = System.Drawing.Color.White;
             this.txtBrandName_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3587,12 +3749,14 @@
             this.txtBrandName_3.Tag = "1";
             this.txtBrandName_3.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3";
             this.txtBrandName_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtBrandName_3.UseColorSizMode = false;
             // 
             // txtShouhinName_3
             // 
             this.txtShouhinName_3.AllowMinus = false;
             this.txtShouhinName_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShouhinName_3.BackColor = System.Drawing.Color.Silver;
+            this.txtShouhinName_3.BorderColor = false;
             this.txtShouhinName_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtShouhinName_3.ClientColor = System.Drawing.Color.White;
             this.txtShouhinName_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -3618,12 +3782,14 @@
             this.txtShouhinName_3.Tag = "3";
             this.txtShouhinName_3.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3XXXXXXXXX4";
             this.txtShouhinName_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtShouhinName_3.UseColorSizMode = false;
             // 
             // txtJANCD_3
             // 
             this.txtJANCD_3.AllowMinus = false;
             this.txtJANCD_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtJANCD_3.BackColor = System.Drawing.Color.Silver;
+            this.txtJANCD_3.BorderColor = false;
             this.txtJANCD_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJANCD_3.ClientColor = System.Drawing.Color.White;
             this.txtJANCD_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3649,12 +3815,14 @@
             this.txtJANCD_3.Tag = "0";
             this.txtJANCD_3.Text = "XXXXXXXXX1XX3";
             this.txtJANCD_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtJANCD_3.UseColorSizMode = false;
             // 
             // txtSKUCD_3
             // 
             this.txtSKUCD_3.AllowMinus = false;
             this.txtSKUCD_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSKUCD_3.BackColor = System.Drawing.Color.Silver;
+            this.txtSKUCD_3.BorderColor = false;
             this.txtSKUCD_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSKUCD_3.ClientColor = System.Drawing.Color.White;
             this.txtSKUCD_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3680,12 +3848,14 @@
             this.txtSKUCD_3.Tag = "0";
             this.txtSKUCD_3.Text = "XXXXXXXXX1XXXXXXXXX2X2";
             this.txtSKUCD_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSKUCD_3.UseColorSizMode = false;
             // 
             // txtJuchuuNO_3
             // 
             this.txtJuchuuNO_3.AllowMinus = false;
             this.txtJuchuuNO_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtJuchuuNO_3.BackColor = System.Drawing.Color.Silver;
+            this.txtJuchuuNO_3.BorderColor = false;
             this.txtJuchuuNO_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJuchuuNO_3.ClientColor = System.Drawing.Color.White;
             this.txtJuchuuNO_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3712,12 +3882,14 @@
             this.txtJuchuuNO_3.Tag = "0";
             this.txtJuchuuNO_3.Text = "XXXXXXXXX11";
             this.txtJuchuuNO_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtJuchuuNO_3.UseColorSizMode = false;
             // 
             // txtNounyuusakiJuusho_3
             // 
             this.txtNounyuusakiJuusho_3.AllowMinus = false;
             this.txtNounyuusakiJuusho_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiJuusho_3.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiJuusho_3.BorderColor = false;
             this.txtNounyuusakiJuusho_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiJuusho_3.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiJuusho_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3743,12 +3915,14 @@
             this.txtNounyuusakiJuusho_3.Tag = "1";
             this.txtNounyuusakiJuusho_3.Text = "ＸＸＸＸＸＸＸＸＸ１ＸＸＸＸＸＸＸＸＸ２ＸＸＸＸＸＸＸＸＸ３ＸＸＸＸＸＸＸＸＸ４";
             this.txtNounyuusakiJuusho_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiJuusho_3.UseColorSizMode = false;
             // 
             // txtNounyuusakiName_3
             // 
             this.txtNounyuusakiName_3.AllowMinus = false;
             this.txtNounyuusakiName_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiName_3.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiName_3.BorderColor = false;
             this.txtNounyuusakiName_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiName_3.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiName_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3774,12 +3948,14 @@
             this.txtNounyuusakiName_3.Tag = "1";
             this.txtNounyuusakiName_3.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtNounyuusakiName_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiName_3.UseColorSizMode = false;
             // 
             // txtNetFLG_3
             // 
             this.txtNetFLG_3.AllowMinus = false;
             this.txtNetFLG_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNetFLG_3.BackColor = System.Drawing.Color.Silver;
+            this.txtNetFLG_3.BorderColor = false;
             this.txtNetFLG_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNetFLG_3.ClientColor = System.Drawing.Color.White;
             this.txtNetFLG_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -3806,12 +3982,14 @@
             this.txtNetFLG_3.Text = "×";
             this.txtNetFLG_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNetFLG_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNetFLG_3.UseColorSizMode = false;
             // 
             // txtChokusouFLG_3
             // 
             this.txtChokusouFLG_3.AllowMinus = false;
             this.txtChokusouFLG_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtChokusouFLG_3.BackColor = System.Drawing.Color.Silver;
+            this.txtChokusouFLG_3.BorderColor = false;
             this.txtChokusouFLG_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtChokusouFLG_3.ClientColor = System.Drawing.Color.White;
             this.txtChokusouFLG_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -3838,12 +4016,14 @@
             this.txtChokusouFLG_3.Text = "〇";
             this.txtChokusouFLG_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChokusouFLG_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtChokusouFLG_3.UseColorSizMode = false;
             // 
             // txtSiiresakiName_3
             // 
             this.txtSiiresakiName_3.AllowMinus = false;
             this.txtSiiresakiName_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSiiresakiName_3.BackColor = System.Drawing.Color.Silver;
+            this.txtSiiresakiName_3.BorderColor = false;
             this.txtSiiresakiName_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSiiresakiName_3.ClientColor = System.Drawing.Color.White;
             this.txtSiiresakiName_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3869,12 +4049,14 @@
             this.txtSiiresakiName_3.Tag = "1";
             this.txtSiiresakiName_3.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtSiiresakiName_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSiiresakiName_3.UseColorSizMode = false;
             // 
             // txtHacchuuNO_3
             // 
             this.txtHacchuuNO_3.AllowMinus = false;
             this.txtHacchuuNO_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuNO_3.BackColor = System.Drawing.Color.Silver;
+            this.txtHacchuuNO_3.BorderColor = false;
             this.txtHacchuuNO_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuNO_3.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuNO_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -3901,6 +4083,7 @@
             this.txtHacchuuNO_3.Tag = "0";
             this.txtHacchuuNO_3.Text = "XXXXXXXXX11";
             this.txtHacchuuNO_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuNO_3.UseColorSizMode = false;
             // 
             // scSiiresakiCD_3
             // 
@@ -3926,6 +4109,7 @@
             this.scSiiresakiCD_3.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.scSiiresakiCD_3.TabIndex = 583;
             this.scSiiresakiCD_3.Tag = "3";
+            this.scSiiresakiCD_3.test = null;
             this.scSiiresakiCD_3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSiiresakiCD_3.UseChangeDate = false;
             this.scSiiresakiCD_3.Value1 = null;
@@ -3937,6 +4121,7 @@
             this.txtShagaiBikou_3.AllowMinus = false;
             this.txtShagaiBikou_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShagaiBikou_3.BackColor = System.Drawing.Color.White;
+            this.txtShagaiBikou_3.BorderColor = false;
             this.txtShagaiBikou_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtShagaiBikou_3.ClientColor = System.Drawing.Color.White;
             this.txtShagaiBikou_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -3962,6 +4147,7 @@
             this.txtShagaiBikou_3.Tag = "3";
             this.txtShagaiBikou_3.Text = "社外備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.txtShagaiBikou_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtShagaiBikou_3.UseColorSizMode = false;
             // 
             // chkEDIFLG_3
             // 
@@ -3981,6 +4167,7 @@
             this.txtHacchuuChuuiZikou_2.AllowMinus = false;
             this.txtHacchuuChuuiZikou_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuChuuiZikou_2.BackColor = System.Drawing.Color.Silver;
+            this.txtHacchuuChuuiZikou_2.BorderColor = false;
             this.txtHacchuuChuuiZikou_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuChuuiZikou_2.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuChuuiZikou_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4006,12 +4193,14 @@
             this.txtHacchuuChuuiZikou_2.Tag = "1";
             this.txtHacchuuChuuiZikou_2.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3";
             this.txtHacchuuChuuiZikou_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuChuuiZikou_2.UseColorSizMode = false;
             // 
             // txtTaniName_2
             // 
             this.txtTaniName_2.AllowMinus = false;
             this.txtTaniName_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTaniName_2.BackColor = System.Drawing.Color.Silver;
+            this.txtTaniName_2.BorderColor = false;
             this.txtTaniName_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaniName_2.ClientColor = System.Drawing.Color.White;
             this.txtTaniName_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4037,12 +4226,14 @@
             this.txtTaniName_2.Tag = "1";
             this.txtTaniName_2.Text = "XXXXXX";
             this.txtTaniName_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTaniName_2.UseColorSizMode = false;
             // 
             // txtHacchuugaku_2
             // 
             this.txtHacchuugaku_2.AllowMinus = false;
             this.txtHacchuugaku_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuugaku_2.BackColor = System.Drawing.Color.White;
+            this.txtHacchuugaku_2.BorderColor = false;
             this.txtHacchuugaku_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuugaku_2.ClientColor = System.Drawing.Color.White;
             this.txtHacchuugaku_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4069,12 +4260,14 @@
             this.txtHacchuugaku_2.Text = "-999,999,999";
             this.txtHacchuugaku_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHacchuugaku_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuugaku_2.UseColorSizMode = false;
             // 
             // txtHacchuuTanka_2
             // 
             this.txtHacchuuTanka_2.AllowMinus = false;
             this.txtHacchuuTanka_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuTanka_2.BackColor = System.Drawing.Color.White;
+            this.txtHacchuuTanka_2.BorderColor = false;
             this.txtHacchuuTanka_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuTanka_2.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuTanka_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4101,12 +4294,14 @@
             this.txtHacchuuTanka_2.Text = "-999,999,999";
             this.txtHacchuuTanka_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHacchuuTanka_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuTanka_2.UseColorSizMode = false;
             // 
             // txtHacchuuSuu_2
             // 
             this.txtHacchuuSuu_2.AllowMinus = false;
             this.txtHacchuuSuu_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuSuu_2.BackColor = System.Drawing.Color.White;
+            this.txtHacchuuSuu_2.BorderColor = false;
             this.txtHacchuuSuu_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuSuu_2.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuSuu_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4133,12 +4328,14 @@
             this.txtHacchuuSuu_2.Text = "99,999";
             this.txtHacchuuSuu_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHacchuuSuu_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuSuu_2.UseColorSizMode = false;
             // 
             // txtColorName_2
             // 
             this.txtColorName_2.AllowMinus = false;
             this.txtColorName_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtColorName_2.BackColor = System.Drawing.Color.Silver;
+            this.txtColorName_2.BorderColor = false;
             this.txtColorName_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtColorName_2.ClientColor = System.Drawing.Color.White;
             this.txtColorName_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4164,12 +4361,14 @@
             this.txtColorName_2.Tag = "1";
             this.txtColorName_2.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtColorName_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtColorName_2.UseColorSizMode = false;
             // 
             // txtSizeName_2
             // 
             this.txtSizeName_2.AllowMinus = false;
             this.txtSizeName_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSizeName_2.BackColor = System.Drawing.Color.Silver;
+            this.txtSizeName_2.BorderColor = false;
             this.txtSizeName_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSizeName_2.ClientColor = System.Drawing.Color.White;
             this.txtSizeName_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4195,12 +4394,14 @@
             this.txtSizeName_2.Tag = "1";
             this.txtSizeName_2.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtSizeName_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSizeName_2.UseColorSizMode = false;
             // 
             // txtBrandName_2
             // 
             this.txtBrandName_2.AllowMinus = false;
             this.txtBrandName_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtBrandName_2.BackColor = System.Drawing.Color.Silver;
+            this.txtBrandName_2.BorderColor = false;
             this.txtBrandName_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBrandName_2.ClientColor = System.Drawing.Color.White;
             this.txtBrandName_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4226,12 +4427,14 @@
             this.txtBrandName_2.Tag = "1";
             this.txtBrandName_2.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3";
             this.txtBrandName_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtBrandName_2.UseColorSizMode = false;
             // 
             // txtShouhinName_2
             // 
             this.txtShouhinName_2.AllowMinus = false;
             this.txtShouhinName_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShouhinName_2.BackColor = System.Drawing.Color.Silver;
+            this.txtShouhinName_2.BorderColor = false;
             this.txtShouhinName_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtShouhinName_2.ClientColor = System.Drawing.Color.White;
             this.txtShouhinName_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -4257,12 +4460,14 @@
             this.txtShouhinName_2.Tag = "2";
             this.txtShouhinName_2.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3XXXXXXXXX4";
             this.txtShouhinName_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtShouhinName_2.UseColorSizMode = false;
             // 
             // txtJANCD_2
             // 
             this.txtJANCD_2.AllowMinus = false;
             this.txtJANCD_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtJANCD_2.BackColor = System.Drawing.Color.Silver;
+            this.txtJANCD_2.BorderColor = false;
             this.txtJANCD_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJANCD_2.ClientColor = System.Drawing.Color.White;
             this.txtJANCD_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4288,12 +4493,14 @@
             this.txtJANCD_2.Tag = "0";
             this.txtJANCD_2.Text = "XXXXXXXXX1XX3";
             this.txtJANCD_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtJANCD_2.UseColorSizMode = false;
             // 
             // txtSKUCD_2
             // 
             this.txtSKUCD_2.AllowMinus = false;
             this.txtSKUCD_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSKUCD_2.BackColor = System.Drawing.Color.Silver;
+            this.txtSKUCD_2.BorderColor = false;
             this.txtSKUCD_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSKUCD_2.ClientColor = System.Drawing.Color.White;
             this.txtSKUCD_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4319,12 +4526,14 @@
             this.txtSKUCD_2.Tag = "0";
             this.txtSKUCD_2.Text = "XXXXXXXXX1XXXXXXXXX2X2";
             this.txtSKUCD_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSKUCD_2.UseColorSizMode = false;
             // 
             // txtJuchuuNO_2
             // 
             this.txtJuchuuNO_2.AllowMinus = false;
             this.txtJuchuuNO_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtJuchuuNO_2.BackColor = System.Drawing.Color.Silver;
+            this.txtJuchuuNO_2.BorderColor = false;
             this.txtJuchuuNO_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJuchuuNO_2.ClientColor = System.Drawing.Color.White;
             this.txtJuchuuNO_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4351,12 +4560,14 @@
             this.txtJuchuuNO_2.Tag = "0";
             this.txtJuchuuNO_2.Text = "XXXXXXXXX11";
             this.txtJuchuuNO_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtJuchuuNO_2.UseColorSizMode = false;
             // 
             // txtNounyuusakiJuusho_2
             // 
             this.txtNounyuusakiJuusho_2.AllowMinus = false;
             this.txtNounyuusakiJuusho_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiJuusho_2.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiJuusho_2.BorderColor = false;
             this.txtNounyuusakiJuusho_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiJuusho_2.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiJuusho_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4382,12 +4593,14 @@
             this.txtNounyuusakiJuusho_2.Tag = "1";
             this.txtNounyuusakiJuusho_2.Text = "ＸＸＸＸＸＸＸＸＸ１ＸＸＸＸＸＸＸＸＸ２ＸＸＸＸＸＸＸＸＸ３ＸＸＸＸＸＸＸＸＸ４";
             this.txtNounyuusakiJuusho_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiJuusho_2.UseColorSizMode = false;
             // 
             // txtNounyuusakiName_2
             // 
             this.txtNounyuusakiName_2.AllowMinus = false;
             this.txtNounyuusakiName_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiName_2.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiName_2.BorderColor = false;
             this.txtNounyuusakiName_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiName_2.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiName_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4413,12 +4626,14 @@
             this.txtNounyuusakiName_2.Tag = "1";
             this.txtNounyuusakiName_2.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtNounyuusakiName_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiName_2.UseColorSizMode = false;
             // 
             // txtNetFLG_2
             // 
             this.txtNetFLG_2.AllowMinus = false;
             this.txtNetFLG_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNetFLG_2.BackColor = System.Drawing.Color.Silver;
+            this.txtNetFLG_2.BorderColor = false;
             this.txtNetFLG_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNetFLG_2.ClientColor = System.Drawing.Color.White;
             this.txtNetFLG_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -4445,12 +4660,14 @@
             this.txtNetFLG_2.Text = "×";
             this.txtNetFLG_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNetFLG_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNetFLG_2.UseColorSizMode = false;
             // 
             // txtChokusouFLG_2
             // 
             this.txtChokusouFLG_2.AllowMinus = false;
             this.txtChokusouFLG_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtChokusouFLG_2.BackColor = System.Drawing.Color.Silver;
+            this.txtChokusouFLG_2.BorderColor = false;
             this.txtChokusouFLG_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtChokusouFLG_2.ClientColor = System.Drawing.Color.White;
             this.txtChokusouFLG_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -4477,12 +4694,14 @@
             this.txtChokusouFLG_2.Text = "〇";
             this.txtChokusouFLG_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChokusouFLG_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtChokusouFLG_2.UseColorSizMode = false;
             // 
             // txtSiiresakiName_2
             // 
             this.txtSiiresakiName_2.AllowMinus = false;
             this.txtSiiresakiName_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSiiresakiName_2.BackColor = System.Drawing.Color.Silver;
+            this.txtSiiresakiName_2.BorderColor = false;
             this.txtSiiresakiName_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSiiresakiName_2.ClientColor = System.Drawing.Color.White;
             this.txtSiiresakiName_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4508,12 +4727,14 @@
             this.txtSiiresakiName_2.Tag = "1";
             this.txtSiiresakiName_2.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtSiiresakiName_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSiiresakiName_2.UseColorSizMode = false;
             // 
             // txtHacchuuNO_2
             // 
             this.txtHacchuuNO_2.AllowMinus = false;
             this.txtHacchuuNO_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuNO_2.BackColor = System.Drawing.Color.Silver;
+            this.txtHacchuuNO_2.BorderColor = false;
             this.txtHacchuuNO_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuNO_2.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuNO_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4540,6 +4761,7 @@
             this.txtHacchuuNO_2.Tag = "0";
             this.txtHacchuuNO_2.Text = "XXXXXXXXX11";
             this.txtHacchuuNO_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuNO_2.UseColorSizMode = false;
             // 
             // scSiiresakiCD_2
             // 
@@ -4565,6 +4787,7 @@
             this.scSiiresakiCD_2.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.scSiiresakiCD_2.TabIndex = 557;
             this.scSiiresakiCD_2.Tag = "2";
+            this.scSiiresakiCD_2.test = null;
             this.scSiiresakiCD_2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSiiresakiCD_2.UseChangeDate = false;
             this.scSiiresakiCD_2.Value1 = null;
@@ -4576,6 +4799,7 @@
             this.txtShagaiBikou_2.AllowMinus = false;
             this.txtShagaiBikou_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShagaiBikou_2.BackColor = System.Drawing.Color.White;
+            this.txtShagaiBikou_2.BorderColor = false;
             this.txtShagaiBikou_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtShagaiBikou_2.ClientColor = System.Drawing.Color.White;
             this.txtShagaiBikou_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -4601,6 +4825,7 @@
             this.txtShagaiBikou_2.Tag = "2";
             this.txtShagaiBikou_2.Text = "社外備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.txtShagaiBikou_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtShagaiBikou_2.UseColorSizMode = false;
             // 
             // chkEDIFLG_2
             // 
@@ -4620,6 +4845,7 @@
             this.txtHacchuuChuuiZikou_1.AllowMinus = false;
             this.txtHacchuuChuuiZikou_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuChuuiZikou_1.BackColor = System.Drawing.Color.Silver;
+            this.txtHacchuuChuuiZikou_1.BorderColor = false;
             this.txtHacchuuChuuiZikou_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuChuuiZikou_1.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuChuuiZikou_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4645,12 +4871,14 @@
             this.txtHacchuuChuuiZikou_1.Tag = "1";
             this.txtHacchuuChuuiZikou_1.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3";
             this.txtHacchuuChuuiZikou_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuChuuiZikou_1.UseColorSizMode = false;
             // 
             // txtTaniName_1
             // 
             this.txtTaniName_1.AllowMinus = false;
             this.txtTaniName_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTaniName_1.BackColor = System.Drawing.Color.Silver;
+            this.txtTaniName_1.BorderColor = false;
             this.txtTaniName_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaniName_1.ClientColor = System.Drawing.Color.White;
             this.txtTaniName_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4676,12 +4904,14 @@
             this.txtTaniName_1.Tag = "1";
             this.txtTaniName_1.Text = "XXXXXX";
             this.txtTaniName_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTaniName_1.UseColorSizMode = false;
             // 
             // txtHacchuugaku_1
             // 
             this.txtHacchuugaku_1.AllowMinus = false;
             this.txtHacchuugaku_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuugaku_1.BackColor = System.Drawing.Color.White;
+            this.txtHacchuugaku_1.BorderColor = false;
             this.txtHacchuugaku_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuugaku_1.ClientColor = System.Drawing.Color.White;
             this.txtHacchuugaku_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4708,12 +4938,14 @@
             this.txtHacchuugaku_1.Text = "-999,999,999";
             this.txtHacchuugaku_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHacchuugaku_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuugaku_1.UseColorSizMode = false;
             // 
             // txtHacchuuTanka_1
             // 
             this.txtHacchuuTanka_1.AllowMinus = false;
             this.txtHacchuuTanka_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuTanka_1.BackColor = System.Drawing.Color.White;
+            this.txtHacchuuTanka_1.BorderColor = false;
             this.txtHacchuuTanka_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuTanka_1.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuTanka_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4740,12 +4972,14 @@
             this.txtHacchuuTanka_1.Text = "-999,999,999";
             this.txtHacchuuTanka_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHacchuuTanka_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuTanka_1.UseColorSizMode = false;
             // 
             // txtHacchuuSuu_1
             // 
             this.txtHacchuuSuu_1.AllowMinus = false;
             this.txtHacchuuSuu_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuSuu_1.BackColor = System.Drawing.Color.White;
+            this.txtHacchuuSuu_1.BorderColor = false;
             this.txtHacchuuSuu_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuSuu_1.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuSuu_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4772,12 +5006,14 @@
             this.txtHacchuuSuu_1.Text = "99,999";
             this.txtHacchuuSuu_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHacchuuSuu_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuSuu_1.UseColorSizMode = false;
             // 
             // txtColorName_1
             // 
             this.txtColorName_1.AllowMinus = false;
             this.txtColorName_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtColorName_1.BackColor = System.Drawing.Color.Silver;
+            this.txtColorName_1.BorderColor = false;
             this.txtColorName_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtColorName_1.ClientColor = System.Drawing.Color.White;
             this.txtColorName_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4803,12 +5039,14 @@
             this.txtColorName_1.Tag = "1";
             this.txtColorName_1.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtColorName_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtColorName_1.UseColorSizMode = false;
             // 
             // txtSizeName_1
             // 
             this.txtSizeName_1.AllowMinus = false;
             this.txtSizeName_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSizeName_1.BackColor = System.Drawing.Color.Silver;
+            this.txtSizeName_1.BorderColor = false;
             this.txtSizeName_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSizeName_1.ClientColor = System.Drawing.Color.White;
             this.txtSizeName_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4834,12 +5072,14 @@
             this.txtSizeName_1.Tag = "1";
             this.txtSizeName_1.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtSizeName_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSizeName_1.UseColorSizMode = false;
             // 
             // txtBrandName_1
             // 
             this.txtBrandName_1.AllowMinus = false;
             this.txtBrandName_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtBrandName_1.BackColor = System.Drawing.Color.Silver;
+            this.txtBrandName_1.BorderColor = false;
             this.txtBrandName_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBrandName_1.ClientColor = System.Drawing.Color.White;
             this.txtBrandName_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4865,12 +5105,14 @@
             this.txtBrandName_1.Tag = "1";
             this.txtBrandName_1.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3";
             this.txtBrandName_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtBrandName_1.UseColorSizMode = false;
             // 
             // txtShouhinName_1
             // 
             this.txtShouhinName_1.AllowMinus = false;
             this.txtShouhinName_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShouhinName_1.BackColor = System.Drawing.Color.Silver;
+            this.txtShouhinName_1.BorderColor = false;
             this.txtShouhinName_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtShouhinName_1.ClientColor = System.Drawing.Color.White;
             this.txtShouhinName_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -4896,12 +5138,14 @@
             this.txtShouhinName_1.Tag = "1";
             this.txtShouhinName_1.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3XXXXXXXXX4";
             this.txtShouhinName_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtShouhinName_1.UseColorSizMode = false;
             // 
             // txtJANCD_1
             // 
             this.txtJANCD_1.AllowMinus = false;
             this.txtJANCD_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtJANCD_1.BackColor = System.Drawing.Color.Silver;
+            this.txtJANCD_1.BorderColor = false;
             this.txtJANCD_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJANCD_1.ClientColor = System.Drawing.Color.White;
             this.txtJANCD_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4927,12 +5171,14 @@
             this.txtJANCD_1.Tag = "0";
             this.txtJANCD_1.Text = "XXXXXXXXX1XX3";
             this.txtJANCD_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtJANCD_1.UseColorSizMode = false;
             // 
             // txtSKUCD_1
             // 
             this.txtSKUCD_1.AllowMinus = false;
             this.txtSKUCD_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSKUCD_1.BackColor = System.Drawing.Color.Silver;
+            this.txtSKUCD_1.BorderColor = false;
             this.txtSKUCD_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSKUCD_1.ClientColor = System.Drawing.Color.White;
             this.txtSKUCD_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4958,12 +5204,14 @@
             this.txtSKUCD_1.Tag = "0";
             this.txtSKUCD_1.Text = "XXXXXXXXX1XXXXXXXXX2X2";
             this.txtSKUCD_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSKUCD_1.UseColorSizMode = false;
             // 
             // txtJuchuuNO_1
             // 
             this.txtJuchuuNO_1.AllowMinus = false;
             this.txtJuchuuNO_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtJuchuuNO_1.BackColor = System.Drawing.Color.Silver;
+            this.txtJuchuuNO_1.BorderColor = false;
             this.txtJuchuuNO_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJuchuuNO_1.ClientColor = System.Drawing.Color.White;
             this.txtJuchuuNO_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -4990,12 +5238,14 @@
             this.txtJuchuuNO_1.Tag = "0";
             this.txtJuchuuNO_1.Text = "XXXXXXXXX11";
             this.txtJuchuuNO_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtJuchuuNO_1.UseColorSizMode = false;
             // 
             // txtNounyuusakiJuusho_1
             // 
             this.txtNounyuusakiJuusho_1.AllowMinus = false;
             this.txtNounyuusakiJuusho_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiJuusho_1.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiJuusho_1.BorderColor = false;
             this.txtNounyuusakiJuusho_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiJuusho_1.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiJuusho_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -5021,12 +5271,14 @@
             this.txtNounyuusakiJuusho_1.Tag = "1";
             this.txtNounyuusakiJuusho_1.Text = "ＸＸＸＸＸＸＸＸＸ１ＸＸＸＸＸＸＸＸＸ２ＸＸＸＸＸＸＸＸＸ３ＸＸＸＸＸＸＸＸＸ４";
             this.txtNounyuusakiJuusho_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiJuusho_1.UseColorSizMode = false;
             // 
             // txtNounyuusakiName_1
             // 
             this.txtNounyuusakiName_1.AllowMinus = false;
             this.txtNounyuusakiName_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiName_1.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiName_1.BorderColor = false;
             this.txtNounyuusakiName_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiName_1.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiName_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -5052,12 +5304,14 @@
             this.txtNounyuusakiName_1.Tag = "1";
             this.txtNounyuusakiName_1.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtNounyuusakiName_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiName_1.UseColorSizMode = false;
             // 
             // txtNetFLG_1
             // 
             this.txtNetFLG_1.AllowMinus = false;
             this.txtNetFLG_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNetFLG_1.BackColor = System.Drawing.Color.Silver;
+            this.txtNetFLG_1.BorderColor = false;
             this.txtNetFLG_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNetFLG_1.ClientColor = System.Drawing.Color.White;
             this.txtNetFLG_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -5084,12 +5338,14 @@
             this.txtNetFLG_1.Text = "×";
             this.txtNetFLG_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNetFLG_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNetFLG_1.UseColorSizMode = false;
             // 
             // txtChokusouFLG_1
             // 
             this.txtChokusouFLG_1.AllowMinus = false;
             this.txtChokusouFLG_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtChokusouFLG_1.BackColor = System.Drawing.Color.Silver;
+            this.txtChokusouFLG_1.BorderColor = false;
             this.txtChokusouFLG_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtChokusouFLG_1.ClientColor = System.Drawing.Color.White;
             this.txtChokusouFLG_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -5116,12 +5372,14 @@
             this.txtChokusouFLG_1.Text = "〇";
             this.txtChokusouFLG_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChokusouFLG_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtChokusouFLG_1.UseColorSizMode = false;
             // 
             // txtSiiresakiName_1
             // 
             this.txtSiiresakiName_1.AllowMinus = false;
             this.txtSiiresakiName_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSiiresakiName_1.BackColor = System.Drawing.Color.Silver;
+            this.txtSiiresakiName_1.BorderColor = false;
             this.txtSiiresakiName_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSiiresakiName_1.ClientColor = System.Drawing.Color.White;
             this.txtSiiresakiName_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -5147,12 +5405,14 @@
             this.txtSiiresakiName_1.Tag = "1";
             this.txtSiiresakiName_1.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtSiiresakiName_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSiiresakiName_1.UseColorSizMode = false;
             // 
             // txtHacchuuNO_1
             // 
             this.txtHacchuuNO_1.AllowMinus = false;
             this.txtHacchuuNO_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuNO_1.BackColor = System.Drawing.Color.Silver;
+            this.txtHacchuuNO_1.BorderColor = false;
             this.txtHacchuuNO_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuNO_1.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuNO_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -5179,6 +5439,7 @@
             this.txtHacchuuNO_1.Tag = "0";
             this.txtHacchuuNO_1.Text = "XXXXXXXXX11";
             this.txtHacchuuNO_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuNO_1.UseColorSizMode = false;
             // 
             // scSiiresakiCD_1
             // 
@@ -5204,6 +5465,7 @@
             this.scSiiresakiCD_1.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.scSiiresakiCD_1.TabIndex = 531;
             this.scSiiresakiCD_1.Tag = "1";
+            this.scSiiresakiCD_1.test = null;
             this.scSiiresakiCD_1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSiiresakiCD_1.UseChangeDate = false;
             this.scSiiresakiCD_1.Value1 = null;
@@ -5215,6 +5477,7 @@
             this.txtShagaiBikou_1.AllowMinus = false;
             this.txtShagaiBikou_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShagaiBikou_1.BackColor = System.Drawing.Color.White;
+            this.txtShagaiBikou_1.BorderColor = false;
             this.txtShagaiBikou_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtShagaiBikou_1.ClientColor = System.Drawing.Color.White;
             this.txtShagaiBikou_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -5240,6 +5503,7 @@
             this.txtShagaiBikou_1.Tag = "1";
             this.txtShagaiBikou_1.Text = "社外備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.txtShagaiBikou_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtShagaiBikou_1.UseColorSizMode = false;
             // 
             // chkEDIFLG_1
             // 
@@ -5259,6 +5523,7 @@
             this.txtHacchuuChuuiZikou_0.AllowMinus = false;
             this.txtHacchuuChuuiZikou_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuChuuiZikou_0.BackColor = System.Drawing.Color.Silver;
+            this.txtHacchuuChuuiZikou_0.BorderColor = false;
             this.txtHacchuuChuuiZikou_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuChuuiZikou_0.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuChuuiZikou_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -5284,12 +5549,14 @@
             this.txtHacchuuChuuiZikou_0.Tag = "1";
             this.txtHacchuuChuuiZikou_0.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3";
             this.txtHacchuuChuuiZikou_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuChuuiZikou_0.UseColorSizMode = false;
             // 
             // txtTaniName_0
             // 
             this.txtTaniName_0.AllowMinus = false;
             this.txtTaniName_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTaniName_0.BackColor = System.Drawing.Color.Silver;
+            this.txtTaniName_0.BorderColor = false;
             this.txtTaniName_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaniName_0.ClientColor = System.Drawing.Color.White;
             this.txtTaniName_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -5315,12 +5582,14 @@
             this.txtTaniName_0.Tag = "1";
             this.txtTaniName_0.Text = "XXXXXX";
             this.txtTaniName_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTaniName_0.UseColorSizMode = false;
             // 
             // txtHacchuugaku_0
             // 
             this.txtHacchuugaku_0.AllowMinus = false;
             this.txtHacchuugaku_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuugaku_0.BackColor = System.Drawing.Color.White;
+            this.txtHacchuugaku_0.BorderColor = false;
             this.txtHacchuugaku_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuugaku_0.ClientColor = System.Drawing.Color.White;
             this.txtHacchuugaku_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -5347,12 +5616,14 @@
             this.txtHacchuugaku_0.Text = "-999,999,999";
             this.txtHacchuugaku_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHacchuugaku_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuugaku_0.UseColorSizMode = false;
             // 
             // txtHacchuuTanka_0
             // 
             this.txtHacchuuTanka_0.AllowMinus = false;
             this.txtHacchuuTanka_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuTanka_0.BackColor = System.Drawing.Color.White;
+            this.txtHacchuuTanka_0.BorderColor = false;
             this.txtHacchuuTanka_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuTanka_0.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuTanka_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -5379,12 +5650,14 @@
             this.txtHacchuuTanka_0.Text = "-999,999,999";
             this.txtHacchuuTanka_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHacchuuTanka_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuTanka_0.UseColorSizMode = false;
             // 
             // txtHacchuuSuu_0
             // 
             this.txtHacchuuSuu_0.AllowMinus = false;
             this.txtHacchuuSuu_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuSuu_0.BackColor = System.Drawing.Color.White;
+            this.txtHacchuuSuu_0.BorderColor = false;
             this.txtHacchuuSuu_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuSuu_0.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuSuu_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -5411,12 +5684,14 @@
             this.txtHacchuuSuu_0.Text = "99,999";
             this.txtHacchuuSuu_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHacchuuSuu_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuSuu_0.UseColorSizMode = false;
             // 
             // txtColorName_0
             // 
             this.txtColorName_0.AllowMinus = false;
             this.txtColorName_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtColorName_0.BackColor = System.Drawing.Color.Silver;
+            this.txtColorName_0.BorderColor = false;
             this.txtColorName_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtColorName_0.ClientColor = System.Drawing.Color.White;
             this.txtColorName_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -5442,12 +5717,14 @@
             this.txtColorName_0.Tag = "1";
             this.txtColorName_0.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtColorName_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtColorName_0.UseColorSizMode = false;
             // 
             // txtSizeName_0
             // 
             this.txtSizeName_0.AllowMinus = false;
             this.txtSizeName_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSizeName_0.BackColor = System.Drawing.Color.Silver;
+            this.txtSizeName_0.BorderColor = false;
             this.txtSizeName_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSizeName_0.ClientColor = System.Drawing.Color.White;
             this.txtSizeName_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -5473,12 +5750,14 @@
             this.txtSizeName_0.Tag = "1";
             this.txtSizeName_0.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtSizeName_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSizeName_0.UseColorSizMode = false;
             // 
             // txtBrandName_0
             // 
             this.txtBrandName_0.AllowMinus = false;
             this.txtBrandName_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtBrandName_0.BackColor = System.Drawing.Color.Silver;
+            this.txtBrandName_0.BorderColor = false;
             this.txtBrandName_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBrandName_0.ClientColor = System.Drawing.Color.White;
             this.txtBrandName_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -5504,12 +5783,14 @@
             this.txtBrandName_0.Tag = "1";
             this.txtBrandName_0.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3";
             this.txtBrandName_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtBrandName_0.UseColorSizMode = false;
             // 
             // txtShouhinName_0
             // 
             this.txtShouhinName_0.AllowMinus = false;
             this.txtShouhinName_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShouhinName_0.BackColor = System.Drawing.Color.Silver;
+            this.txtShouhinName_0.BorderColor = false;
             this.txtShouhinName_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtShouhinName_0.ClientColor = System.Drawing.Color.White;
             this.txtShouhinName_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -5535,12 +5816,14 @@
             this.txtShouhinName_0.Tag = "0";
             this.txtShouhinName_0.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3XXXXXXXXX4";
             this.txtShouhinName_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtShouhinName_0.UseColorSizMode = false;
             // 
             // txtJANCD_0
             // 
             this.txtJANCD_0.AllowMinus = false;
             this.txtJANCD_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtJANCD_0.BackColor = System.Drawing.Color.Silver;
+            this.txtJANCD_0.BorderColor = false;
             this.txtJANCD_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJANCD_0.ClientColor = System.Drawing.Color.White;
             this.txtJANCD_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -5566,12 +5849,14 @@
             this.txtJANCD_0.Tag = "0";
             this.txtJANCD_0.Text = "XXXXXXXXX1XX3";
             this.txtJANCD_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtJANCD_0.UseColorSizMode = false;
             // 
             // txtSKUCD_0
             // 
             this.txtSKUCD_0.AllowMinus = false;
             this.txtSKUCD_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSKUCD_0.BackColor = System.Drawing.Color.Silver;
+            this.txtSKUCD_0.BorderColor = false;
             this.txtSKUCD_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSKUCD_0.ClientColor = System.Drawing.Color.White;
             this.txtSKUCD_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -5597,12 +5882,14 @@
             this.txtSKUCD_0.Tag = "0";
             this.txtSKUCD_0.Text = "XXXXXXXXX1XXXXXXXXX2X2";
             this.txtSKUCD_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSKUCD_0.UseColorSizMode = false;
             // 
             // txtJuchuuNO_0
             // 
             this.txtJuchuuNO_0.AllowMinus = false;
             this.txtJuchuuNO_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtJuchuuNO_0.BackColor = System.Drawing.Color.Silver;
+            this.txtJuchuuNO_0.BorderColor = false;
             this.txtJuchuuNO_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJuchuuNO_0.ClientColor = System.Drawing.Color.White;
             this.txtJuchuuNO_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -5629,12 +5916,14 @@
             this.txtJuchuuNO_0.Tag = "0";
             this.txtJuchuuNO_0.Text = "XXXXXXXXX11";
             this.txtJuchuuNO_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtJuchuuNO_0.UseColorSizMode = false;
             // 
             // txtNounyuusakiJuusho_0
             // 
             this.txtNounyuusakiJuusho_0.AllowMinus = false;
             this.txtNounyuusakiJuusho_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiJuusho_0.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiJuusho_0.BorderColor = false;
             this.txtNounyuusakiJuusho_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiJuusho_0.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiJuusho_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -5660,12 +5949,14 @@
             this.txtNounyuusakiJuusho_0.Tag = "1";
             this.txtNounyuusakiJuusho_0.Text = "ＸＸＸＸＸＸＸＸＸ１ＸＸＸＸＸＸＸＸＸ２ＸＸＸＸＸＸＸＸＸ３ＸＸＸＸＸＸＸＸＸ４";
             this.txtNounyuusakiJuusho_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiJuusho_0.UseColorSizMode = false;
             // 
             // txtNounyuusakiName_0
             // 
             this.txtNounyuusakiName_0.AllowMinus = false;
             this.txtNounyuusakiName_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiName_0.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiName_0.BorderColor = false;
             this.txtNounyuusakiName_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiName_0.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiName_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -5691,12 +5982,14 @@
             this.txtNounyuusakiName_0.Tag = "1";
             this.txtNounyuusakiName_0.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtNounyuusakiName_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiName_0.UseColorSizMode = false;
             // 
             // txtNetFLG_0
             // 
             this.txtNetFLG_0.AllowMinus = false;
             this.txtNetFLG_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNetFLG_0.BackColor = System.Drawing.Color.Silver;
+            this.txtNetFLG_0.BorderColor = false;
             this.txtNetFLG_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNetFLG_0.ClientColor = System.Drawing.Color.White;
             this.txtNetFLG_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -5723,12 +6016,14 @@
             this.txtNetFLG_0.Text = "×";
             this.txtNetFLG_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNetFLG_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNetFLG_0.UseColorSizMode = false;
             // 
             // txtChokusouFLG_0
             // 
             this.txtChokusouFLG_0.AllowMinus = false;
             this.txtChokusouFLG_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtChokusouFLG_0.BackColor = System.Drawing.Color.Silver;
+            this.txtChokusouFLG_0.BorderColor = false;
             this.txtChokusouFLG_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtChokusouFLG_0.ClientColor = System.Drawing.Color.White;
             this.txtChokusouFLG_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -5755,12 +6050,14 @@
             this.txtChokusouFLG_0.Text = "〇";
             this.txtChokusouFLG_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChokusouFLG_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtChokusouFLG_0.UseColorSizMode = false;
             // 
             // txtSiiresakiName_0
             // 
             this.txtSiiresakiName_0.AllowMinus = false;
             this.txtSiiresakiName_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSiiresakiName_0.BackColor = System.Drawing.Color.Silver;
+            this.txtSiiresakiName_0.BorderColor = false;
             this.txtSiiresakiName_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSiiresakiName_0.ClientColor = System.Drawing.Color.White;
             this.txtSiiresakiName_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -5786,12 +6083,14 @@
             this.txtSiiresakiName_0.Tag = "1";
             this.txtSiiresakiName_0.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtSiiresakiName_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSiiresakiName_0.UseColorSizMode = false;
             // 
             // txtHacchuuNO_0
             // 
             this.txtHacchuuNO_0.AllowMinus = false;
             this.txtHacchuuNO_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuNO_0.BackColor = System.Drawing.Color.Silver;
+            this.txtHacchuuNO_0.BorderColor = false;
             this.txtHacchuuNO_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuNO_0.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuNO_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -5818,6 +6117,7 @@
             this.txtHacchuuNO_0.Tag = "0";
             this.txtHacchuuNO_0.Text = "XXXXXXXXX11";
             this.txtHacchuuNO_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuNO_0.UseColorSizMode = false;
             // 
             // scSiiresakiCD_0
             // 
@@ -5843,6 +6143,7 @@
             this.scSiiresakiCD_0.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.scSiiresakiCD_0.TabIndex = 1;
             this.scSiiresakiCD_0.Tag = "0";
+            this.scSiiresakiCD_0.test = null;
             this.scSiiresakiCD_0.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSiiresakiCD_0.UseChangeDate = false;
             this.scSiiresakiCD_0.Value1 = null;
@@ -5862,6 +6163,7 @@
             this.txtShagaiBikou_0.AllowMinus = false;
             this.txtShagaiBikou_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShagaiBikou_0.BackColor = System.Drawing.Color.White;
+            this.txtShagaiBikou_0.BorderColor = false;
             this.txtShagaiBikou_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtShagaiBikou_0.ClientColor = System.Drawing.Color.White;
             this.txtShagaiBikou_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -5876,17 +6178,19 @@
             this.txtShagaiBikou_0.isMaxLengthErr = false;
             this.txtShagaiBikou_0.IsNumber = true;
             this.txtShagaiBikou_0.IsShop = false;
-            this.txtShagaiBikou_0.Length = 40;
+            this.txtShagaiBikou_0.Length = 80;
             this.txtShagaiBikou_0.Location = new System.Drawing.Point(862, 48);
             this.txtShagaiBikou_0.Margin = new System.Windows.Forms.Padding(4);
-            this.txtShagaiBikou_0.MaxLength = 40;
+            this.txtShagaiBikou_0.MaxLength = 80;
             this.txtShagaiBikou_0.MoveNext = true;
             this.txtShagaiBikou_0.Name = "txtShagaiBikou_0";
+            this.txtShagaiBikou_0.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtShagaiBikou_0.Size = new System.Drawing.Size(530, 22);
             this.txtShagaiBikou_0.TabIndex = 11;
             this.txtShagaiBikou_0.Tag = "0";
             this.txtShagaiBikou_0.Text = "社外備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.txtShagaiBikou_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtShagaiBikou_0.UseColorSizMode = false;
             // 
             // chkEDIFLG_0
             // 
@@ -6032,6 +6336,7 @@
             this.txtIsYuukouTaishouFLG_4.AllowMinus = false;
             this.txtIsYuukouTaishouFLG_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtIsYuukouTaishouFLG_4.BackColor = System.Drawing.Color.Silver;
+            this.txtIsYuukouTaishouFLG_4.BorderColor = false;
             this.txtIsYuukouTaishouFLG_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIsYuukouTaishouFLG_4.ClientColor = System.Drawing.Color.White;
             this.txtIsYuukouTaishouFLG_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6057,6 +6362,7 @@
             this.txtIsYuukouTaishouFLG_4.Tag = "0";
             this.txtIsYuukouTaishouFLG_4.Text = "IsYuukouTaishouFLG";
             this.txtIsYuukouTaishouFLG_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtIsYuukouTaishouFLG_4.UseColorSizMode = false;
             this.txtIsYuukouTaishouFLG_4.Visible = false;
             // 
             // txtIsYuukouTaishouFLG_3
@@ -6064,6 +6370,7 @@
             this.txtIsYuukouTaishouFLG_3.AllowMinus = false;
             this.txtIsYuukouTaishouFLG_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtIsYuukouTaishouFLG_3.BackColor = System.Drawing.Color.Silver;
+            this.txtIsYuukouTaishouFLG_3.BorderColor = false;
             this.txtIsYuukouTaishouFLG_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIsYuukouTaishouFLG_3.ClientColor = System.Drawing.Color.White;
             this.txtIsYuukouTaishouFLG_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6089,6 +6396,7 @@
             this.txtIsYuukouTaishouFLG_3.Tag = "0";
             this.txtIsYuukouTaishouFLG_3.Text = "IsYuukouTaishouFLG";
             this.txtIsYuukouTaishouFLG_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtIsYuukouTaishouFLG_3.UseColorSizMode = false;
             this.txtIsYuukouTaishouFLG_3.Visible = false;
             // 
             // txtIsYuukouTaishouFLG_2
@@ -6096,6 +6404,7 @@
             this.txtIsYuukouTaishouFLG_2.AllowMinus = false;
             this.txtIsYuukouTaishouFLG_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtIsYuukouTaishouFLG_2.BackColor = System.Drawing.Color.Silver;
+            this.txtIsYuukouTaishouFLG_2.BorderColor = false;
             this.txtIsYuukouTaishouFLG_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIsYuukouTaishouFLG_2.ClientColor = System.Drawing.Color.White;
             this.txtIsYuukouTaishouFLG_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6121,6 +6430,7 @@
             this.txtIsYuukouTaishouFLG_2.Tag = "5";
             this.txtIsYuukouTaishouFLG_2.Text = "IsYuukouTaishouFLG";
             this.txtIsYuukouTaishouFLG_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtIsYuukouTaishouFLG_2.UseColorSizMode = false;
             this.txtIsYuukouTaishouFLG_2.Visible = false;
             // 
             // txtIsYuukouTaishouFLG_1
@@ -6128,6 +6438,7 @@
             this.txtIsYuukouTaishouFLG_1.AllowMinus = false;
             this.txtIsYuukouTaishouFLG_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtIsYuukouTaishouFLG_1.BackColor = System.Drawing.Color.Silver;
+            this.txtIsYuukouTaishouFLG_1.BorderColor = false;
             this.txtIsYuukouTaishouFLG_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIsYuukouTaishouFLG_1.ClientColor = System.Drawing.Color.White;
             this.txtIsYuukouTaishouFLG_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6153,6 +6464,7 @@
             this.txtIsYuukouTaishouFLG_1.Tag = "5";
             this.txtIsYuukouTaishouFLG_1.Text = "IsYuukouTaishouFLG";
             this.txtIsYuukouTaishouFLG_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtIsYuukouTaishouFLG_1.UseColorSizMode = false;
             this.txtIsYuukouTaishouFLG_1.Visible = false;
             // 
             // txtIsYuukouTaishouFLG_0
@@ -6160,6 +6472,7 @@
             this.txtIsYuukouTaishouFLG_0.AllowMinus = false;
             this.txtIsYuukouTaishouFLG_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtIsYuukouTaishouFLG_0.BackColor = System.Drawing.Color.Silver;
+            this.txtIsYuukouTaishouFLG_0.BorderColor = false;
             this.txtIsYuukouTaishouFLG_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIsYuukouTaishouFLG_0.ClientColor = System.Drawing.Color.White;
             this.txtIsYuukouTaishouFLG_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6185,6 +6498,7 @@
             this.txtIsYuukouTaishouFLG_0.Tag = "5";
             this.txtIsYuukouTaishouFLG_0.Text = "IsYuukouTaishouFLG";
             this.txtIsYuukouTaishouFLG_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtIsYuukouTaishouFLG_0.UseColorSizMode = false;
             this.txtIsYuukouTaishouFLG_0.Visible = false;
             // 
             // txtOrderRows_4
@@ -6192,6 +6506,7 @@
             this.txtOrderRows_4.AllowMinus = false;
             this.txtOrderRows_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtOrderRows_4.BackColor = System.Drawing.Color.Silver;
+            this.txtOrderRows_4.BorderColor = false;
             this.txtOrderRows_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOrderRows_4.ClientColor = System.Drawing.Color.White;
             this.txtOrderRows_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6217,6 +6532,7 @@
             this.txtOrderRows_4.Tag = "4";
             this.txtOrderRows_4.Text = "OrderRows";
             this.txtOrderRows_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtOrderRows_4.UseColorSizMode = false;
             this.txtOrderRows_4.Visible = false;
             // 
             // txtOrderRows_3
@@ -6224,6 +6540,7 @@
             this.txtOrderRows_3.AllowMinus = false;
             this.txtOrderRows_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtOrderRows_3.BackColor = System.Drawing.Color.Silver;
+            this.txtOrderRows_3.BorderColor = false;
             this.txtOrderRows_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOrderRows_3.ClientColor = System.Drawing.Color.White;
             this.txtOrderRows_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6249,6 +6566,7 @@
             this.txtOrderRows_3.Tag = "3";
             this.txtOrderRows_3.Text = "OrderRows";
             this.txtOrderRows_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtOrderRows_3.UseColorSizMode = false;
             this.txtOrderRows_3.Visible = false;
             // 
             // txtOrderRows_2
@@ -6256,6 +6574,7 @@
             this.txtOrderRows_2.AllowMinus = false;
             this.txtOrderRows_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtOrderRows_2.BackColor = System.Drawing.Color.Silver;
+            this.txtOrderRows_2.BorderColor = false;
             this.txtOrderRows_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOrderRows_2.ClientColor = System.Drawing.Color.White;
             this.txtOrderRows_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6281,6 +6600,7 @@
             this.txtOrderRows_2.Tag = "5";
             this.txtOrderRows_2.Text = "OrderRows";
             this.txtOrderRows_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtOrderRows_2.UseColorSizMode = false;
             this.txtOrderRows_2.Visible = false;
             // 
             // txtOrderRows_1
@@ -6288,6 +6608,7 @@
             this.txtOrderRows_1.AllowMinus = false;
             this.txtOrderRows_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtOrderRows_1.BackColor = System.Drawing.Color.Silver;
+            this.txtOrderRows_1.BorderColor = false;
             this.txtOrderRows_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOrderRows_1.ClientColor = System.Drawing.Color.White;
             this.txtOrderRows_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6313,6 +6634,7 @@
             this.txtOrderRows_1.Tag = "5";
             this.txtOrderRows_1.Text = "OrderRows";
             this.txtOrderRows_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtOrderRows_1.UseColorSizMode = false;
             this.txtOrderRows_1.Visible = false;
             // 
             // txtOrderRows_0
@@ -6320,6 +6642,7 @@
             this.txtOrderRows_0.AllowMinus = false;
             this.txtOrderRows_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtOrderRows_0.BackColor = System.Drawing.Color.Silver;
+            this.txtOrderRows_0.BorderColor = false;
             this.txtOrderRows_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOrderRows_0.ClientColor = System.Drawing.Color.White;
             this.txtOrderRows_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6345,6 +6668,7 @@
             this.txtOrderRows_0.Tag = "5";
             this.txtOrderRows_0.Text = "OrderRows";
             this.txtOrderRows_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtOrderRows_0.UseColorSizMode = false;
             this.txtOrderRows_0.Visible = false;
             // 
             // txtTaniCD_4
@@ -6352,6 +6676,7 @@
             this.txtTaniCD_4.AllowMinus = false;
             this.txtTaniCD_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTaniCD_4.BackColor = System.Drawing.Color.Silver;
+            this.txtTaniCD_4.BorderColor = false;
             this.txtTaniCD_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaniCD_4.ClientColor = System.Drawing.Color.White;
             this.txtTaniCD_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6377,6 +6702,7 @@
             this.txtTaniCD_4.Tag = "4";
             this.txtTaniCD_4.Text = "単位コード";
             this.txtTaniCD_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTaniCD_4.UseColorSizMode = false;
             this.txtTaniCD_4.Visible = false;
             // 
             // txtTaniCD_3
@@ -6384,6 +6710,7 @@
             this.txtTaniCD_3.AllowMinus = false;
             this.txtTaniCD_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTaniCD_3.BackColor = System.Drawing.Color.Silver;
+            this.txtTaniCD_3.BorderColor = false;
             this.txtTaniCD_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaniCD_3.ClientColor = System.Drawing.Color.White;
             this.txtTaniCD_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6409,6 +6736,7 @@
             this.txtTaniCD_3.Tag = "3";
             this.txtTaniCD_3.Text = "単位コード";
             this.txtTaniCD_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTaniCD_3.UseColorSizMode = false;
             this.txtTaniCD_3.Visible = false;
             // 
             // txtTaniCD_2
@@ -6416,6 +6744,7 @@
             this.txtTaniCD_2.AllowMinus = false;
             this.txtTaniCD_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTaniCD_2.BackColor = System.Drawing.Color.Silver;
+            this.txtTaniCD_2.BorderColor = false;
             this.txtTaniCD_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaniCD_2.ClientColor = System.Drawing.Color.White;
             this.txtTaniCD_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6441,6 +6770,7 @@
             this.txtTaniCD_2.Tag = "5";
             this.txtTaniCD_2.Text = "単位コード";
             this.txtTaniCD_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTaniCD_2.UseColorSizMode = false;
             this.txtTaniCD_2.Visible = false;
             // 
             // txtTaniCD_1
@@ -6448,6 +6778,7 @@
             this.txtTaniCD_1.AllowMinus = false;
             this.txtTaniCD_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTaniCD_1.BackColor = System.Drawing.Color.Silver;
+            this.txtTaniCD_1.BorderColor = false;
             this.txtTaniCD_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaniCD_1.ClientColor = System.Drawing.Color.White;
             this.txtTaniCD_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6473,6 +6804,7 @@
             this.txtTaniCD_1.Tag = "5";
             this.txtTaniCD_1.Text = "単位コード";
             this.txtTaniCD_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTaniCD_1.UseColorSizMode = false;
             this.txtTaniCD_1.Visible = false;
             // 
             // txtTaniCD_0
@@ -6480,6 +6812,7 @@
             this.txtTaniCD_0.AllowMinus = false;
             this.txtTaniCD_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTaniCD_0.BackColor = System.Drawing.Color.Silver;
+            this.txtTaniCD_0.BorderColor = false;
             this.txtTaniCD_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaniCD_0.ClientColor = System.Drawing.Color.White;
             this.txtTaniCD_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6505,6 +6838,7 @@
             this.txtTaniCD_0.Tag = "5";
             this.txtTaniCD_0.Text = "単位コード";
             this.txtTaniCD_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTaniCD_0.UseColorSizMode = false;
             this.txtTaniCD_0.Visible = false;
             // 
             // txtHacchuuShouhizeigaku_4
@@ -6512,6 +6846,7 @@
             this.txtHacchuuShouhizeigaku_4.AllowMinus = false;
             this.txtHacchuuShouhizeigaku_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuShouhizeigaku_4.BackColor = System.Drawing.Color.Silver;
+            this.txtHacchuuShouhizeigaku_4.BorderColor = false;
             this.txtHacchuuShouhizeigaku_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuShouhizeigaku_4.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuShouhizeigaku_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6537,6 +6872,7 @@
             this.txtHacchuuShouhizeigaku_4.Tag = "4";
             this.txtHacchuuShouhizeigaku_4.Text = "消費税額";
             this.txtHacchuuShouhizeigaku_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuShouhizeigaku_4.UseColorSizMode = false;
             this.txtHacchuuShouhizeigaku_4.Visible = false;
             // 
             // txtHacchuuShouhizeigaku_3
@@ -6544,6 +6880,7 @@
             this.txtHacchuuShouhizeigaku_3.AllowMinus = false;
             this.txtHacchuuShouhizeigaku_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuShouhizeigaku_3.BackColor = System.Drawing.Color.Silver;
+            this.txtHacchuuShouhizeigaku_3.BorderColor = false;
             this.txtHacchuuShouhizeigaku_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuShouhizeigaku_3.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuShouhizeigaku_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6569,6 +6906,7 @@
             this.txtHacchuuShouhizeigaku_3.Tag = "3";
             this.txtHacchuuShouhizeigaku_3.Text = "消費税額";
             this.txtHacchuuShouhizeigaku_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuShouhizeigaku_3.UseColorSizMode = false;
             this.txtHacchuuShouhizeigaku_3.Visible = false;
             // 
             // txtHacchuuShouhizeigaku_2
@@ -6576,6 +6914,7 @@
             this.txtHacchuuShouhizeigaku_2.AllowMinus = false;
             this.txtHacchuuShouhizeigaku_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuShouhizeigaku_2.BackColor = System.Drawing.Color.Silver;
+            this.txtHacchuuShouhizeigaku_2.BorderColor = false;
             this.txtHacchuuShouhizeigaku_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuShouhizeigaku_2.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuShouhizeigaku_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6601,6 +6940,7 @@
             this.txtHacchuuShouhizeigaku_2.Tag = "5";
             this.txtHacchuuShouhizeigaku_2.Text = "消費税額";
             this.txtHacchuuShouhizeigaku_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuShouhizeigaku_2.UseColorSizMode = false;
             this.txtHacchuuShouhizeigaku_2.Visible = false;
             // 
             // txtHacchuuShouhizeigaku_1
@@ -6608,6 +6948,7 @@
             this.txtHacchuuShouhizeigaku_1.AllowMinus = false;
             this.txtHacchuuShouhizeigaku_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuShouhizeigaku_1.BackColor = System.Drawing.Color.Silver;
+            this.txtHacchuuShouhizeigaku_1.BorderColor = false;
             this.txtHacchuuShouhizeigaku_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuShouhizeigaku_1.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuShouhizeigaku_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6633,6 +6974,7 @@
             this.txtHacchuuShouhizeigaku_1.Tag = "5";
             this.txtHacchuuShouhizeigaku_1.Text = "消費税額";
             this.txtHacchuuShouhizeigaku_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuShouhizeigaku_1.UseColorSizMode = false;
             this.txtHacchuuShouhizeigaku_1.Visible = false;
             // 
             // txtHacchuuShouhizeigaku_0
@@ -6640,6 +6982,7 @@
             this.txtHacchuuShouhizeigaku_0.AllowMinus = false;
             this.txtHacchuuShouhizeigaku_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuShouhizeigaku_0.BackColor = System.Drawing.Color.Silver;
+            this.txtHacchuuShouhizeigaku_0.BorderColor = false;
             this.txtHacchuuShouhizeigaku_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuShouhizeigaku_0.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuShouhizeigaku_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6665,6 +7008,7 @@
             this.txtHacchuuShouhizeigaku_0.Tag = "5";
             this.txtHacchuuShouhizeigaku_0.Text = "消費税額";
             this.txtHacchuuShouhizeigaku_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuShouhizeigaku_0.UseColorSizMode = false;
             this.txtHacchuuShouhizeigaku_0.Visible = false;
             // 
             // txtKakeritu_4
@@ -6672,6 +7016,7 @@
             this.txtKakeritu_4.AllowMinus = false;
             this.txtKakeritu_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKakeritu_4.BackColor = System.Drawing.Color.Silver;
+            this.txtKakeritu_4.BorderColor = false;
             this.txtKakeritu_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKakeritu_4.ClientColor = System.Drawing.Color.White;
             this.txtKakeritu_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6697,6 +7042,7 @@
             this.txtKakeritu_4.Tag = "4";
             this.txtKakeritu_4.Text = "掛率";
             this.txtKakeritu_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtKakeritu_4.UseColorSizMode = false;
             this.txtKakeritu_4.Visible = false;
             // 
             // txtTeika_4
@@ -6704,6 +7050,7 @@
             this.txtTeika_4.AllowMinus = false;
             this.txtTeika_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTeika_4.BackColor = System.Drawing.Color.Silver;
+            this.txtTeika_4.BorderColor = false;
             this.txtTeika_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTeika_4.ClientColor = System.Drawing.Color.White;
             this.txtTeika_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6729,6 +7076,7 @@
             this.txtTeika_4.Tag = "4";
             this.txtTeika_4.Text = "定価";
             this.txtTeika_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTeika_4.UseColorSizMode = false;
             this.txtTeika_4.Visible = false;
             // 
             // txtSKUName_4
@@ -6736,6 +7084,7 @@
             this.txtSKUName_4.AllowMinus = false;
             this.txtSKUName_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSKUName_4.BackColor = System.Drawing.Color.Silver;
+            this.txtSKUName_4.BorderColor = false;
             this.txtSKUName_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSKUName_4.ClientColor = System.Drawing.Color.White;
             this.txtSKUName_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6761,6 +7110,7 @@
             this.txtSKUName_4.Tag = "4";
             this.txtSKUName_4.Text = "SKUName";
             this.txtSKUName_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSKUName_4.UseColorSizMode = false;
             this.txtSKUName_4.Visible = false;
             // 
             // txtAdminNO_4
@@ -6768,6 +7118,7 @@
             this.txtAdminNO_4.AllowMinus = false;
             this.txtAdminNO_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtAdminNO_4.BackColor = System.Drawing.Color.Silver;
+            this.txtAdminNO_4.BorderColor = false;
             this.txtAdminNO_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAdminNO_4.ClientColor = System.Drawing.Color.White;
             this.txtAdminNO_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6793,6 +7144,7 @@
             this.txtAdminNO_4.Tag = "4";
             this.txtAdminNO_4.Text = "AdminNO";
             this.txtAdminNO_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtAdminNO_4.UseColorSizMode = false;
             this.txtAdminNO_4.Visible = false;
             // 
             // txtVariousFLG_4
@@ -6800,6 +7152,7 @@
             this.txtVariousFLG_4.AllowMinus = false;
             this.txtVariousFLG_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtVariousFLG_4.BackColor = System.Drawing.Color.Silver;
+            this.txtVariousFLG_4.BorderColor = false;
             this.txtVariousFLG_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVariousFLG_4.ClientColor = System.Drawing.Color.White;
             this.txtVariousFLG_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6825,6 +7178,7 @@
             this.txtVariousFLG_4.Tag = "4";
             this.txtVariousFLG_4.Text = "VariousFLG";
             this.txtVariousFLG_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtVariousFLG_4.UseColorSizMode = false;
             this.txtVariousFLG_4.Visible = false;
             // 
             // txtJuchuuRows_4
@@ -6832,6 +7186,7 @@
             this.txtJuchuuRows_4.AllowMinus = false;
             this.txtJuchuuRows_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtJuchuuRows_4.BackColor = System.Drawing.Color.Silver;
+            this.txtJuchuuRows_4.BorderColor = false;
             this.txtJuchuuRows_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJuchuuRows_4.ClientColor = System.Drawing.Color.White;
             this.txtJuchuuRows_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6857,6 +7212,7 @@
             this.txtJuchuuRows_4.Tag = "4";
             this.txtJuchuuRows_4.Text = "受注明細連番";
             this.txtJuchuuRows_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtJuchuuRows_4.UseColorSizMode = false;
             this.txtJuchuuRows_4.Visible = false;
             // 
             // txtKakeritu_3
@@ -6864,6 +7220,7 @@
             this.txtKakeritu_3.AllowMinus = false;
             this.txtKakeritu_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKakeritu_3.BackColor = System.Drawing.Color.Silver;
+            this.txtKakeritu_3.BorderColor = false;
             this.txtKakeritu_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKakeritu_3.ClientColor = System.Drawing.Color.White;
             this.txtKakeritu_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6889,6 +7246,7 @@
             this.txtKakeritu_3.Tag = "3";
             this.txtKakeritu_3.Text = "掛率";
             this.txtKakeritu_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtKakeritu_3.UseColorSizMode = false;
             this.txtKakeritu_3.Visible = false;
             // 
             // txtTeika_3
@@ -6896,6 +7254,7 @@
             this.txtTeika_3.AllowMinus = false;
             this.txtTeika_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTeika_3.BackColor = System.Drawing.Color.Silver;
+            this.txtTeika_3.BorderColor = false;
             this.txtTeika_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTeika_3.ClientColor = System.Drawing.Color.White;
             this.txtTeika_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6921,6 +7280,7 @@
             this.txtTeika_3.Tag = "3";
             this.txtTeika_3.Text = "定価";
             this.txtTeika_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTeika_3.UseColorSizMode = false;
             this.txtTeika_3.Visible = false;
             // 
             // txtSKUName_3
@@ -6928,6 +7288,7 @@
             this.txtSKUName_3.AllowMinus = false;
             this.txtSKUName_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSKUName_3.BackColor = System.Drawing.Color.Silver;
+            this.txtSKUName_3.BorderColor = false;
             this.txtSKUName_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSKUName_3.ClientColor = System.Drawing.Color.White;
             this.txtSKUName_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6953,6 +7314,7 @@
             this.txtSKUName_3.Tag = "3";
             this.txtSKUName_3.Text = "SKUName";
             this.txtSKUName_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSKUName_3.UseColorSizMode = false;
             this.txtSKUName_3.Visible = false;
             // 
             // txtAdminNO_3
@@ -6960,6 +7322,7 @@
             this.txtAdminNO_3.AllowMinus = false;
             this.txtAdminNO_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtAdminNO_3.BackColor = System.Drawing.Color.Silver;
+            this.txtAdminNO_3.BorderColor = false;
             this.txtAdminNO_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAdminNO_3.ClientColor = System.Drawing.Color.White;
             this.txtAdminNO_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -6985,6 +7348,7 @@
             this.txtAdminNO_3.Tag = "3";
             this.txtAdminNO_3.Text = "AdminNO";
             this.txtAdminNO_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtAdminNO_3.UseColorSizMode = false;
             this.txtAdminNO_3.Visible = false;
             // 
             // txtVariousFLG_3
@@ -6992,6 +7356,7 @@
             this.txtVariousFLG_3.AllowMinus = false;
             this.txtVariousFLG_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtVariousFLG_3.BackColor = System.Drawing.Color.Silver;
+            this.txtVariousFLG_3.BorderColor = false;
             this.txtVariousFLG_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVariousFLG_3.ClientColor = System.Drawing.Color.White;
             this.txtVariousFLG_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7017,6 +7382,7 @@
             this.txtVariousFLG_3.Tag = "3";
             this.txtVariousFLG_3.Text = "VariousFLG";
             this.txtVariousFLG_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtVariousFLG_3.UseColorSizMode = false;
             this.txtVariousFLG_3.Visible = false;
             // 
             // txtJuchuuRows_3
@@ -7024,6 +7390,7 @@
             this.txtJuchuuRows_3.AllowMinus = false;
             this.txtJuchuuRows_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtJuchuuRows_3.BackColor = System.Drawing.Color.Silver;
+            this.txtJuchuuRows_3.BorderColor = false;
             this.txtJuchuuRows_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJuchuuRows_3.ClientColor = System.Drawing.Color.White;
             this.txtJuchuuRows_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7049,6 +7416,7 @@
             this.txtJuchuuRows_3.Tag = "3";
             this.txtJuchuuRows_3.Text = "受注明細連番";
             this.txtJuchuuRows_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtJuchuuRows_3.UseColorSizMode = false;
             this.txtJuchuuRows_3.Visible = false;
             // 
             // txtKakeritu_2
@@ -7056,6 +7424,7 @@
             this.txtKakeritu_2.AllowMinus = false;
             this.txtKakeritu_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKakeritu_2.BackColor = System.Drawing.Color.Silver;
+            this.txtKakeritu_2.BorderColor = false;
             this.txtKakeritu_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKakeritu_2.ClientColor = System.Drawing.Color.White;
             this.txtKakeritu_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7081,6 +7450,7 @@
             this.txtKakeritu_2.Tag = "5";
             this.txtKakeritu_2.Text = "掛率";
             this.txtKakeritu_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtKakeritu_2.UseColorSizMode = false;
             this.txtKakeritu_2.Visible = false;
             // 
             // txtTeika_2
@@ -7088,6 +7458,7 @@
             this.txtTeika_2.AllowMinus = false;
             this.txtTeika_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTeika_2.BackColor = System.Drawing.Color.Silver;
+            this.txtTeika_2.BorderColor = false;
             this.txtTeika_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTeika_2.ClientColor = System.Drawing.Color.White;
             this.txtTeika_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7113,6 +7484,7 @@
             this.txtTeika_2.Tag = "5";
             this.txtTeika_2.Text = "定価";
             this.txtTeika_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTeika_2.UseColorSizMode = false;
             this.txtTeika_2.Visible = false;
             // 
             // txtSKUName_2
@@ -7120,6 +7492,7 @@
             this.txtSKUName_2.AllowMinus = false;
             this.txtSKUName_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSKUName_2.BackColor = System.Drawing.Color.Silver;
+            this.txtSKUName_2.BorderColor = false;
             this.txtSKUName_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSKUName_2.ClientColor = System.Drawing.Color.White;
             this.txtSKUName_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7145,6 +7518,7 @@
             this.txtSKUName_2.Tag = "5";
             this.txtSKUName_2.Text = "SKUName";
             this.txtSKUName_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSKUName_2.UseColorSizMode = false;
             this.txtSKUName_2.Visible = false;
             // 
             // txtAdminNO_2
@@ -7152,6 +7526,7 @@
             this.txtAdminNO_2.AllowMinus = false;
             this.txtAdminNO_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtAdminNO_2.BackColor = System.Drawing.Color.Silver;
+            this.txtAdminNO_2.BorderColor = false;
             this.txtAdminNO_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAdminNO_2.ClientColor = System.Drawing.Color.White;
             this.txtAdminNO_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7177,6 +7552,7 @@
             this.txtAdminNO_2.Tag = "5";
             this.txtAdminNO_2.Text = "AdminNO";
             this.txtAdminNO_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtAdminNO_2.UseColorSizMode = false;
             this.txtAdminNO_2.Visible = false;
             // 
             // txtVariousFLG_2
@@ -7184,6 +7560,7 @@
             this.txtVariousFLG_2.AllowMinus = false;
             this.txtVariousFLG_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtVariousFLG_2.BackColor = System.Drawing.Color.Silver;
+            this.txtVariousFLG_2.BorderColor = false;
             this.txtVariousFLG_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVariousFLG_2.ClientColor = System.Drawing.Color.White;
             this.txtVariousFLG_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7209,6 +7586,7 @@
             this.txtVariousFLG_2.Tag = "5";
             this.txtVariousFLG_2.Text = "VariousFLG";
             this.txtVariousFLG_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtVariousFLG_2.UseColorSizMode = false;
             this.txtVariousFLG_2.Visible = false;
             // 
             // txtJuchuuRows_2
@@ -7216,6 +7594,7 @@
             this.txtJuchuuRows_2.AllowMinus = false;
             this.txtJuchuuRows_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtJuchuuRows_2.BackColor = System.Drawing.Color.Silver;
+            this.txtJuchuuRows_2.BorderColor = false;
             this.txtJuchuuRows_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJuchuuRows_2.ClientColor = System.Drawing.Color.White;
             this.txtJuchuuRows_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7241,6 +7620,7 @@
             this.txtJuchuuRows_2.Tag = "5";
             this.txtJuchuuRows_2.Text = "受注明細連番";
             this.txtJuchuuRows_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtJuchuuRows_2.UseColorSizMode = false;
             this.txtJuchuuRows_2.Visible = false;
             // 
             // txtKakeritu_1
@@ -7248,6 +7628,7 @@
             this.txtKakeritu_1.AllowMinus = false;
             this.txtKakeritu_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKakeritu_1.BackColor = System.Drawing.Color.Silver;
+            this.txtKakeritu_1.BorderColor = false;
             this.txtKakeritu_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKakeritu_1.ClientColor = System.Drawing.Color.White;
             this.txtKakeritu_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7273,6 +7654,7 @@
             this.txtKakeritu_1.Tag = "5";
             this.txtKakeritu_1.Text = "掛率";
             this.txtKakeritu_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtKakeritu_1.UseColorSizMode = false;
             this.txtKakeritu_1.Visible = false;
             // 
             // txtTeika_1
@@ -7280,6 +7662,7 @@
             this.txtTeika_1.AllowMinus = false;
             this.txtTeika_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTeika_1.BackColor = System.Drawing.Color.Silver;
+            this.txtTeika_1.BorderColor = false;
             this.txtTeika_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTeika_1.ClientColor = System.Drawing.Color.White;
             this.txtTeika_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7305,6 +7688,7 @@
             this.txtTeika_1.Tag = "5";
             this.txtTeika_1.Text = "定価";
             this.txtTeika_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTeika_1.UseColorSizMode = false;
             this.txtTeika_1.Visible = false;
             // 
             // txtSKUName_1
@@ -7312,6 +7696,7 @@
             this.txtSKUName_1.AllowMinus = false;
             this.txtSKUName_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSKUName_1.BackColor = System.Drawing.Color.Silver;
+            this.txtSKUName_1.BorderColor = false;
             this.txtSKUName_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSKUName_1.ClientColor = System.Drawing.Color.White;
             this.txtSKUName_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7337,6 +7722,7 @@
             this.txtSKUName_1.Tag = "5";
             this.txtSKUName_1.Text = "SKUName";
             this.txtSKUName_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSKUName_1.UseColorSizMode = false;
             this.txtSKUName_1.Visible = false;
             // 
             // txtAdminNO_1
@@ -7344,6 +7730,7 @@
             this.txtAdminNO_1.AllowMinus = false;
             this.txtAdminNO_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtAdminNO_1.BackColor = System.Drawing.Color.Silver;
+            this.txtAdminNO_1.BorderColor = false;
             this.txtAdminNO_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAdminNO_1.ClientColor = System.Drawing.Color.White;
             this.txtAdminNO_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7369,6 +7756,7 @@
             this.txtAdminNO_1.Tag = "5";
             this.txtAdminNO_1.Text = "AdminNO";
             this.txtAdminNO_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtAdminNO_1.UseColorSizMode = false;
             this.txtAdminNO_1.Visible = false;
             // 
             // txtVariousFLG_1
@@ -7376,6 +7764,7 @@
             this.txtVariousFLG_1.AllowMinus = false;
             this.txtVariousFLG_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtVariousFLG_1.BackColor = System.Drawing.Color.Silver;
+            this.txtVariousFLG_1.BorderColor = false;
             this.txtVariousFLG_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVariousFLG_1.ClientColor = System.Drawing.Color.White;
             this.txtVariousFLG_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7401,6 +7790,7 @@
             this.txtVariousFLG_1.Tag = "5";
             this.txtVariousFLG_1.Text = "VariousFLG";
             this.txtVariousFLG_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtVariousFLG_1.UseColorSizMode = false;
             this.txtVariousFLG_1.Visible = false;
             // 
             // txtJuchuuRows_1
@@ -7408,6 +7798,7 @@
             this.txtJuchuuRows_1.AllowMinus = false;
             this.txtJuchuuRows_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtJuchuuRows_1.BackColor = System.Drawing.Color.Silver;
+            this.txtJuchuuRows_1.BorderColor = false;
             this.txtJuchuuRows_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJuchuuRows_1.ClientColor = System.Drawing.Color.White;
             this.txtJuchuuRows_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7433,6 +7824,7 @@
             this.txtJuchuuRows_1.Tag = "5";
             this.txtJuchuuRows_1.Text = "受注明細連番";
             this.txtJuchuuRows_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtJuchuuRows_1.UseColorSizMode = false;
             this.txtJuchuuRows_1.Visible = false;
             // 
             // txtKakeritu_0
@@ -7440,6 +7832,7 @@
             this.txtKakeritu_0.AllowMinus = false;
             this.txtKakeritu_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKakeritu_0.BackColor = System.Drawing.Color.Silver;
+            this.txtKakeritu_0.BorderColor = false;
             this.txtKakeritu_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKakeritu_0.ClientColor = System.Drawing.Color.White;
             this.txtKakeritu_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7465,6 +7858,7 @@
             this.txtKakeritu_0.Tag = "5";
             this.txtKakeritu_0.Text = "掛率";
             this.txtKakeritu_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtKakeritu_0.UseColorSizMode = false;
             this.txtKakeritu_0.Visible = false;
             // 
             // txtTeika_0
@@ -7472,6 +7866,7 @@
             this.txtTeika_0.AllowMinus = false;
             this.txtTeika_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTeika_0.BackColor = System.Drawing.Color.Silver;
+            this.txtTeika_0.BorderColor = false;
             this.txtTeika_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTeika_0.ClientColor = System.Drawing.Color.White;
             this.txtTeika_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7497,6 +7892,7 @@
             this.txtTeika_0.Tag = "5";
             this.txtTeika_0.Text = "定価";
             this.txtTeika_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTeika_0.UseColorSizMode = false;
             this.txtTeika_0.Visible = false;
             // 
             // txtSKUName_0
@@ -7504,6 +7900,7 @@
             this.txtSKUName_0.AllowMinus = false;
             this.txtSKUName_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSKUName_0.BackColor = System.Drawing.Color.Silver;
+            this.txtSKUName_0.BorderColor = false;
             this.txtSKUName_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSKUName_0.ClientColor = System.Drawing.Color.White;
             this.txtSKUName_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7529,6 +7926,7 @@
             this.txtSKUName_0.Tag = "5";
             this.txtSKUName_0.Text = "SKUName";
             this.txtSKUName_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSKUName_0.UseColorSizMode = false;
             this.txtSKUName_0.Visible = false;
             // 
             // txtAdminNO_0
@@ -7536,6 +7934,7 @@
             this.txtAdminNO_0.AllowMinus = false;
             this.txtAdminNO_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtAdminNO_0.BackColor = System.Drawing.Color.Silver;
+            this.txtAdminNO_0.BorderColor = false;
             this.txtAdminNO_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAdminNO_0.ClientColor = System.Drawing.Color.White;
             this.txtAdminNO_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7561,6 +7960,7 @@
             this.txtAdminNO_0.Tag = "5";
             this.txtAdminNO_0.Text = "AdminNO";
             this.txtAdminNO_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtAdminNO_0.UseColorSizMode = false;
             this.txtAdminNO_0.Visible = false;
             // 
             // txtVariousFLG_0
@@ -7568,6 +7968,7 @@
             this.txtVariousFLG_0.AllowMinus = false;
             this.txtVariousFLG_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtVariousFLG_0.BackColor = System.Drawing.Color.Silver;
+            this.txtVariousFLG_0.BorderColor = false;
             this.txtVariousFLG_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVariousFLG_0.ClientColor = System.Drawing.Color.White;
             this.txtVariousFLG_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7593,6 +7994,7 @@
             this.txtVariousFLG_0.Tag = "5";
             this.txtVariousFLG_0.Text = "VariousFLG";
             this.txtVariousFLG_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtVariousFLG_0.UseColorSizMode = false;
             this.txtVariousFLG_0.Visible = false;
             // 
             // txtJuchuuRows_0
@@ -7600,6 +8002,7 @@
             this.txtJuchuuRows_0.AllowMinus = false;
             this.txtJuchuuRows_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtJuchuuRows_0.BackColor = System.Drawing.Color.Silver;
+            this.txtJuchuuRows_0.BorderColor = false;
             this.txtJuchuuRows_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJuchuuRows_0.ClientColor = System.Drawing.Color.White;
             this.txtJuchuuRows_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7625,6 +8028,7 @@
             this.txtJuchuuRows_0.Tag = "5";
             this.txtJuchuuRows_0.Text = "受注明細連番";
             this.txtJuchuuRows_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtJuchuuRows_0.UseColorSizMode = false;
             this.txtJuchuuRows_0.Visible = false;
             // 
             // txtNounyuusakiYuubinNO2_4
@@ -7632,6 +8036,7 @@
             this.txtNounyuusakiYuubinNO2_4.AllowMinus = false;
             this.txtNounyuusakiYuubinNO2_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiYuubinNO2_4.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiYuubinNO2_4.BorderColor = false;
             this.txtNounyuusakiYuubinNO2_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiYuubinNO2_4.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiYuubinNO2_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7657,6 +8062,7 @@
             this.txtNounyuusakiYuubinNO2_4.Tag = "4";
             this.txtNounyuusakiYuubinNO2_4.Text = "納入先郵便NO2";
             this.txtNounyuusakiYuubinNO2_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiYuubinNO2_4.UseColorSizMode = false;
             this.txtNounyuusakiYuubinNO2_4.Visible = false;
             // 
             // txtNounyuusakiYuubinNO1_4
@@ -7664,6 +8070,7 @@
             this.txtNounyuusakiYuubinNO1_4.AllowMinus = false;
             this.txtNounyuusakiYuubinNO1_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiYuubinNO1_4.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiYuubinNO1_4.BorderColor = false;
             this.txtNounyuusakiYuubinNO1_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiYuubinNO1_4.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiYuubinNO1_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7689,6 +8096,7 @@
             this.txtNounyuusakiYuubinNO1_4.Tag = "4";
             this.txtNounyuusakiYuubinNO1_4.Text = "納入先郵便NO1";
             this.txtNounyuusakiYuubinNO1_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiYuubinNO1_4.UseColorSizMode = false;
             this.txtNounyuusakiYuubinNO1_4.Visible = false;
             // 
             // txtTaxRate_4
@@ -7696,6 +8104,7 @@
             this.txtTaxRate_4.AllowMinus = false;
             this.txtTaxRate_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTaxRate_4.BackColor = System.Drawing.Color.Silver;
+            this.txtTaxRate_4.BorderColor = false;
             this.txtTaxRate_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaxRate_4.ClientColor = System.Drawing.Color.White;
             this.txtTaxRate_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7721,6 +8130,7 @@
             this.txtTaxRate_4.Tag = "4";
             this.txtTaxRate_4.Text = "消費税率";
             this.txtTaxRate_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTaxRate_4.UseColorSizMode = false;
             this.txtTaxRate_4.Visible = false;
             // 
             // txtSoukoCD_4
@@ -7728,6 +8138,7 @@
             this.txtSoukoCD_4.AllowMinus = false;
             this.txtSoukoCD_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSoukoCD_4.BackColor = System.Drawing.Color.Silver;
+            this.txtSoukoCD_4.BorderColor = false;
             this.txtSoukoCD_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSoukoCD_4.ClientColor = System.Drawing.Color.White;
             this.txtSoukoCD_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7753,6 +8164,7 @@
             this.txtSoukoCD_4.Tag = "4";
             this.txtSoukoCD_4.Text = "倉庫コード";
             this.txtSoukoCD_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSoukoCD_4.UseColorSizMode = false;
             this.txtSoukoCD_4.Visible = false;
             // 
             // txtNounyuusakiFAXNO_4
@@ -7760,6 +8172,7 @@
             this.txtNounyuusakiFAXNO_4.AllowMinus = false;
             this.txtNounyuusakiFAXNO_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiFAXNO_4.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiFAXNO_4.BorderColor = false;
             this.txtNounyuusakiFAXNO_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiFAXNO_4.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiFAXNO_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7785,6 +8198,7 @@
             this.txtNounyuusakiFAXNO_4.Tag = "4";
             this.txtNounyuusakiFAXNO_4.Text = "納入先FAXNO";
             this.txtNounyuusakiFAXNO_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiFAXNO_4.UseColorSizMode = false;
             this.txtNounyuusakiFAXNO_4.Visible = false;
             // 
             // txtNounyuusakiYuubinNO2_3
@@ -7792,6 +8206,7 @@
             this.txtNounyuusakiYuubinNO2_3.AllowMinus = false;
             this.txtNounyuusakiYuubinNO2_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiYuubinNO2_3.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiYuubinNO2_3.BorderColor = false;
             this.txtNounyuusakiYuubinNO2_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiYuubinNO2_3.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiYuubinNO2_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7817,6 +8232,7 @@
             this.txtNounyuusakiYuubinNO2_3.Tag = "3";
             this.txtNounyuusakiYuubinNO2_3.Text = "納入先郵便NO2";
             this.txtNounyuusakiYuubinNO2_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiYuubinNO2_3.UseColorSizMode = false;
             this.txtNounyuusakiYuubinNO2_3.Visible = false;
             // 
             // txtNounyuusakiYuubinNO1_3
@@ -7824,6 +8240,7 @@
             this.txtNounyuusakiYuubinNO1_3.AllowMinus = false;
             this.txtNounyuusakiYuubinNO1_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiYuubinNO1_3.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiYuubinNO1_3.BorderColor = false;
             this.txtNounyuusakiYuubinNO1_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiYuubinNO1_3.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiYuubinNO1_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7849,6 +8266,7 @@
             this.txtNounyuusakiYuubinNO1_3.Tag = "3";
             this.txtNounyuusakiYuubinNO1_3.Text = "納入先郵便NO1";
             this.txtNounyuusakiYuubinNO1_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiYuubinNO1_3.UseColorSizMode = false;
             this.txtNounyuusakiYuubinNO1_3.Visible = false;
             // 
             // txtTaxRate_3
@@ -7856,6 +8274,7 @@
             this.txtTaxRate_3.AllowMinus = false;
             this.txtTaxRate_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTaxRate_3.BackColor = System.Drawing.Color.Silver;
+            this.txtTaxRate_3.BorderColor = false;
             this.txtTaxRate_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaxRate_3.ClientColor = System.Drawing.Color.White;
             this.txtTaxRate_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7881,6 +8300,7 @@
             this.txtTaxRate_3.Tag = "3";
             this.txtTaxRate_3.Text = "消費税率";
             this.txtTaxRate_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTaxRate_3.UseColorSizMode = false;
             this.txtTaxRate_3.Visible = false;
             // 
             // txtSoukoCD_3
@@ -7888,6 +8308,7 @@
             this.txtSoukoCD_3.AllowMinus = false;
             this.txtSoukoCD_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSoukoCD_3.BackColor = System.Drawing.Color.Silver;
+            this.txtSoukoCD_3.BorderColor = false;
             this.txtSoukoCD_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSoukoCD_3.ClientColor = System.Drawing.Color.White;
             this.txtSoukoCD_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7913,6 +8334,7 @@
             this.txtSoukoCD_3.Tag = "3";
             this.txtSoukoCD_3.Text = "倉庫コード";
             this.txtSoukoCD_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSoukoCD_3.UseColorSizMode = false;
             this.txtSoukoCD_3.Visible = false;
             // 
             // txtNounyuusakiFAXNO_3
@@ -7920,6 +8342,7 @@
             this.txtNounyuusakiFAXNO_3.AllowMinus = false;
             this.txtNounyuusakiFAXNO_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiFAXNO_3.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiFAXNO_3.BorderColor = false;
             this.txtNounyuusakiFAXNO_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiFAXNO_3.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiFAXNO_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7945,6 +8368,7 @@
             this.txtNounyuusakiFAXNO_3.Tag = "3";
             this.txtNounyuusakiFAXNO_3.Text = "納入先FAXNO";
             this.txtNounyuusakiFAXNO_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiFAXNO_3.UseColorSizMode = false;
             this.txtNounyuusakiFAXNO_3.Visible = false;
             // 
             // txtNounyuusakiYuubinNO2_2
@@ -7952,6 +8376,7 @@
             this.txtNounyuusakiYuubinNO2_2.AllowMinus = false;
             this.txtNounyuusakiYuubinNO2_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiYuubinNO2_2.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiYuubinNO2_2.BorderColor = false;
             this.txtNounyuusakiYuubinNO2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiYuubinNO2_2.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiYuubinNO2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -7977,6 +8402,7 @@
             this.txtNounyuusakiYuubinNO2_2.Tag = "5";
             this.txtNounyuusakiYuubinNO2_2.Text = "納入先郵便NO2";
             this.txtNounyuusakiYuubinNO2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiYuubinNO2_2.UseColorSizMode = false;
             this.txtNounyuusakiYuubinNO2_2.Visible = false;
             // 
             // txtNounyuusakiYuubinNO1_2
@@ -7984,6 +8410,7 @@
             this.txtNounyuusakiYuubinNO1_2.AllowMinus = false;
             this.txtNounyuusakiYuubinNO1_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiYuubinNO1_2.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiYuubinNO1_2.BorderColor = false;
             this.txtNounyuusakiYuubinNO1_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiYuubinNO1_2.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiYuubinNO1_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8009,6 +8436,7 @@
             this.txtNounyuusakiYuubinNO1_2.Tag = "5";
             this.txtNounyuusakiYuubinNO1_2.Text = "納入先郵便NO1";
             this.txtNounyuusakiYuubinNO1_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiYuubinNO1_2.UseColorSizMode = false;
             this.txtNounyuusakiYuubinNO1_2.Visible = false;
             // 
             // txtTaxRate_2
@@ -8016,6 +8444,7 @@
             this.txtTaxRate_2.AllowMinus = false;
             this.txtTaxRate_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTaxRate_2.BackColor = System.Drawing.Color.Silver;
+            this.txtTaxRate_2.BorderColor = false;
             this.txtTaxRate_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaxRate_2.ClientColor = System.Drawing.Color.White;
             this.txtTaxRate_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8041,6 +8470,7 @@
             this.txtTaxRate_2.Tag = "5";
             this.txtTaxRate_2.Text = "消費税率";
             this.txtTaxRate_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTaxRate_2.UseColorSizMode = false;
             this.txtTaxRate_2.Visible = false;
             // 
             // txtSoukoCD_2
@@ -8048,6 +8478,7 @@
             this.txtSoukoCD_2.AllowMinus = false;
             this.txtSoukoCD_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSoukoCD_2.BackColor = System.Drawing.Color.Silver;
+            this.txtSoukoCD_2.BorderColor = false;
             this.txtSoukoCD_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSoukoCD_2.ClientColor = System.Drawing.Color.White;
             this.txtSoukoCD_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8073,6 +8504,7 @@
             this.txtSoukoCD_2.Tag = "5";
             this.txtSoukoCD_2.Text = "倉庫コード";
             this.txtSoukoCD_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSoukoCD_2.UseColorSizMode = false;
             this.txtSoukoCD_2.Visible = false;
             // 
             // txtNounyuusakiFAXNO_2
@@ -8080,6 +8512,7 @@
             this.txtNounyuusakiFAXNO_2.AllowMinus = false;
             this.txtNounyuusakiFAXNO_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiFAXNO_2.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiFAXNO_2.BorderColor = false;
             this.txtNounyuusakiFAXNO_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiFAXNO_2.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiFAXNO_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8105,6 +8538,7 @@
             this.txtNounyuusakiFAXNO_2.Tag = "5";
             this.txtNounyuusakiFAXNO_2.Text = "納入先FAXNO";
             this.txtNounyuusakiFAXNO_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiFAXNO_2.UseColorSizMode = false;
             this.txtNounyuusakiFAXNO_2.Visible = false;
             // 
             // txtNounyuusakiYuubinNO2_1
@@ -8112,6 +8546,7 @@
             this.txtNounyuusakiYuubinNO2_1.AllowMinus = false;
             this.txtNounyuusakiYuubinNO2_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiYuubinNO2_1.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiYuubinNO2_1.BorderColor = false;
             this.txtNounyuusakiYuubinNO2_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiYuubinNO2_1.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiYuubinNO2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8137,6 +8572,7 @@
             this.txtNounyuusakiYuubinNO2_1.Tag = "5";
             this.txtNounyuusakiYuubinNO2_1.Text = "納入先郵便NO2";
             this.txtNounyuusakiYuubinNO2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiYuubinNO2_1.UseColorSizMode = false;
             this.txtNounyuusakiYuubinNO2_1.Visible = false;
             // 
             // txtNounyuusakiYuubinNO1_1
@@ -8144,6 +8580,7 @@
             this.txtNounyuusakiYuubinNO1_1.AllowMinus = false;
             this.txtNounyuusakiYuubinNO1_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiYuubinNO1_1.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiYuubinNO1_1.BorderColor = false;
             this.txtNounyuusakiYuubinNO1_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiYuubinNO1_1.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiYuubinNO1_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8169,6 +8606,7 @@
             this.txtNounyuusakiYuubinNO1_1.Tag = "5";
             this.txtNounyuusakiYuubinNO1_1.Text = "納入先郵便NO1";
             this.txtNounyuusakiYuubinNO1_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiYuubinNO1_1.UseColorSizMode = false;
             this.txtNounyuusakiYuubinNO1_1.Visible = false;
             // 
             // txtTaxRate_1
@@ -8176,6 +8614,7 @@
             this.txtTaxRate_1.AllowMinus = false;
             this.txtTaxRate_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTaxRate_1.BackColor = System.Drawing.Color.Silver;
+            this.txtTaxRate_1.BorderColor = false;
             this.txtTaxRate_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaxRate_1.ClientColor = System.Drawing.Color.White;
             this.txtTaxRate_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8201,6 +8640,7 @@
             this.txtTaxRate_1.Tag = "5";
             this.txtTaxRate_1.Text = "消費税率";
             this.txtTaxRate_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTaxRate_1.UseColorSizMode = false;
             this.txtTaxRate_1.Visible = false;
             // 
             // txtSoukoCD_1
@@ -8208,6 +8648,7 @@
             this.txtSoukoCD_1.AllowMinus = false;
             this.txtSoukoCD_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSoukoCD_1.BackColor = System.Drawing.Color.Silver;
+            this.txtSoukoCD_1.BorderColor = false;
             this.txtSoukoCD_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSoukoCD_1.ClientColor = System.Drawing.Color.White;
             this.txtSoukoCD_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8233,6 +8674,7 @@
             this.txtSoukoCD_1.Tag = "5";
             this.txtSoukoCD_1.Text = "倉庫コード";
             this.txtSoukoCD_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSoukoCD_1.UseColorSizMode = false;
             this.txtSoukoCD_1.Visible = false;
             // 
             // txtNounyuusakiFAXNO_1
@@ -8240,6 +8682,7 @@
             this.txtNounyuusakiFAXNO_1.AllowMinus = false;
             this.txtNounyuusakiFAXNO_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiFAXNO_1.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiFAXNO_1.BorderColor = false;
             this.txtNounyuusakiFAXNO_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiFAXNO_1.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiFAXNO_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8265,6 +8708,7 @@
             this.txtNounyuusakiFAXNO_1.Tag = "5";
             this.txtNounyuusakiFAXNO_1.Text = "納入先FAXNO";
             this.txtNounyuusakiFAXNO_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiFAXNO_1.UseColorSizMode = false;
             this.txtNounyuusakiFAXNO_1.Visible = false;
             // 
             // txtNounyuusakiTELNO_1
@@ -8272,6 +8716,7 @@
             this.txtNounyuusakiTELNO_1.AllowMinus = false;
             this.txtNounyuusakiTELNO_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiTELNO_1.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiTELNO_1.BorderColor = false;
             this.txtNounyuusakiTELNO_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiTELNO_1.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiTELNO_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8297,6 +8742,7 @@
             this.txtNounyuusakiTELNO_1.Tag = "5";
             this.txtNounyuusakiTELNO_1.Text = "納入先TELNO";
             this.txtNounyuusakiTELNO_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiTELNO_1.UseColorSizMode = false;
             this.txtNounyuusakiTELNO_1.Visible = false;
             // 
             // txtNounyuusakiYuubinNO2_0
@@ -8304,6 +8750,7 @@
             this.txtNounyuusakiYuubinNO2_0.AllowMinus = false;
             this.txtNounyuusakiYuubinNO2_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiYuubinNO2_0.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiYuubinNO2_0.BorderColor = false;
             this.txtNounyuusakiYuubinNO2_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiYuubinNO2_0.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiYuubinNO2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8329,6 +8776,7 @@
             this.txtNounyuusakiYuubinNO2_0.Tag = "5";
             this.txtNounyuusakiYuubinNO2_0.Text = "納入先郵便NO2";
             this.txtNounyuusakiYuubinNO2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiYuubinNO2_0.UseColorSizMode = false;
             this.txtNounyuusakiYuubinNO2_0.Visible = false;
             // 
             // txtNounyuusakiYuubinNO1_0
@@ -8336,6 +8784,7 @@
             this.txtNounyuusakiYuubinNO1_0.AllowMinus = false;
             this.txtNounyuusakiYuubinNO1_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiYuubinNO1_0.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiYuubinNO1_0.BorderColor = false;
             this.txtNounyuusakiYuubinNO1_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiYuubinNO1_0.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiYuubinNO1_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8361,6 +8810,7 @@
             this.txtNounyuusakiYuubinNO1_0.Tag = "5";
             this.txtNounyuusakiYuubinNO1_0.Text = "納入先郵便NO1";
             this.txtNounyuusakiYuubinNO1_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiYuubinNO1_0.UseColorSizMode = false;
             this.txtNounyuusakiYuubinNO1_0.Visible = false;
             // 
             // txtTaxRate_0
@@ -8368,6 +8818,7 @@
             this.txtTaxRate_0.AllowMinus = false;
             this.txtTaxRate_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTaxRate_0.BackColor = System.Drawing.Color.Silver;
+            this.txtTaxRate_0.BorderColor = false;
             this.txtTaxRate_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaxRate_0.ClientColor = System.Drawing.Color.White;
             this.txtTaxRate_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8393,6 +8844,7 @@
             this.txtTaxRate_0.Tag = "5";
             this.txtTaxRate_0.Text = "消費税率";
             this.txtTaxRate_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTaxRate_0.UseColorSizMode = false;
             this.txtTaxRate_0.Visible = false;
             // 
             // txtSoukoCD_0
@@ -8400,6 +8852,7 @@
             this.txtSoukoCD_0.AllowMinus = false;
             this.txtSoukoCD_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSoukoCD_0.BackColor = System.Drawing.Color.Silver;
+            this.txtSoukoCD_0.BorderColor = false;
             this.txtSoukoCD_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSoukoCD_0.ClientColor = System.Drawing.Color.White;
             this.txtSoukoCD_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8425,6 +8878,7 @@
             this.txtSoukoCD_0.Tag = "5";
             this.txtSoukoCD_0.Text = "倉庫コード";
             this.txtSoukoCD_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSoukoCD_0.UseColorSizMode = false;
             this.txtSoukoCD_0.Visible = false;
             // 
             // txtNounyuusakiFAXNO_0
@@ -8432,6 +8886,7 @@
             this.txtNounyuusakiFAXNO_0.AllowMinus = false;
             this.txtNounyuusakiFAXNO_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiFAXNO_0.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiFAXNO_0.BorderColor = false;
             this.txtNounyuusakiFAXNO_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiFAXNO_0.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiFAXNO_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8457,6 +8912,7 @@
             this.txtNounyuusakiFAXNO_0.Tag = "5";
             this.txtNounyuusakiFAXNO_0.Text = "納入先FAXNO";
             this.txtNounyuusakiFAXNO_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiFAXNO_0.UseColorSizMode = false;
             this.txtNounyuusakiFAXNO_0.Visible = false;
             // 
             // txtNounyuusakiTELNO_0
@@ -8464,6 +8920,7 @@
             this.txtNounyuusakiTELNO_0.AllowMinus = false;
             this.txtNounyuusakiTELNO_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiTELNO_0.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiTELNO_0.BorderColor = false;
             this.txtNounyuusakiTELNO_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiTELNO_0.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiTELNO_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8489,6 +8946,7 @@
             this.txtNounyuusakiTELNO_0.Tag = "5";
             this.txtNounyuusakiTELNO_0.Text = "納入先TELNO";
             this.txtNounyuusakiTELNO_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiTELNO_0.UseColorSizMode = false;
             this.txtNounyuusakiTELNO_0.Visible = false;
             // 
             // label47
@@ -8541,6 +8999,7 @@
             this.txtKibouNouki_5.AllowMinus = false;
             this.txtKibouNouki_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKibouNouki_5.BackColor = System.Drawing.Color.White;
+            this.txtKibouNouki_5.BorderColor = false;
             this.txtKibouNouki_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKibouNouki_5.ClientColor = System.Drawing.Color.White;
             this.txtKibouNouki_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8567,12 +9026,14 @@
             this.txtKibouNouki_5.Text = "yyyy/MM/dd";
             this.txtKibouNouki_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtKibouNouki_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtKibouNouki_5.UseColorSizMode = false;
             // 
             // txtHacchuuChuuiZikou_5
             // 
             this.txtHacchuuChuuiZikou_5.AllowMinus = false;
             this.txtHacchuuChuuiZikou_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuChuuiZikou_5.BackColor = System.Drawing.Color.Silver;
+            this.txtHacchuuChuuiZikou_5.BorderColor = false;
             this.txtHacchuuChuuiZikou_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuChuuiZikou_5.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuChuuiZikou_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8598,12 +9059,14 @@
             this.txtHacchuuChuuiZikou_5.Tag = "5";
             this.txtHacchuuChuuiZikou_5.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3";
             this.txtHacchuuChuuiZikou_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuChuuiZikou_5.UseColorSizMode = false;
             // 
             // txtShanaiBikou_5
             // 
             this.txtShanaiBikou_5.AllowMinus = false;
             this.txtShanaiBikou_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShanaiBikou_5.BackColor = System.Drawing.Color.White;
+            this.txtShanaiBikou_5.BorderColor = false;
             this.txtShanaiBikou_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtShanaiBikou_5.ClientColor = System.Drawing.Color.White;
             this.txtShanaiBikou_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -8629,12 +9092,14 @@
             this.txtShanaiBikou_5.Tag = "5";
             this.txtShanaiBikou_5.Text = "社内備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.txtShanaiBikou_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtShanaiBikou_5.UseColorSizMode = false;
             // 
             // txtMakerShouhinCD_5
             // 
             this.txtMakerShouhinCD_5.AllowMinus = false;
             this.txtMakerShouhinCD_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtMakerShouhinCD_5.BackColor = System.Drawing.Color.Silver;
+            this.txtMakerShouhinCD_5.BorderColor = false;
             this.txtMakerShouhinCD_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMakerShouhinCD_5.ClientColor = System.Drawing.Color.White;
             this.txtMakerShouhinCD_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8660,12 +9125,14 @@
             this.txtMakerShouhinCD_5.Tag = "0";
             this.txtMakerShouhinCD_5.Text = "XXXXXXXXX1XXXXXXXXX2XXX4";
             this.txtMakerShouhinCD_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtMakerShouhinCD_5.UseColorSizMode = false;
             // 
             // txtTaniName_5
             // 
             this.txtTaniName_5.AllowMinus = false;
             this.txtTaniName_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTaniName_5.BackColor = System.Drawing.Color.Silver;
+            this.txtTaniName_5.BorderColor = false;
             this.txtTaniName_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaniName_5.ClientColor = System.Drawing.Color.White;
             this.txtTaniName_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8691,12 +9158,14 @@
             this.txtTaniName_5.Tag = "5";
             this.txtTaniName_5.Text = "XXXXXX";
             this.txtTaniName_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTaniName_5.UseColorSizMode = false;
             // 
             // txtHacchuugaku_5
             // 
             this.txtHacchuugaku_5.AllowMinus = false;
             this.txtHacchuugaku_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuugaku_5.BackColor = System.Drawing.Color.White;
+            this.txtHacchuugaku_5.BorderColor = false;
             this.txtHacchuugaku_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuugaku_5.ClientColor = System.Drawing.Color.White;
             this.txtHacchuugaku_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8723,12 +9192,14 @@
             this.txtHacchuugaku_5.Text = "-999,999,999";
             this.txtHacchuugaku_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHacchuugaku_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuugaku_5.UseColorSizMode = false;
             // 
             // txtHacchuuTanka_5
             // 
             this.txtHacchuuTanka_5.AllowMinus = false;
             this.txtHacchuuTanka_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuTanka_5.BackColor = System.Drawing.Color.White;
+            this.txtHacchuuTanka_5.BorderColor = false;
             this.txtHacchuuTanka_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuTanka_5.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuTanka_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8755,12 +9226,14 @@
             this.txtHacchuuTanka_5.Text = "-999,999,999";
             this.txtHacchuuTanka_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHacchuuTanka_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuTanka_5.UseColorSizMode = false;
             // 
             // txtHacchuuSuu_5
             // 
             this.txtHacchuuSuu_5.AllowMinus = false;
             this.txtHacchuuSuu_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuSuu_5.BackColor = System.Drawing.Color.White;
+            this.txtHacchuuSuu_5.BorderColor = false;
             this.txtHacchuuSuu_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuSuu_5.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuSuu_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8787,12 +9260,14 @@
             this.txtHacchuuSuu_5.Text = "99,999";
             this.txtHacchuuSuu_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHacchuuSuu_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuSuu_5.UseColorSizMode = false;
             // 
             // txtColorName_5
             // 
             this.txtColorName_5.AllowMinus = false;
             this.txtColorName_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtColorName_5.BackColor = System.Drawing.Color.Silver;
+            this.txtColorName_5.BorderColor = false;
             this.txtColorName_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtColorName_5.ClientColor = System.Drawing.Color.White;
             this.txtColorName_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8818,12 +9293,14 @@
             this.txtColorName_5.Tag = "5";
             this.txtColorName_5.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtColorName_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtColorName_5.UseColorSizMode = false;
             // 
             // txtSizeName_5
             // 
             this.txtSizeName_5.AllowMinus = false;
             this.txtSizeName_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSizeName_5.BackColor = System.Drawing.Color.Silver;
+            this.txtSizeName_5.BorderColor = false;
             this.txtSizeName_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSizeName_5.ClientColor = System.Drawing.Color.White;
             this.txtSizeName_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8849,12 +9326,14 @@
             this.txtSizeName_5.Tag = "5";
             this.txtSizeName_5.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtSizeName_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSizeName_5.UseColorSizMode = false;
             // 
             // txtBrandName_5
             // 
             this.txtBrandName_5.AllowMinus = false;
             this.txtBrandName_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtBrandName_5.BackColor = System.Drawing.Color.Silver;
+            this.txtBrandName_5.BorderColor = false;
             this.txtBrandName_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBrandName_5.ClientColor = System.Drawing.Color.White;
             this.txtBrandName_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8880,12 +9359,14 @@
             this.txtBrandName_5.Tag = "5";
             this.txtBrandName_5.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3";
             this.txtBrandName_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtBrandName_5.UseColorSizMode = false;
             // 
             // txtShouhinName_5
             // 
             this.txtShouhinName_5.AllowMinus = false;
             this.txtShouhinName_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShouhinName_5.BackColor = System.Drawing.Color.Silver;
+            this.txtShouhinName_5.BorderColor = false;
             this.txtShouhinName_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtShouhinName_5.ClientColor = System.Drawing.Color.White;
             this.txtShouhinName_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -8911,12 +9392,14 @@
             this.txtShouhinName_5.Tag = "5";
             this.txtShouhinName_5.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3XXXXXXXXX4";
             this.txtShouhinName_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtShouhinName_5.UseColorSizMode = false;
             // 
             // txtJANCD_5
             // 
             this.txtJANCD_5.AllowMinus = false;
             this.txtJANCD_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtJANCD_5.BackColor = System.Drawing.Color.Silver;
+            this.txtJANCD_5.BorderColor = false;
             this.txtJANCD_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJANCD_5.ClientColor = System.Drawing.Color.White;
             this.txtJANCD_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8942,12 +9425,14 @@
             this.txtJANCD_5.Tag = "5";
             this.txtJANCD_5.Text = "XXXXXXXXX1XX3";
             this.txtJANCD_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtJANCD_5.UseColorSizMode = false;
             // 
             // txtSKUCD_5
             // 
             this.txtSKUCD_5.AllowMinus = false;
             this.txtSKUCD_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSKUCD_5.BackColor = System.Drawing.Color.Silver;
+            this.txtSKUCD_5.BorderColor = false;
             this.txtSKUCD_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSKUCD_5.ClientColor = System.Drawing.Color.White;
             this.txtSKUCD_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -8973,12 +9458,14 @@
             this.txtSKUCD_5.Tag = "0";
             this.txtSKUCD_5.Text = "XXXXXXXXX1XXXXXXXXX2X2";
             this.txtSKUCD_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSKUCD_5.UseColorSizMode = false;
             // 
             // txtJuchuuNO_5
             // 
             this.txtJuchuuNO_5.AllowMinus = false;
             this.txtJuchuuNO_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtJuchuuNO_5.BackColor = System.Drawing.Color.Silver;
+            this.txtJuchuuNO_5.BorderColor = false;
             this.txtJuchuuNO_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJuchuuNO_5.ClientColor = System.Drawing.Color.White;
             this.txtJuchuuNO_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -9005,12 +9492,14 @@
             this.txtJuchuuNO_5.Tag = "5";
             this.txtJuchuuNO_5.Text = "XXXXXXXXX11";
             this.txtJuchuuNO_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtJuchuuNO_5.UseColorSizMode = false;
             // 
             // txtNounyuusakiJuusho_5
             // 
             this.txtNounyuusakiJuusho_5.AllowMinus = false;
             this.txtNounyuusakiJuusho_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiJuusho_5.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiJuusho_5.BorderColor = false;
             this.txtNounyuusakiJuusho_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiJuusho_5.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiJuusho_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -9036,12 +9525,14 @@
             this.txtNounyuusakiJuusho_5.Tag = "5";
             this.txtNounyuusakiJuusho_5.Text = "ＸＸＸＸＸＸＸＸＸ１ＸＸＸＸＸＸＸＸＸ２ＸＸＸＸＸＸＸＸＸ３ＸＸＸＸＸＸＸＸＸ４";
             this.txtNounyuusakiJuusho_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiJuusho_5.UseColorSizMode = false;
             // 
             // txtNounyuusakiName_5
             // 
             this.txtNounyuusakiName_5.AllowMinus = false;
             this.txtNounyuusakiName_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNounyuusakiName_5.BackColor = System.Drawing.Color.Silver;
+            this.txtNounyuusakiName_5.BorderColor = false;
             this.txtNounyuusakiName_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNounyuusakiName_5.ClientColor = System.Drawing.Color.White;
             this.txtNounyuusakiName_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -9067,12 +9558,14 @@
             this.txtNounyuusakiName_5.Tag = "5";
             this.txtNounyuusakiName_5.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtNounyuusakiName_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNounyuusakiName_5.UseColorSizMode = false;
             // 
             // txtNetFLG_5
             // 
             this.txtNetFLG_5.AllowMinus = false;
             this.txtNetFLG_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtNetFLG_5.BackColor = System.Drawing.Color.Silver;
+            this.txtNetFLG_5.BorderColor = false;
             this.txtNetFLG_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNetFLG_5.ClientColor = System.Drawing.Color.White;
             this.txtNetFLG_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -9099,12 +9592,14 @@
             this.txtNetFLG_5.Text = "×";
             this.txtNetFLG_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNetFLG_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtNetFLG_5.UseColorSizMode = false;
             // 
             // txtChokusouFLG_5
             // 
             this.txtChokusouFLG_5.AllowMinus = false;
             this.txtChokusouFLG_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtChokusouFLG_5.BackColor = System.Drawing.Color.Silver;
+            this.txtChokusouFLG_5.BorderColor = false;
             this.txtChokusouFLG_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtChokusouFLG_5.ClientColor = System.Drawing.Color.White;
             this.txtChokusouFLG_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -9131,12 +9626,14 @@
             this.txtChokusouFLG_5.Text = "〇";
             this.txtChokusouFLG_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChokusouFLG_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtChokusouFLG_5.UseColorSizMode = false;
             // 
             // txtSiiresakiName_5
             // 
             this.txtSiiresakiName_5.AllowMinus = false;
             this.txtSiiresakiName_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSiiresakiName_5.BackColor = System.Drawing.Color.Silver;
+            this.txtSiiresakiName_5.BorderColor = false;
             this.txtSiiresakiName_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSiiresakiName_5.ClientColor = System.Drawing.Color.White;
             this.txtSiiresakiName_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -9162,12 +9659,14 @@
             this.txtSiiresakiName_5.Tag = "5";
             this.txtSiiresakiName_5.Text = "XXXXXXXXX1XXXXXXXXX2";
             this.txtSiiresakiName_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSiiresakiName_5.UseColorSizMode = false;
             // 
             // txtShagaiBikou_5
             // 
             this.txtShagaiBikou_5.AllowMinus = false;
             this.txtShagaiBikou_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShagaiBikou_5.BackColor = System.Drawing.Color.White;
+            this.txtShagaiBikou_5.BorderColor = false;
             this.txtShagaiBikou_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtShagaiBikou_5.ClientColor = System.Drawing.Color.White;
             this.txtShagaiBikou_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -9193,6 +9692,7 @@
             this.txtShagaiBikou_5.Tag = "5";
             this.txtShagaiBikou_5.Text = "社外備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.txtShagaiBikou_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtShagaiBikou_5.UseColorSizMode = false;
             // 
             // chkEDIFLG_5
             // 
@@ -9256,6 +9756,7 @@
             this.scSiiresakiCD_5.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.scSiiresakiCD_5.TabIndex = 742;
             this.scSiiresakiCD_5.Tag = "5";
+            this.scSiiresakiCD_5.test = null;
             this.scSiiresakiCD_5.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSiiresakiCD_5.UseChangeDate = false;
             this.scSiiresakiCD_5.Value1 = null;
@@ -9321,6 +9822,7 @@
             this.ScSiiresakiCD.Size = new System.Drawing.Size(456, 60);
             this.ScSiiresakiCD.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.ScSiiresakiCD.TabIndex = 697;
+            this.ScSiiresakiCD.test = null;
             this.ScSiiresakiCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScSiiresakiCD.UseChangeDate = true;
             this.ScSiiresakiCD.Value1 = null;
@@ -9773,6 +10275,7 @@
             this.ScStaff.Size = new System.Drawing.Size(366, 35);
             this.ScStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.ScStaff.TabIndex = 5;
+            this.ScStaff.test = null;
             this.ScStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScStaff.UseChangeDate = false;
             this.ScStaff.Value1 = null;
@@ -9821,6 +10324,7 @@
             this.ckM_SearchControl2.Size = new System.Drawing.Size(144, 28);
             this.ckM_SearchControl2.Stype = Search.CKM_SearchControl.SearchType.発注番号;
             this.ckM_SearchControl2.TabIndex = 275;
+            this.ckM_SearchControl2.test = null;
             this.ckM_SearchControl2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ckM_SearchControl2.UseChangeDate = false;
             this.ckM_SearchControl2.Value1 = null;
@@ -9850,6 +10354,7 @@
             this.ckM_SearchControl3.Size = new System.Drawing.Size(144, 28);
             this.ckM_SearchControl3.Stype = Search.CKM_SearchControl.SearchType.発注番号;
             this.ckM_SearchControl3.TabIndex = 344;
+            this.ckM_SearchControl3.test = null;
             this.ckM_SearchControl3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ckM_SearchControl3.UseChangeDate = false;
             this.ckM_SearchControl3.Value1 = null;
@@ -9861,6 +10366,7 @@
             this.ckM_TextBox1.AllowMinus = false;
             this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
+            this.ckM_TextBox1.BorderColor = false;
             this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ckM_TextBox1.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -9886,6 +10392,7 @@
             this.ckM_TextBox1.Text = "2019/01/01";
             this.ckM_TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_TextBox1.UseColorSizMode = false;
             // 
             // label34
             // 
@@ -9947,6 +10454,7 @@
             this.txtHacchuuDate.AllowMinus = false;
             this.txtHacchuuDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuDate.BackColor = System.Drawing.Color.White;
+            this.txtHacchuuDate.BorderColor = false;
             this.txtHacchuuDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHacchuuDate.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -9972,6 +10480,7 @@
             this.txtHacchuuDate.Text = "2019/01/01";
             this.txtHacchuuDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtHacchuuDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtHacchuuDate.UseColorSizMode = false;
             // 
             // lblHacchuuNO
             // 
@@ -10014,6 +10523,7 @@
             this.ScHacchuuNO.Size = new System.Drawing.Size(144, 34);
             this.ScHacchuuNO.Stype = Search.CKM_SearchControl.SearchType.発注番号;
             this.ScHacchuuNO.TabIndex = 698;
+            this.ScHacchuuNO.test = null;
             this.ScHacchuuNO.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScHacchuuNO.UseChangeDate = false;
             this.ScHacchuuNO.Value1 = null;
@@ -10061,6 +10571,7 @@
             this.ScHacchuuShoriNO.Size = new System.Drawing.Size(144, 34);
             this.ScHacchuuShoriNO.Stype = Search.CKM_SearchControl.SearchType.発注処理番号;
             this.ScHacchuuShoriNO.TabIndex = 699;
+            this.ScHacchuuShoriNO.test = null;
             this.ScHacchuuShoriNO.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScHacchuuShoriNO.UseChangeDate = false;
             this.ScHacchuuShoriNO.Value1 = null;
@@ -10077,10 +10588,10 @@
             this.btnZenSentaku.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnZenSentaku.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.btnZenSentaku.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnZenSentaku.Location = new System.Drawing.Point(1416, 215);
+            this.btnZenSentaku.Location = new System.Drawing.Point(1328, 215);
             this.btnZenSentaku.Margin = new System.Windows.Forms.Padding(1);
             this.btnZenSentaku.Name = "btnZenSentaku";
-            this.btnZenSentaku.Size = new System.Drawing.Size(91, 29);
+            this.btnZenSentaku.Size = new System.Drawing.Size(149, 28);
             this.btnZenSentaku.TabIndex = 701;
             this.btnZenSentaku.Text = "全選択";
             this.btnZenSentaku.UseVisualStyleBackColor = false;
@@ -10096,10 +10607,10 @@
             this.btnZenKaijo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnZenKaijo.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.btnZenKaijo.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnZenKaijo.Location = new System.Drawing.Point(1523, 215);
+            this.btnZenKaijo.Location = new System.Drawing.Point(1477, 215);
             this.btnZenKaijo.Margin = new System.Windows.Forms.Padding(1);
             this.btnZenKaijo.Name = "btnZenKaijo";
-            this.btnZenKaijo.Size = new System.Drawing.Size(91, 29);
+            this.btnZenKaijo.Size = new System.Drawing.Size(149, 28);
             this.btnZenKaijo.TabIndex = 702;
             this.btnZenKaijo.Text = "全解除";
             this.btnZenKaijo.UseVisualStyleBackColor = false;
@@ -10115,10 +10626,10 @@
             this.BtnSubF11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSubF11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.BtnSubF11.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BtnSubF11.Location = new System.Drawing.Point(1661, 215);
+            this.BtnSubF11.Location = new System.Drawing.Point(1650, 215);
             this.BtnSubF11.Margin = new System.Windows.Forms.Padding(1);
             this.BtnSubF11.Name = "BtnSubF11";
-            this.BtnSubF11.Size = new System.Drawing.Size(121, 29);
+            this.BtnSubF11.Size = new System.Drawing.Size(149, 28);
             this.BtnSubF11.TabIndex = 703;
             this.BtnSubF11.Text = "表示(F11)";
             this.BtnSubF11.UseVisualStyleBackColor = false;
@@ -10147,6 +10658,7 @@
             this.ScJuchuuStaff.Size = new System.Drawing.Size(366, 35);
             this.ScJuchuuStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.ScJuchuuStaff.TabIndex = 704;
+            this.ScJuchuuStaff.test = null;
             this.ScJuchuuStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScJuchuuStaff.UseChangeDate = false;
             this.ScJuchuuStaff.Value1 = null;
@@ -10171,10 +10683,22 @@
             this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // chkSaiHacchuu
+            // 
+            this.chkSaiHacchuu.AutoSize = true;
+            this.chkSaiHacchuu.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.chkSaiHacchuu.Location = new System.Drawing.Point(1680, 187);
+            this.chkSaiHacchuu.Name = "chkSaiHacchuu";
+            this.chkSaiHacchuu.Size = new System.Drawing.Size(80, 19);
+            this.chkSaiHacchuu.TabIndex = 706;
+            this.chkSaiHacchuu.Text = "再発注";
+            this.chkSaiHacchuu.UseVisualStyleBackColor = true;
+            // 
             // IkkatuHacchuuNyuuryoku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.ClientSize = new System.Drawing.Size(1827, 936);
+            this.Controls.Add(this.chkSaiHacchuu);
             this.Controls.Add(this.ScJuchuuStaff);
             this.Controls.Add(this.ckM_Label1);
             this.Controls.Add(this.ScHacchuuNO);
@@ -10215,6 +10739,7 @@
             this.Controls.SetChildIndex(this.ScHacchuuNO, 0);
             this.Controls.SetChildIndex(this.ckM_Label1, 0);
             this.Controls.SetChildIndex(this.ScJuchuuStaff, 0);
+            this.Controls.SetChildIndex(this.chkSaiHacchuu, 0);
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();
             this.Pnl_Body.ResumeLayout(false);
@@ -10576,6 +11101,7 @@
         private CKM_Controls.CKM_TextBox txtTaxRate_5;
         private CKM_Controls.CKM_TextBox txtSoukoCD_5;
         private CKM_Controls.CKM_TextBox txtNounyuusakiFAXNO_5;
+        private CKM_Controls.CKM_CheckBox chkSaiHacchuu;
     }
 }
 

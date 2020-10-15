@@ -27,7 +27,6 @@ namespace DL
             };
             return SelectData(dic, "M_Souko_Search");
         }
-
         public DataTable M_Souko_ZipcodeAddressSelect(M_Souko_Entity mse)
         {
             string sp = "M_Souko_ZipcodeAddressSelect";
@@ -74,7 +73,7 @@ namespace DL
 
         /// <summary>
         /// Select Souko's info
-        /// SoukoType 3のSouko情報をSelect
+        /// SoukoTypeを指定すること（入荷は3）のSouko情報をSelect
         /// </summary>
         /// <param name="mse">Souko info</param>
         /// <returns></returns>
@@ -121,6 +120,12 @@ namespace DL
             return SelectData(dic, "M_Souko_BindForHenpin");
         }
 
+        /// <summary>
+        /// Select Souko's info
+        /// SoukoType IN (1,2,3,4)
+        /// </summary>
+        /// <param name="mse"></param>
+        /// <returns></returns>
         public DataTable M_Souko_BindForShukka(M_Souko_Entity mse)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
@@ -261,12 +266,11 @@ namespace DL
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.StoreCD } },
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.Operator } },
                 { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ChangeDate } }
             };
             return SelectData(dic, "M_Souko_BindForTanaoroshi");
         }
-
         public DataTable M_Souko_BindForZaikoshoukai(M_Souko_Entity mse)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>

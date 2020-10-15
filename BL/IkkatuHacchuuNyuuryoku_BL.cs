@@ -26,9 +26,9 @@ namespace BL
         /// <param name="vendorCD"></param>
         /// <param name="storeCD"></param>
         /// <returns></returns>
-        public DataTable PRC_IkkatuHacchuuNyuuryoku_SelectData(string ikkatuHacchuuMode, string hacchuuDate, string vendorCD, string juchuuStaffCD, string storeCD)
+        public DataTable PRC_IkkatuHacchuuNyuuryoku_SelectData(string ikkatuHacchuuMode, string hacchuuDate, string vendorCD, string juchuuStaffCD, string storeCD, string isSaiHacchuu)
         {
-            return ikkatuHacchuuDL.PRC_IkkatuHacchuuNyuuryoku_SelectData(ikkatuHacchuuMode, hacchuuDate, vendorCD, juchuuStaffCD,storeCD);
+            return ikkatuHacchuuDL.PRC_IkkatuHacchuuNyuuryoku_SelectData(ikkatuHacchuuMode, hacchuuDate, vendorCD, juchuuStaffCD,storeCD, isSaiHacchuu);
         }
         /// <summary>
         /// 

@@ -17,7 +17,7 @@ GO
 -- =============================================
 CREATE PROCEDURE [dbo].[M_Souko_BindForTanaoroshi]
     -- Add the parameters for the stored procedure here
-    @StoreCD as varchar(4),
+    @Operator   as varchar(10),
     @ChangeDate as varchar(10)
 AS
 BEGIN
@@ -28,9 +28,21 @@ BEGIN
     -- Insert statements for procedure here
     SELECT FS.SoukoCD,FS.SoukoName 
     FROM F_Souko(@ChangeDate) AS FS 
-    WHERE FS.StoreCD = @StoreCD
-    AND FS.DeleteFlg = 0
-    ORDER BY FS.SoukoCD
+    WHERE FS.DeleteFlg = 0
+    AND FS.SoukoType <> 5
+    --Œ ŒÀ‚Ì‚ ‚é“X•Ü‚Ì‚Ý
+    AND EXISTS(select MS.StoreCD
+               from M_StoreAuthorizations MS
+               INNER JOIN M_Staff AS MF
+               ON MF.StaffCD = @Operator
+               AND MF.ChangeDate <= CONVERT(date, @ChangeDate)
+               AND MF.StoreCD = MS.StoreCD
+               AND MF.StoreAuthorizationsCD = MS.StoreAuthorizationsCD
+               AND MF.DeleteFlg = 0
+               where MS.ChangeDate <= CONVERT(date, @ChangeDate)
+               AND MF.StoreCD = FS.StoreCD
+               )
+    ORDER BY FS.StoreCD, FS.SoukoCD
 END
 
 GO

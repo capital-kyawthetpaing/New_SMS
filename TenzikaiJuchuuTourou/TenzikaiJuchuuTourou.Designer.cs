@@ -243,6 +243,13 @@
             this.hdn_NmalAmt = new System.Windows.Forms.Label();
             this.hdn_CsumAmt = new System.Windows.Forms.Label();
             this.sc_Tenji = new Search.CKM_SearchControl();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.PanelHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnl_haisou.SuspendLayout();
@@ -4527,7 +4534,7 @@
             this.scjan_1.SearchEnable = true;
             this.scjan_1.Size = new System.Drawing.Size(133, 27);
             this.scjan_1.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.scjan_1.TabIndex = 283;
+            this.scjan_1.TabIndex = 1;
             this.scjan_1.test = null;
             this.scjan_1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scjan_1.UseChangeDate = false;
@@ -4953,11 +4960,81 @@
             this.sc_Tenji.Value3 = null;
             this.sc_Tenji.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TenzikaiJuchuuTourou_KeyDown);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(975, 779);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(35, 12);
+            this.label13.TabIndex = 107;
+            this.label13.Text = "Zeinu";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(1091, 779);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(47, 12);
+            this.label25.TabIndex = 108;
+            this.label25.Text = "Zeikomi";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(1229, 778);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(41, 12);
+            this.label26.TabIndex = 109;
+            this.label26.Text = "Juchuu";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(1353, 778);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(35, 12);
+            this.label27.TabIndex = 110;
+            this.label27.Text = "Gross";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(1488, 779);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(47, 12);
+            this.label28.TabIndex = 111;
+            this.label28.Text = "Consume";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(1618, 779);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(41, 12);
+            this.label29.TabIndex = 112;
+            this.label29.Text = "Normal";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(1712, 779);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(41, 12);
+            this.label30.TabIndex = 113;
+            this.label30.Text = "reduce";
+            // 
             // TenzikaiJuchuuTourou
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1789, 822);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.label29);
+            this.Controls.Add(this.label28);
+            this.Controls.Add(this.label27);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.hdn_RduAmt);
             this.Controls.Add(this.hdn_NmalAmt);
             this.Controls.Add(this.hdn_CsumAmt);
@@ -4981,6 +5058,13 @@
             this.Controls.SetChildIndex(this.hdn_CsumAmt, 0);
             this.Controls.SetChildIndex(this.hdn_NmalAmt, 0);
             this.Controls.SetChildIndex(this.hdn_RduAmt, 0);
+            this.Controls.SetChildIndex(this.label13, 0);
+            this.Controls.SetChildIndex(this.label25, 0);
+            this.Controls.SetChildIndex(this.label26, 0);
+            this.Controls.SetChildIndex(this.label27, 0);
+            this.Controls.SetChildIndex(this.label28, 0);
+            this.Controls.SetChildIndex(this.label29, 0);
+            this.Controls.SetChildIndex(this.label30, 0);
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -5232,6 +5316,13 @@
         private System.Windows.Forms.Label hdn_RduAmt;
         private System.Windows.Forms.Label hdn_NmalAmt;
         private System.Windows.Forms.Label hdn_CsumAmt;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
     }
 }
 

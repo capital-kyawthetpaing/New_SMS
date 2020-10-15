@@ -46,6 +46,7 @@ namespace TenzikaiJuchuuTourou
             internal string TaxRateFlg; //hidden
             internal decimal Tsuujou; // hidden
             internal decimal Keigen;// hidden
+            internal string TaniHDN; // hidden
             internal string OldJanCD;
             internal bool NotReCalc;
         }
@@ -58,7 +59,7 @@ namespace TenzikaiJuchuuTourou
         internal enum ColNO : int
         {
             GYONO,
-            Chk,
+            //Chk,
             SCJAN,
            // AdminNo,
             SKUCD,
@@ -67,6 +68,7 @@ namespace TenzikaiJuchuuTourou
             ColorName,
             Size,
             SizeName,
+            Chk,
             ShuukaYo,
             ChoukuSou,
             ShuukaSou,

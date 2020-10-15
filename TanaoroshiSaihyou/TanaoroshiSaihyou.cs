@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 using BL;
 using Entity;
 using Base.Client;
 using Search;
-using System.Runtime.InteropServices; //EXCEL出力(必要)
-using Microsoft.Office.Interop;//EXCEL出力(必要)
 
 namespace TanaoroshiSaihyou
 {
@@ -89,6 +83,7 @@ namespace TanaoroshiSaihyou
                 base.Btn_F9.Enabled = false;
                 base.Btn_F10.Text = "";
                 base.Btn_F11.Text = "";
+                base.Btn_F12.Text = "出力(F12)";
 
                 //起動時共通処理
                 base.StartProgram();    
@@ -106,7 +101,7 @@ namespace TanaoroshiSaihyou
                 Staff_BL bl = new Staff_BL();
                 bool ret = bl.M_Staff_Select(mse);
 
-                CboSoukoCD.Bind(ymd, mse.StoreCD);
+                CboSoukoCD.Bind(ymd, InOperatorCD);
 
                 SetFuncKeyAll(this, "100001000001");
                 Scr_Clr(0);
@@ -552,6 +547,9 @@ namespace TanaoroshiSaihyou
 
 
             //初期値セット
+            if (CboSoukoCD.Items.Count > 1)
+                CboSoukoCD.SelectedIndex = 1;
+
             string ymd = tabl.GetDate();
 
             detailControls[(int)EIndex.InventoryDate].Text = ymd;
