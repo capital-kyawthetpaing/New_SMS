@@ -705,8 +705,8 @@ namespace Search
                     break;
 
                 case SearchType.展示会商品:
-                    TxtCode.MaxLength = 300;
-                    TxtCode.Width = 400;
+                    TxtCode.MaxLength = 800;
+                    TxtCode.Width = 500;
                     lblName.Width = 180;
 
                     break;
