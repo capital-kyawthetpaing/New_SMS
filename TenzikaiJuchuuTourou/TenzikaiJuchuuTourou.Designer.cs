@@ -70,6 +70,7 @@
             this.sc_TentouStaff = new Search.CKM_SearchControl();
             this.sc_shiiresaki = new Search.CKM_SearchControl();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.Vsb_Mei_0 = new System.Windows.Forms.VScrollBar();
             this.panel_5 = new System.Windows.Forms.Panel();
             this.choukusou_5 = new GridControl.clsGridCheckBox();
@@ -255,6 +256,7 @@
             this.pnl_haisou.SuspendLayout();
             this.pnl_kokyakuu.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel_5.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel_4.SuspendLayout();
@@ -1148,12 +1150,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.Vsb_Mei_0);
-            this.panel2.Controls.Add(this.panel_5);
-            this.panel2.Controls.Add(this.panel_4);
-            this.panel2.Controls.Add(this.panel_3);
-            this.panel2.Controls.Add(this.panel_2);
-            this.panel2.Controls.Add(this.panel_1);
+            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label24);
             this.panel2.Controls.Add(this.label23);
             this.panel2.Controls.Add(this.label2);
@@ -1182,12 +1179,25 @@
             this.panel2.Size = new System.Drawing.Size(1760, 400);
             this.panel2.TabIndex = 25;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.Vsb_Mei_0);
+            this.panel3.Controls.Add(this.panel_5);
+            this.panel3.Controls.Add(this.panel_4);
+            this.panel3.Controls.Add(this.panel_3);
+            this.panel3.Controls.Add(this.panel_2);
+            this.panel3.Controls.Add(this.panel_1);
+            this.panel3.Location = new System.Drawing.Point(2, 81);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1750, 300);
+            this.panel3.TabIndex = 305;
+            // 
             // Vsb_Mei_0
             // 
-            this.Vsb_Mei_0.Location = new System.Drawing.Point(1730, 80);
+            this.Vsb_Mei_0.Location = new System.Drawing.Point(1728, 1);
             this.Vsb_Mei_0.Name = "Vsb_Mei_0";
-            this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 320);
-            this.Vsb_Mei_0.TabIndex = 310;
+            this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 286);
+            this.Vsb_Mei_0.TabIndex = 316;
             this.Vsb_Mei_0.ValueChanged += new System.EventHandler(this.Vsb_Mei_0_ValueChanged);
             // 
             // panel_5
@@ -1218,10 +1228,10 @@
             this.panel_5.Controls.Add(this.shouhin_5);
             this.panel_5.Controls.Add(this.scjan_5);
             this.panel_5.Controls.Add(this.lbl_5);
-            this.panel_5.Location = new System.Drawing.Point(2, 326);
+            this.panel_5.Location = new System.Drawing.Point(0, 227);
             this.panel_5.Name = "panel_5";
             this.panel_5.Size = new System.Drawing.Size(1730, 60);
-            this.panel_5.TabIndex = 309;
+            this.panel_5.TabIndex = 315;
             // 
             // choukusou_5
             // 
@@ -1891,10 +1901,10 @@
             this.panel_4.Controls.Add(this.shouhin_4);
             this.panel_4.Controls.Add(this.scjan_4);
             this.panel_4.Controls.Add(this.lbl_4);
-            this.panel_4.Location = new System.Drawing.Point(2, 269);
+            this.panel_4.Location = new System.Drawing.Point(0, 170);
             this.panel_4.Name = "panel_4";
             this.panel_4.Size = new System.Drawing.Size(1730, 60);
-            this.panel_4.TabIndex = 308;
+            this.panel_4.TabIndex = 314;
             // 
             // choukusou_4
             // 
@@ -2564,10 +2574,10 @@
             this.panel_3.Controls.Add(this.shouhin_3);
             this.panel_3.Controls.Add(this.scjan_3);
             this.panel_3.Controls.Add(this.lbl_3);
-            this.panel_3.Location = new System.Drawing.Point(2, 212);
+            this.panel_3.Location = new System.Drawing.Point(0, 113);
             this.panel_3.Name = "panel_3";
             this.panel_3.Size = new System.Drawing.Size(1730, 60);
-            this.panel_3.TabIndex = 307;
+            this.panel_3.TabIndex = 313;
             // 
             // choukusou_3
             // 
@@ -3237,10 +3247,10 @@
             this.panel_2.Controls.Add(this.shouhin_2);
             this.panel_2.Controls.Add(this.scjan_2);
             this.panel_2.Controls.Add(this.lbl_2);
-            this.panel_2.Location = new System.Drawing.Point(2, 155);
+            this.panel_2.Location = new System.Drawing.Point(0, 56);
             this.panel_2.Name = "panel_2";
             this.panel_2.Size = new System.Drawing.Size(1730, 60);
-            this.panel_2.TabIndex = 306;
+            this.panel_2.TabIndex = 312;
             // 
             // choukusou_2
             // 
@@ -3910,14 +3920,14 @@
             this.panel_1.Controls.Add(this.shouhin_1);
             this.panel_1.Controls.Add(this.scjan_1);
             this.panel_1.Controls.Add(this.lbl_1);
-            this.panel_1.Location = new System.Drawing.Point(2, 98);
+            this.panel_1.Location = new System.Drawing.Point(0, -1);
             this.panel_1.Name = "panel_1";
             this.panel_1.Size = new System.Drawing.Size(1730, 60);
-            this.panel_1.TabIndex = 305;
+            this.panel_1.TabIndex = 311;
             // 
             // choukusou_1
             // 
-            this.choukusou_1.Location = new System.Drawing.Point(128, 21);
+            this.choukusou_1.Location = new System.Drawing.Point(129, 21);
             this.choukusou_1.Name = "choukusou_1";
             this.choukusou_1.Size = new System.Drawing.Size(79, 18);
             this.choukusou_1.TabIndex = 103;
@@ -4365,7 +4375,7 @@
             // chk_1
             // 
             this.chk_1.AutoSize = true;
-            this.chk_1.Location = new System.Drawing.Point(7, 10);
+            this.chk_1.Location = new System.Drawing.Point(7, 12);
             this.chk_1.Name = "chk_1";
             this.chk_1.Size = new System.Drawing.Size(15, 14);
             this.chk_1.TabIndex = 0;
@@ -4561,9 +4571,9 @@
             this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label24.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label24.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label24.Location = new System.Drawing.Point(1090, 66);
+            this.label24.Location = new System.Drawing.Point(1090, 61);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(640, 32);
+            this.label24.Size = new System.Drawing.Size(640, 20);
             this.label24.TabIndex = 304;
             this.label24.Text = "個別販売先";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4574,9 +4584,9 @@
             this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label23.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label23.Location = new System.Drawing.Point(610, 66);
+            this.label23.Location = new System.Drawing.Point(610, 61);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(480, 32);
+            this.label23.Size = new System.Drawing.Size(480, 20);
             this.label23.TabIndex = 303;
             this.label23.Text = "社外備考・コメント";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4587,9 +4597,9 @@
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(2, 2);
+            this.label2.Location = new System.Drawing.Point(2, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 32);
+            this.label2.Size = new System.Drawing.Size(28, 20);
             this.label2.TabIndex = 281;
             this.label2.Text = "№";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4600,9 +4610,9 @@
             this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label21.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label21.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label21.Location = new System.Drawing.Point(30, 66);
+            this.label21.Location = new System.Drawing.Point(30, 61);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(580, 32);
+            this.label21.Size = new System.Drawing.Size(580, 20);
             this.label21.TabIndex = 302;
             this.label21.Text = "社内備考・コメント";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4613,9 +4623,9 @@
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label22.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label22.Location = new System.Drawing.Point(1610, 34);
+            this.label22.Location = new System.Drawing.Point(1610, 41);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(120, 32);
+            this.label22.Size = new System.Drawing.Size(120, 20);
             this.label22.TabIndex = 301;
             this.label22.Text = "税情報";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4626,9 +4636,9 @@
             this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label19.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label19.Location = new System.Drawing.Point(1490, 34);
+            this.label19.Location = new System.Drawing.Point(1490, 41);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(120, 32);
+            this.label19.Size = new System.Drawing.Size(120, 20);
             this.label19.TabIndex = 299;
             this.label19.Text = "粗利額";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -4639,9 +4649,9 @@
             this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label20.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label20.Location = new System.Drawing.Point(1370, 34);
+            this.label20.Location = new System.Drawing.Point(1370, 41);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(120, 32);
+            this.label20.Size = new System.Drawing.Size(120, 20);
             this.label20.TabIndex = 298;
             this.label20.Text = "税込受注額";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4652,9 +4662,9 @@
             this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label18.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label18.Location = new System.Drawing.Point(1250, 34);
+            this.label18.Location = new System.Drawing.Point(1250, 41);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(120, 32);
+            this.label18.Size = new System.Drawing.Size(120, 20);
             this.label18.TabIndex = 297;
             this.label18.Text = "税抜受注額";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4665,9 +4675,9 @@
             this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label17.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label17.Location = new System.Drawing.Point(1130, 34);
+            this.label17.Location = new System.Drawing.Point(1130, 41);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(120, 32);
+            this.label17.Size = new System.Drawing.Size(120, 20);
             this.label17.TabIndex = 296;
             this.label17.Text = "販売単価";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -4678,9 +4688,9 @@
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label16.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label16.Location = new System.Drawing.Point(1090, 34);
+            this.label16.Location = new System.Drawing.Point(1090, 41);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(40, 32);
+            this.label16.Size = new System.Drawing.Size(40, 20);
             this.label16.TabIndex = 295;
             this.label16.Text = "単位";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4691,9 +4701,9 @@
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label15.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label15.Location = new System.Drawing.Point(1010, 34);
+            this.label15.Location = new System.Drawing.Point(1010, 41);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(80, 32);
+            this.label15.Size = new System.Drawing.Size(80, 20);
             this.label15.TabIndex = 294;
             this.label15.Text = "受注数";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -4704,9 +4714,9 @@
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label14.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label14.Location = new System.Drawing.Point(910, 34);
+            this.label14.Location = new System.Drawing.Point(910, 41);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(100, 32);
+            this.label14.Size = new System.Drawing.Size(100, 20);
             this.label14.TabIndex = 293;
             this.label14.Text = "入荷予定日";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4717,9 +4727,9 @@
             this.hacchutanka_1Header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hacchutanka_1Header.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.hacchutanka_1Header.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.hacchutanka_1Header.Location = new System.Drawing.Point(810, 34);
+            this.hacchutanka_1Header.Location = new System.Drawing.Point(810, 41);
             this.hacchutanka_1Header.Name = "hacchutanka_1Header";
-            this.hacchutanka_1Header.Size = new System.Drawing.Size(100, 32);
+            this.hacchutanka_1Header.Size = new System.Drawing.Size(100, 20);
             this.hacchutanka_1Header.TabIndex = 292;
             this.hacchutanka_1Header.Text = "発注単価";
             this.hacchutanka_1Header.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -4730,9 +4740,9 @@
             this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label12.Location = new System.Drawing.Point(410, 34);
+            this.label12.Location = new System.Drawing.Point(410, 41);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(400, 32);
+            this.label12.Size = new System.Drawing.Size(400, 20);
             this.label12.TabIndex = 291;
             this.label12.Text = " ";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4743,9 +4753,9 @@
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label11.Location = new System.Drawing.Point(210, 34);
+            this.label11.Location = new System.Drawing.Point(210, 41);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(200, 32);
+            this.label11.Size = new System.Drawing.Size(200, 20);
             this.label11.TabIndex = 290;
             this.label11.Text = "出荷倉庫";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4756,9 +4766,9 @@
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label10.Location = new System.Drawing.Point(130, 34);
+            this.label10.Location = new System.Drawing.Point(130, 41);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(80, 32);
+            this.label10.Size = new System.Drawing.Size(80, 20);
             this.label10.TabIndex = 289;
             this.label10.Text = "直送";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4769,9 +4779,9 @@
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label9.Location = new System.Drawing.Point(30, 34);
+            this.label9.Location = new System.Drawing.Point(30, 41);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 32);
+            this.label9.Size = new System.Drawing.Size(100, 20);
             this.label9.TabIndex = 288;
             this.label9.Text = "出荷予定日";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4782,9 +4792,9 @@
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label8.Location = new System.Drawing.Point(2, 34);
+            this.label8.Location = new System.Drawing.Point(2, 41);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(28, 64);
+            this.label8.Size = new System.Drawing.Size(28, 40);
             this.label8.TabIndex = 287;
             this.label8.Text = "対象";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4795,9 +4805,9 @@
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.Location = new System.Drawing.Point(1530, 2);
+            this.label6.Location = new System.Drawing.Point(1530, 21);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(200, 32);
+            this.label6.Size = new System.Drawing.Size(200, 20);
             this.label6.TabIndex = 286;
             this.label6.Text = "サイズ名";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4808,9 +4818,9 @@
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label7.Location = new System.Drawing.Point(1430, 2);
+            this.label7.Location = new System.Drawing.Point(1430, 21);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 32);
+            this.label7.Size = new System.Drawing.Size(100, 20);
             this.label7.TabIndex = 285;
             this.label7.Text = "サイズNO";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4821,9 +4831,9 @@
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(1230, 2);
+            this.label5.Location = new System.Drawing.Point(1230, 21);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(200, 32);
+            this.label5.Size = new System.Drawing.Size(200, 20);
             this.label5.TabIndex = 284;
             this.label5.Text = "カラー名";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4834,9 +4844,9 @@
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(1130, 2);
+            this.label4.Location = new System.Drawing.Point(1130, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 32);
+            this.label4.Size = new System.Drawing.Size(100, 20);
             this.label4.TabIndex = 283;
             this.label4.Text = "カラーNO";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4847,9 +4857,9 @@
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(30, 2);
+            this.label3.Location = new System.Drawing.Point(30, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1100, 32);
+            this.label3.Size = new System.Drawing.Size(1100, 20);
             this.label3.TabIndex = 282;
             this.label3.Text = "商品名";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4868,6 +4878,7 @@
             this.hdn_ExcAmt.Size = new System.Drawing.Size(75, 12);
             this.hdn_ExcAmt.TabIndex = 100;
             this.hdn_ExcAmt.Text = "hdn_ExcAmt";
+            this.hdn_ExcAmt.Visible = false;
             // 
             // hdn_IncAmt
             // 
@@ -4878,6 +4889,7 @@
             this.hdn_IncAmt.Size = new System.Drawing.Size(75, 12);
             this.hdn_IncAmt.TabIndex = 101;
             this.hdn_IncAmt.Text = "hdn_IncAmt";
+            this.hdn_IncAmt.Visible = false;
             // 
             // hdn_GrossAmt
             // 
@@ -4888,6 +4900,7 @@
             this.hdn_GrossAmt.Size = new System.Drawing.Size(89, 12);
             this.hdn_GrossAmt.TabIndex = 103;
             this.hdn_GrossAmt.Text = "hdn_GrossAmt";
+            this.hdn_GrossAmt.Visible = false;
             // 
             // hdn_CostAmt
             // 
@@ -4898,6 +4911,7 @@
             this.hdn_CostAmt.Size = new System.Drawing.Size(82, 12);
             this.hdn_CostAmt.TabIndex = 102;
             this.hdn_CostAmt.Text = "hdn_CostAmt";
+            this.hdn_CostAmt.Visible = false;
             // 
             // hdn_RduAmt
             // 
@@ -4908,6 +4922,7 @@
             this.hdn_RduAmt.Size = new System.Drawing.Size(75, 12);
             this.hdn_RduAmt.TabIndex = 106;
             this.hdn_RduAmt.Text = "hdn_RduAmt";
+            this.hdn_RduAmt.Visible = false;
             // 
             // hdn_NmalAmt
             // 
@@ -4918,6 +4933,7 @@
             this.hdn_NmalAmt.Size = new System.Drawing.Size(82, 12);
             this.hdn_NmalAmt.TabIndex = 105;
             this.hdn_NmalAmt.Text = "hdn_NmalAmt";
+            this.hdn_NmalAmt.Visible = false;
             // 
             // hdn_CsumAmt
             // 
@@ -4928,6 +4944,7 @@
             this.hdn_CsumAmt.Size = new System.Drawing.Size(82, 12);
             this.hdn_CsumAmt.TabIndex = 104;
             this.hdn_CsumAmt.Text = "hdn_CsumAmt";
+            this.hdn_CsumAmt.Visible = false;
             // 
             // sc_Tenji
             // 
@@ -4968,6 +4985,7 @@
             this.label13.Size = new System.Drawing.Size(35, 12);
             this.label13.TabIndex = 107;
             this.label13.Text = "Zeinu";
+            this.label13.Visible = false;
             // 
             // label25
             // 
@@ -4977,6 +4995,7 @@
             this.label25.Size = new System.Drawing.Size(47, 12);
             this.label25.TabIndex = 108;
             this.label25.Text = "Zeikomi";
+            this.label25.Visible = false;
             // 
             // label26
             // 
@@ -4986,6 +5005,7 @@
             this.label26.Size = new System.Drawing.Size(41, 12);
             this.label26.TabIndex = 109;
             this.label26.Text = "Juchuu";
+            this.label26.Visible = false;
             // 
             // label27
             // 
@@ -4995,6 +5015,7 @@
             this.label27.Size = new System.Drawing.Size(35, 12);
             this.label27.TabIndex = 110;
             this.label27.Text = "Gross";
+            this.label27.Visible = false;
             // 
             // label28
             // 
@@ -5004,6 +5025,7 @@
             this.label28.Size = new System.Drawing.Size(47, 12);
             this.label28.TabIndex = 111;
             this.label28.Text = "Consume";
+            this.label28.Visible = false;
             // 
             // label29
             // 
@@ -5013,6 +5035,7 @@
             this.label29.Size = new System.Drawing.Size(41, 12);
             this.label29.TabIndex = 112;
             this.label29.Text = "Normal";
+            this.label29.Visible = false;
             // 
             // label30
             // 
@@ -5022,6 +5045,7 @@
             this.label30.Size = new System.Drawing.Size(41, 12);
             this.label30.TabIndex = 113;
             this.label30.Text = "reduce";
+            this.label30.Visible = false;
             // 
             // TenzikaiJuchuuTourou
             // 
@@ -5074,6 +5098,7 @@
             this.pnl_kokyakuu.ResumeLayout(false);
             this.pnl_kokyakuu.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.panel_5.ResumeLayout(false);
             this.panel_5.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -5161,9 +5186,144 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label21;
+        private CKM_Controls.CKM_Label ckM_Label11;
+        private CKM_Controls.CKM_Label ckM_Label10;
+        private CKM_Controls.CKM_Label ckM_Label9;
+        private Search.CKM_SearchControl sc_Tenji;
+        private System.Windows.Forms.Panel pnl_haisou;
+        private System.Windows.Forms.Panel pnl_kokyakuu;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label hdn_ExcAmt;
+        private System.Windows.Forms.Label hdn_IncAmt;
+        private System.Windows.Forms.Label hdn_GrossAmt;
+        private System.Windows.Forms.Label hdn_CostAmt;
+        private System.Windows.Forms.Label hdn_RduAmt;
+        private System.Windows.Forms.Label hdn_NmalAmt;
+        private System.Windows.Forms.Label hdn_CsumAmt;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.VScrollBar Vsb_Mei_0;
+        private System.Windows.Forms.Panel panel_5;
+        private GridControl.clsGridCheckBox choukusou_5;
+        private CKM_Controls.CKM_TextBox zeinutanku_5;
+        private CKM_Controls.CKM_TextBox zeinu_5;
+        private CKM_Controls.CKM_TextBox kobetsuhanbai_5;
+        private CKM_Controls.CKM_TextBox shagaibikou_5;
+        private CKM_Controls.CKM_TextBox shanaibikou_5;
+        private CKM_Controls.CKM_TextBox ararigaku_5;
+        private CKM_Controls.CKM_TextBox zeikomijuchuugaku_5;
+        private CKM_Controls.CKM_TextBox zeinuJuchuugaka_5;
+        private CKM_Controls.CKM_TextBox hanbaitanka_5;
+        private System.Windows.Forms.Label teni_5;
+        private System.Windows.Forms.Label sku_5;
+        private CKM_Controls.CKM_TextBox juchuusuu_5;
+        private CKM_Controls.CKM_TextBox nyuukayotei_5;
+        private CKM_Controls.CKM_TextBox hacchutanka_5;
+        private System.Windows.Forms.Label empty_5;
+        private CKM_Controls.CKM_ComboBox shuukasouko_5;
+        private CKM_Controls.CKM_TextBox shuukayotei_5;
+        private System.Windows.Forms.Panel panel8;
+        private GridControl.clsGridCheckBox chk_5;
+        private CKM_Controls.CKM_TextBox sizename_5;
+        private CKM_Controls.CKM_TextBox size_5;
+        private CKM_Controls.CKM_TextBox colorname_5;
+        private CKM_Controls.CKM_TextBox color_5;
+        private CKM_Controls.CKM_TextBox shouhin_5;
+        private Search.CKM_SearchControl scjan_5;
+        private System.Windows.Forms.Label lbl_5;
+        private System.Windows.Forms.Panel panel_4;
+        private GridControl.clsGridCheckBox choukusou_4;
+        private CKM_Controls.CKM_TextBox zeinutanku_4;
+        private CKM_Controls.CKM_TextBox zeinu_4;
+        private CKM_Controls.CKM_TextBox kobetsuhanbai_4;
+        private CKM_Controls.CKM_TextBox shagaibikou_4;
+        private CKM_Controls.CKM_TextBox shanaibikou_4;
+        private CKM_Controls.CKM_TextBox ararigaku_4;
+        private CKM_Controls.CKM_TextBox zeikomijuchuugaku_4;
+        private CKM_Controls.CKM_TextBox zeinuJuchuugaka_4;
+        private CKM_Controls.CKM_TextBox hanbaitanka_4;
+        private System.Windows.Forms.Label teni_4;
+        private System.Windows.Forms.Label sku_4;
+        private CKM_Controls.CKM_TextBox juchuusuu_4;
+        private CKM_Controls.CKM_TextBox nyuukayotei_4;
+        private CKM_Controls.CKM_TextBox hacchutanka_4;
+        private System.Windows.Forms.Label empty_4;
+        private CKM_Controls.CKM_ComboBox shuukasouko_4;
+        private CKM_Controls.CKM_TextBox shuukayotei_4;
+        private System.Windows.Forms.Panel panel7;
+        private GridControl.clsGridCheckBox chk_4;
+        private CKM_Controls.CKM_TextBox sizename_4;
+        private CKM_Controls.CKM_TextBox size_4;
+        private CKM_Controls.CKM_TextBox colorname_4;
+        private CKM_Controls.CKM_TextBox color_4;
+        private CKM_Controls.CKM_TextBox shouhin_4;
+        private Search.CKM_SearchControl scjan_4;
+        private System.Windows.Forms.Label lbl_4;
+        private System.Windows.Forms.Panel panel_3;
+        private GridControl.clsGridCheckBox choukusou_3;
+        private CKM_Controls.CKM_TextBox zeinutanku_3;
+        private CKM_Controls.CKM_TextBox zeinu_3;
+        private CKM_Controls.CKM_TextBox kobetsuhanbai_3;
+        private CKM_Controls.CKM_TextBox shagaibikou_3;
+        private CKM_Controls.CKM_TextBox shanaibikou_3;
+        private CKM_Controls.CKM_TextBox ararigaku_3;
+        private CKM_Controls.CKM_TextBox zeikomijuchuugaku_3;
+        private CKM_Controls.CKM_TextBox zeinuJuchuugaka_3;
+        private CKM_Controls.CKM_TextBox hanbaitanka_3;
+        private System.Windows.Forms.Label teni_3;
+        private System.Windows.Forms.Label sku_3;
+        private CKM_Controls.CKM_TextBox juchuusuu_3;
+        private CKM_Controls.CKM_TextBox nyuukayotei_3;
+        private CKM_Controls.CKM_TextBox hacchutanka_3;
+        private System.Windows.Forms.Label empty_3;
+        private CKM_Controls.CKM_ComboBox shuukasouko_3;
+        private CKM_Controls.CKM_TextBox shuukayotei_3;
+        private System.Windows.Forms.Panel panel6;
+        private GridControl.clsGridCheckBox chk_3;
+        private CKM_Controls.CKM_TextBox sizename_3;
+        private CKM_Controls.CKM_TextBox size_3;
+        private CKM_Controls.CKM_TextBox colorname_3;
+        private CKM_Controls.CKM_TextBox color_3;
+        private CKM_Controls.CKM_TextBox shouhin_3;
+        private Search.CKM_SearchControl scjan_3;
+        private System.Windows.Forms.Label lbl_3;
+        private System.Windows.Forms.Panel panel_2;
+        private GridControl.clsGridCheckBox choukusou_2;
+        private CKM_Controls.CKM_TextBox zeinutanku_2;
+        private CKM_Controls.CKM_TextBox zeinu_2;
+        private CKM_Controls.CKM_TextBox kobetsuhanbai_2;
+        private CKM_Controls.CKM_TextBox shagaibikou_2;
+        private CKM_Controls.CKM_TextBox shanaibikou_2;
+        private CKM_Controls.CKM_TextBox ararigaku_2;
+        private CKM_Controls.CKM_TextBox zeikomijuchuugaku_2;
+        private CKM_Controls.CKM_TextBox zeinuJuchuugaka_2;
+        private CKM_Controls.CKM_TextBox hanbaitanka_2;
+        private System.Windows.Forms.Label teni_2;
+        private System.Windows.Forms.Label sku_2;
+        private CKM_Controls.CKM_TextBox juchuusuu_2;
+        private CKM_Controls.CKM_TextBox nyuukayotei_2;
+        private CKM_Controls.CKM_TextBox hacchutanka_2;
+        private System.Windows.Forms.Label empty_2;
+        private CKM_Controls.CKM_ComboBox shuukasouko_2;
+        private CKM_Controls.CKM_TextBox shuukayotei_2;
+        private System.Windows.Forms.Panel panel5;
+        private GridControl.clsGridCheckBox chk_2;
+        private CKM_Controls.CKM_TextBox sizename_2;
+        private CKM_Controls.CKM_TextBox size_2;
+        private CKM_Controls.CKM_TextBox colorname_2;
+        private CKM_Controls.CKM_TextBox color_2;
+        private CKM_Controls.CKM_TextBox shouhin_2;
+        private Search.CKM_SearchControl scjan_2;
+        private System.Windows.Forms.Label lbl_2;
         private System.Windows.Forms.Panel panel_1;
-        private Search.CKM_SearchControl scjan_1;
-        private System.Windows.Forms.Label lbl_1;
+        private GridControl.clsGridCheckBox choukusou_1;
+        private CKM_Controls.CKM_TextBox zeinutanku_1;
         private CKM_Controls.CKM_TextBox kobetsuhanbai_1;
         private CKM_Controls.CKM_TextBox shagaibikou_1;
         private CKM_Controls.CKM_TextBox shanaibikou_1;
@@ -5181,148 +5341,14 @@
         private CKM_Controls.CKM_ComboBox shuukasouko_1;
         private CKM_Controls.CKM_TextBox shuukayotei_1;
         private System.Windows.Forms.Panel panel4;
+        private GridControl.clsGridCheckBox chk_1;
         private CKM_Controls.CKM_TextBox sizename_1;
         private CKM_Controls.CKM_TextBox size_1;
         private CKM_Controls.CKM_TextBox colorname_1;
         private CKM_Controls.CKM_TextBox color_1;
         private CKM_Controls.CKM_TextBox shouhin_1;
-        private System.Windows.Forms.Panel panel_5;
-        private CKM_Controls.CKM_TextBox kobetsuhanbai_5;
-        private CKM_Controls.CKM_TextBox shagaibikou_5;
-        private CKM_Controls.CKM_TextBox shanaibikou_5;
-        private CKM_Controls.CKM_TextBox ararigaku_5;
-        private CKM_Controls.CKM_TextBox zeikomijuchuugaku_5;
-        private CKM_Controls.CKM_TextBox zeinuJuchuugaka_5;
-        private CKM_Controls.CKM_TextBox hanbaitanka_5;
-        private System.Windows.Forms.Label teni_5;
-        private System.Windows.Forms.Label sku_5;
-        private CKM_Controls.CKM_TextBox juchuusuu_5;
-        private CKM_Controls.CKM_TextBox nyuukayotei_5;
-        private CKM_Controls.CKM_TextBox hacchutanka_5;
-        private System.Windows.Forms.Label empty_5;
-        private CKM_Controls.CKM_ComboBox shuukasouko_5;
-        private CKM_Controls.CKM_TextBox shuukayotei_5;
-        private System.Windows.Forms.Panel panel8;
-        private CKM_Controls.CKM_TextBox sizename_5;
-        private CKM_Controls.CKM_TextBox size_5;
-        private CKM_Controls.CKM_TextBox colorname_5;
-        private CKM_Controls.CKM_TextBox color_5;
-        private CKM_Controls.CKM_TextBox shouhin_5;
-        private Search.CKM_SearchControl scjan_5;
-        private System.Windows.Forms.Label lbl_5;
-        private System.Windows.Forms.Panel panel_4;
-        private CKM_Controls.CKM_TextBox kobetsuhanbai_4;
-        private CKM_Controls.CKM_TextBox shagaibikou_4;
-        private CKM_Controls.CKM_TextBox shanaibikou_4;
-        private CKM_Controls.CKM_TextBox ararigaku_4;
-        private CKM_Controls.CKM_TextBox zeikomijuchuugaku_4;
-        private CKM_Controls.CKM_TextBox zeinuJuchuugaka_4;
-        private CKM_Controls.CKM_TextBox hanbaitanka_4;
-        private System.Windows.Forms.Label teni_4;
-        private System.Windows.Forms.Label sku_4;
-        private CKM_Controls.CKM_TextBox juchuusuu_4;
-        private CKM_Controls.CKM_TextBox nyuukayotei_4;
-        private CKM_Controls.CKM_TextBox hacchutanka_4;
-        private System.Windows.Forms.Label empty_4;
-        private CKM_Controls.CKM_ComboBox shuukasouko_4;
-        private CKM_Controls.CKM_TextBox shuukayotei_4;
-        private System.Windows.Forms.Panel panel7;
-        private CKM_Controls.CKM_TextBox sizename_4;
-        private CKM_Controls.CKM_TextBox size_4;
-        private CKM_Controls.CKM_TextBox colorname_4;
-        private CKM_Controls.CKM_TextBox color_4;
-        private CKM_Controls.CKM_TextBox shouhin_4;
-        private Search.CKM_SearchControl scjan_4;
-        private System.Windows.Forms.Label lbl_4;
-        private System.Windows.Forms.Panel panel_3;
-        private CKM_Controls.CKM_TextBox kobetsuhanbai_3;
-        private CKM_Controls.CKM_TextBox shagaibikou_3;
-        private CKM_Controls.CKM_TextBox shanaibikou_3;
-        private CKM_Controls.CKM_TextBox ararigaku_3;
-        private CKM_Controls.CKM_TextBox zeikomijuchuugaku_3;
-        private CKM_Controls.CKM_TextBox zeinuJuchuugaka_3;
-        private CKM_Controls.CKM_TextBox hanbaitanka_3;
-        private System.Windows.Forms.Label teni_3;
-        private System.Windows.Forms.Label sku_3;
-        private CKM_Controls.CKM_TextBox juchuusuu_3;
-        private CKM_Controls.CKM_TextBox nyuukayotei_3;
-        private CKM_Controls.CKM_TextBox hacchutanka_3;
-        private System.Windows.Forms.Label empty_3;
-        private CKM_Controls.CKM_ComboBox shuukasouko_3;
-        private CKM_Controls.CKM_TextBox shuukayotei_3;
-        private System.Windows.Forms.Panel panel6;
-        private CKM_Controls.CKM_TextBox sizename_3;
-        private CKM_Controls.CKM_TextBox size_3;
-        private CKM_Controls.CKM_TextBox colorname_3;
-        private CKM_Controls.CKM_TextBox color_3;
-        private CKM_Controls.CKM_TextBox shouhin_3;
-        private Search.CKM_SearchControl scjan_3;
-        private System.Windows.Forms.Label lbl_3;
-        private System.Windows.Forms.Panel panel_2;
-        private CKM_Controls.CKM_TextBox kobetsuhanbai_2;
-        private CKM_Controls.CKM_TextBox shagaibikou_2;
-        private CKM_Controls.CKM_TextBox shanaibikou_2;
-        private CKM_Controls.CKM_TextBox ararigaku_2;
-        private CKM_Controls.CKM_TextBox zeikomijuchuugaku_2;
-        private CKM_Controls.CKM_TextBox zeinuJuchuugaka_2;
-        private CKM_Controls.CKM_TextBox hanbaitanka_2;
-        private System.Windows.Forms.Label teni_2;
-        private System.Windows.Forms.Label sku_2;
-        private CKM_Controls.CKM_TextBox juchuusuu_2;
-        private CKM_Controls.CKM_TextBox nyuukayotei_2;
-        private CKM_Controls.CKM_TextBox hacchutanka_2;
-        private System.Windows.Forms.Label empty_2;
-        private CKM_Controls.CKM_ComboBox shuukasouko_2;
-        private CKM_Controls.CKM_TextBox shuukayotei_2;
-        private System.Windows.Forms.Panel panel5;
-        private CKM_Controls.CKM_TextBox sizename_2;
-        private CKM_Controls.CKM_TextBox size_2;
-        private CKM_Controls.CKM_TextBox colorname_2;
-        private CKM_Controls.CKM_TextBox color_2;
-        private CKM_Controls.CKM_TextBox shouhin_2;
-        private Search.CKM_SearchControl scjan_2;
-        private System.Windows.Forms.Label lbl_2;
-        private System.Windows.Forms.VScrollBar Vsb_Mei_0;
-        private CKM_Controls.CKM_TextBox zeinutanku_5;
-        private CKM_Controls.CKM_TextBox zeinu_5;
-        private CKM_Controls.CKM_TextBox zeinutanku_4;
-        private CKM_Controls.CKM_TextBox zeinu_4;
-        private CKM_Controls.CKM_TextBox zeinutanku_3;
-        private CKM_Controls.CKM_TextBox zeinu_3;
-        private CKM_Controls.CKM_TextBox zeinutanku_2;
-        private CKM_Controls.CKM_TextBox zeinu_2;
-        private CKM_Controls.CKM_TextBox zeinutanku_1;
-        private CKM_Controls.CKM_Label ckM_Label11;
-        private CKM_Controls.CKM_Label ckM_Label10;
-        private CKM_Controls.CKM_Label ckM_Label9;
-        private Search.CKM_SearchControl sc_Tenji;
-        private System.Windows.Forms.Panel pnl_haisou;
-        private System.Windows.Forms.Panel pnl_kokyakuu;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private GridControl.clsGridCheckBox choukusou_5;
-        private GridControl.clsGridCheckBox choukusou_4;
-        private GridControl.clsGridCheckBox choukusou_3;
-        private GridControl.clsGridCheckBox choukusou_2;
-        private GridControl.clsGridCheckBox choukusou_1;
-        private GridControl.clsGridCheckBox chk_5;
-        private GridControl.clsGridCheckBox chk_4;
-        private GridControl.clsGridCheckBox chk_3;
-        private GridControl.clsGridCheckBox chk_2;
-        private GridControl.clsGridCheckBox chk_1;
-        private System.Windows.Forms.Label hdn_ExcAmt;
-        private System.Windows.Forms.Label hdn_IncAmt;
-        private System.Windows.Forms.Label hdn_GrossAmt;
-        private System.Windows.Forms.Label hdn_CostAmt;
-        private System.Windows.Forms.Label hdn_RduAmt;
-        private System.Windows.Forms.Label hdn_NmalAmt;
-        private System.Windows.Forms.Label hdn_CsumAmt;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
+        private Search.CKM_SearchControl scjan_1;
+        private System.Windows.Forms.Label lbl_1;
     }
 }
 

@@ -3243,7 +3243,7 @@ namespace TenzikaiJuchuuTourou
                 c.ColumnName = c.ColumnName.Trim();
             }
 
-            if (res.Rows.Count > 0)
+            if (res.Rows.Count == 0)
             {
                 MessageBox.Show("No Data Exist");
                 return null;
