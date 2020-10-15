@@ -1188,6 +1188,7 @@ namespace Base.Client
             {
                 // 例：Excelファイルを開く場合（Office2003と2007両対応したい）
                 sfd.Filter = "Excelファイル(*.xls;*.xlsx)|*.xls;*.xlsx";
+                sfd.DefaultExt = "xlsx";
             }
 
             //[ファイルの種類]ではじめに選択されるものを指定する
