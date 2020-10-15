@@ -97,7 +97,10 @@ BEGIN
                AND AccountingDate >= convert(date, @DateFrom)
                AND AccountingDate <= convert(date, @DateTo)
            ) H1;
-
+--Temp_D_DepositHistory0‚ÉIndexiNumberj‚ð‚Â‚¯‚½‚Ù‚¤‚ª‚æ‚¢Hš
+    -- ƒCƒ“ƒfƒbƒNƒXindex1ì¬
+    CREATE CLUSTERED INDEX index_D_DepositHistory0 on [#Temp_D_DepositHistory0] ([Number]);
+    
     -- y”Ì”„zƒ[ƒNƒe[ƒuƒ‹‚Pì¬
     SELECT * 
       INTO #Temp_D_DepositHistory1
@@ -107,7 +110,13 @@ BEGIN
                   ,history.Number SalesNO                                       -- “`•[”Ô†
                   ,history.StoreCD                                              -- “X•ÜCD
                   ,history.JanCD                                                -- JanCD
-                  ,sku.SKUShortName                                             -- ¤•i–¼
+                  ,(SELECT top 1 sku.SKUShortName
+                    FROM M_SKU AS sku
+                    WHERE sku.AdminNO = history.AdminNO
+                    AND sku.DeleteFlg = 0
+                    AND sku.ChangeDate <= history.AccountingDate
+                    ORDER BY sku.ChangeDate DESC
+                   ) As SKUShortName                                            -- ¤•i–¼
                   ,CASE
                      WHEN history.SalesSU = 1 THEN NULL
                      ELSE history.SalesUnitPrice
@@ -124,56 +133,29 @@ BEGIN
                   ,sales.SalesHontaiGaku10 + sales.SalesTax10 TargetAmount10    -- 10“‘ÎÛŠz
                   ,sales.SalesTax8                                              -- ŠOÅ8“
                   ,sales.SalesTax10                                             -- ŠOÅ10“
-                  ,staff.ReceiptPrint StaffReceiptPrint                         -- ’S“–ƒŒƒV[ƒg•\‹L
-                  ,store.ReceiptPrint StoreReceiptPrint                         -- “X•ÜƒŒƒV[ƒg•\‹L
+                  ,(SELECT top 1 staff.ReceiptPrint
+                    FROM M_Staff AS staff
+                    WHERE  staff.StaffCD = sales.StaffCD
+                    AND staff.DeleteFlg = 0
+                    AND staff.ChangeDate <= sales.SalesDate
+                    ORDER BY staff.ChangeDate DESC
+                    ) AS StaffReceiptPrint                                      -- ’S“–ƒŒƒV[ƒg•\‹L
+                  ,(SELECT top 1 store.ReceiptPrint
+                    FROM M_Store AS store
+                    WHERE store.StoreCD = sales.StoreCD
+                    AND store.DeleteFlg = 0
+                    AND store.ChangeDate <= sales.SalesDate
+                    ORDER BY store.ChangeDate DESC
+                    ) AS StoreReceiptPrint                                      -- “X•ÜƒŒƒV[ƒg•\‹L
                   ,history.AccountingDate
               FROM #Temp_D_DepositHistory0 history
               LEFT OUTER JOIN D_Sales sales ON sales.SalesNO = history.Number
-              LEFT OUTER JOIN (
-                               SELECT ROW_NUMBER() OVER(PARTITION BY AdminNO ORDER BY ChangeDate DESC) as RANK
-                                     ,AdminNO
-                                     ,SKUCD
-                                     ,JanCD
-                                     ,ChangeDate
-                                     ,SKUShortName
-                                     ,DeleteFlg
-                                 FROM M_SKU 
-                              ) sku ON sku.RANK = 1
-                                   AND sku.JanCD = history.JanCD
-                                   AND sku.SKUCD = history.SKUCD
-                                   AND sku.ChangeDate <= history.AccountingDate
-              LEFT OUTER JOIN (
-                               SELECT ROW_NUMBER() OVER(PARTITION BY StaffCD ORDER BY ChangeDate DESC) AS RANK
-                                     ,StaffCD
-                                     ,ChangeDate
-                                     ,ReceiptPrint
-                                     ,DeleteFlg
-                                 FROM M_Staff
-                              ) staff ON staff.RANK = 1
-                                     AND staff.StaffCD = sales.StaffCD
-                                     AND staff.ChangeDate <= sales.SalesDate
-              LEFT OUTER JOIN (
-                               SELECT ROW_NUMBER() OVER(PARTITION BY StoreCD ORDER BY ChangeDate DESC) as RANK
-                                     ,StoreCD
-                                     ,StoreName
-                                     ,Address1
-                                     ,Address2
-                                     ,TelephoneNO
-                                     ,ChangeDate
-                                     ,ReceiptPrint
-                                     ,DeleteFlg 
-                                 FROM M_Store 
-                              ) store ON store.RANK = 1
-                                     AND store.StoreCD = sales.StoreCD
-                                     AND store.ChangeDate <= sales.SalesDate
+
              WHERE history.DataKBN = 2
                AND history.DepositKBN = 1
                AND history.CancelKBN = 0
                AND sales.DeleteDateTime IS NULL
                AND sales.BillingType = 1
-               AND sku.DeleteFlg = 0
-               AND staff.DeleteFlg = 0
-               AND store.DeleteFlg = 0
            ) D1;
 
     -- y”Ì”„zƒ[ƒNƒe[ƒuƒ‹‚Qì¬
@@ -274,15 +256,15 @@ BEGIN
                   ,NULL ChangePreparationAmount10                                          -- ’Þ‘K€”õŠz10
                   ,D.Remark ChangePreparationRemark                                        -- ’Þ‘K€”õ”õl
               FROM #Temp_D_DepositHistory0 D
-             WHERE D.DepositNO IN (
+              INNER JOIN (
                                    SELECT MAX(history.DepositNO) DepositNO
                                      FROM #Temp_D_DepositHistory0 history
-                                     LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
                                     WHERE history.DataKBN = 3
                                       AND history.DepositKBN = 6
                                       AND history.CancelKBN = 0
                                     GROUP BY history.AccountingDate
-                                  )
+                                  ) AS DD
+              ON DD.DepositNO = D.DepositNO
            ) D4;
 
     -- yŽG“ü‹àzƒ[ƒNƒe[ƒuƒ‹‚Tì¬
@@ -379,8 +361,13 @@ BEGIN
               FROM (
                     SELECT CONVERT(Date, history.DepositDateTime) RegistDate
                           ,history.DepositDateTime DepositDateTime
-                          ,customer.CustomerCD
-                          ,customer.CustomerName
+                          ,history.CustomerCD
+                          ,(SELECT top 1 customer.CustomerName
+                            FROM M_Customer AS customer
+                            WHERE customer.CustomerCD = history.CustomerCD             --DeleteFlg‚Í‚ ‚¦‚Ä•s—v
+                            AND customer.ChangeDate <= history.DepositDateTime
+                            ORDER BY customer.ChangeDate DESC
+                            ) AS CustomerName
                           ,denominationKbn.DenominationName
                           ,history.DenominationCD 
                           ,history.DepositGaku
@@ -388,15 +375,7 @@ BEGIN
                           ,history.Remark
                      FROM #Temp_D_DepositHistory0 history
                      LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
-                     LEFT OUTER JOIN (
-                                      SELECT ROW_NUMBER() OVER(PARTITION BY CustomerCD ORDER BY ChangeDate DESC) AS RANK
-                                            ,CustomerCD
-                                            ,CustomerName
-                                            ,ChangeDate
-                                            ,DeleteFlg
-                                        FROM M_Customer) customer ON customer.RANK = 1
-                                                                 AND customer.CustomerCD = history.CustomerCD
-                                                                 AND customer.ChangeDate <= history.DepositDateTime
+
                     WHERE history.DataKBN = 3
                       AND history.DepositKBN = 2
                       AND history.CancelKBN = 0
@@ -1238,7 +1217,7 @@ BEGIN
           ,A.DepositDate                                         -- ”­s“ú
           ,ROW_NUMBER() OVER(
                PARTITION BY A.StoreCD 
-                   ORDER BY A.IssueDate
+                   ORDER BY A.IssueDate, A.DepositNO             -- ƒŒƒV[ƒg‚Æ‡”Ô‚ð“¯‚¶‚É‚·‚é
            ) AS DetailOrder                                      -- –¾×•\Ž¦‡
           ,A.JanCD                                               -- JANCD
           ,A.SKUShortName                                        -- ¤•i–¼
@@ -1620,7 +1599,7 @@ BEGIN
           ,tempHistory8.ByTimeZoneSalesNO_2300_2400              --y¸ŽZˆ—zŽžŠÔ‘Ñ•ÊŒ” 23:00`24:00
       FROM (
             SELECT calendar.CalendarDate                                           -- “ú•t
-                  ,store.StoreCD
+                  ,@StoreCD AS StoreCD
                   ,store.StoreName                                                 -- “X•Ü–¼
                   ,store.Address1                                                  -- ZŠ‚P
                   ,store.Address2                                                  -- ZŠ‚Q
@@ -1662,22 +1641,12 @@ BEGIN
                   --
                   ,tempHistory1.StaffReceiptPrint                                  -- ’S“–CD
                   ,store.ReceiptPrint StoreReceiptPrint                            -- “X•ÜCD
+                  ,tempHistory1.DepositNO
               FROM M_Calendar calendar
-              LEFT OUTER JOIN (
-                               SELECT ROW_NUMBER() OVER(PARTITION BY StoreCD ORDER BY ChangeDate DESC) as RANK
-                                     ,StoreCD
-                                     ,StoreName
-                                     ,Address1
-                                     ,Address2
-                                     ,TelephoneNO
-                                     ,ChangeDate
-                                     ,ReceiptPrint
-                                     ,DeleteFlg
-                                 FROM M_Store
-                              ) store ON store.RANK = 1
-                                     AND store.StoreCD = @StoreCD
-                                     AND store.ChangeDate <= CONVERT(DATE, GETDATE())
-                                     AND store.DeleteFlg = 0
+              LEFT OUTER JOIN F_Store(CONVERT(DATE, GETDATE())) AS store
+              ON store.StoreCD = @StoreCD
+              AND store.DeleteFlg = 0
+
               LEFT OUTER JOIN #Temp_D_DepositHistory1 tempHistory1 ON tempHistory1.StoreCD = store.StoreCD
                                                                   AND tempHistory1.AccountingDate = calendar.CalendarDate
              WHERE calendar.CalendarDate >= convert(date, @DateFrom)

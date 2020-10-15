@@ -87,6 +87,8 @@ namespace TenzikaiJuchuuTourou
         {
             InitializeComponent();
             C_dt = DateTime.Now.ToString("yyyy-MM-dd");
+            PanelSearch.SendToBack();
+            PanelSearch.Visible = true;
         }
         private enum EsearchKbn : short
         {
@@ -219,6 +221,7 @@ namespace TenzikaiJuchuuTourou
                     EnablePanel(PanelHeader); 
                     detailControls[(int)Eindex.SCTenjiKai].Parent.Enabled = true;
                    ((CKM_SearchControl)detailControls[(int)Eindex.SCTenjiKai].Parent).BtnSearch.Enabled = true;
+                    detailControls[(int)Eindex.SCTenjiKai].Enabled = true;
                     detailControls[(int)Eindex.SCTenjiKai].Focus();
 
                     //if (mode == EOperationMode.SHOW)
@@ -3243,7 +3246,7 @@ namespace TenzikaiJuchuuTourou
                 c.ColumnName = c.ColumnName.Trim();
             }
 
-            if (res.Rows.Count > 0)
+            if (res.Rows.Count == 0)
             {
                 MessageBox.Show("No Data Exist");
                 return null;

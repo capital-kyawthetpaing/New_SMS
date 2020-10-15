@@ -73,17 +73,17 @@ namespace GetsujiSaimuKeisanSyori
                     //またはFiscalYYYYMM＝Parameter受取	FiscalYYYYMM＆	ClosePosition2＝0＆	ClosePosition4＝0なら
                     if (gsbl.Z_Set( me.FiscalYYYYMM) <= gsbl.Z_Set(InFiscalYYYYMM) )
                     {
-                        if (gsbl.Z_Set(me.FiscalYYYYMM) == gsbl.Z_Set(InFiscalYYYYMM))
-                        {
-                            if(me.ClosePosition2.Equals("0") && me.ClosePosition4.Equals("0"))
-                            {
-                                execFlg = true;
-                            }
-                        }
-                        else
-                        {
+                        //if (gsbl.Z_Set(me.FiscalYYYYMM) == gsbl.Z_Set(InFiscalYYYYMM))
+                        //{
+                        //    if(me.ClosePosition2.Equals("0") && me.ClosePosition4.Equals("0"))
+                        //    {
+                        //        execFlg = true;
+                        //    }
+                        //}
+                        //else
+                        //{
                             execFlg = true;
-                        }
+                        //}
                         InFiscalYYYYMM = me.FiscalYYYYMM;
                     }
                 }
