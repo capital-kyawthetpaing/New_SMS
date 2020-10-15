@@ -1,15 +1,13 @@
-
-/****** Object:  StoredProcedure [dbo].[M_Souko_BindForShukka]    Script Date: 6/11/2019 2:21:19 PM ******/
-DROP PROCEDURE [dbo].[M_Souko_BindForShukka]
-GO
-
-/****** Object:  StoredProcedure [dbo].[M_Souko_BindForShukka]    Script Date: 6/11/2019 2:21:19 PM ******/
+use[CapitalSMS]
+Go
+ BEGIN TRY 
+ Drop Procedure dbo.M_Souko_BindForShukka
+END try
+BEGIN CATCH END CATCH 
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
