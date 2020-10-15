@@ -250,6 +250,10 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.ckM_Label12 = new CKM_Controls.CKM_Label();
+            this.ckM_Label13 = new CKM_Controls.CKM_Label();
             this.sc_Tenji = new Search.CKM_SearchControl();
             this.panel1.SuspendLayout();
             this.pnl_haisou.SuspendLayout();
@@ -270,15 +274,15 @@
             // 
             // PanelHeader
             // 
-            this.PanelHeader.Location = new System.Drawing.Point(0, 0);
-            this.PanelHeader.Size = new System.Drawing.Size(1787, 88);
+            this.PanelHeader.Size = new System.Drawing.Size(1787, 34);
             this.PanelHeader.TabIndex = 0;
             this.PanelHeader.Visible = false;
             // 
             // PanelSearch
             // 
-            this.PanelSearch.Location = new System.Drawing.Point(1253, 0);
-            this.PanelSearch.Visible = false;
+            this.PanelSearch.Dock = System.Windows.Forms.DockStyle.None;
+            this.PanelSearch.Location = new System.Drawing.Point(1586, 3);
+            this.PanelSearch.Size = new System.Drawing.Size(200, 33);
             // 
             // btnChangeIkkatuHacchuuMode
             // 
@@ -321,7 +325,7 @@
             this.panel1.Controls.Add(this.txt_JuchuuBi);
             this.panel1.Controls.Add(this.sc_TentouStaff);
             this.panel1.Controls.Add(this.sc_shiiresaki);
-            this.panel1.Location = new System.Drawing.Point(20, 91);
+            this.panel1.Location = new System.Drawing.Point(17, 90);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1740, 160);
             this.panel1.TabIndex = 1;
@@ -330,7 +334,7 @@
             // 
             this.pnl_haisou.Controls.Add(this.hr_3);
             this.pnl_haisou.Controls.Add(this.hr_4);
-            this.pnl_haisou.Location = new System.Drawing.Point(1320, 79);
+            this.pnl_haisou.Location = new System.Drawing.Point(1316, 87);
             this.pnl_haisou.Name = "pnl_haisou";
             this.pnl_haisou.Size = new System.Drawing.Size(218, 32);
             this.pnl_haisou.TabIndex = 19;
@@ -363,7 +367,7 @@
             // 
             this.pnl_kokyakuu.Controls.Add(this.kr_1);
             this.pnl_kokyakuu.Controls.Add(this.kr_2);
-            this.pnl_kokyakuu.Location = new System.Drawing.Point(1326, 24);
+            this.pnl_kokyakuu.Location = new System.Drawing.Point(1322, 32);
             this.pnl_kokyakuu.Name = "pnl_kokyakuu";
             this.pnl_kokyakuu.Size = new System.Drawing.Size(218, 32);
             this.pnl_kokyakuu.TabIndex = 11;
@@ -401,7 +405,7 @@
             this.ckM_Label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label11.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label11.Location = new System.Drawing.Point(758, 109);
+            this.ckM_Label11.Location = new System.Drawing.Point(754, 117);
             this.ckM_Label11.Name = "ckM_Label11";
             this.ckM_Label11.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label11.TabIndex = 137;
@@ -418,7 +422,7 @@
             this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label10.Location = new System.Drawing.Point(771, 59);
+            this.ckM_Label10.Location = new System.Drawing.Point(767, 67);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label10.TabIndex = 136;
@@ -435,7 +439,7 @@
             this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(771, 6);
+            this.ckM_Label9.Location = new System.Drawing.Point(767, 14);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label9.TabIndex = 135;
@@ -453,7 +457,7 @@
             this.btn_Meisai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Meisai.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btn_Meisai.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btn_Meisai.Location = new System.Drawing.Point(1659, 128);
+            this.btn_Meisai.Location = new System.Drawing.Point(1655, 136);
             this.btn_Meisai.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Meisai.Name = "btn_Meisai";
             this.btn_Meisai.Size = new System.Drawing.Size(75, 23);
@@ -482,7 +486,7 @@
             this.txt_HDenwa3.IsNumber = true;
             this.txt_HDenwa3.IsShop = false;
             this.txt_HDenwa3.Length = 32767;
-            this.txt_HDenwa3.Location = new System.Drawing.Point(1675, 76);
+            this.txt_HDenwa3.Location = new System.Drawing.Point(1671, 84);
             this.txt_HDenwa3.MoveNext = true;
             this.txt_HDenwa3.Name = "txt_HDenwa3";
             this.txt_HDenwa3.Size = new System.Drawing.Size(60, 19);
@@ -510,7 +514,7 @@
             this.txt_HDenwa2.IsNumber = true;
             this.txt_HDenwa2.IsShop = false;
             this.txt_HDenwa2.Length = 32767;
-            this.txt_HDenwa2.Location = new System.Drawing.Point(1615, 76);
+            this.txt_HDenwa2.Location = new System.Drawing.Point(1611, 84);
             this.txt_HDenwa2.MoveNext = true;
             this.txt_HDenwa2.Name = "txt_HDenwa2";
             this.txt_HDenwa2.Size = new System.Drawing.Size(60, 19);
@@ -538,7 +542,7 @@
             this.txt_HDenwa1.IsNumber = true;
             this.txt_HDenwa1.IsShop = false;
             this.txt_HDenwa1.Length = 32767;
-            this.txt_HDenwa1.Location = new System.Drawing.Point(1555, 76);
+            this.txt_HDenwa1.Location = new System.Drawing.Point(1551, 84);
             this.txt_HDenwa1.MoveNext = true;
             this.txt_HDenwa1.Name = "txt_HDenwa1";
             this.txt_HDenwa1.Size = new System.Drawing.Size(60, 19);
@@ -548,7 +552,7 @@
             // 
             // btn_Shipping
             // 
-            this.btn_Shipping.Location = new System.Drawing.Point(1555, 54);
+            this.btn_Shipping.Location = new System.Drawing.Point(1551, 62);
             this.btn_Shipping.Name = "btn_Shipping";
             this.btn_Shipping.Size = new System.Drawing.Size(70, 23);
             this.btn_Shipping.TabIndex = 17;
@@ -576,7 +580,7 @@
             this.txt_HaisoJuusho2.IsNumber = true;
             this.txt_HaisoJuusho2.IsShop = false;
             this.txt_HaisoJuusho2.Length = 40;
-            this.txt_HaisoJuusho2.Location = new System.Drawing.Point(956, 76);
+            this.txt_HaisoJuusho2.Location = new System.Drawing.Point(952, 84);
             this.txt_HaisoJuusho2.MaxLength = 40;
             this.txt_HaisoJuusho2.MoveNext = true;
             this.txt_HaisoJuusho2.Name = "txt_HaisoJuusho2";
@@ -605,7 +609,7 @@
             this.txt_HaisoJuusho1.IsNumber = true;
             this.txt_HaisoJuusho1.IsShop = false;
             this.txt_HaisoJuusho1.Length = 80;
-            this.txt_HaisoJuusho1.Location = new System.Drawing.Point(956, 55);
+            this.txt_HaisoJuusho1.Location = new System.Drawing.Point(952, 63);
             this.txt_HaisoJuusho1.MaxLength = 80;
             this.txt_HaisoJuusho1.MoveNext = true;
             this.txt_HaisoJuusho1.Name = "txt_HaisoJuusho1";
@@ -634,7 +638,7 @@
             this.txt_KDenwa3.IsNumber = true;
             this.txt_KDenwa3.IsShop = false;
             this.txt_KDenwa3.Length = 32767;
-            this.txt_KDenwa3.Location = new System.Drawing.Point(1676, 24);
+            this.txt_KDenwa3.Location = new System.Drawing.Point(1672, 32);
             this.txt_KDenwa3.MoveNext = true;
             this.txt_KDenwa3.Name = "txt_KDenwa3";
             this.txt_KDenwa3.Size = new System.Drawing.Size(60, 19);
@@ -662,7 +666,7 @@
             this.txt_KDenwa2.IsNumber = true;
             this.txt_KDenwa2.IsShop = false;
             this.txt_KDenwa2.Length = 32767;
-            this.txt_KDenwa2.Location = new System.Drawing.Point(1616, 24);
+            this.txt_KDenwa2.Location = new System.Drawing.Point(1612, 32);
             this.txt_KDenwa2.MoveNext = true;
             this.txt_KDenwa2.Name = "txt_KDenwa2";
             this.txt_KDenwa2.Size = new System.Drawing.Size(60, 19);
@@ -690,7 +694,7 @@
             this.txt_KDenwa1.IsNumber = true;
             this.txt_KDenwa1.IsShop = false;
             this.txt_KDenwa1.Length = 32767;
-            this.txt_KDenwa1.Location = new System.Drawing.Point(1556, 24);
+            this.txt_KDenwa1.Location = new System.Drawing.Point(1552, 32);
             this.txt_KDenwa1.MoveNext = true;
             this.txt_KDenwa1.Name = "txt_KDenwa1";
             this.txt_KDenwa1.Size = new System.Drawing.Size(60, 19);
@@ -700,7 +704,7 @@
             // 
             // btn_Customer
             // 
-            this.btn_Customer.Location = new System.Drawing.Point(1556, 2);
+            this.btn_Customer.Location = new System.Drawing.Point(1552, 10);
             this.btn_Customer.Name = "btn_Customer";
             this.btn_Customer.Size = new System.Drawing.Size(70, 23);
             this.btn_Customer.TabIndex = 9;
@@ -728,7 +732,7 @@
             this.txt_KokyaJuusho2.IsNumber = true;
             this.txt_KokyaJuusho2.IsShop = false;
             this.txt_KokyaJuusho2.Length = 40;
-            this.txt_KokyaJuusho2.Location = new System.Drawing.Point(957, 24);
+            this.txt_KokyaJuusho2.Location = new System.Drawing.Point(953, 32);
             this.txt_KokyaJuusho2.MaxLength = 40;
             this.txt_KokyaJuusho2.MoveNext = true;
             this.txt_KokyaJuusho2.Name = "txt_KokyaJuusho2";
@@ -757,7 +761,7 @@
             this.txt_kokyaJuusho1.IsNumber = true;
             this.txt_kokyaJuusho1.IsShop = false;
             this.txt_kokyaJuusho1.Length = 80;
-            this.txt_kokyaJuusho1.Location = new System.Drawing.Point(957, 3);
+            this.txt_kokyaJuusho1.Location = new System.Drawing.Point(953, 11);
             this.txt_kokyaJuusho1.MaxLength = 80;
             this.txt_kokyaJuusho1.MoveNext = true;
             this.txt_kokyaJuusho1.Name = "txt_kokyaJuusho1";
@@ -775,7 +779,7 @@
             this.cbo_yotei.Flag = 0;
             this.cbo_yotei.FormattingEnabled = true;
             this.cbo_yotei.Length = 10;
-            this.cbo_yotei.Location = new System.Drawing.Point(826, 106);
+            this.cbo_yotei.Location = new System.Drawing.Point(822, 114);
             this.cbo_yotei.MaxLength = 10;
             this.cbo_yotei.MoveNext = true;
             this.cbo_yotei.Name = "cbo_yotei";
@@ -797,7 +801,7 @@
             this.sc_haisosaki.IsCopy = false;
             this.sc_haisosaki.LabelText = "";
             this.sc_haisosaki.LabelVisible = false;
-            this.sc_haisosaki.Location = new System.Drawing.Point(826, 50);
+            this.sc_haisosaki.Location = new System.Drawing.Point(822, 58);
             this.sc_haisosaki.Margin = new System.Windows.Forms.Padding(0);
             this.sc_haisosaki.Name = "sc_haisosaki";
             this.sc_haisosaki.NameWidth = 500;
@@ -827,7 +831,7 @@
             this.sc_kokyakuu.IsCopy = false;
             this.sc_kokyakuu.LabelText = "";
             this.sc_kokyakuu.LabelVisible = false;
-            this.sc_kokyakuu.Location = new System.Drawing.Point(826, -2);
+            this.sc_kokyakuu.Location = new System.Drawing.Point(822, 6);
             this.sc_kokyakuu.Margin = new System.Windows.Forms.Padding(0);
             this.sc_kokyakuu.Name = "sc_kokyakuu";
             this.sc_kokyakuu.NameWidth = 500;
@@ -851,7 +855,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(275, 63);
+            this.ckM_Label8.Location = new System.Drawing.Point(271, 71);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label8.TabIndex = 114;
@@ -879,7 +883,7 @@
             this.txt_UriageYoteiBi.IsNumber = true;
             this.txt_UriageYoteiBi.IsShop = false;
             this.txt_UriageYoteiBi.Length = 10;
-            this.txt_UriageYoteiBi.Location = new System.Drawing.Point(347, 59);
+            this.txt_UriageYoteiBi.Location = new System.Drawing.Point(343, 67);
             this.txt_UriageYoteiBi.MaxLength = 10;
             this.txt_UriageYoteiBi.MoveNext = true;
             this.txt_UriageYoteiBi.Name = "txt_UriageYoteiBi";
@@ -898,7 +902,7 @@
             this.cbo_nendo.Flag = 0;
             this.cbo_nendo.FormattingEnabled = true;
             this.cbo_nendo.Length = 10;
-            this.cbo_nendo.Location = new System.Drawing.Point(100, 30);
+            this.cbo_nendo.Location = new System.Drawing.Point(96, 38);
             this.cbo_nendo.MaxLength = 10;
             this.cbo_nendo.MoveNext = true;
             this.cbo_nendo.Name = "cbo_nendo";
@@ -914,7 +918,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(287, 33);
+            this.ckM_Label7.Location = new System.Drawing.Point(283, 41);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label7.TabIndex = 111;
@@ -931,7 +935,7 @@
             this.cbo_season.Flag = 0;
             this.cbo_season.FormattingEnabled = true;
             this.cbo_season.Length = 10;
-            this.cbo_season.Location = new System.Drawing.Point(347, 30);
+            this.cbo_season.Location = new System.Drawing.Point(343, 38);
             this.cbo_season.MaxLength = 10;
             this.cbo_season.MoveNext = true;
             this.cbo_season.Name = "cbo_season";
@@ -947,7 +951,7 @@
             this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(37, 116);
+            this.ckM_Label6.Location = new System.Drawing.Point(33, 124);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(59, 12);
             this.ckM_Label6.TabIndex = 109;
@@ -964,7 +968,7 @@
             this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(40, 88);
+            this.ckM_Label5.Location = new System.Drawing.Point(36, 96);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label5.TabIndex = 108;
@@ -981,7 +985,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(54, 62);
+            this.ckM_Label4.Location = new System.Drawing.Point(50, 70);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label4.TabIndex = 107;
@@ -998,7 +1002,7 @@
             this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(59, 35);
+            this.ckM_Label3.Location = new System.Drawing.Point(55, 43);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(38, 12);
             this.ckM_Label3.TabIndex = 106;
@@ -1015,7 +1019,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(54, 5);
+            this.ckM_Label2.Location = new System.Drawing.Point(50, 13);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label2.TabIndex = 105;
@@ -1032,7 +1036,7 @@
             this.cbo_Shuuka.Flag = 0;
             this.cbo_Shuuka.FormattingEnabled = true;
             this.cbo_Shuuka.Length = 10;
-            this.cbo_Shuuka.Location = new System.Drawing.Point(100, 85);
+            this.cbo_Shuuka.Location = new System.Drawing.Point(96, 93);
             this.cbo_Shuuka.MaxLength = 10;
             this.cbo_Shuuka.MoveNext = true;
             this.cbo_Shuuka.Name = "cbo_Shuuka";
@@ -1059,7 +1063,7 @@
             this.txt_JuchuuBi.IsNumber = true;
             this.txt_JuchuuBi.IsShop = false;
             this.txt_JuchuuBi.Length = 10;
-            this.txt_JuchuuBi.Location = new System.Drawing.Point(100, 58);
+            this.txt_JuchuuBi.Location = new System.Drawing.Point(96, 66);
             this.txt_JuchuuBi.MaxLength = 10;
             this.txt_JuchuuBi.MoveNext = true;
             this.txt_JuchuuBi.Name = "txt_JuchuuBi";
@@ -1084,7 +1088,7 @@
             this.sc_TentouStaff.IsCopy = false;
             this.sc_TentouStaff.LabelText = "";
             this.sc_TentouStaff.LabelVisible = true;
-            this.sc_TentouStaff.Location = new System.Drawing.Point(100, 109);
+            this.sc_TentouStaff.Location = new System.Drawing.Point(96, 117);
             this.sc_TentouStaff.Margin = new System.Windows.Forms.Padding(0);
             this.sc_TentouStaff.Name = "sc_TentouStaff";
             this.sc_TentouStaff.NameWidth = 250;
@@ -1114,7 +1118,7 @@
             this.sc_shiiresaki.IsCopy = false;
             this.sc_shiiresaki.LabelText = "";
             this.sc_shiiresaki.LabelVisible = true;
-            this.sc_shiiresaki.Location = new System.Drawing.Point(100, -3);
+            this.sc_shiiresaki.Location = new System.Drawing.Point(96, 5);
             this.sc_shiiresaki.Margin = new System.Windows.Forms.Padding(0);
             this.sc_shiiresaki.Name = "sc_shiiresaki";
             this.sc_shiiresaki.NameWidth = 320;
@@ -1155,7 +1159,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(26, 250);
+            this.panel2.Location = new System.Drawing.Point(17, 273);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1760, 400);
             this.panel2.TabIndex = 25;
@@ -5014,6 +5018,57 @@
             this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(13, 11);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(96, 12);
+            this.label31.TabIndex = 138;
+            this.label31.Text = "展示会受注番号";
+            // 
+            // panel9
+            // 
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(200, 100);
+            this.panel9.TabIndex = 0;
+            // 
+            // ckM_Label12
+            // 
+            this.ckM_Label12.AutoSize = true;
+            this.ckM_Label12.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label12.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label12.DefaultlabelSize = true;
+            this.ckM_Label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label12.Location = new System.Drawing.Point(13, 9);
+            this.ckM_Label12.Name = "ckM_Label12";
+            this.ckM_Label12.Size = new System.Drawing.Size(96, 12);
+            this.ckM_Label12.TabIndex = 115;
+            this.ckM_Label12.Text = "展示会受注番号";
+            this.ckM_Label12.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckM_Label13
+            // 
+            this.ckM_Label13.AutoSize = true;
+            this.ckM_Label13.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label13.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label13.DefaultlabelSize = true;
+            this.ckM_Label13.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label13.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label13.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label13.Location = new System.Drawing.Point(14, 71);
+            this.ckM_Label13.Name = "ckM_Label13";
+            this.ckM_Label13.Size = new System.Drawing.Size(96, 12);
+            this.ckM_Label13.TabIndex = 107;
+            this.ckM_Label13.Text = "展示会受注番号";
+            this.ckM_Label13.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // sc_Tenji
             // 
             this.sc_Tenji.AutoSize = true;
@@ -5029,26 +5084,30 @@
             this.sc_Tenji.IsCopy = false;
             this.sc_Tenji.LabelText = "";
             this.sc_Tenji.LabelVisible = false;
-            this.sc_Tenji.Location = new System.Drawing.Point(121, 2);
+            this.sc_Tenji.Location = new System.Drawing.Point(113, 60);
             this.sc_Tenji.Margin = new System.Windows.Forms.Padding(0);
             this.sc_Tenji.Name = "sc_Tenji";
-            this.sc_Tenji.NameWidth = 180;
+            this.sc_Tenji.NameWidth = 320;
             this.sc_Tenji.SearchEnable = true;
-            this.sc_Tenji.Size = new System.Drawing.Size(133, 48);
+            this.sc_Tenji.Size = new System.Drawing.Size(133, 27);
             this.sc_Tenji.Stype = Search.CKM_SearchControl.SearchType.JuchuuNO;
-            this.sc_Tenji.TabIndex = 138;
+            this.sc_Tenji.TabIndex = 106;
             this.sc_Tenji.test = null;
             this.sc_Tenji.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.sc_Tenji.UseChangeDate = false;
             this.sc_Tenji.Value1 = null;
             this.sc_Tenji.Value2 = null;
             this.sc_Tenji.Value3 = null;
+            this.sc_Tenji.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TenzikaiJuchuuTourou_KeyDown);
             // 
             // TenzikaiJuchuuTourou
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1789, 822);
+            this.Controls.Add(this.ckM_Label13);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.sc_Tenji);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label28);
@@ -5064,14 +5123,13 @@
             this.Controls.Add(this.hdn_IncAmt);
             this.Controls.Add(this.hdn_ExcAmt);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
             this.Name = "TenzikaiJuchuuTourou";
             this.PanelHeaderHeight = 90;
             this.Text = "TenzikaiJuchuuTourou";
             this.Load += new System.EventHandler(this.TenzikaiJuchuuTourou_Load);
-            this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.hdn_ExcAmt, 0);
             this.Controls.SetChildIndex(this.hdn_IncAmt, 0);
@@ -5087,6 +5145,9 @@
             this.Controls.SetChildIndex(this.label28, 0);
             this.Controls.SetChildIndex(this.label29, 0);
             this.Controls.SetChildIndex(this.label30, 0);
+            this.Controls.SetChildIndex(this.sc_Tenji, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.ckM_Label13, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnl_haisou.ResumeLayout(false);
@@ -5343,7 +5404,14 @@
         private Search.CKM_SearchControl scjan_1;
         private System.Windows.Forms.Label lbl_1;
         private CKM_Controls.CKM_Label ckM_Label1;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Panel panel9;
+        //private Search.CKM_SearchControl sc_Tenji;
+        private CKM_Controls.CKM_Label ckM_Label12;
+        private CKM_Controls.CKM_Label ckM_Label13;
         private Search.CKM_SearchControl sc_Tenji;
+        //private Search.CKM_SearchControl sc_Tenji;
+        //private Search.CKM_SearchControl sc_Tenji;
     }
 }
 
