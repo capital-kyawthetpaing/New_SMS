@@ -306,6 +306,13 @@ namespace TanaoroshiNyuuryoku
                     else
                     {
                         GvDetail.Columns[i].ReadOnly = true;
+                        //GvDetail.Columns[i].DefaultCellStyle.BackColor = System.Drawing.Color.Silver;
+
+                        //デフォルトのセルスタイル
+                        DataGridViewCellStyle defaultCellStyle = new DataGridViewCellStyle();
+                        defaultCellStyle.Font = new System.Drawing.Font(GvDetail.Font,GvDetail.Font.Style | System.Drawing.FontStyle.Bold);
+                        defaultCellStyle.BackColor = System.Drawing.Color.Silver;
+                        GvDetail.Columns[i].DefaultCellStyle = defaultCellStyle;
                     }
                 }
                 for (int i = 0; i <= (int)EIndex.Suryo; i++)
@@ -661,6 +668,11 @@ namespace TanaoroshiNyuuryoku
                 row["ActualQuantity"] = bbl.Z_SetStr( detailControls[(int)EIndex.Suryo].Text);
                 row["RackNO"] = detailControls[(int)EIndex.RackNO].Text;
                 ((DataTable)GvDetail.DataSource).Rows.Add(row);
+
+                detailControls[(int)EIndex.JANCD].Text = "";
+                detailControls[(int)EIndex.Suryo].Text = "";
+                detailControls[(int)EIndex.RackNO].Text = "";
+                ClearLabel();
 
                 detailControls[(int)EIndex.RackNO].Focus();
             }
