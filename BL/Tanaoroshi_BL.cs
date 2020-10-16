@@ -40,6 +40,19 @@ namespace BL
         {
             return mdl.D_Inventory_Update(de, dt);
         }
+        /// <summary>
+        /// 棚卸入力にて使用
+        /// </summary>
+        public bool M_Location_SelectData(M_Location_Entity me)
+        {
+            M_Location_DL mldl = new M_Location_DL();
+            DataTable dt = mldl.M_Location_SelectData(me);
+            if (dt.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
 
         /// <summary>
         /// 棚卸締処理にて使用

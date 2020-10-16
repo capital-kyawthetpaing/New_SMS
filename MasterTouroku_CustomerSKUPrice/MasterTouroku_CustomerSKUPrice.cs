@@ -13,6 +13,8 @@ using Base.Client;
 using Search;
 using GridBase;
 using CKM_Controls;
+using System.IO;
+using ExcelDataReader;
 
 namespace MasterTouroku_CustomerSKUPrice
 {
@@ -36,6 +38,8 @@ namespace MasterTouroku_CustomerSKUPrice
         private int m_EnableCnt;
         private int m_dataCnt = 0;
         public string[] DuplicateCheckCol = null;
+
+        private DataTable dtExcel;
 
         private enum EIndex : int
         {
@@ -75,6 +79,8 @@ namespace MasterTouroku_CustomerSKUPrice
             mGrid = new ClsGridCustomerSKUPric();
             mcskupbl = new MasterTouroku_CustomerSKUPrice_BL();
             mcskue = new M_CustomerSKUPrice_Entity();
+
+            dtExcel = new DataTable();
 
             this.Vsb_Mei_0.MouseWheel
                += new System.Windows.Forms.MouseEventHandler(this.Vsb_Mei_0_MouseWheel);
@@ -703,7 +709,7 @@ namespace MasterTouroku_CustomerSKUPrice
                 int c = 0;
                 foreach (DataRow dr in dt.Rows)
                 {
-                    detailControls[(int)EIndex.Date].Text = bbl.GetDate();
+                    //detailControls[(int)EIndex.Date].Text = bbl.GetDate();
                     mGrid.g_DArray[c].CustomerCD = dr["CustomerCD"].ToString();
                     mGrid.g_DArray[c].CustomerName = dr["CustomerName"].ToString();
                     mGrid.g_DArray[c].TekiyouKaisiDate = dr["TekiyouKaisiDate"].ToString();
@@ -991,12 +997,12 @@ namespace MasterTouroku_CustomerSKUPrice
                                     switch (w_Col)
                                     {
                                         case (int)ClsGridCustomerSKUPric.ColNO.CustomerCD:
-                                        case (int)ClsGridCustomerSKUPric.ColNO.CustomerName:
+                                        //case (int)ClsGridCustomerSKUPric.ColNO.CustomerName:
                                         case (int)ClsGridCustomerSKUPric.ColNO.TekiyouKaisiDate:    // 
                                         case (int)ClsGridCustomerSKUPric.ColNO.TekiyouShuuryouDate:
                                         case (int)ClsGridCustomerSKUPric.ColNO.JANCD:
                                         case (int)ClsGridCustomerSKUPric.ColNO.SKUCD:
-                                        case (int)ClsGridCustomerSKUPric.ColNO.SKUName:    // 
+                                       //case (int)ClsGridCustomerSKUPric.ColNO.SKUName:    // 
                                         case (int)ClsGridCustomerSKUPric.ColNO.SalePriceOutTax:
                                         case (int)ClsGridCustomerSKUPric.ColNO.Remarks:
                                         case (int)ClsGridCustomerSKUPric.ColNO.Space1:
@@ -1031,7 +1037,7 @@ namespace MasterTouroku_CustomerSKUPrice
                                 //keyControls[(int)EIndex.CopyMitsumoriNO].Enabled = false;
                                 //ScCopyMitsumoriNO.BtnSearch.Enabled = false;
 
-                                Scr_Lock(1, mc_L_END, 1);   // フレームのロック
+                               // Scr_Lock(1, mc_L_END, 1);   // フレームのロック
                                 this.Vsb_Mei_0.TabStop = false;
 
                                 SetFuncKeyAll(this, "111111001010");
@@ -1057,12 +1063,12 @@ namespace MasterTouroku_CustomerSKUPrice
                                     switch (w_Col)
                                     {
                                         case (int)ClsGridCustomerSKUPric.ColNO.CustomerCD:
-                                        case (int)ClsGridCustomerSKUPric.ColNO.CustomerName:
+                                       // case (int)ClsGridCustomerSKUPric.ColNO.CustomerName:
                                         case (int)ClsGridCustomerSKUPric.ColNO.TekiyouKaisiDate:    // 
                                         case (int)ClsGridCustomerSKUPric.ColNO.TekiyouShuuryouDate:
                                         case (int)ClsGridCustomerSKUPric.ColNO.JANCD:
                                         case (int)ClsGridCustomerSKUPric.ColNO.SKUCD:
-                                        case (int)ClsGridCustomerSKUPric.ColNO.SKUName:    // 
+                                        //case (int)ClsGridCustomerSKUPric.ColNO.SKUName:    // 
                                         case (int)ClsGridCustomerSKUPric.ColNO.SalePriceOutTax:
                                         case (int)ClsGridCustomerSKUPric.ColNO.Remarks:
                                         case (int)ClsGridCustomerSKUPric.ColNO.Space1:
@@ -1346,17 +1352,7 @@ namespace MasterTouroku_CustomerSKUPrice
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            try
-            {
-                base.FunctionProcess(FuncDisp - 1);
 
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-                //EndSec();
-            }
         }
 
         private void btnDisplay_Click(object sender, EventArgs e)
@@ -1394,14 +1390,25 @@ namespace MasterTouroku_CustomerSKUPrice
                 {
                     S_Clear_Grid();
                     SetMultiColNo(dtSKUPrice);
-                    S_BodySeigyo(2, 2);
-                    mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
+                    
                 }
                 else
                 {
                     bbl.ShowMessage("E128");
                     Scr_Clr(1);
                     txtStartDate.Focus();
+                }
+                if (OperationMode == EOperationMode.UPDATE)
+                {
+                    S_BodySeigyo(1, 1);
+                    mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    detailControls[(int)EIndex.DateStart].Focus();
+                }
+                else
+                {
+                    S_BodySeigyo(2, 1);
+                    //配列の内容を画面にセット
+                    mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                 }
 
             }
@@ -1435,7 +1442,7 @@ namespace MasterTouroku_CustomerSKUPrice
                             }
                         }
                     }
-                }
+                } 
 
                 ////各金額項目の再計算必要
                 //CalcKin();
@@ -1480,6 +1487,15 @@ namespace MasterTouroku_CustomerSKUPrice
 
         private void Delete()
         {
+            if (mcskupbl.CustomerSKUPrice_Exec(mcskue, 3))
+            {
+                ChangeOperationMode(OperationMode);
+                detailControls[0].Focus();
+            }
+            else
+            {
+                bbl.ShowMessage("S001");
+            }
 
         }
        private DataTable GetGridEntity()
@@ -1933,6 +1949,11 @@ namespace MasterTouroku_CustomerSKUPrice
 
             switch (col)
             {
+                case (int)ClsGridCustomerSKUPric.ColNO.TekiyouKaisiDate:
+                   
+                case (int)ClsGridCustomerSKUPric.ColNO.TekiyouShuuryouDate:
+
+                    break;
                 case (int)ClsGridCustomerSKUPric.ColNO.JANCD:
                     string ymd = detailControls[(int)EIndex.Date].Text;
 
@@ -2013,6 +2034,17 @@ namespace MasterTouroku_CustomerSKUPrice
                     }
                     
                     break;
+                case (int)ClsGridCustomerSKUPric.ColNO.SalePriceOutTax:
+                    if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[row].SalePriceOutTax))
+                        mGrid.g_DArray[row].SalePriceOutTax = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].SalePriceOutTax));
+                    else
+                    {
+                        bbl.ShowMessage("E102");
+                        return false;
+                    }
+
+                    
+                    break;
             }
 
             //配列の内容を画面へセット
@@ -2072,5 +2104,132 @@ namespace MasterTouroku_CustomerSKUPrice
         {
             MoveNextControl(e);
         }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            if(OperationMode==EOperationMode.INSERT)
+            {
+                dtExcel = null;
+                if(ErrorCheckForExcel())
+                {
+                    SetMultiColNo(dtExcel);
+                }
+            }
+        }
+
+        #region error check for Excel Import 
+        private bool ErrorCheckForExcel()
+        {
+            OpenFileDialog op = new OpenFileDialog
+            {
+                InitialDirectory = @"C:\",
+                RestoreDirectory = true
+            };
+            if (op.ShowDialog() == DialogResult.OK)
+            {
+                string str = op.FileName;
+                string ext = Path.GetExtension(str);
+                if (!(ext.Equals(".xls") || ext.Equals(".xlsx")))
+                {
+                    bbl.ShowMessage("E137");
+                    return false;
+                }
+                else
+                {
+                    dtExcel = ExcelToDatatable(str);
+                    string[] colname = { "適用開始日", "適用終了日", "顧客CD", "顧客名" , "JANCD" , "SKUCD" , "商品名", "税抜単価" , "備考" };
+                    
+                    if (ColumnCheck(colname, dtExcel))
+                    {
+                        dtExcel = ChangeColumnName(dtExcel);
+                        dtExcel.Columns.Add("AdminNO", typeof(String));
+                        for(int i=0; i < dtExcel.Rows.Count; i++)
+                        {
+                            M_SKU_Entity mse = new M_SKU_Entity
+                            {
+                                JanCD = dtExcel.Rows[i]["JANCD"].ToString(),
+                                ChangeDate = bbl.GetDate(),
+                            };
+                            SKU_BL mbl = new SKU_BL();
+                            DataTable dt = mbl.M_SKU_SelectAll(mse);
+                            if (dt.Rows.Count == 0)
+                            {
+                                bbl.ShowMessage("E107");
+                            }
+                            else
+                            {
+                                dtExcel.Rows[i]["AdminNO"] = dt.Rows[0]["AdminNO"].ToString();
+                            }
+
+                        }
+                        
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E137");
+                    }
+
+                 }
+
+            }
+           return true;
+        }
+
+        protected DataTable ExcelToDatatable(string filePath)
+        {
+            FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read);
+
+            string ext = Path.GetExtension(filePath);
+            IExcelDataReader excelReader;
+            if (ext.Equals(".xls"))
+                //1. Reading from a binary Excel file ('97-2003 format; *.xls)
+                excelReader = ExcelReaderFactory.CreateBinaryReader(stream);
+            else if (ext.Equals(".xlsx"))
+                //2. Reading from a OpenXml Excel file (2007 format; *.xlsx)
+                excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
+            else
+                //2. Reading from a OpenXml Excel file (2007 format; *.xlsx) 
+                excelReader = ExcelReaderFactory.CreateCsvReader(stream, null);
+
+            //3. DataSet - The result of each spreadsheet will be created in the result.Tables
+            bool useHeaderRow = true;
+
+            DataSet result = excelReader.AsDataSet(new ExcelDataSetConfiguration()
+            {
+                ConfigureDataTable = (_) => new ExcelDataTableConfiguration()
+                {
+                    UseHeaderRow = useHeaderRow,
+                }
+            });
+            excelReader.Close();
+            return result.Tables[0];
+        }
+
+        protected DataTable ChangeColumnName(DataTable dt)
+        {
+            dt.Columns["適用開始日"].ColumnName = "TekiyouKaisiDate";
+            dt.Columns["適用終了日"].ColumnName = "TekiyouShuuryouDate";
+            dt.Columns["顧客CD"].ColumnName = "CustomerCD";
+            dt.Columns["顧客名"].ColumnName = "CustomerName";
+            dt.Columns["商品名"].ColumnName = "SKUName";
+            dt.Columns["税抜単価"].ColumnName = "SalePriceOutTax";
+            dt.Columns["備考"].ColumnName = "Remarks";
+            return dt;
+        }
+
+        protected Boolean ColumnCheck(String[] colName, DataTable dtMain)
+        {
+            DataColumnCollection cols = dtMain.Columns;
+            for (int i = 0; i < colName.Length; i++)
+            {
+                if (!cols.Contains(colName[i]))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        #endregion
     }
 }

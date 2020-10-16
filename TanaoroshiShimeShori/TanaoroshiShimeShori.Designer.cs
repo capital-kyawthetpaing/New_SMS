@@ -30,8 +30,9 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new CKM_Controls.CKM_Label();
             this.label1 = new CKM_Controls.CKM_Label();
             this.label27 = new CKM_Controls.CKM_Label();
@@ -43,11 +44,6 @@
             this.ckM_Label4 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
             this.GvDetail = new CKM_Controls.CKM_GridView();
-            this.colProcessingDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFromRackNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colToRackNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInventoryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInventoryKBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSyori = new CKM_Controls.CKM_ComboBox();
             this.CboSoukoName = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
@@ -55,6 +51,11 @@
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox3 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
+            this.colProcessingDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFromRackNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colToRackNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInventoryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInventoryKBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvDetail)).BeginInit();
             this.SuspendLayout();
@@ -331,14 +332,14 @@
             this.colToRackNO,
             this.colInventoryDate,
             this.colInventoryKBN});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GvDetail.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GvDetail.DefaultCellStyle = dataGridViewCellStyle5;
             this.GvDetail.EnableHeadersVisualStyles = false;
             this.GvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvDetail.Location = new System.Drawing.Point(59, 241);
@@ -348,46 +349,6 @@
             this.GvDetail.TabIndex = 2;
             this.GvDetail.UseRowNo = true;
             this.GvDetail.UseSetting = true;
-            // 
-            // colProcessingDateTime
-            // 
-            this.colProcessingDateTime.DataPropertyName = "ProcessingDateTime";
-            this.colProcessingDateTime.HeaderText = "処理日時";
-            this.colProcessingDateTime.Name = "colProcessingDateTime";
-            this.colProcessingDateTime.ReadOnly = true;
-            this.colProcessingDateTime.Width = 150;
-            // 
-            // colFromRackNO
-            // 
-            this.colFromRackNO.DataPropertyName = "FromRackNO";
-            this.colFromRackNO.HeaderText = "棚番(Start)";
-            this.colFromRackNO.Name = "colFromRackNO";
-            this.colFromRackNO.ReadOnly = true;
-            // 
-            // colToRackNO
-            // 
-            this.colToRackNO.DataPropertyName = "ToRackNO";
-            this.colToRackNO.HeaderText = "棚番(End)";
-            this.colToRackNO.Name = "colToRackNO";
-            this.colToRackNO.ReadOnly = true;
-            // 
-            // colInventoryDate
-            // 
-            this.colInventoryDate.DataPropertyName = "InventoryDate";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colInventoryDate.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colInventoryDate.HeaderText = "棚卸日";
-            this.colInventoryDate.Name = "colInventoryDate";
-            this.colInventoryDate.ReadOnly = true;
-            this.colInventoryDate.Width = 80;
-            // 
-            // colInventoryKBN
-            // 
-            this.colInventoryKBN.DataPropertyName = "InventoryKBN";
-            this.colInventoryKBN.HeaderText = "処理";
-            this.colInventoryKBN.Name = "colInventoryKBN";
-            this.colInventoryKBN.ReadOnly = true;
-            this.colInventoryKBN.Width = 200;
             // 
             // cboSyori
             // 
@@ -537,6 +498,48 @@
             this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // colProcessingDateTime
+            // 
+            this.colProcessingDateTime.DataPropertyName = "ProcessingDateTime";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colProcessingDateTime.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colProcessingDateTime.HeaderText = "処理日時";
+            this.colProcessingDateTime.Name = "colProcessingDateTime";
+            this.colProcessingDateTime.ReadOnly = true;
+            this.colProcessingDateTime.Width = 150;
+            // 
+            // colFromRackNO
+            // 
+            this.colFromRackNO.DataPropertyName = "FromRackNO";
+            this.colFromRackNO.HeaderText = "棚番(Start)";
+            this.colFromRackNO.Name = "colFromRackNO";
+            this.colFromRackNO.ReadOnly = true;
+            // 
+            // colToRackNO
+            // 
+            this.colToRackNO.DataPropertyName = "ToRackNO";
+            this.colToRackNO.HeaderText = "棚番(End)";
+            this.colToRackNO.Name = "colToRackNO";
+            this.colToRackNO.ReadOnly = true;
+            // 
+            // colInventoryDate
+            // 
+            this.colInventoryDate.DataPropertyName = "InventoryDate";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colInventoryDate.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colInventoryDate.HeaderText = "棚卸日";
+            this.colInventoryDate.Name = "colInventoryDate";
+            this.colInventoryDate.ReadOnly = true;
+            this.colInventoryDate.Width = 80;
+            // 
+            // colInventoryKBN
+            // 
+            this.colInventoryKBN.DataPropertyName = "InventoryKBN";
+            this.colInventoryKBN.HeaderText = "処理";
+            this.colInventoryKBN.Name = "colInventoryKBN";
+            this.colInventoryKBN.ReadOnly = true;
+            this.colInventoryKBN.Width = 200;
+            // 
             // TanaoroshiShimeShori
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -575,12 +578,12 @@
         private CKM_Controls.CKM_TextBox ckM_TextBox2;
         private CKM_Controls.CKM_Label ckM_Label1;
         private CKM_Controls.CKM_TextBox ckM_TextBox3;
+        private CKM_Controls.CKM_Label ckM_Label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProcessingDateTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFromRackNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn colToRackNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInventoryDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInventoryKBN;
-        private CKM_Controls.CKM_Label ckM_Label3;
     }
 }
 

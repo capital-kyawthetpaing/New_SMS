@@ -35,6 +35,9 @@ namespace Search
             mce = new M_Customer_Entity();
             txtOrderDateTo.Text = DateTime.Today.ToString("yyyy/MM/dd");            
             BindCombo();
+            txtCustomerName.BackColor = Color.Gray;
+            txtCustomerName.Enabled = false;
+            txtCustomerName.Text = string.Empty;
         }
 
         private void BindCombo()
@@ -49,6 +52,10 @@ namespace Search
             if (index + 1 == 12)
             {
                 GetData();
+            }
+            else if (index + 1 == 11)
+            {
+                F11();
             }
         }
 
@@ -112,9 +119,9 @@ namespace Search
                     scStaff.ChangeDate = txtOrderDateTo.Text;
                     ScCustomer.ChangeDate = txtOrderDateTo.Text;
                 }
-                if (string.IsNullOrWhiteSpace(ScSupplier.TxtCode.Text))
-                {
-                    if (ScSupplier.SelectData())
+                if (!string.IsNullOrWhiteSpace(ScSupplier.TxtCode.Text))
+                {                  
+                    if (!ScSupplier.IsExists(2))
                     {
                         bbl.ShowMessage("E101");
                         ScSupplier.SetFocus(1);
@@ -136,9 +143,9 @@ namespace Search
                     return false;
                 }
 
-                if (string.IsNullOrWhiteSpace(scStaff.TxtCode.Text))
-                {
-                    if (scStaff.SelectData())
+                if (!string.IsNullOrWhiteSpace(scStaff.TxtCode.Text))
+                {                   
+                    if (!scStaff.IsExists(2))
                     {
                         bbl.ShowMessage("E101");
                         scStaff.SetFocus(1);
@@ -146,7 +153,7 @@ namespace Search
                     }
                 }
 
-                if(string.IsNullOrWhiteSpace(ScCustomer.TxtCode.Text))
+                if(!string.IsNullOrWhiteSpace(ScCustomer.TxtCode.Text))
                 {
                     mce.CustomerCD = ScCustomer.TxtCode.Text;
                     mce.ChangeDate = ScCustomer.ChangeDate;
@@ -201,9 +208,9 @@ namespace Search
                 {
                     ScSupplier.ChangeDate = txtOrderDateTo.Text;                   
                 }
-                if (string.IsNullOrWhiteSpace(ScSupplier.TxtCode.Text))
+                if (!string.IsNullOrWhiteSpace(ScSupplier.TxtCode.Text))
                 {
-                    if (ScSupplier.SelectData())
+                    if (!ScSupplier.SelectData())
                     {
                         bbl.ShowMessage("E101");
                         ScSupplier.SetFocus(1);
@@ -224,6 +231,14 @@ namespace Search
                 {
                     scStaff.ChangeDate = txtOrderDateTo.Text;
                 }
+                if (!string.IsNullOrWhiteSpace(scStaff.TxtCode.Text))
+                {
+                    if (!scStaff.SelectData())
+                    {
+                        bbl.ShowMessage("E101");
+                        scStaff.SetFocus(1);
+                    }
+                }
             }
         }
 
@@ -240,7 +255,7 @@ namespace Search
                     ScCustomer.ChangeDate = txtOrderDateTo.Text;
                 }
                 mce.CustomerCD = ScCustomer.TxtCode.Text;
-                mce.ChangeDate = ScCustomer.ChangeDate;
+                mce.ChangeDate = txtOrderDateTo.Text;
                 DataTable dtcus = new DataTable();
                 dtcus = tzkjbl.M_Customer_SelectForTenzikai(mce);
                 if(dtcus.Rows.Count > 0)
@@ -257,6 +272,11 @@ namespace Search
                         txtCustomerName.BackColor = Color.Gray;
                         txtCustomerName.Enabled = false;
                     }
+                }
+                else
+                {
+                    bbl.ShowMessage("E101");
+                    ScCustomer.SetFocus(1);
                 }
             }
         }
