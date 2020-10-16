@@ -131,7 +131,7 @@
             this.scSegmentCDTo.Location = new System.Drawing.Point(353, 122);
             this.scSegmentCDTo.Margin = new System.Windows.Forms.Padding(0);
             this.scSegmentCDTo.Name = "scSegmentCDTo";
-            this.scSegmentCDTo.NameWidth = 280;
+            this.scSegmentCDTo.NameWidth = 250;
             this.scSegmentCDTo.SearchEnable = true;
             this.scSegmentCDTo.Size = new System.Drawing.Size(93, 27);
             this.scSegmentCDTo.Stype = Search.CKM_SearchControl.SearchType.商品分類;
@@ -181,7 +181,7 @@
             this.scSegmentCDFrom.Location = new System.Drawing.Point(200, 122);
             this.scSegmentCDFrom.Margin = new System.Windows.Forms.Padding(0);
             this.scSegmentCDFrom.Name = "scSegmentCDFrom";
-            this.scSegmentCDFrom.NameWidth = 280;
+            this.scSegmentCDFrom.NameWidth = 250;
             this.scSegmentCDFrom.SearchEnable = true;
             this.scSegmentCDFrom.Size = new System.Drawing.Size(93, 27);
             this.scSegmentCDFrom.Stype = Search.CKM_SearchControl.SearchType.商品分類;

@@ -700,7 +700,8 @@ namespace Search
                     break;
 
                 case SearchType.展示会名://ses 9/7/2020
-                    TxtCode.MaxLength = 40;
+                    TxtCode.MaxLength = 80;
+                    TxtCode.Ctrl_Byte = CKM_TextBox.Bytes.半全角;
                     TxtCode.Width = 500;
                     lblName.Width = 180;
                     break;
@@ -773,10 +774,9 @@ namespace Search
         /// <param name="e"></param>
         private void TxtCode_KeyDown(object sender, KeyEventArgs e)
         {
-
-
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
             {
+                if (this.TxtCode.Ctrl_Byte != CKM_TextBox.Bytes.半全角)
                 if (IsConsistFullWidth(txtCode.Text))
                 {
                     ShowErrorMessage("E221");
@@ -1838,7 +1838,7 @@ namespace Search
                         if (!frmTenzikaishouhin.flgCancel)
                         {
                              //txtCode.Text = frmTenzikaishouhin.parSkuCD;
-                            txtCode.Text = frmTenzikaishouhin.parSKUName;
+                            txtCode.Text = frmTenzikaishouhin.ProductName;
                            // lblName.Text = frmTenzikaishouhin.parSKUName;
                             CheckBasedFormPanel();//PTK added
                         }
@@ -2165,7 +2165,6 @@ namespace Search
                 case SearchType.単価設定:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 16, txtCode.Text, Value1);
                     break;
-
             }
             if (dtResult.Rows.Count > 0)
             {
