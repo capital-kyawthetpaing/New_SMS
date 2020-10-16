@@ -27,7 +27,7 @@ namespace SiharaiTouroku
         DataTable dtIDName1 = new DataTable();
         DataTable dtIDName2 = new DataTable();
         private string type = string.Empty;
-        private string kouzaCD = string.Empty;
+        //private string kouzaCD = string.Empty;
         private string payeeCD = string.Empty;
         private string payPlanDate = string.Empty;
 
@@ -38,7 +38,7 @@ namespace SiharaiTouroku
             InitializeComponent();
             dpe = dpe1;
 
-            kouzaCD = dpe.MotoKouzaCD;
+            //kouzaCD = dpe.MotoKouzaCD;
             payeeCD = dpe.PayeeCD;
             payPlanDate = dpe.PayPlanDate;
 
@@ -125,6 +125,7 @@ namespace SiharaiTouroku
             //dtSiharai1 = tblROWS.CopyToDataTable();
             {
                 txtTransferAmount.Text = bbl.Z_SetStr(tblROWS[0]["TransferGaku"]);
+                mOldFurikomiGaku = bbl.Z_Set(txtTransferAmount.Text);
                 SC_BankCD.TxtCode.Text = tblROWS[0]["BankCD"].ToString();
                 SC_BankCD.LabelText = tblROWS[0]["BankName"].ToString();
                 SC_BranchCD.TxtCode.Text = tblROWS[0]["BranchCD"].ToString();
@@ -135,6 +136,8 @@ namespace SiharaiTouroku
                 txtFeeKBN.Text = tblROWS[0]["FeeKBNVal"].ToString();
                 //txtAmount.Text = tblROWS[0]["Fee"].ToString();
                 txtAmount.Text = bbl.Z_SetStr(tblROWS[0]["TransferFeeGaku"]);
+                SC_KouzaCD.TxtCode.Text = tblROWS[0]["KouzaCD"].ToString();
+                SC_KouzaCD.LabelText = tblROWS[0]["KouzaName"].ToString();
                 txtCash.Text = bbl.Z_SetStr(tblROWS[0]["CashGaku"]);
                 txtOffsetGaku.Text = bbl.Z_SetStr(tblROWS[0]["OffsetGaku"]);
                 txtBill.Text = bbl.Z_SetStr(tblROWS[0]["BillGaku"]);
@@ -252,6 +255,30 @@ namespace SiharaiTouroku
                 {
                     bbl.ShowMessage("E101");
                     SC_BranchCD.SetFocus(1);
+                    return false;
+                }
+                else
+                {
+                    if (!F12)
+                        Select_KouzaFee();
+                }
+            }
+
+
+            return true;
+        }
+        private bool CheckKouzaCD(bool F12 = false)
+        {
+            SC_KouzaCD.LabelText = "";
+
+            if (!string.IsNullOrWhiteSpace(SC_KouzaCD.TxtCode.Text))
+            {
+                SC_KouzaCD.ChangeDate = dpe.PayDate;
+                SC_KouzaCD.Value1 = SC_KouzaCD.TxtCode.Text;
+                if (!SC_KouzaCD.SelectData())
+                {
+                    bbl.ShowMessage("E101");
+                    SC_KouzaCD.SetFocus(1);
                     return false;
                 }
                 else
@@ -504,6 +531,10 @@ namespace SiharaiTouroku
             {
                 return false;
             }
+            if (!CheckKouzaCD(true))
+            {
+                return false;
+            }
             if (!CheckHanyo(SC_HanyouKeyStart1))
             {
                 return false;
@@ -627,6 +658,29 @@ namespace SiharaiTouroku
                 //EndSec();
             }
         }
+        private void SC_KouzaCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+                {
+                    if (!CheckKouzaCD())
+                    {
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
 
         private void txtFeeKBN_KeyDown(object sender, KeyEventArgs e)
         {
@@ -674,7 +728,6 @@ namespace SiharaiTouroku
                 //EndSec();
             }
         }
-
         private void SC_HanyouKeyStart1_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             try
@@ -784,7 +837,7 @@ namespace SiharaiTouroku
             {
                 M_Kouza_Entity mkze = new M_Kouza_Entity
                 {
-                    KouzaCD = kouzaCD,
+                    KouzaCD =SC_KouzaCD.TxtCode.Text, //kouzaCD,
                     BankCD = SC_BankCD.TxtCode.Text,
                     BranchCD = SC_BranchCD.TxtCode.Text,
                     Amount = txtTransferAmount.Text.Replace(",", ""),
