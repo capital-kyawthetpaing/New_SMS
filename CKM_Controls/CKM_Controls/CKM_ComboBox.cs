@@ -507,7 +507,7 @@ namespace CKM_Controls
                 case CboType.棚卸倉庫:
                     Tanaoroshi_BL tabl = new Tanaoroshi_BL();
                     M_Souko_Entity msoe4 = new M_Souko_Entity();
-                    msoe4.StoreCD = mse.StoreCD;
+                    msoe4.Operator = type; //mse.StoreCD;
                     msoe4.ChangeDate = changeDate;
                     msoe4.DeleteFlg = "0";
                     DataTable dtSSoukoT = tabl.M_Souko_BindForTanaoroshi(msoe4);

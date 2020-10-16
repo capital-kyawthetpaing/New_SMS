@@ -36,7 +36,7 @@
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.btnDisplay = new CKM_Controls.CKM_Button();
             this.ckM_Label4 = new CKM_Controls.CKM_Label();
-            this.btnShow = new CKM_Controls.CKM_Button();
+            this.btnImport = new CKM_Controls.CKM_Button();
             this.ScCustomer_Start = new Search.CKM_SearchControl();
             this.txtItemName = new CKM_Controls.CKM_TextBox();
             this.ScCustomer_End = new Search.CKM_SearchControl();
@@ -49,9 +49,9 @@
             this.ScSKUCD_End = new Search.CKM_SearchControl();
             this.rdoRecent = new CKM_Controls.CKM_RadioButton();
             this.rdoAll = new CKM_Controls.CKM_RadioButton();
-            this.Vsb_Mei_0 = new System.Windows.Forms.VScrollBar();
             this.pnl_Body = new System.Windows.Forms.Panel();
             this.Space_9 = new System.Windows.Forms.Label();
+            this.Vsb_Mei_0 = new System.Windows.Forms.VScrollBar();
             this.IMT_PRICE_9 = new CKM_Controls.CKM_TextBox();
             this.IMT_REMARK_9 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMNM_9 = new System.Windows.Forms.Label();
@@ -207,7 +207,7 @@
             this.pannel_Header.Controls.Add(this.ckM_Label3);
             this.pannel_Header.Controls.Add(this.btnDisplay);
             this.pannel_Header.Controls.Add(this.ckM_Label4);
-            this.pannel_Header.Controls.Add(this.btnShow);
+            this.pannel_Header.Controls.Add(this.btnImport);
             this.pannel_Header.Controls.Add(this.ScCustomer_Start);
             this.pannel_Header.Controls.Add(this.txtItemName);
             this.pannel_Header.Controls.Add(this.ScCustomer_End);
@@ -355,24 +355,24 @@
             this.ckM_Label4.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btnShow
+            // btnImport
             // 
-            this.btnShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnShow.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.btnShow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnShow.DefaultBtnSize = false;
-            this.btnShow.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShow.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.btnShow.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnShow.Location = new System.Drawing.Point(1334, 65);
-            this.btnShow.Margin = new System.Windows.Forms.Padding(1);
-            this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(75, 25);
-            this.btnShow.TabIndex = 17;
-            this.btnShow.Text = "明細取込";
-            this.btnShow.UseVisualStyleBackColor = false;
-            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
+            this.btnImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnImport.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.btnImport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImport.DefaultBtnSize = false;
+            this.btnImport.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImport.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btnImport.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.btnImport.Location = new System.Drawing.Point(1334, 65);
+            this.btnImport.Margin = new System.Windows.Forms.Padding(1);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(75, 25);
+            this.btnImport.TabIndex = 17;
+            this.btnImport.Text = "明細取込";
+            this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // ScCustomer_Start
             // 
@@ -632,14 +632,6 @@
             this.rdoAll.Text = "全件表示";
             this.rdoAll.UseVisualStyleBackColor = true;
             // 
-            // Vsb_Mei_0
-            // 
-            this.Vsb_Mei_0.Location = new System.Drawing.Point(1507, 0);
-            this.Vsb_Mei_0.Name = "Vsb_Mei_0";
-            this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 378);
-            this.Vsb_Mei_0.TabIndex = 127;
-            this.Vsb_Mei_0.ValueChanged += new System.EventHandler(this.Vsb_Mei_0_ValueChanged);
-            // 
             // pnl_Body
             // 
             this.pnl_Body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -769,6 +761,14 @@
             this.Space_9.Size = new System.Drawing.Size(396, 19);
             this.Space_9.TabIndex = 229;
             this.Space_9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Vsb_Mei_0
+            // 
+            this.Vsb_Mei_0.Location = new System.Drawing.Point(1507, 0);
+            this.Vsb_Mei_0.Name = "Vsb_Mei_0";
+            this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 378);
+            this.Vsb_Mei_0.TabIndex = 127;
+            this.Vsb_Mei_0.ValueChanged += new System.EventHandler(this.Vsb_Mei_0_ValueChanged);
             // 
             // IMT_PRICE_9
             // 
@@ -3494,7 +3494,7 @@
         private CKM_Controls.CKM_Label ckM_Label8;
         private CKM_Controls.CKM_TextBox txtItemName;
         private CKM_Controls.CKM_Button btnDisplay;
-        private CKM_Controls.CKM_Button btnShow;
+        private CKM_Controls.CKM_Button btnImport;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;

@@ -452,6 +452,7 @@
     <Content Include="StoreProcedure\M_SKU_SelectAllForTempoRegiShohin.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectByItemCD.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectByJanCD.sql" />
+    <Content Include="StoreProcedure\M_SKU_SelectByJanCD_ForTenzikaishouhin.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectByMaker.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectBySKUCD.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectForSearchProduct.sql" />
@@ -521,6 +522,7 @@
     <Content Include="StoreProcedure\M_TenjiDataSet_Select.sql" />
     <Content Include="StoreProcedure\M_Tenzikaishouhin_Search.sql" />
     <Content Include="StoreProcedure\M_TenzikaiShouhin_Select.sql" />
+    <Content Include="StoreProcedure\M_Tenzikaishouhin_SelectForJancd.sql" />
     <Content Include="StoreProcedure\M_Tenzikai_Search.sql" />
     <Content Include="StoreProcedure\M_VendorFTP_ForSelectFile.sql" />
     <Content Include="StoreProcedure\M_VendorFTP_Select.sql" />

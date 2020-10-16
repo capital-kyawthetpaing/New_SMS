@@ -905,8 +905,8 @@ namespace SiharaiTouroku
                     if (!CheckBillSettleDate())
                         return false;
 
-                    if (!RequireCheck(new Control[] { cboPaymentSourceAcc }))
-                        return false;
+                    //if (!RequireCheck(new Control[] { cboPaymentSourceAcc }))
+                    //    return false;
                 }
             }
 
@@ -1344,7 +1344,7 @@ namespace SiharaiTouroku
                         , bbl.Z_Set(row["TransferGaku"])
                         , bbl.Z_Set(row["TransferFeeGaku"])
                         , string.IsNullOrWhiteSpace(row["FeeKBNVal"].ToString()) ? null : row["FeeKBNVal"]
-                        , cboPaymentSourceAcc.SelectedValue
+                        , cboPaymentSourceAcc.SelectedIndex>0 ? cboPaymentSourceAcc.SelectedValue.ToString():""
                         , string.IsNullOrWhiteSpace(row["BankCD"].ToString()) ? null : row["BankCD"]
                         , string.IsNullOrWhiteSpace(row["BranchCD"].ToString()) ? null : row["BranchCD"]
                         , string.IsNullOrWhiteSpace(row["KouzaKBN"].ToString()) ? null : row["KouzaKBN"]
