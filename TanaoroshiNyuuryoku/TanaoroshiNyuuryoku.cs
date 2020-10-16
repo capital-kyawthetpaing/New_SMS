@@ -71,6 +71,7 @@ namespace TanaoroshiNyuuryoku
 
                 this.SetFunctionLabel(EProMode.SHOW);   //照会プログラムとして起動
                 this.InitialControlArray();
+                ClearLabel();
 
                 //起動時共通処理
                 base.StartProgram();
