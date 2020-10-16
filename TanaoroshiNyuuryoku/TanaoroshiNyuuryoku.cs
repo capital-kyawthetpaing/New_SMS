@@ -77,7 +77,7 @@ namespace TanaoroshiNyuuryoku
                 base.StartProgram();
                 Btn_F9.Text = "";
                 Btn_F9.Enabled = false;
-                Btn_F10.Text = "取込(F10)";
+                //Btn_F10.Text = "取込(F10)";
                 Btn_F12.Text = "登録(F12)";
                 SetFuncKeyAll(this, "100001000011");
 
@@ -546,13 +546,13 @@ namespace TanaoroshiNyuuryoku
                     }
 
                     break;
-                case 9: //F10:取込
-                    {
-                        this.Cursor = Cursors.WaitCursor;
-                        DataToGrid();
-                        this.Cursor = Cursors.Default;
-                        break;
-                    }
+                //case 9: //F10:取込
+                //    {
+                //        this.Cursor = Cursors.WaitCursor;
+                //        DataToGrid();
+                //        this.Cursor = Cursors.Default;
+                //        break;
+                //    }
                 case 11:    //F12:登録
                     {
 
