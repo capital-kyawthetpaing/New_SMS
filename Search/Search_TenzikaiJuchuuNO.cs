@@ -35,6 +35,9 @@ namespace Search
             mce = new M_Customer_Entity();
             txtOrderDateTo.Text = DateTime.Today.ToString("yyyy/MM/dd");            
             BindCombo();
+            txtCustomerName.BackColor = Color.Gray;
+            txtCustomerName.Enabled = false;
+            txtCustomerName.Text = string.Empty;
         }
 
         private void BindCombo()
