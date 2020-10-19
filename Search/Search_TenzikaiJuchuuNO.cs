@@ -33,10 +33,15 @@ namespace Search
             tzkjbl = new TenzikaiJuchuuNo_BL();
             mve = new M_Vendor_Entity();
             mce = new M_Customer_Entity();
-            DateTime now = DateTime.Now;
-            var startDate = new DateTime(now.Year, now.Month, 1);
-            txtOrderDateFrom.Text = startDate.ToString("yyyy/MM/dd");
-            txtOrderDateTo.Text = bbl.GetDate();         
+            //DateTime now = DateTime.Now;
+            //var startDate = new DateTime(now.Year, now.Month, 1);
+            //txtOrderDateFrom.Text = startDate.ToString("yyyy/MM/dd");
+            txtOrderDateTo.Text = bbl.GetDate();
+            string[] date = txtOrderDateTo.Text.Split('/');
+            month = date[date.Length - 2].PadLeft(2, '0');
+            if (date.Length > 2)
+                year = date[date.Length - 3];
+            txtOrderDateFrom.Text = year + '/' + month + '/' + "01";
             BindCombo();
             txtCustomerName.BackColor = Color.Gray;
             txtCustomerName.Enabled = false;
