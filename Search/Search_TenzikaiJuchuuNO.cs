@@ -36,7 +36,7 @@ namespace Search
             DateTime now = DateTime.Now;
             var startDate = new DateTime(now.Year, now.Month, 1);
             txtOrderDateFrom.Text = startDate.ToString("yyyy/MM/dd");
-            txtOrderDateTo.Text = DateTime.Today.ToString("yyyy/MM/dd");           
+            txtOrderDateTo.Text = bbl.GetDate();         
             BindCombo();
             txtCustomerName.BackColor = Color.Gray;
             txtCustomerName.Enabled = false;
