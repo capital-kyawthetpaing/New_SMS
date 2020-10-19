@@ -53,6 +53,7 @@
             this.panel46 = new System.Windows.Forms.Panel();
             this.pnl_Body = new System.Windows.Forms.Panel();
             this.pnl_Header = new System.Windows.Forms.Panel();
+            this.SKUCDTo = new Search.CKM_SearchControl();
             this.btnDisplay = new CKM_Controls.CKM_Button();
             this.ckM_TextBox5 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
@@ -388,7 +389,6 @@
             this.panel158 = new System.Windows.Forms.Panel();
             this.panel159 = new System.Windows.Forms.Panel();
             this.panel160 = new System.Windows.Forms.Panel();
-            this.SKUCDTo = new Search.CKM_SearchControl();
             this.panel1.SuspendLayout();
             this.panel10_2.SuspendLayout();
             this.panel42.SuspendLayout();
@@ -1037,6 +1037,37 @@
             this.pnl_Header.Size = new System.Drawing.Size(1395, 140);
             this.pnl_Header.TabIndex = 124;
             // 
+            // SKUCDTo
+            // 
+            this.SKUCDTo.AutoSize = true;
+            this.SKUCDTo.ChangeDate = "";
+            this.SKUCDTo.ChangeDateWidth = 100;
+            this.SKUCDTo.Code = "";
+            this.SKUCDTo.CodeWidth = 190;
+            this.SKUCDTo.CodeWidth1 = 190;
+            this.SKUCDTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SKUCDTo.DataCheck = false;
+            this.SKUCDTo.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SKUCDTo.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.SKUCDTo.IsCopy = false;
+            this.SKUCDTo.LabelText = "";
+            this.SKUCDTo.LabelVisible = false;
+            this.SKUCDTo.Location = new System.Drawing.Point(854, 28);
+            this.SKUCDTo.Margin = new System.Windows.Forms.Padding(0);
+            this.SKUCDTo.Name = "SKUCDTo";
+            this.SKUCDTo.NameWidth = 350;
+            this.SKUCDTo.SearchEnable = true;
+            this.SKUCDTo.Size = new System.Drawing.Size(223, 27);
+            this.SKUCDTo.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
+            this.SKUCDTo.TabIndex = 127;
+            this.SKUCDTo.test = null;
+            this.SKUCDTo.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SKUCDTo.UseChangeDate = false;
+            this.SKUCDTo.Value1 = null;
+            this.SKUCDTo.Value2 = null;
+            this.SKUCDTo.Value3 = null;
+            this.SKUCDTo.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SKUCDTo_CodeKeyDownEvent);
+            // 
             // btnDisplay
             // 
             this.btnDisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -1168,7 +1199,7 @@
             this.scSegmentCD.Name = "scSegmentCD";
             this.scSegmentCD.NameWidth = 250;
             this.scSegmentCD.SearchEnable = true;
-            this.scSegmentCD.Size = new System.Drawing.Size(374, 27);
+            this.scSegmentCD.Size = new System.Drawing.Size(344, 27);
             this.scSegmentCD.Stype = Search.CKM_SearchControl.SearchType.商品分類;
             this.scSegmentCD.TabIndex = 125;
             this.scSegmentCD.test = null;
@@ -7255,36 +7286,6 @@
             this.panel160.Name = "panel160";
             this.panel160.Size = new System.Drawing.Size(1317, 38);
             this.panel160.TabIndex = 164;
-            // 
-            // SKUCDTo
-            // 
-            this.SKUCDTo.AutoSize = true;
-            this.SKUCDTo.ChangeDate = "";
-            this.SKUCDTo.ChangeDateWidth = 100;
-            this.SKUCDTo.Code = "";
-            this.SKUCDTo.CodeWidth = 190;
-            this.SKUCDTo.CodeWidth1 = 190;
-            this.SKUCDTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SKUCDTo.DataCheck = false;
-            this.SKUCDTo.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.SKUCDTo.IsCopy = false;
-            this.SKUCDTo.LabelText = "";
-            this.SKUCDTo.LabelVisible = false;
-            this.SKUCDTo.Location = new System.Drawing.Point(854, 30);
-            this.SKUCDTo.Margin = new System.Windows.Forms.Padding(0);
-            this.SKUCDTo.Name = "SKUCDTo";
-            this.SKUCDTo.NameWidth = 350;
-            this.SKUCDTo.SearchEnable = true;
-            this.SKUCDTo.Size = new System.Drawing.Size(223, 27);
-            this.SKUCDTo.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
-            this.SKUCDTo.TabIndex = 127;
-            this.SKUCDTo.test = null;
-            this.SKUCDTo.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SKUCDTo.UseChangeDate = false;
-            this.SKUCDTo.Value1 = null;
-            this.SKUCDTo.Value2 = null;
-            this.SKUCDTo.Value3 = null;
-            this.SKUCDTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SKUCDTo_KeyDown_1);
             // 
             // MasterTouroku_HanbaiTankaTennic
             // 

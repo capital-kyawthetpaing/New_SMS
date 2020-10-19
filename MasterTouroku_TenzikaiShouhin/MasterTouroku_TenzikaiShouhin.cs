@@ -111,9 +111,10 @@ namespace MasterTouroku_TenzikaiShouhin
         {
             for (int W_CtlRow = 0; W_CtlRow <= mGrid.g_MK_Ctl_Row - 1; W_CtlRow++)
             {
-                //CKM_Controls.CKM_ComboBox sctl = (CKM_Controls.CKM_ComboBox)mGrid.g_MK_Ctrl[(int)ClsGridMasterTanzi.ColNO.ShuukaSou, W_CtlRow].CellCtl;
-                //sctl.Cbo_Type = CKM_ComboBox.CboType.出荷倉庫;
-                //sctl.Bind(bbl.GetDate());
+                CKM_Controls.CKM_ComboBox sctl = (CKM_Controls.CKM_ComboBox)mGrid.g_MK_Ctrl[(int)ClsGridMasterTanzi.ColNO.HanbaiYoteiBi, W_CtlRow].CellCtl;
+                sctl.ValueMember = "上旬";
+                sctl.ValueMember = "中旬";
+                sctl.ValueMember = "下旬";
             }
         }
         private void MasterTouroku_TenzikaiShouhin_KeyUp(object sender, KeyEventArgs e)
@@ -280,7 +281,7 @@ namespace MasterTouroku_TenzikaiShouhin
                 c.KeyDown += C_KeyDown;
                 c.Enter += C_Enter;
                 mGrid.S_DispToArray(Vsb_Mei_0.Value);
-                if (c is CKM_ComboBox cb && cb.Name == "cbo_Shuuka")
+                if (c is CKM_ComboBox cb && cb.Name == "")
                 {
                     // cb.SelectedIndexChanged += ShuukaSouko_SelectedIndexChanged;
                 }
@@ -519,9 +520,11 @@ namespace MasterTouroku_TenzikaiShouhin
                             break;
 
                         case (int)ClsGridMasterTanzi.ColNO.HanbaiYoteiDateMonth:
-                        case (int)ClsGridMasterTanzi.ColNO.HanbaiYoteiBi:
                             ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).Ctrl_Type = CKM_TextBox.Type.Date;
                             break;
+                        //case (int)ClsGridMasterTanzi.ColNO.HanbaiYoteiBi:
+                        //    ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).Ctrl_Type = CKM_TextBox.Type.Co;
+                        //    break;
                         case (int)ClsGridMasterTanzi.ColNO.JANCD:
                             // mGrid.SetProp_TANKA(ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);      // 単価 JANCD_Detail
                             ((((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl))).TxtCode.MaxLength = 13;

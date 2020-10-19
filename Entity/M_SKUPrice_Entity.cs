@@ -51,7 +51,7 @@ namespace Entity
         public string ItemTo { get; set; }
         public string BrandCD { get; set; }
         public string ITemName { get; set; }
-
+        public string ProcessMode { get; set; }
         //HanbaiTankaKakeritu Entity
         public string TankaCDCopy { get; set; }
         public string TankaName { get; set; }
