@@ -33,15 +33,16 @@ namespace Search
             tzkjbl = new TenzikaiJuchuuNo_BL();
             mve = new M_Vendor_Entity();
             mce = new M_Customer_Entity();
-            txtOrderDateTo.Text = DateTime.Today.ToString("yyyy/MM/dd");
             DateTime now = DateTime.Now;
             var startDate = new DateTime(now.Year, now.Month, 1);
             txtOrderDateFrom.Text = startDate.ToString("yyyy/MM/dd");
+            txtOrderDateTo.Text = DateTime.Today.ToString("yyyy/MM/dd");           
             BindCombo();
             txtCustomerName.BackColor = Color.Gray;
             txtCustomerName.Enabled = false;
             txtCustomerName.Text = string.Empty;
-            SetRequiredField();
+            //SetRequiredField();
+            txtOrderDateFrom.Focus();
         }
 
         private void BindCombo()
@@ -75,7 +76,16 @@ namespace Search
             {
                 dtje = GetSearchInfo();
                 DataTable dtcus = tzkjbl.D_TenzikaiJuchuu_SearchData(dtje);
-                dgvTenzikai.DataSource = dtcus;
+                if(dtcus.Rows.Count > 0)
+                {
+                    dgvTenzikai.DataSource = dtcus;
+                }
+                else
+                {
+                    bbl.ShowMessage("E128");
+                    ScSupplier.SetFocus(1);
+                }
+                
             }
         }
 
@@ -342,18 +352,18 @@ namespace Search
 
         private void cboYear_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
-            {
-                cboSeason.Focus();
-            }
+            //if(e.KeyCode == Keys.Enter)
+            //{
+            //    cboSeason.Focus();
+            //}
         }
 
         private void cboSeason_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
-            {
-                scStaff.SetFocus(1);
-            }
+            //if(e.KeyCode == Keys.Enter)
+            //{
+            //    scStaff.SetFocus(1);
+            //}
         }
     }
 }

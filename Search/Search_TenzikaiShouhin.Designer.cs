@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Search_TenzikaiShouhin));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Lb_brand = new CKM_Controls.CKM_Label();
             this.LB_tenzikainame = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
@@ -105,7 +104,7 @@
             this.PanelHeader.Controls.Add(this.LB_tenzikainame);
             this.PanelHeader.Controls.Add(this.SC_Vendor);
             this.PanelHeader.Controls.Add(this.Lb_brand);
-            this.PanelHeader.Size = new System.Drawing.Size(1315, 178);
+            this.PanelHeader.Size = new System.Drawing.Size(1315, 158);
             this.PanelHeader.TabIndex = 1;
             this.PanelHeader.Controls.SetChildIndex(this.Lb_brand, 0);
             this.PanelHeader.Controls.SetChildIndex(this.SC_Vendor, 0);
@@ -459,7 +458,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.GV_TZshouhin);
-            this.panel1.Location = new System.Drawing.Point(1, 221);
+            this.panel1.Location = new System.Drawing.Point(1, 212);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1310, 460);
             this.panel1.TabIndex = 15;
@@ -469,18 +468,18 @@
             this.GV_TZshouhin.AllowUserToAddRows = false;
             this.GV_TZshouhin.AllowUserToDeleteRows = false;
             this.GV_TZshouhin.AllowUserToResizeRows = false;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_TZshouhin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_TZshouhin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GV_TZshouhin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_TZshouhin.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("GV_TZshouhin.CheckCol")));
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_TZshouhin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_TZshouhin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GV_TZshouhin.ColumnHeadersHeight = 25;
             this.GV_TZshouhin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tenzikainame,
@@ -495,14 +494,6 @@
             this.biko,
             this.insertdatetime,
             this.updatedatetime});
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GV_TZshouhin.DefaultCellStyle = dataGridViewCellStyle25;
             this.GV_TZshouhin.EnableHeadersVisualStyles = false;
             this.GV_TZshouhin.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_TZshouhin.Location = new System.Drawing.Point(10, 5);
@@ -586,9 +577,9 @@
             // insertdatetime
             // 
             this.insertdatetime.DataPropertyName = "InsertDateTime";
-            dataGridViewCellStyle23.Format = "d";
-            dataGridViewCellStyle23.NullValue = null;
-            this.insertdatetime.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.insertdatetime.DefaultCellStyle = dataGridViewCellStyle3;
             this.insertdatetime.HeaderText = "新規登録日";
             this.insertdatetime.Name = "insertdatetime";
             this.insertdatetime.Width = 80;
@@ -596,9 +587,9 @@
             // updatedatetime
             // 
             this.updatedatetime.DataPropertyName = "UpdateDateTime";
-            dataGridViewCellStyle24.Format = "d";
-            dataGridViewCellStyle24.NullValue = null;
-            this.updatedatetime.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.updatedatetime.DefaultCellStyle = dataGridViewCellStyle4;
             this.updatedatetime.HeaderText = "最終変更日";
             this.updatedatetime.Name = "updatedatetime";
             this.updatedatetime.Width = 80;
@@ -834,7 +825,7 @@
             this.F12Visible = true;
             this.F9Visible = true;
             this.Name = "Search_TenzikaiShouhin";
-            this.PanelHeaderHeight = 220;
+            this.PanelHeaderHeight = 200;
             this.Text = "展示会商品検索";
             this.Load += new System.EventHandler(this.Search_TenzikaiShouhin_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Search_TenzikaiShouhin_KeyUp);

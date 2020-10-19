@@ -117,7 +117,7 @@ namespace Search
                     return false;
                 }
             }
-            
+
             if (!String.IsNullOrEmpty(SC_Brand.TxtCode.Text))
             {
                 if (!SC_Brand.IsExists(2))
@@ -215,15 +215,15 @@ namespace Search
 
         private void SC_Vendor_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if (!String.IsNullOrEmpty(SC_Vendor.TxtCode.Text))
-            {
-                SC_Vendor.ChangeDate = bbl.GetDate();
-                if (!SC_Vendor.SelectData())
+                if (!String.IsNullOrEmpty(SC_Vendor.TxtCode.Text))
                 {
-                    bbl.ShowMessage("E101");
-                    SC_Vendor.SetFocus(1);
+                    SC_Vendor.ChangeDate = bbl.GetDate();
+                    if (!SC_Vendor.SelectData())
+                    {
+                        bbl.ShowMessage("E101");
+                        SC_Vendor.SetFocus(1);
+                    }
                 }
-            }
         }
 
         private void SC_Brand_CodeKeyDownEvent(object sender, KeyEventArgs e)

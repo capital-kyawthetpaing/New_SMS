@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Search_TenzikaiJuchuuNO));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtCustomerName = new CKM_Controls.CKM_TextBox();
             this.dgvTenzikai = new CKM_Controls.CKM_GridView();
@@ -58,12 +58,12 @@
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtOrderDateFrom = new CKM_Controls.CKM_TextBox();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
-            this.ScJanCD = new Search.CKM_SearchControl();
             this.ScSKUCD = new Search.CKM_SearchControl();
             this.ScItem = new Search.CKM_SearchControl();
             this.ScCustomer = new Search.CKM_SearchControl();
             this.scStaff = new Search.CKM_SearchControl();
             this.ScSupplier = new Search.CKM_SearchControl();
+            this.ScJanCD = new Search.CKM_SearchControl();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTenzikai)).BeginInit();
             this.SuspendLayout();
@@ -74,10 +74,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ScJanCD);
             this.panel1.Controls.Add(this.txtCustomerName);
             this.panel1.Controls.Add(this.dgvTenzikai);
             this.panel1.Controls.Add(this.btnDisplay);
-            this.panel1.Controls.Add(this.ScJanCD);
             this.panel1.Controls.Add(this.ckM_Label11);
             this.panel1.Controls.Add(this.ScSKUCD);
             this.panel1.Controls.Add(this.ckM_Label10);
@@ -141,18 +141,18 @@
             this.dgvTenzikai.AllowUserToAddRows = false;
             this.dgvTenzikai.AllowUserToDeleteRows = false;
             this.dgvTenzikai.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvTenzikai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvTenzikai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTenzikai.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvTenzikai.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvTenzikai.CheckCol")));
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTenzikai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTenzikai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvTenzikai.ColumnHeadersHeight = 25;
             this.dgvTenzikai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colOrderNum,
@@ -161,14 +161,14 @@
             this.colYear,
             this.colSeason,
             this.colClient});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTenzikai.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTenzikai.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTenzikai.EnableHeadersVisualStyles = false;
             this.dgvTenzikai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvTenzikai.Location = new System.Drawing.Point(18, 279);
@@ -551,36 +551,6 @@
             this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ScJanCD
-            // 
-            this.ScJanCD.AutoSize = true;
-            this.ScJanCD.ChangeDate = "";
-            this.ScJanCD.ChangeDateWidth = 100;
-            this.ScJanCD.Code = "";
-            this.ScJanCD.CodeWidth = 600;
-            this.ScJanCD.CodeWidth1 = 600;
-            this.ScJanCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
-            this.ScJanCD.DataCheck = false;
-            this.ScJanCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ScJanCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.ScJanCD.IsCopy = false;
-            this.ScJanCD.LabelText = "";
-            this.ScJanCD.LabelVisible = false;
-            this.ScJanCD.Location = new System.Drawing.Point(118, 233);
-            this.ScJanCD.Margin = new System.Windows.Forms.Padding(0);
-            this.ScJanCD.Name = "ScJanCD";
-            this.ScJanCD.NameWidth = 280;
-            this.ScJanCD.SearchEnable = true;
-            this.ScJanCD.Size = new System.Drawing.Size(633, 27);
-            this.ScJanCD.Stype = Search.CKM_SearchControl.SearchType.JANMulti;
-            this.ScJanCD.TabIndex = 11;
-            this.ScJanCD.test = null;
-            this.ScJanCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ScJanCD.UseChangeDate = false;
-            this.ScJanCD.Value1 = null;
-            this.ScJanCD.Value2 = null;
-            this.ScJanCD.Value3 = null;
-            // 
             // ScSKUCD
             // 
             this.ScSKUCD.AutoSize = true;
@@ -734,6 +704,35 @@
             this.ScSupplier.Value3 = null;
             this.ScSupplier.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScSupplier_CodeKeyDownEvent);
             // 
+            // ScJanCD
+            // 
+            this.ScJanCD.AutoSize = true;
+            this.ScJanCD.ChangeDate = "";
+            this.ScJanCD.ChangeDateWidth = 100;
+            this.ScJanCD.Code = "";
+            this.ScJanCD.CodeWidth = 600;
+            this.ScJanCD.CodeWidth1 = 600;
+            this.ScJanCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScJanCD.DataCheck = false;
+            this.ScJanCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.ScJanCD.IsCopy = false;
+            this.ScJanCD.LabelText = "";
+            this.ScJanCD.LabelVisible = false;
+            this.ScJanCD.Location = new System.Drawing.Point(118, 234);
+            this.ScJanCD.Margin = new System.Windows.Forms.Padding(0);
+            this.ScJanCD.Name = "ScJanCD";
+            this.ScJanCD.NameWidth = 280;
+            this.ScJanCD.SearchEnable = true;
+            this.ScJanCD.Size = new System.Drawing.Size(633, 30);
+            this.ScJanCD.Stype = Search.CKM_SearchControl.SearchType.JANMulti;
+            this.ScJanCD.TabIndex = 11;
+            this.ScJanCD.test = null;
+            this.ScJanCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScJanCD.UseChangeDate = false;
+            this.ScJanCD.Value1 = null;
+            this.ScJanCD.Value2 = null;
+            this.ScJanCD.Value3 = null;
+            // 
             // Search_TenzikaiJuchuuNO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -769,7 +768,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colSeason;
         private System.Windows.Forms.DataGridViewTextBoxColumn colClient;
         private CKM_Controls.CKM_Button btnDisplay;
-        private CKM_SearchControl ScJanCD;
         private CKM_Controls.CKM_Label ckM_Label11;
         private CKM_SearchControl ScSKUCD;
         private CKM_Controls.CKM_Label ckM_Label10;
@@ -791,5 +789,6 @@
         private CKM_Controls.CKM_Label ckM_Label2;
         private CKM_Controls.CKM_TextBox txtOrderDateFrom;
         private CKM_Controls.CKM_Label ckM_Label1;
+        private CKM_SearchControl ScJanCD;
     }
 }
