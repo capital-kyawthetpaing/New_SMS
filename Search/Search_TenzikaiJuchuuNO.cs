@@ -48,6 +48,8 @@ namespace Search
             txtCustomerName.Text = string.Empty;
             //SetRequiredField();
             txtOrderDateFrom.Focus();
+            F9Visible = false;
+
         }
 
         private void BindCombo()
