@@ -39,6 +39,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
             F9Visible = true;
             SetRequiredField();
             scSupplierCD.SetFocus(1);
+            ModeVisible = false;
         }
         public void BindCombo()
         {
@@ -170,92 +171,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
                 }
             }
         }
-        private void scBrandCDFrom_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                scBrandCDFrom.ChangeDate = bbl.GetDate();
-                if (!string.IsNullOrEmpty(scBrandCDFrom.TxtCode.Text))
-                {
-                    if (!scBrandCDFrom.SelectData())
-                    {
-                        bbl.ShowMessage("E101");
-                        scBrandCDFrom.SetFocus(1);
-                    }
-                }
-            }
-        }
-
-        private void scBrandCDTo_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                scBrandCDTo.ChangeDate = bbl.GetDate();
-                if (!string.IsNullOrEmpty(scBrandCDTo.TxtCode.Text))
-                {
-                    if (!scBrandCDTo.SelectData())
-                    {
-                        bbl.ShowMessage("E101");
-                        scBrandCDTo.SetFocus(1);
-                    }
-                }
-            }
-        }
-
-        private void scSegmentCDFrom_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                scSegmentCDFrom.ChangeDate = bbl.GetDate();
-                if (!string.IsNullOrEmpty(scSegmentCDFrom.TxtCode.Text))
-                {
-                    if (!scSegmentCDFrom.SelectData())
-                    {
-                        bbl.ShowMessage("E101");
-                        scSegmentCDFrom.SetFocus(1);
-                    }
-                }
-            }
-        }
-
-        private void scSegmentCDTo_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                scSegmentCDTo.ChangeDate = bbl.GetDate();
-                if (!string.IsNullOrEmpty(scSegmentCDTo.TxtCode.Text))
-                {
-                    if (!scSegmentCDTo.SelectData())
-                    {
-                        bbl.ShowMessage("E101");
-                        scSegmentCDTo.SetFocus(1);
-                    }
-                }
-            }
-        }
-        private void scBrandCDTo_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (!string.IsNullOrEmpty(scBrandCDFrom.TxtCode.Text) && !string.IsNullOrEmpty(scBrandCDTo.TxtCode.Text))
-            {
-                if (string.Compare(scBrandCDFrom.TxtCode.Text, scBrandCDTo.TxtCode.Text) == 1)
-                {
-                    bbl.ShowMessage("E104");
-                    scBrandCDTo.Focus();
-                }
-            }
-        }
-
-        private void scSegmentCDTo_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (!string.IsNullOrEmpty(scSegmentCDFrom.TxtCode.Text) && !string.IsNullOrEmpty(scSegmentCDTo.TxtCode.Text))
-            {
-                if (string.Compare(scSegmentCDFrom.TxtCode.Text, scSegmentCDTo.TxtCode.Text) == 1)
-                {
-                    bbl.ShowMessage("E104");
-                    scSegmentCDTo.Focus();
-                }
-            }
-        }
+       
         private void scSegmentCDFrom_Enter(object sender, EventArgs e)
         {
             scSegmentCDFrom.Value1 = "226";
@@ -271,6 +187,30 @@ namespace TenzikaiShouhinJouhouShuturyoku
         private void frmTenzikaiShouhinJouhouShuturyoku_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
+        }
+
+        private void scBrandCDTo_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(scBrandCDFrom.TxtCode.Text) && !string.IsNullOrEmpty(scBrandCDTo.TxtCode.Text))
+            {
+                if (string.Compare(scBrandCDFrom.TxtCode.Text, scBrandCDTo.TxtCode.Text) == 1)
+                {
+                    bbl.ShowMessage("E106");
+                    scBrandCDTo.Focus();
+                }
+            }
+        }
+
+        private void scSegmentCDTo_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(scSegmentCDFrom.TxtCode.Text) && !string.IsNullOrEmpty(scSegmentCDTo.TxtCode.Text))
+            {
+                if (string.Compare(scSegmentCDFrom.TxtCode.Text, scSegmentCDTo.TxtCode.Text) == 1)
+                {
+                    bbl.ShowMessage("E106");
+                    scSegmentCDTo.Focus();
+                }
+            }
         }
     }
 }
