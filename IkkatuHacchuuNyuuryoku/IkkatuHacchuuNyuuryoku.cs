@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 
 using BL;
 using DL;
@@ -95,6 +96,7 @@ namespace IkkatuHacchuuNyuuryoku
         private System.Windows.Forms.Control previousCtrl; // ｶｰｿﾙの元の位置を待避
         private string mOldIkkatuHacchuuNo = string.Empty;    //排他処理のため使用
         private string mOldIkkatuHacchuuShoriNo = string.Empty;    //排他処理のため使用
+        private List<string> mOldJuchuuNOList = new List<string>();    //排他処理のため使用
         private string mOldIkkatuHacchuuDate = string.Empty;
         private string mOldVendorCD = string.Empty;
         private decimal mZei10;//通常税額(Hidden)
@@ -928,6 +930,7 @@ namespace IkkatuHacchuuNyuuryoku
         protected override void EndSec()
         {
             DeleteExclusive();
+            DeleteExclusive_Juchuu();
             this.Close();
         }
         /// <summary>
@@ -1837,6 +1840,46 @@ namespace IkkatuHacchuuNyuuryoku
             return true;
         }
         /// <summary>
+        /// 
+        /// </summary>
+        private bool SelectAndInsertExclusive_Juchuu(DataTable dt)
+        {
+            DeleteExclusive_Juchuu();
+
+            DataView dtview = new DataView(dt);
+            dt = dtview.ToTable(true, "JuchuuNO");
+
+            foreach (DataRow item in dt.Rows)
+            {
+                //排他Tableに該当番号が存在するとError
+                //[D_Exclusive]
+                var ebl = new Exclusive_BL();
+                D_Exclusive_Entity dee = new D_Exclusive_Entity
+                {
+                    DataKBN = (int)Exclusive_BL.DataKbn.Jyuchu,
+                    Number = item["JuchuuNO"].ToString(),
+                    Program = this.InProgramID,
+                    Operator = this.InOperatorCD,
+                    PC = this.InPcID
+                };
+
+                DataTable dt2 = ebl.D_Exclusive_Select(dee);
+                if (dt2.Rows.Count > 0)
+                {
+                    bbl.ShowMessage("S004", dt2.Rows[0]["Program"].ToString(), dt2.Rows[0]["Operator"].ToString());
+                    DeleteExclusive_Juchuu();
+                    return false;
+                }
+                else
+                {
+                    ebl.D_Exclusive_Insert(dee);
+                    mOldJuchuuNOList.Add(dee.Number);
+                }
+            }
+
+            return true;
+        }
+        /// <summary>
         /// 排他処理データを削除する
         /// </summary>
         private void DeleteExclusive()
@@ -1876,6 +1919,25 @@ namespace IkkatuHacchuuNyuuryoku
 
             mOldIkkatuHacchuuNo = string.Empty;
             mOldIkkatuHacchuuShoriNo = string.Empty;
+        }
+        /// <summary>
+        /// 排他処理データを削除する
+        /// </summary>
+        private void DeleteExclusive_Juchuu()
+        {
+            foreach (var item in mOldJuchuuNOList)
+            {
+                Exclusive_BL ebl = new Exclusive_BL();
+                D_Exclusive_Entity dee = new D_Exclusive_Entity
+                {
+                    DataKBN = (int)Exclusive_BL.DataKbn.Jyuchu,
+                    Number = item,
+                };
+
+                bool ret = ebl.D_Exclusive_Delete(dee);
+            }
+
+            mOldJuchuuNOList = new List<string>();
         }
 
         #endregion
@@ -1977,6 +2039,7 @@ namespace IkkatuHacchuuNyuuryoku
 
             //排他処理を解除
             DeleteExclusive();
+            DeleteExclusive_Juchuu();
 
             Scr_Clr(0);
 
@@ -2283,6 +2346,16 @@ namespace IkkatuHacchuuNyuuryoku
             }
             else
             {
+                if (OperationMode == EOperationMode.INSERT)
+                {
+                    //排他チェック
+                    if (!this.SelectAndInsertExclusive_Juchuu(dt))
+                    {
+                        this.previousCtrl.Focus();
+                        return false;
+                    }
+                }
+
                 if (dt.Rows[0]["OrderWayKBN"].ToString() == "1")
                 {
                     this.lblIkkatuHacchuuMode.Text = "Net発注";
