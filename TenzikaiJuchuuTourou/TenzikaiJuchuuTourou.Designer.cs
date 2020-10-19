@@ -583,7 +583,7 @@
             this.btn_Meisai.DefaultBtnSize = false;
             this.btn_Meisai.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_Meisai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Meisai.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btn_Meisai.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.btn_Meisai.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.btn_Meisai.Location = new System.Drawing.Point(1281, 116);
             this.btn_Meisai.Margin = new System.Windows.Forms.Padding(1);
@@ -7291,7 +7291,7 @@
             this.Controls.Add(this.hdn_IncAmt);
             this.Controls.Add(this.hdn_ExcAmt);
             this.Controls.Add(this.panel2);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;

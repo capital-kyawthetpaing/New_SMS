@@ -47,6 +47,7 @@ namespace TenzikaiJuchuuTourou
         private TempoJuchuuNyuuryoku_BL mibl;
         TenjikaiJuuChuu_BL tkb;
         private System.Windows.Forms.Control previousCtrl; // ｶｰｿﾙの元の位置を待避
+        private string InOperatorName = "";
         private enum Eindex : int
         {
             SCTenjiKai,
@@ -117,60 +118,50 @@ namespace TenzikaiJuchuuTourou
                 BindCombo();
                 //コンボボックス初期化
                 string ymd = bbl.GetDate();
-                // tubl = new TempoUriageNyuuryoku_BL();
-                //  CboStoreCD.Bind(ymd);
-               // base.StartProgram();
-
-                // mTennic = bbl.GetTennic();
-                //検索用のパラメータ設定
-                //    ScCustomerCD.Value1 = "1";
-                //   ScCustomerCD.Value2 = "";
 
                 Btn_F11.Text = "";
                 sc_shiiresaki.TxtCode.Focus();
-
-                //スタッフマスター(M_Staff)に存在すること
-                //[M_Staff]
+                
+                mibl = new TempoJuchuuNyuuryoku_BL();
                 M_Staff_Entity mse = new M_Staff_Entity
                 {
                     StaffCD = InOperatorCD,
-                    ChangeDate = ymd
+                    ChangeDate = mibl.GetDate()
                 };
                 Staff_BL bl = new Staff_BL();
                 bool ret = bl.M_Staff_Select(mse);
-
                 if (ret)
                 {
-                    StoreCD = mse.StoreCD;
-                    //CboStoreCD.SelectedValue = mse.StoreCD;
-                    //ScStaff.LabelText = mse.StaffName;
+                  //  CboStoreCD.SelectedValue = mse.StoreCD;
+                     sc_TentouStaff.LabelText = mse.StaffName;
+                    sc_TentouStaff.TxtCode.Text = mse.StaffCD;
                 }
+               InOperatorName  = mse.StaffName;
+               StoreCD = mse.StoreCD;  //初期値を退避
+                M_Souko_Entity msoe = new M_Souko_Entity {
+                    StoreCD= StoreCD,
+                    ChangeDate= mibl.GetDate(),
+                    DeleteFlg="0"
+                }
+                ;
+                var dt = mibl.M_Souko_SelectForMitsumori(msoe);
+                if (dt.Rows.Count > 0)
+                    cbo_Shuuka.SelectedValue = dt.Rows[0]["SoukoCD"].ToString();
+                //M_Souko_SelectForMitsumori
 
-                detailControls[(int)Eindex.JuuChuuBi].Text = ymd;
+              //  detailControls[(int)Eindex.JuuChuuBi].Text = ymd;
 
-               
+
                 string[] cmds = System.Environment.GetCommandLineArgs();
                 if (cmds.Length - 1 > (int)ECmdLine.PcID)
                 {
                     string juchuNO = cmds[(int)ECmdLine.PcID + 1];   //
                     ChangeOperationMode(EOperationMode.SHOW);
-                    //  keyControls[(int)Eindex.JuchuuNO].Text = juchuNO;
-                    //   CheckKey((int)EIndex.JuchuuNO, true);
                 }
                 Btn_F7.Text =  "行追加(F7)";
                 Btn_F8.Text = "行削除(F8)";
                 Btn_F10.Text = "行複写(F10)";
                 Btn_F1.Enter += Btn_F1_Enter;
-                //Btn_F2.Enter += Btn_F1_Enter;
-                //Btn_F3.Enter += Btn_F1_Enter;
-                //Btn_F4.Enter += Btn_F1_Enter;
-                //Btn_F5.Enter += Btn_F1_Enter;
-                //Btn_F6.Enter += Btn_F1_Enter;
-                //Btn_F7.Enter += Btn_F1_Enter;
-                //Btn_F8.Enter += Btn_F1_Enter;
-                //Btn_F9.Enter += Btn_F1_Enter;
-                //Btn_F10.Enter += Btn_F1_Enter;
-                //Btn_F11.Enter += Btn_F1_Enter;
             }
             catch (Exception ex)
             {
@@ -3155,7 +3146,11 @@ namespace TenzikaiJuchuuTourou
             {
                 return;
             }
-            openFileDialog1.InitialDirectory = "C:\\ses\\";
+            if (!System.IO.Directory.Exists("C:\\SMS\\TenziKaiJuchuu\\"))
+            {
+                System.IO.Directory.CreateDirectory("C:\\SMS\\TenziKaiJuchuu\\");
+            }
+            openFileDialog1.InitialDirectory = "C:\\SMS\\TenziKaiJuchuu\\";
             openFileDialog1.FilterIndex = 2;
             openFileDialog1.RestoreDirectory = true;
             openFileDialog1.Filter = "Excel Worksheets|*.xlsx";
