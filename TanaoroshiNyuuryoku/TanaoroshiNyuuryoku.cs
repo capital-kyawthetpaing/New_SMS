@@ -71,12 +71,12 @@ namespace TanaoroshiNyuuryoku
 
                 this.SetFunctionLabel(EProMode.SHOW);   //照会プログラムとして起動
                 this.InitialControlArray();
+                ClearLabel();
 
                 //起動時共通処理
                 base.StartProgram();
                 Btn_F9.Text = "";
                 Btn_F9.Enabled = false;
-                Btn_F10.Text = "取込(F10)";
                 Btn_F12.Text = "登録(F12)";
                 SetFuncKeyAll(this, "100001000011");
 
@@ -361,34 +361,7 @@ namespace TanaoroshiNyuuryoku
                 //EndSec();
             }
         }
-        private void DataToGrid()
-        {
-            //openFileDialog1.InitialDirectory = "C:\\ses\\";
-            //openFileDialog1.FilterIndex = 2;
-            //openFileDialog1.RestoreDirectory = true;
-            //openFileDialog1.Filter = "Excel Worksheets|*.xlsx";
-            //openFileDialog1.FileName = "";
-            //if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            //{
-            //    TenjikaiJuuChuu_BL tkb = new TenjikaiJuuChuu_BL();
-            //    var dt = ConvertToDataTable(openFileDialog1.FileName);
-
-            //    Tenjikai_Entity tje = new Tenjikai_Entity
-            //    {
-            //        xml = bbl.DataTableToXml(dt),
-            //        Kokyaku = detailControls[(int)EIndex.CustomerCD].Text,
-            //        JuchuuBi = detailControls[(int)EIndex.JuchuuDate].Text,
-            //        Nendo = detailControls[(int)EIndex.Nendo].Text,
-            //        ShiZun = detailControls[(int)EIndex.ShiSon].Text,
-            //        Shiiresaki = detailControls[(int)EIndex.SCShiiresaki].Text,
-            //        ShuuKaSouKo = detailControls[(int)EIndex.ShuukaSouko].Text,
-            //        KibouBi1 = this.KibouBi1,
-            //        KibouBi2 = this.KibouBi2
-            //    };
-            //    var resTable = tkb.M_TenjiKaiJuuChuu_Select(tje);
-            //    MesaiHyouJi(resTable);
-            //}
-        }
+  
         /// <summary>
         /// 検索フォーム起動処理
         /// </summary>
@@ -545,13 +518,7 @@ namespace TanaoroshiNyuuryoku
                     }
 
                     break;
-                case 9: //F10:取込
-                    {
-                        this.Cursor = Cursors.WaitCursor;
-                        DataToGrid();
-                        this.Cursor = Cursors.Default;
-                        break;
-                    }
+
                 case 11:    //F12:登録
                     {
 
