@@ -160,6 +160,6 @@ namespace BL
         {
             return mdl.M_SKU_SelectByJanCD_ForTenzikaishouhin(mse);
         }
-
+      
     }
 }

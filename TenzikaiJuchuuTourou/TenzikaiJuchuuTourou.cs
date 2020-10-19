@@ -206,9 +206,9 @@ namespace TenzikaiJuchuuTourou
             switch (mode)
             {
                 case EOperationMode.INSERT:
-                    
-                 //   detailControls[(int)Eindex.JuuChuuBi].Focus();
-                    detailControls[(int)Eindex.SCTenjiKai].Enabled = false; ;
+
+                    //   detailControls[(int)Eindex.JuuChuuBi].Focus();
+                    sc_Tenji.Enabled = false;
                     sc_Tenji.BtnSearch.Enabled = false;
                     detailControls[(int)Eindex.SCShiiresaki].Focus();
                     btn_Meisai.Enabled = true;
@@ -218,12 +218,11 @@ namespace TenzikaiJuchuuTourou
                 case EOperationMode.UPDATE:
                 case EOperationMode.DELETE:
                 case EOperationMode.SHOW:
-                    EnablePanel(PanelHeader); 
-                    detailControls[(int)Eindex.SCTenjiKai].Parent.Enabled = true;
-                   ((CKM_SearchControl)detailControls[(int)Eindex.SCTenjiKai].Parent).BtnSearch.Enabled = true;
-                    detailControls[(int)Eindex.SCTenjiKai].Enabled = true;
-                    detailControls[(int)Eindex.SCTenjiKai].Focus();
+                    EnablePanel(PanelHeader);
 
+                    sc_Tenji.Enabled =sc_Tenji.TxtCode.Enabled= true;
+                    sc_Tenji.BtnSearch.Enabled = true;
+                    sc_Tenji.TxtCode.Focus();
                     //if (mode == EOperationMode.SHOW)
                     //{
                     //    F12Enable = false;
@@ -425,7 +424,7 @@ namespace TenzikaiJuchuuTourou
                             //  mGrid.SetProp_SU(5, ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);
                             ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).AllowMinus = true;//ok
                             ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).Ctrl_Type = CKM_TextBox.Type.Price; //Ok
-                            ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).IntegerPart = 8; // ok
+                            ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).IntegerPart = 9; // ok
                             ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).DecimalPlace = 0;
                             break;
 
@@ -504,11 +503,11 @@ namespace TenzikaiJuchuuTourou
                 {
                     bool Check = mGrid.g_DArray[w_Row].ChoukuSou;
 
-                    if (w_Row == 0 && Check)
-                        mGrid.g_DArray[w_Row].ChoukuSou = false;
+                    //if (w_Row == 0 && Check)
+                    //    mGrid.g_DArray[w_Row].ChoukuSou = false;
 
-                    if (string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].SCJAN))
-                        mGrid.g_DArray[w_Row].ChoukuSou = false;
+                    //if (string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].SCJAN))
+                    //    mGrid.g_DArray[w_Row].ChoukuSou = false;
                 }
                 //else if (w_Col == (int)ClsGridTenjikai.ColNO.ChkTyokuso)
                 //{
@@ -941,10 +940,7 @@ namespace TenzikaiJuchuuTourou
             }
             //if (chkAll)
             
-            if ( IsExec?!mGrid.g_DArray[row].Chk:false || string.IsNullOrEmpty(mGrid.g_DArray[row].SCJAN))    // Neglect uncheck / Null or string JanCd
-            {
-                return true;
-            }
+           
             switch (col)
             {
                 case (int)ClsGridTenjikai.ColNO.SCJAN:
@@ -956,6 +952,10 @@ namespace TenzikaiJuchuuTourou
                     if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].SCJAN))
                     {
                         Grid_Gyo_Clr(row);
+                       // return true;
+                    }
+                    if (IsExec ? !mGrid.g_DArray[row].Chk : false || string.IsNullOrEmpty(mGrid.g_DArray[row].SCJAN))    // Neglect uncheck / Null or string JanCd
+                    {
                         return true;
                     }
                     //if (!chkAll)
@@ -1539,8 +1539,10 @@ namespace TenzikaiJuchuuTourou
                        // SetFuncKeyAll(this, "111111111111");
                     }
                 }
-
-                
+                if (OperationMode == EOperationMode.SHOW)
+                SetFuncKeyAll(this, "111111000000");
+                else
+                    SetFuncKeyAll(this, "111111000001");
             }
             catch (Exception ex)
             {
@@ -1990,6 +1992,7 @@ namespace TenzikaiJuchuuTourou
                                 scjan_1.Focus();
                             }
                         }
+
                     }
                     else
                     {
@@ -2824,6 +2827,12 @@ namespace TenzikaiJuchuuTourou
                     else if (ctl.GetType().Equals(typeof(CKM_Controls.CKM_Button)))
                     {
                         //顧客情報ALLクリア
+                        ClearCustomerInfo(0);
+                        ClearCustomerInfo(1);
+                    }
+
+                    else if (ctl is Button)
+                    {
                         ClearCustomerInfo(0);
                         ClearCustomerInfo(1);
                     }

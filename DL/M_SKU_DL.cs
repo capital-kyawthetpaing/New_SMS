@@ -323,16 +323,14 @@ namespace DL
             return SelectData(dic, sp);
         }
 
-
-       
-
-              public DataTable M_SKU_SelectByJanCD_ForTenzikaishouhin(M_SKU_Entity msk)
+        public DataTable M_SKU_SelectByJanCD_ForTenzikaishouhin(M_SKU_Entity msk)
         {
             string sp = "M_SKU_SelectByJanCD_ForTenzikaishouhin";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = msk.JanCD } },
-              
+                { "@vendorcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = msk.MainVendorCD } },
+
             };
             return SelectData(dic, sp);
         }

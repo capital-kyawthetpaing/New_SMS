@@ -1535,7 +1535,8 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 }
             }
         }
-        private void SKUCDTo_KeyDown_1(object sender, KeyEventArgs e)
+       
+        private void SKUCDTo_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {

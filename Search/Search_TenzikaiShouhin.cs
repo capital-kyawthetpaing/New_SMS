@@ -37,6 +37,12 @@ namespace Search
             CB_Year.Bind(ymd);
             CB_Season.Bind(ymd);
             HeaderTitleText = "展示会商品検索";
+            SetRequiredField();
+        }
+        private void SetRequiredField()
+        {
+            CB_Year.Require(true);
+            CB_Season.Require(true);
         }
         public override void FunctionProcess(int index)
         {
@@ -100,6 +106,8 @@ namespace Search
 
         private bool ErrorCheck()
         {
+            if (!RequireCheck(new Control[] { CB_Year, CB_Season })) //Step1
+                return false;
             if (!String.IsNullOrEmpty(SC_Vendor.TxtCode.Text))
             {
                 if (!SC_Vendor.IsExists(2))
@@ -109,9 +117,6 @@ namespace Search
                     return false;
                 }
             }
-            if (!RequireCheck(new Control[] { CB_Year, CB_Season })) //Step1
-                return false;
-
 
             if (!String.IsNullOrEmpty(SC_Brand.TxtCode.Text))
             {
@@ -210,15 +215,15 @@ namespace Search
 
         private void SC_Vendor_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if (!String.IsNullOrEmpty(SC_Vendor.TxtCode.Text))
-            {
-                SC_Vendor.ChangeDate = bbl.GetDate();
-                if (!SC_Vendor.SelectData())
+                if (!String.IsNullOrEmpty(SC_Vendor.TxtCode.Text))
                 {
-                    bbl.ShowMessage("E101");
-                    SC_Vendor.SetFocus(1);
+                    SC_Vendor.ChangeDate = bbl.GetDate();
+                    if (!SC_Vendor.SelectData())
+                    {
+                        bbl.ShowMessage("E101");
+                        SC_Vendor.SetFocus(1);
+                    }
                 }
-            }
         }
 
         private void SC_Brand_CodeKeyDownEvent(object sender, KeyEventArgs e)

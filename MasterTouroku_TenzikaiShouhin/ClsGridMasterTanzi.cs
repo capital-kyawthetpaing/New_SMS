@@ -108,12 +108,12 @@ namespace MasterTouroku_TenzikaiShouhin
                 //Gyono
                 w_CtlCol = (int)ColNO.GYONO;
 
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].GYONO);
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].GYONO);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
 
                 //JanCD
                 w_CtlCol = (int)ColNO.JANCD;
@@ -443,15 +443,87 @@ namespace MasterTouroku_TenzikaiShouhin
                 //Remarks
                 w_CtlCol = (int)ColNO.Remarks;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].Remarks);
-                //Remarks
-            
-
-                //w_CtlCol = (int)ColNO.TorokuFlg;
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].TorokuFlg);
-
-                //w_CtlCol = (int)ColNO.TaxRateFlg;
-                //g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].TaxRateFlg);
+              
             }
+        }
+
+       
+
+        internal bool F_MoveFocus(int pDest, int pErrDest, Control pErrSet, int pLastRow, int pLastCol, Control pActivCtl, VScrollBar pScrool, int pRow = -1, int pCol = -1)
+        {
+            Control w_MotoControl;
+
+            w_MotoControl = pActivCtl;
+            g_InMoveFocus_Flg = 1;
+
+            F_MoveFocus_MAIN_MK(out int w_OkRow, out int w_OkCol, out bool w_OkFlg, pDest, pErrDest, pErrSet, pLastRow, pLastCol, pActivCtl, pScrool, pRow, pCol);
+            bool ret = w_OkFlg;
+
+            try
+            {
+                if (w_OkFlg == true)
+                {
+                    // 行き先があれば移動
+                    F_FocusSet(out int w_CtlCol, out int w_CtlRow, out int w_Value, w_OkCol, w_OkRow, pScrool);
+
+                    // 必要ならスクロール
+                    if (w_Value != pScrool.Value)
+                    {
+                        pScrool.Value = w_Value;
+                        S_DispFromArray(pScrool.Value, ref pScrool);
+                    }
+
+                    // フォーカス移動
+                    g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.Focus();
+                    if (g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.GetType().Name.ToUpper() == "CLSMEISAIBUTTON")
+                    {
+                    }
+                    else
+                        g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.BackColor = GridBase.ClsGridBase.BKColor;
+                }
+                else
+                    // 行き先が見つかってないとき、指定先があればそこへ移動
+                    if (pErrSet.CanFocus)
+                {
+                    ret = true;
+                    pErrSet.Focus();
+                    if (pErrSet.GetType().Name.ToUpper() == "CLSMEISAIBUTTON")
+                    {
+                    }
+                    else if (pErrSet.GetType().Name.ToUpper() == "RADIOBUTTON")
+                    {
+                    }
+                    else
+                        pErrSet.BackColor = GridBase.ClsGridBase.BKColor;
+                }
+                else
+                {
+                    ret = false;
+                    w_MotoControl.Focus();
+                    if (w_MotoControl.GetType().Name.ToUpper() == "CLSMEISAIBUTTON")
+                    {
+                    }
+                    else
+                        w_MotoControl.BackColor = GridBase.ClsGridBase.BKColor;
+                }
+            }
+            catch
+            {
+                ret = false;
+                w_MotoControl.Focus();
+                if (w_MotoControl.GetType().Name.ToUpper() == "CLSMEISAIBUTTON")
+                {
+                }
+                else
+                    w_MotoControl.BackColor = GridBase.ClsGridBase.BKColor;
+            }
+
+            finally
+            {
+                g_InMoveFocus_Flg = 0;
+            }
+
+            return ret;
         }
     }
 }

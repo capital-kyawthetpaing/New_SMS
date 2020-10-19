@@ -707,7 +707,8 @@ namespace Search
                     break;
 
                 case SearchType.展示会商品:
-                    TxtCode.MaxLength = 800;
+                    TxtCode.MaxLength = 80;
+                    TxtCode.Ctrl_Byte = CKM_TextBox.Bytes.半全角;
                     TxtCode.Width = 500;
                     lblName.Width = 180;
 
@@ -1830,15 +1831,14 @@ namespace Search
                 case SearchType.展示会商品:
                     using (Search_TenzikaiShouhin frmTenzikaishouhin = new Search_TenzikaiShouhin())
                     {
-                        //frmTenzikaishouhin.parChangeDate = changedate;
+                        frmTenzikaishouhin.parChangeDate = changedate;
 
-                        if (UseChangeDate == true)
-                            frmTenzikaishouhin.parChangeDate = changedate;
+                        //if (UseChangeDate == true)
+                        //    frmTenzikaishouhin.parChangeDate = changedate;
                         frmTenzikaishouhin.ShowDialog();
                         if (!frmTenzikaishouhin.flgCancel)
                         {
-                             //txtCode.Text = frmTenzikaishouhin.parSkuCD;
-                            txtCode.Text = frmTenzikaishouhin.ProductName;
+                            txtCode.Text = frmTenzikaishouhin.parSKUName;
                            // lblName.Text = frmTenzikaishouhin.parSKUName;
                             CheckBasedFormPanel();//PTK added
                         }

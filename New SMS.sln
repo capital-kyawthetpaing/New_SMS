@@ -343,6 +343,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterTouroku_TenzikaiShouh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TenzikaiHacchuuJouhouShuturyoku", "TenzikaiHacchuuJouhouShuturyoku\TenzikaiHacchuuJouhouShuturyoku.csproj", "{1BF872D6-6E2A-49F6-8D6D-A7B85D780DE2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenuHosting", "MenuHosting\MenuHosting.csproj", "{DC9F3F93-A704-4ED3-B8C1-3C2F1B6165AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2379,6 +2381,18 @@ Global
 		{1BF872D6-6E2A-49F6-8D6D-A7B85D780DE2}.Release|x64.Build.0 = Release|Any CPU
 		{1BF872D6-6E2A-49F6-8D6D-A7B85D780DE2}.Release|x86.ActiveCfg = Release|Any CPU
 		{1BF872D6-6E2A-49F6-8D6D-A7B85D780DE2}.Release|x86.Build.0 = Release|Any CPU
+		{DC9F3F93-A704-4ED3-B8C1-3C2F1B6165AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC9F3F93-A704-4ED3-B8C1-3C2F1B6165AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC9F3F93-A704-4ED3-B8C1-3C2F1B6165AD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DC9F3F93-A704-4ED3-B8C1-3C2F1B6165AD}.Debug|x64.Build.0 = Debug|Any CPU
+		{DC9F3F93-A704-4ED3-B8C1-3C2F1B6165AD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DC9F3F93-A704-4ED3-B8C1-3C2F1B6165AD}.Debug|x86.Build.0 = Debug|Any CPU
+		{DC9F3F93-A704-4ED3-B8C1-3C2F1B6165AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC9F3F93-A704-4ED3-B8C1-3C2F1B6165AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC9F3F93-A704-4ED3-B8C1-3C2F1B6165AD}.Release|x64.ActiveCfg = Release|Any CPU
+		{DC9F3F93-A704-4ED3-B8C1-3C2F1B6165AD}.Release|x64.Build.0 = Release|Any CPU
+		{DC9F3F93-A704-4ED3-B8C1-3C2F1B6165AD}.Release|x86.ActiveCfg = Release|Any CPU
+		{DC9F3F93-A704-4ED3-B8C1-3C2F1B6165AD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

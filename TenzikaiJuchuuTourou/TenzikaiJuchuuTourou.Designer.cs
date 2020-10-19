@@ -255,6 +255,8 @@
             this.ckM_Label12 = new CKM_Controls.CKM_Label();
             this.ckM_Label13 = new CKM_Controls.CKM_Label();
             this.sc_Tenji = new Search.CKM_SearchControl();
+            this.ckM_Label14 = new CKM_Controls.CKM_Label();
+            this.ckM_Label15 = new CKM_Controls.CKM_Label();
             this.panel1.SuspendLayout();
             this.pnl_haisou.SuspendLayout();
             this.pnl_kokyakuu.SuspendLayout();
@@ -290,6 +292,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ckM_Label15);
+            this.panel1.Controls.Add(this.ckM_Label14);
             this.panel1.Controls.Add(this.pnl_haisou);
             this.panel1.Controls.Add(this.pnl_kokyakuu);
             this.panel1.Controls.Add(this.ckM_Label11);
@@ -334,9 +338,9 @@
             // 
             this.pnl_haisou.Controls.Add(this.hr_3);
             this.pnl_haisou.Controls.Add(this.hr_4);
-            this.pnl_haisou.Location = new System.Drawing.Point(1316, 87);
+            this.pnl_haisou.Location = new System.Drawing.Point(1082, 84);
             this.pnl_haisou.Name = "pnl_haisou";
-            this.pnl_haisou.Size = new System.Drawing.Size(218, 32);
+            this.pnl_haisou.Size = new System.Drawing.Size(160, 32);
             this.pnl_haisou.TabIndex = 19;
             // 
             // hr_3
@@ -355,7 +359,7 @@
             // 
             this.hr_4.AutoSize = true;
             this.hr_4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.hr_4.Location = new System.Drawing.Point(119, 0);
+            this.hr_4.Location = new System.Drawing.Point(106, 0);
             this.hr_4.Name = "hr_4";
             this.hr_4.Size = new System.Drawing.Size(49, 16);
             this.hr_4.TabIndex = 0;
@@ -367,9 +371,9 @@
             // 
             this.pnl_kokyakuu.Controls.Add(this.kr_1);
             this.pnl_kokyakuu.Controls.Add(this.kr_2);
-            this.pnl_kokyakuu.Location = new System.Drawing.Point(1322, 32);
+            this.pnl_kokyakuu.Location = new System.Drawing.Point(1087, 30);
             this.pnl_kokyakuu.Name = "pnl_kokyakuu";
-            this.pnl_kokyakuu.Size = new System.Drawing.Size(218, 32);
+            this.pnl_kokyakuu.Size = new System.Drawing.Size(160, 25);
             this.pnl_kokyakuu.TabIndex = 11;
             // 
             // kr_1
@@ -388,7 +392,7 @@
             // 
             this.kr_2.AutoSize = true;
             this.kr_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.kr_2.Location = new System.Drawing.Point(113, 2);
+            this.kr_2.Location = new System.Drawing.Point(101, 2);
             this.kr_2.Name = "kr_2";
             this.kr_2.Size = new System.Drawing.Size(49, 16);
             this.kr_2.TabIndex = 0;
@@ -405,7 +409,7 @@
             this.ckM_Label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label11.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label11.Location = new System.Drawing.Point(754, 117);
+            this.ckM_Label11.Location = new System.Drawing.Point(550, 123);
             this.ckM_Label11.Name = "ckM_Label11";
             this.ckM_Label11.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label11.TabIndex = 137;
@@ -422,7 +426,7 @@
             this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label10.Location = new System.Drawing.Point(767, 67);
+            this.ckM_Label10.Location = new System.Drawing.Point(563, 65);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label10.TabIndex = 136;
@@ -439,7 +443,7 @@
             this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(767, 14);
+            this.ckM_Label9.Location = new System.Drawing.Point(563, 12);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label9.TabIndex = 135;
@@ -457,7 +461,7 @@
             this.btn_Meisai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Meisai.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btn_Meisai.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btn_Meisai.Location = new System.Drawing.Point(1655, 136);
+            this.btn_Meisai.Location = new System.Drawing.Point(1281, 133);
             this.btn_Meisai.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Meisai.Name = "btn_Meisai";
             this.btn_Meisai.Size = new System.Drawing.Size(75, 23);
@@ -486,7 +490,7 @@
             this.txt_HDenwa3.IsNumber = true;
             this.txt_HDenwa3.IsShop = false;
             this.txt_HDenwa3.Length = 32767;
-            this.txt_HDenwa3.Location = new System.Drawing.Point(1671, 84);
+            this.txt_HDenwa3.Location = new System.Drawing.Point(1438, 82);
             this.txt_HDenwa3.MoveNext = true;
             this.txt_HDenwa3.Name = "txt_HDenwa3";
             this.txt_HDenwa3.Size = new System.Drawing.Size(60, 19);
@@ -514,7 +518,7 @@
             this.txt_HDenwa2.IsNumber = true;
             this.txt_HDenwa2.IsShop = false;
             this.txt_HDenwa2.Length = 32767;
-            this.txt_HDenwa2.Location = new System.Drawing.Point(1611, 84);
+            this.txt_HDenwa2.Location = new System.Drawing.Point(1378, 82);
             this.txt_HDenwa2.MoveNext = true;
             this.txt_HDenwa2.Name = "txt_HDenwa2";
             this.txt_HDenwa2.Size = new System.Drawing.Size(60, 19);
@@ -542,7 +546,7 @@
             this.txt_HDenwa1.IsNumber = true;
             this.txt_HDenwa1.IsShop = false;
             this.txt_HDenwa1.Length = 32767;
-            this.txt_HDenwa1.Location = new System.Drawing.Point(1551, 84);
+            this.txt_HDenwa1.Location = new System.Drawing.Point(1318, 82);
             this.txt_HDenwa1.MoveNext = true;
             this.txt_HDenwa1.Name = "txt_HDenwa1";
             this.txt_HDenwa1.Size = new System.Drawing.Size(60, 19);
@@ -552,7 +556,7 @@
             // 
             // btn_Shipping
             // 
-            this.btn_Shipping.Location = new System.Drawing.Point(1551, 62);
+            this.btn_Shipping.Location = new System.Drawing.Point(1318, 60);
             this.btn_Shipping.Name = "btn_Shipping";
             this.btn_Shipping.Size = new System.Drawing.Size(70, 23);
             this.btn_Shipping.TabIndex = 17;
@@ -580,7 +584,7 @@
             this.txt_HaisoJuusho2.IsNumber = true;
             this.txt_HaisoJuusho2.IsShop = false;
             this.txt_HaisoJuusho2.Length = 40;
-            this.txt_HaisoJuusho2.Location = new System.Drawing.Point(952, 84);
+            this.txt_HaisoJuusho2.Location = new System.Drawing.Point(740, 82);
             this.txt_HaisoJuusho2.MaxLength = 40;
             this.txt_HaisoJuusho2.MoveNext = true;
             this.txt_HaisoJuusho2.Name = "txt_HaisoJuusho2";
@@ -609,11 +613,11 @@
             this.txt_HaisoJuusho1.IsNumber = true;
             this.txt_HaisoJuusho1.IsShop = false;
             this.txt_HaisoJuusho1.Length = 80;
-            this.txt_HaisoJuusho1.Location = new System.Drawing.Point(952, 63);
+            this.txt_HaisoJuusho1.Location = new System.Drawing.Point(740, 61);
             this.txt_HaisoJuusho1.MaxLength = 80;
             this.txt_HaisoJuusho1.MoveNext = true;
             this.txt_HaisoJuusho1.Name = "txt_HaisoJuusho1";
-            this.txt_HaisoJuusho1.Size = new System.Drawing.Size(600, 21);
+            this.txt_HaisoJuusho1.Size = new System.Drawing.Size(580, 21);
             this.txt_HaisoJuusho1.TabIndex = 16;
             this.txt_HaisoJuusho1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Small;
             this.txt_HaisoJuusho1.UseColorSizMode = false;
@@ -638,7 +642,7 @@
             this.txt_KDenwa3.IsNumber = true;
             this.txt_KDenwa3.IsShop = false;
             this.txt_KDenwa3.Length = 32767;
-            this.txt_KDenwa3.Location = new System.Drawing.Point(1672, 32);
+            this.txt_KDenwa3.Location = new System.Drawing.Point(1439, 30);
             this.txt_KDenwa3.MoveNext = true;
             this.txt_KDenwa3.Name = "txt_KDenwa3";
             this.txt_KDenwa3.Size = new System.Drawing.Size(60, 19);
@@ -666,7 +670,7 @@
             this.txt_KDenwa2.IsNumber = true;
             this.txt_KDenwa2.IsShop = false;
             this.txt_KDenwa2.Length = 32767;
-            this.txt_KDenwa2.Location = new System.Drawing.Point(1612, 32);
+            this.txt_KDenwa2.Location = new System.Drawing.Point(1379, 30);
             this.txt_KDenwa2.MoveNext = true;
             this.txt_KDenwa2.Name = "txt_KDenwa2";
             this.txt_KDenwa2.Size = new System.Drawing.Size(60, 19);
@@ -694,7 +698,7 @@
             this.txt_KDenwa1.IsNumber = true;
             this.txt_KDenwa1.IsShop = false;
             this.txt_KDenwa1.Length = 32767;
-            this.txt_KDenwa1.Location = new System.Drawing.Point(1552, 32);
+            this.txt_KDenwa1.Location = new System.Drawing.Point(1319, 30);
             this.txt_KDenwa1.MoveNext = true;
             this.txt_KDenwa1.Name = "txt_KDenwa1";
             this.txt_KDenwa1.Size = new System.Drawing.Size(60, 19);
@@ -704,7 +708,7 @@
             // 
             // btn_Customer
             // 
-            this.btn_Customer.Location = new System.Drawing.Point(1552, 10);
+            this.btn_Customer.Location = new System.Drawing.Point(1319, 8);
             this.btn_Customer.Name = "btn_Customer";
             this.btn_Customer.Size = new System.Drawing.Size(70, 23);
             this.btn_Customer.TabIndex = 9;
@@ -732,7 +736,7 @@
             this.txt_KokyaJuusho2.IsNumber = true;
             this.txt_KokyaJuusho2.IsShop = false;
             this.txt_KokyaJuusho2.Length = 40;
-            this.txt_KokyaJuusho2.Location = new System.Drawing.Point(953, 32);
+            this.txt_KokyaJuusho2.Location = new System.Drawing.Point(741, 30);
             this.txt_KokyaJuusho2.MaxLength = 40;
             this.txt_KokyaJuusho2.MoveNext = true;
             this.txt_KokyaJuusho2.Name = "txt_KokyaJuusho2";
@@ -761,12 +765,13 @@
             this.txt_kokyaJuusho1.IsNumber = true;
             this.txt_kokyaJuusho1.IsShop = false;
             this.txt_kokyaJuusho1.Length = 80;
-            this.txt_kokyaJuusho1.Location = new System.Drawing.Point(953, 11);
+            this.txt_kokyaJuusho1.Location = new System.Drawing.Point(741, 9);
             this.txt_kokyaJuusho1.MaxLength = 80;
             this.txt_kokyaJuusho1.MoveNext = true;
             this.txt_kokyaJuusho1.Name = "txt_kokyaJuusho1";
-            this.txt_kokyaJuusho1.Size = new System.Drawing.Size(600, 21);
+            this.txt_kokyaJuusho1.Size = new System.Drawing.Size(580, 21);
             this.txt_kokyaJuusho1.TabIndex = 8;
+            this.txt_kokyaJuusho1.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
             this.txt_kokyaJuusho1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Small;
             this.txt_kokyaJuusho1.UseColorSizMode = false;
             // 
@@ -779,7 +784,7 @@
             this.cbo_yotei.Flag = 0;
             this.cbo_yotei.FormattingEnabled = true;
             this.cbo_yotei.Length = 10;
-            this.cbo_yotei.Location = new System.Drawing.Point(822, 114);
+            this.cbo_yotei.Location = new System.Drawing.Point(610, 120);
             this.cbo_yotei.MaxLength = 10;
             this.cbo_yotei.MoveNext = true;
             this.cbo_yotei.Name = "cbo_yotei";
@@ -801,7 +806,7 @@
             this.sc_haisosaki.IsCopy = false;
             this.sc_haisosaki.LabelText = "";
             this.sc_haisosaki.LabelVisible = false;
-            this.sc_haisosaki.Location = new System.Drawing.Point(822, 58);
+            this.sc_haisosaki.Location = new System.Drawing.Point(610, 56);
             this.sc_haisosaki.Margin = new System.Windows.Forms.Padding(0);
             this.sc_haisosaki.Name = "sc_haisosaki";
             this.sc_haisosaki.NameWidth = 500;
@@ -831,7 +836,7 @@
             this.sc_kokyakuu.IsCopy = false;
             this.sc_kokyakuu.LabelText = "";
             this.sc_kokyakuu.LabelVisible = false;
-            this.sc_kokyakuu.Location = new System.Drawing.Point(822, 6);
+            this.sc_kokyakuu.Location = new System.Drawing.Point(610, 4);
             this.sc_kokyakuu.Margin = new System.Windows.Forms.Padding(0);
             this.sc_kokyakuu.Name = "sc_kokyakuu";
             this.sc_kokyakuu.NameWidth = 500;
@@ -951,7 +956,7 @@
             this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(33, 124);
+            this.ckM_Label6.Location = new System.Drawing.Point(35, 124);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(59, 12);
             this.ckM_Label6.TabIndex = 109;
@@ -968,7 +973,7 @@
             this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(36, 96);
+            this.ckM_Label5.Location = new System.Drawing.Point(38, 96);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label5.TabIndex = 108;
@@ -985,7 +990,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(50, 70);
+            this.ckM_Label4.Location = new System.Drawing.Point(52, 70);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label4.TabIndex = 107;
@@ -1002,7 +1007,7 @@
             this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(55, 43);
+            this.ckM_Label3.Location = new System.Drawing.Point(57, 43);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(38, 12);
             this.ckM_Label3.TabIndex = 106;
@@ -1019,7 +1024,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(50, 13);
+            this.ckM_Label2.Location = new System.Drawing.Point(52, 13);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label2.TabIndex = 105;
@@ -1159,7 +1164,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(17, 273);
+            this.panel2.Location = new System.Drawing.Point(16, 252);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1760, 400);
             this.panel2.TabIndex = 25;
@@ -1179,7 +1184,7 @@
             // 
             // Vsb_Mei_0
             // 
-            this.Vsb_Mei_0.Location = new System.Drawing.Point(1728, 1);
+            this.Vsb_Mei_0.Location = new System.Drawing.Point(1356, 0);
             this.Vsb_Mei_0.Name = "Vsb_Mei_0";
             this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 284);
             this.Vsb_Mei_0.TabIndex = 316;
@@ -1215,7 +1220,7 @@
             this.panel_5.Controls.Add(this.lbl_5);
             this.panel_5.Location = new System.Drawing.Point(0, 227);
             this.panel_5.Name = "panel_5";
-            this.panel_5.Size = new System.Drawing.Size(1730, 60);
+            this.panel_5.Size = new System.Drawing.Size(1360, 60);
             this.panel_5.TabIndex = 315;
             // 
             // choukusou_5
@@ -1247,10 +1252,10 @@
             this.zeinutanku_5.IsNumber = true;
             this.zeinutanku_5.IsShop = false;
             this.zeinutanku_5.Length = 32767;
-            this.zeinutanku_5.Location = new System.Drawing.Point(1668, 20);
+            this.zeinutanku_5.Location = new System.Drawing.Point(1326, 20);
             this.zeinutanku_5.MoveNext = true;
             this.zeinutanku_5.Name = "zeinutanku_5";
-            this.zeinutanku_5.Size = new System.Drawing.Size(60, 19);
+            this.zeinutanku_5.Size = new System.Drawing.Size(30, 19);
             this.zeinutanku_5.TabIndex = 318;
             this.zeinutanku_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.zeinutanku_5.UseColorSizMode = false;
@@ -1275,10 +1280,10 @@
             this.zeinu_5.IsNumber = true;
             this.zeinu_5.IsShop = false;
             this.zeinu_5.Length = 32767;
-            this.zeinu_5.Location = new System.Drawing.Point(1608, 20);
+            this.zeinu_5.Location = new System.Drawing.Point(1296, 20);
             this.zeinu_5.MoveNext = true;
             this.zeinu_5.Name = "zeinu_5";
-            this.zeinu_5.Size = new System.Drawing.Size(60, 19);
+            this.zeinu_5.Size = new System.Drawing.Size(30, 19);
             this.zeinu_5.TabIndex = 317;
             this.zeinu_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.zeinu_5.UseColorSizMode = false;
@@ -1303,10 +1308,10 @@
             this.kobetsuhanbai_5.IsNumber = true;
             this.kobetsuhanbai_5.IsShop = false;
             this.kobetsuhanbai_5.Length = 32767;
-            this.kobetsuhanbai_5.Location = new System.Drawing.Point(1088, 39);
+            this.kobetsuhanbai_5.Location = new System.Drawing.Point(913, 39);
             this.kobetsuhanbai_5.MoveNext = true;
             this.kobetsuhanbai_5.Name = "kobetsuhanbai_5";
-            this.kobetsuhanbai_5.Size = new System.Drawing.Size(640, 19);
+            this.kobetsuhanbai_5.Size = new System.Drawing.Size(443, 19);
             this.kobetsuhanbai_5.TabIndex = 315;
             this.kobetsuhanbai_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.kobetsuhanbai_5.UseColorSizMode = false;
@@ -1331,10 +1336,10 @@
             this.shagaibikou_5.IsNumber = true;
             this.shagaibikou_5.IsShop = false;
             this.shagaibikou_5.Length = 32767;
-            this.shagaibikou_5.Location = new System.Drawing.Point(608, 39);
+            this.shagaibikou_5.Location = new System.Drawing.Point(470, 39);
             this.shagaibikou_5.MoveNext = true;
             this.shagaibikou_5.Name = "shagaibikou_5";
-            this.shagaibikou_5.Size = new System.Drawing.Size(480, 19);
+            this.shagaibikou_5.Size = new System.Drawing.Size(443, 19);
             this.shagaibikou_5.TabIndex = 314;
             this.shagaibikou_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shagaibikou_5.UseColorSizMode = false;
@@ -1362,7 +1367,7 @@
             this.shanaibikou_5.Location = new System.Drawing.Point(28, 39);
             this.shanaibikou_5.MoveNext = true;
             this.shanaibikou_5.Name = "shanaibikou_5";
-            this.shanaibikou_5.Size = new System.Drawing.Size(580, 19);
+            this.shanaibikou_5.Size = new System.Drawing.Size(442, 19);
             this.shanaibikou_5.TabIndex = 313;
             this.shanaibikou_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shanaibikou_5.UseColorSizMode = false;
@@ -1387,10 +1392,10 @@
             this.ararigaku_5.IsNumber = true;
             this.ararigaku_5.IsShop = false;
             this.ararigaku_5.Length = 32767;
-            this.ararigaku_5.Location = new System.Drawing.Point(1488, 20);
+            this.ararigaku_5.Location = new System.Drawing.Point(1206, 20);
             this.ararigaku_5.MoveNext = true;
             this.ararigaku_5.Name = "ararigaku_5";
-            this.ararigaku_5.Size = new System.Drawing.Size(120, 19);
+            this.ararigaku_5.Size = new System.Drawing.Size(90, 19);
             this.ararigaku_5.TabIndex = 311;
             this.ararigaku_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ararigaku_5.UseColorSizMode = false;
@@ -1415,10 +1420,10 @@
             this.zeikomijuchuugaku_5.IsNumber = true;
             this.zeikomijuchuugaku_5.IsShop = false;
             this.zeikomijuchuugaku_5.Length = 32767;
-            this.zeikomijuchuugaku_5.Location = new System.Drawing.Point(1368, 20);
+            this.zeikomijuchuugaku_5.Location = new System.Drawing.Point(1116, 20);
             this.zeikomijuchuugaku_5.MoveNext = true;
             this.zeikomijuchuugaku_5.Name = "zeikomijuchuugaku_5";
-            this.zeikomijuchuugaku_5.Size = new System.Drawing.Size(120, 19);
+            this.zeikomijuchuugaku_5.Size = new System.Drawing.Size(90, 19);
             this.zeikomijuchuugaku_5.TabIndex = 310;
             this.zeikomijuchuugaku_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.zeikomijuchuugaku_5.UseColorSizMode = false;
@@ -1443,10 +1448,10 @@
             this.zeinuJuchuugaka_5.IsNumber = true;
             this.zeinuJuchuugaka_5.IsShop = false;
             this.zeinuJuchuugaka_5.Length = 32767;
-            this.zeinuJuchuugaka_5.Location = new System.Drawing.Point(1248, 20);
+            this.zeinuJuchuugaka_5.Location = new System.Drawing.Point(1026, 20);
             this.zeinuJuchuugaka_5.MoveNext = true;
             this.zeinuJuchuugaka_5.Name = "zeinuJuchuugaka_5";
-            this.zeinuJuchuugaka_5.Size = new System.Drawing.Size(120, 19);
+            this.zeinuJuchuugaka_5.Size = new System.Drawing.Size(90, 19);
             this.zeinuJuchuugaka_5.TabIndex = 309;
             this.zeinuJuchuugaka_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.zeinuJuchuugaka_5.UseColorSizMode = false;
@@ -1471,11 +1476,11 @@
             this.hanbaitanka_5.IsNumber = true;
             this.hanbaitanka_5.IsShop = false;
             this.hanbaitanka_5.Length = 9;
-            this.hanbaitanka_5.Location = new System.Drawing.Point(1128, 20);
+            this.hanbaitanka_5.Location = new System.Drawing.Point(936, 20);
             this.hanbaitanka_5.MaxLength = 9;
             this.hanbaitanka_5.MoveNext = true;
             this.hanbaitanka_5.Name = "hanbaitanka_5";
-            this.hanbaitanka_5.Size = new System.Drawing.Size(120, 19);
+            this.hanbaitanka_5.Size = new System.Drawing.Size(90, 19);
             this.hanbaitanka_5.TabIndex = 308;
             this.hanbaitanka_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hanbaitanka_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -1487,9 +1492,9 @@
             this.teni_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.teni_5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.teni_5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.teni_5.Location = new System.Drawing.Point(1088, 20);
+            this.teni_5.Location = new System.Drawing.Point(906, 20);
             this.teni_5.Name = "teni_5";
-            this.teni_5.Size = new System.Drawing.Size(40, 19);
+            this.teni_5.Size = new System.Drawing.Size(30, 19);
             this.teni_5.TabIndex = 307;
             this.teni_5.Text = " ";
             this.teni_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1502,10 +1507,10 @@
             this.sku_5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.sku_5.Location = new System.Drawing.Point(166, 1);
             this.sku_5.Name = "sku_5";
-            this.sku_5.Size = new System.Drawing.Size(345, 19);
+            this.sku_5.Size = new System.Drawing.Size(250, 19);
             this.sku_5.TabIndex = 306;
             this.sku_5.Text = " ";
-            this.sku_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.sku_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // juchuusuu_5
             // 
@@ -1527,7 +1532,7 @@
             this.juchuusuu_5.IsNumber = true;
             this.juchuusuu_5.IsShop = false;
             this.juchuusuu_5.Length = 9;
-            this.juchuusuu_5.Location = new System.Drawing.Point(1008, 20);
+            this.juchuusuu_5.Location = new System.Drawing.Point(826, 20);
             this.juchuusuu_5.MaxLength = 9;
             this.juchuusuu_5.MoveNext = true;
             this.juchuusuu_5.Name = "juchuusuu_5";
@@ -1557,11 +1562,11 @@
             this.nyuukayotei_5.IsNumber = true;
             this.nyuukayotei_5.IsShop = false;
             this.nyuukayotei_5.Length = 10;
-            this.nyuukayotei_5.Location = new System.Drawing.Point(908, 20);
+            this.nyuukayotei_5.Location = new System.Drawing.Point(746, 20);
             this.nyuukayotei_5.MaxLength = 10;
             this.nyuukayotei_5.MoveNext = true;
             this.nyuukayotei_5.Name = "nyuukayotei_5";
-            this.nyuukayotei_5.Size = new System.Drawing.Size(100, 19);
+            this.nyuukayotei_5.Size = new System.Drawing.Size(80, 19);
             this.nyuukayotei_5.TabIndex = 296;
             this.nyuukayotei_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nyuukayotei_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -1587,11 +1592,11 @@
             this.hacchutanka_5.IsNumber = true;
             this.hacchutanka_5.IsShop = false;
             this.hacchutanka_5.Length = 9;
-            this.hacchutanka_5.Location = new System.Drawing.Point(808, 20);
+            this.hacchutanka_5.Location = new System.Drawing.Point(666, 20);
             this.hacchutanka_5.MaxLength = 9;
             this.hacchutanka_5.MoveNext = true;
             this.hacchutanka_5.Name = "hacchutanka_5";
-            this.hacchutanka_5.Size = new System.Drawing.Size(100, 19);
+            this.hacchutanka_5.Size = new System.Drawing.Size(80, 19);
             this.hacchutanka_5.TabIndex = 295;
             this.hacchutanka_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hacchutanka_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -1603,9 +1608,9 @@
             this.empty_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.empty_5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.empty_5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.empty_5.Location = new System.Drawing.Point(408, 20);
+            this.empty_5.Location = new System.Drawing.Point(358, 20);
             this.empty_5.Name = "empty_5";
-            this.empty_5.Size = new System.Drawing.Size(400, 19);
+            this.empty_5.Size = new System.Drawing.Size(308, 19);
             this.empty_5.TabIndex = 294;
             this.empty_5.Text = " ";
             this.empty_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1623,7 +1628,7 @@
             this.shuukasouko_5.MaxLength = 10;
             this.shuukasouko_5.MoveNext = true;
             this.shuukasouko_5.Name = "shuukasouko_5";
-            this.shuukasouko_5.Size = new System.Drawing.Size(200, 20);
+            this.shuukasouko_5.Size = new System.Drawing.Size(150, 20);
             this.shuukasouko_5.TabIndex = 293;
             // 
             // shuukayotei_5
@@ -1694,10 +1699,10 @@
             this.sizename_5.IsNumber = true;
             this.sizename_5.IsShop = false;
             this.sizename_5.Length = 32767;
-            this.sizename_5.Location = new System.Drawing.Point(1529, 1);
+            this.sizename_5.Location = new System.Drawing.Point(1226, 1);
             this.sizename_5.MoveNext = true;
             this.sizename_5.Name = "sizename_5";
-            this.sizename_5.Size = new System.Drawing.Size(200, 19);
+            this.sizename_5.Size = new System.Drawing.Size(130, 19);
             this.sizename_5.TabIndex = 289;
             this.sizename_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.sizename_5.UseColorSizMode = false;
@@ -1722,10 +1727,10 @@
             this.size_5.IsNumber = true;
             this.size_5.IsShop = false;
             this.size_5.Length = 32767;
-            this.size_5.Location = new System.Drawing.Point(1429, 1);
+            this.size_5.Location = new System.Drawing.Point(1146, 1);
             this.size_5.MoveNext = true;
             this.size_5.Name = "size_5";
-            this.size_5.Size = new System.Drawing.Size(100, 19);
+            this.size_5.Size = new System.Drawing.Size(80, 19);
             this.size_5.TabIndex = 288;
             this.size_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.size_5.UseColorSizMode = false;
@@ -1750,10 +1755,10 @@
             this.colorname_5.IsNumber = true;
             this.colorname_5.IsShop = false;
             this.colorname_5.Length = 32767;
-            this.colorname_5.Location = new System.Drawing.Point(1229, 1);
+            this.colorname_5.Location = new System.Drawing.Point(1016, 1);
             this.colorname_5.MoveNext = true;
             this.colorname_5.Name = "colorname_5";
-            this.colorname_5.Size = new System.Drawing.Size(200, 19);
+            this.colorname_5.Size = new System.Drawing.Size(130, 19);
             this.colorname_5.TabIndex = 287;
             this.colorname_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.colorname_5.UseColorSizMode = false;
@@ -1778,10 +1783,10 @@
             this.color_5.IsNumber = true;
             this.color_5.IsShop = false;
             this.color_5.Length = 32767;
-            this.color_5.Location = new System.Drawing.Point(1129, 1);
+            this.color_5.Location = new System.Drawing.Point(936, 1);
             this.color_5.MoveNext = true;
             this.color_5.Name = "color_5";
-            this.color_5.Size = new System.Drawing.Size(100, 19);
+            this.color_5.Size = new System.Drawing.Size(80, 19);
             this.color_5.TabIndex = 286;
             this.color_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.color_5.UseColorSizMode = false;
@@ -1806,11 +1811,11 @@
             this.shouhin_5.IsNumber = true;
             this.shouhin_5.IsShop = false;
             this.shouhin_5.Length = 80;
-            this.shouhin_5.Location = new System.Drawing.Point(509, 1);
+            this.shouhin_5.Location = new System.Drawing.Point(416, 1);
             this.shouhin_5.MaxLength = 80;
             this.shouhin_5.MoveNext = true;
             this.shouhin_5.Name = "shouhin_5";
-            this.shouhin_5.Size = new System.Drawing.Size(620, 19);
+            this.shouhin_5.Size = new System.Drawing.Size(520, 19);
             this.shouhin_5.TabIndex = 285;
             this.shouhin_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shouhin_5.UseColorSizMode = false;
@@ -1888,7 +1893,7 @@
             this.panel_4.Controls.Add(this.lbl_4);
             this.panel_4.Location = new System.Drawing.Point(0, 170);
             this.panel_4.Name = "panel_4";
-            this.panel_4.Size = new System.Drawing.Size(1730, 60);
+            this.panel_4.Size = new System.Drawing.Size(1360, 60);
             this.panel_4.TabIndex = 314;
             // 
             // choukusou_4
@@ -1920,10 +1925,10 @@
             this.zeinutanku_4.IsNumber = true;
             this.zeinutanku_4.IsShop = false;
             this.zeinutanku_4.Length = 32767;
-            this.zeinutanku_4.Location = new System.Drawing.Point(1668, 20);
+            this.zeinutanku_4.Location = new System.Drawing.Point(1326, 20);
             this.zeinutanku_4.MoveNext = true;
             this.zeinutanku_4.Name = "zeinutanku_4";
-            this.zeinutanku_4.Size = new System.Drawing.Size(60, 19);
+            this.zeinutanku_4.Size = new System.Drawing.Size(30, 19);
             this.zeinutanku_4.TabIndex = 318;
             this.zeinutanku_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.zeinutanku_4.UseColorSizMode = false;
@@ -1948,10 +1953,10 @@
             this.zeinu_4.IsNumber = true;
             this.zeinu_4.IsShop = false;
             this.zeinu_4.Length = 32767;
-            this.zeinu_4.Location = new System.Drawing.Point(1608, 20);
+            this.zeinu_4.Location = new System.Drawing.Point(1296, 20);
             this.zeinu_4.MoveNext = true;
             this.zeinu_4.Name = "zeinu_4";
-            this.zeinu_4.Size = new System.Drawing.Size(60, 19);
+            this.zeinu_4.Size = new System.Drawing.Size(30, 19);
             this.zeinu_4.TabIndex = 317;
             this.zeinu_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.zeinu_4.UseColorSizMode = false;
@@ -1976,10 +1981,10 @@
             this.kobetsuhanbai_4.IsNumber = true;
             this.kobetsuhanbai_4.IsShop = false;
             this.kobetsuhanbai_4.Length = 32767;
-            this.kobetsuhanbai_4.Location = new System.Drawing.Point(1088, 39);
+            this.kobetsuhanbai_4.Location = new System.Drawing.Point(913, 39);
             this.kobetsuhanbai_4.MoveNext = true;
             this.kobetsuhanbai_4.Name = "kobetsuhanbai_4";
-            this.kobetsuhanbai_4.Size = new System.Drawing.Size(640, 19);
+            this.kobetsuhanbai_4.Size = new System.Drawing.Size(443, 19);
             this.kobetsuhanbai_4.TabIndex = 315;
             this.kobetsuhanbai_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.kobetsuhanbai_4.UseColorSizMode = false;
@@ -2004,10 +2009,10 @@
             this.shagaibikou_4.IsNumber = true;
             this.shagaibikou_4.IsShop = false;
             this.shagaibikou_4.Length = 32767;
-            this.shagaibikou_4.Location = new System.Drawing.Point(608, 39);
+            this.shagaibikou_4.Location = new System.Drawing.Point(470, 39);
             this.shagaibikou_4.MoveNext = true;
             this.shagaibikou_4.Name = "shagaibikou_4";
-            this.shagaibikou_4.Size = new System.Drawing.Size(480, 19);
+            this.shagaibikou_4.Size = new System.Drawing.Size(443, 19);
             this.shagaibikou_4.TabIndex = 314;
             this.shagaibikou_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shagaibikou_4.UseColorSizMode = false;
@@ -2035,7 +2040,7 @@
             this.shanaibikou_4.Location = new System.Drawing.Point(28, 39);
             this.shanaibikou_4.MoveNext = true;
             this.shanaibikou_4.Name = "shanaibikou_4";
-            this.shanaibikou_4.Size = new System.Drawing.Size(580, 19);
+            this.shanaibikou_4.Size = new System.Drawing.Size(442, 19);
             this.shanaibikou_4.TabIndex = 313;
             this.shanaibikou_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shanaibikou_4.UseColorSizMode = false;
@@ -2060,10 +2065,10 @@
             this.ararigaku_4.IsNumber = true;
             this.ararigaku_4.IsShop = false;
             this.ararigaku_4.Length = 32767;
-            this.ararigaku_4.Location = new System.Drawing.Point(1488, 20);
+            this.ararigaku_4.Location = new System.Drawing.Point(1206, 20);
             this.ararigaku_4.MoveNext = true;
             this.ararigaku_4.Name = "ararigaku_4";
-            this.ararigaku_4.Size = new System.Drawing.Size(120, 19);
+            this.ararigaku_4.Size = new System.Drawing.Size(90, 19);
             this.ararigaku_4.TabIndex = 311;
             this.ararigaku_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ararigaku_4.UseColorSizMode = false;
@@ -2088,10 +2093,10 @@
             this.zeikomijuchuugaku_4.IsNumber = true;
             this.zeikomijuchuugaku_4.IsShop = false;
             this.zeikomijuchuugaku_4.Length = 32767;
-            this.zeikomijuchuugaku_4.Location = new System.Drawing.Point(1368, 20);
+            this.zeikomijuchuugaku_4.Location = new System.Drawing.Point(1116, 20);
             this.zeikomijuchuugaku_4.MoveNext = true;
             this.zeikomijuchuugaku_4.Name = "zeikomijuchuugaku_4";
-            this.zeikomijuchuugaku_4.Size = new System.Drawing.Size(120, 19);
+            this.zeikomijuchuugaku_4.Size = new System.Drawing.Size(90, 19);
             this.zeikomijuchuugaku_4.TabIndex = 310;
             this.zeikomijuchuugaku_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.zeikomijuchuugaku_4.UseColorSizMode = false;
@@ -2116,10 +2121,10 @@
             this.zeinuJuchuugaka_4.IsNumber = true;
             this.zeinuJuchuugaka_4.IsShop = false;
             this.zeinuJuchuugaka_4.Length = 32767;
-            this.zeinuJuchuugaka_4.Location = new System.Drawing.Point(1248, 20);
+            this.zeinuJuchuugaka_4.Location = new System.Drawing.Point(1026, 20);
             this.zeinuJuchuugaka_4.MoveNext = true;
             this.zeinuJuchuugaka_4.Name = "zeinuJuchuugaka_4";
-            this.zeinuJuchuugaka_4.Size = new System.Drawing.Size(120, 19);
+            this.zeinuJuchuugaka_4.Size = new System.Drawing.Size(90, 19);
             this.zeinuJuchuugaka_4.TabIndex = 309;
             this.zeinuJuchuugaka_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.zeinuJuchuugaka_4.UseColorSizMode = false;
@@ -2144,11 +2149,11 @@
             this.hanbaitanka_4.IsNumber = true;
             this.hanbaitanka_4.IsShop = false;
             this.hanbaitanka_4.Length = 9;
-            this.hanbaitanka_4.Location = new System.Drawing.Point(1128, 20);
+            this.hanbaitanka_4.Location = new System.Drawing.Point(936, 20);
             this.hanbaitanka_4.MaxLength = 9;
             this.hanbaitanka_4.MoveNext = true;
             this.hanbaitanka_4.Name = "hanbaitanka_4";
-            this.hanbaitanka_4.Size = new System.Drawing.Size(120, 19);
+            this.hanbaitanka_4.Size = new System.Drawing.Size(90, 19);
             this.hanbaitanka_4.TabIndex = 308;
             this.hanbaitanka_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hanbaitanka_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -2160,9 +2165,9 @@
             this.teni_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.teni_4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.teni_4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.teni_4.Location = new System.Drawing.Point(1088, 20);
+            this.teni_4.Location = new System.Drawing.Point(906, 20);
             this.teni_4.Name = "teni_4";
-            this.teni_4.Size = new System.Drawing.Size(40, 19);
+            this.teni_4.Size = new System.Drawing.Size(30, 19);
             this.teni_4.TabIndex = 307;
             this.teni_4.Text = " ";
             this.teni_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2175,10 +2180,10 @@
             this.sku_4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.sku_4.Location = new System.Drawing.Point(166, 1);
             this.sku_4.Name = "sku_4";
-            this.sku_4.Size = new System.Drawing.Size(345, 19);
+            this.sku_4.Size = new System.Drawing.Size(250, 19);
             this.sku_4.TabIndex = 306;
             this.sku_4.Text = " ";
-            this.sku_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.sku_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // juchuusuu_4
             // 
@@ -2200,7 +2205,7 @@
             this.juchuusuu_4.IsNumber = true;
             this.juchuusuu_4.IsShop = false;
             this.juchuusuu_4.Length = 9;
-            this.juchuusuu_4.Location = new System.Drawing.Point(1008, 20);
+            this.juchuusuu_4.Location = new System.Drawing.Point(826, 20);
             this.juchuusuu_4.MaxLength = 9;
             this.juchuusuu_4.MoveNext = true;
             this.juchuusuu_4.Name = "juchuusuu_4";
@@ -2230,11 +2235,11 @@
             this.nyuukayotei_4.IsNumber = true;
             this.nyuukayotei_4.IsShop = false;
             this.nyuukayotei_4.Length = 10;
-            this.nyuukayotei_4.Location = new System.Drawing.Point(908, 20);
+            this.nyuukayotei_4.Location = new System.Drawing.Point(746, 20);
             this.nyuukayotei_4.MaxLength = 10;
             this.nyuukayotei_4.MoveNext = true;
             this.nyuukayotei_4.Name = "nyuukayotei_4";
-            this.nyuukayotei_4.Size = new System.Drawing.Size(100, 19);
+            this.nyuukayotei_4.Size = new System.Drawing.Size(80, 19);
             this.nyuukayotei_4.TabIndex = 296;
             this.nyuukayotei_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nyuukayotei_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -2260,11 +2265,11 @@
             this.hacchutanka_4.IsNumber = true;
             this.hacchutanka_4.IsShop = false;
             this.hacchutanka_4.Length = 9;
-            this.hacchutanka_4.Location = new System.Drawing.Point(808, 20);
+            this.hacchutanka_4.Location = new System.Drawing.Point(666, 20);
             this.hacchutanka_4.MaxLength = 9;
             this.hacchutanka_4.MoveNext = true;
             this.hacchutanka_4.Name = "hacchutanka_4";
-            this.hacchutanka_4.Size = new System.Drawing.Size(100, 19);
+            this.hacchutanka_4.Size = new System.Drawing.Size(80, 19);
             this.hacchutanka_4.TabIndex = 295;
             this.hacchutanka_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hacchutanka_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -2276,9 +2281,9 @@
             this.empty_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.empty_4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.empty_4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.empty_4.Location = new System.Drawing.Point(408, 20);
+            this.empty_4.Location = new System.Drawing.Point(358, 20);
             this.empty_4.Name = "empty_4";
-            this.empty_4.Size = new System.Drawing.Size(400, 19);
+            this.empty_4.Size = new System.Drawing.Size(308, 19);
             this.empty_4.TabIndex = 294;
             this.empty_4.Text = " ";
             this.empty_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2296,7 +2301,7 @@
             this.shuukasouko_4.MaxLength = 10;
             this.shuukasouko_4.MoveNext = true;
             this.shuukasouko_4.Name = "shuukasouko_4";
-            this.shuukasouko_4.Size = new System.Drawing.Size(200, 20);
+            this.shuukasouko_4.Size = new System.Drawing.Size(150, 20);
             this.shuukasouko_4.TabIndex = 293;
             // 
             // shuukayotei_4
@@ -2367,10 +2372,10 @@
             this.sizename_4.IsNumber = true;
             this.sizename_4.IsShop = false;
             this.sizename_4.Length = 32767;
-            this.sizename_4.Location = new System.Drawing.Point(1529, 1);
+            this.sizename_4.Location = new System.Drawing.Point(1226, 1);
             this.sizename_4.MoveNext = true;
             this.sizename_4.Name = "sizename_4";
-            this.sizename_4.Size = new System.Drawing.Size(200, 19);
+            this.sizename_4.Size = new System.Drawing.Size(130, 19);
             this.sizename_4.TabIndex = 289;
             this.sizename_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.sizename_4.UseColorSizMode = false;
@@ -2395,10 +2400,10 @@
             this.size_4.IsNumber = true;
             this.size_4.IsShop = false;
             this.size_4.Length = 32767;
-            this.size_4.Location = new System.Drawing.Point(1429, 1);
+            this.size_4.Location = new System.Drawing.Point(1146, 1);
             this.size_4.MoveNext = true;
             this.size_4.Name = "size_4";
-            this.size_4.Size = new System.Drawing.Size(100, 19);
+            this.size_4.Size = new System.Drawing.Size(80, 19);
             this.size_4.TabIndex = 288;
             this.size_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.size_4.UseColorSizMode = false;
@@ -2423,10 +2428,10 @@
             this.colorname_4.IsNumber = true;
             this.colorname_4.IsShop = false;
             this.colorname_4.Length = 32767;
-            this.colorname_4.Location = new System.Drawing.Point(1229, 1);
+            this.colorname_4.Location = new System.Drawing.Point(1016, 1);
             this.colorname_4.MoveNext = true;
             this.colorname_4.Name = "colorname_4";
-            this.colorname_4.Size = new System.Drawing.Size(200, 19);
+            this.colorname_4.Size = new System.Drawing.Size(130, 19);
             this.colorname_4.TabIndex = 287;
             this.colorname_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.colorname_4.UseColorSizMode = false;
@@ -2451,10 +2456,10 @@
             this.color_4.IsNumber = true;
             this.color_4.IsShop = false;
             this.color_4.Length = 32767;
-            this.color_4.Location = new System.Drawing.Point(1129, 1);
+            this.color_4.Location = new System.Drawing.Point(936, 1);
             this.color_4.MoveNext = true;
             this.color_4.Name = "color_4";
-            this.color_4.Size = new System.Drawing.Size(100, 19);
+            this.color_4.Size = new System.Drawing.Size(80, 19);
             this.color_4.TabIndex = 286;
             this.color_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.color_4.UseColorSizMode = false;
@@ -2479,11 +2484,11 @@
             this.shouhin_4.IsNumber = true;
             this.shouhin_4.IsShop = false;
             this.shouhin_4.Length = 80;
-            this.shouhin_4.Location = new System.Drawing.Point(509, 1);
+            this.shouhin_4.Location = new System.Drawing.Point(416, 1);
             this.shouhin_4.MaxLength = 80;
             this.shouhin_4.MoveNext = true;
             this.shouhin_4.Name = "shouhin_4";
-            this.shouhin_4.Size = new System.Drawing.Size(620, 19);
+            this.shouhin_4.Size = new System.Drawing.Size(520, 19);
             this.shouhin_4.TabIndex = 285;
             this.shouhin_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shouhin_4.UseColorSizMode = false;
@@ -2561,7 +2566,7 @@
             this.panel_3.Controls.Add(this.lbl_3);
             this.panel_3.Location = new System.Drawing.Point(0, 113);
             this.panel_3.Name = "panel_3";
-            this.panel_3.Size = new System.Drawing.Size(1730, 60);
+            this.panel_3.Size = new System.Drawing.Size(1360, 60);
             this.panel_3.TabIndex = 313;
             // 
             // choukusou_3
@@ -2593,10 +2598,10 @@
             this.zeinutanku_3.IsNumber = true;
             this.zeinutanku_3.IsShop = false;
             this.zeinutanku_3.Length = 32767;
-            this.zeinutanku_3.Location = new System.Drawing.Point(1668, 20);
+            this.zeinutanku_3.Location = new System.Drawing.Point(1326, 20);
             this.zeinutanku_3.MoveNext = true;
             this.zeinutanku_3.Name = "zeinutanku_3";
-            this.zeinutanku_3.Size = new System.Drawing.Size(60, 19);
+            this.zeinutanku_3.Size = new System.Drawing.Size(30, 19);
             this.zeinutanku_3.TabIndex = 318;
             this.zeinutanku_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.zeinutanku_3.UseColorSizMode = false;
@@ -2621,10 +2626,10 @@
             this.zeinu_3.IsNumber = true;
             this.zeinu_3.IsShop = false;
             this.zeinu_3.Length = 32767;
-            this.zeinu_3.Location = new System.Drawing.Point(1608, 20);
+            this.zeinu_3.Location = new System.Drawing.Point(1296, 20);
             this.zeinu_3.MoveNext = true;
             this.zeinu_3.Name = "zeinu_3";
-            this.zeinu_3.Size = new System.Drawing.Size(60, 19);
+            this.zeinu_3.Size = new System.Drawing.Size(30, 19);
             this.zeinu_3.TabIndex = 317;
             this.zeinu_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.zeinu_3.UseColorSizMode = false;
@@ -2649,10 +2654,10 @@
             this.kobetsuhanbai_3.IsNumber = true;
             this.kobetsuhanbai_3.IsShop = false;
             this.kobetsuhanbai_3.Length = 32767;
-            this.kobetsuhanbai_3.Location = new System.Drawing.Point(1088, 39);
+            this.kobetsuhanbai_3.Location = new System.Drawing.Point(913, 39);
             this.kobetsuhanbai_3.MoveNext = true;
             this.kobetsuhanbai_3.Name = "kobetsuhanbai_3";
-            this.kobetsuhanbai_3.Size = new System.Drawing.Size(640, 19);
+            this.kobetsuhanbai_3.Size = new System.Drawing.Size(443, 19);
             this.kobetsuhanbai_3.TabIndex = 315;
             this.kobetsuhanbai_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.kobetsuhanbai_3.UseColorSizMode = false;
@@ -2677,10 +2682,10 @@
             this.shagaibikou_3.IsNumber = true;
             this.shagaibikou_3.IsShop = false;
             this.shagaibikou_3.Length = 32767;
-            this.shagaibikou_3.Location = new System.Drawing.Point(608, 39);
+            this.shagaibikou_3.Location = new System.Drawing.Point(470, 39);
             this.shagaibikou_3.MoveNext = true;
             this.shagaibikou_3.Name = "shagaibikou_3";
-            this.shagaibikou_3.Size = new System.Drawing.Size(480, 19);
+            this.shagaibikou_3.Size = new System.Drawing.Size(443, 19);
             this.shagaibikou_3.TabIndex = 314;
             this.shagaibikou_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shagaibikou_3.UseColorSizMode = false;
@@ -2708,7 +2713,7 @@
             this.shanaibikou_3.Location = new System.Drawing.Point(28, 39);
             this.shanaibikou_3.MoveNext = true;
             this.shanaibikou_3.Name = "shanaibikou_3";
-            this.shanaibikou_3.Size = new System.Drawing.Size(580, 19);
+            this.shanaibikou_3.Size = new System.Drawing.Size(442, 19);
             this.shanaibikou_3.TabIndex = 313;
             this.shanaibikou_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shanaibikou_3.UseColorSizMode = false;
@@ -2733,10 +2738,10 @@
             this.ararigaku_3.IsNumber = true;
             this.ararigaku_3.IsShop = false;
             this.ararigaku_3.Length = 32767;
-            this.ararigaku_3.Location = new System.Drawing.Point(1488, 20);
+            this.ararigaku_3.Location = new System.Drawing.Point(1206, 20);
             this.ararigaku_3.MoveNext = true;
             this.ararigaku_3.Name = "ararigaku_3";
-            this.ararigaku_3.Size = new System.Drawing.Size(120, 19);
+            this.ararigaku_3.Size = new System.Drawing.Size(90, 19);
             this.ararigaku_3.TabIndex = 311;
             this.ararigaku_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ararigaku_3.UseColorSizMode = false;
@@ -2761,10 +2766,10 @@
             this.zeikomijuchuugaku_3.IsNumber = true;
             this.zeikomijuchuugaku_3.IsShop = false;
             this.zeikomijuchuugaku_3.Length = 32767;
-            this.zeikomijuchuugaku_3.Location = new System.Drawing.Point(1368, 20);
+            this.zeikomijuchuugaku_3.Location = new System.Drawing.Point(1116, 20);
             this.zeikomijuchuugaku_3.MoveNext = true;
             this.zeikomijuchuugaku_3.Name = "zeikomijuchuugaku_3";
-            this.zeikomijuchuugaku_3.Size = new System.Drawing.Size(120, 19);
+            this.zeikomijuchuugaku_3.Size = new System.Drawing.Size(90, 19);
             this.zeikomijuchuugaku_3.TabIndex = 310;
             this.zeikomijuchuugaku_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.zeikomijuchuugaku_3.UseColorSizMode = false;
@@ -2789,10 +2794,10 @@
             this.zeinuJuchuugaka_3.IsNumber = true;
             this.zeinuJuchuugaka_3.IsShop = false;
             this.zeinuJuchuugaka_3.Length = 32767;
-            this.zeinuJuchuugaka_3.Location = new System.Drawing.Point(1248, 20);
+            this.zeinuJuchuugaka_3.Location = new System.Drawing.Point(1026, 20);
             this.zeinuJuchuugaka_3.MoveNext = true;
             this.zeinuJuchuugaka_3.Name = "zeinuJuchuugaka_3";
-            this.zeinuJuchuugaka_3.Size = new System.Drawing.Size(120, 19);
+            this.zeinuJuchuugaka_3.Size = new System.Drawing.Size(90, 19);
             this.zeinuJuchuugaka_3.TabIndex = 309;
             this.zeinuJuchuugaka_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.zeinuJuchuugaka_3.UseColorSizMode = false;
@@ -2817,11 +2822,11 @@
             this.hanbaitanka_3.IsNumber = true;
             this.hanbaitanka_3.IsShop = false;
             this.hanbaitanka_3.Length = 9;
-            this.hanbaitanka_3.Location = new System.Drawing.Point(1128, 20);
+            this.hanbaitanka_3.Location = new System.Drawing.Point(936, 20);
             this.hanbaitanka_3.MaxLength = 9;
             this.hanbaitanka_3.MoveNext = true;
             this.hanbaitanka_3.Name = "hanbaitanka_3";
-            this.hanbaitanka_3.Size = new System.Drawing.Size(120, 19);
+            this.hanbaitanka_3.Size = new System.Drawing.Size(90, 19);
             this.hanbaitanka_3.TabIndex = 308;
             this.hanbaitanka_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hanbaitanka_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -2833,9 +2838,9 @@
             this.teni_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.teni_3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.teni_3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.teni_3.Location = new System.Drawing.Point(1088, 20);
+            this.teni_3.Location = new System.Drawing.Point(906, 20);
             this.teni_3.Name = "teni_3";
-            this.teni_3.Size = new System.Drawing.Size(40, 19);
+            this.teni_3.Size = new System.Drawing.Size(30, 19);
             this.teni_3.TabIndex = 307;
             this.teni_3.Text = " ";
             this.teni_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2848,10 +2853,10 @@
             this.sku_3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.sku_3.Location = new System.Drawing.Point(166, 1);
             this.sku_3.Name = "sku_3";
-            this.sku_3.Size = new System.Drawing.Size(345, 19);
+            this.sku_3.Size = new System.Drawing.Size(250, 19);
             this.sku_3.TabIndex = 306;
             this.sku_3.Text = " ";
-            this.sku_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.sku_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // juchuusuu_3
             // 
@@ -2873,7 +2878,7 @@
             this.juchuusuu_3.IsNumber = true;
             this.juchuusuu_3.IsShop = false;
             this.juchuusuu_3.Length = 9;
-            this.juchuusuu_3.Location = new System.Drawing.Point(1008, 20);
+            this.juchuusuu_3.Location = new System.Drawing.Point(826, 20);
             this.juchuusuu_3.MaxLength = 9;
             this.juchuusuu_3.MoveNext = true;
             this.juchuusuu_3.Name = "juchuusuu_3";
@@ -2903,11 +2908,11 @@
             this.nyuukayotei_3.IsNumber = true;
             this.nyuukayotei_3.IsShop = false;
             this.nyuukayotei_3.Length = 10;
-            this.nyuukayotei_3.Location = new System.Drawing.Point(908, 20);
+            this.nyuukayotei_3.Location = new System.Drawing.Point(746, 20);
             this.nyuukayotei_3.MaxLength = 10;
             this.nyuukayotei_3.MoveNext = true;
             this.nyuukayotei_3.Name = "nyuukayotei_3";
-            this.nyuukayotei_3.Size = new System.Drawing.Size(100, 19);
+            this.nyuukayotei_3.Size = new System.Drawing.Size(80, 19);
             this.nyuukayotei_3.TabIndex = 296;
             this.nyuukayotei_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nyuukayotei_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -2933,11 +2938,11 @@
             this.hacchutanka_3.IsNumber = true;
             this.hacchutanka_3.IsShop = false;
             this.hacchutanka_3.Length = 9;
-            this.hacchutanka_3.Location = new System.Drawing.Point(808, 20);
+            this.hacchutanka_3.Location = new System.Drawing.Point(666, 20);
             this.hacchutanka_3.MaxLength = 9;
             this.hacchutanka_3.MoveNext = true;
             this.hacchutanka_3.Name = "hacchutanka_3";
-            this.hacchutanka_3.Size = new System.Drawing.Size(100, 19);
+            this.hacchutanka_3.Size = new System.Drawing.Size(80, 19);
             this.hacchutanka_3.TabIndex = 295;
             this.hacchutanka_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hacchutanka_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -2949,9 +2954,9 @@
             this.empty_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.empty_3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.empty_3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.empty_3.Location = new System.Drawing.Point(408, 20);
+            this.empty_3.Location = new System.Drawing.Point(358, 20);
             this.empty_3.Name = "empty_3";
-            this.empty_3.Size = new System.Drawing.Size(400, 19);
+            this.empty_3.Size = new System.Drawing.Size(308, 19);
             this.empty_3.TabIndex = 294;
             this.empty_3.Text = " ";
             this.empty_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2969,7 +2974,7 @@
             this.shuukasouko_3.MaxLength = 10;
             this.shuukasouko_3.MoveNext = true;
             this.shuukasouko_3.Name = "shuukasouko_3";
-            this.shuukasouko_3.Size = new System.Drawing.Size(200, 20);
+            this.shuukasouko_3.Size = new System.Drawing.Size(150, 20);
             this.shuukasouko_3.TabIndex = 293;
             // 
             // shuukayotei_3
@@ -3040,10 +3045,10 @@
             this.sizename_3.IsNumber = true;
             this.sizename_3.IsShop = false;
             this.sizename_3.Length = 32767;
-            this.sizename_3.Location = new System.Drawing.Point(1529, 1);
+            this.sizename_3.Location = new System.Drawing.Point(1226, 1);
             this.sizename_3.MoveNext = true;
             this.sizename_3.Name = "sizename_3";
-            this.sizename_3.Size = new System.Drawing.Size(200, 19);
+            this.sizename_3.Size = new System.Drawing.Size(130, 19);
             this.sizename_3.TabIndex = 289;
             this.sizename_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.sizename_3.UseColorSizMode = false;
@@ -3068,10 +3073,10 @@
             this.size_3.IsNumber = true;
             this.size_3.IsShop = false;
             this.size_3.Length = 32767;
-            this.size_3.Location = new System.Drawing.Point(1429, 1);
+            this.size_3.Location = new System.Drawing.Point(1146, 1);
             this.size_3.MoveNext = true;
             this.size_3.Name = "size_3";
-            this.size_3.Size = new System.Drawing.Size(100, 19);
+            this.size_3.Size = new System.Drawing.Size(80, 19);
             this.size_3.TabIndex = 288;
             this.size_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.size_3.UseColorSizMode = false;
@@ -3096,10 +3101,10 @@
             this.colorname_3.IsNumber = true;
             this.colorname_3.IsShop = false;
             this.colorname_3.Length = 32767;
-            this.colorname_3.Location = new System.Drawing.Point(1229, 1);
+            this.colorname_3.Location = new System.Drawing.Point(1016, 1);
             this.colorname_3.MoveNext = true;
             this.colorname_3.Name = "colorname_3";
-            this.colorname_3.Size = new System.Drawing.Size(200, 19);
+            this.colorname_3.Size = new System.Drawing.Size(130, 19);
             this.colorname_3.TabIndex = 287;
             this.colorname_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.colorname_3.UseColorSizMode = false;
@@ -3124,10 +3129,10 @@
             this.color_3.IsNumber = true;
             this.color_3.IsShop = false;
             this.color_3.Length = 32767;
-            this.color_3.Location = new System.Drawing.Point(1129, 1);
+            this.color_3.Location = new System.Drawing.Point(936, 1);
             this.color_3.MoveNext = true;
             this.color_3.Name = "color_3";
-            this.color_3.Size = new System.Drawing.Size(100, 19);
+            this.color_3.Size = new System.Drawing.Size(80, 19);
             this.color_3.TabIndex = 286;
             this.color_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.color_3.UseColorSizMode = false;
@@ -3152,11 +3157,11 @@
             this.shouhin_3.IsNumber = true;
             this.shouhin_3.IsShop = false;
             this.shouhin_3.Length = 80;
-            this.shouhin_3.Location = new System.Drawing.Point(509, 1);
+            this.shouhin_3.Location = new System.Drawing.Point(416, 1);
             this.shouhin_3.MaxLength = 80;
             this.shouhin_3.MoveNext = true;
             this.shouhin_3.Name = "shouhin_3";
-            this.shouhin_3.Size = new System.Drawing.Size(620, 19);
+            this.shouhin_3.Size = new System.Drawing.Size(520, 19);
             this.shouhin_3.TabIndex = 285;
             this.shouhin_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shouhin_3.UseColorSizMode = false;
@@ -3234,7 +3239,7 @@
             this.panel_2.Controls.Add(this.lbl_2);
             this.panel_2.Location = new System.Drawing.Point(0, 56);
             this.panel_2.Name = "panel_2";
-            this.panel_2.Size = new System.Drawing.Size(1730, 60);
+            this.panel_2.Size = new System.Drawing.Size(1360, 60);
             this.panel_2.TabIndex = 312;
             // 
             // choukusou_2
@@ -3266,10 +3271,10 @@
             this.zeinutanku_2.IsNumber = true;
             this.zeinutanku_2.IsShop = false;
             this.zeinutanku_2.Length = 32767;
-            this.zeinutanku_2.Location = new System.Drawing.Point(1668, 20);
+            this.zeinutanku_2.Location = new System.Drawing.Point(1326, 20);
             this.zeinutanku_2.MoveNext = true;
             this.zeinutanku_2.Name = "zeinutanku_2";
-            this.zeinutanku_2.Size = new System.Drawing.Size(60, 19);
+            this.zeinutanku_2.Size = new System.Drawing.Size(30, 19);
             this.zeinutanku_2.TabIndex = 318;
             this.zeinutanku_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.zeinutanku_2.UseColorSizMode = false;
@@ -3294,10 +3299,10 @@
             this.zeinu_2.IsNumber = true;
             this.zeinu_2.IsShop = false;
             this.zeinu_2.Length = 32767;
-            this.zeinu_2.Location = new System.Drawing.Point(1608, 20);
+            this.zeinu_2.Location = new System.Drawing.Point(1296, 20);
             this.zeinu_2.MoveNext = true;
             this.zeinu_2.Name = "zeinu_2";
-            this.zeinu_2.Size = new System.Drawing.Size(60, 19);
+            this.zeinu_2.Size = new System.Drawing.Size(30, 19);
             this.zeinu_2.TabIndex = 317;
             this.zeinu_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.zeinu_2.UseColorSizMode = false;
@@ -3322,10 +3327,10 @@
             this.kobetsuhanbai_2.IsNumber = true;
             this.kobetsuhanbai_2.IsShop = false;
             this.kobetsuhanbai_2.Length = 32767;
-            this.kobetsuhanbai_2.Location = new System.Drawing.Point(1088, 39);
+            this.kobetsuhanbai_2.Location = new System.Drawing.Point(913, 39);
             this.kobetsuhanbai_2.MoveNext = true;
             this.kobetsuhanbai_2.Name = "kobetsuhanbai_2";
-            this.kobetsuhanbai_2.Size = new System.Drawing.Size(640, 19);
+            this.kobetsuhanbai_2.Size = new System.Drawing.Size(443, 19);
             this.kobetsuhanbai_2.TabIndex = 315;
             this.kobetsuhanbai_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.kobetsuhanbai_2.UseColorSizMode = false;
@@ -3350,10 +3355,10 @@
             this.shagaibikou_2.IsNumber = true;
             this.shagaibikou_2.IsShop = false;
             this.shagaibikou_2.Length = 32767;
-            this.shagaibikou_2.Location = new System.Drawing.Point(608, 39);
+            this.shagaibikou_2.Location = new System.Drawing.Point(470, 39);
             this.shagaibikou_2.MoveNext = true;
             this.shagaibikou_2.Name = "shagaibikou_2";
-            this.shagaibikou_2.Size = new System.Drawing.Size(480, 19);
+            this.shagaibikou_2.Size = new System.Drawing.Size(443, 19);
             this.shagaibikou_2.TabIndex = 314;
             this.shagaibikou_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shagaibikou_2.UseColorSizMode = false;
@@ -3381,7 +3386,7 @@
             this.shanaibikou_2.Location = new System.Drawing.Point(28, 39);
             this.shanaibikou_2.MoveNext = true;
             this.shanaibikou_2.Name = "shanaibikou_2";
-            this.shanaibikou_2.Size = new System.Drawing.Size(580, 19);
+            this.shanaibikou_2.Size = new System.Drawing.Size(442, 19);
             this.shanaibikou_2.TabIndex = 313;
             this.shanaibikou_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shanaibikou_2.UseColorSizMode = false;
@@ -3406,10 +3411,10 @@
             this.ararigaku_2.IsNumber = true;
             this.ararigaku_2.IsShop = false;
             this.ararigaku_2.Length = 32767;
-            this.ararigaku_2.Location = new System.Drawing.Point(1488, 20);
+            this.ararigaku_2.Location = new System.Drawing.Point(1206, 20);
             this.ararigaku_2.MoveNext = true;
             this.ararigaku_2.Name = "ararigaku_2";
-            this.ararigaku_2.Size = new System.Drawing.Size(120, 19);
+            this.ararigaku_2.Size = new System.Drawing.Size(90, 19);
             this.ararigaku_2.TabIndex = 311;
             this.ararigaku_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ararigaku_2.UseColorSizMode = false;
@@ -3434,10 +3439,10 @@
             this.zeikomijuchuugaku_2.IsNumber = true;
             this.zeikomijuchuugaku_2.IsShop = false;
             this.zeikomijuchuugaku_2.Length = 32767;
-            this.zeikomijuchuugaku_2.Location = new System.Drawing.Point(1368, 20);
+            this.zeikomijuchuugaku_2.Location = new System.Drawing.Point(1116, 20);
             this.zeikomijuchuugaku_2.MoveNext = true;
             this.zeikomijuchuugaku_2.Name = "zeikomijuchuugaku_2";
-            this.zeikomijuchuugaku_2.Size = new System.Drawing.Size(120, 19);
+            this.zeikomijuchuugaku_2.Size = new System.Drawing.Size(90, 19);
             this.zeikomijuchuugaku_2.TabIndex = 310;
             this.zeikomijuchuugaku_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.zeikomijuchuugaku_2.UseColorSizMode = false;
@@ -3462,10 +3467,10 @@
             this.zeinuJuchuugaka_2.IsNumber = true;
             this.zeinuJuchuugaka_2.IsShop = false;
             this.zeinuJuchuugaka_2.Length = 32767;
-            this.zeinuJuchuugaka_2.Location = new System.Drawing.Point(1248, 20);
+            this.zeinuJuchuugaka_2.Location = new System.Drawing.Point(1026, 20);
             this.zeinuJuchuugaka_2.MoveNext = true;
             this.zeinuJuchuugaka_2.Name = "zeinuJuchuugaka_2";
-            this.zeinuJuchuugaka_2.Size = new System.Drawing.Size(120, 19);
+            this.zeinuJuchuugaka_2.Size = new System.Drawing.Size(90, 19);
             this.zeinuJuchuugaka_2.TabIndex = 309;
             this.zeinuJuchuugaka_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.zeinuJuchuugaka_2.UseColorSizMode = false;
@@ -3490,11 +3495,11 @@
             this.hanbaitanka_2.IsNumber = true;
             this.hanbaitanka_2.IsShop = false;
             this.hanbaitanka_2.Length = 9;
-            this.hanbaitanka_2.Location = new System.Drawing.Point(1128, 20);
+            this.hanbaitanka_2.Location = new System.Drawing.Point(936, 20);
             this.hanbaitanka_2.MaxLength = 9;
             this.hanbaitanka_2.MoveNext = true;
             this.hanbaitanka_2.Name = "hanbaitanka_2";
-            this.hanbaitanka_2.Size = new System.Drawing.Size(120, 19);
+            this.hanbaitanka_2.Size = new System.Drawing.Size(90, 19);
             this.hanbaitanka_2.TabIndex = 308;
             this.hanbaitanka_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hanbaitanka_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -3506,9 +3511,9 @@
             this.teni_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.teni_2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.teni_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.teni_2.Location = new System.Drawing.Point(1088, 20);
+            this.teni_2.Location = new System.Drawing.Point(906, 20);
             this.teni_2.Name = "teni_2";
-            this.teni_2.Size = new System.Drawing.Size(40, 19);
+            this.teni_2.Size = new System.Drawing.Size(30, 19);
             this.teni_2.TabIndex = 307;
             this.teni_2.Text = " ";
             this.teni_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3521,10 +3526,10 @@
             this.sku_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.sku_2.Location = new System.Drawing.Point(166, 1);
             this.sku_2.Name = "sku_2";
-            this.sku_2.Size = new System.Drawing.Size(345, 19);
+            this.sku_2.Size = new System.Drawing.Size(250, 19);
             this.sku_2.TabIndex = 306;
             this.sku_2.Text = " ";
-            this.sku_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.sku_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // juchuusuu_2
             // 
@@ -3546,7 +3551,7 @@
             this.juchuusuu_2.IsNumber = true;
             this.juchuusuu_2.IsShop = false;
             this.juchuusuu_2.Length = 9;
-            this.juchuusuu_2.Location = new System.Drawing.Point(1008, 20);
+            this.juchuusuu_2.Location = new System.Drawing.Point(826, 20);
             this.juchuusuu_2.MaxLength = 9;
             this.juchuusuu_2.MoveNext = true;
             this.juchuusuu_2.Name = "juchuusuu_2";
@@ -3576,11 +3581,11 @@
             this.nyuukayotei_2.IsNumber = true;
             this.nyuukayotei_2.IsShop = false;
             this.nyuukayotei_2.Length = 10;
-            this.nyuukayotei_2.Location = new System.Drawing.Point(908, 20);
+            this.nyuukayotei_2.Location = new System.Drawing.Point(746, 20);
             this.nyuukayotei_2.MaxLength = 10;
             this.nyuukayotei_2.MoveNext = true;
             this.nyuukayotei_2.Name = "nyuukayotei_2";
-            this.nyuukayotei_2.Size = new System.Drawing.Size(100, 19);
+            this.nyuukayotei_2.Size = new System.Drawing.Size(80, 19);
             this.nyuukayotei_2.TabIndex = 296;
             this.nyuukayotei_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nyuukayotei_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -3606,11 +3611,11 @@
             this.hacchutanka_2.IsNumber = true;
             this.hacchutanka_2.IsShop = false;
             this.hacchutanka_2.Length = 9;
-            this.hacchutanka_2.Location = new System.Drawing.Point(808, 20);
+            this.hacchutanka_2.Location = new System.Drawing.Point(666, 20);
             this.hacchutanka_2.MaxLength = 9;
             this.hacchutanka_2.MoveNext = true;
             this.hacchutanka_2.Name = "hacchutanka_2";
-            this.hacchutanka_2.Size = new System.Drawing.Size(100, 19);
+            this.hacchutanka_2.Size = new System.Drawing.Size(80, 19);
             this.hacchutanka_2.TabIndex = 295;
             this.hacchutanka_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hacchutanka_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -3622,9 +3627,9 @@
             this.empty_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.empty_2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.empty_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.empty_2.Location = new System.Drawing.Point(408, 20);
+            this.empty_2.Location = new System.Drawing.Point(358, 20);
             this.empty_2.Name = "empty_2";
-            this.empty_2.Size = new System.Drawing.Size(400, 19);
+            this.empty_2.Size = new System.Drawing.Size(308, 19);
             this.empty_2.TabIndex = 294;
             this.empty_2.Text = " ";
             this.empty_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3642,7 +3647,7 @@
             this.shuukasouko_2.MaxLength = 10;
             this.shuukasouko_2.MoveNext = true;
             this.shuukasouko_2.Name = "shuukasouko_2";
-            this.shuukasouko_2.Size = new System.Drawing.Size(200, 20);
+            this.shuukasouko_2.Size = new System.Drawing.Size(150, 20);
             this.shuukasouko_2.TabIndex = 293;
             // 
             // shuukayotei_2
@@ -3713,10 +3718,10 @@
             this.sizename_2.IsNumber = true;
             this.sizename_2.IsShop = false;
             this.sizename_2.Length = 32767;
-            this.sizename_2.Location = new System.Drawing.Point(1529, 1);
+            this.sizename_2.Location = new System.Drawing.Point(1226, 1);
             this.sizename_2.MoveNext = true;
             this.sizename_2.Name = "sizename_2";
-            this.sizename_2.Size = new System.Drawing.Size(200, 19);
+            this.sizename_2.Size = new System.Drawing.Size(130, 19);
             this.sizename_2.TabIndex = 289;
             this.sizename_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.sizename_2.UseColorSizMode = false;
@@ -3741,10 +3746,10 @@
             this.size_2.IsNumber = true;
             this.size_2.IsShop = false;
             this.size_2.Length = 32767;
-            this.size_2.Location = new System.Drawing.Point(1429, 1);
+            this.size_2.Location = new System.Drawing.Point(1146, 1);
             this.size_2.MoveNext = true;
             this.size_2.Name = "size_2";
-            this.size_2.Size = new System.Drawing.Size(100, 19);
+            this.size_2.Size = new System.Drawing.Size(80, 19);
             this.size_2.TabIndex = 288;
             this.size_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.size_2.UseColorSizMode = false;
@@ -3769,10 +3774,10 @@
             this.colorname_2.IsNumber = true;
             this.colorname_2.IsShop = false;
             this.colorname_2.Length = 32767;
-            this.colorname_2.Location = new System.Drawing.Point(1229, 1);
+            this.colorname_2.Location = new System.Drawing.Point(1016, 1);
             this.colorname_2.MoveNext = true;
             this.colorname_2.Name = "colorname_2";
-            this.colorname_2.Size = new System.Drawing.Size(200, 19);
+            this.colorname_2.Size = new System.Drawing.Size(130, 19);
             this.colorname_2.TabIndex = 287;
             this.colorname_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.colorname_2.UseColorSizMode = false;
@@ -3797,10 +3802,10 @@
             this.color_2.IsNumber = true;
             this.color_2.IsShop = false;
             this.color_2.Length = 32767;
-            this.color_2.Location = new System.Drawing.Point(1129, 1);
+            this.color_2.Location = new System.Drawing.Point(936, 1);
             this.color_2.MoveNext = true;
             this.color_2.Name = "color_2";
-            this.color_2.Size = new System.Drawing.Size(100, 19);
+            this.color_2.Size = new System.Drawing.Size(80, 19);
             this.color_2.TabIndex = 286;
             this.color_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.color_2.UseColorSizMode = false;
@@ -3825,11 +3830,11 @@
             this.shouhin_2.IsNumber = true;
             this.shouhin_2.IsShop = false;
             this.shouhin_2.Length = 80;
-            this.shouhin_2.Location = new System.Drawing.Point(509, 1);
+            this.shouhin_2.Location = new System.Drawing.Point(416, 1);
             this.shouhin_2.MaxLength = 80;
             this.shouhin_2.MoveNext = true;
             this.shouhin_2.Name = "shouhin_2";
-            this.shouhin_2.Size = new System.Drawing.Size(620, 19);
+            this.shouhin_2.Size = new System.Drawing.Size(520, 19);
             this.shouhin_2.TabIndex = 285;
             this.shouhin_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shouhin_2.UseColorSizMode = false;
@@ -3907,7 +3912,7 @@
             this.panel_1.Controls.Add(this.lbl_1);
             this.panel_1.Location = new System.Drawing.Point(0, -1);
             this.panel_1.Name = "panel_1";
-            this.panel_1.Size = new System.Drawing.Size(1730, 60);
+            this.panel_1.Size = new System.Drawing.Size(1360, 60);
             this.panel_1.TabIndex = 311;
             // 
             // choukusou_1
@@ -3939,11 +3944,12 @@
             this.zeinutanku_1.IsNumber = true;
             this.zeinutanku_1.IsShop = false;
             this.zeinutanku_1.Length = 32767;
-            this.zeinutanku_1.Location = new System.Drawing.Point(1668, 20);
+            this.zeinutanku_1.Location = new System.Drawing.Point(1326, 20);
             this.zeinutanku_1.MoveNext = true;
             this.zeinutanku_1.Name = "zeinutanku_1";
-            this.zeinutanku_1.Size = new System.Drawing.Size(60, 19);
+            this.zeinutanku_1.Size = new System.Drawing.Size(30, 19);
             this.zeinutanku_1.TabIndex = 316;
+            this.zeinutanku_1.Text = "99%";
             this.zeinutanku_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.zeinutanku_1.UseColorSizMode = false;
             // 
@@ -3967,10 +3973,10 @@
             this.kobetsuhanbai_1.IsNumber = true;
             this.kobetsuhanbai_1.IsShop = false;
             this.kobetsuhanbai_1.Length = 32767;
-            this.kobetsuhanbai_1.Location = new System.Drawing.Point(1088, 39);
+            this.kobetsuhanbai_1.Location = new System.Drawing.Point(913, 39);
             this.kobetsuhanbai_1.MoveNext = true;
             this.kobetsuhanbai_1.Name = "kobetsuhanbai_1";
-            this.kobetsuhanbai_1.Size = new System.Drawing.Size(640, 19);
+            this.kobetsuhanbai_1.Size = new System.Drawing.Size(443, 19);
             this.kobetsuhanbai_1.TabIndex = 315;
             this.kobetsuhanbai_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.kobetsuhanbai_1.UseColorSizMode = false;
@@ -3995,10 +4001,10 @@
             this.shagaibikou_1.IsNumber = true;
             this.shagaibikou_1.IsShop = false;
             this.shagaibikou_1.Length = 32767;
-            this.shagaibikou_1.Location = new System.Drawing.Point(608, 39);
+            this.shagaibikou_1.Location = new System.Drawing.Point(470, 39);
             this.shagaibikou_1.MoveNext = true;
             this.shagaibikou_1.Name = "shagaibikou_1";
-            this.shagaibikou_1.Size = new System.Drawing.Size(480, 19);
+            this.shagaibikou_1.Size = new System.Drawing.Size(443, 19);
             this.shagaibikou_1.TabIndex = 314;
             this.shagaibikou_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shagaibikou_1.UseColorSizMode = false;
@@ -4026,7 +4032,7 @@
             this.shanaibikou_1.Location = new System.Drawing.Point(28, 39);
             this.shanaibikou_1.MoveNext = true;
             this.shanaibikou_1.Name = "shanaibikou_1";
-            this.shanaibikou_1.Size = new System.Drawing.Size(580, 19);
+            this.shanaibikou_1.Size = new System.Drawing.Size(442, 19);
             this.shanaibikou_1.TabIndex = 313;
             this.shanaibikou_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shanaibikou_1.UseColorSizMode = false;
@@ -4051,10 +4057,10 @@
             this.zeinu_1.IsNumber = true;
             this.zeinu_1.IsShop = false;
             this.zeinu_1.Length = 32767;
-            this.zeinu_1.Location = new System.Drawing.Point(1608, 20);
+            this.zeinu_1.Location = new System.Drawing.Point(1296, 20);
             this.zeinu_1.MoveNext = true;
             this.zeinu_1.Name = "zeinu_1";
-            this.zeinu_1.Size = new System.Drawing.Size(60, 19);
+            this.zeinu_1.Size = new System.Drawing.Size(30, 19);
             this.zeinu_1.TabIndex = 312;
             this.zeinu_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.zeinu_1.UseColorSizMode = false;
@@ -4079,10 +4085,10 @@
             this.ararigaku_1.IsNumber = true;
             this.ararigaku_1.IsShop = false;
             this.ararigaku_1.Length = 32767;
-            this.ararigaku_1.Location = new System.Drawing.Point(1488, 20);
+            this.ararigaku_1.Location = new System.Drawing.Point(1206, 20);
             this.ararigaku_1.MoveNext = true;
             this.ararigaku_1.Name = "ararigaku_1";
-            this.ararigaku_1.Size = new System.Drawing.Size(120, 19);
+            this.ararigaku_1.Size = new System.Drawing.Size(90, 19);
             this.ararigaku_1.TabIndex = 311;
             this.ararigaku_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.ararigaku_1.UseColorSizMode = false;
@@ -4107,10 +4113,10 @@
             this.zeikomijuchuugaku_1.IsNumber = true;
             this.zeikomijuchuugaku_1.IsShop = false;
             this.zeikomijuchuugaku_1.Length = 32767;
-            this.zeikomijuchuugaku_1.Location = new System.Drawing.Point(1368, 20);
+            this.zeikomijuchuugaku_1.Location = new System.Drawing.Point(1116, 20);
             this.zeikomijuchuugaku_1.MoveNext = true;
             this.zeikomijuchuugaku_1.Name = "zeikomijuchuugaku_1";
-            this.zeikomijuchuugaku_1.Size = new System.Drawing.Size(120, 19);
+            this.zeikomijuchuugaku_1.Size = new System.Drawing.Size(90, 19);
             this.zeikomijuchuugaku_1.TabIndex = 310;
             this.zeikomijuchuugaku_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.zeikomijuchuugaku_1.UseColorSizMode = false;
@@ -4135,10 +4141,10 @@
             this.zeinuJuchuugaka_1.IsNumber = true;
             this.zeinuJuchuugaka_1.IsShop = false;
             this.zeinuJuchuugaka_1.Length = 32767;
-            this.zeinuJuchuugaka_1.Location = new System.Drawing.Point(1248, 20);
+            this.zeinuJuchuugaka_1.Location = new System.Drawing.Point(1026, 20);
             this.zeinuJuchuugaka_1.MoveNext = true;
             this.zeinuJuchuugaka_1.Name = "zeinuJuchuugaka_1";
-            this.zeinuJuchuugaka_1.Size = new System.Drawing.Size(120, 19);
+            this.zeinuJuchuugaka_1.Size = new System.Drawing.Size(90, 19);
             this.zeinuJuchuugaka_1.TabIndex = 309;
             this.zeinuJuchuugaka_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.zeinuJuchuugaka_1.UseColorSizMode = false;
@@ -4163,12 +4169,13 @@
             this.hanbaitanka_1.IsNumber = true;
             this.hanbaitanka_1.IsShop = false;
             this.hanbaitanka_1.Length = 9;
-            this.hanbaitanka_1.Location = new System.Drawing.Point(1128, 20);
+            this.hanbaitanka_1.Location = new System.Drawing.Point(936, 20);
             this.hanbaitanka_1.MaxLength = 9;
             this.hanbaitanka_1.MoveNext = true;
             this.hanbaitanka_1.Name = "hanbaitanka_1";
-            this.hanbaitanka_1.Size = new System.Drawing.Size(120, 19);
+            this.hanbaitanka_1.Size = new System.Drawing.Size(90, 19);
             this.hanbaitanka_1.TabIndex = 308;
+            this.hanbaitanka_1.Text = "-999,999,999";
             this.hanbaitanka_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hanbaitanka_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.hanbaitanka_1.UseColorSizMode = false;
@@ -4179,11 +4186,11 @@
             this.teni_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.teni_1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.teni_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.teni_1.Location = new System.Drawing.Point(1088, 20);
+            this.teni_1.Location = new System.Drawing.Point(908, 20);
             this.teni_1.Name = "teni_1";
-            this.teni_1.Size = new System.Drawing.Size(40, 19);
+            this.teni_1.Size = new System.Drawing.Size(30, 19);
             this.teni_1.TabIndex = 307;
-            this.teni_1.Text = " ";
+            this.teni_1.Text = " aaaa";
             this.teni_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // sku_1
@@ -4194,10 +4201,10 @@
             this.sku_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.sku_1.Location = new System.Drawing.Point(166, 1);
             this.sku_1.Name = "sku_1";
-            this.sku_1.Size = new System.Drawing.Size(345, 19);
+            this.sku_1.Size = new System.Drawing.Size(250, 19);
             this.sku_1.TabIndex = 306;
-            this.sku_1.Text = " ";
-            this.sku_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.sku_1.Text = "012345678901234567890123456789";
+            this.sku_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // juchuusuu_1
             // 
@@ -4219,12 +4226,13 @@
             this.juchuusuu_1.IsNumber = true;
             this.juchuusuu_1.IsShop = false;
             this.juchuusuu_1.Length = 9;
-            this.juchuusuu_1.Location = new System.Drawing.Point(1008, 20);
+            this.juchuusuu_1.Location = new System.Drawing.Point(828, 20);
             this.juchuusuu_1.MaxLength = 9;
             this.juchuusuu_1.MoveNext = true;
             this.juchuusuu_1.Name = "juchuusuu_1";
             this.juchuusuu_1.Size = new System.Drawing.Size(80, 19);
             this.juchuusuu_1.TabIndex = 297;
+            this.juchuusuu_1.Text = "-999,999,999";
             this.juchuusuu_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.juchuusuu_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.juchuusuu_1.UseColorSizMode = false;
@@ -4249,12 +4257,13 @@
             this.nyuukayotei_1.IsNumber = true;
             this.nyuukayotei_1.IsShop = false;
             this.nyuukayotei_1.Length = 10;
-            this.nyuukayotei_1.Location = new System.Drawing.Point(908, 20);
+            this.nyuukayotei_1.Location = new System.Drawing.Point(748, 20);
             this.nyuukayotei_1.MaxLength = 10;
             this.nyuukayotei_1.MoveNext = true;
             this.nyuukayotei_1.Name = "nyuukayotei_1";
-            this.nyuukayotei_1.Size = new System.Drawing.Size(100, 19);
+            this.nyuukayotei_1.Size = new System.Drawing.Size(80, 19);
             this.nyuukayotei_1.TabIndex = 296;
+            this.nyuukayotei_1.Text = "9999/99/99";
             this.nyuukayotei_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nyuukayotei_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.nyuukayotei_1.UseColorSizMode = false;
@@ -4279,12 +4288,13 @@
             this.hacchutanka_1.IsNumber = true;
             this.hacchutanka_1.IsShop = false;
             this.hacchutanka_1.Length = 9;
-            this.hacchutanka_1.Location = new System.Drawing.Point(808, 20);
+            this.hacchutanka_1.Location = new System.Drawing.Point(668, 20);
             this.hacchutanka_1.MaxLength = 9;
             this.hacchutanka_1.MoveNext = true;
             this.hacchutanka_1.Name = "hacchutanka_1";
-            this.hacchutanka_1.Size = new System.Drawing.Size(100, 19);
+            this.hacchutanka_1.Size = new System.Drawing.Size(80, 19);
             this.hacchutanka_1.TabIndex = 295;
+            this.hacchutanka_1.Text = "-999,999,999";
             this.hacchutanka_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hacchutanka_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.hacchutanka_1.UseColorSizMode = false;
@@ -4295,9 +4305,9 @@
             this.empty_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.empty_1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.empty_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.empty_1.Location = new System.Drawing.Point(408, 20);
+            this.empty_1.Location = new System.Drawing.Point(358, 20);
             this.empty_1.Name = "empty_1";
-            this.empty_1.Size = new System.Drawing.Size(400, 19);
+            this.empty_1.Size = new System.Drawing.Size(310, 19);
             this.empty_1.TabIndex = 294;
             this.empty_1.Text = " ";
             this.empty_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4315,7 +4325,7 @@
             this.shuukasouko_1.MaxLength = 10;
             this.shuukasouko_1.MoveNext = true;
             this.shuukasouko_1.Name = "shuukasouko_1";
-            this.shuukasouko_1.Size = new System.Drawing.Size(200, 20);
+            this.shuukasouko_1.Size = new System.Drawing.Size(150, 20);
             this.shuukasouko_1.TabIndex = 293;
             // 
             // shuukayotei_1
@@ -4386,10 +4396,10 @@
             this.sizename_1.IsNumber = true;
             this.sizename_1.IsShop = false;
             this.sizename_1.Length = 32767;
-            this.sizename_1.Location = new System.Drawing.Point(1529, 1);
+            this.sizename_1.Location = new System.Drawing.Point(1226, 1);
             this.sizename_1.MoveNext = true;
             this.sizename_1.Name = "sizename_1";
-            this.sizename_1.Size = new System.Drawing.Size(200, 19);
+            this.sizename_1.Size = new System.Drawing.Size(130, 19);
             this.sizename_1.TabIndex = 289;
             this.sizename_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.sizename_1.UseColorSizMode = false;
@@ -4414,11 +4424,12 @@
             this.size_1.IsNumber = true;
             this.size_1.IsShop = false;
             this.size_1.Length = 32767;
-            this.size_1.Location = new System.Drawing.Point(1429, 1);
+            this.size_1.Location = new System.Drawing.Point(1146, 1);
             this.size_1.MoveNext = true;
             this.size_1.Name = "size_1";
-            this.size_1.Size = new System.Drawing.Size(100, 19);
+            this.size_1.Size = new System.Drawing.Size(80, 19);
             this.size_1.TabIndex = 288;
+            this.size_1.Text = "-999,999,999";
             this.size_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.size_1.UseColorSizMode = false;
             // 
@@ -4442,11 +4453,12 @@
             this.colorname_1.IsNumber = true;
             this.colorname_1.IsShop = false;
             this.colorname_1.Length = 32767;
-            this.colorname_1.Location = new System.Drawing.Point(1229, 1);
+            this.colorname_1.Location = new System.Drawing.Point(1016, 1);
             this.colorname_1.MoveNext = true;
             this.colorname_1.Name = "colorname_1";
-            this.colorname_1.Size = new System.Drawing.Size(200, 19);
+            this.colorname_1.Size = new System.Drawing.Size(130, 19);
             this.colorname_1.TabIndex = 287;
+            this.colorname_1.Text = "01234567890123456789";
             this.colorname_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.colorname_1.UseColorSizMode = false;
             // 
@@ -4470,11 +4482,12 @@
             this.color_1.IsNumber = true;
             this.color_1.IsShop = false;
             this.color_1.Length = 32767;
-            this.color_1.Location = new System.Drawing.Point(1129, 1);
+            this.color_1.Location = new System.Drawing.Point(936, 1);
             this.color_1.MoveNext = true;
             this.color_1.Name = "color_1";
-            this.color_1.Size = new System.Drawing.Size(100, 19);
+            this.color_1.Size = new System.Drawing.Size(80, 19);
             this.color_1.TabIndex = 286;
+            this.color_1.Text = "-999,999,999";
             this.color_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.color_1.UseColorSizMode = false;
             // 
@@ -4498,12 +4511,13 @@
             this.shouhin_1.IsNumber = true;
             this.shouhin_1.IsShop = false;
             this.shouhin_1.Length = 80;
-            this.shouhin_1.Location = new System.Drawing.Point(509, 1);
+            this.shouhin_1.Location = new System.Drawing.Point(416, 1);
             this.shouhin_1.MaxLength = 80;
             this.shouhin_1.MoveNext = true;
             this.shouhin_1.Name = "shouhin_1";
-            this.shouhin_1.Size = new System.Drawing.Size(620, 19);
+            this.shouhin_1.Size = new System.Drawing.Size(520, 19);
             this.shouhin_1.TabIndex = 285;
+            this.shouhin_1.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
             this.shouhin_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shouhin_1.UseColorSizMode = false;
             // 
@@ -4556,9 +4570,9 @@
             this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label24.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label24.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label24.Location = new System.Drawing.Point(1090, 61);
+            this.label24.Location = new System.Drawing.Point(915, 61);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(640, 20);
+            this.label24.Size = new System.Drawing.Size(443, 20);
             this.label24.TabIndex = 304;
             this.label24.Text = "個別販売先";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4569,9 +4583,9 @@
             this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label23.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label23.Location = new System.Drawing.Point(610, 61);
+            this.label23.Location = new System.Drawing.Point(472, 61);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(480, 20);
+            this.label23.Size = new System.Drawing.Size(443, 20);
             this.label23.TabIndex = 303;
             this.label23.Text = "社外備考・コメント";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4597,7 +4611,7 @@
             this.label21.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label21.Location = new System.Drawing.Point(30, 61);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(580, 20);
+            this.label21.Size = new System.Drawing.Size(442, 20);
             this.label21.TabIndex = 302;
             this.label21.Text = "社内備考・コメント";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4608,9 +4622,9 @@
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label22.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label22.Location = new System.Drawing.Point(1610, 41);
+            this.label22.Location = new System.Drawing.Point(1298, 41);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(120, 20);
+            this.label22.Size = new System.Drawing.Size(60, 20);
             this.label22.TabIndex = 301;
             this.label22.Text = "税情報";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4621,9 +4635,9 @@
             this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label19.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label19.Location = new System.Drawing.Point(1490, 41);
+            this.label19.Location = new System.Drawing.Point(1208, 41);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(120, 20);
+            this.label19.Size = new System.Drawing.Size(90, 20);
             this.label19.TabIndex = 299;
             this.label19.Text = "粗利額";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -4634,9 +4648,9 @@
             this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label20.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label20.Location = new System.Drawing.Point(1370, 41);
+            this.label20.Location = new System.Drawing.Point(1118, 41);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(120, 20);
+            this.label20.Size = new System.Drawing.Size(90, 20);
             this.label20.TabIndex = 298;
             this.label20.Text = "税込受注額";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4647,9 +4661,9 @@
             this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label18.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label18.Location = new System.Drawing.Point(1250, 41);
+            this.label18.Location = new System.Drawing.Point(1028, 41);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(120, 20);
+            this.label18.Size = new System.Drawing.Size(90, 20);
             this.label18.TabIndex = 297;
             this.label18.Text = "税抜受注額";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4660,9 +4674,9 @@
             this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label17.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label17.Location = new System.Drawing.Point(1130, 41);
+            this.label17.Location = new System.Drawing.Point(938, 41);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(120, 20);
+            this.label17.Size = new System.Drawing.Size(90, 20);
             this.label17.TabIndex = 296;
             this.label17.Text = "販売単価";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -4673,9 +4687,9 @@
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label16.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label16.Location = new System.Drawing.Point(1090, 41);
+            this.label16.Location = new System.Drawing.Point(908, 41);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(40, 20);
+            this.label16.Size = new System.Drawing.Size(30, 20);
             this.label16.TabIndex = 295;
             this.label16.Text = "単位";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4686,7 +4700,7 @@
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label15.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label15.Location = new System.Drawing.Point(1010, 41);
+            this.label15.Location = new System.Drawing.Point(828, 41);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(80, 20);
             this.label15.TabIndex = 294;
@@ -4699,9 +4713,9 @@
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label14.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label14.Location = new System.Drawing.Point(910, 41);
+            this.label14.Location = new System.Drawing.Point(748, 41);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(100, 20);
+            this.label14.Size = new System.Drawing.Size(80, 20);
             this.label14.TabIndex = 293;
             this.label14.Text = "入荷予定日";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4712,9 +4726,9 @@
             this.hacchutanka_1Header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hacchutanka_1Header.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.hacchutanka_1Header.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.hacchutanka_1Header.Location = new System.Drawing.Point(810, 41);
+            this.hacchutanka_1Header.Location = new System.Drawing.Point(668, 41);
             this.hacchutanka_1Header.Name = "hacchutanka_1Header";
-            this.hacchutanka_1Header.Size = new System.Drawing.Size(100, 20);
+            this.hacchutanka_1Header.Size = new System.Drawing.Size(80, 20);
             this.hacchutanka_1Header.TabIndex = 292;
             this.hacchutanka_1Header.Text = "発注単価";
             this.hacchutanka_1Header.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -4725,9 +4739,9 @@
             this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label12.Location = new System.Drawing.Point(410, 41);
+            this.label12.Location = new System.Drawing.Point(360, 41);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(400, 20);
+            this.label12.Size = new System.Drawing.Size(308, 20);
             this.label12.TabIndex = 291;
             this.label12.Text = " ";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4740,7 +4754,7 @@
             this.label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label11.Location = new System.Drawing.Point(210, 41);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(200, 20);
+            this.label11.Size = new System.Drawing.Size(150, 20);
             this.label11.TabIndex = 290;
             this.label11.Text = "出荷倉庫";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4790,9 +4804,9 @@
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.Location = new System.Drawing.Point(1530, 21);
+            this.label6.Location = new System.Drawing.Point(1227, 21);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(200, 20);
+            this.label6.Size = new System.Drawing.Size(131, 20);
             this.label6.TabIndex = 286;
             this.label6.Text = "サイズ名";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4803,9 +4817,9 @@
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label7.Location = new System.Drawing.Point(1430, 21);
+            this.label7.Location = new System.Drawing.Point(1147, 21);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 20);
+            this.label7.Size = new System.Drawing.Size(80, 20);
             this.label7.TabIndex = 285;
             this.label7.Text = "サイズNO";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4816,9 +4830,9 @@
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(1230, 21);
+            this.label5.Location = new System.Drawing.Point(1017, 21);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(200, 20);
+            this.label5.Size = new System.Drawing.Size(130, 20);
             this.label5.TabIndex = 284;
             this.label5.Text = "カラー名";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4829,9 +4843,9 @@
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(1130, 21);
+            this.label4.Location = new System.Drawing.Point(937, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 20);
+            this.label4.Size = new System.Drawing.Size(80, 20);
             this.label4.TabIndex = 283;
             this.label4.Text = "カラーNO";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4844,7 +4858,7 @@
             this.label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label3.Location = new System.Drawing.Point(30, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1100, 20);
+            this.label3.Size = new System.Drawing.Size(908, 20);
             this.label3.TabIndex = 282;
             this.label3.Text = "商品名";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -5061,7 +5075,7 @@
             this.ckM_Label13.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label13.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label13.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label13.Location = new System.Drawing.Point(14, 71);
+            this.ckM_Label13.Location = new System.Drawing.Point(75, 68);
             this.ckM_Label13.Name = "ckM_Label13";
             this.ckM_Label13.Size = new System.Drawing.Size(96, 12);
             this.ckM_Label13.TabIndex = 107;
@@ -5084,7 +5098,7 @@
             this.sc_Tenji.IsCopy = false;
             this.sc_Tenji.LabelText = "";
             this.sc_Tenji.LabelVisible = false;
-            this.sc_Tenji.Location = new System.Drawing.Point(113, 60);
+            this.sc_Tenji.Location = new System.Drawing.Point(172, 60);
             this.sc_Tenji.Margin = new System.Windows.Forms.Padding(0);
             this.sc_Tenji.Name = "sc_Tenji";
             this.sc_Tenji.NameWidth = 320;
@@ -5099,6 +5113,40 @@
             this.sc_Tenji.Value2 = null;
             this.sc_Tenji.Value3 = null;
             this.sc_Tenji.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TenzikaiJuchuuTourou_KeyDown);
+            // 
+            // ckM_Label14
+            // 
+            this.ckM_Label14.AutoSize = true;
+            this.ckM_Label14.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label14.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label14.DefaultlabelSize = true;
+            this.ckM_Label14.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label14.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label14.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label14.Location = new System.Drawing.Point(1258, 33);
+            this.ckM_Label14.Name = "ckM_Label14";
+            this.ckM_Label14.Size = new System.Drawing.Size(57, 12);
+            this.ckM_Label14.TabIndex = 138;
+            this.ckM_Label14.Text = "電話番号";
+            this.ckM_Label14.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckM_Label15
+            // 
+            this.ckM_Label15.AutoSize = true;
+            this.ckM_Label15.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label15.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label15.DefaultlabelSize = true;
+            this.ckM_Label15.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label15.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label15.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label15.Location = new System.Drawing.Point(1260, 85);
+            this.ckM_Label15.Name = "ckM_Label15";
+            this.ckM_Label15.Size = new System.Drawing.Size(57, 12);
+            this.ckM_Label15.TabIndex = 139;
+            this.ckM_Label15.Text = "電話番号";
+            this.ckM_Label15.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // TenzikaiJuchuuTourou
             // 
@@ -5410,6 +5458,8 @@
         private CKM_Controls.CKM_Label ckM_Label12;
         private CKM_Controls.CKM_Label ckM_Label13;
         private Search.CKM_SearchControl sc_Tenji;
+        private CKM_Controls.CKM_Label ckM_Label15;
+        private CKM_Controls.CKM_Label ckM_Label14;
         //private Search.CKM_SearchControl sc_Tenji;
         //private Search.CKM_SearchControl sc_Tenji;
     }
