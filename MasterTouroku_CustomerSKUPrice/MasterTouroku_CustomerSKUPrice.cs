@@ -205,13 +205,16 @@ namespace MasterTouroku_CustomerSKUPrice
                     //ScStaff.LabelText = InOperatorName;
                     //CboStoreCD.SelectedValue = StoreCD;
                     //SetInitStoreInfo(StoreCD);
-
+                    btnImport.Enabled = true;
+                    btnDisplay.Enabled = false;
                     detailControls[0].Focus();
                     break;
 
                 case EOperationMode.UPDATE:
                 case EOperationMode.DELETE:
                 case EOperationMode.SHOW:
+                    btnImport.Enabled = false;
+                    btnDisplay.Enabled = true;
                     detailControls[0].Focus();
                     break;
 
