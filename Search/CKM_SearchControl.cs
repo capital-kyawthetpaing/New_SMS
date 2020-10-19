@@ -708,6 +708,7 @@ namespace Search
 
                 case SearchType.展示会商品:
                     TxtCode.MaxLength = 800;
+                    TxtCode.Ctrl_Byte = CKM_TextBox.Bytes.半全角;
                     TxtCode.Width = 500;
                     lblName.Width = 180;
 
