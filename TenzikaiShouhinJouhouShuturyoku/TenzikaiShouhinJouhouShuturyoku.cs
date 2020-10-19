@@ -79,7 +79,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
             {
                 if (string.Compare(scBrandCDFrom.TxtCode.Text, scBrandCDTo.TxtCode.Text) == 1)
                 {
-                    bbl.ShowMessage("E104");
+                    bbl.ShowMessage("E106");
                     scBrandCDTo.Focus();
                 }
             }
@@ -87,7 +87,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
             {
                 if (string.Compare(scSegmentCDFrom.TxtCode.Text, scSegmentCDTo.TxtCode.Text) == 1)
                 {
-                    bbl.ShowMessage("E104");
+                    bbl.ShowMessage("E106");
                     scSegmentCDTo.Focus();
                 }
             }
