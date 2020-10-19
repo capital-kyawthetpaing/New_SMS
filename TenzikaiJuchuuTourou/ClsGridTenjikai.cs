@@ -93,7 +93,7 @@ namespace TenzikaiJuchuuTourou
         }
         internal ST_DArray_Grid[] g_DArray = null;
         internal const int gc_MaxCL = (int)ColNO.COUNT;
-        internal const int gc_P_GYO = 5;
+        internal const int gc_P_GYO = 8;
         internal const int gMxGyo = 999;
         internal short g_VSB_Flg;
         internal short g_InMoveFocus_Flg;
