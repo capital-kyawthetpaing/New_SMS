@@ -89,7 +89,7 @@ namespace Search
                 }
                 else
                 {
-                    bbl.ShowMessage("E128");
+                    bbl.ShowMessage("S013");
                     ScSupplier.SetFocus(1);
                 }
                 
