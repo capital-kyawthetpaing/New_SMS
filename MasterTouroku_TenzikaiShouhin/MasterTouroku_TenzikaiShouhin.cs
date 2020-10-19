@@ -115,7 +115,6 @@ namespace MasterTouroku_TenzikaiShouhin
                 sctl.ValueMember = "上旬";
                 sctl.ValueMember = "中旬";
                 sctl.ValueMember = "下旬";
-              //  sctl.Bind(bbl.GetDate());
             }
         }
         private void MasterTouroku_TenzikaiShouhin_KeyUp(object sender, KeyEventArgs e)
@@ -282,7 +281,7 @@ namespace MasterTouroku_TenzikaiShouhin
                 c.KeyDown += C_KeyDown;
                 c.Enter += C_Enter;
                 mGrid.S_DispToArray(Vsb_Mei_0.Value);
-                if (c is CKM_ComboBox cb && cb.Name == "cbo_Shuuka")
+                if (c is CKM_ComboBox cb && cb.Name == "")
                 {
                     // cb.SelectedIndexChanged += ShuukaSouko_SelectedIndexChanged;
                 }
