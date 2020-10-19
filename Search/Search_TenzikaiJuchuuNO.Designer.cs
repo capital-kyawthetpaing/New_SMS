@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Search_TenzikaiJuchuuNO));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ScJanCD = new Search.CKM_SearchControl();
             this.txtCustomerName = new CKM_Controls.CKM_TextBox();
@@ -101,7 +102,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 48);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(974, 741);
-            this.panel1.TabIndex = 97;
+            this.panel1.TabIndex = 0;
             // 
             // ScJanCD
             // 
@@ -125,7 +126,7 @@
             this.ScJanCD.SearchEnable = true;
             this.ScJanCD.Size = new System.Drawing.Size(633, 28);
             this.ScJanCD.Stype = Search.CKM_SearchControl.SearchType.JANMulti;
-            this.ScJanCD.TabIndex = 11;
+            this.ScJanCD.TabIndex = 10;
             this.ScJanCD.test = null;
             this.ScJanCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScJanCD.UseChangeDate = false;
@@ -169,18 +170,18 @@
             this.dgvTenzikai.AllowUserToAddRows = false;
             this.dgvTenzikai.AllowUserToDeleteRows = false;
             this.dgvTenzikai.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvTenzikai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvTenzikai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTenzikai.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvTenzikai.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvTenzikai.CheckCol")));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTenzikai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTenzikai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTenzikai.ColumnHeadersHeight = 25;
             this.dgvTenzikai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colOrderNum,
@@ -189,6 +190,14 @@
             this.colYear,
             this.colSeason,
             this.colClient});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTenzikai.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTenzikai.EnableHeadersVisualStyles = false;
             this.dgvTenzikai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvTenzikai.Location = new System.Drawing.Point(18, 279);
@@ -196,7 +205,7 @@
             this.dgvTenzikai.RowHeight_ = 20;
             this.dgvTenzikai.RowTemplate.Height = 20;
             this.dgvTenzikai.Size = new System.Drawing.Size(890, 430);
-            this.dgvTenzikai.TabIndex = 120;
+            this.dgvTenzikai.TabIndex = 12;
             this.dgvTenzikai.UseRowNo = true;
             this.dgvTenzikai.UseSetting = true;
             // 
@@ -255,7 +264,7 @@
             this.btnDisplay.Margin = new System.Windows.Forms.Padding(1);
             this.btnDisplay.Name = "btnDisplay";
             this.btnDisplay.Size = new System.Drawing.Size(115, 28);
-            this.btnDisplay.TabIndex = 12;
+            this.btnDisplay.TabIndex = 11;
             this.btnDisplay.Text = "表示(F11)";
             this.btnDisplay.UseVisualStyleBackColor = false;
             // 
@@ -298,7 +307,7 @@
             this.ScSKUCD.SearchEnable = true;
             this.ScSKUCD.Size = new System.Drawing.Size(633, 27);
             this.ScSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUMulti;
-            this.ScSKUCD.TabIndex = 10;
+            this.ScSKUCD.TabIndex = 9;
             this.ScSKUCD.test = null;
             this.ScSKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScSKUCD.UseChangeDate = false;
@@ -345,7 +354,7 @@
             this.ScItem.SearchEnable = true;
             this.ScItem.Size = new System.Drawing.Size(633, 27);
             this.ScItem.Stype = Search.CKM_SearchControl.SearchType.ITEMMulti;
-            this.ScItem.TabIndex = 9;
+            this.ScItem.TabIndex = 8;
             this.ScItem.test = null;
             this.ScItem.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScItem.UseChangeDate = false;
@@ -413,7 +422,7 @@
             this.txtKanaName.MoveNext = true;
             this.txtKanaName.Name = "txtKanaName";
             this.txtKanaName.Size = new System.Drawing.Size(450, 19);
-            this.txtKanaName.TabIndex = 8;
+            this.txtKanaName.TabIndex = 7;
             this.txtKanaName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtKanaName.UseColorSizMode = false;
             // 
@@ -439,7 +448,7 @@
             this.ScCustomer.SearchEnable = true;
             this.ScCustomer.Size = new System.Drawing.Size(133, 27);
             this.ScCustomer.Stype = Search.CKM_SearchControl.SearchType.得意先;
-            this.ScCustomer.TabIndex = 7;
+            this.ScCustomer.TabIndex = 6;
             this.ScCustomer.test = null;
             this.ScCustomer.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCustomer.UseChangeDate = false;
@@ -487,7 +496,7 @@
             this.scStaff.SearchEnable = true;
             this.scStaff.Size = new System.Drawing.Size(354, 27);
             this.scStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
-            this.scStaff.TabIndex = 6;
+            this.scStaff.TabIndex = 5;
             this.scStaff.test = null;
             this.scStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scStaff.UseChangeDate = false;
@@ -544,7 +553,7 @@
             this.cboSeason.MoveNext = true;
             this.cboSeason.Name = "cboSeason";
             this.cboSeason.Size = new System.Drawing.Size(121, 20);
-            this.cboSeason.TabIndex = 5;
+            this.cboSeason.TabIndex = 4;
             this.cboSeason.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboSeason_KeyDown);
             // 
             // ckM_Label3
@@ -578,7 +587,7 @@
             this.cboYear.MoveNext = true;
             this.cboYear.Name = "cboYear";
             this.cboYear.Size = new System.Drawing.Size(121, 20);
-            this.cboYear.TabIndex = 4;
+            this.cboYear.TabIndex = 3;
             this.cboYear.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboYear_KeyDown);
             // 
             // ScSupplier
@@ -603,7 +612,7 @@
             this.ScSupplier.SearchEnable = true;
             this.ScSupplier.Size = new System.Drawing.Size(444, 27);
             this.ScSupplier.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.ScSupplier.TabIndex = 3;
+            this.ScSupplier.TabIndex = 2;
             this.ScSupplier.test = null;
             this.ScSupplier.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScSupplier.UseChangeDate = false;
@@ -654,7 +663,7 @@
             this.txtOrderDateTo.MoveNext = true;
             this.txtOrderDateTo.Name = "txtOrderDateTo";
             this.txtOrderDateTo.Size = new System.Drawing.Size(100, 19);
-            this.txtOrderDateTo.TabIndex = 2;
+            this.txtOrderDateTo.TabIndex = 1;
             this.txtOrderDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtOrderDateTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtOrderDateTo.UseColorSizMode = false;
@@ -702,7 +711,7 @@
             this.txtOrderDateFrom.MoveNext = true;
             this.txtOrderDateFrom.Name = "txtOrderDateFrom";
             this.txtOrderDateFrom.Size = new System.Drawing.Size(100, 19);
-            this.txtOrderDateFrom.TabIndex = 1;
+            this.txtOrderDateFrom.TabIndex = 0;
             this.txtOrderDateFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtOrderDateFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtOrderDateFrom.UseColorSizMode = false;
