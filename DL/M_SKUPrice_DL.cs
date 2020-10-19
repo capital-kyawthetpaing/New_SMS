@@ -68,7 +68,7 @@ namespace DL
                 {"@Operator",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Operator} },
                 {"@Program",new ValuePair{value1=SqlDbType.VarChar,value2=mse.ProgramID} },
                 {"@PC",new ValuePair{value1=SqlDbType.VarChar,value2=mse.PC} },
-                {"@OperateMode",new ValuePair{value1=SqlDbType.VarChar,value2=mse.PC} },
+                {"@OperateMode",new ValuePair{value1=SqlDbType.VarChar,value2=mse.ProcessMode} },
                 {"@KeyItem",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Key} },
                 {"@Mode",new ValuePair{value1=SqlDbType.Int,value2=mode.ToString()} }
             };

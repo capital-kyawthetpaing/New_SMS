@@ -1830,15 +1830,15 @@ namespace Search
                 case SearchType.展示会商品:
                     using (Search_TenzikaiShouhin frmTenzikaishouhin = new Search_TenzikaiShouhin())
                     {
-                        //frmTenzikaishouhin.parChangeDate = changedate;
+                        frmTenzikaishouhin.parChangeDate = changedate;
 
-                        if (UseChangeDate == true)
-                            frmTenzikaishouhin.parChangeDate = changedate;
+                        //if (UseChangeDate == true)
+                        //    frmTenzikaishouhin.parChangeDate = changedate;
                         frmTenzikaishouhin.ShowDialog();
                         if (!frmTenzikaishouhin.flgCancel)
                         {
                              //txtCode.Text = frmTenzikaishouhin.parSkuCD;
-                            txtCode.Text = frmTenzikaishouhin.ProductName;
+                            txtCode.Text = frmTenzikaishouhin.parSKUName;
                            // lblName.Text = frmTenzikaishouhin.parSKUName;
                             CheckBasedFormPanel();//PTK added
                         }

@@ -1066,7 +1066,7 @@
             this.SKUCDTo.Value1 = null;
             this.SKUCDTo.Value2 = null;
             this.SKUCDTo.Value3 = null;
-            this.SKUCDTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SKUCDTo_KeyDown_1);
+            this.SKUCDTo.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SKUCDTo_CodeKeyDownEvent);
             // 
             // btnDisplay
             // 
