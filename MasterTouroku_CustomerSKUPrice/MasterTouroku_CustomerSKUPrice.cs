@@ -40,6 +40,7 @@ namespace MasterTouroku_CustomerSKUPrice
         public string[] DuplicateCheckCol = null;
 
         private DataTable dtExcel;
+        private DataTable dtDelete;
 
         private enum EIndex : int
         {
@@ -89,9 +90,11 @@ namespace MasterTouroku_CustomerSKUPrice
         private void FrmMasterTouroku_CustomerSKUPrice_Load(object sender, EventArgs e)
         {
             InProgramID = ProID;
-            SetFunctionLabel(EProMode.MENTE);
+            SetFunctionLabel(EProMode.INPUT);
 
             InitialControlArray();
+
+            Btn_F8.Text = "";
 
             S_SetInit_Grid();
 
@@ -205,13 +208,16 @@ namespace MasterTouroku_CustomerSKUPrice
                     //ScStaff.LabelText = InOperatorName;
                     //CboStoreCD.SelectedValue = StoreCD;
                     //SetInitStoreInfo(StoreCD);
-
+                    btnImport.Enabled = true;
+                    btnDisplay.Enabled = false;
                     detailControls[0].Focus();
                     break;
 
                 case EOperationMode.UPDATE:
                 case EOperationMode.DELETE:
                 case EOperationMode.SHOW:
+                    btnImport.Enabled = false;
+                    btnDisplay.Enabled = true;
                     detailControls[0].Focus();
                     break;
 
@@ -730,20 +736,22 @@ namespace MasterTouroku_CustomerSKUPrice
             try
             {
                 previousCtrl = this.ActiveControl;
-                //   PreViousColor = ActiveControl.BackColor;
-                int w_Row;
-                CKM_Controls.CKM_TextBox w_ActCtl;
 
-                w_ActCtl = (CKM_Controls.CKM_TextBox)sender;
+                int w_Row;
+                Control w_ActCtl;
+
+                w_ActCtl = (Control)sender;
                 w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
 
-                // 背景色m
-                // w_ActCtl.BackColor = ClsGridBase.BKColor;  ---PTK
+                // 背景色
+                w_ActCtl.BackColor = ClsGridBase.BKColor;
 
-                Grid_Gotfocus((int)ClsGridCustomerSKUPric.ColNO.TekiyouKaisiDate, w_Row, System.Convert.ToInt32(w_ActCtl.Tag));
+                if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int w_Col, out int w_CtlRow) == false)
+                {
+                    return;
+                }
 
-
-                //w_ActCtl.Name
+                Grid_Gotfocus(w_Col, w_Row, System.Convert.ToInt32(w_ActCtl.Tag));
             }
             catch (Exception ex)
             {
@@ -763,7 +771,7 @@ namespace MasterTouroku_CustomerSKUPrice
             //mGrid.g_MK_Ctrl(ClsGridHanbaiTanka.ColNO.DELCK, pCtlRow).GVal(W_Del);
 
             // ﾌｧﾝｸｼｮﾝﾎﾞﾀﾝ使用可否
-            //SetFuncKeyAll(this, "111111000001");  おそらく再度設定不要
+            SetFuncKeyAll(this, "111111111101");
 
             // 検索ﾎﾞﾀﾝ使用不可.解除
             if (W_Del == true)
@@ -1384,7 +1392,9 @@ namespace MasterTouroku_CustomerSKUPrice
             if (ErrorCheck(11))
             {
                 mcskue = GetSKUPriceInfo();
-                DataTable dtSKUPrice = mcskupbl.M_CustomerSKUPriceSelectData(mcskue);
+                dtDelete = null;
+                DataTable dtSKUPrice= dtDelete = mcskupbl.M_CustomerSKUPriceSelectData(mcskue);
+                
 
                 if (dtSKUPrice.Rows.Count > 0)
                 {
@@ -1538,7 +1548,8 @@ namespace MasterTouroku_CustomerSKUPrice
         {
             mcskue = new M_CustomerSKUPrice_Entity
             {
-                dt1= dtCSKUP,
+                dt1 = dtCSKUP,
+                dt2 = dtDelete,
                 ProcessMode = ModeText,
                 InsertOperator = InOperatorCD,
                 ProgramID = InProgramID,
@@ -1950,7 +1961,7 @@ namespace MasterTouroku_CustomerSKUPrice
             switch (col)
             {
                 case (int)ClsGridCustomerSKUPric.ColNO.TekiyouKaisiDate:
-                   
+                   // if()
                 case (int)ClsGridCustomerSKUPric.ColNO.TekiyouShuuryouDate:
 
                     break;
