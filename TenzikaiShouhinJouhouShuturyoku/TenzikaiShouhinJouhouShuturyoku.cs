@@ -268,7 +268,6 @@ namespace TenzikaiShouhinJouhouShuturyoku
         {
             this.Close();
         }
-
         private void frmTenzikaiShouhinJouhouShuturyoku_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);

@@ -37,6 +37,12 @@ namespace Search
             CB_Year.Bind(ymd);
             CB_Season.Bind(ymd);
             HeaderTitleText = "展示会商品検索";
+            SetRequiredField();
+        }
+        private void SetRequiredField()
+        {
+            CB_Year.Require(true);
+            CB_Season.Require(true);
         }
         public override void FunctionProcess(int index)
         {
@@ -100,6 +106,8 @@ namespace Search
 
         private bool ErrorCheck()
         {
+            if (!RequireCheck(new Control[] { CB_Year, CB_Season })) //Step1
+                return false;
             if (!String.IsNullOrEmpty(SC_Vendor.TxtCode.Text))
             {
                 if (!SC_Vendor.IsExists(2))
@@ -109,10 +117,7 @@ namespace Search
                     return false;
                 }
             }
-            if (!RequireCheck(new Control[] { CB_Year, CB_Season })) //Step1
-                return false;
-
-
+            
             if (!String.IsNullOrEmpty(SC_Brand.TxtCode.Text))
             {
                 if (!SC_Brand.IsExists(2))
