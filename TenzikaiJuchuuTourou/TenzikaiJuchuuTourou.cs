@@ -902,7 +902,7 @@ namespace TenzikaiJuchuuTourou
                 mGrid.g_DArray[row].SKUCD = selectRow["SKUCD"].ToString();
                 mGrid.g_DArray[row].ShouName = selectRow["SKUName"].ToString();
                 mGrid.g_DArray[row].Color = selectRow["ColorNO"].ToString();
-                mGrid.g_DArray[row].ColorName = selectRow["ColorName"].ToString() == "1" ? "〇" : "";
+                mGrid.g_DArray[row].ColorName = selectRow["ColorName"].ToString();
                 mGrid.g_DArray[row].Size = selectRow["SizeNo"].ToString();
                 mGrid.g_DArray[row].SizeName = selectRow["SizeName"].ToString();
                 mGrid.g_DArray[row].AdminNo = selectRow["AdminNO"].ToString();
@@ -1023,7 +1023,7 @@ namespace TenzikaiJuchuuTourou
                         mGrid.g_DArray[row].SKUCD = selectRow["SKUCD"].ToString();
                         mGrid.g_DArray[row].ShouName = selectRow["SKUName"].ToString();
                         mGrid.g_DArray[row].Color = selectRow["ColorNO"].ToString();
-                        mGrid.g_DArray[row].ColorName = selectRow["ColorName"].ToString() == "1" ? "〇" : "";
+                        mGrid.g_DArray[row].ColorName = selectRow["ColorName"].ToString();
                         mGrid.g_DArray[row].Size = selectRow["SizeNo"].ToString();
                         mGrid.g_DArray[row].SizeName = selectRow["SizeName"].ToString();
 
@@ -1540,9 +1540,12 @@ namespace TenzikaiJuchuuTourou
                     }
                 }
                 if (OperationMode == EOperationMode.SHOW)
-                SetFuncKeyAll(this, "111111000000");
+                    SetFuncKeyAll(this, "111111000000");
                 else
-                    SetFuncKeyAll(this, "111111000001");
+                {
+                    //SetFuncKeyAll(this, "111111000001");
+                }
+                    
             }
             catch (Exception ex)
             {
@@ -1635,7 +1638,7 @@ namespace TenzikaiJuchuuTourou
             // 1>5行目
             try
             {
-                for (int d = 0; d < 5; d++)
+                for (int d = 0; d < 8; d++)
                 {
                     int id = d + 1;
                     mGrid.g_MK_Ctrl[(int)ClsGridTenjikai.ColNO.GYONO, d].CellCtl = this.Controls.Find("lbl_" + id, true)[0];
@@ -2412,7 +2415,7 @@ namespace TenzikaiJuchuuTourou
                         //Ｅ１０２
                         bbl.ShowMessage("E102");
                         //顧客情報ALLクリア
-                        ClearCustomerInfo(0);
+                       // ClearCustomerInfo(0);
                         detailControls[index].Focus();
                         return false;
                     }
@@ -2428,7 +2431,7 @@ namespace TenzikaiJuchuuTourou
                         //Ｅ１０２
                         bbl.ShowMessage("E102");
                         //顧客情報ALLクリア
-                        ClearCustomerInfo(1);
+                        //ClearCustomerInfo(1);
                         detailControls[index].Focus();
                         return false;
                     }
@@ -2442,7 +2445,7 @@ namespace TenzikaiJuchuuTourou
                         //Ｅ１０２
                         bbl.ShowMessage("E102");
                         //顧客情報ALLクリア
-                        ClearCustomerInfo(2);
+                        ///ClearCustomerInfo(2);
                         detailControls[index].Focus();
                         return false;
                     }
@@ -2458,7 +2461,7 @@ namespace TenzikaiJuchuuTourou
                     if (!resul)
                     {
                         bbl.ShowMessage("E101");
-                        ClearCustomerInfo(2);
+                       // ClearCustomerInfo(2);
                         return false;
                     }
                     (detailControls[(int)Eindex.SCShiiresaki].Parent as CKM_SearchControl).LabelText = mve.VendorName;
@@ -2547,8 +2550,8 @@ namespace TenzikaiJuchuuTourou
                     else
                     {
                         bbl.ShowMessage("E101");
-                        (detailControls[(int)Eindex.SCTentouStaffu].Parent as CKM_SearchControl).LabelText = "";
-                        detailControls[(int)Eindex.SCTentouStaffu].Text = "";
+                        //(detailControls[(int)Eindex.SCTentouStaffu].Parent as CKM_SearchControl).LabelText = "";
+                      //  detailControls[(int)Eindex.SCTentouStaffu].Text = "";
                         detailControls[index].Focus();
                         return false;
                     }
@@ -2592,7 +2595,7 @@ namespace TenzikaiJuchuuTourou
                         if (mce.DeleteFlg == "1")
                         {
                             bbl.ShowMessage("E119");
-                            ClearCustomerInfo(kbn);
+                            //ClearCustomerInfo(kbn);
                             detailControls[index].Focus();
                             return false;
                         }
@@ -2715,7 +2718,7 @@ namespace TenzikaiJuchuuTourou
                         KAddress2 = "";
                         bbl.ShowMessage("E101");
                         //顧客情報ALLクリア
-                        ClearCustomerInfo(kbn);
+                       // ClearCustomerInfo(kbn);
                         detailControls[index].Focus();
                         return false;
                     }
