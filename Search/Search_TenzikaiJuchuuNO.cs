@@ -89,6 +89,7 @@ namespace Search
                 }
                 else
                 {
+                    dgvTenzikai.DataSource = string.Empty;
                     bbl.ShowMessage("S013");
                     ScSupplier.SetFocus(1);
                 }
