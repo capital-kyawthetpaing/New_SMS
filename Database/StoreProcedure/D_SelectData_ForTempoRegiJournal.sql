@@ -110,6 +110,7 @@ BEGIN
                   ,CONVERT(Date, history.DepositDateTime) DepositDate           -- ìoò^ì˙
                   ,history.Number SalesNO                                       -- ì`ï[î‘çÜ
                   ,history.StoreCD                                              -- ìXï‹CD
+                  ,history.DepositNO                                            -- SortÇÃÇΩÇﬂÇ…éÊìæ
                   ,history.JanCD                                                -- JanCD
                   ,(SELECT top 1 sku.SKUShortName
                       FROM M_SKU AS sku
