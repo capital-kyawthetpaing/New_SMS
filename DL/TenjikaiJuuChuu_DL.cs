@@ -105,12 +105,13 @@ namespace DL
                 return false;
             }
         }
-        public bool D_TenjiUpdate(Tenjikai_Entity tje, string xml)
+        public bool D_TenjiUpdate(Tenjikai_Entity tje, string xml,string dxml)
         {
             string sp = "D_TenjiI_Details_Update";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = xml} },
+                { "@xml2", new ValuePair { value1 = SqlDbType.VarChar, value2 = dxml} },
                 { "@TenjiCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.TenjiKaiOrderNo} },
                 { "@JuchuuBi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.JuchuuBi } },
                 { "@ShuuKaSouKo", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.ShuuKaSouKo } },
