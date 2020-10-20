@@ -757,7 +757,16 @@ namespace MasterTouroku_TenzikaiShouhin
                         case "chk":
                             CL = (int)ClsGridMasterTanzi.ColNO.Chk;
                             break;
+                        case "taniCD":
+                            CL = (int)ClsGridMasterTanzi.ColNO.TaniCD;
+                            break;
+                        case "brand":
+                            CL = (int)ClsGridMasterTanzi.ColNO.BrandCD;
+                            break;
 
+                        case "segment":
+                            CL = (int)ClsGridMasterTanzi.ColNO.SegmentCD;
+                            break;
                     }
 
                     bool changeFlg = false;
