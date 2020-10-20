@@ -95,7 +95,7 @@ namespace Search
                     bbl.ShowMessage("S013");
                     //ScSupplier.SetFocus(1);
                     //PreviousCtrl.Focus();
-                    
+
                 }
                 
             }
