@@ -34,7 +34,7 @@ BEGIN
     DECLARE @StockNO varchar(11);
     DECLARE @StockNO_B varchar(11);
     DECLARE @StockSu int;
-    DECLARE @AjustSu int;	--★棚卸調整数
+    DECLARE @AjustSu int;               --★棚卸調整数
     DECLARE @wDifferenceQuantity int;	--確定時に使用
     
     SET @W_ERR = 0;
@@ -78,7 +78,7 @@ BEGIN
       ,@SoukoCD
       ,@FromRackNO
       ,@ToRackNO
-      ,@InventoryDate
+      ,CONVERT(date, @InventoryDate)
       ,@Syori 			--InventoryKBN
       ,@SYSDATETIME		--ProcessingDateTime
       ,@Operator	--StaffCD
@@ -117,7 +117,7 @@ BEGIN
         SELECT 
             DS.SoukoCD
            ,DS.RackNO
-           ,@InventoryDate
+           ,CONVERT(date, @InventoryDate)
            ,MAX(DS.SKUCD)
            ,DS.AdminNO
            ,MAX(DS.JanCD)
@@ -160,7 +160,7 @@ BEGIN
         SELECT
              ML.SoukoCD
             ,ML.TanaCD AS RackNO
-            ,@InventoryDate
+            ,CONVERT(date, @InventoryDate)
             ,1 AS InventoryKBN
             ,@InventoryNO
             ,NULL AS AdditionDateTime
@@ -191,13 +191,13 @@ BEGIN
         WHERE SoukoCD = @SoukoCD
         AND ISNULL(RackNO,'') >= (CASE WHEN ISNULL(@FromRackNO,'') <> '' THEN @FromRackNO ELSE ISNULL(RackNO,'') END)
         AND ISNULL(RackNO,'') <= (CASE WHEN ISNULL(@ToRackNO,'') <> '' THEN @ToRackNO ELSE ISNULL(RackNO,'') END)
-        AND InventoryDate = @InventoryDate
+        AND InventoryDate = CONVERT(date, @InventoryDate)
         ;
         
         --棚卸制御データ削除
         DELETE FROM [D_InventoryControl]
         WHERE SoukoCD = @SoukoCD
-        AND InventoryDate = @InventoryDate
+        AND InventoryDate = CONVERT(date, @InventoryDate)
         AND ISNULL(RackNO,'') >= (CASE WHEN ISNULL(@FromRackNO,'') <> '' THEN @FromRackNO ELSE ISNULL(RackNO,'') END)
         AND ISNULL(RackNO,'') <= (CASE WHEN ISNULL(@ToRackNO,'') <> '' THEN @ToRackNO ELSE ISNULL(RackNO,'') END)
         ;
@@ -220,7 +220,8 @@ BEGIN
     --棚卸確定--
     ELSE IF @Syori = 3
     BEGIN
-    	--棚卸データの差異数≠０のデータを取得し、在庫データを差異数が０になるまで順にUpdate
+        --棚卸データの差異数≠０のデータを取得し、在庫データを差異数が０になるまで順にUpdate
+        --D_Inventory.DifferenceQuantity≠０&D_Inventory.ADDFlg≠１のデータを取得し、在庫データを差異数が０になるまで順にUpdate
 
         --カーソル定義
         DECLARE CUR_AAA CURSOR FOR
@@ -229,10 +230,11 @@ BEGIN
                   ,DI.AdminNO     
               FROM D_Inventory AS DI
              WHERE DI.SoukoCD = @SoukoCD
-               AND DI.InventoryDate = @InventoryDate
+               AND DI.InventoryDate = CONVERT(date, @InventoryDate)
                AND ISNULL(DI.RackNO,'') >= (CASE WHEN ISNULL(@FromRackNO,'') <> '' THEN @FromRackNO ELSE ISNULL(DI.RackNO,'') END)
                AND ISNULL(DI.RackNO,'') <= (CASE WHEN ISNULL(@ToRackNO,'') <> '' THEN @ToRackNO ELSE ISNULL(DI.RackNO,'') END)
                AND DI.DifferenceQuantity <> 0
+               AND DI.ADDFlg <> 1
              ORDER BY DI.RackNO
                ;
                 
@@ -487,20 +489,7 @@ BEGIN
                 --カーソルを閉じる
                 CLOSE CUR_AAA2;
                 DEALLOCATE CUR_AAA2;
-                
-                --棚卸制御データ作成
-                --D_InventoryControl UPDATE     Table転送仕様Ｃ②
-                UPDATE [D_InventoryControl] SET
-                    InventoryKBN = 3
-                    ,AdditionDateTime = @SYSDATETIME
-                    ,AdditionStaffCD = @Operator
-                    ,UpdateOperator = @Operator
-                    ,UpdateDateTime = @SYSDATETIME
-                WHERE SoukoCD = @SoukoCD
-                AND InventoryDate = @InventoryDate
-                AND ISNULL(RackNO,'') >= (CASE WHEN ISNULL(@FromRackNO,'') <> '' THEN @FromRackNO ELSE ISNULL(RackNO,'') END)
-                AND ISNULL(RackNO,'') <= (CASE WHEN ISNULL(@ToRackNO,'') <> '' THEN @ToRackNO ELSE ISNULL(RackNO,'') END)
-                ;
+
             END
             -- ========= ループ内の実際の処理 ここまで===
 
@@ -511,8 +500,215 @@ BEGIN
         
         --カーソルを閉じる
         CLOSE CUR_AAA;
-        DEALLOCATE CUR_AAA;
-    END
+        DEALLOCATE CUR_AAA;        
+
+        --D_Inventory.DifferenceQuantity≠０＆ D_Inventory.ADDFlg＝１のデータを取得し、D_StockにInsert
+
+        --カーソル定義
+        DECLARE CUR_BBB CURSOR FOR
+            SELECT DI.DifferenceQuantity
+                  ,DI.RackNO          
+                  ,DI.AdminNO     
+              FROM D_Inventory AS DI
+             WHERE DI.SoukoCD = @SoukoCD
+               AND DI.InventoryDate = CONVERT(date, @InventoryDate)
+               AND ISNULL(DI.RackNO,'') >= (CASE WHEN ISNULL(@FromRackNO,'') <> '' THEN @FromRackNO ELSE ISNULL(DI.RackNO,'') END)
+               AND ISNULL(DI.RackNO,'') <= (CASE WHEN ISNULL(@ToRackNO,'') <> '' THEN @ToRackNO ELSE ISNULL(DI.RackNO,'') END)
+               AND DI.DifferenceQuantity <> 0
+               AND DI.ADDFlg = 1
+             ORDER BY DI.RackNO
+               ;
+                
+        --カーソルオープン
+        OPEN CUR_BBB;
+
+        --最初の1行目を取得して変数へ値をセット
+        FETCH NEXT FROM CUR_BBB
+        INTO @DifferenceQuantity, @RackNO, @AdminNO;
+        
+        --データの行数分ループ処理を実行する
+        WHILE @@FETCH_STATUS = 0
+        BEGIN
+            -- ========= ループ内の実際の処理 ここから===
+
+            --Table転送仕様Ｄ 在庫データ更新(1件)
+            --伝票番号採番●StockNO
+            EXEC Fnc_GetNumber
+                21,        --in伝票種別 21
+                @InventoryDate, --in基準日
+                @StoreCD,  --in店舗CD
+                @Operator,
+                @StockNO_B OUTPUT
+                ;            
+
+            IF ISNULL(@StockNO_B,'') = ''
+            BEGIN
+                SET @W_ERR = 1;
+                RETURN @W_ERR;
+            END
+            
+            --【D_Stock】Insert    
+            INSERT INTO [D_Stock]
+                   ([StockNO]
+                   ,[SoukoCD]
+                   ,[RackNO]
+                   ,[ArrivalPlanNO]
+                   ,[SKUCD]
+                   ,[AdminNO]
+                   ,[JanCD]
+                   ,[ArrivalYetFLG]
+                   ,[ArrivalPlanKBN]
+                   ,[ArrivalPlanDate]
+                   ,[ArrivalDate]
+                   ,[StockSu]
+                   ,[PlanSu]
+                   ,[AllowableSu]
+                   ,[AnotherStoreAllowableSu]
+                   ,[ReserveSu]
+                   ,[InstructionSu]
+                   ,[ShippingSu]
+                   ,[OriginalStockNO]
+                   ,[ExpectReturnDate]
+                   ,[ReturnDate]
+                   ,[ReturnSu]
+                   ,[InsertOperator]
+                   ,[InsertDateTime]
+                   ,[UpdateOperator]
+                   ,[UpdateDateTime]
+                   ,[DeleteOperator]
+                   ,[DeleteDateTime])
+             SELECT
+                    @StockNO_B
+                   ,@SoukoCD
+                   ,@RackNO   --RackNO
+                   ,NULL    --ArrivalPlanNO
+                   ,DI.SKUCD
+                   ,DI.AdminNO
+                   ,DI.JanCD
+                   ,0   --  ArrivalYetFLG(0:入荷済、1:未入荷)
+                   ,0   --ArrivalPlanKBN(1:受発注分、2:発注分、3:移動分)
+                   ,NULL    --ArrivalPlanDate
+                   ,DI.InventoryDate    --ArrivalDate
+                   ,DI.ActualQuantity   --StockSu
+                   ,0   --PlanSu
+                   ,DI.ActualQuantity   --AllowableSu
+                   ,DI.ActualQuantity   --AnotherStoreAllowableSu
+                   ,0       --ReserveSu
+                   ,0       --InstructionSu
+                   ,0       --ShippingSu
+                   ,NULL    --OriginalStockNO
+                   ,NULL    --ExpectReturnDate
+                   ,NULL    --ReturnDate
+                   ,0       --ReturnSu
+             
+                   ,@Operator  
+                   ,@SYSDATETIME
+                   ,@Operator  
+                   ,@SYSDATETIME
+                   ,NULL                  
+                   ,NULL
+              FROM D_Inventory AS DI
+             WHERE DI.SoukoCD = @SoukoCD
+               AND DI.InventoryDate = CONVERT(date, @InventoryDate)
+               AND DI.RackNO = @RackNO
+               AND DI.AdminNO = @AdminNO
+              ;
+            
+            --Table転送仕様Ｅ 入出庫履歴
+            INSERT INTO [D_Warehousing]
+               ([WarehousingDate]
+               ,[SoukoCD]
+               ,[RackNO]
+               ,[StockNO]
+               ,[JanCD]
+               ,[AdminNO]
+               ,[SKUCD]
+               ,[WarehousingKBN]
+               ,[DeleteFlg]
+               ,[Number]
+               ,[NumberRow]
+               ,[VendorCD]
+               ,[ToStoreCD]
+               ,[ToSoukoCD]
+               ,[ToRackNO]
+               ,[ToStockNO]
+               ,[FromStoreCD]
+               ,[FromSoukoCD]
+               ,[FromRackNO]
+               ,[CustomerCD]
+               ,[Quantity]
+               ,[UnitPrice]
+               ,[Amount]
+               ,[Program]
+               ,[InsertOperator]
+               ,[InsertDateTime]
+               ,[UpdateOperator]
+               ,[UpdateDateTime]
+               ,[DeleteOperator]
+               ,[DeleteDateTime])
+            SELECT @InventoryDate --WarehousingDate
+               ,DS.SoukoCD
+               ,DS.RackNO
+               ,@StockNO_B
+               ,DS.JanCD
+               ,DS.AdminNO
+               ,DS.SKUCD
+               ,(CASE WHEN @DifferenceQuantity > 0 THEN 17 ELSE 18 END)            --WarehousingKBN   DifferenceQuantity＜0の時 18:棚卸減算
+               ,0             --DeleteFlg
+               ,@InventoryNO  --Number
+               ,0             --NumberRow
+               ,NULL          --VendorCD
+               ,NULL          --ToStoreCD
+               ,NULL          --ToSoukoCD
+               ,NULL          --ToRackNO
+               ,NULL          --ToStockNO
+               ,NULL          --FromStoreCD
+               ,NULL          --FromSoukoCD]
+               ,NULL          --FromRackNO
+               ,NULL          --CustomerCD
+               ,(CASE WHEN @DifferenceQuantity > 0 THEN @DifferenceQuantity ELSE (-1)*@DifferenceQuantity END)   --Quantity ★在庫調整数
+                              --DifferenceQuantity＜0の時は、×(-1)
+               ,0             --UnitPrice
+               ,0             --Amount
+               ,@Program      --Program
+               
+               ,@Operator  
+               ,@SYSDATETIME
+               ,@Operator  
+               ,@SYSDATETIME
+               ,NULL
+               ,NULL
+
+              FROM D_Stock AS DS
+              WHERE StockNO = @StockNO_B
+              ;
+              
+
+            -- ========= ループ内の実際の処理 ここまで===
+
+            --次の行のデータを取得して変数へ値をセット
+            FETCH NEXT FROM CUR_BBB
+            INTO @DifferenceQuantity, @RackNO, @AdminNO;
+        END
+        
+        --カーソルを閉じる
+        CLOSE CUR_BBB;
+        DEALLOCATE CUR_BBB; 
+                
+        --棚卸制御データ作成
+        --D_InventoryControl UPDATE     Table転送仕様Ｃ②
+        UPDATE [D_InventoryControl] SET
+            InventoryKBN = 3
+            ,AdditionDateTime = @SYSDATETIME
+            ,AdditionStaffCD = @Operator
+            ,UpdateOperator = @Operator
+            ,UpdateDateTime = @SYSDATETIME
+        WHERE SoukoCD = @SoukoCD
+        AND InventoryDate = @InventoryDate
+        AND ISNULL(RackNO,'') >= (CASE WHEN ISNULL(@FromRackNO,'') <> '' THEN @FromRackNO ELSE ISNULL(RackNO,'') END)
+        AND ISNULL(RackNO,'') <= (CASE WHEN ISNULL(@ToRackNO,'') <> '' THEN @ToRackNO ELSE ISNULL(RackNO,'') END)
+        ;
+    END  --棚卸確定
     
     
     --【L_Log】INSERT
