@@ -94,7 +94,7 @@ namespace Search
                     dgvTenzikai.DataSource = string.Empty;
                     bbl.ShowMessage("S013");
                     //ScSupplier.SetFocus(1);
-                    PreviousCtrl.Focus();
+                    //PreviousCtrl.Focus();
                     
                 }
                 
@@ -318,7 +318,11 @@ namespace Search
                         bbl.ShowMessage("E101");
                         ScCustomer.SetFocus(1);
                     }
-                } 
+                }
+                else
+                {
+                    txtCustomerName.Text = string.Empty;
+                }
             }
         }
 
