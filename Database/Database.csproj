@@ -263,6 +263,7 @@
     <Content Include="StoreProcedure\D_TenjiI_Details_Delete.sql" />
     <Content Include="StoreProcedure\D_TenjiI_Details_insert.sql" />
     <Content Include="StoreProcedure\D_TenjiI_Details_Update.sql" />
+    <Content Include="StoreProcedure\D_TenzikaiJuchuu_SearchData.sql" />
     <Content Include="StoreProcedure\D_TenzikaiJuchuu_SelectForExcel.sql" />
     <Content Include="StoreProcedure\D_WowmaJuchuuDetails_Insert.sql" />
     <Content Include="StoreProcedure\D_WowmaJuchuu_Insert.sql" />
