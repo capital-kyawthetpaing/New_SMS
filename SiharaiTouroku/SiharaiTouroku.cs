@@ -1344,7 +1344,7 @@ namespace SiharaiTouroku
                         , bbl.Z_Set(row["TransferGaku"])
                         , bbl.Z_Set(row["TransferFeeGaku"])
                         , string.IsNullOrWhiteSpace(row["FeeKBNVal"].ToString()) ? null : row["FeeKBNVal"]
-                        , cboPaymentSourceAcc.SelectedIndex>0 ? cboPaymentSourceAcc.SelectedValue.ToString():""
+                        , string.IsNullOrWhiteSpace(row["KouzaCD"].ToString()) ? null : row["KouzaCD"]    //cboPaymentSourceAcc.SelectedIndex>0 ? cboPaymentSourceAcc.SelectedValue.ToString():""
                         , string.IsNullOrWhiteSpace(row["BankCD"].ToString()) ? null : row["BankCD"]
                         , string.IsNullOrWhiteSpace(row["BranchCD"].ToString()) ? null : row["BranchCD"]
                         , string.IsNullOrWhiteSpace(row["KouzaKBN"].ToString()) ? null : row["KouzaKBN"]

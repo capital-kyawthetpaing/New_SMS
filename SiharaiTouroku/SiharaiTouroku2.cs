@@ -32,6 +32,9 @@ namespace SiharaiTouroku
         private string payPlanDate = string.Empty;
 
         private decimal mOldFurikomiGaku;
+        private string mBankCD;
+        private string mBranchCD;
+        private string mKouzaCD;
 
         public SiharaiTouroku_2(D_Pay_Entity dpe1, DataTable dt, DataTable dtDetail)
         {
@@ -138,6 +141,9 @@ namespace SiharaiTouroku
                 txtAmount.Text = bbl.Z_SetStr(tblROWS[0]["TransferFeeGaku"]);
                 SC_KouzaCD.TxtCode.Text = tblROWS[0]["KouzaCD"].ToString();
                 SC_KouzaCD.LabelText = tblROWS[0]["KouzaName"].ToString();
+                mBankCD = SC_BankCD.TxtCode.Text;
+                mBranchCD = SC_BranchCD.TxtCode.Text;
+                mKouzaCD = SC_KouzaCD.TxtCode.Text;
                 txtCash.Text = bbl.Z_SetStr(tblROWS[0]["CashGaku"]);
                 txtOffsetGaku.Text = bbl.Z_SetStr(tblROWS[0]["OffsetGaku"]);
                 txtBill.Text = bbl.Z_SetStr(tblROWS[0]["BillGaku"]);
@@ -192,7 +198,7 @@ namespace SiharaiTouroku
             //振込額＜＞0の場合、入力必須(Entry required)
             if (bbl.Z_Set(txtTransferAmount.Text) != 0)
             {
-                if (!RequireCheck(new Control[] { SC_BankCD.TxtCode, SC_BranchCD.TxtCode, txtKouzaKBN, txtAccNo, txtMeigi , txtFeeKBN , txtAmount }))
+                if (!RequireCheck(new Control[] { SC_BankCD.TxtCode, SC_BranchCD.TxtCode, txtKouzaKBN, txtAccNo, txtMeigi , txtFeeKBN ,SC_KouzaCD.TxtCode, txtAmount }))
                     return false;
             }
             if(bbl.Z_Set(txtBill.Text) != 0)
@@ -445,6 +451,8 @@ namespace SiharaiTouroku
                 tblROWS[0]["FeeKBNVal"] = txtFeeKBN.Text;
             //tblROWS[0]["Fee"] = txtAmount.Text;
             tblROWS[0]["TransferFeeGaku"] = bbl.Z_Set(txtAmount.Text);
+            tblROWS[0]["KouzaCD"] = SC_KouzaCD.TxtCode.Text;
+            tblROWS[0]["KouzaName"] = SC_KouzaCD.LabelText;
 
             tblROWS[0]["CashGaku"] = bbl.Z_Set(txtCash.Text);
             tblROWS[0]["OffsetGaku"] = bbl.Z_Set(txtOffsetGaku.Text);
@@ -489,6 +497,7 @@ namespace SiharaiTouroku
             txtMeigi.Text = string.Empty;
             txtFeeKBN.Text = string.Empty;
             txtAmount.Text = string.Empty;
+            SC_KouzaCD.Clear();
             txtCash.Text = string.Empty;
             txtOffsetGaku.Text = string.Empty;
             txtBill.Text = string.Empty;
@@ -833,7 +842,10 @@ namespace SiharaiTouroku
         public void Select_KouzaFee()
         {
             if (!string.IsNullOrWhiteSpace(SC_BankCD.TxtCode.Text) && !string.IsNullOrWhiteSpace(SC_BranchCD.TxtCode.Text)
-                             && !string.IsNullOrWhiteSpace(txtFeeKBN.Text) && (bbl.Z_Set(txtAmount.Text).Equals(0) || mOldFurikomiGaku != bbl.Z_Set(txtTransferAmount.Text)))
+                             && !string.IsNullOrWhiteSpace(txtFeeKBN.Text) && !string.IsNullOrEmpty(SC_KouzaCD.TxtCode.Text) &&
+                             (bbl.Z_Set(txtAmount.Text).Equals(0) || mOldFurikomiGaku != bbl.Z_Set(txtTransferAmount.Text) || 
+                             !SC_BankCD.TxtCode.Text.Equals(mBankCD) || !SC_BranchCD.TxtCode.Text.Equals(mBranchCD) ||
+                             !SC_KouzaCD.TxtCode.Text.Equals(mKouzaCD)))
             {
                 M_Kouza_Entity mkze = new M_Kouza_Entity
                 {
@@ -848,6 +860,9 @@ namespace SiharaiTouroku
                 DataTable dt=shnbl.M_Kouza_FeeSelect(mkze);
                 txtAmount.Text =bbl.Z_SetStr(dt.Rows[0]["Fee"]);
                 mOldFurikomiGaku =bbl.Z_Set(txtTransferAmount.Text);
+                mBankCD = SC_BankCD.TxtCode.Text;
+                mBranchCD = SC_BranchCD.TxtCode.Text;
+                mKouzaCD = SC_KouzaCD.TxtCode.Text;
             }
 
         }

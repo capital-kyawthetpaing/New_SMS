@@ -37,6 +37,8 @@ namespace Base.Client
 
         #endregion
 
+        public Control PreviousCtrl { get; set; }
+
         #region"公開プロパティ"
         /// <summary>
         ///     ''' HeaderTitleText
@@ -267,6 +269,7 @@ namespace Base.Client
                 EndSec();
                 return;
             }
+            
 
             FunctionProcess(Index);
 
@@ -429,6 +432,19 @@ namespace Base.Client
                         else
                         {
                             (ActiveControl as CKM_TextBox).MoveNext = false;
+                            this.SelectNextControl(ActiveControl, true, true, true, true);
+                        }
+                    }
+                }
+                else if (ActiveControl is CKM_ComboBox)
+                {
+                    if ((ActiveControl as CKM_ComboBox).MoveNext)
+                    {
+                        if (this.Parent != null)
+                            this.Parent.SelectNextControl(ActiveControl, true, true, true, true);
+                        else
+                        {
+                            (ActiveControl as CKM_ComboBox).MoveNext = false;
                             this.SelectNextControl(ActiveControl, true, true, true, true);
                         }
                     }
