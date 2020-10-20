@@ -200,8 +200,8 @@
             this.ScExhibitionCD.ChangeDate = "";
             this.ScExhibitionCD.ChangeDateWidth = 100;
             this.ScExhibitionCD.Code = "";
-            this.ScExhibitionCD.CodeWidth = 400;
-            this.ScExhibitionCD.CodeWidth1 = 400;
+            this.ScExhibitionCD.CodeWidth = 500;
+            this.ScExhibitionCD.CodeWidth1 = 500;
             this.ScExhibitionCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScExhibitionCD.DataCheck = false;
             this.ScExhibitionCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -214,7 +214,7 @@
             this.ScExhibitionCD.Name = "ScExhibitionCD";
             this.ScExhibitionCD.NameWidth = 180;
             this.ScExhibitionCD.SearchEnable = true;
-            this.ScExhibitionCD.Size = new System.Drawing.Size(433, 27);
+            this.ScExhibitionCD.Size = new System.Drawing.Size(533, 27);
             this.ScExhibitionCD.Stype = Search.CKM_SearchControl.SearchType.展示会名;
             this.ScExhibitionCD.TabIndex = 5;
             this.ScExhibitionCD.test = null;
@@ -248,8 +248,8 @@
             this.ScSegmentCD.ChangeDate = "";
             this.ScSegmentCD.ChangeDateWidth = 100;
             this.ScSegmentCD.Code = "";
-            this.ScSegmentCD.CodeWidth = 100;
-            this.ScSegmentCD.CodeWidth1 = 100;
+            this.ScSegmentCD.CodeWidth = 60;
+            this.ScSegmentCD.CodeWidth1 = 60;
             this.ScSegmentCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScSegmentCD.DataCheck = false;
             this.ScSegmentCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -260,9 +260,9 @@
             this.ScSegmentCD.Location = new System.Drawing.Point(105, 180);
             this.ScSegmentCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScSegmentCD.Name = "ScSegmentCD";
-            this.ScSegmentCD.NameWidth = 280;
+            this.ScSegmentCD.NameWidth = 250;
             this.ScSegmentCD.SearchEnable = true;
-            this.ScSegmentCD.Size = new System.Drawing.Size(414, 27);
+            this.ScSegmentCD.Size = new System.Drawing.Size(344, 27);
             this.ScSegmentCD.Stype = Search.CKM_SearchControl.SearchType.商品分類;
             this.ScSegmentCD.TabIndex = 4;
             this.ScSegmentCD.test = null;
