@@ -40,6 +40,10 @@ namespace TenzikaiShouhinJouhouShuturyoku
             SetRequiredField();
             scSupplierCD.SetFocus(1);
             ModeVisible = false;
+            scBrandCDFrom.CodeWidth = 65;
+            scBrandCDTo.CodeWidth = 65;
+            scSegmentCDFrom.CodeWidth = 55;
+            scSegmentCDTo.CodeWidth = 55;
         }
         public void BindCombo()
         {
