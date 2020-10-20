@@ -3008,11 +3008,11 @@ namespace TenzikaiJuchuuTourou
                            , mGrid.g_DArray[RW].ColorName == "" ? null : mGrid.g_DArray[RW].ColorName
                            , mGrid.g_DArray[RW].Size == "" ? null : mGrid.g_DArray[RW].Size
                            , mGrid.g_DArray[RW].SizeName == "" ? null : mGrid.g_DArray[RW].SizeName
-                           , mGrid.g_DArray[RW].ShuukaYo
+                           , mGrid.g_DArray[RW].ShuukaYo == "" ? null: mGrid.g_DArray[RW].ShuukaYo
                            , mGrid.g_DArray[RW].ChoukuSou ? "1" : "0"
-                           , mGrid.g_DArray[RW].ShuukaSou
+                           , mGrid.g_DArray[RW].ShuukaSou 
                            , mGrid.g_DArray[RW].HacchuTanka.ToString().Replace(",", "")
-                           , mGrid.g_DArray[RW].NyuuKayo
+                           , mGrid.g_DArray[RW].NyuuKayo == "" ? null : mGrid.g_DArray[RW].NyuuKayo
                            , mGrid.g_DArray[RW].JuchuuSuu.ToString().Replace(",", "")
                            , mGrid.g_DArray[RW].TaniHDN == "" ? null : mGrid.g_DArray[RW].TaniHDN
                            , mGrid.g_DArray[RW].TeniName == "" ? null : mGrid.g_DArray[RW].TeniName
