@@ -20,7 +20,6 @@ namespace Search
         M_Customer_Entity mce;
         D_TenzikaiJuchuu_Entity dtje;
 
-        public Control PreviousCtrl { get; set; }
 
         string year = string.Empty; string month = string.Empty; string day = string.Empty; string date = string.Empty;
         public string OrderNum = string.Empty;
@@ -95,8 +94,8 @@ namespace Search
                     dgvTenzikai.DataSource = string.Empty;
                     bbl.ShowMessage("S013");
                     //ScSupplier.SetFocus(1);
-                    if (PreviousCtrl != null)
-                        PreviousCtrl.Focus();
+                    //PreviousCtrl.Focus();
+                    
                 }
                 
             }
@@ -319,7 +318,11 @@ namespace Search
                         bbl.ShowMessage("E101");
                         ScCustomer.SetFocus(1);
                     }
-                } 
+                }
+                else
+                {
+                    txtCustomerName.Text = string.Empty;
+                }
             }
         }
 
