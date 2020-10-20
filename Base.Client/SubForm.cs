@@ -37,6 +37,8 @@ namespace Base.Client
 
         #endregion
 
+        public Control PreviousCtrl { get; set; }
+
         #region"公開プロパティ"
         /// <summary>
         ///     ''' HeaderTitleText
@@ -267,6 +269,7 @@ namespace Base.Client
                 EndSec();
                 return;
             }
+            
 
             FunctionProcess(Index);
 

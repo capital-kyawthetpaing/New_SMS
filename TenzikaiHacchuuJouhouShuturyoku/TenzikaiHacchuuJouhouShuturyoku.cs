@@ -189,7 +189,8 @@ namespace TenzikaiHacchuuJouhouShuturyoku
                     else
                     {
                         bbl.ShowMessage("E128");
-                        ScSupplier.SetFocus(1);
+                        //ScSupplier.SetFocus(1);
+                        PreviousCtrl.Focus();
                     }
                 }
             }
@@ -329,5 +330,6 @@ namespace TenzikaiHacchuuJouhouShuturyoku
         {
             MoveNextControl(e);
         }
+
     }
 }

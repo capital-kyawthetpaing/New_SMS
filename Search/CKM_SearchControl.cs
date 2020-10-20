@@ -702,7 +702,7 @@ namespace Search
                 case SearchType.展示会名://ses 9/7/2020
                     TxtCode.MaxLength = 80;
                     TxtCode.Ctrl_Byte = CKM_TextBox.Bytes.半全角;
-                    TxtCode.Width = 500;
+                    TxtCode.Width = 480;
                     lblName.Width = 180;
                     break;
 

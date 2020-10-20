@@ -43,5 +43,20 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
+
+
+        public DataTable M_SKU_SelectForSKUCheck(M_SKU_Entity msku)
+        {
+            string sp = "M_SKU_SelectForSKUCheck";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@skuname", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.SKUName} },
+                { "@colorName", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.ColorName } },
+                { "@sizeName", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.SizeName } },
+                { "@ExhibitionCommomCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.ExhibitionCommonCD } },
+                { "@Jancd", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.JanCD } },
+            };
+            return SelectData(dic, sp);
+        }
     }
 }
