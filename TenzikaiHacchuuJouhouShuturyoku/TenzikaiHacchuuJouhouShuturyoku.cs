@@ -98,9 +98,10 @@ namespace TenzikaiHacchuuJouhouShuturyoku
 
         public void Clear()
         {
+            Clear(panel1);
             ScSupplier.Clear();
-            cboYear.SelectedValue.Equals(-1);
-            cboSeason.SelectedValue.Equals(-1);
+            //cboYear.SelectedValue.Equals("-1");
+            //cboSeason.SelectedValue.Equals("-1");
             ScBrandCD.Clear();
             ScSegmentCD.Clear();
             ScExhibitionCD.Clear();
@@ -114,7 +115,7 @@ namespace TenzikaiHacchuuJouhouShuturyoku
         {
             if(ErrorCheck())
             {
-                if (bbl.ShowMessage("Q201") == DialogResult.Yes)
+                if (bbl.ShowMessage("Q205") == DialogResult.Yes)
                 {
                     dtje = new D_TenzikaiJuchuu_Entity
                     {
@@ -185,7 +186,11 @@ namespace TenzikaiHacchuuJouhouShuturyoku
                             }
                         }
                     }
-
+                    else
+                    {
+                        bbl.ShowMessage("E128");
+                        ScSupplier.SetFocus(1);
+                    }
                 }
             }
         }
@@ -235,7 +240,7 @@ namespace TenzikaiHacchuuJouhouShuturyoku
                 int result = ScClient1.TxtCode.Text.CompareTo(ScClient2.TxtCode.Text);
                 if (result > 0)
                 {
-                    tzbl.ShowMessage("E104");
+                    tzbl.ShowMessage("E106");
                     ScClient2.SetFocus(1);
                     return false;
                 }
@@ -314,7 +319,7 @@ namespace TenzikaiHacchuuJouhouShuturyoku
                 int result = ScClient1.TxtCode.Text.CompareTo(ScClient2.TxtCode.Text);
                 if(result > 0)
                 {
-                    bbl.ShowMessage("E104");
+                    bbl.ShowMessage("E106");
                     ScClient2.SetFocus(1);
                 }
             }
