@@ -393,27 +393,27 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
 
         private void GV_Tenzaishohin_Paint(object sender, PaintEventArgs e)
         {
-            string[] monthes = { "ブランド", "せグメト", "", "" };
-            for (int j = 1; j < 5;)
-            {
-                Rectangle r1 = this.GV_Tenzaishohin.GetCellDisplayRectangle(j, -1, true);
-                int w1 = this.GV_Tenzaishohin.GetCellDisplayRectangle(j + 1, -1, true).Width;
-                r1.X += 1;
-                r1.Y += 1;
-                r1.Width = r1.Width + w1 - 2;
-                r1.Height = r1.Height - 2;
+            //string[] monthes = { "ブランド", "せグメト", "", "" };
+            //for (int j = 1; j < 5;)
+            //{
+            //    Rectangle r1 = this.GV_Tenzaishohin.GetCellDisplayRectangle(j, -1, true);
+            //    int w1 = this.GV_Tenzaishohin.GetCellDisplayRectangle(j + 1, -1, true).Width;
+            //    r1.X += 1;
+            //    r1.Y += 1;
+            //    r1.Width = r1.Width + w1 - 2;
+            //    r1.Height = r1.Height - 2;
 
-                e.Graphics.FillRectangle(new SolidBrush(this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.BackColor), r1);
-                StringFormat format = new StringFormat();
-                format.LineAlignment = StringAlignment.Center;
-                format.Alignment = StringAlignment.Center;
-                e.Graphics.DrawString(monthes[j / 2],
-                this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.Font,
-                new SolidBrush(this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.ForeColor),
-                r1,
-                format);
-                j += 2;
-            }
+            //    e.Graphics.FillRectangle(new SolidBrush(this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.BackColor), r1);
+            //    StringFormat format = new StringFormat();
+            //    format.LineAlignment = StringAlignment.Center;
+            //    format.Alignment = StringAlignment.Center;
+            //    e.Graphics.DrawString(monthes[j / 2],
+            //    this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.Font,
+            //    new SolidBrush(this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.ForeColor),
+            //    r1,
+            //    format);
+            //    j += 2;
+            //}
         }
 
        
