@@ -82,7 +82,7 @@ namespace TanaoroshiNyuuryoku
                 Btn_F9.Enabled = false;
                 Btn_F10.Text = "取込(F10)";
                 Btn_F12.Text = "登録(F12)";
-                SetFuncKeyAll(this, "100001000101");
+                SetFuncKeyAll(this, "100001000111");
 
                 //コンボボックス初期化
                 string ymd = bbl.GetDate();
