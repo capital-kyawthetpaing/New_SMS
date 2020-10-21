@@ -39,6 +39,11 @@ namespace TenzikaiShouhinJouhouShuturyoku
             F9Visible = true;
             SetRequiredField();
             scSupplierCD.SetFocus(1);
+            ModeVisible = false;
+            scBrandCDFrom.CodeWidth = 65;
+            scBrandCDTo.CodeWidth = 65;
+            scSegmentCDFrom.CodeWidth = 55;
+            scSegmentCDTo.CodeWidth = 55;
         }
         public void BindCombo()
         {
@@ -78,7 +83,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
             {
                 if (string.Compare(scBrandCDFrom.TxtCode.Text, scBrandCDTo.TxtCode.Text) == 1)
                 {
-                    bbl.ShowMessage("E104");
+                    bbl.ShowMessage("E106");
                     scBrandCDTo.Focus();
                 }
             }
@@ -86,7 +91,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
             {
                 if (string.Compare(scSegmentCDFrom.TxtCode.Text, scSegmentCDTo.TxtCode.Text) == 1)
                 {
-                    bbl.ShowMessage("E104");
+                    bbl.ShowMessage("E106");
                     scSegmentCDTo.Focus();
                 }
             }
@@ -111,47 +116,50 @@ namespace TenzikaiShouhinJouhouShuturyoku
         {
             if (ErrorCheck())
             {
-                mte = new M_TenzikaiShouhin_Entity();
-                mte = GetData();
-                DataTable dt = tzkbl.Rpc_TenzikaiShouhinJouhouShuturyoku(mte);
-                if (dt.Rows.Count > 0)
+                if (bbl.ShowMessage("Q205") == DialogResult.Yes)
                 {
-                    string folderPath = "C:\\SES\\";
-                    if (!Directory.Exists(folderPath))
+                    mte = new M_TenzikaiShouhin_Entity();
+                    mte = GetData();
+                    DataTable dt = tzkbl.Rpc_TenzikaiShouhinJouhouShuturyoku(mte);
+                    if (dt.Rows.Count > 0)
                     {
-                        Directory.CreateDirectory(folderPath);
-                    }
-                    SaveFileDialog savedialog = new SaveFileDialog();
-                    savedialog.Filter = "Excel Files|*.xlsx;";
-                    savedialog.Title = "Save";
-                    savedialog.FileName = "展示会商品情報出力";
-                    savedialog.InitialDirectory = folderPath;
-                    savedialog.RestoreDirectory = true;
-                    if (savedialog.ShowDialog() == DialogResult.OK)
-                    {
-                        if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
+                        string folderPath = "C:\\SES\\";
+                        if (!Directory.Exists(folderPath))
                         {
-                            Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
-                            Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
-                            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-
-                            worksheet = workbook.ActiveSheet;
-                            worksheet.Name = "worksheet";
-                            using (XLWorkbook wb = new XLWorkbook())
+                            Directory.CreateDirectory(folderPath);
+                        }
+                        SaveFileDialog savedialog = new SaveFileDialog();
+                        savedialog.Filter = "Excel Files|*.xlsx;";
+                        savedialog.Title = "Save";
+                        savedialog.FileName = "展示会商品情報出力";
+                        savedialog.InitialDirectory = folderPath;
+                        savedialog.RestoreDirectory = true;
+                        if (savedialog.ShowDialog() == DialogResult.OK)
+                        {
+                            if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
                             {
-                                wb.Worksheets.Add(dt, "worksheet");
-                                wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;
-                                wb.SaveAs(savedialog.FileName);
-                                tzkbl.ShowMessage("Q201", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
+                                Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+                                Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+                                Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+
+                                worksheet = workbook.ActiveSheet;
+                                worksheet.Name = "worksheet";
+                                using (XLWorkbook wb = new XLWorkbook())
+                                {
+                                    wb.Worksheets.Add(dt, "worksheet");
+                                    wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;
+                                    wb.SaveAs(savedialog.FileName);
+                                    tzkbl.ShowMessage("Q201", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
+                                }
+                                Process.Start(Path.GetDirectoryName(savedialog.FileName));
                             }
-                            Process.Start(Path.GetDirectoryName(savedialog.FileName));
                         }
                     }
-                }
-                else
-                {
-                    tzkbl.ShowMessage("E128");
-                    scSupplierCD.SetFocus(1);
+                    else
+                    {
+                        tzkbl.ShowMessage("E128");
+                        scSupplierCD.SetFocus(1);
+                    }
                 }
             }
         }
@@ -170,92 +178,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
                 }
             }
         }
-        private void scBrandCDFrom_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                scBrandCDFrom.ChangeDate = bbl.GetDate();
-                if (!string.IsNullOrEmpty(scBrandCDFrom.TxtCode.Text))
-                {
-                    if (!scBrandCDFrom.SelectData())
-                    {
-                        bbl.ShowMessage("E101");
-                        scBrandCDFrom.SetFocus(1);
-                    }
-                }
-            }
-        }
-
-        private void scBrandCDTo_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                scBrandCDTo.ChangeDate = bbl.GetDate();
-                if (!string.IsNullOrEmpty(scBrandCDTo.TxtCode.Text))
-                {
-                    if (!scBrandCDTo.SelectData())
-                    {
-                        bbl.ShowMessage("E101");
-                        scBrandCDTo.SetFocus(1);
-                    }
-                }
-            }
-        }
-
-        private void scSegmentCDFrom_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                scSegmentCDFrom.ChangeDate = bbl.GetDate();
-                if (!string.IsNullOrEmpty(scSegmentCDFrom.TxtCode.Text))
-                {
-                    if (!scSegmentCDFrom.SelectData())
-                    {
-                        bbl.ShowMessage("E101");
-                        scSegmentCDFrom.SetFocus(1);
-                    }
-                }
-            }
-        }
-
-        private void scSegmentCDTo_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                scSegmentCDTo.ChangeDate = bbl.GetDate();
-                if (!string.IsNullOrEmpty(scSegmentCDTo.TxtCode.Text))
-                {
-                    if (!scSegmentCDTo.SelectData())
-                    {
-                        bbl.ShowMessage("E101");
-                        scSegmentCDTo.SetFocus(1);
-                    }
-                }
-            }
-        }
-        private void scBrandCDTo_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (!string.IsNullOrEmpty(scBrandCDFrom.TxtCode.Text) && !string.IsNullOrEmpty(scBrandCDTo.TxtCode.Text))
-            {
-                if (string.Compare(scBrandCDFrom.TxtCode.Text, scBrandCDTo.TxtCode.Text) == 1)
-                {
-                    bbl.ShowMessage("E104");
-                    scBrandCDTo.Focus();
-                }
-            }
-        }
-
-        private void scSegmentCDTo_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (!string.IsNullOrEmpty(scSegmentCDFrom.TxtCode.Text) && !string.IsNullOrEmpty(scSegmentCDTo.TxtCode.Text))
-            {
-                if (string.Compare(scSegmentCDFrom.TxtCode.Text, scSegmentCDTo.TxtCode.Text) == 1)
-                {
-                    bbl.ShowMessage("E104");
-                    scSegmentCDTo.Focus();
-                }
-            }
-        }
+       
         private void scSegmentCDFrom_Enter(object sender, EventArgs e)
         {
             scSegmentCDFrom.Value1 = "226";
@@ -271,6 +194,30 @@ namespace TenzikaiShouhinJouhouShuturyoku
         private void frmTenzikaiShouhinJouhouShuturyoku_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
+        }
+
+        private void scBrandCDTo_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(scBrandCDFrom.TxtCode.Text) && !string.IsNullOrEmpty(scBrandCDTo.TxtCode.Text))
+            {
+                if (string.Compare(scBrandCDFrom.TxtCode.Text, scBrandCDTo.TxtCode.Text) == 1)
+                {
+                    bbl.ShowMessage("E106");
+                    scBrandCDTo.Focus();
+                }
+            }
+        }
+
+        private void scSegmentCDTo_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(scSegmentCDFrom.TxtCode.Text) && !string.IsNullOrEmpty(scSegmentCDTo.TxtCode.Text))
+            {
+                if (string.Compare(scSegmentCDFrom.TxtCode.Text, scSegmentCDTo.TxtCode.Text) == 1)
+                {
+                    bbl.ShowMessage("E106");
+                    scSegmentCDTo.Focus();
+                }
+            }
         }
     }
 }

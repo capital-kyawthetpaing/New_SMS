@@ -47,6 +47,7 @@ namespace TenzikaiJuchuuTourou
         private TempoJuchuuNyuuryoku_BL mibl;
         TenjikaiJuuChuu_BL tkb;
         private System.Windows.Forms.Control previousCtrl; // ｶｰｿﾙの元の位置を待避
+        private string InOperatorName = "";
         private enum Eindex : int
         {
             SCTenjiKai,
@@ -117,60 +118,50 @@ namespace TenzikaiJuchuuTourou
                 BindCombo();
                 //コンボボックス初期化
                 string ymd = bbl.GetDate();
-                // tubl = new TempoUriageNyuuryoku_BL();
-                //  CboStoreCD.Bind(ymd);
-               // base.StartProgram();
-
-                // mTennic = bbl.GetTennic();
-                //検索用のパラメータ設定
-                //    ScCustomerCD.Value1 = "1";
-                //   ScCustomerCD.Value2 = "";
 
                 Btn_F11.Text = "";
                 sc_shiiresaki.TxtCode.Focus();
-
-                //スタッフマスター(M_Staff)に存在すること
-                //[M_Staff]
+                
+                mibl = new TempoJuchuuNyuuryoku_BL();
                 M_Staff_Entity mse = new M_Staff_Entity
                 {
                     StaffCD = InOperatorCD,
-                    ChangeDate = ymd
+                    ChangeDate = mibl.GetDate()
                 };
                 Staff_BL bl = new Staff_BL();
                 bool ret = bl.M_Staff_Select(mse);
-
                 if (ret)
                 {
-                    StoreCD = mse.StoreCD;
-                    //CboStoreCD.SelectedValue = mse.StoreCD;
-                    //ScStaff.LabelText = mse.StaffName;
+                  //  CboStoreCD.SelectedValue = mse.StoreCD;
+                     sc_TentouStaff.LabelText = mse.StaffName;
+                    sc_TentouStaff.TxtCode.Text = mse.StaffCD;
                 }
+               InOperatorName  = mse.StaffName;
+               StoreCD = mse.StoreCD;  //初期値を退避
+                M_Souko_Entity msoe = new M_Souko_Entity {
+                    StoreCD= StoreCD,
+                    ChangeDate= mibl.GetDate(),
+                    DeleteFlg="0"
+                }
+                ;
+                var dt = mibl.M_Souko_SelectForMitsumori(msoe);
+                if (dt.Rows.Count > 0)
+                    cbo_Shuuka.SelectedValue = dt.Rows[0]["SoukoCD"].ToString();
+                //M_Souko_SelectForMitsumori
 
-                detailControls[(int)Eindex.JuuChuuBi].Text = ymd;
+              //  detailControls[(int)Eindex.JuuChuuBi].Text = ymd;
 
-               
+
                 string[] cmds = System.Environment.GetCommandLineArgs();
                 if (cmds.Length - 1 > (int)ECmdLine.PcID)
                 {
                     string juchuNO = cmds[(int)ECmdLine.PcID + 1];   //
                     ChangeOperationMode(EOperationMode.SHOW);
-                    //  keyControls[(int)Eindex.JuchuuNO].Text = juchuNO;
-                    //   CheckKey((int)EIndex.JuchuuNO, true);
                 }
                 Btn_F7.Text =  "行追加(F7)";
                 Btn_F8.Text = "行削除(F8)";
                 Btn_F10.Text = "行複写(F10)";
                 Btn_F1.Enter += Btn_F1_Enter;
-                //Btn_F2.Enter += Btn_F1_Enter;
-                //Btn_F3.Enter += Btn_F1_Enter;
-                //Btn_F4.Enter += Btn_F1_Enter;
-                //Btn_F5.Enter += Btn_F1_Enter;
-                //Btn_F6.Enter += Btn_F1_Enter;
-                //Btn_F7.Enter += Btn_F1_Enter;
-                //Btn_F8.Enter += Btn_F1_Enter;
-                //Btn_F9.Enter += Btn_F1_Enter;
-                //Btn_F10.Enter += Btn_F1_Enter;
-                //Btn_F11.Enter += Btn_F1_Enter;
             }
             catch (Exception ex)
             {
@@ -182,7 +173,7 @@ namespace TenzikaiJuchuuTourou
 
         private void Btn_F1_Enter(object sender, EventArgs e)
         {
-            previousCtrl = this.ActiveControl;
+           // previousCtrl = this.ActiveControl;
             //if (OperationMode == EOperationMode.SHOW)
             //    SetFuncKeyAll(this, "111111000000");
             //else
@@ -902,7 +893,7 @@ namespace TenzikaiJuchuuTourou
                 mGrid.g_DArray[row].SKUCD = selectRow["SKUCD"].ToString();
                 mGrid.g_DArray[row].ShouName = selectRow["SKUName"].ToString();
                 mGrid.g_DArray[row].Color = selectRow["ColorNO"].ToString();
-                mGrid.g_DArray[row].ColorName = selectRow["ColorName"].ToString() == "1" ? "〇" : "";
+                mGrid.g_DArray[row].ColorName = selectRow["ColorName"].ToString();
                 mGrid.g_DArray[row].Size = selectRow["SizeNo"].ToString();
                 mGrid.g_DArray[row].SizeName = selectRow["SizeName"].ToString();
                 mGrid.g_DArray[row].AdminNo = selectRow["AdminNO"].ToString();
@@ -1023,7 +1014,7 @@ namespace TenzikaiJuchuuTourou
                         mGrid.g_DArray[row].SKUCD = selectRow["SKUCD"].ToString();
                         mGrid.g_DArray[row].ShouName = selectRow["SKUName"].ToString();
                         mGrid.g_DArray[row].Color = selectRow["ColorNO"].ToString();
-                        mGrid.g_DArray[row].ColorName = selectRow["ColorName"].ToString() == "1" ? "〇" : "";
+                        mGrid.g_DArray[row].ColorName = selectRow["ColorName"].ToString();
                         mGrid.g_DArray[row].Size = selectRow["SizeNo"].ToString();
                         mGrid.g_DArray[row].SizeName = selectRow["SizeName"].ToString();
 
@@ -1540,9 +1531,12 @@ namespace TenzikaiJuchuuTourou
                     }
                 }
                 if (OperationMode == EOperationMode.SHOW)
-                SetFuncKeyAll(this, "111111000000");
+                    SetFuncKeyAll(this, "111111000000");
                 else
-                    SetFuncKeyAll(this, "111111000001");
+                {
+                    //SetFuncKeyAll(this, "111111000001");
+                }
+                    
             }
             catch (Exception ex)
             {
@@ -1635,7 +1629,7 @@ namespace TenzikaiJuchuuTourou
             // 1>5行目
             try
             {
-                for (int d = 0; d < 5; d++)
+                for (int d = 0; d < 8; d++)
                 {
                     int id = d + 1;
                     mGrid.g_MK_Ctrl[(int)ClsGridTenjikai.ColNO.GYONO, d].CellCtl = this.Controls.Find("lbl_" + id, true)[0];
@@ -2412,7 +2406,7 @@ namespace TenzikaiJuchuuTourou
                         //Ｅ１０２
                         bbl.ShowMessage("E102");
                         //顧客情報ALLクリア
-                        ClearCustomerInfo(0);
+                       // ClearCustomerInfo(0);
                         detailControls[index].Focus();
                         return false;
                     }
@@ -2428,21 +2422,21 @@ namespace TenzikaiJuchuuTourou
                         //Ｅ１０２
                         bbl.ShowMessage("E102");
                         //顧客情報ALLクリア
-                        ClearCustomerInfo(1);
+                        //ClearCustomerInfo(1);
                         detailControls[index].Focus();
                         return false;
                     }
                     if (!CheckDependsOnDate(index))
                         return false;
                     break;
-                case (int)Eindex.SCShiiresaki:    // ShiireSaki
+                case (int)Eindex.SCShiiresaki:    // ShiireSaki>>>>>
                     //Entry required
                     if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
                         //Ｅ１０２
                         bbl.ShowMessage("E102");
                         //顧客情報ALLクリア
-                        ClearCustomerInfo(2);
+                        ///ClearCustomerInfo(2);
                         detailControls[index].Focus();
                         return false;
                     }
@@ -2458,7 +2452,10 @@ namespace TenzikaiJuchuuTourou
                     if (!resul)
                     {
                         bbl.ShowMessage("E101");
-                        ClearCustomerInfo(2);
+                        (detailControls[(int)Eindex.SCShiiresaki].Parent as CKM_SearchControl).LabelText = "";
+                        detailControls[(int)Eindex.SCShiiresaki].Text = "";
+                        detailControls[index].Focus();
+                        // ClearCustomerInfo(2);
                         return false;
                     }
                     (detailControls[(int)Eindex.SCShiiresaki].Parent as CKM_SearchControl).LabelText = mve.VendorName;
@@ -2548,7 +2545,7 @@ namespace TenzikaiJuchuuTourou
                     {
                         bbl.ShowMessage("E101");
                         (detailControls[(int)Eindex.SCTentouStaffu].Parent as CKM_SearchControl).LabelText = "";
-                        detailControls[(int)Eindex.SCTentouStaffu].Text = "";
+                       detailControls[(int)Eindex.SCTentouStaffu].Text = "";
                         detailControls[index].Focus();
                         return false;
                     }
@@ -2592,7 +2589,7 @@ namespace TenzikaiJuchuuTourou
                         if (mce.DeleteFlg == "1")
                         {
                             bbl.ShowMessage("E119");
-                            ClearCustomerInfo(kbn);
+                            //ClearCustomerInfo(kbn);
                             detailControls[index].Focus();
                             return false;
                         }
@@ -2739,7 +2736,6 @@ namespace TenzikaiJuchuuTourou
                 detailControls[(int)(Eindex.KDenwa3)].Text = "";
                 kr_1.Checked = true;
                 kr_2.Checked = false;
-                
             }
             else if (kbn.Equals(1))  // delivery / Shipping
             {
@@ -2751,7 +2747,6 @@ namespace TenzikaiJuchuuTourou
                 detailControls[(int)(Eindex.HDenwa3)].Text = "";
                 hr_3.Checked = true;
                 hr_4.Checked = false;
-
             }
             else if (kbn.Equals(2))  // Shiiresaki
             {
@@ -2939,13 +2934,13 @@ namespace TenzikaiJuchuuTourou
                 sctl.Bind(bbl.GetDate());
             }
         }
-        private DataTable GetTable()
+        private DataTable GetTable(out DataTable delete)
         {
-            var dt = Cols();
-
+            var dt = Cols(out DataTable dout);
+            delete = dout;
             return dt;
         }
-        private DataTable Cols()
+        private DataTable Cols(out DataTable dout)
         {
             DataTable dt = new DataTable();
             var c = new string[] {
@@ -2988,6 +2983,9 @@ namespace TenzikaiJuchuuTourou
             {
                 dt.Columns.Add(colname);
             }
+            var dtsakujou = new DataTable();
+            dtsakujou.Columns.Add("TenjiRow");
+
             int h = 0;
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
             {
@@ -3007,18 +3005,18 @@ namespace TenzikaiJuchuuTourou
                            , mGrid.g_DArray[RW].GYONO
                            , mGrid.g_DArray[RW].Chk ? "1" : "0"
                            , mGrid.g_DArray[RW].SCJAN
-                           , mGrid.g_DArray[RW].AdminNo == "" ? "0" : mGrid.g_DArray[RW].AdminNo==null? "0": mGrid.g_DArray[RW].AdminNo   // Changed value as from null to 0 default as doc mentioned 
+                           , mGrid.g_DArray[RW].AdminNo == "" ? "0" : mGrid.g_DArray[RW].AdminNo == null ? "0" : mGrid.g_DArray[RW].AdminNo   // Changed value as from null to 0 default as doc mentioned 
                            , mGrid.g_DArray[RW].SKUCD
                            , mGrid.g_DArray[RW].ShouName == "" ? null : mGrid.g_DArray[RW].ShouName
                            , mGrid.g_DArray[RW].Color == "" ? null : mGrid.g_DArray[RW].Color
                            , mGrid.g_DArray[RW].ColorName == "" ? null : mGrid.g_DArray[RW].ColorName
                            , mGrid.g_DArray[RW].Size == "" ? null : mGrid.g_DArray[RW].Size
                            , mGrid.g_DArray[RW].SizeName == "" ? null : mGrid.g_DArray[RW].SizeName
-                           , mGrid.g_DArray[RW].ShuukaYo
+                           , mGrid.g_DArray[RW].ShuukaYo == "" ? null : mGrid.g_DArray[RW].ShuukaYo
                            , mGrid.g_DArray[RW].ChoukuSou ? "1" : "0"
                            , mGrid.g_DArray[RW].ShuukaSou
                            , mGrid.g_DArray[RW].HacchuTanka.ToString().Replace(",", "")
-                           , mGrid.g_DArray[RW].NyuuKayo
+                           , mGrid.g_DArray[RW].NyuuKayo == "" ? null : mGrid.g_DArray[RW].NyuuKayo
                            , mGrid.g_DArray[RW].JuchuuSuu.ToString().Replace(",", "")
                            , mGrid.g_DArray[RW].TaniHDN == "" ? null : mGrid.g_DArray[RW].TaniHDN
                            , mGrid.g_DArray[RW].TeniName == "" ? null : mGrid.g_DArray[RW].TeniName
@@ -3027,7 +3025,7 @@ namespace TenzikaiJuchuuTourou
                            , mGrid.g_DArray[RW].zeikomijuchuu.ToString().Replace(",", "") == "" ? null : mGrid.g_DArray[RW].zeikomijuchuu.ToString().Replace(",", "")
                            , mGrid.g_DArray[RW].ArariGaku.ToString().Replace(",", "") == "" ? null : mGrid.g_DArray[RW].ArariGaku.ToString().Replace(",", "")
                            , mGrid.g_DArray[RW].ZeiNu.ToString().Replace(",", "") == "" ? null : mGrid.g_DArray[RW].ZeiNu.ToString().Replace(",", "")
-                           , mGrid.g_DArray[RW].ZeinuTanku.ToString().Replace(",", "").Replace("%","").Replace("％", "") == "" ? null : mGrid.g_DArray[RW].ZeinuTanku.ToString().Replace(",", "").Replace("%", "").Replace("％", "")
+                           , mGrid.g_DArray[RW].ZeinuTanku.ToString().Replace(",", "").Replace("%", "").Replace("％", "") == "" ? null : mGrid.g_DArray[RW].ZeinuTanku.ToString().Replace(",", "").Replace("%", "").Replace("％", "")
                            , mGrid.g_DArray[RW].ShanaiBi == "" ? null : mGrid.g_DArray[RW].ShanaiBi
                            , mGrid.g_DArray[RW].ShagaiBi == "" ? null : mGrid.g_DArray[RW].ShagaiBi
                            , mGrid.g_DArray[RW].KobeTsu == "" ? null : mGrid.g_DArray[RW].KobeTsu
@@ -3037,12 +3035,17 @@ namespace TenzikaiJuchuuTourou
                            , mGrid.g_DArray[RW].Keigen.ToString().Replace(",", "")
                            );
                     }
+                    else if (!(mGrid.g_DArray[RW].Chk) && mGrid.g_MK_State[(int)ClsGridTenjikai.ColNO.Chk, RW].Cell_Enabled && !String.IsNullOrEmpty(mGrid.g_DArray[RW].TenjiRow))
+                    {
+                        dtsakujou.Rows.Add(mGrid.g_DArray[RW].TenjiRow);
+                    }
                 }
                 //else
                 //{
                 //    dt.Rows.Add();
                 //}
             }
+            dout = dtsakujou;
             return dt;
             ////    //dt.Columns.Add();
             ////     internal string GYONO;
@@ -3152,7 +3155,11 @@ namespace TenzikaiJuchuuTourou
             {
                 return;
             }
-            openFileDialog1.InitialDirectory = "C:\\ses\\";
+            if (!System.IO.Directory.Exists("C:\\SMS\\TenziKaiJuchuu\\"))
+            {
+                System.IO.Directory.CreateDirectory("C:\\SMS\\TenziKaiJuchuu\\");
+            }
+            openFileDialog1.InitialDirectory = "C:\\SMS\\TenziKaiJuchuu\\";
             openFileDialog1.FilterIndex = 2;
             openFileDialog1.RestoreDirectory = true;
             openFileDialog1.Filter = "Excel Worksheets|*.xlsx";
@@ -3920,9 +3927,10 @@ namespace TenzikaiJuchuuTourou
                 CalcKin();
 
             }
+            var resData = GetTable(out DataTable delete);
             if (OperationMode == EOperationMode.INSERT)
             {
-                var resData = GetTable();
+               
                 if (resData.Rows.Count == 0)
                 {
                     bbl.ShowMessage("E257");
@@ -3947,7 +3955,7 @@ namespace TenzikaiJuchuuTourou
             }
             else if (OperationMode == EOperationMode.UPDATE)
             {
-                var resData = GetTable();
+               
                 if (resData.Rows.Count == 0)
                 {
                     bbl.ShowMessage("E257");
@@ -3955,8 +3963,9 @@ namespace TenzikaiJuchuuTourou
                 }
                 var GetData = GetTenjiData();
                 var xml = bbl.DataTableToXml(resData);
+                var dxml = bbl.DataTableToXml(delete);
                 tkb = new TenjikaiJuuChuu_BL();
-                var TenjiUpdate = tkb.D_TenjiUpdate(GetData, xml);
+                var TenjiUpdate = tkb.D_TenjiUpdate(GetData, xml,dxml);
                 if (TenjiUpdate)
                 {
                     bbl.ShowMessage("I101");
@@ -3971,7 +3980,7 @@ namespace TenzikaiJuchuuTourou
             }
             else if (OperationMode == EOperationMode.DELETE)
             {
-                var resData = GetTable();
+               
                 if (resData.Rows.Count == 0)
                 {
                     bbl.ShowMessage("E257");
