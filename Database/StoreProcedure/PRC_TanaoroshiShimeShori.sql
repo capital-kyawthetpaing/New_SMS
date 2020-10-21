@@ -261,7 +261,7 @@ BEGIN
                                 AND DS.RackNO = @RackNO
                                 AND DS.AdminNO = @AdminNO
                                 AND DS.ArrivalYetFLG = 0
-                                AND DS.AllowableSu > 0
+                                AND DS.AllowableSu >= 0
                                 ORDER BY DS.AllowableSu desc
                                         ,DS.ArrivalDate
                                         ,DS.StockNO
@@ -361,7 +361,7 @@ BEGIN
                     AND DS.RackNO = @RackNO
                     AND DS.AdminNO = @AdminNO
                     AND DS.ArrivalYetFLG = 0
-                    AND DS.AllowableSu > 0
+                    AND DS.AllowableSu >= 0
                     --AND DS.StockSu - DS.ReserveSu > 0
                     ORDER BY DS.AllowableSu desc	--(DS.StockSu - DS.ReserveSu) desc
                             ,DS.ArrivalDate
