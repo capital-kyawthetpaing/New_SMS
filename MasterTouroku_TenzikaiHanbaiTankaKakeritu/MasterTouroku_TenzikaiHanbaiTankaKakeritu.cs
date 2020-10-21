@@ -80,7 +80,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                     str2 = Convert.ToInt32(TB_PriceOutTaxT.Text.ToString().Replace(",", ""));
                 if (str1 > str2)
                 {
-                    bbl.ShowMessage("E104");
+                    bbl.ShowMessage("E116");
                     TB_PriceOutTaxT.Focus();
                     return false;
                 }
@@ -277,6 +277,26 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
 
             return mTSE;
         }
+        private void TB_PriceOutTaxT_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!String.IsNullOrEmpty(TB_PriceOutTaxF.Text))
+                {
+                    int str2 = 0;
+                    int str1 = Convert.ToInt32(TB_PriceOutTaxF.Text.ToString().Replace(",", ""));
+                    if (string.IsNullOrWhiteSpace(TB_PriceOutTaxT.Text.ToString()))
+                        str2 = 0;
+                    else
+                        str2 = Convert.ToInt32(TB_PriceOutTaxT.Text.ToString().Replace(",", ""));
+                    if (str1 > str2)
+                    {
+                        bbl.ShowMessage("E116");
+                        TB_PriceOutTaxT.Focus();
+                    }
+                }
+            }
+        }
         private void GV_Tenzaishohin_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             try
@@ -395,5 +415,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 j += 2;
             }
         }
+
+       
     }
 }
