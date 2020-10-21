@@ -75,6 +75,7 @@ BEGIN
            ,[ActualQuantity]
            ,[DifferenceQuantity]
            ,[InventoryNO]
+           ,[ADDFlg]
            ,[InsertOperator]
            ,[InsertDateTime]
            ,[UpdateOperator]
@@ -92,6 +93,7 @@ BEGIN
            ,tbl.ActualQuantity
            ,tbl.ActualQuantity AS DifferenceQuantity
            ,NULL AS InventoryNO
+           ,1
            ,@Operator  
            ,@SYSDATETIME
            ,@Operator  
