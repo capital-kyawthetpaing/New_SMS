@@ -297,7 +297,7 @@ namespace TanaoroshiNyuuryoku
         protected override void ExecDisp()
         {
 
-            for (int i = 0; i < (int)EIndex.InventoryDate; i++)
+            for (int i = 0; i <= (int)EIndex.InventoryDate; i++)
                 if (CheckDetail(i) == false)
                 {
                     detailControls[i].Focus();
@@ -392,7 +392,7 @@ namespace TanaoroshiNyuuryoku
             try
             {
                 //Form.倉庫～Form.棚卸日までのエラーチェック		
-                for (int i = 0; i < (int)EIndex.InventoryDate; i++)
+                for (int i = 0; i <= (int)EIndex.InventoryDate; i++)
                     if (CheckDetail(i) == false)
                     {
                         detailControls[i].Focus();
