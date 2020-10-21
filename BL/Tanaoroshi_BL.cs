@@ -53,7 +53,14 @@ namespace BL
             }
             return false;
         }
-
+        /// <summary>
+        /// 棚卸入力にて使用
+        /// </summary>
+        public DataTable M_Souko_SelectData(M_Souko_Entity mse)
+        {
+            M_Souko_DL msdl = new M_Souko_DL();
+            return msdl.M_Souko_SelectData(mse);
+        }
         /// <summary>
         /// 棚卸締処理にて使用
         /// </summary>

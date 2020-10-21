@@ -12,6 +12,7 @@ create PROCEDURE [dbo].[D_TenjiI_Details_Update]
 	-- Add the parameters for the stored procedure here
 	
 		@xml as xml ,
+		@xml2 as xml ,
 		@TenjiCD as varchar(11),
 		@JuchuuBi as date,
 		@ShuuKaSouKo as varchar(20),
@@ -608,13 +609,26 @@ BEGIN
 						,DeleteOperator
 						,DeleteDateTime
 						from D_TenzikaiJuchuuDetails where TenzikaiJuchuuNO=  @TenjiCD and  TenzikaiJuchuuRows >@lastUpdatedTenjiRow
+		-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+		DECLARE @DocHandle2 int
+		EXEC sp_xml_preparedocument @DocHandle2 OUTPUT, @Xml2
 		
+		select * INTO #tempTenji2 FROM OPENXML (@DocHandle2, '/NewDataSet/test',2)
+		WITH
+		(
+		TenjiRow int 
+		 )
+		EXEC sp_xml_removedocument @DocHandle2; 
+
+		update D_TenzikaiJuchuuDetails set DeleteDateTime=@JuchuuBi  where TenzikaiJuchuuRows in (select TenjiRow from #tempTenji2) and TenzikaiJuchuuNO = @TenjiCD
+		-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 			EXEC L_Log_Insert
 					 @InsertOperator  
 					,@Program        
 					,@PC             
 					,@OperateMode    
 					,@KeyItem
-
+					
 		drop table #tempTenji
+		drop table #tempTenji2
 END
