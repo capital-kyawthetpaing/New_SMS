@@ -102,10 +102,8 @@ namespace MasterTouroku_CustomerSKUPrice
 
             StartProgram();
             txtStartDate.Focus();
-            //detailControls[(int)EIndex.Date].Text = bbl.GetDate();
 
             Clear(pnl_Body);
-            txtItemName.Enabled = false;
             Scr_Clr(0);
         }
 
@@ -1346,9 +1344,6 @@ namespace MasterTouroku_CustomerSKUPrice
                     {
                         if (pGrid == 1)
                         {
-                            // 使用可項目無  明細部スクロールのみ可
-                            // IMT_DMY_0.Focus()
-                            //SetFuncKeyAll(this, "000010000101", "11100000");
                             pnl_Body.Enabled = true;                  // ボディ部使用可
                             break;
                         }
@@ -1463,22 +1458,6 @@ namespace MasterTouroku_CustomerSKUPrice
                         }
                     }
 
-                    //switch (w_CtlCol)
-                    //{
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.CustomerCD:
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.CustomerName:
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.TekiyouKaisiDate:    // 
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.TekiyouShuuryouDate:
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.JANCD:
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.SKUCD:
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.SKUName:    // 
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.SalePriceOutTax:
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.Remarks:
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.Space1:
-
-
-                    //        break;
-                    //}
                 }
             }
             // 明細部の状態(初期状態) をセット 
@@ -1506,14 +1485,19 @@ namespace MasterTouroku_CustomerSKUPrice
             {
                 for (int W_CtlCol = 0; W_CtlCol < (int)ClsGridCustomerSKUPric.ColNO.COUNT; W_CtlCol++)
                 {
-                    
+                    switch (W_CtlCol)
+                    {
+                        case (int)ClsGridCustomerSKUPric.ColNO.SalePriceOutTax:
+                            mGrid.SetProp_TANKA(ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);      // 単価 
+                            ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).AllowMinus = true;
+                            break;
+                    }
 
                     mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl.TabIndex = tabindex;
                     tabindex++;
                 }
             }
             Set_GridTabStop(false);
-           // mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
 
         }
 
