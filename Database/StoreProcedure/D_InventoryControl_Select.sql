@@ -36,7 +36,7 @@ BEGIN
 
     WHERE DI.SoukoCD = @SoukoCD
     AND DI.InventoryDate = CONVERT(date, @InventoryDate)
-    AND DI.InventoryKBN = 1
+    AND DI.InventoryKBN <> 2
     AND DI.RackNO >= (CASE WHEN @TanaCDFrom <> '' THEN @TanaCDFrom ELSE DI.RackNO END)
     AND DI.RackNO <= (CASE WHEN @TanaCDTo <> '' THEN @TanaCDTo ELSE DI.RackNO END)
 --    AND DI.InventoryKBN = (CASE WHEN ISNULL(@InventoryKBN,'') <> '' THEN CONVERT(int, @InventoryKBN)
