@@ -62,6 +62,24 @@ namespace BL
             return msdl.M_Souko_SelectData(mse);
         }
         /// <summary>
+        /// 棚卸入力にて使用
+        /// </summary>
+        /// <param name="doe"></param>
+        /// <returns></returns>
+        public bool D_InventoryControl_Select(D_InventoryControl_Entity de)
+        {
+            D_InventoryControl_DL dl = new D_InventoryControl_DL();
+            DataTable dt = dl.D_InventoryControl_SelectForTanaoroshiNyuuryoku(de);
+
+            if (dt.Rows.Count > 0)
+            {
+                de.InventoryNO = dt.Rows[0]["InventoryNO"].ToString();
+                return true;
+            }
+            else
+                return false;
+        }
+        /// <summary>
         /// 棚卸締処理にて使用
         /// </summary>
         /// <param name="de"></param>
@@ -75,14 +93,16 @@ namespace BL
         /// 棚卸締処理チェック処理
         /// </summary>
         /// <param name="doe"></param>
-        /// <returns></returns>
+        /// <returns>InventoryKBN<>2</returns>
         public bool D_InventoryControl_Select(D_InventoryProcessing_Entity de)
         {
             D_InventoryControl_DL dl = new D_InventoryControl_DL();
             DataTable dt = dl.D_InventoryControl_Select(de);
 
             if (dt.Rows.Count > 0)
+            {
                 return true;
+            }
             else
                 return false;
         }

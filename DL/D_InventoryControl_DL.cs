@@ -32,8 +32,20 @@ namespace DL
 
             return SelectData(dic, sp);
         }
+        public DataTable D_InventoryControl_SelectForTanaoroshiNyuuryoku(D_InventoryControl_Entity de)
+        {
+            string sp = "D_InventoryControl_SelectForTanaoroshiNyuuryoku";
 
-   
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@InventoryDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.InventoryDate } },
+                { "@SoukoCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.SoukoCD } },
+                { "@RackNO",new ValuePair { value1=SqlDbType.VarChar,value2=de.RackNO} },
+            };
+
+            return SelectData(dic, sp);
+        }
+
 
     }
 }

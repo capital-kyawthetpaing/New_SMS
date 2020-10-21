@@ -512,10 +512,9 @@ namespace TanaoroshiNyuuryoku
                         fieldData[0] = rackNo;
 
                         //D_InventoryControlに存在しない場合、エラー
-                        D_InventoryProcessing_Entity de = new D_InventoryProcessing_Entity();
+                        D_InventoryControl_Entity de = new D_InventoryControl_Entity();
                         de.SoukoCD = CboSoukoCD.SelectedValue.ToString();
-                        de.FromRackNO = rackNo;
-                        de.ToRackNO = rackNo;
+                        de.RackNO = rackNo;
                         de.InventoryDate = detailControls[(int)EIndex.InventoryDate].Text;
 
                         bool ret = tabl.D_InventoryControl_Select(de);
