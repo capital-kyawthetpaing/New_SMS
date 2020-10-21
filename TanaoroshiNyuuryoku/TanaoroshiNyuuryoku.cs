@@ -78,11 +78,9 @@ namespace TanaoroshiNyuuryoku
 
                 //起動時共通処理
                 base.StartProgram();
-                Btn_F9.Text = "";
-                Btn_F9.Enabled = false;
                 Btn_F10.Text = "取込(F10)";
                 Btn_F12.Text = "登録(F12)";
-                SetFuncKeyAll(this, "100001000111");
+                SetFuncKeyAll(this, "100001001111");
 
                 //コンボボックス初期化
                 string ymd = bbl.GetDate();
@@ -231,7 +229,6 @@ namespace TanaoroshiNyuuryoku
                     {
                         if (detailControls[(int)EIndex.RackNO].Text.Equals(rw["RackNO"].ToString()) && detailControls[(int)EIndex.JANCD].Text.Equals(rw["JANCD"].ToString()))
                         {
-                            //Ｅ１９３
                             bbl.ShowMessage("E265");
                             return false;
                         }
@@ -362,6 +359,14 @@ namespace TanaoroshiNyuuryoku
                         DataGridViewCellStyle defaultCellStyle = new DataGridViewCellStyle();
                         defaultCellStyle.Font = new System.Drawing.Font(GvDetail.Font, GvDetail.Font.Style | System.Drawing.FontStyle.Bold);
                         defaultCellStyle.BackColor = System.Drawing.Color.Silver;
+
+                        switch(i)
+                        {
+                            case (int)EColNo.DifferenceQuantity:
+                            case (int)EColNo.TheoreticalQuantity:
+                                defaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                                break;
+                        }
                         GvDetail.Columns[i].DefaultCellStyle = defaultCellStyle;
                     }
                 }
@@ -378,7 +383,6 @@ namespace TanaoroshiNyuuryoku
                             break;
                     }
                 }
-                Btn_F10.Enabled = false;
 
                 ScFromRackNo.Value1 = CboSoukoCD.SelectedValue.ToString();
             }
@@ -507,6 +511,21 @@ namespace TanaoroshiNyuuryoku
 
                         fieldData[0] = rackNo;
 
+                        //D_InventoryControlに存在しない場合、エラー
+                        D_InventoryProcessing_Entity de = new D_InventoryProcessing_Entity();
+                        de.SoukoCD = CboSoukoCD.SelectedValue.ToString();
+                        de.FromRackNO = rackNo;
+                        de.ToRackNO = rackNo;
+                        de.InventoryDate = detailControls[(int)EIndex.InventoryDate].Text;
+
+                        bool ret = tabl.D_InventoryControl_Select(de);
+
+                        if (!ret)
+                        {
+                            bbl.ShowMessage("E266");
+                            return false;
+                        }
+
                         DataRow[] rows = dtFile.Select("RackNO = '" + rackNo + "' AND JANCD = '" + fieldData[1] + "'");
                         if(rows.Length == 0)
                         {
@@ -521,7 +540,7 @@ namespace TanaoroshiNyuuryoku
                                 TanaCD = rackNo,
                                 ChangeDate = ymd
                             };
-                            bool ret = tabl.M_Location_SelectData(mle);
+                            ret = tabl.M_Location_SelectData(mle);
                             if (!ret)
                             {
                                 errFlg = true;
@@ -556,18 +575,16 @@ namespace TanaoroshiNyuuryoku
                             }
                             else
                             {
-                                DataRow row = ((DataTable)GvDetail.DataSource).NewRow();
-
                                 //追加
                                 DataRow dataRow = dtFile.NewRow();
                                 dataRow["RackNO"] = rackNo;
                                 dataRow["JANCD"] = fieldData[1];
                                 dataRow["SKUCD"] = selectRow["SKUCD"].ToString();
                                 dataRow["AdminNO"] = selectRow["AdminNO"].ToString();
-                                //dataRow["TheoreticalQuantity"] = 0;
+                                dataRow["TheoreticalQuantity"] = 0;
                                 dataRow["ActualQuantity"] = bbl.Z_Set(fieldData[2]);
-                                //dataRow["DifferenceQuantity"] = 0;
-                                //dataRow["InventoryNO"] = "";
+                                dataRow["DifferenceQuantity"] = bbl.Z_Set(fieldData[2]);
+                                dataRow["InventoryNO"] = de.InventoryNO;
                                 dataRow["SKUName"] = selectRow["SKUName"].ToString();
                                 dataRow["ColorName"] = selectRow["ColorName"].ToString();
                                 dataRow["SizeName"] = selectRow["SizeName"].ToString();
@@ -579,6 +596,7 @@ namespace TanaoroshiNyuuryoku
                         {
                             //Update
                             rows[0]["ActualQuantity"] = bbl.Z_Set(fieldData[2]);
+                            rows[0]["DifferenceQuantity"] = bbl.Z_Set(fieldData[2]);
                         }
 
                         csvData.Rows.Add(fieldData);
@@ -644,6 +662,7 @@ namespace TanaoroshiNyuuryoku
                 dt.Rows.Add(rowNo
                  , row["RackNO"].ToString()
                  , bbl.Z_Set(row["AdminNO"])
+                 , row["InventoryNO"].ToString()
                  , bbl.Z_Set(row["ActualQuantity"])
                  , 0    //mGrid.g_DArray[RW].Update
                  );
@@ -660,6 +679,7 @@ namespace TanaoroshiNyuuryoku
             dt.Columns.Add("GyoNO", typeof(int));
             dt.Columns.Add("RackNO", typeof(string));
             dt.Columns.Add("AdminNO", typeof(int));
+            dt.Columns.Add("InventoryNO", typeof(string));
             dt.Columns.Add("ActualQuantity", typeof(int));
           
             dt.Columns.Add("UpdateFlg", typeof(int));
@@ -711,6 +731,7 @@ namespace TanaoroshiNyuuryoku
             detailControls[(int)EIndex.InventoryDate].Text = ymd;
             detailControls[(int)EIndex.SoukoCD].Focus();
 
+           F9Visible=false;
             Btn_F10.Enabled = true;
         }
 
@@ -865,13 +886,31 @@ namespace TanaoroshiNyuuryoku
         {
             try
             {
-                for (int i = (int)EIndex.RackNO; i < (int)EIndex.Suryo; i++)
+                if (GvDetail.Rows.Count == 0)
+                    return;
+
+                for (int i = (int)EIndex.RackNO; i <= (int)EIndex.Suryo; i++)
                 {
                     if (CheckDetail(i) == false)
                     {
                         detailControls[i].Focus();
                         return;
                     }
+                }
+
+                //D_InventoryControlに存在しない場合、エラー
+                D_InventoryProcessing_Entity de = new D_InventoryProcessing_Entity();
+                de.SoukoCD = CboSoukoCD.SelectedValue.ToString();
+                de.FromRackNO = detailControls[(int)EIndex.RackNO].Text;
+                de.ToRackNO = detailControls[(int)EIndex.RackNO].Text;
+                de.InventoryDate = detailControls[(int)EIndex.InventoryDate].Text;
+
+                bool ret= tabl.D_InventoryControl_Select(de);
+
+                if(!ret)
+                {
+                    bbl.ShowMessage("E266");
+                    return;
                 }
 
                 DataRow row = ((DataTable)GvDetail.DataSource).NewRow();
@@ -881,8 +920,11 @@ namespace TanaoroshiNyuuryoku
                 row["SKUName"] = lblSKUName.Text;
                 row["ColorName"] = lblColorName.Text;
                 row["SizeName"] = lblSizeName.Text;
+                row["TheoreticalQuantity"] = 0;
                 row["ActualQuantity"] = bbl.Z_SetStr( detailControls[(int)EIndex.Suryo].Text);
+                row["DifferenceQuantity"] = bbl.Z_SetStr(detailControls[(int)EIndex.Suryo].Text);
                 row["RackNO"] = detailControls[(int)EIndex.RackNO].Text;
+                row["InventoryNO"] = de.InventoryNO;
                 ((DataTable)GvDetail.DataSource).Rows.Add(row);
 
                 detailControls[(int)EIndex.JANCD].Text = "";

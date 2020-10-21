@@ -31,6 +31,7 @@ BEGIN
     SELECT DI.SoukoCD
         , DI.RackNO
         , DI.InventoryDate
+        , DI.InventoryNO
     FROM D_InventoryControl AS DI
 
     WHERE DI.SoukoCD = @SoukoCD
