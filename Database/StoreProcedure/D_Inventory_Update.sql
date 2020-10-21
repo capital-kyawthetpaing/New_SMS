@@ -20,6 +20,7 @@ CREATE TYPE T_Tanaoroshi AS TABLE
     [GyoNO] [int],
     [RackNO] [varchar](11) ,
     [AdminNO] [int] ,
+    [InventoryNO] [varchar](11) ,
     [ActualQuantity] [int],
 
     [UpdateFlg][tinyint]
@@ -75,6 +76,7 @@ BEGIN
            ,[ActualQuantity]
            ,[DifferenceQuantity]
            ,[InventoryNO]
+           ,[ADDFlg]
            ,[InsertOperator]
            ,[InsertDateTime]
            ,[UpdateOperator]
@@ -91,7 +93,8 @@ BEGIN
            ,0 AS TheoreticalQuantity
            ,tbl.ActualQuantity
            ,tbl.ActualQuantity AS DifferenceQuantity
-           ,NULL AS InventoryNO
+           ,tbl.InventoryNO
+           ,1
            ,@Operator  
            ,@SYSDATETIME
            ,@Operator  

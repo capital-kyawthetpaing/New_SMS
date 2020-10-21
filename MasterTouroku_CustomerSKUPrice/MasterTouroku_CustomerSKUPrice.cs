@@ -95,12 +95,13 @@ namespace MasterTouroku_CustomerSKUPrice
             InitialControlArray();
 
             Btn_F8.Text = "";
+            Btn_F10.Text = "";
+            Btn_F11.Text = "";
 
             S_SetInit_Grid();
 
             StartProgram();
             txtStartDate.Focus();
-            //detailControls[(int)EIndex.Date].Text = bbl.GetDate();
 
             Clear(pnl_Body);
             Scr_Clr(0);
@@ -243,118 +244,798 @@ namespace MasterTouroku_CustomerSKUPrice
             rdoAll.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
         }
 
-        private void S_SetInit_Grid()
+        private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            int W_CtlRow;
-
-            if (ClsGridCustomerSKUPric.gc_P_GYO <= ClsGridCustomerSKUPric.gMxGyo)
+            try
             {
-                mGrid.g_MK_Max_Row = ClsGridCustomerSKUPric.gMxGyo;
-                m_EnableCnt = ClsGridCustomerSKUPric.gMxGyo;
+
             }
-            mGrid.g_MK_Ctl_Row = ClsGridCustomerSKUPric.gc_P_GYO;
-            mGrid.g_MK_Ctl_Col = ClsGridCustomerSKUPric.gc_MaxCL;
-
-            mGrid.g_MK_MaxValue = mGrid.g_MK_Max_Row - mGrid.g_MK_Ctl_Row;
-            this.Vsb_Mei_0.LargeChange = mGrid.g_MK_Ctl_Row - 1;
-            this.Vsb_Mei_0.SmallChange = 1;
-            this.Vsb_Mei_0.Minimum = 0;
-            this.Vsb_Mei_0.Maximum = mGrid.g_MK_MaxValue + this.Vsb_Mei_0.LargeChange - 1;
-            S_SetControlArray();
-            for (W_CtlRow = 0; W_CtlRow <= mGrid.g_MK_Ctl_Row - 1; W_CtlRow++)
+            catch (Exception ex)
             {
-                for (int w_CtlCol = 0; w_CtlCol <= mGrid.g_MK_Ctl_Col - 1; w_CtlCol++)
-                {
-                    if (mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl != null)
-                    {
-                        if (mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.GetType().Equals(typeof(Search.CKM_SearchControl)))
-                        {
-                            Search.CKM_SearchControl sctl = (Search.CKM_SearchControl)mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl;
-                            sctl.TxtCode.Enter += new System.EventHandler(GridControl_Enter);
-                            sctl.TxtCode.Leave += new System.EventHandler(GridControl_Leave);
-                            sctl.TxtCode.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown);
-                            sctl.TxtCode.Tag = W_CtlRow.ToString();
-                            sctl.BtnSearch.Click += new System.EventHandler(BtnSearch_Click);
-                        }
-                        if (mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
-                        {
-                            //mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Enter += new System.EventHandler(GridControl_Enter);
-                            mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Enter += new System.EventHandler(GridControl_Enter);
-                            mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Leave += new System.EventHandler(GridControl_Leave);
-                            mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown);
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        private void RadioButton_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                        ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+                {
+                    detailControls[(int)EIndex.DateStart].Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void Scr_Clr(short Kbn)  /// 0 is initial state
+        {
+            var ctrl = GetAllControls(pannel_Header);
+            if (Kbn == 0)
+            {
+                foreach (Control ctl in ctrl)
+                {
+                    if (ctrl is CKM_TextBox ct)
+                    {
+                        ct.Text = "";
+                    }
+                    else if (ctrl is CKM_SearchControl c)
+                    {
+                        c.TxtChangeDate.Text = "";
+                        c.TxtCode.Text = "";
+                        c.LabelText = "";
+                    }
+                    else if (ctrl is CKM_RadioButton cr && cr.Name == "rdoRecent")
+                    {
+                        cr.Checked = true;
+                    }
+                }
+            }
+
+            S_Clear_Grid();   //画面クリア（明細部）
+        }
+
+        /// <summary>
+        /// Bind Data
+        /// </summary>
+        /// <param name="dt"></param>
+        private void SetMultiColNo(DataTable dt = null)
+        {
+            if (dt == null)
+            {
+                for (int w_Row = 0; w_Row < 999; w_Row++)
+                {
+                    mGrid.g_DArray[w_Row].GYONO = (w_Row + 1).ToString();
+                    //mGrid.g_DArray[w_Row].Rank1UnitPrice = "0";
+                }
+            }
+            else  // set Data from db
+            {
+                int c = 0;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    //detailControls[(int)EIndex.Date].Text = bbl.GetDate();
+                    mGrid.g_DArray[c].CustomerCD = dr["CustomerCD"].ToString();
+                    mGrid.g_DArray[c].CustomerName = dr["CustomerName"].ToString();
+                    mGrid.g_DArray[c].TekiyouKaisiDate = dr["TekiyouKaisiDate"].ToString();
+                    mGrid.g_DArray[c].TekiyouShuuryouDate = dr["TekiyouShuuryouDate"].ToString();
+                    mGrid.g_DArray[c].AdminNO = dr["AdminNo"].ToString();
+                    mGrid.g_DArray[c].JANCD = dr["JanCD"].ToString();
+                    mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
+                    mGrid.g_DArray[c].SKUName = dr["SKUName"].ToString(); 
+                    mGrid.g_DArray[c].SalePriceOutTax = dr["SalePriceOutTax"].ToString();
+                    mGrid.g_DArray[c].Remarks = dr["Remarks"].ToString();
+                    c++;
+                }
+            }
+        }
+
+        
+        
+       
+        private void Scr_Lock(short no1, short no2, short Kbn)
+        {
+            short i;
+            for (i = no1; i <= no2; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        {
+                            //// ｷｰ部
+                            //foreach (Control ctl in keyControls)
+                            //{
+                            //    ctl.Enabled = Kbn == 0 ? true : false;
+                            //}
+                            //ScMitsumoriNO.BtnSearch.Enabled = Kbn == 0 ? true : false;
+                            break;
+                        }
+
+                    case 1:
+                        {
+                            // ｷｰ部(複写)
+                            break;
+                        }
+
+                    case 2:
+                        {
+                            break;
+                        }
+
+                    case 3:
+                        {
+                            // 明細部
+                            foreach (Control ctl in detailControls)
+                            {
+                                ctl.Enabled = Kbn == 0 ? true : false;
+                            }
+                            //ScCustomer.BtnSearch.Enabled = Kbn == 0 ? true : false;
+                            //btnAddress.Enabled = Kbn == 0 ? true : false;
+
+                            break;
+                        }
+                }
+            }
+        }
+
+        private void ADD_SUB()
+        {
+            Control w_Act = previousCtrl;
+            int w_Row;
+            int w_Gyo;
+
+            if (mGrid.F_Search_Ctrl_MK(w_Act, out int w_Col, out int w_CtlRow) == false)
+            {
+                return;
+            }
+            w_Row = w_CtlRow + Vsb_Mei_0.Value;
+
+            //画面より配列セット 
+            mGrid.S_DispToArray(Vsb_Mei_0.Value);
+
+            //追加行より下の明細を1行ずつずらす（内容コピー）
+            for (int i = mGrid.g_MK_Max_Row - 1; i > w_Row; i--)
+            {
+                w_Gyo = Convert.ToInt16(mGrid.g_DArray[i].GYONO);          //行番号 退避
+
+                //前行をコピー
+                mGrid.g_DArray[i] = mGrid.g_DArray[i - 1];
+
+                //退避内容を戻す
+                mGrid.g_DArray[i].GYONO = w_Gyo.ToString();          //行番号
+            }
+
+            w_Gyo = Convert.ToInt16(mGrid.g_DArray[w_Row].GYONO);
+            // 一行クリア
+            Array.Clear(mGrid.g_DArray, w_Row, 1);
+            //退避内容を戻す
+            mGrid.g_DArray[w_Row].GYONO = w_Gyo.ToString();          //行番号
+
+            //CalcKin();
+
+            int col = (int)ClsGridCustomerSKUPric.ColNO.TekiyouKaisiDate;
+            Grid_NotFocus(col, w_Row);
+
+            //配列の内容を画面へセット
+            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+            //現在行へ
+            mGrid.F_MoveFocus((int)ClsGridCustomerSKUPric.Gen_MK_FocusMove.MvSet, (int)ClsGridCustomerSKUPric.Gen_MK_FocusMove.MvNxt, mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl, w_Row, col, ActiveControl, Vsb_Mei_0, w_Row, col);
+
+        }
+
+        protected override void ExecDisp()
+        {
+            if (OperationMode != EOperationMode.INSERT)
+            {
+                CheckData(true);
+            }
+                
+        }
+
+        protected override void ExecSec()
+        {
+
+            if (OperationMode != EOperationMode.DELETE)
+            {
+            
+                // 明細部  画面の範囲の内容を配列にセット
+                mGrid.S_DispToArray(Vsb_Mei_0.Value);
+
+                //明細部チェック
+                for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+                {
+                    //m_dataCntが更新有効行数
+                    if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].TekiyouKaisiDate) == false
+                        || string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].CustomerCD) == false
+                        || string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JANCD) == false
+                        )
+                    {
+                        for (int CL = (int)ClsGridCustomerSKUPric.ColNO.TekiyouKaisiDate; CL < (int)ClsGridCustomerSKUPric.ColNO.COUNT; CL++)
+                        {
+                            if (CheckGrid(CL, RW, true) == false)
+                            {
+                                //Focusセット処理
+                                ERR_FOCUS_GRID_SUB(CL, RW);
+                                return;
+                            }
+                        }
+                    }
+                } 
+
+                ////各金額項目の再計算必要
+                //CalcKin();
+            }
+
+            DataTable dt = GetGridEntity();
+
+            //更新処理
+            mcskue = GetEntity(dt);
+            //mibl.Mitsumori_Exec(dme, dt, (short)OperationMode, InOperatorCD, InPcID);
+            switch(OperationMode)
+            {
+                case EOperationMode.INSERT:
+                    InsertUpdate(1);
+                    break;
+                case EOperationMode.UPDATE:
+                    InsertUpdate(2);
+                    break;
+                case EOperationMode.DELETE:
+                    Delete();
+                    break;
+            }
+
+            //更新後画面クリア
+            ChangeOperationMode(base.OperationMode);
+        }
+
+        private void InsertUpdate(int mode)
+        {
+            if (mcskupbl.CustomerSKUPrice_Exec(mcskue,mode))
+            {
+                bbl.ShowMessage("I101");
+
+                ChangeOperationMode(OperationMode);
+                detailControls[0].Focus();
+            }
+            else
+            {
+                bbl.ShowMessage("S001");
+            }
+        }
+
+        private void Delete()
+        {
+            if (mcskupbl.CustomerSKUPrice_Exec(mcskue, 3))
+            {
+                ChangeOperationMode(OperationMode);
+                detailControls[0].Focus();
+            }
+            else
+            {
+                bbl.ShowMessage("S001");
+            }
+
+        }
+
+        private DataTable GetGridEntity()
+        {
+            DataTable dt = new DataTable();
+            Para_Add(dt);
+
+           // int rowNo = 1;
+            for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+            {
+                //m_dataCntが更新有効行数
+                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].TekiyouKaisiDate) == false
+                       || string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].CustomerCD) == false
+                       || string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JANCD) == false
+                       )
+                {
+
+                    dt.Rows.Add(
+                         mGrid.g_DArray[RW].CustomerCD == "" ? null : mGrid.g_DArray[RW].CustomerCD
+                        , mGrid.g_DArray[RW].CustomerName == "" ? null : mGrid.g_DArray[RW].CustomerName
+                        , mGrid.g_DArray[RW].TekiyouKaisiDate == "" ? null : mGrid.g_DArray[RW].TekiyouKaisiDate
+                        , mGrid.g_DArray[RW].TekiyouShuuryouDate == "" ? null : mGrid.g_DArray[RW].TekiyouShuuryouDate
+                        , bbl.Z_Set(mGrid.g_DArray[RW].AdminNO)
+                        , mGrid.g_DArray[RW].JANCD == "" ? null : mGrid.g_DArray[RW].JANCD
+                        , mGrid.g_DArray[RW].SKUCD == "" ? null : mGrid.g_DArray[RW].SKUCD
+                        , mGrid.g_DArray[RW].SKUName == "" ? null : mGrid.g_DArray[RW].SKUName
+                        , bbl.Z_Set(mGrid.g_DArray[RW].SalePriceOutTax)
+                        , mGrid.g_DArray[RW].Remarks == "" ? null : mGrid.g_DArray[RW].Remarks
+                        //, mGrid.g_DArray[RW].Update
+                        );
+
+                  //  rowNo++;
+                }
+            }
+
+            return dt;
+        }
+
+        private M_CustomerSKUPrice_Entity GetEntity(DataTable dtCSKUP)
+        {
+            mcskue = new M_CustomerSKUPrice_Entity
+            {
+                dt1 = dtCSKUP,
+                dt2 = dtDelete,
+                ProcessMode = ModeText,
+                InsertOperator = InOperatorCD,
+                ProgramID = InProgramID,
+                Key = InPcID + bbl.GetDate(),
+                PC = InPcID,
+            };
+            return mcskue;
+        }
+
+        private void Para_Add(DataTable dt)
+        {
+            dt.Columns.Add("CustomerCD", typeof(string));
+            dt.Columns.Add("CustomerName", typeof(string));
+            dt.Columns.Add("TekiyouKaisiDate", typeof(string));
+            dt.Columns.Add("TekiyouShuuryouDate", typeof(string));
+            dt.Columns.Add("AdminNO", typeof(int));
+            dt.Columns.Add("JanCD", typeof(string));
+            dt.Columns.Add("SKUCD", typeof(string));
+            dt.Columns.Add("SKUName", typeof(string));
+            dt.Columns.Add("SalePriceOutTax", typeof(decimal));
+            dt.Columns.Add("Remarks", typeof(string));
+
+        }
+      
+        public M_CustomerSKUPrice_Entity GetSKUPriceInfo()
+        {
+            mcskue = new M_CustomerSKUPrice_Entity
+            {
+                TekiyouKaisiDate_From = txtStartDate.Text,
+                TekiyouKaisiDate_To = txtEndDate.Text,
+                CustomerCD_From = ScCustomer_Start.TxtCode.Text,
+                CustomerCD_To = ScCustomer_End.TxtCode.Text,
+                SKUCD_From = ScSKUCD_Start.TxtCode.Text,
+                SKUCD_To = ScSKUCD_End.TxtCode.Text,
+                SKUName = txtItemName.Text,
+                DisplayKBN = rdoRecent.Checked? "0" : "1",
+            };
+            return mcskue;
+        }
+
+        private void SearchData(EsearchKbn kbn, Control setCtl)
+        {
+            switch (kbn)
+            {
+                case EsearchKbn.Product:
+                    int w_Row;
+
+                    if (mGrid.F_Search_Ctrl_MK(ActiveControl, out int w_Col, out int w_CtlRow) == false)
+                    {
+                        return;
+                    }
+
+                    w_Row = w_CtlRow + Vsb_Mei_0.Value;
+
+                    //画面より配列セット 
+                    mGrid.S_DispToArray(Vsb_Mei_0.Value);
+
+                    using (Search_Product frmProduct = new Search_Product(bbl.GetDate()))
+                    {
+                        frmProduct.SKUCD = mGrid.g_DArray[w_Row].SKUCD;
+                        frmProduct.JANCD = mGrid.g_DArray[w_Row].JANCD;
+                        frmProduct.ShowDialog();
+
+                        if (!frmProduct.flgCancel)
+                        {
+                            mGrid.g_DArray[w_Row].JANCD = frmProduct.JANCD;
+                            mGrid.g_DArray[w_Row].OldJanCD = frmProduct.JANCD;
+                            mGrid.g_DArray[w_Row].SKUCD = frmProduct.SKUCD;
+                            mGrid.g_DArray[w_Row].SKUName = frmProduct.ITEM;
+                            mGrid.g_DArray[w_Row].AdminNO = frmProduct.AdminNO;
+
+                            CheckGrid((int)ClsGridCustomerSKUPric.ColNO.JANCD, w_Row, false, true);
+
+                            //配列の内容を画面へセット
+                            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+                            SendKeys.Send("{ENTER}");
+                        }
+                    }
+                    break;
+
+                case EsearchKbn.Customer:
+                    int wc_Row;
+
+                    if (mGrid.F_Search_Ctrl_MK(ActiveControl, out int wc_Col, out int wc_CtlRow) == false)
+                    {
+                        return;
+                    }
+
+                    wc_Row = wc_CtlRow + Vsb_Mei_0.Value;
+
+                    //画面より配列セット 
+                    mGrid.S_DispToArray(Vsb_Mei_0.Value);
+                    using (FrmSearch_Customer frmCustomer = new FrmSearch_Customer(bbl.GetDate(),"1",StoreCD))
+                    {
+                        //frmCustomer.CustomerCD=mGrid.g_DArray[wc_Row].CustomerCD;
+                        frmCustomer.ShowDialog();
+
+                        if (!frmCustomer.flgCancel)
+                        {
+                            mGrid.g_DArray[wc_Row].CustomerCD = frmCustomer.CustomerCD;
+                            mGrid.g_DArray[wc_Row].CustomerName = frmCustomer.CustName;
+                            //mGrid.g_DArray[wc_Row].AdminNO = frmCustomer.AdminNO;
+
+                            CheckGrid((int)ClsGridCustomerSKUPric.ColNO.CustomerCD, wc_Row, false, true);
+
+                            //配列の内容を画面へセット
+                            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+                            SendKeys.Send("{ENTER}");
                         }
                     }
 
-                    //switch (w_CtlCol)
-                    //{
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.CustomerCD:
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.CustomerName:
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.TekiyouKaisiDate:    // 
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.TekiyouShuuryouDate:
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.JANCD:
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.SKUCD:
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.SKUName:    // 
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.SalePriceOutTax:
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.Remarks:
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.Space1:
-
-
-                    //        break;
-                    //}
-                }
+                    break;
+                    
             }
-            // 明細部の状態(初期状態) をセット 
-            //To be Proceed. . . . 
-            //
-            mGrid.g_MK_State = new ClsGridBase.ST_State_GridKihon[mGrid.g_MK_Ctl_Col, mGrid.g_MK_Max_Row];
-            // データ保持用配列の宣言
-            mGrid.g_DArray = new ClsGridCustomerSKUPric.ST_DArray_Grid[mGrid.g_MK_Max_Row];
 
-            SetMultiColNo();
-            // 行の色
-            // 何行で色が切り替わるかの設定。  ここでは 2行一組で繰り返すので 2行分だけ設定
-            mGrid.g_MK_CtlRowBkColor.Add(ClsGridBase.WHColor);//, "0");        // 1行目(奇数行) 白
-            mGrid.g_MK_CtlRowBkColor.Add(ClsGridBase.GridColor);//, "1");      // 2行目(偶数行) 水色
-            // フォーカス移動順(表示列も含めて、すべての列を設定する)
-            mGrid.g_MK_FocusOrder = new int[mGrid.g_MK_Ctl_Col];
-            for (int i = (int)ClsGridCustomerSKUPric.ColNO.GYONO; i <= (int)ClsGridCustomerSKUPric.ColNO.COUNT - 1; i++)
-            {
-                mGrid.g_MK_FocusOrder[i] = i;
-            }
-            int tabindex = 1;
+        }
 
-            // 項目の形式セット
-            for (W_CtlRow = 0; W_CtlRow <= mGrid.g_MK_Ctl_Row - 1; W_CtlRow++)
+
+        #region Button Envent
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            if (OperationMode == EOperationMode.INSERT)
             {
-                for (int W_CtlCol = 0; W_CtlCol < (int)ClsGridCustomerSKUPric.ColNO.COUNT; W_CtlCol++)
+                dtExcel = null;
+                if (ErrorCheckForExcel())
                 {
-                    //switch (W_CtlCol)
-                    //{
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.MitsumoriSuu:
-                    //        mGrid.SetProp_SU(5, ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);
-                    //        ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).AllowMinus = true;
-                    //        break;
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.MitsumoriUnitPrice:
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.CostUnitPrice:
-                    //        mGrid.SetProp_TANKA(ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);      // 単価 
-                    //        break;
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.MitsumoriHontaiGaku:
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.MitsumoriGaku:
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.CostGaku:
-                    //    case (int)ClsGridCustomerSKUPric.ColNO.ProfitGaku:
-                    //        mGrid.SetProp_TANKA(ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);      // 単価 
-                    //        ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).AllowMinus = true;
-                    //        break;
-                    //}
-
-                    mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl.TabIndex = tabindex;
-                    tabindex++;
+                    S_Clear_Grid();
+                    SetMultiColNo(dtExcel);
+                    S_BodySeigyo(0, 1);
+                    mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                 }
             }
-            Set_GridTabStop(false);
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EsearchKbn kbn = EsearchKbn.Null;
+                Control setCtl = null;
+
+                if (mGrid.F_Search_Ctrl_MK(ActiveControl, out int w_Col, out int w_CtlRow) == false)
+                {
+                    return;
+                }
+                if (w_Col == (int)ClsGridCustomerSKUPric.ColNO.JANCD)
+                    kbn = EsearchKbn.Product;
+
+                if (w_Col == (int)ClsGridCustomerSKUPric.ColNO.CustomerCD)
+                    kbn = EsearchKbn.Customer;
+
+                setCtl = previousCtrl;
+
+
+                if (kbn != EsearchKbn.Null)
+                    SearchData(kbn, setCtl);
+
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnDisplay_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                base.FunctionProcess(FuncDisp - 1);
+
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
+        #endregion
+
+        #region error check for Excel Import 
+        private bool ErrorCheckForExcel()
+        {
+            OpenFileDialog op = new OpenFileDialog
+            {
+                InitialDirectory = @"C:\",
+                RestoreDirectory = true
+            };
+            if (op.ShowDialog() == DialogResult.OK)
+            {
+                string str = op.FileName;
+                string ext = Path.GetExtension(str);
+                if (!(ext.Equals(".xls") || ext.Equals(".xlsx")))
+                {
+                    bbl.ShowMessage("E137");
+                    return false;
+                }
+                else
+                {
+                    dtExcel = ExcelToDatatable(str);
+                    string[] colname = { "適用開始日", "適用終了日", "顧客CD", "顧客名" , "JANCD" , "SKUCD" , "商品名", "税抜単価" , "備考" };
+                    
+                    if (ColumnCheck(colname, dtExcel))
+                    {
+                        dtExcel = ChangeColumnName(dtExcel);
+                        dtExcel.Columns.Add("AdminNO", typeof(String));
+                        for(int i=0; i < dtExcel.Rows.Count; i++)
+                        {
+                            M_SKU_Entity mse = new M_SKU_Entity
+                            {
+                                JanCD = dtExcel.Rows[i]["JANCD"].ToString(),
+                                ChangeDate = bbl.GetDate(),
+                            };
+                            SKU_BL mbl = new SKU_BL();
+                            DataTable dt = mbl.M_SKU_SelectAll(mse);
+                            if (dt.Rows.Count == 0)
+                            {
+                                bbl.ShowMessage("E107");
+                            }
+                            else
+                            {
+                                dtExcel.Rows[i]["AdminNO"] = dt.Rows[0]["AdminNO"].ToString();
+                            }
+
+                        }
+                        
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E137");
+                    }
+
+                 }
+
+            }
+           return true;
+        }
+
+        protected DataTable ExcelToDatatable(string filePath)
+        {
+            FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read);
+
+            string ext = Path.GetExtension(filePath);
+            IExcelDataReader excelReader;
+            if (ext.Equals(".xls"))
+                //1. Reading from a binary Excel file ('97-2003 format; *.xls)
+                excelReader = ExcelReaderFactory.CreateBinaryReader(stream);
+            else if (ext.Equals(".xlsx"))
+                //2. Reading from a OpenXml Excel file (2007 format; *.xlsx)
+                excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
+            else
+                //2. Reading from a OpenXml Excel file (2007 format; *.xlsx) 
+                excelReader = ExcelReaderFactory.CreateCsvReader(stream, null);
+
+            //3. DataSet - The result of each spreadsheet will be created in the result.Tables
+            bool useHeaderRow = true;
+
+            DataSet result = excelReader.AsDataSet(new ExcelDataSetConfiguration()
+            {
+                ConfigureDataTable = (_) => new ExcelDataTableConfiguration()
+                {
+                    UseHeaderRow = useHeaderRow,
+                }
+            });
+            excelReader.Close();
+            return result.Tables[0];
+        }
+
+        protected DataTable ChangeColumnName(DataTable dt)
+        {
+            dt.Columns["適用開始日"].ColumnName = "TekiyouKaisiDate";
+            dt.Columns["適用終了日"].ColumnName = "TekiyouShuuryouDate";
+            dt.Columns["顧客CD"].ColumnName = "CustomerCD";
+            dt.Columns["顧客名"].ColumnName = "CustomerName";
+            dt.Columns["商品名"].ColumnName = "SKUName";
+            dt.Columns["税抜単価"].ColumnName = "SalePriceOutTax";
+            dt.Columns["備考"].ColumnName = "Remarks";
+            return dt;
+        }
+
+        protected Boolean ColumnCheck(String[] colName, DataTable dtMain)
+        {
+            DataColumnCollection cols = dtMain.Columns;
+            for (int i = 0; i < colName.Length; i++)
+            {
+                if (!cols.Contains(colName[i]))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        #endregion
+
+        #region Gridview Function
+
+        private void S_Grid_0_Event_Enter(int pCol, int pRow, Control pErrSet, Control pMotoControl)
+        {
+            mGrid.F_MoveFocus((int)ClsGridCustomerSKUPric.Gen_MK_FocusMove.MvNxt, (int)ClsGridCustomerSKUPric.Gen_MK_FocusMove.MvNxt, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0);
+        }
+
+        private void Vsb_Mei_0_ValueChanged(object sender, System.EventArgs e)
+        {
+            int w_Dest = 0;
+            int w_Row = 0;
+            bool w_IsGrid;
+
+            if (mGrid.g_VSB_Flg == 1)
+                return;
+
+            w_IsGrid = mGrid.F_Search_Ctrl_MK(this.ActiveControl, out int w_Col, out int w_CtlRow);
+            if (w_IsGrid & mGrid.g_InMoveFocus_Flg == 0)
+            {
+
+                // 明細部にフォーカスがあるとき
+                w_Row = w_CtlRow + Vsb_Mei_0.Value;
+
+                if (Math.Sign(this.Vsb_Mei_0.Value - mGrid.g_MK_DataValue) == -1)
+                    // 上へスクロール
+                    w_Dest = (int)ClsGridBase.Gen_MK_FocusMove.MvPrv;
+                else
+                    // 下へスクロール
+                    w_Dest = (int)ClsGridBase.Gen_MK_FocusMove.MvNxt;
+
+                // 一旦 フォーカスを退避
+                //IMT_DMY_0.Focus();
+            }
+
+            // 画面の内容を、配列にセット(スクロール前の行に)
+            mGrid.S_DispToArray(mGrid.g_MK_DataValue);
+
+            // 配列より画面セット (スクロール後の行)
             mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
 
+            if (w_IsGrid & mGrid.g_InMoveFocus_Flg == 0)
+            {
+
+                // 元いた位置にフォーカスをセット(場合によってはロックがかかっているかもしれないのでセットしなおす)
+                if (w_Dest == (int)ClsGridBase.Gen_MK_FocusMove.MvPrv)
+                {
+                    if (mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvSet, mGrid.g_MK_Ctrl[w_Col, w_CtlRow].CellCtl, w_Row, w_Col, this.ActiveControl, this.Vsb_Mei_0, w_Row, w_Col) == false)
+                        // その行の最後から探す
+                        mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, w_Dest, this.ActiveControl, w_Row, mGrid.g_MK_FocusOrder[mGrid.g_MK_Ctl_Col - 1], this.ActiveControl, this.Vsb_Mei_0, w_Row, mGrid.g_MK_FocusOrder[mGrid.g_MK_Ctl_Col - 1]);
+                }
+                else if (mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvSet, mGrid.g_MK_Ctrl[w_Col, w_CtlRow].CellCtl, w_Row, w_Col, this.ActiveControl, this.Vsb_Mei_0, w_Row, w_Col) == false)
+                {
+                    if (mGrid.g_WheelFLG == true)
+                    {
+                        // まず対象行の先頭からさがし、まったくフォーカス移動先が無ければ
+                        // 最後のフォーカス可能セルに移動
+                        if (mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, w_Dest, mGrid.g_MK_Ctrl[mGrid.g_MK_FocusOrder[0], w_CtlRow].CellCtl, w_Row, mGrid.g_MK_FocusOrder[0], this.ActiveControl, this.Vsb_Mei_0, w_Row, mGrid.g_MK_FocusOrder[0]) == false)
+                            mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvPrv, this.ActiveControl, w_Row, w_Col, this.ActiveControl, this.Vsb_Mei_0, mGrid.g_MK_Max_Row - 1, mGrid.g_MK_FocusOrder[mGrid.g_MK_Ctl_Col - 1]);
+                    }
+                    else
+                        // その行の先頭から探す
+                        mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, w_Dest, this.ActiveControl, w_Row, mGrid.g_MK_FocusOrder[0], this.ActiveControl, this.Vsb_Mei_0, w_Row, mGrid.g_MK_FocusOrder[0]);
+                }
+            }
+
+            // 連続スクロールの途中に、画面の表示がおかしくなる現象への対策
+            pnl_Body.Refresh();
+        }
+
+        private void Vsb_Mei_0_MouseWheel(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            S_Grid_0_Event_MouseWheel(e.Delta);
+        }
+
+        private void S_Grid_0_Event_MouseWheel(int pDelta)
+        {
+            int w_ToMove = pDelta * (-1) / (int)mGrid.g_WHEEL_DELTA;
+            int w_Value;
+            int w_MaxValue;
+
+            mGrid.g_WheelFLG = true;
+
+            //if (mGrid.g_MK_MaxValue > m_dataCnt - 1)
+            //    w_MaxValue = m_dataCnt - 1;
+            //else
+            w_MaxValue = mGrid.g_MK_MaxValue;
+
+            w_Value = Vsb_Mei_0.Value + w_ToMove;
+
+            switch (w_Value)
+            {
+                case object _ when w_Value > w_MaxValue:
+                    {
+                        Vsb_Mei_0.Value = w_MaxValue;
+                        break;
+                    }
+
+                case object _ when w_Value < Vsb_Mei_0.Minimum:
+                    {
+                        Vsb_Mei_0.Value = Vsb_Mei_0.Minimum;
+                        break;
+                    }
+
+                default:
+                    {
+                        Vsb_Mei_0.Value = w_Value;
+                        break;
+                    }
+            }
+
+            mGrid.g_WheelFLG = false;
+        }
+
+        private void GridControl_Enter(object sender, EventArgs e)
+        {
+            try
+            {
+                previousCtrl = this.ActiveControl;
+
+                int w_Row;
+                Control w_ActCtl;
+
+                w_ActCtl = (Control)sender;
+                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
+
+                // 背景色
+                w_ActCtl.BackColor = ClsGridBase.BKColor;
+
+                if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int w_Col, out int w_CtlRow) == false)
+                {
+                    return;
+                }
+
+                Grid_Gotfocus(w_Col, w_Row, System.Convert.ToInt32(w_ActCtl.Tag));
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Grid_Gotfocus(int pCol, int pRow, int pCtlRow)
+        {
+            bool W_Del = false;
+            bool W_Ret;
+
+            // TabStopを全てTrueに(KeyExitイベントが発生しなくなることを防ぐ)
+            Set_GridTabStop(true);
+
+            //mGrid.g_MK_Ctrl(ClsGridHanbaiTanka.ColNO.DELCK, pCtlRow).GVal(W_Del);
+
+            // ﾌｧﾝｸｼｮﾝﾎﾞﾀﾝ使用可否
+            SetFuncKeyAll(this, "111111111101");
+
+            // 検索ﾎﾞﾀﾝ使用不可.解除
+            if (W_Del == true)
+                W_Ret = false;
+            else
+                switch (pCol)
+                {
+                    default:
+                        {
+                            W_Ret = false;
+                            break;
+                        }
+                }
+            SetFuncKey(this, 8, W_Ret);
         }
 
         private void GridControl_Leave(object sender, EventArgs e)
@@ -422,6 +1103,9 @@ namespace MasterTouroku_CustomerSKUPrice
                         case "SC_ITEM":
                             CL = (int)ClsGridCustomerSKUPric.ColNO.JANCD;
                             break;
+                        case "IMT_ITMNM":
+                            CL = (int)ClsGridCustomerSKUPric.ColNO.SKUName;
+                            break;
                         case "IMT_PRICE":
                             CL = (int)ClsGridCustomerSKUPric.ColNO.SalePriceOutTax;
                             if (w_Row == mGrid.g_MK_Max_Row - 1)
@@ -429,124 +1113,11 @@ namespace MasterTouroku_CustomerSKUPrice
                             break;
                     }
 
-                    //bool changeFlg = false;
-                    //switch (CL)
-                    //{
-                    //    case (int)ClsGridMitsumori.ColNO.MitsumoriSuu:
-                    //        if (!mGrid.g_DArray[w_Row].MitsumoriSuu.Equals(w_ActCtl.Text))
-                    //        {
-                    //            changeFlg = true;
-                    //        }
-                    //        break;
-
-                    //    case (int)ClsGridMitsumori.ColNO.MitsumoriUnitPrice: //販売単価 
-                    //        if (!mGrid.g_DArray[w_Row].MitsumoriUnitPrice.Equals(w_ActCtl.Text))
-                    //        {
-                    //            changeFlg = true;
-                    //        }
-                    //        break;
-
-                    //    case (int)ClsGridMitsumori.ColNO.CostUnitPrice: //原価単価
-                    //        if (!mGrid.g_DArray[w_Row].CostUnitPrice.Equals(w_ActCtl.Text))
-                    //        {
-                    //            changeFlg = true;
-                    //        }
-                    //        break;
-                    //}
-
+                    
                     //画面の内容を配列へセット
                     mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
-                    //手入力時金額を再計算
-                    //if (changeFlg)
-                    //{
-                    //    decimal wSuu = bbl.Z_Set(mGrid.g_DArray[w_Row].MitsumoriSuu);
-                    //    string ymd = detailControls[(int)EIndex.MitsumoriDate].Text;
 
-                    //    switch (CL)
-                    //    {
-                    //        case (int)ClsGridMitsumori.ColNO.MitsumoriSuu:
-                    //            {
-                    //                //数量が整数値かどうかチェック
-                    //                int intSu;
-                    //                if (!int.TryParse(wSuu.ToString(), out intSu))
-                    //                {
-                    //                    bbl.ShowMessage("E102");
-                    //                    return;
-                    //                }
-
-                    //                if (wSuu != 0)
-                    //                {
-                    //                    //Function_単価取得.
-                    //                    Fnc_UnitPrice_Entity fue = new Fnc_UnitPrice_Entity
-                    //                    {
-                    //                        AdminNo = mGrid.g_DArray[w_Row].AdminNO,
-                    //                        ChangeDate = ymd,
-                    //                        CustomerCD = detailControls[(int)EIndex.CustomerCD].Text,
-                    //                        StoreCD = CboStoreCD.SelectedValue.ToString(),
-                    //                        SaleKbn = "0",
-                    //                        Suryo = wSuu.ToString()
-                    //                    };
-
-                    //                    bool ret = bbl.Fnc_UnitPrice(fue);
-                    //                    if (ret)
-                    //                    {
-                    //                        //数量変更時も単価再計算
-                    //                        switch (mTennic)
-                    //                        {
-                    //                            case 0:
-                    //                                //販売単価=Function_単価取得.out税込単価		
-                    //                                mGrid.g_DArray[w_Row].MitsumoriUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeikomiTanka));
-                    //                                break;
-                    //                            case 1:
-                    //                                //販売単価=Function_単価取得.out税抜単価
-                    //                                mGrid.g_DArray[w_Row].MitsumoriUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeinukiTanka));
-                    //                                break;
-                    //                        }
-
-                    //                        //原価単価=Function_単価取得.out原価単価	
-                    //                        mGrid.g_DArray[w_Row].CostUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.GenkaTanka));
-                    //                    }
-                    //                    else
-                    //                    {
-                    //                        //販売単価		
-                    //                        mGrid.g_DArray[w_Row].MitsumoriUnitPrice = "0";
-                    //                        //原価単価
-                    //                        mGrid.g_DArray[w_Row].CostUnitPrice = "0";
-                    //                    }
-
-                    //                    SetMitsumoriGaku(w_Row, wSuu, ymd, fue.ZeinukiTanka);
-                    //                }
-
-                    //                //原価額←Function_単価取得.out原価単価×Form.Detail.見積数
-                    //                mGrid.g_DArray[w_Row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].CostUnitPrice) * wSuu);
-
-                    //                CalcZei(w_Row);
-                    //            }
-                    //            break;
-
-                    //        case (int)ClsGridMitsumori.ColNO.MitsumoriUnitPrice: //販売単価 
-                    //            {
-                    //                string tanka = mGrid.g_DArray[w_Row].MitsumoriUnitPrice;
-                    //                if (mTennic.Equals(0))
-                    //                    tanka = bbl.GetZeinukiKingaku(bbl.Z_Set(mGrid.g_DArray[w_Row].MitsumoriUnitPrice), mGrid.g_DArray[w_Row].TaxRateFLG, ymd).ToString();
-
-                    //                SetMitsumoriGaku(w_Row, wSuu, ymd, tanka);
-
-                    //                CalcZei(w_Row, true);
-                    //            }
-                    //            break;
-
-                    //        case (int)ClsGridMitsumori.ColNO.CostUnitPrice: //原価単価
-                    //            //原価額=Form.Detail.原価単価×	Form.Detail.見積数
-                    //            mGrid.g_DArray[w_Row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].CostUnitPrice) * bbl.Z_Set(mGrid.g_DArray[w_Row].MitsumoriSuu));
-
-                    //            //粗利額
-                    //            mGrid.g_DArray[w_Row].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].MitsumoriHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].CostGaku)); // 
-
-                    //            break;
-                    //    }
-                    //}
 
                     if (CL == -1)
                         return;
@@ -612,7 +1183,7 @@ namespace MasterTouroku_CustomerSKUPrice
                                 this.ProcessTabKey(!e.Shift);
                         }
                     }
-                   
+
                 }
 
             }
@@ -638,154 +1209,171 @@ namespace MasterTouroku_CustomerSKUPrice
             }
         }
 
-        private void RadioButton_CheckedChanged(object sender, EventArgs e)
+        private void S_BodySeigyo(short pKBN, short pGrid)
         {
-            try
-            {
+            int w_Row;
 
-            }
-            catch (Exception ex)
+            switch (pKBN)
             {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-
-        private void RadioButton_KeyDown(object sender, KeyEventArgs e)
-        {
-            try
-            {
-                //Enterキー押下時処理
-                //Returnキーが押されているか調べる
-                //AltかCtrlキーが押されている時は、本来の動作をさせる
-                if ((e.KeyCode == Keys.Return) &&
-                        ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
-                {
-                    detailControls[(int)EIndex.DateStart].Focus();
-                }
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void Scr_Clr(short Kbn)  /// 0 is initial state
-        {
-            var ctrl = GetAllControls(pannel_Header);
-            if (Kbn == 0)
-            {
-                foreach (Control ctl in ctrl)
-                {
-                    if (ctrl is CKM_TextBox ct)
+                case 0:
                     {
-                        ct.Text = "";
-                    }
-                    else if (ctrl is CKM_SearchControl c)
-                    {
-                        c.TxtChangeDate.Text = "";
-                        c.TxtCode.Text = "";
-                        c.LabelText = "";
-                    }
-                    else if (ctrl is CKM_RadioButton cr && cr.Name == "rdoRecent")
-                    {
-                        cr.Checked = true;
-                    }
-                }
-            }
-
-            S_Clear_Grid();   //画面クリア（明細部）
-        }
-
-        private void SetMultiColNo(DataTable dt = null)
-        {
-            if (dt == null)
-            {
-                for (int w_Row = 0; w_Row < 999; w_Row++)
-                {
-                    mGrid.g_DArray[w_Row].GYONO = (w_Row + 1).ToString();
-                    //mGrid.g_DArray[w_Row].Rank1UnitPrice = "0";
-                }
-            }
-            else  // set Data from db
-            {
-                int c = 0;
-                foreach (DataRow dr in dt.Rows)
-                {
-                    //detailControls[(int)EIndex.Date].Text = bbl.GetDate();
-                    mGrid.g_DArray[c].CustomerCD = dr["CustomerCD"].ToString();
-                    mGrid.g_DArray[c].CustomerName = dr["CustomerName"].ToString();
-                    mGrid.g_DArray[c].TekiyouKaisiDate = dr["TekiyouKaisiDate"].ToString();
-                    mGrid.g_DArray[c].TekiyouShuuryouDate = dr["TekiyouShuuryouDate"].ToString();
-                    mGrid.g_DArray[c].AdminNO = dr["AdminNo"].ToString();
-                    mGrid.g_DArray[c].JANCD = dr["JanCD"].ToString();
-                    mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
-                    mGrid.g_DArray[c].SKUName = dr["SKUName"].ToString(); 
-                    mGrid.g_DArray[c].SalePriceOutTax = dr["SalePriceOutTax"].ToString();
-                    mGrid.g_DArray[c].Remarks = dr["Remarks"].ToString();
-                    c++;
-                }
-            }
-        }
-
-        private void GridControl_Enter(object sender, EventArgs e)
-        {
-            try
-            {
-                previousCtrl = this.ActiveControl;
-
-                int w_Row;
-                Control w_ActCtl;
-
-                w_ActCtl = (Control)sender;
-                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
-
-                // 背景色
-                w_ActCtl.BackColor = ClsGridBase.BKColor;
-
-                if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int w_Col, out int w_CtlRow) == false)
-                {
-                    return;
-                }
-
-                Grid_Gotfocus(w_Col, w_Row, System.Convert.ToInt32(w_ActCtl.Tag));
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void Grid_Gotfocus(int pCol, int pRow, int pCtlRow)
-        {
-            bool W_Del = false;
-            bool W_Ret;
-
-            // TabStopを全てTrueに(KeyExitイベントが発生しなくなることを防ぐ)
-            Set_GridTabStop(true);
-
-            //mGrid.g_MK_Ctrl(ClsGridHanbaiTanka.ColNO.DELCK, pCtlRow).GVal(W_Del);
-
-            // ﾌｧﾝｸｼｮﾝﾎﾞﾀﾝ使用可否
-            SetFuncKeyAll(this, "111111111101");
-
-            // 検索ﾎﾞﾀﾝ使用不可.解除
-            if (W_Del == true)
-                W_Ret = false;
-            else
-                switch (pCol)
-                {
-                    default:
+                        if (pGrid == 1)
                         {
-                            W_Ret = false;
+                            // 入力可の列の設定
+                            for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
+                            {
+                                if (m_EnableCnt - 1 < w_Row)
+                                    break;
+                                for (int w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
+                                {
+                                    switch (w_Col)
+                                    {
+                                        case (int)ClsGridCustomerSKUPric.ColNO.CustomerCD:
+                                        //case (int)ClsGridCustomerSKUPric.ColNO.CustomerName:
+                                        case (int)ClsGridCustomerSKUPric.ColNO.TekiyouKaisiDate:    // 
+                                        case (int)ClsGridCustomerSKUPric.ColNO.TekiyouShuuryouDate:
+                                        case (int)ClsGridCustomerSKUPric.ColNO.JANCD:
+                                        //case (int)ClsGridCustomerSKUPric.ColNO.SKUCD:
+                                        //case (int)ClsGridCustomerSKUPric.ColNO.SKUName:    // 
+                                        case (int)ClsGridCustomerSKUPric.ColNO.SalePriceOutTax:
+                                        case (int)ClsGridCustomerSKUPric.ColNO.Remarks:
+                                        case (int)ClsGridCustomerSKUPric.ColNO.Space1:
+                                            {
+                                                mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
+                                                break;
+                                            }
+                                    }
+                                }
+                            }
+                            mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
+                        }
+                        else
+                        {
+                            //IMT_DMY_0.Focus();
+
+                            if (OperationMode == EOperationMode.INSERT)
+                            {
+                                //Scr_Lock(0, 0, 0);
+
+                                Scr_Lock(1, mc_L_END, 1);  // フレームのロック解除
+                                                           // detailControls[(int)EIndex.Date].Text = bbl.GetDate();
+                                F9Visible = false;
+
+                                SetFuncKeyAll(this, "111111001001");
+                            }
+                            else
+                            {
+                                //keyControls[(int)EIndex.MitsumoriNO].Enabled = true;
+                                //ScMitsumoriNO.BtnSearch.Enabled = true;
+                                //keyControls[(int)EIndex.CopyMitsumoriNO].Text = "";
+                                //keyControls[(int)EIndex.CopyMitsumoriNO].Enabled = false;
+                                //ScCopyMitsumoriNO.BtnSearch.Enabled = false;
+
+                                Scr_Lock(1, mc_L_END, 0);   // フレームのロック
+                                this.Vsb_Mei_0.TabStop = false;
+
+                                SetFuncKeyAll(this, "111111001010");
+                            }
+
+                            //SetEnabled(false);
+
+                        }
+                        break;
+                    }
+
+                case 1:
+                    {
+                        if (pGrid == 1)
+                        {
+                            // 入力可の列の設定
+                            for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
+                            {
+                                if (m_EnableCnt - 1 < w_Row)
+                                    break;
+                                for (int w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
+                                {
+                                    switch (w_Col)
+                                    {
+                                        case (int)ClsGridCustomerSKUPric.ColNO.CustomerCD:
+                                        // case (int)ClsGridCustomerSKUPric.ColNO.CustomerName:
+                                        case (int)ClsGridCustomerSKUPric.ColNO.TekiyouKaisiDate:    // 
+                                        case (int)ClsGridCustomerSKUPric.ColNO.TekiyouShuuryouDate:
+                                        case (int)ClsGridCustomerSKUPric.ColNO.JANCD:
+                                        //case (int)ClsGridCustomerSKUPric.ColNO.SKUCD:
+                                        //case (int)ClsGridCustomerSKUPric.ColNO.SKUName:    // 
+                                        case (int)ClsGridCustomerSKUPric.ColNO.SalePriceOutTax:
+                                        case (int)ClsGridCustomerSKUPric.ColNO.Remarks:
+                                        case (int)ClsGridCustomerSKUPric.ColNO.Space1:
+                                            {
+                                                mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
+
+                                                break;
+                                            }
+
+                                            //case (int)ClsGridMitsumori.ColNO.SKUName:
+                                            //case (int)ClsGridMitsumori.ColNO.CostUnitPrice:
+                                            //    if (mGrid.g_DArray[w_Row].VariousFLG == 1)
+                                            //    {
+                                            //        mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
+                                            //        mGrid.g_MK_State[w_Col, w_Row].Cell_ReadOnly = false;
+                                            //    }
+                                            //    else
+                                            //    {
+                                            //        mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = false;
+                                            //        mGrid.g_MK_State[w_Col, w_Row].Cell_ReadOnly = true;
+                                            //    }
+                                            //    break;
+                                    }
+                                }
+                                mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
+                            }
+                        }
+                        else
+                        {
+                            //IMT_DMY_0.Focus();
+
+                            //画面へデータセット後、明細部入力可、キー部入力不可
+                            Scr_Lock(2, 3, 0);
+                            Scr_Lock(0, 1, 1);
+                            SetFuncKeyAll(this, "111111000001");
+                        }
+                        break;
+                    }
+
+                case 2:
+                    {
+                        if (pGrid == 1)
+                        {
+                            pnl_Body.Enabled = true;                  // ボディ部使用可
                             break;
                         }
-                }
-            SetFuncKey(this, 8, W_Ret);
+                        else
+                        {
+                            //Scr_Lock(0, 0, 0);
+                            if (OperationMode == EOperationMode.DELETE)
+                            {
+                                //Scr_Lock(1, 3, 1);
+                                SetFuncKeyAll(this, "111111000011");
+                                //IMT_DMY_0.Focus();
+                                Scr_Lock(0, 0, 1);
+                            }
+                            else
+                            {
+                                //CboStoreCD.Enabled = false;
+                                SetFuncKeyAll(this, "111111000010");
+                            }
+
+                            // 削除時のみ、明細を参照できるように、スクロールバーのTabStopをTrueにする
+                            this.Vsb_Mei_0.TabStop = true;
+                        }
+
+                        break;
+                    }
+                default:
+                    {
+                        break;
+                    }
+            }
         }
 
         private void Set_GridTabStop(bool pTabStop)
@@ -824,6 +1412,166 @@ namespace MasterTouroku_CustomerSKUPrice
                 return;
             }
         }
+
+        private void S_SetInit_Grid()
+        {
+            int W_CtlRow;
+
+            if (ClsGridCustomerSKUPric.gc_P_GYO <= ClsGridCustomerSKUPric.gMxGyo)
+            {
+                mGrid.g_MK_Max_Row = ClsGridCustomerSKUPric.gMxGyo;
+                m_EnableCnt = ClsGridCustomerSKUPric.gMxGyo;
+            }
+            mGrid.g_MK_Ctl_Row = ClsGridCustomerSKUPric.gc_P_GYO;
+            mGrid.g_MK_Ctl_Col = ClsGridCustomerSKUPric.gc_MaxCL;
+
+            mGrid.g_MK_MaxValue = mGrid.g_MK_Max_Row - mGrid.g_MK_Ctl_Row;
+            this.Vsb_Mei_0.LargeChange = mGrid.g_MK_Ctl_Row - 1;
+            this.Vsb_Mei_0.SmallChange = 1;
+            this.Vsb_Mei_0.Minimum = 0;
+            this.Vsb_Mei_0.Maximum = mGrid.g_MK_MaxValue + this.Vsb_Mei_0.LargeChange - 1;
+
+            S_SetControlArray();
+
+            for (W_CtlRow = 0; W_CtlRow <= mGrid.g_MK_Ctl_Row - 1; W_CtlRow++)
+            {
+                for (int w_CtlCol = 0; w_CtlCol <= mGrid.g_MK_Ctl_Col - 1; w_CtlCol++)
+                {
+                    if (mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl != null)
+                    {
+                        if (mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                        {
+                            Search.CKM_SearchControl sctl = (Search.CKM_SearchControl)mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl;
+                            sctl.TxtCode.Enter += new System.EventHandler(GridControl_Enter);
+                            sctl.TxtCode.Leave += new System.EventHandler(GridControl_Leave);
+                            sctl.TxtCode.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown);
+                            sctl.TxtCode.Tag = W_CtlRow.ToString();
+                            sctl.BtnSearch.Click += new System.EventHandler(BtnSearch_Click);
+                        }
+                        if (mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                        {
+                            //mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Enter += new System.EventHandler(GridControl_Enter);
+                            mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Enter += new System.EventHandler(GridControl_Enter);
+                            mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Leave += new System.EventHandler(GridControl_Leave);
+                            mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown);
+
+                        }
+                    }
+
+                }
+            }
+            // 明細部の状態(初期状態) をセット 
+            //To be Proceed. . . . 
+            //
+            mGrid.g_MK_State = new ClsGridBase.ST_State_GridKihon[mGrid.g_MK_Ctl_Col, mGrid.g_MK_Max_Row];
+            // データ保持用配列の宣言
+            mGrid.g_DArray = new ClsGridCustomerSKUPric.ST_DArray_Grid[mGrid.g_MK_Max_Row];
+
+            //SetMultiColNo();
+            // 行の色
+            // 何行で色が切り替わるかの設定。  ここでは 2行一組で繰り返すので 2行分だけ設定
+            mGrid.g_MK_CtlRowBkColor.Add(ClsGridBase.WHColor);//, "0");        // 1行目(奇数行) 白
+            mGrid.g_MK_CtlRowBkColor.Add(ClsGridBase.GridColor);//, "1");      // 2行目(偶数行) 水色
+            // フォーカス移動順(表示列も含めて、すべての列を設定する)
+            mGrid.g_MK_FocusOrder = new int[mGrid.g_MK_Ctl_Col];
+            for (int i = (int)ClsGridCustomerSKUPric.ColNO.GYONO; i <= (int)ClsGridCustomerSKUPric.ColNO.COUNT - 1; i++)
+            {
+                mGrid.g_MK_FocusOrder[i] = i;
+            }
+            int tabindex = 1;
+
+            // 項目の形式セット
+            for (W_CtlRow = 0; W_CtlRow <= mGrid.g_MK_Ctl_Row - 1; W_CtlRow++)
+            {
+                for (int W_CtlCol = 0; W_CtlCol < (int)ClsGridCustomerSKUPric.ColNO.COUNT; W_CtlCol++)
+                {
+                    switch (W_CtlCol)
+                    {
+                        case (int)ClsGridCustomerSKUPric.ColNO.SalePriceOutTax:
+                            mGrid.SetProp_TANKA(ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);      // 単価 
+                            ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).AllowMinus = true;
+                            break;
+                    }
+
+                    mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl.TabIndex = tabindex;
+                    tabindex++;
+                }
+            }
+            Set_GridTabStop(false);
+
+        }
+
+        private void Grid_NotFocus(int pCol, int pRow)
+        {
+            // ﾌｫｰｶｽをはじく
+            int w_Col;
+            //bool w_AllFlg = false;
+            int w_CtlRow;
+
+            if (OperationMode >= EOperationMode.DELETE)
+                return;
+
+            if (m_EnableCnt - 1 < pRow)
+                return;
+
+            w_CtlRow = pRow - Vsb_Mei_0.Value;
+            if (w_CtlRow >= 0 && w_CtlRow <= mGrid.g_MK_Ctl_Row - 1)
+                //画面範囲の時
+                //配列の内容を画面にセット
+                mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0, w_CtlRow, w_CtlRow);
+
+
+            //w_AllFlg = true;
+
+            for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
+                switch (w_Col)
+                {
+                    case (int)ClsGridCustomerSKUPric.ColNO.CustomerName:
+                        mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                        mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = true;
+                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
+                        break;
+                    case (int)ClsGridCustomerSKUPric.ColNO.SKUName:
+                    case (int)ClsGridCustomerSKUPric.ColNO.SKUCD:
+                        mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                        mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = true;
+                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
+                        break;
+                }
+
+
+        }
+
+        private void S_Clear_Grid()
+        {
+            int w_Row;
+            int w_Col;
+            for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
+            {
+                for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
+                {
+
+                    // 配列を初期化
+                    mGrid.g_MK_State[w_Col, w_Row].SetDefault();
+                    // Selectable=Trueに戻ったので、下記S_DispFromArrayで TabStopがTRUEになる。そのため同期を取るためFLG更新
+                    mGrid.g_GridTabStop = true;
+                    if (w_Row > m_EnableCnt - 1)
+                    {
+                        mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = false;
+                        mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.MaxGyoColor;
+                    }
+                }
+            }
+            Array.Clear(mGrid.g_DArray, mGrid.g_DArray.GetLowerBound(0), mGrid.g_DArray.GetLength(0));
+
+            // 行番号の初期値セット
+            for (w_Row = 0; w_Row <= mGrid.g_MK_Max_Row - 1; w_Row++)
+                mGrid.g_DArray[w_Row].GYONO = (w_Row + 1).ToString();
+
+            // 画面クリア
+            mGrid.S_DispFromArray(0, ref this.Vsb_Mei_0);
+        }
+
         private void S_SetControlArray()
         {
             mGrid.F_CtrlArray_MK(mGrid.g_MK_Ctl_Col, mGrid.g_MK_Ctl_Row);
@@ -955,631 +1703,16 @@ namespace MasterTouroku_CustomerSKUPrice
             mGrid.g_MK_Ctrl[(int)ClsGridCustomerSKUPric.ColNO.Space1, 9].CellCtl = Space_9;
         }
 
-        private void S_Clear_Grid()
-        {
-            int w_Row;
-            int w_Col;
-            for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
-            {
-                for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
-                {
+        #endregion
 
-                    // 配列を初期化
-                    mGrid.g_MK_State[w_Col, w_Row].SetDefault();
-                    // Selectable=Trueに戻ったので、下記S_DispFromArrayで TabStopがTRUEになる。そのため同期を取るためFLG更新
-                    mGrid.g_GridTabStop = true;
-                    if (w_Row > m_EnableCnt - 1)
-                    {
-                        mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = false;
-                        mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.MaxGyoColor;
-                    }
-                }
-            }
-            Array.Clear(mGrid.g_DArray, mGrid.g_DArray.GetLowerBound(0), mGrid.g_DArray.GetLength(0));
-
-            // 行番号の初期値セット
-            for (w_Row = 0; w_Row <= mGrid.g_MK_Max_Row - 1; w_Row++)
-                mGrid.g_DArray[w_Row].GYONO = (w_Row + 1).ToString();
-
-            // 画面クリア
-            mGrid.S_DispFromArray(0, ref this.Vsb_Mei_0);
-        }
-
-        private void S_BodySeigyo(short pKBN, short pGrid)
-        {
-            int w_Row;
-
-            switch (pKBN)
-            {
-                case 0:
-                    {
-                        if (pGrid == 1)
-                        {
-                            // 入力可の列の設定
-                            for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
-                            {
-                                if (m_EnableCnt - 1 < w_Row)
-                                    break;
-                                for (int w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
-                                {
-                                    switch (w_Col)
-                                    {
-                                        case (int)ClsGridCustomerSKUPric.ColNO.CustomerCD:
-                                        //case (int)ClsGridCustomerSKUPric.ColNO.CustomerName:
-                                        case (int)ClsGridCustomerSKUPric.ColNO.TekiyouKaisiDate:    // 
-                                        case (int)ClsGridCustomerSKUPric.ColNO.TekiyouShuuryouDate:
-                                        case (int)ClsGridCustomerSKUPric.ColNO.JANCD:
-                                        case (int)ClsGridCustomerSKUPric.ColNO.SKUCD:
-                                       //case (int)ClsGridCustomerSKUPric.ColNO.SKUName:    // 
-                                        case (int)ClsGridCustomerSKUPric.ColNO.SalePriceOutTax:
-                                        case (int)ClsGridCustomerSKUPric.ColNO.Remarks:
-                                        case (int)ClsGridCustomerSKUPric.ColNO.Space1:
-                                            {
-                                                mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
-                                                break;
-                                            }
-                                    }
-                                }
-                            }
-                            mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
-                        }
-                        else
-                        {
-                            //IMT_DMY_0.Focus();
-
-                            if (OperationMode == EOperationMode.INSERT)
-                            {
-                                //Scr_Lock(0, 0, 0);
-
-                                Scr_Lock(1, mc_L_END, 0);  // フレームのロック解除
-                               // detailControls[(int)EIndex.Date].Text = bbl.GetDate();
-                                F9Visible = false;
-
-                                SetFuncKeyAll(this, "111111001001");
-                            }
-                            else
-                            {
-                                //keyControls[(int)EIndex.MitsumoriNO].Enabled = true;
-                                //ScMitsumoriNO.BtnSearch.Enabled = true;
-                                //keyControls[(int)EIndex.CopyMitsumoriNO].Text = "";
-                                //keyControls[(int)EIndex.CopyMitsumoriNO].Enabled = false;
-                                //ScCopyMitsumoriNO.BtnSearch.Enabled = false;
-
-                               // Scr_Lock(1, mc_L_END, 1);   // フレームのロック
-                                this.Vsb_Mei_0.TabStop = false;
-
-                                SetFuncKeyAll(this, "111111001010");
-                            }
-
-                            //SetEnabled(false);
-
-                        }
-                        break;
-                    }
-
-                case 1:
-                    {
-                        if (pGrid == 1)
-                        {
-                            // 入力可の列の設定
-                            for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
-                            {
-                                if (m_EnableCnt - 1 < w_Row)
-                                    break;
-                                for (int w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
-                                {
-                                    switch (w_Col)
-                                    {
-                                        case (int)ClsGridCustomerSKUPric.ColNO.CustomerCD:
-                                       // case (int)ClsGridCustomerSKUPric.ColNO.CustomerName:
-                                        case (int)ClsGridCustomerSKUPric.ColNO.TekiyouKaisiDate:    // 
-                                        case (int)ClsGridCustomerSKUPric.ColNO.TekiyouShuuryouDate:
-                                        case (int)ClsGridCustomerSKUPric.ColNO.JANCD:
-                                        case (int)ClsGridCustomerSKUPric.ColNO.SKUCD:
-                                        //case (int)ClsGridCustomerSKUPric.ColNO.SKUName:    // 
-                                        case (int)ClsGridCustomerSKUPric.ColNO.SalePriceOutTax:
-                                        case (int)ClsGridCustomerSKUPric.ColNO.Remarks:
-                                        case (int)ClsGridCustomerSKUPric.ColNO.Space1:
-                                            {
-                                                mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
-
-                                                break;
-                                            }
-                                        
-                                        //case (int)ClsGridMitsumori.ColNO.SKUName:
-                                        //case (int)ClsGridMitsumori.ColNO.CostUnitPrice:
-                                        //    if (mGrid.g_DArray[w_Row].VariousFLG == 1)
-                                        //    {
-                                        //        mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
-                                        //        mGrid.g_MK_State[w_Col, w_Row].Cell_ReadOnly = false;
-                                        //    }
-                                        //    else
-                                        //    {
-                                        //        mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = false;
-                                        //        mGrid.g_MK_State[w_Col, w_Row].Cell_ReadOnly = true;
-                                        //    }
-                                        //    break;
-                                    }
-                                }
-                                mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
-                            }
-                        }
-                        else
-                        {
-                            //IMT_DMY_0.Focus();
-
-                            //画面へデータセット後、明細部入力可、キー部入力不可
-                            Scr_Lock(2, 3, 0);
-                            Scr_Lock(0, 1, 1);
-                            SetFuncKeyAll(this, "111111000001");
-                        }
-                        break;
-                    }
-
-                case 2:
-                    {
-                        if (pGrid == 1)
-                        {
-                            // 使用可項目無  明細部スクロールのみ可
-                            // IMT_DMY_0.Focus()
-                            //SetFuncKeyAll(this, "000010000101", "11100000");
-                            pnl_Body.Enabled = true;                  // ボディ部使用可
-                            break;
-                        }
-                        else
-                        {
-                            //Scr_Lock(0, 0, 0);
-                            if (OperationMode == EOperationMode.DELETE)
-                            {
-                                //Scr_Lock(1, 3, 1);
-                                SetFuncKeyAll(this, "111111000011");
-                                //IMT_DMY_0.Focus();
-                                Scr_Lock(0, 0, 1);
-                            }
-                            else
-                            {
-                                //CboStoreCD.Enabled = false;
-                                SetFuncKeyAll(this, "111111000010");
-                            }
-
-                            // 削除時のみ、明細を参照できるように、スクロールバーのTabStopをTrueにする
-                            this.Vsb_Mei_0.TabStop = true;
-                        }
-
-                        break;
-                    }
-                default:
-                    {
-                        break;
-                    }
-            }
-        }
-
-        private void S_Grid_0_Event_Enter(int pCol, int pRow, Control pErrSet, Control pMotoControl)
-        {
-            mGrid.F_MoveFocus((int)ClsGridCustomerSKUPric.Gen_MK_FocusMove.MvNxt, (int)ClsGridCustomerSKUPric.Gen_MK_FocusMove.MvNxt, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0);
-        }
-
-        private void Vsb_Mei_0_ValueChanged(object sender, System.EventArgs e)
-        {
-            int w_Dest = 0;
-            int w_Row = 0;
-            bool w_IsGrid;
-
-            if (mGrid.g_VSB_Flg == 1)
-                return;
-
-            w_IsGrid = mGrid.F_Search_Ctrl_MK(this.ActiveControl, out int w_Col, out int w_CtlRow);
-            if (w_IsGrid & mGrid.g_InMoveFocus_Flg == 0)
-            {
-
-                // 明細部にフォーカスがあるとき
-                w_Row = w_CtlRow + Vsb_Mei_0.Value;
-
-                if (Math.Sign(this.Vsb_Mei_0.Value - mGrid.g_MK_DataValue) == -1)
-                    // 上へスクロール
-                    w_Dest = (int)ClsGridBase.Gen_MK_FocusMove.MvPrv;
-                else
-                    // 下へスクロール
-                    w_Dest = (int)ClsGridBase.Gen_MK_FocusMove.MvNxt;
-
-                // 一旦 フォーカスを退避
-                //IMT_DMY_0.Focus();
-            }
-
-            // 画面の内容を、配列にセット(スクロール前の行に)
-            mGrid.S_DispToArray(mGrid.g_MK_DataValue);
-
-            // 配列より画面セット (スクロール後の行)
-            mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
-
-            if (w_IsGrid & mGrid.g_InMoveFocus_Flg == 0)
-            {
-
-                // 元いた位置にフォーカスをセット(場合によってはロックがかかっているかもしれないのでセットしなおす)
-                if (w_Dest == (int)ClsGridBase.Gen_MK_FocusMove.MvPrv)
-                {
-                    if (mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvSet, mGrid.g_MK_Ctrl[w_Col, w_CtlRow].CellCtl, w_Row, w_Col, this.ActiveControl, this.Vsb_Mei_0, w_Row, w_Col) == false)
-                        // その行の最後から探す
-                        mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, w_Dest, this.ActiveControl, w_Row, mGrid.g_MK_FocusOrder[mGrid.g_MK_Ctl_Col - 1], this.ActiveControl, this.Vsb_Mei_0, w_Row, mGrid.g_MK_FocusOrder[mGrid.g_MK_Ctl_Col - 1]);
-                }
-                else if (mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvSet, mGrid.g_MK_Ctrl[w_Col, w_CtlRow].CellCtl, w_Row, w_Col, this.ActiveControl, this.Vsb_Mei_0, w_Row, w_Col) == false)
-                {
-                    if (mGrid.g_WheelFLG == true)
-                    {
-                        // まず対象行の先頭からさがし、まったくフォーカス移動先が無ければ
-                        // 最後のフォーカス可能セルに移動
-                        if (mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, w_Dest, mGrid.g_MK_Ctrl[mGrid.g_MK_FocusOrder[0], w_CtlRow].CellCtl, w_Row, mGrid.g_MK_FocusOrder[0], this.ActiveControl, this.Vsb_Mei_0, w_Row, mGrid.g_MK_FocusOrder[0]) == false)
-                            mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvPrv, this.ActiveControl, w_Row, w_Col, this.ActiveControl, this.Vsb_Mei_0, mGrid.g_MK_Max_Row - 1, mGrid.g_MK_FocusOrder[mGrid.g_MK_Ctl_Col - 1]);
-                    }
-                    else
-                        // その行の先頭から探す
-                        mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, w_Dest, this.ActiveControl, w_Row, mGrid.g_MK_FocusOrder[0], this.ActiveControl, this.Vsb_Mei_0, w_Row, mGrid.g_MK_FocusOrder[0]);
-                }
-            }
-
-            // 連続スクロールの途中に、画面の表示がおかしくなる現象への対策
-            pnl_Body.Refresh();
-        }
-
-        private void Vsb_Mei_0_MouseWheel(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
-            S_Grid_0_Event_MouseWheel(e.Delta);
-        }
-
-        // 明細部 MouseWheel の処理
-        private void S_Grid_0_Event_MouseWheel(int pDelta)
-        {
-            int w_ToMove = pDelta * (-1) / (int)mGrid.g_WHEEL_DELTA;
-            int w_Value;
-            int w_MaxValue;
-
-            mGrid.g_WheelFLG = true;
-
-            //if (mGrid.g_MK_MaxValue > m_dataCnt - 1)
-            //    w_MaxValue = m_dataCnt - 1;
-            //else
-            w_MaxValue = mGrid.g_MK_MaxValue;
-
-            w_Value = Vsb_Mei_0.Value + w_ToMove;
-
-            switch (w_Value)
-            {
-                case object _ when w_Value > w_MaxValue:
-                    {
-                        Vsb_Mei_0.Value = w_MaxValue;
-                        break;
-                    }
-
-                case object _ when w_Value < Vsb_Mei_0.Minimum:
-                    {
-                        Vsb_Mei_0.Value = Vsb_Mei_0.Minimum;
-                        break;
-                    }
-
-                default:
-                    {
-                        Vsb_Mei_0.Value = w_Value;
-                        break;
-                    }
-            }
-
-            mGrid.g_WheelFLG = false;
-        }
-
-        private void Scr_Lock(short no1, short no2, short Kbn)
-        {
-            short i;
-            for (i = no1; i <= no2; i++)
-            {
-                switch (i)
-                {
-                    case 0:
-                        {
-                            //// ｷｰ部
-                            //foreach (Control ctl in keyControls)
-                            //{
-                            //    ctl.Enabled = Kbn == 0 ? true : false;
-                            //}
-                            //ScMitsumoriNO.BtnSearch.Enabled = Kbn == 0 ? true : false;
-                            break;
-                        }
-
-                    case 1:
-                        {
-                            // ｷｰ部(複写)
-                            break;
-                        }
-
-                    case 2:
-                        {
-                            break;
-                        }
-
-                    case 3:
-                        {
-                            // 明細部
-                            foreach (Control ctl in detailControls)
-                            {
-                                ctl.Enabled = Kbn == 0 ? true : false;
-                            }
-                            //ScCustomer.BtnSearch.Enabled = Kbn == 0 ? true : false;
-                            //btnAddress.Enabled = Kbn == 0 ? true : false;
-
-                            break;
-                        }
-                }
-            }
-        }
-
-        private void ADD_SUB()
-        {
-            Control w_Act = previousCtrl;
-            int w_Row;
-            int w_Gyo;
-
-            if (mGrid.F_Search_Ctrl_MK(w_Act, out int w_Col, out int w_CtlRow) == false)
-            {
-                return;
-            }
-            w_Row = w_CtlRow + Vsb_Mei_0.Value;
-
-            //画面より配列セット 
-            mGrid.S_DispToArray(Vsb_Mei_0.Value);
-
-            //追加行より下の明細を1行ずつずらす（内容コピー）
-            for (int i = mGrid.g_MK_Max_Row - 1; i > w_Row; i--)
-            {
-                w_Gyo = Convert.ToInt16(mGrid.g_DArray[i].GYONO);          //行番号 退避
-
-                //前行をコピー
-                mGrid.g_DArray[i] = mGrid.g_DArray[i - 1];
-
-                //退避内容を戻す
-                mGrid.g_DArray[i].GYONO = w_Gyo.ToString();          //行番号
-            }
-
-            w_Gyo = Convert.ToInt16(mGrid.g_DArray[w_Row].GYONO);
-            // 一行クリア
-            Array.Clear(mGrid.g_DArray, w_Row, 1);
-            //退避内容を戻す
-            mGrid.g_DArray[w_Row].GYONO = w_Gyo.ToString();          //行番号
-
-            //CalcKin();
-
-            int col = (int)ClsGridCustomerSKUPric.ColNO.TekiyouKaisiDate;
-            Grid_NotFocus(col, w_Row);
-
-            //配列の内容を画面へセット
-            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-
-            //現在行へ
-            mGrid.F_MoveFocus((int)ClsGridCustomerSKUPric.Gen_MK_FocusMove.MvSet, (int)ClsGridCustomerSKUPric.Gen_MK_FocusMove.MvNxt, mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl, w_Row, col, ActiveControl, Vsb_Mei_0, w_Row, col);
-
-        }
-
-        private void btnShow_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDisplay_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                base.FunctionProcess(FuncDisp - 1);
-
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-                //EndSec();
-            }
-        }
-
-        protected override void ExecDisp()
-        {
-            if (OperationMode != EOperationMode.INSERT)
-            {
-                CheckData(true);
-            }
-                
-        }
-
-        public void CheckData(bool set, bool copy= false)
-        {
-            if (ErrorCheck(11))
-            {
-                mcskue = GetSKUPriceInfo();
-                dtDelete = null;
-                DataTable dtSKUPrice= dtDelete = mcskupbl.M_CustomerSKUPriceSelectData(mcskue);
-                
-
-                if (dtSKUPrice.Rows.Count > 0)
-                {
-                    S_Clear_Grid();
-                    SetMultiColNo(dtSKUPrice);
-                    
-                }
-                else
-                {
-                    bbl.ShowMessage("E128");
-                    Scr_Clr(1);
-                    txtStartDate.Focus();
-                }
-                if (OperationMode == EOperationMode.UPDATE)
-                {
-                    S_BodySeigyo(1, 1);
-                    mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                    detailControls[(int)EIndex.DateStart].Focus();
-                }
-                else
-                {
-                    S_BodySeigyo(2, 1);
-                    //配列の内容を画面にセット
-                    mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                }
-
-            }
-        }
-
-        protected override void ExecSec()
-        {
-
-            if (OperationMode != EOperationMode.DELETE)
-            {
-            
-                // 明細部  画面の範囲の内容を配列にセット
-                mGrid.S_DispToArray(Vsb_Mei_0.Value);
-
-                //明細部チェック
-                for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
-                {
-                    //m_dataCntが更新有効行数
-                    if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].TekiyouKaisiDate) == false
-                        || string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].CustomerCD) == false
-                        || string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JANCD) == false
-                        )
-                    {
-                        for (int CL = (int)ClsGridCustomerSKUPric.ColNO.TekiyouKaisiDate; CL < (int)ClsGridCustomerSKUPric.ColNO.COUNT; CL++)
-                        {
-                            if (CheckGrid(CL, RW, true) == false)
-                            {
-                                //Focusセット処理
-                                ERR_FOCUS_GRID_SUB(CL, RW);
-                                return;
-                            }
-                        }
-                    }
-                } 
-
-                ////各金額項目の再計算必要
-                //CalcKin();
-            }
-
-            DataTable dt = GetGridEntity();
-
-            //更新処理
-            mcskue = GetEntity(dt);
-            //mibl.Mitsumori_Exec(dme, dt, (short)OperationMode, InOperatorCD, InPcID);
-            switch(OperationMode)
-            {
-                case EOperationMode.INSERT:
-                    InsertUpdate(1);
-                    break;
-                case EOperationMode.UPDATE:
-                    InsertUpdate(2);
-                    break;
-                case EOperationMode.DELETE:
-                    Delete();
-                    break;
-            }
-
-            //更新後画面クリア
-            ChangeOperationMode(base.OperationMode);
-        }
-
-        private void InsertUpdate(int mode)
-        {
-            if (mcskupbl.CustomerSKUPrice_Exec(mcskue,mode))
-            {
-                bbl.ShowMessage("I101");
-
-                ChangeOperationMode(OperationMode);
-                detailControls[0].Focus();
-            }
-            else
-            {
-                bbl.ShowMessage("S001");
-            }
-        }
-
-        private void Delete()
-        {
-            if (mcskupbl.CustomerSKUPrice_Exec(mcskue, 3))
-            {
-                ChangeOperationMode(OperationMode);
-                detailControls[0].Focus();
-            }
-            else
-            {
-                bbl.ShowMessage("S001");
-            }
-
-        }
-       private DataTable GetGridEntity()
-        {
-            DataTable dt = new DataTable();
-            Para_Add(dt);
-
-           // int rowNo = 1;
-            for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
-            {
-                //m_dataCntが更新有効行数
-                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].TekiyouKaisiDate) == false
-                       || string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].CustomerCD) == false
-                       || string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JANCD) == false
-                       )
-                {
-
-                    dt.Rows.Add(
-                         mGrid.g_DArray[RW].CustomerCD == "" ? null : mGrid.g_DArray[RW].CustomerCD
-                        , mGrid.g_DArray[RW].CustomerName == "" ? null : mGrid.g_DArray[RW].CustomerName
-                        , mGrid.g_DArray[RW].TekiyouKaisiDate == "" ? null : mGrid.g_DArray[RW].TekiyouKaisiDate
-                        , mGrid.g_DArray[RW].TekiyouShuuryouDate == "" ? null : mGrid.g_DArray[RW].TekiyouShuuryouDate
-                        , bbl.Z_Set(mGrid.g_DArray[RW].AdminNO)
-                        , mGrid.g_DArray[RW].JANCD == "" ? null : mGrid.g_DArray[RW].JANCD
-                        , mGrid.g_DArray[RW].SKUCD == "" ? null : mGrid.g_DArray[RW].SKUCD
-                        , mGrid.g_DArray[RW].SKUName == "" ? null : mGrid.g_DArray[RW].SKUName
-                        , bbl.Z_Set(mGrid.g_DArray[RW].SalePriceOutTax)
-                        , mGrid.g_DArray[RW].Remarks == "" ? null : mGrid.g_DArray[RW].Remarks
-                        //, mGrid.g_DArray[RW].Update
-                        );
-
-                  //  rowNo++;
-                }
-            }
-
-            return dt;
-        }
-
-        private M_CustomerSKUPrice_Entity GetEntity(DataTable dtCSKUP)
-        {
-            mcskue = new M_CustomerSKUPrice_Entity
-            {
-                dt1 = dtCSKUP,
-                dt2 = dtDelete,
-                ProcessMode = ModeText,
-                InsertOperator = InOperatorCD,
-                ProgramID = InProgramID,
-                Key = InPcID + bbl.GetDate(),
-                PC = InPcID,
-            };
-            return mcskue;
-        }
-
-        private void Para_Add(DataTable dt)
-        {
-            dt.Columns.Add("CustomerCD", typeof(string));
-            dt.Columns.Add("CustomerName", typeof(string));
-            dt.Columns.Add("TekiyouKaisiDate", typeof(string));
-            dt.Columns.Add("TekiyouShuuryouDate", typeof(string));
-            dt.Columns.Add("AdminNO", typeof(int));
-            dt.Columns.Add("JanCD", typeof(string));
-            dt.Columns.Add("SKUCD", typeof(string));
-            dt.Columns.Add("SKUName", typeof(string));
-            dt.Columns.Add("SalePriceOutTax", typeof(decimal));
-            dt.Columns.Add("Remarks", typeof(string));
-
-        }
+        #region Error Check
         public bool ErrorCheck(int mode)
         {
             if (!txtStartDate.DateCheck())
                 return false;
             if (!txtEndDate.DateCheck())
                 return false;
-            if(!string.IsNullOrWhiteSpace(txtStartDate.Text) && !string.IsNullOrWhiteSpace(txtEndDate.Text))
+            if (!string.IsNullOrWhiteSpace(txtStartDate.Text) && !string.IsNullOrWhiteSpace(txtEndDate.Text))
             {
                 int result = txtStartDate.Text.CompareTo(txtEndDate.Text);
                 if (result > 0)
@@ -1589,9 +1722,9 @@ namespace MasterTouroku_CustomerSKUPrice
                     return false;
                 }
             }
-            if(!string.IsNullOrWhiteSpace(ScCustomer_Start.TxtCode.Text))
+            if (!string.IsNullOrWhiteSpace(ScCustomer_Start.TxtCode.Text))
             {
-                if(ScCustomer_Start.IsExists(2))
+                if (ScCustomer_Start.IsExists(2))
                 {
                     bbl.ShowMessage("E101");
                     ScCustomer_Start.SetFocus(1);
@@ -1648,10 +1781,7 @@ namespace MasterTouroku_CustomerSKUPrice
                     return false;
                 }
             }
-            if(mode==2)
-            {
 
-            }
             return true;
         }
 
@@ -1672,6 +1802,7 @@ namespace MasterTouroku_CustomerSKUPrice
             w_Ret = mGrid.F_MoveFocus((int)ClsGridCustomerSKUPric.Gen_MK_FocusMove.MvSet, (int)ClsGridCustomerSKUPric.Gen_MK_FocusMove.MvSet, w_Ctrl, -1, -1, this.ActiveControl, Vsb_Mei_0, pRow, pCol);
 
         }
+
         private bool CheckDetail(int index)
         {
             switch (index)
@@ -1702,7 +1833,7 @@ namespace MasterTouroku_CustomerSKUPrice
                             }
                         }
                     }
-                       
+
 
                     break;
                 case (int)EIndex.CustomerCD_Start:
@@ -1813,135 +1944,47 @@ namespace MasterTouroku_CustomerSKUPrice
                             }
                         }
                     }
-                        break;
+                    break;
 
             }
 
             return true;
         }
-        public M_CustomerSKUPrice_Entity GetSKUPriceInfo()
+
+        public void CheckData(bool set, bool copy = false)
         {
-            mcskue = new M_CustomerSKUPrice_Entity
+            if (ErrorCheck(11))
             {
-                TekiyouKaisiDate_From = txtStartDate.Text,
-                TekiyouKaisiDate_To = txtEndDate.Text,
-                CustomerCD_From = ScCustomer_Start.TxtCode.Text,
-                CustomerCD_To = ScCustomer_End.TxtCode.Text,
-                SKUCD_From = ScSKUCD_Start.TxtCode.Text,
-                SKUCD_To = ScSKUCD_End.TxtCode.Text,
-                SKUName = txtItemName.Text,
-                DisplayKBN = rdoRecent.Checked? "0" : "1",
-            };
-            return mcskue;
-        }
+                mcskue = GetSKUPriceInfo();
+                dtDelete = null;
+                DataTable dtSKUPrice = dtDelete = mcskupbl.M_CustomerSKUPriceSelectData(mcskue);
 
-        private void SearchData(EsearchKbn kbn, Control setCtl)
-        {
-            switch (kbn)
-            {
-                case EsearchKbn.Product:
-                    int w_Row;
 
-                    if (mGrid.F_Search_Ctrl_MK(ActiveControl, out int w_Col, out int w_CtlRow) == false)
-                    {
-                        return;
-                    }
-
-                    w_Row = w_CtlRow + Vsb_Mei_0.Value;
-
-                    //画面より配列セット 
-                    mGrid.S_DispToArray(Vsb_Mei_0.Value);
-
-                    using (Search_Product frmProduct = new Search_Product(bbl.GetDate()))
-                    {
-                        frmProduct.SKUCD = mGrid.g_DArray[w_Row].SKUCD;
-                        frmProduct.JANCD = mGrid.g_DArray[w_Row].JANCD;
-                        frmProduct.ShowDialog();
-
-                        if (!frmProduct.flgCancel)
-                        {
-                            mGrid.g_DArray[w_Row].JANCD = frmProduct.JANCD;
-                            mGrid.g_DArray[w_Row].OldJanCD = frmProduct.JANCD;
-                            mGrid.g_DArray[w_Row].SKUCD = frmProduct.SKUCD;
-                            mGrid.g_DArray[w_Row].SKUName = frmProduct.ITEM;
-                            mGrid.g_DArray[w_Row].AdminNO = frmProduct.AdminNO;
-
-                            CheckGrid((int)ClsGridCustomerSKUPric.ColNO.JANCD, w_Row, false, true);
-
-                            //配列の内容を画面へセット
-                            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-
-                            SendKeys.Send("{ENTER}");
-                        }
-                    }
-                    break;
-
-                case EsearchKbn.Customer:
-                    int wc_Row;
-
-                    if (mGrid.F_Search_Ctrl_MK(ActiveControl, out int wc_Col, out int wc_CtlRow) == false)
-                    {
-                        return;
-                    }
-
-                    wc_Row = wc_CtlRow + Vsb_Mei_0.Value;
-
-                    //画面より配列セット 
-                    mGrid.S_DispToArray(Vsb_Mei_0.Value);
-                    using (FrmSearch_Customer frmCustomer = new FrmSearch_Customer(bbl.GetDate(),"1",StoreCD))
-                    {
-                        //frmCustomer.CustomerCD=mGrid.g_DArray[wc_Row].CustomerCD;
-                        frmCustomer.ShowDialog();
-
-                        if (!frmCustomer.flgCancel)
-                        {
-                            mGrid.g_DArray[wc_Row].CustomerCD = frmCustomer.CustomerCD;
-                            mGrid.g_DArray[wc_Row].CustomerName = frmCustomer.CustName;
-                            //mGrid.g_DArray[wc_Row].AdminNO = frmCustomer.AdminNO;
-
-                            //CheckGrid((int)ClsGridMitsumori.ColNO.JanCD, w_Row, false, true);
-
-                            //配列の内容を画面へセット
-                            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-
-                            SendKeys.Send("{ENTER}");
-                        }
-                    }
-
-                    break;
-                    
-            }
-
-        }
-
-        private void BtnSearch_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                EsearchKbn kbn = EsearchKbn.Null;
-                Control setCtl = null;
-
-                if (mGrid.F_Search_Ctrl_MK(ActiveControl, out int w_Col, out int w_CtlRow) == false)
+                if (dtSKUPrice.Rows.Count > 0)
                 {
-                    return;
+                    S_Clear_Grid();
+                    SetMultiColNo(dtSKUPrice);
+
                 }
-                if (w_Col == (int)ClsGridCustomerSKUPric.ColNO.JANCD)
-                    kbn = EsearchKbn.Product;
+                else
+                {
+                    bbl.ShowMessage("E128");
+                    Scr_Clr(1);
+                    txtStartDate.Focus();
+                }
+                if (OperationMode == EOperationMode.UPDATE)
+                {
+                    S_BodySeigyo(1, 1);
+                    mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    detailControls[(int)EIndex.DateStart].Focus();
+                }
+                else
+                {
+                    S_BodySeigyo(2, 1);
+                    //配列の内容を画面にセット
+                    mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                }
 
-                if (w_Col == (int)ClsGridCustomerSKUPric.ColNO.CustomerCD)
-                    kbn = EsearchKbn.Customer;
-
-                setCtl = previousCtrl;
-
-
-                if (kbn != EsearchKbn.Null)
-                    SearchData(kbn, setCtl);
-
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
             }
         }
 
@@ -1961,9 +2004,70 @@ namespace MasterTouroku_CustomerSKUPrice
             switch (col)
             {
                 case (int)ClsGridCustomerSKUPric.ColNO.TekiyouKaisiDate:
-                   // if()
-                case (int)ClsGridCustomerSKUPric.ColNO.TekiyouShuuryouDate:
+                    if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].TekiyouKaisiDate))
+                    {
+                        bbl.ShowMessage("E102");
+                        return false;
+                    }
+                    if (!bbl.CheckDate(mGrid.g_DArray[row].TekiyouKaisiDate))
+                    {
+                        bbl.ShowMessage("E103");
+                        return false;
+                    }
+                    break;
 
+                case (int)ClsGridCustomerSKUPric.ColNO.TekiyouShuuryouDate:
+                    if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].TekiyouShuuryouDate))
+                    {
+                        bbl.ShowMessage("E102");
+                        return false;
+                    }
+                    if (!bbl.CheckDate(mGrid.g_DArray[row].TekiyouShuuryouDate))
+                    {
+                        bbl.ShowMessage("E103");
+                        return false;
+                    }
+                    int result = mGrid.g_DArray[row].TekiyouShuuryouDate.CompareTo(mGrid.g_DArray[row].TekiyouKaisiDate);
+                    if (result < 0)
+                    {
+                        bbl.ShowMessage("E104");
+                        return false;
+                    }
+                    break;
+
+                case (int)ClsGridCustomerSKUPric.ColNO.CustomerCD:
+                    if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].CustomerCD))
+                    {
+                        bbl.ShowMessage("E102");
+                        return false;
+                    }
+                    M_Customer_Entity mcee = new M_Customer_Entity
+                    {
+                        CustomerCD = mGrid.g_DArray[row].CustomerCD,
+                        ChangeDate = bbl.GetDate()     // detailControls[(int)EIndex.MitsumoriDate].Text
+                    };
+                    Customer_BL sble = new Customer_BL();
+                    bool rete = sble.M_Customer_Select(mcee);
+                    if (rete)
+                    {
+                        mGrid.g_DArray[row].CustomerName = mcee.CustomerName;
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E101");
+                        mGrid.g_DArray[row].CustomerName = "";
+                        return false;
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[row].TekiyouKaisiDate) && !string.IsNullOrWhiteSpace(mGrid.g_DArray[row].JANCD))
+                    {
+                        DataTable dtSKUPrice = bbl.SimpleSelect1("73", mGrid.g_DArray[row].TekiyouKaisiDate, mGrid.g_DArray[row].CustomerCD, mGrid.g_DArray[row].AdminNO);
+                        if (dtSKUPrice.Rows.Count > 0)
+                        {
+                            bbl.ShowMessage("E132");
+                            return false;
+                        }
+                    }
                     break;
                 case (int)ClsGridCustomerSKUPric.ColNO.JANCD:
                     string ymd = detailControls[(int)EIndex.Date].Text;
@@ -1975,7 +2079,11 @@ namespace MasterTouroku_CustomerSKUPrice
                     }
 
                     if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].JANCD))
-                        return true;
+                    {
+                        bbl.ShowMessage("E102");
+                        return false;
+                    }
+
 
                     //入力がある場合、SKUマスターに存在すること
                     //[M_SKU]
@@ -2034,16 +2142,16 @@ namespace MasterTouroku_CustomerSKUPrice
                         Grid_NotFocus(0, row);
                     }
 
-                    if(!string.IsNullOrWhiteSpace(mGrid.g_DArray[row].CustomerCD) && !string.IsNullOrWhiteSpace(mGrid.g_DArray[row].TekiyouKaisiDate))
+                    if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[row].CustomerCD) && !string.IsNullOrWhiteSpace(mGrid.g_DArray[row].TekiyouKaisiDate))
                     {
                         DataTable dtSKUPrice = bbl.SimpleSelect1("73", mGrid.g_DArray[row].TekiyouKaisiDate, mGrid.g_DArray[row].CustomerCD, mGrid.g_DArray[row].AdminNO);
-                        if(dtSKUPrice.Rows.Count>0)
+                        if (dtSKUPrice.Rows.Count > 0)
                         {
                             bbl.ShowMessage("E132");
                             return false;
                         }
                     }
-                    
+
                     break;
                 case (int)ClsGridCustomerSKUPric.ColNO.SalePriceOutTax:
                     if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[row].SalePriceOutTax))
@@ -2054,7 +2162,7 @@ namespace MasterTouroku_CustomerSKUPrice
                         return false;
                     }
 
-                    
+
                     break;
             }
 
@@ -2064,47 +2172,7 @@ namespace MasterTouroku_CustomerSKUPrice
             return true;
         }
 
-
-        private void Grid_NotFocus(int pCol, int pRow)
-        {
-            // ﾌｫｰｶｽをはじく
-            int w_Col;
-            //bool w_AllFlg = false;
-            int w_CtlRow;
-
-            if (OperationMode >= EOperationMode.DELETE)
-                return;
-
-            if (m_EnableCnt - 1 < pRow)
-                return;
-
-            w_CtlRow = pRow - Vsb_Mei_0.Value;
-            if (w_CtlRow >= 0 && w_CtlRow <= mGrid.g_MK_Ctl_Row - 1)
-                //画面範囲の時
-                //配列の内容を画面にセット
-                mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0, w_CtlRow, w_CtlRow);
-
-
-            //w_AllFlg = true;
-
-            for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
-                switch (w_Col)
-                {
-                    case (int)ClsGridCustomerSKUPric.ColNO.CustomerName:
-                        mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
-                        mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = true;
-                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
-                        break;
-                    case (int)ClsGridCustomerSKUPric.ColNO.SKUName:
-                    case (int)ClsGridCustomerSKUPric.ColNO.SKUCD:
-                        mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
-                        mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = true;
-                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
-                        break;
-                }
-
-
-        }
+        #endregion
 
         protected override void EndSec()
         {
@@ -2115,132 +2183,5 @@ namespace MasterTouroku_CustomerSKUPrice
         {
             MoveNextControl(e);
         }
-
-        private void btnImport_Click(object sender, EventArgs e)
-        {
-            if(OperationMode==EOperationMode.INSERT)
-            {
-                dtExcel = null;
-                if(ErrorCheckForExcel())
-                {
-                    SetMultiColNo(dtExcel);
-                }
-            }
-        }
-
-        #region error check for Excel Import 
-        private bool ErrorCheckForExcel()
-        {
-            OpenFileDialog op = new OpenFileDialog
-            {
-                InitialDirectory = @"C:\",
-                RestoreDirectory = true
-            };
-            if (op.ShowDialog() == DialogResult.OK)
-            {
-                string str = op.FileName;
-                string ext = Path.GetExtension(str);
-                if (!(ext.Equals(".xls") || ext.Equals(".xlsx")))
-                {
-                    bbl.ShowMessage("E137");
-                    return false;
-                }
-                else
-                {
-                    dtExcel = ExcelToDatatable(str);
-                    string[] colname = { "適用開始日", "適用終了日", "顧客CD", "顧客名" , "JANCD" , "SKUCD" , "商品名", "税抜単価" , "備考" };
-                    
-                    if (ColumnCheck(colname, dtExcel))
-                    {
-                        dtExcel = ChangeColumnName(dtExcel);
-                        dtExcel.Columns.Add("AdminNO", typeof(String));
-                        for(int i=0; i < dtExcel.Rows.Count; i++)
-                        {
-                            M_SKU_Entity mse = new M_SKU_Entity
-                            {
-                                JanCD = dtExcel.Rows[i]["JANCD"].ToString(),
-                                ChangeDate = bbl.GetDate(),
-                            };
-                            SKU_BL mbl = new SKU_BL();
-                            DataTable dt = mbl.M_SKU_SelectAll(mse);
-                            if (dt.Rows.Count == 0)
-                            {
-                                bbl.ShowMessage("E107");
-                            }
-                            else
-                            {
-                                dtExcel.Rows[i]["AdminNO"] = dt.Rows[0]["AdminNO"].ToString();
-                            }
-
-                        }
-                        
-                    }
-                    else
-                    {
-                        bbl.ShowMessage("E137");
-                    }
-
-                 }
-
-            }
-           return true;
-        }
-
-        protected DataTable ExcelToDatatable(string filePath)
-        {
-            FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read);
-
-            string ext = Path.GetExtension(filePath);
-            IExcelDataReader excelReader;
-            if (ext.Equals(".xls"))
-                //1. Reading from a binary Excel file ('97-2003 format; *.xls)
-                excelReader = ExcelReaderFactory.CreateBinaryReader(stream);
-            else if (ext.Equals(".xlsx"))
-                //2. Reading from a OpenXml Excel file (2007 format; *.xlsx)
-                excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
-            else
-                //2. Reading from a OpenXml Excel file (2007 format; *.xlsx) 
-                excelReader = ExcelReaderFactory.CreateCsvReader(stream, null);
-
-            //3. DataSet - The result of each spreadsheet will be created in the result.Tables
-            bool useHeaderRow = true;
-
-            DataSet result = excelReader.AsDataSet(new ExcelDataSetConfiguration()
-            {
-                ConfigureDataTable = (_) => new ExcelDataTableConfiguration()
-                {
-                    UseHeaderRow = useHeaderRow,
-                }
-            });
-            excelReader.Close();
-            return result.Tables[0];
-        }
-
-        protected DataTable ChangeColumnName(DataTable dt)
-        {
-            dt.Columns["適用開始日"].ColumnName = "TekiyouKaisiDate";
-            dt.Columns["適用終了日"].ColumnName = "TekiyouShuuryouDate";
-            dt.Columns["顧客CD"].ColumnName = "CustomerCD";
-            dt.Columns["顧客名"].ColumnName = "CustomerName";
-            dt.Columns["商品名"].ColumnName = "SKUName";
-            dt.Columns["税抜単価"].ColumnName = "SalePriceOutTax";
-            dt.Columns["備考"].ColumnName = "Remarks";
-            return dt;
-        }
-
-        protected Boolean ColumnCheck(String[] colName, DataTable dtMain)
-        {
-            DataColumnCollection cols = dtMain.Columns;
-            for (int i = 0; i < colName.Length; i++)
-            {
-                if (!cols.Contains(colName[i]))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        #endregion
     }
 }
