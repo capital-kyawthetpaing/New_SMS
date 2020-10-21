@@ -673,7 +673,7 @@
             dataGridViewCellStyle4.Format = "N2";
             dataGridViewCellStyle4.NullValue = "0";
             this.Rate.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Rate.HeaderText = "        掛率";
+            this.Rate.HeaderText = "          掛率";
             this.Rate.MaxInputLength = 6;
             this.Rate.Name = "Rate";
             // 
