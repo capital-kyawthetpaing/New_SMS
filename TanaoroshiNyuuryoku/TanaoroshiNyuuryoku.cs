@@ -970,13 +970,38 @@ namespace TanaoroshiNyuuryoku
         }
         private void GvDetail_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            DataTable dt = (DataTable)GvDetail.DataSource;
-            if (e.ColumnIndex == GvDetail.Columns["colActualQuantity"].Index)
+            try
             {
-                //Form.Detail.実在庫 －	Form.Detail.理論在庫 →	Form.Detail.差 にセット
-                dt.Rows[e.RowIndex]["DifferenceQuantity"] = bbl.Z_Set(dt.Rows[e.RowIndex]["ActualQuantity"]) - bbl.Z_Set(dt.Rows[e.RowIndex]["TheoreticalQuantity"]);
+                DataTable dt = (DataTable)GvDetail.DataSource;
+                if (e.ColumnIndex == GvDetail.Columns["colActualQuantity"].Index)
+                {
+                    //Form.Detail.実在庫 －	Form.Detail.理論在庫 →	Form.Detail.差 にセット
+                    dt.Rows[e.RowIndex]["DifferenceQuantity"] = bbl.Z_Set(dt.Rows[e.RowIndex]["ActualQuantity"]) - bbl.Z_Set(dt.Rows[e.RowIndex]["TheoreticalQuantity"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
             }
         }
+        private void GvDetail_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                //最終行最終列の場合は、F1へ
+                if ((GvDetail.CurrentCellAddress.X == GvDetail.ColumnCount - 3) &&
+                    (GvDetail.CurrentCellAddress.Y == GvDetail.RowCount - 1))
+                {
+                    Btn_F1.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+}
         #endregion
 
     }
