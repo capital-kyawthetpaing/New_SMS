@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 using BL;
 using Entity;
 using Base.Client;
 using Search;
+using System.Text;
+using Microsoft.VisualBasic.FileIO;
 
 namespace TanaoroshiNyuuryoku
 {
@@ -77,8 +80,9 @@ namespace TanaoroshiNyuuryoku
                 base.StartProgram();
                 Btn_F9.Text = "";
                 Btn_F9.Enabled = false;
+                Btn_F10.Text = "取込(F10)";
                 Btn_F12.Text = "登録(F12)";
-                SetFuncKeyAll(this, "100001000011");
+                SetFuncKeyAll(this, "100001000111");
 
                 //コンボボックス初期化
                 string ymd = bbl.GetDate();
@@ -139,12 +143,29 @@ namespace TanaoroshiNyuuryoku
                     }
                     else
                     {
-                        //if (!base.CheckAvailableStores(CboStoreCD.SelectedValue.ToString()))
-                        //{
-                        //    bbl.ShowMessage("E141");
-                        //    CboStoreCD.Focus();
-                        //    return false;
-                        //}
+                        //[M_Souko_Select]
+                        M_Souko_Entity msoe = new M_Souko_Entity();
+                        msoe.ChangeDate = ymd;
+                            msoe.SoukoCD = CboSoukoCD.SelectedValue.ToString();
+
+                        DataTable dtS = tabl.M_Souko_SelectData(msoe);
+
+                        if (dtS.Rows.Count > 0)
+                        {
+                            //Ｅ１４５ 「権限のない店舗の倉庫です。」
+                            if (!base.CheckAvailableStores(dtS.Rows[0]["StoreCD"].ToString()))
+                            {
+                                bbl.ShowMessage("E141");
+                                return false;
+                            }
+
+                            StoreCD = dtS.Rows[0]["StoreCD"].ToString();
+                        }
+                        else
+                        {
+                            bbl.ShowMessage("E101");
+                            return false;
+                        }
                     }
 
                     break;
@@ -276,64 +297,17 @@ namespace TanaoroshiNyuuryoku
         protected override void ExecDisp()
         {
 
-            for (int i = 0; i < detailControls.Length; i++)
+            for (int i = 0; i <= (int)EIndex.InventoryDate; i++)
                 if (CheckDetail(i) == false)
                 {
                     detailControls[i].Focus();
                     return;
                 }
             
-            //更新処理
             doe = GetEntity();
             DataTable dt = tabl.D_Inventory_SelectAll(doe);
 
-            GvDetail.DataSource = dt;
-
-            if (dt.Rows.Count > 0)
-            {
-                GvDetail.SelectionMode = DataGridViewSelectionMode.CellSelect;
-                GvDetail.CurrentRow.Selected = true;
-                GvDetail.Enabled = true;
-                GvDetail.Focus();
-                GvDetail.CurrentCell = GvDetail[(int)EColNo.ActualQuantity, 0];
-                GvDetail.ReadOnly = false;
-                for(int i=0; i< (int)EColNo.COUNT; i++)
-                {
-                    if(i == (int)EColNo.ActualQuantity)
-                    {
-                        GvDetail.Columns[i].ReadOnly = false;
-                    }
-                    else
-                    {
-                        GvDetail.Columns[i].ReadOnly = true;
-                        //GvDetail.Columns[i].DefaultCellStyle.BackColor = System.Drawing.Color.Silver;
-
-                        //デフォルトのセルスタイル
-                        DataGridViewCellStyle defaultCellStyle = new DataGridViewCellStyle();
-                        defaultCellStyle.Font = new System.Drawing.Font(GvDetail.Font,GvDetail.Font.Style | System.Drawing.FontStyle.Bold);
-                        defaultCellStyle.BackColor = System.Drawing.Color.Silver;
-                        GvDetail.Columns[i].DefaultCellStyle = defaultCellStyle;
-                    }
-                }
-                for (int i = 0; i <= (int)EIndex.Suryo; i++)
-                {
-                    switch (i)
-                    {
-                        case (int)EIndex.SoukoCD:
-                        case (int)EIndex.InventoryDate:
-                            detailControls[i].Enabled = false;
-                            break;
-                        default:
-                            detailControls[i].Enabled = true;
-                            break;
-                    }
-                }
-                ScFromRackNo.Value1 = CboSoukoCD.SelectedValue.ToString();
-                }
-            else
-            {
-                bbl.ShowMessage("E128");
-            }
+            SetData(dt);
         }
 
         protected override void ExecSec()
@@ -361,7 +335,266 @@ namespace TanaoroshiNyuuryoku
                 //EndSec();
             }
         }
-  
+        private void SetData(DataTable dt)
+        {
+            GvDetail.DataSource = dt;
+
+            if (dt.Rows.Count > 0)
+            {
+                GvDetail.SelectionMode = DataGridViewSelectionMode.CellSelect;
+                GvDetail.CurrentRow.Selected = true;
+                GvDetail.Enabled = true;
+                GvDetail.Focus();
+                GvDetail.CurrentCell = GvDetail[(int)EColNo.ActualQuantity, 0];
+                GvDetail.ReadOnly = false;
+                for (int i = 0; i < (int)EColNo.COUNT; i++)
+                {
+                    if (i == (int)EColNo.ActualQuantity)
+                    {
+                        GvDetail.Columns[i].ReadOnly = false;
+                    }
+                    else
+                    {
+                        GvDetail.Columns[i].ReadOnly = true;
+                        //GvDetail.Columns[i].DefaultCellStyle.BackColor = System.Drawing.Color.Silver;
+
+                        //デフォルトのセルスタイル
+                        DataGridViewCellStyle defaultCellStyle = new DataGridViewCellStyle();
+                        defaultCellStyle.Font = new System.Drawing.Font(GvDetail.Font, GvDetail.Font.Style | System.Drawing.FontStyle.Bold);
+                        defaultCellStyle.BackColor = System.Drawing.Color.Silver;
+                        GvDetail.Columns[i].DefaultCellStyle = defaultCellStyle;
+                    }
+                }
+                for (int i = 0; i <= (int)EIndex.Suryo; i++)
+                {
+                    switch (i)
+                    {
+                        case (int)EIndex.SoukoCD:
+                        case (int)EIndex.InventoryDate:
+                            detailControls[i].Enabled = false;
+                            break;
+                        default:
+                            detailControls[i].Enabled = true;
+                            break;
+                    }
+                }
+                Btn_F10.Enabled = false;
+
+                ScFromRackNo.Value1 = CboSoukoCD.SelectedValue.ToString();
+            }
+            else
+            {
+                bbl.ShowMessage("E128");
+            }
+        }
+        private void DataToGrid()
+        {
+            try
+            {
+                //Form.倉庫～Form.棚卸日までのエラーチェック		
+                for (int i = 0; i <= (int)EIndex.InventoryDate; i++)
+                    if (CheckDetail(i) == false)
+                    {
+                        detailControls[i].Focus();
+                        return;
+                    }
+
+                if (bbl.ShowMessage("Q206") != DialogResult.Yes)
+                    return;
+
+                //以下のフォルダー（Char1）からCSVファイルをファイルの作成日順に読み取る
+                M_MultiPorpose_Entity me = new M_MultiPorpose_Entity();
+                me.ID = MultiPorpose_BL.ID_TanaFile;
+                me.Key = StoreCD;
+
+                MultiPorpose_BL mbl = new MultiPorpose_BL();
+                string Folder = "";
+                string AfterFileName = "";
+                DataTable dt = mbl.M_MultiPorpose_Select(me);
+                if (dt.Rows.Count > 0)
+                {
+                    Folder = dt.Rows[0]["Char1"].ToString();  //保存フォルダ
+                    AfterFileName = dt.Rows[0]["Char2"].ToString();  //読取後移動先フォルダ
+                }
+
+                //CSVファイルが１件もない場合 メッセージを表示し、取込処理を終了する Ｑ３２５				
+                string[] names = System.IO.Directory.GetFiles(Folder, "*.csv");
+                if (names.Length == 0)
+                {
+                    bbl.ShowMessage("Q325");
+                    return;
+                }
+
+                //すでに登録されているデータを取得
+                doe = GetEntity();
+
+                DataTable dtFile = tabl.D_Inventory_SelectAll(doe);
+                foreach (string name in names)
+                {
+                    if (!CSVToTable(dtFile, name))
+                        return;
+
+                    //読み取ったCSVファイルを上記で獲得していたフォルダー（M_MultiPorpose.Char2）に移動する
+                    System.IO.File.Move(name, AfterFileName + @"\" + System.IO.Path.GetFileName(name));
+                }
+
+                SetData(dtFile);
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
+        private bool CSVToTable(DataTable dtFile, string FileName)
+        {
+            DataTable csvData = new DataTable();
+            string rackNo = "";
+
+            try
+            {
+                using (TextFieldParser csvReader = new TextFieldParser(FileName, Encoding.GetEncoding(932), true))
+                {
+                    csvReader.SetDelimiters(new string[] { "," });
+                    csvReader.HasFieldsEnclosedInQuotes = true;
+                    //read column names
+                    string[] colFields = csvReader.ReadFields();
+                    int count = 1;
+
+                    //CSVファイルの１行目はデータとする
+                    foreach (string column in colFields)
+                    {
+                            if (!csvData.Columns.Contains(column))
+                            {
+                                DataColumn datacolumn = new DataColumn(column);
+                                datacolumn.AllowDBNull = true;
+                                csvData.Columns.Add(datacolumn);
+                            }
+                            else
+                            {
+                                DataColumn datacolumn = new DataColumn(column + "_" + count++);
+                                datacolumn.AllowDBNull = true;
+                                csvData.Columns.Add(datacolumn);
+                            }
+                    }
+
+                    while (!csvReader.EndOfData)
+                    {
+                        string[] fieldData = csvReader.ReadFields();
+
+                        //CSVファイルの項目数チェック
+                        if (fieldData.Length != 3)
+                        {
+                            bbl.ShowMessage("E137");
+                            return false;
+                        }
+                        if (!string.IsNullOrWhiteSpace(fieldData[0]))
+                            rackNo = fieldData[0];
+
+
+                        if (Encoding.GetEncoding(932).GetByteCount(rackNo) > 10 || Encoding.GetEncoding(932).GetByteCount(fieldData[1]) > 13)
+                        {
+                            bbl.ShowMessage("E137");
+                            return false;
+                        }
+                        //3つめの項目に数字以外の値が含まれる場合
+                        if(!bbl.IsInteger(fieldData[2]))
+                        {
+                            bbl.ShowMessage("E137");
+                            return false;
+                        }
+
+                        fieldData[0] = rackNo;
+
+                        DataRow[] rows = dtFile.Select("RackNO = '" + rackNo + "' AND JANCD = '" + fieldData[1] + "'");
+                        if(rows.Length == 0)
+                        {
+                            string ymd = bbl.GetDate();
+                            bool errFlg = false;
+
+                            //【棚番】
+                            //倉庫棚番マスタに存在しない場合、Error
+                            M_Location_Entity mle = new M_Location_Entity
+                            {
+                                SoukoCD = CboSoukoCD.SelectedIndex > 0 ? CboSoukoCD.SelectedValue.ToString() : "",
+                                TanaCD = rackNo,
+                                ChangeDate = ymd
+                            };
+                            bool ret = tabl.M_Location_SelectData(mle);
+                            if (!ret)
+                            {
+                                errFlg = true;
+                            }
+
+                            //SKUマスターに存在すること
+                            //[M_SKU]
+                            M_SKU_Entity mse = new M_SKU_Entity
+                            {
+                                JanCD = fieldData[1],
+                                SetKBN = "0",
+                                ChangeDate = ymd
+                            };
+
+                            SKU_BL mbl = new SKU_BL();
+                            DataTable dt = mbl.M_SKU_SelectAll(mse);
+                            DataRow selectRow = null;
+
+                            if (dt.Rows.Count == 0)
+                            {
+                                errFlg = true;
+                            }
+                            else
+                            {
+                                selectRow = dt.Rows[0];
+                            }
+
+                            if (errFlg)
+                            {
+                                bbl.ShowMessage("E267",rackNo, fieldData[1]);
+                                continue;
+                            }
+                            else
+                            {
+                                DataRow row = ((DataTable)GvDetail.DataSource).NewRow();
+
+                                //追加
+                                DataRow dataRow = dtFile.NewRow();
+                                dataRow["RackNO"] = rackNo;
+                                dataRow["JANCD"] = fieldData[1];
+                                dataRow["SKUCD"] = selectRow["SKUCD"].ToString();
+                                dataRow["AdminNO"] = selectRow["AdminNO"].ToString();
+                                //dataRow["TheoreticalQuantity"] = 0;
+                                dataRow["ActualQuantity"] = bbl.Z_Set(fieldData[2]);
+                                //dataRow["DifferenceQuantity"] = 0;
+                                //dataRow["InventoryNO"] = "";
+                                dataRow["SKUName"] = selectRow["SKUName"].ToString();
+                                dataRow["ColorName"] = selectRow["ColorName"].ToString();
+                                dataRow["SizeName"] = selectRow["SizeName"].ToString();
+
+                                dtFile.Rows.Add(dataRow);
+                            }
+                        }
+                        else
+                        {
+                            //Update
+                            rows[0]["ActualQuantity"] = bbl.Z_Set(fieldData[2]);
+                        }
+
+                        csvData.Rows.Add(fieldData);
+                        
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                bbl.ShowMessage("E137");
+                return false;
+            }           
+
+            return true;
+
+        }
         /// <summary>
         /// 検索フォーム起動処理
         /// </summary>
@@ -478,6 +711,7 @@ namespace TanaoroshiNyuuryoku
             detailControls[(int)EIndex.InventoryDate].Text = ymd;
             detailControls[(int)EIndex.SoukoCD].Focus();
 
+            Btn_F10.Enabled = true;
         }
 
         /// <summary>
@@ -518,7 +752,13 @@ namespace TanaoroshiNyuuryoku
                     }
 
                     break;
-
+                case 9: //F10:取込
+                    {
+                        this.Cursor = Cursors.WaitCursor;
+                        DataToGrid();
+                        this.Cursor = Cursors.Default;
+                        break;
+                    }
                 case 11:    //F12:登録
                     {
 
@@ -625,6 +865,15 @@ namespace TanaoroshiNyuuryoku
         {
             try
             {
+                for (int i = (int)EIndex.RackNO; i < (int)EIndex.Suryo; i++)
+                {
+                    if (CheckDetail(i) == false)
+                    {
+                        detailControls[i].Focus();
+                        return;
+                    }
+                }
+
                 DataRow row = ((DataTable)GvDetail.DataSource).NewRow();
                 row["AdminNO"] = mAdminNO;
                 row["JANCD"] = detailControls[(int)EIndex.JANCD].Text;

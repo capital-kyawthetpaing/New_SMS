@@ -76,9 +76,9 @@ namespace BL
         {
             return tdl.D_TenjiInsert(tje,xml);
         }
-        public bool D_TenjiUpdate(Tenjikai_Entity tje, string xml)
+        public bool D_TenjiUpdate(Tenjikai_Entity tje, string xml,string dxml)
         {
-            return tdl.D_TenjiUpdate(tje, xml);
+            return tdl.D_TenjiUpdate(tje, xml,dxml);
         }
         public bool D_TenjiDelete(Tenjikai_Entity tje, string xml)
         {
