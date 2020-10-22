@@ -36,11 +36,11 @@ BEGIN
                INNER JOIN M_Staff AS MF
                ON MF.StaffCD = @Operator
                AND MF.ChangeDate <= CONVERT(date, @ChangeDate)
-               AND MF.StoreCD = MS.StoreCD
+               --AND MF.StoreCD = MS.StoreCD
                AND MF.StoreAuthorizationsCD = MS.StoreAuthorizationsCD
                AND MF.DeleteFlg = 0
                where MS.ChangeDate <= CONVERT(date, @ChangeDate)
-               AND MF.StoreCD = FS.StoreCD
+               AND MS.StoreCD = FS.StoreCD
                )
     ORDER BY FS.StoreCD, FS.SoukoCD
 END
