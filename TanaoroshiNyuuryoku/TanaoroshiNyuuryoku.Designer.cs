@@ -335,6 +335,7 @@
             this.GvDetail.UseRowNo = true;
             this.GvDetail.UseSetting = true;
             this.GvDetail.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvDetail_CellEndEdit);
+            this.GvDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GvDetail_KeyDown);
             // 
             // colOrderNO
             // 

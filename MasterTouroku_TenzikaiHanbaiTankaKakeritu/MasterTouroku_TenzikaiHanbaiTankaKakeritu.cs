@@ -36,6 +36,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             CB_Season.Bind(ymd);
             SC_Tanka.TxtCode.Require(true);
             GV_Tenzaishohin.CheckCol.Add("Rate");
+            GV_Tenzaishohin.Columns[0].HeaderText = "NO";
         }
         private bool ErrorCheck()
         {
@@ -80,7 +81,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                     str2 = Convert.ToInt32(TB_PriceOutTaxT.Text.ToString().Replace(",", ""));
                 if (str1 > str2)
                 {
-                    bbl.ShowMessage("E104");
+                    bbl.ShowMessage("E116");
                     TB_PriceOutTaxT.Focus();
                     return false;
                 }
@@ -90,8 +91,6 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             return true;
 
         }
-
-
         private bool ErrorCheckApply()
         {
             if (!RequireCheck(new Control[] { TB_Rate }))
@@ -277,6 +276,26 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
 
             return mTSE;
         }
+        private void TB_PriceOutTaxT_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!String.IsNullOrEmpty(TB_PriceOutTaxF.Text))
+                {
+                    int str2 = 0;
+                    int str1 = Convert.ToInt32(TB_PriceOutTaxF.Text.ToString().Replace(",", ""));
+                    if (string.IsNullOrWhiteSpace(TB_PriceOutTaxT.Text.ToString()))
+                        str2 = 0;
+                    else
+                        str2 = Convert.ToInt32(TB_PriceOutTaxT.Text.ToString().Replace(",", ""));
+                    if (str1 > str2)
+                    {
+                        bbl.ShowMessage("E116");
+                        TB_PriceOutTaxT.Focus();
+                    }
+                }
+            }
+        }
         private void GV_Tenzaishohin_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             try
@@ -373,27 +392,27 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
 
         private void GV_Tenzaishohin_Paint(object sender, PaintEventArgs e)
         {
-            string[] monthes = { "ブランド", "せグメト", "", "" };
-            for (int j = 1; j < 5;)
-            {
-                Rectangle r1 = this.GV_Tenzaishohin.GetCellDisplayRectangle(j, -1, true);
-                int w1 = this.GV_Tenzaishohin.GetCellDisplayRectangle(j + 1, -1, true).Width;
-                r1.X += 1;
-                r1.Y += 1;
-                r1.Width = r1.Width + w1 - 2;
-                r1.Height = r1.Height - 2;
+            //string[] monthes = { "ブランド", "せグメト", "", "" };
+            //for (int j = 1; j < 5;)
+            //{
+            //    Rectangle r1 = this.GV_Tenzaishohin.GetCellDisplayRectangle(j, -1, true);
+            //    int w1 = this.GV_Tenzaishohin.GetCellDisplayRectangle(j + 1, -1, true).Width;
+            //    r1.X += 1;
+            //    r1.Y += 1;
+            //    r1.Width = r1.Width + w1 - 2;
+            //    r1.Height = r1.Height - 2;
 
-                e.Graphics.FillRectangle(new SolidBrush(this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.BackColor), r1);
-                StringFormat format = new StringFormat();
-                format.LineAlignment = StringAlignment.Center;
-                format.Alignment = StringAlignment.Center;
-                e.Graphics.DrawString(monthes[j / 2],
-                this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.Font,
-                new SolidBrush(this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.ForeColor),
-                r1,
-                format);
-                j += 2;
-            }
+            //    e.Graphics.FillRectangle(new SolidBrush(this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.BackColor), r1);
+            //    StringFormat format = new StringFormat();
+            //    format.LineAlignment = StringAlignment.Center;
+            //    format.Alignment = StringAlignment.Center;
+            //    e.Graphics.DrawString(monthes[j / 2],
+            //    this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.Font,
+            //    new SolidBrush(this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.ForeColor),
+            //    r1,
+            //    format);
+            //    j += 2;
+            //}
         }
     }
 }
