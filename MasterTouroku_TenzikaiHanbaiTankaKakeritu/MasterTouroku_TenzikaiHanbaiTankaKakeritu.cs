@@ -36,6 +36,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             CB_Season.Bind(ymd);
             SC_Tanka.TxtCode.Require(true);
             GV_Tenzaishohin.CheckCol.Add("Rate");
+            GV_Tenzaishohin.Columns[0].HeaderText = "NO";
         }
         private bool ErrorCheck()
         {
@@ -90,8 +91,6 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             return true;
 
         }
-
-
         private bool ErrorCheckApply()
         {
             if (!RequireCheck(new Control[] { TB_Rate }))
@@ -415,7 +414,5 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             //    j += 2;
             //}
         }
-
-       
     }
 }
