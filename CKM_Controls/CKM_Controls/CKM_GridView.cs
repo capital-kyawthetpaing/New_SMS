@@ -570,7 +570,17 @@ namespace CKM_Controls
                                 {
                                     MyProcessCmdKey(direction);
                                 }
-                                break;
+
+                                //最終行で行く先がない場合、GridViewのKeydownイベントに処理を任せる
+                                if (currColIndex == this.Columns.Count - 1)
+                                {
+                                    if (currRowIndex == this.Rows.Count - 1)
+                                    {
+                                        if (readonlyCount == 0)
+                                            this.OnKeyDown(new KeyEventArgs(Keys.Enter));
+                                    }
+                                }
+                                    break;
                             case Keys.Shift | Keys.Tab:
                                 while (!found)
                                 {

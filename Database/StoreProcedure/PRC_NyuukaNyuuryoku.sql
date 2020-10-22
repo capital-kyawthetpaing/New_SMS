@@ -596,7 +596,7 @@ BEGIN
 	BEGIN
         --ÅyD_ArrivalPlanÅz     Update/Delete   Tableì]ëóédólÇbáA
         UPDATE [D_ArrivalPlan] SET
-           [ArrivalPlanSu]  = D_ArrivalPlan.[ArrivalPlanSu] + ISNULL(DS2.ArrivalPlanSu)		--Åö
+           [ArrivalPlanSu]  = D_ArrivalPlan.[ArrivalPlanSu] + ISNULL(DS2.ArrivalPlanSu,0)		--Åö
           ,[ArrivalSu]      = D_ArrivalPlan.[ArrivalSu] - tbl.ArrivalSu
           ,[UpdateOperator] = @Operator  
           ,[UpdateDateTime] = @SYSDATETIME
