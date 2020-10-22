@@ -134,5 +134,7 @@ namespace Entity
         public string EndDate { get; set; }
         public string PriceOutTaxFrom { get; set; }
         public string PriceOutTaxTo { get; set; }
+        //Mastertouroku_Tenzikaishouhin Entity
+        public string CheckState { get; set; }
     }
 }
