@@ -56,7 +56,6 @@
             this.IMT_REMARK_9 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMNM_9 = new System.Windows.Forms.Label();
             this.IMT_CUSTNM_9 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_9 = new CKM_Controls.CKM_TextBox();
             this.IMT_EDate_9 = new CKM_Controls.CKM_TextBox();
             this.IMT_SDate_9 = new CKM_Controls.CKM_TextBox();
             this.IMT_GYONO_9 = new System.Windows.Forms.Label();
@@ -66,7 +65,6 @@
             this.IMT_REMARK_8 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMNM_8 = new System.Windows.Forms.Label();
             this.IMT_CUSTNM_8 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_8 = new CKM_Controls.CKM_TextBox();
             this.IMT_EDate_8 = new CKM_Controls.CKM_TextBox();
             this.IMT_SDate_8 = new CKM_Controls.CKM_TextBox();
             this.IMT_GYONO_8 = new System.Windows.Forms.Label();
@@ -76,7 +74,6 @@
             this.IMT_REMARK_7 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMNM_7 = new System.Windows.Forms.Label();
             this.IMT_CUSTNM_7 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_7 = new CKM_Controls.CKM_TextBox();
             this.IMT_EDate_7 = new CKM_Controls.CKM_TextBox();
             this.IMT_SDate_7 = new CKM_Controls.CKM_TextBox();
             this.IMT_GYONO_7 = new System.Windows.Forms.Label();
@@ -86,7 +83,6 @@
             this.IMT_REMARK_6 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMNM_6 = new System.Windows.Forms.Label();
             this.IMT_CUSTNM_6 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_6 = new CKM_Controls.CKM_TextBox();
             this.IMT_EDate_6 = new CKM_Controls.CKM_TextBox();
             this.IMT_SDate_6 = new CKM_Controls.CKM_TextBox();
             this.IMT_GYONO_6 = new System.Windows.Forms.Label();
@@ -95,7 +91,6 @@
             this.IMT_REMARK_5 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMNM_5 = new System.Windows.Forms.Label();
             this.IMT_CUSTNM_5 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_5 = new CKM_Controls.CKM_TextBox();
             this.IMT_EDate_5 = new CKM_Controls.CKM_TextBox();
             this.IMT_SDate_5 = new CKM_Controls.CKM_TextBox();
             this.IMT_GYONO_5 = new System.Windows.Forms.Label();
@@ -110,7 +105,6 @@
             this.IMT_REMARK_4 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMNM_4 = new System.Windows.Forms.Label();
             this.IMT_CUSTNM_4 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_4 = new CKM_Controls.CKM_TextBox();
             this.IMT_EDate_4 = new CKM_Controls.CKM_TextBox();
             this.IMT_SDate_4 = new CKM_Controls.CKM_TextBox();
             this.IMT_GYONO_4 = new System.Windows.Forms.Label();
@@ -120,7 +114,6 @@
             this.IMT_REMARK_3 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMNM_3 = new System.Windows.Forms.Label();
             this.IMT_CUSTNM_3 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_3 = new CKM_Controls.CKM_TextBox();
             this.IMT_EDate_3 = new CKM_Controls.CKM_TextBox();
             this.IMT_SDate_3 = new CKM_Controls.CKM_TextBox();
             this.IMT_GYONO_3 = new System.Windows.Forms.Label();
@@ -130,7 +123,6 @@
             this.IMT_REMARK_2 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMNM_2 = new System.Windows.Forms.Label();
             this.IMT_CUSTNM_2 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_2 = new CKM_Controls.CKM_TextBox();
             this.IMT_EDate_2 = new CKM_Controls.CKM_TextBox();
             this.IMT_SDate_2 = new CKM_Controls.CKM_TextBox();
             this.IMT_GYONO_2 = new System.Windows.Forms.Label();
@@ -140,7 +132,6 @@
             this.IMT_REMARK_1 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMNM_1 = new System.Windows.Forms.Label();
             this.IMT_CUSTNM_1 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_1 = new CKM_Controls.CKM_TextBox();
             this.IMT_EDate_1 = new CKM_Controls.CKM_TextBox();
             this.IMT_SDate_1 = new CKM_Controls.CKM_TextBox();
             this.IMT_GYONO_1 = new System.Windows.Forms.Label();
@@ -149,7 +140,6 @@
             this.IMT_REMARK_0 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMNM_0 = new System.Windows.Forms.Label();
             this.IMT_CUSTNM_0 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_0 = new CKM_Controls.CKM_TextBox();
             this.IMT_EDate_0 = new CKM_Controls.CKM_TextBox();
             this.IMT_SDate_0 = new CKM_Controls.CKM_TextBox();
             this.IMT_GYONO_0 = new System.Windows.Forms.Label();
@@ -171,6 +161,16 @@
             this.lblEDate = new System.Windows.Forms.Label();
             this.lblSDate = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_0 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_1 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_2 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_3 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_4 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_5 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_6 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_7 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_8 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pannel_Header.SuspendLayout();
             this.pnl_Body.SuspendLayout();
@@ -635,13 +635,22 @@
             // pnl_Body
             // 
             this.pnl_Body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnl_Body.Controls.Add(this.IMT_ITMCD_9);
+            this.pnl_Body.Controls.Add(this.IMT_ITMCD_8);
+            this.pnl_Body.Controls.Add(this.IMT_ITMCD_7);
+            this.pnl_Body.Controls.Add(this.IMT_ITMCD_6);
+            this.pnl_Body.Controls.Add(this.IMT_ITMCD_5);
+            this.pnl_Body.Controls.Add(this.IMT_ITMCD_4);
+            this.pnl_Body.Controls.Add(this.IMT_ITMCD_3);
+            this.pnl_Body.Controls.Add(this.IMT_ITMCD_2);
+            this.pnl_Body.Controls.Add(this.IMT_ITMCD_1);
+            this.pnl_Body.Controls.Add(this.IMT_ITMCD_0);
             this.pnl_Body.Controls.Add(this.Space_9);
             this.pnl_Body.Controls.Add(this.Vsb_Mei_0);
             this.pnl_Body.Controls.Add(this.IMT_PRICE_9);
             this.pnl_Body.Controls.Add(this.IMT_REMARK_9);
             this.pnl_Body.Controls.Add(this.IMT_ITMNM_9);
             this.pnl_Body.Controls.Add(this.IMT_CUSTNM_9);
-            this.pnl_Body.Controls.Add(this.IMT_ITMCD_9);
             this.pnl_Body.Controls.Add(this.IMT_EDate_9);
             this.pnl_Body.Controls.Add(this.IMT_SDate_9);
             this.pnl_Body.Controls.Add(this.IMT_GYONO_9);
@@ -651,7 +660,6 @@
             this.pnl_Body.Controls.Add(this.IMT_REMARK_8);
             this.pnl_Body.Controls.Add(this.IMT_ITMNM_8);
             this.pnl_Body.Controls.Add(this.IMT_CUSTNM_8);
-            this.pnl_Body.Controls.Add(this.IMT_ITMCD_8);
             this.pnl_Body.Controls.Add(this.IMT_EDate_8);
             this.pnl_Body.Controls.Add(this.IMT_SDate_8);
             this.pnl_Body.Controls.Add(this.IMT_GYONO_8);
@@ -661,7 +669,6 @@
             this.pnl_Body.Controls.Add(this.IMT_REMARK_7);
             this.pnl_Body.Controls.Add(this.IMT_ITMNM_7);
             this.pnl_Body.Controls.Add(this.IMT_CUSTNM_7);
-            this.pnl_Body.Controls.Add(this.IMT_ITMCD_7);
             this.pnl_Body.Controls.Add(this.IMT_EDate_7);
             this.pnl_Body.Controls.Add(this.IMT_SDate_7);
             this.pnl_Body.Controls.Add(this.IMT_GYONO_7);
@@ -671,7 +678,6 @@
             this.pnl_Body.Controls.Add(this.IMT_REMARK_6);
             this.pnl_Body.Controls.Add(this.IMT_ITMNM_6);
             this.pnl_Body.Controls.Add(this.IMT_CUSTNM_6);
-            this.pnl_Body.Controls.Add(this.IMT_ITMCD_6);
             this.pnl_Body.Controls.Add(this.IMT_EDate_6);
             this.pnl_Body.Controls.Add(this.IMT_SDate_6);
             this.pnl_Body.Controls.Add(this.IMT_GYONO_6);
@@ -680,7 +686,6 @@
             this.pnl_Body.Controls.Add(this.IMT_REMARK_5);
             this.pnl_Body.Controls.Add(this.IMT_ITMNM_5);
             this.pnl_Body.Controls.Add(this.IMT_CUSTNM_5);
-            this.pnl_Body.Controls.Add(this.IMT_ITMCD_5);
             this.pnl_Body.Controls.Add(this.IMT_EDate_5);
             this.pnl_Body.Controls.Add(this.IMT_SDate_5);
             this.pnl_Body.Controls.Add(this.IMT_GYONO_5);
@@ -695,7 +700,6 @@
             this.pnl_Body.Controls.Add(this.IMT_REMARK_4);
             this.pnl_Body.Controls.Add(this.IMT_ITMNM_4);
             this.pnl_Body.Controls.Add(this.IMT_CUSTNM_4);
-            this.pnl_Body.Controls.Add(this.IMT_ITMCD_4);
             this.pnl_Body.Controls.Add(this.IMT_EDate_4);
             this.pnl_Body.Controls.Add(this.IMT_SDate_4);
             this.pnl_Body.Controls.Add(this.IMT_GYONO_4);
@@ -705,7 +709,6 @@
             this.pnl_Body.Controls.Add(this.IMT_REMARK_3);
             this.pnl_Body.Controls.Add(this.IMT_ITMNM_3);
             this.pnl_Body.Controls.Add(this.IMT_CUSTNM_3);
-            this.pnl_Body.Controls.Add(this.IMT_ITMCD_3);
             this.pnl_Body.Controls.Add(this.IMT_EDate_3);
             this.pnl_Body.Controls.Add(this.IMT_SDate_3);
             this.pnl_Body.Controls.Add(this.IMT_GYONO_3);
@@ -715,7 +718,6 @@
             this.pnl_Body.Controls.Add(this.IMT_REMARK_2);
             this.pnl_Body.Controls.Add(this.IMT_ITMNM_2);
             this.pnl_Body.Controls.Add(this.IMT_CUSTNM_2);
-            this.pnl_Body.Controls.Add(this.IMT_ITMCD_2);
             this.pnl_Body.Controls.Add(this.IMT_EDate_2);
             this.pnl_Body.Controls.Add(this.IMT_SDate_2);
             this.pnl_Body.Controls.Add(this.IMT_GYONO_2);
@@ -725,7 +727,6 @@
             this.pnl_Body.Controls.Add(this.IMT_REMARK_1);
             this.pnl_Body.Controls.Add(this.IMT_ITMNM_1);
             this.pnl_Body.Controls.Add(this.IMT_CUSTNM_1);
-            this.pnl_Body.Controls.Add(this.IMT_ITMCD_1);
             this.pnl_Body.Controls.Add(this.IMT_EDate_1);
             this.pnl_Body.Controls.Add(this.IMT_SDate_1);
             this.pnl_Body.Controls.Add(this.IMT_GYONO_1);
@@ -734,7 +735,6 @@
             this.pnl_Body.Controls.Add(this.IMT_REMARK_0);
             this.pnl_Body.Controls.Add(this.IMT_ITMNM_0);
             this.pnl_Body.Controls.Add(this.IMT_CUSTNM_0);
-            this.pnl_Body.Controls.Add(this.IMT_ITMCD_0);
             this.pnl_Body.Controls.Add(this.IMT_EDate_0);
             this.pnl_Body.Controls.Add(this.IMT_SDate_0);
             this.pnl_Body.Controls.Add(this.IMT_GYONO_0);
@@ -850,38 +850,6 @@
             this.IMT_CUSTNM_9.Size = new System.Drawing.Size(601, 19);
             this.IMT_CUSTNM_9.TabIndex = 225;
             this.IMT_CUSTNM_9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_9
-            // 
-            this.IMT_ITMCD_9.AllowMinus = false;
-            this.IMT_ITMCD_9.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ITMCD_9.BackColor = System.Drawing.Color.Silver;
-            this.IMT_ITMCD_9.BorderColor = false;
-            this.IMT_ITMCD_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_9.ClientColor = System.Drawing.Color.White;
-            this.IMT_ITMCD_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_ITMCD_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ITMCD_9.DecimalPlace = 0;
-            this.IMT_ITMCD_9.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMT_ITMCD_9.IntegerPart = 0;
-            this.IMT_ITMCD_9.IsCorrectDate = true;
-            this.IMT_ITMCD_9.isEnterKeyDown = false;
-            this.IMT_ITMCD_9.IsFirstTime = true;
-            this.IMT_ITMCD_9.isMaxLengthErr = false;
-            this.IMT_ITMCD_9.IsNumber = true;
-            this.IMT_ITMCD_9.IsShop = false;
-            this.IMT_ITMCD_9.Length = 40;
-            this.IMT_ITMCD_9.Location = new System.Drawing.Point(168, 361);
-            this.IMT_ITMCD_9.MaxLength = 40;
-            this.IMT_ITMCD_9.MoveNext = true;
-            this.IMT_ITMCD_9.Name = "IMT_ITMCD_9";
-            this.IMT_ITMCD_9.ReadOnly = true;
-            this.IMT_ITMCD_9.Size = new System.Drawing.Size(209, 19);
-            this.IMT_ITMCD_9.TabIndex = 223;
-            this.IMT_ITMCD_9.Tag = "0";
-            this.IMT_ITMCD_9.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_ITMCD_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_ITMCD_9.UseColorSizMode = false;
             // 
             // IMT_EDate_9
             // 
@@ -1077,38 +1045,6 @@
             this.IMT_CUSTNM_8.TabIndex = 214;
             this.IMT_CUSTNM_8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // IMT_ITMCD_8
-            // 
-            this.IMT_ITMCD_8.AllowMinus = false;
-            this.IMT_ITMCD_8.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ITMCD_8.BackColor = System.Drawing.Color.Silver;
-            this.IMT_ITMCD_8.BorderColor = false;
-            this.IMT_ITMCD_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_8.ClientColor = System.Drawing.Color.White;
-            this.IMT_ITMCD_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_ITMCD_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ITMCD_8.DecimalPlace = 0;
-            this.IMT_ITMCD_8.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMT_ITMCD_8.IntegerPart = 0;
-            this.IMT_ITMCD_8.IsCorrectDate = true;
-            this.IMT_ITMCD_8.isEnterKeyDown = false;
-            this.IMT_ITMCD_8.IsFirstTime = true;
-            this.IMT_ITMCD_8.isMaxLengthErr = false;
-            this.IMT_ITMCD_8.IsNumber = true;
-            this.IMT_ITMCD_8.IsShop = false;
-            this.IMT_ITMCD_8.Length = 40;
-            this.IMT_ITMCD_8.Location = new System.Drawing.Point(168, 323);
-            this.IMT_ITMCD_8.MaxLength = 40;
-            this.IMT_ITMCD_8.MoveNext = true;
-            this.IMT_ITMCD_8.Name = "IMT_ITMCD_8";
-            this.IMT_ITMCD_8.ReadOnly = true;
-            this.IMT_ITMCD_8.Size = new System.Drawing.Size(209, 19);
-            this.IMT_ITMCD_8.TabIndex = 212;
-            this.IMT_ITMCD_8.Tag = "0";
-            this.IMT_ITMCD_8.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_ITMCD_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_ITMCD_8.UseColorSizMode = false;
-            // 
             // IMT_EDate_8
             // 
             this.IMT_EDate_8.AllowMinus = false;
@@ -1302,38 +1238,6 @@
             this.IMT_CUSTNM_7.Size = new System.Drawing.Size(601, 19);
             this.IMT_CUSTNM_7.TabIndex = 203;
             this.IMT_CUSTNM_7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_7
-            // 
-            this.IMT_ITMCD_7.AllowMinus = false;
-            this.IMT_ITMCD_7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ITMCD_7.BackColor = System.Drawing.Color.Silver;
-            this.IMT_ITMCD_7.BorderColor = false;
-            this.IMT_ITMCD_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_7.ClientColor = System.Drawing.Color.White;
-            this.IMT_ITMCD_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_ITMCD_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ITMCD_7.DecimalPlace = 0;
-            this.IMT_ITMCD_7.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMT_ITMCD_7.IntegerPart = 0;
-            this.IMT_ITMCD_7.IsCorrectDate = true;
-            this.IMT_ITMCD_7.isEnterKeyDown = false;
-            this.IMT_ITMCD_7.IsFirstTime = true;
-            this.IMT_ITMCD_7.isMaxLengthErr = false;
-            this.IMT_ITMCD_7.IsNumber = true;
-            this.IMT_ITMCD_7.IsShop = false;
-            this.IMT_ITMCD_7.Length = 40;
-            this.IMT_ITMCD_7.Location = new System.Drawing.Point(168, 285);
-            this.IMT_ITMCD_7.MaxLength = 40;
-            this.IMT_ITMCD_7.MoveNext = true;
-            this.IMT_ITMCD_7.Name = "IMT_ITMCD_7";
-            this.IMT_ITMCD_7.ReadOnly = true;
-            this.IMT_ITMCD_7.Size = new System.Drawing.Size(209, 19);
-            this.IMT_ITMCD_7.TabIndex = 201;
-            this.IMT_ITMCD_7.Tag = "0";
-            this.IMT_ITMCD_7.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_ITMCD_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_ITMCD_7.UseColorSizMode = false;
             // 
             // IMT_EDate_7
             // 
@@ -1529,38 +1433,6 @@
             this.IMT_CUSTNM_6.TabIndex = 192;
             this.IMT_CUSTNM_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // IMT_ITMCD_6
-            // 
-            this.IMT_ITMCD_6.AllowMinus = false;
-            this.IMT_ITMCD_6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ITMCD_6.BackColor = System.Drawing.Color.Silver;
-            this.IMT_ITMCD_6.BorderColor = false;
-            this.IMT_ITMCD_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_6.ClientColor = System.Drawing.Color.White;
-            this.IMT_ITMCD_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_ITMCD_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ITMCD_6.DecimalPlace = 0;
-            this.IMT_ITMCD_6.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMT_ITMCD_6.IntegerPart = 0;
-            this.IMT_ITMCD_6.IsCorrectDate = true;
-            this.IMT_ITMCD_6.isEnterKeyDown = false;
-            this.IMT_ITMCD_6.IsFirstTime = true;
-            this.IMT_ITMCD_6.isMaxLengthErr = false;
-            this.IMT_ITMCD_6.IsNumber = true;
-            this.IMT_ITMCD_6.IsShop = false;
-            this.IMT_ITMCD_6.Length = 40;
-            this.IMT_ITMCD_6.Location = new System.Drawing.Point(168, 247);
-            this.IMT_ITMCD_6.MaxLength = 40;
-            this.IMT_ITMCD_6.MoveNext = true;
-            this.IMT_ITMCD_6.Name = "IMT_ITMCD_6";
-            this.IMT_ITMCD_6.ReadOnly = true;
-            this.IMT_ITMCD_6.Size = new System.Drawing.Size(209, 19);
-            this.IMT_ITMCD_6.TabIndex = 190;
-            this.IMT_ITMCD_6.Tag = "0";
-            this.IMT_ITMCD_6.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_ITMCD_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_ITMCD_6.UseColorSizMode = false;
-            // 
             // IMT_EDate_6
             // 
             this.IMT_EDate_6.AllowMinus = false;
@@ -1723,38 +1595,6 @@
             this.IMT_CUSTNM_5.Size = new System.Drawing.Size(601, 19);
             this.IMT_CUSTNM_5.TabIndex = 181;
             this.IMT_CUSTNM_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_5
-            // 
-            this.IMT_ITMCD_5.AllowMinus = false;
-            this.IMT_ITMCD_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ITMCD_5.BackColor = System.Drawing.Color.Silver;
-            this.IMT_ITMCD_5.BorderColor = false;
-            this.IMT_ITMCD_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_5.ClientColor = System.Drawing.Color.White;
-            this.IMT_ITMCD_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_ITMCD_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ITMCD_5.DecimalPlace = 0;
-            this.IMT_ITMCD_5.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMT_ITMCD_5.IntegerPart = 0;
-            this.IMT_ITMCD_5.IsCorrectDate = true;
-            this.IMT_ITMCD_5.isEnterKeyDown = false;
-            this.IMT_ITMCD_5.IsFirstTime = true;
-            this.IMT_ITMCD_5.isMaxLengthErr = false;
-            this.IMT_ITMCD_5.IsNumber = true;
-            this.IMT_ITMCD_5.IsShop = false;
-            this.IMT_ITMCD_5.Length = 40;
-            this.IMT_ITMCD_5.Location = new System.Drawing.Point(168, 209);
-            this.IMT_ITMCD_5.MaxLength = 40;
-            this.IMT_ITMCD_5.MoveNext = true;
-            this.IMT_ITMCD_5.Name = "IMT_ITMCD_5";
-            this.IMT_ITMCD_5.ReadOnly = true;
-            this.IMT_ITMCD_5.Size = new System.Drawing.Size(209, 19);
-            this.IMT_ITMCD_5.TabIndex = 179;
-            this.IMT_ITMCD_5.Tag = "0";
-            this.IMT_ITMCD_5.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_ITMCD_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_ITMCD_5.UseColorSizMode = false;
             // 
             // IMT_EDate_5
             // 
@@ -2101,38 +1941,6 @@
             this.IMT_CUSTNM_4.TabIndex = 170;
             this.IMT_CUSTNM_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // IMT_ITMCD_4
-            // 
-            this.IMT_ITMCD_4.AllowMinus = false;
-            this.IMT_ITMCD_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ITMCD_4.BackColor = System.Drawing.Color.Silver;
-            this.IMT_ITMCD_4.BorderColor = false;
-            this.IMT_ITMCD_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_4.ClientColor = System.Drawing.Color.White;
-            this.IMT_ITMCD_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_ITMCD_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ITMCD_4.DecimalPlace = 0;
-            this.IMT_ITMCD_4.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMT_ITMCD_4.IntegerPart = 0;
-            this.IMT_ITMCD_4.IsCorrectDate = true;
-            this.IMT_ITMCD_4.isEnterKeyDown = false;
-            this.IMT_ITMCD_4.IsFirstTime = true;
-            this.IMT_ITMCD_4.isMaxLengthErr = false;
-            this.IMT_ITMCD_4.IsNumber = true;
-            this.IMT_ITMCD_4.IsShop = false;
-            this.IMT_ITMCD_4.Length = 40;
-            this.IMT_ITMCD_4.Location = new System.Drawing.Point(168, 171);
-            this.IMT_ITMCD_4.MaxLength = 40;
-            this.IMT_ITMCD_4.MoveNext = true;
-            this.IMT_ITMCD_4.Name = "IMT_ITMCD_4";
-            this.IMT_ITMCD_4.ReadOnly = true;
-            this.IMT_ITMCD_4.Size = new System.Drawing.Size(209, 19);
-            this.IMT_ITMCD_4.TabIndex = 168;
-            this.IMT_ITMCD_4.Tag = "0";
-            this.IMT_ITMCD_4.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_ITMCD_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_ITMCD_4.UseColorSizMode = false;
-            // 
             // IMT_EDate_4
             // 
             this.IMT_EDate_4.AllowMinus = false;
@@ -2326,38 +2134,6 @@
             this.IMT_CUSTNM_3.Size = new System.Drawing.Size(601, 19);
             this.IMT_CUSTNM_3.TabIndex = 159;
             this.IMT_CUSTNM_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_3
-            // 
-            this.IMT_ITMCD_3.AllowMinus = false;
-            this.IMT_ITMCD_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ITMCD_3.BackColor = System.Drawing.Color.Silver;
-            this.IMT_ITMCD_3.BorderColor = false;
-            this.IMT_ITMCD_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_3.ClientColor = System.Drawing.Color.White;
-            this.IMT_ITMCD_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_ITMCD_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ITMCD_3.DecimalPlace = 0;
-            this.IMT_ITMCD_3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMT_ITMCD_3.IntegerPart = 0;
-            this.IMT_ITMCD_3.IsCorrectDate = true;
-            this.IMT_ITMCD_3.isEnterKeyDown = false;
-            this.IMT_ITMCD_3.IsFirstTime = true;
-            this.IMT_ITMCD_3.isMaxLengthErr = false;
-            this.IMT_ITMCD_3.IsNumber = true;
-            this.IMT_ITMCD_3.IsShop = false;
-            this.IMT_ITMCD_3.Length = 40;
-            this.IMT_ITMCD_3.Location = new System.Drawing.Point(168, 133);
-            this.IMT_ITMCD_3.MaxLength = 40;
-            this.IMT_ITMCD_3.MoveNext = true;
-            this.IMT_ITMCD_3.Name = "IMT_ITMCD_3";
-            this.IMT_ITMCD_3.ReadOnly = true;
-            this.IMT_ITMCD_3.Size = new System.Drawing.Size(209, 19);
-            this.IMT_ITMCD_3.TabIndex = 157;
-            this.IMT_ITMCD_3.Tag = "0";
-            this.IMT_ITMCD_3.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_ITMCD_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_ITMCD_3.UseColorSizMode = false;
             // 
             // IMT_EDate_3
             // 
@@ -2553,38 +2329,6 @@
             this.IMT_CUSTNM_2.TabIndex = 148;
             this.IMT_CUSTNM_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // IMT_ITMCD_2
-            // 
-            this.IMT_ITMCD_2.AllowMinus = false;
-            this.IMT_ITMCD_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ITMCD_2.BackColor = System.Drawing.Color.Silver;
-            this.IMT_ITMCD_2.BorderColor = false;
-            this.IMT_ITMCD_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_2.ClientColor = System.Drawing.Color.White;
-            this.IMT_ITMCD_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_ITMCD_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ITMCD_2.DecimalPlace = 0;
-            this.IMT_ITMCD_2.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMT_ITMCD_2.IntegerPart = 0;
-            this.IMT_ITMCD_2.IsCorrectDate = true;
-            this.IMT_ITMCD_2.isEnterKeyDown = false;
-            this.IMT_ITMCD_2.IsFirstTime = true;
-            this.IMT_ITMCD_2.isMaxLengthErr = false;
-            this.IMT_ITMCD_2.IsNumber = true;
-            this.IMT_ITMCD_2.IsShop = false;
-            this.IMT_ITMCD_2.Length = 40;
-            this.IMT_ITMCD_2.Location = new System.Drawing.Point(168, 95);
-            this.IMT_ITMCD_2.MaxLength = 40;
-            this.IMT_ITMCD_2.MoveNext = true;
-            this.IMT_ITMCD_2.Name = "IMT_ITMCD_2";
-            this.IMT_ITMCD_2.ReadOnly = true;
-            this.IMT_ITMCD_2.Size = new System.Drawing.Size(209, 19);
-            this.IMT_ITMCD_2.TabIndex = 146;
-            this.IMT_ITMCD_2.Tag = "0";
-            this.IMT_ITMCD_2.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_ITMCD_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_ITMCD_2.UseColorSizMode = false;
-            // 
             // IMT_EDate_2
             // 
             this.IMT_EDate_2.AllowMinus = false;
@@ -2779,39 +2523,6 @@
             this.IMT_CUSTNM_1.TabIndex = 137;
             this.IMT_CUSTNM_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // IMT_ITMCD_1
-            // 
-            this.IMT_ITMCD_1.AllowMinus = false;
-            this.IMT_ITMCD_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ITMCD_1.BackColor = System.Drawing.Color.Silver;
-            this.IMT_ITMCD_1.BorderColor = false;
-            this.IMT_ITMCD_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_1.ClientColor = System.Drawing.Color.White;
-            this.IMT_ITMCD_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_ITMCD_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ITMCD_1.DecimalPlace = 0;
-            this.IMT_ITMCD_1.Enabled = false;
-            this.IMT_ITMCD_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMT_ITMCD_1.IntegerPart = 0;
-            this.IMT_ITMCD_1.IsCorrectDate = true;
-            this.IMT_ITMCD_1.isEnterKeyDown = false;
-            this.IMT_ITMCD_1.IsFirstTime = true;
-            this.IMT_ITMCD_1.isMaxLengthErr = false;
-            this.IMT_ITMCD_1.IsNumber = true;
-            this.IMT_ITMCD_1.IsShop = false;
-            this.IMT_ITMCD_1.Length = 40;
-            this.IMT_ITMCD_1.Location = new System.Drawing.Point(168, 57);
-            this.IMT_ITMCD_1.MaxLength = 40;
-            this.IMT_ITMCD_1.MoveNext = true;
-            this.IMT_ITMCD_1.Name = "IMT_ITMCD_1";
-            this.IMT_ITMCD_1.ReadOnly = true;
-            this.IMT_ITMCD_1.Size = new System.Drawing.Size(209, 19);
-            this.IMT_ITMCD_1.TabIndex = 135;
-            this.IMT_ITMCD_1.Tag = "0";
-            this.IMT_ITMCD_1.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_ITMCD_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_ITMCD_1.UseColorSizMode = false;
-            // 
             // IMT_EDate_1
             // 
             this.IMT_EDate_1.AllowMinus = false;
@@ -2974,38 +2685,6 @@
             this.IMT_CUSTNM_0.Size = new System.Drawing.Size(601, 19);
             this.IMT_CUSTNM_0.TabIndex = 126;
             this.IMT_CUSTNM_0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_0
-            // 
-            this.IMT_ITMCD_0.AllowMinus = false;
-            this.IMT_ITMCD_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ITMCD_0.BackColor = System.Drawing.Color.Silver;
-            this.IMT_ITMCD_0.BorderColor = false;
-            this.IMT_ITMCD_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_0.ClientColor = System.Drawing.Color.White;
-            this.IMT_ITMCD_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_ITMCD_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_ITMCD_0.DecimalPlace = 0;
-            this.IMT_ITMCD_0.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMT_ITMCD_0.IntegerPart = 0;
-            this.IMT_ITMCD_0.IsCorrectDate = true;
-            this.IMT_ITMCD_0.isEnterKeyDown = false;
-            this.IMT_ITMCD_0.IsFirstTime = true;
-            this.IMT_ITMCD_0.isMaxLengthErr = false;
-            this.IMT_ITMCD_0.IsNumber = true;
-            this.IMT_ITMCD_0.IsShop = false;
-            this.IMT_ITMCD_0.Length = 40;
-            this.IMT_ITMCD_0.Location = new System.Drawing.Point(168, 19);
-            this.IMT_ITMCD_0.MaxLength = 40;
-            this.IMT_ITMCD_0.MoveNext = true;
-            this.IMT_ITMCD_0.Name = "IMT_ITMCD_0";
-            this.IMT_ITMCD_0.ReadOnly = true;
-            this.IMT_ITMCD_0.Size = new System.Drawing.Size(209, 19);
-            this.IMT_ITMCD_0.TabIndex = 30;
-            this.IMT_ITMCD_0.Tag = "0";
-            this.IMT_ITMCD_0.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_ITMCD_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_ITMCD_0.UseColorSizMode = false;
             // 
             // IMT_EDate_0
             // 
@@ -3445,6 +3124,116 @@
             this.label2.Text = "№";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // IMT_ITMCD_0
+            // 
+            this.IMT_ITMCD_0.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_0.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_0.Location = new System.Drawing.Point(168, 19);
+            this.IMT_ITMCD_0.Name = "IMT_ITMCD_0";
+            this.IMT_ITMCD_0.Size = new System.Drawing.Size(209, 19);
+            this.IMT_ITMCD_0.TabIndex = 230;
+            this.IMT_ITMCD_0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_1
+            // 
+            this.IMT_ITMCD_1.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_1.Location = new System.Drawing.Point(168, 57);
+            this.IMT_ITMCD_1.Name = "IMT_ITMCD_1";
+            this.IMT_ITMCD_1.Size = new System.Drawing.Size(209, 19);
+            this.IMT_ITMCD_1.TabIndex = 231;
+            this.IMT_ITMCD_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_2
+            // 
+            this.IMT_ITMCD_2.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_2.Location = new System.Drawing.Point(168, 95);
+            this.IMT_ITMCD_2.Name = "IMT_ITMCD_2";
+            this.IMT_ITMCD_2.Size = new System.Drawing.Size(209, 19);
+            this.IMT_ITMCD_2.TabIndex = 232;
+            this.IMT_ITMCD_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_3
+            // 
+            this.IMT_ITMCD_3.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_3.Location = new System.Drawing.Point(168, 133);
+            this.IMT_ITMCD_3.Name = "IMT_ITMCD_3";
+            this.IMT_ITMCD_3.Size = new System.Drawing.Size(209, 19);
+            this.IMT_ITMCD_3.TabIndex = 233;
+            this.IMT_ITMCD_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_4
+            // 
+            this.IMT_ITMCD_4.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_4.Location = new System.Drawing.Point(168, 171);
+            this.IMT_ITMCD_4.Name = "IMT_ITMCD_4";
+            this.IMT_ITMCD_4.Size = new System.Drawing.Size(209, 19);
+            this.IMT_ITMCD_4.TabIndex = 234;
+            this.IMT_ITMCD_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_5
+            // 
+            this.IMT_ITMCD_5.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_5.Location = new System.Drawing.Point(168, 209);
+            this.IMT_ITMCD_5.Name = "IMT_ITMCD_5";
+            this.IMT_ITMCD_5.Size = new System.Drawing.Size(209, 19);
+            this.IMT_ITMCD_5.TabIndex = 235;
+            this.IMT_ITMCD_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_6
+            // 
+            this.IMT_ITMCD_6.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_6.Location = new System.Drawing.Point(168, 247);
+            this.IMT_ITMCD_6.Name = "IMT_ITMCD_6";
+            this.IMT_ITMCD_6.Size = new System.Drawing.Size(209, 19);
+            this.IMT_ITMCD_6.TabIndex = 236;
+            this.IMT_ITMCD_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_7
+            // 
+            this.IMT_ITMCD_7.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_7.Location = new System.Drawing.Point(168, 285);
+            this.IMT_ITMCD_7.Name = "IMT_ITMCD_7";
+            this.IMT_ITMCD_7.Size = new System.Drawing.Size(209, 19);
+            this.IMT_ITMCD_7.TabIndex = 237;
+            this.IMT_ITMCD_7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_8
+            // 
+            this.IMT_ITMCD_8.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_8.Location = new System.Drawing.Point(168, 323);
+            this.IMT_ITMCD_8.Name = "IMT_ITMCD_8";
+            this.IMT_ITMCD_8.Size = new System.Drawing.Size(209, 19);
+            this.IMT_ITMCD_8.TabIndex = 238;
+            this.IMT_ITMCD_8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_9
+            // 
+            this.IMT_ITMCD_9.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_9.Location = new System.Drawing.Point(168, 361);
+            this.IMT_ITMCD_9.Name = "IMT_ITMCD_9";
+            this.IMT_ITMCD_9.Size = new System.Drawing.Size(209, 19);
+            this.IMT_ITMCD_9.TabIndex = 239;
+            this.IMT_ITMCD_9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // FrmMasterTouroku_CustomerSKUPrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -3510,13 +3299,11 @@
         private CKM_Controls.CKM_TextBox IMT_EDate_0;
         private Search.CKM_SearchControl SC_Customer_0;
         private Search.CKM_SearchControl SC_ITEM_0;
-        private CKM_Controls.CKM_TextBox IMT_ITMCD_0;
         private System.Windows.Forms.Label Space_9;
         private CKM_Controls.CKM_TextBox IMT_PRICE_9;
         private CKM_Controls.CKM_TextBox IMT_REMARK_9;
         private System.Windows.Forms.Label IMT_ITMNM_9;
         private System.Windows.Forms.Label IMT_CUSTNM_9;
-        private CKM_Controls.CKM_TextBox IMT_ITMCD_9;
         private CKM_Controls.CKM_TextBox IMT_EDate_9;
         private CKM_Controls.CKM_TextBox IMT_SDate_9;
         private System.Windows.Forms.Label IMT_GYONO_9;
@@ -3526,7 +3313,6 @@
         private CKM_Controls.CKM_TextBox IMT_REMARK_8;
         private System.Windows.Forms.Label IMT_ITMNM_8;
         private System.Windows.Forms.Label IMT_CUSTNM_8;
-        private CKM_Controls.CKM_TextBox IMT_ITMCD_8;
         private CKM_Controls.CKM_TextBox IMT_EDate_8;
         private CKM_Controls.CKM_TextBox IMT_SDate_8;
         private System.Windows.Forms.Label IMT_GYONO_8;
@@ -3536,7 +3322,6 @@
         private CKM_Controls.CKM_TextBox IMT_REMARK_7;
         private System.Windows.Forms.Label IMT_ITMNM_7;
         private System.Windows.Forms.Label IMT_CUSTNM_7;
-        private CKM_Controls.CKM_TextBox IMT_ITMCD_7;
         private CKM_Controls.CKM_TextBox IMT_EDate_7;
         private CKM_Controls.CKM_TextBox IMT_SDate_7;
         private System.Windows.Forms.Label IMT_GYONO_7;
@@ -3546,7 +3331,6 @@
         private CKM_Controls.CKM_TextBox IMT_REMARK_6;
         private System.Windows.Forms.Label IMT_ITMNM_6;
         private System.Windows.Forms.Label IMT_CUSTNM_6;
-        private CKM_Controls.CKM_TextBox IMT_ITMCD_6;
         private CKM_Controls.CKM_TextBox IMT_EDate_6;
         private CKM_Controls.CKM_TextBox IMT_SDate_6;
         private System.Windows.Forms.Label IMT_GYONO_6;
@@ -3555,7 +3339,6 @@
         private CKM_Controls.CKM_TextBox IMT_REMARK_5;
         private System.Windows.Forms.Label IMT_ITMNM_5;
         private System.Windows.Forms.Label IMT_CUSTNM_5;
-        private CKM_Controls.CKM_TextBox IMT_ITMCD_5;
         private CKM_Controls.CKM_TextBox IMT_EDate_5;
         private CKM_Controls.CKM_TextBox IMT_SDate_5;
         private System.Windows.Forms.Label IMT_GYONO_5;
@@ -3570,7 +3353,6 @@
         private CKM_Controls.CKM_TextBox IMT_REMARK_4;
         private System.Windows.Forms.Label IMT_ITMNM_4;
         private System.Windows.Forms.Label IMT_CUSTNM_4;
-        private CKM_Controls.CKM_TextBox IMT_ITMCD_4;
         private CKM_Controls.CKM_TextBox IMT_EDate_4;
         private CKM_Controls.CKM_TextBox IMT_SDate_4;
         private System.Windows.Forms.Label IMT_GYONO_4;
@@ -3580,7 +3362,6 @@
         private CKM_Controls.CKM_TextBox IMT_REMARK_3;
         private System.Windows.Forms.Label IMT_ITMNM_3;
         private System.Windows.Forms.Label IMT_CUSTNM_3;
-        private CKM_Controls.CKM_TextBox IMT_ITMCD_3;
         private CKM_Controls.CKM_TextBox IMT_EDate_3;
         private CKM_Controls.CKM_TextBox IMT_SDate_3;
         private System.Windows.Forms.Label IMT_GYONO_3;
@@ -3590,7 +3371,6 @@
         private CKM_Controls.CKM_TextBox IMT_REMARK_2;
         private System.Windows.Forms.Label IMT_ITMNM_2;
         private System.Windows.Forms.Label IMT_CUSTNM_2;
-        private CKM_Controls.CKM_TextBox IMT_ITMCD_2;
         private CKM_Controls.CKM_TextBox IMT_EDate_2;
         private CKM_Controls.CKM_TextBox IMT_SDate_2;
         private System.Windows.Forms.Label IMT_GYONO_2;
@@ -3600,7 +3380,6 @@
         private CKM_Controls.CKM_TextBox IMT_REMARK_1;
         private System.Windows.Forms.Label IMT_ITMNM_1;
         private System.Windows.Forms.Label IMT_CUSTNM_1;
-        private CKM_Controls.CKM_TextBox IMT_ITMCD_1;
         private CKM_Controls.CKM_TextBox IMT_EDate_1;
         private CKM_Controls.CKM_TextBox IMT_SDate_1;
         private System.Windows.Forms.Label IMT_GYONO_1;
@@ -3618,6 +3397,16 @@
         private System.Windows.Forms.VScrollBar Vsb_Mei_0;
         private System.Windows.Forms.Panel pannel_Header;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label IMT_ITMCD_0;
+        private System.Windows.Forms.Label IMT_ITMCD_9;
+        private System.Windows.Forms.Label IMT_ITMCD_8;
+        private System.Windows.Forms.Label IMT_ITMCD_7;
+        private System.Windows.Forms.Label IMT_ITMCD_6;
+        private System.Windows.Forms.Label IMT_ITMCD_5;
+        private System.Windows.Forms.Label IMT_ITMCD_4;
+        private System.Windows.Forms.Label IMT_ITMCD_3;
+        private System.Windows.Forms.Label IMT_ITMCD_2;
+        private System.Windows.Forms.Label IMT_ITMCD_1;
     }
 }
 
