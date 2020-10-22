@@ -177,6 +177,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             {
                 case EOperationMode.SHOW:
                     CleanData();
+                    F12Enable = false;
                     SC_Tanka.SetFocus(1);
                     break;
                 case EOperationMode.UPDATE:
