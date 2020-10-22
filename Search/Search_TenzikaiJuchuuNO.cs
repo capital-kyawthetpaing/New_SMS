@@ -13,13 +13,14 @@ using Entity;
 
 namespace Search
 {
-    public partial class Search_TenzikaiJuchuuNO :  FrmSubForm
+    public partial class Search_TenzikaiJuchuuNO : FrmSubForm
     {
         TenzikaiJuchuuNo_BL tzkjbl;
         M_Vendor_Entity mve;
         M_Customer_Entity mce;
         D_TenzikaiJuchuu_Entity dtje;
-
+        private Control PreCon = null;
+        Control[] DetailControls;
 
         string year = string.Empty; string month = string.Empty; string day = string.Empty; string date = string.Empty;
         public string OrderNum = string.Empty;
@@ -43,13 +44,22 @@ namespace Search
             if (date.Length > 2)
                 year = date[date.Length - 3];
             txtOrderDateFrom.Text = year + '/' + month + '/' + "01";
-            BindCombo();          
+            BindCombo();
             txtCustomerName.Enabled = false;
             txtCustomerName.Text = string.Empty;
             SetRequiredField();
             txtOrderDateFrom.Focus();
             F9Visible = false;
-
+            DetailControls = new Control[] {txtOrderDateTo, txtOrderDateFrom,txtKanaName, txtCustomerName, ScSupplier.TxtCode, scStaff.TxtCode , ScSKUCD.TxtCode, ScItem.TxtCode,ScJanCD.TxtCode,cboSeason,cboYear};
+            foreach (var c in DetailControls)
+            {
+                c.Enter += Search_TenzikaiJuchuuNO_Enter;
+                c.Leave += Search_TenzikaiJuchuuNO_Enter;
+            }
+        }
+        private void Search_TenzikaiJuchuuNO_Enter(object sender, EventArgs e)
+        {
+                PreCon = sender as Control;
         }
 
         private void BindCombo()
@@ -93,6 +103,8 @@ namespace Search
                 {
                     dgvTenzikai.DataSource = string.Empty;
                     bbl.ShowMessage("S013");
+                    if (PreCon != null)
+                    PreCon.Focus();
                     //ScSupplier.SetFocus(1);
                     //PreviousCtrl.Focus();
 
