@@ -137,7 +137,7 @@ namespace MasterTouroku_CustomerSKUPrice
                         break;
                     }
                 case 6://F7:行削除
-                        ADD_SUB();
+                    DEL_SUB();
                     break;
 
                 case 7://F8:行追加
@@ -192,9 +192,6 @@ namespace MasterTouroku_CustomerSKUPrice
         {
             OperationMode = mode; // (1:新規,2:修正,3;削除)
 
-            //排他処理を解除
-            //DeleteExclusive();
-
             Scr_Clr(0);
 
             S_BodySeigyo(0, 0);
@@ -205,10 +202,6 @@ namespace MasterTouroku_CustomerSKUPrice
             switch (mode)
             {
                 case EOperationMode.INSERT:
-                    //ScStaff.TxtCode.Text = InOperatorCD;
-                    //ScStaff.LabelText = InOperatorName;
-                    //CboStoreCD.SelectedValue = StoreCD;
-                    //SetInitStoreInfo(StoreCD);
                     btnImport.Enabled = true;
                     btnDisplay.Enabled = false;
                     detailControls[0].Focus();
@@ -341,8 +334,6 @@ namespace MasterTouroku_CustomerSKUPrice
         }
 
         
-        
-       
         private void Scr_Lock(short no1, short no2, short Kbn)
         {
             short i;
@@ -434,6 +425,47 @@ namespace MasterTouroku_CustomerSKUPrice
 
         }
 
+        private void DEL_SUB()
+        {
+            int w_Row;
+
+            if (mGrid.F_Search_Ctrl_MK(previousCtrl, out int w_Col, out int w_CtlRow) == false)
+            {
+                return;
+            }
+
+            w_Row = w_CtlRow + Vsb_Mei_0.Value;
+
+            //画面より配列セット 
+            mGrid.S_DispToArray(Vsb_Mei_0.Value);
+
+            for (int i = w_Row; i < mGrid.g_MK_Max_Row - 1; i++)
+            {
+                int w_Gyo = Convert.ToInt16(mGrid.g_DArray[i].GYONO);          //行番号 退避
+
+                //次行をコピー
+                mGrid.g_DArray[i] = mGrid.g_DArray[i + 1];
+
+                //退避内容を戻す
+                mGrid.g_DArray[i].GYONO = w_Gyo.ToString();          //行番号
+            }
+
+            //CalcKin();
+
+            int col = (int)ClsGridCustomerSKUPric.ColNO.TekiyouKaisiDate;
+            Grid_NotFocus(col, w_Row);
+
+            //配列の内容を画面へセット
+            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+            //フォーカスセット
+            //IMT_DMY_0.Focus();
+
+            //現在行へ
+            mGrid.F_MoveFocus((int)ClsGridCustomerSKUPric.Gen_MK_FocusMove.MvSet, (int)ClsGridCustomerSKUPric.Gen_MK_FocusMove.MvNxt, mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl, w_Row, col, ActiveControl, Vsb_Mei_0, w_Row, col);
+
+        }
+
         protected override void ExecDisp()
         {
             if (OperationMode != EOperationMode.INSERT)
@@ -488,6 +520,7 @@ namespace MasterTouroku_CustomerSKUPrice
                     InsertUpdate(1);
                     break;
                 case EOperationMode.UPDATE:
+                   // Delete();
                     InsertUpdate(2);
                     break;
                 case EOperationMode.DELETE:
@@ -1309,20 +1342,6 @@ namespace MasterTouroku_CustomerSKUPrice
 
                                                 break;
                                             }
-
-                                            //case (int)ClsGridMitsumori.ColNO.SKUName:
-                                            //case (int)ClsGridMitsumori.ColNO.CostUnitPrice:
-                                            //    if (mGrid.g_DArray[w_Row].VariousFLG == 1)
-                                            //    {
-                                            //        mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
-                                            //        mGrid.g_MK_State[w_Col, w_Row].Cell_ReadOnly = false;
-                                            //    }
-                                            //    else
-                                            //    {
-                                            //        mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = false;
-                                            //        mGrid.g_MK_State[w_Col, w_Row].Cell_ReadOnly = true;
-                                            //    }
-                                            //    break;
                                     }
                                 }
                                 mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
@@ -1330,8 +1349,6 @@ namespace MasterTouroku_CustomerSKUPrice
                         }
                         else
                         {
-                            //IMT_DMY_0.Focus();
-
                             //画面へデータセット後、明細部入力可、キー部入力不可
                             Scr_Lock(2, 3, 0);
                             Scr_Lock(0, 1, 1);
@@ -1352,9 +1369,7 @@ namespace MasterTouroku_CustomerSKUPrice
                             //Scr_Lock(0, 0, 0);
                             if (OperationMode == EOperationMode.DELETE)
                             {
-                                //Scr_Lock(1, 3, 1);
                                 SetFuncKeyAll(this, "111111000011");
-                                //IMT_DMY_0.Focus();
                                 Scr_Lock(0, 0, 1);
                             }
                             else

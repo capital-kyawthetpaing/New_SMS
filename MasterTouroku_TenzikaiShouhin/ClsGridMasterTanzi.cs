@@ -13,6 +13,8 @@ namespace MasterTouroku_TenzikaiShouhin
 
         internal struct ST_DArray_Grid
         {
+            internal string TenzikaiRow;
+            internal string TB;
             internal string GYONO;
             internal bool Chk;
             internal string JANCD;
@@ -37,6 +39,7 @@ namespace MasterTouroku_TenzikaiShouhin
             internal string TaniCD;
             internal string TaxRateFlg;
             internal string Remarks;
+            internal string ExhibitionCommonCD; // hidden
         }
 
         internal enum ColNO : int
@@ -75,7 +78,7 @@ namespace MasterTouroku_TenzikaiShouhin
         internal ST_DArray_Grid[] g_DArray = null;
         internal const int gc_MaxCL = (int)ColNO.Count;
         internal const int gc_MaxR = (int)RowNO.count;
-        internal const int gc_P_GYO = 5;
+        internal const int gc_P_GYO =7;
         internal const int gMxGyo = 999;
         internal short g_VSB_Flg;
         internal short g_InMoveFocus_Flg;

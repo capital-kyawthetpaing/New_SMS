@@ -35,7 +35,10 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             CB_Year.Bind(ymd);
             CB_Season.Bind(ymd);
             SC_Tanka.TxtCode.Require(true);
+            //GV_Tenzaishohin.Columns["colNo"].CellType = 
+           // GV_Tenzaishohin.Columns[1].HeaderText = "NO";
             GV_Tenzaishohin.CheckCol.Add("Rate");
+            SC_Tanka.SetFocus(1);
         }
         private bool ErrorCheck()
         {
@@ -90,8 +93,6 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             return true;
 
         }
-
-
         private bool ErrorCheckApply()
         {
             if (!RequireCheck(new Control[] { TB_Rate }))
@@ -158,6 +159,9 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 case 3:
                     ChangeMode(EOperationMode.UPDATE);
                     break;
+                case 5:
+                    ChangeMode(EOperationMode.SHOW);
+                    break;
                 case 11:
                     F11();
                     break;
@@ -171,13 +175,16 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             base.OperationMode = OperationMode;
             switch (OperationMode)
             {
-
+                case EOperationMode.SHOW:
+                    CleanData();
+                    F12Enable = false;
+                    SC_Tanka.SetFocus(1);
+                    break;
                 case EOperationMode.UPDATE:
                     Clear(panel1);
                     SC_Tanka.SetFocus(1);
                     break;
             }
-
         }
         private void CleanData()
         {
@@ -218,6 +225,26 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
         {
             F11();
         }
+        private DataTable GenerateNo(DataTable dtSelect)
+        {
+
+            var dt = new DataTable();
+            DataColumn AutoNumberColumn = new DataColumn();
+
+            AutoNumberColumn.ColumnName = "colNo";
+
+            AutoNumberColumn.DataType = typeof(int);
+
+            AutoNumberColumn.AutoIncrement = true;
+
+            AutoNumberColumn.AutoIncrementSeed = 1;
+
+            AutoNumberColumn.AutoIncrementStep = 1;
+
+            dt.Columns.Add(AutoNumberColumn);
+            dt.Merge(dtSelect);
+            return dt;
+        }
         private void F11()
         {
             if (ErrorCheck())
@@ -226,7 +253,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 dtSelect = bl.M_TenzikaiShouhin_Select(mTSE);
                 if (dtSelect.Rows.Count > 0)
                 {
-                    GV_Tenzaishohin.DataSource = dtSelect;
+                    GV_Tenzaishohin.DataSource = GenerateNo(dtSelect);
                 }
                 else
                 {
@@ -239,7 +266,6 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
         {
             if (ErrorCheck())
             {
-
                 if (dtSelect.Rows.Count > 0)
                 {
                     mTSE = GetTenzikaiShouhinData();
@@ -415,7 +441,5 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             //    j += 2;
             //}
         }
-
-       
     }
 }
