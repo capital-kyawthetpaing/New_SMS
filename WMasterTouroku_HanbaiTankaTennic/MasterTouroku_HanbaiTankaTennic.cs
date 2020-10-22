@@ -428,22 +428,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     else
                         PreviousCtrl.Focus();
                     break;
-                //case 11:
-                //    {
-                //if (OperationMode == EOperationMode.DELETE)
-                //{ //Ｑ１０２		
-                //    if (bbl.ShowMessage("Q102") != DialogResult.Yes)
-                //        return;
-                //}
-                //else
-                //{
-                //    //Ｑ１０１		
-                //    if (bbl.ShowMessage("Q101") != DialogResult.Yes)
-                //        return;
-                //}
-                //this.ExecSec();
-                //break;
-                // }
                 case 12:
                     F12();
                     break;

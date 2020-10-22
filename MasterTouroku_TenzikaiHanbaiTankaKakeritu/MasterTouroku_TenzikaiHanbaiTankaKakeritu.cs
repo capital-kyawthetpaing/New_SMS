@@ -38,6 +38,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             //GV_Tenzaishohin.Columns["colNo"].CellType = 
            // GV_Tenzaishohin.Columns[1].HeaderText = "NO";
             GV_Tenzaishohin.CheckCol.Add("Rate");
+            SC_Tanka.SetFocus(1);
         }
         private bool ErrorCheck()
         {
@@ -158,6 +159,9 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 case 3:
                     ChangeMode(EOperationMode.UPDATE);
                     break;
+                case 5:
+                    ChangeMode(EOperationMode.SHOW);
+                    break;
                 case 11:
                     F11();
                     break;
@@ -171,13 +175,15 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             base.OperationMode = OperationMode;
             switch (OperationMode)
             {
-
+                case EOperationMode.SHOW:
+                    CleanData();
+                    SC_Tanka.SetFocus(1);
+                    break;
                 case EOperationMode.UPDATE:
                     Clear(panel1);
                     SC_Tanka.SetFocus(1);
                     break;
             }
-
         }
         private void CleanData()
         {
@@ -259,7 +265,6 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
         {
             if (ErrorCheck())
             {
-
                 if (dtSelect.Rows.Count > 0)
                 {
                     mTSE = GetTenzikaiShouhinData();
