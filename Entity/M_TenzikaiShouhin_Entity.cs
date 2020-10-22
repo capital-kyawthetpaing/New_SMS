@@ -44,6 +44,14 @@ namespace Entity
 
         public string SegmentCDCopy { get; set; }
 
+        public string Rank1 { get; set; }
+
+        public string Rank2 { get; set; }
+        public string Rank3 { get; set; }
+        public string Rank4 { get; set; }
+        public string Rank5 { get; set; }
+        public string JoudaiTanka { get; set; }
+        public string xml { get; set; }
 
     }
 }
