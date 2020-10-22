@@ -35,8 +35,9 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             CB_Year.Bind(ymd);
             CB_Season.Bind(ymd);
             SC_Tanka.TxtCode.Require(true);
+            //GV_Tenzaishohin.Columns["colNo"].CellType = 
+           // GV_Tenzaishohin.Columns[1].HeaderText = "NO";
             GV_Tenzaishohin.CheckCol.Add("Rate");
-            GV_Tenzaishohin.Columns[0].HeaderText = "NO";
         }
         private bool ErrorCheck()
         {
@@ -217,6 +218,26 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
         {
             F11();
         }
+        private DataTable GenerateNo(DataTable dtSelect)
+        {
+
+            var dt = new DataTable();
+            DataColumn AutoNumberColumn = new DataColumn();
+
+            AutoNumberColumn.ColumnName = "colNo";
+
+            AutoNumberColumn.DataType = typeof(int);
+
+            AutoNumberColumn.AutoIncrement = true;
+
+            AutoNumberColumn.AutoIncrementSeed = 1;
+
+            AutoNumberColumn.AutoIncrementStep = 1;
+
+            dt.Columns.Add(AutoNumberColumn);
+            dt.Merge(dtSelect);
+            return dt;
+        }
         private void F11()
         {
             if (ErrorCheck())
@@ -225,7 +246,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 dtSelect = bl.M_TenzikaiShouhin_Select(mTSE);
                 if (dtSelect.Rows.Count > 0)
                 {
-                    GV_Tenzaishohin.DataSource = dtSelect;
+                    GV_Tenzaishohin.DataSource = GenerateNo(dtSelect);
                 }
                 else
                 {

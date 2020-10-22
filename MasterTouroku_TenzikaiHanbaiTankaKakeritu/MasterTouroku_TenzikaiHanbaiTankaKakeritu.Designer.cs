@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TB_Rate = new CKM_Controls.CKM_TextBox();
             this.BT_Apply = new CKM_Controls.CKM_Button();
@@ -57,6 +57,8 @@
             this.Lb_brand = new CKM_Controls.CKM_Label();
             this.LB_tanka = new CKM_Controls.CKM_Label();
             this.GV_Tenzaishohin = new CKM_Controls.CKM_GridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.BrandCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,7 +67,6 @@
             this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Season = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_Tenzaishohin)).BeginInit();
             this.panel2.SuspendLayout();
@@ -546,20 +547,21 @@
             this.GV_Tenzaishohin.AllowUserToAddRows = false;
             this.GV_Tenzaishohin.AllowUserToDeleteRows = false;
             this.GV_Tenzaishohin.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_Tenzaishohin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_Tenzaishohin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GV_Tenzaishohin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_Tenzaishohin.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("GV_Tenzaishohin.CheckCol")));
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GV_Tenzaishohin.ColumnHeadersHeight = 25;
             this.GV_Tenzaishohin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colNo,
             this.CheckBox,
             this.BrandCD,
             this.BrandName,
@@ -568,35 +570,48 @@
             this.Year,
             this.Season,
             this.Rate});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GV_Tenzaishohin.DefaultCellStyle = dataGridViewCellStyle11;
             this.GV_Tenzaishohin.EnableHeadersVisualStyles = false;
             this.GV_Tenzaishohin.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_Tenzaishohin.Location = new System.Drawing.Point(14, 7);
             this.GV_Tenzaishohin.Name = "GV_Tenzaishohin";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_Tenzaishohin.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_Tenzaishohin.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.GV_Tenzaishohin.RowHeadersVisible = false;
             this.GV_Tenzaishohin.RowHeight_ = 20;
             this.GV_Tenzaishohin.RowTemplate.Height = 20;
             this.GV_Tenzaishohin.Size = new System.Drawing.Size(1010, 500);
             this.GV_Tenzaishohin.TabIndex = 77;
-            this.GV_Tenzaishohin.UseRowNo = true;
+            this.GV_Tenzaishohin.UseRowNo = false;
             this.GV_Tenzaishohin.UseSetting = false;
             this.GV_Tenzaishohin.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.GV_Tenzaishohin_CellValidating);
             this.GV_Tenzaishohin.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.GV_Tenzaishohin_DataError);
             this.GV_Tenzaishohin.Paint += new System.Windows.Forms.PaintEventHandler(this.GV_Tenzaishohin_Paint);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.GV_Tenzaishohin);
+            this.panel2.Location = new System.Drawing.Point(1, 212);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1690, 550);
+            this.panel2.TabIndex = 101;
+            // 
+            // colNo
+            // 
+            this.colNo.DataPropertyName = "colNo";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = null;
+            this.colNo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colNo.HeaderText = "No";
+            this.colNo.Name = "colNo";
+            this.colNo.ReadOnly = true;
+            this.colNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colNo.Width = 40;
             // 
             // CheckBox
             // 
@@ -611,8 +626,8 @@
             // BrandCD
             // 
             this.BrandCD.DataPropertyName = "BrandCD";
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            this.BrandCD.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            this.BrandCD.DefaultCellStyle = dataGridViewCellStyle4;
             this.BrandCD.HeaderText = "ブランド";
             this.BrandCD.Name = "BrandCD";
             this.BrandCD.ReadOnly = true;
@@ -661,21 +676,13 @@
             // Rate
             // 
             this.Rate.DataPropertyName = "Rate";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "N2";
-            dataGridViewCellStyle10.NullValue = "0";
-            this.Rate.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = "0";
+            this.Rate.DefaultCellStyle = dataGridViewCellStyle5;
             this.Rate.HeaderText = "          掛率";
             this.Rate.MaxInputLength = 6;
             this.Rate.Name = "Rate";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.GV_Tenzaishohin);
-            this.panel2.Location = new System.Drawing.Point(1, 212);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1690, 550);
-            this.panel2.TabIndex = 101;
             // 
             // FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu
             // 
@@ -733,6 +740,7 @@
         private CKM_Controls.CKM_GridView GV_Tenzaishohin;
         private System.Windows.Forms.Panel panel2;
         private CKM_Controls.CKM_TextBox TB_Rate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNo;
         private System.Windows.Forms.DataGridViewCheckBoxColumn CheckBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrandCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrandName;
