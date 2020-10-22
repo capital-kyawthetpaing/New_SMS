@@ -35,8 +35,6 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             CB_Year.Bind(ymd);
             CB_Season.Bind(ymd);
             SC_Tanka.TxtCode.Require(true);
-            //GV_Tenzaishohin.Columns["colNo"].CellType = 
-           // GV_Tenzaishohin.Columns[1].HeaderText = "NO";
             GV_Tenzaishohin.CheckCol.Add("Rate");
             SC_Tanka.SetFocus(1);
         }
@@ -419,27 +417,46 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
 
         private void GV_Tenzaishohin_Paint(object sender, PaintEventArgs e)
         {
-            //string[] monthes = { "ブランド", "せグメト", "", "" };
-            //for (int j = 1; j < 5;)
-            //{
-            //    Rectangle r1 = this.GV_Tenzaishohin.GetCellDisplayRectangle(j, -1, true);
-            //    int w1 = this.GV_Tenzaishohin.GetCellDisplayRectangle(j + 1, -1, true).Width;
-            //    r1.X += 1;
-            //    r1.Y += 1;
-            //    r1.Width = r1.Width + w1 - 2;
-            //    r1.Height = r1.Height - 2;
+            string[] monthes = {"No","ブランド", "せグメト", "年度", "シーズン", "掛率" };
 
-            //    e.Graphics.FillRectangle(new SolidBrush(this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.BackColor), r1);
-            //    StringFormat format = new StringFormat();
-            //    format.LineAlignment = StringAlignment.Center;
-            //    format.Alignment = StringAlignment.Center;
-            //    e.Graphics.DrawString(monthes[j / 2],
-            //    this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.Font,
-            //    new SolidBrush(this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.ForeColor),
-            //    r1,
-            //    format);
-            //    j += 2;
-            //}
+            for (int j = 1; j < 5;)
+            {
+                Rectangle r1 = this.GV_Tenzaishohin.GetCellDisplayRectangle(j, -1, true);
+                int w1 = this.GV_Tenzaishohin.GetCellDisplayRectangle(j + 1, -1, true).Width;
+                r1.X += 1;
+                r1.Y += 1;
+                r1.Width = r1.Width + w1 - 2;
+                r1.Height = r1.Height - 2;
+
+                e.Graphics.FillRectangle(new SolidBrush(this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.BackColor), r1);
+                StringFormat format = new StringFormat();
+                format.LineAlignment = StringAlignment.Center;
+                //format.Alignment = StringAlignment.Center;
+                //e.Graphics.DrawString(monthes[j / 2],
+                //this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.Font,
+                //new SolidBrush(this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.ForeColor),
+                //r1,
+                //format);
+                e.Graphics.DrawString(monthes[j / 3],
+               this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.Font,
+                new SolidBrush(this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.ForeColor),
+                r1,
+                format);
+            j += 2;
+            }
+        }
+
+        private void GV_Tenzaishohin_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex == -1 && e.ColumnIndex > -1)
+            {
+                Rectangle r2 = e.CellBounds;
+                r2.Y += e.CellBounds.Height;
+                r2.Height = e.CellBounds.Height;
+                e.PaintBackground(r2, true);
+                e.PaintContent(r2);
+                e.Handled = true;
+            }
         }
     }
 }

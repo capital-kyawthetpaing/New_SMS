@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TB_Rate = new CKM_Controls.CKM_TextBox();
             this.BT_Apply = new CKM_Controls.CKM_Button();
@@ -47,6 +48,9 @@
             this.CB_Year = new CKM_Controls.CKM_ComboBox();
             this.TB_PriceOutTaxT = new CKM_Controls.CKM_TextBox();
             this.TB_PriceOutTaxF = new CKM_Controls.CKM_TextBox();
+            this.Sc_Segment = new Search.CKM_SearchControl();
+            this.SC_Brand = new Search.CKM_SearchControl();
+            this.SC_Tanka = new Search.CKM_SearchControl();
             this.LB_Season = new CKM_Controls.CKM_Label();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_Label10 = new CKM_Controls.CKM_Label();
@@ -54,7 +58,6 @@
             this.Lb_brand = new CKM_Controls.CKM_Label();
             this.LB_tanka = new CKM_Controls.CKM_Label();
             this.GV_Tenzaishohin = new CKM_Controls.CKM_GridView();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.BrandCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,9 +67,7 @@
             this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Season = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sc_Segment = new Search.CKM_SearchControl();
-            this.SC_Brand = new Search.CKM_SearchControl();
-            this.SC_Tanka = new Search.CKM_SearchControl();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_Tenzaishohin)).BeginInit();
             this.panel2.SuspendLayout();
@@ -131,7 +132,7 @@
             this.TB_Rate.IsNumber = true;
             this.TB_Rate.IsShop = false;
             this.TB_Rate.Length = 6;
-            this.TB_Rate.Location = new System.Drawing.Point(811, 127);
+            this.TB_Rate.Location = new System.Drawing.Point(826, 127);
             this.TB_Rate.MaxLength = 6;
             this.TB_Rate.MoveNext = true;
             this.TB_Rate.Name = "TB_Rate";
@@ -226,7 +227,7 @@
             this.LB_Rate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.LB_Rate.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.LB_Rate.ForeColor = System.Drawing.Color.Black;
-            this.LB_Rate.Location = new System.Drawing.Point(764, 131);
+            this.LB_Rate.Location = new System.Drawing.Point(779, 131);
             this.LB_Rate.Name = "LB_Rate";
             this.LB_Rate.Size = new System.Drawing.Size(44, 12);
             this.LB_Rate.TabIndex = 72;
@@ -345,6 +346,101 @@
             this.TB_PriceOutTaxF.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_PriceOutTaxF.UseColorSizMode = false;
             // 
+            // Sc_Segment
+            // 
+            this.Sc_Segment.AutoSize = true;
+            this.Sc_Segment.ChangeDate = "";
+            this.Sc_Segment.ChangeDateWidth = 100;
+            this.Sc_Segment.Code = "";
+            this.Sc_Segment.CodeWidth = 60;
+            this.Sc_Segment.CodeWidth1 = 60;
+            this.Sc_Segment.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.Sc_Segment.DataCheck = false;
+            this.Sc_Segment.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.Sc_Segment.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.Sc_Segment.IsCopy = false;
+            this.Sc_Segment.LabelText = "";
+            this.Sc_Segment.LabelVisible = true;
+            this.Sc_Segment.Location = new System.Drawing.Point(118, 64);
+            this.Sc_Segment.Margin = new System.Windows.Forms.Padding(0);
+            this.Sc_Segment.Name = "Sc_Segment";
+            this.Sc_Segment.NameWidth = 250;
+            this.Sc_Segment.SearchEnable = true;
+            this.Sc_Segment.Size = new System.Drawing.Size(344, 27);
+            this.Sc_Segment.Stype = Search.CKM_SearchControl.SearchType.商品分類;
+            this.Sc_Segment.TabIndex = 3;
+            this.Sc_Segment.test = null;
+            this.Sc_Segment.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.Sc_Segment.UseChangeDate = false;
+            this.Sc_Segment.Value1 = null;
+            this.Sc_Segment.Value2 = null;
+            this.Sc_Segment.Value3 = null;
+            this.Sc_Segment.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.Sc_Segment_CodeKeyDownEvent);
+            this.Sc_Segment.Enter += new System.EventHandler(this.Sc_Segment_Enter);
+            // 
+            // SC_Brand
+            // 
+            this.SC_Brand.AutoSize = true;
+            this.SC_Brand.ChangeDate = "";
+            this.SC_Brand.ChangeDateWidth = 100;
+            this.SC_Brand.Code = "";
+            this.SC_Brand.CodeWidth = 100;
+            this.SC_Brand.CodeWidth1 = 100;
+            this.SC_Brand.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_Brand.DataCheck = false;
+            this.SC_Brand.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_Brand.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.SC_Brand.IsCopy = false;
+            this.SC_Brand.LabelText = "";
+            this.SC_Brand.LabelVisible = true;
+            this.SC_Brand.Location = new System.Drawing.Point(118, 39);
+            this.SC_Brand.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_Brand.Name = "SC_Brand";
+            this.SC_Brand.NameWidth = 280;
+            this.SC_Brand.SearchEnable = true;
+            this.SC_Brand.Size = new System.Drawing.Size(414, 27);
+            this.SC_Brand.Stype = Search.CKM_SearchControl.SearchType.ブランド;
+            this.SC_Brand.TabIndex = 2;
+            this.SC_Brand.test = null;
+            this.SC_Brand.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_Brand.UseChangeDate = false;
+            this.SC_Brand.Value1 = null;
+            this.SC_Brand.Value2 = null;
+            this.SC_Brand.Value3 = null;
+            this.SC_Brand.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_Brand_CodeKeyDownEvent);
+            this.SC_Brand.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SC_Tanka_CodeKeyDownEvent);
+            // 
+            // SC_Tanka
+            // 
+            this.SC_Tanka.AutoSize = true;
+            this.SC_Tanka.ChangeDate = "";
+            this.SC_Tanka.ChangeDateWidth = 100;
+            this.SC_Tanka.Code = "";
+            this.SC_Tanka.CodeWidth = 100;
+            this.SC_Tanka.CodeWidth1 = 100;
+            this.SC_Tanka.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_Tanka.DataCheck = false;
+            this.SC_Tanka.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_Tanka.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.SC_Tanka.IsCopy = false;
+            this.SC_Tanka.LabelText = "";
+            this.SC_Tanka.LabelVisible = true;
+            this.SC_Tanka.Location = new System.Drawing.Point(118, 14);
+            this.SC_Tanka.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_Tanka.Name = "SC_Tanka";
+            this.SC_Tanka.NameWidth = 140;
+            this.SC_Tanka.SearchEnable = true;
+            this.SC_Tanka.Size = new System.Drawing.Size(274, 27);
+            this.SC_Tanka.Stype = Search.CKM_SearchControl.SearchType.単価設定;
+            this.SC_Tanka.TabIndex = 1;
+            this.SC_Tanka.test = null;
+            this.SC_Tanka.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_Tanka.UseChangeDate = false;
+            this.SC_Tanka.Value1 = null;
+            this.SC_Tanka.Value2 = null;
+            this.SC_Tanka.Value3 = null;
+            this.SC_Tanka.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_Tanka_CodeKeyDownEvent);
+            // 
             // LB_Season
             // 
             this.LB_Season.AutoSize = true;
@@ -452,18 +548,18 @@
             this.GV_Tenzaishohin.AllowUserToAddRows = false;
             this.GV_Tenzaishohin.AllowUserToDeleteRows = false;
             this.GV_Tenzaishohin.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_Tenzaishohin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_Tenzaishohin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GV_Tenzaishohin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_Tenzaishohin.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("GV_Tenzaishohin.CheckCol")));
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GV_Tenzaishohin.ColumnHeadersHeight = 25;
             this.GV_Tenzaishohin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNo,
@@ -475,18 +571,26 @@
             this.Year,
             this.Season,
             this.Rate});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GV_Tenzaishohin.DefaultCellStyle = dataGridViewCellStyle6;
             this.GV_Tenzaishohin.EnableHeadersVisualStyles = false;
             this.GV_Tenzaishohin.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_Tenzaishohin.Location = new System.Drawing.Point(12, 7);
             this.GV_Tenzaishohin.Name = "GV_Tenzaishohin";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_Tenzaishohin.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_Tenzaishohin.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.GV_Tenzaishohin.RowHeadersVisible = false;
             this.GV_Tenzaishohin.RowHeight_ = 20;
             this.GV_Tenzaishohin.RowTemplate.Height = 20;
@@ -494,24 +598,17 @@
             this.GV_Tenzaishohin.TabIndex = 77;
             this.GV_Tenzaishohin.UseRowNo = false;
             this.GV_Tenzaishohin.UseSetting = false;
+            this.GV_Tenzaishohin.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GV_Tenzaishohin_CellPainting);
             this.GV_Tenzaishohin.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.GV_Tenzaishohin_CellValidating);
             this.GV_Tenzaishohin.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.GV_Tenzaishohin_DataError);
             this.GV_Tenzaishohin.Paint += new System.Windows.Forms.PaintEventHandler(this.GV_Tenzaishohin_Paint);
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.GV_Tenzaishohin);
-            this.panel2.Location = new System.Drawing.Point(1, 212);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1690, 550);
-            this.panel2.TabIndex = 101;
-            // 
             // colNo
             // 
             this.colNo.DataPropertyName = "colNo";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.NullValue = null;
-            this.colNo.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = null;
+            this.colNo.DefaultCellStyle = dataGridViewCellStyle3;
             this.colNo.HeaderText = "No";
             this.colNo.Name = "colNo";
             this.colNo.ReadOnly = true;
@@ -531,8 +628,8 @@
             // BrandCD
             // 
             this.BrandCD.DataPropertyName = "BrandCD";
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            this.BrandCD.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            this.BrandCD.DefaultCellStyle = dataGridViewCellStyle4;
             this.BrandCD.HeaderText = "ブランド";
             this.BrandCD.Name = "BrandCD";
             this.BrandCD.ReadOnly = true;
@@ -581,108 +678,21 @@
             // Rate
             // 
             this.Rate.DataPropertyName = "Rate";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.Format = "N2";
-            dataGridViewCellStyle11.NullValue = "0";
-            this.Rate.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = "0";
+            this.Rate.DefaultCellStyle = dataGridViewCellStyle5;
             this.Rate.HeaderText = "          掛率";
             this.Rate.MaxInputLength = 6;
             this.Rate.Name = "Rate";
             // 
-            // Sc_Segment
+            // panel2
             // 
-            this.Sc_Segment.AutoSize = true;
-            this.Sc_Segment.ChangeDate = "";
-            this.Sc_Segment.ChangeDateWidth = 100;
-            this.Sc_Segment.Code = "";
-            this.Sc_Segment.CodeWidth = 60;
-            this.Sc_Segment.CodeWidth1 = 60;
-            this.Sc_Segment.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.Sc_Segment.DataCheck = false;
-            this.Sc_Segment.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.Sc_Segment.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.Sc_Segment.IsCopy = false;
-            this.Sc_Segment.LabelText = "";
-            this.Sc_Segment.LabelVisible = true;
-            this.Sc_Segment.Location = new System.Drawing.Point(118, 64);
-            this.Sc_Segment.Margin = new System.Windows.Forms.Padding(0);
-            this.Sc_Segment.Name = "Sc_Segment";
-            this.Sc_Segment.NameWidth = 250;
-            this.Sc_Segment.SearchEnable = true;
-            this.Sc_Segment.Size = new System.Drawing.Size(344, 27);
-            this.Sc_Segment.Stype = Search.CKM_SearchControl.SearchType.商品分類;
-            this.Sc_Segment.TabIndex = 3;
-            this.Sc_Segment.test = null;
-            this.Sc_Segment.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.Sc_Segment.UseChangeDate = false;
-            this.Sc_Segment.Value1 = null;
-            this.Sc_Segment.Value2 = null;
-            this.Sc_Segment.Value3 = null;
-            this.Sc_Segment.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.Sc_Segment_CodeKeyDownEvent);
-            this.Sc_Segment.Enter += new System.EventHandler(this.Sc_Segment_Enter);
-            // 
-            // SC_Brand
-            // 
-            this.SC_Brand.AutoSize = true;
-            this.SC_Brand.ChangeDate = "";
-            this.SC_Brand.ChangeDateWidth = 100;
-            this.SC_Brand.Code = "";
-            this.SC_Brand.CodeWidth = 100;
-            this.SC_Brand.CodeWidth1 = 100;
-            this.SC_Brand.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_Brand.DataCheck = false;
-            this.SC_Brand.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_Brand.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.SC_Brand.IsCopy = false;
-            this.SC_Brand.LabelText = "";
-            this.SC_Brand.LabelVisible = true;
-            this.SC_Brand.Location = new System.Drawing.Point(118, 39);
-            this.SC_Brand.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_Brand.Name = "SC_Brand";
-            this.SC_Brand.NameWidth = 280;
-            this.SC_Brand.SearchEnable = true;
-            this.SC_Brand.Size = new System.Drawing.Size(414, 27);
-            this.SC_Brand.Stype = Search.CKM_SearchControl.SearchType.ブランド;
-            this.SC_Brand.TabIndex = 2;
-            this.SC_Brand.test = null;
-            this.SC_Brand.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_Brand.UseChangeDate = false;
-            this.SC_Brand.Value1 = null;
-            this.SC_Brand.Value2 = null;
-            this.SC_Brand.Value3 = null;
-            this.SC_Brand.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_Brand_CodeKeyDownEvent);
-            this.SC_Brand.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SC_Tanka_CodeKeyDownEvent);
-            // 
-            // SC_Tanka
-            // 
-            this.SC_Tanka.AutoSize = true;
-            this.SC_Tanka.ChangeDate = "";
-            this.SC_Tanka.ChangeDateWidth = 100;
-            this.SC_Tanka.Code = "";
-            this.SC_Tanka.CodeWidth = 100;
-            this.SC_Tanka.CodeWidth1 = 100;
-            this.SC_Tanka.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_Tanka.DataCheck = false;
-            this.SC_Tanka.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_Tanka.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.SC_Tanka.IsCopy = false;
-            this.SC_Tanka.LabelText = "";
-            this.SC_Tanka.LabelVisible = true;
-            this.SC_Tanka.Location = new System.Drawing.Point(118, 14);
-            this.SC_Tanka.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_Tanka.Name = "SC_Tanka";
-            this.SC_Tanka.NameWidth = 140;
-            this.SC_Tanka.SearchEnable = true;
-            this.SC_Tanka.Size = new System.Drawing.Size(274, 27);
-            this.SC_Tanka.Stype = Search.CKM_SearchControl.SearchType.単価設定;
-            this.SC_Tanka.TabIndex = 1;
-            this.SC_Tanka.test = null;
-            this.SC_Tanka.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_Tanka.UseChangeDate = false;
-            this.SC_Tanka.Value1 = null;
-            this.SC_Tanka.Value2 = null;
-            this.SC_Tanka.Value3 = null;
-            this.SC_Tanka.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_Tanka_CodeKeyDownEvent);
+            this.panel2.Controls.Add(this.GV_Tenzaishohin);
+            this.panel2.Location = new System.Drawing.Point(1, 212);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1690, 550);
+            this.panel2.TabIndex = 101;
             // 
             // FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu
             // 
