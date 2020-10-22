@@ -88,6 +88,7 @@ namespace MasterTouroku_TenzikaiShouhin
             SC_CopyTenzikai.TxtCode.MaxLength = 500;
             Btn_F7.Text = "行削除（F7）";
             Btn_F8.Text = "行追加(F8)";
+            Btn_F11.Text = "反映処理(F11)";
             Scr_Clr(0);
 
             BindCombo_Details();
@@ -460,7 +461,10 @@ namespace MasterTouroku_TenzikaiShouhin
                         ChangeDate = detailControls[(int)Eindex.InsertDate].Text,
                         CheckState = "1",
                     };
-                    DataTable dt = tbl.MasterTouroku_Tenzikaishouhin_DeleteUpdate(msk);
+                  if(tbl.M_Tenzikaishouhin_DeleteUpdate(msk))
+                    {
+                        
+                    }
                 }
                 Set_GridTabStop(false);
                 // mGrid.S_DispToArray(Vsb_Mei_0.Value);
