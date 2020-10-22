@@ -25,9 +25,9 @@ namespace BL
             return dl.M_SKU_SelectForSKUCheck(msku);
         }
 
-        public bool M_Tenzikaishouhin_DeleteUpdate(M_SKU_Entity msku)
+        public bool M_Tenzikaishouhin_DeleteUpdate(M_TenzikaiShouhin_Entity mt)
         {
-            return dl.M_Tenzikaishouhin_DeleteUpdate(msku);
+            return dl.M_Tenzikaishouhin_DeleteUpdate(mt);
         }
     }
 }
