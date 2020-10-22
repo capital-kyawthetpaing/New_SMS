@@ -137,7 +137,7 @@ namespace MasterTouroku_CustomerSKUPrice
                         break;
                     }
                 case 6://F7:行削除
-                        ADD_SUB();
+                    DEL_SUB();
                     break;
 
                 case 7://F8:行追加
@@ -419,6 +419,47 @@ namespace MasterTouroku_CustomerSKUPrice
 
             //配列の内容を画面へセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+            //現在行へ
+            mGrid.F_MoveFocus((int)ClsGridCustomerSKUPric.Gen_MK_FocusMove.MvSet, (int)ClsGridCustomerSKUPric.Gen_MK_FocusMove.MvNxt, mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl, w_Row, col, ActiveControl, Vsb_Mei_0, w_Row, col);
+
+        }
+
+        private void DEL_SUB()
+        {
+            int w_Row;
+
+            if (mGrid.F_Search_Ctrl_MK(previousCtrl, out int w_Col, out int w_CtlRow) == false)
+            {
+                return;
+            }
+
+            w_Row = w_CtlRow + Vsb_Mei_0.Value;
+
+            //画面より配列セット 
+            mGrid.S_DispToArray(Vsb_Mei_0.Value);
+
+            for (int i = w_Row; i < mGrid.g_MK_Max_Row - 1; i++)
+            {
+                int w_Gyo = Convert.ToInt16(mGrid.g_DArray[i].GYONO);          //行番号 退避
+
+                //次行をコピー
+                mGrid.g_DArray[i] = mGrid.g_DArray[i + 1];
+
+                //退避内容を戻す
+                mGrid.g_DArray[i].GYONO = w_Gyo.ToString();          //行番号
+            }
+
+            //CalcKin();
+
+            int col = (int)ClsGridCustomerSKUPric.ColNO.TekiyouKaisiDate;
+            Grid_NotFocus(col, w_Row);
+
+            //配列の内容を画面へセット
+            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+            //フォーカスセット
+            //IMT_DMY_0.Focus();
 
             //現在行へ
             mGrid.F_MoveFocus((int)ClsGridCustomerSKUPric.Gen_MK_FocusMove.MvSet, (int)ClsGridCustomerSKUPric.Gen_MK_FocusMove.MvNxt, mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl, w_Row, col, ActiveControl, Vsb_Mei_0, w_Row, col);
