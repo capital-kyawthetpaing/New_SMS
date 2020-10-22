@@ -59,9 +59,9 @@ namespace DL
             return SelectData(dic, sp);
         }
 
-        public DataTable MasterTouroku_DeleteUpdate(M_SKU_Entity msku)
+        public DataTable MasterTouroku_Tenzikaishouhin_DeleteUpdate(M_SKU_Entity msku)
         {
-            string sp = "MasterTouroku_DeleteUpdate";
+            string sp = "MasterTouroku_Tenzikaishouhin_DeleteUpdate";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@changedate", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.SKUName} },
@@ -75,6 +75,7 @@ namespace DL
                 { "@Jancd", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.JanCD } },
                 { "@chkflg", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.VariousFLG } },
             };
+            UseTransaction = true;
             return SelectData(dic, sp);
         }
     }

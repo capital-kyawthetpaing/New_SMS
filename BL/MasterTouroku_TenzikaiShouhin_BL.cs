@@ -25,9 +25,9 @@ namespace BL
             return dl.M_SKU_SelectForSKUCheck(msku);
         }
 
-        public DataTable MasterTouroku_DeleteUpdate(M_SKU_Entity msku)
+        public DataTable MasterTouroku_Tenzikaishouhin_DeleteUpdate(M_SKU_Entity msku)
         {
-            return dl.MasterTouroku_DeleteUpdate(msku);
+            return dl.MasterTouroku_Tenzikaishouhin_DeleteUpdate(msku);
         }
     }
 }

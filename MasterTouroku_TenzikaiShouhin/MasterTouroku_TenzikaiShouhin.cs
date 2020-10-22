@@ -460,7 +460,7 @@ namespace MasterTouroku_TenzikaiShouhin
                         ChangeDate = detailControls[(int)Eindex.InsertDate].Text,
                         CheckState = "1",
                     };
-                    DataTable dt = tbl.MasterTouroku_DeleteUpdate(msk);
+                    DataTable dt = tbl.MasterTouroku_Tenzikaishouhin_DeleteUpdate(msk);
                 }
                 Set_GridTabStop(false);
                 // mGrid.S_DispToArray(Vsb_Mei_0.Value);
