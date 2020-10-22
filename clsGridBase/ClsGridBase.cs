@@ -15,6 +15,7 @@ namespace GridBase
         public static Color GridColor = Color.FromArgb(221, 235, 247);
         public static Color WHColor = Color.White;
         public static Color MaxGyoColor = Color.Silver;
+        public static Color CheckColor = Color.Orange;    //PES [2020/10/22] 
 
         // マウスホイールの1移動量  Windows の定数 WHEEL_DELTA (値 120) 
         // 取得方法がわからないため、とりあえず固定(初期値)で120にし、READONLYにしていますが
