@@ -58,5 +58,24 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
+
+        public DataTable MasterTouroku_DeleteUpdate(M_SKU_Entity msku)
+        {
+            string sp = "MasterTouroku_DeleteUpdate";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@changedate", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.SKUName} },
+                { "@exhibitionsegmentCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.SKUName} },
+                { "@year", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.SKUName} },
+                { "@season", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.SKUName} },
+                { "@skuname", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.SKUName} },
+                { "@colorName", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.ColorName } },
+                { "@sizeName", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.SizeName } },
+                { "@ExhibitionCommomCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.ExhibitionCommonCD } },
+                { "@Jancd", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.JanCD } },
+                { "@chkflg", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.VariousFLG } },
+            };
+            return SelectData(dic, sp);
+        }
     }
 }

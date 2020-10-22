@@ -70,16 +70,10 @@ namespace MasterTouroku_TenzikaiShouhin
             CSeason,
             SCCBrand,
             SCCSegment,
-            pnlKokyakuu,
+            InsertDate,
             KDenwa1,
             KDenwa2,
             KDenwa3,
-            SCHaiSoSaki,
-            HJuShou1,
-            btnHaisou,
-            HJuShou2,
-            pnlHaisou,
-            HDenwa1,
             HDenwa2,
             HDenwa3,
             YoteiKinShuu,
@@ -453,7 +447,20 @@ namespace MasterTouroku_TenzikaiShouhin
                 }
                 else
                 {
-
+                    M_SKU_Entity msk = new M_SKU_Entity
+                    {
+                        JanCD = mGrid.g_DArray[w_Row].JANCD,
+                        SKUName = mGrid.g_DArray[w_Row].SKUName,
+                        ColorName = mGrid.g_DArray[w_Row].ColorName,
+                        SizeName = mGrid.g_DArray[w_Row].SizeName,
+                        LastYearTerm = detailControls[(int)Eindex.Nendo].Text,
+                        LastSeason = detailControls[(int)Eindex.Season].Text,
+                        ExhibitionCommonCD = mGrid.g_DArray[w_Row].ExhibitionCommonCD,
+                        ExhibitionSegmentCD = mGrid.g_DArray[w_Row].SegmentCD,
+                        ChangeDate = detailControls[(int)Eindex.InsertDate].Text,
+                        CheckState = "1",
+                    };
+                    DataTable dt = tbl.MasterTouroku_DeleteUpdate(msk);
                 }
                 Set_GridTabStop(false);
                 // mGrid.S_DispToArray(Vsb_Mei_0.Value);
