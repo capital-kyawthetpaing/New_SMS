@@ -316,6 +316,7 @@ namespace Search
                     else
                     {
                         bbl.ShowMessage("E101");
+                        txtCustomerName.Text = string.Empty;
                         ScCustomer.SetFocus(1);
                     }
                 }
