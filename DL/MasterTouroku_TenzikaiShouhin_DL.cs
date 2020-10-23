@@ -47,14 +47,15 @@ namespace DL
             string sp = "M_SKU_SelectForSKUCheck";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@skuname", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.SKUName} },
-                { "@colorName", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.ColorName } },
-                { "@sizeName", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.SizeName } },
+                //{ "@skuname", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.SKUName} },
+                //{ "@colorName", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.ColorName } },
+                //{ "@sizeName", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.SizeName } },
                 { "@ExhibitionCommomCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.ExhibitionCommonCD } },
-                { "@Jancd", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.JanCD } },
+                //{ "@Jancd", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.JanCD } },
             };
             return SelectData(dic, sp);
         }
+        
 
         public bool M_Tenzikaishouhin_DeleteUpdate(M_TenzikaiShouhin_Entity mt)
         {
@@ -67,6 +68,21 @@ namespace DL
                 { "@StartDate" , new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.ChangeDate} },
                 { "@OperatorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.InsertOperator} },
              
+            };
+            UseTransaction = true;
+            return InsertUpdateDeleteData(dic, sp);
+        }
+
+        public bool M_Tenzikaishouhin_InsertUpdate(M_TenzikaiShouhin_Entity mt)
+        {
+            string sp = "M_Tenzikaishouhin_InsertUpdate";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.xml} },
+                { "@year", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.LastYearTerm} },
+                { "@season", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.LastSeason} },
+                { "@OperatorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.InsertOperator} },
+
             };
             UseTransaction = true;
             return InsertUpdateDeleteData(dic, sp);

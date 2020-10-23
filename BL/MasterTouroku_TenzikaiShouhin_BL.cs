@@ -29,5 +29,10 @@ namespace BL
         {
             return dl.M_Tenzikaishouhin_DeleteUpdate(mt);
         }
+
+        public bool M_Tenzikaishouhin_InsertUpdate(M_TenzikaiShouhin_Entity mt)
+        {
+            return dl.M_Tenzikaishouhin_InsertUpdate(mt);
+        }
     }
 }
