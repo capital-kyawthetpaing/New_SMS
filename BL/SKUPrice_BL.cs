@@ -23,7 +23,8 @@ namespace BL
         }
         public bool M_SKUPrice_Insert_Update(M_SKUPrice_Entity mse,string Xml,int mode)
         {
-            return mdl.M_SKUPrice_Insert_Update(mse,Xml,mode);
+            return true;
+          //  return mdl.M_SKUPrice_Insert_Update(mse,Xml,mode); // PTK_M
         }
         //public bool M_SKUPrice_Update(M_SKUPrice_Entity mse, string updateXml)
         //{
