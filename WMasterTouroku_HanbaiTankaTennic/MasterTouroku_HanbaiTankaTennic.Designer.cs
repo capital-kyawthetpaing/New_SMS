@@ -1081,7 +1081,7 @@
             this.btnDisplay.Location = new System.Drawing.Point(935, 94);
             this.btnDisplay.Margin = new System.Windows.Forms.Padding(1);
             this.btnDisplay.Name = "btnDisplay";
-            this.btnDisplay.Size = new System.Drawing.Size(118, 24);
+            this.btnDisplay.Size = new System.Drawing.Size(100, 24);
             this.btnDisplay.TabIndex = 142;
             this.btnDisplay.Text = "表示";
             this.btnDisplay.UseVisualStyleBackColor = false;
@@ -1236,7 +1236,7 @@
             this.txtSKUName.BorderColor = false;
             this.txtSKUName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSKUName.ClientColor = System.Drawing.SystemColors.Window;
-            this.txtSKUName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtSKUName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtSKUName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtSKUName.DecimalPlace = 0;
             this.txtSKUName.Font = new System.Drawing.Font("MS Gothic", 9F);

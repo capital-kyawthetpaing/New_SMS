@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.CB_Season = new CKM_Controls.CKM_ComboBox();
-            this.TB_InsertDateTimeF = new CKM_Controls.CKM_TextBox();
+            this.TB_StartDate = new CKM_Controls.CKM_TextBox();
             this.ckM_LB_Kijunbi = new CKM_Controls.CKM_Label();
             this.BT_SKUCheck = new CKM_Controls.CKM_Button();
             this.BT_meisai = new CKM_Controls.CKM_Button();
@@ -296,7 +296,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.CB_Season);
-            this.panel1.Controls.Add(this.TB_InsertDateTimeF);
+            this.panel1.Controls.Add(this.TB_StartDate);
             this.panel1.Controls.Add(this.ckM_LB_Kijunbi);
             this.panel1.Controls.Add(this.BT_SKUCheck);
             this.panel1.Controls.Add(this.BT_meisai);
@@ -345,35 +345,35 @@
             this.CB_Season.Size = new System.Drawing.Size(121, 20);
             this.CB_Season.TabIndex = 4;
             // 
-            // TB_InsertDateTimeF
+            // TB_StartDate
             // 
-            this.TB_InsertDateTimeF.AllowMinus = false;
-            this.TB_InsertDateTimeF.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.TB_InsertDateTimeF.BackColor = System.Drawing.Color.White;
-            this.TB_InsertDateTimeF.BorderColor = false;
-            this.TB_InsertDateTimeF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_InsertDateTimeF.ClientColor = System.Drawing.Color.White;
-            this.TB_InsertDateTimeF.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.TB_InsertDateTimeF.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.TB_InsertDateTimeF.DecimalPlace = 0;
-            this.TB_InsertDateTimeF.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.TB_InsertDateTimeF.IntegerPart = 0;
-            this.TB_InsertDateTimeF.IsCorrectDate = true;
-            this.TB_InsertDateTimeF.isEnterKeyDown = false;
-            this.TB_InsertDateTimeF.IsFirstTime = true;
-            this.TB_InsertDateTimeF.isMaxLengthErr = false;
-            this.TB_InsertDateTimeF.IsNumber = true;
-            this.TB_InsertDateTimeF.IsShop = false;
-            this.TB_InsertDateTimeF.Length = 10;
-            this.TB_InsertDateTimeF.Location = new System.Drawing.Point(1390, 129);
-            this.TB_InsertDateTimeF.MaxLength = 10;
-            this.TB_InsertDateTimeF.MoveNext = true;
-            this.TB_InsertDateTimeF.Name = "TB_InsertDateTimeF";
-            this.TB_InsertDateTimeF.Size = new System.Drawing.Size(100, 19);
-            this.TB_InsertDateTimeF.TabIndex = 840;
-            this.TB_InsertDateTimeF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TB_InsertDateTimeF.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.TB_InsertDateTimeF.UseColorSizMode = false;
+            this.TB_StartDate.AllowMinus = false;
+            this.TB_StartDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.TB_StartDate.BackColor = System.Drawing.Color.White;
+            this.TB_StartDate.BorderColor = false;
+            this.TB_StartDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_StartDate.ClientColor = System.Drawing.Color.White;
+            this.TB_StartDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.TB_StartDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
+            this.TB_StartDate.DecimalPlace = 0;
+            this.TB_StartDate.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.TB_StartDate.IntegerPart = 0;
+            this.TB_StartDate.IsCorrectDate = true;
+            this.TB_StartDate.isEnterKeyDown = false;
+            this.TB_StartDate.IsFirstTime = true;
+            this.TB_StartDate.isMaxLengthErr = false;
+            this.TB_StartDate.IsNumber = true;
+            this.TB_StartDate.IsShop = false;
+            this.TB_StartDate.Length = 10;
+            this.TB_StartDate.Location = new System.Drawing.Point(1390, 129);
+            this.TB_StartDate.MaxLength = 10;
+            this.TB_StartDate.MoveNext = true;
+            this.TB_StartDate.Name = "TB_StartDate";
+            this.TB_StartDate.Size = new System.Drawing.Size(100, 19);
+            this.TB_StartDate.TabIndex = 840;
+            this.TB_StartDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TB_StartDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.TB_StartDate.UseColorSizMode = false;
             // 
             // ckM_LB_Kijunbi
             // 
@@ -1518,7 +1518,7 @@
             this.hyoteidatem_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hyoteidatem_1.ClientColor = System.Drawing.Color.White;
             this.hyoteidatem_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.hyoteidatem_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.hyoteidatem_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.hyoteidatem_1.DecimalPlace = 0;
             this.hyoteidatem_1.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.hyoteidatem_1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
@@ -6439,7 +6439,7 @@
         private CKM_Controls.CKM_ComboBox CB_Copyyear;
         private Search.CKM_SearchControl SC_CopyVendor;
         private CKM_Controls.CKM_Label ckM_Label11;
-        private CKM_Controls.CKM_TextBox TB_InsertDateTimeF;
+        private CKM_Controls.CKM_TextBox TB_StartDate;
         private CKM_Controls.CKM_ComboBox CB_Season;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
