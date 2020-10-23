@@ -100,11 +100,13 @@ namespace MasterTouroku_CustomerSKUPrice
 
             S_SetInit_Grid();
 
+
             StartProgram();
             txtStartDate.Focus();
 
             Clear(pnl_Body);
             Scr_Clr(0);
+            S_BodySeigyo(0, 1);
         }
 
         public override void FunctionProcess(int Index)
@@ -326,7 +328,7 @@ namespace MasterTouroku_CustomerSKUPrice
                     mGrid.g_DArray[c].JANCD = dr["JanCD"].ToString();
                     mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
                     mGrid.g_DArray[c].SKUName = dr["SKUName"].ToString(); 
-                    mGrid.g_DArray[c].SalePriceOutTax = dr["SalePriceOutTax"].ToString();
+                    mGrid.g_DArray[c].SalePriceOutTax = bbl.Z_SetStr(dr["SalePriceOutTax"]);
                     mGrid.g_DArray[c].Remarks = dr["Remarks"].ToString();
                     c++;
                 }

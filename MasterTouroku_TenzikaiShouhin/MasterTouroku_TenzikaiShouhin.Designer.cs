@@ -406,7 +406,7 @@
             this.BT_SKUCheck.Margin = new System.Windows.Forms.Padding(1);
             this.BT_SKUCheck.Name = "BT_SKUCheck";
             this.BT_SKUCheck.Size = new System.Drawing.Size(118, 28);
-            this.BT_SKUCheck.TabIndex = 837;
+            this.BT_SKUCheck.TabIndex = 15;
             this.BT_SKUCheck.Text = "SKUチェック";
             this.BT_SKUCheck.UseVisualStyleBackColor = false;
             this.BT_SKUCheck.Click += new System.EventHandler(this.BT_SKUCheck_Click);
@@ -425,7 +425,7 @@
             this.BT_meisai.Margin = new System.Windows.Forms.Padding(1);
             this.BT_meisai.Name = "BT_meisai";
             this.BT_meisai.Size = new System.Drawing.Size(110, 28);
-            this.BT_meisai.TabIndex = 836;
+            this.BT_meisai.TabIndex = 14;
             this.BT_meisai.Text = "明細取込";
             this.BT_meisai.UseVisualStyleBackColor = false;
             this.BT_meisai.Click += new System.EventHandler(this.BT_meisai_Click);
