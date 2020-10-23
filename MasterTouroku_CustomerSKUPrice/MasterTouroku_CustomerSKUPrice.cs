@@ -816,6 +816,7 @@ namespace MasterTouroku_CustomerSKUPrice
                         dtExcel.Columns.Add("AdminNO", typeof(String));
                         for(int i=0; i < dtExcel.Rows.Count; i++)
                         {
+                            //dtExcel.Rows[i]["TekiyouKaisiDate"] = dtExcel.Rows[i]["TekiyouKaisiDate"].ToString("yyyy-mm-dd");
                             M_SKU_Entity mse = new M_SKU_Entity
                             {
                                 JanCD = dtExcel.Rows[i]["JANCD"].ToString(),
