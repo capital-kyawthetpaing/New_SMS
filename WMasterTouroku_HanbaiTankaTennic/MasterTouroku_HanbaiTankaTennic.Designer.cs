@@ -1052,7 +1052,7 @@
             this.SKUCDTo.IsCopy = false;
             this.SKUCDTo.LabelText = "";
             this.SKUCDTo.LabelVisible = false;
-            this.SKUCDTo.Location = new System.Drawing.Point(854, 28);
+            this.SKUCDTo.Location = new System.Drawing.Point(935, 32);
             this.SKUCDTo.Margin = new System.Windows.Forms.Padding(0);
             this.SKUCDTo.Name = "SKUCDTo";
             this.SKUCDTo.NameWidth = 350;
@@ -1078,10 +1078,10 @@
             this.btnDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDisplay.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnDisplay.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnDisplay.Location = new System.Drawing.Point(854, 94);
+            this.btnDisplay.Location = new System.Drawing.Point(935, 94);
             this.btnDisplay.Margin = new System.Windows.Forms.Padding(1);
             this.btnDisplay.Name = "btnDisplay";
-            this.btnDisplay.Size = new System.Drawing.Size(118, 24);
+            this.btnDisplay.Size = new System.Drawing.Size(100, 24);
             this.btnDisplay.TabIndex = 142;
             this.btnDisplay.Text = "表示";
             this.btnDisplay.UseVisualStyleBackColor = false;
@@ -1107,7 +1107,7 @@
             this.ckM_TextBox5.IsNumber = true;
             this.ckM_TextBox5.IsShop = false;
             this.ckM_TextBox5.Length = 5;
-            this.ckM_TextBox5.Location = new System.Drawing.Point(709, 95);
+            this.ckM_TextBox5.Location = new System.Drawing.Point(810, 95);
             this.ckM_TextBox5.MaxLength = 5;
             this.ckM_TextBox5.MoveNext = true;
             this.ckM_TextBox5.Name = "ckM_TextBox5";
@@ -1125,7 +1125,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(650, 98);
+            this.ckM_Label8.Location = new System.Drawing.Point(751, 98);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label8.TabIndex = 141;
@@ -1153,7 +1153,7 @@
             this.ckM_TextBox4.IsNumber = true;
             this.ckM_TextBox4.IsShop = false;
             this.ckM_TextBox4.Length = 5;
-            this.ckM_TextBox4.Location = new System.Drawing.Point(564, 94);
+            this.ckM_TextBox4.Location = new System.Drawing.Point(665, 94);
             this.ckM_TextBox4.MaxLength = 5;
             this.ckM_TextBox4.MoveNext = true;
             this.ckM_TextBox4.Name = "ckM_TextBox4";
@@ -1171,7 +1171,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(517, 98);
+            this.ckM_Label7.Location = new System.Drawing.Point(618, 98);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label7.TabIndex = 140;
@@ -1194,7 +1194,7 @@
             this.scSegmentCD.IsCopy = false;
             this.scSegmentCD.LabelText = "";
             this.scSegmentCD.LabelVisible = true;
-            this.scSegmentCD.Location = new System.Drawing.Point(81, 89);
+            this.scSegmentCD.Location = new System.Drawing.Point(110, 89);
             this.scSegmentCD.Margin = new System.Windows.Forms.Padding(0);
             this.scSegmentCD.Name = "scSegmentCD";
             this.scSegmentCD.NameWidth = 250;
@@ -1220,7 +1220,7 @@
             this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(8, 98);
+            this.ckM_Label6.Location = new System.Drawing.Point(37, 98);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label6.TabIndex = 139;
@@ -1236,7 +1236,7 @@
             this.txtSKUName.BorderColor = false;
             this.txtSKUName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSKUName.ClientColor = System.Drawing.SystemColors.Window;
-            this.txtSKUName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtSKUName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtSKUName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtSKUName.DecimalPlace = 0;
             this.txtSKUName.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1248,7 +1248,7 @@
             this.txtSKUName.IsNumber = true;
             this.txtSKUName.IsShop = false;
             this.txtSKUName.Length = 40;
-            this.txtSKUName.Location = new System.Drawing.Point(564, 64);
+            this.txtSKUName.Location = new System.Drawing.Point(665, 64);
             this.txtSKUName.MaxLength = 40;
             this.txtSKUName.MoveNext = true;
             this.txtSKUName.Name = "txtSKUName";
@@ -1261,7 +1261,7 @@
             // 
             this.ckM_RadioButton2.AutoSize = true;
             this.ckM_RadioButton2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_RadioButton2.Location = new System.Drawing.Point(658, 9);
+            this.ckM_RadioButton2.Location = new System.Drawing.Point(759, 9);
             this.ckM_RadioButton2.Name = "ckM_RadioButton2";
             this.ckM_RadioButton2.Size = new System.Drawing.Size(75, 16);
             this.ckM_RadioButton2.TabIndex = 135;
@@ -1274,7 +1274,7 @@
             this.RadioButton1.AutoSize = true;
             this.RadioButton1.Checked = true;
             this.RadioButton1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.RadioButton1.Location = new System.Drawing.Point(538, 9);
+            this.RadioButton1.Location = new System.Drawing.Point(639, 9);
             this.RadioButton1.Name = "RadioButton1";
             this.RadioButton1.Size = new System.Drawing.Size(114, 16);
             this.RadioButton1.TabIndex = 121;
@@ -1291,7 +1291,7 @@
             this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(517, 68);
+            this.ckM_Label5.Location = new System.Drawing.Point(618, 68);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label5.TabIndex = 138;
@@ -1308,7 +1308,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(478, 10);
+            this.ckM_Label2.Location = new System.Drawing.Point(579, 10);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label2.TabIndex = 134;
@@ -1325,7 +1325,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(813, 40);
+            this.ckM_Label4.Location = new System.Drawing.Point(901, 40);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label4.TabIndex = 137;
@@ -1342,7 +1342,7 @@
             this.lblBrandCD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lblBrandCD.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.lblBrandCD.ForeColor = System.Drawing.Color.Black;
-            this.lblBrandCD.Location = new System.Drawing.Point(7, 71);
+            this.lblBrandCD.Location = new System.Drawing.Point(36, 71);
             this.lblBrandCD.Name = "lblBrandCD";
             this.lblBrandCD.Size = new System.Drawing.Size(71, 12);
             this.lblBrandCD.TabIndex = 133;
@@ -1365,7 +1365,7 @@
             this.SKUCDFrom.IsCopy = false;
             this.SKUCDFrom.LabelText = "";
             this.SKUCDFrom.LabelVisible = false;
-            this.SKUCDFrom.Location = new System.Drawing.Point(564, 32);
+            this.SKUCDFrom.Location = new System.Drawing.Point(665, 32);
             this.SKUCDFrom.Margin = new System.Windows.Forms.Padding(0);
             this.SKUCDFrom.Name = "SKUCDFrom";
             this.SKUCDFrom.NameWidth = 350;
@@ -1395,7 +1395,7 @@
             this.scBrandCD.IsCopy = false;
             this.scBrandCD.LabelText = "";
             this.scBrandCD.LabelVisible = true;
-            this.scBrandCD.Location = new System.Drawing.Point(81, 62);
+            this.scBrandCD.Location = new System.Drawing.Point(110, 62);
             this.scBrandCD.Margin = new System.Windows.Forms.Padding(0);
             this.scBrandCD.Name = "scBrandCD";
             this.scBrandCD.NameWidth = 280;
@@ -1420,7 +1420,7 @@
             this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(521, 40);
+            this.ckM_Label3.Location = new System.Drawing.Point(622, 40);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(40, 12);
             this.ckM_Label3.TabIndex = 136;
@@ -1437,7 +1437,7 @@
             this.lblStartDate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lblStartDate.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.lblStartDate.ForeColor = System.Drawing.Color.Black;
-            this.lblStartDate.Location = new System.Drawing.Point(8, 45);
+            this.lblStartDate.Location = new System.Drawing.Point(37, 45);
             this.lblStartDate.Name = "lblStartDate";
             this.lblStartDate.Size = new System.Drawing.Size(70, 12);
             this.lblStartDate.TabIndex = 131;
@@ -1465,7 +1465,7 @@
             this.txtStartDateFrom.IsNumber = true;
             this.txtStartDateFrom.IsShop = false;
             this.txtStartDateFrom.Length = 10;
-            this.txtStartDateFrom.Location = new System.Drawing.Point(81, 41);
+            this.txtStartDateFrom.Location = new System.Drawing.Point(110, 41);
             this.txtStartDateFrom.MaxLength = 10;
             this.txtStartDateFrom.MoveNext = true;
             this.txtStartDateFrom.Name = "txtStartDateFrom";
@@ -1484,7 +1484,7 @@
             this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(197, 44);
+            this.ckM_Label1.Location = new System.Drawing.Point(226, 44);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label1.TabIndex = 132;
@@ -1512,7 +1512,7 @@
             this.txtStartDateTo.IsNumber = true;
             this.txtStartDateTo.IsShop = false;
             this.txtStartDateTo.Length = 10;
-            this.txtStartDateTo.Location = new System.Drawing.Point(229, 41);
+            this.txtStartDateTo.Location = new System.Drawing.Point(258, 41);
             this.txtStartDateTo.MaxLength = 10;
             this.txtStartDateTo.MoveNext = true;
             this.txtStartDateTo.Name = "txtStartDateTo";
