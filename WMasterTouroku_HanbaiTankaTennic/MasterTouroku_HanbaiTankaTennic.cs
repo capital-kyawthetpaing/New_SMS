@@ -68,7 +68,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 SKUCDTo.NameWidth = 0;
                 Clear(pnl_Body);
                 Scr_Clr(0);
-                CustomEvent();
+              //  CustomEvent();
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
@@ -127,8 +127,8 @@ namespace WMasterTouroku_HanbaiTankaTennic
             this.Vsb_Mei_0.SmallChange = 1;
             this.Vsb_Mei_0.Minimum = 0;
             this.Vsb_Mei_0.Maximum = mGrid.g_MK_MaxValue + this.Vsb_Mei_0.LargeChange - 1;
-            S_SetControlArray();
-            for (W_CtlRow = 0; W_CtlRow <= mGrid.g_MK_Ctl_Row - 1; W_CtlRow++)
+            S_SetControlArray(); // PTK_M
+            for (W_CtlRow = 0; W_CtlRow <= mGrid.g_MK_Ctl_Row - 1; W_CtlRow++) //PTK_M
             {
                 for (int w_CtlCol = 0; w_CtlCol <= mGrid.g_MK_Ctl_Col - 1; w_CtlCol++)
                 {
@@ -136,41 +136,39 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     {
                         if (mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
                         {
+                            CKM_Controls.CKM_TextBox sctl = (CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl;
+                            sctl.Tag = W_CtlRow.ToString();
                             mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Enter += new System.EventHandler(GridControl_Enter);
-                          //  mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Leave += new System.EventHandler(GridControl_Leave);
-                          //  mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown);//GridControl_Validated
-                          //  mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Validated += new EventHandler(GridControl_Validated);
-
+                            mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Leave += new System.EventHandler(GridControl_Leave);
+                            mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown);
                         }
                     }
-
                     switch (w_CtlCol)
                     {
-                        case (int)ClsGridHanbaiTankaTennic.ColNO.SKUCD:
-                        case (int)ClsGridHanbaiTankaTennic.ColNO.JANCD:
-                        case (int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate:    // 
-                        case (int)ClsGridHanbaiTankaTennic.ColNO.EndChangeDate:    // 
-                        case (int)ClsGridHanbaiTankaTennic.ColNO.UnitPrice:    // 
-                        case (int)ClsGridHanbaiTankaTennic.ColNO.StandardSalesUnitPrice:    // 
-                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank1UnitPrice:    // 
-                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank2UnitPrice:    // 
-                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank3UnitPrice:    // 
-                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank4UnitPrice:    // 
-                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank5UnitPrice:    // 
-                        case (int)ClsGridHanbaiTankaTennic.ColNO.ItemName:    //  
-                        case (int)ClsGridHanbaiTankaTennic.ColNO.CostUnitPrice:
+
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate:
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.EndChangeDate:
+                            ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl).Ctrl_Type = CKM_TextBox.Type.Date;
+                            break;
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.UnitPrice:
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.StandardSalesUnitPrice:
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank1UnitPrice:
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank2UnitPrice:
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank3UnitPrice:
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank4UnitPrice:
+                        case (int)ClsGridHanbaiTankaTennic.ColNO.Rank5UnitPrice:
+                            ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl).Ctrl_Type = CKM_TextBox.Type.Price;
+                            ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl).IntegerPart = 9;
+                            ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl).AllowMinus = true;
+                            break;
                         case (int)ClsGridHanbaiTankaTennic.ColNO.Remarks:
-                        case (int)ClsGridHanbaiTankaTennic.ColNO.Space1:
-                            //if (mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
-                            //    ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl).CKM_Reqired = true;
+                            ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl).Ctrl_Type = CKM_TextBox.Type.Normal;
+                            ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl).MaxLength = 500;
 
                             break;
                     }
                 }
-            }
-            // 明細部の状態(初期状態) をセット 
-            //To be Proceed. . . . 
-            //
+            } // PTK_M
             mGrid.g_MK_State = new ClsGridBase.ST_State_GridKihon[mGrid.g_MK_Ctl_Col, mGrid.g_MK_Max_Row];
             // データ保持用配列の宣言
             mGrid.g_DArray = new ClsGridHanbaiTankaTennic.ST_DArray_Grid[mGrid.g_MK_Max_Row];
@@ -279,7 +277,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     S_BodySeigyo(0, 0);
                     break;
             }
-            S_SetInit_Grid();
+            //S_SetInit_Grid();
             Clear(pnl_Body);
             btnDisplay.Enabled = true;
             F12Enable = true;
@@ -721,7 +719,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     SetMultiColNo(dt);
                     S_BodySeigyo(2, 2);
                     mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
-
+                    IMT_STADT_0.Focus();
                     return;
                 }
                 else
@@ -730,6 +728,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     SetMultiColNo(dt);
                     S_BodySeigyo(1, 1);
                     mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
+                    IMT_STADT_0.Focus();
                 }
             }
             else
@@ -740,7 +739,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
         }
         private void CustomEvent()
         {
-            Add(new Control[] { panel10_1, panel10_2, panel8, panel3, panel17, panel4, panel65, panel89, panel113, panel137 });
+        //    Add(new Control[] { panel10_1, panel10_2, panel8, panel3, panel17, panel4, panel65, panel89, panel113, panel137 });
             
         }
         private void Add(Control[] cont)
@@ -761,7 +760,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
         }
         private void Validated(object sender, EventArgs e)
         {
-            GridControl_Validated(sender,e);
+        //    GridControl_Validated(sender,e);
         }
         private void Ct_Leave(object sender, EventArgs e)
         {//IMT_GYONO_0
@@ -799,7 +798,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
             Control c = sender as Control;
             if (c is CKM_TextBox ct)
             {
-                if (ct.Name.Contains("IMT_STADT_"))
+                if (ct.Name.Contains("IMT_STADT_")) // Done
                 {
                     if (!bbl.CheckDate(ct.Text))
                     {
@@ -937,26 +936,318 @@ namespace WMasterTouroku_HanbaiTankaTennic
             try
             {
                 previousCtrl = this.ActiveControl;
-             //   PreViousColor = ActiveControl.BackColor;
                 int w_Row;
-                CKM_Controls.CKM_TextBox w_ActCtl;
+                Control w_ActCtl;
 
-                w_ActCtl = (CKM_Controls.CKM_TextBox)sender;
+                w_ActCtl = (Control)sender;
                 w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
+                w_ActCtl.BackColor = ClsGridHanbaiTankaTennic.BKColor;
+                if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int w_Col, out int w_CtlRow) == false)
+                {
+                    return;
+                }
 
-                // 背景色
-               // w_ActCtl.BackColor = ClsGridBase.BKColor;  ---PTK
+                Grid_Gotfocus(w_Col, w_Row, System.Convert.ToInt32(w_ActCtl.Tag));
 
-                Grid_Gotfocus((int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate, w_Row, System.Convert.ToInt32(w_ActCtl.Tag));
-
-              
-                //w_ActCtl.Name
             }
             catch (Exception ex)
             {
                 //エラー時共通処理
                 MessageBox.Show(ex.Message);
             }
+        }  //PTK_M
+        private void GridControl_Leave(object sender, EventArgs e)  // PTK_M
+        {
+            try
+            {
+                int w_Row;
+                Control w_ActCtl;
+
+                w_ActCtl = (Control)sender;
+                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
+              
+                if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int w_Col, out int w_CtlRow) == false)
+                {
+                    return;
+                }
+                // 背景色
+                w_ActCtl.BackColor = mGrid.F_GetBackColor_MK(w_Col, w_Row);
+             
+
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void GridControl_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                int w_Row;
+                Control w_ActCtl;
+
+                w_ActCtl = (Control)sender;
+                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
+
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+                {
+
+                    //どの項目か判別
+                    int CL = -1;
+                    string ctlName = "";
+                    if (w_ActCtl.Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                        ctlName = w_ActCtl.Parent.Name.Substring(0, w_ActCtl.Parent.Name.LastIndexOf("_"));
+                    else
+                        ctlName = w_ActCtl.Name.Substring(0, w_ActCtl.Name.LastIndexOf("_"));
+
+                    bool lastCell = false;
+
+                    switch (ctlName)
+                    {
+                        case "IMT_STADT":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate;
+                            break;
+                        case "IMT_ENDDT":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.EndChangeDate;
+                            break;
+                        case "IMN_UNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.UnitPrice;
+                            break;
+                        case "IMN_SSUNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.StandardSalesUnitPrice;
+                            break;
+                        case "IMN_R1UNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.Rank1UnitPrice;
+                            break;
+                        case "IMN_R2UNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.Rank2UnitPrice;
+                            break;
+                        case "IMN_R3UNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.Rank3UnitPrice;
+                            break;
+                        case "IMN_R4UNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.Rank4UnitPrice;
+                            break;
+                        case "IMN_R5UNITPRICE":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.Rank5UnitPrice;
+                            break;
+                        case "IMT_REMARK":
+                            CL = (int)ClsGridHanbaiTankaTennic.ColNO.Remarks;
+                            break;
+                    }
+                    if (CL == -1)
+                        return;
+                    mGrid.S_DispToArray(Vsb_Mei_0.Value);
+                    //チェック処理
+                    if (CheckGrid(CL, w_Row) == false)
+                    {
+                        if (w_ActCtl.GetType().Equals(typeof(CKM_Controls.CKM_ComboBox)))
+                        {
+                            ((CKM_Controls.CKM_ComboBox)w_ActCtl).MoveNext = false;
+                        }
+
+                        //配列の内容を画面へセット
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+                        // IMT_DMY_0.Focus();
+                        //Focusセット処理
+                        w_ActCtl.Focus();
+                        return;
+                    }
+
+                    if (lastCell)
+                    {
+                        w_ActCtl.Focus();
+                        return;
+                    }
+                    
+                    S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
+                }
+                else if (e.KeyCode == Keys.Tab)
+                {
+                    if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int CL, out int w_CtlRow) == false)
+                    {
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
+        private bool CheckGrid(int col, int row, bool chkAll = false, bool changeYmd = false, bool IsExec = false)  // PTK_M
+        {
+            bool ret = false;
+
+            string ymd = "";
+
+            if (string.IsNullOrWhiteSpace(ymd))
+                ymd = bbl.GetDate();
+
+            if (!chkAll && !changeYmd)  // check length
+            {
+                int w_CtlRow = row - Vsb_Mei_0.Value;
+                if (w_CtlRow < ClsGridHanbaiTankaTennic.gc_P_GYO)
+                    if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                    {
+                        if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
+                            return false;
+                    }
+            }
+            switch (col)
+            {
+                case (int)ClsGridHanbaiTankaTennic.ColNO.StartChangeDate:  // Hissu komoku
+                    if (mGrid.g_MK_State[col, row].Cell_Enabled)
+                    {
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].StartChangeDate))
+                        {
+                            bbl.ShowMessage("E102");
+                            return false;
+                        }
+                        else
+                        {
+                            if (!bbl.CheckDate(mGrid.g_DArray[row].StartChangeDate))
+                            {
+                                bbl.ShowMessage("E103");
+                                return false;
+                            }
+                            else {
+                                var SKUCD = mGrid.g_DArray[row].SKUCD; //this.Controls.Find("IMT_ITMCD_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
+                                M_SKUPrice_Entity mse = new M_SKUPrice_Entity
+                                {
+                                    SKUCD = SKUCD,
+                                    StartChangeDate = mGrid.g_DArray[row].StartChangeDate
+                                };
+                                DataTable dt = spb.M_SKUPrice_DataSelect(mse);
+                                if (dt.Rows.Count > 0)
+                                {
+                                    bbl.ShowMessage("E105");
+                                    return false;
+                                }
+                            }
+                        }
+                 
+                    }
+                    break;
+
+                case (int)ClsGridHanbaiTankaTennic.ColNO.EndChangeDate:  // Not hissu
+                    if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].EndChangeDate))
+                    {
+                        /// not requred field
+                    }
+                    else
+                    {
+                        if (!bbl.CheckDate(mGrid.g_DArray[row].EndChangeDate))
+                        {
+                            //Ｅ１０３
+                            bbl.ShowMessage("E103");
+                            return false;
+                        }
+                        else {
+                            var StartDate = mGrid.g_DArray[row].StartChangeDate; //this.Controls.Find("IMT_STADT_" + ct.Name.Split('_').Last(), true)[0] as CKM_TextBox;
+                            if (string.Compare(StartDate, mGrid.g_DArray[row].EndChangeDate) == 1)
+                            {
+                                bbl.ShowMessage("E104");
+                                return false;
+                            }
+                        }
+                    }
+                    break;
+                case (int)ClsGridHanbaiTankaTennic.ColNO.Remarks:
+                    break;
+            }
+            decimal Su = 0;
+            switch (col)
+            {
+                case (int)ClsGridHanbaiTankaTennic.ColNO.UnitPrice:
+                   Su = bbl.Z_Set(mGrid.g_DArray[row].UnitPrice);
+                    mGrid.g_DArray[row].UnitPrice = bbl.Z_SetStr(Su);
+                    if (!chkAll)
+                        if (Su.Equals(0))
+                        {
+                            if (bbl.ShowMessage("Q306") != DialogResult.Yes)
+                                return false;
+                        }
+                    break;
+                case (int)ClsGridHanbaiTankaTennic.ColNO.StandardSalesUnitPrice:
+                    Su = bbl.Z_Set(mGrid.g_DArray[row].StandardSalesUnitPrice);
+                    mGrid.g_DArray[row].StandardSalesUnitPrice = bbl.Z_SetStr(Su);
+                    if (!chkAll)
+                        if (Su.Equals(0))
+                        {
+                            if (bbl.ShowMessage("Q306") != DialogResult.Yes)
+                                return false;
+                        }
+                    break;
+                case (int)ClsGridHanbaiTankaTennic.ColNO.Rank1UnitPrice:
+                    Su = bbl.Z_Set(mGrid.g_DArray[row].Rank1UnitPrice);
+                    mGrid.g_DArray[row].Rank1UnitPrice = bbl.Z_SetStr(Su);
+                    if (!chkAll)
+                        if (Su.Equals(0))
+                        {
+                            if (bbl.ShowMessage("Q306") != DialogResult.Yes)
+                                return false;
+                        }
+                    break;
+                case (int)ClsGridHanbaiTankaTennic.ColNO.Rank2UnitPrice:
+                    Su = bbl.Z_Set(mGrid.g_DArray[row].Rank2UnitPrice);
+                    mGrid.g_DArray[row].Rank2UnitPrice = bbl.Z_SetStr(Su);
+                    if (!chkAll)
+                        if (Su.Equals(0))
+                        {
+                            if (bbl.ShowMessage("Q306") != DialogResult.Yes)
+                                return false;
+                        }
+                    break;
+                case (int)ClsGridHanbaiTankaTennic.ColNO.Rank3UnitPrice:
+                    Su = bbl.Z_Set(mGrid.g_DArray[row].Rank3UnitPrice);
+                    mGrid.g_DArray[row].Rank3UnitPrice = bbl.Z_SetStr(Su);
+                    if (!chkAll)
+                        if (Su.Equals(0))
+                        {
+                            if (bbl.ShowMessage("Q306") != DialogResult.Yes)
+                                return false;
+                        }
+                    break;
+                case (int)ClsGridHanbaiTankaTennic.ColNO.Rank4UnitPrice:
+                    Su = bbl.Z_Set(mGrid.g_DArray[row].Rank4UnitPrice);
+                    mGrid.g_DArray[row].Rank4UnitPrice = bbl.Z_SetStr(Su);
+                    if (!chkAll)
+                        if (Su.Equals(0))
+                        {
+                            if (bbl.ShowMessage("Q306") != DialogResult.Yes)
+                                return false;
+                        }
+                    break;
+                case (int)ClsGridHanbaiTankaTennic.ColNO.Rank5UnitPrice:
+                    Su = bbl.Z_Set(mGrid.g_DArray[row].Rank5UnitPrice);
+                    mGrid.g_DArray[row].Rank5UnitPrice = bbl.Z_SetStr(Su);
+                    if (!chkAll)
+                        if (Su.Equals(0))
+                        {
+                            if (bbl.ShowMessage("Q306") != DialogResult.Yes)
+                                return false;
+                        }
+                    break;
+
+            }
+            mGrid.S_DispToArray(Vsb_Mei_0.Value);
+            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+            return true;
+        }
+        private void S_Grid_0_Event_Enter(int pCol, int pRow, Control pErrSet, Control pMotoControl)
+        {
+            mGrid.F_MoveFocus((int)ClsGridHanbaiTankaTennic.Gen_MK_FocusMove.MvNxt, (int)ClsGridHanbaiTankaTennic.Gen_MK_FocusMove.MvNxt, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0);
         }
         private void S_SetControlArray()
         {
@@ -994,7 +1285,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.ItemName, 1].CellCtl = IMT_ITMNM_1;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.CostUnitPrice, 1].CellCtl = IMN_COSTUNPRICE_1;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Remarks, 1].CellCtl = IMT_REMARK_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Space1, 1].CellCtl = Space1;
+            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Space1, 1].CellCtl = Space0;
             //Control3
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.GYONO, 2].CellCtl = IMT_GYONO_2;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.SKUCD, 2].CellCtl = IMT_ITMCD_2;
@@ -1011,7 +1302,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.ItemName, 2].CellCtl = IMT_ITMNM_2;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.CostUnitPrice, 2].CellCtl = IMN_COSTUNPRICE_2;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Remarks, 2].CellCtl = IMT_REMARK_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Space1, 2].CellCtl = Space2;
+            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Space1, 2].CellCtl = Space1;
            
             //Control4
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.GYONO, 3].CellCtl = IMT_GYONO_3;
@@ -1029,7 +1320,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.ItemName, 3].CellCtl = IMT_ITMNM_3;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.CostUnitPrice, 3].CellCtl = IMN_COSTUNPRICE_3;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Remarks, 3].CellCtl = IMT_REMARK_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Space1, 3].CellCtl = Space3;
+            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Space1, 3].CellCtl = Space2;
             //Control5
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.GYONO, 4].CellCtl = IMT_GYONO_4;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.SKUCD, 4].CellCtl = IMT_ITMCD_4;
@@ -1046,7 +1337,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.ItemName, 4].CellCtl = IMT_ITMNM_4;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.CostUnitPrice, 4].CellCtl = IMN_COSTUNPRICE_4;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Remarks, 4].CellCtl = IMT_REMARK_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Space1, 4].CellCtl = Space4;
+            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Space1, 4].CellCtl = Space3;
             //Control6
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.GYONO, 5].CellCtl = IMT_GYONO_5;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.SKUCD, 5].CellCtl = IMT_ITMCD_5;
@@ -1063,7 +1354,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.ItemName, 5].CellCtl = IMT_ITMNM_5;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.CostUnitPrice, 5].CellCtl = IMN_COSTUNPRICE_5;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Remarks, 5].CellCtl = IMT_REMARK_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Space1, 5].CellCtl = Space5;
+            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Space1, 5].CellCtl = Space4;
             //Control7
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.GYONO, 6].CellCtl = IMT_GYONO_6;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.SKUCD, 6].CellCtl = IMT_ITMCD_6;
@@ -1080,7 +1371,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.ItemName, 6].CellCtl = IMT_ITMNM_6;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.CostUnitPrice, 6].CellCtl = IMN_COSTUNPRICE_6;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Remarks, 6].CellCtl = IMT_REMARK_6;
-            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Space1, 6].CellCtl = Space6;
+            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Space1, 6].CellCtl = Space5;
             //Control8
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.GYONO, 7].CellCtl = IMT_GYONO_7;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.SKUCD, 7].CellCtl = IMT_ITMCD_7;
@@ -1094,10 +1385,10 @@ namespace WMasterTouroku_HanbaiTankaTennic
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Rank3UnitPrice, 7].CellCtl = IMN_R3UNITPRICE_7;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Rank4UnitPrice, 7].CellCtl = IMN_R4UNITPRICE_7;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Rank5UnitPrice, 7].CellCtl = IMN_R5UNITPRICE_7;
-            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.ItemName, 7].CellCtl = IMT_ITMNM_7;
+            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.ItemName, 7].CellCtl = IMT_ITMNM_6;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.CostUnitPrice, 7].CellCtl = IMN_COSTUNPRICE_7;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Remarks, 7].CellCtl = IMT_REMARK_7;
-            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Space1, 7].CellCtl = Space7;
+            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Space1, 7].CellCtl = Space6;
             //Control9
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.GYONO, 8].CellCtl = IMT_GYONO_8;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.SKUCD, 8].CellCtl = IMT_ITMCD_8;
@@ -1114,7 +1405,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.ItemName, 8].CellCtl = IMT_ITMNM_8;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.CostUnitPrice, 8].CellCtl = IMN_COSTUNPRICE_8;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Remarks, 8].CellCtl = IMT_REMARK_8;
-            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Space1, 8].CellCtl = Space8;
+            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Space1, 8].CellCtl = Space7;
             //Control10
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.GYONO, 9].CellCtl = IMT_GYONO_9;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.SKUCD, 9].CellCtl = IMT_ITMCD_9;
@@ -1131,7 +1422,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.ItemName, 9].CellCtl = IMT_ITMNM_9;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.CostUnitPrice, 9].CellCtl = IMN_COSTUNPRICE_9;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Remarks, 9].CellCtl = IMT_REMARK_9;
-            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Space1, 9].CellCtl = Space9;
+            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Space1, 9].CellCtl = Space8;
         }
         //private void S_Grid_0_Event_MouseWheel(int pDelta)
         //{
@@ -1429,38 +1720,23 @@ namespace WMasterTouroku_HanbaiTankaTennic
 
         private void MasterTouroku_HanbaiTankaTennic_KeyUp(object sender, KeyEventArgs e)
         {
-            Control w_ActCtl= ActiveControl;
-            if (w_ActCtl is CKM_TextBox c )
+            if (ActiveControl is CKM_TextBox ct)
             {
-
-                if ((w_ActCtl as CKM_TextBox).Name == "IMT_REMARK_0")
+                //ckM_TextBox4
+                if (ct.Name.Contains("_"))
                 {
-                    c.MoveNext = false;
-
-                    if (e.KeyCode == (Keys.Enter | Keys.Tab))
-                        IMT_STADT_1.Focus();
-                }
-                else if ((w_ActCtl as CKM_TextBox).Name == "IMT_REMARK_1")
-                {
-                    if (e.KeyCode == (Keys.Enter | Keys.Tab))
-                        IMT_STADT_2.Focus();
+                    if (ct.Name == "ckM_TextBox4" || ct.Name == "ckM_TextBox5")
+                    {
+                        MoveNextControl(e);
+                    }
+                  
                 }
                 else
-                {
                     MoveNextControl(e);
-                }
             }
             else
-                 MoveNextControl(e);
-                //else
-                //{
-                //  //  var w_ActCtl = (CKM_TextBox)sender;
-                //    if (w_ActCtl.Name == "IMT_REMARK_0")
-                //    {
+                MoveNextControl(e);
 
-
-                //    }
-                //}
 
         }
 
