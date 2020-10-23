@@ -53,5 +53,7 @@ namespace Entity
         public string JoudaiTanka { get; set; }
         public string xml { get; set; }
 
+        public string StartDate { get; set; }
+
     }
 }

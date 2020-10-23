@@ -26,8 +26,6 @@ namespace DL
             return SelectData(dic, sp);
         }
 
-
-
         public DataTable M_Tenzikaishouhin_SelectForJancd(M_TenzikaiShouhin_Entity mt)
         {
             string sp = "M_Tenzikaishouhin_SelectForJancd";
@@ -43,7 +41,6 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
-
 
         public DataTable M_SKU_SelectForSKUCheck(M_SKU_Entity msku)
         {
@@ -67,10 +64,8 @@ namespace DL
                 { "@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.xml} },
                 { "@year", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.LastYearTerm} },
                 { "@season", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.LastSeason} },
-                { "@InsertOperator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.InsertOperator} },
-                { "@InsertDateTime", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.InsertDateTime } },
-                { "@UpdateOperator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.UpdateOperator } },
-                { "@UpdateDateTime", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.UpdateDateTime } },
+                { "@StartDate" , new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.ChangeDate} },
+                { "@OperatorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.InsertOperator} },
              
             };
             UseTransaction = true;
