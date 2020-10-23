@@ -1240,7 +1240,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     break;
 
             }
-            mGrid.S_DispToArray(Vsb_Mei_0.Value);
+      //      mGrid.S_DispToArray(Vsb_Mei_0.Value);
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
             return true;
