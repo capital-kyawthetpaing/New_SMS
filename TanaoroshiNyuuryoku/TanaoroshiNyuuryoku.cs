@@ -54,6 +54,19 @@ namespace TanaoroshiNyuuryoku
             COUNT
         }
 
+        private enum EcsvCol : int
+        {
+            RackNO,
+            JanCD,
+            Suryo,
+            SKUCD,
+            SKUName,
+            ColorName,
+            SizeName,
+            AdminNO,
+            InventoryNO,
+            COUNT
+        }
         private Control[] detailControls;
        
         private Tanaoroshi_BL tabl;
@@ -455,32 +468,23 @@ namespace TanaoroshiNyuuryoku
         {
             DataTable csvData = new DataTable();
             string rackNo = "";
-
+            string JANCD = "";
+            int Suryo;
+            bool IsSuryo = true;
             try
             {
                 using (TextFieldParser csvReader = new TextFieldParser(FileName, Encoding.GetEncoding(932), true))
                 {
                     csvReader.SetDelimiters(new string[] { "," });
                     csvReader.HasFieldsEnclosedInQuotes = true;
-                    //read column names
-                    string[] colFields = csvReader.ReadFields();
-                    int count = 1;
 
+                    string[] colFields = csvReader.ReadFields();
                     //CSVファイルの１行目はデータとする
-                    foreach (string column in colFields)
+                    for (int i = 0; i < (int)EcsvCol.COUNT; i++)
                     {
-                            if (!csvData.Columns.Contains(column))
-                            {
-                                DataColumn datacolumn = new DataColumn(column);
-                                datacolumn.AllowDBNull = true;
-                                csvData.Columns.Add(datacolumn);
-                            }
-                            else
-                            {
-                                DataColumn datacolumn = new DataColumn(column + "_" + count++);
-                                datacolumn.AllowDBNull = true;
-                                csvData.Columns.Add(datacolumn);
-                            }
+                        DataColumn datacolumn = new DataColumn("col" + i);
+                        datacolumn.AllowDBNull = true;
+                        csvData.Columns.Add(datacolumn);
                     }
 
                     while (!csvReader.EndOfData)
@@ -488,28 +492,45 @@ namespace TanaoroshiNyuuryoku
                         string[] fieldData = csvReader.ReadFields();
 
                         //CSVファイルの項目数チェック
-                        if (fieldData.Length != 3)
+                        if (fieldData.Length != 2)
                         {
                             bbl.ShowMessage("E137");
                             return false;
                         }
-                        if (!string.IsNullOrWhiteSpace(fieldData[0]))
-                            rackNo = fieldData[0];
 
+                        //1つめの項目が空白の場合、その行を無視する
+                        if (string.IsNullOrWhiteSpace(fieldData[0]))
+                            continue;
+
+                        rackNo = fieldData[0];
 
                         if (Encoding.GetEncoding(932).GetByteCount(rackNo) > 10 || Encoding.GetEncoding(932).GetByteCount(fieldData[1]) > 13)
                         {
                             bbl.ShowMessage("E137");
                             return false;
                         }
-                        //3つめの項目に数字以外の値が含まれる場合
-                        if(!bbl.IsInteger(fieldData[2]))
-                        {
-                            bbl.ShowMessage("E137");
-                            return false;
-                        }
 
-                        fieldData[0] = rackNo;
+                        if (Encoding.GetEncoding(932).GetByteCount(fieldData[1]) >= 11)
+                        {
+                            JANCD = fieldData[1];
+                            Suryo = 1;
+                            IsSuryo = false;
+                        }
+                        else
+                        {
+                            //2つめの項目に数字以外の値が含まれる場合
+                            if (!bbl.IsInteger(fieldData[1]))
+                            {
+                                bbl.ShowMessage("E137");
+                                return false;
+                            }
+                            Suryo = Convert.ToInt32(fieldData[1]);
+
+                            //数量のレコードが２行以上続いたら、２行目以降は無視する
+                            if (IsSuryo) continue;
+
+                            IsSuryo = true;
+                        }
 
                         //D_InventoryControlに存在しない場合、エラー
                         D_InventoryControl_Entity de = new D_InventoryControl_Entity();
@@ -525,7 +546,8 @@ namespace TanaoroshiNyuuryoku
                             return false;
                         }
 
-                        DataRow[] rows = dtFile.Select("RackNO = '" + rackNo + "' AND JANCD = '" + fieldData[1] + "'");
+                        DataRow selectRow = null;
+                        DataRow[] rows = dtFile.Select("RackNO = '" + rackNo + "' AND JANCD = '" + JANCD + "'");
                         if(rows.Length == 0)
                         {
                             string ymd = bbl.GetDate();
@@ -549,14 +571,13 @@ namespace TanaoroshiNyuuryoku
                             //[M_SKU]
                             M_SKU_Entity mse = new M_SKU_Entity
                             {
-                                JanCD = fieldData[1],
+                                JanCD = JANCD,
                                 SetKBN = "0",
                                 ChangeDate = ymd
                             };
 
                             SKU_BL mbl = new SKU_BL();
                             DataTable dt = mbl.M_SKU_SelectAll(mse);
-                            DataRow selectRow = null;
 
                             if (dt.Rows.Count == 0)
                             {
@@ -569,37 +590,67 @@ namespace TanaoroshiNyuuryoku
 
                             if (errFlg)
                             {
-                                bbl.ShowMessage("E267",rackNo, fieldData[1]);
+                                bbl.ShowMessage("E267",rackNo, JANCD);
                                 continue;
                             }
-                            else
-                            {
-                                //追加
-                                DataRow dataRow = dtFile.NewRow();
-                                dataRow["RackNO"] = rackNo;
-                                dataRow["JANCD"] = fieldData[1];
-                                dataRow["SKUCD"] = selectRow["SKUCD"].ToString();
-                                dataRow["AdminNO"] = selectRow["AdminNO"].ToString();
-                                dataRow["TheoreticalQuantity"] = 0;
-                                dataRow["ActualQuantity"] = bbl.Z_Set(fieldData[2]);
-                                dataRow["DifferenceQuantity"] = bbl.Z_Set(fieldData[2]);
-                                dataRow["InventoryNO"] = de.InventoryNO;
-                                dataRow["SKUName"] = selectRow["SKUName"].ToString();
-                                dataRow["ColorName"] = selectRow["ColorName"].ToString();
-                                dataRow["SizeName"] = selectRow["SizeName"].ToString();
+                        }
 
-                                dtFile.Rows.Add(dataRow);
+                        if (IsSuryo)
+                        {
+                            DataRow[] upRow = csvData.Select("col" + (int)EcsvCol.RackNO + "= '" + rackNo + "' AND col" + (int)EcsvCol.JanCD + "= '" + JANCD + "'");
+                            if (upRow.Length != 0)
+                            {
+                                upRow[upRow.Length - 1]["col" + (int)EcsvCol.Suryo] = Suryo;
+                                upRow[upRow.Length - 1]["col" + (int)EcsvCol.InventoryNO] = de.InventoryNO;
                             }
                         }
                         else
                         {
-                            //Update
-                            rows[0]["ActualQuantity"] = bbl.Z_Set(fieldData[2]);
-                            rows[0]["DifferenceQuantity"] = bbl.Z_Set(fieldData[2]);
-                        }
+                            DataRow rw = csvData.NewRow();
+                            rw["col" + (int)EcsvCol.RackNO] = rackNo;
+                            rw["col" + (int)EcsvCol.JanCD] = JANCD;
+                            rw["col" + (int)EcsvCol.Suryo] = Suryo;
 
-                        csvData.Rows.Add(fieldData);
-                        
+                            if (selectRow != null)
+                            {
+                                rw["col" + (int)EcsvCol.SKUCD] = selectRow["SKUCD"].ToString();
+                                rw["col" + (int)EcsvCol.AdminNO] = selectRow["AdminNO"].ToString();
+                                rw["col" + (int)EcsvCol.SKUName] = selectRow["SKUName"].ToString();
+                                rw["col" + (int)EcsvCol.ColorName] = selectRow["ColorName"].ToString();
+                                rw["col" + (int)EcsvCol.SizeName] = selectRow["SizeName"].ToString();
+                                rw["col" + (int)EcsvCol.InventoryNO] = de.InventoryNO;
+                            }
+                            csvData.Rows.Add(rw);
+                        }
+                    }   //While
+
+                    foreach (DataRow rw in csvData.Rows)
+                    {
+                        DataRow[] rows = dtFile.Select("RackNO = '" + rw["col" + (int)EcsvCol.RackNO] + "' AND JANCD = '" + rw["col" + (int)EcsvCol.JanCD] + "'");
+                        if (rows.Length == 0)
+                        {
+                            //追加
+                            DataRow dataRow = dtFile.NewRow();
+                            dataRow["RackNO"] = rw["col" + (int)EcsvCol.RackNO] ;
+                            dataRow["JANCD"] = rw["col" + (int)EcsvCol.JanCD] ;
+                            dataRow["SKUCD"] = rw["col" + (int)EcsvCol.SKUCD];
+                            dataRow["AdminNO"] = rw["col" + (int)EcsvCol.AdminNO];
+                            dataRow["TheoreticalQuantity"] = 0;
+                            dataRow["ActualQuantity"] = bbl.Z_Set(rw["col" + (int)EcsvCol.Suryo]);
+                            dataRow["DifferenceQuantity"] = bbl.Z_Set(rw["col" + (int)EcsvCol.Suryo]);
+                            dataRow["InventoryNO"] = rw["col" + (int)EcsvCol.InventoryNO];
+                            dataRow["SKUName"] = rw["col" + (int)EcsvCol.SKUName];
+                            dataRow["ColorName"] = rw["col" + (int)EcsvCol.ColorName];
+                            dataRow["SizeName"] = rw["col" + (int)EcsvCol.SizeName];
+
+                            dtFile.Rows.Add(dataRow);
+                        }
+                        else
+                        {
+                            //Update
+                            rows[0]["ActualQuantity"] = bbl.Z_Set(rows[0]["ActualQuantity"]) + bbl.Z_Set(rw["col" + (int)EcsvCol.Suryo]);
+                            rows[0]["DifferenceQuantity"] = bbl.Z_Set(rows[0]["DifferenceQuantity"]) + bbl.Z_Set(rw["col" + (int)EcsvCol.Suryo]);
+                        }
                     }
                 }
             }

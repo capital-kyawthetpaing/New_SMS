@@ -47,16 +47,6 @@
             this.BtnSubF11 = new CKM_Controls.CKM_Button();
             this.ckM_SearchControl1 = new Search.CKM_SearchControl();
             this.GvDetail = new CKM_Controls.CKM_GridView();
-            this.colOrderNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coIOrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colApprovalStageFLG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLastApprovalDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLastApprovalStaffName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColSizeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTheoreticalQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colActualQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDifferenceQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckM_Label4 = new CKM_Controls.CKM_Label();
             this.lblSizeName = new System.Windows.Forms.Label();
             this.SC_ITEM_0 = new Search.CKM_SearchControl();
@@ -70,6 +60,16 @@
             this.ckM_TextBox8 = new CKM_Controls.CKM_TextBox();
             this.ScFromRackNo = new Search.CKM_SearchControl();
             this.btnAdd = new CKM_Controls.CKM_Button();
+            this.colOrderNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coIOrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApprovalStageFLG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLastApprovalDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLastApprovalStaffName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColSizeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTheoreticalQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colActualQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDifferenceQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvDetail)).BeginInit();
@@ -337,109 +337,6 @@
             this.GvDetail.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvDetail_CellEndEdit);
             this.GvDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GvDetail_KeyDown);
             // 
-            // colOrderNO
-            // 
-            this.colOrderNO.DataPropertyName = "RackNO";
-            this.colOrderNO.HeaderText = "棚番";
-            this.colOrderNO.Name = "colOrderNO";
-            this.colOrderNO.ReadOnly = true;
-            this.colOrderNO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colOrderNO.Width = 80;
-            // 
-            // coIOrderDate
-            // 
-            this.coIOrderDate.DataPropertyName = "JANCD";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.coIOrderDate.DefaultCellStyle = dataGridViewCellStyle3;
-            this.coIOrderDate.HeaderText = "JANCD";
-            this.coIOrderDate.Name = "coIOrderDate";
-            this.coIOrderDate.ReadOnly = true;
-            this.coIOrderDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colApprovalStageFLG
-            // 
-            this.colApprovalStageFLG.DataPropertyName = "SKUCD";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colApprovalStageFLG.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colApprovalStageFLG.HeaderText = "SKUCD";
-            this.colApprovalStageFLG.Name = "colApprovalStageFLG";
-            this.colApprovalStageFLG.ReadOnly = true;
-            this.colApprovalStageFLG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colApprovalStageFLG.Width = 150;
-            // 
-            // colLastApprovalDate
-            // 
-            this.colLastApprovalDate.DataPropertyName = "SKUName";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colLastApprovalDate.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colLastApprovalDate.HeaderText = "商品名";
-            this.colLastApprovalDate.Name = "colLastApprovalDate";
-            this.colLastApprovalDate.ReadOnly = true;
-            this.colLastApprovalDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colLastApprovalDate.Width = 370;
-            // 
-            // colLastApprovalStaffName
-            // 
-            this.colLastApprovalStaffName.DataPropertyName = "ColorName";
-            this.colLastApprovalStaffName.HeaderText = "カラー";
-            this.colLastApprovalStaffName.Name = "colLastApprovalStaffName";
-            this.colLastApprovalStaffName.ReadOnly = true;
-            this.colLastApprovalStaffName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colLastApprovalStaffName.Width = 150;
-            // 
-            // ColSizeName
-            // 
-            this.ColSizeName.DataPropertyName = "SizeName";
-            this.ColSizeName.HeaderText = "サイズ";
-            this.ColSizeName.Name = "ColSizeName";
-            this.ColSizeName.ReadOnly = true;
-            this.ColSizeName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ColSizeName.Width = 150;
-            // 
-            // colTheoreticalQuantity
-            // 
-            this.colTheoreticalQuantity.DataPropertyName = "TheoreticalQuantity";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = null;
-            this.colTheoreticalQuantity.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colTheoreticalQuantity.HeaderText = "理論在庫";
-            this.colTheoreticalQuantity.Name = "colTheoreticalQuantity";
-            this.colTheoreticalQuantity.ReadOnly = true;
-            this.colTheoreticalQuantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colActualQuantity
-            // 
-            this.colActualQuantity.DataPropertyName = "ActualQuantity";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "N0";
-            dataGridViewCellStyle7.NullValue = null;
-            this.colActualQuantity.DefaultCellStyle = dataGridViewCellStyle7;
-            this.colActualQuantity.HeaderText = "実在庫";
-            this.colActualQuantity.Name = "colActualQuantity";
-            this.colActualQuantity.ReadOnly = true;
-            this.colActualQuantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colDifferenceQuantity
-            // 
-            this.colDifferenceQuantity.DataPropertyName = "DifferenceQuantity";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "N0";
-            dataGridViewCellStyle8.NullValue = null;
-            this.colDifferenceQuantity.DefaultCellStyle = dataGridViewCellStyle8;
-            this.colDifferenceQuantity.HeaderText = "差";
-            this.colDifferenceQuantity.Name = "colDifferenceQuantity";
-            this.colDifferenceQuantity.ReadOnly = true;
-            this.colDifferenceQuantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // AdminNO
-            // 
-            this.AdminNO.DataPropertyName = "AdminNO";
-            this.AdminNO.HeaderText = "AdminNO";
-            this.AdminNO.Name = "AdminNO";
-            this.AdminNO.ReadOnly = true;
-            this.AdminNO.Visible = false;
-            // 
             // ckM_Label4
             // 
             this.ckM_Label4.AutoSize = true;
@@ -679,6 +576,113 @@
             this.btnAdd.Text = "追加";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // colOrderNO
+            // 
+            this.colOrderNO.DataPropertyName = "RackNO";
+            this.colOrderNO.HeaderText = "棚番";
+            this.colOrderNO.Name = "colOrderNO";
+            this.colOrderNO.ReadOnly = true;
+            this.colOrderNO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colOrderNO.Width = 70;
+            // 
+            // coIOrderDate
+            // 
+            this.coIOrderDate.DataPropertyName = "JANCD";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.coIOrderDate.DefaultCellStyle = dataGridViewCellStyle3;
+            this.coIOrderDate.HeaderText = "JANCD";
+            this.coIOrderDate.Name = "coIOrderDate";
+            this.coIOrderDate.ReadOnly = true;
+            this.coIOrderDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.coIOrderDate.Width = 110;
+            // 
+            // colApprovalStageFLG
+            // 
+            this.colApprovalStageFLG.DataPropertyName = "SKUCD";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colApprovalStageFLG.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colApprovalStageFLG.HeaderText = "SKUCD";
+            this.colApprovalStageFLG.Name = "colApprovalStageFLG";
+            this.colApprovalStageFLG.ReadOnly = true;
+            this.colApprovalStageFLG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colApprovalStageFLG.Width = 160;
+            // 
+            // colLastApprovalDate
+            // 
+            this.colLastApprovalDate.DataPropertyName = "SKUName";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colLastApprovalDate.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colLastApprovalDate.HeaderText = "商品名";
+            this.colLastApprovalDate.Name = "colLastApprovalDate";
+            this.colLastApprovalDate.ReadOnly = true;
+            this.colLastApprovalDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colLastApprovalDate.Width = 380;
+            // 
+            // colLastApprovalStaffName
+            // 
+            this.colLastApprovalStaffName.DataPropertyName = "ColorName";
+            this.colLastApprovalStaffName.HeaderText = "カラー";
+            this.colLastApprovalStaffName.Name = "colLastApprovalStaffName";
+            this.colLastApprovalStaffName.ReadOnly = true;
+            this.colLastApprovalStaffName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colLastApprovalStaffName.Width = 150;
+            // 
+            // ColSizeName
+            // 
+            this.ColSizeName.DataPropertyName = "SizeName";
+            this.ColSizeName.HeaderText = "サイズ";
+            this.ColSizeName.Name = "ColSizeName";
+            this.ColSizeName.ReadOnly = true;
+            this.ColSizeName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ColSizeName.Width = 150;
+            // 
+            // colTheoreticalQuantity
+            // 
+            this.colTheoreticalQuantity.DataPropertyName = "TheoreticalQuantity";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = null;
+            this.colTheoreticalQuantity.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colTheoreticalQuantity.HeaderText = "理論在庫";
+            this.colTheoreticalQuantity.Name = "colTheoreticalQuantity";
+            this.colTheoreticalQuantity.ReadOnly = true;
+            this.colTheoreticalQuantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colTheoreticalQuantity.Width = 85;
+            // 
+            // colActualQuantity
+            // 
+            this.colActualQuantity.DataPropertyName = "ActualQuantity";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N0";
+            dataGridViewCellStyle7.NullValue = null;
+            this.colActualQuantity.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colActualQuantity.HeaderText = "実在庫";
+            this.colActualQuantity.Name = "colActualQuantity";
+            this.colActualQuantity.ReadOnly = true;
+            this.colActualQuantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colActualQuantity.Width = 85;
+            // 
+            // colDifferenceQuantity
+            // 
+            this.colDifferenceQuantity.DataPropertyName = "DifferenceQuantity";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N0";
+            dataGridViewCellStyle8.NullValue = null;
+            this.colDifferenceQuantity.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colDifferenceQuantity.HeaderText = "差";
+            this.colDifferenceQuantity.Name = "colDifferenceQuantity";
+            this.colDifferenceQuantity.ReadOnly = true;
+            this.colDifferenceQuantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colDifferenceQuantity.Width = 85;
+            // 
+            // AdminNO
+            // 
+            this.AdminNO.DataPropertyName = "AdminNO";
+            this.AdminNO.HeaderText = "AdminNO";
+            this.AdminNO.Name = "AdminNO";
+            this.AdminNO.ReadOnly = true;
+            this.AdminNO.Visible = false;
             // 
             // TanaoroshiNyuuryoku
             // 
