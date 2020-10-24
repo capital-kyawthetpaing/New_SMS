@@ -67,6 +67,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 SKUCDFrom.NameWidth = 0;
                 SKUCDTo.NameWidth = 0;
                 Clear(pnl_Body);
+                IMT_ITMNM_7.Text = "";
                 Scr_Clr(0);
               //  CustomEvent();
             }

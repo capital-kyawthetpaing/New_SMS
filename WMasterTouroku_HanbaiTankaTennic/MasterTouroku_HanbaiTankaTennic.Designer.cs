@@ -29,6 +29,29 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel10__2 = new System.Windows.Forms.Panel();
+            this.IMT_REMARK_1 = new CKM_Controls.CKM_TextBox();
+            this.IMN_COSTUNPRICE_1 = new System.Windows.Forms.Label();
+            this.IMT_ITMNM_1 = new System.Windows.Forms.Label();
+            this.IMT_JANCD_1 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_1 = new System.Windows.Forms.Label();
+            this.Space1 = new System.Windows.Forms.Label();
+            this.IMT_GYONO_1 = new System.Windows.Forms.Label();
+            this.IMN_R5UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R4UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R3UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R2UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
+            this.IMN_R1UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
+            this.IMN_SSUNITPRICE_1 = new CKM_Controls.CKM_TextBox();
+            this.IMN_UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
+            this.IMT_ENDDT_1 = new CKM_Controls.CKM_TextBox();
+            this.IMT_STADT_1 = new CKM_Controls.CKM_TextBox();
+            this.panel42 = new System.Windows.Forms.Panel();
+            this.panel43 = new System.Windows.Forms.Panel();
+            this.panel44 = new System.Windows.Forms.Panel();
+            this.panel45 = new System.Windows.Forms.Panel();
+            this.panel46 = new System.Windows.Forms.Panel();
+            this.pnl_Body = new System.Windows.Forms.Panel();
             this.pnl_Header = new System.Windows.Forms.Panel();
             this.SKUCDTo = new Search.CKM_SearchControl();
             this.btnDisplay = new CKM_Controls.CKM_Button();
@@ -52,6 +75,24 @@
             this.txtStartDateFrom = new CKM_Controls.CKM_TextBox();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtStartDateTo = new CKM_Controls.CKM_TextBox();
+            this.Vsb_Mei_0 = new System.Windows.Forms.VScrollBar();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblEDate = new System.Windows.Forms.Label();
+            this.lblSDate = new System.Windows.Forms.Label();
+            this.lblGridJanCD = new System.Windows.Forms.Label();
+            this.lblGridSkuCD = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.IMT_GYONO_9 = new System.Windows.Forms.Label();
             this.IMT_GYONO_8 = new System.Windows.Forms.Label();
             this.IMT_GYONO_7 = new System.Windows.Forms.Label();
@@ -60,6 +101,12 @@
             this.IMT_GYONO_4 = new System.Windows.Forms.Label();
             this.IMT_GYONO_3 = new System.Windows.Forms.Label();
             this.panel10_1 = new System.Windows.Forms.Panel();
+            this.IMT_REMARK_0 = new CKM_Controls.CKM_TextBox();
+            this.IMN_COSTUNPRICE_0 = new System.Windows.Forms.Label();
+            this.IMT_ITMNM_0 = new System.Windows.Forms.Label();
+            this.IMT_JANCD_0 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_0 = new System.Windows.Forms.Label();
+            this.Space0 = new System.Windows.Forms.Label();
             this.IMN_R5UNITPRICE_0 = new CKM_Controls.CKM_TextBox();
             this.IMN_R4UNITPRICE_0 = new CKM_Controls.CKM_TextBox();
             this.IMN_R3UNITPRICE_0 = new CKM_Controls.CKM_TextBox();
@@ -72,6 +119,11 @@
             this.IMT_GYONO_0 = new System.Windows.Forms.Label();
             this.IMT_GYONO_2 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.IMN_COSTUNPRICE_2 = new System.Windows.Forms.Label();
+            this.IMT_ITMNM_2 = new System.Windows.Forms.Label();
+            this.IMT_JANCD_2 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_2 = new System.Windows.Forms.Label();
+            this.Space2 = new System.Windows.Forms.Label();
             this.IMN_R5UNITPRICE_2 = new CKM_Controls.CKM_TextBox();
             this.IMN_R4UNITPRICE_2 = new CKM_Controls.CKM_TextBox();
             this.IMN_R3UNITPRICE_2 = new CKM_Controls.CKM_TextBox();
@@ -88,6 +140,11 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.IMN_COSTUNPRICE_3 = new System.Windows.Forms.Label();
+            this.IMT_ITMNM_3 = new System.Windows.Forms.Label();
+            this.IMT_JANCD_3 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_3 = new System.Windows.Forms.Label();
+            this.Space3 = new System.Windows.Forms.Label();
             this.IMN_R5UNITPRICE_3 = new CKM_Controls.CKM_TextBox();
             this.IMN_R4UNITPRICE_3 = new CKM_Controls.CKM_TextBox();
             this.IMN_R3UNITPRICE_3 = new CKM_Controls.CKM_TextBox();
@@ -99,6 +156,11 @@
             this.IMT_ENDDT_3 = new CKM_Controls.CKM_TextBox();
             this.IMT_STADT_3 = new CKM_Controls.CKM_TextBox();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.IMN_COSTUNPRICE_4 = new System.Windows.Forms.Label();
+            this.IMT_ITMNM_4 = new System.Windows.Forms.Label();
+            this.IMT_JANCD_4 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_4 = new System.Windows.Forms.Label();
+            this.Space4 = new System.Windows.Forms.Label();
             this.IMN_R5UNITPRICE_4 = new CKM_Controls.CKM_TextBox();
             this.IMN_R4UNITPRICE_4 = new CKM_Controls.CKM_TextBox();
             this.IMN_R3UNITPRICE_4 = new CKM_Controls.CKM_TextBox();
@@ -133,6 +195,11 @@
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.IMN_COSTUNPRICE_5 = new System.Windows.Forms.Label();
+            this.IMT_ITMNM_5 = new System.Windows.Forms.Label();
+            this.IMT_JANCD_5 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_5 = new System.Windows.Forms.Label();
+            this.Space5 = new System.Windows.Forms.Label();
             this.IMN_R5UNITPRICE_5 = new CKM_Controls.CKM_TextBox();
             this.IMN_R4UNITPRICE_5 = new CKM_Controls.CKM_TextBox();
             this.IMN_R3UNITPRICE_5 = new CKM_Controls.CKM_TextBox();
@@ -167,8 +234,16 @@
             this.panel63 = new System.Windows.Forms.Panel();
             this.panel64 = new System.Windows.Forms.Panel();
             this.panel65 = new System.Windows.Forms.Panel();
+            this.IMN_COSTUNPRICE_6 = new System.Windows.Forms.Label();
+            this.IMT_ITMNM_6 = new System.Windows.Forms.Label();
+            this.IMT_JANCD_6 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_6 = new System.Windows.Forms.Label();
+            this.Space6 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.IMN_R5UNITPRICE_6 = new CKM_Controls.CKM_TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.IMN_R4UNITPRICE_6 = new CKM_Controls.CKM_TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.IMN_R3UNITPRICE_6 = new CKM_Controls.CKM_TextBox();
             this.IMN_R2UNITPRICE_6 = new CKM_Controls.CKM_TextBox();
             this.IMT_REMARK_6 = new CKM_Controls.CKM_TextBox();
@@ -201,6 +276,11 @@
             this.panel87 = new System.Windows.Forms.Panel();
             this.panel88 = new System.Windows.Forms.Panel();
             this.panel89 = new System.Windows.Forms.Panel();
+            this.IMN_COSTUNPRICE_7 = new System.Windows.Forms.Label();
+            this.IMT_ITMNM_7 = new System.Windows.Forms.Label();
+            this.IMT_JANCD_7 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_7 = new System.Windows.Forms.Label();
+            this.Space7 = new System.Windows.Forms.Label();
             this.IMN_R5UNITPRICE_7 = new CKM_Controls.CKM_TextBox();
             this.IMN_R4UNITPRICE_7 = new CKM_Controls.CKM_TextBox();
             this.IMN_R3UNITPRICE_7 = new CKM_Controls.CKM_TextBox();
@@ -235,6 +315,11 @@
             this.panel111 = new System.Windows.Forms.Panel();
             this.panel112 = new System.Windows.Forms.Panel();
             this.panel113 = new System.Windows.Forms.Panel();
+            this.IMN_COSTUNPRICE_8 = new System.Windows.Forms.Label();
+            this.IMT_ITMNM_8 = new System.Windows.Forms.Label();
+            this.IMT_JANCD_8 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_8 = new System.Windows.Forms.Label();
+            this.Space8 = new System.Windows.Forms.Label();
             this.IMN_R5UNITPRICE_8 = new CKM_Controls.CKM_TextBox();
             this.IMN_R4UNITPRICE_8 = new CKM_Controls.CKM_TextBox();
             this.IMN_R3UNITPRICE_8 = new CKM_Controls.CKM_TextBox();
@@ -269,6 +354,11 @@
             this.panel135 = new System.Windows.Forms.Panel();
             this.panel136 = new System.Windows.Forms.Panel();
             this.panel137 = new System.Windows.Forms.Panel();
+            this.IMN_COSTUNPRICE_9 = new System.Windows.Forms.Label();
+            this.IMT_ITMNM_9 = new System.Windows.Forms.Label();
+            this.IMT_JANCD_9 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_9 = new System.Windows.Forms.Label();
+            this.Space9 = new System.Windows.Forms.Label();
             this.IMN_R5UNITPRICE_9 = new CKM_Controls.CKM_TextBox();
             this.IMN_R4UNITPRICE_9 = new CKM_Controls.CKM_TextBox();
             this.IMN_R3UNITPRICE_9 = new CKM_Controls.CKM_TextBox();
@@ -302,98 +392,11 @@
             this.panel158 = new System.Windows.Forms.Panel();
             this.panel159 = new System.Windows.Forms.Panel();
             this.panel160 = new System.Windows.Forms.Panel();
-            this.Space0 = new System.Windows.Forms.Label();
-            this.Space2 = new System.Windows.Forms.Label();
-            this.Space3 = new System.Windows.Forms.Label();
-            this.Space4 = new System.Windows.Forms.Label();
-            this.Space5 = new System.Windows.Forms.Label();
-            this.Space6 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.Space7 = new System.Windows.Forms.Label();
-            this.Space8 = new System.Windows.Forms.Label();
-            this.Space9 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblGridSkuCD = new System.Windows.Forms.Label();
-            this.lblGridJanCD = new System.Windows.Forms.Label();
-            this.lblSDate = new System.Windows.Forms.Label();
-            this.lblEDate = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.Vsb_Mei_0 = new System.Windows.Forms.VScrollBar();
-            this.pnl_Body = new System.Windows.Forms.Panel();
-            this.IMT_ITMCD_0 = new System.Windows.Forms.Label();
-            this.IMT_JANCD_0 = new System.Windows.Forms.Label();
-            this.IMT_ITMNM_0 = new System.Windows.Forms.Label();
-            this.IMN_COSTUNPRICE_0 = new System.Windows.Forms.Label();
-            this.IMN_COSTUNPRICE_2 = new System.Windows.Forms.Label();
-            this.IMT_ITMNM_2 = new System.Windows.Forms.Label();
-            this.IMT_JANCD_2 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_2 = new System.Windows.Forms.Label();
-            this.IMN_COSTUNPRICE_3 = new System.Windows.Forms.Label();
-            this.IMT_ITMNM_3 = new System.Windows.Forms.Label();
-            this.IMT_JANCD_3 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_3 = new System.Windows.Forms.Label();
-            this.IMN_COSTUNPRICE_4 = new System.Windows.Forms.Label();
-            this.IMT_ITMNM_4 = new System.Windows.Forms.Label();
-            this.IMT_JANCD_4 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_4 = new System.Windows.Forms.Label();
-            this.IMN_COSTUNPRICE_5 = new System.Windows.Forms.Label();
-            this.IMT_ITMNM_5 = new System.Windows.Forms.Label();
-            this.IMT_JANCD_5 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_5 = new System.Windows.Forms.Label();
-            this.IMN_COSTUNPRICE_6 = new System.Windows.Forms.Label();
-            this.IMT_ITMNM_6 = new System.Windows.Forms.Label();
-            this.IMT_JANCD_6 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_6 = new System.Windows.Forms.Label();
-            this.IMN_COSTUNPRICE_7 = new System.Windows.Forms.Label();
-            this.IMT_ITMNM_7 = new System.Windows.Forms.Label();
-            this.IMT_JANCD_7 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_7 = new System.Windows.Forms.Label();
-            this.IMN_COSTUNPRICE_8 = new System.Windows.Forms.Label();
-            this.IMT_ITMNM_8 = new System.Windows.Forms.Label();
-            this.IMT_JANCD_8 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_8 = new System.Windows.Forms.Label();
-            this.IMN_COSTUNPRICE_9 = new System.Windows.Forms.Label();
-            this.IMT_ITMNM_9 = new System.Windows.Forms.Label();
-            this.IMT_JANCD_9 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_9 = new System.Windows.Forms.Label();
-            this.panel46 = new System.Windows.Forms.Panel();
-            this.panel45 = new System.Windows.Forms.Panel();
-            this.panel42 = new System.Windows.Forms.Panel();
-            this.panel44 = new System.Windows.Forms.Panel();
-            this.panel43 = new System.Windows.Forms.Panel();
-            this.panel10__2 = new System.Windows.Forms.Panel();
-            this.IMN_COSTUNPRICE_1 = new System.Windows.Forms.Label();
-            this.IMT_ITMNM_1 = new System.Windows.Forms.Label();
-            this.IMT_JANCD_1 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_1 = new System.Windows.Forms.Label();
-            this.Space1 = new System.Windows.Forms.Label();
-            this.IMT_GYONO_1 = new System.Windows.Forms.Label();
-            this.IMN_R5UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R4UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R3UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R2UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
-            this.IMN_R1UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
-            this.IMN_SSUNITPRICE_1 = new CKM_Controls.CKM_TextBox();
-            this.IMN_UNITPRICE_1 = new CKM_Controls.CKM_TextBox();
-            this.IMT_ENDDT_1 = new CKM_Controls.CKM_TextBox();
-            this.IMT_STADT_1 = new CKM_Controls.CKM_TextBox();
-            this.IMT_REMARK_1 = new CKM_Controls.CKM_TextBox();
-            this.IMT_REMARK_0 = new CKM_Controls.CKM_TextBox();
             this.panel1.SuspendLayout();
+            this.panel10__2.SuspendLayout();
+            this.panel42.SuspendLayout();
             this.pnl_Header.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel10_1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -446,9 +449,6 @@
             this.panel150.SuspendLayout();
             this.panel151.SuspendLayout();
             this.panel156.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel42.SuspendLayout();
-            this.panel10__2.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -470,10 +470,452 @@
             this.panel1.Controls.Add(this.pnl_Header);
             this.panel1.Controls.Add(this.Vsb_Mei_0);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(5, 70);
+            this.panel1.Location = new System.Drawing.Point(5, 67);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1410, 600);
+            this.panel1.Size = new System.Drawing.Size(1410, 610);
             this.panel1.TabIndex = 100;
+            // 
+            // panel10__2
+            // 
+            this.panel10__2.Controls.Add(this.IMT_REMARK_1);
+            this.panel10__2.Controls.Add(this.IMN_COSTUNPRICE_1);
+            this.panel10__2.Controls.Add(this.IMT_ITMNM_1);
+            this.panel10__2.Controls.Add(this.IMT_JANCD_1);
+            this.panel10__2.Controls.Add(this.IMT_ITMCD_1);
+            this.panel10__2.Controls.Add(this.Space1);
+            this.panel10__2.Controls.Add(this.IMT_GYONO_1);
+            this.panel10__2.Controls.Add(this.IMN_R5UNITPRICE_1);
+            this.panel10__2.Controls.Add(this.IMN_R4UNITPRICE_1);
+            this.panel10__2.Controls.Add(this.IMN_R3UNITPRICE_1);
+            this.panel10__2.Controls.Add(this.IMN_R2UNITPRICE_1);
+            this.panel10__2.Controls.Add(this.IMN_R1UNITPRICE_1);
+            this.panel10__2.Controls.Add(this.IMN_SSUNITPRICE_1);
+            this.panel10__2.Controls.Add(this.IMN_UNITPRICE_1);
+            this.panel10__2.Controls.Add(this.IMT_ENDDT_1);
+            this.panel10__2.Controls.Add(this.IMT_STADT_1);
+            this.panel10__2.Controls.Add(this.panel42);
+            this.panel10__2.Controls.Add(this.panel45);
+            this.panel10__2.Controls.Add(this.panel46);
+            this.panel10__2.Location = new System.Drawing.Point(14, 198);
+            this.panel10__2.Name = "panel10__2";
+            this.panel10__2.Size = new System.Drawing.Size(1317, 38);
+            this.panel10__2.TabIndex = 0;
+            // 
+            // IMT_REMARK_1
+            // 
+            this.IMT_REMARK_1.AllowMinus = false;
+            this.IMT_REMARK_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_REMARK_1.BackColor = System.Drawing.Color.White;
+            this.IMT_REMARK_1.BorderColor = false;
+            this.IMT_REMARK_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_REMARK_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMT_REMARK_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMT_REMARK_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_REMARK_1.DecimalPlace = 0;
+            this.IMT_REMARK_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMARK_1.IntegerPart = 0;
+            this.IMT_REMARK_1.IsCorrectDate = true;
+            this.IMT_REMARK_1.isEnterKeyDown = false;
+            this.IMT_REMARK_1.IsFirstTime = true;
+            this.IMT_REMARK_1.isMaxLengthErr = false;
+            this.IMT_REMARK_1.IsNumber = true;
+            this.IMT_REMARK_1.IsShop = false;
+            this.IMT_REMARK_1.Length = 32767;
+            this.IMT_REMARK_1.Location = new System.Drawing.Point(686, 19);
+            this.IMT_REMARK_1.MoveNext = true;
+            this.IMT_REMARK_1.Name = "IMT_REMARK_1";
+            this.IMT_REMARK_1.Size = new System.Drawing.Size(630, 19);
+            this.IMT_REMARK_1.TabIndex = 203;
+            this.IMT_REMARK_1.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50ＸＸＸＸＸＸＸＸＸ60";
+            this.IMT_REMARK_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_REMARK_1.UseColorSizMode = false;
+            // 
+            // IMN_COSTUNPRICE_1
+            // 
+            this.IMN_COSTUNPRICE_1.BackColor = System.Drawing.Color.DarkGray;
+            this.IMN_COSTUNPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_COSTUNPRICE_1.Location = new System.Drawing.Point(603, 19);
+            this.IMN_COSTUNPRICE_1.Name = "IMN_COSTUNPRICE_1";
+            this.IMN_COSTUNPRICE_1.Size = new System.Drawing.Size(83, 19);
+            this.IMN_COSTUNPRICE_1.TabIndex = 202;
+            this.IMN_COSTUNPRICE_1.Text = "-999,999,999";
+            this.IMN_COSTUNPRICE_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMNM_1
+            // 
+            this.IMT_ITMNM_1.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMNM_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMNM_1.Location = new System.Drawing.Point(28, 19);
+            this.IMT_ITMNM_1.Name = "IMT_ITMNM_1";
+            this.IMT_ITMNM_1.Size = new System.Drawing.Size(575, 20);
+            this.IMT_ITMNM_1.TabIndex = 199;
+            this.IMT_ITMNM_1.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
+            this.IMT_ITMNM_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_JANCD_1
+            // 
+            this.IMT_JANCD_1.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_JANCD_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_JANCD_1.Location = new System.Drawing.Point(250, 0);
+            this.IMT_JANCD_1.Name = "IMT_JANCD_1";
+            this.IMT_JANCD_1.Size = new System.Drawing.Size(104, 20);
+            this.IMT_JANCD_1.TabIndex = 200;
+            this.IMT_JANCD_1.Text = "0123456789123";
+            this.IMT_JANCD_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_1
+            // 
+            this.IMT_ITMCD_1.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_1.Location = new System.Drawing.Point(28, 0);
+            this.IMT_ITMCD_1.Name = "IMT_ITMCD_1";
+            this.IMT_ITMCD_1.Size = new System.Drawing.Size(222, 20);
+            this.IMT_ITMCD_1.TabIndex = 201;
+            this.IMT_ITMCD_1.Text = "012345678901234567890123456789";
+            this.IMT_ITMCD_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Space1
+            // 
+            this.Space1.BackColor = System.Drawing.Color.DarkGray;
+            this.Space1.Location = new System.Drawing.Point(1136, 0);
+            this.Space1.Name = "Space1";
+            this.Space1.Size = new System.Drawing.Size(180, 19);
+            this.Space1.TabIndex = 198;
+            // 
+            // IMT_GYONO_1
+            // 
+            this.IMT_GYONO_1.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_GYONO_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_GYONO_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IMT_GYONO_1.Location = new System.Drawing.Point(0, 0);
+            this.IMT_GYONO_1.Name = "IMT_GYONO_1";
+            this.IMT_GYONO_1.Size = new System.Drawing.Size(28, 38);
+            this.IMT_GYONO_1.TabIndex = 197;
+            this.IMT_GYONO_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // IMN_R5UNITPRICE_1
+            // 
+            this.IMN_R5UNITPRICE_1.AllowMinus = false;
+            this.IMN_R5UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMN_R5UNITPRICE_1.BackColor = System.Drawing.Color.White;
+            this.IMN_R5UNITPRICE_1.BorderColor = false;
+            this.IMN_R5UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_R5UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMN_R5UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMN_R5UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
+            this.IMN_R5UNITPRICE_1.DecimalPlace = 0;
+            this.IMN_R5UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_R5UNITPRICE_1.IntegerPart = 9;
+            this.IMN_R5UNITPRICE_1.IsCorrectDate = true;
+            this.IMN_R5UNITPRICE_1.isEnterKeyDown = false;
+            this.IMN_R5UNITPRICE_1.IsFirstTime = true;
+            this.IMN_R5UNITPRICE_1.isMaxLengthErr = false;
+            this.IMN_R5UNITPRICE_1.IsNumber = true;
+            this.IMN_R5UNITPRICE_1.IsShop = false;
+            this.IMN_R5UNITPRICE_1.Length = 20;
+            this.IMN_R5UNITPRICE_1.Location = new System.Drawing.Point(1046, 0);
+            this.IMN_R5UNITPRICE_1.MaxLength = 20;
+            this.IMN_R5UNITPRICE_1.MoveNext = true;
+            this.IMN_R5UNITPRICE_1.Name = "IMN_R5UNITPRICE_1";
+            this.IMN_R5UNITPRICE_1.Size = new System.Drawing.Size(90, 19);
+            this.IMN_R5UNITPRICE_1.TabIndex = 196;
+            this.IMN_R5UNITPRICE_1.Text = "999,999,999";
+            this.IMN_R5UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.IMN_R5UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R5UNITPRICE_1.UseColorSizMode = false;
+            // 
+            // IMN_R4UNITPRICE_1
+            // 
+            this.IMN_R4UNITPRICE_1.AllowMinus = false;
+            this.IMN_R4UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMN_R4UNITPRICE_1.BackColor = System.Drawing.Color.White;
+            this.IMN_R4UNITPRICE_1.BorderColor = false;
+            this.IMN_R4UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_R4UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMN_R4UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMN_R4UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
+            this.IMN_R4UNITPRICE_1.DecimalPlace = 0;
+            this.IMN_R4UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_R4UNITPRICE_1.IntegerPart = 9;
+            this.IMN_R4UNITPRICE_1.IsCorrectDate = true;
+            this.IMN_R4UNITPRICE_1.isEnterKeyDown = false;
+            this.IMN_R4UNITPRICE_1.IsFirstTime = true;
+            this.IMN_R4UNITPRICE_1.isMaxLengthErr = false;
+            this.IMN_R4UNITPRICE_1.IsNumber = true;
+            this.IMN_R4UNITPRICE_1.IsShop = false;
+            this.IMN_R4UNITPRICE_1.Length = 20;
+            this.IMN_R4UNITPRICE_1.Location = new System.Drawing.Point(956, 0);
+            this.IMN_R4UNITPRICE_1.MaxLength = 20;
+            this.IMN_R4UNITPRICE_1.MoveNext = true;
+            this.IMN_R4UNITPRICE_1.Name = "IMN_R4UNITPRICE_1";
+            this.IMN_R4UNITPRICE_1.Size = new System.Drawing.Size(90, 19);
+            this.IMN_R4UNITPRICE_1.TabIndex = 195;
+            this.IMN_R4UNITPRICE_1.Text = "999,999,999";
+            this.IMN_R4UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.IMN_R4UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R4UNITPRICE_1.UseColorSizMode = false;
+            // 
+            // IMN_R3UNITPRICE_1
+            // 
+            this.IMN_R3UNITPRICE_1.AllowMinus = false;
+            this.IMN_R3UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMN_R3UNITPRICE_1.BackColor = System.Drawing.Color.White;
+            this.IMN_R3UNITPRICE_1.BorderColor = false;
+            this.IMN_R3UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_R3UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMN_R3UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMN_R3UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
+            this.IMN_R3UNITPRICE_1.DecimalPlace = 0;
+            this.IMN_R3UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_R3UNITPRICE_1.IntegerPart = 9;
+            this.IMN_R3UNITPRICE_1.IsCorrectDate = true;
+            this.IMN_R3UNITPRICE_1.isEnterKeyDown = false;
+            this.IMN_R3UNITPRICE_1.IsFirstTime = true;
+            this.IMN_R3UNITPRICE_1.isMaxLengthErr = false;
+            this.IMN_R3UNITPRICE_1.IsNumber = true;
+            this.IMN_R3UNITPRICE_1.IsShop = false;
+            this.IMN_R3UNITPRICE_1.Length = 20;
+            this.IMN_R3UNITPRICE_1.Location = new System.Drawing.Point(866, 0);
+            this.IMN_R3UNITPRICE_1.MaxLength = 20;
+            this.IMN_R3UNITPRICE_1.MoveNext = true;
+            this.IMN_R3UNITPRICE_1.Name = "IMN_R3UNITPRICE_1";
+            this.IMN_R3UNITPRICE_1.Size = new System.Drawing.Size(90, 19);
+            this.IMN_R3UNITPRICE_1.TabIndex = 194;
+            this.IMN_R3UNITPRICE_1.Text = "999,999,999";
+            this.IMN_R3UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.IMN_R3UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R3UNITPRICE_1.UseColorSizMode = false;
+            // 
+            // IMN_R2UNITPRICE_1
+            // 
+            this.IMN_R2UNITPRICE_1.AllowMinus = false;
+            this.IMN_R2UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMN_R2UNITPRICE_1.BackColor = System.Drawing.Color.White;
+            this.IMN_R2UNITPRICE_1.BorderColor = false;
+            this.IMN_R2UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_R2UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMN_R2UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMN_R2UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
+            this.IMN_R2UNITPRICE_1.DecimalPlace = 0;
+            this.IMN_R2UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_R2UNITPRICE_1.IntegerPart = 9;
+            this.IMN_R2UNITPRICE_1.IsCorrectDate = true;
+            this.IMN_R2UNITPRICE_1.isEnterKeyDown = false;
+            this.IMN_R2UNITPRICE_1.IsFirstTime = true;
+            this.IMN_R2UNITPRICE_1.isMaxLengthErr = false;
+            this.IMN_R2UNITPRICE_1.IsNumber = true;
+            this.IMN_R2UNITPRICE_1.IsShop = false;
+            this.IMN_R2UNITPRICE_1.Length = 20;
+            this.IMN_R2UNITPRICE_1.Location = new System.Drawing.Point(776, 0);
+            this.IMN_R2UNITPRICE_1.MaxLength = 20;
+            this.IMN_R2UNITPRICE_1.MoveNext = true;
+            this.IMN_R2UNITPRICE_1.Name = "IMN_R2UNITPRICE_1";
+            this.IMN_R2UNITPRICE_1.Size = new System.Drawing.Size(90, 19);
+            this.IMN_R2UNITPRICE_1.TabIndex = 193;
+            this.IMN_R2UNITPRICE_1.Text = "999,999,999";
+            this.IMN_R2UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.IMN_R2UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R2UNITPRICE_1.UseColorSizMode = false;
+            // 
+            // IMN_R1UNITPRICE_1
+            // 
+            this.IMN_R1UNITPRICE_1.AllowMinus = false;
+            this.IMN_R1UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMN_R1UNITPRICE_1.BackColor = System.Drawing.Color.White;
+            this.IMN_R1UNITPRICE_1.BorderColor = false;
+            this.IMN_R1UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_R1UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMN_R1UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMN_R1UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
+            this.IMN_R1UNITPRICE_1.DecimalPlace = 0;
+            this.IMN_R1UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_R1UNITPRICE_1.IntegerPart = 9;
+            this.IMN_R1UNITPRICE_1.IsCorrectDate = true;
+            this.IMN_R1UNITPRICE_1.isEnterKeyDown = false;
+            this.IMN_R1UNITPRICE_1.IsFirstTime = true;
+            this.IMN_R1UNITPRICE_1.isMaxLengthErr = false;
+            this.IMN_R1UNITPRICE_1.IsNumber = true;
+            this.IMN_R1UNITPRICE_1.IsShop = false;
+            this.IMN_R1UNITPRICE_1.Length = 20;
+            this.IMN_R1UNITPRICE_1.Location = new System.Drawing.Point(686, 0);
+            this.IMN_R1UNITPRICE_1.MaxLength = 20;
+            this.IMN_R1UNITPRICE_1.MoveNext = true;
+            this.IMN_R1UNITPRICE_1.Name = "IMN_R1UNITPRICE_1";
+            this.IMN_R1UNITPRICE_1.Size = new System.Drawing.Size(90, 19);
+            this.IMN_R1UNITPRICE_1.TabIndex = 192;
+            this.IMN_R1UNITPRICE_1.Text = "999,999,999";
+            this.IMN_R1UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.IMN_R1UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_R1UNITPRICE_1.UseColorSizMode = false;
+            // 
+            // IMN_SSUNITPRICE_1
+            // 
+            this.IMN_SSUNITPRICE_1.AllowMinus = false;
+            this.IMN_SSUNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMN_SSUNITPRICE_1.BackColor = System.Drawing.Color.White;
+            this.IMN_SSUNITPRICE_1.BorderColor = false;
+            this.IMN_SSUNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SSUNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMN_SSUNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMN_SSUNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
+            this.IMN_SSUNITPRICE_1.DecimalPlace = 0;
+            this.IMN_SSUNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SSUNITPRICE_1.IntegerPart = 9;
+            this.IMN_SSUNITPRICE_1.IsCorrectDate = true;
+            this.IMN_SSUNITPRICE_1.isEnterKeyDown = false;
+            this.IMN_SSUNITPRICE_1.IsFirstTime = true;
+            this.IMN_SSUNITPRICE_1.isMaxLengthErr = false;
+            this.IMN_SSUNITPRICE_1.IsNumber = true;
+            this.IMN_SSUNITPRICE_1.IsShop = false;
+            this.IMN_SSUNITPRICE_1.Length = 20;
+            this.IMN_SSUNITPRICE_1.Location = new System.Drawing.Point(603, 0);
+            this.IMN_SSUNITPRICE_1.MaxLength = 20;
+            this.IMN_SSUNITPRICE_1.MoveNext = true;
+            this.IMN_SSUNITPRICE_1.Name = "IMN_SSUNITPRICE_1";
+            this.IMN_SSUNITPRICE_1.Size = new System.Drawing.Size(83, 19);
+            this.IMN_SSUNITPRICE_1.TabIndex = 191;
+            this.IMN_SSUNITPRICE_1.Text = "999,999,999";
+            this.IMN_SSUNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.IMN_SSUNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_SSUNITPRICE_1.UseColorSizMode = false;
+            // 
+            // IMN_UNITPRICE_1
+            // 
+            this.IMN_UNITPRICE_1.AllowMinus = false;
+            this.IMN_UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMN_UNITPRICE_1.BackColor = System.Drawing.Color.White;
+            this.IMN_UNITPRICE_1.BorderColor = false;
+            this.IMN_UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMN_UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMN_UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
+            this.IMN_UNITPRICE_1.DecimalPlace = 0;
+            this.IMN_UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_UNITPRICE_1.IntegerPart = 9;
+            this.IMN_UNITPRICE_1.IsCorrectDate = true;
+            this.IMN_UNITPRICE_1.isEnterKeyDown = false;
+            this.IMN_UNITPRICE_1.IsFirstTime = true;
+            this.IMN_UNITPRICE_1.isMaxLengthErr = false;
+            this.IMN_UNITPRICE_1.IsNumber = true;
+            this.IMN_UNITPRICE_1.IsShop = false;
+            this.IMN_UNITPRICE_1.Length = 20;
+            this.IMN_UNITPRICE_1.Location = new System.Drawing.Point(520, 0);
+            this.IMN_UNITPRICE_1.MaxLength = 20;
+            this.IMN_UNITPRICE_1.MoveNext = true;
+            this.IMN_UNITPRICE_1.Name = "IMN_UNITPRICE_1";
+            this.IMN_UNITPRICE_1.Size = new System.Drawing.Size(83, 19);
+            this.IMN_UNITPRICE_1.TabIndex = 190;
+            this.IMN_UNITPRICE_1.Text = "999,999,999";
+            this.IMN_UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.IMN_UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMN_UNITPRICE_1.UseColorSizMode = false;
+            // 
+            // IMT_ENDDT_1
+            // 
+            this.IMT_ENDDT_1.AllowMinus = false;
+            this.IMT_ENDDT_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_ENDDT_1.BackColor = System.Drawing.Color.White;
+            this.IMT_ENDDT_1.BorderColor = false;
+            this.IMT_ENDDT_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ENDDT_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMT_ENDDT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMT_ENDDT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
+            this.IMT_ENDDT_1.DecimalPlace = 0;
+            this.IMT_ENDDT_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ENDDT_1.IntegerPart = 0;
+            this.IMT_ENDDT_1.IsCorrectDate = true;
+            this.IMT_ENDDT_1.isEnterKeyDown = false;
+            this.IMT_ENDDT_1.IsFirstTime = true;
+            this.IMT_ENDDT_1.isMaxLengthErr = false;
+            this.IMT_ENDDT_1.IsNumber = true;
+            this.IMT_ENDDT_1.IsShop = false;
+            this.IMT_ENDDT_1.Length = 10;
+            this.IMT_ENDDT_1.Location = new System.Drawing.Point(437, 0);
+            this.IMT_ENDDT_1.MaxLength = 10;
+            this.IMT_ENDDT_1.MoveNext = true;
+            this.IMT_ENDDT_1.Name = "IMT_ENDDT_1";
+            this.IMT_ENDDT_1.Size = new System.Drawing.Size(83, 19);
+            this.IMT_ENDDT_1.TabIndex = 189;
+            this.IMT_ENDDT_1.Text = "9999/99/99";
+            this.IMT_ENDDT_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.IMT_ENDDT_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_ENDDT_1.UseColorSizMode = false;
+            // 
+            // IMT_STADT_1
+            // 
+            this.IMT_STADT_1.AllowMinus = false;
+            this.IMT_STADT_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_STADT_1.BackColor = System.Drawing.Color.White;
+            this.IMT_STADT_1.BorderColor = false;
+            this.IMT_STADT_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_STADT_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMT_STADT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMT_STADT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
+            this.IMT_STADT_1.DecimalPlace = 0;
+            this.IMT_STADT_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_STADT_1.IntegerPart = 0;
+            this.IMT_STADT_1.IsCorrectDate = true;
+            this.IMT_STADT_1.isEnterKeyDown = false;
+            this.IMT_STADT_1.IsFirstTime = true;
+            this.IMT_STADT_1.isMaxLengthErr = false;
+            this.IMT_STADT_1.IsNumber = true;
+            this.IMT_STADT_1.IsShop = false;
+            this.IMT_STADT_1.Length = 10;
+            this.IMT_STADT_1.Location = new System.Drawing.Point(354, 0);
+            this.IMT_STADT_1.MaxLength = 10;
+            this.IMT_STADT_1.MoveNext = true;
+            this.IMT_STADT_1.Name = "IMT_STADT_1";
+            this.IMT_STADT_1.Size = new System.Drawing.Size(83, 19);
+            this.IMT_STADT_1.TabIndex = 188;
+            this.IMT_STADT_1.Text = "9999/99/99";
+            this.IMT_STADT_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.IMT_STADT_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_STADT_1.UseColorSizMode = false;
+            // 
+            // panel42
+            // 
+            this.panel42.Controls.Add(this.panel43);
+            this.panel42.Controls.Add(this.panel44);
+            this.panel42.Location = new System.Drawing.Point(1, 39);
+            this.panel42.Name = "panel42";
+            this.panel42.Size = new System.Drawing.Size(1317, 38);
+            this.panel42.TabIndex = 166;
+            // 
+            // panel43
+            // 
+            this.panel43.Location = new System.Drawing.Point(0, 78);
+            this.panel43.Name = "panel43";
+            this.panel43.Size = new System.Drawing.Size(1317, 38);
+            this.panel43.TabIndex = 165;
+            // 
+            // panel44
+            // 
+            this.panel44.Location = new System.Drawing.Point(0, 40);
+            this.panel44.Name = "panel44";
+            this.panel44.Size = new System.Drawing.Size(1317, 38);
+            this.panel44.TabIndex = 164;
+            // 
+            // panel45
+            // 
+            this.panel45.Location = new System.Drawing.Point(0, 78);
+            this.panel45.Name = "panel45";
+            this.panel45.Size = new System.Drawing.Size(1317, 38);
+            this.panel45.TabIndex = 165;
+            // 
+            // panel46
+            // 
+            this.panel46.Location = new System.Drawing.Point(0, 40);
+            this.panel46.Name = "panel46";
+            this.panel46.Size = new System.Drawing.Size(1317, 38);
+            this.panel46.TabIndex = 164;
+            // 
+            // pnl_Body
+            // 
+            this.pnl_Body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnl_Body.Location = new System.Drawing.Point(12, 161);
+            this.pnl_Body.Name = "pnl_Body";
+            this.pnl_Body.Size = new System.Drawing.Size(1320, 440);
+            this.pnl_Body.TabIndex = 125;
             // 
             // pnl_Header
             // 
@@ -499,9 +941,9 @@
             this.pnl_Header.Controls.Add(this.txtStartDateFrom);
             this.pnl_Header.Controls.Add(this.ckM_Label1);
             this.pnl_Header.Controls.Add(this.txtStartDateTo);
-            this.pnl_Header.Location = new System.Drawing.Point(10, -6);
+            this.pnl_Header.Location = new System.Drawing.Point(10, -9);
             this.pnl_Header.Name = "pnl_Header";
-            this.pnl_Header.Size = new System.Drawing.Size(1395, 140);
+            this.pnl_Header.Size = new System.Drawing.Size(1385, 125);
             this.pnl_Header.TabIndex = 124;
             // 
             // SKUCDTo
@@ -519,7 +961,7 @@
             this.SKUCDTo.IsCopy = false;
             this.SKUCDTo.LabelText = "";
             this.SKUCDTo.LabelVisible = false;
-            this.SKUCDTo.Location = new System.Drawing.Point(935, 32);
+            this.SKUCDTo.Location = new System.Drawing.Point(935, 33);
             this.SKUCDTo.Margin = new System.Windows.Forms.Padding(0);
             this.SKUCDTo.Name = "SKUCDTo";
             this.SKUCDTo.NameWidth = 350;
@@ -545,10 +987,10 @@
             this.btnDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDisplay.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnDisplay.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnDisplay.Location = new System.Drawing.Point(935, 94);
+            this.btnDisplay.Location = new System.Drawing.Point(935, 93);
             this.btnDisplay.Margin = new System.Windows.Forms.Padding(1);
             this.btnDisplay.Name = "btnDisplay";
-            this.btnDisplay.Size = new System.Drawing.Size(100, 24);
+            this.btnDisplay.Size = new System.Drawing.Size(90, 21);
             this.btnDisplay.TabIndex = 142;
             this.btnDisplay.Text = "表示";
             this.btnDisplay.UseVisualStyleBackColor = false;
@@ -574,7 +1016,7 @@
             this.ckM_TextBox5.IsNumber = true;
             this.ckM_TextBox5.IsShop = false;
             this.ckM_TextBox5.Length = 5;
-            this.ckM_TextBox5.Location = new System.Drawing.Point(810, 95);
+            this.ckM_TextBox5.Location = new System.Drawing.Point(817, 95);
             this.ckM_TextBox5.MaxLength = 5;
             this.ckM_TextBox5.MoveNext = true;
             this.ckM_TextBox5.Name = "ckM_TextBox5";
@@ -592,7 +1034,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(751, 98);
+            this.ckM_Label8.Location = new System.Drawing.Point(757, 99);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label8.TabIndex = 141;
@@ -620,7 +1062,7 @@
             this.ckM_TextBox4.IsNumber = true;
             this.ckM_TextBox4.IsShop = false;
             this.ckM_TextBox4.Length = 5;
-            this.ckM_TextBox4.Location = new System.Drawing.Point(665, 94);
+            this.ckM_TextBox4.Location = new System.Drawing.Point(665, 95);
             this.ckM_TextBox4.MaxLength = 5;
             this.ckM_TextBox4.MoveNext = true;
             this.ckM_TextBox4.Name = "ckM_TextBox4";
@@ -638,7 +1080,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(618, 98);
+            this.ckM_Label7.Location = new System.Drawing.Point(618, 99);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label7.TabIndex = 140;
@@ -661,7 +1103,7 @@
             this.scSegmentCD.IsCopy = false;
             this.scSegmentCD.LabelText = "01234567890123456789";
             this.scSegmentCD.LabelVisible = true;
-            this.scSegmentCD.Location = new System.Drawing.Point(110, 89);
+            this.scSegmentCD.Location = new System.Drawing.Point(112, 90);
             this.scSegmentCD.Margin = new System.Windows.Forms.Padding(0);
             this.scSegmentCD.Name = "scSegmentCD";
             this.scSegmentCD.NameWidth = 250;
@@ -687,7 +1129,7 @@
             this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(37, 98);
+            this.ckM_Label6.Location = new System.Drawing.Point(39, 99);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label6.TabIndex = 139;
@@ -715,7 +1157,7 @@
             this.txtSKUName.IsNumber = true;
             this.txtSKUName.IsShop = false;
             this.txtSKUName.Length = 80;
-            this.txtSKUName.Location = new System.Drawing.Point(665, 64);
+            this.txtSKUName.Location = new System.Drawing.Point(665, 65);
             this.txtSKUName.MaxLength = 80;
             this.txtSKUName.MoveNext = true;
             this.txtSKUName.Name = "txtSKUName";
@@ -729,7 +1171,7 @@
             // 
             this.ckMRadioButton2.AutoSize = true;
             this.ckMRadioButton2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckMRadioButton2.Location = new System.Drawing.Point(759, 9);
+            this.ckMRadioButton2.Location = new System.Drawing.Point(759, 10);
             this.ckMRadioButton2.Name = "ckMRadioButton2";
             this.ckMRadioButton2.Size = new System.Drawing.Size(75, 16);
             this.ckMRadioButton2.TabIndex = 135;
@@ -742,7 +1184,7 @@
             this.RadioButton1.AutoSize = true;
             this.RadioButton1.Checked = true;
             this.RadioButton1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.RadioButton1.Location = new System.Drawing.Point(639, 9);
+            this.RadioButton1.Location = new System.Drawing.Point(639, 10);
             this.RadioButton1.Name = "RadioButton1";
             this.RadioButton1.Size = new System.Drawing.Size(114, 16);
             this.RadioButton1.TabIndex = 121;
@@ -776,7 +1218,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(579, 10);
+            this.ckM_Label2.Location = new System.Drawing.Point(579, 11);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label2.TabIndex = 134;
@@ -793,7 +1235,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(901, 40);
+            this.ckM_Label4.Location = new System.Drawing.Point(901, 41);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label4.TabIndex = 137;
@@ -810,7 +1252,7 @@
             this.lblBrandCD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lblBrandCD.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.lblBrandCD.ForeColor = System.Drawing.Color.Black;
-            this.lblBrandCD.Location = new System.Drawing.Point(36, 71);
+            this.lblBrandCD.Location = new System.Drawing.Point(38, 72);
             this.lblBrandCD.Name = "lblBrandCD";
             this.lblBrandCD.Size = new System.Drawing.Size(71, 12);
             this.lblBrandCD.TabIndex = 133;
@@ -833,7 +1275,7 @@
             this.SKUCDFrom.IsCopy = false;
             this.SKUCDFrom.LabelText = "";
             this.SKUCDFrom.LabelVisible = false;
-            this.SKUCDFrom.Location = new System.Drawing.Point(665, 32);
+            this.SKUCDFrom.Location = new System.Drawing.Point(665, 33);
             this.SKUCDFrom.Margin = new System.Windows.Forms.Padding(0);
             this.SKUCDFrom.Name = "SKUCDFrom";
             this.SKUCDFrom.NameWidth = 350;
@@ -863,7 +1305,7 @@
             this.scBrandCD.IsCopy = false;
             this.scBrandCD.LabelText = "0123456789012345678901234567890123456789";
             this.scBrandCD.LabelVisible = true;
-            this.scBrandCD.Location = new System.Drawing.Point(110, 62);
+            this.scBrandCD.Location = new System.Drawing.Point(112, 63);
             this.scBrandCD.Margin = new System.Windows.Forms.Padding(0);
             this.scBrandCD.Name = "scBrandCD";
             this.scBrandCD.NameWidth = 280;
@@ -888,7 +1330,7 @@
             this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(622, 40);
+            this.ckM_Label3.Location = new System.Drawing.Point(622, 41);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(40, 12);
             this.ckM_Label3.TabIndex = 136;
@@ -905,7 +1347,7 @@
             this.lblStartDate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lblStartDate.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.lblStartDate.ForeColor = System.Drawing.Color.Black;
-            this.lblStartDate.Location = new System.Drawing.Point(37, 45);
+            this.lblStartDate.Location = new System.Drawing.Point(39, 45);
             this.lblStartDate.Name = "lblStartDate";
             this.lblStartDate.Size = new System.Drawing.Size(70, 12);
             this.lblStartDate.TabIndex = 131;
@@ -933,7 +1375,7 @@
             this.txtStartDateFrom.IsNumber = true;
             this.txtStartDateFrom.IsShop = false;
             this.txtStartDateFrom.Length = 10;
-            this.txtStartDateFrom.Location = new System.Drawing.Point(110, 41);
+            this.txtStartDateFrom.Location = new System.Drawing.Point(112, 42);
             this.txtStartDateFrom.MaxLength = 10;
             this.txtStartDateFrom.MoveNext = true;
             this.txtStartDateFrom.Name = "txtStartDateFrom";
@@ -952,7 +1394,7 @@
             this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(226, 44);
+            this.ckM_Label1.Location = new System.Drawing.Point(228, 45);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label1.TabIndex = 132;
@@ -980,7 +1422,7 @@
             this.txtStartDateTo.IsNumber = true;
             this.txtStartDateTo.IsShop = false;
             this.txtStartDateTo.Length = 10;
-            this.txtStartDateTo.Location = new System.Drawing.Point(258, 41);
+            this.txtStartDateTo.Location = new System.Drawing.Point(260, 42);
             this.txtStartDateTo.MaxLength = 10;
             this.txtStartDateTo.MoveNext = true;
             this.txtStartDateTo.Name = "txtStartDateTo";
@@ -991,12 +1433,232 @@
             this.txtStartDateTo.UseColorSizMode = false;
             this.txtStartDateTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtStartDateTo_KeyDown_1);
             // 
+            // Vsb_Mei_0
+            // 
+            this.Vsb_Mei_0.Location = new System.Drawing.Point(1331, 158);
+            this.Vsb_Mei_0.Name = "Vsb_Mei_0";
+            this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 443);
+            this.Vsb_Mei_0.TabIndex = 123;
+            this.Vsb_Mei_0.ValueChanged += new System.EventHandler(this.Vsb_Mei_0_ValueChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.lblEDate);
+            this.panel2.Controls.Add(this.lblSDate);
+            this.panel2.Controls.Add(this.lblGridJanCD);
+            this.panel2.Controls.Add(this.lblGridSkuCD);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Location = new System.Drawing.Point(13, 124);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1320, 37);
+            this.panel2.TabIndex = 121;
+            // 
+            // label15
+            // 
+            this.label15.BackColor = System.Drawing.Color.DarkGray;
+            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label15.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(687, 18);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(630, 18);
+            this.label15.TabIndex = 14;
+            this.label15.Text = "備考";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.Color.DarkGray;
+            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label14.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(604, 18);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(83, 18);
+            this.label14.TabIndex = 13;
+            this.label14.Text = "原価単価";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.DarkGray;
+            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label13.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(29, 18);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(575, 18);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "商品名";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.DarkGray;
+            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label12.Location = new System.Drawing.Point(1135, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(182, 18);
+            this.label12.TabIndex = 12;
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.DarkGray;
+            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(1045, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(90, 18);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "ランク５単価";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.DarkGray;
+            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(955, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(90, 18);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "ランク４単価";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.DarkGray;
+            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(865, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 18);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "ランク３単価";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.DarkGray;
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(777, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 18);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "ランク２単価";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.DarkGray;
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(687, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 18);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "ランク１単価";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.DarkGray;
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(604, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 18);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "標準売上単価";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.DarkGray;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(521, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(83, 18);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "上代単価";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblEDate
+            // 
+            this.lblEDate.BackColor = System.Drawing.Color.DarkGray;
+            this.lblEDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblEDate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEDate.Location = new System.Drawing.Point(438, 0);
+            this.lblEDate.Name = "lblEDate";
+            this.lblEDate.Size = new System.Drawing.Size(83, 18);
+            this.lblEDate.TabIndex = 4;
+            this.lblEDate.Text = "適用終了日";
+            this.lblEDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSDate
+            // 
+            this.lblSDate.BackColor = System.Drawing.Color.DarkGray;
+            this.lblSDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSDate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSDate.Location = new System.Drawing.Point(355, 0);
+            this.lblSDate.Name = "lblSDate";
+            this.lblSDate.Size = new System.Drawing.Size(83, 18);
+            this.lblSDate.TabIndex = 3;
+            this.lblSDate.Text = "適用開始日";
+            this.lblSDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblGridJanCD
+            // 
+            this.lblGridJanCD.BackColor = System.Drawing.Color.DarkGray;
+            this.lblGridJanCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblGridJanCD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGridJanCD.Location = new System.Drawing.Point(251, 0);
+            this.lblGridJanCD.Name = "lblGridJanCD";
+            this.lblGridJanCD.Size = new System.Drawing.Size(104, 18);
+            this.lblGridJanCD.TabIndex = 2;
+            this.lblGridJanCD.Text = "JANCD";
+            this.lblGridJanCD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblGridSkuCD
+            // 
+            this.lblGridSkuCD.BackColor = System.Drawing.Color.DarkGray;
+            this.lblGridSkuCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblGridSkuCD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGridSkuCD.Location = new System.Drawing.Point(29, 0);
+            this.lblGridSkuCD.Name = "lblGridSkuCD";
+            this.lblGridSkuCD.Size = new System.Drawing.Size(222, 18);
+            this.lblGridSkuCD.TabIndex = 1;
+            this.lblGridSkuCD.Text = "SKUCD";
+            this.lblGridSkuCD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.DarkGray;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 36);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "№";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // IMT_GYONO_9
             // 
             this.IMT_GYONO_9.BackColor = System.Drawing.Color.DarkGray;
             this.IMT_GYONO_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IMT_GYONO_9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IMT_GYONO_9.Location = new System.Drawing.Point(0, -1);
+            this.IMT_GYONO_9.Location = new System.Drawing.Point(0, 0);
             this.IMT_GYONO_9.Name = "IMT_GYONO_9";
             this.IMT_GYONO_9.Size = new System.Drawing.Size(28, 38);
             this.IMT_GYONO_9.TabIndex = 9;
@@ -1093,10 +1755,91 @@
             this.panel10_1.Controls.Add(this.IMT_ENDDT_0);
             this.panel10_1.Controls.Add(this.IMT_STADT_0);
             this.panel10_1.Controls.Add(this.IMT_GYONO_0);
-            this.panel10_1.Location = new System.Drawing.Point(19, 280);
+            this.panel10_1.Location = new System.Drawing.Point(19, 227);
             this.panel10_1.Name = "panel10_1";
             this.panel10_1.Size = new System.Drawing.Size(1317, 38);
             this.panel10_1.TabIndex = 162;
+            // 
+            // IMT_REMARK_0
+            // 
+            this.IMT_REMARK_0.AllowMinus = false;
+            this.IMT_REMARK_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_REMARK_0.BackColor = System.Drawing.Color.White;
+            this.IMT_REMARK_0.BorderColor = false;
+            this.IMT_REMARK_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_REMARK_0.ClientColor = System.Drawing.SystemColors.Window;
+            this.IMT_REMARK_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.IMT_REMARK_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_REMARK_0.DecimalPlace = 0;
+            this.IMT_REMARK_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMARK_0.IntegerPart = 0;
+            this.IMT_REMARK_0.IsCorrectDate = true;
+            this.IMT_REMARK_0.isEnterKeyDown = false;
+            this.IMT_REMARK_0.IsFirstTime = true;
+            this.IMT_REMARK_0.isMaxLengthErr = false;
+            this.IMT_REMARK_0.IsNumber = true;
+            this.IMT_REMARK_0.IsShop = false;
+            this.IMT_REMARK_0.Length = 32767;
+            this.IMT_REMARK_0.Location = new System.Drawing.Point(686, 19);
+            this.IMT_REMARK_0.MoveNext = true;
+            this.IMT_REMARK_0.Name = "IMT_REMARK_0";
+            this.IMT_REMARK_0.Size = new System.Drawing.Size(630, 19);
+            this.IMT_REMARK_0.TabIndex = 172;
+            this.IMT_REMARK_0.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50ＸＸＸＸＸＸＸＸＸ60";
+            this.IMT_REMARK_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.IMT_REMARK_0.UseColorSizMode = false;
+            // 
+            // IMN_COSTUNPRICE_0
+            // 
+            this.IMN_COSTUNPRICE_0.BackColor = System.Drawing.Color.DarkGray;
+            this.IMN_COSTUNPRICE_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_COSTUNPRICE_0.Location = new System.Drawing.Point(603, 19);
+            this.IMN_COSTUNPRICE_0.Name = "IMN_COSTUNPRICE_0";
+            this.IMN_COSTUNPRICE_0.Size = new System.Drawing.Size(83, 19);
+            this.IMN_COSTUNPRICE_0.TabIndex = 171;
+            this.IMN_COSTUNPRICE_0.Text = "-999,999,999";
+            this.IMN_COSTUNPRICE_0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMNM_0
+            // 
+            this.IMT_ITMNM_0.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMNM_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMNM_0.Location = new System.Drawing.Point(28, 19);
+            this.IMT_ITMNM_0.Name = "IMT_ITMNM_0";
+            this.IMT_ITMNM_0.Size = new System.Drawing.Size(575, 19);
+            this.IMT_ITMNM_0.TabIndex = 170;
+            this.IMT_ITMNM_0.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
+            this.IMT_ITMNM_0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_JANCD_0
+            // 
+            this.IMT_JANCD_0.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_JANCD_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_JANCD_0.Location = new System.Drawing.Point(250, 0);
+            this.IMT_JANCD_0.Name = "IMT_JANCD_0";
+            this.IMT_JANCD_0.Size = new System.Drawing.Size(104, 20);
+            this.IMT_JANCD_0.TabIndex = 170;
+            this.IMT_JANCD_0.Text = "0123456789123";
+            this.IMT_JANCD_0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_0
+            // 
+            this.IMT_ITMCD_0.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_0.Location = new System.Drawing.Point(28, 0);
+            this.IMT_ITMCD_0.Name = "IMT_ITMCD_0";
+            this.IMT_ITMCD_0.Size = new System.Drawing.Size(222, 20);
+            this.IMT_ITMCD_0.TabIndex = 170;
+            this.IMT_ITMCD_0.Text = "012345678901234567890123456789";
+            this.IMT_ITMCD_0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Space0
+            // 
+            this.Space0.BackColor = System.Drawing.Color.DarkGray;
+            this.Space0.Location = new System.Drawing.Point(1136, 0);
+            this.Space0.Name = "Space0";
+            this.Space0.Size = new System.Drawing.Size(180, 20);
+            this.Space0.TabIndex = 41;
             // 
             // IMN_R5UNITPRICE_0
             // 
@@ -1304,7 +2047,7 @@
             this.IMN_UNITPRICE_0.IsNumber = true;
             this.IMN_UNITPRICE_0.IsShop = false;
             this.IMN_UNITPRICE_0.Length = 20;
-            this.IMN_UNITPRICE_0.Location = new System.Drawing.Point(520, 1);
+            this.IMN_UNITPRICE_0.Location = new System.Drawing.Point(520, 0);
             this.IMN_UNITPRICE_0.MaxLength = 20;
             this.IMN_UNITPRICE_0.MoveNext = true;
             this.IMN_UNITPRICE_0.Name = "IMN_UNITPRICE_0";
@@ -1335,7 +2078,7 @@
             this.IMT_ENDDT_0.IsNumber = true;
             this.IMT_ENDDT_0.IsShop = false;
             this.IMT_ENDDT_0.Length = 10;
-            this.IMT_ENDDT_0.Location = new System.Drawing.Point(437, 1);
+            this.IMT_ENDDT_0.Location = new System.Drawing.Point(437, 0);
             this.IMT_ENDDT_0.MaxLength = 10;
             this.IMT_ENDDT_0.MoveNext = true;
             this.IMT_ENDDT_0.Name = "IMT_ENDDT_0";
@@ -1366,7 +2109,7 @@
             this.IMT_STADT_0.IsNumber = true;
             this.IMT_STADT_0.IsShop = false;
             this.IMT_STADT_0.Length = 10;
-            this.IMT_STADT_0.Location = new System.Drawing.Point(354, 1);
+            this.IMT_STADT_0.Location = new System.Drawing.Point(354, 0);
             this.IMT_STADT_0.MaxLength = 10;
             this.IMT_STADT_0.MoveNext = true;
             this.IMT_STADT_0.Name = "IMT_STADT_0";
@@ -1393,7 +2136,7 @@
             this.IMT_GYONO_2.BackColor = System.Drawing.Color.DarkGray;
             this.IMT_GYONO_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IMT_GYONO_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IMT_GYONO_2.Location = new System.Drawing.Point(0, 0);
+            this.IMT_GYONO_2.Location = new System.Drawing.Point(-1, 0);
             this.IMT_GYONO_2.Name = "IMT_GYONO_2";
             this.IMT_GYONO_2.Size = new System.Drawing.Size(28, 38);
             this.IMT_GYONO_2.TabIndex = 2;
@@ -1402,6 +2145,7 @@
             // 
             // panel8
             // 
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.IMN_COSTUNPRICE_2);
             this.panel8.Controls.Add(this.IMT_ITMNM_2);
             this.panel8.Controls.Add(this.IMT_JANCD_2);
@@ -1421,10 +2165,62 @@
             this.panel8.Controls.Add(this.panel12);
             this.panel8.Controls.Add(this.panel13);
             this.panel8.Controls.Add(this.IMT_GYONO_2);
-            this.panel8.Location = new System.Drawing.Point(19, 356);
+            this.panel8.Location = new System.Drawing.Point(19, 303);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1317, 38);
             this.panel8.TabIndex = 164;
+            // 
+            // IMN_COSTUNPRICE_2
+            // 
+            this.IMN_COSTUNPRICE_2.BackColor = System.Drawing.Color.DarkGray;
+            this.IMN_COSTUNPRICE_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_COSTUNPRICE_2.Location = new System.Drawing.Point(602, 19);
+            this.IMN_COSTUNPRICE_2.Name = "IMN_COSTUNPRICE_2";
+            this.IMN_COSTUNPRICE_2.Size = new System.Drawing.Size(83, 19);
+            this.IMN_COSTUNPRICE_2.TabIndex = 186;
+            this.IMN_COSTUNPRICE_2.Text = "-999,999,999";
+            this.IMN_COSTUNPRICE_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMNM_2
+            // 
+            this.IMT_ITMNM_2.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMNM_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMNM_2.Location = new System.Drawing.Point(27, 19);
+            this.IMT_ITMNM_2.Name = "IMT_ITMNM_2";
+            this.IMT_ITMNM_2.Size = new System.Drawing.Size(575, 19);
+            this.IMT_ITMNM_2.TabIndex = 183;
+            this.IMT_ITMNM_2.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
+            this.IMT_ITMNM_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_JANCD_2
+            // 
+            this.IMT_JANCD_2.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_JANCD_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_JANCD_2.Location = new System.Drawing.Point(250, 0);
+            this.IMT_JANCD_2.Name = "IMT_JANCD_2";
+            this.IMT_JANCD_2.Size = new System.Drawing.Size(104, 19);
+            this.IMT_JANCD_2.TabIndex = 184;
+            this.IMT_JANCD_2.Text = "0123456789123";
+            this.IMT_JANCD_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_2
+            // 
+            this.IMT_ITMCD_2.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_2.Location = new System.Drawing.Point(27, 0);
+            this.IMT_ITMCD_2.Name = "IMT_ITMCD_2";
+            this.IMT_ITMCD_2.Size = new System.Drawing.Size(223, 19);
+            this.IMT_ITMCD_2.TabIndex = 185;
+            this.IMT_ITMCD_2.Text = "012345678901234567890123456789";
+            this.IMT_ITMCD_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Space2
+            // 
+            this.Space2.BackColor = System.Drawing.Color.DarkGray;
+            this.Space2.Location = new System.Drawing.Point(1136, 0);
+            this.Space2.Name = "Space2";
+            this.Space2.Size = new System.Drawing.Size(180, 19);
+            this.Space2.TabIndex = 182;
             // 
             // IMN_R5UNITPRICE_2
             // 
@@ -1446,7 +2242,7 @@
             this.IMN_R5UNITPRICE_2.IsNumber = true;
             this.IMN_R5UNITPRICE_2.IsShop = false;
             this.IMN_R5UNITPRICE_2.Length = 20;
-            this.IMN_R5UNITPRICE_2.Location = new System.Drawing.Point(1046, 0);
+            this.IMN_R5UNITPRICE_2.Location = new System.Drawing.Point(1045, 0);
             this.IMN_R5UNITPRICE_2.MaxLength = 20;
             this.IMN_R5UNITPRICE_2.MoveNext = true;
             this.IMN_R5UNITPRICE_2.Name = "IMN_R5UNITPRICE_2";
@@ -1477,7 +2273,7 @@
             this.IMN_R4UNITPRICE_2.IsNumber = true;
             this.IMN_R4UNITPRICE_2.IsShop = false;
             this.IMN_R4UNITPRICE_2.Length = 20;
-            this.IMN_R4UNITPRICE_2.Location = new System.Drawing.Point(956, 0);
+            this.IMN_R4UNITPRICE_2.Location = new System.Drawing.Point(955, 0);
             this.IMN_R4UNITPRICE_2.MaxLength = 20;
             this.IMN_R4UNITPRICE_2.MoveNext = true;
             this.IMN_R4UNITPRICE_2.Name = "IMN_R4UNITPRICE_2";
@@ -1508,7 +2304,7 @@
             this.IMN_R3UNITPRICE_2.IsNumber = true;
             this.IMN_R3UNITPRICE_2.IsShop = false;
             this.IMN_R3UNITPRICE_2.Length = 20;
-            this.IMN_R3UNITPRICE_2.Location = new System.Drawing.Point(866, 0);
+            this.IMN_R3UNITPRICE_2.Location = new System.Drawing.Point(865, 0);
             this.IMN_R3UNITPRICE_2.MaxLength = 20;
             this.IMN_R3UNITPRICE_2.MoveNext = true;
             this.IMN_R3UNITPRICE_2.Name = "IMN_R3UNITPRICE_2";
@@ -1539,7 +2335,7 @@
             this.IMN_R2UNITPRICE_2.IsNumber = true;
             this.IMN_R2UNITPRICE_2.IsShop = false;
             this.IMN_R2UNITPRICE_2.Length = 20;
-            this.IMN_R2UNITPRICE_2.Location = new System.Drawing.Point(776, 0);
+            this.IMN_R2UNITPRICE_2.Location = new System.Drawing.Point(775, 0);
             this.IMN_R2UNITPRICE_2.MaxLength = 20;
             this.IMN_R2UNITPRICE_2.MoveNext = true;
             this.IMN_R2UNITPRICE_2.Name = "IMN_R2UNITPRICE_2";
@@ -1570,7 +2366,7 @@
             this.IMT_REMARK_2.IsNumber = true;
             this.IMT_REMARK_2.IsShop = false;
             this.IMT_REMARK_2.Length = 32767;
-            this.IMT_REMARK_2.Location = new System.Drawing.Point(686, 19);
+            this.IMT_REMARK_2.Location = new System.Drawing.Point(685, 19);
             this.IMT_REMARK_2.MoveNext = true;
             this.IMT_REMARK_2.Name = "IMT_REMARK_2";
             this.IMT_REMARK_2.Size = new System.Drawing.Size(630, 19);
@@ -1599,7 +2395,7 @@
             this.IMN_R1UNITPRICE_2.IsNumber = true;
             this.IMN_R1UNITPRICE_2.IsShop = false;
             this.IMN_R1UNITPRICE_2.Length = 20;
-            this.IMN_R1UNITPRICE_2.Location = new System.Drawing.Point(686, 0);
+            this.IMN_R1UNITPRICE_2.Location = new System.Drawing.Point(685, 0);
             this.IMN_R1UNITPRICE_2.MaxLength = 20;
             this.IMN_R1UNITPRICE_2.MoveNext = true;
             this.IMN_R1UNITPRICE_2.Name = "IMN_R1UNITPRICE_2";
@@ -1630,7 +2426,7 @@
             this.IMN_SSUNITPRICE_2.IsNumber = true;
             this.IMN_SSUNITPRICE_2.IsShop = false;
             this.IMN_SSUNITPRICE_2.Length = 20;
-            this.IMN_SSUNITPRICE_2.Location = new System.Drawing.Point(603, 0);
+            this.IMN_SSUNITPRICE_2.Location = new System.Drawing.Point(602, 0);
             this.IMN_SSUNITPRICE_2.MaxLength = 20;
             this.IMN_SSUNITPRICE_2.MoveNext = true;
             this.IMN_SSUNITPRICE_2.Name = "IMN_SSUNITPRICE_2";
@@ -1661,7 +2457,7 @@
             this.IMN_UNITPRICE_2.IsNumber = true;
             this.IMN_UNITPRICE_2.IsShop = false;
             this.IMN_UNITPRICE_2.Length = 20;
-            this.IMN_UNITPRICE_2.Location = new System.Drawing.Point(520, 0);
+            this.IMN_UNITPRICE_2.Location = new System.Drawing.Point(519, 0);
             this.IMN_UNITPRICE_2.MaxLength = 20;
             this.IMN_UNITPRICE_2.MoveNext = true;
             this.IMN_UNITPRICE_2.Name = "IMN_UNITPRICE_2";
@@ -1692,7 +2488,7 @@
             this.IMT_ENDDT_2.IsNumber = true;
             this.IMT_ENDDT_2.IsShop = false;
             this.IMT_ENDDT_2.Length = 10;
-            this.IMT_ENDDT_2.Location = new System.Drawing.Point(437, 0);
+            this.IMT_ENDDT_2.Location = new System.Drawing.Point(436, 0);
             this.IMT_ENDDT_2.MaxLength = 10;
             this.IMT_ENDDT_2.MoveNext = true;
             this.IMT_ENDDT_2.Name = "IMT_ENDDT_2";
@@ -1789,10 +2585,62 @@
             this.panel3.Controls.Add(this.IMT_ENDDT_3);
             this.panel3.Controls.Add(this.IMT_STADT_3);
             this.panel3.Controls.Add(this.IMT_GYONO_3);
-            this.panel3.Location = new System.Drawing.Point(19, 394);
+            this.panel3.Location = new System.Drawing.Point(19, 341);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1317, 38);
             this.panel3.TabIndex = 165;
+            // 
+            // IMN_COSTUNPRICE_3
+            // 
+            this.IMN_COSTUNPRICE_3.BackColor = System.Drawing.Color.DarkGray;
+            this.IMN_COSTUNPRICE_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_COSTUNPRICE_3.Location = new System.Drawing.Point(603, 19);
+            this.IMN_COSTUNPRICE_3.Name = "IMN_COSTUNPRICE_3";
+            this.IMN_COSTUNPRICE_3.Size = new System.Drawing.Size(83, 19);
+            this.IMN_COSTUNPRICE_3.TabIndex = 175;
+            this.IMN_COSTUNPRICE_3.Text = "-999,999,999";
+            this.IMN_COSTUNPRICE_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMNM_3
+            // 
+            this.IMT_ITMNM_3.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMNM_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMNM_3.Location = new System.Drawing.Point(28, 19);
+            this.IMT_ITMNM_3.Name = "IMT_ITMNM_3";
+            this.IMT_ITMNM_3.Size = new System.Drawing.Size(575, 19);
+            this.IMT_ITMNM_3.TabIndex = 172;
+            this.IMT_ITMNM_3.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
+            this.IMT_ITMNM_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_JANCD_3
+            // 
+            this.IMT_JANCD_3.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_JANCD_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_JANCD_3.Location = new System.Drawing.Point(250, -1);
+            this.IMT_JANCD_3.Name = "IMT_JANCD_3";
+            this.IMT_JANCD_3.Size = new System.Drawing.Size(104, 20);
+            this.IMT_JANCD_3.TabIndex = 173;
+            this.IMT_JANCD_3.Text = "0123456789123";
+            this.IMT_JANCD_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_3
+            // 
+            this.IMT_ITMCD_3.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_3.Location = new System.Drawing.Point(28, -1);
+            this.IMT_ITMCD_3.Name = "IMT_ITMCD_3";
+            this.IMT_ITMCD_3.Size = new System.Drawing.Size(222, 20);
+            this.IMT_ITMCD_3.TabIndex = 174;
+            this.IMT_ITMCD_3.Text = "012345678901234567890123456789";
+            this.IMT_ITMCD_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Space3
+            // 
+            this.Space3.BackColor = System.Drawing.Color.DarkGray;
+            this.Space3.Location = new System.Drawing.Point(1136, 0);
+            this.Space3.Name = "Space3";
+            this.Space3.Size = new System.Drawing.Size(180, 19);
+            this.Space3.TabIndex = 85;
             // 
             // IMN_R5UNITPRICE_3
             // 
@@ -2125,10 +2973,62 @@
             this.panel17.Controls.Add(this.panel21);
             this.panel17.Controls.Add(this.panel22);
             this.panel17.Controls.Add(this.IMT_GYONO_4);
-            this.panel17.Location = new System.Drawing.Point(18, 432);
+            this.panel17.Location = new System.Drawing.Point(18, 379);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(1317, 38);
             this.panel17.TabIndex = 168;
+            // 
+            // IMN_COSTUNPRICE_4
+            // 
+            this.IMN_COSTUNPRICE_4.BackColor = System.Drawing.Color.DarkGray;
+            this.IMN_COSTUNPRICE_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_COSTUNPRICE_4.Location = new System.Drawing.Point(604, 19);
+            this.IMN_COSTUNPRICE_4.Name = "IMN_COSTUNPRICE_4";
+            this.IMN_COSTUNPRICE_4.Size = new System.Drawing.Size(83, 19);
+            this.IMN_COSTUNPRICE_4.TabIndex = 189;
+            this.IMN_COSTUNPRICE_4.Text = "-999,999,999";
+            this.IMN_COSTUNPRICE_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMNM_4
+            // 
+            this.IMT_ITMNM_4.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMNM_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMNM_4.Location = new System.Drawing.Point(29, 19);
+            this.IMT_ITMNM_4.Name = "IMT_ITMNM_4";
+            this.IMT_ITMNM_4.Size = new System.Drawing.Size(575, 19);
+            this.IMT_ITMNM_4.TabIndex = 186;
+            this.IMT_ITMNM_4.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
+            this.IMT_ITMNM_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_JANCD_4
+            // 
+            this.IMT_JANCD_4.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_JANCD_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_JANCD_4.Location = new System.Drawing.Point(250, -1);
+            this.IMT_JANCD_4.Name = "IMT_JANCD_4";
+            this.IMT_JANCD_4.Size = new System.Drawing.Size(104, 20);
+            this.IMT_JANCD_4.TabIndex = 187;
+            this.IMT_JANCD_4.Text = "0123456789123";
+            this.IMT_JANCD_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_4
+            // 
+            this.IMT_ITMCD_4.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_4.Location = new System.Drawing.Point(29, -1);
+            this.IMT_ITMCD_4.Name = "IMT_ITMCD_4";
+            this.IMT_ITMCD_4.Size = new System.Drawing.Size(221, 20);
+            this.IMT_ITMCD_4.TabIndex = 188;
+            this.IMT_ITMCD_4.Text = "012345678901234567890123456789";
+            this.IMT_ITMCD_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Space4
+            // 
+            this.Space4.BackColor = System.Drawing.Color.DarkGray;
+            this.Space4.Location = new System.Drawing.Point(1136, 0);
+            this.Space4.Name = "Space4";
+            this.Space4.Size = new System.Drawing.Size(180, 19);
+            this.Space4.TabIndex = 185;
             // 
             // IMN_R5UNITPRICE_4
             // 
@@ -2277,7 +3177,7 @@
             this.IMT_REMARK_4.Location = new System.Drawing.Point(687, 19);
             this.IMT_REMARK_4.MoveNext = true;
             this.IMT_REMARK_4.Name = "IMT_REMARK_4";
-            this.IMT_REMARK_4.Size = new System.Drawing.Size(630, 19);
+            this.IMT_REMARK_4.Size = new System.Drawing.Size(629, 19);
             this.IMT_REMARK_4.TabIndex = 184;
             this.IMT_REMARK_4.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50ＸＸＸＸＸＸＸＸＸ60";
             this.IMT_REMARK_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -2427,11 +3327,11 @@
             this.IMT_STADT_4.IsNumber = true;
             this.IMT_STADT_4.IsShop = false;
             this.IMT_STADT_4.Length = 10;
-            this.IMT_STADT_4.Location = new System.Drawing.Point(355, 0);
+            this.IMT_STADT_4.Location = new System.Drawing.Point(354, 0);
             this.IMT_STADT_4.MaxLength = 10;
             this.IMT_STADT_4.MoveNext = true;
             this.IMT_STADT_4.Name = "IMT_STADT_4";
-            this.IMT_STADT_4.Size = new System.Drawing.Size(83, 19);
+            this.IMT_STADT_4.Size = new System.Drawing.Size(84, 19);
             this.IMT_STADT_4.TabIndex = 172;
             this.IMT_STADT_4.Text = "9999/99/99";
             this.IMT_STADT_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2640,10 +3540,62 @@
             this.panel4.Controls.Add(this.panel60);
             this.panel4.Controls.Add(this.panel63);
             this.panel4.Controls.Add(this.panel64);
-            this.panel4.Location = new System.Drawing.Point(18, 470);
+            this.panel4.Location = new System.Drawing.Point(18, 417);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1317, 38);
             this.panel4.TabIndex = 169;
+            // 
+            // IMN_COSTUNPRICE_5
+            // 
+            this.IMN_COSTUNPRICE_5.BackColor = System.Drawing.Color.DarkGray;
+            this.IMN_COSTUNPRICE_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_COSTUNPRICE_5.Location = new System.Drawing.Point(604, 19);
+            this.IMN_COSTUNPRICE_5.Name = "IMN_COSTUNPRICE_5";
+            this.IMN_COSTUNPRICE_5.Size = new System.Drawing.Size(83, 19);
+            this.IMN_COSTUNPRICE_5.TabIndex = 189;
+            this.IMN_COSTUNPRICE_5.Text = "-999,999,999";
+            this.IMN_COSTUNPRICE_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMNM_5
+            // 
+            this.IMT_ITMNM_5.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMNM_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMNM_5.Location = new System.Drawing.Point(29, 19);
+            this.IMT_ITMNM_5.Name = "IMT_ITMNM_5";
+            this.IMT_ITMNM_5.Size = new System.Drawing.Size(575, 19);
+            this.IMT_ITMNM_5.TabIndex = 186;
+            this.IMT_ITMNM_5.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
+            this.IMT_ITMNM_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_JANCD_5
+            // 
+            this.IMT_JANCD_5.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_JANCD_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_JANCD_5.Location = new System.Drawing.Point(250, -1);
+            this.IMT_JANCD_5.Name = "IMT_JANCD_5";
+            this.IMT_JANCD_5.Size = new System.Drawing.Size(104, 20);
+            this.IMT_JANCD_5.TabIndex = 187;
+            this.IMT_JANCD_5.Text = "0123456789123";
+            this.IMT_JANCD_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_5
+            // 
+            this.IMT_ITMCD_5.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_5.Location = new System.Drawing.Point(29, -1);
+            this.IMT_ITMCD_5.Name = "IMT_ITMCD_5";
+            this.IMT_ITMCD_5.Size = new System.Drawing.Size(221, 20);
+            this.IMT_ITMCD_5.TabIndex = 188;
+            this.IMT_ITMCD_5.Text = "012345678901234567890123456789";
+            this.IMT_ITMCD_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Space5
+            // 
+            this.Space5.BackColor = System.Drawing.Color.DarkGray;
+            this.Space5.Location = new System.Drawing.Point(1136, 0);
+            this.Space5.Name = "Space5";
+            this.Space5.Size = new System.Drawing.Size(180, 19);
+            this.Space5.TabIndex = 185;
             // 
             // IMN_R5UNITPRICE_5
             // 
@@ -2792,7 +3744,7 @@
             this.IMT_REMARK_5.Location = new System.Drawing.Point(687, 19);
             this.IMT_REMARK_5.MoveNext = true;
             this.IMT_REMARK_5.Name = "IMT_REMARK_5";
-            this.IMT_REMARK_5.Size = new System.Drawing.Size(630, 19);
+            this.IMT_REMARK_5.Size = new System.Drawing.Size(629, 19);
             this.IMT_REMARK_5.TabIndex = 184;
             this.IMT_REMARK_5.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50ＸＸＸＸＸＸＸＸＸ60";
             this.IMT_REMARK_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -2942,11 +3894,11 @@
             this.IMT_STADT_5.IsNumber = true;
             this.IMT_STADT_5.IsShop = false;
             this.IMT_STADT_5.Length = 10;
-            this.IMT_STADT_5.Location = new System.Drawing.Point(355, 0);
+            this.IMT_STADT_5.Location = new System.Drawing.Point(354, 0);
             this.IMT_STADT_5.MaxLength = 10;
             this.IMT_STADT_5.MoveNext = true;
             this.IMT_STADT_5.Name = "IMT_STADT_5";
-            this.IMT_STADT_5.Size = new System.Drawing.Size(83, 19);
+            this.IMT_STADT_5.Size = new System.Drawing.Size(84, 19);
             this.IMT_STADT_5.TabIndex = 172;
             this.IMT_STADT_5.Text = "9999/99/99";
             this.IMT_STADT_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3158,10 +4110,70 @@
             this.panel65.Controls.Add(this.panel87);
             this.panel65.Controls.Add(this.panel88);
             this.panel65.Controls.Add(this.IMT_GYONO_6);
-            this.panel65.Location = new System.Drawing.Point(18, 508);
+            this.panel65.Location = new System.Drawing.Point(18, 455);
             this.panel65.Name = "panel65";
             this.panel65.Size = new System.Drawing.Size(1317, 38);
             this.panel65.TabIndex = 170;
+            // 
+            // IMN_COSTUNPRICE_6
+            // 
+            this.IMN_COSTUNPRICE_6.BackColor = System.Drawing.Color.DarkGray;
+            this.IMN_COSTUNPRICE_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_COSTUNPRICE_6.Location = new System.Drawing.Point(604, 19);
+            this.IMN_COSTUNPRICE_6.Name = "IMN_COSTUNPRICE_6";
+            this.IMN_COSTUNPRICE_6.Size = new System.Drawing.Size(83, 19);
+            this.IMN_COSTUNPRICE_6.TabIndex = 193;
+            this.IMN_COSTUNPRICE_6.Text = "-999,999,999";
+            this.IMN_COSTUNPRICE_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMNM_6
+            // 
+            this.IMT_ITMNM_6.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMNM_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMNM_6.Location = new System.Drawing.Point(29, 19);
+            this.IMT_ITMNM_6.Name = "IMT_ITMNM_6";
+            this.IMT_ITMNM_6.Size = new System.Drawing.Size(575, 19);
+            this.IMT_ITMNM_6.TabIndex = 190;
+            this.IMT_ITMNM_6.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
+            this.IMT_ITMNM_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_JANCD_6
+            // 
+            this.IMT_JANCD_6.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_JANCD_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_JANCD_6.Location = new System.Drawing.Point(250, -1);
+            this.IMT_JANCD_6.Name = "IMT_JANCD_6";
+            this.IMT_JANCD_6.Size = new System.Drawing.Size(104, 20);
+            this.IMT_JANCD_6.TabIndex = 191;
+            this.IMT_JANCD_6.Text = "0123456789123";
+            this.IMT_JANCD_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_6
+            // 
+            this.IMT_ITMCD_6.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_6.Location = new System.Drawing.Point(29, -1);
+            this.IMT_ITMCD_6.Name = "IMT_ITMCD_6";
+            this.IMT_ITMCD_6.Size = new System.Drawing.Size(221, 20);
+            this.IMT_ITMCD_6.TabIndex = 192;
+            this.IMT_ITMCD_6.Text = "012345678901234567890123456789";
+            this.IMT_ITMCD_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Space6
+            // 
+            this.Space6.BackColor = System.Drawing.Color.DarkGray;
+            this.Space6.Location = new System.Drawing.Point(1136, -1);
+            this.Space6.Name = "Space6";
+            this.Space6.Size = new System.Drawing.Size(180, 19);
+            this.Space6.TabIndex = 186;
+            // 
+            // label21
+            // 
+            this.label21.BackColor = System.Drawing.Color.DarkGray;
+            this.label21.Location = new System.Drawing.Point(1136, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(180, 19);
+            this.label21.TabIndex = 187;
             // 
             // IMN_R5UNITPRICE_6
             // 
@@ -3194,6 +4206,14 @@
             this.IMN_R5UNITPRICE_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.IMN_R5UNITPRICE_6.UseColorSizMode = false;
             // 
+            // label22
+            // 
+            this.label22.BackColor = System.Drawing.Color.DarkGray;
+            this.label22.Location = new System.Drawing.Point(1137, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(180, 19);
+            this.label22.TabIndex = 189;
+            // 
             // IMN_R4UNITPRICE_6
             // 
             this.IMN_R4UNITPRICE_6.AllowMinus = false;
@@ -3224,6 +4244,14 @@
             this.IMN_R4UNITPRICE_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.IMN_R4UNITPRICE_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.IMN_R4UNITPRICE_6.UseColorSizMode = false;
+            // 
+            // label23
+            // 
+            this.label23.BackColor = System.Drawing.Color.DarkGray;
+            this.label23.Location = new System.Drawing.Point(1136, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(180, 19);
+            this.label23.TabIndex = 188;
             // 
             // IMN_R3UNITPRICE_6
             // 
@@ -3310,7 +4338,7 @@
             this.IMT_REMARK_6.Location = new System.Drawing.Point(687, 19);
             this.IMT_REMARK_6.MoveNext = true;
             this.IMT_REMARK_6.Name = "IMT_REMARK_6";
-            this.IMT_REMARK_6.Size = new System.Drawing.Size(630, 19);
+            this.IMT_REMARK_6.Size = new System.Drawing.Size(629, 19);
             this.IMT_REMARK_6.TabIndex = 184;
             this.IMT_REMARK_6.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50ＸＸＸＸＸＸＸＸＸ60";
             this.IMT_REMARK_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -3460,11 +4488,11 @@
             this.IMT_STADT_6.IsNumber = true;
             this.IMT_STADT_6.IsShop = false;
             this.IMT_STADT_6.Length = 10;
-            this.IMT_STADT_6.Location = new System.Drawing.Point(355, 0);
+            this.IMT_STADT_6.Location = new System.Drawing.Point(354, 0);
             this.IMT_STADT_6.MaxLength = 10;
             this.IMT_STADT_6.MoveNext = true;
             this.IMT_STADT_6.Name = "IMT_STADT_6";
-            this.IMT_STADT_6.Size = new System.Drawing.Size(83, 19);
+            this.IMT_STADT_6.Size = new System.Drawing.Size(84, 19);
             this.IMT_STADT_6.TabIndex = 172;
             this.IMT_STADT_6.Text = "9999/99/99";
             this.IMT_STADT_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3673,10 +4701,62 @@
             this.panel89.Controls.Add(this.panel111);
             this.panel89.Controls.Add(this.panel112);
             this.panel89.Controls.Add(this.IMT_GYONO_7);
-            this.panel89.Location = new System.Drawing.Point(18, 546);
+            this.panel89.Location = new System.Drawing.Point(18, 493);
             this.panel89.Name = "panel89";
             this.panel89.Size = new System.Drawing.Size(1317, 38);
             this.panel89.TabIndex = 171;
+            // 
+            // IMN_COSTUNPRICE_7
+            // 
+            this.IMN_COSTUNPRICE_7.BackColor = System.Drawing.Color.DarkGray;
+            this.IMN_COSTUNPRICE_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_COSTUNPRICE_7.Location = new System.Drawing.Point(604, 19);
+            this.IMN_COSTUNPRICE_7.Name = "IMN_COSTUNPRICE_7";
+            this.IMN_COSTUNPRICE_7.Size = new System.Drawing.Size(83, 19);
+            this.IMN_COSTUNPRICE_7.TabIndex = 194;
+            this.IMN_COSTUNPRICE_7.Text = "-999,999,999";
+            this.IMN_COSTUNPRICE_7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMNM_7
+            // 
+            this.IMT_ITMNM_7.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMNM_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMNM_7.Location = new System.Drawing.Point(29, 19);
+            this.IMT_ITMNM_7.Name = "IMT_ITMNM_7";
+            this.IMT_ITMNM_7.Size = new System.Drawing.Size(575, 19);
+            this.IMT_ITMNM_7.TabIndex = 191;
+            this.IMT_ITMNM_7.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
+            this.IMT_ITMNM_7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_JANCD_7
+            // 
+            this.IMT_JANCD_7.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_JANCD_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_JANCD_7.Location = new System.Drawing.Point(250, -1);
+            this.IMT_JANCD_7.Name = "IMT_JANCD_7";
+            this.IMT_JANCD_7.Size = new System.Drawing.Size(104, 20);
+            this.IMT_JANCD_7.TabIndex = 192;
+            this.IMT_JANCD_7.Text = "0123456789123";
+            this.IMT_JANCD_7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_7
+            // 
+            this.IMT_ITMCD_7.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_7.Location = new System.Drawing.Point(29, -1);
+            this.IMT_ITMCD_7.Name = "IMT_ITMCD_7";
+            this.IMT_ITMCD_7.Size = new System.Drawing.Size(221, 20);
+            this.IMT_ITMCD_7.TabIndex = 193;
+            this.IMT_ITMCD_7.Text = "012345678901234567890123456789";
+            this.IMT_ITMCD_7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Space7
+            // 
+            this.Space7.BackColor = System.Drawing.Color.DarkGray;
+            this.Space7.Location = new System.Drawing.Point(1136, 0);
+            this.Space7.Name = "Space7";
+            this.Space7.Size = new System.Drawing.Size(180, 19);
+            this.Space7.TabIndex = 190;
             // 
             // IMN_R5UNITPRICE_7
             // 
@@ -3825,7 +4905,7 @@
             this.IMT_REMARK_7.Location = new System.Drawing.Point(687, 19);
             this.IMT_REMARK_7.MoveNext = true;
             this.IMT_REMARK_7.Name = "IMT_REMARK_7";
-            this.IMT_REMARK_7.Size = new System.Drawing.Size(630, 19);
+            this.IMT_REMARK_7.Size = new System.Drawing.Size(629, 19);
             this.IMT_REMARK_7.TabIndex = 184;
             this.IMT_REMARK_7.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50ＸＸＸＸＸＸＸＸＸ60";
             this.IMT_REMARK_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -3975,11 +5055,11 @@
             this.IMT_STADT_7.IsNumber = true;
             this.IMT_STADT_7.IsShop = false;
             this.IMT_STADT_7.Length = 10;
-            this.IMT_STADT_7.Location = new System.Drawing.Point(355, 0);
+            this.IMT_STADT_7.Location = new System.Drawing.Point(354, 0);
             this.IMT_STADT_7.MaxLength = 10;
             this.IMT_STADT_7.MoveNext = true;
             this.IMT_STADT_7.Name = "IMT_STADT_7";
-            this.IMT_STADT_7.Size = new System.Drawing.Size(83, 19);
+            this.IMT_STADT_7.Size = new System.Drawing.Size(84, 19);
             this.IMT_STADT_7.TabIndex = 172;
             this.IMT_STADT_7.Text = "9999/99/99";
             this.IMT_STADT_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -4188,10 +5268,62 @@
             this.panel113.Controls.Add(this.panel135);
             this.panel113.Controls.Add(this.IMT_GYONO_8);
             this.panel113.Controls.Add(this.panel136);
-            this.panel113.Location = new System.Drawing.Point(19, 584);
+            this.panel113.Location = new System.Drawing.Point(19, 531);
             this.panel113.Name = "panel113";
             this.panel113.Size = new System.Drawing.Size(1317, 38);
             this.panel113.TabIndex = 172;
+            // 
+            // IMN_COSTUNPRICE_8
+            // 
+            this.IMN_COSTUNPRICE_8.BackColor = System.Drawing.Color.DarkGray;
+            this.IMN_COSTUNPRICE_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_COSTUNPRICE_8.Location = new System.Drawing.Point(603, 19);
+            this.IMN_COSTUNPRICE_8.Name = "IMN_COSTUNPRICE_8";
+            this.IMN_COSTUNPRICE_8.Size = new System.Drawing.Size(83, 19);
+            this.IMN_COSTUNPRICE_8.TabIndex = 191;
+            this.IMN_COSTUNPRICE_8.Text = "-999,999,999";
+            this.IMN_COSTUNPRICE_8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMNM_8
+            // 
+            this.IMT_ITMNM_8.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMNM_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMNM_8.Location = new System.Drawing.Point(28, 19);
+            this.IMT_ITMNM_8.Name = "IMT_ITMNM_8";
+            this.IMT_ITMNM_8.Size = new System.Drawing.Size(575, 19);
+            this.IMT_ITMNM_8.TabIndex = 188;
+            this.IMT_ITMNM_8.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
+            this.IMT_ITMNM_8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_JANCD_8
+            // 
+            this.IMT_JANCD_8.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_JANCD_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_JANCD_8.Location = new System.Drawing.Point(250, -1);
+            this.IMT_JANCD_8.Name = "IMT_JANCD_8";
+            this.IMT_JANCD_8.Size = new System.Drawing.Size(104, 20);
+            this.IMT_JANCD_8.TabIndex = 189;
+            this.IMT_JANCD_8.Text = "0123456789123";
+            this.IMT_JANCD_8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_8
+            // 
+            this.IMT_ITMCD_8.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_8.Location = new System.Drawing.Point(28, 0);
+            this.IMT_ITMCD_8.Name = "IMT_ITMCD_8";
+            this.IMT_ITMCD_8.Size = new System.Drawing.Size(222, 20);
+            this.IMT_ITMCD_8.TabIndex = 190;
+            this.IMT_ITMCD_8.Text = "012345678901234567890123456789";
+            this.IMT_ITMCD_8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Space8
+            // 
+            this.Space8.BackColor = System.Drawing.Color.DarkGray;
+            this.Space8.Location = new System.Drawing.Point(1136, 0);
+            this.Space8.Name = "Space8";
+            this.Space8.Size = new System.Drawing.Size(180, 19);
+            this.Space8.TabIndex = 187;
             // 
             // IMN_R5UNITPRICE_8
             // 
@@ -4703,10 +5835,62 @@
             this.panel137.Controls.Add(this.IMT_GYONO_9);
             this.panel137.Controls.Add(this.panel159);
             this.panel137.Controls.Add(this.panel160);
-            this.panel137.Location = new System.Drawing.Point(19, 622);
+            this.panel137.Location = new System.Drawing.Point(19, 569);
             this.panel137.Name = "panel137";
             this.panel137.Size = new System.Drawing.Size(1317, 38);
             this.panel137.TabIndex = 173;
+            // 
+            // IMN_COSTUNPRICE_9
+            // 
+            this.IMN_COSTUNPRICE_9.BackColor = System.Drawing.Color.DarkGray;
+            this.IMN_COSTUNPRICE_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_COSTUNPRICE_9.Location = new System.Drawing.Point(603, 19);
+            this.IMN_COSTUNPRICE_9.Name = "IMN_COSTUNPRICE_9";
+            this.IMN_COSTUNPRICE_9.Size = new System.Drawing.Size(83, 19);
+            this.IMN_COSTUNPRICE_9.TabIndex = 191;
+            this.IMN_COSTUNPRICE_9.Text = "-999,999,999";
+            this.IMN_COSTUNPRICE_9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMNM_9
+            // 
+            this.IMT_ITMNM_9.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMNM_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMNM_9.Location = new System.Drawing.Point(28, 19);
+            this.IMT_ITMNM_9.Name = "IMT_ITMNM_9";
+            this.IMT_ITMNM_9.Size = new System.Drawing.Size(575, 19);
+            this.IMT_ITMNM_9.TabIndex = 188;
+            this.IMT_ITMNM_9.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
+            this.IMT_ITMNM_9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_JANCD_9
+            // 
+            this.IMT_JANCD_9.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_JANCD_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_JANCD_9.Location = new System.Drawing.Point(250, 0);
+            this.IMT_JANCD_9.Name = "IMT_JANCD_9";
+            this.IMT_JANCD_9.Size = new System.Drawing.Size(104, 20);
+            this.IMT_JANCD_9.TabIndex = 189;
+            this.IMT_JANCD_9.Text = "0123456789123";
+            this.IMT_JANCD_9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_9
+            // 
+            this.IMT_ITMCD_9.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_9.Location = new System.Drawing.Point(28, 0);
+            this.IMT_ITMCD_9.Name = "IMT_ITMCD_9";
+            this.IMT_ITMCD_9.Size = new System.Drawing.Size(222, 20);
+            this.IMT_ITMCD_9.TabIndex = 190;
+            this.IMT_ITMCD_9.Text = "012345678901234567890123456789";
+            this.IMT_ITMCD_9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Space9
+            // 
+            this.Space9.BackColor = System.Drawing.Color.DarkGray;
+            this.Space9.Location = new System.Drawing.Point(1136, 0);
+            this.Space9.Name = "Space9";
+            this.Space9.Size = new System.Drawing.Size(180, 19);
+            this.Space9.TabIndex = 187;
             // 
             // IMN_R5UNITPRICE_9
             // 
@@ -5195,1188 +6379,6 @@
             this.panel160.Size = new System.Drawing.Size(1317, 38);
             this.panel160.TabIndex = 164;
             // 
-            // Space0
-            // 
-            this.Space0.BackColor = System.Drawing.Color.DarkGray;
-            this.Space0.Location = new System.Drawing.Point(1136, 0);
-            this.Space0.Name = "Space0";
-            this.Space0.Size = new System.Drawing.Size(180, 20);
-            this.Space0.TabIndex = 41;
-            // 
-            // Space2
-            // 
-            this.Space2.BackColor = System.Drawing.Color.DarkGray;
-            this.Space2.Location = new System.Drawing.Point(1136, 0);
-            this.Space2.Name = "Space2";
-            this.Space2.Size = new System.Drawing.Size(180, 19);
-            this.Space2.TabIndex = 182;
-            // 
-            // Space3
-            // 
-            this.Space3.BackColor = System.Drawing.Color.DarkGray;
-            this.Space3.Location = new System.Drawing.Point(1136, 0);
-            this.Space3.Name = "Space3";
-            this.Space3.Size = new System.Drawing.Size(180, 19);
-            this.Space3.TabIndex = 85;
-            // 
-            // Space4
-            // 
-            this.Space4.BackColor = System.Drawing.Color.DarkGray;
-            this.Space4.Location = new System.Drawing.Point(1137, 0);
-            this.Space4.Name = "Space4";
-            this.Space4.Size = new System.Drawing.Size(180, 19);
-            this.Space4.TabIndex = 185;
-            // 
-            // Space5
-            // 
-            this.Space5.BackColor = System.Drawing.Color.DarkGray;
-            this.Space5.Location = new System.Drawing.Point(1137, 0);
-            this.Space5.Name = "Space5";
-            this.Space5.Size = new System.Drawing.Size(180, 19);
-            this.Space5.TabIndex = 185;
-            // 
-            // Space6
-            // 
-            this.Space6.BackColor = System.Drawing.Color.DarkGray;
-            this.Space6.Location = new System.Drawing.Point(1142, -1);
-            this.Space6.Name = "Space6";
-            this.Space6.Size = new System.Drawing.Size(180, 19);
-            this.Space6.TabIndex = 186;
-            // 
-            // label21
-            // 
-            this.label21.BackColor = System.Drawing.Color.DarkGray;
-            this.label21.Location = new System.Drawing.Point(1136, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(180, 19);
-            this.label21.TabIndex = 187;
-            // 
-            // label22
-            // 
-            this.label22.BackColor = System.Drawing.Color.DarkGray;
-            this.label22.Location = new System.Drawing.Point(1137, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(180, 19);
-            this.label22.TabIndex = 189;
-            // 
-            // label23
-            // 
-            this.label23.BackColor = System.Drawing.Color.DarkGray;
-            this.label23.Location = new System.Drawing.Point(1136, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(180, 19);
-            this.label23.TabIndex = 188;
-            // 
-            // Space7
-            // 
-            this.Space7.BackColor = System.Drawing.Color.DarkGray;
-            this.Space7.Location = new System.Drawing.Point(1137, 0);
-            this.Space7.Name = "Space7";
-            this.Space7.Size = new System.Drawing.Size(180, 19);
-            this.Space7.TabIndex = 190;
-            // 
-            // Space8
-            // 
-            this.Space8.BackColor = System.Drawing.Color.DarkGray;
-            this.Space8.Location = new System.Drawing.Point(1136, 0);
-            this.Space8.Name = "Space8";
-            this.Space8.Size = new System.Drawing.Size(180, 19);
-            this.Space8.TabIndex = 187;
-            // 
-            // Space9
-            // 
-            this.Space9.BackColor = System.Drawing.Color.DarkGray;
-            this.Space9.Location = new System.Drawing.Point(1136, 0);
-            this.Space9.Name = "Space9";
-            this.Space9.Size = new System.Drawing.Size(180, 19);
-            this.Space9.TabIndex = 187;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.DarkGray;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 36);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "№";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblGridSkuCD
-            // 
-            this.lblGridSkuCD.BackColor = System.Drawing.Color.DarkGray;
-            this.lblGridSkuCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblGridSkuCD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGridSkuCD.Location = new System.Drawing.Point(28, 0);
-            this.lblGridSkuCD.Name = "lblGridSkuCD";
-            this.lblGridSkuCD.Size = new System.Drawing.Size(222, 18);
-            this.lblGridSkuCD.TabIndex = 1;
-            this.lblGridSkuCD.Text = "SKUCD";
-            this.lblGridSkuCD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblGridJanCD
-            // 
-            this.lblGridJanCD.BackColor = System.Drawing.Color.DarkGray;
-            this.lblGridJanCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblGridJanCD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGridJanCD.Location = new System.Drawing.Point(250, 0);
-            this.lblGridJanCD.Name = "lblGridJanCD";
-            this.lblGridJanCD.Size = new System.Drawing.Size(104, 18);
-            this.lblGridJanCD.TabIndex = 2;
-            this.lblGridJanCD.Text = "JANCD";
-            this.lblGridJanCD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblSDate
-            // 
-            this.lblSDate.BackColor = System.Drawing.Color.DarkGray;
-            this.lblSDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSDate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSDate.Location = new System.Drawing.Point(354, 0);
-            this.lblSDate.Name = "lblSDate";
-            this.lblSDate.Size = new System.Drawing.Size(83, 18);
-            this.lblSDate.TabIndex = 3;
-            this.lblSDate.Text = "適用開始日";
-            this.lblSDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblEDate
-            // 
-            this.lblEDate.BackColor = System.Drawing.Color.DarkGray;
-            this.lblEDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblEDate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEDate.Location = new System.Drawing.Point(437, 0);
-            this.lblEDate.Name = "lblEDate";
-            this.lblEDate.Size = new System.Drawing.Size(83, 18);
-            this.lblEDate.TabIndex = 4;
-            this.lblEDate.Text = "適用終了日";
-            this.lblEDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.DarkGray;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(520, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 18);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "上代単価";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.DarkGray;
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(602, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 18);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "標準売上単価";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.DarkGray;
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(685, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 18);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "ランク１単価";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.Color.DarkGray;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(775, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 18);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "ランク２単価";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.DarkGray;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(865, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 18);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "ランク３単価";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.DarkGray;
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(955, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 18);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "ランク４単価";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label11
-            // 
-            this.label11.BackColor = System.Drawing.Color.DarkGray;
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(1045, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(90, 18);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "ランク５単価";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label12
-            // 
-            this.label12.BackColor = System.Drawing.Color.DarkGray;
-            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label12.Location = new System.Drawing.Point(1135, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(182, 18);
-            this.label12.TabIndex = 12;
-            // 
-            // label13
-            // 
-            this.label13.BackColor = System.Drawing.Color.DarkGray;
-            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label13.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(28, 18);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(575, 18);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "商品名";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label14
-            // 
-            this.label14.BackColor = System.Drawing.Color.DarkGray;
-            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label14.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(602, 18);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(83, 18);
-            this.label14.TabIndex = 13;
-            this.label14.Text = "原価単価";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label15
-            // 
-            this.label15.BackColor = System.Drawing.Color.DarkGray;
-            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label15.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(685, 18);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(632, 18);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "備考";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.lblEDate);
-            this.panel2.Controls.Add(this.lblSDate);
-            this.panel2.Controls.Add(this.lblGridJanCD);
-            this.panel2.Controls.Add(this.lblGridSkuCD);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(13, 174);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1322, 37);
-            this.panel2.TabIndex = 121;
-            // 
-            // Vsb_Mei_0
-            // 
-            this.Vsb_Mei_0.Location = new System.Drawing.Point(1331, 212);
-            this.Vsb_Mei_0.Name = "Vsb_Mei_0";
-            this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 380);
-            this.Vsb_Mei_0.TabIndex = 123;
-            this.Vsb_Mei_0.ValueChanged += new System.EventHandler(this.Vsb_Mei_0_ValueChanged);
-            // 
-            // pnl_Body
-            // 
-            this.pnl_Body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnl_Body.Location = new System.Drawing.Point(12, 210);
-            this.pnl_Body.Name = "pnl_Body";
-            this.pnl_Body.Size = new System.Drawing.Size(1320, 384);
-            this.pnl_Body.TabIndex = 125;
-            // 
-            // IMT_ITMCD_0
-            // 
-            this.IMT_ITMCD_0.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_0.Location = new System.Drawing.Point(28, 0);
-            this.IMT_ITMCD_0.Name = "IMT_ITMCD_0";
-            this.IMT_ITMCD_0.Size = new System.Drawing.Size(222, 20);
-            this.IMT_ITMCD_0.TabIndex = 170;
-            this.IMT_ITMCD_0.Text = "012345678901234567890123456789";
-            this.IMT_ITMCD_0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_JANCD_0
-            // 
-            this.IMT_JANCD_0.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_JANCD_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_JANCD_0.Location = new System.Drawing.Point(250, 0);
-            this.IMT_JANCD_0.Name = "IMT_JANCD_0";
-            this.IMT_JANCD_0.Size = new System.Drawing.Size(104, 20);
-            this.IMT_JANCD_0.TabIndex = 170;
-            this.IMT_JANCD_0.Text = "0123456789123";
-            this.IMT_JANCD_0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMNM_0
-            // 
-            this.IMT_ITMNM_0.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMNM_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMNM_0.Location = new System.Drawing.Point(28, 20);
-            this.IMT_ITMNM_0.Name = "IMT_ITMNM_0";
-            this.IMT_ITMNM_0.Size = new System.Drawing.Size(575, 19);
-            this.IMT_ITMNM_0.TabIndex = 170;
-            this.IMT_ITMNM_0.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
-            this.IMT_ITMNM_0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMN_COSTUNPRICE_0
-            // 
-            this.IMN_COSTUNPRICE_0.BackColor = System.Drawing.Color.DarkGray;
-            this.IMN_COSTUNPRICE_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_COSTUNPRICE_0.Location = new System.Drawing.Point(603, 19);
-            this.IMN_COSTUNPRICE_0.Name = "IMN_COSTUNPRICE_0";
-            this.IMN_COSTUNPRICE_0.Size = new System.Drawing.Size(83, 19);
-            this.IMN_COSTUNPRICE_0.TabIndex = 171;
-            this.IMN_COSTUNPRICE_0.Text = "-999,999,999";
-            this.IMN_COSTUNPRICE_0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMN_COSTUNPRICE_2
-            // 
-            this.IMN_COSTUNPRICE_2.BackColor = System.Drawing.Color.DarkGray;
-            this.IMN_COSTUNPRICE_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_COSTUNPRICE_2.Location = new System.Drawing.Point(603, 19);
-            this.IMN_COSTUNPRICE_2.Name = "IMN_COSTUNPRICE_2";
-            this.IMN_COSTUNPRICE_2.Size = new System.Drawing.Size(83, 19);
-            this.IMN_COSTUNPRICE_2.TabIndex = 186;
-            this.IMN_COSTUNPRICE_2.Text = "-999,999,999";
-            this.IMN_COSTUNPRICE_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMNM_2
-            // 
-            this.IMT_ITMNM_2.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMNM_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMNM_2.Location = new System.Drawing.Point(28, 19);
-            this.IMT_ITMNM_2.Name = "IMT_ITMNM_2";
-            this.IMT_ITMNM_2.Size = new System.Drawing.Size(575, 19);
-            this.IMT_ITMNM_2.TabIndex = 183;
-            this.IMT_ITMNM_2.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
-            this.IMT_ITMNM_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_JANCD_2
-            // 
-            this.IMT_JANCD_2.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_JANCD_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_JANCD_2.Location = new System.Drawing.Point(250, 0);
-            this.IMT_JANCD_2.Name = "IMT_JANCD_2";
-            this.IMT_JANCD_2.Size = new System.Drawing.Size(104, 19);
-            this.IMT_JANCD_2.TabIndex = 184;
-            this.IMT_JANCD_2.Text = "0123456789123";
-            this.IMT_JANCD_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_2
-            // 
-            this.IMT_ITMCD_2.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_2.Location = new System.Drawing.Point(28, 0);
-            this.IMT_ITMCD_2.Name = "IMT_ITMCD_2";
-            this.IMT_ITMCD_2.Size = new System.Drawing.Size(222, 19);
-            this.IMT_ITMCD_2.TabIndex = 185;
-            this.IMT_ITMCD_2.Text = "012345678901234567890123456789";
-            this.IMT_ITMCD_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMN_COSTUNPRICE_3
-            // 
-            this.IMN_COSTUNPRICE_3.BackColor = System.Drawing.Color.DarkGray;
-            this.IMN_COSTUNPRICE_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_COSTUNPRICE_3.Location = new System.Drawing.Point(603, 19);
-            this.IMN_COSTUNPRICE_3.Name = "IMN_COSTUNPRICE_3";
-            this.IMN_COSTUNPRICE_3.Size = new System.Drawing.Size(83, 19);
-            this.IMN_COSTUNPRICE_3.TabIndex = 175;
-            this.IMN_COSTUNPRICE_3.Text = "-999,999,999";
-            this.IMN_COSTUNPRICE_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMNM_3
-            // 
-            this.IMT_ITMNM_3.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMNM_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMNM_3.Location = new System.Drawing.Point(28, 19);
-            this.IMT_ITMNM_3.Name = "IMT_ITMNM_3";
-            this.IMT_ITMNM_3.Size = new System.Drawing.Size(575, 19);
-            this.IMT_ITMNM_3.TabIndex = 172;
-            this.IMT_ITMNM_3.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
-            this.IMT_ITMNM_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_JANCD_3
-            // 
-            this.IMT_JANCD_3.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_JANCD_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_JANCD_3.Location = new System.Drawing.Point(250, -1);
-            this.IMT_JANCD_3.Name = "IMT_JANCD_3";
-            this.IMT_JANCD_3.Size = new System.Drawing.Size(104, 20);
-            this.IMT_JANCD_3.TabIndex = 173;
-            this.IMT_JANCD_3.Text = "0123456789123";
-            this.IMT_JANCD_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_3
-            // 
-            this.IMT_ITMCD_3.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_3.Location = new System.Drawing.Point(28, -1);
-            this.IMT_ITMCD_3.Name = "IMT_ITMCD_3";
-            this.IMT_ITMCD_3.Size = new System.Drawing.Size(222, 20);
-            this.IMT_ITMCD_3.TabIndex = 174;
-            this.IMT_ITMCD_3.Text = "012345678901234567890123456789";
-            this.IMT_ITMCD_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMN_COSTUNPRICE_4
-            // 
-            this.IMN_COSTUNPRICE_4.BackColor = System.Drawing.Color.DarkGray;
-            this.IMN_COSTUNPRICE_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_COSTUNPRICE_4.Location = new System.Drawing.Point(604, 19);
-            this.IMN_COSTUNPRICE_4.Name = "IMN_COSTUNPRICE_4";
-            this.IMN_COSTUNPRICE_4.Size = new System.Drawing.Size(83, 19);
-            this.IMN_COSTUNPRICE_4.TabIndex = 189;
-            this.IMN_COSTUNPRICE_4.Text = "-999,999,999";
-            this.IMN_COSTUNPRICE_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMNM_4
-            // 
-            this.IMT_ITMNM_4.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMNM_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMNM_4.Location = new System.Drawing.Point(29, 19);
-            this.IMT_ITMNM_4.Name = "IMT_ITMNM_4";
-            this.IMT_ITMNM_4.Size = new System.Drawing.Size(575, 19);
-            this.IMT_ITMNM_4.TabIndex = 186;
-            this.IMT_ITMNM_4.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
-            this.IMT_ITMNM_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_JANCD_4
-            // 
-            this.IMT_JANCD_4.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_JANCD_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_JANCD_4.Location = new System.Drawing.Point(251, -1);
-            this.IMT_JANCD_4.Name = "IMT_JANCD_4";
-            this.IMT_JANCD_4.Size = new System.Drawing.Size(104, 20);
-            this.IMT_JANCD_4.TabIndex = 187;
-            this.IMT_JANCD_4.Text = "0123456789123";
-            this.IMT_JANCD_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_4
-            // 
-            this.IMT_ITMCD_4.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_4.Location = new System.Drawing.Point(29, -1);
-            this.IMT_ITMCD_4.Name = "IMT_ITMCD_4";
-            this.IMT_ITMCD_4.Size = new System.Drawing.Size(222, 20);
-            this.IMT_ITMCD_4.TabIndex = 188;
-            this.IMT_ITMCD_4.Text = "012345678901234567890123456789";
-            this.IMT_ITMCD_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMN_COSTUNPRICE_5
-            // 
-            this.IMN_COSTUNPRICE_5.BackColor = System.Drawing.Color.DarkGray;
-            this.IMN_COSTUNPRICE_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_COSTUNPRICE_5.Location = new System.Drawing.Point(604, 19);
-            this.IMN_COSTUNPRICE_5.Name = "IMN_COSTUNPRICE_5";
-            this.IMN_COSTUNPRICE_5.Size = new System.Drawing.Size(83, 19);
-            this.IMN_COSTUNPRICE_5.TabIndex = 189;
-            this.IMN_COSTUNPRICE_5.Text = "-999,999,999";
-            this.IMN_COSTUNPRICE_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMNM_5
-            // 
-            this.IMT_ITMNM_5.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMNM_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMNM_5.Location = new System.Drawing.Point(29, 19);
-            this.IMT_ITMNM_5.Name = "IMT_ITMNM_5";
-            this.IMT_ITMNM_5.Size = new System.Drawing.Size(575, 19);
-            this.IMT_ITMNM_5.TabIndex = 186;
-            this.IMT_ITMNM_5.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
-            this.IMT_ITMNM_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_JANCD_5
-            // 
-            this.IMT_JANCD_5.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_JANCD_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_JANCD_5.Location = new System.Drawing.Point(251, -1);
-            this.IMT_JANCD_5.Name = "IMT_JANCD_5";
-            this.IMT_JANCD_5.Size = new System.Drawing.Size(104, 20);
-            this.IMT_JANCD_5.TabIndex = 187;
-            this.IMT_JANCD_5.Text = "0123456789123";
-            this.IMT_JANCD_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_5
-            // 
-            this.IMT_ITMCD_5.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_5.Location = new System.Drawing.Point(29, -1);
-            this.IMT_ITMCD_5.Name = "IMT_ITMCD_5";
-            this.IMT_ITMCD_5.Size = new System.Drawing.Size(222, 20);
-            this.IMT_ITMCD_5.TabIndex = 188;
-            this.IMT_ITMCD_5.Text = "012345678901234567890123456789";
-            this.IMT_ITMCD_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMN_COSTUNPRICE_6
-            // 
-            this.IMN_COSTUNPRICE_6.BackColor = System.Drawing.Color.DarkGray;
-            this.IMN_COSTUNPRICE_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_COSTUNPRICE_6.Location = new System.Drawing.Point(604, 19);
-            this.IMN_COSTUNPRICE_6.Name = "IMN_COSTUNPRICE_6";
-            this.IMN_COSTUNPRICE_6.Size = new System.Drawing.Size(83, 19);
-            this.IMN_COSTUNPRICE_6.TabIndex = 193;
-            this.IMN_COSTUNPRICE_6.Text = "-999,999,999";
-            this.IMN_COSTUNPRICE_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMNM_6
-            // 
-            this.IMT_ITMNM_6.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMNM_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMNM_6.Location = new System.Drawing.Point(29, 19);
-            this.IMT_ITMNM_6.Name = "IMT_ITMNM_6";
-            this.IMT_ITMNM_6.Size = new System.Drawing.Size(575, 19);
-            this.IMT_ITMNM_6.TabIndex = 190;
-            this.IMT_ITMNM_6.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
-            this.IMT_ITMNM_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_JANCD_6
-            // 
-            this.IMT_JANCD_6.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_JANCD_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_JANCD_6.Location = new System.Drawing.Point(251, -1);
-            this.IMT_JANCD_6.Name = "IMT_JANCD_6";
-            this.IMT_JANCD_6.Size = new System.Drawing.Size(104, 20);
-            this.IMT_JANCD_6.TabIndex = 191;
-            this.IMT_JANCD_6.Text = "0123456789123";
-            this.IMT_JANCD_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_6
-            // 
-            this.IMT_ITMCD_6.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_6.Location = new System.Drawing.Point(29, -1);
-            this.IMT_ITMCD_6.Name = "IMT_ITMCD_6";
-            this.IMT_ITMCD_6.Size = new System.Drawing.Size(222, 20);
-            this.IMT_ITMCD_6.TabIndex = 192;
-            this.IMT_ITMCD_6.Text = "012345678901234567890123456789";
-            this.IMT_ITMCD_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMN_COSTUNPRICE_7
-            // 
-            this.IMN_COSTUNPRICE_7.BackColor = System.Drawing.Color.DarkGray;
-            this.IMN_COSTUNPRICE_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_COSTUNPRICE_7.Location = new System.Drawing.Point(604, 19);
-            this.IMN_COSTUNPRICE_7.Name = "IMN_COSTUNPRICE_7";
-            this.IMN_COSTUNPRICE_7.Size = new System.Drawing.Size(83, 19);
-            this.IMN_COSTUNPRICE_7.TabIndex = 194;
-            this.IMN_COSTUNPRICE_7.Text = "-999,999,999";
-            this.IMN_COSTUNPRICE_7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMNM_7
-            // 
-            this.IMT_ITMNM_7.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMNM_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMNM_7.Location = new System.Drawing.Point(29, 19);
-            this.IMT_ITMNM_7.Name = "IMT_ITMNM_7";
-            this.IMT_ITMNM_7.Size = new System.Drawing.Size(575, 19);
-            this.IMT_ITMNM_7.TabIndex = 191;
-            this.IMT_ITMNM_7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_JANCD_7
-            // 
-            this.IMT_JANCD_7.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_JANCD_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_JANCD_7.Location = new System.Drawing.Point(251, -1);
-            this.IMT_JANCD_7.Name = "IMT_JANCD_7";
-            this.IMT_JANCD_7.Size = new System.Drawing.Size(104, 20);
-            this.IMT_JANCD_7.TabIndex = 192;
-            this.IMT_JANCD_7.Text = "0123456789123";
-            this.IMT_JANCD_7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_7
-            // 
-            this.IMT_ITMCD_7.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_7.Location = new System.Drawing.Point(29, -1);
-            this.IMT_ITMCD_7.Name = "IMT_ITMCD_7";
-            this.IMT_ITMCD_7.Size = new System.Drawing.Size(222, 20);
-            this.IMT_ITMCD_7.TabIndex = 193;
-            this.IMT_ITMCD_7.Text = "012345678901234567890123456789";
-            this.IMT_ITMCD_7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMN_COSTUNPRICE_8
-            // 
-            this.IMN_COSTUNPRICE_8.BackColor = System.Drawing.Color.DarkGray;
-            this.IMN_COSTUNPRICE_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_COSTUNPRICE_8.Location = new System.Drawing.Point(603, 19);
-            this.IMN_COSTUNPRICE_8.Name = "IMN_COSTUNPRICE_8";
-            this.IMN_COSTUNPRICE_8.Size = new System.Drawing.Size(83, 19);
-            this.IMN_COSTUNPRICE_8.TabIndex = 191;
-            this.IMN_COSTUNPRICE_8.Text = "-999,999,999";
-            this.IMN_COSTUNPRICE_8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMNM_8
-            // 
-            this.IMT_ITMNM_8.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMNM_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMNM_8.Location = new System.Drawing.Point(28, 19);
-            this.IMT_ITMNM_8.Name = "IMT_ITMNM_8";
-            this.IMT_ITMNM_8.Size = new System.Drawing.Size(575, 19);
-            this.IMT_ITMNM_8.TabIndex = 188;
-            this.IMT_ITMNM_8.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
-            this.IMT_ITMNM_8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_JANCD_8
-            // 
-            this.IMT_JANCD_8.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_JANCD_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_JANCD_8.Location = new System.Drawing.Point(250, -1);
-            this.IMT_JANCD_8.Name = "IMT_JANCD_8";
-            this.IMT_JANCD_8.Size = new System.Drawing.Size(104, 20);
-            this.IMT_JANCD_8.TabIndex = 189;
-            this.IMT_JANCD_8.Text = "0123456789123";
-            this.IMT_JANCD_8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_8
-            // 
-            this.IMT_ITMCD_8.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_8.Location = new System.Drawing.Point(28, 0);
-            this.IMT_ITMCD_8.Name = "IMT_ITMCD_8";
-            this.IMT_ITMCD_8.Size = new System.Drawing.Size(222, 20);
-            this.IMT_ITMCD_8.TabIndex = 190;
-            this.IMT_ITMCD_8.Text = "012345678901234567890123456789";
-            this.IMT_ITMCD_8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMN_COSTUNPRICE_9
-            // 
-            this.IMN_COSTUNPRICE_9.BackColor = System.Drawing.Color.DarkGray;
-            this.IMN_COSTUNPRICE_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_COSTUNPRICE_9.Location = new System.Drawing.Point(603, 19);
-            this.IMN_COSTUNPRICE_9.Name = "IMN_COSTUNPRICE_9";
-            this.IMN_COSTUNPRICE_9.Size = new System.Drawing.Size(83, 18);
-            this.IMN_COSTUNPRICE_9.TabIndex = 191;
-            this.IMN_COSTUNPRICE_9.Text = "-999,999,999";
-            this.IMN_COSTUNPRICE_9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMNM_9
-            // 
-            this.IMT_ITMNM_9.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMNM_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMNM_9.Location = new System.Drawing.Point(28, 19);
-            this.IMT_ITMNM_9.Name = "IMT_ITMNM_9";
-            this.IMT_ITMNM_9.Size = new System.Drawing.Size(575, 19);
-            this.IMT_ITMNM_9.TabIndex = 188;
-            this.IMT_ITMNM_9.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
-            this.IMT_ITMNM_9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_JANCD_9
-            // 
-            this.IMT_JANCD_9.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_JANCD_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_JANCD_9.Location = new System.Drawing.Point(250, -1);
-            this.IMT_JANCD_9.Name = "IMT_JANCD_9";
-            this.IMT_JANCD_9.Size = new System.Drawing.Size(104, 20);
-            this.IMT_JANCD_9.TabIndex = 189;
-            this.IMT_JANCD_9.Text = "0123456789123";
-            this.IMT_JANCD_9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_9
-            // 
-            this.IMT_ITMCD_9.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_9.Location = new System.Drawing.Point(28, -1);
-            this.IMT_ITMCD_9.Name = "IMT_ITMCD_9";
-            this.IMT_ITMCD_9.Size = new System.Drawing.Size(222, 20);
-            this.IMT_ITMCD_9.TabIndex = 190;
-            this.IMT_ITMCD_9.Text = "012345678901234567890123456789";
-            this.IMT_ITMCD_9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel46
-            // 
-            this.panel46.Location = new System.Drawing.Point(0, 40);
-            this.panel46.Name = "panel46";
-            this.panel46.Size = new System.Drawing.Size(1317, 38);
-            this.panel46.TabIndex = 164;
-            // 
-            // panel45
-            // 
-            this.panel45.Location = new System.Drawing.Point(0, 78);
-            this.panel45.Name = "panel45";
-            this.panel45.Size = new System.Drawing.Size(1317, 38);
-            this.panel45.TabIndex = 165;
-            // 
-            // panel42
-            // 
-            this.panel42.Controls.Add(this.panel43);
-            this.panel42.Controls.Add(this.panel44);
-            this.panel42.Location = new System.Drawing.Point(1, 39);
-            this.panel42.Name = "panel42";
-            this.panel42.Size = new System.Drawing.Size(1317, 38);
-            this.panel42.TabIndex = 166;
-            // 
-            // panel44
-            // 
-            this.panel44.Location = new System.Drawing.Point(0, 40);
-            this.panel44.Name = "panel44";
-            this.panel44.Size = new System.Drawing.Size(1317, 38);
-            this.panel44.TabIndex = 164;
-            // 
-            // panel43
-            // 
-            this.panel43.Location = new System.Drawing.Point(0, 78);
-            this.panel43.Name = "panel43";
-            this.panel43.Size = new System.Drawing.Size(1317, 38);
-            this.panel43.TabIndex = 165;
-            // 
-            // panel10__2
-            // 
-            this.panel10__2.Controls.Add(this.IMT_REMARK_1);
-            this.panel10__2.Controls.Add(this.IMN_COSTUNPRICE_1);
-            this.panel10__2.Controls.Add(this.IMT_ITMNM_1);
-            this.panel10__2.Controls.Add(this.IMT_JANCD_1);
-            this.panel10__2.Controls.Add(this.IMT_ITMCD_1);
-            this.panel10__2.Controls.Add(this.Space1);
-            this.panel10__2.Controls.Add(this.IMT_GYONO_1);
-            this.panel10__2.Controls.Add(this.IMN_R5UNITPRICE_1);
-            this.panel10__2.Controls.Add(this.IMN_R4UNITPRICE_1);
-            this.panel10__2.Controls.Add(this.IMN_R3UNITPRICE_1);
-            this.panel10__2.Controls.Add(this.IMN_R2UNITPRICE_1);
-            this.panel10__2.Controls.Add(this.IMN_R1UNITPRICE_1);
-            this.panel10__2.Controls.Add(this.IMN_SSUNITPRICE_1);
-            this.panel10__2.Controls.Add(this.IMN_UNITPRICE_1);
-            this.panel10__2.Controls.Add(this.IMT_ENDDT_1);
-            this.panel10__2.Controls.Add(this.IMT_STADT_1);
-            this.panel10__2.Controls.Add(this.panel42);
-            this.panel10__2.Controls.Add(this.panel45);
-            this.panel10__2.Controls.Add(this.panel46);
-            this.panel10__2.Location = new System.Drawing.Point(14, 248);
-            this.panel10__2.Name = "panel10__2";
-            this.panel10__2.Size = new System.Drawing.Size(1317, 38);
-            this.panel10__2.TabIndex = 0;
-            // 
-            // IMN_COSTUNPRICE_1
-            // 
-            this.IMN_COSTUNPRICE_1.BackColor = System.Drawing.Color.DarkGray;
-            this.IMN_COSTUNPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_COSTUNPRICE_1.Location = new System.Drawing.Point(603, 19);
-            this.IMN_COSTUNPRICE_1.Name = "IMN_COSTUNPRICE_1";
-            this.IMN_COSTUNPRICE_1.Size = new System.Drawing.Size(83, 19);
-            this.IMN_COSTUNPRICE_1.TabIndex = 202;
-            this.IMN_COSTUNPRICE_1.Text = "-999,999,999";
-            this.IMN_COSTUNPRICE_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMNM_1
-            // 
-            this.IMT_ITMNM_1.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMNM_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMNM_1.Location = new System.Drawing.Point(28, 20);
-            this.IMT_ITMNM_1.Name = "IMT_ITMNM_1";
-            this.IMT_ITMNM_1.Size = new System.Drawing.Size(575, 18);
-            this.IMT_ITMNM_1.TabIndex = 199;
-            this.IMT_ITMNM_1.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
-            this.IMT_ITMNM_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_JANCD_1
-            // 
-            this.IMT_JANCD_1.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_JANCD_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_JANCD_1.Location = new System.Drawing.Point(250, 0);
-            this.IMT_JANCD_1.Name = "IMT_JANCD_1";
-            this.IMT_JANCD_1.Size = new System.Drawing.Size(104, 20);
-            this.IMT_JANCD_1.TabIndex = 200;
-            this.IMT_JANCD_1.Text = "0123456789123";
-            this.IMT_JANCD_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_1
-            // 
-            this.IMT_ITMCD_1.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_1.Location = new System.Drawing.Point(28, 0);
-            this.IMT_ITMCD_1.Name = "IMT_ITMCD_1";
-            this.IMT_ITMCD_1.Size = new System.Drawing.Size(222, 20);
-            this.IMT_ITMCD_1.TabIndex = 201;
-            this.IMT_ITMCD_1.Text = "012345678901234567890123456789";
-            this.IMT_ITMCD_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // Space1
-            // 
-            this.Space1.BackColor = System.Drawing.Color.DarkGray;
-            this.Space1.Location = new System.Drawing.Point(1136, 0);
-            this.Space1.Name = "Space1";
-            this.Space1.Size = new System.Drawing.Size(180, 19);
-            this.Space1.TabIndex = 198;
-            // 
-            // IMT_GYONO_1
-            // 
-            this.IMT_GYONO_1.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_GYONO_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_GYONO_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IMT_GYONO_1.Location = new System.Drawing.Point(0, 0);
-            this.IMT_GYONO_1.Name = "IMT_GYONO_1";
-            this.IMT_GYONO_1.Size = new System.Drawing.Size(28, 38);
-            this.IMT_GYONO_1.TabIndex = 197;
-            this.IMT_GYONO_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // IMN_R5UNITPRICE_1
-            // 
-            this.IMN_R5UNITPRICE_1.AllowMinus = false;
-            this.IMN_R5UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMN_R5UNITPRICE_1.BackColor = System.Drawing.Color.White;
-            this.IMN_R5UNITPRICE_1.BorderColor = false;
-            this.IMN_R5UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_R5UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMN_R5UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMN_R5UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.IMN_R5UNITPRICE_1.DecimalPlace = 0;
-            this.IMN_R5UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMN_R5UNITPRICE_1.IntegerPart = 9;
-            this.IMN_R5UNITPRICE_1.IsCorrectDate = true;
-            this.IMN_R5UNITPRICE_1.isEnterKeyDown = false;
-            this.IMN_R5UNITPRICE_1.IsFirstTime = true;
-            this.IMN_R5UNITPRICE_1.isMaxLengthErr = false;
-            this.IMN_R5UNITPRICE_1.IsNumber = true;
-            this.IMN_R5UNITPRICE_1.IsShop = false;
-            this.IMN_R5UNITPRICE_1.Length = 20;
-            this.IMN_R5UNITPRICE_1.Location = new System.Drawing.Point(1046, 0);
-            this.IMN_R5UNITPRICE_1.MaxLength = 20;
-            this.IMN_R5UNITPRICE_1.MoveNext = true;
-            this.IMN_R5UNITPRICE_1.Name = "IMN_R5UNITPRICE_1";
-            this.IMN_R5UNITPRICE_1.Size = new System.Drawing.Size(90, 19);
-            this.IMN_R5UNITPRICE_1.TabIndex = 196;
-            this.IMN_R5UNITPRICE_1.Text = "999,999,999";
-            this.IMN_R5UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_R5UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMN_R5UNITPRICE_1.UseColorSizMode = false;
-            // 
-            // IMN_R4UNITPRICE_1
-            // 
-            this.IMN_R4UNITPRICE_1.AllowMinus = false;
-            this.IMN_R4UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMN_R4UNITPRICE_1.BackColor = System.Drawing.Color.White;
-            this.IMN_R4UNITPRICE_1.BorderColor = false;
-            this.IMN_R4UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_R4UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMN_R4UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMN_R4UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.IMN_R4UNITPRICE_1.DecimalPlace = 0;
-            this.IMN_R4UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMN_R4UNITPRICE_1.IntegerPart = 9;
-            this.IMN_R4UNITPRICE_1.IsCorrectDate = true;
-            this.IMN_R4UNITPRICE_1.isEnterKeyDown = false;
-            this.IMN_R4UNITPRICE_1.IsFirstTime = true;
-            this.IMN_R4UNITPRICE_1.isMaxLengthErr = false;
-            this.IMN_R4UNITPRICE_1.IsNumber = true;
-            this.IMN_R4UNITPRICE_1.IsShop = false;
-            this.IMN_R4UNITPRICE_1.Length = 20;
-            this.IMN_R4UNITPRICE_1.Location = new System.Drawing.Point(956, 0);
-            this.IMN_R4UNITPRICE_1.MaxLength = 20;
-            this.IMN_R4UNITPRICE_1.MoveNext = true;
-            this.IMN_R4UNITPRICE_1.Name = "IMN_R4UNITPRICE_1";
-            this.IMN_R4UNITPRICE_1.Size = new System.Drawing.Size(90, 19);
-            this.IMN_R4UNITPRICE_1.TabIndex = 195;
-            this.IMN_R4UNITPRICE_1.Text = "999,999,999";
-            this.IMN_R4UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_R4UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMN_R4UNITPRICE_1.UseColorSizMode = false;
-            // 
-            // IMN_R3UNITPRICE_1
-            // 
-            this.IMN_R3UNITPRICE_1.AllowMinus = false;
-            this.IMN_R3UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMN_R3UNITPRICE_1.BackColor = System.Drawing.Color.White;
-            this.IMN_R3UNITPRICE_1.BorderColor = false;
-            this.IMN_R3UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_R3UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMN_R3UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMN_R3UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.IMN_R3UNITPRICE_1.DecimalPlace = 0;
-            this.IMN_R3UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMN_R3UNITPRICE_1.IntegerPart = 9;
-            this.IMN_R3UNITPRICE_1.IsCorrectDate = true;
-            this.IMN_R3UNITPRICE_1.isEnterKeyDown = false;
-            this.IMN_R3UNITPRICE_1.IsFirstTime = true;
-            this.IMN_R3UNITPRICE_1.isMaxLengthErr = false;
-            this.IMN_R3UNITPRICE_1.IsNumber = true;
-            this.IMN_R3UNITPRICE_1.IsShop = false;
-            this.IMN_R3UNITPRICE_1.Length = 20;
-            this.IMN_R3UNITPRICE_1.Location = new System.Drawing.Point(866, 0);
-            this.IMN_R3UNITPRICE_1.MaxLength = 20;
-            this.IMN_R3UNITPRICE_1.MoveNext = true;
-            this.IMN_R3UNITPRICE_1.Name = "IMN_R3UNITPRICE_1";
-            this.IMN_R3UNITPRICE_1.Size = new System.Drawing.Size(90, 19);
-            this.IMN_R3UNITPRICE_1.TabIndex = 194;
-            this.IMN_R3UNITPRICE_1.Text = "999,999,999";
-            this.IMN_R3UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_R3UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMN_R3UNITPRICE_1.UseColorSizMode = false;
-            // 
-            // IMN_R2UNITPRICE_1
-            // 
-            this.IMN_R2UNITPRICE_1.AllowMinus = false;
-            this.IMN_R2UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMN_R2UNITPRICE_1.BackColor = System.Drawing.Color.White;
-            this.IMN_R2UNITPRICE_1.BorderColor = false;
-            this.IMN_R2UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_R2UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMN_R2UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMN_R2UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.IMN_R2UNITPRICE_1.DecimalPlace = 0;
-            this.IMN_R2UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMN_R2UNITPRICE_1.IntegerPart = 9;
-            this.IMN_R2UNITPRICE_1.IsCorrectDate = true;
-            this.IMN_R2UNITPRICE_1.isEnterKeyDown = false;
-            this.IMN_R2UNITPRICE_1.IsFirstTime = true;
-            this.IMN_R2UNITPRICE_1.isMaxLengthErr = false;
-            this.IMN_R2UNITPRICE_1.IsNumber = true;
-            this.IMN_R2UNITPRICE_1.IsShop = false;
-            this.IMN_R2UNITPRICE_1.Length = 20;
-            this.IMN_R2UNITPRICE_1.Location = new System.Drawing.Point(776, 0);
-            this.IMN_R2UNITPRICE_1.MaxLength = 20;
-            this.IMN_R2UNITPRICE_1.MoveNext = true;
-            this.IMN_R2UNITPRICE_1.Name = "IMN_R2UNITPRICE_1";
-            this.IMN_R2UNITPRICE_1.Size = new System.Drawing.Size(90, 19);
-            this.IMN_R2UNITPRICE_1.TabIndex = 193;
-            this.IMN_R2UNITPRICE_1.Text = "999,999,999";
-            this.IMN_R2UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_R2UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMN_R2UNITPRICE_1.UseColorSizMode = false;
-            // 
-            // IMN_R1UNITPRICE_1
-            // 
-            this.IMN_R1UNITPRICE_1.AllowMinus = false;
-            this.IMN_R1UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMN_R1UNITPRICE_1.BackColor = System.Drawing.Color.White;
-            this.IMN_R1UNITPRICE_1.BorderColor = false;
-            this.IMN_R1UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_R1UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMN_R1UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMN_R1UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.IMN_R1UNITPRICE_1.DecimalPlace = 0;
-            this.IMN_R1UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMN_R1UNITPRICE_1.IntegerPart = 9;
-            this.IMN_R1UNITPRICE_1.IsCorrectDate = true;
-            this.IMN_R1UNITPRICE_1.isEnterKeyDown = false;
-            this.IMN_R1UNITPRICE_1.IsFirstTime = true;
-            this.IMN_R1UNITPRICE_1.isMaxLengthErr = false;
-            this.IMN_R1UNITPRICE_1.IsNumber = true;
-            this.IMN_R1UNITPRICE_1.IsShop = false;
-            this.IMN_R1UNITPRICE_1.Length = 20;
-            this.IMN_R1UNITPRICE_1.Location = new System.Drawing.Point(686, 0);
-            this.IMN_R1UNITPRICE_1.MaxLength = 20;
-            this.IMN_R1UNITPRICE_1.MoveNext = true;
-            this.IMN_R1UNITPRICE_1.Name = "IMN_R1UNITPRICE_1";
-            this.IMN_R1UNITPRICE_1.Size = new System.Drawing.Size(90, 19);
-            this.IMN_R1UNITPRICE_1.TabIndex = 192;
-            this.IMN_R1UNITPRICE_1.Text = "999,999,999";
-            this.IMN_R1UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_R1UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMN_R1UNITPRICE_1.UseColorSizMode = false;
-            // 
-            // IMN_SSUNITPRICE_1
-            // 
-            this.IMN_SSUNITPRICE_1.AllowMinus = false;
-            this.IMN_SSUNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMN_SSUNITPRICE_1.BackColor = System.Drawing.Color.White;
-            this.IMN_SSUNITPRICE_1.BorderColor = false;
-            this.IMN_SSUNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_SSUNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMN_SSUNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMN_SSUNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.IMN_SSUNITPRICE_1.DecimalPlace = 0;
-            this.IMN_SSUNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMN_SSUNITPRICE_1.IntegerPart = 9;
-            this.IMN_SSUNITPRICE_1.IsCorrectDate = true;
-            this.IMN_SSUNITPRICE_1.isEnterKeyDown = false;
-            this.IMN_SSUNITPRICE_1.IsFirstTime = true;
-            this.IMN_SSUNITPRICE_1.isMaxLengthErr = false;
-            this.IMN_SSUNITPRICE_1.IsNumber = true;
-            this.IMN_SSUNITPRICE_1.IsShop = false;
-            this.IMN_SSUNITPRICE_1.Length = 20;
-            this.IMN_SSUNITPRICE_1.Location = new System.Drawing.Point(603, 0);
-            this.IMN_SSUNITPRICE_1.MaxLength = 20;
-            this.IMN_SSUNITPRICE_1.MoveNext = true;
-            this.IMN_SSUNITPRICE_1.Name = "IMN_SSUNITPRICE_1";
-            this.IMN_SSUNITPRICE_1.Size = new System.Drawing.Size(83, 19);
-            this.IMN_SSUNITPRICE_1.TabIndex = 191;
-            this.IMN_SSUNITPRICE_1.Text = "999,999,999";
-            this.IMN_SSUNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_SSUNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMN_SSUNITPRICE_1.UseColorSizMode = false;
-            // 
-            // IMN_UNITPRICE_1
-            // 
-            this.IMN_UNITPRICE_1.AllowMinus = false;
-            this.IMN_UNITPRICE_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMN_UNITPRICE_1.BackColor = System.Drawing.Color.White;
-            this.IMN_UNITPRICE_1.BorderColor = false;
-            this.IMN_UNITPRICE_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_UNITPRICE_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMN_UNITPRICE_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMN_UNITPRICE_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.IMN_UNITPRICE_1.DecimalPlace = 0;
-            this.IMN_UNITPRICE_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMN_UNITPRICE_1.IntegerPart = 9;
-            this.IMN_UNITPRICE_1.IsCorrectDate = true;
-            this.IMN_UNITPRICE_1.isEnterKeyDown = false;
-            this.IMN_UNITPRICE_1.IsFirstTime = true;
-            this.IMN_UNITPRICE_1.isMaxLengthErr = false;
-            this.IMN_UNITPRICE_1.IsNumber = true;
-            this.IMN_UNITPRICE_1.IsShop = false;
-            this.IMN_UNITPRICE_1.Length = 20;
-            this.IMN_UNITPRICE_1.Location = new System.Drawing.Point(520, 1);
-            this.IMN_UNITPRICE_1.MaxLength = 20;
-            this.IMN_UNITPRICE_1.MoveNext = true;
-            this.IMN_UNITPRICE_1.Name = "IMN_UNITPRICE_1";
-            this.IMN_UNITPRICE_1.Size = new System.Drawing.Size(83, 19);
-            this.IMN_UNITPRICE_1.TabIndex = 190;
-            this.IMN_UNITPRICE_1.Text = "999,999,999";
-            this.IMN_UNITPRICE_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_UNITPRICE_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMN_UNITPRICE_1.UseColorSizMode = false;
-            // 
-            // IMT_ENDDT_1
-            // 
-            this.IMT_ENDDT_1.AllowMinus = false;
-            this.IMT_ENDDT_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_ENDDT_1.BackColor = System.Drawing.Color.White;
-            this.IMT_ENDDT_1.BorderColor = false;
-            this.IMT_ENDDT_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ENDDT_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMT_ENDDT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_ENDDT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.IMT_ENDDT_1.DecimalPlace = 0;
-            this.IMT_ENDDT_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMT_ENDDT_1.IntegerPart = 0;
-            this.IMT_ENDDT_1.IsCorrectDate = true;
-            this.IMT_ENDDT_1.isEnterKeyDown = false;
-            this.IMT_ENDDT_1.IsFirstTime = true;
-            this.IMT_ENDDT_1.isMaxLengthErr = false;
-            this.IMT_ENDDT_1.IsNumber = true;
-            this.IMT_ENDDT_1.IsShop = false;
-            this.IMT_ENDDT_1.Length = 10;
-            this.IMT_ENDDT_1.Location = new System.Drawing.Point(437, 1);
-            this.IMT_ENDDT_1.MaxLength = 10;
-            this.IMT_ENDDT_1.MoveNext = true;
-            this.IMT_ENDDT_1.Name = "IMT_ENDDT_1";
-            this.IMT_ENDDT_1.Size = new System.Drawing.Size(83, 19);
-            this.IMT_ENDDT_1.TabIndex = 189;
-            this.IMT_ENDDT_1.Text = "9999/99/99";
-            this.IMT_ENDDT_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.IMT_ENDDT_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_ENDDT_1.UseColorSizMode = false;
-            // 
-            // IMT_STADT_1
-            // 
-            this.IMT_STADT_1.AllowMinus = false;
-            this.IMT_STADT_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_STADT_1.BackColor = System.Drawing.Color.White;
-            this.IMT_STADT_1.BorderColor = false;
-            this.IMT_STADT_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_STADT_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMT_STADT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_STADT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.IMT_STADT_1.DecimalPlace = 0;
-            this.IMT_STADT_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMT_STADT_1.IntegerPart = 0;
-            this.IMT_STADT_1.IsCorrectDate = true;
-            this.IMT_STADT_1.isEnterKeyDown = false;
-            this.IMT_STADT_1.IsFirstTime = true;
-            this.IMT_STADT_1.isMaxLengthErr = false;
-            this.IMT_STADT_1.IsNumber = true;
-            this.IMT_STADT_1.IsShop = false;
-            this.IMT_STADT_1.Length = 10;
-            this.IMT_STADT_1.Location = new System.Drawing.Point(354, 1);
-            this.IMT_STADT_1.MaxLength = 10;
-            this.IMT_STADT_1.MoveNext = true;
-            this.IMT_STADT_1.Name = "IMT_STADT_1";
-            this.IMT_STADT_1.Size = new System.Drawing.Size(83, 19);
-            this.IMT_STADT_1.TabIndex = 188;
-            this.IMT_STADT_1.Text = "9999/99/99";
-            this.IMT_STADT_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.IMT_STADT_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_STADT_1.UseColorSizMode = false;
-            // 
-            // IMT_REMARK_1
-            // 
-            this.IMT_REMARK_1.AllowMinus = false;
-            this.IMT_REMARK_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_REMARK_1.BackColor = System.Drawing.Color.White;
-            this.IMT_REMARK_1.BorderColor = false;
-            this.IMT_REMARK_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_REMARK_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMT_REMARK_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_REMARK_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_REMARK_1.DecimalPlace = 0;
-            this.IMT_REMARK_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMT_REMARK_1.IntegerPart = 0;
-            this.IMT_REMARK_1.IsCorrectDate = true;
-            this.IMT_REMARK_1.isEnterKeyDown = false;
-            this.IMT_REMARK_1.IsFirstTime = true;
-            this.IMT_REMARK_1.isMaxLengthErr = false;
-            this.IMT_REMARK_1.IsNumber = true;
-            this.IMT_REMARK_1.IsShop = false;
-            this.IMT_REMARK_1.Length = 32767;
-            this.IMT_REMARK_1.Location = new System.Drawing.Point(686, 19);
-            this.IMT_REMARK_1.MoveNext = true;
-            this.IMT_REMARK_1.Name = "IMT_REMARK_1";
-            this.IMT_REMARK_1.Size = new System.Drawing.Size(630, 19);
-            this.IMT_REMARK_1.TabIndex = 203;
-            this.IMT_REMARK_1.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50ＸＸＸＸＸＸＸＸＸ60";
-            this.IMT_REMARK_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_REMARK_1.UseColorSizMode = false;
-            // 
-            // IMT_REMARK_0
-            // 
-            this.IMT_REMARK_0.AllowMinus = false;
-            this.IMT_REMARK_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_REMARK_0.BackColor = System.Drawing.Color.White;
-            this.IMT_REMARK_0.BorderColor = false;
-            this.IMT_REMARK_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_REMARK_0.ClientColor = System.Drawing.SystemColors.Window;
-            this.IMT_REMARK_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMT_REMARK_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_REMARK_0.DecimalPlace = 0;
-            this.IMT_REMARK_0.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.IMT_REMARK_0.IntegerPart = 0;
-            this.IMT_REMARK_0.IsCorrectDate = true;
-            this.IMT_REMARK_0.isEnterKeyDown = false;
-            this.IMT_REMARK_0.IsFirstTime = true;
-            this.IMT_REMARK_0.isMaxLengthErr = false;
-            this.IMT_REMARK_0.IsNumber = true;
-            this.IMT_REMARK_0.IsShop = false;
-            this.IMT_REMARK_0.Length = 32767;
-            this.IMT_REMARK_0.Location = new System.Drawing.Point(686, 19);
-            this.IMT_REMARK_0.MoveNext = true;
-            this.IMT_REMARK_0.Name = "IMT_REMARK_0";
-            this.IMT_REMARK_0.Size = new System.Drawing.Size(630, 19);
-            this.IMT_REMARK_0.TabIndex = 172;
-            this.IMT_REMARK_0.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50ＸＸＸＸＸＸＸＸＸ60";
-            this.IMT_REMARK_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.IMT_REMARK_0.UseColorSizMode = false;
-            // 
             // MasterTouroku_HanbaiTankaTennic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -6414,8 +6416,12 @@
             this.Controls.SetChildIndex(this.panel113, 0);
             this.Controls.SetChildIndex(this.panel137, 0);
             this.panel1.ResumeLayout(false);
+            this.panel10__2.ResumeLayout(false);
+            this.panel10__2.PerformLayout();
+            this.panel42.ResumeLayout(false);
             this.pnl_Header.ResumeLayout(false);
             this.pnl_Header.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.panel10_1.ResumeLayout(false);
             this.panel10_1.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -6477,10 +6483,6 @@
             this.panel150.ResumeLayout(false);
             this.panel151.ResumeLayout(false);
             this.panel156.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel42.ResumeLayout(false);
-            this.panel10__2.ResumeLayout(false);
-            this.panel10__2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
