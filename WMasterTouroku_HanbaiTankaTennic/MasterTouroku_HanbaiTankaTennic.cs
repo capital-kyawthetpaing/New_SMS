@@ -1109,6 +1109,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                         if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
                             return false;
                     }
+
             }
             switch (col)
             {
