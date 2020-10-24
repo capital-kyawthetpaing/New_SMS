@@ -236,7 +236,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
                     mGrid.g_DArray[c].JANCD = dr["JanCD"].ToString();
                     mGrid.g_DArray[c].AdminNo = dr["AdminNo"].ToString();
-                    mGrid.g_DArray[c].StartChangeDate = dr["StartDate"].ToString();
+                    mGrid.g_DArray[c].ChangeDate=    mGrid.g_DArray[c].StartChangeDate = dr["StartDate"].ToString();
                     mGrid.g_DArray[c].EndChangeDate = dr["EndDate"].ToString();
                     mGrid.g_DArray[c].UnitPrice = dr["UnitPrice"].ToString();
                     mGrid.g_DArray[c].StandardSalesUnitPrice = dr["StandardSalesUnitPrice"].ToString();
@@ -464,8 +464,8 @@ namespace WMasterTouroku_HanbaiTankaTennic
         {
             var result = new DataTable();
             var dt = new DataTable();
-            var colnames = new string[] { "TanKaCD", "StoreCD", "AdminNO", "SKUCD", "StartChangeDate", "EndChangeDate", "PriceWithoutTax", "SalePriceOutTax", "Remarks", "DeleteFlg", "UsedFlg", "InsertOperartor", "InsertDateTime", "UpdateOperator", "UpdateDateTime" };
-            var ColumnNames = new string[] { "SKUCD", "AdminNo", "JANCD", "StartChangeDate", "EndChangeDate", "UnitPrice", "StandardSalesUnitPrice", "Rank1", "Rank2", "Rank3", "Rank4", "Rank5", "ItemName", "CostUnitPrice", "Remarks" };
+            var colnames = new string[] { "TanKaCD", "StoreCD", "AdminNO", "SKUCD","ChangeDate", "StartChangeDate", "EndChangeDate", "PriceWithoutTax", "SalePriceOutTax", "Remarks", "DeleteFlg", "UsedFlg", "InsertOperartor", "InsertDateTime", "UpdateOperator", "UpdateDateTime" };
+            var ColumnNames = new string[] { "SKUCD", "AdminNo", "JANCD","ChangeDate", "StartChangeDate", "EndChangeDate", "UnitPrice", "StandardSalesUnitPrice", "Rank1", "Rank2", "Rank3", "Rank4", "Rank5", "ItemName", "CostUnitPrice", "Remarks" };
             foreach (var col in ColumnNames)
             {
                 dt.Columns.Add(col);
@@ -485,6 +485,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                         mGrid.g_DArray[RW].SKUCD
                           , mGrid.g_DArray[RW].AdminNo
                          , mGrid.g_DArray[RW].JANCD
+                         , mGrid.g_DArray[RW].ChangeDate
                          , mGrid.g_DArray[RW].StartChangeDate
                          , mGrid.g_DArray[RW].EndChangeDate
                          , mGrid.g_DArray[RW].UnitPrice
@@ -547,6 +548,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                                 "0000",
                                 row["AdminNO"].ToString(),
                                 row["SKUCD"].ToString(),
+                                row["ChangeDate"].ToString(),
                                 row["StartChangeDate"].ToString(),
                                 row["EndChangeDate"].ToString(),
                                 row["UnitPrice"].ToString(),
@@ -567,6 +569,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                                  "0000",
                                 row["AdminNO"].ToString(),
                                 row["SKUCD"].ToString(),
+                                row["ChangeDate"].ToString(),
                                 row["StartChangeDate"].ToString(),
                                 row["EndChangeDate"].ToString(),
                                 row["UnitPrice"].ToString(),
@@ -587,6 +590,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                                 "0000",
                                 row["AdminNO"].ToString(),
                                 row["SKUCD"].ToString(),
+                                row["ChangeDate"].ToString(),
                                 row["StartChangeDate"].ToString(),
                                 row["EndChangeDate"].ToString(),
                                 row["UnitPrice"].ToString(),
@@ -607,6 +611,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                                  "0000",
                                 row["AdminNO"].ToString(),
                                 row["SKUCD"].ToString(),
+                                row["ChangeDate"].ToString(),
                                 row["StartChangeDate"].ToString(),
                                 row["EndChangeDate"].ToString(),
                                 row["UnitPrice"].ToString(),
@@ -627,6 +632,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                                  "0000",
                                 row["AdminNO"].ToString(),
                                 row["SKUCD"].ToString(),
+                                row["ChangeDate"].ToString(),
                                 row["StartChangeDate"].ToString(),
                                 row["EndChangeDate"].ToString(),
                                 row["UnitPrice"].ToString(),
@@ -647,6 +653,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                                  "0000",
                                 row["AdminNO"].ToString(),
                                 row["SKUCD"].ToString(),
+                                row["ChangeDate"].ToString(),
                                 row["StartChangeDate"].ToString(),
                                 row["EndChangeDate"].ToString(),
                                 row["UnitPrice"].ToString(),
@@ -1707,11 +1714,11 @@ namespace WMasterTouroku_HanbaiTankaTennic
         {
             if (spb.ShowMessage(OperationMode == EOperationMode.DELETE ? "Q102" : "Q101") == DialogResult.Yes)
             {
-                if (!CheckAllGrid())
-                {
-                    return;
-                }
-                 mse = SKUPriceEntity();
+                //if (!CheckAllGrid())
+                //{
+                //    return;
+                //}
+                mse = SKUPriceEntity();
                 switch (OperationMode)
                 {
                     case EOperationMode.INSERT:
