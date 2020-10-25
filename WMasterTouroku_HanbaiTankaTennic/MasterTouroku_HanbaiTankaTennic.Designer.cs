@@ -911,8 +911,7 @@
             // 
             // pnl_Body
             // 
-            this.pnl_Body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnl_Body.Location = new System.Drawing.Point(12, 161);
+            this.pnl_Body.Location = new System.Drawing.Point(12, 162);
             this.pnl_Body.Name = "pnl_Body";
             this.pnl_Body.Size = new System.Drawing.Size(1320, 378);
             this.pnl_Body.TabIndex = 125;
@@ -1514,7 +1513,7 @@
             this.label11.BackColor = System.Drawing.Color.DarkGray;
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(1045, 0);
+            this.label11.Location = new System.Drawing.Point(1047, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(90, 18);
             this.label11.TabIndex = 11;
@@ -1526,7 +1525,7 @@
             this.label10.BackColor = System.Drawing.Color.DarkGray;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(955, 0);
+            this.label10.Location = new System.Drawing.Point(957, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(90, 18);
             this.label10.TabIndex = 10;
@@ -1538,7 +1537,7 @@
             this.label9.BackColor = System.Drawing.Color.DarkGray;
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(865, 0);
+            this.label9.Location = new System.Drawing.Point(867, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(90, 18);
             this.label9.TabIndex = 9;

@@ -1716,10 +1716,10 @@ namespace WMasterTouroku_HanbaiTankaTennic
         {
             if (spb.ShowMessage(OperationMode == EOperationMode.DELETE ? "Q102" : "Q101") == DialogResult.Yes)
             {
-                //if (!CheckAllGrid())
-                //{
-                //    return;
-                //}
+                if (!CheckAllGrid())
+                {
+                    return;
+                }
                 mse = SKUPriceEntity();
                 switch (OperationMode)
                 {
