@@ -914,7 +914,7 @@
             this.pnl_Body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnl_Body.Location = new System.Drawing.Point(12, 161);
             this.pnl_Body.Name = "pnl_Body";
-            this.pnl_Body.Size = new System.Drawing.Size(1320, 440);
+            this.pnl_Body.Size = new System.Drawing.Size(1320, 378);
             this.pnl_Body.TabIndex = 125;
             // 
             // pnl_Header
@@ -1437,7 +1437,7 @@
             // 
             this.Vsb_Mei_0.Location = new System.Drawing.Point(1331, 158);
             this.Vsb_Mei_0.Name = "Vsb_Mei_0";
-            this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 443);
+            this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 382);
             this.Vsb_Mei_0.TabIndex = 123;
             this.Vsb_Mei_0.ValueChanged += new System.EventHandler(this.Vsb_Mei_0_ValueChanged);
             // 
@@ -2217,7 +2217,7 @@
             // Space2
             // 
             this.Space2.BackColor = System.Drawing.Color.DarkGray;
-            this.Space2.Location = new System.Drawing.Point(1136, 0);
+            this.Space2.Location = new System.Drawing.Point(1135, 0);
             this.Space2.Name = "Space2";
             this.Space2.Size = new System.Drawing.Size(180, 19);
             this.Space2.TabIndex = 182;

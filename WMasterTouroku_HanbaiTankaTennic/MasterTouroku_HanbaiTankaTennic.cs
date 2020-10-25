@@ -389,28 +389,28 @@ namespace WMasterTouroku_HanbaiTankaTennic
             {
                 case 2:
                     ChangeOperationMode(EOperationMode.INSERT);
-                    ChangeOperationMode(OperationMode);
+                  //  ChangeOperationMode(OperationMode);
                     Clear(pnl_Header);
                     Clear(pnl_Body);
                     RadioButton1.Checked = true;
                     break;
                 case 3:
                     ChangeOperationMode(EOperationMode.UPDATE);
-                    ChangeOperationMode(OperationMode);//
+                  //  ChangeOperationMode(OperationMode);//
                     Clear(pnl_Header);
                     RadioButton1.Checked = true;
                     InitScr();
                     break;
                 case 4:
                     ChangeOperationMode(EOperationMode.DELETE);
-                    ChangeOperationMode(OperationMode);//
+                 //   ChangeOperationMode(OperationMode);//
                     Clear(pnl_Header);
                     RadioButton1.Checked = true;
                     InitScr();
                     break;
                 case 5:
                     ChangeOperationMode(EOperationMode.SHOW);
-                    ChangeOperationMode(OperationMode);//
+                   // ChangeOperationMode(OperationMode);//
                     Clear(pnl_Header);
                     RadioButton1.Checked = true;
                     InitScr();
