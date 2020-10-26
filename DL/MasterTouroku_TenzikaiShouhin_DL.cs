@@ -73,7 +73,7 @@ namespace DL
             return InsertUpdateDeleteData(dic, sp);
         }
 
-        public bool M_Tenzikaishouhin_InsertUpdate(M_TenzikaiShouhin_Entity mt,string type)
+        public bool M_Tenzikaishouhin_InsertUpdate(M_TenzikaiShouhin_Entity mt,int type)
         {
             string sp = "M_Tenzikaishouhin_InsertUpdate";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
@@ -82,7 +82,7 @@ namespace DL
                 { "@year", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.LastYearTerm} },
                 { "@season", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.LastSeason} },
                 { "@OperatorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.InsertOperator} },
-                { "@type", new ValuePair { value1 = SqlDbType.VarChar, value2 = type} },
+                { "@type", new ValuePair { value1 = SqlDbType.TinyInt, value2 = type.ToString() } }
 
             };
             UseTransaction = true;

@@ -30,7 +30,7 @@ namespace BL
             return dl.M_Tenzikaishouhin_DeleteUpdate(mt);
         }
 
-        public bool M_Tenzikaishouhin_InsertUpdate(M_TenzikaiShouhin_Entity mt,string type)
+        public bool M_Tenzikaishouhin_InsertUpdate(M_TenzikaiShouhin_Entity mt,int type)
         {
             return dl.M_Tenzikaishouhin_InsertUpdate(mt,type);
         }
