@@ -124,8 +124,9 @@ update msk  set
 	on 
 	msk.TankaCD = tp.TankaCD and
 	msk.AdminNo = tp.AdminNo and
-	msk.StoreCD= tp.StoreCD and
-	msk.ChangeDate= tp.StartChangeDate  
+	--msk.StoreCD= tp.StoreCD and
+	msk.ChangeDate= tp.ChangeDate  
+	where msk.StoreCD='0000'
 
 	
 	End

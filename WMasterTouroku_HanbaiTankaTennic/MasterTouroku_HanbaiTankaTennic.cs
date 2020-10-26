@@ -278,7 +278,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     S_BodySeigyo(0, 0);
                     break;
             }
-            //S_SetInit_Grid();
+            S_SetInit_Grid();
             Clear(pnl_Body);
             btnDisplay.Enabled = true;
             F12Enable = true;
@@ -389,7 +389,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
             {
                 case 2:
                     ChangeOperationMode(EOperationMode.INSERT);
-                  //  ChangeOperationMode(OperationMode);
+                    //  ChangeOperationMode(OperationMode);
                     Clear(pnl_Header);
                     Clear(pnl_Body);
                     RadioButton1.Checked = true;
@@ -722,6 +722,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
             dt = spb.M_SKUPrice_HanbaiTankaTennic_Select(mse, ms, (short)OperationMode);
             if (dt.Rows.Count > 0)
             {
+                S_Clear_Grid();
                 if ((OperationMode == EOperationMode.DELETE) || (OperationMode == EOperationMode.SHOW))
                 {
                     SetMultiColNo(dt);
