@@ -58,9 +58,9 @@ BEGIN
 										and fs.ChangeDate <= fsprice.ChangeDate
 										and (@SKUCDFrom IS NULL OR (fs.SKUCD>=@SKUCDFrom))
 										and (@SKUCDTo IS NULL OR (fs.SKUCD<=@SKUCDTo))
-										and  fs.BrandCD=@BrandCD
+										and (@BrandCD is null or (fs.BrandCD=@BrandCD))
 										and (@SKUName IS NULL OR   (fs.SKUName LIKE '%'+@SKUName+'%'))
-										and fs.ExhibitionSegmentCD=@SegmentCD
+										and (@SegmentCD is null or (fs.ExhibitionSegmentCD=@SegmentCD))
 										and fs.VirtualFlg=0
 										and fs.PresentKBN=0
 										and fs.SampleKBN=0
@@ -141,9 +141,9 @@ BEGIN
 										and fs.ChangeDate <= fsprice.ChangeDate
 										and (@SKUCDFrom IS NULL OR (fs.SKUCD>=@SKUCDFrom))
 										and (@SKUCDTo IS NULL OR (fs.SKUCD<=@SKUCDTo))
-										and  fs.BrandCD=@BrandCD
+										and (@BrandCD is null or (fs.BrandCD=@BrandCD))
 										and (@SKUName IS NULL OR   (fs.SKUName LIKE '%'+@SKUName+'%'))
-										and fs.ExhibitionSegmentCD=@SegmentCD
+										and (@SegmentCD is null or (fs.ExhibitionSegmentCD=@SegmentCD))
 										and fs.VirtualFlg=0
 										and fs.PresentKBN=0
 										and fs.SampleKBN=0
@@ -225,9 +225,9 @@ BEGIN
 										and fs.ChangeDate <= fsprice.ChangeDate
 										and (@SKUCDFrom IS NULL OR (fs.SKUCD>=@SKUCDFrom))
 										and (@SKUCDTo IS NULL OR (fs.SKUCD>=@SKUCDTo))
-										and  fs.BrandCD=@BrandCD
+										and (@BrandCD is null or (fs.BrandCD=@BrandCD))
 										and (@SKUName IS NULL OR   (fs.SKUName LIKE '%'+@SKUName+'%'))
-										and fs.ExhibitionSegmentCD=@SegmentCD
+										and (@SegmentCD is null or (fs.ExhibitionSegmentCD=@SegmentCD))
 										and fs.VirtualFlg=0
 										and fs.PresentKBN=0
 										and fs.SampleKBN=0
@@ -306,9 +306,9 @@ else
 										and fs.ChangeDate <= fsprice.ChangeDate
 										and (@SKUCDFrom IS NULL OR (fs.SKUCD>=@SKUCDFrom))
 										and (@SKUCDTo IS NULL OR (fs.SKUCD>=@SKUCDTo))
-										and  fs.BrandCD=@BrandCD
+										and (@BrandCD is null or (fs.BrandCD=@BrandCD))
 										and (@SKUName IS NULL OR   (fs.SKUName LIKE '%'+@SKUName+'%'))
-										and fs.ExhibitionSegmentCD=@SegmentCD
+										and (@SegmentCD is null or (fs.ExhibitionSegmentCD=@SegmentCD))
 										and fs.VirtualFlg=0
 										and fs.PresentKBN=0
 										and fs.SampleKBN=0
