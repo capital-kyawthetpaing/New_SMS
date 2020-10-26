@@ -1395,7 +1395,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Rank3UnitPrice, 7].CellCtl = IMN_R3UNITPRICE_7;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Rank4UnitPrice, 7].CellCtl = IMN_R4UNITPRICE_7;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Rank5UnitPrice, 7].CellCtl = IMN_R5UNITPRICE_7;
-            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.ItemName, 7].CellCtl = IMT_ITMNM_6;
+            mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.ItemName, 7].CellCtl = IMT_ITMNM_7;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.CostUnitPrice, 7].CellCtl = IMN_COSTUNPRICE_7;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Remarks, 7].CellCtl = IMT_REMARK_7;
             mGrid.g_MK_Ctrl[(int)ClsGridHanbaiTankaTennic.ColNO.Space1, 7].CellCtl = Space6;
