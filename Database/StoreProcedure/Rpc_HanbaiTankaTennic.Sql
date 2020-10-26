@@ -152,7 +152,7 @@ BEGIN
 										
 										
 										Select 
-										    tp.TankaCD,
+										    --tp.TankaCD,
 										    '0000' as StoreCD,
 											tp.AdminNo,
 											tp.SKUCD,
@@ -317,7 +317,7 @@ else
 										
 										
 										Select 
-										    tp.TankaCD,
+										    --tp.TankaCD,
 										    '0000' as StoreCD,
 											tp.AdminNo,
 											tp.SKUCD,
