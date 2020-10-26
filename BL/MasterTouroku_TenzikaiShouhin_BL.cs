@@ -16,7 +16,7 @@ namespace BL
        {
             return dl.Mastertoroku_Tenzikaishouhin_Select(mt);
        }
-        public DataTable M_Tenzikaishouhin_SelectForJancd(M_TenzikaiShouhin_Entity mt)
+         public DataTable M_Tenzikaishouhin_SelectForJancd(M_TenzikaiShouhin_Entity mt)
         {
             return dl.M_Tenzikaishouhin_SelectForJancd(mt);
         }
@@ -30,9 +30,9 @@ namespace BL
             return dl.M_Tenzikaishouhin_DeleteUpdate(mt);
         }
 
-        public bool M_Tenzikaishouhin_InsertUpdate(M_TenzikaiShouhin_Entity mt)
+        public bool M_Tenzikaishouhin_InsertUpdate(M_TenzikaiShouhin_Entity mt,int type)
         {
-            return dl.M_Tenzikaishouhin_InsertUpdate(mt);
+            return dl.M_Tenzikaishouhin_InsertUpdate(mt,type);
         }
     }
 }
