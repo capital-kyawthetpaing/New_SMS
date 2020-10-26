@@ -75,8 +75,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel_1 = new System.Windows.Forms.Panel();
-            this.chk_1 = new GridControl.clsGridCheckBox();
-            this.TB_1 = new CKM_Controls.CKM_TextBox();
             this.taxrate_1 = new CKM_Controls.CKM_ComboBox();
             this.hyoteidate_1 = new CKM_Controls.CKM_ComboBox();
             this.shouhin_1 = new CKM_Controls.CKM_TextBox();
@@ -107,9 +105,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pl1 = new System.Windows.Forms.Panel();
+            this.chk_1 = new GridControl.clsGridCheckBox();
             this.panel_7 = new System.Windows.Forms.Panel();
-            this.chk_7 = new GridControl.clsGridCheckBox();
-            this.TB_7 = new CKM_Controls.CKM_TextBox();
             this.taxrate_7 = new CKM_Controls.CKM_ComboBox();
             this.hyoteidate_7 = new CKM_Controls.CKM_ComboBox();
             this.shouhin_7 = new CKM_Controls.CKM_TextBox();
@@ -135,8 +133,6 @@
             this.remark_7 = new CKM_Controls.CKM_TextBox();
             this.scjan_7 = new Search.CKM_SearchControl();
             this.panel_6 = new System.Windows.Forms.Panel();
-            this.chk_6 = new GridControl.clsGridCheckBox();
-            this.TB_6 = new CKM_Controls.CKM_TextBox();
             this.taxrate_6 = new CKM_Controls.CKM_ComboBox();
             this.hyoteidate_6 = new CKM_Controls.CKM_ComboBox();
             this.shouhin_6 = new CKM_Controls.CKM_TextBox();
@@ -162,8 +158,6 @@
             this.remark_6 = new CKM_Controls.CKM_TextBox();
             this.scjan_6 = new Search.CKM_SearchControl();
             this.panel_5 = new System.Windows.Forms.Panel();
-            this.chk_5 = new GridControl.clsGridCheckBox();
-            this.TB_5 = new CKM_Controls.CKM_TextBox();
             this.taxrate_5 = new CKM_Controls.CKM_ComboBox();
             this.hyoteidate_5 = new CKM_Controls.CKM_ComboBox();
             this.shouhin_5 = new CKM_Controls.CKM_TextBox();
@@ -189,8 +183,6 @@
             this.remark_5 = new CKM_Controls.CKM_TextBox();
             this.scjan_5 = new Search.CKM_SearchControl();
             this.panel_4 = new System.Windows.Forms.Panel();
-            this.chk_4 = new GridControl.clsGridCheckBox();
-            this.TB_4 = new CKM_Controls.CKM_TextBox();
             this.taxrate_4 = new CKM_Controls.CKM_ComboBox();
             this.hyoteidate_4 = new CKM_Controls.CKM_ComboBox();
             this.shouhin_4 = new CKM_Controls.CKM_TextBox();
@@ -216,8 +208,6 @@
             this.remark_4 = new CKM_Controls.CKM_TextBox();
             this.scjan_4 = new Search.CKM_SearchControl();
             this.panel_3 = new System.Windows.Forms.Panel();
-            this.chk_3 = new GridControl.clsGridCheckBox();
-            this.TB_3 = new CKM_Controls.CKM_TextBox();
             this.taxrate_3 = new CKM_Controls.CKM_ComboBox();
             this.hyoteidate_3 = new CKM_Controls.CKM_ComboBox();
             this.shouhin_3 = new CKM_Controls.CKM_TextBox();
@@ -243,8 +233,6 @@
             this.remark_3 = new CKM_Controls.CKM_TextBox();
             this.scjan_3 = new Search.CKM_SearchControl();
             this.panel_2 = new System.Windows.Forms.Panel();
-            this.chk_2 = new GridControl.clsGridCheckBox();
-            this.TB_2 = new CKM_Controls.CKM_TextBox();
             this.taxrate_2 = new CKM_Controls.CKM_ComboBox();
             this.hyoteidate_2 = new CKM_Controls.CKM_ComboBox();
             this.shouhin_2 = new CKM_Controls.CKM_TextBox();
@@ -270,15 +258,34 @@
             this.remark_2 = new CKM_Controls.CKM_TextBox();
             this.scjan_2 = new Search.CKM_SearchControl();
             this.label24 = new System.Windows.Forms.Label();
+            this.pl2 = new System.Windows.Forms.Panel();
+            this.chk_2 = new GridControl.clsGridCheckBox();
+            this.pl3 = new System.Windows.Forms.Panel();
+            this.chk_3 = new GridControl.clsGridCheckBox();
+            this.pl4 = new System.Windows.Forms.Panel();
+            this.chk_4 = new GridControl.clsGridCheckBox();
+            this.pl5 = new System.Windows.Forms.Panel();
+            this.chk_5 = new GridControl.clsGridCheckBox();
+            this.pl6 = new System.Windows.Forms.Panel();
+            this.chk_6 = new GridControl.clsGridCheckBox();
+            this.pl7 = new System.Windows.Forms.Panel();
+            this.chk_7 = new GridControl.clsGridCheckBox();
             this.panel1.SuspendLayout();
             this.panel_1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.pl1.SuspendLayout();
             this.panel_7.SuspendLayout();
             this.panel_6.SuspendLayout();
             this.panel_5.SuspendLayout();
             this.panel_4.SuspendLayout();
             this.panel_3.SuspendLayout();
             this.panel_2.SuspendLayout();
+            this.pl2.SuspendLayout();
+            this.pl3.SuspendLayout();
+            this.pl4.SuspendLayout();
+            this.pl5.SuspendLayout();
+            this.pl6.SuspendLayout();
+            this.pl7.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -326,7 +333,7 @@
             this.panel1.Controls.Add(this.Lb_brand);
             this.panel1.Location = new System.Drawing.Point(17, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1550, 170);
+            this.panel1.Size = new System.Drawing.Size(1550, 152);
             this.panel1.TabIndex = 100;
             // 
             // CB_Season
@@ -338,11 +345,11 @@
             this.CB_Season.Flag = 0;
             this.CB_Season.FormattingEnabled = true;
             this.CB_Season.Length = 10;
-            this.CB_Season.Location = new System.Drawing.Point(271, 72);
+            this.CB_Season.Location = new System.Drawing.Point(266, 72);
             this.CB_Season.MaxLength = 10;
             this.CB_Season.MoveNext = true;
             this.CB_Season.Name = "CB_Season";
-            this.CB_Season.Size = new System.Drawing.Size(121, 20);
+            this.CB_Season.Size = new System.Drawing.Size(85, 20);
             this.CB_Season.TabIndex = 4;
             // 
             // TB_StartDate
@@ -365,7 +372,7 @@
             this.TB_StartDate.IsNumber = true;
             this.TB_StartDate.IsShop = false;
             this.TB_StartDate.Length = 10;
-            this.TB_StartDate.Location = new System.Drawing.Point(1390, 129);
+            this.TB_StartDate.Location = new System.Drawing.Point(1393, 129);
             this.TB_StartDate.MaxLength = 10;
             this.TB_StartDate.MoveNext = true;
             this.TB_StartDate.Name = "TB_StartDate";
@@ -402,10 +409,10 @@
             this.BT_SKUCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_SKUCheck.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BT_SKUCheck.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BT_SKUCheck.Location = new System.Drawing.Point(1372, 92);
+            this.BT_SKUCheck.Location = new System.Drawing.Point(1393, 92);
             this.BT_SKUCheck.Margin = new System.Windows.Forms.Padding(1);
             this.BT_SKUCheck.Name = "BT_SKUCheck";
-            this.BT_SKUCheck.Size = new System.Drawing.Size(118, 28);
+            this.BT_SKUCheck.Size = new System.Drawing.Size(100, 25);
             this.BT_SKUCheck.TabIndex = 15;
             this.BT_SKUCheck.Text = "SKUチェック";
             this.BT_SKUCheck.UseVisualStyleBackColor = false;
@@ -421,10 +428,10 @@
             this.BT_meisai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_meisai.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BT_meisai.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BT_meisai.Location = new System.Drawing.Point(1254, 93);
+            this.BT_meisai.Location = new System.Drawing.Point(1285, 92);
             this.BT_meisai.Margin = new System.Windows.Forms.Padding(1);
             this.BT_meisai.Name = "BT_meisai";
-            this.BT_meisai.Size = new System.Drawing.Size(110, 28);
+            this.BT_meisai.Size = new System.Drawing.Size(100, 25);
             this.BT_meisai.TabIndex = 14;
             this.BT_meisai.Text = "明細取込";
             this.BT_meisai.UseVisualStyleBackColor = false;
@@ -580,7 +587,7 @@
             this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(874, 74);
+            this.ckM_Label5.Location = new System.Drawing.Point(846, 74);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(96, 12);
             this.ckM_Label5.TabIndex = 829;
@@ -614,11 +621,11 @@
             this.CB_copyseason.Flag = 0;
             this.CB_copyseason.FormattingEnabled = true;
             this.CB_copyseason.Length = 10;
-            this.CB_copyseason.Location = new System.Drawing.Point(973, 70);
+            this.CB_copyseason.Location = new System.Drawing.Point(945, 70);
             this.CB_copyseason.MaxLength = 10;
             this.CB_copyseason.MoveNext = true;
             this.CB_copyseason.Name = "CB_copyseason";
-            this.CB_copyseason.Size = new System.Drawing.Size(121, 20);
+            this.CB_copyseason.Size = new System.Drawing.Size(85, 20);
             this.CB_copyseason.TabIndex = 10;
             // 
             // CB_Copyyear
@@ -634,7 +641,7 @@
             this.CB_Copyyear.MaxLength = 10;
             this.CB_Copyyear.MoveNext = true;
             this.CB_Copyyear.Name = "CB_Copyyear";
-            this.CB_Copyyear.Size = new System.Drawing.Size(121, 20);
+            this.CB_Copyyear.Size = new System.Drawing.Size(85, 20);
             this.CB_Copyyear.TabIndex = 9;
             // 
             // SC_CopyVendor
@@ -836,7 +843,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(211, 75);
+            this.ckM_Label7.Location = new System.Drawing.Point(206, 75);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label7.TabIndex = 815;
@@ -874,7 +881,7 @@
             this.CB_Year.MaxLength = 10;
             this.CB_Year.MoveNext = true;
             this.CB_Year.Name = "CB_Year";
-            this.CB_Year.Size = new System.Drawing.Size(121, 20);
+            this.CB_Year.Size = new System.Drawing.Size(85, 20);
             this.CB_Year.TabIndex = 3;
             // 
             // BT_Display
@@ -887,10 +894,10 @@
             this.BT_Display.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_Display.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BT_Display.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BT_Display.Location = new System.Drawing.Point(1090, 120);
+            this.BT_Display.Location = new System.Drawing.Point(1059, 119);
             this.BT_Display.Margin = new System.Windows.Forms.Padding(1);
             this.BT_Display.Name = "BT_Display";
-            this.BT_Display.Size = new System.Drawing.Size(80, 28);
+            this.BT_Display.Size = new System.Drawing.Size(80, 25);
             this.BT_Display.TabIndex = 13;
             this.BT_Display.Text = "表示(F11)";
             this.BT_Display.UseVisualStyleBackColor = false;
@@ -977,7 +984,7 @@
             this.label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label5.Location = new System.Drawing.Point(1065, 1);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 23);
+            this.label5.Size = new System.Drawing.Size(118, 23);
             this.label5.TabIndex = 284;
             this.label5.Text = "カラー名";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -988,9 +995,9 @@
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label7.Location = new System.Drawing.Point(1185, 1);
+            this.label7.Location = new System.Drawing.Point(1181, 1);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 23);
+            this.label7.Size = new System.Drawing.Size(87, 23);
             this.label7.TabIndex = 285;
             this.label7.Text = "サイズNO";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1144,7 +1151,7 @@
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(1, 1);
+            this.label2.Location = new System.Drawing.Point(2, 1);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 48);
             this.label2.TabIndex = 281;
@@ -1153,8 +1160,6 @@
             // 
             // panel_1
             // 
-            this.panel_1.Controls.Add(this.chk_1);
-            this.panel_1.Controls.Add(this.TB_1);
             this.panel_1.Controls.Add(this.taxrate_1);
             this.panel_1.Controls.Add(this.hyoteidate_1);
             this.panel_1.Controls.Add(this.shouhin_1);
@@ -1184,45 +1189,6 @@
             this.panel_1.Size = new System.Drawing.Size(1496, 41);
             this.panel_1.TabIndex = 305;
             // 
-            // chk_1
-            // 
-            this.chk_1.AutoSize = true;
-            this.chk_1.Location = new System.Drawing.Point(68, 4);
-            this.chk_1.Name = "chk_1";
-            this.chk_1.Size = new System.Drawing.Size(15, 14);
-            this.chk_1.TabIndex = 550;
-            this.chk_1.UseVisualStyleBackColor = true;
-            // 
-            // TB_1
-            // 
-            this.TB_1.AllowMinus = false;
-            this.TB_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.TB_1.BackColor = System.Drawing.Color.White;
-            this.TB_1.BorderColor = false;
-            this.TB_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.TB_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.TB_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.TB_1.DecimalPlace = 0;
-            this.TB_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.TB_1.IntegerPart = 0;
-            this.TB_1.IsCorrectDate = true;
-            this.TB_1.isEnterKeyDown = false;
-            this.TB_1.IsFirstTime = true;
-            this.TB_1.isMaxLengthErr = false;
-            this.TB_1.IsNumber = true;
-            this.TB_1.IsShop = false;
-            this.TB_1.Length = 10;
-            this.TB_1.Location = new System.Drawing.Point(28, 1);
-            this.TB_1.MaxLength = 10;
-            this.TB_1.MoveNext = true;
-            this.TB_1.Name = "TB_1";
-            this.TB_1.Size = new System.Drawing.Size(110, 19);
-            this.TB_1.TabIndex = 549;
-            this.TB_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TB_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.TB_1.UseColorSizMode = false;
-            // 
             // taxrate_1
             // 
             this.taxrate_1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
@@ -1232,7 +1198,7 @@
             this.taxrate_1.Flag = 0;
             this.taxrate_1.FormattingEnabled = true;
             this.taxrate_1.Length = 10;
-            this.taxrate_1.Location = new System.Drawing.Point(1065, 20);
+            this.taxrate_1.Location = new System.Drawing.Point(1065, 19);
             this.taxrate_1.MaxLength = 10;
             this.taxrate_1.MoveNext = true;
             this.taxrate_1.Name = "taxrate_1";
@@ -1275,7 +1241,7 @@
             this.shouhin_1.IsNumber = true;
             this.shouhin_1.IsShop = false;
             this.shouhin_1.Length = 9;
-            this.shouhin_1.Location = new System.Drawing.Point(479, 1);
+            this.shouhin_1.Location = new System.Drawing.Point(479, 0);
             this.shouhin_1.MaxLength = 9;
             this.shouhin_1.MoveNext = true;
             this.shouhin_1.Name = "shouhin_1";
@@ -1300,7 +1266,7 @@
             this.brand_1.IsCopy = false;
             this.brand_1.LabelText = "";
             this.brand_1.LabelVisible = false;
-            this.brand_1.Location = new System.Drawing.Point(838, 15);
+            this.brand_1.Location = new System.Drawing.Point(838, 14);
             this.brand_1.Margin = new System.Windows.Forms.Padding(0);
             this.brand_1.Name = "brand_1";
             this.brand_1.NameWidth = 281;
@@ -1335,7 +1301,7 @@
             this.salepriceout5_1.IsNumber = true;
             this.salepriceout5_1.IsShop = false;
             this.salepriceout5_1.Length = 9;
-            this.salepriceout5_1.Location = new System.Drawing.Point(738, 20);
+            this.salepriceout5_1.Location = new System.Drawing.Point(738, 19);
             this.salepriceout5_1.MaxLength = 9;
             this.salepriceout5_1.MoveNext = true;
             this.salepriceout5_1.Name = "salepriceout5_1";
@@ -1365,7 +1331,7 @@
             this.colorname_1.IsNumber = true;
             this.colorname_1.IsShop = false;
             this.colorname_1.Length = 9;
-            this.colorname_1.Location = new System.Drawing.Point(1066, 1);
+            this.colorname_1.Location = new System.Drawing.Point(1066, 0);
             this.colorname_1.MaxLength = 9;
             this.colorname_1.MoveNext = true;
             this.colorname_1.Name = "colorname_1";
@@ -1395,7 +1361,7 @@
             this.colcd_1.IsNumber = true;
             this.colcd_1.IsShop = false;
             this.colcd_1.Length = 9;
-            this.colcd_1.Location = new System.Drawing.Point(979, 1);
+            this.colcd_1.Location = new System.Drawing.Point(979, 0);
             this.colcd_1.MaxLength = 9;
             this.colcd_1.MoveNext = true;
             this.colcd_1.Name = "colcd_1";
@@ -1420,7 +1386,7 @@
             this.taniCD_1.IsCopy = false;
             this.taniCD_1.LabelText = "";
             this.taniCD_1.LabelVisible = false;
-            this.taniCD_1.Location = new System.Drawing.Point(1004, 15);
+            this.taniCD_1.Location = new System.Drawing.Point(1003, 14);
             this.taniCD_1.Margin = new System.Windows.Forms.Padding(0);
             this.taniCD_1.Name = "taniCD_1";
             this.taniCD_1.NameWidth = 281;
@@ -1455,7 +1421,7 @@
             this.shiire_1.IsNumber = true;
             this.shiire_1.IsShop = false;
             this.shiire_1.Length = 10;
-            this.shiire_1.Location = new System.Drawing.Point(28, 20);
+            this.shiire_1.Location = new System.Drawing.Point(29, 19);
             this.shiire_1.MaxLength = 10;
             this.shiire_1.MoveNext = true;
             this.shiire_1.Name = "shiire_1";
@@ -1486,7 +1452,7 @@
             this.sizecd_1.IsNumber = true;
             this.sizecd_1.IsShop = false;
             this.sizecd_1.Length = 100;
-            this.sizecd_1.Location = new System.Drawing.Point(1181, 1);
+            this.sizecd_1.Location = new System.Drawing.Point(1181, 0);
             this.sizecd_1.MaxLength = 100;
             this.sizecd_1.MoveNext = true;
             this.sizecd_1.Name = "sizecd_1";
@@ -1530,7 +1496,7 @@
             this.hyoteidatem_1.IsNumber = true;
             this.hyoteidatem_1.IsShop = false;
             this.hyoteidatem_1.Length = 100;
-            this.hyoteidatem_1.Location = new System.Drawing.Point(1385, 1);
+            this.hyoteidatem_1.Location = new System.Drawing.Point(1385, 0);
             this.hyoteidatem_1.MaxLength = 100;
             this.hyoteidatem_1.MoveNext = true;
             this.hyoteidatem_1.Name = "hyoteidatem_1";
@@ -1561,7 +1527,7 @@
             this.sizeName_1.IsNumber = true;
             this.sizeName_1.IsShop = false;
             this.sizeName_1.Length = 100;
-            this.sizeName_1.Location = new System.Drawing.Point(1268, 1);
+            this.sizeName_1.Location = new System.Drawing.Point(1268, 0);
             this.sizeName_1.MaxLength = 100;
             this.sizeName_1.MoveNext = true;
             this.sizeName_1.Name = "sizeName_1";
@@ -1591,7 +1557,7 @@
             this.salepriceout4_1.IsNumber = true;
             this.salepriceout4_1.IsShop = false;
             this.salepriceout4_1.Length = 10;
-            this.salepriceout4_1.Location = new System.Drawing.Point(638, 20);
+            this.salepriceout4_1.Location = new System.Drawing.Point(638, 19);
             this.salepriceout4_1.MaxLength = 10;
             this.salepriceout4_1.MoveNext = true;
             this.salepriceout4_1.Name = "salepriceout4_1";
@@ -1616,7 +1582,7 @@
             this.segment_1.IsCopy = false;
             this.segment_1.LabelText = "";
             this.segment_1.LabelVisible = false;
-            this.segment_1.Location = new System.Drawing.Point(921, 15);
+            this.segment_1.Location = new System.Drawing.Point(921, 14);
             this.segment_1.Margin = new System.Windows.Forms.Padding(0);
             this.segment_1.Name = "segment_1";
             this.segment_1.NameWidth = 0;
@@ -1651,7 +1617,7 @@
             this.salepriceout3_1.IsNumber = true;
             this.salepriceout3_1.IsShop = false;
             this.salepriceout3_1.Length = 10;
-            this.salepriceout3_1.Location = new System.Drawing.Point(538, 20);
+            this.salepriceout3_1.Location = new System.Drawing.Point(538, 19);
             this.salepriceout3_1.MaxLength = 10;
             this.salepriceout3_1.MoveNext = true;
             this.salepriceout3_1.Name = "salepriceout3_1";
@@ -1681,7 +1647,7 @@
             this.salepriceout2_1.IsNumber = true;
             this.salepriceout2_1.IsShop = false;
             this.salepriceout2_1.Length = 10;
-            this.salepriceout2_1.Location = new System.Drawing.Point(438, 20);
+            this.salepriceout2_1.Location = new System.Drawing.Point(438, 19);
             this.salepriceout2_1.MaxLength = 10;
             this.salepriceout2_1.MoveNext = true;
             this.salepriceout2_1.Name = "salepriceout2_1";
@@ -1711,7 +1677,7 @@
             this.salepriceout1_1.IsNumber = true;
             this.salepriceout1_1.IsShop = false;
             this.salepriceout1_1.Length = 10;
-            this.salepriceout1_1.Location = new System.Drawing.Point(338, 20);
+            this.salepriceout1_1.Location = new System.Drawing.Point(338, 19);
             this.salepriceout1_1.MaxLength = 10;
             this.salepriceout1_1.MoveNext = true;
             this.salepriceout1_1.Name = "salepriceout1_1";
@@ -1741,7 +1707,7 @@
             this.salepriceout_1.IsNumber = true;
             this.salepriceout_1.IsShop = false;
             this.salepriceout_1.Length = 10;
-            this.salepriceout_1.Location = new System.Drawing.Point(238, 20);
+            this.salepriceout_1.Location = new System.Drawing.Point(238, 19);
             this.salepriceout_1.MaxLength = 10;
             this.salepriceout_1.MoveNext = true;
             this.salepriceout_1.Name = "salepriceout_1";
@@ -1771,7 +1737,7 @@
             this.sku_1.IsNumber = true;
             this.sku_1.IsShop = false;
             this.sku_1.Length = 80;
-            this.sku_1.Location = new System.Drawing.Point(269, 1);
+            this.sku_1.Location = new System.Drawing.Point(269, 0);
             this.sku_1.MaxLength = 80;
             this.sku_1.MoveNext = true;
             this.sku_1.Name = "sku_1";
@@ -1813,11 +1779,11 @@
             this.joutai_1.IsNumber = true;
             this.joutai_1.IsShop = false;
             this.joutai_1.Length = 10;
-            this.joutai_1.Location = new System.Drawing.Point(138, 20);
+            this.joutai_1.Location = new System.Drawing.Point(139, 19);
             this.joutai_1.MaxLength = 10;
             this.joutai_1.MoveNext = true;
             this.joutai_1.Name = "joutai_1";
-            this.joutai_1.Size = new System.Drawing.Size(100, 19);
+            this.joutai_1.Size = new System.Drawing.Size(99, 19);
             this.joutai_1.TabIndex = 291;
             this.joutai_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.joutai_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -1843,7 +1809,7 @@
             this.remark_1.IsNumber = true;
             this.remark_1.IsShop = false;
             this.remark_1.Length = 32767;
-            this.remark_1.Location = new System.Drawing.Point(1165, 20);
+            this.remark_1.Location = new System.Drawing.Point(1165, 19);
             this.remark_1.MoveNext = true;
             this.remark_1.Name = "remark_1";
             this.remark_1.Size = new System.Drawing.Size(330, 19);
@@ -1866,7 +1832,7 @@
             this.scjan_1.IsCopy = false;
             this.scjan_1.LabelText = "";
             this.scjan_1.LabelVisible = false;
-            this.scjan_1.Location = new System.Drawing.Point(138, -4);
+            this.scjan_1.Location = new System.Drawing.Point(138, -5);
             this.scjan_1.Margin = new System.Windows.Forms.Padding(0);
             this.scjan_1.Name = "scjan_1";
             this.scjan_1.NameWidth = 281;
@@ -1883,7 +1849,7 @@
             // 
             // Vsb_Mei_0
             // 
-            this.Vsb_Mei_0.Location = new System.Drawing.Point(1498, 48);
+            this.Vsb_Mei_0.Location = new System.Drawing.Point(1496, 48);
             this.Vsb_Mei_0.Name = "Vsb_Mei_0";
             this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 280);
             this.Vsb_Mei_0.TabIndex = 310;
@@ -1943,6 +1909,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.pl2);
+            this.panel2.Controls.Add(this.pl1);
             this.panel2.Controls.Add(this.panel_7);
             this.panel2.Controls.Add(this.panel_6);
             this.panel2.Controls.Add(this.panel_5);
@@ -1972,16 +1940,33 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(17, 220);
+            this.panel2.Location = new System.Drawing.Point(17, 203);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1550, 500);
             this.panel2.TabIndex = 101;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // pl1
+            // 
+            this.pl1.BackColor = System.Drawing.Color.White;
+            this.pl1.Controls.Add(this.chk_1);
+            this.pl1.Location = new System.Drawing.Point(30, 48);
+            this.pl1.Name = "pl1";
+            this.pl1.Size = new System.Drawing.Size(108, 18);
+            this.pl1.TabIndex = 551;
+            // 
+            // chk_1
+            // 
+            this.chk_1.AutoSize = true;
+            this.chk_1.Location = new System.Drawing.Point(43, 2);
+            this.chk_1.Name = "chk_1";
+            this.chk_1.Size = new System.Drawing.Size(15, 14);
+            this.chk_1.TabIndex = 552;
+            this.chk_1.UseVisualStyleBackColor = true;
+            // 
             // panel_7
             // 
-            this.panel_7.Controls.Add(this.chk_7);
-            this.panel_7.Controls.Add(this.TB_7);
+            this.panel_7.Controls.Add(this.pl7);
             this.panel_7.Controls.Add(this.taxrate_7);
             this.panel_7.Controls.Add(this.hyoteidate_7);
             this.panel_7.Controls.Add(this.shouhin_7);
@@ -2006,49 +1991,10 @@
             this.panel_7.Controls.Add(this.joutai_7);
             this.panel_7.Controls.Add(this.remark_7);
             this.panel_7.Controls.Add(this.scjan_7);
-            this.panel_7.Location = new System.Drawing.Point(1, 289);
+            this.panel_7.Location = new System.Drawing.Point(1, 285);
             this.panel_7.Name = "panel_7";
-            this.panel_7.Size = new System.Drawing.Size(1496, 41);
+            this.panel_7.Size = new System.Drawing.Size(1496, 42);
             this.panel_7.TabIndex = 325;
-            // 
-            // chk_7
-            // 
-            this.chk_7.AutoSize = true;
-            this.chk_7.Location = new System.Drawing.Point(68, 4);
-            this.chk_7.Name = "chk_7";
-            this.chk_7.Size = new System.Drawing.Size(15, 14);
-            this.chk_7.TabIndex = 550;
-            this.chk_7.UseVisualStyleBackColor = true;
-            // 
-            // TB_7
-            // 
-            this.TB_7.AllowMinus = false;
-            this.TB_7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.TB_7.BackColor = System.Drawing.Color.White;
-            this.TB_7.BorderColor = false;
-            this.TB_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_7.ClientColor = System.Drawing.SystemColors.Window;
-            this.TB_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.TB_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.TB_7.DecimalPlace = 0;
-            this.TB_7.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.TB_7.IntegerPart = 0;
-            this.TB_7.IsCorrectDate = true;
-            this.TB_7.isEnterKeyDown = false;
-            this.TB_7.IsFirstTime = true;
-            this.TB_7.isMaxLengthErr = false;
-            this.TB_7.IsNumber = true;
-            this.TB_7.IsShop = false;
-            this.TB_7.Length = 10;
-            this.TB_7.Location = new System.Drawing.Point(28, 1);
-            this.TB_7.MaxLength = 10;
-            this.TB_7.MoveNext = true;
-            this.TB_7.Name = "TB_7";
-            this.TB_7.Size = new System.Drawing.Size(110, 19);
-            this.TB_7.TabIndex = 549;
-            this.TB_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TB_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.TB_7.UseColorSizMode = false;
             // 
             // taxrate_7
             // 
@@ -2710,8 +2656,7 @@
             // 
             // panel_6
             // 
-            this.panel_6.Controls.Add(this.chk_6);
-            this.panel_6.Controls.Add(this.TB_6);
+            this.panel_6.Controls.Add(this.pl6);
             this.panel_6.Controls.Add(this.taxrate_6);
             this.panel_6.Controls.Add(this.hyoteidate_6);
             this.panel_6.Controls.Add(this.shouhin_6);
@@ -2736,49 +2681,10 @@
             this.panel_6.Controls.Add(this.joutai_6);
             this.panel_6.Controls.Add(this.remark_6);
             this.panel_6.Controls.Add(this.scjan_6);
-            this.panel_6.Location = new System.Drawing.Point(1, 250);
+            this.panel_6.Location = new System.Drawing.Point(1, 246);
             this.panel_6.Name = "panel_6";
             this.panel_6.Size = new System.Drawing.Size(1496, 41);
             this.panel_6.TabIndex = 324;
-            // 
-            // chk_6
-            // 
-            this.chk_6.AutoSize = true;
-            this.chk_6.Location = new System.Drawing.Point(68, 4);
-            this.chk_6.Name = "chk_6";
-            this.chk_6.Size = new System.Drawing.Size(15, 14);
-            this.chk_6.TabIndex = 550;
-            this.chk_6.UseVisualStyleBackColor = true;
-            // 
-            // TB_6
-            // 
-            this.TB_6.AllowMinus = false;
-            this.TB_6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.TB_6.BackColor = System.Drawing.Color.White;
-            this.TB_6.BorderColor = false;
-            this.TB_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_6.ClientColor = System.Drawing.SystemColors.Window;
-            this.TB_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.TB_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.TB_6.DecimalPlace = 0;
-            this.TB_6.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.TB_6.IntegerPart = 0;
-            this.TB_6.IsCorrectDate = true;
-            this.TB_6.isEnterKeyDown = false;
-            this.TB_6.IsFirstTime = true;
-            this.TB_6.isMaxLengthErr = false;
-            this.TB_6.IsNumber = true;
-            this.TB_6.IsShop = false;
-            this.TB_6.Length = 10;
-            this.TB_6.Location = new System.Drawing.Point(28, 1);
-            this.TB_6.MaxLength = 10;
-            this.TB_6.MoveNext = true;
-            this.TB_6.Name = "TB_6";
-            this.TB_6.Size = new System.Drawing.Size(110, 19);
-            this.TB_6.TabIndex = 549;
-            this.TB_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TB_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.TB_6.UseColorSizMode = false;
             // 
             // taxrate_6
             // 
@@ -3440,8 +3346,7 @@
             // 
             // panel_5
             // 
-            this.panel_5.Controls.Add(this.chk_5);
-            this.panel_5.Controls.Add(this.TB_5);
+            this.panel_5.Controls.Add(this.pl5);
             this.panel_5.Controls.Add(this.taxrate_5);
             this.panel_5.Controls.Add(this.hyoteidate_5);
             this.panel_5.Controls.Add(this.shouhin_5);
@@ -3466,49 +3371,10 @@
             this.panel_5.Controls.Add(this.joutai_5);
             this.panel_5.Controls.Add(this.remark_5);
             this.panel_5.Controls.Add(this.scjan_5);
-            this.panel_5.Location = new System.Drawing.Point(1, 209);
+            this.panel_5.Location = new System.Drawing.Point(1, 206);
             this.panel_5.Name = "panel_5";
             this.panel_5.Size = new System.Drawing.Size(1496, 41);
             this.panel_5.TabIndex = 323;
-            // 
-            // chk_5
-            // 
-            this.chk_5.AutoSize = true;
-            this.chk_5.Location = new System.Drawing.Point(68, 4);
-            this.chk_5.Name = "chk_5";
-            this.chk_5.Size = new System.Drawing.Size(15, 14);
-            this.chk_5.TabIndex = 550;
-            this.chk_5.UseVisualStyleBackColor = true;
-            // 
-            // TB_5
-            // 
-            this.TB_5.AllowMinus = false;
-            this.TB_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.TB_5.BackColor = System.Drawing.Color.White;
-            this.TB_5.BorderColor = false;
-            this.TB_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_5.ClientColor = System.Drawing.SystemColors.Window;
-            this.TB_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.TB_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.TB_5.DecimalPlace = 0;
-            this.TB_5.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.TB_5.IntegerPart = 0;
-            this.TB_5.IsCorrectDate = true;
-            this.TB_5.isEnterKeyDown = false;
-            this.TB_5.IsFirstTime = true;
-            this.TB_5.isMaxLengthErr = false;
-            this.TB_5.IsNumber = true;
-            this.TB_5.IsShop = false;
-            this.TB_5.Length = 10;
-            this.TB_5.Location = new System.Drawing.Point(28, 1);
-            this.TB_5.MaxLength = 10;
-            this.TB_5.MoveNext = true;
-            this.TB_5.Name = "TB_5";
-            this.TB_5.Size = new System.Drawing.Size(110, 19);
-            this.TB_5.TabIndex = 549;
-            this.TB_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TB_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.TB_5.UseColorSizMode = false;
             // 
             // taxrate_5
             // 
@@ -4170,8 +4036,7 @@
             // 
             // panel_4
             // 
-            this.panel_4.Controls.Add(this.chk_4);
-            this.panel_4.Controls.Add(this.TB_4);
+            this.panel_4.Controls.Add(this.pl4);
             this.panel_4.Controls.Add(this.taxrate_4);
             this.panel_4.Controls.Add(this.hyoteidate_4);
             this.panel_4.Controls.Add(this.shouhin_4);
@@ -4196,49 +4061,10 @@
             this.panel_4.Controls.Add(this.joutai_4);
             this.panel_4.Controls.Add(this.remark_4);
             this.panel_4.Controls.Add(this.scjan_4);
-            this.panel_4.Location = new System.Drawing.Point(1, 169);
+            this.panel_4.Location = new System.Drawing.Point(1, 165);
             this.panel_4.Name = "panel_4";
             this.panel_4.Size = new System.Drawing.Size(1496, 41);
             this.panel_4.TabIndex = 322;
-            // 
-            // chk_4
-            // 
-            this.chk_4.AutoSize = true;
-            this.chk_4.Location = new System.Drawing.Point(68, 4);
-            this.chk_4.Name = "chk_4";
-            this.chk_4.Size = new System.Drawing.Size(15, 14);
-            this.chk_4.TabIndex = 550;
-            this.chk_4.UseVisualStyleBackColor = true;
-            // 
-            // TB_4
-            // 
-            this.TB_4.AllowMinus = false;
-            this.TB_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.TB_4.BackColor = System.Drawing.Color.White;
-            this.TB_4.BorderColor = false;
-            this.TB_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_4.ClientColor = System.Drawing.SystemColors.Window;
-            this.TB_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.TB_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.TB_4.DecimalPlace = 0;
-            this.TB_4.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.TB_4.IntegerPart = 0;
-            this.TB_4.IsCorrectDate = true;
-            this.TB_4.isEnterKeyDown = false;
-            this.TB_4.IsFirstTime = true;
-            this.TB_4.isMaxLengthErr = false;
-            this.TB_4.IsNumber = true;
-            this.TB_4.IsShop = false;
-            this.TB_4.Length = 10;
-            this.TB_4.Location = new System.Drawing.Point(28, 1);
-            this.TB_4.MaxLength = 10;
-            this.TB_4.MoveNext = true;
-            this.TB_4.Name = "TB_4";
-            this.TB_4.Size = new System.Drawing.Size(110, 19);
-            this.TB_4.TabIndex = 549;
-            this.TB_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TB_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.TB_4.UseColorSizMode = false;
             // 
             // taxrate_4
             // 
@@ -4900,8 +4726,7 @@
             // 
             // panel_3
             // 
-            this.panel_3.Controls.Add(this.chk_3);
-            this.panel_3.Controls.Add(this.TB_3);
+            this.panel_3.Controls.Add(this.pl3);
             this.panel_3.Controls.Add(this.taxrate_3);
             this.panel_3.Controls.Add(this.hyoteidate_3);
             this.panel_3.Controls.Add(this.shouhin_3);
@@ -4926,49 +4751,10 @@
             this.panel_3.Controls.Add(this.joutai_3);
             this.panel_3.Controls.Add(this.remark_3);
             this.panel_3.Controls.Add(this.scjan_3);
-            this.panel_3.Location = new System.Drawing.Point(1, 129);
+            this.panel_3.Location = new System.Drawing.Point(1, 125);
             this.panel_3.Name = "panel_3";
             this.panel_3.Size = new System.Drawing.Size(1496, 41);
             this.panel_3.TabIndex = 321;
-            // 
-            // chk_3
-            // 
-            this.chk_3.AutoSize = true;
-            this.chk_3.Location = new System.Drawing.Point(68, 4);
-            this.chk_3.Name = "chk_3";
-            this.chk_3.Size = new System.Drawing.Size(15, 14);
-            this.chk_3.TabIndex = 550;
-            this.chk_3.UseVisualStyleBackColor = true;
-            // 
-            // TB_3
-            // 
-            this.TB_3.AllowMinus = false;
-            this.TB_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.TB_3.BackColor = System.Drawing.Color.White;
-            this.TB_3.BorderColor = false;
-            this.TB_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_3.ClientColor = System.Drawing.SystemColors.Window;
-            this.TB_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.TB_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.TB_3.DecimalPlace = 0;
-            this.TB_3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.TB_3.IntegerPart = 0;
-            this.TB_3.IsCorrectDate = true;
-            this.TB_3.isEnterKeyDown = false;
-            this.TB_3.IsFirstTime = true;
-            this.TB_3.isMaxLengthErr = false;
-            this.TB_3.IsNumber = true;
-            this.TB_3.IsShop = false;
-            this.TB_3.Length = 10;
-            this.TB_3.Location = new System.Drawing.Point(28, 1);
-            this.TB_3.MaxLength = 10;
-            this.TB_3.MoveNext = true;
-            this.TB_3.Name = "TB_3";
-            this.TB_3.Size = new System.Drawing.Size(110, 19);
-            this.TB_3.TabIndex = 549;
-            this.TB_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TB_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.TB_3.UseColorSizMode = false;
             // 
             // taxrate_3
             // 
@@ -5630,8 +5416,6 @@
             // 
             // panel_2
             // 
-            this.panel_2.Controls.Add(this.chk_2);
-            this.panel_2.Controls.Add(this.TB_2);
             this.panel_2.Controls.Add(this.taxrate_2);
             this.panel_2.Controls.Add(this.hyoteidate_2);
             this.panel_2.Controls.Add(this.shouhin_2);
@@ -5656,49 +5440,10 @@
             this.panel_2.Controls.Add(this.joutai_2);
             this.panel_2.Controls.Add(this.remark_2);
             this.panel_2.Controls.Add(this.scjan_2);
-            this.panel_2.Location = new System.Drawing.Point(1, 88);
+            this.panel_2.Location = new System.Drawing.Point(1, 86);
             this.panel_2.Name = "panel_2";
             this.panel_2.Size = new System.Drawing.Size(1496, 41);
             this.panel_2.TabIndex = 320;
-            // 
-            // chk_2
-            // 
-            this.chk_2.AutoSize = true;
-            this.chk_2.Location = new System.Drawing.Point(68, 4);
-            this.chk_2.Name = "chk_2";
-            this.chk_2.Size = new System.Drawing.Size(15, 14);
-            this.chk_2.TabIndex = 550;
-            this.chk_2.UseVisualStyleBackColor = true;
-            // 
-            // TB_2
-            // 
-            this.TB_2.AllowMinus = false;
-            this.TB_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.TB_2.BackColor = System.Drawing.Color.White;
-            this.TB_2.BorderColor = false;
-            this.TB_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_2.ClientColor = System.Drawing.SystemColors.Window;
-            this.TB_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.TB_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.TB_2.DecimalPlace = 0;
-            this.TB_2.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.TB_2.IntegerPart = 0;
-            this.TB_2.IsCorrectDate = true;
-            this.TB_2.isEnterKeyDown = false;
-            this.TB_2.IsFirstTime = true;
-            this.TB_2.isMaxLengthErr = false;
-            this.TB_2.IsNumber = true;
-            this.TB_2.IsShop = false;
-            this.TB_2.Length = 10;
-            this.TB_2.Location = new System.Drawing.Point(28, 1);
-            this.TB_2.MaxLength = 10;
-            this.TB_2.MoveNext = true;
-            this.TB_2.Name = "TB_2";
-            this.TB_2.Size = new System.Drawing.Size(110, 19);
-            this.TB_2.TabIndex = 549;
-            this.TB_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TB_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.TB_2.UseColorSizMode = false;
             // 
             // taxrate_2
             // 
@@ -6343,7 +6088,7 @@
             this.scjan_2.IsCopy = false;
             this.scjan_2.LabelText = "";
             this.scjan_2.LabelVisible = false;
-            this.scjan_2.Location = new System.Drawing.Point(138, -4);
+            this.scjan_2.Location = new System.Drawing.Point(138, -5);
             this.scjan_2.Margin = new System.Windows.Forms.Padding(0);
             this.scjan_2.Name = "scjan_2";
             this.scjan_2.NameWidth = 281;
@@ -6371,6 +6116,114 @@
             this.label24.Text = "販売予定日";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pl2
+            // 
+            this.pl2.BackColor = System.Drawing.Color.White;
+            this.pl2.Controls.Add(this.chk_2);
+            this.pl2.Location = new System.Drawing.Point(28, 87);
+            this.pl2.Name = "pl2";
+            this.pl2.Size = new System.Drawing.Size(110, 19);
+            this.pl2.TabIndex = 552;
+            // 
+            // chk_2
+            // 
+            this.chk_2.AutoSize = true;
+            this.chk_2.Location = new System.Drawing.Point(43, 3);
+            this.chk_2.Name = "chk_2";
+            this.chk_2.Size = new System.Drawing.Size(15, 14);
+            this.chk_2.TabIndex = 552;
+            this.chk_2.UseVisualStyleBackColor = true;
+            // 
+            // pl3
+            // 
+            this.pl3.BackColor = System.Drawing.Color.White;
+            this.pl3.Controls.Add(this.chk_3);
+            this.pl3.Location = new System.Drawing.Point(28, 1);
+            this.pl3.Name = "pl3";
+            this.pl3.Size = new System.Drawing.Size(110, 19);
+            this.pl3.TabIndex = 552;
+            // 
+            // chk_3
+            // 
+            this.chk_3.AutoSize = true;
+            this.chk_3.Location = new System.Drawing.Point(43, 3);
+            this.chk_3.Name = "chk_3";
+            this.chk_3.Size = new System.Drawing.Size(15, 14);
+            this.chk_3.TabIndex = 552;
+            this.chk_3.UseVisualStyleBackColor = true;
+            // 
+            // pl4
+            // 
+            this.pl4.BackColor = System.Drawing.Color.White;
+            this.pl4.Controls.Add(this.chk_4);
+            this.pl4.Location = new System.Drawing.Point(28, 1);
+            this.pl4.Name = "pl4";
+            this.pl4.Size = new System.Drawing.Size(110, 19);
+            this.pl4.TabIndex = 552;
+            // 
+            // chk_4
+            // 
+            this.chk_4.AutoSize = true;
+            this.chk_4.Location = new System.Drawing.Point(43, 3);
+            this.chk_4.Name = "chk_4";
+            this.chk_4.Size = new System.Drawing.Size(15, 14);
+            this.chk_4.TabIndex = 552;
+            this.chk_4.UseVisualStyleBackColor = true;
+            // 
+            // pl5
+            // 
+            this.pl5.BackColor = System.Drawing.Color.White;
+            this.pl5.Controls.Add(this.chk_5);
+            this.pl5.Location = new System.Drawing.Point(28, 1);
+            this.pl5.Name = "pl5";
+            this.pl5.Size = new System.Drawing.Size(110, 19);
+            this.pl5.TabIndex = 552;
+            // 
+            // chk_5
+            // 
+            this.chk_5.AutoSize = true;
+            this.chk_5.Location = new System.Drawing.Point(43, 3);
+            this.chk_5.Name = "chk_5";
+            this.chk_5.Size = new System.Drawing.Size(15, 14);
+            this.chk_5.TabIndex = 552;
+            this.chk_5.UseVisualStyleBackColor = true;
+            // 
+            // pl6
+            // 
+            this.pl6.BackColor = System.Drawing.Color.White;
+            this.pl6.Controls.Add(this.chk_6);
+            this.pl6.Location = new System.Drawing.Point(28, 1);
+            this.pl6.Name = "pl6";
+            this.pl6.Size = new System.Drawing.Size(110, 19);
+            this.pl6.TabIndex = 552;
+            // 
+            // chk_6
+            // 
+            this.chk_6.AutoSize = true;
+            this.chk_6.Location = new System.Drawing.Point(43, 3);
+            this.chk_6.Name = "chk_6";
+            this.chk_6.Size = new System.Drawing.Size(15, 14);
+            this.chk_6.TabIndex = 552;
+            this.chk_6.UseVisualStyleBackColor = true;
+            // 
+            // pl7
+            // 
+            this.pl7.BackColor = System.Drawing.Color.White;
+            this.pl7.Controls.Add(this.chk_7);
+            this.pl7.Location = new System.Drawing.Point(28, 1);
+            this.pl7.Name = "pl7";
+            this.pl7.Size = new System.Drawing.Size(110, 19);
+            this.pl7.TabIndex = 552;
+            // 
+            // chk_7
+            // 
+            this.chk_7.AutoSize = true;
+            this.chk_7.Location = new System.Drawing.Point(43, 3);
+            this.chk_7.Name = "chk_7";
+            this.chk_7.Size = new System.Drawing.Size(15, 14);
+            this.chk_7.TabIndex = 552;
+            this.chk_7.UseVisualStyleBackColor = true;
+            // 
             // MasterTouroku_TenzikaiShouhin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -6392,6 +6245,8 @@
             this.panel_1.ResumeLayout(false);
             this.panel_1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.pl1.ResumeLayout(false);
+            this.pl1.PerformLayout();
             this.panel_7.ResumeLayout(false);
             this.panel_7.PerformLayout();
             this.panel_6.ResumeLayout(false);
@@ -6404,6 +6259,18 @@
             this.panel_3.PerformLayout();
             this.panel_2.ResumeLayout(false);
             this.panel_2.PerformLayout();
+            this.pl2.ResumeLayout(false);
+            this.pl2.PerformLayout();
+            this.pl3.ResumeLayout(false);
+            this.pl3.PerformLayout();
+            this.pl4.ResumeLayout(false);
+            this.pl4.PerformLayout();
+            this.pl5.ResumeLayout(false);
+            this.pl5.PerformLayout();
+            this.pl6.ResumeLayout(false);
+            this.pl6.PerformLayout();
+            this.pl7.ResumeLayout(false);
+            this.pl7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -6489,11 +6356,7 @@
         private CKM_Controls.CKM_TextBox salepriceout5_1;
         private CKM_Controls.CKM_ComboBox taxrate_1;
         private CKM_Controls.CKM_ComboBox hyoteidate_1;
-        private GridControl.clsGridCheckBox chk_1;
-        private CKM_Controls.CKM_TextBox TB_1;
         private System.Windows.Forms.Panel panel_7;
-        private GridControl.clsGridCheckBox chk_7;
-        private CKM_Controls.CKM_TextBox TB_7;
         private CKM_Controls.CKM_ComboBox taxrate_7;
         private CKM_Controls.CKM_ComboBox hyoteidate_7;
         private CKM_Controls.CKM_TextBox shouhin_7;
@@ -6519,8 +6382,6 @@
         private CKM_Controls.CKM_TextBox remark_7;
         private Search.CKM_SearchControl scjan_7;
         private System.Windows.Forms.Panel panel_6;
-        private GridControl.clsGridCheckBox chk_6;
-        private CKM_Controls.CKM_TextBox TB_6;
         private CKM_Controls.CKM_ComboBox taxrate_6;
         private CKM_Controls.CKM_ComboBox hyoteidate_6;
         private CKM_Controls.CKM_TextBox shouhin_6;
@@ -6546,8 +6407,6 @@
         private CKM_Controls.CKM_TextBox remark_6;
         private Search.CKM_SearchControl scjan_6;
         private System.Windows.Forms.Panel panel_5;
-        private GridControl.clsGridCheckBox chk_5;
-        private CKM_Controls.CKM_TextBox TB_5;
         private CKM_Controls.CKM_ComboBox taxrate_5;
         private CKM_Controls.CKM_ComboBox hyoteidate_5;
         private CKM_Controls.CKM_TextBox shouhin_5;
@@ -6573,8 +6432,6 @@
         private CKM_Controls.CKM_TextBox remark_5;
         private Search.CKM_SearchControl scjan_5;
         private System.Windows.Forms.Panel panel_4;
-        private GridControl.clsGridCheckBox chk_4;
-        private CKM_Controls.CKM_TextBox TB_4;
         private CKM_Controls.CKM_ComboBox taxrate_4;
         private CKM_Controls.CKM_ComboBox hyoteidate_4;
         private CKM_Controls.CKM_TextBox shouhin_4;
@@ -6600,8 +6457,6 @@
         private CKM_Controls.CKM_TextBox remark_4;
         private Search.CKM_SearchControl scjan_4;
         private System.Windows.Forms.Panel panel_3;
-        private GridControl.clsGridCheckBox chk_3;
-        private CKM_Controls.CKM_TextBox TB_3;
         private CKM_Controls.CKM_ComboBox taxrate_3;
         private CKM_Controls.CKM_ComboBox hyoteidate_3;
         private CKM_Controls.CKM_TextBox shouhin_3;
@@ -6627,8 +6482,6 @@
         private CKM_Controls.CKM_TextBox remark_3;
         private Search.CKM_SearchControl scjan_3;
         private System.Windows.Forms.Panel panel_2;
-        private GridControl.clsGridCheckBox chk_2;
-        private CKM_Controls.CKM_TextBox TB_2;
         private CKM_Controls.CKM_ComboBox taxrate_2;
         private CKM_Controls.CKM_ComboBox hyoteidate_2;
         private CKM_Controls.CKM_TextBox shouhin_2;
@@ -6653,5 +6506,19 @@
         private CKM_Controls.CKM_TextBox joutai_2;
         private CKM_Controls.CKM_TextBox remark_2;
         private Search.CKM_SearchControl scjan_2;
+        private System.Windows.Forms.Panel pl1;
+        private GridControl.clsGridCheckBox chk_1;
+        private System.Windows.Forms.Panel pl2;
+        private GridControl.clsGridCheckBox chk_2;
+        private System.Windows.Forms.Panel pl7;
+        private GridControl.clsGridCheckBox chk_7;
+        private System.Windows.Forms.Panel pl6;
+        private GridControl.clsGridCheckBox chk_6;
+        private System.Windows.Forms.Panel pl5;
+        private GridControl.clsGridCheckBox chk_5;
+        private System.Windows.Forms.Panel pl4;
+        private GridControl.clsGridCheckBox chk_4;
+        private System.Windows.Forms.Panel pl3;
+        private GridControl.clsGridCheckBox chk_3;
     }
 }
