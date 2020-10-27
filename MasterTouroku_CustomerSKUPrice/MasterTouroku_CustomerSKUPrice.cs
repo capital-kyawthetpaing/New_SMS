@@ -139,7 +139,10 @@ namespace MasterTouroku_CustomerSKUPrice
                         break;
                     }
                 case 6://F7:行削除
-                    DEL_SUB();
+                    if (bbl.ShowMessage("Q102") == DialogResult.Yes)
+                        DEL_SUB();
+                    else
+                        return;
                     break;
 
                 case 7://F8:行追加
@@ -816,6 +819,7 @@ namespace MasterTouroku_CustomerSKUPrice
                         dtExcel.Columns.Add("AdminNO", typeof(String));
                         for(int i=0; i < dtExcel.Rows.Count; i++)
                         {
+                            //dtExcel.Rows[i]["TekiyouKaisiDate"] = dtExcel.Rows[i]["TekiyouKaisiDate"].ToString("yyyy-mm-dd");
                             M_SKU_Entity mse = new M_SKU_Entity
                             {
                                 JanCD = dtExcel.Rows[i]["JANCD"].ToString(),
@@ -1105,7 +1109,7 @@ namespace MasterTouroku_CustomerSKUPrice
                 int w_Row;
                 Control w_ActCtl;
 
-                w_ActCtl = (Control)sender;
+                w_ActCtl = (Control)sender ;
                 w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
 
                 if ((e.KeyCode == Keys.Return) &&
@@ -1467,10 +1471,10 @@ namespace MasterTouroku_CustomerSKUPrice
                         }
                         if (mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
                         {
-                            //mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Enter += new System.EventHandler(GridControl_Enter);
                             mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Enter += new System.EventHandler(GridControl_Enter);
                             mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Leave += new System.EventHandler(GridControl_Leave);
                             mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown);
+                            mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Tag = W_CtlRow.ToString();
 
                         }
                     }

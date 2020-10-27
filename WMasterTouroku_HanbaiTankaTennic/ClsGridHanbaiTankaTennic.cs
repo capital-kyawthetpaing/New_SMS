@@ -28,6 +28,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
             internal string Space1;
             //hide
             internal string AdminNo;
+            internal string ChangeDate;
             internal int DeleteFlg;
             internal int UsedFLG;
             internal int TaxRateFLG;

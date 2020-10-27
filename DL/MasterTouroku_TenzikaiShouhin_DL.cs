@@ -26,8 +26,6 @@ namespace DL
             return SelectData(dic, sp);
         }
 
-
-
         public DataTable M_Tenzikaishouhin_SelectForJancd(M_TenzikaiShouhin_Entity mt)
         {
             string sp = "M_Tenzikaishouhin_SelectForJancd";
@@ -44,20 +42,20 @@ namespace DL
             return SelectData(dic, sp);
         }
 
-
         public DataTable M_SKU_SelectForSKUCheck(M_SKU_Entity msku)
         {
             string sp = "M_SKU_SelectForSKUCheck";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@skuname", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.SKUName} },
-                { "@colorName", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.ColorName } },
-                { "@sizeName", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.SizeName } },
+                //{ "@skuname", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.SKUName} },
+                //{ "@colorName", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.ColorName } },
+                //{ "@sizeName", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.SizeName } },
                 { "@ExhibitionCommomCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.ExhibitionCommonCD } },
-                { "@Jancd", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.JanCD } },
+                //{ "@Jancd", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.JanCD } },
             };
             return SelectData(dic, sp);
         }
+        
 
         public bool M_Tenzikaishouhin_DeleteUpdate(M_TenzikaiShouhin_Entity mt)
         {
@@ -67,11 +65,28 @@ namespace DL
                 { "@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.xml} },
                 { "@year", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.LastYearTerm} },
                 { "@season", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.LastSeason} },
-                { "@InsertOperator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.InsertOperator} },
-                { "@InsertDateTime", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.InsertDateTime } },
-                { "@UpdateOperator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.UpdateOperator } },
-                { "@UpdateDateTime", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.UpdateDateTime } },
+                { "@StartDate" , new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.ChangeDate} },
+                { "@OperatorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.InsertOperator} },
              
+            };
+            UseTransaction = true;
+            return InsertUpdateDeleteData(dic, sp);
+        }
+
+        public bool M_Tenzikaishouhin_InsertUpdate(M_TenzikaiShouhin_Entity mt,String type)
+        {
+            string sp = "M_Tenzikaishouhin_InsertUpdate";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.xml} },
+                { "@year", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.LastYearTerm} },
+                { "@season", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.LastSeason} },
+                { "@tenzikainame", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.TenzikaiName} },
+                { "@vendorcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.VendorCD} },
+                { "@BrandCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.BrandCD} },
+                { "@SegmentCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.SegmentCD} },
+                { "@OperatorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.InsertOperator} },
+                { "@type", new ValuePair { value1 = SqlDbType.TinyInt, value2 = type } }
             };
             UseTransaction = true;
             return InsertUpdateDeleteData(dic, sp);
