@@ -57,6 +57,8 @@ BEGIN
     --UpdateDateTime datetime
 	)
 	EXEC sp_xml_removedocument @DocHandle; 
+	Declare
+	@InsertDateTime as datetime=getdate();
 	If @Mode=1
 	Begin
 	insert into M_SKUPrice (TanKaCD, StoreCD, AdminNO, SKUCD,ChangeDate, TekiyouShuuryouDate, PriceWithTax,PriceWithoutTax,GeneralRate,GeneralPriceWithTax,
@@ -118,7 +120,9 @@ update msk  set
 	msk.TekiyouShuuryouDate =  tp.EndChangeDate,
 	msk.PriceWithoutTax = tp.PriceWithoutTax,
 	msk.SalePriceOutTax=tp.SalePriceOutTax,
-	msk.Remarks = tp.Remarks
+	msk.Remarks = tp.Remarks,
+	msk.UpdateOperator=@Operator,
+	msk.UpdateDateTime=@InsertDateTime
 	from M_SKUPrice msk
 	inner join #Temp tp 
 	on 
