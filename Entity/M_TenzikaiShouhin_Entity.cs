@@ -55,5 +55,9 @@ namespace Entity
 
         public string StartDate { get; set; }
 
+        public string BrandCD { get; set; }
+
+        public string SegmentCD { get; set; }
+
     }
 }
