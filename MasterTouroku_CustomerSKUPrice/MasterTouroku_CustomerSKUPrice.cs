@@ -1106,7 +1106,7 @@ namespace MasterTouroku_CustomerSKUPrice
                 int w_Row;
                 Control w_ActCtl;
 
-                w_ActCtl = (Control)sender;
+                w_ActCtl = (Control)sender ;
                 w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
 
                 if ((e.KeyCode == Keys.Return) &&
@@ -1468,10 +1468,10 @@ namespace MasterTouroku_CustomerSKUPrice
                         }
                         if (mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
                         {
-                            //mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Enter += new System.EventHandler(GridControl_Enter);
                             mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Enter += new System.EventHandler(GridControl_Enter);
                             mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Leave += new System.EventHandler(GridControl_Leave);
                             mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown);
+                            sctl.TxtCode.Tag = W_CtlRow.ToString();
 
                         }
                     }
