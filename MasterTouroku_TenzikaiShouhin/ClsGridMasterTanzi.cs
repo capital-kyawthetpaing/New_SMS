@@ -78,7 +78,7 @@ namespace MasterTouroku_TenzikaiShouhin
         internal ST_DArray_Grid[] g_DArray = null;
         internal const int gc_MaxCL = (int)ColNO.Count;
         internal const int gc_MaxR = (int)RowNO.count;
-        internal const int gc_P_GYO =7;
+        internal const int gc_P_GYO =10;
         internal const int gMxGyo = 999;
         internal short g_VSB_Flg;
         internal short g_InMoveFocus_Flg;
