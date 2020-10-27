@@ -1,14 +1,16 @@
 
-/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_SelectData]    Script Date: 2020/09/24 14:18:16 ******/
+
+/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_SelectData]    Script Date: 2020/10/27 13:34:40 ******/
 DROP PROCEDURE [dbo].[PRC_IkkatuHacchuuNyuuryoku_SelectData]
 GO
 
-/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_SelectData]    Script Date: 2020/09/24 14:18:16 ******/
+/****** Object:  StoredProcedure [dbo].[PRC_IkkatuHacchuuNyuuryoku_SelectData]    Script Date: 2020/10/27 13:34:40 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER OFF
 GO
+
 
 
   
@@ -204,7 +206,7 @@ BEGIN
             OR    
            (@p_IkkatuHacchuuMode = '1'    
             AND ((DJUD.JuchuuSuu > DJUD.HikiateSu    
-                  AND (DJUD.DirectFlg = 1 OR MSKU.NoNetOrderFlg = 1)    
+                  AND (DJUD.DirectFlg = 1 OR MSKU.NoNetOrderFlg = 1 OR MVEN.NetFlg = 0)    
                   AND DORD.JuchuuRows IS NULL    
                  )    
                  OR    
