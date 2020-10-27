@@ -3538,21 +3538,7 @@ namespace MasterTouroku_TenzikaiShouhin
                 case EOperationMode.INSERT:
                     if(CheckKey(-1))
                     {
-                        for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++) // GridControl
-                        {
-                            if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JANCD) == false)
-                            {
-                                for (int CL = (int)ClsGridMasterTanzi.ColNO.JANCD; CL < (int)ClsGridMasterTanzi.ColNO.Count; CL++)
-                                {
-                                    if (CheckGrid(CL, RW, true, false, true) == false)
-                                    {
-                                        //Focusセット処理
-                                        ERR_FOCUS_GRID_SUB(CL, RW);
-                                        return;
-                                    }
-                                }
-                            }
-                        }
+                        
                         InsertUpdate("1");
                     }
                    
