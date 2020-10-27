@@ -65,7 +65,7 @@ namespace DL
                 {"@PriceWithoutTax",new ValuePair{value1=SqlDbType.Money,value2=mse.PriceWithoutTax} },
                 {"@SalePriceOutTax",new ValuePair{value1=SqlDbType.Money,value2=mse.SalePriceOutTax} },
                 {"@Remarks",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Remarks} },
-                {"@Operator",new ValuePair{value1=SqlDbType.VarChar,value2=mse.InsertOperator} },
+                {"@Operator",new ValuePair{value1=SqlDbType.VarChar,value2=mse.Operator} },
                 {"@Program",new ValuePair{value1=SqlDbType.VarChar,value2=mse.ProgramID} },
                 {"@PC",new ValuePair{value1=SqlDbType.VarChar,value2=mse.PC} },
                 {"@OperateMode",new ValuePair{value1=SqlDbType.VarChar,value2=mse.ProcessMode} },
