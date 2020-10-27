@@ -487,7 +487,7 @@ namespace TanaoroshiNyuuryoku
                     csvReader.SetDelimiters(new string[] { "," });
                     csvReader.HasFieldsEnclosedInQuotes = true;
 
-                    string[] colFields = csvReader.ReadFields();
+                    //string[] colFields = csvReader.ReadFields();
                     //CSVファイルの１行目はデータとする
                     for (int i = 0; i < (int)EcsvCol.COUNT; i++)
                     {
