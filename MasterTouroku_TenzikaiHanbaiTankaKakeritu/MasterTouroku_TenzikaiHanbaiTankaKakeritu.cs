@@ -257,6 +257,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 {
                     GV_Tenzaishohin.DataSource = null;
                     bl.ShowMessage("E128");
+                    SC_Tanka.SetFocus(1);
                 }
             }
         }
