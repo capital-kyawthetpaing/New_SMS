@@ -83,6 +83,8 @@ namespace DL
                 { "@season", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.LastSeason} },
                 { "@tenzikainame", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.TenzikaiName} },
                 { "@vendorcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.VendorCD} },
+                { "@BrandCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.BrandCD} },
+                { "@SegmentCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.SegmentCD} },
                 { "@OperatorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.InsertOperator} },
                 { "@type", new ValuePair { value1 = SqlDbType.TinyInt, value2 = type.ToString() } }
 

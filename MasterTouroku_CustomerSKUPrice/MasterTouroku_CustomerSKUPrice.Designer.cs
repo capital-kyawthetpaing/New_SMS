@@ -50,6 +50,16 @@
             this.rdoRecent = new CKM_Controls.CKM_RadioButton();
             this.rdoAll = new CKM_Controls.CKM_RadioButton();
             this.pnl_Body = new System.Windows.Forms.Panel();
+            this.IMT_ITMCD_9 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_8 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_7 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_6 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_5 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_4 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_3 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_2 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_1 = new System.Windows.Forms.Label();
+            this.IMT_ITMCD_0 = new System.Windows.Forms.Label();
             this.Space_9 = new System.Windows.Forms.Label();
             this.Vsb_Mei_0 = new System.Windows.Forms.VScrollBar();
             this.IMT_PRICE_9 = new CKM_Controls.CKM_TextBox();
@@ -161,16 +171,6 @@
             this.lblEDate = new System.Windows.Forms.Label();
             this.lblSDate = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_0 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_1 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_2 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_3 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_4 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_5 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_6 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_7 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_8 = new System.Windows.Forms.Label();
-            this.IMT_ITMCD_9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pannel_Header.SuspendLayout();
             this.pnl_Body.SuspendLayout();
@@ -750,6 +750,116 @@
             this.pnl_Body.Name = "pnl_Body";
             this.pnl_Body.Size = new System.Drawing.Size(1530, 384);
             this.pnl_Body.TabIndex = 126;
+            // 
+            // IMT_ITMCD_9
+            // 
+            this.IMT_ITMCD_9.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_9.Location = new System.Drawing.Point(168, 361);
+            this.IMT_ITMCD_9.Name = "IMT_ITMCD_9";
+            this.IMT_ITMCD_9.Size = new System.Drawing.Size(209, 19);
+            this.IMT_ITMCD_9.TabIndex = 239;
+            this.IMT_ITMCD_9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_8
+            // 
+            this.IMT_ITMCD_8.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_8.Location = new System.Drawing.Point(168, 323);
+            this.IMT_ITMCD_8.Name = "IMT_ITMCD_8";
+            this.IMT_ITMCD_8.Size = new System.Drawing.Size(209, 19);
+            this.IMT_ITMCD_8.TabIndex = 238;
+            this.IMT_ITMCD_8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_7
+            // 
+            this.IMT_ITMCD_7.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_7.Location = new System.Drawing.Point(168, 285);
+            this.IMT_ITMCD_7.Name = "IMT_ITMCD_7";
+            this.IMT_ITMCD_7.Size = new System.Drawing.Size(209, 19);
+            this.IMT_ITMCD_7.TabIndex = 237;
+            this.IMT_ITMCD_7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_6
+            // 
+            this.IMT_ITMCD_6.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_6.Location = new System.Drawing.Point(168, 247);
+            this.IMT_ITMCD_6.Name = "IMT_ITMCD_6";
+            this.IMT_ITMCD_6.Size = new System.Drawing.Size(209, 19);
+            this.IMT_ITMCD_6.TabIndex = 236;
+            this.IMT_ITMCD_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_5
+            // 
+            this.IMT_ITMCD_5.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_5.Location = new System.Drawing.Point(168, 209);
+            this.IMT_ITMCD_5.Name = "IMT_ITMCD_5";
+            this.IMT_ITMCD_5.Size = new System.Drawing.Size(209, 19);
+            this.IMT_ITMCD_5.TabIndex = 235;
+            this.IMT_ITMCD_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_4
+            // 
+            this.IMT_ITMCD_4.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_4.Location = new System.Drawing.Point(168, 171);
+            this.IMT_ITMCD_4.Name = "IMT_ITMCD_4";
+            this.IMT_ITMCD_4.Size = new System.Drawing.Size(209, 19);
+            this.IMT_ITMCD_4.TabIndex = 234;
+            this.IMT_ITMCD_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_3
+            // 
+            this.IMT_ITMCD_3.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_3.Location = new System.Drawing.Point(168, 133);
+            this.IMT_ITMCD_3.Name = "IMT_ITMCD_3";
+            this.IMT_ITMCD_3.Size = new System.Drawing.Size(209, 19);
+            this.IMT_ITMCD_3.TabIndex = 233;
+            this.IMT_ITMCD_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_2
+            // 
+            this.IMT_ITMCD_2.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_2.Location = new System.Drawing.Point(168, 95);
+            this.IMT_ITMCD_2.Name = "IMT_ITMCD_2";
+            this.IMT_ITMCD_2.Size = new System.Drawing.Size(209, 19);
+            this.IMT_ITMCD_2.TabIndex = 232;
+            this.IMT_ITMCD_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_1
+            // 
+            this.IMT_ITMCD_1.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_1.Location = new System.Drawing.Point(168, 57);
+            this.IMT_ITMCD_1.Name = "IMT_ITMCD_1";
+            this.IMT_ITMCD_1.Size = new System.Drawing.Size(209, 19);
+            this.IMT_ITMCD_1.TabIndex = 231;
+            this.IMT_ITMCD_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IMT_ITMCD_0
+            // 
+            this.IMT_ITMCD_0.BackColor = System.Drawing.Color.DarkGray;
+            this.IMT_ITMCD_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_0.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_0.Location = new System.Drawing.Point(168, 19);
+            this.IMT_ITMCD_0.Name = "IMT_ITMCD_0";
+            this.IMT_ITMCD_0.Size = new System.Drawing.Size(209, 19);
+            this.IMT_ITMCD_0.TabIndex = 230;
+            this.IMT_ITMCD_0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Space_9
             // 
@@ -3123,116 +3233,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "№";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // IMT_ITMCD_0
-            // 
-            this.IMT_ITMCD_0.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_0.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.IMT_ITMCD_0.Location = new System.Drawing.Point(168, 19);
-            this.IMT_ITMCD_0.Name = "IMT_ITMCD_0";
-            this.IMT_ITMCD_0.Size = new System.Drawing.Size(209, 19);
-            this.IMT_ITMCD_0.TabIndex = 230;
-            this.IMT_ITMCD_0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_1
-            // 
-            this.IMT_ITMCD_1.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.IMT_ITMCD_1.Location = new System.Drawing.Point(168, 57);
-            this.IMT_ITMCD_1.Name = "IMT_ITMCD_1";
-            this.IMT_ITMCD_1.Size = new System.Drawing.Size(209, 19);
-            this.IMT_ITMCD_1.TabIndex = 231;
-            this.IMT_ITMCD_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_2
-            // 
-            this.IMT_ITMCD_2.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.IMT_ITMCD_2.Location = new System.Drawing.Point(168, 95);
-            this.IMT_ITMCD_2.Name = "IMT_ITMCD_2";
-            this.IMT_ITMCD_2.Size = new System.Drawing.Size(209, 19);
-            this.IMT_ITMCD_2.TabIndex = 232;
-            this.IMT_ITMCD_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_3
-            // 
-            this.IMT_ITMCD_3.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.IMT_ITMCD_3.Location = new System.Drawing.Point(168, 133);
-            this.IMT_ITMCD_3.Name = "IMT_ITMCD_3";
-            this.IMT_ITMCD_3.Size = new System.Drawing.Size(209, 19);
-            this.IMT_ITMCD_3.TabIndex = 233;
-            this.IMT_ITMCD_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_4
-            // 
-            this.IMT_ITMCD_4.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.IMT_ITMCD_4.Location = new System.Drawing.Point(168, 171);
-            this.IMT_ITMCD_4.Name = "IMT_ITMCD_4";
-            this.IMT_ITMCD_4.Size = new System.Drawing.Size(209, 19);
-            this.IMT_ITMCD_4.TabIndex = 234;
-            this.IMT_ITMCD_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_5
-            // 
-            this.IMT_ITMCD_5.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.IMT_ITMCD_5.Location = new System.Drawing.Point(168, 209);
-            this.IMT_ITMCD_5.Name = "IMT_ITMCD_5";
-            this.IMT_ITMCD_5.Size = new System.Drawing.Size(209, 19);
-            this.IMT_ITMCD_5.TabIndex = 235;
-            this.IMT_ITMCD_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_6
-            // 
-            this.IMT_ITMCD_6.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.IMT_ITMCD_6.Location = new System.Drawing.Point(168, 247);
-            this.IMT_ITMCD_6.Name = "IMT_ITMCD_6";
-            this.IMT_ITMCD_6.Size = new System.Drawing.Size(209, 19);
-            this.IMT_ITMCD_6.TabIndex = 236;
-            this.IMT_ITMCD_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_7
-            // 
-            this.IMT_ITMCD_7.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.IMT_ITMCD_7.Location = new System.Drawing.Point(168, 285);
-            this.IMT_ITMCD_7.Name = "IMT_ITMCD_7";
-            this.IMT_ITMCD_7.Size = new System.Drawing.Size(209, 19);
-            this.IMT_ITMCD_7.TabIndex = 237;
-            this.IMT_ITMCD_7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_8
-            // 
-            this.IMT_ITMCD_8.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.IMT_ITMCD_8.Location = new System.Drawing.Point(168, 323);
-            this.IMT_ITMCD_8.Name = "IMT_ITMCD_8";
-            this.IMT_ITMCD_8.Size = new System.Drawing.Size(209, 19);
-            this.IMT_ITMCD_8.TabIndex = 238;
-            this.IMT_ITMCD_8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IMT_ITMCD_9
-            // 
-            this.IMT_ITMCD_9.BackColor = System.Drawing.Color.DarkGray;
-            this.IMT_ITMCD_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_ITMCD_9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.IMT_ITMCD_9.Location = new System.Drawing.Point(168, 361);
-            this.IMT_ITMCD_9.Name = "IMT_ITMCD_9";
-            this.IMT_ITMCD_9.Size = new System.Drawing.Size(209, 19);
-            this.IMT_ITMCD_9.TabIndex = 239;
-            this.IMT_ITMCD_9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FrmMasterTouroku_CustomerSKUPrice
             // 
