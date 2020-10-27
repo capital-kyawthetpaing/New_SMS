@@ -33,6 +33,30 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Base.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\Base.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="BL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\BL.dll</HintPath>
+    </Reference>
+    <Reference Include="CKM_Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\CKM_Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="closedXML, Version=0.69.1.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\closedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="Entity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="GridBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\GridBase.dll</HintPath>
+    </Reference>
     <Reference Include="GridControl, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\Debug\GridControl.dll</HintPath>
@@ -41,6 +65,9 @@
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Search">
+      <HintPath>..\bin\Debug\Search.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -88,32 +115,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Base.Client\Base.Client.csproj">
-      <Project>{79af5f26-a50b-433c-9f87-c9173b9efe04}</Project>
-      <Name>Base.Client</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BL\BL.csproj">
-      <Project>{fb2217ab-ee9b-4996-a8f1-321320cbc791}</Project>
-      <Name>BL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CKM_Controls\CKM_Controls\CKM_Controls.csproj">
-      <Project>{472a8d76-1ce3-430e-89fe-373d2f6b1031}</Project>
-      <Name>CKM_Controls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\clsGridBase\GridBase.csproj">
-      <Project>{86979b8d-b1ed-4342-a1d3-986c244e796a}</Project>
-      <Name>GridBase</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Entity\Entity.csproj">
-      <Project>{9dd6c82a-1899-478f-bc18-524ad0b0dcc8}</Project>
-      <Name>Entity</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Search\Search.csproj">
-      <Project>{83d6364b-73ea-4288-bce7-55a1119ee5a2}</Project>
-      <Name>Search</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
