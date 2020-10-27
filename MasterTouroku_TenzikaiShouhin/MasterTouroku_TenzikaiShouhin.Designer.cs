@@ -817,7 +817,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(19, 127);
+            this.ckM_Label8.Location = new System.Drawing.Point(18, 127);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label8.TabIndex = 821;
@@ -840,7 +840,7 @@
             this.SC_Brand.IsCopy = false;
             this.SC_Brand.LabelText = "";
             this.SC_Brand.LabelVisible = true;
-            this.SC_Brand.Location = new System.Drawing.Point(90, 92);
+            this.SC_Brand.Location = new System.Drawing.Point(91, 92);
             this.SC_Brand.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Brand.Name = "SC_Brand";
             this.SC_Brand.NameWidth = 280;
@@ -864,7 +864,7 @@
             this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(30, 101);
+            this.ckM_Label1.Location = new System.Drawing.Point(31, 101);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label1.TabIndex = 819;
@@ -947,7 +947,7 @@
             this.lbyear.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lbyear.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.lbyear.ForeColor = System.Drawing.Color.Black;
-            this.lbyear.Location = new System.Drawing.Point(43, 74);
+            this.lbyear.Location = new System.Drawing.Point(44, 74);
             this.lbyear.Name = "lbyear";
             this.lbyear.Size = new System.Drawing.Size(44, 12);
             this.lbyear.TabIndex = 814;
@@ -964,7 +964,7 @@
             this.CB_Year.Flag = 0;
             this.CB_Year.FormattingEnabled = true;
             this.CB_Year.Length = 10;
-            this.CB_Year.Location = new System.Drawing.Point(90, 70);
+            this.CB_Year.Location = new System.Drawing.Point(91, 70);
             this.CB_Year.MaxLength = 10;
             this.CB_Year.MoveNext = true;
             this.CB_Year.Name = "CB_Year";
@@ -1005,7 +1005,7 @@
             this.SC_Vendor.IsCopy = false;
             this.SC_Vendor.LabelText = "";
             this.SC_Vendor.LabelVisible = true;
-            this.SC_Vendor.Location = new System.Drawing.Point(90, 40);
+            this.SC_Vendor.Location = new System.Drawing.Point(91, 40);
             this.SC_Vendor.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Vendor.Name = "SC_Vendor";
             this.SC_Vendor.NameWidth = 310;
@@ -1029,7 +1029,7 @@
             this.Lb_brand.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.Lb_brand.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.Lb_brand.ForeColor = System.Drawing.Color.Black;
-            this.Lb_brand.Location = new System.Drawing.Point(43, 49);
+            this.Lb_brand.Location = new System.Drawing.Point(44, 49);
             this.Lb_brand.Name = "Lb_brand";
             this.Lb_brand.Size = new System.Drawing.Size(44, 12);
             this.Lb_brand.TabIndex = 804;
