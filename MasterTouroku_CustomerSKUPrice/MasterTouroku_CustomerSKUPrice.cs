@@ -1471,7 +1471,7 @@ namespace MasterTouroku_CustomerSKUPrice
                             mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Enter += new System.EventHandler(GridControl_Enter);
                             mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Leave += new System.EventHandler(GridControl_Leave);
                             mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown);
-               
+                            mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.Tag = W_CtlRow.ToString();
 
                         }
                     }
