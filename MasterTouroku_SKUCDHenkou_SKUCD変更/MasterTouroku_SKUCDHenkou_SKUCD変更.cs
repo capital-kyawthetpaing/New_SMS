@@ -1026,7 +1026,12 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
         {
             if(e.KeyCode == Keys.Enter)
             {
-               // F11();
+                //F11();
+                if(string.IsNullOrWhiteSpace(Sc_Item.TxtCode.Text))
+                {
+                    bbl.ShowMessage("E102");
+                    Sc_Item.SetFocus(1);
+                }
             }
         }
 
@@ -1035,7 +1040,40 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
             if (e.KeyCode == Keys.Enter)
             {
                 type = 1;
-             //   F11();
+                //F11();     
+                if(string.IsNullOrWhiteSpace(txtDate1.Text))
+                {
+                    bbl.ShowMessage("E102");
+                    txtDate1.Focus();
+                }
+                else
+                {
+                    if (OperationMode == EOperationMode.INSERT)
+                    {
+                        mie.ITemCD = Sc_Item.TxtCode.Text;
+                        mie.ChangeDate = txtDate1.Text;
+                        DataTable dtitem = new DataTable();
+                        dtitem = mskubl.M_ITEM_NormalSelect(mie);
+                        if (dtitem.Rows.Count > 0)
+                        {
+                            mskubl.ShowMessage("E132");
+                            Sc_Item.SetFocus(1);
+                        }  
+                    }
+                    else
+                    {
+                        mie.ITemCD = Sc_Item.TxtCode.Text;
+                        mie.ChangeDate = txtDate1.Text;
+                        DataTable dtitem = new DataTable();
+                        dtitem = mskubl.M_ITEM_NormalSelect(mie);
+                        if (dtitem.Rows.Count == 0)
+                        {
+                            mskubl.ShowMessage("E133");
+                            Sc_Item.SetFocus(1);                           
+                        }
+                    }
+                }
+               
             }
         }
 
@@ -1045,6 +1083,24 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
             {
                 type = 2;
                 //F11();
+                if (OperationMode == EOperationMode.INSERT)
+                {
+                    if (string.IsNullOrWhiteSpace(txtRevDate.Text))
+                    {
+                        mskubl.ShowMessage("E102");
+                        txtRevDate.Focus();
+                    }
+
+                    mie.ITemCD = Sc_Item.TxtCode.Text;
+                    mie.ChangeDate = txtRevDate.Text;
+                    DataTable dt = new DataTable();
+                    dt = mskubl.M_ITEM_NormalSelect(mie);
+                    if (dt.Rows.Count == 0)
+                    {
+                        mskubl.ShowMessage("E133");
+                        Sc_Item.SetFocus(1);
+                    }
+                }
             }
         }
 

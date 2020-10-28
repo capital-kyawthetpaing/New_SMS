@@ -386,7 +386,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 {
                     foreach (DataGridViewRow row in GV_Tenzaishohin.Rows)
                     {
-                        DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                        DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[1];
                         if (chk.Value == "1")
                         {
                             if (!String.IsNullOrEmpty(TB_Rate.Text))
