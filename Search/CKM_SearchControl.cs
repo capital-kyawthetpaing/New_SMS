@@ -2065,8 +2065,12 @@ namespace Search
                         dtResult = bbl.SimpleSelect1("72", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
 
-                   
-                        
+                    case SearchType.展示会商品:
+                        dtResult = bbl.SimpleSelect1("74", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        break;
+
+
+
                 }
 
             }
