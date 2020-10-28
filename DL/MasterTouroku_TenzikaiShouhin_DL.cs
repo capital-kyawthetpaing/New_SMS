@@ -65,7 +65,7 @@ namespace DL
                 { "@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.xml} },
                 { "@year", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.LastYearTerm} },
                 { "@season", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.LastSeason} },
-                { "@StartDate" , new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.ChangeDate} },
+                { "@startDate" , new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.ChangeDate} },
                 { "@OperatorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.InsertOperator} },
              
             };
@@ -73,7 +73,7 @@ namespace DL
             return InsertUpdateDeleteData(dic, sp);
         }
 
-        public bool M_Tenzikaishouhin_InsertUpdate(M_TenzikaiShouhin_Entity mt,String type)
+        public bool M_Tenzikaishouhin_InsertUpdate(M_TenzikaiShouhin_Entity mt,int type)
         {
             string sp = "M_Tenzikaishouhin_InsertUpdate";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
@@ -86,7 +86,32 @@ namespace DL
                 { "@BrandCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.BrandCD} },
                 { "@SegmentCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.SegmentCD} },
                 { "@OperatorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.InsertOperator} },
-                { "@type", new ValuePair { value1 = SqlDbType.TinyInt, value2 = type } }
+                { "@Pc", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.PC} },
+                { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.ProgramID} },
+                { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.ProcessMode} },
+                { "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.Key } },
+                { "@type", new ValuePair { value1 = SqlDbType.TinyInt, value2 = type.ToString() } }
+            };
+            UseTransaction = true;
+            return InsertUpdateDeleteData(dic, sp);
+        }
+
+        public bool M_Tenzikaishouhin_Delete(M_TenzikaiShouhin_Entity mtzke)
+        {
+            string sp = "M_Tenzikaishouhin_Delete";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@year", new ValuePair { value1 = SqlDbType.VarChar, value2 = mtzke.LastYearTerm} },
+                { "@season", new ValuePair { value1 = SqlDbType.VarChar, value2 = mtzke.LastSeason} },
+                { "@tenzikainame", new ValuePair { value1 = SqlDbType.VarChar, value2 = mtzke.TenzikaiName} },
+                { "@vendorcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mtzke.VendorCD} },
+                { "@BrandCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mtzke.BrandCD} },
+                { "@SegmentCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mtzke.SegmentCD} },
+                { "@OperatorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mtzke.InsertOperator} },
+                { "@Pc", new ValuePair { value1 = SqlDbType.VarChar, value2 = mtzke.PC} },
+                { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = mtzke.ProgramID} },
+                { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = mtzke.ProcessMode} },
+                { "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = mtzke.Key } },
             };
             UseTransaction = true;
             return InsertUpdateDeleteData(dic, sp);

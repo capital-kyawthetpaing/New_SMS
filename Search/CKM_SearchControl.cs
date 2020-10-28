@@ -707,7 +707,7 @@ namespace Search
                     break;
 
                 case SearchType.展示会商品:
-                    TxtCode.MaxLength = 80;
+                    TxtCode.MaxLength = 200;
                     TxtCode.Ctrl_Byte = CKM_TextBox.Bytes.半全角;
                     TxtCode.Width = 500;
                     lblName.Width = 180;
@@ -1838,7 +1838,7 @@ namespace Search
                         frmTenzikaishouhin.ShowDialog();
                         if (!frmTenzikaishouhin.flgCancel)
                         {
-                            txtCode.Text = frmTenzikaishouhin.parSKUName;
+                            txtCode.Text = frmTenzikaishouhin.parTenzikaiName;
                            // lblName.Text = frmTenzikaishouhin.parSKUName;
                             CheckBasedFormPanel();//PTK added
                         }
@@ -2064,6 +2064,13 @@ namespace Search
                     case SearchType.単価設定:
                         dtResult = bbl.SimpleSelect1("72", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
+
+                    case SearchType.展示会商品:
+                        dtResult = bbl.SimpleSelect1("74", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        break;
+
+
+
                 }
 
             }
@@ -2164,6 +2171,10 @@ namespace Search
                     break;
                 case SearchType.単価設定:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 16, txtCode.Text, Value1);
+                    break;
+
+                case SearchType.展示会商品:
+                    dtResult = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 17, txtCode.Text);
                     break;
             }
             if (dtResult.Rows.Count > 0)

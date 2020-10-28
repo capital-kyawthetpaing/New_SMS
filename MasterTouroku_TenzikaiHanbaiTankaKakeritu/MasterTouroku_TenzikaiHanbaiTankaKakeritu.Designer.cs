@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TB_Rate = new CKM_Controls.CKM_TextBox();
             this.BT_Apply = new CKM_Controls.CKM_Button();
@@ -226,7 +226,7 @@
             this.LB_Rate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.LB_Rate.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.LB_Rate.ForeColor = System.Drawing.Color.Black;
-            this.LB_Rate.Location = new System.Drawing.Point(779, 131);
+            this.LB_Rate.Location = new System.Drawing.Point(779, 130);
             this.LB_Rate.Name = "LB_Rate";
             this.LB_Rate.Size = new System.Drawing.Size(44, 12);
             this.LB_Rate.TabIndex = 72;
@@ -547,18 +547,18 @@
             this.GV_Tenzaishohin.AllowUserToAddRows = false;
             this.GV_Tenzaishohin.AllowUserToDeleteRows = false;
             this.GV_Tenzaishohin.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_Tenzaishohin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_Tenzaishohin.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GV_Tenzaishohin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_Tenzaishohin.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("GV_Tenzaishohin.CheckCol")));
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GV_Tenzaishohin.ColumnHeadersHeight = 25;
             this.GV_Tenzaishohin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNo,
@@ -574,14 +574,14 @@
             this.GV_Tenzaishohin.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_Tenzaishohin.Location = new System.Drawing.Point(12, 7);
             this.GV_Tenzaishohin.Name = "GV_Tenzaishohin";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_Tenzaishohin.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_Tenzaishohin.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.GV_Tenzaishohin.RowHeadersVisible = false;
             this.GV_Tenzaishohin.RowHeight_ = 20;
             this.GV_Tenzaishohin.RowTemplate.Height = 20;
@@ -597,9 +597,9 @@
             // colNo
             // 
             this.colNo.DataPropertyName = "colNo";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.NullValue = null;
-            this.colNo.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = null;
+            this.colNo.DefaultCellStyle = dataGridViewCellStyle3;
             this.colNo.HeaderText = "No";
             this.colNo.Name = "colNo";
             this.colNo.ReadOnly = true;
@@ -619,8 +619,8 @@
             // BrandCD
             // 
             this.BrandCD.DataPropertyName = "BrandCD";
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            this.BrandCD.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            this.BrandCD.DefaultCellStyle = dataGridViewCellStyle4;
             this.BrandCD.HeaderText = "ブランド";
             this.BrandCD.Name = "BrandCD";
             this.BrandCD.ReadOnly = true;
@@ -669,10 +669,10 @@
             // Rate
             // 
             this.Rate.DataPropertyName = "Rate";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle17.Format = "N2";
-            dataGridViewCellStyle17.NullValue = "0";
-            this.Rate.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = "0";
+            this.Rate.DefaultCellStyle = dataGridViewCellStyle5;
             this.Rate.HeaderText = "          掛率";
             this.Rate.MaxInputLength = 6;
             this.Rate.Name = "Rate";
