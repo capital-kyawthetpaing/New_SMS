@@ -2205,28 +2205,16 @@ namespace MasterTouroku_TenzikaiShouhin
                         detailControls[index].Focus();
                         return false;
                     }
+
+                   //var rresTen = bbl.SimpleSelect1("74", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), SC_Tenzikai.Text);
+
                     var rresTen = SC_Tenzikai.SelectData();
                     if (!rresTen)
                     {
                         bl.ShowMessage("E101");
                         return false;
                     }
-                    //M_TenzikaiShouhin_Entity mtent = new M_TenzikaiShouhin_Entity
-                    //{
-                    //    ChangeDate = bl.GetDate(),
-                    //    VendorFlg = "1",
-                    //    VendorCD = detailControls[index].Text,
-                    //    DeleteFlg = "0"
-                    //};
-                    //Vendor_BL vbl = new Vendor_BL();
-                    //SC_Vendor.ChangeDate = bl.GetDate();
-
-                    //var resul1 = SC_Vendor.SelectData();
-                    //if (!resul1)
-                    //{
-                    //    bl.ShowMessage("E101");
-                    //    return false;
-                    //}
+                   
                     break;
                 case (int)Eindex.SCShiiresaki:
                     if (string.IsNullOrWhiteSpace(detailControls[index].Text))
