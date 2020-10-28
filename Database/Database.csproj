@@ -127,6 +127,7 @@
     <Content Include="StoreProcedure\D_Instruction_SelectDataFromJuchu.sql" />
     <Content Include="StoreProcedure\D_Instruction_Update.sql" />
     <Content Include="StoreProcedure\D_InventoryControl_Select.sql" />
+    <Content Include="StoreProcedure\D_InventoryControl_SelectForTanaoroshiNyuuryoku.sql" />
     <Content Include="StoreProcedure\D_InventoryProcessing_Select.sql" />
     <Content Include="StoreProcedure\D_InventoryProcessing_SelectAll.sql" />
     <Content Include="StoreProcedure\D_Inventory_SelectAll.sql" />
@@ -287,6 +288,7 @@
     <Content Include="StoreProcedure\Fnc_UnitPrice.sql" />
     <Content Include="StoreProcedure\Fnc_UnitPrice_SP.sql" />
     <Content Include="StoreProcedure\Function_GetName_ReturnValue.sql" />
+    <Content Include="StoreProcedure\F_GetKouzaFee.sql" />
     <Content Include="StoreProcedure\F_SKU.sql" />
     <Content Include="StoreProcedure\GetJuchuuNO.sql" />
     <Content Include="StoreProcedure\GetMaxTaxRate.sql" />
@@ -357,6 +359,8 @@
     <Content Include="StoreProcedure\M_Control_PaymentSelect.sql" />
     <Content Include="StoreProcedure\M_Control_RecordCheck.sql" />
     <Content Include="StoreProcedure\M_Control_Select.sql" />
+    <Content Include="StoreProcedure\M_CustomerSKUPriceSelectData.sql" />
+    <Content Include="StoreProcedure\M_CustomerSKUPrice_InsertUpdate.sql" />
     <Content Include="StoreProcedure\M_Customer_CustomerName_Select.sql" />
     <Content Include="StoreProcedure\M_Customer_Display.sql" />
     <Content Include="StoreProcedure\M_Customer_Insert_Update.sql" />

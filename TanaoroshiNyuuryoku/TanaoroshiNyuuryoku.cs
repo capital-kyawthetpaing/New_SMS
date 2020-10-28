@@ -9,6 +9,7 @@ using Base.Client;
 using Search;
 using System.Text;
 using Microsoft.VisualBasic.FileIO;
+using System.Linq;
 
 namespace TanaoroshiNyuuryoku
 {
@@ -435,7 +436,8 @@ namespace TanaoroshiNyuuryoku
                 }
 
                 //CSVファイルが１件もない場合 メッセージを表示し、取込処理を終了する Ｑ３２５				
-                string[] names = System.IO.Directory.GetFiles(Folder, "*.csv");
+                //string[] names = System.IO.Directory.GetFiles(Folder, "*.csv");
+                string[] names = System.IO.Directory.GetFiles(Folder, "*.csv").Concat(System.IO.Directory.GetFiles(Folder, "*.txt")).ToArray();
                 if (names.Length == 0)
                 {
                     bbl.ShowMessage("Q325");
@@ -446,6 +448,13 @@ namespace TanaoroshiNyuuryoku
                 doe = GetEntity();
 
                 DataTable dtFile = tabl.D_Inventory_SelectAll(doe);
+                //実在庫を全て０に
+                foreach(DataRow data in dtFile.Rows)
+                {
+                    data["ActualQuantity"] = 0;
+                    data["DifferenceQuantity"] = -1 * bbl.Z_Set(data["TheoreticalQuantity"]);
+                }
+
                 foreach (string name in names)
                 {
                     if (!CSVToTable(dtFile, name))
@@ -478,7 +487,7 @@ namespace TanaoroshiNyuuryoku
                     csvReader.SetDelimiters(new string[] { "," });
                     csvReader.HasFieldsEnclosedInQuotes = true;
 
-                    string[] colFields = csvReader.ReadFields();
+                    //string[] colFields = csvReader.ReadFields();
                     //CSVファイルの１行目はデータとする
                     for (int i = 0; i < (int)EcsvCol.COUNT; i++)
                     {

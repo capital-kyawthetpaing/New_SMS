@@ -506,67 +506,26 @@ namespace MasterTouroku_TenzikaiShouhin
         }
         private void F11()
         {
-            int w_Row;
             SKUChek();
             if (!IsallUnChecked())
             {
                 bl.ShowMessage("E128");
             }
-            var dtrest = new DataTable();
-            Col(dtrest);
-            for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
-            {
-                if (!String.IsNullOrEmpty(mGrid.g_DArray[w_Row].JANCD) && mGrid.g_DArray[w_Row].Chk)
-                {
-                    dtrest.Rows.Add(new object[]{
-                        mGrid.g_DArray[w_Row].Chk ? "1" : "0",
-                        mGrid.g_DArray[w_Row].JANCD,
-                        mGrid.g_DArray[w_Row].SKUCD,
-                        mGrid.g_DArray[w_Row].SKUName,
-                        mGrid.g_DArray[w_Row].ColorCD,
-                        mGrid.g_DArray[w_Row].ColorName,
-                        mGrid.g_DArray[w_Row].SizeCD,
-                        mGrid.g_DArray[w_Row].SizeName,
-                        mGrid.g_DArray[w_Row].HanbaiYoteiDateMonth,
-                        mGrid.g_DArray[w_Row].HanbaiYoteiBi,
-                        mGrid.g_DArray[w_Row].Shiiretanka,
-                        mGrid.g_DArray[w_Row].JoutaiTanka,
-                        mGrid.g_DArray[w_Row].SalePriceOutTax,
-                        mGrid.g_DArray[w_Row].SalePriceOutTax1,
-                        mGrid.g_DArray[w_Row].SalePriceOutTax2,
-                        mGrid.g_DArray[w_Row].SalePriceOutTax3,
-                        mGrid.g_DArray[w_Row].SalePriceOutTax4,
-                        mGrid.g_DArray[w_Row].SalePriceOutTax5,
-                        mGrid.g_DArray[w_Row].BrandCD,
-                        mGrid.g_DArray[w_Row].SegmentCD,
-                        mGrid.g_DArray[w_Row].TaniCD,
-                        mGrid.g_DArray[w_Row].TaxRateFlg,
-                        mGrid.g_DArray[w_Row].Remarks,
-                        mGrid.g_DArray[w_Row].ExhibitionCommonCD,
-                    });
-                }
-            }
+            DataTable dtrest = GetGridData();
 
-            M_TenzikaiShouhin_Entity mt = new M_TenzikaiShouhin_Entity
+            mt = GetEntity(dtrest);
+            if (!tbl.M_Tenzikaishouhin_DeleteUpdate(mt))
             {
-                xml = bbl.DataTableToXml(dtrest),
-                LastYearTerm = detailControls[(int)Eindex.Nendo].Text,
-                LastSeason = detailControls[(int)Eindex.Season].Text,
-                StartDate =detailControls[(int)Eindex.StartDate].Text,
-                InsertOperator = InOperatorCD,
-            };
-            if(tbl.M_Tenzikaishouhin_DeleteUpdate(mt))
-            {
-
+                bbl.ShowMessage("S001");
             }
+                       
         }
 
-        private void InsertUpdate(string Typ)
+        private DataTable GetGridData()
         {
-            int w_Row;
             var dtrest = new DataTable();
             Col(dtrest);
-            for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
+            for (int w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
             {
                 if (!String.IsNullOrEmpty(mGrid.g_DArray[w_Row].JANCD))
                 {
@@ -600,24 +559,42 @@ namespace MasterTouroku_TenzikaiShouhin
                     });
                 }
             }
+              return dtrest;
+         }
+
+        private M_TenzikaiShouhin_Entity GetEntity(DataTable dtrest)
+        {
             M_TenzikaiShouhin_Entity mt = new M_TenzikaiShouhin_Entity
             {
                 xml = bbl.DataTableToXml(dtrest),
-                TenzikaiName= detailControls[(int)Eindex.SCTenzikai].Text,
-                VendorCD= detailControls[(int)Eindex.SCShiiresaki].Text,
+                TenzikaiName = detailControls[(int)Eindex.SCTenzikai].Text,
+                VendorCD = detailControls[(int)Eindex.SCShiiresaki].Text,
                 LastYearTerm = detailControls[(int)Eindex.Nendo].Text,
                 LastSeason = detailControls[(int)Eindex.Season].Text,
-                BrandCD= detailControls[(int)Eindex.SCBrand].Text,
+                BrandCD = detailControls[(int)Eindex.SCBrand].Text,
                 SegmentCD = detailControls[(int)Eindex.SCSegment].Text,
                 InsertOperator = InOperatorCD,
+                ProcessMode = ModeText,
+                ProgramID = InProgramID,
+                Key = InPcID + bbl.GetDate(),
+                PC = InPcID,
             };
-            
 
+            return mt;
+        }
+
+        private void InsertUpdate(int Typ)
+        {
             if(tbl.M_Tenzikaishouhin_InsertUpdate(mt,Typ))
             {
-                tbl.ShowMessage("I101");
+                bbl.ShowMessage("I101");
+                ChangeOperationMode(OperationMode);
             }
-        
+            else
+            {
+                bbl.ShowMessage("S001");
+            }
+
         }
 
         private void DEL_SUB()
@@ -3398,8 +3375,6 @@ namespace MasterTouroku_TenzikaiShouhin
         }
 
 
-
-
         private void BT_SKUCheck_Click(object sender, EventArgs e)
         {
             SKUChek();
@@ -3533,23 +3508,45 @@ namespace MasterTouroku_TenzikaiShouhin
                     return;
                 }
             }
+
+            DataTable dtrest = GetGridData();
+
+            mt = GetEntity(dtrest);
+
             switch (OperationMode)
             {
                 case EOperationMode.INSERT:
                     if(CheckKey(-1))
                     {
                         
-                        InsertUpdate("1");
+                        InsertUpdate(1);
                     }
                    
                     break;
                 case EOperationMode.UPDATE:
-                    InsertUpdate("2");
+                    InsertUpdate(2);
                     break;
                 case EOperationMode.DELETE:
-                   // Delete();
+                    Delete();
                     break;
             }
+
+            //更新後画面クリア
+            ChangeOperationMode(base.OperationMode);
+        }
+
+        private void Delete()
+        {
+            if (tbl.M_Tenzikaishouhin_Delete(mt))
+            {
+                ChangeOperationMode(OperationMode);
+                detailControls[0].Focus();
+            }
+            else
+            {
+                bbl.ShowMessage("S001");
+            }
+
         }
 
         private void ERR_FOCUS_GRID_SUB(int pCol, int pRow)

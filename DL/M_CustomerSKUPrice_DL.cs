@@ -35,7 +35,7 @@ namespace DL
                 { "@xmlCustSKUPrice", new ValuePair { value1 = SqlDbType.VarChar, value2 = mcskue.xml1} },
                 { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mcskue.InsertOperator } },
                 { "@Pc", new ValuePair { value1 = SqlDbType.VarChar, value2 = mcskue.PC} },
-                { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = mcskue.ProcessMode} },
+                { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = mcskue.ProgramID} },
                 { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = mcskue.ProcessMode} },
                 { "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = mcskue.Key } },
                 { "@Mode", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mode.ToString() } }
