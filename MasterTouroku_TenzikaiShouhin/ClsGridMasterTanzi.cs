@@ -14,8 +14,9 @@ namespace MasterTouroku_TenzikaiShouhin
         internal struct ST_DArray_Grid
         {
             internal string TenzikaiRow;
-            internal string TB;
+            
             internal string GYONO;
+            internal string TB;
             internal bool Chk;
             internal string JANCD;
             internal string SKUCD;
@@ -45,6 +46,7 @@ namespace MasterTouroku_TenzikaiShouhin
         internal enum ColNO : int
         {
             GYONO,
+            TB,
             Chk,
             JANCD,
             SKUCD,
@@ -123,6 +125,14 @@ namespace MasterTouroku_TenzikaiShouhin
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
 
+                w_CtlCol = (int)ColNO.TB;
+
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].TB);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);
                 //JanCD
                 w_CtlCol = (int)ColNO.JANCD;
 
@@ -382,6 +392,8 @@ namespace MasterTouroku_TenzikaiShouhin
                 w_Row = w_CtlRow + pStartRow;
                 w_CtlCol = (int)ColNO.GYONO;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].GYONO);
+                w_CtlCol = (int)ColNO.TB;
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].TB);
                 w_CtlCol = (int)ColNO.JANCD;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].JANCD);
                 w_CtlCol = (int)ColNO.SKUCD;
