@@ -135,6 +135,8 @@ namespace Entity
         public string PriceOutTaxFrom { get; set; }
         public string PriceOutTaxTo { get; set; }
         //Mastertouroku_Tenzikaishouhin Entity
-        public string CheckState { get; set; }
+        public string InStoreCD { get; set; }
+
+
     }
 }
