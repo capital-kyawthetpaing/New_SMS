@@ -2064,6 +2064,9 @@ namespace Search
                     case SearchType.単価設定:
                         dtResult = bbl.SimpleSelect1("72", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
+
+                   
+                        
                 }
 
             }
@@ -2164,6 +2167,10 @@ namespace Search
                     break;
                 case SearchType.単価設定:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 16, txtCode.Text, Value1);
+                    break;
+
+                case SearchType.展示会商品:
+                    dtResult = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 17, txtCode.Text);
                     break;
             }
             if (dtResult.Rows.Count > 0)
