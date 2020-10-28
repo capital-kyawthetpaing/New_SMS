@@ -1838,7 +1838,7 @@ namespace Search
                         frmTenzikaishouhin.ShowDialog();
                         if (!frmTenzikaishouhin.flgCancel)
                         {
-                            txtCode.Text = frmTenzikaishouhin.parSKUName;
+                            txtCode.Text = frmTenzikaishouhin.parTenzikaiName;
                            // lblName.Text = frmTenzikaishouhin.parSKUName;
                             CheckBasedFormPanel();//PTK added
                         }
