@@ -330,7 +330,7 @@ namespace DL
             {
                 { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = msk.JanCD } },
                 { "@vendorcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = msk.MainVendorCD } },
-
+                { "@storecd", new ValuePair { value1 = SqlDbType.VarChar, value2 = msk.InStoreCD } },
             };
             return SelectData(dic, sp);
         }
