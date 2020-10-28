@@ -351,6 +351,7 @@
             this.remark_2 = new CKM_Controls.CKM_TextBox();
             this.scjan_2 = new Search.CKM_SearchControl();
             this.label24 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.panel_1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -8438,6 +8439,10 @@
             this.label24.Text = "販売予定日";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // MasterTouroku_TenzikaiShouhin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -8827,5 +8832,6 @@
         private CKM_Controls.CKM_TextBox joutai_8;
         private CKM_Controls.CKM_TextBox remark_8;
         private Search.CKM_SearchControl scjan_8;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

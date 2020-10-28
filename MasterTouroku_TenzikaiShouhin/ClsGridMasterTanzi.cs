@@ -38,7 +38,7 @@ namespace MasterTouroku_TenzikaiShouhin
             internal string SegmentCD;
             internal string TaniCD;
             internal string TaxRateFlg;
-            internal string Remarks;
+            internal string Biko;//Remarks
             internal string ExhibitionCommonCD; // hidden
         }
 
@@ -67,7 +67,7 @@ namespace MasterTouroku_TenzikaiShouhin
             SegmentCD,
             TaniCD,
             TaxRateFlg,
-            Remarks,
+            Biko,//Remarks
             Count,
         }
 
@@ -348,9 +348,9 @@ namespace MasterTouroku_TenzikaiShouhin
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
                 //Chk
-                w_CtlCol = (int)ColNO.Remarks;
+                w_CtlCol = (int)ColNO.Biko;
 
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].Remarks);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].Biko);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
@@ -380,79 +380,56 @@ namespace MasterTouroku_TenzikaiShouhin
             for (w_CtlRow = 0; w_CtlRow <= g_MK_Ctl_Row - 1; w_CtlRow++)            // 画面上の明細番号
             {
                 w_Row = w_CtlRow + pStartRow;
-                //gyoNo
                 w_CtlCol = (int)ColNO.GYONO;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].GYONO);
-                //SkuCD
                 w_CtlCol = (int)ColNO.JANCD;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].JANCD);
-                //Jancd
                 w_CtlCol = (int)ColNO.SKUCD;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SKUCD);
-                //SChangeDate
                 w_CtlCol = (int)ColNO.SKUName;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SKUName);
 
                 //
                 w_CtlCol = (int)ColNO.ColorCD;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ColorCD);
-                //EChangeDate
                 w_CtlCol = (int)ColNO.ColorName;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ColorName);
-                //UnitPrice
                 w_CtlCol = (int)ColNO.SizeCD;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SizeCD);
-                //SSUnitPrice
                 w_CtlCol = (int)ColNO.SizeName;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SizeName);
-                //R1UnitPrice
                 w_CtlCol = (int)ColNO.HanbaiYoteiDateMonth;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].HanbaiYoteiDateMonth);
-                //R2UnitPrice
                 w_CtlCol = (int)ColNO.HanbaiYoteiBi;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].HanbaiYoteiBi);
-                //R3UnitPrice
                 w_CtlCol = (int)ColNO.Shiiretanka;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].Shiiretanka);
-                //R4UnitPrice
                 w_CtlCol = (int)ColNO.JoutaiTanka;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].JoutaiTanka);
-                //R5UnitPrice
                 w_CtlCol = (int)ColNO.SalePriceOutTax;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SalePriceOutTax);
-                //ItemName
                 w_CtlCol = (int)ColNO.SalePriceOutTax1;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SalePriceOutTax1);
-                //CostUP
                 w_CtlCol = (int)ColNO.SalePriceOutTax2;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SalePriceOutTax2);
-                //Remarks
                 w_CtlCol = (int)ColNO.SalePriceOutTax3;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SalePriceOutTax3);
-                //Remarks
                 w_CtlCol = (int)ColNO.SalePriceOutTax4;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SalePriceOutTax4);
-                //Remarks
                 w_CtlCol = (int)ColNO.SalePriceOutTax5;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SalePriceOutTax5);
-                //Remarks
                 w_CtlCol = (int)ColNO.BrandCD;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].BrandCD);
-                //Remarks
                 w_CtlCol = (int)ColNO.SegmentCD;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SegmentCD);
-                //Remarks
                 w_CtlCol = (int)ColNO.TaniCD;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].TaniCD);
-                //Remarks
                 w_CtlCol = (int)ColNO.Chk;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].Chk);
-                //Remarks
                 w_CtlCol = (int)ColNO.TaxRateFlg;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].TaxRateFlg);
-                //Remarks
-                w_CtlCol = (int)ColNO.Remarks;
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].Remarks);
+                w_CtlCol = (int)ColNO.Biko;
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].Biko);
               
             }
         }
