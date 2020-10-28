@@ -139,7 +139,10 @@ namespace MasterTouroku_CustomerSKUPrice
                         break;
                     }
                 case 6://F7:行削除
-                    DEL_SUB();
+                    if (bbl.ShowMessage("Q102") == DialogResult.Yes)
+                        DEL_SUB();
+                    else
+                        return;
                     break;
 
                 case 7://F8:行追加
@@ -515,7 +518,7 @@ namespace MasterTouroku_CustomerSKUPrice
 
             //更新処理
             mcskue = GetEntity(dt);
-            //mibl.Mitsumori_Exec(dme, dt, (short)OperationMode, InOperatorCD, InPcID);
+
             switch(OperationMode)
             {
                 case EOperationMode.INSERT:

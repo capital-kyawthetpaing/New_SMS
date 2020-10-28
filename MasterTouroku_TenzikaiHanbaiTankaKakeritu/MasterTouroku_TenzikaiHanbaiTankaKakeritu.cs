@@ -43,31 +43,75 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             if (!RequireCheck(new Control[] { SC_Tanka.TxtCode })) //Step1
                 return false;
 
-            if (!SC_Tanka.IsExists(2))
+            //if (!SC_Tanka.IsExists(2))
+            //{
+            //    bbl.ShowMessage("E101");
+            //    SC_Tanka.SetFocus(1);
+            //    return false;
+            //}
+            SC_Tanka.ChangeDate = bbl.GetDate();//ses
+            if (!string.IsNullOrEmpty(SC_Tanka.TxtCode.Text))
             {
-                bbl.ShowMessage("E101");
-                SC_Tanka.SetFocus(1);
-                return false;
+                if (SC_Tanka.SelectData())
+                {
+                    SC_Tanka.Value1 = SC_Tanka.TxtCode.Text;
+                    SC_Tanka.Value2 = SC_Tanka.LabelText;
+                }
+                else
+                {
+                    bbl.ShowMessage("E101");
+                    SC_Tanka.SetFocus(1);
+                    return false;
+                }
             }
-            if (!String.IsNullOrEmpty(SC_Brand.TxtCode.Text))
+            SC_Brand.ChangeDate = bbl.GetDate();//ses
+            if (!string.IsNullOrEmpty(SC_Brand.TxtCode.Text))
             {
-                if (!SC_Brand.IsExists(2))
+                if (SC_Brand.SelectData())
+                {
+                    SC_Brand.Value1 = SC_Brand.TxtCode.Text;
+                    SC_Brand.Value2 = SC_Brand.LabelText;
+                }
+                else
                 {
                     bbl.ShowMessage("E101");
                     SC_Brand.SetFocus(1);
                     return false;
                 }
             }
-
-            if (!String.IsNullOrEmpty(Sc_Segment.TxtCode.Text))
+            //if (!String.IsNullOrEmpty(SC_Brand.TxtCode.Text))
+            //{
+            //    if (!SC_Brand.IsExists(2))
+            //    {
+            //        bbl.ShowMessage("E101");
+            //        SC_Brand.SetFocus(1);
+            //        return false;
+            //    }
+            //}
+            Sc_Segment.ChangeDate = bbl.GetDate();//ses
+            if (!string.IsNullOrEmpty(Sc_Segment.TxtCode.Text))
             {
-                if (!Sc_Segment.IsExists(2))
+                if (Sc_Segment.SelectData())
+                {
+                    Sc_Segment.Value1 = Sc_Segment.TxtCode.Text;
+                    Sc_Segment.Value2 = Sc_Segment.LabelText;
+                }
+                else
                 {
                     bbl.ShowMessage("E101");
                     Sc_Segment.SetFocus(1);
                     return false;
                 }
             }
+            //if (!String.IsNullOrEmpty(Sc_Segment.TxtCode.Text))
+            //{
+            //    if (!Sc_Segment.IsExists(2))
+            //    {
+            //        bbl.ShowMessage("E101");
+            //        Sc_Segment.SetFocus(1);
+            //        return false;
+            //    }
+            //}
 
             //Console.WriteLine(header.Trim(new Char[] { ' ', '*', '.' }));
 
@@ -257,6 +301,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 {
                     GV_Tenzaishohin.DataSource = null;
                     bl.ShowMessage("E128");
+                    SC_Tanka.SetFocus(1);
                 }
             }
         }
