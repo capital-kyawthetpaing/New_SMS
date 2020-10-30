@@ -598,7 +598,7 @@ namespace CKM_Controls
             //ProgramID = lblProgramID.Text;
         }
 
-        private void BindCombo(string key, string value, DataTable dt)
+        public void BindCombo(string key, string value, DataTable dt)
         {
             DataRow dr = dt.NewRow();
             dr[key] = "-1";

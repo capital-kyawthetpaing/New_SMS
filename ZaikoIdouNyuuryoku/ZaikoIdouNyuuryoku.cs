@@ -48,16 +48,16 @@ namespace ZaikoIdouNyuuryoku
             FromSoukoCD,
             ToSoukoCD,
 
-            Gyono,    //行番号
+            Gyono,          //行番号
             CheckBox4,
             JANCD,
-            FromRackNO,  //移動元棚番
+            FromRackNO,     //移動元棚番
             JANCD_F,
-            Suryo,//数量
-            ToRackNO,   //移動先棚番
+            Suryo,          //数量
+            ToRackNO,       //移動先棚番
             ExpectReturnDate,    //出荷・返品予定日
-            EvaluationPrice, //評価単価 
-            HenpinSaki,      //VendorCD
+            EvaluationPrice,    //評価単価 
+            HenpinSaki,         //VendorCD
             RemarksInStore,     //コメント
         }
 
@@ -3255,6 +3255,8 @@ namespace ZaikoIdouNyuuryoku
             if (OperationMode == EOperationMode.DELETE || OperationMode == EOperationMode.SHOW)
                 return;
 
+            ScToRackNo.Value1 = CboToSoukoCD.SelectedIndex>0 ? CboToSoukoCD.SelectedValue.ToString():"";
+
             switch (kbn)
             {
                 case EIdoType.店舗間移動:
@@ -3466,6 +3468,7 @@ namespace ZaikoIdouNyuuryoku
                         }
                     }
                     mToStoreCD = "";
+                    ScToRackNo.Value1 = CboFromSoukoCD.SelectedIndex>0 ? CboFromSoukoCD.SelectedValue.ToString():"";
                     break;
                 case EIdoType.返品:
                     for (int i = 0; i <= (int)EIndex.RemarksInStore; i++)
