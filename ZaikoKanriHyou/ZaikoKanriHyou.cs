@@ -46,6 +46,7 @@ namespace ZaikoKanriHyou
             cboSouko.SelectedValue = SoukoCD;
             scMakerShohinCD.CodeWidth = 600;
             txtTargetDate.Text = DateTime.Now.ToString("yyyy/MM");
+            Btn_F11.Text = "";
         }
 
         private void SetRequiredField()
