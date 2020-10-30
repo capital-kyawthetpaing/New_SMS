@@ -447,11 +447,24 @@ namespace MasterTouroku_TenzikaiShouhin
                         {
                             if(ErrorCheck())
                             {
-                               
-                                F11();
+                                if (!String.IsNullOrEmpty(TB_StartDate.Text))
+                                {
+                                    if (TB_StartDate.DateCheck())
+                                    {
+                                        F11();
+                                    }
+                                    else
+                                    {
+                                        bbl.ShowMessage("E103");
+                                        TB_StartDate.Focus();
+                                    }
+                                }
+                                else
+                                {
+                                    bbl.ShowMessage("E102");
+                                    TB_StartDate.Focus();
+                                }
                             }
-                           
-                            
                         }
                        
                     }
@@ -520,6 +533,7 @@ namespace MasterTouroku_TenzikaiShouhin
             if (!IsallUnChecked())
             {
                 bl.ShowMessage("E128");
+                return;
             }
             DataTable dtrest = GetGridData();
 
@@ -1528,7 +1542,6 @@ namespace MasterTouroku_TenzikaiShouhin
             { 
                 try
                 {
-                    
                     string ymd = bl.GetDate();
                     if (string.IsNullOrWhiteSpace(ymd))
                         ymd = bbl.GetDate();
@@ -2324,6 +2337,10 @@ namespace MasterTouroku_TenzikaiShouhin
                 if (OperationMode == EOperationMode.SHOW)
                     SetFuncKeyAll(this, "111111001000");
 
+            }
+            if(OperationMode == EOperationMode.UPDATE)
+            {
+                SetFuncKeyAll(this, "111111001010");
             }
             else
             {
@@ -3171,7 +3188,7 @@ namespace MasterTouroku_TenzikaiShouhin
             foreach (DataRow dr in dt.Rows)
             {
                 mGrid.g_DArray[c].JANCD = dr["JanCD"].ToString();
-                CheckGrid((int)ClsGridMasterTanzi.ColNO.JANCD, c, true);
+                
                 mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
                 mGrid.g_DArray[c].SKUName = dr["SKUName"].ToString();
                 mGrid.g_DArray[c].ColorCD = dr["ColorCD"].ToString();
@@ -3182,6 +3199,7 @@ namespace MasterTouroku_TenzikaiShouhin
                 mGrid.g_DArray[c].HanbaiYoteiBi = dr["HanbaiDate"].ToString();
                 mGrid.g_DArray[c].Shiiretanka = dr["Shiiretanka"].ToString();//
                 mGrid.g_DArray[c].JoutaiTanka = dr["JoudaiTanka"].ToString();//
+                //CheckGrid((int)ClsGridMasterTanzi.ColNO.JANCD, c, true);
                 mGrid.g_DArray[c].SalePriceOutTax = dr["SalePriceOutTax"].ToString();//
                 mGrid.g_DArray[c].SalePriceOutTax1 = dr["Rank1"].ToString();//
                 mGrid.g_DArray[c].SalePriceOutTax2 = dr["Rank2"].ToString();//
@@ -3290,6 +3308,19 @@ namespace MasterTouroku_TenzikaiShouhin
             }
         }
 
+
+        private void SetRequireField()
+        {
+            SC_Tenzikai.TxtCode.Require(true);
+            SC_Vendor.TxtCode.Require(true);
+            CB_Year.Require(true);
+            CB_Year.Require(true);
+            //itemcd.TxtCode.Require(true);
+            //TB_date_add.Require(true);
+            //TB_rate.Require(true);
+            //TB_pricewithouttax.Require(true);
+
+        }
         protected override void ExecSec()
         {
             if (OperationMode == EOperationMode.SHOW)
@@ -3298,18 +3329,18 @@ namespace MasterTouroku_TenzikaiShouhin
             }
             if (OperationMode != EOperationMode.SHOW) // KeysControl
             {
-                if (CheckKey(-1, false) == false)
-                {
-                    return;
-                }
+                //if (CheckKey(-1, false) == false)
+                //{
+                //    return;
+                //}
                 if(!ErrorCheck())
                 {
                     return;
                 }
             }
 
-            if (CheckKey(-1))
-            {
+            //if (CheckKey(-1))
+            //{
 
                 if (ErrorCheck())
                 {
@@ -3330,12 +3361,8 @@ namespace MasterTouroku_TenzikaiShouhin
                                 }
                             }
                         }
-
-                  
-
-                    
                 }
-            }
+            //}
             
             DataTable dtrest = GetGridData();
             if(dtrest.Rows.Count > 0)
@@ -3345,11 +3372,7 @@ namespace MasterTouroku_TenzikaiShouhin
                 switch (OperationMode)
                 {
                     case EOperationMode.INSERT:
-                        if (CheckKey(-1))
-                        {
-
                             InsertUpdate(1);
-                        }
 
                         break;
                     case EOperationMode.UPDATE:
@@ -3488,13 +3511,14 @@ namespace MasterTouroku_TenzikaiShouhin
 
                     }
                 }
-
-               
             }
 
+            if(!String.IsNullOrEmpty(TB_StartDate.Text))
+            {
+                if (!TB_StartDate.DateCheck())
+                    return false;
 
-            if (!TB_StartDate.DateCheck())
-                return false;
+            }
 
 
             return true;
