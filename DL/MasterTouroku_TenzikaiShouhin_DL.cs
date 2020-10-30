@@ -65,7 +65,7 @@ namespace DL
                 { "@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.xml} },
                 { "@year", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.LastYearTerm} },
                 { "@season", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.LastSeason} },
-                { "@StartDate" , new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.ChangeDate} },
+                { "@startDate" , new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.ChangeDate} },
                 { "@OperatorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.InsertOperator} },
              
             };

@@ -1268,6 +1268,7 @@ namespace HenpinNyuuryoku
                     //税額(Hidden)
                     mGrid.g_DArray[i].PurchaseTax = bbl.Z_Set(row["PurchaseTax"]);
                     mGrid.g_DArray[i].PurchaseRows = Convert.ToInt16(row["PurchaseRows"]);
+                    mGrid.g_DArray[i].TaxRateFLG = Convert.ToInt16(row["TaxRitsu"]);
                     mGrid.g_DArray[i].DeliveryNo = row["DeliveryNo"].ToString();
                     mGrid.g_DArray[i].OrderNO = row["OrderNO"].ToString();
                     mGrid.g_DArray[i].OrderRows = row["OrderRows"].ToString();
@@ -1327,20 +1328,21 @@ namespace HenpinNyuuryoku
         private void ExecDispNohin(short kbn)
         {
             //抽出条件エリアのエラーチェック
-            for (int i = (int)EIndex.ArrivalDateFrom; i <= (int)EIndex.VendorDeliveryNo; i++)
+            for (int i = (int)EIndex.CalledVendorCD; i <= (int)EIndex.VendorDeliveryNo; i++)
+            {
                 if (CheckDetail(i) == false)
                 {
                     detailControls[i].Focus();
                     return;
                 }
+            }
 
             dse = GetSearchInfo();
             dse.F10 = kbn;
 
             DataTable dt = new DataTable();
+            dt = snbl.D_Stock_SelectAllForShiireH(dse);
 
-                dt = snbl.D_Stock_SelectAllForShiireH(dse);
-            
             if (dt.Rows.Count == 0)
             {
                 bbl.ShowMessage("E128");
@@ -1401,9 +1403,9 @@ namespace HenpinNyuuryoku
                         if (!string.IsNullOrWhiteSpace(row["DeliveryNo"].ToString()) && row["DeliveryNo"].ToString().Equals(detailControls[(int)EIndex.VendorDeliveryNo].Text))
                             mGrid.g_DArray[i].Chk = true;
 
-                        if(mGrid.g_DArray[i].Chk)
+                        if (mGrid.g_DArray[i].Chk)
                             ChangeBackColor(i, 1);
-                        
+
                         //Form.発注単価＝Form.単価の時(呼び出し時は常に同じ＝差異なし)
 
                         //税額(Hidden)
@@ -1990,6 +1992,7 @@ namespace HenpinNyuuryoku
             dt.Columns.Add("SKUCD", typeof(string));
             dt.Columns.Add("AdminNO", typeof(int));
             dt.Columns.Add("JanCD", typeof(string));
+            dt.Columns.Add("MakerName", typeof(string));
             dt.Columns.Add("ItemName", typeof(string));
             dt.Columns.Add("ColorName", typeof(string));
             dt.Columns.Add("SizeName", typeof(string));
@@ -2005,6 +2008,7 @@ namespace HenpinNyuuryoku
             dt.Columns.Add("AdjustmentGaku", typeof(decimal));
             dt.Columns.Add("PurchaseGaku", typeof(decimal));
             dt.Columns.Add("PurchaseTax", typeof(decimal));
+            dt.Columns.Add("TaxRitsu", typeof(int));
             //dt.Columns.Add("CommentOutStore", typeof(string));
             //dt.Columns.Add("CommentInStore", typeof(string));
             //dt.Columns.Add("OrderUnitPrice", typeof(decimal));
@@ -2042,6 +2046,7 @@ namespace HenpinNyuuryoku
                         , mGrid.g_DArray[RW].SKUCD == "" ? null : mGrid.g_DArray[RW].SKUCD
                         , bbl.Z_Set(mGrid.g_DArray[RW].AdminNO)
                         , mGrid.g_DArray[RW].JanCD == "" ? null : mGrid.g_DArray[RW].JanCD
+                        , mGrid.g_DArray[RW].MakerItem == "" ? null : mGrid.g_DArray[RW].MakerItem
                         , mGrid.g_DArray[RW].SKUName == "" ? null : mGrid.g_DArray[RW].SKUName
                         , mGrid.g_DArray[RW].ColorName == "" ? null : mGrid.g_DArray[RW].ColorName
                         , mGrid.g_DArray[RW].SizeName == "" ? null : mGrid.g_DArray[RW].SizeName
@@ -2055,6 +2060,7 @@ namespace HenpinNyuuryoku
                         , bbl.Z_Set(mGrid.g_DArray[RW].AdjustmentGaku)
                         , bbl.Z_Set(mGrid.g_DArray[RW].PurchaseGaku)
                         , bbl.Z_Set(mGrid.g_DArray[RW].PurchaseTax)
+                        , bbl.Z_Set(mGrid.g_DArray[RW].TaxRateFLG)
                         //, mGrid.g_DArray[RW].CommentOutStore == "" ? null : mGrid.g_DArray[RW].CommentOutStore
                         //, bbl.Z_Set(mGrid.g_DArray[RW].Space)
                         , mGrid.g_DArray[RW].OrderNO == "" ? null : mGrid.g_DArray[RW].OrderNO
