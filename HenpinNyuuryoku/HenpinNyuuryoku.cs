@@ -1264,6 +1264,7 @@ namespace HenpinNyuuryoku
                     mGrid.g_DArray[i].AdjustmentGaku = bbl.Z_SetStr(bbl.Z_Set(row["D_AdjustmentGaku"]));   // 
                     mGrid.g_DArray[i].PurchaseGaku = bbl.Z_SetStr(row["D_PurchaseGaku"]);   // 
                     mGrid.g_DArray[i].CalculationGaku = bbl.Z_SetStr(row["D_CalculationGaku"]);   //        
+                    mGrid.g_DArray[i].CommentInStore = row["Remark"].ToString();
 
                     //税額(Hidden)
                     mGrid.g_DArray[i].PurchaseTax = bbl.Z_Set(row["PurchaseTax"]);
