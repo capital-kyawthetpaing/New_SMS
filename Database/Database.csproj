@@ -526,6 +526,7 @@
     <Content Include="StoreProcedure\M_TankaCD_SelectAll.sql" />
     <Content Include="StoreProcedure\M_TeniKaiSelectbyJAN.sql" />
     <Content Include="StoreProcedure\M_TenjiDataSet_Select.sql" />
+    <Content Include="StoreProcedure\M_TenjiKaiJuuChuu_Select.sql" />
     <Content Include="StoreProcedure\M_Tenzikaishouhin_Search.sql" />
     <Content Include="StoreProcedure\M_TenzikaiShouhin_Select.sql" />
     <Content Include="StoreProcedure\M_Tenzikaishouhin_SelectForJancd.sql" />
