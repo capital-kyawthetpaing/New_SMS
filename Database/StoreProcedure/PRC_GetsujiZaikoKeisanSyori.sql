@@ -1,5 +1,3 @@
-USE [CapitalSMS]
-GO
 
 /****** Object:  StoredProcedure [dbo].[PRC_GetsujiZaikoKeisanSyori]    Script Date: 2020/11/03 19:54:57 ******/
 DROP PROCEDURE [dbo].[PRC_GetsujiZaikoKeisanSyori]
