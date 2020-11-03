@@ -21,7 +21,8 @@ BEGIN
     SET NOCOUNT ON;
 
     SELECT DH.StoreCD
-          ,DH.OrderCD          
+          ,DH.OrderCD   
+          ,ISNULL(DH.DestinationSoukoCD,'')          
           ,DM.OrderNO
           ,DM.OrderRows
           ,(SELECT top 1 A.MakerItem 

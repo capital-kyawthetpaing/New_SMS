@@ -22,8 +22,8 @@ BEGIN
        ,DH.OrderName
        ,DH.SalesCD
        ,DH.SalesName
-       ,DH.DestinationCD
-       ,DH.DestinationName
+       ,DM.DestinationCD
+       ,DM.DestinationName
        ,DM.OrderNO
        ,DM.OrderRows
        ,DM.OrderLines
