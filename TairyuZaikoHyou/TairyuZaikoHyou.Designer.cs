@@ -311,6 +311,7 @@
             this.Sc_Maker.Size = new System.Drawing.Size(444, 32);
             this.Sc_Maker.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.Sc_Maker.TabIndex = 4;
+            this.Sc_Maker.test = null;
             this.Sc_Maker.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.Sc_Maker.UseChangeDate = false;
             this.Sc_Maker.Value1 = null;
@@ -342,6 +343,7 @@
             this.Sc_Brand.Size = new System.Drawing.Size(414, 32);
             this.Sc_Brand.Stype = Search.CKM_SearchControl.SearchType.ブランド;
             this.Sc_Brand.TabIndex = 5;
+            this.Sc_Brand.test = null;
             this.Sc_Brand.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.Sc_Brand.UseChangeDate = false;
             this.Sc_Brand.Value1 = null;
@@ -799,6 +801,7 @@
             this.Sc_Sports.Size = new System.Drawing.Size(364, 32);
             this.Sc_Sports.Stype = Search.CKM_SearchControl.SearchType.競技;
             this.Sc_Sports.TabIndex = 24;
+            this.Sc_Sports.test = null;
             this.Sc_Sports.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.Sc_Sports.UseChangeDate = false;
             this.Sc_Sports.Value1 = null;
@@ -1303,6 +1306,7 @@
             this.ScSKUCD.Size = new System.Drawing.Size(223, 27);
             this.ScSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
             this.ScSKUCD.TabIndex = 8;
+            this.ScSKUCD.test = null;
             this.ScSKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScSKUCD.UseChangeDate = false;
             this.ScSKUCD.Value1 = null;
@@ -1332,6 +1336,7 @@
             this.ScJanCD.Size = new System.Drawing.Size(143, 27);
             this.ScJanCD.Stype = Search.CKM_SearchControl.SearchType.JANCD;
             this.ScJanCD.TabIndex = 7;
+            this.ScJanCD.test = null;
             this.ScJanCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScJanCD.UseChangeDate = false;
             this.ScJanCD.Value1 = null;

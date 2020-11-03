@@ -1330,16 +1330,16 @@ BEGIN
                                            WHEN @KBN_SYOCD      THEN tbl.FromRackNO
                                            WHEN @KBN_CHOSEI_ADD THEN tbl.FromRackNO
                                            WHEN @KBN_CHOSEI_DEL THEN tbl.FromRackNO
-                                           WHEN @KBN_LOCATION   THEN tbl.FromRackNO
+                                           WHEN @KBN_LOCATION   THEN tbl.ToRackNO		--2020.10.29 chg
                                            WHEN @KBN_HENPIN     THEN tbl.ToRackNO		--2020.09.18 add
                                            WHEN @KBN_TENPOKAN   THEN NULL
                                            ELSE NULL END)	--ToRackNO
                    
                    ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN @ToStockNO    -- (D_Stock)●(移動先)と同じ値
-                                           WHEN @KBN_SYOCD      THEN @StockNO   --(D_Stock)☆(移動元)と同じ値
-                                           WHEN @KBN_CHOSEI_ADD THEN @StockNO  --(D_Stock)☆(移動元)と同じ値
-                                           WHEN @KBN_CHOSEI_DEL THEN @StockNO  --(D_Stock)☆(移動元)と同じ値
-                                           WHEN @KBN_LOCATION   THEN @StockNO    --(D_Stock)☆(移動元)と同じ値
+                                           WHEN @KBN_SYOCD      THEN @StockNO      --(D_Stock)☆(移動元)と同じ値
+                                           WHEN @KBN_CHOSEI_ADD THEN @StockNO      --(D_Stock)☆(移動元)と同じ値
+                                           WHEN @KBN_CHOSEI_DEL THEN @StockNO      --(D_Stock)☆(移動元)と同じ値
+                                           WHEN @KBN_LOCATION   THEN @StockNO      --(D_Stock)☆(移動元)と同じ値
                                            WHEN @KBN_HENPIN     THEN @ToStockNO    -- (D_Stock)●(移動先)と同じ値
                                            WHEN @KBN_TENPOKAN   THEN @ToStockNO    -- (D_Stock)●(移動先)と同じ値
                                            ELSE NULL END)  --ToStockNO
@@ -1411,7 +1411,7 @@ BEGIN
                                                ELSE NULL END) AS SoukoCD
                        ,(CASE @MovePurposeType WHEN @KBN_TENPONAI THEN tbl.ToRackNO
                                                WHEN @KBN_SYOCD    THEN tbl.FromRackNO 
-                                               WHEN @KBN_LOCATION THEN tbl.FromRackNO 
+                                               WHEN @KBN_LOCATION THEN tbl.ToRackNO 		--2020.10.29 chg
                                                WHEN @KBN_HENPIN   THEN tbl.ToRackNO
                                                ELSE tbl.ToRackNO  END)   --RackNO　商品CD付替時のみ移動元棚番
                        ,@ToStockNO  --(D_Stock)●(移動先)と同じ値
@@ -1444,8 +1444,8 @@ BEGIN
                                             
                        ,(CASE @MovePurposeType WHEN @KBN_TENPONAI THEN tbl.ToRackNO
                                                WHEN @KBN_SYOCD    THEN tbl.FromRackNO
-                                               WHEN @KBN_LOCATION THEN tbl.FromRackNO
-                                               WHEN @KBN_HENPIN   THEN tbl.ToRackNO		--2020.09.18 add
+                                               WHEN @KBN_LOCATION THEN tbl.ToRackNO     --2020.10.29 chg
+                                               WHEN @KBN_HENPIN   THEN tbl.ToRackNO     --2020.09.18 add
                                                ELSE NULL END)	--ToRackNO
                                             
                        ,(CASE @MovePurposeType WHEN @KBN_TENPONAI THEN @StockNO    --(D_Stock)☆(移動元)と同じ値
@@ -2878,8 +2878,8 @@ BEGIN
                                                    WHEN @KBN_SYOCD      THEN tbl.FromRackNO
                                                    WHEN @KBN_CHOSEI_ADD THEN tbl.FromRackNO
                                                    WHEN @KBN_CHOSEI_DEL THEN tbl.FromRackNO
-                                                   WHEN @KBN_LOCATION   THEN tbl.FromRackNO
-                                                   WHEN @KBN_HENPIN     THEN tbl.ToRackNO     --2020.09.18 add
+                                                   WHEN @KBN_LOCATION   THEN tbl.ToRackNO   --2020.10.29 chg
+                                                   WHEN @KBN_HENPIN     THEN tbl.ToRackNO   --2020.09.18 add
                                                    ELSE NULL END)	--ToRackNO
                            
                            ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN @ToStockNO    -- (D_Stock)●(移動先)と同じ値
@@ -2956,7 +2956,7 @@ BEGIN
                                                        ELSE NULL END) AS SoukoCD
                                ,(CASE @MovePurposeType WHEN @KBN_TENPONAI THEN tbl.ToRackNO
                                                        WHEN @KBN_SYOCD    THEN tbl.FromRackNO 
-                                                       WHEN @KBN_LOCATION THEN tbl.FromRackNO 
+                                                       WHEN @KBN_LOCATION THEN tbl.ToRackNO   --2020.10.29 chg 
                                                        WHEN @KBN_HENPIN   THEN tbl.ToRackNO
                                                        ELSE tbl.ToRackNO END)   --RackNO　商品CD付替時のみ移動元棚番
                                ,@ToStockNO  --(D_Stock)●(移動先)と同じ値
@@ -2989,7 +2989,7 @@ BEGIN
                                                     
                                ,(CASE @MovePurposeType WHEN @KBN_TENPONAI THEN tbl.ToRackNO
                                                        WHEN @KBN_SYOCD    THEN tbl.FromRackNO
-                                                       WHEN @KBN_LOCATION THEN tbl.FromRackNO
+                                                       WHEN @KBN_LOCATION THEN tbl.ToRackNO     --2020.10.29 chg
                                                        WHEN @KBN_HENPIN   THEN tbl.ToRackNO     --2020.09.18 add
                                                        ELSE NULL END)
                                                     

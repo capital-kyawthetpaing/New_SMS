@@ -7,6 +7,8 @@ GO
 IF OBJECT_ID ( 'PRC_HenpinNyuuryoku', 'P' ) IS NOT NULL
     Drop Procedure dbo.[PRC_HenpinNyuuryoku]
 GO
+DROP TYPE [dbo].[T_ShiireH]
+GO
 
 --  ======================================================================
 --       Program Call    仕入入力
@@ -33,112 +35,114 @@ BEGIN
 
 --        IF @OperateMode = 2   --修正時
 --        BEGIN
-            SELECT DH.PurchaseNO
-                  ,DH.StoreCD
-                  ,CONVERT(varchar,DH.PurchaseDate,111) AS PurchaseDate
-                  ,DH.CancelFlg
-                  ,DH.ProcessKBN
-                  ,DH.ReturnsFlg
-                  ,DH.VendorCD
-                  ,(SELECT top 1 A.VendorName
-                  FROM M_Vendor A 
-                  WHERE A.VendorCD = DH.VendorCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DH.PurchaseDate
-				  AND A.VendorFlg = 1
-                  ORDER BY A.ChangeDate desc) AS VendorName 
-                  ,DH.CalledVendorCD
-                  ,(SELECT top 1 A.VendorName
-                  FROM M_Vendor A 
-                  WHERE A.VendorCD = DH.CalledVendorCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DH.PurchaseDate
-                  ORDER BY A.ChangeDate desc) AS CalledVendorName 
-                  ,DH.CalculationGaku * (-1) As CalculationGaku
-                  ,DH.AdjustmentGaku * (-1) As AdjustmentGaku
-                  ,DH.PurchaseGaku * (-1) As PurchaseGaku
-                  ,DH.PurchaseTax * (-1) As PurchaseTax
-                  ,DH.TotalPurchaseGaku
-                  ,DH.CommentOutStore
-                  ,DH.CommentInStore
-                  ,DH.ExpectedDateFrom
-                  ,DH.ExpectedDateTo
-                  ,DH.InputDate
-                  ,DH.StaffCD
-                  ,CONVERT(varchar,DH.PaymentPlanDate,111) AS PaymentPlanDate
-                  ,DH.PayPlanNO
-                  ,DH.OutputDateTime
-                  ,DH.StockAccountFlg
-                  ,DH.InsertOperator
-                  ,CONVERT(varchar,DH.InsertDateTime) AS InsertDateTime
-                  ,DH.UpdateOperator
-                  ,CONVERT(varchar,DH.UpdateDateTime) AS UpdateDateTime
-                  ,DH.DeleteOperator
-                  ,CONVERT(varchar,DH.DeleteDateTime) AS DeleteDateTime
-                  
-                  ,DM.PurchaseRows
-                  ,DM.DisplayRows
-                  ,DM.ArrivalNO
-                  ,DM.SKUCD
-                  ,DM.AdminNO
-                  ,DM.JanCD
-                  ,DM.ItemName
-                  ,DM.ColorName
-                  ,DM.SizeName
-                  ,DM.Remark
-                  ,DM.PurchaseSu * (-1) AS PurchaseSu
-                  ,DM.TaniCD
-                  ,DM.TaniName
-                  ,DM.PurchaserUnitPrice
-                  ,DM.CalculationGaku * (-1) AS D_CalculationGaku
-                  ,DM.AdjustmentGaku * (-1) As D_AdjustmentGaku
-                  ,DM.PurchaseGaku * (-1) AS D_PurchaseGaku
-                  ,DM.PurchaseTax AS D_PurchaseTax
-                  ,DM.TotalPurchaseGaku AS D_TotalPurchaseGaku
-                  ,DM.CurrencyCD
-                  ,DM.CommentOutStore AS D_CommentOutStore
-                  ,DM.CommentInStore AS D_CommentInStore
-                  ,DM.ReturnNO
-                  ,DM.ReturnRows
-                  ,DM.OrderUnitPrice
-                  ,DM.OrderNO
-                  ,DM.OrderRows
-                  ,DM.DifferenceFlg
-                  ,DM.DeliveryNo
-                  ,DW.WarehousingNO
-                  ,DWS.StockNO
-                  
-                  ,DS.ReturnPlanSu
-                  ,CONVERT(varchar,DS.ExpectReturnDate,111) AS ExpectReturnDate
-                  ,(SELECT top 1 M.MakerItem 
-                    FROM M_SKU AS M 
-                    WHERE M.ChangeDate <= DH.PurchaseDate
-                     AND M.AdminNO = DM.AdminNO
-                      AND M.DeleteFlg = 0
-                     ORDER BY M.ChangeDate desc) AS MakerItem
-                     
-              FROM D_Purchase DH
-              LEFT OUTER JOIN D_PurchaseDetails AS DM 
-              ON DH.PurchaseNO = DM.PurchaseNO 
-              AND DM.DeleteDateTime IS NULL
-              LEFT OUTER JOIN (SELECT MAX(DW.WarehousingNO) AS WarehousingNO
-                    ,DW.Number, DW.NumberRow
-                   FROM D_Warehousing AS DW
-                   WHERE DW.WarehousingKBN = 21
-                  AND DW.DeleteDateTime IS NULL
-                  AND DW.DeleteFlg = 0
-                  GROUP BY DW.Number,DW.NumberRow
-                  ) AS DW
-              ON DW.Number = DM.PurchaseNO
-              AND DW.NumberRow = DM.PurchaseRows
+    SELECT DH.PurchaseNO
+          ,DH.StoreCD
+          ,CONVERT(varchar,DH.PurchaseDate,111) AS PurchaseDate
+          ,DH.CancelFlg
+          ,DH.ProcessKBN
+          ,DH.ReturnsFlg
+          ,DH.VendorCD
+          ,(SELECT top 1 A.VendorName
+            FROM M_Vendor A 
+            WHERE A.VendorCD = DH.VendorCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DH.PurchaseDate
+            AND A.VendorFlg = 1
+            ORDER BY A.ChangeDate desc) AS VendorName 
+          ,DH.CalledVendorCD
+          ,(SELECT top 1 A.VendorName
+            FROM M_Vendor A 
+            WHERE A.VendorCD = DH.CalledVendorCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DH.PurchaseDate
+            ORDER BY A.ChangeDate desc) AS CalledVendorName 
+          ,DH.CalculationGaku * (-1) As CalculationGaku
+          ,DH.AdjustmentGaku * (-1) As AdjustmentGaku
+          ,DH.PurchaseGaku * (-1) As PurchaseGaku
+          ,DH.PurchaseTax * (-1) As PurchaseTax
+          ,DH.TotalPurchaseGaku
+          ,DH.CommentOutStore
+          ,DH.CommentInStore
+          ,DH.ExpectedDateFrom
+          ,DH.ExpectedDateTo
+          ,DH.InputDate
+          ,DH.StaffCD
+          ,CONVERT(varchar,DH.PaymentPlanDate,111) AS PaymentPlanDate
+          ,DH.PayPlanNO
+          ,DH.OutputDateTime
+          ,DH.StockAccountFlg
+          ,DH.InsertOperator
+          ,CONVERT(varchar,DH.InsertDateTime) AS InsertDateTime
+          ,DH.UpdateOperator
+          ,CONVERT(varchar,DH.UpdateDateTime) AS UpdateDateTime
+          ,DH.DeleteOperator
+          ,CONVERT(varchar,DH.DeleteDateTime) AS DeleteDateTime
+          
+          ,DM.PurchaseRows
+          ,DM.DisplayRows
+          ,DM.ArrivalNO
+          ,DM.SKUCD
+          ,DM.AdminNO
+          ,DM.JanCD
+          ,DM.MakerItem
+          ,DM.ItemName
+          ,DM.ColorName
+          ,DM.SizeName
+          ,DM.Remark
+          ,DM.PurchaseSu * (-1) AS PurchaseSu
+          ,DM.TaniCD
+          ,DM.TaniName
+          ,DM.PurchaserUnitPrice
+          ,DM.CalculationGaku * (-1) AS D_CalculationGaku
+          ,DM.AdjustmentGaku * (-1) As D_AdjustmentGaku
+          ,DM.PurchaseGaku * (-1) AS D_PurchaseGaku
+          ,DM.PurchaseTax AS D_PurchaseTax
+          ,DM.TotalPurchaseGaku AS D_TotalPurchaseGaku
+          ,DM.CurrencyCD
+          ,DM.TaxRitsu
+          ,DM.CommentOutStore AS D_CommentOutStore
+          ,DM.CommentInStore AS D_CommentInStore
+          ,DM.ReturnNO
+          ,DM.ReturnRows
+          ,DM.OrderUnitPrice
+          ,DM.OrderNO
+          ,DM.OrderRows
+          ,DM.DifferenceFlg
+          ,DM.DeliveryNo
+          ,DW.WarehousingNO
+          ,DWS.StockNO
+          
+          ,DS.ReturnPlanSu
+          ,CONVERT(varchar,DS.ExpectReturnDate,111) AS ExpectReturnDate
+         -- ,(SELECT top 1 M.MakerItem 
+         --   FROM M_SKU AS M 
+         --   WHERE M.ChangeDate <= DH.PurchaseDate
+         --   AND M.AdminNO = DM.AdminNO
+         --   AND M.DeleteFlg = 0
+         --   ORDER BY M.ChangeDate desc) AS MakerItem
+             
+      FROM D_Purchase DH
+      LEFT OUTER JOIN D_PurchaseDetails AS DM 
+      ON DH.PurchaseNO = DM.PurchaseNO 
+      AND DM.DeleteDateTime IS NULL
+      LEFT OUTER JOIN (SELECT MAX(DW.WarehousingNO) AS WarehousingNO
+                             ,DW.Number, DW.NumberRow
+                      FROM D_Warehousing AS DW
+                      WHERE DW.WarehousingKBN = 21
+                      AND DW.DeleteDateTime IS NULL
+                      AND DW.DeleteFlg = 0
+                      GROUP BY DW.Number,DW.NumberRow
+      ) AS DW
+      ON DW.Number = DM.PurchaseNO
+      AND DW.NumberRow = DM.PurchaseRows
 
-           	  LEFT OUTER JOIN D_Warehousing AS DWS
-           	  ON DWS.WarehousingNO = DW.WarehousingNO
+      LEFT OUTER JOIN D_Warehousing AS DWS
+      ON DWS.WarehousingNO = DW.WarehousingNO
 
-              LEFT OUTER JOIN D_Stock AS DS
-              ON DS.StockNO = DWS.StockNO
-              AND DS.DeleteDateTime IS NULL
-              WHERE DH.PurchaseNO = @PurchaseNO 
+      LEFT OUTER JOIN D_Stock AS DS
+      ON DS.StockNO = DWS.StockNO
+      AND DS.DeleteDateTime IS NULL
+      WHERE DH.PurchaseNO = @PurchaseNO 
 --              AND DH.ProcessKBN = 1
 --              AND DH.DeleteDateTime IS Null
-                ORDER BY DH.PurchaseNO, DM.DisplayRows
-                ;
+      ORDER BY DH.PurchaseNO, DM.DisplayRows
+        ;
 --        END
 
 END
@@ -169,44 +173,44 @@ BEGIN
 
     -- Insert statements for procedure here
     SELECT (SELECT top 1 M.MakerItem 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
-             AND M.AdminNO = DS.AdminNO
-              AND M.DeleteFlg = 0
+              FROM M_SKU AS M 
+             WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
+               AND M.AdminNO = DS.AdminNO
+               AND M.DeleteFlg = 0
              ORDER BY M.ChangeDate desc) AS MakerItem
           ,DS.JanCD
           ,(SELECT top 1 M.SKUName 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
-             AND M.AdminNO = DS.AdminNO
-              AND M.DeleteFlg = 0
+              FROM M_SKU AS M 
+             WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
+               AND M.AdminNO = DS.AdminNO
+               AND M.DeleteFlg = 0
              ORDER BY M.ChangeDate desc) AS ItemName
           ,(SELECT top 1 M.ColorName 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
-             AND M.AdminNO = DS.AdminNO
-              AND M.DeleteFlg = 0
+              FROM M_SKU AS M 
+             WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
+               AND M.AdminNO = DS.AdminNO
+               AND M.DeleteFlg = 0
              ORDER BY M.ChangeDate desc) AS ColorName
           ,(SELECT top 1 M.SizeName 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
-             AND M.AdminNO = DS.AdminNO
-              AND M.DeleteFlg = 0
+              FROM M_SKU AS M 
+             WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
+               AND M.AdminNO = DS.AdminNO
+               AND M.DeleteFlg = 0
              ORDER BY M.ChangeDate desc) AS SizeName
           ,(SELECT top 1 M.TaniCD 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
-             AND M.AdminNO = DS.AdminNO
-              AND M.DeleteFlg = 0
+              FROM M_SKU AS M 
+             WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
+               AND M.AdminNO = DS.AdminNO
+               AND M.DeleteFlg = 0
              ORDER BY M.ChangeDate desc) AS TaniCD
           ,(SELECT top 1 A.Char1 
-            FROM M_SKU AS M 
-            LEFT OUTER JOIN M_MultiPorpose AS A
-            ON A.ID = 201
-            AND A.[Key] = M.TaniCD 
-            WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
-             AND M.AdminNO = DS.AdminNO
-              AND M.DeleteFlg = 0
+              FROM M_SKU AS M 
+              LEFT OUTER JOIN M_MultiPorpose AS A
+                ON A.ID = 201
+               AND A.[Key] = M.TaniCD 
+             WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
+               AND M.AdminNO = DS.AdminNO
+               AND M.DeleteFlg = 0
              ORDER BY M.ChangeDate desc) AS TaniName
           ,DS.AdminNO
           ,DS.ReturnPlanSu	--予定数
@@ -215,7 +219,17 @@ BEGIN
           ,DS.StockNO
 
           ,'' AS D_CommentOutStore
-          ,'' AS D_CommentInStore
+          --,'' AS D_CommentInStore
+          ,(SELECT top 1 DM.CommentInStore
+              FROM D_Warehousing AS DW
+             INNER JOIN D_MoveDetails AS DM
+                ON DM.MoveNO = DW.Number
+               AND DM.MoveRows = DW.NumberRow
+               AND DM.DeleteDateTime IS NULL
+               AND DW.StockNO = DS.StockNO
+               AND DW.WarehousingKBN = 26
+             ORDER BY DW.WarehousingNO desc
+           ) AS D_CommentInStore
           ,CONVERT(varchar,DS.ExpectReturnDate,111) AS ExpectReturnDate
           ,DD.DeliveryNo
           
@@ -249,10 +263,11 @@ BEGIN
       AND DS.ExpectReturnDate >= (CASE WHEN @ExpectReturnDateFrom <> '' THEN CONVERT(DATE, @ExpectReturnDateFrom) ELSE DS.ExpectReturnDate END)
       AND DS.ExpectReturnDate <= (CASE WHEN @ExpectReturnDateTo <> '' THEN CONVERT(DATE, @ExpectReturnDateTo) ELSE DS.ExpectReturnDate END)
       
-      AND EXISTS (SELECT 1 FROM M_Souko AS M WHERE M.SoukoCD = DS.SoukoCD
-                    AND M.StoreCD = @StoreCD
-                    AND M.ChangeDate <= convert(date, @SYSDATETIME) 	--返品倉庫
-                    AND M.SoukoType = 8)
+      AND EXISTS (SELECT 1 FROM M_Souko AS M 
+                   WHERE M.SoukoCD = DS.SoukoCD
+                     AND M.StoreCD = @StoreCD
+                     AND M.ChangeDate <= convert(date, @SYSDATETIME) 	--返品倉庫
+                     AND M.SoukoType = 8)
       AND (@F10 = 0 OR (@F10 = 1 AND DD.DeliveryNo IS NOT NULL))
       AND DS.DeleteDateTime IS Null
       ORDER BY DS.ExpectReturnDate desc, DS.JanCD
@@ -262,39 +277,41 @@ END
 
 GO
 
---CREATE TYPE T_ShiireH AS TABLE
---    (
---    [PurchaseRows] [int],
---    [DisplayRows] [int],
---    
---    [SKUCD] [varchar](30) ,
---    [AdminNO] [int] ,
---    [JanCD] [varchar](13) ,
---    [ItemName] [varchar](80) NULL,
---    [ColorName] [varchar](20) ,
---    [SizeName] [varchar](20) ,
---    [Remark] [varchar](200) NULL,
---    
---    [PurchaseSu] [int] ,
---    [OldPurchaseSu] [int] ,
---    [TaniCD] [varchar](2) ,
---    [TaniName] [varchar](10) ,
---    [PurchaserUnitPrice] [money] ,
---    [CalculationGaku] [money] ,
---    [AdjustmentGaku] [money] ,
---    [PurchaseGaku] [money] ,
---    [PurchaseTax] [money] ,
-----    [CommentOutStore] [varchar](80) ,
-----    [CommentInStore] [varchar](80) ,
---
---    [OrderNO] [varchar](11) ,
---    [OrderRows] [int] ,
---    [DeliveryNo] [int],
---    [StockNO] [varchar](11) ,
---    [WarehousingNO] [int] ,
---    [UpdateFlg][tinyint]
---    )
---GO
+CREATE TYPE T_ShiireH AS TABLE
+    (
+    [PurchaseRows] [int],
+    [DisplayRows] [int],
+    
+    [SKUCD] [varchar](30) ,
+    [AdminNO] [int] ,
+    [JanCD] [varchar](13) ,
+    [MakerItem] [varchar](50) NULL,
+    [ItemName] [varchar](80) NULL,
+    [ColorName] [varchar](20) ,
+    [SizeName] [varchar](20) ,
+    [Remark] [varchar](200) NULL,
+    
+    [PurchaseSu] [int] ,
+    [OldPurchaseSu] [int] ,
+    [TaniCD] [varchar](2) ,
+    [TaniName] [varchar](10) ,
+    [PurchaserUnitPrice] [money] ,
+    [CalculationGaku] [money] ,
+    [AdjustmentGaku] [money] ,
+    [PurchaseGaku] [money] ,
+    [PurchaseTax] [money] ,
+    [TaxRitsu] [int] ,
+--    [CommentOutStore] [varchar](80) ,
+--    [CommentInStore] [varchar](80) ,
+
+    [OrderNO] [varchar](11) ,
+    [OrderRows] [int] ,
+    [DeliveryNo] [int],
+    [StockNO] [varchar](11) ,
+    [WarehousingNO] [int] ,
+    [UpdateFlg][tinyint]
+    )
+GO
 
 CREATE PROCEDURE PRC_HenpinNyuuryoku
     (@OperateMode    int,                 -- 処理区分（1:新規 2:修正 3:削除）
@@ -484,6 +501,7 @@ BEGIN
                    ,[SKUCD]
                    ,[AdminNO]
                    ,[JanCD]
+                   ,[MakerItem]
                    ,[ItemName]
                    ,[ColorName]
                    ,[SizeName]
@@ -498,6 +516,7 @@ BEGIN
                    ,[PurchaseTax]
                    ,[TotalPurchaseGaku]
                    ,[CurrencyCD]
+                   ,[TaxRitsu]
                    ,[CommentOutStore]
                    ,[CommentInStore]
                    ,[ReturnNO]
@@ -520,10 +539,11 @@ BEGIN
                    ,tbl.SKUCD
                    ,tbl.AdminNO
                    ,tbl.JanCD
+                   ,tbl.MakerItem
                    ,tbl.ItemName
                    ,tbl.ColorName
                    ,tbl.SizeName
-                   ,tbl.Remark	--Remark★
+                   ,tbl.Remark
                    ,tbl.PurchaseSu * (-1)
                    ,tbl.TaniCD
                    ,tbl.TaniName
@@ -534,6 +554,7 @@ BEGIN
                    ,tbl.PurchaseTax * (-1)
                    ,(tbl.PurchaseGaku + tbl.PurchaseTax) * (-1) --TotalPurchaseGaku
                    ,(SELECT M.CurrencyCD FROM M_Control AS M WHERE M.MainKey = 1)	--CurrencyCD
+                   ,tbl.TaxRitsu
                    ,tbl.Remark		--CommentOutStore
                    ,tbl.Remark		--CommentInStore
                    ,tbl.OrderNO	--ReturnNO★
@@ -606,6 +627,7 @@ BEGIN
            SET  [SKUCD]              = tbl.SKUCD
                ,[AdminNO]            = tbl.AdminNO
                ,[JanCD]              = tbl.JanCD
+               ,[MakerItem]          = tbl.MakerItem
                ,[ItemName]           = tbl.ItemName
                ,[ColorName]          = tbl.ColorName
                ,[SizeName]           = tbl.SizeName
@@ -620,6 +642,7 @@ BEGIN
                ,[PurchaseTax]        = tbl.PurchaseTax * (-1)
                ,[TotalPurchaseGaku]  = (tbl.PurchaseGaku + tbl.PurchaseTax) * (-1) --TotalPurchaseGaku
                ,[CurrencyCD]         = (SELECT M.CurrencyCD FROM M_Control AS M WHERE M.MainKey = 1)	--CurrencyCD
+               ,[TaxRitsu]           = tbl.TaxRitsu
                ,[CommentOutStore]    = tbl.Remark
                ,[CommentInStore]     = tbl.Remark
                ,[DifferenceFlg]      = 1

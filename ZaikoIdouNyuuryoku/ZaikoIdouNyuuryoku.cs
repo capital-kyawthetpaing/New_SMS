@@ -48,16 +48,16 @@ namespace ZaikoIdouNyuuryoku
             FromSoukoCD,
             ToSoukoCD,
 
-            Gyono,    //行番号
+            Gyono,          //行番号
             CheckBox4,
             JANCD,
-            FromRackNO,  //移動元棚番
+            FromRackNO,     //移動元棚番
             JANCD_F,
-            Suryo,//数量
-            ToRackNO,   //移動先棚番
+            Suryo,          //数量
+            ToRackNO,       //移動先棚番
             ExpectReturnDate,    //出荷・返品予定日
-            EvaluationPrice, //評価単価 
-            HenpinSaki,      //VendorCD
+            EvaluationPrice,    //評価単価 
+            HenpinSaki,         //VendorCD
             RemarksInStore,     //コメント
         }
 
@@ -919,14 +919,14 @@ namespace ZaikoIdouNyuuryoku
                 string[] cmds = System.Environment.GetCommandLineArgs();
                 if (cmds.Length - 1 > (int)ECmdLine.PcID)
                 {
-                    //修正モードのみ
+                    //新規モードのみ
                     Btn_F2.Text = "";
                     Btn_F3.Text = "";
                     Btn_F4.Text = "";
                     Btn_F5.Text = "";
                     Btn_F6.Text = "";
 
-                    ChangeOperationMode(EOperationMode.UPDATE);
+                    ChangeOperationMode(EOperationMode.INSERT);
 
                     //↑Paramete起動されるのは、移動依頼受け入力からのみ。
                     keyControls[(int)EIndex.RequestNO].Text = cmds[cmds.Length - 1];
@@ -1180,6 +1180,16 @@ namespace ZaikoIdouNyuuryoku
                                 //モード：変更・削除の場合
                                 //Ｅ２１０
                                 bbl.ShowMessage("E210");
+                                return false;
+                            }
+                        }
+
+                        if(OperationMode == EOperationMode.UPDATE)
+                        {
+                            if (Convert.ToInt16(dt.Rows[0]["MovePurposeKBN"]) != (int)EIdoType.店舗間移動 && Convert.ToInt16(dt.Rows[0]["MovePurposeKBN"]) != (int)EIdoType.返品)
+                            {
+                                //Ｅ２１０
+                                bbl.ShowMessage("E128");
                                 return false;
                             }
                         }
@@ -2535,6 +2545,12 @@ namespace ZaikoIdouNyuuryoku
             else
                 bbl.ShowMessage("I101");
 
+            if (Btn_F6.Text == "")
+            {
+                //移動依頼受け入力からの起動時は終了処理
+                EndSec();
+            }
+
             //更新後画面クリア
             ChangeOperationMode(OperationMode);
         }
@@ -3231,7 +3247,7 @@ namespace ZaikoIdouNyuuryoku
             if (CboToSoukoCD.SelectedIndex > 0)
             {
                 if(mIdoType !=EIdoType.棚番変更)
-                    ScToRackNo.Value1 = CboToSoukoCD.SelectedValue.ToString();
+                    ScToRackNo.Value1 = CboToSoukoCD.SelectedIndex >0 ? CboToSoukoCD.SelectedValue.ToString():"";
             }
         }
 
@@ -3239,7 +3255,7 @@ namespace ZaikoIdouNyuuryoku
         {
             {
                 if (mIdoType == EIdoType.棚番変更)
-                    ScToRackNo.Value1 = CboFromSoukoCD.SelectedValue.ToString();
+                    ScToRackNo.Value1 = CboFromSoukoCD.SelectedIndex >0 ? CboFromSoukoCD.SelectedValue.ToString():"";
             }
         }
 
@@ -3254,6 +3270,8 @@ namespace ZaikoIdouNyuuryoku
         {
             if (OperationMode == EOperationMode.DELETE || OperationMode == EOperationMode.SHOW)
                 return;
+
+            ScToRackNo.Value1 = CboToSoukoCD.SelectedIndex>0 ? CboToSoukoCD.SelectedValue.ToString():"";
 
             switch (kbn)
             {
@@ -3466,6 +3484,7 @@ namespace ZaikoIdouNyuuryoku
                         }
                     }
                     mToStoreCD = "";
+                    ScToRackNo.Value1 = CboFromSoukoCD.SelectedIndex>0 ? CboFromSoukoCD.SelectedValue.ToString():"";
                     break;
                 case EIdoType.返品:
                     for (int i = 0; i <= (int)EIndex.RemarksInStore; i++)
