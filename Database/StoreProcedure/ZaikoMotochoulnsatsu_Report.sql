@@ -1,15 +1,16 @@
 
 
-/****** Object:  StoredProcedure [dbo].[ZaikoMotochoulnsatsu_Report]    Script Date: 2020/10/02 17:29:07 ******/
+/****** Object:  StoredProcedure [dbo].[ZaikoMotochoulnsatsu_Report]    Script Date: 2020/11/03 19:54:15 ******/
 DROP PROCEDURE [dbo].[ZaikoMotochoulnsatsu_Report]
 GO
 
-/****** Object:  StoredProcedure [dbo].[ZaikoMotochoulnsatsu_Report]    Script Date: 2020/10/02 17:29:07 ******/
+/****** Object:  StoredProcedure [dbo].[ZaikoMotochoulnsatsu_Report]    Script Date: 2020/11/03 19:54:15 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
+
 
 
 -- =============================================
@@ -181,12 +182,12 @@ BEGIN
 			NULL,
 			NULL,
 			CASE 
-				WHEN LastMonthInventry IS NULL THEN 0
-				ELSE LastMonthInventry 
+				WHEN ThisMonthInventry IS NULL THEN 0
+				ELSE ThisMonthInventry 
 			END AS [LastMonthQuantity]------------------------------------------ç›å…êî
 		FROM D_MonthlyStock
 		WHERE YYYYMM = (select * from F_DecreaseMonth(@YYYYMMFrom,1))
-		and YYYYMM = @YYYYMMTo
+	--	and YYYYMM = @YYYYMMTo
 		and SoukoCD = @SoukoCD
 		and AdminNO in
 		(
@@ -294,8 +295,8 @@ BEGIN
 			NULL,
 			ThisMonthInventry AS ThisMonthQuantity-------------------------------ç›å…êî
 		FROM D_MonthlyStock
-		WHERE YYYYMM = @YYYYMMFrom
-		AND YYYYMM = @YYYYMMTo
+--		WHERE YYYYMM = @YYYYMMFrom
+		Where YYYYMM = @YYYYMMTo
 		AND SoukoCD = @SoukoCD
 		AND AdminNO in
 		(

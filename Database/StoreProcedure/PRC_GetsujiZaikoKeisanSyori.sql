@@ -1,14 +1,17 @@
+USE [CapitalSMS]
+GO
 
-/****** Object:  StoredProcedure [dbo].[PRC_GetsujiZaikoKeisanSyori]    Script Date: 2020/10/01 19:38:28 ******/
+/****** Object:  StoredProcedure [dbo].[PRC_GetsujiZaikoKeisanSyori]    Script Date: 2020/11/03 19:54:57 ******/
 DROP PROCEDURE [dbo].[PRC_GetsujiZaikoKeisanSyori]
 GO
 
-/****** Object:  StoredProcedure [dbo].[PRC_GetsujiZaikoKeisanSyori]    Script Date: 2020/10/01 19:38:28 ******/
+/****** Object:  StoredProcedure [dbo].[PRC_GetsujiZaikoKeisanSyori]    Script Date: 2020/11/03 19:54:57 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
+
 
 --  ======================================================================
 --       Program Call    åééüç›å…åvéZèàóù
@@ -237,7 +240,7 @@ BEGIN
            ,[UpdateOperator] = @Operator
            ,[UpdateDateTime] = @SYSDATETIME
         FROM (SELECT DS.AdminNO, DS.SoukoCD--, DS.WarehousingKBN
-                    ,SUM((CASE DS.WarehousingKBN WHEN 1  THEN DS.Quantity ELSE 0 END)) AS ThisMonthArrivalQ
+                    ,(SUM((CASE DS.WarehousingKBN WHEN 1  THEN DS.Quantity ELSE 0 END)) + SUM((CASE DS.WarehousingKBN WHEN 30 THEN CASE DS.Program WHEN 'ShiireNyuuryoku' THEN DS.Quantity ELSE 0 END ELSE 0 END))) AS ThisMonthArrivalQ
                     ,SUM((CASE DS.WarehousingKBN WHEN 30 THEN DS.Quantity ELSE 0 END)) AS ThisMonthPurchaseQ
                     ,SUM((CASE DS.WarehousingKBN WHEN 30 THEN DS.Amount   ELSE 0 END)) AS ThisMonthPurchaseA
                     ,SUM((CASE DS.WarehousingKBN WHEN 21 THEN DS.Quantity ELSE 0 END)) AS ThisMonthReturnsQ
@@ -341,7 +344,7 @@ BEGIN
             ,0 AS LastMonthInventry
             ,0 AS LastMonthCost
             ,0 AS LastMonthAmount
-            ,SUM((CASE DS.WarehousingKBN WHEN 1  THEN DS.Quantity ELSE 0 END)) AS ThisMonthArrivalQ
+            ,(SUM((CASE DS.WarehousingKBN WHEN 1  THEN DS.Quantity ELSE 0 END)) + SUM((CASE DS.WarehousingKBN WHEN 30 THEN CASE DS.Program WHEN 'ShiireNyuuryoku' THEN DS.Quantity ELSE 0 END ELSE 0 END))) AS ThisMonthArrivalQ
             ,SUM((CASE DS.WarehousingKBN WHEN 30 THEN DS.Quantity ELSE 0 END)) AS ThisMonthPurchaseQ
             ,SUM((CASE DS.WarehousingKBN WHEN 30 THEN DS.Amount   ELSE 0 END)) AS ThisMonthPurchaseA
             ,SUM((CASE DS.WarehousingKBN WHEN 21 THEN DS.Quantity ELSE 0 END)) AS ThisMonthReturnsQ
