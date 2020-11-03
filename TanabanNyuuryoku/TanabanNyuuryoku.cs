@@ -372,7 +372,7 @@ namespace TanabanNyuuryoku
             BindCombo();
             chkNotRegister.Checked = true;
             chkRegister.Checked = false;
-            Clear(panel1);
+            //Clear(panel1);
 
             dgvTanaban.DataSource = string.Empty;
             txtArrivalDateFrom.Focus();
