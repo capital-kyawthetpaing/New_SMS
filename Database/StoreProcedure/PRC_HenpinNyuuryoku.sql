@@ -173,45 +173,45 @@ BEGIN
 
     -- Insert statements for procedure here
     SELECT (SELECT top 1 M.MakerItem 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
-            AND M.AdminNO = DS.AdminNO
-            AND M.DeleteFlg = 0
-            ORDER BY M.ChangeDate desc) AS MakerItem
+              FROM M_SKU AS M 
+             WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
+               AND M.AdminNO = DS.AdminNO
+               AND M.DeleteFlg = 0
+             ORDER BY M.ChangeDate desc) AS MakerItem
           ,DS.JanCD
           ,(SELECT top 1 M.SKUName 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
-            AND M.AdminNO = DS.AdminNO
-            AND M.DeleteFlg = 0
-            ORDER BY M.ChangeDate desc) AS ItemName
+              FROM M_SKU AS M 
+             WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
+               AND M.AdminNO = DS.AdminNO
+               AND M.DeleteFlg = 0
+             ORDER BY M.ChangeDate desc) AS ItemName
           ,(SELECT top 1 M.ColorName 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
-            AND M.AdminNO = DS.AdminNO
-            AND M.DeleteFlg = 0
-            ORDER BY M.ChangeDate desc) AS ColorName
+              FROM M_SKU AS M 
+             WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
+               AND M.AdminNO = DS.AdminNO
+               AND M.DeleteFlg = 0
+             ORDER BY M.ChangeDate desc) AS ColorName
           ,(SELECT top 1 M.SizeName 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
-            AND M.AdminNO = DS.AdminNO
-            AND M.DeleteFlg = 0
-            ORDER BY M.ChangeDate desc) AS SizeName
+              FROM M_SKU AS M 
+             WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
+               AND M.AdminNO = DS.AdminNO
+               AND M.DeleteFlg = 0
+             ORDER BY M.ChangeDate desc) AS SizeName
           ,(SELECT top 1 M.TaniCD 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
-            AND M.AdminNO = DS.AdminNO
-            AND M.DeleteFlg = 0
-            ORDER BY M.ChangeDate desc) AS TaniCD
+              FROM M_SKU AS M 
+             WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
+               AND M.AdminNO = DS.AdminNO
+               AND M.DeleteFlg = 0
+             ORDER BY M.ChangeDate desc) AS TaniCD
           ,(SELECT top 1 A.Char1 
-            FROM M_SKU AS M 
-            LEFT OUTER JOIN M_MultiPorpose AS A
-            ON A.ID = 201
-            AND A.[Key] = M.TaniCD 
-            WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
-            AND M.AdminNO = DS.AdminNO
-            AND M.DeleteFlg = 0
-            ORDER BY M.ChangeDate desc) AS TaniName
+              FROM M_SKU AS M 
+              LEFT OUTER JOIN M_MultiPorpose AS A
+                ON A.ID = 201
+               AND A.[Key] = M.TaniCD 
+             WHERE M.ChangeDate <= convert(date, @SYSDATETIME)
+               AND M.AdminNO = DS.AdminNO
+               AND M.DeleteFlg = 0
+             ORDER BY M.ChangeDate desc) AS TaniName
           ,DS.AdminNO
           ,DS.ReturnPlanSu	--予定数
           ,DS.ReturnPlanSu - DS.ReturnSu AS PurchaseSu	--返品数
@@ -221,14 +221,14 @@ BEGIN
           ,'' AS D_CommentOutStore
           --,'' AS D_CommentInStore
           ,(SELECT top 1 DM.CommentInStore
-            FROM D_Warehousing AS DW
-            INNER JOIN D_MoveDetails AS DM
-            ON DM.MoveNO = DW.Number
-            AND DM.MoveRows = DW.NumberRow
-            AND DM.DeleteDateTime IS NULL
-            AND DW.StockNO = DS.StockNO
-            AND DW.WarehousingKBN = 31
-            ORDER BY DW.WarehousingNO desc
+              FROM D_Warehousing AS DW
+             INNER JOIN D_MoveDetails AS DM
+                ON DM.MoveNO = DW.Number
+               AND DM.MoveRows = DW.NumberRow
+               AND DM.DeleteDateTime IS NULL
+               AND DW.StockNO = DS.StockNO
+               AND DW.WarehousingKBN = 26
+             ORDER BY DW.WarehousingNO desc
            ) AS D_CommentInStore
           ,CONVERT(varchar,DS.ExpectReturnDate,111) AS ExpectReturnDate
           ,DD.DeliveryNo
@@ -263,10 +263,11 @@ BEGIN
       AND DS.ExpectReturnDate >= (CASE WHEN @ExpectReturnDateFrom <> '' THEN CONVERT(DATE, @ExpectReturnDateFrom) ELSE DS.ExpectReturnDate END)
       AND DS.ExpectReturnDate <= (CASE WHEN @ExpectReturnDateTo <> '' THEN CONVERT(DATE, @ExpectReturnDateTo) ELSE DS.ExpectReturnDate END)
       
-      AND EXISTS (SELECT 1 FROM M_Souko AS M WHERE M.SoukoCD = DS.SoukoCD
-                    AND M.StoreCD = @StoreCD
-                    AND M.ChangeDate <= convert(date, @SYSDATETIME) 	--返品倉庫
-                    AND M.SoukoType = 8)
+      AND EXISTS (SELECT 1 FROM M_Souko AS M 
+                   WHERE M.SoukoCD = DS.SoukoCD
+                     AND M.StoreCD = @StoreCD
+                     AND M.ChangeDate <= convert(date, @SYSDATETIME) 	--返品倉庫
+                     AND M.SoukoType = 8)
       AND (@F10 = 0 OR (@F10 = 1 AND DD.DeliveryNo IS NOT NULL))
       AND DS.DeleteDateTime IS Null
       ORDER BY DS.ExpectReturnDate desc, DS.JanCD
@@ -542,7 +543,7 @@ BEGIN
                    ,tbl.ItemName
                    ,tbl.ColorName
                    ,tbl.SizeName
-                   ,tbl.Remark	--Remark★
+                   ,tbl.Remark
                    ,tbl.PurchaseSu * (-1)
                    ,tbl.TaniCD
                    ,tbl.TaniName
