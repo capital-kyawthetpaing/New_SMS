@@ -323,12 +323,14 @@ namespace TanabanNyuuryoku
                         //if(chk)
                         //{
                             DataRow dtrow = dtUpdate.NewRow();
-                            dtrow["RackNo"] = row.Cells["colRackNo1"].Value.ToString();
+                            dtrow["RackNo"] = row.Cells["colRackNo1"].Value.ToString();                          
                             dtrow["StockNo"] = row.Cells["colStockNo"].Value.ToString();
                             dtUpdate.Rows.Add(dtrow);
                         //}
                        
                     }
+
+                    
                    
                     dse = new D_Stock_Entity
                     {
