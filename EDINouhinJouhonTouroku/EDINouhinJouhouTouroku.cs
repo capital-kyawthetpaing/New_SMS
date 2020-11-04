@@ -44,6 +44,7 @@ namespace EDINouhinJouhonTouroku
         {
             InProgramID = "EDINouhinJouhouTouroku";
 
+           
             //SetFunctionLabel(EProMode.MENTE);
             this.SetFunctionLabel(EProMode.SHOW);
             StartProgram();
@@ -279,9 +280,9 @@ namespace EDINouhinJouhonTouroku
 
                 //①保存した.xsdはプロジェクトに追加しておきます。
                 DialogResult ret;
-                
-                EDINouhinJouhouTouroku_Report Report = new EDINouhinJouhouTouroku_Report();
-                
+
+                EDINouhinJouhouTouroku.EDINouhinJouhouTouroku_Report Report = new EDINouhinJouhouTouroku.EDINouhinJouhouTouroku_Report();
+
 
                 //DataTableのDetailOnが１かどうかで詳細セクションを印字するかどうかの設定を
                 //している（セクションエキスパート）
@@ -292,7 +293,7 @@ namespace EDINouhinJouhonTouroku
 
                         //Q208 印刷します。”はい”でプレビュー、”いいえ”で直接プリンターから印刷します。
                         ret = ediNHJ_bl.ShowMessage("Q208");
-                        if (ret == DialogResult.Cancel)
+                        if (ret == DialogResult.No)
                         {
                             return;
                         }
