@@ -76,22 +76,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel_1 = new System.Windows.Forms.Panel();
             this.chk_1 = new GridControl.clsGridCheckBox();
-            this.taxrate_1 = new CKM_Controls.CKM_ComboBox();
             this.TB_1 = new CKM_Controls.CKM_TextBox();
             this.hyoteidate_1 = new CKM_Controls.CKM_ComboBox();
-            this.shouhin_1 = new CKM_Controls.CKM_TextBox();
-            this.brand_1 = new Search.CKM_SearchControl();
             this.salepriceout5_1 = new CKM_Controls.CKM_TextBox();
-            this.colorname_1 = new CKM_Controls.CKM_TextBox();
-            this.colcd_1 = new CKM_Controls.CKM_TextBox();
-            this.taniCD_1 = new Search.CKM_SearchControl();
             this.shiire_1 = new CKM_Controls.CKM_TextBox();
             this.sizecd_1 = new CKM_Controls.CKM_TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.hyoteidatem_1 = new CKM_Controls.CKM_TextBox();
             this.sizeName_1 = new CKM_Controls.CKM_TextBox();
             this.salepriceout4_1 = new CKM_Controls.CKM_TextBox();
-            this.segment_1 = new Search.CKM_SearchControl();
             this.salepriceout3_1 = new CKM_Controls.CKM_TextBox();
             this.salepriceout2_1 = new CKM_Controls.CKM_TextBox();
             this.salepriceout1_1 = new CKM_Controls.CKM_TextBox();
@@ -110,21 +103,14 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.chk_10 = new GridControl.clsGridCheckBox();
             this.TB_10 = new CKM_Controls.CKM_TextBox();
-            this.taxrate_10 = new CKM_Controls.CKM_ComboBox();
             this.hyoteidate_10 = new CKM_Controls.CKM_ComboBox();
-            this.shouhin_10 = new CKM_Controls.CKM_TextBox();
-            this.brand_10 = new Search.CKM_SearchControl();
             this.salepriceout5_10 = new CKM_Controls.CKM_TextBox();
-            this.colorname_10 = new CKM_Controls.CKM_TextBox();
-            this.colcd_10 = new CKM_Controls.CKM_TextBox();
-            this.taniCD_10 = new Search.CKM_SearchControl();
             this.shiire_10 = new CKM_Controls.CKM_TextBox();
             this.sizecd_10 = new CKM_Controls.CKM_TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.hyoteidatem_10 = new CKM_Controls.CKM_TextBox();
             this.sizeName_10 = new CKM_Controls.CKM_TextBox();
             this.salepriceout4_10 = new CKM_Controls.CKM_TextBox();
-            this.segment_10 = new Search.CKM_SearchControl();
             this.salepriceout3_10 = new CKM_Controls.CKM_TextBox();
             this.salepriceout2_10 = new CKM_Controls.CKM_TextBox();
             this.salepriceout1_10 = new CKM_Controls.CKM_TextBox();
@@ -137,21 +123,13 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.chk_9 = new GridControl.clsGridCheckBox();
             this.TB_9 = new CKM_Controls.CKM_TextBox();
-            this.taxrate_9 = new CKM_Controls.CKM_ComboBox();
             this.hyoteidate_9 = new CKM_Controls.CKM_ComboBox();
-            this.shouhin_9 = new CKM_Controls.CKM_TextBox();
-            this.brand_9 = new Search.CKM_SearchControl();
-            this.salepriceout5_9 = new CKM_Controls.CKM_TextBox();
-            this.colorname_9 = new CKM_Controls.CKM_TextBox();
-            this.colcd_9 = new CKM_Controls.CKM_TextBox();
-            this.taniCD_9 = new Search.CKM_SearchControl();
             this.shiire_9 = new CKM_Controls.CKM_TextBox();
             this.sizecd_9 = new CKM_Controls.CKM_TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.hyoteidatem_9 = new CKM_Controls.CKM_TextBox();
             this.sizeName_9 = new CKM_Controls.CKM_TextBox();
             this.salepriceout4_9 = new CKM_Controls.CKM_TextBox();
-            this.segment_9 = new Search.CKM_SearchControl();
             this.salepriceout3_9 = new CKM_Controls.CKM_TextBox();
             this.salepriceout2_9 = new CKM_Controls.CKM_TextBox();
             this.salepriceout1_9 = new CKM_Controls.CKM_TextBox();
@@ -164,21 +142,14 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.chk_8 = new GridControl.clsGridCheckBox();
             this.TB_8 = new CKM_Controls.CKM_TextBox();
-            this.taxrate_8 = new CKM_Controls.CKM_ComboBox();
             this.hyoteidate_8 = new CKM_Controls.CKM_ComboBox();
-            this.shouhin_8 = new CKM_Controls.CKM_TextBox();
-            this.brand_8 = new Search.CKM_SearchControl();
             this.salepriceout5_8 = new CKM_Controls.CKM_TextBox();
-            this.colorname_8 = new CKM_Controls.CKM_TextBox();
-            this.colcd_8 = new CKM_Controls.CKM_TextBox();
-            this.taniCD_8 = new Search.CKM_SearchControl();
             this.shiire_8 = new CKM_Controls.CKM_TextBox();
             this.sizecd_8 = new CKM_Controls.CKM_TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.hyoteidatem_8 = new CKM_Controls.CKM_TextBox();
             this.sizeName_8 = new CKM_Controls.CKM_TextBox();
             this.salepriceout4_8 = new CKM_Controls.CKM_TextBox();
-            this.segment_8 = new Search.CKM_SearchControl();
             this.salepriceout3_8 = new CKM_Controls.CKM_TextBox();
             this.salepriceout2_8 = new CKM_Controls.CKM_TextBox();
             this.salepriceout1_8 = new CKM_Controls.CKM_TextBox();
@@ -191,21 +162,14 @@
             this.panel_7 = new System.Windows.Forms.Panel();
             this.chk_7 = new GridControl.clsGridCheckBox();
             this.TB_7 = new CKM_Controls.CKM_TextBox();
-            this.taxrate_7 = new CKM_Controls.CKM_ComboBox();
             this.hyoteidate_7 = new CKM_Controls.CKM_ComboBox();
-            this.shouhin_7 = new CKM_Controls.CKM_TextBox();
-            this.brand_7 = new Search.CKM_SearchControl();
             this.salepriceout5_7 = new CKM_Controls.CKM_TextBox();
-            this.colorname_7 = new CKM_Controls.CKM_TextBox();
-            this.colcd_7 = new CKM_Controls.CKM_TextBox();
-            this.taniCD_7 = new Search.CKM_SearchControl();
             this.shiire_7 = new CKM_Controls.CKM_TextBox();
             this.sizecd_7 = new CKM_Controls.CKM_TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.hyoteidatem_7 = new CKM_Controls.CKM_TextBox();
             this.sizeName_7 = new CKM_Controls.CKM_TextBox();
             this.salepriceout4_7 = new CKM_Controls.CKM_TextBox();
-            this.segment_7 = new Search.CKM_SearchControl();
             this.salepriceout3_7 = new CKM_Controls.CKM_TextBox();
             this.salepriceout2_7 = new CKM_Controls.CKM_TextBox();
             this.salepriceout1_7 = new CKM_Controls.CKM_TextBox();
@@ -218,21 +182,14 @@
             this.panel_6 = new System.Windows.Forms.Panel();
             this.chk_6 = new GridControl.clsGridCheckBox();
             this.TB_6 = new CKM_Controls.CKM_TextBox();
-            this.taxrate_6 = new CKM_Controls.CKM_ComboBox();
             this.hyoteidate_6 = new CKM_Controls.CKM_ComboBox();
-            this.shouhin_6 = new CKM_Controls.CKM_TextBox();
-            this.brand_6 = new Search.CKM_SearchControl();
             this.salepriceout5_6 = new CKM_Controls.CKM_TextBox();
-            this.colorname_6 = new CKM_Controls.CKM_TextBox();
-            this.colcd_6 = new CKM_Controls.CKM_TextBox();
-            this.taniCD_6 = new Search.CKM_SearchControl();
             this.shiire_6 = new CKM_Controls.CKM_TextBox();
             this.sizecd_6 = new CKM_Controls.CKM_TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.hyoteidatem_6 = new CKM_Controls.CKM_TextBox();
             this.sizeName_6 = new CKM_Controls.CKM_TextBox();
             this.salepriceout4_6 = new CKM_Controls.CKM_TextBox();
-            this.segment_6 = new Search.CKM_SearchControl();
             this.salepriceout3_6 = new CKM_Controls.CKM_TextBox();
             this.salepriceout2_6 = new CKM_Controls.CKM_TextBox();
             this.salepriceout1_6 = new CKM_Controls.CKM_TextBox();
@@ -245,21 +202,14 @@
             this.panel_5 = new System.Windows.Forms.Panel();
             this.chk_5 = new GridControl.clsGridCheckBox();
             this.TB_5 = new CKM_Controls.CKM_TextBox();
-            this.taxrate_5 = new CKM_Controls.CKM_ComboBox();
             this.hyoteidate_5 = new CKM_Controls.CKM_ComboBox();
-            this.shouhin_5 = new CKM_Controls.CKM_TextBox();
-            this.brand_5 = new Search.CKM_SearchControl();
             this.salepriceout5_5 = new CKM_Controls.CKM_TextBox();
-            this.colorname_5 = new CKM_Controls.CKM_TextBox();
-            this.colcd_5 = new CKM_Controls.CKM_TextBox();
-            this.taniCD_5 = new Search.CKM_SearchControl();
             this.shiire_5 = new CKM_Controls.CKM_TextBox();
             this.sizecd_5 = new CKM_Controls.CKM_TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.hyoteidatem_5 = new CKM_Controls.CKM_TextBox();
             this.sizeName_5 = new CKM_Controls.CKM_TextBox();
             this.salepriceout4_5 = new CKM_Controls.CKM_TextBox();
-            this.segment_5 = new Search.CKM_SearchControl();
             this.salepriceout3_5 = new CKM_Controls.CKM_TextBox();
             this.salepriceout2_5 = new CKM_Controls.CKM_TextBox();
             this.salepriceout1_5 = new CKM_Controls.CKM_TextBox();
@@ -272,21 +222,14 @@
             this.panel_4 = new System.Windows.Forms.Panel();
             this.chk_4 = new GridControl.clsGridCheckBox();
             this.TB_4 = new CKM_Controls.CKM_TextBox();
-            this.taxrate_4 = new CKM_Controls.CKM_ComboBox();
             this.hyoteidate_4 = new CKM_Controls.CKM_ComboBox();
-            this.shouhin_4 = new CKM_Controls.CKM_TextBox();
-            this.brand_4 = new Search.CKM_SearchControl();
             this.salepriceout5_4 = new CKM_Controls.CKM_TextBox();
-            this.colorname_4 = new CKM_Controls.CKM_TextBox();
-            this.colcd_4 = new CKM_Controls.CKM_TextBox();
-            this.taniCD_4 = new Search.CKM_SearchControl();
             this.shiire_4 = new CKM_Controls.CKM_TextBox();
             this.sizecd_4 = new CKM_Controls.CKM_TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.hyoteidatem_4 = new CKM_Controls.CKM_TextBox();
             this.sizeName_4 = new CKM_Controls.CKM_TextBox();
             this.salepriceout4_4 = new CKM_Controls.CKM_TextBox();
-            this.segment_4 = new Search.CKM_SearchControl();
             this.salepriceout3_4 = new CKM_Controls.CKM_TextBox();
             this.salepriceout2_4 = new CKM_Controls.CKM_TextBox();
             this.salepriceout1_4 = new CKM_Controls.CKM_TextBox();
@@ -299,21 +242,14 @@
             this.panel_3 = new System.Windows.Forms.Panel();
             this.chk_3 = new GridControl.clsGridCheckBox();
             this.TB_3 = new CKM_Controls.CKM_TextBox();
-            this.taxrate_3 = new CKM_Controls.CKM_ComboBox();
             this.hyoteidate_3 = new CKM_Controls.CKM_ComboBox();
-            this.shouhin_3 = new CKM_Controls.CKM_TextBox();
-            this.brand_3 = new Search.CKM_SearchControl();
             this.salepriceout5_3 = new CKM_Controls.CKM_TextBox();
-            this.colorname_3 = new CKM_Controls.CKM_TextBox();
-            this.colcd_3 = new CKM_Controls.CKM_TextBox();
-            this.taniCD_3 = new Search.CKM_SearchControl();
             this.shiire_3 = new CKM_Controls.CKM_TextBox();
             this.sizecd_3 = new CKM_Controls.CKM_TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.hyoteidatem_3 = new CKM_Controls.CKM_TextBox();
             this.sizeName_3 = new CKM_Controls.CKM_TextBox();
             this.salepriceout4_3 = new CKM_Controls.CKM_TextBox();
-            this.segment_3 = new Search.CKM_SearchControl();
             this.salepriceout3_3 = new CKM_Controls.CKM_TextBox();
             this.salepriceout2_3 = new CKM_Controls.CKM_TextBox();
             this.salepriceout1_3 = new CKM_Controls.CKM_TextBox();
@@ -325,22 +261,15 @@
             this.scjan_3 = new Search.CKM_SearchControl();
             this.panel_2 = new System.Windows.Forms.Panel();
             this.chk_2 = new GridControl.clsGridCheckBox();
-            this.taxrate_2 = new CKM_Controls.CKM_ComboBox();
             this.TB_2 = new CKM_Controls.CKM_TextBox();
             this.hyoteidate_2 = new CKM_Controls.CKM_ComboBox();
-            this.shouhin_2 = new CKM_Controls.CKM_TextBox();
-            this.brand_2 = new Search.CKM_SearchControl();
             this.salepriceout5_2 = new CKM_Controls.CKM_TextBox();
-            this.colorname_2 = new CKM_Controls.CKM_TextBox();
-            this.colcd_2 = new CKM_Controls.CKM_TextBox();
-            this.taniCD_2 = new Search.CKM_SearchControl();
             this.shiire_2 = new CKM_Controls.CKM_TextBox();
             this.sizecd_2 = new CKM_Controls.CKM_TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.hyoteidatem_2 = new CKM_Controls.CKM_TextBox();
             this.sizeName_2 = new CKM_Controls.CKM_TextBox();
             this.salepriceout4_2 = new CKM_Controls.CKM_TextBox();
-            this.segment_2 = new Search.CKM_SearchControl();
             this.salepriceout3_2 = new CKM_Controls.CKM_TextBox();
             this.salepriceout2_2 = new CKM_Controls.CKM_TextBox();
             this.salepriceout1_2 = new CKM_Controls.CKM_TextBox();
@@ -352,6 +281,85 @@
             this.scjan_2 = new Search.CKM_SearchControl();
             this.label24 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.colcd_1 = new CKM_Controls.CKM_TextBox();
+            this.taniCD_1 = new Search.CKM_SearchControl();
+            this.shouhin_1 = new CKM_Controls.CKM_TextBox();
+            this.segment_1 = new Search.CKM_SearchControl();
+            this.brand_1 = new Search.CKM_SearchControl();
+            this.taxrate_1 = new CKM_Controls.CKM_ComboBox();
+            this.colorname_1 = new CKM_Controls.CKM_TextBox();
+            this.colorname_2 = new CKM_Controls.CKM_TextBox();
+            this.taxrate_2 = new CKM_Controls.CKM_ComboBox();
+            this.colcd_2 = new CKM_Controls.CKM_TextBox();
+            this.taniCD_2 = new Search.CKM_SearchControl();
+            this.shouhin_2 = new CKM_Controls.CKM_TextBox();
+            this.segment_2 = new Search.CKM_SearchControl();
+            this.brand_2 = new Search.CKM_SearchControl();
+            this.colorname_3 = new CKM_Controls.CKM_TextBox();
+            this.taxrate_3 = new CKM_Controls.CKM_ComboBox();
+            this.colcd_3 = new CKM_Controls.CKM_TextBox();
+            this.taniCD_3 = new Search.CKM_SearchControl();
+            this.shouhin_3 = new CKM_Controls.CKM_TextBox();
+            this.segment_3 = new Search.CKM_SearchControl();
+            this.brand_3 = new Search.CKM_SearchControl();
+            this.colorname_4 = new CKM_Controls.CKM_TextBox();
+            this.taxrate_4 = new CKM_Controls.CKM_ComboBox();
+            this.colcd_4 = new CKM_Controls.CKM_TextBox();
+            this.taniCD_4 = new Search.CKM_SearchControl();
+            this.shouhin_4 = new CKM_Controls.CKM_TextBox();
+            this.segment_4 = new Search.CKM_SearchControl();
+            this.brand_4 = new Search.CKM_SearchControl();
+            this.colorname_5 = new CKM_Controls.CKM_TextBox();
+            this.taxrate_5 = new CKM_Controls.CKM_ComboBox();
+            this.colcd_5 = new CKM_Controls.CKM_TextBox();
+            this.taniCD_5 = new Search.CKM_SearchControl();
+            this.shouhin_5 = new CKM_Controls.CKM_TextBox();
+            this.segment_5 = new Search.CKM_SearchControl();
+            this.brand_5 = new Search.CKM_SearchControl();
+            this.colorname_6 = new CKM_Controls.CKM_TextBox();
+            this.taxrate_6 = new CKM_Controls.CKM_ComboBox();
+            this.colcd_6 = new CKM_Controls.CKM_TextBox();
+            this.taniCD_6 = new Search.CKM_SearchControl();
+            this.shouhin_6 = new CKM_Controls.CKM_TextBox();
+            this.segment_6 = new Search.CKM_SearchControl();
+            this.brand_6 = new Search.CKM_SearchControl();
+            this.colorname_7 = new CKM_Controls.CKM_TextBox();
+            this.taxrate_7 = new CKM_Controls.CKM_ComboBox();
+            this.colcd_7 = new CKM_Controls.CKM_TextBox();
+            this.taniCD_7 = new Search.CKM_SearchControl();
+            this.shouhin_7 = new CKM_Controls.CKM_TextBox();
+            this.segment_7 = new Search.CKM_SearchControl();
+            this.brand_7 = new Search.CKM_SearchControl();
+            this.colorname_8 = new CKM_Controls.CKM_TextBox();
+            this.taxrate_8 = new CKM_Controls.CKM_ComboBox();
+            this.colcd_8 = new CKM_Controls.CKM_TextBox();
+            this.taniCD_8 = new Search.CKM_SearchControl();
+            this.shouhin_8 = new CKM_Controls.CKM_TextBox();
+            this.segment_8 = new Search.CKM_SearchControl();
+            this.brand_8 = new Search.CKM_SearchControl();
+            this.colorname_10 = new CKM_Controls.CKM_TextBox();
+            this.taxrate_10 = new CKM_Controls.CKM_ComboBox();
+            this.colcd_10 = new CKM_Controls.CKM_TextBox();
+            this.taniCD_10 = new Search.CKM_SearchControl();
+            this.shouhin_10 = new CKM_Controls.CKM_TextBox();
+            this.segment_10 = new Search.CKM_SearchControl();
+            this.brand_10 = new Search.CKM_SearchControl();
+            this.ckM_TextBox3 = new CKM_Controls.CKM_TextBox();
+            this.ckM_ComboBox8 = new CKM_Controls.CKM_ComboBox();
+            this.ckM_TextBox6 = new CKM_Controls.CKM_TextBox();
+            this.ckM_SearchControl3 = new Search.CKM_SearchControl();
+            this.ckM_TextBox9 = new CKM_Controls.CKM_TextBox();
+            this.ckM_TextBox12 = new CKM_Controls.CKM_TextBox();
+            this.ckM_SearchControl6 = new Search.CKM_SearchControl();
+            this.ckM_SearchControl9 = new Search.CKM_SearchControl();
+            this.colorname_9 = new CKM_Controls.CKM_TextBox();
+            this.taxrate_9 = new CKM_Controls.CKM_ComboBox();
+            this.colcd_9 = new CKM_Controls.CKM_TextBox();
+            this.taniCD_9 = new Search.CKM_SearchControl();
+            this.salepriceout5_9 = new CKM_Controls.CKM_TextBox();
+            this.shouhin_9 = new CKM_Controls.CKM_TextBox();
+            this.segment_9 = new Search.CKM_SearchControl();
+            this.brand_9 = new Search.CKM_SearchControl();
             this.panel1.SuspendLayout();
             this.panel_1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -1049,7 +1057,7 @@
             this.label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label4.Location = new System.Drawing.Point(979, 1);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 23);
+            this.label4.Size = new System.Drawing.Size(88, 23);
             this.label4.TabIndex = 283;
             this.label4.Text = "カラーNO";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1060,9 +1068,9 @@
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(1066, 1);
+            this.label5.Location = new System.Drawing.Point(1067, 1);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 23);
+            this.label5.Size = new System.Drawing.Size(115, 23);
             this.label5.TabIndex = 284;
             this.label5.Text = "カラー名";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1153,7 +1161,7 @@
             this.label17.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label17.Location = new System.Drawing.Point(838, 24);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(85, 23);
+            this.label17.Size = new System.Drawing.Size(87, 23);
             this.label17.TabIndex = 296;
             this.label17.Text = "ブランド";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1164,9 +1172,9 @@
             this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label18.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label18.Location = new System.Drawing.Point(921, 24);
+            this.label18.Location = new System.Drawing.Point(924, 24);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(90, 23);
+            this.label18.Size = new System.Drawing.Size(80, 23);
             this.label18.TabIndex = 297;
             this.label18.Text = "セグメント";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1190,7 +1198,7 @@
             this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label19.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label19.Location = new System.Drawing.Point(1065, 24);
+            this.label19.Location = new System.Drawing.Point(1066, 24);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(100, 23);
             this.label19.TabIndex = 299;
@@ -1238,23 +1246,23 @@
             // 
             // panel_1
             // 
+            this.panel_1.Controls.Add(this.colorname_1);
             this.panel_1.Controls.Add(this.chk_1);
             this.panel_1.Controls.Add(this.taxrate_1);
             this.panel_1.Controls.Add(this.TB_1);
-            this.panel_1.Controls.Add(this.hyoteidate_1);
-            this.panel_1.Controls.Add(this.shouhin_1);
-            this.panel_1.Controls.Add(this.brand_1);
-            this.panel_1.Controls.Add(this.salepriceout5_1);
-            this.panel_1.Controls.Add(this.colorname_1);
             this.panel_1.Controls.Add(this.colcd_1);
+            this.panel_1.Controls.Add(this.hyoteidate_1);
             this.panel_1.Controls.Add(this.taniCD_1);
+            this.panel_1.Controls.Add(this.salepriceout5_1);
+            this.panel_1.Controls.Add(this.shouhin_1);
+            this.panel_1.Controls.Add(this.segment_1);
             this.panel_1.Controls.Add(this.shiire_1);
+            this.panel_1.Controls.Add(this.brand_1);
             this.panel_1.Controls.Add(this.sizecd_1);
             this.panel_1.Controls.Add(this.label35);
             this.panel_1.Controls.Add(this.hyoteidatem_1);
             this.panel_1.Controls.Add(this.sizeName_1);
             this.panel_1.Controls.Add(this.salepriceout4_1);
-            this.panel_1.Controls.Add(this.segment_1);
             this.panel_1.Controls.Add(this.salepriceout3_1);
             this.panel_1.Controls.Add(this.salepriceout2_1);
             this.panel_1.Controls.Add(this.salepriceout1_1);
@@ -1272,27 +1280,13 @@
             // chk_1
             // 
             this.chk_1.AutoSize = true;
-            this.chk_1.Location = new System.Drawing.Point(71, 4);
+            this.chk_1.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chk_1.Location = new System.Drawing.Point(71, 3);
             this.chk_1.Name = "chk_1";
             this.chk_1.Size = new System.Drawing.Size(15, 14);
             this.chk_1.TabIndex = 557;
+            this.chk_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chk_1.UseVisualStyleBackColor = true;
-            // 
-            // taxrate_1
-            // 
-            this.taxrate_1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.taxrate_1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.taxrate_1.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
-            this.taxrate_1.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.taxrate_1.Flag = 0;
-            this.taxrate_1.FormattingEnabled = true;
-            this.taxrate_1.Length = 10;
-            this.taxrate_1.Location = new System.Drawing.Point(1065, 19);
-            this.taxrate_1.MaxLength = 10;
-            this.taxrate_1.MoveNext = true;
-            this.taxrate_1.Name = "taxrate_1";
-            this.taxrate_1.Size = new System.Drawing.Size(100, 20);
-            this.taxrate_1.TabIndex = 548;
             // 
             // TB_1
             // 
@@ -1340,66 +1334,6 @@
             this.hyoteidate_1.Size = new System.Drawing.Size(53, 20);
             this.hyoteidate_1.TabIndex = 320;
             // 
-            // shouhin_1
-            // 
-            this.shouhin_1.AllowMinus = false;
-            this.shouhin_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.shouhin_1.BackColor = System.Drawing.Color.White;
-            this.shouhin_1.BorderColor = false;
-            this.shouhin_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.shouhin_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.shouhin_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.shouhin_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.shouhin_1.DecimalPlace = 0;
-            this.shouhin_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.shouhin_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.shouhin_1.IntegerPart = 0;
-            this.shouhin_1.IsCorrectDate = true;
-            this.shouhin_1.isEnterKeyDown = false;
-            this.shouhin_1.IsFirstTime = true;
-            this.shouhin_1.isMaxLengthErr = false;
-            this.shouhin_1.IsNumber = true;
-            this.shouhin_1.IsShop = false;
-            this.shouhin_1.Length = 9;
-            this.shouhin_1.Location = new System.Drawing.Point(479, 0);
-            this.shouhin_1.MaxLength = 9;
-            this.shouhin_1.MoveNext = true;
-            this.shouhin_1.Name = "shouhin_1";
-            this.shouhin_1.Size = new System.Drawing.Size(500, 19);
-            this.shouhin_1.TabIndex = 547;
-            this.shouhin_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.shouhin_1.UseColorSizMode = false;
-            // 
-            // brand_1
-            // 
-            this.brand_1.AutoSize = true;
-            this.brand_1.ChangeDate = "";
-            this.brand_1.ChangeDateWidth = 0;
-            this.brand_1.Code = "";
-            this.brand_1.CodeWidth = 50;
-            this.brand_1.CodeWidth1 = 50;
-            this.brand_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.brand_1.DataCheck = false;
-            this.brand_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.brand_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.brand_1.IsCopy = false;
-            this.brand_1.LabelText = "";
-            this.brand_1.LabelVisible = false;
-            this.brand_1.Location = new System.Drawing.Point(838, 14);
-            this.brand_1.Margin = new System.Windows.Forms.Padding(0);
-            this.brand_1.Name = "brand_1";
-            this.brand_1.NameWidth = 281;
-            this.brand_1.SearchEnable = true;
-            this.brand_1.Size = new System.Drawing.Size(83, 27);
-            this.brand_1.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.brand_1.TabIndex = 546;
-            this.brand_1.test = null;
-            this.brand_1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.brand_1.UseChangeDate = false;
-            this.brand_1.Value1 = null;
-            this.brand_1.Value2 = null;
-            this.brand_1.Value3 = null;
-            // 
             // salepriceout5_1
             // 
             this.salepriceout5_1.AllowMinus = false;
@@ -1429,96 +1363,6 @@
             this.salepriceout5_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.salepriceout5_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.salepriceout5_1.UseColorSizMode = false;
-            // 
-            // colorname_1
-            // 
-            this.colorname_1.AllowMinus = false;
-            this.colorname_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.colorname_1.BackColor = System.Drawing.Color.White;
-            this.colorname_1.BorderColor = false;
-            this.colorname_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorname_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.colorname_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.colorname_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.colorname_1.DecimalPlace = 0;
-            this.colorname_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.colorname_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.colorname_1.IntegerPart = 0;
-            this.colorname_1.IsCorrectDate = true;
-            this.colorname_1.isEnterKeyDown = false;
-            this.colorname_1.IsFirstTime = true;
-            this.colorname_1.isMaxLengthErr = false;
-            this.colorname_1.IsNumber = true;
-            this.colorname_1.IsShop = false;
-            this.colorname_1.Length = 9;
-            this.colorname_1.Location = new System.Drawing.Point(1066, 0);
-            this.colorname_1.MaxLength = 9;
-            this.colorname_1.MoveNext = true;
-            this.colorname_1.Name = "colorname_1";
-            this.colorname_1.Size = new System.Drawing.Size(115, 19);
-            this.colorname_1.TabIndex = 533;
-            this.colorname_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.colorname_1.UseColorSizMode = false;
-            // 
-            // colcd_1
-            // 
-            this.colcd_1.AllowMinus = false;
-            this.colcd_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.colcd_1.BackColor = System.Drawing.Color.White;
-            this.colcd_1.BorderColor = false;
-            this.colcd_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colcd_1.ClientColor = System.Drawing.SystemColors.Window;
-            this.colcd_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.colcd_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.colcd_1.DecimalPlace = 0;
-            this.colcd_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.colcd_1.IntegerPart = 0;
-            this.colcd_1.IsCorrectDate = true;
-            this.colcd_1.isEnterKeyDown = false;
-            this.colcd_1.IsFirstTime = true;
-            this.colcd_1.isMaxLengthErr = false;
-            this.colcd_1.IsNumber = true;
-            this.colcd_1.IsShop = false;
-            this.colcd_1.Length = 9;
-            this.colcd_1.Location = new System.Drawing.Point(979, 0);
-            this.colcd_1.MaxLength = 9;
-            this.colcd_1.MoveNext = true;
-            this.colcd_1.Name = "colcd_1";
-            this.colcd_1.Size = new System.Drawing.Size(87, 19);
-            this.colcd_1.TabIndex = 532;
-            this.colcd_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.colcd_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.colcd_1.UseColorSizMode = false;
-            // 
-            // taniCD_1
-            // 
-            this.taniCD_1.AutoSize = true;
-            this.taniCD_1.ChangeDate = "";
-            this.taniCD_1.ChangeDateWidth = 0;
-            this.taniCD_1.Code = "";
-            this.taniCD_1.CodeWidth = 30;
-            this.taniCD_1.CodeWidth1 = 30;
-            this.taniCD_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.taniCD_1.DataCheck = false;
-            this.taniCD_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.taniCD_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.taniCD_1.IsCopy = false;
-            this.taniCD_1.LabelText = "";
-            this.taniCD_1.LabelVisible = false;
-            this.taniCD_1.Location = new System.Drawing.Point(1004, 14);
-            this.taniCD_1.Margin = new System.Windows.Forms.Padding(0);
-            this.taniCD_1.Name = "taniCD_1";
-            this.taniCD_1.NameWidth = 281;
-            this.taniCD_1.SearchEnable = true;
-            this.taniCD_1.Size = new System.Drawing.Size(63, 27);
-            this.taniCD_1.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.taniCD_1.TabIndex = 531;
-            this.taniCD_1.test = null;
-            this.taniCD_1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.taniCD_1.UseChangeDate = false;
-            this.taniCD_1.Value1 = null;
-            this.taniCD_1.Value2 = null;
-            this.taniCD_1.Value3 = null;
             // 
             // shiire_1
             // 
@@ -1685,36 +1529,6 @@
             this.salepriceout4_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.salepriceout4_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.salepriceout4_1.UseColorSizMode = false;
-            // 
-            // segment_1
-            // 
-            this.segment_1.AutoSize = true;
-            this.segment_1.ChangeDate = "";
-            this.segment_1.ChangeDateWidth = 0;
-            this.segment_1.Code = "";
-            this.segment_1.CodeWidth = 50;
-            this.segment_1.CodeWidth1 = 50;
-            this.segment_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.segment_1.DataCheck = false;
-            this.segment_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.segment_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.segment_1.IsCopy = false;
-            this.segment_1.LabelText = "";
-            this.segment_1.LabelVisible = false;
-            this.segment_1.Location = new System.Drawing.Point(921, 14);
-            this.segment_1.Margin = new System.Windows.Forms.Padding(0);
-            this.segment_1.Name = "segment_1";
-            this.segment_1.NameWidth = 0;
-            this.segment_1.SearchEnable = true;
-            this.segment_1.Size = new System.Drawing.Size(83, 27);
-            this.segment_1.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.segment_1.TabIndex = 335;
-            this.segment_1.test = null;
-            this.segment_1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.segment_1.UseChangeDate = false;
-            this.segment_1.Value1 = null;
-            this.segment_1.Value2 = null;
-            this.segment_1.Value3 = null;
             // 
             // salepriceout3_1
             // 
@@ -2060,31 +1874,31 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(18, 201);
+            this.panel2.Location = new System.Drawing.Point(19, 200);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1550, 550);
+            this.panel2.Size = new System.Drawing.Size(1550, 530);
             this.panel2.TabIndex = 101;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.chk_10);
-            this.panel7.Controls.Add(this.TB_10);
-            this.panel7.Controls.Add(this.taxrate_10);
-            this.panel7.Controls.Add(this.hyoteidate_10);
-            this.panel7.Controls.Add(this.shouhin_10);
-            this.panel7.Controls.Add(this.brand_10);
-            this.panel7.Controls.Add(this.salepriceout5_10);
             this.panel7.Controls.Add(this.colorname_10);
+            this.panel7.Controls.Add(this.chk_10);
+            this.panel7.Controls.Add(this.taxrate_10);
+            this.panel7.Controls.Add(this.TB_10);
             this.panel7.Controls.Add(this.colcd_10);
+            this.panel7.Controls.Add(this.hyoteidate_10);
             this.panel7.Controls.Add(this.taniCD_10);
+            this.panel7.Controls.Add(this.salepriceout5_10);
+            this.panel7.Controls.Add(this.shouhin_10);
+            this.panel7.Controls.Add(this.segment_10);
             this.panel7.Controls.Add(this.shiire_10);
+            this.panel7.Controls.Add(this.brand_10);
             this.panel7.Controls.Add(this.sizecd_10);
             this.panel7.Controls.Add(this.label31);
             this.panel7.Controls.Add(this.hyoteidatem_10);
             this.panel7.Controls.Add(this.sizeName_10);
             this.panel7.Controls.Add(this.salepriceout4_10);
-            this.panel7.Controls.Add(this.segment_10);
             this.panel7.Controls.Add(this.salepriceout3_10);
             this.panel7.Controls.Add(this.salepriceout2_10);
             this.panel7.Controls.Add(this.salepriceout1_10);
@@ -2102,10 +1916,12 @@
             // chk_10
             // 
             this.chk_10.AutoSize = true;
-            this.chk_10.Location = new System.Drawing.Point(71, 4);
+            this.chk_10.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chk_10.Location = new System.Drawing.Point(71, 3);
             this.chk_10.Name = "chk_10";
             this.chk_10.Size = new System.Drawing.Size(15, 14);
             this.chk_10.TabIndex = 559;
+            this.chk_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chk_10.UseVisualStyleBackColor = true;
             // 
             // TB_10
@@ -2138,22 +1954,6 @@
             this.TB_10.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_10.UseColorSizMode = false;
             // 
-            // taxrate_10
-            // 
-            this.taxrate_10.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.taxrate_10.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.taxrate_10.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
-            this.taxrate_10.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.taxrate_10.Flag = 0;
-            this.taxrate_10.FormattingEnabled = true;
-            this.taxrate_10.Length = 10;
-            this.taxrate_10.Location = new System.Drawing.Point(1065, 19);
-            this.taxrate_10.MaxLength = 10;
-            this.taxrate_10.MoveNext = true;
-            this.taxrate_10.Name = "taxrate_10";
-            this.taxrate_10.Size = new System.Drawing.Size(100, 20);
-            this.taxrate_10.TabIndex = 548;
-            // 
             // hyoteidate_10
             // 
             this.hyoteidate_10.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
@@ -2169,66 +1969,6 @@
             this.hyoteidate_10.Name = "hyoteidate_10";
             this.hyoteidate_10.Size = new System.Drawing.Size(53, 20);
             this.hyoteidate_10.TabIndex = 320;
-            // 
-            // shouhin_10
-            // 
-            this.shouhin_10.AllowMinus = false;
-            this.shouhin_10.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.shouhin_10.BackColor = System.Drawing.Color.White;
-            this.shouhin_10.BorderColor = false;
-            this.shouhin_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.shouhin_10.ClientColor = System.Drawing.SystemColors.Window;
-            this.shouhin_10.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.shouhin_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.shouhin_10.DecimalPlace = 0;
-            this.shouhin_10.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.shouhin_10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.shouhin_10.IntegerPart = 0;
-            this.shouhin_10.IsCorrectDate = true;
-            this.shouhin_10.isEnterKeyDown = false;
-            this.shouhin_10.IsFirstTime = true;
-            this.shouhin_10.isMaxLengthErr = false;
-            this.shouhin_10.IsNumber = true;
-            this.shouhin_10.IsShop = false;
-            this.shouhin_10.Length = 9;
-            this.shouhin_10.Location = new System.Drawing.Point(479, 0);
-            this.shouhin_10.MaxLength = 9;
-            this.shouhin_10.MoveNext = true;
-            this.shouhin_10.Name = "shouhin_10";
-            this.shouhin_10.Size = new System.Drawing.Size(500, 19);
-            this.shouhin_10.TabIndex = 547;
-            this.shouhin_10.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.shouhin_10.UseColorSizMode = false;
-            // 
-            // brand_10
-            // 
-            this.brand_10.AutoSize = true;
-            this.brand_10.ChangeDate = "";
-            this.brand_10.ChangeDateWidth = 0;
-            this.brand_10.Code = "";
-            this.brand_10.CodeWidth = 50;
-            this.brand_10.CodeWidth1 = 50;
-            this.brand_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.brand_10.DataCheck = false;
-            this.brand_10.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.brand_10.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.brand_10.IsCopy = false;
-            this.brand_10.LabelText = "";
-            this.brand_10.LabelVisible = false;
-            this.brand_10.Location = new System.Drawing.Point(838, 14);
-            this.brand_10.Margin = new System.Windows.Forms.Padding(0);
-            this.brand_10.Name = "brand_10";
-            this.brand_10.NameWidth = 281;
-            this.brand_10.SearchEnable = true;
-            this.brand_10.Size = new System.Drawing.Size(83, 27);
-            this.brand_10.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.brand_10.TabIndex = 546;
-            this.brand_10.test = null;
-            this.brand_10.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.brand_10.UseChangeDate = false;
-            this.brand_10.Value1 = null;
-            this.brand_10.Value2 = null;
-            this.brand_10.Value3 = null;
             // 
             // salepriceout5_10
             // 
@@ -2259,96 +1999,6 @@
             this.salepriceout5_10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.salepriceout5_10.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.salepriceout5_10.UseColorSizMode = false;
-            // 
-            // colorname_10
-            // 
-            this.colorname_10.AllowMinus = false;
-            this.colorname_10.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.colorname_10.BackColor = System.Drawing.Color.White;
-            this.colorname_10.BorderColor = false;
-            this.colorname_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorname_10.ClientColor = System.Drawing.SystemColors.Window;
-            this.colorname_10.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.colorname_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.colorname_10.DecimalPlace = 0;
-            this.colorname_10.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.colorname_10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.colorname_10.IntegerPart = 0;
-            this.colorname_10.IsCorrectDate = true;
-            this.colorname_10.isEnterKeyDown = false;
-            this.colorname_10.IsFirstTime = true;
-            this.colorname_10.isMaxLengthErr = false;
-            this.colorname_10.IsNumber = true;
-            this.colorname_10.IsShop = false;
-            this.colorname_10.Length = 9;
-            this.colorname_10.Location = new System.Drawing.Point(1066, 0);
-            this.colorname_10.MaxLength = 9;
-            this.colorname_10.MoveNext = true;
-            this.colorname_10.Name = "colorname_10";
-            this.colorname_10.Size = new System.Drawing.Size(115, 19);
-            this.colorname_10.TabIndex = 533;
-            this.colorname_10.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.colorname_10.UseColorSizMode = false;
-            // 
-            // colcd_10
-            // 
-            this.colcd_10.AllowMinus = false;
-            this.colcd_10.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.colcd_10.BackColor = System.Drawing.Color.White;
-            this.colcd_10.BorderColor = false;
-            this.colcd_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colcd_10.ClientColor = System.Drawing.SystemColors.Window;
-            this.colcd_10.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.colcd_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.colcd_10.DecimalPlace = 0;
-            this.colcd_10.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.colcd_10.IntegerPart = 0;
-            this.colcd_10.IsCorrectDate = true;
-            this.colcd_10.isEnterKeyDown = false;
-            this.colcd_10.IsFirstTime = true;
-            this.colcd_10.isMaxLengthErr = false;
-            this.colcd_10.IsNumber = true;
-            this.colcd_10.IsShop = false;
-            this.colcd_10.Length = 9;
-            this.colcd_10.Location = new System.Drawing.Point(979, 0);
-            this.colcd_10.MaxLength = 9;
-            this.colcd_10.MoveNext = true;
-            this.colcd_10.Name = "colcd_10";
-            this.colcd_10.Size = new System.Drawing.Size(87, 19);
-            this.colcd_10.TabIndex = 532;
-            this.colcd_10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.colcd_10.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.colcd_10.UseColorSizMode = false;
-            // 
-            // taniCD_10
-            // 
-            this.taniCD_10.AutoSize = true;
-            this.taniCD_10.ChangeDate = "";
-            this.taniCD_10.ChangeDateWidth = 0;
-            this.taniCD_10.Code = "";
-            this.taniCD_10.CodeWidth = 30;
-            this.taniCD_10.CodeWidth1 = 30;
-            this.taniCD_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.taniCD_10.DataCheck = false;
-            this.taniCD_10.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.taniCD_10.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.taniCD_10.IsCopy = false;
-            this.taniCD_10.LabelText = "";
-            this.taniCD_10.LabelVisible = false;
-            this.taniCD_10.Location = new System.Drawing.Point(1004, 14);
-            this.taniCD_10.Margin = new System.Windows.Forms.Padding(0);
-            this.taniCD_10.Name = "taniCD_10";
-            this.taniCD_10.NameWidth = 281;
-            this.taniCD_10.SearchEnable = true;
-            this.taniCD_10.Size = new System.Drawing.Size(63, 27);
-            this.taniCD_10.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.taniCD_10.TabIndex = 531;
-            this.taniCD_10.test = null;
-            this.taniCD_10.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.taniCD_10.UseChangeDate = false;
-            this.taniCD_10.Value1 = null;
-            this.taniCD_10.Value2 = null;
-            this.taniCD_10.Value3 = null;
             // 
             // shiire_10
             // 
@@ -2515,36 +2165,6 @@
             this.salepriceout4_10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.salepriceout4_10.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.salepriceout4_10.UseColorSizMode = false;
-            // 
-            // segment_10
-            // 
-            this.segment_10.AutoSize = true;
-            this.segment_10.ChangeDate = "";
-            this.segment_10.ChangeDateWidth = 0;
-            this.segment_10.Code = "";
-            this.segment_10.CodeWidth = 50;
-            this.segment_10.CodeWidth1 = 50;
-            this.segment_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.segment_10.DataCheck = false;
-            this.segment_10.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.segment_10.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.segment_10.IsCopy = false;
-            this.segment_10.LabelText = "";
-            this.segment_10.LabelVisible = false;
-            this.segment_10.Location = new System.Drawing.Point(921, 14);
-            this.segment_10.Margin = new System.Windows.Forms.Padding(0);
-            this.segment_10.Name = "segment_10";
-            this.segment_10.NameWidth = 0;
-            this.segment_10.SearchEnable = true;
-            this.segment_10.Size = new System.Drawing.Size(83, 27);
-            this.segment_10.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.segment_10.TabIndex = 335;
-            this.segment_10.test = null;
-            this.segment_10.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.segment_10.UseChangeDate = false;
-            this.segment_10.Value1 = null;
-            this.segment_10.Value2 = null;
-            this.segment_10.Value3 = null;
             // 
             // salepriceout3_10
             // 
@@ -2798,23 +2418,31 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.colorname_9);
+            this.panel5.Controls.Add(this.ckM_TextBox3);
+            this.panel5.Controls.Add(this.taxrate_9);
+            this.panel5.Controls.Add(this.ckM_ComboBox8);
+            this.panel5.Controls.Add(this.colcd_9);
+            this.panel5.Controls.Add(this.ckM_TextBox6);
+            this.panel5.Controls.Add(this.taniCD_9);
+            this.panel5.Controls.Add(this.ckM_SearchControl3);
+            this.panel5.Controls.Add(this.salepriceout5_9);
+            this.panel5.Controls.Add(this.ckM_TextBox9);
+            this.panel5.Controls.Add(this.shouhin_9);
+            this.panel5.Controls.Add(this.segment_9);
+            this.panel5.Controls.Add(this.ckM_TextBox12);
+            this.panel5.Controls.Add(this.brand_9);
+            this.panel5.Controls.Add(this.ckM_SearchControl6);
+            this.panel5.Controls.Add(this.ckM_SearchControl9);
             this.panel5.Controls.Add(this.chk_9);
             this.panel5.Controls.Add(this.TB_9);
-            this.panel5.Controls.Add(this.taxrate_9);
             this.panel5.Controls.Add(this.hyoteidate_9);
-            this.panel5.Controls.Add(this.shouhin_9);
-            this.panel5.Controls.Add(this.brand_9);
-            this.panel5.Controls.Add(this.salepriceout5_9);
-            this.panel5.Controls.Add(this.colorname_9);
-            this.panel5.Controls.Add(this.colcd_9);
-            this.panel5.Controls.Add(this.taniCD_9);
             this.panel5.Controls.Add(this.shiire_9);
             this.panel5.Controls.Add(this.sizecd_9);
             this.panel5.Controls.Add(this.label27);
             this.panel5.Controls.Add(this.hyoteidatem_9);
             this.panel5.Controls.Add(this.sizeName_9);
             this.panel5.Controls.Add(this.salepriceout4_9);
-            this.panel5.Controls.Add(this.segment_9);
             this.panel5.Controls.Add(this.salepriceout3_9);
             this.panel5.Controls.Add(this.salepriceout2_9);
             this.panel5.Controls.Add(this.salepriceout1_9);
@@ -2832,10 +2460,12 @@
             // chk_9
             // 
             this.chk_9.AutoSize = true;
-            this.chk_9.Location = new System.Drawing.Point(71, 4);
+            this.chk_9.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chk_9.Location = new System.Drawing.Point(71, 3);
             this.chk_9.Name = "chk_9";
             this.chk_9.Size = new System.Drawing.Size(15, 14);
             this.chk_9.TabIndex = 559;
+            this.chk_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chk_9.UseVisualStyleBackColor = true;
             // 
             // TB_9
@@ -2868,22 +2498,6 @@
             this.TB_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_9.UseColorSizMode = false;
             // 
-            // taxrate_9
-            // 
-            this.taxrate_9.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.taxrate_9.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.taxrate_9.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
-            this.taxrate_9.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.taxrate_9.Flag = 0;
-            this.taxrate_9.FormattingEnabled = true;
-            this.taxrate_9.Length = 10;
-            this.taxrate_9.Location = new System.Drawing.Point(1065, 19);
-            this.taxrate_9.MaxLength = 10;
-            this.taxrate_9.MoveNext = true;
-            this.taxrate_9.Name = "taxrate_9";
-            this.taxrate_9.Size = new System.Drawing.Size(100, 20);
-            this.taxrate_9.TabIndex = 548;
-            // 
             // hyoteidate_9
             // 
             this.hyoteidate_9.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
@@ -2899,186 +2513,6 @@
             this.hyoteidate_9.Name = "hyoteidate_9";
             this.hyoteidate_9.Size = new System.Drawing.Size(53, 20);
             this.hyoteidate_9.TabIndex = 320;
-            // 
-            // shouhin_9
-            // 
-            this.shouhin_9.AllowMinus = false;
-            this.shouhin_9.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.shouhin_9.BackColor = System.Drawing.Color.White;
-            this.shouhin_9.BorderColor = false;
-            this.shouhin_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.shouhin_9.ClientColor = System.Drawing.SystemColors.Window;
-            this.shouhin_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.shouhin_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.shouhin_9.DecimalPlace = 0;
-            this.shouhin_9.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.shouhin_9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.shouhin_9.IntegerPart = 0;
-            this.shouhin_9.IsCorrectDate = true;
-            this.shouhin_9.isEnterKeyDown = false;
-            this.shouhin_9.IsFirstTime = true;
-            this.shouhin_9.isMaxLengthErr = false;
-            this.shouhin_9.IsNumber = true;
-            this.shouhin_9.IsShop = false;
-            this.shouhin_9.Length = 9;
-            this.shouhin_9.Location = new System.Drawing.Point(479, 0);
-            this.shouhin_9.MaxLength = 9;
-            this.shouhin_9.MoveNext = true;
-            this.shouhin_9.Name = "shouhin_9";
-            this.shouhin_9.Size = new System.Drawing.Size(500, 19);
-            this.shouhin_9.TabIndex = 547;
-            this.shouhin_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.shouhin_9.UseColorSizMode = false;
-            // 
-            // brand_9
-            // 
-            this.brand_9.AutoSize = true;
-            this.brand_9.ChangeDate = "";
-            this.brand_9.ChangeDateWidth = 0;
-            this.brand_9.Code = "";
-            this.brand_9.CodeWidth = 50;
-            this.brand_9.CodeWidth1 = 50;
-            this.brand_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.brand_9.DataCheck = false;
-            this.brand_9.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.brand_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.brand_9.IsCopy = false;
-            this.brand_9.LabelText = "";
-            this.brand_9.LabelVisible = false;
-            this.brand_9.Location = new System.Drawing.Point(838, 14);
-            this.brand_9.Margin = new System.Windows.Forms.Padding(0);
-            this.brand_9.Name = "brand_9";
-            this.brand_9.NameWidth = 281;
-            this.brand_9.SearchEnable = true;
-            this.brand_9.Size = new System.Drawing.Size(83, 27);
-            this.brand_9.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.brand_9.TabIndex = 546;
-            this.brand_9.test = null;
-            this.brand_9.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.brand_9.UseChangeDate = false;
-            this.brand_9.Value1 = null;
-            this.brand_9.Value2 = null;
-            this.brand_9.Value3 = null;
-            // 
-            // salepriceout5_9
-            // 
-            this.salepriceout5_9.AllowMinus = false;
-            this.salepriceout5_9.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.salepriceout5_9.BackColor = System.Drawing.Color.White;
-            this.salepriceout5_9.BorderColor = false;
-            this.salepriceout5_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.salepriceout5_9.ClientColor = System.Drawing.SystemColors.Window;
-            this.salepriceout5_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.salepriceout5_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.salepriceout5_9.DecimalPlace = 0;
-            this.salepriceout5_9.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.salepriceout5_9.IntegerPart = 0;
-            this.salepriceout5_9.IsCorrectDate = true;
-            this.salepriceout5_9.isEnterKeyDown = false;
-            this.salepriceout5_9.IsFirstTime = true;
-            this.salepriceout5_9.isMaxLengthErr = false;
-            this.salepriceout5_9.IsNumber = true;
-            this.salepriceout5_9.IsShop = false;
-            this.salepriceout5_9.Length = 20;
-            this.salepriceout5_9.Location = new System.Drawing.Point(738, 19);
-            this.salepriceout5_9.MaxLength = 20;
-            this.salepriceout5_9.MoveNext = true;
-            this.salepriceout5_9.Name = "salepriceout5_9";
-            this.salepriceout5_9.Size = new System.Drawing.Size(100, 19);
-            this.salepriceout5_9.TabIndex = 545;
-            this.salepriceout5_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.salepriceout5_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.salepriceout5_9.UseColorSizMode = false;
-            // 
-            // colorname_9
-            // 
-            this.colorname_9.AllowMinus = false;
-            this.colorname_9.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.colorname_9.BackColor = System.Drawing.Color.White;
-            this.colorname_9.BorderColor = false;
-            this.colorname_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorname_9.ClientColor = System.Drawing.SystemColors.Window;
-            this.colorname_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.colorname_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.colorname_9.DecimalPlace = 0;
-            this.colorname_9.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.colorname_9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.colorname_9.IntegerPart = 0;
-            this.colorname_9.IsCorrectDate = true;
-            this.colorname_9.isEnterKeyDown = false;
-            this.colorname_9.IsFirstTime = true;
-            this.colorname_9.isMaxLengthErr = false;
-            this.colorname_9.IsNumber = true;
-            this.colorname_9.IsShop = false;
-            this.colorname_9.Length = 9;
-            this.colorname_9.Location = new System.Drawing.Point(1066, 0);
-            this.colorname_9.MaxLength = 9;
-            this.colorname_9.MoveNext = true;
-            this.colorname_9.Name = "colorname_9";
-            this.colorname_9.Size = new System.Drawing.Size(115, 19);
-            this.colorname_9.TabIndex = 533;
-            this.colorname_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.colorname_9.UseColorSizMode = false;
-            // 
-            // colcd_9
-            // 
-            this.colcd_9.AllowMinus = false;
-            this.colcd_9.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.colcd_9.BackColor = System.Drawing.Color.White;
-            this.colcd_9.BorderColor = false;
-            this.colcd_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colcd_9.ClientColor = System.Drawing.SystemColors.Window;
-            this.colcd_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.colcd_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.colcd_9.DecimalPlace = 0;
-            this.colcd_9.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.colcd_9.IntegerPart = 0;
-            this.colcd_9.IsCorrectDate = true;
-            this.colcd_9.isEnterKeyDown = false;
-            this.colcd_9.IsFirstTime = true;
-            this.colcd_9.isMaxLengthErr = false;
-            this.colcd_9.IsNumber = true;
-            this.colcd_9.IsShop = false;
-            this.colcd_9.Length = 9;
-            this.colcd_9.Location = new System.Drawing.Point(979, 0);
-            this.colcd_9.MaxLength = 9;
-            this.colcd_9.MoveNext = true;
-            this.colcd_9.Name = "colcd_9";
-            this.colcd_9.Size = new System.Drawing.Size(87, 19);
-            this.colcd_9.TabIndex = 532;
-            this.colcd_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.colcd_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.colcd_9.UseColorSizMode = false;
-            // 
-            // taniCD_9
-            // 
-            this.taniCD_9.AutoSize = true;
-            this.taniCD_9.ChangeDate = "";
-            this.taniCD_9.ChangeDateWidth = 0;
-            this.taniCD_9.Code = "";
-            this.taniCD_9.CodeWidth = 30;
-            this.taniCD_9.CodeWidth1 = 30;
-            this.taniCD_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.taniCD_9.DataCheck = false;
-            this.taniCD_9.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.taniCD_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.taniCD_9.IsCopy = false;
-            this.taniCD_9.LabelText = "";
-            this.taniCD_9.LabelVisible = false;
-            this.taniCD_9.Location = new System.Drawing.Point(1004, 14);
-            this.taniCD_9.Margin = new System.Windows.Forms.Padding(0);
-            this.taniCD_9.Name = "taniCD_9";
-            this.taniCD_9.NameWidth = 281;
-            this.taniCD_9.SearchEnable = true;
-            this.taniCD_9.Size = new System.Drawing.Size(63, 27);
-            this.taniCD_9.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.taniCD_9.TabIndex = 531;
-            this.taniCD_9.test = null;
-            this.taniCD_9.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.taniCD_9.UseChangeDate = false;
-            this.taniCD_9.Value1 = null;
-            this.taniCD_9.Value2 = null;
-            this.taniCD_9.Value3 = null;
             // 
             // shiire_9
             // 
@@ -3245,36 +2679,6 @@
             this.salepriceout4_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.salepriceout4_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.salepriceout4_9.UseColorSizMode = false;
-            // 
-            // segment_9
-            // 
-            this.segment_9.AutoSize = true;
-            this.segment_9.ChangeDate = "";
-            this.segment_9.ChangeDateWidth = 0;
-            this.segment_9.Code = "";
-            this.segment_9.CodeWidth = 50;
-            this.segment_9.CodeWidth1 = 50;
-            this.segment_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.segment_9.DataCheck = false;
-            this.segment_9.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.segment_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.segment_9.IsCopy = false;
-            this.segment_9.LabelText = "";
-            this.segment_9.LabelVisible = false;
-            this.segment_9.Location = new System.Drawing.Point(921, 14);
-            this.segment_9.Margin = new System.Windows.Forms.Padding(0);
-            this.segment_9.Name = "segment_9";
-            this.segment_9.NameWidth = 0;
-            this.segment_9.SearchEnable = true;
-            this.segment_9.Size = new System.Drawing.Size(83, 27);
-            this.segment_9.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.segment_9.TabIndex = 335;
-            this.segment_9.test = null;
-            this.segment_9.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.segment_9.UseChangeDate = false;
-            this.segment_9.Value1 = null;
-            this.segment_9.Value2 = null;
-            this.segment_9.Value3 = null;
             // 
             // salepriceout3_9
             // 
@@ -3528,23 +2932,23 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.chk_8);
-            this.panel3.Controls.Add(this.TB_8);
-            this.panel3.Controls.Add(this.taxrate_8);
-            this.panel3.Controls.Add(this.hyoteidate_8);
-            this.panel3.Controls.Add(this.shouhin_8);
-            this.panel3.Controls.Add(this.brand_8);
-            this.panel3.Controls.Add(this.salepriceout5_8);
             this.panel3.Controls.Add(this.colorname_8);
+            this.panel3.Controls.Add(this.chk_8);
+            this.panel3.Controls.Add(this.taxrate_8);
+            this.panel3.Controls.Add(this.TB_8);
             this.panel3.Controls.Add(this.colcd_8);
+            this.panel3.Controls.Add(this.hyoteidate_8);
             this.panel3.Controls.Add(this.taniCD_8);
+            this.panel3.Controls.Add(this.salepriceout5_8);
+            this.panel3.Controls.Add(this.shouhin_8);
+            this.panel3.Controls.Add(this.segment_8);
             this.panel3.Controls.Add(this.shiire_8);
+            this.panel3.Controls.Add(this.brand_8);
             this.panel3.Controls.Add(this.sizecd_8);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.hyoteidatem_8);
             this.panel3.Controls.Add(this.sizeName_8);
             this.panel3.Controls.Add(this.salepriceout4_8);
-            this.panel3.Controls.Add(this.segment_8);
             this.panel3.Controls.Add(this.salepriceout3_8);
             this.panel3.Controls.Add(this.salepriceout2_8);
             this.panel3.Controls.Add(this.salepriceout1_8);
@@ -3562,10 +2966,12 @@
             // chk_8
             // 
             this.chk_8.AutoSize = true;
-            this.chk_8.Location = new System.Drawing.Point(71, 4);
+            this.chk_8.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chk_8.Location = new System.Drawing.Point(71, 3);
             this.chk_8.Name = "chk_8";
             this.chk_8.Size = new System.Drawing.Size(15, 14);
             this.chk_8.TabIndex = 559;
+            this.chk_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chk_8.UseVisualStyleBackColor = true;
             // 
             // TB_8
@@ -3598,22 +3004,6 @@
             this.TB_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_8.UseColorSizMode = false;
             // 
-            // taxrate_8
-            // 
-            this.taxrate_8.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.taxrate_8.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.taxrate_8.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
-            this.taxrate_8.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.taxrate_8.Flag = 0;
-            this.taxrate_8.FormattingEnabled = true;
-            this.taxrate_8.Length = 10;
-            this.taxrate_8.Location = new System.Drawing.Point(1065, 19);
-            this.taxrate_8.MaxLength = 10;
-            this.taxrate_8.MoveNext = true;
-            this.taxrate_8.Name = "taxrate_8";
-            this.taxrate_8.Size = new System.Drawing.Size(100, 20);
-            this.taxrate_8.TabIndex = 548;
-            // 
             // hyoteidate_8
             // 
             this.hyoteidate_8.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
@@ -3629,66 +3019,6 @@
             this.hyoteidate_8.Name = "hyoteidate_8";
             this.hyoteidate_8.Size = new System.Drawing.Size(53, 20);
             this.hyoteidate_8.TabIndex = 320;
-            // 
-            // shouhin_8
-            // 
-            this.shouhin_8.AllowMinus = false;
-            this.shouhin_8.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.shouhin_8.BackColor = System.Drawing.Color.White;
-            this.shouhin_8.BorderColor = false;
-            this.shouhin_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.shouhin_8.ClientColor = System.Drawing.SystemColors.Window;
-            this.shouhin_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.shouhin_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.shouhin_8.DecimalPlace = 0;
-            this.shouhin_8.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.shouhin_8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.shouhin_8.IntegerPart = 0;
-            this.shouhin_8.IsCorrectDate = true;
-            this.shouhin_8.isEnterKeyDown = false;
-            this.shouhin_8.IsFirstTime = true;
-            this.shouhin_8.isMaxLengthErr = false;
-            this.shouhin_8.IsNumber = true;
-            this.shouhin_8.IsShop = false;
-            this.shouhin_8.Length = 9;
-            this.shouhin_8.Location = new System.Drawing.Point(479, 0);
-            this.shouhin_8.MaxLength = 9;
-            this.shouhin_8.MoveNext = true;
-            this.shouhin_8.Name = "shouhin_8";
-            this.shouhin_8.Size = new System.Drawing.Size(500, 19);
-            this.shouhin_8.TabIndex = 547;
-            this.shouhin_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.shouhin_8.UseColorSizMode = false;
-            // 
-            // brand_8
-            // 
-            this.brand_8.AutoSize = true;
-            this.brand_8.ChangeDate = "";
-            this.brand_8.ChangeDateWidth = 0;
-            this.brand_8.Code = "";
-            this.brand_8.CodeWidth = 50;
-            this.brand_8.CodeWidth1 = 50;
-            this.brand_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.brand_8.DataCheck = false;
-            this.brand_8.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.brand_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.brand_8.IsCopy = false;
-            this.brand_8.LabelText = "";
-            this.brand_8.LabelVisible = false;
-            this.brand_8.Location = new System.Drawing.Point(838, 14);
-            this.brand_8.Margin = new System.Windows.Forms.Padding(0);
-            this.brand_8.Name = "brand_8";
-            this.brand_8.NameWidth = 281;
-            this.brand_8.SearchEnable = true;
-            this.brand_8.Size = new System.Drawing.Size(83, 27);
-            this.brand_8.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.brand_8.TabIndex = 546;
-            this.brand_8.test = null;
-            this.brand_8.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.brand_8.UseChangeDate = false;
-            this.brand_8.Value1 = null;
-            this.brand_8.Value2 = null;
-            this.brand_8.Value3 = null;
             // 
             // salepriceout5_8
             // 
@@ -3719,96 +3049,6 @@
             this.salepriceout5_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.salepriceout5_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.salepriceout5_8.UseColorSizMode = false;
-            // 
-            // colorname_8
-            // 
-            this.colorname_8.AllowMinus = false;
-            this.colorname_8.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.colorname_8.BackColor = System.Drawing.Color.White;
-            this.colorname_8.BorderColor = false;
-            this.colorname_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorname_8.ClientColor = System.Drawing.SystemColors.Window;
-            this.colorname_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.colorname_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.colorname_8.DecimalPlace = 0;
-            this.colorname_8.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.colorname_8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.colorname_8.IntegerPart = 0;
-            this.colorname_8.IsCorrectDate = true;
-            this.colorname_8.isEnterKeyDown = false;
-            this.colorname_8.IsFirstTime = true;
-            this.colorname_8.isMaxLengthErr = false;
-            this.colorname_8.IsNumber = true;
-            this.colorname_8.IsShop = false;
-            this.colorname_8.Length = 9;
-            this.colorname_8.Location = new System.Drawing.Point(1066, 0);
-            this.colorname_8.MaxLength = 9;
-            this.colorname_8.MoveNext = true;
-            this.colorname_8.Name = "colorname_8";
-            this.colorname_8.Size = new System.Drawing.Size(115, 19);
-            this.colorname_8.TabIndex = 533;
-            this.colorname_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.colorname_8.UseColorSizMode = false;
-            // 
-            // colcd_8
-            // 
-            this.colcd_8.AllowMinus = false;
-            this.colcd_8.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.colcd_8.BackColor = System.Drawing.Color.White;
-            this.colcd_8.BorderColor = false;
-            this.colcd_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colcd_8.ClientColor = System.Drawing.SystemColors.Window;
-            this.colcd_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.colcd_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.colcd_8.DecimalPlace = 0;
-            this.colcd_8.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.colcd_8.IntegerPart = 0;
-            this.colcd_8.IsCorrectDate = true;
-            this.colcd_8.isEnterKeyDown = false;
-            this.colcd_8.IsFirstTime = true;
-            this.colcd_8.isMaxLengthErr = false;
-            this.colcd_8.IsNumber = true;
-            this.colcd_8.IsShop = false;
-            this.colcd_8.Length = 9;
-            this.colcd_8.Location = new System.Drawing.Point(979, 0);
-            this.colcd_8.MaxLength = 9;
-            this.colcd_8.MoveNext = true;
-            this.colcd_8.Name = "colcd_8";
-            this.colcd_8.Size = new System.Drawing.Size(87, 19);
-            this.colcd_8.TabIndex = 532;
-            this.colcd_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.colcd_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.colcd_8.UseColorSizMode = false;
-            // 
-            // taniCD_8
-            // 
-            this.taniCD_8.AutoSize = true;
-            this.taniCD_8.ChangeDate = "";
-            this.taniCD_8.ChangeDateWidth = 0;
-            this.taniCD_8.Code = "";
-            this.taniCD_8.CodeWidth = 30;
-            this.taniCD_8.CodeWidth1 = 30;
-            this.taniCD_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.taniCD_8.DataCheck = false;
-            this.taniCD_8.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.taniCD_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.taniCD_8.IsCopy = false;
-            this.taniCD_8.LabelText = "";
-            this.taniCD_8.LabelVisible = false;
-            this.taniCD_8.Location = new System.Drawing.Point(1004, 14);
-            this.taniCD_8.Margin = new System.Windows.Forms.Padding(0);
-            this.taniCD_8.Name = "taniCD_8";
-            this.taniCD_8.NameWidth = 281;
-            this.taniCD_8.SearchEnable = true;
-            this.taniCD_8.Size = new System.Drawing.Size(63, 27);
-            this.taniCD_8.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.taniCD_8.TabIndex = 531;
-            this.taniCD_8.test = null;
-            this.taniCD_8.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.taniCD_8.UseChangeDate = false;
-            this.taniCD_8.Value1 = null;
-            this.taniCD_8.Value2 = null;
-            this.taniCD_8.Value3 = null;
             // 
             // shiire_8
             // 
@@ -3975,36 +3215,6 @@
             this.salepriceout4_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.salepriceout4_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.salepriceout4_8.UseColorSizMode = false;
-            // 
-            // segment_8
-            // 
-            this.segment_8.AutoSize = true;
-            this.segment_8.ChangeDate = "";
-            this.segment_8.ChangeDateWidth = 0;
-            this.segment_8.Code = "";
-            this.segment_8.CodeWidth = 50;
-            this.segment_8.CodeWidth1 = 50;
-            this.segment_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.segment_8.DataCheck = false;
-            this.segment_8.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.segment_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.segment_8.IsCopy = false;
-            this.segment_8.LabelText = "";
-            this.segment_8.LabelVisible = false;
-            this.segment_8.Location = new System.Drawing.Point(921, 14);
-            this.segment_8.Margin = new System.Windows.Forms.Padding(0);
-            this.segment_8.Name = "segment_8";
-            this.segment_8.NameWidth = 0;
-            this.segment_8.SearchEnable = true;
-            this.segment_8.Size = new System.Drawing.Size(83, 27);
-            this.segment_8.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.segment_8.TabIndex = 335;
-            this.segment_8.test = null;
-            this.segment_8.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.segment_8.UseChangeDate = false;
-            this.segment_8.Value1 = null;
-            this.segment_8.Value2 = null;
-            this.segment_8.Value3 = null;
             // 
             // salepriceout3_8
             // 
@@ -4258,23 +3468,23 @@
             // 
             // panel_7
             // 
-            this.panel_7.Controls.Add(this.chk_7);
-            this.panel_7.Controls.Add(this.TB_7);
-            this.panel_7.Controls.Add(this.taxrate_7);
-            this.panel_7.Controls.Add(this.hyoteidate_7);
-            this.panel_7.Controls.Add(this.shouhin_7);
-            this.panel_7.Controls.Add(this.brand_7);
-            this.panel_7.Controls.Add(this.salepriceout5_7);
             this.panel_7.Controls.Add(this.colorname_7);
+            this.panel_7.Controls.Add(this.chk_7);
+            this.panel_7.Controls.Add(this.taxrate_7);
+            this.panel_7.Controls.Add(this.TB_7);
             this.panel_7.Controls.Add(this.colcd_7);
+            this.panel_7.Controls.Add(this.hyoteidate_7);
             this.panel_7.Controls.Add(this.taniCD_7);
+            this.panel_7.Controls.Add(this.salepriceout5_7);
+            this.panel_7.Controls.Add(this.shouhin_7);
+            this.panel_7.Controls.Add(this.segment_7);
             this.panel_7.Controls.Add(this.shiire_7);
+            this.panel_7.Controls.Add(this.brand_7);
             this.panel_7.Controls.Add(this.sizecd_7);
             this.panel_7.Controls.Add(this.label32);
             this.panel_7.Controls.Add(this.hyoteidatem_7);
             this.panel_7.Controls.Add(this.sizeName_7);
             this.panel_7.Controls.Add(this.salepriceout4_7);
-            this.panel_7.Controls.Add(this.segment_7);
             this.panel_7.Controls.Add(this.salepriceout3_7);
             this.panel_7.Controls.Add(this.salepriceout2_7);
             this.panel_7.Controls.Add(this.salepriceout1_7);
@@ -4292,10 +3502,12 @@
             // chk_7
             // 
             this.chk_7.AutoSize = true;
-            this.chk_7.Location = new System.Drawing.Point(71, 4);
+            this.chk_7.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chk_7.Location = new System.Drawing.Point(71, 3);
             this.chk_7.Name = "chk_7";
             this.chk_7.Size = new System.Drawing.Size(15, 14);
             this.chk_7.TabIndex = 559;
+            this.chk_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chk_7.UseVisualStyleBackColor = true;
             // 
             // TB_7
@@ -4328,22 +3540,6 @@
             this.TB_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_7.UseColorSizMode = false;
             // 
-            // taxrate_7
-            // 
-            this.taxrate_7.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.taxrate_7.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.taxrate_7.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
-            this.taxrate_7.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.taxrate_7.Flag = 0;
-            this.taxrate_7.FormattingEnabled = true;
-            this.taxrate_7.Length = 10;
-            this.taxrate_7.Location = new System.Drawing.Point(1065, 19);
-            this.taxrate_7.MaxLength = 10;
-            this.taxrate_7.MoveNext = true;
-            this.taxrate_7.Name = "taxrate_7";
-            this.taxrate_7.Size = new System.Drawing.Size(100, 20);
-            this.taxrate_7.TabIndex = 548;
-            // 
             // hyoteidate_7
             // 
             this.hyoteidate_7.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
@@ -4359,66 +3555,6 @@
             this.hyoteidate_7.Name = "hyoteidate_7";
             this.hyoteidate_7.Size = new System.Drawing.Size(53, 20);
             this.hyoteidate_7.TabIndex = 320;
-            // 
-            // shouhin_7
-            // 
-            this.shouhin_7.AllowMinus = false;
-            this.shouhin_7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.shouhin_7.BackColor = System.Drawing.Color.White;
-            this.shouhin_7.BorderColor = false;
-            this.shouhin_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.shouhin_7.ClientColor = System.Drawing.SystemColors.Window;
-            this.shouhin_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.shouhin_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.shouhin_7.DecimalPlace = 0;
-            this.shouhin_7.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.shouhin_7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.shouhin_7.IntegerPart = 0;
-            this.shouhin_7.IsCorrectDate = true;
-            this.shouhin_7.isEnterKeyDown = false;
-            this.shouhin_7.IsFirstTime = true;
-            this.shouhin_7.isMaxLengthErr = false;
-            this.shouhin_7.IsNumber = true;
-            this.shouhin_7.IsShop = false;
-            this.shouhin_7.Length = 9;
-            this.shouhin_7.Location = new System.Drawing.Point(479, 0);
-            this.shouhin_7.MaxLength = 9;
-            this.shouhin_7.MoveNext = true;
-            this.shouhin_7.Name = "shouhin_7";
-            this.shouhin_7.Size = new System.Drawing.Size(500, 19);
-            this.shouhin_7.TabIndex = 547;
-            this.shouhin_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.shouhin_7.UseColorSizMode = false;
-            // 
-            // brand_7
-            // 
-            this.brand_7.AutoSize = true;
-            this.brand_7.ChangeDate = "";
-            this.brand_7.ChangeDateWidth = 0;
-            this.brand_7.Code = "";
-            this.brand_7.CodeWidth = 50;
-            this.brand_7.CodeWidth1 = 50;
-            this.brand_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.brand_7.DataCheck = false;
-            this.brand_7.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.brand_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.brand_7.IsCopy = false;
-            this.brand_7.LabelText = "";
-            this.brand_7.LabelVisible = false;
-            this.brand_7.Location = new System.Drawing.Point(838, 14);
-            this.brand_7.Margin = new System.Windows.Forms.Padding(0);
-            this.brand_7.Name = "brand_7";
-            this.brand_7.NameWidth = 281;
-            this.brand_7.SearchEnable = true;
-            this.brand_7.Size = new System.Drawing.Size(83, 27);
-            this.brand_7.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.brand_7.TabIndex = 546;
-            this.brand_7.test = null;
-            this.brand_7.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.brand_7.UseChangeDate = false;
-            this.brand_7.Value1 = null;
-            this.brand_7.Value2 = null;
-            this.brand_7.Value3 = null;
             // 
             // salepriceout5_7
             // 
@@ -4449,96 +3585,6 @@
             this.salepriceout5_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.salepriceout5_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.salepriceout5_7.UseColorSizMode = false;
-            // 
-            // colorname_7
-            // 
-            this.colorname_7.AllowMinus = false;
-            this.colorname_7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.colorname_7.BackColor = System.Drawing.Color.White;
-            this.colorname_7.BorderColor = false;
-            this.colorname_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorname_7.ClientColor = System.Drawing.SystemColors.Window;
-            this.colorname_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.colorname_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.colorname_7.DecimalPlace = 0;
-            this.colorname_7.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.colorname_7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.colorname_7.IntegerPart = 0;
-            this.colorname_7.IsCorrectDate = true;
-            this.colorname_7.isEnterKeyDown = false;
-            this.colorname_7.IsFirstTime = true;
-            this.colorname_7.isMaxLengthErr = false;
-            this.colorname_7.IsNumber = true;
-            this.colorname_7.IsShop = false;
-            this.colorname_7.Length = 9;
-            this.colorname_7.Location = new System.Drawing.Point(1066, 0);
-            this.colorname_7.MaxLength = 9;
-            this.colorname_7.MoveNext = true;
-            this.colorname_7.Name = "colorname_7";
-            this.colorname_7.Size = new System.Drawing.Size(115, 19);
-            this.colorname_7.TabIndex = 533;
-            this.colorname_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.colorname_7.UseColorSizMode = false;
-            // 
-            // colcd_7
-            // 
-            this.colcd_7.AllowMinus = false;
-            this.colcd_7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.colcd_7.BackColor = System.Drawing.Color.White;
-            this.colcd_7.BorderColor = false;
-            this.colcd_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colcd_7.ClientColor = System.Drawing.SystemColors.Window;
-            this.colcd_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.colcd_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.colcd_7.DecimalPlace = 0;
-            this.colcd_7.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.colcd_7.IntegerPart = 0;
-            this.colcd_7.IsCorrectDate = true;
-            this.colcd_7.isEnterKeyDown = false;
-            this.colcd_7.IsFirstTime = true;
-            this.colcd_7.isMaxLengthErr = false;
-            this.colcd_7.IsNumber = true;
-            this.colcd_7.IsShop = false;
-            this.colcd_7.Length = 9;
-            this.colcd_7.Location = new System.Drawing.Point(979, 0);
-            this.colcd_7.MaxLength = 9;
-            this.colcd_7.MoveNext = true;
-            this.colcd_7.Name = "colcd_7";
-            this.colcd_7.Size = new System.Drawing.Size(87, 19);
-            this.colcd_7.TabIndex = 532;
-            this.colcd_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.colcd_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.colcd_7.UseColorSizMode = false;
-            // 
-            // taniCD_7
-            // 
-            this.taniCD_7.AutoSize = true;
-            this.taniCD_7.ChangeDate = "";
-            this.taniCD_7.ChangeDateWidth = 0;
-            this.taniCD_7.Code = "";
-            this.taniCD_7.CodeWidth = 30;
-            this.taniCD_7.CodeWidth1 = 30;
-            this.taniCD_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.taniCD_7.DataCheck = false;
-            this.taniCD_7.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.taniCD_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.taniCD_7.IsCopy = false;
-            this.taniCD_7.LabelText = "";
-            this.taniCD_7.LabelVisible = false;
-            this.taniCD_7.Location = new System.Drawing.Point(1004, 14);
-            this.taniCD_7.Margin = new System.Windows.Forms.Padding(0);
-            this.taniCD_7.Name = "taniCD_7";
-            this.taniCD_7.NameWidth = 281;
-            this.taniCD_7.SearchEnable = true;
-            this.taniCD_7.Size = new System.Drawing.Size(63, 27);
-            this.taniCD_7.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.taniCD_7.TabIndex = 531;
-            this.taniCD_7.test = null;
-            this.taniCD_7.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.taniCD_7.UseChangeDate = false;
-            this.taniCD_7.Value1 = null;
-            this.taniCD_7.Value2 = null;
-            this.taniCD_7.Value3 = null;
             // 
             // shiire_7
             // 
@@ -4705,36 +3751,6 @@
             this.salepriceout4_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.salepriceout4_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.salepriceout4_7.UseColorSizMode = false;
-            // 
-            // segment_7
-            // 
-            this.segment_7.AutoSize = true;
-            this.segment_7.ChangeDate = "";
-            this.segment_7.ChangeDateWidth = 0;
-            this.segment_7.Code = "";
-            this.segment_7.CodeWidth = 50;
-            this.segment_7.CodeWidth1 = 50;
-            this.segment_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.segment_7.DataCheck = false;
-            this.segment_7.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.segment_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.segment_7.IsCopy = false;
-            this.segment_7.LabelText = "";
-            this.segment_7.LabelVisible = false;
-            this.segment_7.Location = new System.Drawing.Point(921, 14);
-            this.segment_7.Margin = new System.Windows.Forms.Padding(0);
-            this.segment_7.Name = "segment_7";
-            this.segment_7.NameWidth = 0;
-            this.segment_7.SearchEnable = true;
-            this.segment_7.Size = new System.Drawing.Size(83, 27);
-            this.segment_7.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.segment_7.TabIndex = 335;
-            this.segment_7.test = null;
-            this.segment_7.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.segment_7.UseChangeDate = false;
-            this.segment_7.Value1 = null;
-            this.segment_7.Value2 = null;
-            this.segment_7.Value3 = null;
             // 
             // salepriceout3_7
             // 
@@ -4988,23 +4004,23 @@
             // 
             // panel_6
             // 
-            this.panel_6.Controls.Add(this.chk_6);
-            this.panel_6.Controls.Add(this.TB_6);
-            this.panel_6.Controls.Add(this.taxrate_6);
-            this.panel_6.Controls.Add(this.hyoteidate_6);
-            this.panel_6.Controls.Add(this.shouhin_6);
-            this.panel_6.Controls.Add(this.brand_6);
-            this.panel_6.Controls.Add(this.salepriceout5_6);
             this.panel_6.Controls.Add(this.colorname_6);
+            this.panel_6.Controls.Add(this.chk_6);
+            this.panel_6.Controls.Add(this.taxrate_6);
+            this.panel_6.Controls.Add(this.TB_6);
             this.panel_6.Controls.Add(this.colcd_6);
+            this.panel_6.Controls.Add(this.hyoteidate_6);
             this.panel_6.Controls.Add(this.taniCD_6);
+            this.panel_6.Controls.Add(this.salepriceout5_6);
+            this.panel_6.Controls.Add(this.shouhin_6);
+            this.panel_6.Controls.Add(this.segment_6);
             this.panel_6.Controls.Add(this.shiire_6);
+            this.panel_6.Controls.Add(this.brand_6);
             this.panel_6.Controls.Add(this.sizecd_6);
             this.panel_6.Controls.Add(this.label30);
             this.panel_6.Controls.Add(this.hyoteidatem_6);
             this.panel_6.Controls.Add(this.sizeName_6);
             this.panel_6.Controls.Add(this.salepriceout4_6);
-            this.panel_6.Controls.Add(this.segment_6);
             this.panel_6.Controls.Add(this.salepriceout3_6);
             this.panel_6.Controls.Add(this.salepriceout2_6);
             this.panel_6.Controls.Add(this.salepriceout1_6);
@@ -5022,10 +4038,12 @@
             // chk_6
             // 
             this.chk_6.AutoSize = true;
-            this.chk_6.Location = new System.Drawing.Point(71, 4);
+            this.chk_6.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chk_6.Location = new System.Drawing.Point(71, 3);
             this.chk_6.Name = "chk_6";
             this.chk_6.Size = new System.Drawing.Size(15, 14);
             this.chk_6.TabIndex = 559;
+            this.chk_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chk_6.UseVisualStyleBackColor = true;
             // 
             // TB_6
@@ -5058,22 +4076,6 @@
             this.TB_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_6.UseColorSizMode = false;
             // 
-            // taxrate_6
-            // 
-            this.taxrate_6.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.taxrate_6.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.taxrate_6.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
-            this.taxrate_6.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.taxrate_6.Flag = 0;
-            this.taxrate_6.FormattingEnabled = true;
-            this.taxrate_6.Length = 10;
-            this.taxrate_6.Location = new System.Drawing.Point(1065, 19);
-            this.taxrate_6.MaxLength = 10;
-            this.taxrate_6.MoveNext = true;
-            this.taxrate_6.Name = "taxrate_6";
-            this.taxrate_6.Size = new System.Drawing.Size(100, 20);
-            this.taxrate_6.TabIndex = 548;
-            // 
             // hyoteidate_6
             // 
             this.hyoteidate_6.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
@@ -5089,66 +4091,6 @@
             this.hyoteidate_6.Name = "hyoteidate_6";
             this.hyoteidate_6.Size = new System.Drawing.Size(53, 20);
             this.hyoteidate_6.TabIndex = 320;
-            // 
-            // shouhin_6
-            // 
-            this.shouhin_6.AllowMinus = false;
-            this.shouhin_6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.shouhin_6.BackColor = System.Drawing.Color.White;
-            this.shouhin_6.BorderColor = false;
-            this.shouhin_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.shouhin_6.ClientColor = System.Drawing.SystemColors.Window;
-            this.shouhin_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.shouhin_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.shouhin_6.DecimalPlace = 0;
-            this.shouhin_6.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.shouhin_6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.shouhin_6.IntegerPart = 0;
-            this.shouhin_6.IsCorrectDate = true;
-            this.shouhin_6.isEnterKeyDown = false;
-            this.shouhin_6.IsFirstTime = true;
-            this.shouhin_6.isMaxLengthErr = false;
-            this.shouhin_6.IsNumber = true;
-            this.shouhin_6.IsShop = false;
-            this.shouhin_6.Length = 9;
-            this.shouhin_6.Location = new System.Drawing.Point(479, 0);
-            this.shouhin_6.MaxLength = 9;
-            this.shouhin_6.MoveNext = true;
-            this.shouhin_6.Name = "shouhin_6";
-            this.shouhin_6.Size = new System.Drawing.Size(500, 19);
-            this.shouhin_6.TabIndex = 547;
-            this.shouhin_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.shouhin_6.UseColorSizMode = false;
-            // 
-            // brand_6
-            // 
-            this.brand_6.AutoSize = true;
-            this.brand_6.ChangeDate = "";
-            this.brand_6.ChangeDateWidth = 0;
-            this.brand_6.Code = "";
-            this.brand_6.CodeWidth = 50;
-            this.brand_6.CodeWidth1 = 50;
-            this.brand_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.brand_6.DataCheck = false;
-            this.brand_6.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.brand_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.brand_6.IsCopy = false;
-            this.brand_6.LabelText = "";
-            this.brand_6.LabelVisible = false;
-            this.brand_6.Location = new System.Drawing.Point(838, 14);
-            this.brand_6.Margin = new System.Windows.Forms.Padding(0);
-            this.brand_6.Name = "brand_6";
-            this.brand_6.NameWidth = 281;
-            this.brand_6.SearchEnable = true;
-            this.brand_6.Size = new System.Drawing.Size(83, 27);
-            this.brand_6.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.brand_6.TabIndex = 546;
-            this.brand_6.test = null;
-            this.brand_6.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.brand_6.UseChangeDate = false;
-            this.brand_6.Value1 = null;
-            this.brand_6.Value2 = null;
-            this.brand_6.Value3 = null;
             // 
             // salepriceout5_6
             // 
@@ -5179,96 +4121,6 @@
             this.salepriceout5_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.salepriceout5_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.salepriceout5_6.UseColorSizMode = false;
-            // 
-            // colorname_6
-            // 
-            this.colorname_6.AllowMinus = false;
-            this.colorname_6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.colorname_6.BackColor = System.Drawing.Color.White;
-            this.colorname_6.BorderColor = false;
-            this.colorname_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorname_6.ClientColor = System.Drawing.SystemColors.Window;
-            this.colorname_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.colorname_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.colorname_6.DecimalPlace = 0;
-            this.colorname_6.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.colorname_6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.colorname_6.IntegerPart = 0;
-            this.colorname_6.IsCorrectDate = true;
-            this.colorname_6.isEnterKeyDown = false;
-            this.colorname_6.IsFirstTime = true;
-            this.colorname_6.isMaxLengthErr = false;
-            this.colorname_6.IsNumber = true;
-            this.colorname_6.IsShop = false;
-            this.colorname_6.Length = 9;
-            this.colorname_6.Location = new System.Drawing.Point(1066, 0);
-            this.colorname_6.MaxLength = 9;
-            this.colorname_6.MoveNext = true;
-            this.colorname_6.Name = "colorname_6";
-            this.colorname_6.Size = new System.Drawing.Size(115, 19);
-            this.colorname_6.TabIndex = 533;
-            this.colorname_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.colorname_6.UseColorSizMode = false;
-            // 
-            // colcd_6
-            // 
-            this.colcd_6.AllowMinus = false;
-            this.colcd_6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.colcd_6.BackColor = System.Drawing.Color.White;
-            this.colcd_6.BorderColor = false;
-            this.colcd_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colcd_6.ClientColor = System.Drawing.SystemColors.Window;
-            this.colcd_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.colcd_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.colcd_6.DecimalPlace = 0;
-            this.colcd_6.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.colcd_6.IntegerPart = 0;
-            this.colcd_6.IsCorrectDate = true;
-            this.colcd_6.isEnterKeyDown = false;
-            this.colcd_6.IsFirstTime = true;
-            this.colcd_6.isMaxLengthErr = false;
-            this.colcd_6.IsNumber = true;
-            this.colcd_6.IsShop = false;
-            this.colcd_6.Length = 9;
-            this.colcd_6.Location = new System.Drawing.Point(979, 0);
-            this.colcd_6.MaxLength = 9;
-            this.colcd_6.MoveNext = true;
-            this.colcd_6.Name = "colcd_6";
-            this.colcd_6.Size = new System.Drawing.Size(87, 19);
-            this.colcd_6.TabIndex = 532;
-            this.colcd_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.colcd_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.colcd_6.UseColorSizMode = false;
-            // 
-            // taniCD_6
-            // 
-            this.taniCD_6.AutoSize = true;
-            this.taniCD_6.ChangeDate = "";
-            this.taniCD_6.ChangeDateWidth = 0;
-            this.taniCD_6.Code = "";
-            this.taniCD_6.CodeWidth = 30;
-            this.taniCD_6.CodeWidth1 = 30;
-            this.taniCD_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.taniCD_6.DataCheck = false;
-            this.taniCD_6.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.taniCD_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.taniCD_6.IsCopy = false;
-            this.taniCD_6.LabelText = "";
-            this.taniCD_6.LabelVisible = false;
-            this.taniCD_6.Location = new System.Drawing.Point(1004, 14);
-            this.taniCD_6.Margin = new System.Windows.Forms.Padding(0);
-            this.taniCD_6.Name = "taniCD_6";
-            this.taniCD_6.NameWidth = 281;
-            this.taniCD_6.SearchEnable = true;
-            this.taniCD_6.Size = new System.Drawing.Size(63, 27);
-            this.taniCD_6.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.taniCD_6.TabIndex = 531;
-            this.taniCD_6.test = null;
-            this.taniCD_6.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.taniCD_6.UseChangeDate = false;
-            this.taniCD_6.Value1 = null;
-            this.taniCD_6.Value2 = null;
-            this.taniCD_6.Value3 = null;
             // 
             // shiire_6
             // 
@@ -5435,36 +4287,6 @@
             this.salepriceout4_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.salepriceout4_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.salepriceout4_6.UseColorSizMode = false;
-            // 
-            // segment_6
-            // 
-            this.segment_6.AutoSize = true;
-            this.segment_6.ChangeDate = "";
-            this.segment_6.ChangeDateWidth = 0;
-            this.segment_6.Code = "";
-            this.segment_6.CodeWidth = 50;
-            this.segment_6.CodeWidth1 = 50;
-            this.segment_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.segment_6.DataCheck = false;
-            this.segment_6.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.segment_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.segment_6.IsCopy = false;
-            this.segment_6.LabelText = "";
-            this.segment_6.LabelVisible = false;
-            this.segment_6.Location = new System.Drawing.Point(921, 14);
-            this.segment_6.Margin = new System.Windows.Forms.Padding(0);
-            this.segment_6.Name = "segment_6";
-            this.segment_6.NameWidth = 0;
-            this.segment_6.SearchEnable = true;
-            this.segment_6.Size = new System.Drawing.Size(83, 27);
-            this.segment_6.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.segment_6.TabIndex = 335;
-            this.segment_6.test = null;
-            this.segment_6.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.segment_6.UseChangeDate = false;
-            this.segment_6.Value1 = null;
-            this.segment_6.Value2 = null;
-            this.segment_6.Value3 = null;
             // 
             // salepriceout3_6
             // 
@@ -5718,23 +4540,23 @@
             // 
             // panel_5
             // 
-            this.panel_5.Controls.Add(this.chk_5);
-            this.panel_5.Controls.Add(this.TB_5);
-            this.panel_5.Controls.Add(this.taxrate_5);
-            this.panel_5.Controls.Add(this.hyoteidate_5);
-            this.panel_5.Controls.Add(this.shouhin_5);
-            this.panel_5.Controls.Add(this.brand_5);
-            this.panel_5.Controls.Add(this.salepriceout5_5);
             this.panel_5.Controls.Add(this.colorname_5);
+            this.panel_5.Controls.Add(this.chk_5);
+            this.panel_5.Controls.Add(this.taxrate_5);
+            this.panel_5.Controls.Add(this.TB_5);
             this.panel_5.Controls.Add(this.colcd_5);
+            this.panel_5.Controls.Add(this.hyoteidate_5);
             this.panel_5.Controls.Add(this.taniCD_5);
+            this.panel_5.Controls.Add(this.salepriceout5_5);
+            this.panel_5.Controls.Add(this.shouhin_5);
+            this.panel_5.Controls.Add(this.segment_5);
             this.panel_5.Controls.Add(this.shiire_5);
+            this.panel_5.Controls.Add(this.brand_5);
             this.panel_5.Controls.Add(this.sizecd_5);
             this.panel_5.Controls.Add(this.label28);
             this.panel_5.Controls.Add(this.hyoteidatem_5);
             this.panel_5.Controls.Add(this.sizeName_5);
             this.panel_5.Controls.Add(this.salepriceout4_5);
-            this.panel_5.Controls.Add(this.segment_5);
             this.panel_5.Controls.Add(this.salepriceout3_5);
             this.panel_5.Controls.Add(this.salepriceout2_5);
             this.panel_5.Controls.Add(this.salepriceout1_5);
@@ -5752,10 +4574,12 @@
             // chk_5
             // 
             this.chk_5.AutoSize = true;
-            this.chk_5.Location = new System.Drawing.Point(71, 4);
+            this.chk_5.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chk_5.Location = new System.Drawing.Point(71, 3);
             this.chk_5.Name = "chk_5";
             this.chk_5.Size = new System.Drawing.Size(15, 14);
             this.chk_5.TabIndex = 559;
+            this.chk_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chk_5.UseVisualStyleBackColor = true;
             // 
             // TB_5
@@ -5788,22 +4612,6 @@
             this.TB_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_5.UseColorSizMode = false;
             // 
-            // taxrate_5
-            // 
-            this.taxrate_5.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.taxrate_5.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.taxrate_5.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
-            this.taxrate_5.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.taxrate_5.Flag = 0;
-            this.taxrate_5.FormattingEnabled = true;
-            this.taxrate_5.Length = 10;
-            this.taxrate_5.Location = new System.Drawing.Point(1065, 19);
-            this.taxrate_5.MaxLength = 10;
-            this.taxrate_5.MoveNext = true;
-            this.taxrate_5.Name = "taxrate_5";
-            this.taxrate_5.Size = new System.Drawing.Size(100, 20);
-            this.taxrate_5.TabIndex = 548;
-            // 
             // hyoteidate_5
             // 
             this.hyoteidate_5.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
@@ -5819,66 +4627,6 @@
             this.hyoteidate_5.Name = "hyoteidate_5";
             this.hyoteidate_5.Size = new System.Drawing.Size(53, 20);
             this.hyoteidate_5.TabIndex = 320;
-            // 
-            // shouhin_5
-            // 
-            this.shouhin_5.AllowMinus = false;
-            this.shouhin_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.shouhin_5.BackColor = System.Drawing.Color.White;
-            this.shouhin_5.BorderColor = false;
-            this.shouhin_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.shouhin_5.ClientColor = System.Drawing.SystemColors.Window;
-            this.shouhin_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.shouhin_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.shouhin_5.DecimalPlace = 0;
-            this.shouhin_5.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.shouhin_5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.shouhin_5.IntegerPart = 0;
-            this.shouhin_5.IsCorrectDate = true;
-            this.shouhin_5.isEnterKeyDown = false;
-            this.shouhin_5.IsFirstTime = true;
-            this.shouhin_5.isMaxLengthErr = false;
-            this.shouhin_5.IsNumber = true;
-            this.shouhin_5.IsShop = false;
-            this.shouhin_5.Length = 9;
-            this.shouhin_5.Location = new System.Drawing.Point(479, 0);
-            this.shouhin_5.MaxLength = 9;
-            this.shouhin_5.MoveNext = true;
-            this.shouhin_5.Name = "shouhin_5";
-            this.shouhin_5.Size = new System.Drawing.Size(500, 19);
-            this.shouhin_5.TabIndex = 547;
-            this.shouhin_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.shouhin_5.UseColorSizMode = false;
-            // 
-            // brand_5
-            // 
-            this.brand_5.AutoSize = true;
-            this.brand_5.ChangeDate = "";
-            this.brand_5.ChangeDateWidth = 0;
-            this.brand_5.Code = "";
-            this.brand_5.CodeWidth = 50;
-            this.brand_5.CodeWidth1 = 50;
-            this.brand_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.brand_5.DataCheck = false;
-            this.brand_5.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.brand_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.brand_5.IsCopy = false;
-            this.brand_5.LabelText = "";
-            this.brand_5.LabelVisible = false;
-            this.brand_5.Location = new System.Drawing.Point(838, 14);
-            this.brand_5.Margin = new System.Windows.Forms.Padding(0);
-            this.brand_5.Name = "brand_5";
-            this.brand_5.NameWidth = 281;
-            this.brand_5.SearchEnable = true;
-            this.brand_5.Size = new System.Drawing.Size(83, 27);
-            this.brand_5.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.brand_5.TabIndex = 546;
-            this.brand_5.test = null;
-            this.brand_5.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.brand_5.UseChangeDate = false;
-            this.brand_5.Value1 = null;
-            this.brand_5.Value2 = null;
-            this.brand_5.Value3 = null;
             // 
             // salepriceout5_5
             // 
@@ -5909,96 +4657,6 @@
             this.salepriceout5_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.salepriceout5_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.salepriceout5_5.UseColorSizMode = false;
-            // 
-            // colorname_5
-            // 
-            this.colorname_5.AllowMinus = false;
-            this.colorname_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.colorname_5.BackColor = System.Drawing.Color.White;
-            this.colorname_5.BorderColor = false;
-            this.colorname_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorname_5.ClientColor = System.Drawing.SystemColors.Window;
-            this.colorname_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.colorname_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.colorname_5.DecimalPlace = 0;
-            this.colorname_5.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.colorname_5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.colorname_5.IntegerPart = 0;
-            this.colorname_5.IsCorrectDate = true;
-            this.colorname_5.isEnterKeyDown = false;
-            this.colorname_5.IsFirstTime = true;
-            this.colorname_5.isMaxLengthErr = false;
-            this.colorname_5.IsNumber = true;
-            this.colorname_5.IsShop = false;
-            this.colorname_5.Length = 9;
-            this.colorname_5.Location = new System.Drawing.Point(1066, 0);
-            this.colorname_5.MaxLength = 9;
-            this.colorname_5.MoveNext = true;
-            this.colorname_5.Name = "colorname_5";
-            this.colorname_5.Size = new System.Drawing.Size(115, 19);
-            this.colorname_5.TabIndex = 533;
-            this.colorname_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.colorname_5.UseColorSizMode = false;
-            // 
-            // colcd_5
-            // 
-            this.colcd_5.AllowMinus = false;
-            this.colcd_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.colcd_5.BackColor = System.Drawing.Color.White;
-            this.colcd_5.BorderColor = false;
-            this.colcd_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colcd_5.ClientColor = System.Drawing.SystemColors.Window;
-            this.colcd_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.colcd_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.colcd_5.DecimalPlace = 0;
-            this.colcd_5.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.colcd_5.IntegerPart = 0;
-            this.colcd_5.IsCorrectDate = true;
-            this.colcd_5.isEnterKeyDown = false;
-            this.colcd_5.IsFirstTime = true;
-            this.colcd_5.isMaxLengthErr = false;
-            this.colcd_5.IsNumber = true;
-            this.colcd_5.IsShop = false;
-            this.colcd_5.Length = 9;
-            this.colcd_5.Location = new System.Drawing.Point(979, 0);
-            this.colcd_5.MaxLength = 9;
-            this.colcd_5.MoveNext = true;
-            this.colcd_5.Name = "colcd_5";
-            this.colcd_5.Size = new System.Drawing.Size(87, 19);
-            this.colcd_5.TabIndex = 532;
-            this.colcd_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.colcd_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.colcd_5.UseColorSizMode = false;
-            // 
-            // taniCD_5
-            // 
-            this.taniCD_5.AutoSize = true;
-            this.taniCD_5.ChangeDate = "";
-            this.taniCD_5.ChangeDateWidth = 0;
-            this.taniCD_5.Code = "";
-            this.taniCD_5.CodeWidth = 30;
-            this.taniCD_5.CodeWidth1 = 30;
-            this.taniCD_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.taniCD_5.DataCheck = false;
-            this.taniCD_5.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.taniCD_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.taniCD_5.IsCopy = false;
-            this.taniCD_5.LabelText = "";
-            this.taniCD_5.LabelVisible = false;
-            this.taniCD_5.Location = new System.Drawing.Point(1004, 14);
-            this.taniCD_5.Margin = new System.Windows.Forms.Padding(0);
-            this.taniCD_5.Name = "taniCD_5";
-            this.taniCD_5.NameWidth = 281;
-            this.taniCD_5.SearchEnable = true;
-            this.taniCD_5.Size = new System.Drawing.Size(63, 27);
-            this.taniCD_5.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.taniCD_5.TabIndex = 531;
-            this.taniCD_5.test = null;
-            this.taniCD_5.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.taniCD_5.UseChangeDate = false;
-            this.taniCD_5.Value1 = null;
-            this.taniCD_5.Value2 = null;
-            this.taniCD_5.Value3 = null;
             // 
             // shiire_5
             // 
@@ -6165,36 +4823,6 @@
             this.salepriceout4_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.salepriceout4_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.salepriceout4_5.UseColorSizMode = false;
-            // 
-            // segment_5
-            // 
-            this.segment_5.AutoSize = true;
-            this.segment_5.ChangeDate = "";
-            this.segment_5.ChangeDateWidth = 0;
-            this.segment_5.Code = "";
-            this.segment_5.CodeWidth = 50;
-            this.segment_5.CodeWidth1 = 50;
-            this.segment_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.segment_5.DataCheck = false;
-            this.segment_5.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.segment_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.segment_5.IsCopy = false;
-            this.segment_5.LabelText = "";
-            this.segment_5.LabelVisible = false;
-            this.segment_5.Location = new System.Drawing.Point(921, 14);
-            this.segment_5.Margin = new System.Windows.Forms.Padding(0);
-            this.segment_5.Name = "segment_5";
-            this.segment_5.NameWidth = 0;
-            this.segment_5.SearchEnable = true;
-            this.segment_5.Size = new System.Drawing.Size(83, 27);
-            this.segment_5.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.segment_5.TabIndex = 335;
-            this.segment_5.test = null;
-            this.segment_5.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.segment_5.UseChangeDate = false;
-            this.segment_5.Value1 = null;
-            this.segment_5.Value2 = null;
-            this.segment_5.Value3 = null;
             // 
             // salepriceout3_5
             // 
@@ -6448,23 +5076,23 @@
             // 
             // panel_4
             // 
-            this.panel_4.Controls.Add(this.chk_4);
-            this.panel_4.Controls.Add(this.TB_4);
-            this.panel_4.Controls.Add(this.taxrate_4);
-            this.panel_4.Controls.Add(this.hyoteidate_4);
-            this.panel_4.Controls.Add(this.shouhin_4);
-            this.panel_4.Controls.Add(this.brand_4);
-            this.panel_4.Controls.Add(this.salepriceout5_4);
             this.panel_4.Controls.Add(this.colorname_4);
+            this.panel_4.Controls.Add(this.chk_4);
+            this.panel_4.Controls.Add(this.taxrate_4);
+            this.panel_4.Controls.Add(this.TB_4);
             this.panel_4.Controls.Add(this.colcd_4);
+            this.panel_4.Controls.Add(this.hyoteidate_4);
             this.panel_4.Controls.Add(this.taniCD_4);
+            this.panel_4.Controls.Add(this.salepriceout5_4);
+            this.panel_4.Controls.Add(this.shouhin_4);
+            this.panel_4.Controls.Add(this.segment_4);
             this.panel_4.Controls.Add(this.shiire_4);
+            this.panel_4.Controls.Add(this.brand_4);
             this.panel_4.Controls.Add(this.sizecd_4);
             this.panel_4.Controls.Add(this.label26);
             this.panel_4.Controls.Add(this.hyoteidatem_4);
             this.panel_4.Controls.Add(this.sizeName_4);
             this.panel_4.Controls.Add(this.salepriceout4_4);
-            this.panel_4.Controls.Add(this.segment_4);
             this.panel_4.Controls.Add(this.salepriceout3_4);
             this.panel_4.Controls.Add(this.salepriceout2_4);
             this.panel_4.Controls.Add(this.salepriceout1_4);
@@ -6482,10 +5110,12 @@
             // chk_4
             // 
             this.chk_4.AutoSize = true;
-            this.chk_4.Location = new System.Drawing.Point(71, 4);
+            this.chk_4.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chk_4.Location = new System.Drawing.Point(71, 3);
             this.chk_4.Name = "chk_4";
             this.chk_4.Size = new System.Drawing.Size(15, 14);
             this.chk_4.TabIndex = 559;
+            this.chk_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chk_4.UseVisualStyleBackColor = true;
             // 
             // TB_4
@@ -6518,22 +5148,6 @@
             this.TB_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_4.UseColorSizMode = false;
             // 
-            // taxrate_4
-            // 
-            this.taxrate_4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.taxrate_4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.taxrate_4.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
-            this.taxrate_4.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.taxrate_4.Flag = 0;
-            this.taxrate_4.FormattingEnabled = true;
-            this.taxrate_4.Length = 10;
-            this.taxrate_4.Location = new System.Drawing.Point(1065, 19);
-            this.taxrate_4.MaxLength = 10;
-            this.taxrate_4.MoveNext = true;
-            this.taxrate_4.Name = "taxrate_4";
-            this.taxrate_4.Size = new System.Drawing.Size(100, 20);
-            this.taxrate_4.TabIndex = 548;
-            // 
             // hyoteidate_4
             // 
             this.hyoteidate_4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
@@ -6549,66 +5163,6 @@
             this.hyoteidate_4.Name = "hyoteidate_4";
             this.hyoteidate_4.Size = new System.Drawing.Size(53, 20);
             this.hyoteidate_4.TabIndex = 320;
-            // 
-            // shouhin_4
-            // 
-            this.shouhin_4.AllowMinus = false;
-            this.shouhin_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.shouhin_4.BackColor = System.Drawing.Color.White;
-            this.shouhin_4.BorderColor = false;
-            this.shouhin_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.shouhin_4.ClientColor = System.Drawing.SystemColors.Window;
-            this.shouhin_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.shouhin_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.shouhin_4.DecimalPlace = 0;
-            this.shouhin_4.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.shouhin_4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.shouhin_4.IntegerPart = 0;
-            this.shouhin_4.IsCorrectDate = true;
-            this.shouhin_4.isEnterKeyDown = false;
-            this.shouhin_4.IsFirstTime = true;
-            this.shouhin_4.isMaxLengthErr = false;
-            this.shouhin_4.IsNumber = true;
-            this.shouhin_4.IsShop = false;
-            this.shouhin_4.Length = 9;
-            this.shouhin_4.Location = new System.Drawing.Point(479, 0);
-            this.shouhin_4.MaxLength = 9;
-            this.shouhin_4.MoveNext = true;
-            this.shouhin_4.Name = "shouhin_4";
-            this.shouhin_4.Size = new System.Drawing.Size(500, 19);
-            this.shouhin_4.TabIndex = 547;
-            this.shouhin_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.shouhin_4.UseColorSizMode = false;
-            // 
-            // brand_4
-            // 
-            this.brand_4.AutoSize = true;
-            this.brand_4.ChangeDate = "";
-            this.brand_4.ChangeDateWidth = 0;
-            this.brand_4.Code = "";
-            this.brand_4.CodeWidth = 50;
-            this.brand_4.CodeWidth1 = 50;
-            this.brand_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.brand_4.DataCheck = false;
-            this.brand_4.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.brand_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.brand_4.IsCopy = false;
-            this.brand_4.LabelText = "";
-            this.brand_4.LabelVisible = false;
-            this.brand_4.Location = new System.Drawing.Point(838, 14);
-            this.brand_4.Margin = new System.Windows.Forms.Padding(0);
-            this.brand_4.Name = "brand_4";
-            this.brand_4.NameWidth = 281;
-            this.brand_4.SearchEnable = true;
-            this.brand_4.Size = new System.Drawing.Size(83, 27);
-            this.brand_4.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.brand_4.TabIndex = 546;
-            this.brand_4.test = null;
-            this.brand_4.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.brand_4.UseChangeDate = false;
-            this.brand_4.Value1 = null;
-            this.brand_4.Value2 = null;
-            this.brand_4.Value3 = null;
             // 
             // salepriceout5_4
             // 
@@ -6639,96 +5193,6 @@
             this.salepriceout5_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.salepriceout5_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.salepriceout5_4.UseColorSizMode = false;
-            // 
-            // colorname_4
-            // 
-            this.colorname_4.AllowMinus = false;
-            this.colorname_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.colorname_4.BackColor = System.Drawing.Color.White;
-            this.colorname_4.BorderColor = false;
-            this.colorname_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorname_4.ClientColor = System.Drawing.SystemColors.Window;
-            this.colorname_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.colorname_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.colorname_4.DecimalPlace = 0;
-            this.colorname_4.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.colorname_4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.colorname_4.IntegerPart = 0;
-            this.colorname_4.IsCorrectDate = true;
-            this.colorname_4.isEnterKeyDown = false;
-            this.colorname_4.IsFirstTime = true;
-            this.colorname_4.isMaxLengthErr = false;
-            this.colorname_4.IsNumber = true;
-            this.colorname_4.IsShop = false;
-            this.colorname_4.Length = 9;
-            this.colorname_4.Location = new System.Drawing.Point(1066, 0);
-            this.colorname_4.MaxLength = 9;
-            this.colorname_4.MoveNext = true;
-            this.colorname_4.Name = "colorname_4";
-            this.colorname_4.Size = new System.Drawing.Size(115, 19);
-            this.colorname_4.TabIndex = 533;
-            this.colorname_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.colorname_4.UseColorSizMode = false;
-            // 
-            // colcd_4
-            // 
-            this.colcd_4.AllowMinus = false;
-            this.colcd_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.colcd_4.BackColor = System.Drawing.Color.White;
-            this.colcd_4.BorderColor = false;
-            this.colcd_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colcd_4.ClientColor = System.Drawing.SystemColors.Window;
-            this.colcd_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.colcd_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.colcd_4.DecimalPlace = 0;
-            this.colcd_4.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.colcd_4.IntegerPart = 0;
-            this.colcd_4.IsCorrectDate = true;
-            this.colcd_4.isEnterKeyDown = false;
-            this.colcd_4.IsFirstTime = true;
-            this.colcd_4.isMaxLengthErr = false;
-            this.colcd_4.IsNumber = true;
-            this.colcd_4.IsShop = false;
-            this.colcd_4.Length = 9;
-            this.colcd_4.Location = new System.Drawing.Point(979, 0);
-            this.colcd_4.MaxLength = 9;
-            this.colcd_4.MoveNext = true;
-            this.colcd_4.Name = "colcd_4";
-            this.colcd_4.Size = new System.Drawing.Size(87, 19);
-            this.colcd_4.TabIndex = 532;
-            this.colcd_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.colcd_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.colcd_4.UseColorSizMode = false;
-            // 
-            // taniCD_4
-            // 
-            this.taniCD_4.AutoSize = true;
-            this.taniCD_4.ChangeDate = "";
-            this.taniCD_4.ChangeDateWidth = 0;
-            this.taniCD_4.Code = "";
-            this.taniCD_4.CodeWidth = 30;
-            this.taniCD_4.CodeWidth1 = 30;
-            this.taniCD_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.taniCD_4.DataCheck = false;
-            this.taniCD_4.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.taniCD_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.taniCD_4.IsCopy = false;
-            this.taniCD_4.LabelText = "";
-            this.taniCD_4.LabelVisible = false;
-            this.taniCD_4.Location = new System.Drawing.Point(1004, 14);
-            this.taniCD_4.Margin = new System.Windows.Forms.Padding(0);
-            this.taniCD_4.Name = "taniCD_4";
-            this.taniCD_4.NameWidth = 281;
-            this.taniCD_4.SearchEnable = true;
-            this.taniCD_4.Size = new System.Drawing.Size(63, 27);
-            this.taniCD_4.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.taniCD_4.TabIndex = 531;
-            this.taniCD_4.test = null;
-            this.taniCD_4.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.taniCD_4.UseChangeDate = false;
-            this.taniCD_4.Value1 = null;
-            this.taniCD_4.Value2 = null;
-            this.taniCD_4.Value3 = null;
             // 
             // shiire_4
             // 
@@ -6895,36 +5359,6 @@
             this.salepriceout4_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.salepriceout4_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.salepriceout4_4.UseColorSizMode = false;
-            // 
-            // segment_4
-            // 
-            this.segment_4.AutoSize = true;
-            this.segment_4.ChangeDate = "";
-            this.segment_4.ChangeDateWidth = 0;
-            this.segment_4.Code = "";
-            this.segment_4.CodeWidth = 50;
-            this.segment_4.CodeWidth1 = 50;
-            this.segment_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.segment_4.DataCheck = false;
-            this.segment_4.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.segment_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.segment_4.IsCopy = false;
-            this.segment_4.LabelText = "";
-            this.segment_4.LabelVisible = false;
-            this.segment_4.Location = new System.Drawing.Point(921, 14);
-            this.segment_4.Margin = new System.Windows.Forms.Padding(0);
-            this.segment_4.Name = "segment_4";
-            this.segment_4.NameWidth = 0;
-            this.segment_4.SearchEnable = true;
-            this.segment_4.Size = new System.Drawing.Size(83, 27);
-            this.segment_4.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.segment_4.TabIndex = 335;
-            this.segment_4.test = null;
-            this.segment_4.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.segment_4.UseChangeDate = false;
-            this.segment_4.Value1 = null;
-            this.segment_4.Value2 = null;
-            this.segment_4.Value3 = null;
             // 
             // salepriceout3_4
             // 
@@ -7178,23 +5612,23 @@
             // 
             // panel_3
             // 
-            this.panel_3.Controls.Add(this.chk_3);
-            this.panel_3.Controls.Add(this.TB_3);
-            this.panel_3.Controls.Add(this.taxrate_3);
-            this.panel_3.Controls.Add(this.hyoteidate_3);
-            this.panel_3.Controls.Add(this.shouhin_3);
-            this.panel_3.Controls.Add(this.brand_3);
-            this.panel_3.Controls.Add(this.salepriceout5_3);
             this.panel_3.Controls.Add(this.colorname_3);
+            this.panel_3.Controls.Add(this.chk_3);
+            this.panel_3.Controls.Add(this.taxrate_3);
+            this.panel_3.Controls.Add(this.TB_3);
             this.panel_3.Controls.Add(this.colcd_3);
+            this.panel_3.Controls.Add(this.hyoteidate_3);
             this.panel_3.Controls.Add(this.taniCD_3);
+            this.panel_3.Controls.Add(this.salepriceout5_3);
+            this.panel_3.Controls.Add(this.shouhin_3);
+            this.panel_3.Controls.Add(this.segment_3);
             this.panel_3.Controls.Add(this.shiire_3);
+            this.panel_3.Controls.Add(this.brand_3);
             this.panel_3.Controls.Add(this.sizecd_3);
             this.panel_3.Controls.Add(this.label23);
             this.panel_3.Controls.Add(this.hyoteidatem_3);
             this.panel_3.Controls.Add(this.sizeName_3);
             this.panel_3.Controls.Add(this.salepriceout4_3);
-            this.panel_3.Controls.Add(this.segment_3);
             this.panel_3.Controls.Add(this.salepriceout3_3);
             this.panel_3.Controls.Add(this.salepriceout2_3);
             this.panel_3.Controls.Add(this.salepriceout1_3);
@@ -7212,10 +5646,12 @@
             // chk_3
             // 
             this.chk_3.AutoSize = true;
-            this.chk_3.Location = new System.Drawing.Point(71, 4);
+            this.chk_3.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chk_3.Location = new System.Drawing.Point(71, 3);
             this.chk_3.Name = "chk_3";
             this.chk_3.Size = new System.Drawing.Size(15, 14);
             this.chk_3.TabIndex = 559;
+            this.chk_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chk_3.UseVisualStyleBackColor = true;
             // 
             // TB_3
@@ -7248,22 +5684,6 @@
             this.TB_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_3.UseColorSizMode = false;
             // 
-            // taxrate_3
-            // 
-            this.taxrate_3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.taxrate_3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.taxrate_3.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
-            this.taxrate_3.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.taxrate_3.Flag = 0;
-            this.taxrate_3.FormattingEnabled = true;
-            this.taxrate_3.Length = 10;
-            this.taxrate_3.Location = new System.Drawing.Point(1065, 19);
-            this.taxrate_3.MaxLength = 10;
-            this.taxrate_3.MoveNext = true;
-            this.taxrate_3.Name = "taxrate_3";
-            this.taxrate_3.Size = new System.Drawing.Size(100, 20);
-            this.taxrate_3.TabIndex = 548;
-            // 
             // hyoteidate_3
             // 
             this.hyoteidate_3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
@@ -7279,66 +5699,6 @@
             this.hyoteidate_3.Name = "hyoteidate_3";
             this.hyoteidate_3.Size = new System.Drawing.Size(53, 20);
             this.hyoteidate_3.TabIndex = 320;
-            // 
-            // shouhin_3
-            // 
-            this.shouhin_3.AllowMinus = false;
-            this.shouhin_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.shouhin_3.BackColor = System.Drawing.Color.White;
-            this.shouhin_3.BorderColor = false;
-            this.shouhin_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.shouhin_3.ClientColor = System.Drawing.SystemColors.Window;
-            this.shouhin_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.shouhin_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.shouhin_3.DecimalPlace = 0;
-            this.shouhin_3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.shouhin_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.shouhin_3.IntegerPart = 0;
-            this.shouhin_3.IsCorrectDate = true;
-            this.shouhin_3.isEnterKeyDown = false;
-            this.shouhin_3.IsFirstTime = true;
-            this.shouhin_3.isMaxLengthErr = false;
-            this.shouhin_3.IsNumber = true;
-            this.shouhin_3.IsShop = false;
-            this.shouhin_3.Length = 9;
-            this.shouhin_3.Location = new System.Drawing.Point(479, 0);
-            this.shouhin_3.MaxLength = 9;
-            this.shouhin_3.MoveNext = true;
-            this.shouhin_3.Name = "shouhin_3";
-            this.shouhin_3.Size = new System.Drawing.Size(500, 19);
-            this.shouhin_3.TabIndex = 547;
-            this.shouhin_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.shouhin_3.UseColorSizMode = false;
-            // 
-            // brand_3
-            // 
-            this.brand_3.AutoSize = true;
-            this.brand_3.ChangeDate = "";
-            this.brand_3.ChangeDateWidth = 0;
-            this.brand_3.Code = "";
-            this.brand_3.CodeWidth = 50;
-            this.brand_3.CodeWidth1 = 50;
-            this.brand_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.brand_3.DataCheck = false;
-            this.brand_3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.brand_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.brand_3.IsCopy = false;
-            this.brand_3.LabelText = "";
-            this.brand_3.LabelVisible = false;
-            this.brand_3.Location = new System.Drawing.Point(838, 14);
-            this.brand_3.Margin = new System.Windows.Forms.Padding(0);
-            this.brand_3.Name = "brand_3";
-            this.brand_3.NameWidth = 281;
-            this.brand_3.SearchEnable = true;
-            this.brand_3.Size = new System.Drawing.Size(83, 27);
-            this.brand_3.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.brand_3.TabIndex = 546;
-            this.brand_3.test = null;
-            this.brand_3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.brand_3.UseChangeDate = false;
-            this.brand_3.Value1 = null;
-            this.brand_3.Value2 = null;
-            this.brand_3.Value3 = null;
             // 
             // salepriceout5_3
             // 
@@ -7369,96 +5729,6 @@
             this.salepriceout5_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.salepriceout5_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.salepriceout5_3.UseColorSizMode = false;
-            // 
-            // colorname_3
-            // 
-            this.colorname_3.AllowMinus = false;
-            this.colorname_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.colorname_3.BackColor = System.Drawing.Color.White;
-            this.colorname_3.BorderColor = false;
-            this.colorname_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorname_3.ClientColor = System.Drawing.SystemColors.Window;
-            this.colorname_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.colorname_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.colorname_3.DecimalPlace = 0;
-            this.colorname_3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.colorname_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.colorname_3.IntegerPart = 0;
-            this.colorname_3.IsCorrectDate = true;
-            this.colorname_3.isEnterKeyDown = false;
-            this.colorname_3.IsFirstTime = true;
-            this.colorname_3.isMaxLengthErr = false;
-            this.colorname_3.IsNumber = true;
-            this.colorname_3.IsShop = false;
-            this.colorname_3.Length = 9;
-            this.colorname_3.Location = new System.Drawing.Point(1066, 0);
-            this.colorname_3.MaxLength = 9;
-            this.colorname_3.MoveNext = true;
-            this.colorname_3.Name = "colorname_3";
-            this.colorname_3.Size = new System.Drawing.Size(115, 19);
-            this.colorname_3.TabIndex = 533;
-            this.colorname_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.colorname_3.UseColorSizMode = false;
-            // 
-            // colcd_3
-            // 
-            this.colcd_3.AllowMinus = false;
-            this.colcd_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.colcd_3.BackColor = System.Drawing.Color.White;
-            this.colcd_3.BorderColor = false;
-            this.colcd_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colcd_3.ClientColor = System.Drawing.SystemColors.Window;
-            this.colcd_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.colcd_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.colcd_3.DecimalPlace = 0;
-            this.colcd_3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.colcd_3.IntegerPart = 0;
-            this.colcd_3.IsCorrectDate = true;
-            this.colcd_3.isEnterKeyDown = false;
-            this.colcd_3.IsFirstTime = true;
-            this.colcd_3.isMaxLengthErr = false;
-            this.colcd_3.IsNumber = true;
-            this.colcd_3.IsShop = false;
-            this.colcd_3.Length = 9;
-            this.colcd_3.Location = new System.Drawing.Point(979, 0);
-            this.colcd_3.MaxLength = 9;
-            this.colcd_3.MoveNext = true;
-            this.colcd_3.Name = "colcd_3";
-            this.colcd_3.Size = new System.Drawing.Size(87, 19);
-            this.colcd_3.TabIndex = 532;
-            this.colcd_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.colcd_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.colcd_3.UseColorSizMode = false;
-            // 
-            // taniCD_3
-            // 
-            this.taniCD_3.AutoSize = true;
-            this.taniCD_3.ChangeDate = "";
-            this.taniCD_3.ChangeDateWidth = 0;
-            this.taniCD_3.Code = "";
-            this.taniCD_3.CodeWidth = 30;
-            this.taniCD_3.CodeWidth1 = 30;
-            this.taniCD_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.taniCD_3.DataCheck = false;
-            this.taniCD_3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.taniCD_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.taniCD_3.IsCopy = false;
-            this.taniCD_3.LabelText = "";
-            this.taniCD_3.LabelVisible = false;
-            this.taniCD_3.Location = new System.Drawing.Point(1004, 14);
-            this.taniCD_3.Margin = new System.Windows.Forms.Padding(0);
-            this.taniCD_3.Name = "taniCD_3";
-            this.taniCD_3.NameWidth = 281;
-            this.taniCD_3.SearchEnable = true;
-            this.taniCD_3.Size = new System.Drawing.Size(63, 27);
-            this.taniCD_3.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.taniCD_3.TabIndex = 531;
-            this.taniCD_3.test = null;
-            this.taniCD_3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.taniCD_3.UseChangeDate = false;
-            this.taniCD_3.Value1 = null;
-            this.taniCD_3.Value2 = null;
-            this.taniCD_3.Value3 = null;
             // 
             // shiire_3
             // 
@@ -7625,36 +5895,6 @@
             this.salepriceout4_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.salepriceout4_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.salepriceout4_3.UseColorSizMode = false;
-            // 
-            // segment_3
-            // 
-            this.segment_3.AutoSize = true;
-            this.segment_3.ChangeDate = "";
-            this.segment_3.ChangeDateWidth = 0;
-            this.segment_3.Code = "";
-            this.segment_3.CodeWidth = 50;
-            this.segment_3.CodeWidth1 = 50;
-            this.segment_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.segment_3.DataCheck = false;
-            this.segment_3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.segment_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.segment_3.IsCopy = false;
-            this.segment_3.LabelText = "";
-            this.segment_3.LabelVisible = false;
-            this.segment_3.Location = new System.Drawing.Point(921, 14);
-            this.segment_3.Margin = new System.Windows.Forms.Padding(0);
-            this.segment_3.Name = "segment_3";
-            this.segment_3.NameWidth = 0;
-            this.segment_3.SearchEnable = true;
-            this.segment_3.Size = new System.Drawing.Size(83, 27);
-            this.segment_3.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.segment_3.TabIndex = 335;
-            this.segment_3.test = null;
-            this.segment_3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.segment_3.UseChangeDate = false;
-            this.segment_3.Value1 = null;
-            this.segment_3.Value2 = null;
-            this.segment_3.Value3 = null;
             // 
             // salepriceout3_3
             // 
@@ -7908,23 +6148,23 @@
             // 
             // panel_2
             // 
+            this.panel_2.Controls.Add(this.colorname_2);
             this.panel_2.Controls.Add(this.chk_2);
             this.panel_2.Controls.Add(this.taxrate_2);
             this.panel_2.Controls.Add(this.TB_2);
-            this.panel_2.Controls.Add(this.hyoteidate_2);
-            this.panel_2.Controls.Add(this.shouhin_2);
-            this.panel_2.Controls.Add(this.brand_2);
-            this.panel_2.Controls.Add(this.salepriceout5_2);
-            this.panel_2.Controls.Add(this.colorname_2);
             this.panel_2.Controls.Add(this.colcd_2);
+            this.panel_2.Controls.Add(this.hyoteidate_2);
             this.panel_2.Controls.Add(this.taniCD_2);
+            this.panel_2.Controls.Add(this.salepriceout5_2);
+            this.panel_2.Controls.Add(this.shouhin_2);
+            this.panel_2.Controls.Add(this.segment_2);
             this.panel_2.Controls.Add(this.shiire_2);
+            this.panel_2.Controls.Add(this.brand_2);
             this.panel_2.Controls.Add(this.sizecd_2);
             this.panel_2.Controls.Add(this.label8);
             this.panel_2.Controls.Add(this.hyoteidatem_2);
             this.panel_2.Controls.Add(this.sizeName_2);
             this.panel_2.Controls.Add(this.salepriceout4_2);
-            this.panel_2.Controls.Add(this.segment_2);
             this.panel_2.Controls.Add(this.salepriceout3_2);
             this.panel_2.Controls.Add(this.salepriceout2_2);
             this.panel_2.Controls.Add(this.salepriceout1_2);
@@ -7942,27 +6182,13 @@
             // chk_2
             // 
             this.chk_2.AutoSize = true;
-            this.chk_2.Location = new System.Drawing.Point(71, 4);
+            this.chk_2.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chk_2.Location = new System.Drawing.Point(71, 3);
             this.chk_2.Name = "chk_2";
             this.chk_2.Size = new System.Drawing.Size(15, 14);
             this.chk_2.TabIndex = 559;
+            this.chk_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chk_2.UseVisualStyleBackColor = true;
-            // 
-            // taxrate_2
-            // 
-            this.taxrate_2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.taxrate_2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.taxrate_2.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
-            this.taxrate_2.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.taxrate_2.Flag = 0;
-            this.taxrate_2.FormattingEnabled = true;
-            this.taxrate_2.Length = 10;
-            this.taxrate_2.Location = new System.Drawing.Point(1065, 19);
-            this.taxrate_2.MaxLength = 10;
-            this.taxrate_2.MoveNext = true;
-            this.taxrate_2.Name = "taxrate_2";
-            this.taxrate_2.Size = new System.Drawing.Size(100, 20);
-            this.taxrate_2.TabIndex = 548;
             // 
             // TB_2
             // 
@@ -7990,7 +6216,7 @@
             this.TB_2.Name = "TB_2";
             this.TB_2.Size = new System.Drawing.Size(110, 19);
             this.TB_2.TabIndex = 558;
-            this.TB_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TB_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_2.UseColorSizMode = false;
             // 
@@ -8009,66 +6235,6 @@
             this.hyoteidate_2.Name = "hyoteidate_2";
             this.hyoteidate_2.Size = new System.Drawing.Size(53, 20);
             this.hyoteidate_2.TabIndex = 320;
-            // 
-            // shouhin_2
-            // 
-            this.shouhin_2.AllowMinus = false;
-            this.shouhin_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.shouhin_2.BackColor = System.Drawing.Color.White;
-            this.shouhin_2.BorderColor = false;
-            this.shouhin_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.shouhin_2.ClientColor = System.Drawing.SystemColors.Window;
-            this.shouhin_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.shouhin_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.shouhin_2.DecimalPlace = 0;
-            this.shouhin_2.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.shouhin_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.shouhin_2.IntegerPart = 0;
-            this.shouhin_2.IsCorrectDate = true;
-            this.shouhin_2.isEnterKeyDown = false;
-            this.shouhin_2.IsFirstTime = true;
-            this.shouhin_2.isMaxLengthErr = false;
-            this.shouhin_2.IsNumber = true;
-            this.shouhin_2.IsShop = false;
-            this.shouhin_2.Length = 9;
-            this.shouhin_2.Location = new System.Drawing.Point(479, 0);
-            this.shouhin_2.MaxLength = 9;
-            this.shouhin_2.MoveNext = true;
-            this.shouhin_2.Name = "shouhin_2";
-            this.shouhin_2.Size = new System.Drawing.Size(500, 19);
-            this.shouhin_2.TabIndex = 547;
-            this.shouhin_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.shouhin_2.UseColorSizMode = false;
-            // 
-            // brand_2
-            // 
-            this.brand_2.AutoSize = true;
-            this.brand_2.ChangeDate = "";
-            this.brand_2.ChangeDateWidth = 0;
-            this.brand_2.Code = "";
-            this.brand_2.CodeWidth = 50;
-            this.brand_2.CodeWidth1 = 50;
-            this.brand_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.brand_2.DataCheck = false;
-            this.brand_2.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.brand_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.brand_2.IsCopy = false;
-            this.brand_2.LabelText = "";
-            this.brand_2.LabelVisible = false;
-            this.brand_2.Location = new System.Drawing.Point(838, 14);
-            this.brand_2.Margin = new System.Windows.Forms.Padding(0);
-            this.brand_2.Name = "brand_2";
-            this.brand_2.NameWidth = 281;
-            this.brand_2.SearchEnable = true;
-            this.brand_2.Size = new System.Drawing.Size(83, 27);
-            this.brand_2.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.brand_2.TabIndex = 546;
-            this.brand_2.test = null;
-            this.brand_2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.brand_2.UseChangeDate = false;
-            this.brand_2.Value1 = null;
-            this.brand_2.Value2 = null;
-            this.brand_2.Value3 = null;
             // 
             // salepriceout5_2
             // 
@@ -8099,96 +6265,6 @@
             this.salepriceout5_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.salepriceout5_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.salepriceout5_2.UseColorSizMode = false;
-            // 
-            // colorname_2
-            // 
-            this.colorname_2.AllowMinus = false;
-            this.colorname_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.colorname_2.BackColor = System.Drawing.Color.White;
-            this.colorname_2.BorderColor = false;
-            this.colorname_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorname_2.ClientColor = System.Drawing.SystemColors.Window;
-            this.colorname_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.colorname_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.colorname_2.DecimalPlace = 0;
-            this.colorname_2.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.colorname_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.colorname_2.IntegerPart = 0;
-            this.colorname_2.IsCorrectDate = true;
-            this.colorname_2.isEnterKeyDown = false;
-            this.colorname_2.IsFirstTime = true;
-            this.colorname_2.isMaxLengthErr = false;
-            this.colorname_2.IsNumber = true;
-            this.colorname_2.IsShop = false;
-            this.colorname_2.Length = 9;
-            this.colorname_2.Location = new System.Drawing.Point(1066, 0);
-            this.colorname_2.MaxLength = 9;
-            this.colorname_2.MoveNext = true;
-            this.colorname_2.Name = "colorname_2";
-            this.colorname_2.Size = new System.Drawing.Size(115, 19);
-            this.colorname_2.TabIndex = 533;
-            this.colorname_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.colorname_2.UseColorSizMode = false;
-            // 
-            // colcd_2
-            // 
-            this.colcd_2.AllowMinus = false;
-            this.colcd_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.colcd_2.BackColor = System.Drawing.Color.White;
-            this.colcd_2.BorderColor = false;
-            this.colcd_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colcd_2.ClientColor = System.Drawing.SystemColors.Window;
-            this.colcd_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.colcd_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.colcd_2.DecimalPlace = 0;
-            this.colcd_2.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.colcd_2.IntegerPart = 0;
-            this.colcd_2.IsCorrectDate = true;
-            this.colcd_2.isEnterKeyDown = false;
-            this.colcd_2.IsFirstTime = true;
-            this.colcd_2.isMaxLengthErr = false;
-            this.colcd_2.IsNumber = true;
-            this.colcd_2.IsShop = false;
-            this.colcd_2.Length = 9;
-            this.colcd_2.Location = new System.Drawing.Point(979, 0);
-            this.colcd_2.MaxLength = 9;
-            this.colcd_2.MoveNext = true;
-            this.colcd_2.Name = "colcd_2";
-            this.colcd_2.Size = new System.Drawing.Size(87, 19);
-            this.colcd_2.TabIndex = 532;
-            this.colcd_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.colcd_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.colcd_2.UseColorSizMode = false;
-            // 
-            // taniCD_2
-            // 
-            this.taniCD_2.AutoSize = true;
-            this.taniCD_2.ChangeDate = "";
-            this.taniCD_2.ChangeDateWidth = 0;
-            this.taniCD_2.Code = "";
-            this.taniCD_2.CodeWidth = 30;
-            this.taniCD_2.CodeWidth1 = 30;
-            this.taniCD_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.taniCD_2.DataCheck = false;
-            this.taniCD_2.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.taniCD_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.taniCD_2.IsCopy = false;
-            this.taniCD_2.LabelText = "";
-            this.taniCD_2.LabelVisible = false;
-            this.taniCD_2.Location = new System.Drawing.Point(1004, 14);
-            this.taniCD_2.Margin = new System.Windows.Forms.Padding(0);
-            this.taniCD_2.Name = "taniCD_2";
-            this.taniCD_2.NameWidth = 281;
-            this.taniCD_2.SearchEnable = true;
-            this.taniCD_2.Size = new System.Drawing.Size(63, 27);
-            this.taniCD_2.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.taniCD_2.TabIndex = 531;
-            this.taniCD_2.test = null;
-            this.taniCD_2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.taniCD_2.UseChangeDate = false;
-            this.taniCD_2.Value1 = null;
-            this.taniCD_2.Value2 = null;
-            this.taniCD_2.Value3 = null;
             // 
             // shiire_2
             // 
@@ -8355,36 +6431,6 @@
             this.salepriceout4_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.salepriceout4_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.salepriceout4_2.UseColorSizMode = false;
-            // 
-            // segment_2
-            // 
-            this.segment_2.AutoSize = true;
-            this.segment_2.ChangeDate = "";
-            this.segment_2.ChangeDateWidth = 0;
-            this.segment_2.Code = "";
-            this.segment_2.CodeWidth = 50;
-            this.segment_2.CodeWidth1 = 50;
-            this.segment_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.segment_2.DataCheck = false;
-            this.segment_2.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.segment_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.segment_2.IsCopy = false;
-            this.segment_2.LabelText = "";
-            this.segment_2.LabelVisible = false;
-            this.segment_2.Location = new System.Drawing.Point(921, 14);
-            this.segment_2.Margin = new System.Windows.Forms.Padding(0);
-            this.segment_2.Name = "segment_2";
-            this.segment_2.NameWidth = 0;
-            this.segment_2.SearchEnable = true;
-            this.segment_2.Size = new System.Drawing.Size(83, 27);
-            this.segment_2.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.segment_2.TabIndex = 335;
-            this.segment_2.test = null;
-            this.segment_2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.segment_2.UseChangeDate = false;
-            this.segment_2.Value1 = null;
-            this.segment_2.Value2 = null;
-            this.segment_2.Value3 = null;
             // 
             // salepriceout3_2
             // 
@@ -8653,6 +6699,2222 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // colcd_1
+            // 
+            this.colcd_1.AllowMinus = false;
+            this.colcd_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.colcd_1.BackColor = System.Drawing.Color.White;
+            this.colcd_1.BorderColor = false;
+            this.colcd_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colcd_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.colcd_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.colcd_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.colcd_1.DecimalPlace = 0;
+            this.colcd_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.colcd_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.colcd_1.IntegerPart = 0;
+            this.colcd_1.IsCorrectDate = true;
+            this.colcd_1.isEnterKeyDown = false;
+            this.colcd_1.IsFirstTime = true;
+            this.colcd_1.isMaxLengthErr = false;
+            this.colcd_1.IsNumber = true;
+            this.colcd_1.IsShop = false;
+            this.colcd_1.Length = 9;
+            this.colcd_1.Location = new System.Drawing.Point(979, 0);
+            this.colcd_1.MaxLength = 9;
+            this.colcd_1.MoveNext = true;
+            this.colcd_1.Name = "colcd_1";
+            this.colcd_1.Size = new System.Drawing.Size(87, 19);
+            this.colcd_1.TabIndex = 569;
+            this.colcd_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.colcd_1.UseColorSizMode = false;
+            // 
+            // taniCD_1
+            // 
+            this.taniCD_1.AutoSize = true;
+            this.taniCD_1.ChangeDate = "";
+            this.taniCD_1.ChangeDateWidth = 0;
+            this.taniCD_1.Code = "";
+            this.taniCD_1.CodeWidth = 30;
+            this.taniCD_1.CodeWidth1 = 30;
+            this.taniCD_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.taniCD_1.DataCheck = false;
+            this.taniCD_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.taniCD_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.taniCD_1.IsCopy = false;
+            this.taniCD_1.LabelText = "";
+            this.taniCD_1.LabelVisible = false;
+            this.taniCD_1.Location = new System.Drawing.Point(1004, 14);
+            this.taniCD_1.Margin = new System.Windows.Forms.Padding(0);
+            this.taniCD_1.Name = "taniCD_1";
+            this.taniCD_1.NameWidth = 281;
+            this.taniCD_1.SearchEnable = true;
+            this.taniCD_1.Size = new System.Drawing.Size(62, 27);
+            this.taniCD_1.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.taniCD_1.TabIndex = 568;
+            this.taniCD_1.test = null;
+            this.taniCD_1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.taniCD_1.UseChangeDate = false;
+            this.taniCD_1.Value1 = null;
+            this.taniCD_1.Value2 = null;
+            this.taniCD_1.Value3 = null;
+            // 
+            // shouhin_1
+            // 
+            this.shouhin_1.AllowMinus = false;
+            this.shouhin_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.shouhin_1.BackColor = System.Drawing.Color.White;
+            this.shouhin_1.BorderColor = false;
+            this.shouhin_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.shouhin_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.shouhin_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.shouhin_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.shouhin_1.DecimalPlace = 0;
+            this.shouhin_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shouhin_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.shouhin_1.IntegerPart = 0;
+            this.shouhin_1.IsCorrectDate = true;
+            this.shouhin_1.isEnterKeyDown = false;
+            this.shouhin_1.IsFirstTime = true;
+            this.shouhin_1.isMaxLengthErr = false;
+            this.shouhin_1.IsNumber = true;
+            this.shouhin_1.IsShop = false;
+            this.shouhin_1.Length = 9;
+            this.shouhin_1.Location = new System.Drawing.Point(479, 0);
+            this.shouhin_1.MaxLength = 9;
+            this.shouhin_1.MoveNext = true;
+            this.shouhin_1.Name = "shouhin_1";
+            this.shouhin_1.Size = new System.Drawing.Size(500, 19);
+            this.shouhin_1.TabIndex = 567;
+            this.shouhin_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.shouhin_1.UseColorSizMode = false;
+            // 
+            // segment_1
+            // 
+            this.segment_1.AutoSize = true;
+            this.segment_1.ChangeDate = "";
+            this.segment_1.ChangeDateWidth = 0;
+            this.segment_1.Code = "";
+            this.segment_1.CodeWidth = 50;
+            this.segment_1.CodeWidth1 = 50;
+            this.segment_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.segment_1.DataCheck = false;
+            this.segment_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.segment_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.segment_1.IsCopy = false;
+            this.segment_1.LabelText = "";
+            this.segment_1.LabelVisible = false;
+            this.segment_1.Location = new System.Drawing.Point(923, 14);
+            this.segment_1.Margin = new System.Windows.Forms.Padding(0);
+            this.segment_1.Name = "segment_1";
+            this.segment_1.NameWidth = 281;
+            this.segment_1.SearchEnable = true;
+            this.segment_1.Size = new System.Drawing.Size(83, 27);
+            this.segment_1.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.segment_1.TabIndex = 566;
+            this.segment_1.test = null;
+            this.segment_1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.segment_1.UseChangeDate = false;
+            this.segment_1.Value1 = null;
+            this.segment_1.Value2 = null;
+            this.segment_1.Value3 = null;
+            // 
+            // brand_1
+            // 
+            this.brand_1.AutoSize = true;
+            this.brand_1.ChangeDate = "";
+            this.brand_1.ChangeDateWidth = 0;
+            this.brand_1.Code = "";
+            this.brand_1.CodeWidth = 54;
+            this.brand_1.CodeWidth1 = 54;
+            this.brand_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.brand_1.DataCheck = false;
+            this.brand_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.brand_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.brand_1.IsCopy = false;
+            this.brand_1.LabelText = "";
+            this.brand_1.LabelVisible = false;
+            this.brand_1.Location = new System.Drawing.Point(838, 14);
+            this.brand_1.Margin = new System.Windows.Forms.Padding(0);
+            this.brand_1.Name = "brand_1";
+            this.brand_1.NameWidth = 280;
+            this.brand_1.SearchEnable = true;
+            this.brand_1.Size = new System.Drawing.Size(87, 27);
+            this.brand_1.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.brand_1.TabIndex = 565;
+            this.brand_1.test = null;
+            this.brand_1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.brand_1.UseChangeDate = false;
+            this.brand_1.Value1 = null;
+            this.brand_1.Value2 = null;
+            this.brand_1.Value3 = null;
+            // 
+            // taxrate_1
+            // 
+            this.taxrate_1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.taxrate_1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.taxrate_1.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
+            this.taxrate_1.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.taxrate_1.Flag = 0;
+            this.taxrate_1.FormattingEnabled = true;
+            this.taxrate_1.Length = 10;
+            this.taxrate_1.Location = new System.Drawing.Point(1065, 19);
+            this.taxrate_1.MaxLength = 10;
+            this.taxrate_1.MoveNext = true;
+            this.taxrate_1.Name = "taxrate_1";
+            this.taxrate_1.Size = new System.Drawing.Size(100, 20);
+            this.taxrate_1.TabIndex = 560;
+            // 
+            // colorname_1
+            // 
+            this.colorname_1.AllowMinus = false;
+            this.colorname_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.colorname_1.BackColor = System.Drawing.Color.White;
+            this.colorname_1.BorderColor = false;
+            this.colorname_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colorname_1.ClientColor = System.Drawing.SystemColors.Window;
+            this.colorname_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.colorname_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.colorname_1.DecimalPlace = 0;
+            this.colorname_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.colorname_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.colorname_1.IntegerPart = 0;
+            this.colorname_1.IsCorrectDate = true;
+            this.colorname_1.isEnterKeyDown = false;
+            this.colorname_1.IsFirstTime = true;
+            this.colorname_1.isMaxLengthErr = false;
+            this.colorname_1.IsNumber = true;
+            this.colorname_1.IsShop = false;
+            this.colorname_1.Length = 9;
+            this.colorname_1.Location = new System.Drawing.Point(1065, 0);
+            this.colorname_1.MaxLength = 9;
+            this.colorname_1.MoveNext = true;
+            this.colorname_1.Name = "colorname_1";
+            this.colorname_1.Size = new System.Drawing.Size(116, 19);
+            this.colorname_1.TabIndex = 560;
+            this.colorname_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.colorname_1.UseColorSizMode = false;
+            // 
+            // colorname_2
+            // 
+            this.colorname_2.AllowMinus = false;
+            this.colorname_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.colorname_2.BackColor = System.Drawing.Color.White;
+            this.colorname_2.BorderColor = false;
+            this.colorname_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colorname_2.ClientColor = System.Drawing.SystemColors.Window;
+            this.colorname_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.colorname_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.colorname_2.DecimalPlace = 0;
+            this.colorname_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.colorname_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.colorname_2.IntegerPart = 0;
+            this.colorname_2.IsCorrectDate = true;
+            this.colorname_2.isEnterKeyDown = false;
+            this.colorname_2.IsFirstTime = true;
+            this.colorname_2.isMaxLengthErr = false;
+            this.colorname_2.IsNumber = true;
+            this.colorname_2.IsShop = false;
+            this.colorname_2.Length = 9;
+            this.colorname_2.Location = new System.Drawing.Point(1065, 0);
+            this.colorname_2.MaxLength = 9;
+            this.colorname_2.MoveNext = true;
+            this.colorname_2.Name = "colorname_2";
+            this.colorname_2.Size = new System.Drawing.Size(116, 19);
+            this.colorname_2.TabIndex = 570;
+            this.colorname_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.colorname_2.UseColorSizMode = false;
+            // 
+            // taxrate_2
+            // 
+            this.taxrate_2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.taxrate_2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.taxrate_2.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
+            this.taxrate_2.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.taxrate_2.Flag = 0;
+            this.taxrate_2.FormattingEnabled = true;
+            this.taxrate_2.Length = 10;
+            this.taxrate_2.Location = new System.Drawing.Point(1065, 19);
+            this.taxrate_2.MaxLength = 10;
+            this.taxrate_2.MoveNext = true;
+            this.taxrate_2.Name = "taxrate_2";
+            this.taxrate_2.Size = new System.Drawing.Size(100, 20);
+            this.taxrate_2.TabIndex = 571;
+            // 
+            // colcd_2
+            // 
+            this.colcd_2.AllowMinus = false;
+            this.colcd_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.colcd_2.BackColor = System.Drawing.Color.White;
+            this.colcd_2.BorderColor = false;
+            this.colcd_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colcd_2.ClientColor = System.Drawing.SystemColors.Window;
+            this.colcd_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.colcd_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.colcd_2.DecimalPlace = 0;
+            this.colcd_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.colcd_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.colcd_2.IntegerPart = 0;
+            this.colcd_2.IsCorrectDate = true;
+            this.colcd_2.isEnterKeyDown = false;
+            this.colcd_2.IsFirstTime = true;
+            this.colcd_2.isMaxLengthErr = false;
+            this.colcd_2.IsNumber = true;
+            this.colcd_2.IsShop = false;
+            this.colcd_2.Length = 9;
+            this.colcd_2.Location = new System.Drawing.Point(979, 0);
+            this.colcd_2.MaxLength = 9;
+            this.colcd_2.MoveNext = true;
+            this.colcd_2.Name = "colcd_2";
+            this.colcd_2.Size = new System.Drawing.Size(87, 19);
+            this.colcd_2.TabIndex = 576;
+            this.colcd_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.colcd_2.UseColorSizMode = false;
+            // 
+            // taniCD_2
+            // 
+            this.taniCD_2.AutoSize = true;
+            this.taniCD_2.ChangeDate = "";
+            this.taniCD_2.ChangeDateWidth = 0;
+            this.taniCD_2.Code = "";
+            this.taniCD_2.CodeWidth = 30;
+            this.taniCD_2.CodeWidth1 = 30;
+            this.taniCD_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.taniCD_2.DataCheck = false;
+            this.taniCD_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.taniCD_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.taniCD_2.IsCopy = false;
+            this.taniCD_2.LabelText = "";
+            this.taniCD_2.LabelVisible = false;
+            this.taniCD_2.Location = new System.Drawing.Point(1004, 14);
+            this.taniCD_2.Margin = new System.Windows.Forms.Padding(0);
+            this.taniCD_2.Name = "taniCD_2";
+            this.taniCD_2.NameWidth = 281;
+            this.taniCD_2.SearchEnable = true;
+            this.taniCD_2.Size = new System.Drawing.Size(63, 27);
+            this.taniCD_2.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.taniCD_2.TabIndex = 575;
+            this.taniCD_2.test = null;
+            this.taniCD_2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.taniCD_2.UseChangeDate = false;
+            this.taniCD_2.Value1 = null;
+            this.taniCD_2.Value2 = null;
+            this.taniCD_2.Value3 = null;
+            // 
+            // shouhin_2
+            // 
+            this.shouhin_2.AllowMinus = false;
+            this.shouhin_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.shouhin_2.BackColor = System.Drawing.Color.White;
+            this.shouhin_2.BorderColor = false;
+            this.shouhin_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.shouhin_2.ClientColor = System.Drawing.SystemColors.Window;
+            this.shouhin_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.shouhin_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.shouhin_2.DecimalPlace = 0;
+            this.shouhin_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shouhin_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.shouhin_2.IntegerPart = 0;
+            this.shouhin_2.IsCorrectDate = true;
+            this.shouhin_2.isEnterKeyDown = false;
+            this.shouhin_2.IsFirstTime = true;
+            this.shouhin_2.isMaxLengthErr = false;
+            this.shouhin_2.IsNumber = true;
+            this.shouhin_2.IsShop = false;
+            this.shouhin_2.Length = 9;
+            this.shouhin_2.Location = new System.Drawing.Point(479, 0);
+            this.shouhin_2.MaxLength = 9;
+            this.shouhin_2.MoveNext = true;
+            this.shouhin_2.Name = "shouhin_2";
+            this.shouhin_2.Size = new System.Drawing.Size(500, 19);
+            this.shouhin_2.TabIndex = 574;
+            this.shouhin_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.shouhin_2.UseColorSizMode = false;
+            // 
+            // segment_2
+            // 
+            this.segment_2.AutoSize = true;
+            this.segment_2.ChangeDate = "";
+            this.segment_2.ChangeDateWidth = 0;
+            this.segment_2.Code = "";
+            this.segment_2.CodeWidth = 50;
+            this.segment_2.CodeWidth1 = 50;
+            this.segment_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.segment_2.DataCheck = false;
+            this.segment_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.segment_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.segment_2.IsCopy = false;
+            this.segment_2.LabelText = "";
+            this.segment_2.LabelVisible = false;
+            this.segment_2.Location = new System.Drawing.Point(923, 14);
+            this.segment_2.Margin = new System.Windows.Forms.Padding(0);
+            this.segment_2.Name = "segment_2";
+            this.segment_2.NameWidth = 281;
+            this.segment_2.SearchEnable = true;
+            this.segment_2.Size = new System.Drawing.Size(83, 27);
+            this.segment_2.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.segment_2.TabIndex = 573;
+            this.segment_2.test = null;
+            this.segment_2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.segment_2.UseChangeDate = false;
+            this.segment_2.Value1 = null;
+            this.segment_2.Value2 = null;
+            this.segment_2.Value3 = null;
+            // 
+            // brand_2
+            // 
+            this.brand_2.AutoSize = true;
+            this.brand_2.ChangeDate = "";
+            this.brand_2.ChangeDateWidth = 0;
+            this.brand_2.Code = "";
+            this.brand_2.CodeWidth = 54;
+            this.brand_2.CodeWidth1 = 54;
+            this.brand_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.brand_2.DataCheck = false;
+            this.brand_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.brand_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.brand_2.IsCopy = false;
+            this.brand_2.LabelText = "";
+            this.brand_2.LabelVisible = false;
+            this.brand_2.Location = new System.Drawing.Point(838, 14);
+            this.brand_2.Margin = new System.Windows.Forms.Padding(0);
+            this.brand_2.Name = "brand_2";
+            this.brand_2.NameWidth = 280;
+            this.brand_2.SearchEnable = true;
+            this.brand_2.Size = new System.Drawing.Size(87, 27);
+            this.brand_2.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.brand_2.TabIndex = 572;
+            this.brand_2.test = null;
+            this.brand_2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.brand_2.UseChangeDate = false;
+            this.brand_2.Value1 = null;
+            this.brand_2.Value2 = null;
+            this.brand_2.Value3 = null;
+            // 
+            // colorname_3
+            // 
+            this.colorname_3.AllowMinus = false;
+            this.colorname_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.colorname_3.BackColor = System.Drawing.Color.White;
+            this.colorname_3.BorderColor = false;
+            this.colorname_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colorname_3.ClientColor = System.Drawing.SystemColors.Window;
+            this.colorname_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.colorname_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.colorname_3.DecimalPlace = 0;
+            this.colorname_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.colorname_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.colorname_3.IntegerPart = 0;
+            this.colorname_3.IsCorrectDate = true;
+            this.colorname_3.isEnterKeyDown = false;
+            this.colorname_3.IsFirstTime = true;
+            this.colorname_3.isMaxLengthErr = false;
+            this.colorname_3.IsNumber = true;
+            this.colorname_3.IsShop = false;
+            this.colorname_3.Length = 9;
+            this.colorname_3.Location = new System.Drawing.Point(1065, 0);
+            this.colorname_3.MaxLength = 9;
+            this.colorname_3.MoveNext = true;
+            this.colorname_3.Name = "colorname_3";
+            this.colorname_3.Size = new System.Drawing.Size(116, 19);
+            this.colorname_3.TabIndex = 570;
+            this.colorname_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.colorname_3.UseColorSizMode = false;
+            // 
+            // taxrate_3
+            // 
+            this.taxrate_3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.taxrate_3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.taxrate_3.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
+            this.taxrate_3.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.taxrate_3.Flag = 0;
+            this.taxrate_3.FormattingEnabled = true;
+            this.taxrate_3.Length = 10;
+            this.taxrate_3.Location = new System.Drawing.Point(1065, 19);
+            this.taxrate_3.MaxLength = 10;
+            this.taxrate_3.MoveNext = true;
+            this.taxrate_3.Name = "taxrate_3";
+            this.taxrate_3.Size = new System.Drawing.Size(100, 20);
+            this.taxrate_3.TabIndex = 571;
+            // 
+            // colcd_3
+            // 
+            this.colcd_3.AllowMinus = false;
+            this.colcd_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.colcd_3.BackColor = System.Drawing.Color.White;
+            this.colcd_3.BorderColor = false;
+            this.colcd_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colcd_3.ClientColor = System.Drawing.SystemColors.Window;
+            this.colcd_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.colcd_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.colcd_3.DecimalPlace = 0;
+            this.colcd_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.colcd_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.colcd_3.IntegerPart = 0;
+            this.colcd_3.IsCorrectDate = true;
+            this.colcd_3.isEnterKeyDown = false;
+            this.colcd_3.IsFirstTime = true;
+            this.colcd_3.isMaxLengthErr = false;
+            this.colcd_3.IsNumber = true;
+            this.colcd_3.IsShop = false;
+            this.colcd_3.Length = 9;
+            this.colcd_3.Location = new System.Drawing.Point(979, 0);
+            this.colcd_3.MaxLength = 9;
+            this.colcd_3.MoveNext = true;
+            this.colcd_3.Name = "colcd_3";
+            this.colcd_3.Size = new System.Drawing.Size(87, 19);
+            this.colcd_3.TabIndex = 576;
+            this.colcd_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.colcd_3.UseColorSizMode = false;
+            // 
+            // taniCD_3
+            // 
+            this.taniCD_3.AutoSize = true;
+            this.taniCD_3.ChangeDate = "";
+            this.taniCD_3.ChangeDateWidth = 0;
+            this.taniCD_3.Code = "";
+            this.taniCD_3.CodeWidth = 30;
+            this.taniCD_3.CodeWidth1 = 30;
+            this.taniCD_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.taniCD_3.DataCheck = false;
+            this.taniCD_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.taniCD_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.taniCD_3.IsCopy = false;
+            this.taniCD_3.LabelText = "";
+            this.taniCD_3.LabelVisible = false;
+            this.taniCD_3.Location = new System.Drawing.Point(1004, 14);
+            this.taniCD_3.Margin = new System.Windows.Forms.Padding(0);
+            this.taniCD_3.Name = "taniCD_3";
+            this.taniCD_3.NameWidth = 281;
+            this.taniCD_3.SearchEnable = true;
+            this.taniCD_3.Size = new System.Drawing.Size(63, 27);
+            this.taniCD_3.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.taniCD_3.TabIndex = 575;
+            this.taniCD_3.test = null;
+            this.taniCD_3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.taniCD_3.UseChangeDate = false;
+            this.taniCD_3.Value1 = null;
+            this.taniCD_3.Value2 = null;
+            this.taniCD_3.Value3 = null;
+            // 
+            // shouhin_3
+            // 
+            this.shouhin_3.AllowMinus = false;
+            this.shouhin_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.shouhin_3.BackColor = System.Drawing.Color.White;
+            this.shouhin_3.BorderColor = false;
+            this.shouhin_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.shouhin_3.ClientColor = System.Drawing.SystemColors.Window;
+            this.shouhin_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.shouhin_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.shouhin_3.DecimalPlace = 0;
+            this.shouhin_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shouhin_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.shouhin_3.IntegerPart = 0;
+            this.shouhin_3.IsCorrectDate = true;
+            this.shouhin_3.isEnterKeyDown = false;
+            this.shouhin_3.IsFirstTime = true;
+            this.shouhin_3.isMaxLengthErr = false;
+            this.shouhin_3.IsNumber = true;
+            this.shouhin_3.IsShop = false;
+            this.shouhin_3.Length = 9;
+            this.shouhin_3.Location = new System.Drawing.Point(479, 0);
+            this.shouhin_3.MaxLength = 9;
+            this.shouhin_3.MoveNext = true;
+            this.shouhin_3.Name = "shouhin_3";
+            this.shouhin_3.Size = new System.Drawing.Size(500, 19);
+            this.shouhin_3.TabIndex = 574;
+            this.shouhin_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.shouhin_3.UseColorSizMode = false;
+            // 
+            // segment_3
+            // 
+            this.segment_3.AutoSize = true;
+            this.segment_3.ChangeDate = "";
+            this.segment_3.ChangeDateWidth = 0;
+            this.segment_3.Code = "";
+            this.segment_3.CodeWidth = 50;
+            this.segment_3.CodeWidth1 = 50;
+            this.segment_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.segment_3.DataCheck = false;
+            this.segment_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.segment_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.segment_3.IsCopy = false;
+            this.segment_3.LabelText = "";
+            this.segment_3.LabelVisible = false;
+            this.segment_3.Location = new System.Drawing.Point(923, 14);
+            this.segment_3.Margin = new System.Windows.Forms.Padding(0);
+            this.segment_3.Name = "segment_3";
+            this.segment_3.NameWidth = 281;
+            this.segment_3.SearchEnable = true;
+            this.segment_3.Size = new System.Drawing.Size(83, 27);
+            this.segment_3.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.segment_3.TabIndex = 573;
+            this.segment_3.test = null;
+            this.segment_3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.segment_3.UseChangeDate = false;
+            this.segment_3.Value1 = null;
+            this.segment_3.Value2 = null;
+            this.segment_3.Value3 = null;
+            // 
+            // brand_3
+            // 
+            this.brand_3.AutoSize = true;
+            this.brand_3.ChangeDate = "";
+            this.brand_3.ChangeDateWidth = 0;
+            this.brand_3.Code = "";
+            this.brand_3.CodeWidth = 54;
+            this.brand_3.CodeWidth1 = 54;
+            this.brand_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.brand_3.DataCheck = false;
+            this.brand_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.brand_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.brand_3.IsCopy = false;
+            this.brand_3.LabelText = "";
+            this.brand_3.LabelVisible = false;
+            this.brand_3.Location = new System.Drawing.Point(838, 14);
+            this.brand_3.Margin = new System.Windows.Forms.Padding(0);
+            this.brand_3.Name = "brand_3";
+            this.brand_3.NameWidth = 280;
+            this.brand_3.SearchEnable = true;
+            this.brand_3.Size = new System.Drawing.Size(87, 27);
+            this.brand_3.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.brand_3.TabIndex = 572;
+            this.brand_3.test = null;
+            this.brand_3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.brand_3.UseChangeDate = false;
+            this.brand_3.Value1 = null;
+            this.brand_3.Value2 = null;
+            this.brand_3.Value3 = null;
+            // 
+            // colorname_4
+            // 
+            this.colorname_4.AllowMinus = false;
+            this.colorname_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.colorname_4.BackColor = System.Drawing.Color.White;
+            this.colorname_4.BorderColor = false;
+            this.colorname_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colorname_4.ClientColor = System.Drawing.SystemColors.Window;
+            this.colorname_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.colorname_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.colorname_4.DecimalPlace = 0;
+            this.colorname_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.colorname_4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.colorname_4.IntegerPart = 0;
+            this.colorname_4.IsCorrectDate = true;
+            this.colorname_4.isEnterKeyDown = false;
+            this.colorname_4.IsFirstTime = true;
+            this.colorname_4.isMaxLengthErr = false;
+            this.colorname_4.IsNumber = true;
+            this.colorname_4.IsShop = false;
+            this.colorname_4.Length = 9;
+            this.colorname_4.Location = new System.Drawing.Point(1065, 0);
+            this.colorname_4.MaxLength = 9;
+            this.colorname_4.MoveNext = true;
+            this.colorname_4.Name = "colorname_4";
+            this.colorname_4.Size = new System.Drawing.Size(116, 19);
+            this.colorname_4.TabIndex = 570;
+            this.colorname_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.colorname_4.UseColorSizMode = false;
+            // 
+            // taxrate_4
+            // 
+            this.taxrate_4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.taxrate_4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.taxrate_4.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
+            this.taxrate_4.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.taxrate_4.Flag = 0;
+            this.taxrate_4.FormattingEnabled = true;
+            this.taxrate_4.Length = 10;
+            this.taxrate_4.Location = new System.Drawing.Point(1065, 19);
+            this.taxrate_4.MaxLength = 10;
+            this.taxrate_4.MoveNext = true;
+            this.taxrate_4.Name = "taxrate_4";
+            this.taxrate_4.Size = new System.Drawing.Size(100, 20);
+            this.taxrate_4.TabIndex = 571;
+            // 
+            // colcd_4
+            // 
+            this.colcd_4.AllowMinus = false;
+            this.colcd_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.colcd_4.BackColor = System.Drawing.Color.White;
+            this.colcd_4.BorderColor = false;
+            this.colcd_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colcd_4.ClientColor = System.Drawing.SystemColors.Window;
+            this.colcd_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.colcd_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.colcd_4.DecimalPlace = 0;
+            this.colcd_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.colcd_4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.colcd_4.IntegerPart = 0;
+            this.colcd_4.IsCorrectDate = true;
+            this.colcd_4.isEnterKeyDown = false;
+            this.colcd_4.IsFirstTime = true;
+            this.colcd_4.isMaxLengthErr = false;
+            this.colcd_4.IsNumber = true;
+            this.colcd_4.IsShop = false;
+            this.colcd_4.Length = 9;
+            this.colcd_4.Location = new System.Drawing.Point(979, 0);
+            this.colcd_4.MaxLength = 9;
+            this.colcd_4.MoveNext = true;
+            this.colcd_4.Name = "colcd_4";
+            this.colcd_4.Size = new System.Drawing.Size(87, 19);
+            this.colcd_4.TabIndex = 576;
+            this.colcd_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.colcd_4.UseColorSizMode = false;
+            // 
+            // taniCD_4
+            // 
+            this.taniCD_4.AutoSize = true;
+            this.taniCD_4.ChangeDate = "";
+            this.taniCD_4.ChangeDateWidth = 0;
+            this.taniCD_4.Code = "";
+            this.taniCD_4.CodeWidth = 30;
+            this.taniCD_4.CodeWidth1 = 30;
+            this.taniCD_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.taniCD_4.DataCheck = false;
+            this.taniCD_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.taniCD_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.taniCD_4.IsCopy = false;
+            this.taniCD_4.LabelText = "";
+            this.taniCD_4.LabelVisible = false;
+            this.taniCD_4.Location = new System.Drawing.Point(1004, 14);
+            this.taniCD_4.Margin = new System.Windows.Forms.Padding(0);
+            this.taniCD_4.Name = "taniCD_4";
+            this.taniCD_4.NameWidth = 281;
+            this.taniCD_4.SearchEnable = true;
+            this.taniCD_4.Size = new System.Drawing.Size(63, 27);
+            this.taniCD_4.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.taniCD_4.TabIndex = 575;
+            this.taniCD_4.test = null;
+            this.taniCD_4.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.taniCD_4.UseChangeDate = false;
+            this.taniCD_4.Value1 = null;
+            this.taniCD_4.Value2 = null;
+            this.taniCD_4.Value3 = null;
+            // 
+            // shouhin_4
+            // 
+            this.shouhin_4.AllowMinus = false;
+            this.shouhin_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.shouhin_4.BackColor = System.Drawing.Color.White;
+            this.shouhin_4.BorderColor = false;
+            this.shouhin_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.shouhin_4.ClientColor = System.Drawing.SystemColors.Window;
+            this.shouhin_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.shouhin_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.shouhin_4.DecimalPlace = 0;
+            this.shouhin_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shouhin_4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.shouhin_4.IntegerPart = 0;
+            this.shouhin_4.IsCorrectDate = true;
+            this.shouhin_4.isEnterKeyDown = false;
+            this.shouhin_4.IsFirstTime = true;
+            this.shouhin_4.isMaxLengthErr = false;
+            this.shouhin_4.IsNumber = true;
+            this.shouhin_4.IsShop = false;
+            this.shouhin_4.Length = 9;
+            this.shouhin_4.Location = new System.Drawing.Point(479, 0);
+            this.shouhin_4.MaxLength = 9;
+            this.shouhin_4.MoveNext = true;
+            this.shouhin_4.Name = "shouhin_4";
+            this.shouhin_4.Size = new System.Drawing.Size(500, 19);
+            this.shouhin_4.TabIndex = 574;
+            this.shouhin_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.shouhin_4.UseColorSizMode = false;
+            // 
+            // segment_4
+            // 
+            this.segment_4.AutoSize = true;
+            this.segment_4.ChangeDate = "";
+            this.segment_4.ChangeDateWidth = 0;
+            this.segment_4.Code = "";
+            this.segment_4.CodeWidth = 50;
+            this.segment_4.CodeWidth1 = 50;
+            this.segment_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.segment_4.DataCheck = false;
+            this.segment_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.segment_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.segment_4.IsCopy = false;
+            this.segment_4.LabelText = "";
+            this.segment_4.LabelVisible = false;
+            this.segment_4.Location = new System.Drawing.Point(923, 14);
+            this.segment_4.Margin = new System.Windows.Forms.Padding(0);
+            this.segment_4.Name = "segment_4";
+            this.segment_4.NameWidth = 281;
+            this.segment_4.SearchEnable = true;
+            this.segment_4.Size = new System.Drawing.Size(83, 27);
+            this.segment_4.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.segment_4.TabIndex = 573;
+            this.segment_4.test = null;
+            this.segment_4.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.segment_4.UseChangeDate = false;
+            this.segment_4.Value1 = null;
+            this.segment_4.Value2 = null;
+            this.segment_4.Value3 = null;
+            // 
+            // brand_4
+            // 
+            this.brand_4.AutoSize = true;
+            this.brand_4.ChangeDate = "";
+            this.brand_4.ChangeDateWidth = 0;
+            this.brand_4.Code = "";
+            this.brand_4.CodeWidth = 54;
+            this.brand_4.CodeWidth1 = 54;
+            this.brand_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.brand_4.DataCheck = false;
+            this.brand_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.brand_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.brand_4.IsCopy = false;
+            this.brand_4.LabelText = "";
+            this.brand_4.LabelVisible = false;
+            this.brand_4.Location = new System.Drawing.Point(838, 14);
+            this.brand_4.Margin = new System.Windows.Forms.Padding(0);
+            this.brand_4.Name = "brand_4";
+            this.brand_4.NameWidth = 280;
+            this.brand_4.SearchEnable = true;
+            this.brand_4.Size = new System.Drawing.Size(87, 27);
+            this.brand_4.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.brand_4.TabIndex = 572;
+            this.brand_4.test = null;
+            this.brand_4.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.brand_4.UseChangeDate = false;
+            this.brand_4.Value1 = null;
+            this.brand_4.Value2 = null;
+            this.brand_4.Value3 = null;
+            // 
+            // colorname_5
+            // 
+            this.colorname_5.AllowMinus = false;
+            this.colorname_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.colorname_5.BackColor = System.Drawing.Color.White;
+            this.colorname_5.BorderColor = false;
+            this.colorname_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colorname_5.ClientColor = System.Drawing.SystemColors.Window;
+            this.colorname_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.colorname_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.colorname_5.DecimalPlace = 0;
+            this.colorname_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.colorname_5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.colorname_5.IntegerPart = 0;
+            this.colorname_5.IsCorrectDate = true;
+            this.colorname_5.isEnterKeyDown = false;
+            this.colorname_5.IsFirstTime = true;
+            this.colorname_5.isMaxLengthErr = false;
+            this.colorname_5.IsNumber = true;
+            this.colorname_5.IsShop = false;
+            this.colorname_5.Length = 9;
+            this.colorname_5.Location = new System.Drawing.Point(1065, 0);
+            this.colorname_5.MaxLength = 9;
+            this.colorname_5.MoveNext = true;
+            this.colorname_5.Name = "colorname_5";
+            this.colorname_5.Size = new System.Drawing.Size(116, 19);
+            this.colorname_5.TabIndex = 570;
+            this.colorname_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.colorname_5.UseColorSizMode = false;
+            // 
+            // taxrate_5
+            // 
+            this.taxrate_5.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.taxrate_5.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.taxrate_5.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
+            this.taxrate_5.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.taxrate_5.Flag = 0;
+            this.taxrate_5.FormattingEnabled = true;
+            this.taxrate_5.Length = 10;
+            this.taxrate_5.Location = new System.Drawing.Point(1065, 19);
+            this.taxrate_5.MaxLength = 10;
+            this.taxrate_5.MoveNext = true;
+            this.taxrate_5.Name = "taxrate_5";
+            this.taxrate_5.Size = new System.Drawing.Size(100, 20);
+            this.taxrate_5.TabIndex = 571;
+            // 
+            // colcd_5
+            // 
+            this.colcd_5.AllowMinus = false;
+            this.colcd_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.colcd_5.BackColor = System.Drawing.Color.White;
+            this.colcd_5.BorderColor = false;
+            this.colcd_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colcd_5.ClientColor = System.Drawing.SystemColors.Window;
+            this.colcd_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.colcd_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.colcd_5.DecimalPlace = 0;
+            this.colcd_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.colcd_5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.colcd_5.IntegerPart = 0;
+            this.colcd_5.IsCorrectDate = true;
+            this.colcd_5.isEnterKeyDown = false;
+            this.colcd_5.IsFirstTime = true;
+            this.colcd_5.isMaxLengthErr = false;
+            this.colcd_5.IsNumber = true;
+            this.colcd_5.IsShop = false;
+            this.colcd_5.Length = 9;
+            this.colcd_5.Location = new System.Drawing.Point(979, 0);
+            this.colcd_5.MaxLength = 9;
+            this.colcd_5.MoveNext = true;
+            this.colcd_5.Name = "colcd_5";
+            this.colcd_5.Size = new System.Drawing.Size(87, 19);
+            this.colcd_5.TabIndex = 576;
+            this.colcd_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.colcd_5.UseColorSizMode = false;
+            // 
+            // taniCD_5
+            // 
+            this.taniCD_5.AutoSize = true;
+            this.taniCD_5.ChangeDate = "";
+            this.taniCD_5.ChangeDateWidth = 0;
+            this.taniCD_5.Code = "";
+            this.taniCD_5.CodeWidth = 30;
+            this.taniCD_5.CodeWidth1 = 30;
+            this.taniCD_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.taniCD_5.DataCheck = false;
+            this.taniCD_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.taniCD_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.taniCD_5.IsCopy = false;
+            this.taniCD_5.LabelText = "";
+            this.taniCD_5.LabelVisible = false;
+            this.taniCD_5.Location = new System.Drawing.Point(1004, 14);
+            this.taniCD_5.Margin = new System.Windows.Forms.Padding(0);
+            this.taniCD_5.Name = "taniCD_5";
+            this.taniCD_5.NameWidth = 281;
+            this.taniCD_5.SearchEnable = true;
+            this.taniCD_5.Size = new System.Drawing.Size(63, 27);
+            this.taniCD_5.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.taniCD_5.TabIndex = 575;
+            this.taniCD_5.test = null;
+            this.taniCD_5.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.taniCD_5.UseChangeDate = false;
+            this.taniCD_5.Value1 = null;
+            this.taniCD_5.Value2 = null;
+            this.taniCD_5.Value3 = null;
+            // 
+            // shouhin_5
+            // 
+            this.shouhin_5.AllowMinus = false;
+            this.shouhin_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.shouhin_5.BackColor = System.Drawing.Color.White;
+            this.shouhin_5.BorderColor = false;
+            this.shouhin_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.shouhin_5.ClientColor = System.Drawing.SystemColors.Window;
+            this.shouhin_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.shouhin_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.shouhin_5.DecimalPlace = 0;
+            this.shouhin_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shouhin_5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.shouhin_5.IntegerPart = 0;
+            this.shouhin_5.IsCorrectDate = true;
+            this.shouhin_5.isEnterKeyDown = false;
+            this.shouhin_5.IsFirstTime = true;
+            this.shouhin_5.isMaxLengthErr = false;
+            this.shouhin_5.IsNumber = true;
+            this.shouhin_5.IsShop = false;
+            this.shouhin_5.Length = 9;
+            this.shouhin_5.Location = new System.Drawing.Point(479, 0);
+            this.shouhin_5.MaxLength = 9;
+            this.shouhin_5.MoveNext = true;
+            this.shouhin_5.Name = "shouhin_5";
+            this.shouhin_5.Size = new System.Drawing.Size(500, 19);
+            this.shouhin_5.TabIndex = 574;
+            this.shouhin_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.shouhin_5.UseColorSizMode = false;
+            // 
+            // segment_5
+            // 
+            this.segment_5.AutoSize = true;
+            this.segment_5.ChangeDate = "";
+            this.segment_5.ChangeDateWidth = 0;
+            this.segment_5.Code = "";
+            this.segment_5.CodeWidth = 50;
+            this.segment_5.CodeWidth1 = 50;
+            this.segment_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.segment_5.DataCheck = false;
+            this.segment_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.segment_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.segment_5.IsCopy = false;
+            this.segment_5.LabelText = "";
+            this.segment_5.LabelVisible = false;
+            this.segment_5.Location = new System.Drawing.Point(923, 14);
+            this.segment_5.Margin = new System.Windows.Forms.Padding(0);
+            this.segment_5.Name = "segment_5";
+            this.segment_5.NameWidth = 281;
+            this.segment_5.SearchEnable = true;
+            this.segment_5.Size = new System.Drawing.Size(83, 27);
+            this.segment_5.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.segment_5.TabIndex = 573;
+            this.segment_5.test = null;
+            this.segment_5.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.segment_5.UseChangeDate = false;
+            this.segment_5.Value1 = null;
+            this.segment_5.Value2 = null;
+            this.segment_5.Value3 = null;
+            // 
+            // brand_5
+            // 
+            this.brand_5.AutoSize = true;
+            this.brand_5.ChangeDate = "";
+            this.brand_5.ChangeDateWidth = 0;
+            this.brand_5.Code = "";
+            this.brand_5.CodeWidth = 54;
+            this.brand_5.CodeWidth1 = 54;
+            this.brand_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.brand_5.DataCheck = false;
+            this.brand_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.brand_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.brand_5.IsCopy = false;
+            this.brand_5.LabelText = "";
+            this.brand_5.LabelVisible = false;
+            this.brand_5.Location = new System.Drawing.Point(838, 14);
+            this.brand_5.Margin = new System.Windows.Forms.Padding(0);
+            this.brand_5.Name = "brand_5";
+            this.brand_5.NameWidth = 280;
+            this.brand_5.SearchEnable = true;
+            this.brand_5.Size = new System.Drawing.Size(87, 27);
+            this.brand_5.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.brand_5.TabIndex = 572;
+            this.brand_5.test = null;
+            this.brand_5.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.brand_5.UseChangeDate = false;
+            this.brand_5.Value1 = null;
+            this.brand_5.Value2 = null;
+            this.brand_5.Value3 = null;
+            // 
+            // colorname_6
+            // 
+            this.colorname_6.AllowMinus = false;
+            this.colorname_6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.colorname_6.BackColor = System.Drawing.Color.White;
+            this.colorname_6.BorderColor = false;
+            this.colorname_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colorname_6.ClientColor = System.Drawing.SystemColors.Window;
+            this.colorname_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.colorname_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.colorname_6.DecimalPlace = 0;
+            this.colorname_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.colorname_6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.colorname_6.IntegerPart = 0;
+            this.colorname_6.IsCorrectDate = true;
+            this.colorname_6.isEnterKeyDown = false;
+            this.colorname_6.IsFirstTime = true;
+            this.colorname_6.isMaxLengthErr = false;
+            this.colorname_6.IsNumber = true;
+            this.colorname_6.IsShop = false;
+            this.colorname_6.Length = 9;
+            this.colorname_6.Location = new System.Drawing.Point(1065, 0);
+            this.colorname_6.MaxLength = 9;
+            this.colorname_6.MoveNext = true;
+            this.colorname_6.Name = "colorname_6";
+            this.colorname_6.Size = new System.Drawing.Size(116, 19);
+            this.colorname_6.TabIndex = 570;
+            this.colorname_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.colorname_6.UseColorSizMode = false;
+            // 
+            // taxrate_6
+            // 
+            this.taxrate_6.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.taxrate_6.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.taxrate_6.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
+            this.taxrate_6.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.taxrate_6.Flag = 0;
+            this.taxrate_6.FormattingEnabled = true;
+            this.taxrate_6.Length = 10;
+            this.taxrate_6.Location = new System.Drawing.Point(1065, 19);
+            this.taxrate_6.MaxLength = 10;
+            this.taxrate_6.MoveNext = true;
+            this.taxrate_6.Name = "taxrate_6";
+            this.taxrate_6.Size = new System.Drawing.Size(100, 20);
+            this.taxrate_6.TabIndex = 571;
+            // 
+            // colcd_6
+            // 
+            this.colcd_6.AllowMinus = false;
+            this.colcd_6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.colcd_6.BackColor = System.Drawing.Color.White;
+            this.colcd_6.BorderColor = false;
+            this.colcd_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colcd_6.ClientColor = System.Drawing.SystemColors.Window;
+            this.colcd_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.colcd_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.colcd_6.DecimalPlace = 0;
+            this.colcd_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.colcd_6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.colcd_6.IntegerPart = 0;
+            this.colcd_6.IsCorrectDate = true;
+            this.colcd_6.isEnterKeyDown = false;
+            this.colcd_6.IsFirstTime = true;
+            this.colcd_6.isMaxLengthErr = false;
+            this.colcd_6.IsNumber = true;
+            this.colcd_6.IsShop = false;
+            this.colcd_6.Length = 9;
+            this.colcd_6.Location = new System.Drawing.Point(979, 0);
+            this.colcd_6.MaxLength = 9;
+            this.colcd_6.MoveNext = true;
+            this.colcd_6.Name = "colcd_6";
+            this.colcd_6.Size = new System.Drawing.Size(87, 19);
+            this.colcd_6.TabIndex = 576;
+            this.colcd_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.colcd_6.UseColorSizMode = false;
+            // 
+            // taniCD_6
+            // 
+            this.taniCD_6.AutoSize = true;
+            this.taniCD_6.ChangeDate = "";
+            this.taniCD_6.ChangeDateWidth = 0;
+            this.taniCD_6.Code = "";
+            this.taniCD_6.CodeWidth = 30;
+            this.taniCD_6.CodeWidth1 = 30;
+            this.taniCD_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.taniCD_6.DataCheck = false;
+            this.taniCD_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.taniCD_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.taniCD_6.IsCopy = false;
+            this.taniCD_6.LabelText = "";
+            this.taniCD_6.LabelVisible = false;
+            this.taniCD_6.Location = new System.Drawing.Point(1004, 14);
+            this.taniCD_6.Margin = new System.Windows.Forms.Padding(0);
+            this.taniCD_6.Name = "taniCD_6";
+            this.taniCD_6.NameWidth = 281;
+            this.taniCD_6.SearchEnable = true;
+            this.taniCD_6.Size = new System.Drawing.Size(63, 27);
+            this.taniCD_6.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.taniCD_6.TabIndex = 575;
+            this.taniCD_6.test = null;
+            this.taniCD_6.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.taniCD_6.UseChangeDate = false;
+            this.taniCD_6.Value1 = null;
+            this.taniCD_6.Value2 = null;
+            this.taniCD_6.Value3 = null;
+            // 
+            // shouhin_6
+            // 
+            this.shouhin_6.AllowMinus = false;
+            this.shouhin_6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.shouhin_6.BackColor = System.Drawing.Color.White;
+            this.shouhin_6.BorderColor = false;
+            this.shouhin_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.shouhin_6.ClientColor = System.Drawing.SystemColors.Window;
+            this.shouhin_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.shouhin_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.shouhin_6.DecimalPlace = 0;
+            this.shouhin_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shouhin_6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.shouhin_6.IntegerPart = 0;
+            this.shouhin_6.IsCorrectDate = true;
+            this.shouhin_6.isEnterKeyDown = false;
+            this.shouhin_6.IsFirstTime = true;
+            this.shouhin_6.isMaxLengthErr = false;
+            this.shouhin_6.IsNumber = true;
+            this.shouhin_6.IsShop = false;
+            this.shouhin_6.Length = 9;
+            this.shouhin_6.Location = new System.Drawing.Point(479, 0);
+            this.shouhin_6.MaxLength = 9;
+            this.shouhin_6.MoveNext = true;
+            this.shouhin_6.Name = "shouhin_6";
+            this.shouhin_6.Size = new System.Drawing.Size(500, 19);
+            this.shouhin_6.TabIndex = 574;
+            this.shouhin_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.shouhin_6.UseColorSizMode = false;
+            // 
+            // segment_6
+            // 
+            this.segment_6.AutoSize = true;
+            this.segment_6.ChangeDate = "";
+            this.segment_6.ChangeDateWidth = 0;
+            this.segment_6.Code = "";
+            this.segment_6.CodeWidth = 50;
+            this.segment_6.CodeWidth1 = 50;
+            this.segment_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.segment_6.DataCheck = false;
+            this.segment_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.segment_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.segment_6.IsCopy = false;
+            this.segment_6.LabelText = "";
+            this.segment_6.LabelVisible = false;
+            this.segment_6.Location = new System.Drawing.Point(923, 14);
+            this.segment_6.Margin = new System.Windows.Forms.Padding(0);
+            this.segment_6.Name = "segment_6";
+            this.segment_6.NameWidth = 281;
+            this.segment_6.SearchEnable = true;
+            this.segment_6.Size = new System.Drawing.Size(83, 27);
+            this.segment_6.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.segment_6.TabIndex = 573;
+            this.segment_6.test = null;
+            this.segment_6.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.segment_6.UseChangeDate = false;
+            this.segment_6.Value1 = null;
+            this.segment_6.Value2 = null;
+            this.segment_6.Value3 = null;
+            // 
+            // brand_6
+            // 
+            this.brand_6.AutoSize = true;
+            this.brand_6.ChangeDate = "";
+            this.brand_6.ChangeDateWidth = 0;
+            this.brand_6.Code = "";
+            this.brand_6.CodeWidth = 54;
+            this.brand_6.CodeWidth1 = 54;
+            this.brand_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.brand_6.DataCheck = false;
+            this.brand_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.brand_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.brand_6.IsCopy = false;
+            this.brand_6.LabelText = "";
+            this.brand_6.LabelVisible = false;
+            this.brand_6.Location = new System.Drawing.Point(838, 14);
+            this.brand_6.Margin = new System.Windows.Forms.Padding(0);
+            this.brand_6.Name = "brand_6";
+            this.brand_6.NameWidth = 280;
+            this.brand_6.SearchEnable = true;
+            this.brand_6.Size = new System.Drawing.Size(87, 27);
+            this.brand_6.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.brand_6.TabIndex = 572;
+            this.brand_6.test = null;
+            this.brand_6.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.brand_6.UseChangeDate = false;
+            this.brand_6.Value1 = null;
+            this.brand_6.Value2 = null;
+            this.brand_6.Value3 = null;
+            // 
+            // colorname_7
+            // 
+            this.colorname_7.AllowMinus = false;
+            this.colorname_7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.colorname_7.BackColor = System.Drawing.Color.White;
+            this.colorname_7.BorderColor = false;
+            this.colorname_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colorname_7.ClientColor = System.Drawing.SystemColors.Window;
+            this.colorname_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.colorname_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.colorname_7.DecimalPlace = 0;
+            this.colorname_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.colorname_7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.colorname_7.IntegerPart = 0;
+            this.colorname_7.IsCorrectDate = true;
+            this.colorname_7.isEnterKeyDown = false;
+            this.colorname_7.IsFirstTime = true;
+            this.colorname_7.isMaxLengthErr = false;
+            this.colorname_7.IsNumber = true;
+            this.colorname_7.IsShop = false;
+            this.colorname_7.Length = 9;
+            this.colorname_7.Location = new System.Drawing.Point(1065, 0);
+            this.colorname_7.MaxLength = 9;
+            this.colorname_7.MoveNext = true;
+            this.colorname_7.Name = "colorname_7";
+            this.colorname_7.Size = new System.Drawing.Size(116, 19);
+            this.colorname_7.TabIndex = 570;
+            this.colorname_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.colorname_7.UseColorSizMode = false;
+            // 
+            // taxrate_7
+            // 
+            this.taxrate_7.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.taxrate_7.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.taxrate_7.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
+            this.taxrate_7.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.taxrate_7.Flag = 0;
+            this.taxrate_7.FormattingEnabled = true;
+            this.taxrate_7.Length = 10;
+            this.taxrate_7.Location = new System.Drawing.Point(1065, 19);
+            this.taxrate_7.MaxLength = 10;
+            this.taxrate_7.MoveNext = true;
+            this.taxrate_7.Name = "taxrate_7";
+            this.taxrate_7.Size = new System.Drawing.Size(100, 20);
+            this.taxrate_7.TabIndex = 571;
+            // 
+            // colcd_7
+            // 
+            this.colcd_7.AllowMinus = false;
+            this.colcd_7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.colcd_7.BackColor = System.Drawing.Color.White;
+            this.colcd_7.BorderColor = false;
+            this.colcd_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colcd_7.ClientColor = System.Drawing.SystemColors.Window;
+            this.colcd_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.colcd_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.colcd_7.DecimalPlace = 0;
+            this.colcd_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.colcd_7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.colcd_7.IntegerPart = 0;
+            this.colcd_7.IsCorrectDate = true;
+            this.colcd_7.isEnterKeyDown = false;
+            this.colcd_7.IsFirstTime = true;
+            this.colcd_7.isMaxLengthErr = false;
+            this.colcd_7.IsNumber = true;
+            this.colcd_7.IsShop = false;
+            this.colcd_7.Length = 9;
+            this.colcd_7.Location = new System.Drawing.Point(979, 0);
+            this.colcd_7.MaxLength = 9;
+            this.colcd_7.MoveNext = true;
+            this.colcd_7.Name = "colcd_7";
+            this.colcd_7.Size = new System.Drawing.Size(87, 19);
+            this.colcd_7.TabIndex = 576;
+            this.colcd_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.colcd_7.UseColorSizMode = false;
+            // 
+            // taniCD_7
+            // 
+            this.taniCD_7.AutoSize = true;
+            this.taniCD_7.ChangeDate = "";
+            this.taniCD_7.ChangeDateWidth = 0;
+            this.taniCD_7.Code = "";
+            this.taniCD_7.CodeWidth = 30;
+            this.taniCD_7.CodeWidth1 = 30;
+            this.taniCD_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.taniCD_7.DataCheck = false;
+            this.taniCD_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.taniCD_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.taniCD_7.IsCopy = false;
+            this.taniCD_7.LabelText = "";
+            this.taniCD_7.LabelVisible = false;
+            this.taniCD_7.Location = new System.Drawing.Point(1004, 14);
+            this.taniCD_7.Margin = new System.Windows.Forms.Padding(0);
+            this.taniCD_7.Name = "taniCD_7";
+            this.taniCD_7.NameWidth = 281;
+            this.taniCD_7.SearchEnable = true;
+            this.taniCD_7.Size = new System.Drawing.Size(63, 27);
+            this.taniCD_7.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.taniCD_7.TabIndex = 575;
+            this.taniCD_7.test = null;
+            this.taniCD_7.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.taniCD_7.UseChangeDate = false;
+            this.taniCD_7.Value1 = null;
+            this.taniCD_7.Value2 = null;
+            this.taniCD_7.Value3 = null;
+            // 
+            // shouhin_7
+            // 
+            this.shouhin_7.AllowMinus = false;
+            this.shouhin_7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.shouhin_7.BackColor = System.Drawing.Color.White;
+            this.shouhin_7.BorderColor = false;
+            this.shouhin_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.shouhin_7.ClientColor = System.Drawing.SystemColors.Window;
+            this.shouhin_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.shouhin_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.shouhin_7.DecimalPlace = 0;
+            this.shouhin_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shouhin_7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.shouhin_7.IntegerPart = 0;
+            this.shouhin_7.IsCorrectDate = true;
+            this.shouhin_7.isEnterKeyDown = false;
+            this.shouhin_7.IsFirstTime = true;
+            this.shouhin_7.isMaxLengthErr = false;
+            this.shouhin_7.IsNumber = true;
+            this.shouhin_7.IsShop = false;
+            this.shouhin_7.Length = 9;
+            this.shouhin_7.Location = new System.Drawing.Point(479, 0);
+            this.shouhin_7.MaxLength = 9;
+            this.shouhin_7.MoveNext = true;
+            this.shouhin_7.Name = "shouhin_7";
+            this.shouhin_7.Size = new System.Drawing.Size(500, 19);
+            this.shouhin_7.TabIndex = 574;
+            this.shouhin_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.shouhin_7.UseColorSizMode = false;
+            // 
+            // segment_7
+            // 
+            this.segment_7.AutoSize = true;
+            this.segment_7.ChangeDate = "";
+            this.segment_7.ChangeDateWidth = 0;
+            this.segment_7.Code = "";
+            this.segment_7.CodeWidth = 50;
+            this.segment_7.CodeWidth1 = 50;
+            this.segment_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.segment_7.DataCheck = false;
+            this.segment_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.segment_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.segment_7.IsCopy = false;
+            this.segment_7.LabelText = "";
+            this.segment_7.LabelVisible = false;
+            this.segment_7.Location = new System.Drawing.Point(923, 14);
+            this.segment_7.Margin = new System.Windows.Forms.Padding(0);
+            this.segment_7.Name = "segment_7";
+            this.segment_7.NameWidth = 281;
+            this.segment_7.SearchEnable = true;
+            this.segment_7.Size = new System.Drawing.Size(83, 27);
+            this.segment_7.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.segment_7.TabIndex = 573;
+            this.segment_7.test = null;
+            this.segment_7.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.segment_7.UseChangeDate = false;
+            this.segment_7.Value1 = null;
+            this.segment_7.Value2 = null;
+            this.segment_7.Value3 = null;
+            // 
+            // brand_7
+            // 
+            this.brand_7.AutoSize = true;
+            this.brand_7.ChangeDate = "";
+            this.brand_7.ChangeDateWidth = 0;
+            this.brand_7.Code = "";
+            this.brand_7.CodeWidth = 54;
+            this.brand_7.CodeWidth1 = 54;
+            this.brand_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.brand_7.DataCheck = false;
+            this.brand_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.brand_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.brand_7.IsCopy = false;
+            this.brand_7.LabelText = "";
+            this.brand_7.LabelVisible = false;
+            this.brand_7.Location = new System.Drawing.Point(838, 14);
+            this.brand_7.Margin = new System.Windows.Forms.Padding(0);
+            this.brand_7.Name = "brand_7";
+            this.brand_7.NameWidth = 280;
+            this.brand_7.SearchEnable = true;
+            this.brand_7.Size = new System.Drawing.Size(87, 27);
+            this.brand_7.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.brand_7.TabIndex = 572;
+            this.brand_7.test = null;
+            this.brand_7.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.brand_7.UseChangeDate = false;
+            this.brand_7.Value1 = null;
+            this.brand_7.Value2 = null;
+            this.brand_7.Value3 = null;
+            // 
+            // colorname_8
+            // 
+            this.colorname_8.AllowMinus = false;
+            this.colorname_8.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.colorname_8.BackColor = System.Drawing.Color.White;
+            this.colorname_8.BorderColor = false;
+            this.colorname_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colorname_8.ClientColor = System.Drawing.SystemColors.Window;
+            this.colorname_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.colorname_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.colorname_8.DecimalPlace = 0;
+            this.colorname_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.colorname_8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.colorname_8.IntegerPart = 0;
+            this.colorname_8.IsCorrectDate = true;
+            this.colorname_8.isEnterKeyDown = false;
+            this.colorname_8.IsFirstTime = true;
+            this.colorname_8.isMaxLengthErr = false;
+            this.colorname_8.IsNumber = true;
+            this.colorname_8.IsShop = false;
+            this.colorname_8.Length = 9;
+            this.colorname_8.Location = new System.Drawing.Point(1065, 0);
+            this.colorname_8.MaxLength = 9;
+            this.colorname_8.MoveNext = true;
+            this.colorname_8.Name = "colorname_8";
+            this.colorname_8.Size = new System.Drawing.Size(116, 19);
+            this.colorname_8.TabIndex = 577;
+            this.colorname_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.colorname_8.UseColorSizMode = false;
+            // 
+            // taxrate_8
+            // 
+            this.taxrate_8.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.taxrate_8.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.taxrate_8.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
+            this.taxrate_8.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.taxrate_8.Flag = 0;
+            this.taxrate_8.FormattingEnabled = true;
+            this.taxrate_8.Length = 10;
+            this.taxrate_8.Location = new System.Drawing.Point(1065, 19);
+            this.taxrate_8.MaxLength = 10;
+            this.taxrate_8.MoveNext = true;
+            this.taxrate_8.Name = "taxrate_8";
+            this.taxrate_8.Size = new System.Drawing.Size(100, 20);
+            this.taxrate_8.TabIndex = 578;
+            // 
+            // colcd_8
+            // 
+            this.colcd_8.AllowMinus = false;
+            this.colcd_8.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.colcd_8.BackColor = System.Drawing.Color.White;
+            this.colcd_8.BorderColor = false;
+            this.colcd_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colcd_8.ClientColor = System.Drawing.SystemColors.Window;
+            this.colcd_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.colcd_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.colcd_8.DecimalPlace = 0;
+            this.colcd_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.colcd_8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.colcd_8.IntegerPart = 0;
+            this.colcd_8.IsCorrectDate = true;
+            this.colcd_8.isEnterKeyDown = false;
+            this.colcd_8.IsFirstTime = true;
+            this.colcd_8.isMaxLengthErr = false;
+            this.colcd_8.IsNumber = true;
+            this.colcd_8.IsShop = false;
+            this.colcd_8.Length = 9;
+            this.colcd_8.Location = new System.Drawing.Point(979, 0);
+            this.colcd_8.MaxLength = 9;
+            this.colcd_8.MoveNext = true;
+            this.colcd_8.Name = "colcd_8";
+            this.colcd_8.Size = new System.Drawing.Size(87, 19);
+            this.colcd_8.TabIndex = 583;
+            this.colcd_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.colcd_8.UseColorSizMode = false;
+            // 
+            // taniCD_8
+            // 
+            this.taniCD_8.AutoSize = true;
+            this.taniCD_8.ChangeDate = "";
+            this.taniCD_8.ChangeDateWidth = 0;
+            this.taniCD_8.Code = "";
+            this.taniCD_8.CodeWidth = 30;
+            this.taniCD_8.CodeWidth1 = 30;
+            this.taniCD_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.taniCD_8.DataCheck = false;
+            this.taniCD_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.taniCD_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.taniCD_8.IsCopy = false;
+            this.taniCD_8.LabelText = "";
+            this.taniCD_8.LabelVisible = false;
+            this.taniCD_8.Location = new System.Drawing.Point(1004, 14);
+            this.taniCD_8.Margin = new System.Windows.Forms.Padding(0);
+            this.taniCD_8.Name = "taniCD_8";
+            this.taniCD_8.NameWidth = 281;
+            this.taniCD_8.SearchEnable = true;
+            this.taniCD_8.Size = new System.Drawing.Size(63, 27);
+            this.taniCD_8.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.taniCD_8.TabIndex = 582;
+            this.taniCD_8.test = null;
+            this.taniCD_8.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.taniCD_8.UseChangeDate = false;
+            this.taniCD_8.Value1 = null;
+            this.taniCD_8.Value2 = null;
+            this.taniCD_8.Value3 = null;
+            // 
+            // shouhin_8
+            // 
+            this.shouhin_8.AllowMinus = false;
+            this.shouhin_8.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.shouhin_8.BackColor = System.Drawing.Color.White;
+            this.shouhin_8.BorderColor = false;
+            this.shouhin_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.shouhin_8.ClientColor = System.Drawing.SystemColors.Window;
+            this.shouhin_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.shouhin_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.shouhin_8.DecimalPlace = 0;
+            this.shouhin_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shouhin_8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.shouhin_8.IntegerPart = 0;
+            this.shouhin_8.IsCorrectDate = true;
+            this.shouhin_8.isEnterKeyDown = false;
+            this.shouhin_8.IsFirstTime = true;
+            this.shouhin_8.isMaxLengthErr = false;
+            this.shouhin_8.IsNumber = true;
+            this.shouhin_8.IsShop = false;
+            this.shouhin_8.Length = 9;
+            this.shouhin_8.Location = new System.Drawing.Point(479, 0);
+            this.shouhin_8.MaxLength = 9;
+            this.shouhin_8.MoveNext = true;
+            this.shouhin_8.Name = "shouhin_8";
+            this.shouhin_8.Size = new System.Drawing.Size(500, 19);
+            this.shouhin_8.TabIndex = 581;
+            this.shouhin_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.shouhin_8.UseColorSizMode = false;
+            // 
+            // segment_8
+            // 
+            this.segment_8.AutoSize = true;
+            this.segment_8.ChangeDate = "";
+            this.segment_8.ChangeDateWidth = 0;
+            this.segment_8.Code = "";
+            this.segment_8.CodeWidth = 50;
+            this.segment_8.CodeWidth1 = 50;
+            this.segment_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.segment_8.DataCheck = false;
+            this.segment_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.segment_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.segment_8.IsCopy = false;
+            this.segment_8.LabelText = "";
+            this.segment_8.LabelVisible = false;
+            this.segment_8.Location = new System.Drawing.Point(923, 14);
+            this.segment_8.Margin = new System.Windows.Forms.Padding(0);
+            this.segment_8.Name = "segment_8";
+            this.segment_8.NameWidth = 281;
+            this.segment_8.SearchEnable = true;
+            this.segment_8.Size = new System.Drawing.Size(83, 27);
+            this.segment_8.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.segment_8.TabIndex = 580;
+            this.segment_8.test = null;
+            this.segment_8.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.segment_8.UseChangeDate = false;
+            this.segment_8.Value1 = null;
+            this.segment_8.Value2 = null;
+            this.segment_8.Value3 = null;
+            // 
+            // brand_8
+            // 
+            this.brand_8.AutoSize = true;
+            this.brand_8.ChangeDate = "";
+            this.brand_8.ChangeDateWidth = 0;
+            this.brand_8.Code = "";
+            this.brand_8.CodeWidth = 54;
+            this.brand_8.CodeWidth1 = 54;
+            this.brand_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.brand_8.DataCheck = false;
+            this.brand_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.brand_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.brand_8.IsCopy = false;
+            this.brand_8.LabelText = "";
+            this.brand_8.LabelVisible = false;
+            this.brand_8.Location = new System.Drawing.Point(838, 14);
+            this.brand_8.Margin = new System.Windows.Forms.Padding(0);
+            this.brand_8.Name = "brand_8";
+            this.brand_8.NameWidth = 280;
+            this.brand_8.SearchEnable = true;
+            this.brand_8.Size = new System.Drawing.Size(87, 27);
+            this.brand_8.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.brand_8.TabIndex = 579;
+            this.brand_8.test = null;
+            this.brand_8.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.brand_8.UseChangeDate = false;
+            this.brand_8.Value1 = null;
+            this.brand_8.Value2 = null;
+            this.brand_8.Value3 = null;
+            // 
+            // colorname_10
+            // 
+            this.colorname_10.AllowMinus = false;
+            this.colorname_10.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.colorname_10.BackColor = System.Drawing.Color.White;
+            this.colorname_10.BorderColor = false;
+            this.colorname_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colorname_10.ClientColor = System.Drawing.SystemColors.Window;
+            this.colorname_10.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.colorname_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.colorname_10.DecimalPlace = 0;
+            this.colorname_10.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.colorname_10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.colorname_10.IntegerPart = 0;
+            this.colorname_10.IsCorrectDate = true;
+            this.colorname_10.isEnterKeyDown = false;
+            this.colorname_10.IsFirstTime = true;
+            this.colorname_10.isMaxLengthErr = false;
+            this.colorname_10.IsNumber = true;
+            this.colorname_10.IsShop = false;
+            this.colorname_10.Length = 9;
+            this.colorname_10.Location = new System.Drawing.Point(1065, 0);
+            this.colorname_10.MaxLength = 9;
+            this.colorname_10.MoveNext = true;
+            this.colorname_10.Name = "colorname_10";
+            this.colorname_10.Size = new System.Drawing.Size(116, 19);
+            this.colorname_10.TabIndex = 577;
+            this.colorname_10.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.colorname_10.UseColorSizMode = false;
+            // 
+            // taxrate_10
+            // 
+            this.taxrate_10.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.taxrate_10.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.taxrate_10.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
+            this.taxrate_10.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.taxrate_10.Flag = 0;
+            this.taxrate_10.FormattingEnabled = true;
+            this.taxrate_10.Length = 10;
+            this.taxrate_10.Location = new System.Drawing.Point(1065, 19);
+            this.taxrate_10.MaxLength = 10;
+            this.taxrate_10.MoveNext = true;
+            this.taxrate_10.Name = "taxrate_10";
+            this.taxrate_10.Size = new System.Drawing.Size(100, 20);
+            this.taxrate_10.TabIndex = 578;
+            // 
+            // colcd_10
+            // 
+            this.colcd_10.AllowMinus = false;
+            this.colcd_10.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.colcd_10.BackColor = System.Drawing.Color.White;
+            this.colcd_10.BorderColor = false;
+            this.colcd_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colcd_10.ClientColor = System.Drawing.SystemColors.Window;
+            this.colcd_10.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.colcd_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.colcd_10.DecimalPlace = 0;
+            this.colcd_10.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.colcd_10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.colcd_10.IntegerPart = 0;
+            this.colcd_10.IsCorrectDate = true;
+            this.colcd_10.isEnterKeyDown = false;
+            this.colcd_10.IsFirstTime = true;
+            this.colcd_10.isMaxLengthErr = false;
+            this.colcd_10.IsNumber = true;
+            this.colcd_10.IsShop = false;
+            this.colcd_10.Length = 9;
+            this.colcd_10.Location = new System.Drawing.Point(979, 0);
+            this.colcd_10.MaxLength = 9;
+            this.colcd_10.MoveNext = true;
+            this.colcd_10.Name = "colcd_10";
+            this.colcd_10.Size = new System.Drawing.Size(87, 19);
+            this.colcd_10.TabIndex = 583;
+            this.colcd_10.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.colcd_10.UseColorSizMode = false;
+            // 
+            // taniCD_10
+            // 
+            this.taniCD_10.AutoSize = true;
+            this.taniCD_10.ChangeDate = "";
+            this.taniCD_10.ChangeDateWidth = 0;
+            this.taniCD_10.Code = "";
+            this.taniCD_10.CodeWidth = 30;
+            this.taniCD_10.CodeWidth1 = 30;
+            this.taniCD_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.taniCD_10.DataCheck = false;
+            this.taniCD_10.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.taniCD_10.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.taniCD_10.IsCopy = false;
+            this.taniCD_10.LabelText = "";
+            this.taniCD_10.LabelVisible = false;
+            this.taniCD_10.Location = new System.Drawing.Point(1004, 14);
+            this.taniCD_10.Margin = new System.Windows.Forms.Padding(0);
+            this.taniCD_10.Name = "taniCD_10";
+            this.taniCD_10.NameWidth = 281;
+            this.taniCD_10.SearchEnable = true;
+            this.taniCD_10.Size = new System.Drawing.Size(63, 27);
+            this.taniCD_10.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.taniCD_10.TabIndex = 582;
+            this.taniCD_10.test = null;
+            this.taniCD_10.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.taniCD_10.UseChangeDate = false;
+            this.taniCD_10.Value1 = null;
+            this.taniCD_10.Value2 = null;
+            this.taniCD_10.Value3 = null;
+            // 
+            // shouhin_10
+            // 
+            this.shouhin_10.AllowMinus = false;
+            this.shouhin_10.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.shouhin_10.BackColor = System.Drawing.Color.White;
+            this.shouhin_10.BorderColor = false;
+            this.shouhin_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.shouhin_10.ClientColor = System.Drawing.SystemColors.Window;
+            this.shouhin_10.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.shouhin_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.shouhin_10.DecimalPlace = 0;
+            this.shouhin_10.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shouhin_10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.shouhin_10.IntegerPart = 0;
+            this.shouhin_10.IsCorrectDate = true;
+            this.shouhin_10.isEnterKeyDown = false;
+            this.shouhin_10.IsFirstTime = true;
+            this.shouhin_10.isMaxLengthErr = false;
+            this.shouhin_10.IsNumber = true;
+            this.shouhin_10.IsShop = false;
+            this.shouhin_10.Length = 9;
+            this.shouhin_10.Location = new System.Drawing.Point(479, 0);
+            this.shouhin_10.MaxLength = 9;
+            this.shouhin_10.MoveNext = true;
+            this.shouhin_10.Name = "shouhin_10";
+            this.shouhin_10.Size = new System.Drawing.Size(500, 19);
+            this.shouhin_10.TabIndex = 581;
+            this.shouhin_10.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.shouhin_10.UseColorSizMode = false;
+            // 
+            // segment_10
+            // 
+            this.segment_10.AutoSize = true;
+            this.segment_10.ChangeDate = "";
+            this.segment_10.ChangeDateWidth = 0;
+            this.segment_10.Code = "";
+            this.segment_10.CodeWidth = 50;
+            this.segment_10.CodeWidth1 = 50;
+            this.segment_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.segment_10.DataCheck = false;
+            this.segment_10.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.segment_10.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.segment_10.IsCopy = false;
+            this.segment_10.LabelText = "";
+            this.segment_10.LabelVisible = false;
+            this.segment_10.Location = new System.Drawing.Point(923, 14);
+            this.segment_10.Margin = new System.Windows.Forms.Padding(0);
+            this.segment_10.Name = "segment_10";
+            this.segment_10.NameWidth = 281;
+            this.segment_10.SearchEnable = true;
+            this.segment_10.Size = new System.Drawing.Size(83, 27);
+            this.segment_10.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.segment_10.TabIndex = 580;
+            this.segment_10.test = null;
+            this.segment_10.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.segment_10.UseChangeDate = false;
+            this.segment_10.Value1 = null;
+            this.segment_10.Value2 = null;
+            this.segment_10.Value3 = null;
+            // 
+            // brand_10
+            // 
+            this.brand_10.AutoSize = true;
+            this.brand_10.ChangeDate = "";
+            this.brand_10.ChangeDateWidth = 0;
+            this.brand_10.Code = "";
+            this.brand_10.CodeWidth = 54;
+            this.brand_10.CodeWidth1 = 54;
+            this.brand_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.brand_10.DataCheck = false;
+            this.brand_10.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.brand_10.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.brand_10.IsCopy = false;
+            this.brand_10.LabelText = "";
+            this.brand_10.LabelVisible = false;
+            this.brand_10.Location = new System.Drawing.Point(838, 14);
+            this.brand_10.Margin = new System.Windows.Forms.Padding(0);
+            this.brand_10.Name = "brand_10";
+            this.brand_10.NameWidth = 280;
+            this.brand_10.SearchEnable = true;
+            this.brand_10.Size = new System.Drawing.Size(87, 27);
+            this.brand_10.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.brand_10.TabIndex = 579;
+            this.brand_10.test = null;
+            this.brand_10.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.brand_10.UseChangeDate = false;
+            this.brand_10.Value1 = null;
+            this.brand_10.Value2 = null;
+            this.brand_10.Value3 = null;
+            // 
+            // ckM_TextBox3
+            // 
+            this.ckM_TextBox3.AllowMinus = false;
+            this.ckM_TextBox3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.ckM_TextBox3.BackColor = System.Drawing.Color.White;
+            this.ckM_TextBox3.BorderColor = false;
+            this.ckM_TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox3.ClientColor = System.Drawing.SystemColors.Window;
+            this.ckM_TextBox3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.ckM_TextBox3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ckM_TextBox3.DecimalPlace = 0;
+            this.ckM_TextBox3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ckM_TextBox3.IntegerPart = 0;
+            this.ckM_TextBox3.IsCorrectDate = true;
+            this.ckM_TextBox3.isEnterKeyDown = false;
+            this.ckM_TextBox3.IsFirstTime = true;
+            this.ckM_TextBox3.isMaxLengthErr = false;
+            this.ckM_TextBox3.IsNumber = true;
+            this.ckM_TextBox3.IsShop = false;
+            this.ckM_TextBox3.Length = 9;
+            this.ckM_TextBox3.Location = new System.Drawing.Point(1025, 105);
+            this.ckM_TextBox3.MaxLength = 9;
+            this.ckM_TextBox3.MoveNext = true;
+            this.ckM_TextBox3.Name = "ckM_TextBox3";
+            this.ckM_TextBox3.Size = new System.Drawing.Size(116, 19);
+            this.ckM_TextBox3.TabIndex = 571;
+            this.ckM_TextBox3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_TextBox3.UseColorSizMode = false;
+            // 
+            // ckM_ComboBox8
+            // 
+            this.ckM_ComboBox8.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.ckM_ComboBox8.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.ckM_ComboBox8.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
+            this.ckM_ComboBox8.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.ckM_ComboBox8.Flag = 0;
+            this.ckM_ComboBox8.FormattingEnabled = true;
+            this.ckM_ComboBox8.Length = 10;
+            this.ckM_ComboBox8.Location = new System.Drawing.Point(1025, 124);
+            this.ckM_ComboBox8.MaxLength = 10;
+            this.ckM_ComboBox8.MoveNext = true;
+            this.ckM_ComboBox8.Name = "ckM_ComboBox8";
+            this.ckM_ComboBox8.Size = new System.Drawing.Size(100, 20);
+            this.ckM_ComboBox8.TabIndex = 572;
+            // 
+            // ckM_TextBox6
+            // 
+            this.ckM_TextBox6.AllowMinus = false;
+            this.ckM_TextBox6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.ckM_TextBox6.BackColor = System.Drawing.Color.White;
+            this.ckM_TextBox6.BorderColor = false;
+            this.ckM_TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox6.ClientColor = System.Drawing.SystemColors.Window;
+            this.ckM_TextBox6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.ckM_TextBox6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ckM_TextBox6.DecimalPlace = 0;
+            this.ckM_TextBox6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ckM_TextBox6.IntegerPart = 0;
+            this.ckM_TextBox6.IsCorrectDate = true;
+            this.ckM_TextBox6.isEnterKeyDown = false;
+            this.ckM_TextBox6.IsFirstTime = true;
+            this.ckM_TextBox6.isMaxLengthErr = false;
+            this.ckM_TextBox6.IsNumber = true;
+            this.ckM_TextBox6.IsShop = false;
+            this.ckM_TextBox6.Length = 9;
+            this.ckM_TextBox6.Location = new System.Drawing.Point(939, 105);
+            this.ckM_TextBox6.MaxLength = 9;
+            this.ckM_TextBox6.MoveNext = true;
+            this.ckM_TextBox6.Name = "ckM_TextBox6";
+            this.ckM_TextBox6.Size = new System.Drawing.Size(87, 19);
+            this.ckM_TextBox6.TabIndex = 577;
+            this.ckM_TextBox6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_TextBox6.UseColorSizMode = false;
+            // 
+            // ckM_SearchControl3
+            // 
+            this.ckM_SearchControl3.AutoSize = true;
+            this.ckM_SearchControl3.ChangeDate = "";
+            this.ckM_SearchControl3.ChangeDateWidth = 0;
+            this.ckM_SearchControl3.Code = "";
+            this.ckM_SearchControl3.CodeWidth = 30;
+            this.ckM_SearchControl3.CodeWidth1 = 30;
+            this.ckM_SearchControl3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ckM_SearchControl3.DataCheck = false;
+            this.ckM_SearchControl3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_SearchControl3.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.ckM_SearchControl3.IsCopy = false;
+            this.ckM_SearchControl3.LabelText = "";
+            this.ckM_SearchControl3.LabelVisible = false;
+            this.ckM_SearchControl3.Location = new System.Drawing.Point(964, 119);
+            this.ckM_SearchControl3.Margin = new System.Windows.Forms.Padding(0);
+            this.ckM_SearchControl3.Name = "ckM_SearchControl3";
+            this.ckM_SearchControl3.NameWidth = 281;
+            this.ckM_SearchControl3.SearchEnable = true;
+            this.ckM_SearchControl3.Size = new System.Drawing.Size(63, 27);
+            this.ckM_SearchControl3.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.ckM_SearchControl3.TabIndex = 576;
+            this.ckM_SearchControl3.test = null;
+            this.ckM_SearchControl3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ckM_SearchControl3.UseChangeDate = false;
+            this.ckM_SearchControl3.Value1 = null;
+            this.ckM_SearchControl3.Value2 = null;
+            this.ckM_SearchControl3.Value3 = null;
+            // 
+            // ckM_TextBox9
+            // 
+            this.ckM_TextBox9.AllowMinus = false;
+            this.ckM_TextBox9.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.ckM_TextBox9.BackColor = System.Drawing.Color.White;
+            this.ckM_TextBox9.BorderColor = false;
+            this.ckM_TextBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox9.ClientColor = System.Drawing.SystemColors.Window;
+            this.ckM_TextBox9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.ckM_TextBox9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
+            this.ckM_TextBox9.DecimalPlace = 0;
+            this.ckM_TextBox9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox9.IntegerPart = 0;
+            this.ckM_TextBox9.IsCorrectDate = true;
+            this.ckM_TextBox9.isEnterKeyDown = false;
+            this.ckM_TextBox9.IsFirstTime = true;
+            this.ckM_TextBox9.isMaxLengthErr = false;
+            this.ckM_TextBox9.IsNumber = true;
+            this.ckM_TextBox9.IsShop = false;
+            this.ckM_TextBox9.Length = 20;
+            this.ckM_TextBox9.Location = new System.Drawing.Point(698, 124);
+            this.ckM_TextBox9.MaxLength = 20;
+            this.ckM_TextBox9.MoveNext = true;
+            this.ckM_TextBox9.Name = "ckM_TextBox9";
+            this.ckM_TextBox9.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox9.TabIndex = 570;
+            this.ckM_TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ckM_TextBox9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_TextBox9.UseColorSizMode = false;
+            // 
+            // ckM_TextBox12
+            // 
+            this.ckM_TextBox12.AllowMinus = false;
+            this.ckM_TextBox12.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.ckM_TextBox12.BackColor = System.Drawing.Color.White;
+            this.ckM_TextBox12.BorderColor = false;
+            this.ckM_TextBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox12.ClientColor = System.Drawing.SystemColors.Window;
+            this.ckM_TextBox12.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.ckM_TextBox12.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ckM_TextBox12.DecimalPlace = 0;
+            this.ckM_TextBox12.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ckM_TextBox12.IntegerPart = 0;
+            this.ckM_TextBox12.IsCorrectDate = true;
+            this.ckM_TextBox12.isEnterKeyDown = false;
+            this.ckM_TextBox12.IsFirstTime = true;
+            this.ckM_TextBox12.isMaxLengthErr = false;
+            this.ckM_TextBox12.IsNumber = true;
+            this.ckM_TextBox12.IsShop = false;
+            this.ckM_TextBox12.Length = 9;
+            this.ckM_TextBox12.Location = new System.Drawing.Point(439, 105);
+            this.ckM_TextBox12.MaxLength = 9;
+            this.ckM_TextBox12.MoveNext = true;
+            this.ckM_TextBox12.Name = "ckM_TextBox12";
+            this.ckM_TextBox12.Size = new System.Drawing.Size(500, 19);
+            this.ckM_TextBox12.TabIndex = 575;
+            this.ckM_TextBox12.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_TextBox12.UseColorSizMode = false;
+            // 
+            // ckM_SearchControl6
+            // 
+            this.ckM_SearchControl6.AutoSize = true;
+            this.ckM_SearchControl6.ChangeDate = "";
+            this.ckM_SearchControl6.ChangeDateWidth = 0;
+            this.ckM_SearchControl6.Code = "";
+            this.ckM_SearchControl6.CodeWidth = 50;
+            this.ckM_SearchControl6.CodeWidth1 = 50;
+            this.ckM_SearchControl6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ckM_SearchControl6.DataCheck = false;
+            this.ckM_SearchControl6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_SearchControl6.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.ckM_SearchControl6.IsCopy = false;
+            this.ckM_SearchControl6.LabelText = "";
+            this.ckM_SearchControl6.LabelVisible = false;
+            this.ckM_SearchControl6.Location = new System.Drawing.Point(883, 119);
+            this.ckM_SearchControl6.Margin = new System.Windows.Forms.Padding(0);
+            this.ckM_SearchControl6.Name = "ckM_SearchControl6";
+            this.ckM_SearchControl6.NameWidth = 281;
+            this.ckM_SearchControl6.SearchEnable = true;
+            this.ckM_SearchControl6.Size = new System.Drawing.Size(83, 27);
+            this.ckM_SearchControl6.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.ckM_SearchControl6.TabIndex = 574;
+            this.ckM_SearchControl6.test = null;
+            this.ckM_SearchControl6.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ckM_SearchControl6.UseChangeDate = false;
+            this.ckM_SearchControl6.Value1 = null;
+            this.ckM_SearchControl6.Value2 = null;
+            this.ckM_SearchControl6.Value3 = null;
+            // 
+            // ckM_SearchControl9
+            // 
+            this.ckM_SearchControl9.AutoSize = true;
+            this.ckM_SearchControl9.ChangeDate = "";
+            this.ckM_SearchControl9.ChangeDateWidth = 0;
+            this.ckM_SearchControl9.Code = "";
+            this.ckM_SearchControl9.CodeWidth = 60;
+            this.ckM_SearchControl9.CodeWidth1 = 60;
+            this.ckM_SearchControl9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ckM_SearchControl9.DataCheck = false;
+            this.ckM_SearchControl9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_SearchControl9.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.ckM_SearchControl9.IsCopy = false;
+            this.ckM_SearchControl9.LabelText = "";
+            this.ckM_SearchControl9.LabelVisible = false;
+            this.ckM_SearchControl9.Location = new System.Drawing.Point(792, 119);
+            this.ckM_SearchControl9.Margin = new System.Windows.Forms.Padding(0);
+            this.ckM_SearchControl9.Name = "ckM_SearchControl9";
+            this.ckM_SearchControl9.NameWidth = 280;
+            this.ckM_SearchControl9.SearchEnable = true;
+            this.ckM_SearchControl9.Size = new System.Drawing.Size(93, 27);
+            this.ckM_SearchControl9.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.ckM_SearchControl9.TabIndex = 573;
+            this.ckM_SearchControl9.test = null;
+            this.ckM_SearchControl9.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ckM_SearchControl9.UseChangeDate = false;
+            this.ckM_SearchControl9.Value1 = null;
+            this.ckM_SearchControl9.Value2 = null;
+            this.ckM_SearchControl9.Value3 = null;
+            // 
+            // colorname_9
+            // 
+            this.colorname_9.AllowMinus = false;
+            this.colorname_9.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.colorname_9.BackColor = System.Drawing.Color.White;
+            this.colorname_9.BorderColor = false;
+            this.colorname_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colorname_9.ClientColor = System.Drawing.SystemColors.Window;
+            this.colorname_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.colorname_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.colorname_9.DecimalPlace = 0;
+            this.colorname_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.colorname_9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.colorname_9.IntegerPart = 0;
+            this.colorname_9.IsCorrectDate = true;
+            this.colorname_9.isEnterKeyDown = false;
+            this.colorname_9.IsFirstTime = true;
+            this.colorname_9.isMaxLengthErr = false;
+            this.colorname_9.IsNumber = true;
+            this.colorname_9.IsShop = false;
+            this.colorname_9.Length = 9;
+            this.colorname_9.Location = new System.Drawing.Point(1065, 0);
+            this.colorname_9.MaxLength = 9;
+            this.colorname_9.MoveNext = true;
+            this.colorname_9.Name = "colorname_9";
+            this.colorname_9.Size = new System.Drawing.Size(116, 19);
+            this.colorname_9.TabIndex = 571;
+            this.colorname_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.colorname_9.UseColorSizMode = false;
+            // 
+            // taxrate_9
+            // 
+            this.taxrate_9.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.taxrate_9.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.taxrate_9.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
+            this.taxrate_9.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.taxrate_9.Flag = 0;
+            this.taxrate_9.FormattingEnabled = true;
+            this.taxrate_9.Length = 10;
+            this.taxrate_9.Location = new System.Drawing.Point(1065, 19);
+            this.taxrate_9.MaxLength = 10;
+            this.taxrate_9.MoveNext = true;
+            this.taxrate_9.Name = "taxrate_9";
+            this.taxrate_9.Size = new System.Drawing.Size(100, 20);
+            this.taxrate_9.TabIndex = 572;
+            // 
+            // colcd_9
+            // 
+            this.colcd_9.AllowMinus = false;
+            this.colcd_9.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.colcd_9.BackColor = System.Drawing.Color.White;
+            this.colcd_9.BorderColor = false;
+            this.colcd_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colcd_9.ClientColor = System.Drawing.SystemColors.Window;
+            this.colcd_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.colcd_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.colcd_9.DecimalPlace = 0;
+            this.colcd_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.colcd_9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.colcd_9.IntegerPart = 0;
+            this.colcd_9.IsCorrectDate = true;
+            this.colcd_9.isEnterKeyDown = false;
+            this.colcd_9.IsFirstTime = true;
+            this.colcd_9.isMaxLengthErr = false;
+            this.colcd_9.IsNumber = true;
+            this.colcd_9.IsShop = false;
+            this.colcd_9.Length = 9;
+            this.colcd_9.Location = new System.Drawing.Point(979, 0);
+            this.colcd_9.MaxLength = 9;
+            this.colcd_9.MoveNext = true;
+            this.colcd_9.Name = "colcd_9";
+            this.colcd_9.Size = new System.Drawing.Size(87, 19);
+            this.colcd_9.TabIndex = 577;
+            this.colcd_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.colcd_9.UseColorSizMode = false;
+            // 
+            // taniCD_9
+            // 
+            this.taniCD_9.AutoSize = true;
+            this.taniCD_9.ChangeDate = "";
+            this.taniCD_9.ChangeDateWidth = 0;
+            this.taniCD_9.Code = "";
+            this.taniCD_9.CodeWidth = 30;
+            this.taniCD_9.CodeWidth1 = 30;
+            this.taniCD_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.taniCD_9.DataCheck = false;
+            this.taniCD_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.taniCD_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.taniCD_9.IsCopy = false;
+            this.taniCD_9.LabelText = "";
+            this.taniCD_9.LabelVisible = false;
+            this.taniCD_9.Location = new System.Drawing.Point(1004, 14);
+            this.taniCD_9.Margin = new System.Windows.Forms.Padding(0);
+            this.taniCD_9.Name = "taniCD_9";
+            this.taniCD_9.NameWidth = 281;
+            this.taniCD_9.SearchEnable = true;
+            this.taniCD_9.Size = new System.Drawing.Size(63, 27);
+            this.taniCD_9.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.taniCD_9.TabIndex = 576;
+            this.taniCD_9.test = null;
+            this.taniCD_9.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.taniCD_9.UseChangeDate = false;
+            this.taniCD_9.Value1 = null;
+            this.taniCD_9.Value2 = null;
+            this.taniCD_9.Value3 = null;
+            // 
+            // salepriceout5_9
+            // 
+            this.salepriceout5_9.AllowMinus = false;
+            this.salepriceout5_9.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.salepriceout5_9.BackColor = System.Drawing.Color.White;
+            this.salepriceout5_9.BorderColor = false;
+            this.salepriceout5_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.salepriceout5_9.ClientColor = System.Drawing.SystemColors.Window;
+            this.salepriceout5_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.salepriceout5_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
+            this.salepriceout5_9.DecimalPlace = 0;
+            this.salepriceout5_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout5_9.IntegerPart = 0;
+            this.salepriceout5_9.IsCorrectDate = true;
+            this.salepriceout5_9.isEnterKeyDown = false;
+            this.salepriceout5_9.IsFirstTime = true;
+            this.salepriceout5_9.isMaxLengthErr = false;
+            this.salepriceout5_9.IsNumber = true;
+            this.salepriceout5_9.IsShop = false;
+            this.salepriceout5_9.Length = 20;
+            this.salepriceout5_9.Location = new System.Drawing.Point(738, 19);
+            this.salepriceout5_9.MaxLength = 20;
+            this.salepriceout5_9.MoveNext = true;
+            this.salepriceout5_9.Name = "salepriceout5_9";
+            this.salepriceout5_9.Size = new System.Drawing.Size(100, 19);
+            this.salepriceout5_9.TabIndex = 570;
+            this.salepriceout5_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.salepriceout5_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.salepriceout5_9.UseColorSizMode = false;
+            // 
+            // shouhin_9
+            // 
+            this.shouhin_9.AllowMinus = false;
+            this.shouhin_9.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.shouhin_9.BackColor = System.Drawing.Color.White;
+            this.shouhin_9.BorderColor = false;
+            this.shouhin_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.shouhin_9.ClientColor = System.Drawing.SystemColors.Window;
+            this.shouhin_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.shouhin_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.shouhin_9.DecimalPlace = 0;
+            this.shouhin_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shouhin_9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.shouhin_9.IntegerPart = 0;
+            this.shouhin_9.IsCorrectDate = true;
+            this.shouhin_9.isEnterKeyDown = false;
+            this.shouhin_9.IsFirstTime = true;
+            this.shouhin_9.isMaxLengthErr = false;
+            this.shouhin_9.IsNumber = true;
+            this.shouhin_9.IsShop = false;
+            this.shouhin_9.Length = 9;
+            this.shouhin_9.Location = new System.Drawing.Point(479, 0);
+            this.shouhin_9.MaxLength = 9;
+            this.shouhin_9.MoveNext = true;
+            this.shouhin_9.Name = "shouhin_9";
+            this.shouhin_9.Size = new System.Drawing.Size(500, 19);
+            this.shouhin_9.TabIndex = 575;
+            this.shouhin_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.shouhin_9.UseColorSizMode = false;
+            // 
+            // segment_9
+            // 
+            this.segment_9.AutoSize = true;
+            this.segment_9.ChangeDate = "";
+            this.segment_9.ChangeDateWidth = 0;
+            this.segment_9.Code = "";
+            this.segment_9.CodeWidth = 50;
+            this.segment_9.CodeWidth1 = 50;
+            this.segment_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.segment_9.DataCheck = false;
+            this.segment_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.segment_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.segment_9.IsCopy = false;
+            this.segment_9.LabelText = "";
+            this.segment_9.LabelVisible = false;
+            this.segment_9.Location = new System.Drawing.Point(923, 14);
+            this.segment_9.Margin = new System.Windows.Forms.Padding(0);
+            this.segment_9.Name = "segment_9";
+            this.segment_9.NameWidth = 281;
+            this.segment_9.SearchEnable = true;
+            this.segment_9.Size = new System.Drawing.Size(83, 27);
+            this.segment_9.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.segment_9.TabIndex = 574;
+            this.segment_9.test = null;
+            this.segment_9.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.segment_9.UseChangeDate = false;
+            this.segment_9.Value1 = null;
+            this.segment_9.Value2 = null;
+            this.segment_9.Value3 = null;
+            // 
+            // brand_9
+            // 
+            this.brand_9.AutoSize = true;
+            this.brand_9.ChangeDate = "";
+            this.brand_9.ChangeDateWidth = 0;
+            this.brand_9.Code = "";
+            this.brand_9.CodeWidth = 54;
+            this.brand_9.CodeWidth1 = 54;
+            this.brand_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.brand_9.DataCheck = false;
+            this.brand_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.brand_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.brand_9.IsCopy = false;
+            this.brand_9.LabelText = "";
+            this.brand_9.LabelVisible = false;
+            this.brand_9.Location = new System.Drawing.Point(838, 14);
+            this.brand_9.Margin = new System.Windows.Forms.Padding(0);
+            this.brand_9.Name = "brand_9";
+            this.brand_9.NameWidth = 280;
+            this.brand_9.SearchEnable = true;
+            this.brand_9.Size = new System.Drawing.Size(87, 27);
+            this.brand_9.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.brand_9.TabIndex = 573;
+            this.brand_9.test = null;
+            this.brand_9.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.brand_9.UseChangeDate = false;
+            this.brand_9.Value1 = null;
+            this.brand_9.Value2 = null;
+            this.brand_9.Value3 = null;
+            // 
             // MasterTouroku_TenzikaiShouhin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -8766,33 +9028,19 @@
         private System.Windows.Forms.Label label35;
         private CKM_Controls.CKM_TextBox hyoteidatem_1;
         private CKM_Controls.CKM_TextBox sizeName_1;
-        private Search.CKM_SearchControl segment_1;
         private System.Windows.Forms.Label label24;
         private CKM_Controls.CKM_TextBox shiire_1;
-        private CKM_Controls.CKM_TextBox colorname_1;
-        private CKM_Controls.CKM_TextBox colcd_1;
-        private Search.CKM_SearchControl taniCD_1;
-        private CKM_Controls.CKM_TextBox shouhin_1;
-        private Search.CKM_SearchControl brand_1;
         private CKM_Controls.CKM_TextBox salepriceout5_1;
-        private CKM_Controls.CKM_ComboBox taxrate_1;
         private CKM_Controls.CKM_ComboBox hyoteidate_1;
         private System.Windows.Forms.Panel panel_7;
-        private CKM_Controls.CKM_ComboBox taxrate_7;
         private CKM_Controls.CKM_ComboBox hyoteidate_7;
-        private CKM_Controls.CKM_TextBox shouhin_7;
-        private Search.CKM_SearchControl brand_7;
         private CKM_Controls.CKM_TextBox salepriceout5_7;
-        private CKM_Controls.CKM_TextBox colorname_7;
-        private CKM_Controls.CKM_TextBox colcd_7;
-        private Search.CKM_SearchControl taniCD_7;
         private CKM_Controls.CKM_TextBox shiire_7;
         private CKM_Controls.CKM_TextBox sizecd_7;
         private System.Windows.Forms.Label label32;
         private CKM_Controls.CKM_TextBox hyoteidatem_7;
         private CKM_Controls.CKM_TextBox sizeName_7;
         private CKM_Controls.CKM_TextBox salepriceout4_7;
-        private Search.CKM_SearchControl segment_7;
         private CKM_Controls.CKM_TextBox salepriceout3_7;
         private CKM_Controls.CKM_TextBox salepriceout2_7;
         private CKM_Controls.CKM_TextBox salepriceout1_7;
@@ -8803,21 +9051,14 @@
         private CKM_Controls.CKM_TextBox remark_7;
         private Search.CKM_SearchControl scjan_7;
         private System.Windows.Forms.Panel panel_6;
-        private CKM_Controls.CKM_ComboBox taxrate_6;
         private CKM_Controls.CKM_ComboBox hyoteidate_6;
-        private CKM_Controls.CKM_TextBox shouhin_6;
-        private Search.CKM_SearchControl brand_6;
         private CKM_Controls.CKM_TextBox salepriceout5_6;
-        private CKM_Controls.CKM_TextBox colorname_6;
-        private CKM_Controls.CKM_TextBox colcd_6;
-        private Search.CKM_SearchControl taniCD_6;
         private CKM_Controls.CKM_TextBox shiire_6;
         private CKM_Controls.CKM_TextBox sizecd_6;
         private System.Windows.Forms.Label label30;
         private CKM_Controls.CKM_TextBox hyoteidatem_6;
         private CKM_Controls.CKM_TextBox sizeName_6;
         private CKM_Controls.CKM_TextBox salepriceout4_6;
-        private Search.CKM_SearchControl segment_6;
         private CKM_Controls.CKM_TextBox salepriceout3_6;
         private CKM_Controls.CKM_TextBox salepriceout2_6;
         private CKM_Controls.CKM_TextBox salepriceout1_6;
@@ -8828,21 +9069,14 @@
         private CKM_Controls.CKM_TextBox remark_6;
         private Search.CKM_SearchControl scjan_6;
         private System.Windows.Forms.Panel panel_5;
-        private CKM_Controls.CKM_ComboBox taxrate_5;
         private CKM_Controls.CKM_ComboBox hyoteidate_5;
-        private CKM_Controls.CKM_TextBox shouhin_5;
-        private Search.CKM_SearchControl brand_5;
         private CKM_Controls.CKM_TextBox salepriceout5_5;
-        private CKM_Controls.CKM_TextBox colorname_5;
-        private CKM_Controls.CKM_TextBox colcd_5;
-        private Search.CKM_SearchControl taniCD_5;
         private CKM_Controls.CKM_TextBox shiire_5;
         private CKM_Controls.CKM_TextBox sizecd_5;
         private System.Windows.Forms.Label label28;
         private CKM_Controls.CKM_TextBox hyoteidatem_5;
         private CKM_Controls.CKM_TextBox sizeName_5;
         private CKM_Controls.CKM_TextBox salepriceout4_5;
-        private Search.CKM_SearchControl segment_5;
         private CKM_Controls.CKM_TextBox salepriceout3_5;
         private CKM_Controls.CKM_TextBox salepriceout2_5;
         private CKM_Controls.CKM_TextBox salepriceout1_5;
@@ -8853,21 +9087,14 @@
         private CKM_Controls.CKM_TextBox remark_5;
         private Search.CKM_SearchControl scjan_5;
         private System.Windows.Forms.Panel panel_4;
-        private CKM_Controls.CKM_ComboBox taxrate_4;
         private CKM_Controls.CKM_ComboBox hyoteidate_4;
-        private CKM_Controls.CKM_TextBox shouhin_4;
-        private Search.CKM_SearchControl brand_4;
         private CKM_Controls.CKM_TextBox salepriceout5_4;
-        private CKM_Controls.CKM_TextBox colorname_4;
-        private CKM_Controls.CKM_TextBox colcd_4;
-        private Search.CKM_SearchControl taniCD_4;
         private CKM_Controls.CKM_TextBox shiire_4;
         private CKM_Controls.CKM_TextBox sizecd_4;
         private System.Windows.Forms.Label label26;
         private CKM_Controls.CKM_TextBox hyoteidatem_4;
         private CKM_Controls.CKM_TextBox sizeName_4;
         private CKM_Controls.CKM_TextBox salepriceout4_4;
-        private Search.CKM_SearchControl segment_4;
         private CKM_Controls.CKM_TextBox salepriceout3_4;
         private CKM_Controls.CKM_TextBox salepriceout2_4;
         private CKM_Controls.CKM_TextBox salepriceout1_4;
@@ -8878,21 +9105,14 @@
         private CKM_Controls.CKM_TextBox remark_4;
         private Search.CKM_SearchControl scjan_4;
         private System.Windows.Forms.Panel panel_3;
-        private CKM_Controls.CKM_ComboBox taxrate_3;
         private CKM_Controls.CKM_ComboBox hyoteidate_3;
-        private CKM_Controls.CKM_TextBox shouhin_3;
-        private Search.CKM_SearchControl brand_3;
         private CKM_Controls.CKM_TextBox salepriceout5_3;
-        private CKM_Controls.CKM_TextBox colorname_3;
-        private CKM_Controls.CKM_TextBox colcd_3;
-        private Search.CKM_SearchControl taniCD_3;
         private CKM_Controls.CKM_TextBox shiire_3;
         private CKM_Controls.CKM_TextBox sizecd_3;
         private System.Windows.Forms.Label label23;
         private CKM_Controls.CKM_TextBox hyoteidatem_3;
         private CKM_Controls.CKM_TextBox sizeName_3;
         private CKM_Controls.CKM_TextBox salepriceout4_3;
-        private Search.CKM_SearchControl segment_3;
         private CKM_Controls.CKM_TextBox salepriceout3_3;
         private CKM_Controls.CKM_TextBox salepriceout2_3;
         private CKM_Controls.CKM_TextBox salepriceout1_3;
@@ -8903,21 +9123,14 @@
         private CKM_Controls.CKM_TextBox remark_3;
         private Search.CKM_SearchControl scjan_3;
         private System.Windows.Forms.Panel panel_2;
-        private CKM_Controls.CKM_ComboBox taxrate_2;
         private CKM_Controls.CKM_ComboBox hyoteidate_2;
-        private CKM_Controls.CKM_TextBox shouhin_2;
-        private Search.CKM_SearchControl brand_2;
         private CKM_Controls.CKM_TextBox salepriceout5_2;
-        private CKM_Controls.CKM_TextBox colorname_2;
-        private CKM_Controls.CKM_TextBox colcd_2;
-        private Search.CKM_SearchControl taniCD_2;
         private CKM_Controls.CKM_TextBox shiire_2;
         private CKM_Controls.CKM_TextBox sizecd_2;
         private System.Windows.Forms.Label label8;
         private CKM_Controls.CKM_TextBox hyoteidatem_2;
         private CKM_Controls.CKM_TextBox sizeName_2;
         private CKM_Controls.CKM_TextBox salepriceout4_2;
-        private Search.CKM_SearchControl segment_2;
         private CKM_Controls.CKM_TextBox salepriceout3_2;
         private CKM_Controls.CKM_TextBox salepriceout2_2;
         private CKM_Controls.CKM_TextBox salepriceout1_2;
@@ -8928,21 +9141,14 @@
         private CKM_Controls.CKM_TextBox remark_2;
         private Search.CKM_SearchControl scjan_2;
         private System.Windows.Forms.Panel panel7;
-        private CKM_Controls.CKM_ComboBox taxrate_10;
         private CKM_Controls.CKM_ComboBox hyoteidate_10;
-        private CKM_Controls.CKM_TextBox shouhin_10;
-        private Search.CKM_SearchControl brand_10;
         private CKM_Controls.CKM_TextBox salepriceout5_10;
-        private CKM_Controls.CKM_TextBox colorname_10;
-        private CKM_Controls.CKM_TextBox colcd_10;
-        private Search.CKM_SearchControl taniCD_10;
         private CKM_Controls.CKM_TextBox shiire_10;
         private CKM_Controls.CKM_TextBox sizecd_10;
         private System.Windows.Forms.Label label31;
         private CKM_Controls.CKM_TextBox hyoteidatem_10;
         private CKM_Controls.CKM_TextBox sizeName_10;
         private CKM_Controls.CKM_TextBox salepriceout4_10;
-        private Search.CKM_SearchControl segment_10;
         private CKM_Controls.CKM_TextBox salepriceout3_10;
         private CKM_Controls.CKM_TextBox salepriceout2_10;
         private CKM_Controls.CKM_TextBox salepriceout1_10;
@@ -8953,21 +9159,13 @@
         private CKM_Controls.CKM_TextBox remark_10;
         private Search.CKM_SearchControl scjan_10;
         private System.Windows.Forms.Panel panel5;
-        private CKM_Controls.CKM_ComboBox taxrate_9;
         private CKM_Controls.CKM_ComboBox hyoteidate_9;
-        private CKM_Controls.CKM_TextBox shouhin_9;
-        private Search.CKM_SearchControl brand_9;
-        private CKM_Controls.CKM_TextBox salepriceout5_9;
-        private CKM_Controls.CKM_TextBox colorname_9;
-        private CKM_Controls.CKM_TextBox colcd_9;
-        private Search.CKM_SearchControl taniCD_9;
         private CKM_Controls.CKM_TextBox shiire_9;
         private CKM_Controls.CKM_TextBox sizecd_9;
         private System.Windows.Forms.Label label27;
         private CKM_Controls.CKM_TextBox hyoteidatem_9;
         private CKM_Controls.CKM_TextBox sizeName_9;
         private CKM_Controls.CKM_TextBox salepriceout4_9;
-        private Search.CKM_SearchControl segment_9;
         private CKM_Controls.CKM_TextBox salepriceout3_9;
         private CKM_Controls.CKM_TextBox salepriceout2_9;
         private CKM_Controls.CKM_TextBox salepriceout1_9;
@@ -8978,21 +9176,14 @@
         private CKM_Controls.CKM_TextBox remark_9;
         private Search.CKM_SearchControl scjan_9;
         private System.Windows.Forms.Panel panel3;
-        private CKM_Controls.CKM_ComboBox taxrate_8;
         private CKM_Controls.CKM_ComboBox hyoteidate_8;
-        private CKM_Controls.CKM_TextBox shouhin_8;
-        private Search.CKM_SearchControl brand_8;
         private CKM_Controls.CKM_TextBox salepriceout5_8;
-        private CKM_Controls.CKM_TextBox colorname_8;
-        private CKM_Controls.CKM_TextBox colcd_8;
-        private Search.CKM_SearchControl taniCD_8;
         private CKM_Controls.CKM_TextBox shiire_8;
         private CKM_Controls.CKM_TextBox sizecd_8;
         private System.Windows.Forms.Label label12;
         private CKM_Controls.CKM_TextBox hyoteidatem_8;
         private CKM_Controls.CKM_TextBox sizeName_8;
         private CKM_Controls.CKM_TextBox salepriceout4_8;
-        private Search.CKM_SearchControl segment_8;
         private CKM_Controls.CKM_TextBox salepriceout3_8;
         private CKM_Controls.CKM_TextBox salepriceout2_8;
         private CKM_Controls.CKM_TextBox salepriceout1_8;
@@ -9023,5 +9214,84 @@
         private CKM_Controls.CKM_TextBox TB_3;
         private GridControl.clsGridCheckBox chk_2;
         private CKM_Controls.CKM_TextBox TB_2;
+        private CKM_Controls.CKM_TextBox colorname_1;
+        private CKM_Controls.CKM_ComboBox taxrate_1;
+        private CKM_Controls.CKM_TextBox colcd_1;
+        private Search.CKM_SearchControl taniCD_1;
+        private CKM_Controls.CKM_TextBox shouhin_1;
+        private Search.CKM_SearchControl segment_1;
+        private Search.CKM_SearchControl brand_1;
+        private CKM_Controls.CKM_TextBox colorname_10;
+        private CKM_Controls.CKM_ComboBox taxrate_10;
+        private CKM_Controls.CKM_TextBox colcd_10;
+        private Search.CKM_SearchControl taniCD_10;
+        private CKM_Controls.CKM_TextBox shouhin_10;
+        private Search.CKM_SearchControl segment_10;
+        private Search.CKM_SearchControl brand_10;
+        private CKM_Controls.CKM_TextBox colorname_8;
+        private CKM_Controls.CKM_ComboBox taxrate_8;
+        private CKM_Controls.CKM_TextBox colcd_8;
+        private Search.CKM_SearchControl taniCD_8;
+        private CKM_Controls.CKM_TextBox shouhin_8;
+        private Search.CKM_SearchControl segment_8;
+        private Search.CKM_SearchControl brand_8;
+        private CKM_Controls.CKM_TextBox colorname_7;
+        private CKM_Controls.CKM_ComboBox taxrate_7;
+        private CKM_Controls.CKM_TextBox colcd_7;
+        private Search.CKM_SearchControl taniCD_7;
+        private CKM_Controls.CKM_TextBox shouhin_7;
+        private Search.CKM_SearchControl segment_7;
+        private Search.CKM_SearchControl brand_7;
+        private CKM_Controls.CKM_TextBox colorname_6;
+        private CKM_Controls.CKM_ComboBox taxrate_6;
+        private CKM_Controls.CKM_TextBox colcd_6;
+        private Search.CKM_SearchControl taniCD_6;
+        private CKM_Controls.CKM_TextBox shouhin_6;
+        private Search.CKM_SearchControl segment_6;
+        private Search.CKM_SearchControl brand_6;
+        private CKM_Controls.CKM_TextBox colorname_5;
+        private CKM_Controls.CKM_ComboBox taxrate_5;
+        private CKM_Controls.CKM_TextBox colcd_5;
+        private Search.CKM_SearchControl taniCD_5;
+        private CKM_Controls.CKM_TextBox shouhin_5;
+        private Search.CKM_SearchControl segment_5;
+        private Search.CKM_SearchControl brand_5;
+        private CKM_Controls.CKM_TextBox colorname_4;
+        private CKM_Controls.CKM_ComboBox taxrate_4;
+        private CKM_Controls.CKM_TextBox colcd_4;
+        private Search.CKM_SearchControl taniCD_4;
+        private CKM_Controls.CKM_TextBox shouhin_4;
+        private Search.CKM_SearchControl segment_4;
+        private Search.CKM_SearchControl brand_4;
+        private CKM_Controls.CKM_TextBox colorname_3;
+        private CKM_Controls.CKM_ComboBox taxrate_3;
+        private CKM_Controls.CKM_TextBox colcd_3;
+        private Search.CKM_SearchControl taniCD_3;
+        private CKM_Controls.CKM_TextBox shouhin_3;
+        private Search.CKM_SearchControl segment_3;
+        private Search.CKM_SearchControl brand_3;
+        private CKM_Controls.CKM_TextBox colorname_2;
+        private CKM_Controls.CKM_ComboBox taxrate_2;
+        private CKM_Controls.CKM_TextBox colcd_2;
+        private Search.CKM_SearchControl taniCD_2;
+        private CKM_Controls.CKM_TextBox shouhin_2;
+        private Search.CKM_SearchControl segment_2;
+        private Search.CKM_SearchControl brand_2;
+        private CKM_Controls.CKM_TextBox colorname_9;
+        private CKM_Controls.CKM_TextBox ckM_TextBox3;
+        private CKM_Controls.CKM_ComboBox taxrate_9;
+        private CKM_Controls.CKM_ComboBox ckM_ComboBox8;
+        private CKM_Controls.CKM_TextBox colcd_9;
+        private CKM_Controls.CKM_TextBox ckM_TextBox6;
+        private Search.CKM_SearchControl taniCD_9;
+        private Search.CKM_SearchControl ckM_SearchControl3;
+        private CKM_Controls.CKM_TextBox salepriceout5_9;
+        private CKM_Controls.CKM_TextBox ckM_TextBox9;
+        private CKM_Controls.CKM_TextBox shouhin_9;
+        private Search.CKM_SearchControl segment_9;
+        private CKM_Controls.CKM_TextBox ckM_TextBox12;
+        private Search.CKM_SearchControl brand_9;
+        private Search.CKM_SearchControl ckM_SearchControl6;
+        private Search.CKM_SearchControl ckM_SearchControl9;
     }
 }

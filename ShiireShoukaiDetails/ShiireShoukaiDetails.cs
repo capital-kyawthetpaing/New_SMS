@@ -206,12 +206,13 @@ namespace ShiireShoukaiDetails
 
         private  D_Purchase_Details_Entity  GetDPurchaseDetails()
         {
-            
+
             dpd_entity = new D_Purchase_Details_Entity
             {
                 VendorCD = scMakerCD.TxtCode.Text,
-                JanCD =scJanCD.TxtCode.Text,
+                JanCD = scJanCD.TxtCode.Text,
                 SKUCD = scSkuCD.TxtCode.Text,
+                StoreCD = cboStore.SelectedValue.ToString(),
                 ItemCD = scItem.TxtCode.Text,
                 ITemName = txtItemName.Text,
                 MakerItemCD = txtMakerItemCD.Text,
