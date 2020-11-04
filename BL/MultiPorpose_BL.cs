@@ -38,9 +38,10 @@ namespace BL
         public string ID_Money = "317";                 //金種区分        
         public static string ID_TempoGenkin = "320";    //店舗現金会員
         public static string ID_ShukkaUriageUpdate = "321";    //出荷売上更新
-        public static string ID_Mail = "325";            //Mail履歴
+        
         public static string ID_EDI = "325";            //EDI受信
         public static string ID_TanaFile = "327";            //棚卸読取ファイル
+        public static string ID_Mail = "328";            //Mail履歴
 
         M_MultiPorpose_DL mmdl;
         public MultiPorpose_BL()
