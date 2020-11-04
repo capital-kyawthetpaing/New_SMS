@@ -46,16 +46,26 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
             F7Visible = false;
             F8Visible = false;
             F10Visible = false;
-            
-
+            SetDesignerFunc();
+            EnterVoid();
+        }
+        private void SetDesignerFunc()
+        {
             for (int t = 0; t < 50; t++)
             {
                 ckM_GridView1.Rows.Add();
-                
             }
-            EnterVoid();
-
             panel2.MouseWheel += Panel2_MouseWheel;
+            for (int p = 0; p < 20; p++)
+            {
+                var txt = (panel2.Controls.Find("sn_" + (p + 1).ToString(), true)[0] as CKM_TextBox);
+                txt.MaxLength = 4;
+            }
+            for (int p = 0; p < 50; p++)
+            {
+                var txt = (panel4.Controls.Find("cn_" + (p + 1).ToString(), true)[0] as CKM_TextBox);
+                txt.MaxLength = 4;
+            }
         }
         protected override void OnMouseWheel(MouseEventArgs e)
         {
@@ -108,7 +118,6 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
             panel2.Scroll += Panel2_Scroll;
             panel4.Scroll += Panel2_Scroll;
         }
-
         private void Panel2_Scroll(object sender, ScrollEventArgs e)
         {
             if ((sender as Panel).Name == "panel2")
@@ -738,15 +747,15 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
             {
                 if ( OperationMode == EOperationMode.UPDATE)
                 {
-                    var dtxml = bbl.DataTableToXml(D_SKUUpdate());
-                    var dtxml_1 = bbl.DataTableToXml(D_SKUChange());
-                    var IsUpdate = mskubl.SKUUpdate(dtxml, dtxml_1, C_dt.Split(' ')[0].ToString(), C_dt.Split(' ').Last(), InOperatorCD, InProgramID, InPcID, "変更", (Sc_Item.TxtCode.Text + txtDate1.Text));
+                    var dx = D_SKUUpdate();
+                    var dtxml = bbl.DataTableToXml(dx);
+                    var dx1 = D_SKUChange();
+                    var dtxml_1 = bbl.DataTableToXml(dx1);
+                    var IsUpdate =  mskubl.SKUUpdate(dtxml, dtxml_1, C_dt.Split(' ')[0].ToString(), C_dt.Split(' ').Last(), InOperatorCD, InProgramID, InPcID, "変更", (Sc_Item.TxtCode.Text + txtDate1.Text));
                     if (IsUpdate)
                     {
                         bbl.ShowMessage("I101");
                         ChangeMode(EOperationMode.UPDATE);
-                     
-                       // ckM_GridView1.Enabled = false;
                     }
                 }
                 else if (OperationMode == EOperationMode.INSERT) {
@@ -801,8 +810,6 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
             }
             return dt; 
         }
-
-       
         //private DataTable M_SKUInsert()
         //{
             
@@ -843,13 +850,12 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
             }
             return dt;
         }
-        
-        
-        private bool  ErrorCheck_()
+
+        private bool _E102(int KBN = 0)
         {
-            try
-            {
-                //E102
+            //E102
+
+            if (KBN != 2)
                 for (int p = 0; p < 20; p++)
                 {
                     var txt = (panel2.Controls.Find("sn_" + (p + 1).ToString(), true)[0] as CKM_TextBox);
@@ -860,6 +866,7 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                         return false;
                     }
                 }
+            if (KBN != 1)
                 for (int p = 0; p < 50; p++)
                 {
                     var txt = (panel4.Controls.Find("cn_" + (p + 1).ToString(), true)[0] as CKM_TextBox);
@@ -870,7 +877,13 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                         return false;
                     }
                 }
-                //E105 //    lstNames.GroupBy(n => n).Any(c => c.Count() > 1);
+            return true;
+        }
+        private bool _E105(int KBN =0)
+        {
+            //E105 //    lstNames.GroupBy(n => n).Any(c => c.Count() > 1);
+            if (KBN != 2)
+            { 
                 List<string> lst = new List<string>();
                 for (int p = 0; p < 20; p++)
                 {
@@ -887,6 +900,9 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                             lst.Add(txt.Text);
                     }
                 }
+            }
+            if (KBN != 2)
+            {
                 List<string> lst_C = new List<string>();
                 for (int p = 0; p < 50; p++)
                 {
@@ -903,7 +919,14 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                             lst_C.Add(txt.Text);
                     }
                 }
-                //E228
+            }
+            return true;
+        }
+        private bool _E228(int KBN = 0)
+        {
+            //E228
+            if (KBN != 2)
+            {
                 var ls = new List<int>();
                 for (int j = 0; j < 20; j++)
                 {
@@ -931,11 +954,15 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                 if (!IsSerial)
                 {
                     bbl.ShowMessage("E228");
-                    (this.Controls.Find("sn_" + (current_size).ToString(), true)[0] as CKM_TextBox).Focus();
+                    (this.Controls.Find("sn_" + (1).ToString(), true)[0] as CKM_TextBox).Focus();
+                    //(this.Controls.Find("sn_" + (current_size).ToString(), true)[0] as CKM_TextBox).Focus();
                     return false;
                 }
+            }
+            if (KBN != 1)
+            {
                 var lc = new List<int>();
-                for (int j = 0; j < 20; j++)
+                for (int j = 0; j < 50; j++)
                 {
                     var ckb = this.Controls.Find("cn_" + (j + 1).ToString(), true)[0] as CKM_TextBox;
                     if (!string.IsNullOrWhiteSpace(ckb.Text) && ckb.Enabled)
@@ -947,7 +974,7 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                 bool IsSerial_Color = true;
                 int h_C = lc.First();
                 int current_color = 0;
-                foreach (var l in ls)
+                foreach (var l in lc)
                 {
 
                     if (l != h_C)
@@ -961,10 +988,18 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                 if (!IsSerial_Color)
                 {
                     bbl.ShowMessage("E228");
-                    (this.Controls.Find("cn_" + (current_color).ToString(), true)[0] as CKM_TextBox).Focus();
+                    (this.Controls.Find("cn_" + (1).ToString(), true)[0] as CKM_TextBox).Focus();
+                    //(this.Controls.Find("cn_" + (current_color).ToString(), true)[0] as CKM_TextBox).Focus();
                     return false;
                 }
-                //E229
+            }
+            return true;
+        }
+        private bool _E229(int KBN= 0)
+        {
+            //E229
+            if (KBN != 2)
+            {
                 int val = 0;
                 for (int o = 0; o < 20; o++)
                 {
@@ -981,15 +1016,18 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                     for (int o = 0; o < 20; o++)
                     {
                         var c = this.Controls.Find("sn_" + (o + 1).ToString(), true)[0] as CKM_TextBox;
-                      if (c.Enabled)
-                        if (maxVal < Convert.ToInt32(c.Text) )
-                        {
-                            bbl.ShowMessage("E229");
-                            c.Focus();
-                            return false;
-                        }
+                        if (c.Enabled)
+                            if (maxVal < Convert.ToInt32(c.Text))
+                            {
+                                bbl.ShowMessage("E229");
+                                c.Focus();
+                                return false;
+                            }
                     }
                 }
+            }
+            if (KBN != 1)
+            {
                 int val_C = 0;
                 for (int o = 0; o < 50; o++)
                 {
@@ -1007,17 +1045,41 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                     {
                         var c = this.Controls.Find("cn_" + (o + 1).ToString(), true)[0] as CKM_TextBox;
                         if (c.Enabled)
-                            if (maxVal_C < Convert.ToInt32(c.Text) )
-                        {
-                            bbl.ShowMessage("E229");
-                            c.Focus();
-                            return false;
-                        }
+                            if (maxVal_C < Convert.ToInt32(c.Text))
+                            {
+                                bbl.ShowMessage("E229");
+                                c.Focus();
+                                return false;
+                            }
                     }
                 }
             }
+            return true;
+
+        }
+        private bool  ErrorCheck_()
+        {
+            try
+            {
+                if (!_E102())
+                {
+                    return false;
+                }
+                if (!_E105())
+                {
+                    return false;
+                }
+                if (!_E228())
+                {
+                    return false;
+                }
+                if (!_E229())
+                {
+                    return false;
+                }
+            }
             catch(Exception ex) {
-                var msg = ex.Message;
+                MessageBox.Show(ex.Message);
                 return false;
             }
             return true;
@@ -1159,14 +1221,55 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                
                 if (con is CKM_TextBox ct &&  (ct.Name.Contains("sn_")))
                 {
-                    ct.Enter += Ct_Enter; 
+                    ct.KeyDown += Ct_Enter; 
+                }
+            }
+            var cc = GetAllControls(panel4);
+
+            foreach (var con in cc)
+            {
+
+                if (con is CKM_TextBox ct && (ct.Name.Contains("cn_")))
+                {
+                    ct.KeyDown += Ct_Enter;
                 }
             }
         }
 
-        private void Ct_Enter(object sender, EventArgs e)
+        private void Ct_Enter(object sender,  KeyEventArgs e)
         {
-           
+            var val = 0;
+            if (e.KeyCode == Keys.Enter)
+            {
+                if ((sender as Control) is CKM_TextBox ct)
+                {
+                    if (ct.Name.Split('_').First() == "sn")
+                    {
+                        val = 1;
+                    }
+                    else if (ct.Name.Split('_').First() == "cn")
+                    {
+                        val = 2;
+                    }
+                    if (!_E105(val)) // Same
+                    {
+                        return;
+                    }
+                    if (!_E228(val))  // name
+                    {
+                        return;
+                    }
+                    if (!_E229(val))  // name
+                    {
+                        return;
+                    }
+                }
+                //else if ((sender as Control) is CheckBox cb)
+                //{
+
+                //}
+                 
+            }
         }
 
         private void panel2_Scroll_1(object sender, ScrollEventArgs e)
