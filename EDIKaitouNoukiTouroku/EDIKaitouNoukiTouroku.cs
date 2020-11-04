@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 using BL;
 using Entity;
 using Base.Client;
-using Search;
 using GridBase;
 
 namespace EDIKaitouNoukiTouroku
@@ -66,6 +62,7 @@ namespace EDIKaitouNoukiTouroku
                 this.SetFunctionLabel(EProMode.SHOW);   //照会プログラムとして起動
                 this.InitialControlArray();
 
+                F9Visible = false;
                 Btn_F10.Text = "印刷(F10)";
                 Btn_F12.Text = "最新化(F12)";
 
@@ -375,7 +372,7 @@ namespace EDIKaitouNoukiTouroku
 
             if (mEdiMode == "1")
             {
-                //　記憶していた初期表示値が１mo
+                //　記憶していた初期表示値が１
                 //＆画面・在庫SKS連携処理の処理モードが「処理停止中」の場合
                 if(lblEdiMode.Text== "処理停止中")
                 {
@@ -409,7 +406,7 @@ namespace EDIKaitouNoukiTouroku
         /// <param name="Kbn"></param>
         private void Scr_Clr(short Kbn)
         {
-                       ckM_CheckBox1.Checked = false;
+                        ckM_CheckBox1.Checked = false;
             ckM_CheckBox2.Checked = false;
             ckM_CheckBox3.Checked = false;
 
