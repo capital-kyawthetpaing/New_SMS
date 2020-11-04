@@ -279,6 +279,7 @@ namespace EDINouhinJouhonTouroku
 
                 //①保存した.xsdはプロジェクトに追加しておきます。
                 DialogResult ret;
+                
                 EDINouhinJouhouTouroku_Report Report = new EDINouhinJouhouTouroku_Report();
                 
 
