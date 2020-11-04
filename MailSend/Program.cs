@@ -25,7 +25,7 @@ namespace MailSend
 
             if (lgbl.ReadConfig() == true)
             {
-                mmpe.ID = "325";
+                mmpe.ID = "328";
                 mmpe.Key = "1";
 
                 dtMulti = msbl.M_MultiPorpose_SelectID(mmpe);
