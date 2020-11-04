@@ -421,7 +421,7 @@ namespace EDIKaitouNoukiTouroku
             }
             catch(Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine(ex.InnerException.ToString());
+                System.Diagnostics.Debug.WriteLine(ex.Message);
                 return false;
             }
         }
