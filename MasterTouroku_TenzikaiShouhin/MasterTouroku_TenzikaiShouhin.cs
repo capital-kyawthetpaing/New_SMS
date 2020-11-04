@@ -1850,8 +1850,8 @@ namespace MasterTouroku_TenzikaiShouhin
                                 if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].Shiiretanka))
                                 {
                                     //Ｅ１０２
-                                    //bbl.ShowMessage("E102");
-                                    //return false;
+                                    bbl.ShowMessage("E102");
+                                    return false;
                                 }
                                // mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                             }
@@ -2507,11 +2507,11 @@ namespace MasterTouroku_TenzikaiShouhin
                 else
                 {
                         int Res_Gyo = 0;
-                    int w_Gyo = 0;
+                    //int w_Gyo = 0;
                     if (OperationMode == EOperationMode.UPDATE || OperationMode == EOperationMode.INSERT)
                         {
 
-                            //int w_Gyo = 0;
+                            int w_Gyo = 0;
 
                             for (int i = mGrid.g_MK_Max_Row - 1; i >= 0; i--)
                             {
@@ -2532,10 +2532,7 @@ namespace MasterTouroku_TenzikaiShouhin
                         }
                         foreach (DataRow dr in dt.Rows)   // Meisai Dt
                         {
-                         if(mGrid.g_DArray[w_Gyo].JANCD == dr["JANCD"].ToString())
-                        {
-
-                        }
+                       
                             mGrid.g_DArray[c].JANCD = dr["JANCD"].ToString();
                             mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
                             mGrid.g_DArray[c].SKUName = dr["商品名"].ToString();
@@ -2595,8 +2592,6 @@ namespace MasterTouroku_TenzikaiShouhin
                 }
             }
         }
-     
-
         private void S_BodySeigyo(short pKBN, short pGrid)
         {
             if (pKBN == 4 && pGrid == 2)
@@ -3385,7 +3380,7 @@ namespace MasterTouroku_TenzikaiShouhin
                     return;
                 }
             }
-
+            mGrid.S_DispToArray(Vsb_Mei_0.Value);
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++) // GridControl
             {
                 if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JANCD) == false)
