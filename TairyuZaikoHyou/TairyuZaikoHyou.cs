@@ -117,12 +117,12 @@ namespace TairyuZaikoHyou
 
         public bool ErrorCheck()
         {
-           if(String.IsNullOrWhiteSpace(txtTargetDays.Text))
-            {
-                tzkbl.ShowMessage("E102");
-                txtTargetDays.Focus();
-                return false;
-            }
+           //if(String.IsNullOrWhiteSpace(txtTargetDays.Text))
+           // {
+           //     tzkbl.ShowMessage("E102");
+           //     txtTargetDays.Focus();
+           //     return false;
+           // }
 
             if (!string.IsNullOrEmpty(Sc_Maker.TxtCode.Text))
             {

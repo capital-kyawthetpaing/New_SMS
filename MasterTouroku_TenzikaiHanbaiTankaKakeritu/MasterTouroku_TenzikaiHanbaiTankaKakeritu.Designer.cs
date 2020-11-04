@@ -57,6 +57,7 @@
             this.Lb_brand = new CKM_Controls.CKM_Label();
             this.LB_tanka = new CKM_Controls.CKM_Label();
             this.GV_Tenzaishohin = new CKM_Controls.CKM_GridView();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.BrandCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,7 +67,6 @@
             this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Season = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_Tenzaishohin)).BeginInit();
             this.panel2.SuspendLayout();
@@ -594,13 +594,21 @@
             this.GV_Tenzaishohin.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.GV_Tenzaishohin_DataError);
             this.GV_Tenzaishohin.Paint += new System.Windows.Forms.PaintEventHandler(this.GV_Tenzaishohin_Paint);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.GV_Tenzaishohin);
+            this.panel2.Location = new System.Drawing.Point(1, 212);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1690, 550);
+            this.panel2.TabIndex = 101;
+            // 
             // colNo
             // 
             this.colNo.DataPropertyName = "colNo";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.NullValue = null;
             this.colNo.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colNo.HeaderText = "No";
+            this.colNo.HeaderText = "  No";
             this.colNo.Name = "colNo";
             this.colNo.ReadOnly = true;
             this.colNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -676,14 +684,6 @@
             this.Rate.HeaderText = "          掛率";
             this.Rate.MaxInputLength = 6;
             this.Rate.Name = "Rate";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.GV_Tenzaishohin);
-            this.panel2.Location = new System.Drawing.Point(1, 212);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1690, 550);
-            this.panel2.TabIndex = 101;
             // 
             // FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu
             // 
