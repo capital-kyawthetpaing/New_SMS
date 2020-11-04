@@ -250,6 +250,7 @@ BEGIN
     (
         [StoreCD] [varchar](4) ,
         [VendorCD] [varchar](13) ,
+        [SoukoCD] [varchar](6) ,
         [OrderNO] [varchar](11) ,
         [OrderRows] [int],
         [MakerItem] [varchar](50) ,
@@ -272,6 +273,7 @@ BEGIN
                                      ,@ChkMisyonin
     
     DECLARE @VendorCD varchar(10);
+    DECLARE @SoukoCD varchar(6);
     DECLARE @EDIOrderNO varchar(11);
     DECLARE @VCapitalCD varchar(13);
     DECLARE @VCapitalName varchar(20);
@@ -284,8 +286,9 @@ BEGIN
     
     --カーソル定義①
     DECLARE CUR_AAA CURSOR FOR
-        SELECT DISTINCT tbl.VendorCD
+        SELECT tbl.VendorCD
         FROM @OrderTbl AS tbl
+        GROUP BY tbl.VendorCD
         ORDER BY tbl.VendorCD;
     
     --カーソルオープン①
@@ -322,14 +325,30 @@ BEGIN
               ,@VOrderName = SkenOrderName
               ,@VSalesCD = SkenSalesCD
               ,@VSalesName = SkenSalesName
-              ,@VDestinationCD = SkenDestinationCD
-              ,@VDestinationName = SkenDestinationName
+              --,@VDestinationCD = SkenDestinationCD
+              --,@VDestinationName = SkenDestinationName
           FROM M_VendorStoreFTP 
          WHERE VendorCD = @VendorCD
            AND StoreCD = @StoreCD
            AND ChangeDate <= @SYSDATE
          ORDER BY ChangeDate DESC;
-            
+         
+        --M_VendorSoukoFTP取得
+        /*
+        SET @VDestinationCD = '';
+        SET @VDestinationName = '';
+        
+        SELECT TOP 1
+               @VDestinationCD = SkenDestinationCD
+              ,@VDestinationName = SkenDestinationName
+          FROM M_VendorSoukoFTP 
+         WHERE VendorCD = @VendorCD
+           AND StoreCD = @StoreCD
+           AND SoukoCD = @SoukoCD
+           AND ChangeDate <= @SYSDATE
+         ORDER BY ChangeDate DESC;
+        */
+        
         --【D_EDIOrder】Table転送仕様Ａ
         INSERT INTO [D_EDIOrder]
             ([EDIOrderNO]
@@ -365,8 +384,8 @@ BEGIN
            ,@VOrderName
            ,@VSalesCD
            ,@VSalesName
-           ,@VDestinationCD
-           ,@VDestinationName
+           ,NULL
+           ,NULL
            ,NULL   
            ,@Operator  
            ,@SYSDATETIME
@@ -403,6 +422,8 @@ BEGIN
            ,[NextDate]
            ,[OrderGroupRows]
            ,[ErrorMessage]
+           ,[DestinationCD]
+           ,[DestinationName]
            ,[InsertOperator]
            ,[InsertDateTime]
            ,[UpdateOperator]
@@ -434,6 +455,22 @@ BEGIN
            ,NULL
            ,Row
            ,NULL
+           ,(SELECT TOP 1 SkenDestinationCD
+               FROM M_VendorSoukoFTP 
+              WHERE VendorCD = tbl.VendorCD
+                AND StoreCD = tbl.StoreCD
+                AND SoukoCD = tbl.SoukoCD
+                AND ChangeDate <= @SYSDATE
+              ORDER BY ChangeDate DESC
+            )
+           ,(SELECT TOP 1 SkenDestinationName
+               FROM M_VendorSoukoFTP 
+              WHERE VendorCD = tbl.VendorCD
+                AND StoreCD = tbl.StoreCD
+                AND SoukoCD = tbl.SoukoCD
+                AND ChangeDate <= @SYSDATE
+              ORDER BY ChangeDate DESC
+            )
            ,@Operator  
            ,@SYSDATETIME
            ,@Operator  

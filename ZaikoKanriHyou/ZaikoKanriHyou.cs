@@ -46,6 +46,7 @@ namespace ZaikoKanriHyou
             cboSouko.SelectedValue = SoukoCD;
             scMakerShohinCD.CodeWidth = 600;
             txtTargetDate.Text = DateTime.Now.ToString("yyyy/MM");
+            Btn_F11.Text = "";
         }
 
         private void SetRequiredField()
@@ -279,8 +280,8 @@ namespace ZaikoKanriHyou
         {
             msce = new M_StoreClose_Entity();
             msce = GetStoreClose_Data();
-
-            if (zkhbl.M_StoreClose_Check(msce, "3").Rows.Count > 0)
+            DataTable dt = zkhbl.M_StoreClose_Check(msce, "3");
+            if (dt.Rows.Count > 0)
             {
                 string ProgramID = "GetsujiZaikoKeisanSyori";
                 RunConsole(ProgramID, msce.FiscalYYYYMM);
