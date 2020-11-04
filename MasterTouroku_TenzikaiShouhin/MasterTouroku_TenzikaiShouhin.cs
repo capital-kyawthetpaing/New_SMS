@@ -907,12 +907,12 @@ namespace MasterTouroku_TenzikaiShouhin
                             //((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).Stype = CKM_SearchControl.SearchType.JANCD;
                             break;
                         case (int)ClsGridMasterTanzi.ColNO.BrandCD:
-                            //  ((((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl))).TxtCode.MaxLength = 6;
+                             ((((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl))).TxtCode.MaxLength = 6;
                             // ((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).Stype = CKM_SearchControl.SearchType.ブランド;
                             break;
                         case (int)ClsGridMasterTanzi.ColNO.SegmentCD:
-                            // ((((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl))).TxtCode.MaxLength = 6;
-                            ((((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl))).TxtCode.Width = 50;
+                             ((((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl))).TxtCode.MaxLength = 6;
+                            //((((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl))).TxtCode.Width = 50;
                             ((((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl))).Value1 = "226";
                             //((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).Stype = CKM_SearchControl.SearchType.商品分類;
                             break;
@@ -2475,33 +2475,37 @@ namespace MasterTouroku_TenzikaiShouhin
                 }
                 else
                 {
-                        int Res_Gyo = 0;
-                    //int w_Gyo = 0;
+                    int Res_Gyo = 0;
                     if (OperationMode == EOperationMode.UPDATE || OperationMode == EOperationMode.INSERT)
+                      {
+
+                        int w_Gyo = 0;
+                        for (int i = mGrid.g_MK_Max_Row -1 ; i >= 0; i--)
                         {
-
-                            int w_Gyo = 0;
-
-                            for (int i = mGrid.g_MK_Max_Row - 1; i >= 0; i--)
+                            if (!string.IsNullOrEmpty(mGrid.g_DArray[i].JANCD))
                             {
-                                if (!string.IsNullOrEmpty(mGrid.g_DArray[i].JANCD))
-                                {
-                                    Res_Gyo = i;
-                                    break;
-                                }
-                                w_Gyo = Convert.ToInt16(mGrid.g_DArray[i].GYONO);
+                                Res_Gyo = i;
+                                break;
                             }
+                            w_Gyo = Convert.ToInt16(mGrid.g_DArray[i].GYONO);
+                        }
                         }
                         else
                             S_Clear_Grid();
                         int c = 0;
-                        if (Res_Gyo != 0)
-                        {
-                            c += (Res_Gyo + 1);
-                        }
+
+                    if (!string.IsNullOrEmpty(mGrid.g_DArray[0].JANCD))
+                    {
+                        c += (Res_Gyo + 1);
+                    }
+                    //if (Res_Gyo != 0)
+                    //    {
+                    //        c += (Res_Gyo + 1);
+                    //    }
+
                         foreach (DataRow dr in dt.Rows)   // Meisai Dt
                         {
-                       
+                        
                             mGrid.g_DArray[c].JANCD = dr["JANCD"].ToString();
                             mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
                             mGrid.g_DArray[c].SKUName = dr["商品名"].ToString();
@@ -2974,43 +2978,136 @@ namespace MasterTouroku_TenzikaiShouhin
 
 
         }
+
+        public DataTable ReadExcel(string fileName, string fileExt)
+        {
+            string conn = string.Empty;
+            DataTable dtexcel = new DataTable();
+            //Provider = Microsoft.ACE.OLEDB.12.0; Data Source = c:\myFolder\myExcel2007file.xlsx;
+            //Extended Properties = "Excel 12.0 Xml;HDR=YES;IMEX=1";
+            if (fileExt.CompareTo(".xls") == 0)
+                conn = @"provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + fileName + ";Extended Properties='Excel 8.0;HRD=Yes;IMEX=1';"; //for below excel 2007  
+            else
+                conn = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + fileName + ";Extended Properties='Excel 8.0;HRD=No;IMEX=1';"; //for above excel 2007  
+            using (OleDbConnection con = new OleDbConnection(conn))
+            {
+                try
+                {
+                    //sheet.Cells.NumberFormat = "@";
+                    OleDbDataAdapter oleAdpt = new OleDbDataAdapter("select * from [Sheet1$]", con); //here we read data from sheet1  
+                    oleAdpt.Fill(dtexcel); //fill excel data into dataTable  
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            return dtexcel;
+        }
         private void BT_meisai_Click(object sender, EventArgs e)
         {
-            Clear(panel2);
-            //ChangeFunKeys();
+            mGrid.S_DispToArray(Vsb_Mei_0.Value);
             checkmei = true;
+            string filePath = string.Empty;
+            string fileExt = string.Empty;
             if (!System.IO.Directory.Exists("C:\\SMS\\TenzikaiShouhin\\"))
             {
                 System.IO.Directory.CreateDirectory("C:\\SMS\\TenzikaiShouhin\\");
             }
-            openFileDialog1.InitialDirectory = "C:\\SMS\\TenzikaiShouhin\\";
-            openFileDialog1.FilterIndex = 2;
-            openFileDialog1.RestoreDirectory = true;
-            //openFileDialog1.Filter = "Excel Worksheets|*.xlsx || *.xls";
-            openFileDialog1.FileName = "";
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            OpenFileDialog file = new OpenFileDialog(); //open dialog to choose file 
+            file.InitialDirectory= "C:\\SMS\\TenzikaiShouhin\\";
+            file.RestoreDirectory = true;
+            if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK) //if there is a file choosen by the user  
             {
+                filePath = file.FileName; //get the path of the file  
+                fileExt = Path.GetExtension(filePath); //get the file extension  
+                if (!(fileExt.CompareTo(".xls") == 0 || fileExt.CompareTo(".xlsx") == 0))
+                {
+                    bbl.ShowMessage("E137");
+                    return ;
+                }
+                 DataTable   dtExcel = new DataTable();
+                    dtExcel = ReadExcel(filePath, fileExt);
+                int w_Row;
 
-                var dt = ConvertToDataTable(openFileDialog1.FileName);
-                if (dt == null)
+                for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
                 {
-                    return;
+                    for (int i = 0; i < dtExcel.Rows.Count; i++)
+                    {
+                        DataRow row = dtExcel.Rows[i];
+
+                        if (row[0] != DBNull.Value)
+                        {
+
+                            if (mGrid.g_DArray[w_Row].JANCD == dtExcel.Rows[i]["JANCD"].ToString())
+                            {
+
+                                bl.ShowMessage("E226");
+                                return;
+                            }
+                        }
+                    }
                 }
+
                 string[] colname = { "SKUCD", "JANCD", "商品名", "カラーNO", "カラー名", "サイズNO", "サイズ名", "販売予定日(月)", "販売予定日", "仕入単価", "標準売上単価", "ランク１単価", "ランク２単価", "ランク３単価", "ランク４単価", "ランク５単価", "ブランドCD", "セグメントCD", "単位CD", "税率区分", "備考" };
-                if (ColumnCheck(colname, dt))
-                {
-                    MesaiHyouJi(dt);
-                    S_BodySeigyo(0, 1);
-                    mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
-                    S_BodySeigyo(4, 0);
-                    scjan_1.Focus();
-                }
-                else
-                {
-                    tbl.ShowMessage("E137");
-                }
-                
+                            if (ColumnCheck(colname, dtExcel))
+                            {
+                                MesaiHyouJi(dtExcel);
+                                S_BodySeigyo(0, 1);
+                                mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
+                                S_BodySeigyo(4, 0);
+                                scjan_1.Focus();
+                            }
+                            else
+                            {
+                                tbl.ShowMessage("E137");
+                            }
+                        
+                   // }
+               // }
             }
+
+            //Clear(panel2);
+            ////ChangeFunKeys();
+
+            //string filePath = string.Empty;
+            //string fileExt = string.Empty;
+            //OpenFileDialog file = new OpenFileDialog(); //open dialog to choose file  
+
+            //   checkmei = true;
+            //if (!System.IO.Directory.Exists("C:\\SMS\\TenzikaiShouhin\\"))
+            //{
+            //    System.IO.Directory.CreateDirectory("C:\\SMS\\TenzikaiShouhin\\");
+            //}
+            //openFileDialog1.InitialDirectory = "C:\\SMS\\TenzikaiShouhin\\";
+            //openFileDialog1.FilterIndex = 2;
+            //openFileDialog1.RestoreDirectory = true;
+            ////openFileDialog1.Filter = "Excel Worksheets|*.xlsx || Excel Worksheets|*.xls";
+            //openFileDialog1.FileName = "";
+
+            //    if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            //{
+
+            //    var dt = ConvertToDataTable(openFileDialog1.FileName);
+            //    if (dt == null)
+            //    {
+            //        return;
+            //    }
+            //    string[] colname = { "SKUCD", "JANCD", "商品名", "カラーNO", "カラー名", "サイズNO", "サイズ名", "販売予定日(月)", "販売予定日", "仕入単価", "標準売上単価", "ランク１単価", "ランク２単価", "ランク３単価", "ランク４単価", "ランク５単価", "ブランドCD", "セグメントCD", "単位CD", "税率区分", "備考" };
+            //    if (ColumnCheck(colname, dt))
+            //    {
+            //        MesaiHyouJi(dt);
+            //        S_BodySeigyo(0, 1);
+            //        mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
+            //        S_BodySeigyo(4, 0);
+            //        scjan_1.Focus();
+            //    }
+            //    else
+            //    {
+            //        tbl.ShowMessage("E137");
+            //    }
+
+            //}
 
         }
         protected Boolean ColumnCheck(String[] colName, DataTable dtMain)
@@ -3284,17 +3381,13 @@ namespace MasterTouroku_TenzikaiShouhin
         }
         private void SetVal(int w_Row)
         {
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Chk, w_Row].Cell_Enabled = false;
-            // mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.CheckColor;
+            
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Chk, w_Row].Cell_Enabled = false;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.BrandCD, w_Row].Cell_Enabled = false;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.SegmentCD, w_Row].Cell_Enabled = false;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TaniCD, w_Row].Cell_Enabled = false;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TaxRateFlg, w_Row].Cell_Enabled = false;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Remark, w_Row].Cell_Enabled = false;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Chk, w_Row].Cell_Enabled = false;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Chk, w_Row].Cell_Selectable = false;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Chk, w_Row].Cell_ReadOnly = false;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TB, w_Row].Cell_Color = GridBase.ClsGridBase.CheckColor;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Chk, w_Row].Cell_Color = GridBase.ClsGridBase.CheckColor;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.JANCD, w_Row].Cell_Color = GridBase.ClsGridBase.CheckColor;
@@ -3523,5 +3616,7 @@ namespace MasterTouroku_TenzikaiShouhin
 
             return true;
         }
+
+     
     }
 }
