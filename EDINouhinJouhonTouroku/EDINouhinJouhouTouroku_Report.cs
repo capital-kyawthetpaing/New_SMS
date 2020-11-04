@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EDINouhinJouhonTouroku {
+namespace EDINouhinJouhouTouroku {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace EDINouhinJouhonTouroku {
         
         public override string FullResourceName {
             get {
-                return "EDINouhinJouhonTouroku.EDINouhinJouhouTouroku_Report.rpt";
+                return "EDINouhinJouhouTouroku.EDINouhinJouhouTouroku_Report.rpt";
             }
             set {
                 // Do nothing
