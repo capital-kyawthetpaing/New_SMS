@@ -31,9 +31,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTanabanNyuuryoku));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelDetail = new System.Windows.Forms.Panel();
+            this.ScStorage = new Search.CKM_SearchControl();
+            this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.dgvTanaban = new CKM_Controls.CKM_GridView();
             this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colRackNo1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,8 +60,6 @@
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
-            this.ckM_Label5 = new CKM_Controls.CKM_Label();
-            this.ScStorage = new Search.CKM_SearchControl();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTanaban)).BeginInit();
             this.SuspendLayout();
@@ -96,10 +95,58 @@
             this.panelDetail.Controls.Add(this.ckM_Label2);
             this.panelDetail.Controls.Add(this.ckM_Label1);
             this.panelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDetail.Location = new System.Drawing.Point(0, 0);
+            this.panelDetail.Location = new System.Drawing.Point(0, 54);
             this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(1713, 961);
+            this.panelDetail.Size = new System.Drawing.Size(1713, 875);
             this.panelDetail.TabIndex = 0;
+            // 
+            // ScStorage
+            // 
+            this.ScStorage.AutoSize = true;
+            this.ScStorage.ChangeDate = "";
+            this.ScStorage.ChangeDateWidth = 100;
+            this.ScStorage.Code = "";
+            this.ScStorage.CodeWidth = 100;
+            this.ScStorage.CodeWidth1 = 100;
+            this.ScStorage.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScStorage.DataCheck = false;
+            this.ScStorage.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScStorage.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.ScStorage.IsCopy = false;
+            this.ScStorage.LabelText = "";
+            this.ScStorage.LabelVisible = false;
+            this.ScStorage.Location = new System.Drawing.Point(943, 83);
+            this.ScStorage.Margin = new System.Windows.Forms.Padding(0);
+            this.ScStorage.Name = "ScStorage";
+            this.ScStorage.NameWidth = 600;
+            this.ScStorage.SearchEnable = true;
+            this.ScStorage.Size = new System.Drawing.Size(133, 28);
+            this.ScStorage.Stype = Search.CKM_SearchControl.SearchType.棚番号;
+            this.ScStorage.TabIndex = 6;
+            this.ScStorage.test = null;
+            this.ScStorage.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScStorage.UseChangeDate = false;
+            this.ScStorage.Value1 = null;
+            this.ScStorage.Value2 = null;
+            this.ScStorage.Value3 = null;
+            this.ScStorage.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScStorage_CodeKeyDownEvent);
+            // 
+            // ckM_Label5
+            // 
+            this.ckM_Label5.AutoSize = true;
+            this.ckM_Label5.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label5.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label5.DefaultlabelSize = true;
+            this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label5.Location = new System.Drawing.Point(909, 91);
+            this.ckM_Label5.Name = "ckM_Label5";
+            this.ckM_Label5.Size = new System.Drawing.Size(31, 12);
+            this.ckM_Label5.TabIndex = 9;
+            this.ckM_Label5.Text = "棚番";
+            this.ckM_Label5.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dgvTanaban
             // 
@@ -112,7 +159,7 @@
             this.dgvTanaban.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvTanaban.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -131,14 +178,6 @@
             this.colJanCD,
             this.colStockSu,
             this.colStockNo});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTanaban.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTanaban.EnableHeadersVisualStyles = false;
             this.dgvTanaban.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvTanaban.Location = new System.Drawing.Point(25, 149);
@@ -491,54 +530,6 @@
             this.ckM_Label1.Text = "入荷日";
             this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_Label5
-            // 
-            this.ckM_Label5.AutoSize = true;
-            this.ckM_Label5.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label5.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label5.DefaultlabelSize = true;
-            this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(909, 91);
-            this.ckM_Label5.Name = "ckM_Label5";
-            this.ckM_Label5.Size = new System.Drawing.Size(31, 12);
-            this.ckM_Label5.TabIndex = 9;
-            this.ckM_Label5.Text = "棚番";
-            this.ckM_Label5.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ScStorage
-            // 
-            this.ScStorage.AutoSize = true;
-            this.ScStorage.ChangeDate = "";
-            this.ScStorage.ChangeDateWidth = 100;
-            this.ScStorage.Code = "";
-            this.ScStorage.CodeWidth = 100;
-            this.ScStorage.CodeWidth1 = 100;
-            this.ScStorage.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ScStorage.DataCheck = false;
-            this.ScStorage.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ScStorage.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.ScStorage.IsCopy = false;
-            this.ScStorage.LabelText = "";
-            this.ScStorage.LabelVisible = false;
-            this.ScStorage.Location = new System.Drawing.Point(943, 83);
-            this.ScStorage.Margin = new System.Windows.Forms.Padding(0);
-            this.ScStorage.Name = "ScStorage";
-            this.ScStorage.NameWidth = 600;
-            this.ScStorage.SearchEnable = true;
-            this.ScStorage.Size = new System.Drawing.Size(133, 28);
-            this.ScStorage.Stype = Search.CKM_SearchControl.SearchType.棚番号;
-            this.ScStorage.TabIndex = 6;
-            this.ScStorage.test = null;
-            this.ScStorage.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ScStorage.UseChangeDate = false;
-            this.ScStorage.Value1 = null;
-            this.ScStorage.Value2 = null;
-            this.ScStorage.Value3 = null;
-            this.ScStorage.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScStorage_CodeKeyDownEvent);
             // 
             // FrmTanabanNyuuryoku
             // 
