@@ -293,37 +293,6 @@ namespace MasterTouroku_TenzikaiShouhin
             }
         }
 
-        private void ShuukaSouko_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //for (int W_CtlRow = 0; W_CtlRow <= mGrid.g_MK_Ctl_Row - 1; W_CtlRow++)
-            //{
-            //CKM_Controls.CKM_ComboBox sctl = (CKM_Controls.CKM_ComboBox)mGrid.g_MK_Ctrl[(int)ClsGridTenjikai.ColNO.ShuukaSou, W_CtlRow].CellCtl;
-            //CKM_Controls.CKM_ComboBox sctl; 
-            //    if (sctl.DataSource != null)
-            //    {
-            //        sctl.SelectedIndex = (sender as CKM_ComboBox).SelectedIndex;
-
-            mGrid.S_DispToArray(Vsb_Mei_0.Value);
-
-            //明細部チェック
-            for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
-            {
-                if (!string.IsNullOrEmpty(mGrid.g_DArray[RW].SKUCD))
-                {
-                    mGrid.g_DArray[RW].TaxRateFlg = (sender as CKM_ComboBox).SelectedValue.ToString();
-                }
-            }
-
-            //配列の内容を画面へセット
-            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-            //}
-
-            //}
-            //foreach (var c in mGrid.g_DArray )
-            //{
-
-            //}
-        }
         private void ChangeOperationMode(EOperationMode mode)
         {
             OperationMode = mode; 
@@ -1707,15 +1676,15 @@ namespace MasterTouroku_TenzikaiShouhin
                                 }
                                 if (dtsku.Rows.Count > 0)
                                 {
-
+                                   
                                     mGrid.g_DArray[row].SKUCD = selectRow["SKUCD"].ToString();
                                     mGrid.g_DArray[row].SKUName = selectRow["SKUName"].ToString();
                                     mGrid.g_DArray[row].ColorCD = selectRow["ColorNO"].ToString();
                                     mGrid.g_DArray[row].ColorName = selectRow["ColorName"].ToString();
                                     mGrid.g_DArray[row].SizeCD = selectRow["SizeNo"].ToString();
                                     mGrid.g_DArray[row].SizeName = selectRow["SizeName"].ToString();
-                                    mGrid.g_DArray[row].Shiiretanka = selectRow["SiireTanka"].ToString();
-                                    mGrid.g_DArray[row].JoutaiTanka = selectRow["JoudaiTanka"].ToString();
+                                    mGrid.g_DArray[row].Shiiretanka = bbl.Z_SetStr(selectRow["SiireTanka"].ToString());
+                                    mGrid.g_DArray[row].JoutaiTanka = bbl.Z_SetStr(selectRow["JoudaiTanka"].ToString());
 
                                     if (String.IsNullOrEmpty(mGrid.g_DArray[row].SizeName))
                                     {
