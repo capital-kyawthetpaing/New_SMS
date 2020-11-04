@@ -1184,12 +1184,11 @@ namespace ZaikoIdouNyuuryoku
                             }
                         }
 
-                        if(OperationMode == EOperationMode.UPDATE)
+                        if(OperationMode == EOperationMode.UPDATE || OperationMode == EOperationMode.DELETE)
                         {
                             if (Convert.ToInt16(dt.Rows[0]["MovePurposeKBN"]) != (int)EIdoType.店舗間移動 && Convert.ToInt16(dt.Rows[0]["MovePurposeKBN"]) != (int)EIdoType.返品)
                             {
-                                //Ｅ２１０
-                                bbl.ShowMessage("E128");
+                                bbl.ShowMessage("E268");
                                 return false;
                             }
                         }
