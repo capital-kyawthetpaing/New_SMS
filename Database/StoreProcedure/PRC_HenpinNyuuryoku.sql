@@ -241,7 +241,14 @@ BEGIN
           ,DA.Number AS OrderNO
           ,DA.NumberRows AS OrderRows          
           ,DS.SKUCD
-          
+          ,(SELECT (CASE WHEN M.TaxRateFLG = 1 THEN MSAT.TaxRate1    
+                         WHEN M.TaxRateFLG = 2 THEN MSAT.TaxRate2    
+                         ELSE 0  END) AS TaxRitsu
+              FROM F_SKU(convert(date, @SYSDATETIME)) AS M
+             CROSS JOIN Fnc_M_SalesTax_SelectLatest(convert(date, @SYSDATETIME)) AS MSAT
+             WHERE M.AdminNO = DS.AdminNO
+               AND M.DeleteFlg = 0) AS TaxRitsu
+             
       FROM  D_Stock AS DS
       LEFT OUTER JOIN  D_Delivery AS DD
       ON /*DD.VendorDeliveryNo = DS.VendorDeliveryNo
