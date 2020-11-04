@@ -579,38 +579,39 @@ namespace TanabanNyuuryoku
                 }
             }
 
+
         }
 
         private void dgvTanaban_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
             //if (dgvTanaban.Rows[e.RowIndex].Cells["colRackNo1"].KeyEntersEditMode.ToString())
 
-            //if (dgvTanaban.Columns[e.ColumnIndex].Name == "colRackNo1")
-            //{
-            //    string rate = dgvTanaban.Rows[e.RowIndex].Cells["colRackNo1"].EditedFormattedValue.ToString();
-            //    if (String.IsNullOrEmpty(rate))
-            //    {
-            //        tnbnBL.ShowMessage("E102");
-            //        //dgvTanaban.RefreshEdit();
-            //    }
-            //    else
-            //    {
-            //        mle = new M_Location_Entity();
-            //        tnbnBL = new TanabanNyuuryoku_BL();
+            if (dgvTanaban.Columns[e.ColumnIndex].Name == "colRackNo1")
+            {
+                string rate = dgvTanaban.Rows[e.RowIndex].Cells["colRackNo1"].EditedFormattedValue.ToString();
+                if (String.IsNullOrEmpty(rate))
+                {
+                    tnbnBL.ShowMessage("E102");
+                    //dgvTanaban.RefreshEdit();
+                }
+                else
+                {
+                    mle = new M_Location_Entity();
+                    tnbnBL = new TanabanNyuuryoku_BL();
 
-            //        mle.SoukoCD = cboWarehouse.SelectedValue.ToString();
-            //        mle.TanaCD = rate;
-            //        DataTable dtLocation = new DataTable();
-            //        dtLocation = tnbnBL.M_LocationTana_Select(mle);
-            //        if (dtLocation.Rows.Count == 0)
-            //        {
-            //            tnbnBL.ShowMessage("E101");
-            //            //dgvTanaban.RefreshEdit();
-            //        }
-            //    }
-            //}
+                    mle.SoukoCD = cboWarehouse.SelectedValue.ToString();
+                    mle.TanaCD = rate;
+                    DataTable dtLocation = new DataTable();
+                    dtLocation = tnbnBL.M_LocationTana_Select(mle);
+                    if (dtLocation.Rows.Count == 0)
+                    {
+                        tnbnBL.ShowMessage("E101");
+                        //dgvTanaban.RefreshEdit();
+                    }
+                }
 
-          
+            }
+
         }
 
         private void dgvTanaban_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -619,7 +620,7 @@ namespace TanabanNyuuryoku
             //dgvTanaban.CurrentRow.Cells["colRackNo1"].Value.ToString().Length;
             dgvTanaban.BeginEdit(true);
 
-            
+
         }
 
         //private void CheckRowAdd(DataGridViewRow row)

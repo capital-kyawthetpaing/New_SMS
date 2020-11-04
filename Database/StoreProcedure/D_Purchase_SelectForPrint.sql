@@ -42,9 +42,11 @@ BEGIN
 		  --AND A.VendorFlg = 1
     --      ORDER BY A.ChangeDate desc) 
     --      + (CASE ISNULL(DO.AliasKBN,0) WHEN 2 THEN ' Œä’†' ELSE '' END) AS VendorName 
+
+	-----------------1956
 			, (Case 
 			 when Do.AliasKBN = 2 and DO.OrderPerSon is null then
-			 (SELECT top 1 A.VendorName FROM M_Vendor A   WHERE A.VendorCD = DH.VendorCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DH.PurchaseDate AND A.VendorFlg = 1   ORDER BY A.ChangeDate desc) + ' Œä’†'
+			 (SELECT top 1 A.VendorName FROM M_Vendor A   WHERE A.VendorCD = DH.VendorCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DH.PurchaseDate AND A.VendorFlg = 1   ORDER BY A.ChangeDate desc) + ' Œä’†'  
 			 when Do.AliasKBN = 2 and DO.OrderPerSon is not null then
 		   (SELECT top 1 A.VendorName FROM M_Vendor A   WHERE A.VendorCD = DH.VendorCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DH.PurchaseDate AND A.VendorFlg = 1   ORDER BY A.ChangeDate desc) 
 			 when Do.AliasKBN <> 2 and DO.OrderPerSon is null then
@@ -120,7 +122,8 @@ BEGIN
           ,(SELECT A.Char2 FROM M_MultiPorpose A WHERE A.ID='301' AND A.[Key] = DH.StoreCD) AS Print2
           ,(SELECT A.Char3 FROM M_MultiPorpose A WHERE A.ID='301' AND A.[Key] = DH.StoreCD) AS Print3
           ,(SELECT A.Char4 FROM M_MultiPorpose A WHERE A.ID='301' AND A.[Key] = DH.StoreCD) AS Print4
-          ,(SELECT A.ZipCD1 + '-' + A.ZipCD2 + ' ' + Address1 + ' ' + Address2 FROM M_Control AS A WHERE A.[MainKey] = 1) AS ZIP
+            ,(SELECT  Isnull(A.ZipCD1,'') + '-' + Isnull(A.ZipCD2,'')+ ' ' +Isnull(Address1,'')  + ' ' + Isnull(Address2,'') FROM M_Control AS A WHERE A.[MainKey] = 1) AS ZIP -- // 1953
+		  --,(SELECT A.ZipCD1 + '-' + A.ZipCD2 + ' ' + Address1 + ' ' + Address2 FROM M_Control AS A WHERE A.[MainKey] = 1) AS ZIP
           ,(SELECT A.CompanyName FROM M_Control AS A WHERE A.[MainKey] = 1) AS CompanyName
           ,(SELECT '‡„' +' '+ A.TelephoneNO + ' FAX' +' '+ A.FaxNO FROM M_Control AS A WHERE A.[MainKey] = 1) AS TEL
           
