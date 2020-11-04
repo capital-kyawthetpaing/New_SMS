@@ -2857,8 +2857,7 @@ BEGIN
                            ,0  --DeleteFlg
                            ,@NewMoveNO  --Number
                            ,tbl.MoveRows --NumberRow
-                           ,(CASE @MovePurposeType WHEN @KBN_SYOCD      THEN tbl.NewJanCD
-                                                   ELSE NULL END)    --VendorCD
+                           ,NULL   --VendorCD
                            
                            ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN @ToStoreCD
                                                    WHEN @KBN_SYOCD      THEN @FromStoreCD
