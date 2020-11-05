@@ -559,7 +559,7 @@ namespace CKM_Controls
                                     else
                                         currColIndex++;
 
-                                    if (this.Columns[currColIndex].ReadOnly == true)
+                                    if (!found && this.Columns[currColIndex].ReadOnly == true)
                                     {
                                         readonlyCount++;
                                     }
@@ -599,14 +599,14 @@ namespace CKM_Controls
                                     else
                                         currColIndex--;
 
-                                    if (this.Columns[currColIndex].ReadOnly == true)
+                                    if (!found && this.Columns[currColIndex].ReadOnly == true)
                                     {
                                         readonlyCount++;
                                     }
                                     else
                                         found = true;
                                 }
-                                for (int i = 0; i <= readonlyCount; i++)
+                                for (int i = 0; i <= readonlyCount-1; i++)
                                 {
                                     MyProcessCmdKey(direction);
                                 }

@@ -1269,7 +1269,7 @@ namespace HenpinNyuuryoku
                     //税額(Hidden)
                     mGrid.g_DArray[i].PurchaseTax = bbl.Z_Set(row["PurchaseTax"]);
                     mGrid.g_DArray[i].PurchaseRows = Convert.ToInt16(row["PurchaseRows"]);
-                    mGrid.g_DArray[i].TaxRateFLG = Convert.ToInt16(row["TaxRitsu"]);
+                    mGrid.g_DArray[i].TaxRitsu = Convert.ToInt16(row["TaxRitsu"]);
                     mGrid.g_DArray[i].DeliveryNo = row["DeliveryNo"].ToString();
                     mGrid.g_DArray[i].OrderNO = row["OrderNO"].ToString();
                     mGrid.g_DArray[i].OrderRows = row["OrderRows"].ToString();
@@ -1416,6 +1416,7 @@ namespace HenpinNyuuryoku
                         mGrid.g_DArray[i].OrderRows = row["OrderRows"].ToString();
                         mGrid.g_DArray[i].StockNO = row["StockNO"].ToString();
                         mGrid.g_DArray[i].WarehousingNO = row["WarehousingNO"].ToString();
+                        mGrid.g_DArray[i].TaxRitsu = Convert.ToInt16(row["TaxRitsu"]);
 
                         m_dataCnt = i + 1;
                         Grid_NotFocus((int)ClsGridShiire.ColNO.Chk, i);
@@ -2061,7 +2062,7 @@ namespace HenpinNyuuryoku
                         , bbl.Z_Set(mGrid.g_DArray[RW].AdjustmentGaku)
                         , bbl.Z_Set(mGrid.g_DArray[RW].PurchaseGaku)
                         , bbl.Z_Set(mGrid.g_DArray[RW].PurchaseTax)
-                        , bbl.Z_Set(mGrid.g_DArray[RW].TaxRateFLG)
+                        , bbl.Z_Set(mGrid.g_DArray[RW].TaxRitsu)
                         //, mGrid.g_DArray[RW].CommentOutStore == "" ? null : mGrid.g_DArray[RW].CommentOutStore
                         //, bbl.Z_Set(mGrid.g_DArray[RW].Space)
                         , mGrid.g_DArray[RW].OrderNO == "" ? null : mGrid.g_DArray[RW].OrderNO

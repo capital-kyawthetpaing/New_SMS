@@ -1046,7 +1046,7 @@ namespace TanaoroshiNyuuryoku
             }
         }
         private void GvDetail_KeyDown(object sender, KeyEventArgs e)
-        {
+    {
             try
             {
                 //最終行最終列の場合は、F1へ
@@ -1061,7 +1061,7 @@ namespace TanaoroshiNyuuryoku
                 //エラー時共通処理
                 MessageBox.Show(ex.Message);
             }
-}
+        }
         #endregion
 
     }
