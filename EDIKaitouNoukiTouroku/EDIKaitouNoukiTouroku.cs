@@ -624,7 +624,11 @@ namespace EDIKaitouNoukiTouroku
                             {
                                 GvDetail[e.ColumnIndex, row].Value = false;
 
-                                GvDetail.Rows[row].DefaultCellStyle.BackColor = ClsGridBase.GridColor;
+                                if (row % 2 != 0)
+                                    GvDetail.Rows[row].DefaultCellStyle.BackColor =  Color.FromArgb(221, 235, 247);
+                                else
+                                GvDetail.Rows[row].DefaultCellStyle.BackColor = Color.White;// Color.FromArgb(191, 191, 191);
+
                             }
                             else
                             {
@@ -672,7 +676,7 @@ namespace EDIKaitouNoukiTouroku
 
                 }
                 //どちらの場合でもプログラム「EDIKaitouNoukiTourokuB.exe」が起動中でなければ起動する。
-                CheckProcess();
+                //CheckProcess();
 
                 //テーブル転送仕様Ａ、テーブル転送仕様Ｚに従って、更新処理。
                 UpdateM_MultiPorpose();
