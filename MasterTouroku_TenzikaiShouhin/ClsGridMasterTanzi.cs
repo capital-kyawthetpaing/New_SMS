@@ -41,6 +41,7 @@ namespace MasterTouroku_TenzikaiShouhin
             internal string TaxRateFlg;
             internal string Remark;//Remarks
             internal string ExhibitionCommonCD; // hidden
+            internal string Jancdold;
         }
 
         internal enum ColNO : int
