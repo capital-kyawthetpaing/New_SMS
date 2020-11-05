@@ -1578,7 +1578,6 @@ namespace MasterTouroku_TenzikaiShouhin
                 case EsearchKbn.Tani:
                     using (Search_HanyouKey frmMulti = new Search_HanyouKey())
                     {
-
                         frmMulti.parID = "202";
                         frmMulti.parKey= mGrid.g_DArray[w_Row].TaniCD;
                         frmMulti.ShowDialog();
@@ -1639,8 +1638,8 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bl.ShowMessage("E101");
                                 return false;
                             }
-                           
-                                M_TenzikaiShouhin_Entity mt = new M_TenzikaiShouhin_Entity
+
+                            M_TenzikaiShouhin_Entity mt = new M_TenzikaiShouhin_Entity
                             {
                                 TenzikaiName = detailControls[(int)Eindex.SCTenzikai].Text,
                                 VendorCD = detailControls[(int)Eindex.SCShiiresaki].Text,
@@ -1659,7 +1658,7 @@ namespace MasterTouroku_TenzikaiShouhin
                             }
                             else
                             {
-                                if (jancdold != mGrid.g_DArray[row].JANCD)
+                                if (mGrid.g_DArray[row].Jancdold != mGrid.g_DArray[row].JANCD)
                                 {
                                     M_SKU_Entity msku = new M_SKU_Entity
                                 {
@@ -1717,8 +1716,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                     bbl.ShowMessage("E102");
                                     return false;
                                 }
-                               // mGrid.g_DArray[row].SKUCD = ActiveControl.Text;
-                              //  mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                             
                             }
                             break;
                         case (int)ClsGridMasterTanzi.ColNO.SKUName:
@@ -1731,8 +1729,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                     bbl.ShowMessage("E102");
                                     return false;
                                 }
-                               // mGrid.g_DArray[row].SKUName = ActiveControl.Text;
-                               // mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                               
                             }
                             break;
                         case (int)ClsGridMasterTanzi.ColNO.ColorCD:
@@ -1759,8 +1756,6 @@ namespace MasterTouroku_TenzikaiShouhin
                                     bbl.ShowMessage("E102");
                                     return false;
                                 }
-                                //mGrid.g_DArray[row].ColorName = ActiveControl.Text;
-                                //mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                             }
                             break;
                         case (int)ClsGridMasterTanzi.ColNO.SizeCD:
@@ -1773,8 +1768,6 @@ namespace MasterTouroku_TenzikaiShouhin
                                     bbl.ShowMessage("E102");
                                     return false;
                                 }
-                               // mGrid.g_DArray[row].SizeCD = ActiveControl.Text;
-                                //mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                             }
                             break;
                         case (int)ClsGridMasterTanzi.ColNO.SizeName:
@@ -1786,8 +1779,6 @@ namespace MasterTouroku_TenzikaiShouhin
                                     bbl.ShowMessage("E102");
                                     return false;
                                 }
-                                //mGrid.g_DArray[row].SizeName = ActiveControl.Text;
-                               // mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                             }
                             break;
                         case (int)ClsGridMasterTanzi.ColNO.HanbaiYoteiDateMonth:
@@ -1896,8 +1887,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                     bbl.ShowMessage("E102");
                                     return false;
                                 }
-                                //mGrid.g_DArray[row].SalePriceOutTax3 = ActiveControl.Text;
-                               // mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                               
                             }
                             break;
                         case (int)ClsGridMasterTanzi.ColNO.SalePriceOutTax4:
@@ -1910,8 +1900,6 @@ namespace MasterTouroku_TenzikaiShouhin
                                     bbl.ShowMessage("E102");
                                     return false;
                                 }
-                                //mGrid.g_DArray[row].SalePriceOutTax4 = ActiveControl.Text;
-                               // mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                             }
                             break;
                         case (int)ClsGridMasterTanzi.ColNO.SalePriceOutTax5:
@@ -1979,13 +1967,14 @@ namespace MasterTouroku_TenzikaiShouhin
                                     bbl.ShowMessage("E102");
                                     return false;
                                 }
-                                //DataTable dtS = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 13, mGrid.g_DArray[row].SegmentCD);
-                                //if (dtT.Rows.Count == 0)
-                                //{
-                                //    bl.ShowMessage("E101");
-                                //    return false;
-                                //}
-                                // mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                               
+                                DataTable dtT = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 12, mGrid.g_DArray[row].TaniCD,"202");
+                                if (dtT.Rows.Count == 0)
+                                {
+                                    bl.ShowMessage("E101");
+                                    return false;
+                                }
+                                
                             }
                             break;
                         case (int)ClsGridMasterTanzi.ColNO.TaxRateFlg:
@@ -1997,8 +1986,6 @@ namespace MasterTouroku_TenzikaiShouhin
                                     bbl.ShowMessage("E102");
                                     return false;
                                 }
-                                // mGrid.g_DArray[row].TaxRateFlg = ActiveControl.Text;
-                              //  mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                             }
                             break;
 
@@ -2468,8 +2455,8 @@ namespace MasterTouroku_TenzikaiShouhin
                     int c = 0;
                     foreach (DataRow dr in dt.Rows)
                     {
-                        mGrid.g_DArray[c].JANCD = dr["JANCD"].ToString();
-                        jancdold = dr["JANCD"].ToString();
+                        mGrid.g_DArray[c].JANCD = mGrid.g_DArray[c].Jancdold = dr["JANCD"].ToString();
+                       // jancdold = dr["JANCD"].ToString();
                         mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
                         mGrid.g_DArray[c].SKUName = dr["商品名"].ToString();
                         mGrid.g_DArray[c].ColorCD = dr["カラーNO"].ToString();
@@ -2545,7 +2532,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                     return;
                                 }
                             }
-                            mGrid.g_DArray[c].JANCD = dr["JANCD"].ToString();
+                            mGrid.g_DArray[c].JANCD = mGrid.g_DArray[c].Jancdold = dr["JANCD"].ToString();
                             mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
                             mGrid.g_DArray[c].SKUName = dr["商品名"].ToString();
                             mGrid.g_DArray[c].ColorCD = dr["カラーNO"].ToString();
