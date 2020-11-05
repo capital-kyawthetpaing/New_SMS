@@ -281,7 +281,7 @@ namespace EDINouhinJouhouTouroku {
             
             private global::System.Data.DataColumn columnSKENNouhinshoNO;
             
-            private global::System.Data.DataColumn columnSKENHacchuu;
+            private global::System.Data.DataColumn columnSKENSyouhinmei;
             
             private global::System.Data.DataColumn columnSKENNouhinHinban;
             
@@ -340,9 +340,9 @@ namespace EDINouhinJouhouTouroku {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SKENHacchuuColumn {
+            public global::System.Data.DataColumn SKENSyouhinmeiColumn {
                 get {
-                    return this.columnSKENHacchuu;
+                    return this.columnSKENSyouhinmei;
                 }
             }
             
@@ -439,11 +439,11 @@ namespace EDINouhinJouhouTouroku {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public EDINouhinJouhouTourokuRow AddEDINouhinJouhouTourokuRow(string SKENNouhinshoNO, string SKENHacchuu, string SKENNouhinHinban, string SKENJanCD, string SKUName, string ColorName, string SizeName, string SKENNouhinSuu, string ErrorText) {
+            public EDINouhinJouhouTourokuRow AddEDINouhinJouhouTourokuRow(string SKENNouhinshoNO, string SKENSyouhinmei, string SKENNouhinHinban, string SKENJanCD, string SKUName, string ColorName, string SizeName, string SKENNouhinSuu, string ErrorText) {
                 EDINouhinJouhouTourokuRow rowEDINouhinJouhouTourokuRow = ((EDINouhinJouhouTourokuRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         SKENNouhinshoNO,
-                        SKENHacchuu,
+                        SKENSyouhinmei,
                         SKENNouhinHinban,
                         SKENJanCD,
                         SKUName,
@@ -474,7 +474,7 @@ namespace EDINouhinJouhouTouroku {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
                 this.columnSKENNouhinshoNO = base.Columns["SKENNouhinshoNO"];
-                this.columnSKENHacchuu = base.Columns["SKENHacchuu"];
+                this.columnSKENSyouhinmei = base.Columns["SKENSyouhinmei"];
                 this.columnSKENNouhinHinban = base.Columns["SKENNouhinHinban"];
                 this.columnSKENJanCD = base.Columns["SKENJanCD"];
                 this.columnSKUName = base.Columns["SKUName"];
@@ -489,8 +489,8 @@ namespace EDINouhinJouhouTouroku {
             private void InitClass() {
                 this.columnSKENNouhinshoNO = new global::System.Data.DataColumn("SKENNouhinshoNO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSKENNouhinshoNO);
-                this.columnSKENHacchuu = new global::System.Data.DataColumn("SKENHacchuu", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSKENHacchuu);
+                this.columnSKENSyouhinmei = new global::System.Data.DataColumn("SKENSyouhinmei", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSKENSyouhinmei);
                 this.columnSKENNouhinHinban = new global::System.Data.DataColumn("SKENNouhinHinban", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSKENNouhinHinban);
                 this.columnSKENJanCD = new global::System.Data.DataColumn("SKENJanCD", typeof(string), null, global::System.Data.MappingType.Element);
@@ -664,17 +664,18 @@ namespace EDINouhinJouhouTouroku {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string SKENHacchuu {
+            public string SKENSyouhinmei {
                 get {
                     try {
-                        return ((string)(this[this.tableEDINouhinJouhouTouroku.SKENHacchuuColumn]));
+                        return ((string)(this[this.tableEDINouhinJouhouTouroku.SKENSyouhinmeiColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SKENHacchuu\' in table \'EDINouhinJouhouTouroku\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'SKENSyouhinmei\' in table \'EDINouhinJouhouTouroku\' is DBNull" +
+                                ".", e);
                     }
                 }
                 set {
-                    this[this.tableEDINouhinJouhouTouroku.SKENHacchuuColumn] = value;
+                    this[this.tableEDINouhinJouhouTouroku.SKENSyouhinmeiColumn] = value;
                 }
             }
             
@@ -806,14 +807,14 @@ namespace EDINouhinJouhouTouroku {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsSKENHacchuuNull() {
-                return this.IsNull(this.tableEDINouhinJouhouTouroku.SKENHacchuuColumn);
+            public bool IsSKENSyouhinmeiNull() {
+                return this.IsNull(this.tableEDINouhinJouhouTouroku.SKENSyouhinmeiColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetSKENHacchuuNull() {
-                this[this.tableEDINouhinJouhouTouroku.SKENHacchuuColumn] = global::System.Convert.DBNull;
+            public void SetSKENSyouhinmeiNull() {
+                this[this.tableEDINouhinJouhouTouroku.SKENSyouhinmeiColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
