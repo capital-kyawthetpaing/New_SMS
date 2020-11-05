@@ -3267,7 +3267,7 @@ namespace TenzikaiJuchuuTourou
 
             catch (Exception ex)
             {
-                bbl.ShowMessage("E137");
+                bbl.ShowMessage("E137" + ex.StackTrace);
                 return null;
             }
             oledbConn.Close();
