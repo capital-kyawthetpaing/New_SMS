@@ -1062,6 +1062,10 @@ namespace TanaoroshiNyuuryoku
                 MessageBox.Show(ex.Message);
             }
         }
+        private void GvDetail_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = false;
+        }
         #endregion
 
     }
