@@ -21,12 +21,22 @@ namespace GetsujiShiireKeisanSyori
 
         public  void ExecUpdate(D_MonthlyPurchase_Entity de)
         {
-            try {
-                sbl.GetsujiShiireKeisanSyori(de);    
+            try
+            {
+                sbl.GetsujiShiireKeisanSyori(de);
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine(ex.Message);
+
+                //ログ出力
+                L_Log_Entity le = new L_Log_Entity();
+                le.InsertOperator = de.Operator;
+                le.Program = "GetsujiShiireKeisanSyori";
+                le.PC = de.PC;
+                le.OperateMode = "エラー";
+                le.KeyItem = ex.Message.Substring(0, 100);
+                sbl.L_Log_Insert(le);
             }
         }
     }
