@@ -296,6 +296,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 if (dtSelect.Rows.Count > 0)
                 {
                     GV_Tenzaishohin.DataSource = GenerateNo(dtSelect);
+                    GV_Tenzaishohin.CurrentCell = GV_Tenzaishohin[8, 0];
                 }
                 else
                 {
