@@ -241,12 +241,13 @@ namespace SiiresakiZaikoYoteiHyou
                 return;
             if (ErrorCheck())
             {
+                CheckBeforeExport();
                 dmpe = new D_MonthlyPurchase_Entity();
                 dmpe = GetData();
                 DataTable dt = szybl.RPC_SiiresakiZaikoYoteiHyou(dmpe);
                 if (dt.Rows.Count > 0)
                 {
-                     CheckBeforeExport();
+                     //CheckBeforeExport();
                     try
                     {
                         SiiresakiZaikoYoteiHyou_Report szy_Report = new SiiresakiZaikoYoteiHyou_Report();
