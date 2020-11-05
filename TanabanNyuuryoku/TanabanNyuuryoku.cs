@@ -133,6 +133,7 @@ namespace TanabanNyuuryoku
                 else
                 {
                     dgvTanaban.DataSource = dtstorage;
+                    dgvTanaban.CurrentCell = dgvTanaban[2, 0];
                 }
             }
             else
@@ -566,7 +567,8 @@ namespace TanabanNyuuryoku
                 if (String.IsNullOrEmpty(rate))
                 {
                     tnbnBL.ShowMessage("E102");
-                    //dgvTanaban.RefreshEdit();
+                    dgvTanaban.RefreshEdit();
+                 
                 }
                 else
                 {
@@ -580,7 +582,7 @@ namespace TanabanNyuuryoku
                     if (dtLocation.Rows.Count == 0)
                     {
                         tnbnBL.ShowMessage("E101");
-                        //dgvTanaban.RefreshEdit();
+                        dgvTanaban.RefreshEdit();
                     }
                 }
             }
@@ -589,9 +591,9 @@ namespace TanabanNyuuryoku
 
         private void dgvTanaban_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            dgvTanaban.CurrentRow.Cells["colRackNo1"].Selected = true;
+            //dgvTanaban.CurrentRow.Cells["colRackNo1"].Selected = true;
             //dgvTanaban.CurrentRow.Cells["colRackNo1"].Value.ToString().Length;
-            dgvTanaban.BeginEdit(true);
+            //dgvTanaban.BeginEdit(true);
 
         }
 
