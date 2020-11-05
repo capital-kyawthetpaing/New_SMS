@@ -338,15 +338,15 @@ namespace SiiresakiZaikoYoteiHyou
             {
                 string ProgramID = "GetsujiZaikoKeisanSyori";
                 string ProgramID1 = "GetsujiShiireKeisanSyori";
-                RunConsole(ProgramID,ProgramID1, dmpe.YYYYMMS);
+                RunConsole(ProgramID,ProgramID1, msce.FiscalYYYYMM);
             }
         }
-        private void RunConsole(string programID,string programID1, string YYYYMMS)
+        private void RunConsole(string programID,string programID1, string FiscalYYYYMM)
         {
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "1";
-            string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + " " + Mode + " " + YYYYMMS;//parameter
+            string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + StoreCD + " " + " " + Mode + " " + FiscalYYYYMM;//parameter
             //string str = "GetsujiZaikoKeisanSyori,GetsujiShiireKeisanSyori";
             //System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
             //System.Diagnostics.Process.Start(filePath+@"\"+str.Substring(0,22)+".exe",cmdLine+"");
