@@ -1190,7 +1190,12 @@ namespace Base.Client
                 sfd.Filter = "Excelファイル(*.xls;*.xlsx)|*.xls;*.xlsx";
                 sfd.DefaultExt = "xlsx";
             }
-
+            if (kbn == 2) // Shiiretankateireishou by PTk 2020/11/05
+            {
+                // 例：Excelファイルを開く場合（Office2003と2007両対応したい）
+                sfd.Filter = "Excelファイル(*.xls;)|*.xls;";
+                sfd.DefaultExt = "xls";
+            }
             //[ファイルの種類]ではじめに選択されるものを指定する
             //2番目の「すべてのファイル」が選択されているようにする
             //sfd.FilterIndex = 2;

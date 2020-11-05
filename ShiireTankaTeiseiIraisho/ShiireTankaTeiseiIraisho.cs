@@ -280,7 +280,7 @@ namespace ShiireTankaTeiseiIraisho
                 //EXCEL出力
                 string filePath = "";
                 //出力ファイル名の決定
-                if (!ShowSaveFileDialog(InProgramNM, out filePath, 1))
+                if (!ShowSaveFileDialog(InProgramNM, out filePath, 2)) // Flag 2 is for xls modified in Based by PTK 2020/11/05
                 {
                     return;
                 }
@@ -293,7 +293,8 @@ namespace ShiireTankaTeiseiIraisho
                 if (!System.IO.File.Exists(templateFilePath))
                 {
                     //Todo:変更
-                    bbl.ShowMessage("E122");
+                    //bbl.ShowMessage("E122"); // 2020/1/05
+                    bbl.ShowMessage("Please put Shiiretanka Format Sheet named \"ShiireTankaTeiseiIraisho.xls\" in Path C:\\Csv\\");
                     return;
                 }
 
@@ -434,6 +435,9 @@ namespace ShiireTankaTeiseiIraisho
                             }
                         }
                     }
+                }
+                catch (Exception ex){
+                    var msg = ex.Message;
                 }
                 finally
                 {
