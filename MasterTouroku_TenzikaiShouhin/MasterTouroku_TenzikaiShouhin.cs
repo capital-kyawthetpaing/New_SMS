@@ -32,6 +32,7 @@ namespace MasterTouroku_TenzikaiShouhin
         ClsGridMasterTanzi mGrid = new ClsGridMasterTanzi();
         private int m_EnableCnt = 0;
         string jancdold = string.Empty;
+        bool skucheck = false;
         bool checkmei = false;
         private System.Windows.Forms.Control previousCtrl;
         public MasterTouroku_TenzikaiShouhin()
@@ -305,12 +306,9 @@ namespace MasterTouroku_TenzikaiShouhin
                     detailControls[(int)Eindex.SCTenzikai].Focus();
                     BT_SKUCheck.Enabled = false;
                     detailControls[(int)Eindex.StartDate].Enabled = false;
-                    detailControls[(int)Eindex.SCCTenzikai].Enabled = true;
-                    detailControls[(int)Eindex.SCCShiiresaki].Enabled = true;
-                    detailControls[(int)Eindex.SCCBrand].Enabled = true;
-                    detailControls[(int)Eindex.SCCSegment].Enabled = true;
-                    detailControls[(int)Eindex.CNendo].Enabled = true;
-                    detailControls[(int)Eindex.CSeason].Enabled = true;
+                    EnablePanel(panel4);
+                    EnablePanel(panel6);
+
                     Clear(panel1);
                     Clear(panel_2);
                     break;
@@ -319,18 +317,8 @@ namespace MasterTouroku_TenzikaiShouhin
                      BT_SKUCheck.Enabled = true;
                     detailControls[(int)Eindex.SCTenzikai].Focus();
                     detailControls[(int)Eindex.StartDate].Enabled = true;
-                    detailControls[(int)Eindex.SCCTenzikai].Enabled = false;
-                    detailControls[(int)Eindex.SCCShiiresaki].Enabled = false;
-                    detailControls[(int)Eindex.SCCBrand].Enabled = false;
-                    detailControls[(int)Eindex.SCCSegment].Enabled = false;
-                    detailControls[(int)Eindex.CNendo].Enabled = false;
-                    detailControls[(int)Eindex.CSeason].Enabled = false;
-                    //detailControls[(int)Eindex.SCCTenzikai].TabStop = true;
-                    //detailControls[(int)Eindex.SCCShiiresaki].TabStop = true;
-                    //detailControls[(int)Eindex.SCCBrand].TabStop = true;
-                    //detailControls[(int)Eindex.SCCSegment].TabStop = true;
-                    //detailControls[(int)Eindex.CNendo].TabStop = true;
-                    //detailControls[(int)Eindex.CSeason].TabStop = true;
+                    DisablePanel(panel4);
+                    DisablePanel(panel6);
 
                     break;
 
@@ -338,12 +326,8 @@ namespace MasterTouroku_TenzikaiShouhin
                 case EOperationMode.SHOW:
                     EnablePanel(PanelHeader);
                     BT_SKUCheck.Enabled = false;
-                    detailControls[(int)Eindex.SCCTenzikai].Enabled = false;
-                    detailControls[(int)Eindex.SCCShiiresaki].Enabled = false;
-                    detailControls[(int)Eindex.SCCBrand].Enabled = false;
-                    detailControls[(int)Eindex.SCCSegment].Enabled = false;
-                    detailControls[(int)Eindex.CNendo].Enabled = false;
-                    detailControls[(int)Eindex.CSeason].Enabled = false;
+                    DisablePanel(panel4);
+                    DisablePanel(panel6);
                     detailControls[(int)Eindex.StartDate].Enabled = false;
                     break;
 
@@ -651,12 +635,15 @@ namespace MasterTouroku_TenzikaiShouhin
                 //退避内容を戻す
                 mGrid.g_DArray[i].GYONO = w_Gyo.ToString();          //行番号
             }
-
+            if (skucheck)
+            {
+                SKUChek();
+            }
             int col = (int)ClsGridMasterTanzi.ColNO.JANCD;
             Grid_NotFocus(col, w_Row);
 
             //配列の内容を画面へセット
-
+            RemoveVal(w_Row);
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
             //フォーカスセット
@@ -766,13 +753,16 @@ namespace MasterTouroku_TenzikaiShouhin
                 mGrid.g_DArray[i].GYONO = w_Gyo.ToString();
                 
             }
-           
+            if(skucheck)
+            {
+                SKUChek();
+            }
             w_Gyo = Convert.ToInt16(mGrid.g_DArray[w_Row].GYONO);
             // 一行クリア
             Array.Clear(mGrid.g_DArray, w_Row, 1);
             mGrid.g_DArray[w_Row].GYONO = w_Gyo.ToString();         
             mGrid.g_DArray[w_Row].TenzikaiRow = null;
-            RemoveVal(w_Row);
+             RemoveVal(w_Row);
             int col = (int)ClsGridMasterTanzi.ColNO.JANCD;
             Grid_NotFocus(col, w_Row);
 
@@ -3446,15 +3436,7 @@ namespace MasterTouroku_TenzikaiShouhin
             //mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TaniCD, w_Row].Cell_Enabled = false;
             //mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TaxRateFlg, w_Row].Cell_Enabled = false;
             //mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Remark, w_Row].Cell_Enabled = false;
-
-            Control w_ActCtl;
-
-            //  w_ActCtl = (Control)sender; 
-            // w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
-            //  w_ActCtl.BackColor = ClsGridMasterTanzi.BKColor;
-           // mGrid.Cell_Color = GridBase.ClsGridBase.CheckColor;
-
-
+           
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TB, w_Row].Cell_Color = GridBase.ClsGridBase.CheckColor;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Chk, w_Row].Cell_Color = GridBase.ClsGridBase.CheckColor;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.JANCD, w_Row].Cell_Color = GridBase.ClsGridBase.CheckColor;
@@ -3526,6 +3508,7 @@ namespace MasterTouroku_TenzikaiShouhin
         }
         private void BT_SKUCheck_Click(object sender, EventArgs e)
         {
+            skucheck = true;
             SKUChek();
         }
         private void SetRequireField()
