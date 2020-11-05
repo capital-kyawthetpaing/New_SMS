@@ -35,7 +35,7 @@ namespace GetsujiShiireKeisanSyori
                 le.Program = "GetsujiShiireKeisanSyori";
                 le.PC = de.PC;
                 le.OperateMode = "エラー";
-                le.KeyItem = ex.Message.Substring(0, 100);
+                le.KeyItem = sbl.LeftB( ex.Message, 100);
                 sbl.L_Log_Insert(le);
             }
         }
