@@ -1630,9 +1630,12 @@ namespace MasterTouroku_TenzikaiShouhin
                                 IsExec = false;
                                 return true;                // return true;
                             }
-                           
+                            if (mGrid.g_DArray[row].Jancdold == mGrid.g_DArray[row].JANCD)
+                            {
+                                return true;
+                            }
 
-                            DataTable dtResult = bbl.SimpleSelect1("66", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), mGrid.g_DArray[row].JANCD);
+                                DataTable dtResult = bbl.SimpleSelect1("66", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), mGrid.g_DArray[row].JANCD);
                             if (dtResult.Rows.Count == 0)
                             {
                                 bl.ShowMessage("E101");
@@ -1661,47 +1664,48 @@ namespace MasterTouroku_TenzikaiShouhin
                                 if (mGrid.g_DArray[row].Jancdold != mGrid.g_DArray[row].JANCD)
                                 {
                                     M_SKU_Entity msku = new M_SKU_Entity
-                                {
-                                    JanCD = mGrid.g_DArray[row].JANCD,
-                                    MainVendorCD = detailControls[(int)Eindex.SCShiiresaki].Text,
-                                    InStoreCD = StoreCD,
+                                    {
+                                        JanCD = mGrid.g_DArray[row].JANCD,
+                                        MainVendorCD = detailControls[(int)Eindex.SCShiiresaki].Text,
+                                        InStoreCD = StoreCD,
 
-                                };
-                                SKU_BL mbl = new SKU_BL();
-                                dtsku = mbl.M_SKU_SelectByJanCD_ForTenzikaishouhin(msku);
+                                    };
+                                    SKU_BL mbl = new SKU_BL();
+                                    dtsku = mbl.M_SKU_SelectByJanCD_ForTenzikaishouhin(msku);
 
-                                DataRow selectRow = null;
+                                    DataRow selectRow = null;
 
-                                if (dtsku != null)
-                                {
+                                    if (dtsku != null)
+                                    {
+                                        if (dtsku.Rows.Count > 0)
+                                        {
+                                            selectRow = dtsku.Rows[0];
+                                        }
+                                    }
                                     if (dtsku.Rows.Count > 0)
                                     {
-                                        selectRow = dtsku.Rows[0];
+
+                                        mGrid.g_DArray[row].SKUCD = selectRow["SKUCD"].ToString();
+                                        mGrid.g_DArray[row].SKUName = selectRow["SKUName"].ToString();
+                                        mGrid.g_DArray[row].ColorCD = selectRow["ColorNO"].ToString();
+                                        mGrid.g_DArray[row].ColorName = selectRow["ColorName"].ToString();
+                                        mGrid.g_DArray[row].SizeCD = selectRow["SizeNo"].ToString();
+                                        mGrid.g_DArray[row].SizeName = selectRow["SizeName"].ToString();
+                                        mGrid.g_DArray[row].Shiiretanka = bbl.Z_SetStr(selectRow["SiireTanka"].ToString());
+                                        mGrid.g_DArray[row].JoutaiTanka = bbl.Z_SetStr(selectRow["JoudaiTanka"].ToString());
+
+                                        if (String.IsNullOrEmpty(mGrid.g_DArray[row].SizeName))
+                                        {
+                                            bbl.ShowMessage("E102");
+                                            return false;
+                                        }
+                                        //mGrid.g_DArray[row].SKUCD = ActiveControl.Text;
+                                        //mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
                                     }
-                                }
-                                if (dtsku.Rows.Count > 0)
-                                {
-
-                                    mGrid.g_DArray[row].SKUCD = selectRow["SKUCD"].ToString();
-                                    mGrid.g_DArray[row].SKUName = selectRow["SKUName"].ToString();
-                                    mGrid.g_DArray[row].ColorCD = selectRow["ColorNO"].ToString();
-                                    mGrid.g_DArray[row].ColorName = selectRow["ColorName"].ToString();
-                                    mGrid.g_DArray[row].SizeCD = selectRow["SizeNo"].ToString();
-                                    mGrid.g_DArray[row].SizeName = selectRow["SizeName"].ToString();
-                                    mGrid.g_DArray[row].Shiiretanka = bbl.Z_SetStr(selectRow["SiireTanka"].ToString());
-                                    mGrid.g_DArray[row].JoutaiTanka = bbl.Z_SetStr(selectRow["JoudaiTanka"].ToString());
-
-                                    if (String.IsNullOrEmpty(mGrid.g_DArray[row].SizeName))
-                                    {
-                                        bbl.ShowMessage("E102");
-                                        return false;
-                                    }
-                                    //mGrid.g_DArray[row].SKUCD = ActiveControl.Text;
-                                    //mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-
-                                }
                                 }
                             }
+                            mGrid.g_DArray[row].Jancdold = mGrid.g_DArray[row].JANCD;    // May be in M_tenjishouhin Table So Fetched from selectRow
                             Grid_NotFocus(col, row);
                            
                             break;
