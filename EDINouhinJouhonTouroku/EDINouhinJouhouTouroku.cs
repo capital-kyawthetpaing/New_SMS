@@ -155,6 +155,7 @@ namespace EDINouhinJouhonTouroku
              selectRowIndex = -1;
             for (int row = 0; row < gdvDSKENDelivery.RowCount; row++)
             {
+                if (gdvDSKENDelivery[(int)EColNo.Chk, row].Value != null)
                 if (gdvDSKENDelivery[(int)EColNo.Chk, row].Value.ToString().Equals("true"))
                 {
                     selectRowIndex = row;
