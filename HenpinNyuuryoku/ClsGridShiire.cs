@@ -47,6 +47,7 @@ namespace HenpinNyuuryoku
             internal int VariousFLG;    //1:Various(諸口)
             internal int ZaikoKBN;      //M_SKU.在庫区分
             internal int TaxRateFLG;    //0:非課税、1:通常課税、2:軽減課税
+            internal int TaxRitsu;
 
             internal int PurchaseRows;
             internal string OrderNO;

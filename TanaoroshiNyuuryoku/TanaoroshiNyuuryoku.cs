@@ -1061,7 +1061,7 @@ namespace TanaoroshiNyuuryoku
                 //エラー時共通処理
                 MessageBox.Show(ex.Message);
             }
-}
+        }
         #endregion
 
     }
