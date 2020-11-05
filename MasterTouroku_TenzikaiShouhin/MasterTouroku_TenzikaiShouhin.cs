@@ -624,7 +624,7 @@ namespace MasterTouroku_TenzikaiShouhin
 
             w_Row = w_CtlRow + Vsb_Mei_0.Value;
             mGrid.S_DispToArray(Vsb_Mei_0.Value);
-
+            RemoveVal(w_Row);
             for (int i = w_Row; i < mGrid.g_MK_Max_Row - 1; i++)
             {
                 int w_Gyo = Convert.ToInt16(mGrid.g_DArray[i].GYONO);          //行番号 退避
@@ -643,7 +643,7 @@ namespace MasterTouroku_TenzikaiShouhin
             Grid_NotFocus(col, w_Row);
 
             //配列の内容を画面へセット
-            RemoveVal(w_Row);
+            
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
             //フォーカスセット
