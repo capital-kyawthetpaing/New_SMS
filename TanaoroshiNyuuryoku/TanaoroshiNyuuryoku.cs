@@ -1046,7 +1046,7 @@ namespace TanaoroshiNyuuryoku
             }
         }
         private void GvDetail_KeyDown(object sender, KeyEventArgs e)
-        {
+    {
             try
             {
                 //最終行最終列の場合は、F1へ
