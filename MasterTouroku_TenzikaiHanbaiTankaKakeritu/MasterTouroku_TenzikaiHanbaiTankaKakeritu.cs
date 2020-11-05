@@ -296,7 +296,8 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 if (dtSelect.Rows.Count > 0)
                 {
                     GV_Tenzaishohin.DataSource = GenerateNo(dtSelect);
-                    GV_Tenzaishohin.CurrentCell = GV_Tenzaishohin[8, 0];
+                    //GV_Tenzaishohin[7, 0].ReadOnly = false;
+                    GV_Tenzaishohin.CurrentCell = GV_Tenzaishohin[7, 0];
                 }
                 else
                 {
@@ -416,7 +417,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             if (GV_Tenzaishohin.Columns[e.ColumnIndex].Name == "Rate")
             {
                 string rate = GV_Tenzaishohin.Rows[e.RowIndex].Cells["Rate"].EditedFormattedValue.ToString();
-                if (!String.IsNullOrEmpty(rate))
+                if (!String.IsNullOrWhiteSpace(rate))
                 {
                     if (!rate.Contains("."))
                     {
@@ -456,6 +457,12 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                         }
                        
                     }
+                }
+                else
+                {
+                    //MessageBox.Show("enter valid no");
+                    bbl.ShowMessage("E102");
+                    GV_Tenzaishohin.BeginEdit(true);
                 }
             }
 
