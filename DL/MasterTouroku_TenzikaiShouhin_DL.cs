@@ -49,7 +49,7 @@ namespace DL
             {
                 //{ "@skuname", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.SKUName} },
                 //{ "@colorName", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.ColorName } },
-                //{ "@sizeName", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.SizeName } },
+                //{ "@sizeName", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.SizeName } 
                 { "@ExhibitionCommomCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.ExhibitionCommonCD } },
                 //{ "@Jancd", new ValuePair { value1 = SqlDbType.VarChar, value2 = msku.JanCD } },
             };
