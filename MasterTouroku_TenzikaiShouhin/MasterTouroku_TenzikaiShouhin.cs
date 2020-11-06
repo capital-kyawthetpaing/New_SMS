@@ -777,8 +777,6 @@ namespace MasterTouroku_TenzikaiShouhin
             mGrid.F_MoveFocus((int)ClsGridMasterTanzi.Gen_MK_FocusMove.MvSet, (int)ClsGridMasterTanzi.Gen_MK_FocusMove.MvNxt, mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl, w_Row, col, ActiveControl, Vsb_Mei_0, w_Row, col);
 
         }
-     
-
         private void S_SetInit_Grid()
         {
             int W_CtlRow;  // Grid Properties
@@ -3428,7 +3426,7 @@ namespace MasterTouroku_TenzikaiShouhin
                 }
             }
             var f = ResTem();
-            if(f.Rows.Count >0 )
+            if (f.Rows.Count > 0)
             {
                 var dtr = ResTem().Select("chkflg < 2", "chkflg ASC, JanCD ASC, SKUCD ASC").CopyToDataTable();
                 SetsSKU(dtr);
@@ -3471,23 +3469,22 @@ namespace MasterTouroku_TenzikaiShouhin
                 {
                     SetVal(c);
                 }
+                //else
+                //{
+                //    Scr_Lock(1, 3, 0);
+
+                //}
+               
                 c++;
             }
            // S_BodySeigyo(1, 0);
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-            S_BodySeigyo(4, 0);
+            //S_BodySeigyo(4, 0);
             scjan_1.Focus();
         }
         private void SetVal(int w_Row)
         {
 
-            //mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Chk, w_Row].Cell_Enabled = false;
-            //mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.BrandCD, w_Row].Cell_Enabled = false;
-            //mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.SegmentCD, w_Row].Cell_Enabled = false;
-            //mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TaniCD, w_Row].Cell_Enabled = false;
-            //mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TaxRateFlg, w_Row].Cell_Enabled = false;
-            //mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Remark, w_Row].Cell_Enabled = false;
-           
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TB, w_Row].Cell_Color = GridBase.ClsGridBase.CheckColor;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Chk, w_Row].Cell_Color = GridBase.ClsGridBase.CheckColor;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.JANCD, w_Row].Cell_Color = GridBase.ClsGridBase.CheckColor;
