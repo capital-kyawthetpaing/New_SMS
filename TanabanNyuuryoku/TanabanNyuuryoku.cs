@@ -444,57 +444,6 @@ namespace TanabanNyuuryoku
             MoveNextControl(e);
         }
 
-        private void dgvTanaban_Paint(object sender, PaintEventArgs e)
-        {
-            string[] monthes = { "棚番" };
-            for (int j = 1; j < 3;)
-            {
-                Rectangle r1 = this.dgvTanaban.GetCellDisplayRectangle(j, -1, true);
-                int w1 = this.dgvTanaban.GetCellDisplayRectangle(j + 1, -1, true).Width;
-                r1.X += 1;
-                r1.Y += 1;
-                r1.Width = r1.Width + w1 - 2;
-                r1.Height = r1.Height - 2;
-
-                e.Graphics.FillRectangle(new SolidBrush(this.dgvTanaban.ColumnHeadersDefaultCellStyle.BackColor), r1);
-                StringFormat format = new StringFormat();
-                format.LineAlignment = StringAlignment.Center;
-                e.Graphics.DrawString(monthes[j / 2],
-                this.dgvTanaban.ColumnHeadersDefaultCellStyle.Font,
-                new SolidBrush(this.dgvTanaban.ColumnHeadersDefaultCellStyle.ForeColor),
-                r1,
-                format);
-                j += 3;
-            }
-        }
-
-        private void dgvTanaban_CellContentClick(object sender, DataGridViewCellEventArgs e)
-       {
-            var senderGrid = (DataGridView)sender;
-            if(e.RowIndex >= 0)
-            {
-                var row = this.dgvTanaban.Rows[e.RowIndex];
-                if(senderGrid .Columns[e.ColumnIndex].ReadOnly == false)
-                {
-                    if(dgvTanaban .Columns ["colBtn"].Index == e.ColumnIndex)
-                    {
-                        Search_Location sl = new Search_Location(DateTime.Now.ToShortDateString() , cboWarehouse.SelectedValue.ToString());
-                        sl.ShowDialog();
-                        if(!string.IsNullOrWhiteSpace(sl.TanaCD))
-                        {
-                            row.Cells[dgvTanaban.Columns[e.ColumnIndex - 1].Index].Value = sl.TanaCD;
-
-                            if (!string.IsNullOrWhiteSpace(ScStorage.TxtCode.Text))
-                            {
-                                row.Cells[dgvTanaban.Columns["colRackNo1"].Index].Value = sl.TanaCD;
-                               
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
         private void cboWarehouse_SelectedIndexChanged(object sender, EventArgs e)
         {
             ScStorage.Value1 = cboWarehouse.SelectedValue.ToString();
@@ -540,37 +489,76 @@ namespace TanabanNyuuryoku
             return mle;
         }
 
-        private void dgvTanaban_KeyDown(object sender, KeyEventArgs e)
+        private void dgvTanaban_Paint(object sender, PaintEventArgs e)
         {
-            //if (e.KeyCode == Keys.Enter)
-            //{
-            //    mle = new M_Location_Entity();
-            //    zibl = new ZaikoIdouNyuuryoku_BL();
-            //    mle.SoukoCD = cboWarehouse.SelectedValue.ToString();
-            //    mle.TanaCD = dgvTanaban.Columns["colRackNo1"].ToString();
-            //    DataTable dtLocation = new DataTable();
-            //    dtLocation = tnbnBL.M_LocationTana_Select(mle);
-            //    if (dtLocation.Rows.Count == 0)
-            //    {
-            //        tnbnBL.ShowMessage("E101");
-            //        ScStorage.SetFocus(1);
-            //    }
-            //}
+            string[] monthes = { "棚番" };
+            for (int j = 1; j < 3;)
+            {
+                Rectangle r1 = this.dgvTanaban.GetCellDisplayRectangle(j, -1, true);
+                int w1 = this.dgvTanaban.GetCellDisplayRectangle(j + 1, -1, true).Width;
+                r1.X += 1;
+                r1.Y += 1;
+                r1.Width = r1.Width + w1 - 2;
+                r1.Height = r1.Height - 2;
 
+                e.Graphics.FillRectangle(new SolidBrush(this.dgvTanaban.ColumnHeadersDefaultCellStyle.BackColor), r1);
+                StringFormat format = new StringFormat();
+                format.LineAlignment = StringAlignment.Center;
+                e.Graphics.DrawString(monthes[j / 2],
+                this.dgvTanaban.ColumnHeadersDefaultCellStyle.Font,
+                new SolidBrush(this.dgvTanaban.ColumnHeadersDefaultCellStyle.ForeColor),
+                r1,
+                format);
+                j += 3;
+            }
+        }
+
+        private void dgvTanaban_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+            if (e.RowIndex >= 0)
+            {
+                var row = this.dgvTanaban.Rows[e.RowIndex];
+                if (senderGrid.Columns[e.ColumnIndex].ReadOnly == false)
+                {
+                    if (dgvTanaban.Columns["colBtn"].Index == e.ColumnIndex)
+                    {
+                        Search_Location sl = new Search_Location(DateTime.Now.ToShortDateString(), cboWarehouse.SelectedValue.ToString());
+                        sl.ShowDialog();
+                        if (!string.IsNullOrWhiteSpace(sl.TanaCD))
+                        {
+                            row.Cells[dgvTanaban.Columns[e.ColumnIndex - 1].Index].Value = sl.TanaCD;
+
+                            if (!string.IsNullOrWhiteSpace(ScStorage.TxtCode.Text))
+                            {
+                                row.Cells[dgvTanaban.Columns["colRackNo1"].Index].Value = sl.TanaCD;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void dgvTanaban_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex == -1 && e.ColumnIndex > -1)
+            {
+                Rectangle r2 = e.CellBounds;
+                r2.Y += e.CellBounds.Height;
+                r2.Height = e.CellBounds.Height;
+                e.PaintBackground(r2, true);
+                e.PaintContent(r2);
+                e.Handled = true;
+            }
         }
 
         private void dgvTanaban_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
-        {           
+        {
             if (dgvTanaban.Columns[e.ColumnIndex].Name == "colRackNo1")
             {
                 string rate = dgvTanaban.Rows[e.RowIndex].Cells["colRackNo1"].EditedFormattedValue.ToString();
-                if (String.IsNullOrEmpty(rate))
-                {
-                    tnbnBL.ShowMessage("E102");
-                    dgvTanaban.RefreshEdit();
-                 
-                }
-                else
+                if (!String.IsNullOrWhiteSpace(rate))
                 {
                     mle = new M_Location_Entity();
                     tnbnBL = new TanabanNyuuryoku_BL();
@@ -582,31 +570,30 @@ namespace TanabanNyuuryoku
                     if (dtLocation.Rows.Count == 0)
                     {
                         tnbnBL.ShowMessage("E101");
-                        dgvTanaban.RefreshEdit();
+                        //dgvTanaban.RefreshEdit();
+                        dgvTanaban.BeginEdit(true);
                     }
                 }
+                else
+                {
+                    //MessageBox.Show("enter valid no");
+                    bbl.ShowMessage("E102");
+                    dgvTanaban.BeginEdit(true);
+                }
             }
-
         }
 
-        private void dgvTanaban_CellEnter(object sender, DataGridViewCellEventArgs e)
+        private void dgvTanaban_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            //dgvTanaban.CurrentRow.Cells["colRackNo1"].Selected = true;
-            //dgvTanaban.CurrentRow.Cells["colRackNo1"].Value.ToString().Length;
-            //dgvTanaban.BeginEdit(true);
+            try
+            {
 
+            }
+            catch
+            {
+                MessageBox.Show("Enter valid no");
+                dgvTanaban.RefreshEdit();
+            }
         }
-
-        //private void CheckRowAdd(DataGridViewRow row)
-        //{
-        //    if(row.Index == dgvTanaban.Rows.Count -1)
-        //    {
-        //        if(!string.IsNullOrWhiteSpace(row.Cells[dgvTanaban.Columns["colbtn"].Index].Value.ToString()))
-        //        {
-
-        //        }
-        //    }
-        //}
-
     }
 }
