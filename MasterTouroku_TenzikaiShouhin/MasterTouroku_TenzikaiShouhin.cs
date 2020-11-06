@@ -304,6 +304,7 @@ namespace MasterTouroku_TenzikaiShouhin
             {
                 case EOperationMode.INSERT:
                     detailControls[(int)Eindex.SCTenzikai].Focus();
+                    BT_meisai.Enabled = true;
                     BT_SKUCheck.Enabled = false;
                     detailControls[(int)Eindex.StartDate].Enabled = false;
                     EnablePanel(panel4);
@@ -315,6 +316,7 @@ namespace MasterTouroku_TenzikaiShouhin
 
                 case EOperationMode.UPDATE:
                      BT_SKUCheck.Enabled = true;
+                    BT_meisai.Enabled = false;
                     detailControls[(int)Eindex.SCTenzikai].Focus();
                     detailControls[(int)Eindex.StartDate].Enabled = true;
                     DisablePanel(panel4);
@@ -1241,7 +1243,9 @@ namespace MasterTouroku_TenzikaiShouhin
             try
             {
                 previousCtrl = this.ActiveControl;
-                SetFuncKeyAll(this, "111111110101");
+                if(OperationMode == EOperationMode.INSERT)
+                    SetFuncKeyAll(this, "111111110101");
+
                 int w_Row;
                 Control w_ActCtl;
 
@@ -1284,6 +1288,11 @@ namespace MasterTouroku_TenzikaiShouhin
 
             // ﾌｧﾝｸｼｮﾝﾎﾞﾀﾝ使用可否
             SetFuncKeyAll(this, "111111111111");
+
+            if(OperationMode == EOperationMode.UPDATE)
+            {
+                SetFuncKeyAll(this, "111111001011");
+            }
 
             // 検索ﾎﾞﾀﾝ使用不可.解除
             if (W_Del == true)
@@ -1381,7 +1390,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                     S_BodySeigyo(1, 1);
                                     mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
                                     S_BodySeigyo(4, 0);
-                                    //scjan_1.Focus();
+                                    scjan_1.Focus();
                                 }
                                 else
                                 {
@@ -2432,16 +2441,14 @@ namespace MasterTouroku_TenzikaiShouhin
             previousCtrl = this.ActiveControl;
 
             SetFuncKeyAll(this, "111111001001");
-            if (ActiveControl.Name == "sc_Tenji")
-            {
-                previousCtrl = this.ActiveControl;
-                if (OperationMode == EOperationMode.SHOW)
-                    SetFuncKeyAll(this, "111111001000");
 
-            }
-            if (OperationMode == EOperationMode.UPDATE)
+            if(OperationMode == EOperationMode.SHOW)
             {
-                SetFuncKeyAll(this, "111111001011");
+                SetFuncKeyAll(this, "111111001000");
+            }
+            else if (OperationMode == EOperationMode.UPDATE)
+            {
+                SetFuncKeyAll(this, "111111000011");
             }
             else
             {
@@ -2849,8 +2856,6 @@ namespace MasterTouroku_TenzikaiShouhin
                                 if (!String.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].JANCD))
                                 {
                                     mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.HanbaiYoteiDateMonth, w_Row].Cell_Enabled = true;
-
-
                                 }
 
                         }
@@ -2905,19 +2910,20 @@ namespace MasterTouroku_TenzikaiShouhin
 
                             }
                             panel2.Refresh();
+                            SetFuncKeyAll(this, "111111001011");
                         }
                         else
                         {
                             for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
                             {
-                                //if (m_EnableCnt - 1 < w_Row)
-                                //    break;
-
-
+                                
                                 mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.JANCD, w_Row].Cell_Enabled = false;
-
-                               
                             }
+                            if(OperationMode == EOperationMode.DELETE)
+                                SetFuncKeyAll(this, "111111001001");
+
+                            else
+                                SetFuncKeyAll(this, "111111001000");
                         }
                        
                     }
