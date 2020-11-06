@@ -326,6 +326,8 @@ namespace MasterTouroku_TenzikaiShouhin
                 case EOperationMode.SHOW:
                     EnablePanel(PanelHeader);
                     BT_SKUCheck.Enabled = false;
+                    BT_meisai.Enabled = false;
+                    detailControls[(int)Eindex.SCTenzikai].Focus();
                     DisablePanel(panel4);
                     DisablePanel(panel6);
                     detailControls[(int)Eindex.StartDate].Enabled = false;

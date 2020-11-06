@@ -29,22 +29,24 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.SC_copysegmet = new Search.CKM_SearchControl();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.SC_CopyTenzikai = new Search.CKM_SearchControl();
+            this.SC_copybrand = new Search.CKM_SearchControl();
+            this.ckM_Label5 = new CKM_Controls.CKM_Label();
+            this.CB_copyseason = new CKM_Controls.CKM_ComboBox();
+            this.SC_CopyVendor = new Search.CKM_SearchControl();
+            this.CB_Copyyear = new CKM_Controls.CKM_ComboBox();
             this.CB_Season = new CKM_Controls.CKM_ComboBox();
             this.TB_StartDate = new CKM_Controls.CKM_TextBox();
             this.ckM_LB_Kijunbi = new CKM_Controls.CKM_Label();
             this.BT_SKUCheck = new CKM_Controls.CKM_Button();
             this.BT_meisai = new CKM_Controls.CKM_Button();
-            this.SC_copysegmet = new Search.CKM_SearchControl();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
-            this.SC_copybrand = new Search.CKM_SearchControl();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
-            this.SC_CopyTenzikai = new Search.CKM_SearchControl();
             this.ckM_Label4 = new CKM_Controls.CKM_Label();
-            this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.ckM_Label9 = new CKM_Controls.CKM_Label();
-            this.CB_copyseason = new CKM_Controls.CKM_ComboBox();
-            this.CB_Copyyear = new CKM_Controls.CKM_ComboBox();
-            this.SC_CopyVendor = new Search.CKM_SearchControl();
             this.ckM_Label11 = new CKM_Controls.CKM_Label();
             this.SC_Segment = new Search.CKM_SearchControl();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
@@ -360,9 +362,9 @@
             this.scjan_2 = new Search.CKM_SearchControl();
             this.label24 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel_1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -374,8 +376,6 @@
             this.panel_4.SuspendLayout();
             this.panel_3.SuspendLayout();
             this.panel_2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -420,6 +420,196 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1550, 152);
             this.panel1.TabIndex = 100;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.SC_copysegmet);
+            this.panel6.Location = new System.Drawing.Point(725, 120);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(350, 28);
+            this.panel6.TabIndex = 842;
+            // 
+            // SC_copysegmet
+            // 
+            this.SC_copysegmet.AutoSize = true;
+            this.SC_copysegmet.ChangeDate = "";
+            this.SC_copysegmet.ChangeDateWidth = 100;
+            this.SC_copysegmet.Code = "";
+            this.SC_copysegmet.CodeWidth = 60;
+            this.SC_copysegmet.CodeWidth1 = 60;
+            this.SC_copysegmet.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_copysegmet.DataCheck = false;
+            this.SC_copysegmet.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_copysegmet.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.SC_copysegmet.IsCopy = false;
+            this.SC_copysegmet.LabelText = "";
+            this.SC_copysegmet.LabelVisible = true;
+            this.SC_copysegmet.Location = new System.Drawing.Point(2, -1);
+            this.SC_copysegmet.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_copysegmet.Name = "SC_copysegmet";
+            this.SC_copysegmet.NameWidth = 250;
+            this.SC_copysegmet.SearchEnable = true;
+            this.SC_copysegmet.Size = new System.Drawing.Size(344, 27);
+            this.SC_copysegmet.Stype = Search.CKM_SearchControl.SearchType.商品分類;
+            this.SC_copysegmet.TabIndex = 12;
+            this.SC_copysegmet.test = null;
+            this.SC_copysegmet.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_copysegmet.UseChangeDate = false;
+            this.SC_copysegmet.Value1 = null;
+            this.SC_copysegmet.Value2 = null;
+            this.SC_copysegmet.Value3 = null;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.SC_CopyTenzikai);
+            this.panel4.Controls.Add(this.SC_copybrand);
+            this.panel4.Controls.Add(this.ckM_Label5);
+            this.panel4.Controls.Add(this.CB_copyseason);
+            this.panel4.Controls.Add(this.SC_CopyVendor);
+            this.panel4.Controls.Add(this.CB_Copyyear);
+            this.panel4.Location = new System.Drawing.Point(725, 7);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(550, 110);
+            this.panel4.TabIndex = 841;
+            // 
+            // SC_CopyTenzikai
+            // 
+            this.SC_CopyTenzikai.AutoSize = true;
+            this.SC_CopyTenzikai.ChangeDate = "";
+            this.SC_CopyTenzikai.ChangeDateWidth = 100;
+            this.SC_CopyTenzikai.Code = "";
+            this.SC_CopyTenzikai.CodeWidth = 500;
+            this.SC_CopyTenzikai.CodeWidth1 = 500;
+            this.SC_CopyTenzikai.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_CopyTenzikai.DataCheck = false;
+            this.SC_CopyTenzikai.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_CopyTenzikai.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.SC_CopyTenzikai.IsCopy = false;
+            this.SC_CopyTenzikai.LabelText = "";
+            this.SC_CopyTenzikai.LabelVisible = false;
+            this.SC_CopyTenzikai.Location = new System.Drawing.Point(2, 7);
+            this.SC_CopyTenzikai.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_CopyTenzikai.Name = "SC_CopyTenzikai";
+            this.SC_CopyTenzikai.NameWidth = 180;
+            this.SC_CopyTenzikai.SearchEnable = true;
+            this.SC_CopyTenzikai.Size = new System.Drawing.Size(533, 27);
+            this.SC_CopyTenzikai.Stype = Search.CKM_SearchControl.SearchType.展示会商品;
+            this.SC_CopyTenzikai.TabIndex = 7;
+            this.SC_CopyTenzikai.test = null;
+            this.SC_CopyTenzikai.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_CopyTenzikai.UseChangeDate = false;
+            this.SC_CopyTenzikai.Value1 = null;
+            this.SC_CopyTenzikai.Value2 = null;
+            this.SC_CopyTenzikai.Value3 = null;
+            // 
+            // SC_copybrand
+            // 
+            this.SC_copybrand.AutoSize = true;
+            this.SC_copybrand.ChangeDate = "";
+            this.SC_copybrand.ChangeDateWidth = 100;
+            this.SC_copybrand.Code = "";
+            this.SC_copybrand.CodeWidth = 100;
+            this.SC_copybrand.CodeWidth1 = 100;
+            this.SC_copybrand.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_copybrand.DataCheck = false;
+            this.SC_copybrand.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_copybrand.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.SC_copybrand.IsCopy = false;
+            this.SC_copybrand.LabelText = "";
+            this.SC_copybrand.LabelVisible = true;
+            this.SC_copybrand.Location = new System.Drawing.Point(2, 86);
+            this.SC_copybrand.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_copybrand.Name = "SC_copybrand";
+            this.SC_copybrand.NameWidth = 280;
+            this.SC_copybrand.SearchEnable = true;
+            this.SC_copybrand.Size = new System.Drawing.Size(414, 27);
+            this.SC_copybrand.Stype = Search.CKM_SearchControl.SearchType.ブランド;
+            this.SC_copybrand.TabIndex = 11;
+            this.SC_copybrand.test = null;
+            this.SC_copybrand.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_copybrand.UseChangeDate = false;
+            this.SC_copybrand.Value1 = null;
+            this.SC_copybrand.Value2 = null;
+            this.SC_copybrand.Value3 = null;
+            // 
+            // ckM_Label5
+            // 
+            this.ckM_Label5.AutoSize = true;
+            this.ckM_Label5.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label5.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label5.DefaultlabelSize = true;
+            this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label5.Location = new System.Drawing.Point(141, 69);
+            this.ckM_Label5.Name = "ckM_Label5";
+            this.ckM_Label5.Size = new System.Drawing.Size(96, 12);
+            this.ckM_Label5.TabIndex = 829;
+            this.ckM_Label5.Text = "複写元シーズン";
+            this.ckM_Label5.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // CB_copyseason
+            // 
+            this.CB_copyseason.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.CB_copyseason.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CB_copyseason.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
+            this.CB_copyseason.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.CB_copyseason.Flag = 0;
+            this.CB_copyseason.FormattingEnabled = true;
+            this.CB_copyseason.Length = 10;
+            this.CB_copyseason.Location = new System.Drawing.Point(240, 65);
+            this.CB_copyseason.MaxLength = 10;
+            this.CB_copyseason.MoveNext = true;
+            this.CB_copyseason.Name = "CB_copyseason";
+            this.CB_copyseason.Size = new System.Drawing.Size(85, 20);
+            this.CB_copyseason.TabIndex = 10;
+            // 
+            // SC_CopyVendor
+            // 
+            this.SC_CopyVendor.AutoSize = true;
+            this.SC_CopyVendor.ChangeDate = "";
+            this.SC_CopyVendor.ChangeDateWidth = 100;
+            this.SC_CopyVendor.Code = "";
+            this.SC_CopyVendor.CodeWidth = 100;
+            this.SC_CopyVendor.CodeWidth1 = 100;
+            this.SC_CopyVendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_CopyVendor.DataCheck = false;
+            this.SC_CopyVendor.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_CopyVendor.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.SC_CopyVendor.IsCopy = false;
+            this.SC_CopyVendor.LabelText = "";
+            this.SC_CopyVendor.LabelVisible = true;
+            this.SC_CopyVendor.Location = new System.Drawing.Point(2, 33);
+            this.SC_CopyVendor.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_CopyVendor.Name = "SC_CopyVendor";
+            this.SC_CopyVendor.NameWidth = 310;
+            this.SC_CopyVendor.SearchEnable = true;
+            this.SC_CopyVendor.Size = new System.Drawing.Size(444, 27);
+            this.SC_CopyVendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
+            this.SC_CopyVendor.TabIndex = 8;
+            this.SC_CopyVendor.test = null;
+            this.SC_CopyVendor.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_CopyVendor.UseChangeDate = false;
+            this.SC_CopyVendor.Value1 = null;
+            this.SC_CopyVendor.Value2 = null;
+            this.SC_CopyVendor.Value3 = null;
+            // 
+            // CB_Copyyear
+            // 
+            this.CB_Copyyear.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.CB_Copyyear.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CB_Copyyear.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.年度;
+            this.CB_Copyyear.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.CB_Copyyear.Flag = 0;
+            this.CB_Copyyear.FormattingEnabled = true;
+            this.CB_Copyyear.Length = 10;
+            this.CB_Copyyear.Location = new System.Drawing.Point(2, 65);
+            this.CB_Copyyear.MaxLength = 10;
+            this.CB_Copyyear.MoveNext = true;
+            this.CB_Copyyear.Name = "CB_Copyyear";
+            this.CB_Copyyear.Size = new System.Drawing.Size(85, 20);
+            this.CB_Copyyear.TabIndex = 9;
             // 
             // CB_Season
             // 
@@ -522,36 +712,6 @@
             this.BT_meisai.UseVisualStyleBackColor = false;
             this.BT_meisai.Click += new System.EventHandler(this.BT_meisai_Click);
             // 
-            // SC_copysegmet
-            // 
-            this.SC_copysegmet.AutoSize = true;
-            this.SC_copysegmet.ChangeDate = "";
-            this.SC_copysegmet.ChangeDateWidth = 100;
-            this.SC_copysegmet.Code = "";
-            this.SC_copysegmet.CodeWidth = 60;
-            this.SC_copysegmet.CodeWidth1 = 60;
-            this.SC_copysegmet.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_copysegmet.DataCheck = false;
-            this.SC_copysegmet.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_copysegmet.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.SC_copysegmet.IsCopy = false;
-            this.SC_copysegmet.LabelText = "";
-            this.SC_copysegmet.LabelVisible = true;
-            this.SC_copysegmet.Location = new System.Drawing.Point(2, -1);
-            this.SC_copysegmet.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_copysegmet.Name = "SC_copysegmet";
-            this.SC_copysegmet.NameWidth = 250;
-            this.SC_copysegmet.SearchEnable = true;
-            this.SC_copysegmet.Size = new System.Drawing.Size(344, 27);
-            this.SC_copysegmet.Stype = Search.CKM_SearchControl.SearchType.商品分類;
-            this.SC_copysegmet.TabIndex = 12;
-            this.SC_copysegmet.test = null;
-            this.SC_copysegmet.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_copysegmet.UseChangeDate = false;
-            this.SC_copysegmet.Value1 = null;
-            this.SC_copysegmet.Value2 = null;
-            this.SC_copysegmet.Value3 = null;
-            // 
             // ckM_Label2
             // 
             this.ckM_Label2.AutoSize = true;
@@ -568,36 +728,6 @@
             this.ckM_Label2.Text = "複写元セグメント";
             this.ckM_Label2.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // SC_copybrand
-            // 
-            this.SC_copybrand.AutoSize = true;
-            this.SC_copybrand.ChangeDate = "";
-            this.SC_copybrand.ChangeDateWidth = 100;
-            this.SC_copybrand.Code = "";
-            this.SC_copybrand.CodeWidth = 100;
-            this.SC_copybrand.CodeWidth1 = 100;
-            this.SC_copybrand.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_copybrand.DataCheck = false;
-            this.SC_copybrand.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_copybrand.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.SC_copybrand.IsCopy = false;
-            this.SC_copybrand.LabelText = "";
-            this.SC_copybrand.LabelVisible = true;
-            this.SC_copybrand.Location = new System.Drawing.Point(2, 86);
-            this.SC_copybrand.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_copybrand.Name = "SC_copybrand";
-            this.SC_copybrand.NameWidth = 280;
-            this.SC_copybrand.SearchEnable = true;
-            this.SC_copybrand.Size = new System.Drawing.Size(414, 27);
-            this.SC_copybrand.Stype = Search.CKM_SearchControl.SearchType.ブランド;
-            this.SC_copybrand.TabIndex = 11;
-            this.SC_copybrand.test = null;
-            this.SC_copybrand.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_copybrand.UseChangeDate = false;
-            this.SC_copybrand.Value1 = null;
-            this.SC_copybrand.Value2 = null;
-            this.SC_copybrand.Value3 = null;
             // 
             // ckM_Label3
             // 
@@ -616,36 +746,6 @@
             this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // SC_CopyTenzikai
-            // 
-            this.SC_CopyTenzikai.AutoSize = true;
-            this.SC_CopyTenzikai.ChangeDate = "";
-            this.SC_CopyTenzikai.ChangeDateWidth = 100;
-            this.SC_CopyTenzikai.Code = "";
-            this.SC_CopyTenzikai.CodeWidth = 500;
-            this.SC_CopyTenzikai.CodeWidth1 = 500;
-            this.SC_CopyTenzikai.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_CopyTenzikai.DataCheck = false;
-            this.SC_CopyTenzikai.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_CopyTenzikai.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.SC_CopyTenzikai.IsCopy = false;
-            this.SC_CopyTenzikai.LabelText = "";
-            this.SC_CopyTenzikai.LabelVisible = false;
-            this.SC_CopyTenzikai.Location = new System.Drawing.Point(2, 7);
-            this.SC_CopyTenzikai.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_CopyTenzikai.Name = "SC_CopyTenzikai";
-            this.SC_CopyTenzikai.NameWidth = 180;
-            this.SC_CopyTenzikai.SearchEnable = true;
-            this.SC_CopyTenzikai.Size = new System.Drawing.Size(533, 27);
-            this.SC_CopyTenzikai.Stype = Search.CKM_SearchControl.SearchType.展示会商品;
-            this.SC_CopyTenzikai.TabIndex = 7;
-            this.SC_CopyTenzikai.test = null;
-            this.SC_CopyTenzikai.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_CopyTenzikai.UseChangeDate = false;
-            this.SC_CopyTenzikai.Value1 = null;
-            this.SC_CopyTenzikai.Value2 = null;
-            this.SC_CopyTenzikai.Value3 = null;
-            // 
             // ckM_Label4
             // 
             this.ckM_Label4.AutoSize = true;
@@ -663,23 +763,6 @@
             this.ckM_Label4.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ckM_Label5
-            // 
-            this.ckM_Label5.AutoSize = true;
-            this.ckM_Label5.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label5.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label5.DefaultlabelSize = true;
-            this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(141, 69);
-            this.ckM_Label5.Name = "ckM_Label5";
-            this.ckM_Label5.Size = new System.Drawing.Size(96, 12);
-            this.ckM_Label5.TabIndex = 829;
-            this.ckM_Label5.Text = "複写元シーズン";
-            this.ckM_Label5.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // ckM_Label9
             // 
             this.ckM_Label9.AutoSize = true;
@@ -696,68 +779,6 @@
             this.ckM_Label9.Text = "複写元年度";
             this.ckM_Label9.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // CB_copyseason
-            // 
-            this.CB_copyseason.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.CB_copyseason.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CB_copyseason.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
-            this.CB_copyseason.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.CB_copyseason.Flag = 0;
-            this.CB_copyseason.FormattingEnabled = true;
-            this.CB_copyseason.Length = 10;
-            this.CB_copyseason.Location = new System.Drawing.Point(240, 65);
-            this.CB_copyseason.MaxLength = 10;
-            this.CB_copyseason.MoveNext = true;
-            this.CB_copyseason.Name = "CB_copyseason";
-            this.CB_copyseason.Size = new System.Drawing.Size(85, 20);
-            this.CB_copyseason.TabIndex = 10;
-            // 
-            // CB_Copyyear
-            // 
-            this.CB_Copyyear.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.CB_Copyyear.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CB_Copyyear.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.年度;
-            this.CB_Copyyear.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.CB_Copyyear.Flag = 0;
-            this.CB_Copyyear.FormattingEnabled = true;
-            this.CB_Copyyear.Length = 10;
-            this.CB_Copyyear.Location = new System.Drawing.Point(2, 65);
-            this.CB_Copyyear.MaxLength = 10;
-            this.CB_Copyyear.MoveNext = true;
-            this.CB_Copyyear.Name = "CB_Copyyear";
-            this.CB_Copyyear.Size = new System.Drawing.Size(85, 20);
-            this.CB_Copyyear.TabIndex = 9;
-            // 
-            // SC_CopyVendor
-            // 
-            this.SC_CopyVendor.AutoSize = true;
-            this.SC_CopyVendor.ChangeDate = "";
-            this.SC_CopyVendor.ChangeDateWidth = 100;
-            this.SC_CopyVendor.Code = "";
-            this.SC_CopyVendor.CodeWidth = 100;
-            this.SC_CopyVendor.CodeWidth1 = 100;
-            this.SC_CopyVendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_CopyVendor.DataCheck = false;
-            this.SC_CopyVendor.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_CopyVendor.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.SC_CopyVendor.IsCopy = false;
-            this.SC_CopyVendor.LabelText = "";
-            this.SC_CopyVendor.LabelVisible = true;
-            this.SC_CopyVendor.Location = new System.Drawing.Point(2, 33);
-            this.SC_CopyVendor.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_CopyVendor.Name = "SC_CopyVendor";
-            this.SC_CopyVendor.NameWidth = 310;
-            this.SC_CopyVendor.SearchEnable = true;
-            this.SC_CopyVendor.Size = new System.Drawing.Size(444, 27);
-            this.SC_CopyVendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.SC_CopyVendor.TabIndex = 8;
-            this.SC_CopyVendor.test = null;
-            this.SC_CopyVendor.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_CopyVendor.UseChangeDate = false;
-            this.SC_CopyVendor.Value1 = null;
-            this.SC_CopyVendor.Value2 = null;
-            this.SC_CopyVendor.Value3 = null;
             // 
             // ckM_Label11
             // 
@@ -1124,7 +1145,7 @@
             this.label14.Size = new System.Drawing.Size(100, 23);
             this.label14.TabIndex = 293;
             this.label14.Text = "ランク３単価";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label15
             // 
@@ -1163,7 +1184,7 @@
             this.label17.Size = new System.Drawing.Size(87, 23);
             this.label17.TabIndex = 296;
             this.label17.Text = "ブランド";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label18
             // 
@@ -1176,7 +1197,7 @@
             this.label18.Size = new System.Drawing.Size(80, 23);
             this.label18.TabIndex = 297;
             this.label18.Text = "セグメント";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label20
             // 
@@ -1189,7 +1210,7 @@
             this.label20.Size = new System.Drawing.Size(63, 23);
             this.label20.TabIndex = 298;
             this.label20.Text = "単位";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label19
             // 
@@ -1215,7 +1236,7 @@
             this.label22.Size = new System.Drawing.Size(330, 23);
             this.label22.TabIndex = 301;
             this.label22.Text = "備考";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label21
             // 
@@ -1228,7 +1249,7 @@
             this.label21.Size = new System.Drawing.Size(110, 23);
             this.label21.TabIndex = 302;
             this.label21.Text = "仕入単価";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
@@ -2008,7 +2029,7 @@
             this.label9.Size = new System.Drawing.Size(100, 23);
             this.label9.TabIndex = 312;
             this.label9.Text = "標準売上単価";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label10
             // 
@@ -2034,7 +2055,7 @@
             this.label11.Size = new System.Drawing.Size(100, 23);
             this.label11.TabIndex = 314;
             this.label11.Text = "上代単価";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel2
             // 
@@ -8924,27 +8945,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.SC_CopyTenzikai);
-            this.panel4.Controls.Add(this.SC_copybrand);
-            this.panel4.Controls.Add(this.ckM_Label5);
-            this.panel4.Controls.Add(this.CB_copyseason);
-            this.panel4.Controls.Add(this.SC_CopyVendor);
-            this.panel4.Controls.Add(this.CB_Copyyear);
-            this.panel4.Location = new System.Drawing.Point(725, 7);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(550, 110);
-            this.panel4.TabIndex = 841;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.SC_copysegmet);
-            this.panel6.Location = new System.Drawing.Point(725, 120);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(350, 28);
-            this.panel6.TabIndex = 842;
-            // 
             // MasterTouroku_TenzikaiShouhin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -8963,6 +8963,10 @@
             this.Controls.SetChildIndex(this.panel2, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel_1.ResumeLayout(false);
             this.panel_1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -8984,10 +8988,6 @@
             this.panel_3.PerformLayout();
             this.panel_2.ResumeLayout(false);
             this.panel_2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
