@@ -1537,15 +1537,23 @@ namespace Base.Client
                 var ConTxt= c.ElementAt(i) as CKM_TextBox;
                 if (Con is CKM_SearchControl)
                 {
+                    var gc = (Con as CKM_SearchControl);
                     try
                     {
                         Control ctrl = Con.Controls.Find("txtCode", true)[0];
-                        if (IsConsistFullWidth((ctrl as CKM_TextBox).Text))
+                        if (gc.TxtCode.Ctrl_Byte != CKM_TextBox.Bytes.半全角)
                         {
-                            bbl.ShowMessage("E221");
-                            (ctrl as CKM_TextBox).Focus();
-                            (ctrl as CKM_TextBox).MoveNext = false;
-                            return false;
+                            if (IsConsistFullWidth((ctrl as CKM_TextBox).Text)) // Half  // PTK
+                            {
+                                bbl.ShowMessage("E221");
+                                (ctrl as CKM_TextBox).Focus();
+                                (ctrl as CKM_TextBox).MoveNext = false;
+                                return false;
+                            }
+                        }
+                        else // Hald/Full
+                        {
+                            IsMaxLeng(gc.TxtCode);
                         }
                     }
                     catch
@@ -1587,6 +1595,38 @@ namespace Base.Client
                 }
             }
             return true;
+        }
+        private void IsMaxLeng(CKM_TextBox ConTxt) // PTK
+        {
+            (ConTxt as CKM_TextBox).isMaxLengthErr = false;
+
+            if (!ConTxt.Enabled)    //2020/5/18 add
+                return ; ;
+
+            if ((((ConTxt as CKM_TextBox).Ctrl_Type == CKM_TextBox.Type.Normal) || (ConTxt as CKM_TextBox).Ctrl_Type == CKM_TextBox.Type.Number) && (ConTxt as CKM_TextBox).Ctrl_Byte == CKM_TextBox.Bytes.半全角)
+            {
+                string str = Encoding.GetEncoding(932).GetByteCount((ConTxt as CKM_TextBox).Text).ToString();
+                if (Convert.ToInt32(str) > (ConTxt as CKM_TextBox).MaxLength)
+                {
+                    MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    (ConTxt as CKM_TextBox).isMaxLengthErr = true;
+                    (ConTxt as CKM_TextBox).Focus();
+                    return ;
+                }
+            }
+            if ((((ConTxt as CKM_TextBox).Ctrl_Type == CKM_TextBox.Type.Normal) || (ConTxt as CKM_TextBox).Ctrl_Type == CKM_TextBox.Type.Number) && (ConTxt as CKM_TextBox).Ctrl_Byte == CKM_TextBox.Bytes.半角)
+            {
+                int byteCount = Encoding.GetEncoding("Shift_JIS").GetByteCount((ConTxt as CKM_TextBox).Text);
+                int onebyteCount = System.Text.ASCIIEncoding.ASCII.GetByteCount((ConTxt as CKM_TextBox).Text);
+                if (onebyteCount != byteCount)
+                {
+                    MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    (ConTxt as CKM_TextBox).isMaxLengthErr = true;
+                    (ConTxt as CKM_TextBox).Focus();
+                    return ;
+                }
+            }
+           
         }
         public static bool IsConsistFullWidth(string txt)
         {
