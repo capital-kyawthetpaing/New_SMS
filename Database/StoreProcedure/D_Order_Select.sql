@@ -1,5 +1,19 @@
+
+
+/****** Object:  StoredProcedure [dbo].[D_Order_Select]    Script Date: 2020/11/06 10:01:30 ******/
+DROP PROCEDURE [dbo].[D_Order_Select]
+GO
+
+/****** Object:  StoredProcedure [dbo].[D_Order_Select]    Script Date: 2020/11/06 10:01:30 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
 /****** Object:  StoredProcedure [D_Order_Select]    */
-CREATE PROCEDURE D_Order_Select(
+CREATE PROCEDURE [dbo].[D_Order_Select](
     -- Add the parameters for the stored procedure here
     @OrderNo  varchar(11),
     @OrderRows  int,
@@ -36,3 +50,5 @@ BEGIN
 END
 
 GO
+
+
