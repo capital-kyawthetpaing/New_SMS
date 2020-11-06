@@ -1643,7 +1643,26 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bl.ShowMessage("E101");
                                 return false;
                             }
+                            //if( OperationMode == EOperationMode.INSERT)
+                            //{
+                            //    M_TenzikaiShouhin_Entity mt = new M_TenzikaiShouhin_Entity
+                            //    {
+                            //        TenzikaiName = detailControls[(int)Eindex.SCTenzikai].Text,
+                            //        VendorCD = detailControls[(int)Eindex.SCShiiresaki].Text,
+                            //        LastYearTerm = detailControls[(int)Eindex.Nendo].Text,
+                            //        LastSeason = detailControls[(int)Eindex.Season].Text,
+                            //        BranCDFrom = detailControls[(int)Eindex.SCBrand].Text,
+                            //        SegmentCDFrom = detailControls[(int)Eindex.SCSegment].Text,
+                            //        JANCD = mGrid.g_DArray[row].JANCD,
+                            //    };
+                            //    DataTable dt = tbl.M_Tenzikaishouhin_SelectForJancd(mt);
 
+                            //    if (dt.Rows.Count > 0)
+                            //    {
+                            //        tbl.ShowMessage("E107");
+                            //        return false;
+                            //    }
+                            //}
                             M_TenzikaiShouhin_Entity mt = new M_TenzikaiShouhin_Entity
                             {
                                 TenzikaiName = detailControls[(int)Eindex.SCTenzikai].Text,
@@ -1798,7 +1817,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                 }
                                 if (Convert.ToInt64(mGrid.g_DArray[row].HanbaiYoteiDateMonth) >= 13)
                                 {
-                                    bbl.ShowMessage("E117");
+                                    bbl.ShowMessage("E117","{0}","{12}");
                                     return false;
                                 }
                                 //mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
