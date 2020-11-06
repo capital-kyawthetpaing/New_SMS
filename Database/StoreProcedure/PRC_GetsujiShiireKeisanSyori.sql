@@ -482,7 +482,8 @@ BEGIN
         WHERE MS.StoreCD = (CASE WHEN @StoreCD <> '' THEN @StoreCD ELSE MS.StoreCD END)
         AND SUBSTRING(CONVERT(varchar,DS.CalcuArrivalPlanDate,111),1,7) = @W_FiscalYYYYMM
         AND DS.ArrivalPlanKBN = 1
-            
+        AND DS.OrderCD IS NOT NULL
+        
         AND NOT EXISTS(SELECT A.AdminNO FROM D_MonthlyPurchase AS A
                        WHERE A.AdminNO = DS.AdminNO
                        AND A.StoreCD = MS.StoreCD
@@ -756,6 +757,7 @@ BEGIN
         AND SUBSTRING(CONVERT(varchar,DS.ExpectReturnDate,111),1,7) = @W_FiscalYYYYMM
         AND DS.DeleteDateTime IS NULL
         AND DS.ReturnPlanSu > DS.ReturnSu
+        AND DS.VendorCD IS NOT NULL
         
         AND NOT EXISTS(SELECT DM.AdminNO FROM D_MonthlyPurchase AS DM
                        WHERE DM.AdminNO = DS.AdminNO
