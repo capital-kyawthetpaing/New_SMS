@@ -2568,6 +2568,9 @@ namespace ZaikoIdouNyuuryoku
             //配列の内容を画面にセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
+            //Scr_LockでEnabled設定がクリアされてしまうため再度設定
+            SetEnabled(mIdoType);
+
             switch (mode)
             {
                 case EOperationMode.INSERT:
@@ -2673,6 +2676,7 @@ namespace ZaikoIdouNyuuryoku
                 ((CKM_SearchControl)ctl).LabelText = "";
             }
 
+            mIdoType = EIdoType.NULL;
             mOldMoveDate = "";
             m_MaxMoveGyoNo = 0;
             mFromStoreCD = "";
