@@ -45,7 +45,7 @@ public   class D_Mail_DL : Base_DL
             string sp = "D_MailSend_Update";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@MailCount",new ValuePair{value1=SqlDbType.TinyInt,value2=MailCount.ToString()}}
+                { "@MailCount",new ValuePair{value1=SqlDbType.Int,value2=MailCount.ToString()}}
             };
             return InsertUpdateDeleteData(dic, sp);
         }
