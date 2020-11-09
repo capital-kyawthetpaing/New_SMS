@@ -460,6 +460,10 @@ namespace MailHistoryShoukai
                 {
                     bbl.ShowMessage("E128");
                     GvDetail.DataSource = null;
+                    foreach (Control ctl in detailLabels)
+                    {
+                        ctl.Text = "";
+                    }
                 }
 
             }
