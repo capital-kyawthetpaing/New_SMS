@@ -86,7 +86,7 @@ namespace MailSend
                         }
                         smtpServer.Port = 587;
                         smtpServer.Credentials = new System.Net.NetworkCredential(mm.From.Address, FromPwd);
-                        smtpServer.EnableSsl = true;
+                        smtpServer.EnableSsl = false;
                         try
                         {
                             smtpServer.Send(mm);

@@ -171,7 +171,7 @@ namespace EDINouhinJouhonTouroku
 
                 D_SKENDeliveryDetails_Entity de = new D_SKENDeliveryDetails_Entity
                 {
-                    SKENNouhinshoNO = gdvDSKENDelivery[(int)EColNo.SKENNouhinshoNO, selectRowIndex].Value.ToString(),
+                    SKENNouhinshoNO = gdvDSKENDelivery[(int)EColNo.ImportDateTime, selectRowIndex].Value.ToString(),
                     ChkFlg = chkError.Checked ? "1" : "0",
 
                 };
