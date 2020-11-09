@@ -95,6 +95,7 @@ BEGIN
     SET @Extention = REVERSE(SUBSTRING(REVERSE(@FileName),1, @ExtIndex));
     
     --M_VendorMailŽæ“¾
+    /*
     SELECT TOP 1 
            @AddressRows = ISNULL(MV.AddressRows,0)
           ,@AddressKBN = ISNULL(MV.AddressKBN,0)
@@ -103,6 +104,7 @@ BEGIN
      WHERE MV.VendorCD = @VendorCD
        AND MV.ChangeDate <= @SYSDATE
      ORDER BY MV.ChangeDate DESC;
+     */
      
      --M_StoreŽæ“¾
      SELECT TOP 1
@@ -168,12 +170,20 @@ BEGIN
        ,[AddressRows]
        ,[AddressKBN]
        ,[Address])
-    VALUES
-       (@Counter
-       ,@AddressRows
-       ,@AddressKBN
-       ,@Address
-      );       
+    SELECT
+        @Counter
+       ,ISNULL(MV1.AddressRows,0)
+       ,ISNULL(MV1.AddressKBN,0)
+       ,MV1.Address
+    FROM M_VendorMail MV1
+   INNER JOIN ( SELECT VendorCD , MAX(ChangeDate) AS ChangeDate
+                  FROM M_VendorMail
+                 WHERE VendorCD = @VendorCD
+                   AND ChangeDate <= @SYSDATE
+                 GROUP BY VendorCD
+               ) MV2 ON MV1.VendorCD = MV2.VendorCD
+                    AND MV1.ChangeDate = MV2.ChangeDate
+   ;       
     
     --yD_MailFilezTable“]‘—Žd—l‚e
     INSERT INTO [dbo].[D_MailFile]
@@ -187,7 +197,7 @@ BEGIN
        ,1
        ,@CreateServer
        ,@CreateFolder
-       ,@FileNameNoExt + FORMAT(@SYSDATETIME, 'yyyyMMddHHmmss') + @Extention
+       ,@FileNameNoExt + '_' + FORMAT(@SYSDATETIME, 'yyyyMMddHHmmss') + @Extention
       );  
     
 --<<OWARI>>
