@@ -459,6 +459,7 @@ namespace MailHistoryShoukai
                 else
                 {
                     bbl.ShowMessage("E128");
+                    GvDetail.DataSource = null;
                 }
 
             }
@@ -727,7 +728,7 @@ namespace MailHistoryShoukai
 
                 }
                 //どちらの場合でもプログラム「MailSend.exe」が起動中でなければ起動する。
-                CheckProcess();
+                //CheckProcess();
 
                 //テーブル転送仕様Ａ、テーブル転送仕様Ｚに従って、更新処理。
                 UpdateM_MultiPorpose();
