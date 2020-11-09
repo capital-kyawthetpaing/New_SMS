@@ -1607,6 +1607,7 @@
             this.shiire_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.shiire_1.DecimalPlace = 0;
             this.shiire_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shiire_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.shiire_1.IntegerPart = 0;
             this.shiire_1.IsCorrectDate = true;
             this.shiire_1.isEnterKeyDown = false;
@@ -2044,7 +2045,7 @@
             // 
             // Vsb_Mei_0
             // 
-            this.Vsb_Mei_0.Location = new System.Drawing.Point(1496, 48);
+            this.Vsb_Mei_0.Location = new System.Drawing.Point(1496, 47);
             this.Vsb_Mei_0.Name = "Vsb_Mei_0";
             this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 495);
             this.Vsb_Mei_0.TabIndex = 310;

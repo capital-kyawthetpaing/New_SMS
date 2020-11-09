@@ -82,10 +82,8 @@ namespace MasterTouroku_TenzikaiShouhin
             Btn_F8.Text = "行追加(F8)";
             Btn_F11.Text = "反映処理(F11)";
             Scr_Clr(0);
-
             BindCombo_Details();
             StartProgram();
-
             SC_Segment.Value1 = "226";
             string ymd = bl.GetDate();
             CB_Year.Bind(ymd);
