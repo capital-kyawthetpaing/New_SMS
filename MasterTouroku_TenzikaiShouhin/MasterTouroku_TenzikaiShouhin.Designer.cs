@@ -902,7 +902,7 @@
             this.SC_Tenzikai.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_Tenzikai.DataCheck = false;
             this.SC_Tenzikai.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_Tenzikai.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.SC_Tenzikai.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.SC_Tenzikai.IsCopy = false;
             this.SC_Tenzikai.LabelText = "";
             this.SC_Tenzikai.LabelVisible = false;

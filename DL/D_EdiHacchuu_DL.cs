@@ -320,6 +320,11 @@ namespace DL
                                 //書き込み
                                 switch (count)
                                 {
+                                    case 10:
+                                        string field = EncloseDoubleQuotesIfNeed(row[count].ToString().PadRight(11,' ').Substring(1,10));
+                                        sw.Write(field);
+                                        break;
+
                                     case 11:
                                     case 12:
                                     case 22:
@@ -330,8 +335,13 @@ namespace DL
                                         sw.Write(row[count]);
                                         break;
 
+                                    case 13:
+                                        field = EncloseDoubleQuotesIfNeed(row[count].ToString().Replace("/",""));
+                                        sw.Write(field);
+                                        break;
+
                                     default:
-                                        string field = EncloseDoubleQuotesIfNeed(row[count].ToString());
+                                        field = EncloseDoubleQuotesIfNeed(row[count].ToString());
                                         sw.Write(field);
                                         break;
                                 }                               

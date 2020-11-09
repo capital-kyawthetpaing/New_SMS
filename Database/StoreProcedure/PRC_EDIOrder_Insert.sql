@@ -431,7 +431,7 @@ BEGIN
         SELECT
             @EDIOrderNO
            ,Row
-           ,RIGHT(OrderNO,10)
+           ,OrderNO
            ,OrderRows
            ,1
            ,@SYSDATE
@@ -446,7 +446,7 @@ BEGIN
            ,0
            ,0
            ,LEFT(BrandKana,10)
-           ,LEFT(OrderNO + SPACE(11),11) + '-' + RIGHT('000' + CAST(Row AS VARCHAr(3)),3)
+           ,LEFT(OrderNO + SPACE(11),11) + '-' + RIGHT('000' + CAST(OrderRows AS VARCHAr(3)),3)
            ,AdminNO
            ,JanCD
            ,OrderSu
