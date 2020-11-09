@@ -406,9 +406,9 @@ namespace EDIKaitouNoukiTouroku
         /// <param name="Kbn"></param>
         private void Scr_Clr(short Kbn)
         {
-                        ckM_CheckBox1.Checked = false;
-            ckM_CheckBox2.Checked = false;
-            ckM_CheckBox3.Checked = false;
+            ckM_CheckBox1.Checked = true;
+            ckM_CheckBox2.Checked = true;
+            ckM_CheckBox3.Checked = true;
 
             lblImportDateTime.Text = "";
             lblVendor.Text = "";
