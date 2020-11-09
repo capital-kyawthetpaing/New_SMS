@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Entity;
 using System.Data;
-using Newtonsoft.Json.Linq;
-using System.Net;
 using System.IO;
 using BL;
 using System.Collections;
@@ -60,6 +56,7 @@ namespace EDIKaitouNoukiTouroku
 
                 if (ext.Equals(".csv"))
                 {
+                    dee = new D_EDI_Entity();
                     dtImport = CSVToTable(filePath, dee);
                 }
 
