@@ -2086,8 +2086,6 @@ namespace MasterTouroku_TenzikaiShouhin
             this.Close();
 
         }
-        
-
         private void C_KeyDown(object sender, KeyEventArgs e)
 
         {
@@ -3717,6 +3715,5 @@ namespace MasterTouroku_TenzikaiShouhin
             return true;
         }
 
-       
     }
 }
