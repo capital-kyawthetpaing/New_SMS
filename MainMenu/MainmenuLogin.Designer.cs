@@ -163,7 +163,7 @@
             this.pictureBox1.Image = global::MainMenu.Properties.Resources.nc2;
             this.pictureBox1.Location = new System.Drawing.Point(506, 109);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(220, 48);
+            this.pictureBox1.Size = new System.Drawing.Size(271, 73);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
@@ -177,7 +177,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Small;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(282, 245);
+            this.ckM_Label2.Location = new System.Drawing.Point(304, 270);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(114, 19);
             this.ckM_Label2.TabIndex = 28;
@@ -194,7 +194,7 @@
             this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Small;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(363, 192);
+            this.ckM_Label1.Location = new System.Drawing.Point(385, 217);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(31, 19);
             this.ckM_Label1.TabIndex = 29;
@@ -222,7 +222,7 @@
             this.txtPassword.IsNumber = true;
             this.txtPassword.IsShop = false;
             this.txtPassword.Length = 10;
-            this.txtPassword.Location = new System.Drawing.Point(408, 236);
+            this.txtPassword.Location = new System.Drawing.Point(430, 261);
             this.txtPassword.MaxLength = 10;
             this.txtPassword.MoveNext = true;
             this.txtPassword.Name = "txtPassword";
@@ -230,6 +230,7 @@
             this.txtPassword.Size = new System.Drawing.Size(405, 37);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.TextSize = CKM_Controls.CKM_TextBox.FontSize.FMedium;
+            this.txtPassword.UseColorSizMode = false;
             // 
             // txtOperatorCD
             // 
@@ -251,13 +252,14 @@
             this.txtOperatorCD.IsNumber = true;
             this.txtOperatorCD.IsShop = false;
             this.txtOperatorCD.Length = 8;
-            this.txtOperatorCD.Location = new System.Drawing.Point(408, 182);
+            this.txtOperatorCD.Location = new System.Drawing.Point(430, 207);
             this.txtOperatorCD.MaxLength = 8;
             this.txtOperatorCD.MoveNext = true;
             this.txtOperatorCD.Name = "txtOperatorCD";
             this.txtOperatorCD.Size = new System.Drawing.Size(405, 37);
             this.txtOperatorCD.TabIndex = 1;
             this.txtOperatorCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.FMedium;
+            this.txtOperatorCD.UseColorSizMode = false;
             // 
             // MainmenuLogin
             // 
@@ -265,7 +267,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1193, 614);
-            this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ckM_Label2);
             this.Controls.Add(this.ckM_Label1);
@@ -278,7 +279,7 @@
             this.MaximizeBox = false;
             this.Name = "MainmenuLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainmenuLogin";
+            this.Text = "CapitalMainMenuLogin";
             this.Load += new System.EventHandler(this.MainmenuLogin_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainmenuLogin_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainmenuLogin_KeyDown);

@@ -156,7 +156,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(122, 14);
+            this.pictureBox1.Location = new System.Drawing.Point(118, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(186, 51);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -569,7 +569,7 @@
             // 
             // btn_Proj1
             // 
-            this.btn_Proj1.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Proj1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btn_Proj1.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.White;
             this.btn_Proj1.BackgroundImage = global::MainMenu.Properties.Resources.bn_9;
             this.btn_Proj1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -853,7 +853,7 @@
             this.MaximizeBox = false;
             this.Name = "Capitalsports_MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CapitalSports_StoreMenu";
+            this.Text = "CapitalStoreMenu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Capitalsports_MainMenu_FormClosing);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
