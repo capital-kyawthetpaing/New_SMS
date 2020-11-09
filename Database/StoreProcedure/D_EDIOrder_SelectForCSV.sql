@@ -1,13 +1,23 @@
-IF OBJECT_ID ( 'D_EDIOrder_SelectForCSV', 'P' ) IS NOT NULL
-    Drop Procedure dbo.[D_EDIOrder_SelectForCSV]
+
+
+/****** Object:  StoredProcedure [dbo].[D_EDIOrder_SelectForCSV]    Script Date: 2020/11/09 10:56:44 ******/
+DROP PROCEDURE [dbo].[D_EDIOrder_SelectForCSV]
 GO
+
+/****** Object:  StoredProcedure [dbo].[D_EDIOrder_SelectForCSV]    Script Date: 2020/11/09 10:56:44 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER OFF
+GO
+
 
 --  ======================================================================
 --       Program Call    EDIî≠íç
 --       Program ID      D_EDIOrder_SelectForCSV
 --       Create date:    2019.11.25
 --    ======================================================================
-CREATE PROCEDURE D_EDIOrder_SelectForCSV(
+CREATE PROCEDURE [dbo].[D_EDIOrder_SelectForCSV](
     @EDIOrderNo  varchar(13)
 )AS
 BEGIN
@@ -36,8 +46,8 @@ BEGIN
        ,DM.SizeName
        ,DM.ColorName
        ,DM.TaniCD
-       ,DM.OrderUnitPrice
-       ,DM.OrderPriceWithoutTax
+       ,Format(DM.OrderUnitPrice,'###,###,##0')
+       ,Format(DM.OrderPriceWithoutTax,'###,###,##0')
        ,DM.BrandName
        ,DM.SKUName
        --,DM.AdminNO
@@ -59,3 +69,5 @@ BEGIN
 END
 
 GO
+
+
