@@ -571,14 +571,15 @@ namespace TanabanNyuuryoku
                     {
                         tnbnBL.ShowMessage("E101");
                         //dgvTanaban.RefreshEdit();
-                        dgvTanaban.BeginEdit(true);
+                        e.Cancel = true;
                     }
                 }
                 else
                 {
                     //MessageBox.Show("enter valid no");
                     bbl.ShowMessage("E102");
-                    dgvTanaban.BeginEdit(true);
+                    //dgvTanaban.BeginEdit(true);
+                    e.Cancel = true;
                 }
             }
         }
@@ -591,8 +592,9 @@ namespace TanabanNyuuryoku
             }
             catch
             {
-                MessageBox.Show("Enter valid no");
-                dgvTanaban.RefreshEdit();
+                //MessageBox.Show("Enter valid no");
+                //dgvTanaban.RefreshEdit();
+                e.Cancel = false;
             }
         }
     }

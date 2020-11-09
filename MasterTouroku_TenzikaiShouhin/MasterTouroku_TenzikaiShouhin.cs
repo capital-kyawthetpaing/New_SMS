@@ -1548,7 +1548,7 @@ namespace MasterTouroku_TenzikaiShouhin
                             {
                                 CheckGrid((int)ClsGridMasterTanzi.ColNO.JANCD, w_Row, false, true);
                                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                                SendKeys.Send("{ENTER}");
+                                //SendKeys.Send("{ENTER}");
                             }
 
                         }
@@ -1570,7 +1570,7 @@ namespace MasterTouroku_TenzikaiShouhin
                             {
                                 CheckGrid((int)ClsGridMasterTanzi.ColNO.BrandCD, w_Row, false, true);
                                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                                SendKeys.Send("{ENTER}");
+                              //  SendKeys.Send("{ENTER}");
                             }
                         }
                     }
@@ -1590,7 +1590,7 @@ namespace MasterTouroku_TenzikaiShouhin
                             {
                                 CheckGrid((int)ClsGridMasterTanzi.ColNO.SegmentCD, w_Row, false, true);
                                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                                SendKeys.Send("{ENTER}");
+                                //SendKeys.Send("{ENTER}");
                             }
                         }
                     }
@@ -1611,7 +1611,7 @@ namespace MasterTouroku_TenzikaiShouhin
                             {
                                 CheckGrid((int)ClsGridMasterTanzi.ColNO.TaniCD, w_Row, false, true);
                                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                                SendKeys.Send("{ENTER}");
+                              //  SendKeys.Send("{ENTER}");
                             }
                         }
                     }
@@ -1688,10 +1688,10 @@ namespace MasterTouroku_TenzikaiShouhin
                                 JANCD = mGrid.g_DArray[row].JANCD,
                             };
                             DataTable dt = tbl.M_Tenzikaishouhin_SelectForJancd(mt);
-                            DataTable dtsku = null;
                             if (dt.Rows.Count > 0)
                             {
                                 tbl.ShowMessage("E107");
+
                                 return false;
                             }
                             else
@@ -1710,7 +1710,9 @@ namespace MasterTouroku_TenzikaiShouhin
                                         InStoreCD = StoreCD,
 
                                     };
-                                    SKU_BL mbl = new SKU_BL();
+                                DataTable dtsku = null;
+
+                                SKU_BL mbl = new SKU_BL();
                                     dtsku = mbl.M_SKU_SelectByJanCD_ForTenzikaishouhin(msku);
 
                                     DataRow selectRow = null;
@@ -2042,7 +2044,8 @@ namespace MasterTouroku_TenzikaiShouhin
                         mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                     return true;
                 }
-                catch (Exception ec) { MessageBox.Show(ec.Message); return true; }
+                catch (Exception ec) {
+                    MessageBox.Show(ec.Message); return true; }
             }
             else
             {
@@ -3502,8 +3505,6 @@ namespace MasterTouroku_TenzikaiShouhin
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TaxRateFlg, w_Row].Cell_Color = GridBase.ClsGridBase.CheckColor;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Remark, w_Row].Cell_Color = GridBase.ClsGridBase.CheckColor;
         }
-
-       
         private void BT_SKUCheck_Click(object sender, EventArgs e)
         {
             skucheck = true;
