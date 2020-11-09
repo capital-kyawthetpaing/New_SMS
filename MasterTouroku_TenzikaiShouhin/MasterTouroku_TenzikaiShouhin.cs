@@ -14,6 +14,8 @@ using BL;
 using CKM_Controls;
 using Search;
 using Entity;
+using GridControl;
+
 namespace MasterTouroku_TenzikaiShouhin
 {
     public partial class MasterTouroku_TenzikaiShouhin : FrmMainForm
@@ -68,12 +70,6 @@ namespace MasterTouroku_TenzikaiShouhin
             SCCBrand,
             SCCSegment,
             StartDate,
-            //KDenwa1,
-            //KDenwa2,
-            //KDenwa3,
-            //HDenwa2,
-            //HDenwa3,
-            //YoteiKinShuu,
             Count
         }
         private void MasterTouroku_TenzikaiShouhin_Load(object sender, EventArgs e)
@@ -97,6 +93,8 @@ namespace MasterTouroku_TenzikaiShouhin
             CB_copyseason.Bind(ymd);
             CB_Copyyear.Bind(ymd);
             SetRequireField();
+            SC_Brand.CodeWidth = 70;
+            SC_copybrand.CodeWidth = 70;
         }
         private void BindCombo_Details()
         {
@@ -628,7 +626,7 @@ namespace MasterTouroku_TenzikaiShouhin
 
             w_Row = w_CtlRow + Vsb_Mei_0.Value;
             mGrid.S_DispToArray(Vsb_Mei_0.Value);
-            RemoveVal(w_Row);
+            //RemoveVal(w_Row);
             for (int i = w_Row; i < mGrid.g_MK_Max_Row - 1; i++)
             {
                 int w_Gyo = Convert.ToInt16(mGrid.g_DArray[i].GYONO);          //行番号 退避
@@ -639,10 +637,10 @@ namespace MasterTouroku_TenzikaiShouhin
                 //退避内容を戻す
                 mGrid.g_DArray[i].GYONO = w_Gyo.ToString();          //行番号
             }
-            if (skucheck)
-            {
-                SKUChek();
-            }
+            //if (skucheck)
+            //{
+            //    SKUChek();
+            //}
             int col = (int)ClsGridMasterTanzi.ColNO.JANCD;
             Grid_NotFocus(col, w_Row);
 
@@ -757,16 +755,16 @@ namespace MasterTouroku_TenzikaiShouhin
                 mGrid.g_DArray[i].GYONO = w_Gyo.ToString();
                 
             }
-            if(skucheck)
-            {
-                SKUChek();
-            }
+            //if(skucheck)
+            //{
+            //    SKUChek();
+            //}
             w_Gyo = Convert.ToInt16(mGrid.g_DArray[w_Row].GYONO);
             // 一行クリア
             Array.Clear(mGrid.g_DArray, w_Row, 1);
             mGrid.g_DArray[w_Row].GYONO = w_Gyo.ToString();         
             mGrid.g_DArray[w_Row].TenzikaiRow = null;
-             RemoveVal(w_Row);
+            //RemoveVal(w_Row); .//for skucheck add
             int col = (int)ClsGridMasterTanzi.ColNO.JANCD;
             Grid_NotFocus(col, w_Row);
 
@@ -859,6 +857,15 @@ namespace MasterTouroku_TenzikaiShouhin
                             check.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown);
                             check.Click += new System.EventHandler(CHK_Print_Click);
                         }
+                        //else if (mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.GetType().Equals(typeof(Panel)))
+                        //{
+                        //    Panel p = (Panel)mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl;
+                        //    p.Tag = W_CtlRow.ToString();
+                        //    p.Enter += new System.EventHandler(GridControl_Enter);
+                        //    p.Leave += new System.EventHandler(GridControl_Leave);
+                        //    p.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown);
+                        //    //p.Click += new System.EventHandler(CHK_Print_Click);
+                        //}
                     }
                 }
             }  // handler Created
@@ -1007,6 +1014,13 @@ namespace MasterTouroku_TenzikaiShouhin
             {
                 (sender as CKM_TextBox).Back_Color = CKM_TextBox.CKM_Color.DarkGrey;
             }
+
+            //if (!(sender as Panel).Enabled)
+            //{
+            //    (sender as Panel).BackColor = Color.DarkRed;
+            //}
+            //Control w_ActCtl = (Control)sender;
+
         }
         private void BtnSearch_Click(object sender, EventArgs e)
         {
@@ -1217,10 +1231,7 @@ namespace MasterTouroku_TenzikaiShouhin
                         pnl.BackColor = Color.White; ;
                     }
 
-                    //if (chk.Parent is TextBox pnl)
-                    //{
-                    //    pnl.BackColor = Color.White; ;
-                    //}
+
                 }
                 if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int w_Col, out int w_CtlRow) == false)
                 {
@@ -1250,6 +1261,7 @@ namespace MasterTouroku_TenzikaiShouhin
                 w_ActCtl = (Control)sender;
                 w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
                 w_ActCtl.BackColor = ClsGridMasterTanzi.BKColor;
+
                 if (ActiveControl is GridControl.clsGridCheckBox chk && chk.Name.Contains("chk_"))
                 {
                     if (chk.Focus())
@@ -1260,6 +1272,16 @@ namespace MasterTouroku_TenzikaiShouhin
                         }
                     }
                 }
+                //if (ActiveControl is GridControl.clsGridCheckBox chk && chk.Name.Contains("chk_"))
+                //{
+                //    if (chk.Focus())
+                //    {
+                //        if (chk.Parent is Panel pnl)
+                //        {
+                //            pnl.BackColor = ClsGridMasterTanzi.BKColor; ;
+                //        }
+                //    }
+                //}
                 if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int w_Col, out int w_CtlRow) == false)
                 {
                     return;
@@ -1313,10 +1335,9 @@ namespace MasterTouroku_TenzikaiShouhin
             // 1>5行目
             try
             {
-                for (int d = 0; d < 10; d++)
+                for (int d = 0; d < 13; d++)
                 {
                     int id = d + 1;
-                    mGrid.g_MK_Ctrl[(int)ClsGridMasterTanzi.ColNO.TB, d].CellCtl = this.Controls.Find("TB_" + id, true)[0];
                     mGrid.g_MK_Ctrl[(int)ClsGridMasterTanzi.ColNO.GYONO, d].CellCtl = this.Controls.Find("LB_" + id, true)[0];
                     mGrid.g_MK_Ctrl[(int)ClsGridMasterTanzi.ColNO.Chk, d].CellCtl = this.Controls.Find("chk_" + id, true)[0];
                     mGrid.g_MK_Ctrl[(int)ClsGridMasterTanzi.ColNO.JANCD, d].CellCtl = this.Controls.Find("scjan_" + id, true)[0];
@@ -1419,20 +1440,27 @@ namespace MasterTouroku_TenzikaiShouhin
                         SegmentCDFrom = detailControls[(int)Eindex.SCSegment].Text,
                     };
                     DataTable dtmain = tbl.Mastertoroku_Tenzikaishouhin_Select(mt);
-                    if (dtmain != null)
+                    if(dtmain == null)
                     {
-                        MesaiHyouJi(dtmain);
-                        Scr_Lock(1, 3, 0);
-                        S_BodySeigyo(5, 0);
-                        mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
-                        S_BodySeigyo(5, 1);
-                        hyoteidatem_1.TabStop = true;
-                        hyoteidatem_1.Focus();
+                        return;
                     }
-                    else
-                    {
-                        bl.ShowMessage("E128");
-                    }
+
+                        if(dtmain.Rows.Count >0)
+                        {
+                            MesaiHyouJi(dtmain);
+                            Scr_Lock(1, 3, 0);
+                            S_BodySeigyo(5, 0);
+                            mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
+                            S_BodySeigyo(5, 1);
+                            hyoteidatem_1.TabStop = true;
+                            hyoteidatem_1.Focus();
+                        }
+                        else
+                        {
+                            bl.ShowMessage("E128");
+                        }
+                   
+                    
                     break;
 
                 case EOperationMode.DELETE:
@@ -1492,24 +1520,6 @@ namespace MasterTouroku_TenzikaiShouhin
                         bl.ShowMessage("E128");
                     }
                     break;
-            }
-        }
-
-        private void DisplayData(M_TenzikaiShouhin_Entity et)
-        {
-            DataTable dtshow = tbl.Mastertoroku_Tenzikaishouhin_Select(mt);
-            if (dtshow != null)
-            {
-                MesaiHyouJi(dtshow);
-                S_BodySeigyo(0, 1);
-                S_BodySeigyo(1, 1);
-                mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
-                S_BodySeigyo(4, 0);
-                scjan_1.Focus();
-            }
-            else
-            {
-                bl.ShowMessage("E128");
             }
         }
 
@@ -1648,12 +1658,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                 return true;
                             }
 
-                                DataTable dtResult = bbl.SimpleSelect1("66", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), mGrid.g_DArray[row].JANCD);
-                            if (dtResult.Rows.Count == 0)
-                            {
-                                bl.ShowMessage("E101");
-                                return false;
-                            }
+                            
                             //if( OperationMode == EOperationMode.INSERT)
                             //{
                             //    M_TenzikaiShouhin_Entity mt = new M_TenzikaiShouhin_Entity
@@ -1693,8 +1698,13 @@ namespace MasterTouroku_TenzikaiShouhin
                             }
                             else
                             {
-                                if (mGrid.g_DArray[row].Jancdold != mGrid.g_DArray[row].JANCD)
-                                {
+                                    DataTable dtResult = bbl.SimpleSelect1("66", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), mGrid.g_DArray[row].JANCD);
+                                    if (dtResult.Rows.Count == 0)
+                                    {
+                                        bl.ShowMessage("E101");
+                                        return false;
+                                    }
+
                                     M_SKU_Entity msku = new M_SKU_Entity
                                     {
                                         JanCD = mGrid.g_DArray[row].JANCD,
@@ -1731,11 +1741,8 @@ namespace MasterTouroku_TenzikaiShouhin
                                             bbl.ShowMessage("E102");
                                             return false;
                                         }
-                                        //mGrid.g_DArray[row].SKUCD = ActiveControl.Text;
-                                        //mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-
                                     }
-                                }
+                                
                             }
                             mGrid.g_DArray[row].Jancdold = mGrid.g_DArray[row].JANCD;    // May be in M_tenjishouhin Table So Fetched from selectRow
                             Grid_NotFocus(col, row);
@@ -2188,15 +2195,17 @@ namespace MasterTouroku_TenzikaiShouhin
                         return false;
                     }
 
-                   //var rresTen = bbl.SimpleSelect1("74", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), SC_Tenzikai.Text);
+                    if(OperationMode == EOperationMode.UPDATE)
+                    {
+                        var rresTen = bbl.SimpleSelect1("74", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), detailControls[index].Text);
+                        if (rresTen.Rows.Count ==0)
+                        {
+                            bl.ShowMessage("E101");
+                            return false;
+                        }
+                    }
 
-                    //var rresTen = SC_Tenzikai.SelectData();
-                    //if (!rresTen)
-                    //{
-                    //    bl.ShowMessage("E101");
-                    //    return false;
-                    //}
-                   
+
                     break;
                 case (int)Eindex.SCShiiresaki:
                     if (string.IsNullOrWhiteSpace(detailControls[index].Text))
@@ -2459,7 +2468,7 @@ namespace MasterTouroku_TenzikaiShouhin
             //   // SetFuncKeyAll(this, "111111001011");
             //}
         }
-
+        
         private void MesaiHyouJi(DataTable dt)
         {
             SetTenjiGrid(dt, true);
@@ -3065,6 +3074,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                 }
                                 break;
                             case (int)ClsGridMasterTanzi.ColNO.Chk:
+                            //case (int)ClsGridMasterTanzi.ColNO.TB:
                             case (int)ClsGridMasterTanzi.ColNO.HanbaiYoteiDateMonth:
                             case (int)ClsGridMasterTanzi.ColNO.HanbaiYoteiBi:
                             case (int)ClsGridMasterTanzi.ColNO.JoutaiTanka:
@@ -3336,16 +3346,6 @@ namespace MasterTouroku_TenzikaiShouhin
                 }
             }
         }
-   
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void ckM_TextBox43_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         private DataTable ResTem()
         {
             int w_Row;
@@ -3402,22 +3402,13 @@ namespace MasterTouroku_TenzikaiShouhin
                     DataTable dt = tbl.M_SKU_SelectForSKUCheck(msku);
                     if (dt.Rows.Count == 0)
                     {
-                        //if (mGrid.g_DArray[w_Row].JANCD == "0000000000004" || mGrid.g_DArray[w_Row].JANCD == "0000000000005")
-                        //{
-                        //    mGrid.g_DArray[w_Row].Chk = true;
-                        //}
-                        //else
-                        //{
-                            mGrid.g_DArray[w_Row].Chk = false;
-                            // SetVal(w_Row);
-                       // }
+                        mGrid.g_DArray[w_Row].Chk = false;
                     }
                     else
                     {
                         mGrid.g_DArray[w_Row].Chk = true;
 
                     }
-                 // S_BodySeigyo
                     mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                 }
                 else
@@ -3469,23 +3460,28 @@ namespace MasterTouroku_TenzikaiShouhin
                 {
                     SetVal(c);
                 }
-                //else
-                //{
-                //    Scr_Lock(1, 3, 0);
+                else
+                {
+                    Scr_Lock(1, 3, 0);
+                    S_BodySeigyo(5, 0);
+                   // mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
+                    S_BodySeigyo(5, 1);
+                    hyoteidatem_1.TabStop = true;
+                    hyoteidatem_1.Focus();
 
-                //}
-               
+                }
+
                 c++;
             }
            // S_BodySeigyo(1, 0);
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
             //S_BodySeigyo(4, 0);
-            scjan_1.Focus();
+           // scjan_1.Focus();
         }
         private void SetVal(int w_Row)
         {
 
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TB, w_Row].Cell_Color = GridBase.ClsGridBase.CheckColor;
+           // mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TB, w_Row].Cell_Color = GridBase.ClsGridBase.CheckColor;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Chk, w_Row].Cell_Color = GridBase.ClsGridBase.CheckColor;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.JANCD, w_Row].Cell_Color = GridBase.ClsGridBase.CheckColor;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.SKUCD, w_Row].Cell_Color = GridBase.ClsGridBase.CheckColor;
@@ -3511,49 +3507,7 @@ namespace MasterTouroku_TenzikaiShouhin
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Remark, w_Row].Cell_Color = GridBase.ClsGridBase.CheckColor;
         }
 
-        private void RemoveVal(int w_Row)
-        {
-
-            //mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Chk, w_Row].Cell_Enabled = false;
-            //mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.BrandCD, w_Row].Cell_Enabled = false;
-            //mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.SegmentCD, w_Row].Cell_Enabled = false;
-            //mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TaniCD, w_Row].Cell_Enabled = false;
-            //mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TaxRateFlg, w_Row].Cell_Enabled = false;
-            //mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Remark, w_Row].Cell_Enabled = false;
-
-            Control w_ActCtl;
-
-            //  w_ActCtl = (Control)sender; 
-            // w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
-            //  w_ActCtl.BackColor = ClsGridMasterTanzi.BKColor;
-            // mGrid.Cell_Color = GridBase.ClsGridBase.CheckColor;
-
-
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TB, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Chk, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.JANCD, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.SKUCD, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.SKUName, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.ColorCD, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.ColorName, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.SizeCD, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.SizeName, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.HanbaiYoteiBi, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.HanbaiYoteiDateMonth, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Shiiretanka, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.JoutaiTanka, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.SalePriceOutTax, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.SalePriceOutTax1, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.SalePriceOutTax2, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.SalePriceOutTax3, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.SalePriceOutTax4, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.SalePriceOutTax5, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.BrandCD, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.SegmentCD, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TaniCD, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TaxRateFlg, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Remark, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
-        }
+       
         private void BT_SKUCheck_Click(object sender, EventArgs e)
         {
             skucheck = true;
@@ -3670,14 +3624,18 @@ namespace MasterTouroku_TenzikaiShouhin
             if (!RequireCheck(new Control[] { SC_Tenzikai.TxtCode, SC_Vendor.TxtCode, CB_Year,CB_Season })) //Step1
                 return false;
 
-            //if (!SC_Tenzikai.IsExists(2))
-            //{
-            //    bbl.ShowMessage("E101");
-            //    SC_Tenzikai.Focus();
-            //    return false;
+            if(OperationMode == EOperationMode.UPDATE)
+            {
+                if (!SC_Tenzikai.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    SC_Tenzikai.Focus();
+                    return false;
 
-            //}
-             var dtResult = bbl.SimpleSelect1("75", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), SC_Vendor.TxtCode.Text);
+                }
+            }
+
+            var dtResult = bbl.SimpleSelect1("75", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), SC_Vendor.TxtCode.Text);
             if (dtResult.Rows.Count == 0)
             {
                 bbl.ShowMessage("E101");
