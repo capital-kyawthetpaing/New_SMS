@@ -698,12 +698,25 @@ BEGIN
                                     THEN 1 ELSE 0 END)	--MatchingFlg
               ,[UpdateOperator]     =  @Operator  
               ,[UpdateDateTime]     =  @SYSDATETIME        
-        FROM D_Delivery
+         FROM D_Delivery
         INNER JOIN @Table tbl
-         ON tbl.DeliveryNo = D_Delivery.DeliveryNo
-         WHERE D_Delivery.DeleteDateTime IS NULL
+           ON tbl.DeliveryNo = D_Delivery.DeliveryNo
+        WHERE D_Delivery.DeleteDateTime IS NULL
+        ;
+        
+        --Tableì]ëóédólG (çÌèú)
+        UPDATE [D_Stock]
+           SET [ReturnDate]     = NULL
+              ,[ReturnSu]       = D_Stock.[ReturnSu] - tbl.PurchaseSu
+              ,[UpdateOperator] = @Operator  
+              ,[UpdateDateTime] = @SYSDATETIME        
+         FROM D_Stock
+        INNER JOIN @Table tbl
+           ON tbl.StockNO = D_Stock.StockNO
+        WHERE D_Stock.DeleteDateTime IS NULL
          ;
          
+        --Tableì]ëóédólÇ`
         UPDATE [D_Purchase]
             SET [UpdateOperator]     =  @Operator  
                ,[UpdateDateTime]     =  @SYSDATETIME
@@ -969,15 +982,15 @@ BEGIN
          AND [DeleteDateTime] IS NULL
          ;
          
-       --ÅyD_StockÅz           Update  Tableì]ëóédólÇeáA
-        UPDATE D_Stock 
-            SET [DeleteOperator]     =  @Operator  
-               ,[DeleteDateTime]     =  @SYSDATETIME
-         FROM D_Stock AS DS
-         INNER JOIN @Table tbl
-         ON tbl.StockNO = DS.StockNO
-         WHERE DS.DeleteDateTime IS NULL
-        ;
+--       --ÅyD_StockÅz           Update  Tableì]ëóédólÇeáA
+--        UPDATE D_Stock 
+--            SET [DeleteOperator]     =  @Operator  
+--               ,[DeleteDateTime]     =  @SYSDATETIME
+--         FROM D_Stock AS DS
+--         INNER JOIN @Table tbl
+--         ON tbl.StockNO = DS.StockNO
+--         WHERE DS.DeleteDateTime IS NULL
+--        ;
         
         --Tableì]ëóédólÇgáA ê‘
         INSERT INTO [D_Warehousing]
