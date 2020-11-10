@@ -365,9 +365,24 @@ BEGIN
     IF @OperateMode = 1
     BEGIN
         SET @OperateModeNm = 'V‹K';
-
-		--yD_PayPlanzInsert@Table“]‘—d—l‚d x•¥—\’è
-		INSERT INTO [D_PayPlan]
+        
+        --“`•[”Ô†Ì”Ô
+        EXEC Fnc_GetNumber
+            4,             --in“`•[í•Ê 4
+            @PurchaseDate, --inŠî€“ú
+            @StoreCD,       --in“X•ÜCD
+            @Operator,
+            @PurchaseNO OUTPUT
+            ;
+        
+        IF ISNULL(@PurchaseNO,'') = ''
+        BEGIN
+            SET @W_ERR = 1;
+            RETURN @W_ERR;
+        END
+        
+        --yD_PayPlanzInsert@Table“]‘—d—l‚d x•¥—\’è
+        INSERT INTO [D_PayPlan]
            ([PayPlanKBN]
            ,[Number]
            ,[StoreCD]
@@ -420,21 +435,6 @@ BEGIN
         --’¼‘O‚ÉÌ”Ô‚³‚ê‚½ IDENTITY —ñ‚Ì’l‚ğæ“¾‚·‚é
         DECLARE @PayPlanNO int;
         SET @PayPlanNO = @@IDENTITY;
-        
-        --“`•[”Ô†Ì”Ô
-        EXEC Fnc_GetNumber
-            4,             --in“`•[í•Ê 4
-            @PurchaseDate, --inŠî€“ú
-            @StoreCD,       --in“X•ÜCD
-            @Operator,
-            @PurchaseNO OUTPUT
-            ;
-        
-        IF ISNULL(@PurchaseNO,'') = ''
-        BEGIN
-            SET @W_ERR = 1;
-            RETURN @W_ERR;
-        END
         
         --yD_PurchasezTable“]‘—d—l‚`
         INSERT INTO [D_Purchase]
