@@ -24,14 +24,16 @@ namespace EDINouhinJouhonTouroku
 
         private enum EColNo : int
         {
-            Chk,     //
-            SKENNouhinshoNO,
+            Chk,
+            SKENNouhinshoNO,//
+            SKENBangouA,
             ImportDateTime,
             Vendor,
             VendorName,
             ImportDetailsSu,
             ErrorSu,
             ImportFile,
+            
 
             COUNT
         }
@@ -171,7 +173,8 @@ namespace EDINouhinJouhonTouroku
 
                 D_SKENDeliveryDetails_Entity de = new D_SKENDeliveryDetails_Entity
                 {
-                    SKENNouhinshoNO = gdvDSKENDelivery[(int)EColNo.ImportDateTime, selectRowIndex].Value.ToString(),
+                    ImportDateTime = gdvDSKENDelivery[(int)EColNo.ImportDateTime, selectRowIndex].Value.ToString(),
+                    SKENNouhinshoNO = gdvDSKENDelivery[(int)EColNo.SKENNouhinshoNO, selectRowIndex].Value.ToString(),
                     ChkFlg = chkError.Checked ? "1" : "0",
 
                 };
@@ -232,7 +235,7 @@ namespace EDINouhinJouhonTouroku
                     ediNHJ_bl.ShowMessage("E101");
                     EndSec();
                 }
-
+                Scr_Clr(0);
                 //履歴データ取得処理
                 DataTable dt = ediNHJ_bl.D_SKENDelivery_SelectAll();
 
@@ -306,7 +309,7 @@ namespace EDINouhinJouhonTouroku
                         Report.Refresh();
                         Report.SetParameterValue("txtImportDate", lblImportDateTime.Text.ToString() );
                         Report.SetParameterValue("txtVendor", lblVendor.Text.ToString());
-                        Report.SetParameterValue("txtSKENNouhinshoNO", gdvDSKENDelivery[(int)EColNo.SKENNouhinshoNO, selectRowIndex].Value.ToString());
+                        Report.SetParameterValue("txtSKENNouhinshoNO", gdvDSKENDelivery[(int)EColNo.SKENBangouA, selectRowIndex].Value.ToString());
 
                         if (ret == DialogResult.Yes)
                         {
@@ -405,8 +408,8 @@ namespace EDINouhinJouhonTouroku
 
         private void Scr_Clr(short Kbn)
         {
-            chkError.Checked = false;
-            chkCorrect.Checked = false;
+            chkError.Checked = true;
+            chkCorrect.Checked = true;
 
             lblImportDateTime.Text = "";
             lblVendor.Text = "";

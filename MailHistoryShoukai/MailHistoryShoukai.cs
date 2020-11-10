@@ -285,6 +285,12 @@ namespace MailHistoryShoukai
                                 }
                                 ScCustomer.LabelText = mce.CustomerName;
                             }
+                            else
+                            {
+                                bbl.ShowMessage("E101");
+                                ScCustomer.LabelText = "";
+                                return false;
+                            }
                         }
                         else
                         {
@@ -300,6 +306,13 @@ namespace MailHistoryShoukai
 
                             if (ret)
                             {
+                                ScCustomer.LabelText = mve.VendorName;
+                            }
+                            else
+                            {
+                                bbl.ShowMessage("E101");
+                                ScCustomer.LabelText = "";
+                                return false;
                             }
                         }
                     }
