@@ -29,12 +29,12 @@ namespace MailSend
                 mmpe.Key = "1";
 
                 dtMulti = msbl.M_MultiPorpose_SelectID(mmpe);
-                //if (dtMulti.Rows[0]["Num1"].ToString().Equals("0"))//0なら、 処理終了
-                //{
-                //    Console.WriteLine("Stop");
-                //}
-                //else
-                //{
+                if (dtMulti.Rows[0]["Num1"].ToString().Equals("0"))//0なら、 処理終了
+                {
+                    Console.WriteLine("Stop");
+                }
+                else
+                {
                     dtMail = msbl.D_Mail_Select();
 
                    
@@ -122,7 +122,7 @@ namespace MailSend
                         
 
                     }
-                //}
+                }
             }
 
         }
