@@ -58,6 +58,7 @@ namespace Entity
 
         //SKENDeliver
         public string ChkFlg { get; set; }
+        public string SKENBangouA { get; set; }
 
 
     }
