@@ -1438,10 +1438,6 @@ namespace MasterTouroku_TenzikaiShouhin
                         SegmentCDFrom = detailControls[(int)Eindex.SCSegment].Text,
                     };
                     DataTable dtmain = tbl.Mastertoroku_Tenzikaishouhin_Select(mt);
-                    if(dtmain == null)
-                    {
-                        return;
-                    }
 
                         if(dtmain.Rows.Count >0)
                         {
@@ -1477,17 +1473,21 @@ namespace MasterTouroku_TenzikaiShouhin
                         SegmentCDFrom = detailControls[(int)Eindex.SCSegment].Text,
                     };
                     DataTable dtu = tbl.Mastertoroku_Tenzikaishouhin_Select(mt);
-                    if (dtu != null)
-                    {
-                        MesaiHyouJi(dtu);
-                        Scr_Lock(1, 3, 0);
-                        mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
-                        S_BodySeigyo(5, 2);
-                    }
-                    else
-                    {
-                        bl.ShowMessage("E128");
-                    }
+
+                        if(dtu.Rows.Count >0)
+                        {
+                            MesaiHyouJi(dtu);
+                            Scr_Lock(1, 3, 0);
+                            mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
+                            S_BodySeigyo(5, 2);
+                        }
+                        else
+                        {
+                            bl.ShowMessage("E128");
+                        }
+
+                  
+                   
                     break;
                 case EOperationMode.SHOW:
                     if (!ErrorCheck())
@@ -1506,7 +1506,7 @@ namespace MasterTouroku_TenzikaiShouhin
                         SegmentCDFrom = detailControls[(int)Eindex.SCSegment].Text,
                     };
                     DataTable dts = tbl.Mastertoroku_Tenzikaishouhin_Select(mt);
-                    if (dts != null)
+                    if (dts.Rows.Count >0)
                     {
                         MesaiHyouJi(dts);
                         Scr_Lock(1, 3, 0);
@@ -2482,7 +2482,7 @@ namespace MasterTouroku_TenzikaiShouhin
         }
         private void SetMultiColNo(DataTable dt = null)
         {
-            
+
             if (dt == null)
             {
                 for (int w_Row = 0; w_Row < 999; w_Row++)
@@ -2492,14 +2492,14 @@ namespace MasterTouroku_TenzikaiShouhin
             }
             else  // set Data from db
             {
-                if(!checkmei)
+                if (!checkmei)
                 {
-                      S_Clear_Grid();
+                    S_Clear_Grid();
                     int c = 0;
                     foreach (DataRow dr in dt.Rows)
                     {
                         mGrid.g_DArray[c].JANCD = mGrid.g_DArray[c].Jancdold = dr["JANCD"].ToString();
-                       // jancdold = dr["JANCD"].ToString();
+                        // jancdold = dr["JANCD"].ToString();
                         mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
                         mGrid.g_DArray[c].SKUName = dr["商品名"].ToString();
                         mGrid.g_DArray[c].ColorCD = dr["カラーNO"].ToString();
@@ -2508,15 +2508,13 @@ namespace MasterTouroku_TenzikaiShouhin
                         mGrid.g_DArray[c].SizeName = dr["サイズ名"].ToString();
                         mGrid.g_DArray[c].HanbaiYoteiDateMonth = dr["販売予定日(月)"].ToString();
                         mGrid.g_DArray[c].HanbaiYoteiBi = dr["販売予定日"].ToString();
-                        // mGrid.g_DArray[c].Shiiretanka = dr["仕入単価"].ToString();// bbl.Z_SetStr(selectRow["ShiireTanka"].ToString());
                         mGrid.g_DArray[c].Shiiretanka = bbl.Z_SetStr(dr["仕入単価"].ToString());
                         mGrid.g_DArray[c].JoutaiTanka = bbl.Z_SetStr(dr["上代単価"].ToString());
-                        //CheckGrid((int)ClsGridMasterTanzi.ColNO.JANCD, c, true);
                         mGrid.g_DArray[c].SalePriceOutTax = bbl.Z_SetStr(dr["標準売上単価"].ToString());
-                        mGrid.g_DArray[c].SalePriceOutTax1 =bbl.Z_SetStr(dr["ランク１単価"].ToString());
-                        mGrid.g_DArray[c].SalePriceOutTax2 =bbl.Z_SetStr(dr["ランク２単価"].ToString());
-                        mGrid.g_DArray[c].SalePriceOutTax3 =bbl.Z_SetStr(dr["ランク３単価"].ToString());
-                        mGrid.g_DArray[c].SalePriceOutTax4 =bbl.Z_SetStr(dr["ランク４単価"].ToString());
+                        mGrid.g_DArray[c].SalePriceOutTax1 = bbl.Z_SetStr(dr["ランク１単価"].ToString());
+                        mGrid.g_DArray[c].SalePriceOutTax2 = bbl.Z_SetStr(dr["ランク２単価"].ToString());
+                        mGrid.g_DArray[c].SalePriceOutTax3 = bbl.Z_SetStr(dr["ランク３単価"].ToString());
+                        mGrid.g_DArray[c].SalePriceOutTax4 = bbl.Z_SetStr(dr["ランク４単価"].ToString());
                         mGrid.g_DArray[c].SalePriceOutTax5 = bbl.Z_SetStr(dr["ランク５単価"].ToString());
                         mGrid.g_DArray[c].BrandCD = dr["ブランドCD"].ToString();//
                         mGrid.g_DArray[c].SegmentCD = dr["セグメントCD"].ToString();
@@ -2524,18 +2522,18 @@ namespace MasterTouroku_TenzikaiShouhin
                         mGrid.g_DArray[c].TaxRateFlg = dr["税率区分"].ToString();//
                         mGrid.g_DArray[c].Remark = dr["備考"].ToString();//
                         mGrid.g_DArray[c].ExhibitionCommonCD = dr["ExhibitionCommonCD"].ToString();
-                        
-                    c++;
+
+                        c++;
                     }
                 }
                 else
                 {
                     int Res_Gyo = 0;
                     if (OperationMode == EOperationMode.UPDATE || OperationMode == EOperationMode.INSERT)
-                      {
+                    {
 
                         int w_Gyo = 0;
-                        for (int i = mGrid.g_MK_Max_Row -1 ; i >= 0; i--)
+                        for (int i = mGrid.g_MK_Max_Row - 1; i >= 0; i--)
                         {
                             if (!string.IsNullOrEmpty(mGrid.g_DArray[i].JANCD))
                             {
@@ -2544,10 +2542,10 @@ namespace MasterTouroku_TenzikaiShouhin
                             }
                             w_Gyo = Convert.ToInt16(mGrid.g_DArray[i].GYONO);
                         }
-                        }
-                        else
-                            S_Clear_Grid();
-                        int c = 0;
+                    }
+                    else
+                        S_Clear_Grid();
+                    int c = 0;
 
                     if (!string.IsNullOrEmpty(mGrid.g_DArray[0].JANCD))
                     {
@@ -2560,12 +2558,12 @@ namespace MasterTouroku_TenzikaiShouhin
 
                     int w_Row;
                     DataTable dtrest = GetGridData();
-                    
-                        foreach (DataRow dr in dt.Rows)   // Meisai Dt
+
+                    foreach (DataRow dr in dt.Rows)   // Meisai Dt
+                    {
+
+                        if (dr[0] != DBNull.Value)
                         {
-                          
-                            if (dr[0] != DBNull.Value)
-                            {
                             for (w_Row = 0; w_Row <= dtrest.Rows.Count; w_Row++)
                             {
                                 if (mGrid.g_DArray[w_Row].JANCD == dr["JANCD"].ToString())
@@ -2598,12 +2596,10 @@ namespace MasterTouroku_TenzikaiShouhin
                             mGrid.g_DArray[c].TaxRateFlg = dr["税率区分"].ToString();//
                             mGrid.g_DArray[c].Remark = dr["備考"].ToString();//
                             c++;
-                            //}
+
                         }
                     }
-
-                    
-                    }
+                }
             }
         }
         private void Scr_Lock(short no1, short no2, short Kbn)
@@ -3168,53 +3164,9 @@ namespace MasterTouroku_TenzikaiShouhin
                             {
                                 tbl.ShowMessage("E137");
                             }
-                        
-                   // }
-               // }
             }
 
-            //Clear(panel2);
-            ////ChangeFunKeys();
-
-            //string filePath = string.Empty;
-            //string fileExt = string.Empty;
-            //OpenFileDialog file = new OpenFileDialog(); //open dialog to choose file  
-
-            //   checkmei = true;
-            //if (!System.IO.Directory.Exists("C:\\SMS\\TenzikaiShouhin\\"))
-            //{
-            //    System.IO.Directory.CreateDirectory("C:\\SMS\\TenzikaiShouhin\\");
-            //}
-            //openFileDialog1.InitialDirectory = "C:\\SMS\\TenzikaiShouhin\\";
-            //openFileDialog1.FilterIndex = 2;
-            //openFileDialog1.RestoreDirectory = true;
-            ////openFileDialog1.Filter = "Excel Worksheets|*.xlsx || Excel Worksheets|*.xls";
-            //openFileDialog1.FileName = "";
-
-            //    if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            //{
-
-            //    var dt = ConvertToDataTable(openFileDialog1.FileName);
-            //    if (dt == null)
-            //    {
-            //        return;
-            //    }
-            //    string[] colname = { "SKUCD", "JANCD", "商品名", "カラーNO", "カラー名", "サイズNO", "サイズ名", "販売予定日(月)", "販売予定日", "仕入単価", "標準売上単価", "ランク１単価", "ランク２単価", "ランク３単価", "ランク４単価", "ランク５単価", "ブランドCD", "セグメントCD", "単位CD", "税率区分", "備考" };
-            //    if (ColumnCheck(colname, dt))
-            //    {
-            //        MesaiHyouJi(dt);
-            //        S_BodySeigyo(0, 1);
-            //        mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
-            //        S_BodySeigyo(4, 0);
-            //        scjan_1.Focus();
-            //    }
-            //    else
-            //    {
-            //        tbl.ShowMessage("E137");
-            //    }
-
-            //}
-
+            
         }
         protected Boolean ColumnCheck(String[] colName, DataTable dtMain)
         {
