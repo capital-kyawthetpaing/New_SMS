@@ -29,6 +29,7 @@ namespace EDIKaitouNoukiTouroku
             //int i = 0;
             foreach (string s in FilePath)
             {
+                dee = new D_EDI_Entity();
                 dee.UpdateOperator = "Batch";
                 dee.ImportFile = System.IO.Path.GetFileName(s);
                 dee.VendorCD = System.IO.Path.GetFileName(System.IO.Path.GetDirectoryName(s));
@@ -56,7 +57,6 @@ namespace EDIKaitouNoukiTouroku
 
                 if (ext.Equals(".csv"))
                 {
-                    dee = new D_EDI_Entity();
                     dtImport = CSVToTable(filePath, dee);
                 }
 
