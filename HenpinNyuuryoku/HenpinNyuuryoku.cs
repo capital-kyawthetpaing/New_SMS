@@ -1844,6 +1844,12 @@ namespace HenpinNyuuryoku
                         bbl.ShowMessage("E102");
                         return false;
                     }
+                    //当初表示された値（D_Stock.ReturnPlanSu －ReturnSu）より大きな値の入力はエラーにする
+                    if(bbl.Z_Set(mGrid.g_DArray[row].PurchaseSu) > bbl.Z_Set(mGrid.g_DArray[row].OldPurchaseSu))
+                    {
+                        bbl.ShowMessage("E268");
+                        return false;
+                    }
                     break;
 
                 case (int)ClsGridShiire.ColNO.PurchaserUnitPrice:
