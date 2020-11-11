@@ -2330,51 +2330,51 @@ namespace ShiireNyuuryokuFromNyuuka
                 ////各金額項目の再計算必要
                 CalcKin();
 
-            }
 
-            //※調整税額の確認
-            //【Footer1】調整額の、明細合計値と入力値が異なる場合
-            decimal sumKin = 0;
-            decimal sumZei = 0;
-            int maxGakuRow = 0;
-            decimal maxGaku = 0;
-            for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
-            {
-                if (mGrid.g_DArray[RW].Chk || OperationMode != EOperationMode.INSERT)
+                //※調整税額の確認
+                //【Footer1】調整額の、明細合計値と入力値が異なる場合
+                decimal sumKin = 0;
+                decimal sumZei = 0;
+                int maxGakuRow = 0;
+                decimal maxGaku = 0;
+                for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
                 {
-                    sumKin += bbl.Z_Set(mGrid.g_DArray[RW].AdjustmentGaku);
-                    sumZei += bbl.Z_Set(mGrid.g_DArray[RW].PurchaseTax);
-
-                    if (bbl.Z_Set(mGrid.g_DArray[RW].PurchaseGaku) > maxGaku)
+                    if (mGrid.g_DArray[RW].Chk || OperationMode != EOperationMode.INSERT)
                     {
-                        maxGaku = bbl.Z_Set(mGrid.g_DArray[RW].PurchaseGaku);
-                        maxGakuRow = RW;
+                        sumKin += bbl.Z_Set(mGrid.g_DArray[RW].AdjustmentGaku);
+                        sumZei += bbl.Z_Set(mGrid.g_DArray[RW].PurchaseTax);
+
+                        if (bbl.Z_Set(mGrid.g_DArray[RW].PurchaseGaku) > maxGaku)
+                        {
+                            maxGaku = bbl.Z_Set(mGrid.g_DArray[RW].PurchaseGaku);
+                            maxGakuRow = RW;
+                        }
                     }
                 }
-            }
-            //「はい」押下時のみ、以下の処理へ
-            if(bbl.Z_Set(lblKin4.Text) != sumKin)
-            {
-                //Ｑ３１４
-                if (bbl.ShowMessage("Q314") != DialogResult.Yes)
-                    return;
-            }
-            //※消費税額の確認
-            //【Footer1】税額の、計算値と入力値が異なる場合
-            //「はい」押下時のみ、以下の処理へ
-            if (bbl.Z_Set(detailControls[(int)EIndex.PurchaseTax].Text) != sumZei)
-            {
-                //Ｑ３１０
-                if (bbl.ShowMessage("Q310") != DialogResult.Yes)
-                    return;
-
-                //Form.Hedder.「税計算」が、伝票単位の場合
-                if (mTaxTiming.Equals("2"))
+                //「はい」押下時のみ、以下の処理へ
+                if (bbl.Z_Set(lblKin4.Text) != sumKin)
                 {
-                    //  Form.Detail.消費税額(Hidden)のSUMと仕入ヘッダの消費税額が
-                    //　異なる場合は、Form.TaxRateFLG(Hidden)≠0の仕入本体額が最大
-                    //　（同額の場合は明細行の小さい方）に差額をセットする
-                    mGrid.g_DArray[maxGakuRow].PurchaseTax += bbl.Z_Set(detailControls[(int)EIndex.PurchaseTax].Text) - sumZei;
+                    //Ｑ３１４
+                    if (bbl.ShowMessage("Q314") != DialogResult.Yes)
+                        return;
+                }
+                //※消費税額の確認
+                //【Footer1】税額の、計算値と入力値が異なる場合
+                //「はい」押下時のみ、以下の処理へ
+                if (bbl.Z_Set(detailControls[(int)EIndex.PurchaseTax].Text) != sumZei)
+                {
+                    //Ｑ３１０
+                    if (bbl.ShowMessage("Q310") != DialogResult.Yes)
+                        return;
+
+                    //Form.Hedder.「税計算」が、伝票単位の場合
+                    if (mTaxTiming.Equals("2"))
+                    {
+                        //  Form.Detail.消費税額(Hidden)のSUMと仕入ヘッダの消費税額が
+                        //　異なる場合は、Form.TaxRateFLG(Hidden)≠0の仕入本体額が最大
+                        //　（同額の場合は明細行の小さい方）に差額をセットする
+                        mGrid.g_DArray[maxGakuRow].PurchaseTax += bbl.Z_Set(detailControls[(int)EIndex.PurchaseTax].Text) - sumZei;
+                    }
                 }
             }
 
