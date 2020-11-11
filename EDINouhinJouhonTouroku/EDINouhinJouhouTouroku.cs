@@ -176,12 +176,13 @@ namespace EDINouhinJouhonTouroku
                     //ImportDateTime = gdvDSKENDelivery[(int)EColNo.ImportDateTime, selectRowIndex].Value.ToString(),
                     //SKENNouhinshoNO = gdvDSKENDelivery[(int)EColNo.SKENNouhinshoNO, selectRowIndex].Value.ToString(),
                     de.SKENBangouA = gdvDSKENDelivery[(int)EColNo.SKENBangouA, selectRowIndex].Value.ToString();
-                if (chkError.Checked)
+                if ((chkError.Checked && chkCorrect.Checked) || (!chkError.Checked && !chkCorrect.Checked))
+                    de.ChkFlg = "2";
+                else if(chkError.Checked)
                     de.ChkFlg = "1";
                 else if (chkCorrect.Checked)
                     de.ChkFlg = "0";
-                else if ((chkError.Checked && chkCorrect.Checked) || (!chkError.Checked && !chkCorrect.Checked))
-                    de.ChkFlg = "2";
+                
 
 
                 dtDelivery = ediNHJ_bl.D_SKENDeliveryDetails_SelectAll(de);
