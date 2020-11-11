@@ -2213,7 +2213,7 @@ namespace ShiireNyuuryokuFromNyuuka
             dt.Columns.Add("OrderNO", typeof(string));
             dt.Columns.Add("OrderRows", typeof(int));
             dt.Columns.Add("DifferenceFlg", typeof(int));
-            dt.Columns.Add("DeliveryNo", typeof(int));
+            dt.Columns.Add("DeliveryNo", typeof(string));
             dt.Columns.Add("UpdateFlg", typeof(int));
         }
 

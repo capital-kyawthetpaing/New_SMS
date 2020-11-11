@@ -45,8 +45,9 @@ namespace DL
 
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@SKENNouhinshoNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.SKENNouhinshoNO } },
-                { "@ChkFlg", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.ChkFlg } },
+                //{ "@SKENNouhinshoNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.SKENNouhinshoNO } },
+                { "@SKENBangouA", new ValuePair { value1 = SqlDbType.Int, value2 = de.SKENBangouA } },
+                { "@ChkFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkFlg } },
 
             };
 
