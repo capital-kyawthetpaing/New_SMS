@@ -1517,6 +1517,7 @@
             this.salepriceout5_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout5_1.DecimalPlace = 0;
             this.salepriceout5_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout5_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout5_1.IntegerPart = 0;
             this.salepriceout5_1.IsCorrectDate = true;
             this.salepriceout5_1.isEnterKeyDown = false;
@@ -1607,7 +1608,7 @@
             this.shiire_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.shiire_1.DecimalPlace = 0;
             this.shiire_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.shiire_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.shiire_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.shiire_1.IntegerPart = 0;
             this.shiire_1.IsCorrectDate = true;
             this.shiire_1.isEnterKeyDown = false;
@@ -1712,7 +1713,7 @@
             this.hyoteidatem_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.hyoteidatem_1.DecimalPlace = 0;
             this.hyoteidatem_1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.hyoteidatem_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.hyoteidatem_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.hyoteidatem_1.IntegerPart = 0;
             this.hyoteidatem_1.IsCorrectDate = true;
             this.hyoteidatem_1.isEnterKeyDown = false;
@@ -1774,6 +1775,7 @@
             this.salepriceout4_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout4_1.DecimalPlace = 0;
             this.salepriceout4_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout4_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout4_1.IntegerPart = 0;
             this.salepriceout4_1.IsCorrectDate = true;
             this.salepriceout4_1.isEnterKeyDown = false;
@@ -1804,6 +1806,7 @@
             this.salepriceout3_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout3_1.DecimalPlace = 0;
             this.salepriceout3_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout3_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout3_1.IntegerPart = 0;
             this.salepriceout3_1.IsCorrectDate = true;
             this.salepriceout3_1.isEnterKeyDown = false;
@@ -1834,6 +1837,7 @@
             this.salepriceout2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout2_1.DecimalPlace = 0;
             this.salepriceout2_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout2_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout2_1.IntegerPart = 0;
             this.salepriceout2_1.IsCorrectDate = true;
             this.salepriceout2_1.isEnterKeyDown = false;
@@ -1864,6 +1868,7 @@
             this.salepriceout1_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout1_1.DecimalPlace = 0;
             this.salepriceout1_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout1_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout1_1.IntegerPart = 0;
             this.salepriceout1_1.IsCorrectDate = true;
             this.salepriceout1_1.isEnterKeyDown = false;
@@ -1894,6 +1899,7 @@
             this.salepriceout_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout_1.DecimalPlace = 0;
             this.salepriceout_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout_1.IntegerPart = 0;
             this.salepriceout_1.IsCorrectDate = true;
             this.salepriceout_1.isEnterKeyDown = false;
@@ -1966,6 +1972,7 @@
             this.joutai_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.joutai_1.DecimalPlace = 0;
             this.joutai_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.joutai_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.joutai_1.IntegerPart = 0;
             this.joutai_1.IsCorrectDate = true;
             this.joutai_1.isEnterKeyDown = false;
@@ -2324,6 +2331,7 @@
             this.salepriceout5_13.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout5_13.DecimalPlace = 0;
             this.salepriceout5_13.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout5_13.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout5_13.IntegerPart = 0;
             this.salepriceout5_13.IsCorrectDate = true;
             this.salepriceout5_13.isEnterKeyDown = false;
@@ -2414,6 +2422,7 @@
             this.shiire_13.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.shiire_13.DecimalPlace = 0;
             this.shiire_13.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shiire_13.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.shiire_13.IntegerPart = 0;
             this.shiire_13.IsCorrectDate = true;
             this.shiire_13.isEnterKeyDown = false;
@@ -2518,7 +2527,7 @@
             this.hyoteidatem_13.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.hyoteidatem_13.DecimalPlace = 0;
             this.hyoteidatem_13.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.hyoteidatem_13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.hyoteidatem_13.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.hyoteidatem_13.IntegerPart = 0;
             this.hyoteidatem_13.IsCorrectDate = true;
             this.hyoteidatem_13.isEnterKeyDown = false;
@@ -2580,6 +2589,7 @@
             this.salepriceout4_13.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout4_13.DecimalPlace = 0;
             this.salepriceout4_13.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout4_13.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout4_13.IntegerPart = 0;
             this.salepriceout4_13.IsCorrectDate = true;
             this.salepriceout4_13.isEnterKeyDown = false;
@@ -2610,6 +2620,7 @@
             this.salepriceout3_13.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout3_13.DecimalPlace = 0;
             this.salepriceout3_13.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout3_13.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout3_13.IntegerPart = 0;
             this.salepriceout3_13.IsCorrectDate = true;
             this.salepriceout3_13.isEnterKeyDown = false;
@@ -2640,6 +2651,7 @@
             this.salepriceout2_13.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout2_13.DecimalPlace = 0;
             this.salepriceout2_13.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout2_13.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout2_13.IntegerPart = 0;
             this.salepriceout2_13.IsCorrectDate = true;
             this.salepriceout2_13.isEnterKeyDown = false;
@@ -2670,6 +2682,7 @@
             this.salepriceout1_13.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout1_13.DecimalPlace = 0;
             this.salepriceout1_13.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout1_13.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout1_13.IntegerPart = 0;
             this.salepriceout1_13.IsCorrectDate = true;
             this.salepriceout1_13.isEnterKeyDown = false;
@@ -2700,6 +2713,7 @@
             this.salepriceout_13.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout_13.DecimalPlace = 0;
             this.salepriceout_13.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout_13.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout_13.IntegerPart = 0;
             this.salepriceout_13.IsCorrectDate = true;
             this.salepriceout_13.isEnterKeyDown = false;
@@ -2772,6 +2786,7 @@
             this.joutai_13.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.joutai_13.DecimalPlace = 0;
             this.joutai_13.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.joutai_13.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.joutai_13.IntegerPart = 0;
             this.joutai_13.IsCorrectDate = true;
             this.joutai_13.isEnterKeyDown = false;
@@ -3028,6 +3043,7 @@
             this.salepriceout5_12.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout5_12.DecimalPlace = 0;
             this.salepriceout5_12.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout5_12.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout5_12.IntegerPart = 0;
             this.salepriceout5_12.IsCorrectDate = true;
             this.salepriceout5_12.isEnterKeyDown = false;
@@ -3118,6 +3134,7 @@
             this.shiire_12.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.shiire_12.DecimalPlace = 0;
             this.shiire_12.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shiire_12.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.shiire_12.IntegerPart = 0;
             this.shiire_12.IsCorrectDate = true;
             this.shiire_12.isEnterKeyDown = false;
@@ -3222,7 +3239,7 @@
             this.hyoteidatem_12.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.hyoteidatem_12.DecimalPlace = 0;
             this.hyoteidatem_12.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.hyoteidatem_12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.hyoteidatem_12.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.hyoteidatem_12.IntegerPart = 0;
             this.hyoteidatem_12.IsCorrectDate = true;
             this.hyoteidatem_12.isEnterKeyDown = false;
@@ -3284,6 +3301,7 @@
             this.salepriceout4_12.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout4_12.DecimalPlace = 0;
             this.salepriceout4_12.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout4_12.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout4_12.IntegerPart = 0;
             this.salepriceout4_12.IsCorrectDate = true;
             this.salepriceout4_12.isEnterKeyDown = false;
@@ -3314,6 +3332,7 @@
             this.salepriceout3_12.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout3_12.DecimalPlace = 0;
             this.salepriceout3_12.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout3_12.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout3_12.IntegerPart = 0;
             this.salepriceout3_12.IsCorrectDate = true;
             this.salepriceout3_12.isEnterKeyDown = false;
@@ -3344,6 +3363,7 @@
             this.salepriceout2_12.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout2_12.DecimalPlace = 0;
             this.salepriceout2_12.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout2_12.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout2_12.IntegerPart = 0;
             this.salepriceout2_12.IsCorrectDate = true;
             this.salepriceout2_12.isEnterKeyDown = false;
@@ -3374,6 +3394,7 @@
             this.salepriceout1_12.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout1_12.DecimalPlace = 0;
             this.salepriceout1_12.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout1_12.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout1_12.IntegerPart = 0;
             this.salepriceout1_12.IsCorrectDate = true;
             this.salepriceout1_12.isEnterKeyDown = false;
@@ -3404,6 +3425,7 @@
             this.salepriceout_12.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout_12.DecimalPlace = 0;
             this.salepriceout_12.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout_12.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout_12.IntegerPart = 0;
             this.salepriceout_12.IsCorrectDate = true;
             this.salepriceout_12.isEnterKeyDown = false;
@@ -3476,6 +3498,7 @@
             this.joutai_12.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.joutai_12.DecimalPlace = 0;
             this.joutai_12.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.joutai_12.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.joutai_12.IntegerPart = 0;
             this.joutai_12.IsCorrectDate = true;
             this.joutai_12.isEnterKeyDown = false;
@@ -3732,6 +3755,7 @@
             this.salepriceout5_11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout5_11.DecimalPlace = 0;
             this.salepriceout5_11.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout5_11.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout5_11.IntegerPart = 0;
             this.salepriceout5_11.IsCorrectDate = true;
             this.salepriceout5_11.isEnterKeyDown = false;
@@ -3822,6 +3846,7 @@
             this.shiire_11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.shiire_11.DecimalPlace = 0;
             this.shiire_11.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shiire_11.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.shiire_11.IntegerPart = 0;
             this.shiire_11.IsCorrectDate = true;
             this.shiire_11.isEnterKeyDown = false;
@@ -3926,7 +3951,7 @@
             this.hyoteidatem_11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.hyoteidatem_11.DecimalPlace = 0;
             this.hyoteidatem_11.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.hyoteidatem_11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.hyoteidatem_11.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.hyoteidatem_11.IntegerPart = 0;
             this.hyoteidatem_11.IsCorrectDate = true;
             this.hyoteidatem_11.isEnterKeyDown = false;
@@ -3988,6 +4013,7 @@
             this.salepriceout4_11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout4_11.DecimalPlace = 0;
             this.salepriceout4_11.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout4_11.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout4_11.IntegerPart = 0;
             this.salepriceout4_11.IsCorrectDate = true;
             this.salepriceout4_11.isEnterKeyDown = false;
@@ -4018,6 +4044,7 @@
             this.salepriceout3_11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout3_11.DecimalPlace = 0;
             this.salepriceout3_11.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout3_11.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout3_11.IntegerPart = 0;
             this.salepriceout3_11.IsCorrectDate = true;
             this.salepriceout3_11.isEnterKeyDown = false;
@@ -4048,6 +4075,7 @@
             this.salepriceout2_11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout2_11.DecimalPlace = 0;
             this.salepriceout2_11.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout2_11.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout2_11.IntegerPart = 0;
             this.salepriceout2_11.IsCorrectDate = true;
             this.salepriceout2_11.isEnterKeyDown = false;
@@ -4078,6 +4106,7 @@
             this.salepriceout1_11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout1_11.DecimalPlace = 0;
             this.salepriceout1_11.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout1_11.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout1_11.IntegerPart = 0;
             this.salepriceout1_11.IsCorrectDate = true;
             this.salepriceout1_11.isEnterKeyDown = false;
@@ -4108,6 +4137,7 @@
             this.salepriceout_11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout_11.DecimalPlace = 0;
             this.salepriceout_11.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout_11.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout_11.IntegerPart = 0;
             this.salepriceout_11.IsCorrectDate = true;
             this.salepriceout_11.isEnterKeyDown = false;
@@ -4180,6 +4210,7 @@
             this.joutai_11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.joutai_11.DecimalPlace = 0;
             this.joutai_11.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.joutai_11.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.joutai_11.IntegerPart = 0;
             this.joutai_11.IsCorrectDate = true;
             this.joutai_11.isEnterKeyDown = false;
@@ -4436,6 +4467,7 @@
             this.salepriceout5_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout5_10.DecimalPlace = 0;
             this.salepriceout5_10.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout5_10.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout5_10.IntegerPart = 0;
             this.salepriceout5_10.IsCorrectDate = true;
             this.salepriceout5_10.isEnterKeyDown = false;
@@ -4526,6 +4558,7 @@
             this.shiire_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.shiire_10.DecimalPlace = 0;
             this.shiire_10.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shiire_10.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.shiire_10.IntegerPart = 0;
             this.shiire_10.IsCorrectDate = true;
             this.shiire_10.isEnterKeyDown = false;
@@ -4630,7 +4663,7 @@
             this.hyoteidatem_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.hyoteidatem_10.DecimalPlace = 0;
             this.hyoteidatem_10.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.hyoteidatem_10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.hyoteidatem_10.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.hyoteidatem_10.IntegerPart = 0;
             this.hyoteidatem_10.IsCorrectDate = true;
             this.hyoteidatem_10.isEnterKeyDown = false;
@@ -4692,6 +4725,7 @@
             this.salepriceout4_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout4_10.DecimalPlace = 0;
             this.salepriceout4_10.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout4_10.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout4_10.IntegerPart = 0;
             this.salepriceout4_10.IsCorrectDate = true;
             this.salepriceout4_10.isEnterKeyDown = false;
@@ -4722,6 +4756,7 @@
             this.salepriceout3_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout3_10.DecimalPlace = 0;
             this.salepriceout3_10.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout3_10.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout3_10.IntegerPart = 0;
             this.salepriceout3_10.IsCorrectDate = true;
             this.salepriceout3_10.isEnterKeyDown = false;
@@ -4752,6 +4787,7 @@
             this.salepriceout2_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout2_10.DecimalPlace = 0;
             this.salepriceout2_10.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout2_10.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout2_10.IntegerPart = 0;
             this.salepriceout2_10.IsCorrectDate = true;
             this.salepriceout2_10.isEnterKeyDown = false;
@@ -4782,6 +4818,7 @@
             this.salepriceout1_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout1_10.DecimalPlace = 0;
             this.salepriceout1_10.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout1_10.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout1_10.IntegerPart = 0;
             this.salepriceout1_10.IsCorrectDate = true;
             this.salepriceout1_10.isEnterKeyDown = false;
@@ -4812,6 +4849,7 @@
             this.salepriceout_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout_10.DecimalPlace = 0;
             this.salepriceout_10.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout_10.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout_10.IntegerPart = 0;
             this.salepriceout_10.IsCorrectDate = true;
             this.salepriceout_10.isEnterKeyDown = false;
@@ -4884,6 +4922,7 @@
             this.joutai_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.joutai_10.DecimalPlace = 0;
             this.joutai_10.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.joutai_10.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.joutai_10.IntegerPart = 0;
             this.joutai_10.IsCorrectDate = true;
             this.joutai_10.isEnterKeyDown = false;
@@ -5238,6 +5277,7 @@
             this.salepriceout5_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout5_9.DecimalPlace = 0;
             this.salepriceout5_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout5_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout5_9.IntegerPart = 0;
             this.salepriceout5_9.IsCorrectDate = true;
             this.salepriceout5_9.isEnterKeyDown = false;
@@ -5494,6 +5534,7 @@
             this.shiire_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.shiire_9.DecimalPlace = 0;
             this.shiire_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shiire_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.shiire_9.IntegerPart = 0;
             this.shiire_9.IsCorrectDate = true;
             this.shiire_9.isEnterKeyDown = false;
@@ -5568,7 +5609,7 @@
             this.hyoteidatem_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.hyoteidatem_9.DecimalPlace = 0;
             this.hyoteidatem_9.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.hyoteidatem_9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.hyoteidatem_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.hyoteidatem_9.IntegerPart = 0;
             this.hyoteidatem_9.IsCorrectDate = true;
             this.hyoteidatem_9.isEnterKeyDown = false;
@@ -5630,6 +5671,7 @@
             this.salepriceout4_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout4_9.DecimalPlace = 0;
             this.salepriceout4_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout4_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout4_9.IntegerPart = 0;
             this.salepriceout4_9.IsCorrectDate = true;
             this.salepriceout4_9.isEnterKeyDown = false;
@@ -5660,6 +5702,7 @@
             this.salepriceout3_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout3_9.DecimalPlace = 0;
             this.salepriceout3_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout3_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout3_9.IntegerPart = 0;
             this.salepriceout3_9.IsCorrectDate = true;
             this.salepriceout3_9.isEnterKeyDown = false;
@@ -5690,6 +5733,7 @@
             this.salepriceout2_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout2_9.DecimalPlace = 0;
             this.salepriceout2_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout2_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout2_9.IntegerPart = 0;
             this.salepriceout2_9.IsCorrectDate = true;
             this.salepriceout2_9.isEnterKeyDown = false;
@@ -5720,6 +5764,7 @@
             this.salepriceout1_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout1_9.DecimalPlace = 0;
             this.salepriceout1_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout1_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout1_9.IntegerPart = 0;
             this.salepriceout1_9.IsCorrectDate = true;
             this.salepriceout1_9.isEnterKeyDown = false;
@@ -5750,6 +5795,7 @@
             this.salepriceout_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout_9.DecimalPlace = 0;
             this.salepriceout_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout_9.IntegerPart = 0;
             this.salepriceout_9.IsCorrectDate = true;
             this.salepriceout_9.isEnterKeyDown = false;
@@ -5822,6 +5868,7 @@
             this.joutai_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.joutai_9.DecimalPlace = 0;
             this.joutai_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.joutai_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.joutai_9.IntegerPart = 0;
             this.joutai_9.IsCorrectDate = true;
             this.joutai_9.isEnterKeyDown = false;
@@ -6078,6 +6125,7 @@
             this.salepriceout5_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout5_8.DecimalPlace = 0;
             this.salepriceout5_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout5_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout5_8.IntegerPart = 0;
             this.salepriceout5_8.IsCorrectDate = true;
             this.salepriceout5_8.isEnterKeyDown = false;
@@ -6168,6 +6216,7 @@
             this.shiire_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.shiire_8.DecimalPlace = 0;
             this.shiire_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shiire_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.shiire_8.IntegerPart = 0;
             this.shiire_8.IsCorrectDate = true;
             this.shiire_8.isEnterKeyDown = false;
@@ -6272,7 +6321,7 @@
             this.hyoteidatem_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.hyoteidatem_8.DecimalPlace = 0;
             this.hyoteidatem_8.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.hyoteidatem_8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.hyoteidatem_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.hyoteidatem_8.IntegerPart = 0;
             this.hyoteidatem_8.IsCorrectDate = true;
             this.hyoteidatem_8.isEnterKeyDown = false;
@@ -6334,6 +6383,7 @@
             this.salepriceout4_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout4_8.DecimalPlace = 0;
             this.salepriceout4_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout4_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout4_8.IntegerPart = 0;
             this.salepriceout4_8.IsCorrectDate = true;
             this.salepriceout4_8.isEnterKeyDown = false;
@@ -6364,6 +6414,7 @@
             this.salepriceout3_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout3_8.DecimalPlace = 0;
             this.salepriceout3_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout3_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout3_8.IntegerPart = 0;
             this.salepriceout3_8.IsCorrectDate = true;
             this.salepriceout3_8.isEnterKeyDown = false;
@@ -6394,6 +6445,7 @@
             this.salepriceout2_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout2_8.DecimalPlace = 0;
             this.salepriceout2_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout2_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout2_8.IntegerPart = 0;
             this.salepriceout2_8.IsCorrectDate = true;
             this.salepriceout2_8.isEnterKeyDown = false;
@@ -6424,6 +6476,7 @@
             this.salepriceout1_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout1_8.DecimalPlace = 0;
             this.salepriceout1_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout1_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout1_8.IntegerPart = 0;
             this.salepriceout1_8.IsCorrectDate = true;
             this.salepriceout1_8.isEnterKeyDown = false;
@@ -6454,6 +6507,7 @@
             this.salepriceout_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout_8.DecimalPlace = 0;
             this.salepriceout_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout_8.IntegerPart = 0;
             this.salepriceout_8.IsCorrectDate = true;
             this.salepriceout_8.isEnterKeyDown = false;
@@ -6526,6 +6580,7 @@
             this.joutai_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.joutai_8.DecimalPlace = 0;
             this.joutai_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.joutai_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.joutai_8.IntegerPart = 0;
             this.joutai_8.IsCorrectDate = true;
             this.joutai_8.isEnterKeyDown = false;
@@ -6782,6 +6837,7 @@
             this.salepriceout5_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout5_7.DecimalPlace = 0;
             this.salepriceout5_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout5_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout5_7.IntegerPart = 0;
             this.salepriceout5_7.IsCorrectDate = true;
             this.salepriceout5_7.isEnterKeyDown = false;
@@ -6872,6 +6928,7 @@
             this.shiire_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.shiire_7.DecimalPlace = 0;
             this.shiire_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shiire_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.shiire_7.IntegerPart = 0;
             this.shiire_7.IsCorrectDate = true;
             this.shiire_7.isEnterKeyDown = false;
@@ -6976,7 +7033,7 @@
             this.hyoteidatem_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.hyoteidatem_7.DecimalPlace = 0;
             this.hyoteidatem_7.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.hyoteidatem_7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.hyoteidatem_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.hyoteidatem_7.IntegerPart = 0;
             this.hyoteidatem_7.IsCorrectDate = true;
             this.hyoteidatem_7.isEnterKeyDown = false;
@@ -7038,6 +7095,7 @@
             this.salepriceout4_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout4_7.DecimalPlace = 0;
             this.salepriceout4_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout4_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout4_7.IntegerPart = 0;
             this.salepriceout4_7.IsCorrectDate = true;
             this.salepriceout4_7.isEnterKeyDown = false;
@@ -7068,6 +7126,7 @@
             this.salepriceout3_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout3_7.DecimalPlace = 0;
             this.salepriceout3_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout3_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout3_7.IntegerPart = 0;
             this.salepriceout3_7.IsCorrectDate = true;
             this.salepriceout3_7.isEnterKeyDown = false;
@@ -7098,6 +7157,7 @@
             this.salepriceout2_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout2_7.DecimalPlace = 0;
             this.salepriceout2_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout2_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout2_7.IntegerPart = 0;
             this.salepriceout2_7.IsCorrectDate = true;
             this.salepriceout2_7.isEnterKeyDown = false;
@@ -7128,6 +7188,7 @@
             this.salepriceout1_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout1_7.DecimalPlace = 0;
             this.salepriceout1_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout1_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout1_7.IntegerPart = 0;
             this.salepriceout1_7.IsCorrectDate = true;
             this.salepriceout1_7.isEnterKeyDown = false;
@@ -7158,6 +7219,7 @@
             this.salepriceout_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout_7.DecimalPlace = 0;
             this.salepriceout_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout_7.IntegerPart = 0;
             this.salepriceout_7.IsCorrectDate = true;
             this.salepriceout_7.isEnterKeyDown = false;
@@ -7230,6 +7292,7 @@
             this.joutai_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.joutai_7.DecimalPlace = 0;
             this.joutai_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.joutai_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.joutai_7.IntegerPart = 0;
             this.joutai_7.IsCorrectDate = true;
             this.joutai_7.isEnterKeyDown = false;
@@ -7486,6 +7549,7 @@
             this.salepriceout5_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout5_6.DecimalPlace = 0;
             this.salepriceout5_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout5_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout5_6.IntegerPart = 0;
             this.salepriceout5_6.IsCorrectDate = true;
             this.salepriceout5_6.isEnterKeyDown = false;
@@ -7576,6 +7640,7 @@
             this.shiire_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.shiire_6.DecimalPlace = 0;
             this.shiire_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shiire_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.shiire_6.IntegerPart = 0;
             this.shiire_6.IsCorrectDate = true;
             this.shiire_6.isEnterKeyDown = false;
@@ -7680,7 +7745,7 @@
             this.hyoteidatem_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.hyoteidatem_6.DecimalPlace = 0;
             this.hyoteidatem_6.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.hyoteidatem_6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.hyoteidatem_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.hyoteidatem_6.IntegerPart = 0;
             this.hyoteidatem_6.IsCorrectDate = true;
             this.hyoteidatem_6.isEnterKeyDown = false;
@@ -7742,6 +7807,7 @@
             this.salepriceout4_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout4_6.DecimalPlace = 0;
             this.salepriceout4_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout4_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout4_6.IntegerPart = 0;
             this.salepriceout4_6.IsCorrectDate = true;
             this.salepriceout4_6.isEnterKeyDown = false;
@@ -7772,6 +7838,7 @@
             this.salepriceout3_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout3_6.DecimalPlace = 0;
             this.salepriceout3_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout3_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout3_6.IntegerPart = 0;
             this.salepriceout3_6.IsCorrectDate = true;
             this.salepriceout3_6.isEnterKeyDown = false;
@@ -7802,6 +7869,7 @@
             this.salepriceout2_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout2_6.DecimalPlace = 0;
             this.salepriceout2_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout2_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout2_6.IntegerPart = 0;
             this.salepriceout2_6.IsCorrectDate = true;
             this.salepriceout2_6.isEnterKeyDown = false;
@@ -7832,6 +7900,7 @@
             this.salepriceout1_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout1_6.DecimalPlace = 0;
             this.salepriceout1_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout1_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout1_6.IntegerPart = 0;
             this.salepriceout1_6.IsCorrectDate = true;
             this.salepriceout1_6.isEnterKeyDown = false;
@@ -7862,6 +7931,7 @@
             this.salepriceout_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout_6.DecimalPlace = 0;
             this.salepriceout_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout_6.IntegerPart = 0;
             this.salepriceout_6.IsCorrectDate = true;
             this.salepriceout_6.isEnterKeyDown = false;
@@ -7934,6 +8004,7 @@
             this.joutai_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.joutai_6.DecimalPlace = 0;
             this.joutai_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.joutai_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.joutai_6.IntegerPart = 0;
             this.joutai_6.IsCorrectDate = true;
             this.joutai_6.isEnterKeyDown = false;
@@ -8190,6 +8261,7 @@
             this.salepriceout5_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout5_5.DecimalPlace = 0;
             this.salepriceout5_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout5_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout5_5.IntegerPart = 0;
             this.salepriceout5_5.IsCorrectDate = true;
             this.salepriceout5_5.isEnterKeyDown = false;
@@ -8280,6 +8352,7 @@
             this.shiire_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.shiire_5.DecimalPlace = 0;
             this.shiire_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shiire_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.shiire_5.IntegerPart = 0;
             this.shiire_5.IsCorrectDate = true;
             this.shiire_5.isEnterKeyDown = false;
@@ -8384,7 +8457,7 @@
             this.hyoteidatem_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.hyoteidatem_5.DecimalPlace = 0;
             this.hyoteidatem_5.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.hyoteidatem_5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.hyoteidatem_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.hyoteidatem_5.IntegerPart = 0;
             this.hyoteidatem_5.IsCorrectDate = true;
             this.hyoteidatem_5.isEnterKeyDown = false;
@@ -8446,6 +8519,7 @@
             this.salepriceout4_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout4_5.DecimalPlace = 0;
             this.salepriceout4_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout4_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout4_5.IntegerPart = 0;
             this.salepriceout4_5.IsCorrectDate = true;
             this.salepriceout4_5.isEnterKeyDown = false;
@@ -8476,6 +8550,7 @@
             this.salepriceout3_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout3_5.DecimalPlace = 0;
             this.salepriceout3_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout3_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout3_5.IntegerPart = 0;
             this.salepriceout3_5.IsCorrectDate = true;
             this.salepriceout3_5.isEnterKeyDown = false;
@@ -8506,6 +8581,7 @@
             this.salepriceout2_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout2_5.DecimalPlace = 0;
             this.salepriceout2_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout2_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout2_5.IntegerPart = 0;
             this.salepriceout2_5.IsCorrectDate = true;
             this.salepriceout2_5.isEnterKeyDown = false;
@@ -8536,6 +8612,7 @@
             this.salepriceout1_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout1_5.DecimalPlace = 0;
             this.salepriceout1_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout1_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout1_5.IntegerPart = 0;
             this.salepriceout1_5.IsCorrectDate = true;
             this.salepriceout1_5.isEnterKeyDown = false;
@@ -8566,6 +8643,7 @@
             this.salepriceout_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout_5.DecimalPlace = 0;
             this.salepriceout_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout_5.IntegerPart = 0;
             this.salepriceout_5.IsCorrectDate = true;
             this.salepriceout_5.isEnterKeyDown = false;
@@ -8638,6 +8716,7 @@
             this.joutai_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.joutai_5.DecimalPlace = 0;
             this.joutai_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.joutai_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.joutai_5.IntegerPart = 0;
             this.joutai_5.IsCorrectDate = true;
             this.joutai_5.isEnterKeyDown = false;
@@ -8894,6 +8973,7 @@
             this.salepriceout5_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout5_4.DecimalPlace = 0;
             this.salepriceout5_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout5_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout5_4.IntegerPart = 0;
             this.salepriceout5_4.IsCorrectDate = true;
             this.salepriceout5_4.isEnterKeyDown = false;
@@ -8984,6 +9064,7 @@
             this.shiire_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.shiire_4.DecimalPlace = 0;
             this.shiire_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shiire_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.shiire_4.IntegerPart = 0;
             this.shiire_4.IsCorrectDate = true;
             this.shiire_4.isEnterKeyDown = false;
@@ -9088,7 +9169,7 @@
             this.hyoteidatem_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.hyoteidatem_4.DecimalPlace = 0;
             this.hyoteidatem_4.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.hyoteidatem_4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.hyoteidatem_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.hyoteidatem_4.IntegerPart = 0;
             this.hyoteidatem_4.IsCorrectDate = true;
             this.hyoteidatem_4.isEnterKeyDown = false;
@@ -9150,6 +9231,7 @@
             this.salepriceout4_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout4_4.DecimalPlace = 0;
             this.salepriceout4_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout4_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout4_4.IntegerPart = 0;
             this.salepriceout4_4.IsCorrectDate = true;
             this.salepriceout4_4.isEnterKeyDown = false;
@@ -9180,6 +9262,7 @@
             this.salepriceout3_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout3_4.DecimalPlace = 0;
             this.salepriceout3_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout3_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout3_4.IntegerPart = 0;
             this.salepriceout3_4.IsCorrectDate = true;
             this.salepriceout3_4.isEnterKeyDown = false;
@@ -9210,6 +9293,7 @@
             this.salepriceout2_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout2_4.DecimalPlace = 0;
             this.salepriceout2_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout2_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout2_4.IntegerPart = 0;
             this.salepriceout2_4.IsCorrectDate = true;
             this.salepriceout2_4.isEnterKeyDown = false;
@@ -9240,6 +9324,7 @@
             this.salepriceout1_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout1_4.DecimalPlace = 0;
             this.salepriceout1_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout1_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout1_4.IntegerPart = 0;
             this.salepriceout1_4.IsCorrectDate = true;
             this.salepriceout1_4.isEnterKeyDown = false;
@@ -9270,6 +9355,7 @@
             this.salepriceout_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout_4.DecimalPlace = 0;
             this.salepriceout_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout_4.IntegerPart = 0;
             this.salepriceout_4.IsCorrectDate = true;
             this.salepriceout_4.isEnterKeyDown = false;
@@ -9342,6 +9428,7 @@
             this.joutai_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.joutai_4.DecimalPlace = 0;
             this.joutai_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.joutai_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.joutai_4.IntegerPart = 0;
             this.joutai_4.IsCorrectDate = true;
             this.joutai_4.isEnterKeyDown = false;
@@ -9598,6 +9685,7 @@
             this.salepriceout5_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout5_3.DecimalPlace = 0;
             this.salepriceout5_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout5_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout5_3.IntegerPart = 0;
             this.salepriceout5_3.IsCorrectDate = true;
             this.salepriceout5_3.isEnterKeyDown = false;
@@ -9688,6 +9776,7 @@
             this.shiire_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.shiire_3.DecimalPlace = 0;
             this.shiire_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shiire_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.shiire_3.IntegerPart = 0;
             this.shiire_3.IsCorrectDate = true;
             this.shiire_3.isEnterKeyDown = false;
@@ -9792,7 +9881,7 @@
             this.hyoteidatem_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.hyoteidatem_3.DecimalPlace = 0;
             this.hyoteidatem_3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.hyoteidatem_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.hyoteidatem_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.hyoteidatem_3.IntegerPart = 0;
             this.hyoteidatem_3.IsCorrectDate = true;
             this.hyoteidatem_3.isEnterKeyDown = false;
@@ -9854,6 +9943,7 @@
             this.salepriceout4_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout4_3.DecimalPlace = 0;
             this.salepriceout4_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout4_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout4_3.IntegerPart = 0;
             this.salepriceout4_3.IsCorrectDate = true;
             this.salepriceout4_3.isEnterKeyDown = false;
@@ -9884,6 +9974,7 @@
             this.salepriceout3_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout3_3.DecimalPlace = 0;
             this.salepriceout3_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout3_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout3_3.IntegerPart = 0;
             this.salepriceout3_3.IsCorrectDate = true;
             this.salepriceout3_3.isEnterKeyDown = false;
@@ -9914,6 +10005,7 @@
             this.salepriceout2_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout2_3.DecimalPlace = 0;
             this.salepriceout2_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout2_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout2_3.IntegerPart = 0;
             this.salepriceout2_3.IsCorrectDate = true;
             this.salepriceout2_3.isEnterKeyDown = false;
@@ -9944,6 +10036,7 @@
             this.salepriceout1_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout1_3.DecimalPlace = 0;
             this.salepriceout1_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout1_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout1_3.IntegerPart = 0;
             this.salepriceout1_3.IsCorrectDate = true;
             this.salepriceout1_3.isEnterKeyDown = false;
@@ -9974,6 +10067,7 @@
             this.salepriceout_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout_3.DecimalPlace = 0;
             this.salepriceout_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout_3.IntegerPart = 0;
             this.salepriceout_3.IsCorrectDate = true;
             this.salepriceout_3.isEnterKeyDown = false;
@@ -10046,6 +10140,7 @@
             this.joutai_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.joutai_3.DecimalPlace = 0;
             this.joutai_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.joutai_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.joutai_3.IntegerPart = 0;
             this.joutai_3.IsCorrectDate = true;
             this.joutai_3.isEnterKeyDown = false;
@@ -10305,6 +10400,7 @@
             this.salepriceout5_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout5_2.DecimalPlace = 0;
             this.salepriceout5_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout5_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout5_2.IntegerPart = 0;
             this.salepriceout5_2.IsCorrectDate = true;
             this.salepriceout5_2.isEnterKeyDown = false;
@@ -10395,6 +10491,7 @@
             this.shiire_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.shiire_2.DecimalPlace = 0;
             this.shiire_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shiire_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.shiire_2.IntegerPart = 0;
             this.shiire_2.IsCorrectDate = true;
             this.shiire_2.isEnterKeyDown = false;
@@ -10499,7 +10596,7 @@
             this.hyoteidatem_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.hyoteidatem_2.DecimalPlace = 0;
             this.hyoteidatem_2.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.hyoteidatem_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.hyoteidatem_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.hyoteidatem_2.IntegerPart = 0;
             this.hyoteidatem_2.IsCorrectDate = true;
             this.hyoteidatem_2.isEnterKeyDown = false;
@@ -10561,6 +10658,7 @@
             this.salepriceout4_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout4_2.DecimalPlace = 0;
             this.salepriceout4_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout4_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout4_2.IntegerPart = 0;
             this.salepriceout4_2.IsCorrectDate = true;
             this.salepriceout4_2.isEnterKeyDown = false;
@@ -10591,6 +10689,7 @@
             this.salepriceout3_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout3_2.DecimalPlace = 0;
             this.salepriceout3_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout3_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout3_2.IntegerPart = 0;
             this.salepriceout3_2.IsCorrectDate = true;
             this.salepriceout3_2.isEnterKeyDown = false;
@@ -10621,6 +10720,7 @@
             this.salepriceout2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout2_2.DecimalPlace = 0;
             this.salepriceout2_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout2_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout2_2.IntegerPart = 0;
             this.salepriceout2_2.IsCorrectDate = true;
             this.salepriceout2_2.isEnterKeyDown = false;
@@ -10651,6 +10751,7 @@
             this.salepriceout1_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout1_2.DecimalPlace = 0;
             this.salepriceout1_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout1_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout1_2.IntegerPart = 0;
             this.salepriceout1_2.IsCorrectDate = true;
             this.salepriceout1_2.isEnterKeyDown = false;
@@ -10681,6 +10782,7 @@
             this.salepriceout_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.salepriceout_2.DecimalPlace = 0;
             this.salepriceout_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.salepriceout_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.salepriceout_2.IntegerPart = 0;
             this.salepriceout_2.IsCorrectDate = true;
             this.salepriceout_2.isEnterKeyDown = false;
@@ -10753,6 +10855,7 @@
             this.joutai_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.joutai_2.DecimalPlace = 0;
             this.joutai_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.joutai_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.joutai_2.IntegerPart = 0;
             this.joutai_2.IsCorrectDate = true;
             this.joutai_2.isEnterKeyDown = false;
