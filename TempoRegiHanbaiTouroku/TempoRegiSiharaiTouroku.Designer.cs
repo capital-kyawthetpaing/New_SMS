@@ -968,7 +968,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BtnP_text = "決定";
+            this.BtnP_text = "決　定";
             this.ClientSize = new System.Drawing.Size(1484, 811);
             this.Controls.Add(this.panel13);
             this.Controls.Add(this.panel12);
