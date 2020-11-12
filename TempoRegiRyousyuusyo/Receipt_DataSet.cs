@@ -1,3 +1,7 @@
 ﻿namespace TempoRegiRyousyuusyo
 {
 }
+
+namespace TempoRegiRyousyuusyo
+{
+}
