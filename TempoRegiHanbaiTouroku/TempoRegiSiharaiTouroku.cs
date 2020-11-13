@@ -154,7 +154,10 @@ namespace TempoRegiHanbaiTouroku
                     lblSalesGaku.Text = bbl.Z_SetStr(dse.SalesGaku);
                     lblZei.Text = bbl.Z_SetStr(dse.SalesTax);
                     txtDiscount.Text = bbl.Z_SetStr(dspe.DiscountAmount) ;
-                    lblSeikyuGaku.Text = bbl.Z_SetStr(dse.SalesGaku);
+                    //lblSeikyuGaku.Text = bbl.Z_SetStr(dse.SalesGaku);
+                    //値引き 
+                    //ご請求額＝お買上額計－値引		
+                    lblSeikyuGaku.Text = bbl.Z_SetStr(bbl.Z_Set(lblSalesGaku.Text) - bbl.Z_Set(txtDiscount.Text));
 
                     txtMaeuke.Text = bbl.Z_SetStr(dspe.AdvanceAmount);
                     txtPoint.Text = bbl.Z_SetStr(dspe.PointAmount);
@@ -175,6 +178,8 @@ namespace TempoRegiHanbaiTouroku
                     txtKake.Text = bbl.Z_SetStr(dspe.CreditAmount);
                     lblShiharaiKei.Text = "0";
                     //lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
+
+                    Calkkin();
 
                     if (OperationMode == FrmMainForm.EOperationMode.UPDATE)
                     {
