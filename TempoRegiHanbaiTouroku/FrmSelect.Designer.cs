@@ -117,8 +117,10 @@
             this.txtSalesDate.MaxLength = 10;
             this.txtSalesDate.MoveNext = true;
             this.txtSalesDate.Name = "txtSalesDate";
+            this.txtSalesDate.ReadOnly = true;
             this.txtSalesDate.Size = new System.Drawing.Size(200, 42);
             this.txtSalesDate.TabIndex = 0;
+            this.txtSalesDate.TabStop = false;
             this.txtSalesDate.Text = "9999/99/99";
             this.txtSalesDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSalesDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
