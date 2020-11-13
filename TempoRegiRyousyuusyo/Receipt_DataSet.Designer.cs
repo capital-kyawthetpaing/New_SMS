@@ -774,6 +774,8 @@ namespace TempoRegiRyousyuusyo {
             
             private global::System.Data.DataColumn columnCustomerLastPoint;
             
+            private global::System.Data.DataColumn columnCustomerKBN;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public SalesTableDataTable() {
@@ -1185,6 +1187,14 @@ namespace TempoRegiRyousyuusyo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CustomerKBNColumn {
+                get {
+                    return this.columnCustomerKBN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1267,7 +1277,8 @@ namespace TempoRegiRyousyuusyo {
                         string PaymentAmount10, 
                         string Refund, 
                         string SalesLastPoint, 
-                        string CustomerLastPoint) {
+                        string CustomerLastPoint, 
+                        string CustomerKBN) {
                 SalesTableRow rowSalesTableRow = ((SalesTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1316,7 +1327,8 @@ namespace TempoRegiRyousyuusyo {
                         PaymentAmount10,
                         Refund,
                         SalesLastPoint,
-                        CustomerLastPoint};
+                        CustomerLastPoint,
+                        CustomerKBN};
                 if ((parentStoreTableRowByStoreTable_SalesTable != null)) {
                     columnValuesArray[0] = parentStoreTableRowByStoreTable_SalesTable[8];
                 }
@@ -1389,6 +1401,7 @@ namespace TempoRegiRyousyuusyo {
                 this.columnRefund = base.Columns["Refund"];
                 this.columnSalesLastPoint = base.Columns["SalesLastPoint"];
                 this.columnCustomerLastPoint = base.Columns["CustomerLastPoint"];
+                this.columnCustomerKBN = base.Columns["CustomerKBN"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1488,6 +1501,8 @@ namespace TempoRegiRyousyuusyo {
                 base.Columns.Add(this.columnSalesLastPoint);
                 this.columnCustomerLastPoint = new global::System.Data.DataColumn("CustomerLastPoint", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCustomerLastPoint);
+                this.columnCustomerKBN = new global::System.Data.DataColumn("CustomerKBN", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCustomerKBN);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2660,6 +2675,22 @@ namespace TempoRegiRyousyuusyo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string CustomerKBN {
+                get {
+                    try {
+                        return ((string)(this[this.tableSalesTable.CustomerKBNColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'SalesTable\' にある列 \'CustomerKBN\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableSalesTable.CustomerKBNColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public StoreTableRow StoreTableRow {
                 get {
                     return ((StoreTableRow)(this.GetParentRow(this.Table.ParentRelations["StoreTable_SalesTable"])));
@@ -3231,6 +3262,18 @@ namespace TempoRegiRyousyuusyo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetCustomerLastPointNull() {
                 this[this.tableSalesTable.CustomerLastPointColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCustomerKBNNull() {
+                return this.IsNull(this.tableSalesTable.CustomerKBNColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCustomerKBNNull() {
+                this[this.tableSalesTable.CustomerKBNColumn] = global::System.Convert.DBNull;
             }
         }
         

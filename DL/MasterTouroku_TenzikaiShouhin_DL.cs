@@ -116,5 +116,21 @@ namespace DL
             UseTransaction = true;
             return InsertUpdateDeleteData(dic, sp);
         }
+
+
+        public DataTable M_TenzikaiShouhin_Check(M_TenzikaiShouhin_Entity mt)
+        {
+            string sp = "M_TenzikaiShouhin_Check";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@LastYear", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.LastYearTerm} },
+                { "@LastSeason", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.LastSeason} },
+                { "@Tenzikainame", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.TenzikaiName} },
+                { "@VendorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.VendorCD} },
+              
+            };
+           // UseTransaction = true;
+            return SelectData(dic, sp);
+        }
     }
 }

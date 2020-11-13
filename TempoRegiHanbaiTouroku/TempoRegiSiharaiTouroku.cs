@@ -118,7 +118,7 @@ namespace TempoRegiHanbaiTouroku
                  mMaeuke= tprg_Hanbai_Bl.GetMaeukeKin(dce);
                 lblMaeZan.Text=mMaeuke;
 
-                if (OperationMode!= FrmMainForm.EOperationMode.DELETE)
+                if (OperationMode != FrmMainForm.EOperationMode.DELETE && OperationMode != FrmMainForm.EOperationMode.UPDATE)
                 {
                     lblHenpin.Visible = false;
 
@@ -175,6 +175,13 @@ namespace TempoRegiHanbaiTouroku
                     txtKake.Text = bbl.Z_SetStr(dspe.CreditAmount);
                     lblShiharaiKei.Text = "0";
                     //lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
+
+                    if (OperationMode == FrmMainForm.EOperationMode.UPDATE)
+                    {
+                        lblHenpin.Visible = false;
+                        txtDiscount.Focus();
+                        return;
+                    }
 
                     btnProcess.Focus();
                 }

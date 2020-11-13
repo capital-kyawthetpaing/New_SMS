@@ -1,6 +1,5 @@
 ﻿using Base.Client;
 using BL;
-using DL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -274,7 +273,7 @@ namespace TempoRegiRyousyuusyo
                         // レシートチェックボックスにチェックあり
 
                         // 店舗取引履歴
-                        var receiptData = bl.D_ReceiptSelect(txtSalesNO.Text, chkReissue.Checked);
+                        DataTable receiptData = bl.D_ReceiptSelect(txtSalesNO.Text, chkReissue.Checked);
                         //if ((!IsHanbaiTouroku))
                         //{
                             if (receiptData.Rows.Count > 0)
@@ -531,6 +530,7 @@ namespace TempoRegiRyousyuusyo
                 sales.Refund = ConvertDecimal(row["Refund"]);                                   // 釣銭
                 sales.SalesLastPoint = ConvertDecimal(row["SalesLastPoint"]);                   // 今回ポイント
                 sales.CustomerLastPoint = ConvertDecimal(row["CustomerLastPoint"]);             // 合計ポイント 
+                sales.CustomerKBN = Convert.ToString(row["CustomerKBN"]);
                 sales.CustomerLastPoint = string.IsNullOrWhiteSpace(sales.CustomerLastPoint) ? "0" : sales.CustomerLastPoint;
                 #endregion // お釣りデータ
 
