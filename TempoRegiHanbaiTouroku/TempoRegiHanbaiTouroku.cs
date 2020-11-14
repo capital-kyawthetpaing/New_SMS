@@ -1026,6 +1026,7 @@ namespace TempoRegiHanbaiTouroku
                 {
                     JanCD = txtJanCD.Text,
                     AdminNO = mAdminNO,
+                    SetKBN = "0",
                     ChangeDate = ymd
                 };
 
