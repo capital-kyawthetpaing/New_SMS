@@ -133,7 +133,7 @@ namespace TanabanNyuuryoku
                 else
                 {
                     dgvTanaban.DataSource = dtstorage;
-                    dgvTanaban.CurrentCell = dgvTanaban[1, 0];
+                    dgvTanaban.CurrentCell = dgvTanaban[0, 0];
                 }
             }
             else
