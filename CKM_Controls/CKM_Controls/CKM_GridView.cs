@@ -592,7 +592,7 @@ namespace CKM_Controls
                                 {
                                     if (currRowIndex == this.Rows.Count - 1)
                                     {
-                                        if (readonlyCount == 0)
+                                        if (readonlyCount <= 0)
                                             this.OnKeyDown(new KeyEventArgs(Keys.Enter));
                                     }
                                 }
@@ -604,6 +604,12 @@ namespace CKM_Controls
                                     {
                                         if (currRowIndex == 0)
                                         {
+                                            if (!found && this.Columns[currColIndex].ReadOnly == true)
+                                            {
+                                                //先頭項目
+                                                MyProcessCmdKey(direction);
+                                                return true;
+                                            }
                                             found = true;
                                             readonlyCount = 1;
                                         }
