@@ -414,57 +414,64 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
        
         private void GV_Tenzaishohin_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-            if (GV_Tenzaishohin.Columns[e.ColumnIndex].Name == "Rate")
-            {
-                string rate = GV_Tenzaishohin.Rows[e.RowIndex].Cells["Rate"].EditedFormattedValue.ToString();
-                if (!String.IsNullOrWhiteSpace(rate))
+            if (GV_Tenzaishohin.lastKey)
+                if (GV_Tenzaishohin.Columns[e.ColumnIndex].Name == "Rate")
                 {
-                    if (!rate.Contains("."))
+                    string rate = GV_Tenzaishohin.Rows[e.RowIndex].Cells["Rate"].EditedFormattedValue.ToString();
+                    if (!String.IsNullOrWhiteSpace(rate))
                     {
-                        var isNumeric = int.TryParse(rate, out int n);
-                        if (isNumeric)
+                        if (!rate.Contains("."))
                         {
-                            if (rate.Length > 3)
+                            var isNumeric = int.TryParse(rate, out int n);
+                            if (isNumeric)
+                            {
+                                if (rate.Length > 3)
+                                {
+                                    MessageBox.Show("enter valid no");
+                                    GV_Tenzaishohin.RefreshEdit();
+                                    GV_Tenzaishohin.lastKey = true;
+                                }
+                            }
+                            else
                             {
                                 MessageBox.Show("enter valid no");
                                 GV_Tenzaishohin.RefreshEdit();
+                                GV_Tenzaishohin.lastKey = true;
                             }
                         }
                         else
                         {
-                            MessageBox.Show("enter valid no");
-                            GV_Tenzaishohin.RefreshEdit();
+                            int x = rate.IndexOf('.');
+                            int count = rate.Count(f => f == '.');
+                            string charre = rate.Remove(x, count);
+                            var isNumeric = int.TryParse(charre, out int n);
+                            if(isNumeric)
+                            {
+                                if (count != 1 || x >= 4)
+                                {
+                                    MessageBox.Show("enter valid no");
+                                    GV_Tenzaishohin.RefreshEdit();
+                                    GV_Tenzaishohin.lastKey = true;
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("enter valid no");
+                                GV_Tenzaishohin.BeginEdit(true);
+                                GV_Tenzaishohin.lastKey = true;
+                            }
+                       
                         }
+                        GV_Tenzaishohin.lastKey = false;
                     }
                     else
                     {
-                        int x = rate.IndexOf('.');
-                        int count = rate.Count(f => f == '.');
-                        string charre = rate.Remove(x, count);
-                        var isNumeric = int.TryParse(charre, out int n);
-                        if(isNumeric)
-                        {
-                            if (count != 1 || x >= 4)
-                            {
-                                MessageBox.Show("enter valid no");
-                                GV_Tenzaishohin.RefreshEdit();
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("enter valid no");
-                            GV_Tenzaishohin.RefreshEdit();
-                        }
-                       
+                        //MessageBox.Show("enter valid no");
+                        bbl.ShowMessage("E102");
+                        GV_Tenzaishohin.BeginEdit(true);
+                        GV_Tenzaishohin.lastKey = true;
                     }
                 }
-                else
-                {
-                    //MessageBox.Show("enter valid no");
-                    bbl.ShowMessage("E102");
-                    GV_Tenzaishohin.BeginEdit(true);
-                }
-            }
 
         }
 

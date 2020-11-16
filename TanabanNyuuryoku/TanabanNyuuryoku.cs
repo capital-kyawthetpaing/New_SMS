@@ -133,7 +133,7 @@ namespace TanabanNyuuryoku
                 else
                 {
                     dgvTanaban.DataSource = dtstorage;
-                    dgvTanaban.CurrentCell = dgvTanaban[2, 0];
+                    dgvTanaban.CurrentCell = dgvTanaban[0, 0];
                 }
             }
             else
@@ -607,7 +607,7 @@ namespace TanabanNyuuryoku
             try
             {
                 //最終行最終列の場合は、F1へ
-                if ((dgvTanaban.CurrentCellAddress.X == dgvTanaban.ColumnCount - 8) &&
+                if ((dgvTanaban.CurrentCellAddress.X == dgvTanaban.ColumnCount - 9) &&
                     (dgvTanaban.CurrentCellAddress.Y == dgvTanaban.RowCount - 1))
                 {
                     Btn_F1.Focus();
