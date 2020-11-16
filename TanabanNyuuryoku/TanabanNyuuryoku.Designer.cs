@@ -31,23 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTanabanNyuuryoku));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelDetail = new System.Windows.Forms.Panel();
             this.ScStorage = new Search.CKM_SearchControl();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.dgvTanaban = new CKM_Controls.CKM_GridView();
-            this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colRackNo1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBtn = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.colRackNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSKUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colColorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSizeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colJanCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStockSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStockNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnReleaseAll = new CKM_Controls.CKM_Button();
             this.btnSelectAll = new CKM_Controls.CKM_Button();
             this.btnApplicable = new CKM_Controls.CKM_Button();
@@ -61,6 +49,17 @@
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
+            this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colRackNo1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBtn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colRackNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSKUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colColorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSizeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colJanCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStockSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStockNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTanaban)).BeginInit();
             this.SuspendLayout();
@@ -160,7 +159,7 @@
             this.dgvTanaban.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvTanaban.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -179,120 +178,23 @@
             this.colJanCD,
             this.colStockSu,
             this.colStockNo});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTanaban.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTanaban.EnableHeadersVisualStyles = false;
             this.dgvTanaban.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvTanaban.Location = new System.Drawing.Point(25, 149);
             this.dgvTanaban.Name = "dgvTanaban";
+            this.dgvTanaban.RowHeadersVisible = false;
             this.dgvTanaban.RowHeight_ = 20;
             this.dgvTanaban.RowTemplate.Height = 20;
             this.dgvTanaban.Size = new System.Drawing.Size(1645, 500);
             this.dgvTanaban.TabIndex = 11;
-            this.dgvTanaban.UseRowNo = true;
+            this.dgvTanaban.UseRowNo = false;
             this.dgvTanaban.UseSetting = true;
             this.dgvTanaban.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTanaban_CellContentClick);
             this.dgvTanaban.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvTanaban_CellPainting);
             this.dgvTanaban.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvTanaban_CellValidating);
             this.dgvTanaban.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvTanaban_DataError);
             this.dgvTanaban.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvTanaban_Paint);
-            // 
-            // colChk
-            // 
-            this.colChk.HeaderText = "";
-            this.colChk.Name = "colChk";
-            this.colChk.TrueValue = "true";
-            this.colChk.Width = 50;
-            // 
-            // colRackNo1
-            // 
-            this.colRackNo1.DataPropertyName = "RackNo1";
-            this.colRackNo1.HeaderText = "棚番";
-            this.colRackNo1.MaxInputLength = 10;
-            this.colRackNo1.Name = "colRackNo1";
-            // 
-            // colBtn
-            // 
-            this.colBtn.HeaderText = "";
-            this.colBtn.Name = "colBtn";
-            this.colBtn.Width = 50;
-            // 
-            // colRackNO
-            // 
-            this.colRackNO.DataPropertyName = "RackNO";
-            this.colRackNO.HeaderText = "既存棚番";
-            this.colRackNO.MaxInputLength = 10;
-            this.colRackNO.Name = "colRackNO";
-            this.colRackNO.ReadOnly = true;
-            // 
-            // colSKUCD
-            // 
-            this.colSKUCD.DataPropertyName = "SKUCD";
-            this.colSKUCD.HeaderText = "SKUCD";
-            this.colSKUCD.MaxInputLength = 30;
-            this.colSKUCD.Name = "colSKUCD";
-            this.colSKUCD.ReadOnly = true;
-            this.colSKUCD.Width = 270;
-            // 
-            // colSKUName
-            // 
-            this.colSKUName.DataPropertyName = "SKUName";
-            this.colSKUName.HeaderText = "商品名";
-            this.colSKUName.MaxInputLength = 80;
-            this.colSKUName.Name = "colSKUName";
-            this.colSKUName.ReadOnly = true;
-            this.colSKUName.Width = 450;
-            // 
-            // colColorName
-            // 
-            this.colColorName.DataPropertyName = "ColorName";
-            this.colColorName.HeaderText = "カラー";
-            this.colColorName.MaxInputLength = 20;
-            this.colColorName.Name = "colColorName";
-            this.colColorName.ReadOnly = true;
-            this.colColorName.Width = 170;
-            // 
-            // colSizeName
-            // 
-            this.colSizeName.DataPropertyName = "SizeName";
-            this.colSizeName.HeaderText = "サイズ";
-            this.colSizeName.MaxInputLength = 20;
-            this.colSizeName.Name = "colSizeName";
-            this.colSizeName.ReadOnly = true;
-            this.colSizeName.Width = 170;
-            // 
-            // colJanCD
-            // 
-            this.colJanCD.DataPropertyName = "JanCD";
-            this.colJanCD.HeaderText = "JANCD";
-            this.colJanCD.MaxInputLength = 13;
-            this.colJanCD.Name = "colJanCD";
-            this.colJanCD.ReadOnly = true;
-            this.colJanCD.Width = 130;
-            // 
-            // colStockSu
-            // 
-            this.colStockSu.DataPropertyName = "StockSu";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colStockSu.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colStockSu.HeaderText = "在庫数";
-            this.colStockSu.MaxInputLength = 5;
-            this.colStockSu.Name = "colStockSu";
-            this.colStockSu.ReadOnly = true;
-            // 
-            // colStockNo
-            // 
-            this.colStockNo.DataPropertyName = "StockNo";
-            this.colStockNo.HeaderText = "StockNo";
-            this.colStockNo.Name = "colStockNo";
-            this.colStockNo.Visible = false;
-            this.colStockNo.Width = 50;
+            this.dgvTanaban.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvTanaban_KeyDown);
             // 
             // btnReleaseAll
             // 
@@ -540,6 +442,98 @@
             this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // colChk
+            // 
+            this.colChk.HeaderText = "";
+            this.colChk.Name = "colChk";
+            this.colChk.TrueValue = "true";
+            this.colChk.Width = 50;
+            // 
+            // colRackNo1
+            // 
+            this.colRackNo1.DataPropertyName = "RackNo1";
+            this.colRackNo1.HeaderText = "棚番";
+            this.colRackNo1.MaxInputLength = 10;
+            this.colRackNo1.Name = "colRackNo1";
+            // 
+            // colBtn
+            // 
+            this.colBtn.HeaderText = "";
+            this.colBtn.Name = "colBtn";
+            this.colBtn.Width = 50;
+            // 
+            // colRackNO
+            // 
+            this.colRackNO.DataPropertyName = "RackNO";
+            this.colRackNO.HeaderText = "既存棚番";
+            this.colRackNO.MaxInputLength = 10;
+            this.colRackNO.Name = "colRackNO";
+            this.colRackNO.ReadOnly = true;
+            // 
+            // colSKUCD
+            // 
+            this.colSKUCD.DataPropertyName = "SKUCD";
+            this.colSKUCD.HeaderText = "SKUCD";
+            this.colSKUCD.MaxInputLength = 30;
+            this.colSKUCD.Name = "colSKUCD";
+            this.colSKUCD.ReadOnly = true;
+            this.colSKUCD.Width = 270;
+            // 
+            // colSKUName
+            // 
+            this.colSKUName.DataPropertyName = "SKUName";
+            this.colSKUName.HeaderText = "商品名";
+            this.colSKUName.MaxInputLength = 80;
+            this.colSKUName.Name = "colSKUName";
+            this.colSKUName.ReadOnly = true;
+            this.colSKUName.Width = 450;
+            // 
+            // colColorName
+            // 
+            this.colColorName.DataPropertyName = "ColorName";
+            this.colColorName.HeaderText = "カラー";
+            this.colColorName.MaxInputLength = 20;
+            this.colColorName.Name = "colColorName";
+            this.colColorName.ReadOnly = true;
+            this.colColorName.Width = 170;
+            // 
+            // colSizeName
+            // 
+            this.colSizeName.DataPropertyName = "SizeName";
+            this.colSizeName.HeaderText = "サイズ";
+            this.colSizeName.MaxInputLength = 20;
+            this.colSizeName.Name = "colSizeName";
+            this.colSizeName.ReadOnly = true;
+            this.colSizeName.Width = 170;
+            // 
+            // colJanCD
+            // 
+            this.colJanCD.DataPropertyName = "JanCD";
+            this.colJanCD.HeaderText = "JANCD";
+            this.colJanCD.MaxInputLength = 13;
+            this.colJanCD.Name = "colJanCD";
+            this.colJanCD.ReadOnly = true;
+            this.colJanCD.Width = 130;
+            // 
+            // colStockSu
+            // 
+            this.colStockSu.DataPropertyName = "StockSu";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colStockSu.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colStockSu.HeaderText = "在庫数";
+            this.colStockSu.MaxInputLength = 5;
+            this.colStockSu.Name = "colStockSu";
+            this.colStockSu.ReadOnly = true;
+            // 
+            // colStockNo
+            // 
+            this.colStockNo.DataPropertyName = "StockNo";
+            this.colStockNo.HeaderText = "StockNo";
+            this.colStockNo.Name = "colStockNo";
+            this.colStockNo.ReadOnly = true;
+            this.colStockNo.Visible = false;
+            this.colStockNo.Width = 50;
+            // 
             // FrmTanabanNyuuryoku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -579,6 +573,8 @@
         private CKM_Controls.CKM_Button btnApplicable;
         private CKM_Controls.CKM_Button btnDisplay;
         private CKM_Controls.CKM_GridView dgvTanaban;
+        private Search.CKM_SearchControl ScStorage;
+        private CKM_Controls.CKM_Label ckM_Label5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colChk;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRackNo1;
         private System.Windows.Forms.DataGridViewButtonColumn colBtn;
@@ -590,7 +586,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colJanCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStockSu;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStockNo;
-        private Search.CKM_SearchControl ScStorage;
-        private CKM_Controls.CKM_Label ckM_Label5;
     }
 }

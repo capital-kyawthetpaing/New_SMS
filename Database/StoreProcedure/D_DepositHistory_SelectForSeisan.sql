@@ -1,16 +1,16 @@
-USE [CapitalSMS]
-GO
 
-/****** Object:  StoredProcedure [dbo].[D_DepositHistory_SelectForSeisan]    Script Date: 2020/08/06 21:16:19 ******/
+
+/****** Object:  StoredProcedure [dbo].[D_DepositHistory_SelectForSeisan]    Script Date: 2020/11/13 20:46:08 ******/
 DROP PROCEDURE [dbo].[D_DepositHistory_SelectForSeisan]
 GO
 
-/****** Object:  StoredProcedure [dbo].[D_DepositHistory_SelectForSeisan]    Script Date: 2020/08/06 21:16:19 ******/
+/****** Object:  StoredProcedure [dbo].[D_DepositHistory_SelectForSeisan]    Script Date: 2020/11/13 20:46:08 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
+
 
 -- =============================================
 -- Author:		<Author,,Name>
@@ -66,12 +66,12 @@ BEGIN
 			END) AS Gift,
 
 		Sum(CASE 
-			WHEN (ddh.DepositKBN = 2 or ddh.DepositKBN = 4) and (ddh.DataKBN = 3) and mdkbn .SystemKBN = 1 THEN ddh.DepositGaku
+			WHEN ddh.DepositKBN = 2  and ddh.DataKBN = 3 and mdkbn .SystemKBN = 1 THEN ddh.DepositGaku
 			else 0
 			END) AS CashDeposit,	
 		
 		Sum(CASE 
-			WHEN (ddh.DepositKBN = 3 or ddh.DepositKBN = 5) and  (ddh.DataKBN = 3) and mdkbn .SystemKBN = 1 THEN ddh.DepositGaku
+			WHEN ddh.DepositKBN = 3 and ddh.DataKBN = 3 and mdkbn .SystemKBN = 1 THEN ddh.DepositGaku
 			else 0
 			END) AS CashPayment,
 		

@@ -73,7 +73,9 @@ namespace CKM_Controls
         string DisablecolName = string.Empty;
         string EnablecolName = string.Empty;
         string columnName = string.Empty;
-      
+
+        public bool lastKey = false;
+
         public CKM_GridView()
         {
             mtsbl = new MasterTouroku_Souko_BL();
@@ -130,6 +132,7 @@ namespace CKM_Controls
                 // Choose a direction based on the key the user entered
                 Keys direction = Keys.None;
                 Keys reverseKey = Keys.None;
+                
                 switch (keyData)
                 {
                     case Keys.Left:              // Handle Left inside the user's text (if any)
@@ -505,13 +508,23 @@ namespace CKM_Controls
                                 }//(!string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD1"].Value.ToString()) && string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD2"].Value.ToString()))
                             }
                             else
+                            {
+                                lastKey = true;
                                 this.OnValidating(new CancelEventArgs(false));
+                                if (!lastKey)
+                                {
+                                    direction = Keys.Tab;
+                                    reverseKey = Keys.Shift | Keys.Tab;
+                                }
+                            }
+
                         }
                         else
                         {
                             direction = Keys.Tab;
                             reverseKey = Keys.Shift | Keys.Tab;
                         }
+                        lastKey = false;
                         break;
                         
                     case Keys.ProcessKey:
@@ -561,17 +574,20 @@ namespace CKM_Controls
 
                                     if (!found && this.Columns[currColIndex].ReadOnly == true)
                                     {
-                                        readonlyCount++;
+                                        if(this.Columns[currColIndex].Visible == true)
+                                            readonlyCount++;
                                     }
                                     else
                                         found = true;
                                 }
-                                for (int i = 0; i <= readonlyCount-1; i++)
+                                for (int i = 0; i <= readonlyCount; i++)
                                 {
                                     MyProcessCmdKey(direction);
+                                    
                                 }
 
                                 //最終行で行く先がない場合、GridViewのKeydownイベントに処理を任せる
+
                                 if (currColIndex == this.Columns.Count - 1)
                                 {
                                     if (currRowIndex == this.Rows.Count - 1)
@@ -580,7 +596,7 @@ namespace CKM_Controls
                                             this.OnKeyDown(new KeyEventArgs(Keys.Enter));
                                     }
                                 }
-                                    break;
+                                break;
                             case Keys.Shift | Keys.Tab:
                                 while (!found)
                                 {
@@ -601,12 +617,13 @@ namespace CKM_Controls
 
                                     if (!found && this.Columns[currColIndex].ReadOnly == true)
                                     {
-                                        readonlyCount++;
+                                        if (this.Columns[currColIndex].Visible == true)
+                                            readonlyCount++;
                                     }
                                     else
                                         found = true;
                                 }
-                                for (int i = 0; i <= readonlyCount-1; i++)
+                                for (int i = 0; i <= readonlyCount; i++)
                                 {
                                     MyProcessCmdKey(direction);
                                 }
@@ -684,7 +701,8 @@ namespace CKM_Controls
                         case Keys.None:
                             break;
                     }
-                //}
+            this.BeginEdit(true);
+            //}
             //}
         } // MyProcessCmdKey
 
@@ -1051,6 +1069,7 @@ namespace CKM_Controls
         protected override void OnCellValidating(DataGridViewCellValidatingEventArgs e)
         {
             base.OnCellValidating(e);
+            //lastKey = false;
         }
     }
 }
