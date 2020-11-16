@@ -1267,7 +1267,7 @@ namespace HenpinNyuuryoku
                     mGrid.g_DArray[i].CommentInStore = row["Remark"].ToString();
 
                     //税額(Hidden)
-                    mGrid.g_DArray[i].PurchaseTax = bbl.Z_Set(row["PurchaseTax"]);
+                    mGrid.g_DArray[i].PurchaseTax = bbl.Z_Set(row["D_PurchaseTax"]);
                     mGrid.g_DArray[i].PurchaseRows = Convert.ToInt16(row["PurchaseRows"]);
                     mGrid.g_DArray[i].TaxRitsu = Convert.ToInt16(row["TaxRitsu"]);
                     mGrid.g_DArray[i].DeliveryNo = row["DeliveryNo"].ToString();
@@ -1289,7 +1289,7 @@ namespace HenpinNyuuryoku
                 mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
 
             }
-            //CalcKin();
+            CalcKin();
 
             if (OperationMode == EOperationMode.UPDATE )
             {
