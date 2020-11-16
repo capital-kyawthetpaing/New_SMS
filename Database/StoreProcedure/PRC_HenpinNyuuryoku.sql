@@ -92,7 +92,7 @@ BEGIN
           ,DM.CalculationGaku * (-1) AS D_CalculationGaku
           ,DM.AdjustmentGaku * (-1) As D_AdjustmentGaku
           ,DM.PurchaseGaku * (-1) AS D_PurchaseGaku
-          ,DM.PurchaseTax AS D_PurchaseTax
+          ,DM.PurchaseTax * (-1)  AS D_PurchaseTax
           ,DM.TotalPurchaseGaku AS D_TotalPurchaseGaku
           ,DM.CurrencyCD
           ,DM.TaxRitsu

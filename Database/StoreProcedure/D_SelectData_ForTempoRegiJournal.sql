@@ -191,7 +191,8 @@ BEGIN
                           ,denominationKbn.DenominationName
                           ,history.DepositGaku + history.Refund DepositGaku
                           ,history.DepositDateTime
-                          ,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositDateTime ASC) as RANK
+                          --,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositDateTime ASC) as RANK	š
+                          ,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositNO ASC) as RANK
                       FROM #Temp_D_DepositHistory0 history
                       LEFT OUTER JOIN D_Sales sales ON sales.SalesNO = history.Number
                       LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
@@ -310,7 +311,8 @@ BEGIN
                           ,history.DepositDateTime DepositDateTime
                           ,denominationKbn.DenominationName
                           ,history.DepositGaku
-                          ,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositDateTime ASC) as RANK
+                          --,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositDateTime ASC) as RANK	š
+                          ,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositNO ASC) as RANK
                           ,history.Remark
                       FROM #Temp_D_DepositHistory0 history
                       LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
@@ -373,7 +375,8 @@ BEGIN
                           ,denominationKbn.DenominationName
                           ,history.DenominationCD 
                           ,history.DepositGaku
-                          ,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositDateTime ASC) as RANK
+                          --,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositDateTime ASC) as RANK	š
+                          ,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositNO ASC) as RANK
                           ,history.Remark
                      FROM #Temp_D_DepositHistory0 history
                      LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
@@ -428,7 +431,8 @@ BEGIN
                           ,history.DenominationCD
                           ,denominationKbn.DenominationName
                           ,history.DepositGaku
-                          ,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositDateTime ASC) as RANK
+                          --,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositDateTime ASC) as RANK	š
+                          ,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositNO ASC) as RANK
                           ,history.Remark
                       FROM #Temp_D_DepositHistory0 history
                       LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
@@ -503,7 +507,8 @@ BEGIN
                           ,ABS(history.DepositGaku) DepositGaku
                           ,history.ExchangeDenomination
                           ,ABS(history.ExchangeCount) ExchangeCount
-                          ,ROW_NUMBER() OVER (PARTITION BY  history.Number ORDER BY history.DepositDateTime) AS RANK
+                          --,ROW_NUMBER() OVER (PARTITION BY  history.Number ORDER BY history.DepositDateTime) AS RANK	š
+                          ,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositNO ASC) as RANK
                           ,history.Remark
                       FROM #Temp_D_DepositHistory0 history
                       LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
@@ -853,153 +858,154 @@ BEGIN
                   ,COUNT(ByTimeZoneSalesNO_2200_2300) ByTimeZoneSalesNO_2200_2300          -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 22:00`23:00
                   ,COUNT(ByTimeZoneSalesNO_2300_2400) ByTimeZoneSalesNO_2300_2400          -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 23:00`24:00
               FROM (
-                    SELECT history.DepositNO 
-                          ,CONVERT(DATE, history.DepositDateTime) RegistDate  -- “o˜^“ú
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '00:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '01:00' THEN history.TotalGaku
+                    SELECT --history.DepositNO 
+                          --,
+                          CONVERT(DATE, history.DepositDateTime) RegistDate  -- “o˜^“ú
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '00:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '01:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_0000_0100  -- ŽžŠÔ‘Ñ•Ê(Åž) 00:00`01:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '01:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '02:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_0000_0100  -- ŽžŠÔ‘Ñ•Ê(Åž) 00:00`01:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '01:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '02:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_0100_0200  -- ŽžŠÔ‘Ñ•Ê(Åž) 01:00`02:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '02:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '03:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_0100_0200  -- ŽžŠÔ‘Ñ•Ê(Åž) 01:00`02:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '02:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '03:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_0200_0300  -- ŽžŠÔ‘Ñ•Ê(Åž) 02:00`03:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '03:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '04:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_0200_0300  -- ŽžŠÔ‘Ñ•Ê(Åž) 02:00`03:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '03:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '04:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_0300_0400  -- ŽžŠÔ‘Ñ•Ê(Åž) 03:00`04:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '04:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '05:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_0300_0400  -- ŽžŠÔ‘Ñ•Ê(Åž) 03:00`04:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '04:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '05:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_0400_0500  -- ŽžŠÔ‘Ñ•Ê(Åž) 04:00`05:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '05:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '06:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_0400_0500  -- ŽžŠÔ‘Ñ•Ê(Åž) 04:00`05:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '05:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '06:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_0500_0600  -- ŽžŠÔ‘Ñ•Ê(Åž) 05:00`06:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '06:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '07:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_0500_0600  -- ŽžŠÔ‘Ñ•Ê(Åž) 05:00`06:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '06:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '07:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_0600_0700  -- ŽžŠÔ‘Ñ•Ê(Åž) 06:00`07:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '07:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '08:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_0600_0700  -- ŽžŠÔ‘Ñ•Ê(Åž) 06:00`07:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '07:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '08:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_0700_0800  -- ŽžŠÔ‘Ñ•Ê(Åž) 07:00`08:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '08:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '09:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_0700_0800  -- ŽžŠÔ‘Ñ•Ê(Åž) 07:00`08:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '08:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '09:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_0800_0900  -- ŽžŠÔ‘Ñ•Ê(Åž) 08:00`09:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '09:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '10:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_0800_0900  -- ŽžŠÔ‘Ñ•Ê(Åž) 08:00`09:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '09:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '10:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_0900_1000  -- ŽžŠÔ‘Ñ•Ê(Åž) 09:00`10:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '10:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '11:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_0900_1000  -- ŽžŠÔ‘Ñ•Ê(Åž) 09:00`10:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '10:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '11:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_1000_1100  -- ŽžŠÔ‘Ñ•Ê(Åž) 10:00`11:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '11:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '12:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_1000_1100  -- ŽžŠÔ‘Ñ•Ê(Åž) 10:00`11:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '11:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '12:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_1100_1200  -- ŽžŠÔ‘Ñ•Ê(Åž) 11:00`12:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '12:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '13:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_1100_1200  -- ŽžŠÔ‘Ñ•Ê(Åž) 11:00`12:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '12:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '13:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_1200_1300  -- ŽžŠÔ‘Ñ•Ê(Åž) 12:00`13:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '13:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '14:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_1200_1300  -- ŽžŠÔ‘Ñ•Ê(Åž) 12:00`13:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '13:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '14:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_1300_1400  -- ŽžŠÔ‘Ñ•Ê(Åž) 13:00`14:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '14:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '15:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_1300_1400  -- ŽžŠÔ‘Ñ•Ê(Åž) 13:00`14:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '14:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '15:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_1400_1500  -- ŽžŠÔ‘Ñ•Ê(Åž) 14:00`15:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '15:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '16:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_1400_1500  -- ŽžŠÔ‘Ñ•Ê(Åž) 14:00`15:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '15:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '16:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_1500_1600  -- ŽžŠÔ‘Ñ•Ê(Åž) 15:00`16:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '16:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '17:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_1500_1600  -- ŽžŠÔ‘Ñ•Ê(Åž) 15:00`16:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '16:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '17:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_1600_1700  -- ŽžŠÔ‘Ñ•Ê(Åž) 16:00`17:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '17:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '18:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_1600_1700  -- ŽžŠÔ‘Ñ•Ê(Åž) 16:00`17:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '17:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '18:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_1700_1800  -- ŽžŠÔ‘Ñ•Ê(Åž) 17:00`18:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '18:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '19:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_1700_1800  -- ŽžŠÔ‘Ñ•Ê(Åž) 17:00`18:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '18:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '19:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_1800_1900  -- ŽžŠÔ‘Ñ•Ê(Åž) 18:00`19:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '19:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '20:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_1800_1900  -- ŽžŠÔ‘Ñ•Ê(Åž) 18:00`19:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '19:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '20:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_1900_2000  -- ŽžŠÔ‘Ñ•Ê(Åž) 19:00`20:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '20:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '21:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_1900_2000  -- ŽžŠÔ‘Ñ•Ê(Åž) 19:00`20:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '20:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '21:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_2000_2100  -- ŽžŠÔ‘Ñ•Ê(Åž) 20:00`21:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '21:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '22:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_2000_2100  -- ŽžŠÔ‘Ñ•Ê(Åž) 20:00`21:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '21:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '22:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_2100_2200  -- ŽžŠÔ‘Ñ•Ê(Åž) 21:00`22:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '22:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '23:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_2100_2200  -- ŽžŠÔ‘Ñ•Ê(Åž) 21:00`22:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '22:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '23:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_2200_2300  -- ŽžŠÔ‘Ñ•Ê(Åž) 22:00`23:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '23:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '24:00' THEN history.TotalGaku
+                           END) AS ByTimeZoneTaxIncluded_2200_2300  -- ŽžŠÔ‘Ñ•Ê(Åž) 22:00`23:00
+                          ,SUM(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '23:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '24:00' THEN history.TotalGaku
                                 ELSE 0
-                           END AS ByTimeZoneTaxIncluded_2300_2400  -- ŽžŠÔ‘Ñ•Ê(Åž) 23:00`24:00
+                           END) AS ByTimeZoneTaxIncluded_2300_2400  -- ŽžŠÔ‘Ñ•Ê(Åž) 23:00`24:00
                            -- ----------------------------------------------------------------------------------------------------------------------------------------
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '00:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '01:00' THEN sales.SalesNO
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '00:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '01:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_0000_0100  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 00:00`01:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '01:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '02:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_0000_0100  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 00:00`01:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '01:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '02:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_0100_0200  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 01:00`02:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '02:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '03:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_0100_0200  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 01:00`02:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '02:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '03:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_0200_0300  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 02:00`03:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '03:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '04:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_0200_0300  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 02:00`03:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '03:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '04:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_0300_0400  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 03:00`04:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '04:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '05:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_0300_0400  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 03:00`04:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '04:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '05:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_0400_0500  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 04:00`05:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '05:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '06:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_0400_0500  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 04:00`05:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '05:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '06:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_0500_0600  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 05:00`06:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '06:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '07:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_0500_0600  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 05:00`06:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '06:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '07:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_0600_0700  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 06:00`07:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '07:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '08:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_0600_0700  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 06:00`07:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '07:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '08:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_0700_0800  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 07:00`08:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '08:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '09:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_0700_0800  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 07:00`08:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '08:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '09:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_0800_0900  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 08:00`09:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '09:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '10:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_0800_0900  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 08:00`09:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '09:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '10:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_0900_1000  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 09:00`10:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '10:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '11:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_0900_1000  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 09:00`10:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '10:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '11:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_1000_1100  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 10:00`11:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '11:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '12:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_1000_1100  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 10:00`11:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '11:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '12:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_1100_1200  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 11:00`12:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '12:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '13:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_1100_1200  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 11:00`12:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '12:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '13:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_1200_1300  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 12:00`13:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '13:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '14:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_1200_1300  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 12:00`13:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '13:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '14:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_1300_1400  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 13:00`14:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '14:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '15:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_1300_1400  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 13:00`14:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '14:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '15:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_1400_1500  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 14:00`15:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '15:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '16:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_1400_1500  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 14:00`15:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '15:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '16:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_1500_1600  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 15:00`16:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '16:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '17:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_1500_1600  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 15:00`16:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '16:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '17:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_1600_1700  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 16:00`17:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '17:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '18:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_1600_1700  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 16:00`17:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '17:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '18:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_1700_1800  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 17:00`18:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '18:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '19:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_1700_1800  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 17:00`18:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '18:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '19:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_1800_1900  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 18:00`19:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '19:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '20:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_1800_1900  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 18:00`19:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '19:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '20:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_1900_2000  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 19:00`20:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '20:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '21:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_1900_2000  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 19:00`20:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '20:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '21:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_2000_2100  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 20:00`21:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '21:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '22:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_2000_2100  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 20:00`21:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '21:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '22:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_2100_2200  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 21:00`22:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '22:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '23:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_2100_2200  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 21:00`22:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '22:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '23:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_2200_2300  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 22:00`23:00
-                          ,CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '23:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '24:00' THEN sales.SalesNO
+                           END) AS ByTimeZoneSalesNO_2200_2300  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 22:00`23:00
+                          ,MAX(CASE WHEN FORMAT(history.DepositDateTime, 'HH:mm') >= '23:00' AND FORMAT(history.DepositDateTime, 'HH:mm') < '24:00' THEN sales.SalesNO
                                 ELSE NULL
-                           END AS ByTimeZoneSalesNO_2300_2400  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 23:00`24:00
+                           END) AS ByTimeZoneSalesNO_2300_2400  -- ŽžŠÔ‘Ñ•Ê(”„ã”Ô†) 23:00`24:00
                       FROM #Temp_D_DepositHistory0 AS history
                       LEFT OUTER JOIN D_Sales AS sales ON sales.SalesNO = history.Number
                      WHERE history.DataKBN = 2
@@ -1007,6 +1013,7 @@ BEGIN
                        AND history.CancelKBN = 0
                        AND sales.DeleteDateTime IS NULL
                        AND sales.BillingType = 1
+                     group by CONVERT(DATE, history.DepositDateTime), sales.SalesNO
                    ) D
              GROUP BY D.RegistDate
            ) D17;

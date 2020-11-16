@@ -15,7 +15,7 @@ namespace EDIKaitouNoukiTouroku
     {
         static EDIKaitouNoukiBatch_BL ediAPI_bl = new EDIKaitouNoukiBatch_BL();
         string folderPath = string.Empty;
-        const int COL_COUNT = 33;
+        const int COL_COUNT = 29;
         D_EDI_Entity dee = new D_EDI_Entity();
         //string OperatorCD = string.Empty;
 

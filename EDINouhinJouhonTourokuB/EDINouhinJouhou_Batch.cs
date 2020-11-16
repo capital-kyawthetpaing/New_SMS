@@ -22,7 +22,6 @@ namespace EDINouhinJouhonTourokuB
         static DataTable dtImportB, dtImportD;
         static DataTable dtImport = new DataTable();
 
-
         const int COL_COUNT = 36;
         public void Import(M_MultiPorpose_Entity mmpe)
         {
@@ -104,25 +103,26 @@ namespace EDINouhinJouhonTourokuB
                 if (ext.Equals(".csv"))
                 {
                     dtImport = CSVToTable(filePath);
-                    //dtImport.Columns["ImportFile"]
                 }
 
-                if(dtImport.Rows.Count>0)
+                
+                if (dtImport.Rows.Count>0)
                 {
-                    if (dtImport.Rows[0]["レコード区分"].ToString() == "B" && dtImport.Rows[0]["データ区分"].ToString() == "21")
+                    if (dtImport.Rows[0]["A"].ToString() == "B" && dtImport.Rows[0]["B"].ToString() == "21")
                     {
-                        if (CheckColName(colNameB, dtImport))
-                        {
+                        //if (CheckColName(colNameB, dtImport))
+                        //{
+                        Para_Add(dtImportB);
                             dtImportB = ChangeColName(dtImport,"B");
                             
-                        }
+                        //}
                     }
-                    else if(dtImport.Rows[0]["レコード区分"].ToString() == "D" && dtImport.Rows[0]["データ区分"].ToString() == "21")
+                    else if(dtImport.Rows[0]["A"].ToString() == "D" && dtImport.Rows[0]["B"].ToString() == "21")
                     {
-                        if (CheckColName(colNameD, dtImport))
-                        {
+                        //if (CheckColName(colNameD, dtImport))
+                        //{
                             dtImportD = ChangeColName(dtImport,"D");
-                        }
+                        //}
                     }
 
                 }
@@ -160,6 +160,7 @@ namespace EDINouhinJouhonTourokuB
         public DataTable CSVToTable(string filePath)
         {
             DataTable csvData = new DataTable();
+            string firstColHeader = "2";
             try
             {
                 using (TextFieldParser csvReader = new TextFieldParser(filePath, Encoding.GetEncoding(932)))
@@ -169,18 +170,37 @@ namespace EDINouhinJouhonTourokuB
                     csvReader.HasFieldsEnclosedInQuotes = true;
 
                     string[] colFields = csvReader.ReadFields();
+                    char c = 'A';
+
+
+                    if (colFields.Length != COL_COUNT)
+                    {
+
+                        while (colFields.Count() > COL_COUNT)
+                        {
+                            colFields = colFields.Take(colFields.Count() - 1).ToArray();
+                        }
+
+                        while (colFields.Count() < COL_COUNT)
+                        {
+                            Array.Resize(ref colFields, colFields.Length + 1);
+                            colFields[colFields.Length - 1] = null;
+                        }
+                    }
 
                     foreach (string column in colFields)
                     {
 
-                        DataColumn datecolumn = new DataColumn(column);
-
-                        datecolumn.AllowDBNull = true;
-
-                        csvData.Columns.Add(datecolumn);
+                        DataColumn datacolumn = new DataColumn(c++.ToString());
+                        datacolumn.AllowDBNull = true;
+                        csvData.Columns.Add(datacolumn);
+                    }
+                    if (firstColHeader.Equals("2")) // first row is data
+                    {
+                        csvData.Rows.Add(colFields);//add first row as data row
                     }
 
-                    while (!csvReader.EndOfData)
+                     while (!csvReader.EndOfData)
                     {
                         string[] fieldData = csvReader.ReadFields();
 
@@ -212,6 +232,55 @@ namespace EDINouhinJouhonTourokuB
                     return false;
             }
             return true;
+
+        }
+
+        private void Para_Add(DataTable dt)
+        {
+            
+            dt.Columns.Add("SKENRecordKBN", typeof(string));  //レコード区分 
+            dt.Columns.Add("SKENDataKBN", typeof(string)); //データ区分
+            dt.Columns.Add("SKENTorihikisakiCD", typeof(string));    //取引先会社部署CD
+            dt.Columns.Add("SKENTorihikisakiMei", typeof(string)); //取引先企業部署名
+            dt.Columns.Add("SKENNouhinmotoCD", typeof(string));     //納品元会社部署CD
+
+            dt.Columns.Add("SKENNouhinmotoMei", typeof(string)); // //納品元企業部署名
+            dt.Columns.Add("SKENHanbaitenCD", typeof(string));   //販売店会社部署CD
+            dt.Columns.Add("SKENHanbaitenMei", typeof(string)); // 販売店会社部署名
+            dt.Columns.Add("SKENSyukkasakiCD", typeof(string));   //出荷先会社部署CD
+            dt.Columns.Add("SKENSyukkasakiMei", typeof(string)); //出荷先会社部署名
+
+            dt.Columns.Add("SKENNouhinshoNO", typeof(string));  //納品書NO
+            dt.Columns.Add("SKENDenpyouKBN", typeof(string));   //伝票区分
+            dt.Columns.Add("SKENJuchuuDate", typeof(string)); // 受注日
+            dt.Columns.Add("SKENSyukkaDate", typeof(string));  //出荷日
+            dt.Columns.Add("SKENNouhinDate", typeof(string)); // 納品/返品伝票日
+
+            dt.Columns.Add("SKENNouhinshoNO", typeof(string));  //発注NO
+            dt.Columns.Add("SKENHacchuuKBN", typeof(string));  //発注区分
+            dt.Columns.Add("SKENDenpyoua", typeof(string)); //伝票表示a
+            dt.Columns.Add("SKENDenpyoub", typeof(string)); //伝票表示b
+            dt.Columns.Add("SKENDenpyouc", typeof(string)); // 伝票表示c
+
+            dt.Columns.Add("SKENDenpyoud", typeof(string));  //伝票表示d
+            dt.Columns.Add("SKENUnsouHouhou", typeof(string));  //運送方法
+            dt.Columns.Add("SKENKosuu", typeof(string));  //個数
+            dt.Columns.Add("SKENUnchinKBN", typeof(string)); //運賃区分
+            dt.Columns.Add("SKENSyogakari", typeof(string)); //諸掛
+
+            dt.Columns.Add("SKENUnchin", typeof(string)); //運賃
+            dt.Columns.Add("SKENShinadai", typeof(string)); //品代合計
+            dt.Columns.Add("SKENSyouhiZei", typeof(string)); //消費税
+            dt.Columns.Add("SKENSougoukei", typeof(string));  //総合計
+            dt.Columns.Add("SKENMakerDenpyou", typeof(string)); // メーカー伝票NO
+
+            dt.Columns.Add("SKENMotoDenNO", typeof(string));  //元伝NO
+            dt.Columns.Add("SKENYobi1", typeof(string)); //予備1
+            dt.Columns.Add("SKENYobi2", typeof(string)); // 予備2
+            dt.Columns.Add("SKENYobi3", typeof(string));   //予備3
+            dt.Columns.Add("SKENYobi4", typeof(string));  //予備4
+
+            dt.Columns.Add("SKENYobi5", typeof(string)); //予備5
 
         }
         protected DataTable ChangeColName(DataTable dtImport,string c)
@@ -309,7 +378,7 @@ namespace EDINouhinJouhonTourokuB
             return dtImport;
         }
 
-        private void Para_Add(DataTable dt)
+        private void Para_Add(DataTable dt,string ch)
         {
             dt.Columns.Add("ImportDetailsSu");  //'エラーなく取り込んだ行数 
             dt.Columns.Add("ErrorSu"); //エラーがあった行数
