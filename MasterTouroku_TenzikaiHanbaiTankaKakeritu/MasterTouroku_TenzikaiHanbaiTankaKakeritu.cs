@@ -429,12 +429,14 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                                 {
                                     MessageBox.Show("enter valid no");
                                     GV_Tenzaishohin.RefreshEdit();
+                                    GV_Tenzaishohin.lastKey = true;
                                 }
                             }
                             else
                             {
                                 MessageBox.Show("enter valid no");
                                 GV_Tenzaishohin.RefreshEdit();
+                                GV_Tenzaishohin.lastKey = true;
                             }
                         }
                         else
@@ -449,21 +451,25 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                                 {
                                     MessageBox.Show("enter valid no");
                                     GV_Tenzaishohin.RefreshEdit();
+                                    GV_Tenzaishohin.lastKey = true;
                                 }
                             }
                             else
                             {
                                 MessageBox.Show("enter valid no");
                                 GV_Tenzaishohin.BeginEdit(true);
+                                GV_Tenzaishohin.lastKey = true;
                             }
                        
                         }
+                        GV_Tenzaishohin.lastKey = false;
                     }
                     else
                     {
                         //MessageBox.Show("enter valid no");
                         bbl.ShowMessage("E102");
                         GV_Tenzaishohin.BeginEdit(true);
+                        GV_Tenzaishohin.lastKey = true;
                     }
                 }
 
