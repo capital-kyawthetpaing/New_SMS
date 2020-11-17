@@ -13,6 +13,9 @@ using Entity;
 using System.Diagnostics;
 using DL;
 using System.Runtime.InteropServices;
+using Tulpep.NotificationWindow;
+using System.IO;
+using static CKM_Controls.CKM_Button;
 
 namespace MainMenu
 {
@@ -21,13 +24,15 @@ namespace MainMenu
         DataTable menu;
         CKM_Button btnleftcurrent;
         CKM_Button btnrightcurrent;
-
-
+        private string fbase = "";// AppDomain.CurrentDomain.BaseDirectory.Replace("bin\\Debug\\", "") + @"MainMenu\Logos\";
+        private DataTable Dflg = null;
         M_Staff_Entity mse;
         Menu_BL mbl;
         string Staff_CD = "";
         string btnText = string.Empty;
-
+        private int Mstate = 0;
+        private int Hstate = 0;
+        private bool Defg = false;
         public Main_Menu(String SCD, M_Staff_Entity mse)
         {
             this.mse = mse;
@@ -56,19 +61,115 @@ namespace MainMenu
         {
             this.ResizeRedraw = false;
             BindButtonName();
-            ChangeFont();
+            ChangeFont(CKM_FontSize.XSmall);
+            
+            
+            if (Login_BL.Islocalized)
+            {
+                Login_BL loginbl = new Login_BL();
+                var df =loginbl.CheckDefault("1", Staff_CD);// MenuFlg 1 for MainMenuCapital
+                if (df.Rows.Count > 0)
+                {
+                    Dflg = df;
+                    if (df.Rows[0]["SettingKBN"].ToString() == "1")
+                        pictureBox2.Visible = true;
+                    if (df.Rows[0]["DefaultKBN"].ToString() == "0")
+                        Setting(df);
+                    else
+                        Defg = true;
 
-            //  TextRenderer.MeasureText("12345", btnProj1.Font);
-            /// btnProj1.Font = new Font(Font, FontStyle.Bold);
-
-            // Font dd;
-
-            // this.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Bold);
-            //  this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+                }
+                
+            }
             ButtonState();
+        }
+        private void Setting(DataTable df)
+        {
+            //menuLogo
+            //var L_pth = Login_BL.FtpPath.Replace("Sync", "Setting") + df.Rows[0]["M_LogoName"].ToString();
+            //var Bitmap = FTPData.GetImage(L_pth);
+            //if (Bitmap == null)
+            //{
+            //    MessageBox.Show("Server error");
+            //    return;
+            //}
+            pictureBox1.Image =  Getbm((df.Rows[0]["M_LogoCD"] as byte[]));
+            //Icon
+            //var I_Pth = Login_BL.FtpPath.Replace("Sync", "Setting") + df.Rows[0]["IconName"].ToString();
+            //var FStream = FTPData.GetImageStream(I_Pth);
+            try
+            {
+                this.Icon = new System.Drawing.Icon(new MemoryStream(df.Rows[0]["IconCD"] as byte[]), 32, 32);
+            }
+            catch
+            { }
+            //Theme
+            var cname = df.Rows[0]["ThemeKBN"].ToString();
+            try
+            {
+                panelRight.BackColor = panel3.BackColor = panel1.BackColor = System.Drawing.ColorTranslator.FromHtml(cname); ;
+            }
+            catch
+            {
+                panelRight.BackColor = panel3.BackColor = panel1.BackColor = System.Drawing.ColorTranslator.FromHtml("#"+cname); ;
+            }
+            // Font 
+            var val = Convert.ToInt32(df.Rows[0]["FSKBN"].ToString());
+            var fstyle = Convert.ToInt32(df.Rows[0]["FWKBN"].ToString());
+            if (val == 1)
+            {
+                ChangeFont((CKM_FontSize.Normal), fstyle);
+            }
+            else if (val == 2)
+            {
+                ChangeFont((CKM_FontSize.XSmall), fstyle);
+            }
+            else if (val == 3)
+            {
+                ChangeFont((CKM_FontSize.Small), fstyle);
+            }
+            else if (val == 4)
+            {
+                ChangeFont((CKM_FontSize.Medium), fstyle);
+            }
+            else if (val == 5)
+            {
+                ChangeFont((CKM_FontSize.Large), fstyle);
+            }
+            else if (val == 6)
+            {
+                ChangeFont((CKM_FontSize.XLarge), fstyle);
+            }
+
+            Mstate = Convert.ToInt32(df.Rows[0]["M_NormalKBN"].ToString());
+            Hstate = Convert.ToInt32(df.Rows[0]["M_HoverKBN"].ToString());
+            //
+        }
+        private Bitmap Getbm(byte[] blob)
+        {
+            MemoryStream mStream = new MemoryStream();
+            byte[] pData = blob;
+            mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+            Bitmap bm = new Bitmap(mStream, false);
+            mStream.Dispose();
+            return bm;
+        }
+        public static string StringToColor(string colorStr)
+        {
+            string name = colorStr;
+            //foreach (KnownColor kc in Enum.GetValues(typeof(KnownColor)))
+            //{
+            //    Color known = Color.FromKnownColor(kc);
+            //    if (colorToCheck.ToArgb() == known.ToArgb())
+            //    {
+            //        name = known.Name;
+            //    }
+            //}
+            return name;
         }
         protected void ButtonState()
         {
+            int state = Mstate;
             var c = GetAllControls(this);
             for (int i = 0; i < c.Count(); i++)
             {
@@ -82,31 +183,56 @@ namespace MainMenu
 
                     if ((ctrl as CKM_Button).Parent is Panel && (((ctrl as CKM_Button).Parent as Panel).Name == "panelLeft" || ((ctrl as CKM_Button).Parent as Panel).Name == "panel_right"))
                     {
-
-
                         (ctrl as CKM_Button).ForeColor = Color.White; ;
                         ////(ctrl as CKM_Button).BackgroundImageLayout = ImageLayout.Stretch;
                         ///
                         if (((ctrl as CKM_Button).Parent as Panel).Name == "panel_right")
                         {
-                            (ctrl as CKM_Button).BackgroundImage = MainMenu.Properties.Resources.bn_9;
+                            (ctrl as CKM_Button).BackgroundImage = Properties.Resources.bn_9;
                             (ctrl as CKM_Button).ForeColor = Color.Black; ;
                             (ctrl as CKM_Button).FlatAppearance.BorderColor = Color.White;
+
                         }
                         else
                         {
-                            (ctrl as CKM_Button).BackgroundImage = MainMenu.Properties.Resources.bm_3;
+                            if (state == 0 || state == 1)
+                            {
+                                (ctrl as CKM_Button).BackgroundImage = Properties.Resources.bm_3;
+                            }
+                            else if (state == 2)
+                            {
+                                (ctrl as CKM_Button).BackgroundImage = Properties.Resources.MTennic;// Image.FromFile(fbase + "MTennic.png");
+                            }
+                            else if (state == 3)
+                            {
+                                (ctrl as CKM_Button).BackgroundImage = Properties.Resources.MHaspo; //Image.FromFile(fbase + "MHaspo.png");
+                                (ctrl as CKM_Button).ForeColor = Color.Black; ;
+                            }
+                            else if (state == 4)
+                            {
+                                (ctrl as CKM_Button).BackgroundImage = Properties.Resources.MOther; //Image.FromFile(fbase + "MOther.png");
+                            }
+
                         }
                         (ctrl as CKM_Button).BackgroundImageLayout = ImageLayout.Stretch;
                     }
                 }
             }
-
-            btnLogin.Font = new Font("MS Gothic", 22, FontStyle.Bold);
+            if (!Defg)
+            {
+              //  ckM_Label1.Font = lblOperatorName.Font = lblLoginDate.Font = d;
+                // btnLogin.Font = new Font("MS Gothic", 22, FontStyle.Bold);
+            }
+            else
+            {
+                btnLogin.Font = new Font("MS Gothic", 22, FontStyle.Bold);
+            }
         }
-        protected void ChangeFont()
+        private Font d = null;
+        protected void ChangeFont(CKM_FontSize fs, int fstyle = 0)
         {
-          //  var c = GetAllControls(this);
+           d = this.Font;
+            //  var c = GetAllControls(this);
             var c = GetAllControls(this);
             for (int i = 0; i < c.Count(); i++)
             {
@@ -114,15 +240,38 @@ namespace MainMenu
 
                 if (ctrl is CKM_Button ctrb)
                 {
-                    ctrb.Font_Size = CKM_Button.CKM_FontSize.XSmall;
+                    ctrb.Font_Size = fs;
+                    if (fstyle != 0)
+                    {
+                        //1 regular
+                        //2 bold
+                        //3 italic
+                        if (fstyle == 1)
+                        {
+                            d= ctrb.Font = new System.Drawing.Font("MS Gothic", ctrb.Font.Size, System.Drawing.FontStyle.Regular);
+                        }
+                        else if (fstyle == 2)
+                        {
+                            d = ctrb.Font = new System.Drawing.Font("MS Gothic", ctrb.Font.Size, System.Drawing.FontStyle.Bold);
+                        }
+                        else if (fstyle == 3)
+                        {
+                            d = ctrb.Font = new System.Drawing.Font("MS Gothic", ctrb.Font.Size, System.Drawing.FontStyle.Italic);
+                        }
+
+                    }
                 }
-                else if (ctrl is CKM_Label ctl )
+                else if (ctrl is CKM_Label ctl)
                 {
-                 ///   ctl.Font_Size = CKM_Label.CKM_FontSize.Small;
+                    ///   ctl.Font_Size = CKM_Label.CKM_FontSize.Small;
                 }
             }
-
-
+            if (fstyle != 0)
+            {
+                if (!Defg)
+                btnLogin.Font = d;
+            }
+           
         }
         protected void BindButtonName()
         {
@@ -248,6 +397,16 @@ namespace MainMenu
             string filePath = ""; string cmdLine = ""; string exe_name = "";
             try
             {
+              if ((sender as CKM_Button).Text == "権限設定")
+                {
+                    Login_BL loginbl = new Login_BL();
+                    var df = loginbl.CheckDefault("1", Staff_CD);
+                    if (df.Rows[0]["AdminKBN"].ToString() == "0")
+                    {
+                        MessageBox.Show("You have no permission to this access.");
+                        return;
+                    }
+                }
             var programID = (sender as CKM_Button).Text;
              exe_name = menu.Select("ProgramID = '"+programID+"'").CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
                 //System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
@@ -342,30 +501,60 @@ namespace MainMenu
         public static extern bool SetForegroundWindow(IntPtr hwnd);
         private void panelRight_MouseEnter(object sender, EventArgs e)
         {
-            (sender as CKM_Button).BackgroundImage = Properties.Resources.bmback_3;
-            (sender as CKM_Button).ForeColor = Color.Black;
-           // (sender as CKM_Button).Font = new System.Drawing.Font((sender as CKM_Button).Font.FontFamily, (sender as CKM_Button).Font.SizeInPoints, System.Drawing.FontStyle.Bold);
+            if (Hstate == 0 || Hstate == 1)
+            {
+                (sender as CKM_Button).BackgroundImage = Properties.Resources.bmback_3;
+                (sender as CKM_Button).ForeColor = Color.Black;
+            }
+            else if (Hstate == 2)
+            {
 
-            //  (sender as Button).BackColor = Color.Khaki;
+                (sender as CKM_Button).BackgroundImage = Properties.Resources.HTennic; //Image.FromFile(fbase + "HTennic.png");
+                (sender as CKM_Button).ForeColor = Color.Black;
+            }
+            else if (Hstate == 3)
+            {
+                (sender as CKM_Button).BackgroundImage = Properties.Resources.HHaspo;// Image.FromFile(fbase + "HHaspo.png");
+                (sender as CKM_Button).ForeColor = Color.White;
+            }
+            else if (Hstate == 4)
+            {
+                (sender as CKM_Button).BackgroundImage = Properties.Resources.HOther;// Image.FromFile(fbase + "HOther.png");
+                (sender as CKM_Button).ForeColor = Color.Black;
+            }
         }
 
         private void panelRight_MouseLeave(object sender, EventArgs e)
         {
             if ((sender) as CKM_Button != btnleftcurrent)
-            // (sender as CKM_Button).BackColor = Color.FromArgb(192, 255, 192);
             {
                 (sender as CKM_Button).BackgroundImage = Properties.Resources.bn_9;
                 (sender as CKM_Button).ForeColor = Color.Black;
-             //   (sender as CKM_Button).Font = new System.Drawing.Font((sender as CKM_Button).Font.FontFamily, (sender as CKM_Button).Font.SizeInPoints, System.Drawing.FontStyle.Regular);
-
             }
-            //if ((sender) as Button != btnrightcurrent)
-            //    (sender as Button).BackColor = Color.FromArgb(255, 224, 192);
         }
         private void panelLeft_MouseEnter(object sender, EventArgs e)
         {
-            (sender as CKM_Button).BackgroundImage = Properties.Resources.bmback_3;
-            (sender as CKM_Button).ForeColor = Color.Black;
+            if (Hstate == 1 || Hstate == 0)
+            {
+                (sender as CKM_Button).BackgroundImage = Properties.Resources.bmback_3;
+                (sender as CKM_Button).ForeColor = Color.Black;
+            }
+            else if (Hstate == 2)
+            {
+
+                (sender as CKM_Button).BackgroundImage = Properties.Resources.HTennic;// HOther  Image.FromFile(fbase+"HTennic.png");
+                (sender as CKM_Button).ForeColor = Color.Black;
+            }
+            else if (Hstate == 3)
+            {
+                (sender as CKM_Button).BackgroundImage = Properties.Resources.HHaspo;// Image.FromFile(fbase + "HHaspo.png");
+                (sender as CKM_Button).ForeColor = Color.White;
+            }
+            else if (Hstate == 4)
+            {
+                (sender as CKM_Button).BackgroundImage = Properties.Resources.HOther;// Image.FromFile(fbase + "HOther.png");
+                (sender as CKM_Button).ForeColor = Color.Black;
+            }
            // (sender as CKM_Button).Font = new System.Drawing.Font((sender as CKM_Button).Font.FontFamily, (sender as CKM_Button).Font.SizeInPoints , System.Drawing.FontStyle.Bold);
             
         }
@@ -373,12 +562,25 @@ namespace MainMenu
         private void panelLeft_MouseLeave(object sender, EventArgs e)
         {
             if ((sender) as CKM_Button != btnleftcurrent)
-            // (sender as CKM_Button).BackColor = Color.FromArgb(192, 255, 192);
             {
                 (sender as CKM_Button).BackgroundImage = Properties.Resources.bm_3;
                 (sender as CKM_Button).ForeColor = Color.White;
-             //   (sender as CKM_Button).Font = new System.Drawing.Font((sender as CKM_Button).Font.FontFamily, (sender as CKM_Button).Font.SizeInPoints, System.Drawing.FontStyle.Regular);
 
+            }
+            if (Mstate == 2)
+            {
+                (sender as CKM_Button).BackgroundImage = Properties.Resources.MTennic;// Image.FromFile(fbase + "MTennic.png");
+                (sender as CKM_Button).ForeColor = Color.White;
+            }
+            else if (Mstate == 3)
+            {
+                (sender as CKM_Button).BackgroundImage = Properties.Resources.MHaspo;// Image.FromFile(fbase + "MHaspo.png");
+                (sender as CKM_Button).ForeColor = Color.Black;
+            }
+            else if (Mstate == 4)
+            {
+                (sender as CKM_Button).BackgroundImage = Properties.Resources.MOther;// Image.FromFile(fbase + "MOther.png");
+                (sender as CKM_Button).ForeColor = Color.White;
             }
         }
         public void Main_Menu_FormClosing(object sender, FormClosingEventArgs e)
@@ -465,8 +667,47 @@ namespace MainMenu
         private void btnLogin_MouseLeave(object sender, EventArgs e)
         {
             (sender as CKM_Button).BackgroundImage = Properties.Resources.bn_15;
-            (sender as CKM_Button).Font = new Font("MS Gothic",22,FontStyle.Bold);
+            // 
+            if (!Defg)
+            (sender as CKM_Button).Font = d;
+            else
+                (sender as CKM_Button).Font = new Font("MS Gothic", 22, FontStyle.Bold);
             (sender as CKM_Button).ForeColor = Color.White;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Setting st = new Setting();
+            st.Width = (sender as PictureBox).Location.X+10;
+            var y =   this.Location.Y +30;
+            var x = this.Location.X;
+            st.Location = new Point(x,y);
+            st.LC = new Point(x, y);
+            var m = "";
+            if (this.Name.Contains("Main"))
+            {
+                m = "MainMenu";
+            }
+            else
+            {
+                m = "StoreMenu";
+            }
+            Login_BL loginbl = new Login_BL();
+            var df = loginbl.CheckDefault("1", Staff_CD);// MenuFlg 1 for MainMenuCapital
+            st.Dflg = df;
+            st.MenuID = m;
+            st.OperatorName = lblOperatorName.Text;
+            st.StaffCD = Staff_CD;
+            st.MCD = "1";
+            st.ShowDialog();
+        }
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            (sender as PictureBox).Image = Properties.Resources.img_380355;
+        }
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as PictureBox).Image = Properties.Resources.HoverSetting;
         }
     }
 }
