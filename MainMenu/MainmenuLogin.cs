@@ -10,8 +10,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
 using CKM_Controls;
+using DL;
 using Entity;
 using Tulpep.NotificationWindow;
+using System.IO;
+using static CKM_Controls.CKM_Button;
 
 namespace MainMenu
 {
@@ -19,6 +22,7 @@ namespace MainMenu
     {
         Login_BL loginbl;
         M_Staff_Entity mse;
+        FTPData ftp = new FTPData();
         public MainmenuLogin()
         {
             this.KeyPreview = true;
@@ -29,6 +33,8 @@ namespace MainMenu
             }
             else
                 ckM_Button3.Visible = false;
+
+            Login_BL.Ver = label2.Text;
         }
 
         private bool ErrorCheck()
@@ -70,15 +76,82 @@ namespace MainMenu
             loginbl = new Login_BL();
             txtOperatorCD.Focus();
             Add_ButtonDesign();
-            //loginbl = new Login_BL();
-            //PopupNotifier pop = new PopupNotifier();
-            //pop.TitleText = "New Updates are Available Now!";
-            //pop.ContentText = "Press F11 to download new features";
-            //pop.Popup();
-            //  pop.
+           
+            //if (Login_BL.Islocalized)
+            //{
+            //    //var DefaultFlg = loginbl.CheckDefault("1"); // MenuFlg
+            //    //if (DefaultFlg.Rows.Count > 0)
+            //    //{
+            //    //    if (DefaultFlg.Rows[0]["DefaultKBN"].ToString() == "0")
+            //    //        Setting(DefaultFlg);
+            //    //}
+            //}
+
 
         }
-
+        private void ChangeFont_(DataTable df)
+        {
+            var val = Convert.ToInt32(df.Rows[0]["FSKBN"].ToString());
+            if (val == 1)
+            {
+                ChangeFont((CKM_FontSize.Normal));
+            }
+            else if (val == 2)
+            {
+                ChangeFont((CKM_FontSize.XSmall));
+            }
+            else if (val == 3)
+            {
+                ChangeFont((CKM_FontSize.Small));
+            }
+            else if (val == 4)
+            {
+                ChangeFont((CKM_FontSize.Medium));
+            }
+            else if (val == 5)
+            {
+                ChangeFont((CKM_FontSize.Large));
+            }
+            else if (val == 6)
+            {
+                ChangeFont((CKM_FontSize.XLarge));
+            }
+    
+        }
+        private void ChangeFont(CKM_Button.CKM_FontSize fs)
+        {
+            ckM_Button2.Font_Size = ckM_Button3.Font_Size = ckM_Button1.Font_Size = fs;
+        }
+        private void Setting(DataTable df)
+        {
+            //LoginLogo  
+            //  var L_pth = Login_BL.FtpPath.Replace("Sync", "Setting")+ df.Rows[0]["L_LogoName"].ToString();    /// FTP Logic
+            // var Bitmap = FTPData.GetImage(L_pth);
+            //if (Bitmap == null)
+            //{
+            //    MessageBox.Show("Server error");
+            //    return;
+            //}
+            //var I_Pth= Login_BL.FtpPath.Replace("Sync", "Setting") + df.Rows[0]["IconName"].ToString();        /// FTP Logic
+            //  var FStream = FTPData.GetImageStream(I_Pth);
+            pictureBox1.Image =Getbm((df.Rows[0]["L_LogoCD"] as byte[]));
+            try
+            {
+                this.Icon = new System.Drawing.Icon(new MemoryStream(df.Rows[0]["IconCD"] as byte[]), 32, 32);
+            }
+            catch
+            { }
+            ChangeFont_(df);
+        }
+        private Bitmap Getbm(byte[] blob)
+        {
+            MemoryStream mStream = new MemoryStream();
+            byte[] pData = blob;
+            mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+            Bitmap bm = new Bitmap(mStream, false);
+            mStream.Dispose();
+            return bm;
+        }
         private void MainmenuLogin_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -236,6 +309,16 @@ namespace MainMenu
         {
             (sender as CKM_Button).BackgroundImage = Properties.Resources.bm_3;
             (sender as CKM_Button).ForeColor = Color.White;
+        }
+
+        private void txtOperatorCD_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

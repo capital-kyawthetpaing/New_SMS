@@ -2658,8 +2658,9 @@ namespace MasterTouroku_TenzikaiShouhin
                             return false;
                         }
                     }
-                    //string editvalue = dr["SKUCD"].ToString();
-                    //int inde = editvalue.IndexOf('.');
+
+                   
+
                     //int count = editvalue.Count(f => f == '.');
                     //string charre = editvalue.Remove(inde, count);
                     //var isNumeric = int.TryParse(charre, out int n);
@@ -2667,17 +2668,15 @@ namespace MasterTouroku_TenzikaiShouhin
                     //{
                     //    if (count != 1 || inde >= 4)
                     //    {
-
-
-
                     //    }
-
                     //}
                 }
 
             }
             return true;
         }
+
+       
         private void SetTenjiGrid(DataTable dt, bool IsShow = false)
         {
             SetMultiColNo(dt);
@@ -2763,10 +2762,13 @@ namespace MasterTouroku_TenzikaiShouhin
                         //    }
                         int w_Row;
                         DataTable dtrest = GetGridData();
-
+                    
                         foreach (DataRow dr in dt.Rows)   // Meisai Dt
                         {
-                            if (dr[0] != DBNull.Value)
+
+                       
+
+                        if (dr[0] != DBNull.Value)
                             {
                                 mGrid.g_DArray[c].JANCD = mGrid.g_DArray[c].Jancdold = dr["JANCD"].ToString();
                                 mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
@@ -2777,14 +2779,15 @@ namespace MasterTouroku_TenzikaiShouhin
                                 mGrid.g_DArray[c].SizeName = dr["サイズ名"].ToString();
                                 mGrid.g_DArray[c].HanbaiYoteiDateMonth = dr["販売予定日(月)"].ToString();
                                 mGrid.g_DArray[c].HanbaiYoteiBi = dr["販売予定日"].ToString();
-                                mGrid.g_DArray[c].Shiiretanka = bbl.Z_SetStr(dr["仕入単価"].ToString());
-                                mGrid.g_DArray[c].JoutaiTanka = bbl.Z_SetStr(dr["上代単価"].ToString());
-                                mGrid.g_DArray[c].SalePriceOutTax = bbl.Z_SetStr(dr["標準売上単価"].ToString());
-                                mGrid.g_DArray[c].SalePriceOutTax1 = bbl.Z_SetStr(dr["ランク１単価"].ToString());
-                                mGrid.g_DArray[c].SalePriceOutTax2 = bbl.Z_SetStr(dr["ランク２単価"].ToString());
-                                mGrid.g_DArray[c].SalePriceOutTax3 = bbl.Z_SetStr(dr["ランク３単価"].ToString());
-                                mGrid.g_DArray[c].SalePriceOutTax4 = bbl.Z_SetStr(dr["ランク４単価"].ToString());
-                                mGrid.g_DArray[c].SalePriceOutTax5 = bbl.Z_SetStr(dr["ランク５単価"].ToString());
+                                //mGrid.g_DArray[c].Shiiretanka = bbl.Z_SetStr(dr["仕入単価"].ToString());
+                                mGrid.g_DArray[c].Shiiretanka = bbl.Z_SetStr(RemoveNum(dr["仕入単価"].ToString()));
+                                mGrid.g_DArray[c].JoutaiTanka = bbl.Z_SetStr(RemoveNum(dr["上代単価"].ToString()));
+                                mGrid.g_DArray[c].SalePriceOutTax = bbl.Z_SetStr(RemoveNum(dr["標準売上単価"].ToString()));
+                                mGrid.g_DArray[c].SalePriceOutTax1 = bbl.Z_SetStr(RemoveNum(dr["ランク１単価"].ToString()));
+                                mGrid.g_DArray[c].SalePriceOutTax2 = bbl.Z_SetStr(RemoveNum(dr["ランク２単価"].ToString()));
+                                mGrid.g_DArray[c].SalePriceOutTax3 = bbl.Z_SetStr(RemoveNum(dr["ランク３単価"].ToString()));
+                                mGrid.g_DArray[c].SalePriceOutTax4 = bbl.Z_SetStr(RemoveNum(dr["ランク４単価"].ToString()));
+                                mGrid.g_DArray[c].SalePriceOutTax5 = bbl.Z_SetStr(RemoveNum(dr["ランク５単価"].ToString()));
                                 mGrid.g_DArray[c].BrandCD = dr["ブランドCD"].ToString();//
                                 mGrid.g_DArray[c].SegmentCD = dr["セグメントCD"].ToString();
                                 mGrid.g_DArray[c].TaniCD = dr["単位CD"].ToString();//
@@ -2794,8 +2797,18 @@ namespace MasterTouroku_TenzikaiShouhin
 
                             }
                         }
-                                    }
+                }
             }
+        }
+        private String RemoveNum(string num)
+        {
+
+            int inde = num.Count();
+            if (inde > 9)
+            {
+                num = num.Remove(9);
+            }
+            return num;
         }
         private void Scr_Lock(short no1, short no2, short Kbn)
         {
@@ -3544,7 +3557,6 @@ namespace MasterTouroku_TenzikaiShouhin
             }
             checkmei = false;
         }
-
         protected Boolean ColumnCheck(String[] colName, DataTable dtMain)
         {
             DataColumnCollection cols = dtMain.Columns;
@@ -3558,8 +3570,7 @@ namespace MasterTouroku_TenzikaiShouhin
             return true;
         }
 
-      
-        
+
         private void FlgChange(int w_Row, bool Flg)
         {
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.HanbaiYoteiDateMonth, w_Row].Cell_Enabled = Flg;

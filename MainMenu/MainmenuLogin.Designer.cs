@@ -260,6 +260,7 @@
             this.txtOperatorCD.TabIndex = 1;
             this.txtOperatorCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.FMedium;
             this.txtOperatorCD.UseColorSizMode = false;
+            this.txtOperatorCD.TextChanged += new System.EventHandler(this.txtOperatorCD_TextChanged);
             // 
             // MainmenuLogin
             // 

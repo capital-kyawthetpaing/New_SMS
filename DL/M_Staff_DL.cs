@@ -17,6 +17,15 @@ namespace DL
         /// <returns></returns>
         /// 
 
+
+        public DataTable CheckDefault(string mse)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@MenuCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse } }
+            };
+            return SelectData(dic, "SettingCheckDefault");
+        }
         public DataTable Check_RegisteredMenu(M_Staff_Entity mse)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>

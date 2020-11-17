@@ -118,11 +118,47 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="HHaspo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HHaspo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bmback_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bmback_31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pm_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pm_6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ct.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bn_14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bn_14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bm_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bm_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HTennic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HTennic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HoverSetting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HoverSetting1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tennic123_ARk_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Logos\tennic123_ARk_icon.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nc2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nc2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cs.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bn_15" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bn_15.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="nc_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nc_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo_mark_l5k_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Logos\logo_mark_l5k_icon.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ncl_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ncl_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pn_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pn_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,55 +166,61 @@
   <data name="nc3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nc3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pb_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pb_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bm_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bm_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pm_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pm_6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="nc_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nc_6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="nc2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nc2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bn_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bn_10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ncl_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ncl_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bm_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bm_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bn_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bn_11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bn_13" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bn_13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bm_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bm_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pm_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pm_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="nc4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nc4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bn_12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bn_12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bn_14" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bn_14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bn_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bn_9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bmback_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bmback_31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bn_13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bn_13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MHaspo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MHaspo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nc_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nc_6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="haspoicon_fj7_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Logos\haspoicon_fj7_icon.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bn_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bn_10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bm_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bm_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pb_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pb_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MOther" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MOther.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nc_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nc_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_380355" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_380355.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nc4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nc4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MTennic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MTennic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HOther" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HOther.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bn_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bn_11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bm_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bm_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
