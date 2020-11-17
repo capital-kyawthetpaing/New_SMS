@@ -45,5 +45,14 @@ namespace BL
         {
             return dl.M_Tenzikaishouhin_Delete(mtzke);
         }
+
+        public DataTable M_TenzikaiShouhin_Check(M_TenzikaiShouhin_Entity mtz)
+        {
+            return dl.M_TenzikaiShouhin_Check(mtz);
+
+
+            //return true;
+
+        }
     }
 }

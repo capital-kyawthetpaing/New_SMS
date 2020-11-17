@@ -80,20 +80,24 @@
             this.btnProj10 = new CKM_Controls.CKM_Button();
             this.btnProj14 = new CKM_Controls.CKM_Button();
             this.btnProj4 = new CKM_Controls.CKM_Button();
+            this.popupNotifier1 = new Tulpep.NotificationWindow.PopupNotifier();
             this.btnLogin = new CKM_Controls.CKM_Button();
             this.btnClose = new CKM_Controls.CKM_Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panelRight.SuspendLayout();
             this.panelLeft.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel_right.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lblLoginDate);
             this.panel1.Controls.Add(this.lblOperatorName);
@@ -109,7 +113,7 @@
             this.lblLoginDate.BackColor = System.Drawing.Color.Transparent;
             this.lblLoginDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblLoginDate.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
-            this.lblLoginDate.Location = new System.Drawing.Point(975, 19);
+            this.lblLoginDate.Location = new System.Drawing.Point(975, 23);
             this.lblLoginDate.Name = "lblLoginDate";
             this.lblLoginDate.Size = new System.Drawing.Size(125, 33);
             this.lblLoginDate.TabIndex = 62;
@@ -121,7 +125,7 @@
             this.lblOperatorName.BackColor = System.Drawing.Color.Transparent;
             this.lblOperatorName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblOperatorName.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
-            this.lblOperatorName.Location = new System.Drawing.Point(765, 19);
+            this.lblOperatorName.Location = new System.Drawing.Point(765, 23);
             this.lblOperatorName.Name = "lblOperatorName";
             this.lblOperatorName.Size = new System.Drawing.Size(212, 33);
             this.lblOperatorName.TabIndex = 61;
@@ -137,7 +141,7 @@
             this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Small;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(632, 25);
+            this.ckM_Label1.Location = new System.Drawing.Point(632, 29);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(114, 19);
             this.ckM_Label1.TabIndex = 55;
@@ -946,6 +950,17 @@
             this.btnProj4.TabIndex = 36;
             this.btnProj4.UseVisualStyleBackColor = false;
             // 
+            // popupNotifier1
+            // 
+            this.popupNotifier1.ContentFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.popupNotifier1.ContentText = null;
+            this.popupNotifier1.Image = null;
+            this.popupNotifier1.IsRightToLeft = false;
+            this.popupNotifier1.OptionsMenu = null;
+            this.popupNotifier1.Size = new System.Drawing.Size(400, 100);
+            this.popupNotifier1.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
+            this.popupNotifier1.TitleText = null;
+            // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -996,12 +1011,28 @@
             this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
             this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::MainMenu.Properties.Resources.HoverSetting;
+            this.pictureBox2.Location = new System.Drawing.Point(332, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 21);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 65;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
+            this.pictureBox2.Click += new System.EventHandler(this.button1_Click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(16, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(23, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(306, 71);
+            this.pictureBox1.Size = new System.Drawing.Size(289, 74);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 64;
             this.pictureBox1.TabStop = false;
@@ -1018,7 +1049,7 @@
             this.MaximizeBox = false;
             this.Name = "Main_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main_Menu";
+            this.Text = "CapitalMainMenu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_Menu_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_Menu_KeyDown);
             this.panel1.ResumeLayout(false);
@@ -1028,6 +1059,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel_right.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -1089,5 +1121,7 @@
         private System.Windows.Forms.Panel panel4;
         private CKM_Controls.CKM_Button btnClose;
         private CKM_Controls.CKM_Button btnLogin;
+        private Tulpep.NotificationWindow.PopupNotifier popupNotifier1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

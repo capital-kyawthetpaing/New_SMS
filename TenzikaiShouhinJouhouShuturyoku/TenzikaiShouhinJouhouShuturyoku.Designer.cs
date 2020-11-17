@@ -202,7 +202,7 @@
             this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(221, 90);
+            this.ckM_Label6.Location = new System.Drawing.Point(226, 90);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label6.TabIndex = 11;

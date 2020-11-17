@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
+using CKM_Controls;
 using Entity;
 
 
@@ -38,6 +39,8 @@ namespace MainMenu.Haspo
         private void HaspoStoreMenuLogin_Load(object sender, EventArgs e)
         {
             loginbl = new Login_BL();
+            txtOperatorCD.Focus();
+            Add_ButtonDesign();
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -147,21 +150,58 @@ namespace MainMenu.Haspo
 
             }
         }
-        private void ckM_Button2_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-            System.Environment.Exit(0);
-        }
-
+      
         private void ckM_Button1_Click_1(object sender, EventArgs e)
         {
             Login_Click();
         }
 
-        private void ckM_Button3_Click(object sender, EventArgs e)
+        protected void Add_ButtonDesign()
+        {
+            ckM_Button2.FlatStyle = FlatStyle.Flat;
+            ckM_Button2.FlatAppearance.BorderSize = 0;
+            ckM_Button2.FlatAppearance.BorderColor = Color.White;
+            ckM_Button1.FlatStyle = FlatStyle.Flat;
+            ckM_Button1.FlatAppearance.BorderSize = 0;
+            ckM_Button1.FlatAppearance.BorderColor = Color.White;
+            ckM_Button3.FlatStyle = FlatStyle.Flat;
+            ckM_Button3.FlatAppearance.BorderSize = 0;
+            ckM_Button3.FlatAppearance.BorderColor = Color.White;
+
+        }
+        private void HaspoStoreMenuLogin_Paint(object sender, PaintEventArgs e)
+        {
+            txtOperatorCD.BorderStyle = BorderStyle.None;
+            Pen p = new Pen(System.Drawing.ColorTranslator.FromHtml("#05af34"));
+            Graphics g = e.Graphics;
+            int variance = 2;
+            g.DrawRectangle(p, new Rectangle(txtOperatorCD.Location.X - variance, txtOperatorCD.Location.Y - variance, txtOperatorCD.Width + variance, txtOperatorCD.Height + variance));
+            txtPassword.BorderStyle = BorderStyle.None;
+            g.DrawRectangle(p, new Rectangle(txtPassword.Location.X - variance, txtPassword.Location.Y - variance, txtPassword.Width + variance, txtPassword.Height + variance));
+
+
+        }
+        private void ckM_Button2_MouseEnter(object sender, EventArgs e)
+        {
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bmback_3;
+            (sender as CKM_Button).ForeColor = Color.Black;
+        }
+
+        private void ckM_Button2_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as CKM_Button).BackgroundImage = Properties.Resources.bm_3;
+            (sender as CKM_Button).ForeColor = Color.White;
+        }
+
+        private void ckM_Button3_Click_1(object sender, EventArgs e)
         {
             F11();
         }
+
+        private void ckM_Button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            System.Environment.Exit(0);
+        }
     }
 }
-;

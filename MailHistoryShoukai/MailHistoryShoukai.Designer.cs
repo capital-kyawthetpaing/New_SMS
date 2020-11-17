@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MailHistoryShoukai));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -103,8 +103,11 @@
             // 
             // PanelSearch
             // 
-            this.PanelSearch.Location = new System.Drawing.Point(834, 0);
             this.PanelSearch.TabIndex = 10;
+            // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             // 
             // label4
             // 
@@ -183,6 +186,7 @@
             this.ckM_SearchControl3.ChangeDateWidth = 100;
             this.ckM_SearchControl3.Code = "";
             this.ckM_SearchControl3.CodeWidth = 100;
+            this.ckM_SearchControl3.CodeWidth1 = 100;
             this.ckM_SearchControl3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl3.DataCheck = false;
             this.ckM_SearchControl3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -191,11 +195,14 @@
             this.ckM_SearchControl3.LabelText = "";
             this.ckM_SearchControl3.LabelVisible = false;
             this.ckM_SearchControl3.Location = new System.Drawing.Point(343, 4);
+            this.ckM_SearchControl3.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl3.Name = "ckM_SearchControl3";
+            this.ckM_SearchControl3.NameWidth = 600;
             this.ckM_SearchControl3.SearchEnable = true;
             this.ckM_SearchControl3.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl3.Stype = Search.CKM_SearchControl.SearchType.見積番号;
             this.ckM_SearchControl3.TabIndex = 344;
+            this.ckM_SearchControl3.test = null;
             this.ckM_SearchControl3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ckM_SearchControl3.UseChangeDate = false;
             this.ckM_SearchControl3.Value1 = null;
@@ -228,6 +235,7 @@
             this.ckM_SearchControl1.ChangeDateWidth = 100;
             this.ckM_SearchControl1.Code = "";
             this.ckM_SearchControl1.CodeWidth = 100;
+            this.ckM_SearchControl1.CodeWidth1 = 100;
             this.ckM_SearchControl1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl1.DataCheck = false;
             this.ckM_SearchControl1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -236,11 +244,14 @@
             this.ckM_SearchControl1.LabelText = "";
             this.ckM_SearchControl1.LabelVisible = false;
             this.ckM_SearchControl1.Location = new System.Drawing.Point(577, 3);
+            this.ckM_SearchControl1.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl1.Name = "ckM_SearchControl1";
+            this.ckM_SearchControl1.NameWidth = 600;
             this.ckM_SearchControl1.SearchEnable = true;
             this.ckM_SearchControl1.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl1.Stype = Search.CKM_SearchControl.SearchType.見積番号;
             this.ckM_SearchControl1.TabIndex = 694;
+            this.ckM_SearchControl1.test = null;
             this.ckM_SearchControl1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ckM_SearchControl1.UseChangeDate = false;
             this.ckM_SearchControl1.Value1 = null;
@@ -271,11 +282,11 @@
             this.GvDetail.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.GvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.GvDetail.AutoGenerateColumns = false;
             this.GvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.GvDetail.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("GvDetail.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -290,19 +301,12 @@
             this.colMailKBN,
             this.Customer,
             this.MailContent});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GvDetail.DefaultCellStyle = dataGridViewCellStyle7;
             this.GvDetail.EnableHeadersVisualStyles = false;
             this.GvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvDetail.Location = new System.Drawing.Point(99, 278);
             this.GvDetail.Name = "GvDetail";
             this.GvDetail.ReadOnly = true;
+            this.GvDetail.RowHeight_ = 20;
             this.GvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GvDetail.Size = new System.Drawing.Size(508, 427);
             this.GvDetail.TabIndex = 20;
@@ -523,7 +527,9 @@
             this.ckM_TextBox2.AllowMinus = false;
             this.ckM_TextBox2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox2.BackColor = System.Drawing.Color.White;
+            this.ckM_TextBox2.BorderColor = false;
             this.ckM_TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox2.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox2.DecimalPlace = 0;
@@ -532,6 +538,8 @@
             this.ckM_TextBox2.IntegerPart = 0;
             this.ckM_TextBox2.IsCorrectDate = true;
             this.ckM_TextBox2.isEnterKeyDown = false;
+            this.ckM_TextBox2.IsFirstTime = true;
+            this.ckM_TextBox2.isMaxLengthErr = false;
             this.ckM_TextBox2.IsNumber = true;
             this.ckM_TextBox2.IsShop = false;
             this.ckM_TextBox2.Length = 10;
@@ -543,13 +551,16 @@
             this.ckM_TextBox2.TabIndex = 4;
             this.ckM_TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_TextBox2.UseColorSizMode = false;
             // 
             // ckM_TextBox1
             // 
             this.ckM_TextBox1.AllowMinus = false;
             this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
+            this.ckM_TextBox1.BorderColor = false;
             this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox1.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox1.DecimalPlace = 0;
@@ -558,6 +569,8 @@
             this.ckM_TextBox1.IntegerPart = 0;
             this.ckM_TextBox1.IsCorrectDate = true;
             this.ckM_TextBox1.isEnterKeyDown = false;
+            this.ckM_TextBox1.IsFirstTime = true;
+            this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
             this.ckM_TextBox1.Length = 10;
@@ -569,6 +582,7 @@
             this.ckM_TextBox1.TabIndex = 2;
             this.ckM_TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_TextBox1.UseColorSizMode = false;
             // 
             // ScCustomer
             // 
@@ -577,6 +591,7 @@
             this.ScCustomer.ChangeDateWidth = 100;
             this.ScCustomer.Code = "";
             this.ScCustomer.CodeWidth = 100;
+            this.ScCustomer.CodeWidth1 = 100;
             this.ScCustomer.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCustomer.DataCheck = true;
             this.ScCustomer.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -585,11 +600,14 @@
             this.ScCustomer.LabelText = "";
             this.ScCustomer.LabelVisible = true;
             this.ScCustomer.Location = new System.Drawing.Point(99, 239);
+            this.ScCustomer.Margin = new System.Windows.Forms.Padding(0);
             this.ScCustomer.Name = "ScCustomer";
+            this.ScCustomer.NameWidth = 500;
             this.ScCustomer.SearchEnable = true;
             this.ScCustomer.Size = new System.Drawing.Size(634, 28);
             this.ScCustomer.Stype = Search.CKM_SearchControl.SearchType.得意先;
             this.ScCustomer.TabIndex = 8;
+            this.ScCustomer.test = null;
             this.ScCustomer.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCustomer.UseChangeDate = false;
             this.ScCustomer.Value1 = null;
@@ -603,6 +621,7 @@
             this.ckM_ComboBox1.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.入荷予定状況;
             this.ckM_ComboBox1.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.ckM_ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ckM_ComboBox1.Flag = 0;
             this.ckM_ComboBox1.FormattingEnabled = true;
             this.ckM_ComboBox1.Length = 20;
             this.ckM_ComboBox1.Location = new System.Drawing.Point(99, 177);
@@ -635,7 +654,9 @@
             this.ckM_TextBox3.AllowMinus = false;
             this.ckM_TextBox3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox3.BackColor = System.Drawing.Color.White;
+            this.ckM_TextBox3.BorderColor = false;
             this.ckM_TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox3.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox3.DecimalPlace = 2;
@@ -644,6 +665,8 @@
             this.ckM_TextBox3.IntegerPart = 0;
             this.ckM_TextBox3.IsCorrectDate = true;
             this.ckM_TextBox3.isEnterKeyDown = false;
+            this.ckM_TextBox3.IsFirstTime = true;
+            this.ckM_TextBox3.isMaxLengthErr = false;
             this.ckM_TextBox3.IsNumber = true;
             this.ckM_TextBox3.IsShop = false;
             this.ckM_TextBox3.Length = 5;
@@ -655,13 +678,16 @@
             this.ckM_TextBox3.TabIndex = 3;
             this.ckM_TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_TextBox3.UseColorSizMode = false;
             // 
             // ckM_TextBox4
             // 
             this.ckM_TextBox4.AllowMinus = false;
             this.ckM_TextBox4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox4.BackColor = System.Drawing.Color.White;
+            this.ckM_TextBox4.BorderColor = false;
             this.ckM_TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox4.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox4.DecimalPlace = 2;
@@ -670,6 +696,8 @@
             this.ckM_TextBox4.IntegerPart = 0;
             this.ckM_TextBox4.IsCorrectDate = true;
             this.ckM_TextBox4.isEnterKeyDown = false;
+            this.ckM_TextBox4.IsFirstTime = true;
+            this.ckM_TextBox4.isMaxLengthErr = false;
             this.ckM_TextBox4.IsNumber = true;
             this.ckM_TextBox4.IsShop = false;
             this.ckM_TextBox4.Length = 5;
@@ -681,6 +709,7 @@
             this.ckM_TextBox4.TabIndex = 5;
             this.ckM_TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_TextBox4.UseColorSizMode = false;
             // 
             // ckM_ComboBox2
             // 
@@ -689,6 +718,7 @@
             this.ckM_ComboBox2.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.入荷予定状況;
             this.ckM_ComboBox2.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.ckM_ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ckM_ComboBox2.Flag = 0;
             this.ckM_ComboBox2.FormattingEnabled = true;
             this.ckM_ComboBox2.Length = 20;
             this.ckM_ComboBox2.Location = new System.Drawing.Point(99, 208);
@@ -862,7 +892,7 @@
             this.ckM_Label13.Name = "ckM_Label13";
             this.ckM_Label13.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label13.TabIndex = 748;
-            this.ckM_Label13.Text = "受注番号";
+            this.ckM_Label13.Text = "伝票番号";
             this.ckM_Label13.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -909,7 +939,7 @@
             this.lblMailContent.TabIndex = 753;
             this.lblMailContent.Text = "(説明)送信したメール文書をここに表示する";
             // 
-            // MailHstoryShoukai
+            // MailHistoryShoukai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.ClientSize = new System.Drawing.Size(1370, 749);
@@ -948,7 +978,7 @@
             this.Controls.Add(this.GvDetail);
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
-            this.Name = "MailHstoryShoukai";
+            this.Name = "MailHistoryShoukai";
             this.PanelHeaderHeight = 110;
             this.Text = "MailHstoryShoukai";
             this.Load += new System.EventHandler(this.Form_Load);

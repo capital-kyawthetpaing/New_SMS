@@ -527,6 +527,7 @@
     <Content Include="StoreProcedure\M_TeniKaiSelectbyJAN.sql" />
     <Content Include="StoreProcedure\M_TenjiDataSet_Select.sql" />
     <Content Include="StoreProcedure\M_TenjiKaiJuuChuu_Select.sql" />
+    <Content Include="StoreProcedure\M_TenzikaiShouhin_Check.sql" />
     <Content Include="StoreProcedure\M_Tenzikaishouhin_Delete.sql" />
     <Content Include="StoreProcedure\M_Tenzikaishouhin_DeleteUpdate.sql" />
     <Content Include="StoreProcedure\M_Tenzikaishouhin_InsertUpdate.sql" />
@@ -625,6 +626,11 @@
     <Content Include="StoreProcedure\SelectPrintData.sql" />
     <Content Include="StoreProcedure\Select_PaymentClose_ValueCheck.sql" />
     <Content Include="StoreProcedure\Select_SearchName.sql" />
+    <Content Include="StoreProcedure\SettingCheckDefault.sql" />
+    <Content Include="StoreProcedure\SettingDefault.sql" />
+    <Content Include="StoreProcedure\SettingGetAllPermission.sql" />
+    <Content Include="StoreProcedure\SettingPermissionUpdate.sql" />
+    <Content Include="StoreProcedure\SettingSave.sql" />
     <Content Include="StoreProcedure\ShuukaSoukoCheck.sql" />
     <Content Include="StoreProcedure\Simple_Select.sql" />
     <Content Include="StoreProcedure\sp_alterdiagram.sql" />

@@ -97,6 +97,7 @@
             this.txtSalesDate.AllowMinus = false;
             this.txtSalesDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtSalesDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtSalesDate.BorderColor = false;
             this.txtSalesDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSalesDate.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSalesDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -107,6 +108,7 @@
             this.txtSalesDate.IntegerPart = 0;
             this.txtSalesDate.IsCorrectDate = true;
             this.txtSalesDate.isEnterKeyDown = false;
+            this.txtSalesDate.IsFirstTime = true;
             this.txtSalesDate.isMaxLengthErr = false;
             this.txtSalesDate.IsNumber = false;
             this.txtSalesDate.IsShop = false;
@@ -115,11 +117,14 @@
             this.txtSalesDate.MaxLength = 10;
             this.txtSalesDate.MoveNext = true;
             this.txtSalesDate.Name = "txtSalesDate";
+            this.txtSalesDate.ReadOnly = true;
             this.txtSalesDate.Size = new System.Drawing.Size(200, 42);
             this.txtSalesDate.TabIndex = 0;
+            this.txtSalesDate.TabStop = false;
             this.txtSalesDate.Text = "9999/99/99";
             this.txtSalesDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSalesDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtSalesDate.UseColorSizMode = false;
             this.txtSalesDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSalesDate_KeyDown);
             // 
             // ckmShop_Label13
@@ -145,6 +150,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(942, 279);
+            this.ControlBox = false;
             this.Controls.Add(this.txtSalesDate);
             this.Controls.Add(this.ckmShop_Label13);
             this.Controls.Add(this.btnClose);
@@ -152,6 +158,7 @@
             this.Controls.Add(this.ckM_Button1);
             this.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Name = "FrmSelect";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "販売登録";
             this.ResumeLayout(false);

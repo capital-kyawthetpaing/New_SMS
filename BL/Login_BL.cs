@@ -24,8 +24,10 @@ namespace BL
         //  public static bool Islocalized =false;
         M_Staff_DL msdl;
         M_Store_DL mstoredl;
+        Menu_DL mdl;
         public const bool isd = false;
         public static bool Islocalized = false;
+        public static string Ver = "";
         public static string SyncPath = "";
         public static string FtpPath = "";
         public static string ID = "";
@@ -38,8 +40,13 @@ namespace BL
         {
             msdl = new M_Staff_DL();
             mstoredl = new M_Store_DL();
+            mdl = new Menu_DL();
         }
-
+        
+        public DataTable CheckDefault(string mse,string SCD)
+        {
+            return mdl.CheckDefault(mse,SCD);
+        }
         // MH_Staff_LoginSelect
         public string StorePrinterName
         {

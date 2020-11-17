@@ -781,6 +781,14 @@ namespace TempoRegiHanbaiTouroku
             {
 
             }
+            if (bbl.Z_Set(txtJuchuuUnitPrice.Text) == 0)
+            {
+                if (bbl.ShowMessage("Q326") != DialogResult.Yes)
+                {
+                    txtJuchuuUnitPrice.Focus();
+                    return;
+                }
+            }
 
             //今の入力内容を画面右横のリストに表示。
             DataRow row;
@@ -1018,6 +1026,7 @@ namespace TempoRegiHanbaiTouroku
                 {
                     JanCD = txtJanCD.Text,
                     AdminNO = mAdminNO,
+                    SetKBN = "0",
                     ChangeDate = ymd
                 };
 

@@ -92,7 +92,7 @@ BEGIN
           ,DM.CalculationGaku * (-1) AS D_CalculationGaku
           ,DM.AdjustmentGaku * (-1) As D_AdjustmentGaku
           ,DM.PurchaseGaku * (-1) AS D_PurchaseGaku
-          ,DM.PurchaseTax AS D_PurchaseTax
+          ,DM.PurchaseTax * (-1)  AS D_PurchaseTax
           ,DM.TotalPurchaseGaku AS D_TotalPurchaseGaku
           ,DM.CurrencyCD
           ,DM.TaxRitsu
@@ -365,9 +365,24 @@ BEGIN
     IF @OperateMode = 1
     BEGIN
         SET @OperateModeNm = 'êVãK';
-
-		--ÅyD_PayPlanÅzInsertÅ@Tableì]ëóédólÇd éxï•ó\íË
-		INSERT INTO [D_PayPlan]
+        
+        --ì`ï[î‘çÜçÃî‘
+        EXEC Fnc_GetNumber
+            4,             --inì`ï[éÌï  4
+            @PurchaseDate, --inäÓèÄì˙
+            @StoreCD,       --inìXï‹CD
+            @Operator,
+            @PurchaseNO OUTPUT
+            ;
+        
+        IF ISNULL(@PurchaseNO,'') = ''
+        BEGIN
+            SET @W_ERR = 1;
+            RETURN @W_ERR;
+        END
+        
+        --ÅyD_PayPlanÅzInsertÅ@Tableì]ëóédólÇd éxï•ó\íË
+        INSERT INTO [D_PayPlan]
            ([PayPlanKBN]
            ,[Number]
            ,[StoreCD]
@@ -420,21 +435,6 @@ BEGIN
         --íºëOÇ…çÃî‘Ç≥ÇÍÇΩ IDENTITY óÒÇÃílÇéÊìæÇ∑ÇÈ
         DECLARE @PayPlanNO int;
         SET @PayPlanNO = @@IDENTITY;
-        
-        --ì`ï[î‘çÜçÃî‘
-        EXEC Fnc_GetNumber
-            4,             --inì`ï[éÌï  4
-            @PurchaseDate, --inäÓèÄì˙
-            @StoreCD,       --inìXï‹CD
-            @Operator,
-            @PurchaseNO OUTPUT
-            ;
-        
-        IF ISNULL(@PurchaseNO,'') = ''
-        BEGIN
-            SET @W_ERR = 1;
-            RETURN @W_ERR;
-        END
         
         --ÅyD_PurchaseÅzTableì]ëóédólÇ`
         INSERT INTO [D_Purchase]
@@ -698,12 +698,25 @@ BEGIN
                                     THEN 1 ELSE 0 END)	--MatchingFlg
               ,[UpdateOperator]     =  @Operator  
               ,[UpdateDateTime]     =  @SYSDATETIME        
-        FROM D_Delivery
+         FROM D_Delivery
         INNER JOIN @Table tbl
-         ON tbl.DeliveryNo = D_Delivery.DeliveryNo
-         WHERE D_Delivery.DeleteDateTime IS NULL
+           ON tbl.DeliveryNo = D_Delivery.DeliveryNo
+        WHERE D_Delivery.DeleteDateTime IS NULL
+        ;
+        
+        --Tableì]ëóédólG (çÌèú)
+        UPDATE [D_Stock]
+           SET [ReturnDate]     = NULL
+              ,[ReturnSu]       = D_Stock.[ReturnSu] - tbl.PurchaseSu
+              ,[UpdateOperator] = @Operator  
+              ,[UpdateDateTime] = @SYSDATETIME        
+         FROM D_Stock
+        INNER JOIN @Table tbl
+           ON tbl.StockNO = D_Stock.StockNO
+        WHERE D_Stock.DeleteDateTime IS NULL
          ;
          
+        --Tableì]ëóédólÇ`
         UPDATE [D_Purchase]
             SET [UpdateOperator]     =  @Operator  
                ,[UpdateDateTime]     =  @SYSDATETIME
@@ -969,15 +982,15 @@ BEGIN
          AND [DeleteDateTime] IS NULL
          ;
          
-       --ÅyD_StockÅz           Update  Tableì]ëóédólÇeáA
-        UPDATE D_Stock 
-            SET [DeleteOperator]     =  @Operator  
-               ,[DeleteDateTime]     =  @SYSDATETIME
-         FROM D_Stock AS DS
-         INNER JOIN @Table tbl
-         ON tbl.StockNO = DS.StockNO
-         WHERE DS.DeleteDateTime IS NULL
-        ;
+--       --ÅyD_StockÅz           Update  Tableì]ëóédólÇeáA
+--        UPDATE D_Stock 
+--            SET [DeleteOperator]     =  @Operator  
+--               ,[DeleteDateTime]     =  @SYSDATETIME
+--         FROM D_Stock AS DS
+--         INNER JOIN @Table tbl
+--         ON tbl.StockNO = DS.StockNO
+--         WHERE DS.DeleteDateTime IS NULL
+--        ;
         
         --Tableì]ëóédólÇgáA ê‘
         INSERT INTO [D_Warehousing]

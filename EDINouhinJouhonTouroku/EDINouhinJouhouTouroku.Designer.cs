@@ -36,16 +36,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.btnStart = new CKM_Controls.CKM_Button();
             this.btnStop = new CKM_Controls.CKM_Button();
             this.panelDetail = new System.Windows.Forms.Panel();
+            this.lblVendor = new System.Windows.Forms.Label();
+            this.lblImportDateTime = new System.Windows.Forms.Label();
             this.lblEdiMode = new System.Windows.Forms.Label();
             this.gdvDSKENDeliveryDetail = new CKM_Controls.CKM_GridView();
-            this.lblVendor = new CKM_Controls.CKM_Label();
-            this.lblImportDateTime = new CKM_Controls.CKM_Label();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.chkCorrect = new CKM_Controls.CKM_CheckBox();
             this.chkError = new CKM_Controls.CKM_CheckBox();
@@ -53,17 +55,19 @@
             this.BtnSubF10 = new CKM_Controls.CKM_Button();
             this.BtnSubF12 = new CKM_Controls.CKM_Button();
             this.gdvDSKENDelivery = new CKM_Controls.CKM_GridView();
-            this.lblRireki = new CKM_Controls.CKM_Label();
-            this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colSKENBangouA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSKENNouhinshoNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colImportDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVendor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colImportDetailsSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colErrorSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colImportFile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colErrorText1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblRireki = new CKM_Controls.CKM_Label();
+            this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.colSKENNouhinsho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSKENSyouhinmei = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSKENHacchuu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSKENNouhinHinban = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSKENJanCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSKUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -145,10 +149,10 @@
             // 
             // panelDetail
             // 
-            this.panelDetail.Controls.Add(this.lblEdiMode);
-            this.panelDetail.Controls.Add(this.gdvDSKENDeliveryDetail);
             this.panelDetail.Controls.Add(this.lblVendor);
             this.panelDetail.Controls.Add(this.lblImportDateTime);
+            this.panelDetail.Controls.Add(this.lblEdiMode);
+            this.panelDetail.Controls.Add(this.gdvDSKENDeliveryDetail);
             this.panelDetail.Controls.Add(this.ckM_Label5);
             this.panelDetail.Controls.Add(this.chkCorrect);
             this.panelDetail.Controls.Add(this.chkError);
@@ -165,6 +169,28 @@
             this.panelDetail.Name = "panelDetail";
             this.panelDetail.Size = new System.Drawing.Size(1713, 877);
             this.panelDetail.TabIndex = 13;
+            // 
+            // lblVendor
+            // 
+            this.lblVendor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblVendor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblVendor.Location = new System.Drawing.Point(309, 356);
+            this.lblVendor.Name = "lblVendor";
+            this.lblVendor.Size = new System.Drawing.Size(345, 20);
+            this.lblVendor.TabIndex = 724;
+            this.lblVendor.Text = "XXXXXXXXXX ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20";
+            this.lblVendor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblImportDateTime
+            // 
+            this.lblImportDateTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblImportDateTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblImportDateTime.Location = new System.Drawing.Point(102, 356);
+            this.lblImportDateTime.Name = "lblImportDateTime";
+            this.lblImportDateTime.Size = new System.Drawing.Size(196, 20);
+            this.lblImportDateTime.TabIndex = 723;
+            this.lblImportDateTime.Text = "XXXXXXXXX1XXXXXXXXX1XXXXXXXXX13";
+            this.lblImportDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblEdiMode
             // 
@@ -199,7 +225,7 @@
             this.gdvDSKENDeliveryDetail.ColumnHeadersHeight = 25;
             this.gdvDSKENDeliveryDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSKENNouhinsho,
-            this.colSKENSyouhinmei,
+            this.colSKENHacchuu,
             this.colSKENNouhinHinban,
             this.colSKENJanCD,
             this.colSKUName,
@@ -217,38 +243,6 @@
             this.gdvDSKENDeliveryDetail.TabIndex = 24;
             this.gdvDSKENDeliveryDetail.UseRowNo = true;
             this.gdvDSKENDeliveryDetail.UseSetting = true;
-            // 
-            // lblVendor
-            // 
-            this.lblVendor.AutoSize = true;
-            this.lblVendor.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Green;
-            this.lblVendor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblVendor.DefaultlabelSize = true;
-            this.lblVendor.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.lblVendor.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.lblVendor.ForeColor = System.Drawing.Color.Black;
-            this.lblVendor.Location = new System.Drawing.Point(255, 361);
-            this.lblVendor.Name = "lblVendor";
-            this.lblVendor.Size = new System.Drawing.Size(0, 12);
-            this.lblVendor.TabIndex = 23;
-            this.lblVendor.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.lblVendor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblImportDateTime
-            // 
-            this.lblImportDateTime.AutoSize = true;
-            this.lblImportDateTime.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Green;
-            this.lblImportDateTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblImportDateTime.DefaultlabelSize = true;
-            this.lblImportDateTime.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.lblImportDateTime.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.lblImportDateTime.ForeColor = System.Drawing.Color.Black;
-            this.lblImportDateTime.Location = new System.Drawing.Point(109, 361);
-            this.lblImportDateTime.Name = "lblImportDateTime";
-            this.lblImportDateTime.Size = new System.Drawing.Size(0, 12);
-            this.lblImportDateTime.TabIndex = 22;
-            this.lblImportDateTime.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.lblImportDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ckM_Label5
             // 
@@ -273,7 +267,7 @@
             this.chkCorrect.Checked = true;
             this.chkCorrect.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkCorrect.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.chkCorrect.Location = new System.Drawing.Point(1059, 303);
+            this.chkCorrect.Location = new System.Drawing.Point(1303, 303);
             this.chkCorrect.Name = "chkCorrect";
             this.chkCorrect.Size = new System.Drawing.Size(63, 16);
             this.chkCorrect.TabIndex = 20;
@@ -286,7 +280,7 @@
             this.chkError.Checked = true;
             this.chkError.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkError.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.chkError.Location = new System.Drawing.Point(993, 303);
+            this.chkError.Location = new System.Drawing.Point(1237, 303);
             this.chkError.Name = "chkError";
             this.chkError.Size = new System.Drawing.Size(63, 16);
             this.chkError.TabIndex = 19;
@@ -303,7 +297,7 @@
             this.BtnSubF11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSubF11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnSubF11.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BtnSubF11.Location = new System.Drawing.Point(1087, 322);
+            this.BtnSubF11.Location = new System.Drawing.Point(1331, 322);
             this.BtnSubF11.Margin = new System.Windows.Forms.Padding(1);
             this.BtnSubF11.Name = "BtnSubF11";
             this.BtnSubF11.Size = new System.Drawing.Size(95, 23);
@@ -322,7 +316,7 @@
             this.BtnSubF10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSubF10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnSubF10.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BtnSubF10.Location = new System.Drawing.Point(992, 322);
+            this.BtnSubF10.Location = new System.Drawing.Point(1236, 322);
             this.BtnSubF10.Margin = new System.Windows.Forms.Padding(1);
             this.BtnSubF10.Name = "BtnSubF10";
             this.BtnSubF10.Size = new System.Drawing.Size(95, 23);
@@ -341,7 +335,7 @@
             this.BtnSubF12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSubF12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnSubF12.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BtnSubF12.Location = new System.Drawing.Point(891, 69);
+            this.BtnSubF12.Location = new System.Drawing.Point(1131, 69);
             this.BtnSubF12.Margin = new System.Windows.Forms.Padding(1);
             this.BtnSubF12.Name = "BtnSubF12";
             this.BtnSubF12.Size = new System.Drawing.Size(95, 23);
@@ -371,22 +365,99 @@
             this.gdvDSKENDelivery.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
             this.colSKENBangouA,
+            this.colSKENNouhinshoNO,
             this.colImportDateTime,
             this.colVendor,
             this.colImportDetailsSu,
             this.colErrorSu,
-            this.colImportFile});
+            this.colImportFile,
+            this.colErrorText1});
             this.gdvDSKENDelivery.EnableHeadersVisualStyles = false;
             this.gdvDSKENDelivery.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gdvDSKENDelivery.Location = new System.Drawing.Point(36, 95);
             this.gdvDSKENDelivery.Name = "gdvDSKENDelivery";
             this.gdvDSKENDelivery.RowHeight_ = 20;
             this.gdvDSKENDelivery.RowTemplate.Height = 20;
-            this.gdvDSKENDelivery.Size = new System.Drawing.Size(950, 250);
+            this.gdvDSKENDelivery.Size = new System.Drawing.Size(1190, 250);
             this.gdvDSKENDelivery.TabIndex = 15;
             this.gdvDSKENDelivery.UseRowNo = true;
             this.gdvDSKENDelivery.UseSetting = true;
             this.gdvDSKENDelivery.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdvDSKENDelivery_CellContentClick);
+            // 
+            // colChk
+            // 
+            this.colChk.FalseValue = "";
+            this.colChk.HeaderText = "結果";
+            this.colChk.IndeterminateValue = "false";
+            this.colChk.Name = "colChk";
+            this.colChk.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colChk.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colChk.TrueValue = "true";
+            this.colChk.Width = 40;
+            // 
+            // colSKENBangouA
+            // 
+            this.colSKENBangouA.DataPropertyName = "SKENBangouA";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.colSKENBangouA.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colSKENBangouA.HeaderText = "EDI取込番号";
+            this.colSKENBangouA.Name = "colSKENBangouA";
+            // 
+            // colSKENNouhinshoNO
+            // 
+            this.colSKENNouhinshoNO.DataPropertyName = "SKENNouhinshoNO";
+            this.colSKENNouhinshoNO.HeaderText = "SKENNouhinshoNO";
+            this.colSKENNouhinshoNO.Name = "colSKENNouhinshoNO";
+            this.colSKENNouhinshoNO.Visible = false;
+            // 
+            // colImportDateTime
+            // 
+            this.colImportDateTime.DataPropertyName = "ImportDateTime";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.NullValue = null;
+            this.colImportDateTime.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colImportDateTime.HeaderText = "       受信日時";
+            this.colImportDateTime.Name = "colImportDateTime";
+            this.colImportDateTime.Width = 150;
+            // 
+            // colVendor
+            // 
+            this.colVendor.DataPropertyName = "Vendor";
+            this.colVendor.HeaderText = "仕入先";
+            this.colVendor.Name = "colVendor";
+            this.colVendor.Width = 200;
+            // 
+            // colImportDetailsSu
+            // 
+            this.colImportDetailsSu.DataPropertyName = "ImportDetailsSu";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colImportDetailsSu.DefaultCellStyle = dataGridViewCellStyle9;
+            this.colImportDetailsSu.HeaderText = "取込数";
+            this.colImportDetailsSu.Name = "colImportDetailsSu";
+            // 
+            // colErrorSu
+            // 
+            this.colErrorSu.DataPropertyName = "ErrorSu";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colErrorSu.DefaultCellStyle = dataGridViewCellStyle10;
+            this.colErrorSu.HeaderText = "エラー数";
+            this.colErrorSu.Name = "colErrorSu";
+            // 
+            // colImportFile
+            // 
+            this.colImportFile.DataPropertyName = "ImportFile";
+            this.colImportFile.HeaderText = "取込ファイル";
+            this.colImportFile.Name = "colImportFile";
+            this.colImportFile.Width = 200;
+            // 
+            // colErrorText1
+            // 
+            this.colErrorText1.DataPropertyName = "ErrorText";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colErrorText1.DefaultCellStyle = dataGridViewCellStyle11;
+            this.colErrorText1.HeaderText = "エラー";
+            this.colErrorText1.Name = "colErrorText1";
+            this.colErrorText1.Width = 250;
             // 
             // lblRireki
             // 
@@ -422,62 +493,6 @@
             this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // colChk
-            // 
-            this.colChk.FalseValue = "";
-            this.colChk.HeaderText = "結果";
-            this.colChk.IndeterminateValue = "false";
-            this.colChk.Name = "colChk";
-            this.colChk.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colChk.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colChk.TrueValue = "true";
-            this.colChk.Width = 40;
-            // 
-            // colSKENBangouA
-            // 
-            this.colSKENBangouA.DataPropertyName = "SKENBangouA";
-            this.colSKENBangouA.HeaderText = "EDI取込番号";
-            this.colSKENBangouA.Name = "colSKENBangouA";
-            // 
-            // colImportDateTime
-            // 
-            this.colImportDateTime.DataPropertyName = "ImportDateTime";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colImportDateTime.DefaultCellStyle = dataGridViewCellStyle7;
-            this.colImportDateTime.HeaderText = "       受信日時";
-            this.colImportDateTime.Name = "colImportDateTime";
-            this.colImportDateTime.Width = 150;
-            // 
-            // colVendor
-            // 
-            this.colVendor.DataPropertyName = "Vendor";
-            this.colVendor.HeaderText = "仕入先";
-            this.colVendor.Name = "colVendor";
-            this.colVendor.Width = 200;
-            // 
-            // colImportDetailsSu
-            // 
-            this.colImportDetailsSu.DataPropertyName = "ImportDetailsSu";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colImportDetailsSu.DefaultCellStyle = dataGridViewCellStyle8;
-            this.colImportDetailsSu.HeaderText = "        取込数";
-            this.colImportDetailsSu.Name = "colImportDetailsSu";
-            // 
-            // colErrorSu
-            // 
-            this.colErrorSu.DataPropertyName = "ErrorSu";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colErrorSu.DefaultCellStyle = dataGridViewCellStyle9;
-            this.colErrorSu.HeaderText = "      エラー数";
-            this.colErrorSu.Name = "colErrorSu";
-            // 
-            // colImportFile
-            // 
-            this.colImportFile.DataPropertyName = "ImportFile";
-            this.colImportFile.HeaderText = "取込ファイル";
-            this.colImportFile.Name = "colImportFile";
-            this.colImportFile.Width = 200;
-            // 
             // colSKENNouhinsho
             // 
             this.colSKENNouhinsho.DataPropertyName = "SKENNouhinshoNO";
@@ -486,11 +501,11 @@
             this.colSKENNouhinsho.HeaderText = "納品書番号";
             this.colSKENNouhinsho.Name = "colSKENNouhinsho";
             // 
-            // colSKENSyouhinmei
+            // colSKENHacchuu
             // 
-            this.colSKENSyouhinmei.DataPropertyName = "SKENSyouhinmei";
-            this.colSKENSyouhinmei.HeaderText = "発注番号";
-            this.colSKENSyouhinmei.Name = "colSKENSyouhinmei";
+            this.colSKENHacchuu.DataPropertyName = "SKENHacchuu";
+            this.colSKENHacchuu.HeaderText = "発注番号";
+            this.colSKENHacchuu.Name = "colSKENHacchuu";
             // 
             // colSKENNouhinHinban
             // 
@@ -529,7 +544,7 @@
             this.colSKENNouhinSuu.DataPropertyName = "SKENNouhinSuu";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.colSKENNouhinSuu.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colSKENNouhinSuu.HeaderText = "        納品数";
+            this.colSKENNouhinSuu.HeaderText = "納品数";
             this.colSKENNouhinSuu.Name = "colSKENNouhinSuu";
             // 
             // colErrorText
@@ -576,20 +591,22 @@
         private CKM_Controls.CKM_Button BtnSubF10;
         private CKM_Controls.CKM_CheckBox chkCorrect;
         private CKM_Controls.CKM_CheckBox chkError;
-        private CKM_Controls.CKM_Label lblVendor;
-        private CKM_Controls.CKM_Label lblImportDateTime;
         private CKM_Controls.CKM_Label ckM_Label5;
         private CKM_Controls.CKM_GridView gdvDSKENDeliveryDetail;
         private System.Windows.Forms.Label lblEdiMode;
+        private System.Windows.Forms.Label lblImportDateTime;
+        private System.Windows.Forms.Label lblVendor;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colChk;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSKENBangouA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSKENNouhinshoNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn colImportDateTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVendor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colImportDetailsSu;
         private System.Windows.Forms.DataGridViewTextBoxColumn colErrorSu;
         private System.Windows.Forms.DataGridViewTextBoxColumn colImportFile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colErrorText1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSKENNouhinsho;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSKENSyouhinmei;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSKENHacchuu;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSKENNouhinHinban;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSKENJanCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSKUName;

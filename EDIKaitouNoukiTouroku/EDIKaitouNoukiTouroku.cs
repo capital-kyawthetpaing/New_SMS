@@ -370,32 +370,17 @@ namespace EDIKaitouNoukiTouroku
             mme.UpdateOperator = InOperatorCD;
             mme.PC = InPcID;
 
-            if (mEdiMode == "1")
+            //　記憶していた初期表示値が１
+            //＆画面・在庫SKS連携処理の処理モードが「処理停止中」の場合
+            if (lblEdiMode.Text == "処理停止中")
             {
-                //　記憶していた初期表示値が１
-                //＆画面・在庫SKS連携処理の処理モードが「処理停止中」の場合
-                if(lblEdiMode.Text== "処理停止中")
-                {
-                    mme.Num1 = "0";
-                }
-                else
-                {
-                    return;
-                }
+                mme.Num1 = "0";
             }
             else
             {
-                //　記憶していた初期表示値が０
                 //＆画面・在庫SKS連携処理の処理モードが「処理実行中」の場合
-                if (lblEdiMode.Text == "処理実行中")
-                {
-                    mme.Num1 = "1";
-                }
-                else
-                {
-                    return;
-                }
-            }
+                mme.Num1 = "1";
+            }          
 
             mibl.M_MultiPorpose_Update(mme);
         }
@@ -406,9 +391,9 @@ namespace EDIKaitouNoukiTouroku
         /// <param name="Kbn"></param>
         private void Scr_Clr(short Kbn)
         {
-                        ckM_CheckBox1.Checked = false;
-            ckM_CheckBox2.Checked = false;
-            ckM_CheckBox3.Checked = false;
+            ckM_CheckBox1.Checked = true;
+            ckM_CheckBox2.Checked = true;
+            ckM_CheckBox3.Checked = true;
 
             lblImportDateTime.Text = "";
             lblVendor.Text = "";
