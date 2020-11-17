@@ -85,6 +85,7 @@ namespace MasterTouroku_TenzikaiShouhin
             BindCombo_Details();
             StartProgram();
             SC_Segment.Value1 = "226";
+            SC_copysegmet.Value1 = "226";
             string ymd = bl.GetDate();
             CB_Year.Bind(ymd);
             CB_Season.Bind(ymd);
@@ -1684,6 +1685,14 @@ namespace MasterTouroku_TenzikaiShouhin
                         {
                             return true;
                         }
+                        for(int j=0; j < mGrid.g_DArray.Length-1;j++)
+                        {
+                            if(mGrid.g_DArray[j].Jancdold == mGrid.g_DArray[row].JANCD)
+                            {
+                                bbl.ShowMessage("E226");
+                                return false;
+                            }
+                        }
                         M_TenzikaiShouhin_Entity mt = new M_TenzikaiShouhin_Entity
                         {
                             TenzikaiName = detailControls[(int)Eindex.SCTenzikai].Text,
@@ -1698,7 +1707,6 @@ namespace MasterTouroku_TenzikaiShouhin
                         if (dt.Rows.Count > 0)
                         {
                             tbl.ShowMessage("E107");
-
                             return false;
                         }
                         else
@@ -1849,7 +1857,7 @@ namespace MasterTouroku_TenzikaiShouhin
                             }
                             if (Convert.ToInt64(mGrid.g_DArray[row].HanbaiYoteiDateMonth) >= 13)
                             {
-                                bbl.ShowMessage("E117", "0", "12");
+                                bbl.ShowMessage("E117", "1", "12");
                                 return false;
                             }
                             //mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
@@ -2102,7 +2110,7 @@ namespace MasterTouroku_TenzikaiShouhin
                     int index = Array.IndexOf(detailControls, sender);
                     if (index == (int)Eindex.SCCSegment)
                     {
-                        bool ret = CheckKey(index);
+                        bool ret = CheckDetail(index);
                         if (ret)
                         {
                             Clear(panel2);
@@ -3798,7 +3806,6 @@ namespace MasterTouroku_TenzikaiShouhin
             foreach (DataRow dr in dt.Rows)
             {
                 mGrid.g_DArray[c].JANCD = dr["JanCD"].ToString();
-                
                 mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
                 mGrid.g_DArray[c].SKUName = dr["SKUName"].ToString();
                 mGrid.g_DArray[c].ColorCD = dr["ColorCD"].ToString();
@@ -3840,7 +3847,8 @@ namespace MasterTouroku_TenzikaiShouhin
                     mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
                     S_BodySeigyo(6, 1);
                     scjan_1.Focus();
-                    
+                   // if (detailControls[index + 1].CanFocus)
+                      //  detailControls[c].Focus();
                 }
 
                 c++;
@@ -4143,5 +4151,7 @@ namespace MasterTouroku_TenzikaiShouhin
             //}
             
         }
+
+       
     }
 }

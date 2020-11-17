@@ -27,24 +27,21 @@ AS
 BEGIN
 Select
 mt.TenzikaiName,
-(
-Select VendorName   
-from F_Vendor(getdate()) as mv
-where mv.VendorCD=mt.VendorCD
-) as VendorName,
+max(mv.VendorName) as VendorName,
 mt.LastYearTerm,
 mt.LastSeason
-from M_TenzikaiShouhin mt
-where mt.DeleteFlg=0
-AND (@TenzikaiName IS NULL OR (mt.TenzikaiName LIKE '%'+@TenzikaiName+'%'))
+from M_TenzikaiShouhin mt 
+left outer join F_Vendor(getdate()) as mv on mv.VendorCD=mt.VendorCD and mt.DeleteFlg=0
+where 
+ (@TenzikaiName IS NULL OR (mt.TenzikaiName LIKE '%'+@TenzikaiName+'%'))
 AND (@VendorCDFrom IS NULL OR (mt.VendorCD>=@VendorCDFrom))
 AND (@VendorCDTo IS NULL OR (mt.VendorCD<=@VendorCDTo))
 AND  mt.LastYearTerm=@LastYearTerm
 AND  mt.LastSeason=@LastSeason
-AND mt.InsertDateTime>=@NStartDate
-AND mt.InsertDateTime<=@NEndDate
-AND mt.UpdateDateTime>=@LStartDate
-AND mt.UpdateDateTime<=@LEndDate
+AND (@NStartDate IS NULL OR(mt.InsertDateTime>=@NStartDate))
+AND (@NEndDate IS NULL OR(mt.InsertDateTime<=@NEndDate))
+AND (@LStartDate IS NULL OR(mt.UpdateDateTime>=@LStartDate))
+AND (@LEndDate IS NULL OR(mt.UpdateDateTime<=@LEndDate))
 Group by
 mt.TenzikaiName,mt.VendorCD,mt.LastYearTerm,mt.LastSeason
 Order by mt.LastYearTerm,mt.LastSeason DESC,mt.TenzikaiName,mt.VendorCD ASC
