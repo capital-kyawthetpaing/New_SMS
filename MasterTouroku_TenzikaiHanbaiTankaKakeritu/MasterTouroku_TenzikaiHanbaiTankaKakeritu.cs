@@ -40,6 +40,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
         }
         private bool ErrorCheck()
         {
+            string ChangeDate = DateTime.Now.ToString("yyyy/MM/dd");
             if (!RequireCheck(new Control[] { SC_Tanka.TxtCode })) //Step1
                 return false;
 
@@ -49,13 +50,13 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             //    SC_Tanka.SetFocus(1);
             //    return false;
             //}
-            SC_Tanka.ChangeDate = bbl.GetDate();//ses
+            //SC_Tanka.ChangeDate = bbl.GetDate();//ses
             if (!string.IsNullOrEmpty(SC_Tanka.TxtCode.Text))
             {
-                if (SC_Tanka.SelectData())
+                var dtT = bbl.Select_SearchName(ChangeDate, 16, SC_Tanka.TxtCode.Text, "");
+                if (dtT.Rows.Count >0 )
                 {
-                    SC_Tanka.Value1 = SC_Tanka.TxtCode.Text;
-                    SC_Tanka.Value2 = SC_Tanka.LabelText;
+                    SC_Tanka.LabelText = dtT.Rows[0]["Name"].ToString();
                 }
                 else
                 {
@@ -64,13 +65,13 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                     return false;
                 }
             }
-            SC_Brand.ChangeDate = bbl.GetDate();//ses
+          //  SC_Brand.ChangeDate = bbl.GetDate();//ses
             if (!string.IsNullOrEmpty(SC_Brand.TxtCode.Text))
             {
-                if (SC_Brand.SelectData())
+              var  dtB = bbl.Select_SearchName(bbl.GetDate(), 11, SC_Brand.TxtCode.Text, null);
+                if (dtB.Rows.Count > 0)
                 {
-                    SC_Brand.Value1 = SC_Brand.TxtCode.Text;
-                    SC_Brand.Value2 = SC_Brand.LabelText;
+                    SC_Brand.LabelText = dtB.Rows[0]["Name"].ToString();
                 }
                 else
                 {
@@ -88,13 +89,13 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             //        return false;
             //    }
             //}
-            Sc_Segment.ChangeDate = bbl.GetDate();//ses
+            //Sc_Segment.ChangeDate = bbl.GetDate();//ses
             if (!string.IsNullOrEmpty(Sc_Segment.TxtCode.Text))
             {
-                if (Sc_Segment.SelectData())
+                var dtS = bbl.Select_SearchName(ChangeDate, 13, Sc_Segment.TxtCode.Text, "226");
+                if (dtS.Rows.Count >0)
                 {
-                    Sc_Segment.Value1 = Sc_Segment.TxtCode.Text;
-                    Sc_Segment.Value2 = Sc_Segment.LabelText;
+                    Sc_Segment.LabelText = dtS.Rows[0]["Name"].ToString();
                 }
                 else
                 {
@@ -477,8 +478,8 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
 
         private void GV_Tenzaishohin_Paint(object sender, PaintEventArgs e)
         {
-            string[] monthes = { "ブランド", "", "せグメト", "年度", "シーズン", "掛率" };
-            for (int j = 2; j < 3;)
+            string[] monthes = {  "ブランド", "せグメト" };
+            for (int j =1; j < 5;)
             {
                 Rectangle r1 = this.GV_Tenzaishohin.GetCellDisplayRectangle(j, -1, true);
                 int w1 = this.GV_Tenzaishohin.GetCellDisplayRectangle(j + 1, -1, true).Width;
@@ -497,26 +498,6 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 format);
                 j += 2;
             }
-
-            for (int j = 4; j < 5;)
-            {
-                Rectangle r1 = this.GV_Tenzaishohin.GetCellDisplayRectangle(j, -1, true);
-                int w1 = this.GV_Tenzaishohin.GetCellDisplayRectangle(j + 1, -1, true).Width;
-                r1.X += 1;
-                r1.Y += 1;
-                r1.Width = r1.Width + w1 - 2;
-                r1.Height = r1.Height - 2;
-
-                e.Graphics.FillRectangle(new SolidBrush(this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.BackColor), r1);
-                StringFormat format = new StringFormat();
-                format.LineAlignment = StringAlignment.Center;
-                e.Graphics.DrawString(monthes[j / 2],
-               this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.Font,
-                new SolidBrush(this.GV_Tenzaishohin.ColumnHeadersDefaultCellStyle.ForeColor),
-                r1,
-                format);
-            j += 2;
-            }
         }
 
         private void GV_Tenzaishohin_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -531,5 +512,6 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 e.Handled = true;
             }
         }
+
     }
 }
