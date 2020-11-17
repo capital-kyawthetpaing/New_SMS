@@ -548,6 +548,7 @@
     <Content Include="StoreProcedure\M_Vendor_PayeeFlg_Select.sql" />
     <Content Include="StoreProcedure\M_Vendor_Search.sql" />
     <Content Include="StoreProcedure\M_Vendor_Select.sql" />
+    <Content Include="StoreProcedure\M_Vendor_SelectForJuchuu.sql" />
     <Content Include="StoreProcedure\M_Vendor_SelectForPayeeCD.sql" />
     <Content Include="StoreProcedure\M_Vendor_SelectForSiharaiNo.sql" />
     <Content Include="StoreProcedure\M_Vendor_SelectForSiharaiNyuuroku.sql" />

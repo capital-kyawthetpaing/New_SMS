@@ -262,6 +262,19 @@ namespace DL
         }
 
 
+        public DataTable M_Vendor_SelectForJuchuu(M_Vendor_Entity mve)
+        {
+            string sp = "M_Vendor_SelectForJuchuu";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@VendorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 =mve.VendorCD  } },
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.ChangeDate } }
+            };
+
+            return SelectData(dic, sp);
+        }
+
 
     }
 }

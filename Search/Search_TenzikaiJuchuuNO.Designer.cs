@@ -63,6 +63,7 @@
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtOrderDateFrom = new CKM_Controls.CKM_TextBox();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
+            this.txtSupplierName = new CKM_Controls.CKM_TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTenzikai)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtSupplierName);
             this.panel1.Controls.Add(this.ScJanCD);
             this.panel1.Controls.Add(this.txtCustomerName);
             this.panel1.Controls.Add(this.dgvTenzikai);
@@ -597,13 +599,13 @@
             this.ScSupplier.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScSupplier.IsCopy = false;
             this.ScSupplier.LabelText = "";
-            this.ScSupplier.LabelVisible = true;
+            this.ScSupplier.LabelVisible = false;
             this.ScSupplier.Location = new System.Drawing.Point(118, 39);
             this.ScSupplier.Margin = new System.Windows.Forms.Padding(0);
             this.ScSupplier.Name = "ScSupplier";
             this.ScSupplier.NameWidth = 310;
             this.ScSupplier.SearchEnable = true;
-            this.ScSupplier.Size = new System.Drawing.Size(444, 27);
+            this.ScSupplier.Size = new System.Drawing.Size(133, 27);
             this.ScSupplier.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.ScSupplier.TabIndex = 2;
             this.ScSupplier.test = null;
@@ -726,6 +728,37 @@
             this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // txtSupplierName
+            // 
+            this.txtSupplierName.AllowMinus = false;
+            this.txtSupplierName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtSupplierName.BackColor = System.Drawing.Color.White;
+            this.txtSupplierName.BorderColor = false;
+            this.txtSupplierName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSupplierName.ClientColor = System.Drawing.Color.White;
+            this.txtSupplierName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.txtSupplierName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtSupplierName.DecimalPlace = 0;
+            this.txtSupplierName.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtSupplierName.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
+            this.txtSupplierName.IntegerPart = 0;
+            this.txtSupplierName.IsCorrectDate = true;
+            this.txtSupplierName.isEnterKeyDown = false;
+            this.txtSupplierName.IsFirstTime = true;
+            this.txtSupplierName.isMaxLengthErr = false;
+            this.txtSupplierName.IsNumber = true;
+            this.txtSupplierName.IsShop = false;
+            this.txtSupplierName.Length = 80;
+            this.txtSupplierName.Location = new System.Drawing.Point(249, 44);
+            this.txtSupplierName.MaxLength = 80;
+            this.txtSupplierName.MoveNext = true;
+            this.txtSupplierName.Name = "txtSupplierName";
+            this.txtSupplierName.Size = new System.Drawing.Size(350, 19);
+            this.txtSupplierName.TabIndex = 123;
+            this.txtSupplierName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸ25";
+            this.txtSupplierName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtSupplierName.UseColorSizMode = false;
+            // 
             // Search_TenzikaiJuchuuNO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -783,5 +816,6 @@
         private CKM_Controls.CKM_TextBox txtOrderDateFrom;
         private CKM_Controls.CKM_Label ckM_Label1;
         private CKM_SearchControl ScJanCD;
+        private CKM_Controls.CKM_TextBox txtSupplierName;
     }
 }

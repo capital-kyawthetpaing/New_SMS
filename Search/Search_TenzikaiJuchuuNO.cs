@@ -21,6 +21,7 @@ namespace Search
         D_TenzikaiJuchuu_Entity dtje;
         private Control PreCon = null;
         Control[] DetailControls;
+        
 
         string year = string.Empty; string month = string.Empty; string day = string.Empty; string date = string.Empty;
         public string OrderNum = string.Empty;
@@ -260,7 +261,20 @@ namespace Search
                 }
                 if (!string.IsNullOrWhiteSpace(ScSupplier.TxtCode.Text))
                 {
-                    if (!ScSupplier.SelectData())
+                    //if (!ScSupplier.SelectData())
+                    //{
+                    //    bbl.ShowMessage("E101");
+                    //    ScSupplier.SetFocus(1);
+                    //}
+                    mve.VendorCD = ScSupplier.TxtCode.Text;
+                    mve.ChangeDate = ScSupplier.ChangeDate;
+                    DataTable dtvendor = new DataTable();
+                    dtvendor = tzkjbl.M_Vendor_SelectForJuchuu(mve);
+                    if(dtvendor.Rows.Count > 0 )
+                    {
+                        txtSupplierName.Text = dtvendor.Rows[0]["VendorName"].ToString();
+                    }
+                    else
                     {
                         bbl.ShowMessage("E101");
                         ScSupplier.SetFocus(1);
@@ -400,5 +414,6 @@ namespace Search
             //    scStaff.SetFocus(1);
             //}
         }
+
     }
 }
