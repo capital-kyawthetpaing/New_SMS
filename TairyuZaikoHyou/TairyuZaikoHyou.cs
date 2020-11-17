@@ -448,7 +448,7 @@ namespace TairyuZaikoHyou
            string day  = y + "/" + m;
             msce = new M_StoreClose_Entity()
             {
-                StoreCD = StoreAuthorizationsCD,
+                StoreCD = cboWarehouse.SelectedValue.ToString(),
                 FiscalYYYYMM = day.Replace("/",""),
             };
             return msce;

@@ -285,6 +285,12 @@ namespace MailHistoryShoukai
                                 }
                                 ScCustomer.LabelText = mce.CustomerName;
                             }
+                            else
+                            {
+                                bbl.ShowMessage("E101");
+                                ScCustomer.LabelText = "";
+                                return false;
+                            }
                         }
                         else
                         {
@@ -300,6 +306,13 @@ namespace MailHistoryShoukai
 
                             if (ret)
                             {
+                                ScCustomer.LabelText = mve.VendorName;
+                            }
+                            else
+                            {
+                                bbl.ShowMessage("E101");
+                                ScCustomer.LabelText = "";
+                                return false;
                             }
                         }
                     }
@@ -459,6 +472,11 @@ namespace MailHistoryShoukai
                 else
                 {
                     bbl.ShowMessage("E128");
+                    GvDetail.DataSource = null;
+                    foreach (Control ctl in detailLabels)
+                    {
+                        ctl.Text = "";
+                    }
                 }
 
             }
@@ -505,32 +523,16 @@ namespace MailHistoryShoukai
             mme.UpdateOperator = InOperatorCD;
             mme.PC = InPcID;
 
-            if (mEdiMode == "1")
+            //＆画面・在庫SKS連携処理の処理モードが「処理停止中」の場合
+            if (lblEdiMode.Text == "処理停止中")
             {
-                //　記憶していた初期表示値が１
-                //＆画面・在庫SKS連携処理の処理モードが「処理停止中」の場合
-                if(lblEdiMode.Text== "処理停止中")
-                {
-                    mme.Num1 = "0";
-                }
-                else
-                {
-                    return;
-                }
+                mme.Num1 = "0";
             }
             else
             {
-                //　記憶していた初期表示値が０
                 //＆画面・在庫SKS連携処理の処理モードが「処理実行中」の場合
-                if (lblEdiMode.Text == "処理実行中")
-                {
-                    mme.Num1 = "1";
-                }
-                else
-                {
-                    return;
-                }
-            }
+                mme.Num1 = "1";
+            }         
 
             mibl.M_MultiPorpose_Update(mme);
         }
@@ -727,7 +729,7 @@ namespace MailHistoryShoukai
 
                 }
                 //どちらの場合でもプログラム「MailSend.exe」が起動中でなければ起動する。
-                CheckProcess();
+                //CheckProcess();
 
                 //テーブル転送仕様Ａ、テーブル転送仕様Ｚに従って、更新処理。
                 UpdateM_MultiPorpose();

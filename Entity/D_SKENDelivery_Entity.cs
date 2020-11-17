@@ -8,7 +8,7 @@ namespace Entity
 {
     public class D_SKENDelivery_Entity : Base_Entity
     {
-        public string    SKENBangou              { get; set; }
+        public string    SKENBangouA              { get; set; }
         public string    ImportDateTime          { get; set; }
         public string    StaffCD                 { get; set; }
         public string    VendorCD                { get; set; }
@@ -56,6 +56,9 @@ namespace Entity
 
 
         public string ProcessedDateTime { get; set; }
+
+        public string ChkFlg { get; set; }
+
 
     }
 }

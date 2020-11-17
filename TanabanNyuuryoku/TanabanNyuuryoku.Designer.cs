@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTanabanNyuuryoku));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelDetail = new System.Windows.Forms.Panel();
             this.ScStorage = new Search.CKM_SearchControl();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
@@ -153,18 +153,18 @@
             this.dgvTanaban.AllowUserToAddRows = false;
             this.dgvTanaban.AllowUserToDeleteRows = false;
             this.dgvTanaban.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvTanaban.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvTanaban.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvTanaban.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvTanaban.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvTanaban.CheckCol")));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTanaban.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTanaban.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvTanaban.ColumnHeadersHeight = 25;
             this.dgvTanaban.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
@@ -182,17 +182,19 @@
             this.dgvTanaban.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvTanaban.Location = new System.Drawing.Point(25, 149);
             this.dgvTanaban.Name = "dgvTanaban";
+            this.dgvTanaban.RowHeadersVisible = false;
             this.dgvTanaban.RowHeight_ = 20;
             this.dgvTanaban.RowTemplate.Height = 20;
             this.dgvTanaban.Size = new System.Drawing.Size(1645, 500);
             this.dgvTanaban.TabIndex = 11;
-            this.dgvTanaban.UseRowNo = true;
+            this.dgvTanaban.UseRowNo = false;
             this.dgvTanaban.UseSetting = true;
             this.dgvTanaban.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTanaban_CellContentClick);
             this.dgvTanaban.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvTanaban_CellPainting);
             this.dgvTanaban.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvTanaban_CellValidating);
             this.dgvTanaban.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvTanaban_DataError);
             this.dgvTanaban.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvTanaban_Paint);
+            this.dgvTanaban.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvTanaban_KeyDown);
             // 
             // colChk
             // 
@@ -270,8 +272,8 @@
             // colStockSu
             // 
             this.colStockSu.DataPropertyName = "StockSu";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colStockSu.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colStockSu.DefaultCellStyle = dataGridViewCellStyle9;
             this.colStockSu.HeaderText = "在庫数";
             this.colStockSu.MaxInputLength = 5;
             this.colStockSu.Name = "colStockSu";
@@ -282,6 +284,7 @@
             this.colStockNo.DataPropertyName = "StockNo";
             this.colStockNo.HeaderText = "StockNo";
             this.colStockNo.Name = "colStockNo";
+            this.colStockNo.ReadOnly = true;
             this.colStockNo.Visible = false;
             this.colStockNo.Width = 50;
             // 
@@ -570,6 +573,8 @@
         private CKM_Controls.CKM_Button btnApplicable;
         private CKM_Controls.CKM_Button btnDisplay;
         private CKM_Controls.CKM_GridView dgvTanaban;
+        private Search.CKM_SearchControl ScStorage;
+        private CKM_Controls.CKM_Label ckM_Label5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colChk;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRackNo1;
         private System.Windows.Forms.DataGridViewButtonColumn colBtn;
@@ -581,7 +586,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colJanCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStockSu;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStockNo;
-        private Search.CKM_SearchControl ScStorage;
-        private CKM_Controls.CKM_Label ckM_Label5;
     }
 }

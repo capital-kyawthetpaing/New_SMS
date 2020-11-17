@@ -31,42 +31,42 @@ namespace TempoRegiHanbaiTouroku
         }
         private bool ErrorCheck()
         {
-            //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
-            if (string.IsNullOrWhiteSpace(txtSalesDate.Text))
-            {
-                //Ｅ１０２
-                bbl.ShowMessage("E102");
-                txtSalesDate.Focus();
-                return false;
-            }
+            ////必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+            //if (string.IsNullOrWhiteSpace(txtSalesDate.Text))
+            //{
+            //    //Ｅ１０２
+            //    bbl.ShowMessage("E102");
+            //    txtSalesDate.Focus();
+            //    return false;
+            //}
 
-            txtSalesDate.Text = bbl.FormatDate(txtSalesDate.Text);
+            //txtSalesDate.Text = bbl.FormatDate(txtSalesDate.Text);
 
-            //日付として正しいこと(Be on the correct date)Ｅ１０３
-            if (!bbl.CheckDate(txtSalesDate.Text))
-            {
-                //Ｅ１０３
-                bbl.ShowMessage("E103");
-                txtSalesDate.Focus();
-                return false;
-            }
-            //入力できる範囲内の日付であること
-            if (!bbl.CheckInputPossibleDate(txtSalesDate.Text))
-            {
-                //Ｅ１１５
-                bbl.ShowMessage("E115");
-                txtSalesDate.Focus();
-                return false;
-            }
-            //過去日付でないこと
-            //共通処理－日付チェック－会計チェック
-            if (!bbl.CheckInputPossibleDateWithFisicalMonth(txtSalesDate.Text))
-            {
-                //Ｅ１１５
-                bbl.ShowMessage("E115");
-                txtSalesDate.Focus();
-                return false;
-            }
+            ////日付として正しいこと(Be on the correct date)Ｅ１０３
+            //if (!bbl.CheckDate(txtSalesDate.Text))
+            //{
+            //    //Ｅ１０３
+            //    bbl.ShowMessage("E103");
+            //    txtSalesDate.Focus();
+            //    return false;
+            //}
+            ////入力できる範囲内の日付であること
+            //if (!bbl.CheckInputPossibleDate(txtSalesDate.Text))
+            //{
+            //    //Ｅ１１５
+            //    bbl.ShowMessage("E115");
+            //    txtSalesDate.Focus();
+            //    return false;
+            //}
+            ////過去日付でないこと
+            ////共通処理－日付チェック－会計チェック
+            //if (!bbl.CheckInputPossibleDateWithFisicalMonth(txtSalesDate.Text))
+            //{
+            //    //Ｅ１１５
+            //    bbl.ShowMessage("E115");
+            //    txtSalesDate.Focus();
+            //    return false;
+            //}
 
             return true;
         }

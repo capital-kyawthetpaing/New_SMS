@@ -24,7 +24,8 @@ namespace EDINouhinJouhonTouroku
 
         private enum EColNo : int
         {
-            Chk,     //
+            Chk,
+            SKENBangouA,
             SKENNouhinshoNO,
             ImportDateTime,
             Vendor,
@@ -32,6 +33,7 @@ namespace EDINouhinJouhonTouroku
             ImportDetailsSu,
             ErrorSu,
             ImportFile,
+            
 
             COUNT
         }
@@ -169,12 +171,19 @@ namespace EDINouhinJouhonTouroku
                 lblImportDateTime.Text = gdvDSKENDelivery[(int)EColNo.ImportDateTime, selectRowIndex].Value.ToString();
                 lblVendor.Text = gdvDSKENDelivery[(int)EColNo.Vendor, selectRowIndex].Value.ToString();
 
-                D_SKENDeliveryDetails_Entity de = new D_SKENDeliveryDetails_Entity
-                {
-                    SKENNouhinshoNO = gdvDSKENDelivery[(int)EColNo.SKENNouhinshoNO, selectRowIndex].Value.ToString(),
-                    ChkFlg = chkError.Checked ? "1" : "0",
+                D_SKENDeliveryDetails_Entity de = new D_SKENDeliveryDetails_Entity();
 
-                };
+                    //ImportDateTime = gdvDSKENDelivery[(int)EColNo.ImportDateTime, selectRowIndex].Value.ToString(),
+                    //SKENNouhinshoNO = gdvDSKENDelivery[(int)EColNo.SKENNouhinshoNO, selectRowIndex].Value.ToString(),
+                    de.SKENBangouA = gdvDSKENDelivery[(int)EColNo.SKENBangouA, selectRowIndex].Value.ToString();
+                if ((chkError.Checked && chkCorrect.Checked) || (!chkError.Checked && !chkCorrect.Checked))
+                    de.ChkFlg = "2";
+                else if(chkError.Checked)
+                    de.ChkFlg = "1";
+                else if (chkCorrect.Checked)
+                    de.ChkFlg = "0";
+                
+
 
                 dtDelivery = ediNHJ_bl.D_SKENDeliveryDetails_SelectAll(de);
 
@@ -232,7 +241,7 @@ namespace EDINouhinJouhonTouroku
                     ediNHJ_bl.ShowMessage("E101");
                     EndSec();
                 }
-
+                Scr_Clr(0);
                 //履歴データ取得処理
                 DataTable dt = ediNHJ_bl.D_SKENDelivery_SelectAll();
 
@@ -306,7 +315,7 @@ namespace EDINouhinJouhonTouroku
                         Report.Refresh();
                         Report.SetParameterValue("txtImportDate", lblImportDateTime.Text.ToString() );
                         Report.SetParameterValue("txtVendor", lblVendor.Text.ToString());
-                        Report.SetParameterValue("txtSKENNouhinshoNO", gdvDSKENDelivery[(int)EColNo.SKENNouhinshoNO, selectRowIndex].Value.ToString());
+                        Report.SetParameterValue("txtSKENNouhinshoNO", gdvDSKENDelivery[(int)EColNo.SKENBangouA, selectRowIndex].Value.ToString());
 
                         if (ret == DialogResult.Yes)
                         {
@@ -405,8 +414,8 @@ namespace EDINouhinJouhonTouroku
 
         private void Scr_Clr(short Kbn)
         {
-            chkError.Checked = false;
-            chkCorrect.Checked = false;
+            chkError.Checked = true;
+            chkCorrect.Checked = true;
 
             lblImportDateTime.Text = "";
             lblVendor.Text = "";

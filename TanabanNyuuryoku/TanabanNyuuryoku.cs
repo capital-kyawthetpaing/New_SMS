@@ -133,7 +133,7 @@ namespace TanabanNyuuryoku
                 else
                 {
                     dgvTanaban.DataSource = dtstorage;
-                    dgvTanaban.CurrentCell = dgvTanaban[2, 0];
+                    dgvTanaban.CurrentCell = dgvTanaban[0, 0];
                 }
             }
             else
@@ -555,32 +555,37 @@ namespace TanabanNyuuryoku
 
         private void dgvTanaban_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-            if (dgvTanaban.Columns[e.ColumnIndex].Name == "colRackNo1")
-            {
-                string rate = dgvTanaban.Rows[e.RowIndex].Cells["colRackNo1"].EditedFormattedValue.ToString();
-                if (!String.IsNullOrWhiteSpace(rate))
+             if(dgvTanaban.lastKey)
+                if (dgvTanaban.Columns[e.ColumnIndex].Name == "colRackNo1")
                 {
-                    mle = new M_Location_Entity();
-                    tnbnBL = new TanabanNyuuryoku_BL();
-
-                    mle.SoukoCD = cboWarehouse.SelectedValue.ToString();
-                    mle.TanaCD = rate;
-                    DataTable dtLocation = new DataTable();
-                    dtLocation = tnbnBL.M_LocationTana_Select(mle);
-                    if (dtLocation.Rows.Count == 0)
+                    string rate = dgvTanaban.Rows[e.RowIndex].Cells["colRackNo1"].EditedFormattedValue.ToString();
+                    if (!String.IsNullOrWhiteSpace(rate))
                     {
-                        tnbnBL.ShowMessage("E101");
-                        //dgvTanaban.RefreshEdit();
-                        dgvTanaban.BeginEdit(true);
+                        mle = new M_Location_Entity();
+                        tnbnBL = new TanabanNyuuryoku_BL();
+
+                        mle.SoukoCD = cboWarehouse.SelectedValue.ToString();
+                        mle.TanaCD = rate;
+                        DataTable dtLocation = new DataTable();
+                        dtLocation = tnbnBL.M_LocationTana_Select(mle);
+                        if (dtLocation.Rows.Count == 0)
+                        {
+                            tnbnBL.ShowMessage("E101");
+                            //dgvTanaban.RefreshEdit();
+                            e.Cancel = true;
+                           
+                        }
+                        dgvTanaban.lastKey = false;
+                    }
+                    else
+                    {
+                        //MessageBox.Show("enter valid no");
+                        bbl.ShowMessage("E102");
+                        //dgvTanaban.BeginEdit(true);
+                        e.Cancel = true;
+                        dgvTanaban.lastKey = true;
                     }
                 }
-                else
-                {
-                    //MessageBox.Show("enter valid no");
-                    bbl.ShowMessage("E102");
-                    dgvTanaban.BeginEdit(true);
-                }
-            }
         }
 
         private void dgvTanaban_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -591,8 +596,27 @@ namespace TanabanNyuuryoku
             }
             catch
             {
-                MessageBox.Show("Enter valid no");
-                dgvTanaban.RefreshEdit();
+                //MessageBox.Show("Enter valid no");
+                //dgvTanaban.RefreshEdit();
+                e.Cancel = false;
+            }
+        }
+
+        private void dgvTanaban_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                //最終行最終列の場合は、F1へ
+                if ((dgvTanaban.CurrentCellAddress.X == dgvTanaban.ColumnCount - 9) &&
+                    (dgvTanaban.CurrentCellAddress.Y == dgvTanaban.RowCount - 1))
+                {
+                    Btn_F1.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
             }
         }
     }
