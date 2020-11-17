@@ -3,6 +3,7 @@ using DL;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -12,13 +13,13 @@ using System.Threading.Tasks;
 
 namespace MainMenu
 {
-   public class FTPData
+    public class FTPData
     {
         string[] downloadFiles;
         StringBuilder result = new StringBuilder();
         WebResponse response = null;
         StreamReader reader = null;
-        
+
         public FTPData()
         {
 
@@ -92,17 +93,17 @@ namespace MainMenu
             //    path = tmp[3].Replace("\"", "").Split('=').Last();
             //    Login_BL.SyncPath = path;
             //}
-            
+
             var GetList = FTPData.GetFileList(Path, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");   /// Add Network Credentials
             // if (GetList.Count() > 0 && GetList != null)
             if (GetList != null)
             {
-               // Cursor = Cursors.WaitCursor;
+                // Cursor = Cursors.WaitCursor;
                 foreach (string file in GetList)
                 {
                     FTPData.Download(file, Path, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");
                 }
-              //  Cursor = Cursors.Default;
+                //  Cursor = Cursors.Default;
             }
         }
         public static void Download(string file, string ftpuri, string UID, string PWD, string path)
@@ -127,7 +128,7 @@ namespace MainMenu
                 reqFTP1.Proxy = null;
                 FtpWebResponse response1 = (FtpWebResponse)reqFTP1.GetResponse();
                 var server_Info = response1.LastModified;
-                
+
                 response1.Close();
 
                 if (!Directory.Exists(path))
@@ -141,7 +142,7 @@ namespace MainMenu
                     else
                         return;
                 }
-                Down:
+            Down:
                 if (File.Exists(path + "/" + file))   // Check Modified Files
                 {
                     File.Delete(path + "/" + file);
@@ -175,6 +176,108 @@ namespace MainMenu
             {
                 //MessageBox.Show(ex.Message, "Download Error");
             }
+
+        }
+        public static Stream GetImageStream(string ftpFilePath)
+        {
+            if (!IsExistFile(ftpFilePath))
+            {
+                return null;
+            }
+            WebClient ftpClient = new WebClient();
+            ftpClient.Credentials = new NetworkCredential(Login_BL.ID, Login_BL.Password);
+
+            byte[] imageByte = ftpClient.DownloadData(ftpFilePath);
+            MemoryStream mStream = new MemoryStream();
+            
+            mStream.Write(imageByte, 0, Convert.ToInt32(imageByte.Length));
+            var bytes = ((MemoryStream)mStream).ToArray();
+            System.IO.Stream inputStream = new MemoryStream(bytes);
+            return inputStream;
+        }
+        public static Bitmap GetImage(string ftpFilePath)
+        {
+            if (!IsExistFile(ftpFilePath))
+            {
+                return null;
+            }
+            WebClient ftpClient = new WebClient();
+            ftpClient.Credentials = new NetworkCredential(Login_BL.ID, Login_BL.Password);
+
+            byte[] imageByte = ftpClient.DownloadData(ftpFilePath);
+            return ByteToImage(imageByte);
+        }
+
+        public static Bitmap ByteToImage(byte[] blob)
+        {
+            MemoryStream mStream = new MemoryStream();
+            byte[] pData = blob;
+            mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+            Bitmap bm = new Bitmap(mStream, false);
+            mStream.Dispose();
+            return bm;
+        }
+
+        private static bool IsExistFile(string pth)
+        {
+            var request = (FtpWebRequest)WebRequest.Create(pth);
+            request.Credentials = new NetworkCredential(Login_BL.ID, Login_BL.Password);
+            request.Method = WebRequestMethods.Ftp.GetFileSize;
+
+            try
+            {
+                FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+            }
+            catch (WebException ex)
+            {
+                FtpWebResponse response = (FtpWebResponse)ex.Response;
+                if (response.StatusCode ==
+                    FtpStatusCode.ActionNotTakenFileUnavailable)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        public bool FileUpload(string Path,string ID,out string resName)
+        {
+            try
+            {
+                Login_BL lb = new Login_BL();
+                var fnm = ID+"_"+DateTime.Now.ToString("yyyyMMdd_HHmmss");
+
+                var fp = Login_BL.FtpPath.Replace("Sync", "Setting") + Base_DL.iniEntity.DatabaseName + "/" + fnm+ System.IO.Path.GetExtension(Path);
+                resName = fp;
+                if (IsExistFile(fp))
+                {
+                    DeleteFile(fp);
+                }
+                using (var client = new WebClient())
+                {
+                    client.Credentials = new NetworkCredential(Login_BL.ID, Login_BL.Password);
+                    client.UploadFile(fp, WebRequestMethods.Ftp.UploadFile, Path);
+                }
+            }
+            catch (Exception ex){
+                var mdg = ex.Message;
+                resName = "";
+                return false;
+            }
+            return true;
+        }
+        private void DeleteFile(string fileName)
+        {
+            try
+            {
+                var request = (FtpWebRequest)WebRequest.Create(fileName);
+                request.Method = WebRequestMethods.Ftp.DeleteFile;
+                request.Credentials = new NetworkCredential(Login_BL.ID, Login_BL.Password);
+                using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+                {
+                    var d= response.StatusDescription;
+                }
+            }
+            catch { }
 
         }
     }

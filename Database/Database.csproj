@@ -626,6 +626,11 @@
     <Content Include="StoreProcedure\SelectPrintData.sql" />
     <Content Include="StoreProcedure\Select_PaymentClose_ValueCheck.sql" />
     <Content Include="StoreProcedure\Select_SearchName.sql" />
+    <Content Include="StoreProcedure\SettingCheckDefault.sql" />
+    <Content Include="StoreProcedure\SettingDefault.sql" />
+    <Content Include="StoreProcedure\SettingGetAllPermission.sql" />
+    <Content Include="StoreProcedure\SettingPermissionUpdate.sql" />
+    <Content Include="StoreProcedure\SettingSave.sql" />
     <Content Include="StoreProcedure\ShuukaSoukoCheck.sql" />
     <Content Include="StoreProcedure\Simple_Select.sql" />
     <Content Include="StoreProcedure\sp_alterdiagram.sql" />

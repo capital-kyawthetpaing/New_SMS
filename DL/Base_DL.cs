@@ -277,11 +277,75 @@ namespace DL
                 command.Connection.Close();
             }
         }
+        public bool InsertUpdateDeleteBinary(Dictionary<string, ValuePairBinary> dic, string sp)
+        {
+            try
+            {
+                if (UseTransaction)
+                {
+                    StartTransaction();
+                    command = new SqlCommand(sp, GetConnection(), transaction);
+                }
+                else
+                    command = new SqlCommand(sp, GetConnection());
+                command.CommandType = CommandType.StoredProcedure;
+                foreach (KeyValuePair<string, ValuePairBinary> pair in dic)
+                {
+                    ValuePairBinary vp = pair.Value;
+                    
+                        AddParamBinary(command, pair.Key, vp.value1, vp.value2,vp.value3);
+                }
+
+                if (!UseTransaction)
+                    command.Connection.Open();
+
+                command.ExecuteNonQuery();
+
+                if (UseTransaction)
+                    CommitTransaction();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                if (UseTransaction)
+                    RollBackTransaction();
+                //return false;     2019.6.12 chg
+                throw e;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
+        protected void AddParamBinary(SqlCommand cmd, string key, SqlDbType dbType, string value, byte[] byt)
+        {
+            if (byt == null)
+            {
+                if (dbType == SqlDbType.Date)
+                    value = value.Replace("/", "-");
+                if (string.IsNullOrWhiteSpace(value))
+                    cmd.Parameters.Add(key.Replace("_NoTrim", ""), dbType).Value = DBNull.Value;
+                else
+                    cmd.Parameters.Add(key.Replace("_NoTrim", ""), dbType).Value = key.Contains("_NoTrim") ? value : value.Trim();
+            }
+            else
+            {
+                cmd.Parameters.Add(key.Replace("_NoTrim", ""), dbType).Value = key.Contains("_NoTrim") ? byt : byt;
+            }
+        }
     }
+
 
     public struct ValuePair
     {
         public SqlDbType value1;
         public string value2;
+    }
+    public struct ValuePairBinary
+    {
+        public SqlDbType value1;
+        public string value2;
+        public byte[] value3;
     }
 }

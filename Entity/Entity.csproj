@@ -146,6 +146,7 @@
     <Compile Include="M_Program_Entity.cs" />
     <Compile Include="M_Renban_Entity.cs" />
     <Compile Include="M_SalesTax_Entity.cs" />
+    <Compile Include="M_Setting.cs" />
     <Compile Include="M_Settlement_Entity.cs" />
     <Compile Include="M_ShippingDetails_Entity.cs" />
     <Compile Include="M_Shipping_Entity.cs" />
