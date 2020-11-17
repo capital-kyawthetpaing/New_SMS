@@ -64,7 +64,7 @@ namespace MainMenu
             ChangeFont(CKM_FontSize.XSmall);
             
             
-            if (Login_BL.Islocalized)
+            if (!Login_BL.Islocalized)
             {
                 Login_BL loginbl = new Login_BL();
                 var df =loginbl.CheckDefault("1", Staff_CD);// MenuFlg 1 for MainMenuCapital
