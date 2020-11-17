@@ -179,12 +179,12 @@ BEGIN
 														THEN CAST(DATEADD(D, -1 ,DATEADD(M, 1, '2020' + '/' + REPLACE(t.販売予定日,RIGHT(t.販売予定日, 3), '') + '/' + '01')) AS DATE)
 														ELSE NULL End End End,111) as _11NyuukaYoteiHyou ,
 														
-														format(Cast(t.即納数 as int), 'N0') as _12SoukunoSu,
+														format(Cast(t.[希望日1] as int), 'N0') as _12SoukunoSu,
 														t1.TaniCD as _13TaniCD,
 														format(t1.SalePriceOutTax, 'N0')  as _14SalePriceOutTax,
-														format(Round(t1.SalePriceOutTax * t.即納数,0), 'N0')  as _15OrderExcTax,
-														format(Round(t1.SalePriceOutTax *t.即納数* t1.TaxCalculation,0), 'N0')  as _16OrderIncTax,
-														format(Round((t1.SalePriceOutTax - t1.SiireTanka)* t.[即納数],0), 'N0') as _17TotalProfit,
+														format(Round(t1.SalePriceOutTax * t.[希望日1],0), 'N0')  as _15OrderExcTax,
+														format(Round(t1.SalePriceOutTax *t.[希望日1]* t1.TaxCalculation,0), 'N0')  as _16OrderIncTax,
+														format(Round((t1.SalePriceOutTax - t1.SiireTanka)* t.[希望日1],0), 'N0') as _17TotalProfit,
 														t1.Taxnotation as _18Taxnotation ,
 														t1.TaxRate as _19TaxRate,
 														null as _20ExternaRemarks ,
@@ -236,12 +236,12 @@ BEGIN
 														THEN CAST(DATEADD(D, -1 ,DATEADD(M, 1, '2020' + '/' + REPLACE(t.販売予定日,RIGHT(t.販売予定日, 3), '') + '/' + '01')) AS DATE)
 														ELSE NULL End End End,111) as _11NyuukaYoteiHyou ,
 														
-														format(Cast(t.即納数 as int), 'N0') as _12SoukunoSu,
+														format(Cast(t.[希望日2] as int), 'N0') as _12SoukunoSu,
 														t1.TaniCD as _13TaniCD,
 														format(t1.SalePriceOutTax, 'N0')  as _14SalePriceOutTax,
-														format(Round(t1.SalePriceOutTax * t.即納数,0), 'N0') as _15OrderExcTax,
-														format(Round(t1.SalePriceOutTax *t.即納数* t1.TaxCalculation,0), 'N0')  as _16OrderIncTax,
-														format(Round((t1.SalePriceOutTax - t1.SiireTanka)* t.[即納数],0), 'N0')  as _17TotalProfit,
+														format(Round(t1.SalePriceOutTax * t.[希望日2],0), 'N0') as _15OrderExcTax,
+														format(Round(t1.SalePriceOutTax *t.[希望日2]* t1.TaxCalculation,0), 'N0')  as _16OrderIncTax,
+														format(Round((t1.SalePriceOutTax - t1.SiireTanka)* t.[希望日2],0), 'N0')  as _17TotalProfit,
 														t1.Taxnotation as _18Taxnotation ,
 														t1.TaxRate as _19TaxRate,
 														null as _20ExternaRemarks ,
