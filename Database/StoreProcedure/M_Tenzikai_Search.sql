@@ -41,10 +41,10 @@ AND (@VendorCDFrom IS NULL OR (mt.VendorCD>=@VendorCDFrom))
 AND (@VendorCDTo IS NULL OR (mt.VendorCD<=@VendorCDTo))
 AND  mt.LastYearTerm=@LastYearTerm
 AND  mt.LastSeason=@LastSeason
-AND mt.InsertDateTime>=@NStartDate
-AND mt.InsertDateTime<=@NEndDate
-AND mt.UpdateDateTime>=@LStartDate
-AND mt.UpdateDateTime<=@LEndDate
+AND (@NStartDate IS NULL OR(mt.InsertDateTime>=@NStartDate))
+AND (@NEndDate IS NULL OR(mt.InsertDateTime<=@NEndDate))
+AND (@LStartDate IS NULL OR(mt.UpdateDateTime>=@LStartDate))
+AND (@LEndDate IS NULL OR(mt.UpdateDateTime<=@LEndDate))
 Group by
 mt.TenzikaiName,mt.VendorCD,mt.LastYearTerm,mt.LastSeason
 Order by mt.LastYearTerm,mt.LastSeason DESC,mt.TenzikaiName,mt.VendorCD ASC
