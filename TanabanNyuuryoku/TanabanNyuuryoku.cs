@@ -369,7 +369,8 @@ namespace TanabanNyuuryoku
      
         private void Clear()
         {
-            txtArrivalDateFrom.Text = DateTime.Now.ToString("yyyy/MM/dd");
+            //txtArrivalDateFrom.Text = DateTime.Now.ToString("yyyy/MM/dd");
+            txtArrivalDateFrom.Text = string.Empty;
             txtArrivalDateTo.Text = DateTime.Now.ToString("yyyy/MM/dd");
 
             BindCombo();
@@ -573,18 +574,18 @@ namespace TanabanNyuuryoku
                             tnbnBL.ShowMessage("E101");
                             //dgvTanaban.RefreshEdit();
                             e.Cancel = true;
-                           
+                            
                         }
                         dgvTanaban.lastKey = false;
                     }
-                    else
-                    {
-                        //MessageBox.Show("enter valid no");
-                        bbl.ShowMessage("E102");
-                        //dgvTanaban.BeginEdit(true);
-                        e.Cancel = true;
-                        dgvTanaban.lastKey = true;
-                    }
+                    //else
+                    //{
+                    //    //MessageBox.Show("enter valid no");
+                    //    bbl.ShowMessage("E102");
+                    //    //dgvTanaban.BeginEdit(true);
+                    e.Cancel = true;
+                    dgvTanaban.lastKey = false;
+                    //}
                 }
         }
 
