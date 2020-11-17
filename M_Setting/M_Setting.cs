@@ -50,18 +50,25 @@ namespace M_Setting
             switch (Index)
             {
                 case 0: // F1:終了
+                case 1:     //F2:新規
                     {
                         break;
                     }
-                case 1:     //F2:新規
-                
+               
+                case 2:     //F3:変更
+                    {
+                        ChangeOperationMode(EOperationMode.UPDATE);
+                        sc_Staff.TxtCode.Focus();
+
+                        break;
+
+                    }
                 case 3:     //F4:削除
                 case 4:     //F5:照会
                     {
                       
                         break;
                     }
-                case 2:     //F3:変更
                 case 5: //F6:キャンセル
                     {
                         //Ｑ００４				
