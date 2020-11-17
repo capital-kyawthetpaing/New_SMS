@@ -28,18 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEDINouhinJouhouTouroku));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.btnStart = new CKM_Controls.CKM_Button();
             this.btnStop = new CKM_Controls.CKM_Button();
@@ -48,6 +50,15 @@
             this.lblImportDateTime = new System.Windows.Forms.Label();
             this.lblEdiMode = new System.Windows.Forms.Label();
             this.gdvDSKENDeliveryDetail = new CKM_Controls.CKM_GridView();
+            this.colSKENNouhinsho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSKENHacchuu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSKENNouhinHinban = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSKENJanCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSKUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colColorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSizeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSKENNouhinSuu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colErrorText = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.chkCorrect = new CKM_Controls.CKM_CheckBox();
             this.chkError = new CKM_Controls.CKM_CheckBox();
@@ -66,15 +77,6 @@
             this.colErrorText1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblRireki = new CKM_Controls.CKM_Label();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
-            this.colSKENNouhinsho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSKENHacchuu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSKENNouhinHinban = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSKENJanCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSKUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colColorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSizeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSKENNouhinSuu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colErrorText = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdvDSKENDeliveryDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdvDSKENDelivery)).BeginInit();
@@ -210,18 +212,18 @@
             this.gdvDSKENDeliveryDetail.AllowUserToAddRows = false;
             this.gdvDSKENDeliveryDetail.AllowUserToDeleteRows = false;
             this.gdvDSKENDeliveryDetail.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.gdvDSKENDeliveryDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.gdvDSKENDeliveryDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle27;
             this.gdvDSKENDeliveryDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gdvDSKENDeliveryDetail.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("gdvDSKENDeliveryDetail.CheckCol")));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gdvDSKENDeliveryDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gdvDSKENDeliveryDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.gdvDSKENDeliveryDetail.ColumnHeadersHeight = 25;
             this.gdvDSKENDeliveryDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSKENNouhinsho,
@@ -233,6 +235,14 @@
             this.colSizeName,
             this.colSKENNouhinSuu,
             this.colErrorText});
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gdvDSKENDeliveryDetail.DefaultCellStyle = dataGridViewCellStyle31;
             this.gdvDSKENDeliveryDetail.EnableHeadersVisualStyles = false;
             this.gdvDSKENDeliveryDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gdvDSKENDeliveryDetail.Location = new System.Drawing.Point(36, 377);
@@ -243,6 +253,67 @@
             this.gdvDSKENDeliveryDetail.TabIndex = 24;
             this.gdvDSKENDeliveryDetail.UseRowNo = true;
             this.gdvDSKENDeliveryDetail.UseSetting = true;
+            // 
+            // colSKENNouhinsho
+            // 
+            this.colSKENNouhinsho.DataPropertyName = "SKENNouhinshoNO";
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colSKENNouhinsho.DefaultCellStyle = dataGridViewCellStyle29;
+            this.colSKENNouhinsho.HeaderText = "納品書番号";
+            this.colSKENNouhinsho.Name = "colSKENNouhinsho";
+            // 
+            // colSKENHacchuu
+            // 
+            this.colSKENHacchuu.DataPropertyName = "SKENHacchuu";
+            this.colSKENHacchuu.HeaderText = "発注番号";
+            this.colSKENHacchuu.Name = "colSKENHacchuu";
+            // 
+            // colSKENNouhinHinban
+            // 
+            this.colSKENNouhinHinban.DataPropertyName = "SKENNouhinHinban";
+            this.colSKENNouhinHinban.HeaderText = "メーカー商品CD";
+            this.colSKENNouhinHinban.Name = "colSKENNouhinHinban";
+            this.colSKENNouhinHinban.Width = 200;
+            // 
+            // colSKENJanCD
+            // 
+            this.colSKENJanCD.DataPropertyName = "SKENJanCD";
+            this.colSKENJanCD.HeaderText = "JANCD";
+            this.colSKENJanCD.Name = "colSKENJanCD";
+            // 
+            // colSKUName
+            // 
+            this.colSKUName.DataPropertyName = "SKUName";
+            this.colSKUName.HeaderText = "商品名";
+            this.colSKUName.Name = "colSKUName";
+            this.colSKUName.Width = 400;
+            // 
+            // colColorName
+            // 
+            this.colColorName.DataPropertyName = "ColorName";
+            this.colColorName.HeaderText = "カラー";
+            this.colColorName.Name = "colColorName";
+            // 
+            // colSizeName
+            // 
+            this.colSizeName.DataPropertyName = "SizeName";
+            this.colSizeName.HeaderText = "サイズ";
+            this.colSizeName.Name = "colSizeName";
+            // 
+            // colSKENNouhinSuu
+            // 
+            this.colSKENNouhinSuu.DataPropertyName = "SKENNouhinSuu";
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colSKENNouhinSuu.DefaultCellStyle = dataGridViewCellStyle30;
+            this.colSKENNouhinSuu.HeaderText = "納品数";
+            this.colSKENNouhinSuu.Name = "colSKENNouhinSuu";
+            // 
+            // colErrorText
+            // 
+            this.colErrorText.DataPropertyName = "ErrorText";
+            this.colErrorText.HeaderText = "エラー";
+            this.colErrorText.Name = "colErrorText";
+            this.colErrorText.Width = 250;
             // 
             // ckM_Label5
             // 
@@ -349,18 +420,18 @@
             this.gdvDSKENDelivery.AllowUserToAddRows = false;
             this.gdvDSKENDelivery.AllowUserToDeleteRows = false;
             this.gdvDSKENDelivery.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.gdvDSKENDelivery.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.gdvDSKENDelivery.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle32;
             this.gdvDSKENDelivery.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gdvDSKENDelivery.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("gdvDSKENDelivery.CheckCol")));
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gdvDSKENDelivery.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gdvDSKENDelivery.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle33;
             this.gdvDSKENDelivery.ColumnHeadersHeight = 25;
             this.gdvDSKENDelivery.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
@@ -372,6 +443,14 @@
             this.colErrorSu,
             this.colImportFile,
             this.colErrorText1});
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gdvDSKENDelivery.DefaultCellStyle = dataGridViewCellStyle39;
             this.gdvDSKENDelivery.EnableHeadersVisualStyles = false;
             this.gdvDSKENDelivery.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gdvDSKENDelivery.Location = new System.Drawing.Point(36, 95);
@@ -398,8 +477,8 @@
             // colSKENBangouA
             // 
             this.colSKENBangouA.DataPropertyName = "SKENBangouA";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.colSKENBangouA.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.colSKENBangouA.DefaultCellStyle = dataGridViewCellStyle34;
             this.colSKENBangouA.HeaderText = "EDI取込番号";
             this.colSKENBangouA.Name = "colSKENBangouA";
             // 
@@ -413,9 +492,9 @@
             // colImportDateTime
             // 
             this.colImportDateTime.DataPropertyName = "ImportDateTime";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.NullValue = null;
-            this.colImportDateTime.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle35.NullValue = null;
+            this.colImportDateTime.DefaultCellStyle = dataGridViewCellStyle35;
             this.colImportDateTime.HeaderText = "       受信日時";
             this.colImportDateTime.Name = "colImportDateTime";
             this.colImportDateTime.Width = 150;
@@ -430,16 +509,16 @@
             // colImportDetailsSu
             // 
             this.colImportDetailsSu.DataPropertyName = "ImportDetailsSu";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colImportDetailsSu.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colImportDetailsSu.DefaultCellStyle = dataGridViewCellStyle36;
             this.colImportDetailsSu.HeaderText = "取込数";
             this.colImportDetailsSu.Name = "colImportDetailsSu";
             // 
             // colErrorSu
             // 
             this.colErrorSu.DataPropertyName = "ErrorSu";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colErrorSu.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colErrorSu.DefaultCellStyle = dataGridViewCellStyle37;
             this.colErrorSu.HeaderText = "エラー数";
             this.colErrorSu.Name = "colErrorSu";
             // 
@@ -453,8 +532,8 @@
             // colErrorText1
             // 
             this.colErrorText1.DataPropertyName = "ErrorText";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colErrorText1.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colErrorText1.DefaultCellStyle = dataGridViewCellStyle38;
             this.colErrorText1.HeaderText = "エラー";
             this.colErrorText1.Name = "colErrorText1";
             this.colErrorText1.Width = 250;
@@ -492,67 +571,6 @@
             this.ckM_Label3.Text = "【受信履歴】";
             this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // colSKENNouhinsho
-            // 
-            this.colSKENNouhinsho.DataPropertyName = "SKENNouhinshoNO";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colSKENNouhinsho.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colSKENNouhinsho.HeaderText = "納品書番号";
-            this.colSKENNouhinsho.Name = "colSKENNouhinsho";
-            // 
-            // colSKENHacchuu
-            // 
-            this.colSKENHacchuu.DataPropertyName = "SKENHacchuu";
-            this.colSKENHacchuu.HeaderText = "発注番号";
-            this.colSKENHacchuu.Name = "colSKENHacchuu";
-            // 
-            // colSKENNouhinHinban
-            // 
-            this.colSKENNouhinHinban.DataPropertyName = "SKENNouhinHinban";
-            this.colSKENNouhinHinban.HeaderText = "メーカー商品CD";
-            this.colSKENNouhinHinban.Name = "colSKENNouhinHinban";
-            this.colSKENNouhinHinban.Width = 200;
-            // 
-            // colSKENJanCD
-            // 
-            this.colSKENJanCD.DataPropertyName = "SKENJanCD";
-            this.colSKENJanCD.HeaderText = "JANCD";
-            this.colSKENJanCD.Name = "colSKENJanCD";
-            // 
-            // colSKUName
-            // 
-            this.colSKUName.DataPropertyName = "SKUName";
-            this.colSKUName.HeaderText = "商品名";
-            this.colSKUName.Name = "colSKUName";
-            this.colSKUName.Width = 400;
-            // 
-            // colColorName
-            // 
-            this.colColorName.DataPropertyName = "ColorName";
-            this.colColorName.HeaderText = "カラー";
-            this.colColorName.Name = "colColorName";
-            // 
-            // colSizeName
-            // 
-            this.colSizeName.DataPropertyName = "SizeName";
-            this.colSizeName.HeaderText = "サイズ";
-            this.colSizeName.Name = "colSizeName";
-            // 
-            // colSKENNouhinSuu
-            // 
-            this.colSKENNouhinSuu.DataPropertyName = "SKENNouhinSuu";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colSKENNouhinSuu.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colSKENNouhinSuu.HeaderText = "納品数";
-            this.colSKENNouhinSuu.Name = "colSKENNouhinSuu";
-            // 
-            // colErrorText
-            // 
-            this.colErrorText.DataPropertyName = "ErrorText";
-            this.colErrorText.HeaderText = "エラー";
-            this.colErrorText.Name = "colErrorText";
-            this.colErrorText.Width = 250;
             // 
             // FrmEDINouhinJouhouTouroku
             // 
