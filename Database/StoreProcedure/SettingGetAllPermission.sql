@@ -9,9 +9,9 @@ GO
 Create PROCEDURE [dbo].[SettingGetAllPermission]
 	-- Add the parameters for the stored procedure here
 	@StaffCD as varchar(50) ,
-	@Admin as varchar(1) ,
-	@Setting as varchar(1),
-	@Default as varchar(1)
+	@Admin as tinyint ,
+	@Setting as tinyint ,
+	@Default as tinyint 
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -35,9 +35,9 @@ BEGIN
 						--where a.MenuKBN is not null
 						where 
 						
-						 @Admin is null or ([Admin] =  @Admin )
-						and @Setting is null or (Setting  = @Setting)
-						and @Default is null or (Setting  = @Setting)
+						(@Admin = 0 or ([Admin] =  @Admin))
+						and  (@Setting =0  or (Setting  = @Setting))
+						and (@Default =0  or ([Default]  = @Default))
 
 						 order by  a.UpdateDateTime desc
 
