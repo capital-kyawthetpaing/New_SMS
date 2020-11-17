@@ -112,7 +112,7 @@ namespace EDINouhinJouhonTourokuB
                     {
                         //if (CheckColName(colNameB, dtImport))
                         //{
-                        Para_Add(dtImportB);
+                            Para_Add(dtImportB);
                             dtImportB = ChangeColName(dtImport,"B");
                             
                         //}

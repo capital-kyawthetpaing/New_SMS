@@ -50,11 +50,19 @@ namespace M_Setting
             switch (Index)
             {
                 case 0: // F1:終了
+                case 1:     //F2:新規
                     {
                         break;
                     }
-                case 1:     //F2:新規
+               
                 case 2:     //F3:変更
+                    {
+                        ChangeOperationMode(EOperationMode.UPDATE);
+                        sc_Staff.TxtCode.Focus();
+
+                        break;
+
+                    }
                 case 3:     //F4:削除
                 case 4:     //F5:照会
                     {
@@ -150,7 +158,7 @@ namespace M_Setting
                 case EOperationMode.UPDATE:
                 case EOperationMode.DELETE:
                 case EOperationMode.SHOW:
-                   // EnablePanel(PanelHeader);
+                    // EnablePanel(PanelHeader);
                     if (mode == EOperationMode.UPDATE)
                     {
                         this.ModeText = "修正";
@@ -158,9 +166,9 @@ namespace M_Setting
                         sc_Staff.TxtCode.Text = "";
                         sc_Staff.LabelText = "";
                         ckM_RadioButton1.Checked = true;
-                      chk_adm.Checked= ckM_CheckBox1.Checked= ckM_CheckBox2.Checked=  ckM_CheckBox3.Checked = ckM_CheckBox4.Checked = ckM_CheckBox5.Checked = ckM_CheckBox6.Checked = false;
+                        chk_adm.Checked = ckM_CheckBox1.Checked = ckM_CheckBox2.Checked = ckM_CheckBox3.Checked = ckM_CheckBox4.Checked = ckM_CheckBox5.Checked = ckM_CheckBox6.Checked = false;
                         dgvsetting.DataSource = null;
-                     F11Enable =  PanelHeader.Enabled = PanelSearch.Enabled = true;
+                        F11Enable = PanelHeader.Enabled = PanelSearch.Enabled = true;
                     }
                     //else
                     //    F12Enable = true;
@@ -181,8 +189,8 @@ namespace M_Setting
         }
         private void F11()
         {
-           
-            var dtres = mbl.SettingGetAllPermission(sc_Staff.TxtCode.Text , chk_adm.Checked ? "1" : null , ckM_CheckBox1.Checked ? "1":null,  ckM_CheckBox2.Checked ? "1" : null );
+            DataTable dtres = new DataTable();
+             dtres = mbl.SettingGetAllPermission(sc_Staff.TxtCode.Text, chk_adm.Checked ? "1" : "0", ckM_CheckBox1.Checked ? "1" : "0", ckM_CheckBox2.Checked ? "1" : "0");
             dtres.Columns.Add("AdminKBN", typeof(bool));
             dtres.Columns.Add("SettingKBN", typeof(bool));
             dtres.Columns.Add("DefaultKBN", typeof(bool));
@@ -263,6 +271,12 @@ namespace M_Setting
             {
                 (sc_Staff).LabelText = mse.StaffName;
             }
+            else
+            {
+                bbl.ShowMessage("E101");
+                sc_Staff.LabelText = "";
+                sc_Staff.TxtCode.Focus();
+            }
            
         }
 
@@ -304,9 +318,9 @@ namespace M_Setting
         private void ckM_RadioButton2_CheckedChanged(object sender, EventArgs e)
         {
             panel1.Enabled = true;
-            if (ckM_RadioButton2.Checked)
-            chk_adm.Checked = ckM_CheckBox1.Checked = ckM_CheckBox2.Checked = true;
-            else
+            //if (ckM_RadioButton2.Checked)
+            //chk_adm.Checked = ckM_CheckBox1.Checked = ckM_CheckBox2.Checked = true;
+            //else
                 chk_adm.Checked = ckM_CheckBox1.Checked = ckM_CheckBox2.Checked = false;
         }
     }

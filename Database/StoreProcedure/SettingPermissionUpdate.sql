@@ -36,6 +36,7 @@ DECLARE @DocHandle int
 		LastDate datetime
 	)
 		EXEC sp_xml_removedocument @DocHandle; 
+			set @Date = getdate();
 		update #temp set LastDate = @Date
 		delete  from #temp where colAll <> 1
 

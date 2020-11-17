@@ -19,9 +19,9 @@ namespace DL
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>() {
             { "@StaffCD",new ValuePair { value1 = SqlDbType.VarChar, value2 = val }},
 
-                 { "@Admin",new ValuePair { value1 = SqlDbType.VarChar, value2 = admin }},
-                 { "@Setting",new ValuePair { value1 = SqlDbType.VarChar, value2 = setting }},
-                 { "@Default",new ValuePair { value1 = SqlDbType.VarChar, value2 =def }} };
+                 { "@Admin",new ValuePair { value1 = SqlDbType.TinyInt, value2 = admin }},
+                 { "@Setting",new ValuePair { value1 = SqlDbType.TinyInt, value2 = setting }},
+                 { "@Default",new ValuePair { value1 = SqlDbType.TinyInt, value2 =def }} };
             UseTransaction = true;
             return SelectData(dic, "SettingGetAllPermission");
         }
