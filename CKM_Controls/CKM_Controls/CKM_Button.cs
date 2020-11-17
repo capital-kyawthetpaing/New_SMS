@@ -81,7 +81,7 @@ namespace CKM_Controls
             }
         }
 
-        public enum CKM_FontSize
+        public enum CKM_FontSize :int
         {
             Normal,
             XSmall,
