@@ -498,7 +498,7 @@
             this.panel6.Location = new System.Drawing.Point(725, 120);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(350, 28);
-            this.panel6.TabIndex = 6;
+            this.panel6.TabIndex = 7;
             // 
             // SC_copysegmet
             // 
@@ -541,7 +541,7 @@
             this.panel4.Location = new System.Drawing.Point(725, 7);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(550, 110);
-            this.panel4.TabIndex = 1;
+            this.panel4.TabIndex = 6;
             // 
             // SC_CopyTenzikai
             // 
@@ -725,7 +725,7 @@
             this.TB_StartDate.MoveNext = true;
             this.TB_StartDate.Name = "TB_StartDate";
             this.TB_StartDate.Size = new System.Drawing.Size(100, 19);
-            this.TB_StartDate.TabIndex = 9;
+            this.TB_StartDate.TabIndex = 11;
             this.TB_StartDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_StartDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_StartDate.UseColorSizMode = false;
@@ -761,7 +761,7 @@
             this.BT_SKUCheck.Margin = new System.Windows.Forms.Padding(1);
             this.BT_SKUCheck.Name = "BT_SKUCheck";
             this.BT_SKUCheck.Size = new System.Drawing.Size(100, 25);
-            this.BT_SKUCheck.TabIndex = 8;
+            this.BT_SKUCheck.TabIndex = 10;
             this.BT_SKUCheck.Text = "SKUチェック";
             this.BT_SKUCheck.UseVisualStyleBackColor = false;
             this.BT_SKUCheck.Click += new System.EventHandler(this.BT_SKUCheck_Click);
@@ -780,7 +780,7 @@
             this.BT_meisai.Margin = new System.Windows.Forms.Padding(1);
             this.BT_meisai.Name = "BT_meisai";
             this.BT_meisai.Size = new System.Drawing.Size(100, 25);
-            this.BT_meisai.TabIndex = 7;
+            this.BT_meisai.TabIndex = 9;
             this.BT_meisai.Text = "明細取込";
             this.BT_meisai.UseVisualStyleBackColor = false;
             this.BT_meisai.Click += new System.EventHandler(this.BT_meisai_Click);
@@ -1077,7 +1077,7 @@
             this.BT_Display.Margin = new System.Windows.Forms.Padding(1);
             this.BT_Display.Name = "BT_Display";
             this.BT_Display.Size = new System.Drawing.Size(80, 25);
-            this.BT_Display.TabIndex = 6;
+            this.BT_Display.TabIndex = 8;
             this.BT_Display.Text = "表示";
             this.BT_Display.UseVisualStyleBackColor = false;
             this.BT_Display.Click += new System.EventHandler(this.BT_Display_Click);
