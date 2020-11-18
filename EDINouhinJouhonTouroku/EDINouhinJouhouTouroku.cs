@@ -154,7 +154,9 @@ namespace EDINouhinJouhonTouroku
         }
         protected override void ExecDisp()
         {
-             selectRowIndex = -1;
+            selectRowIndex = -1;
+            dtDelivery = null;
+            gdvDSKENDeliveryDetail.DataSource = null;
             for (int row = 0; row < gdvDSKENDelivery.RowCount; row++)
             {
                 if (gdvDSKENDelivery[(int)EColNo.Chk, row].Value != null)

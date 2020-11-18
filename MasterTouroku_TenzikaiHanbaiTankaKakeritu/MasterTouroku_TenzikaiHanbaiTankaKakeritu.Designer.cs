@@ -57,6 +57,7 @@
             this.Lb_brand = new CKM_Controls.CKM_Label();
             this.LB_tanka = new CKM_Controls.CKM_Label();
             this.GV_Tenzaishohin = new CKM_Controls.CKM_GridView();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.CheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.BrandCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,7 +66,6 @@
             this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Season = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_Tenzaishohin)).BeginInit();
             this.panel2.SuspendLayout();
@@ -578,7 +578,7 @@
             this.GV_Tenzaishohin.DefaultCellStyle = dataGridViewCellStyle5;
             this.GV_Tenzaishohin.EnableHeadersVisualStyles = false;
             this.GV_Tenzaishohin.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.GV_Tenzaishohin.Location = new System.Drawing.Point(12, 7);
+            this.GV_Tenzaishohin.Location = new System.Drawing.Point(17, 7);
             this.GV_Tenzaishohin.Name = "GV_Tenzaishohin";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -590,7 +590,7 @@
             this.GV_Tenzaishohin.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.GV_Tenzaishohin.RowHeight_ = 20;
             this.GV_Tenzaishohin.RowTemplate.Height = 20;
-            this.GV_Tenzaishohin.Size = new System.Drawing.Size(995, 500);
+            this.GV_Tenzaishohin.Size = new System.Drawing.Size(990, 500);
             this.GV_Tenzaishohin.TabIndex = 77;
             this.GV_Tenzaishohin.UseRowNo = true;
             this.GV_Tenzaishohin.UseSetting = false;
@@ -598,6 +598,14 @@
             this.GV_Tenzaishohin.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.GV_Tenzaishohin_CellValidating);
             this.GV_Tenzaishohin.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.GV_Tenzaishohin_DataError);
             this.GV_Tenzaishohin.Paint += new System.Windows.Forms.PaintEventHandler(this.GV_Tenzaishohin_Paint);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.GV_Tenzaishohin);
+            this.panel2.Location = new System.Drawing.Point(1, 212);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1690, 550);
+            this.panel2.TabIndex = 101;
             // 
             // CheckBox
             // 
@@ -649,7 +657,7 @@
             this.Year.HeaderText = "年度";
             this.Year.Name = "Year";
             this.Year.ReadOnly = true;
-            this.Year.Width = 70;
+            this.Year.Width = 75;
             // 
             // Season
             // 
@@ -657,7 +665,7 @@
             this.Season.HeaderText = "シーズン";
             this.Season.Name = "Season";
             this.Season.ReadOnly = true;
-            this.Season.Width = 80;
+            this.Season.Width = 82;
             // 
             // Rate
             // 
@@ -669,14 +677,6 @@
             this.Rate.HeaderText = "          掛率";
             this.Rate.MaxInputLength = 6;
             this.Rate.Name = "Rate";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.GV_Tenzaishohin);
-            this.panel2.Location = new System.Drawing.Point(1, 212);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1690, 550);
-            this.panel2.TabIndex = 101;
             // 
             // FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu
             // 

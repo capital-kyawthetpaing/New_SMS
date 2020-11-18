@@ -31,7 +31,7 @@ BEGIN
             ,DM.MailKBN
             ,DM.Number
             ,DM.MailNORows
-            ,CONVERT(varchar,DM.MailDateTime,111)+' '+SUBSTRING(CONVERT(varchar,DM.MailDateTime,108),1,5) AS MailDateTime
+            ,CONVERT(varchar,DM.SendedDateTime,111)+' '+SUBSTRING(CONVERT(varchar,DM.SendedDateTime,108),1,5) AS MailDateTime
             ,DM.StaffCD
             ,DM.ContactKBN
             ,DM.MailPatternCD
@@ -74,7 +74,7 @@ BEGIN
     AND DM.MailKBN = (CASE WHEN @MailKBN <>0 THEN @MailKBN ELSE DM.MailKBN END)
     AND ISNULL(DJ.CustomerCD,'') = (CASE WHEN ISNULL(@CustomerCD,'') <> '' THEN @CustomerCD ELSE ISNULL(DJ.CustomerCD,'') END)
     AND ISNULL(DO.OrderCD,'') = (CASE WHEN ISNULL(@VendorCD,'') <> '' THEN @VendorCD ELSE ISNULL(DO.OrderCD,'') END)
-    ORDER BY DM.MailDateTime
+    ORDER BY DM.SendedDateTime
     ;
 
 END
