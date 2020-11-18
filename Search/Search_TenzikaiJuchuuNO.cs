@@ -46,9 +46,9 @@ namespace Search
                 year = date[date.Length - 3];
             txtOrderDateFrom.Text = year + '/' + month + '/' + "01";
             BindCombo();
-            txtSupplierName.Enabled = false;
+            txtSupplierName.Enabled = true;
             txtSupplierName.Text = string.Empty;
-            txtCustomerName.Enabled = false;
+            txtCustomerName.Enabled = true;
             txtCustomerName.Text = string.Empty;
             SetRequiredField();
             txtOrderDateFrom.Focus();
@@ -242,18 +242,19 @@ namespace Search
                     }
                     else
                     {
-                        if (dtc.Rows[0]["VariousFLG"].ToString() == "1")
-                        {
-                            txtCustomerName.Text = dtc.Rows[0]["CustomerName"].ToString();
-                            //txtCustomerName.BackColor = Color.White;
-                            txtCustomerName.Enabled = true;
-                        }
-                        else if (dtc.Rows[0]["VariousFLG"].ToString() == "0")
-                        {
-                            txtCustomerName.Text = dtc.Rows[0]["CustomerName"].ToString();
-                            //txtCustomerName.BackColor = Color.FromArgb(218, 218, 212);
-                            txtCustomerName.Enabled = false;
-                        }
+                        //if (dtc.Rows[0]["VariousFLG"].ToString() == "1")
+                        //{
+                        //    txtCustomerName.Text = dtc.Rows[0]["CustomerName"].ToString();
+                        //    //txtCustomerName.BackColor = Color.White;
+                        //    txtCustomerName.Enabled = true;
+                        //}
+                        //else if (dtc.Rows[0]["VariousFLG"].ToString() == "0")
+                        //{
+                        //    txtCustomerName.Text = dtc.Rows[0]["CustomerName"].ToString();
+                        //    //txtCustomerName.BackColor = Color.FromArgb(218, 218, 212);
+                        //    txtCustomerName.Enabled = false;
+                        //}
+                        txtCustomerName.Text = dtc.Rows[0]["CustomerName"].ToString();
                     }
 
                 }
@@ -354,18 +355,19 @@ namespace Search
                     dtcus = tzkjbl.M_Customer_SelectForTenzikai(mce);
                     if (dtcus.Rows.Count > 0)
                     {
-                        if (dtcus.Rows[0]["VariousFLG"].ToString() == "1")
-                        {
-                            txtCustomerName.Text = dtcus.Rows[0]["CustomerName"].ToString();
-                            //txtCustomerName.BackColor = Color.White;
-                            txtCustomerName.Enabled = true;
-                        }
-                        else if (dtcus.Rows[0]["VariousFLG"].ToString() == "0")
-                        {
-                            txtCustomerName.Text = dtcus.Rows[0]["CustomerName"].ToString();
-                            //txtCustomerName.BackColor = Color.LightGray;
-                            txtCustomerName.Enabled = false;
-                        }
+                        //if (dtcus.Rows[0]["VariousFLG"].ToString() == "1")
+                        //{
+                        //    txtCustomerName.Text = dtcus.Rows[0]["CustomerName"].ToString();
+                        //    //txtCustomerName.BackColor = Color.White;
+                        //    txtCustomerName.Enabled = true;
+                        //}
+                        //else if (dtcus.Rows[0]["VariousFLG"].ToString() == "0")
+                        //{
+                        //    txtCustomerName.Text = dtcus.Rows[0]["CustomerName"].ToString();
+                        //    //txtCustomerName.BackColor = Color.LightGray;
+                        //    txtCustomerName.Enabled = false;
+                        //}
+                        txtCustomerName.Text = dtcus.Rows[0]["CustomerName"].ToString();
                     }
                     else
                     {
