@@ -494,6 +494,30 @@ namespace MasterTouroku_TenzikaiShouhin
             dt.Columns.Add("TaxRateFlg");
             dt.Columns.Add("Remark");
             dt.Columns.Add("ExhibitioinCommonCD");
+            dt.Columns.Add("TankaCD");
+        }
+
+        private void ColTan(DataTable dt)
+        {
+            dt.Columns.Add("TankaCD");
+            dt.Columns.Add("JanCD");
+            dt.Columns.Add("SKUCD");
+            dt.Columns.Add("SKUName");
+            dt.Columns.Add("ColorCD");
+            dt.Columns.Add("ColorName");
+            dt.Columns.Add("SizeCD");
+            dt.Columns.Add("SizeName");
+            dt.Columns.Add("HanbaiDateMonth");
+            dt.Columns.Add("HanbaiDate");
+            dt.Columns.Add("Shiiretanka");
+            dt.Columns.Add("JoudaiTanka");
+            dt.Columns.Add("SalePriceOutTax");
+            dt.Columns.Add("BrandCD");
+            dt.Columns.Add("ExhibitionSegmentCD");
+            dt.Columns.Add("TaniCD");
+            dt.Columns.Add("TaxRateFlg");
+            dt.Columns.Add("Remark");
+            dt.Columns.Add("ExhibitioinCommonCD");
         }
         private void F11()
         {
@@ -516,7 +540,9 @@ namespace MasterTouroku_TenzikaiShouhin
         private DataTable GetGridData()
         {
             var dtrest = new DataTable();
+            var dt = new DataTable();
             Col(dtrest);
+            ColTan(dt);
             for (int w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
             {
                 if (!String.IsNullOrEmpty(mGrid.g_DArray[w_Row].JANCD))
@@ -550,11 +576,186 @@ namespace MasterTouroku_TenzikaiShouhin
                        :( (CKM_Controls.CKM_ComboBox)mGrid.g_MK_Ctrl[(int)ClsGridMasterTanzi.ColNO.TaxRateFlg, w_Row].CellCtl).SelectedValue,
                         mGrid.g_DArray[w_Row].Remark,
                         mGrid.g_DArray[w_Row].ExhibitionCommonCD,
+                        "",
                     });
                 }
             }
-              return dtrest;
+
+            foreach (DataRow r in dtrest.Rows)
+            {
+
+                var row = r;
+                if (!row.IsNull(1))
+                {
+                    if (Getint(row["SalePriceOutTax"].ToString()) != "0")
+                    {
+                        dt.Rows.Add(
+                        "0",
+                        r["JanCD"].ToString(),
+                        r["SKUCD"].ToString(),
+                        r["SKUName"].ToString(),
+                        r["ColorCD"].ToString(),
+                        r["ColorName"].ToString(),
+                        r["SizeCD"].ToString(),
+                        r["SizeName"].ToString(),
+                        r["HanbaiDateMonth"].ToString(),
+                        r["HanbaiDate"].ToString(),
+                        r["Shiiretanka"].ToString(),
+                        r["JoudaiTanka"].ToString(),
+                        r["SalePriceOutTax"].ToString(),
+                        r["BrandCD"].ToString(),
+                        r["ExhibitionSegmentCD"].ToString(),
+                        r["TaniCD"].ToString(),
+                        r["TaxRateFlg"].ToString(),
+                        r["Remark"].ToString(),
+                        r["ExhibitioinCommonCD"].ToString()
+                        );
+                    }
+                    if (Getint(row["Rank1"].ToString()) != "0")
+                    {
+                        dt.Rows.Add(
+                         "1",
+                        r["JANCD"].ToString(),
+                        r["SKUCD"].ToString(),
+                        r["SKUName"].ToString(),
+                        r["ColorCD"].ToString(),
+                        r["ColorName"].ToString(),
+                        r["SizeCD"].ToString(),
+                        r["SizeName"].ToString(),
+                        r["HanbaiDateMonth"].ToString(),
+                        r["HanbaiDate"].ToString(),
+                        r["Shiiretanka"].ToString(),
+                        r["JoudaiTanka"].ToString(),
+                        r["Rank1"].ToString(),
+                        r["BrandCD"].ToString(),
+                        r["ExhibitionSegmentCD"].ToString(),
+                        r["TaniCD"].ToString(),
+                        r["TaxRateFlg"].ToString(),
+                        r["Remark"].ToString(),
+                        r["ExhibitioinCommonCD"].ToString()
+                       
+                        );
+                    }
+                    if (Getint(row["Rank2"].ToString()) != "0")
+                    {
+                        dt.Rows.Add(
+                       "2",
+                        r["JANCD"].ToString(),
+                        r["SKUCD"].ToString(),
+                        r["SKUName"].ToString(),
+                        r["ColorCD"].ToString(),
+                        r["ColorName"].ToString(),
+                        r["SizeCD"].ToString(),
+                        r["SizeName"].ToString(),
+                        r["HanbaiDateMonth"].ToString(),
+                        r["HanbaiDate"].ToString(),
+                        r["Shiiretanka"].ToString(),
+                        r["JoudaiTanka"].ToString(),
+                        r["Rank2"].ToString(),
+                        r["BrandCD"].ToString(),
+                        r["ExhibitionSegmentCD"].ToString(),
+                        r["TaniCD"].ToString(),
+                        r["TaxRateFlg"].ToString(),
+                        r["Remark"].ToString(),
+                        r["ExhibitioinCommonCD"].ToString()
+                        );
+                    }
+                    if (Getint(row["Rank3"].ToString()) != "0")
+                    {
+                        dt.Rows.Add(
+                        "3",
+                        r["JANCD"].ToString(),
+                        r["SKUCD"].ToString(),
+                        r["SKUName"].ToString(),
+                        r["ColorCD"].ToString(),
+                        r["ColorName"].ToString(),
+                        r["SizeCD"].ToString(),
+                        r["SizeName"].ToString(),
+                        r["HanbaiDateMonth"].ToString(),
+                        r["HanbaiDate"].ToString(),
+                        r["Shiiretanka"].ToString(),
+                        r["JoudaiTanka"].ToString(),
+                        r["Rank3"].ToString(),
+                        r["BrandCD"].ToString(),
+                        r["ExhibitionSegmentCD"].ToString(),
+                        r["TaniCD"].ToString(),
+                        r["TaxRateFlg"].ToString(),
+                        r["Remark"].ToString(),
+                        r["ExhibitioinCommonCD"].ToString()
+                        );
+                    }
+                    if (Getint(row["Rank4"].ToString()) != "0")
+                    {
+                        dt.Rows.Add(
+                         "4",
+                         r["JANCD"].ToString(),
+                         r["SKUCD"].ToString(),
+                         r["SKUName"].ToString(),
+                         r["ColorCD"].ToString(),
+                         r["ColorName"].ToString(),
+                         r["SizeCD"].ToString(),
+                         r["SizeName"].ToString(),
+                         r["HanbaiDateMonth"].ToString(),
+                         r["HanbaiDate"].ToString(),
+                         r["Shiiretanka"].ToString(),
+                         r["JoudaiTanka"].ToString(),
+                         r["Rank4"].ToString(),
+                         r["BrandCD"].ToString(),
+                         r["ExhibitionSegmentCD"].ToString(),
+                         r["TaniCD"].ToString(),
+                         r["TaxRateFlg"].ToString(),
+                         r["Remark"].ToString(),
+                         r["ExhibitioinCommonCD"].ToString()
+                         );
+                    }
+                    if (Getint(row["Rank5"].ToString()) != "0")
+                    {
+                        dt.Rows.Add(
+                         "5",
+                        r["JANCD"].ToString(),
+                        r["SKUCD"].ToString(),
+                        r["SKUName"].ToString(),
+                        r["ColorCD"].ToString(),
+                        r["ColorName"].ToString(),
+                        r["SizeCD"].ToString(),
+                        r["SizeName"].ToString(),
+                        r["HanbaiDateMonth"].ToString(),
+                        r["HanbaiDate"].ToString(),
+                        r["Shiiretanka"].ToString(),
+                        r["JoudaiTanka"].ToString(),
+                        r["Rank5"].ToString(),
+                        r["BrandCD"].ToString(),
+                        r["ExhibitionSegmentCD"].ToString(),
+                        r["TaniCD"].ToString(),
+                        r["TaxRateFlg"].ToString(),
+                        r["Remark"].ToString(),
+                        r["ExhibitioinCommonCD"].ToString()
+                       
+                        );
+                    }
+                    
+                }
+                else
+                    break;
+            }
+
+            //return dtrest;
+            return dt;
+
          }
+
+        private string Getint(string val)
+        {
+            try
+            {
+                return Convert.ToInt32(val.Split('.')[0]).ToString();
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+            return "0";
+        }
 
         private M_TenzikaiShouhin_Entity GetEntity(DataTable dtrest)
         {
@@ -1422,7 +1623,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                 SegmentCDFrom = detailControls[(int)Eindex.SCCSegment].Text,
 
                             };
-                            DataTable dtshow = tbl.Mastertoroku_Tenzikaishouhin_Select(mt);
+                            DataTable dtshow = tbl.Mastertoroku_Tenzikaishouhin_Select(mt,1);
                             if (dtshow == null)
                             {
                                 return;
@@ -1464,9 +1665,9 @@ namespace MasterTouroku_TenzikaiShouhin
                         BranCDFrom = detailControls[(int)Eindex.SCBrand].Text,
                         SegmentCDFrom = detailControls[(int)Eindex.SCSegment].Text,
                     };
-                    DataTable dtmain = tbl.Mastertoroku_Tenzikaishouhin_Select(mt);
+                    DataTable dtmain = tbl.Mastertoroku_Tenzikaishouhin_Select(mt,2);
 
-                        if(dtmain.Rows.Count >0)
+                    if (dtmain.Rows.Count >0)
                         {
                             MesaiHyouJi(dtmain);
 
@@ -1507,9 +1708,9 @@ namespace MasterTouroku_TenzikaiShouhin
                         BranCDFrom = detailControls[(int)Eindex.SCBrand].Text,
                         SegmentCDFrom = detailControls[(int)Eindex.SCSegment].Text,
                     };
-                    DataTable dtu = tbl.Mastertoroku_Tenzikaishouhin_Select(mt);
+                    DataTable dtu = tbl.Mastertoroku_Tenzikaishouhin_Select(mt,1);
 
-                        if(dtu.Rows.Count >0)
+                    if (dtu.Rows.Count >0)
                         {
                             MesaiHyouJi(dtu);
                             Scr_Lock(1, 3, 0);
@@ -1538,7 +1739,9 @@ namespace MasterTouroku_TenzikaiShouhin
                         BranCDFrom = detailControls[(int)Eindex.SCBrand].Text,
                         SegmentCDFrom = detailControls[(int)Eindex.SCSegment].Text,
                     };
-                    DataTable dts = tbl.Mastertoroku_Tenzikaishouhin_Select(mt);
+                    DataTable dts = tbl.Mastertoroku_Tenzikaishouhin_Select(mt,1);
+                    // DataTable dts = tbl.Mastertoroku_Tenzikaishouhin_Select(mt);
+                    
                     if (dts.Rows.Count >0)
                     {
                         MesaiHyouJi(dts);
@@ -2129,7 +2332,8 @@ namespace MasterTouroku_TenzikaiShouhin
                                     SegmentCDFrom = detailControls[(int)Eindex.SCCSegment].Text,
 
                                 };
-                                DataTable dtshow = tbl.Mastertoroku_Tenzikaishouhin_Select(mt);
+                                DataTable dtshow = tbl.Mastertoroku_Tenzikaishouhin_Select(mt, 1);
+                                  //DataTable dtshow = tbl.Mastertoroku_Tenzikaishouhin_Select(mt);
                                 if (dtshow == null)
                                 {
                                     return;
@@ -3752,6 +3956,7 @@ namespace MasterTouroku_TenzikaiShouhin
                         mGrid.g_DArray[w_Row].TaxRateFlg,
                         mGrid.g_DArray[w_Row].Remark,
                         mGrid.g_DArray[w_Row].ExhibitionCommonCD,
+                        "",
                     });
                 }
             }
@@ -3775,10 +3980,10 @@ namespace MasterTouroku_TenzikaiShouhin
                     if (dt.Rows.Count == 0)
                     {
                         mGrid.g_DArray[w_Row].Chk = false;
-                        //if (mGrid.g_DArray[w_Row].JANCD == "000111")
-                        //{
-                        //    mGrid.g_DArray[w_Row].Chk = true;
-                        //}
+                        if (mGrid.g_DArray[w_Row].JANCD == "4900000000001")
+                        {
+                            mGrid.g_DArray[w_Row].Chk = true;
+                        }
                     }
                     else
                     {
@@ -3846,9 +4051,10 @@ namespace MasterTouroku_TenzikaiShouhin
                     S_BodySeigyo(6, 0);
                     mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
                     S_BodySeigyo(6, 1);
-                    scjan_1.Focus();
-                   // if (detailControls[index + 1].CanFocus)
-                      //  detailControls[c].Focus();
+                    //scjan_7.Focus();
+                    //int d = c + 1;
+                   // this.Controls.Find("scjan_" + d, true)[0].Focus();
+                   // this.Controls.Find("scjan_" + d, true)[0].TabStop=true;
                 }
 
                 c++;
@@ -3967,7 +4173,7 @@ namespace MasterTouroku_TenzikaiShouhin
             }
 
             DataTable dtrest = GetGridData();
-            if(dtrest.Rows.Count > 0)
+            if (dtrest.Rows.Count > 0)
             {
                 mt = GetEntity(dtrest);
 
@@ -3986,10 +4192,10 @@ namespace MasterTouroku_TenzikaiShouhin
                 }
 
             }
-            else
-            {
-                bl.ShowMessage("E128");
-            }
+            ////else
+            ////{
+            ////    bl.ShowMessage("E128");
+            ////}
 
             //更新後画面クリア
             ChangeOperationMode(base.OperationMode);
