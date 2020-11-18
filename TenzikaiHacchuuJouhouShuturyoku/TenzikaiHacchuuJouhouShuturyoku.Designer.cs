@@ -52,11 +52,11 @@
             // 
             // PanelHeader
             // 
-            this.PanelHeader.Size = new System.Drawing.Size(1696, 0);
+            this.PanelHeader.Size = new System.Drawing.Size(1711, 0);
             // 
             // PanelSearch
             // 
-            this.PanelSearch.Location = new System.Drawing.Point(1162, 0);
+            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
             // 
             // btnChangeIkkatuHacchuuMode
             // 
@@ -85,7 +85,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1698, 739);
+            this.panel1.Size = new System.Drawing.Size(1713, 889);
             this.panel1.TabIndex = 0;
             // 
             // ckM_Label11
@@ -471,7 +471,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1698, 811);
+            this.ClientSize = new System.Drawing.Size(1713, 961);
             this.Controls.Add(this.panel1);
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
