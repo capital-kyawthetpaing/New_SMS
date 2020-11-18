@@ -3985,7 +3985,7 @@ namespace MasterTouroku_TenzikaiShouhin
                     if (dt.Rows.Count == 0)
                     {
                         mGrid.g_DArray[w_Row].Chk = false;
-                        if (mGrid.g_DArray[w_Row].JANCD == "4900000000001")
+                        if (mGrid.g_DArray[w_Row].JANCD == "000111")
                         {
                             mGrid.g_DArray[w_Row].Chk = true;
                         }
@@ -4008,6 +4008,25 @@ namespace MasterTouroku_TenzikaiShouhin
                 var dtr = ResTem().Select("chkflg < 2", "chkflg ASC, JanCD ASC, SKUCD ASC").CopyToDataTable();
                 SetsSKU(dtr);
             }
+            GetFocus();
+        }
+        private void GetFocus()
+        {
+           
+
+
+            // mGrid.g_MK_Ctrl[w_Row, w_Col1].CellCtl.Focus();
+            for (int d = 0; d < 999; d++)
+            {
+                int id = d + 1;
+                var c = mGrid.g_MK_Ctrl[(int)ClsGridMasterTanzi.ColNO.JANCD, d].CellCtl;
+                if (c.Enabled)
+                {
+                    c.Focus();
+                    return;
+                }
+            }
+            // w_ActCtl1.Focus();
         }
         private void SetsSKU(DataTable dt)
         {

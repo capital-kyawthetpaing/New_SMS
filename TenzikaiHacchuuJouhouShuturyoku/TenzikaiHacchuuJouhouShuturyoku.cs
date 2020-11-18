@@ -13,6 +13,8 @@ using Entity;
 using System.IO;
 using ClosedXML.Excel;
 using System.Diagnostics;
+using Search;
+
 
 namespace TenzikaiHacchuuJouhouShuturyoku
 
@@ -45,7 +47,7 @@ namespace TenzikaiHacchuuJouhouShuturyoku
             F11Visible = false;
 
             BindCombo();
-            ScSupplier.SetFocus(1);
+            ScExhibitionCD.SetFocus(1);
             SetRequiredField();
           
             ModeVisible = false;
@@ -61,6 +63,7 @@ namespace TenzikaiHacchuuJouhouShuturyoku
         public void SetRequiredField()
         {
             ScSupplier.TxtCode.Require(true);
+            ScExhibitionCD.TxtCode.Require(true);
             cboYear.Require(true);
             cboSeason.Require(true);
         }
@@ -310,6 +313,21 @@ namespace TenzikaiHacchuuJouhouShuturyoku
             //        bbl.ShowMessage("E101");
             //        ScExhibitionCD.SetFocus(1);
             //    }
+            //}
+            //if(!string.IsNullOrWhiteSpace(ScExhibitionCD.TxtCode.Text))
+            //{
+                //ScExhibitionCD.ChangeDate = bbl.GetDate();
+                //Search_Tenzikai st = new Search_Tenzikai(ScExhibitionCD.ChangeDate);
+                //st.ShowDialog();              
+                
+                //if (!st.flgCancel)
+                //{
+                //    ScExhibitionCD.TxtCode.Text = st.TenzikaiName;
+                //    ScSupplier.LabelText = st.VendorName;
+                //    cboYear.SelectedText = st.LastYearTerm;
+                //    cboSeason.SelectedText = st.LastSeason;
+                    
+                //} 
             //}
         }
 
