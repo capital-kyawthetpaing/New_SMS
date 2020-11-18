@@ -1237,6 +1237,7 @@ namespace MasterTouroku_TenzikaiShouhin
         {
             mGrid.F_MoveFocus((int)ClsGridMasterTanzi.Gen_MK_FocusMove.MvNxt, (int)ClsGridMasterTanzi.Gen_MK_FocusMove.MvNxt, pErrSet, pRow, pCol, pMotoControl, this.Vsb_Mei_0);
         }
+        Control pre;
         private void GridControl_Leave(object sender, EventArgs e)
         {
             try
@@ -1244,7 +1245,7 @@ namespace MasterTouroku_TenzikaiShouhin
                 int w_Row;
                 Control w_ActCtl;
 
-                w_ActCtl = (Control)sender;
+             pre=   w_ActCtl = (Control)sender;
                 w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
                 if (w_ActCtl is GridControl.clsGridCheckBox chk && chk.Name.Contains("chk_"))
                 {
@@ -3775,15 +3776,15 @@ namespace MasterTouroku_TenzikaiShouhin
                     if (dt.Rows.Count == 0)
                     {
                         mGrid.g_DArray[w_Row].Chk = false;
-                        //if (mGrid.g_DArray[w_Row].JANCD == "000111")
-                        //{
-                        //    mGrid.g_DArray[w_Row].Chk = true;
-                        //}
+                        if (mGrid.g_DArray[w_Row].JANCD == "000111")
+                        {
+                            mGrid.g_DArray[w_Row].Chk = true;
+                        }
                     }
                     else
                     {
                         mGrid.g_DArray[w_Row].Chk = true;
-                        
+
                     }
                     mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                 }
@@ -3798,6 +3799,32 @@ namespace MasterTouroku_TenzikaiShouhin
                 var dtr = ResTem().Select("chkflg < 2", "chkflg ASC, JanCD ASC, SKUCD ASC").CopyToDataTable();
                 SetsSKU(dtr);
             }
+            
+            GetFocus();
+        }
+        private void GetFocus()
+        {
+            Control w_ActCtl1 = pre;// (Control)sender;
+          int  w_Row = System.Convert.ToInt32(w_ActCtl1.Tag) + Vsb_Mei_0.Value;
+
+            if (mGrid.F_Search_Ctrl_MK(w_ActCtl1, out int w_Col1, out int w_CtlRow1) == false)
+            {
+                return;
+            }
+            Grid_Gotfocus(w_Col1, w_Row, System.Convert.ToInt32(w_ActCtl1.Tag));
+
+        //    mGrid.g_MK_Ctrl[w_Row, w_Col1].CellCtl.Focus();
+            for (int d = 0; d < 999; d++)
+            {
+                int id = d + 1;
+                var c = mGrid.g_MK_Ctrl[(int)ClsGridMasterTanzi.ColNO.JANCD, d].CellCtl;
+                if (c.Enabled)
+                {
+                    c.Focus();
+                    return;
+                }
+            }
+           // w_ActCtl1.Focus();
         }
         private void SetsSKU(DataTable dt)
         {
