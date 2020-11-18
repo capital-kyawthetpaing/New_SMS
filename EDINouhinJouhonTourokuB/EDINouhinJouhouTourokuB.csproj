@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{22A3390D-629A-42A7-BF7B-E124DF85E761}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>EDINouhinJouhonTourokuB</RootNamespace>
-    <AssemblyName>EDINouhinJouhonTourokuB</AssemblyName>
+    <RootNamespace>EDINouhinJouhouTourokuB</RootNamespace>
+    <AssemblyName>EDINouhinJouhouTourokuB</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
