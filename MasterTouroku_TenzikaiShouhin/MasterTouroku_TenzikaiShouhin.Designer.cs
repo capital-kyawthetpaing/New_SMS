@@ -986,7 +986,7 @@
             this.SC_Tenzikai.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.SC_Tenzikai.SearchEnable = true;
             this.SC_Tenzikai.Size = new System.Drawing.Size(533, 27);
-            this.SC_Tenzikai.Stype = Search.CKM_SearchControl.SearchType.展示会商品;
+            this.SC_Tenzikai.Stype = Search.CKM_SearchControl.SearchType.Default;
             this.SC_Tenzikai.TabIndex = 0;
             this.SC_Tenzikai.test = null;
             this.SC_Tenzikai.TextSize = Search.CKM_SearchControl.FontSize.Normal;

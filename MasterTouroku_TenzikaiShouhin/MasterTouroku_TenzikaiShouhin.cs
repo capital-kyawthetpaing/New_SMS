@@ -53,6 +53,7 @@ namespace MasterTouroku_TenzikaiShouhin
             Brand,
             Segment,
             Tani,
+            Tenzikai,
         }
 
         private enum Eindex : int
@@ -289,7 +290,10 @@ namespace MasterTouroku_TenzikaiShouhin
             detailLabels = new Control[] { SC_Vendor,SC_Brand,SC_Segment,SC_CopyVendor,SC_copybrand,SC_copysegmet };
             searchButtons = new Control[] { SC_Tenzikai.BtnSearch, SC_Vendor.BtnSearch, SC_Brand.BtnSearch, SC_Segment.BtnSearch, SC_CopyTenzikai.BtnSearch ,
                                             SC_CopyVendor.BtnSearch,SC_copybrand.BtnSearch,SC_copysegmet.BtnSearch };
-            
+
+            //SC_Tenzikai.BtnSearch.Click += new System.EventHandler(BtnSearch_Click);
+
+
             foreach (var c in detailControls)
             {
                 c.KeyDown += C_KeyDown;
@@ -1273,6 +1277,7 @@ namespace MasterTouroku_TenzikaiShouhin
 
                     kbn = EsearchKbn.Tani;
                 }
+                
 
                 setCtl = previousCtrl;
 
@@ -2058,7 +2063,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
-                            if (Convert.ToInt64(mGrid.g_DArray[row].HanbaiYoteiDateMonth) >= 13)
+                            if (Convert.ToInt64(mGrid.g_DArray[row].HanbaiYoteiDateMonth) >= 13 || Convert.ToInt64(mGrid.g_DArray[row].HanbaiYoteiDateMonth) <= 0)
                             {
                                 bbl.ShowMessage("E117", "1", "12");
                                 return false;
