@@ -18,9 +18,11 @@ namespace BL
         {
             dl = new MasterTouroku_TenzikaiShouhin_DL();
         }
-        public DataTable Mastertoroku_Tenzikaishouhin_Select(M_TenzikaiShouhin_Entity mt)
+        
+
+        public DataTable Mastertoroku_Tenzikaishouhin_Select(M_TenzikaiShouhin_Entity mt, int mode)
         {
-            return dl.Mastertoroku_Tenzikaishouhin_Select(mt);
+            return dl.Mastertoroku_Tenzikaishouhin_Select(mt, mode);
         }
         public DataTable M_Tenzikaishouhin_SelectForJancd(M_TenzikaiShouhin_Entity mt)
         {
