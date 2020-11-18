@@ -221,6 +221,8 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 case EOperationMode.SHOW:
                     CleanData();
                     F12Enable = false;
+                    TB_Rate.Enabled = false;
+                    BT_Apply.Enabled = false;
                     SC_Tanka.SetFocus(1);
                     break;
                 case EOperationMode.UPDATE:
@@ -389,21 +391,25 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                 {
                     foreach (DataGridViewRow row in GV_Tenzaishohin.Rows)
                     {
-                        DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[1];
-                        if (chk.Value == "1")
+                        if(row.Cells[0].Value!=null)
                         {
-                            if (!String.IsNullOrEmpty(TB_Rate.Text))
+                            DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                            if (chk.Value == "1")
                             {
-                                string itemcd = row.Cells["Rate"].Value.ToString();
-                                row.Cells["Rate"].Value = TB_Rate.Text;
-                            }
-                            else
-                            {
-                                bl.ShowMessage("E102");
-                                TB_Rate.Focus();
-                                break;
+                                if (!String.IsNullOrEmpty(TB_Rate.Text))
+                                {
+                                    string itemcd = row.Cells["Rate"].Value.ToString();
+                                    row.Cells["Rate"].Value = TB_Rate.Text;
+                                }
+                                else
+                                {
+                                    bl.ShowMessage("E102");
+                                    TB_Rate.Focus();
+                                    break;
+                                }
                             }
                         }
+                        
                     }
                 }
             }
