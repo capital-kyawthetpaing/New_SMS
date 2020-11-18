@@ -34,29 +34,29 @@
             this.rdoProduct = new CKM_Controls.CKM_RadioButton();
             this.rdoCustomer = new CKM_Controls.CKM_RadioButton();
             this.ckM_Label9 = new CKM_Controls.CKM_Label();
-            this.ScClient2 = new Search.CKM_SearchControl();
-            this.ScExhibitionCD = new Search.CKM_SearchControl();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
-            this.ScSegmentCD = new Search.CKM_SearchControl();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.cboSeason = new CKM_Controls.CKM_ComboBox();
-            this.ScClient1 = new Search.CKM_SearchControl();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
-            this.ScBrandCD = new Search.CKM_SearchControl();
             this.Sc_BrandCD = new CKM_Controls.CKM_Label();
-            this.ScSupplier = new Search.CKM_SearchControl();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
+            this.ScClient2 = new Search.CKM_SearchControl();
+            this.ScExhibitionCD = new Search.CKM_SearchControl();
+            this.ScSegmentCD = new Search.CKM_SearchControl();
+            this.ScClient1 = new Search.CKM_SearchControl();
+            this.ScBrandCD = new Search.CKM_SearchControl();
+            this.ScSupplier = new Search.CKM_SearchControl();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelHeader
             // 
-            this.PanelHeader.Size = new System.Drawing.Size(1682, 0);
+            this.PanelHeader.Size = new System.Drawing.Size(1711, 0);
             // 
             // PanelSearch
             // 
-            this.PanelSearch.Location = new System.Drawing.Point(1148, 0);
+            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
             // 
             // btnChangeIkkatuHacchuuMode
             // 
@@ -85,7 +85,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1684, 989);
+            this.panel1.Size = new System.Drawing.Size(1713, 889);
             this.panel1.TabIndex = 0;
             // 
             // ckM_Label11
@@ -163,6 +163,124 @@
             this.ckM_Label9.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // ckM_Label6
+            // 
+            this.ckM_Label6.AutoSize = true;
+            this.ckM_Label6.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label6.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label6.DefaultlabelSize = true;
+            this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label6.Location = new System.Drawing.Point(45, 141);
+            this.ckM_Label6.Name = "ckM_Label6";
+            this.ckM_Label6.Size = new System.Drawing.Size(57, 12);
+            this.ckM_Label6.TabIndex = 29;
+            this.ckM_Label6.Text = "展示会名";
+            this.ckM_Label6.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckM_Label5
+            // 
+            this.ckM_Label5.AutoSize = true;
+            this.ckM_Label5.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label5.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label5.DefaultlabelSize = true;
+            this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label5.Location = new System.Drawing.Point(32, 116);
+            this.ckM_Label5.Name = "ckM_Label5";
+            this.ckM_Label5.Size = new System.Drawing.Size(70, 12);
+            this.ckM_Label5.TabIndex = 27;
+            this.ckM_Label5.Text = "セグメント";
+            this.ckM_Label5.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckM_Label3
+            // 
+            this.ckM_Label3.AutoSize = true;
+            this.ckM_Label3.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label3.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label3.DefaultlabelSize = true;
+            this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label3.Location = new System.Drawing.Point(46, 64);
+            this.ckM_Label3.Name = "ckM_Label3";
+            this.ckM_Label3.Size = new System.Drawing.Size(57, 12);
+            this.ckM_Label3.TabIndex = 25;
+            this.ckM_Label3.Text = "シーズン";
+            this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cboSeason
+            // 
+            this.cboSeason.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cboSeason.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboSeason.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
+            this.cboSeason.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboSeason.Flag = 0;
+            this.cboSeason.FormattingEnabled = true;
+            this.cboSeason.Length = 10;
+            this.cboSeason.Location = new System.Drawing.Point(106, 60);
+            this.cboSeason.MaxLength = 10;
+            this.cboSeason.MoveNext = true;
+            this.cboSeason.Name = "cboSeason";
+            this.cboSeason.Size = new System.Drawing.Size(121, 20);
+            this.cboSeason.TabIndex = 2;
+            // 
+            // ckM_Label2
+            // 
+            this.ckM_Label2.AutoSize = true;
+            this.ckM_Label2.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label2.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label2.DefaultlabelSize = true;
+            this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label2.Location = new System.Drawing.Point(58, 167);
+            this.ckM_Label2.Name = "ckM_Label2";
+            this.ckM_Label2.Size = new System.Drawing.Size(44, 12);
+            this.ckM_Label2.TabIndex = 21;
+            this.ckM_Label2.Text = "顧　客";
+            this.ckM_Label2.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // Sc_BrandCD
+            // 
+            this.Sc_BrandCD.AutoSize = true;
+            this.Sc_BrandCD.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.Sc_BrandCD.BackColor = System.Drawing.Color.Transparent;
+            this.Sc_BrandCD.DefaultlabelSize = true;
+            this.Sc_BrandCD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.Sc_BrandCD.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.Sc_BrandCD.ForeColor = System.Drawing.Color.Black;
+            this.Sc_BrandCD.Location = new System.Drawing.Point(31, 90);
+            this.Sc_BrandCD.Name = "Sc_BrandCD";
+            this.Sc_BrandCD.Size = new System.Drawing.Size(71, 12);
+            this.Sc_BrandCD.TabIndex = 19;
+            this.Sc_BrandCD.Text = "ブランドCD";
+            this.Sc_BrandCD.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.Sc_BrandCD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckM_Label8
+            // 
+            this.ckM_Label8.AutoSize = true;
+            this.ckM_Label8.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label8.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label8.DefaultlabelSize = true;
+            this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label8.Location = new System.Drawing.Point(59, 9);
+            this.ckM_Label8.Name = "ckM_Label8";
+            this.ckM_Label8.Size = new System.Drawing.Size(44, 12);
+            this.ckM_Label8.TabIndex = 17;
+            this.ckM_Label8.Text = "仕入先";
+            this.ckM_Label8.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // ScClient2
             // 
             this.ScClient2.AutoSize = true;
@@ -225,23 +343,6 @@
             this.ScExhibitionCD.Value3 = null;
             this.ScExhibitionCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScExhibitionCD_CodeKeyDownEvent);
             // 
-            // ckM_Label6
-            // 
-            this.ckM_Label6.AutoSize = true;
-            this.ckM_Label6.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label6.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label6.DefaultlabelSize = true;
-            this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(45, 141);
-            this.ckM_Label6.Name = "ckM_Label6";
-            this.ckM_Label6.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label6.TabIndex = 29;
-            this.ckM_Label6.Text = "展示会名";
-            this.ckM_Label6.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // ScSegmentCD
             // 
             this.ScSegmentCD.AutoSize = true;
@@ -274,56 +375,6 @@
             this.ScSegmentCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScSegmentCD_CodeKeyDownEvent);
             this.ScSegmentCD.Enter += new System.EventHandler(this.ScSegmentCD_Enter);
             // 
-            // ckM_Label5
-            // 
-            this.ckM_Label5.AutoSize = true;
-            this.ckM_Label5.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label5.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label5.DefaultlabelSize = true;
-            this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(32, 116);
-            this.ckM_Label5.Name = "ckM_Label5";
-            this.ckM_Label5.Size = new System.Drawing.Size(70, 12);
-            this.ckM_Label5.TabIndex = 27;
-            this.ckM_Label5.Text = "セグメント";
-            this.ckM_Label5.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_Label3
-            // 
-            this.ckM_Label3.AutoSize = true;
-            this.ckM_Label3.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label3.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label3.DefaultlabelSize = true;
-            this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(46, 64);
-            this.ckM_Label3.Name = "ckM_Label3";
-            this.ckM_Label3.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label3.TabIndex = 25;
-            this.ckM_Label3.Text = "シーズン";
-            this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cboSeason
-            // 
-            this.cboSeason.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cboSeason.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboSeason.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
-            this.cboSeason.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.cboSeason.Flag = 0;
-            this.cboSeason.FormattingEnabled = true;
-            this.cboSeason.Length = 10;
-            this.cboSeason.Location = new System.Drawing.Point(106, 60);
-            this.cboSeason.MaxLength = 10;
-            this.cboSeason.MoveNext = true;
-            this.cboSeason.Name = "cboSeason";
-            this.cboSeason.Size = new System.Drawing.Size(121, 20);
-            this.cboSeason.TabIndex = 2;
-            // 
             // ScClient1
             // 
             this.ScClient1.AutoSize = true;
@@ -353,23 +404,6 @@
             this.ScClient1.Value1 = null;
             this.ScClient1.Value2 = null;
             this.ScClient1.Value3 = null;
-            // 
-            // ckM_Label2
-            // 
-            this.ckM_Label2.AutoSize = true;
-            this.ckM_Label2.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label2.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label2.DefaultlabelSize = true;
-            this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(58, 167);
-            this.ckM_Label2.Name = "ckM_Label2";
-            this.ckM_Label2.Size = new System.Drawing.Size(44, 12);
-            this.ckM_Label2.TabIndex = 21;
-            this.ckM_Label2.Text = "顧　客";
-            this.ckM_Label2.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ScBrandCD
             // 
@@ -402,23 +436,6 @@
             this.ScBrandCD.Value3 = null;
             this.ScBrandCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScBrandCD_CodeKeyDownEvent);
             // 
-            // Sc_BrandCD
-            // 
-            this.Sc_BrandCD.AutoSize = true;
-            this.Sc_BrandCD.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.Sc_BrandCD.BackColor = System.Drawing.Color.Transparent;
-            this.Sc_BrandCD.DefaultlabelSize = true;
-            this.Sc_BrandCD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.Sc_BrandCD.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.Sc_BrandCD.ForeColor = System.Drawing.Color.Black;
-            this.Sc_BrandCD.Location = new System.Drawing.Point(31, 90);
-            this.Sc_BrandCD.Name = "Sc_BrandCD";
-            this.Sc_BrandCD.Size = new System.Drawing.Size(71, 12);
-            this.Sc_BrandCD.TabIndex = 19;
-            this.Sc_BrandCD.Text = "ブランドCD";
-            this.Sc_BrandCD.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.Sc_BrandCD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // ScSupplier
             // 
             this.ScSupplier.AutoSize = true;
@@ -450,28 +467,11 @@
             this.ScSupplier.Value3 = null;
             this.ScSupplier.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScSupplier_CodeKeyDownEvent);
             // 
-            // ckM_Label8
-            // 
-            this.ckM_Label8.AutoSize = true;
-            this.ckM_Label8.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label8.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label8.DefaultlabelSize = true;
-            this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(59, 9);
-            this.ckM_Label8.Name = "ckM_Label8";
-            this.ckM_Label8.Size = new System.Drawing.Size(44, 12);
-            this.ckM_Label8.TabIndex = 17;
-            this.ckM_Label8.Text = "仕入先";
-            this.ckM_Label8.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // FrmTenzikaiHacchuuJouhouShuturyoku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1684, 1061);
+            this.ClientSize = new System.Drawing.Size(1713, 961);
             this.Controls.Add(this.panel1);
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
