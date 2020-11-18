@@ -990,7 +990,7 @@ namespace TenzikaiJuchuuTourou
                         if (!val)
                         {
                             //Ｅ１０7
-                            bbl.ShowMessage("E107");
+                            bbl.ShowMessage("E101");
                             return false;
                         }
                         else
