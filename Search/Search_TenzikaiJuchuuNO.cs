@@ -242,18 +242,19 @@ namespace Search
                     }
                     else
                     {
-                        if (dtc.Rows[0]["VariousFLG"].ToString() == "1")
-                        {
-                            txtCustomerName.Text = dtc.Rows[0]["CustomerName"].ToString();
-                            //txtCustomerName.BackColor = Color.White;
-                            txtCustomerName.Enabled = true;
-                        }
-                        else if (dtc.Rows[0]["VariousFLG"].ToString() == "0")
-                        {
-                            txtCustomerName.Text = dtc.Rows[0]["CustomerName"].ToString();
-                            //txtCustomerName.BackColor = Color.FromArgb(218, 218, 212);
-                            txtCustomerName.Enabled = false;
-                        }
+                        //if (dtc.Rows[0]["VariousFLG"].ToString() == "1")
+                        //{
+                        //    txtCustomerName.Text = dtc.Rows[0]["CustomerName"].ToString();
+                        //    //txtCustomerName.BackColor = Color.White;
+                        //    txtCustomerName.Enabled = true;
+                        //}
+                        //else if (dtc.Rows[0]["VariousFLG"].ToString() == "0")
+                        //{
+                        //    txtCustomerName.Text = dtc.Rows[0]["CustomerName"].ToString();
+                        //    //txtCustomerName.BackColor = Color.FromArgb(218, 218, 212);
+                        //    txtCustomerName.Enabled = false;
+                        //}
+                        txtCustomerName.Text = dtc.Rows[0]["CustomerName"].ToString();
                     }
 
                 }
