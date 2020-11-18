@@ -53,7 +53,6 @@ namespace MasterTouroku_TenzikaiShouhin
             Brand,
             Segment,
             Tani,
-            Tenzikai,
         }
 
         private enum Eindex : int
@@ -292,7 +291,6 @@ namespace MasterTouroku_TenzikaiShouhin
                                             SC_CopyVendor.BtnSearch,SC_copybrand.BtnSearch,SC_copysegmet.BtnSearch };
 
             //SC_Tenzikai.BtnSearch.Click += new System.EventHandler(BtnSearch_Click);
-
 
             foreach (var c in detailControls)
             {
