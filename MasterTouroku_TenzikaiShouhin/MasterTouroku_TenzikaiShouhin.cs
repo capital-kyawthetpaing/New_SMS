@@ -4007,21 +4007,30 @@ namespace MasterTouroku_TenzikaiShouhin
         }
         private void GetFocus()
         {
-           
-
-
-            // mGrid.g_MK_Ctrl[w_Row, w_Col1].CellCtl.Focus();
-            for (int d = 0; d < 999; d++)
+            panel2.Enabled = true;
+            // mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
+            // S_BodySeigyo(6, 1);
+            int w_Row = 0;
+            for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
             {
-                int id = d + 1;
-                var c = mGrid.g_MK_Ctrl[(int)ClsGridMasterTanzi.ColNO.JANCD, d].CellCtl;
+                // mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.JANCD, w_Row].Cell
+                if (String.IsNullOrEmpty(mGrid.g_DArray[w_Row].JANCD))
+                {
+                    mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.JANCD, w_Row].Cell_Enabled = true;
+                }
+            }
+            mGrid.S_DispToArray(mGrid.g_MK_DataValue);
+            mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
+            panel2.Refresh(); for (int d = 0; d < 13; d++)
+            {
+                int id = d;
+                var c = mGrid.g_MK_Ctrl[(int)ClsGridMasterTanzi.ColNO.JANCD, id].CellCtl;
                 if (c.Enabled)
                 {
                     c.Focus();
-                    return;
+                    break;
                 }
             }
-            // w_ActCtl1.Focus();
         }
         private void SetsSKU(DataTable dt)
         {
@@ -4058,7 +4067,7 @@ namespace MasterTouroku_TenzikaiShouhin
                 if (!mGrid.g_DArray[c].Chk)
                 {
                     SetVal(c);
-                    panel2.Enabled = false;
+                    //panel2.Enabled = false;
                     //(this, "111111110101");
                     SetFuncKeyAll(this, "111111001011");
                 }

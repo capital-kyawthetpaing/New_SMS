@@ -479,6 +479,8 @@ namespace Base.Client
                 }
                 else
                 {
+                    if (!CheckHyoujiError(ActiveControl))
+                        return;
                     if (this.Parent != null)
                         this.Parent.SelectNextControl(ActiveControl, true, true, true, true);
                     else
@@ -486,7 +488,36 @@ namespace Base.Client
                 }
             }
         }
-
+        private bool CheckHyoujiError(Control ctr)
+        {
+            //
+            if (ctr.Text.Contains("表示"))
+            {
+                var ctrl = GetAllControls(this);
+                foreach (var ctrlTxt in ctrl)
+                {
+                    if (ctrlTxt is CKM_GridView cg)
+                    {
+                        if (cg.DataSource == null)
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+        public IEnumerable<Control> GetAllControls(Control root)
+        {
+            foreach (Control control in root.Controls)
+            {
+                foreach (Control child in GetAllControls(control))
+                {
+                    yield return child;
+                }
+            }
+            yield return root;
+        }
         #region "MainForm.csと同じ内容　EXCEL出力のためのFunciton"	
         /// <summary>	
         /// 「名前を付けて保存」ダイアログでファイルを保存する	
