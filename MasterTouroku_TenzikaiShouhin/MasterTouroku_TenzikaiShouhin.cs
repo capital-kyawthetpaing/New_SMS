@@ -4001,10 +4001,7 @@ namespace MasterTouroku_TenzikaiShouhin
                     if (dt.Rows.Count == 0)
                     {
                         mGrid.g_DArray[w_Row].Chk = false;
-                        if(mGrid.g_DArray[w_Row].JANCD == "000111")
-                        {
-                            mGrid.g_DArray[w_Row].Chk = true;
-                        }
+
                     }
                     else
                     {
