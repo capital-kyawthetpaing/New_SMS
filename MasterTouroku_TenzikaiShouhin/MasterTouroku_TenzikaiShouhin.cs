@@ -1902,26 +1902,26 @@ namespace MasterTouroku_TenzikaiShouhin
 
                         if(OperationMode == EOperationMode.INSERT)
                         {
-
+                            M_TenzikaiShouhin_Entity mt = new M_TenzikaiShouhin_Entity
+                            {
+                                TenzikaiName = detailControls[(int)Eindex.SCTenzikai].Text,
+                                VendorCD = detailControls[(int)Eindex.SCShiiresaki].Text,
+                                LastYearTerm = detailControls[(int)Eindex.Nendo].Text,
+                                LastSeason = detailControls[(int)Eindex.Season].Text,
+                                BranCDFrom = detailControls[(int)Eindex.SCBrand].Text,
+                                SegmentCDFrom = detailControls[(int)Eindex.SCSegment].Text,
+                                JANCD = mGrid.g_DArray[row].JANCD,
+                            };
+                            DataTable dt = tbl.M_Tenzikaishouhin_SelectForJancd(mt);
+                            if (dt.Rows.Count > 0)
+                            {
+                                tbl.ShowMessage("E107");
+                                return false;
+                            }
                         }
-                        M_TenzikaiShouhin_Entity mt = new M_TenzikaiShouhin_Entity
-                        {
-                            TenzikaiName = detailControls[(int)Eindex.SCTenzikai].Text,
-                            VendorCD = detailControls[(int)Eindex.SCShiiresaki].Text,
-                            LastYearTerm = detailControls[(int)Eindex.Nendo].Text,
-                            LastSeason = detailControls[(int)Eindex.Season].Text,
-                            BranCDFrom = detailControls[(int)Eindex.SCBrand].Text,
-                            SegmentCDFrom = detailControls[(int)Eindex.SCSegment].Text,
-                            JANCD = mGrid.g_DArray[row].JANCD,
-                        };
-                        DataTable dt = tbl.M_Tenzikaishouhin_SelectForJancd(mt);
-                        if (dt.Rows.Count > 0)
-                        {
-                            tbl.ShowMessage("E107");
-                            return false;
-                        }
-                        else
-                        {
+                       
+                       // else
+                       // {
 
                             //
                             //if (OperationMode != EOperationMode.INSERT)
@@ -1977,7 +1977,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                 mGrid.g_DArray[row].JoutaiTanka = bbl.Z_SetStr(selectRow["JoudaiTanka"].ToString());
                             }
 
-                        }
+                       // }
                         mGrid.g_DArray[row].Jancdold = mGrid.g_DArray[row].JANCD;    // May be in M_tenjishouhin Table So Fetched from selectRow
                         Grid_NotFocus(col, row);
 
@@ -4078,10 +4078,7 @@ namespace MasterTouroku_TenzikaiShouhin
                     S_BodySeigyo(6, 0);
                     mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
                     S_BodySeigyo(6, 1);
-                    //scjan_7.Focus();
-                    //int d = c + 1;
-                   // this.Controls.Find("scjan_" + d, true)[0].Focus();
-                   // this.Controls.Find("scjan_" + d, true)[0].TabStop=true;
+                   
                 }
 
                 c++;
