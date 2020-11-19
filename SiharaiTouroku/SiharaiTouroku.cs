@@ -695,12 +695,12 @@ namespace SiharaiTouroku
             {
                 if (cboPaymentType.SelectedIndex > 0)
                 {
+                    dppe.PayPlanDate = dgvPayment.Rows[rowIndex].Cells["colPaymentdueDate"].Value.ToString();
+                    dppe.PayeeCD = dgvPayment.Rows[rowIndex].Cells["colPayeeCD"].Value.ToString();
+
                     //振込の場合　手数料を算出
                     if (cboPaymentType.SelectedValue.ToString() == "1")
                     {
-                        dppe.PayPlanDate = dgvPayment.Rows[rowIndex].Cells["colPaymentdueDate"].Value.ToString();
-                        dppe.PayeeCD = dgvPayment.Rows[rowIndex].Cells["colPayeeCD"].Value.ToString();
-
                         if (dtPayplan != null)
                         {
                             DataRow[] tblROWS1 = dtPayplan.Select("PayeeCD = '" + dppe.PayeeCD + "'" + "and PayPlanDate = '" + dppe.PayPlanDate + "'");
@@ -738,6 +738,7 @@ namespace SiharaiTouroku
 
                     if (dtPay1Detail != null && dtPay1Detail.Rows.Count > 0)
                     {
+
                         DataRow[] tblROWS1 = dtPay1Detail.Select("PayeeCD = '" + dppe.PayeeCD + "'" + "and PayPlanDate = '" + dppe.PayPlanDate + "'");
                         foreach (DataRow row in tblROWS1)
                         {
@@ -759,6 +760,9 @@ namespace SiharaiTouroku
 
                 if (dtPay1Detail != null)
                 {
+                    dppe.PayPlanDate = dgvPayment.Rows[rowIndex].Cells["colPaymentdueDate"].Value.ToString();
+                    dppe.PayeeCD = dgvPayment.Rows[rowIndex].Cells["colPayeeCD"].Value.ToString();
+
                     DataRow[] tblROWS1 = dtPay1Detail.Select("PayeeCD = '" + dppe.PayeeCD + "'" + "and PayPlanDate = '" + dppe.PayPlanDate + "'");
                     foreach (DataRow row in tblROWS1)
                     {

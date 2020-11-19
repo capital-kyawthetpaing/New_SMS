@@ -1015,7 +1015,8 @@ namespace SiharaiTouroku
                     {
                         var ctl = dgvSearchPayment.EditingControl as DataGridViewTextBoxEditingControl;
 
-                        dgvSearchPayment.CurrentRow.Cells["colUnpaidAmount1"].Value = bbl.Z_Set(ctl.Text);
+                        if(ctl != null)
+                            dgvSearchPayment.CurrentRow.Cells["colUnpaidAmount1"].Value = bbl.Z_Set(ctl.Text);
                     }
                 }
             }
