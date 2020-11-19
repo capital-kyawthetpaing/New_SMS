@@ -2122,6 +2122,11 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
+                            if(Convert.ToInt64(mGrid.g_DArray[row].SalePriceOutTax) ==0)
+                            {
+                                bbl.ShowMessage("E257");
+                                return false;
+                            }
 
                         }
                         break;
@@ -2135,7 +2140,11 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
-
+                            if (Convert.ToInt64(mGrid.g_DArray[row].SalePriceOutTax1) == 0)
+                            {
+                                bbl.ShowMessage("E257");
+                                return false;
+                            }
                         }
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.SalePriceOutTax2:
@@ -2148,7 +2157,11 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
-                            // mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                            if (Convert.ToInt64(mGrid.g_DArray[row].SalePriceOutTax2) == 0)
+                            {
+                                bbl.ShowMessage("E257");
+                                return false;
+                            }
                         }
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.SalePriceOutTax3:
@@ -2159,6 +2172,11 @@ namespace MasterTouroku_TenzikaiShouhin
                             {
                                 //Ｅ１０２
                                 bbl.ShowMessage("E102");
+                                return false;
+                            }
+                            if (Convert.ToInt64(mGrid.g_DArray[row].SalePriceOutTax3) == 0)
+                            {
+                                bbl.ShowMessage("E257");
                                 return false;
                             }
 
@@ -2174,6 +2192,11 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
+                            if (Convert.ToInt64(mGrid.g_DArray[row].SalePriceOutTax4) == 0)
+                            {
+                                bbl.ShowMessage("E257");
+                                return false;
+                            }
                         }
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.SalePriceOutTax5:
@@ -2184,6 +2207,11 @@ namespace MasterTouroku_TenzikaiShouhin
                             {
                                 //Ｅ１０２
                                 bbl.ShowMessage("E102");
+                                return false;
+                            }
+                            if (Convert.ToInt64(mGrid.g_DArray[row].SalePriceOutTax5) == 0)
+                            {
+                                bbl.ShowMessage("E257");
                                 return false;
                             }
 
@@ -4235,10 +4263,10 @@ namespace MasterTouroku_TenzikaiShouhin
                 }
 
             }
-            ////else
-            ////{
-            ////    bl.ShowMessage("E128");
-            ////}
+            //else
+            //{
+            //    bl.ShowMessage("E257");
+            //}
 
             //更新後画面クリア
             ChangeOperationMode(base.OperationMode);
