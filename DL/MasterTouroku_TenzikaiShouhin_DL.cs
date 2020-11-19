@@ -135,5 +135,15 @@ namespace DL
            // UseTransaction = true;
             return SelectData(dic, sp);
         }
+
+        public DataTable M_TenzikaiShouhin_SelectForHachuu(M_TenzikaiShouhin_Entity mte)
+        {
+            string sp = "M_TenzikaiShouhin_SelectForHachuu";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@Tenzikainame", new ValuePair { value1 = SqlDbType.VarChar, value2 = mte.TenzikaiName} },              
+            };
+            return SelectData(dic, sp);
+        }
     }
 }
