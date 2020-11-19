@@ -2806,7 +2806,7 @@ namespace MasterTouroku_TenzikaiShouhin
                         var dtB = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 11, dr["ブランドCD"].ToString(), null);
                         if (dtB.Rows.Count == 0)
                         {
-                            bl.ShowMessage("E101");
+                            bl.ShowMessage("E269","1");
                             return false;
                         }
                         var dtseg = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 13, dr["セグメントCD"].ToString(), "226");
@@ -3988,10 +3988,7 @@ namespace MasterTouroku_TenzikaiShouhin
                     if (dt.Rows.Count == 0)
                     {
                         mGrid.g_DArray[w_Row].Chk = false;
-                        if (mGrid.g_DArray[w_Row].JANCD == "000111")
-                        {
-                            mGrid.g_DArray[w_Row].Chk = true;
-                        }
+                        
                     }
                     else
                     {
