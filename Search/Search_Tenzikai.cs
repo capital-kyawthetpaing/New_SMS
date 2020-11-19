@@ -22,6 +22,7 @@ namespace Search
         public string VendorName = "";
         public string LastYearTerm = "";
         public string LastSeason = "";
+        public string VendorCD = "";
         public Search_Tenzikai(string ChangeDate)
         {
             InitializeComponent();
@@ -149,6 +150,7 @@ namespace Search
                 VendorName = dgvSearch_Tenzikai.CurrentRow.Cells["colVendorName"].Value.ToString();
                 LastYearTerm = dgvSearch_Tenzikai.CurrentRow.Cells["colLastYearTerm"].Value.ToString();
                 LastSeason = dgvSearch_Tenzikai.CurrentRow.Cells["colSeason"].Value.ToString();
+                VendorCD = dgvSearch_Tenzikai.CurrentRow.Cells["colVendorCD"].Value.ToString();
                 this.Close();
             }
         }
