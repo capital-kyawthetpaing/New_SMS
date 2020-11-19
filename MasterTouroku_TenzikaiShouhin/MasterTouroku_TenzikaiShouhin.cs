@@ -1899,6 +1899,11 @@ namespace MasterTouroku_TenzikaiShouhin
                                 return false;
                             }
                         }
+
+                        if(OperationMode == EOperationMode.INSERT)
+                        {
+
+                        }
                         M_TenzikaiShouhin_Entity mt = new M_TenzikaiShouhin_Entity
                         {
                             TenzikaiName = detailControls[(int)Eindex.SCTenzikai].Text,
@@ -4032,7 +4037,7 @@ namespace MasterTouroku_TenzikaiShouhin
             int c = 0;
             foreach (DataRow dr in dt.Rows)
             {
-                mGrid.g_DArray[c].JANCD = dr["JanCD"].ToString();
+                mGrid.g_DArray[c].JANCD = mGrid.g_DArray[c].Jancdold = dr["JanCD"].ToString();
                 mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
                 mGrid.g_DArray[c].SKUName = dr["SKUName"].ToString();
                 mGrid.g_DArray[c].ColorCD = dr["ColorCD"].ToString();
