@@ -2806,7 +2806,7 @@ namespace MasterTouroku_TenzikaiShouhin
                         var dtB = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 11, dr["ブランドCD"].ToString(), null);
                         if (dtB.Rows.Count == 0)
                         {
-                            bl.ShowMessage("E269","1");
+                            bl.ShowMessage("E101");
                             return false;
                         }
                         var dtseg = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 13, dr["セグメントCD"].ToString(), "226");
