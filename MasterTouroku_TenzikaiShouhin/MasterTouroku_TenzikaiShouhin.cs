@@ -2767,6 +2767,7 @@ namespace MasterTouroku_TenzikaiShouhin
             //{
             //    SetFuncKeyAll(this, "111111000011");
             //}
+
             else
             {
                 previousCtrl = null;
@@ -2843,8 +2844,8 @@ namespace MasterTouroku_TenzikaiShouhin
                         string taxrate = dt.Rows[i]["税率区分"].ToString();
                         if (!(dt.Rows[i]["税率区分"].ToString() == "0" || dt.Rows[i]["税率区分"].ToString() == "1" || dt.Rows[i]["税率区分"].ToString() == "2"))
                         {
-                            // bl.ShowMessage("E269", w_Row.ToString(), "販売予定日の指定外の情報");
-                            bbl.ShowMessage("E101");
+                            bl.ShowMessage("E269", row.ToString(), "販売予定日の指定外の情報");
+                            //bbl.ShowMessage("E101");
                             return  false;
                         }
 
@@ -2868,7 +2869,7 @@ namespace MasterTouroku_TenzikaiShouhin
                         if (skudupli.Count() != 0)
                         {
                             //bl.ShowMessage("E105");
-                            bbl.ShowMessage("E269", row.ToString(), "重複したJANCD");
+                            bbl.ShowMessage("E269", row.ToString(), "重複したSKUCD");
                             return false;
                         }
                         if(dtrest.Rows.Count >0)
@@ -4000,7 +4001,10 @@ namespace MasterTouroku_TenzikaiShouhin
                     if (dt.Rows.Count == 0)
                     {
                         mGrid.g_DArray[w_Row].Chk = false;
-                        
+                        if(mGrid.g_DArray[w_Row].JANCD == "000111")
+                        {
+                            mGrid.g_DArray[w_Row].Chk = true;
+                        }
                     }
                     else
                     {
