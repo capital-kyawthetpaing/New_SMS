@@ -2343,6 +2343,7 @@ namespace MasterTouroku_TenzikaiShouhin
                             Clear(panel2);
                             S_Clear_Grid();  // added by ETZ
                             S_BodySeigyo(0, 1);
+                            mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
                             // ChangeFunKeys();
                             if (!String.IsNullOrEmpty(SC_CopyTenzikai.TxtCode.Text))
                             {
