@@ -242,6 +242,8 @@ namespace TempoRegiJournal
 
             var storeDataSet = new StoreDataSet();
 
+            string OldDepositNo = "";
+
             for (var index = 0; index < data.Rows.Count; index++)
             {
                 var row = data.Rows[index];
@@ -283,94 +285,99 @@ namespace TempoRegiJournal
                 #endregion  // 売上番号データ
 
                 #region 販売データ
-                var sale = CreateSalesTableRow(sales, JournalDataKind.Sales);
-                sale.StoreReceiptPrint = storeReceiptPrint;                                    // 店舗レシート表記
-                sale.StaffReceiptPrint = staffReceiptPrint;                                    // 担当レシート表記
-                sale.SalesNO = salesNO;                                                        // 売上番号
-                sale.IssueDate = issueDate;   // ConvertDateTime(row["IssueDate"], true);                      // 発行日
-                sale.IssueDateTime = issueDateTime;  // ConvertDateTime(row["IssueDate"], false);                 // 発行日時
-                sale.DispDateTime = "";
-                sale.JanCD = Convert.ToString(row["JanCD"]);                                   // JANCD
-
-                var kakaku = ConvertDecimal(row["Kakaku"]);                                     // 価格
-
-                //数量が0の場合は1として処理、その場合、単価は価格を割り当てる
-                var salesSU = ConvertDecimal(row["SalesSU"]);
-                if (string.IsNullOrWhiteSpace(salesSU))
+                if (OldDepositNo != row["DepositNO"].ToString())
                 {
-                    sale.SalesSU = "1";                                                        // 数量
-                    sale.SalesUnitPrice = kakaku;                                              // 単価
+                    OldDepositNo = row["DepositNO"].ToString();
+
+                    var sale = CreateSalesTableRow(sales, JournalDataKind.Sales);
+                    sale.StoreReceiptPrint = storeReceiptPrint;                                    // 店舗レシート表記
+                    sale.StaffReceiptPrint = staffReceiptPrint;                                    // 担当レシート表記
+                    sale.SalesNO = salesNO;                                                        // 売上番号
+                    sale.IssueDate = issueDate;   // ConvertDateTime(row["IssueDate"], true);                      // 発行日
+                    sale.IssueDateTime = issueDateTime;  // ConvertDateTime(row["IssueDate"], false);                 // 発行日時
+                    sale.DispDateTime = "";
+                    sale.JanCD = Convert.ToString(row["JanCD"]);                                   // JANCD
+
+                    var kakaku = ConvertDecimal(row["Kakaku"]);                                     // 価格
+
+                    //数量が0の場合は1として処理、その場合、単価は価格を割り当てる
+                    var salesSU = ConvertDecimal(row["SalesSU"]);
+                    if (string.IsNullOrWhiteSpace(salesSU))
+                    {
+                        sale.SalesSU = "1";                                                        // 数量
+                        sale.SalesUnitPrice = kakaku;                                              // 単価
+                    }
+                    else
+                    {
+                        sale.SalesSU = salesSU;                                                    // 数量
+                        sale.SalesUnitPrice = ConvertDecimal(row["SalesUnitPrice"]);               // 単価
+                    }
+
+                    sale.SalesGaku = kakaku;                                                       // 価格
+                    sale.SalesTax = ConvertDecimal(row["SalesTax"]);                               // 売上消費税額
+                    sale.SalesTaxRate = ConvertDecimal(row["SalesTaxRate"]) == "8" ? "*" : "";     // 税率
+                    sale.TotalGaku = ConvertDecimal(row["TotalGaku"]);                             // 販売合計額
+
+                    // 商品名
+                    var encoding = System.Text.Encoding.GetEncoding("Shift_JIS");
+
+                    var skuShortName = Convert.ToString(row["SKUShortName"]);
+                    byte[] skuShortNameBT = encoding.GetBytes(skuShortName);
+                    if (skuShortNameBT.Length < SKU_SHORTNAME_LENGTH)
+                    {
+                        sale.SKUShortName1 = skuShortName;
+                        sale.SKUShortName2 = "";
+                    }
+                    else
+                    {
+                        sale.SKUShortName1 = encoding.GetString(skuShortNameBT, 0, SKU_SHORTNAME_LENGTH);
+                        sale.SKUShortName2 = encoding.GetString(skuShortNameBT, SKU_SHORTNAME_LENGTH, skuShortNameBT.Length - SKU_SHORTNAME_LENGTH);
+                    }
+
+                    #region 合計データ
+                    sale.SumSalesSU = ConvertDecimal(row["SumSalesSU"]);                           // 小計数量
+                    sale.Subtotal = ConvertDecimal(row["Subtotal"]);                               // 小計金額
+                    sale.TargetAmount8 = ConvertDecimal(row["TargetAmount8"]);                     // 消費税対象額8%
+                    sale.ConsumptionTax8 = ConvertDecimal(row["ConsumptionTax8"]);                 // 内消費税等8%
+                    sale.TargetAmount10 = ConvertDecimal(row["TargetAmount10"]);                   // 消費税対象額10%
+                    sale.ConsumptionTax10 = ConvertDecimal(row["ConsumptionTax10"]);               // 内消費税等10%
+                    sale.Total = ConvertDecimal(row["Total"]);                                     // 合計
+                    #endregion // 合計データ
+
+                    #region 支払方法
+                    sale.PaymentName1 = Convert.ToString(row["PaymentName1"]);                     // 支払方法名1
+                    sale.PaymentAmount1 = ConvertDecimal(row["AmountPay1"]);                       // 支払方法額1
+                    sale.PaymentName2 = Convert.ToString(row["PaymentName2"]);                     // 支払方法名2
+                    sale.PaymentAmount2 = ConvertDecimal(row["AmountPay2"]);                       // 支払方法額2
+                    sale.PaymentName3 = Convert.ToString(row["PaymentName3"]);                     // 支払方法名3
+                    sale.PaymentAmount3 = ConvertDecimal(row["AmountPay3"]);                       // 支払方法額3
+                    sale.PaymentName4 = Convert.ToString(row["PaymentName4"]);                     // 支払方法名4
+                    sale.PaymentAmount4 = ConvertDecimal(row["AmountPay4"]);                       // 支払方法額4
+                    sale.PaymentName5 = Convert.ToString(row["PaymentName5"]);                     // 支払方法名5
+                    sale.PaymentAmount5 = ConvertDecimal(row["AmountPay5"]);                       // 支払方法額5
+                    sale.PaymentName6 = Convert.ToString(row["PaymentName6"]);                     // 支払方法名6
+                    sale.PaymentAmount6 = ConvertDecimal(row["AmountPay6"]);                       // 支払方法額6
+                    sale.PaymentName7 = Convert.ToString(row["PaymentName7"]);                     // 支払方法名7
+                    sale.PaymentAmount7 = ConvertDecimal(row["AmountPay7"]);                       // 支払方法額7
+                    sale.PaymentName8 = Convert.ToString(row["PaymentName8"]);                     // 支払方法名8
+                    sale.PaymentAmount8 = ConvertDecimal(row["AmountPay8"]);                       // 支払方法額8
+                    sale.PaymentName9 = Convert.ToString(row["PaymentName9"]);                     // 支払方法名9
+                    sale.PaymentAmount9 = ConvertDecimal(row["AmountPay9"]);                       // 支払方法額9
+                    sale.PaymentName10 = Convert.ToString(row["PaymentName10"]);                   // 支払方法名10
+                    sale.PaymentAmount10 = ConvertDecimal(row["AmountPay10"]);                     // 支払方法額10
+                    #endregion // 支払方法
+
+                    #region お釣りデータ
+                    sale.Refund = ConvertDecimal(row["Refund"]);                                   // 釣銭
+                    sale.DiscountGaku = ConvertDecimal(row["DiscountGaku"]);                       // 値引額
+                    #endregion // お釣りデータ
+
+                    // 同一売上番号内で表示行を設定
+                    sale.Row = sales.Where(v => v.IssueDateTime == sale.IssueDateTime && v.SalesNO == sale.SalesNO).Count() + 1;
+
+                    sales.Rows.Add(sale);
+
                 }
-                else
-                {
-                    sale.SalesSU = salesSU;                                                    // 数量
-                    sale.SalesUnitPrice = ConvertDecimal(row["SalesUnitPrice"]);               // 単価
-                }
-
-                sale.SalesGaku = kakaku;                                                       // 価格
-                sale.SalesTax = ConvertDecimal(row["SalesTax"]);                               // 売上消費税額
-                sale.SalesTaxRate = ConvertDecimal(row["SalesTaxRate"]) == "8" ? "*" : "";     // 税率
-                sale.TotalGaku = ConvertDecimal(row["TotalGaku"]);                             // 販売合計額
-
-                // 商品名
-                var encoding = System.Text.Encoding.GetEncoding("Shift_JIS");
-
-                var skuShortName = Convert.ToString(row["SKUShortName"]);
-                byte[] skuShortNameBT = encoding.GetBytes(skuShortName);
-                if (skuShortNameBT.Length < SKU_SHORTNAME_LENGTH)
-                {
-                    sale.SKUShortName1 = skuShortName;
-                    sale.SKUShortName2 = "";
-                }
-                else
-                {
-                    sale.SKUShortName1 = encoding.GetString(skuShortNameBT, 0, SKU_SHORTNAME_LENGTH);
-                    sale.SKUShortName2 = encoding.GetString(skuShortNameBT, SKU_SHORTNAME_LENGTH, skuShortNameBT.Length - SKU_SHORTNAME_LENGTH);
-                }
-
-                #region 合計データ
-                sale.SumSalesSU = ConvertDecimal(row["SumSalesSU"]);                           // 小計数量
-                sale.Subtotal = ConvertDecimal(row["Subtotal"]);                               // 小計金額
-                sale.TargetAmount8 = ConvertDecimal(row["TargetAmount8"]);                     // 消費税対象額8%
-                sale.ConsumptionTax8 = ConvertDecimal(row["ConsumptionTax8"]);                 // 内消費税等8%
-                sale.TargetAmount10 = ConvertDecimal(row["TargetAmount10"]);                   // 消費税対象額10%
-                sale.ConsumptionTax10 = ConvertDecimal(row["ConsumptionTax10"]);               // 内消費税等10%
-                sale.Total = ConvertDecimal(row["Total"]);                                     // 合計
-                #endregion // 合計データ
-
-                #region 支払方法
-                sale.PaymentName1 = Convert.ToString(row["PaymentName1"]);                     // 支払方法名1
-                sale.PaymentAmount1 = ConvertDecimal(row["AmountPay1"]);                       // 支払方法額1
-                sale.PaymentName2 = Convert.ToString(row["PaymentName2"]);                     // 支払方法名2
-                sale.PaymentAmount2 = ConvertDecimal(row["AmountPay2"]);                       // 支払方法額2
-                sale.PaymentName3 = Convert.ToString(row["PaymentName3"]);                     // 支払方法名3
-                sale.PaymentAmount3 = ConvertDecimal(row["AmountPay3"]);                       // 支払方法額3
-                sale.PaymentName4 = Convert.ToString(row["PaymentName4"]);                     // 支払方法名4
-                sale.PaymentAmount4 = ConvertDecimal(row["AmountPay4"]);                       // 支払方法額4
-                sale.PaymentName5 = Convert.ToString(row["PaymentName5"]);                     // 支払方法名5
-                sale.PaymentAmount5 = ConvertDecimal(row["AmountPay5"]);                       // 支払方法額5
-                sale.PaymentName6 = Convert.ToString(row["PaymentName6"]);                     // 支払方法名6
-                sale.PaymentAmount6 = ConvertDecimal(row["AmountPay6"]);                       // 支払方法額6
-                sale.PaymentName7 = Convert.ToString(row["PaymentName7"]);                     // 支払方法名7
-                sale.PaymentAmount7 = ConvertDecimal(row["AmountPay7"]);                       // 支払方法額7
-                sale.PaymentName8 = Convert.ToString(row["PaymentName8"]);                     // 支払方法名8
-                sale.PaymentAmount8 = ConvertDecimal(row["AmountPay8"]);                       // 支払方法額8
-                sale.PaymentName9 = Convert.ToString(row["PaymentName9"]);                     // 支払方法名9
-                sale.PaymentAmount9 = ConvertDecimal(row["AmountPay9"]);                       // 支払方法額9
-                sale.PaymentName10 = Convert.ToString(row["PaymentName10"]);                   // 支払方法名10
-                sale.PaymentAmount10 = ConvertDecimal(row["AmountPay10"]);                     // 支払方法額10
-                #endregion // 支払方法
-
-                #region お釣りデータ
-                sale.Refund = ConvertDecimal(row["Refund"]);                                   // 釣銭
-                sale.DiscountGaku = ConvertDecimal(row["DiscountGaku"]);                       // 値引額
-                #endregion // お釣りデータ
-
-                // 同一売上番号内で表示行を設定
-                sale.Row = sales.Where(v => v.IssueDateTime == sale.IssueDateTime && v.SalesNO == sale.SalesNO).Count() + 1;
-
-                sales.Rows.Add(sale);
-
                 #endregion // 販売データ
 
                 #region 雑入金データ
@@ -378,15 +385,16 @@ namespace TempoRegiJournal
                 var remark = Convert.ToString(row["MiscDepositRemark"]);        // 雑入金備考
 
                 SetMiscDepositTable(salesNO, sales, salesNos, calendarDate, row["MiscDepositDate1"], row["MiscDepositName1"], row["MiscDepositAmount1"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetMiscDepositTable(salesNO, sales, salesNos, calendarDate, row["MiscDepositDate2"], row["MiscDepositName2"], row["MiscDepositAmount2"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetMiscDepositTable(salesNO, sales, salesNos, calendarDate, row["MiscDepositDate3"], row["MiscDepositName3"], row["MiscDepositAmount3"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetMiscDepositTable(salesNO, sales, salesNos, calendarDate, row["MiscDepositDate4"], row["MiscDepositName4"], row["MiscDepositAmount4"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetMiscDepositTable(salesNO, sales, salesNos, calendarDate, row["MiscDepositDate5"], row["MiscDepositName5"], row["MiscDepositAmount5"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetMiscDepositTable(salesNO, sales, salesNos, calendarDate, row["MiscDepositDate6"], row["MiscDepositName6"], row["MiscDepositAmount6"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetMiscDepositTable(salesNO, sales, salesNos, calendarDate, row["MiscDepositDate7"], row["MiscDepositName7"], row["MiscDepositAmount7"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetMiscDepositTable(salesNO, sales, salesNos, calendarDate, row["MiscDepositDate8"], row["MiscDepositName8"], row["MiscDepositAmount8"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetMiscDepositTable(salesNO, sales, salesNos, calendarDate, row["MiscDepositDate9"], row["MiscDepositName9"], row["MiscDepositAmount9"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetMiscDepositTable(salesNO, sales, salesNos, calendarDate, row["MiscDepositDate10"], row["MiscDepositName10"], row["MiscDepositAmount10"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetMiscDepositTable(salesNO, sales, salesNos, calendarDate, row["MiscDepositDate1"], row["MiscDepositName1"], row["MiscDepositAmount1"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetMiscDepositTable(salesNO, sales, salesNos, calendarDate, row["MiscDepositDate2"], row["MiscDepositName2"], row["MiscDepositAmount2"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetMiscDepositTable(salesNO, sales, salesNos, calendarDate, row["MiscDepositDate3"], row["MiscDepositName3"], row["MiscDepositAmount3"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetMiscDepositTable(salesNO, sales, salesNos, calendarDate, row["MiscDepositDate4"], row["MiscDepositName4"], row["MiscDepositAmount4"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetMiscDepositTable(salesNO, sales, salesNos, calendarDate, row["MiscDepositDate5"], row["MiscDepositName5"], row["MiscDepositAmount5"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetMiscDepositTable(salesNO, sales, salesNos, calendarDate, row["MiscDepositDate6"], row["MiscDepositName6"], row["MiscDepositAmount6"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetMiscDepositTable(salesNO, sales, salesNos, calendarDate, row["MiscDepositDate7"], row["MiscDepositName7"], row["MiscDepositAmount7"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetMiscDepositTable(salesNO, sales, salesNos, calendarDate, row["MiscDepositDate8"], row["MiscDepositName8"], row["MiscDepositAmount8"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetMiscDepositTable(salesNO, sales, salesNos, calendarDate, row["MiscDepositDate9"], row["MiscDepositName9"], row["MiscDepositAmount9"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetMiscDepositTable(salesNO, sales, salesNos, calendarDate, row["MiscDepositDate10"], row["MiscDepositName10"], row["MiscDepositAmount10"], remark, storeReceiptPrint, staffReceiptPrint);
                 #endregion // 雑入金データ
 
                 #region 入金データ
@@ -395,60 +403,64 @@ namespace TempoRegiJournal
                 remark = Convert.ToString(row["DepositRemark"]);                // 入金備考
 
                 SetDepositTable(salesNO, sales, salesNos, calendarDate, row["DepositDate1"], customerCD, customerName, row["DepositName1"], row["DepositAmount1"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetDepositTable(salesNO, sales, salesNos, calendarDate, row["DepositDate2"], customerCD, customerName, row["DepositName2"], row["DepositAmount2"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetDepositTable(salesNO, sales, salesNos, calendarDate, row["DepositDate3"], customerCD, customerName, row["DepositName3"], row["DepositAmount3"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetDepositTable(salesNO, sales, salesNos, calendarDate, row["DepositDate4"], customerCD, customerName, row["DepositName4"], row["DepositAmount4"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetDepositTable(salesNO, sales, salesNos, calendarDate, row["DepositDate5"], customerCD, customerName, row["DepositName5"], row["DepositAmount5"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetDepositTable(salesNO, sales, salesNos, calendarDate, row["DepositDate6"], customerCD, customerName, row["DepositName6"], row["DepositAmount6"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetDepositTable(salesNO, sales, salesNos, calendarDate, row["DepositDate7"], customerCD, customerName, row["DepositName7"], row["DepositAmount7"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetDepositTable(salesNO, sales, salesNos, calendarDate, row["DepositDate8"], customerCD, customerName, row["DepositName8"], row["DepositAmount8"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetDepositTable(salesNO, sales, salesNos, calendarDate, row["DepositDate9"], customerCD, customerName, row["DepositName9"], row["DepositAmount9"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetDepositTable(salesNO, sales, salesNos, calendarDate, row["DepositDate10"], customerCD, customerName, row["DepositName10"], row["DepositAmount10"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetDepositTable(salesNO, sales, salesNos, calendarDate, row["DepositDate1"], customerCD, customerName, row["DepositName1"], row["DepositAmount1"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetDepositTable(salesNO, sales, salesNos, calendarDate, row["DepositDate2"], customerCD, customerName, row["DepositName2"], row["DepositAmount2"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetDepositTable(salesNO, sales, salesNos, calendarDate, row["DepositDate3"], customerCD, customerName, row["DepositName3"], row["DepositAmount3"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetDepositTable(salesNO, sales, salesNos, calendarDate, row["DepositDate4"], customerCD, customerName, row["DepositName4"], row["DepositAmount4"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetDepositTable(salesNO, sales, salesNos, calendarDate, row["DepositDate5"], customerCD, customerName, row["DepositName5"], row["DepositAmount5"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetDepositTable(salesNO, sales, salesNos, calendarDate, row["DepositDate6"], customerCD, customerName, row["DepositName6"], row["DepositAmount6"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetDepositTable(salesNO, sales, salesNos, calendarDate, row["DepositDate7"], customerCD, customerName, row["DepositName7"], row["DepositAmount7"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetDepositTable(salesNO, sales, salesNos, calendarDate, row["DepositDate8"], customerCD, customerName, row["DepositName8"], row["DepositAmount8"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetDepositTable(salesNO, sales, salesNos, calendarDate, row["DepositDate9"], customerCD, customerName, row["DepositName9"], row["DepositAmount9"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetDepositTable(salesNO, sales, salesNos, calendarDate, row["DepositDate10"], customerCD, customerName, row["DepositName10"], row["DepositAmount10"], remark, storeReceiptPrint, staffReceiptPrint);
                 #endregion // 入金データ
 
                 #region 雑出金データ
                 remark = Convert.ToString(row["MiscPaymentRemark"]);        // 雑出金備考
 
                 SetMiscPaymentTable(salesNO, sales, salesNos, calendarDate, row["MiscPaymentDate1"], row["MiscPaymentName1"], row["MiscPaymentAmount1"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetMiscPaymentTable(salesNO, sales, salesNos, calendarDate, row["MiscPaymentDate2"], row["MiscPaymentName2"], row["MiscPaymentAmount2"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetMiscPaymentTable(salesNO, sales, salesNos, calendarDate, row["MiscPaymentDate3"], row["MiscPaymentName3"], row["MiscPaymentAmount3"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetMiscPaymentTable(salesNO, sales, salesNos, calendarDate, row["MiscPaymentDate4"], row["MiscPaymentName4"], row["MiscPaymentAmount4"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetMiscPaymentTable(salesNO, sales, salesNos, calendarDate, row["MiscPaymentDate5"], row["MiscPaymentName5"], row["MiscPaymentAmount5"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetMiscPaymentTable(salesNO, sales, salesNos, calendarDate, row["MiscPaymentDate6"], row["MiscPaymentName6"], row["MiscPaymentAmount6"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetMiscPaymentTable(salesNO, sales, salesNos, calendarDate, row["MiscPaymentDate7"], row["MiscPaymentName7"], row["MiscPaymentAmount7"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetMiscPaymentTable(salesNO, sales, salesNos, calendarDate, row["MiscPaymentDate8"], row["MiscPaymentName8"], row["MiscPaymentAmount8"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetMiscPaymentTable(salesNO, sales, salesNos, calendarDate, row["MiscPaymentDate9"], row["MiscPaymentName9"], row["MiscPaymentAmount9"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetMiscPaymentTable(salesNO, sales, salesNos, calendarDate, row["MiscPaymentDate10"], row["MiscPaymentName10"], row["MiscPaymentAmount10"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetMiscPaymentTable(salesNO, sales, salesNos, calendarDate, row["MiscPaymentDate1"], row["MiscPaymentName1"], row["MiscPaymentAmount1"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetMiscPaymentTable(salesNO, sales, salesNos, calendarDate, row["MiscPaymentDate2"], row["MiscPaymentName2"], row["MiscPaymentAmount2"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetMiscPaymentTable(salesNO, sales, salesNos, calendarDate, row["MiscPaymentDate3"], row["MiscPaymentName3"], row["MiscPaymentAmount3"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetMiscPaymentTable(salesNO, sales, salesNos, calendarDate, row["MiscPaymentDate4"], row["MiscPaymentName4"], row["MiscPaymentAmount4"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetMiscPaymentTable(salesNO, sales, salesNos, calendarDate, row["MiscPaymentDate5"], row["MiscPaymentName5"], row["MiscPaymentAmount5"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetMiscPaymentTable(salesNO, sales, salesNos, calendarDate, row["MiscPaymentDate6"], row["MiscPaymentName6"], row["MiscPaymentAmount6"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetMiscPaymentTable(salesNO, sales, salesNos, calendarDate, row["MiscPaymentDate7"], row["MiscPaymentName7"], row["MiscPaymentAmount7"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetMiscPaymentTable(salesNO, sales, salesNos, calendarDate, row["MiscPaymentDate8"], row["MiscPaymentName8"], row["MiscPaymentAmount8"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetMiscPaymentTable(salesNO, sales, salesNos, calendarDate, row["MiscPaymentDate9"], row["MiscPaymentName9"], row["MiscPaymentAmount9"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetMiscPaymentTable(salesNO, sales, salesNos, calendarDate, row["MiscPaymentDate10"], row["MiscPaymentName10"], row["MiscPaymentAmount10"], remark, storeReceiptPrint, staffReceiptPrint);
                 #endregion // 雑出金データ
 
                 #region 両替データ
                 remark = Convert.ToString(row["ExchangeRemark"]);       // 両替備考
 
                 SetExchangTable(salesNO, sales, salesNos, calendarDate, row["ExchangeDate1"], row["ExchangeName1"], row["ExchangeAmount1"], row["ExchangeDenomination1"], row["ExchangeCount1"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetExchangTable(salesNO, sales, salesNos, calendarDate, row["ExchangeDate2"], row["ExchangeName2"], row["ExchangeAmount2"], row["ExchangeDenomination2"], row["ExchangeCount2"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetExchangTable(salesNO, sales, salesNos, calendarDate, row["ExchangeDate3"], row["ExchangeName3"], row["ExchangeAmount3"], row["ExchangeDenomination3"], row["ExchangeCount3"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetExchangTable(salesNO, sales, salesNos, calendarDate, row["ExchangeDate4"], row["ExchangeName4"], row["ExchangeAmount4"], row["ExchangeDenomination4"], row["ExchangeCount4"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetExchangTable(salesNO, sales, salesNos, calendarDate, row["ExchangeDate5"], row["ExchangeName5"], row["ExchangeAmount5"], row["ExchangeDenomination5"], row["ExchangeCount5"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetExchangTable(salesNO, sales, salesNos, calendarDate, row["ExchangeDate6"], row["ExchangeName6"], row["ExchangeAmount6"], row["ExchangeDenomination6"], row["ExchangeCount6"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetExchangTable(salesNO, sales, salesNos, calendarDate, row["ExchangeDate7"], row["ExchangeName7"], row["ExchangeAmount7"], row["ExchangeDenomination7"], row["ExchangeCount7"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetExchangTable(salesNO, sales, salesNos, calendarDate, row["ExchangeDate8"], row["ExchangeName8"], row["ExchangeAmount8"], row["ExchangeDenomination8"], row["ExchangeCount8"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetExchangTable(salesNO, sales, salesNos, calendarDate, row["ExchangeDate9"], row["ExchangeName9"], row["ExchangeAmount9"], row["ExchangeDenomination9"], row["ExchangeCount9"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetExchangTable(salesNO, sales, salesNos, calendarDate, row["ExchangeDate10"], row["ExchangeName10"], row["ExchangeAmount10"], row["ExchangeDenomination10"], row["ExchangeCount10"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetExchangTable(salesNO, sales, salesNos, calendarDate, row["ExchangeDate1"], row["ExchangeName1"], row["ExchangeAmount1"], row["ExchangeDenomination1"], row["ExchangeCount1"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetExchangTable(salesNO, sales, salesNos, calendarDate, row["ExchangeDate2"], row["ExchangeName2"], row["ExchangeAmount2"], row["ExchangeDenomination2"], row["ExchangeCount2"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetExchangTable(salesNO, sales, salesNos, calendarDate, row["ExchangeDate3"], row["ExchangeName3"], row["ExchangeAmount3"], row["ExchangeDenomination3"], row["ExchangeCount3"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetExchangTable(salesNO, sales, salesNos, calendarDate, row["ExchangeDate4"], row["ExchangeName4"], row["ExchangeAmount4"], row["ExchangeDenomination4"], row["ExchangeCount4"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetExchangTable(salesNO, sales, salesNos, calendarDate, row["ExchangeDate5"], row["ExchangeName5"], row["ExchangeAmount5"], row["ExchangeDenomination5"], row["ExchangeCount5"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetExchangTable(salesNO, sales, salesNos, calendarDate, row["ExchangeDate6"], row["ExchangeName6"], row["ExchangeAmount6"], row["ExchangeDenomination6"], row["ExchangeCount6"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetExchangTable(salesNO, sales, salesNos, calendarDate, row["ExchangeDate7"], row["ExchangeName7"], row["ExchangeAmount7"], row["ExchangeDenomination7"], row["ExchangeCount7"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetExchangTable(salesNO, sales, salesNos, calendarDate, row["ExchangeDate8"], row["ExchangeName8"], row["ExchangeAmount8"], row["ExchangeDenomination8"], row["ExchangeCount8"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetExchangTable(salesNO, sales, salesNos, calendarDate, row["ExchangeDate9"], row["ExchangeName9"], row["ExchangeAmount9"], row["ExchangeDenomination9"], row["ExchangeCount9"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetExchangTable(salesNO, sales, salesNos, calendarDate, row["ExchangeDate10"], row["ExchangeName10"], row["ExchangeAmount10"], row["ExchangeDenomination10"], row["ExchangeCount10"], remark, storeReceiptPrint, staffReceiptPrint);
                 #endregion // 両替データ
 
                 #region 釣銭準備
                 remark = Convert.ToString(row["ChangePreparationRemark"]);      // 釣銭準備備考
 
                 SetChangePreparationTable(salesNO, sales, salesNos, calendarDate, row["ChangePreparationDate1"], "現金", row["ChangePreparationAmount1"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetChangePreparationTable(salesNO, sales, salesNos, calendarDate, row["ChangePreparationDate2"], row["ChangePreparationName2"], row["ChangePreparationAmount2"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetChangePreparationTable(salesNO, sales, salesNos, calendarDate, row["ChangePreparationDate3"], row["ChangePreparationName3"], row["ChangePreparationAmount3"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetChangePreparationTable(salesNO, sales, salesNos, calendarDate, row["ChangePreparationDate4"], row["ChangePreparationName4"], row["ChangePreparationAmount4"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetChangePreparationTable(salesNO, sales, salesNos, calendarDate, row["ChangePreparationDate5"], row["ChangePreparationName5"], row["ChangePreparationAmount5"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetChangePreparationTable(salesNO, sales, salesNos, calendarDate, row["ChangePreparationDate6"], row["ChangePreparationName6"], row["ChangePreparationAmount6"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetChangePreparationTable(salesNO, sales, salesNos, calendarDate, row["ChangePreparationDate7"], row["ChangePreparationName7"], row["ChangePreparationAmount7"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetChangePreparationTable(salesNO, sales, salesNos, calendarDate, row["ChangePreparationDate8"], row["ChangePreparationName8"], row["ChangePreparationAmount8"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetChangePreparationTable(salesNO, sales, salesNos, calendarDate, row["ChangePreparationDate9"], row["ChangePreparationName9"], row["ChangePreparationAmount9"], remark, storeReceiptPrint, staffReceiptPrint);
-                SetChangePreparationTable(salesNO, sales, salesNos, calendarDate, row["ChangePreparationDate10"], row["ChangePreparationName10"], row["ChangePreparationAmount10"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetChangePreparationTable(salesNO, sales, salesNos, calendarDate, row["ChangePreparationDate1"], "現金", row["ChangePreparationAmount1"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetChangePreparationTable(salesNO, sales, salesNos, calendarDate, row["ChangePreparationDate2"], row["ChangePreparationName2"], row["ChangePreparationAmount2"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetChangePreparationTable(salesNO, sales, salesNos, calendarDate, row["ChangePreparationDate3"], row["ChangePreparationName3"], row["ChangePreparationAmount3"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetChangePreparationTable(salesNO, sales, salesNos, calendarDate, row["ChangePreparationDate4"], row["ChangePreparationName4"], row["ChangePreparationAmount4"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetChangePreparationTable(salesNO, sales, salesNos, calendarDate, row["ChangePreparationDate5"], row["ChangePreparationName5"], row["ChangePreparationAmount5"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetChangePreparationTable(salesNO, sales, salesNos, calendarDate, row["ChangePreparationDate6"], row["ChangePreparationName6"], row["ChangePreparationAmount6"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetChangePreparationTable(salesNO, sales, salesNos, calendarDate, row["ChangePreparationDate7"], row["ChangePreparationName7"], row["ChangePreparationAmount7"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetChangePreparationTable(salesNO, sales, salesNos, calendarDate, row["ChangePreparationDate8"], row["ChangePreparationName8"], row["ChangePreparationAmount8"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetChangePreparationTable(salesNO, sales, salesNos, calendarDate, row["ChangePreparationDate9"], row["ChangePreparationName9"], row["ChangePreparationAmount9"], remark, storeReceiptPrint, staffReceiptPrint);
+                //SetChangePreparationTable(salesNO, sales, salesNos, calendarDate, row["ChangePreparationDate10"], row["ChangePreparationName10"], row["ChangePreparationAmount10"], remark, storeReceiptPrint, staffReceiptPrint);
                 #endregion // 釣銭準備
 
                 #region 精算処理 現金残高
