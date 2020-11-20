@@ -2021,6 +2021,7 @@
             this.remark_1.TabIndex = 289;
             this.remark_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.remark_1.UseColorSizMode = false;
+            this.remark_1.TextChanged += new System.EventHandler(this.remark_1_TextChanged);
             // 
             // scjan_1
             // 
