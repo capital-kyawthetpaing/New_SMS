@@ -119,35 +119,34 @@ namespace TenzikaiHacchuuJouhouShuturyoku
         {
             if(ErrorCheck())
             {
-                if (bbl.ShowMessage("Q205") == DialogResult.Yes)
+                dtje = new D_TenzikaiJuchuu_Entity();
+                dtje.VendorCD = ScSupplier.TxtCode.Text;
+                dtje.LastYearTerm = cboYear.SelectedValue.ToString();
+                dtje.season = cboSeason.SelectedValue.ToString();
+                dtje.CustomerCDFrom = ScClient1.TxtCode.Text;
+                dtje.CustomerCDTo = ScClient2.TxtCode.Text;
+                dtje.BrandCD = ScBrandCD.TxtCode.Text;
+                dtje.SegmentCD = ScSegmentCD.TxtCode.Text;
+                dtje.ExhibitionName = txtExhibition.Text;
+                dtje.ProgramID = InProgramID;
+                dtje.Operator = InOperatorCD;
+                dtje.PC = InPcID;
+                dtje.ProcessMode = string.Empty;
+                dtje.Key = string.Empty;
+
+                if (rdoCustomer.Checked == true)
                 {
-                    dtje = new D_TenzikaiJuchuu_Entity
-                    {
-                        VendorCD = ScSupplier.TxtCode.Text,
-                        LastYearTerm = cboYear.SelectedValue.ToString(),
-                        season = cboSeason.SelectedValue.ToString(),
-                        CustomerCDFrom = ScClient1.TxtCode.Text,
-                        CustomerCDTo = ScClient2.TxtCode.Text,
-                        BrandCD = ScBrandCD.TxtCode.Text,
-                        SegmentCD = ScSegmentCD.TxtCode.Text,
-                        ExhibitionName = txtExhibition.Text,
-                        ProgramID = InProgramID,
-                        Operator = InOperatorCD,
-                        PC = InPcID,
-                        ProcessMode = string.Empty,
-                        Key = string.Empty
-                    };
-                    if (rdoCustomer.Checked == true)
-                    {
-                        chk = 1;
-                    }
-                    else if (rdoProduct.Checked == true)
-                    {
-                        chk = 2;
-                    }
-                    DataTable dttenzi = new DataTable();                   
-                    dttenzi = tzbl.D_TenzikaiJuchuu_SelectForExcel(dtje,chk);
-                    if(dttenzi.Rows.Count > 0)
+                    chk = 1;
+                }
+                else if (rdoProduct.Checked == true)
+                {
+                    chk = 2;
+                }
+                DataTable dttenzi = new DataTable();
+                dttenzi = tzbl.D_TenzikaiJuchuu_SelectForExcel(dtje, chk);
+                if (dttenzi.Rows.Count > 0)
+                {
+                    if (bbl.ShowMessage("Q205") == DialogResult.Yes)
                     {
                         filename = dttenzi.Rows[0]["TenzikaiName"].ToString();
                         if (dttenzi.Columns.Contains("TenzikaiName"))
@@ -190,13 +189,14 @@ namespace TenzikaiHacchuuJouhouShuturyoku
                             }
                         }
                     }
-                    else
-                    {
-                        bbl.ShowMessage("E128");
-                        //ScSupplier.SetFocus(1);
-                        PreviousCtrl.Focus();
-                    }
                 }
+                else
+                {
+                    bbl.ShowMessage("E128");
+                    //ScSupplier.SetFocus(1);
+                    PreviousCtrl.Focus();
+                }
+
             }
         }
 
@@ -239,7 +239,7 @@ namespace TenzikaiHacchuuJouhouShuturyoku
                 }
             }
 
-            //if (!RequireCheck(new Control[] { cboSeason.SelectedValue.ToString() }))
+            //if (!RequireCheck(new Control[] { cboSeason }))
             //    return false;
 
             //if (!RequireCheck(new Control[] { cboYear }))
@@ -412,8 +412,8 @@ namespace TenzikaiHacchuuJouhouShuturyoku
                 txtExhibition.Text = st.TenzikaiName;
                 ScSupplier.TxtCode.Text = st.VendorCD;
                 ScSupplier.LabelText = st.VendorName;
-                cboYear.SelectedText = st.LastYearTerm;
-                cboSeason.SelectedText = st.LastSeason;
+                cboYear.SelectedValue = st.LastYearTerm;
+                cboSeason.SelectedValue = st.LastSeason;
             }
         }
     }
