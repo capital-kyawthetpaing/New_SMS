@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtExhibition = new CKM_Controls.CKM_TextBox();
+            this.btnExhibition = new System.Windows.Forms.Button();
             this.ckM_Label11 = new CKM_Controls.CKM_Label();
             this.cboYear = new CKM_Controls.CKM_ComboBox();
             this.rdoProduct = new CKM_Controls.CKM_RadioButton();
             this.rdoCustomer = new CKM_Controls.CKM_RadioButton();
             this.ckM_Label9 = new CKM_Controls.CKM_Label();
             this.ScClient2 = new Search.CKM_SearchControl();
-            this.ScExhibitionCD = new Search.CKM_SearchControl();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
             this.ScSegmentCD = new Search.CKM_SearchControl();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
@@ -64,13 +65,14 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtExhibition);
+            this.panel1.Controls.Add(this.btnExhibition);
             this.panel1.Controls.Add(this.ckM_Label11);
             this.panel1.Controls.Add(this.cboYear);
             this.panel1.Controls.Add(this.rdoProduct);
             this.panel1.Controls.Add(this.rdoCustomer);
             this.panel1.Controls.Add(this.ckM_Label9);
             this.panel1.Controls.Add(this.ScClient2);
-            this.panel1.Controls.Add(this.ScExhibitionCD);
             this.panel1.Controls.Add(this.ckM_Label6);
             this.panel1.Controls.Add(this.ScSegmentCD);
             this.panel1.Controls.Add(this.ckM_Label5);
@@ -87,6 +89,49 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1713, 889);
             this.panel1.TabIndex = 0;
+            // 
+            // txtExhibition
+            // 
+            this.txtExhibition.AllowMinus = false;
+            this.txtExhibition.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtExhibition.BackColor = System.Drawing.Color.White;
+            this.txtExhibition.BorderColor = false;
+            this.txtExhibition.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtExhibition.ClientColor = System.Drawing.Color.White;
+            this.txtExhibition.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.txtExhibition.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtExhibition.DecimalPlace = 0;
+            this.txtExhibition.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtExhibition.IntegerPart = 0;
+            this.txtExhibition.IsCorrectDate = true;
+            this.txtExhibition.isEnterKeyDown = false;
+            this.txtExhibition.IsFirstTime = true;
+            this.txtExhibition.isMaxLengthErr = false;
+            this.txtExhibition.IsNumber = true;
+            this.txtExhibition.IsShop = false;
+            this.txtExhibition.Length = 80;
+            this.txtExhibition.Location = new System.Drawing.Point(107, 17);
+            this.txtExhibition.MaxLength = 80;
+            this.txtExhibition.MoveNext = true;
+            this.txtExhibition.Name = "txtExhibition";
+            this.txtExhibition.Size = new System.Drawing.Size(480, 19);
+            this.txtExhibition.TabIndex = 0;
+            this.txtExhibition.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtExhibition.UseColorSizMode = false;
+            this.txtExhibition.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtExhibition_KeyDown);
+            // 
+            // btnExhibition
+            // 
+            this.btnExhibition.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnExhibition.Location = new System.Drawing.Point(586, 15);
+            this.btnExhibition.Margin = new System.Windows.Forms.Padding(0);
+            this.btnExhibition.Name = "btnExhibition";
+            this.btnExhibition.Size = new System.Drawing.Size(33, 23);
+            this.btnExhibition.TabIndex = 41;
+            this.btnExhibition.TabStop = false;
+            this.btnExhibition.Text = "･･･";
+            this.btnExhibition.UseVisualStyleBackColor = true;
+            this.btnExhibition.Click += new System.EventHandler(this.btnExhibition_Click);
             // 
             // ckM_Label11
             // 
@@ -115,10 +160,10 @@
             this.cboYear.FormattingEnabled = true;
             this.cboYear.Length = 10;
             this.cboYear.Location = new System.Drawing.Point(105, 70);
-            this.cboYear.MaxLength = 10;
+            this.cboYear.MaxLength = 5;
             this.cboYear.MoveNext = true;
             this.cboYear.Name = "cboYear";
-            this.cboYear.Size = new System.Drawing.Size(121, 20);
+            this.cboYear.Size = new System.Drawing.Size(90, 20);
             this.cboYear.TabIndex = 2;
             // 
             // rdoProduct
@@ -193,37 +238,6 @@
             this.ScClient2.Value2 = null;
             this.ScClient2.Value3 = null;
             this.ScClient2.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScClient2_CodeKeyDownEvent);
-            // 
-            // ScExhibitionCD
-            // 
-            this.ScExhibitionCD.AutoSize = true;
-            this.ScExhibitionCD.ChangeDate = "";
-            this.ScExhibitionCD.ChangeDateWidth = 100;
-            this.ScExhibitionCD.Code = "";
-            this.ScExhibitionCD.CodeWidth = 480;
-            this.ScExhibitionCD.CodeWidth1 = 480;
-            this.ScExhibitionCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ScExhibitionCD.DataCheck = false;
-            this.ScExhibitionCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ScExhibitionCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.ScExhibitionCD.IsCopy = false;
-            this.ScExhibitionCD.LabelText = "";
-            this.ScExhibitionCD.LabelVisible = false;
-            this.ScExhibitionCD.Location = new System.Drawing.Point(105, 12);
-            this.ScExhibitionCD.Margin = new System.Windows.Forms.Padding(0);
-            this.ScExhibitionCD.Name = "ScExhibitionCD";
-            this.ScExhibitionCD.NameWidth = 180;
-            this.ScExhibitionCD.SearchEnable = true;
-            this.ScExhibitionCD.Size = new System.Drawing.Size(513, 27);
-            this.ScExhibitionCD.Stype = Search.CKM_SearchControl.SearchType.展示会名;
-            this.ScExhibitionCD.TabIndex = 0;
-            this.ScExhibitionCD.test = null;
-            this.ScExhibitionCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ScExhibitionCD.UseChangeDate = false;
-            this.ScExhibitionCD.Value1 = null;
-            this.ScExhibitionCD.Value2 = null;
-            this.ScExhibitionCD.Value3 = null;
-            this.ScExhibitionCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScExhibitionCD_CodeKeyDownEvent);
             // 
             // ckM_Label6
             // 
@@ -318,10 +332,10 @@
             this.cboSeason.FormattingEnabled = true;
             this.cboSeason.Length = 10;
             this.cboSeason.Location = new System.Drawing.Point(106, 98);
-            this.cboSeason.MaxLength = 10;
+            this.cboSeason.MaxLength = 5;
             this.cboSeason.MoveNext = true;
             this.cboSeason.Name = "cboSeason";
-            this.cboSeason.Size = new System.Drawing.Size(121, 20);
+            this.cboSeason.Size = new System.Drawing.Size(90, 20);
             this.cboSeason.TabIndex = 3;
             // 
             // ScClient1
@@ -498,7 +512,6 @@
         private Search.CKM_SearchControl ScSupplier;
         private CKM_Controls.CKM_Label ckM_Label8;
         private Search.CKM_SearchControl ScClient2;
-        private Search.CKM_SearchControl ScExhibitionCD;
         private CKM_Controls.CKM_Label ckM_Label6;
         private Search.CKM_SearchControl ScSegmentCD;
         private CKM_Controls.CKM_Label ckM_Label5;
@@ -509,5 +522,7 @@
         private CKM_Controls.CKM_RadioButton rdoCustomer;
         private CKM_Controls.CKM_Label ckM_Label11;
         private CKM_Controls.CKM_ComboBox cboYear;
+        private CKM_Controls.CKM_TextBox txtExhibition;
+        private System.Windows.Forms.Button btnExhibition;
     }
 }

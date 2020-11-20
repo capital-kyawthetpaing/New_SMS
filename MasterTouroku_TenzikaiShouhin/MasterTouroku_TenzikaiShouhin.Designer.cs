@@ -554,7 +554,7 @@
             this.SC_CopyTenzikai.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_CopyTenzikai.DataCheck = false;
             this.SC_CopyTenzikai.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_CopyTenzikai.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.SC_CopyTenzikai.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.SC_CopyTenzikai.IsCopy = false;
             this.SC_CopyTenzikai.LabelText = "";
             this.SC_CopyTenzikai.LabelVisible = false;
@@ -986,7 +986,7 @@
             this.SC_Tenzikai.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.SC_Tenzikai.SearchEnable = true;
             this.SC_Tenzikai.Size = new System.Drawing.Size(533, 27);
-            this.SC_Tenzikai.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.SC_Tenzikai.Stype = Search.CKM_SearchControl.SearchType.展示会商品;
             this.SC_Tenzikai.TabIndex = 0;
             this.SC_Tenzikai.test = null;
             this.SC_Tenzikai.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -2021,6 +2021,7 @@
             this.remark_1.TabIndex = 289;
             this.remark_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.remark_1.UseColorSizMode = false;
+            this.remark_1.TextChanged += new System.EventHandler(this.remark_1_TextChanged);
             // 
             // scjan_1
             // 

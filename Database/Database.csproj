@@ -164,6 +164,7 @@
     <Content Include="StoreProcedure\D_MoveRequest_SelectData.sql" />
     <Content Include="StoreProcedure\D_Move_SelectAll.sql" />
     <Content Include="StoreProcedure\D_Move_SelectData.sql" />
+    <Content Include="StoreProcedure\D_M_TenzikaiShouhin_SelectForHachuu.sql" />
     <Content Include="StoreProcedure\D_NyuukinIchihanyou_Log.sql" />
     <Content Include="StoreProcedure\D_NyuuKinPrint.sql" />
     <Content Include="StoreProcedure\D_Order_Delete.sql" />
