@@ -1534,12 +1534,13 @@ namespace MasterTouroku_TenzikaiShouhin
             //mGrid.g_MK_Ctrl(ClsGridMitsumori.ColNO.DELCK, pCtlRow).GVal(W_Del);
 
             // ﾌｧﾝｸｼｮﾝﾎﾞﾀﾝ使用可否
-            SetFuncKeyAll(this, "111111111111");
+            SetFuncKeyAll(this, "111111001001");
 
-            //if(OperationMode == EOperationMode.UPDATE) F7 F8 F10 disable
-            //{
-            //    SetFuncKeyAll(this, "111111001011");
-            //}
+            if (OperationMode == EOperationMode.UPDATE)  // F7 F8 F10 disable
+            {
+                SetFuncKeyAll(this, "111111001011");
+            }
+
 
             // 検索ﾎﾞﾀﾝ使用不可.解除
             if (W_Del == true)
@@ -2791,10 +2792,10 @@ namespace MasterTouroku_TenzikaiShouhin
             {
                 SetFuncKeyAll(this, "111111001000");
             }
-            //else if (OperationMode == EOperationMode.UPDATE)  // F7 F8 F10 disable
-            //{
-            //    SetFuncKeyAll(this, "111111000011");
-            //}
+             if (OperationMode == EOperationMode.UPDATE)  // F7 F8 F10 disable
+             {
+                SetFuncKeyAll(this, "111111001011");
+             }
 
             else
             {
@@ -3187,6 +3188,11 @@ namespace MasterTouroku_TenzikaiShouhin
                                         switch (w_Col)
                                         {
                                             case (int)ClsGridMasterTanzi.ColNO.Chk:
+                                                if(OperationMode == EOperationMode.UPDATE)
+                                                {
+                                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
+                                                }
+                                                break;
                                             case (int)ClsGridMasterTanzi.ColNO.HanbaiYoteiDateMonth:
                                             case (int)ClsGridMasterTanzi.ColNO.HanbaiYoteiBi:
                                             case (int)ClsGridMasterTanzi.ColNO.JoutaiTanka:
@@ -3303,6 +3309,11 @@ namespace MasterTouroku_TenzikaiShouhin
                             if (!String.IsNullOrEmpty(mGrid.g_DArray[w_Row].JANCD) && !String.IsNullOrEmpty(mGrid.g_DArray[w_Row].SKUCD))
                             {
                                 FlgChange(w_Row, true);
+                                if (OperationMode == EOperationMode.UPDATE)
+                                {
+                                    mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Chk, w_Row].Cell_Enabled = true;
+                                }
+
                             }
                         }
                        
@@ -3353,6 +3364,11 @@ namespace MasterTouroku_TenzikaiShouhin
                                         {
 
                                             case (int)ClsGridMasterTanzi.ColNO.Chk:
+                                                if(OperationMode == EOperationMode.UPDATE)
+                                                {
+                                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
+                                                }
+                                                break;
                                             case (int)ClsGridMasterTanzi.ColNO.HanbaiYoteiDateMonth:
                                             case (int)ClsGridMasterTanzi.ColNO.HanbaiYoteiBi:
                                             case (int)ClsGridMasterTanzi.ColNO.JoutaiTanka:
@@ -3379,7 +3395,15 @@ namespace MasterTouroku_TenzikaiShouhin
 
                             }
                             panel2.Refresh();
-                            SetFuncKeyAll(this, "111111001011");
+                            if(OperationMode == EOperationMode.UPDATE)
+                            {
+                                SetFuncKeyAll(this, "111111001011");
+                            }
+                            else
+                            {
+                                SetFuncKeyAll(this, "111111001001");
+                            }
+                           
                         }
                         else
                         {
@@ -3391,10 +3415,17 @@ namespace MasterTouroku_TenzikaiShouhin
                             if(OperationMode == EOperationMode.DELETE)
                                 SetFuncKeyAll(this, "111111001001");
 
-                            else
-                                SetFuncKeyAll(this, "111111001000");
+                            if (OperationMode == EOperationMode.UPDATE)
+                            {
+                                SetFuncKeyAll(this, "111111001011");
+                            }
+
+                            if (OperationMode == EOperationMode.INSERT)
+                                SetFuncKeyAll(this, "111111001001");
+                           
+
                         }
-                       
+
                     }
                     break;
                 case 6:
@@ -3446,6 +3477,12 @@ namespace MasterTouroku_TenzikaiShouhin
                                             {
 
                                             case (int)ClsGridMasterTanzi.ColNO.Chk:
+                                                    if (OperationMode == EOperationMode.UPDATE)
+                                                    {
+                                                        mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
+                                                    }
+
+                                                 break;
                                             case (int)ClsGridMasterTanzi.ColNO.HanbaiYoteiDateMonth:
                                             case (int)ClsGridMasterTanzi.ColNO.HanbaiYoteiBi:
                                             case (int)ClsGridMasterTanzi.ColNO.JoutaiTanka:
@@ -3475,21 +3512,17 @@ namespace MasterTouroku_TenzikaiShouhin
 
                             }
                             panel2.Refresh();
-                            SetFuncKeyAll(this, "111111001011");
-                        }
-                        else
-                        {
-                            for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
+                            if (OperationMode == EOperationMode.UPDATE)
                             {
-
-                                mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.JANCD, w_Row].Cell_Enabled = false;
+                                SetFuncKeyAll(this, "111111001011");
                             }
-                            if (OperationMode == EOperationMode.DELETE)
-                                SetFuncKeyAll(this, "111111001001");
-
                             else
-                                SetFuncKeyAll(this, "111111001000");
+                            {
+                                SetFuncKeyAll(this, "111111001001");
+                            }
+                           // SetFuncKeyAll(this, "111111001011");
                         }
+
 
                     }
 
@@ -3646,11 +3679,20 @@ namespace MasterTouroku_TenzikaiShouhin
                             case (int)ClsGridMasterTanzi.ColNO.TaniCD:
                             case (int)ClsGridMasterTanzi.ColNO.TaxRateFlg:
                             case (int)ClsGridMasterTanzi.ColNO.Remark:
-                            case (int)ClsGridMasterTanzi.ColNO.Chk:
                                 mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                                 mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = false;
                                 mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
                                 break;
+
+
+                            case (int)ClsGridMasterTanzi.ColNO.Chk:
+                                if (OperationMode == EOperationMode.UPDATE)
+                                {
+                                    mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
+                                }
+
+                                break;
+                              
                         }
                     }
                     w_AllFlg = false;
@@ -3736,11 +3778,18 @@ namespace MasterTouroku_TenzikaiShouhin
                             case (int)ClsGridMasterTanzi.ColNO.TaniCD:
                             case (int)ClsGridMasterTanzi.ColNO.TaxRateFlg:
                             case (int)ClsGridMasterTanzi.ColNO.Remark:
-                            case (int)ClsGridMasterTanzi.ColNO.Chk:
                                 mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                                 mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = false;
                                 mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
                                 break;
+
+                            case (int)ClsGridMasterTanzi.ColNO.Chk:
+                                if (OperationMode == EOperationMode.UPDATE)
+                                {
+                                    mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
+                                }
+                                break;
+                               
                         }
                     }
                     w_AllFlg = false;
@@ -3850,7 +3899,9 @@ namespace MasterTouroku_TenzikaiShouhin
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TaniCD, w_Row].Cell_Enabled = Flg;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TaxRateFlg, w_Row].Cell_Enabled = Flg;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Remark, w_Row].Cell_Enabled = Flg;
-            mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Chk, w_Row].Cell_Enabled = Flg;
+
+           
+
             //mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.HanbaiYoteiDateMonth, w_Row].Cell_Enabled = Flg;
             //mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.HanbaiYoteiDateMonth, w_Row].Cell_Enabled = Flg;
             //mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.HanbaiYoteiDateMonth, w_Row].Cell_Enabled = Flg;
@@ -4029,7 +4080,6 @@ namespace MasterTouroku_TenzikaiShouhin
                     if (dt.Rows.Count == 0)
                     {
                         mGrid.g_DArray[w_Row].Chk = false;
-
                     }
                     else
                     {
