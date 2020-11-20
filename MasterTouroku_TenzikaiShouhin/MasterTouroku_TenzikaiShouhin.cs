@@ -2123,11 +2123,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
-                            if(Convert.ToInt64(mGrid.g_DArray[row].SalePriceOutTax) ==0)
-                            {
-                                bbl.ShowMessage("E257");
-                                return false;
-                            }
+                         
 
                         }
                         break;
@@ -2141,11 +2137,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
-                            if (Convert.ToInt64(mGrid.g_DArray[row].SalePriceOutTax1) == 0)
-                            {
-                                bbl.ShowMessage("E257");
-                                return false;
-                            }
+                           
                         }
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.SalePriceOutTax2:
@@ -2158,11 +2150,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
-                            if (Convert.ToInt64(mGrid.g_DArray[row].SalePriceOutTax2) == 0)
-                            {
-                                bbl.ShowMessage("E257");
-                                return false;
-                            }
+                           
                         }
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.SalePriceOutTax3:
@@ -2175,11 +2163,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
-                            if (Convert.ToInt64(mGrid.g_DArray[row].SalePriceOutTax3) == 0)
-                            {
-                                bbl.ShowMessage("E257");
-                                return false;
-                            }
+                           
 
                         }
                         break;
@@ -2193,11 +2177,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
-                            if (Convert.ToInt64(mGrid.g_DArray[row].SalePriceOutTax4) == 0)
-                            {
-                                bbl.ShowMessage("E257");
-                                return false;
-                            }
+                          
                         }
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.SalePriceOutTax5:
@@ -2210,12 +2190,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
-                            if (Convert.ToInt64(mGrid.g_DArray[row].SalePriceOutTax5) == 0)
-                            {
-                                bbl.ShowMessage("E257");
-                                return false;
-                            }
-
+                            
                         }
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.BrandCD:
@@ -3305,6 +3280,7 @@ namespace MasterTouroku_TenzikaiShouhin
                             {
                                 mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.JANCD, w_Row].Cell_Enabled = true;
                                FlgChange(w_Row, false);
+                                mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Chk, w_Row].Cell_Enabled = false;
                             }
                             if (!String.IsNullOrEmpty(mGrid.g_DArray[w_Row].JANCD) && !String.IsNullOrEmpty(mGrid.g_DArray[w_Row].SKUCD))
                             {
