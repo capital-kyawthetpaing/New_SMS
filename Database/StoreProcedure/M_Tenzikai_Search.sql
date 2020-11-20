@@ -26,6 +26,7 @@ CREATE PROCEDURE [dbo].[M_Tenzikai_Search]
 AS
 BEGIN
 Select
+mt.VendorCD,
 mt.TenzikaiName,
 max(mv.VendorName) as VendorName,
 mt.LastYearTerm,
