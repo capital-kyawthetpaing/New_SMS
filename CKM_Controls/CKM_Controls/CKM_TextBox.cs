@@ -54,7 +54,7 @@ namespace CKM_Controls
             get { return MaxLength; }
             set {
               //  length_ = value;
-             ///   MaxLength = value;
+                //MaxLength = value;
             }
 
         }
