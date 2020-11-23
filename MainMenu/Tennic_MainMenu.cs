@@ -469,7 +469,7 @@ namespace MainMenu
         {
             ForceToCLose();
             
-            TennicLogin tcl = new TennicLogin();
+            TennicLogin tcl = new TennicLogin(true);
            this.Hide();
             
             tcl.ShowDialog();
