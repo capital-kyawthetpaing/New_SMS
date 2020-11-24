@@ -460,7 +460,7 @@ namespace MainMenu
         private void btnLogin_Click(object sender, EventArgs e)
         {
             ForceToClose();
-               HaspoLogin hln = new HaspoLogin();
+               HaspoLogin hln = new HaspoLogin(true);
             this.Hide();
             hln.ShowDialog();
             this.Close();
