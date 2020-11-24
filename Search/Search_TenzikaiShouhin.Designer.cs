@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Search_TenzikaiShouhin));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Lb_brand = new CKM_Controls.CKM_Label();
@@ -476,7 +477,7 @@
             this.GV_TZshouhin.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("GV_TZshouhin.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -498,6 +499,14 @@
             this.biko,
             this.insertdatetime,
             this.updatedatetime});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GV_TZshouhin.DefaultCellStyle = dataGridViewCellStyle5;
             this.GV_TZshouhin.EnableHeadersVisualStyles = false;
             this.GV_TZshouhin.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_TZshouhin.Location = new System.Drawing.Point(10, 5);
@@ -737,6 +746,7 @@
             this.tenzikainame.DataPropertyName = "TenzikaiName";
             this.tenzikainame.HeaderText = "展示会名";
             this.tenzikainame.Name = "tenzikainame";
+            this.tenzikainame.ReadOnly = true;
             this.tenzikainame.Width = 380;
             // 
             // VendorCD
@@ -751,6 +761,7 @@
             this.VendorName.DataPropertyName = "VendorName";
             this.VendorName.HeaderText = "VendorName";
             this.VendorName.Name = "VendorName";
+            this.VendorName.ReadOnly = true;
             this.VendorName.Visible = false;
             // 
             // skucd
@@ -758,18 +769,21 @@
             this.skucd.DataPropertyName = "SKUCD";
             this.skucd.HeaderText = "SKUCD";
             this.skucd.Name = "skucd";
+            this.skucd.ReadOnly = true;
             // 
             // jancd
             // 
             this.jancd.DataPropertyName = "JANCD";
             this.jancd.HeaderText = "JANCD";
             this.jancd.Name = "jancd";
+            this.jancd.ReadOnly = true;
             // 
             // skuname
             // 
             this.skuname.DataPropertyName = "SKUName";
             this.skuname.HeaderText = "商品名";
             this.skuname.Name = "skuname";
+            this.skuname.ReadOnly = true;
             this.skuname.Width = 620;
             // 
             // segment
@@ -777,12 +791,14 @@
             this.segment.DataPropertyName = "SegmentName";
             this.segment.HeaderText = "セグメント";
             this.segment.Name = "segment";
+            this.segment.ReadOnly = true;
             // 
             // brand
             // 
             this.brand.DataPropertyName = "BrandName";
             this.brand.HeaderText = "ブランド";
             this.brand.Name = "brand";
+            this.brand.ReadOnly = true;
             this.brand.Width = 95;
             // 
             // shiiresaki
@@ -790,6 +806,7 @@
             this.shiiresaki.DataPropertyName = "VendorName";
             this.shiiresaki.HeaderText = "仕入先";
             this.shiiresaki.Name = "shiiresaki";
+            this.shiiresaki.ReadOnly = true;
             this.shiiresaki.Width = 350;
             // 
             // color
@@ -797,6 +814,7 @@
             this.color.DataPropertyName = "ColorName";
             this.color.HeaderText = "カラー";
             this.color.Name = "color";
+            this.color.ReadOnly = true;
             this.color.Width = 135;
             // 
             // size
@@ -804,6 +822,7 @@
             this.size.DataPropertyName = "SizeName";
             this.size.HeaderText = "セイズ";
             this.size.Name = "size";
+            this.size.ReadOnly = true;
             this.size.Width = 140;
             // 
             // biko
@@ -811,6 +830,7 @@
             this.biko.DataPropertyName = "Remarks";
             this.biko.HeaderText = "備　考";
             this.biko.Name = "biko";
+            this.biko.ReadOnly = true;
             this.biko.Width = 380;
             // 
             // insertdatetime
@@ -821,6 +841,7 @@
             this.insertdatetime.DefaultCellStyle = dataGridViewCellStyle3;
             this.insertdatetime.HeaderText = "新規登録日";
             this.insertdatetime.Name = "insertdatetime";
+            this.insertdatetime.ReadOnly = true;
             this.insertdatetime.Width = 80;
             // 
             // updatedatetime
@@ -831,6 +852,7 @@
             this.updatedatetime.DefaultCellStyle = dataGridViewCellStyle4;
             this.updatedatetime.HeaderText = "最終変更日";
             this.updatedatetime.Name = "updatedatetime";
+            this.updatedatetime.ReadOnly = true;
             this.updatedatetime.Width = 80;
             // 
             // Search_TenzikaiShouhin
