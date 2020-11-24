@@ -64,7 +64,7 @@ namespace Entity
         public string Keyword3 { get; set; }
         public string type { get; set; }
 
-        public string Rdotype { get; set; }
+        public string checkFlag { get; set; }
 
     }
 }

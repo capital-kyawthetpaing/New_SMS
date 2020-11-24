@@ -286,15 +286,15 @@ namespace TairyuZaikoHyou
                 }
                 if (rdoItem.Checked == true)
                 {
-                    dse.Rdotype = "1";
+                    dse.checkFlag = "1";
                 }
                 else if(rdoItem.Checked == true)
                 {
-                    dse.Rdotype = "2";
+                    dse.checkFlag = "2";
                 }
                 else
                 {
-                    dse.Rdotype = "3";
+                    dse.checkFlag = "3";
                 }
 
                 DataTable dtSelect = new DataTable();
