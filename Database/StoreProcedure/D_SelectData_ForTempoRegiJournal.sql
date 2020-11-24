@@ -98,6 +98,8 @@ BEGIN
              WHERE StoreCD = @StoreCD
                AND AccountingDate >= convert(date, @DateFrom)
                AND AccountingDate <= convert(date, @DateTo)
+               AND DataKBN IN (2,3)
+               AND DepositKBN IN (1,2,3,5,6)
            ) H1;
 --Temp_D_DepositHistory0‚ÉIndexiNumberj‚ð‚Â‚¯‚½‚Ù‚¤‚ª‚æ‚¢Hš
     -- ƒCƒ“ƒfƒbƒNƒXindex1ì¬
@@ -259,6 +261,7 @@ BEGIN
                   ,NULL ChangePreparationName10                                            -- ’Þ‘K€”õ–¼10
                   ,NULL ChangePreparationAmount10                                          -- ’Þ‘K€”õŠz10
                   ,D.Remark ChangePreparationRemark                                        -- ’Þ‘K€”õ”õl
+                  ,D.DepositNO
               FROM #Temp_D_DepositHistory0 D
               INNER JOIN (
                                    SELECT MAX(history.DepositNO) DepositNO
@@ -314,7 +317,7 @@ BEGIN
                           ,history.DepositGaku                     AS MiscDepositAmount1     -- ŽG“ü‹àŠz1
                           --,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositDateTime ASC) as RANK	š
                           --,ROW_NUMBER() OVER(PARTITION BY history.Number,history.DepositNO ORDER BY history.DepositNO ASC) as RANK
-                          ,history.DepositNO	--2020.11.20 add
+                          ,history.DepositNO	                   --2020.11.20 add
                           ,history.InsertOperator                  AS StaffReceiptPrint
                           ,history.Remark                          AS MiscDepositRemark      -- ŽG“ü‹à”õl
                       FROM #Temp_D_DepositHistory0 history
@@ -380,7 +383,7 @@ BEGIN
                           ,history.DepositGaku                    AS DepositAmount1
                           --,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositDateTime ASC) as RANK	š
                           --,ROW_NUMBER() OVER(PARTITION BY history.Number,history.DepositNO ORDER BY history.DepositNO ASC) as RANK
-                          ,history.DepositNO	--2020.11.20 add
+                          ,history.DepositNO	                  --2020.11.20 add
                           ,history.InsertOperator                 AS StaffReceiptPrint
                           ,history.Remark                         AS DepositRemark
                      FROM #Temp_D_DepositHistory0 history
@@ -1626,8 +1629,9 @@ BEGIN
                   ,store.Address2                                                  -- ZŠ‚Q
                   ,store.TelephoneNO                                               -- “d˜b”Ô†
                   ,CASE 
-                       WHEN tempHistory1.DepositDate IS NOT NULL THEN tempHistory1.RegistDate
-                       ELSE CONCAT(calendar.CalendarDate, ' 00:00:00.000')
+                       WHEN tempHistory1.RegistDate IS NOT NULL THEN tempHistory1.RegistDate
+                       --ELSE CONCAT(calendar.CalendarDate, ' 00:00:00.000')
+                       ELSE tempHistory0.DepositDateTime
                    END IssueDate                                                   -- ”­s“úŽž
                   ,CASE 
                        WHEN tempHistory1.DepositDate IS NOT NULL THEN tempHistory1.DepositDate
@@ -1660,27 +1664,46 @@ BEGIN
                       FROM #Temp_D_DepositHistory1 t 
                      WHERE t.SalesNO = tempHistory1.SalesNO) Total                 -- ‡Œv
                   --
-                  ,tempHistory1.StaffReceiptPrint                                  -- ’S“–CD
+                  ,ISNULL(tempHistory1.StaffReceiptPrint
+                         ,(SELECT top 1 staff.ReceiptPrint
+                             FROM F_Staff(CONVERT(DATE, GETDATE())) AS staff
+                            WHERE staff.StaffCD = tempHistory0.InsertOperator
+                              AND staff.DeleteFlg = 0
+                            ORDER BY staff.ChangeDate DESC
+                            )) AS StaffReceiptPrint                                -- ’S“–CD
                   ,store.ReceiptPrint StoreReceiptPrint                            -- “X•ÜCD
-                  ,tempHistory1.DepositNO
+                  ,tempHistory0.DepositNO
               FROM M_Calendar AS calendar
               LEFT OUTER JOIN F_Store(CONVERT(DATE, GETDATE())) AS store
                 ON store.StoreCD = @StoreCD
                AND store.DeleteFlg = 0
-
-              LEFT OUTER JOIN #Temp_D_DepositHistory1 AS tempHistory1 ON tempHistory1.StoreCD = store.StoreCD
-                                                                     AND tempHistory1.AccountingDate = calendar.CalendarDate
+             INNER JOIN #Temp_D_DepositHistory0 AS tempHistory0 ON tempHistory0.StoreCD = store.StoreCD
+                                                               AND tempHistory0.AccountingDate = calendar.CalendarDate
+              LEFT OUTER JOIN #Temp_D_DepositHistory1 AS tempHistory1 ON tempHistory1.DepositNO = tempHistory0.DepositNO
              WHERE calendar.CalendarDate >= convert(date, @DateFrom)
                AND calendar.CalendarDate <= convert(date, @DateTo)
+               AND ((tempHistory0.DataKBN = 2 AND tempHistory0.DepositKBN = 1 AND tempHistory0.CancelKBN = 0 AND EXISTS(SELECT 1 FROM #Temp_D_DepositHistory1 AS T1 WHERE T1.DepositNO = tempHistory0.DepositNO))
+                  OR tempHistory0.DataKBN <> 2
+                  OR tempHistory0.DepositKBN <> 1
+                  OR tempHistory0.CancelKBN <> 0
+                  )
            ) A
       LEFT OUTER JOIN #Temp_D_DepositHistory2 tempHistory2   ON tempHistory2.SalesNO = A.SalesNO
       LEFT OUTER JOIN #Temp_D_DepositHistory3 tempHistory3   ON tempHistory3.SalesNO = A.SalesNO
-      LEFT OUTER JOIN #Temp_D_DepositHistory4 tempHistory4   ON tempHistory4.RegistDate = A.CalendarDate
-      LEFT OUTER JOIN #Temp_D_DepositHistory5 tempHistory5   ON tempHistory5.RegistDate = A.CalendarDate
-      LEFT OUTER JOIN #Temp_D_DepositHistory51 tempHistory51 ON tempHistory51.RegistDate = A.CalendarDate
-      LEFT OUTER JOIN #Temp_D_DepositHistory6 tempHistory6   ON tempHistory6.RegistDate = A.CalendarDate
-      LEFT OUTER JOIN #Temp_D_DepositHistory7 tempHistory7   ON tempHistory7.RegistDate = A.CalendarDate
+      
+      --LEFT OUTER JOIN #Temp_D_DepositHistory4 tempHistory4   ON tempHistory4.RegistDate = A.CalendarDate
+      --LEFT OUTER JOIN #Temp_D_DepositHistory5 tempHistory5   ON tempHistory5.RegistDate = A.CalendarDate
+      --LEFT OUTER JOIN #Temp_D_DepositHistory51 tempHistory51 ON tempHistory51.RegistDate = A.CalendarDate
+      --LEFT OUTER JOIN #Temp_D_DepositHistory6 tempHistory6   ON tempHistory6.RegistDate = A.CalendarDate
+      --LEFT OUTER JOIN #Temp_D_DepositHistory7 tempHistory7   ON tempHistory7.RegistDate = A.CalendarDate
+      
+      LEFT OUTER JOIN #Temp_D_DepositHistory4 tempHistory4   ON tempHistory4.DepositNO = A.DepositNO
+      LEFT OUTER JOIN #Temp_D_DepositHistory5 tempHistory5   ON tempHistory5.DepositNO = A.DepositNO
+      LEFT OUTER JOIN #Temp_D_DepositHistory51 tempHistory51 ON tempHistory51.DepositNO = A.DepositNO
+      LEFT OUTER JOIN #Temp_D_DepositHistory6 tempHistory6   ON tempHistory6.DepositNO = A.DepositNO
+      LEFT OUTER JOIN #Temp_D_DepositHistory7 tempHistory7   ON tempHistory7.DepositNO = A.DepositNO
       LEFT OUTER JOIN #Temp_D_DepositHistory8 tempHistory8   ON tempHistory8.RegistDate = A.CalendarDate
+      
      ORDER BY DetailOrder ASC
          ;
     
