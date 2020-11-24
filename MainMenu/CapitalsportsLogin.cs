@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Deployment.Application;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -19,8 +20,15 @@ namespace MainMenu
     {
         Login_BL loginbl;
         M_Staff_Entity mse;
-        public CapitalsportsLogin()
+        public CapitalsportsLogin(bool IsMainCall= false)
         {
+            if (!IsMainCall)
+            {
+                if (CheckExistFormRunning())
+                {
+                    System.Environment.Exit(0);
+                }
+            }
             loginbl = new Login_BL();
             this.KeyPreview = true;
             InitializeComponent();
@@ -34,7 +42,16 @@ namespace MainMenu
             else
                 ckM_Button3.Visible = false;
         }
-
+        private bool CheckExistFormRunning()
+        {
+            Process[] localByName = Process.GetProcessesByName("MainMenu");
+            if (localByName.Count() > 0)
+            {
+                MessageBox.Show("PLease close the running application before running the new instance one.");
+                return true;
+            }
+            return false;
+        }
         private void CapitalsportsLogin_Load(object sender, EventArgs e)
         {
             loginbl = new Login_BL();
