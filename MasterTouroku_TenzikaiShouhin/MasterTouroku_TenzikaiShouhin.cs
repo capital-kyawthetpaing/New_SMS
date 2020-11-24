@@ -1165,7 +1165,7 @@ namespace MasterTouroku_TenzikaiShouhin
                             break;
                         case (int)ClsGridMasterTanzi.ColNO.TaniCD:
                             ((((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl))).TxtCode.Width = 30;
-                            ((((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl))).Value1 = "202";
+                            ((((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl))).Value1 = "201";
                             ///((CKM_SearchControl)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).Stype = CKM_SearchControl.SearchType.単位;
                             break;
                     }
@@ -1848,7 +1848,7 @@ namespace MasterTouroku_TenzikaiShouhin
                 case EsearchKbn.Tani:
                     using (Search_HanyouKey frmMulti = new Search_HanyouKey())
                     {
-                        frmMulti.parID = "202";
+                        frmMulti.parID = "201";
                         frmMulti.parKey= mGrid.g_DArray[w_Row].TaniCD;
                         frmMulti.ShowDialog();
                         if (!frmMulti.flgCancel)
@@ -2256,7 +2256,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                 return false;
                             }
 
-                            DataTable dtT = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 12, mGrid.g_DArray[row].TaniCD, "202");
+                            DataTable dtT = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 12, mGrid.g_DArray[row].TaniCD, "201");
                             if (dtT.Rows.Count == 0)
                             {
                                 bl.ShowMessage("E101");
@@ -2839,7 +2839,7 @@ namespace MasterTouroku_TenzikaiShouhin
                             bl.ShowMessage("E269", row.ToString(), "セグメントCD未登録エラー");
                             return false;
                         }
-                        var dtT = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 12, dt.Rows[i]["単位CD"].ToString(), "202");
+                        var dtT = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 12, dt.Rows[i]["単位CD"].ToString(), "201");
                         if (dtT.Rows.Count == 0)
                         {
                             bl.ShowMessage("E269", row.ToString(), "単位CD未登録エラー");
