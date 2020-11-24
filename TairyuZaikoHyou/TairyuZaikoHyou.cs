@@ -288,7 +288,7 @@ namespace TairyuZaikoHyou
                 {
                     dse.checkFlag = "1";
                 }
-                else if(rdoItem.Checked == true)
+                else if(rdoProductCD.Checked == true)
                 {
                     dse.checkFlag = "2";
                 }
@@ -560,7 +560,7 @@ namespace TairyuZaikoHyou
                     if (string.IsNullOrWhiteSpace(txtManufactureCD.Text))
                     {
                         tzkbl.ShowMessage("E102");
-                        txtItem.Focus();
+                        txtRemarks.Focus();
                     }
                 }
             }
