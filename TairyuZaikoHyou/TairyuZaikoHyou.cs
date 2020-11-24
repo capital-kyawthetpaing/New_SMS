@@ -190,9 +190,9 @@ namespace TairyuZaikoHyou
                     RackNOTo = txtStorageTo.Text,
                     Keyword1 = (strlist.Length > 0) ? strlist[0].ToString() : "",
                     Keyword2 = (strlist.Length > 1) ? strlist[1].ToString() : "",
-                    Keyword3 = (strlist.Length > 2) ? strlist[2].ToString() : "",   
+                    Keyword3 = (strlist.Length > 2) ? strlist[2].ToString() : "",
                 };
-                if(dse.SoukoCD == "-1")
+                if (dse.SoukoCD == "-1")
                 {
                     dse.SoukoCD = null;
                 }
@@ -212,11 +212,11 @@ namespace TairyuZaikoHyou
                     PostageCD = cboPostage.SelectedValue.ToString(),
                     OrderAttentionCD = cboOrder.SelectedValue.ToString()
                 };
-                if(mskue.ReserveCD == "-1")
+                if (mskue.ReserveCD == "-1")
                 {
                     mskue.ReserveCD = null;
                 }
-                if(mskue.NoticesCD == "-1")
+                if (mskue.NoticesCD == "-1")
                 {
                     mskue.NoticesCD = null;
                 }
@@ -237,7 +237,7 @@ namespace TairyuZaikoHyou
                     InstructionsNO = txtInstructionNo.Text,
                 };
 
-                if(info.YearTerm == "-1")
+                if (info.YearTerm == "-1")
                 {
                     info.YearTerm = null;
                 }
@@ -254,8 +254,8 @@ namespace TairyuZaikoHyou
                     TagName4 = cboTag4.SelectedValue.ToString(),
                     TagName5 = cboTag5.SelectedValue.ToString()
                 };
-                
-                if(mtage.TagName1 == "-1")
+
+                if (mtage.TagName1 == "-1")
                 {
                     mtage.TagName1 = null;
                 }
@@ -283,6 +283,18 @@ namespace TairyuZaikoHyou
                 else
                 {
                     dse.type = "2";
+                }
+                if (rdoItem.Checked == true)
+                {
+                    dse.Rdotype = "1";
+                }
+                else if(rdoItem.Checked == true)
+                {
+                    dse.Rdotype = "2";
+                }
+                else
+                {
+                    dse.Rdotype = "3";
                 }
 
                 DataTable dtSelect = new DataTable();
@@ -528,10 +540,13 @@ namespace TairyuZaikoHyou
         {
             if(rdoItem.Checked == true)
             {
-                if(chkPrint.Checked == false)
-                {
-                    tzkbl.ShowMessage("E102");
-                    chkPrint.Focus();
+                if(chkPrint.Checked == true)
+                {  
+                    if(string.IsNullOrWhiteSpace(txtItem.Text))
+                    {
+                        tzkbl.ShowMessage("E102");
+                        txtItem.Focus();
+                    }
                 }
             }
         }
@@ -540,10 +555,13 @@ namespace TairyuZaikoHyou
         {
             if (rdoProductCD.Checked == true)
             {
-                if (chkPrint.Checked == false)
+                if (chkPrint.Checked == true)
                 {
-                    tzkbl.ShowMessage("E102");
-                    chkPrint.Focus();
+                    if (string.IsNullOrWhiteSpace(txtManufactureCD.Text))
+                    {
+                        tzkbl.ShowMessage("E102");
+                        txtItem.Focus();
+                    }
                 }
             }
         }
