@@ -2832,11 +2832,11 @@ namespace HenpinNyuuryoku
                                     //in軽減税率FLG                 ←	1
                                     //in金額                        ←	通常税率仕入額(Hidden)のTotal
                                     decimal zei;
-                                    decimal kin = bbl.GetZeikomiKingaku(sumKin10, mGrid.g_DArray[w_Row].TaxRateFLG, out zei, detailControls[(int)EIndex.PurchaseDate].Text);
+                                    decimal kin = bbl.GetZeikomiKingaku(sumKin10, 1, out zei, detailControls[(int)EIndex.PurchaseDate].Text);
 
                                     //(B)Function_消費税計算.out金額１
                                     decimal zei2;
-                                    decimal kin2 = bbl.GetZeikomiKingaku(sumKin8, mGrid.g_DArray[w_Row].TaxRateFLG, out zei2, detailControls[(int)EIndex.PurchaseDate].Text);
+                                    decimal kin2 = bbl.GetZeikomiKingaku(sumKin8, 2, out zei2, detailControls[(int)EIndex.PurchaseDate].Text);
                                     detailControls[(int)EIndex.PurchaseTax].Text = bbl.Z_SetStr(zei+zei2);
 
                                 }

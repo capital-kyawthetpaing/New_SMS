@@ -21,6 +21,7 @@ namespace Search
         D_TenzikaiJuchuu_Entity dtje;
         private Control PreCon = null;
         Control[] DetailControls;
+        
 
         string year = string.Empty; string month = string.Empty; string day = string.Empty; string date = string.Empty;
         public string OrderNum = string.Empty;
@@ -45,12 +46,14 @@ namespace Search
                 year = date[date.Length - 3];
             txtOrderDateFrom.Text = year + '/' + month + '/' + "01";
             BindCombo();
-            txtCustomerName.Enabled = false;
+            txtSupplierName.Enabled = true;
+            txtSupplierName.Text = string.Empty;
+            txtCustomerName.Enabled = true;
             txtCustomerName.Text = string.Empty;
             SetRequiredField();
             txtOrderDateFrom.Focus();
             F9Visible = false;
-            DetailControls = new Control[] {txtOrderDateTo, txtOrderDateFrom,txtKanaName, txtCustomerName, ScSupplier.TxtCode, scStaff.TxtCode , ScSKUCD.TxtCode, ScItem.TxtCode,ScJanCD.TxtCode,cboSeason,cboYear};
+            DetailControls = new Control[] {txtOrderDateTo, txtOrderDateFrom,txtKanaName, txtSupplierName, txtCustomerName, ScSupplier.TxtCode, scStaff.TxtCode , ScSKUCD.TxtCode, ScItem.TxtCode,ScJanCD.TxtCode,cboSeason,cboYear};
             foreach (var c in DetailControls)
             {
                 c.Enter += Search_TenzikaiJuchuuNO_Enter;
@@ -169,15 +172,37 @@ namespace Search
                     scStaff.ChangeDate = txtOrderDateTo.Text;
                     ScCustomer.ChangeDate = txtOrderDateTo.Text;
                 }
+                //if (!string.IsNullOrWhiteSpace(ScSupplier.TxtCode.Text))
+                //{                  
+                //    if (!ScSupplier.IsExists(2))
+                //    {
+                //        bbl.ShowMessage("E101");
+                //        ScSupplier.SetFocus(1);
+                //        return false;
+                //    }
+                //}
                 if (!string.IsNullOrWhiteSpace(ScSupplier.TxtCode.Text))
-                {                  
-                    if (!ScSupplier.IsExists(2))
+                {
+                    //if (!ScSupplier.SelectData())
+                    //{
+                    //    bbl.ShowMessage("E101");
+                    //    ScSupplier.SetFocus(1);
+                    //}
+                    mve.VendorCD = ScSupplier.TxtCode.Text;
+                    mve.ChangeDate = ScSupplier.ChangeDate;
+                    DataTable dtvendor = new DataTable();
+                    dtvendor = tzkjbl.M_Vendor_SelectForJuchuu(mve);
+                    if (dtvendor.Rows.Count > 0)
+                    {
+                        txtSupplierName.Text = dtvendor.Rows[0]["VendorName"].ToString();
+                    }
+                    else
                     {
                         bbl.ShowMessage("E101");
                         ScSupplier.SetFocus(1);
-                        return false;
                     }
                 }
+               
 
                 //if (string.IsNullOrWhiteSpace(cboYear.Text.ToString()))
                 //{
@@ -217,18 +242,19 @@ namespace Search
                     }
                     else
                     {
-                        if (dtc.Rows[0]["VariousFLG"].ToString() == "1")
-                        {
-                            txtCustomerName.Text = dtc.Rows[0]["CustomerName"].ToString();
-                            //txtCustomerName.BackColor = Color.White;
-                            txtCustomerName.Enabled = true;
-                        }
-                        else if (dtc.Rows[0]["VariousFLG"].ToString() == "0")
-                        {
-                            txtCustomerName.Text = dtc.Rows[0]["CustomerName"].ToString();
-                            //txtCustomerName.BackColor = Color.FromArgb(218, 218, 212);
-                            txtCustomerName.Enabled = false;
-                        }
+                        //if (dtc.Rows[0]["VariousFLG"].ToString() == "1")
+                        //{
+                        //    txtCustomerName.Text = dtc.Rows[0]["CustomerName"].ToString();
+                        //    //txtCustomerName.BackColor = Color.White;
+                        //    txtCustomerName.Enabled = true;
+                        //}
+                        //else if (dtc.Rows[0]["VariousFLG"].ToString() == "0")
+                        //{
+                        //    txtCustomerName.Text = dtc.Rows[0]["CustomerName"].ToString();
+                        //    //txtCustomerName.BackColor = Color.FromArgb(218, 218, 212);
+                        //    txtCustomerName.Enabled = false;
+                        //}
+                        txtCustomerName.Text = dtc.Rows[0]["CustomerName"].ToString();
                     }
 
                 }
@@ -260,11 +286,28 @@ namespace Search
                 }
                 if (!string.IsNullOrWhiteSpace(ScSupplier.TxtCode.Text))
                 {
-                    if (!ScSupplier.SelectData())
+                    //if (!ScSupplier.SelectData())
+                    //{
+                    //    bbl.ShowMessage("E101");
+                    //    ScSupplier.SetFocus(1);
+                    //}
+                    mve.VendorCD = ScSupplier.TxtCode.Text;
+                    mve.ChangeDate = ScSupplier.ChangeDate;
+                    DataTable dtvendor = new DataTable();
+                    dtvendor = tzkjbl.M_Vendor_SelectForJuchuu(mve);
+                    if(dtvendor.Rows.Count > 0 )
+                    {
+                        txtSupplierName.Text = dtvendor.Rows[0]["VendorName"].ToString();
+                    }
+                    else
                     {
                         bbl.ShowMessage("E101");
                         ScSupplier.SetFocus(1);
                     }
+                }
+                else
+                {
+                    txtSupplierName.Text = string.Empty;
                 }
             }
         }
@@ -312,18 +355,19 @@ namespace Search
                     dtcus = tzkjbl.M_Customer_SelectForTenzikai(mce);
                     if (dtcus.Rows.Count > 0)
                     {
-                        if (dtcus.Rows[0]["VariousFLG"].ToString() == "1")
-                        {
-                            txtCustomerName.Text = dtcus.Rows[0]["CustomerName"].ToString();
-                            //txtCustomerName.BackColor = Color.White;
-                            txtCustomerName.Enabled = true;
-                        }
-                        else if (dtcus.Rows[0]["VariousFLG"].ToString() == "0")
-                        {
-                            txtCustomerName.Text = dtcus.Rows[0]["CustomerName"].ToString();
-                            //txtCustomerName.BackColor = Color.LightGray;
-                            txtCustomerName.Enabled = false;
-                        }
+                        //if (dtcus.Rows[0]["VariousFLG"].ToString() == "1")
+                        //{
+                        //    txtCustomerName.Text = dtcus.Rows[0]["CustomerName"].ToString();
+                        //    //txtCustomerName.BackColor = Color.White;
+                        //    txtCustomerName.Enabled = true;
+                        //}
+                        //else if (dtcus.Rows[0]["VariousFLG"].ToString() == "0")
+                        //{
+                        //    txtCustomerName.Text = dtcus.Rows[0]["CustomerName"].ToString();
+                        //    //txtCustomerName.BackColor = Color.LightGray;
+                        //    txtCustomerName.Enabled = false;
+                        //}
+                        txtCustomerName.Text = dtcus.Rows[0]["CustomerName"].ToString();
                     }
                     else
                     {
@@ -400,5 +444,6 @@ namespace Search
             //    scStaff.SetFocus(1);
             //}
         }
+
     }
 }

@@ -31,6 +31,9 @@ namespace Search
         public string parSKUName = "";
         public string parChangeDate = "";
         public string parTenzikaiName = "";
+        public string parVendorCD = "";
+        public string parVendorName = "";
+
         private void Search_TenzikaiShouhin_Load(object sender, EventArgs e)
         {
             string ymd = bbl.GetDate();
@@ -179,6 +182,8 @@ namespace Search
                     parJanCD= GV_TZshouhin.CurrentRow.Cells["JANCD"].Value.ToString();
                     parSkuCD = GV_TZshouhin.CurrentRow.Cells["SKUCD"].Value.ToString();
                     parSKUName = GV_TZshouhin.CurrentRow.Cells["SKUName"].Value.ToString();
+                    parVendorCD = GV_TZshouhin.CurrentRow.Cells["VendorCD"].Value.ToString();
+                    parVendorName = GV_TZshouhin.CurrentRow.Cells["VendorName"].Value.ToString();
                     this.Close();
                 }
             }

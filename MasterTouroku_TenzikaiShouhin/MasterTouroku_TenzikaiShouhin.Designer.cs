@@ -554,7 +554,7 @@
             this.SC_CopyTenzikai.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_CopyTenzikai.DataCheck = false;
             this.SC_CopyTenzikai.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_CopyTenzikai.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.SC_CopyTenzikai.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.SC_CopyTenzikai.IsCopy = false;
             this.SC_CopyTenzikai.LabelText = "";
             this.SC_CopyTenzikai.LabelVisible = false;
@@ -2005,6 +2005,7 @@
             this.remark_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.remark_1.DecimalPlace = 0;
             this.remark_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.remark_1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.remark_1.IntegerPart = 0;
             this.remark_1.IsCorrectDate = true;
             this.remark_1.isEnterKeyDown = false;
@@ -2012,15 +2013,16 @@
             this.remark_1.isMaxLengthErr = false;
             this.remark_1.IsNumber = true;
             this.remark_1.IsShop = false;
-            this.remark_1.Length = 500;
+            this.remark_1.Length = 150;
             this.remark_1.Location = new System.Drawing.Point(1165, 19);
-            this.remark_1.MaxLength = 500;
+            this.remark_1.MaxLength = 150;
             this.remark_1.MoveNext = true;
             this.remark_1.Name = "remark_1";
             this.remark_1.Size = new System.Drawing.Size(330, 19);
             this.remark_1.TabIndex = 289;
             this.remark_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.remark_1.UseColorSizMode = false;
+            this.remark_1.TextChanged += new System.EventHandler(this.remark_1_TextChanged);
             // 
             // scjan_1
             // 

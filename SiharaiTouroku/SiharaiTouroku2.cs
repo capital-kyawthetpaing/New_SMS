@@ -232,6 +232,19 @@ namespace SiharaiTouroku
                 SC_BankCD.ChangeDate = dpe.PayDate;
                 if (SC_BankCD.SelectData())
                 {
+                    DataTable dt = shnbl.Select_SearchName(dpe.PayDate.Replace("/", "-"), 1, SC_BankCD.TxtCode.Text);
+                    string deflg = "";
+                    if (dt.Rows.Count > 0)
+                    {
+                        deflg = dt.Rows[0]["DeleteFlg"].ToString();
+                    }
+                    if (deflg == "1")
+                    {
+                        bbl.ShowMessage("E119");
+                        SC_BankCD.SetFocus(1);
+                        return false;
+                    }
+
                     SC_BranchCD.Value1 = SC_BankCD.TxtCode.Text;
                     SC_BranchCD.Value2 = SC_BankCD.LabelText;
 
@@ -265,6 +278,19 @@ namespace SiharaiTouroku
                 }
                 else
                 {
+                    DataTable dt = shnbl.Select_SearchName(dpe.PayDate.Replace("/", "-"), 2, SC_BankCD.TxtCode.Text, SC_BranchCD.TxtCode.Text);
+                    string deflg = "";
+                    if (dt.Rows.Count > 0)
+                    {
+                        deflg = dt.Rows[0]["DeleteFlg"].ToString();
+                    }
+                    if (deflg == "1")
+                    {
+                        bbl.ShowMessage("E119");
+                        SC_BranchCD.SetFocus(1);
+                        return false;
+                    }
+
                     if (!F12)
                         Select_KouzaFee();
                 }
@@ -289,6 +315,19 @@ namespace SiharaiTouroku
                 }
                 else
                 {
+                    DataTable dt = shnbl.Select_SearchName(dpe.PayDate.Replace("/", "-"), 7, SC_KouzaCD.TxtCode.Text);
+                    string deflg = "";
+                    if (dt.Rows.Count > 0)
+                    {
+                        deflg = dt.Rows[0]["DeleteFlg"].ToString();
+                    }
+                    if (deflg == "1")
+                    {
+                        bbl.ShowMessage("E119");
+                        SC_KouzaCD.SetFocus(1);
+                        return false;
+                    }
+
                     if (!F12)
                         Select_KouzaFee();
                 }
@@ -1015,7 +1054,8 @@ namespace SiharaiTouroku
                     {
                         var ctl = dgvSearchPayment.EditingControl as DataGridViewTextBoxEditingControl;
 
-                        dgvSearchPayment.CurrentRow.Cells["colUnpaidAmount1"].Value = bbl.Z_Set(ctl.Text);
+                        if(ctl != null)
+                            dgvSearchPayment.CurrentRow.Cells["colUnpaidAmount1"].Value = bbl.Z_Set(ctl.Text);
                     }
                 }
             }

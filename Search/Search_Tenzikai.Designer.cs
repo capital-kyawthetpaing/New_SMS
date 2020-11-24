@@ -58,6 +58,7 @@
             this.colVendorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLastYearTerm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSeason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVendorCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch_Tenzikai)).BeginInit();
             this.SuspendLayout();
@@ -517,7 +518,8 @@
             this.colTenzikaiName,
             this.colVendorName,
             this.colLastYearTerm,
-            this.colSeason});
+            this.colSeason,
+            this.colVendorCD});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -621,7 +623,6 @@
             this.colTenzikaiName.DataPropertyName = "TenzikaiName";
             this.colTenzikaiName.HeaderText = "展示会名";
             this.colTenzikaiName.Name = "colTenzikaiName";
-            this.colTenzikaiName.ReadOnly = true;
             this.colTenzikaiName.Width = 330;
             // 
             // colVendorName
@@ -629,7 +630,6 @@
             this.colVendorName.DataPropertyName = "VendorName";
             this.colVendorName.HeaderText = "仕入先";
             this.colVendorName.Name = "colVendorName";
-            this.colVendorName.ReadOnly = true;
             this.colVendorName.Width = 280;
             // 
             // colLastYearTerm
@@ -644,6 +644,13 @@
             this.colSeason.DataPropertyName = "LastSeason";
             this.colSeason.HeaderText = "シーズン";
             this.colSeason.Name = "colSeason";
+            // 
+            // colVendorCD
+            // 
+            this.colVendorCD.DataPropertyName = "VendorCD";
+            this.colVendorCD.HeaderText = "VendorCD";
+            this.colVendorCD.Name = "colVendorCD";
+            this.colVendorCD.Visible = false;
             // 
             // Search_Tenzikai
             // 
@@ -697,5 +704,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colVendorName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLastYearTerm;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSeason;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVendorCD;
     }
 }

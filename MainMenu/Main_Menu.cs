@@ -637,7 +637,7 @@ namespace MainMenu
         private void btnLogin_Click(object sender, EventArgs e)
         {
             ForceToClose();
-               MainmenuLogin hln = new MainmenuLogin();
+               MainmenuLogin hln = new MainmenuLogin(true);
             this.Hide();
             hln.ShowDialog();
             this.Close();

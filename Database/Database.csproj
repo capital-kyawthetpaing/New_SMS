@@ -164,6 +164,7 @@
     <Content Include="StoreProcedure\D_MoveRequest_SelectData.sql" />
     <Content Include="StoreProcedure\D_Move_SelectAll.sql" />
     <Content Include="StoreProcedure\D_Move_SelectData.sql" />
+    <Content Include="StoreProcedure\D_M_TenzikaiShouhin_SelectForHachuu.sql" />
     <Content Include="StoreProcedure\D_NyuukinIchihanyou_Log.sql" />
     <Content Include="StoreProcedure\D_NyuuKinPrint.sql" />
     <Content Include="StoreProcedure\D_Order_Delete.sql" />
@@ -548,6 +549,7 @@
     <Content Include="StoreProcedure\M_Vendor_PayeeFlg_Select.sql" />
     <Content Include="StoreProcedure\M_Vendor_Search.sql" />
     <Content Include="StoreProcedure\M_Vendor_Select.sql" />
+    <Content Include="StoreProcedure\M_Vendor_SelectForJuchuu.sql" />
     <Content Include="StoreProcedure\M_Vendor_SelectForPayeeCD.sql" />
     <Content Include="StoreProcedure\M_Vendor_SelectForSiharaiNo.sql" />
     <Content Include="StoreProcedure\M_Vendor_SelectForSiharaiNyuuroku.sql" />

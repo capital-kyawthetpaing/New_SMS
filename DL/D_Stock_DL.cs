@@ -124,6 +124,7 @@ namespace DL
                    {"@TagName4",new ValuePair { value1=SqlDbType.VarChar,value2=tage.TagName4} },
                    {"@TagName5",new ValuePair { value1=SqlDbType.Int,value2=tage.TagName5} },
                    {"@Type",new ValuePair { value1=SqlDbType.TinyInt,value2=dse.type} },
+                   {"@checkFlag",new ValuePair { value1=SqlDbType.TinyInt,value2=dse.checkFlag} },
                };
             return SelectData(dic, "D_StockSelectForTairyuzaikohyo");
         }

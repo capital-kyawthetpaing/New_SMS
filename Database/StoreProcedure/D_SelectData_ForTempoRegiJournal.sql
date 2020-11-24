@@ -106,7 +106,7 @@ BEGIN
     SELECT * 
       INTO #Temp_D_DepositHistory1
       FROM (
-            SELECT distinct history.DepositDateTime RegistDate                  -- 登録日
+            SELECT distinct history.DepositDateTime RegistDate                  -- 登録日時
                   ,CONVERT(Date, history.DepositDateTime) DepositDate           -- 登録日
                   ,history.Number SalesNO                                       -- 伝票番号
                   ,history.StoreCD                                              -- 店舗CD
@@ -312,7 +312,8 @@ BEGIN
                           ,denominationKbn.DenominationName
                           ,history.DepositGaku
                           --,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositDateTime ASC) as RANK	★
-                          ,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositNO ASC) as RANK
+                          ,ROW_NUMBER() OVER(PARTITION BY history.Number,history.DepositNO ORDER BY history.DepositNO ASC) as RANK
+                          ,history.DepositNO	--2020.11.20 add
                           ,history.Remark
                       FROM #Temp_D_DepositHistory0 history
                       LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
@@ -321,7 +322,7 @@ BEGIN
                        AND history.CancelKBN = 0
                        AND history.CustomerCD IS NULL
                    ) D
-             GROUP BY D.RegistDate
+             GROUP BY D.RegistDate, D.DepositNO		--2020.11.20 add(DepositNO)本当は集計する必要なし
            ) D5;
 
     -- 【入金】ワークテーブル５１作成
@@ -376,7 +377,8 @@ BEGIN
                           ,history.DenominationCD 
                           ,history.DepositGaku
                           --,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositDateTime ASC) as RANK	★
-                          ,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositNO ASC) as RANK
+                          ,ROW_NUMBER() OVER(PARTITION BY history.Number,history.DepositNO ORDER BY history.DepositNO ASC) as RANK
+                          ,history.DepositNO	--2020.11.20 add
                           ,history.Remark
                      FROM #Temp_D_DepositHistory0 history
                      LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
@@ -386,7 +388,7 @@ BEGIN
                       AND history.CancelKBN = 0
                       AND history.CustomerCD IS NOT NULL
                    ) D
-             GROUP BY D.RegistDate
+             GROUP BY D.RegistDate, D.DepositNO		--2020.11.20 add(DepositNO)本当は集計する必要なし
            ) D51;
 
     -- 【雑支払】ワークテーブル６作成
@@ -432,15 +434,16 @@ BEGIN
                           ,denominationKbn.DenominationName
                           ,history.DepositGaku
                           --,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositDateTime ASC) as RANK	★
-                          ,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositNO ASC) as RANK
+                          ,ROW_NUMBER() OVER(PARTITION BY history.Number,history.DepositNO ORDER BY history.DepositNO ASC) as RANK
                           ,history.Remark
+                          ,history.DepositNO
                       FROM #Temp_D_DepositHistory0 history
                       LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
                      WHERE history.DataKBN = 3
                        AND history.DepositKBN = 3
                        AND history.CancelKBN = 0
                    ) D
-             GROUP BY D.RegistDate
+             GROUP BY D.RegistDate, D.DepositNO		--2020.11.20 add(DepositNO)本当は集計する必要なし
            ) D6;
 
     -- 【両替】ワークテーブル７作成
@@ -508,7 +511,8 @@ BEGIN
                           ,history.ExchangeDenomination
                           ,ABS(history.ExchangeCount) ExchangeCount
                           --,ROW_NUMBER() OVER (PARTITION BY  history.Number ORDER BY history.DepositDateTime) AS RANK	★
-                          ,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositNO ASC) as RANK
+                          ,ROW_NUMBER() OVER(PARTITION BY history.Number,history.DepositNO ORDER BY history.DepositNO ASC) as RANK
+                          ,history.DepositNO
                           ,history.Remark
                       FROM #Temp_D_DepositHistory0 history
                       LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
@@ -516,7 +520,7 @@ BEGIN
                        AND history.DepositKBN = 5
                        AND history.CancelKBN = 0
                    ) D
-             GROUP BY D.RegistDate
+             GROUP BY D.RegistDate,D.DepositNO
            ) D7;
 
     -- 【精算処理：現金売上(+)】ワークテーブル９作成
@@ -1228,6 +1232,7 @@ BEGIN
                PARTITION BY A.StoreCD 
                    ORDER BY A.IssueDate, A.DepositNO             -- レシートと順番を同じにする
            ) AS DetailOrder                                      -- 明細表示順
+          ,A.DepositNO
           ,A.JanCD                                               -- JANCD
           ,A.SKUShortName                                        -- 商品名
           ,A.SalesUnitPrice                                      -- 単価

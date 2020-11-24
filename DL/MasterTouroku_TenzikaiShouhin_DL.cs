@@ -11,7 +11,7 @@ namespace DL
    public class MasterTouroku_TenzikaiShouhin_DL:Base_DL
     {
 
-        public DataTable Mastertoroku_Tenzikaishouhin_Select(M_TenzikaiShouhin_Entity mt)
+        public DataTable Mastertoroku_Tenzikaishouhin_Select(M_TenzikaiShouhin_Entity mt, int mode)
         {
             string sp = "Mastertoroku_Tenzikaishouhin_Select";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
@@ -22,9 +22,12 @@ namespace DL
                 { "@lastseason", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.LastSeason } },
                 { "@brandcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.BranCDFrom } },
                 { "@segment", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.SegmentCDFrom } },
+                { "@mode", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mode.ToString() } },
             };
             return SelectData(dic, sp);
         }
+
+
 
         public DataTable M_Tenzikaishouhin_SelectForJancd(M_TenzikaiShouhin_Entity mt)
         {
@@ -130,6 +133,16 @@ namespace DL
               
             };
            // UseTransaction = true;
+            return SelectData(dic, sp);
+        }
+
+        public DataTable M_TenzikaiShouhin_SelectForHachuu(M_TenzikaiShouhin_Entity mte)
+        {
+            string sp = "M_TenzikaiShouhin_SelectForHachuu";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@Tenzikainame", new ValuePair { value1 = SqlDbType.VarChar, value2 = mte.TenzikaiName} },              
+            };
             return SelectData(dic, sp);
         }
     }
