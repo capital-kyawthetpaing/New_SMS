@@ -174,6 +174,7 @@ namespace Search
 
         private void GetData()
         {
+            var dt = GV_TZshouhin.DataSource as DataTable;
             try
             {
                 if (GV_TZshouhin.CurrentRow != null && GV_TZshouhin.CurrentRow.Index >= 0)
@@ -189,6 +190,7 @@ namespace Search
             }
             catch (Exception ex)
             {
+
                 //エラー時共通処理
                 MessageBox.Show(ex.Message);
                 //EndSec();

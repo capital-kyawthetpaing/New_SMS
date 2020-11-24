@@ -15,6 +15,7 @@ using Entity;
 using Tulpep.NotificationWindow;
 using System.IO;
 using static CKM_Controls.CKM_Button;
+using System.Diagnostics;
 
 namespace MainMenu
 {
@@ -23,8 +24,15 @@ namespace MainMenu
         Login_BL loginbl;
         M_Staff_Entity mse;
         FTPData ftp = new FTPData();
-        public MainmenuLogin()
+        public MainmenuLogin(bool IsMainCall=false)
         {
+            if (!IsMainCall)
+            {
+                if (CheckExistFormRunning())
+                {
+                    System.Environment.Exit(0);
+                }
+            }
             this.KeyPreview = true;
             InitializeComponent();
             if (ApplicationDeployment.IsNetworkDeployed)
@@ -36,7 +44,16 @@ namespace MainMenu
 
             Login_BL.Ver = label2.Text;
         }
-
+        private bool CheckExistFormRunning()
+        {
+            Process[] localByName = Process.GetProcessesByName("MainMenu");
+            if (localByName.Count() > 1)
+            {
+                MessageBox.Show("PLease close the running application before running the new instance one.");
+                return true;
+            }
+            return false;
+        }
         private bool ErrorCheck()
         {
             if (string.IsNullOrWhiteSpace(txtOperatorCD.Text))

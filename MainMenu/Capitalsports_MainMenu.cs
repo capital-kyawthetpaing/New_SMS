@@ -492,7 +492,7 @@ namespace MainMenu
         {
             ForceToclose();
             // this.Hide();
-            CapitalsportsLogin hln = new CapitalsportsLogin();
+            CapitalsportsLogin hln = new CapitalsportsLogin(true);
             this.Hide();
             hln.ShowDialog();
             this.Close();

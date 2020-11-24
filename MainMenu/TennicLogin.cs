@@ -11,6 +11,7 @@ using BL;
 using Entity;
 using System.Deployment.Application;
 using CKM_Controls;
+using System.Diagnostics;
 
 namespace MainMenu
 {
@@ -19,8 +20,15 @@ namespace MainMenu
     {
         Login_BL loginbl;
         M_Staff_Entity mse;
-        public TennicLogin()
+        public TennicLogin(bool IsMainCall =false)
         {
+            if (!IsMainCall)
+            {
+                if (CheckExistFormRunning())
+                {
+                    System.Environment.Exit(0);
+                }
+            }
             this.KeyPreview = true;
             InitializeComponent();
 
@@ -32,9 +40,18 @@ namespace MainMenu
             else
                 ckM_Button3.Visible = false;
         }
+        private bool  CheckExistFormRunning()
+        {
+            Process[] localByName = Process.GetProcessesByName("MainMenu");
+            if (localByName.Count() > 1)
+            {
+                MessageBox.Show("PLease close the running application before running the new instance one.");
+                return true;
+            }
+            return false;
+        }
 
-      
-        private bool ErrorCheck()
+            private bool ErrorCheck()
         {
             if (string.IsNullOrWhiteSpace(txtOperatorCD.Text))
             {
@@ -58,8 +75,10 @@ namespace MainMenu
         private void Tennic_MainMenu_Load(object sender, EventArgs e)
         {
             loginbl = new Login_BL();
-            txtOperatorCD.Focus();
             Add_ButtonDesign();
+            txtOperatorCD.Select();
+            this.ActiveControl = txtOperatorCD;
+            txtOperatorCD.Focus();
         }
 
         private void Tennic_MainMenu_KeyDown(object sender, KeyEventArgs e)
@@ -117,7 +136,6 @@ namespace MainMenu
                         {
                             loginbl.ShowMessage("S018");
                             txtOperatorCD.Select();
-
                         }
                     }
                     else
@@ -157,12 +175,7 @@ namespace MainMenu
                     MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // .. 
                 }
-
                 ckM_Button1.Focus();
-
-
-
-
             }
         }
         private void ckM_Button2_MouseEnter(object sender, EventArgs e)
@@ -187,7 +200,6 @@ namespace MainMenu
             ckM_Button3.FlatStyle = FlatStyle.Flat;
             ckM_Button3.FlatAppearance.BorderSize = 0;
             ckM_Button3.FlatAppearance.BorderColor = Color.White;
-
         }
         private void TennicLogin_Paint(object sender, PaintEventArgs e)
         {
