@@ -65,7 +65,7 @@ namespace DL
             string sp = "M_Tenzikaishouhin_DeleteUpdate";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.xml} },
+                { "@xml", new ValuePair { value1 = SqlDbType.Xml, value2 = mt.xml} },
                 { "@year", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.LastYearTerm} },
                 { "@season", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.LastSeason} },
                 { "@startDate" , new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.ChangeDate} },
