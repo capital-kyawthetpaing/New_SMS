@@ -51,7 +51,18 @@
             this.TB_InsertDateTimeT = new CKM_Controls.CKM_TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.GV_TZshouhin = new CKM_Controls.CKM_GridView();
+            this.TB_Tenziname = new CKM_Controls.CKM_TextBox();
+            this.TB_SKUname = new CKM_Controls.CKM_TextBox();
+            this.CB_Year = new CKM_Controls.CKM_ComboBox();
+            this.CB_Season = new CKM_Controls.CKM_ComboBox();
+            this.lbyear = new CKM_Controls.CKM_Label();
+            this.ckM_Label7 = new CKM_Controls.CKM_Label();
+            this.SC_segment = new Search.CKM_SearchControl();
+            this.SC_Brand = new Search.CKM_SearchControl();
+            this.SC_Vendor = new Search.CKM_SearchControl();
             this.tenzikainame = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VendorCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VendorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.skucd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jancd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.skuname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,15 +74,6 @@
             this.biko = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.insertdatetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedatetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TB_Tenziname = new CKM_Controls.CKM_TextBox();
-            this.TB_SKUname = new CKM_Controls.CKM_TextBox();
-            this.CB_Year = new CKM_Controls.CKM_ComboBox();
-            this.CB_Season = new CKM_Controls.CKM_ComboBox();
-            this.lbyear = new CKM_Controls.CKM_Label();
-            this.ckM_Label7 = new CKM_Controls.CKM_Label();
-            this.SC_segment = new Search.CKM_SearchControl();
-            this.SC_Brand = new Search.CKM_SearchControl();
-            this.SC_Vendor = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_TZshouhin)).BeginInit();
@@ -483,6 +485,8 @@
             this.GV_TZshouhin.ColumnHeadersHeight = 25;
             this.GV_TZshouhin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tenzikainame,
+            this.VendorCD,
+            this.VendorName,
             this.skucd,
             this.jancd,
             this.skuname,
@@ -506,93 +510,6 @@
             this.GV_TZshouhin.UseSetting = false;
             this.GV_TZshouhin.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GV_TZshouhin_CellDoubleClick);
             this.GV_TZshouhin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GV_TZshouhin_KeyDown);
-            // 
-            // tenzikainame
-            // 
-            this.tenzikainame.DataPropertyName = "TenzikaiName";
-            this.tenzikainame.HeaderText = "展示会名";
-            this.tenzikainame.Name = "tenzikainame";
-            this.tenzikainame.Width = 380;
-            // 
-            // skucd
-            // 
-            this.skucd.DataPropertyName = "SKUCD";
-            this.skucd.HeaderText = "SKUCD";
-            this.skucd.Name = "skucd";
-            // 
-            // jancd
-            // 
-            this.jancd.DataPropertyName = "JANCD";
-            this.jancd.HeaderText = "JANCD";
-            this.jancd.Name = "jancd";
-            // 
-            // skuname
-            // 
-            this.skuname.DataPropertyName = "SKUName";
-            this.skuname.HeaderText = "商品名";
-            this.skuname.Name = "skuname";
-            this.skuname.Width = 620;
-            // 
-            // segment
-            // 
-            this.segment.DataPropertyName = "SegmentName";
-            this.segment.HeaderText = "セグメント";
-            this.segment.Name = "segment";
-            // 
-            // brand
-            // 
-            this.brand.DataPropertyName = "BrandName";
-            this.brand.HeaderText = "ブランド";
-            this.brand.Name = "brand";
-            this.brand.Width = 95;
-            // 
-            // shiiresaki
-            // 
-            this.shiiresaki.DataPropertyName = "VendorName";
-            this.shiiresaki.HeaderText = "仕入先";
-            this.shiiresaki.Name = "shiiresaki";
-            this.shiiresaki.Width = 350;
-            // 
-            // color
-            // 
-            this.color.DataPropertyName = "ColorName";
-            this.color.HeaderText = "カラー";
-            this.color.Name = "color";
-            this.color.Width = 135;
-            // 
-            // size
-            // 
-            this.size.DataPropertyName = "SizeName";
-            this.size.HeaderText = "セイズ";
-            this.size.Name = "size";
-            this.size.Width = 140;
-            // 
-            // biko
-            // 
-            this.biko.DataPropertyName = "Remarks";
-            this.biko.HeaderText = "備　考";
-            this.biko.Name = "biko";
-            this.biko.Width = 380;
-            // 
-            // insertdatetime
-            // 
-            this.insertdatetime.DataPropertyName = "InsertDateTime";
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.insertdatetime.DefaultCellStyle = dataGridViewCellStyle3;
-            this.insertdatetime.HeaderText = "新規登録日";
-            this.insertdatetime.Name = "insertdatetime";
-            this.insertdatetime.Width = 80;
-            // 
-            // updatedatetime
-            // 
-            this.updatedatetime.DataPropertyName = "UpdateDateTime";
-            dataGridViewCellStyle4.Format = "d";
-            dataGridViewCellStyle4.NullValue = null;
-            this.updatedatetime.DefaultCellStyle = dataGridViewCellStyle4;
-            this.updatedatetime.HeaderText = "最終変更日";
-            this.updatedatetime.Name = "updatedatetime";
-            this.updatedatetime.Width = 80;
             // 
             // TB_Tenziname
             // 
@@ -815,6 +732,107 @@
             this.SC_Vendor.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_Vendor_CodeKeyDownEvent);
             this.SC_Vendor.Enter += new System.EventHandler(this.SC_Vendor_Enter);
             // 
+            // tenzikainame
+            // 
+            this.tenzikainame.DataPropertyName = "TenzikaiName";
+            this.tenzikainame.HeaderText = "展示会名";
+            this.tenzikainame.Name = "tenzikainame";
+            this.tenzikainame.Width = 380;
+            // 
+            // VendorCD
+            // 
+            this.VendorCD.DataPropertyName = "VendorCD";
+            this.VendorCD.HeaderText = "VendorCD";
+            this.VendorCD.Name = "VendorCD";
+            this.VendorCD.Visible = false;
+            // 
+            // VendorName
+            // 
+            this.VendorName.DataPropertyName = "VendorName";
+            this.VendorName.HeaderText = "VendorName";
+            this.VendorName.Name = "VendorName";
+            this.VendorName.Visible = false;
+            // 
+            // skucd
+            // 
+            this.skucd.DataPropertyName = "SKUCD";
+            this.skucd.HeaderText = "SKUCD";
+            this.skucd.Name = "skucd";
+            // 
+            // jancd
+            // 
+            this.jancd.DataPropertyName = "JANCD";
+            this.jancd.HeaderText = "JANCD";
+            this.jancd.Name = "jancd";
+            // 
+            // skuname
+            // 
+            this.skuname.DataPropertyName = "SKUName";
+            this.skuname.HeaderText = "商品名";
+            this.skuname.Name = "skuname";
+            this.skuname.Width = 620;
+            // 
+            // segment
+            // 
+            this.segment.DataPropertyName = "SegmentName";
+            this.segment.HeaderText = "セグメント";
+            this.segment.Name = "segment";
+            // 
+            // brand
+            // 
+            this.brand.DataPropertyName = "BrandName";
+            this.brand.HeaderText = "ブランド";
+            this.brand.Name = "brand";
+            this.brand.Width = 95;
+            // 
+            // shiiresaki
+            // 
+            this.shiiresaki.DataPropertyName = "VendorName";
+            this.shiiresaki.HeaderText = "仕入先";
+            this.shiiresaki.Name = "shiiresaki";
+            this.shiiresaki.Width = 350;
+            // 
+            // color
+            // 
+            this.color.DataPropertyName = "ColorName";
+            this.color.HeaderText = "カラー";
+            this.color.Name = "color";
+            this.color.Width = 135;
+            // 
+            // size
+            // 
+            this.size.DataPropertyName = "SizeName";
+            this.size.HeaderText = "セイズ";
+            this.size.Name = "size";
+            this.size.Width = 140;
+            // 
+            // biko
+            // 
+            this.biko.DataPropertyName = "Remarks";
+            this.biko.HeaderText = "備　考";
+            this.biko.Name = "biko";
+            this.biko.Width = 380;
+            // 
+            // insertdatetime
+            // 
+            this.insertdatetime.DataPropertyName = "InsertDateTime";
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.insertdatetime.DefaultCellStyle = dataGridViewCellStyle3;
+            this.insertdatetime.HeaderText = "新規登録日";
+            this.insertdatetime.Name = "insertdatetime";
+            this.insertdatetime.Width = 80;
+            // 
+            // updatedatetime
+            // 
+            this.updatedatetime.DataPropertyName = "UpdateDateTime";
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.updatedatetime.DefaultCellStyle = dataGridViewCellStyle4;
+            this.updatedatetime.HeaderText = "最終変更日";
+            this.updatedatetime.Name = "updatedatetime";
+            this.updatedatetime.Width = 80;
+            // 
             // Search_TenzikaiShouhin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -867,6 +885,8 @@
         private CKM_Controls.CKM_Label ckM_Label7;
         private CKM_Controls.CKM_Label lbyear;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenzikainame;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VendorCD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VendorName;
         private System.Windows.Forms.DataGridViewTextBoxColumn skucd;
         private System.Windows.Forms.DataGridViewTextBoxColumn jancd;
         private System.Windows.Forms.DataGridViewTextBoxColumn skuname;
