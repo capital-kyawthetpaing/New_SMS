@@ -2444,10 +2444,7 @@ namespace MasterTouroku_TenzikaiShouhin
 
                         }
                     }
-                    
-
                 }
-
             }
             catch (Exception ex)
             {
@@ -2513,16 +2510,22 @@ namespace MasterTouroku_TenzikaiShouhin
                         return false;
                     }
 
-                    if(OperationMode == EOperationMode.UPDATE)
+                    if (OperationMode == EOperationMode.UPDATE)
                     {
-                        var rresTen = bbl.SimpleSelect1("74", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), detailControls[index].Text);
-                        if (rresTen.Rows.Count ==0)
+                        M_TenzikaiShouhin_Entity mtn = new M_TenzikaiShouhin_Entity
+                        {
+                            TenzikaiName = detailControls[index].Text
+                        };
+
+                        var rresTen = tbl.M_TenzikaiShouhinName_Select(mtn);
+                        if (rresTen.Rows.Count == 0)
                         {
                             bl.ShowMessage("E101");
                             return false;
+
                         }
                     }
-                    break;
+                        break;
                 case (int)Eindex.SCShiiresaki:
                     if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
@@ -2632,11 +2635,17 @@ namespace MasterTouroku_TenzikaiShouhin
                         //bl.ShowMessage("E102");
                         //detailControls[index].Focus();
                         //return false;
-                        var resTenC = SC_CopyTenzikai.SelectData();
-                        if (!resTenC)
+                        M_TenzikaiShouhin_Entity mtn = new M_TenzikaiShouhin_Entity
+                        {
+                            TenzikaiName = detailControls[index].Text
+                        };
+
+                        var rresTenC = tbl.M_TenzikaiShouhinName_Select(mtn);
+                        if (rresTenC.Rows.Count == 0)
                         {
                             bl.ShowMessage("E101");
                             return false;
+
                         }
                     }
                     else
@@ -4401,12 +4410,19 @@ namespace MasterTouroku_TenzikaiShouhin
 
             if(OperationMode == EOperationMode.UPDATE)
             {
-                if (!SC_Tenzikai.IsExists(2))
+                
+
+                M_TenzikaiShouhin_Entity mtn = new M_TenzikaiShouhin_Entity
+                {
+                    TenzikaiName = SC_Tenzikai.TxtCode.Text
+                };
+
+                var rresTen = tbl.M_TenzikaiShouhinName_Select(mtn);
+                if(rresTen.Rows.Count == 0)
                 {
                     bbl.ShowMessage("E101");
                     SC_Tenzikai.Focus();
                     return false;
-
                 }
             }
 
@@ -4458,9 +4474,15 @@ namespace MasterTouroku_TenzikaiShouhin
                 if (!RequireCheck(new Control[] { SC_CopyVendor.TxtCode, SC_CopyVendor.TxtCode,CB_Copyyear,CB_copyseason })) //Step1
                    return false;
 
-                if (!SC_CopyTenzikai.IsExists(2))
+                M_TenzikaiShouhin_Entity mtn = new M_TenzikaiShouhin_Entity
                 {
-                    bbl.ShowMessage("E101");
+                    TenzikaiName = SC_CopyTenzikai.TxtCode.Text
+                };
+
+                var rresTen = tbl.M_TenzikaiShouhinName_Select(mtn);
+                if (rresTen.Rows.Count == 0)
+                {
+                    bl.ShowMessage("E101");
                     SC_CopyTenzikai.Focus();
                     return false;
 
