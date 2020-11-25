@@ -271,21 +271,24 @@ namespace TempoRegiJournal
                 #endregion // 店舗データ
 
                 #region 売上番号データ
-                var salesNo = CreateSalesNoTableRow(salesNos);
-                salesNo.StoreReceiptPrint = storeReceiptPrint;                                    // 店舗レシート表記
-                salesNo.StaffReceiptPrint = staffReceiptPrint;                                    // 担当レシート表記
-                salesNo.SalesNO = salesNO;                                                        // 売上番号
-                salesNo.IssueDate = issueDate;  // ConvertDateTime(row["IssueDate"], true);                      // 発行日
-                salesNo.IssueDateTime = issueDateTime;  //  ConvertDateTime(row["IssueDate"], false);                 // 発行日時
-
-                if (salesNos.AsEnumerable().Where(s => s.SalesNO == salesNO).FirstOrDefault() == null)
+                if (!string.IsNullOrWhiteSpace(salesNO))
                 {
-                    salesNos.Rows.Add(salesNo);
+                    var salesNo = CreateSalesNoTableRow(salesNos);
+                    salesNo.StoreReceiptPrint = storeReceiptPrint;                                    // 店舗レシート表記
+                    salesNo.StaffReceiptPrint = staffReceiptPrint;                                    // 担当レシート表記
+                    salesNo.SalesNO = salesNO;                                                        // 売上番号
+                    salesNo.IssueDate = issueDate;  // ConvertDateTime(row["IssueDate"], true);                      // 発行日
+                    salesNo.IssueDateTime = issueDateTime;  //  ConvertDateTime(row["IssueDate"], false);                 // 発行日時
+
+                    if (salesNos.AsEnumerable().Where(s => s.SalesNO == salesNO).FirstOrDefault() == null)
+                    {
+                        salesNos.Rows.Add(salesNo);
+                    }
                 }
                 #endregion  // 売上番号データ
 
                 #region 販売データ
-                if (OldDepositNo != row["DepositNO"].ToString())
+                if (OldDepositNo != row["DepositNO"].ToString() && !string.IsNullOrWhiteSpace(salesNO))
                 {
                     OldDepositNo = row["DepositNO"].ToString();
 
