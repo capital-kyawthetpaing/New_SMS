@@ -119,12 +119,12 @@ namespace TempoRegiJournal
                 txtPrintDateFrom.Focus();
                 return false;
             }
-            else if (string.IsNullOrWhiteSpace(txtPrintDateTo.Text))
-            {
-                bl.ShowMessage("E102");
-                txtPrintDateTo.Focus();
-                return false;
-            }
+            //else if (string.IsNullOrWhiteSpace(txtPrintDateTo.Text))
+            //{
+            //    bl.ShowMessage("E102");
+            //    txtPrintDateTo.Focus();
+            //    return false;
+            //}
             else if (!bbl.CheckDate(txtPrintDateFrom.Text))
             {
                 // 日付エラー
@@ -132,19 +132,20 @@ namespace TempoRegiJournal
                 txtPrintDateFrom.Focus();
                 return false;
             }
-            else if (!bbl.CheckDate(txtPrintDateTo.Text))
-            {
-                // 日付エラー
-                bbl.ShowMessage("E103");
-                txtPrintDateTo.Focus();
-                return false;
-            }
-            else if (Convert.ToDateTime(txtPrintDateFrom.Text).CompareTo(Convert.ToDateTime(txtPrintDateTo.Text)) > 0)
-            {
-                bl.ShowMessage("E130");
-                txtPrintDateFrom.Focus();
-                return false;
-            }
+            //else if (!bbl.CheckDate(txtPrintDateTo.Text))
+            //{
+            //    // 日付エラー
+            //    bbl.ShowMessage("E103");
+            //    txtPrintDateTo.Focus();
+            //    return false;
+            //}
+            //else if (Convert.ToDateTime(txtPrintDateFrom.Text).CompareTo(Convert.ToDateTime(txtPrintDateTo.Text)) > 0)
+            //{
+            //    bl.ShowMessage("E130");
+            //    txtPrintDateFrom.Focus();
+            //    return false;
+            //}
+            txtPrintDateTo.Text = txtPrintDateFrom.Text;
 
             return true;
         }
@@ -1359,12 +1360,13 @@ namespace TempoRegiJournal
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if(string.IsNullOrWhiteSpace(txtPrintDateTo.Text))
-                {
+                //if(string.IsNullOrWhiteSpace(txtPrintDateTo.Text))
+                //{
                     txtPrintDateTo.Text = txtPrintDateFrom.Text;
-                }
+                //}
 
-                txtPrintDateTo.Focus();
+                //txtPrintDateTo.Focus();
+                PrintCheckBox.Focus();
             }
         }
 

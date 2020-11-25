@@ -44,6 +44,7 @@
             this.lblSalseNo.BackColor = System.Drawing.SystemColors.Window;
             this.lblSalseNo.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F, System.Drawing.FontStyle.Bold);
             this.lblSalseNo.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblSalseNo.FontBold = true;
             this.lblSalseNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.lblSalseNo.Location = new System.Drawing.Point(118, 142);
             this.lblSalseNo.Name = "lblSalseNo";
@@ -58,6 +59,7 @@
             this.txtPrintDateFrom.AllowMinus = true;
             this.txtPrintDateFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtPrintDateFrom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtPrintDateFrom.BorderColor = false;
             this.txtPrintDateFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPrintDateFrom.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrintDateFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -67,6 +69,7 @@
             this.txtPrintDateFrom.IntegerPart = 8;
             this.txtPrintDateFrom.IsCorrectDate = true;
             this.txtPrintDateFrom.isEnterKeyDown = false;
+            this.txtPrintDateFrom.IsFirstTime = true;
             this.txtPrintDateFrom.isMaxLengthErr = false;
             this.txtPrintDateFrom.IsNumber = true;
             this.txtPrintDateFrom.IsShop = false;
@@ -80,6 +83,7 @@
             this.txtPrintDateFrom.Text = "9999/99/99";
             this.txtPrintDateFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrintDateFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtPrintDateFrom.UseColorSizMode = false;
             this.txtPrintDateFrom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPrintDateFrom_KeyDown);
             // 
             // ckmShop_Label1
@@ -89,6 +93,7 @@
             this.ckmShop_Label1.BackColor = System.Drawing.SystemColors.Window;
             this.ckmShop_Label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.ckmShop_Label1.FontBold = true;
             this.ckmShop_Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label1.Location = new System.Drawing.Point(460, 142);
             this.ckmShop_Label1.Name = "ckmShop_Label1";
@@ -97,12 +102,14 @@
             this.ckmShop_Label1.Text = "～";
             this.ckmShop_Label1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckmShop_Label1.Visible = false;
             // 
             // txtPrintDateTo
             // 
             this.txtPrintDateTo.AllowMinus = true;
             this.txtPrintDateTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtPrintDateTo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtPrintDateTo.BorderColor = false;
             this.txtPrintDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPrintDateTo.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrintDateTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -112,6 +119,7 @@
             this.txtPrintDateTo.IntegerPart = 8;
             this.txtPrintDateTo.IsCorrectDate = true;
             this.txtPrintDateTo.isEnterKeyDown = false;
+            this.txtPrintDateTo.IsFirstTime = true;
             this.txtPrintDateTo.isMaxLengthErr = false;
             this.txtPrintDateTo.IsNumber = true;
             this.txtPrintDateTo.IsShop = false;
@@ -125,6 +133,8 @@
             this.txtPrintDateTo.Text = "9999/99/99";
             this.txtPrintDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrintDateTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtPrintDateTo.UseColorSizMode = false;
+            this.txtPrintDateTo.Visible = false;
             this.txtPrintDateTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPrintDateTo_KeyDown);
             // 
             // ckmShop_Label3
@@ -134,6 +144,7 @@
             this.ckmShop_Label3.BackColor = System.Drawing.SystemColors.Window;
             this.ckmShop_Label3.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.ckmShop_Label3.FontBold = true;
             this.ckmShop_Label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label3.Location = new System.Drawing.Point(81, 192);
             this.ckmShop_Label3.Name = "ckmShop_Label3";
@@ -163,6 +174,7 @@
             this.ckmShop_Label4.BackColor = System.Drawing.SystemColors.Window;
             this.ckmShop_Label4.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.ckmShop_Label4.FontBold = true;
             this.ckmShop_Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label4.Location = new System.Drawing.Point(288, 192);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
@@ -176,7 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1713, 849);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.ckmShop_Label4);
             this.Controls.Add(this.PrintCheckBox);
             this.Controls.Add(this.ckmShop_Label3);
