@@ -92,11 +92,14 @@ BEGIN
                   ,ExchangeCount                    -- 
                   ,[Rows]                           -- 
                   ,AccountingDate                   -- 
+                  ,InsertOperator
                   ,Remark
               FROM D_DepositHistory
              WHERE StoreCD = @StoreCD
                AND AccountingDate >= convert(date, @DateFrom)
                AND AccountingDate <= convert(date, @DateTo)
+               AND DataKBN IN (2,3)
+               AND DepositKBN IN (1,2,3,5,6)
            ) H1;
 --Temp_D_DepositHistory0‚ÉIndexiNumberj‚ð‚Â‚¯‚½‚Ù‚¤‚ª‚æ‚¢Hš
     -- ƒCƒ“ƒfƒbƒNƒXindex1ì¬
@@ -106,7 +109,7 @@ BEGIN
     SELECT * 
       INTO #Temp_D_DepositHistory1
       FROM (
-            SELECT distinct history.DepositDateTime RegistDate                  -- “o˜^“ú
+            SELECT distinct history.DepositDateTime RegistDate                  -- “o˜^“úŽž
                   ,CONVERT(Date, history.DepositDateTime) DepositDate           -- “o˜^“ú
                   ,history.Number SalesNO                                       -- “`•[”Ô†
                   ,history.StoreCD                                              -- “X•ÜCD
@@ -258,6 +261,7 @@ BEGIN
                   ,NULL ChangePreparationName10                                            -- ’Þ‘K€”õ–¼10
                   ,NULL ChangePreparationAmount10                                          -- ’Þ‘K€”õŠz10
                   ,D.Remark ChangePreparationRemark                                        -- ’Þ‘K€”õ”õl
+                  ,D.DepositNO
               FROM #Temp_D_DepositHistory0 D
               INNER JOIN (
                                    SELECT MAX(history.DepositNO) DepositNO
@@ -274,97 +278,99 @@ BEGIN
     SELECT * 
       INTO #Temp_D_DepositHistory5
       FROM (
-            SELECT D.RegistDate                                                                          -- “o˜^“ú
-                  ,MAX(CASE D.RANK WHEN  1 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate1       -- ŽG“ü‹à“ú1
-                  ,MAX(CASE D.RANK WHEN  1 THEN D.DenominationName ELSE NULL END) MiscDepositName1       -- ŽG“ü‹à–¼1
-                  ,MAX(CASE D.RANK WHEN  1 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount1     -- ŽG“ü‹àŠz1
-                  ,MAX(CASE D.RANK WHEN  2 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate2       -- ŽG“ü‹à“ú2
-                  ,MAX(CASE D.RANK WHEN  2 THEN D.DenominationName ELSE NULL END) MiscDepositName2       -- ŽG“ü‹à–¼2
-                  ,MAX(CASE D.RANK WHEN  2 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount2     -- ŽG“ü‹àŠz2
-                  ,MAX(CASE D.RANK WHEN  3 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate3       -- ŽG“ü‹à“ú3
-                  ,MAX(CASE D.RANK WHEN  3 THEN D.DenominationName ELSE NULL END) MiscDepositName3       -- ŽG“ü‹à–¼3
-                  ,MAX(CASE D.RANK WHEN  3 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount3     -- ŽG“ü‹àŠz3
-                  ,MAX(CASE D.RANK WHEN  4 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate4       -- ŽG“ü‹à“ú4
-                  ,MAX(CASE D.RANK WHEN  4 THEN D.DenominationName ELSE NULL END) MiscDepositName4       -- ŽG“ü‹à–¼4
-                  ,MAX(CASE D.RANK WHEN  4 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount4     -- ŽG“ü‹àŠz4
-                  ,MAX(CASE D.RANK WHEN  5 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate5       -- ŽG“ü‹à“ú5
-                  ,MAX(CASE D.RANK WHEN  5 THEN D.DenominationName ELSE NULL END) MiscDepositName5       -- ŽG“ü‹à–¼5
-                  ,MAX(CASE D.RANK WHEN  5 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount5     -- ŽG“ü‹àŠz5
-                  ,MAX(CASE D.RANK WHEN  6 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate6       -- ŽG“ü‹à“ú6
-                  ,MAX(CASE D.RANK WHEN  6 THEN D.DenominationName ELSE NULL END) MiscDepositName6       -- ŽG“ü‹à–¼6
-                  ,MAX(CASE D.RANK WHEN  6 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount6     -- ŽG“ü‹àŠz6
-                  ,MAX(CASE D.RANK WHEN  7 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate7       -- ŽG“ü‹à“ú7
-                  ,MAX(CASE D.RANK WHEN  7 THEN D.DenominationName ELSE NULL END) MiscDepositName7       -- ŽG“ü‹à–¼7
-                  ,MAX(CASE D.RANK WHEN  7 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount7     -- ŽG“ü‹àŠz7
-                  ,MAX(CASE D.RANK WHEN  8 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate8       -- ŽG“ü‹à“ú8
-                  ,MAX(CASE D.RANK WHEN  8 THEN D.DenominationName ELSE NULL END) MiscDepositName8       -- ŽG“ü‹à–¼8
-                  ,MAX(CASE D.RANK WHEN  8 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount8     -- ŽG“ü‹àŠz8
-                  ,MAX(CASE D.RANK WHEN  9 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate9       -- ŽG“ü‹à“ú9
-                  ,MAX(CASE D.RANK WHEN  9 THEN D.DenominationName ELSE NULL END) MiscDepositName9       -- ŽG“ü‹à–¼9
-                  ,MAX(CASE D.RANK WHEN  9 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount9     -- ŽG“ü‹àŠz9
-                  ,MAX(CASE D.RANK WHEN 10 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate10      -- ŽG“ü‹à“ú10
-                  ,MAX(CASE D.RANK WHEN 10 THEN D.DenominationName ELSE NULL END) MiscDepositName10      -- ŽG“ü‹à–¼10
-                  ,MAX(CASE D.RANK WHEN 10 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount10    -- ŽG“ü‹àŠz10
-                  ,MAX(D.Remark) MiscDepositRemark                                                       -- ŽG“ü‹à”õl
-              FROM (
-                    SELECT CONVERT(Date, history.DepositDateTime) RegistDate
-                          ,history.DepositDateTime DepositDateTime
-                          ,denominationKbn.DenominationName
-                          ,history.DepositGaku
+           -- SELECT D.RegistDate                                                                          -- “o˜^“ú
+           --       ,MAX(CASE D.RANK WHEN  1 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate1       -- ŽG“ü‹à“ú1
+           --       ,MAX(CASE D.RANK WHEN  1 THEN D.DenominationName ELSE NULL END) MiscDepositName1       -- ŽG“ü‹à–¼1
+           --       ,MAX(CASE D.RANK WHEN  1 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount1     -- ŽG“ü‹àŠz1
+           --       ,MAX(CASE D.RANK WHEN  2 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate2       -- ŽG“ü‹à“ú2
+           --       ,MAX(CASE D.RANK WHEN  2 THEN D.DenominationName ELSE NULL END) MiscDepositName2       -- ŽG“ü‹à–¼2
+           --       ,MAX(CASE D.RANK WHEN  2 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount2     -- ŽG“ü‹àŠz2
+           --       ,MAX(CASE D.RANK WHEN  3 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate3       -- ŽG“ü‹à“ú3
+           --       ,MAX(CASE D.RANK WHEN  3 THEN D.DenominationName ELSE NULL END) MiscDepositName3       -- ŽG“ü‹à–¼3
+           --       ,MAX(CASE D.RANK WHEN  3 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount3     -- ŽG“ü‹àŠz3
+           --       ,MAX(CASE D.RANK WHEN  4 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate4       -- ŽG“ü‹à“ú4
+           --       ,MAX(CASE D.RANK WHEN  4 THEN D.DenominationName ELSE NULL END) MiscDepositName4       -- ŽG“ü‹à–¼4
+           --       ,MAX(CASE D.RANK WHEN  4 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount4     -- ŽG“ü‹àŠz4
+           --       ,MAX(CASE D.RANK WHEN  5 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate5       -- ŽG“ü‹à“ú5
+           --       ,MAX(CASE D.RANK WHEN  5 THEN D.DenominationName ELSE NULL END) MiscDepositName5       -- ŽG“ü‹à–¼5
+           --       ,MAX(CASE D.RANK WHEN  5 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount5     -- ŽG“ü‹àŠz5
+           --       ,MAX(CASE D.RANK WHEN  6 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate6       -- ŽG“ü‹à“ú6
+           --       ,MAX(CASE D.RANK WHEN  6 THEN D.DenominationName ELSE NULL END) MiscDepositName6       -- ŽG“ü‹à–¼6
+           --       ,MAX(CASE D.RANK WHEN  6 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount6     -- ŽG“ü‹àŠz6
+            --      ,MAX(CASE D.RANK WHEN  7 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate7       -- ŽG“ü‹à“ú7
+            --      ,MAX(CASE D.RANK WHEN  7 THEN D.DenominationName ELSE NULL END) MiscDepositName7       -- ŽG“ü‹à–¼7
+            --      ,MAX(CASE D.RANK WHEN  7 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount7     -- ŽG“ü‹àŠz7
+            --      ,MAX(CASE D.RANK WHEN  8 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate8       -- ŽG“ü‹à“ú8
+            --      ,MAX(CASE D.RANK WHEN  8 THEN D.DenominationName ELSE NULL END) MiscDepositName8       -- ŽG“ü‹à–¼8
+            --      ,MAX(CASE D.RANK WHEN  8 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount8     -- ŽG“ü‹àŠz8
+            --      ,MAX(CASE D.RANK WHEN  9 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate9       -- ŽG“ü‹à“ú9
+            --      ,MAX(CASE D.RANK WHEN  9 THEN D.DenominationName ELSE NULL END) MiscDepositName9       -- ŽG“ü‹à–¼9
+            --      ,MAX(CASE D.RANK WHEN  9 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount9     -- ŽG“ü‹àŠz9
+            --      ,MAX(CASE D.RANK WHEN 10 THEN D.DepositDateTime  ELSE NULL END) MiscDepositDate10      -- ŽG“ü‹à“ú10
+            --      ,MAX(CASE D.RANK WHEN 10 THEN D.DenominationName ELSE NULL END) MiscDepositName10      -- ŽG“ü‹à–¼10
+            --      ,MAX(CASE D.RANK WHEN 10 THEN D.DepositGaku      ELSE NULL END) MiscDepositAmount10    -- ŽG“ü‹àŠz10
+            --      ,MAX(D.Remark) MiscDepositRemark                                                       -- ŽG“ü‹à”õl
+            --  FROM (
+                    SELECT CONVERT(Date, history.DepositDateTime)  AS RegistDate             -- “o˜^“ú
+                          ,history.DepositDateTime                 AS MiscDepositDate1       -- ŽG“ü‹à“ú1
+                          ,denominationKbn.DenominationName        AS MiscDepositName1       -- ŽG“ü‹à–¼1
+                          ,history.DepositGaku                     AS MiscDepositAmount1     -- ŽG“ü‹àŠz1
                           --,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositDateTime ASC) as RANK	š
-                          ,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositNO ASC) as RANK
-                          ,history.Remark
+                          --,ROW_NUMBER() OVER(PARTITION BY history.Number,history.DepositNO ORDER BY history.DepositNO ASC) as RANK
+                          ,history.DepositNO	                   --2020.11.20 add
+                          ,history.InsertOperator                  AS StaffReceiptPrint
+                          ,history.Remark                          AS MiscDepositRemark      -- ŽG“ü‹à”õl
                       FROM #Temp_D_DepositHistory0 history
                       LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
                      WHERE history.DataKBN = 3
                        AND history.DepositKBN = 2
                        AND history.CancelKBN = 0
                        AND history.CustomerCD IS NULL
-                   ) D
-             GROUP BY D.RegistDate
+             --      ) D
+             --GROUP BY D.RegistDate, D.DepositNO		--2020.11.20 add(DepositNO)–{“–‚ÍWŒv‚·‚é•K—v‚È‚µ
            ) D5;
 
     -- y“ü‹àzƒ[ƒNƒe[ƒuƒ‹‚T‚Pì¬
     SELECT * 
       INTO #Temp_D_DepositHistory51
       FROM (
-            SELECT D.RegistDate                                                                     -- “o˜^“ú
-                  ,MAX(CustomerCD) CustomerCD                                                       -- “ü‹àŒ³CD
-                  ,MAX(CustomerName) CustomerName                                                   -- “ü‹àŒ³–¼
-                  ,MAX(CASE D.RANK WHEN  1 THEN D.DepositDateTime  ELSE NULL END) DepositDate1      -- “ü‹à“ú1
-                  ,MAX(CASE D.RANK WHEN  1 THEN D.DenominationName ELSE NULL END) DepositName1      -- “ü‹à–¼1
-                  ,MAX(CASE D.RANK WHEN  1 THEN D.DepositGaku      ELSE NULL END) DepositAmount1    -- “ü‹àŠz1
-                  ,MAX(CASE D.RANK WHEN  2 THEN D.DepositDateTime  ELSE NULL END) DepositDate2      -- “ü‹à“ú2
-                  ,MAX(CASE D.RANK WHEN  2 THEN D.DenominationName ELSE NULL END) DepositName2      -- “ü‹à–¼2
-                  ,MAX(CASE D.RANK WHEN  2 THEN D.DepositGaku      ELSE NULL END) DepositAmount2    -- “ü‹àŠz2
-                  ,MAX(CASE D.RANK WHEN  3 THEN D.DepositDateTime  ELSE NULL END) DepositDate3      -- “ü‹à“ú3
-                  ,MAX(CASE D.RANK WHEN  3 THEN D.DenominationName ELSE NULL END) DepositName3      -- “ü‹à–¼3
-                  ,MAX(CASE D.RANK WHEN  3 THEN D.DepositGaku      ELSE NULL END) DepositAmount3    -- “ü‹àŠz3
-                  ,MAX(CASE D.RANK WHEN  4 THEN D.DepositDateTime  ELSE NULL END) DepositDate4      -- “ü‹à“ú4
-                  ,MAX(CASE D.RANK WHEN  4 THEN D.DenominationName ELSE NULL END) DepositName4      -- “ü‹à–¼4
-                  ,MAX(CASE D.RANK WHEN  4 THEN D.DepositGaku      ELSE NULL END) DepositAmount4    -- “ü‹àŠz4
-                  ,MAX(CASE D.RANK WHEN  5 THEN D.DepositDateTime  ELSE NULL END) DepositDate5      -- “ü‹à“ú5
-                  ,MAX(CASE D.RANK WHEN  5 THEN D.DenominationName ELSE NULL END) DepositName5      -- “ü‹à–¼5
-                  ,MAX(CASE D.RANK WHEN  5 THEN D.DepositGaku      ELSE NULL END) DepositAmount5    -- “ü‹àŠz5
-                  ,MAX(CASE D.RANK WHEN  6 THEN D.DepositDateTime  ELSE NULL END) DepositDate6      -- “ü‹à“ú6
-                  ,MAX(CASE D.RANK WHEN  6 THEN D.DenominationName ELSE NULL END) DepositName6      -- “ü‹à–¼6
-                  ,MAX(CASE D.RANK WHEN  6 THEN D.DepositGaku      ELSE NULL END) DepositAmount6    -- “ü‹àŠz6
-                  ,MAX(CASE D.RANK WHEN  7 THEN D.DepositDateTime  ELSE NULL END) DepositDate7      -- “ü‹à“ú7
-                  ,MAX(CASE D.RANK WHEN  7 THEN D.DenominationName ELSE NULL END) DepositName7      -- “ü‹à–¼7
-                  ,MAX(CASE D.RANK WHEN  7 THEN D.DepositGaku      ELSE NULL END) DepositAmount7    -- “ü‹àŠz7
-                  ,MAX(CASE D.RANK WHEN  8 THEN D.DepositDateTime  ELSE NULL END) DepositDate8      -- “ü‹à“ú8
-                  ,MAX(CASE D.RANK WHEN  8 THEN D.DenominationName ELSE NULL END) DepositName8      -- “ü‹à–¼8
-                  ,MAX(CASE D.RANK WHEN  8 THEN D.DepositGaku      ELSE NULL END) DepositAmount8    -- “ü‹àŠz8
-                  ,MAX(CASE D.RANK WHEN  9 THEN D.DepositDateTime  ELSE NULL END) DepositDate9      -- “ü‹à“ú9
-                  ,MAX(CASE D.RANK WHEN  9 THEN D.DenominationName ELSE NULL END) DepositName9      -- “ü‹à–¼9
-                  ,MAX(CASE D.RANK WHEN  9 THEN D.DepositGaku      ELSE NULL END) DepositAmount9    -- “ü‹àŠz9
-                  ,MAX(CASE D.RANK WHEN 10 THEN D.DepositDateTime  ELSE NULL END) DepositDate10     -- “ü‹à“ú10
-                  ,MAX(CASE D.RANK WHEN 10 THEN D.DenominationName ELSE NULL END) DepositName10     -- “ü‹à–¼10
-                  ,MAX(CASE D.RANK WHEN 10 THEN D.DepositGaku      ELSE NULL END) DepositAmount10   -- “ü‹àŠz10
-                  ,MAX(D.Remark) DepositRemark                                                      -- “ü‹à”õl
-              FROM (
-                    SELECT CONVERT(Date, history.DepositDateTime) RegistDate
-                          ,history.DepositDateTime DepositDateTime
+           -- SELECT D.RegistDate                                                                     -- “o˜^“ú
+           --       ,MAX(CustomerCD) CustomerCD                                                       -- “ü‹àŒ³CD
+           --       ,MAX(CustomerName) CustomerName                                                   -- “ü‹àŒ³–¼
+           --       ,MAX(CASE D.RANK WHEN  1 THEN D.DepositDateTime  ELSE NULL END) DepositDate1      -- “ü‹à“ú1
+           --       ,MAX(CASE D.RANK WHEN  1 THEN D.DenominationName ELSE NULL END) DepositName1      -- “ü‹à–¼1
+           --       ,MAX(CASE D.RANK WHEN  1 THEN D.DepositGaku      ELSE NULL END) DepositAmount1    -- “ü‹àŠz1
+           --       ,MAX(CASE D.RANK WHEN  2 THEN D.DepositDateTime  ELSE NULL END) DepositDate2      -- “ü‹à“ú2
+           --       ,MAX(CASE D.RANK WHEN  2 THEN D.DenominationName ELSE NULL END) DepositName2      -- “ü‹à–¼2
+           --       ,MAX(CASE D.RANK WHEN  2 THEN D.DepositGaku      ELSE NULL END) DepositAmount2    -- “ü‹àŠz2
+           --       ,MAX(CASE D.RANK WHEN  3 THEN D.DepositDateTime  ELSE NULL END) DepositDate3      -- “ü‹à“ú3
+           --       ,MAX(CASE D.RANK WHEN  3 THEN D.DenominationName ELSE NULL END) DepositName3      -- “ü‹à–¼3
+           --       ,MAX(CASE D.RANK WHEN  3 THEN D.DepositGaku      ELSE NULL END) DepositAmount3    -- “ü‹àŠz3
+           --       ,MAX(CASE D.RANK WHEN  4 THEN D.DepositDateTime  ELSE NULL END) DepositDate4      -- “ü‹à“ú4
+           --       ,MAX(CASE D.RANK WHEN  4 THEN D.DenominationName ELSE NULL END) DepositName4      -- “ü‹à–¼4
+           --       ,MAX(CASE D.RANK WHEN  4 THEN D.DepositGaku      ELSE NULL END) DepositAmount4    -- “ü‹àŠz4
+           --       ,MAX(CASE D.RANK WHEN  5 THEN D.DepositDateTime  ELSE NULL END) DepositDate5      -- “ü‹à“ú5
+           --       ,MAX(CASE D.RANK WHEN  5 THEN D.DenominationName ELSE NULL END) DepositName5      -- “ü‹à–¼5
+           --       ,MAX(CASE D.RANK WHEN  5 THEN D.DepositGaku      ELSE NULL END) DepositAmount5    -- “ü‹àŠz5
+           --       ,MAX(CASE D.RANK WHEN  6 THEN D.DepositDateTime  ELSE NULL END) DepositDate6      -- “ü‹à“ú6
+           --       ,MAX(CASE D.RANK WHEN  6 THEN D.DenominationName ELSE NULL END) DepositName6      -- “ü‹à–¼6
+           --       ,MAX(CASE D.RANK WHEN  6 THEN D.DepositGaku      ELSE NULL END) DepositAmount6    -- “ü‹àŠz6
+           --       ,MAX(CASE D.RANK WHEN  7 THEN D.DepositDateTime  ELSE NULL END) DepositDate7      -- “ü‹à“ú7
+           --       ,MAX(CASE D.RANK WHEN  7 THEN D.DenominationName ELSE NULL END) DepositName7      -- “ü‹à–¼7
+           --       ,MAX(CASE D.RANK WHEN  7 THEN D.DepositGaku      ELSE NULL END) DepositAmount7    -- “ü‹àŠz7
+           --       ,MAX(CASE D.RANK WHEN  8 THEN D.DepositDateTime  ELSE NULL END) DepositDate8      -- “ü‹à“ú8
+           --       ,MAX(CASE D.RANK WHEN  8 THEN D.DenominationName ELSE NULL END) DepositName8      -- “ü‹à–¼8
+           --       ,MAX(CASE D.RANK WHEN  8 THEN D.DepositGaku      ELSE NULL END) DepositAmount8    -- “ü‹àŠz8
+           --       ,MAX(CASE D.RANK WHEN  9 THEN D.DepositDateTime  ELSE NULL END) DepositDate9      -- “ü‹à“ú9
+           --       ,MAX(CASE D.RANK WHEN  9 THEN D.DenominationName ELSE NULL END) DepositName9      -- “ü‹à–¼9
+           --       ,MAX(CASE D.RANK WHEN  9 THEN D.DepositGaku      ELSE NULL END) DepositAmount9    -- “ü‹àŠz9
+           --       ,MAX(CASE D.RANK WHEN 10 THEN D.DepositDateTime  ELSE NULL END) DepositDate10     -- “ü‹à“ú10
+           --       ,MAX(CASE D.RANK WHEN 10 THEN D.DenominationName ELSE NULL END) DepositName10     -- “ü‹à–¼10
+           --       ,MAX(CASE D.RANK WHEN 10 THEN D.DepositGaku      ELSE NULL END) DepositAmount10   -- “ü‹àŠz10
+           --       ,MAX(D.Remark) DepositRemark                                                      -- “ü‹à”õl
+           --   FROM (
+                    SELECT CONVERT(Date, history.DepositDateTime) AS RegistDate
+                          ,history.DepositDateTime                AS DepositDate1
                           ,history.CustomerCD
                           ,(SELECT top 1 customer.CustomerName
                             FROM M_Customer AS customer
@@ -372,12 +378,14 @@ BEGIN
                             AND customer.ChangeDate <= history.DepositDateTime
                             ORDER BY customer.ChangeDate DESC
                             ) AS CustomerName
-                          ,denominationKbn.DenominationName
+                          ,denominationKbn.DenominationName       AS DepositName1
                           ,history.DenominationCD 
-                          ,history.DepositGaku
+                          ,history.DepositGaku                    AS DepositAmount1
                           --,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositDateTime ASC) as RANK	š
-                          ,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositNO ASC) as RANK
-                          ,history.Remark
+                          --,ROW_NUMBER() OVER(PARTITION BY history.Number,history.DepositNO ORDER BY history.DepositNO ASC) as RANK
+                          ,history.DepositNO	                  --2020.11.20 add
+                          ,history.InsertOperator                 AS StaffReceiptPrint
+                          ,history.Remark                         AS DepositRemark
                      FROM #Temp_D_DepositHistory0 history
                      LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
 
@@ -385,138 +393,144 @@ BEGIN
                       AND history.DepositKBN = 2
                       AND history.CancelKBN = 0
                       AND history.CustomerCD IS NOT NULL
-                   ) D
-             GROUP BY D.RegistDate
+           --        ) D
+           --  GROUP BY D.RegistDate, D.DepositNO		--2020.11.20 add(DepositNO)–{“–‚ÍWŒv‚·‚é•K—v‚È‚µ
            ) D51;
 
     -- yŽGŽx•¥zƒ[ƒNƒe[ƒuƒ‹‚Uì¬
     SELECT * 
       INTO #Temp_D_DepositHistory6
       FROM (
-            SELECT D.RegistDate                                                                            -- “o˜^“ú
-                  ,MAX(CASE D.RANK WHEN  1 THEN D.DepositDateTime  ELSE NULL END) MiscPaymentDate1         -- ŽGŽx•¥“ú1
-                  ,MAX(CASE D.RANK WHEN  1 THEN D.DenominationName ELSE NULL END) MiscPaymentName1         -- ŽGŽx•¥–¼1
-                  ,MAX(CASE D.RANK WHEN  1 THEN D.DepositGaku      ELSE NULL END) MiscPaymentAmount1       -- ŽGŽx•¥Šz1
-                  ,MAX(CASE D.RANK WHEN  2 THEN D.DepositDateTime  ELSE NULL END) MiscPaymentDate2         -- ŽGŽx•¥“ú2
-                  ,MAX(CASE D.RANK WHEN  2 THEN D.DenominationName ELSE NULL END) MiscPaymentName2         -- ŽGŽx•¥–¼2
-                  ,MAX(CASE D.RANK WHEN  2 THEN D.DepositGaku      ELSE NULL END) MiscPaymentAmount2       -- ŽGŽx•¥Šz2
-                  ,MAX(CASE D.RANK WHEN  3 THEN D.DepositDateTime  ELSE NULL END) MiscPaymentDate3         -- ŽGŽx•¥“ú3
-                  ,MAX(CASE D.RANK WHEN  3 THEN D.DenominationName ELSE NULL END) MiscPaymentName3         -- ŽGŽx•¥–¼3
-                  ,MAX(CASE D.RANK WHEN  3 THEN D.DepositGaku      ELSE NULL END) MiscPaymentAmount3       -- ŽGŽx•¥Šz3
-                  ,MAX(CASE D.RANK WHEN  4 THEN D.DepositDateTime  ELSE NULL END) MiscPaymentDate4         -- ŽGŽx•¥“ú4
-                  ,MAX(CASE D.RANK WHEN  4 THEN D.DenominationName ELSE NULL END) MiscPaymentName4         -- ŽGŽx•¥–¼4
-                  ,MAX(CASE D.RANK WHEN  4 THEN D.DepositGaku      ELSE NULL END) MiscPaymentAmount4       -- ŽGŽx•¥Šz4
-                  ,MAX(CASE D.RANK WHEN  5 THEN D.DepositDateTime  ELSE NULL END) MiscPaymentDate5         -- ŽGŽx•¥“ú5
-                  ,MAX(CASE D.RANK WHEN  5 THEN D.DenominationName ELSE NULL END) MiscPaymentName5         -- ŽGŽx•¥–¼5
-                  ,MAX(CASE D.RANK WHEN  5 THEN D.DepositGaku      ELSE NULL END) MiscPaymentAmount5       -- ŽGŽx•¥Šz5
-                  ,MAX(CASE D.RANK WHEN  6 THEN D.DepositDateTime  ELSE NULL END) MiscPaymentDate6         -- ŽGŽx•¥“ú6
-                  ,MAX(CASE D.RANK WHEN  6 THEN D.DenominationName ELSE NULL END) MiscPaymentName6         -- ŽGŽx•¥–¼6
-                  ,MAX(CASE D.RANK WHEN  6 THEN D.DepositGaku      ELSE NULL END) MiscPaymentAmount6       -- ŽGŽx•¥Šz6
-                  ,MAX(CASE D.RANK WHEN  7 THEN D.DepositDateTime  ELSE NULL END) MiscPaymentDate7         -- ŽGŽx•¥“ú7
-                  ,MAX(CASE D.RANK WHEN  7 THEN D.DenominationName ELSE NULL END) MiscPaymentName7         -- ŽGŽx•¥–¼7
-                  ,MAX(CASE D.RANK WHEN  7 THEN D.DepositGaku      ELSE NULL END) MiscPaymentAmount7       -- ŽGŽx•¥Šz7
-                  ,MAX(CASE D.RANK WHEN  8 THEN D.DepositDateTime  ELSE NULL END) MiscPaymentDate8         -- ŽGŽx•¥“ú8
-                  ,MAX(CASE D.RANK WHEN  8 THEN D.DenominationName ELSE NULL END) MiscPaymentName8         -- ŽGŽx•¥–¼8
-                  ,MAX(CASE D.RANK WHEN  8 THEN D.DepositGaku      ELSE NULL END) MiscPaymentAmount8       -- ŽGŽx•¥Šz8
-                  ,MAX(CASE D.RANK WHEN  9 THEN D.DepositDateTime  ELSE NULL END) MiscPaymentDate9         -- ŽGŽx•¥“ú9
-                  ,MAX(CASE D.RANK WHEN  9 THEN D.DenominationName ELSE NULL END) MiscPaymentName9         -- ŽGŽx•¥–¼9
-                  ,MAX(CASE D.RANK WHEN  9 THEN D.DepositGaku      ELSE NULL END) MiscPaymentAmount9       -- ŽGŽx•¥Šz9
-                  ,MAX(CASE D.RANK WHEN 10 THEN D.DepositDateTime  ELSE NULL END) MiscPaymentDate10        -- ŽGŽx•¥“ú10
-                  ,MAX(CASE D.RANK WHEN 10 THEN D.DenominationName ELSE NULL END) MiscPaymentName10        -- ŽGŽx•¥–¼10
-                  ,MAX(CASE D.RANK WHEN 10 THEN D.DepositGaku      ELSE NULL END) MiscPaymentAmount10      -- ŽGŽx•¥Šz10
-                  ,MAX(D.Remark) MiscPaymentRemark                                                         -- ŽGŽx•¥”õl
-              FROM (
-                    SELECT CONVERT(Date, history.DepositDateTime) RegistDate
-                          ,history.DepositDateTime DepositDateTime
+           -- SELECT D.RegistDate                                                                            -- “o˜^“ú
+           --       ,MAX(CASE D.RANK WHEN  1 THEN D.DepositDateTime  ELSE NULL END) MiscPaymentDate1         -- ŽGŽx•¥“ú1
+           --       ,MAX(CASE D.RANK WHEN  1 THEN D.DenominationName ELSE NULL END) MiscPaymentName1         -- ŽGŽx•¥–¼1
+           --       ,MAX(CASE D.RANK WHEN  1 THEN D.DepositGaku      ELSE NULL END) MiscPaymentAmount1       -- ŽGŽx•¥Šz1
+           --       ,MAX(CASE D.RANK WHEN  2 THEN D.DepositDateTime  ELSE NULL END) MiscPaymentDate2         -- ŽGŽx•¥“ú2
+           --       ,MAX(CASE D.RANK WHEN  2 THEN D.DenominationName ELSE NULL END) MiscPaymentName2         -- ŽGŽx•¥–¼2
+           --       ,MAX(CASE D.RANK WHEN  2 THEN D.DepositGaku      ELSE NULL END) MiscPaymentAmount2       -- ŽGŽx•¥Šz2
+           --       ,MAX(CASE D.RANK WHEN  3 THEN D.DepositDateTime  ELSE NULL END) MiscPaymentDate3         -- ŽGŽx•¥“ú3
+           --       ,MAX(CASE D.RANK WHEN  3 THEN D.DenominationName ELSE NULL END) MiscPaymentName3         -- ŽGŽx•¥–¼3
+           --       ,MAX(CASE D.RANK WHEN  3 THEN D.DepositGaku      ELSE NULL END) MiscPaymentAmount3       -- ŽGŽx•¥Šz3
+           --       ,MAX(CASE D.RANK WHEN  4 THEN D.DepositDateTime  ELSE NULL END) MiscPaymentDate4         -- ŽGŽx•¥“ú4
+           --       ,MAX(CASE D.RANK WHEN  4 THEN D.DenominationName ELSE NULL END) MiscPaymentName4         -- ŽGŽx•¥–¼4
+           --       ,MAX(CASE D.RANK WHEN  4 THEN D.DepositGaku      ELSE NULL END) MiscPaymentAmount4       -- ŽGŽx•¥Šz4
+           --       ,MAX(CASE D.RANK WHEN  5 THEN D.DepositDateTime  ELSE NULL END) MiscPaymentDate5         -- ŽGŽx•¥“ú5
+           --       ,MAX(CASE D.RANK WHEN  5 THEN D.DenominationName ELSE NULL END) MiscPaymentName5         -- ŽGŽx•¥–¼5
+           --       ,MAX(CASE D.RANK WHEN  5 THEN D.DepositGaku      ELSE NULL END) MiscPaymentAmount5       -- ŽGŽx•¥Šz5
+           --       ,MAX(CASE D.RANK WHEN  6 THEN D.DepositDateTime  ELSE NULL END) MiscPaymentDate6         -- ŽGŽx•¥“ú6
+           --       ,MAX(CASE D.RANK WHEN  6 THEN D.DenominationName ELSE NULL END) MiscPaymentName6         -- ŽGŽx•¥–¼6
+           --       ,MAX(CASE D.RANK WHEN  6 THEN D.DepositGaku      ELSE NULL END) MiscPaymentAmount6       -- ŽGŽx•¥Šz6
+           --       ,MAX(CASE D.RANK WHEN  7 THEN D.DepositDateTime  ELSE NULL END) MiscPaymentDate7         -- ŽGŽx•¥“ú7
+           --       ,MAX(CASE D.RANK WHEN  7 THEN D.DenominationName ELSE NULL END) MiscPaymentName7         -- ŽGŽx•¥–¼7
+           --       ,MAX(CASE D.RANK WHEN  7 THEN D.DepositGaku      ELSE NULL END) MiscPaymentAmount7       -- ŽGŽx•¥Šz7
+           --       ,MAX(CASE D.RANK WHEN  8 THEN D.DepositDateTime  ELSE NULL END) MiscPaymentDate8         -- ŽGŽx•¥“ú8
+           --       ,MAX(CASE D.RANK WHEN  8 THEN D.DenominationName ELSE NULL END) MiscPaymentName8         -- ŽGŽx•¥–¼8
+           --       ,MAX(CASE D.RANK WHEN  8 THEN D.DepositGaku      ELSE NULL END) MiscPaymentAmount8       -- ŽGŽx•¥Šz8
+           --       ,MAX(CASE D.RANK WHEN  9 THEN D.DepositDateTime  ELSE NULL END) MiscPaymentDate9         -- ŽGŽx•¥“ú9
+           --       ,MAX(CASE D.RANK WHEN  9 THEN D.DenominationName ELSE NULL END) MiscPaymentName9         -- ŽGŽx•¥–¼9
+           --       ,MAX(CASE D.RANK WHEN  9 THEN D.DepositGaku      ELSE NULL END) MiscPaymentAmount9       -- ŽGŽx•¥Šz9
+           --       ,MAX(CASE D.RANK WHEN 10 THEN D.DepositDateTime  ELSE NULL END) MiscPaymentDate10        -- ŽGŽx•¥“ú10
+           --       ,MAX(CASE D.RANK WHEN 10 THEN D.DenominationName ELSE NULL END) MiscPaymentName10        -- ŽGŽx•¥–¼10
+           --       ,MAX(CASE D.RANK WHEN 10 THEN D.DepositGaku      ELSE NULL END) MiscPaymentAmount10      -- ŽGŽx•¥Šz10
+           --       ,MAX(D.Remark) MiscPaymentRemark                                                         -- ŽGŽx•¥”õl
+           --   FROM (
+                    SELECT CONVERT(Date, history.DepositDateTime) AS RegistDate
+                          ,history.DepositDateTime                AS MiscPaymentDate1
                           ,history.DenominationCD
-                          ,denominationKbn.DenominationName
-                          ,history.DepositGaku
+                          ,denominationKbn.DenominationName       AS MiscPaymentName1
+                          ,history.DepositGaku                    AS MiscPaymentAmount1
                           --,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositDateTime ASC) as RANK	š
-                          ,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositNO ASC) as RANK
-                          ,history.Remark
+                          --,ROW_NUMBER() OVER(PARTITION BY history.Number,history.DepositNO ORDER BY history.DepositNO ASC) as RANK
+                          ,history.Remark                         AS MiscPaymentRemark
+                          ,history.DepositNO
+                          ,history.AccountingDate
+                          ,history.InsertOperator                 AS StaffReceiptPrint
                       FROM #Temp_D_DepositHistory0 history
                       LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
                      WHERE history.DataKBN = 3
                        AND history.DepositKBN = 3
                        AND history.CancelKBN = 0
-                   ) D
-             GROUP BY D.RegistDate
+            --       ) D
+            -- GROUP BY D.RegistDate, D.DepositNO		--2020.11.20 add(DepositNO)–{“–‚ÍWŒv‚·‚é•K—v‚È‚µ
            ) D6;
 
     -- y—¼‘Özƒ[ƒNƒe[ƒuƒ‹‚Vì¬
     SELECT * 
       INTO #Temp_D_DepositHistory7
       FROM (
-            SELECT D.RegistDate                                                                               -- “o˜^“ú
-                  ,COUNT(*) ExchangeCount                                                                     -- —¼‘Ö‰ñ”
-                  ,MAX(CASE D.RANK WHEN  1 THEN D.DepositDateTime      ELSE NULL END) ExchangeDate1           -- —¼‘Ö“ú1
-                  ,MAX(CASE D.RANK WHEN  1 THEN D.DenominationName     ELSE NULL END) ExchangeName1           -- —¼‘Ö–¼1
-                  ,MAX(CASE D.RANK WHEN  1 THEN D.DepositGaku          ELSE NULL END) ExchangeAmount1         -- —¼‘ÖŠz1
-                  ,MAX(CASE D.RANK WHEN  1 THEN D.ExchangeDenomination ELSE NULL END) ExchangeDenomination1   -- —¼‘ÖŽ†•¼1
-                  ,MAX(CASE D.RANK WHEN  1 THEN D.ExchangeCount        ELSE NULL END) ExchangeCount1          -- —¼‘Ö–‡”1
-                  ,MAX(CASE D.RANK WHEN  2 THEN D.DepositDateTime      ELSE NULL END) ExchangeDate2           -- —¼‘Ö“ú2
-                  ,MAX(CASE D.RANK WHEN  2 THEN D.DenominationName     ELSE NULL END) ExchangeName2           -- —¼‘Ö–¼2
-                  ,MAX(CASE D.RANK WHEN  2 THEN D.DepositGaku          ELSE NULL END) ExchangeAmount2         -- —¼‘ÖŠz2
-                  ,MAX(CASE D.RANK WHEN  2 THEN D.ExchangeDenomination ELSE NULL END) ExchangeDenomination2   -- —¼‘ÖŽ†•¼2
-                  ,MAX(CASE D.RANK WHEN  2 THEN D.ExchangeCount        ELSE NULL END) ExchangeCount2          -- —¼‘Ö–‡”2
-                  ,MAX(CASE D.RANK WHEN  3 THEN D.DepositDateTime      ELSE NULL END) ExchangeDate3           -- —¼‘Ö“ú3
-                  ,MAX(CASE D.RANK WHEN  3 THEN D.DenominationName     ELSE NULL END) ExchangeName3           -- —¼‘Ö–¼3
-                  ,MAX(CASE D.RANK WHEN  3 THEN D.DepositGaku          ELSE NULL END) ExchangeAmount3         -- —¼‘ÖŠz3
-                  ,MAX(CASE D.RANK WHEN  3 THEN D.ExchangeDenomination ELSE NULL END) ExchangeDenomination3   -- —¼‘ÖŽ†•¼3
-                  ,MAX(CASE D.RANK WHEN  3 THEN D.ExchangeCount        ELSE NULL END) ExchangeCount3          -- —¼‘Ö–‡”3
-                  ,MAX(CASE D.RANK WHEN  4 THEN D.DepositDateTime      ELSE NULL END) ExchangeDate4           -- —¼‘Ö“ú4
-                  ,MAX(CASE D.RANK WHEN  4 THEN D.DenominationName     ELSE NULL END) ExchangeName4           -- —¼‘Ö–¼4
-                  ,MAX(CASE D.RANK WHEN  4 THEN D.DepositGaku          ELSE NULL END) ExchangeAmount4         -- —¼‘ÖŠz4
-                  ,MAX(CASE D.RANK WHEN  4 THEN D.ExchangeDenomination ELSE NULL END) ExchangeDenomination4   -- —¼‘ÖŽ†•¼4
-                  ,MAX(CASE D.RANK WHEN  4 THEN D.ExchangeCount        ELSE NULL END) ExchangeCount4          -- —¼‘Ö–‡”4
-                  ,MAX(CASE D.RANK WHEN  5 THEN D.DepositDateTime      ELSE NULL END) ExchangeDate5           -- —¼‘Ö“ú5
-                  ,MAX(CASE D.RANK WHEN  5 THEN D.DenominationName     ELSE NULL END) ExchangeName5           -- —¼‘Ö–¼5
-                  ,MAX(CASE D.RANK WHEN  5 THEN D.DepositGaku          ELSE NULL END) ExchangeAmount5         -- —¼‘ÖŠz5
-                  ,MAX(CASE D.RANK WHEN  5 THEN D.ExchangeDenomination ELSE NULL END) ExchangeDenomination5   -- —¼‘ÖŽ†•¼5
-                  ,MAX(CASE D.RANK WHEN  5 THEN D.ExchangeCount        ELSE NULL END) ExchangeCount5          -- —¼‘Ö–‡”5
-                  ,MAX(CASE D.RANK WHEN  6 THEN D.DepositDateTime      ELSE NULL END) ExchangeDate6           -- —¼‘Ö“ú6
-                  ,MAX(CASE D.RANK WHEN  6 THEN D.DenominationName     ELSE NULL END) ExchangeName6           -- —¼‘Ö–¼6
-                  ,MAX(CASE D.RANK WHEN  6 THEN D.DepositGaku          ELSE NULL END) ExchangeAmount6         -- —¼‘ÖŠz6
-                  ,MAX(CASE D.RANK WHEN  6 THEN D.ExchangeDenomination ELSE NULL END) ExchangeDenomination6   -- —¼‘ÖŽ†•¼6
-                  ,MAX(CASE D.RANK WHEN  6 THEN D.ExchangeCount        ELSE NULL END) ExchangeCount6          -- —¼‘Ö–‡”6
-                  ,MAX(CASE D.RANK WHEN  7 THEN D.DepositDateTime      ELSE NULL END) ExchangeDate7           -- —¼‘Ö“ú7
-                  ,MAX(CASE D.RANK WHEN  7 THEN D.DenominationName     ELSE NULL END) ExchangeName7           -- —¼‘Ö–¼7
-                  ,MAX(CASE D.RANK WHEN  7 THEN D.DepositGaku          ELSE NULL END) ExchangeAmount7         -- —¼‘ÖŠz7
-                  ,MAX(CASE D.RANK WHEN  7 THEN D.ExchangeDenomination ELSE NULL END) ExchangeDenomination7   -- —¼‘ÖŽ†•¼7
-                  ,MAX(CASE D.RANK WHEN  7 THEN D.ExchangeCount        ELSE NULL END) ExchangeCount7          -- —¼‘Ö–‡”7
-                  ,MAX(CASE D.RANK WHEN  8 THEN D.DepositDateTime      ELSE NULL END) ExchangeDate8           -- —¼‘Ö“ú8
-                  ,MAX(CASE D.RANK WHEN  8 THEN D.DenominationName     ELSE NULL END) ExchangeName8           -- —¼‘Ö–¼8
-                  ,MAX(CASE D.RANK WHEN  8 THEN D.DepositGaku          ELSE NULL END) ExchangeAmount8         -- —¼‘ÖŠz8
-                  ,MAX(CASE D.RANK WHEN  8 THEN D.ExchangeDenomination ELSE NULL END) ExchangeDenomination8   -- —¼‘ÖŽ†•¼8
-                  ,MAX(CASE D.RANK WHEN  8 THEN D.ExchangeCount        ELSE NULL END) ExchangeCount8          -- —¼‘Ö–‡”8
-                  ,MAX(CASE D.RANK WHEN  9 THEN D.DepositDateTime      ELSE NULL END) ExchangeDate9           -- —¼‘Ö“ú9
-                  ,MAX(CASE D.RANK WHEN  9 THEN D.DenominationName     ELSE NULL END) ExchangeName9           -- —¼‘Ö–¼9
-                  ,MAX(CASE D.RANK WHEN  9 THEN D.DepositGaku          ELSE NULL END) ExchangeAmount9         -- —¼‘ÖŠz9
-                  ,MAX(CASE D.RANK WHEN  9 THEN D.ExchangeDenomination ELSE NULL END) ExchangeDenomination9   -- —¼‘ÖŽ†•¼9
-                  ,MAX(CASE D.RANK WHEN  9 THEN D.ExchangeCount        ELSE NULL END) ExchangeCount9          -- —¼‘Ö–‡”9
-                  ,MAX(CASE D.RANK WHEN 10 THEN D.DepositDateTime      ELSE NULL END) ExchangeDate10          -- —¼‘Ö“ú10
-                  ,MAX(CASE D.RANK WHEN 10 THEN D.DenominationName     ELSE NULL END) ExchangeName10          -- —¼‘Ö–¼10
-                  ,MAX(CASE D.RANK WHEN 10 THEN D.DepositGaku          ELSE NULL END) ExchangeAmount10        -- —¼‘ÖŠz10
-                  ,MAX(CASE D.RANK WHEN 10 THEN D.ExchangeDenomination ELSE NULL END) ExchangeDenomination10  -- —¼‘ÖŽ†•¼10
-                  ,MAX(CASE D.RANK WHEN 10 THEN D.ExchangeCount        ELSE NULL END) ExchangeCount10         -- —¼‘Ö–‡”10
-                  ,MAX(D.Remark) ExchangeRemark                                                               -- —¼‘Ö”õl
-              FROM (
-                    SELECT CONVERT(Date, history.DepositDateTime) RegistDate
-                          ,history.DepositDateTime DepositDateTime
-                          ,denominationKbn.DenominationName
-                          ,ABS(history.DepositGaku) DepositGaku
-                          ,history.ExchangeDenomination
-                          ,ABS(history.ExchangeCount) ExchangeCount
+           -- SELECT D.RegistDate                                                                               -- “o˜^“ú
+           --       ,COUNT(*) ExchangeCount                                                                     -- —¼‘Ö‰ñ”
+           --       ,MAX(CASE D.RANK WHEN  1 THEN D.DepositDateTime      ELSE NULL END) ExchangeDate1           -- —¼‘Ö“ú1
+           --       ,MAX(CASE D.RANK WHEN  1 THEN D.DenominationName     ELSE NULL END) ExchangeName1           -- —¼‘Ö–¼1
+           --       ,MAX(CASE D.RANK WHEN  1 THEN D.DepositGaku          ELSE NULL END) ExchangeAmount1         -- —¼‘ÖŠz1
+           --       ,MAX(CASE D.RANK WHEN  1 THEN D.ExchangeDenomination ELSE NULL END) ExchangeDenomination1   -- —¼‘ÖŽ†•¼1
+           --       ,MAX(CASE D.RANK WHEN  1 THEN D.ExchangeCount        ELSE NULL END) ExchangeCount1          -- —¼‘Ö–‡”1
+           --       ,MAX(CASE D.RANK WHEN  2 THEN D.DepositDateTime      ELSE NULL END) ExchangeDate2           -- —¼‘Ö“ú2
+           --       ,MAX(CASE D.RANK WHEN  2 THEN D.DenominationName     ELSE NULL END) ExchangeName2           -- —¼‘Ö–¼2
+           --       ,MAX(CASE D.RANK WHEN  2 THEN D.DepositGaku          ELSE NULL END) ExchangeAmount2         -- —¼‘ÖŠz2
+           --       ,MAX(CASE D.RANK WHEN  2 THEN D.ExchangeDenomination ELSE NULL END) ExchangeDenomination2   -- —¼‘ÖŽ†•¼2
+           --       ,MAX(CASE D.RANK WHEN  2 THEN D.ExchangeCount        ELSE NULL END) ExchangeCount2          -- —¼‘Ö–‡”2
+           --       ,MAX(CASE D.RANK WHEN  3 THEN D.DepositDateTime      ELSE NULL END) ExchangeDate3           -- —¼‘Ö“ú3
+           --       ,MAX(CASE D.RANK WHEN  3 THEN D.DenominationName     ELSE NULL END) ExchangeName3           -- —¼‘Ö–¼3
+           --       ,MAX(CASE D.RANK WHEN  3 THEN D.DepositGaku          ELSE NULL END) ExchangeAmount3         -- —¼‘ÖŠz3
+           --       ,MAX(CASE D.RANK WHEN  3 THEN D.ExchangeDenomination ELSE NULL END) ExchangeDenomination3   -- —¼‘ÖŽ†•¼3
+           --       ,MAX(CASE D.RANK WHEN  3 THEN D.ExchangeCount        ELSE NULL END) ExchangeCount3          -- —¼‘Ö–‡”3
+           --       ,MAX(CASE D.RANK WHEN  4 THEN D.DepositDateTime      ELSE NULL END) ExchangeDate4           -- —¼‘Ö“ú4
+           --       ,MAX(CASE D.RANK WHEN  4 THEN D.DenominationName     ELSE NULL END) ExchangeName4           -- —¼‘Ö–¼4
+           --       ,MAX(CASE D.RANK WHEN  4 THEN D.DepositGaku          ELSE NULL END) ExchangeAmount4         -- —¼‘ÖŠz4
+           --       ,MAX(CASE D.RANK WHEN  4 THEN D.ExchangeDenomination ELSE NULL END) ExchangeDenomination4   -- —¼‘ÖŽ†•¼4
+           --       ,MAX(CASE D.RANK WHEN  4 THEN D.ExchangeCount        ELSE NULL END) ExchangeCount4          -- —¼‘Ö–‡”4
+           --       ,MAX(CASE D.RANK WHEN  5 THEN D.DepositDateTime      ELSE NULL END) ExchangeDate5           -- —¼‘Ö“ú5
+           --       ,MAX(CASE D.RANK WHEN  5 THEN D.DenominationName     ELSE NULL END) ExchangeName5           -- —¼‘Ö–¼5
+           --       ,MAX(CASE D.RANK WHEN  5 THEN D.DepositGaku          ELSE NULL END) ExchangeAmount5         -- —¼‘ÖŠz5
+           --       ,MAX(CASE D.RANK WHEN  5 THEN D.ExchangeDenomination ELSE NULL END) ExchangeDenomination5   -- —¼‘ÖŽ†•¼5
+           --       ,MAX(CASE D.RANK WHEN  5 THEN D.ExchangeCount        ELSE NULL END) ExchangeCount5          -- —¼‘Ö–‡”5
+           --       ,MAX(CASE D.RANK WHEN  6 THEN D.DepositDateTime      ELSE NULL END) ExchangeDate6           -- —¼‘Ö“ú6
+           --       ,MAX(CASE D.RANK WHEN  6 THEN D.DenominationName     ELSE NULL END) ExchangeName6           -- —¼‘Ö–¼6
+           --       ,MAX(CASE D.RANK WHEN  6 THEN D.DepositGaku          ELSE NULL END) ExchangeAmount6         -- —¼‘ÖŠz6
+           --       ,MAX(CASE D.RANK WHEN  6 THEN D.ExchangeDenomination ELSE NULL END) ExchangeDenomination6   -- —¼‘ÖŽ†•¼6
+           --       ,MAX(CASE D.RANK WHEN  6 THEN D.ExchangeCount        ELSE NULL END) ExchangeCount6          -- —¼‘Ö–‡”6
+           --       ,MAX(CASE D.RANK WHEN  7 THEN D.DepositDateTime      ELSE NULL END) ExchangeDate7           -- —¼‘Ö“ú7
+           --       ,MAX(CASE D.RANK WHEN  7 THEN D.DenominationName     ELSE NULL END) ExchangeName7           -- —¼‘Ö–¼7
+           --       ,MAX(CASE D.RANK WHEN  7 THEN D.DepositGaku          ELSE NULL END) ExchangeAmount7         -- —¼‘ÖŠz7
+           --       ,MAX(CASE D.RANK WHEN  7 THEN D.ExchangeDenomination ELSE NULL END) ExchangeDenomination7   -- —¼‘ÖŽ†•¼7
+           --       ,MAX(CASE D.RANK WHEN  7 THEN D.ExchangeCount        ELSE NULL END) ExchangeCount7          -- —¼‘Ö–‡”7
+           --       ,MAX(CASE D.RANK WHEN  8 THEN D.DepositDateTime      ELSE NULL END) ExchangeDate8           -- —¼‘Ö“ú8
+           --       ,MAX(CASE D.RANK WHEN  8 THEN D.DenominationName     ELSE NULL END) ExchangeName8           -- —¼‘Ö–¼8
+           --       ,MAX(CASE D.RANK WHEN  8 THEN D.DepositGaku          ELSE NULL END) ExchangeAmount8         -- —¼‘ÖŠz8
+           --       ,MAX(CASE D.RANK WHEN  8 THEN D.ExchangeDenomination ELSE NULL END) ExchangeDenomination8   -- —¼‘ÖŽ†•¼8
+           --       ,MAX(CASE D.RANK WHEN  8 THEN D.ExchangeCount        ELSE NULL END) ExchangeCount8          -- —¼‘Ö–‡”8
+           --       ,MAX(CASE D.RANK WHEN  9 THEN D.DepositDateTime      ELSE NULL END) ExchangeDate9           -- —¼‘Ö“ú9
+           --       ,MAX(CASE D.RANK WHEN  9 THEN D.DenominationName     ELSE NULL END) ExchangeName9           -- —¼‘Ö–¼9
+           --       ,MAX(CASE D.RANK WHEN  9 THEN D.DepositGaku          ELSE NULL END) ExchangeAmount9         -- —¼‘ÖŠz9
+           --       ,MAX(CASE D.RANK WHEN  9 THEN D.ExchangeDenomination ELSE NULL END) ExchangeDenomination9   -- —¼‘ÖŽ†•¼9
+           --       ,MAX(CASE D.RANK WHEN  9 THEN D.ExchangeCount        ELSE NULL END) ExchangeCount9          -- —¼‘Ö–‡”9
+           --       ,MAX(CASE D.RANK WHEN 10 THEN D.DepositDateTime      ELSE NULL END) ExchangeDate10          -- —¼‘Ö“ú10
+           --       ,MAX(CASE D.RANK WHEN 10 THEN D.DenominationName     ELSE NULL END) ExchangeName10          -- —¼‘Ö–¼10
+           --       ,MAX(CASE D.RANK WHEN 10 THEN D.DepositGaku          ELSE NULL END) ExchangeAmount10        -- —¼‘ÖŠz10
+           --       ,MAX(CASE D.RANK WHEN 10 THEN D.ExchangeDenomination ELSE NULL END) ExchangeDenomination10  -- —¼‘ÖŽ†•¼10
+           --       ,MAX(CASE D.RANK WHEN 10 THEN D.ExchangeCount        ELSE NULL END) ExchangeCount10         -- —¼‘Ö–‡”10
+           --       ,MAX(D.Remark) ExchangeRemark                                                               -- —¼‘Ö”õl
+           --   FROM (
+                    SELECT CONVERT(Date, history.DepositDateTime) AS RegistDate
+                          ,COUNT(*) OVER(partition by CONVERT(Date, history.DepositDateTime)) AS ExchangeCount
+                          ,history.DepositDateTime                AS ExchangeDate1
+                          ,denominationKbn.DenominationName       AS ExchangeName1
+                          ,ABS(history.DepositGaku)               AS ExchangeAmount1
+                          ,history.ExchangeDenomination           AS ExchangeDenomination1
+                          ,ABS(history.ExchangeCount)             AS ExchangeCount1
                           --,ROW_NUMBER() OVER (PARTITION BY  history.Number ORDER BY history.DepositDateTime) AS RANK	š
-                          ,ROW_NUMBER() OVER(PARTITION BY history.Number ORDER BY history.DepositNO ASC) as RANK
-                          ,history.Remark
+                          --,ROW_NUMBER() OVER(PARTITION BY history.Number,history.DepositNO ORDER BY history.DepositNO ASC) as RANK
+                          ,history.DepositNO
+                          ,history.InsertOperator                 AS StaffReceiptPrint
+                          ,history.Remark                         AS ExchangeRemark
                       FROM #Temp_D_DepositHistory0 history
                       LEFT OUTER JOIN M_DenominationKBN denominationKbn ON denominationKbn.DenominationCD = history.DenominationCD
                      WHERE history.DataKBN = 3
                        AND history.DepositKBN = 5
                        AND history.CancelKBN = 0
-                   ) D
-             GROUP BY D.RegistDate
+         --          ) D
+         --    GROUP BY D.RegistDate,D.DepositNO
            ) D7;
 
     -- y¸ŽZˆ—FŒ»‹à”„ã(+)zƒ[ƒNƒe[ƒuƒ‹‚Xì¬
@@ -1228,6 +1242,7 @@ BEGIN
                PARTITION BY A.StoreCD 
                    ORDER BY A.IssueDate, A.DepositNO             -- ƒŒƒV[ƒg‚Æ‡”Ô‚ð“¯‚¶‚É‚·‚é
            ) AS DetailOrder                                      -- –¾×•\Ž¦‡
+          ,A.DepositNO
           ,A.JanCD                                               -- JANCD
           ,A.SKUShortName                                        -- ¤•i–¼
           ,A.SalesUnitPrice                                      -- ’P‰¿
@@ -1309,33 +1324,33 @@ BEGIN
           ,tempHistory5.MiscDepositDate1                         -- ŽG“ü‹à“ú1
           ,tempHistory5.MiscDepositName1                         -- ŽG“ü‹à–¼1
           ,tempHistory5.MiscDepositAmount1                       -- ŽG“ü‹àŠz1
-          ,tempHistory5.MiscDepositDate2                         -- ŽG“ü‹à“ú2
-          ,tempHistory5.MiscDepositName2                         -- ŽG“ü‹à–¼2
-          ,tempHistory5.MiscDepositAmount2                       -- ŽG“ü‹àŠz2
-          ,tempHistory5.MiscDepositDate3                         -- ŽG“ü‹à“ú3
-          ,tempHistory5.MiscDepositName3                         -- ŽG“ü‹à–¼3
-          ,tempHistory5.MiscDepositAmount3                       -- ŽG“ü‹àŠz3
-          ,tempHistory5.MiscDepositDate4                         -- ŽG“ü‹à“ú4
-          ,tempHistory5.MiscDepositName4                         -- ŽG“ü‹à–¼4
-          ,tempHistory5.MiscDepositAmount4                       -- ŽG“ü‹àŠz4
-          ,tempHistory5.MiscDepositDate5                         -- ŽG“ü‹à“ú5
-          ,tempHistory5.MiscDepositName5                         -- ŽG“ü‹à–¼5
-          ,tempHistory5.MiscDepositAmount5                       -- ŽG“ü‹àŠz5
-          ,tempHistory5.MiscDepositDate6                         -- ŽG“ü‹à“ú6
-          ,tempHistory5.MiscDepositName6                         -- ŽG“ü‹à–¼6
-          ,tempHistory5.MiscDepositAmount6                       -- ŽG“ü‹àŠz6
-          ,tempHistory5.MiscDepositDate7                         -- ŽG“ü‹à“ú7
-          ,tempHistory5.MiscDepositName7                         -- ŽG“ü‹à–¼7
-          ,tempHistory5.MiscDepositAmount7                       -- ŽG“ü‹àŠz7
-          ,tempHistory5.MiscDepositDate8                         -- ŽG“ü‹à“ú8
-          ,tempHistory5.MiscDepositName8                         -- ŽG“ü‹à–¼8
-          ,tempHistory5.MiscDepositAmount8                       -- ŽG“ü‹àŠz8
-          ,tempHistory5.MiscDepositDate9                         -- ŽG“ü‹à“ú9
-          ,tempHistory5.MiscDepositName9                         -- ŽG“ü‹à–¼9
-          ,tempHistory5.MiscDepositAmount9                       -- ŽG“ü‹àŠz9
-          ,tempHistory5.MiscDepositDate10                        -- ŽG“ü‹à“ú10
-          ,tempHistory5.MiscDepositName10                        -- ŽG“ü‹à–¼10
-          ,tempHistory5.MiscDepositAmount10                      -- ŽG“ü‹àŠz10
+          --,tempHistory5.MiscDepositDate2                         -- ŽG“ü‹à“ú2
+          --,tempHistory5.MiscDepositName2                         -- ŽG“ü‹à–¼2
+          --,tempHistory5.MiscDepositAmount2                       -- ŽG“ü‹àŠz2
+          --,tempHistory5.MiscDepositDate3                         -- ŽG“ü‹à“ú3
+          --,tempHistory5.MiscDepositName3                         -- ŽG“ü‹à–¼3
+          --,tempHistory5.MiscDepositAmount3                       -- ŽG“ü‹àŠz3
+          --,tempHistory5.MiscDepositDate4                         -- ŽG“ü‹à“ú4
+          --,tempHistory5.MiscDepositName4                         -- ŽG“ü‹à–¼4
+          --,tempHistory5.MiscDepositAmount4                       -- ŽG“ü‹àŠz4
+          --,tempHistory5.MiscDepositDate5                         -- ŽG“ü‹à“ú5
+          --,tempHistory5.MiscDepositName5                         -- ŽG“ü‹à–¼5
+          --,tempHistory5.MiscDepositAmount5                       -- ŽG“ü‹àŠz5
+          --,tempHistory5.MiscDepositDate6                         -- ŽG“ü‹à“ú6
+          --,tempHistory5.MiscDepositName6                         -- ŽG“ü‹à–¼6
+          --,tempHistory5.MiscDepositAmount6                       -- ŽG“ü‹àŠz6
+          --,tempHistory5.MiscDepositDate7                         -- ŽG“ü‹à“ú7
+          --,tempHistory5.MiscDepositName7                         -- ŽG“ü‹à–¼7
+          --,tempHistory5.MiscDepositAmount7                       -- ŽG“ü‹àŠz7
+          --,tempHistory5.MiscDepositDate8                         -- ŽG“ü‹à“ú8
+          --,tempHistory5.MiscDepositName8                         -- ŽG“ü‹à–¼8
+          --,tempHistory5.MiscDepositAmount8                       -- ŽG“ü‹àŠz8
+          --,tempHistory5.MiscDepositDate9                         -- ŽG“ü‹à“ú9
+          --,tempHistory5.MiscDepositName9                         -- ŽG“ü‹à–¼9
+          --,tempHistory5.MiscDepositAmount9                       -- ŽG“ü‹àŠz9
+          --,tempHistory5.MiscDepositDate10                        -- ŽG“ü‹à“ú10
+          --,tempHistory5.MiscDepositName10                        -- ŽG“ü‹à–¼10
+          --,tempHistory5.MiscDepositAmount10                      -- ŽG“ü‹àŠz10
           ,tempHistory5.MiscDepositRemark                        -- ŽG“ü‹à”õl
           --
           ,tempHistory51.RegistDate DepositRegistDate            -- “o˜^“ú
@@ -1344,66 +1359,66 @@ BEGIN
           ,tempHistory51.DepositDate1                            -- “ü‹à“ú1
           ,tempHistory51.DepositName1                            -- “ü‹à–¼1
           ,tempHistory51.DepositAmount1                          -- “ü‹àŠz1
-          ,tempHistory51.DepositDate2                            -- “ü‹à“ú2
-          ,tempHistory51.DepositName2                            -- “ü‹à–¼2
-          ,tempHistory51.DepositAmount2                          -- “ü‹àŠz2
-          ,tempHistory51.DepositDate3                            -- “ü‹à“ú3
-          ,tempHistory51.DepositName3                            -- “ü‹à–¼3
-          ,tempHistory51.DepositAmount3                          -- “ü‹àŠz3
-          ,tempHistory51.DepositDate4                            -- “ü‹à“ú4
-          ,tempHistory51.DepositName4                            -- “ü‹à–¼4
-          ,tempHistory51.DepositAmount4                          -- “ü‹àŠz4
-          ,tempHistory51.DepositDate5                            -- “ü‹à“ú5
-          ,tempHistory51.DepositName5                            -- “ü‹à–¼5
-          ,tempHistory51.DepositAmount5                          -- “ü‹àŠz5
-          ,tempHistory51.DepositDate6                            -- “ü‹à“ú6
-          ,tempHistory51.DepositName6                            -- “ü‹à–¼6
-          ,tempHistory51.DepositAmount6                          -- “ü‹àŠz6
-          ,tempHistory51.DepositDate7                            -- “ü‹à“ú7
-          ,tempHistory51.DepositName7                            -- “ü‹à–¼7
-          ,tempHistory51.DepositAmount7                          -- “ü‹àŠz7
-          ,tempHistory51.DepositDate8                            -- “ü‹à“ú8
-          ,tempHistory51.DepositName8                            -- “ü‹à–¼8
-          ,tempHistory51.DepositAmount8                          -- “ü‹àŠz8
-          ,tempHistory51.DepositDate9                            -- “ü‹à“ú9
-          ,tempHistory51.DepositName9                            -- “ü‹à–¼9
-          ,tempHistory51.DepositAmount9                          -- “ü‹àŠz9
-          ,tempHistory51.DepositDate10                           -- “ü‹à“ú10
-          ,tempHistory51.DepositName10                           -- “ü‹à–¼10
-          ,tempHistory51.DepositAmount10                         -- “ü‹àŠz10
+          --,tempHistory51.DepositDate2                            -- “ü‹à“ú2
+          --,tempHistory51.DepositName2                            -- “ü‹à–¼2
+          --,tempHistory51.DepositAmount2                          -- “ü‹àŠz2
+          --,tempHistory51.DepositDate3                            -- “ü‹à“ú3
+          --,tempHistory51.DepositName3                            -- “ü‹à–¼3
+          --,tempHistory51.DepositAmount3                          -- “ü‹àŠz3
+          --,tempHistory51.DepositDate4                            -- “ü‹à“ú4
+          --,tempHistory51.DepositName4                            -- “ü‹à–¼4
+          --,tempHistory51.DepositAmount4                          -- “ü‹àŠz4
+          --,tempHistory51.DepositDate5                            -- “ü‹à“ú5
+          --,tempHistory51.DepositName5                            -- “ü‹à–¼5
+          --,tempHistory51.DepositAmount5                          -- “ü‹àŠz5
+          --,tempHistory51.DepositDate6                            -- “ü‹à“ú6
+          --,tempHistory51.DepositName6                            -- “ü‹à–¼6
+          --,tempHistory51.DepositAmount6                          -- “ü‹àŠz6
+          --,tempHistory51.DepositDate7                            -- “ü‹à“ú7
+          --,tempHistory51.DepositName7                            -- “ü‹à–¼7
+          --,tempHistory51.DepositAmount7                          -- “ü‹àŠz7
+          --,tempHistory51.DepositDate8                            -- “ü‹à“ú8
+          --,tempHistory51.DepositName8                            -- “ü‹à–¼8
+          --,tempHistory51.DepositAmount8                          -- “ü‹àŠz8
+          --,tempHistory51.DepositDate9                            -- “ü‹à“ú9
+          --,tempHistory51.DepositName9                            -- “ü‹à–¼9
+          --,tempHistory51.DepositAmount9                          -- “ü‹àŠz9
+          --,tempHistory51.DepositDate10                           -- “ü‹à“ú10
+          --,tempHistory51.DepositName10                           -- “ü‹à–¼10
+          --,tempHistory51.DepositAmount10                         -- “ü‹àŠz10
           ,tempHistory51.DepositRemark                           -- “ü‹à”õl
           --
           ,tempHistory6.RegistDate MiscPaymentRegistDate         -- “o˜^“ú
           ,tempHistory6.MiscPaymentDate1                         -- ŽGŽx•¥“ú1
           ,tempHistory6.MiscPaymentName1                         -- ŽGŽx•¥–¼1
           ,tempHistory6.MiscPaymentAmount1                       -- ŽGŽx•¥Šz1
-          ,tempHistory6.MiscPaymentDate2                         -- ŽGŽx•¥“ú2
-          ,tempHistory6.MiscPaymentName2                         -- ŽGŽx•¥–¼2
-          ,tempHistory6.MiscPaymentAmount2                       -- ŽGŽx•¥Šz2
-          ,tempHistory6.MiscPaymentDate3                         -- ŽGŽx•¥“ú3
-          ,tempHistory6.MiscPaymentName3                         -- ŽGŽx•¥–¼3
-          ,tempHistory6.MiscPaymentAmount3                       -- ŽGŽx•¥Šz3
-          ,tempHistory6.MiscPaymentDate4                         -- ŽGŽx•¥“ú4
-          ,tempHistory6.MiscPaymentName4                         -- ŽGŽx•¥–¼4
-          ,tempHistory6.MiscPaymentAmount4                       -- ŽGŽx•¥Šz4
-          ,tempHistory6.MiscPaymentDate5                         -- ŽGŽx•¥“ú5
-          ,tempHistory6.MiscPaymentName5                         -- ŽGŽx•¥–¼5
-          ,tempHistory6.MiscPaymentAmount5                       -- ŽGŽx•¥Šz5
-          ,tempHistory6.MiscPaymentDate6                         -- ŽGŽx•¥“ú6
-          ,tempHistory6.MiscPaymentName6                         -- ŽGŽx•¥–¼6
-          ,tempHistory6.MiscPaymentAmount6                       -- ŽGŽx•¥Šz6
-          ,tempHistory6.MiscPaymentDate7                         -- ŽGŽx•¥“ú7
-          ,tempHistory6.MiscPaymentName7                         -- ŽGŽx•¥–¼7
-          ,tempHistory6.MiscPaymentAmount7                       -- ŽGŽx•¥Šz7
-          ,tempHistory6.MiscPaymentDate8                         -- ŽGŽx•¥“ú8
-          ,tempHistory6.MiscPaymentName8                         -- ŽGŽx•¥–¼8
-          ,tempHistory6.MiscPaymentAmount8                       -- ŽGŽx•¥Šz8
-          ,tempHistory6.MiscPaymentDate9                         -- ŽGŽx•¥“ú9
-          ,tempHistory6.MiscPaymentName9                         -- ŽGŽx•¥–¼9
-          ,tempHistory6.MiscPaymentAmount9                       -- ŽGŽx•¥Šz9
-          ,tempHistory6.MiscPaymentDate10                        -- ŽGŽx•¥“ú10
-          ,tempHistory6.MiscPaymentName10                        -- ŽGŽx•¥–¼10
-          ,tempHistory6.MiscPaymentAmount10                      -- ŽGŽx•¥Šz10
+          --,tempHistory6.MiscPaymentDate2                         -- ŽGŽx•¥“ú2
+          --,tempHistory6.MiscPaymentName2                         -- ŽGŽx•¥–¼2
+          --,tempHistory6.MiscPaymentAmount2                       -- ŽGŽx•¥Šz2
+          --,tempHistory6.MiscPaymentDate3                         -- ŽGŽx•¥“ú3
+          --,tempHistory6.MiscPaymentName3                         -- ŽGŽx•¥–¼3
+          --,tempHistory6.MiscPaymentAmount3                       -- ŽGŽx•¥Šz3
+          --,tempHistory6.MiscPaymentDate4                         -- ŽGŽx•¥“ú4
+          --,tempHistory6.MiscPaymentName4                         -- ŽGŽx•¥–¼4
+          --,tempHistory6.MiscPaymentAmount4                       -- ŽGŽx•¥Šz4
+          --,tempHistory6.MiscPaymentDate5                         -- ŽGŽx•¥“ú5
+          --,tempHistory6.MiscPaymentName5                         -- ŽGŽx•¥–¼5
+          --,tempHistory6.MiscPaymentAmount5                       -- ŽGŽx•¥Šz5
+          --,tempHistory6.MiscPaymentDate6                         -- ŽGŽx•¥“ú6
+          --,tempHistory6.MiscPaymentName6                         -- ŽGŽx•¥–¼6
+          --,tempHistory6.MiscPaymentAmount6                       -- ŽGŽx•¥Šz6
+          --,tempHistory6.MiscPaymentDate7                         -- ŽGŽx•¥“ú7
+          --,tempHistory6.MiscPaymentName7                         -- ŽGŽx•¥–¼7
+          --,tempHistory6.MiscPaymentAmount7                       -- ŽGŽx•¥Šz7
+          --,tempHistory6.MiscPaymentDate8                         -- ŽGŽx•¥“ú8
+          --,tempHistory6.MiscPaymentName8                         -- ŽGŽx•¥–¼8
+          --,tempHistory6.MiscPaymentAmount8                       -- ŽGŽx•¥Šz8
+          --,tempHistory6.MiscPaymentDate9                         -- ŽGŽx•¥“ú9
+          --,tempHistory6.MiscPaymentName9                         -- ŽGŽx•¥–¼9
+          --,tempHistory6.MiscPaymentAmount9                       -- ŽGŽx•¥Šz9
+          --,tempHistory6.MiscPaymentDate10                        -- ŽGŽx•¥“ú10
+          --,tempHistory6.MiscPaymentName10                        -- ŽGŽx•¥–¼10
+          --,tempHistory6.MiscPaymentAmount10                      -- ŽGŽx•¥Šz10
           ,tempHistory6.MiscPaymentRemark                        -- ŽGŽx•¥”õl
           --
           ,tempHistory7.RegistDate ExchangeRegistDate            -- “o˜^“ú
@@ -1412,51 +1427,51 @@ BEGIN
           ,tempHistory7.ExchangeAmount1                          -- —¼‘ÖŠz1
           ,tempHistory7.ExchangeDenomination1                    -- —¼‘ÖŽ†•¼1
           ,tempHistory7.ExchangeCount1                           -- —¼‘Ö–‡”1
-          ,tempHistory7.ExchangeDate2                            -- —¼‘Ö“ú2
-          ,tempHistory7.ExchangeName2                            -- —¼‘Ö–¼2
-          ,tempHistory7.ExchangeAmount2                          -- —¼‘ÖŠz2
-          ,tempHistory7.ExchangeDenomination2                    -- —¼‘ÖŽ†•¼2
-          ,tempHistory7.ExchangeCount2                           -- —¼‘Ö–‡”2
-          ,tempHistory7.ExchangeDate3                            -- —¼‘Ö“ú3
-          ,tempHistory7.ExchangeName3                            -- —¼‘Ö–¼3
-          ,tempHistory7.ExchangeAmount3                          -- —¼‘ÖŠz3
-          ,tempHistory7.ExchangeDenomination3                    -- —¼‘ÖŽ†•¼3
-          ,tempHistory7.ExchangeCount3                           -- —¼‘Ö–‡”3
-          ,tempHistory7.ExchangeDate4                            -- —¼‘Ö“ú4
-          ,tempHistory7.ExchangeName4                            -- —¼‘Ö–¼4
-          ,tempHistory7.ExchangeAmount4                          -- —¼‘ÖŠz4
-          ,tempHistory7.ExchangeDenomination4                    -- —¼‘ÖŽ†•¼4
-          ,tempHistory7.ExchangeCount4                           -- —¼‘Ö–‡”4
-          ,tempHistory7.ExchangeDate5                            -- —¼‘Ö“ú5
-          ,tempHistory7.ExchangeName5                            -- —¼‘Ö–¼5
-          ,tempHistory7.ExchangeAmount5                          -- —¼‘ÖŠz5
-          ,tempHistory7.ExchangeDenomination5                    -- —¼‘ÖŽ†•¼5
-          ,tempHistory7.ExchangeCount5                           -- —¼‘Ö–‡”5
-          ,tempHistory7.ExchangeDate6                            -- —¼‘Ö“ú6
-          ,tempHistory7.ExchangeName6                            -- —¼‘Ö–¼6
-          ,tempHistory7.ExchangeAmount6                          -- —¼‘ÖŠz6
-          ,tempHistory7.ExchangeDenomination6                    -- —¼‘ÖŽ†•¼6
-          ,tempHistory7.ExchangeCount6                           -- —¼‘Ö–‡”6
-          ,tempHistory7.ExchangeDate7                            -- —¼‘Ö“ú7
-          ,tempHistory7.ExchangeName7                            -- —¼‘Ö–¼7
-          ,tempHistory7.ExchangeAmount7                          -- —¼‘ÖŠz7
-          ,tempHistory7.ExchangeDenomination7                    -- —¼‘ÖŽ†•¼7
-          ,tempHistory7.ExchangeCount7                           -- —¼‘Ö–‡”7
-          ,tempHistory7.ExchangeDate8                            -- —¼‘Ö“ú8
-          ,tempHistory7.ExchangeName8                            -- —¼‘Ö–¼8
-          ,tempHistory7.ExchangeAmount8                          -- —¼‘ÖŠz8
-          ,tempHistory7.ExchangeDenomination8                    -- —¼‘ÖŽ†•¼8
-          ,tempHistory7.ExchangeCount8                           -- —¼‘Ö–‡”8
-          ,tempHistory7.ExchangeDate9                            -- —¼‘Ö“ú9
-          ,tempHistory7.ExchangeName9                            -- —¼‘Ö–¼9
-          ,tempHistory7.ExchangeAmount9                          -- —¼‘ÖŠz9
-          ,tempHistory7.ExchangeDenomination9                    -- —¼‘ÖŽ†•¼9
-          ,tempHistory7.ExchangeCount9                           -- —¼‘Ö–‡”9
-          ,tempHistory7.ExchangeDate10                           -- —¼‘Ö“ú10
-          ,tempHistory7.ExchangeName10                           -- —¼‘Ö–¼10
-          ,tempHistory7.ExchangeAmount10                         -- —¼‘ÖŠz10
-          ,tempHistory7.ExchangeDenomination10                   -- —¼‘ÖŽ†•¼10
-          ,tempHistory7.ExchangeCount10                          -- —¼‘Ö–‡”10
+          --,tempHistory7.ExchangeDate2                            -- —¼‘Ö“ú2
+          --,tempHistory7.ExchangeName2                            -- —¼‘Ö–¼2
+          --,tempHistory7.ExchangeAmount2                          -- —¼‘ÖŠz2
+          --,tempHistory7.ExchangeDenomination2                    -- —¼‘ÖŽ†•¼2
+          --,tempHistory7.ExchangeCount2                           -- —¼‘Ö–‡”2
+          --,tempHistory7.ExchangeDate3                            -- —¼‘Ö“ú3
+          --,tempHistory7.ExchangeName3                            -- —¼‘Ö–¼3
+          --,tempHistory7.ExchangeAmount3                          -- —¼‘ÖŠz3
+          --,tempHistory7.ExchangeDenomination3                    -- —¼‘ÖŽ†•¼3
+          --,tempHistory7.ExchangeCount3                           -- —¼‘Ö–‡”3
+          --,tempHistory7.ExchangeDate4                            -- —¼‘Ö“ú4
+          --,tempHistory7.ExchangeName4                            -- —¼‘Ö–¼4
+          --,tempHistory7.ExchangeAmount4                          -- —¼‘ÖŠz4
+          --,tempHistory7.ExchangeDenomination4                    -- —¼‘ÖŽ†•¼4
+          --,tempHistory7.ExchangeCount4                           -- —¼‘Ö–‡”4
+          --,tempHistory7.ExchangeDate5                            -- —¼‘Ö“ú5
+          --,tempHistory7.ExchangeName5                            -- —¼‘Ö–¼5
+          --,tempHistory7.ExchangeAmount5                          -- —¼‘ÖŠz5
+          --,tempHistory7.ExchangeDenomination5                    -- —¼‘ÖŽ†•¼5
+          --,tempHistory7.ExchangeCount5                           -- —¼‘Ö–‡”5
+          --,tempHistory7.ExchangeDate6                            -- —¼‘Ö“ú6
+          --,tempHistory7.ExchangeName6                            -- —¼‘Ö–¼6
+          --,tempHistory7.ExchangeAmount6                          -- —¼‘ÖŠz6
+          --,tempHistory7.ExchangeDenomination6                    -- —¼‘ÖŽ†•¼6
+          --,tempHistory7.ExchangeCount6                           -- —¼‘Ö–‡”6
+          --,tempHistory7.ExchangeDate7                            -- —¼‘Ö“ú7
+          --,tempHistory7.ExchangeName7                            -- —¼‘Ö–¼7
+          --,tempHistory7.ExchangeAmount7                          -- —¼‘ÖŠz7
+          --,tempHistory7.ExchangeDenomination7                    -- —¼‘ÖŽ†•¼7
+          --,tempHistory7.ExchangeCount7                           -- —¼‘Ö–‡”7
+          --,tempHistory7.ExchangeDate8                            -- —¼‘Ö“ú8
+          --,tempHistory7.ExchangeName8                            -- —¼‘Ö–¼8
+          --,tempHistory7.ExchangeAmount8                          -- —¼‘ÖŠz8
+          --,tempHistory7.ExchangeDenomination8                    -- —¼‘ÖŽ†•¼8
+          --,tempHistory7.ExchangeCount8                           -- —¼‘Ö–‡”8
+          --,tempHistory7.ExchangeDate9                            -- —¼‘Ö“ú9
+          --,tempHistory7.ExchangeName9                            -- —¼‘Ö–¼9
+          --,tempHistory7.ExchangeAmount9                          -- —¼‘ÖŠz9
+          --,tempHistory7.ExchangeDenomination9                    -- —¼‘ÖŽ†•¼9
+          --,tempHistory7.ExchangeCount9                           -- —¼‘Ö–‡”9
+          --,tempHistory7.ExchangeDate10                           -- —¼‘Ö“ú10
+          --,tempHistory7.ExchangeName10                           -- —¼‘Ö–¼10
+          --,tempHistory7.ExchangeAmount10                         -- —¼‘ÖŠz10
+          --,tempHistory7.ExchangeDenomination10                   -- —¼‘ÖŽ†•¼10
+          --,tempHistory7.ExchangeCount10                          -- —¼‘Ö–‡”10
           ,tempHistory7.ExchangeRemark                           -- —¼‘Ö”õl
           --
           ,tempHistory8.RegistDate CashBalanceRegistDate         -- “o˜^“ú
@@ -1614,8 +1629,9 @@ BEGIN
                   ,store.Address2                                                  -- ZŠ‚Q
                   ,store.TelephoneNO                                               -- “d˜b”Ô†
                   ,CASE 
-                       WHEN tempHistory1.DepositDate IS NOT NULL THEN tempHistory1.RegistDate
-                       ELSE CONCAT(calendar.CalendarDate, ' 00:00:00.000')
+                       WHEN tempHistory1.RegistDate IS NOT NULL THEN tempHistory1.RegistDate
+                       --ELSE CONCAT(calendar.CalendarDate, ' 00:00:00.000')
+                       ELSE tempHistory0.DepositDateTime
                    END IssueDate                                                   -- ”­s“úŽž
                   ,CASE 
                        WHEN tempHistory1.DepositDate IS NOT NULL THEN tempHistory1.DepositDate
@@ -1648,27 +1664,47 @@ BEGIN
                       FROM #Temp_D_DepositHistory1 t 
                      WHERE t.SalesNO = tempHistory1.SalesNO) Total                 -- ‡Œv
                   --
-                  ,tempHistory1.StaffReceiptPrint                                  -- ’S“–CD
+                  ,ISNULL(tempHistory1.StaffReceiptPrint
+                         ,(SELECT top 1 staff.ReceiptPrint
+                             FROM F_Staff(CONVERT(DATE, GETDATE())) AS staff
+                            WHERE staff.StaffCD = tempHistory0.InsertOperator
+                              AND staff.DeleteFlg = 0
+                            ORDER BY staff.ChangeDate DESC
+                            )) AS StaffReceiptPrint                                -- ’S“–CD
                   ,store.ReceiptPrint StoreReceiptPrint                            -- “X•ÜCD
-                  ,tempHistory1.DepositNO
+                  ,tempHistory0.DepositNO
               FROM M_Calendar AS calendar
               LEFT OUTER JOIN F_Store(CONVERT(DATE, GETDATE())) AS store
                 ON store.StoreCD = @StoreCD
                AND store.DeleteFlg = 0
-
-              LEFT OUTER JOIN #Temp_D_DepositHistory1 AS tempHistory1 ON tempHistory1.StoreCD = store.StoreCD
-                                                                     AND tempHistory1.AccountingDate = calendar.CalendarDate
+             INNER JOIN #Temp_D_DepositHistory0 AS tempHistory0 ON tempHistory0.StoreCD = store.StoreCD
+                                                               AND tempHistory0.AccountingDate = calendar.CalendarDate
+              LEFT OUTER JOIN #Temp_D_DepositHistory1 AS tempHistory1 ON tempHistory1.DepositNO = tempHistory0.DepositNO
              WHERE calendar.CalendarDate >= convert(date, @DateFrom)
                AND calendar.CalendarDate <= convert(date, @DateTo)
+            --   AND ((tempHistory0.DataKBN = 2 AND tempHistory0.DepositKBN = 1 AND tempHistory0.CancelKBN = 0 AND EXISTS(SELECT 1 FROM #Temp_D_DepositHistory1 AS T1 WHERE T1.DepositNO = tempHistory0.DepositNO))
+            --      OR tempHistory0.DataKBN <> 2
+            --      OR tempHistory0.DepositKBN <> 1
+            --      OR tempHistory0.CancelKBN <> 0
+            --      )
            ) A
       LEFT OUTER JOIN #Temp_D_DepositHistory2 tempHistory2   ON tempHistory2.SalesNO = A.SalesNO
       LEFT OUTER JOIN #Temp_D_DepositHistory3 tempHistory3   ON tempHistory3.SalesNO = A.SalesNO
-      LEFT OUTER JOIN #Temp_D_DepositHistory4 tempHistory4   ON tempHistory4.RegistDate = A.CalendarDate
-      LEFT OUTER JOIN #Temp_D_DepositHistory5 tempHistory5   ON tempHistory5.RegistDate = A.CalendarDate
-      LEFT OUTER JOIN #Temp_D_DepositHistory51 tempHistory51 ON tempHistory51.RegistDate = A.CalendarDate
-      LEFT OUTER JOIN #Temp_D_DepositHistory6 tempHistory6   ON tempHistory6.RegistDate = A.CalendarDate
-      LEFT OUTER JOIN #Temp_D_DepositHistory7 tempHistory7   ON tempHistory7.RegistDate = A.CalendarDate
+      
+      --LEFT OUTER JOIN #Temp_D_DepositHistory4 tempHistory4   ON tempHistory4.RegistDate = A.CalendarDate
+      --LEFT OUTER JOIN #Temp_D_DepositHistory5 tempHistory5   ON tempHistory5.RegistDate = A.CalendarDate
+      --LEFT OUTER JOIN #Temp_D_DepositHistory51 tempHistory51 ON tempHistory51.RegistDate = A.CalendarDate
+      --LEFT OUTER JOIN #Temp_D_DepositHistory6 tempHistory6   ON tempHistory6.RegistDate = A.CalendarDate
+      --LEFT OUTER JOIN #Temp_D_DepositHistory7 tempHistory7   ON tempHistory7.RegistDate = A.CalendarDate
+      
+      LEFT OUTER JOIN #Temp_D_DepositHistory4 tempHistory4   ON tempHistory4.DepositNO = A.DepositNO
+      LEFT OUTER JOIN #Temp_D_DepositHistory5 tempHistory5   ON tempHistory5.DepositNO = A.DepositNO
+      LEFT OUTER JOIN #Temp_D_DepositHistory51 tempHistory51 ON tempHistory51.DepositNO = A.DepositNO
+      LEFT OUTER JOIN #Temp_D_DepositHistory6 tempHistory6   ON tempHistory6.DepositNO = A.DepositNO
+      LEFT OUTER JOIN #Temp_D_DepositHistory7 tempHistory7   ON tempHistory7.DepositNO = A.DepositNO
+      
       LEFT OUTER JOIN #Temp_D_DepositHistory8 tempHistory8   ON tempHistory8.RegistDate = A.CalendarDate
+      
      ORDER BY DetailOrder ASC
          ;
     

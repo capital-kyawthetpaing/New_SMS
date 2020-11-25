@@ -94,7 +94,7 @@
             this.ckM_SearchControl1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl1.DataCheck = false;
             this.ckM_SearchControl1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_SearchControl1.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.ckM_SearchControl1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_SearchControl1.IsCopy = false;
             this.ckM_SearchControl1.LabelText = "";
             this.ckM_SearchControl1.LabelVisible = false;

@@ -566,7 +566,7 @@ namespace MainMenu.Haspo
         private void ckM_Button1_Click(object sender, EventArgs e)
         {
             ForceToClose();
-            HaspoStoreMenuLogin hln = new HaspoStoreMenuLogin();
+            HaspoStoreMenuLogin hln = new HaspoStoreMenuLogin(true);
             this.Hide();
             hln.ShowDialog();
             this.Close();

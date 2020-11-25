@@ -922,6 +922,7 @@
             this.IMT_REMARK_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMARK_9.DecimalPlace = 0;
             this.IMT_REMARK_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMARK_9.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMARK_9.IntegerPart = 0;
             this.IMT_REMARK_9.IsCorrectDate = true;
             this.IMT_REMARK_9.isEnterKeyDown = false;
@@ -1116,6 +1117,7 @@
             this.IMT_REMARK_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMARK_8.DecimalPlace = 0;
             this.IMT_REMARK_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMARK_8.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMARK_8.IntegerPart = 0;
             this.IMT_REMARK_8.IsCorrectDate = true;
             this.IMT_REMARK_8.isEnterKeyDown = false;
@@ -1310,6 +1312,7 @@
             this.IMT_REMARK_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMARK_7.DecimalPlace = 0;
             this.IMT_REMARK_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMARK_7.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMARK_7.IntegerPart = 0;
             this.IMT_REMARK_7.IsCorrectDate = true;
             this.IMT_REMARK_7.isEnterKeyDown = false;
@@ -1504,6 +1507,7 @@
             this.IMT_REMARK_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMARK_6.DecimalPlace = 0;
             this.IMT_REMARK_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMARK_6.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMARK_6.IntegerPart = 0;
             this.IMT_REMARK_6.IsCorrectDate = true;
             this.IMT_REMARK_6.isEnterKeyDown = false;
@@ -1667,6 +1671,7 @@
             this.IMT_REMARK_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMARK_5.DecimalPlace = 0;
             this.IMT_REMARK_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMARK_5.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMARK_5.IntegerPart = 0;
             this.IMT_REMARK_5.IsCorrectDate = true;
             this.IMT_REMARK_5.isEnterKeyDown = false;
@@ -2012,6 +2017,7 @@
             this.IMT_REMARK_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMARK_4.DecimalPlace = 0;
             this.IMT_REMARK_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMARK_4.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMARK_4.IntegerPart = 0;
             this.IMT_REMARK_4.IsCorrectDate = true;
             this.IMT_REMARK_4.isEnterKeyDown = false;
@@ -2206,6 +2212,7 @@
             this.IMT_REMARK_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMARK_3.DecimalPlace = 0;
             this.IMT_REMARK_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMARK_3.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMARK_3.IntegerPart = 0;
             this.IMT_REMARK_3.IsCorrectDate = true;
             this.IMT_REMARK_3.isEnterKeyDown = false;
@@ -2400,6 +2407,7 @@
             this.IMT_REMARK_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMARK_2.DecimalPlace = 0;
             this.IMT_REMARK_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMARK_2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMARK_2.IntegerPart = 0;
             this.IMT_REMARK_2.IsCorrectDate = true;
             this.IMT_REMARK_2.isEnterKeyDown = false;
@@ -2594,6 +2602,7 @@
             this.IMT_REMARK_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMARK_1.DecimalPlace = 0;
             this.IMT_REMARK_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMARK_1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMARK_1.IntegerPart = 0;
             this.IMT_REMARK_1.IsCorrectDate = true;
             this.IMT_REMARK_1.isEnterKeyDown = false;
@@ -2757,6 +2766,7 @@
             this.IMT_REMARK_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMARK_0.DecimalPlace = 0;
             this.IMT_REMARK_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMARK_0.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMARK_0.IntegerPart = 0;
             this.IMT_REMARK_0.IsCorrectDate = true;
             this.IMT_REMARK_0.isEnterKeyDown = false;
