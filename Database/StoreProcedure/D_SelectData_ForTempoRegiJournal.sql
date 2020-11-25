@@ -1682,20 +1682,10 @@ BEGIN
               LEFT OUTER JOIN #Temp_D_DepositHistory1 AS tempHistory1 ON tempHistory1.DepositNO = tempHistory0.DepositNO
              WHERE calendar.CalendarDate >= convert(date, @DateFrom)
                AND calendar.CalendarDate <= convert(date, @DateTo)
-            --   AND ((tempHistory0.DataKBN = 2 AND tempHistory0.DepositKBN = 1 AND tempHistory0.CancelKBN = 0 AND EXISTS(SELECT 1 FROM #Temp_D_DepositHistory1 AS T1 WHERE T1.DepositNO = tempHistory0.DepositNO))
-            --      OR tempHistory0.DataKBN <> 2
-            --      OR tempHistory0.DepositKBN <> 1
-            --      OR tempHistory0.CancelKBN <> 0
             --      )
            ) A
       LEFT OUTER JOIN #Temp_D_DepositHistory2 tempHistory2   ON tempHistory2.SalesNO = A.SalesNO
       LEFT OUTER JOIN #Temp_D_DepositHistory3 tempHistory3   ON tempHistory3.SalesNO = A.SalesNO
-      
-      --LEFT OUTER JOIN #Temp_D_DepositHistory4 tempHistory4   ON tempHistory4.RegistDate = A.CalendarDate
-      --LEFT OUTER JOIN #Temp_D_DepositHistory5 tempHistory5   ON tempHistory5.RegistDate = A.CalendarDate
-      --LEFT OUTER JOIN #Temp_D_DepositHistory51 tempHistory51 ON tempHistory51.RegistDate = A.CalendarDate
-      --LEFT OUTER JOIN #Temp_D_DepositHistory6 tempHistory6   ON tempHistory6.RegistDate = A.CalendarDate
-      --LEFT OUTER JOIN #Temp_D_DepositHistory7 tempHistory7   ON tempHistory7.RegistDate = A.CalendarDate
       
       LEFT OUTER JOIN #Temp_D_DepositHistory4 tempHistory4   ON tempHistory4.DepositNO = A.DepositNO
       LEFT OUTER JOIN #Temp_D_DepositHistory5 tempHistory5   ON tempHistory5.DepositNO = A.DepositNO
