@@ -1674,7 +1674,7 @@ BEGIN
                   ,store.ReceiptPrint StoreReceiptPrint                            -- “X•ÜCD
                   ,tempHistory0.DepositNO
               FROM M_Calendar AS calendar
-              LEFT OUTER JOIN F_Store(CONVERT(DATE, GETDATE())) AS store
+             INNER JOIN F_Store(CONVERT(DATE, GETDATE())) AS store
                 ON store.StoreCD = @StoreCD
                AND store.DeleteFlg = 0
              INNER JOIN #Temp_D_DepositHistory0 AS tempHistory0 ON tempHistory0.StoreCD = store.StoreCD
