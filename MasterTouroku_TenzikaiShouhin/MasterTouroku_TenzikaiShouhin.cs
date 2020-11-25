@@ -316,6 +316,8 @@ namespace MasterTouroku_TenzikaiShouhin
                     detailControls[(int)Eindex.StartDate].Enabled = false;
                     EnablePanel(panel4);
                     EnablePanel(panel6);
+                    DisablePanel(panel11);
+                   // DisablePanel(panelB);
                     skucheck = false;
                     checkmei = false;
                     Clear(panel1);
@@ -329,6 +331,7 @@ namespace MasterTouroku_TenzikaiShouhin
                     detailControls[(int)Eindex.StartDate].Enabled = true;
                     DisablePanel(panel4);
                     DisablePanel(panel6);
+                    EnablePanel(panel11);
 
                     break;
 
@@ -340,6 +343,7 @@ namespace MasterTouroku_TenzikaiShouhin
                     detailControls[(int)Eindex.SCTenzikai].Focus();
                     DisablePanel(panel4);
                     DisablePanel(panel6);
+                    EnablePanel(panel11);
                     detailControls[(int)Eindex.StartDate].Enabled = false;
                     break;
 
@@ -1176,12 +1180,10 @@ namespace MasterTouroku_TenzikaiShouhin
                             ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).Ctrl_Byte = CKM_TextBox.Bytes.半全角;
                             break;
                         case (int)ClsGridMasterTanzi.ColNO.SKUName:
-                            // ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).MaxLength = 80;
+                             ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).MaxLength = 80;
                             ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).TextAlign = HorizontalAlignment.Left;
                             break;
                         case (int)ClsGridMasterTanzi.ColNO.SKUCD:
-                            //   (Label)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl). = 30;
-                            // ((Label)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).TextAlign = ContentAlignment.MiddleLeft;
                             ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).TextAlign = HorizontalAlignment.Left;
                             break;
                     }
@@ -1542,11 +1544,14 @@ namespace MasterTouroku_TenzikaiShouhin
             //mGrid.g_MK_Ctrl(ClsGridMitsumori.ColNO.DELCK, pCtlRow).GVal(W_Del);
 
             // ﾌｧﾝｸｼｮﾝﾎﾞﾀﾝ使用可否
-            SetFuncKeyAll(this, "111111001001");
+            // F11 disable
+            SetFuncKeyAll(this, "111111111101");
 
-            if (OperationMode == EOperationMode.UPDATE)  // F7 F8 F10 disable
+
+            // Fll enable only update mode
+            if (OperationMode == EOperationMode.UPDATE)  
             {
-                SetFuncKeyAll(this, "111111001011");
+                SetFuncKeyAll(this, "111111111111");
             }
 
 
@@ -1897,6 +1902,13 @@ namespace MasterTouroku_TenzikaiShouhin
                             IsExec = false;
                             return true;
                         }
+
+                        DataTable dtjan = bbl.SimpleSelect1("66", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), mGrid.g_DArray[row].JANCD);
+                        if (dtjan.Rows.Count == 0)
+                        {
+                            // Grid_Gyo_Clr(row);
+                            EnableCell_JanPro(col, row);
+                        }
                         if (mGrid.g_DArray[row].Jancdold == mGrid.g_DArray[row].JANCD)
                         {
                             return true;
@@ -1945,12 +1957,7 @@ namespace MasterTouroku_TenzikaiShouhin
                             //}
                             // if(OperationMode == EOperationMode.INSERT)
                             // {
-                            DataTable dtjan = bbl.SimpleSelect1("66", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), mGrid.g_DArray[row].JANCD);
-                            if (dtjan.Rows.Count == 0)
-                            {
-                               // Grid_Gyo_Clr(row);
-                                EnableCell_JanPro(col, row);
-                            }
+                           
                             //}
 
                             M_SKU_Entity msku = new M_SKU_Entity
@@ -4510,9 +4517,6 @@ namespace MasterTouroku_TenzikaiShouhin
             
         }
 
-        private void remark_1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
