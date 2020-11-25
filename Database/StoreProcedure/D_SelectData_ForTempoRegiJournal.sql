@@ -808,12 +808,12 @@ BEGIN
                            END AS OtherAmountCancel                                        -- ‘¼Œ»‹à ’lˆø
                           ,0 OtherAmountDelivery                                           -- ‘¼Œ»‹à ”z’B
                       FROM #Temp_D_DepositHistory0 AS history
-                      LEFT OUTER JOIN D_Sales AS sales ON sales.SalesNO = history.Number
+                     -- LEFT OUTER JOIN D_Sales AS sales ON sales.SalesNO = history.Number
                      WHERE history.DataKBN = 2
                        AND history.DepositKBN = 1
                        AND history.CancelKBN IN (1, 2)
-                       AND sales.DeleteDateTime IS NULL
-                       AND sales.BillingType = 1
+                     --  AND sales.DeleteDateTime IS NULL
+                     --  AND sales.BillingType = 1
                    ) D
              GROUP BY D.RegistDate
            ) D16;
