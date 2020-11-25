@@ -528,6 +528,7 @@
     <Content Include="StoreProcedure\M_TeniKaiSelectbyJAN.sql" />
     <Content Include="StoreProcedure\M_TenjiDataSet_Select.sql" />
     <Content Include="StoreProcedure\M_TenjiKaiJuuChuu_Select.sql" />
+    <Content Include="StoreProcedure\M_TenzikaiShouhinName_Select.sql" />
     <Content Include="StoreProcedure\M_TenzikaiShouhin_Check.sql" />
     <Content Include="StoreProcedure\M_Tenzikaishouhin_Delete.sql" />
     <Content Include="StoreProcedure\M_Tenzikaishouhin_DeleteUpdate.sql" />
