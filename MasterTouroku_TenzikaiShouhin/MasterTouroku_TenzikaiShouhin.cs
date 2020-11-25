@@ -116,14 +116,12 @@ namespace MasterTouroku_TenzikaiShouhin
                 dt.Rows.Add("非課税", "0");
                 dt.Rows.Add("通常課税", "1");
                 dt.Rows.Add("軽減課税", "2");
-
                 sctl1.BindCombo("Value", "Key", dt);
             }
         }
         private void MasterTouroku_TenzikaiShouhin_KeyUp(object sender, KeyEventArgs e)
         {
-           // MoveNextControl(e);
-
+          
         }
 
 
