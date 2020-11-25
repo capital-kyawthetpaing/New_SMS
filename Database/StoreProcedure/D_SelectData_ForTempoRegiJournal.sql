@@ -732,14 +732,14 @@ BEGIN
                   ,SUM(DepositCash) DepositCash              -- ì¸ã‡ åªã‡
                   ,SUM(DepositCheck) DepositCheck            -- ì¸ã‡ è¨êÿéË
                   ,SUM(DepositBill) DepositBill              -- ì¸ã‡ éËå`
-                  ,SUM(DepositOffset) DepositOffset          -- ì¸ã‡ ëäéE
-                  ,SUM(DepositAdjustment) DepositAdjustment  -- ì¸ã‡ í≤êÆ
+                  ,SUM(DepositOffset) DepositOffset          -- ì¸ã‡ ëäéEÅÀìdéqåàçœ
+                  ,SUM(DepositAdjustment) DepositAdjustment  -- ì¸ã‡ í≤êÆÅÀÇªÇÃëº
                   ,SUM(PaymentTransfer) PaymentTransfer      -- éxï• êUçû
                   ,SUM(PaymentCash) PaymentCash              -- éxï• åªã‡
                   ,SUM(PaymentCheck) PaymentCheck            -- éxï• è¨êÿéË
                   ,SUM(PaymentBill) PaymentBill              -- éxï• éËå`
-                  ,SUM(PaymentOffset) PaymentOffset          -- éxï• ëäéE
-                  ,SUM(PaymentAdjustment) PaymentAdjustment  -- éxï• í≤êÆ
+                  ,SUM(PaymentOffset) PaymentOffset          -- éxï• ëäéEÅÀìdéqåàçœ
+                  ,SUM(PaymentAdjustment) PaymentAdjustment  -- éxï• í≤êÆÅÀÇªÇÃëº
               FROM (
                     SELECT history.DepositNO
                           ,CONVERT(DATE, history.DepositDateTime) RegistDate
@@ -755,10 +755,10 @@ BEGIN
                           ,CASE WHEN history.DepositKBN = 2 AND denominationKbn.SystemKBN = 11 THEN history.DepositGaku
                                 ELSE 0
                            END AS DepositBill        -- ì¸ã‡ éËå`
-                          ,CASE WHEN history.DepositKBN = 2 AND denominationKbn.SystemKBN = 7 THEN history.DepositGaku
+                          ,CASE WHEN history.DepositKBN = 2 AND denominationKbn.SystemKBN = 10 THEN history.DepositGaku
                                 ELSE 0
                            END AS DepositOffset      -- ì¸ã‡ ëäéE
-                          ,CASE WHEN history.DepositKBN = 2 AND denominationKbn.SystemKBN = 12 THEN history.DepositGaku
+                          ,CASE WHEN history.DepositKBN = 2 AND denominationKbn.SystemKBN NOT IN (5,1,6,11,10) THEN history.DepositGaku
                                 ELSE 0
                            END AS DepositAdjustment  -- ì¸ã‡ í≤êÆ
                           ,CASE WHEN history.DepositKBN = 3 AND denominationKbn.SystemKBN = 5 THEN history.DepositGaku
@@ -773,10 +773,10 @@ BEGIN
                           ,CASE WHEN history.DepositKBN = 3 AND denominationKbn.SystemKBN = 11 THEN history.DepositGaku
                                 ELSE 0
                            END AS PaymentBill        -- éxï• éËå`
-                          ,CASE WHEN history.DepositKBN = 3 AND denominationKbn.SystemKBN = 7 THEN history.DepositGaku
+                          ,CASE WHEN history.DepositKBN = 3 AND denominationKbn.SystemKBN = 10 THEN history.DepositGaku
                                 ELSE 0
                            END AS PaymentOffset      -- éxï• ëäéE
-                          ,CASE WHEN history.DepositKBN = 3 AND denominationKbn.SystemKBN = 12 THEN history.DepositGaku
+                          ,CASE WHEN history.DepositKBN = 3 AND denominationKbn.SystemKBN NOT IN (5,1,6,11,10) THEN history.DepositGaku
                                 ELSE 0
                            END AS PaymentAdjustment  -- éxï• í≤êÆ
                       FROM #Temp_D_DepositHistory0 AS history
@@ -808,12 +808,12 @@ BEGIN
                            END AS OtherAmountCancel                                        -- ëºåªã‡ ílà¯
                           ,0 OtherAmountDelivery                                           -- ëºåªã‡ îzíB
                       FROM #Temp_D_DepositHistory0 AS history
-                      LEFT OUTER JOIN D_Sales AS sales ON sales.SalesNO = history.Number
+                     -- LEFT OUTER JOIN D_Sales AS sales ON sales.SalesNO = history.Number
                      WHERE history.DataKBN = 2
                        AND history.DepositKBN = 1
                        AND history.CancelKBN IN (1, 2)
-                       AND sales.DeleteDateTime IS NULL
-                       AND sales.BillingType = 1
+                     --  AND sales.DeleteDateTime IS NULL
+                     --  AND sales.BillingType = 1
                    ) D
              GROUP BY D.RegistDate
            ) D16;
