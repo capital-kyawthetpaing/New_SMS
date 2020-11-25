@@ -732,14 +732,14 @@ BEGIN
                   ,SUM(DepositCash) DepositCash              -- “ü‹à Œ»‹à
                   ,SUM(DepositCheck) DepositCheck            -- “ü‹à ¬Øè
                   ,SUM(DepositBill) DepositBill              -- “ü‹à èŒ`
-                  ,SUM(DepositOffset) DepositOffset          -- “ü‹à ‘ŠE
-                  ,SUM(DepositAdjustment) DepositAdjustment  -- “ü‹à ’²®
+                  ,SUM(DepositOffset) DepositOffset          -- “ü‹à ‘ŠEË“dqŒˆÏ
+                  ,SUM(DepositAdjustment) DepositAdjustment  -- “ü‹à ’²®Ë‚»‚Ì‘¼
                   ,SUM(PaymentTransfer) PaymentTransfer      -- x•¥ U
                   ,SUM(PaymentCash) PaymentCash              -- x•¥ Œ»‹à
                   ,SUM(PaymentCheck) PaymentCheck            -- x•¥ ¬Øè
                   ,SUM(PaymentBill) PaymentBill              -- x•¥ èŒ`
-                  ,SUM(PaymentOffset) PaymentOffset          -- x•¥ ‘ŠE
-                  ,SUM(PaymentAdjustment) PaymentAdjustment  -- x•¥ ’²®
+                  ,SUM(PaymentOffset) PaymentOffset          -- x•¥ ‘ŠEË“dqŒˆÏ
+                  ,SUM(PaymentAdjustment) PaymentAdjustment  -- x•¥ ’²®Ë‚»‚Ì‘¼
               FROM (
                     SELECT history.DepositNO
                           ,CONVERT(DATE, history.DepositDateTime) RegistDate
@@ -755,10 +755,10 @@ BEGIN
                           ,CASE WHEN history.DepositKBN = 2 AND denominationKbn.SystemKBN = 11 THEN history.DepositGaku
                                 ELSE 0
                            END AS DepositBill        -- “ü‹à èŒ`
-                          ,CASE WHEN history.DepositKBN = 2 AND denominationKbn.SystemKBN = 7 THEN history.DepositGaku
+                          ,CASE WHEN history.DepositKBN = 2 AND denominationKbn.SystemKBN = 10 THEN history.DepositGaku
                                 ELSE 0
                            END AS DepositOffset      -- “ü‹à ‘ŠE
-                          ,CASE WHEN history.DepositKBN = 2 AND denominationKbn.SystemKBN = 12 THEN history.DepositGaku
+                          ,CASE WHEN history.DepositKBN = 2 AND denominationKbn.SystemKBN NOT IN (5,1,6,11,10) THEN history.DepositGaku
                                 ELSE 0
                            END AS DepositAdjustment  -- “ü‹à ’²®
                           ,CASE WHEN history.DepositKBN = 3 AND denominationKbn.SystemKBN = 5 THEN history.DepositGaku
@@ -773,10 +773,10 @@ BEGIN
                           ,CASE WHEN history.DepositKBN = 3 AND denominationKbn.SystemKBN = 11 THEN history.DepositGaku
                                 ELSE 0
                            END AS PaymentBill        -- x•¥ èŒ`
-                          ,CASE WHEN history.DepositKBN = 3 AND denominationKbn.SystemKBN = 7 THEN history.DepositGaku
+                          ,CASE WHEN history.DepositKBN = 3 AND denominationKbn.SystemKBN = 10 THEN history.DepositGaku
                                 ELSE 0
                            END AS PaymentOffset      -- x•¥ ‘ŠE
-                          ,CASE WHEN history.DepositKBN = 3 AND denominationKbn.SystemKBN = 12 THEN history.DepositGaku
+                          ,CASE WHEN history.DepositKBN = 3 AND denominationKbn.SystemKBN NOT IN (5,1,6,11,10) THEN history.DepositGaku
                                 ELSE 0
                            END AS PaymentAdjustment  -- x•¥ ’²®
                       FROM #Temp_D_DepositHistory0 AS history
