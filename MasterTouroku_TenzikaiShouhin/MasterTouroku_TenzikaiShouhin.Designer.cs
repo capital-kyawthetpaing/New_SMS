@@ -1942,6 +1942,7 @@
             this.sku_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.sku_1.DecimalPlace = 0;
             this.sku_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sku_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.sku_1.IntegerPart = 0;
             this.sku_1.IsCorrectDate = true;
             this.sku_1.isEnterKeyDown = false;
@@ -2757,6 +2758,7 @@
             this.sku_13.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.sku_13.DecimalPlace = 0;
             this.sku_13.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sku_13.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.sku_13.IntegerPart = 0;
             this.sku_13.IsCorrectDate = true;
             this.sku_13.isEnterKeyDown = false;
@@ -3469,6 +3471,7 @@
             this.sku_12.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.sku_12.DecimalPlace = 0;
             this.sku_12.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sku_12.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.sku_12.IntegerPart = 0;
             this.sku_12.IsCorrectDate = true;
             this.sku_12.isEnterKeyDown = false;
@@ -4181,6 +4184,7 @@
             this.sku_11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.sku_11.DecimalPlace = 0;
             this.sku_11.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sku_11.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.sku_11.IntegerPart = 0;
             this.sku_11.IsCorrectDate = true;
             this.sku_11.isEnterKeyDown = false;
@@ -4893,6 +4897,7 @@
             this.sku_10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.sku_10.DecimalPlace = 0;
             this.sku_10.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sku_10.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.sku_10.IntegerPart = 0;
             this.sku_10.IsCorrectDate = true;
             this.sku_10.isEnterKeyDown = false;
@@ -5839,6 +5844,7 @@
             this.sku_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.sku_9.DecimalPlace = 0;
             this.sku_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sku_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.sku_9.IntegerPart = 0;
             this.sku_9.IsCorrectDate = true;
             this.sku_9.isEnterKeyDown = false;
@@ -6551,6 +6557,7 @@
             this.sku_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.sku_8.DecimalPlace = 0;
             this.sku_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sku_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.sku_8.IntegerPart = 0;
             this.sku_8.IsCorrectDate = true;
             this.sku_8.isEnterKeyDown = false;
@@ -7263,6 +7270,7 @@
             this.sku_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.sku_7.DecimalPlace = 0;
             this.sku_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sku_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.sku_7.IntegerPart = 0;
             this.sku_7.IsCorrectDate = true;
             this.sku_7.isEnterKeyDown = false;
@@ -7975,6 +7983,7 @@
             this.sku_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.sku_6.DecimalPlace = 0;
             this.sku_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sku_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.sku_6.IntegerPart = 0;
             this.sku_6.IsCorrectDate = true;
             this.sku_6.isEnterKeyDown = false;
@@ -8687,6 +8696,7 @@
             this.sku_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.sku_5.DecimalPlace = 0;
             this.sku_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sku_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.sku_5.IntegerPart = 0;
             this.sku_5.IsCorrectDate = true;
             this.sku_5.isEnterKeyDown = false;
@@ -9399,6 +9409,7 @@
             this.sku_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.sku_4.DecimalPlace = 0;
             this.sku_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sku_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.sku_4.IntegerPart = 0;
             this.sku_4.IsCorrectDate = true;
             this.sku_4.isEnterKeyDown = false;
@@ -10111,6 +10122,7 @@
             this.sku_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.sku_3.DecimalPlace = 0;
             this.sku_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sku_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.sku_3.IntegerPart = 0;
             this.sku_3.IsCorrectDate = true;
             this.sku_3.isEnterKeyDown = false;
@@ -10826,6 +10838,7 @@
             this.sku_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.sku_2.DecimalPlace = 0;
             this.sku_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sku_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.sku_2.IntegerPart = 0;
             this.sku_2.IsCorrectDate = true;
             this.sku_2.isEnterKeyDown = false;
