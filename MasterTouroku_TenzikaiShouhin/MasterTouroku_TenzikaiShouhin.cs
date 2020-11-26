@@ -2805,7 +2805,7 @@ namespace MasterTouroku_TenzikaiShouhin
                 if (dt.Rows[i][0] != DBNull.Value)
                 {
                     
-                        int  row = i;
+                     int  row = i+1;
                     string BrndCD = dt.Rows[i]["ブランドCD"].ToString();
                         var dtB = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 11, dt.Rows[i]["ブランドCD"].ToString(), null);
                         if (dtB.Rows.Count == 0)
@@ -2846,7 +2846,7 @@ namespace MasterTouroku_TenzikaiShouhin
                         string taxrate = dt.Rows[i]["税率区分"].ToString();
                         if (!(dt.Rows[i]["税率区分"].ToString() == "0" || dt.Rows[i]["税率区分"].ToString() == "1" || dt.Rows[i]["税率区分"].ToString() == "2"))
                         {
-                            bl.ShowMessage("E269", row.ToString(), "販売予定日の指定外の情報");
+                            bl.ShowMessage("E269", row.ToString(), "税率区分の指定外の情報");
                             //bbl.ShowMessage("E101");
                             return  false;
                         }
