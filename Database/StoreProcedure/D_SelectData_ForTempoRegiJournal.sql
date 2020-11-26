@@ -793,8 +793,8 @@ BEGIN
       FROM (
             SELECT RegistDate                                                              -- ìoò^ì˙
                   ,SUM(OtherAmountReturns) OtherAmountReturns                              -- ëºåªã‡ ï‘ïi
-                  ,SUM(OtherAmountDiscount) OtherAmountDiscount                            -- ëºåªã‡ ílà¯
-                  ,SUM(OtherAmountCancel) OtherAmountCancel                                -- ëºåªã‡ ílà¯
+                  --,SUM(OtherAmountDiscount) OtherAmountDiscount                            -- ëºåªã‡ ílà¯
+                  ,SUM(OtherAmountCancel) OtherAmountCancel                                -- ëºåªã‡ éÊè¡
                   ,SUM(OtherAmountDelivery) OtherAmountDelivery                            -- ëºåªã‡ îzíB
               FROM (
                     SELECT history.DepositNO 
@@ -818,6 +818,22 @@ BEGIN
              GROUP BY D.RegistDate
            ) D16;
 
+    -- Åyê∏éZèàóùÅzÉèÅ[ÉNÉeÅ[ÉuÉãÇPÇU-ÇQçÏê¨
+    SELECT * 
+      INTO #Temp_D_DepositHistory162
+      FROM (
+            SELECT CONVERT(DATE, history.DepositDateTime) RegistDate                       -- ìoò^ì˙
+                  ,SUM(history.DepositGaku) OtherAmountDiscount                            -- ëºåªã‡ ílà¯                  
+              FROM #Temp_D_DepositHistory0 AS history
+              LEFT OUTER JOIN M_DenominationKBN AS M
+                ON M.DenominationCD = history.DenominationCD
+             WHERE history.DataKBN = 3
+               AND history.DepositKBN = 1
+               AND history.CancelKBN = 0
+               AND M.SystemKBN = 8
+             GROUP BY CONVERT(DATE, history.DepositDateTime)
+           ) D162;
+           
     -- Åyê∏éZèàóùÅzÉèÅ[ÉNÉeÅ[ÉuÉãÇPÇVçÏê¨
     SELECT * 
       INTO #Temp_D_DepositHistory17
@@ -1163,7 +1179,7 @@ BEGIN
                   ,tempHistory15.PaymentOffset                    -- ì¸ã‡éxï•åv éxï• ëäéE
                   ,tempHistory15.PaymentAdjustment                -- ì¸ã‡éxï•åv éxï• í≤êÆ
                   ,tempHistory16.OtherAmountReturns               -- ëºã‡äz ï‘ïi
-                  ,tempHistory16.OtherAmountDiscount              -- ëºã‡äz ílà¯
+                  ,tempHistory162.OtherAmountDiscount             -- ëºã‡äz ílà¯
                   ,tempHistory16.OtherAmountCancel                -- ëºã‡äz éÊè¡
                   ,tempHistory16.OtherAmountDelivery              -- ëºã‡äz îzíB
                   ,tempHistory7.ExchangeCount                     -- óºë÷âÒêî
@@ -1217,16 +1233,17 @@ BEGIN
                   ,tempHistory17.ByTimeZoneSalesNO_2300_2400      -- éûä‘ë—ï åèêî 23:00Å`24:00
                   ,tempHistory12.DiscountGaku                     -- ílà¯äz
               FROM #Temp_D_StoreCalculation1 AS storeCalculation
-              LEFT OUTER JOIN #Temp_D_DepositHistory7  AS tempHistory7  ON tempHistory7.RegistDate  = storeCalculation.CalculationDate
-              LEFT OUTER JOIN #Temp_D_DepositHistory9  AS tempHistory9  ON tempHistory9.RegistDate  = storeCalculation.CalculationDate
-              LEFT OUTER JOIN #Temp_D_DepositHistory10 AS tempHistory10 ON tempHistory10.RegistDate = storeCalculation.CalculationDate
-              LEFT OUTER JOIN #Temp_D_DepositHistory11 AS tempHistory11 ON tempHistory11.RegistDate = storeCalculation.CalculationDate
-              LEFT OUTER JOIN #Temp_D_DepositHistory12 AS tempHistory12 ON tempHistory12.RegistDate = storeCalculation.CalculationDate
-              LEFT OUTER JOIN #Temp_D_DepositHistory13 AS tempHistory13 ON tempHistory13.RegistDate = storeCalculation.CalculationDate
-              LEFT OUTER JOIN #Temp_D_DepositHistory14 AS tempHistory14 ON tempHistory14.RegistDate = storeCalculation.CalculationDate
-              LEFT OUTER JOIN #Temp_D_DepositHistory15 AS tempHistory15 ON tempHistory15.RegistDate = storeCalculation.CalculationDate
-              LEFT OUTER JOIN #Temp_D_DepositHistory16 AS tempHistory16 ON tempHistory16.RegistDate = storeCalculation.CalculationDate
-              LEFT OUTER JOIN #Temp_D_DepositHistory17 AS tempHistory17 ON tempHistory17.RegistDate = storeCalculation.CalculationDate
+              LEFT OUTER JOIN #Temp_D_DepositHistory7   AS tempHistory7    ON tempHistory7.RegistDate   = storeCalculation.CalculationDate
+              LEFT OUTER JOIN #Temp_D_DepositHistory9   AS tempHistory9    ON tempHistory9.RegistDate   = storeCalculation.CalculationDate
+              LEFT OUTER JOIN #Temp_D_DepositHistory10  AS tempHistory10   ON tempHistory10.RegistDate  = storeCalculation.CalculationDate
+              LEFT OUTER JOIN #Temp_D_DepositHistory11  AS tempHistory11   ON tempHistory11.RegistDate  = storeCalculation.CalculationDate
+              LEFT OUTER JOIN #Temp_D_DepositHistory12  AS tempHistory12   ON tempHistory12.RegistDate  = storeCalculation.CalculationDate
+              LEFT OUTER JOIN #Temp_D_DepositHistory13  AS tempHistory13   ON tempHistory13.RegistDate  = storeCalculation.CalculationDate
+              LEFT OUTER JOIN #Temp_D_DepositHistory14  AS tempHistory14   ON tempHistory14.RegistDate  = storeCalculation.CalculationDate
+              LEFT OUTER JOIN #Temp_D_DepositHistory15  AS tempHistory15   ON tempHistory15.RegistDate  = storeCalculation.CalculationDate
+              LEFT OUTER JOIN #Temp_D_DepositHistory16  AS tempHistory16   ON tempHistory16.RegistDate  = storeCalculation.CalculationDate
+              LEFT OUTER JOIN #Temp_D_DepositHistory162 AS tempHistory162  ON tempHistory162.RegistDate = storeCalculation.CalculationDate
+              LEFT OUTER JOIN #Temp_D_DepositHistory17  AS tempHistory17   ON tempHistory17.RegistDate  = storeCalculation.CalculationDate
            ) D8;
 
     -- ç≈èI
@@ -1718,6 +1735,7 @@ BEGIN
         DROP TABLE #Temp_D_DepositHistory14;
         DROP TABLE #Temp_D_DepositHistory15;
         DROP TABLE #Temp_D_DepositHistory16;
+        DROP TABLE #Temp_D_DepositHistory162;
         DROP TABLE #Temp_D_DepositHistory17;
 
 END
