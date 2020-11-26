@@ -203,6 +203,21 @@ namespace MainMenu
         }
         private void F11()
         {
+            //if (ApplicationDeployment.IsNetworkDeployed)
+            //{
+            //    var result = MessageBox.Show("Do you want to asynchronize AppData Files?", "Synchronous Update Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //    if (result == DialogResult.Yes)
+            //    {
+            //        this.Cursor = Cursors.WaitCursor;
+            //        FTPData ftp = new FTPData();
+            //        ftp.UpdateSyncData(Login_BL.SyncPath);
+            //        this.Cursor = Cursors.Default;
+            //        MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        // .. 
+            //    }
+            //    ckM_Button1.Focus();
+
+            //}
             if (ApplicationDeployment.IsNetworkDeployed)
             {
                 var result = MessageBox.Show("Do you want to asynchronize AppData Files?", "Synchronous Update Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -210,14 +225,24 @@ namespace MainMenu
                 {
                     this.Cursor = Cursors.WaitCursor;
                     FTPData ftp = new FTPData();
-                    ftp.UpdateSyncData(Login_BL.SyncPath);
-                    this.Cursor = Cursors.Default;
+                    try
+                    {
+                        ftp.UpdateSyncData(Login_BL.SyncPath);
+                    }
+                    catch (Exception ex)
+                    {
+                        //MessageBox.Show(ex.StackTrace.ToString());
+                        MessageBox.Show(ex.StackTrace.ToString() + ftp.GetError() + Environment.NewLine + Login_BL.SyncPath);
+                        this.Cursor = Cursors.Default;
+                        return;
+                    }
                     MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // .. 
-                }
-                ckM_Button1.Focus();
 
+
+                    this.Cursor = Cursors.Default;
+                }
             }
+            ckM_Button1.Focus();
         }
         private void Login_Click()
         {
