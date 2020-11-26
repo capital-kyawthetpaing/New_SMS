@@ -494,7 +494,7 @@ namespace Base.Client
         private L_Log_Entity lle;
         protected M_AuthorizationsDetails_Entity made;
         private M_Program_Entity mpe;
-        private string[] availableStores;
+        private string[] availableStores = null;
         private TextBox txt = null;
         private TextBox txt1 = null;
 
@@ -1768,6 +1768,10 @@ namespace Base.Client
         }
         protected string GetAllAvailableStores()
         {
+            if (availableStores == null)
+            {
+                return "";
+            }
             string ret = availableStores[0];
 
             for (int i = 1; i < availableStores.Length; i++)

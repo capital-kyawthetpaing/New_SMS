@@ -45,7 +45,7 @@ namespace MainMenu
         private bool CheckExistFormRunning()
         {
             Process[] localByName = Process.GetProcessesByName("MainMenu");
-            if (localByName.Count() > 0)
+            if (localByName.Count() > 1)
             {
                 MessageBox.Show("PLease close the running application before running the new instance one.");
                 return true;
@@ -149,22 +149,20 @@ namespace MainMenu
                     {
                         ftp.UpdateSyncData(Login_BL.SyncPath);
                     }
-                    catch(Exception ex) {
-                        MessageBox.Show(ex.StackTrace.ToString());
+                    catch (Exception ex)
+                    {
+                        //MessageBox.Show(ex.StackTrace.ToString());
+                        MessageBox.Show(ex.StackTrace.ToString() + ftp.GetError() + Environment.NewLine + Login_BL.SyncPath);
+                        this.Cursor = Cursors.Default;
+                        return;
                     }
-                    //MainMenu.ProgressBar pgb = new ProgressBar(Login_BL.SyncPath);
-                    //pgb.ShowDialog();
-
                     MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
                     this.Cursor = Cursors.Default;
-
-
-
-                  
-                    // .. 
                 }
-                ckM_Button1.Focus();
             }
+            ckM_Button1.Focus();
         }
         private void ckM_Button2_Click(object sender, EventArgs e)
         {

@@ -35,7 +35,6 @@ namespace MainMenu
             if (ApplicationDeployment.IsNetworkDeployed)
             {
                 label2.Text = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(4);
-
             }
             else
                 ckM_Button3.Visible = false;
