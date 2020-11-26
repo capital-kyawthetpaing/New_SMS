@@ -2795,22 +2795,23 @@ namespace MasterTouroku_TenzikaiShouhin
         }
         private bool ExcelErrorCheck(DataTable dt)
         {
-            int w_Row;
-            
-            DataTable dtrest = GetGridData();
-
-            for (int i=0; i < dt.Rows.Count ;i++)   // Meisai Dt
+            try
             {
+                int w_Row;
+                DataTable dtrest = GetGridData();
 
-                if (dt.Rows[i][0] != DBNull.Value)
+                for (int i = 0; i < dt.Rows.Count; i++)   // Meisai Dt
                 {
-                    
-                     int  row = i+1;
-                    string BrndCD = dt.Rows[i]["ブランドCD"].ToString();
+
+                    if (dt.Rows[i][0] != DBNull.Value)
+                    {
+
+                        int row = i + 1;
+                        string BrndCD = dt.Rows[i]["ブランドCD"].ToString();
                         var dtB = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 11, dt.Rows[i]["ブランドCD"].ToString(), null);
                         if (dtB.Rows.Count == 0)
                         {
-                            bl.ShowMessage("E269",row.ToString(), "ブランドCD未登録エラー");
+                            bl.ShowMessage("E269", row.ToString(), "ブランドCD未登録エラー");
 
                             return false;
                         }
@@ -2827,19 +2828,16 @@ namespace MasterTouroku_TenzikaiShouhin
                             bl.ShowMessage("E269", row.ToString(), "単位CD未登録エラー");
                             return false;
                         }
-                       // var dtJan = bbl.SimpleSelect1("66", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), dr["JANCD"].ToString());
-                        //if (dtJan.Rows.Count == 0)
-                        //{
-                            //bl.ShowMessage("E101");
-                            //return false;
-                       // }
-                        // Item Check
+                        if (Convert.ToInt64(dt.Rows[i]["販売予定日(月)"]) >= 13 || Convert.ToInt64(dt.Rows[i]["販売予定日(月)"]) <= 0)
+                        {
+                            bbl.ShowMessage("E269", row.ToString(), "１から１２までの値を入力してください");
+                            return false;
+                        }
+
                         string dae = dt.Rows[i]["販売予定日"].ToString();
-
-
                         if (!(dt.Rows[i]["販売予定日"].ToString() == "上旬" || dt.Rows[i]["販売予定日"].ToString() == "中旬" || dt.Rows[i]["販売予定日"].ToString() == "下旬"))
                         {
-                           
+
                             bl.ShowMessage("E269", row.ToString(), "販売予定日の指定外の情報");
                             return false;
                         }
@@ -2848,7 +2846,7 @@ namespace MasterTouroku_TenzikaiShouhin
                         {
                             bl.ShowMessage("E269", row.ToString(), "税率区分の指定外の情報");
                             //bbl.ShowMessage("E101");
-                            return  false;
+                            return false;
                         }
 
                         var jandupli = dt.AsEnumerable()
@@ -2874,44 +2872,46 @@ namespace MasterTouroku_TenzikaiShouhin
                             bbl.ShowMessage("E269", row.ToString(), "重複したSKUCD");
                             return false;
                         }
-                        if(dtrest.Rows.Count >0)
-                        { 
-                        for (w_Row = 0; w_Row <= dtrest.Rows.Count; w_Row++)
+                        if (dtrest.Rows.Count > 0)
                         {
+                            for (w_Row = 0; w_Row <= dtrest.Rows.Count; w_Row++)
+                            {
 
-                            if (mGrid.g_DArray[w_Row].JANCD == dt.Rows[i]["JANCD"].ToString())
-                            {
-                                bbl.ShowMessage("E269", w_Row.ToString(), "明細部と重複したJANCD");
-                                return false;
-                            }
-                            if (mGrid.g_DArray[w_Row].SKUCD == dt.Rows[i]["SKUCD"].ToString())
-                            {
-                                //bl.ShowMessage("E105");
-                                bbl.ShowMessage("E269", w_Row.ToString(), "明細部と重複したSKUCD");
-                                return false;
+                                if (mGrid.g_DArray[w_Row].JANCD == dt.Rows[i]["JANCD"].ToString())
+                                {
+                                    bbl.ShowMessage("E269", w_Row.ToString(), "明細部と重複したJANCD");
+                                    return false;
+                                }
+                                if (mGrid.g_DArray[w_Row].SKUCD == dt.Rows[i]["SKUCD"].ToString())
+                                {
+                                    //bl.ShowMessage("E105");
+                                    bbl.ShowMessage("E269", w_Row.ToString(), "明細部と重複したSKUCD");
+                                    return false;
+                                }
                             }
                         }
+
+
+
+
+                        //int count = editvalue.Count(f => f == '.');
+                        //string charre = editvalue.Remove(inde, count);
+                        //var isNumeric = int.TryParse(charre, out int n);
+                        //if (isNumeric)
+                        //{
+                        //    if (count != 1 || inde >= 4)
+                        //    {
+                        //    }
+                        //}
                     }
-                        
 
-                   
-
-                    //int count = editvalue.Count(f => f == '.');
-                    //string charre = editvalue.Remove(inde, count);
-                    //var isNumeric = int.TryParse(charre, out int n);
-                    //if (isNumeric)
-                    //{
-                    //    if (count != 1 || inde >= 4)
-                    //    {
-                    //    }
-                    //}
                 }
-
+                return true;
             }
-            return true;
+            catch {
+                return false;
+            }
         }
-
-       
         private void SetTenjiGrid(DataTable dt, bool IsShow = false)
         {
             SetMultiColNo(dt);
