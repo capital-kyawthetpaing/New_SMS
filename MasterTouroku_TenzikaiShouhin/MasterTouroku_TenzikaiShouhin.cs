@@ -2823,20 +2823,12 @@ namespace MasterTouroku_TenzikaiShouhin
             
             DataTable dtrest = GetGridData();
 
-            for (int i=0; i < dt.Rows.Count -1;i++)   // Meisai Dt
+            for (int i=0; i < dt.Rows.Count ;i++)   // Meisai Dt
             {
 
-                if (dt.Rows[0][0] != DBNull.Value)
+                if (dt.Rows[i][0] != DBNull.Value)
                 {
-                    ///for (w_Row = 0; w_Row <= dtrest.Rows.Count; w_Row++)
-                    // {
-                    //if (mGrid.g_DArray[w_Row].JANCD == dr["JANCD"].ToString())
-                    //{
-
-                    //    bl.ShowMessage("E226");
-                    //    return;
-                    //}
-                    // Meisai MasterCheck
+                    
                         int  row = i;
                     string BrndCD = dt.Rows[i]["ブランドCD"].ToString();
                         var dtB = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 11, dt.Rows[i]["ブランドCD"].ToString(), null);
