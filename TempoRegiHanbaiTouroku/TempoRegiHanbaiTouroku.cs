@@ -412,6 +412,8 @@ namespace TempoRegiHanbaiTouroku
                     lblCusName.Text = "";
                 }
                 lblPoint.Text = bbl.Z_SetStr(mce.LastPoint);
+                if (mce.CustomerKBN.Equals("2"))
+                    lblPoint.Text = "";
                 mCustomerDate = mce.ChangeDate;
 
                 switch (mce.StoreTankaKBN)
@@ -935,6 +937,8 @@ namespace TempoRegiHanbaiTouroku
                     {
                         lblCusName.Text = mce.CustomerName;
                         lblPoint.Text = bbl.Z_SetStr(mce.LastPoint);
+                        if (mce.CustomerKBN.Equals("2"))
+                            lblPoint.Text = "";
                         mCustomerDate = mce.ChangeDate;
 
                         switch (mce.StoreTankaKBN)
