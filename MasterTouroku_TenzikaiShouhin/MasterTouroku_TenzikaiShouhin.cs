@@ -2427,7 +2427,6 @@ namespace MasterTouroku_TenzikaiShouhin
                         else
                         {
                             //((Control)sender).Focus();
-
                         }
                     }
                 }
@@ -2508,7 +2507,6 @@ namespace MasterTouroku_TenzikaiShouhin
                         {
                             bl.ShowMessage("E101");
                             return false;
-
                         }
                     }
                         break;
@@ -3864,6 +3862,10 @@ namespace MasterTouroku_TenzikaiShouhin
                     return;
                 }
                 DataTable dtExcel = new DataTable();
+                if(dtExcel != null)
+                {
+                    dtExcel.Clear();
+                }
                 dtExcel = ReadExcel(filePath, fileExt);
 
                 string[] colname = { "SKUCD", "JANCD", "商品名", "カラーNO", "カラー名", "サイズNO", "サイズ名", "販売予定日(月)", "販売予定日", "仕入単価", "標準売上単価", "ランク１単価", "ランク２単価", "ランク３単価", "ランク４単価", "ランク５単価", "ブランドCD", "セグメントCD", "単位CD", "税率区分", "備考" };
