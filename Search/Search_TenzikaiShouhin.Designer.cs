@@ -75,6 +75,8 @@
             this.biko = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.insertdatetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedatetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Season = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_TZshouhin)).BeginInit();
@@ -498,7 +500,9 @@
             this.size,
             this.biko,
             this.insertdatetime,
-            this.updatedatetime});
+            this.updatedatetime,
+            this.Year,
+            this.Season});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -855,6 +859,20 @@
             this.updatedatetime.ReadOnly = true;
             this.updatedatetime.Width = 80;
             // 
+            // Year
+            // 
+            this.Year.DataPropertyName = "LastYearTerm";
+            this.Year.HeaderText = "Year";
+            this.Year.Name = "Year";
+            this.Year.Visible = false;
+            // 
+            // Season
+            // 
+            this.Season.DataPropertyName = "LastSeason";
+            this.Season.HeaderText = "Season";
+            this.Season.Name = "Season";
+            this.Season.Visible = false;
+            // 
             // Search_TenzikaiShouhin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -920,5 +938,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn biko;
         private System.Windows.Forms.DataGridViewTextBoxColumn insertdatetime;
         private System.Windows.Forms.DataGridViewTextBoxColumn updatedatetime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Year;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Season;
     }
 }
