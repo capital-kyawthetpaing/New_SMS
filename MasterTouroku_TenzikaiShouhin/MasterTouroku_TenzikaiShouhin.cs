@@ -15,6 +15,7 @@ using CKM_Controls;
 using Search;
 using Entity;
 using GridControl;
+using ExcelDataReader;
 
 namespace MasterTouroku_TenzikaiShouhin
 {
@@ -2857,11 +2858,17 @@ namespace MasterTouroku_TenzikaiShouhin
                             return false;
                         }
 
+                        //var jandupli = dt.AsEnumerable()
+                        //                .GroupBy(x => x["JANCD"])
+                        //                .Where(g => g.Count() > 1)
+                        //                .Select(g => g.First())
+                        //                .ToList();
                         var jandupli = dt.AsEnumerable()
-                                        .GroupBy(x => x["JANCD"])
-                                        .Where(g => g.Count() > 1)
-                                        .Select(g => g.First())
-                                        .ToList();
+                   .Select(dr => dr.Field<string>("JANCD"))
+                   .GroupBy(x => x)
+                   .Where(g => g.Count() > 1)
+                   .Select(g => g.Key)
+                   .ToList();
                         if (jandupli.Count() != 0)
                         {
                             //bl.ShowMessage("E105");
@@ -3818,8 +3825,7 @@ namespace MasterTouroku_TenzikaiShouhin
         {
             string conn = string.Empty;
             DataTable dtexcel = new DataTable();
-            //Provider = Microsoft.ACE.OLEDB.12.0; Data Source = c:\myFolder\myExcel2007file.xlsx;
-            //Extended Properties = "Excel 12.0 Xml;HDR=YES;IMEX=1";
+           
             if (fileExt.CompareTo(".xls") == 0)
                 conn = @"provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + fileName + ";Extended Properties='Excel 8.0;HRD=Yes;IMEX=1';"; //for below excel 2007  
             else
@@ -3828,16 +3834,53 @@ namespace MasterTouroku_TenzikaiShouhin
             {
                 try
                 {
-                    //sheet.Cells.NumberFormat = "@";
+                   
                     OleDbDataAdapter oleAdpt = new OleDbDataAdapter("select * from [Sheet1$]", con); //here we read data from sheet1  
                     oleAdpt.Fill(dtexcel); //fill excel data into dataTable  
                 }
                 catch (Exception ex)
                 {
-                   // MessageBox.Show(ex.Message);
+                   
                 }
             }
             return dtexcel;
+        }
+        protected DataTable ExcelToDatatable(string filePath)
+        {
+            try { 
+            FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read);
+
+            string ext = Path.GetExtension(filePath);
+            IExcelDataReader excelReader;
+            if (ext.Equals(".xls"))
+                //1. Reading from a binary Excel file ('97-2003 format; *.xls)
+                excelReader = ExcelReaderFactory.CreateBinaryReader(stream);
+            else if (ext.Equals(".xlsx"))
+                //2. Reading from a OpenXml Excel file (2007 format; *.xlsx)
+                excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
+            else
+                //2. Reading from a OpenXml Excel file (2007 format; *.xlsx) 
+                excelReader = ExcelReaderFactory.CreateCsvReader(stream, null);
+
+            //3. DataSet - The result of each spreadsheet will be created in the result.Tables
+            bool useHeaderRow = true;
+
+            DataSet result = excelReader.AsDataSet(new ExcelDataSetConfiguration()
+            {
+                ConfigureDataTable = (_) => new ExcelDataTableConfiguration()
+                {
+                    UseHeaderRow = useHeaderRow,
+                }
+            });
+            excelReader.Close();
+            return result.Tables[0];
+        }
+        catch
+        {
+                bbl.ShowMessage("E137");
+                return null;
+        }
+
         }
         private void BT_meisai_Click(object sender, EventArgs e)
         {
@@ -3866,26 +3909,31 @@ namespace MasterTouroku_TenzikaiShouhin
                 {
                     dtExcel.Clear();
                 }
-                dtExcel = ReadExcel(filePath, fileExt);
-
-                string[] colname = { "SKUCD", "JANCD", "商品名", "カラーNO", "カラー名", "サイズNO", "サイズ名", "販売予定日(月)", "販売予定日", "仕入単価", "標準売上単価", "ランク１単価", "ランク２単価", "ランク３単価", "ランク４単価", "ランク５単価", "ブランドCD", "セグメントCD", "単位CD", "税率区分", "備考" };
-                if (ColumnCheck(colname, dtExcel))
-                { 
-                    if( ExcelErrorCheck(dtExcel) )
-                    {
-                        MesaiHyouJi(dtExcel);
-                        S_BodySeigyo(1, 0);
-                        S_BodySeigyo(0, 1);
-                        S_BodySeigyo(1, 1);
-                        mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
-                        S_BodySeigyo(4, 0);
-                        scjan_1.Focus();
-                    }
-                }
-                else
+                //dtExcel = ReadExcel(filePath, fileExt);
+                dtExcel = ExcelToDatatable(filePath);
+                if(dtExcel != null)
                 {
-                    tbl.ShowMessage("E137");
+                    string[] colname = { "SKUCD", "JANCD", "商品名", "カラーNO", "カラー名", "サイズNO", "サイズ名", "販売予定日(月)", "販売予定日", "仕入単価", "標準売上単価", "ランク１単価", "ランク２単価", "ランク３単価", "ランク４単価", "ランク５単価", "ブランドCD", "セグメントCD", "単位CD", "税率区分", "備考" };
+                    if (ColumnCheck(colname, dtExcel))
+                    {
+                        if (ExcelErrorCheck(dtExcel))
+                        {
+                            MesaiHyouJi(dtExcel);
+                            S_BodySeigyo(1, 0);
+                            S_BodySeigyo(0, 1);
+                            S_BodySeigyo(1, 1);
+                            mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
+                            S_BodySeigyo(4, 0);
+                            scjan_1.Focus();
+                        }
+                    }
+                    else
+                    {
+                        tbl.ShowMessage("E137");
+                    }
+
                 }
+                
             }
             checkmei = false;
         }
@@ -3901,8 +3949,6 @@ namespace MasterTouroku_TenzikaiShouhin
             }
             return true;
         }
-
-
         private void FlgChange(int w_Row, bool Flg)
         {
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.HanbaiYoteiDateMonth, w_Row].Cell_Enabled = Flg;
@@ -3921,68 +3967,6 @@ namespace MasterTouroku_TenzikaiShouhin
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TaniCD, w_Row].Cell_Enabled = Flg;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TaxRateFlg, w_Row].Cell_Enabled = Flg;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Remark, w_Row].Cell_Enabled = Flg;
-        }
-        private DataTable ConvertToDataTable(string FileName)
-        {
-            OleDbConnection oledbConn = null;
-            DataTable res = null;
-
-            try
-
-            {
-
-                string path = System.IO.Path.GetFullPath(FileName);
-
-                oledbConn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + path + ";Extended Properties='Excel 12.0;HDR=YES;IMEX=1;';");
-
-                oledbConn.Open();
-
-                OleDbCommand cmd = new OleDbCommand(); ;
-
-                OleDbDataAdapter oleda = new OleDbDataAdapter();
-
-                DataSet ds = new DataSet();
-
-                DataTable dt = oledbConn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
-                string sheetName = string.Empty;
-                if (dt != null)
-                {
-                    sheetName = dt.Rows[0]["TABLE_NAME"].ToString();
-                }
-                cmd.Connection = oledbConn;
-
-                cmd.CommandType = CommandType.Text;
-
-                cmd.CommandText = "SELECT * FROM [" + sheetName + "]";
-
-                oleda = new OleDbDataAdapter(cmd);
-
-                oleda.Fill(ds, "excelData");
-
-                res = ds.Tables["excelData"];
-            }
-
-            catch (Exception ex)
-            {
-                bbl.ShowMessage("E137");
-                return null;
-            }
-            oledbConn.Close();
-            //res.Columns[res.Columns.Count - 2].ColumnName = "希望日1";
-            //res.Columns[res.Columns.Count - 1].ColumnName = "希望日2";
-            foreach (DataColumn c in res.Columns)
-            {
-                c.ColumnName = c.ColumnName.Trim();
-            }
-
-            if (res.Rows.Count == 0)
-            {
-                MessageBox.Show("No Data Exist");
-                return null;
-            }
-
-            return res;
-
         }
         private void Vsb_Mei_0_ValueChanged(object sender, System.EventArgs e)
         {
@@ -4231,7 +4215,6 @@ namespace MasterTouroku_TenzikaiShouhin
         }
         private void RemoveVal(int w_Row)
         {
-
             // mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.TB, w_Row].Cell_Color = GridBase.ClsGridBase.CheckColor;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.Chk, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
             mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.JANCD, w_Row].Cell_Color = GridBase.ClsGridBase.WHColor;
