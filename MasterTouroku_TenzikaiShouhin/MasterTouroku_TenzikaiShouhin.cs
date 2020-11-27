@@ -1860,6 +1860,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                 return false;
                         }
                 }
+               
 
                 switch (col)
                 {
@@ -2857,21 +2858,15 @@ namespace MasterTouroku_TenzikaiShouhin
                             //bbl.ShowMessage("E101");
                             return false;
                         }
-
-                        //var jandupli = dt.AsEnumerable()
-                        //                .GroupBy(x => x["JANCD"])
-                        //                .Where(g => g.Count() > 1)
-                        //                .Select(g => g.First())
-                        //                .ToList();
                         var jandupli = dt.AsEnumerable()
-                   .Select(dr => dr.Field<string>("JANCD"))
-                   .GroupBy(x => x)
-                   .Where(g => g.Count() > 1)
-                   .Select(g => g.Key)
-                   .ToList();
+                             .Select(dr => dr.Field<string>("JANCD"))
+                             .GroupBy(x => x)
+                             .Where(g => g.Count() > 1)
+                             .Select(g => g.Key)
+                             .ToList();
                         if (jandupli.Count() != 0)
                         {
-                            //bl.ShowMessage("E105");
+                            
                             bbl.ShowMessage("E269", row.ToString(), "重複したJANCD");
                             return false;
                         }
@@ -2951,9 +2946,16 @@ namespace MasterTouroku_TenzikaiShouhin
                 {
                     S_Clear_Grid();
                     int c = 0;
+                    
                     foreach (DataRow dr in dt.Rows)
                     {
                         mGrid.g_DArray[c].JANCD = mGrid.g_DArray[c].Jancdold = dr["JANCD"].ToString();
+                        DataTable dtjan1 = bbl.SimpleSelect1("66", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), mGrid.g_DArray[c].JANCD);
+                        if (dtjan1.Rows.Count == 0)
+                        {
+                            // Grid_Gyo_Clr(row);
+                            EnableCell_JanPro(c, c);
+                        }
                         // jancdold = dr["JANCD"].ToString();
                         mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
                         mGrid.g_DArray[c].SKUName = dr["商品名"].ToString();
@@ -2977,7 +2979,6 @@ namespace MasterTouroku_TenzikaiShouhin
                         mGrid.g_DArray[c].TaxRateFlg = dr["税率区分"].ToString();//
                         mGrid.g_DArray[c].Remark = dr["備考"].ToString();//
                         mGrid.g_DArray[c].ExhibitionCommonCD = dr["ExhibitionCommonCD"].ToString();
-
                         c++;
                     }
                 }
@@ -3021,7 +3022,13 @@ namespace MasterTouroku_TenzikaiShouhin
                         if (dr[0] != DBNull.Value)
                             {
                                 mGrid.g_DArray[c].JANCD = mGrid.g_DArray[c].Jancdold = dr["JANCD"].ToString();
-                                mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
+                            DataTable dtjan1 = bbl.SimpleSelect1("66", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), mGrid.g_DArray[c].JANCD);
+                            if (dtjan1.Rows.Count == 0)
+                            {
+                                // Grid_Gyo_Clr(row);
+                                EnableCell_JanPro(c, c);
+                            }
+                            mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
                                 mGrid.g_DArray[c].SKUName = dr["商品名"].ToString();
                                 mGrid.g_DArray[c].ColorCD = dr["カラーNO"].ToString();
                                 mGrid.g_DArray[c].ColorName = dr["カラー名"].ToString();
@@ -3709,8 +3716,8 @@ namespace MasterTouroku_TenzikaiShouhin
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0, w_CtlRow, w_CtlRow);
 
 
-            if (pCol == (int)ClsGridMasterTanzi.ColNO.JANCD)
-            {
+           // if (pCol == (int)ClsGridMasterTanzi.ColNO.JANCD)
+           // {
                 if (string.IsNullOrWhiteSpace(mGrid.g_DArray[pRow].JANCD))
                 {
                     for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
@@ -3782,7 +3789,7 @@ namespace MasterTouroku_TenzikaiShouhin
                     }
                     w_AllFlg = false;
                 }
-            }
+           // }
         }
         private void CellDisable(int pCol, int pRow)
         {
