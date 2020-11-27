@@ -557,9 +557,9 @@ namespace MasterTouroku_TenzikaiShouhin
         private DataTable GetGridData()
         {
             var dtrest = new DataTable();
-            var dt = new DataTable();
+            //var dt = new DataTable();
             Col(dtrest);
-            ColTan(dt);
+           // ColTan(dt);
             try
             {
                 for (int w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
@@ -602,163 +602,165 @@ namespace MasterTouroku_TenzikaiShouhin
             {
                 var emsg = ex.StackTrace;
             }
-            foreach (DataRow r in dtrest.Rows)
-            {
-                var row = r;
-                if (!row.IsNull(1))
-                {
-                    if (!String.IsNullOrEmpty(row["SalePriceOutTax"].ToString()))
-                    {
-                        dt.Rows.Add(
-                        "0",
-                        r["JanCD"].ToString(),
-                        r["SKUCD"].ToString(),
-                        r["SKUName"].ToString(),
-                        r["ColorCD"].ToString(),
-                        r["ColorName"].ToString(),
-                        r["SizeCD"].ToString(),
-                        r["SizeName"].ToString(),
-                        r["HanbaiDateMonth"].ToString(),
-                        r["HanbaiDate"].ToString(),
-                        r["Shiiretanka"].ToString(),
-                        r["JoudaiTanka"].ToString(),
-                        r["SalePriceOutTax"].ToString(),
-                        r["BrandCD"].ToString(),
-                        r["ExhibitionSegmentCD"].ToString(),
-                        r["TaniCD"].ToString(),
-                        r["TaxRateFlg"].ToString(),
-                        r["Remark"].ToString(),
-                        r["ExhibitioinCommonCD"].ToString()
-                        );
-                    }
-                    if (!String.IsNullOrEmpty(row["Rank1"].ToString()))
-                    {
-                        dt.Rows.Add(
-                         "1",
-                        r["JANCD"].ToString(),
-                        r["SKUCD"].ToString(),
-                        r["SKUName"].ToString(),
-                        r["ColorCD"].ToString(),
-                        r["ColorName"].ToString(),
-                        r["SizeCD"].ToString(),
-                        r["SizeName"].ToString(),
-                        r["HanbaiDateMonth"].ToString(),
-                        r["HanbaiDate"].ToString(),
-                        r["Shiiretanka"].ToString(),
-                        r["JoudaiTanka"].ToString(),
-                        r["Rank1"].ToString(),
-                        r["BrandCD"].ToString(),
-                        r["ExhibitionSegmentCD"].ToString(),
-                        r["TaniCD"].ToString(),
-                        r["TaxRateFlg"].ToString(),
-                        r["Remark"].ToString(),
-                        r["ExhibitioinCommonCD"].ToString()
+
+            return dtrest;
+            //foreach (DataRow r in dtrest.Rows)
+            //{
+            //    var row = r;
+            //    if (!row.IsNull(1))
+            //    {
+            //        if (!String.IsNullOrEmpty(row["SalePriceOutTax"].ToString()))
+            //        {
+            //            dt.Rows.Add(
+            //            "0",
+            //            r["JanCD"].ToString(),
+            //            r["SKUCD"].ToString(),
+            //            r["SKUName"].ToString(),
+            //            r["ColorCD"].ToString(),
+            //            r["ColorName"].ToString(),
+            //            r["SizeCD"].ToString(),
+            //            r["SizeName"].ToString(),
+            //            r["HanbaiDateMonth"].ToString(),
+            //            r["HanbaiDate"].ToString(),
+            //            r["Shiiretanka"].ToString(),
+            //            r["JoudaiTanka"].ToString(),
+            //            r["SalePriceOutTax"].ToString(),
+            //            r["BrandCD"].ToString(),
+            //            r["ExhibitionSegmentCD"].ToString(),
+            //            r["TaniCD"].ToString(),
+            //            r["TaxRateFlg"].ToString(),
+            //            r["Remark"].ToString(),
+            //            r["ExhibitioinCommonCD"].ToString()
+            //            );
+            //        }
+            //        if (!String.IsNullOrEmpty(row["Rank1"].ToString()))
+            //        {
+            //            dt.Rows.Add(
+            //             "1",
+            //            r["JANCD"].ToString(),
+            //            r["SKUCD"].ToString(),
+            //            r["SKUName"].ToString(),
+            //            r["ColorCD"].ToString(),
+            //            r["ColorName"].ToString(),
+            //            r["SizeCD"].ToString(),
+            //            r["SizeName"].ToString(),
+            //            r["HanbaiDateMonth"].ToString(),
+            //            r["HanbaiDate"].ToString(),
+            //            r["Shiiretanka"].ToString(),
+            //            r["JoudaiTanka"].ToString(),
+            //            r["Rank1"].ToString(),
+            //            r["BrandCD"].ToString(),
+            //            r["ExhibitionSegmentCD"].ToString(),
+            //            r["TaniCD"].ToString(),
+            //            r["TaxRateFlg"].ToString(),
+            //            r["Remark"].ToString(),
+            //            r["ExhibitioinCommonCD"].ToString()
                        
-                        );
-                    }
-                    if (!String.IsNullOrEmpty(row["Rank2"].ToString()))
-                    {
-                        dt.Rows.Add(
-                       "2",
-                        r["JANCD"].ToString(),
-                        r["SKUCD"].ToString(),
-                        r["SKUName"].ToString(),
-                        r["ColorCD"].ToString(),
-                        r["ColorName"].ToString(),
-                        r["SizeCD"].ToString(),
-                        r["SizeName"].ToString(),
-                        r["HanbaiDateMonth"].ToString(),
-                        r["HanbaiDate"].ToString(),
-                        r["Shiiretanka"].ToString(),
-                        r["JoudaiTanka"].ToString(),
-                        r["Rank2"].ToString(),
-                        r["BrandCD"].ToString(),
-                        r["ExhibitionSegmentCD"].ToString(),
-                        r["TaniCD"].ToString(),
-                        r["TaxRateFlg"].ToString(),
-                        r["Remark"].ToString(),
-                        r["ExhibitioinCommonCD"].ToString()
-                        );
-                    }
-                    if (!String.IsNullOrEmpty(row["Rank3"].ToString()))
-                    {
-                        dt.Rows.Add(
-                        "3",
-                        r["JANCD"].ToString(),
-                        r["SKUCD"].ToString(),
-                        r["SKUName"].ToString(),
-                        r["ColorCD"].ToString(),
-                        r["ColorName"].ToString(),
-                        r["SizeCD"].ToString(),
-                        r["SizeName"].ToString(),
-                        r["HanbaiDateMonth"].ToString(),
-                        r["HanbaiDate"].ToString(),
-                        r["Shiiretanka"].ToString(),
-                        r["JoudaiTanka"].ToString(),
-                        r["Rank3"].ToString(),
-                        r["BrandCD"].ToString(),
-                        r["ExhibitionSegmentCD"].ToString(),
-                        r["TaniCD"].ToString(),
-                        r["TaxRateFlg"].ToString(),
-                        r["Remark"].ToString(),
-                        r["ExhibitioinCommonCD"].ToString()
-                        );
-                    }
-                    if (!String.IsNullOrEmpty(row["Rank4"].ToString()))
-                    {
-                        dt.Rows.Add(
-                         "4",
-                         r["JANCD"].ToString(),
-                         r["SKUCD"].ToString(),
-                         r["SKUName"].ToString(),
-                         r["ColorCD"].ToString(),
-                         r["ColorName"].ToString(),
-                         r["SizeCD"].ToString(),
-                         r["SizeName"].ToString(),
-                         r["HanbaiDateMonth"].ToString(),
-                         r["HanbaiDate"].ToString(),
-                         r["Shiiretanka"].ToString(),
-                         r["JoudaiTanka"].ToString(),
-                         r["Rank4"].ToString(),
-                         r["BrandCD"].ToString(),
-                         r["ExhibitionSegmentCD"].ToString(),
-                         r["TaniCD"].ToString(),
-                         r["TaxRateFlg"].ToString(),
-                         r["Remark"].ToString(),
-                         r["ExhibitioinCommonCD"].ToString()
-                         );
-                    }
-                    if (!String.IsNullOrEmpty(row["Rank5"].ToString()))
-                    {
-                        dt.Rows.Add(
-                         "5",
-                        r["JANCD"].ToString(),
-                        r["SKUCD"].ToString(),
-                        r["SKUName"].ToString(),
-                        r["ColorCD"].ToString(),
-                        r["ColorName"].ToString(),
-                        r["SizeCD"].ToString(),
-                        r["SizeName"].ToString(),
-                        r["HanbaiDateMonth"].ToString(),
-                        r["HanbaiDate"].ToString(),
-                        r["Shiiretanka"].ToString(),
-                        r["JoudaiTanka"].ToString(),
-                        r["Rank5"].ToString(),
-                        r["BrandCD"].ToString(),
-                        r["ExhibitionSegmentCD"].ToString(),
-                        r["TaniCD"].ToString(),
-                        r["TaxRateFlg"].ToString(),
-                        r["Remark"].ToString(),
-                        r["ExhibitioinCommonCD"].ToString()
+            //            );
+            //        }
+            //        if (!String.IsNullOrEmpty(row["Rank2"].ToString()))
+            //        {
+            //            dt.Rows.Add(
+            //           "2",
+            //            r["JANCD"].ToString(),
+            //            r["SKUCD"].ToString(),
+            //            r["SKUName"].ToString(),
+            //            r["ColorCD"].ToString(),
+            //            r["ColorName"].ToString(),
+            //            r["SizeCD"].ToString(),
+            //            r["SizeName"].ToString(),
+            //            r["HanbaiDateMonth"].ToString(),
+            //            r["HanbaiDate"].ToString(),
+            //            r["Shiiretanka"].ToString(),
+            //            r["JoudaiTanka"].ToString(),
+            //            r["Rank2"].ToString(),
+            //            r["BrandCD"].ToString(),
+            //            r["ExhibitionSegmentCD"].ToString(),
+            //            r["TaniCD"].ToString(),
+            //            r["TaxRateFlg"].ToString(),
+            //            r["Remark"].ToString(),
+            //            r["ExhibitioinCommonCD"].ToString()
+            //            );
+            //        }
+            //        if (!String.IsNullOrEmpty(row["Rank3"].ToString()))
+            //        {
+            //            dt.Rows.Add(
+            //            "3",
+            //            r["JANCD"].ToString(),
+            //            r["SKUCD"].ToString(),
+            //            r["SKUName"].ToString(),
+            //            r["ColorCD"].ToString(),
+            //            r["ColorName"].ToString(),
+            //            r["SizeCD"].ToString(),
+            //            r["SizeName"].ToString(),
+            //            r["HanbaiDateMonth"].ToString(),
+            //            r["HanbaiDate"].ToString(),
+            //            r["Shiiretanka"].ToString(),
+            //            r["JoudaiTanka"].ToString(),
+            //            r["Rank3"].ToString(),
+            //            r["BrandCD"].ToString(),
+            //            r["ExhibitionSegmentCD"].ToString(),
+            //            r["TaniCD"].ToString(),
+            //            r["TaxRateFlg"].ToString(),
+            //            r["Remark"].ToString(),
+            //            r["ExhibitioinCommonCD"].ToString()
+            //            );
+            //        }
+            //        if (!String.IsNullOrEmpty(row["Rank4"].ToString()))
+            //        {
+            //            dt.Rows.Add(
+            //             "4",
+            //             r["JANCD"].ToString(),
+            //             r["SKUCD"].ToString(),
+            //             r["SKUName"].ToString(),
+            //             r["ColorCD"].ToString(),
+            //             r["ColorName"].ToString(),
+            //             r["SizeCD"].ToString(),
+            //             r["SizeName"].ToString(),
+            //             r["HanbaiDateMonth"].ToString(),
+            //             r["HanbaiDate"].ToString(),
+            //             r["Shiiretanka"].ToString(),
+            //             r["JoudaiTanka"].ToString(),
+            //             r["Rank4"].ToString(),
+            //             r["BrandCD"].ToString(),
+            //             r["ExhibitionSegmentCD"].ToString(),
+            //             r["TaniCD"].ToString(),
+            //             r["TaxRateFlg"].ToString(),
+            //             r["Remark"].ToString(),
+            //             r["ExhibitioinCommonCD"].ToString()
+            //             );
+            //        }
+            //        if (!String.IsNullOrEmpty(row["Rank5"].ToString()))
+            //        {
+            //            dt.Rows.Add(
+            //             "5",
+            //            r["JANCD"].ToString(),
+            //            r["SKUCD"].ToString(),
+            //            r["SKUName"].ToString(),
+            //            r["ColorCD"].ToString(),
+            //            r["ColorName"].ToString(),
+            //            r["SizeCD"].ToString(),
+            //            r["SizeName"].ToString(),
+            //            r["HanbaiDateMonth"].ToString(),
+            //            r["HanbaiDate"].ToString(),
+            //            r["Shiiretanka"].ToString(),
+            //            r["JoudaiTanka"].ToString(),
+            //            r["Rank5"].ToString(),
+            //            r["BrandCD"].ToString(),
+            //            r["ExhibitionSegmentCD"].ToString(),
+            //            r["TaniCD"].ToString(),
+            //            r["TaxRateFlg"].ToString(),
+            //            r["Remark"].ToString(),
+            //            r["ExhibitioinCommonCD"].ToString()
                        
-                        );
-                    }
+            //            );
+            //        }
                     
-                }
-                else
-                    break;
-            }
-            return dt;
+            //    }
+            //    else
+            //        break;
+            //}
+            //return dt;
          }
         private M_TenzikaiShouhin_Entity GetEntity(DataTable dtrest)
         {
@@ -1675,7 +1677,7 @@ namespace MasterTouroku_TenzikaiShouhin
                     {
                         return;
                     }
-                    //Clear(panel2);
+                    Clear(panel2);
                     //ChangeFunKeys();
                     mt = new M_TenzikaiShouhin_Entity
                     {
@@ -2507,6 +2509,20 @@ namespace MasterTouroku_TenzikaiShouhin
                             SC_Vendor.LabelText= dtTN.Rows[0]["VendorName"].ToString();
                             CB_Year.Text= dtTN.Rows[0]["LastYearTerm"].ToString();
                             CB_Season.Text= dtTN.Rows[0]["LastSeason"].ToString();
+                            detailControls[(int)Eindex.SCShiiresaki].Focus();
+                        }
+                        else
+                        {
+                            if(OperationMode == EOperationMode.UPDATE)
+                            {
+                                bbl.ShowMessage("E128");
+                                detailControls[(int)Eindex.SCTenzikai].Focus();
+                                S_Clear_Grid();
+                                ClearCustomerInfo();
+                                CB_Year.SelectedValue = -1;
+                                CB_Season.SelectedValue = -1;
+                            }
+                            detailControls[(int)Eindex.SCShiiresaki].Focus();
                         }
                     }
                     else if (index == (int)Eindex.SCCTenzikai)
@@ -2522,6 +2538,16 @@ namespace MasterTouroku_TenzikaiShouhin
                             SC_CopyVendor.LabelText = dtTN.Rows[0]["VendorName"].ToString();
                             CB_Copyyear.Text = dtTN.Rows[0]["LastYearTerm"].ToString();
                             CB_copyseason.Text = dtTN.Rows[0]["LastSeason"].ToString();
+                            detailControls[(int)Eindex.SCCShiiresaki].Focus();
+                        }
+                        else
+                        {
+                            bbl.ShowMessage("E128");
+                            detailControls[(int)Eindex.SCCTenzikai].Focus();
+                            S_Clear_Grid();
+                            ClearCustomerInfo();
+                            CB_copyseason.SelectedValue = -1;
+                            CB_Copyyear.SelectedValue = -1;
                         }
                     }
                     else
@@ -2998,37 +3024,23 @@ namespace MasterTouroku_TenzikaiShouhin
                         }
                         if (dtrest.Rows.Count > 0)
                         {
-                            for (w_Row = 0; w_Row <= dtrest.Rows.Count; w_Row++)
+                            for (w_Row = 0; w_Row < dtrest.Rows.Count; w_Row++)
                             {
-
-                                if (mGrid.g_DArray[w_Row].JANCD == dt.Rows[i]["JANCD"].ToString())
+                                int gr = w_Row + 1;
+;                                if (mGrid.g_DArray[w_Row].JANCD == dt.Rows[i]["JANCD"].ToString())
                                 {
-                                    bbl.ShowMessage("E269", w_Row.ToString(), "明細部と重複したJANCD");
+                                    bbl.ShowMessage("E269",gr.ToString() , "明細部と重複したJANCD");
                                     return false;
                                 }
                                 if (mGrid.g_DArray[w_Row].SKUCD == dt.Rows[i]["SKUCD"].ToString())
                                 {
                                     //bl.ShowMessage("E105");
-                                    bbl.ShowMessage("E269", w_Row.ToString(), "明細部と重複したSKUCD");
+                                    bbl.ShowMessage("E269", gr.ToString(), "明細部と重複したSKUCD");
                                     return false;
                                 }
                             }
                         }
-
-
-
-
-                        //int count = editvalue.Count(f => f == '.');
-                        //string charre = editvalue.Remove(inde, count);
-                        //var isNumeric = int.TryParse(charre, out int n);
-                        //if (isNumeric)
-                        //{
-                        //    if (count != 1 || inde >= 4)
-                        //    {
-                        //    }
-                        //}
                     }
-
                 }
                 return true;
             }
@@ -3039,10 +3051,6 @@ namespace MasterTouroku_TenzikaiShouhin
         private void SetTenjiGrid(DataTable dt, bool IsShow = false)
         {
             SetMultiColNo(dt);
-           // S_BodySeigyo(0, 1);
-            if (IsShow)
-               // S_BodySeigyo(1, 1);
-            mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
         }
         private void SetMultiColNo(DataTable dt = null)
         {
@@ -3070,7 +3078,6 @@ namespace MasterTouroku_TenzikaiShouhin
                             // Grid_Gyo_Clr(row);
                             EnableCell_JanPro(c, c);
                         }
-                        // jancdold = dr["JANCD"].ToString();
                         mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
                         mGrid.g_DArray[c].SKUName = dr["商品名"].ToString();
                         mGrid.g_DArray[c].ColorCD = dr["カラーNO"].ToString();
@@ -3190,7 +3197,7 @@ namespace MasterTouroku_TenzikaiShouhin
                 {
                     case 0:
                         {
-                            ((CKM_SearchControl)detailControls[(int)Eindex.SCTenzikai].Parent).BtnSearch.Enabled = Kbn == 0 ? true : false;
+                            //((CKM_SearchControl)detailControls[(int)Eindex.SCTenzikai].Parent).BtnSearch.Enabled = Kbn == 0 ? true : false;
                             break;
                         }
                     case 1:
@@ -3331,7 +3338,6 @@ namespace MasterTouroku_TenzikaiShouhin
                         else
                         {
                             Scr_Lock(2, 3, 0);
-                            Scr_Lock(0, 1, 1);
                             SetFuncKeyAll(this, "111111000001");
                         }
                         break;
@@ -4408,10 +4414,12 @@ namespace MasterTouroku_TenzikaiShouhin
                 }
             }
 
-            DataTable dtrest = GetGridData();
-            if (dtrest.Rows.Count > 0)
+            DataTable dttanka = GetTankaData();
+
+
+            if (dttanka.Rows.Count > 0)
             {
-                mt = GetEntity(dtrest);
+                mt = GetEntity(dttanka);
 
                 switch (OperationMode)
                 {
@@ -4437,6 +4445,169 @@ namespace MasterTouroku_TenzikaiShouhin
             ChangeOperationMode(base.OperationMode);
         }
 
+        private DataTable GetTankaData()
+        {
+            DataTable dtGrid = GetGridData();
+            DataTable dt = new DataTable();
+            ColTan(dt);
+            foreach (DataRow r in dtGrid.Rows)
+            {
+                var row = r;
+                if (!row.IsNull(1))
+                {
+                    if (!String.IsNullOrEmpty(row["SalePriceOutTax"].ToString()))
+                    {
+                        dt.Rows.Add(
+                        "0",
+                        r["JanCD"].ToString(),
+                        r["SKUCD"].ToString(),
+                        r["SKUName"].ToString(),
+                        r["ColorCD"].ToString(),
+                        r["ColorName"].ToString(),
+                        r["SizeCD"].ToString(),
+                        r["SizeName"].ToString(),
+                        r["HanbaiDateMonth"].ToString(),
+                        r["HanbaiDate"].ToString(),
+                        r["Shiiretanka"].ToString(),
+                        r["JoudaiTanka"].ToString(),
+                        r["SalePriceOutTax"].ToString(),
+                        r["BrandCD"].ToString(),
+                        r["ExhibitionSegmentCD"].ToString(),
+                        r["TaniCD"].ToString(),
+                        r["TaxRateFlg"].ToString(),
+                        r["Remark"].ToString(),
+                        r["ExhibitioinCommonCD"].ToString()
+                        );
+                    }
+                    if (!String.IsNullOrEmpty(row["Rank1"].ToString()))
+                    {
+                        dt.Rows.Add(
+                         "1",
+                        r["JANCD"].ToString(),
+                        r["SKUCD"].ToString(),
+                        r["SKUName"].ToString(),
+                        r["ColorCD"].ToString(),
+                        r["ColorName"].ToString(),
+                        r["SizeCD"].ToString(),
+                        r["SizeName"].ToString(),
+                        r["HanbaiDateMonth"].ToString(),
+                        r["HanbaiDate"].ToString(),
+                        r["Shiiretanka"].ToString(),
+                        r["JoudaiTanka"].ToString(),
+                        r["Rank1"].ToString(),
+                        r["BrandCD"].ToString(),
+                        r["ExhibitionSegmentCD"].ToString(),
+                        r["TaniCD"].ToString(),
+                        r["TaxRateFlg"].ToString(),
+                        r["Remark"].ToString(),
+                        r["ExhibitioinCommonCD"].ToString()
+
+                        );
+                    }
+                    if (!String.IsNullOrEmpty(row["Rank2"].ToString()))
+                    {
+                        dt.Rows.Add(
+                       "2",
+                        r["JANCD"].ToString(),
+                        r["SKUCD"].ToString(),
+                        r["SKUName"].ToString(),
+                        r["ColorCD"].ToString(),
+                        r["ColorName"].ToString(),
+                        r["SizeCD"].ToString(),
+                        r["SizeName"].ToString(),
+                        r["HanbaiDateMonth"].ToString(),
+                        r["HanbaiDate"].ToString(),
+                        r["Shiiretanka"].ToString(),
+                        r["JoudaiTanka"].ToString(),
+                        r["Rank2"].ToString(),
+                        r["BrandCD"].ToString(),
+                        r["ExhibitionSegmentCD"].ToString(),
+                        r["TaniCD"].ToString(),
+                        r["TaxRateFlg"].ToString(),
+                        r["Remark"].ToString(),
+                        r["ExhibitioinCommonCD"].ToString()
+                        );
+                    }
+                    if (!String.IsNullOrEmpty(row["Rank3"].ToString()))
+                    {
+                        dt.Rows.Add(
+                        "3",
+                        r["JANCD"].ToString(),
+                        r["SKUCD"].ToString(),
+                        r["SKUName"].ToString(),
+                        r["ColorCD"].ToString(),
+                        r["ColorName"].ToString(),
+                        r["SizeCD"].ToString(),
+                        r["SizeName"].ToString(),
+                        r["HanbaiDateMonth"].ToString(),
+                        r["HanbaiDate"].ToString(),
+                        r["Shiiretanka"].ToString(),
+                        r["JoudaiTanka"].ToString(),
+                        r["Rank3"].ToString(),
+                        r["BrandCD"].ToString(),
+                        r["ExhibitionSegmentCD"].ToString(),
+                        r["TaniCD"].ToString(),
+                        r["TaxRateFlg"].ToString(),
+                        r["Remark"].ToString(),
+                        r["ExhibitioinCommonCD"].ToString()
+                        );
+                    }
+                    if (!String.IsNullOrEmpty(row["Rank4"].ToString()))
+                    {
+                        dt.Rows.Add(
+                         "4",
+                         r["JANCD"].ToString(),
+                         r["SKUCD"].ToString(),
+                         r["SKUName"].ToString(),
+                         r["ColorCD"].ToString(),
+                         r["ColorName"].ToString(),
+                         r["SizeCD"].ToString(),
+                         r["SizeName"].ToString(),
+                         r["HanbaiDateMonth"].ToString(),
+                         r["HanbaiDate"].ToString(),
+                         r["Shiiretanka"].ToString(),
+                         r["JoudaiTanka"].ToString(),
+                         r["Rank4"].ToString(),
+                         r["BrandCD"].ToString(),
+                         r["ExhibitionSegmentCD"].ToString(),
+                         r["TaniCD"].ToString(),
+                         r["TaxRateFlg"].ToString(),
+                         r["Remark"].ToString(),
+                         r["ExhibitioinCommonCD"].ToString()
+                         );
+                    }
+                    if (!String.IsNullOrEmpty(row["Rank5"].ToString()))
+                    {
+                        dt.Rows.Add(
+                         "5",
+                        r["JANCD"].ToString(),
+                        r["SKUCD"].ToString(),
+                        r["SKUName"].ToString(),
+                        r["ColorCD"].ToString(),
+                        r["ColorName"].ToString(),
+                        r["SizeCD"].ToString(),
+                        r["SizeName"].ToString(),
+                        r["HanbaiDateMonth"].ToString(),
+                        r["HanbaiDate"].ToString(),
+                        r["Shiiretanka"].ToString(),
+                        r["JoudaiTanka"].ToString(),
+                        r["Rank5"].ToString(),
+                        r["BrandCD"].ToString(),
+                        r["ExhibitionSegmentCD"].ToString(),
+                        r["TaniCD"].ToString(),
+                        r["TaxRateFlg"].ToString(),
+                        r["Remark"].ToString(),
+                        r["ExhibitioinCommonCD"].ToString()
+
+                        );
+                    }
+
+                }
+                else
+                    break;
+            }
+            return dt;
+        }
         private void Delete()
         {
             if (tbl.M_Tenzikaishouhin_Delete(mt))
