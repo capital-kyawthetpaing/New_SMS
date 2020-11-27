@@ -15,6 +15,7 @@ namespace MainMenu
 {
     public class FTPData
     {
+        public static string ErrorStatus = "";
         string[] downloadFiles;
         StringBuilder result = new StringBuilder();
         WebResponse response = null;
@@ -22,7 +23,7 @@ namespace MainMenu
 
         public FTPData()
         {
-
+            ErrorStatus = "";
         }
         public static string[] GetFileList(string ftpuri, string UID, string PWD, string path)
         {
@@ -53,8 +54,9 @@ namespace MainMenu
                 result.Remove(result.ToString().LastIndexOf('\n'), 1);
                 return result.ToString().Split('\n');
             }
-            catch
+            catch (Exception ex)
             {
+                ErrorStatus += "GetFileListLine No 58 Catch " +Environment.NewLine +ex.StackTrace.ToString();
                 if (reader != null)
                 {
                     reader.Close();
@@ -95,6 +97,7 @@ namespace MainMenu
             //}
 
             var GetList = FTPData.GetFileList(Path, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");   /// Add Network Credentials
+            ErrorStatus += GetList.Count();
             // if (GetList.Count() > 0 && GetList != null)
             if (GetList != null)
             {
@@ -102,12 +105,14 @@ namespace MainMenu
                 foreach (string file in GetList)
                 {
                     FTPData.Download(file, Path, Login_BL.ID, Login_BL.Password, @"C:\SMS\AppData\");
+                   // ErrorStatus += file + Environment.NewLine;
                 }
                 //  Cursor = Cursors.Default;
             }
         }
         public static void Download(string file, string ftpuri, string UID, string PWD, string path)
         {
+            
             try
             {
                 string uri = ftpuri + file;
@@ -238,6 +243,10 @@ namespace MainMenu
                 }
             }
             return true;
+        }
+        public String GetError()
+        {
+            return ErrorStatus;
         }
         public bool FileUpload(string Path,string ID,out string resName)
         {

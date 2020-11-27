@@ -341,6 +341,7 @@ namespace MainMenu
                                 ((CKM_Button)ctrl).Text = k.Rows[j]["ProgramID"].ToString();
                                 ((CKM_Button)ctrl).Enabled = true;
                                 ((CKM_Button)ctrl).TabIndex = Convert.ToInt32(k.Rows[j]["ProgramSEQ"].ToString());
+                               /// ((CKM_Button)ctrl).Tag = Convert.ToInt32(k.Rows[j]["ProgramID_ID"].ToString());
                                 //  ((CKM_Button)ctrl).Name = mope_data.PROID.ToString();
                                 // ToolTip1.SetToolTip(((CKM_Button)ctrl),"");
                                 //ToolTip1.SetToolTip(((CKM_Button)ctrl), ((CKM_Button)ctrl).Text);
