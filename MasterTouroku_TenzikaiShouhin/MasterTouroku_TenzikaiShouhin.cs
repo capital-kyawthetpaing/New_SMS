@@ -294,6 +294,11 @@ namespace MasterTouroku_TenzikaiShouhin
             SC_Tenzikai.BtnSearch.Click += new System.EventHandler(BtnSearch_Click);
             SC_CopyTenzikai.BtnSearch.Click += new System.EventHandler(BtnSearch_Click);
 
+            SC_CopyTenzikai.TxtCode.MaxLength = 80;
+            SC_CopyTenzikai.TxtCode.Ctrl_Byte = CKM_TextBox.Bytes.半全角;
+            SC_Tenzikai.TxtCode.MaxLength = 80;
+            SC_Tenzikai.TxtCode.Ctrl_Byte = CKM_TextBox.Bytes.半全角;
+
             foreach (var c in detailControls)
             {
                 c.KeyDown += C_KeyDown;
@@ -1895,6 +1900,7 @@ namespace MasterTouroku_TenzikaiShouhin
                     using (Search_TenzikaiShouhin frmTenzikaishouhin = new Search_TenzikaiShouhin())
                     {
                         
+                       
                         frmTenzikaishouhin.ShowDialog();
                         if (!frmTenzikaishouhin.flgCancel)
                         {
@@ -1904,6 +1910,7 @@ namespace MasterTouroku_TenzikaiShouhin
                             SC_Vendor.LabelText = frmTenzikaishouhin.parVendorName;
                             CB_Year.Text = frmTenzikaishouhin.parYear;
                             CB_Season.Text = frmTenzikaishouhin.parSeason;
+                            detailControls[(int)Eindex.SCShiiresaki].Focus();
                         }
 
                     }
@@ -1911,7 +1918,7 @@ namespace MasterTouroku_TenzikaiShouhin
                 case EsearchKbn.CTenzikai:
                     using (Search_TenzikaiShouhin frmTenzikaishouhin = new Search_TenzikaiShouhin())
                     {
-
+                       
                         frmTenzikaishouhin.ShowDialog();
                         if (!frmTenzikaishouhin.flgCancel)
                         {
@@ -1921,6 +1928,7 @@ namespace MasterTouroku_TenzikaiShouhin
                             SC_CopyVendor.LabelText = frmTenzikaishouhin.parVendorName;
                             CB_Copyyear.Text = frmTenzikaishouhin.parYear;
                             CB_copyseason.Text = frmTenzikaishouhin.parSeason;
+                            detailControls[(int)Eindex.SCCShiiresaki].Focus();
                         }
 
                     }
@@ -4304,10 +4312,7 @@ namespace MasterTouroku_TenzikaiShouhin
 
                 c++;
             }
-           // S_BodySeigyo(1, 0);
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-            //S_BodySeigyo(4, 0);
-           // scjan_1.Focus();
         }
         private void SetVal(int w_Row)
         {
@@ -4415,8 +4420,6 @@ namespace MasterTouroku_TenzikaiShouhin
             }
 
             DataTable dttanka = GetTankaData();
-
-
             if (dttanka.Rows.Count > 0)
             {
                 mt = GetEntity(dttanka);
@@ -4778,6 +4781,6 @@ namespace MasterTouroku_TenzikaiShouhin
             
         }
 
-       
+      
     }
 }
