@@ -1876,7 +1876,7 @@ namespace MasterTouroku_TenzikaiShouhin
                         DataTable dtjan = bbl.SimpleSelect1("66", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), mGrid.g_DArray[row].JANCD);
                         if (dtjan.Rows.Count == 0)
                         {
-                            // Grid_Gyo_Clr(row);
+                            
                             EnableCell_JanPro(col, row);
                         }
                         if (mGrid.g_DArray[row].Jancdold == mGrid.g_DArray[row].JANCD)
