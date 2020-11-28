@@ -45,6 +45,7 @@ namespace MasterTouroku_TenzikaiShouhin
 
         internal enum ColNO : int
         {
+           // Tenzikai, //1127
             GYONO,
             Chk,
             JANCD,

@@ -54,6 +54,8 @@ namespace MasterTouroku_TenzikaiShouhin
             Brand,
             Segment,
             Tani,
+            Tenzikai,
+            CTenzikai,
         }
 
         private enum Eindex : int
@@ -289,7 +291,13 @@ namespace MasterTouroku_TenzikaiShouhin
             searchButtons = new Control[] { SC_Tenzikai.BtnSearch, SC_Vendor.BtnSearch, SC_Brand.BtnSearch, SC_Segment.BtnSearch, SC_CopyTenzikai.BtnSearch ,
                                             SC_CopyVendor.BtnSearch,SC_copybrand.BtnSearch,SC_copysegmet.BtnSearch };
 
-            //SC_Tenzikai.BtnSearch.Click += new System.EventHandler(BtnSearch_Click);
+            SC_Tenzikai.BtnSearch.Click += new System.EventHandler(BtnSearch_Click);
+            SC_CopyTenzikai.BtnSearch.Click += new System.EventHandler(BtnSearch_Click);
+
+            SC_CopyTenzikai.TxtCode.MaxLength = 80;
+            SC_CopyTenzikai.TxtCode.Ctrl_Byte = CKM_TextBox.Bytes.半全角;
+            SC_Tenzikai.TxtCode.MaxLength = 80;
+            SC_Tenzikai.TxtCode.Ctrl_Byte = CKM_TextBox.Bytes.半全角;
 
             foreach (var c in detailControls)
             {
@@ -404,6 +412,15 @@ namespace MasterTouroku_TenzikaiShouhin
                         kbn = EsearchKbn.Segment;
                     if (w_Col == (int)ClsGridMasterTanzi.ColNO.TaniCD)
                         kbn = EsearchKbn.Tani;
+
+                        //    if (w_Col == (int)ClsGridMasterTanzi.ColNO.Tenzikai)
+                        //kbn = EsearchKbn.Tenzikai;
+
+                    if(kbn == EsearchKbn.Tenzikai ||kbn == EsearchKbn.CTenzikai)
+                    {
+                        SearchTenziData(kbn);
+                    }
+                    
 
                     if (kbn != EsearchKbn.Null)
                         SearchData(kbn, previousCtrl);
@@ -545,9 +562,9 @@ namespace MasterTouroku_TenzikaiShouhin
         private DataTable GetGridData()
         {
             var dtrest = new DataTable();
-            var dt = new DataTable();
+            //var dt = new DataTable();
             Col(dtrest);
-            ColTan(dt);
+           // ColTan(dt);
             try
             {
                 for (int w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
@@ -590,163 +607,165 @@ namespace MasterTouroku_TenzikaiShouhin
             {
                 var emsg = ex.StackTrace;
             }
-            foreach (DataRow r in dtrest.Rows)
-            {
-                var row = r;
-                if (!row.IsNull(1))
-                {
-                    if (!String.IsNullOrEmpty(row["SalePriceOutTax"].ToString()))
-                    {
-                        dt.Rows.Add(
-                        "0",
-                        r["JanCD"].ToString(),
-                        r["SKUCD"].ToString(),
-                        r["SKUName"].ToString(),
-                        r["ColorCD"].ToString(),
-                        r["ColorName"].ToString(),
-                        r["SizeCD"].ToString(),
-                        r["SizeName"].ToString(),
-                        r["HanbaiDateMonth"].ToString(),
-                        r["HanbaiDate"].ToString(),
-                        r["Shiiretanka"].ToString(),
-                        r["JoudaiTanka"].ToString(),
-                        r["SalePriceOutTax"].ToString(),
-                        r["BrandCD"].ToString(),
-                        r["ExhibitionSegmentCD"].ToString(),
-                        r["TaniCD"].ToString(),
-                        r["TaxRateFlg"].ToString(),
-                        r["Remark"].ToString(),
-                        r["ExhibitioinCommonCD"].ToString()
-                        );
-                    }
-                    if (!String.IsNullOrEmpty(row["Rank1"].ToString()))
-                    {
-                        dt.Rows.Add(
-                         "1",
-                        r["JANCD"].ToString(),
-                        r["SKUCD"].ToString(),
-                        r["SKUName"].ToString(),
-                        r["ColorCD"].ToString(),
-                        r["ColorName"].ToString(),
-                        r["SizeCD"].ToString(),
-                        r["SizeName"].ToString(),
-                        r["HanbaiDateMonth"].ToString(),
-                        r["HanbaiDate"].ToString(),
-                        r["Shiiretanka"].ToString(),
-                        r["JoudaiTanka"].ToString(),
-                        r["Rank1"].ToString(),
-                        r["BrandCD"].ToString(),
-                        r["ExhibitionSegmentCD"].ToString(),
-                        r["TaniCD"].ToString(),
-                        r["TaxRateFlg"].ToString(),
-                        r["Remark"].ToString(),
-                        r["ExhibitioinCommonCD"].ToString()
+
+            return dtrest;
+            //foreach (DataRow r in dtrest.Rows)
+            //{
+            //    var row = r;
+            //    if (!row.IsNull(1))
+            //    {
+            //        if (!String.IsNullOrEmpty(row["SalePriceOutTax"].ToString()))
+            //        {
+            //            dt.Rows.Add(
+            //            "0",
+            //            r["JanCD"].ToString(),
+            //            r["SKUCD"].ToString(),
+            //            r["SKUName"].ToString(),
+            //            r["ColorCD"].ToString(),
+            //            r["ColorName"].ToString(),
+            //            r["SizeCD"].ToString(),
+            //            r["SizeName"].ToString(),
+            //            r["HanbaiDateMonth"].ToString(),
+            //            r["HanbaiDate"].ToString(),
+            //            r["Shiiretanka"].ToString(),
+            //            r["JoudaiTanka"].ToString(),
+            //            r["SalePriceOutTax"].ToString(),
+            //            r["BrandCD"].ToString(),
+            //            r["ExhibitionSegmentCD"].ToString(),
+            //            r["TaniCD"].ToString(),
+            //            r["TaxRateFlg"].ToString(),
+            //            r["Remark"].ToString(),
+            //            r["ExhibitioinCommonCD"].ToString()
+            //            );
+            //        }
+            //        if (!String.IsNullOrEmpty(row["Rank1"].ToString()))
+            //        {
+            //            dt.Rows.Add(
+            //             "1",
+            //            r["JANCD"].ToString(),
+            //            r["SKUCD"].ToString(),
+            //            r["SKUName"].ToString(),
+            //            r["ColorCD"].ToString(),
+            //            r["ColorName"].ToString(),
+            //            r["SizeCD"].ToString(),
+            //            r["SizeName"].ToString(),
+            //            r["HanbaiDateMonth"].ToString(),
+            //            r["HanbaiDate"].ToString(),
+            //            r["Shiiretanka"].ToString(),
+            //            r["JoudaiTanka"].ToString(),
+            //            r["Rank1"].ToString(),
+            //            r["BrandCD"].ToString(),
+            //            r["ExhibitionSegmentCD"].ToString(),
+            //            r["TaniCD"].ToString(),
+            //            r["TaxRateFlg"].ToString(),
+            //            r["Remark"].ToString(),
+            //            r["ExhibitioinCommonCD"].ToString()
                        
-                        );
-                    }
-                    if (!String.IsNullOrEmpty(row["Rank2"].ToString()))
-                    {
-                        dt.Rows.Add(
-                       "2",
-                        r["JANCD"].ToString(),
-                        r["SKUCD"].ToString(),
-                        r["SKUName"].ToString(),
-                        r["ColorCD"].ToString(),
-                        r["ColorName"].ToString(),
-                        r["SizeCD"].ToString(),
-                        r["SizeName"].ToString(),
-                        r["HanbaiDateMonth"].ToString(),
-                        r["HanbaiDate"].ToString(),
-                        r["Shiiretanka"].ToString(),
-                        r["JoudaiTanka"].ToString(),
-                        r["Rank2"].ToString(),
-                        r["BrandCD"].ToString(),
-                        r["ExhibitionSegmentCD"].ToString(),
-                        r["TaniCD"].ToString(),
-                        r["TaxRateFlg"].ToString(),
-                        r["Remark"].ToString(),
-                        r["ExhibitioinCommonCD"].ToString()
-                        );
-                    }
-                    if (!String.IsNullOrEmpty(row["Rank3"].ToString()))
-                    {
-                        dt.Rows.Add(
-                        "3",
-                        r["JANCD"].ToString(),
-                        r["SKUCD"].ToString(),
-                        r["SKUName"].ToString(),
-                        r["ColorCD"].ToString(),
-                        r["ColorName"].ToString(),
-                        r["SizeCD"].ToString(),
-                        r["SizeName"].ToString(),
-                        r["HanbaiDateMonth"].ToString(),
-                        r["HanbaiDate"].ToString(),
-                        r["Shiiretanka"].ToString(),
-                        r["JoudaiTanka"].ToString(),
-                        r["Rank3"].ToString(),
-                        r["BrandCD"].ToString(),
-                        r["ExhibitionSegmentCD"].ToString(),
-                        r["TaniCD"].ToString(),
-                        r["TaxRateFlg"].ToString(),
-                        r["Remark"].ToString(),
-                        r["ExhibitioinCommonCD"].ToString()
-                        );
-                    }
-                    if (!String.IsNullOrEmpty(row["Rank4"].ToString()))
-                    {
-                        dt.Rows.Add(
-                         "4",
-                         r["JANCD"].ToString(),
-                         r["SKUCD"].ToString(),
-                         r["SKUName"].ToString(),
-                         r["ColorCD"].ToString(),
-                         r["ColorName"].ToString(),
-                         r["SizeCD"].ToString(),
-                         r["SizeName"].ToString(),
-                         r["HanbaiDateMonth"].ToString(),
-                         r["HanbaiDate"].ToString(),
-                         r["Shiiretanka"].ToString(),
-                         r["JoudaiTanka"].ToString(),
-                         r["Rank4"].ToString(),
-                         r["BrandCD"].ToString(),
-                         r["ExhibitionSegmentCD"].ToString(),
-                         r["TaniCD"].ToString(),
-                         r["TaxRateFlg"].ToString(),
-                         r["Remark"].ToString(),
-                         r["ExhibitioinCommonCD"].ToString()
-                         );
-                    }
-                    if (!String.IsNullOrEmpty(row["Rank5"].ToString()))
-                    {
-                        dt.Rows.Add(
-                         "5",
-                        r["JANCD"].ToString(),
-                        r["SKUCD"].ToString(),
-                        r["SKUName"].ToString(),
-                        r["ColorCD"].ToString(),
-                        r["ColorName"].ToString(),
-                        r["SizeCD"].ToString(),
-                        r["SizeName"].ToString(),
-                        r["HanbaiDateMonth"].ToString(),
-                        r["HanbaiDate"].ToString(),
-                        r["Shiiretanka"].ToString(),
-                        r["JoudaiTanka"].ToString(),
-                        r["Rank5"].ToString(),
-                        r["BrandCD"].ToString(),
-                        r["ExhibitionSegmentCD"].ToString(),
-                        r["TaniCD"].ToString(),
-                        r["TaxRateFlg"].ToString(),
-                        r["Remark"].ToString(),
-                        r["ExhibitioinCommonCD"].ToString()
+            //            );
+            //        }
+            //        if (!String.IsNullOrEmpty(row["Rank2"].ToString()))
+            //        {
+            //            dt.Rows.Add(
+            //           "2",
+            //            r["JANCD"].ToString(),
+            //            r["SKUCD"].ToString(),
+            //            r["SKUName"].ToString(),
+            //            r["ColorCD"].ToString(),
+            //            r["ColorName"].ToString(),
+            //            r["SizeCD"].ToString(),
+            //            r["SizeName"].ToString(),
+            //            r["HanbaiDateMonth"].ToString(),
+            //            r["HanbaiDate"].ToString(),
+            //            r["Shiiretanka"].ToString(),
+            //            r["JoudaiTanka"].ToString(),
+            //            r["Rank2"].ToString(),
+            //            r["BrandCD"].ToString(),
+            //            r["ExhibitionSegmentCD"].ToString(),
+            //            r["TaniCD"].ToString(),
+            //            r["TaxRateFlg"].ToString(),
+            //            r["Remark"].ToString(),
+            //            r["ExhibitioinCommonCD"].ToString()
+            //            );
+            //        }
+            //        if (!String.IsNullOrEmpty(row["Rank3"].ToString()))
+            //        {
+            //            dt.Rows.Add(
+            //            "3",
+            //            r["JANCD"].ToString(),
+            //            r["SKUCD"].ToString(),
+            //            r["SKUName"].ToString(),
+            //            r["ColorCD"].ToString(),
+            //            r["ColorName"].ToString(),
+            //            r["SizeCD"].ToString(),
+            //            r["SizeName"].ToString(),
+            //            r["HanbaiDateMonth"].ToString(),
+            //            r["HanbaiDate"].ToString(),
+            //            r["Shiiretanka"].ToString(),
+            //            r["JoudaiTanka"].ToString(),
+            //            r["Rank3"].ToString(),
+            //            r["BrandCD"].ToString(),
+            //            r["ExhibitionSegmentCD"].ToString(),
+            //            r["TaniCD"].ToString(),
+            //            r["TaxRateFlg"].ToString(),
+            //            r["Remark"].ToString(),
+            //            r["ExhibitioinCommonCD"].ToString()
+            //            );
+            //        }
+            //        if (!String.IsNullOrEmpty(row["Rank4"].ToString()))
+            //        {
+            //            dt.Rows.Add(
+            //             "4",
+            //             r["JANCD"].ToString(),
+            //             r["SKUCD"].ToString(),
+            //             r["SKUName"].ToString(),
+            //             r["ColorCD"].ToString(),
+            //             r["ColorName"].ToString(),
+            //             r["SizeCD"].ToString(),
+            //             r["SizeName"].ToString(),
+            //             r["HanbaiDateMonth"].ToString(),
+            //             r["HanbaiDate"].ToString(),
+            //             r["Shiiretanka"].ToString(),
+            //             r["JoudaiTanka"].ToString(),
+            //             r["Rank4"].ToString(),
+            //             r["BrandCD"].ToString(),
+            //             r["ExhibitionSegmentCD"].ToString(),
+            //             r["TaniCD"].ToString(),
+            //             r["TaxRateFlg"].ToString(),
+            //             r["Remark"].ToString(),
+            //             r["ExhibitioinCommonCD"].ToString()
+            //             );
+            //        }
+            //        if (!String.IsNullOrEmpty(row["Rank5"].ToString()))
+            //        {
+            //            dt.Rows.Add(
+            //             "5",
+            //            r["JANCD"].ToString(),
+            //            r["SKUCD"].ToString(),
+            //            r["SKUName"].ToString(),
+            //            r["ColorCD"].ToString(),
+            //            r["ColorName"].ToString(),
+            //            r["SizeCD"].ToString(),
+            //            r["SizeName"].ToString(),
+            //            r["HanbaiDateMonth"].ToString(),
+            //            r["HanbaiDate"].ToString(),
+            //            r["Shiiretanka"].ToString(),
+            //            r["JoudaiTanka"].ToString(),
+            //            r["Rank5"].ToString(),
+            //            r["BrandCD"].ToString(),
+            //            r["ExhibitionSegmentCD"].ToString(),
+            //            r["TaniCD"].ToString(),
+            //            r["TaxRateFlg"].ToString(),
+            //            r["Remark"].ToString(),
+            //            r["ExhibitioinCommonCD"].ToString()
                        
-                        );
-                    }
+            //            );
+            //        }
                     
-                }
-                else
-                    break;
-            }
-            return dt;
+            //    }
+            //    else
+            //        break;
+            //}
+            //return dt;
          }
         private M_TenzikaiShouhin_Entity GetEntity(DataTable dtrest)
         {
@@ -1262,10 +1281,25 @@ namespace MasterTouroku_TenzikaiShouhin
 
                     kbn = EsearchKbn.Tani;
                 }
-                
+
+                if (((Search.CKM_SearchControl)sc).Name.Contains("SC_Tenzikai") )
+                {
+                    //SC_Tenzikai
+                    kbn = EsearchKbn.Tenzikai;
+                    SearchTenziData(kbn);
+                }
+
+                if (((Search.CKM_SearchControl)sc).Name.Contains("SC_CopyTenzikai"))
+                {
+                    //SC_Tenzikai
+                    kbn = EsearchKbn.CTenzikai;
+                    SearchTenziData(kbn);
+                }
+
 
                 setCtl = previousCtrl;
 
+              
 
                 if (kbn != EsearchKbn.Null)
                    SearchData(kbn, setCtl);
@@ -1837,6 +1871,68 @@ namespace MasterTouroku_TenzikaiShouhin
                         }
                     }
                     break;
+                case EsearchKbn.Tenzikai:
+                    using (Search_TenzikaiShouhin frmTenzikaishouhin = new Search_TenzikaiShouhin())
+                    {
+                        //frmTenzikaishouhin.parChangeDate = changedate;
+
+                        //if (UseChangeDate == true)
+                        //    frmTenzikaishouhin.parChangeDate = changedate;
+                        frmTenzikaishouhin.ShowDialog();
+                        if (!frmTenzikaishouhin.flgCancel)
+                        {
+                            detailControls[(int)Eindex.SCTenzikai].Text= frmTenzikaishouhin.parTenzikaiName;
+                            SC_Vendor.TxtCode.Text = frmTenzikaishouhin.parVendorCD;
+                            SC_Vendor.LabelText = frmTenzikaishouhin.parVendorName;
+                            CB_Year.Text = frmTenzikaishouhin.parYear;
+                            CB_Season.Text = frmTenzikaishouhin.parSeason;
+                        }
+                    }
+                    break;
+            }
+        }  
+
+        private void SearchTenziData(EsearchKbn kbn)
+        {
+            switch (kbn)
+            {
+                    case EsearchKbn.Tenzikai:
+                    using (Search_TenzikaiShouhin frmTenzikaishouhin = new Search_TenzikaiShouhin())
+                    {
+                        
+                       
+                        frmTenzikaishouhin.ShowDialog();
+                        if (!frmTenzikaishouhin.flgCancel)
+                        {
+
+                            detailControls[(int)Eindex.SCTenzikai].Text = frmTenzikaishouhin.parTenzikaiName;
+                            SC_Vendor.TxtCode.Text = frmTenzikaishouhin.parVendorCD;
+                            SC_Vendor.LabelText = frmTenzikaishouhin.parVendorName;
+                            CB_Year.Text = frmTenzikaishouhin.parYear;
+                            CB_Season.Text = frmTenzikaishouhin.parSeason;
+                            detailControls[(int)Eindex.SCShiiresaki].Focus();
+                        }
+
+                    }
+                    break;
+                case EsearchKbn.CTenzikai:
+                    using (Search_TenzikaiShouhin frmTenzikaishouhin = new Search_TenzikaiShouhin())
+                    {
+                       
+                        frmTenzikaishouhin.ShowDialog();
+                        if (!frmTenzikaishouhin.flgCancel)
+                        {
+
+                            detailControls[(int)Eindex.SCCTenzikai].Text = frmTenzikaishouhin.parTenzikaiName;
+                            SC_CopyVendor.TxtCode.Text = frmTenzikaishouhin.parVendorCD;
+                            SC_CopyVendor.LabelText = frmTenzikaishouhin.parVendorName;
+                            CB_Copyyear.Text = frmTenzikaishouhin.parYear;
+                            CB_copyseason.Text = frmTenzikaishouhin.parSeason;
+                            detailControls[(int)Eindex.SCCShiiresaki].Focus();
+                        }
+
+                    }
+                    break;
             }
         }
         private bool CheckGrid(int col, int row, bool chkAll = false, bool changeYmd = false, bool IsExec = false)
@@ -1860,6 +1956,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                 return false;
                         }
                 }
+               
 
                 switch (col)
                 {
@@ -1875,7 +1972,7 @@ namespace MasterTouroku_TenzikaiShouhin
                         DataTable dtjan = bbl.SimpleSelect1("66", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), mGrid.g_DArray[row].JANCD);
                         if (dtjan.Rows.Count == 0)
                         {
-                            // Grid_Gyo_Clr(row);
+                            
                             EnableCell_JanPro(col, row);
                         }
                         if (mGrid.g_DArray[row].Jancdold == mGrid.g_DArray[row].JANCD)
@@ -2319,53 +2416,51 @@ namespace MasterTouroku_TenzikaiShouhin
                             S_BodySeigyo(0, 1);
                             mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
                             // ChangeFunKeys();
-                            
-                                if (!String.IsNullOrEmpty(SC_CopyTenzikai.TxtCode.Text))
+
+                            if (!String.IsNullOrEmpty(SC_CopyTenzikai.TxtCode.Text))
+                            {
+
+                                //Scr_Lock(1, 3, 0);
+                                mt = new M_TenzikaiShouhin_Entity
                                 {
+                                    TenzikaiName = detailControls[(int)Eindex.SCCTenzikai].Text,
+                                    VendorCD = detailControls[(int)Eindex.SCCShiiresaki].Text,
+                                    LastYearTerm = detailControls[(int)Eindex.CNendo].Text,
+                                    LastSeason = detailControls[(int)Eindex.CSeason].Text,
+                                    BranCDFrom = detailControls[(int)Eindex.SCCBrand].Text,
+                                    SegmentCDFrom = detailControls[(int)Eindex.SCCSegment].Text,
 
-                                    //Scr_Lock(1, 3, 0);
-                                    mt = new M_TenzikaiShouhin_Entity
-                                    {
-                                        TenzikaiName = detailControls[(int)Eindex.SCCTenzikai].Text,
-                                        VendorCD = detailControls[(int)Eindex.SCCShiiresaki].Text,
-                                        LastYearTerm = detailControls[(int)Eindex.CNendo].Text,
-                                        LastSeason = detailControls[(int)Eindex.CSeason].Text,
-                                        BranCDFrom = detailControls[(int)Eindex.SCCBrand].Text,
-                                        SegmentCDFrom = detailControls[(int)Eindex.SCCSegment].Text,
-
-                                    };
-                                    DataTable dtshow = tbl.Mastertoroku_Tenzikaishouhin_Select(mt, 1);
-                                    //DataTable dtshow = tbl.Mastertoroku_Tenzikaishouhin_Select(mt);
-                                    if (dtshow == null)
-                                    {
-                                        return;
-                                    }
-                                    if (dtshow.Rows.Count > 0)
-                                    {
-                                        MesaiHyouJi(dtshow);
-                                        S_BodySeigyo(0, 1);
-                                        S_BodySeigyo(1, 1);
-                                        mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
-                                        S_BodySeigyo(4, 0);
-                                        scjan_1.Focus();
-                                    }
-                                    else
-                                    {
-                                        bl.ShowMessage("E128");
-                                        scjan_1.Focus();
-                                    }
+                                };
+                                DataTable dtshow = tbl.Mastertoroku_Tenzikaishouhin_Select(mt, 1);
+                                //DataTable dtshow = tbl.Mastertoroku_Tenzikaishouhin_Select(mt);
+                                if (dtshow == null)
+                                {
+                                    return;
+                                }
+                                if (dtshow.Rows.Count > 0)
+                                {
+                                    MesaiHyouJi(dtshow);
+                                    S_BodySeigyo(0, 1);
+                                    S_BodySeigyo(1, 1);
+                                    mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
+                                    S_BodySeigyo(4, 0);
+                                    scjan_1.Focus();
                                 }
                                 else
                                 {
+                                    bl.ShowMessage("E128");
                                     scjan_1.Focus();
                                 }
-                            
-                           
+                            }
+                            else
+                            {
+                                scjan_1.Focus();
+                            }
                         }
                     }
-                    else if(index == (int)Eindex.SCSegment)
+                    else if (index == (int)Eindex.SCSegment)
                     {
-                        if(OperationMode != EOperationMode.INSERT)
+                        if (OperationMode != EOperationMode.INSERT)
                         {
 
                             if (!ErrorCheck())
@@ -2409,12 +2504,66 @@ namespace MasterTouroku_TenzikaiShouhin
                             }
                         }
                     }
+                    else if (index == (int)Eindex.SCTenzikai)
+                    {
+                        M_TenzikaiShouhin_Entity mt = new M_TenzikaiShouhin_Entity
+                        {
+                            TenzikaiName= detailControls[(int)Eindex.SCTenzikai].Text,
+                        };
+                        DataTable dtTN = tbl.M_TenzikaiShouhin_SelectByTenziName(mt);
+                        if(dtTN.Rows.Count > 0)
+                        {
+                            SC_Vendor.TxtCode.Text = dtTN.Rows[0]["VendorCD"].ToString();
+                            SC_Vendor.LabelText= dtTN.Rows[0]["VendorName"].ToString();
+                            CB_Year.Text= dtTN.Rows[0]["LastYearTerm"].ToString();
+                            CB_Season.Text= dtTN.Rows[0]["LastSeason"].ToString();
+                            detailControls[(int)Eindex.SCShiiresaki].Focus();
+                        }
+                        else
+                        {
+                            if(OperationMode == EOperationMode.UPDATE)
+                            {
+                                bbl.ShowMessage("E128");
+                                detailControls[(int)Eindex.SCTenzikai].Focus();
+                                S_Clear_Grid();
+                                ClearCustomerInfo();
+                                CB_Year.SelectedValue = -1;
+                                CB_Season.SelectedValue = -1;
+                            }
+                            detailControls[(int)Eindex.SCShiiresaki].Focus();
+                        }
+                    }
+                    else if (index == (int)Eindex.SCCTenzikai)
+                    {
+                        M_TenzikaiShouhin_Entity mt = new M_TenzikaiShouhin_Entity
+                        {
+                            TenzikaiName = detailControls[(int)Eindex.SCCTenzikai].Text,
+                        };
+                        DataTable dtTN = tbl.M_TenzikaiShouhin_SelectByTenziName(mt);
+                        if (dtTN.Rows.Count > 0)
+                        {
+                            SC_CopyVendor.TxtCode.Text = dtTN.Rows[0]["VendorCD"].ToString();
+                            SC_CopyVendor.LabelText = dtTN.Rows[0]["VendorName"].ToString();
+                            CB_Copyyear.Text = dtTN.Rows[0]["LastYearTerm"].ToString();
+                            CB_copyseason.Text = dtTN.Rows[0]["LastSeason"].ToString();
+                            detailControls[(int)Eindex.SCCShiiresaki].Focus();
+                        }
+                        else
+                        {
+                            bbl.ShowMessage("E128");
+                            detailControls[(int)Eindex.SCCTenzikai].Focus();
+                            S_Clear_Grid();
+                            ClearCustomerInfo();
+                            CB_copyseason.SelectedValue = -1;
+                            CB_Copyyear.SelectedValue = -1;
+                        }
+                    }
                     else
                     {
                         bool ret = CheckDetail(index);
                         if (ret)
                         {
-                            
+
                             if (detailControls.Length - 1 > index)
                             {
                                 if (detailControls[index + 1].CanFocus)
@@ -2857,21 +3006,15 @@ namespace MasterTouroku_TenzikaiShouhin
                             //bbl.ShowMessage("E101");
                             return false;
                         }
-
-                        //var jandupli = dt.AsEnumerable()
-                        //                .GroupBy(x => x["JANCD"])
-                        //                .Where(g => g.Count() > 1)
-                        //                .Select(g => g.First())
-                        //                .ToList();
                         var jandupli = dt.AsEnumerable()
-                   .Select(dr => dr.Field<string>("JANCD"))
-                   .GroupBy(x => x)
-                   .Where(g => g.Count() > 1)
-                   .Select(g => g.Key)
-                   .ToList();
+                             .Select(dr => dr.Field<string>("JANCD"))
+                             .GroupBy(x => x)
+                             .Where(g => g.Count() > 1)
+                             .Select(g => g.Key)
+                             .ToList();
                         if (jandupli.Count() != 0)
                         {
-                            //bl.ShowMessage("E105");
+                            
                             bbl.ShowMessage("E269", row.ToString(), "重複したJANCD");
                             return false;
                         }
@@ -2889,37 +3032,23 @@ namespace MasterTouroku_TenzikaiShouhin
                         }
                         if (dtrest.Rows.Count > 0)
                         {
-                            for (w_Row = 0; w_Row <= dtrest.Rows.Count; w_Row++)
+                            for (w_Row = 0; w_Row < dtrest.Rows.Count; w_Row++)
                             {
-
-                                if (mGrid.g_DArray[w_Row].JANCD == dt.Rows[i]["JANCD"].ToString())
+                                int gr = w_Row + 1;
+;                                if (mGrid.g_DArray[w_Row].JANCD == dt.Rows[i]["JANCD"].ToString())
                                 {
-                                    bbl.ShowMessage("E269", w_Row.ToString(), "明細部と重複したJANCD");
+                                    bbl.ShowMessage("E269",gr.ToString() , "明細部と重複したJANCD");
                                     return false;
                                 }
                                 if (mGrid.g_DArray[w_Row].SKUCD == dt.Rows[i]["SKUCD"].ToString())
                                 {
                                     //bl.ShowMessage("E105");
-                                    bbl.ShowMessage("E269", w_Row.ToString(), "明細部と重複したSKUCD");
+                                    bbl.ShowMessage("E269", gr.ToString(), "明細部と重複したSKUCD");
                                     return false;
                                 }
                             }
                         }
-
-
-
-
-                        //int count = editvalue.Count(f => f == '.');
-                        //string charre = editvalue.Remove(inde, count);
-                        //var isNumeric = int.TryParse(charre, out int n);
-                        //if (isNumeric)
-                        //{
-                        //    if (count != 1 || inde >= 4)
-                        //    {
-                        //    }
-                        //}
                     }
-
                 }
                 return true;
             }
@@ -2930,10 +3059,6 @@ namespace MasterTouroku_TenzikaiShouhin
         private void SetTenjiGrid(DataTable dt, bool IsShow = false)
         {
             SetMultiColNo(dt);
-           // S_BodySeigyo(0, 1);
-            if (IsShow)
-               // S_BodySeigyo(1, 1);
-            mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
         }
         private void SetMultiColNo(DataTable dt = null)
         {
@@ -2951,10 +3076,16 @@ namespace MasterTouroku_TenzikaiShouhin
                 {
                     S_Clear_Grid();
                     int c = 0;
+                    
                     foreach (DataRow dr in dt.Rows)
                     {
                         mGrid.g_DArray[c].JANCD = mGrid.g_DArray[c].Jancdold = dr["JANCD"].ToString();
-                        // jancdold = dr["JANCD"].ToString();
+                        DataTable dtjan1 = bbl.SimpleSelect1("66", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), mGrid.g_DArray[c].JANCD);
+                        if (dtjan1.Rows.Count == 0)
+                        {
+                            // Grid_Gyo_Clr(row);
+                            EnableCell_JanPro(c, c);
+                        }
                         mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
                         mGrid.g_DArray[c].SKUName = dr["商品名"].ToString();
                         mGrid.g_DArray[c].ColorCD = dr["カラーNO"].ToString();
@@ -2977,7 +3108,6 @@ namespace MasterTouroku_TenzikaiShouhin
                         mGrid.g_DArray[c].TaxRateFlg = dr["税率区分"].ToString();//
                         mGrid.g_DArray[c].Remark = dr["備考"].ToString();//
                         mGrid.g_DArray[c].ExhibitionCommonCD = dr["ExhibitionCommonCD"].ToString();
-
                         c++;
                     }
                 }
@@ -3021,7 +3151,13 @@ namespace MasterTouroku_TenzikaiShouhin
                         if (dr[0] != DBNull.Value)
                             {
                                 mGrid.g_DArray[c].JANCD = mGrid.g_DArray[c].Jancdold = dr["JANCD"].ToString();
-                                mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
+                            DataTable dtjan1 = bbl.SimpleSelect1("66", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), mGrid.g_DArray[c].JANCD);
+                            if (dtjan1.Rows.Count == 0)
+                            {
+                                // Grid_Gyo_Clr(row);
+                                EnableCell_JanPro(c, c);
+                            }
+                            mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
                                 mGrid.g_DArray[c].SKUName = dr["商品名"].ToString();
                                 mGrid.g_DArray[c].ColorCD = dr["カラーNO"].ToString();
                                 mGrid.g_DArray[c].ColorName = dr["カラー名"].ToString();
@@ -3069,7 +3205,7 @@ namespace MasterTouroku_TenzikaiShouhin
                 {
                     case 0:
                         {
-                            ((CKM_SearchControl)detailControls[(int)Eindex.SCTenzikai].Parent).BtnSearch.Enabled = Kbn == 0 ? true : false;
+                            //((CKM_SearchControl)detailControls[(int)Eindex.SCTenzikai].Parent).BtnSearch.Enabled = Kbn == 0 ? true : false;
                             break;
                         }
                     case 1:
@@ -3210,7 +3346,6 @@ namespace MasterTouroku_TenzikaiShouhin
                         else
                         {
                             Scr_Lock(2, 3, 0);
-                            Scr_Lock(0, 1, 1);
                             SetFuncKeyAll(this, "111111000001");
                         }
                         break;
@@ -3542,10 +3677,7 @@ namespace MasterTouroku_TenzikaiShouhin
         {
 
         }
-        private void SC_Tenzikai_Load(object sender, EventArgs e)
-        {
-
-        }
+        
         private void CHK_Print_Click(object sender, EventArgs e)
         {
             try
@@ -3709,8 +3841,8 @@ namespace MasterTouroku_TenzikaiShouhin
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0, w_CtlRow, w_CtlRow);
 
 
-            if (pCol == (int)ClsGridMasterTanzi.ColNO.JANCD)
-            {
+           // if (pCol == (int)ClsGridMasterTanzi.ColNO.JANCD)
+           // {
                 if (string.IsNullOrWhiteSpace(mGrid.g_DArray[pRow].JANCD))
                 {
                     for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
@@ -3782,7 +3914,7 @@ namespace MasterTouroku_TenzikaiShouhin
                     }
                     w_AllFlg = false;
                 }
-            }
+           // }
         }
         private void CellDisable(int pCol, int pRow)
         {
@@ -4180,10 +4312,7 @@ namespace MasterTouroku_TenzikaiShouhin
 
                 c++;
             }
-           // S_BodySeigyo(1, 0);
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-            //S_BodySeigyo(4, 0);
-           // scjan_1.Focus();
         }
         private void SetVal(int w_Row)
         {
@@ -4290,10 +4419,10 @@ namespace MasterTouroku_TenzikaiShouhin
                 }
             }
 
-            DataTable dtrest = GetGridData();
-            if (dtrest.Rows.Count > 0)
+            DataTable dttanka = GetTankaData();
+            if (dttanka.Rows.Count > 0)
             {
-                mt = GetEntity(dtrest);
+                mt = GetEntity(dttanka);
 
                 switch (OperationMode)
                 {
@@ -4319,6 +4448,169 @@ namespace MasterTouroku_TenzikaiShouhin
             ChangeOperationMode(base.OperationMode);
         }
 
+        private DataTable GetTankaData()
+        {
+            DataTable dtGrid = GetGridData();
+            DataTable dt = new DataTable();
+            ColTan(dt);
+            foreach (DataRow r in dtGrid.Rows)
+            {
+                var row = r;
+                if (!row.IsNull(1))
+                {
+                    if (!String.IsNullOrEmpty(row["SalePriceOutTax"].ToString()))
+                    {
+                        dt.Rows.Add(
+                        "0",
+                        r["JanCD"].ToString(),
+                        r["SKUCD"].ToString(),
+                        r["SKUName"].ToString(),
+                        r["ColorCD"].ToString(),
+                        r["ColorName"].ToString(),
+                        r["SizeCD"].ToString(),
+                        r["SizeName"].ToString(),
+                        r["HanbaiDateMonth"].ToString(),
+                        r["HanbaiDate"].ToString(),
+                        r["Shiiretanka"].ToString(),
+                        r["JoudaiTanka"].ToString(),
+                        r["SalePriceOutTax"].ToString(),
+                        r["BrandCD"].ToString(),
+                        r["ExhibitionSegmentCD"].ToString(),
+                        r["TaniCD"].ToString(),
+                        r["TaxRateFlg"].ToString(),
+                        r["Remark"].ToString(),
+                        r["ExhibitioinCommonCD"].ToString()
+                        );
+                    }
+                    if (!String.IsNullOrEmpty(row["Rank1"].ToString()))
+                    {
+                        dt.Rows.Add(
+                         "1",
+                        r["JANCD"].ToString(),
+                        r["SKUCD"].ToString(),
+                        r["SKUName"].ToString(),
+                        r["ColorCD"].ToString(),
+                        r["ColorName"].ToString(),
+                        r["SizeCD"].ToString(),
+                        r["SizeName"].ToString(),
+                        r["HanbaiDateMonth"].ToString(),
+                        r["HanbaiDate"].ToString(),
+                        r["Shiiretanka"].ToString(),
+                        r["JoudaiTanka"].ToString(),
+                        r["Rank1"].ToString(),
+                        r["BrandCD"].ToString(),
+                        r["ExhibitionSegmentCD"].ToString(),
+                        r["TaniCD"].ToString(),
+                        r["TaxRateFlg"].ToString(),
+                        r["Remark"].ToString(),
+                        r["ExhibitioinCommonCD"].ToString()
+
+                        );
+                    }
+                    if (!String.IsNullOrEmpty(row["Rank2"].ToString()))
+                    {
+                        dt.Rows.Add(
+                       "2",
+                        r["JANCD"].ToString(),
+                        r["SKUCD"].ToString(),
+                        r["SKUName"].ToString(),
+                        r["ColorCD"].ToString(),
+                        r["ColorName"].ToString(),
+                        r["SizeCD"].ToString(),
+                        r["SizeName"].ToString(),
+                        r["HanbaiDateMonth"].ToString(),
+                        r["HanbaiDate"].ToString(),
+                        r["Shiiretanka"].ToString(),
+                        r["JoudaiTanka"].ToString(),
+                        r["Rank2"].ToString(),
+                        r["BrandCD"].ToString(),
+                        r["ExhibitionSegmentCD"].ToString(),
+                        r["TaniCD"].ToString(),
+                        r["TaxRateFlg"].ToString(),
+                        r["Remark"].ToString(),
+                        r["ExhibitioinCommonCD"].ToString()
+                        );
+                    }
+                    if (!String.IsNullOrEmpty(row["Rank3"].ToString()))
+                    {
+                        dt.Rows.Add(
+                        "3",
+                        r["JANCD"].ToString(),
+                        r["SKUCD"].ToString(),
+                        r["SKUName"].ToString(),
+                        r["ColorCD"].ToString(),
+                        r["ColorName"].ToString(),
+                        r["SizeCD"].ToString(),
+                        r["SizeName"].ToString(),
+                        r["HanbaiDateMonth"].ToString(),
+                        r["HanbaiDate"].ToString(),
+                        r["Shiiretanka"].ToString(),
+                        r["JoudaiTanka"].ToString(),
+                        r["Rank3"].ToString(),
+                        r["BrandCD"].ToString(),
+                        r["ExhibitionSegmentCD"].ToString(),
+                        r["TaniCD"].ToString(),
+                        r["TaxRateFlg"].ToString(),
+                        r["Remark"].ToString(),
+                        r["ExhibitioinCommonCD"].ToString()
+                        );
+                    }
+                    if (!String.IsNullOrEmpty(row["Rank4"].ToString()))
+                    {
+                        dt.Rows.Add(
+                         "4",
+                         r["JANCD"].ToString(),
+                         r["SKUCD"].ToString(),
+                         r["SKUName"].ToString(),
+                         r["ColorCD"].ToString(),
+                         r["ColorName"].ToString(),
+                         r["SizeCD"].ToString(),
+                         r["SizeName"].ToString(),
+                         r["HanbaiDateMonth"].ToString(),
+                         r["HanbaiDate"].ToString(),
+                         r["Shiiretanka"].ToString(),
+                         r["JoudaiTanka"].ToString(),
+                         r["Rank4"].ToString(),
+                         r["BrandCD"].ToString(),
+                         r["ExhibitionSegmentCD"].ToString(),
+                         r["TaniCD"].ToString(),
+                         r["TaxRateFlg"].ToString(),
+                         r["Remark"].ToString(),
+                         r["ExhibitioinCommonCD"].ToString()
+                         );
+                    }
+                    if (!String.IsNullOrEmpty(row["Rank5"].ToString()))
+                    {
+                        dt.Rows.Add(
+                         "5",
+                        r["JANCD"].ToString(),
+                        r["SKUCD"].ToString(),
+                        r["SKUName"].ToString(),
+                        r["ColorCD"].ToString(),
+                        r["ColorName"].ToString(),
+                        r["SizeCD"].ToString(),
+                        r["SizeName"].ToString(),
+                        r["HanbaiDateMonth"].ToString(),
+                        r["HanbaiDate"].ToString(),
+                        r["Shiiretanka"].ToString(),
+                        r["JoudaiTanka"].ToString(),
+                        r["Rank5"].ToString(),
+                        r["BrandCD"].ToString(),
+                        r["ExhibitionSegmentCD"].ToString(),
+                        r["TaniCD"].ToString(),
+                        r["TaxRateFlg"].ToString(),
+                        r["Remark"].ToString(),
+                        r["ExhibitioinCommonCD"].ToString()
+
+                        );
+                    }
+
+                }
+                else
+                    break;
+            }
+            return dt;
+        }
         private void Delete()
         {
             if (tbl.M_Tenzikaishouhin_Delete(mt))
@@ -4489,6 +4781,6 @@ namespace MasterTouroku_TenzikaiShouhin
             
         }
 
-       
+      
     }
 }

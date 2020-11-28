@@ -33,7 +33,8 @@ namespace Search
         public string parTenzikaiName = "";
         public string parVendorCD = "";
         public string parVendorName = "";
-
+        public string parYear = "";
+        public string parSeason = "";
         private void Search_TenzikaiShouhin_Load(object sender, EventArgs e)
         {
             string ymd = bbl.GetDate();
@@ -185,6 +186,8 @@ namespace Search
                     parSKUName = GV_TZshouhin.CurrentRow.Cells["SKUName"].Value.ToString();
                     parVendorCD = GV_TZshouhin.CurrentRow.Cells["VendorCD"].Value.ToString();
                     parVendorName = GV_TZshouhin.CurrentRow.Cells["VendorName"].Value.ToString();
+                    parYear= GV_TZshouhin.CurrentRow.Cells["Year"].Value.ToString();
+                    parSeason= GV_TZshouhin.CurrentRow.Cells["Season"].Value.ToString();
                     this.Close();
                 }
             }
