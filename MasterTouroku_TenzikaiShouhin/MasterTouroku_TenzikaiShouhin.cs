@@ -2392,7 +2392,8 @@ namespace MasterTouroku_TenzikaiShouhin
 
         }
         private void C_KeyDown(object sender, KeyEventArgs e)
-       {
+
+        {
             // Processing when the Enter key is pressed
             // Check if the Return key is pressed
             // Alt or Ctrl key is pressed, do the original operation
@@ -3326,7 +3327,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                 ((CKM_SearchControl)detailControls[(int)Eindex.SCTenzikai].Parent).BtnSearch.Enabled = true;
                                 Scr_Lock(1, mc_L_END, 1);
                                 this.Vsb_Mei_0.TabStop = false;
-                                SetFuncKeyAll(this, "111111001010");
+                                SetFuncKeyAll(this, "111111001000");
                             }
                             SetEnabled(false);
                         }
@@ -4446,21 +4447,25 @@ namespace MasterTouroku_TenzikaiShouhin
                 }
             }
             mGrid.S_DispToArray(Vsb_Mei_0.Value);
-            for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++) // GridControl
+            if(OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
             {
-                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JANCD) == false)
+                for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++) // GridControl
                 {
-                    for (int CL = (int)ClsGridMasterTanzi.ColNO.JANCD; CL < (int)ClsGridMasterTanzi.ColNO.Count; CL++)
+                    if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JANCD) == false)
                     {
-                        if (CheckGrid(CL, RW, true, false, true) == false)
+                        for (int CL = (int)ClsGridMasterTanzi.ColNO.JANCD; CL < (int)ClsGridMasterTanzi.ColNO.Count; CL++)
                         {
-                            //Focusセット処理
-                            ERR_FOCUS_GRID_SUB(CL, RW);
-                            return;
+                            if (CheckGrid(CL, RW, true, false, true) == false)
+                            {
+                                //Focusセット処理
+                                ERR_FOCUS_GRID_SUB(CL, RW);
+                                return;
+                            }
                         }
                     }
                 }
             }
+            
 
             DataTable dttanka = GetTankaData();
             if (dttanka.Rows.Count > 0)
