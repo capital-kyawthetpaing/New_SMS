@@ -2507,34 +2507,38 @@ namespace MasterTouroku_TenzikaiShouhin
                     else if (index == (int)Eindex.SCTenzikai)
                     {
                         if (!String.IsNullOrEmpty(detailControls[(int)Eindex.SCTenzikai].Text))
-                        { 
-                        M_TenzikaiShouhin_Entity mt = new M_TenzikaiShouhin_Entity
                         {
-                            TenzikaiName = detailControls[(int)Eindex.SCTenzikai].Text,
-                        };
-                        DataTable dtTN = tbl.M_TenzikaiShouhin_SelectByTenziName(mt);
-                        if (dtTN.Rows.Count > 0)
-                        {
-                            SC_Vendor.TxtCode.Text = dtTN.Rows[0]["VendorCD"].ToString();
-                            SC_Vendor.LabelText = dtTN.Rows[0]["VendorName"].ToString();
-                            CB_Year.Text = dtTN.Rows[0]["LastYearTerm"].ToString();
-                            CB_Season.Text = dtTN.Rows[0]["LastSeason"].ToString();
-                            detailControls[(int)Eindex.SCShiiresaki].Focus();
-                        }
-                        else
-                        {
-                            if (OperationMode == EOperationMode.UPDATE)
+                            M_TenzikaiShouhin_Entity mt = new M_TenzikaiShouhin_Entity
                             {
-                                bbl.ShowMessage("E128");
-                                detailControls[(int)Eindex.SCTenzikai].Focus();
-                                S_Clear_Grid();
-                                detailControls[(int)(Eindex.SCShiiresaki)].Text = "";
-                                SC_Vendor.LabelText = "";
-                                ((CKM_Controls.CKM_ComboBox)CB_Year).SelectedValue = -1;
-                                ((CKM_Controls.CKM_ComboBox)CB_Season).SelectedValue = -1;
-                            }                                                               
+                                TenzikaiName = detailControls[(int)Eindex.SCTenzikai].Text,
+                            };
+                            if(OperationMode == EOperationMode.UPDATE)
+                            {
+                                var rresTen = tbl.M_TenzikaiShouhinName_Select(mt);
+                                if (rresTen.Rows.Count == 0)
+                                {
+                                    bl.ShowMessage("E101");
+                                    ClearName();
+                                    return;
+                                }
+                            }
+                            DataTable dtTN = tbl.M_TenzikaiShouhin_SelectByTenziName(mt);
+                            if (dtTN.Rows.Count > 0)
+                            {
+                                SC_Vendor.TxtCode.Text = dtTN.Rows[0]["VendorCD"].ToString();
+                                SC_Vendor.LabelText = dtTN.Rows[0]["VendorName"].ToString();
+                                CB_Year.Text = dtTN.Rows[0]["LastYearTerm"].ToString();
+                                CB_Season.Text = dtTN.Rows[0]["LastSeason"].ToString();
                                 detailControls[(int)Eindex.SCShiiresaki].Focus();
-                        }
+                            }
+                            else
+                            {
+                                if (OperationMode == EOperationMode.UPDATE)
+                                {
+                                    bbl.ShowMessage("E128");
+                                    ClearName();
+                                }
+                            }
                         }
                     }
                     else if (index == (int)Eindex.SCCTenzikai)
@@ -2610,6 +2614,15 @@ namespace MasterTouroku_TenzikaiShouhin
             SC_CopyVendor.LabelText = "";
             ((CKM_Controls.CKM_ComboBox)CB_Copyyear).SelectedValue = -1;
             ((CKM_Controls.CKM_ComboBox)CB_copyseason).SelectedValue = -1;
+        }  
+        private void ClearName()
+        {
+            detailControls[(int)Eindex.SCTenzikai].Focus();
+            S_Clear_Grid();
+            detailControls[(int)(Eindex.SCShiiresaki)].Text = "";
+            SC_Vendor.LabelText = "";
+            ((CKM_Controls.CKM_ComboBox)CB_Year).SelectedValue = -1;
+            ((CKM_Controls.CKM_ComboBox)CB_Season).SelectedValue = -1;
         }
         private void ChangeFunKeys()
         {
