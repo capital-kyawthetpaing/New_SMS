@@ -242,19 +242,20 @@ BEGIN
         
         DECLARE @tblArrivalPlanNO varchar(11);
         DECLARE @oldArrivalPlanNO varchar(11);
-        DECLARE @tblStockNO varchar(11);
-        DECLARE @tblReserveNO varchar(11);
-        DECLARE @tblArrivalSu int;
+        DECLARE @tblStockNO       varchar(11);
+        DECLARE @tblReserveNO     varchar(11);
+        DECLARE @tblArrivalSu     int;
         DECLARE @tblArrivalPlanSu int;
-        DECLARE @tblDataKbn tinyint;	--1:yˆø“–z,2:y”­’z,3:yˆÚ“®z
-        DECLARE @SakuseiFlg tinyint;    --0:ì¬‚µ‚È‚¢@1:ì¬‚·‚é
+        DECLARE @tblReserveSu     int;
+        DECLARE @tblDataKbn       tinyint;    --1:yˆø“–z,2:y”­’z,3:yˆÚ“®z
+        DECLARE @SakuseiFlg       tinyint;    --0:ì¬‚µ‚È‚¢@1:ì¬‚·‚é
 
         --ƒJ[ƒ\ƒ‹ƒI[ƒvƒ“
         OPEN CUR_TABLE;
 
         --Å‰‚Ì1s–Ú‚ðŽæ“¾‚µ‚Ä•Ï”‚Ö’l‚ðƒZƒbƒg
         FETCH NEXT FROM CUR_TABLE
-        INTO @tblArrivalPlanNO, @tblStockNO, @tblReserveNO, @tblArrivalSu, @tblArrivalPlanSu, @tblDataKbn, @SakuseiFlg;
+        INTO @tblArrivalPlanNO, @tblStockNO, @tblReserveNO, @tblArrivalSu, @tblArrivalPlanSu, @tblDataKbn, @SakuseiFlg, @tblReserveSu;
         
         SET @oldArrivalPlanNO = '';
         
@@ -452,7 +453,7 @@ BEGIN
                     ;
                 END
 
-                IF @tblDataKbn = 1
+                IF @tblDataKbn = 1 AND @tblReserveSu > 0
                 BEGIN
                     --“`•[”Ô†Ì”Ô
                     EXEC Fnc_GetNumber
@@ -507,7 +508,7 @@ BEGIN
                            ,DR.JanCD
                            ,DR.SKUCD
                            ,DR.AdminNO
-                           ,DR.ReserveSu - @tblArrivalSu    --Œ³‚ÌƒŒƒR[ƒh‚ÌReserveSu - –¾×“ü‰×”
+                           ,DR.ReserveSu - @tblArrivalSu    --ReserveSu = Œ³‚ÌƒŒƒR[ƒh‚ÌReserveSu - –¾×“ü‰×”
                            ,NULL    --ShippingPossibleDate
                            ,0       --ShippingPossibleSU
                            ,NULL    --ShippingOrderNO
@@ -567,7 +568,7 @@ BEGIN
             
             --ŽŸ‚Ìs‚Ìƒf[ƒ^‚ðŽæ“¾‚µ‚Ä•Ï”‚Ö’l‚ðƒZƒbƒg
             FETCH NEXT FROM CUR_TABLE
-            INTO @tblArrivalPlanNO, @tblStockNO, @tblReserveNO, @tblArrivalSu, @tblArrivalPlanSu, @tblDataKbn, @SakuseiFlg;
+            INTO @tblArrivalPlanNO, @tblStockNO, @tblReserveNO, @tblArrivalSu, @tblArrivalPlanSu, @tblDataKbn, @SakuseiFlg, @tblReserveSu;
 
         END
         
@@ -578,15 +579,15 @@ BEGIN
 
         --yD_ArrivalPlanzUpdate   Table“]‘—Žd—l‚b	šš
         UPDATE [D_ArrivalPlan] SET
-           [ArrivalPlanSu] = tbl.ArrivalSu
-          ,[ArrivalSu] = tbl.ArrivalSu
-          ,[UpdateOperator]     =  @Operator  
-          ,[UpdateDateTime]     =  @SYSDATETIME
+           [ArrivalPlanSu]  = tbl.ArrivalSu
+          ,[ArrivalSu]      = tbl.ArrivalSu
+          ,[UpdateOperator] =  @Operator  
+          ,[UpdateDateTime] =  @SYSDATETIME
         
          FROM (SELECT tbl.ArrivalPlanNO, SUM(tbl.ArrivalSu) AS ArrivalSu
-                FROM @Table AS tbl
-                WHERE tbl.UpdateFlg >= 0
-                GROUP BY tbl.ArrivalPlanNO
+               FROM @Table AS tbl
+               WHERE tbl.UpdateFlg >= 0
+               GROUP BY tbl.ArrivalPlanNO
          ) AS tbl
          WHERE tbl.ArrivalPlanNO = D_ArrivalPlan.ArrivalPlanNO
         ;
