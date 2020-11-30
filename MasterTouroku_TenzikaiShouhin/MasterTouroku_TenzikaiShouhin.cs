@@ -1741,8 +1741,8 @@ namespace MasterTouroku_TenzikaiShouhin
                             Scr_Lock(1, 3, 0);
                             mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
                             S_BodySeigyo(5, 2);
-                            DisablePanel(panel12);
-                            DisablePanel(panel11);
+                            //DisablePanel(panel12);
+                            //DisablePanel(panel11);
                     }
                         else
                         {
@@ -2082,6 +2082,7 @@ namespace MasterTouroku_TenzikaiShouhin
                             if (Convert.ToInt32(strS) > ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, 0].CellCtl).MaxLength)
                             {
                                 MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                mGrid.g_MK_State[col, 0].Cell_Enabled = true;
                                 return false;
                             }
                         break;
@@ -2107,6 +2108,7 @@ namespace MasterTouroku_TenzikaiShouhin
                         if (Convert.ToInt32(strC) > ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, 0].CellCtl).MaxLength)
                         {
                             MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            mGrid.g_MK_State[col, 0].Cell_Enabled = true;
                             return false;
                         }
                         //  }
@@ -2133,7 +2135,8 @@ namespace MasterTouroku_TenzikaiShouhin
                              if (Convert.ToInt32(strSN) > ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, 0].CellCtl).MaxLength)
                              {
                                  MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                 return false;
+                            mGrid.g_MK_State[col, 0].Cell_Enabled = true;
+                            return false;
                              }
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.HanbaiYoteiDateMonth:
@@ -2340,6 +2343,7 @@ namespace MasterTouroku_TenzikaiShouhin
                         if (Convert.ToInt32(strR) > ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, 0].CellCtl).MaxLength)
                         {
                             MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            mGrid.g_MK_State[col, 0].Cell_Enabled = true;
                             return false;
                         }
                         break;
@@ -3960,6 +3964,8 @@ namespace MasterTouroku_TenzikaiShouhin
                 }
            // }
         }
+
+       
         private void CellDisable(int pCol, int pRow)
         {
             int w_Col;
