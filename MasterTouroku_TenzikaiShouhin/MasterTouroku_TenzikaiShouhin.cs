@@ -2396,7 +2396,7 @@ namespace MasterTouroku_TenzikaiShouhin
 
         }
         private void C_KeyDown(object sender, KeyEventArgs e)
-        {
+       {
             // Processing when the Enter key is pressed
             // Check if the Return key is pressed
             // Alt or Ctrl key is pressed, do the original operation
@@ -2506,56 +2506,72 @@ namespace MasterTouroku_TenzikaiShouhin
                     }
                     else if (index == (int)Eindex.SCTenzikai)
                     {
+                        if (!String.IsNullOrEmpty(detailControls[(int)Eindex.SCTenzikai].Text))
+                        { 
                         M_TenzikaiShouhin_Entity mt = new M_TenzikaiShouhin_Entity
                         {
-                            TenzikaiName= detailControls[(int)Eindex.SCTenzikai].Text,
-                        };
-                        DataTable dtTN = tbl.M_TenzikaiShouhin_SelectByTenziName(mt);
-                        if(dtTN.Rows.Count > 0)
-                        {
-                            SC_Vendor.TxtCode.Text = dtTN.Rows[0]["VendorCD"].ToString();
-                            SC_Vendor.LabelText= dtTN.Rows[0]["VendorName"].ToString();
-                            CB_Year.Text= dtTN.Rows[0]["LastYearTerm"].ToString();
-                            CB_Season.Text= dtTN.Rows[0]["LastSeason"].ToString();
-                            detailControls[(int)Eindex.SCShiiresaki].Focus();
-                        }
-                        else
-                        {
-                            if(OperationMode == EOperationMode.UPDATE)
-                            {
-                                bbl.ShowMessage("E128");
-                                detailControls[(int)Eindex.SCTenzikai].Focus();
-                                S_Clear_Grid();
-                                ClearCustomerInfo();
-                                CB_Year.SelectedValue = -1;
-                                CB_Season.SelectedValue = -1;
-                            }
-                            detailControls[(int)Eindex.SCShiiresaki].Focus();
-                        }
-                    }
-                    else if (index == (int)Eindex.SCCTenzikai)
-                    {
-                        M_TenzikaiShouhin_Entity mt = new M_TenzikaiShouhin_Entity
-                        {
-                            TenzikaiName = detailControls[(int)Eindex.SCCTenzikai].Text,
+                            TenzikaiName = detailControls[(int)Eindex.SCTenzikai].Text,
                         };
                         DataTable dtTN = tbl.M_TenzikaiShouhin_SelectByTenziName(mt);
                         if (dtTN.Rows.Count > 0)
                         {
-                            SC_CopyVendor.TxtCode.Text = dtTN.Rows[0]["VendorCD"].ToString();
-                            SC_CopyVendor.LabelText = dtTN.Rows[0]["VendorName"].ToString();
-                            CB_Copyyear.Text = dtTN.Rows[0]["LastYearTerm"].ToString();
-                            CB_copyseason.Text = dtTN.Rows[0]["LastSeason"].ToString();
-                            detailControls[(int)Eindex.SCCShiiresaki].Focus();
+                            SC_Vendor.TxtCode.Text = dtTN.Rows[0]["VendorCD"].ToString();
+                            SC_Vendor.LabelText = dtTN.Rows[0]["VendorName"].ToString();
+                            CB_Year.Text = dtTN.Rows[0]["LastYearTerm"].ToString();
+                            CB_Season.Text = dtTN.Rows[0]["LastSeason"].ToString();
+                            detailControls[(int)Eindex.SCShiiresaki].Focus();
                         }
                         else
                         {
-                            bbl.ShowMessage("E128");
-                            detailControls[(int)Eindex.SCCTenzikai].Focus();
-                            S_Clear_Grid();
-                            ClearCustomerInfo();
-                            CB_copyseason.SelectedValue = -1;
-                            CB_Copyyear.SelectedValue = -1;
+                            if (OperationMode == EOperationMode.UPDATE)
+                            {
+                                bbl.ShowMessage("E128");
+                                detailControls[(int)Eindex.SCTenzikai].Focus();
+                                S_Clear_Grid();
+                                detailControls[(int)(Eindex.SCShiiresaki)].Text = "";
+                                SC_Vendor.LabelText = "";
+                                ((CKM_Controls.CKM_ComboBox)CB_Year).SelectedValue = -1;
+                                ((CKM_Controls.CKM_ComboBox)CB_Season).SelectedValue = -1;
+                            }                                                               
+                                detailControls[(int)Eindex.SCShiiresaki].Focus();
+                        }
+                        }
+                    }
+                    else if (index == (int)Eindex.SCCTenzikai)
+                    {
+
+                        if (!String.IsNullOrEmpty(detailControls[(int)Eindex.SCCTenzikai].Text))
+                        {
+                            M_TenzikaiShouhin_Entity mt = new M_TenzikaiShouhin_Entity
+                            {
+                                TenzikaiName = detailControls[(int)Eindex.SCCTenzikai].Text,
+                            };
+                            var rresTen = tbl.M_TenzikaiShouhinName_Select(mt);
+                            if (rresTen.Rows.Count == 0)
+                            {
+                                bl.ShowMessage("E101");
+                                ClearCopyName();
+                                return;
+                            }
+                            DataTable dtTN = tbl.M_TenzikaiShouhin_SelectByTenziName(mt);
+                            if (dtTN.Rows.Count > 0)
+                            {
+                                SC_CopyVendor.TxtCode.Text = dtTN.Rows[0]["VendorCD"].ToString();
+                                SC_CopyVendor.LabelText = dtTN.Rows[0]["VendorName"].ToString();
+                                CB_Copyyear.Text = dtTN.Rows[0]["LastYearTerm"].ToString();
+                                CB_copyseason.Text = dtTN.Rows[0]["LastSeason"].ToString();
+                                detailControls[(int)Eindex.SCCShiiresaki].Focus();
+                            }
+                            else
+                            {
+                                bbl.ShowMessage("E128");
+                                ClearCopyName();
+                                
+                            }
+                        }
+                        else
+                        {
+                            detailControls[(int)Eindex.SCCShiiresaki].Focus();
                         }
                     }
                     else
@@ -2586,7 +2602,15 @@ namespace MasterTouroku_TenzikaiShouhin
                 MessageBox.Show(ex.Message);
             }
         }
-
+        private void ClearCopyName()
+        {
+            detailControls[(int)Eindex.SCCTenzikai].Focus();
+            S_Clear_Grid();
+            detailControls[(int)(Eindex.SCCShiiresaki)].Text = "";
+            SC_CopyVendor.LabelText = "";
+            ((CKM_Controls.CKM_ComboBox)CB_Copyyear).SelectedValue = -1;
+            ((CKM_Controls.CKM_ComboBox)CB_copyseason).SelectedValue = -1;
+        }
         private void ChangeFunKeys()
         {
             if (OperationMode == EOperationMode.UPDATE)
