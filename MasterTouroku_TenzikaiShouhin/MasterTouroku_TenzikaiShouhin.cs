@@ -1936,7 +1936,6 @@ namespace MasterTouroku_TenzikaiShouhin
             }
         }
         private bool CheckGrid(int col, int row, bool chkAll = false, bool changeYmd = false, bool IsExec = false)
-
         {
             bool checkall = true;
 
@@ -2071,9 +2070,17 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
+                        string str = Encoding.GetEncoding(932).GetByteCount(mGrid.g_DArray[row].SKUName).ToString(); 
+                        //string len = ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, row].CellCtl).MaxLength;
+                        if (Convert.ToInt32(str) > ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, row].CellCtl).MaxLength)
+                        {
+                            MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return false;
+                        }
+               // }
 
-                        //}
-                        break;
+                //}
+                break;
                     case (int)ClsGridMasterTanzi.ColNO.ColorCD:
                         //if (mGrid.g_MK_State[col, row].Cell_Enabled)
                        // {
@@ -2120,6 +2127,15 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
+
+                        string str1 = mGrid.g_DArray[row].SizeName;
+                        //if (Convert.ToInt32(str) > (ConTxt as CKM_TextBox).MaxLength)
+                        //{
+                        //    MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //    (ConTxt as CKM_TextBox).isMaxLengthErr = true;
+                        //    (ConTxt as CKM_TextBox).Focus();
+                        //    return;
+                        //}
                         //}
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.HanbaiYoteiDateMonth:
