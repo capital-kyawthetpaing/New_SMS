@@ -36,8 +36,17 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
-        
 
+        public DataTable M_TenzikaiShouhin_SelectByTenziName(M_TenzikaiShouhin_Entity mt)
+        {
+            string sp = "M_TenzikaiShouhin_SelectByTenziName";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@tenzikainame", new ValuePair { value1 = SqlDbType.VarChar, value2 = mt.TenzikaiName } },
+
+            };
+            return SelectData(dic, sp);
+        }
         public DataTable M_Tenzikaishouhin_SelectForJancd(M_TenzikaiShouhin_Entity mt)
         {
             string sp = "M_Tenzikaishouhin_SelectForJancd";

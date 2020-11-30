@@ -1563,7 +1563,7 @@ namespace Base.Client
                 }
                 else if(ConTxt is CKM_TextBox)
                 {
-                    (ConTxt as CKM_TextBox).isMaxLengthErr = false;
+                    (ConTxt as CKM_TextBox).isMaxLengthErr = false; 
 
                     if (!ConTxt.Enabled)    //2020/5/18 add
                         continue;
