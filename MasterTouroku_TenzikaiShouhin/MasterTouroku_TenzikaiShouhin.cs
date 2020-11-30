@@ -2512,7 +2512,7 @@ namespace MasterTouroku_TenzikaiShouhin
                             {
                                 TenzikaiName = detailControls[(int)Eindex.SCTenzikai].Text,
                             };
-                            if(OperationMode == EOperationMode.UPDATE)
+                            if(OperationMode != EOperationMode.INSERT )
                             {
                                 var rresTen = tbl.M_TenzikaiShouhinName_Select(mt);
                                 if (rresTen.Rows.Count == 0)
@@ -2533,12 +2533,12 @@ namespace MasterTouroku_TenzikaiShouhin
                             }
                             else
                             {
-                                if (OperationMode == EOperationMode.UPDATE)
+                                if (OperationMode != EOperationMode.INSERT)
                                 {
                                     bbl.ShowMessage("E128");
                                     ClearName();
                                 }
-                                detailControls[(int)Eindex.SCShiiresaki].Focus();
+                                //detailControls[(int)Eindex.SCShiiresaki].Focus();
                             }
                         }
                     }
