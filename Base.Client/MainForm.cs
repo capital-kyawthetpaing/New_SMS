@@ -1565,8 +1565,8 @@ namespace Base.Client
                 {
                     (ConTxt as CKM_TextBox).isMaxLengthErr = false;
 
-                    //if (!ConTxt.Enabled)    //2020/5/18 add
-                    //    continue;
+                    if (!ConTxt.Enabled)    //2020/5/18 add
+                        continue;
 
                     if ((((ConTxt as CKM_TextBox).Ctrl_Type == CKM_TextBox.Type.Normal) || (ConTxt as CKM_TextBox).Ctrl_Type == CKM_TextBox.Type.Number) && (ConTxt as CKM_TextBox).Ctrl_Byte == CKM_TextBox.Bytes.半全角)
                     {
