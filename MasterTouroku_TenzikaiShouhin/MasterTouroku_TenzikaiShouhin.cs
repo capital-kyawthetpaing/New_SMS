@@ -2007,25 +2007,6 @@ namespace MasterTouroku_TenzikaiShouhin
                                 return false;
                             }
                         }
-                       
-                       // else
-                       // {
-
-                            //
-                            //if (OperationMode != EOperationMode.INSERT)
-                            //{
-                            //    DataTable dtResult = bbl.SimpleSelect1("66", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), mGrid.g_DArray[row].JANCD);
-                            //    if (dtResult.Rows.Count == 0)
-                            //    {
-                            //        bl.ShowMessage("E101");
-                            //        return false;
-                            //    }
-                            //}
-                            // if(OperationMode == EOperationMode.INSERT)
-                            // {
-                           
-                            //}
-
                             M_SKU_Entity msku = new M_SKU_Entity
                             {
                                 JanCD = mGrid.g_DArray[row].JANCD,
