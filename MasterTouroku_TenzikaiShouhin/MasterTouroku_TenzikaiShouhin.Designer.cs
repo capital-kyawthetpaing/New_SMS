@@ -431,6 +431,7 @@
             this.scjan_2 = new Search.CKM_SearchControl();
             this.label24 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -449,6 +450,7 @@
             this.panel_4.SuspendLayout();
             this.panel_3.SuspendLayout();
             this.panel_2.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -465,10 +467,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel12);
             this.panel1.Controls.Add(this.panel11);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.CB_Season);
             this.panel1.Controls.Add(this.TB_StartDate);
             this.panel1.Controls.Add(this.ckM_LB_Kijunbi);
             this.panel1.Controls.Add(this.BT_SKUCheck);
@@ -480,13 +482,9 @@
             this.panel1.Controls.Add(this.ckM_Label11);
             this.panel1.Controls.Add(this.ckM_Label8);
             this.panel1.Controls.Add(this.ckM_Label1);
-            this.panel1.Controls.Add(this.SC_Tenzikai);
             this.panel1.Controls.Add(this.ckM_Label6);
-            this.panel1.Controls.Add(this.ckM_Label7);
             this.panel1.Controls.Add(this.lbyear);
-            this.panel1.Controls.Add(this.CB_Year);
             this.panel1.Controls.Add(this.BT_Display);
-            this.panel1.Controls.Add(this.SC_Vendor);
             this.panel1.Controls.Add(this.Lb_brand);
             this.panel1.Location = new System.Drawing.Point(18, 50);
             this.panel1.Name = "panel1";
@@ -761,7 +759,7 @@
             this.CB_Season.Flag = 0;
             this.CB_Season.FormattingEnabled = true;
             this.CB_Season.Length = 10;
-            this.CB_Season.Location = new System.Drawing.Point(283, 70);
+            this.CB_Season.Location = new System.Drawing.Point(194, 61);
             this.CB_Season.MaxLength = 10;
             this.CB_Season.MoveNext = true;
             this.CB_Season.Name = "CB_Season";
@@ -989,7 +987,7 @@
             this.SC_Tenzikai.IsCopy = false;
             this.SC_Tenzikai.LabelText = "";
             this.SC_Tenzikai.LabelVisible = false;
-            this.SC_Tenzikai.Location = new System.Drawing.Point(91, 14);
+            this.SC_Tenzikai.Location = new System.Drawing.Point(2, 5);
             this.SC_Tenzikai.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Tenzikai.Name = "SC_Tenzikai";
             this.SC_Tenzikai.NameWidth = 180;
@@ -1031,7 +1029,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(223, 74);
+            this.ckM_Label7.Location = new System.Drawing.Point(134, 65);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label7.TabIndex = 815;
@@ -1065,7 +1063,7 @@
             this.CB_Year.Flag = 0;
             this.CB_Year.FormattingEnabled = true;
             this.CB_Year.Length = 10;
-            this.CB_Year.Location = new System.Drawing.Point(91, 70);
+            this.CB_Year.Location = new System.Drawing.Point(2, 61);
             this.CB_Year.MaxLength = 10;
             this.CB_Year.MoveNext = true;
             this.CB_Year.Name = "CB_Year";
@@ -1106,7 +1104,7 @@
             this.SC_Vendor.IsCopy = false;
             this.SC_Vendor.LabelText = "";
             this.SC_Vendor.LabelVisible = true;
-            this.SC_Vendor.Location = new System.Drawing.Point(91, 40);
+            this.SC_Vendor.Location = new System.Drawing.Point(2, 31);
             this.SC_Vendor.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Vendor.Name = "SC_Vendor";
             this.SC_Vendor.NameWidth = 310;
@@ -10975,6 +10973,18 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.SC_Tenzikai);
+            this.panel12.Controls.Add(this.SC_Vendor);
+            this.panel12.Controls.Add(this.CB_Year);
+            this.panel12.Controls.Add(this.ckM_Label7);
+            this.panel12.Controls.Add(this.CB_Season);
+            this.panel12.Location = new System.Drawing.Point(88, 9);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(540, 85);
+            this.panel12.TabIndex = 841;
+            // 
             // MasterTouroku_TenzikaiShouhin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -11026,6 +11036,8 @@
             this.panel_3.PerformLayout();
             this.panel_2.ResumeLayout(false);
             this.panel_2.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -11436,5 +11448,6 @@
         private System.Windows.Forms.Panel panel11;
         private Search.CKM_SearchControl SC_Segment;
         private Search.CKM_SearchControl SC_Brand;
+        private System.Windows.Forms.Panel panel12;
     }
 }

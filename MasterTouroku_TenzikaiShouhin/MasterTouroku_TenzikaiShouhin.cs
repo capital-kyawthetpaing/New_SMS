@@ -326,7 +326,8 @@ namespace MasterTouroku_TenzikaiShouhin
                     EnablePanel(panel4);
                     EnablePanel(panel6);
                     DisablePanel(panel11);
-                   // DisablePanel(panelB);
+                    // DisablePanel(panelB);
+                    EnablePanel(panel12);
                     skucheck = false;
                     checkmei = false;
                     Clear(panel1);
@@ -341,6 +342,7 @@ namespace MasterTouroku_TenzikaiShouhin
                     DisablePanel(panel4);
                     DisablePanel(panel6);
                     EnablePanel(panel11);
+                    EnablePanel(panel12);
 
                     break;
 
@@ -353,6 +355,7 @@ namespace MasterTouroku_TenzikaiShouhin
                     DisablePanel(panel4);
                     DisablePanel(panel6);
                     EnablePanel(panel11);
+                    EnablePanel(panel12);
                     detailControls[(int)Eindex.StartDate].Enabled = false;
                     break;
 
@@ -383,6 +386,7 @@ namespace MasterTouroku_TenzikaiShouhin
                             return;
 
                         ChangeOperationMode(base.OperationMode);
+                        //EnablePanel(panel12);
                         break;
                     }
                 case 6://F7:行削除
@@ -1583,7 +1587,6 @@ namespace MasterTouroku_TenzikaiShouhin
         private void S_SetControlArray()
         {
             mGrid.F_CtrlArray_MK(mGrid.g_MK_Ctl_Col, mGrid.g_MK_Ctl_Row);
-
             // 1>5行目
             try
             {
@@ -1704,6 +1707,8 @@ namespace MasterTouroku_TenzikaiShouhin
                             mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
                             S_BodySeigyo(4, 0);
                             scjan_1.Focus();
+                            DisablePanel(panel12);
+                            DisablePanel(panel11);  
                         }
                         else
                         {
@@ -1736,7 +1741,9 @@ namespace MasterTouroku_TenzikaiShouhin
                             Scr_Lock(1, 3, 0);
                             mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
                             S_BodySeigyo(5, 2);
-                        }
+                            DisablePanel(panel12);
+                            DisablePanel(panel11);
+                    }
                         else
                         {
                             bl.ShowMessage("E128");
@@ -2070,21 +2077,15 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
-                        string str = Encoding.GetEncoding(932).GetByteCount(mGrid.g_DArray[row].SKUName).ToString(); 
-                        //string len = ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, row].CellCtl).MaxLength;
-                        if (Convert.ToInt32(str) > ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, row].CellCtl).MaxLength)
-                        {
-                            MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return false;
-                        }
-               // }
-
-                //}
-                break;
+                            string strS = Encoding.GetEncoding(932).GetByteCount(mGrid.g_DArray[row].SKUName).ToString();
+                            //string len = ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, row].CellCtl).MaxLength;
+                            if (Convert.ToInt32(strS) > ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, 0].CellCtl).MaxLength)
+                            {
+                                MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return false;
+                            }
+                        break;
                     case (int)ClsGridMasterTanzi.ColNO.ColorCD:
-                        //if (mGrid.g_MK_State[col, row].Cell_Enabled)
-                       // {
-                            //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
                             if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].ColorCD))
                             {
                                 // Ｅ１０２
@@ -2095,16 +2096,20 @@ namespace MasterTouroku_TenzikaiShouhin
                         //}
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.ColorName:
-                       // if (mGrid.g_MK_State[col, row].Cell_Enabled)
-                       // {
-                            //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
                             if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].ColorName))
                             {
                                 //Ｅ１０２
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
-                      //  }
+                        string strC = Encoding.GetEncoding(932).GetByteCount(mGrid.g_DArray[row].ColorName).ToString();
+                        //string len = ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, row].CellCtl).MaxLength;
+                        if (Convert.ToInt32(strC) > ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, 0].CellCtl).MaxLength)
+                        {
+                            MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return false;
+                        }
+                        //  }
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.SizeCD:
                        // if (mGrid.g_MK_State[col, row].Cell_Enabled)
@@ -2119,24 +2124,17 @@ namespace MasterTouroku_TenzikaiShouhin
                        // }
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.SizeName:
-                       // if (mGrid.g_MK_State[col, row].Cell_Enabled)
-                       // {
-                            //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
                             if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].SizeName))
                             {
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
-
-                        string str1 = mGrid.g_DArray[row].SizeName;
-                        //if (Convert.ToInt32(str) > (ConTxt as CKM_TextBox).MaxLength)
-                        //{
-                        //    MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        //    (ConTxt as CKM_TextBox).isMaxLengthErr = true;
-                        //    (ConTxt as CKM_TextBox).Focus();
-                        //    return;
-                        //}
-                        //}
+                             string strSN = Encoding.GetEncoding(932).GetByteCount(mGrid.g_DArray[row].ColorName).ToString();
+                             if (Convert.ToInt32(strSN) > ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, 0].CellCtl).MaxLength)
+                             {
+                                 MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                 return false;
+                             }
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.HanbaiYoteiDateMonth:
                         if (mGrid.g_MK_State[col, row].Cell_Enabled)
@@ -2190,7 +2188,6 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
-
                         }
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.SalePriceOutTax:
@@ -2203,8 +2200,6 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
-                         
-
                         }
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.SalePriceOutTax1:
@@ -2230,7 +2225,6 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
-                           
                         }
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.SalePriceOutTax3:
@@ -2243,8 +2237,6 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
-                           
-
                         }
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.SalePriceOutTax4:
@@ -2310,8 +2302,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bl.ShowMessage("E101");
                                 return false;
                             }
-                            // mGrid.g_DArray[row].SegmentCD = ActiveControl.Text;
-                            // mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                            
                         }
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.TaniCD:
@@ -2342,6 +2333,14 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
+                        }
+                        break;
+                    case (int)ClsGridMasterTanzi.ColNO.Remark:
+                        string strR = Encoding.GetEncoding(932).GetByteCount(mGrid.g_DArray[row].Remark).ToString();
+                        if (Convert.ToInt32(strR) > ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, 0].CellCtl).MaxLength)
+                        {
+                            MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return false;
                         }
                         break;
                 }
@@ -2493,6 +2492,11 @@ namespace MasterTouroku_TenzikaiShouhin
                                     Scr_Lock(1, 3, 0);
                                     mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
                                     S_BodySeigyo(5, 2);
+                                }
+                                if(OperationMode != EOperationMode.SHOW)
+                                {
+                                    DisablePanel(panel11);
+                                    DisablePanel(panel12);
                                 }
                             }
                             else
