@@ -2538,6 +2538,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                     bbl.ShowMessage("E128");
                                     ClearName();
                                 }
+                                detailControls[(int)Eindex.SCShiiresaki].Focus();
                             }
                         }
                     }
