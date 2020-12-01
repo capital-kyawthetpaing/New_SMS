@@ -227,9 +227,12 @@ BEGIN
         --カーソル定義
         DECLARE CUR_TABLE CURSOR FOR
             SELECT tbl.ArrivalPlanNO, tbl.StockNO, tbl.ReserveNO, tbl.ArrivalSu
-            ,DS.PlanSu-tbl.ArrivalSu AS ArrivalPlanSu	--（元のレコードのPlanSu - 画面明細.入荷数）>０ならINSERT
-            ,tbl.DataKbn
-            ,(CASE WHEN DP.InsertOperator = 'Nyuuka' THEN 0 ELSE 1 END) AS SakuseiFlg
+                  ,DS.PlanSu-tbl.ArrivalSu AS ArrivalPlanSu	--（元のレコードのPlanSu - 画面明細.入荷数）>０ならINSERT
+                  ,tbl.DataKbn
+                  ,(CASE WHEN DP.InsertOperator = 'Nyuuka' THEN 0 ELSE 1 END) AS SakuseiFlg
+                  ,(SELECT DR.ReserveSu - tbl.ArrivalSu    --元のレコードのReserveSu - 明細入荷数  
+                      FROM D_Reserve AS DR 
+                     WHERE DR.ReserveNO = tbl.ReserveNO) AS ReserveSu
             FROM @Table AS tbl
             LEFT OUTER JOIN D_ArrivalPlan AS DP
             ON DP.ArrivalPlanNO = tbl.ArrivalPlanNO
