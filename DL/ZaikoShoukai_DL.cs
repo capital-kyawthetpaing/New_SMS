@@ -11,7 +11,7 @@ namespace DL
    public class ZaikoShoukai_DL : Base_DL
     {
        
-        public DataTable ZaikoShoukai_Search(M_SKU_Entity msku_entity,M_SKUInfo_Entity msInfo_entity,M_SKUTag_Entity msTag, D_Stock_Entity ds_Entity,int Type)
+        public DataTable ZaikoShoukai_Search(M_SKU_Entity msku_entity,M_SKUInfo_Entity msInfo_entity,M_SKUTag_Entity msTag, D_Stock_Entity ds_Entity,int Type,int chktype)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
@@ -49,6 +49,7 @@ namespace DL
                { "@SoukoCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = ds_Entity.SoukoCD} },
                { "@RackNoF", new ValuePair { value1 = SqlDbType.VarChar, value2 = ds_Entity.RackNOFrom } },
                { "@RackNoT", new ValuePair { value1 = SqlDbType.VarChar, value2 = ds_Entity.RackNOTo} },
+               { "@chktype", new ValuePair { value1 = SqlDbType.VarChar, value2 = chktype.ToString()} },
             };
             return SelectData(dic, "ZaikoShoukai_Search");
         }
