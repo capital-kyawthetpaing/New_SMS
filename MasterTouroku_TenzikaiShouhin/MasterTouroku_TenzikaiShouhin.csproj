@@ -37,6 +37,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\Debug\closedXML.dll</HintPath>
     </Reference>
+    <Reference Include="ExcelDataReader, Version=3.4.2.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Search\RequiredDLL\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.4.2.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Search\RequiredDLL\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
     <Reference Include="GridControl, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\Debug\GridControl.dll</HintPath>

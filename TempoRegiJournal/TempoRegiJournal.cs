@@ -119,12 +119,12 @@ namespace TempoRegiJournal
                 txtPrintDateFrom.Focus();
                 return false;
             }
-            else if (string.IsNullOrWhiteSpace(txtPrintDateTo.Text))
-            {
-                bl.ShowMessage("E102");
-                txtPrintDateTo.Focus();
-                return false;
-            }
+            //else if (string.IsNullOrWhiteSpace(txtPrintDateTo.Text))
+            //{
+            //    bl.ShowMessage("E102");
+            //    txtPrintDateTo.Focus();
+            //    return false;
+            //}
             else if (!bbl.CheckDate(txtPrintDateFrom.Text))
             {
                 // 日付エラー
@@ -132,19 +132,20 @@ namespace TempoRegiJournal
                 txtPrintDateFrom.Focus();
                 return false;
             }
-            else if (!bbl.CheckDate(txtPrintDateTo.Text))
-            {
-                // 日付エラー
-                bbl.ShowMessage("E103");
-                txtPrintDateTo.Focus();
-                return false;
-            }
-            else if (Convert.ToDateTime(txtPrintDateFrom.Text).CompareTo(Convert.ToDateTime(txtPrintDateTo.Text)) > 0)
-            {
-                bl.ShowMessage("E130");
-                txtPrintDateFrom.Focus();
-                return false;
-            }
+            //else if (!bbl.CheckDate(txtPrintDateTo.Text))
+            //{
+            //    // 日付エラー
+            //    bbl.ShowMessage("E103");
+            //    txtPrintDateTo.Focus();
+            //    return false;
+            //}
+            //else if (Convert.ToDateTime(txtPrintDateFrom.Text).CompareTo(Convert.ToDateTime(txtPrintDateTo.Text)) > 0)
+            //{
+            //    bl.ShowMessage("E130");
+            //    txtPrintDateFrom.Focus();
+            //    return false;
+            //}
+            txtPrintDateTo.Text = txtPrintDateFrom.Text;
 
             return true;
         }
@@ -271,21 +272,24 @@ namespace TempoRegiJournal
                 #endregion // 店舗データ
 
                 #region 売上番号データ
-                var salesNo = CreateSalesNoTableRow(salesNos);
-                salesNo.StoreReceiptPrint = storeReceiptPrint;                                    // 店舗レシート表記
-                salesNo.StaffReceiptPrint = staffReceiptPrint;                                    // 担当レシート表記
-                salesNo.SalesNO = salesNO;                                                        // 売上番号
-                salesNo.IssueDate = issueDate;  // ConvertDateTime(row["IssueDate"], true);                      // 発行日
-                salesNo.IssueDateTime = issueDateTime;  //  ConvertDateTime(row["IssueDate"], false);                 // 発行日時
-
-                if (salesNos.AsEnumerable().Where(s => s.SalesNO == salesNO).FirstOrDefault() == null)
+                if (!string.IsNullOrWhiteSpace(salesNO))
                 {
-                    salesNos.Rows.Add(salesNo);
+                    var salesNo = CreateSalesNoTableRow(salesNos);
+                    salesNo.StoreReceiptPrint = storeReceiptPrint;                                    // 店舗レシート表記
+                    salesNo.StaffReceiptPrint = staffReceiptPrint;                                    // 担当レシート表記
+                    salesNo.SalesNO = salesNO;                                                        // 売上番号
+                    salesNo.IssueDate = issueDate;  // ConvertDateTime(row["IssueDate"], true);                      // 発行日
+                    salesNo.IssueDateTime = issueDateTime;  //  ConvertDateTime(row["IssueDate"], false);                 // 発行日時
+
+                    if (salesNos.AsEnumerable().Where(s => s.SalesNO == salesNO).FirstOrDefault() == null)
+                    {
+                        salesNos.Rows.Add(salesNo);
+                    }
                 }
                 #endregion  // 売上番号データ
 
                 #region 販売データ
-                if (OldDepositNo != row["DepositNO"].ToString())
+                if (OldDepositNo != row["DepositNO"].ToString() && !string.IsNullOrWhiteSpace(salesNO))
                 {
                     OldDepositNo = row["DepositNO"].ToString();
 
@@ -1356,12 +1360,13 @@ namespace TempoRegiJournal
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if(string.IsNullOrWhiteSpace(txtPrintDateTo.Text))
-                {
+                //if(string.IsNullOrWhiteSpace(txtPrintDateTo.Text))
+                //{
                     txtPrintDateTo.Text = txtPrintDateFrom.Text;
-                }
+                //}
 
-                txtPrintDateTo.Focus();
+                //txtPrintDateTo.Focus();
+                PrintCheckBox.Focus();
             }
         }
 

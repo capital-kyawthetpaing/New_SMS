@@ -528,12 +528,14 @@
     <Content Include="StoreProcedure\M_TeniKaiSelectbyJAN.sql" />
     <Content Include="StoreProcedure\M_TenjiDataSet_Select.sql" />
     <Content Include="StoreProcedure\M_TenjiKaiJuuChuu_Select.sql" />
+    <Content Include="StoreProcedure\M_TenzikaiShouhinName_Select.sql" />
     <Content Include="StoreProcedure\M_TenzikaiShouhin_Check.sql" />
     <Content Include="StoreProcedure\M_Tenzikaishouhin_Delete.sql" />
     <Content Include="StoreProcedure\M_Tenzikaishouhin_DeleteUpdate.sql" />
     <Content Include="StoreProcedure\M_Tenzikaishouhin_InsertUpdate.sql" />
     <Content Include="StoreProcedure\M_Tenzikaishouhin_Search.sql" />
     <Content Include="StoreProcedure\M_TenzikaiShouhin_Select.sql" />
+    <Content Include="StoreProcedure\M_TenzikaiShouhin_SelectByTenziName.sql" />
     <Content Include="StoreProcedure\M_Tenzikaishouhin_SelectForJancd.sql" />
     <Content Include="StoreProcedure\M_Tenzikai_Search.sql" />
     <Content Include="StoreProcedure\M_VendorFTP_ForSelectFile.sql" />

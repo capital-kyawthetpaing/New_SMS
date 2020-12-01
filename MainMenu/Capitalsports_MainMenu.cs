@@ -98,7 +98,7 @@ namespace MainMenu
             {
                 //if (Base_DL.iniEntity.IsDM_D30Used)
                 //{
-                // //   cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+                //    cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
                 //}///Start New Window for display by PTK
             }
             catch (Exception ex)

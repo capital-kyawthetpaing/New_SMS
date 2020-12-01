@@ -24,6 +24,15 @@ namespace BL
         {
             return dl.Mastertoroku_Tenzikaishouhin_Select(mt, mode);
         }
+
+        public DataTable M_TenzikaiShouhin_SelectByTenziName(M_TenzikaiShouhin_Entity mt)
+        {
+            return dl.M_TenzikaiShouhin_SelectByTenziName(mt);
+        }
+        public DataTable M_TenzikaiShouhinName_Select(M_TenzikaiShouhin_Entity mt)
+        {
+            return dl.M_TenzikaiShouhinName_Select(mt);
+        }
         public DataTable M_Tenzikaishouhin_SelectForJancd(M_TenzikaiShouhin_Entity mt)
         {
             return dl.M_Tenzikaishouhin_SelectForJancd(mt);
