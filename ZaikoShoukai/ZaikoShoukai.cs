@@ -29,6 +29,7 @@ namespace ZaikoShoukai
         string adminno = "", soukocd = "";
         string shohinmei, color, size, item, skucd, brand, jancd, makercd,changedate,soukoname;
         int type = 0;
+        int chktype = 0;
         public  ZaikoShoukai()
         {
             InitializeComponent();
@@ -101,13 +102,22 @@ namespace ZaikoShoukai
                     type = 3;
                 }
 
+                if (ckM_CKB_suru.Checked == true)
+                {
+                    chktype = 1;
+                }
+                else
+                {
+                    chktype = 0;
+                }
+
                 string[]  store = TB_Bikokeyword.ToString().Split(','); 
                 msku_Entity = GetDataEntity();
                 msInfo_Entity = GetInfoEntity();
                 msT_Entity = GetTagEntity();
                 ds_Entity = GetStockEntity();
 
-                dtData = zaibl.ZaikoShoukai_Search(msku_Entity, msInfo_Entity, msT_Entity,ds_Entity, type);
+                dtData = zaibl.ZaikoShoukai_Search(msku_Entity, msInfo_Entity, msT_Entity,ds_Entity, type ,chktype);
               
                 if (dtData.Rows.Count > 0)
                 {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,7 +31,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
         {
             InProgramID = "MasterTouroku_TenzikaiHanbaiTankaKakeritu";
             StartProgram();
-            ModeText = "登録";
+            ModeText = "修正";
             string ymd = bbl.GetDate();
             CB_Year.Bind(ymd);
             CB_Season.Bind(ymd);
@@ -226,7 +227,8 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
                     SC_Tanka.SetFocus(1);
                     break;
                 case EOperationMode.UPDATE:
-                    Clear(panel1);
+                    //Clear(panel1);
+                    CleanData();
                     SC_Tanka.SetFocus(1);
                     break;
             }
@@ -235,7 +237,6 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
         {
             Clear(panel1);
             GV_Tenzaishohin.DataSource = null;
-
         }
         protected override void EndSec()
         {
