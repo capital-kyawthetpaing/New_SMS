@@ -1,129 +1,18 @@
 
 
-BEGIN TRY 
- Drop PROCEDURE dbo.[D_MoveRequest_SelectDataForIdouIrai]
-END try
-BEGIN CATCH END CATCH 
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
+/****** Object:  StoredProcedure [dbo].[PRC_ZaikoIdouIraiNyuuryoku]    Script Date: 2020/12/01 20:11:50 ******/
+DROP PROCEDURE [dbo].[PRC_ZaikoIdouIraiNyuuryoku]
 GO
 
-BEGIN TRY 
- Drop PROCEDURE dbo.[PRC_ZaikoIdouIraiNyuuryoku]
-END try
-BEGIN CATCH END CATCH 
-DROP TYPE [dbo].[T_IdoIrai]
-GO
+/****** Object:  StoredProcedure [dbo].[PRC_ZaikoIdouIraiNyuuryoku]    Script Date: 2020/12/01 20:11:50 ******/
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
 
 
-
-
-
---  ======================================================================
---       Program Call    ç›å…à⁄ìÆàÀóäì¸óÕ
---       Program ID      ZaikoIdouIraiNyuuryoku
---       Create date:    2019.12.11
---    ======================================================================
-CREATE PROCEDURE D_MoveRequest_SelectDataForIdouIrai
-    (@RequestNO varchar(11)
-    )AS
-    
---********************************************--
---                                            --
---                 èàóùäJén                   --
---                                            --
---********************************************--
-
-BEGIN
-    -- SET NOCOUNT ON added to prevent extra result sets from
-    -- interfering with SELECT statements.
-    SET NOCOUNT ON;
-
-    -- Insert statements for procedure here
-
---        IF @OperateMode = 2   --èCê≥éû
---        BEGIN
-    SELECT DH.RequestNO
-          ,DH.StoreCD
-          ,CONVERT(varchar,DH.RequestDate,111) AS RequestDate
-          ,DH.MovePurposeKBN
-          ,DH.FromStoreCD
-          ,DH.FromSoukoCD
-          ,DH.ToStoreCD
-          ,DH.ToSoukoCD
-          ,DH.StaffCD
-          ,DH.AnswerDateTime
-          ,DH.AnswerStaffCD
-          ,DH.InsertOperator
-          ,CONVERT(varchar,DH.InsertDateTime) AS InsertDateTime
-          ,DH.UpdateOperator
-          ,CONVERT(varchar,DH.UpdateDateTime) AS UpdateDateTime
-          ,DH.DeleteOperator
-          ,CONVERT(varchar,DH.DeleteDateTime) AS DeleteDateTime
-                  
-          ,DM.RequestRows
-          ,DM.SKUCD
-          ,DM.AdminNO
-          ,DM.JanCD
-          ,(SELECT top 1 M.SKUName 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= DH.RequestDate
-             AND M.AdminNO = DM.AdminNO
-              AND M.DeleteFlg = 0
-             ORDER BY M.ChangeDate desc) AS SKUName
-          ,(SELECT top 1 M.ColorName 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= DH.RequestDate
-             AND M.AdminNO = DM.AdminNO
-              AND M.DeleteFlg = 0
-             ORDER BY M.ChangeDate desc) AS ColorName
-          ,(SELECT top 1 M.SizeName 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= DH.RequestDate
-             AND M.AdminNO = DM.AdminNO
-              AND M.DeleteFlg = 0
-             ORDER BY M.ChangeDate desc) AS SizeName
-          
-          ,DM.RequestSu
-          ,CONVERT(varchar,DM.ExpectedDate,111) AS ExpectedDate
-          ,DM.CommentInStore
-
-      FROM D_MoveRequest DH
-      LEFT OUTER JOIN D_MoveRequestDetailes AS DM 
-      ON DH.RequestNO = DM.RequestNO 
-      AND DM.DeleteDateTime IS NULL                     
-      
-      WHERE DH.RequestNO = @RequestNO           
-      AND DH.DeleteDateTime IS Null
-      ORDER BY DM.RequestRows
-      ;
-      
-END
-
-GO
-
-CREATE TYPE T_IdoIrai AS TABLE
-    (
-    [RequestRows] [int],
-
-    [SKUCD] [varchar](30) ,
-    [AdminNO] [int] ,
-    [JanCD] [varchar](13) ,
-    [RequestSu] [int] ,
-    [OldRequestSu] [int] ,
-
-    [ExpectedDate] date,
-    [CommentInStore] varchar(80),
-    [UpdateFlg][tinyint]
-    )
-GO
-
-CREATE PROCEDURE PRC_ZaikoIdouIraiNyuuryoku
+CREATE PROCEDURE [dbo].[PRC_ZaikoIdouIraiNyuuryoku]
    (@OperateMode    int,                 -- èàóùãÊï™Åi1:êVãK 2:èCê≥ 3:çÌèúÅj
     @RequestNO   varchar(11),
     @StoreCD   varchar(4),
@@ -165,7 +54,7 @@ BEGIN
     DECLARE CUR_Store CURSOR FOR
         SELECT top 1 A.MailAddress1, A.MailAddress2, A.MailAddress3
         FROM M_Store AS A
-        WHERE A.StoreCD = @ToStoreCD 
+        WHERE A.StoreCD = @FromStoreCD 
         AND A.DeleteFlg = 0 
         AND A.ChangeDate <= @RequestDate
         ORDER BY A.ChangeDate desc
@@ -178,7 +67,7 @@ BEGIN
     DECLARE @MailCounter int;
 
     DECLARE @MailFlg tinyint;
-    SET @MailFlg = (SELECT M.MailFlg FROM M_MovePurpose AS M WHERE M.MovePurposeKBN = 1);
+    SET @MailFlg = (SELECT M.MailFlg FROM M_MovePurpose AS M WHERE M.MovePurposeType = 1);
 
     --êVãK--
     IF @OperateMode = 1
@@ -600,57 +489,4 @@ END
 
 GO
 
-BEGIN TRY 
- Drop PROCEDURE dbo.[INSERT_UPDATE_D_MailAddress]
-END try
-BEGIN CATCH END CATCH 
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 
-CREATE PROCEDURE [INSERT_UPDATE_D_MailAddress]
-(
-    @KBN tinyint,
-    @MailAddress  varchar(100),
-    @Rows int,
-    @MailCounter  int
-)AS
---********************************************--
---                                            --
---                 èàóùäJén                   --
---                                            --
---********************************************--
-
-BEGIN
-
-    IF @KBN = 1
-    BEGIN
-        --ÅyD_MailAddressÅzÉÅÅ[ÉãòAóçà∂êÊÅ@Tableì]ëóédólÇc
-        INSERT INTO [D_MailAddress]
-           ([MailCounter]
-           ,[AddressRows]
-           ,[AddressKBN]
-           ,[Address])
-        VALUES(
-            @MailCounter
-           ,@Rows   --AddressRows
-           ,1   --AddressKBN
-           ,@MailAddress  --Address
-           );
-    END
-    
-    ELSE IF @KBN = 2
-    BEGIN
-        UPDATE [D_MailAddress]
-        SET [AddressKBN] = 1
-           ,[Address] = @MailAddress
-        WHERE MailCounter = @MailCounter
-        AND AddressRows = @Rows
-        ;  
-    END
-
-END
-
-
-GO
