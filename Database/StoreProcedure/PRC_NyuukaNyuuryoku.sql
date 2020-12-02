@@ -120,10 +120,10 @@ BEGIN
            (@ArrivalNO     
            ,@VendorDeliveryNo        
            ,(SELECT top 1 M.StoreCD
-                FROM M_Souko AS M
-                WHERE M.SoukoCD = @SoukoCD
-                AND M.ChangeDate <= @ArrivalDate
-                ORDER BY M.ChangeDate desc)
+             FROM M_Souko AS M
+             WHERE M.SoukoCD = @SoukoCD
+             AND M.ChangeDate <= @ArrivalDate
+             ORDER BY M.ChangeDate desc)
            ,@VendorCD                                             
            ,convert(date,@ArrivalDate)  
            ,@SYSDATE    --InputDate
@@ -413,9 +413,11 @@ BEGIN
                            ,0   --StockSu
                            ,@tblArrivalPlanSu   --PlanSu
                            --元のレコードのAllowableSu-左記 元のレコードへ更新した値
-                           ,DS.AllowableSu-(CASE WHEN @tblArrivalSu - ReserveSu > 0 THEN @tblArrivalSu - ReserveSu ELSE 0 END)--AllowableSu
+                           --,DS.AllowableSu-(CASE WHEN @tblArrivalSu - ReserveSu > 0 THEN @tblArrivalSu - ReserveSu ELSE 0 END)--AllowableSu
+                           ,DS.AllowableSu
                            --元のレコードのAnotherStoreAllowableSu-左記 元のレコードへ更新した値
-                           ,DS.AnotherStoreAllowableSu - (CASE WHEN @tblArrivalSu - ReserveSu > 0 THEN @tblArrivalSu - ReserveSu ELSE 0 END)  --AnotherStoreAllowableSu
+                           --,DS.AnotherStoreAllowableSu - (CASE WHEN @tblArrivalSu - ReserveSu > 0 THEN @tblArrivalSu - ReserveSu ELSE 0 END)  --AnotherStoreAllowableSu
+                           ,DS.AnotherStoreAllowableSu
                            --元のレコードのReserveSu-左記 元のレコードへ更新した値
                            ,DS.ReserveSu - (CASE WHEN @tblArrivalSu - DS.ReserveSu > 0 THEN DS.ReserveSu ELSE @tblArrivalSu END)  --ReserveSu
                            ,DS.InstructionSu
@@ -442,16 +444,18 @@ BEGIN
                     UPDATE D_ArrivalPlan SET
                        [ArrivalPlanSu] = ArrivalPlanSu - @tblArrivalSu
                      WHERE ArrivalPlanNO = @ArrivalPlanNO
-                     AND ArrivalPlanSu-@tblArrivalSu > 0
+                     AND ArrivalPlanSu-@tblArrivalSu >= 0
                      ;
-                     
+                    
                     --【D_Stock】           Update  Table転送仕様Ｄ
                     UPDATE [D_Stock] SET
-                        StockSu = StockSu + @tblArrivalSu
-                       ,PlanSu = PlanSu + @tblArrivalPlanSu	--(CASE WHEN PlanSu - @tblArrivalSu > 0 THEN PlanSu - @tblArrivalSu ELSE 0 END)   --PlanSu
-                       ,AllowableSu = AllowableSu - @tblArrivalSu   --AllowableSu
-                       ,AnotherStoreAllowableSu = AnotherStoreAllowableSu - @tblArrivalSu   --AnotherStoreAllowableSu
-                       ,ReserveSu = ReserveSu - @tblArrivalSu   --ReserveSu
+                       -- StockSu = StockSu + @tblArrivalSu
+                       --,PlanSu = PlanSu + @tblArrivalPlanSu	--(CASE WHEN PlanSu - @tblArrivalSu > 0 THEN PlanSu - @tblArrivalSu ELSE 0 END)   --PlanSu
+                        PlanSu = (CASE WHEN PlanSu - @tblArrivalSu <= 0 THEN 0 ELSE PlanSu - @tblArrivalSu END)
+                       --,AllowableSu = AllowableSu - @tblArrivalSu   --AllowableSu
+                       --,AnotherStoreAllowableSu = AnotherStoreAllowableSu - @tblArrivalSu   --AnotherStoreAllowableSu
+                       --,ReserveSu = ReserveSu - @tblArrivalSu   --ReserveSu
+                       ,ReserveSu = (CASE WHEN ReserveSu - @tblArrivalSu <= 0 THEN 0 ELSE ReserveSu - @tblArrivalSu END)  --ReserveSu
                     WHERE StockNO = @StockNO
                     ;
                 END
