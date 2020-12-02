@@ -431,36 +431,26 @@ namespace MasterTouroku_TenzikaiShouhin
 
                     break;
                 case 10:   //F11
-                    {	
-                            if (bbl.ShowMessage("Q101") != DialogResult.Yes)
+                    {
+                        if (ErrorCheck())
+                        {
+                            if (!String.IsNullOrEmpty(TB_StartDate.Text))
                             {
-                                detailControls[(int)Eindex.SCTenzikai].Focus();
-                                return;
-                            }
-                            else
-                            {
-                            if(ErrorCheck())
-                            {
-                                if (!String.IsNullOrEmpty(TB_StartDate.Text))
+                                if (bbl.ShowMessage("Q101") == DialogResult.Yes)
                                 {
-                                    //if (TB_StartDate.DateCheck())
-                                    //{
-                                        F11();
-                                    //}
-                                    //else
-                                    //{
-                                    //    bbl.ShowMessage("E103");
-                                    //    TB_StartDate.Focus();
-                                    //}
+                                    F11();
                                 }
                                 else
                                 {
-                                    bbl.ShowMessage("E102");
-                                    TB_StartDate.Focus();
+                                    PreviousCtrl.Focus();
                                 }
                             }
+                            else
+                            {
+                                bbl.ShowMessage("E102");
+                                TB_StartDate.Focus();
+                            }
                         }
-                       
                     }
                     break;
                 case 11:    //F12:登録
@@ -4212,9 +4202,11 @@ namespace MasterTouroku_TenzikaiShouhin
                     if (dt.Rows.Count == 0)
                     {
                         mGrid.g_DArray[w_Row].Chk = false;
+                        
                     }
                     else
                     {
+                        
                         mGrid.g_DArray[w_Row].Chk = true;
                     }
                     mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
@@ -4239,14 +4231,14 @@ namespace MasterTouroku_TenzikaiShouhin
             // mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
             // S_BodySeigyo(6, 1);
             int w_Row = 0;
-            //for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
-            //{
-            //    // mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.JANCD, w_Row].Cell
-            //    if (String.IsNullOrEmpty(mGrid.g_DArray[w_Row].JANCD))
-            //    {
-            //        mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.JANCD, w_Row].Cell_Enabled = true;
-            //    }
-            //}
+            for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
+            {
+                // mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.JANCD, w_Row].Cell
+                if (String.IsNullOrEmpty(mGrid.g_DArray[w_Row].JANCD))
+                {
+                    mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.JANCD, w_Row].Cell_Enabled = true;
+                }
+            }
             mGrid.S_DispToArray(mGrid.g_MK_DataValue);
             mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
             panel2.Refresh();
