@@ -1207,10 +1207,8 @@ namespace MasterTouroku_TenzikaiShouhin
 
                 if (OperationMode == EOperationMode.UPDATE)
                     scjan_1.TabStop = pTabStop;
-                //hyoteidatem_1.TabStop = pTabStop;
                 else
                     scjan_1.TabStop = false;
-                //hyoteidatem_1.TabStop = pTabStop;
 
 
                 // 状態が変わらない時は処理を抜ける
@@ -2074,7 +2072,8 @@ namespace MasterTouroku_TenzikaiShouhin
                         if (Convert.ToInt32(strS) > ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, 0].CellCtl).MaxLength)
                         {
                             MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            EnableCell(col, row);
+                            mGrid.g_MK_State[col, row].Cell_Enabled = true;
+                            mGrid.g_MK_State[col, row].Cell_ReadOnly = false;
                             return false;
                         }
                         break;
@@ -2100,7 +2099,9 @@ namespace MasterTouroku_TenzikaiShouhin
                         if (Convert.ToInt32(strC) > ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, 0].CellCtl).MaxLength)
                         {
                             MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            EnableCell(row, col);
+                            //EnableCell(row, col);
+                            mGrid.g_MK_State[col, row].Cell_Enabled = true;
+                            mGrid.g_MK_State[col, row].Cell_ReadOnly = false;
                             return false;
                         }
                         //  }
@@ -2127,7 +2128,9 @@ namespace MasterTouroku_TenzikaiShouhin
                         if (Convert.ToInt32(strSN) > ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, 0].CellCtl).MaxLength)
                         {
                             MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            EnableCell(row, col);
+                            //EnableCell(row, col);
+                            mGrid.g_MK_State[col, row].Cell_Enabled = true;
+                            mGrid.g_MK_State[col, row].Cell_ReadOnly = false;
                             return false;
                         }
                         break;
@@ -2290,14 +2293,12 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bbl.ShowMessage("E102");
                                 return false;
                             }
-
                             DataTable dtS = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 13, mGrid.g_DArray[row].SegmentCD, "226");
                             if (dtS.Rows.Count == 0)
                             {
                                 bl.ShowMessage("E101");
                                 return false;
                             }
-
                         }
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.TaniCD:
@@ -2316,7 +2317,6 @@ namespace MasterTouroku_TenzikaiShouhin
                                 bl.ShowMessage("E101");
                                 return false;
                             }
-
                         }
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.TaxRateFlg:
@@ -2335,8 +2335,9 @@ namespace MasterTouroku_TenzikaiShouhin
                         if (Convert.ToInt32(strR) > ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, 0].CellCtl).MaxLength)
                         {
                             MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            // EnableCell(row, col);
-                            mGrid.g_MK_State[col, 0].Cell_Enabled = true;
+                            //EnableCell(row, col);
+                            mGrid.g_MK_State[col, row].Cell_Enabled = true;
+                            mGrid.g_MK_State[col, row].Cell_ReadOnly = false;
                             return false;
                         }
                         break;
@@ -2998,6 +2999,10 @@ namespace MasterTouroku_TenzikaiShouhin
             {
                 int w_Row;
                 DataTable dtrest = GetGridData();
+                if(dtrest != null)
+                {
+                    dtrest.Clear();
+                }
 
                 for (int i = 0; i < dt.Rows.Count; i++)   // Meisai Dt
                 {
@@ -3054,8 +3059,7 @@ namespace MasterTouroku_TenzikaiShouhin
                              .Select(g => g.Key)
                              .ToList();
                         if (jandupli.Count() != 0)
-                        {
-                            
+                        {  
                             bbl.ShowMessage("E269", row.ToString(), "重複したJANCD");
                             return false;
                         }
@@ -3954,29 +3958,29 @@ namespace MasterTouroku_TenzikaiShouhin
         private void EnableCell(int pCol, int pRow)
         {
             int w_Col;
-            bool w_AllFlg = false;
-            int w_CtlRow;
+            //bool w_AllFlg = false;
+           // int w_CtlRow;
 
-            for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
-            {
-                switch (w_Col)
-                {
+           // for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
+            //{
+                //switch (w_Col)
+                //{
 
                     //case (int)ClsGridMasterTanzi.ColNO.SKUCD:
-                    case (int)ClsGridMasterTanzi.ColNO.SKUName:
+                    //case (int)ClsGridMasterTanzi.ColNO.SKUName:
                     //case (int)ClsGridMasterTanzi.ColNO.ColorCD:
-                    case (int)ClsGridMasterTanzi.ColNO.ColorName:
+                    //case (int)ClsGridMasterTanzi.ColNO.ColorName:
                     //case (int)ClsGridMasterTanzi.ColNO.SizeCD:
-                    case (int)ClsGridMasterTanzi.ColNO.SizeName:
-                    case (int)ClsGridMasterTanzi.ColNO.Remark:
+                    //case (int)ClsGridMasterTanzi.ColNO.SizeName:
+                   // case (int)ClsGridMasterTanzi.ColNO.Remark:
 
-                        mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
-                        mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = false;
-                        break;
+                        mGrid.g_MK_State[pCol, pRow].Cell_Enabled = true;
+                        mGrid.g_MK_State[pCol, pRow].Cell_ReadOnly = false;
+                     //   break;
 
                    
-                }
-            }
+                //}
+           // }
         }
         private void CellDisable(int pCol, int pRow)
         {
@@ -4468,6 +4472,7 @@ namespace MasterTouroku_TenzikaiShouhin
                             {
                                 //Focusセット処理
                                 ERR_FOCUS_GRID_SUB(CL, RW);
+
                                 return;
                             }
                         }
@@ -4844,6 +4849,6 @@ namespace MasterTouroku_TenzikaiShouhin
             
         }
 
-        
+       
     }
 }
