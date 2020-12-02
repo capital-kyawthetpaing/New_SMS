@@ -1975,6 +1975,7 @@ BEGIN
         DECLARE CUR_AAA CURSOR FOR
             SELECT ISNULL(tbl.JuchuuNo,@JuchuuNo) AS JuchuuNo
             FROM @Table tbl
+            GROUP BY ISNULL(tbl.JuchuuNo,@JuchuuNo)
             ORDER BY JuchuuNo
         
         --カーソルオープン
