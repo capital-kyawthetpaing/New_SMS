@@ -1783,7 +1783,6 @@
             this.sizeName_1.Tag = "0";
             this.sizeName_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.sizeName_1.UseColorSizMode = false;
-        
             // 
             // salepriceout4_1
             // 
@@ -4026,7 +4025,6 @@
             this.sizeName_11.Tag = "0";
             this.sizeName_11.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.sizeName_11.UseColorSizMode = false;
-           
             // 
             // salepriceout4_11
             // 
@@ -4740,7 +4738,7 @@
             this.sizeName_10.Tag = "0";
             this.sizeName_10.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.sizeName_10.UseColorSizMode = false;
-            
+            // 
             // salepriceout4_10
             // 
             this.salepriceout4_10.AllowMinus = false;
@@ -5687,7 +5685,6 @@
             this.sizeName_9.Tag = "0";
             this.sizeName_9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.sizeName_9.UseColorSizMode = false;
-          
             // 
             // salepriceout4_9
             // 
@@ -6401,7 +6398,6 @@
             this.sizeName_8.Tag = "0";
             this.sizeName_8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.sizeName_8.UseColorSizMode = false;
-            
             // 
             // salepriceout4_8
             // 
@@ -7115,7 +7111,6 @@
             this.sizeName_7.Tag = "0";
             this.sizeName_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.sizeName_7.UseColorSizMode = false;
-           
             // 
             // salepriceout4_7
             // 
@@ -7829,7 +7824,6 @@
             this.sizeName_6.Tag = "0";
             this.sizeName_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.sizeName_6.UseColorSizMode = false;
-            
             // 
             // salepriceout4_6
             // 
@@ -8543,7 +8537,6 @@
             this.sizeName_5.Tag = "0";
             this.sizeName_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.sizeName_5.UseColorSizMode = false;
-            
             // 
             // salepriceout4_5
             // 
@@ -9257,7 +9250,6 @@
             this.sizeName_4.Tag = "0";
             this.sizeName_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.sizeName_4.UseColorSizMode = false;
-           
             // 
             // salepriceout4_4
             // 
@@ -9971,7 +9963,6 @@
             this.sizeName_3.Tag = "0";
             this.sizeName_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.sizeName_3.UseColorSizMode = false;
-           
             // 
             // salepriceout4_3
             // 
@@ -10688,7 +10679,6 @@
             this.sizeName_2.Tag = "0";
             this.sizeName_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.sizeName_2.UseColorSizMode = false;
-           
             // 
             // salepriceout4_2
             // 
