@@ -32,6 +32,7 @@ namespace DL
             string sp = "M_Tenzikai_Search";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
+                { "@ChangeDate", new ValuePair { value1 =SqlDbType.VarChar,value2 = mte.RefDate } },
                 { "@VendorCD", new ValuePair { value1 =SqlDbType.VarChar,value2 = mte.VendorCD } },
                 { "@TenzikaiName", new ValuePair { value1 =SqlDbType.VarChar,value2 = mte.TenzikaiName} },
                 { "@VendorCDFrom", new ValuePair { value1 =SqlDbType.VarChar,value2 = mte.VendorCDFrom} },
