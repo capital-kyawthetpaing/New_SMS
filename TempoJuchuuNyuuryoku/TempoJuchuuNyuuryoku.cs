@@ -1916,6 +1916,14 @@ namespace TempoJuchuuNyuuryoku
                     
                     //税額(Hidden)
                     mGrid.g_DArray[i].Tax = bbl.Z_Set(mGrid.g_DArray[i].JuchuuGaku) - bbl.Z_Set(mGrid.g_DArray[i].JuchuuHontaiGaku);
+                    if (mGrid.g_DArray[i].TaxRateFLG.Equals(1))
+                    {
+                        mGrid.g_DArray[i].JuchuTax = bbl.Z_Set(row["JuchuuTax"]);
+                    }
+                    else if (mGrid.g_DArray[i].TaxRateFLG.Equals(2))
+                    {
+                        mGrid.g_DArray[i].KeigenTax = bbl.Z_Set(row["JuchuuTax"]);
+                    }                                  
 
                     //複写時以外
                     if (index != (int)EIndex.CopyJuchuuNO)
