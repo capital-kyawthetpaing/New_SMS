@@ -536,7 +536,7 @@ namespace MasterTouroku_TenzikaiShouhin
                 bl.ShowMessage("E257");
                 return;
             }
-            DataTable dtrest = GetGridData();
+            DataTable dtrest = GetTankaData();
 
             mt = GetEntity(dtrest);
             if (!tbl.M_Tenzikaishouhin_DeleteUpdate(mt))
