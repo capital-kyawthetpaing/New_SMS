@@ -143,7 +143,7 @@ namespace BL
             var tje = new Tenjikai_Entity() { TenjiKaiOrderNo = No };
 
             var res = tbl.Select_TenjiData(tje, out DataTable GridDt);
-            var cs = M_Customer_Select(mce,1);
+            var cs = M_Customer_Select(mce,-1);
             if (!cs)
                 return false;
             if (res)

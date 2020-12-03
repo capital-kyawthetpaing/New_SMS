@@ -192,12 +192,13 @@ namespace Base.Client
                 StaffCD = InOperatorCD,
                 PC = InPcID
             };
-
+           // bbl.ShowMessage(mae.MessageID + "B_" + mae.ProgramID + "_" + mae.StaffCD + "_" + mae.PC);
             made = bbl.M_Authorizations_AccessCheck(mae);
-
+            
             if (made == null)
             {
-                bbl.ShowMessage(mae.MessageID);
+                
+                bbl.ShowMessage(mae.MessageID + "M_" + mae.ProgramID + "_" + mae.StaffCD + "_"+ mae.PC);
                 //起動時エラー
                 this.Close();
                 System.Environment.Exit(0);
@@ -298,7 +299,7 @@ namespace Base.Client
             ///Added by ETZ ,To close when StoreAuthorization isn't accessed
             else     
             {
-                bbl.ShowMessage(mae.MessageID);
+                bbl.ShowMessage(mae.MessageID + "M_Sto");
                 //起動時エラー
                 this.Close();
                 System.Environment.Exit(0);
