@@ -31,9 +31,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMasterTouroku_HanbaiTankaKakeritsu));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboSeasonCopy = new CKM_Controls.CKM_ComboBox();
             this.cboYearCopy = new CKM_Controls.CKM_ComboBox();
@@ -199,7 +198,7 @@
             this.gdvHanbaiTankaKakeritsu.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("gdvHanbaiTankaKakeritsu.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -219,14 +218,6 @@
             this.colStartDate,
             this.colEndDate,
             this.colRate});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gdvHanbaiTankaKakeritsu.DefaultCellStyle = dataGridViewCellStyle4;
             this.gdvHanbaiTankaKakeritsu.EnableHeadersVisualStyles = false;
             this.gdvHanbaiTankaKakeritsu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gdvHanbaiTankaKakeritsu.Location = new System.Drawing.Point(25, 177);
@@ -556,8 +547,8 @@
             this.ScSegmentCopy.ChangeDate = "";
             this.ScSegmentCopy.ChangeDateWidth = 100;
             this.ScSegmentCopy.Code = "";
-            this.ScSegmentCopy.CodeWidth = 100;
-            this.ScSegmentCopy.CodeWidth1 = 100;
+            this.ScSegmentCopy.CodeWidth = 60;
+            this.ScSegmentCopy.CodeWidth1 = 60;
             this.ScSegmentCopy.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScSegmentCopy.DataCheck = false;
             this.ScSegmentCopy.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -568,9 +559,9 @@
             this.ScSegmentCopy.Location = new System.Drawing.Point(699, 79);
             this.ScSegmentCopy.Margin = new System.Windows.Forms.Padding(0);
             this.ScSegmentCopy.Name = "ScSegmentCopy";
-            this.ScSegmentCopy.NameWidth = 280;
+            this.ScSegmentCopy.NameWidth = 250;
             this.ScSegmentCopy.SearchEnable = true;
-            this.ScSegmentCopy.Size = new System.Drawing.Size(414, 27);
+            this.ScSegmentCopy.Size = new System.Drawing.Size(344, 27);
             this.ScSegmentCopy.Stype = Search.CKM_SearchControl.SearchType.商品分類;
             this.ScSegmentCopy.TabIndex = 12;
             this.ScSegmentCopy.test = null;
@@ -650,8 +641,8 @@
             this.ScSegment.ChangeDate = "";
             this.ScSegment.ChangeDateWidth = 100;
             this.ScSegment.Code = "";
-            this.ScSegment.CodeWidth = 100;
-            this.ScSegment.CodeWidth1 = 100;
+            this.ScSegment.CodeWidth = 60;
+            this.ScSegment.CodeWidth1 = 60;
             this.ScSegment.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScSegment.DataCheck = false;
             this.ScSegment.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -662,9 +653,9 @@
             this.ScSegment.Location = new System.Drawing.Point(134, 79);
             this.ScSegment.Margin = new System.Windows.Forms.Padding(0);
             this.ScSegment.Name = "ScSegment";
-            this.ScSegment.NameWidth = 280;
+            this.ScSegment.NameWidth = 250;
             this.ScSegment.SearchEnable = true;
-            this.ScSegment.Size = new System.Drawing.Size(414, 27);
+            this.ScSegment.Size = new System.Drawing.Size(344, 27);
             this.ScSegment.Stype = Search.CKM_SearchControl.SearchType.商品分類;
             this.ScSegment.TabIndex = 4;
             this.ScSegment.test = null;
@@ -1158,10 +1149,10 @@
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "Rate";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = "0";
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = "0";
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn11.HeaderText = "掛率";
             this.dataGridViewTextBoxColumn11.MaxInputLength = 8;
             this.dataGridViewTextBoxColumn11.MinimumWidth = 3;
