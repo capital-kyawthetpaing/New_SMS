@@ -508,6 +508,7 @@ namespace MasterTouroku_TenzikaiShouhin
 
         private void ColTan(DataTable dt)
         {
+            dt.Columns.Add("chkflg");
             dt.Columns.Add("TankaCD");
             dt.Columns.Add("JanCD");
             dt.Columns.Add("SKUCD");
@@ -2017,7 +2018,6 @@ namespace MasterTouroku_TenzikaiShouhin
                         }
                         if (dtsku.Rows.Count > 0)
                         {
-
                             mGrid.g_DArray[row].SKUCD = selectRow["SKUCD"].ToString();
                             mGrid.g_DArray[row].SKUName = selectRow["SKUName"].ToString();
                             mGrid.g_DArray[row].ColorCD = selectRow["ColorNO"].ToString();
@@ -2332,7 +2332,6 @@ namespace MasterTouroku_TenzikaiShouhin
                         }
                         break;
                 }
-
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                 return true;
 
@@ -4463,6 +4462,7 @@ namespace MasterTouroku_TenzikaiShouhin
                     if (!String.IsNullOrEmpty(row["SalePriceOutTax"].ToString()))
                     {
                         dt.Rows.Add(
+                        r["chkflg"].ToString(),
                         "0",
                         r["JanCD"].ToString(),
                         r["SKUCD"].ToString(),
@@ -4487,6 +4487,8 @@ namespace MasterTouroku_TenzikaiShouhin
                     if (!String.IsNullOrEmpty(row["Rank1"].ToString()))
                     {
                         dt.Rows.Add(
+
+                         r["chkflg"].ToString(),
                          "1",
                         r["JANCD"].ToString(),
                         r["SKUCD"].ToString(),
@@ -4512,6 +4514,8 @@ namespace MasterTouroku_TenzikaiShouhin
                     if (!String.IsNullOrEmpty(row["Rank2"].ToString()))
                     {
                         dt.Rows.Add(
+
+                       r["chkflg"].ToString(),
                        "2",
                         r["JANCD"].ToString(),
                         r["SKUCD"].ToString(),
@@ -4536,6 +4540,8 @@ namespace MasterTouroku_TenzikaiShouhin
                     if (!String.IsNullOrEmpty(row["Rank3"].ToString()))
                     {
                         dt.Rows.Add(
+
+                        r["chkflg"].ToString(),
                         "3",
                         r["JANCD"].ToString(),
                         r["SKUCD"].ToString(),
@@ -4560,6 +4566,8 @@ namespace MasterTouroku_TenzikaiShouhin
                     if (!String.IsNullOrEmpty(row["Rank4"].ToString()))
                     {
                         dt.Rows.Add(
+
+                         r["chkflg"].ToString(),
                          "4",
                          r["JANCD"].ToString(),
                          r["SKUCD"].ToString(),
@@ -4584,6 +4592,7 @@ namespace MasterTouroku_TenzikaiShouhin
                     if (!String.IsNullOrEmpty(row["Rank5"].ToString()))
                     {
                         dt.Rows.Add(
+                         r["chkflg"].ToString(),
                          "5",
                         r["JANCD"].ToString(),
                         r["SKUCD"].ToString(),

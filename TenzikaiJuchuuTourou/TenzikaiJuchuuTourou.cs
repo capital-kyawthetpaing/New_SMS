@@ -2593,7 +2593,7 @@ namespace TenzikaiJuchuuTourou
                     }
                     else
                     {
-                        ret = sbl.M_Customer_Select(mce, 1);
+                        ret = sbl.M_Customer_Select(mce, -1);
                     }
                    
                     if (kbn == 1)

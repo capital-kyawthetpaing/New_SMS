@@ -150,25 +150,25 @@ namespace TempoRegiShiharaiNyuuryoku
         {
             try
             {
-                //////////try
-                //////////{
-                //////////    cdo.RemoveDisplay(true);
-                //////////    cdo.RemoveDisplay(true);
-                //////////}
-                //////////catch { }
+                try
+                {
+                    //cdo.RemoveDisplay(true);
+                    //cdo.RemoveDisplay(true);
+                }
+                catch { }
                 var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
-                pro.WaitForExit();
-                ////////try
-                ////////{
-                ////////    cdo.SetDisplay(true, true, "");
-                ////////    cdo.RemoveDisplay(true);
-                ////////    cdo.RemoveDisplay(true);
-                ////////    // cdo.SetDisplay(false, false, "", Up, Lp);
-                ////////}
-                ////////catch
-                ////////{
-                ////////    MessageBox.Show("P0. .  .");
-                ////////}
+                //pro.WaitForExit();
+                try
+                {
+                    //cdo.SetDisplay(true, true, "");
+                    //cdo.RemoveDisplay(true);
+                    //cdo.RemoveDisplay(true);
+                //    cdo.SetDisplay(false, false, "", Up, Lp);
+                }
+                catch
+                {
+                    MessageBox.Show("P0. .  .");
+                }
             }
             catch (Exception ex)
             {
@@ -193,7 +193,7 @@ namespace TempoRegiShiharaiNyuuryoku
                     try
                     {
                         //  Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, programID, cmdLine));
-                        Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, programID, cmdLine));
+                        Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, programID, cmdLine+ ""));
                     }
                     catch (Exception ex) { MessageBox.Show("Parallel function worked and cant dispose instance. . . " + ex.Message); }
                 }
