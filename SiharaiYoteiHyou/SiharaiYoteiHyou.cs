@@ -102,13 +102,7 @@ namespace SiharaiYoteiHyou
                     return false;
                 }
             }
-            else
-            {
-                shyhbl.ShowMessage("E102");
-                scPaymentDestinaion.SetFocus(1);
-                return false;
-            }
-
+           
             /// <remarks>両方チェックが入っていない場合、エラーになる処理</remarks>
             if (chkExpense.Checked == false && chkPurchase.Checked == false)
             {
