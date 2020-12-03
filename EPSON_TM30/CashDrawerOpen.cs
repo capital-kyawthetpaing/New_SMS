@@ -31,7 +31,7 @@ namespace EPSON_TM30
                 m_Drawer = (CashDrawer)posExplorer.CreateInstance(deviceInfo);
                 try
                 {
-                    // m_Drawer.DeviceEnabled = true;
+                     // m_Drawer.DeviceEnabled = true;
                 }
                 catch { }
                 m_Drawer.Open();
@@ -42,9 +42,9 @@ namespace EPSON_TM30
 
                 m_Drawer.DeviceEnabled = true;
             }
-            catch (PosControlException)
+            catch (PosControlException ex)
             {
-
+                var msg = ex.Message;
             }
             m_Drawer.OpenDrawer();
 

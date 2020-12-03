@@ -97,10 +97,10 @@ namespace TempoRegiTorihikiReceipt
         /// <param name="e"></param>
         private void TempoRegiTorihikiReceipt_Load(object sender, EventArgs e)
         {
-           
+            
             InProgramID = "TempoRegiTorihikiReceipt";
             string data = InOperatorCD;
-
+            //InPcID = "PTK";
             StartProgram();
 
             // フォームを表示させないように最小化してタスクバーにも表示しない
@@ -108,14 +108,30 @@ namespace TempoRegiTorihikiReceipt
             ShowInTaskbar = false;
 
             //コマンドライン引数を配列で取得する
-            string[] cmds = Environment.GetCommandLineArgs();
+            string[] cmds = Environment.GetCommandLineArgs();// 
+                                                             //string[] cmds = new string[] { "C:\\", "01", "0001", "MYA040_PC", "5", "2368" };// 
+                                                             //  MessageBox.Show(cmds.Length.ToString());
             if (cmds.Length - 1 > (int)ECmdLine.PcID)
             {
-                InputMode = cmds[(int)CommandLine.Mode];
-                InputDepositNO = cmds[(int)CommandLine.DepositeNO];
+                //   MessageBox.Show("Hi");
 
-                // 印刷
-                Print();
+                try
+                {
+                    InputMode = cmds[(int)CommandLine.Mode ];
+                    InputDepositNO = cmds[(int)CommandLine.DepositeNO];
+                    // MessageBox.Show(cmds.Length.ToString());
+                    // 印刷
+                   // MessageBox.Show(InputMode + " " + InputDepositNO);
+                    Print();
+                }
+                catch (Exception ex)
+                {
+                 //   MessageBox.Show(ex.StackTrace.ToString());
+                }
+            }
+            else
+            {
+                
             }
 
             EndSec();

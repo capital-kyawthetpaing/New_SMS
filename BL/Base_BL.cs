@@ -180,6 +180,7 @@ namespace BL
                 else
                 {
                     mae.MessageID = messageID;
+                  //  mae.DeleteFlg = 
                     return null;
                 }
             }

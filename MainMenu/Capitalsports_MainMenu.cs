@@ -96,10 +96,10 @@ namespace MainMenu
             BindButtonName();
             try
             {
-                //if (Base_DL.iniEntity.IsDM_D30Used)
-                //{
-                //    cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
-                //}///Start New Window for display by PTK
+                if (Base_DL.iniEntity.IsDM_D30Used)
+                {
+                    cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+                }///Start New Window for display by PTK
             }
             catch (Exception ex)
             {
@@ -427,6 +427,8 @@ namespace MainMenu
                     }
                     catch (Exception ex)
                     {
+                        //CashDrawerOpen cdo_open = new CashDrawerOpen();
+                        //cdo_open.OpenCashDrawer();
                         MessageBox.Show(ex.Message + ex.StackTrace);
                     }
                 }
