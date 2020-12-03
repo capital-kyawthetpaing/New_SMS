@@ -1772,7 +1772,18 @@ namespace NyuukaNyuuryoku
             }
             
         }
-        
+        private void DeleteOrder()
+        {
+            //F10：入荷予定ボタンで追加されたデータについて画面上の入荷数＝０であれば（追加したにもかかわらず、入荷数が指定されなかったら）そのRecordをDeleteする
+            DataTable dtCopy = GetGridCopyEntity();
+            if (dtCopy != null && dtCopy.Rows.Count > 0)
+            {
+                dae = GetEntity();
+                bool ret = nnbl.D_Order_Delete(dae, dtCopy, (short)OperationMode);
+            }
+
+        }
+
         /// <summary>
         /// 入荷データ取得処理
         /// </summary>
@@ -2829,12 +2840,7 @@ namespace NyuukaNyuuryoku
                 return;
             }
 
-            //F10：入荷予定ボタンで追加されたデータについて画面上の入荷数＝０であれば（追加したにもかかわらず、入荷数が指定されなかったら）そのRecordをDeleteする
-            DataTable dtCopy = GetGridCopyEntity();
-            if (dtCopy != null && dtCopy.Rows.Count > 0)
-            {
-                ret = nnbl.D_Order_Delete(dae, dtCopy, (short)OperationMode);
-            }
+            DeleteOrder();
 
             if (OperationMode == EOperationMode.DELETE)
                 bbl.ShowMessage("I102");
@@ -3012,13 +3018,7 @@ namespace NyuukaNyuuryoku
         {
             OperationMode = mode; // (1:新規,2:修正,3;削除)
 
-            //F10：入荷予定ボタンで追加されたデータについて画面上の入荷数＝０であれば（追加したにもかかわらず、入荷数が指定されなかったら）そのRecordをDeleteする
-            DataTable dtCopy = GetGridCopyEntity();
-            if (dtCopy != null && dtCopy.Rows.Count > 0)
-            {
-                dae = GetEntity();
-                bool ret = nnbl.D_Order_Delete(dae, dtCopy, (short)OperationMode);
-            }
+            DeleteOrder();
 
             //排他処理を解除
             DeleteExclusive();
@@ -3233,15 +3233,8 @@ namespace NyuukaNyuuryoku
         protected override void EndSec()
         {
             try
-            {
-                //F10：入荷予定ボタンで追加されたデータについて画面上の入荷数＝０であれば（追加したにもかかわらず、入荷数が指定されなかったら）そのRecordをDeleteする
-                DataTable dtCopy = GetGridCopyEntity();
-                if (dtCopy != null && dtCopy.Rows.Count > 0)
-                {
-                    dae = GetEntity();
-                    bool ret = nnbl.D_Order_Delete(dae, dtCopy, (short)OperationMode);
-                }
-
+            {           
+                DeleteOrder();
                 DeleteExclusive();
             }
             catch(Exception ex)

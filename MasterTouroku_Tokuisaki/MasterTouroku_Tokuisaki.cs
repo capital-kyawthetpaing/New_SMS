@@ -1052,7 +1052,7 @@ namespace MasterTouroku_Tokuisaki
                         ret = sbl.M_Staff_Select(mse);
                         if (ret)
                         {
-
+                            ScStaff.Code = mse.StaffCD;        // 2020-12-01 By SYP
                             ScStaff.LabelText = mse.StaffName;
 
                             ////以下の条件を満たせばエラー
@@ -1734,15 +1734,15 @@ namespace MasterTouroku_Tokuisaki
                 {
                     //団体法人ONの場合
                     //会員姓･名は入力不可
-                    detailControls[(int)EIndex.LastName].Enabled = true;
-                    detailControls[(int)EIndex.FirstName].Enabled = true;
-                }
-                else
-                {
-                    detailControls[(int)EIndex.LastName].Enabled = false;
+                    detailControls[(int)EIndex.LastName].Enabled = false;    // 2020-12-01 By SYP
                     detailControls[(int)EIndex.LastName].Text = "";
                     detailControls[(int)EIndex.FirstName].Enabled = false;
                     detailControls[(int)EIndex.FirstName].Text = "";
+                }
+                else
+                {
+                    detailControls[(int)EIndex.LastName].Enabled = true;
+                    detailControls[(int)EIndex.FirstName].Enabled = true;     // 2020-12-01 By SYP
                 }
             }
         }

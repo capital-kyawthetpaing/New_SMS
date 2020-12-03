@@ -117,6 +117,7 @@ namespace UriageMotouchou
                     return;
 
                 ume = GetDataInfo();
+                CheckBeforeExport();
                 dtReport = umbl.UriageMotochou_PrintSelect(ume);
                 if (dtReport.Rows.Count > 0)
                 {
@@ -128,7 +129,6 @@ namespace UriageMotouchou
                     //    OpenForm(ProgramID, msce.FiscalYYYYMM);
                     //    PrintDataSelect();
                     //}
-                    CheckBeforeExport();
                     PrintDataSelect();
                 }
                 else
@@ -144,7 +144,7 @@ namespace UriageMotouchou
             msce = GetStoreClose_Data();
             if (umbl.M_StoreClose_Check(msce, "4").Rows.Count > 0)
             {
-                string ProgramID = "GetsujiZaikoKeisanSyori";
+                string ProgramID = "GetsujiSaikenKeisanSyori";
                 RunConsole(ProgramID, msce.FiscalYYYYMM);
             }
         }

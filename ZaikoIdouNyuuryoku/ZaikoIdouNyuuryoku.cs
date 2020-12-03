@@ -1186,7 +1186,7 @@ namespace ZaikoIdouNyuuryoku
 
                         if(OperationMode == EOperationMode.UPDATE || OperationMode == EOperationMode.DELETE)
                         {
-                            if (Convert.ToInt16(dt.Rows[0]["MovePurposeKBN"]) != (int)EIdoType.店舗間移動 && Convert.ToInt16(dt.Rows[0]["MovePurposeKBN"]) != (int)EIdoType.返品)
+                            if (Convert.ToInt16(dt.Rows[0]["MovePurposeType"]) != (int)EIdoType.店舗間移動 && Convert.ToInt16(dt.Rows[0]["MovePurposeType"]) != (int)EIdoType.返品)
                             {
                                 bbl.ShowMessage("E268");
                                 return false;

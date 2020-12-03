@@ -120,10 +120,10 @@ BEGIN
            (@ArrivalNO     
            ,@VendorDeliveryNo        
            ,(SELECT top 1 M.StoreCD
-                FROM M_Souko AS M
-                WHERE M.SoukoCD = @SoukoCD
-                AND M.ChangeDate <= @ArrivalDate
-                ORDER BY M.ChangeDate desc)
+             FROM M_Souko AS M
+             WHERE M.SoukoCD = @SoukoCD
+             AND M.ChangeDate <= @ArrivalDate
+             ORDER BY M.ChangeDate desc)
            ,@VendorCD                                             
            ,convert(date,@ArrivalDate)  
            ,@SYSDATE    --InputDate
@@ -227,9 +227,12 @@ BEGIN
         --カーソル定義
         DECLARE CUR_TABLE CURSOR FOR
             SELECT tbl.ArrivalPlanNO, tbl.StockNO, tbl.ReserveNO, tbl.ArrivalSu
-            ,DS.PlanSu-tbl.ArrivalSu AS ArrivalPlanSu	--（元のレコードのPlanSu - 画面明細.入荷数）>０ならINSERT
-            ,tbl.DataKbn
-            ,(CASE WHEN DP.InsertOperator = 'Nyuuka' THEN 0 ELSE 1 END) AS SakuseiFlg
+                  ,DS.PlanSu-tbl.ArrivalSu AS ArrivalPlanSu	--（元のレコードのPlanSu - 画面明細.入荷数）>０ならINSERT
+                  ,tbl.DataKbn
+                  ,(CASE WHEN DP.InsertOperator = 'Nyuuka' THEN 0 ELSE 1 END) AS SakuseiFlg
+                  ,(SELECT DR.ReserveSu - tbl.ArrivalSu    --元のレコードのReserveSu - 明細入荷数  
+                      FROM D_Reserve AS DR 
+                     WHERE DR.ReserveNO = tbl.ReserveNO) AS ReserveSu
             FROM @Table AS tbl
             LEFT OUTER JOIN D_ArrivalPlan AS DP
             ON DP.ArrivalPlanNO = tbl.ArrivalPlanNO
@@ -242,19 +245,20 @@ BEGIN
         
         DECLARE @tblArrivalPlanNO varchar(11);
         DECLARE @oldArrivalPlanNO varchar(11);
-        DECLARE @tblStockNO varchar(11);
-        DECLARE @tblReserveNO varchar(11);
-        DECLARE @tblArrivalSu int;
+        DECLARE @tblStockNO       varchar(11);
+        DECLARE @tblReserveNO     varchar(11);
+        DECLARE @tblArrivalSu     int;
         DECLARE @tblArrivalPlanSu int;
-        DECLARE @tblDataKbn tinyint;	--1:【引当】,2:【発注】,3:【移動】
-        DECLARE @SakuseiFlg tinyint;    --0:作成しない　1:作成する
+        DECLARE @tblReserveSu     int;
+        DECLARE @tblDataKbn       tinyint;    --1:【引当】,2:【発注】,3:【移動】
+        DECLARE @SakuseiFlg       tinyint;    --0:作成しない　1:作成する
 
         --カーソルオープン
         OPEN CUR_TABLE;
 
         --最初の1行目を取得して変数へ値をセット
         FETCH NEXT FROM CUR_TABLE
-        INTO @tblArrivalPlanNO, @tblStockNO, @tblReserveNO, @tblArrivalSu, @tblArrivalPlanSu, @tblDataKbn, @SakuseiFlg;
+        INTO @tblArrivalPlanNO, @tblStockNO, @tblReserveNO, @tblArrivalSu, @tblArrivalPlanSu, @tblDataKbn, @SakuseiFlg, @tblReserveSu;
         
         SET @oldArrivalPlanNO = '';
         
@@ -409,9 +413,11 @@ BEGIN
                            ,0   --StockSu
                            ,@tblArrivalPlanSu   --PlanSu
                            --元のレコードのAllowableSu-左記 元のレコードへ更新した値
-                           ,DS.AllowableSu-(CASE WHEN @tblArrivalSu - ReserveSu > 0 THEN @tblArrivalSu - ReserveSu ELSE 0 END)--AllowableSu
+                           --,DS.AllowableSu-(CASE WHEN @tblArrivalSu - ReserveSu > 0 THEN @tblArrivalSu - ReserveSu ELSE 0 END)--AllowableSu
+                           ,DS.AllowableSu
                            --元のレコードのAnotherStoreAllowableSu-左記 元のレコードへ更新した値
-                           ,DS.AnotherStoreAllowableSu - (CASE WHEN @tblArrivalSu - ReserveSu > 0 THEN @tblArrivalSu - ReserveSu ELSE 0 END)  --AnotherStoreAllowableSu
+                           --,DS.AnotherStoreAllowableSu - (CASE WHEN @tblArrivalSu - ReserveSu > 0 THEN @tblArrivalSu - ReserveSu ELSE 0 END)  --AnotherStoreAllowableSu
+                           ,DS.AnotherStoreAllowableSu
                            --元のレコードのReserveSu-左記 元のレコードへ更新した値
                            ,DS.ReserveSu - (CASE WHEN @tblArrivalSu - DS.ReserveSu > 0 THEN DS.ReserveSu ELSE @tblArrivalSu END)  --ReserveSu
                            ,DS.InstructionSu
@@ -438,21 +444,23 @@ BEGIN
                     UPDATE D_ArrivalPlan SET
                        [ArrivalPlanSu] = ArrivalPlanSu - @tblArrivalSu
                      WHERE ArrivalPlanNO = @ArrivalPlanNO
-                     AND ArrivalPlanSu-@tblArrivalSu > 0
+                     AND ArrivalPlanSu-@tblArrivalSu >= 0
                      ;
-                     
+                    
                     --【D_Stock】           Update  Table転送仕様Ｄ
                     UPDATE [D_Stock] SET
-                        StockSu = StockSu + @tblArrivalSu
-                       ,PlanSu = PlanSu + @tblArrivalPlanSu	--(CASE WHEN PlanSu - @tblArrivalSu > 0 THEN PlanSu - @tblArrivalSu ELSE 0 END)   --PlanSu
-                       ,AllowableSu = AllowableSu - @tblArrivalSu   --AllowableSu
-                       ,AnotherStoreAllowableSu = AnotherStoreAllowableSu - @tblArrivalSu   --AnotherStoreAllowableSu
-                       ,ReserveSu = ReserveSu - @tblArrivalSu   --ReserveSu
+                       -- StockSu = StockSu + @tblArrivalSu
+                       --,PlanSu = PlanSu + @tblArrivalPlanSu	--(CASE WHEN PlanSu - @tblArrivalSu > 0 THEN PlanSu - @tblArrivalSu ELSE 0 END)   --PlanSu
+                        PlanSu = (CASE WHEN PlanSu - @tblArrivalSu <= 0 THEN 0 ELSE PlanSu - @tblArrivalSu END)
+                       --,AllowableSu = AllowableSu - @tblArrivalSu   --AllowableSu
+                       --,AnotherStoreAllowableSu = AnotherStoreAllowableSu - @tblArrivalSu   --AnotherStoreAllowableSu
+                       --,ReserveSu = ReserveSu - @tblArrivalSu   --ReserveSu
+                       ,ReserveSu = (CASE WHEN ReserveSu - @tblArrivalSu <= 0 THEN 0 ELSE ReserveSu - @tblArrivalSu END)  --ReserveSu
                     WHERE StockNO = @StockNO
                     ;
                 END
 
-                IF @tblDataKbn = 1
+                IF @tblDataKbn = 1 AND @tblReserveSu > 0
                 BEGIN
                     --伝票番号採番
                     EXEC Fnc_GetNumber
@@ -507,7 +515,7 @@ BEGIN
                            ,DR.JanCD
                            ,DR.SKUCD
                            ,DR.AdminNO
-                           ,DR.ReserveSu - @tblArrivalSu    --元のレコードのReserveSu - 明細入荷数
+                           ,DR.ReserveSu - @tblArrivalSu    --ReserveSu = 元のレコードのReserveSu - 明細入荷数
                            ,NULL    --ShippingPossibleDate
                            ,0       --ShippingPossibleSU
                            ,NULL    --ShippingOrderNO
@@ -567,7 +575,7 @@ BEGIN
             
             --次の行のデータを取得して変数へ値をセット
             FETCH NEXT FROM CUR_TABLE
-            INTO @tblArrivalPlanNO, @tblStockNO, @tblReserveNO, @tblArrivalSu, @tblArrivalPlanSu, @tblDataKbn, @SakuseiFlg;
+            INTO @tblArrivalPlanNO, @tblStockNO, @tblReserveNO, @tblArrivalSu, @tblArrivalPlanSu, @tblDataKbn, @SakuseiFlg, @tblReserveSu;
 
         END
         
@@ -578,15 +586,15 @@ BEGIN
 
         --【D_ArrivalPlan】Update   Table転送仕様Ｃ	★★
         UPDATE [D_ArrivalPlan] SET
-           [ArrivalPlanSu] = tbl.ArrivalSu
-          ,[ArrivalSu] = tbl.ArrivalSu
-          ,[UpdateOperator]     =  @Operator  
-          ,[UpdateDateTime]     =  @SYSDATETIME
+           [ArrivalPlanSu]  = tbl.ArrivalSu
+          ,[ArrivalSu]      = tbl.ArrivalSu
+          ,[UpdateOperator] =  @Operator  
+          ,[UpdateDateTime] =  @SYSDATETIME
         
          FROM (SELECT tbl.ArrivalPlanNO, SUM(tbl.ArrivalSu) AS ArrivalSu
-                FROM @Table AS tbl
-                WHERE tbl.UpdateFlg >= 0
-                GROUP BY tbl.ArrivalPlanNO
+               FROM @Table AS tbl
+               WHERE tbl.UpdateFlg >= 0
+               GROUP BY tbl.ArrivalPlanNO
          ) AS tbl
          WHERE tbl.ArrivalPlanNO = D_ArrivalPlan.ArrivalPlanNO
         ;

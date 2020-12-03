@@ -677,6 +677,7 @@
             this.Rate.HeaderText = "          掛率";
             this.Rate.MaxInputLength = 6;
             this.Rate.Name = "Rate";
+            this.Rate.Width = 82;
             // 
             // FrmMasterTouroku_TenzikaiHanbaiTankaKakeritu
             // 
