@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>TempoRegiTorihikiReceipt</RootNamespace>
     <AssemblyName>TempoRegiTorihikiReceipt</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -65,6 +65,22 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Projects\Cash\CashDrawerOpen\CashDrawerOpen\CashDrawerOpen\Bigin\DLL\DL.dll</HintPath>
+    </Reference>
+    <Reference Include="Entity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Projects\Cash\CashDrawerOpen\CashDrawerOpen\CashDrawerOpen\Bigin\DLL\Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="EPSON_TM30, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Projects\Cash\CashDrawerOpen\CashDrawerOpen\CashDrawerOpen\Bigin\DLL\EPSON_TM30.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.PointOfService, Version=1.14.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Base.Client\RequiredSource\Microsoft.PointOfService.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Services" />
@@ -79,6 +95,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Reports\TempoRegiTorihikiReceipt_Mode2.cs">
+      <DependentUpon>TempoRegiTorihikiReceipt_Mode2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reports\TempoRegiTorihikiReceipt_Journal.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -123,6 +145,9 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="TorihikiReceiptDataSet.cs">
+      <DependentUpon>TorihikiReceiptDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TorihikiReceiptDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -138,6 +163,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\TempoRegiTorihikiReceipt_Mode2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TempoRegiTorihikiReceipt_Mode2.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\TempoRegiTorihikiReceipt_Journal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TempoRegiTorihikiReceipt_Journal.cs</LastGenOutput>

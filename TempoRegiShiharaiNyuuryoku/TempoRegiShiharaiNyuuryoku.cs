@@ -23,7 +23,7 @@ namespace TempoRegiShiharaiNyuuryoku
         DataTable dtDepositNO;
         public TempoRegiShiharaiNyuuryoku()
         {
-            Start_Display();
+           // Start_Display();
             InitializeComponent();
             dtDepositNO = new DataTable();
         }
@@ -38,7 +38,7 @@ namespace TempoRegiShiharaiNyuuryoku
             SetRequireField();
             BindCombo();
             txtPayment.Focus();
-            Stop_DisplayService();
+            //Stop_DisplayService();
         }
 
         private void SetRequireField()
@@ -87,7 +87,7 @@ namespace TempoRegiShiharaiNyuuryoku
         }
         protected override void EndSec()
         {
-            RunDisplay_Service();
+           /// RunDisplay_Service();
             this.Close();
         }
 
@@ -150,25 +150,25 @@ namespace TempoRegiShiharaiNyuuryoku
         {
             try
             {
-                try
-                {
-                    //cdo.RemoveDisplay(true);
-                    //cdo.RemoveDisplay(true);
-                }
-                catch { }
-                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                //try
+                //{
+                //    //cdo.RemoveDisplay(true);
+                //    //cdo.RemoveDisplay(true);
+                //}
+                //catch { }
+                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe"," "+ cmdLine + "");
                 //pro.WaitForExit();
-                try
-                {
-                    //cdo.SetDisplay(true, true, "");
-                    //cdo.RemoveDisplay(true);
-                    //cdo.RemoveDisplay(true);
-                //    cdo.SetDisplay(false, false, "", Up, Lp);
-                }
-                catch
-                {
-                    MessageBox.Show("P0. .  .");
-                }
+                //try
+                //{
+                //    //cdo.SetDisplay(true, true, "");
+                //    //cdo.RemoveDisplay(true);
+                //    //cdo.RemoveDisplay(true);
+                ////    cdo.SetDisplay(false, false, "", Up, Lp);
+                //}
+                //catch
+                //{
+                //    MessageBox.Show("P0. .  .");
+                //}
             }
             catch (Exception ex)
             {
@@ -192,8 +192,10 @@ namespace TempoRegiShiharaiNyuuryoku
                     ///movedBegin
                     try
                     {
+                        Printer_Open(filePath, programID, cmdLine + "");
+                        CDO_Open();
                         //  Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, programID, cmdLine));
-                        Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, programID, cmdLine+ ""));
+                        //   Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, programID, cmdLine+ ""));
                     }
                     catch (Exception ex) { MessageBox.Show("Parallel function worked and cant dispose instance. . . " + ex.Message); }
                 }
@@ -319,77 +321,77 @@ namespace TempoRegiShiharaiNyuuryoku
         }
         private void Stop_DisplayService(bool isForced = true)
         {
-            //////if (Base_DL.iniEntity.IsDM_D30Used)
-            //////{
+            if (Base_DL.iniEntity.IsDM_D30Used)
+            {
 
-            //////    Login_BL bbl_1 = new Login_BL();
-            //////    if (bbl_1.ReadConfig())
-            //////    {
-            //////        bbl_1.Display_Service_Update(false);
-            //////        Thread.Sleep(2 * 1000);
-            //////        bbl_1.Display_Service_Enabled(false);
-            //////    }
-            //////    else
-            //////    {
-            //////        bbl_1.Display_Service_Update(false);
-            //////        Thread.Sleep(2 * 1000);
-            //////        bbl_1.Display_Service_Enabled(false);
-            //////    }
-            //////    try
-            //////    {
-            //////        Kill("Display_Service");
-            //////    }
-            //////    catch (Exception ex)
-            //////    {
-            //////        MessageBox.Show(ex.StackTrace.ToString());
-            //////    }
-            //////    if (isForced) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
-            //////}
+                Login_BL bbl_1 = new Login_BL();
+                if (bbl_1.ReadConfig())
+                {
+                    bbl_1.Display_Service_Update(false);
+                    Thread.Sleep(2 * 1000);
+                    bbl_1.Display_Service_Enabled(false);
+                }
+                else
+                {
+                    bbl_1.Display_Service_Update(false);
+                    Thread.Sleep(2 * 1000);
+                    bbl_1.Display_Service_Enabled(false);
+                }
+                try
+                {
+                    Kill("Display_Service");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.StackTrace.ToString());
+                }
+                if (isForced) cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+            }
         }
         private void RunDisplay_Service()  // Make when we want to run display_service
         {
-            ////////try
-            ////////{
-            ////////    if (Base_DL.iniEntity.IsDM_D30Used)
-            ////////    {
-            ////////        try
-            ////////        {
-            ////////            cdo.RemoveDisplay(true);
-            ////////        }
-            ////////        catch { }
-            ////////        Login_BL bbl_1 = new Login_BL();
-            ////////        bbl_1.Display_Service_Update(true);
-            ////////        bbl_1.Display_Service_Enabled(true);
-            ////////    }
-            ////////}
-            ////////catch (Exception ex)
-            ////////{
-            ////////    MessageBox.Show("Error in removing display. . .");
-            ////////}
+            try
+            {
+                if (Base_DL.iniEntity.IsDM_D30Used)
+                {
+                    try
+                    {
+                        cdo.RemoveDisplay(true);
+                    }
+                    catch { }
+                    Login_BL bbl_1 = new Login_BL();
+                    bbl_1.Display_Service_Update(true);
+                    bbl_1.Display_Service_Enabled(true);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in removing display. . .");
+            }
         }
         private void Start_Display()
         {
-            ////////try
-            ////////{
-            ////////    if (Base_DL.iniEntity.IsDM_D30Used)
-            ////////    {
-            ////////        Login_BL bbl_1 = new Login_BL();
-            ////////        if (bbl_1.ReadConfig())
-            ////////        {
-            ////////            bbl_1.Display_Service_Update(false);
-            ////////            Thread.Sleep(2 * 1000);
-            ////////            bbl_1.Display_Service_Enabled(false);
-            ////////        }
-            ////////        else
-            ////////        {
-            ////////            bbl_1.Display_Service_Update(false);
-            ////////            Thread.Sleep(2 * 1000);
-            ////////            bbl_1.Display_Service_Enabled(false);
-            ////////        }
-            ////////        Kill("Display_Service");
-            ////////    }
-            ////////}
-            ////////catch (Exception ex) { MessageBox.Show("Cant remove on second time" + ex.StackTrace); }
+            try
+            {
+                if (Base_DL.iniEntity.IsDM_D30Used)
+                {
+                    Login_BL bbl_1 = new Login_BL();
+                    if (bbl_1.ReadConfig())
+                    {
+                        bbl_1.Display_Service_Update(false);
+                        Thread.Sleep(2 * 1000);
+                        bbl_1.Display_Service_Enabled(false);
+                    }
+                    else
+                    {
+                        bbl_1.Display_Service_Update(false);
+                        Thread.Sleep(2 * 1000);
+                        bbl_1.Display_Service_Enabled(false);
+                    }
+                    Kill("Display_Service");
+                }
+            }
+            catch (Exception ex) { MessageBox.Show("Cant remove on second time" + ex.StackTrace); }
         }
         EPSON_TM30.CashDrawerOpen cdo = new EPSON_TM30.CashDrawerOpen();
     }

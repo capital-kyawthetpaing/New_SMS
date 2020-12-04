@@ -2830,11 +2830,9 @@ namespace MasterTouroku_TenzikaiShouhin
             try
             {
                 int w_Row;
-                DataTable dtrest = GetGridData();
-                if(dtrest != null)
-                {
-                    dtrest.Clear();
-                }
+                DataTable dtrest = new DataTable();
+                dtrest = GetGridData();
+                
 
                 for (int i = 0; i < dt.Rows.Count; i++)   // Meisai Dt
                 {

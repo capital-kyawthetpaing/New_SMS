@@ -1,6 +1,10 @@
-﻿using DL;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
-
+using System.Diagnostics;
+using System.Threading;
+using System.Windows.Forms;
+using DL;
 namespace BL
 {
     /// <summary>
@@ -50,11 +54,13 @@ namespace BL
         /// <param name="depositNo">入出金No</param>
         /// <param name="staffCD">担当者CD</param>
         /// <returns>取引レシート(両替)データ</returns>
-        public DataTable D_ExchangeSelect(string depositNo, string staffCD)
+        /// 
+        public DataTable D_ExchangeSelect_(string depositNo, string staffCD)
         {
             var dl = new TempoRegiTorihikiReceipt_DL();
             return dl.D_ExchangeSelectData(depositNo, staffCD);
         }
+
 
         /// <summary>
         /// 取引レシート(釣銭準備)データ取得

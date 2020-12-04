@@ -1277,6 +1277,7 @@ namespace TempoRegiHanbaiTouroku
             btnClose.Tag = "0";
             btnHenpin.Visible = true;
             OperationMode = FrmMainForm.EOperationMode.INSERT;
+       
         }
         /// <summary>
         /// 明細部金額計算
@@ -2229,6 +2230,9 @@ namespace TempoRegiHanbaiTouroku
         private void btnClear_Click(object sender, EventArgs e)
         {
             InitScr();
+            cdo.SetDisplay(true, true, "");
+            cdo.RemoveDisplay(true);
+            cdo.RemoveDisplay(true);
         }
     }
 }
