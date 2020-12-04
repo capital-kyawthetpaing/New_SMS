@@ -106,12 +106,12 @@ BEGIN
               ,DH.TotalBillingHontaiGaku8   --Å—¦i8%j–{‘ÌŠz
               ,DH.TotalBillingTax8  --Å—¦i8%jÁ”ïÅŠz
               ,DH.LastBillingGaku-DH.LastCollectGaku+DH.BillingGaku AS SeikyuGaku--¡‰ñ‚²¿‹Šz=ŒJ‰z‹àŠz{¡‰ñ‚¨”ƒãŠz
-              ,ISNULL((SELECT TOP 1 '“o˜^”Ô† '+A.RegisteredNumber
-                        FROM M_Customer AS A
-                        WHERE A.CustomerCD = DH.BillingCustomerCD AND A.ChangeDate <= DH.BillingCloseDate 
-                        AND A.DeleteFlg = 0
-                        ORDER BY A.ChangeDate DESC)
-              	,(SELECT '“o˜^”Ô† '+ M.RegisteredNumber FROM M_Control AS M WHERE M.MainKey =1)) AS RegisteredNumber
+              --,ISNULL((SELECT TOP 1 '“o˜^”Ô† '+A.RegisteredNumber
+              --          FROM M_Customer AS A
+              --          WHERE A.CustomerCD = DH.BillingCustomerCD AND A.ChangeDate <= DH.BillingCloseDate 
+              --          AND A.DeleteFlg = 0
+              --          ORDER BY A.ChangeDate DESC)
+              ,(SELECT '“o˜^”Ô† '+ M.RegisteredNumber FROM M_Control AS M WHERE M.MainKey =1) AS RegisteredNumber
               
               ,CONVERT(varchar,DS.SalesDate,111) AS SalesDate
               ,DS.SalesNO
