@@ -1188,7 +1188,7 @@ namespace ZaikoIdouNyuuryoku
                         {
                             if (Convert.ToInt16(dt.Rows[0]["MovePurposeType"]) != (int)EIdoType.店舗間移動 && Convert.ToInt16(dt.Rows[0]["MovePurposeType"]) != (int)EIdoType.返品)
                             {
-                                bbl.ShowMessage("E268");
+                                bbl.ShowMessage("E270");
                                 return false;
                             }
                         }

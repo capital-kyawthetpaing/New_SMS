@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SeikyuuShoukai));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -85,6 +86,10 @@
             // PanelSearch
             // 
             this.PanelSearch.TabIndex = 7;
+            // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             // 
             // label4
             // 
@@ -180,6 +185,7 @@
             this.ckM_SearchControl2.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl2.Stype = Search.CKM_SearchControl.SearchType.見積番号;
             this.ckM_SearchControl2.TabIndex = 275;
+            this.ckM_SearchControl2.test = null;
             this.ckM_SearchControl2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ckM_SearchControl2.UseChangeDate = false;
             this.ckM_SearchControl2.Value1 = null;
@@ -209,6 +215,7 @@
             this.ckM_SearchControl3.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl3.Stype = Search.CKM_SearchControl.SearchType.見積番号;
             this.ckM_SearchControl3.TabIndex = 344;
+            this.ckM_SearchControl3.test = null;
             this.ckM_SearchControl3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ckM_SearchControl3.UseChangeDate = false;
             this.ckM_SearchControl3.Value1 = null;
@@ -220,6 +227,7 @@
             this.ckM_CustomerName.AllowMinus = false;
             this.ckM_CustomerName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_CustomerName.BackColor = System.Drawing.Color.White;
+            this.ckM_CustomerName.BorderColor = false;
             this.ckM_CustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ckM_CustomerName.ClientColor = System.Drawing.Color.White;
             this.ckM_CustomerName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -230,18 +238,19 @@
             this.ckM_CustomerName.IntegerPart = 0;
             this.ckM_CustomerName.IsCorrectDate = true;
             this.ckM_CustomerName.isEnterKeyDown = false;
+            this.ckM_CustomerName.IsFirstTime = true;
             this.ckM_CustomerName.isMaxLengthErr = false;
             this.ckM_CustomerName.IsNumber = true;
             this.ckM_CustomerName.IsShop = false;
-            this.ckM_CustomerName.Length = 40;
+            this.ckM_CustomerName.Length = 80;
             this.ckM_CustomerName.Location = new System.Drawing.Point(236, 65);
-            this.ckM_CustomerName.MaxLength = 40;
+            this.ckM_CustomerName.MaxLength = 80;
             this.ckM_CustomerName.MoveNext = true;
             this.ckM_CustomerName.Name = "ckM_CustomerName";
             this.ckM_CustomerName.Size = new System.Drawing.Size(520, 19);
             this.ckM_CustomerName.TabIndex = 5;
-            this.ckM_CustomerName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.ckM_CustomerName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_CustomerName.UseColorSizMode = false;
             this.ckM_CustomerName.Visible = false;
             // 
             // label9
@@ -278,6 +287,7 @@
             this.ckM_TextBox2.AllowMinus = false;
             this.ckM_TextBox2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox2.BackColor = System.Drawing.Color.White;
+            this.ckM_TextBox2.BorderColor = false;
             this.ckM_TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ckM_TextBox2.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -289,6 +299,7 @@
             this.ckM_TextBox2.IntegerPart = 2;
             this.ckM_TextBox2.IsCorrectDate = true;
             this.ckM_TextBox2.isEnterKeyDown = false;
+            this.ckM_TextBox2.IsFirstTime = true;
             this.ckM_TextBox2.isMaxLengthErr = false;
             this.ckM_TextBox2.IsNumber = true;
             this.ckM_TextBox2.IsShop = false;
@@ -301,6 +312,7 @@
             this.ckM_TextBox2.TabIndex = 3;
             this.ckM_TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ckM_TextBox2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_TextBox2.UseColorSizMode = false;
             // 
             // ckM_Label4
             // 
@@ -324,6 +336,7 @@
             this.ckM_TextBox1.AllowMinus = false;
             this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
+            this.ckM_TextBox1.BorderColor = false;
             this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ckM_TextBox1.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -335,6 +348,7 @@
             this.ckM_TextBox1.IntegerPart = 0;
             this.ckM_TextBox1.IsCorrectDate = true;
             this.ckM_TextBox1.isEnterKeyDown = false;
+            this.ckM_TextBox1.IsFirstTime = true;
             this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
@@ -347,6 +361,7 @@
             this.ckM_TextBox1.TabIndex = 2;
             this.ckM_TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_TextBox1.UseColorSizMode = false;
             // 
             // ScCustomer
             // 
@@ -371,6 +386,7 @@
             this.ScCustomer.Size = new System.Drawing.Size(634, 28);
             this.ScCustomer.Stype = Search.CKM_SearchControl.SearchType.得意先;
             this.ScCustomer.TabIndex = 4;
+            this.ScCustomer.test = null;
             this.ScCustomer.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCustomer.UseChangeDate = false;
             this.ScCustomer.Value1 = null;
@@ -386,6 +402,7 @@
             this.GvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GvDetail.AutoGenerateColumns = false;
             this.GvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.GvDetail.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("GvDetail.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
@@ -415,6 +432,7 @@
             this.GvDetail.Location = new System.Drawing.Point(46, 193);
             this.GvDetail.Name = "GvDetail";
             this.GvDetail.ReadOnly = true;
+            this.GvDetail.RowHeight_ = 20;
             this.GvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GvDetail.Size = new System.Drawing.Size(964, 486);
             this.GvDetail.TabIndex = 2;

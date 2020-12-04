@@ -26,7 +26,7 @@ namespace Search_Nyuukinmoto
         private enum EIndex : int
         {
             BillingGakuStart,
-            BillingGakuStartEnd,
+            BillingGakuEnd,
             StoreCD,
             CustomerName,
             Chk1,
@@ -174,16 +174,16 @@ namespace Search_Nyuukinmoto
             switch (index)
             {
                 case (int)EIndex.BillingGakuStart:
-                case (int)EIndex.BillingGakuStartEnd:
-                    //入力必須(Entry required)	入力なければError(If there is no input, an error)			
-                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
-                    {
-                        nnbl.ShowMessage("E102");
-                        return false;
-                    }
+                case (int)EIndex.BillingGakuEnd:
+                    ////入力必須(Entry required)	入力なければError(If there is no input, an error)			
+                    //if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    //{
+                    //    nnbl.ShowMessage("E102");
+                    //    return false;
+                    //}
                     //表示単位が納品書の場合、項目名は「売上額」
                     //(From) ≧ (To)である場合Error
-                    if (index == (int)EIndex.BillingGakuStartEnd)
+                    if (index == (int)EIndex.BillingGakuEnd)
                     {
                         if (nnbl.Z_Set(detailControls[index - 1].Text) > nnbl.Z_Set(detailControls[index].Text))
                         {
@@ -263,12 +263,12 @@ namespace Search_Nyuukinmoto
                     break;
 
                 case (int)EIndex.CustomerName:
-                    //入力必須(Entry required)
-                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
-                    {
-                        nnbl.ShowMessage("E102");
-                        return false;
-                    }
+                    ////入力必須(Entry required)
+                    //if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    //{
+                    //    nnbl.ShowMessage("E102");
+                    //    return false;
+                    //}
 
                     break;
 
@@ -296,6 +296,16 @@ namespace Search_Nyuukinmoto
                     detailControls[i].Focus();
                     return;
                 }
+
+            //請求済額（From）、請求済額（To)、顧客名のどれかに入力がなければエラー
+            if (string.IsNullOrWhiteSpace(detailControls[(int)EIndex.BillingGakuStart].Text) &&
+                string.IsNullOrWhiteSpace(detailControls[(int)EIndex.BillingGakuEnd].Text) &&
+                string.IsNullOrWhiteSpace(detailControls[(int)EIndex.CustomerName].Text) )
+            {
+                nnbl.ShowMessage("E188", "請求済額、顧客名");
+                detailControls[(int)EIndex.BillingGakuStart].Focus();
+                return;
+            }
 
             dbe = GetSearchInfo();
             DataTable dt = nnbl.D_Billing_SelectForSearch(dbe);
@@ -340,7 +350,7 @@ namespace Search_Nyuukinmoto
             dbe = new D_Billing_Entity
             {
                 BillingGakuFrom = detailControls[(int)EIndex.BillingGakuStart].Text,
-                BillingGakuTo = detailControls[(int)EIndex.BillingGakuStartEnd].Text,
+                BillingGakuTo = detailControls[(int)EIndex.BillingGakuEnd].Text,
                 CollectDateFrom = detailControls[(int)EIndex.InputStart].Text,
                 CollectDateTo = detailControls[(int)EIndex.InputEnd].Text,
                 CustomerName = detailControls[(int)EIndex.CustomerName].Text,

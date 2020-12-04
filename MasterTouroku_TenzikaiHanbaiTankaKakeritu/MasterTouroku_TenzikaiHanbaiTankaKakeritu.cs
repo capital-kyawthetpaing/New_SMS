@@ -37,6 +37,7 @@ namespace MasterTouroku_TenzikaiHanbaiTankaKakeritu
             CB_Season.Bind(ymd);
             SC_Tanka.TxtCode.Require(true);
             GV_Tenzaishohin.CheckCol.Add("Rate");
+            GV_Tenzaishohin.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             SC_Tanka.SetFocus(1);
         }
         private bool ErrorCheck()

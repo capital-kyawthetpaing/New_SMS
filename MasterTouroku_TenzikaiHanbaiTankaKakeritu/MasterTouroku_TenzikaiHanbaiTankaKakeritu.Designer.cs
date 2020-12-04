@@ -590,7 +590,7 @@
             this.GV_Tenzaishohin.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.GV_Tenzaishohin.RowHeight_ = 20;
             this.GV_Tenzaishohin.RowTemplate.Height = 20;
-            this.GV_Tenzaishohin.Size = new System.Drawing.Size(990, 500);
+            this.GV_Tenzaishohin.Size = new System.Drawing.Size(990, 447);
             this.GV_Tenzaishohin.TabIndex = 77;
             this.GV_Tenzaishohin.UseRowNo = true;
             this.GV_Tenzaishohin.UseSetting = false;
@@ -674,7 +674,7 @@
             dataGridViewCellStyle4.Format = "N2";
             dataGridViewCellStyle4.NullValue = "0";
             this.Rate.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Rate.HeaderText = "          掛率";
+            this.Rate.HeaderText = "       掛率";
             this.Rate.MaxInputLength = 6;
             this.Rate.Name = "Rate";
             this.Rate.Width = 82;

@@ -73,7 +73,7 @@ namespace SiharaiTouroku
                 if (OperationMode == EOperationMode.SHOW)
                     Btn_F12.Text = "";
                 else
-                Btn_F12.Text = "登録(F12)";
+                    Btn_F12.Text = "登録(F12)";
 
                 //起動時共通処理
                 base.StartProgram();
@@ -935,6 +935,9 @@ namespace SiharaiTouroku
         {
             try
             {
+                if (OperationMode == EOperationMode.SHOW)
+                    return;
+
                 if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
                 {
                     if ((sender as DataGridView).CurrentCell is DataGridViewCheckBoxCell)

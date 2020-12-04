@@ -875,25 +875,26 @@ namespace KeihiNyuuryoku
         }
         private void dgvKehiNyuuryoku_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            try
-            {
-                if (Convert.ToInt32(dgvKehiNyuuryoku.CurrentCell.EditedFormattedValue) > 0)
-                {
-                    return;
-                }
-                else
-                {
-                    MessageBox.Show("Enter valid number. . . ");
-                    dgvKehiNyuuryoku.CurrentCell.Value = 0;
-                }
+            e.Cancel = false;
+            //try
+            //{
+            //    if (Convert.ToInt32(dgvKehiNyuuryoku.CurrentCell.EditedFormattedValue) > 0)
+            //    {
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Enter valid number. . . ");
+            //        dgvKehiNyuuryoku.CurrentCell.Value = 0;
+            //    }
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Enter valid number. . . ");
-                dgvKehiNyuuryoku.CurrentCell.Value = 0;
-            }
-            dgvKehiNyuuryoku.RefreshEdit();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Enter valid number. . . ");
+            //    dgvKehiNyuuryoku.CurrentCell.Value = 0;
+            //}
+            //dgvKehiNyuuryoku.RefreshEdit();
         }
     }
 }

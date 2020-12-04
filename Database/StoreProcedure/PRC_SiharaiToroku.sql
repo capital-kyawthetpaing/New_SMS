@@ -102,7 +102,7 @@ BEGIN
     --ÉJÅ[É\ÉãíËã`
     DECLARE CUR_TABLE CURSOR FOR
         SELECT tbl.PayNO,tbl.PayeeCD,tbl.PayPlanDate
-            ,tbl.Rows, tbl.UpdateFlg
+              ,tbl.Rows, tbl.UpdateFlg
         FROM @Table AS tbl
         ORDER BY tbl.PayeeCD,tbl.PayPlanDate
         ;
@@ -143,10 +143,10 @@ BEGIN
                 ,SUM(A.PayGaku) AS PayGaku 
                 ,SUM(A.OffsetGaku) AS OffsetGaku
                 
-                FROM D_Pay AS A
-                WHERE A.PayNO = (CASE WHEN @PayNO <> '' THEN @PayNO ELSE A.PayNO END)
-                AND A.LargePayNO = (CASE WHEN @LargePayNO <> '' THEN @LargePayNO ELSE A.LargePayNO END)
-                GROUP BY A.PayeeCD, A.PayDate) AS tbl
+              FROM D_Pay AS A
+              WHERE A.PayNO = (CASE WHEN @PayNO <> '' THEN @PayNO ELSE A.PayNO END)
+              AND A.LargePayNO = (CASE WHEN @LargePayNO <> '' THEN @LargePayNO ELSE A.LargePayNO END)
+              GROUP BY A.PayeeCD, A.PayDate) AS tbl
         WHERE [D_MonthlyDebt].[YYYYMM] = tbl.YYYYMM --CONVERT(int, SUBSTRING(@PayDate,1,4) + SUBSTRING(@PayDate,6,2))
         AND [D_MonthlyDebt].[StoreCD] = @StoreCD
         AND [D_MonthlyDebt].[PayeeCD] = tbl.PayeeCD
@@ -209,8 +209,8 @@ BEGIN
         BEGIN
             DELETE FROM D_PayDetails
             WHERE EXISTS(SELECT 1 FROM D_Pay AS D
-                    WHERE D.LargePayNO = @LargePayNO
-                    AND D.PayNO = D_PayDetails.PayNO)
+                         WHERE D.LargePayNO = @LargePayNO
+                         AND D.PayNO = D_PayDetails.PayNO)
             AND DeleteDateTime IS NULL
             ;
         END
@@ -425,15 +425,15 @@ BEGIN
             
             IF @PayNORows = 1
             BEGIN
-            	IF ISNULL(@PayNO,'') = ''
-            	BEGIN
+                IF ISNULL(@PayNO,'') = ''
+                BEGIN
                 --L_PayHistory        Insert          Tableì]ëóédólÇb         
                 --L_PayDetailsHistory Insert          Tableì]ëóédólÇc
-                	exec dbo.L_PayHistory_Insert @tblPayNO,@LargePayNO;
+                    exec dbo.L_PayHistory_Insert @tblPayNO,@LargePayNO;
                 END
                 ELSE
                 BEGIN
-                	exec dbo.L_PayHistory_Insert @PayNO,@LargePayNO;
+                    exec dbo.L_PayHistory_Insert @PayNO,@LargePayNO;
                 END
                 
                 SET @BreakKey = @tblPayeeCD + ' ' + CONVERT(varchar,@tblPayPlanDate,111);
@@ -464,10 +464,10 @@ BEGIN
         --D_PayPlan           Update          Tableì]ëóédólÇd
         UPDATE [D_PayPlan]
            SET 
-            [PayConfirmGaku]         = tblD.PayGaku
+            [PayConfirmGaku]         = [PayConfirmGaku] + tblD.PayGaku
            ,[PayConfirmFinishedKBN]  = tblD.PayConfirmFinishedKBN   
-           ,[UpdateOperator]     =  @Operator  
-           ,[UpdateDateTime]     =  @SYSDATETIME
+           ,[UpdateOperator]         =  @Operator  
+           ,[UpdateDateTime]         =  @SYSDATETIME
         FROM @TableD AS tblD
         WHERE [D_PayPlan].[PayPlanNO] = tblD.PayPlanNO
         AND [D_PayPlan].[DeleteDateTime] IS NULL           
@@ -488,11 +488,11 @@ BEGIN
         --Update äYìñîNåéÅAìXï‹ÅAéxï•êÊÇ™åéï ç¬ñ±Ç…ë∂ç›ÇµÇ»ÇØÇÍÇŒInsert
         UPDATE [D_MonthlyDebt]
             SET
-             [PayGaku] = [D_MonthlyDebt].PayGaku + tbl.PayGaku
-            ,[OffsetGaku] = [D_MonthlyDebt].OffsetGaku + tbl.OffsetGaku
-            ,[BalanceGaku] = [D_MonthlyDebt].LastBalanceGaku + [D_MonthlyDebt].DebtGaku - ([D_MonthlyDebt].PayGaku + tbl.PayGaku)
-            ,[UpdateOperator]     =  @Operator  
-            ,[UpdateDateTime]     =  @SYSDATETIME
+             [PayGaku]        = [D_MonthlyDebt].PayGaku + tbl.PayGaku
+            ,[OffsetGaku]     = [D_MonthlyDebt].OffsetGaku + tbl.OffsetGaku
+            ,[BalanceGaku]    = [D_MonthlyDebt].LastBalanceGaku + [D_MonthlyDebt].DebtGaku - ([D_MonthlyDebt].PayGaku + tbl.PayGaku)
+            ,[UpdateOperator] =  @Operator  
+            ,[UpdateDateTime] =  @SYSDATETIME
         FROM (SELECT A.PayeeCD, SUM(A.PayGaku) AS PayGaku 
                     ,SUM(A.OffsetGaku) AS OffsetGaku
               FROM @Table AS A
@@ -552,10 +552,10 @@ BEGIN
             FROM @Table AS A
             GROUP BY A.PayeeCD) AS tbl
       WHERE NOT EXISTS(SELECT 1 FROM D_MonthlyDebt AS D
-                        WHERE D.[YYYYMM] = CONVERT(int, SUBSTRING(@PayDate,1,4) + SUBSTRING(@PayDate,6,2))
-                        AND D.[StoreCD] = @StoreCD
-                        AND D.[PayeeCD] = tbl.PayeeCD
-                        )
+                       WHERE D.[YYYYMM] = CONVERT(int, SUBSTRING(@PayDate,1,4) + SUBSTRING(@PayDate,6,2))
+                       AND D.[StoreCD] = @StoreCD
+                       AND D.[PayeeCD] = tbl.PayeeCD
+                       )
       ;
         
         
@@ -593,8 +593,8 @@ BEGIN
                 DeleteOperator=@Operator,
                 DeleteDateTime=@SYSDATETIME
             where EXISTS(SELECT 1 FROM D_Pay AS D
-                    WHERE D.LargePayNO = @LargePayNO
-                    AND D.PayNO = D_PayDetails.PayNO)
+                         WHERE D.LargePayNO = @LargePayNO
+                         AND D.PayNO = D_PayDetails.PayNO)
             AND DeleteDateTime IS NULL
             ;
         END 
@@ -630,8 +630,8 @@ BEGIN
             inner join D_PayDetails dpd
             on dpd.PayPlanNO =  dpp.PayPlanNO
             where EXISTS(SELECT 1 FROM D_Pay AS D
-                    WHERE D.LargePayNO = @LargePayNO
-                    AND D.PayNO = dpd.PayNO)
+                         WHERE D.LargePayNO = @LargePayNO
+                         AND D.PayNO = dpd.PayNO)
             ;
         END
         
