@@ -86,13 +86,13 @@ namespace TempoRegiTorihikiReceipt
         /// </summary>
         public TempoRegiTorihikiReceipt()
         {
-          
-            InitializeComponent();
             WindowState = FormWindowState.Minimized;
             ShowInTaskbar = false;
-            //   Start_Display();
+            InitializeComponent();
+
+         //   Start_Display();
         }
-     
+
         /// <summary>
         /// 画面読み込み処理
         /// </summary>
@@ -107,11 +107,11 @@ namespace TempoRegiTorihikiReceipt
             StartProgram();
 
             // フォームを表示させないように最小化してタスクバーにも表示しない
-         
+      
 
             //コマンドライン引数を配列で取得する
-           string[] cmds = Environment.GetCommandLineArgs();// 
-          //       string[] cmds = new string[] { "C:\\", "01", "0001", "MYA040_PC", "5", "2368" };// 
+           /// string[] cmds = Environment.GetCommandLineArgs();// 
+           string[] cmds = new string[] { "C:\\", "01", "0001", "MYA040_PC", "5", "2368" };// 
                                                              //  MessageBox.Show(cmds.Length.ToString());
             if (cmds.Length - 1 > (int)ECmdLine.PcID)
             {
@@ -214,7 +214,7 @@ namespace TempoRegiTorihikiReceipt
         /// <summary>
         /// 印刷実行
         /// </summary>
-        public void Print()
+        private void Print()
         {
             try
             {
@@ -312,9 +312,12 @@ namespace TempoRegiTorihikiReceipt
                     if (miscPayment.Rows.Count > 0)
                     {
                         CreateMiscPaymentDataSet(miscPayment, torihikiReceiptDataSet);
+
                         var reportModePayment = new TempoRegiTorihikiReceipt_MiscPayment();
+
                         reportModePayment.SetDataSource(torihikiReceiptDataSet);
                         reportModePayment.Refresh();
+
                         reportModePayment.PrintOptions.PrinterName = StorePrinterName;
                         ReadyToPrinter = reportModePayment;
                         reportModePayment.PrintToPrinter(0, false, 0, 0);
@@ -327,7 +330,7 @@ namespace TempoRegiTorihikiReceipt
 
                 case MODE_EXCHANGE:
                     // 両替取得
-                    var exchange = GetMode5();
+                    var exchange = bl.D_ExchangeSelect(InputDepositNO, InOperatorCD);
                     if (exchange.Rows.Count > 0)
                     {
                         CreateExchangeDataSet(exchange, torihikiReceiptDataSet);
@@ -390,14 +393,6 @@ namespace TempoRegiTorihikiReceipt
 
             //report.PrintOptions.PrinterName = PRINTER;
             //report.PrintToPrinter(0, false, 0, 0);
-        }
-        public DataTable GetMode5()
-        {
-            TempoRegiTorihikiReceipt_BL bll = new TempoRegiTorihikiReceipt_BL();
-            DataTable dt = new DataTable();
-            dt= bll.D_ExchangeSelect_(InputDepositNO, InOperatorCD);
-            return dt;
-
         }
 
         #region 雑入金データセット

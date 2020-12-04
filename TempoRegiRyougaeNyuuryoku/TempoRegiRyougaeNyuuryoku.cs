@@ -206,7 +206,7 @@ namespace TempoRegiRyougaeNyuuryoku
                 //catch { }
                 // System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
                 var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
-                pro.WaitForExit();
+                //pro.WaitForExit();
                 //try
                 //{
                 //    cdo.SetDisplay(true, true, "");
@@ -232,7 +232,7 @@ namespace TempoRegiRyougaeNyuuryoku
             string Mode = "5";
             dtDepositNO = bbl.SimpleSelect1("52", "", Application.ProductName, "", "");
             string DepositeNO = dtDepositNO.Rows[0]["DepositNO"].ToString();
-            string cmdLine = InCompanyCD +" " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode + " " + DepositeNO;
+            string cmdLine = InCompanyCD + " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode + " " + DepositeNO;
 
             try
             {
@@ -241,8 +241,11 @@ namespace TempoRegiRyougaeNyuuryoku
                     ///movedBegin
                     try
                     {
+                        Printer_Open(filePath, programID, cmdLine);
+                        CDO_Open();
+
                         //  Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, programID, cmdLine));
-                        Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, programID, cmdLine));
+                        //  Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, programID, cmdLine));
                     }
                     catch (Exception ex) { MessageBox.Show("Parallel function worked and cant dispose instance. . . " + ex.Message); }
                 }
@@ -250,13 +253,11 @@ namespace TempoRegiRyougaeNyuuryoku
                 {
                     MessageBox.Show(ex.Message);
                 }
-               /////// Stop_DisplayService();
-            
+                /////// Stop_DisplayService();
             }
             catch
             {
             }
-            
         }
         /// <summary>
         /// 入力必須エラーをチェックする

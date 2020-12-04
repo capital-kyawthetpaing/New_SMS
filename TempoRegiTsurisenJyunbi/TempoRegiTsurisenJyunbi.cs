@@ -248,7 +248,7 @@ namespace TempoRegiTsurisenJyunbi
                 ////////catch { }
                 // System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
                 var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
-                pro.WaitForExit();
+               /// pro.WaitForExit();
                 //////try
                 //////{
                 //////    cdo.SetDisplay(true, true, "");
@@ -283,8 +283,10 @@ namespace TempoRegiTsurisenJyunbi
                     ///movedBegin
                     try
                     {
+                        Printer_Open(filePath, programID, cmdLine);
+                        CDO_Open();
                         //  Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, programID, cmdLine));
-                        Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, programID, cmdLine));
+                        // Parallel.Invoke(() => CDO_Open(), () => Printer_Open(filePath, programID, cmdLine));
                     }
                     catch (Exception ex) { MessageBox.Show("Parallel function worked and cant dispose instance. . . " + ex.Message); }
                 }

@@ -82,6 +82,7 @@ namespace MainMenu
                 
             }
             ButtonState();
+            ParentID = "";
         }
         private void Setting(DataTable df)
         {
@@ -393,6 +394,7 @@ namespace MainMenu
             btn.BackColor = Color.Khaki;
             OpenForm(sender);
         }
+        public string ParentID { get; set; }
         private void OpenForm(object sender)
         {
             string filePath = ""; string cmdLine = ""; string exe_name = "";
@@ -408,12 +410,16 @@ namespace MainMenu
                         return;
                     }
                 }
-            var programID = (sender as CKM_Button).Text;
-             exe_name = menu.Select("ProgramID = '"+programID+"'").CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
+                //var programID = (sender as CKM_Button).Text;
+                // exe_name = menu.Select("ProgramID = '"+programID+"'").CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
+                var programID = (sender as CKM_Button).Text;
+                //var Condition = "ProgramID = '" + programID + "'" + "";
+                var Condition = "BusinessSEQ = '" + ParentID + "'" + " And " + "ProgramSEQ = '" + (sender as CKM_Button).Name.Split('j').Last() + "'";
+                 exe_name = menu.Select(Condition).CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
                 //System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
                 //string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
 
-                
+
                 if (Debugger.IsAttached || Login_BL.Islocalized)
                 {
                     System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
@@ -485,6 +491,7 @@ namespace MainMenu
             btnText = btn.Text;
             if (!string.IsNullOrWhiteSpace(btnText))
             {
+                ParentID = btn.Name.Split('m').Last();
                 RightButton_Text(btnText, btn.TabIndex);
             }
         }

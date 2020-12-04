@@ -59,17 +59,21 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\Debug\CKM_Controls.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="Entity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Projects\Cash\CashDrawerOpen\CashDrawerOpen\CashDrawerOpen\Bigin\DLL\Entity.dll</HintPath>
+      <HintPath>..\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
     </Reference>
-    <Reference Include="EPSON_TM30, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Projects\Cash\CashDrawerOpen\CashDrawerOpen\CashDrawerOpen\Bigin\DLL\EPSON_TM30.dll</HintPath>
+      <HintPath>..\bin\Debug\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\CrystalDecisions.Windows.Forms.dll</HintPath>
     </Reference>
     <Reference Include="Search, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -180,6 +184,14 @@
     <ProjectReference Include="..\DL\DL.csproj">
       <Project>{9A22D9A9-E851-4765-8842-93FD4CB77300}</Project>
       <Name>DL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{9dd6c82a-1899-478f-bc18-524ad0b0dcc8}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EPSON_TM30\EPSON_TM30.csproj">
+      <Project>{9dea7f04-51d2-4678-9c2c-74745d9b61bd}</Project>
+      <Name>EPSON_TM30</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

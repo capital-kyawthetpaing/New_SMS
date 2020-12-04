@@ -729,8 +729,8 @@ namespace TempoRegiHanbaiTouroku
         {
             try
             {
-                // cdo.RemoveDisplay(true);
-                // cdo.RemoveDisplay(true);
+                cdo.RemoveDisplay(true);
+                cdo.RemoveDisplay(true);
             }
             catch
             {
@@ -742,8 +742,8 @@ namespace TempoRegiHanbaiTouroku
             }
             try
             {
-                cdo.RemoveDisplay(true);
-                cdo.RemoveDisplay(true);
+                //cdo.RemoveDisplay(true);
+                //cdo.RemoveDisplay(true);
             }
             catch { MessageBox.Show("CO. . . "); }
         }
@@ -751,20 +751,22 @@ namespace TempoRegiHanbaiTouroku
         {
             if (programID == "")
             {
+              //  var pro = System.Diagnostics.Process.Start(@"D:\GITs\New_SMS\bin\Debug\TempoRegiTorihikiReceipt.exe", "01 0001 MYA040_PC 3 2550");
                 var pro = System.Diagnostics.Process.Start(filePath, cmdLine);
                 pro.WaitForExit();
             }
             else
             {
-                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
-                pro.WaitForExit();
+                //var pro = System.Diagnostics.Process.Start(@"D:\GITs\New_SMS\bin\Debug\TempoRegiTorihikiReceipt.exe", "01 0001 MYA040_PC 3 2550");
+                     var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                  pro.WaitForExit();
             }
             try
             {
                 cdo.SetDisplay(true, true, "");
                 cdo.RemoveDisplay(true);
                 cdo.RemoveDisplay(true);
-               // cdo.SetDisplay(false, false, "", Up, Lp);
+                cdo.SetDisplay(false, false, "", Up, Lp);
             }
             catch
             {
