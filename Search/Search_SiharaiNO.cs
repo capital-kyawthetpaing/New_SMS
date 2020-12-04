@@ -38,7 +38,7 @@ namespace Search
                 if (!string.IsNullOrWhiteSpace(txtPaymentDateTo.Text))
                 {
                     int result = txtPaymentDateFrom.Text.CompareTo(txtPaymentDateTo.Text);
-                    if (result >= 0)
+                    if (result > 0)
                     {
                         ssnbl.ShowMessage("E104");
                         txtPaymentDateTo.Focus();
@@ -52,7 +52,7 @@ namespace Search
             if(!string.IsNullOrWhiteSpace(txtPaymentDateTo.Text))
             {
                 int result = txtPaymentDateFrom.Text.CompareTo(txtPaymentDateTo.Text);
-                if(result >= 0)
+                if(result > 0)
                 {
                     ssnbl.ShowMessage("E104");
                     txtPaymentDateTo.Focus();
@@ -65,7 +65,7 @@ namespace Search
             if (!string.IsNullOrWhiteSpace(txtPaymentDateTo.Text))
             {
                 int result = txtPaymentDateFrom.Text.CompareTo(txtPaymentDateTo.Text);
-                if (result >= 0)
+                if (result > 0)
                 {
                     ssnbl.ShowMessage("E104");
                     txtPaymentDateTo.Focus();
@@ -76,7 +76,7 @@ namespace Search
             if (!string.IsNullOrWhiteSpace(txtPaymentDateTo.Text))
             {
                 int result = txtPaymentDateFrom.Text.CompareTo(txtPaymentDateTo.Text);
-                if (result >= 0)
+                if (result > 0)
                 {
                     ssnbl.ShowMessage("E104");
                     txtPaymentDateTo.Focus();
@@ -221,6 +221,11 @@ namespace Search
                 format);
                 j += 3;
             }
+        }
+
+        private void FrmSearch_SiharaiNO_Load(object sender, EventArgs e)
+        {
+            txtPaymentDateFrom.Focus();
         }
     }
 }

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSearch_SiharaiNO));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtPaymentDateFrom = new CKM_Controls.CKM_TextBox();
             this.txtPaymentDateTo = new CKM_Controls.CKM_TextBox();
@@ -316,11 +316,11 @@
             this.dgvSiharaiNO.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.dgvSiharaiNO.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvSiharaiNO.AutoGenerateColumns = false;
             this.dgvSiharaiNO.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.dgvSiharaiNO.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvSiharaiNO.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -337,21 +337,15 @@
             this.colAmountOfPayment,
             this.colTransferAmount,
             this.colOtherThanTransfer});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSiharaiNO.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSiharaiNO.EnableHeadersVisualStyles = false;
             this.dgvSiharaiNO.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvSiharaiNO.Location = new System.Drawing.Point(31, 197);
             this.dgvSiharaiNO.Name = "dgvSiharaiNO";
             this.dgvSiharaiNO.ReadOnly = true;
+            this.dgvSiharaiNO.RowHeight_ = 20;
+            this.dgvSiharaiNO.RowTemplate.Height = 20;
             this.dgvSiharaiNO.Size = new System.Drawing.Size(953, 400);
-            this.dgvSiharaiNO.TabIndex = 0;
+            this.dgvSiharaiNO.TabIndex = 20;
             this.dgvSiharaiNO.UseRowNo = true;
             this.dgvSiharaiNO.UseSetting = true;
             this.dgvSiharaiNO.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSiharaiNO_CellDoubleClick);
@@ -460,6 +454,7 @@
             this.Sc_PaymentDestination.Size = new System.Drawing.Size(444, 28);
             this.Sc_PaymentDestination.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.Sc_PaymentDestination.TabIndex = 4;
+            this.Sc_PaymentDestination.test = null;
             this.Sc_PaymentDestination.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.Sc_PaymentDestination.UseChangeDate = false;
             this.Sc_PaymentDestination.Value1 = null;
@@ -480,6 +475,7 @@
             this.PanelHeaderHeight = 180;
             this.ProgramName = "支払番号検索";
             this.Text = "Search_SiharaiNO";
+            this.Load += new System.EventHandler(this.FrmSearch_SiharaiNO_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmSearch_SiharaiNO_KeyUp);
             this.Controls.SetChildIndex(this.dgvSiharaiNO, 0);
             this.PanelHeader.ResumeLayout(false);
