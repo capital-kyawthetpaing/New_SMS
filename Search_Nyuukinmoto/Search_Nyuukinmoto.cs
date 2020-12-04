@@ -61,6 +61,7 @@ namespace Search_Nyuukinmoto
         public string DenNO = string.Empty;
         public string Customer = string.Empty;
         public string ChangeDate = string.Empty;
+        public bool flgCancel = true;
 
         private Control[] detailControls;
 
@@ -330,6 +331,7 @@ namespace Search_Nyuukinmoto
             try
             {
                 GetData();
+                flgCancel = false;
                 EndSec();
 
             }
@@ -443,7 +445,8 @@ namespace Search_Nyuukinmoto
 
             switch (Index)
             {
-                case 0:     // F1:終了
+                case 0:     // F1:終了        
+                    break;
                 case 1:     //F2:新規
                 case 2:     //F3:変更
                 case 3:     //F4:削除
