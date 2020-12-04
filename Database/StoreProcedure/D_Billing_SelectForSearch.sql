@@ -82,13 +82,13 @@ BEGIN
             AND EXISTS (SELECT MC.CustomerCD
                         FROM M_Customer AS MC 
                         WHERE MC.ChangeDate <= DB.BillingCloseDate
-                        AND MC.CustomerName LIKE '%' + @CustomerName + '%'
+                        AND MC.CustomerName LIKE '%' + (CASE WHEN @CustomerName <> '' THEN @CustomerName ELSE MC.CustomerName END) + '%'
                         AND MC.DeleteFlg = 0
                         AND MC.CustomerCD = DB.BillingCustomerCD)
         ) AS W
         GROUP BY W.StoreCD, W.CustomerCD,W.BillingCloseDate,W.BillingNO
-        HAVING SUM(W.BillingGaku) >= @BillingGakuFrom
-        AND SUM(W.BillingGaku) <= @BillingGakuTo
+        HAVING SUM(W.BillingGaku) >= (CASE WHEN @BillingGakuFrom IS NOT NULL THEN @BillingGakuFrom ELSE SUM(W.BillingGaku) END)
+        AND SUM(W.BillingGaku) <= (CASE WHEN @BillingGakuTo IS NOT NULL THEN @BillingGakuTo ELSE SUM(W.BillingGaku) END)
         ORDER BY StoreCD, CustomerCD,BillingCloseDate,BillingNO, BillingGaku
         ;
     END
@@ -152,13 +152,13 @@ BEGIN
             AND EXISTS (SELECT MC.CustomerCD
                         FROM M_Customer AS MC 
                         WHERE MC.ChangeDate <= DB.BillingCloseDate
-                        AND MC.CustomerName LIKE '%' + @CustomerName + '%'
+                        AND MC.CustomerName LIKE '%' + (CASE WHEN @CustomerName <> '' THEN @CustomerName ELSE MC.CustomerName END) + '%'
                         AND MC.DeleteFlg = 0
                         AND MC.CustomerCD = DB.BillingCustomerCD)
         ) AS W
         GROUP BY W.StoreCD, W.CustomerCD,W.BillingCloseDate,W.BillingNO
-        HAVING SUM(W.BillingGaku) >= @BillingGakuFrom
-        AND SUM(W.BillingGaku) <= @BillingGakuTo
+        HAVING SUM(W.BillingGaku) >= (CASE WHEN @BillingGakuFrom IS NOT NULL THEN @BillingGakuFrom ELSE SUM(W.BillingGaku) END)
+        AND SUM(W.BillingGaku) <= (CASE WHEN @BillingGakuTo IS NOT NULL THEN @BillingGakuTo ELSE SUM(W.BillingGaku) END)
         ORDER BY StoreCD, CustomerCD,BillingCloseDate,BillingNO, BillingGaku
         ;
     END
