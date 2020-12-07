@@ -3651,26 +3651,27 @@ namespace MasterTouroku_TenzikaiShouhin
 
             w_CtlRow = pRow - Vsb_Mei_0.Value;
           
-                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[pRow].JANCD))
-                {
-                    for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
-                    {
-                        if (w_Col == (int)ClsGridMasterTanzi.ColNO.JANCD)
-                            //JANCD使用可
-                            mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
-                        else
-                            mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
-                    }
+                //if (string.IsNullOrWhiteSpace(mGrid.g_DArray[pRow].JANCD))
+                //{
+                    //for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
+                    //{
+                    //    if (w_Col == (int)ClsGridMasterTanzi.ColNO.JANCD)
+                    //        //JANCD使用可
+                    //        mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
+                    //    else
+                    //        mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                    //}
 
-                    w_AllFlg = false;
-                }
-                else
-                {
+                    //w_AllFlg = false;
+                //}
+                //else
+                //{
                     //JANCD入力時
                     w_AllFlg = true;
 
                     for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
                     {
+               
                         switch (w_Col)
                         {
                             case (int)ClsGridMasterTanzi.ColNO.JANCD:
@@ -3721,7 +3722,7 @@ namespace MasterTouroku_TenzikaiShouhin
                         }
                     }
                     w_AllFlg = false;
-                }
+               // }
            // }
         }
 
