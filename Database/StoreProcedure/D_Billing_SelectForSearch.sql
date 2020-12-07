@@ -34,7 +34,7 @@ BEGIN
               ,MAX(W.StoreName) AS StoreName
               ,W.CustomerCD
               ,MAX(W.CustomerName) AS CustomerName
-              ,W.BillingCloseDate
+              ,W.BillingCloseDate AS BillingDate
               ,W.BillingNO
               ,SUM(W.BillingGaku) AS BillingGaku
               ,MAX(W.CollectDate) AS CollectDate
@@ -100,27 +100,27 @@ BEGIN
               ,MAX(W.StoreName) AS StoreName
               ,W.CustomerCD
               ,MAX(W.CustomerName) AS CustomerName
-              ,W.BillingCloseDate
+              ,W.BillingCloseDate AS BillingDate
               ,W.BillingNO
               ,SUM(W.BillingGaku) AS BillingGaku
               ,MAX(W.CollectDate) AS CollectDate
         FROM (
             SELECT DB.StoreCD
-                  ,(SELECT top 1 A.StoreName 
-                    FROM M_Store A 
-                    WHERE A.StoreCD = DB.StoreCD AND A.ChangeDate <= DB.BillingCloseDate
-                    AND A.DeleteFlg = 0
-                    ORDER BY A.ChangeDate desc) AS StoreName
+                 ,(SELECT top 1 A.StoreName 
+                   FROM M_Store A 
+                   WHERE A.StoreCD = DB.StoreCD AND A.ChangeDate <= DB.BillingCloseDate
+                   AND A.DeleteFlg = 0
+                   ORDER BY A.ChangeDate desc) AS StoreName
 
-                    ,DB.BillingCustomerCD AS CustomerCD
-                    ,(SELECT top 1 A.CustomerName
-                      FROM M_Customer A 
-                      WHERE A.CustomerCD = DB.BillingCustomerCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DB.BillingCloseDate
-                      ORDER BY A.ChangeDate desc) AS CustomerName 
-                    ,CONVERT(varchar,DS.SalesDate,111) AS BillingCloseDate
-                    ,DS.SalesNO AS BillingNO
-                    ,ISNULL(DSM.SalesGaku,0) AS BillingGaku
-                    ,CONVERT(varchar,DB.CollectDate,111) AS CollectDate
+                  ,DB.BillingCustomerCD AS CustomerCD
+                  ,(SELECT top 1 A.CustomerName
+                    FROM M_Customer A 
+                    WHERE A.CustomerCD = DB.BillingCustomerCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DB.BillingCloseDate
+                    ORDER BY A.ChangeDate desc) AS CustomerName 
+                   ,CONVERT(varchar,DS.SalesDate,111) AS BillingCloseDate
+                   ,DS.SalesNO AS BillingNO
+                   ,ISNULL(DSM.SalesGaku,0) AS BillingGaku
+                   ,CONVERT(varchar,DB.CollectDate,111) AS CollectDate
 
             FROM D_Billing AS DB
             LEFT OUTER JOIN D_BillingDetails AS DBM
