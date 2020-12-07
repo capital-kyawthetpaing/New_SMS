@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTanabanNyuuryoku));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelDetail = new System.Windows.Forms.Panel();
             this.ScStorage = new Search.CKM_SearchControl();
@@ -115,7 +116,7 @@
             this.ScStorage.IsCopy = false;
             this.ScStorage.LabelText = "";
             this.ScStorage.LabelVisible = false;
-            this.ScStorage.Location = new System.Drawing.Point(943, 83);
+            this.ScStorage.Location = new System.Drawing.Point(891, 83);
             this.ScStorage.Margin = new System.Windows.Forms.Padding(0);
             this.ScStorage.Name = "ScStorage";
             this.ScStorage.NameWidth = 600;
@@ -140,7 +141,7 @@
             this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(909, 91);
+            this.ckM_Label5.Location = new System.Drawing.Point(857, 91);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(31, 12);
             this.ckM_Label5.TabIndex = 9;
@@ -159,7 +160,7 @@
             this.dgvTanaban.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvTanaban.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -178,6 +179,14 @@
             this.colJanCD,
             this.colStockSu,
             this.colStockNo});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTanaban.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTanaban.EnableHeadersVisualStyles = false;
             this.dgvTanaban.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvTanaban.Location = new System.Drawing.Point(25, 149);
@@ -185,7 +194,7 @@
             this.dgvTanaban.RowHeadersVisible = false;
             this.dgvTanaban.RowHeight_ = 20;
             this.dgvTanaban.RowTemplate.Height = 20;
-            this.dgvTanaban.Size = new System.Drawing.Size(1645, 500);
+            this.dgvTanaban.Size = new System.Drawing.Size(1611, 490);
             this.dgvTanaban.TabIndex = 11;
             this.dgvTanaban.UseRowNo = false;
             this.dgvTanaban.UseSetting = true;
@@ -298,7 +307,7 @@
             this.btnReleaseAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReleaseAll.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnReleaseAll.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnReleaseAll.Location = new System.Drawing.Point(1398, 83);
+            this.btnReleaseAll.Location = new System.Drawing.Point(1346, 83);
             this.btnReleaseAll.Margin = new System.Windows.Forms.Padding(1);
             this.btnReleaseAll.Name = "btnReleaseAll";
             this.btnReleaseAll.Size = new System.Drawing.Size(118, 28);
@@ -317,7 +326,7 @@
             this.btnSelectAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelectAll.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnSelectAll.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnSelectAll.Location = new System.Drawing.Point(1281, 83);
+            this.btnSelectAll.Location = new System.Drawing.Point(1229, 83);
             this.btnSelectAll.Margin = new System.Windows.Forms.Padding(1);
             this.btnSelectAll.Name = "btnSelectAll";
             this.btnSelectAll.Size = new System.Drawing.Size(118, 28);
@@ -336,7 +345,7 @@
             this.btnApplicable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApplicable.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnApplicable.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnApplicable.Location = new System.Drawing.Point(1113, 83);
+            this.btnApplicable.Location = new System.Drawing.Point(1061, 83);
             this.btnApplicable.Margin = new System.Windows.Forms.Padding(1);
             this.btnApplicable.Name = "btnApplicable";
             this.btnApplicable.Size = new System.Drawing.Size(118, 28);
@@ -355,7 +364,7 @@
             this.btnDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDisplay.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnDisplay.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnDisplay.Location = new System.Drawing.Point(1576, 83);
+            this.btnDisplay.Location = new System.Drawing.Point(1524, 83);
             this.btnDisplay.Margin = new System.Windows.Forms.Padding(1);
             this.btnDisplay.Name = "btnDisplay";
             this.btnDisplay.Size = new System.Drawing.Size(118, 28);
