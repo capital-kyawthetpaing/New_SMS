@@ -6592,6 +6592,7 @@
             this.cboDenomination.Name = "cboDenomination";
             this.cboDenomination.Size = new System.Drawing.Size(104, 20);
             this.cboDenomination.TabIndex = 12;
+            this.cboDenomination.SelectedIndexChanged += new System.EventHandler(this.cboDenomination_SelectedIndexChanged);
             // 
             // ckM_Label8
             // 
