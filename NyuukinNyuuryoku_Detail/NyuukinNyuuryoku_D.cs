@@ -115,6 +115,7 @@ namespace NyuukinNyuuryoku
         private string mOldCollectNO = "";    //排他処理のため使用
         private string mOldConfirmNO = "";    //排他処理のため使用
         private string mSystemKBN = "";     //[M_DenominationKBN][SystemKBN]
+        private string mStaffName = "";
 
         // -- 明細部をグリッドのように扱うための宣言 ↓--------------------
         ClsGridNyuukin_S mGrid = new ClsGridNyuukin_S();
@@ -947,6 +948,7 @@ namespace NyuukinNyuuryoku
                 if (ret)
                 {
                     CboStoreCD.SelectedValue = mse.StoreCD;
+                    mStaffName = mse.StaffName;
                 }
 
                 //	パラメータ	基準日：Form.日付	店舗：Form.店舗		得意先区分：3
@@ -1291,9 +1293,9 @@ namespace NyuukinNyuuryoku
 
             Scr_Clr(1);   //画面クリア（明細部）
 
-            if (dtDetail.Rows.Count > 0)
+            if (OperationMode == EOperationMode.INSERT)
             {
-                if (OperationMode == EOperationMode.INSERT)
+                if (dtDetail.Rows.Count > 0)
                 {
                     //取込種別
                     if (ckM_RadioButton1.Checked)
@@ -1327,55 +1329,63 @@ namespace NyuukinNyuuryoku
                 }
                 else
                 {
-                    keyControls[(int)EIndex.CollectNO].Text = dtDetail.Rows[0]["CollectNO"].ToString();
-                    keyControls[(int)EIndex.ConfirmNO].Text = dtDetail.Rows[0]["ConfirmNO"].ToString();
-
-                    //Errorでない場合、画面転送表01に従ってデータ取得/画面表示
-                    //取込種別
-                    if (string.IsNullOrWhiteSpace(dtDetail.Rows[0]["CollectCustomerCD"].ToString()))
-                    {
-                        ckM_RadioButton1.Checked = true;
-                        CboTorikomi.SelectedValue = dtDetail.Rows[0]["WebCollectType"];
-                        ckM_RadioButton1.Tag = dtDetail.Rows[0]["WebCollectNO"];
-                    }
-                    //入金顧客
-                    else
-                    {
-                        ckM_RadioButton2.Checked = true;
-                        keyControls[(int)EIndex.CustomerCD].Text = dtDetail.Rows[0]["CollectCustomerCD"].ToString();
-                        ScCustomer.LabelText = dtDetail.Rows[0]["CustomerName"].ToString();
-                    }
-
-                    CboStoreCD.SelectedValue = dtDetail.Rows[0]["StoreCD"].ToString();
-                    detailControls[(int)EIndex.CollectDate].Text = dtDetail.Rows[0]["CollectDate"].ToString();
-                    cboDenomination.SelectedValue = dtDetail.Rows[0]["PaymentMethodCD"].ToString();
-
-                    cboKouza.DataSource = null;
-                    cboKouza.Bind(dtDetail.Rows[0]["CollectDate"].ToString());
-                    cboKouza.SelectedValue = dtDetail.Rows[0]["KouzaCD"].ToString();
-                    detailControls[(int)EIndex.Tegata].Text = dtDetail.Rows[0]["BillDate"].ToString();
-                    detailControls[(int)EIndex.StaffCD].Text = dtDetail.Rows[0]["StaffCD"].ToString();
-                    ScStaff.LabelText = dtDetail.Rows[0]["StaffName"].ToString();
-                    detailControls[(int)EIndex.NyukinGaku].Text = bbl.Z_SetStr(dtDetail.Rows[0]["CollectAmount"]);
-                    detailControls[(int)EIndex.FeeDeduction].Text = bbl.Z_SetStr(dtDetail.Rows[0]["FeeDeduction"]);
-                    detailControls[(int)EIndex.Deduction1].Text = bbl.Z_SetStr(dtDetail.Rows[0]["Deduction1"]);
-                    detailControls[(int)EIndex.Deduction2].Text = bbl.Z_SetStr(dtDetail.Rows[0]["Deduction2"]);
-                    detailControls[(int)EIndex.DeductionConfirm].Text = bbl.Z_SetStr(dtDetail.Rows[0]["DeductionConfirm"]);
-                    detailControls[(int)EIndex.Remark].Text = dtDetail.Rows[0]["Remark"].ToString();
-                    lblKin1.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmSource"]);
-                    if (index == (int)EIndex.CollectNO)
-                    {
-                        lblKin2.Text = "";
-                        //detailControls[(int)EIndex.CollectClearDate].Text = dtDetail.Rows[0]["CollectClearDate"].ToString();
-                    }
-                    else
-                    {
-                        //入金消込番号　入力時
-                        lblKin2.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmAmount"]);
-                        detailControls[(int)EIndex.CollectClearDate].Text = dtDetail.Rows[0]["CollectClearDate"].ToString();
-                    }
-                    lblKin3.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmZan"]);
+                    string ymd = bbl.GetDate();
+                    detailControls[(int)EIndex.CollectDate].Text = ymd;
+                    detailControls[(int)EIndex.CollectClearDate].Text = ymd;
+                    detailControls[(int)EIndex.StaffCD].Text = InOperatorCD;
+                    ScStaff.LabelText = mStaffName;
                 }
+            }
+            else
+            {
+                keyControls[(int)EIndex.CollectNO].Text = dtDetail.Rows[0]["CollectNO"].ToString();
+                keyControls[(int)EIndex.ConfirmNO].Text = dtDetail.Rows[0]["ConfirmNO"].ToString();
+
+                //Errorでない場合、画面転送表01に従ってデータ取得/画面表示
+                //取込種別
+                if (string.IsNullOrWhiteSpace(dtDetail.Rows[0]["CollectCustomerCD"].ToString()))
+                {
+                    ckM_RadioButton1.Checked = true;
+                    CboTorikomi.SelectedValue = dtDetail.Rows[0]["WebCollectType"];
+                    ckM_RadioButton1.Tag = dtDetail.Rows[0]["WebCollectNO"];
+                }
+                //入金顧客
+                else
+                {
+                    ckM_RadioButton2.Checked = true;
+                    keyControls[(int)EIndex.CustomerCD].Text = dtDetail.Rows[0]["CollectCustomerCD"].ToString();
+                    ScCustomer.LabelText = dtDetail.Rows[0]["CustomerName"].ToString();
+                }
+
+                CboStoreCD.SelectedValue = dtDetail.Rows[0]["StoreCD"].ToString();
+                detailControls[(int)EIndex.CollectDate].Text = dtDetail.Rows[0]["CollectDate"].ToString();
+                cboDenomination.SelectedValue = dtDetail.Rows[0]["PaymentMethodCD"].ToString();
+
+                cboKouza.DataSource = null;
+                cboKouza.Bind(dtDetail.Rows[0]["CollectDate"].ToString());
+                cboKouza.SelectedValue = dtDetail.Rows[0]["KouzaCD"].ToString();
+                detailControls[(int)EIndex.Tegata].Text = dtDetail.Rows[0]["BillDate"].ToString();
+                detailControls[(int)EIndex.StaffCD].Text = dtDetail.Rows[0]["StaffCD"].ToString();
+                ScStaff.LabelText = dtDetail.Rows[0]["StaffName"].ToString();
+                detailControls[(int)EIndex.NyukinGaku].Text = bbl.Z_SetStr(dtDetail.Rows[0]["CollectAmount"]);
+                detailControls[(int)EIndex.FeeDeduction].Text = bbl.Z_SetStr(dtDetail.Rows[0]["FeeDeduction"]);
+                detailControls[(int)EIndex.Deduction1].Text = bbl.Z_SetStr(dtDetail.Rows[0]["Deduction1"]);
+                detailControls[(int)EIndex.Deduction2].Text = bbl.Z_SetStr(dtDetail.Rows[0]["Deduction2"]);
+                detailControls[(int)EIndex.DeductionConfirm].Text = bbl.Z_SetStr(dtDetail.Rows[0]["DeductionConfirm"]);
+                detailControls[(int)EIndex.Remark].Text = dtDetail.Rows[0]["Remark"].ToString();
+                lblKin1.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmSource"]);
+                if (index == (int)EIndex.CollectNO)
+                {
+                    lblKin2.Text = "";
+                    //detailControls[(int)EIndex.CollectClearDate].Text = dtDetail.Rows[0]["CollectClearDate"].ToString();
+                }
+                else
+                {
+                    //入金消込番号　入力時
+                    lblKin2.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmAmount"]);
+                    detailControls[(int)EIndex.CollectClearDate].Text = dtDetail.Rows[0]["CollectClearDate"].ToString();
+                }
+                lblKin3.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmZan"]);
             }
 
             //入金顧客
@@ -2290,15 +2300,15 @@ namespace NyuukinNyuuryoku
 
             DataTable dt = GetGridEntity();
 
-            if (OperationMode == EOperationMode.INSERT)
-            {
-                if (dt.Rows.Count == 0)
-                {
-                    //更新対象なし
-                    bbl.ShowMessage("E102");
-                    return;
-                }
-            }
+            //if (OperationMode == EOperationMode.INSERT)
+            //{
+            //    if (dt.Rows.Count == 0)
+            //    {
+            //        //更新対象なし
+            //        bbl.ShowMessage("E102");
+            //        return;
+            //    }
+            //}
 
             //更新処理
             nnbl.D_Collect_Exec(dce,dt, (short)OperationMode);
