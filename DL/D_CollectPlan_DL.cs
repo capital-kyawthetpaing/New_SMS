@@ -46,7 +46,7 @@ namespace DL
                 { "@DateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.DateFrom } },
                 { "@DateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.DateTo } },
                 { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.StoreCD } },
-                { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mce.StaffCD } },
+                { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.StaffCD } },
                 { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.CustomerCD } },
                 { "@PrintFLG", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dce.PrintFLG } },
                 { "@PaymentProgressKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dce.PaymentProgressKBN } },
