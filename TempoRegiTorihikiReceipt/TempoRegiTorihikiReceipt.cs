@@ -106,6 +106,7 @@ namespace TempoRegiTorihikiReceipt
             //InPcID = "PTK";
             StartProgram();
 
+
             // フォームを表示させないように最小化してタスクバーにも表示しない
          
 
