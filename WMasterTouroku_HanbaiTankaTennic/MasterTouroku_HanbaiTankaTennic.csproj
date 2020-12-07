@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DA7C11D0-F345-4102-841C-5BB6CAD4BA68}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WMasterTouroku_HanbaiTankaTennic</RootNamespace>
-    <AssemblyName>WMasterTouroku_HanbaiTankaTennic</AssemblyName>
+    <RootNamespace>MasterTouroku_HanbaiTankaTennic</RootNamespace>
+    <AssemblyName>MasterTouroku_HanbaiTankaTennic</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WMasterTouroku_HanbaiTankaTennic.Properties {
+namespace MasterTouroku_HanbaiTankaTennic.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

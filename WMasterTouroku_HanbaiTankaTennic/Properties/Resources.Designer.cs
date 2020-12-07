@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WMasterTouroku_HanbaiTankaTennic.Properties {
+namespace MasterTouroku_HanbaiTankaTennic.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace WMasterTouroku_HanbaiTankaTennic.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WMasterTouroku_HanbaiTankaTennic.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MasterTouroku_HanbaiTankaTennic.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
