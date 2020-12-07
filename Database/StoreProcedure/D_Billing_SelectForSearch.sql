@@ -46,15 +46,15 @@ BEGIN
                     AND A.DeleteFlg = 0
                     ORDER BY A.ChangeDate desc) AS StoreName
 
-                    ,DB.BillingCustomerCD AS CustomerCD
-                    ,(SELECT top 1 A.CustomerName
-                      FROM M_Customer A 
-                      WHERE A.CustomerCD = DB.BillingCustomerCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DB.BillingCloseDate
-                      ORDER BY A.ChangeDate desc) AS CustomerName 
-                    ,CONVERT(varchar,DB.BillingCloseDate,111) AS BillingCloseDate
-                    ,DB.BillingNO
-                    ,DB.BillingGaku - ISNULL(DC.CollectAmount,0) AS BillingGaku
-                    ,CONVERT(varchar,DB.CollectDate,111) AS CollectDate
+                  ,DB.BillingCustomerCD AS CustomerCD
+                  ,(SELECT top 1 A.CustomerName
+                    FROM M_Customer A 
+                    WHERE A.CustomerCD = DB.BillingCustomerCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DB.BillingCloseDate
+                    ORDER BY A.ChangeDate desc) AS CustomerName 
+                  ,CONVERT(varchar,DB.BillingCloseDate,111) AS BillingCloseDate
+                  ,DB.BillingNO
+                  ,DB.BillingGaku - ISNULL(DC.CollectAmount,0) AS BillingGaku
+                  ,CONVERT(varchar,DB.CollectDate,111) AS CollectDate
 
             FROM D_Billing AS DB
             LEFT OUTER JOIN D_BillingDetails AS DBM
@@ -69,15 +69,22 @@ BEGIN
             WHERE DB.StoreCD = @StoreCD
             AND DB.BillingType = 2
             --AND DB.BillingCustomerCD = (CASE WHEN @CustomerCD <> '' THEN @CustomerCD ELSE DB.BillingCustomerCD END)
-            AND ISNULL(DB.CollectDate,'') >= (CASE WHEN @CollectDateFrom <> '' THEN CONVERT(DATE, @CollectDateFrom) ELSE ISNULL(DB.CollectDate,'') END)
-        	AND ISNULL(DB.CollectDate,'') <= (CASE WHEN @CollectDateTo <> '' THEN CONVERT(DATE, @CollectDateTo) ELSE ISNULL(DB.CollectDate,'') END)
-        
+            
+            --入金状況：未入金の場合
+            AND ((@ChkMinyukin = 1 
+                AND ISNULL(DB.CollectDate,'') >= (CASE WHEN @CollectDateFrom <> '' THEN CONVERT(DATE, @CollectDateFrom) ELSE ISNULL(DB.CollectDate,'') END)
+                AND ISNULL(DB.CollectDate,'') <= (CASE WHEN @CollectDateTo <> '' THEN CONVERT(DATE, @CollectDateTo) ELSE ISNULL(DB.CollectDate,'') END)
+            --入金状況：未入金の場合
+            ) OR (@ChkMinyukin = 0 
+                AND DB.CollectDate IS NULL
+            ))
+            
             AND DB.DeleteDateTime IS NULL
 
-                --入金状況：入金済の場合
-            AND (DB.BillingGaku = (CASE WHEN @ChkNyukinzumi = 1 THEN DB.CollectGaku ELSE DB.BillingGaku END)
-                --入金状況：未入金の場合
-                OR DB.BillingGaku > (CASE WHEN @ChkMinyukin = 1 THEN DB.CollectGaku ELSE DB.BillingGaku-1 END))
+            --    --入金状況：入金済の場合
+            --AND (DB.BillingGaku = (CASE WHEN @ChkNyukinzumi = 1 THEN DB.CollectGaku ELSE DB.BillingGaku END)
+            --    --入金状況：未入金の場合
+            --    OR DB.BillingGaku > (CASE WHEN @ChkMinyukin = 1 THEN DB.CollectGaku ELSE DB.BillingGaku-1 END))
         
             AND EXISTS (SELECT MC.CustomerCD
                         FROM M_Customer AS MC 
@@ -139,16 +146,23 @@ BEGIN
             WHERE DB.StoreCD = @StoreCD
             AND DB.BillingType = 2
             --AND DB.BillingCustomerCD = (CASE WHEN @CustomerCD <> '' THEN @CustomerCD ELSE DB.BillingCustomerCD END)
-            AND ISNULL(DB.CollectDate,'') >= (CASE WHEN @CollectDateFrom <> '' THEN CONVERT(DATE, @CollectDateFrom) ELSE ISNULL(DB.CollectDate,'') END)
-            AND ISNULL(DB.CollectDate,'') <= (CASE WHEN @CollectDateTo <> '' THEN CONVERT(DATE, @CollectDateTo) ELSE ISNULL(DB.CollectDate,'') END)
-        
+            
+            --入金状況：未入金の場合
+            AND ((@ChkMinyukin = 1 
+                AND ISNULL(DB.CollectDate,'') >= (CASE WHEN @CollectDateFrom <> '' THEN CONVERT(DATE, @CollectDateFrom) ELSE ISNULL(DB.CollectDate,'') END)
+                AND ISNULL(DB.CollectDate,'') <= (CASE WHEN @CollectDateTo <> '' THEN CONVERT(DATE, @CollectDateTo) ELSE ISNULL(DB.CollectDate,'') END)
+            --入金状況：未入金の場合
+            ) OR (@ChkMinyukin = 0 
+                AND DB.CollectDate IS NULL
+            ))
+            
             AND DB.DeleteDateTime IS NULL
 
-                --入金状況：入金済の場合
-            AND (DB.BillingGaku = (CASE WHEN @ChkNyukinzumi = 1 THEN DB.CollectGaku ELSE DB.BillingGaku END)
-                --入金状況：未入金の場合
-                OR DB.BillingGaku > (CASE WHEN @ChkMinyukin = 1 THEN DB.CollectGaku ELSE DB.BillingGaku-1 END))
-        
+            --    --入金状況：入金済の場合
+            --AND (DB.BillingGaku = (CASE WHEN @ChkNyukinzumi = 1 THEN DB.CollectGaku ELSE DB.BillingGaku END)
+            --    --入金状況：未入金の場合
+            --    OR DB.BillingGaku > (CASE WHEN @ChkMinyukin = 1 THEN DB.CollectGaku ELSE DB.BillingGaku-1 END))
+            
             AND EXISTS (SELECT MC.CustomerCD
                         FROM M_Customer AS MC 
                         WHERE MC.ChangeDate <= DB.BillingCloseDate
