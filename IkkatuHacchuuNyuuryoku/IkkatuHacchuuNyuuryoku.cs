@@ -1710,6 +1710,7 @@ namespace IkkatuHacchuuNyuuryoku
                         bbl.ShowMessage("E102");
                         return false;
                     }
+                    mGrid.g_DArray[row].KibouNouki = bbl.FormatDate(mGrid.g_DArray[row].KibouNouki);
                     if (!bbl.CheckDate(mGrid.g_DArray[row].KibouNouki))
                     {
                         //Ｅ１０３
