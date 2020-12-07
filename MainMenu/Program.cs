@@ -46,17 +46,22 @@ namespace MainMenu
                 return false;
             }
         }
-       static Form LoginFormName()
+        static Form LoginFormName()
         {
-            
-            Form pgname =null;
-            const string localpath = @"C:\SMS\AppData\CKM.ini";
 
+            Form pgname = null;
+            var localpath = @"C:\SMS\AppData\CKM.ini";
+            if (!System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+            {
+                System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                localpath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + "CKM.ini";
+            }
+           
             var Id = "";
             var pass = "";
             var path = "";
             Login_BL lbl = new Login_BL();
-            IniFile_DL idl = new IniFile_DL(@"‪C:\SMS\AppData\CKM.ini");
+            IniFile_DL idl = new IniFile_DL(localpath);
             if (lbl.ReadConfig())
             {
                 byte[] buffer = new byte[2048];

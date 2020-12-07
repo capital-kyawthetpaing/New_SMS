@@ -47,6 +47,10 @@ namespace BL
         {
             return mdl.CheckDefault(mse,SCD);
         }
+        public bool GetState
+        {
+            get { return Debugger.IsAttached; }
+        }
         // MH_Staff_LoginSelect
         public string StorePrinterName
         {
