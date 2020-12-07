@@ -67,11 +67,18 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 Clear(pnl_Body);
                 IMT_ITMNM_7.Text = "";
                 Scr_Clr(0);
+                BindCombo();
               //  CustomEvent();
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             }
+        }
+        public void BindCombo()
+        {
+            string ymd = bbl.GetDate();
+            cbo_Year.Bind(ymd);
+            cbo_Season.Bind(ymd);
         }
         public IEnumerable<Control> GetAllControls(Control root)
         {
