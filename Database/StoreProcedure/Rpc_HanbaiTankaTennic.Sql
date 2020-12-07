@@ -32,7 +32,7 @@ BEGIN
 									Begin
 										select * into #tmp from (
 										Select 
-										fsprice.TankaCD,
+										--fsprice.TankaCD,
 										fs.AdminNO,
 										MAX(fs.SKUCD) as SKUCD,
 										MAX (fs.JanCD) as JANCD,
@@ -71,9 +71,9 @@ BEGIN
 										AND A.StoreCD = '0000'
 										AND A.DeleteFlg = 0)
 
-										Group by fsprice.TankaCD,fs.AdminNO,fsprice.AdminNO,fsprice.ChangeDate) t
+										Group by fs.AdminNO,fsprice.AdminNO,fsprice.ChangeDate) t
 										Select 
-										    tp.TankaCD,
+										    --tp.TankaCD,
 										    '0000' as StoreCD,
 											tp.AdminNo,
 											tp.SKUCD,
@@ -115,7 +115,7 @@ BEGIN
 									Begin
 										select * into #tmp_U from (
 										Select 
-										fsprice.TankaCD,
+										--fsprice.TankaCD,
 										fs.AdminNO,
 										MAX(fs.SKUCD) as SKUCD,
 										MAX (fs.JanCD) as JANCD,
@@ -148,7 +148,7 @@ BEGIN
 										and fs.PresentKBN=0
 										and fs.SampleKBN=0
 										and fs.DeleteFLG=0
-										Group by fsprice.TankaCD,fs.AdminNO,fsprice.AdminNO,fsprice.ChangeDate) t
+										Group by fs.AdminNO,fsprice.AdminNO,fsprice.ChangeDate) t
 										
 										
 										Select 
@@ -198,8 +198,8 @@ BEGIN
 	 begin
      select * into #Tp from (
 										Select 
-										fsprice.StoreCD,
-										fsprice.TankaCD,
+										--fsprice.StoreCD,
+										--fsprice.TankaCD,
 										fs.AdminNO,
 										MAX(fs.SKUCD) as SKUCD,
 										MAX (fs.JanCD) as JANCD,
@@ -237,10 +237,10 @@ BEGIN
 										WHERE A.SKUCD = fs.SKUCD 
 										AND A.StoreCD = '0000'
 										AND A.DeleteFlg = 0)
-										Group by fsprice.TankaCD,fs.AdminNO,fsprice.AdminNO,fsprice.ChangeDate, fsprice.StoreCD) t
+										Group by fs.AdminNO,fsprice.AdminNO,fsprice.ChangeDate) t
 
 										Select 
-										    tp.TankaCD,
+										    --tp.TankaCD,
 										    '0000' as StoreCD,
 											tp.AdminNo,
 											tp.SKUCD,
@@ -280,7 +280,7 @@ else
 									Begin
 										select * into #tmp_U2 from (
 										Select 
-										fsprice.TankaCD,
+										--fsprice.TankaCD,
 										fs.AdminNO,
 										MAX(fs.SKUCD) as SKUCD,
 										MAX (fs.JanCD) as JANCD,
@@ -297,8 +297,8 @@ else
 										MAX(CASE WHEN fsprice.TankaCD = '4' THEN fsprice.SalePriceOutTax ELSE 0 END) as Rank4UnitPrice,
 										MAX(CASE WHEN fsprice.TankaCD = '5' THEN fsprice.SalePriceOutTax ELSE 0 END) as Rank5UnitPrice,
 										MAX(fsprice.Remarks) as Remarks
-										from F_SKU(getdate()) fs
-										Left outer join F_SKUPrice(getdate()) fsprice on fsprice.AdminNO=fs.AdminNO
+										from M_SKU fs
+										Left outer join M_SKUPrice fsprice on fsprice.AdminNO=fs.AdminNO
 										where fsprice.StoreCD ='0000'
 										and fsprice.DeleteFLG=0
 										and (@StartChangeDate IS NULL OR (fsprice.ChangeDate>=@StartChangeDate))
@@ -313,7 +313,7 @@ else
 										and fs.PresentKBN=0
 										and fs.SampleKBN=0
 										and fs.DeleteFLG=0
-										Group by fsprice.TankaCD,fs.AdminNO,fsprice.AdminNO,fsprice.ChangeDate) t
+										Group by fs.AdminNO,fsprice.AdminNO,fsprice.ChangeDate) t
 										
 										
 										Select 
@@ -338,7 +338,7 @@ else
 											tp.Remarks
 											from #tmp_U2 tp  -- M_SKUPrice1
 											--Left outer join F_SKUPrice(getdate()) mprice on mprice.AdminNO=tp.AdminNO
-											Left outer join F_JANOrderPrice(getdate()) mj on mj.AdminNO=tp.AdminNO
+											Left outer join M_JANOrderPrice mj on mj.AdminNO=tp.AdminNO
 																				And mj.VendorCD=tp.MainVendorCD
 																				And mj.StoreCD='0000'
 																				And mj.ChangeDate<=tp.RevisionDate
