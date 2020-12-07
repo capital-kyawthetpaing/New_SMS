@@ -53,6 +53,8 @@
             this.panel46 = new System.Windows.Forms.Panel();
             this.pnl_Body = new System.Windows.Forms.Panel();
             this.pnl_Header = new System.Windows.Forms.Panel();
+            this.cbo_Season = new CKM_Controls.CKM_ComboBox();
+            this.cbo_Year = new CKM_Controls.CKM_ComboBox();
             this.SKUCDTo = new Search.CKM_SearchControl();
             this.btnDisplay = new CKM_Controls.CKM_Button();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
@@ -390,8 +392,6 @@
             this.IMN_COSTUNPRICE_4 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
             this.IMT_GYONO_4 = new System.Windows.Forms.Label();
-            this.cbo_Year = new CKM_Controls.CKM_ComboBox();
-            this.cbo_Season = new CKM_Controls.CKM_ComboBox();
             this.panel1.SuspendLayout();
             this.panel10__2.SuspendLayout();
             this.panel42.SuspendLayout();
@@ -944,6 +944,38 @@
             this.pnl_Header.Name = "pnl_Header";
             this.pnl_Header.Size = new System.Drawing.Size(1385, 125);
             this.pnl_Header.TabIndex = 124;
+            // 
+            // cbo_Season
+            // 
+            this.cbo_Season.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbo_Season.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbo_Season.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
+            this.cbo_Season.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cbo_Season.Flag = 0;
+            this.cbo_Season.FormattingEnabled = true;
+            this.cbo_Season.Length = 10;
+            this.cbo_Season.Location = new System.Drawing.Point(817, 95);
+            this.cbo_Season.MaxLength = 10;
+            this.cbo_Season.MoveNext = true;
+            this.cbo_Season.Name = "cbo_Season";
+            this.cbo_Season.Size = new System.Drawing.Size(65, 20);
+            this.cbo_Season.TabIndex = 144;
+            // 
+            // cbo_Year
+            // 
+            this.cbo_Year.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbo_Year.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbo_Year.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.年度;
+            this.cbo_Year.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cbo_Year.Flag = 0;
+            this.cbo_Year.FormattingEnabled = true;
+            this.cbo_Year.Length = 10;
+            this.cbo_Year.Location = new System.Drawing.Point(665, 95);
+            this.cbo_Year.MaxLength = 10;
+            this.cbo_Year.MoveNext = true;
+            this.cbo_Year.Name = "cbo_Year";
+            this.cbo_Year.Size = new System.Drawing.Size(65, 20);
+            this.cbo_Year.TabIndex = 143;
             // 
             // SKUCDTo
             // 
@@ -6308,38 +6340,6 @@
             this.IMT_GYONO_4.TabIndex = 477;
             this.IMT_GYONO_4.Tag = "4";
             this.IMT_GYONO_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cbo_Year
-            // 
-            this.cbo_Year.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cbo_Year.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbo_Year.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.年度;
-            this.cbo_Year.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.cbo_Year.Flag = 0;
-            this.cbo_Year.FormattingEnabled = true;
-            this.cbo_Year.Length = 10;
-            this.cbo_Year.Location = new System.Drawing.Point(665, 95);
-            this.cbo_Year.MaxLength = 10;
-            this.cbo_Year.MoveNext = true;
-            this.cbo_Year.Name = "cbo_Year";
-            this.cbo_Year.Size = new System.Drawing.Size(65, 20);
-            this.cbo_Year.TabIndex = 143;
-            // 
-            // cbo_Season
-            // 
-            this.cbo_Season.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cbo_Season.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbo_Season.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
-            this.cbo_Season.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.cbo_Season.Flag = 0;
-            this.cbo_Season.FormattingEnabled = true;
-            this.cbo_Season.Length = 10;
-            this.cbo_Season.Location = new System.Drawing.Point(817, 95);
-            this.cbo_Season.MaxLength = 10;
-            this.cbo_Season.MoveNext = true;
-            this.cbo_Season.Name = "cbo_Season";
-            this.cbo_Season.Size = new System.Drawing.Size(65, 20);
-            this.cbo_Season.TabIndex = 144;
             // 
             // MasterTouroku_HanbaiTankaTennic
             // 
