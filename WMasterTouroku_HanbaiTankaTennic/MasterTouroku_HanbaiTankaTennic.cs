@@ -162,6 +162,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                             break;
                         case (int)ClsGridHanbaiTankaTennic.ColNO.Remarks:
                             ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl).Ctrl_Type = CKM_TextBox.Type.Normal;
+                            ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl).Ctrl_Byte = CKM_TextBox.Bytes.半全角;
                             ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl).MaxLength = 500;
 
                             break;
