@@ -2476,8 +2476,8 @@ namespace NyuukinNyuuryoku
             //ヘッダ.消込額 = SUM(明細.今回入金額)
             lblKin2.Text = string.Format("{0:#,##0}", kin3);    
             //lblKin2.Text = string.Format("{0:#,##0}", 0);
-            //ヘッダ.残額 = ヘッダ.消込原資額 - SUM(明細.今回入金額)
-            lblKin3.Text = string.Format("{0:#,##0}",bbl.Z_Set(lblKin1.Text) -kin3);
+            //ヘッダ.残額 = ヘッダ.消込原資額 - SUM(明細.今回入金額)-その他消込額
+            lblKin3.Text = string.Format("{0:#,##0}",bbl.Z_Set(lblKin1.Text) -kin3 - bbl.Z_Set(detailControls[(int)EIndex.DeductionConfirm].Text));
 
         }
 
