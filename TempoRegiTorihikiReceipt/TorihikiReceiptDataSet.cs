@@ -1,3 +1,7 @@
 ﻿namespace TempoRegiTorihikiReceipt
 {
 }
+
+namespace TempoRegiTorihikiReceipt
+{
+}
