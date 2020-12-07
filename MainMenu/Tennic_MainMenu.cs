@@ -75,6 +75,7 @@ namespace MainMenu
             //  this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             ButtonState();
             btnGym1.Focus();
+            ParentID = "";
         }
         protected void ButtonState()
         {
@@ -294,12 +295,15 @@ namespace MainMenu
             btn.BackColor = Color.Khaki;
             OpenForm(sender);
         }
+        public string ParentID { get; set; }
         private void OpenForm(object sender)
         {
             try
             {
                 var programID = (sender as CKM_Button).Text;
-                var exe_name = menu.Select("ProgramID = '" + programID + "'").CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
+                //var Condition = "ProgramID = '" + programID + "'" + "";
+                var Condition = "BusinessSEQ = '" + ParentID + "'" + " And " + "ProgramSEQ = '" + (sender as CKM_Button).Name.Split('j').Last() + "'";
+                var exe_name = menu.Select(Condition).CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
                 //System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
                 //string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
                 string filePath = "";
@@ -326,7 +330,7 @@ namespace MainMenu
                 if (localByName.Count() > 0)
                 {
 
-
+                    MessageBox.Show("Got Count");
                     IntPtr handle = localByName[0].MainWindowHandle;
                     ShowWindow(handle, SW_SHOWMAXIMIZED);
                     SetForegroundWindow(handle);
@@ -334,6 +338,7 @@ namespace MainMenu
 
                     return;
                 }
+                MessageBox.Show("Got Over Diago");
                 (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");
             }
             catch (Exception ex)
@@ -362,6 +367,8 @@ namespace MainMenu
             btnText = btn.Text;
             if (!string.IsNullOrWhiteSpace(btnText))
             {
+                //ParentID = btnText;
+                ParentID = btn.Name.Split('m').Last();
                 RightButton_Text(btnText, btn.TabIndex);
             }
         }
