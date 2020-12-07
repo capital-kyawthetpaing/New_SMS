@@ -111,8 +111,8 @@ namespace TempoRegiTorihikiReceipt
          
 
             //コマンドライン引数を配列で取得する
-           string[] cmds = Environment.GetCommandLineArgs();// 
-          //       string[] cmds = new string[] { "C:\\", "01", "0001", "MYA040_PC", "5", "2368" };// 
+         //  string[] cmds = Environment.GetCommandLineArgs();// 
+                 string[] cmds = new string[] { "C:\\", "01", "0001", "MYA040_PC", "5", "2368" };// 
                                                              //  MessageBox.Show(cmds.Length.ToString());
             if (cmds.Length - 1 > (int)ECmdLine.PcID)
             {
