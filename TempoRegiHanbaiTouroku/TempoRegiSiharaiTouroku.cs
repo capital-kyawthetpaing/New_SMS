@@ -109,6 +109,24 @@ namespace TempoRegiHanbaiTouroku
                 //決定ボタンを押せるようにする
                 btnProcess.Enabled = true;
 
+                //[M_Customer_Select]
+                M_Customer_Entity mce = new M_Customer_Entity
+                {
+                    CustomerCD = dse.CustomerCD,
+                    ChangeDate = bbl.GetDate()
+                };
+                Customer_BL sbl = new Customer_BL();
+                bool ret = sbl.M_Customer_Select(mce);
+                if (ret)
+                {
+                    if (mce.VariousFLG.Equals("1") || mce.CustomerKBN.Equals("2"))
+                    {
+                        //諸口FLG＝１また得意先FLG＝２の場合、掛は入力不可に。（一見さんに掛け売りはできないようにする）
+                        txtKake.Enabled = false;
+                        btnKake.Enabled = false;
+                    }
+                }
+
                 //入金データからその会員から預かっている前受金を計算する
                 D_Collect_Entity dce = new D_Collect_Entity();
                 dce.StoreCD = StoreCD;
@@ -729,8 +747,8 @@ namespace TempoRegiHanbaiTouroku
         {
             try
             {
-                // cdo.RemoveDisplay(true);
-                // cdo.RemoveDisplay(true);
+                cdo.RemoveDisplay(true);
+                cdo.RemoveDisplay(true);
             }
             catch
             {
@@ -742,8 +760,8 @@ namespace TempoRegiHanbaiTouroku
             }
             try
             {
-                cdo.RemoveDisplay(true);
-                cdo.RemoveDisplay(true);
+                //cdo.RemoveDisplay(true);
+                //cdo.RemoveDisplay(true);
             }
             catch { MessageBox.Show("CO. . . "); }
         }
@@ -751,20 +769,22 @@ namespace TempoRegiHanbaiTouroku
         {
             if (programID == "")
             {
+              //  var pro = System.Diagnostics.Process.Start(@"D:\GITs\New_SMS\bin\Debug\TempoRegiTorihikiReceipt.exe", "01 0001 MYA040_PC 3 2550");
                 var pro = System.Diagnostics.Process.Start(filePath, cmdLine);
                 pro.WaitForExit();
             }
             else
             {
-                var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
-                pro.WaitForExit();
+                //var pro = System.Diagnostics.Process.Start(@"D:\GITs\New_SMS\bin\Debug\TempoRegiTorihikiReceipt.exe", "01 0001 MYA040_PC 3 2550");
+                     var pro = System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+                  pro.WaitForExit();
             }
             try
             {
                 cdo.SetDisplay(true, true, "");
                 cdo.RemoveDisplay(true);
                 cdo.RemoveDisplay(true);
-               // cdo.SetDisplay(false, false, "", Up, Lp);
+                cdo.SetDisplay(false, false, "", Up, Lp);
             }
             catch
             {

@@ -96,16 +96,16 @@ namespace MainMenu
             BindButtonName();
             try
             {
-                if (Base_DL.iniEntity.IsDM_D30Used)
-                {
-                    cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
-                }///Start New Window for display by PTK
+                //if (Base_DL.iniEntity.IsDM_D30Used)
+                //{
+                //    cdo.SetDisplay(true, true, Base_DL.iniEntity.DefaultMessage);
+                //}///Start New Window for display by PTK
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Current Error is " +ex.Message + " Skipped if Epson TM-M30 have not been installed.");
             }
-
+            ParentID = "";
         }
         protected void Clear_Text(Panel pnl)
         {
@@ -359,9 +359,11 @@ namespace MainMenu
             btnText = btn.Text;
             if (!string.IsNullOrWhiteSpace(btnText))
             {
+                ParentID = btn.Name.Split('m').Last();
                 RightButton_Text(btnText, btn.TabIndex);
             }
         }
+        public string ParentID { get; set; }
         private void RightButton_Text(string Text,int TabIndex)
         {
             var getDataa = menu.Select("Char1 = '" + Text + "' and BusinessSEQ ='" + TabIndex.ToString() + "'").CopyToDataTable();
@@ -415,9 +417,12 @@ namespace MainMenu
         {
             try
             {
+                //var programID = (sender as CKM_Button).Text;
+                //var exe_name = menu.Select("ProgramID = '" + programID + "'").CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
                 var programID = (sender as CKM_Button).Text;
-                var exe_name = menu.Select("ProgramID = '" + programID + "'").CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
-
+                //var Condition = "ProgramID = '" + programID + "'" + "";
+                var Condition = "BusinessSEQ = '" + ParentID + "'" + " And " + "ProgramSEQ = '" + (sender as CKM_Button).Name.Split('j').Last() + "'";
+               var exe_name = menu.Select(Condition).CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
                 if (Base_DL.iniEntity.IsDM_D30Used && exe_name == "CashDrawerOpen")
                 {
                     try

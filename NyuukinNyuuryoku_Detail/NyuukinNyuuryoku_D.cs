@@ -3132,29 +3132,32 @@ namespace NyuukinNyuuryoku
                 using (Search_Nyuukinmoto.Search_Nyuukinmoto frmSearch = new Search_Nyuukinmoto.Search_Nyuukinmoto())
                 {
                     frmSearch.Kidou = 1;
-                    frmSearch.Customer = ScCustomer.LabelText;
+                    //frmSearch.Customer = ScCustomer.LabelText;
                     frmSearch.ShowDialog();
 
-                    keyControls[(int)EIndex.CustomerCD].Text = frmSearch.Customer;
-                    bool ret = CheckKey((int)EIndex.CustomerCD);
-                    if (!ret)
-                        return;
+                    if (!frmSearch.flgCancel)
+                    {
+                        keyControls[(int)EIndex.CustomerCD].Text = frmSearch.Customer;
+                        bool ret = CheckKey((int)EIndex.CustomerCD);
+                        if (!ret)
+                            return;
 
-                    if (frmSearch.Kbn.Equals("0"))
-                    {
-                        //戻り値①＝0の場合、画面転送表03に従ってデータ取得/画面表示
-                       ret= CheckData(true, -1,1,frmSearch.DenNO);
+                        if (frmSearch.Kbn.Equals("0"))
+                        {
+                            //戻り値①＝0の場合、画面転送表03に従ってデータ取得/画面表示
+                            ret = CheckData(true, -1, 1, frmSearch.DenNO);
+                        }
+                        else
+                        {
+                            //戻り値①＝1の場合、画面転送表04に従ってデータ取得/画面表示
+                            ret = CheckData(true, -1, 2, frmSearch.DenNO);
+                        }
+                        if (ret)
+                        {
+                            detailControls[(int)EIndex.CollectDate].Focus();
+                        }
+                        //detailControls[(int)EIndex.NyukinGaku].Text = bbl.Z_SetStr(frmSearch.BillingGaku);
                     }
-                    else
-                    {
-                        //戻り値①＝1の場合、画面転送表04に従ってデータ取得/画面表示
-                        ret = CheckData(true, -1,2, frmSearch.DenNO);
-                    }
-                    if (ret)
-                    {
-                        detailControls[(int)EIndex.CollectDate].Focus();
-                    }
-                    //detailControls[(int)EIndex.NyukinGaku].Text = bbl.Z_SetStr(frmSearch.BillingGaku);
                 }
             }
             catch (Exception ex)

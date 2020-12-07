@@ -82,7 +82,7 @@ namespace TempoRegiPoint
         {
             InitializeComponent();
 
-            Start_Display();
+          //  Start_Display();
         }
         protected void Kill(string pth)
         {
@@ -180,7 +180,7 @@ namespace TempoRegiPoint
                 Print();
                 Close();
             }
-            Stop_DisplayService();
+           // Stop_DisplayService();
         }
 
         /// <summary>
@@ -240,7 +240,8 @@ namespace TempoRegiPoint
             }
 
             var ticketUnit = bl.D_TicketUnitSelect(StoreCD);
-            if (ticketUnit.Rows.Count == 0 || (IssuePoint % Convert.ToInt32(ticketUnit.Rows[0]["TicketUnit"])) != 0)
+            var TU= Convert.ToInt32(ticketUnit.Rows[0]["TicketUnit"]);
+            if (ticketUnit.Rows.Count == 0 || (IssuePoint % TU ) != 0)
             {
                 bl.ShowMessage("E198", "該当店舗の引換券発行単位の倍数以外", TxtLastPoint.Text);
                 TxtIssuePoint.Focus();
@@ -260,7 +261,7 @@ namespace TempoRegiPoint
         /// </summary>
         protected override void EndSec()
         {
-             RunDisplay_Service();
+            // RunDisplay_Service();
             Close();
         }
 
@@ -327,20 +328,17 @@ namespace TempoRegiPoint
 
             report.Refresh();
             report.PrintOptions.PrinterName = StorePrinterName;
-
-            //cdo.RemoveDisplay();
-            // 発行枚数分印刷
-            //  Stop_DisplayService();
+            
             try
             {
-                cdo.RemoveDisplay(true);
+             //   cdo.RemoveDisplay(true);  // 2020/12/04
             }
             catch { }
             for (var count = 0; count < IssuedNumber; count++)
             {
                 report.PrintToPrinter(0, false, 0, 0);
             }
-            Stop_DisplayService();
+          //  Stop_DisplayService(); // 2020/12/04
             // 発行ポイント更新、ログ更新
             bl.M_UpdateLastPoint(TxtCustomerCD.Text, IssuePoint, InOperatorCD, InProgramID, InPcID);
         }
