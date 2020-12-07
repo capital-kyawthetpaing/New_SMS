@@ -3132,7 +3132,7 @@ namespace NyuukinNyuuryoku
                 using (Search_Nyuukinmoto.Search_Nyuukinmoto frmSearch = new Search_Nyuukinmoto.Search_Nyuukinmoto())
                 {
                     frmSearch.Kidou = 1;
-                    frmSearch.Customer = ScCustomer.LabelText;
+                    //frmSearch.Customer = ScCustomer.LabelText;
                     frmSearch.ShowDialog();
 
                     if (!frmSearch.flgCancel)
