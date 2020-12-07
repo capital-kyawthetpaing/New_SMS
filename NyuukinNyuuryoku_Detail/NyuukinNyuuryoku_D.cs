@@ -1100,10 +1100,10 @@ namespace NyuukinNyuuryoku
 
                 if (dtDetail.Rows.Count == 0)
                 {
-                    //該当データなし
-                    bbl.ShowMessage("E128");
-                    SetFocusAfterErr();
-                    return false;
+                    ////該当データなし
+                    //bbl.ShowMessage("E128");
+                    //SetFocusAfterErr();
+                    //return false;
                 }
 
                 //請求データの排他ロック
@@ -1291,88 +1291,91 @@ namespace NyuukinNyuuryoku
 
             Scr_Clr(1);   //画面クリア（明細部）
 
-            if (OperationMode == EOperationMode.INSERT)
+            if (dtDetail.Rows.Count > 0)
             {
-                //取込種別
-                if (ckM_RadioButton1.Checked)
+                if (OperationMode == EOperationMode.INSERT)
                 {
-                    detailControls[(int)EIndex.NyukinGaku].Text = bbl.Z_SetStr(dtDetail.Rows[0]["ImportAmount"]);
-                    lblKin1.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ImportAmount"]);
-                    ckM_RadioButton1.Tag = dtDetail.Rows[0]["WebCollectNO"];
+                    //取込種別
+                    if (ckM_RadioButton1.Checked)
+                    {
+                        detailControls[(int)EIndex.NyukinGaku].Text = bbl.Z_SetStr(dtDetail.Rows[0]["ImportAmount"]);
+                        lblKin1.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ImportAmount"]);
+                        ckM_RadioButton1.Tag = dtDetail.Rows[0]["WebCollectNO"];
+                    }
+                    //入金顧客
+                    else
+                    {
+                        if (kbn >= 1)
+                        {
+                            CboStoreCD.SelectedValue = dtDetail.Rows[0]["StoreCD"].ToString();
+                            //明細の今回入金額の合計をセットする
+                            //明細にデータセット後
+                            detailControls[(int)EIndex.NyukinGaku].Text = "0";
+                        }
+                        else
+                        {
+                            detailControls[(int)EIndex.NyukinGaku].Text = "0";
+                            lblKin1.Text = "0";
+                        }
+                        lblKin1.Text = bbl.Z_SetStr(dtDetail.Rows[0]["SumConfirmAmount"]);
+                    }
+                    detailControls[(int)EIndex.FeeDeduction].Text = "0";
+                    detailControls[(int)EIndex.Deduction1].Text = "0";
+                    detailControls[(int)EIndex.Deduction2].Text = "0";
+                    detailControls[(int)EIndex.DeductionConfirm].Text = "0";
+                    cboKouza.Bind(bbl.GetDate());
                 }
-                //入金顧客
                 else
                 {
-                    if (kbn>=1)
+                    keyControls[(int)EIndex.CollectNO].Text = dtDetail.Rows[0]["CollectNO"].ToString();
+                    keyControls[(int)EIndex.ConfirmNO].Text = dtDetail.Rows[0]["ConfirmNO"].ToString();
+
+                    //Errorでない場合、画面転送表01に従ってデータ取得/画面表示
+                    //取込種別
+                    if (string.IsNullOrWhiteSpace(dtDetail.Rows[0]["CollectCustomerCD"].ToString()))
                     {
-                        CboStoreCD.SelectedValue = dtDetail.Rows[0]["StoreCD"].ToString();
-                        //明細の今回入金額の合計をセットする
-                        //明細にデータセット後
-                        detailControls[(int)EIndex.NyukinGaku].Text = "0";
+                        ckM_RadioButton1.Checked = true;
+                        CboTorikomi.SelectedValue = dtDetail.Rows[0]["WebCollectType"];
+                        ckM_RadioButton1.Tag = dtDetail.Rows[0]["WebCollectNO"];
+                    }
+                    //入金顧客
+                    else
+                    {
+                        ckM_RadioButton2.Checked = true;
+                        keyControls[(int)EIndex.CustomerCD].Text = dtDetail.Rows[0]["CollectCustomerCD"].ToString();
+                        ScCustomer.LabelText = dtDetail.Rows[0]["CustomerName"].ToString();
+                    }
+
+                    CboStoreCD.SelectedValue = dtDetail.Rows[0]["StoreCD"].ToString();
+                    detailControls[(int)EIndex.CollectDate].Text = dtDetail.Rows[0]["CollectDate"].ToString();
+                    cboDenomination.SelectedValue = dtDetail.Rows[0]["PaymentMethodCD"].ToString();
+
+                    cboKouza.DataSource = null;
+                    cboKouza.Bind(dtDetail.Rows[0]["CollectDate"].ToString());
+                    cboKouza.SelectedValue = dtDetail.Rows[0]["KouzaCD"].ToString();
+                    detailControls[(int)EIndex.Tegata].Text = dtDetail.Rows[0]["BillDate"].ToString();
+                    detailControls[(int)EIndex.StaffCD].Text = dtDetail.Rows[0]["StaffCD"].ToString();
+                    ScStaff.LabelText = dtDetail.Rows[0]["StaffName"].ToString();
+                    detailControls[(int)EIndex.NyukinGaku].Text = bbl.Z_SetStr(dtDetail.Rows[0]["CollectAmount"]);
+                    detailControls[(int)EIndex.FeeDeduction].Text = bbl.Z_SetStr(dtDetail.Rows[0]["FeeDeduction"]);
+                    detailControls[(int)EIndex.Deduction1].Text = bbl.Z_SetStr(dtDetail.Rows[0]["Deduction1"]);
+                    detailControls[(int)EIndex.Deduction2].Text = bbl.Z_SetStr(dtDetail.Rows[0]["Deduction2"]);
+                    detailControls[(int)EIndex.DeductionConfirm].Text = bbl.Z_SetStr(dtDetail.Rows[0]["DeductionConfirm"]);
+                    detailControls[(int)EIndex.Remark].Text = dtDetail.Rows[0]["Remark"].ToString();
+                    lblKin1.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmSource"]);
+                    if (index == (int)EIndex.CollectNO)
+                    {
+                        lblKin2.Text = "";
+                        //detailControls[(int)EIndex.CollectClearDate].Text = dtDetail.Rows[0]["CollectClearDate"].ToString();
                     }
                     else
                     {
-                        detailControls[(int)EIndex.NyukinGaku].Text = "0";
-                        lblKin1.Text = "0";
+                        //入金消込番号　入力時
+                        lblKin2.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmAmount"]);
+                        detailControls[(int)EIndex.CollectClearDate].Text = dtDetail.Rows[0]["CollectClearDate"].ToString();
                     }
-                    lblKin1.Text = bbl.Z_SetStr(dtDetail.Rows[0]["SumConfirmAmount"]);
+                    lblKin3.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmZan"]);
                 }
-                detailControls[(int)EIndex.FeeDeduction].Text = "0";
-                detailControls[(int)EIndex.Deduction1].Text = "0";
-                detailControls[(int)EIndex.Deduction2].Text = "0";
-                detailControls[(int)EIndex.DeductionConfirm].Text = "0";
-                cboKouza.Bind(bbl.GetDate());
-            }
-            else
-            {
-                keyControls[(int)EIndex.CollectNO].Text = dtDetail.Rows[0]["CollectNO"].ToString();
-                keyControls[(int)EIndex.ConfirmNO].Text = dtDetail.Rows[0]["ConfirmNO"].ToString();
-
-                //Errorでない場合、画面転送表01に従ってデータ取得/画面表示
-                //取込種別
-                if (string.IsNullOrWhiteSpace(dtDetail.Rows[0]["CollectCustomerCD"].ToString()))
-                {
-                    ckM_RadioButton1.Checked = true;
-                    CboTorikomi.SelectedValue = dtDetail.Rows[0]["WebCollectType"];
-                    ckM_RadioButton1.Tag = dtDetail.Rows[0]["WebCollectNO"];
-                }
-                //入金顧客
-                else
-                {
-                    ckM_RadioButton2.Checked = true;
-                    keyControls[(int)EIndex.CustomerCD].Text = dtDetail.Rows[0]["CollectCustomerCD"].ToString();
-                    ScCustomer.LabelText = dtDetail.Rows[0]["CustomerName"].ToString();
-                }
-
-                CboStoreCD.SelectedValue = dtDetail.Rows[0]["StoreCD"].ToString();
-                detailControls[(int)EIndex.CollectDate].Text = dtDetail.Rows[0]["CollectDate"].ToString();
-                cboDenomination.SelectedValue = dtDetail.Rows[0]["PaymentMethodCD"].ToString();
-
-                cboKouza.DataSource = null;
-                cboKouza.Bind(dtDetail.Rows[0]["CollectDate"].ToString());
-                cboKouza.SelectedValue = dtDetail.Rows[0]["KouzaCD"].ToString();
-                detailControls[(int)EIndex.Tegata].Text = dtDetail.Rows[0]["BillDate"].ToString();
-                detailControls[(int)EIndex.StaffCD].Text = dtDetail.Rows[0]["StaffCD"].ToString();
-                ScStaff.LabelText = dtDetail.Rows[0]["StaffName"].ToString();
-                detailControls[(int)EIndex.NyukinGaku].Text = bbl.Z_SetStr(dtDetail.Rows[0]["CollectAmount"]);
-                detailControls[(int)EIndex.FeeDeduction].Text = bbl.Z_SetStr(dtDetail.Rows[0]["FeeDeduction"]);
-                detailControls[(int)EIndex.Deduction1].Text = bbl.Z_SetStr(dtDetail.Rows[0]["Deduction1"]);
-                detailControls[(int)EIndex.Deduction2].Text = bbl.Z_SetStr(dtDetail.Rows[0]["Deduction2"]);
-                detailControls[(int)EIndex.DeductionConfirm].Text = bbl.Z_SetStr(dtDetail.Rows[0]["DeductionConfirm"]);
-                detailControls[(int)EIndex.Remark].Text = dtDetail.Rows[0]["Remark"].ToString();
-                lblKin1.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmSource"]);
-                if (index == (int)EIndex.CollectNO)
-                {
-                    lblKin2.Text = "";
-                    //detailControls[(int)EIndex.CollectClearDate].Text = dtDetail.Rows[0]["CollectClearDate"].ToString();
-                }
-                else
-                {
-                    //入金消込番号　入力時
-                    lblKin2.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmAmount"]);
-                    detailControls[(int)EIndex.CollectClearDate].Text = dtDetail.Rows[0]["CollectClearDate"].ToString();
-                }
-                lblKin3.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmZan"]);
             }
 
             //入金顧客
@@ -1985,7 +1988,8 @@ namespace NyuukinNyuuryoku
                     //入力値を消込原資額に加算(消込原資額＝入金額＋手数料＋その他額(＋)－その他額(－))
                     lblKin1.Text = bbl.Z_SetStr(bbl.Z_Set(detailControls[index].Text) + bbl.Z_Set(detailControls[(int)EIndex.FeeDeduction].Text) 
                             + bbl.Z_Set(detailControls[(int)EIndex.Deduction1].Text) - bbl.Z_Set(detailControls[(int)EIndex.Deduction2].Text) 
-                            - bbl.Z_Set(detailControls[(int)EIndex.DeductionConfirm].Text));
+                            //- bbl.Z_Set(detailControls[(int)EIndex.DeductionConfirm].Text)
+                            );
                     if(set)
                         CalcKin();
                     break;
@@ -1997,7 +2001,8 @@ namespace NyuukinNyuuryoku
                     //入力値を消込原資額に加算(消込原資額＝入金額＋手数料＋その他額(＋)－その他額(－)－その他消込)
                     lblKin1.Text = bbl.Z_SetStr(bbl.Z_Set(detailControls[(int)EIndex.NyukinGaku].Text) + bbl.Z_Set(detailControls[(int)EIndex.FeeDeduction].Text)
                             + bbl.Z_Set(detailControls[(int)EIndex.Deduction1].Text) - bbl.Z_Set(detailControls[(int)EIndex.Deduction2].Text) 
-                            - bbl.Z_Set(detailControls[(int)EIndex.DeductionConfirm].Text));
+                            //- bbl.Z_Set(detailControls[(int)EIndex.DeductionConfirm].Text)
+                            );
                     if (set)
                         CalcKin();
                     break;
@@ -3156,8 +3161,8 @@ namespace NyuukinNyuuryoku
                         {
                             detailControls[(int)EIndex.CollectDate].Focus();
                         }
-                        //detailControls[(int)EIndex.NyukinGaku].Text = bbl.Z_SetStr(frmSearch.BillingGaku);
                     }
+                    //detailControls[(int)EIndex.NyukinGaku].Text = bbl.Z_SetStr(frmSearch.BillingGaku);
                 }
             }
             catch (Exception ex)
