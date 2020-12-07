@@ -148,8 +148,10 @@ namespace Base.Client
                 StaffCD = InOperatorCD
             };
             mse = loginbl.M_Staff_InitSelect(mse);
+            Base_BL bbl = new Base_BL();
+            DL.Base_DL ddl = new DL.Base_DL();
 
-           // MessageBox.Show(bbl.GetConnectionString());
+         
 
             this.lblOperatorName.Text = mse.StaffName;
             //this.lblLoginDate.Text = mse.SysDate;
@@ -197,8 +199,10 @@ namespace Base.Client
             
             if (made == null)
             {
-                
-                bbl.ShowMessage(mae.MessageID + "M_" + mae.ProgramID + "_" + mae.StaffCD + "_"+ mae.PC);
+                loginbl = new Login_BL();
+                var cs = ddl.GetConnectionString() + "  " + DL.Base_DL.iniEntity.Login_Type + " " + (( (loginbl.GetState) == true) ? "1" : "0");
+                MessageBox.Show(mae.MessageID +  Environment.NewLine + mae.ProgramID + "_" + mae.StaffCD + "_"+ mae.PC + Environment.NewLine +cs );
+                bbl.ShowMessage(mae.MessageID);
                 //起動時エラー
                 this.Close();
                 System.Environment.Exit(0);
