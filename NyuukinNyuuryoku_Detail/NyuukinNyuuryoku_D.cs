@@ -1854,6 +1854,27 @@ namespace NyuukinNyuuryoku
                     ret=bl.M_DenominationKBN_Select(me);
                     if (ret)
                         mSystemKBN= me.SystemKBN;
+
+                    //入金金種=振込（M_DenominationKBN.SystemKBN=5）の場合 画面.銀行口座を入力可能にする。
+                    if (mSystemKBN.Equals("5"))
+                    {
+                        cboKouza.Enabled = true;
+                    }
+                    else
+                    {
+                        cboKouza.Enabled = false;
+                        cboKouza.SelectedIndex = 0;
+                    }
+                    //入金金種=小切手、手形（M_DenominationKBN.SystemKBN=6、11）の場合 画面.手形等決済日を入力可能にする。
+                    if (mSystemKBN.Equals("6") || mSystemKBN.Equals("11"))
+                    {
+                        detailControls[(int)EIndex.Tegata].Enabled = true;
+                    }
+                    else
+                    {
+                        detailControls[(int)EIndex.Tegata].Enabled = false;
+                        detailControls[(int)EIndex.Tegata].Text = "";
+                    }
                     break;
 
                 case (int)EIndex.Tegata:
@@ -1960,10 +1981,10 @@ namespace NyuukinNyuuryoku
                     break;
 
                 case (int)EIndex.StaffCD:
-                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    //入力必須(Entry required)
+                    if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
-                        ScStaff.LabelText = "";
-                        return true;
+                        return false;
                     }
 
                     //スタッフマスター(M_Staff)に存在すること
