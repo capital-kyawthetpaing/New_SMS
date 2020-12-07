@@ -327,6 +327,7 @@ namespace MasterTouroku_TenzikaiShouhin
                     EnablePanel(panel6);
                     DisablePanel(panel11);
                     // DisablePanel(panelB);
+                    SC_Tenzikai.BtnSearch.Enabled = false;
                     EnablePanel(panel12);
                     skucheck = false;
                     checkmei = false;
@@ -339,6 +340,7 @@ namespace MasterTouroku_TenzikaiShouhin
                     //BT_meisai.Enabled = false;
                     detailControls[(int)Eindex.SCTenzikai].Focus();
                     detailControls[(int)Eindex.StartDate].Enabled = true;
+                    SC_Tenzikai.BtnSearch.Enabled = true;
                     DisablePanel(panel4);
                     DisablePanel(panel6);
                     EnablePanel(panel11);
@@ -357,6 +359,7 @@ namespace MasterTouroku_TenzikaiShouhin
                     EnablePanel(panel11);
                     EnablePanel(panel12);
                     detailControls[(int)Eindex.StartDate].Enabled = false;
+                    SC_Tenzikai.BtnSearch.Enabled = true;
                     break;
 
             }
