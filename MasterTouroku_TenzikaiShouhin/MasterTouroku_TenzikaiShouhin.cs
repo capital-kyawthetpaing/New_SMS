@@ -2337,16 +2337,16 @@ namespace MasterTouroku_TenzikaiShouhin
                                 {
                                     TenzikaiName = detailControls[(int)Eindex.SCTenzikai].Text,
                                 };
-                               // if (OperationMode != EOperationMode.INSERT)
-                                //{
-                                    var rresTen = tbl.M_TenzikaiShouhinName_Select(mt);
-                                    if (rresTen.Rows.Count == 0)
-                                    {
-                                        bl.ShowMessage("E101");
-                                        ClearName();
-                                        return;
-                                    }
-                               // }
+                              // if (OperationMode != EOperationMode.INSERT)
+                                 //{
+                                var rresTen = tbl.M_TenzikaiShouhinName_Select(mt);
+                                if (rresTen.Rows.Count == 0)
+                                {
+                                    bl.ShowMessage("E101");
+                                    ClearName();
+                                    return;
+                                }
+                                //}
                                 DataTable dtTN = tbl.M_TenzikaiShouhin_SelectByTenziName(mt);
                                 if (dtTN.Rows.Count > 0)
                                 {
@@ -2360,7 +2360,7 @@ namespace MasterTouroku_TenzikaiShouhin
                                 {
 
                                     bbl.ShowMessage("E128");
-                                     ClearName();
+                                    ClearName();
                                     //if (OperationMode != EOperationMode.INSERT)
                                     //{
                                     //    bbl.ShowMessage("E128");
@@ -2370,18 +2370,16 @@ namespace MasterTouroku_TenzikaiShouhin
                                     //{
                                     //    detailControls[(int)Eindex.SCShiiresaki].Focus();
                                     //}
-
                                 }
                             }
                         }
                         else
                         {
-                             detailControls[(int)Eindex.SCShiiresaki].Focus();
+                            detailControls[(int)Eindex.SCShiiresaki].Focus();
                         }
                     }
                     else if (index == (int)Eindex.SCCTenzikai)
                     {
-
                         if (!String.IsNullOrEmpty(detailControls[(int)Eindex.SCCTenzikai].Text))
                         {
                             M_TenzikaiShouhin_Entity mt = new M_TenzikaiShouhin_Entity
@@ -2432,7 +2430,6 @@ namespace MasterTouroku_TenzikaiShouhin
                                     ProcessTabKey(!e.Shift);
                             }
                         }
-                       
                     }
                 }
             }

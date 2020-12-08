@@ -1881,16 +1881,6 @@ namespace NyuukinNyuuryoku
                 case (int)EIndex.CollectClearDate:
                     if (ckM_RadioButton2.Checked)
                     {
-                        //入金消込番号入力時、入力必須(Entry required)
-                        if (!string.IsNullOrWhiteSpace(keyControls[(int)EIndex.ConfirmNO].Text))
-                        {
-                            //入力必須(Entry required)
-                            if (!RequireCheck(new Control[] { detailControls[index] }))
-                            {
-                                return false;
-                            }
-                        }
-
                         if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                             return true;
 
@@ -2252,6 +2242,26 @@ namespace NyuukinNyuuryoku
                     detailControls[i].Focus();
                     return;
                 }
+
+            int count = 0;
+            for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+            {
+                if (mGrid.g_DArray[RW].Chk)
+                {
+                    count++;
+                    break;
+                }
+            }
+
+            //画面明細.チェックボックスONの明細が１つでも存在するとき、入力必須
+            if (count > 0)
+            {
+                //入力必須(Entry required)
+                if (!RequireCheck(new Control[] { detailControls[index] }))
+                {
+                    return false;
+                }
+            }
 
             if (OperationMode == EOperationMode.INSERT || !string.IsNullOrWhiteSpace(keyControls[(int)EIndex.ConfirmNO].Text))
             {
@@ -3113,11 +3123,7 @@ namespace NyuukinNyuuryoku
         {
             try
             {
-                if (cboDenomination.SelectedIndex > 0)
-                {
                     SetEnabled();
-                }
-
             }
             catch (Exception ex)
             {
@@ -3244,6 +3250,11 @@ namespace NyuukinNyuuryoku
         }
         private void SetEnabled()
         {
+            if (cboDenomination.SelectedIndex <= 0)
+            {
+                return;
+            }
+
             M_DenominationKBN_Entity me = new M_DenominationKBN_Entity();
             me.DenominationCD = cboDenomination.SelectedValue.ToString();
             DenominationKBN_BL bl = new DenominationKBN_BL();
