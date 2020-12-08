@@ -959,7 +959,7 @@
             this.cbo_Season.MoveNext = true;
             this.cbo_Season.Name = "cbo_Season";
             this.cbo_Season.Size = new System.Drawing.Size(65, 20);
-            this.cbo_Season.TabIndex = 144;
+            this.cbo_Season.TabIndex = 130;
             // 
             // cbo_Year
             // 
@@ -975,7 +975,7 @@
             this.cbo_Year.MoveNext = true;
             this.cbo_Year.Name = "cbo_Year";
             this.cbo_Year.Size = new System.Drawing.Size(65, 20);
-            this.cbo_Year.TabIndex = 143;
+            this.cbo_Year.TabIndex = 129;
             // 
             // SKUCDTo
             // 
@@ -1022,7 +1022,7 @@
             this.btnDisplay.Margin = new System.Windows.Forms.Padding(1);
             this.btnDisplay.Name = "btnDisplay";
             this.btnDisplay.Size = new System.Drawing.Size(90, 21);
-            this.btnDisplay.TabIndex = 142;
+            this.btnDisplay.TabIndex = 131;
             this.btnDisplay.Text = "表示";
             this.btnDisplay.UseVisualStyleBackColor = false;
             this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
