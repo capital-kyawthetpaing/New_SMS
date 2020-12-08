@@ -414,7 +414,8 @@ namespace NyuukinYoteiHyou
                 DateTo = detailControls[(int)EIndex.DayEnd].Text,
                 CustomerCD = ScCustomer.TxtCode.Text,
                 //CustomerName = detailControls[(int)EIndex.CustomerName].Text,
-                StoreCD = CboStoreCD.SelectedValue.ToString().Equals("-1") ? string.Empty : CboStoreCD.SelectedValue.ToString(),            
+                StoreCD = CboStoreCD.SelectedValue.ToString().Equals("-1") ? string.Empty : CboStoreCD.SelectedValue.ToString(),
+                StaffCD = ScStaff.TxtCode.Text,
             };
 
             if (ckM_RadioButton1.Checked)

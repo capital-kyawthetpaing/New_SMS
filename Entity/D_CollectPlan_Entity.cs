@@ -50,6 +50,7 @@ namespace Entity
         public string DateTo { get; set; }
         public string PrintFLG { get; set; }
         public string DetailOn { get; set; }
+        public string StaffCD { get; set; }
 
         //未入金確認照会用Entity
         public int Kbn { get; set; }
