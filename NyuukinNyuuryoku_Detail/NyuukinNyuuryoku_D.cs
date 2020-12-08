@@ -1510,6 +1510,7 @@ namespace NyuukinNyuuryoku
                     {
                         mGrid.g_DArray[i].Chk = true;
                         mGrid.g_DArray[i].ConfirmAmount = bbl.Z_SetStr(row["NowCollectAmount"]);   //今回入金額
+
                     }
                     mGrid.g_DArray[i].BillingDate = row["BillingCloseDate"].ToString();
                     mGrid.g_DArray[i].BillingNo = row["BillingNo"].ToString();
