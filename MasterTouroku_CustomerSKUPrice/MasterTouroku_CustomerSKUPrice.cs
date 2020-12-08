@@ -325,8 +325,8 @@ namespace MasterTouroku_CustomerSKUPrice
                     //detailControls[(int)EIndex.Date].Text = bbl.GetDate();
                     mGrid.g_DArray[c].CustomerCD = dr["CustomerCD"].ToString();
                     mGrid.g_DArray[c].CustomerName = dr["CustomerName"].ToString();
-                    mGrid.g_DArray[c].TekiyouKaisiDate = dr["TekiyouKaisiDate"].ToString();
-                    mGrid.g_DArray[c].TekiyouShuuryouDate = dr["TekiyouShuuryouDate"].ToString();
+                    mGrid.g_DArray[c].TekiyouKaisiDate = dr["TekiyouKaisiDate"].ToString().Substring(0,10);
+                    mGrid.g_DArray[c].TekiyouShuuryouDate = (!string.IsNullOrWhiteSpace(dr["TekiyouShuuryouDate"].ToString())) ? dr["TekiyouShuuryouDate"].ToString().Substring(0, 10) : dr["TekiyouShuuryouDate"].ToString();
                     mGrid.g_DArray[c].AdminNO = dr["AdminNo"].ToString();
                     mGrid.g_DArray[c].JANCD = dr["JanCD"].ToString();
                     mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
@@ -819,6 +819,14 @@ namespace MasterTouroku_CustomerSKUPrice
                         dtExcel.Columns.Add("AdminNO", typeof(String));
                         for(int i=0; i < dtExcel.Rows.Count; i++)
                         {
+                           //if(!string.IsNullOrWhiteSpace(dtExcel.Rows[i]["TekiyouKaisiDate"].ToString()))
+                           // {
+                           //     dtExcel.Rows[i]["TekiyouKaisiDate"] = dtExcel.Rows[i]["TekiyouKaisiDate"].ToString().Substring(0,10);
+                           //     //if (bbl.CheckDate(dtExcel.Rows[i]["TekiyouKaisiDate"].ToString()))
+                           //     //{
+
+                           //     //}
+                           // }
                             //dtExcel.Rows[i]["TekiyouKaisiDate"] = dtExcel.Rows[i]["TekiyouKaisiDate"].ToString("yyyy-mm-dd");
                             M_SKU_Entity mse = new M_SKU_Entity
                             {
