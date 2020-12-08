@@ -123,7 +123,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
                     DataTable dt = tzkbl.Rpc_TenzikaiShouhinJouhouShuturyoku(mte);
                     if (dt.Rows.Count > 0)
                     {
-                        string folderPath = "C:\\SES\\";
+                        string folderPath = "C:\\Excel\\";
                         if (!Directory.Exists(folderPath))
                         {
                             Directory.CreateDirectory(folderPath);
