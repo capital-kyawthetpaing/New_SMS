@@ -1255,6 +1255,17 @@ namespace WMasterTouroku_HanbaiTankaTennic
                                 return false;
                         }
                     break;
+                case (int)ClsGridHanbaiTankaTennic.ColNO.Remarks:
+                    string strR = Encoding.GetEncoding(932).GetByteCount(mGrid.g_DArray[row].Remarks).ToString();
+                    if (Convert.ToInt32(strR) > ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, 0].CellCtl).MaxLength)
+                    {
+                        MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //EnableCell(row, col);
+                        mGrid.g_MK_State[col, row].Cell_Enabled = true;
+                        mGrid.g_MK_State[col, row].Cell_ReadOnly = false;
+                        return false;
+                    }
+                    break;
 
             }
       //      mGrid.S_DispToArray(Vsb_Mei_0.Value);
@@ -1675,7 +1686,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
             {
                 if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].SKUCD) == false)
                 {
-
                     for (int CL = (int)ClsGridHanbaiTankaTennic.ColNO.GYONO; CL < (int)ClsGridHanbaiTankaTennic.ColNO.COUNT; CL++)
                     {
                         switch (CL)
