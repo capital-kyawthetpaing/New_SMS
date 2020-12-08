@@ -31,7 +31,7 @@ BEGIN
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
 	
-	If @Mode=1
+	--If @Mode=1
 	
 	Declare @DocHandle int
 	EXEC sp_xml_preparedocument @DocHandle OUTPUT, @insertXml

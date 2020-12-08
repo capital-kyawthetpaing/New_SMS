@@ -832,6 +832,7 @@ namespace NyuukinNyuuryoku
                             Scr_Lock(3, 3, 0);
                             Scr_Lock(0, 2, 1);
                             keyControls[(int)EIndex.StoreCD].Enabled = false;
+                            SetEnabled();
                             btnSubF11.Enabled = false;
                             SetFuncKeyAll(this, "111011000001");
                         }
@@ -1848,12 +1849,7 @@ namespace NyuukinNyuuryoku
                         cboDenomination.MoveNext = false;
                         return false;
                     }
-                    M_DenominationKBN_Entity me = new M_DenominationKBN_Entity();
-                    me.DenominationCD = cboDenomination.SelectedValue.ToString();
-                    DenominationKBN_BL bl = new DenominationKBN_BL();
-                    ret=bl.M_DenominationKBN_Select(me);
-                    if (ret)
-                        mSystemKBN= me.SystemKBN;
+                    SetEnabled();
                     break;
 
                 case (int)EIndex.Tegata:
@@ -1885,16 +1881,6 @@ namespace NyuukinNyuuryoku
                 case (int)EIndex.CollectClearDate:
                     if (ckM_RadioButton2.Checked)
                     {
-                        //入金消込番号入力時、入力必須(Entry required)
-                        if (!string.IsNullOrWhiteSpace(keyControls[(int)EIndex.ConfirmNO].Text))
-                        {
-                            //入力必須(Entry required)
-                            if (!RequireCheck(new Control[] { detailControls[index] }))
-                            {
-                                return false;
-                            }
-                        }
-
                         if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                             return true;
 
@@ -1960,10 +1946,10 @@ namespace NyuukinNyuuryoku
                     break;
 
                 case (int)EIndex.StaffCD:
-                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    //入力必須(Entry required)
+                    if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
-                        ScStaff.LabelText = "";
-                        return true;
+                        return false;
                     }
 
                     //スタッフマスター(M_Staff)に存在すること
@@ -2257,6 +2243,26 @@ namespace NyuukinNyuuryoku
                     return;
                 }
 
+            int count = 0;
+            for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+            {
+                if (mGrid.g_DArray[RW].Chk)
+                {
+                    count++;
+                    break;
+                }
+            }
+
+            //画面明細.チェックボックスONの明細が１つでも存在するとき、入力必須
+            if (count > 0)
+            {
+                //入力必須(Entry required)
+                if (!RequireCheck(new Control[] { detailControls[(int)EIndex.CollectClearDate] }))
+                {
+                    return;
+                }
+            }
+
             if (OperationMode == EOperationMode.INSERT || !string.IsNullOrWhiteSpace(keyControls[(int)EIndex.ConfirmNO].Text))
             {
                 // 明細部  画面の範囲の内容を配列にセット
@@ -2282,7 +2288,7 @@ namespace NyuukinNyuuryoku
                 CalcKin();
 
                 //ヘッダ.消込原資額≠SUM(明細.今回入金額)の場合、エラー
-                if (bbl.Z_Set(lblKin1.Text) != bbl.Z_Set(lblSumKin3.Text))
+                if (bbl.Z_Set(lblKin1.Text) < bbl.Z_Set(lblSumKin3.Text))
                 {
                     // Ｅ１９６
                     if (bbl.ShowMessage("E196", "明細今回入金額の合計", "消込原資額－その他消込額以下") != DialogResult.Yes)
@@ -3113,6 +3119,19 @@ namespace NyuukinNyuuryoku
                 //EndSec();
             }
         }
+        private void cboDenomination_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                    SetEnabled();
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
             try
@@ -3228,6 +3247,41 @@ namespace NyuukinNyuuryoku
 
             //配列の内容を画面へセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+        }
+        private void SetEnabled()
+        {
+            if (cboDenomination.SelectedIndex <= 0)
+            {
+                return;
+            }
+
+            M_DenominationKBN_Entity me = new M_DenominationKBN_Entity();
+            me.DenominationCD = cboDenomination.SelectedValue.ToString();
+            DenominationKBN_BL bl = new DenominationKBN_BL();
+            bool ret = bl.M_DenominationKBN_Select(me);
+            if (ret)
+                mSystemKBN = me.SystemKBN;
+
+            //入金金種=振込（M_DenominationKBN.SystemKBN=5）の場合 画面.銀行口座を入力可能にする。
+            if (mSystemKBN.Equals("5"))
+            {
+                cboKouza.Enabled = true;
+            }
+            else
+            {
+                cboKouza.Enabled = false;
+                cboKouza.SelectedIndex = 0;
+            }
+            //入金金種=小切手、手形（M_DenominationKBN.SystemKBN=6、11）の場合 画面.手形等決済日を入力可能にする。
+            if (mSystemKBN.Equals("6") || mSystemKBN.Equals("11"))
+            {
+                detailControls[(int)EIndex.Tegata].Enabled = true;
+            }
+            else
+            {
+                detailControls[(int)EIndex.Tegata].Enabled = false;
+                detailControls[(int)EIndex.Tegata].Text = "";
+            }
         }
     }
 }

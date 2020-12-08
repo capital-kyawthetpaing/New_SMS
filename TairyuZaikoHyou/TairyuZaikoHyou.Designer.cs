@@ -1098,9 +1098,9 @@
             this.txtManufactureCD.isMaxLengthErr = false;
             this.txtManufactureCD.IsNumber = true;
             this.txtManufactureCD.IsShop = false;
-            this.txtManufactureCD.Length = 10;
+            this.txtManufactureCD.Length = 50;
             this.txtManufactureCD.Location = new System.Drawing.Point(122, 232);
-            this.txtManufactureCD.MaxLength = 10;
+            this.txtManufactureCD.MaxLength = 50;
             this.txtManufactureCD.MoveNext = true;
             this.txtManufactureCD.Name = "txtManufactureCD";
             this.txtManufactureCD.Size = new System.Drawing.Size(1410, 19);
@@ -1127,9 +1127,9 @@
             this.txtItem.isMaxLengthErr = false;
             this.txtItem.IsNumber = true;
             this.txtItem.IsShop = false;
-            this.txtItem.Length = 10;
+            this.txtItem.Length = 30;
             this.txtItem.Location = new System.Drawing.Point(122, 249);
-            this.txtItem.MaxLength = 10;
+            this.txtItem.MaxLength = 30;
             this.txtItem.MoveNext = true;
             this.txtItem.Name = "txtItem";
             this.txtItem.Size = new System.Drawing.Size(1410, 19);

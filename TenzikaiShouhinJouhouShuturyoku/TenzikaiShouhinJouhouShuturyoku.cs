@@ -123,7 +123,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
                     DataTable dt = tzkbl.Rpc_TenzikaiShouhinJouhouShuturyoku(mte);
                     if (dt.Rows.Count > 0)
                     {
-                        string folderPath = "C:\\SES\\";
+                        string folderPath = "C:\\Excel\\";
                         if (!Directory.Exists(folderPath))
                         {
                             Directory.CreateDirectory(folderPath);
@@ -131,7 +131,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
                         SaveFileDialog savedialog = new SaveFileDialog();
                         savedialog.Filter = "Excel Files|*.xlsx;";
                         savedialog.Title = "Save";
-                        savedialog.FileName = "展示会商品情報出力";
+                        savedialog.FileName = "展示会名";
                         savedialog.InitialDirectory = folderPath;
                         savedialog.RestoreDirectory = true;
                         if (savedialog.ShowDialog() == DialogResult.OK)
