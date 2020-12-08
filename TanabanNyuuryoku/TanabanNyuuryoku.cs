@@ -577,6 +577,7 @@ namespace TanabanNyuuryoku
             //        }
             //    }
             //}
+
             else if (dgvTanaban.Columns[e.ColumnIndex].Name == "colRackNo1")
             {
                 F9Visible = true;

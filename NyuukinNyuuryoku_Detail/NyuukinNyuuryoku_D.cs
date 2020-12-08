@@ -3113,11 +3113,7 @@ namespace NyuukinNyuuryoku
         {
             try
             {
-                if (cboDenomination.SelectedIndex > 0)
-                {
                     SetEnabled();
-                }
-
             }
             catch (Exception ex)
             {
@@ -3244,6 +3240,11 @@ namespace NyuukinNyuuryoku
         }
         private void SetEnabled()
         {
+            if (cboDenomination.SelectedIndex <= 0)
+            {
+                return;
+            }
+
             M_DenominationKBN_Entity me = new M_DenominationKBN_Entity();
             me.DenominationCD = cboDenomination.SelectedValue.ToString();
             DenominationKBN_BL bl = new DenominationKBN_BL();
