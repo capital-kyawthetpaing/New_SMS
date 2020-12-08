@@ -47,6 +47,7 @@ namespace TanabanNyuuryoku
             F8Visible = false;
             F10Visible = false;
             //F11Visible = false;
+            F9Visible = false;
 
             //txtArrivalDateFrom.Text = DateTime.Now.ToString("yyyy/MM/dd");
             txtArrivalDateTo.Text = DateTime.Now.ToString("yyyy/MM/dd");
@@ -556,7 +557,33 @@ namespace TanabanNyuuryoku
 
         private void dgvTanaban_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-             if(dgvTanaban.lastKey)
+            if (dgvTanaban.Columns[e.ColumnIndex + 1].Name == "colRackNo1")
+            {
+                F9Visible = true;
+            }
+            //else if (dgvTanaban.Columns[e.ColumnIndex + 1].Name == "colBtn")
+            //{
+            //    var row = this.dgvTanaban.Rows[e.RowIndex];
+            //    Search_Location sl = new Search_Location(DateTime.Now.ToShortDateString(), cboWarehouse.SelectedValue.ToString());
+            //    sl.ShowDialog();
+            //    if (!string.IsNullOrWhiteSpace(sl.TanaCD))
+            //    {
+            //        row.Cells[dgvTanaban.Columns[e.ColumnIndex - 1].Index].Value = sl.TanaCD;
+
+            //        if (!string.IsNullOrWhiteSpace(ScStorage.TxtCode.Text))
+            //        {
+            //            row.Cells[dgvTanaban.Columns["colRackNo1"].Index].Value = sl.TanaCD;
+
+            //        }
+            //    }
+            //}
+
+            else if (dgvTanaban.Columns[e.ColumnIndex].Name == "colRackNo1")
+            {
+                F9Visible = true;
+            }
+          
+                if (dgvTanaban.lastKey)
                 if (dgvTanaban.Columns[e.ColumnIndex].Name == "colRackNo1")
                 {
                     string rate = dgvTanaban.Rows[e.RowIndex].Cells["colRackNo1"].EditedFormattedValue.ToString();
