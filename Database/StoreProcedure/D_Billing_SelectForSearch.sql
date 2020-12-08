@@ -53,7 +53,7 @@ BEGIN
                     ORDER BY A.ChangeDate desc) AS CustomerName 
                   ,CONVERT(varchar,DB.BillingCloseDate,111) AS BillingCloseDate
                   ,DB.BillingNO
-                  ,DB.BillingGaku - ISNULL(DC.CollectAmount,0) AS BillingGaku
+                  ,DBM.BillingGaku - ISNULL(DC.CollectAmount,0) AS BillingGaku
                   ,CONVERT(varchar,DB.CollectDate,111) AS CollectDate
 
             FROM D_Billing AS DB
@@ -70,12 +70,12 @@ BEGIN
             AND DB.BillingType = 2
             --AND DB.BillingCustomerCD = (CASE WHEN @CustomerCD <> '' THEN @CustomerCD ELSE DB.BillingCustomerCD END)
             
-            --入金状況：未入金の場合
-            AND ((@ChkMinyukin = 1 
+            --入金状況：入金済の場合
+            AND ((@ChkNyukinzumi = 1 
                 AND ISNULL(DB.CollectDate,'') >= (CASE WHEN @CollectDateFrom <> '' THEN CONVERT(DATE, @CollectDateFrom) ELSE ISNULL(DB.CollectDate,'') END)
                 AND ISNULL(DB.CollectDate,'') <= (CASE WHEN @CollectDateTo <> '' THEN CONVERT(DATE, @CollectDateTo) ELSE ISNULL(DB.CollectDate,'') END)
             --入金状況：未入金の場合
-            ) OR (@ChkMinyukin = 0 
+            ) OR (@ChkMinyukin = 1 
                 AND DB.CollectDate IS NULL
             ))
             
@@ -147,12 +147,12 @@ BEGIN
             AND DB.BillingType = 2
             --AND DB.BillingCustomerCD = (CASE WHEN @CustomerCD <> '' THEN @CustomerCD ELSE DB.BillingCustomerCD END)
             
-            --入金状況：未入金の場合
-            AND ((@ChkMinyukin = 1 
+            --入金状況：入金済の場合
+            AND ((@ChkNyukinzumi = 1 
                 AND ISNULL(DB.CollectDate,'') >= (CASE WHEN @CollectDateFrom <> '' THEN CONVERT(DATE, @CollectDateFrom) ELSE ISNULL(DB.CollectDate,'') END)
                 AND ISNULL(DB.CollectDate,'') <= (CASE WHEN @CollectDateTo <> '' THEN CONVERT(DATE, @CollectDateTo) ELSE ISNULL(DB.CollectDate,'') END)
             --入金状況：未入金の場合
-            ) OR (@ChkMinyukin = 0 
+            ) OR (@ChkMinyukin = 1 
                 AND DB.CollectDate IS NULL
             ))
             
