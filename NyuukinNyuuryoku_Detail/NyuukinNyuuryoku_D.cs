@@ -1320,7 +1320,7 @@ namespace NyuukinNyuuryoku
                             detailControls[(int)EIndex.NyukinGaku].Text = "0";
                             lblKin1.Text = "0";
                         }
-                        lblKin1.Text = bbl.Z_SetStr(dtDetail.Rows[0]["SumConfirmAmount"]);
+                        //lblKin1.Text = bbl.Z_SetStr(dtDetail.Rows[0]["SumConfirmAmount"]);
                     }
                     detailControls[(int)EIndex.FeeDeduction].Text = "0";
                     detailControls[(int)EIndex.Deduction1].Text = "0";
