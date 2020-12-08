@@ -2257,9 +2257,9 @@ namespace NyuukinNyuuryoku
             if (count > 0)
             {
                 //入力必須(Entry required)
-                if (!RequireCheck(new Control[] { detailControls[index] }))
+                if (!RequireCheck(new Control[] { detailControls[(int)EIndex.CollectClearDate] }))
                 {
-                    return false;
+                    return;
                 }
             }
 
