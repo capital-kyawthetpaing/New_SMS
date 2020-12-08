@@ -262,6 +262,7 @@
     <Content Include="StoreProcedure\D_Store_Calculation_SelectForSeiSan.sql" />
     <Content Include="StoreProcedure\D_TeniKaiSelectbyJAN.sql" />
     <Content Include="StoreProcedure\D_TeniSelectbyTaniCD.sql" />
+    <Content Include="StoreProcedure\D_TenjiCheckMaster.sql" />
     <Content Include="StoreProcedure\D_TenjiI_Details_Delete.sql" />
     <Content Include="StoreProcedure\D_TenjiI_Details_insert.sql" />
     <Content Include="StoreProcedure\D_TenjiI_Details_Update.sql" />
