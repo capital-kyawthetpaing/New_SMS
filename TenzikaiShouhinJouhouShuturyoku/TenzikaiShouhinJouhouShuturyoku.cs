@@ -131,7 +131,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
                         SaveFileDialog savedialog = new SaveFileDialog();
                         savedialog.Filter = "Excel Files|*.xlsx;";
                         savedialog.Title = "Save";
-                        savedialog.FileName = "展示会商品情報出力";
+                        savedialog.FileName = "展示会名";
                         savedialog.InitialDirectory = folderPath;
                         savedialog.RestoreDirectory = true;
                         if (savedialog.ShowDialog() == DialogResult.OK)
