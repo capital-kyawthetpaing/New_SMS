@@ -49,7 +49,8 @@ BEGIN
                   ,DB.BillingCustomerCD AS CustomerCD
                   ,(SELECT top 1 A.CustomerName
                     FROM M_Customer A 
-                    WHERE A.CustomerCD = DB.BillingCustomerCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DB.BillingCloseDate
+                    WHERE A.CustomerCD = DB.BillingCustomerCD AND A.ChangeDate <= DB.BillingCloseDate
+                    AND A.DeleteFlg = 0 
                     ORDER BY A.ChangeDate desc) AS CustomerName 
                   ,CONVERT(varchar,DB.BillingCloseDate,111) AS BillingCloseDate
                   ,DB.BillingNO
@@ -73,7 +74,7 @@ BEGIN
             --入金状況：入金済の場合
             AND ((@ChkNyukinzumi = 1 
                 AND ISNULL(DB.CollectDate,'') >= (CASE WHEN @CollectDateFrom <> '' THEN CONVERT(DATE, @CollectDateFrom) ELSE ISNULL(DB.CollectDate,'') END)
-                AND ISNULL(DB.CollectDate,'') <= (CASE WHEN @CollectDateTo <> '' THEN CONVERT(DATE, @CollectDateTo) ELSE ISNULL(DB.CollectDate,'') END)
+                AND ISNULL(DB.CollectDate,'') <= (CASE WHEN @CollectDateTo <> ''   THEN CONVERT(DATE, @CollectDateTo)   ELSE ISNULL(DB.CollectDate,'') END)
             --入金状況：未入金の場合
             ) OR (@ChkMinyukin = 1 
                 AND DB.CollectDate IS NULL
@@ -95,7 +96,7 @@ BEGIN
         ) AS W
         GROUP BY W.StoreCD, W.CustomerCD,W.BillingCloseDate,W.BillingNO
         HAVING SUM(W.BillingGaku) >= (CASE WHEN @BillingGakuFrom IS NOT NULL THEN @BillingGakuFrom ELSE SUM(W.BillingGaku) END)
-        AND SUM(W.BillingGaku) <= (CASE WHEN @BillingGakuTo IS NOT NULL THEN @BillingGakuTo ELSE SUM(W.BillingGaku) END)
+        AND    SUM(W.BillingGaku) <= (CASE WHEN @BillingGakuTo   IS NOT NULL THEN @BillingGakuTo   ELSE SUM(W.BillingGaku) END)
         ORDER BY StoreCD, CustomerCD,BillingCloseDate,BillingNO, BillingGaku
         ;
     END
@@ -122,7 +123,8 @@ BEGIN
                   ,DB.BillingCustomerCD AS CustomerCD
                   ,(SELECT top 1 A.CustomerName
                     FROM M_Customer A 
-                    WHERE A.CustomerCD = DB.BillingCustomerCD AND A.DeleteFlg = 0 AND A.ChangeDate <= DB.BillingCloseDate
+                    WHERE A.CustomerCD = DB.BillingCustomerCD AND A.ChangeDate <= DB.BillingCloseDate
+                    AND A.DeleteFlg = 0
                     ORDER BY A.ChangeDate desc) AS CustomerName 
                    ,CONVERT(varchar,DS.SalesDate,111) AS BillingCloseDate
                    ,DS.SalesNO AS BillingNO
@@ -150,7 +152,7 @@ BEGIN
             --入金状況：入金済の場合
             AND ((@ChkNyukinzumi = 1 
                 AND ISNULL(DB.CollectDate,'') >= (CASE WHEN @CollectDateFrom <> '' THEN CONVERT(DATE, @CollectDateFrom) ELSE ISNULL(DB.CollectDate,'') END)
-                AND ISNULL(DB.CollectDate,'') <= (CASE WHEN @CollectDateTo <> '' THEN CONVERT(DATE, @CollectDateTo) ELSE ISNULL(DB.CollectDate,'') END)
+                AND ISNULL(DB.CollectDate,'') <= (CASE WHEN @CollectDateTo <> ''   THEN CONVERT(DATE, @CollectDateTo)   ELSE ISNULL(DB.CollectDate,'') END)
             --入金状況：未入金の場合
             ) OR (@ChkMinyukin = 1 
                 AND DB.CollectDate IS NULL
@@ -172,7 +174,7 @@ BEGIN
         ) AS W
         GROUP BY W.StoreCD, W.CustomerCD,W.BillingCloseDate,W.BillingNO
         HAVING SUM(W.BillingGaku) >= (CASE WHEN @BillingGakuFrom IS NOT NULL THEN @BillingGakuFrom ELSE SUM(W.BillingGaku) END)
-        AND SUM(W.BillingGaku) <= (CASE WHEN @BillingGakuTo IS NOT NULL THEN @BillingGakuTo ELSE SUM(W.BillingGaku) END)
+        AND    SUM(W.BillingGaku) <= (CASE WHEN @BillingGakuTo   IS NOT NULL THEN @BillingGakuTo   ELSE SUM(W.BillingGaku) END)
         ORDER BY StoreCD, CustomerCD,BillingCloseDate,BillingNO, BillingGaku
         ;
     END
