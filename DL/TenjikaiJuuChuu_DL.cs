@@ -105,6 +105,16 @@ namespace DL
                 return false;
             }
         }
+        public DataTable CheckMaster(string xml)
+        {
+            string sp = "D_TenjiCheckMaster";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                 {"@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = xml } },
+            };
+            UseTransaction = true;
+            return  SelectData(dic, sp);
+        }
         public bool D_TenjiUpdate(Tenjikai_Entity tje, string xml,string dxml)
         {
             string sp = "D_TenjiI_Details_Update";
