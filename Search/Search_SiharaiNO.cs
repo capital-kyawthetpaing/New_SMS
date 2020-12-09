@@ -62,6 +62,26 @@ namespace Search
 
         public bool ErrorCheck()
         {
+            string     strYmd = bbl.FormatDate(txtPaymentDateFrom.Text);
+            //日付として正しいこと(Be on the correct date)Ｅ１０３
+            if (!bbl.CheckDate(strYmd))
+            {
+                //Ｅ１０３
+                bbl.ShowMessage("E103");
+                return false;
+            }
+            txtPaymentDateFrom.Text = strYmd;
+
+            strYmd = bbl.FormatDate(txtPaymentDateTo.Text);
+            //日付として正しいこと(Be on the correct date)Ｅ１０３
+            if (!bbl.CheckDate(strYmd))
+            {
+                //Ｅ１０３
+                bbl.ShowMessage("E103");
+                return false;
+            }
+            txtPaymentDateTo.Text = strYmd;
+
             if (!string.IsNullOrWhiteSpace(txtPaymentDateTo.Text))
             {
                 int result = txtPaymentDateFrom.Text.CompareTo(txtPaymentDateTo.Text);
