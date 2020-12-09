@@ -551,7 +551,7 @@
             this.IMT_ITMCD_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_0.DecimalPlace = 0;
-            this.IMT_ITMCD_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ITMCD_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMCD_0.IntegerPart = 0;
             this.IMT_ITMCD_0.IsCorrectDate = true;
             this.IMT_ITMCD_0.isEnterKeyDown = false;
@@ -1115,7 +1115,7 @@
             this.IMT_CUSTM_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_CUSTM_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_CUSTM_0.DecimalPlace = 0;
-            this.IMT_CUSTM_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_CUSTM_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_CUSTM_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_CUSTM_0.IntegerPart = 0;
             this.IMT_CUSTM_0.IsCorrectDate = false;
@@ -1157,7 +1157,7 @@
             this.IMT_ARIDT_9.IsNumber = true;
             this.IMT_ARIDT_9.IsShop = false;
             this.IMT_ARIDT_9.Length = 20;
-            this.IMT_ARIDT_9.Location = new System.Drawing.Point(1201, 342);
+            this.IMT_ARIDT_9.Location = new System.Drawing.Point(1124, 342);
             this.IMT_ARIDT_9.MaxLength = 20;
             this.IMT_ARIDT_9.MoveNext = true;
             this.IMT_ARIDT_9.Name = "IMT_ARIDT_9";
@@ -1427,7 +1427,7 @@
             this.IMN_TEIKA_9.IsNumber = true;
             this.IMN_TEIKA_9.IsShop = false;
             this.IMN_TEIKA_9.Length = 9;
-            this.IMN_TEIKA_9.Location = new System.Drawing.Point(1124, 342);
+            this.IMN_TEIKA_9.Location = new System.Drawing.Point(1204, 342);
             this.IMN_TEIKA_9.MaxLength = 9;
             this.IMN_TEIKA_9.MoveNext = true;
             this.IMN_TEIKA_9.Name = "IMN_TEIKA_9";
@@ -1638,7 +1638,7 @@
             this.IMT_ARIDT_8.IsNumber = true;
             this.IMT_ARIDT_8.IsShop = false;
             this.IMT_ARIDT_8.Length = 20;
-            this.IMT_ARIDT_8.Location = new System.Drawing.Point(1201, 304);
+            this.IMT_ARIDT_8.Location = new System.Drawing.Point(1124, 304);
             this.IMT_ARIDT_8.MaxLength = 20;
             this.IMT_ARIDT_8.MoveNext = true;
             this.IMT_ARIDT_8.Name = "IMT_ARIDT_8";
@@ -1908,7 +1908,7 @@
             this.IMN_TEIKA_8.IsNumber = true;
             this.IMN_TEIKA_8.IsShop = false;
             this.IMN_TEIKA_8.Length = 9;
-            this.IMN_TEIKA_8.Location = new System.Drawing.Point(1124, 304);
+            this.IMN_TEIKA_8.Location = new System.Drawing.Point(1204, 304);
             this.IMN_TEIKA_8.MaxLength = 9;
             this.IMN_TEIKA_8.MoveNext = true;
             this.IMN_TEIKA_8.Name = "IMN_TEIKA_8";
@@ -2119,7 +2119,7 @@
             this.IMT_ARIDT_7.IsNumber = true;
             this.IMT_ARIDT_7.IsShop = false;
             this.IMT_ARIDT_7.Length = 20;
-            this.IMT_ARIDT_7.Location = new System.Drawing.Point(1201, 266);
+            this.IMT_ARIDT_7.Location = new System.Drawing.Point(1124, 266);
             this.IMT_ARIDT_7.MaxLength = 20;
             this.IMT_ARIDT_7.MoveNext = true;
             this.IMT_ARIDT_7.Name = "IMT_ARIDT_7";
@@ -2152,7 +2152,7 @@
             this.IMT_ARIDT_6.IsNumber = true;
             this.IMT_ARIDT_6.IsShop = false;
             this.IMT_ARIDT_6.Length = 20;
-            this.IMT_ARIDT_6.Location = new System.Drawing.Point(1201, 228);
+            this.IMT_ARIDT_6.Location = new System.Drawing.Point(1124, 228);
             this.IMT_ARIDT_6.MaxLength = 20;
             this.IMT_ARIDT_6.MoveNext = true;
             this.IMT_ARIDT_6.Name = "IMT_ARIDT_6";
@@ -2185,7 +2185,7 @@
             this.IMT_ARIDT_5.IsNumber = true;
             this.IMT_ARIDT_5.IsShop = false;
             this.IMT_ARIDT_5.Length = 20;
-            this.IMT_ARIDT_5.Location = new System.Drawing.Point(1201, 190);
+            this.IMT_ARIDT_5.Location = new System.Drawing.Point(1124, 190);
             this.IMT_ARIDT_5.MaxLength = 20;
             this.IMT_ARIDT_5.MoveNext = true;
             this.IMT_ARIDT_5.Name = "IMT_ARIDT_5";
@@ -2218,7 +2218,7 @@
             this.IMT_ARIDT_4.IsNumber = true;
             this.IMT_ARIDT_4.IsShop = false;
             this.IMT_ARIDT_4.Length = 20;
-            this.IMT_ARIDT_4.Location = new System.Drawing.Point(1201, 152);
+            this.IMT_ARIDT_4.Location = new System.Drawing.Point(1124, 152);
             this.IMT_ARIDT_4.MaxLength = 20;
             this.IMT_ARIDT_4.MoveNext = true;
             this.IMT_ARIDT_4.Name = "IMT_ARIDT_4";
@@ -2251,7 +2251,7 @@
             this.IMT_ARIDT_3.IsNumber = true;
             this.IMT_ARIDT_3.IsShop = false;
             this.IMT_ARIDT_3.Length = 20;
-            this.IMT_ARIDT_3.Location = new System.Drawing.Point(1201, 114);
+            this.IMT_ARIDT_3.Location = new System.Drawing.Point(1124, 114);
             this.IMT_ARIDT_3.MaxLength = 20;
             this.IMT_ARIDT_3.MoveNext = true;
             this.IMT_ARIDT_3.Name = "IMT_ARIDT_3";
@@ -2284,7 +2284,7 @@
             this.IMT_ARIDT_0.IsNumber = true;
             this.IMT_ARIDT_0.IsShop = false;
             this.IMT_ARIDT_0.Length = 20;
-            this.IMT_ARIDT_0.Location = new System.Drawing.Point(1201, 0);
+            this.IMT_ARIDT_0.Location = new System.Drawing.Point(1124, 0);
             this.IMT_ARIDT_0.MaxLength = 20;
             this.IMT_ARIDT_0.MoveNext = true;
             this.IMT_ARIDT_0.Name = "IMT_ARIDT_0";
@@ -2317,7 +2317,7 @@
             this.IMT_ARIDT_2.IsNumber = true;
             this.IMT_ARIDT_2.IsShop = false;
             this.IMT_ARIDT_2.Length = 20;
-            this.IMT_ARIDT_2.Location = new System.Drawing.Point(1201, 76);
+            this.IMT_ARIDT_2.Location = new System.Drawing.Point(1124, 76);
             this.IMT_ARIDT_2.MaxLength = 20;
             this.IMT_ARIDT_2.MoveNext = true;
             this.IMT_ARIDT_2.Name = "IMT_ARIDT_2";
@@ -2350,7 +2350,7 @@
             this.IMT_ARIDT_1.IsNumber = true;
             this.IMT_ARIDT_1.IsShop = false;
             this.IMT_ARIDT_1.Length = 20;
-            this.IMT_ARIDT_1.Location = new System.Drawing.Point(1201, 38);
+            this.IMT_ARIDT_1.Location = new System.Drawing.Point(1124, 38);
             this.IMT_ARIDT_1.MaxLength = 20;
             this.IMT_ARIDT_1.MoveNext = true;
             this.IMT_ARIDT_1.Name = "IMT_ARIDT_1";
@@ -3445,7 +3445,7 @@
             this.IMN_TEIKA_7.IsNumber = true;
             this.IMN_TEIKA_7.IsShop = false;
             this.IMN_TEIKA_7.Length = 9;
-            this.IMN_TEIKA_7.Location = new System.Drawing.Point(1124, 266);
+            this.IMN_TEIKA_7.Location = new System.Drawing.Point(1204, 266);
             this.IMN_TEIKA_7.MaxLength = 9;
             this.IMN_TEIKA_7.MoveNext = true;
             this.IMN_TEIKA_7.Name = "IMN_TEIKA_7";
@@ -3703,7 +3703,7 @@
             this.IMN_TEIKA_6.IsNumber = true;
             this.IMN_TEIKA_6.IsShop = false;
             this.IMN_TEIKA_6.Length = 9;
-            this.IMN_TEIKA_6.Location = new System.Drawing.Point(1124, 228);
+            this.IMN_TEIKA_6.Location = new System.Drawing.Point(1204, 228);
             this.IMN_TEIKA_6.MaxLength = 9;
             this.IMN_TEIKA_6.MoveNext = true;
             this.IMN_TEIKA_6.Name = "IMN_TEIKA_6";
@@ -3961,7 +3961,7 @@
             this.IMN_TEIKA_5.IsNumber = true;
             this.IMN_TEIKA_5.IsShop = false;
             this.IMN_TEIKA_5.Length = 9;
-            this.IMN_TEIKA_5.Location = new System.Drawing.Point(1124, 190);
+            this.IMN_TEIKA_5.Location = new System.Drawing.Point(1204, 190);
             this.IMN_TEIKA_5.MaxLength = 9;
             this.IMN_TEIKA_5.MoveNext = true;
             this.IMN_TEIKA_5.Name = "IMN_TEIKA_5";
@@ -4219,7 +4219,7 @@
             this.IMN_TEIKA_4.IsNumber = true;
             this.IMN_TEIKA_4.IsShop = false;
             this.IMN_TEIKA_4.Length = 9;
-            this.IMN_TEIKA_4.Location = new System.Drawing.Point(1124, 152);
+            this.IMN_TEIKA_4.Location = new System.Drawing.Point(1204, 152);
             this.IMN_TEIKA_4.MaxLength = 9;
             this.IMN_TEIKA_4.MoveNext = true;
             this.IMN_TEIKA_4.Name = "IMN_TEIKA_4";
@@ -4477,7 +4477,7 @@
             this.IMN_TEIKA_3.IsNumber = true;
             this.IMN_TEIKA_3.IsShop = false;
             this.IMN_TEIKA_3.Length = 9;
-            this.IMN_TEIKA_3.Location = new System.Drawing.Point(1124, 114);
+            this.IMN_TEIKA_3.Location = new System.Drawing.Point(1204, 114);
             this.IMN_TEIKA_3.MaxLength = 9;
             this.IMN_TEIKA_3.MoveNext = true;
             this.IMN_TEIKA_3.Name = "IMN_TEIKA_3";
@@ -4927,7 +4927,7 @@
             this.IMN_TEIKA_2.IsNumber = true;
             this.IMN_TEIKA_2.IsShop = false;
             this.IMN_TEIKA_2.Length = 9;
-            this.IMN_TEIKA_2.Location = new System.Drawing.Point(1124, 76);
+            this.IMN_TEIKA_2.Location = new System.Drawing.Point(1204, 76);
             this.IMN_TEIKA_2.MaxLength = 9;
             this.IMN_TEIKA_2.MoveNext = true;
             this.IMN_TEIKA_2.Name = "IMN_TEIKA_2";
@@ -4960,7 +4960,7 @@
             this.IMN_TEIKA_1.IsNumber = true;
             this.IMN_TEIKA_1.IsShop = false;
             this.IMN_TEIKA_1.Length = 9;
-            this.IMN_TEIKA_1.Location = new System.Drawing.Point(1124, 38);
+            this.IMN_TEIKA_1.Location = new System.Drawing.Point(1204, 38);
             this.IMN_TEIKA_1.MaxLength = 9;
             this.IMN_TEIKA_1.MoveNext = true;
             this.IMN_TEIKA_1.Name = "IMN_TEIKA_1";
@@ -4993,7 +4993,7 @@
             this.IMN_TEIKA_0.IsNumber = true;
             this.IMN_TEIKA_0.IsShop = false;
             this.IMN_TEIKA_0.Length = 11;
-            this.IMN_TEIKA_0.Location = new System.Drawing.Point(1124, 0);
+            this.IMN_TEIKA_0.Location = new System.Drawing.Point(1204, 0);
             this.IMN_TEIKA_0.MaxLength = 11;
             this.IMN_TEIKA_0.MoveNext = true;
             this.IMN_TEIKA_0.Name = "IMN_TEIKA_0";
@@ -5793,7 +5793,7 @@
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label9.Location = new System.Drawing.Point(1201, 2);
+            this.label9.Location = new System.Drawing.Point(1124, 2);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(80, 16);
             this.label9.TabIndex = 305;
@@ -5910,7 +5910,7 @@
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label16.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label16.Location = new System.Drawing.Point(1124, 2);
+            this.label16.Location = new System.Drawing.Point(1204, 2);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(77, 16);
             this.label16.TabIndex = 267;
@@ -6165,7 +6165,7 @@
             this.lblSumKin4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblSumKin4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSumKin4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSumKin4.Location = new System.Drawing.Point(1205, 419);
+            this.lblSumKin4.Location = new System.Drawing.Point(1128, 419);
             this.lblSumKin4.Name = "lblSumKin4";
             this.lblSumKin4.Size = new System.Drawing.Size(80, 18);
             this.lblSumKin4.TabIndex = 747;
@@ -6177,7 +6177,7 @@
             this.lblSumKin3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblSumKin3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSumKin3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSumKin3.Location = new System.Drawing.Point(1128, 419);
+            this.lblSumKin3.Location = new System.Drawing.Point(1208, 419);
             this.lblSumKin3.Name = "lblSumKin3";
             this.lblSumKin3.Size = new System.Drawing.Size(77, 18);
             this.lblSumKin3.TabIndex = 746;

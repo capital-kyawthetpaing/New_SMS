@@ -39,6 +39,7 @@ namespace NyuukinNyuuryoku
             internal string CollectPlanRows;
             internal string WebCollectNO;
             internal string WebCollectType;
+            internal string OldConfirmAmount;      //今回入金額
 
             internal int Update;
         }
