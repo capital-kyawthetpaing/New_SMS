@@ -2472,7 +2472,7 @@ namespace UriageNyuuryoku
                     }
                     break;
 
-                case (int)ClsGridUriage.ColNO.OrderUnitPrice://発注単価
+                case (int)ClsGridUriage.ColNO.OrderUnitPrice://仕入単価
                     //入力無くても良い(It is not necessary to input)
                     //入力無い場合、0とする（When there is no input, it is set to 0）
                     decimal orderUnitPrice = bbl.Z_Set(mGrid.g_DArray[row].OrderUnitPrice);
@@ -3244,7 +3244,7 @@ namespace UriageNyuuryoku
             else
                 bbl.ShowMessage("I101");
 
-            if (ChkPrint.Checked)
+            if (ChkPrint.Checked　&& OperationMode != EOperationMode.DELETE)
             {
                 if (bbl.ShowMessage("Q202") == DialogResult.Yes)
                 {
@@ -3673,7 +3673,7 @@ namespace UriageNyuuryoku
                     bool ret = CheckDetail(index);
                     if (ret)
                     {
-                       if( index == (int)EIndex.CustomerName2 || (index == (int)EIndex.CustomerName && !detailControls[index + 1].CanFocus) )
+                       if( index == (int)EIndex.CustomerName2 || (index == (int)EIndex.CustomerName && !detailControls[index + 1].CanFocus) || (index == (int)EIndex.CustomerCD && !detailControls[index + 1].CanFocus) )
                             //明細の先頭項目へ
                             mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridUriage.ColNO.JanCD);
                         else if (detailControls.Length - 1 > index)
