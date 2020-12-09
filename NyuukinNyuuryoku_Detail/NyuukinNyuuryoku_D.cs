@@ -13,7 +13,7 @@ using Search;
 using GridBase;
 using Search_Nyuukinmoto;
 
-namespace NyuukinNyuuryoku
+namespace NyuukinNyuuryoku_Detail
 {
     /// <summary>
     /// NyuukinNyuuryoku 入金入力（明細単位）

@@ -163,12 +163,13 @@ namespace NyuukinNyuuryoku
 
         protected override void ExecSec()
         {
-            System.Diagnostics.Process[] hProcesses = System.Diagnostics.Process.GetProcessesByName(NyuukinNyuuryoku_Uriage);
-                if (hProcesses.Length > 0)
-                {
+            System.Diagnostics.Process[] hProcesses = System.Diagnostics.Process.GetProcessesByName("NyuukinNyuuryoku_Detail");
+            if (hProcesses.Length > 0)
+            {
                 //SetForegroundWindow(hProcesses[0].MainWindowHandle);
                 Microsoft.VisualBasic.Interaction.AppActivate(hProcesses[0].Id);
-                }
+                return;
+            }
         
             //新規モードで売上単位画面を表示					
             //EXEが存在しない時ｴﾗｰ

@@ -1,4 +1,4 @@
-﻿namespace NyuukinNyuuryoku
+﻿namespace NyuukinNyuuryoku_Detail
 {
     partial class NyuukinNyuuryoku_Detail
     {
