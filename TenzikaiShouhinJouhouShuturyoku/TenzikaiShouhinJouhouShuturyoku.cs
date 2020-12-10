@@ -22,6 +22,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
         TenzikaiShouhinJouhouShuturyoku_BL tzkbl;
         M_TenzikaiShouhin_Entity mte;
         DataTable dt;
+        string filename = string.Empty;
         public frmTenzikaiShouhinJouhouShuturyoku()
         {
             InitializeComponent();
@@ -116,13 +117,18 @@ namespace TenzikaiShouhinJouhouShuturyoku
         {
             if (ErrorCheck())
             {
-                if (bbl.ShowMessage("Q205") == DialogResult.Yes)
-                {
                     mte = new M_TenzikaiShouhin_Entity();
                     mte = GetData();
                     DataTable dt = tzkbl.Rpc_TenzikaiShouhinJouhouShuturyoku(mte);
                     if (dt.Rows.Count > 0)
                     {
+                        if (bbl.ShowMessage("Q205") == DialogResult.Yes)
+                        {
+                        filename = dt.Rows[0]["TenzikaiName"].ToString();
+                        if (dt.Columns.Contains("TenzikaiName"))
+                        {
+                            dt.Columns.Remove("TenzikaiName");
+                        }
                         string folderPath = "C:\\Excel\\";
                         if (!Directory.Exists(folderPath))
                         {
@@ -131,7 +137,7 @@ namespace TenzikaiShouhinJouhouShuturyoku
                         SaveFileDialog savedialog = new SaveFileDialog();
                         savedialog.Filter = "Excel Files|*.xlsx;";
                         savedialog.Title = "Save";
-                        savedialog.FileName = "展示会名";
+                        savedialog.FileName = filename;
                         savedialog.InitialDirectory = folderPath;
                         savedialog.RestoreDirectory = true;
                         if (savedialog.ShowDialog() == DialogResult.OK)
@@ -154,13 +160,13 @@ namespace TenzikaiShouhinJouhouShuturyoku
                                 Process.Start(Path.GetDirectoryName(savedialog.FileName));
                             }
                         }
+                        }
                     }
                     else
                     {
                         tzkbl.ShowMessage("E128");
                         scSupplierCD.SetFocus(1);
                     }
-                }
             }
         }
         private void scSupplierCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
