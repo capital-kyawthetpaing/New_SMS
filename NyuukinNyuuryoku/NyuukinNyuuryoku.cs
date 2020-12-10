@@ -63,7 +63,8 @@ namespace NyuukinNyuuryoku
                 //起動時共通処理
                 base.StartProgram();
 
-                Btn_F12.Text = "F12:新規入金";
+                Btn_F8.Text = "F8:新規消込";
+                Btn_F10.Text = "F10:修正";
 
                 //初期値セット
                 nnbl = new NyuukinNyuuryoku_BL();
@@ -132,7 +133,8 @@ namespace NyuukinNyuuryoku
                 GvDetail.CurrentRow.Selected = true;
                 GvDetail.Enabled = true;
                 GvDetail.Focus();
-                Btn_F10.Enabled = true;
+                Btn_F10.Enabled = true;                  
+
             }
             else
             {
@@ -161,7 +163,7 @@ namespace NyuukinNyuuryoku
         //// ShowWindowAsync関数のパラメータに渡す定義値
         //private const int SW_RESTORE = 9;  // 画面を元の大きさに戻す
 
-        protected override void ExecSec()
+        private void ExecDetail(short kbn)
         {
             System.Diagnostics.Process[] hProcesses = System.Diagnostics.Process.GetProcessesByName("NyuukinNyuuryoku_Detail");
             if (hProcesses.Length > 0)
@@ -170,15 +172,34 @@ namespace NyuukinNyuuryoku
                 Microsoft.VisualBasic.Interaction.AppActivate(hProcesses[0].Id);
                 return;
             }
-        
-            //新規モードで売上単位画面を表示					
+
+            DataGridViewRow row = GvDetail.CurrentRow;
+
+            string no = row.Cells["colCollectNO"].Value.ToString();
+
+            string cmdLine ="";
+            if (kbn.Equals(0))
+            {
+                //カーソルが明細に存在し、その明細の「消込残額≠０」場合に「新規消込(F9)」として表示
+                //（入金額がすべて消込されている場合（消込残額＝０）の場合は、新規消込はできない）
+
+                //新規消込モードで、入金入力を表示（売上単位）
+                //新規消込モード:値9, 明細.入金番号
+                cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " 9 " + no;
+            }
+            else
+            {
+                //修正モードで、入金入力を表示（売上単位）
+                //修正モード:値10, 明細.入金番号, 明細.入金消込番号
+                cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " 10 " + no;
+            }
+
             //EXEが存在しない時ｴﾗｰ
             // 実行モジュールと同一フォルダのファイルを取得
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + NyuukinNyuuryoku_Uriage;
             if (System.IO.File.Exists(filePath))
             {
-                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID;
                 System.Diagnostics.Process.Start(filePath, cmdLine);
             }
             else
@@ -461,15 +482,14 @@ namespace NyuukinNyuuryoku
 
                         break;
                     }
-                case 11://F12:新規入金
-                    //   //Ｑ２０５				
-                    //if (bbl.ShowMessage("Q205") != DialogResult.Yes)
-                    //    return;
-
-                    ExecSec();
+                case 7://F8:新規消込
+                    ExecDetail(0);
                     break;
 
-                    
+                case 9://F10:修正
+                    ExecDetail(1);
+                    break;
+                   
             }   //switch end
 
         }
@@ -543,6 +563,8 @@ namespace NyuukinNyuuryoku
                         F9Visible = false;
                         break;
                 }
+                Btn_F8.Enabled = false;
+                Btn_F10.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -586,6 +608,35 @@ namespace NyuukinNyuuryoku
             {
                 if (CboStoreCD.SelectedIndex > 0)
                     ScCustomer.Value2 = CboStoreCD.SelectedValue.ToString();
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void GvDetail_CurrentCellChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (GvDetail.CurrentCell == null)
+                    return;
+
+                DataGridViewRow row = GvDetail.CurrentRow;
+
+                if (bbl.Z_Set(row.Cells["colConfirmZan"].Value) != 0)
+                {
+                    //カーソルが明細に存在し、その明細の「消込残額≠０」場合に「新規消込(F9)」として表示
+                    Btn_F8.Enabled = true;
+                }
+                else
+                {
+                    Btn_F8.Enabled = false;
+                }
+
+                //カーソルが明細に存在する場合に「修正(F10)」として表示
+                Btn_F10.Enabled = true;
             }
             catch (Exception ex)
             {
