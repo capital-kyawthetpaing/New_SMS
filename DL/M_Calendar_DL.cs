@@ -67,5 +67,7 @@ namespace DL
             };
             return SelectData(dic, "Get_ShihraiYoteibi");
         }
+
+       
     }
 }
