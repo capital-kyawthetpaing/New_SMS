@@ -152,25 +152,29 @@ namespace TairyuZaikoHyou
                 }
             }
 
-            //if(rdoItem.Checked)
-            //{
-            //    if(string.IsNullOrWhiteSpace(txtItem.Text))
-            //    {
-            //        tzkbl.ShowMessage("E102");
-            //        txtItem.Focus();
-            //        return false;
-            //    }               
-            //}
+            if (rdoItem.Checked == true)
+            {
+                if (chkPrint.Checked == true)
+                {
+                    if (string.IsNullOrWhiteSpace(txtItem.Text))
+                    {
+                        tzkbl.ShowMessage("E102");
+                        txtItem.Focus();
+                    }
+                }
+            }
 
-            //if(rdoProductCD.Checked)
-            //{
-            //    if(string.IsNullOrWhiteSpace(txtManufactureCD.Text))
-            //    {
-            //        tzkbl.ShowMessage("E102");
-            //        txtManufactureCD.Focus();
-            //        return false;
-            //    }
-            //}
+            if (rdoProductCD.Checked == true)
+            {
+                if (chkPrint.Checked == true)
+                {
+                    if (string.IsNullOrWhiteSpace(txtManufactureCD.Text))
+                    {
+                        tzkbl.ShowMessage("E102");
+                        txtRemarks.Focus();
+                    }
+                }
+            }
 
             return true;
         }
