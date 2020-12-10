@@ -4013,8 +4013,8 @@ namespace UriageNyuuryoku
                                 }
 
                                 //入力された場合、金額再計算
-                                if (wSuu != 0)
-                                {
+                                //if (wSuu != 0)
+                                //{
                                     //Function_単価取得.
                                     Fnc_UnitPrice_Entity fue = new Fnc_UnitPrice_Entity
                                     {
@@ -4060,7 +4060,7 @@ namespace UriageNyuuryoku
                                     mGrid.g_DArray[w_Row].OrderGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].OrderUnitPrice) * wSuu);
 
                                     CalcZei(w_Row);
-                                }
+                                //}
                                 break;
 
                             case (int)ClsGridUriage.ColNO.SalesUnitPrice: //販売単価 
