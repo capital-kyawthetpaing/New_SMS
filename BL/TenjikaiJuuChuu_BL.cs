@@ -15,7 +15,7 @@ namespace BL
         {
 
         }
-        public DataTable CheckMaster(string xml)
+        public DataTable CheckMaster(string xml="")
         {
             return tdl.CheckMaster(xml);
             //if (dtres.Rows.Count > 0)

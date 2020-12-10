@@ -110,7 +110,7 @@ namespace DL
             string sp = "D_TenjiCheckMaster";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                 {"@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = xml } },
+              //   {"@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = xml } },
             };
             UseTransaction = true;
             return  SelectData(dic, sp);

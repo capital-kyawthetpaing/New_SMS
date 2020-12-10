@@ -111,7 +111,8 @@ namespace DL
                 adapter.Fill(dt);
             }
             catch(Exception ex) {
-               throw ex;
+                
+               var msg=  ex.Message;
             }
             return dt;
         }
