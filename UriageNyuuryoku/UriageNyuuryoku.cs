@@ -387,7 +387,7 @@ namespace UriageNyuuryoku
 
             // 3行目
             mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.GYONO, 4].CellCtl = IMT_GYONO_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.Space1, 4].CellCtl = ckM_TextBox11;
+            mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.Space1, 4].CellCtl = ckM_TextBox32;
 
             mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.SKUCD, 4].CellCtl = IMT_ITMCD_4;
             mGrid.g_MK_Ctrl[(int)ClsGridUriage.ColNO.JanCD, 4].CellCtl = SC_ITEM_4;//IMT_JANCD_4;
