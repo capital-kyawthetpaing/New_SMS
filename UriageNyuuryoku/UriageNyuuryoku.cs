@@ -1780,13 +1780,25 @@ namespace UriageNyuuryoku
 
                     mGrid.g_DArray[i].NotPrintFLG = row["NotPrintFLG"].ToString() == "1" ? true : false;
 
-                    mGrid.g_DArray[i].SalesHontaiGaku = bbl.Z_SetStr(row["D_SalesHontaiGaku"]);   // 
+                    if (index == (int)EIndex.MotoSalesNO)
+                    {
+                        mGrid.g_DArray[i].SalesSuu = bbl.Z_SetStr(-1 * bbl.Z_Set(row["SalesSu"]));   //単価算出のため先にセットしておく   
+                        mGrid.g_DArray[i].SalesHontaiGaku = bbl.Z_SetStr(-1 * bbl.Z_Set(row["D_SalesHontaiGaku"]));   // 
+                        mGrid.g_DArray[i].SalesGaku = bbl.Z_SetStr(-1 * bbl.Z_Set(row["D_SalesGaku"]));   // 
+                        mGrid.g_DArray[i].CostGaku = bbl.Z_SetStr(-1 * bbl.Z_Set(row["D_CostGaku"]));   //  
+                        mGrid.g_DArray[i].OrderGaku = bbl.Z_SetStr(-1 * bbl.Z_Set(row["D_PurchaseGaku"]));   // 
+                    }
+                    else
+                    {
+                        mGrid.g_DArray[i].SalesHontaiGaku = bbl.Z_SetStr(row["D_SalesHontaiGaku"]);   // 
+                        mGrid.g_DArray[i].SalesGaku = bbl.Z_SetStr(row["D_SalesGaku"]);   // 
+                        mGrid.g_DArray[i].CostGaku = bbl.Z_SetStr(row["D_CostGaku"]);   //  
+                        mGrid.g_DArray[i].OrderGaku = bbl.Z_SetStr(row["D_PurchaseGaku"]);   // 
+                    }
                     mGrid.g_DArray[i].SalesUnitPrice = bbl.Z_SetStr(row["SalesUnitPrice"]);   // 
-                    mGrid.g_DArray[i].SalesGaku = bbl.Z_SetStr(row["D_SalesGaku"]);   // 
                     mGrid.g_DArray[i].CostUnitPrice = bbl.Z_SetStr(row["CostUnitPrice"]);   // 
-                    mGrid.g_DArray[i].CostGaku = bbl.Z_SetStr(row["D_CostGaku"]);   //  
                     mGrid.g_DArray[i].OrderUnitPrice = bbl.Z_SetStr(row["PurchaserUnitPrice"]);   // 
-                    mGrid.g_DArray[i].OrderGaku = bbl.Z_SetStr(row["D_PurchaseGaku"]);   // 
+
 
                     CalcZei(i);
 
