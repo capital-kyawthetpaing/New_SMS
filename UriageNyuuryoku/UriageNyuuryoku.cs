@@ -73,6 +73,7 @@ namespace UriageNyuuryoku
         private string mOldSalesDate = "";
         private string mOldCustomerCD = "";
         private string mVendorCD = "";
+        private string mPayeeCD = "";
         private decimal mZei10;//通常税額(Hidden)
         private decimal mZei8;//軽減税額(Hidden)
         private decimal mSalesHontaiGaku10;
@@ -1045,18 +1046,9 @@ namespace UriageNyuuryoku
                                     }
                                     else
                                     {
-                                        if (mGrid.g_DArray[pRow].salesGyoNO > 0)
-                                        {
-                                            mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
-                                            mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = true;
-                                            mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
-                                        }
-                                        else
-                                        {
-                                            mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
-                                            mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
-                                            mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
-                                        }
+                                        mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                                        mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = true;
+                                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
                                     }
                                 }
                                 break;
@@ -1738,6 +1730,7 @@ namespace UriageNyuuryoku
                         {                            
                             mPaymentPlanDate = row["PaymentPlanDate"].ToString();
                             mVendorCD = row["VendorCD"].ToString();
+                            mPayeeCD = row["PayeeCD"].ToString();
                         }
                         else
                         {
@@ -2301,8 +2294,18 @@ namespace UriageNyuuryoku
                         if (OperationMode == EOperationMode.INSERT)
                             mGrid.g_DArray[row].VendorCD = selectRow["MainVendorCD"].ToString();
                         else
+                        {
                             mGrid.g_DArray[row].VendorCD = mVendorCD;
 
+                            //支払予定日←Fnc_PlanDateよりout予定日をSet
+                            Fnc_PlanDate_Entity fpe = new Fnc_PlanDate_Entity();
+                            fpe.KaisyuShiharaiKbn = "1";    // "1";1：支払		
+                            fpe.CustomerCD = mPayeeCD;    //支払先CD(Hidden)
+                            fpe.ChangeDate = ymd;
+                            fpe.TyohaKbn = "0";
+
+                            mGrid.g_DArray[row].PaymentPlanDate = bbl.Fnc_PlanDate(fpe);
+                        }
                         mGrid.g_DArray[row].ZaikoKBN = Convert.ToInt16(selectRow["ZaikoKBN"].ToString());
                         mGrid.g_DArray[row].MakerItem = selectRow["MakerItem"].ToString();
 
