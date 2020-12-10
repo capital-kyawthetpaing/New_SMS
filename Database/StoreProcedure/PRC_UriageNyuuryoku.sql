@@ -33,94 +33,98 @@ BEGIN
 
     -- Insert statements for procedure here
    SELECT DH.SalesNO
-          ,DH.StoreCD
-          ,CONVERT(varchar,DH.SalesDate,111) AS SalesDate
-          ,DH.ShippingNO
-          ,DH.CustomerCD
-          ,DH.CustomerName
-          ,DH.CustomerName2
-          ,DH.BillingType
-          ,DH.SalesHontaiGaku
-          ,DH.SalesHontaiGaku0
-          ,DH.SalesHontaiGaku8
-          ,DH.SalesHontaiGaku10
-          ,DH.SalesTax
-          ,DH.SalesTax8
-          ,DH.SalesTax10
-          ,DH.SalesGaku
-          ,DH.LastPoint
-          ,DH.WaitingPoint
-          ,DH.StaffCD
-          ,CONVERT(varchar,DH.PrintDate,111) AS PrintDate
-          ,DH.PrintStaffCD
-          ,DH.Discount
-          ,DH.CostGaku
-          ,DH.ProfitGaku
-          ,DH.PurchaseNO
-          ,DH.SalesEntryKBN
+         ,DH.StoreCD
+         ,CONVERT(varchar,DH.SalesDate,111) AS SalesDate
+         ,DH.ShippingNO
+         ,DH.CustomerCD
+         ,DH.CustomerName
+         ,DH.CustomerName2
+         ,DH.BillingType
+         ,DH.SalesHontaiGaku
+         ,DH.SalesHontaiGaku0
+         ,DH.SalesHontaiGaku8
+         ,DH.SalesHontaiGaku10
+         ,DH.SalesTax
+         ,DH.SalesTax8
+         ,DH.SalesTax10
+         ,DH.SalesGaku
+         ,DH.LastPoint
+         ,DH.WaitingPoint
+         ,DH.StaffCD
+         ,CONVERT(varchar,DH.PrintDate,111) AS PrintDate
+         ,DH.PrintStaffCD
+         ,DH.Discount
+         ,DH.CostGaku
+         ,DH.ProfitGaku
+         ,DH.PurchaseNO
+         ,DH.SalesEntryKBN
 
-          ,DH.NouhinsyoComment
-          
-          ,DH.InsertOperator
-          ,CONVERT(varchar,DH.InsertDateTime) AS InsertDateTime
-          ,DH.UpdateOperator
-          ,CONVERT(varchar,DH.UpdateDateTime) AS UpdateDateTime
-          ,DH.DeleteOperator
-          ,CONVERT(varchar,DH.DeleteDateTime) AS DeleteDateTime
-          
-          ,DM.SalesRows
-          ,DM.JuchuuNO
-          ,DM.JuchuuRows
-          ,DM.NotPrintFLG
-          ,DM.ShippingNO
-          ,DM.AdminNO
-          ,DM.SKUCD
-          ,DM.JanCD
-          ,DM.SKUName
-          ,DM.ColorName
-          ,DM.SizeName
-          ,DM.SalesSU
-          ,DM.SalesUnitPrice
-          ,DM.TaniCD
-          ,DM.SalesHontaiGaku AS D_SalesHontaiGaku
-          ,DM.SalesTax AS D_SalesTax
-          ,DM.SalesGaku AS D_SalesGaku
-          ,DM.SalesTaxRitsu
-          ,DM.ProperGaku
-          ,DM.DiscountGaku
-          ,DM.CostUnitPrice
-          ,DM.CostGaku AS D_CostGaku
-          ,DM.ProfitGaku AS D_ProfitGaku
-          ,DM.CommentOutStore
-          ,DM.CommentInStore
-          ,DM.IndividualClientName
-          ,DM.DeliveryNoteFLG
-          ,DM.BillingPrintFLG
-          ,DM.PurchaseNO
-          ,DM.PurchaseRows
-          
-          ,DP.VendorCD
-          ,DP.PaymentPlanDate
-          ,DP.PurchaseGaku
-          ,DP.PurchaseTax
-          ,DPM.PurchaserUnitPrice
-          ,DPM.PurchaseGaku AS D_PurchaseGaku
-          ,DC.PaymentMethodCD
-          ,DBM.BillingNO
+         ,DH.NouhinsyoComment
+         
+         ,DH.InsertOperator
+         ,CONVERT(varchar,DH.InsertDateTime) AS InsertDateTime
+         ,DH.UpdateOperator
+         ,CONVERT(varchar,DH.UpdateDateTime) AS UpdateDateTime
+         ,DH.DeleteOperator
+         ,CONVERT(varchar,DH.DeleteDateTime) AS DeleteDateTime
+         
+         ,DM.SalesRows
+         ,DM.JuchuuNO
+         ,DM.JuchuuRows
+         ,DM.NotPrintFLG
+         ,DM.ShippingNO
+         ,DM.AdminNO
+         ,DM.SKUCD
+         ,DM.JanCD
+         ,DM.SKUName
+         ,DM.ColorName
+         ,DM.SizeName
+         ,DM.SalesSU
+         ,DM.SalesUnitPrice
+         ,DM.TaniCD
+         ,DM.SalesHontaiGaku AS D_SalesHontaiGaku
+         ,DM.SalesTax AS D_SalesTax
+         ,DM.SalesGaku AS D_SalesGaku
+         ,DM.SalesTaxRitsu
+         ,DM.ProperGaku
+         ,DM.DiscountGaku
+         ,DM.CostUnitPrice
+         ,DM.CostGaku AS D_CostGaku
+         ,DM.ProfitGaku AS D_ProfitGaku
+         ,DM.CommentOutStore
+         ,DM.CommentInStore
+         ,DM.IndividualClientName
+         ,DM.DeliveryNoteFLG
+         ,DM.BillingPrintFLG
+         ,DM.PurchaseNO
+         ,DM.PurchaseRows
+         
+         ,DP.VendorCD
+         ,(SELECT top 1 M.PayeeCD 
+           FROM M_Vendor AS M 
+           WHERE M.VendorCD = DP.VendorCD 
+           AND M.ChangeDate <= DH.SalesDate
+           AND M.DeleteFlg = 0
+           ORDER BY M.ChangeDate desc) AS PayeeCD
+         ,DP.PaymentPlanDate
+         ,DP.PurchaseGaku
+         ,DP.PurchaseTax
+         ,DPM.PurchaserUnitPrice
+         ,DPM.PurchaseGaku AS D_PurchaseGaku
+         ,DC.PaymentMethodCD
+         ,DBM.BillingNO
 
-      FROM D_Sales DH
+    FROM D_Sales DH
 
-      LEFT OUTER JOIN D_SalesDetails AS DM ON DH.SalesNO = DM.SalesNO AND DM.DeleteDateTime IS NULL
-      LEFT OUTER JOIN D_PurchaseDetails AS DPM ON DPM.PurchaseNO = DM.PurchaseNO AND DPM.PurchaseRows = DM.PurchaseRows AND DPM.DeleteDateTime IS NULL
-      LEFT OUTER JOIN D_Purchase AS DP ON DP.PurchaseNO = DPM.PurchaseNO AND DP.DeleteDateTime IS NULL
-      LEFT OUTER JOIN D_CollectPlan AS DC ON DH.SalesNO = DC.SalesNO AND DC.DeleteDateTime IS NULL
-      LEFT OUTER JOIN D_BillingDetails AS DBM ON DBM.SalesNO = DM.SalesNO
-        AND DBM.SalesRows = DM.SalesRows
-        AND DBM.DeleteDateTime IS NULL
-      WHERE DH.SalesNO = @SalesNO 
+    LEFT OUTER JOIN D_SalesDetails    AS DM  ON DH.SalesNO = DM.SalesNO AND DM.DeleteDateTime IS NULL
+    LEFT OUTER JOIN D_PurchaseDetails AS DPM ON DPM.PurchaseNO = DM.PurchaseNO AND DPM.PurchaseRows = DM.PurchaseRows AND DPM.DeleteDateTime IS NULL
+    LEFT OUTER JOIN D_Purchase        AS DP  ON DP.PurchaseNO = DPM.PurchaseNO AND DP.DeleteDateTime IS NULL
+    LEFT OUTER JOIN D_CollectPlan     AS DC  ON DH.SalesNO = DC.SalesNO AND DC.DeleteDateTime IS NULL
+    LEFT OUTER JOIN D_BillingDetails  AS DBM ON DBM.SalesNO = DM.SalesNO AND DBM.SalesRows = DM.SalesRows AND DBM.DeleteDateTime IS NULL
+    WHERE DH.SalesNO = @SalesNO 
 --              AND DH.DeleteDateTime IS Null
-        ORDER BY DH.SalesNO, DM.SalesRows
-        ;
+    ORDER BY DH.SalesNO, DM.SalesRows
+    ;
 
 END
 
