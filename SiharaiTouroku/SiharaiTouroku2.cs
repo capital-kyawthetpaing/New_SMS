@@ -1000,35 +1000,49 @@ namespace SiharaiTouroku
                             e.Cancel = true;
                             return;
                         }
-                        else if (bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) > 0)
+                        //今回支払額＝0の場合、Error
+                        else if (bbl.Z_Set(inputText) == 0)
                         {
-                            if (bbl.Z_Set(inputText) > bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) - bbl.Z_Set(row.Cells["colPayConfirmGaku"].Value))
-                            {
-                                bbl.ShowMessage("E143", "未支払額", "大きい");
-                                e.Cancel = true;
-                                return;
-                            }
-                            else if (bbl.Z_Set(inputText) < 0)
-                            {
-                                bbl.ShowMessage("E143", "0", "小さい");
-                                e.Cancel = true;
-                                return;
-                            }
+                            bbl.ShowMessage("E108");
+                            e.Cancel = true;
+                            return;
                         }
-                        else if (bbl.Z_Set(row.Cells["colPayPlanGaku"].Value)< 0)
+                        else
                         {
-                            //今回支払額＜未支払額（支払予定額－支払済額）の場合、Error																					
-                            if (bbl.Z_Set(inputText) < bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) - bbl.Z_Set(row.Cells["colPayConfirmGaku"].Value))
+                            //支払予定額＞0の場合、
+                            if (bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) > 0)
                             {
-                                bbl.ShowMessage("E143", "未支払額", "小さい");
-                                e.Cancel = true;
-                                return;
+                                //修正後今回支払額＞修正前今回支払額＋未支払額（支払予定額－支払済額）の場合、Error
+                                if (bbl.Z_Set(inputText) > bbl.Z_Set(row.Cells["colOldKingaku"].Value) + bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) - bbl.Z_Set(row.Cells["colPayConfirmGaku"].Value))
+                                {
+                                    bbl.ShowMessage("E143", "未支払額", "大きい");
+                                    e.Cancel = true;
+                                    return;
+                                }
+                                else if (bbl.Z_Set(inputText) < 0)
+                                {
+                                    bbl.ShowMessage("E109");
+                                    e.Cancel = true;
+                                    return;
+                                }
                             }
-                            else if (bbl.Z_Set(inputText) > 0)
+                            //支払予定額＜0の場合、
+                            else if (bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) < 0)
                             {
-                                bbl.ShowMessage("E241");
-                                e.Cancel = true;
-                                return;
+                                //修正後今回支払額＜修正前今回支払額＋未支払額（支払予定額－支払済額）の場合、Error
+                                if (bbl.Z_Set(inputText) < bbl.Z_Set(row.Cells["colOldKingaku"].Value) + bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) - bbl.Z_Set(row.Cells["colPayConfirmGaku"].Value))
+                                {
+                                    bbl.ShowMessage("E143", "未支払額", "小さい");
+                                    e.Cancel = true;
+                                    return;
+                                }
+                                else if (bbl.Z_Set(inputText) > 0)
+                                {
+                                    bbl.ShowMessage("E241");
+                                    e.Cancel = true;
+                                    return;
+                                }
+
                             }
                         }
                        //未支払額＝支払予定額―支払済額―今回支払額をセット。("未支払額" = "支払予定額"-"支払済額"-"今回支払額" Set the current payment amount.)

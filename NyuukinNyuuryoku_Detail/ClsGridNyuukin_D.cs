@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NyuukinNyuuryoku
+namespace NyuukinNyuuryoku_Detail
 {
 //'明細部を構成するコントロールのTagに 行番号(0～) をセットしてください。
 //'明細部を構成するコントロールのうち TextBoxコントロール以外はカスタムコントロール(MeisaiControl)を使用してください。(Tabの検知のため)
@@ -39,6 +39,7 @@ namespace NyuukinNyuuryoku
             internal string CollectPlanRows;
             internal string WebCollectNO;
             internal string WebCollectType;
+            internal string OldConfirmAmount;      //今回入金額
 
             internal int Update;
         }

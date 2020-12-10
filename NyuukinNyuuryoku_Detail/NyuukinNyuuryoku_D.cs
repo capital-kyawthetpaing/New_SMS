@@ -13,14 +13,14 @@ using Search;
 using GridBase;
 using Search_Nyuukinmoto;
 
-namespace NyuukinNyuuryoku
+namespace NyuukinNyuuryoku_Detail
 {
     /// <summary>
     /// NyuukinNyuuryoku 入金入力（明細単位）
     /// </summary>
     internal partial class NyuukinNyuuryoku_Detail : FrmMainForm
     {
-        private const string ProID = "NyuukinNyuuryoku";
+        private const string ProID = "NyuukinNyuuryoku_Detail";
         private const string ProNm = "入金入力（明細単位）";
         private const short mc_L_END = 3; // ロック用
 
@@ -1320,7 +1320,7 @@ namespace NyuukinNyuuryoku
                             detailControls[(int)EIndex.NyukinGaku].Text = "0";
                             lblKin1.Text = "0";
                         }
-                        lblKin1.Text = bbl.Z_SetStr(dtDetail.Rows[0]["SumConfirmAmount"]);
+                        //lblKin1.Text = bbl.Z_SetStr(dtDetail.Rows[0]["SumConfirmAmount"]);
                     }
                     detailControls[(int)EIndex.FeeDeduction].Text = "0";
                     detailControls[(int)EIndex.Deduction1].Text = "0";
@@ -1468,6 +1468,12 @@ namespace NyuukinNyuuryoku
                         {
                             mGrid.g_DArray[i].Chk = true;
                             mGrid.g_DArray[i].ConfirmAmount = bbl.Z_SetStr(row["ConfirmAmount"]);   //今回入金額
+
+                            if (OperationMode == EOperationMode.INSERT)
+                                mGrid.g_DArray[i].OldConfirmAmount = "0";
+                            else
+                                mGrid.g_DArray[i].OldConfirmAmount = bbl.Z_SetStr(row["OldConfirmAmount"]);   //修正前今回入金額
+
                             detailControls[(int)EIndex.NyukinGaku].Text = bbl.Z_SetStr(bbl.Z_Set(detailControls[(int)EIndex.NyukinGaku].Text) + bbl.Z_Set(row["ConfirmAmount"]));                            
                             lblKin1.Text = detailControls[(int)EIndex.NyukinGaku].Text;
                         }
@@ -1489,6 +1495,12 @@ namespace NyuukinNyuuryoku
                         {
                             mGrid.g_DArray[i].Chk = true;
                             mGrid.g_DArray[i].ConfirmAmount = bbl.Z_SetStr(row["ConfirmAmount"]);   //今回入金額
+
+                            if (OperationMode == EOperationMode.INSERT)
+                                mGrid.g_DArray[i].OldConfirmAmount = "0";
+                            else
+                                mGrid.g_DArray[i].OldConfirmAmount = bbl.Z_SetStr(row["OldConfirmAmount"]);   //修正前今回入金額
+
                             detailControls[(int)EIndex.NyukinGaku].Text = bbl.Z_SetStr(bbl.Z_Set(detailControls[(int)EIndex.NyukinGaku].Text) + bbl.Z_Set(row["ConfirmAmount"]));
                             lblKin1.Text = detailControls[(int)EIndex.NyukinGaku].Text;
                         }
@@ -1510,6 +1522,11 @@ namespace NyuukinNyuuryoku
                     {
                         mGrid.g_DArray[i].Chk = true;
                         mGrid.g_DArray[i].ConfirmAmount = bbl.Z_SetStr(row["NowCollectAmount"]);   //今回入金額
+
+                        if (OperationMode == EOperationMode.INSERT)
+                            mGrid.g_DArray[i].OldConfirmAmount = "0";
+                        else
+                            mGrid.g_DArray[i].OldConfirmAmount = bbl.Z_SetStr(row["OldConfirmAmount"]);   //修正前今回入金額
                     }
                     mGrid.g_DArray[i].BillingDate = row["BillingCloseDate"].ToString();
                     mGrid.g_DArray[i].BillingNo = row["BillingNo"].ToString();
@@ -2056,6 +2073,8 @@ namespace NyuukinNyuuryoku
                             return false;
                         }
                     }
+                    //今回入金額＞未入金額(明細の請求額－入金済額)の場合、Error
+                    //if (bbl.Z_Set(mGrid.g_DArray[row].ConfirmAmount) > bbl.Z_Set(mGrid.g_DArray[row].BillingGaku)- bbl.Z_Set(mGrid.g_DArray[row].CollectAmount)) //今回入金額＞未入金額の場合、Error
                     //今回入金額＞未入金額の場合、Error
                     if (bbl.Z_Set(mGrid.g_DArray[row].ConfirmAmount) > bbl.Z_Set(mGrid.g_DArray[row].Minyukin))
                     {

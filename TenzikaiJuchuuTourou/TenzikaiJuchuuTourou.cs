@@ -3186,8 +3186,10 @@ namespace TenzikaiJuchuuTourou
             {
                 tkb = new TenjikaiJuuChuu_BL();
                 var dt = ConvertToDataTable(openFileDialog1.FileName);
-                if (dt == null)
+
+                if (dt == null || CheckMasterandDate(dt))
                 {
+                    bbl.ShowMessage("E269");
                     return;
                 }
                 tje = new Tenjikai_Entity
@@ -3210,6 +3212,40 @@ namespace TenzikaiJuchuuTourou
                 scjan_1.Focus();
                 //SelectNextControl(ActiveControl, true, true, true, true);
             }
+        }
+        public bool CheckMasterandDate(DataTable dt)
+        {
+            var DateAllowed = AllowDate();
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (!DateAllowed.Contains(dr["販売予定日"].ToString()))
+                {
+                    return true;
+                }
+            }
+            var xml = bbl.DataTableToXml(dt);
+            tkb = new TenjikaiJuuChuu_BL();
+            var mcheck = tkb.CheckMaster(xml).Rows.Count == dt.Rows.Count;
+            if (!mcheck)
+                return true;
+            return false;
+        }
+        private List<string> AllowDate()
+        {
+            List<string> lst = new List<string>();
+            for (int i = 0; i < 12; i++)
+            {
+                lst.Add((i + 1).ToString() + "月上旬");
+            }
+            for (int i = 0; i < 12; i++)
+            {
+                lst.Add((i + 1).ToString() + "月中旬");
+            }
+            for (int i = 0; i < 12; i++)
+            {
+                lst.Add((i + 1).ToString() + "月下旬");
+            }
+            return lst;
         }
         private void MesaiHyouJi(DataTable dt)
         {
@@ -3285,7 +3321,14 @@ namespace TenzikaiJuchuuTourou
                 MessageBox.Show("No Data Exist");
                 return null;
             }
-
+            foreach (DataRow dr in res.Rows)
+            {
+                if (dr["仮JANCD"].ToString() == "" || string.IsNullOrEmpty(dr["仮JANCD"].ToString()))
+                {
+                    dr.Delete();
+                }
+            }
+            res.AcceptChanges();
             return res;
 
         }

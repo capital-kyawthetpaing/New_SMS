@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace NyuukinNyuuryoku
+namespace NyuukinNyuuryoku_Detail
 {
     static class Program
     {

@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 using BL;
 using Entity;
 using Base.Client;
-using Search;
-using GridBase;
 
 namespace NyuukinNyuuryoku
 {
@@ -145,8 +139,38 @@ namespace NyuukinNyuuryoku
                 nnbl.ShowMessage("E128");
             }
         }
+        //// 外部プロセスのウィンドウを起動する
+        //public static void WakeupWindow(IntPtr hWnd)
+        //{
+        //    // メイン・ウィンドウが最小化されていれば元に戻す
+        //    if (IsIconic(hWnd))
+        //    {
+        //        ShowWindowAsync(hWnd, SW_RESTORE);
+        //    }
+
+        //    // メイン・ウィンドウを最前面に表示する
+        //    SetForegroundWindow(hWnd);
+        //}
+        //// 外部プロセスのメイン・ウィンドウを起動するためのWin32 API
+        //[DllImport("user32.dll")]
+        //private static extern bool SetForegroundWindow(IntPtr hWnd);
+        //[DllImport("user32.dll")]
+        //private static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
+        //[DllImport("user32.dll")]
+        //private static extern bool IsIconic(IntPtr hWnd);
+        //// ShowWindowAsync関数のパラメータに渡す定義値
+        //private const int SW_RESTORE = 9;  // 画面を元の大きさに戻す
+
         protected override void ExecSec()
         {
+            System.Diagnostics.Process[] hProcesses = System.Diagnostics.Process.GetProcessesByName("NyuukinNyuuryoku_Detail");
+            if (hProcesses.Length > 0)
+            {
+                //SetForegroundWindow(hProcesses[0].MainWindowHandle);
+                Microsoft.VisualBasic.Interaction.AppActivate(hProcesses[0].Id);
+                return;
+            }
+        
             //新規モードで売上単位画面を表示					
             //EXEが存在しない時ｴﾗｰ
             // 実行モジュールと同一フォルダのファイルを取得

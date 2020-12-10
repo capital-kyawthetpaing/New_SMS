@@ -8,7 +8,7 @@
     <ProjectGuid>{5833DE6A-0728-46E3-B16F-46C4B95D8498}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NyuukinNyuuryoku</RootNamespace>
+    <RootNamespace>NyuukinNyuuryoku_Detail</RootNamespace>
     <AssemblyName>NyuukinNyuuryoku_Detail</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileUpgradeFlags>
@@ -60,7 +60,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>NyuukinNyuuryoku.Program</StartupObject>
+    <StartupObject>NyuukinNyuuryoku_Detail.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GridBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
