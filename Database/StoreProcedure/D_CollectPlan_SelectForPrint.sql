@@ -30,28 +30,30 @@ BEGIN
     BEGIN
         SELECT DH.StoreCD
               ,(SELECT top 1 A.StoreName
-              FROM M_Store A 
-              WHERE A.StoreCD = DH.StoreCD AND A.ChangeDate <= DH.NextCollectPlanDate
-                        AND A.DeleteFlg = 0
-              ORDER BY A.ChangeDate desc) AS StoreName
+                FROM M_Store A 
+                WHERE A.StoreCD = DH.StoreCD AND A.ChangeDate <= DH.NextCollectPlanDate
+                AND A.DeleteFlg = 0
+                ORDER BY A.ChangeDate desc) AS StoreName
               ,(SELECT TOP 1 A.StaffCD
-                        FROM M_Customer AS A
-                        WHERE A.CustomerCD = DH.CustomerCD AND A.ChangeDate <= DH.NextCollectPlanDate 
-                        AND A.DeleteFlg = 0
-                        ORDER BY A.ChangeDate DESC) AS StaffCD
+                FROM M_Customer AS A
+                WHERE A.CustomerCD = DH.CustomerCD AND A.ChangeDate <= DH.NextCollectPlanDate 
+                AND A.DeleteFlg = 0
+                ORDER BY A.ChangeDate DESC) AS StaffCD
               ,(SELECT TOP 1 B.StaffName
-                        FROM M_Customer AS A
-                        LEFT OUTER JOIN M_Staff AS B
-                        ON B.StaffCD = A.StaffCD
-                        AND B.ChangeDate <= DH.NextCollectPlanDate
-                        WHERE A.CustomerCD = DH.CustomerCD AND A.ChangeDate <= DH.NextCollectPlanDate 
-                        AND A.DeleteFlg = 0
-                        ORDER BY A.ChangeDate DESC) AS StaffName
+                FROM M_Staff AS B
+                WHERE B.StaffCD = (SELECT TOP 1 A.StaffCD
+                                   FROM M_Customer AS A
+                                   WHERE A.CustomerCD = DH.CustomerCD AND A.ChangeDate <= DH.NextCollectPlanDate 
+                                   AND A.DeleteFlg = 0
+                                   ORDER BY A.ChangeDate DESC)
+                AND B.ChangeDate <= DH.NextCollectPlanDate
+                AND B.DeleteFlg = 0
+                ORDER BY B.ChangeDate DESC) AS StaffName
 
               ,CONVERT(varchar,DH.NextCollectPlanDate,111) AS NextCollectPlanDate   --“ü‹à—\’è“ú
     --          ,‰º‹L“ü‹à“úiNULL‚ÌŽž‚Ítoday)|NextCollectPlanDate  Œ‹‰Ê„‚O‚ÌŽž‚Ì‚Ý•\Ž¦ --’x‰„“ú”
-                ,(CASE WHEN DH.NextCollectPlanDate < ISNULL(A.CollectDate, CONVERT(date, SYSDATETIME())) THEN
-                     CONVERT(varchar, DATEDIFF(day, DH.NextCollectPlanDate, ISNULL(A.CollectDate, CONVERT(date, SYSDATETIME())))) 
+              ,(CASE WHEN DH.NextCollectPlanDate < ISNULL(A.CollectDate, CONVERT(date, SYSDATETIME())) THEN
+                          CONVERT(varchar, DATEDIFF(day, DH.NextCollectPlanDate, ISNULL(A.CollectDate, CONVERT(date, SYSDATETIME())))) 
                      ELSE NULL END) AS DelayDays
               ,DH.JuchuuNO
               ,DH.SalesNO
@@ -66,10 +68,10 @@ BEGIN
 
               ,DB.BillingCustomerCD
               ,(SELECT TOP 1 A.CustomerName
-                        FROM M_Customer AS A
-                        WHERE A.CustomerCD = DH.CustomerCD AND A.ChangeDate <= DH.NextCollectPlanDate 
-                        AND A.DeleteFlg = 0
-                        ORDER BY A.ChangeDate DESC) AS CustomerName
+                FROM M_Customer AS A
+                WHERE A.CustomerCD = DH.CustomerCD AND A.ChangeDate <= DH.NextCollectPlanDate 
+                AND A.DeleteFlg = 0
+                ORDER BY A.ChangeDate DESC) AS CustomerName
                         
               ,DSD.SKUCD
               ,DSD.SKUName
@@ -81,9 +83,10 @@ BEGIN
             ON DS.SalesNO = DH.SalesNO
             LEFT OUTER JOIN D_Billing DB
             ON DB.BillingNO = DH.BillingNO
-            LEFT OUTER JOIN (SELECT A.CollectPlanNO, MIN(A.ConfirmNO) AS ConfirmNO
-                            FROM D_CollectBilling A 
-                            GROUP BY A.CollectPlanNO) AS DC
+            LEFT OUTER JOIN (SELECT A.CollectPlanNO
+                                  , MIN(A.ConfirmNO) AS ConfirmNO
+                             FROM D_CollectBilling A 
+                             GROUP BY A.CollectPlanNO) AS DC
             ON DC.CollectPlanNO = DH.CollectPlanNO
             LEFT OUTER JOIN D_PaymentConfirm DP
             ON DP.ConfirmNO = DC.ConfirmNO
@@ -96,34 +99,37 @@ BEGIN
             
             --ƒTƒuƒNƒGƒŠi¦Ac‰ñŽû—\’è”Ô†’PˆÊ‚Ì“ü‹à”Ô†AÁžÏ‚ÝŠz‚ðŽæ“¾)
 --            LEFT OUTER JOIN (SELECT DH.CollectPlanNO, SUM(ISNULL(DB.CollectGaku,0)) AS CollectGaku	2019.10.23 chg
-            LEFT OUTER JOIN (SELECT DH.CollectPlanNO, SUM(ISNULL(DB.CollectAmount,0)) AS CollectGaku
-                ,MIN(DP.CollectNO) AS CollectNO, MIN(DC.CollectDate) AS CollectDate
-                from D_CollectPlan DH
-                LEFT OUTER JOIN D_CollectBilling AS DB
-                ON DB.CollectPlanNO = DH.CollectPlanNO
-                AND DB.DeleteDateTime IS NULL
-                LEFT OUTER JOIN D_PaymentConfirm DP
-                ON DP.ConfirmNO = DB.ConfirmNO
-                AND DP.DeleteDateTime IS NULL
-                LEFT OUTER JOIN D_Collect AS DC
-                ON DC.CollectNO = DP.CollectNO
-                AND DC.DeleteDateTime IS NULL
-                GROUP BY DH.CollectPlanNO
+            LEFT OUTER JOIN (SELECT DH.CollectPlanNO
+                                   ,SUM(ISNULL(DB.CollectAmount,0)) AS CollectGaku
+                                   ,MIN(DP.CollectNO) AS CollectNO
+                                   ,MIN(DC.CollectDate) AS CollectDate
+                             from D_CollectPlan DH
+                             LEFT OUTER JOIN D_CollectBilling AS DB
+                             ON DB.CollectPlanNO = DH.CollectPlanNO
+                             AND DB.DeleteDateTime IS NULL
+                             LEFT OUTER JOIN D_PaymentConfirm DP
+                             ON DP.ConfirmNO = DB.ConfirmNO
+                             AND DP.DeleteDateTime IS NULL
+                             LEFT OUTER JOIN D_Collect AS DC
+                             ON DC.CollectNO = DP.CollectNO
+                             AND DC.DeleteDateTime IS NULL
+                             GROUP BY DH.CollectPlanNO
             ) AS A
             ON A.CollectPlanNO = DH.CollectPlanNO
 
             WHERE DH.NextCollectPlanDate >= (CASE WHEN @DateFrom <> '' THEN CONVERT(DATE, @DateFrom) ELSE DH.NextCollectPlanDate END)
-            AND DH.NextCollectPlanDate <= (CASE WHEN @DateTo <> '' THEN CONVERT(DATE, @DateTo) ELSE DH.NextCollectPlanDate END)
+            AND DH.NextCollectPlanDate   <= (CASE WHEN @DateTo <> ''   THEN CONVERT(DATE, @DateTo)   ELSE DH.NextCollectPlanDate END)
             AND DH.StoreCD = @StoreCD
             AND DH.CustomerCD = (CASE WHEN @CustomerCD <> '' THEN @CustomerCD ELSE DH.CustomerCD END)
 
             AND DH.DeleteDateTime IS NULL
             AND EXISTS(SELECT A.StaffCD
-                        FROM M_Customer AS A
-                        WHERE A.CustomerCD = DH.CustomerCD AND A.ChangeDate <= DH.NextCollectPlanDate 
-                        AND A.DeleteFlg = 0
-                        AND A.StaffCD = (CASE WHEN @StaffCD <> '' THEN @StaffCD ELSE A.StaffCD END)
-                        )
+                       FROM M_Customer AS A
+                       WHERE A.CustomerCD = DH.CustomerCD 
+                       AND A.ChangeDate <= DH.NextCollectPlanDate 
+                       AND A.DeleteFlg = 0
+                       AND A.StaffCD = (CASE WHEN @StaffCD <> '' THEN @StaffCD ELSE A.StaffCD END)
+                       )
             AND DH.InvalidFLG = 0
             AND DH.BillingType = 2
 
@@ -134,28 +140,33 @@ BEGIN
     BEGIN
         SELECT DH.StoreCD
               ,(SELECT top 1 A.StoreName
-              FROM M_Store A 
-              WHERE A.StoreCD = DH.StoreCD AND A.ChangeDate <= DH.NextCollectPlanDate
-                        AND A.DeleteFlg = 0
+                FROM M_Store A 
+                WHERE A.StoreCD = DH.StoreCD 
+                AND A.ChangeDate <= DH.NextCollectPlanDate
+                AND A.DeleteFlg = 0
               ORDER BY A.ChangeDate desc) AS StoreName
               ,(SELECT TOP 1 A.StaffCD
-                        FROM M_Customer AS A
-                        WHERE A.CustomerCD = DH.CustomerCD AND A.ChangeDate <= DH.NextCollectPlanDate 
-                        AND A.DeleteFlg = 0
-                        ORDER BY A.ChangeDate DESC) AS StaffCD
+                FROM M_Customer AS A
+                WHERE A.CustomerCD = DH.CustomerCD 
+                AND A.ChangeDate <= DH.NextCollectPlanDate 
+                AND A.DeleteFlg = 0
+                ORDER BY A.ChangeDate DESC) AS StaffCD
               ,(SELECT TOP 1 B.StaffName
-                        FROM M_Customer AS A
-                        LEFT OUTER JOIN M_Staff AS B
-                        ON B.StaffCD = A.StaffCD
-                        AND B.ChangeDate <= DH.NextCollectPlanDate
-                        WHERE A.CustomerCD = DH.CustomerCD AND A.ChangeDate <= DH.NextCollectPlanDate 
-                        AND A.DeleteFlg = 0
-                        ORDER BY A.ChangeDate DESC) AS StaffName
-
+                FROM M_Staff AS B
+                WHERE B.StaffCD = (SELECT TOP 1 A.StaffCD
+                                   FROM M_Customer AS A
+                                   WHERE A.CustomerCD = DH.CustomerCD 
+                                   AND A.ChangeDate <= DH.NextCollectPlanDate 
+                                   AND A.DeleteFlg = 0
+                                   ORDER BY A.ChangeDate DESC)
+                AND B.ChangeDate <= DH.NextCollectPlanDate
+                AND B.DeleteFlg = 0
+                ORDER BY B.ChangeDate DESC) AS StaffName
+                
               ,CONVERT(varchar,DH.NextCollectPlanDate,111) AS NextCollectPlanDate   --“ü‹à—\’è“ú
     --          ,‰º‹L“ü‹à“úiNULL‚ÌŽž‚Ítoday)|NextCollectPlanDate  Œ‹‰Ê„‚O‚ÌŽž‚Ì‚Ý•\Ž¦ --’x‰„“ú”
-                ,(CASE WHEN DH.NextCollectPlanDate < ISNULL(A.CollectDate, CONVERT(date, SYSDATETIME())) THEN
-                     CONVERT(varchar, DATEDIFF(day, DH.NextCollectPlanDate, ISNULL(A.CollectDate, CONVERT(date, SYSDATETIME())))) 
+              ,(CASE WHEN DH.NextCollectPlanDate < ISNULL(A.CollectDate, CONVERT(date, SYSDATETIME())) THEN
+                          CONVERT(varchar, DATEDIFF(day, DH.NextCollectPlanDate, ISNULL(A.CollectDate, CONVERT(date, SYSDATETIME())))) 
                      ELSE NULL END) AS DelayDays
               ,DH.JuchuuNO
               ,DH.SalesNO
@@ -170,15 +181,15 @@ BEGIN
                 
               ,DB.BillingCustomerCD
               ,(SELECT TOP 1 A.CustomerName
-                        FROM M_Customer AS A
-                        WHERE A.CustomerCD = DH.CustomerCD AND A.ChangeDate <= DH.NextCollectPlanDate 
-                        AND A.DeleteFlg = 0
-                        ORDER BY A.ChangeDate DESC) AS CustomerName
+                FROM M_Customer AS A
+                WHERE A.CustomerCD = DH.CustomerCD AND A.ChangeDate <= DH.NextCollectPlanDate 
+                AND A.DeleteFlg = 0
+                ORDER BY A.ChangeDate DESC) AS CustomerName
                         
               ,NULL SKUCD
               ,NULL SKUName
               ,DH.PaymentProgressKBN
-			  ,@DetailOn AS DetailOn
+              ,@DetailOn AS DetailOn
 
             from D_CollectPlan DH
             LEFT OUTER JOIN D_Sales DS
@@ -186,42 +197,45 @@ BEGIN
             LEFT OUTER JOIN D_Billing DB
             ON DB.BillingNO = DH.BillingNO
             LEFT OUTER JOIN (SELECT A.CollectPlanNO, MIN(A.ConfirmNO) AS ConfirmNO
-                            FROM D_CollectBilling A 
-                            GROUP BY A.CollectPlanNO) AS DC
+                             FROM D_CollectBilling A 
+                             GROUP BY A.CollectPlanNO) AS DC
             ON DC.CollectPlanNO = DH.CollectPlanNO
             LEFT OUTER JOIN D_PaymentConfirm DP
             ON DP.ConfirmNO = DC.ConfirmNO
 
             --ƒTƒuƒNƒGƒŠi¦Ac‰ñŽû—\’è”Ô†’PˆÊ‚Ì“ü‹à”Ô†AÁžÏ‚ÝŠz‚ðŽæ“¾)
 --            LEFT OUTER JOIN (SELECT DH.CollectPlanNO, SUM(ISNULL(DB.CollectGaku,0)) AS CollectGaku	2019.10.23 chg
-            LEFT OUTER JOIN (SELECT DH.CollectPlanNO, SUM(ISNULL(DB.CollectAmount,0)) AS CollectGaku
-                ,MIN(DP.CollectNO) AS CollectNO, MIN(DC.CollectDate) AS CollectDate
-                from D_CollectPlan DH
-                LEFT OUTER JOIN D_CollectBilling AS DB
-                ON DB.CollectPlanNO = DH.CollectPlanNO
-                AND DB.DeleteDateTime IS NULL
-                LEFT OUTER JOIN D_PaymentConfirm DP
-                ON DP.ConfirmNO = DB.ConfirmNO
-                AND DP.DeleteDateTime IS NULL
-                LEFT OUTER JOIN D_Collect AS DC
-                ON DC.CollectNO = DP.CollectNO
-                AND DC.DeleteDateTime IS NULL
-                GROUP BY DH.CollectPlanNO
+            LEFT OUTER JOIN (SELECT DH.CollectPlanNO
+                                   ,SUM(ISNULL(DB.CollectAmount,0)) AS CollectGaku
+                                   ,MIN(DP.CollectNO) AS CollectNO
+                                   ,MIN(DC.CollectDate) AS CollectDate
+                             from D_CollectPlan DH
+                             LEFT OUTER JOIN D_CollectBilling AS DB
+                             ON DB.CollectPlanNO = DH.CollectPlanNO
+                             AND DB.DeleteDateTime IS NULL
+                             LEFT OUTER JOIN D_PaymentConfirm DP
+                             ON DP.ConfirmNO = DB.ConfirmNO
+                             AND DP.DeleteDateTime IS NULL
+                             LEFT OUTER JOIN D_Collect AS DC
+                             ON DC.CollectNO = DP.CollectNO
+                             AND DC.DeleteDateTime IS NULL
+                             GROUP BY DH.CollectPlanNO
             ) AS A
             ON A.CollectPlanNO = DH.CollectPlanNO
             
             WHERE DH.NextCollectPlanDate >= (CASE WHEN @DateFrom <> '' THEN CONVERT(DATE, @DateFrom) ELSE DH.NextCollectPlanDate END)
-            AND DH.NextCollectPlanDate <= (CASE WHEN @DateTo <> '' THEN CONVERT(DATE, @DateTo) ELSE DH.NextCollectPlanDate END)
+            AND DH.NextCollectPlanDate   <= (CASE WHEN @DateTo <> ''   THEN CONVERT(DATE, @DateTo)   ELSE DH.NextCollectPlanDate END)
             AND DH.StoreCD = @StoreCD
             AND DH.CustomerCD = (CASE WHEN @CustomerCD <> '' THEN @CustomerCD ELSE DH.CustomerCD END)
 
             AND DH.DeleteDateTime IS NULL
             AND EXISTS(SELECT A.StaffCD
-                        FROM M_Customer AS A
-                        WHERE A.CustomerCD = DH.CustomerCD AND A.ChangeDate <= DH.NextCollectPlanDate 
-                        AND A.DeleteFlg = 0
-                        AND A.StaffCD = (CASE WHEN @StaffCD <> '' THEN @StaffCD ELSE A.StaffCD END)
-                        )
+                       FROM M_Customer AS A
+                       WHERE A.CustomerCD = DH.CustomerCD 
+                       AND A.ChangeDate <= DH.NextCollectPlanDate 
+                       AND A.DeleteFlg = 0
+                       AND A.StaffCD = (CASE WHEN @StaffCD <> '' THEN @StaffCD ELSE A.StaffCD END)
+                       )
             AND DH.InvalidFLG = 0
             AND DH.BillingType = 2
 

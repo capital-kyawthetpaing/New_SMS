@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Search_TempoUriageNO));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -37,14 +38,6 @@
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
             this.CboStoreCD = new CKM_Controls.CKM_ComboBox();
             this.GvDetail = new CKM_Controls.CKM_GridView();
-            this.colSalesNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colChangeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCustomerName2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStaffName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSalesGaku = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSKUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox2 = new CKM_Controls.CKM_TextBox();
@@ -54,6 +47,14 @@
             this.btnSubF11 = new CKM_Controls.CKM_Button();
             this.ScStaff = new Search.CKM_SearchControl();
             this.ScCustomer = new Search.CKM_SearchControl();
+            this.colSalesNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colChangeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCustomerName2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStaffName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSalesGaku = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSKUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvDetail)).BeginInit();
             this.SuspendLayout();
@@ -147,6 +148,7 @@
             this.GvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GvDetail.AutoGenerateColumns = false;
             this.GvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.GvDetail.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("GvDetail.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
@@ -178,86 +180,20 @@
             this.GvDetail.Location = new System.Drawing.Point(9, 179);
             this.GvDetail.Name = "GvDetail";
             this.GvDetail.ReadOnly = true;
-            this.GvDetail.Size = new System.Drawing.Size(1031, 369);
+            this.GvDetail.RowHeight_ = 20;
+            this.GvDetail.Size = new System.Drawing.Size(1043, 369);
             this.GvDetail.TabIndex = 2;
             this.GvDetail.UseRowNo = true;
             this.GvDetail.UseSetting = true;
             this.GvDetail.DoubleClick += new System.EventHandler(this.GvDetail_DoubleClick);
             this.GvDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvDetail_KeyDown);
             // 
-            // colSalesNO
-            // 
-            this.colSalesNO.DataPropertyName = "SalesNO";
-            this.colSalesNO.HeaderText = "売上番号";
-            this.colSalesNO.Name = "colSalesNO";
-            this.colSalesNO.ReadOnly = true;
-            this.colSalesNO.Width = 80;
-            // 
-            // colChangeDate
-            // 
-            this.colChangeDate.DataPropertyName = "SalesDate";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colChangeDate.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colChangeDate.HeaderText = "売上日";
-            this.colChangeDate.Name = "colChangeDate";
-            this.colChangeDate.ReadOnly = true;
-            this.colChangeDate.Width = 80;
-            // 
-            // colCustomer
-            // 
-            this.colCustomer.DataPropertyName = "CustomerCD";
-            this.colCustomer.HeaderText = "顧客";
-            this.colCustomer.Name = "colCustomer";
-            this.colCustomer.ReadOnly = true;
-            this.colCustomer.Width = 80;
-            // 
-            // colCustomerName
-            // 
-            this.colCustomerName.DataPropertyName = "CustomerName";
-            this.colCustomerName.HeaderText = "　";
-            this.colCustomerName.Name = "colCustomerName";
-            this.colCustomerName.ReadOnly = true;
-            this.colCustomerName.Width = 150;
-            // 
-            // colCustomerName2
-            // 
-            this.colCustomerName2.DataPropertyName = "CustomerName2";
-            this.colCustomerName2.HeaderText = " ";
-            this.colCustomerName2.Name = "colCustomerName2";
-            this.colCustomerName2.ReadOnly = true;
-            // 
-            // colStaffName
-            // 
-            this.colStaffName.DataPropertyName = "StaffName";
-            this.colStaffName.HeaderText = "担当スタッフ";
-            this.colStaffName.Name = "colStaffName";
-            this.colStaffName.ReadOnly = true;
-            // 
-            // colSalesGaku
-            // 
-            this.colSalesGaku.DataPropertyName = "SalesGaku";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "C0";
-            dataGridViewCellStyle4.NullValue = null;
-            this.colSalesGaku.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colSalesGaku.HeaderText = "売上額";
-            this.colSalesGaku.Name = "colSalesGaku";
-            this.colSalesGaku.ReadOnly = true;
-            this.colSalesGaku.Width = 60;
-            // 
-            // colSKUName
-            // 
-            this.colSKUName.DataPropertyName = "SKUName";
-            this.colSKUName.HeaderText = "商品";
-            this.colSKUName.Name = "colSKUName";
-            this.colSKUName.ReadOnly = true;
-            this.colSKUName.Width = 350;
-            // 
             // ckM_TextBox1
             // 
             this.ckM_TextBox1.AllowMinus = false;
             this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
+            this.ckM_TextBox1.BorderColor = false;
             this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ckM_TextBox1.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -268,6 +204,7 @@
             this.ckM_TextBox1.IntegerPart = 0;
             this.ckM_TextBox1.IsCorrectDate = true;
             this.ckM_TextBox1.isEnterKeyDown = false;
+            this.ckM_TextBox1.IsFirstTime = true;
             this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
@@ -280,6 +217,7 @@
             this.ckM_TextBox1.TabIndex = 0;
             this.ckM_TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_TextBox1.UseColorSizMode = false;
             // 
             // ckM_Label8
             // 
@@ -303,6 +241,7 @@
             this.ckM_TextBox2.AllowMinus = false;
             this.ckM_TextBox2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox2.BackColor = System.Drawing.Color.White;
+            this.ckM_TextBox2.BorderColor = false;
             this.ckM_TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ckM_TextBox2.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -313,6 +252,7 @@
             this.ckM_TextBox2.IntegerPart = 0;
             this.ckM_TextBox2.IsCorrectDate = true;
             this.ckM_TextBox2.isEnterKeyDown = false;
+            this.ckM_TextBox2.IsFirstTime = true;
             this.ckM_TextBox2.isMaxLengthErr = false;
             this.ckM_TextBox2.IsNumber = true;
             this.ckM_TextBox2.IsShop = false;
@@ -325,6 +265,7 @@
             this.ckM_TextBox2.TabIndex = 1;
             this.ckM_TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_TextBox2.UseColorSizMode = false;
             // 
             // label9
             // 
@@ -360,6 +301,7 @@
             this.ckM_CustomerName.AllowMinus = false;
             this.ckM_CustomerName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_CustomerName.BackColor = System.Drawing.Color.White;
+            this.ckM_CustomerName.BorderColor = false;
             this.ckM_CustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ckM_CustomerName.ClientColor = System.Drawing.Color.White;
             this.ckM_CustomerName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
@@ -370,6 +312,7 @@
             this.ckM_CustomerName.IntegerPart = 0;
             this.ckM_CustomerName.IsCorrectDate = true;
             this.ckM_CustomerName.isEnterKeyDown = false;
+            this.ckM_CustomerName.IsFirstTime = true;
             this.ckM_CustomerName.isMaxLengthErr = false;
             this.ckM_CustomerName.IsNumber = true;
             this.ckM_CustomerName.IsShop = false;
@@ -382,6 +325,7 @@
             this.ckM_CustomerName.TabIndex = 5;
             this.ckM_CustomerName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.ckM_CustomerName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_CustomerName.UseColorSizMode = false;
             this.ckM_CustomerName.Visible = false;
             // 
             // btnSubF11
@@ -409,7 +353,8 @@
             this.ScStaff.ChangeDate = "";
             this.ScStaff.ChangeDateWidth = 100;
             this.ScStaff.Code = "";
-            this.ScStaff.CodeWidth = 100;
+            this.ScStaff.CodeWidth = 70;
+            this.ScStaff.CodeWidth1 = 70;
             this.ScStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStaff.DataCheck = false;
             this.ScStaff.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -420,11 +365,12 @@
             this.ScStaff.Location = new System.Drawing.Point(106, 42);
             this.ScStaff.Margin = new System.Windows.Forms.Padding(0);
             this.ScStaff.Name = "ScStaff";
-            this.ScStaff.NameWidth = 210;
+            this.ScStaff.NameWidth = 250;
             this.ScStaff.SearchEnable = true;
-            this.ScStaff.Size = new System.Drawing.Size(344, 28);
+            this.ScStaff.Size = new System.Drawing.Size(354, 28);
             this.ScStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.ScStaff.TabIndex = 3;
+            this.ScStaff.test = null;
             this.ScStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScStaff.UseChangeDate = false;
             this.ScStaff.Value1 = null;
@@ -438,6 +384,7 @@
             this.ScCustomer.ChangeDateWidth = 100;
             this.ScCustomer.Code = "";
             this.ScCustomer.CodeWidth = 100;
+            this.ScCustomer.CodeWidth1 = 100;
             this.ScCustomer.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCustomer.DataCheck = true;
             this.ScCustomer.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -453,11 +400,80 @@
             this.ScCustomer.Size = new System.Drawing.Size(634, 28);
             this.ScCustomer.Stype = Search.CKM_SearchControl.SearchType.得意先;
             this.ScCustomer.TabIndex = 4;
+            this.ScCustomer.test = null;
             this.ScCustomer.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCustomer.UseChangeDate = false;
             this.ScCustomer.Value1 = null;
             this.ScCustomer.Value2 = null;
             this.ScCustomer.Value3 = null;
+            // 
+            // colSalesNO
+            // 
+            this.colSalesNO.DataPropertyName = "SalesNO";
+            this.colSalesNO.HeaderText = "売上番号";
+            this.colSalesNO.Name = "colSalesNO";
+            this.colSalesNO.ReadOnly = true;
+            this.colSalesNO.Width = 80;
+            // 
+            // colChangeDate
+            // 
+            this.colChangeDate.DataPropertyName = "SalesDate";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colChangeDate.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colChangeDate.HeaderText = "売上日";
+            this.colChangeDate.Name = "colChangeDate";
+            this.colChangeDate.ReadOnly = true;
+            this.colChangeDate.Width = 80;
+            // 
+            // colCustomer
+            // 
+            this.colCustomer.DataPropertyName = "CustomerCD";
+            this.colCustomer.HeaderText = "顧客";
+            this.colCustomer.Name = "colCustomer";
+            this.colCustomer.ReadOnly = true;
+            // 
+            // colCustomerName
+            // 
+            this.colCustomerName.DataPropertyName = "CustomerName";
+            this.colCustomerName.HeaderText = "　";
+            this.colCustomerName.Name = "colCustomerName";
+            this.colCustomerName.ReadOnly = true;
+            this.colCustomerName.Width = 150;
+            // 
+            // colCustomerName2
+            // 
+            this.colCustomerName2.DataPropertyName = "CustomerName2";
+            this.colCustomerName2.HeaderText = " ";
+            this.colCustomerName2.Name = "colCustomerName2";
+            this.colCustomerName2.ReadOnly = true;
+            this.colCustomerName2.Width = 80;
+            // 
+            // colStaffName
+            // 
+            this.colStaffName.DataPropertyName = "StaffName";
+            this.colStaffName.HeaderText = "担当スタッフ";
+            this.colStaffName.Name = "colStaffName";
+            this.colStaffName.ReadOnly = true;
+            // 
+            // colSalesGaku
+            // 
+            this.colSalesGaku.DataPropertyName = "SalesGaku";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.colSalesGaku.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colSalesGaku.HeaderText = "売上額";
+            this.colSalesGaku.Name = "colSalesGaku";
+            this.colSalesGaku.ReadOnly = true;
+            this.colSalesGaku.Width = 60;
+            // 
+            // colSKUName
+            // 
+            this.colSKUName.DataPropertyName = "SKUName";
+            this.colSKUName.HeaderText = "商品";
+            this.colSKUName.Name = "colSKUName";
+            this.colSKUName.ReadOnly = true;
+            this.colSKUName.Width = 350;
             // 
             // Search_TempoUriageNO
             // 
@@ -466,6 +482,7 @@
             this.ClientSize = new System.Drawing.Size(1062, 591);
             this.Controls.Add(this.GvDetail);
             this.F11Visible = true;
+            this.F12Visible = true;
             this.F9Visible = true;
             this.Name = "Search_TempoUriageNO";
             this.PanelHeaderHeight = 170;

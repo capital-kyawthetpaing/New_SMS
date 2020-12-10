@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Search_CollectNO));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -47,6 +48,11 @@
             this.CboStoreCD = new CKM_Controls.CKM_ComboBox();
             this.btnSubF11 = new CKM_Controls.CKM_Button();
             this.GvDetail = new CKM_Controls.CKM_GridView();
+            this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
+            this.ckM_Label8 = new CKM_Controls.CKM_Label();
+            this.ckM_TextBox2 = new CKM_Controls.CKM_TextBox();
+            this.lblSkuCD = new System.Windows.Forms.Label();
+            this.ScCustomer = new Search.CKM_SearchControl();
             this.colCollectNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInputKBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCollectDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,11 +64,6 @@
             this.colDeduction1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDeduction2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColDeductionConfirm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
-            this.ckM_Label8 = new CKM_Controls.CKM_Label();
-            this.ckM_TextBox2 = new CKM_Controls.CKM_TextBox();
-            this.lblSkuCD = new System.Windows.Forms.Label();
-            this.ScCustomer = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvDetail)).BeginInit();
             this.SuspendLayout();
@@ -136,7 +137,9 @@
             this.ckM_TextBox3.AllowMinus = false;
             this.ckM_TextBox3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox3.BackColor = System.Drawing.Color.White;
+            this.ckM_TextBox3.BorderColor = false;
             this.ckM_TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox3.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox3.DecimalPlace = 0;
@@ -145,6 +148,8 @@
             this.ckM_TextBox3.IntegerPart = 0;
             this.ckM_TextBox3.IsCorrectDate = true;
             this.ckM_TextBox3.isEnterKeyDown = false;
+            this.ckM_TextBox3.IsFirstTime = true;
+            this.ckM_TextBox3.isMaxLengthErr = false;
             this.ckM_TextBox3.IsNumber = true;
             this.ckM_TextBox3.IsShop = false;
             this.ckM_TextBox3.Length = 10;
@@ -156,13 +161,16 @@
             this.ckM_TextBox3.TabIndex = 3;
             this.ckM_TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_TextBox3.UseColorSizMode = false;
             // 
             // ckM_TextBox4
             // 
             this.ckM_TextBox4.AllowMinus = false;
             this.ckM_TextBox4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox4.BackColor = System.Drawing.Color.White;
+            this.ckM_TextBox4.BorderColor = false;
             this.ckM_TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox4.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox4.DecimalPlace = 0;
@@ -171,6 +179,8 @@
             this.ckM_TextBox4.IntegerPart = 0;
             this.ckM_TextBox4.IsCorrectDate = true;
             this.ckM_TextBox4.isEnterKeyDown = false;
+            this.ckM_TextBox4.IsFirstTime = true;
+            this.ckM_TextBox4.isMaxLengthErr = false;
             this.ckM_TextBox4.IsNumber = true;
             this.ckM_TextBox4.IsShop = false;
             this.ckM_TextBox4.Length = 10;
@@ -182,6 +192,7 @@
             this.ckM_TextBox4.TabIndex = 4;
             this.ckM_TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_TextBox4.UseColorSizMode = false;
             // 
             // ckM_Label4
             // 
@@ -224,6 +235,7 @@
             this.CboStoreCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア_受注;
             this.CboStoreCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CboStoreCD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CboStoreCD.Flag = 0;
             this.CboStoreCD.FormattingEnabled = true;
             this.CboStoreCD.Length = 30;
             this.CboStoreCD.Location = new System.Drawing.Point(830, 11);
@@ -262,6 +274,7 @@
             this.GvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GvDetail.AutoGenerateColumns = false;
             this.GvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.GvDetail.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("GvDetail.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
@@ -296,12 +309,134 @@
             this.GvDetail.Location = new System.Drawing.Point(9, 169);
             this.GvDetail.Name = "GvDetail";
             this.GvDetail.ReadOnly = true;
-            this.GvDetail.Size = new System.Drawing.Size(1031, 345);
+            this.GvDetail.RowHeight_ = 20;
+            this.GvDetail.Size = new System.Drawing.Size(1033, 345);
             this.GvDetail.TabIndex = 20;
             this.GvDetail.UseRowNo = true;
             this.GvDetail.UseSetting = true;
             this.GvDetail.DoubleClick += new System.EventHandler(this.GvDetail_DoubleClick);
             this.GvDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvDetail_KeyDown);
+            // 
+            // ckM_TextBox1
+            // 
+            this.ckM_TextBox1.AllowMinus = false;
+            this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
+            this.ckM_TextBox1.BorderColor = false;
+            this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox1.ClientColor = System.Drawing.Color.White;
+            this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
+            this.ckM_TextBox1.DecimalPlace = 0;
+            this.ckM_TextBox1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ckM_TextBox1.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.ckM_TextBox1.IntegerPart = 0;
+            this.ckM_TextBox1.IsCorrectDate = true;
+            this.ckM_TextBox1.isEnterKeyDown = false;
+            this.ckM_TextBox1.IsFirstTime = true;
+            this.ckM_TextBox1.isMaxLengthErr = false;
+            this.ckM_TextBox1.IsNumber = true;
+            this.ckM_TextBox1.IsShop = false;
+            this.ckM_TextBox1.Length = 10;
+            this.ckM_TextBox1.Location = new System.Drawing.Point(106, 12);
+            this.ckM_TextBox1.MaxLength = 10;
+            this.ckM_TextBox1.MoveNext = true;
+            this.ckM_TextBox1.Name = "ckM_TextBox1";
+            this.ckM_TextBox1.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox1.TabIndex = 0;
+            this.ckM_TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_TextBox1.UseColorSizMode = false;
+            // 
+            // ckM_Label8
+            // 
+            this.ckM_Label8.AutoSize = true;
+            this.ckM_Label8.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label8.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label8.DefaultlabelSize = true;
+            this.ckM_Label8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label8.Location = new System.Drawing.Point(212, 15);
+            this.ckM_Label8.Name = "ckM_Label8";
+            this.ckM_Label8.Size = new System.Drawing.Size(18, 12);
+            this.ckM_Label8.TabIndex = 61;
+            this.ckM_Label8.Text = "～";
+            this.ckM_Label8.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckM_TextBox2
+            // 
+            this.ckM_TextBox2.AllowMinus = false;
+            this.ckM_TextBox2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.ckM_TextBox2.BackColor = System.Drawing.Color.White;
+            this.ckM_TextBox2.BorderColor = false;
+            this.ckM_TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox2.ClientColor = System.Drawing.Color.White;
+            this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.ckM_TextBox2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
+            this.ckM_TextBox2.DecimalPlace = 0;
+            this.ckM_TextBox2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ckM_TextBox2.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.ckM_TextBox2.IntegerPart = 0;
+            this.ckM_TextBox2.IsCorrectDate = true;
+            this.ckM_TextBox2.isEnterKeyDown = false;
+            this.ckM_TextBox2.IsFirstTime = true;
+            this.ckM_TextBox2.isMaxLengthErr = false;
+            this.ckM_TextBox2.IsNumber = true;
+            this.ckM_TextBox2.IsShop = false;
+            this.ckM_TextBox2.Length = 10;
+            this.ckM_TextBox2.Location = new System.Drawing.Point(237, 12);
+            this.ckM_TextBox2.MaxLength = 10;
+            this.ckM_TextBox2.MoveNext = true;
+            this.ckM_TextBox2.Name = "ckM_TextBox2";
+            this.ckM_TextBox2.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox2.TabIndex = 1;
+            this.ckM_TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ckM_TextBox2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.ckM_TextBox2.UseColorSizMode = false;
+            // 
+            // lblSkuCD
+            // 
+            this.lblSkuCD.AutoSize = true;
+            this.lblSkuCD.BackColor = System.Drawing.Color.Transparent;
+            this.lblSkuCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblSkuCD.Location = new System.Drawing.Point(44, 78);
+            this.lblSkuCD.Name = "lblSkuCD";
+            this.lblSkuCD.Size = new System.Drawing.Size(57, 12);
+            this.lblSkuCD.TabIndex = 278;
+            this.lblSkuCD.Text = "入金顧客";
+            this.lblSkuCD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ScCustomer
+            // 
+            this.ScCustomer.AutoSize = true;
+            this.ScCustomer.ChangeDate = "";
+            this.ScCustomer.ChangeDateWidth = 100;
+            this.ScCustomer.Code = "";
+            this.ScCustomer.CodeWidth = 100;
+            this.ScCustomer.CodeWidth1 = 100;
+            this.ScCustomer.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScCustomer.DataCheck = true;
+            this.ScCustomer.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScCustomer.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.ScCustomer.IsCopy = false;
+            this.ScCustomer.LabelText = "";
+            this.ScCustomer.LabelVisible = true;
+            this.ScCustomer.Location = new System.Drawing.Point(106, 70);
+            this.ScCustomer.Margin = new System.Windows.Forms.Padding(0);
+            this.ScCustomer.Name = "ScCustomer";
+            this.ScCustomer.NameWidth = 500;
+            this.ScCustomer.SearchEnable = true;
+            this.ScCustomer.Size = new System.Drawing.Size(634, 28);
+            this.ScCustomer.Stype = Search.CKM_SearchControl.SearchType.得意先;
+            this.ScCustomer.TabIndex = 6;
+            this.ScCustomer.test = null;
+            this.ScCustomer.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScCustomer.UseChangeDate = false;
+            this.ScCustomer.Value1 = null;
+            this.ScCustomer.Value2 = null;
+            this.ScCustomer.Value3 = null;
             // 
             // colCollectNO
             // 
@@ -345,7 +480,6 @@
             this.colCollectCustomerCD.HeaderText = "入金顧客";
             this.colCollectCustomerCD.Name = "colCollectCustomerCD";
             this.colCollectCustomerCD.ReadOnly = true;
-            this.colCollectCustomerCD.Width = 80;
             // 
             // colCustomerName
             // 
@@ -411,113 +545,6 @@
             this.ColDeductionConfirm.Name = "ColDeductionConfirm";
             this.ColDeductionConfirm.ReadOnly = true;
             // 
-            // ckM_TextBox1
-            // 
-            this.ckM_TextBox1.AllowMinus = false;
-            this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.ckM_TextBox1.DecimalPlace = 0;
-            this.ckM_TextBox1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ckM_TextBox1.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.ckM_TextBox1.IntegerPart = 0;
-            this.ckM_TextBox1.IsCorrectDate = true;
-            this.ckM_TextBox1.isEnterKeyDown = false;
-            this.ckM_TextBox1.IsNumber = true;
-            this.ckM_TextBox1.IsShop = false;
-            this.ckM_TextBox1.Length = 10;
-            this.ckM_TextBox1.Location = new System.Drawing.Point(106, 12);
-            this.ckM_TextBox1.MaxLength = 10;
-            this.ckM_TextBox1.MoveNext = true;
-            this.ckM_TextBox1.Name = "ckM_TextBox1";
-            this.ckM_TextBox1.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox1.TabIndex = 0;
-            this.ckM_TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // ckM_Label8
-            // 
-            this.ckM_Label8.AutoSize = true;
-            this.ckM_Label8.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label8.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label8.DefaultlabelSize = true;
-            this.ckM_Label8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(212, 15);
-            this.ckM_Label8.Name = "ckM_Label8";
-            this.ckM_Label8.Size = new System.Drawing.Size(18, 12);
-            this.ckM_Label8.TabIndex = 61;
-            this.ckM_Label8.Text = "～";
-            this.ckM_Label8.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_TextBox2
-            // 
-            this.ckM_TextBox2.AllowMinus = false;
-            this.ckM_TextBox2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox2.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.ckM_TextBox2.DecimalPlace = 0;
-            this.ckM_TextBox2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ckM_TextBox2.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.ckM_TextBox2.IntegerPart = 0;
-            this.ckM_TextBox2.IsCorrectDate = true;
-            this.ckM_TextBox2.isEnterKeyDown = false;
-            this.ckM_TextBox2.IsNumber = true;
-            this.ckM_TextBox2.IsShop = false;
-            this.ckM_TextBox2.Length = 10;
-            this.ckM_TextBox2.Location = new System.Drawing.Point(237, 12);
-            this.ckM_TextBox2.MaxLength = 10;
-            this.ckM_TextBox2.MoveNext = true;
-            this.ckM_TextBox2.Name = "ckM_TextBox2";
-            this.ckM_TextBox2.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox2.TabIndex = 1;
-            this.ckM_TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ckM_TextBox2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // lblSkuCD
-            // 
-            this.lblSkuCD.AutoSize = true;
-            this.lblSkuCD.BackColor = System.Drawing.Color.Transparent;
-            this.lblSkuCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblSkuCD.Location = new System.Drawing.Point(44, 78);
-            this.lblSkuCD.Name = "lblSkuCD";
-            this.lblSkuCD.Size = new System.Drawing.Size(57, 12);
-            this.lblSkuCD.TabIndex = 278;
-            this.lblSkuCD.Text = "入金顧客";
-            this.lblSkuCD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ScCustomer
-            // 
-            this.ScCustomer.AutoSize = true;
-            this.ScCustomer.ChangeDate = "";
-            this.ScCustomer.ChangeDateWidth = 100;
-            this.ScCustomer.Code = "";
-            this.ScCustomer.CodeWidth = 100;
-            this.ScCustomer.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ScCustomer.DataCheck = true;
-            this.ScCustomer.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ScCustomer.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.ScCustomer.IsCopy = false;
-            this.ScCustomer.LabelText = "";
-            this.ScCustomer.LabelVisible = true;
-            this.ScCustomer.Location = new System.Drawing.Point(106, 70);
-            this.ScCustomer.Name = "ScCustomer";
-            this.ScCustomer.SearchEnable = true;
-            this.ScCustomer.Size = new System.Drawing.Size(634, 28);
-            this.ScCustomer.Stype = Search.CKM_SearchControl.SearchType.得意先;
-            this.ScCustomer.TabIndex = 6;
-            this.ScCustomer.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ScCustomer.UseChangeDate = false;
-            this.ScCustomer.Value1 = null;
-            this.ScCustomer.Value2 = null;
-            this.ScCustomer.Value3 = null;
-            // 
             // Search_CollectNO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -525,6 +552,7 @@
             this.ClientSize = new System.Drawing.Size(1062, 561);
             this.Controls.Add(this.GvDetail);
             this.F11Visible = true;
+            this.F12Visible = true;
             this.F9Visible = true;
             this.Name = "Search_CollectNO";
             this.PanelHeaderHeight = 160;
