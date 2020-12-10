@@ -1045,9 +1045,18 @@ namespace UriageNyuuryoku
                                     }
                                     else
                                     {
-                                        mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
-                                        mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = true;
-                                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
+                                        if (mGrid.g_DArray[pRow].salesGyoNO > 0)
+                                        {
+                                            mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                                            mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = true;
+                                            mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
+                                        }
+                                        else
+                                        {
+                                            mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
+                                            mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
+                                            mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
+                                        }
                                     }
                                 }
                                 break;
@@ -4055,9 +4064,15 @@ namespace UriageNyuuryoku
 
                                     SetSalesGaku(w_Row, wSuu, ymd, fue.ZeinukiTanka);
 
-                                    //原価額←Function_単価取得.out原価単価×Form.Detail.見積数
-                                    mGrid.g_DArray[w_Row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.GenkaTanka) * wSuu);
-                                    mGrid.g_DArray[w_Row].OrderGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].OrderUnitPrice) * wSuu);
+                                    //０で無いかつ原価単価＝０の場合、入力された発注単価を原価単価にセットし、原価金額、粗利金額を再計算。
+                                    if (bbl.Z_Set(mGrid.g_DArray[w_Row].OrderUnitPrice) != 0 && bbl.Z_Set(mGrid.g_DArray[w_Row].CostUnitPrice) == 0)
+                                    {
+                                        mGrid.g_DArray[w_Row].CostUnitPrice = mGrid.g_DArray[w_Row].OrderUnitPrice;
+                                    }
+
+                                //原価額←原価単価×Form.Detail.売上数
+                                mGrid.g_DArray[w_Row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].CostUnitPrice) * wSuu);
+                                mGrid.g_DArray[w_Row].OrderGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].OrderUnitPrice) * wSuu);
 
                                     CalcZei(w_Row);
                                 //}
