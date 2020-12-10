@@ -3764,7 +3764,7 @@ namespace TempoJuchuuNyuuryoku
             //値引き額
             lblKin5.Text = string.Format("{0:#,##0}", kin5);
             //税込売上額＝税込受注額－値引額
-            lblKin6.Text = string.Format("{0:#,##0}", kin1+kin5);
+            lblKin6.Text = string.Format("{0:#,##0}", kin1 + kin5);
             //税抜売上額・Form.Detail.税抜販売額のTotal
             lblKin2.Text = string.Format("{0:#,##0}", kin2);
             //原価額・Form.Detail.原価額のTotal
@@ -3825,6 +3825,8 @@ namespace TempoJuchuuNyuuryoku
                 lblKin1.Text = string.Format("{0:#,##0}", kin1 + sagaku);
                 //税込売上額＝税込受注額－値引額
                 lblKin6.Text = string.Format("{0:#,##0}", kin1 + sagaku + kin5);
+                //請求額＝税込売上額＝税込受注額－値引額
+                lblKin7.Text = string.Format("{0:#,##0}", kin1 + sagaku + kin5);
                 //消費税額
                 lblKin10.Text = string.Format("{0:#,##0}", kin10 + kin8);
                 //通常税額(Hidden)・Form.Detail.通常税額のTotal
