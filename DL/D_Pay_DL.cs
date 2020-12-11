@@ -208,5 +208,15 @@ namespace DL
             };
             return SelectData(dic, "D_Pay_Select02");
         }
+
+        public DataTable D_Pay_SelectForFB(D_Pay_Entity dpe)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>()
+            {
+                {"@MotoKouzaCD", new ValuePair {value1 = SqlDbType.VarChar,value2 = dpe.MotoKouzaCD} },
+                {"@PayDate", new ValuePair {value1 = SqlDbType.Date,value2 = dpe.PayDate} }
+            };
+            return SelectData(dic, "D_Pay_SelectForFB");
+        }
     }
 }

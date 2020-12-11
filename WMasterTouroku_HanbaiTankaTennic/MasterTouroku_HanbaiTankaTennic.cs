@@ -62,13 +62,13 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 InProgramID = ProID;
                 SetFunctionLabel(EProMode.MENTE);
                 S_SetInit_Grid();
+
                 base.StartProgram();
                 txtStartDateFrom.Focus();
                 Clear(pnl_Body);
                 IMT_ITMNM_7.Text = "";
                 Scr_Clr(0);
                 BindCombo();
-              //  CustomEvent();
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
@@ -692,18 +692,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
             
             return result;
         }
-        private string Getint(string val)
-        {
-            try
-            {
-                return Convert.ToInt32(val.Split('.')[0]).ToString();
-            }
-            catch (Exception ex)
-            {
-                var msg = ex.Message;
-            }
-            return "0";
-        }
         private M_SKUPrice_Entity GetSearchInfo()
         {
             mse = new M_SKUPrice_Entity();
@@ -756,11 +744,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 bbl.ShowMessage("E133");
                 txtStartDateFrom.Focus();
             }
-        }
-        private void CustomEvent()
-        {
-        //    Add(new Control[] { panel10_1, panel10_2, panel8, panel3, panel17, panel4, panel65, panel89, panel113, panel137 });
-            
         }
         private void Add(Control[] cont)
         {

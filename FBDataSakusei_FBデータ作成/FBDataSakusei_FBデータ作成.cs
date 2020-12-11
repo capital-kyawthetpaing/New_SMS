@@ -17,6 +17,7 @@ namespace FBDataSakusei_FBデータ作成
     {
         FBDataSakusei_BL fbbl = new FBDataSakusei_BL();
         M_Calendar_Entity mce = new M_Calendar_Entity();
+        D_Pay_Entity dpe = new D_Pay_Entity();
         public FrmFBDataSakusei_FBデータ作成()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace FBDataSakusei_FBデータ作成
             F3Visible = false;
             F4Visible = false;
             F5Visible = false;
-            F6Visible = false;
+            //F6Visible = false;
             F7Visible = false;
             F8Visible = false;
             F9Visible = false;
@@ -78,7 +79,14 @@ namespace FBDataSakusei_FBデータ作成
                 case 3:
                 case 4:                  
                 case 5:
-                case 6:                 
+                    break;
+                case 6:
+                    if (bbl.ShowMessage("Q004") == DialogResult.Yes)
+                    {
+                        Clear(panel1);
+                        cboProcess.Focus();
+                    }
+                    break;
                 case 10:
                     F10();
                     break;
@@ -93,12 +101,29 @@ namespace FBDataSakusei_FBデータ作成
 
         public void F10()
         {
+            if(ErrorCheck())
+            {
+                dpe = new D_Pay_Entity
+                {
+                    MotoKouzaCD = cboPayment.SelectedValue.ToString(),
+                    PayDate = txtPaymentDate.Text,
+                };
 
+                DataTable dtgv = new DataTable();
+                dtgv = fbbl.D_Pay_SelectForFB(dpe);
+                if(dtgv.Rows.Count > 0)
+                {
+                    gvFBDataSakusei.DataSource = dtgv;
+                }
+            }
         }
 
         public void F11()
         {
-
+            if (bbl.ShowMessage("Q202") == DialogResult.Yes)
+            {
+                
+            }
         }
 
         public void F12()
@@ -106,7 +131,7 @@ namespace FBDataSakusei_FBデータ作成
 
         }
 
-        public bool ErrorCheck(int index)
+        public bool ErrorCheck()
         {
             if (cboProcess.SelectedValue.ToString() == "-1")
             {
@@ -140,7 +165,21 @@ namespace FBDataSakusei_FBデータ作成
 
             if (!RequireCheck(new Control[] { txtTransferDate }))
                 return false;
-
+            else
+            {
+                mce.CalendarDate = txtTransferDate.Text;
+                DataTable dtC = new DataTable();
+                dtC = fbbl.M_Calendar_SelectForFB(mce);
+                if (dtC.Rows.Count > 0)
+                {
+                    if (dtC.Rows[0]["BankDayOff"].ToString() == "1")
+                    {
+                        bbl.ShowMessage("E157");
+                        txtTransferDate.Focus();
+                        return false;
+                    }
+                }
+            }
             return true;
         }
 
@@ -157,9 +196,44 @@ namespace FBDataSakusei_FBデータ作成
                 {
                     mce.CalendarDate = txtTransferDate.Text;
                     DataTable dtC = new DataTable();
-                    //dtC = fbbl.
+                    dtC = fbbl.M_Calendar_SelectForFB(mce);
+                    if(dtC.Rows.Count > 0)
+                    {
+                        if(dtC.Rows[0]["BankDayOff"].ToString() == "1")
+                        {
+                            bbl.ShowMessage("E157");
+                            txtTransferDate.Focus();
+                        }
+                    }
                 }
             }
+        }
+
+        private void cboProcess_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboProcess.SelectedValue.ToString() == "-1")
+            {
+                bbl.ShowMessage("E102");
+                cboProcess.Focus();
+            }
+            else if (cboProcess.SelectedValue.ToString() == "0")
+            {
+                Btn_F11.Text = "印刷(F11)";
+                Btn_F12.Text = "出力(F12)";
+            }
+            else if (cboProcess.SelectedValue.ToString() == "1")
+            {
+                Btn_F12.Text = "削除(F12)";
+            }
+            else
+            {
+                Btn_F11.Text = "印刷(F11)";
+            }
+        }
+
+        private void btnDisplay_Click(object sender, EventArgs e)
+        {
+            F10();
         }
     }
 }
