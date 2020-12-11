@@ -2426,6 +2426,7 @@ namespace NyuukinNyuuryoku_Detail
 
             Scr_Clr(0);
 
+            SetDisplayMode = EMode.Uriage;
             S_BodySeigyo(0, 0);
             S_BodySeigyo(0, 1);
             //配列の内容を画面にセット
