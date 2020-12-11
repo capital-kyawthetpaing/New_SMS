@@ -73,6 +73,11 @@ BEGIN
     --UpdateDateTime datetime
 	)
 	EXEC sp_xml_removedocument @DocHandle; 
+
+	
+	update #Temp set EndChangeDate=null
+	where EndChangeDate is null or EndChangeDate=''
+
 	Declare
 	@InsertDateTime as datetime=getdate();
 	If @Mode=1
