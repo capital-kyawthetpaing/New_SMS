@@ -1012,8 +1012,8 @@ namespace SiharaiTouroku
                             //支払予定額＞0の場合、
                             if (bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) > 0)
                             {
-                                //修正後今回支払額＞修正前今回支払額＋未支払額（支払予定額－支払済額）の場合、Error
-                                if (bbl.Z_Set(inputText) > bbl.Z_Set(row.Cells["colOldKingaku"].Value) + bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) - bbl.Z_Set(row.Cells["colPayConfirmGaku"].Value))
+                                //修正後今回支払額＞修正前今回支払額＋未支払額（支払予定額－支払済額）の場合、Error  bbl.Z_Set(row.Cells["colOldKingaku"].Value) + 
+                                if (bbl.Z_Set(inputText) > bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) - bbl.Z_Set(row.Cells["colPayConfirmGaku"].Value))
                                 {
                                     bbl.ShowMessage("E143", "未支払額", "大きい");
                                     e.Cancel = true;
@@ -1029,8 +1029,8 @@ namespace SiharaiTouroku
                             //支払予定額＜0の場合、
                             else if (bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) < 0)
                             {
-                                //修正後今回支払額＜修正前今回支払額＋未支払額（支払予定額－支払済額）の場合、Error
-                                if (bbl.Z_Set(inputText) < bbl.Z_Set(row.Cells["colOldKingaku"].Value) + bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) - bbl.Z_Set(row.Cells["colPayConfirmGaku"].Value))
+                                //修正後今回支払額＜修正前今回支払額＋未支払額（支払予定額－支払済額）の場合、Error  bbl.Z_Set(row.Cells["colOldKingaku"].Value) + 
+                                if (bbl.Z_Set(inputText) < bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) - bbl.Z_Set(row.Cells["colPayConfirmGaku"].Value))
                                 {
                                     bbl.ShowMessage("E143", "未支払額", "小さい");
                                     e.Cancel = true;
