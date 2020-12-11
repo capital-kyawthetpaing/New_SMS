@@ -982,6 +982,13 @@ namespace NyuukinNyuuryoku_Detail
                         keyControls[(int)EIndex.ConfirmNO].Text = confirmNO;
                         CheckKey((int)EIndex.ConfirmNO, true);
                     }
+
+                    Btn_F2.Text = "";
+                    Btn_F3.Text = "";
+                    Btn_F4.Text = "";
+                    Btn_F5.Text = "";
+                    Btn_F6.Text = "";
+
                 }
                 //ChangeOperationMode(EOperationMode.INSERT);
             }
@@ -1283,6 +1290,19 @@ namespace NyuukinNyuuryoku_Detail
                             bbl.ShowMessage("E139", mes);
                             SetFocusAfterErr();
                             return false;
+                        }
+                        //修正・削除モードの場合、
+                        //この消込の入金番号で、もっと最新の消込番号が存在すれば、修正・削除不可
+                        if (OperationMode != EOperationMode.SHOW && index == (int)EIndex.ConfirmNO)
+                        {
+                            dce.CollectNO = dtDetail.Rows[0]["CollectNO"].ToString();
+                            bool exist = nnbl.D_PaymentConfirm_Select(dce);
+                            if (exist)
+                            {
+                                bbl.ShowMessage("E139", mes);
+                                SetFocusAfterErr();
+                                return false;
+                            }
                         }
 
                         //入金番号の場合
