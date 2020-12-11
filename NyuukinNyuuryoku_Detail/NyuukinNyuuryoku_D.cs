@@ -966,13 +966,21 @@ namespace NyuukinNyuuryoku_Detail
                 if (cmds.Length - 1 > (int)ECmdLine.PcID)
                 {
                     string mode = cmds[(int)ECmdLine.PcID + 1];   //
-                    string collectNO = cmds[(int)ECmdLine.PcID + 2];   //
 
-                    if (mode.Equals("10"))
+                    if (mode.Equals("9"))
                     {
+                        string collectNO = cmds[(int)ECmdLine.PcID + 2];   //
                         ChangeOperationMode(EOperationMode.UPDATE);
                         keyControls[(int)EIndex.CollectNO].Text = collectNO;
                         CheckKey((int)EIndex.CollectNO, true);
+                    }
+                    else if (mode.Equals("10"))
+                    {
+                        string collectNO = cmds[(int)ECmdLine.PcID + 2];   //
+                        string confirmNO = cmds[(int)ECmdLine.PcID + 3];
+                        ChangeOperationMode(EOperationMode.UPDATE);
+                        keyControls[(int)EIndex.ConfirmNO].Text = confirmNO;
+                        CheckKey((int)EIndex.ConfirmNO, true);
                     }
                 }
                 //ChangeOperationMode(EOperationMode.INSERT);

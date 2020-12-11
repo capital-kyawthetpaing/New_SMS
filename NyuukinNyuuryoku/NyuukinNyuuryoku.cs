@@ -63,8 +63,9 @@ namespace NyuukinNyuuryoku
                 //起動時共通処理
                 base.StartProgram();
 
-                Btn_F8.Text = "F8:新規消込";
-                Btn_F10.Text = "F10:修正";
+                Btn_F8.Text = "新規消込(F8)";
+                Btn_F10.Text = "修正(F10)";
+                Btn_F12.Text = "新規入金(F12)";
 
                 //初期値セット
                 nnbl = new NyuukinNyuuryoku_BL();
@@ -163,6 +164,11 @@ namespace NyuukinNyuuryoku
         //// ShowWindowAsync関数のパラメータに渡す定義値
         //private const int SW_RESTORE = 9;  // 画面を元の大きさに戻す
 
+        protected override void ExecSec()
+        {
+            ExecDetail(2);
+        }
+    
         private void ExecDetail(short kbn)
         {
             System.Diagnostics.Process[] hProcesses = System.Diagnostics.Process.GetProcessesByName("NyuukinNyuuryoku_Detail");
@@ -173,27 +179,34 @@ namespace NyuukinNyuuryoku
                 return;
             }
 
-            DataGridViewRow row = GvDetail.CurrentRow;
-
-            string no = row.Cells["colCollectNO"].Value.ToString();
-
-            string cmdLine ="";
-            if (kbn.Equals(0))
+            string cmdLine = "";
+            if (kbn.Equals(2))
             {
-                //カーソルが明細に存在し、その明細の「消込残額≠０」場合に「新規消込(F9)」として表示
-                //（入金額がすべて消込されている場合（消込残額＝０）の場合は、新規消込はできない）
-
-                //新規消込モードで、入金入力を表示（売上単位）
-                //新規消込モード:値9, 明細.入金番号
-                cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " 9 " + no;
+                cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " 0 ";
             }
             else
             {
-                //修正モードで、入金入力を表示（売上単位）
-                //修正モード:値10, 明細.入金番号, 明細.入金消込番号
-                cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " 10 " + no;
-            }
+                DataGridViewRow row = GvDetail.CurrentRow;
+                string no = row.Cells["colCollectNO"].Value.ToString();
+                string confirmNO = row.Cells["colConfirmNO"].Value.ToString();
 
+                if (kbn.Equals(0)　||　string.IsNullOrWhiteSpace(confirmNO))
+                {
+                    //カーソルが明細に存在し、その明細の「消込残額≠０」場合に「新規消込(F9)」として表示
+                    //（入金額がすべて消込されている場合（消込残額＝０）の場合は、新規消込はできない）
+
+                    //新規消込モードで、入金入力を表示（売上単位）
+                    //新規消込モード:値9, 明細.入金番号
+                    cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " 9 " + no;
+                }
+                else if (kbn.Equals(1))
+                {
+                    //修正モードで、入金入力を表示（売上単位）
+                    //修正モード:値10, 明細.入金番号, 明細.入金消込番号
+                    cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " 10 " + no + " " + confirmNO;
+                }
+            }            
+            
             //EXEが存在しない時ｴﾗｰ
             // 実行モジュールと同一フォルダのファイルを取得
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
@@ -489,7 +502,15 @@ namespace NyuukinNyuuryoku
                 case 9://F10:修正
                     ExecDetail(1);
                     break;
-                   
+
+                case 11://F12:新規入金
+                    //   //Ｑ２０５				
+                    //if (bbl.ShowMessage("Q205") != DialogResult.Yes)
+                    //    return;
+
+                    ExecSec();
+                    break;
+
             }   //switch end
 
         }

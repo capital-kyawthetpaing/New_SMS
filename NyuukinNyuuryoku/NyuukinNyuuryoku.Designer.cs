@@ -67,6 +67,7 @@
             this.colConfirmSource = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colConfirmAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colConfirmZan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colConfirmNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox9 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
@@ -442,7 +443,8 @@
             this.colCollectAmount,
             this.colConfirmSource,
             this.colConfirmAmount,
-            this.colConfirmZan});
+            this.colConfirmZan,
+            this.colConfirmNO});
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -589,6 +591,14 @@
             this.colConfirmZan.Name = "colConfirmZan";
             this.colConfirmZan.ReadOnly = true;
             this.colConfirmZan.Width = 90;
+            // 
+            // colConfirmNO
+            // 
+            this.colConfirmNO.DataPropertyName = "ConfirmNO";
+            this.colConfirmNO.HeaderText = "消込番号";
+            this.colConfirmNO.Name = "colConfirmNO";
+            this.colConfirmNO.ReadOnly = true;
+            this.colConfirmNO.Visible = false;
             // 
             // ckM_Label6
             // 
@@ -881,6 +891,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colConfirmSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn colConfirmAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn colConfirmZan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colConfirmNO;
     }
 }
 
