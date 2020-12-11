@@ -41,7 +41,7 @@ BEGIN
     AND CONVERT(DATE,DH.ConfirmDateTime) >= (CASE WHEN @DateFrom <> '' THEN CONVERT(DATE, @DateFrom) ELSE CONVERT(DATE,DH.ConfirmDateTime) END)
     AND CONVERT(DATE,DH.ConfirmDateTime) <= (CASE WHEN @DateTo <> ''   THEN CONVERT(DATE, @DateTo)   ELSE CONVERT(DATE,DH.ConfirmDateTime) END)
     AND DH.DeleteDateTime IS NULL
-    ORDER BY DH.CollectClearDate desc, DH.CollectNO, DH.ConfirmNO
+    ORDER BY DH.CollectClearDate desc, DH.ConfirmNO, DH.CollectNO
     ;
 
 END
