@@ -1681,7 +1681,7 @@ namespace UriageNyuuryoku
                     //使用可能行数を超えた場合エラー
                     if (i > m_EnableCnt - 1)
                     {
-                        bbl.ShowMessage("E178", m_EnableCnt.ToString()); 
+                        bbl.ShowMessage("E178", m_EnableCnt.ToString());
                         mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
                         return false;
                     }
@@ -1700,7 +1700,7 @@ namespace UriageNyuuryoku
                             detailControls[(int)EIndex.SalesDate].Text = bbl.GetDate();
                         }
                         mOldSalesDate = detailControls[(int)EIndex.SalesDate].Text;
-                        
+
                         detailControls[(int)EIndex.StaffCD].Text = row["StaffCD"].ToString();
                         CheckDetail((int)EIndex.StaffCD);
 
@@ -1724,10 +1724,10 @@ namespace UriageNyuuryoku
                         lblKin3.Text = bbl.Z_SetStr(row["CostGaku"]);
                         lblKin4.Text = bbl.Z_SetStr(row["ProfitGaku"]);
                         lblKin7.Text = bbl.Z_SetStr(row["PurchaseGaku"]);
-                        lblKin10.Text = bbl.Z_SetStr(bbl.Z_Set(row["SalesTax8"])+ bbl.Z_Set(row["SalesTax10"]));
+                        lblKin10.Text = bbl.Z_SetStr(bbl.Z_Set(row["SalesTax8"]) + bbl.Z_Set(row["SalesTax10"]));
 
                         if (index == (int)EIndex.SalesNO)
-                        {                            
+                        {
                             mPaymentPlanDate = row["PaymentPlanDate"].ToString();
                             mVendorCD = row["VendorCD"].ToString();
                             mPayeeCD = row["PayeeCD"].ToString();
@@ -1753,7 +1753,7 @@ namespace UriageNyuuryoku
 
                     if (index == (int)EIndex.MotoSalesNO)
                     {
-                        mGrid.g_DArray[i].SalesSuu =bbl.Z_SetStr(-1 * bbl.Z_Set(row["SalesSu"]));   //単価算出のため先にセットしておく    
+                        mGrid.g_DArray[i].SalesSuu = bbl.Z_SetStr(-1 * bbl.Z_Set(row["SalesSu"]));   //単価算出のため先にセットしておく    
                     }
                     else
                     {
@@ -1770,7 +1770,6 @@ namespace UriageNyuuryoku
                     {
                         mGrid.g_DArray[i].copyJuchuGyoNO = Convert.ToInt16(row["SalesRows"].ToString());
                     }
-                    
 
                     CheckGrid((int)ClsGridUriage.ColNO.JanCD, i, true);
 
@@ -1817,9 +1816,15 @@ namespace UriageNyuuryoku
                     mGrid.g_DArray[i].IndividualClientName = row["IndividualClientName"].ToString();   // 
 
                     mGrid.g_DArray[i].ProfitGaku = bbl.Z_SetStr(row["D_ProfitGaku"]);   // 
-                    
+
                     //税額(Hidden)
                     mGrid.g_DArray[i].Tax = bbl.Z_Set(mGrid.g_DArray[i].SalesGaku) - bbl.Z_Set(mGrid.g_DArray[i].SalesHontaiGaku);
+
+                    if (index == (int)EIndex.MotoSalesNO)
+                    {
+                        mGrid.g_DArray[i].JuchuTax = -1 * mGrid.g_DArray[i].JuchuTax;
+                        mGrid.g_DArray[i].KeigenTax = -1 * mGrid.g_DArray[i].KeigenTax;
+                    }
 
                     //複写時以外
                     if (index != (int)EIndex.CopySalesNO)
