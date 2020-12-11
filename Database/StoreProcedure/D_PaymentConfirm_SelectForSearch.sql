@@ -41,6 +41,8 @@ BEGIN
     AND CONVERT(DATE,DH.ConfirmDateTime) >= (CASE WHEN @DateFrom <> '' THEN CONVERT(DATE, @DateFrom) ELSE CONVERT(DATE,DH.ConfirmDateTime) END)
     AND CONVERT(DATE,DH.ConfirmDateTime) <= (CASE WHEN @DateTo <> ''   THEN CONVERT(DATE, @DateTo)   ELSE CONVERT(DATE,DH.ConfirmDateTime) END)
     AND DH.DeleteDateTime IS NULL
+    AND (DH.InputKBN IN (1,2) OR (DH.InputKBN = 3 AND DH.AdvanceFLG = 1))
+
     ORDER BY DH.CollectClearDate desc, DH.ConfirmNO, DH.CollectNO
     ;
 
