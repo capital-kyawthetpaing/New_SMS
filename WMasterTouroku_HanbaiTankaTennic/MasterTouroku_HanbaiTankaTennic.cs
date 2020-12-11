@@ -281,9 +281,9 @@ namespace WMasterTouroku_HanbaiTankaTennic
             OperationMode = mode;
             //Scr_Clr(0);
 
-            S_BodySeigyo(0, 0);
-            S_BodySeigyo(0, 1);
-            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+            //S_BodySeigyo(0, 0);
+            //S_BodySeigyo(0, 1);
+            //mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
             switch (mode)
             {
                 case EOperationMode.INSERT:
