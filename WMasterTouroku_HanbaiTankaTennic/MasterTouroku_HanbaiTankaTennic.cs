@@ -61,8 +61,8 @@ namespace WMasterTouroku_HanbaiTankaTennic
             {
                 InProgramID = ProID;
                 SetFunctionLabel(EProMode.MENTE);
-                base.StartProgram();
                 S_SetInit_Grid();
+                base.StartProgram();
                 txtStartDateFrom.Focus();
                 Clear(pnl_Body);
                 IMT_ITMNM_7.Text = "";
@@ -279,11 +279,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
         private void ChangeOperationMode(EOperationMode mode)
         {
             OperationMode = mode;
-            //Scr_Clr(0);
-
-            //S_BodySeigyo(0, 0);
-            //S_BodySeigyo(0, 1);
-            //mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+            Scr_Clr(0);
             switch (mode)
             {
                 case EOperationMode.INSERT:
@@ -295,8 +291,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     S_BodySeigyo(0, 0);
                     break;
             }
-            //S_SetInit_Grid();
-            Clear(panel1);
+            //Clear(panel1);
             F12Enable = true;
             txtStartDateFrom.Focus();
         }
