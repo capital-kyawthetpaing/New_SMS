@@ -1299,7 +1299,7 @@ namespace NyuukinNyuuryoku_Detail
                             bool exist = nnbl.D_PaymentConfirm_Select(dce);
                             if (exist)
                             {
-                                bbl.ShowMessage("E139", mes);
+                                bbl.ShowMessage("E271", mes);
                                 SetFocusAfterErr();
                                 return false;
                             }
