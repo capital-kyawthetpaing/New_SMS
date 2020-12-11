@@ -2595,9 +2595,9 @@ namespace TenzikaiJuchuuTourou
                     {
                         ret = sbl.M_Customer_Select(mce, -1);
                     }
-                   
+
                     if (kbn == 1)
-                    oldVal = detailControls[(int)Eindex.SCHaiSoSaki].Text;
+                        oldVal = detailControls[(int)Eindex.SCHaiSoSaki].Text;
                     else
                         oldVal = detailControls[(int)Eindex.SCKokyakuu].Text;
                     if (ret)
@@ -2653,6 +2653,7 @@ namespace TenzikaiJuchuuTourou
                                 detailControls[index + 3].Text = "";
                                 detailControls[index + 3].Enabled = false;
                             }
+                             (detailControls[(int)Eindex.YoteiKinShuu] as CKM_ComboBox).SelectedValue = mce.PaymentMethodCD;
 
                             if (string.IsNullOrWhiteSpace(sc_haisosaki.TxtCode.Text))
                             {

@@ -296,10 +296,9 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     break;
             }
             //S_SetInit_Grid();
-            //Clear(pnl_Body);
-            //btnDisplay.Enabled = true;
-            //F12Enable = true;
-            //txtStartDateFrom.Focus();
+            Clear(panel1);
+            F12Enable = true;
+            txtStartDateFrom.Focus();
         }
         private void S_BodySeigyo(short pKBN, short pGrid)
         {
@@ -406,9 +405,9 @@ namespace WMasterTouroku_HanbaiTankaTennic
             {
                 case 2:
                     ChangeOperationMode(EOperationMode.INSERT);
-                    //  ChangeOperationMode(OperationMode);
+                    //ChangeOperationMode(OperationMode);
                     Clear(pnl_Header);
-                    Clear(pnl_Body);
+                    //Clear(panel1);
                     RadioButton1.Checked = true;
                     break;
                 case 3:
@@ -1220,7 +1219,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                             {
                                 if (bbl.ShowMessage("Q306") != DialogResult.Yes)
                                     return false;
-                            }
+                        }
                         break;
                     case (int)ClsGridHanbaiTankaTennic.ColNO.Rank1UnitPrice:
                         Su = bbl.Z_Set(mGrid.g_DArray[row].Rank1UnitPrice);

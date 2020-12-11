@@ -68,6 +68,14 @@ namespace DL
             return SelectData(dic, "Get_ShihraiYoteibi");
         }
 
-       
+        public DataTable M_Calendar_SelectForFB(M_Calendar_Entity mce)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@CalendarDate", new ValuePair { value1 = SqlDbType.Date, value2 = mce.CalendarDate} }
+            };
+            return SelectData(dic, "M_Calendar_SelectForFB");
+        }
+
     }
 }
