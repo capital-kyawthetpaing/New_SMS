@@ -558,7 +558,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     var row = r;
                     if (!row.IsNull(1))
                     {
-                        if (Getint(row["StandardSalesUnitPrice"].ToString()) != "0")
+                        if (!String.IsNullOrEmpty(row["StandardSalesUnitPrice"].ToString()))
                         {
                             result.Rows.Add(
                                 "0",
@@ -579,7 +579,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                                 ""
                                 );
                         }
-                        if (Getint(row["Rank1"].ToString()) != "0")
+                        if (!String.IsNullOrEmpty(row["Rank1"].ToString()))
                         {
                             result.Rows.Add(
                                 "1",
@@ -600,7 +600,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                                 ""
                                 );
                         }
-                        if (Getint(row["Rank2"].ToString()) != "0")
+                        if (!String.IsNullOrEmpty(row["Rank2"].ToString()))
                         {
                             result.Rows.Add(
                                 "2",
@@ -621,7 +621,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                                 ""
                                 );
                         }
-                        if (Getint(row["Rank3"].ToString()) != "0")
+                        if (!String.IsNullOrEmpty(row["Rank3"].ToString()))
                         {
                             result.Rows.Add(
                                 "3",
@@ -642,7 +642,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                                 ""
                                 );
                         }
-                        if (Getint(row["Rank4"].ToString()) != "0")
+                        if (!String.IsNullOrEmpty(row["Rank4"].ToString()))
                         {
                             result.Rows.Add(
                                 "4",
@@ -663,7 +663,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                                 ""
                                 );
                         }
-                        if (Getint(row["Rank5"].ToString()) != "0")
+                        if (!String.IsNullOrEmpty(row["Rank5"].ToString()))
                         {
                             result.Rows.Add(
                                 "5",
