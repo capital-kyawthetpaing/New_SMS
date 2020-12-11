@@ -36,7 +36,16 @@ namespace BL
         {
             return mdl.D_Collect_SelectData(de);
         }
+        public bool D_PaymentConfirm_Select(D_Collect_Entity de)
+        {
+            D_PaymentConfirm_DL dp = new D_PaymentConfirm_DL();
+            DataTable dt = dp.D_PaymentConfirm_Select(de);
 
+            if (dt.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
         /// <summary>
         /// 入金入力（新規時）にて使用
         /// </summary>

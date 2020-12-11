@@ -2501,7 +2501,7 @@ namespace UriageNyuuryoku
                     //入力無い場合、0とする（When there is no input, it is set to 0）
                     decimal orderUnitPrice = bbl.Z_Set(mGrid.g_DArray[row].OrderUnitPrice);
                     mGrid.g_DArray[row].OrderUnitPrice = bbl.Z_SetStr(orderUnitPrice);
-                    //mGrid.g_DArray[row].OrderGaku = bbl.Z_SetStr(orderUnitPrice * bbl.Z_Set(mGrid.g_DArray[row].SalesSuu));
+                    mGrid.g_DArray[row].OrderGaku = bbl.Z_SetStr(orderUnitPrice * bbl.Z_Set(mGrid.g_DArray[row].SalesSuu));
 
                     //０の場合				メッセージ表示
                     if (orderUnitPrice.Equals(0))
@@ -2570,7 +2570,6 @@ namespace UriageNyuuryoku
                 case (int)ClsGridUriage.ColNO.SalesUnitPrice: //販売単価 
                 case (int)ClsGridUriage.ColNO.CostUnitPrice: //原価単価
                 case (int)ClsGridUriage.ColNO.OrderUnitPrice://発注単価
-
                     //各金額項目の再計算必要
                     if (chkAll == false)
                         CalcKin();

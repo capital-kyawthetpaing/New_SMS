@@ -61,14 +61,14 @@ namespace WMasterTouroku_HanbaiTankaTennic
             {
                 InProgramID = ProID;
                 SetFunctionLabel(EProMode.MENTE);
-                base.StartProgram();
                 S_SetInit_Grid();
+
+                base.StartProgram();
                 txtStartDateFrom.Focus();
                 Clear(pnl_Body);
                 IMT_ITMNM_7.Text = "";
                 Scr_Clr(0);
                 BindCombo();
-              //  CustomEvent();
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
@@ -279,11 +279,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
         private void ChangeOperationMode(EOperationMode mode)
         {
             OperationMode = mode;
-            //Scr_Clr(0);
-
-            S_BodySeigyo(0, 0);
-            S_BodySeigyo(0, 1);
-            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+            Scr_Clr(0);
             switch (mode)
             {
                 case EOperationMode.INSERT:
@@ -295,11 +291,9 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     S_BodySeigyo(0, 0);
                     break;
             }
-            //S_SetInit_Grid();
-            //Clear(pnl_Body);
-            //btnDisplay.Enabled = true;
-            //F12Enable = true;
-            //txtStartDateFrom.Focus();
+            //Clear(panel1);
+            F12Enable = true;
+            txtStartDateFrom.Focus();
         }
         private void S_BodySeigyo(short pKBN, short pGrid)
         {
@@ -406,9 +400,9 @@ namespace WMasterTouroku_HanbaiTankaTennic
             {
                 case 2:
                     ChangeOperationMode(EOperationMode.INSERT);
-                    //  ChangeOperationMode(OperationMode);
+                    //ChangeOperationMode(OperationMode);
                     Clear(pnl_Header);
-                    Clear(pnl_Body);
+                    //Clear(panel1);
                     RadioButton1.Checked = true;
                     break;
                 case 3:
@@ -559,7 +553,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     var row = r;
                     if (!row.IsNull(1))
                     {
-                        if (Getint(row["StandardSalesUnitPrice"].ToString()) != "0")
+                        if (!String.IsNullOrEmpty(row["StandardSalesUnitPrice"].ToString()))
                         {
                             result.Rows.Add(
                                 "0",
@@ -580,7 +574,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                                 ""
                                 );
                         }
-                        if (Getint(row["Rank1"].ToString()) != "0")
+                        if (!String.IsNullOrEmpty(row["Rank1"].ToString()))
                         {
                             result.Rows.Add(
                                 "1",
@@ -601,7 +595,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                                 ""
                                 );
                         }
-                        if (Getint(row["Rank2"].ToString()) != "0")
+                        if (!String.IsNullOrEmpty(row["Rank2"].ToString()))
                         {
                             result.Rows.Add(
                                 "2",
@@ -622,7 +616,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                                 ""
                                 );
                         }
-                        if (Getint(row["Rank3"].ToString()) != "0")
+                        if (!String.IsNullOrEmpty(row["Rank3"].ToString()))
                         {
                             result.Rows.Add(
                                 "3",
@@ -643,7 +637,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                                 ""
                                 );
                         }
-                        if (Getint(row["Rank4"].ToString()) != "0")
+                        if (!String.IsNullOrEmpty(row["Rank4"].ToString()))
                         {
                             result.Rows.Add(
                                 "4",
@@ -664,7 +658,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                                 ""
                                 );
                         }
-                        if (Getint(row["Rank5"].ToString()) != "0")
+                        if (!String.IsNullOrEmpty(row["Rank5"].ToString()))
                         {
                             result.Rows.Add(
                                 "5",
@@ -697,18 +691,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
             }
             
             return result;
-        }
-        private string Getint(string val)
-        {
-            try
-            {
-                return Convert.ToInt32(val.Split('.')[0]).ToString();
-            }
-            catch (Exception ex)
-            {
-                var msg = ex.Message;
-            }
-            return "0";
         }
         private M_SKUPrice_Entity GetSearchInfo()
         {
@@ -762,11 +744,6 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 bbl.ShowMessage("E133");
                 txtStartDateFrom.Focus();
             }
-        }
-        private void CustomEvent()
-        {
-        //    Add(new Control[] { panel10_1, panel10_2, panel8, panel3, panel17, panel4, panel65, panel89, panel113, panel137 });
-            
         }
         private void Add(Control[] cont)
         {
@@ -1220,7 +1197,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                             {
                                 if (bbl.ShowMessage("Q306") != DialogResult.Yes)
                                     return false;
-                            }
+                        }
                         break;
                     case (int)ClsGridHanbaiTankaTennic.ColNO.Rank1UnitPrice:
                         Su = bbl.Z_Set(mGrid.g_DArray[row].Rank1UnitPrice);
