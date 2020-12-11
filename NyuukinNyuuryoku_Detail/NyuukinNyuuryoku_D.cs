@@ -2404,8 +2404,11 @@ namespace NyuukinNyuuryoku_Detail
 
             bbl.ShowMessage("I101");
 
-            //更新後画面クリア
-            ChangeOperationMode(OperationMode);
+            if (Btn_F3.Text != "")
+                //更新後画面クリア
+                ChangeOperationMode(OperationMode);
+            else
+                EndSec();
         }
         private void ChangeOperationMode(EOperationMode mode)
         {
