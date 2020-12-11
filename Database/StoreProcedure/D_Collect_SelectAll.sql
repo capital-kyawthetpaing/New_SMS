@@ -11,13 +11,13 @@ GO
 CREATE PROCEDURE D_Collect_SelectAll(
     -- Add the parameters for the stored procedure here
     @CollectDateFrom  varchar(10),
-    @CollectDateTo  varchar(10),
-    @DateFrom  varchar(10),
-    @DateTo  varchar(10),
-    @StoreCD  varchar(4),
-    @StaffCD  varchar(10),
-    @CustomerCD  varchar(13),
-    @WebCollectType varchar(13),
+    @CollectDateTo    varchar(10),
+    @DateFrom         varchar(10),
+    @DateTo           varchar(10),
+    @StoreCD          varchar(4),
+    @StaffCD          varchar(10),
+    @CustomerCD       varchar(13),
+    @WebCollectType   varchar(13),
     @ChkZan TinyInt
 )AS
 BEGIN
@@ -72,6 +72,13 @@ BEGIN
               ,DH.UpdateDateTime
               ,DH.DeleteOperator
               ,DH.DeleteDateTime
+              ,(SELECT top 1 D.ConfirmNO
+                FROM D_PaymentConfirm AS D
+                WHERE D.CollectNO = DH.CollectNO
+                AND D.DeleteDateTime IS NULL
+                ORDER BY D.ConfirmDateTime desc
+                ) AS ConfirmNO
+
           FROM [D_Collect] AS DH
 
             WHERE DH.CollectDate >= (CASE WHEN @CollectDateFrom <> '' THEN CONVERT(DATE, @CollectDateFrom) ELSE DH.CollectDate END)
@@ -133,6 +140,13 @@ BEGIN
               ,DH.UpdateDateTime
               ,DH.DeleteOperator
               ,DH.DeleteDateTime
+              ,(SELECT top 1 D.ConfirmNO
+                FROM D_PaymentConfirm AS D
+                WHERE D.CollectNO = DH.CollectNO
+                AND D.DeleteDateTime IS NULL
+                ORDER BY D.ConfirmDateTime desc
+                ) AS ConfirmNO
+                
           FROM [D_Collect] AS DH
 
             WHERE DH.CollectDate >= (CASE WHEN @CollectDateFrom <> '' THEN CONVERT(DATE, @CollectDateFrom) ELSE DH.CollectDate END)

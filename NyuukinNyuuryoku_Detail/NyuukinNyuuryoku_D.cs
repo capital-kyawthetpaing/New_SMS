@@ -960,8 +960,31 @@ namespace NyuukinNyuuryoku_Detail
                 {
                     SetDisplayMode = EMode.Uriage;
                 }
-                    //ChangeOperationMode(EOperationMode.INSERT);
+
+                //コマンドライン引数を配列で取得する
+                string[] cmds = System.Environment.GetCommandLineArgs();
+                if (cmds.Length - 1 > (int)ECmdLine.PcID)
+                {
+                    string mode = cmds[(int)ECmdLine.PcID + 1];   //
+
+                    if (mode.Equals("9"))
+                    {
+                        string collectNO = cmds[(int)ECmdLine.PcID + 2];   //
+                        ChangeOperationMode(EOperationMode.UPDATE);
+                        keyControls[(int)EIndex.CollectNO].Text = collectNO;
+                        CheckKey((int)EIndex.CollectNO, true);
+                    }
+                    else if (mode.Equals("10"))
+                    {
+                        string collectNO = cmds[(int)ECmdLine.PcID + 2];   //
+                        string confirmNO = cmds[(int)ECmdLine.PcID + 3];
+                        ChangeOperationMode(EOperationMode.UPDATE);
+                        keyControls[(int)EIndex.ConfirmNO].Text = confirmNO;
+                        CheckKey((int)EIndex.ConfirmNO, true);
+                    }
                 }
+                //ChangeOperationMode(EOperationMode.INSERT);
+            }
             catch (Exception ex)
             {
                 //エラー時共通処理
