@@ -2046,8 +2046,16 @@ namespace NyuukinNyuuryoku_Detail
                             + bbl.Z_Set(detailControls[(int)EIndex.Deduction1].Text) - bbl.Z_Set(detailControls[(int)EIndex.Deduction2].Text) 
                             //- bbl.Z_Set(detailControls[(int)EIndex.DeductionConfirm].Text)
                             );
-                    if(set)
-                        CalcKin();
+                    if (set)
+                    {
+                        ret = CalcKin();
+
+                        if (!ret)
+                        {
+                            detailControls[index].Focus();
+                            return false;
+                        }
+                    }
                     break;
 
                 case (int)EIndex.FeeDeduction:
@@ -2060,10 +2068,17 @@ namespace NyuukinNyuuryoku_Detail
                             //- bbl.Z_Set(detailControls[(int)EIndex.DeductionConfirm].Text)
                             );
                     if (set)
-                        CalcKin();
+                    {
+                        ret = CalcKin();
+
+                        if (!ret)
+                        {
+                            detailControls[index].Focus();
+                            return false;
+                        }
+                    }
+
                     break;
-
-
             }
 
             return true;
@@ -2127,8 +2142,14 @@ namespace NyuukinNyuuryoku_Detail
                     }
                     //入力後、以下の各項目に計算後の値をセット
                     if(!chkAll)
-                        CalcKin();
+                    { 
+                       bool ret = CalcKin();
 
+                        if (!ret)
+                        {
+                            return false;
+                        }
+                    }
                     break;
             }
 
@@ -2513,13 +2534,13 @@ namespace NyuukinNyuuryoku_Detail
             lblSumKin4.Text = "";
 
         }
-        private void CalcKin()
+        private bool CalcKin()
         {
             decimal kin1 = 0;
             decimal kin2 = 0;
             decimal kin3 = 0;
             decimal kin4 = 0;
-
+                       
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
             {
                 if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].CollectPlanNO))
@@ -2542,11 +2563,18 @@ namespace NyuukinNyuuryoku_Detail
             lblSumKin4.Text = string.Format("{0:#,##0}", kin4);
 
             //ヘッダ.消込額 = SUM(明細.今回入金額)
-            lblKin2.Text = string.Format("{0:#,##0}", kin3);    
+            lblKin2.Text = string.Format("{0:#,##0}", kin3);
             //lblKin2.Text = string.Format("{0:#,##0}", 0);
             //ヘッダ.残額 = ヘッダ.消込原資額 - SUM(明細.今回入金額)-その他消込額
-            lblKin3.Text = string.Format("{0:#,##0}",bbl.Z_Set(lblKin1.Text) -kin3 - bbl.Z_Set(detailControls[(int)EIndex.DeductionConfirm].Text));
+            //残額を計算（残額＝消込原資額－消込額－その他消込）
+            lblKin3.Text = string.Format("{0:#,##0}",bbl.Z_Set(lblKin1.Text) - kin3 - bbl.Z_Set(detailControls[(int)EIndex.DeductionConfirm].Text));
 
+            //残額＜０になれば、エラー
+            if (bbl.Z_Set(lblKin3.Text) < 0)
+            {
+                return false;
+            }
+            return true;
         }
 
         /// <summary>
