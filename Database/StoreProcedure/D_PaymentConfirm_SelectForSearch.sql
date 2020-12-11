@@ -35,13 +35,16 @@ BEGIN
             AND A.DeleteFlg = 0
             ORDER BY A.ChangeDate DESC) AS StaffName
     FROM D_PaymentConfirm AS DH
-
+    LEFT OUTER JOIN D_Collect AS DC
+    ON DC.CollectNO = DH.CollectNO
+    AND DC.DeleteDateTime IS NULL
+    
     WHERE DH.CollectClearDate >= (CASE WHEN @CollectClearDateFrom <> '' THEN CONVERT(DATE, @CollectClearDateFrom) ELSE DH.CollectClearDate END)
     AND DH.CollectClearDate   <= (CASE WHEN @CollectClearDateTo <> ''   THEN CONVERT(DATE, @CollectClearDateTo)   ELSE DH.CollectClearDate END)
     AND CONVERT(DATE,DH.ConfirmDateTime) >= (CASE WHEN @DateFrom <> '' THEN CONVERT(DATE, @DateFrom) ELSE CONVERT(DATE,DH.ConfirmDateTime) END)
     AND CONVERT(DATE,DH.ConfirmDateTime) <= (CASE WHEN @DateTo <> ''   THEN CONVERT(DATE, @DateTo)   ELSE CONVERT(DATE,DH.ConfirmDateTime) END)
     AND DH.DeleteDateTime IS NULL
-    AND (DH.InputKBN IN (1,2) OR (DH.InputKBN = 3 AND DH.AdvanceFLG = 1))
+    AND (DC.InputKBN IN (1,2) OR (DC.InputKBN = 3 AND DC.AdvanceFLG = 1))
 
     ORDER BY DH.CollectClearDate desc, DH.ConfirmNO, DH.CollectNO
     ;
