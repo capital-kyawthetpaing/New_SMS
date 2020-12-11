@@ -1443,9 +1443,16 @@ namespace NyuukinNyuuryoku_Detail
 
             return DispFromDataTable(index, kbn, no);
         }
+
+        /// <summary>
+        /// 明細にデータをセット
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="kbn">0:通常時,1:入金元検索の戻り値が請求番号の場合,2:入金元検索の戻り値が請求番号でない場合</param>
+        /// <param name="no"></param>
+        /// <returns></returns>
         private bool DispFromDataTable(int index, short kbn = 0, string no = "")
         {
-            //明細にデータをセット
             int i = -1;
             m_dataCnt = 0;
             string breakKey = "";
