@@ -54,6 +54,17 @@
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
             this.GvDetail = new CKM_Controls.CKM_GridView();
+            this.ckM_Label6 = new CKM_Controls.CKM_Label();
+            this.ckM_TextBox9 = new CKM_Controls.CKM_TextBox();
+            this.ckM_Label7 = new CKM_Controls.CKM_Label();
+            this.ckM_TextBox10 = new CKM_Controls.CKM_TextBox();
+            this.ckM_Label15 = new CKM_Controls.CKM_Label();
+            this.CboArrivalPlan = new CKM_Controls.CKM_ComboBox();
+            this.ckM_Label30 = new CKM_Controls.CKM_Label();
+            this.ScStaff = new Search.CKM_SearchControl();
+            this.ScCustomer = new Search.CKM_SearchControl();
+            this.ckM_RadioButton1 = new CKM_Controls.CKM_RadioButton();
+            this.ckM_RadioButton2 = new CKM_Controls.CKM_RadioButton();
             this.colStoreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCollectNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coICollectDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,17 +79,6 @@
             this.colConfirmAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colConfirmZan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colConfirmNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ckM_Label6 = new CKM_Controls.CKM_Label();
-            this.ckM_TextBox9 = new CKM_Controls.CKM_TextBox();
-            this.ckM_Label7 = new CKM_Controls.CKM_Label();
-            this.ckM_TextBox10 = new CKM_Controls.CKM_TextBox();
-            this.ckM_Label15 = new CKM_Controls.CKM_Label();
-            this.CboArrivalPlan = new CKM_Controls.CKM_ComboBox();
-            this.ckM_Label30 = new CKM_Controls.CKM_Label();
-            this.ScStaff = new Search.CKM_SearchControl();
-            this.ScCustomer = new Search.CKM_SearchControl();
-            this.ckM_RadioButton1 = new CKM_Controls.CKM_RadioButton();
-            this.ckM_RadioButton2 = new CKM_Controls.CKM_RadioButton();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvDetail)).BeginInit();
@@ -467,139 +467,6 @@
             this.GvDetail.UseSetting = true;
             this.GvDetail.CurrentCellChanged += new System.EventHandler(this.GvDetail_CurrentCellChanged);
             // 
-            // colStoreName
-            // 
-            this.colStoreName.DataPropertyName = "StoreName";
-            this.colStoreName.HeaderText = "店舗";
-            this.colStoreName.Name = "colStoreName";
-            this.colStoreName.ReadOnly = true;
-            this.colStoreName.Width = 150;
-            // 
-            // colCollectNO
-            // 
-            this.colCollectNO.DataPropertyName = "CollectNO";
-            this.colCollectNO.HeaderText = "入金番号";
-            this.colCollectNO.Name = "colCollectNO";
-            this.colCollectNO.ReadOnly = true;
-            this.colCollectNO.Width = 90;
-            // 
-            // coICollectDate
-            // 
-            this.coICollectDate.DataPropertyName = "CollectDate";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.coICollectDate.DefaultCellStyle = dataGridViewCellStyle3;
-            this.coICollectDate.HeaderText = "入金日";
-            this.coICollectDate.Name = "coICollectDate";
-            this.coICollectDate.ReadOnly = true;
-            this.coICollectDate.Width = 80;
-            // 
-            // colInputDatetime
-            // 
-            this.colInputDatetime.DataPropertyName = "InputDatetime";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colInputDatetime.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colInputDatetime.HeaderText = "入金入力日";
-            this.colInputDatetime.Name = "colInputDatetime";
-            this.colInputDatetime.ReadOnly = true;
-            this.colInputDatetime.Width = 80;
-            // 
-            // colCollectCustomerCD
-            // 
-            this.colCollectCustomerCD.DataPropertyName = "CollectCustomerCD";
-            this.colCollectCustomerCD.HeaderText = "入金顧客";
-            this.colCollectCustomerCD.Name = "colCollectCustomerCD";
-            this.colCollectCustomerCD.ReadOnly = true;
-            // 
-            // colCustomerName
-            // 
-            this.colCustomerName.DataPropertyName = "CustomerName";
-            this.colCustomerName.HeaderText = " ";
-            this.colCustomerName.Name = "colCustomerName";
-            this.colCustomerName.ReadOnly = true;
-            this.colCustomerName.Width = 170;
-            // 
-            // colStaff
-            // 
-            this.colStaff.DataPropertyName = "StaffName";
-            this.colStaff.HeaderText = "担当者";
-            this.colStaff.Name = "colStaff";
-            this.colStaff.ReadOnly = true;
-            // 
-            // colWebCollectTypeName
-            // 
-            this.colWebCollectTypeName.DataPropertyName = "WebCollectTypeName";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colWebCollectTypeName.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colWebCollectTypeName.HeaderText = "取込種別";
-            this.colWebCollectTypeName.Name = "colWebCollectTypeName";
-            this.colWebCollectTypeName.ReadOnly = true;
-            this.colWebCollectTypeName.Width = 90;
-            // 
-            // colPaymentMethodName
-            // 
-            this.colPaymentMethodName.DataPropertyName = "PaymentMethodName";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colPaymentMethodName.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colPaymentMethodName.HeaderText = "金種";
-            this.colPaymentMethodName.Name = "colPaymentMethodName";
-            this.colPaymentMethodName.ReadOnly = true;
-            this.colPaymentMethodName.Width = 90;
-            // 
-            // colCollectAmount
-            // 
-            this.colCollectAmount.DataPropertyName = "CollectAmount";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "N0";
-            dataGridViewCellStyle7.NullValue = null;
-            this.colCollectAmount.DefaultCellStyle = dataGridViewCellStyle7;
-            this.colCollectAmount.HeaderText = "入金額";
-            this.colCollectAmount.Name = "colCollectAmount";
-            this.colCollectAmount.ReadOnly = true;
-            this.colCollectAmount.Width = 90;
-            // 
-            // colConfirmSource
-            // 
-            this.colConfirmSource.DataPropertyName = "ConfirmSource";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "N0";
-            dataGridViewCellStyle8.NullValue = null;
-            this.colConfirmSource.DefaultCellStyle = dataGridViewCellStyle8;
-            this.colConfirmSource.HeaderText = "消込原資額";
-            this.colConfirmSource.Name = "colConfirmSource";
-            this.colConfirmSource.ReadOnly = true;
-            this.colConfirmSource.Width = 90;
-            // 
-            // colConfirmAmount
-            // 
-            this.colConfirmAmount.DataPropertyName = "ConfirmAmount";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "N0";
-            dataGridViewCellStyle9.NullValue = null;
-            this.colConfirmAmount.DefaultCellStyle = dataGridViewCellStyle9;
-            this.colConfirmAmount.HeaderText = "消込額";
-            this.colConfirmAmount.Name = "colConfirmAmount";
-            this.colConfirmAmount.ReadOnly = true;
-            this.colConfirmAmount.Width = 90;
-            // 
-            // colConfirmZan
-            // 
-            this.colConfirmZan.DataPropertyName = "ConfirmZan";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "N0";
-            this.colConfirmZan.DefaultCellStyle = dataGridViewCellStyle10;
-            this.colConfirmZan.HeaderText = "消込残額";
-            this.colConfirmZan.Name = "colConfirmZan";
-            this.colConfirmZan.ReadOnly = true;
-            this.colConfirmZan.Width = 90;
-            // 
-            // colConfirmNO
-            // 
-            this.colConfirmNO.DataPropertyName = "ConfirmNO";
-            this.colConfirmNO.HeaderText = "消込番号";
-            this.colConfirmNO.Name = "colConfirmNO";
-            this.colConfirmNO.ReadOnly = true;
-            this.colConfirmNO.Visible = false;
-            // 
             // ckM_Label6
             // 
             this.ckM_Label6.AutoSize = true;
@@ -830,6 +697,139 @@
             this.ckM_RadioButton2.TabStop = true;
             this.ckM_RadioButton2.Text = " 全て";
             this.ckM_RadioButton2.UseVisualStyleBackColor = true;
+            // 
+            // colStoreName
+            // 
+            this.colStoreName.DataPropertyName = "StoreName";
+            this.colStoreName.HeaderText = "店舗";
+            this.colStoreName.Name = "colStoreName";
+            this.colStoreName.ReadOnly = true;
+            this.colStoreName.Width = 150;
+            // 
+            // colCollectNO
+            // 
+            this.colCollectNO.DataPropertyName = "CollectNO";
+            this.colCollectNO.HeaderText = "入金番号";
+            this.colCollectNO.Name = "colCollectNO";
+            this.colCollectNO.ReadOnly = true;
+            this.colCollectNO.Width = 90;
+            // 
+            // coICollectDate
+            // 
+            this.coICollectDate.DataPropertyName = "CollectDate";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.coICollectDate.DefaultCellStyle = dataGridViewCellStyle3;
+            this.coICollectDate.HeaderText = "入金日";
+            this.coICollectDate.Name = "coICollectDate";
+            this.coICollectDate.ReadOnly = true;
+            this.coICollectDate.Width = 80;
+            // 
+            // colInputDatetime
+            // 
+            this.colInputDatetime.DataPropertyName = "InputDatetime";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colInputDatetime.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colInputDatetime.HeaderText = "入金入力日";
+            this.colInputDatetime.Name = "colInputDatetime";
+            this.colInputDatetime.ReadOnly = true;
+            this.colInputDatetime.Width = 80;
+            // 
+            // colCollectCustomerCD
+            // 
+            this.colCollectCustomerCD.DataPropertyName = "CollectCustomerCD";
+            this.colCollectCustomerCD.HeaderText = "入金顧客";
+            this.colCollectCustomerCD.Name = "colCollectCustomerCD";
+            this.colCollectCustomerCD.ReadOnly = true;
+            // 
+            // colCustomerName
+            // 
+            this.colCustomerName.DataPropertyName = "CustomerName";
+            this.colCustomerName.HeaderText = " ";
+            this.colCustomerName.Name = "colCustomerName";
+            this.colCustomerName.ReadOnly = true;
+            this.colCustomerName.Width = 170;
+            // 
+            // colStaff
+            // 
+            this.colStaff.DataPropertyName = "StaffName";
+            this.colStaff.HeaderText = "担当者";
+            this.colStaff.Name = "colStaff";
+            this.colStaff.ReadOnly = true;
+            // 
+            // colWebCollectTypeName
+            // 
+            this.colWebCollectTypeName.DataPropertyName = "WebCollectTypeName";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colWebCollectTypeName.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colWebCollectTypeName.HeaderText = "取込種別";
+            this.colWebCollectTypeName.Name = "colWebCollectTypeName";
+            this.colWebCollectTypeName.ReadOnly = true;
+            this.colWebCollectTypeName.Width = 90;
+            // 
+            // colPaymentMethodName
+            // 
+            this.colPaymentMethodName.DataPropertyName = "PaymentMethodName";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colPaymentMethodName.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colPaymentMethodName.HeaderText = "金種";
+            this.colPaymentMethodName.Name = "colPaymentMethodName";
+            this.colPaymentMethodName.ReadOnly = true;
+            this.colPaymentMethodName.Width = 80;
+            // 
+            // colCollectAmount
+            // 
+            this.colCollectAmount.DataPropertyName = "CollectAmount";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N0";
+            dataGridViewCellStyle7.NullValue = null;
+            this.colCollectAmount.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colCollectAmount.HeaderText = "入金額";
+            this.colCollectAmount.Name = "colCollectAmount";
+            this.colCollectAmount.ReadOnly = true;
+            this.colCollectAmount.Width = 90;
+            // 
+            // colConfirmSource
+            // 
+            this.colConfirmSource.DataPropertyName = "ConfirmSource";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N0";
+            dataGridViewCellStyle8.NullValue = null;
+            this.colConfirmSource.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colConfirmSource.HeaderText = "消込原資額";
+            this.colConfirmSource.Name = "colConfirmSource";
+            this.colConfirmSource.ReadOnly = true;
+            this.colConfirmSource.Width = 90;
+            // 
+            // colConfirmAmount
+            // 
+            this.colConfirmAmount.DataPropertyName = "ConfirmAmount";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "N0";
+            dataGridViewCellStyle9.NullValue = null;
+            this.colConfirmAmount.DefaultCellStyle = dataGridViewCellStyle9;
+            this.colConfirmAmount.HeaderText = "消込額";
+            this.colConfirmAmount.Name = "colConfirmAmount";
+            this.colConfirmAmount.ReadOnly = true;
+            this.colConfirmAmount.Width = 90;
+            // 
+            // colConfirmZan
+            // 
+            this.colConfirmZan.DataPropertyName = "ConfirmZan";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "N0";
+            this.colConfirmZan.DefaultCellStyle = dataGridViewCellStyle10;
+            this.colConfirmZan.HeaderText = "消込残額";
+            this.colConfirmZan.Name = "colConfirmZan";
+            this.colConfirmZan.ReadOnly = true;
+            this.colConfirmZan.Width = 90;
+            // 
+            // colConfirmNO
+            // 
+            this.colConfirmNO.DataPropertyName = "ConfirmNO";
+            this.colConfirmNO.HeaderText = "消込番号";
+            this.colConfirmNO.Name = "colConfirmNO";
+            this.colConfirmNO.ReadOnly = true;
+            this.colConfirmNO.Visible = false;
             // 
             // NyuukinNyuuryoku
             // 
