@@ -1433,7 +1433,7 @@ namespace NyuukinNyuuryoku_Detail
                     lblKin2.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmAmount"]);
                     detailControls[(int)EIndex.CollectClearDate].Text = dtDetail.Rows[0]["CollectClearDate"].ToString();
                 }
-                lblKin3.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmZan"]);
+                //lblKin3.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmZan"]);
 
                 //新規消込モード
                 if (mKidouMode.Equals(9))
@@ -3400,7 +3400,7 @@ namespace NyuukinNyuuryoku_Detail
         private void SetEnabledForMode()
         {
             //通常起動
-             if (mKidouMode.Equals(0))
+            if (mKidouMode.Equals(0))
                 return;
 
             //入金照会からの新規消込または修正時
