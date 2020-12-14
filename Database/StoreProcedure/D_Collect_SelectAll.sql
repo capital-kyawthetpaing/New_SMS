@@ -33,26 +33,29 @@ BEGIN
               ,DH.InputKBN
               ,DH.StoreCD
               ,(SELECT top 1 A.StoreName
-                  FROM M_Store A 
-                  WHERE A.StoreCD = DH.StoreCD AND A.ChangeDate <= DH.CollectDate
-                        AND A.DeleteFlg = 0
-                  ORDER BY A.ChangeDate desc) AS StoreName
+                FROM M_Store A 
+                WHERE A.StoreCD = DH.StoreCD 
+                AND A.ChangeDate <= DH.CollectDate
+                AND A.DeleteFlg = 0
+                ORDER BY A.ChangeDate desc) AS StoreName
               ,DH.StaffCD
               ,(SELECT TOP 1 A.StaffName
-                        FROM M_Staff AS A
-                        WHERE A.StaffCD = DH.StaffCD AND A.ChangeDate <= DH.CollectDate 
-                        AND A.DeleteFlg = 0
-                        ORDER BY A.ChangeDate DESC) AS StaffName
+                FROM M_Staff AS A
+                WHERE A.StaffCD = DH.StaffCD 
+                AND A.ChangeDate <= DH.CollectDate 
+                AND A.DeleteFlg = 0
+                ORDER BY A.ChangeDate DESC) AS StaffName
               ,CONVERT(varchar,DH.InputDatetime,111) AS InputDatetime
               ,DH.WebCollectNO
               ,DH.WebCollectType
               ,(SELECT M.PatternName FROM M_Settlement AS M WHERE M.PatternCD = DH.WebCollectType) AS WebCollectTypeName
               ,DH.CollectCustomerCD
               ,(SELECT TOP 1 A.CustomerName
-                        FROM M_Customer AS A
-                        WHERE A.CustomerCD = DH.CollectCustomerCD AND A.ChangeDate <= DH.CollectDate
-                        AND A.DeleteFlg = 0
-                        ORDER BY A.ChangeDate DESC) AS CustomerName
+                FROM M_Customer AS A
+                WHERE A.CustomerCD = DH.CollectCustomerCD 
+                AND A.ChangeDate <= DH.CollectDate
+                AND A.DeleteFlg = 0
+                ORDER BY A.ChangeDate DESC) AS CustomerName
                         
               ,CONVERT(varchar,DH.CollectDate,111) AS CollectDate
               ,DH.PaymentMethodCD
@@ -104,25 +107,28 @@ BEGIN
               ,DH.StoreCD
               ,(SELECT top 1 A.StoreName
                   FROM M_Store A 
-                  WHERE A.StoreCD = DH.StoreCD AND A.ChangeDate <= DH.CollectDate
-                        AND A.DeleteFlg = 0
+                  WHERE A.StoreCD = DH.StoreCD 
+                  AND A.ChangeDate <= DH.CollectDate
+                  AND A.DeleteFlg = 0
                   ORDER BY A.ChangeDate desc) AS StoreName
               ,DH.StaffCD
               ,(SELECT TOP 1 A.StaffName
-                        FROM M_Staff AS A
-                        WHERE A.StaffCD = DH.StaffCD AND A.ChangeDate <= DH.CollectDate 
-                        AND A.DeleteFlg = 0
-                        ORDER BY A.ChangeDate DESC) AS StaffName
+                FROM M_Staff AS A
+                WHERE A.StaffCD = DH.StaffCD 
+                AND A.ChangeDate <= DH.CollectDate 
+                AND A.DeleteFlg = 0
+                ORDER BY A.ChangeDate DESC) AS StaffName
               ,CONVERT(varchar,DH.InputDatetime,111) AS InputDatetime
               ,DH.WebCollectNO
               ,DH.WebCollectType
               ,(SELECT M.PatternName FROM M_Settlement AS M WHERE M.PatternCD = DH.WebCollectType) AS WebCollectTypeName
               ,DH.CollectCustomerCD
               ,(SELECT TOP 1 A.CustomerName
-                        FROM M_Customer AS A
-                        WHERE A.CustomerCD = DH.CollectCustomerCD AND A.ChangeDate <= DH.CollectDate 
-                        AND A.DeleteFlg = 0
-                        ORDER BY A.ChangeDate DESC) AS CustomerName
+                FROM M_Customer AS A
+                WHERE A.CustomerCD = DH.CollectCustomerCD 
+                AND A.ChangeDate <= DH.CollectDate 
+                AND A.DeleteFlg = 0
+                ORDER BY A.ChangeDate DESC) AS CustomerName
               
               ,CONVERT(varchar,DH.CollectDate,111) AS CollectDate
               ,DH.PaymentMethodCD
