@@ -69,5 +69,7 @@ namespace Entity
         public string StoreCD { get; set; }
         public string PaymentNum { get; set; }
 
+        public string Flg { get; set; }
+
     }
 }
