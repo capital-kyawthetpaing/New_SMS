@@ -2411,7 +2411,7 @@ namespace NyuukinNyuuryoku_Detail
 
             bbl.ShowMessage("I101");
 
-            if (Btn_F3.Text != "")
+            if (Btn_F6.Text != "")
                 //更新後画面クリア
                 ChangeOperationMode(OperationMode);
             else
