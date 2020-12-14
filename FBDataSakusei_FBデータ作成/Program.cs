@@ -16,7 +16,7 @@ namespace FBDataSakusei_FBデータ作成
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FrmFBDataSakusei_FBデータ作成());
         }
     }
 }
