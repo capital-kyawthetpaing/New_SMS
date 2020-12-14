@@ -40,8 +40,8 @@ namespace UriageNyuuryoku
             internal bool NotPrintFLG;
 
             internal string PaymentPlanDate;
-            internal string OrderUnitPrice;
-            internal string OrderGaku;
+            internal string OrderUnitPrice; //仕入単価
+            internal string OrderGaku;      //仕入額
 
             //隠し項目
             internal int DiscountKbn;   //SKUマスタ値引き区分
@@ -65,6 +65,7 @@ namespace UriageNyuuryoku
             internal int TaxFractionKBN;
             internal decimal OrderTax;          //通常税額(Hidden)
             internal decimal KeigenOrderTax;    //軽減税額(Hidden)
+            internal decimal FncCostUnitPrice;      //原価単価 (単価取得)
             //internal decimal OrderTaxRitsu;
         }
 

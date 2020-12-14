@@ -92,6 +92,8 @@ BEGIN
             AND ISNULL(DH.WebCollectType,'') = (CASE WHEN @WebCollectType <> '' THEN @WebCollectType ELSE ISNULL(DH.WebCollectType,'') END)
             AND DH.ConfirmSource - DH.ConfirmAmount > 0
             AND DH.DeleteDateTime IS NULL
+            AND (DH.InputKBN IN (1,2) OR (DH.InputKBN = 3 AND DH.AdvanceFLG = 1))
+            
         ORDER BY DH.CollectDate desc,DH.CollectNO
         ;
     END  
@@ -160,6 +162,7 @@ BEGIN
             AND ISNULL(DH.WebCollectType,'') = (CASE WHEN @WebCollectType <> '' THEN @WebCollectType ELSE ISNULL(DH.WebCollectType,'') END)
 --            AND DH.ConfirmSource - DH.ConfirmAmount > 0
             AND DH.DeleteDateTime IS NULL
+            AND (DH.InputKBN IN (1,2) OR (DH.InputKBN = 3 AND DH.AdvanceFLG = 1))
 
         ORDER BY DH.CollectDate desc,DH.CollectNO
     

@@ -1299,7 +1299,7 @@ namespace NyuukinNyuuryoku_Detail
                             bool exist = nnbl.D_PaymentConfirm_Select(dce);
                             if (exist)
                             {
-                                bbl.ShowMessage("E139", mes);
+                                bbl.ShowMessage("E271", mes);
                                 SetFocusAfterErr();
                                 return false;
                             }
@@ -2426,6 +2426,7 @@ namespace NyuukinNyuuryoku_Detail
 
             Scr_Clr(0);
 
+            SetDisplayMode = EMode.Uriage;
             S_BodySeigyo(0, 0);
             S_BodySeigyo(0, 1);
             //配列の内容を画面にセット
