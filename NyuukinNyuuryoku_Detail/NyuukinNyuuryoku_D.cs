@@ -2754,9 +2754,8 @@ namespace NyuukinNyuuryoku_Detail
                     bool ret = CheckKey(index);
                     if (ret)
                     {
-                        if (index == (int)EIndex.CollectNO)
-
-                            detailControls[(int)EIndex.CollectDate].Focus();
+                        if (index == (int)EIndex.CollectNO && detailControls[(int)EIndex.CollectDate].CanFocus)
+                                detailControls[(int)EIndex.CollectDate].Focus();
 
                         else if (index == (int)EIndex.InputDateTo || index == (int)EIndex.CustomerCD) //取込日
                             btnSubF11.Focus();
