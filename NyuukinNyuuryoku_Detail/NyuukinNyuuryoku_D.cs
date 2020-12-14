@@ -2411,7 +2411,7 @@ namespace NyuukinNyuuryoku_Detail
 
             bbl.ShowMessage("I101");
 
-            if (Btn_F3.Text != "")
+            if (Btn_F6.Text != "")
                 //更新後画面クリア
                 ChangeOperationMode(OperationMode);
             else
@@ -2754,9 +2754,8 @@ namespace NyuukinNyuuryoku_Detail
                     bool ret = CheckKey(index);
                     if (ret)
                     {
-                        if (index == (int)EIndex.CollectNO)
-
-                            detailControls[(int)EIndex.CollectDate].Focus();
+                        if (index == (int)EIndex.CollectNO && detailControls[(int)EIndex.CollectDate].CanFocus)
+                                detailControls[(int)EIndex.CollectDate].Focus();
 
                         else if (index == (int)EIndex.InputDateTo || index == (int)EIndex.CustomerCD) //取込日
                             btnSubF11.Focus();
