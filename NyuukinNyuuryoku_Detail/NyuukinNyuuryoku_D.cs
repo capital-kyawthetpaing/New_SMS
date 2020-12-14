@@ -1587,7 +1587,7 @@ namespace NyuukinNyuuryoku_Detail
                         mGrid.g_DArray[i].Chk = true;
                         mGrid.g_DArray[i].ConfirmAmount = bbl.Z_SetStr(row["NowCollectAmount"]);   //今回入金額
 
-                        if (OperationMode == EOperationMode.INSERT)
+                        if (OperationMode == EOperationMode.INSERT || mKidouMode.Equals(9))
                             mGrid.g_DArray[i].OldConfirmAmount = "0";
                         else
                             mGrid.g_DArray[i].OldConfirmAmount = bbl.Z_SetStr(row["OldConfirmAmount"]);   //修正前今回入金額
