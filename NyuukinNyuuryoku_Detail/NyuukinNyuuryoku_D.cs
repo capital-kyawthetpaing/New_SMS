@@ -116,6 +116,7 @@ namespace NyuukinNyuuryoku_Detail
         private string mOldConfirmNO = "";    //排他処理のため使用
         private string mSystemKBN = "";     //[M_DenominationKBN][SystemKBN]
         private string mStaffName = "";
+        private short mKidouMode = 0;
 
         // -- 明細部をグリッドのように扱うための宣言 ↓--------------------
         ClsGridNyuukin_S mGrid = new ClsGridNyuukin_S();
@@ -833,6 +834,7 @@ namespace NyuukinNyuuryoku_Detail
                             Scr_Lock(0, 2, 1);
                             keyControls[(int)EIndex.StoreCD].Enabled = false;
                             SetEnabled();
+                            SetEnabledForMode();
                             btnSubF11.Enabled = false;
                             SetFuncKeyAll(this, "111011000001");
                         }
@@ -969,6 +971,7 @@ namespace NyuukinNyuuryoku_Detail
 
                     if (mode.Equals("9"))
                     {
+                        mKidouMode = 9;
                         string collectNO = cmds[(int)ECmdLine.PcID + 2];   //
                         ChangeOperationMode(EOperationMode.UPDATE);
                         keyControls[(int)EIndex.CollectNO].Text = collectNO;
@@ -976,6 +979,7 @@ namespace NyuukinNyuuryoku_Detail
                     }
                     else if (mode.Equals("10"))
                     {
+                        mKidouMode = 10;
                         string collectNO = cmds[(int)ECmdLine.PcID + 2];   //
                         string confirmNO = cmds[(int)ECmdLine.PcID + 3];
                         ChangeOperationMode(EOperationMode.UPDATE);
@@ -1430,6 +1434,16 @@ namespace NyuukinNyuuryoku_Detail
                     detailControls[(int)EIndex.CollectClearDate].Text = dtDetail.Rows[0]["CollectClearDate"].ToString();
                 }
                 lblKin3.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmZan"]);
+
+                //新規消込モード
+                if (mKidouMode.Equals(9))
+                {
+                    //その時点の入金データの最新状況を表示する+画面転送表05①に従ってデータ取得/画面表示する
+                    dce = GetEntity();
+                    dtDetail = nnbl.SelectDataForNyukin(dce);
+
+                    return DispFromDataTable(index, kbn, no);
+                }
             }
 
             //入金顧客
@@ -2411,7 +2425,7 @@ namespace NyuukinNyuuryoku_Detail
 
             bbl.ShowMessage("I101");
 
-            if (Btn_F6.Text != "")
+            if (mKidouMode.Equals(0))
                 //更新後画面クリア
                 ChangeOperationMode(OperationMode);
             else
@@ -2754,7 +2768,7 @@ namespace NyuukinNyuuryoku_Detail
                     bool ret = CheckKey(index);
                     if (ret)
                     {
-                        if (index == (int)EIndex.CollectNO && detailControls[(int)EIndex.CollectDate].CanFocus)
+                        if ((index == (int)EIndex.CollectNO || index == (int)EIndex.ConfirmNO ) && detailControls[(int)EIndex.CollectDate].CanFocus)
                                 detailControls[(int)EIndex.CollectDate].Focus();
 
                         else if (index == (int)EIndex.InputDateTo || index == (int)EIndex.CustomerCD) //取込日
@@ -3382,6 +3396,23 @@ namespace NyuukinNyuuryoku_Detail
                 detailControls[(int)EIndex.Tegata].Enabled = false;
                 detailControls[(int)EIndex.Tegata].Text = "";
             }
+        }
+        private void SetEnabledForMode()
+        {
+            //通常起動
+             if (mKidouMode.Equals(0))
+                return;
+
+            //入金照会からの新規消込または修正時
+            //　入金日、入金金種も入力不可
+            detailControls[(int)EIndex.CollectDate].Enabled = false;
+            cboDenomination.Enabled = false;
+            //　入金額、手数料～その他(-)、その他消込額も入力不可
+            for (int i=(int)EIndex.NyukinGaku; i<= (int)EIndex.DeductionConfirm; i++)
+            {
+                detailControls[i].Enabled = false;
+            }
+
         }
     }
 }
