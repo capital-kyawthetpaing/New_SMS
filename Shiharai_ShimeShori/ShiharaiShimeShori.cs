@@ -27,8 +27,6 @@ namespace Shiharai_ShimeShori
         string Num = string.Empty;
         string PayCloseNo = string.Empty;
         string EProgram, EOperator, EPc = String.Empty;
-        string[] no ;
-        string[] payNo;
         public Shiharai_ShimeShori()
         {
             InitializeComponent();
@@ -106,65 +104,6 @@ namespace Shiharai_ShimeShori
             return dpp_e;
         }
 
-        private void GetNumber(D_PayPlan_Entity dpp)
-        {
-            //dpp_e = GetPayPlan();
-            //DataTable dtno = sss_bl.D_PayPlanValue_Select(dpp_e, "1");
-            //if (dtno.Rows.Count > 0)
-            //{
-            //    Num = dtno.Rows[0]["Number"].ToString();
-            //}
-            //de_e = new D_Exclusive_Entity()
-            //{
-            //    DataKBN = 9,
-            //    Number = Num,
-            //    Program = this.InProgramID,
-            //    Operator = this.InOperatorCD,
-            //    PC = this.InPcID
-
-            //};
-
-            //return de_e;
-            
-            DataTable dtno = sss_bl.D_PayPlanValue_Select(dpp, "1");
-            if (dtno.Rows.Count > 0)
-            {
-                for (int n = 0; n < dtno.Rows.Count; n++)
-                {
-                    Num = dtno.Rows[n]["Number"].ToString();
-                }
-            }
-            //de_e = new D_Exclusive_Entity()
-            //{
-            //    DataKBN = 9,
-            //    Number = Num,
-            //    Program = this.InProgramID,
-            //    Operator = this.InOperatorCD,
-            //    PC = this.InPcID
-            //};
-        }
-        private D_Exclusive_Entity GetPayCloseNo()
-        {
-            dpp_e = GetPayPlan();
-
-            DataTable dtpayno = sss_bl.D_PayPlanValue_Select(dpp_e, "2");
-            if (dtpayno.Rows.Count > 0)
-            {
-                PayCloseNo = dtpayno.Rows[0]["PayCloseNo"].ToString();
-            }
-
-            de_e = new D_Exclusive_Entity()
-            {
-                DataKBN = 9,
-                Number = PayCloseNo,
-                Program = this.InProgramID,
-                Operator = this.InOperatorCD,
-                PC = this.InPcID
-
-            };
-
-            return de_e;
-        }
 
         //private D_Exclusive_Entity GetExclusiveData(int type)
         //{
