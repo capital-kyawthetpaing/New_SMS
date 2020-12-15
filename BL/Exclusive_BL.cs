@@ -12,7 +12,7 @@ namespace BL
     public class Exclusive_BL : Base_BL
     {
         //データ区分
-        public  enum DataKbn: int
+        public enum DataKbn : int
         {
             Null,
             Mitsumori,//１：見積、
@@ -31,7 +31,7 @@ namespace BL
             , Kessai//14：決済取込
             , SyukkaShiji//15：出荷指示
             , Syukka//16：出荷
-            ,TenjiNo=32//32 TenjiCD 
+            , TenjiNo = 32//32 TenjiCD 
         }
 
         D_Exclusive_DL mdl;
@@ -55,6 +55,10 @@ namespace BL
             return mdl.D_Exclusive_Delete(dee);
         }
 
+        public bool D_Exclusive_DeleteByKBN(D_Exclusive_Entity dee)
+        {
+            return mdl.D_Exclusive_DeleteByKBN(dee);
+        }
         /// <summary>
         /// </summary>
         //public bool ItemPrice_Exec(D_Exclusive_Entity dee, DataTable dt, short operationMode, string operatorNm, string pc)
@@ -70,9 +74,9 @@ namespace BL
         //    if (dt.Rows.Count > 0)
         //    {
         //        //dme.ExclusiveNO = dt.Rows[0]["ExclusiveNO"].ToString();
-             
+
         //        //dme.DeliveryPlace = dt.Rows[0]["DeliveryPlace"].ToString();
-        
+
 
         //                    }
 
