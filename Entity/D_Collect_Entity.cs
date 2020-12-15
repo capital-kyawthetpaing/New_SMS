@@ -42,5 +42,6 @@ namespace Entity
         public int RdoSyubetsu { get; set; }
         public string ConfirmNO { get; set; }
         public string CollectClearDate { get; set; }
+        public int KidouMode { get; set; }
     }
 }

@@ -249,17 +249,17 @@ namespace WMasterTouroku_HanbaiTankaTennic
                     mGrid.g_DArray[c].SKUCD = dr["SKUCD"].ToString();
                     mGrid.g_DArray[c].JANCD = dr["JanCD"].ToString();
                     mGrid.g_DArray[c].AdminNo = dr["AdminNo"].ToString();
-                    mGrid.g_DArray[c].ChangeDate=    mGrid.g_DArray[c].StartChangeDate = dr["StartDate"].ToString();
+                    mGrid.g_DArray[c].ChangeDate = mGrid.g_DArray[c].StartChangeDate = dr["StartDate"].ToString();
                     mGrid.g_DArray[c].EndChangeDate = dr["EndDate"].ToString();
-                    mGrid.g_DArray[c].UnitPrice = dr["UnitPrice"].ToString();
-                    mGrid.g_DArray[c].StandardSalesUnitPrice = dr["StandardSalesUnitPrice"].ToString();
-                    mGrid.g_DArray[c].Rank1UnitPrice = dr["Rank1UnitPrice"].ToString();
-                    mGrid.g_DArray[c].Rank2UnitPrice = dr["Rank2UnitPrice"].ToString();
-                    mGrid.g_DArray[c].Rank3UnitPrice = dr["Rank3UnitPrice"].ToString();
-                    mGrid.g_DArray[c].Rank4UnitPrice = dr["Rank4UnitPrice"].ToString();
-                    mGrid.g_DArray[c].Rank5UnitPrice = dr["Rank5UnitPrice"].ToString();
+                    mGrid.g_DArray[c].UnitPrice = bbl.Z_SetStr(dr["UnitPrice"].ToString());
+                    mGrid.g_DArray[c].StandardSalesUnitPrice = bbl.Z_SetStr(dr["StandardSalesUnitPrice"].ToString());
+                    mGrid.g_DArray[c].Rank1UnitPrice = bbl.Z_SetStr(dr["Rank1UnitPrice"].ToString());
+                    mGrid.g_DArray[c].Rank2UnitPrice = bbl.Z_SetStr(dr["Rank2UnitPrice"].ToString());
+                    mGrid.g_DArray[c].Rank3UnitPrice = bbl.Z_SetStr(dr["Rank3UnitPrice"].ToString());
+                    mGrid.g_DArray[c].Rank4UnitPrice = bbl.Z_SetStr(dr["Rank4UnitPrice"].ToString());
+                    mGrid.g_DArray[c].Rank5UnitPrice = bbl.Z_SetStr(dr["Rank5UnitPrice"].ToString());
                     mGrid.g_DArray[c].ItemName = dr["SKUName"].ToString();
-                    mGrid.g_DArray[c].CostUnitPrice = dr["CostUnitPrice"].ToString();
+                    mGrid.g_DArray[c].CostUnitPrice = bbl.Z_SetStr(dr["CostUnitPrice"].ToString());
                     mGrid.g_DArray[c].Remarks = dr["Remarks"].ToString();
                     c++;
                 }

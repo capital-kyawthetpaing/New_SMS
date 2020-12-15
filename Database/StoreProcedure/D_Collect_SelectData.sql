@@ -316,7 +316,8 @@ BEGIN
               ,DW.BillingCustomerCD
               ,DW.BillingCustomerName
               ,DW.BillingGaku
-              ,DW.CollectAmount AS D_CollectAmount
+              --,DW.CollectAmount AS D_CollectAmount
+              ,DW.CollectAmount - DW.NowCollectAmount AS D_CollectAmount
               ,DW.NowCollectAmount
               ,DW.NowCollectAmount AS OldConfirmAmount
               ,DW.Minyukin
@@ -352,8 +353,9 @@ BEGIN
                       AND A.DeleteFlg = 0
                       ORDER BY A.ChangeDate DESC) AS BillingCustomerName
                     ,ISNULL(DBM.BillingGaku,0) AS BillingGaku       --êøãÅäz
-                    ,ISNULL(DCBM.CollectAmount,0) AS CollectAmount	--ì¸ã‡çœäz(ìoò^éûÇ…çXêVÇµÇΩâÊñ ÇÃè¡çûã‡äz)
-                    --,ISNULL(DBM.BillingGaku,0) -ISNULL(DCBM.CollectAmount,0) AS NowCollectAmount --ç°âÒì¸ã‡äz
+                    --,ISNULL(DCBM.CollectAmount,0) AS CollectAmount	--ì¸ã‡çœäz
+                    ,ISNULL(DCBD.CollectAmount,0) AS CollectAmount	--ì¸ã‡çœäz
+                    --,ISNULL(DBM.BillingGaku,0) -ISNULL(DCBM.CollectAmount,0) AS NowCollectAmount --ç°âÒì¸ã‡äz(ìoò^éûÇ…çXêVÇµÇΩâÊñ ÇÃè¡çûã‡äz)
                     ,ISNULL(DCBM.CollectAmount,0) AS NowCollectAmount      --ç°âÒì¸ã‡äz
                     ,ISNULL(DBM.BillingGaku,0) -ISNULL(DCBM.CollectAmount,0) AS Minyukin              --ñ¢ì¸ã‡äz
                     ,ISNULL(DSM.SKUCD,DJM.SKUCD) As SKUCD      --SKUCD
@@ -397,6 +399,21 @@ BEGIN
                 ON DJM.JuchuuNO = DCM.JuchuuNO
                 AND DJM.JuchuuRows = DCM.JuchuuRows
                 AND DJM.DeleteDateTime IS NULL
+
+                LEFT OUTER JOIN (SELECT SUM(DCBD.CollectAmount) AS CollectAmount
+                                      , DCBD.CollectPlanNO
+                                      , DCBD.CollectPlanRows
+                                 FROM D_CollectBillingDetails AS DCBD
+                                 INNER JOIN D_CollectBilling AS DCB
+                                 ON DCB.CollectPlanNO = DCBD.CollectPlanNO
+                                 AND DCB.ConfirmNO = DCBD.ConfirmNO
+                                 AND DCB.DeleteDateTime IS NULL
+                    
+                                 WHERE DCBD.DeleteDateTime IS NULL
+                                 GROUP BY DCBD.CollectPlanNO, DCBD.CollectPlanRows
+                ) AS DCBD
+                ON DCBD.CollectPlanNO = DCM.CollectPlanNO
+                AND DCBD.CollectPlanRows = DCM.CollectPlanRows
                 
                 WHERE DP.ConfirmNO = @ConfirmNO
                 AND DB.BillingConfirmFlg = 1
