@@ -35,14 +35,16 @@ BEGIN
               ,DB.StoreCD             --“X•Ü
               ,(SELECT top 1 A.StoreName
                 FROM M_Store A 
-                WHERE A.StoreCD = DB.StoreCD AND A.ChangeDate <= DB.BillingCloseDate
+                WHERE A.StoreCD = DB.StoreCD 
+                AND A.ChangeDate <= DB.BillingCloseDate
                 AND A.DeleteFlg = 0
                 ORDER BY A.ChangeDate desc) AS DetailStoreName
 
               ,DB.BillingCustomerCD
               ,(SELECT TOP 1 A.CustomerName
                 FROM M_Customer AS A
-                WHERE A.CustomerCD = DB.BillingCustomerCD AND A.ChangeDate <= DB.BillingCloseDate
+                WHERE A.CustomerCD = DB.BillingCustomerCD 
+                AND A.ChangeDate <= DB.BillingCloseDate
                 AND A.DeleteFlg = 0
                 ORDER BY A.ChangeDate DESC) AS BillingCustomerName
               ,SUM(ISNULL(DBM.BillingGaku,0) -ISNULL(DCBD.CollectAmount,0)) OVER() AS SumConfirmAmount 

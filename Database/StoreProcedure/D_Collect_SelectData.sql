@@ -20,7 +20,7 @@ BEGIN
     -- Insert statements for procedure here
     DECLARE @CollectCustomerCD varchar(13);
     
-    IF ISNULL(@CollectNO,'') <> ''
+    IF ISNULL(@ConfirmNO,'') = ''
     BEGIN
         SELECT @CollectCustomerCD = DH.CollectCustomerCD
         FROM [D_Collect] AS DH
@@ -250,13 +250,13 @@ BEGIN
                 --AND DH.DeleteDateTime IS NULL
               ;
         END
-	END
-	ELSE
-	BEGIN	--ì¸ã‡è¡çûî‘çÜì¸óÕéû
+    END
+    ELSE
+    BEGIN   --ì¸ã‡è¡çûî‘çÜì¸óÕéû
         --âÊñ ì]ëóï\02Å@ì¸ã‡å⁄ãq
         SELECT DW.CollectNO
-        	  ,DW.ConfirmNO
-        	  
+              ,DW.ConfirmNO
+              
               ,DH.InputKBN
               ,DH.StoreCD
               ,(SELECT top 1 A.StoreName
@@ -293,9 +293,11 @@ BEGIN
               ,DH.DeductionConfirm
               ,DH.ConfirmSource
               --,DH.ConfirmAmount
-              ,DW.CollectAmount AS ConfirmAmount
+              --,DW.CollectAmount AS ConfirmAmount
+              ,DW.SumCollectAmount AS ConfirmAmount
               --,DH.ConfirmSource - DH.ConfirmAmount AS ConfirmZan
-              ,DH.ConfirmSource - DW.CollectAmount AS ConfirmZan
+              --,DH.ConfirmSource - DW.CollectAmount AS ConfirmZan
+              ,DH.ConfirmSource - DH.ConfirmAmount + DW.SumCollectAmount AS ConfirmZan
               ,DH.Remark
               ,DH.InsertOperator
               ,DH.InsertDateTime
@@ -338,18 +340,21 @@ BEGIN
                     ,DB.StoreCD             --ìXï‹
                     ,(SELECT top 1 A.StoreName
                       FROM M_Store A 
-                      WHERE A.StoreCD = DB.StoreCD AND A.ChangeDate <= DB.BillingCloseDate
-                            AND A.DeleteFlg = 0
+                      WHERE A.StoreCD = DB.StoreCD 
+                      AND A.ChangeDate <= DB.BillingCloseDate
+                      AND A.DeleteFlg = 0
                       ORDER BY A.ChangeDate desc) AS StoreName
                     ,DB.BillingCustomerCD   --êøãÅå⁄ãq
                     ,(SELECT TOP 1 A.CustomerName
-                            FROM M_Customer AS A
-                            WHERE A.CustomerCD = DB.BillingCustomerCD AND A.ChangeDate <= DB.BillingCloseDate
-                            AND A.DeleteFlg = 0
-                            ORDER BY A.ChangeDate DESC) AS BillingCustomerName
+                      FROM M_Customer AS A
+                      WHERE A.CustomerCD = DB.BillingCustomerCD 
+                      AND A.ChangeDate <= DB.BillingCloseDate
+                      AND A.DeleteFlg = 0
+                      ORDER BY A.ChangeDate DESC) AS BillingCustomerName
                     ,ISNULL(DBM.BillingGaku,0) AS BillingGaku       --êøãÅäz
-                    ,ISNULL(DCBM.CollectAmount,0) AS CollectAmount	--ì¸ã‡çœäz
-                    ,ISNULL(DBM.BillingGaku,0) -ISNULL(DCBM.CollectAmount,0) AS NowCollectAmount --ç°âÒì¸ã‡äz
+                    ,ISNULL(DCBM.CollectAmount,0) AS CollectAmount	--ì¸ã‡çœäz(ìoò^éûÇ…çXêVÇµÇΩâÊñ ÇÃè¡çûã‡äz)
+                    --,ISNULL(DBM.BillingGaku,0) -ISNULL(DCBM.CollectAmount,0) AS NowCollectAmount --ç°âÒì¸ã‡äz
+                    ,ISNULL(DCBM.CollectAmount,0) AS NowCollectAmount      --ç°âÒì¸ã‡äz
                     ,ISNULL(DBM.BillingGaku,0) -ISNULL(DCBM.CollectAmount,0) AS Minyukin              --ñ¢ì¸ã‡äz
                     ,ISNULL(DSM.SKUCD,DJM.SKUCD) As SKUCD      --SKUCD
                     ,ISNULL(DSM.SKUName,DJM.SKUName) As SKUName    --è§ïiñº
@@ -358,6 +363,7 @@ BEGIN
                     ,CONVERT(varchar,DC.NextCollectPlanDate,111) AS NextCollectPlanDate      --éüâÒé˚ó\íËì˙
                     ,DCM.CollectPlanNO
                     ,DCM.CollectPlanRows
+                    ,SUM(ISNULL(DCBM.CollectAmount,0)) OVER() AS SumCollectAmount
                 FROM D_PaymentConfirm AS DP
                 LEFT OUTER JOIN D_CollectBilling AS DCB
                 ON DCB.ConfirmNO = DP.ConfirmNO
