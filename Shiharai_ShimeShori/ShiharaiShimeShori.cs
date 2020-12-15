@@ -69,6 +69,7 @@ namespace Shiharai_ShimeShori
         }
         private void BindCombo()
         {
+            cboProcessType.Items.Add("支払締");
             cboProcessType.Items.Add("支払締キャンセル");
         }
         public override void FunctionProcess(int index)
