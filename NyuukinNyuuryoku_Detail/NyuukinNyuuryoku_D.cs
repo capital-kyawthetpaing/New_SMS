@@ -1425,7 +1425,6 @@ namespace NyuukinNyuuryoku_Detail
                 if (index == (int)EIndex.CollectNO)
                 {
                     lblKin2.Text = "";
-                    //detailControls[(int)EIndex.CollectClearDate].Text = dtDetail.Rows[0]["CollectClearDate"].ToString();
                 }
                 else
                 {
@@ -1438,6 +1437,8 @@ namespace NyuukinNyuuryoku_Detail
                 //新規消込モード
                 if (mKidouMode.Equals(9))
                 {
+                    detailControls[(int)EIndex.CollectClearDate].Text = bbl.GetDate(); //dtDetail.Rows[0]["CollectClearDate"].ToString();
+
                     //その時点の入金データの最新状況を表示する+画面転送表05①に従ってデータ取得/画面表示する
                     dce = GetEntity();
                     dtDetail = nnbl.SelectDataForNyukin(dce);
@@ -2409,6 +2410,14 @@ namespace NyuukinNyuuryoku_Detail
                 CalcKin();
             }
 
+            //残額＜０になれば、エラー
+            if (bbl.Z_Set(lblKin3.Text) < 0)
+            {
+                bbl.ShowMessage("E273", "入金額（消込可能額）");
+                detailControls[(int)EIndex.NyukinGaku].Focus();
+                return;
+            }
+
             DataTable dt = GetGridEntity();
 
             //if (OperationMode == EOperationMode.INSERT)
@@ -2595,11 +2604,6 @@ namespace NyuukinNyuuryoku_Detail
             //残額を計算（残額＝消込原資額－消込額－その他消込）
             lblKin3.Text = string.Format("{0:#,##0}",bbl.Z_Set(lblKin1.Text) - kin3 - bbl.Z_Set(detailControls[(int)EIndex.DeductionConfirm].Text));
 
-            //残額＜０になれば、エラー
-            if (bbl.Z_Set(lblKin3.Text) < 0)
-            {
-                return false;
-            }
             return true;
         }
 
@@ -3268,7 +3272,7 @@ namespace NyuukinNyuuryoku_Detail
         {
             try
             {
-                if (OperationMode == EOperationMode.INSERT)
+                if (OperationMode == EOperationMode.INSERT || mKidouMode.Equals(9))
                 {
                     btnNyuukinmoto.Enabled = ckM_RadioButton2.Checked;
 
