@@ -15,6 +15,15 @@ namespace BL
         {
 
         }
+        public DataTable CheckMaster(string xml="")
+        {
+            return tdl.CheckMaster(xml);
+            //if (dtres.Rows.Count > 0)
+            //{
+            //   return dtres.Rows[0]["Allow"].ToString() == "Allow";
+            //}
+            //return false;
+        }
         public bool Select_TenjiData(Tenjikai_Entity tje,out DataTable GridDt)
         {
             var ds = tdl.Select_TenjiData(tje) ;

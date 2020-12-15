@@ -31,20 +31,36 @@ BEGIN
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
 	
-	If @Mode=1
+	--If @Mode=1
 	
+	CREATE TABLE [dbo].[#Temp]
+	(
+	TanKaCD varchar(13),
+	StoreCD varchar(4),
+	AdminNO int,
+	SKUCD varchar(30),
+	StartChangeDate varchar(10),
+	EndChangeDate varchar(10),
+	PriceWithoutTax money,
+	SalePriceOutTax money,
+	Remarks varchar(500),
+	DeleteFlg TinyInt,
+	UsedFlg TinyInt,
+	InsertOperartor varchar(10),
+	InsertDateTime datetime
+	)
 	Declare @DocHandle int
 	EXEC sp_xml_preparedocument @DocHandle OUTPUT, @insertXml
 	declare @currentDate as datetime = getdate();
-	select * into #Temp
-	from OPENXML(@DocHandle,'/NewDataSet/test',2)
+	Insert  into #Temp
+	select * from OPENXML(@DocHandle,'/NewDataSet/test',2)
 	WITH(
 	TanKaCD varchar(13),
 	StoreCD varchar(4),
 	AdminNO int,
 	SKUCD varchar(30),
-	StartChangeDate date,
-	EndChangeDate date,
+	StartChangeDate varchar(10),
+	EndChangeDate varchar(10),
 	PriceWithoutTax money,
 	SalePriceOutTax money,
 	Remarks varchar(500),
@@ -57,6 +73,11 @@ BEGIN
     --UpdateDateTime datetime
 	)
 	EXEC sp_xml_removedocument @DocHandle; 
+
+	
+	update #Temp set EndChangeDate=null
+	where EndChangeDate is null or EndChangeDate=''
+
 	Declare
 	@InsertDateTime as datetime=getdate();
 	If @Mode=1
@@ -129,7 +150,7 @@ update msk  set
 	msk.TankaCD = tp.TankaCD and
 	msk.AdminNo = tp.AdminNo and
 	--msk.StoreCD= tp.StoreCD and
-	msk.ChangeDate= tp.ChangeDate  
+	msk.ChangeDate= tp.StartChangeDate  
 	where msk.StoreCD='0000'
 
 	

@@ -141,14 +141,19 @@ namespace SeikyuuShoukai
             switch (index)
             {
                 case (int)EIndex.SeqSDT:
-                    //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+                    ////必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+                    //if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    //{
+                    //    //Ｅ１０２
+                    //    bbl.ShowMessage("E102");
+                    //    return false;
+                    //}
+                    
+                    //入力無くても良い(It is not necessary to input)
                     if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
-                        //Ｅ１０２
-                        bbl.ShowMessage("E102");
-                        return false;
+                        return true;
                     }
-
                     detailControls[index].Text = ssbl.FormatDate(detailControls[index].Text);
 
                     //日付として正しいこと(Be on the correct date)Ｅ１０３
@@ -186,6 +191,13 @@ namespace SeikyuuShoukai
                     break;
 
                 case (int)EIndex.CustomerCD:
+                    //請求締日、顧客のどれかに入力がなければエラー
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text) && string.IsNullOrWhiteSpace(detailControls[(int)EIndex.SeqSDT].Text))
+                    {
+                        bbl.ShowMessage("E188", "請求締日、顧客");
+                        return false;
+                    }
+
                     //入力無くても良い(It is not necessary to input)
                     if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {

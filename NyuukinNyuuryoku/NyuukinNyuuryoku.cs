@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 using BL;
 using Entity;
 using Base.Client;
-using Search;
-using GridBase;
 
 namespace NyuukinNyuuryoku
 {
@@ -69,7 +63,9 @@ namespace NyuukinNyuuryoku
                 //起動時共通処理
                 base.StartProgram();
 
-                Btn_F12.Text = "F12:新規入金";
+                Btn_F8.Text = "新規消込(F8)";
+                Btn_F10.Text = "修正(F10)";
+                Btn_F12.Text = "新規入金(F12)";
 
                 //初期値セット
                 nnbl = new NyuukinNyuuryoku_BL();
@@ -138,23 +134,85 @@ namespace NyuukinNyuuryoku
                 GvDetail.CurrentRow.Selected = true;
                 GvDetail.Enabled = true;
                 GvDetail.Focus();
-                Btn_F10.Enabled = true;
+                Btn_F10.Enabled = true;                  
+
             }
             else
             {
                 nnbl.ShowMessage("E128");
             }
         }
+        //// 外部プロセスのウィンドウを起動する
+        //public static void WakeupWindow(IntPtr hWnd)
+        //{
+        //    // メイン・ウィンドウが最小化されていれば元に戻す
+        //    if (IsIconic(hWnd))
+        //    {
+        //        ShowWindowAsync(hWnd, SW_RESTORE);
+        //    }
+
+        //    // メイン・ウィンドウを最前面に表示する
+        //    SetForegroundWindow(hWnd);
+        //}
+        //// 外部プロセスのメイン・ウィンドウを起動するためのWin32 API
+        //[DllImport("user32.dll")]
+        //private static extern bool SetForegroundWindow(IntPtr hWnd);
+        //[DllImport("user32.dll")]
+        //private static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
+        //[DllImport("user32.dll")]
+        //private static extern bool IsIconic(IntPtr hWnd);
+        //// ShowWindowAsync関数のパラメータに渡す定義値
+        //private const int SW_RESTORE = 9;  // 画面を元の大きさに戻す
+
         protected override void ExecSec()
         {
-            //新規モードで売上単位画面を表示					
+            ExecDetail(2);
+        }
+    
+        private void ExecDetail(short kbn)
+        {
+            System.Diagnostics.Process[] hProcesses = System.Diagnostics.Process.GetProcessesByName("NyuukinNyuuryoku_Detail");
+            if (hProcesses.Length > 0)
+            {
+                //SetForegroundWindow(hProcesses[0].MainWindowHandle);
+                Microsoft.VisualBasic.Interaction.AppActivate(hProcesses[0].Id);
+                return;
+            }
+
+            string cmdLine = "";
+            if (kbn.Equals(2))
+            {
+                cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " 0 ";
+            }
+            else
+            {
+                DataGridViewRow row = GvDetail.CurrentRow;
+                string no = row.Cells["colCollectNO"].Value.ToString();
+                string confirmNO = row.Cells["colConfirmNO"].Value.ToString();
+
+                if (kbn.Equals(0)　||　string.IsNullOrWhiteSpace(confirmNO))
+                {
+                    //カーソルが明細に存在し、その明細の「消込残額≠０」場合に「新規消込(F9)」として表示
+                    //（入金額がすべて消込されている場合（消込残額＝０）の場合は、新規消込はできない）
+
+                    //新規消込モードで、入金入力を表示（売上単位）
+                    //新規消込モード:値9, 明細.入金番号
+                    cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " 9 " + no;
+                }
+                else if (kbn.Equals(1))
+                {
+                    //修正モードで、入金入力を表示（売上単位）
+                    //修正モード:値10, 明細.入金番号, 明細.入金消込番号
+                    cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " 10 " + no + " " + confirmNO;
+                }
+            }            
+            
             //EXEが存在しない時ｴﾗｰ
             // 実行モジュールと同一フォルダのファイルを取得
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + NyuukinNyuuryoku_Uriage;
             if (System.IO.File.Exists(filePath))
             {
-                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID;
                 System.Diagnostics.Process.Start(filePath, cmdLine);
             }
             else
@@ -437,6 +495,14 @@ namespace NyuukinNyuuryoku
 
                         break;
                     }
+                case 7://F8:新規消込
+                    ExecDetail(0);
+                    break;
+
+                case 9://F10:修正
+                    ExecDetail(1);
+                    break;
+
                 case 11://F12:新規入金
                     //   //Ｑ２０５				
                     //if (bbl.ShowMessage("Q205") != DialogResult.Yes)
@@ -445,7 +511,6 @@ namespace NyuukinNyuuryoku
                     ExecSec();
                     break;
 
-                    
             }   //switch end
 
         }
@@ -519,6 +584,8 @@ namespace NyuukinNyuuryoku
                         F9Visible = false;
                         break;
                 }
+                Btn_F8.Enabled = false;
+                Btn_F10.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -562,6 +629,35 @@ namespace NyuukinNyuuryoku
             {
                 if (CboStoreCD.SelectedIndex > 0)
                     ScCustomer.Value2 = CboStoreCD.SelectedValue.ToString();
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void GvDetail_CurrentCellChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (GvDetail.CurrentCell == null)
+                    return;
+
+                DataGridViewRow row = GvDetail.CurrentRow;
+
+                if (bbl.Z_Set(row.Cells["colConfirmZan"].Value) != 0)
+                {
+                    //カーソルが明細に存在し、その明細の「消込残額≠０」場合に「新規消込(F9)」として表示
+                    Btn_F8.Enabled = true;
+                }
+                else
+                {
+                    Btn_F8.Enabled = false;
+                }
+
+                //カーソルが明細に存在する場合に「修正(F10)」として表示
+                Btn_F10.Enabled = true;
             }
             catch (Exception ex)
             {

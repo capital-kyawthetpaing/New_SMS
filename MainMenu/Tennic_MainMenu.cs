@@ -330,7 +330,7 @@ namespace MainMenu
                 if (localByName.Count() > 0)
                 {
 
-                    MessageBox.Show("Got Count");
+                   // MessageBox.Show("Got Count");
                     IntPtr handle = localByName[0].MainWindowHandle;
                     ShowWindow(handle, SW_SHOWMAXIMIZED);
                     SetForegroundWindow(handle);
@@ -338,7 +338,7 @@ namespace MainMenu
 
                     return;
                 }
-                MessageBox.Show("Got Over Diago");
+              //  MessageBox.Show("Got Over Diago");
                 (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");
             }
             catch (Exception ex)

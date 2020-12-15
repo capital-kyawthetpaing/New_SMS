@@ -1728,7 +1728,7 @@ namespace TenzikaiJuchuuTourou
                         mGrid.g_DArray[c].zeikomijuchuu = bbl.Z_SetStr(dr["JuchuuGaku"].ToString());//
                         mGrid.g_DArray[c].ArariGaku = bbl.Z_SetStr(dr["ProfitGaku"].ToString());//
                         mGrid.g_DArray[c].ZeiNu = dr["ZeiHyouki"].ToString();//
-                        mGrid.g_DArray[c].ZeinuTanku = dr["JuchuuTaxRitsu"].ToString() + "%";//
+                        mGrid.g_DArray[c].ZeinuTanku = dr["JuchuuTaxRitsu"].ToString().Replace("%","") + "%";//
 
                         // mGrid.g_DArray[c].Chk = dr["_3SKUName"].ToString();   
                         mGrid.g_DArray[c].ShanaiBi = dr["CommentOutStore"].ToString();//
@@ -1795,7 +1795,7 @@ namespace TenzikaiJuchuuTourou
                         mGrid.g_DArray[c].zeikomijuchuu = dr["_16OrderIncTax"].ToString();//
                         mGrid.g_DArray[c].ArariGaku = dr["_17TotalProfit"].ToString();//
                         mGrid.g_DArray[c].ZeiNu = dr["_18Taxnotation"].ToString();//
-                        mGrid.g_DArray[c].ZeinuTanku = dr["_19TaxRate"].ToString();//
+                        mGrid.g_DArray[c].ZeinuTanku = dr["_19TaxRate"].ToString().Replace(".0","");//
 
                         mGrid.g_DArray[c].Chk =true;   
                         mGrid.g_DArray[c].ShanaiBi = dr["_20ExternaRemarks"].ToString();//
@@ -2595,9 +2595,9 @@ namespace TenzikaiJuchuuTourou
                     {
                         ret = sbl.M_Customer_Select(mce, -1);
                     }
-                   
+
                     if (kbn == 1)
-                    oldVal = detailControls[(int)Eindex.SCHaiSoSaki].Text;
+                        oldVal = detailControls[(int)Eindex.SCHaiSoSaki].Text;
                     else
                         oldVal = detailControls[(int)Eindex.SCKokyakuu].Text;
                     if (ret)
@@ -2653,6 +2653,7 @@ namespace TenzikaiJuchuuTourou
                                 detailControls[index + 3].Text = "";
                                 detailControls[index + 3].Enabled = false;
                             }
+                             (detailControls[(int)Eindex.YoteiKinShuu] as CKM_ComboBox).SelectedValue = mce.PaymentMethodCD;
 
                             if (string.IsNullOrWhiteSpace(sc_haisosaki.TxtCode.Text))
                             {
@@ -3186,8 +3187,10 @@ namespace TenzikaiJuchuuTourou
             {
                 tkb = new TenjikaiJuuChuu_BL();
                 var dt = ConvertToDataTable(openFileDialog1.FileName);
-                if (dt == null)
+
+                if (dt == null || CheckMasterandDate(dt))
                 {
+                    //Exist with E269 (JanCD, DateError)
                     return;
                 }
                 tje = new Tenjikai_Entity
@@ -3211,8 +3214,68 @@ namespace TenzikaiJuchuuTourou
                 //SelectNextControl(ActiveControl, true, true, true, true);
             }
         }
+        public bool CheckMasterandDate(DataTable dt)
+        {
+            var xml = bbl.DataTableToXml(dt);
+            tkb = new TenjikaiJuuChuu_BL();
+            var Source = tkb.CheckMaster();
+            var mcheck = IsCheckJanCDExist(dt, Source ); //.Rows.Count == dt.Rows.Count;
+            if (!mcheck)
+                return true;
+            var DateAllowed = AllowDate();
+            int r = 0;
+            foreach (DataRow dr in dt.Rows)
+            {
+                var da = dr["販売予定日"].ToString();
+                r++;
+                if (!DateAllowed.Contains(dr["販売予定日"].ToString()))
+                {
+                    bbl.ShowMessage("E269", r.ToString(), "販売予定日の指定外の情報");
+                    return true;
+                }
+                else
+                {
+                    dr["販売予定日"] = dr["販売予定日"].ToString().Trim();
+                }
+            }
+           
+            return false;
+        }
+        private bool IsCheckJanCDExist(DataTable dt, DataTable Source)
+        {
+            //List<string> lstResult = (from table in Source.AsEnumerable()
+            //                          where table.dssd == Name
+            //                          select table.EntryName).ToList();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (Source.Select("JanCD = '" + dt.Rows[i]["仮JANCD"].ToString() + "'").Length == 0)
+                {
+                    bbl.ShowMessage("E269", (i + 1).ToString() ,"仮JANCD未登録エラー");
+                    return false;
+                }
+            }
+            return true;
+        }
+        private List<string> AllowDate()
+        {
+            List<string> lst = new List<string>();
+            for (int i = 0; i < 12; i++)
+            {
+                lst.Add((i + 1).ToString() + "月上旬");
+            }
+            for (int i = 0; i < 12; i++)
+            {
+                lst.Add((i + 1).ToString() + "月中旬");
+            }
+            for (int i = 0; i < 12; i++)
+            {
+                lst.Add((i + 1).ToString() + "月下旬");
+            }
+            return lst;
+        }
         private void MesaiHyouJi(DataTable dt)
         {
+         
             SetTenjiGrid(dt,true);
         }
         private void SetTenjiGrid(DataTable dt, bool IsShow = false)
@@ -3285,7 +3348,14 @@ namespace TenzikaiJuchuuTourou
                 MessageBox.Show("No Data Exist");
                 return null;
             }
-
+            foreach (DataRow dr in res.Rows)
+            {
+                if (dr["仮JANCD"].ToString() == "" || string.IsNullOrEmpty(dr["仮JANCD"].ToString()))
+                {
+                    dr.Delete();
+                }
+            }
+            res.AcceptChanges();
             return res;
 
         }

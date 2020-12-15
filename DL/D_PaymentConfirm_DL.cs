@@ -12,45 +12,22 @@ namespace DL
 {
     public class D_PaymentConfirm_DL : Base_DL
     {
+        /// <summary>
+        /// 入金入力（修正時）よりデータ抽出時に使用
+        /// </summary>
+        /// <param name="dce"></param>
+        /// <returns></returns>
+        public DataTable D_PaymentConfirm_Select(D_Collect_Entity dce)
+        {
+            string sp = "D_PaymentConfirm_Select";
 
-        ///// <summary>
-        ///// 入金入力よりデータ抽出時に使用
-        ///// </summary>
-        ///// <param name="dce"></param>
-        ///// <returns></returns>
-        //public DataTable D_Collect_SelectAll(D_Collect_Entity dce)
-        //{
-        //    string sp = "D_Collect_SelectAll";
-
-        //    Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
-        //    {
-        //        { "@CollectDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.CollectDateFrom } },
-        //        { "@CollectDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.CollectDateTo } },
-        //        { "@DateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.InputDateFrom } },
-        //        { "@DateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.InputDateTo } },
-        //        { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.StoreCD } },
-        //        { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.StaffCD } },
-        //        { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.CollectCustomerCD } },
-        //        { "@WebCollectType", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.WebCollectType } },
-        //        { "@ChkZan", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dce.ChkZan.ToString() } },
-        //    };
-        //    return SelectData(dic, sp);
-        //}
-        ///// <summary>
-        // /// 入金入力（修正時）よりデータ抽出時に使用
-        // /// </summary>
-        // /// <param name="dce"></param>
-        // /// <returns></returns>
-        //public DataTable D_Collect_SelectData(D_Collect_Entity dce)
-        //{
-        //    string sp = "D_Collect_SelectData";
-
-        //    Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
-        //    {
-        //        { "@CollectNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.CollectDateFrom } },
-        //    };
-        //    return SelectData(dic, sp);
-        //}
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@CollectNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.CollectNO } },
+                { "@ConfirmNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.ConfirmNO } },
+            };
+            return SelectData(dic, sp);
+        }
         //public DataTable SelectDataForNyukin(D_Collect_Entity dce)
         //{
         //    string sp = "SelectDataForNyukin";
