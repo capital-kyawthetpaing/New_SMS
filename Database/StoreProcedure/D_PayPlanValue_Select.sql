@@ -17,7 +17,7 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-Create PROCEDURE [dbo].[D_PayPlanValue_Select]
+CREATE PROCEDURE [dbo].[D_PayPlanValue_Select]
 	-- Add the parameters for the stored procedure here
 	@PayeeCD as varchar(13),
 	@PaymentCloseDate as date,
@@ -30,12 +30,12 @@ BEGIN
 
     -- Insert statements for procedure here
 			
-	if @Type=1
+	if @Type=1                                --for D_Exclusive check	(for shime)
 		begin
 			SELECT Number  
 			FROM D_PayPlan
 			WHERE PayCloseNO is null
-			and (@PayeeCD is NUll or (PayeeCD=@PayeeCD))
+			and PayeeCD=@PayeeCD
 			and RecordedDate <= @PaymentCloseDate
 			and DeleteOperator is null
 			and DeleteDateTime is null
@@ -43,14 +43,14 @@ BEGIN
 	end
 
 
-	else if @Type=2
+	else if @Type=2                             --for D_Exclusive check	(for shime)
 		begin
 			select PayCloseNo
 			from D_PayPlan
 			where PayCloseNO is not null
 			and DeleteOperator is null 
 			and DeleteDateTime is null
-			and (@PayeeCD is Null or (PayeeCD=@PayeeCD))
+			and PayeeCD=@PayeeCD
 			and PayCloseDate =@PaymentCloseDate
 		end
 
@@ -79,7 +79,10 @@ BEGIN
 			and PayCloseNO is not null
 			
 		end
-		else if @Type=5
+
+			--for D_Exclusive check	(for shime)
+
+	else if @Type=5
 		begin
 				select top 1 Program,Operator,PC
 				from D_Exclusive
@@ -88,8 +91,8 @@ BEGIN
 								Select top 1 Number
 								from  D_PayPLan
 								where PayCloseNo is null
-								and (@PayeeCD is NULL or (PayeeCD=@PayeeCD))
-								and RecordedDate =@PaymentCloseDate
+								and PayeeCD=@PayeeCD
+								and RecordedDate <= @PaymentCloseDate
 								and DeleteOperator is null
 								and DeleteDatetime is null
 							)
@@ -106,13 +109,12 @@ BEGIN
 								Select top 1 PayCloseNo
 								from  D_PayPLan
 								where PayCloseNo is not null
-								and (@PayeeCD is NULL or (PayeeCD=@PayeeCD))
+								and PayeeCD=@PayeeCD
 								and PayCloseDate =@PaymentCloseDate
 								and DeleteOperator is null
 								and DeleteDatetime is null
 								)
 		end
-		
 
 END
 GO

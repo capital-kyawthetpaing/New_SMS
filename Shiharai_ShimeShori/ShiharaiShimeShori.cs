@@ -24,7 +24,9 @@ namespace Shiharai_ShimeShori
         Exclusive_BL e_bl;
         D_Exclusive_Entity de_e;
         DataTable dtDisplay;
-
+        string Num = string.Empty;
+        string PayCloseNo = string.Empty;
+        string EProgram, EOperator, EPc = String.Empty;
         public Shiharai_ShimeShori()
         {
             InitializeComponent();
@@ -35,6 +37,7 @@ namespace Shiharai_ShimeShori
             dpp_e = new D_PayPlan_Entity();
             de_e = new D_Exclusive_Entity();
             e_bl = new Exclusive_BL();
+         
         }
         private void ShiharaiShimeShori_Load(object sender, EventArgs e)
         {
@@ -49,13 +52,18 @@ namespace Shiharai_ShimeShori
             F8Visible = false;
             F10Visible = false;
             txtPayCloseDate.Text = bbl.GetDate();
-            //DeleteExclusive(1);
-            //DeleteExclusive(2);
+            DeleteExclusive();
         }
         private void RequireFields()
         {
             txtPayCloseDate.Require(true);
             //ScPaymentCD.TxtCode.Require(true);           
+        }
+
+        private void DeleteExclusive()
+        {
+            de_e = GetExclusiveData();
+            e_bl.D_Exclusive_DeleteByKBN(de_e);
         }
         private void BindCombo()
         {
@@ -75,14 +83,10 @@ namespace Shiharai_ShimeShori
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                     {
                         ChangeMode(EOperationMode.INSERT);
-                        //DeleteExclusive(1);
-                       // DeleteExclusive(2);
                         cboProcessType.Focus();
+                        DeleteExclusive();
                     }
                     break;
-                //case 11:
-                //    F11();
-                //    break;
                 case 12:
                     F12();
                     break;
@@ -98,120 +102,138 @@ namespace Shiharai_ShimeShori
 
             };
             return dpp_e;
-
         }
 
-        private D_Exclusive_Entity GetPayPlanData(int type)
+
+        //private D_Exclusive_Entity GetExclusiveData(int type)
+        //{
+        //    if(type ==1)
+        //    {
+        //        de_e = new D_Exclusive_Entity()
+        //        {
+        //            DataKBN = 9,
+        //            Number = Num,
+        //            Program = this.InProgramID,
+        //            Operator = this.InOperatorCD,
+        //            PC = this.InPcID
+
+        //        };
+        //        return de_e;
+        //    }
+        //    else
+        //    {
+        //        de_e = new D_Exclusive_Entity()
+        //        {
+        //            DataKBN = 9,
+        //            Number = PayCloseNo,
+        //            Program = this.InProgramID,
+        //            Operator = this.InOperatorCD,
+        //            PC = this.InPcID
+        //        };
+        //        return de_e;
+        //    }
+
+        //}
+
+        private D_Exclusive_Entity GetExclusiveData()
         {
-            string no = string.Empty;
-            dpp_e = GetPayPlan();
-            if(type ==1)
-            {
-                DataTable dtno = sss_bl.D_PayPlanValue_Select(dpp_e, "1");
-                if (dtno.Rows.Count > 0)
+                de_e = new D_Exclusive_Entity()
                 {
-                    no = dtno.Rows[0]["Number"].ToString();
-                }
-                
-            }
-            else
-            {
-                DataTable dtpayno = sss_bl.D_PayPlanValue_Select(dpp_e, "2");
-                if (dtpayno.Rows.Count > 0)
-                {
-                    no = dtpayno.Rows[0]["PayCloseNo"].ToString();
-                    
-                }
-            }
-            de_e = new D_Exclusive_Entity()
-            {
-                DataKBN = 9,
-                Number = no,
-                Program = this.InProgramID,
-                Operator = this.InOperatorCD,
-                PC = this.InPcID
-
-            };
-
-            return de_e;          
-            
-
-        }
-        private void DeleteExclusive(int type)
-        {
-            switch (type)
-            {
-
-                case 1:
-                    dpp_e = GetPayPlan();
-                    DataTable dtno = sss_bl.D_PayPlanValue_Select(dpp_e, "1");
-                    if (dtno.Rows.Count > 0)
-                    {
-                        //string no = dtno.Rows[0]["Number"].ToString();
-                        de_e.DataKBN = 9;
-                        de_e.Number = dtno.Rows[0]["Number"].ToString();
-                        e_bl.D_Exclusive_Delete(de_e);
-                    }
-                    break;
-                case 2:
-                    dpp_e = GetPayPlan();
-                    DataTable dtplanno = sss_bl.D_PayPlanValue_Select(dpp_e, "2");
-                    if (dtplanno.Rows.Count > 0)
-                    {
-                        //string no = dtno.Rows[0]["Number"].ToString();
-                        de_e.DataKBN = 9;
-                        de_e.Number = dtplanno.Rows[0]["PayCloseNo"].ToString();
-                        e_bl.D_Exclusive_Delete(de_e);
-                    }
-                    break;
-            }
-           
-
-                
-           
-           
-            
-            //dpp_e.Number=
+                    DataKBN = 9,
+                    Program = this.InProgramID,
+                    Operator = this.InOperatorCD,
+                    PC = this.InPcID
+                };
+                return de_e;
         }
 
         private void F12()
         {
+            DataTable dTNo = new DataTable();
+            dTNo.Columns.Add("Number");
+            DataTable dTPayCloseNo = new DataTable();
+            dTPayCloseNo.Columns.Add("PayCloseNo");
             bool check = false;
             bool checkc = false;
+            bool checkS = false;
+            bool checkEC = false;
+            DataTable dtno = new DataTable();
+            DataTable dtpayno = new DataTable();
             string ItemType = cboProcessType.Text;
-            //if (dgvPaymentClose.DataSource != null)
-            //{
+            dpp_e = GetPayPlan();
+            DataTable payShime = sss_bl.D_PayPlanValue_Select(dpp_e, "3");
+            DataTable payShimeCancel = sss_bl.D_PayPlanValue_Select(dpp_e, "4");
             switch (ItemType)
             {
                 case "支払締":
                     if (ErrorCheck(1))
                     {
-                       // de_e = GetPayPlanData(1);
-                       //  e_bl.D_Exclusive_Insert(de_e);
-
+                        if(payShime.Rows.Count >0)
+                        {
+                            for(int k=0;k < payShime.Rows.Count;k ++)
+                            {
+                                dpp_e.PayeeCD = payShime.Rows[k]["PayeeCD"].ToString();
+                                var dtEN = sss_bl.D_PayPlanValue_Select(dpp_e, "5");
+                                if (dtEN.Rows.Count > 0)
+                                {
+                                    EProgram = dtEN.Rows[0]["Program"].ToString();
+                                    EOperator = dtEN.Rows[0]["Operator"].ToString();
+                                    EPc = dtEN.Rows[0]["PC"].ToString();
+                                    sss_bl.ShowMessage("S004", EProgram, EOperator, EPc);
+                                    cboProcessType.Focus();
+                                   // return;
+                                }
+                                else
+                                {
+                                    dtno = sss_bl.D_PayPlanValue_Select(dpp_e, "1");
+                                    if (dtno.Rows.Count > 0)
+                                    {
+                                        Num = dtno.Rows[0]["Number"].ToString();
+                                    }
+                                    de_e = new D_Exclusive_Entity()
+                                    {
+                                        DataKBN = 9,
+                                        Number = Num,
+                                        Program = this.InProgramID,
+                                        Operator = this.InOperatorCD,
+                                        PC = this.InPcID
+                                    };
+                                    dTNo.Rows.Add(Num);
+                                    e_bl.D_Exclusive_Insert(de_e);
+                                    checkS = true;
+                                }
+                            }
+                        }
                         if (bbl.ShowMessage("Q101") == DialogResult.Yes)
                         {
-                           
-
                             dpp_e = GetPayPlan();
                             DataTable dtpayee = sss_bl.D_PayPlanValue_Select(dpp_e, "3");
                             if (dtpayee.Rows.Count > 0)
                             {
                                 for (int i = 0; i < dtpayee.Rows.Count; i++)
                                 {
+
                                     dpch_entity = GetDataEntity();
                                     dpch_entity.PaymentCD = dtpayee.Rows[i]["PayeeCD"].ToString();
                                     if (sss_bl.Insert_ShiHaRaiShime_PaymentClose(dpch_entity, 1))
                                     {
-                                        check = true;
-                                        //DeleteExclusive(1);
-                                       
+                                       check = true;
+                                        de_e.DataKBN = 9;
+                                        if(checkS)
+                                        {
+                                            if (dTNo.Rows.Count > 0)
+                                            {
+                                                de_e.Number = dTNo.Rows[i]["Number"].ToString();
+                                                e_bl.D_Exclusive_Delete(de_e);
+                                            }
+                                        }
                                     }
                                 }
                                 if(check)
                                 {
                                     sss_bl.ShowMessage("I101");
-                                     ChangeMode(EOperationMode.INSERT);
+                                    ChangeMode(EOperationMode.INSERT);
+                                   
                                 }
                             }
                         }
@@ -221,18 +243,47 @@ namespace Shiharai_ShimeShori
                 case "支払締キャンセル":
                     if (ErrorCheck(2))
                     {
+                        if(payShimeCancel.Rows.Count > 0)
 
-                        //dpp_e = GetPayPlan();
-                       // de_e = GetPayPlanData(2);
-                        // e_bl.D_Exclusive_Insert(de_e);
+                        {
+                            for(int d=0;d < payShimeCancel.Rows.Count; d ++ )
+                            {
+                                dpp_e.PayeeCD = payShimeCancel.Rows[d]["PayeeCD"].ToString();
+                                var dtEP = sss_bl.D_PayPlanValue_Select(dpp_e, "6");
+                                if (dtEP.Rows.Count > 0)
+                                {
+                                    EProgram = dtEP.Rows[0]["Program"].ToString();
+                                    EOperator = dtEP.Rows[0]["Operator"].ToString();
+                                    EPc = dtEP.Rows[0]["PC"].ToString();
+                                    sss_bl.ShowMessage("S004", EProgram, EOperator, EPc);
+                                    cboProcessType.Focus();
+                                    
+                                }
+                                else
+                                {
+                                    dtpayno = sss_bl.D_PayPlanValue_Select(dpp_e, "2");
+                                    if (dtpayno.Rows.Count > 0)
+                                    {
+                                        PayCloseNo = dtpayno.Rows[0]["PayCloseNo"].ToString();
+                                    }
+
+                                    de_e = new D_Exclusive_Entity()
+                                    {
+                                        DataKBN = 9,
+                                        Number = PayCloseNo,
+                                        Program = this.InProgramID,
+                                        Operator = this.InOperatorCD,
+                                        PC = this.InPcID
+                                    };
+                                    dTPayCloseNo.Rows.Add(PayCloseNo);
+                                    e_bl.D_Exclusive_Insert(de_e);
+                                    checkEC = true;
+                                }
+                            }
+                        }
+
                         if (bbl.ShowMessage("Q102") == DialogResult.Yes)
                         {
-                            //if (sss_bl.Insert_ShiHaRaiShime_PaymentClose(dpch_entity, 2))
-                            //{
-                            //    sss_bl.ShowMessage("I101");
-                            //    //DeleteExclusive(2);
-                            //    ChangeMode(EOperationMode.INSERT);
-                            //}
                             dpp_e = GetPayPlan();
                             DataTable dtpayee = sss_bl.D_PayPlanValue_Select(dpp_e, "4");
                             if (dtpayee.Rows.Count > 0)
@@ -243,23 +294,29 @@ namespace Shiharai_ShimeShori
                                     dpch_entity.PaymentCD = dtpayee.Rows[i]["PayeeCD"].ToString();
                                     if (sss_bl.Insert_ShiHaRaiShime_PaymentClose(dpch_entity, 2))
                                     {
-                                       
                                         checkc = true;
-                                        //DeleteExclusive(1);
-                                       
+                                        de_e.DataKBN = 9;
+                                        if(checkEC)
+                                        {
+                                        if(dTPayCloseNo .Rows.Count >0)
+                                        {
+                                            de_e.Number =dTPayCloseNo.Rows[i]["PayCloseNo"].ToString() ;
+                                            e_bl.D_Exclusive_Delete(de_e);
+                                        }
+                                        }
                                     }
                                 }
                                 if(checkc)
                                 {
                                     sss_bl.ShowMessage("I101");
                                     ChangeMode(EOperationMode.INSERT);
+                                    
                                 }
                             }
                         }
                     }
                     break;
             }
-            //}
         }
         private void F11()
         {
@@ -292,6 +349,7 @@ namespace Shiharai_ShimeShori
         private bool ErrorCheck(int Type)
         {
             dpch_entity = GetDataEntity();
+            dpp_e = GetPayPlan();
             if (!string.IsNullOrEmpty(Shiiresaki.TxtCode.Text))
             {
                 if (!Shiiresaki.IsExists(2))
@@ -322,11 +380,15 @@ namespace Shiharai_ShimeShori
                         cboProcessType.Focus();
                         return false;
                     }
-                    
-                    //if (sss_bl.Select_PaymentClose(dpch_entity, 5))
+
+                    //var dtEN = sss_bl.D_PayPlanValue_Select(dpp_e, "5");
+                    //if (dtEN.Rows.Count >0)
                     //{
-                    //    sss_bl.ShowMessage("S004");
-                    //  F  cboProcessType.Focus();
+                    //    EProgram = dtEN.Rows[0]["Program"].ToString();
+                    //    EOperator= dtEN.Rows[0]["Operator"].ToString();
+                    //    EPc= dtEN.Rows[0]["PC"].ToString();
+                    //    sss_bl.ShowMessage("S004",EProgram,EOperator,EPc);
+                    //    cboProcessType.Focus();
                     //    return false;
                     //}
                     break;
@@ -349,10 +411,14 @@ namespace Shiharai_ShimeShori
                         cboProcessType.Focus();
                         return false;
                     }
-                   
-                    //if (sss_bl.Select_PaymentClose(dpch_entity, 6))
+
+                    //var dtEP = sss_bl.D_PayPlanValue_Select(dpp_e, "6");
+                    //if (dtEP.Rows.Count > 0)
                     //{
-                    //    sss_bl.ShowMessage("S004");
+                    //    EProgram = dtEP.Rows[0]["Program"].ToString();
+                    //    EOperator = dtEP.Rows[0]["Operator"].ToString();
+                    //    EPc = dtEP.Rows[0]["PC"].ToString();
+                    //    sss_bl.ShowMessage("S004", EProgram, EOperator, EPc);
                     //    cboProcessType.Focus();
                     //    return false;
                     //}
@@ -406,9 +472,7 @@ namespace Shiharai_ShimeShori
 
         protected override void EndSec()
         {
-
-            //DeleteExclusive(1);
-            //DeleteExclusive(2);
+            DeleteExclusive();
             this.Close();
         }
 

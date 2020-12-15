@@ -44,7 +44,7 @@ namespace ZaikoYoteiHyou
             BindCombo();
 
             //ComboDispay();
-            //SetRequireField();
+            SetRequireField();
             txtTargetDateTo.Focus();                     
            string m = DateTime.Now.Month.ToString();
             if(m.Length ==1)
@@ -199,13 +199,19 @@ namespace ZaikoYoteiHyou
             //}
             ////}
 
+            if (!RequireCheck(new Control[] { cboStore, cboWareHouse }))
+                return false;
+
             if (!base.CheckAvailableStores(cboStore.SelectedValue.ToString()))
             {
                 zkybl.ShowMessage("E139");
                 cboStore.Focus();
                 return false;
             }
-                return true;
+            if (!RequireCheck(new Control[] { cboWareHouse }))
+                return false;
+
+           return true;
         }
 
         #region To Print Report
