@@ -184,7 +184,6 @@
             this.IMN_MEMBR_2 = new CKM_Controls.CKM_TextBox();
             this.IMN_MEMBR_1 = new CKM_Controls.CKM_TextBox();
             this.IMN_MEMBR_0 = new CKM_Controls.CKM_TextBox();
-            this.Vsb_Mei_0 = new System.Windows.Forms.VScrollBar();
             this.IMT_JANCD_0 = new CKM_Controls.CKM_TextBox();
             this.IMT_JANCD_2 = new CKM_Controls.CKM_TextBox();
             this.IMT_PAYDT_7 = new CKM_Controls.CKM_TextBox();
@@ -203,6 +202,7 @@
             this.CHK_EDICK_2 = new GridControl.clsGridCheckBox();
             this.CHK_EDICK_1 = new GridControl.clsGridCheckBox();
             this.CHK_EDICK_0 = new GridControl.clsGridCheckBox();
+            this.Vsb_Mei_0 = new System.Windows.Forms.VScrollBar();
             this.label1 = new CKM_Controls.CKM_Label();
             this.label27 = new CKM_Controls.CKM_Label();
             this.ScCustomer = new Search.CKM_SearchControl();
@@ -5232,14 +5232,6 @@
             this.IMN_MEMBR_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.IMN_MEMBR_0.UseColorSizMode = false;
             // 
-            // Vsb_Mei_0
-            // 
-            this.Vsb_Mei_0.Location = new System.Drawing.Point(1281, -3);
-            this.Vsb_Mei_0.Name = "Vsb_Mei_0";
-            this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 382);
-            this.Vsb_Mei_0.TabIndex = 0;
-            this.Vsb_Mei_0.ValueChanged += new System.EventHandler(this.Vsb_Mei_0_ValueChanged);
-            // 
             // IMT_JANCD_0
             // 
             this.IMT_JANCD_0.AllowMinus = false;
@@ -5697,6 +5689,14 @@
             this.CHK_EDICK_0.Text = "　";
             this.CHK_EDICK_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CHK_EDICK_0.UseVisualStyleBackColor = false;
+            // 
+            // Vsb_Mei_0
+            // 
+            this.Vsb_Mei_0.Location = new System.Drawing.Point(1281, -3);
+            this.Vsb_Mei_0.Name = "Vsb_Mei_0";
+            this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 382);
+            this.Vsb_Mei_0.TabIndex = 0;
+            this.Vsb_Mei_0.ValueChanged += new System.EventHandler(this.Vsb_Mei_0_ValueChanged);
             // 
             // label1
             // 
@@ -6255,12 +6255,12 @@
             this.CboTorikomi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.CboTorikomi.Flag = 0;
             this.CboTorikomi.FormattingEnabled = true;
-            this.CboTorikomi.Length = 20;
+            this.CboTorikomi.Length = 40;
             this.CboTorikomi.Location = new System.Drawing.Point(126, 48);
-            this.CboTorikomi.MaxLength = 10;
+            this.CboTorikomi.MaxLength = 20;
             this.CboTorikomi.MoveNext = false;
             this.CboTorikomi.Name = "CboTorikomi";
-            this.CboTorikomi.Size = new System.Drawing.Size(311, 20);
+            this.CboTorikomi.Size = new System.Drawing.Size(280, 20);
             this.CboTorikomi.TabIndex = 4;
             // 
             // ckM_SearchControl1
