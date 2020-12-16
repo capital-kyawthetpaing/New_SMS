@@ -121,7 +121,7 @@ BEGIN
 										MAX (fs.JanCD) as JANCD,
 										MAX(fs.MainVendorCD) as MainVendorCD,
 										MAX(fs.ChangeDate)as RevisionDate,
-										fsprice.ChangeDate as StartDate,
+										MAX(fsprice.ChangeDate) as StartDate,
 										MAX(fsprice.TekiyouShuuryouDate) as EndDate,
 										MAX(fs.SKUName) as ProductName,
 										MAX(fsprice.PriceWithoutTax) as UnitPrice,
@@ -148,7 +148,7 @@ BEGIN
 										and fs.PresentKBN=0
 										and fs.SampleKBN=0
 										and fs.DeleteFLG=0
-										Group by fs.AdminNO,fsprice.AdminNO,fsprice.ChangeDate) t
+										Group by fs.AdminNO,fsprice.AdminNO) t
 										
 										
 										Select 
