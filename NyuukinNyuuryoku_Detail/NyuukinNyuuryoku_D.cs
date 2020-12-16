@@ -117,6 +117,7 @@ namespace NyuukinNyuuryoku_Detail
         private string mSystemKBN = "";     //[M_DenominationKBN][SystemKBN]
         private string mStaffName = "";
         private short mKidouMode = 0;
+        private bool mConfirmExistsFlg = false;
 
         // -- 明細部をグリッドのように扱うための宣言 ↓--------------------
         ClsGridNyuukin_S mGrid = new ClsGridNyuukin_S();
@@ -774,7 +775,7 @@ namespace NyuukinNyuuryoku_Detail
                                 btnNyuukinmoto.Enabled = ckM_RadioButton2.Checked; 
                                 btnSubF11.Enabled = true;
 
-                                SetFuncKeyAll(this, "111011000011");
+                                SetFuncKeyAll(this, "111111000011");
                             }
                             else
                             {
@@ -784,7 +785,7 @@ namespace NyuukinNyuuryoku_Detail
                                 btnNyuukinmoto.Enabled = false;
                                 btnSubF11.Enabled = false;
 
-                                SetFuncKeyAll(this, "111011001001");
+                                SetFuncKeyAll(this, "111111001001");
                             }
                         }
                         break;
@@ -836,7 +837,7 @@ namespace NyuukinNyuuryoku_Detail
                             SetEnabled();
                             SetEnabledForMode();
                             btnSubF11.Enabled = false;
-                            SetFuncKeyAll(this, "111011000001");
+                            SetFuncKeyAll(this, "111111000001");
                         }
                         break;
                     }
@@ -855,7 +856,7 @@ namespace NyuukinNyuuryoku_Detail
                             //Scr_Lock(0, 0, 0);
                             if (OperationMode == EOperationMode.DELETE)
                             {
-                                //Scr_Lock(1, 3, 1);
+                                Scr_Lock(1, 3, 1);
                                 SetFuncKeyAll(this, "111111000001");
                                 IMT_DMY_0.Focus();
                                 Scr_Lock(0, 0, 1);
@@ -863,7 +864,7 @@ namespace NyuukinNyuuryoku_Detail
                             else
                             {
                                 CboStoreCD.Enabled = false;
-                                SetFuncKeyAll(this, "111011000000");
+                                SetFuncKeyAll(this, "111111000000");
                             }
 
                             // 削除時のみ、明細を参照できるように、スクロールバーのTabStopをTrueにする
@@ -934,7 +935,7 @@ namespace NyuukinNyuuryoku_Detail
                 ScCollectNO.Value2 = stores;
                 ScCustomer.Value1 = "3";
 
-                Btn_F4.Text = "";
+                //Btn_F4.Text = "";
                 Btn_F7.Text = "";
                 Btn_F8.Text = "";
                 Btn_F10.Text = "";
@@ -969,23 +970,30 @@ namespace NyuukinNyuuryoku_Detail
                 {
                     string mode = cmds[(int)ECmdLine.PcID + 1];   //
 
-                    if (mode.Equals("9"))
+                    if (mode.Equals("0"))
                     {
-                        mKidouMode = 9;
-                        string collectNO = cmds[(int)ECmdLine.PcID + 2];   //
-                        ChangeOperationMode(EOperationMode.UPDATE);
-                        keyControls[(int)EIndex.CollectNO].Text = collectNO;
-                        CheckKey((int)EIndex.CollectNO, true);
+                        mKidouMode = 1;
                     }
-                    else if (mode.Equals("10"))
+                    else
                     {
-                        mKidouMode = 10;
-                        string collectNO = cmds[(int)ECmdLine.PcID + 2];   //
-                        string confirmNO = cmds[(int)ECmdLine.PcID + 3];
                         ChangeOperationMode(EOperationMode.UPDATE);
-                        keyControls[(int)EIndex.ConfirmNO].Text = confirmNO;
-                        CheckKey((int)EIndex.ConfirmNO, true);
-                    }
+                        string collectNO = cmds[(int)ECmdLine.PcID + 2];   //
+
+                        if (mode.Equals("9"))
+                        {
+                            mKidouMode = 9;
+                            keyControls[(int)EIndex.CollectNO].Text = collectNO;
+                            CheckKey((int)EIndex.CollectNO, true);
+                        }
+                        else if (mode.Equals("10"))
+                        {
+                            mKidouMode = 10;
+                            string confirmNO = cmds[(int)ECmdLine.PcID + 3];
+                            keyControls[(int)EIndex.ConfirmNO].Text = confirmNO;
+                            CheckKey((int)EIndex.ConfirmNO, true);
+                        }
+                        SetFocus();
+                    }                    
 
                     Btn_F2.Text = "";
                     Btn_F3.Text = "";
@@ -1114,7 +1122,6 @@ namespace NyuukinNyuuryoku_Detail
 
         private void SetFocusAfterErr()
         {
-
             Scr_Clr(1);
             previousCtrl.Focus();
         }
@@ -1141,6 +1148,10 @@ namespace NyuukinNyuuryoku_Detail
                     //bbl.ShowMessage("E128");
                     //SetFocusAfterErr();
                     //return false;
+                }
+                else
+                {
+
                 }
 
                 //請求データの排他ロック
@@ -1295,17 +1306,33 @@ namespace NyuukinNyuuryoku_Detail
                             SetFocusAfterErr();
                             return false;
                         }
-                        //修正・削除モードの場合、
-                        //この消込の入金番号で、もっと最新の消込番号が存在すれば、修正・削除不可
-                        if (OperationMode != EOperationMode.SHOW && index == (int)EIndex.ConfirmNO)
+                        //修正・削除モードの場合、                        
+                        if (OperationMode != EOperationMode.SHOW )
                         {
-                            dce.CollectNO = dtDetail.Rows[0]["CollectNO"].ToString();
-                            bool exist = nnbl.D_PaymentConfirm_Select(dce);
-                            if (exist)
+                            //この消込の入金番号で、もっと最新の消込番号が存在すれば、修正・削除不可
+                            if (index == (int)EIndex.ConfirmNO)
                             {
-                                bbl.ShowMessage("E271", mes);
-                                SetFocusAfterErr();
-                                return false;
+                                dce.CollectNO = dtDetail.Rows[0]["CollectNO"].ToString();
+                                bool exist = nnbl.D_PaymentConfirm_Select(dce);
+                                if (exist)
+                                {
+                                    bbl.ShowMessage("E271", mes);
+                                    SetFocusAfterErr();
+                                    return false;
+                                }
+                            }
+                            //単独起動で（＝入金照会からの起動でなくメニューからの直接起動）「変更」「削除」モードの場合
+                            else if (index == (int)EIndex.CollectNO && mKidouMode.Equals(0))
+                            {
+                                //この入金番号で消込が一度もない場合（下記のSelectでレコードが無い場合）
+                                mConfirmExistsFlg = bbl.Z_Set(dtDetail.Rows[0]["ConfirmCount"]) > 0 ? true : false;
+
+                                if (OperationMode == EOperationMode.DELETE && mConfirmExistsFlg)
+                                {
+                                    bbl.ShowMessage("E271");
+                                    SetFocusAfterErr();
+                                    return false;
+                                }
                             }
                         }
 
@@ -1663,6 +1690,9 @@ namespace NyuukinNyuuryoku_Detail
                 }
             }
 
+            btnUriage.Enabled = true;
+            btnDetail.Enabled = true;
+
             AfterDisp();
 
             return true;
@@ -1674,7 +1704,7 @@ namespace NyuukinNyuuryoku_Detail
 
             mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
 
-            if (OperationMode == EOperationMode.SHOW)
+            if (OperationMode == EOperationMode.SHOW || OperationMode == EOperationMode.DELETE)
             {
                 S_BodySeigyo(2, 0);
                 S_BodySeigyo(2, 1);
@@ -2523,6 +2553,9 @@ namespace NyuukinNyuuryoku_Detail
                 detailControls[(int)EIndex.CollectClearDate].Visible = ckM_RadioButton2.Checked;
 
                 dtDetail = null;
+                btnUriage.Enabled = false;
+                btnDetail.Enabled = false;
+                mConfirmExistsFlg = false;
             }
 
             foreach (Control ctl in detailControls)
@@ -2794,16 +2827,8 @@ namespace NyuukinNyuuryoku_Detail
                             }
                             else if (OperationMode == EOperationMode.UPDATE)
                             {
-                                for (int i = (int)EIndex.CboKoza; i <= (int)EIndex.Remark; i++)
-                                {
-                                    if (detailControls[i].CanFocus)
-                                    {
-                                        detailControls[i].Focus();
-                                        return;
-                                    }
-                                }
-                                //明細の先頭項目へ
-                                mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridNyuukin_S.ColNO.ConfirmAmount);
+                                SetFocus();
+                                
                             }
                             else
                             {
@@ -3272,7 +3297,7 @@ namespace NyuukinNyuuryoku_Detail
         {
             try
             {
-                if (OperationMode == EOperationMode.INSERT || mKidouMode.Equals(9))
+                if (OperationMode == EOperationMode.INSERT || !mKidouMode.Equals(0))
                 {
                     btnNyuukinmoto.Enabled = ckM_RadioButton2.Checked;
 
@@ -3425,6 +3450,9 @@ namespace NyuukinNyuuryoku_Detail
             if (mKidouMode.Equals(0) && OperationMode == EOperationMode.INSERT)
                 return;
 
+            if (mKidouMode.Equals(0) && mConfirmExistsFlg == false)
+                return;
+
             //入金照会からの新規消込または修正時
             //　入金日、入金金種も入力不可
             detailControls[(int)EIndex.CollectDate].Enabled = false;
@@ -3435,6 +3463,19 @@ namespace NyuukinNyuuryoku_Detail
                 detailControls[i].Enabled = false;
             }
 
+        }
+        private void SetFocus()
+        {
+            for (int i = (int)EIndex.CboKoza; i <= (int)EIndex.Remark; i++)
+            {
+                if (detailControls[i].CanFocus)
+                {
+                    detailControls[i].Focus();
+                    return;
+                }
+            }
+            //明細の先頭項目へ
+            mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridNyuukin_S.ColNO.ConfirmAmount);
         }
     }
 }
