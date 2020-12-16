@@ -117,6 +117,7 @@ namespace NyuukinNyuuryoku_Detail
         private string mSystemKBN = "";     //[M_DenominationKBN][SystemKBN]
         private string mStaffName = "";
         private short mKidouMode = 0;
+        private bool mConfirmExistsFlg = false;
 
         // -- 明細部をグリッドのように扱うための宣言 ↓--------------------
         ClsGridNyuukin_S mGrid = new ClsGridNyuukin_S();
@@ -969,24 +970,30 @@ namespace NyuukinNyuuryoku_Detail
                 {
                     string mode = cmds[(int)ECmdLine.PcID + 1];   //
 
-                    if (mode.Equals("9"))
+                    if (mode.Equals("0"))
                     {
-                        mKidouMode = 9;
-                        string collectNO = cmds[(int)ECmdLine.PcID + 2];   //
+                        mKidouMode = 1;
+                    }
+                    else
+                    {
                         ChangeOperationMode(EOperationMode.UPDATE);
-                        keyControls[(int)EIndex.CollectNO].Text = collectNO;
-                        CheckKey((int)EIndex.CollectNO, true);
+                        string collectNO = cmds[(int)ECmdLine.PcID + 2];   //
+
+                        if (mode.Equals("9"))
+                        {
+                            mKidouMode = 9;
+                            keyControls[(int)EIndex.CollectNO].Text = collectNO;
+                            CheckKey((int)EIndex.CollectNO, true);
+                        }
+                        else if (mode.Equals("10"))
+                        {
+                            mKidouMode = 10;
+                            string confirmNO = cmds[(int)ECmdLine.PcID + 3];
+                            keyControls[(int)EIndex.ConfirmNO].Text = confirmNO;
+                            CheckKey((int)EIndex.ConfirmNO, true);
+                        }
                         SetFocus();
-                    }
-                    else if (mode.Equals("10"))
-                    {
-                        mKidouMode = 10;
-                        string collectNO = cmds[(int)ECmdLine.PcID + 2];   //
-                        string confirmNO = cmds[(int)ECmdLine.PcID + 3];
-                        ChangeOperationMode(EOperationMode.UPDATE);
-                        keyControls[(int)EIndex.ConfirmNO].Text = confirmNO;
-                        CheckKey((int)EIndex.ConfirmNO, true);
-                    }
+                    }                    
 
                     Btn_F2.Text = "";
                     Btn_F3.Text = "";
@@ -1425,6 +1432,7 @@ namespace NyuukinNyuuryoku_Detail
                 if (index == (int)EIndex.CollectNO)
                 {
                     lblKin2.Text = "";
+                    mConfirmExistsFlg = bbl.Z_Set(dtDetail.Rows[0]["ConfirmCount"]) > 0 ? true : false;
                 }
                 else
                 {
@@ -2523,6 +2531,7 @@ namespace NyuukinNyuuryoku_Detail
                 detailControls[(int)EIndex.CollectClearDate].Visible = ckM_RadioButton2.Checked;
 
                 dtDetail = null;
+                mConfirmExistsFlg = false;
             }
 
             foreach (Control ctl in detailControls)
@@ -3264,7 +3273,7 @@ namespace NyuukinNyuuryoku_Detail
         {
             try
             {
-                if (OperationMode == EOperationMode.INSERT || mKidouMode.Equals(9))
+                if (OperationMode == EOperationMode.INSERT || !mKidouMode.Equals(0))
                 {
                     btnNyuukinmoto.Enabled = ckM_RadioButton2.Checked;
 
@@ -3415,6 +3424,9 @@ namespace NyuukinNyuuryoku_Detail
         {
             //通常起動
             if (mKidouMode.Equals(0) && OperationMode == EOperationMode.INSERT)
+                return;
+
+            if (mKidouMode.Equals(0) && mConfirmExistsFlg == false)
                 return;
 
             //入金照会からの新規消込または修正時

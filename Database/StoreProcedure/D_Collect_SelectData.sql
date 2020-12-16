@@ -246,6 +246,9 @@ BEGIN
                   ,DH.UpdateDateTime
                   ,DH.DeleteOperator
                   ,DH.DeleteDateTime
+                  ,(SELECT COUNT(*) FROM D_PaymentConfirm AS DP
+                    WHERE DP.CollectNO = @CollectNO
+                    AND DP.DeleteDateTime IS NULL) AS ConfirmCount
                                     
               FROM [D_Collect] AS DH
 
