@@ -160,6 +160,11 @@ namespace BL
         {
             return mdl.M_SKU_SelectByJanCD_ForTenzikaishouhin(mse);
         }
-      
+
+
+        public DataTable M_SKUSelectAll()
+        {
+            return mdl.M_SKUSelectAll();
+        }
     }
 }

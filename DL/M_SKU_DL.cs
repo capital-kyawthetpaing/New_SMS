@@ -283,7 +283,7 @@ namespace DL
             string sp = "M_SKU_JanCDHenkou_Select";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                {"@xml",new ValuePair { value1=SqlDbType.Xml,value2=xml} } 
+                {"@xml",new ValuePair { value1=SqlDbType.Xml,value2=xml} }
             };
             return SelectData(dic, sp);
         }
@@ -297,7 +297,7 @@ namespace DL
             return SelectData(dic, "M_SKU_SelectForSKSMasterUpdate");
         }
 
-        public DataTable M_SKUDataForHanbaiTankaKakeritu(M_SKU_Entity mskue, M_SKUPrice_Entity mskupe,string option)
+        public DataTable M_SKUDataForHanbaiTankaKakeritu(M_SKU_Entity mskue, M_SKUPrice_Entity mskupe, string option)
         {
             string sp = "M_SKUSelectDataForHanbaiTankaKakeritu";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
@@ -331,6 +331,17 @@ namespace DL
                 { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = msk.JanCD } },
                 { "@vendorcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = msk.MainVendorCD } },
                 { "@storecd", new ValuePair { value1 = SqlDbType.VarChar, value2 = msk.InStoreCD } },
+            };
+            return SelectData(dic, sp);
+        }
+
+
+        public DataTable M_SKUSelectAll()
+        {
+            string sp = "M_SKUSelectAll";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+
             };
             return SelectData(dic, sp);
         }
