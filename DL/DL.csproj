@@ -66,6 +66,7 @@
     <Compile Include="D_Edi_DL.cs" />
     <Compile Include="D_Exclusive_DL.cs" />
     <Compile Include="D_FBControl_DL.cs" />
+    <Compile Include="D_FBData_DL.cs" />
     <Compile Include="D_FTP_DL.cs" />
     <Compile Include="D_Hacchu_DL.cs" />
     <Compile Include="D_Instruction_DL.cs" />

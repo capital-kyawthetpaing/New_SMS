@@ -19,6 +19,8 @@ namespace FBDataSakusei_FBデータ作成
         M_Calendar_Entity mce = new M_Calendar_Entity();
         D_Pay_Entity dpe = new D_Pay_Entity();
         D_FBControl_Entity dfbe = new D_FBControl_Entity();
+        D_FBData_Entity dfde = new D_FBData_Entity();
+        DataTable dtgv = new DataTable();
 
         public FrmFBDataSakusei_FBデータ作成()
         {
@@ -64,7 +66,9 @@ namespace FBDataSakusei_FBデータ作成
             dt1.Rows.Add("振込データ削除", "1");
             dt1.Rows.Add("振込データ印刷", "2");
             cboProcess.BindCombo("Value", "Key", dt1);
-
+            //cboProcess.DataSource = dt1;
+            //cboProcess.DisplayMember = "振込データ作成";
+            //cboProcess.ValueMember = "0";
 
             string ymd = bbl.GetDate();
             cboPayment.Bind(ymd);
@@ -120,9 +124,7 @@ namespace FBDataSakusei_FBデータ作成
                     MotoKouzaCD = cboPayment.SelectedValue.ToString(),
                     PayDate = txtPaymentDate.Text,
                     Flg = cboProcess.SelectedValue.ToString(),
-                };
-
-                DataTable dtgv = new DataTable();
+                };               
                 dtgv = fbbl.D_Pay_SelectForFB(dpe);
                 if(dtgv.Rows.Count > 0)
                 {
@@ -156,10 +158,31 @@ namespace FBDataSakusei_FBデータ作成
                         };
                         if (fbbl.D_FBControl_Insert(dfbe))
                         {
-                            Clear(panel1);
-                            BindCombo();
-                            cboProcess.Focus();
+                            //Clear(panel1);
+                            //BindCombo();
+                            //cboProcess.Focus();
                         }
+
+                        dfde = new D_FBData_Entity
+                        {
+                            PayeeCD = dtgv.Rows[0]["PayeeCD"].ToString(),
+                            PayeeName = dtgv.Rows[0]["VendorName"].ToString(),
+                            BankCD = dtgv.Rows[0]["BankCD"].ToString(),
+                            BranchCD = dtgv.Rows[0]["BranchCD"].ToString(),
+                            KouzaKBN = dtgv.Rows[0]["KouzaKBN"].ToString(),
+                            KouzaNO = dtgv.Rows[0]["KouzaNO"].ToString(),
+                            KouzaMeigi = dtgv.Rows[0]["KouzaMeigi"].ToString(),
+                            PayGaku = dtgv.Rows[0]["transferAcc"].ToString(),
+                            TransferGaku = dtgv.Rows[0]["TransferGaku"].ToString(),
+                            TransferFee = dtgv.Rows[0]["TransferFeeGaku"].ToString(),
+                            TransferFeeKBN = dtgv.Rows[0]["FeeKBN1"].ToString(),
+                            StaffCD = InOperatorCD,
+                        };
+                        if(fbbl.D_FBData_Insert(dfde))
+                        {
+
+                        }
+                        
                            
 
                     }

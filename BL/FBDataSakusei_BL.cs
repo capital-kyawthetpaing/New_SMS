@@ -16,6 +16,7 @@ namespace BL
         D_Pay_DL dpdl = new D_Pay_DL();
         D_Pay_Entity dpe = new D_Pay_Entity();
         D_FBControl_DL dfbdl = new D_FBControl_DL();
+        D_FBData_DL dfddl = new D_FBData_DL();
 
         public DataTable M_Calendar_SelectForFB(M_Calendar_Entity mce)
         {
@@ -30,6 +31,11 @@ namespace BL
         public bool D_FBControl_Insert(D_FBControl_Entity dfbe)
         {
             return dfbdl.D_FBControl_Insert(dfbe);
+        }
+
+        public bool D_FBData_Insert(D_FBData_Entity dfde)
+        {
+            return dfddl.D_FBData_Insert(dfde);
         }
     }
 }
