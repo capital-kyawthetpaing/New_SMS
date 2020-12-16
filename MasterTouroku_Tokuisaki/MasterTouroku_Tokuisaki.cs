@@ -75,12 +75,13 @@ namespace MasterTouroku_Tokuisaki
             , CreditInsurance
             , CreditDeposit
             , CreditETC
-            , CreditWarningAmount
+            //, CreditWarningAmount
             , CreditAdditionAmount
             , DisplayOrder
             , AnalyzeCD1
             , AnalyzeCD2
             , AnalyzeCD3
+           // , CboStoreCD
             , ChkPointFLG
             , LastPoint
             , WaitingPoint
@@ -88,7 +89,7 @@ namespace MasterTouroku_Tokuisaki
             , RemarksOutStore
             , RemarksInStore
 
-            , StoreCD
+            , CboStoreCD
             , StaffCD
             , DeleteFlg
             , txtCreditCheckKBN
@@ -796,11 +797,17 @@ namespace MasterTouroku_Tokuisaki
 
             switch (index)
             {
-                case (int)EIndex.CustomerName:
+               // case (int)EIndex.CustomerCD: break;
+                //case (int)EIndex.ChangeDate: break;
+                case (int)EIndex.ChkVariousFLG:
+                case (int)EIndex.ChkBillingFLG:
+                case (int)EIndex.ChkCollectFLG:
+                case (int)EIndex.pnlCustomerKBN:
+                    break;
+
                 case (int)EIndex.LastName:
                 case (int)EIndex.FirstName:
-                case (int)EIndex.LongName1:
-                case (int)EIndex.KanaName:
+                case (int)EIndex.CustomerName:
                     if (detailControls[index].Enabled)
                     {
                         //入力必須(Entry required)
@@ -823,35 +830,41 @@ namespace MasterTouroku_Tokuisaki
                     }
                     break;
 
-                case (int)EIndex.TankaCD:
+                 case (int)EIndex.pnlAliasKBN:
+                 break;
 
-                    ScTankaCD.LabelText = "";
-                    if (!string.IsNullOrWhiteSpace(detailControls[(int)EIndex.TankaCD].Text))
+                case (int)EIndex.KanaName:
+                case (int)EIndex.LongName1:
+                    if (detailControls[index].Enabled)
                     {
-                        //以下の条件でM_TankaCDが存在しない場合、エラー
-                        //[M_TankaCD]
-                        M_TankaCD_Entity mme = new M_TankaCD_Entity
+                        //入力必須(Entry required)
+                        if (!RequireCheck(new Control[] { detailControls[index] }))
                         {
-                            TankaCD = detailControls[index].Text,
-                            ChangeDate = bbl.GetDate()
-                        };
-                        TankaCD_BL tbl = new TankaCD_BL();
-                        DataTable dtTan = tbl.M_TankaCD_Select(mme);
-                        if (dtTan.Rows.Count > 0)
-                        {
-                            ScTankaCD.LabelText = dtTan.Rows[0]["TankaName"].ToString();
-                        }
-                        else
-                        {
-                            //Ｅ１０１
-                            bbl.ShowMessage("E101");
                             return false;
                         }
-                    }
 
+                        if (index == (int)EIndex.FirstName && string.IsNullOrWhiteSpace(detailControls[(int)EIndex.CustomerName].Text))
+                        {
+                            //得意先会員名がNULLの場合 会員 姓 + 1スペース + 名　を自動セット
+                            detailControls[(int)EIndex.CustomerName].Text = detailControls[(int)EIndex.LastName].Text + "　" + detailControls[(int)EIndex.FirstName].Text;
+                        }
+                        else if (index == (int)EIndex.CustomerName && string.IsNullOrWhiteSpace(detailControls[(int)EIndex.LongName1].Text)
+                             && string.IsNullOrWhiteSpace(detailControls[(int)EIndex.LongName2].Text))
+                        {
+                            //正式名１と２がNULLの場合 得意先会員名を正式名１に自動セット
+                            detailControls[(int)EIndex.LongName1].Text = detailControls[(int)EIndex.CustomerName].Text;
+                        }
+                    }
                     break;
 
-                //case (int)EIndex.ZipCD1:
+                case (int)EIndex.LongName2:
+                case (int)EIndex.BirthDate:
+                case (int)EIndex.pnlSex:
+                case (int)EIndex.ChkCountryKBN:
+                case (int)EIndex.CountryName:
+                case (int)EIndex.ZipCD1:
+                    break;
+
                 case (int)EIndex.ZipCD2:
                     //郵便番号1、2 入力無くても良い(It is not necessary to input)
                     if (!string.IsNullOrWhiteSpace(detailControls[(int)EIndex.ZipCD1].Text))
@@ -886,55 +899,19 @@ namespace MasterTouroku_Tokuisaki
                     }
                     break;
 
+                case (int)EIndex.ChkDMFlg:
                 case (int)EIndex.Address1:
+                case (int)EIndex.Address2:
                 case (int)EIndex.Tel11:
                 case (int)EIndex.Tel12:
                 case (int)EIndex.Tel13:
+                case (int)EIndex.Tel21:
+                case (int)EIndex.Tel22:
+                case (int)EIndex.Tel23:
+                case (int)EIndex.MailAddress:
+                case (int)EIndex.pnlBillingType:
                     break;
 
-                case (int)EIndex.KouzaCD:
-                    ScKouzaCD.LabelText = "";
-
-                    //得意先CD＝入金請求先CDの場合 入力必須
-                    if (detailControls[(int)EIndex.BillingCD].Text.Equals(keyControls[(int)EIndex.CustomerCD].Text))
-                    {
-                        //入力必須(Entry required)
-                        if (!RequireCheck(new Control[] { detailControls[index] }))
-                        {
-                            return false;
-                        }
-                    }
-
-                    if (!string.IsNullOrWhiteSpace(detailControls[index].Text))
-                    {
-                        //以下の条件でM_Kouzaが存在しない場合、エラー
-                        //[M_Kouza]
-                        M_Kouza_Entity mke = new M_Kouza_Entity
-                        {
-                            KouzaCD = detailControls[index].Text,
-                            ChangeDate = keyControls[(int)EIndex.ChangeDate].Text
-                        };
-                        Kouza_BL kbl = new Kouza_BL();
-                        DataTable dtKoza = kbl.M_Kouza_Select(mke);
-                        if (dtKoza.Rows.Count > 0)
-                        {
-                            //DeleteFlg = 1の場合、エラー
-                            if (dtKoza.Rows[0]["DeleteFlg"].ToString() == "1")
-                            {
-                                //Ｅ１５８
-                                bbl.ShowMessage("E158");
-                                return false;
-                            }
-                            ScKouzaCD.LabelText = dtKoza.Rows[0]["KouzaName"].ToString();
-                        }
-                        else
-                        {
-                            //Ｅ１０１
-                            bbl.ShowMessage("E101");
-                            return false;
-                        }
-                    }
-                    break;
                 case (int)EIndex.BillingCD:
                 case (int)EIndex.CollectCD:
                     SetLabel(index, "");
@@ -989,8 +966,28 @@ namespace MasterTouroku_Tokuisaki
                         return false;
                     }
                     break;
-
                 case (int)EIndex.BillingCloseDate:
+                    if (!RequireCheck(new Control[] { detailControls[index] }))
+                    {
+                        return false;
+                    }
+                    if (bbl.Z_Set(detailControls[index].Text) < 1 || bbl.Z_Set(detailControls[index].Text) > 31)
+                    {
+                        //Ｅ１１５
+                        bbl.ShowMessage("E115");
+                        return false;
+                    }
+                    break;
+
+                case (int)EIndex.cmbCollectPlanMonth:
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    {
+                        bbl.ShowMessage("E102");
+                        //((CKM_Controls.CKM_ComboBox)detailControls[index]).MoveNext = false;
+                        return false;
+                    }
+                    break;
+
                 case (int)EIndex.CollectPlanDate:
                     //入力必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
@@ -1005,18 +1002,72 @@ namespace MasterTouroku_Tokuisaki
                     }
                     break;
 
-                case (int)EIndex.cmbCollectPlanMonth:
+                case (int)EIndex.pnlHolidayKBN:
+                case (int)EIndex.RegisteredNumber:
+                case (int)EIndex.ChkNoInvoiceFlg:
+                case (int)EIndex.pnlTaxPrintKBN:
+                    break;
+
                 case (int)EIndex.cmbTaxTiming:
                 case (int)EIndex.cmbTaxFractionKBN:
                 case (int)EIndex.cmbAmountFractionKBN:
                 case (int)EIndex.cmbPaymentMethodCD:
-                case (int)EIndex.cmbPaymentUnit:
-                case (int)EIndex.cmbCreditLevel:
-                case (int)EIndex.StoreCD:
-                    //case (int)EIndex.StoreCD:
-                    //入力必須(Entry required)
-                    if (!RequireCheck(new Control[] { detailControls[index] }))
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
+                        bbl.ShowMessage("E102");
+                        //((CKM_Controls.CKM_ComboBox)detailControls[index]).MoveNext = false;
+                        return false;
+                    }
+                    break;
+
+                case (int)EIndex.KouzaCD:
+                    ScKouzaCD.LabelText = "";
+
+                    //得意先CD＝入金請求先CDの場合 入力必須
+                    if (detailControls[(int)EIndex.BillingCD].Text.Equals(keyControls[(int)EIndex.CustomerCD].Text))
+                    {
+                        //入力必須(Entry required)
+                        if (!RequireCheck(new Control[] { detailControls[index] }))
+                        {
+                            return false;
+                        }
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    {
+                        //以下の条件でM_Kouzaが存在しない場合、エラー
+                        //[M_Kouza]
+                        M_Kouza_Entity mke = new M_Kouza_Entity
+                        {
+                            KouzaCD = detailControls[index].Text,
+                            ChangeDate = keyControls[(int)EIndex.ChangeDate].Text
+                        };
+                        Kouza_BL kbl = new Kouza_BL();
+                        DataTable dtKoza = kbl.M_Kouza_Select(mke);
+                        if (dtKoza.Rows.Count > 0)
+                        {
+                            //DeleteFlg = 1の場合、エラー
+                            if (dtKoza.Rows[0]["DeleteFlg"].ToString() == "1")
+                            {
+                                //Ｅ１５８
+                                bbl.ShowMessage("E158");
+                                return false;
+                            }
+                            ScKouzaCD.LabelText = dtKoza.Rows[0]["KouzaName"].ToString();
+                        }
+                        else
+                        {
+                            //Ｅ１０１
+                            bbl.ShowMessage("E101");
+                            return false;
+                        }
+                    }
+                    break;
+
+                case (int)EIndex.cmbPaymentUnit:
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    {
+                        bbl.ShowMessage("E102");
                         //((CKM_Controls.CKM_ComboBox)detailControls[index]).MoveNext = false;
                         return false;
                     }
@@ -1032,6 +1083,82 @@ namespace MasterTouroku_Tokuisaki
                             ((CKM_Controls.CKM_ComboBox)detailControls[index]).MoveNext = false;
                             return false;
                         }
+                    }
+                    break;
+
+                case (int)EIndex.TankaCD:
+                    ScTankaCD.LabelText = "";
+                    if (!string.IsNullOrWhiteSpace(detailControls[(int)EIndex.TankaCD].Text))
+                    {
+                        //以下の条件でM_TankaCDが存在しない場合、エラー
+                        //[M_TankaCD]
+                        M_TankaCD_Entity mme = new M_TankaCD_Entity
+                        {
+                            TankaCD = detailControls[index].Text,
+                            ChangeDate = bbl.GetDate()
+                        };
+                        TankaCD_BL tbl = new TankaCD_BL();
+                        DataTable dtTan = tbl.M_TankaCD_Select(mme);
+                        if (dtTan.Rows.Count > 0)
+                        {
+                            ScTankaCD.LabelText = dtTan.Rows[0]["TankaName"].ToString();
+                        }
+                        else
+                        {
+                            //Ｅ１０１
+                            bbl.ShowMessage("E101");
+                            return false;
+                        }
+                    }
+                    break;
+
+                case (int)EIndex.ChkAttentionFLG:
+                case (int)EIndex.ChkConfirmFLG:
+                case (int)EIndex.ConfirmComment:
+                    break;
+
+                case (int)EIndex.cmbCreditLevel:
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    {
+                        bbl.ShowMessage("E102");
+                        //((CKM_Controls.CKM_ComboBox)detailControls[index]).MoveNext = false;
+                        return false;
+                    }
+                    break;
+                case (int)EIndex.CreditCard:
+                case (int)EIndex.CreditInsurance:
+                case (int)EIndex.CreditDeposit:
+                case (int)EIndex.CreditETC:
+               // case (int)EIndex.CreditWarningAmount:
+                case (int)EIndex.CreditAdditionAmount:
+                case (int)EIndex.DisplayOrder:
+                    detailControls[index].Text = bbl.Z_SetStr(detailControls[index].Text);
+
+                    lblCreditAmount.Text = bbl.Z_SetStr(bbl.Z_Set(detailControls[(int)EIndex.CreditCard].Text)
+                                                    + bbl.Z_Set(detailControls[(int)EIndex.CreditInsurance].Text)
+                                                    + bbl.Z_Set(detailControls[(int)EIndex.CreditDeposit].Text)
+                                                    + bbl.Z_Set(detailControls[(int)EIndex.CreditETC].Text));
+                    break;
+
+                case (int)EIndex.AnalyzeCD1:
+                case (int)EIndex.AnalyzeCD2:
+                case (int)EIndex.AnalyzeCD3:
+                case (int)EIndex.ChkPointFLG:
+                case (int)EIndex.LastPoint:
+                case (int)EIndex.WaitingPoint:
+                case (int)EIndex.TotalPoint:
+                case (int)EIndex.RemarksOutStore:
+                case (int)EIndex.RemarksInStore:
+                    break;
+                
+                case (int)EIndex.CboStoreCD:
+                    //入力必須(Entry required)
+                   // if (!RequireCheck(new Control[] { detailControls[index] }))
+                   if(string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    {
+                        bbl.ShowMessage("E102");
+                        //((CKM_Controls.CKM_ComboBox)detailControls[index]).MoveNext = false;
+                        return false;
                     }
                     break;
 
@@ -1084,20 +1211,11 @@ namespace MasterTouroku_Tokuisaki
                         }
                     }
                     break;
-                case (int)EIndex.CreditCard:
-                case (int)EIndex.CreditInsurance:
-                case (int)EIndex.CreditDeposit:
-                case (int)EIndex.CreditETC:
-                case (int)EIndex.CreditWarningAmount:
-                case (int)EIndex.CreditAdditionAmount:
-                case (int)EIndex.DisplayOrder:
-                    detailControls[index].Text = bbl.Z_SetStr(detailControls[index].Text);
 
-                    lblCreditAmount.Text = bbl.Z_SetStr(bbl.Z_Set(detailControls[(int)EIndex.CreditCard].Text)
-                                                    + bbl.Z_Set(detailControls[(int)EIndex.CreditInsurance].Text)
-                                                    + bbl.Z_Set(detailControls[(int)EIndex.CreditDeposit].Text)
-                                                    + bbl.Z_Set(detailControls[(int)EIndex.CreditETC].Text));
+                case (int)EIndex.DeleteFlg:
+                case (int)EIndex.COUNT:
                     break;
+
                 case (int)EIndex.txtCreditCheckKBN:
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
@@ -1105,12 +1223,28 @@ namespace MasterTouroku_Tokuisaki
                     }
                     else
                     {
-                        if (!(Convert.ToInt32(detailControls[index].Text) >= 0 && Convert.ToInt32(detailControls[index].Text) <= 2))
+                        if (!string.IsNullOrWhiteSpace(detailControls[index].Text))
                         {
-                            bbl.ShowMessage("E117");
-                            return false;
+                            if (!(Convert.ToInt32(detailControls[index].Text.Replace(",","")) >= 0 && Convert.ToInt32(detailControls[index].Text.Replace(",", "")) <= 2))
+                            {
+                                bbl.ShowMessage("E117");
+                                return false;
+                            }
                         }
                     }
+                    break;
+
+                case (int)EIndex.lblKouzaCD:
+                case (int)EIndex.lblBillingCD:
+                case (int)EIndex.lblCollectCD:
+                case (int)EIndex.lblTankaCD:
+                case (int)EIndex.lblStaff:
+                case (int)EIndex.lblStoreName:
+                case (int)EIndex.lblLastSalesDate:
+                case (int)EIndex.lblPoint:
+                case (int)EIndex.lblMinyukin:
+                case (int)EIndex.lblKensu:
+                case (int)EIndex.lblCreditAmount:
                     break;
             }
 
