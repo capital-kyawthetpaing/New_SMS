@@ -775,7 +775,7 @@ namespace NyuukinNyuuryoku_Detail
                                 btnNyuukinmoto.Enabled = ckM_RadioButton2.Checked; 
                                 btnSubF11.Enabled = true;
 
-                                SetFuncKeyAll(this, "111011000011");
+                                SetFuncKeyAll(this, "111111000011");
                             }
                             else
                             {
@@ -785,7 +785,7 @@ namespace NyuukinNyuuryoku_Detail
                                 btnNyuukinmoto.Enabled = false;
                                 btnSubF11.Enabled = false;
 
-                                SetFuncKeyAll(this, "111011001001");
+                                SetFuncKeyAll(this, "111111001001");
                             }
                         }
                         break;
@@ -837,7 +837,7 @@ namespace NyuukinNyuuryoku_Detail
                             SetEnabled();
                             SetEnabledForMode();
                             btnSubF11.Enabled = false;
-                            SetFuncKeyAll(this, "111011000001");
+                            SetFuncKeyAll(this, "111111000001");
                         }
                         break;
                     }
@@ -856,7 +856,7 @@ namespace NyuukinNyuuryoku_Detail
                             //Scr_Lock(0, 0, 0);
                             if (OperationMode == EOperationMode.DELETE)
                             {
-                                //Scr_Lock(1, 3, 1);
+                                Scr_Lock(1, 3, 1);
                                 SetFuncKeyAll(this, "111111000001");
                                 IMT_DMY_0.Focus();
                                 Scr_Lock(0, 0, 1);
@@ -864,7 +864,7 @@ namespace NyuukinNyuuryoku_Detail
                             else
                             {
                                 CboStoreCD.Enabled = false;
-                                SetFuncKeyAll(this, "111011000000");
+                                SetFuncKeyAll(this, "111111000000");
                             }
 
                             // 削除時のみ、明細を参照できるように、スクロールバーのTabStopをTrueにする
@@ -935,7 +935,7 @@ namespace NyuukinNyuuryoku_Detail
                 ScCollectNO.Value2 = stores;
                 ScCustomer.Value1 = "3";
 
-                Btn_F4.Text = "";
+                //Btn_F4.Text = "";
                 Btn_F7.Text = "";
                 Btn_F8.Text = "";
                 Btn_F10.Text = "";
@@ -1149,6 +1149,10 @@ namespace NyuukinNyuuryoku_Detail
                     //SetFocusAfterErr();
                     //return false;
                 }
+                else
+                {
+
+                }
 
                 //請求データの排他ロック
                 //明細にデータをセット
@@ -1302,17 +1306,33 @@ namespace NyuukinNyuuryoku_Detail
                             SetFocusAfterErr();
                             return false;
                         }
-                        //修正・削除モードの場合、
-                        //この消込の入金番号で、もっと最新の消込番号が存在すれば、修正・削除不可
-                        if (OperationMode != EOperationMode.SHOW && index == (int)EIndex.ConfirmNO)
+                        //修正・削除モードの場合、                        
+                        if (OperationMode != EOperationMode.SHOW )
                         {
-                            dce.CollectNO = dtDetail.Rows[0]["CollectNO"].ToString();
-                            bool exist = nnbl.D_PaymentConfirm_Select(dce);
-                            if (exist)
+                            //この消込の入金番号で、もっと最新の消込番号が存在すれば、修正・削除不可
+                            if (index == (int)EIndex.ConfirmNO)
                             {
-                                bbl.ShowMessage("E271", mes);
-                                SetFocusAfterErr();
-                                return false;
+                                dce.CollectNO = dtDetail.Rows[0]["CollectNO"].ToString();
+                                bool exist = nnbl.D_PaymentConfirm_Select(dce);
+                                if (exist)
+                                {
+                                    bbl.ShowMessage("E271", mes);
+                                    SetFocusAfterErr();
+                                    return false;
+                                }
+                            }
+                            //単独起動で（＝入金照会からの起動でなくメニューからの直接起動）「変更」「削除」モードの場合
+                            else if (index == (int)EIndex.CollectNO && mKidouMode.Equals(0))
+                            {
+                                //この入金番号で消込が一度もない場合（下記のSelectでレコードが無い場合）
+                                mConfirmExistsFlg = bbl.Z_Set(dtDetail.Rows[0]["ConfirmCount"]) > 0 ? true : false;
+
+                                if (OperationMode == EOperationMode.DELETE && mConfirmExistsFlg)
+                                {
+                                    bbl.ShowMessage("E271");
+                                    SetFocusAfterErr();
+                                    return false;
+                                }
                             }
                         }
 
@@ -1432,7 +1452,6 @@ namespace NyuukinNyuuryoku_Detail
                 if (index == (int)EIndex.CollectNO)
                 {
                     lblKin2.Text = "";
-                    mConfirmExistsFlg = bbl.Z_Set(dtDetail.Rows[0]["ConfirmCount"]) > 0 ? true : false;
                 }
                 else
                 {
@@ -1671,6 +1690,9 @@ namespace NyuukinNyuuryoku_Detail
                 }
             }
 
+            btnUriage.Enabled = true;
+            btnDetail.Enabled = true;
+
             AfterDisp();
 
             return true;
@@ -1682,7 +1704,7 @@ namespace NyuukinNyuuryoku_Detail
 
             mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
 
-            if (OperationMode == EOperationMode.SHOW)
+            if (OperationMode == EOperationMode.SHOW || OperationMode == EOperationMode.DELETE)
             {
                 S_BodySeigyo(2, 0);
                 S_BodySeigyo(2, 1);
@@ -2531,6 +2553,8 @@ namespace NyuukinNyuuryoku_Detail
                 detailControls[(int)EIndex.CollectClearDate].Visible = ckM_RadioButton2.Checked;
 
                 dtDetail = null;
+                btnUriage.Enabled = false;
+                btnDetail.Enabled = false;
                 mConfirmExistsFlg = false;
             }
 
