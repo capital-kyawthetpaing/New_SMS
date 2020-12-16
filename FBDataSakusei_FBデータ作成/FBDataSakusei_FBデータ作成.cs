@@ -18,6 +18,8 @@ namespace FBDataSakusei_FBデータ作成
         FBDataSakusei_BL fbbl = new FBDataSakusei_BL();
         M_Calendar_Entity mce = new M_Calendar_Entity();
         D_Pay_Entity dpe = new D_Pay_Entity();
+        D_FBControl_Entity dfbe = new D_FBControl_Entity();
+
         public FrmFBDataSakusei_FBデータ作成()
         {
             InitializeComponent();
@@ -50,11 +52,19 @@ namespace FBDataSakusei_FBデータ作成
         public void BindCombo()
         {
             //cboProcess.Items.Insert(-1,"");
-            cboProcess.Items.Insert(0,"振込データ作成");
-            cboProcess.Items.Insert(1,"振込データ削除");
-            cboProcess.Items.Insert(2,"振込データ印刷");
-            cboProcess.SelectedValue = 0;
-           
+            //cboProcess.Items.Add("振込データ作成");
+            //cboProcess.Items.Add("振込データ削除");
+            //cboProcess.Items.Add("振込データ印刷");
+            //cboProcess.SelectedValue = 0;
+
+            DataTable dt1 = new DataTable();
+            dt1.Columns.Add("Key");
+            dt1.Columns.Add("Value");
+            dt1.Rows.Add("振込データ作成", "0");
+            dt1.Rows.Add("振込データ削除", "1");
+            dt1.Rows.Add("振込データ印刷", "2");
+            cboProcess.BindCombo("Value", "Key", dt1);
+
 
             string ymd = bbl.GetDate();
             cboPayment.Bind(ymd);
@@ -103,7 +113,7 @@ namespace FBDataSakusei_FBデータ作成
 
         public void F10()
         {
-            if(ErrorCheck())
+            if(ErrorCheck(10))
             {
                 dpe = new D_Pay_Entity
                 {
@@ -131,58 +141,88 @@ namespace FBDataSakusei_FBデータ作成
 
         public void F12()
         {
-
-        }
-
-        public bool ErrorCheck()
-        {
-            if (cboProcess.SelectedValue.ToString() == null)
+            if(ErrorCheck(12))
             {
-                bbl.ShowMessage("E102");
-                cboProcess.Focus();
-                return false;
-            }
-            else if(cboProcess.SelectedValue.ToString() == "0")
-            {
-                Btn_F11.Text = "印刷(F11)";
-                Btn_F12.Text = "出力(F12)";               
-            }
-            else if(cboProcess.SelectedValue.ToString() == "1")
-            {
-                Btn_F12.Text = "削除(F12)";
-            }
-            else
-            {
-                Btn_F11.Text = "印刷(F11)";
-            }
-
-            if (cboPayment.SelectedValue.ToString() == "-1")
-            {
-                bbl.ShowMessage("E102");
-                cboPayment.Focus();
-                return false;
-            }
-
-            if (!RequireCheck(new Control[] { txtPaymentDate }))
-                return false;
-
-            if (!RequireCheck(new Control[] { txtTransferDate }))
-                return false;
-            else
-            {
-                mce.CalendarDate = txtTransferDate.Text;
-                DataTable dtC = new DataTable();
-                dtC = fbbl.M_Calendar_SelectForFB(mce);
-                if (dtC.Rows.Count > 0)
+                if(Btn_F12.Text == "出力(F12)")
                 {
-                    if (dtC.Rows[0]["BankDayOff"].ToString() == "1")
+                    if (bbl.ShowMessage("Q301") == DialogResult.Yes)
                     {
-                        bbl.ShowMessage("E157");
-                        txtTransferDate.Focus();
-                        return false;
+                        dfbe = new D_FBControl_Entity
+                        {
+                            PayDate = txtPaymentDate.Text,
+                            ActualPayDate = txtTransferDate.Text,
+                            MotoKouzaCD = cboPayment.SelectedValue.ToString(),
+                            StaffCD = InOperatorCD
+                        };
+                        if (fbbl.D_FBControl_Insert(dfbe))
+                        {
+                            Clear(panel1);
+                            BindCombo();
+                            cboProcess.Focus();
+                        }
+                           
+
                     }
                 }
             }
+        }
+
+        public bool ErrorCheck(int index)
+        {
+            if(index == 10)
+            {
+                if (cboProcess.SelectedValue.ToString() == null)
+                {
+                    bbl.ShowMessage("E102");
+                    cboProcess.Focus();
+                    return false;
+                }
+                else if (cboProcess.SelectedValue.ToString() == "0")
+                {
+                    Btn_F11.Text = "印刷(F11)";
+                    Btn_F12.Text = "出力(F12)";
+                }
+                else if (cboProcess.SelectedValue.ToString() == "1")
+                {
+                    Btn_F12.Text = "削除(F12)";
+                }
+                else
+                {
+                    Btn_F11.Text = "印刷(F11)";
+                }
+
+                if (cboPayment.SelectedValue.ToString() == "-1")
+                {
+                    bbl.ShowMessage("E102");
+                    cboPayment.Focus();
+                    return false;
+                }
+
+                if (!RequireCheck(new Control[] { txtPaymentDate }))
+                    return false;
+            }
+           
+            else if (index == 12)
+            {
+                if (!RequireCheck(new Control[] { txtTransferDate }))
+                    return false;
+                else
+                {
+                    mce.CalendarDate = txtTransferDate.Text;
+                    DataTable dtC = new DataTable();
+                    dtC = fbbl.M_Calendar_SelectForFB(mce);
+                    if (dtC.Rows.Count > 0)
+                    {
+                        if (dtC.Rows[0]["BankDayOff"].ToString() == "1")
+                        {
+                            bbl.ShowMessage("E157");
+                            txtTransferDate.Focus();
+                            return false;
+                        }
+                    }
+                }
+            }
+            
             return true;
         }
 
@@ -219,28 +259,6 @@ namespace FBDataSakusei_FBデータ作成
             //    bbl.ShowMessage("E102");
             //    cboProcess.Focus();
             //}CboSoukoType.SelectedValue.Equals("5")
-            //if (cboProcess.SelectedValue.Equals("0"))
-            //{
-            //    Btn_F11.Text = "印刷(F11)";
-            //    Btn_F12.Text = "出力(F12)";
-            //}
-            //else if (cboProcess.SelectedValue.Equals("1"))
-            //{
-            //    Btn_F12.Text = "削除(F12)";
-            //}
-            //else
-            //{
-            //    Btn_F11.Text = "印刷(F11)";
-            //}
-        }
-
-        private void btnDisplay_Click(object sender, EventArgs e)
-        {
-            F10();
-        }
-
-        private void cboProcess_SelectedValueChanged(object sender, EventArgs e)
-        {
             if (cboProcess.SelectedValue.Equals("0"))
             {
                 Btn_F11.Text = "印刷(F11)";
@@ -255,5 +273,12 @@ namespace FBDataSakusei_FBデータ作成
                 Btn_F11.Text = "印刷(F11)";
             }
         }
+
+        private void btnDisplay_Click(object sender, EventArgs e)
+        {
+            F10();
+        }
+
+        
     }
 }

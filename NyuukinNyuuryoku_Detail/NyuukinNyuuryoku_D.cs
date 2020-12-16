@@ -2147,7 +2147,7 @@ namespace NyuukinNyuuryoku_Detail
                     if (mGrid.g_DArray[row].Chk)
                     {
                         //チェックボックスONの場合、入力必須(Entry required)
-                        if (bbl.Z_Set(mGrid.g_DArray[row].ConfirmAmount) == 0)
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].ConfirmAmount))
                         {
                             bbl.ShowMessage("E102");
                             return false;
