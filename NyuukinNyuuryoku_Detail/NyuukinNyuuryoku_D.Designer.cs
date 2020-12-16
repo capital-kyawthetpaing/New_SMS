@@ -184,7 +184,6 @@
             this.IMN_MEMBR_2 = new CKM_Controls.CKM_TextBox();
             this.IMN_MEMBR_1 = new CKM_Controls.CKM_TextBox();
             this.IMN_MEMBR_0 = new CKM_Controls.CKM_TextBox();
-            this.Vsb_Mei_0 = new System.Windows.Forms.VScrollBar();
             this.IMT_JANCD_0 = new CKM_Controls.CKM_TextBox();
             this.IMT_JANCD_2 = new CKM_Controls.CKM_TextBox();
             this.IMT_PAYDT_7 = new CKM_Controls.CKM_TextBox();
@@ -203,6 +202,7 @@
             this.CHK_EDICK_2 = new GridControl.clsGridCheckBox();
             this.CHK_EDICK_1 = new GridControl.clsGridCheckBox();
             this.CHK_EDICK_0 = new GridControl.clsGridCheckBox();
+            this.Vsb_Mei_0 = new System.Windows.Forms.VScrollBar();
             this.label1 = new CKM_Controls.CKM_Label();
             this.label27 = new CKM_Controls.CKM_Label();
             this.ScCustomer = new Search.CKM_SearchControl();
@@ -792,7 +792,6 @@
             this.Pnl_Body.Controls.Add(this.IMN_MEMBR_2);
             this.Pnl_Body.Controls.Add(this.IMN_MEMBR_1);
             this.Pnl_Body.Controls.Add(this.IMN_MEMBR_0);
-            this.Pnl_Body.Controls.Add(this.Vsb_Mei_0);
             this.Pnl_Body.Controls.Add(this.IMT_JANCD_0);
             this.Pnl_Body.Controls.Add(this.IMT_JANCD_2);
             this.Pnl_Body.Controls.Add(this.IMT_PAYDT_7);
@@ -811,6 +810,7 @@
             this.Pnl_Body.Controls.Add(this.CHK_EDICK_2);
             this.Pnl_Body.Controls.Add(this.CHK_EDICK_1);
             this.Pnl_Body.Controls.Add(this.CHK_EDICK_0);
+            this.Pnl_Body.Controls.Add(this.Vsb_Mei_0);
             this.Pnl_Body.Location = new System.Drawing.Point(2, 35);
             this.Pnl_Body.Name = "Pnl_Body";
             this.Pnl_Body.Size = new System.Drawing.Size(1302, 383);
@@ -1190,11 +1190,11 @@
             this.IMT_ITMNM_9.IsNumber = true;
             this.IMT_ITMNM_9.IsShop = false;
             this.IMT_ITMNM_9.Length = 80;
-            this.IMT_ITMNM_9.Location = new System.Drawing.Point(687, 342);
+            this.IMT_ITMNM_9.Location = new System.Drawing.Point(715, 342);
             this.IMT_ITMNM_9.MaxLength = 80;
             this.IMT_ITMNM_9.MoveNext = true;
             this.IMT_ITMNM_9.Name = "IMT_ITMNM_9";
-            this.IMT_ITMNM_9.Size = new System.Drawing.Size(283, 19);
+            this.IMT_ITMNM_9.Size = new System.Drawing.Size(255, 19);
             this.IMT_ITMNM_9.TabIndex = 693;
             this.IMT_ITMNM_9.Tag = "9";
             this.IMT_ITMNM_9.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -1671,11 +1671,11 @@
             this.IMT_ITMNM_8.IsNumber = true;
             this.IMT_ITMNM_8.IsShop = false;
             this.IMT_ITMNM_8.Length = 80;
-            this.IMT_ITMNM_8.Location = new System.Drawing.Point(687, 304);
+            this.IMT_ITMNM_8.Location = new System.Drawing.Point(715, 304);
             this.IMT_ITMNM_8.MaxLength = 80;
             this.IMT_ITMNM_8.MoveNext = true;
             this.IMT_ITMNM_8.Name = "IMT_ITMNM_8";
-            this.IMT_ITMNM_8.Size = new System.Drawing.Size(283, 19);
+            this.IMT_ITMNM_8.Size = new System.Drawing.Size(255, 19);
             this.IMT_ITMNM_8.TabIndex = 674;
             this.IMT_ITMNM_8.Tag = "8";
             this.IMT_ITMNM_8.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -2383,11 +2383,11 @@
             this.IMT_ITMNM_7.IsNumber = true;
             this.IMT_ITMNM_7.IsShop = false;
             this.IMT_ITMNM_7.Length = 80;
-            this.IMT_ITMNM_7.Location = new System.Drawing.Point(687, 266);
+            this.IMT_ITMNM_7.Location = new System.Drawing.Point(715, 266);
             this.IMT_ITMNM_7.MaxLength = 80;
             this.IMT_ITMNM_7.MoveNext = true;
             this.IMT_ITMNM_7.Name = "IMT_ITMNM_7";
-            this.IMT_ITMNM_7.Size = new System.Drawing.Size(283, 19);
+            this.IMT_ITMNM_7.Size = new System.Drawing.Size(255, 19);
             this.IMT_ITMNM_7.TabIndex = 628;
             this.IMT_ITMNM_7.Tag = "7";
             this.IMT_ITMNM_7.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -2415,11 +2415,11 @@
             this.IMT_ITMNM_6.IsNumber = true;
             this.IMT_ITMNM_6.IsShop = false;
             this.IMT_ITMNM_6.Length = 80;
-            this.IMT_ITMNM_6.Location = new System.Drawing.Point(687, 228);
+            this.IMT_ITMNM_6.Location = new System.Drawing.Point(715, 228);
             this.IMT_ITMNM_6.MaxLength = 80;
             this.IMT_ITMNM_6.MoveNext = true;
             this.IMT_ITMNM_6.Name = "IMT_ITMNM_6";
-            this.IMT_ITMNM_6.Size = new System.Drawing.Size(283, 19);
+            this.IMT_ITMNM_6.Size = new System.Drawing.Size(255, 19);
             this.IMT_ITMNM_6.TabIndex = 609;
             this.IMT_ITMNM_6.Tag = "6";
             this.IMT_ITMNM_6.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -2447,11 +2447,11 @@
             this.IMT_ITMNM_5.IsNumber = true;
             this.IMT_ITMNM_5.IsShop = false;
             this.IMT_ITMNM_5.Length = 80;
-            this.IMT_ITMNM_5.Location = new System.Drawing.Point(687, 190);
+            this.IMT_ITMNM_5.Location = new System.Drawing.Point(715, 190);
             this.IMT_ITMNM_5.MaxLength = 80;
             this.IMT_ITMNM_5.MoveNext = true;
             this.IMT_ITMNM_5.Name = "IMT_ITMNM_5";
-            this.IMT_ITMNM_5.Size = new System.Drawing.Size(283, 19);
+            this.IMT_ITMNM_5.Size = new System.Drawing.Size(255, 19);
             this.IMT_ITMNM_5.TabIndex = 590;
             this.IMT_ITMNM_5.Tag = "5";
             this.IMT_ITMNM_5.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -2479,11 +2479,11 @@
             this.IMT_ITMNM_4.IsNumber = true;
             this.IMT_ITMNM_4.IsShop = false;
             this.IMT_ITMNM_4.Length = 80;
-            this.IMT_ITMNM_4.Location = new System.Drawing.Point(687, 152);
+            this.IMT_ITMNM_4.Location = new System.Drawing.Point(715, 152);
             this.IMT_ITMNM_4.MaxLength = 80;
             this.IMT_ITMNM_4.MoveNext = true;
             this.IMT_ITMNM_4.Name = "IMT_ITMNM_4";
-            this.IMT_ITMNM_4.Size = new System.Drawing.Size(283, 19);
+            this.IMT_ITMNM_4.Size = new System.Drawing.Size(255, 19);
             this.IMT_ITMNM_4.TabIndex = 571;
             this.IMT_ITMNM_4.Tag = "4";
             this.IMT_ITMNM_4.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -2511,11 +2511,11 @@
             this.IMT_ITMNM_3.IsNumber = true;
             this.IMT_ITMNM_3.IsShop = false;
             this.IMT_ITMNM_3.Length = 80;
-            this.IMT_ITMNM_3.Location = new System.Drawing.Point(687, 114);
+            this.IMT_ITMNM_3.Location = new System.Drawing.Point(715, 114);
             this.IMT_ITMNM_3.MaxLength = 80;
             this.IMT_ITMNM_3.MoveNext = true;
             this.IMT_ITMNM_3.Name = "IMT_ITMNM_3";
-            this.IMT_ITMNM_3.Size = new System.Drawing.Size(283, 19);
+            this.IMT_ITMNM_3.Size = new System.Drawing.Size(255, 19);
             this.IMT_ITMNM_3.TabIndex = 552;
             this.IMT_ITMNM_3.Tag = "3";
             this.IMT_ITMNM_3.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -2543,11 +2543,11 @@
             this.IMT_ITMNM_2.IsNumber = true;
             this.IMT_ITMNM_2.IsShop = false;
             this.IMT_ITMNM_2.Length = 80;
-            this.IMT_ITMNM_2.Location = new System.Drawing.Point(687, 76);
+            this.IMT_ITMNM_2.Location = new System.Drawing.Point(715, 76);
             this.IMT_ITMNM_2.MaxLength = 80;
             this.IMT_ITMNM_2.MoveNext = true;
             this.IMT_ITMNM_2.Name = "IMT_ITMNM_2";
-            this.IMT_ITMNM_2.Size = new System.Drawing.Size(283, 19);
+            this.IMT_ITMNM_2.Size = new System.Drawing.Size(255, 19);
             this.IMT_ITMNM_2.TabIndex = 265;
             this.IMT_ITMNM_2.Tag = "2";
             this.IMT_ITMNM_2.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -2575,11 +2575,11 @@
             this.IMT_ITMNM_1.IsNumber = true;
             this.IMT_ITMNM_1.IsShop = false;
             this.IMT_ITMNM_1.Length = 80;
-            this.IMT_ITMNM_1.Location = new System.Drawing.Point(687, 38);
+            this.IMT_ITMNM_1.Location = new System.Drawing.Point(715, 38);
             this.IMT_ITMNM_1.MaxLength = 80;
             this.IMT_ITMNM_1.MoveNext = true;
             this.IMT_ITMNM_1.Name = "IMT_ITMNM_1";
-            this.IMT_ITMNM_1.Size = new System.Drawing.Size(283, 19);
+            this.IMT_ITMNM_1.Size = new System.Drawing.Size(255, 19);
             this.IMT_ITMNM_1.TabIndex = 264;
             this.IMT_ITMNM_1.Tag = "1";
             this.IMT_ITMNM_1.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -5232,14 +5232,6 @@
             this.IMN_MEMBR_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.IMN_MEMBR_0.UseColorSizMode = false;
             // 
-            // Vsb_Mei_0
-            // 
-            this.Vsb_Mei_0.Location = new System.Drawing.Point(1281, -3);
-            this.Vsb_Mei_0.Name = "Vsb_Mei_0";
-            this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 382);
-            this.Vsb_Mei_0.TabIndex = 0;
-            this.Vsb_Mei_0.ValueChanged += new System.EventHandler(this.Vsb_Mei_0_ValueChanged);
-            // 
             // IMT_JANCD_0
             // 
             this.IMT_JANCD_0.AllowMinus = false;
@@ -5697,6 +5689,14 @@
             this.CHK_EDICK_0.Text = "　";
             this.CHK_EDICK_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CHK_EDICK_0.UseVisualStyleBackColor = false;
+            // 
+            // Vsb_Mei_0
+            // 
+            this.Vsb_Mei_0.Location = new System.Drawing.Point(1281, -3);
+            this.Vsb_Mei_0.Name = "Vsb_Mei_0";
+            this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 382);
+            this.Vsb_Mei_0.TabIndex = 0;
+            this.Vsb_Mei_0.ValueChanged += new System.EventHandler(this.Vsb_Mei_0_ValueChanged);
             // 
             // label1
             // 
@@ -6255,12 +6255,12 @@
             this.CboTorikomi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.CboTorikomi.Flag = 0;
             this.CboTorikomi.FormattingEnabled = true;
-            this.CboTorikomi.Length = 20;
+            this.CboTorikomi.Length = 40;
             this.CboTorikomi.Location = new System.Drawing.Point(126, 48);
-            this.CboTorikomi.MaxLength = 10;
+            this.CboTorikomi.MaxLength = 20;
             this.CboTorikomi.MoveNext = false;
             this.CboTorikomi.Name = "CboTorikomi";
-            this.CboTorikomi.Size = new System.Drawing.Size(311, 20);
+            this.CboTorikomi.Size = new System.Drawing.Size(280, 20);
             this.CboTorikomi.TabIndex = 4;
             // 
             // ckM_SearchControl1

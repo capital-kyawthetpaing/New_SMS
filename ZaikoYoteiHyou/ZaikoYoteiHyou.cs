@@ -163,6 +163,8 @@ namespace ZaikoYoteiHyou
         {
             if(!string.IsNullOrWhiteSpace(txtTargetDateTo.Text))
             {
+                if (!txtTargetDateTo.DateCheck())
+                    return false;
                 int result = txtTargetDateFrom.Text.CompareTo(txtTargetDateTo.Text);
                 if(result > 0)
                 {
@@ -172,10 +174,10 @@ namespace ZaikoYoteiHyou
                 }
             }
 
-            mse.StaffCD = InOperatorCD;
-            mse.ChangeDate = DateTime.Today.ToShortDateString();
-            DataTable dtstaff = new DataTable();
-            dtstaff = zkybl.M_Staff_Select(mse);
+            //mse.StaffCD = InOperatorCD;
+            //mse.ChangeDate = DateTime.Today.ToShortDateString();
+            //DataTable dtstaff = new DataTable();
+            //dtstaff = zkybl.M_Staff_Select(mse);
             //if(dtstaff.Rows.Count == 0)
             //{
             //    zkybl.ShowMessage("E139");
@@ -184,19 +186,32 @@ namespace ZaikoYoteiHyou
             //}
             //else
             //{
-            msae.StoreAuthorizationsCD = StoreAuthorizationsCD;
-            msae.ChangeDate = StoreAuthorizationsChangeDate;
-            msae.StoreCD = cboStore.SelectedValue.ToString();
-            DataTable dtAuthorization = new DataTable();
-            dtAuthorization = zkybl.M_StoreAuthorizations_Select(msae);
-            if (dtAuthorization.Rows.Count == 0)
+            //msae.StoreAuthorizationsCD = StoreAuthorizationsCD;
+            //msae.ChangeDate = StoreAuthorizationsChangeDate;
+            //msae.StoreCD = cboStore.SelectedValue.ToString();
+            //DataTable dtAuthorization = new DataTable();
+            //dtAuthorization = zkybl.M_StoreAuthorizations_Select(msae);
+            //if (dtAuthorization.Rows.Count == 0)
+            //{
+            //    zkybl.ShowMessage("E139");
+            //    cboStore.Focus();
+            //    return false;
+            //}
+            ////}
+
+            if (!RequireCheck(new Control[] { cboStore, cboWareHouse }))
+                return false;
+
+            if (!base.CheckAvailableStores(cboStore.SelectedValue.ToString()))
             {
                 zkybl.ShowMessage("E139");
                 cboStore.Focus();
                 return false;
             }
-            //}
-            return true;
+            if (!RequireCheck(new Control[] { cboWareHouse }))
+                return false;
+
+           return true;
         }
 
         #region To Print Report

@@ -1760,11 +1760,12 @@ namespace Base.Client
         //入力可能店舗チェック
         protected bool CheckAvailableStores(string storeCD)
         {
-            if (Array.IndexOf(availableStores, storeCD) >= 0)
-                return true;
+                if (availableStores != null && Array.IndexOf(availableStores, storeCD) >= 0)
+                    return true;
 
-            else
-                return false;
+                else
+                    return false;
+            
         }
         protected string GetAllAvailableStores()
         {

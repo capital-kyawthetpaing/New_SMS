@@ -110,6 +110,7 @@ namespace DL
             command.CommandTimeout = 0;
 
             AddParam(command, "@OperateMode", SqlDbType.Int, operationMode.ToString());
+            AddParam(command, "@KidouMode", SqlDbType.Int, dce.KidouMode.ToString());
             AddParam(command, "@StoreCD", SqlDbType.VarChar, dce.StoreCD);
             AddParam(command, "@CollectNO", SqlDbType.VarChar, dce.CollectNO);
             AddParam(command, "@ConfirmNO", SqlDbType.VarChar, dce.ConfirmNO);

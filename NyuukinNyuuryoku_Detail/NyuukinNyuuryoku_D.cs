@@ -116,6 +116,7 @@ namespace NyuukinNyuuryoku_Detail
         private string mOldConfirmNO = "";    //排他処理のため使用
         private string mSystemKBN = "";     //[M_DenominationKBN][SystemKBN]
         private string mStaffName = "";
+        private short mKidouMode = 0;
 
         // -- 明細部をグリッドのように扱うための宣言 ↓--------------------
         ClsGridNyuukin_S mGrid = new ClsGridNyuukin_S();
@@ -833,6 +834,7 @@ namespace NyuukinNyuuryoku_Detail
                             Scr_Lock(0, 2, 1);
                             keyControls[(int)EIndex.StoreCD].Enabled = false;
                             SetEnabled();
+                            SetEnabledForMode();
                             btnSubF11.Enabled = false;
                             SetFuncKeyAll(this, "111011000001");
                         }
@@ -969,6 +971,7 @@ namespace NyuukinNyuuryoku_Detail
 
                     if (mode.Equals("9"))
                     {
+                        mKidouMode = 9;
                         string collectNO = cmds[(int)ECmdLine.PcID + 2];   //
                         ChangeOperationMode(EOperationMode.UPDATE);
                         keyControls[(int)EIndex.CollectNO].Text = collectNO;
@@ -976,6 +979,7 @@ namespace NyuukinNyuuryoku_Detail
                     }
                     else if (mode.Equals("10"))
                     {
+                        mKidouMode = 10;
                         string collectNO = cmds[(int)ECmdLine.PcID + 2];   //
                         string confirmNO = cmds[(int)ECmdLine.PcID + 3];
                         ChangeOperationMode(EOperationMode.UPDATE);
@@ -1421,7 +1425,6 @@ namespace NyuukinNyuuryoku_Detail
                 if (index == (int)EIndex.CollectNO)
                 {
                     lblKin2.Text = "";
-                    //detailControls[(int)EIndex.CollectClearDate].Text = dtDetail.Rows[0]["CollectClearDate"].ToString();
                 }
                 else
                 {
@@ -1429,7 +1432,19 @@ namespace NyuukinNyuuryoku_Detail
                     lblKin2.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmAmount"]);
                     detailControls[(int)EIndex.CollectClearDate].Text = dtDetail.Rows[0]["CollectClearDate"].ToString();
                 }
-                lblKin3.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmZan"]);
+                //lblKin3.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmZan"]);
+
+                //新規消込モード
+                if (mKidouMode.Equals(9))
+                {
+                    detailControls[(int)EIndex.CollectClearDate].Text = bbl.GetDate(); //dtDetail.Rows[0]["CollectClearDate"].ToString();
+
+                    //その時点の入金データの最新状況を表示する+画面転送表05①に従ってデータ取得/画面表示する
+                    dce = GetEntity();
+                    dtDetail = nnbl.SelectDataForNyukin(dce);
+
+                    return DispFromDataTable(index, kbn, no);
+                }
             }
 
             //入金顧客
@@ -1573,7 +1588,7 @@ namespace NyuukinNyuuryoku_Detail
                         mGrid.g_DArray[i].Chk = true;
                         mGrid.g_DArray[i].ConfirmAmount = bbl.Z_SetStr(row["NowCollectAmount"]);   //今回入金額
 
-                        if (OperationMode == EOperationMode.INSERT)
+                        if (OperationMode == EOperationMode.INSERT || mKidouMode.Equals(9))
                             mGrid.g_DArray[i].OldConfirmAmount = "0";
                         else
                             mGrid.g_DArray[i].OldConfirmAmount = bbl.Z_SetStr(row["OldConfirmAmount"]);   //修正前今回入金額
@@ -2132,7 +2147,7 @@ namespace NyuukinNyuuryoku_Detail
                     if (mGrid.g_DArray[row].Chk)
                     {
                         //チェックボックスONの場合、入力必須(Entry required)
-                        if (bbl.Z_Set(mGrid.g_DArray[row].ConfirmAmount) == 0)
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].ConfirmAmount))
                         {
                             bbl.ShowMessage("E102");
                             return false;
@@ -2233,6 +2248,7 @@ namespace NyuukinNyuuryoku_Detail
                 DeductionConfirm = detailControls[(int)EIndex.DeductionConfirm].Text,
                 Remark = detailControls[(int)EIndex.Remark].Text,
                 StaffCD = detailControls[(int)EIndex.StaffCD].Text,
+                KidouMode = mKidouMode,
 
                 Operator = InOperatorCD,
                 PC = InPcID
@@ -2255,15 +2271,15 @@ namespace NyuukinNyuuryoku_Detail
                     if (mDisplayMode == EMode.Detail)
                     {
                         dt.Rows.Add(rowNo
-                        , mGrid.g_DArray[RW].BillingNo  //未使用
-                        , mGrid.g_DArray[RW].WebCollectNO == "" ? null : mGrid.g_DArray[RW].WebCollectNO
-                        , mGrid.g_DArray[RW].WebCollectType == "" ? null : mGrid.g_DArray[RW].WebCollectType
-                        , bbl.Z_Set(mGrid.g_DArray[RW].CollectPlanNO)
-                        , bbl.Z_Set(mGrid.g_DArray[RW].CollectPlanRows)
+                                    , mGrid.g_DArray[RW].BillingNo  //未使用
+                                    , mGrid.g_DArray[RW].WebCollectNO == "" ? null : mGrid.g_DArray[RW].WebCollectNO
+                                    , mGrid.g_DArray[RW].WebCollectType == "" ? null : mGrid.g_DArray[RW].WebCollectType
+                                    , bbl.Z_Set(mGrid.g_DArray[RW].CollectPlanNO)
+                                    , bbl.Z_Set(mGrid.g_DArray[RW].CollectPlanRows)
 
-                        , bbl.Z_Set(mGrid.g_DArray[RW].ConfirmAmount)
-                        , mGrid.g_DArray[RW].Update
-                        );
+                                    , bbl.Z_Set(mGrid.g_DArray[RW].ConfirmAmount)
+                                    , mGrid.g_DArray[RW].Update
+                                    );
 
                         rowNo++;
                         seq++;
@@ -2298,14 +2314,14 @@ namespace NyuukinNyuuryoku_Detail
                             }
 
                             dt.Rows.Add(rowNo
-                           , row["BillingNo"].ToString() == "" ? null : row["BillingNo"].ToString()
-                           , WebCollectNO == "" ? null : WebCollectNO
-                           , WebCollectType == "" ? null : WebCollectType
-                           , bbl.Z_Set(row["CollectPlanNO"])
-                           , bbl.Z_Set(row["CollectPlanRows"])
-                           , ConfirmAmount
-                           , 0
-                           );
+                                       , row["BillingNo"].ToString() == "" ? null : row["BillingNo"].ToString()
+                                       , WebCollectNO == "" ? null : WebCollectNO
+                                       , WebCollectType == "" ? null : WebCollectType
+                                       , bbl.Z_Set(row["CollectPlanNO"])
+                                       , bbl.Z_Set(row["CollectPlanRows"])
+                                       , ConfirmAmount
+                                       , 0
+                                       );
 
                             rowNo++;
                             seq++;
@@ -2394,6 +2410,14 @@ namespace NyuukinNyuuryoku_Detail
                 CalcKin();
             }
 
+            //残額＜０になれば、エラー
+            if (bbl.Z_Set(lblKin3.Text) < 0)
+            {
+                bbl.ShowMessage("E273", "入金額（消込可能額）");
+                detailControls[(int)EIndex.NyukinGaku].Focus();
+                return;
+            }
+
             DataTable dt = GetGridEntity();
 
             //if (OperationMode == EOperationMode.INSERT)
@@ -2411,7 +2435,7 @@ namespace NyuukinNyuuryoku_Detail
 
             bbl.ShowMessage("I101");
 
-            if (Btn_F3.Text != "")
+            if (mKidouMode.Equals(0))
                 //更新後画面クリア
                 ChangeOperationMode(OperationMode);
             else
@@ -2580,11 +2604,6 @@ namespace NyuukinNyuuryoku_Detail
             //残額を計算（残額＝消込原資額－消込額－その他消込）
             lblKin3.Text = string.Format("{0:#,##0}",bbl.Z_Set(lblKin1.Text) - kin3 - bbl.Z_Set(detailControls[(int)EIndex.DeductionConfirm].Text));
 
-            //残額＜０になれば、エラー
-            if (bbl.Z_Set(lblKin3.Text) < 0)
-            {
-                return false;
-            }
             return true;
         }
 
@@ -2754,8 +2773,7 @@ namespace NyuukinNyuuryoku_Detail
                     bool ret = CheckKey(index);
                     if (ret)
                     {
-                        if (index == (int)EIndex.CollectNO)
-
+                        if ((index == (int)EIndex.CollectNO || index == (int)EIndex.ConfirmNO) && detailControls[(int)EIndex.CollectDate].CanFocus)
                             detailControls[(int)EIndex.CollectDate].Focus();
 
                         else if (index == (int)EIndex.InputDateTo || index == (int)EIndex.CustomerCD) //取込日
@@ -2771,11 +2789,28 @@ namespace NyuukinNyuuryoku_Detail
                         else if (keyControls.Length - 1 > index)
                         {
                             if (keyControls[index + 1].CanFocus)
+                            {
                                 keyControls[index + 1].Focus();
+                            }
+                            else if (OperationMode == EOperationMode.UPDATE)
+                            {
+                                for (int i = (int)EIndex.CboKoza; i <= (int)EIndex.Remark; i++)
+                                {
+                                    if (detailControls[i].CanFocus)
+                                    {
+                                        detailControls[i].Focus();
+                                        return;
+                                    }
+                                }
+                                //明細の先頭項目へ
+                                mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridNyuukin_S.ColNO.ConfirmAmount);
+                            }
                             else
+                            {
                                 //あたかもTabキーが押されたかのようにする
                                 //Shiftが押されている時は前のコントロールのフォーカスを移動
                                 ProcessTabKey(!e.Shift);
+                            }
                         }
                     }
                     else
@@ -3237,7 +3272,7 @@ namespace NyuukinNyuuryoku_Detail
         {
             try
             {
-                if (OperationMode == EOperationMode.INSERT)
+                if (OperationMode == EOperationMode.INSERT || mKidouMode.Equals(9))
                 {
                     btnNyuukinmoto.Enabled = ckM_RadioButton2.Checked;
 
@@ -3383,6 +3418,23 @@ namespace NyuukinNyuuryoku_Detail
                 detailControls[(int)EIndex.Tegata].Enabled = false;
                 detailControls[(int)EIndex.Tegata].Text = "";
             }
+        }
+        private void SetEnabledForMode()
+        {
+            //通常起動
+            if (mKidouMode.Equals(0) && OperationMode == EOperationMode.INSERT)
+                return;
+
+            //入金照会からの新規消込または修正時
+            //　入金日、入金金種も入力不可
+            detailControls[(int)EIndex.CollectDate].Enabled = false;
+            cboDenomination.Enabled = false;
+            //　入金額、手数料～その他(-)、その他消込額も入力不可
+            for (int i=(int)EIndex.NyukinGaku; i<= (int)EIndex.DeductionConfirm; i++)
+            {
+                detailControls[i].Enabled = false;
+            }
+
         }
     }
 }

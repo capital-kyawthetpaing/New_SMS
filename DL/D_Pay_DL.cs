@@ -214,7 +214,8 @@ namespace DL
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>()
             {
                 {"@MotoKouzaCD", new ValuePair {value1 = SqlDbType.VarChar,value2 = dpe.MotoKouzaCD} },
-                {"@PayDate", new ValuePair {value1 = SqlDbType.Date,value2 = dpe.PayDate} }
+                {"@PayDate", new ValuePair {value1 = SqlDbType.Date,value2 = dpe.PayDate} },
+                {"@Flg", new ValuePair {value1 = SqlDbType.TinyInt,value2 = dpe.Flg} }
             };
             return SelectData(dic, "D_Pay_SelectForFB");
         }

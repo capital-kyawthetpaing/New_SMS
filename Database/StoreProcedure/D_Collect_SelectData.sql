@@ -20,7 +20,7 @@ BEGIN
     -- Insert statements for procedure here
     DECLARE @CollectCustomerCD varchar(13);
     
-    IF ISNULL(@CollectNO,'') <> ''
+    IF ISNULL(@ConfirmNO,'') = ''
     BEGIN
         SELECT @CollectCustomerCD = DH.CollectCustomerCD
         FROM [D_Collect] AS DH
@@ -197,30 +197,33 @@ BEGIN
         	--入金番号入力時（修正・照会時）
             --画面転送表01 
             SELECT DH.CollectNO
-            	  ,NULL AS ConfirmNO
+                  ,NULL AS ConfirmNO
                   ,DH.InputKBN
                   ,DH.StoreCD
                   ,(SELECT top 1 A.StoreName
-                      FROM M_Store A 
-                      WHERE A.StoreCD = DH.StoreCD AND A.ChangeDate <= DH.CollectDate
-                            AND A.DeleteFlg = 0
-                      ORDER BY A.ChangeDate desc) AS StoreName
+                    FROM M_Store A 
+                    WHERE A.StoreCD = DH.StoreCD 
+                    AND A.ChangeDate <= DH.CollectDate
+                    AND A.DeleteFlg = 0
+                    ORDER BY A.ChangeDate desc) AS StoreName
                   ,DH.StaffCD
                   ,(SELECT TOP 1 A.StaffName
-                            FROM M_Staff AS A
-                            WHERE A.StaffCD = DH.StaffCD AND A.ChangeDate <= DH.CollectDate 
-                            AND A.DeleteFlg = 0
-                            ORDER BY A.ChangeDate DESC) AS StaffName
+                    FROM M_Staff AS A
+                    WHERE A.StaffCD = DH.StaffCD 
+                    AND A.ChangeDate <= DH.CollectDate 
+                    AND A.DeleteFlg = 0
+                    ORDER BY A.ChangeDate DESC) AS StaffName
                   ,CONVERT(varchar,DH.InputDatetime,111) AS InputDatetime
                   ,DH.WebCollectNO
                   ,DH.WebCollectType
                   ,(SELECT M.PatternName FROM M_Settlement AS M WHERE M.PatternCD = DH.WebCollectType) AS WebCollectTypeName
                   ,DH.CollectCustomerCD
                   ,(SELECT TOP 1 A.CustomerName
-                            FROM M_Customer AS A
-                            WHERE A.CustomerCD = DH.CollectCustomerCD AND A.ChangeDate <= DH.CollectDate
-                            AND A.DeleteFlg = 0
-                            ORDER BY A.ChangeDate DESC) AS CustomerName
+                    FROM M_Customer AS A
+                    WHERE A.CustomerCD = DH.CollectCustomerCD 
+                    AND A.ChangeDate <= DH.CollectDate
+                    AND A.DeleteFlg = 0
+                    ORDER BY A.ChangeDate DESC) AS CustomerName
                             
                   ,CONVERT(varchar,DH.CollectDate,111) AS CollectDate
                   ,DH.PaymentMethodCD
@@ -250,36 +253,39 @@ BEGIN
                 --AND DH.DeleteDateTime IS NULL
               ;
         END
-	END
-	ELSE
-	BEGIN	--入金消込番号入力時
+    END
+    ELSE
+    BEGIN   --入金消込番号入力時
         --画面転送表02　入金顧客
         SELECT DW.CollectNO
-        	  ,DW.ConfirmNO
-        	  
+              ,DW.ConfirmNO
+              
               ,DH.InputKBN
               ,DH.StoreCD
               ,(SELECT top 1 A.StoreName
-                  FROM M_Store A 
-                  WHERE A.StoreCD = DH.StoreCD AND A.ChangeDate <= DH.CollectDate
-                        AND A.DeleteFlg = 0
-                  ORDER BY A.ChangeDate desc) AS StoreName
+                FROM M_Store A 
+                WHERE A.StoreCD = DH.StoreCD 
+                AND A.ChangeDate <= DH.CollectDate
+                AND A.DeleteFlg = 0
+                ORDER BY A.ChangeDate desc) AS StoreName
               ,DH.StaffCD
               ,(SELECT TOP 1 A.StaffName
-                        FROM M_Staff AS A
-                        WHERE A.StaffCD = DH.StaffCD AND A.ChangeDate <= DH.CollectDate 
-                        AND A.DeleteFlg = 0
-                        ORDER BY A.ChangeDate DESC) AS StaffName
+                FROM M_Staff AS A
+                WHERE A.StaffCD = DH.StaffCD 
+                AND A.ChangeDate <= DH.CollectDate 
+                AND A.DeleteFlg = 0
+                ORDER BY A.ChangeDate DESC) AS StaffName
               ,CONVERT(varchar,DH.InputDatetime,111) AS InputDatetime
               ,DH.WebCollectNO
               ,DH.WebCollectType
               ,(SELECT M.PatternName FROM M_Settlement AS M WHERE M.PatternCD = DH.WebCollectType) AS WebCollectTypeName
               ,DH.CollectCustomerCD
               ,(SELECT TOP 1 A.CustomerName
-                        FROM M_Customer AS A
-                        WHERE A.CustomerCD = DH.CollectCustomerCD AND A.ChangeDate <= DH.CollectDate
-                        AND A.DeleteFlg = 0
-                        ORDER BY A.ChangeDate DESC) AS CustomerName
+                FROM M_Customer AS A
+                WHERE A.CustomerCD = DH.CollectCustomerCD 
+                AND A.ChangeDate <= DH.CollectDate
+                AND A.DeleteFlg = 0
+                ORDER BY A.ChangeDate DESC) AS CustomerName
                         
               ,CONVERT(varchar,DH.CollectDate,111) AS CollectDate
               ,DH.PaymentMethodCD
@@ -293,9 +299,11 @@ BEGIN
               ,DH.DeductionConfirm
               ,DH.ConfirmSource
               --,DH.ConfirmAmount
-              ,DW.CollectAmount AS ConfirmAmount
+              --,DW.CollectAmount AS ConfirmAmount
+              ,DW.SumCollectAmount AS ConfirmAmount
               --,DH.ConfirmSource - DH.ConfirmAmount AS ConfirmZan
-              ,DH.ConfirmSource - DW.CollectAmount AS ConfirmZan
+              --,DH.ConfirmSource - DH.ConfirmAmount + DW.CollectAmount AS ConfirmZan
+              ,DH.ConfirmSource - DH.ConfirmAmount + DW.SumCollectAmount AS ConfirmZan
               ,DH.Remark
               ,DH.InsertOperator
               ,DH.InsertDateTime
@@ -314,7 +322,8 @@ BEGIN
               ,DW.BillingCustomerCD
               ,DW.BillingCustomerName
               ,DW.BillingGaku
-              ,DW.CollectAmount AS D_CollectAmount
+              --,DW.CollectAmount AS D_CollectAmount
+              ,DW.CollectAmount - DW.NowCollectAmount AS D_CollectAmount
               ,DW.NowCollectAmount
               ,DW.NowCollectAmount AS OldConfirmAmount
               ,DW.Minyukin
@@ -325,9 +334,9 @@ BEGIN
               ,DW.CollectPlanRows
           FROM 
           (
-                --一時ワークテーブル「D_Billing①」(画面転送表02で「D_Billing①」として使用)
-                --一時ワークテーブル「D_Billing①」
-                SELECT DP.CollectNO      --入金番号
+              --一時ワークテーブル「D_Billing①」(画面転送表02で「D_Billing①」として使用)
+              --一時ワークテーブル「D_Billing①」
+              SELECT DP.CollectNO      --入金番号
                     ,DP.ConfirmNO
                     ,CONVERT(varchar,DP.CollectClearDate,111) AS CollectClearDate   --入金消込日
                     ,CONVERT(varchar,DB.BillingCloseDate,111) AS BillingCloseDate   --請求日
@@ -338,18 +347,22 @@ BEGIN
                     ,DB.StoreCD             --店舗
                     ,(SELECT top 1 A.StoreName
                       FROM M_Store A 
-                      WHERE A.StoreCD = DB.StoreCD AND A.ChangeDate <= DB.BillingCloseDate
-                            AND A.DeleteFlg = 0
+                      WHERE A.StoreCD = DB.StoreCD 
+                      AND A.ChangeDate <= DB.BillingCloseDate
+                      AND A.DeleteFlg = 0
                       ORDER BY A.ChangeDate desc) AS StoreName
                     ,DB.BillingCustomerCD   --請求顧客
                     ,(SELECT TOP 1 A.CustomerName
-                            FROM M_Customer AS A
-                            WHERE A.CustomerCD = DB.BillingCustomerCD AND A.ChangeDate <= DB.BillingCloseDate
-                            AND A.DeleteFlg = 0
-                            ORDER BY A.ChangeDate DESC) AS BillingCustomerName
+                      FROM M_Customer AS A
+                      WHERE A.CustomerCD = DB.BillingCustomerCD 
+                      AND A.ChangeDate <= DB.BillingCloseDate
+                      AND A.DeleteFlg = 0
+                      ORDER BY A.ChangeDate DESC) AS BillingCustomerName
                     ,ISNULL(DBM.BillingGaku,0) AS BillingGaku       --請求額
-                    ,ISNULL(DCBM.CollectAmount,0) AS CollectAmount	--入金済額
-                    ,ISNULL(DBM.BillingGaku,0) -ISNULL(DCBM.CollectAmount,0) AS NowCollectAmount --今回入金額
+                    --,ISNULL(DCBM.CollectAmount,0) AS CollectAmount	--入金済額
+                    ,ISNULL(DCBD.CollectAmount,0) AS CollectAmount	--入金済額
+                    --,ISNULL(DBM.BillingGaku,0) -ISNULL(DCBM.CollectAmount,0) AS NowCollectAmount      --今回入金額(登録時に更新した画面の消込金額)
+                    ,ISNULL(DCBM.CollectAmount,0) AS NowCollectAmount      --今回入金額
                     ,ISNULL(DBM.BillingGaku,0) -ISNULL(DCBM.CollectAmount,0) AS Minyukin              --未入金額
                     ,ISNULL(DSM.SKUCD,DJM.SKUCD) As SKUCD      --SKUCD
                     ,ISNULL(DSM.SKUName,DJM.SKUName) As SKUName    --商品名
@@ -358,6 +371,7 @@ BEGIN
                     ,CONVERT(varchar,DC.NextCollectPlanDate,111) AS NextCollectPlanDate      --次回収予定日
                     ,DCM.CollectPlanNO
                     ,DCM.CollectPlanRows
+                    ,SUM(ISNULL(DCBM.CollectAmount,0)) OVER() AS SumCollectAmount
                 FROM D_PaymentConfirm AS DP
                 LEFT OUTER JOIN D_CollectBilling AS DCB
                 ON DCB.ConfirmNO = DP.ConfirmNO
@@ -391,6 +405,21 @@ BEGIN
                 ON DJM.JuchuuNO = DCM.JuchuuNO
                 AND DJM.JuchuuRows = DCM.JuchuuRows
                 AND DJM.DeleteDateTime IS NULL
+
+                LEFT OUTER JOIN (SELECT SUM(DCBD.CollectAmount) AS CollectAmount
+                                      , DCBD.CollectPlanNO
+                                      , DCBD.CollectPlanRows
+                                 FROM D_CollectBillingDetails AS DCBD
+                                 INNER JOIN D_CollectBilling AS DCB
+                                 ON DCB.CollectPlanNO = DCBD.CollectPlanNO
+                                 AND DCB.ConfirmNO = DCBD.ConfirmNO
+                                 AND DCB.DeleteDateTime IS NULL
+                    
+                                 WHERE DCBD.DeleteDateTime IS NULL
+                                 GROUP BY DCBD.CollectPlanNO, DCBD.CollectPlanRows
+                ) AS DCBD
+                ON DCBD.CollectPlanNO = DCM.CollectPlanNO
+                AND DCBD.CollectPlanRows = DCM.CollectPlanRows
                 
                 WHERE DP.ConfirmNO = @ConfirmNO
                 AND DB.BillingConfirmFlg = 1

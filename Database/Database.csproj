@@ -115,6 +115,7 @@
     <Content Include="StoreProcedure\D_EDI_Insert.sql" />
     <Content Include="StoreProcedure\D_Edi_SelectAll.sql" />
     <Content Include="StoreProcedure\D_Exclusive_Delete.sql" />
+    <Content Include="StoreProcedure\D_Exclusive_DeleteByKBN.sql" />
     <Content Include="StoreProcedure\D_Exclusive_Insert.sql" />
     <Content Include="StoreProcedure\D_Exclusive_Select.sql" />
     <Content Include="StoreProcedure\D_Exclusive_SelectAll.sql" />

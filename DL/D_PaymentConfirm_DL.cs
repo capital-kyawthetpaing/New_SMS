@@ -24,6 +24,7 @@ namespace DL
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@CollectNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.CollectNO } },
+                { "@ConfirmNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = dce.ConfirmNO } },
             };
             return SelectData(dic, sp);
         }

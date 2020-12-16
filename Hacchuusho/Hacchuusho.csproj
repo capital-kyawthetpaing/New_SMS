@@ -58,20 +58,13 @@
     <Reference Include="CKM_Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\Debug\CKM_Controls.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="GridBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\Debug\GridBase.dll</HintPath>
-    </Reference>
-    <Reference Include="GridControl, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\Debug\GridControl.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
@@ -171,6 +164,10 @@
     <ProjectReference Include="..\BL\BL.csproj">
       <Project>{fb2217ab-ee9b-4996-a8f1-321320cbc791}</Project>
       <Name>BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsGridBase\GridBase.csproj">
+      <Project>{86979b8d-b1ed-4342-a1d3-986c244e796a}</Project>
+      <Name>GridBase</Name>
     </ProjectReference>
     <ProjectReference Include="..\DL\DL.csproj">
       <Project>{9a22d9a9-e851-4765-8842-93fd4cb77300}</Project>
