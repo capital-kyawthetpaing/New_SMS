@@ -976,6 +976,7 @@ namespace NyuukinNyuuryoku_Detail
                         ChangeOperationMode(EOperationMode.UPDATE);
                         keyControls[(int)EIndex.CollectNO].Text = collectNO;
                         CheckKey((int)EIndex.CollectNO, true);
+                        SetFocus();
                     }
                     else if (mode.Equals("10"))
                     {
@@ -1114,7 +1115,6 @@ namespace NyuukinNyuuryoku_Detail
 
         private void SetFocusAfterErr()
         {
-
             Scr_Clr(1);
             previousCtrl.Focus();
         }
@@ -2794,16 +2794,8 @@ namespace NyuukinNyuuryoku_Detail
                             }
                             else if (OperationMode == EOperationMode.UPDATE)
                             {
-                                for (int i = (int)EIndex.CboKoza; i <= (int)EIndex.Remark; i++)
-                                {
-                                    if (detailControls[i].CanFocus)
-                                    {
-                                        detailControls[i].Focus();
-                                        return;
-                                    }
-                                }
-                                //明細の先頭項目へ
-                                mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridNyuukin_S.ColNO.ConfirmAmount);
+                                SetFocus();
+                                
                             }
                             else
                             {
@@ -3435,6 +3427,19 @@ namespace NyuukinNyuuryoku_Detail
                 detailControls[i].Enabled = false;
             }
 
+        }
+        private void SetFocus()
+        {
+            for (int i = (int)EIndex.CboKoza; i <= (int)EIndex.Remark; i++)
+            {
+                if (detailControls[i].CanFocus)
+                {
+                    detailControls[i].Focus();
+                    return;
+                }
+            }
+            //明細の先頭項目へ
+            mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridNyuukin_S.ColNO.ConfirmAmount);
         }
     }
 }
