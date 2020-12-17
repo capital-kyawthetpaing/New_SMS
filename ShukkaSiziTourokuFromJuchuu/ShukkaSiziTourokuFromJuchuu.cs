@@ -2170,6 +2170,17 @@ namespace ShukkaSiziTourokuFromJuchuu
                 }
             }
 
+            for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+            {
+                if (mGrid.g_DArray[RW].Kbn.Equals(1) && mGrid.g_DArray[RW].ChkSyukka)
+                {
+                    if (mGrid.g_DArray[RW].DeliveryName == syukkaName && mGrid.g_DArray[RW].DeliveryPlanDate == syukkaDate)
+                    {
+                        mGrid.g_DArray[RW].HanbaigakuSum = bbl.Z_SetStr(sum);                        
+                    }
+                }
+            }
+
             //[M_Customer_Select]
             M_Customer_Entity mce = new M_Customer_Entity
             {
