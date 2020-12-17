@@ -199,6 +199,7 @@
     <Content Include="StoreProcedure\D_Pay_Select1.sql" />
     <Content Include="StoreProcedure\D_Pay_Select2.sql" />
     <Content Include="StoreProcedure\D_Pay_Select3.sql" />
+    <Content Include="StoreProcedure\D_Pay_SelectForFB.sql" />
     <Content Include="StoreProcedure\D_Pay_SelectForPayPlanDate1.sql" />
     <Content Include="StoreProcedure\D_Pay_SelectForPayPlanDate2.sql" />
     <Content Include="StoreProcedure\D_Pay_SelectForSiharaiNo.sql" />
