@@ -493,7 +493,7 @@ namespace WMasterTouroku_HanbaiTankaTennic
                 // var sd= 
                 if (!string.IsNullOrEmpty(mGrid.g_DArray[RW].SKUCD))
                 {
-                    dt.Rows.Add(
+                    dt.Rows.Add(new object[]{
                         mGrid.g_DArray[RW].SKUCD
                           , mGrid.g_DArray[RW].AdminNo
                          , mGrid.g_DArray[RW].JANCD
@@ -508,9 +508,11 @@ namespace WMasterTouroku_HanbaiTankaTennic
                          , mGrid.g_DArray[RW].Rank4UnitPrice
                          , mGrid.g_DArray[RW].Rank5UnitPrice
                          , mGrid.g_DArray[RW].ItemName
-                         , mGrid.g_DArray[RW].CostUnitPrice
+                         , mGrid.g_DArray[RW].CostUnitPrice,
+                           mGrid.g_DArray[RW].Remarks,
+                           }
                          // , bbl.Z_Set(mGrid.g_DArray[RW].Space1)
-                         , mGrid.g_DArray[RW].Remarks == "" ? null : mGrid.g_DArray[RW].Remarks
+                         //, mGrid.g_DArray[RW].Remarks == "" ? null : mGrid.g_DArray[RW].Remarks
                          //, mGrid.g_DArray[RW].Update
                          );
                 }

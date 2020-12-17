@@ -5,21 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Entity;
 using System.Data;
-using System.Data.SqlClient;
 
 namespace DL
 {
-    public class D_FBControl_DL:Base_DL
+    public class D_FBData_DL:Base_DL
     {
-        public bool FBDataSakusei_Insert(D_FBControl_Entity dfe,D_FBData_Entity dfde,D_Pay_Entity dpe)
+        public bool D_FBData_Insert(D_FBData_Entity dfde)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@PayDate", new ValuePair { value1 = SqlDbType.Date, value2 = dfe.PayDate } },
-                { "@ActualPayDate", new ValuePair { value1 = SqlDbType.Date, value2 = dfe.ActualPayDate } },
-                { "@MotoKouzaCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfe.MotoKouzaCD } },
-                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfe.StoreCD } },
-
                 { "@PayeeCD", new ValuePair { value1 = SqlDbType.Date, value2 = dfde.PayeeCD } },
                 { "@PayeeName", new ValuePair { value1 = SqlDbType.Date, value2 = dfde.PayeeName } },
                 { "@BankCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfde.BankCD } },
@@ -31,22 +25,10 @@ namespace DL
                 { "@TransferGaku", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfde.TransferGaku } },
                 { "@TransferFee", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfde.TransferFee } },
                 { "@TransferFeeKBN", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfde.TransferFeeKBN } },
-                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfde.Operator } },
-
-                {"@Flg", new ValuePair {value1 = SqlDbType.TinyInt,value2 = dpe.Flg} }
+                { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfde.StaffCD } },
             };
 
-            return InsertUpdateDeleteData(dic, "D_FBControl_Insert");
+            return InsertUpdateDeleteData(dic, "D_FBData_Insert");
         }
-
-        public bool FBDataSakusei_Update(D_FBControl_Entity dfe)
-        {
-            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
-            { 
-                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfe.Operator } },               
-            };
-            return InsertUpdateDeleteData(dic, "FBDataSakusei_Update");
-        }
-
     }
 }

@@ -96,7 +96,11 @@ BEGIN
                   ,DW.CommentInStore
                   ,DW.CollectPlanNO
                   ,DW.CollectPlanRows
-                            
+                  
+                  ,(SELECT COUNT(*) FROM D_PaymentConfirm AS DP
+                    WHERE DP.CollectNO = @CollectNO
+                    AND DP.DeleteDateTime IS NULL) AS ConfirmCount
+                    
               FROM [D_Collect] AS DH
               LEFT OUTER JOIN (
               		--一時ワークテーブル「D_WebCollect①」(画面転送表01で「D_WebCollect①」として使用)
@@ -246,6 +250,9 @@ BEGIN
                   ,DH.UpdateDateTime
                   ,DH.DeleteOperator
                   ,DH.DeleteDateTime
+                  ,(SELECT COUNT(*) FROM D_PaymentConfirm AS DP
+                    WHERE DP.CollectNO = @CollectNO
+                    AND DP.DeleteDateTime IS NULL) AS ConfirmCount
                                     
               FROM [D_Collect] AS DH
 
