@@ -1451,7 +1451,7 @@ namespace NyuukinNyuuryoku_Detail
                 lblKin1.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmSource"]);
                 if (index == (int)EIndex.CollectNO)
                 {
-                    lblKin2.Text = "";
+                    lblKin2.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmAmount"]);
                 }
                 else
                 {
