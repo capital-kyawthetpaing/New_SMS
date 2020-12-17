@@ -12,6 +12,6 @@ namespace Entity
         public string ActualPayDate { get; set; }
         public string MotoKouzaCD { get; set; }
 
-        public string StaffCD { get; set; }
+        public string StoreCD { get; set; }
     }
 }

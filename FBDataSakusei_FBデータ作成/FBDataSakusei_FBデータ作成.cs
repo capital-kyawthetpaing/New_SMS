@@ -154,15 +154,8 @@ namespace FBDataSakusei_FBデータ作成
                             PayDate = txtPaymentDate.Text,
                             ActualPayDate = txtTransferDate.Text,
                             MotoKouzaCD = cboPayment.SelectedValue.ToString(),
-                            StaffCD = InOperatorCD
-                        };
-                        if (fbbl.D_FBControl_Insert(dfbe))
-                        {
-                            //Clear(panel1);
-                            //BindCombo();
-                            //cboProcess.Focus();
-                        }
-
+                            StoreCD = InOperatorCD
+                        };                        
                         dfde = new D_FBData_Entity
                         {
                             PayeeCD = dtgv.Rows[0]["PayeeCD"].ToString(),
@@ -178,12 +171,17 @@ namespace FBDataSakusei_FBデータ作成
                             TransferFeeKBN = dtgv.Rows[0]["FeeKBN1"].ToString(),
                             StaffCD = InOperatorCD,
                         };
-                        if(fbbl.D_FBData_Insert(dfde))
+                        dpe = new D_Pay_Entity
+                        {                          
+                            Flg = cboProcess.SelectedValue.ToString(),
+                        };                       
+                        if (fbbl.FBDataSakusei_Insert(dfbe, dfde,dpe))
                         {
-
+                            Clear(panel1);
+                            BindCombo();
+                            cboProcess.Focus();
                         }
-                        
-                           
+
 
                     }
                 }
