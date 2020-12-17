@@ -12,11 +12,14 @@ namespace BL
    public class MasterTouroku_TenzikaiShouhin_BL:Base_BL
    {
         MasterTouroku_TenzikaiShouhin_DL dl;
-
+        M_Brand_DL mbdl;
+        M_MultiPorpose_DL mpdl;
         
         public MasterTouroku_TenzikaiShouhin_BL()
         {
             dl = new MasterTouroku_TenzikaiShouhin_DL();
+            mbdl = new M_Brand_DL();
+            mpdl = new M_MultiPorpose_DL();
         }
         
 
@@ -60,10 +63,18 @@ namespace BL
         public DataTable M_TenzikaiShouhin_Check(M_TenzikaiShouhin_Entity mtz)
         {
             return dl.M_TenzikaiShouhin_Check(mtz);
-
-
-            //return true;
-
         }
+
+
+        public DataTable M_Brand_SelectAll_NoPara()
+        {
+            return mbdl.M_Brand_SelectAll_NoPara();
+        }
+
+        public DataTable M_Multipurpose_SelectAll_ByID(int type)
+        {
+            return mpdl.M_Multipurpose_SelectAll_ByID(type);
+        }
+
     }
 }

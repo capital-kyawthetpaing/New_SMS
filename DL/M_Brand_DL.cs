@@ -12,7 +12,7 @@ namespace DL
     {
         public DataTable M_Brand_Select(M_Brand_Entity mme)
         {
-            string sp = "M_Brand_Select";
+            string sp = "M_Brand_DL";
 
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
@@ -78,6 +78,21 @@ namespace DL
             };
 
             return InsertUpdateDeleteData(dic, "M_Brand_Delete");
+        }
+
+        /// <summary>
+        /// For TenzikaiShouhin 
+        /// </summary>
+        /// <returns></returns>
+        public DataTable M_Brand_SelectAll_NoPara()
+        {
+            string sp = "M_Brand_SelectAll_NoPara";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+            };
+
+            return SelectData(dic, sp);
         }
     }
 }
