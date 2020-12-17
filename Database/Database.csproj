@@ -119,6 +119,7 @@
     <Content Include="StoreProcedure\D_Exclusive_Insert.sql" />
     <Content Include="StoreProcedure\D_Exclusive_Select.sql" />
     <Content Include="StoreProcedure\D_Exclusive_SelectAll.sql" />
+    <Content Include="StoreProcedure\D_FBControl_Insert.sql" />
     <Content Include="StoreProcedure\D_FTP_Insert.sql" />
     <Content Include="StoreProcedure\D_FTP_SelectAll.sql" />
     <Content Include="StoreProcedure\D_GetCustomer_ForTempoRegiPoint.sql" />
@@ -271,6 +272,7 @@
     <Content Include="StoreProcedure\D_TenzikaiJuchuu_SelectForExcel.sql" />
     <Content Include="StoreProcedure\D_WowmaJuchuuDetails_Insert.sql" />
     <Content Include="StoreProcedure\D_WowmaJuchuu_Insert.sql" />
+    <Content Include="StoreProcedure\FBDataSakusei_Update.sql" />
     <Content Include="StoreProcedure\Fnc_Credit.sql" />
     <Content Include="StoreProcedure\Fnc_GetNumber.sql" />
     <Content Include="StoreProcedure\Fnc_M_ItemOrderPrice_SelectLatest.sql" />
