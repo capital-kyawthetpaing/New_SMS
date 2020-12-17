@@ -116,16 +116,16 @@ BEGIN
     IF ISNULL(@RequestNO,' ') <>' '
     BEGIN        
         --Form.Detail Display  Area. AnswerKBNが0の行のみ更新する。
-		--1または9の回答済の行は更新しない。
+        --1または9の回答済の行は更新しない。
         --【D_MoveRequestDetailes】移動依頼明細更新　テーブル転送仕様F①
         UPDATE [D_MoveRequestDetailes] SET
-             [AnswerKBN]     = tbl.AnswerKBN		--1:受諾、9:非受諾
+             [AnswerKBN]          = (CASE @OperateMode WHEN 3 THEN 0 ELSE tbl.AnswerKBN END)	--1:受諾、9:非受諾
             ,[UpdateOperator]     =  @Operator  
             ,[UpdateDateTime]     =  @SYSDATETIME
         FROM @Table tbl
         WHERE tbl.RequestRows = D_MoveRequestDetailes.RequestRows
         AND D_MoveRequestDetailes.RequestNO = @RequestNO
-        AND D_MoveRequestDetailes.AnswerKBN = 0
+        AND (D_MoveRequestDetailes.AnswerKBN = 0 OR @OperateMode = 3)
         ;
         
         --【D_MoveRequest】移動依頼更新　テーブル転送仕様E①
@@ -1062,15 +1062,15 @@ BEGIN
                        ,tbl.MoveRows AS NumberRows
                        ,tbl.MoveRows AS NumberSEQ
                        ,DATEADD(DAY,(SELECT top 1 convert(int,A.StoreIdouCount) 
-                                      FROM M_Souko A 
-                                      WHERE A.SoukoCD = @ToSoukoCD AND A.DeleteFlg = 0 AND A.ChangeDate <= convert(date,@MoveDate)
-                                      ORDER BY A.ChangeDate desc),convert(date,@MoveDate)) AS ArrivalPlanDate
+                                     FROM M_Souko A 
+                                     WHERE A.SoukoCD = @ToSoukoCD AND A.DeleteFlg = 0 AND A.ChangeDate <= convert(date,@MoveDate)
+                                     ORDER BY A.ChangeDate desc),convert(date,@MoveDate)) AS ArrivalPlanDate
                        ,0 AS ArrivalPlanMonth
                        ,NULL AS ArrivalPlanCD
                        ,DATEADD(DAY,(SELECT top 1 convert(int,A.StoreIdouCount) 
-                                      FROM M_Souko A 
-                                      WHERE A.SoukoCD = @ToSoukoCD AND A.DeleteFlg = 0 AND A.ChangeDate <= convert(date,@MoveDate)
-                                      ORDER BY A.ChangeDate desc),convert(date,@MoveDate)) AS CalcuArrivalPlanDate
+                                     FROM M_Souko A 
+                                     WHERE A.SoukoCD = @ToSoukoCD AND A.DeleteFlg = 0 AND A.ChangeDate <= convert(date,@MoveDate)
+                                     ORDER BY A.ChangeDate desc),convert(date,@MoveDate)) AS CalcuArrivalPlanDate
                        ,@SYSDATETIME    --ArrivalPlanUpdateDateTime
                        ,@StaffCD
                        ,1 AS LastestFLG
@@ -1202,178 +1202,67 @@ BEGIN
         
             SET @WIdoSu = @tblMoveSu;
 
-            --【D_Stock】在庫　移動元　テーブル転送仕様G①
-            --移動数を在庫で引当
-            --カーソル定義(D_Stock_SelectSuryo参照)
-            DECLARE CUR_Stock CURSOR FOR
-                SELECT DS.StockSu
-                    ,DS.AllowableSu
-                    ,DS.StockNO
-                from D_Stock DS
-                WHERE DS.SoukoCD = @FromSoukoCD
-                AND DS.RackNO = @tblFromRackNO
-                AND DS.AdminNO = @tblAdminNO
-                AND DS.DeleteDateTime is null 
-                AND DS.AllowableSu > 0 
-                AND DS.ArrivalYetFlg = 0 
-                ;
-            
-            --カーソルオープン
-            OPEN CUR_Stock;
-
-            --最初の1行目を取得して変数へ値をセット
-            FETCH NEXT FROM CUR_Stock
-            INTO @StockSu, @AllowableSu, @StockNO;
-            
-            --データの行数分ループ処理を実行する
-            WHILE @@FETCH_STATUS = 0
+            IF @MovePurposeType NOT IN (@KBN_CHOSEI_ADD)
             BEGIN
-            -- ========= ループ内の実際の処理 ここから===*************************CUR_Stock
-                IF @WIdoSu <= @StockSu AND @WIdoSu <= @AllowableSu
-                BEGIN
-                	SET @WUpdSu = @WIdoSu;
-                END
-                ELSE IF @StockSu < @AllowableSu
-                BEGIN
-                	SET @WUpdSu = @StockSu;
-                END
-                ELSE
-                BEGIN
-                	SET @WUpdSu = @AllowableSu;
-                END
+                --【D_Stock】在庫　移動元　テーブル転送仕様G①
+                --移動数を在庫で引当
+                --カーソル定義(D_Stock_SelectSuryo参照)
+                DECLARE CUR_Stock CURSOR FOR
+                    SELECT DS.StockSu
+                        ,DS.AllowableSu
+                        ,DS.StockNO
+                    from D_Stock DS
+                    WHERE DS.SoukoCD = @FromSoukoCD
+                    AND DS.RackNO = @tblFromRackNO
+                    AND DS.AdminNO = @tblAdminNO
+                    AND DS.DeleteDateTime is null 
+                    AND DS.AllowableSu > 0 
+                    AND DS.ArrivalYetFlg = 0 
+                    ;
                 
-                UPDATE [D_Stock] SET
-                       [StockSu] = [StockSu] - @WUpdSu
-                      ,[AllowableSu] = [AllowableSu] - @WUpdSu
-                      ,[AnotherStoreAllowableSu] = [AnotherStoreAllowableSu] - @WUpdSu
-                      --,[ExpectReturnDate]   = tbl.ExpectReturnDate	2020.09.18 del
-                      --,[VendorCD]           = tbl.VendorCD
-                      --,[ReturnSu]           = [ReturnSu] - @WUpdSu
-                      ,[UpdateOperator]     =  @Operator  
-                      ,[UpdateDateTime]     =  @SYSDATETIME
-                      
-                 FROM D_Stock AS DS
-                 INNER JOIN @Table tbl
-                 ON tbl.MoveRows = @tblMoveRows
-                 WHERE DS.DeleteDateTime IS NULL
-                 AND DS.StockNO = @StockNO
-                ;
-            
-                --【D_Warehousing】入出庫履歴　テーブル転送仕様Ｃ
-                --C(11),C(15),C(19),C(20),C(22),C(16),C(90)
-                INSERT INTO [D_Warehousing]
-                   ([WarehousingDate]
-                   ,[SoukoCD]
-                   ,[RackNO]
-                   ,[StockNO]
-                   ,[JanCD]
-                   ,[AdminNO]
-                   ,[SKUCD]
-                   ,[WarehousingKBN]
-                   ,[DeleteFlg]
-                   ,[Number]
-                   ,[NumberRow]
-                   ,[VendorCD]
-                   ,[ToStoreCD]
-                   ,[ToSoukoCD]
-                   ,[ToRackNO]
-                   ,[ToStockNO]
-                   ,[FromStoreCD]
-                   ,[FromSoukoCD]
-                   ,[FromRackNO]
-                   ,[CustomerCD]
-                   ,[Quantity]
-                   ,[Program]
-                   ,[InsertOperator]
-                   ,[InsertDateTime]
-                   ,[UpdateOperator]
-                   ,[UpdateDateTime]
-                   ,[DeleteOperator]
-                   ,[DeleteDateTime])
-                SELECT @MoveDate --WarehousingDate
-                   ,@FromSoukoCD AS SoukoCD
-                   ,tbl.FromRackNO    --RackNO
-                   ,@StockNO	--(D_Stock)☆(移動元)と同じ値
-                   ,tbl.JanCD
-                   ,tbl.AdminNO
-                   ,tbl.SKUCD
-                   ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN 11 
-                                           WHEN @KBN_SYOCD      THEN 31	--15
-                                           WHEN @KBN_CHOSEI_ADD THEN 19
-                                           WHEN @KBN_CHOSEI_DEL THEN 20
-                                           WHEN @KBN_LOCATION   THEN 22
-                                           WHEN @KBN_HENPIN     THEN 16 --
-                                           WHEN @KBN_TENPOKAN   THEN 90
-                                           ELSE 0 END)   --WarehousingKBN
-                   ,0  --DeleteFlg
-                   ,@NewMoveNO  --Number
-                   ,tbl.MoveRows --NumberRow
-                   ,NULL    --VendorCD
-                   
-                   ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN @ToStoreCD
-                                           WHEN @KBN_SYOCD      THEN @FromStoreCD
-                                           WHEN @KBN_CHOSEI_ADD THEN @FromStoreCD
-                                           WHEN @KBN_CHOSEI_DEL THEN @FromStoreCD
-                                           WHEN @KBN_LOCATION   THEN @FromStoreCD
-                                           WHEN @KBN_HENPIN     THEN @ToStoreCD		--2020.10.6
-                                           WHEN @KBN_TENPOKAN   THEN @ToStoreCD
-                                           ELSE NULL END)	--ToStoreCD
-                   ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN @ToSoukoCD
-                                           WHEN @KBN_SYOCD      THEN @FromSoukoCD
-                                           WHEN @KBN_CHOSEI_ADD THEN @FromSoukoCD
-                                           WHEN @KBN_CHOSEI_DEL THEN @FromSoukoCD
-                                           WHEN @KBN_LOCATION   THEN @FromSoukoCD
-                                           WHEN @KBN_HENPIN     THEN @ToSoukoCD		--2020.10.6
-                                           WHEN @KBN_TENPOKAN   THEN @ToSoukoCD
-                                           ELSE NULL END)	--ToSoukoCD
-                   ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN tbl.ToRackNO
-                                           WHEN @KBN_SYOCD      THEN tbl.FromRackNO
-                                           WHEN @KBN_CHOSEI_ADD THEN tbl.FromRackNO
-                                           WHEN @KBN_CHOSEI_DEL THEN tbl.FromRackNO
-                                           WHEN @KBN_LOCATION   THEN tbl.ToRackNO		--2020.10.29 chg
-                                           WHEN @KBN_HENPIN     THEN tbl.ToRackNO		--2020.09.18 add
-                                           WHEN @KBN_TENPOKAN   THEN NULL
-                                           ELSE NULL END)	--ToRackNO
-                   
-                   ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN @ToStockNO    -- (D_Stock)●(移動先)と同じ値
-                                           WHEN @KBN_SYOCD      THEN @StockNO      --(D_Stock)☆(移動元)と同じ値
-                                           WHEN @KBN_CHOSEI_ADD THEN @StockNO      --(D_Stock)☆(移動元)と同じ値
-                                           WHEN @KBN_CHOSEI_DEL THEN @StockNO      --(D_Stock)☆(移動元)と同じ値
-                                           WHEN @KBN_LOCATION   THEN @StockNO      --(D_Stock)☆(移動元)と同じ値
-                                           WHEN @KBN_HENPIN     THEN @ToStockNO    -- (D_Stock)●(移動先)と同じ値
-                                           WHEN @KBN_TENPOKAN   THEN @ToStockNO    -- (D_Stock)●(移動先)と同じ値
-                                           ELSE NULL END)  --ToStockNO
-                   ,@FromStoreCD	--FromStoreCD
-                   ,@FromSoukoCD	--FromSoukoCD
-                   ,tbl.FromRackNO	--FromRackNO
-                   ,(CASE @MovePurposeType WHEN @KBN_SYOCD      THEN tbl.NewJanCD
-                                           ELSE NULL END)    --CustomerCD
-                   ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN @WUpdSu * (-1)   --Quantity
-                                           WHEN @KBN_SYOCD      THEN @WUpdSu * (-1)   --Quantity
-                                           WHEN @KBN_CHOSEI_ADD THEN @WUpdSu   --移動数(プラス値とする)
-                                           WHEN @KBN_CHOSEI_DEL THEN @WUpdSu   --移動数(プラス値とする)
-                                           WHEN @KBN_LOCATION   THEN @WUpdSu * (-1)   --Quantity
-                                           WHEN @KBN_HENPIN     THEN @WUpdSu * (-1)   --Quantity
-                                           WHEN @KBN_TENPOKAN   THEN @WUpdSu * (-1) --Quantity
-                                           ELSE @WUpdSu END) 
-                   
-                   ,@Program  --Program
-                   
-                   ,@Operator  
-                   ,@SYSDATETIME
-                   ,@Operator  
-                   ,@SYSDATETIME
-                   ,NULL
-                   ,NULL
+                --カーソルオープン
+                OPEN CUR_Stock;
 
-                  FROM @Table tbl
-                  WHERE tbl.MoveRows = @tblMoveRows
-                  ;
-                      
-                IF @MovePurposeType NOT IN (@KBN_CHOSEI_ADD, @KBN_CHOSEI_DEL, @KBN_TENPOKAN)
+                --最初の1行目を取得して変数へ値をセット
+                FETCH NEXT FROM CUR_Stock
+                INTO @StockSu, @AllowableSu, @StockNO;
+                
+                --データの行数分ループ処理を実行する
+                WHILE @@FETCH_STATUS = 0
                 BEGIN
-                    --【D_Warehousing】入出庫履歴　テーブル転送仕様Ｄ
-                    --D(13),D(15),D(22),D(16)
+                -- ========= ループ内の実際の処理 ここから===*************************CUR_Stock
+                    IF @WIdoSu <= @StockSu AND @WIdoSu <= @AllowableSu
+                    BEGIN
+                        SET @WUpdSu = @WIdoSu;
+                    END
+                    ELSE IF @StockSu < @AllowableSu
+                    BEGIN
+                        SET @WUpdSu = @StockSu;
+                    END
+                    ELSE
+                    BEGIN
+                        SET @WUpdSu = @AllowableSu;
+                    END
+                    
+                    UPDATE [D_Stock] SET
+                           [StockSu] = [StockSu] - @WUpdSu
+                          ,[AllowableSu] = [AllowableSu] - @WUpdSu
+                          ,[AnotherStoreAllowableSu] = [AnotherStoreAllowableSu] - @WUpdSu
+                          --,[ExpectReturnDate]   = tbl.ExpectReturnDate    2020.09.18 del
+                          --,[VendorCD]           = tbl.VendorCD
+                          --,[ReturnSu]           = [ReturnSu] - @WUpdSu
+                          ,[UpdateOperator]     =  @Operator  
+                          ,[UpdateDateTime]     =  @SYSDATETIME
+                          
+                     FROM D_Stock AS DS
+                     INNER JOIN @Table tbl
+                     ON tbl.MoveRows = @tblMoveRows
+                     WHERE DS.DeleteDateTime IS NULL
+                     AND DS.StockNO = @StockNO
+                    ;
+                
+                    --【D_Warehousing】入出庫履歴　テーブル転送仕様Ｃ
+                    --C(11),C(15),C(19),C(20),C(22),C(16),C(90)
                     INSERT INTO [D_Warehousing]
                        ([WarehousingDate]
                        ,[SoukoCD]
@@ -1404,61 +1293,72 @@ BEGIN
                        ,[DeleteOperator]
                        ,[DeleteDateTime])
                     SELECT @MoveDate --WarehousingDate
-                       ,(CASE @MovePurposeType WHEN @KBN_TENPONAI THEN ISNULL(@ToSoukoCD,@FromSoukoCD)
-                                               WHEN @KBN_SYOCD    THEN @FromSoukoCD
-                                               WHEN @KBN_LOCATION THEN @FromSoukoCD
-                                               WHEN @KBN_HENPIN   THEN @ToSoukoCD
-                                               ELSE NULL END) AS SoukoCD
-                       ,(CASE @MovePurposeType WHEN @KBN_TENPONAI THEN tbl.ToRackNO
-                                               WHEN @KBN_SYOCD    THEN tbl.FromRackNO 
-                                               WHEN @KBN_LOCATION THEN tbl.ToRackNO 		--2020.10.29 chg
-                                               WHEN @KBN_HENPIN   THEN tbl.ToRackNO
-                                               ELSE tbl.ToRackNO  END)   --RackNO　商品CD付替時のみ移動元棚番
-                       ,@ToStockNO  --(D_Stock)●(移動先)と同じ値
-                       ,(CASE @MovePurposeType WHEN @KBN_SYOCD    THEN tbl.NewJanCD
-                                               ELSE tbl.JanCD END)  --JanCD
-                       ,(CASE @MovePurposeType WHEN @KBN_SYOCD    THEN tbl.NewAdminNO
-                                               ELSE tbl.AdminNO END)    --AdminNO
-                       ,(CASE @MovePurposeType WHEN @KBN_SYOCD    THEN tbl.NewSKUCD
-                                               ELSE tbl.SKUCD END)      --SKUCD
-                       ,(CASE @MovePurposeType WHEN @KBN_TENPONAI THEN 13 
-                                               WHEN @KBN_SYOCD    THEN 32	--15
-                                               WHEN @KBN_LOCATION THEN 22
-                                               WHEN @KBN_HENPIN   THEN 26 --16 2020/10/01 Fukuda
+                       ,@FromSoukoCD AS SoukoCD
+                       ,tbl.FromRackNO    --RackNO
+                       ,@StockNO    --(D_Stock)☆(移動元)と同じ値
+                       ,tbl.JanCD
+                       ,tbl.AdminNO
+                       ,tbl.SKUCD
+                       ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN 11 
+                                               WHEN @KBN_SYOCD      THEN 31 --15
+                                               WHEN @KBN_CHOSEI_ADD THEN 19
+                                               WHEN @KBN_CHOSEI_DEL THEN 20
+                                               WHEN @KBN_LOCATION   THEN 22
+                                               WHEN @KBN_HENPIN     THEN 16 --
+                                               WHEN @KBN_TENPOKAN   THEN 90
                                                ELSE 0 END)   --WarehousingKBN
                        ,0  --DeleteFlg
                        ,@NewMoveNO  --Number
                        ,tbl.MoveRows --NumberRow
-                       ,NULL     --VendorCD
-                       ,(CASE @MovePurposeType WHEN @KBN_TENPONAI THEN @ToStoreCD
-                                               WHEN @KBN_SYOCD    THEN @FromStoreCD
-                                               WHEN @KBN_LOCATION THEN @FromStoreCD
-                                               WHEN @KBN_HENPIN   THEN @ToStoreCD
-                                               ELSE NULL END)	--ToStoreCD
+                       ,NULL    --VendorCD
                        
-                       ,(CASE @MovePurposeType WHEN @KBN_TENPONAI THEN @ToSoukoCD
-                                               WHEN @KBN_SYOCD    THEN @FromSoukoCD
-                                               WHEN @KBN_LOCATION THEN @FromSoukoCD
-                                               WHEN @KBN_HENPIN   THEN @ToSoukoCD
-                                               ELSE NULL END)	--ToSoukoCD
-                                            
-                       ,(CASE @MovePurposeType WHEN @KBN_TENPONAI THEN tbl.ToRackNO
-                                               WHEN @KBN_SYOCD    THEN tbl.FromRackNO
-                                               WHEN @KBN_LOCATION THEN tbl.ToRackNO     --2020.10.29 chg
-                                               WHEN @KBN_HENPIN   THEN tbl.ToRackNO     --2020.09.18 add
-                                               ELSE NULL END)	--ToRackNO
-                                            
-                       ,(CASE @MovePurposeType WHEN @KBN_TENPONAI THEN @StockNO    --(D_Stock)☆(移動元)と同じ値
-                                               WHEN @KBN_SYOCD    THEN @ToStockNO  --(D_Stock)●(移動先)と同じ値
-                                               WHEN @KBN_LOCATION THEN @ToStockNO  --(D_Stock)●(移動先)と同じ値
-                                               WHEN @KBN_HENPIN   THEN @StockNO    --(D_Stock)☆(移動元)と同じ値
-                                               ELSE NULL END)	--ToStockNO
+                       ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN @ToStoreCD
+                                               WHEN @KBN_SYOCD      THEN @FromStoreCD
+                                               WHEN @KBN_CHOSEI_ADD THEN @FromStoreCD
+                                               WHEN @KBN_CHOSEI_DEL THEN @FromStoreCD
+                                               WHEN @KBN_LOCATION   THEN @FromStoreCD
+                                               WHEN @KBN_HENPIN     THEN @ToStoreCD     --2020.10.6
+                                               WHEN @KBN_TENPOKAN   THEN @ToStoreCD
+                                               ELSE NULL END)   --ToStoreCD
+                       ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN @ToSoukoCD
+                                               WHEN @KBN_SYOCD      THEN @FromSoukoCD
+                                               WHEN @KBN_CHOSEI_ADD THEN @FromSoukoCD
+                                               WHEN @KBN_CHOSEI_DEL THEN @FromSoukoCD
+                                               WHEN @KBN_LOCATION   THEN @FromSoukoCD
+                                               WHEN @KBN_HENPIN     THEN @ToSoukoCD     --2020.10.6
+                                               WHEN @KBN_TENPOKAN   THEN @ToSoukoCD
+                                               ELSE NULL END)   --ToSoukoCD
+                       ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN tbl.ToRackNO
+                                               WHEN @KBN_SYOCD      THEN tbl.FromRackNO
+                                               WHEN @KBN_CHOSEI_ADD THEN tbl.FromRackNO
+                                               WHEN @KBN_CHOSEI_DEL THEN tbl.FromRackNO
+                                               WHEN @KBN_LOCATION   THEN tbl.ToRackNO       --2020.10.29 chg
+                                               WHEN @KBN_HENPIN     THEN tbl.ToRackNO       --2020.09.18 add
+                                               WHEN @KBN_TENPOKAN   THEN NULL
+                                               ELSE NULL END)   --ToRackNO
+                       
+                       ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN @ToStockNO    -- (D_Stock)●(移動先)と同じ値
+                                               WHEN @KBN_SYOCD      THEN @StockNO      --(D_Stock)☆(移動元)と同じ値
+                                               WHEN @KBN_CHOSEI_ADD THEN @StockNO      --(D_Stock)☆(移動元)と同じ値
+                                               WHEN @KBN_CHOSEI_DEL THEN @StockNO      --(D_Stock)☆(移動元)と同じ値
+                                               WHEN @KBN_LOCATION   THEN @StockNO      --(D_Stock)☆(移動元)と同じ値
+                                               WHEN @KBN_HENPIN     THEN @ToStockNO    -- (D_Stock)●(移動先)と同じ値
+                                               WHEN @KBN_TENPOKAN   THEN @ToStockNO    -- (D_Stock)●(移動先)と同じ値
+                                               ELSE NULL END)  --ToStockNO
                        ,@FromStoreCD    --FromStoreCD
                        ,@FromSoukoCD    --FromSoukoCD
                        ,tbl.FromRackNO  --FromRackNO
-                       ,(CASE @MovePurposeType WHEN @KBN_SYOCD    THEN tbl.JanCD
+                       ,(CASE @MovePurposeType WHEN @KBN_SYOCD      THEN tbl.NewJanCD
                                                ELSE NULL END)    --CustomerCD
-                       ,@WUpdSu  --Quantity
+                       ,(CASE @MovePurposeType WHEN @KBN_TENPONAI   THEN @WUpdSu * (-1)   --Quantity
+                                               WHEN @KBN_SYOCD      THEN @WUpdSu * (-1)   --Quantity
+                                               WHEN @KBN_CHOSEI_ADD THEN @WUpdSu   --移動数(プラス値とする)
+                                               WHEN @KBN_CHOSEI_DEL THEN @WUpdSu   --移動数(プラス値とする)
+                                               WHEN @KBN_LOCATION   THEN @WUpdSu * (-1)   --Quantity
+                                               WHEN @KBN_HENPIN     THEN @WUpdSu * (-1)   --Quantity
+                                               WHEN @KBN_TENPOKAN   THEN @WUpdSu * (-1) --Quantity
+                                               ELSE @WUpdSu END) 
+                       
                        ,@Program  --Program
                        
                        ,@Operator  
@@ -1471,105 +1371,208 @@ BEGIN
                       FROM @Table tbl
                       WHERE tbl.MoveRows = @tblMoveRows
                       ;
-                END
-                
-                SET @ReserveNO = '';
-                --移動区分=店舗間移動
-                IF @MovePurposeType = @KBN_TENPOKAN
-                BEGIN
-                    --【D_Reserve】引当　テーブル転送仕様I①
-                    --伝票番号採番
-                    EXEC Fnc_GetNumber
-                        12,        --in伝票種別 12
-                        @MoveDate, --in基準日
-                        @StoreCD,  --in店舗CD
-                        @Operator,
-                        @ReserveNO OUTPUT
-                        ;
-                    
-                    IF ISNULL(@ReserveNO,'') = ''
+                          
+                    IF @MovePurposeType NOT IN (@KBN_CHOSEI_ADD, @KBN_CHOSEI_DEL, @KBN_TENPOKAN)
                     BEGIN
-                        SET @W_ERR = 1;
-                        RETURN @W_ERR;
-                    END
-                    
-                    --【D_Reserve】（Insert）
-                    INSERT INTO [D_Reserve]
-                           ([ReserveNO]
-                           ,[ReserveKBN]
-                           ,[Number]
-                           ,[NumberRows]
-                           ,[StockNO]
+                        --【D_Warehousing】入出庫履歴　テーブル転送仕様Ｄ
+                        --D(13),D(15),D(22),D(16)
+                        INSERT INTO [D_Warehousing]
+                           ([WarehousingDate]
                            ,[SoukoCD]
+                           ,[RackNO]
+                           ,[StockNO]
                            ,[JanCD]
-                           ,[SKUCD]
                            ,[AdminNO]
-                           ,[ReserveSu]
-                           ,[ShippingPossibleDate]
-                           ,[ShippingPossibleSU]
-                           ,[ShippingOrderNO]
-                           ,[ShippingOrderRows]
-                           ,[CompletedPickingNO]
-                           ,[CompletedPickingRow]
-                           ,[CompletedPickingDate]
-                           ,[ShippingSu]
-                           ,[ReturnKBN]
-                           ,[OriginalReserveNO]
+                           ,[SKUCD]
+                           ,[WarehousingKBN]
+                           ,[DeleteFlg]
+                           ,[Number]
+                           ,[NumberRow]
+                           ,[VendorCD]
+                           ,[ToStoreCD]
+                           ,[ToSoukoCD]
+                           ,[ToRackNO]
+                           ,[ToStockNO]
+                           ,[FromStoreCD]
+                           ,[FromSoukoCD]
+                           ,[FromRackNO]
+                           ,[CustomerCD]
+                           ,[Quantity]
+                           ,[Program]
                            ,[InsertOperator]
                            ,[InsertDateTime]
                            ,[UpdateOperator]
                            ,[UpdateDateTime]
                            ,[DeleteOperator]
                            ,[DeleteDateTime])
-                     SELECT
-                           @ReserveNO
-                           ,2 AS ReserveKBN     --2 (1:受注、2:移動)
-                           ,@NewMoveNO AS Number
-                           ,@tblMoveRows AS NumberRows
-                           ,@StockNO
-                           ,@FromSoukoCD
-                           ,tbl.JanCD
-                           ,tbl.SKUCD
-                           ,tbl.AdminNO
-                           ,0 AS ReserveSu --明細入荷数
-                           ,NULL    --ShippingPossibleDate
-                           ,0       --ShippingPossibleSU
-                           ,NULL    --ShippingOrderNO
-                           ,0       --ShippingOrderRows
-                           ,NULL    --CompletedPickingNO
-                           ,0       --CompletedPickingRow
-                           ,NULL    --CompletedPickingDate
-                           ,0       --ShippingSu
-                           ,0       --ReturnKBN
-                           ,NULL    --OriginalReserveNO
-                     
+                        SELECT @MoveDate --WarehousingDate
+                           ,(CASE @MovePurposeType WHEN @KBN_TENPONAI THEN ISNULL(@ToSoukoCD,@FromSoukoCD)
+                                                   WHEN @KBN_SYOCD    THEN @FromSoukoCD
+                                                   WHEN @KBN_LOCATION THEN @FromSoukoCD
+                                                   WHEN @KBN_HENPIN   THEN @ToSoukoCD
+                                                   ELSE NULL END) AS SoukoCD
+                           ,(CASE @MovePurposeType WHEN @KBN_TENPONAI THEN tbl.ToRackNO
+                                                   WHEN @KBN_SYOCD    THEN tbl.FromRackNO 
+                                                   WHEN @KBN_LOCATION THEN tbl.ToRackNO         --2020.10.29 chg
+                                                   WHEN @KBN_HENPIN   THEN tbl.ToRackNO
+                                                   ELSE tbl.ToRackNO  END)   --RackNO　商品CD付替時のみ移動元棚番
+                           ,@ToStockNO  --(D_Stock)●(移動先)と同じ値
+                           ,(CASE @MovePurposeType WHEN @KBN_SYOCD    THEN tbl.NewJanCD
+                                                   ELSE tbl.JanCD END)  --JanCD
+                           ,(CASE @MovePurposeType WHEN @KBN_SYOCD    THEN tbl.NewAdminNO
+                                                   ELSE tbl.AdminNO END)    --AdminNO
+                           ,(CASE @MovePurposeType WHEN @KBN_SYOCD    THEN tbl.NewSKUCD
+                                                   ELSE tbl.SKUCD END)      --SKUCD
+                           ,(CASE @MovePurposeType WHEN @KBN_TENPONAI THEN 13 
+                                                   WHEN @KBN_SYOCD    THEN 32   --15
+                                                   WHEN @KBN_LOCATION THEN 22
+                                                   WHEN @KBN_HENPIN   THEN 26 --16 2020/10/01 Fukuda
+                                                   ELSE 0 END)   --WarehousingKBN
+                           ,0  --DeleteFlg
+                           ,@NewMoveNO  --Number
+                           ,tbl.MoveRows --NumberRow
+                           ,NULL     --VendorCD
+                           ,(CASE @MovePurposeType WHEN @KBN_TENPONAI THEN @ToStoreCD
+                                                   WHEN @KBN_SYOCD    THEN @FromStoreCD
+                                                   WHEN @KBN_LOCATION THEN @FromStoreCD
+                                                   WHEN @KBN_HENPIN   THEN @ToStoreCD
+                                                   ELSE NULL END)   --ToStoreCD
+                           
+                           ,(CASE @MovePurposeType WHEN @KBN_TENPONAI THEN @ToSoukoCD
+                                                   WHEN @KBN_SYOCD    THEN @FromSoukoCD
+                                                   WHEN @KBN_LOCATION THEN @FromSoukoCD
+                                                   WHEN @KBN_HENPIN   THEN @ToSoukoCD
+                                                   ELSE NULL END)   --ToSoukoCD
+                                                
+                           ,(CASE @MovePurposeType WHEN @KBN_TENPONAI THEN tbl.ToRackNO
+                                                   WHEN @KBN_SYOCD    THEN tbl.FromRackNO
+                                                   WHEN @KBN_LOCATION THEN tbl.ToRackNO     --2020.10.29 chg
+                                                   WHEN @KBN_HENPIN   THEN tbl.ToRackNO     --2020.09.18 add
+                                                   ELSE NULL END)   --ToRackNO
+                                                
+                           ,(CASE @MovePurposeType WHEN @KBN_TENPONAI THEN @StockNO    --(D_Stock)☆(移動元)と同じ値
+                                                   WHEN @KBN_SYOCD    THEN @ToStockNO  --(D_Stock)●(移動先)と同じ値
+                                                   WHEN @KBN_LOCATION THEN @ToStockNO  --(D_Stock)●(移動先)と同じ値
+                                                   WHEN @KBN_HENPIN   THEN @StockNO    --(D_Stock)☆(移動元)と同じ値
+                                                   ELSE NULL END)   --ToStockNO
+                           ,@FromStoreCD    --FromStoreCD
+                           ,@FromSoukoCD    --FromSoukoCD
+                           ,tbl.FromRackNO  --FromRackNO
+                           ,(CASE @MovePurposeType WHEN @KBN_SYOCD    THEN tbl.JanCD
+                                                   ELSE NULL END)    --CustomerCD
+                           ,@WUpdSu  --Quantity
+                           ,@Program  --Program
+                           
                            ,@Operator  
                            ,@SYSDATETIME
                            ,@Operator  
                            ,@SYSDATETIME
-                           ,NULL                  
                            ,NULL
-                     FROM @Table tbl
-                     WHERE tbl.MoveRows = @tblMoveRows
-                    ;
-                END
+                           ,NULL
+
+                          FROM @Table tbl
+                          WHERE tbl.MoveRows = @tblMoveRows
+                          ;
+                    END
+                    
+                    SET @ReserveNO = '';
+                    --移動区分=店舗間移動
+                    IF @MovePurposeType = @KBN_TENPOKAN
+                    BEGIN
+                        --【D_Reserve】引当　テーブル転送仕様I①
+                        --伝票番号採番
+                        EXEC Fnc_GetNumber
+                            12,        --in伝票種別 12
+                            @MoveDate, --in基準日
+                            @StoreCD,  --in店舗CD
+                            @Operator,
+                            @ReserveNO OUTPUT
+                            ;
+                        
+                        IF ISNULL(@ReserveNO,'') = ''
+                        BEGIN
+                            SET @W_ERR = 1;
+                            RETURN @W_ERR;
+                        END
+                        
+                        --【D_Reserve】（Insert）
+                        INSERT INTO [D_Reserve]
+                               ([ReserveNO]
+                               ,[ReserveKBN]
+                               ,[Number]
+                               ,[NumberRows]
+                               ,[StockNO]
+                               ,[SoukoCD]
+                               ,[JanCD]
+                               ,[SKUCD]
+                               ,[AdminNO]
+                               ,[ReserveSu]
+                               ,[ShippingPossibleDate]
+                               ,[ShippingPossibleSU]
+                               ,[ShippingOrderNO]
+                               ,[ShippingOrderRows]
+                               ,[CompletedPickingNO]
+                               ,[CompletedPickingRow]
+                               ,[CompletedPickingDate]
+                               ,[ShippingSu]
+                               ,[ReturnKBN]
+                               ,[OriginalReserveNO]
+                               ,[InsertOperator]
+                               ,[InsertDateTime]
+                               ,[UpdateOperator]
+                               ,[UpdateDateTime]
+                               ,[DeleteOperator]
+                               ,[DeleteDateTime])
+                         SELECT
+                               @ReserveNO
+                               ,2 AS ReserveKBN     --2 (1:受注、2:移動)
+                               ,@NewMoveNO AS Number
+                               ,@tblMoveRows AS NumberRows
+                               ,@StockNO
+                               ,@FromSoukoCD
+                               ,tbl.JanCD
+                               ,tbl.SKUCD
+                               ,tbl.AdminNO
+                               ,0 AS ReserveSu --明細入荷数
+                               ,NULL    --ShippingPossibleDate
+                               ,0       --ShippingPossibleSU
+                               ,NULL    --ShippingOrderNO
+                               ,0       --ShippingOrderRows
+                               ,NULL    --CompletedPickingNO
+                               ,0       --CompletedPickingRow
+                               ,NULL    --CompletedPickingDate
+                               ,0       --ShippingSu
+                               ,0       --ReturnKBN
+                               ,NULL    --OriginalReserveNO
+                         
+                               ,@Operator  
+                               ,@SYSDATETIME
+                               ,@Operator  
+                               ,@SYSDATETIME
+                               ,NULL                  
+                               ,NULL
+                         FROM @Table tbl
+                         WHERE tbl.MoveRows = @tblMoveRows
+                        ;
+                    END
+                    
+                    SET @WIdoSu = @WIdoSu - @WUpdSu;
+                    
+                    IF @WIdoSu = 0
+                    BEGIN
+                        --次の明細レコードへ
+                        BREAK;
+                    END
+                    
+                    --次の行のデータを取得して変数へ値をセット
+                    FETCH NEXT FROM CUR_Stock
+                    INTO @StockSu, @AllowableSu, @StockNO;
+                END     --LOOPの終わり***************************************CUR_Stock
                 
-                SET @WIdoSu = @WIdoSu - @WUpdSu;
-                
-                IF @WIdoSu = 0
-                BEGIN
-                	--次の明細レコードへ
-                	BREAK;
-                END
-                
-                --次の行のデータを取得して変数へ値をセット
-                FETCH NEXT FROM CUR_Stock
-                INTO @StockSu, @AllowableSu, @StockNO;
-            END		--LOOPの終わり***************************************CUR_Stock
-            
-            --カーソルを閉じる
-            CLOSE CUR_Stock;
-            DEALLOCATE CUR_Stock;
+                --カーソルを閉じる
+                CLOSE CUR_Stock;
+                DEALLOCATE CUR_Stock;
+            END
             
             IF @MovePurposeType = @KBN_CHOSEI_ADD AND @WIdoSu > 0
             BEGIN
