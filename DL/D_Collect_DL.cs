@@ -133,6 +133,7 @@ namespace DL
             AddParam(command, "@Head_ConfirmAmount", SqlDbType.Money, dce.ConfirmAmount);
 
             AddParam(command, "@Remark", SqlDbType.VarChar, dce.Remark);
+            AddParam(command, "@DetailCount", SqlDbType.Int, dt.Rows.Count.ToString());
 
             AddParamForDataTable(command, "@Table", SqlDbType.Structured, dt);
             AddParam(command, "@Operator", SqlDbType.VarChar, dce.Operator);

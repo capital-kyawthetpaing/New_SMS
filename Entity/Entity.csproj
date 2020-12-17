@@ -68,6 +68,7 @@
     <Compile Include="D_EDI_Entity.cs" />
     <Compile Include="D_Exclusive_Entity.cs" />
     <Compile Include="D_FBControl_Entity.cs" />
+    <Compile Include="D_FBData_Entity.cs" />
     <Compile Include="D_FTP_Entity.cs" />
     <Compile Include="D_Instruction_Entity.cs" />
     <Compile Include="D_InventoryControl_Entity.cs" />

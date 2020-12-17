@@ -163,7 +163,7 @@ namespace ZaikoYoteiHyou
         {
             if(!string.IsNullOrWhiteSpace(txtTargetDateTo.Text))
             {
-                if (!txtTargetDateTo.DateCheck())
+                if (!txtTargetDateTo.YearMonthCheck())
                     return false;
                 int result = txtTargetDateFrom.Text.CompareTo(txtTargetDateTo.Text);
                 if(result > 0)

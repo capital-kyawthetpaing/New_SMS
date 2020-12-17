@@ -6416,7 +6416,7 @@
             this.ckM_TextBox3.IsNumber = true;
             this.ckM_TextBox3.IsShop = false;
             this.ckM_TextBox3.Length = 10;
-            this.ckM_TextBox3.Location = new System.Drawing.Point(666, 167);
+            this.ckM_TextBox3.Location = new System.Drawing.Point(655, 167);
             this.ckM_TextBox3.MaxLength = 10;
             this.ckM_TextBox3.MoveNext = true;
             this.ckM_TextBox3.Name = "ckM_TextBox3";
@@ -6703,7 +6703,7 @@
             this.ScStaff.IsCopy = false;
             this.ScStaff.LabelText = "";
             this.ScStaff.LabelVisible = true;
-            this.ScStaff.Location = new System.Drawing.Point(1023, 163);
+            this.ScStaff.Location = new System.Drawing.Point(1015, 163);
             this.ScStaff.Margin = new System.Windows.Forms.Padding(0);
             this.ScStaff.Name = "ScStaff";
             this.ScStaff.NameWidth = 250;
@@ -6727,7 +6727,7 @@
             this.ckM_Label12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label12.Location = new System.Drawing.Point(934, 172);
+            this.ckM_Label12.Location = new System.Drawing.Point(932, 172);
             this.ckM_Label12.Name = "ckM_Label12";
             this.ckM_Label12.Size = new System.Drawing.Size(83, 12);
             this.ckM_Label12.TabIndex = 736;
@@ -6982,7 +6982,7 @@
             this.ScConfirmNO.SearchEnable = true;
             this.ScConfirmNO.Size = new System.Drawing.Size(133, 28);
             this.ScConfirmNO.Stype = Search.CKM_SearchControl.SearchType.入金消込番号;
-            this.ScConfirmNO.TabIndex = 736;
+            this.ScConfirmNO.TabIndex = 1;
             this.ScConfirmNO.test = null;
             this.ScConfirmNO.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScConfirmNO.UseChangeDate = false;
@@ -7004,7 +7004,7 @@
             this.btnNyuukinmoto.Margin = new System.Windows.Forms.Padding(1);
             this.btnNyuukinmoto.Name = "btnNyuukinmoto";
             this.btnNyuukinmoto.Size = new System.Drawing.Size(87, 28);
-            this.btnNyuukinmoto.TabIndex = 738;
+            this.btnNyuukinmoto.TabIndex = 11;
             this.btnNyuukinmoto.Text = "入金元検索";
             this.btnNyuukinmoto.UseVisualStyleBackColor = false;
             this.btnNyuukinmoto.Click += new System.EventHandler(this.btnNyuukinmoto_Click);
@@ -7118,7 +7118,7 @@
             this.ckM_TextBox8.IsNumber = true;
             this.ckM_TextBox8.IsShop = false;
             this.ckM_TextBox8.Length = 10;
-            this.ckM_TextBox8.Location = new System.Drawing.Point(836, 167);
+            this.ckM_TextBox8.Location = new System.Drawing.Point(830, 167);
             this.ckM_TextBox8.MaxLength = 10;
             this.ckM_TextBox8.MoveNext = true;
             this.ckM_TextBox8.Name = "ckM_TextBox8";
@@ -7182,7 +7182,6 @@
             this.Controls.Add(this.ckM_Label17);
             this.Controls.Add(this.ckM_Label3);
             this.Controls.Add(this.tabControl1);
-            this.F4Visible = false;
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
             this.Name = "NyuukinNyuuryoku_Detail";
