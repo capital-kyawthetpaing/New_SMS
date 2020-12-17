@@ -168,8 +168,7 @@ namespace FBDataSakusei_FBデータ作成
                             PayGaku = dtgv.Rows[0]["transferAcc"].ToString(),
                             TransferGaku = dtgv.Rows[0]["TransferGaku"].ToString(),
                             TransferFee = dtgv.Rows[0]["TransferFeeGaku"].ToString(),
-                            TransferFeeKBN = dtgv.Rows[0]["FeeKBN1"].ToString(),
-                            StaffCD = InOperatorCD,
+                            TransferFeeKBN = dtgv.Rows[0]["FeeKBN1"].ToString(),                           
                         };
                         dpe = new D_Pay_Entity
                         {                          
@@ -183,6 +182,22 @@ namespace FBDataSakusei_FBデータ作成
                         }
 
 
+                    }
+                }
+                else if (Btn_F12.Text == "削除(F12)")
+                {
+                    if (bbl.ShowMessage("Q201") == DialogResult.Yes)
+                    {
+                        dfbe = new D_FBControl_Entity
+                        {
+                            Operator = InOperatorCD, 
+                        };
+                        if (fbbl.FBDataSakusei_Update(dfbe))
+                        {
+                            Clear(panel1);
+                            BindCombo();
+                            cboProcess.Focus();
+                        }
                     }
                 }
             }

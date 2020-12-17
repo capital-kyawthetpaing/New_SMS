@@ -33,5 +33,10 @@ namespace BL
             return dfbdl.FBDataSakusei_Insert(dfbe, dfde,dpe);
         }
 
+        public bool FBDataSakusei_Update(D_FBControl_Entity dfe)
+        {
+            return dfbdl.FBDataSakusei_Update(dfe);
+        }
+
     }
 }

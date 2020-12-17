@@ -38,5 +38,15 @@ namespace DL
 
             return InsertUpdateDeleteData(dic, "D_FBControl_Insert");
         }
+
+        public bool FBDataSakusei_Update(D_FBControl_Entity dfe)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            { 
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfe.Operator } },               
+            };
+            return InsertUpdateDeleteData(dic, "FBDataSakusei_Update");
+        }
+
     }
 }
