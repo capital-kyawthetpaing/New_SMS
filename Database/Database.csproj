@@ -353,6 +353,7 @@
     <Content Include="StoreProcedure\M_Brand_SelectAll.sql" />
     <Content Include="StoreProcedure\M_Calendar_Select.sql" />
     <Content Include="StoreProcedure\M_Calendar_SelectDayKBN.sql" />
+    <Content Include="StoreProcedure\M_Calendar_SelectForFB.sql" />
     <Content Include="StoreProcedure\M_Calendar_Update.sql" />
     <Content Include="StoreProcedure\M_Carrier_Bind.sql" />
     <Content Include="StoreProcedure\M_Carrier_Delete.sql" />
