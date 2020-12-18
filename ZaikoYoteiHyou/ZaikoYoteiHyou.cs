@@ -352,6 +352,10 @@ namespace ZaikoYoteiHyou
                                 break;
                         }
                     }
+                    catch(Exception e)
+                    {
+                        var mse = e.Message;
+                    }
                     finally
                     {
                         txtTargetDateTo.Focus();

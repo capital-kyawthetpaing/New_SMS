@@ -130,6 +130,11 @@ namespace FBDataSakusei_FBデータ作成
                 {
                     gvFBDataSakusei.DataSource = dtgv;
                 }
+                else
+                {
+                    bbl.ShowMessage("E200");
+                    cboProcess.Focus();
+                }
             }
         }
 
@@ -145,60 +150,69 @@ namespace FBDataSakusei_FBデータ作成
         {
             if(ErrorCheck(12))
             {
-                if(Btn_F12.Text == "出力(F12)")
+                if(dtgv.Rows.Count > 0)
                 {
-                    if (bbl.ShowMessage("Q301") == DialogResult.Yes)
+                    if (Btn_F12.Text == "出力(F12)")
                     {
-                        dfbe = new D_FBControl_Entity
+                        if (bbl.ShowMessage("Q301") == DialogResult.Yes)
                         {
-                            PayDate = txtPaymentDate.Text,
-                            ActualPayDate = txtTransferDate.Text,
-                            MotoKouzaCD = cboPayment.SelectedValue.ToString(),
-                            StoreCD = InOperatorCD
-                        };                        
-                        dfde = new D_FBData_Entity
-                        {
-                            PayeeCD = dtgv.Rows[0]["PayeeCD"].ToString(),
-                            PayeeName = dtgv.Rows[0]["VendorName"].ToString(),
-                            BankCD = dtgv.Rows[0]["BankCD"].ToString(),
-                            BranchCD = dtgv.Rows[0]["BranchCD"].ToString(),
-                            KouzaKBN = dtgv.Rows[0]["KouzaKBN"].ToString(),
-                            KouzaNO = dtgv.Rows[0]["KouzaNO"].ToString(),
-                            KouzaMeigi = dtgv.Rows[0]["KouzaMeigi"].ToString(),
-                            PayGaku = dtgv.Rows[0]["transferAcc"].ToString(),
-                            TransferGaku = dtgv.Rows[0]["TransferGaku"].ToString(),
-                            TransferFee = dtgv.Rows[0]["TransferFeeGaku"].ToString(),
-                            TransferFeeKBN = dtgv.Rows[0]["FeeKBN1"].ToString(),                           
-                        };
-                        dpe = new D_Pay_Entity
-                        {                          
-                            Flg = cboProcess.SelectedValue.ToString(),
-                        };                       
-                        if (fbbl.FBDataSakusei_Insert(dfbe, dfde,dpe))
-                        {
-                            Clear(panel1);
-                            BindCombo();
-                            cboProcess.Focus();
+
+                            dfbe = new D_FBControl_Entity
+                            {
+                                PayDate = txtPaymentDate.Text,
+                                ActualPayDate = txtTransferDate.Text,
+                                MotoKouzaCD = cboPayment.SelectedValue.ToString(),
+                                StoreCD = InOperatorCD
+                            };
+                            dfde = new D_FBData_Entity
+                            {
+                                PayeeCD = dtgv.Rows[0]["PayeeCD"].ToString(),
+                                PayeeName = dtgv.Rows[0]["VendorName"].ToString(),
+                                BankCD = dtgv.Rows[0]["BankCD"].ToString(),
+                                BranchCD = dtgv.Rows[0]["BranchCD"].ToString(),
+                                KouzaKBN = dtgv.Rows[0]["KouzaKBN"].ToString(),
+                                KouzaNO = dtgv.Rows[0]["KouzaNO"].ToString(),
+                                KouzaMeigi = dtgv.Rows[0]["KouzaMeigi"].ToString(),
+                                PayGaku = dtgv.Rows[0]["transferAcc"].ToString(),
+                                TransferGaku = dtgv.Rows[0]["TransferGaku"].ToString(),
+                                TransferFee = dtgv.Rows[0]["TransferFeeGaku"].ToString(),
+                                TransferFeeKBN = dtgv.Rows[0]["FeeKBN1"].ToString(),
+                            };
+                            dpe = new D_Pay_Entity
+                            {
+                                Flg = cboProcess.SelectedValue.ToString(),
+                            };
+                            if (fbbl.FBDataSakusei_Insert(dfbe, dfde, dpe))
+                            {
+                                Clear(panel1);
+                                BindCombo();
+                                cboProcess.Focus();
+                            }
+
+
                         }
-
-
+                    }
+                    else if (Btn_F12.Text == "削除(F12)")
+                    {
+                        if (bbl.ShowMessage("Q201") == DialogResult.Yes)
+                        {
+                            dfbe = new D_FBControl_Entity
+                            {
+                                Operator = InOperatorCD,
+                            };
+                            if (fbbl.FBDataSakusei_Update(dfbe))
+                            {
+                                Clear(panel1);
+                                BindCombo();
+                                cboProcess.Focus();
+                            }
+                        }
                     }
                 }
-                else if (Btn_F12.Text == "削除(F12)")
+                else
                 {
-                    if (bbl.ShowMessage("Q201") == DialogResult.Yes)
-                    {
-                        dfbe = new D_FBControl_Entity
-                        {
-                            Operator = InOperatorCD, 
-                        };
-                        if (fbbl.FBDataSakusei_Update(dfbe))
-                        {
-                            Clear(panel1);
-                            BindCombo();
-                            cboProcess.Focus();
-                        }
-                    }
+                    bbl.ShowMessage("E200");
+                    cboProcess.Focus();                   
                 }
             }
         }
