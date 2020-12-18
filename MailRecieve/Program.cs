@@ -12,6 +12,8 @@ namespace MailRecieve
     class Program
     {
         static Login_BL loginbl = new Login_BL();
+        static MailSend_BL msbl = new MailSend_BL();
+        static MailRecieve mail = new MailRecieve();
         static M_MultiPorpose_Entity mmpe = new M_MultiPorpose_Entity();
         static DataTable dtMulti;
 
@@ -21,16 +23,18 @@ namespace MailRecieve
 
             if (loginbl.ReadConfig() == true)
             {
-                mmpe.ID = "324";
+                mmpe.ID = "328";
                 mmpe.Key = "1";
-               // dtMulti = ftpsbl.M_MultiPorpose_SelectID(mmpe);
+                dtMulti = msbl.M_MultiPorpose_SelectID(mmpe);
 
                 //【起動可否確認】
                 //汎用マスター.	数字型１＝０なら、処理終了
-                //if (dtMulti.Rows[0]["Num1"].ToString().Equals("0"))
-                //    return;
+                if (dtMulti.Rows[0]["Num2"].ToString().Equals("0"))
+                    return;
 
-                //ftpi.FTPImport();
+                DataTable dtMail=msbl.ReceiveMailServer();
+                mail.MailRead(dtMail);
+
             }
         }
     }
