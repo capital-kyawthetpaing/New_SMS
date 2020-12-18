@@ -1329,7 +1329,7 @@ namespace NyuukinNyuuryoku_Detail
 
                                 if (OperationMode == EOperationMode.DELETE && mConfirmExistsFlg)
                                 {
-                                    bbl.ShowMessage("E271");
+                                    bbl.ShowMessage("E272");
                                     SetFocusAfterErr();
                                     return false;
                                 }
