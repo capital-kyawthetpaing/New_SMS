@@ -335,13 +335,15 @@ namespace DL
             return SelectData(dic, sp);
         }
 
-
-        public DataTable M_SKUSelectAll()
+        /// <summary>
+        /// For TenzikaiShouhin
+        /// </summary>
+        /// <returns></returns>
+        public DataTable M_SKU_SelectAll_NOPara()
         {
-            string sp = "M_SKUSelectAll";
+            string sp = "M_SKU_SelectAll_NOPara";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-
             };
             return SelectData(dic, sp);
         }

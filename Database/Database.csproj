@@ -119,6 +119,7 @@
     <Content Include="StoreProcedure\D_Exclusive_Insert.sql" />
     <Content Include="StoreProcedure\D_Exclusive_Select.sql" />
     <Content Include="StoreProcedure\D_Exclusive_SelectAll.sql" />
+    <Content Include="StoreProcedure\D_FBControl_Insert.sql" />
     <Content Include="StoreProcedure\D_FTP_Insert.sql" />
     <Content Include="StoreProcedure\D_FTP_SelectAll.sql" />
     <Content Include="StoreProcedure\D_GetCustomer_ForTempoRegiPoint.sql" />
@@ -198,6 +199,7 @@
     <Content Include="StoreProcedure\D_Pay_Select1.sql" />
     <Content Include="StoreProcedure\D_Pay_Select2.sql" />
     <Content Include="StoreProcedure\D_Pay_Select3.sql" />
+    <Content Include="StoreProcedure\D_Pay_SelectForFB.sql" />
     <Content Include="StoreProcedure\D_Pay_SelectForPayPlanDate1.sql" />
     <Content Include="StoreProcedure\D_Pay_SelectForPayPlanDate2.sql" />
     <Content Include="StoreProcedure\D_Pay_SelectForSiharaiNo.sql" />
@@ -271,6 +273,7 @@
     <Content Include="StoreProcedure\D_TenzikaiJuchuu_SelectForExcel.sql" />
     <Content Include="StoreProcedure\D_WowmaJuchuuDetails_Insert.sql" />
     <Content Include="StoreProcedure\D_WowmaJuchuu_Insert.sql" />
+    <Content Include="StoreProcedure\FBDataSakusei_Update.sql" />
     <Content Include="StoreProcedure\Fnc_Credit.sql" />
     <Content Include="StoreProcedure\Fnc_GetNumber.sql" />
     <Content Include="StoreProcedure\Fnc_M_ItemOrderPrice_SelectLatest.sql" />
@@ -348,8 +351,10 @@
     <Content Include="StoreProcedure\M_Brand_Insert_Update.sql" />
     <Content Include="StoreProcedure\M_Brand_Select.sql" />
     <Content Include="StoreProcedure\M_Brand_SelectAll.sql" />
+    <Content Include="StoreProcedure\M_Brand_SelectAll_NoPara.sql" />
     <Content Include="StoreProcedure\M_Calendar_Select.sql" />
     <Content Include="StoreProcedure\M_Calendar_SelectDayKBN.sql" />
+    <Content Include="StoreProcedure\M_Calendar_SelectForFB.sql" />
     <Content Include="StoreProcedure\M_Calendar_Update.sql" />
     <Content Include="StoreProcedure\M_Carrier_Bind.sql" />
     <Content Include="StoreProcedure\M_Carrier_Delete.sql" />
@@ -426,6 +431,7 @@
     <Content Include="StoreProcedure\M_MultiPurpose_Insert_Update.sql" />
     <Content Include="StoreProcedure\M_MultiPurpose_KeySearch.sql" />
     <Content Include="StoreProcedure\M_MultiPurpose_KeySelect.sql" />
+    <Content Include="StoreProcedure\M_Multipurpose_SelectAll_ByID.sql" />
     <Content Include="StoreProcedure\M_Multipurpose_SelectIDName.sql" />
     <Content Include="StoreProcedure\M_OrderRate_Update.sql" />
     <Content Include="StoreProcedure\M_Prefix_Delete.sql" />
@@ -459,6 +465,7 @@
     <Content Include="StoreProcedure\M_SKU_Select.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectAll.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectAllForTempoRegiShohin.sql" />
+    <Content Include="StoreProcedure\M_SKU_SelectAll_NOPara.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectByItemCD.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectByJanCD.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectByJanCD_ForTenzikaishouhin.sql" />
