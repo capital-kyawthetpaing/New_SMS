@@ -2645,7 +2645,7 @@ namespace NyuukinNyuuryoku_Detail
             //lblKin2.Text = string.Format("{0:#,##0}", 0);
             //ヘッダ.残額 = ヘッダ.消込原資額 - SUM(明細.今回入金額)-その他消込額
             //残額を計算（残額＝消込原資額－消込額－その他消込）
-            lblKin3.Text = string.Format("{0:#,##0}",bbl.Z_Set(lblKin1.Text) - kin3 - bbl.Z_Set(detailControls[(int)EIndex.DeductionConfirm].Text));
+            lblKin3.Text = string.Format("{0:#,##0}",bbl.Z_Set(lblKin1.Text) -bbl.Z_Set(lblKin2.Text) - bbl.Z_Set(detailControls[(int)EIndex.DeductionConfirm].Text));
 
             return true;
         }
@@ -3190,7 +3190,7 @@ namespace NyuukinNyuuryoku_Detail
                 mGrid.S_DispToArray(Vsb_Mei_0.Value);
                 
                 //ヘッダ.消込原資額に到達するまで、明細上から(回収予定日が古い順に)今回入金額（＝明細.請求額 - 明細.入金済額）をセット。
-                decimal wNyukin = bbl.Z_Set(lblKin1.Text) - bbl.Z_Set(lblKesikomiZumiGaku.Text);
+                decimal wNyukin = bbl.Z_Set(lblKin1.Text) - bbl.Z_Set(lblKesikomiZumiGaku.Text) - bbl.Z_Set(detailControls[(int)EIndex.DeductionConfirm].Text);
 
                 for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
                 {
