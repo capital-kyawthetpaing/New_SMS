@@ -683,10 +683,12 @@ namespace MasterTouroku_TenzikaiShouhin
 
             w_Row = w_CtlRow + Vsb_Mei_0.Value;
             mGrid.S_DispToArray(Vsb_Mei_0.Value);
-            if(skucheck)
-            {
-                RemoveVal(w_Row);
-            }
+            int cl = (int)ClsGridMasterTanzi.ColNO.JANCD;
+            //////追加行　に　カラー　remove
+            //if (skucheck & (mGrid.g_MK_State[cl, w_Row].Cell_Color == GridBase.ClsGridBase.CheckColor))
+            //{
+            //    RemoveVal(w_Row);
+            //}
             int col = (int)ClsGridMasterTanzi.ColNO.JANCD;
             for (int i = w_Row; i < mGrid.g_MK_Max_Row - 1; i++)
             {
@@ -772,13 +774,7 @@ namespace MasterTouroku_TenzikaiShouhin
             mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
             int col = (int)ClsGridMasterTanzi.ColNO.JANCD;
-            //状態もコピー
-            // ※ 前行と状態が違うとき注意、この部分変更要 (修正元のあるなしで 入力可能項目が変わる場合など)
-            for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
-            {
-                mGrid.g_MK_State[w_Col, w_Row] = mGrid.g_MK_State[w_Col, w_Row - 1];
-
-            }
+            
             //コピー行より下の明細を1行ずつずらす（内容コピー）
             for (int i = mGrid.g_MK_Max_Row - 1; i >= w_Row; i--)
             {
@@ -807,29 +803,28 @@ namespace MasterTouroku_TenzikaiShouhin
                         {
                             CellDisable(col, i);
                         }
-                        if (skucheck)
+                        if (skucheck & (mGrid.g_MK_State[col, i].Cell_Color == GridBase.ClsGridBase.CheckColor))
                         {
                             RemoveVal(i);
                         }
                     }
                 }
-               
+                Grid_NotFocus(col, i);
             }
 
-           // 状態もコピー
+            // 状態もコピー
             // ※ 前行と状態が違うとき注意、この部分変更要(修正元のあるなしで 入力可能項目が変わる場合など)
-            //for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
-            //{
-            //    mGrid.g_MK_State[w_Col, w_Row] = mGrid.g_MK_State[w_Col, w_Row - 1];
-            //    //if (skucheck)
-            //    //{
-            //    //    RemoveVal(w_Row - 1);
-            //    //}
-            //}
+            for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
+            {
+                mGrid.g_MK_State[w_Col, w_Row] = mGrid.g_MK_State[w_Col, w_Row - 1];
+                
+            }
 
 
             //追加行　に　カラー　remove
-            if (skucheck)
+            int cl = (int)ClsGridMasterTanzi.ColNO.JANCD;
+            ////追加行　に　カラー　remove
+            if (skucheck & (mGrid.g_MK_State[cl, w_Row].Cell_Color == GridBase.ClsGridBase.CheckColor))
             {
                 RemoveVal(w_Row);
             }
@@ -877,23 +872,21 @@ namespace MasterTouroku_TenzikaiShouhin
                 mGrid.g_DArray[i].GYONO = w_Gyo.ToString();
                 if (!String.IsNullOrEmpty(mGrid.g_DArray[i].JANCD))
                 {
-                    
-
                     if (dtJanCD.Rows.Count > 0) // jancd exists or not
-                {
-                    String jancd1 = " JanCD = '" + mGrid.g_DArray[i].JANCD + "'";
-                    var result = dtJanCD.Select(jancd1);
-                    if (result.Count() == 0)
                     {
-                        EnableCell_JanPro(col, i);
-                    }
-                    else
-                    {
-                        CellDisable(col, i);
+                        String jancd1 = " JanCD = '" + mGrid.g_DArray[i].JANCD + "'";
+                        var result = dtJanCD.Select(jancd1);
+                        if (result.Count() == 0)
+                        {
+                            EnableCell_JanPro(col, i);
+                        }
+                        else
+                        {
+                            CellDisable(col, i);
+                        }
                     }
                 }
-
-                }
+                Grid_NotFocus(col, i);
             }
             // SKUチェック を押した　後で　F8（行追加）したら　
             //Original行　に　カラー　
@@ -909,13 +902,12 @@ namespace MasterTouroku_TenzikaiShouhin
 
 
             //追加行　に　カラー　remove
-            if(skucheck )
-                
-                    {
-                    RemoveVal(w_Row);
-                    }
-                    
-
+            int cl = (int)ClsGridMasterTanzi.ColNO.JANCD;
+            ////追加行　に　カラー　remove
+            if (skucheck & (mGrid.g_MK_State[cl, w_Row].Cell_Color == GridBase.ClsGridBase.CheckColor))
+            {
+                RemoveVal(w_Row);
+            }
 
             //int col = (int)ClsGridMasterTanzi.ColNO.JANCD;
             Grid_NotFocus(col, w_Row);

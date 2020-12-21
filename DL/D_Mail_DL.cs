@@ -49,5 +49,17 @@ public   class D_Mail_DL : Base_DL
             };
             return InsertUpdateDeleteData(dic, sp);
         }
+
+
+        ///Mail Receive
+        public DataTable M_ReceiveMailServer_Select()
+        {
+            string sp = "M_ReceiveMailServer_Select";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                //{"@Mode",new ValuePair{value1=SqlDbType.TinyInt,value2=Mode.ToString()} }
+            };
+            return SelectData(dic, sp);
+        }
     }
 }
