@@ -38,5 +38,10 @@ namespace BL
             return dfbdl.FBDataSakusei_Update(dfe);
         }
 
+        public DataTable D_Pay_SelectForText(D_FBControl_Entity dfbe,D_Pay_Entity dpe)
+        {
+            return dpdl.D_Pay_SelectForText(dfbe, dpe);
+        }
+
     }
 }
