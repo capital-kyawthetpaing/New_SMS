@@ -11,6 +11,16 @@ namespace BL
 {
     public class ZaikoReplicaSyori_BL : Base_BL
     {
-        M_MultiPorpose_DL MmultiporposeDataDL;
+        ZaikoReplicaSyori_DL zrsdl;
+
+        public ZaikoReplicaSyori_BL()
+        {
+            zrsdl = new ZaikoReplicaSyori_DL();
+        }
+
+        public bool D_StockReplica_Insert()
+        {
+            return zrsdl.D_StockReplica_Insert();
+        }
     }
 }
