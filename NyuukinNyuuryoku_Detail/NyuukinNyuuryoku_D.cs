@@ -939,6 +939,8 @@ namespace NyuukinNyuuryoku_Detail
                 Btn_F7.Text = "";
                 Btn_F8.Text = "";
                 Btn_F10.Text = "";
+                lblKesikomiZumi.Visible = false;
+                lblKesikomiZumiGaku.Visible = false;
 
                 //スタッフマスター(M_Staff)に存在すること
                 //[M_Staff]
@@ -1316,7 +1318,7 @@ namespace NyuukinNyuuryoku_Detail
                                 bool exist = nnbl.D_PaymentConfirm_Select(dce);
                                 if (exist)
                                 {
-                                    bbl.ShowMessage("E271", mes);
+                                    bbl.ShowMessage("E271");
                                     SetFocusAfterErr();
                                     return false;
                                 }
@@ -1329,7 +1331,7 @@ namespace NyuukinNyuuryoku_Detail
 
                                 if (OperationMode == EOperationMode.DELETE && mConfirmExistsFlg)
                                 {
-                                    bbl.ShowMessage("E271");
+                                    bbl.ShowMessage("E272");
                                     SetFocusAfterErr();
                                     return false;
                                 }
@@ -1452,6 +1454,14 @@ namespace NyuukinNyuuryoku_Detail
                 if (index == (int)EIndex.CollectNO)
                 {
                     lblKin2.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmAmount"]);
+                    lblKesikomiZumiGaku.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmAmount"]);
+
+                    if (mKidouMode.Equals(9))
+                    {
+                        //lblKesikomiZumiGaku.Visible = true;
+                        //lblKesikomiZumi.Visible = true;
+                        //lblKin1.Text = bbl.Z_SetStr(bbl.Z_Set(dtDetail.Rows[0]["ConfirmSource"]) - bbl.Z_Set(dtDetail.Rows[0]["ConfirmAmount"]));
+                    }
                 }
                 else
                 {
@@ -2423,17 +2433,17 @@ namespace NyuukinNyuuryoku_Detail
                 //ChkAll時は金額計算しないため最後に1回
                 CalcKin();
 
-                //ヘッダ.消込原資額≠SUM(明細.今回入金額)の場合、エラー
-                if (bbl.Z_Set(lblKin1.Text) < bbl.Z_Set(lblSumKin3.Text))
-                {
-                    // Ｅ１９６
-                    if (bbl.ShowMessage("E196", "明細今回入金額の合計", "消込原資額－その他消込額以下") != DialogResult.Yes)
-                    {
-                        //明細の先頭項目へ
-                        mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridNyuukin_S.ColNO.ConfirmAmount);
-                        return;
-                    }
-                }
+                ////ヘッダ.消込原資額≠SUM(明細.今回入金額)の場合、エラー
+                //if (bbl.Z_Set(lblKin1.Text) < bbl.Z_Set(lblSumKin3.Text))
+                //{
+                //    // Ｅ１９６
+                //    if (bbl.ShowMessage("E196", "明細今回入金額の合計", "消込原資額－その他消込額以下") != DialogResult.Yes)
+                //    {
+                //        //明細の先頭項目へ
+                //        mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridNyuukin_S.ColNO.ConfirmAmount);
+                //        return;
+                //    }
+                //}
             }
             else
             {
@@ -2631,11 +2641,11 @@ namespace NyuukinNyuuryoku_Detail
             lblSumKin4.Text = string.Format("{0:#,##0}", kin4);
 
             //ヘッダ.消込額 = SUM(明細.今回入金額)
-            lblKin2.Text = string.Format("{0:#,##0}", kin3);
+            lblKin2.Text = string.Format("{0:#,##0}", kin3 + bbl.Z_Set(lblKesikomiZumiGaku.Text));
             //lblKin2.Text = string.Format("{0:#,##0}", 0);
             //ヘッダ.残額 = ヘッダ.消込原資額 - SUM(明細.今回入金額)-その他消込額
             //残額を計算（残額＝消込原資額－消込額－その他消込）
-            lblKin3.Text = string.Format("{0:#,##0}",bbl.Z_Set(lblKin1.Text) - kin3 - bbl.Z_Set(detailControls[(int)EIndex.DeductionConfirm].Text));
+            lblKin3.Text = string.Format("{0:#,##0}",bbl.Z_Set(lblKin1.Text) -bbl.Z_Set(lblKin2.Text) - bbl.Z_Set(detailControls[(int)EIndex.DeductionConfirm].Text));
 
             return true;
         }
@@ -3178,10 +3188,9 @@ namespace NyuukinNyuuryoku_Detail
             {   
                 // 明細部  画面の範囲の内容を配列にセット
                 mGrid.S_DispToArray(Vsb_Mei_0.Value);
-
-                //ヘッダ.入金額に到達するまで、明細上から(回収予定日が古い順に)今回入金額（＝明細.請求額 - 明細.入金済額）をセット。
-                decimal wNyukin = bbl.Z_Set(detailControls[(int)EIndex.NyukinGaku].Text);
-
+                
+                //ヘッダ.消込原資額に到達するまで、明細上から(回収予定日が古い順に)今回入金額（＝明細.請求額 - 明細.入金済額）をセット。
+                decimal wNyukin = bbl.Z_Set(lblKin1.Text) - bbl.Z_Set(lblKesikomiZumiGaku.Text) - bbl.Z_Set(detailControls[(int)EIndex.DeductionConfirm].Text);
 
                 for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
                 {
