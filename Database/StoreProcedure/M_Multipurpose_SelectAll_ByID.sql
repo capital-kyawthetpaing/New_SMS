@@ -23,9 +23,9 @@ BEGIN
     -- Insert statements for procedure here
 	if(@Type = 1)
 	begin
-	SELECT Char1 from M_MultiPorpose where ID='226'
+	SELECT [Key] from M_MultiPorpose where ID='226'
 	end 
 	else 
-	SELECT Char1 from M_MultiPorpose where ID='201'
+	SELECT [Key] from M_MultiPorpose where ID='201'
 END
 GO
