@@ -3315,7 +3315,11 @@ namespace NyuukinNyuuryoku_Detail
                     label2.Visible = ckM_RadioButton2.Checked;
                     detailControls[(int)EIndex.CollectClearDate].Visible = ckM_RadioButton2.Checked;
                 }
-
+                else if (OperationMode != EOperationMode.INSERT)
+                {
+                    label2.Visible = ckM_RadioButton2.Checked && !string.IsNullOrWhiteSpace( keyControls[(int)EIndex.ConfirmNO].Text);
+                    detailControls[(int)EIndex.CollectClearDate].Visible = ckM_RadioButton2.Checked && !string.IsNullOrWhiteSpace(keyControls[(int)EIndex.ConfirmNO].Text);
+                }
             }
             catch (Exception ex)
             {
