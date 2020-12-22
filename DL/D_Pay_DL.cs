@@ -220,7 +220,7 @@ namespace DL
             return SelectData(dic, "D_Pay_SelectForFB");
         }
 
-        public DataTable D_Pay_SelectForText(D_Pay_Entity dpe,D_FBControl_Entity dfbe)
+        public DataTable D_Pay_SelectForText(D_FBControl_Entity dfbe, D_Pay_Entity dpe)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>()
             {
