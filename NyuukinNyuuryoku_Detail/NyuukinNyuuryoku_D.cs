@@ -2278,7 +2278,7 @@ namespace NyuukinNyuuryoku_Detail
                 ConfirmAmount = bbl.Z_SetStr(lblKin2.Text),
                 ConfirmSource = bbl.Z_SetStr(lblKin1.Text),
                 PaymentMethodCD = cboDenomination.SelectedValue.ToString(),
-                KouzaCD = cboKouza.SelectedValue.ToString(),
+                KouzaCD = cboKouza.SelectedIndex>0 ? cboKouza.SelectedValue.ToString():"",
                 BillDate = detailControls[(int)EIndex.Tegata].Text,
                 CollectClearDate = detailControls[(int)EIndex.CollectClearDate].Text,
 
@@ -2566,6 +2566,7 @@ namespace NyuukinNyuuryoku_Detail
                 btnUriage.Enabled = false;
                 btnDetail.Enabled = false;
                 mConfirmExistsFlg = false;
+                lblKesikomiZumiGaku.Text = "";
             }
 
             foreach (Control ctl in detailControls)
@@ -3315,7 +3316,11 @@ namespace NyuukinNyuuryoku_Detail
                     label2.Visible = ckM_RadioButton2.Checked;
                     detailControls[(int)EIndex.CollectClearDate].Visible = ckM_RadioButton2.Checked;
                 }
-
+                else if (OperationMode != EOperationMode.INSERT)
+                {
+                    label2.Visible = ckM_RadioButton2.Checked && !string.IsNullOrWhiteSpace( keyControls[(int)EIndex.ConfirmNO].Text);
+                    detailControls[(int)EIndex.CollectClearDate].Visible = ckM_RadioButton2.Checked && !string.IsNullOrWhiteSpace(keyControls[(int)EIndex.ConfirmNO].Text);
+                }
             }
             catch (Exception ex)
             {
