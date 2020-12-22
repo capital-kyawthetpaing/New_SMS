@@ -203,6 +203,7 @@
     <Content Include="StoreProcedure\D_Pay_SelectForPayPlanDate1.sql" />
     <Content Include="StoreProcedure\D_Pay_SelectForPayPlanDate2.sql" />
     <Content Include="StoreProcedure\D_Pay_SelectForSiharaiNo.sql" />
+    <Content Include="StoreProcedure\D_Pay_SelectForText.sql" />
     <Content Include="StoreProcedure\D_Pay_ShiharaiItianHyou.sql" />
     <Content Include="StoreProcedure\D_Pay_Update.sql" />
     <Content Include="StoreProcedure\D_Picking_SelectAll.sql" />

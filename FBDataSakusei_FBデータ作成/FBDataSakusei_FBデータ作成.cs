@@ -182,6 +182,15 @@ namespace FBDataSakusei_FBデータ作成
                             {
                                 Flg = cboProcess.SelectedValue.ToString(),
                             };
+                            DataTable dttext = new DataTable();
+                            dttext = fbbl.D_Pay_SelectForText(dfbe, dpe);
+                            if(dttext.Rows.Count > 0)
+                            {
+                                
+                            }
+                                
+
+
                             if (fbbl.FBDataSakusei_Insert(dfbe, dfde, dpe))
                             {
                                 Clear(panel1);
