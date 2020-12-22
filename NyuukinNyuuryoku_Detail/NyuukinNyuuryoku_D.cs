@@ -2278,7 +2278,7 @@ namespace NyuukinNyuuryoku_Detail
                 ConfirmAmount = bbl.Z_SetStr(lblKin2.Text),
                 ConfirmSource = bbl.Z_SetStr(lblKin1.Text),
                 PaymentMethodCD = cboDenomination.SelectedValue.ToString(),
-                KouzaCD = cboKouza.SelectedValue.ToString(),
+                KouzaCD = cboKouza.SelectedIndex>0 ? cboKouza.SelectedValue.ToString():"",
                 BillDate = detailControls[(int)EIndex.Tegata].Text,
                 CollectClearDate = detailControls[(int)EIndex.CollectClearDate].Text,
 
