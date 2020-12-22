@@ -2239,7 +2239,6 @@ namespace MasterTouroku_TenzikaiShouhin
                 }
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                 return true;
-
             }
             else
             {
