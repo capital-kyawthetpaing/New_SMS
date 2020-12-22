@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="OpenPop">
+      <HintPath>..\Search\RequiredDLL\OpenPop.dll</HintPath>
+    </Reference>
+    <Reference Include="S22.Imap">
+      <HintPath>..\Search\RequiredDLL\S22.Imap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

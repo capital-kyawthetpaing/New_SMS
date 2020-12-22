@@ -21,21 +21,22 @@ namespace MailRecieve
         {
             Console.Title = "FileTransferProtocolInput";
 
-            if (loginbl.ReadConfig() == true)
-            {
-                mmpe.ID = "328";
-                mmpe.Key = "1";
-                dtMulti = msbl.M_MultiPorpose_SelectID(mmpe);
+            //if (loginbl.ReadConfig() == true)
+            //{
+            //    mmpe.ID = "328";
+            //    mmpe.Key = "1";
+            //    dtMulti = msbl.M_MultiPorpose_SelectID(mmpe);
 
-                //【起動可否確認】
-                //汎用マスター.	数字型１＝０なら、処理終了
-                if (dtMulti.Rows[0]["Num2"].ToString().Equals("0"))
-                    return;
+            //    //【起動可否確認】
+            //    //汎用マスター.	数字型１＝０なら、処理終了
+            //    if (dtMulti.Rows[0]["Num2"].ToString().Equals("0"))
+            //        return;
 
-                DataTable dtMail=msbl.ReceiveMailServer();
-                mail.MailRead(dtMail);
+            //    DataTable dtMail=msbl.ReceiveMailServer();
+            
+                mail.MailRead();
 
-            }
+            //}
         }
     }
 }
