@@ -2566,6 +2566,7 @@ namespace NyuukinNyuuryoku_Detail
                 btnUriage.Enabled = false;
                 btnDetail.Enabled = false;
                 mConfirmExistsFlg = false;
+                lblKesikomiZumiGaku.Text = "";
             }
 
             foreach (Control ctl in detailControls)
