@@ -1402,7 +1402,7 @@ namespace NyuukinNyuuryoku_Detail
                     detailControls[(int)EIndex.Deduction1].Text = "0";
                     detailControls[(int)EIndex.Deduction2].Text = "0";
                     detailControls[(int)EIndex.DeductionConfirm].Text = "0";
-                    cboKouza.Bind(bbl.GetDate());
+                    //cboKouza.Bind(bbl.GetDate());
                 }
                 else
                 {
@@ -1438,8 +1438,8 @@ namespace NyuukinNyuuryoku_Detail
                 detailControls[(int)EIndex.CollectDate].Text = dtDetail.Rows[0]["CollectDate"].ToString();
                 cboDenomination.SelectedValue = dtDetail.Rows[0]["PaymentMethodCD"].ToString();
 
-                cboKouza.DataSource = null;
-                cboKouza.Bind(dtDetail.Rows[0]["CollectDate"].ToString());
+                //cboKouza.DataSource = null;
+                //cboKouza.Bind(dtDetail.Rows[0]["CollectDate"].ToString());
                 cboKouza.SelectedValue = dtDetail.Rows[0]["KouzaCD"].ToString();
                 detailControls[(int)EIndex.Tegata].Text = dtDetail.Rows[0]["BillDate"].ToString();
                 detailControls[(int)EIndex.StaffCD].Text = dtDetail.Rows[0]["StaffCD"].ToString();
