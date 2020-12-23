@@ -2199,6 +2199,9 @@ namespace NyuukinNyuuryoku_Detail
                             return false;
                         }
                     }
+                    if (bbl.Z_Set(mGrid.g_DArray[row].ConfirmAmount)>0)
+                        mGrid.g_DArray[row].Chk = true;
+
                     //今回入金額＞未入金額(明細の請求額－入金済額)の場合、Error
                     //if (bbl.Z_Set(mGrid.g_DArray[row].ConfirmAmount) > bbl.Z_Set(mGrid.g_DArray[row].BillingGaku)- bbl.Z_Set(mGrid.g_DArray[row].CollectAmount)) //今回入金額＞未入金額の場合、Error
                     //今回入金額＞未入金額の場合、Error
