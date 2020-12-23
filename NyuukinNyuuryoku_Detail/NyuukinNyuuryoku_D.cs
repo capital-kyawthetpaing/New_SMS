@@ -1402,7 +1402,7 @@ namespace NyuukinNyuuryoku_Detail
                     detailControls[(int)EIndex.Deduction1].Text = "0";
                     detailControls[(int)EIndex.Deduction2].Text = "0";
                     detailControls[(int)EIndex.DeductionConfirm].Text = "0";
-                    cboKouza.Bind(bbl.GetDate());
+                    //cboKouza.Bind(bbl.GetDate());
                 }
                 else
                 {
@@ -1438,8 +1438,8 @@ namespace NyuukinNyuuryoku_Detail
                 detailControls[(int)EIndex.CollectDate].Text = dtDetail.Rows[0]["CollectDate"].ToString();
                 cboDenomination.SelectedValue = dtDetail.Rows[0]["PaymentMethodCD"].ToString();
 
-                cboKouza.DataSource = null;
-                cboKouza.Bind(dtDetail.Rows[0]["CollectDate"].ToString());
+                //cboKouza.DataSource = null;
+                //cboKouza.Bind(dtDetail.Rows[0]["CollectDate"].ToString());
                 cboKouza.SelectedValue = dtDetail.Rows[0]["KouzaCD"].ToString();
                 detailControls[(int)EIndex.Tegata].Text = dtDetail.Rows[0]["BillDate"].ToString();
                 detailControls[(int)EIndex.StaffCD].Text = dtDetail.Rows[0]["StaffCD"].ToString();
@@ -1842,6 +1842,12 @@ namespace NyuukinNyuuryoku_Detail
                     break;
 
                 case (int)EIndex.CustomerCD:
+                    //入金顧客へ入力があったとき、自動で入金顧客のチェックボックスをONに
+                    if (!string.IsNullOrWhiteSpace( keyControls[index].Text))
+                    {
+                        ckM_RadioButton2.Checked = true;
+                    }
+
                     //対象：入金顧客の場合、入力必須(Entry required)
                     if (ckM_RadioButton2.Checked)
                     {
@@ -1902,6 +1908,9 @@ namespace NyuukinNyuuryoku_Detail
                 if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
                     return false;
             }
+
+            if (!detailControls[index].Enabled)
+                return true;
 
             switch (index)
             {
@@ -2193,6 +2202,9 @@ namespace NyuukinNyuuryoku_Detail
                             return false;
                         }
                     }
+                    if (bbl.Z_Set(mGrid.g_DArray[row].ConfirmAmount)>0)
+                        mGrid.g_DArray[row].Chk = true;
+
                     //今回入金額＞未入金額(明細の請求額－入金済額)の場合、Error
                     //if (bbl.Z_Set(mGrid.g_DArray[row].ConfirmAmount) > bbl.Z_Set(mGrid.g_DArray[row].BillingGaku)- bbl.Z_Set(mGrid.g_DArray[row].CollectAmount)) //今回入金額＞未入金額の場合、Error
                     //今回入金額＞未入金額の場合、Error
@@ -3460,8 +3472,8 @@ namespace NyuukinNyuuryoku_Detail
         }
         private void SetEnabledForMode()
         {
-            //通常起動
-            if (mKidouMode.Equals(0) && OperationMode == EOperationMode.INSERT)
+            //通常起動または新規入金時
+            if ((mKidouMode.Equals(0) || mKidouMode.Equals(1) ) && OperationMode == EOperationMode.INSERT)
                 return;
 
             if (mKidouMode.Equals(0) && mConfirmExistsFlg == false)
