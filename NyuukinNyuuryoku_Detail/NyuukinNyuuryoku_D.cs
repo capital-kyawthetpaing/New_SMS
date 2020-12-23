@@ -1909,6 +1909,9 @@ namespace NyuukinNyuuryoku_Detail
                     return false;
             }
 
+            if (!detailControls[index].Enabled)
+                return true;
+
             switch (index)
             {
                 case (int)EIndex.CollectDate:
