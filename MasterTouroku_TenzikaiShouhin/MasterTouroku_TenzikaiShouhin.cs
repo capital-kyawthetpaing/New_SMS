@@ -2869,34 +2869,63 @@ namespace MasterTouroku_TenzikaiShouhin
                     {
 
                         int row = i + 1;
-                        string BrndCD = dt.Rows[i]["ブランドCD"].ToString();
-                        var dtB = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 11, dt.Rows[i]["ブランドCD"].ToString(), null);
-                        if (dtB.Rows.Count == 0)
+                        
+                        if (!String.IsNullOrEmpty(dt.Rows[i]["ブランドCD"].ToString()))
                         {
-                            bl.ShowMessage("E269", row.ToString(), "ブランドCD未登録エラー");
+                            if(dtBrand.Rows.Count >0)
+                            {
+                                String brandcd = " BrandCD = '" + dt.Rows[i]["ブランドCD"].ToString() + "'";
+                                //var dtB = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 11, dt.Rows[i]["ブランドCD"].ToString(), null);
+                                var dtB = dtBrand.Select(brandcd);
+                                if (dtB.Count() == 0)
+                                {
+                                    bl.ShowMessage("E269", row.ToString(), "ブランドCD未登録エラー");
 
-                            return false;
+                                    return false;
+                                }
+                            }
+                           
                         }
-                        var dtseg = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 13, dt.Rows[i]["セグメントCD"].ToString(), "226");
+                        if (!String.IsNullOrEmpty(dt.Rows[i]["セグメントCD"].ToString()))
+                        {
+                            if(dtSegment.Rows.Count >0)
+                            {
+                                string segment = " [Key] = '" + dt.Rows[i]["セグメントCD"].ToString() + "'";
+                                //var dtseg = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 13, dt.Rows[i]["セグメントCD"].ToString(), "226");
+                                var dtseg = dtSegment.Select(segment);
+                                if (dtseg.Count() == 0)
+                                {
+                                    bl.ShowMessage("E269", row.ToString(), "セグメントCD未登録エラー");
+                                    return false;
+                                }
+                            }
+                        }
 
-                        if (dtseg.Rows.Count == 0)
+                        if (!String.IsNullOrEmpty(dt.Rows[i]["単位CD"].ToString()))
                         {
-                            bl.ShowMessage("E269", row.ToString(), "セグメントCD未登録エラー");
-                            return false;
+                            if(dtTani.Rows.Count > 0)
+                            {
+                                string tanicd = " [Key] = '" + dt.Rows[i]["単位CD"].ToString() + "'";
+                                var dtT = dtTani.Select(tanicd);
+                                if (dtT.Count() == 0)
+                                {
+                                    bl.ShowMessage("E269", row.ToString(), "単位CD未登録エラー");
+                                    return false;
+                                }
+                            }
+                            // var dtT = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 12, dt.Rows[i]["単位CD"].ToString(), "201");
+                            
                         }
-                        var dtT = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 12, dt.Rows[i]["単位CD"].ToString(), "201");
-                        if (dtT.Rows.Count == 0)
-                        {
-                            bl.ShowMessage("E269", row.ToString(), "単位CD未登録エラー");
-                            return false;
-                        }
-                        if (Convert.ToInt64(dt.Rows[i]["販売予定日(月)"]) >= 13 || Convert.ToInt64(dt.Rows[i]["販売予定日(月)"]) <= 0)
-                        {
-                            bbl.ShowMessage("E269", row.ToString(), "１から１２までの値を入力してください");
-                            return false;
-                        }
+                            
+                        if (!String.IsNullOrEmpty(dt.Rows[i]["販売予定日(月)"].ToString()))
+                            if (Convert.ToInt64(dt.Rows[i]["販売予定日(月)"]) >= 13 || Convert.ToInt64(dt.Rows[i]["販売予定日(月)"]) <= 0)
+                            {
+                                bbl.ShowMessage("E269", row.ToString(), "１から１２までの値を入力してください");
+                                return false;
+                            }
 
                         string dae = dt.Rows[i]["販売予定日"].ToString();
+                        if (!String.IsNullOrEmpty(dt.Rows[i]["販売予定日"].ToString()))
                         if (!(dt.Rows[i]["販売予定日"].ToString() == "上旬" || dt.Rows[i]["販売予定日"].ToString() == "中旬" || dt.Rows[i]["販売予定日"].ToString() == "下旬"))
                         {
 
@@ -2904,49 +2933,87 @@ namespace MasterTouroku_TenzikaiShouhin
                             return false;
                         }
                         string taxrate = dt.Rows[i]["税率区分"].ToString();
+                        if(!String.IsNullOrEmpty(dt.Rows[i]["税率区分"].ToString()))
                         if (!(dt.Rows[i]["税率区分"].ToString() == "0" || dt.Rows[i]["税率区分"].ToString() == "1" || dt.Rows[i]["税率区分"].ToString() == "2"))
                         {
                             bl.ShowMessage("E269", row.ToString(), "税率区分の指定外の情報");
-                            //bbl.ShowMessage("E101");
-                            return false;
-                        }
-                        var jandupli = dt.AsEnumerable()
-                             .Select(dr => dr.Field<string>("JANCD"))
-                             .GroupBy(x => x)
-                             .Where(g => g.Count() > 1)
-                             .Select(g => g.Key)
-                             .ToList();
-                        if (jandupli.Count() != 0)
-                        {  
-                            bbl.ShowMessage("E269", row.ToString(), "重複したJANCD");
                             return false;
                         }
 
-                        var skudupli = dt.AsEnumerable()
-                                        .GroupBy(x => x["SKUCD"])
-                                        .Where(g => g.Count() > 1)
-                                        .Select(g => g.First())
-                                        .ToList();
-                        if (skudupli.Count() != 0)
+                        if (!String.IsNullOrEmpty(dt.Rows[i]["JANCD"].ToString()))
                         {
-                            //bl.ShowMessage("E105");
-                            bbl.ShowMessage("E269", row.ToString(), "重複したSKUCD");
-                            return false;
-                        }
-                        if (dtrest.Rows.Count > 0)
-                        {
-                            for (w_Row = 0; w_Row < dtrest.Rows.Count; w_Row++)
+                            string jan = " JanCD = '" + dt.Rows[i]["JANCD"].ToString() + "'";
+                            var jandupli = dt.Select(jan);
+                            //var jandupli = dt.AsEnumerable()
+                            //     .Select(dr => dr.Field<string>("JANCD"))
+                            //     .GroupBy(x => x)
+                            //     .Where(g => g.Count() > 1)
+                            //     .Select(g => g.Key)
+                            //     .ToList();
+                            if (jandupli.Count() > 1)
                             {
-                                int gr = w_Row + 1;
-;                                if (mGrid.g_DArray[w_Row].JANCD == dt.Rows[i]["JANCD"].ToString())
+                                bbl.ShowMessage("E269", row.ToString(), "重複したJANCD");
+                                return false;
+                            }
+                        }
+
+                        if(!String.IsNullOrEmpty(dt.Rows[i]["SKUCD"].ToString()))
+                        {
+                            //var skudupli = dt.AsEnumerable()
+                            //            .GroupBy(x => x["SKUCD"])
+                            //            .Where(g => g.Count() > 1)
+                            //            .Select(g => g.First())
+                            //            .ToList();
+                            string sku= " SKUCD = '" + dt.Rows[i]["SKUCD"].ToString() + "'";
+                            var skudupli = dt.Select(sku);
+                            if (skudupli.Count() > 1)
+                            {
+                                bbl.ShowMessage("E269", row.ToString(), "重複したSKUCD");
+                                return false;
+                            }
+                        }
+
+
+                        if (!String.IsNullOrEmpty(dt.Rows[i]["JANCD"].ToString()))
+                            if (dtrest.Rows.Count > 0)
+                            {
+                                string jancd = " JanCD = '" + dt.Rows[i]["JANCD"].ToString() + "'";
+                                var dtdJan = dtrest.Select(jancd);
+                                if(dtdJan.Count() > 0)
                                 {
-                                    bbl.ShowMessage("E269",gr.ToString() , "明細部と重複したJANCD");
-                                    return false;
+                                    bbl.ShowMessage("E269", row.ToString(), "明細部と重複したJANCD");
+                                            return false;
                                 }
-                                if (mGrid.g_DArray[w_Row].SKUCD == dt.Rows[i]["SKUCD"].ToString())
+                                //for (w_Row = 0; w_Row < dtrest.Rows.Count; w_Row++)
+                                //{
+                                //    int gr = w_Row + 1;
+                                //    if(!String.IsNullOrEmpty(dt.Rows[i]["JANCD"].ToString()))
+                                //    if (mGrid.g_DArray[w_Row].JANCD == dt.Rows[i]["JANCD"].ToString())
+                                //    {
+                                //        bbl.ShowMessage("E269",gr.ToString() , "明細部と重複したJANCD");
+                                //        return false;
+                                //    }
+
+                                //    if(!String.IsNullOrEmpty(dt.Rows[i]["SKUCD"].ToString()))
+                                //    if (mGrid.g_DArray[w_Row].SKUCD == dt.Rows[i]["SKUCD"].ToString())
+                                //    {
+                                //        //bl.ShowMessage("E105");
+                                //        bbl.ShowMessage("E269", gr.ToString(), "明細部と重複したSKUCD");
+                                //        return false;
+                                //    }
+                                //}
+                            }
+
+
+                        if (!String.IsNullOrEmpty(dt.Rows[i]["SKUCD"].ToString()))
+                        {
+                            if(dtrest.Rows.Count >0)
+                            {
+                                string skucd = " SKUCD = '" + dt.Rows[i]["SKUCD"].ToString() + "'";
+                                var dtdJan = dtrest.Select(skucd);
+                                if (dtdJan.Count() > 0)
                                 {
-                                    //bl.ShowMessage("E105");
-                                    bbl.ShowMessage("E269", gr.ToString(), "明細部と重複したSKUCD");
+                                    bbl.ShowMessage("E269", row.ToString(), "明細部と重複したSKUCD");
                                     return false;
                                 }
                             }
@@ -2955,7 +3022,8 @@ namespace MasterTouroku_TenzikaiShouhin
                 }
                 return true;
             }
-            catch {
+            catch(Exception ex) {
+                MessageBox.Show(ex.Message);
                 return false;
             }
         }
