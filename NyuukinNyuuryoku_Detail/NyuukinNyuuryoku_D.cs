@@ -1842,6 +1842,12 @@ namespace NyuukinNyuuryoku_Detail
                     break;
 
                 case (int)EIndex.CustomerCD:
+                    //入金顧客へ入力があったとき、自動で入金顧客のチェックボックスをONに
+                    if (!string.IsNullOrWhiteSpace( keyControls[index].Text))
+                    {
+                        ckM_RadioButton2.Checked = true;
+                    }
+
                     //対象：入金顧客の場合、入力必須(Entry required)
                     if (ckM_RadioButton2.Checked)
                     {
