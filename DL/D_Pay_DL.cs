@@ -225,11 +225,11 @@ namespace DL
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>()
             {
                 {"@MotoKouzaCD", new ValuePair {value1 = SqlDbType.VarChar,value2 = dfbe.MotoKouzaCD} },
-                {"@PayDate", new ValuePair {value1 = SqlDbType.Date,value2 = dfbe.PayDate} },
+                {"@PayDate", new ValuePair {value1 = SqlDbType.VarChar,value2 = dfbe.PayDate} },
                 {"@Flg", new ValuePair {value1 = SqlDbType.TinyInt,value2 = dpe.Flg} },
-                { "@ActualPayDate", new ValuePair { value1 = SqlDbType.Date, value2 = dfbe.ActualPayDate } },
+                {"@ActualDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfbe.ActualPayDate } }
             };
-            return SelectData(dic, "D_Pay_SelectForText");
+            return SelectData(dic,"D_Pay_SelectForText");
         }
     }
 }
