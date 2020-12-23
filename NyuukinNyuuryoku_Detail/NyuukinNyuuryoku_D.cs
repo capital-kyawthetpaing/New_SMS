@@ -3460,8 +3460,8 @@ namespace NyuukinNyuuryoku_Detail
         }
         private void SetEnabledForMode()
         {
-            //通常起動
-            if (mKidouMode.Equals(0) && OperationMode == EOperationMode.INSERT)
+            //通常起動または新規入金時
+            if ((mKidouMode.Equals(0) || mKidouMode.Equals(1) ) && OperationMode == EOperationMode.INSERT)
                 return;
 
             if (mKidouMode.Equals(0) && mConfirmExistsFlg == false)
