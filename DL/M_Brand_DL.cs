@@ -12,7 +12,7 @@ namespace DL
     {
         public DataTable M_Brand_Select(M_Brand_Entity mme)
         {
-            string sp = "M_Brand_DL";
+            string sp = "M_Brand_Select";
 
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
