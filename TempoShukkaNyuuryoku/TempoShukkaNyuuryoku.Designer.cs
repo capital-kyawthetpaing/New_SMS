@@ -133,7 +133,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblJuchuuUnitPrice = new CKM_Controls.CKMShop_Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.lblSalesJaku = new CKM_Controls.CKMShop_Label();
+            this.lblSalesGaku = new CKM_Controls.CKMShop_Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.lblSalesTax = new CKM_Controls.CKMShop_Label();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -1817,7 +1817,7 @@
             // panel9
             // 
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel9.Controls.Add(this.lblSalesJaku);
+            this.panel9.Controls.Add(this.lblSalesGaku);
             this.panel9.Location = new System.Drawing.Point(691, 409);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(240, 42);
@@ -1825,20 +1825,20 @@
             // 
             // lblSalesJaku
             // 
-            this.lblSalesJaku.AutoSize = true;
-            this.lblSalesJaku.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblSalesJaku.BackColor = System.Drawing.Color.Transparent;
-            this.lblSalesJaku.Font = new System.Drawing.Font("MS Gothic", 26F);
-            this.lblSalesJaku.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium0;
-            this.lblSalesJaku.FontBold = false;
-            this.lblSalesJaku.ForeColor = System.Drawing.Color.Black;
-            this.lblSalesJaku.Location = new System.Drawing.Point(32, 2);
-            this.lblSalesJaku.Name = "lblSalesJaku";
-            this.lblSalesJaku.Size = new System.Drawing.Size(213, 35);
-            this.lblSalesJaku.TabIndex = 58;
-            this.lblSalesJaku.Text = "\\99,999,999";
-            this.lblSalesJaku.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblSalesJaku.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblSalesGaku.AutoSize = true;
+            this.lblSalesGaku.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblSalesGaku.BackColor = System.Drawing.Color.Transparent;
+            this.lblSalesGaku.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.lblSalesGaku.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium0;
+            this.lblSalesGaku.FontBold = false;
+            this.lblSalesGaku.ForeColor = System.Drawing.Color.Black;
+            this.lblSalesGaku.Location = new System.Drawing.Point(32, 2);
+            this.lblSalesGaku.Name = "lblSalesJaku";
+            this.lblSalesGaku.Size = new System.Drawing.Size(213, 35);
+            this.lblSalesGaku.TabIndex = 58;
+            this.lblSalesGaku.Text = "\\99,999,999";
+            this.lblSalesGaku.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblSalesGaku.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel10
             // 
@@ -2209,7 +2209,7 @@
         private System.Windows.Forms.Panel panel3;
         private CKM_Controls.CKMShop_Label lblJuchuuUnitPrice;
         private System.Windows.Forms.Panel panel9;
-        private CKM_Controls.CKMShop_Label lblSalesJaku;
+        private CKM_Controls.CKMShop_Label lblSalesGaku;
         private System.Windows.Forms.Panel panel10;
         private CKM_Controls.CKMShop_Label lblSalesTax;
         private System.Windows.Forms.Panel panel11;
