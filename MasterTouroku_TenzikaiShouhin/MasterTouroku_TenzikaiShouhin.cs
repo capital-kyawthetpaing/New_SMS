@@ -339,14 +339,14 @@ namespace MasterTouroku_TenzikaiShouhin
                 case EOperationMode.UPDATE:
                      BT_SKUCheck.Enabled = true;
                     BT_meisai.Enabled = true;
-                    detailControls[(int)Eindex.SCTenzikai].Focus();
-                    SC_Tenzikai.TxtCode.Focus();
+                   // SC_Tenzikai.TxtCode.Focus();
                     detailControls[(int)Eindex.StartDate].Enabled = true;
                     SC_Tenzikai.BtnSearch.Enabled = true;
                     DisablePanel(panel4);
                     DisablePanel(panel6);
                     EnablePanel(panel11);
                     EnablePanel(panel12);
+                    detailControls[(int)Eindex.SCTenzikai].Focus();
 
                     break;
 
@@ -1860,8 +1860,8 @@ namespace MasterTouroku_TenzikaiShouhin
                             var result = dtJanCD.Select(jancd1);
                             if (result.Count() == 0)
                             {
-                                if( !(mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.JANCD, row].Cell_Color == GridBase.ClsGridBase.CheckColor))
-                                EnableCell_JanPro(col, row);
+                                if (!(mGrid.g_MK_State[(int)ClsGridMasterTanzi.ColNO.JANCD, row].Cell_Color == GridBase.ClsGridBase.CheckColor))
+                                    EnableCell_JanPro(col, row);
                             }
                         }
 
@@ -1965,89 +1965,101 @@ namespace MasterTouroku_TenzikaiShouhin
                             return false;
                         }
                         break;
-                    case (int)ClsGridMasterTanzi.ColNO.ColorCD:
-                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].ColorCD))
-                        {
-                            // Ｅ１０２
-                            bbl.ShowMessage("E102");
-                            return false;
-                        }
-                        break;
+                    //case (int)ClsGridMasterTanzi.ColNO.ColorCD:
+                    //if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].ColorCD))
+                    //{
+                    //    // Ｅ１０２
+                    //    bbl.ShowMessage("E102");
+                    //    return false;
+                    //}
+                    //  break;
                     case (int)ClsGridMasterTanzi.ColNO.ColorName:
-                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].ColorName))
+                        //if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].ColorName))
+                        //{
+                        //    //Ｅ１０２
+                        //    bbl.ShowMessage("E102");
+                        //    return false;
+                        //}
+                        if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[row].ColorName))
                         {
-                            //Ｅ１０２
-                            bbl.ShowMessage("E102");
-                            return false;
-                        }
-                        string strC = Encoding.GetEncoding(932).GetByteCount(mGrid.g_DArray[row].ColorName).ToString();
-                        
-                        if (Convert.ToInt32(strC) > ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, 0].CellCtl).MaxLength)
-                        {
-                            MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            //EnableCell(row, col);
-                            mGrid.g_MK_State[col, row].Cell_Enabled = true;
-                            mGrid.g_MK_State[col, row].Cell_ReadOnly = false;
-                            return false;
+                            string strC = Encoding.GetEncoding(932).GetByteCount(mGrid.g_DArray[row].ColorName).ToString();
+
+                            if (Convert.ToInt32(strC) > ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, 0].CellCtl).MaxLength)
+                            {
+                                MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                //EnableCell(row, col);
+                                mGrid.g_MK_State[col, row].Cell_Enabled = true;
+                                mGrid.g_MK_State[col, row].Cell_ReadOnly = false;
+                                return false;
+                            }
                         }
                         break;
-                    case (int)ClsGridMasterTanzi.ColNO.SizeCD:
-                        // if (mGrid.g_MK_State[col, row].Cell_Enabled)
-                        // {
-                        //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
-                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].SizeCD))
-                        {
-                            //Ｅ１０２
-                            bbl.ShowMessage("E102");
-                            return false;
-                        }
-                        // }
-                        break;
+                    //case (int)ClsGridMasterTanzi.ColNO.SizeCD:
+                    //    // if (mGrid.g_MK_State[col, row].Cell_Enabled)
+                    //    // {
+                    //    //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+                    //    if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].SizeCD))
+                    //    {
+                    //        //Ｅ１０２
+                    //        bbl.ShowMessage("E102");
+                    //        return false;
+                    //    }
+                    //    // }
+                    //    break;
                     case (int)ClsGridMasterTanzi.ColNO.SizeName:
-                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].SizeName))
+                        //if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].SizeName))
+                        //{
+                        //    bbl.ShowMessage("E102");
+                        //    return false;
+                        //}
+
+                        if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[row].SizeName))
                         {
-                            bbl.ShowMessage("E102");
-                            return false;
-                        }
-                        string strSN = Encoding.GetEncoding(932).GetByteCount(mGrid.g_DArray[row].SizeName).ToString();
-                        if (Convert.ToInt32(strSN) > ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, 0].CellCtl).MaxLength)
-                        {
-                            MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            //EnableCell(row, col);
-                            mGrid.g_MK_State[col, row].Cell_Enabled = true;
-                            mGrid.g_MK_State[col, row].Cell_ReadOnly = false;
-                            return false;
+                            string strSN = Encoding.GetEncoding(932).GetByteCount(mGrid.g_DArray[row].SizeName).ToString();
+                            if (Convert.ToInt32(strSN) > ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, 0].CellCtl).MaxLength)
+                            {
+                                MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                //EnableCell(row, col);
+                                mGrid.g_MK_State[col, row].Cell_Enabled = true;
+                                mGrid.g_MK_State[col, row].Cell_ReadOnly = false;
+                                return false;
+                            }
                         }
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.HanbaiYoteiDateMonth:
-                        if (mGrid.g_MK_State[col, row].Cell_Enabled)
-                        {
-                            //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
-                            if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].HanbaiYoteiDateMonth))
-                            {
-                                bbl.ShowMessage("E102");
-                                return false;
-                            }
+
+                        //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+                        //if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].HanbaiYoteiDateMonth))
+                        //{
+                        //    bbl.ShowMessage("E102");
+                        //    return false;
+                        //}
+                        //
+                        //    if (Convert.ToInt64(mGrid.g_DArray[row].HanbaiYoteiDateMonth) >= 13 || Convert.ToInt64(mGrid.g_DArray[row].HanbaiYoteiDateMonth) <= 0)
+                        //    {
+                        //        bbl.ShowMessage("E117", "1", "12");
+                        //        return false;
+                        //    }
+                        //mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                        if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[row].HanbaiYoteiDateMonth))
                             if (Convert.ToInt64(mGrid.g_DArray[row].HanbaiYoteiDateMonth) >= 13 || Convert.ToInt64(mGrid.g_DArray[row].HanbaiYoteiDateMonth) <= 0)
                             {
                                 bbl.ShowMessage("E117", "1", "12");
                                 return false;
                             }
-                            //mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                        }
                         break;
-                    case (int)ClsGridMasterTanzi.ColNO.HanbaiYoteiBi:
-                        if (mGrid.g_MK_State[col, row].Cell_Enabled)
-                        {
-                            //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
-                            if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].HanbaiYoteiBi))
-                            {
-                                bbl.ShowMessage("E102");
-                                return false;
-                            }
-                            // mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                        }
-                        break;
+                    //case (int)ClsGridMasterTanzi.ColNO.HanbaiYoteiBi:
+                    //    if (mGrid.g_MK_State[col, row].Cell_Enabled)
+                    //    {
+                    //        //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+                    //        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].HanbaiYoteiBi))
+                    //        {
+                    //            bbl.ShowMessage("E102");
+                    //            return false;
+                    //        }
+                    //        // mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    //    }
+                    //    break;
                     case (int)ClsGridMasterTanzi.ColNO.Shiiretanka:
                         if (mGrid.g_MK_State[col, row].Cell_Enabled)
                         {
@@ -2168,7 +2180,6 @@ namespace MasterTouroku_TenzikaiShouhin
                                       return false;
                                 }
                             }
-
                         }
                         break;
                     case (int)ClsGridMasterTanzi.ColNO.SegmentCD:
