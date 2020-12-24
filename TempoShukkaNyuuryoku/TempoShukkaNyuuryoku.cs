@@ -38,7 +38,7 @@ namespace TempoShukkaNyuuryoku
         {
             try
             {
-                InProgramID = "TempoShukkaNyuuryoku";
+                InProgramID = "TempoRegiShukkaNyuuryoku";
                 StartProgram();
 
                 btnClose.Text = "終了";
