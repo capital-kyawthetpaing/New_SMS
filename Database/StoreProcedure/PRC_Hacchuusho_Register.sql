@@ -256,6 +256,13 @@ BEGIN
     WHERE (@p_OrderCD IS NULL OR DLOR.OrderCD = @p_OrderCD)
     AND DLOR.OrderNO = @p_OrderNO
 
+		---PTK Oride
+	UPDATE DODH
+    SET  FirstPrintDate    = @SYSDATE
+        ,LastPrintDate     = @SYSDATE
+    FROM D_Order DODH 
+	WHERE DODH.OrderNO = @p_OrderNO and FirstPrintDate is null
+
     UPDATE DODD
     SET  CancelOrderNO     = @OrderNO
         ,UpdateOperator    = @p_Operator
