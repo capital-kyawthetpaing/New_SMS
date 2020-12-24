@@ -336,10 +336,12 @@ namespace TempoShukkaNyuuryoku
 
         private void DispFromButtonDetailsTable(int stHorizontal = 1)
         {
-            DataRow[] rows = dtBottunDetails.Select(" Vertical >=" + stHorizontal + " AND Vertical <" + stHorizontal + 10);
+            int maxVertical = stHorizontal + 10;
+            //DataRow[] rows = dtBottunDetails.Select(" Vertical >=" + stHorizontal + " AND Vertical <" + stHorizontal + 10);
+            DataRow[] rows = dtBottunDetails.Select(" Horizontal >=" + stHorizontal + " AND Horizontal <" + maxVertical);
 
-            if (rows.Length == 0)
-                return;
+            //if (rows.Length == 0)
+            //    return;
 
             Clear(tableLayoutPanel3);
 
@@ -901,7 +903,7 @@ namespace TempoShukkaNyuuryoku
             try
             {
                 int Horizontal = Convert.ToInt16(btnGrp1.Tag);
-                if (dtBottunGroup.Rows.Count >= Horizontal + 14)
+                //if (dtBottunGroup.Rows.Count >= Horizontal + 14)
                     DispFromButtonGroupTable(Horizontal + 14);
             }
             catch (Exception ex)
