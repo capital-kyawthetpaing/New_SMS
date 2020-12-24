@@ -22,7 +22,7 @@ namespace MailRecieve
             Pop3Client pop3Client;
             pop3Client = new Pop3Client();
 
-            for (int i=0; i<dtMailAddress.Rows.Count; i++)
+            for (int i = 0; i < dtMailAddress.Rows.Count; i++)
             {
                 DataTable dtMessages = new DataTable();
                 dtMessages.Columns.Add("MessageNumber");
@@ -39,7 +39,7 @@ namespace MailRecieve
                 {
                     byte[] str = pop3Client.GetMessageAsBytes(j);
                     string strs = Encoding.GetEncoding(50222).GetString(str).TrimEnd();
-                    if (ReadError(strs))    
+                    if (ReadError(strs))
                     {
                         Message message = pop3Client.GetMessage(j);
                         //byte[] body = message.MessagePart.Body;
@@ -53,7 +53,7 @@ namespace MailRecieve
                         //string filename= attachment[0].FileName.Trim();
                         //message.FileName = attachment[0].FileName.Trim();
                         //message.Attachment = attachment;
-                        if(attachment.Count()>0)
+                        if (attachment.Count() > 0)
                             if (attachment[0] != null)
                             {
                                 byte[] content = attachment[0].Body;
@@ -78,16 +78,16 @@ namespace MailRecieve
                                 //Response.BinaryWrite(content);
                                 //Response.End();
                             }
+                    }
                 }
+
+                //pop3Client.Connect("133.242.249.67", 110, false);
+                // pop3Client.Authenticate("tennicedi@act-gr.co.jp", "@Capital13");
+                //pop3Client.Authenticate("order@capitalk-mm.com", "oeui39@efad");
+
+                //pop3Client.Connect("smtp.gmail.com", 587, false);
+                //pop3Client.Authenticate("skshomepage@gmail.com", "homepage");
             }
-           
-            //pop3Client.Connect("133.242.249.67", 110, false);
-            // pop3Client.Authenticate("tennicedi@act-gr.co.jp", "@Capital13");
-            //pop3Client.Authenticate("order@capitalk-mm.com", "oeui39@efad");
-
-            //pop3Client.Connect("smtp.gmail.com", 587, false);
-            //pop3Client.Authenticate("skshomepage@gmail.com", "homepage");
-
 
         }
 
