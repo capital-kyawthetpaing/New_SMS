@@ -881,9 +881,9 @@
             this.ckmShop_Label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label15.Location = new System.Drawing.Point(1221, 171);
             this.ckmShop_Label15.Name = "ckmShop_Label15";
-            this.ckmShop_Label15.Size = new System.Drawing.Size(75, 30);
+            this.ckmShop_Label15.Size = new System.Drawing.Size(106, 30);
             this.ckmShop_Label15.TabIndex = 47;
-            this.ckmShop_Label15.Text = "商品";
+            this.ckmShop_Label15.Text = "商　品";
             this.ckmShop_Label15.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -1783,14 +1783,13 @@
             // 
             // lblJuchuuUnitPrice
             // 
-            this.lblJuchuuUnitPrice.AutoSize = true;
             this.lblJuchuuUnitPrice.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblJuchuuUnitPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuUnitPrice.Font = new System.Drawing.Font("MS Gothic", 26F);
             this.lblJuchuuUnitPrice.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium0;
             this.lblJuchuuUnitPrice.FontBold = false;
             this.lblJuchuuUnitPrice.ForeColor = System.Drawing.Color.Black;
-            this.lblJuchuuUnitPrice.Location = new System.Drawing.Point(32, 2);
+            this.lblJuchuuUnitPrice.Location = new System.Drawing.Point(34, 2);
             this.lblJuchuuUnitPrice.Name = "lblJuchuuUnitPrice";
             this.lblJuchuuUnitPrice.Size = new System.Drawing.Size(213, 35);
             this.lblJuchuuUnitPrice.TabIndex = 57;
@@ -1807,17 +1806,16 @@
             this.panel9.Size = new System.Drawing.Size(240, 42);
             this.panel9.TabIndex = 81;
             // 
-            // lblSalesJaku
+            // lblSalesGaku
             // 
-            this.lblSalesGaku.AutoSize = true;
             this.lblSalesGaku.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblSalesGaku.BackColor = System.Drawing.Color.Transparent;
             this.lblSalesGaku.Font = new System.Drawing.Font("MS Gothic", 26F);
             this.lblSalesGaku.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium0;
             this.lblSalesGaku.FontBold = false;
             this.lblSalesGaku.ForeColor = System.Drawing.Color.Black;
-            this.lblSalesGaku.Location = new System.Drawing.Point(32, 2);
-            this.lblSalesGaku.Name = "lblSalesJaku";
+            this.lblSalesGaku.Location = new System.Drawing.Point(34, 2);
+            this.lblSalesGaku.Name = "lblSalesGaku";
             this.lblSalesGaku.Size = new System.Drawing.Size(213, 35);
             this.lblSalesGaku.TabIndex = 58;
             this.lblSalesGaku.Text = "\\99,999,999";
@@ -1835,7 +1833,6 @@
             // 
             // lblSalesTax
             // 
-            this.lblSalesTax.AutoSize = true;
             this.lblSalesTax.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblSalesTax.BackColor = System.Drawing.Color.Transparent;
             this.lblSalesTax.Font = new System.Drawing.Font("MS Gothic", 26F);
@@ -1861,14 +1858,13 @@
             // 
             // lblJuchuuTaxRitsu
             // 
-            this.lblJuchuuTaxRitsu.AutoSize = true;
             this.lblJuchuuTaxRitsu.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblJuchuuTaxRitsu.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuTaxRitsu.Font = new System.Drawing.Font("MS Gothic", 26F);
             this.lblJuchuuTaxRitsu.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium0;
             this.lblJuchuuTaxRitsu.FontBold = false;
             this.lblJuchuuTaxRitsu.ForeColor = System.Drawing.Color.Black;
-            this.lblJuchuuTaxRitsu.Location = new System.Drawing.Point(16, 2);
+            this.lblJuchuuTaxRitsu.Location = new System.Drawing.Point(17, 2);
             this.lblJuchuuTaxRitsu.Name = "lblJuchuuTaxRitsu";
             this.lblJuchuuTaxRitsu.Size = new System.Drawing.Size(69, 35);
             this.lblJuchuuTaxRitsu.TabIndex = 59;
@@ -1904,16 +1900,15 @@
             // 
             // lblJuchuuSuu
             // 
-            this.lblJuchuuSuu.AutoSize = true;
             this.lblJuchuuSuu.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblJuchuuSuu.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuSuu.Font = new System.Drawing.Font("MS Gothic", 26F);
             this.lblJuchuuSuu.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium0;
             this.lblJuchuuSuu.FontBold = false;
             this.lblJuchuuSuu.ForeColor = System.Drawing.Color.Black;
-            this.lblJuchuuSuu.Location = new System.Drawing.Point(142, 3);
+            this.lblJuchuuSuu.Location = new System.Drawing.Point(136, 3);
             this.lblJuchuuSuu.Name = "lblJuchuuSuu";
-            this.lblJuchuuSuu.Size = new System.Drawing.Size(105, 35);
+            this.lblJuchuuSuu.Size = new System.Drawing.Size(110, 35);
             this.lblJuchuuSuu.TabIndex = 54;
             this.lblJuchuuSuu.Text = "9,999";
             this.lblJuchuuSuu.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -1930,7 +1925,6 @@
             // 
             // lblSyukkaKanouSu
             // 
-            this.lblSyukkaKanouSu.AutoSize = true;
             this.lblSyukkaKanouSu.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblSyukkaKanouSu.BackColor = System.Drawing.Color.Transparent;
             this.lblSyukkaKanouSu.Font = new System.Drawing.Font("MS Gothic", 26F);
@@ -1987,6 +1981,7 @@
             this.lblSumSalesTax.Font = new System.Drawing.Font("MS Gothic", 37F, System.Drawing.FontStyle.Bold);
             this.lblSumSalesTax.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XXLarge;
             this.lblSumSalesTax.FontBold = true;
+            this.lblSumSalesTax.ForeColor = System.Drawing.Color.Black;
             this.lblSumSalesTax.Location = new System.Drawing.Point(1544, 716);
             this.lblSumSalesTax.Name = "lblSumSalesTax";
             this.lblSumSalesTax.Size = new System.Drawing.Size(350, 58);
@@ -2104,17 +2099,11 @@
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
             this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
             this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
