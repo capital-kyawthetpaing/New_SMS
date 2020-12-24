@@ -20,18 +20,18 @@ namespace DL
                 { "@MotoKouzaCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfe.MotoKouzaCD } },
                 { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfe.StoreCD } },
 
-                { "@PayeeCD", new ValuePair { value1 = SqlDbType.Date, value2 = dfde.PayeeCD } },
-                { "@PayeeName", new ValuePair { value1 = SqlDbType.Date, value2 = dfde.PayeeName } },
+                { "@PayeeCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfde.PayeeCD } },
+                { "@PayeeName", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfde.PayeeName } },
                 { "@BankCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfde.BankCD } },
                 { "@BranchCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfde.BranchCD } },
-                { "@KouzaKBN", new ValuePair { value1 = SqlDbType.Date, value2 = dfde.KouzaKBN } },
-                { "@KouzaNO", new ValuePair { value1 = SqlDbType.Date, value2 = dfde.KouzaNO } },
+                { "@KouzaKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dfde.KouzaKBN } },
+                { "@KouzaNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfde.KouzaNO } },
                 { "@KouzaMeigi", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfde.KouzaMeigi } },
-                { "@PayGaku", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfde.PayGaku } },
-                { "@TransferGaku", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfde.TransferGaku } },
-                { "@TransferFee", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfde.TransferFee } },
-                { "@TransferFeeKBN", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfde.TransferFeeKBN } },
-                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfde.Operator } },
+                { "@PayGaku", new ValuePair { value1 = SqlDbType.Money, value2 = dfde.PayGaku } },
+                { "@TransferGaku", new ValuePair { value1 = SqlDbType.Money, value2 = dfde.TransferGaku } },
+                { "@TransferFee", new ValuePair { value1 = SqlDbType.Money, value2 = dfde.TransferFee } },
+                { "@TransferFeeKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dfde.TransferFeeKBN } },
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfe.StoreCD } },
 
                 {"@Flg", new ValuePair {value1 = SqlDbType.TinyInt,value2 = dpe.Flg} }
             };
