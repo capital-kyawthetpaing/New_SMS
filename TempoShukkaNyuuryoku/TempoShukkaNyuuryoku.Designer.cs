@@ -913,7 +913,7 @@
             this.lblSyohinChuijiko.Size = new System.Drawing.Size(1000, 70);
             this.lblSyohinChuijiko.TabIndex = 51;
             this.lblSyohinChuijiko.Text = "商品注意事項・プレゼント有無等ＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸ";
-            this.lblSyohinChuijiko.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblSyohinChuijiko.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnSeikyu
             // 
