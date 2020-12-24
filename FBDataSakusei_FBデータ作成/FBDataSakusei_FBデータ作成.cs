@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Base.Client;
 using BL;
 using Entity;
+using System.IO;
+
 
 namespace FBDataSakusei_FBデータ作成
 {
@@ -21,6 +23,7 @@ namespace FBDataSakusei_FBデータ作成
         D_FBControl_Entity dfbe = new D_FBControl_Entity();
         D_FBData_Entity dfde = new D_FBData_Entity();
         DataTable dtgv = new DataTable();
+        public static string dirParameter = AppDomain.CurrentDomain.BaseDirectory + @"\file.txt";
 
         public FrmFBDataSakusei_FBデータ作成()
         {
@@ -186,17 +189,71 @@ namespace FBDataSakusei_FBデータ作成
                             dttext = fbbl.D_Pay_SelectForText(dfbe, dpe);
                             if(dttext.Rows.Count > 0)
                             {
-                                
+                                string Folderpath = "C:\\Test\\";
+                                if (!string.IsNullOrWhiteSpace(Folderpath))
+                                {
+                                    if (!Directory.Exists(Folderpath))
+                                    {
+                                        Directory.CreateDirectory(Folderpath);
+                                    }
+
+                                    SaveFileDialog savedialog = new SaveFileDialog();
+                                    savedialog.Filter = "Test|*.txt";
+
+                                    savedialog.Title = "Save";
+                                    string cmdLine = "TestFile" + " " + DateTime.Now.ToString(" yyyyMMdd_HHmmss ") ;
+                                    savedialog.FileName = cmdLine;
+                                    savedialog.InitialDirectory = Folderpath;
+                                    savedialog.RestoreDirectory = true;
+                                    if (savedialog.ShowDialog() == DialogResult.OK)
+                                    {
+                                        if (Path.GetExtension(savedialog.FileName).Contains("txt"))
+                                        {
+                                            var result = new StringBuilder();
+                                            foreach (DataRow row in dttext.Rows)
+                                            {
+                                                for (int i = 0; i < dttext.Columns.Count; i++)
+                                                {                                          
+                                                    result.Append(row[i].ToString());
+                                                  
+                                                    //result.Append(i == dttext.Columns.Count - 1 );
+                                                }
+                                                result.AppendLine();
+                                                result.Replace("/", "");
+                                            }
+
+                                            //using (StreamWriter writer = new StreamWriter(Folderpath + "TestFile" + ".csv", false, utf8WithoutBom))
+                                            //{
+                                            //    objWriter.WriteLine(result.ToString());
+                                            //    objWriter.Close();
+                                            //}
+                                            StreamWriter objWriter = new StreamWriter(Folderpath + cmdLine + ".txt", false);
+                                            objWriter.WriteLine(result.ToString());
+                                            objWriter.Close();
+                                        }
+                                    }
+
+                                }
+
+                                   
+
+                                // Save File to .txt  
+                                //FileStream fParameter = new FileStream(dirParameter, FileMode.Create, FileAccess.Write);
+                                //StreamWriter m_WriterParameter = new StreamWriter(fParameter);
+                                //m_WriterParameter.BaseStream.Seek(0, SeekOrigin.End);
+                                //m_WriterParameter.Write(dttext);
+                                //m_WriterParameter.Flush();
+                                //m_WriterParameter.Close();
                             }
                                 
 
 
-                            if (fbbl.FBDataSakusei_Insert(dfbe, dfde, dpe))
-                            {
-                                Clear(panel1);
-                                BindCombo();
-                                cboProcess.Focus();
-                            }
+                            //if (fbbl.FBDataSakusei_Insert(dfbe, dfde, dpe))
+                            //{
+                            //    Clear(panel1);
+                            //    BindCombo();
+                            //    cboProcess.Focus();
+                            //}
 
 
                         }

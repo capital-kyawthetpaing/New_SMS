@@ -55,11 +55,8 @@ namespace TanabanNyuuryoku
             BindCombo();
             chkNotRegister.Checked = true;
             ScStorage.Value1 = cboWarehouse.SelectedValue.ToString();
-
             SetRequireField();
-
             txtArrivalDateFrom.Focus();
-
             dgvTanaban.CheckCol.Add("colRackNo1");
         }
 
@@ -102,6 +99,17 @@ namespace TanabanNyuuryoku
                         Clear();
                         //ScVendor.SetFocus(1);
                     }                  
+                    break;
+                case 9:
+                    Search_Location sl = new Search_Location(DateTime.Now.ToShortDateString(), cboWarehouse.SelectedValue.ToString());
+                    sl.ShowDialog();
+                    if (!string.IsNullOrWhiteSpace(sl.TanaCD))
+                    {
+                        if (dgvTanaban.Rows.Count >= 0)
+                        {
+                            dgvTanaban.CurrentCell.Value = sl.TanaCD;
+                        }
+                    }
                     break;
                 case 11:
                     F11();
@@ -557,10 +565,19 @@ namespace TanabanNyuuryoku
 
         private void dgvTanaban_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-            if (dgvTanaban.Columns[e.ColumnIndex + 1].Name == "colRackNo1")
-            {
-                F9Visible = true;
-            }
+            //int col = dgvTanaban.CurrentCell.ColumnIndex;
+            //if (dgvTanaban.Columns[e.ColumnIndex].Name == "colRackNo1")
+            //{
+            //    //F9Visible = true;
+            //}
+            //else if(dgvTanaban.Columns[e.ColumnIndex + 1 ].Name == "colRackNo1")
+            //{
+            //   // F9Visible = true;
+            //}
+            //else
+            //{
+            //    //F9Visible = false;
+            //}
             //else if (dgvTanaban.Columns[e.ColumnIndex + 1].Name == "colBtn")
             //{
             //    var row = this.dgvTanaban.Rows[e.RowIndex];
@@ -578,10 +595,10 @@ namespace TanabanNyuuryoku
             //    }
             //}
 
-            else if (dgvTanaban.Columns[e.ColumnIndex].Name == "colRackNo1")
-            {
-                F9Visible = true;
-            }
+            //else if (dgvTanaban.Columns[e.ColumnIndex].Name == "colRackNo1")
+            //{
+            //    F9Visible = true;
+            //}
           
                 if (dgvTanaban.lastKey)
                 if (dgvTanaban.Columns[e.ColumnIndex].Name == "colRackNo1")
@@ -632,6 +649,7 @@ namespace TanabanNyuuryoku
 
         private void dgvTanaban_KeyDown(object sender, KeyEventArgs e)
         {
+            int cl = dgvTanaban.CurrentCell.ColumnIndex;
             try
             {
                 //最終行最終列の場合は、F1へ
@@ -645,6 +663,19 @@ namespace TanabanNyuuryoku
             {
                 //エラー時共通処理
                 MessageBox.Show(ex.Message);
+            }
+        }
+        private void dgvTanaban_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = dgvTanaban.CurrentCell.ColumnIndex;
+            String col = dgvTanaban.Columns[e.ColumnIndex].Name;
+            if (dgvTanaban.Columns[e.ColumnIndex].Name == "colRackNo1")
+            {
+                F9Visible = true;
+            }
+            else
+            {
+                F9Visible = false;
             }
         }
     }
