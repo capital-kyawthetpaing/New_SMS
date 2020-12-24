@@ -1036,7 +1036,7 @@ namespace Search
                             lblName.Text = frmVendor.VendorName;
                             if (UseChangeDate == true)
                                 txtChangeDate.Text = frmVendor.ChangeDate;
-
+                            txtChangeDate.Text = frmVendor.ChangeDate;
                             CheckBasedFormPanel();//PTK added
                         }
                     }

@@ -2155,11 +2155,11 @@
             this.ckmShop_Label15.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label15.FontBold = true;
             this.ckmShop_Label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label15.Location = new System.Drawing.Point(546, 137);
+            this.ckmShop_Label15.Location = new System.Drawing.Point(546, 138);
             this.ckmShop_Label15.Name = "ckmShop_Label15";
-            this.ckmShop_Label15.Size = new System.Drawing.Size(75, 30);
+            this.ckmShop_Label15.Size = new System.Drawing.Size(106, 30);
             this.ckmShop_Label15.TabIndex = 47;
-            this.ckmShop_Label15.Text = "商品";
+            this.ckmShop_Label15.Text = "商　品";
             this.ckmShop_Label15.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -2185,6 +2185,7 @@
             this.txtCustomerNo.AllowMinus = false;
             this.txtCustomerNo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtCustomerNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtCustomerNo.BorderColor = false;
             this.txtCustomerNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCustomerNo.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtCustomerNo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
@@ -2208,6 +2209,7 @@
             this.txtCustomerNo.TabIndex = 0;
             this.txtCustomerNo.Text = "XXXXXXXXXXX13";
             this.txtCustomerNo.TextSize = CKM_Controls.CKM_TextBox.FontSize.FMedium;
+            this.txtCustomerNo.UseColorSizMode = false;
             this.txtCustomerNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerNo_KeyDown);
             // 
             // lblLastPoint
@@ -2305,7 +2307,7 @@
             this.lblCusName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusName.FontBold = true;
             this.lblCusName.ForeColor = System.Drawing.Color.Black;
-            this.lblCusName.Location = new System.Drawing.Point(425, 79);
+            this.lblCusName.Location = new System.Drawing.Point(423, 81);
             this.lblCusName.Name = "lblCusName";
             this.lblCusName.Size = new System.Drawing.Size(870, 60);
             this.lblCusName.TabIndex = 77;
@@ -2322,7 +2324,7 @@
             this.btnCustomerSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomerSearch.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.btnCustomerSearch.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Small;
-            this.btnCustomerSearch.Location = new System.Drawing.Point(4, 78);
+            this.btnCustomerSearch.Location = new System.Drawing.Point(4, 79);
             this.btnCustomerSearch.Margin = new System.Windows.Forms.Padding(1);
             this.btnCustomerSearch.Name = "btnCustomerSearch";
             this.btnCustomerSearch.Size = new System.Drawing.Size(200, 41);
@@ -2346,19 +2348,19 @@
             this.Controls.Add(this.lblLastPoint);
             this.Controls.Add(this.txtCustomerNo);
             this.Controls.Add(this.ckmShop_Label16);
-            this.Controls.Add(this.ckmShop_Label15);
             this.Controls.Add(this.pnlDetails);
             this.Controls.Add(this.ckmShop_Label12);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnUp);
+            this.Controls.Add(this.ckmShop_Label15);
             this.Name = "TempoRegiHanbaiRireki";
             this.Text = "TempoRegiHanbaiRireki";
             this.Load += new System.EventHandler(this.TempoRegiHanbaiRireki_Load);
+            this.Controls.SetChildIndex(this.ckmShop_Label15, 0);
             this.Controls.SetChildIndex(this.btnUp, 0);
             this.Controls.SetChildIndex(this.btnDown, 0);
             this.Controls.SetChildIndex(this.ckmShop_Label12, 0);
             this.Controls.SetChildIndex(this.pnlDetails, 0);
-            this.Controls.SetChildIndex(this.ckmShop_Label15, 0);
             this.Controls.SetChildIndex(this.ckmShop_Label16, 0);
             this.Controls.SetChildIndex(this.txtCustomerNo, 0);
             this.Controls.SetChildIndex(this.lblLastPoint, 0);
