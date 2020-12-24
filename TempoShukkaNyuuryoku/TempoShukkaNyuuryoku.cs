@@ -41,7 +41,7 @@ namespace TempoShukkaNyuuryoku
                 InProgramID = "TempoRegiShukkaNyuuryoku";
                 StartProgram();
 
-                btnClose.Text = "終了";
+                btnClose.Text = "終 了";
 
                 SetRequireField();
                 AddHandler();
@@ -939,6 +939,17 @@ namespace TempoShukkaNyuuryoku
         {
             try
             {
+                //商品CD
+                if (!Save(1))
+                {
+                    return;
+                }
+                //出荷数
+                if (!Save(2))
+                {
+                    return;
+                }
+
                 //お買上額計にAdd
                 //うち税額にADD
 
