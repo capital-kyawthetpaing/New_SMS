@@ -200,8 +200,9 @@ namespace FBDataSakusei_FBデータ作成
                                     SaveFileDialog savedialog = new SaveFileDialog();
                                     savedialog.Filter = "Test|*.txt";
 
-                                    savedialog.Title = "Save";                                    
-                                    savedialog.FileName = "TestFile";
+                                    savedialog.Title = "Save";
+                                    string cmdLine = "TestFile" + " " + DateTime.Now.ToString(" yyyyMMdd_HHmmss ") ;
+                                    savedialog.FileName = cmdLine;
                                     savedialog.InitialDirectory = Folderpath;
                                     savedialog.RestoreDirectory = true;
                                     if (savedialog.ShowDialog() == DialogResult.OK)
@@ -226,7 +227,7 @@ namespace FBDataSakusei_FBデータ作成
                                             //    objWriter.WriteLine(result.ToString());
                                             //    objWriter.Close();
                                             //}
-                                            StreamWriter objWriter = new StreamWriter(Folderpath + "TestFile" + ".txt", false);
+                                            StreamWriter objWriter = new StreamWriter(Folderpath + cmdLine + ".txt", false);
                                             objWriter.WriteLine(result.ToString());
                                             objWriter.Close();
                                         }

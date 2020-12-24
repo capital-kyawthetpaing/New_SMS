@@ -191,14 +191,14 @@
             this.dgvTanaban.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvTanaban.Location = new System.Drawing.Point(25, 149);
             this.dgvTanaban.Name = "dgvTanaban";
-            this.dgvTanaban.RowHeadersVisible = false;
             this.dgvTanaban.RowHeight_ = 20;
             this.dgvTanaban.RowTemplate.Height = 20;
             this.dgvTanaban.Size = new System.Drawing.Size(1611, 490);
             this.dgvTanaban.TabIndex = 11;
-            this.dgvTanaban.UseRowNo = false;
+            this.dgvTanaban.UseRowNo = true;
             this.dgvTanaban.UseSetting = true;
             this.dgvTanaban.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTanaban_CellContentClick);
+            this.dgvTanaban.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTanaban_CellEnter);
             this.dgvTanaban.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvTanaban_CellPainting);
             this.dgvTanaban.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvTanaban_CellValidating);
             this.dgvTanaban.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvTanaban_DataError);
