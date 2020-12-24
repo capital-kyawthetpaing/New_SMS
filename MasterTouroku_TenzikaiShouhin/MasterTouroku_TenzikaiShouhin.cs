@@ -304,7 +304,6 @@ namespace MasterTouroku_TenzikaiShouhin
             {
                 c.KeyDown += C_KeyDown;
                 c.Enter += C_Enter;
-                
             }
         }
 
@@ -339,7 +338,6 @@ namespace MasterTouroku_TenzikaiShouhin
                 case EOperationMode.UPDATE:
                      BT_SKUCheck.Enabled = true;
                     BT_meisai.Enabled = true;
-                   // SC_Tenzikai.TxtCode.Focus();
                     detailControls[(int)Eindex.StartDate].Enabled = true;
                     SC_Tenzikai.BtnSearch.Enabled = true;
                     DisablePanel(panel4);
