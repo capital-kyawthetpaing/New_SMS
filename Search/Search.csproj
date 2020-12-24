@@ -549,6 +549,7 @@
     <Content Include="RequiredDLL\ExcelDataReader.dll" />
     <Content Include="RequiredDLL\GridBase.dll" />
     <Content Include="RequiredDLL\GridControl.dll" />
+    <Content Include="RequiredDLL\Mail.dll" />
     <Content Include="RequiredDLL\Newtonsoft.Json.dll" />
     <Content Include="RequiredDLL\OpenPop.dll" />
   </ItemGroup>
