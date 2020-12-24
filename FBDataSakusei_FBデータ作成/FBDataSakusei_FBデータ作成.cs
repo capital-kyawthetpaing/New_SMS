@@ -11,6 +11,7 @@ using Base.Client;
 using BL;
 using Entity;
 using System.IO;
+using CrystalDecisions.Shared;
 
 
 namespace FBDataSakusei_FBデータ作成
@@ -143,10 +144,80 @@ namespace FBDataSakusei_FBデータ作成
 
         public void F11()
         {
-            if (bbl.ShowMessage("Q202") == DialogResult.Yes)
+            try
             {
+                FBDataSakusei_Report Report = new FBDataSakusei_Report();
+                DialogResult ret;
                 
+                        ret = bbl.ShowMessage("Q202");
+                        if (ret == DialogResult.Cancel)
+                        {
+                            return;
+                        }
+                        // 印字データをセット
+                        Report.SetDataSource(dtgv);
+                        Report.Refresh();
+                        Report.SetParameterValue("PrintDate", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("HH:mm"));
+                        Report.SetParameterValue("PaymentDate", txtPaymentDate.Text) ;
+                        Report.SetParameterValue("PaymentSource", cboPayment.SelectedValue.ToString() );
+                        Report.SetParameterValue("ActualDate", txtTransferDate.Text);
+
+                        if (ret == DialogResult.Yes)
+                        {
+                            var previewForm = new Viewer();
+                            previewForm.CrystalReportViewer1.ShowPrintButton = true;
+                            previewForm.CrystalReportViewer1.ReportSource = Report;
+                            previewForm.ShowDialog();
+                        }
+                        else
+                        {
+                            //int marginLeft = 360;
+                            CrystalDecisions.Shared.PageMargins margin = Report.PrintOptions.PageMargins;
+                            margin.leftMargin = DefaultMargin.Left; 
+                            margin.topMargin = DefaultMargin.Top;
+                            margin.bottomMargin = DefaultMargin.Bottom;
+                            margin.rightMargin = DefaultMargin.Right;
+                            Report.PrintOptions.ApplyPageMargins(margin);     /// Error Now
+                            // プリンタに印刷
+                            System.Drawing.Printing.PageSettings ps;
+                            try
+                            {
+                                System.Drawing.Printing.PrintDocument pDoc = new System.Drawing.Printing.PrintDocument();
+
+                                CrystalDecisions.Shared.PrintLayoutSettings PrintLayout = new CrystalDecisions.Shared.PrintLayoutSettings();
+
+                                System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
+
+
+
+                                Report.PrintOptions.PrinterName = "\\\\dataserver\\Canon LBP2900";
+                                System.Drawing.Printing.PageSettings pSettings = new System.Drawing.Printing.PageSettings(printerSettings);
+
+                                Report.PrintOptions.DissociatePageSizeAndPrinterPaperSize = true;
+
+                                Report.PrintOptions.PrinterDuplex = PrinterDuplex.Simplex;
+
+                                Report.PrintToPrinter(printerSettings, pSettings, false, PrintLayout);
+                                // Print the report. Set the startPageN and endPageN 
+                                // parameters to 0 to print all pages. 
+                                //Report.PrintToPrinter(1, false, 0, 0);
+                            }
+                            catch (Exception ex)
+                            {
+
+                            }
+                        }
+                      
             }
+            catch (Exception e)
+            {
+                var mse = e.Message;
+            }
+            finally
+            {
+                cboProcess.Focus();
+            }
+            
         }
 
         public void F12()
