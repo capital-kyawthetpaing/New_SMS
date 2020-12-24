@@ -160,6 +160,14 @@ namespace BL
         {
             return mdl.M_SKU_SelectByJanCD_ForTenzikaishouhin(mse);
         }
-      
+
+/// <summary>
+/// For Tenzikaishouhin
+/// </summary>
+/// <returns></returns>
+        public DataTable M_SKU_SelectAll_NOPara()
+        {
+            return mdl.M_SKU_SelectAll_NOPara();
+        }
     }
 }

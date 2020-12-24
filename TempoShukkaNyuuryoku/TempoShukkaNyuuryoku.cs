@@ -38,10 +38,10 @@ namespace TempoShukkaNyuuryoku
         {
             try
             {
-                InProgramID = "TempoShukkaNyuuryoku";
+                InProgramID = "TempoRegiShukkaNyuuryoku";
                 StartProgram();
 
-                btnClose.Text = "終了";
+                btnClose.Text = "終 了";
 
                 SetRequireField();
                 AddHandler();
@@ -288,7 +288,8 @@ namespace TempoShukkaNyuuryoku
             txtShippingSu.Text = bbl.Z_SetStr(row["ShippingSu"]);
 
             lblJuchuuUnitPrice.Text = "\\" + bbl.Z_SetStr(row["JuchuuUnitPrice"]);
-            lblJuchuuSuu.Text = "\\" + bbl.Z_SetStr(row["SalesGaku"]);
+            //lblJuchuuSuu.Text = "\\" + bbl.Z_SetStr(row["SalesGaku"]);
+            lblSalesGaku.Text = "\\" + bbl.Z_SetStr(row["SalesGaku"]);
             lblSalesTax.Text = "\\" + bbl.Z_SetStr(row["SalesTax"]);
             lblJuchuuTaxRitsu.Text = bbl.Z_SetStr(row["JuchuuTaxRitsu"]) + "%";
 
@@ -335,10 +336,12 @@ namespace TempoShukkaNyuuryoku
 
         private void DispFromButtonDetailsTable(int stHorizontal = 1)
         {
-            DataRow[] rows = dtBottunDetails.Select(" Vertical >=" + stHorizontal + " AND Vertical <" + stHorizontal + 10);
+            int maxVertical = stHorizontal + 10;
+            //DataRow[] rows = dtBottunDetails.Select(" Vertical >=" + stHorizontal + " AND Vertical <" + stHorizontal + 10);
+            DataRow[] rows = dtBottunDetails.Select(" Horizontal >=" + stHorizontal + " AND Horizontal <" + maxVertical);
 
-            if (rows.Length == 0)
-                return;
+            //if (rows.Length == 0)
+            //    return;
 
             Clear(tableLayoutPanel3);
 
@@ -453,14 +456,17 @@ namespace TempoShukkaNyuuryoku
 
                 //お買上額等の計算を行う
                 //お買上額←form.単価×	出荷数
-                lblJuchuuSuu.Text = "\\" + bbl.Z_SetStr(bbl.Z_Set(lblJuchuuUnitPrice.Text.Replace("\\", "")) * bbl.Z_Set(txtShippingSu.Text));
+                //lblJuchuuSuu.Text = "\\" + bbl.Z_SetStr(bbl.Z_Set(lblJuchuuUnitPrice.Text.Replace("\\", "")) * bbl.Z_Set(txtShippingSu.Text));
+                lblSalesGaku.Text = "\\" + bbl.Z_SetStr(bbl.Z_Set(lblJuchuuUnitPrice.Text.Replace("\\", "")) * bbl.Z_Set(txtShippingSu.Text));
 
                 //うち税額 Function_消費税計算.out金額１
                 int taxRateFLG = Convert.ToInt16(dtJuchu.Rows[(int)txtJanCD.Tag]["TaxRateFLG"]);
                 string ymd = dtJuchu.Rows[(int)txtJanCD.Tag]["JuchuuDate"].ToString();
 
-                decimal zeinukiKin = bbl.GetZeinukiKingaku(bbl.Z_Set(lblJuchuuSuu.Text.Replace("\\", "")), taxRateFLG, ymd);
-                lblSalesTax.Text = "\\" + bbl.Z_SetStr(bbl.Z_Set(lblJuchuuSuu.Text.Replace("\\", "")) - zeinukiKin);
+                //decimal zeinukiKin = bbl.GetZeinukiKingaku(bbl.Z_Set(lblJuchuuSuu.Text.Replace("\\", "")), taxRateFLG, ymd);
+                //lblSalesTax.Text = "\\" + bbl.Z_SetStr(bbl.Z_Set(lblJuchuuSuu.Text.Replace("\\", "")) - zeinukiKin);
+                decimal zeinukiKin = bbl.GetZeinukiKingaku(bbl.Z_Set(lblSalesGaku.Text.Replace("\\", "")), taxRateFLG, ymd);
+                lblSalesTax.Text = "\\" + bbl.Z_SetStr(bbl.Z_Set(lblSalesGaku.Text.Replace("\\", "")) - zeinukiKin);
             }
             if (kbn == 0 || kbn == 3)
             {
@@ -897,7 +903,7 @@ namespace TempoShukkaNyuuryoku
             try
             {
                 int Horizontal = Convert.ToInt16(btnGrp1.Tag);
-                if (dtBottunGroup.Rows.Count >= Horizontal + 14)
+                //if (dtBottunGroup.Rows.Count >= Horizontal + 14)
                     DispFromButtonGroupTable(Horizontal + 14);
             }
             catch (Exception ex)
@@ -933,6 +939,17 @@ namespace TempoShukkaNyuuryoku
         {
             try
             {
+                //商品CD
+                if (!Save(1))
+                {
+                    return;
+                }
+                //出荷数
+                if (!Save(2))
+                {
+                    return;
+                }
+
                 //お買上額計にAdd
                 //うち税額にADD
 
@@ -941,7 +958,8 @@ namespace TempoShukkaNyuuryoku
                 DataRow row = dtJuchu.Rows[index];
 
                 row["ShippingSu"] = bbl.Z_Set(txtShippingSu.Text);
-                row["SalesGaku"] = bbl.Z_Set(lblJuchuuSuu.Text.Replace("\\", ""));
+                //row["SalesGaku"] = bbl.Z_Set(lblJuchuuSuu.Text.Replace("\\", ""));
+                row["SalesGaku"] = bbl.Z_Set(lblSalesGaku.Text.Replace("\\", ""));
                 row["SalesTax"] = bbl.Z_Set(lblSalesTax.Text.Replace("\\", ""));
 
                 DispFromDataTable(Convert.ToInt16(lblDtGyo1.Text));

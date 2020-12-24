@@ -28,21 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFBDataSakusei_FBデータ作成));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gvFBDataSakusei = new CKM_Controls.CKM_GridView();
-            this.btnDisplay = new CKM_Controls.CKM_Button();
-            this.ckM_Label4 = new CKM_Controls.CKM_Label();
-            this.txtTransferDate = new CKM_Controls.CKM_TextBox();
-            this.ckM_Label2 = new CKM_Controls.CKM_Label();
-            this.txtPaymentDate = new CKM_Controls.CKM_TextBox();
-            this.ckM_Label1 = new CKM_Controls.CKM_Label();
-            this.cboPayment = new CKM_Controls.CKM_ComboBox();
-            this.ckM_Label3 = new CKM_Controls.CKM_Label();
-            this.cboProcess = new CKM_Controls.CKM_ComboBox();
             this.colPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPayeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colbank = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +47,15 @@
             this.colTransferFee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFeeKBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFeeBurden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDisplay = new CKM_Controls.CKM_Button();
+            this.ckM_Label4 = new CKM_Controls.CKM_Label();
+            this.txtTransferDate = new CKM_Controls.CKM_TextBox();
+            this.ckM_Label2 = new CKM_Controls.CKM_Label();
+            this.txtPaymentDate = new CKM_Controls.CKM_TextBox();
+            this.ckM_Label1 = new CKM_Controls.CKM_Label();
+            this.cboPayment = new CKM_Controls.CKM_ComboBox();
+            this.ckM_Label3 = new CKM_Controls.CKM_Label();
+            this.cboProcess = new CKM_Controls.CKM_ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvFBDataSakusei)).BeginInit();
             this.SuspendLayout();
@@ -96,18 +95,18 @@
             this.gvFBDataSakusei.AllowUserToAddRows = false;
             this.gvFBDataSakusei.AllowUserToDeleteRows = false;
             this.gvFBDataSakusei.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.gvFBDataSakusei.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.gvFBDataSakusei.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gvFBDataSakusei.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gvFBDataSakusei.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("gvFBDataSakusei.CheckCol")));
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvFBDataSakusei.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvFBDataSakusei.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gvFBDataSakusei.ColumnHeadersHeight = 25;
             this.gvFBDataSakusei.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colPayment,
@@ -124,14 +123,6 @@
             this.colTransferFee,
             this.colFeeKBN,
             this.colFeeBurden});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvFBDataSakusei.DefaultCellStyle = dataGridViewCellStyle6;
             this.gvFBDataSakusei.EnableHeadersVisualStyles = false;
             this.gvFBDataSakusei.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gvFBDataSakusei.Location = new System.Drawing.Point(43, 142);
@@ -142,6 +133,108 @@
             this.gvFBDataSakusei.TabIndex = 44;
             this.gvFBDataSakusei.UseRowNo = true;
             this.gvFBDataSakusei.UseSetting = true;
+            // 
+            // colPayment
+            // 
+            this.colPayment.DataPropertyName = "PayeeCD";
+            this.colPayment.HeaderText = "支払先";
+            this.colPayment.MaxInputLength = 11;
+            this.colPayment.Name = "colPayment";
+            this.colPayment.Width = 110;
+            // 
+            // colPayeeName
+            // 
+            this.colPayeeName.DataPropertyName = "VendorName";
+            this.colPayeeName.HeaderText = "支払先名";
+            this.colPayeeName.MaxInputLength = 100;
+            this.colPayeeName.Name = "colPayeeName";
+            this.colPayeeName.Width = 300;
+            // 
+            // colbank
+            // 
+            this.colbank.DataPropertyName = "BankCD";
+            this.colbank.HeaderText = "振込先銀行";
+            this.colbank.Name = "colbank";
+            this.colbank.Visible = false;
+            // 
+            // colBankTransfer
+            // 
+            this.colBankTransfer.DataPropertyName = "BankName";
+            this.colBankTransfer.HeaderText = "振込先銀行";
+            this.colBankTransfer.MaxInputLength = 60;
+            this.colBankTransfer.Name = "colBankTransfer";
+            this.colBankTransfer.Width = 150;
+            // 
+            // colbranch
+            // 
+            this.colbranch.DataPropertyName = "BranchCD";
+            this.colbranch.HeaderText = "振込先支店";
+            this.colbranch.Name = "colbranch";
+            this.colbranch.Visible = false;
+            // 
+            // colTransferDestination
+            // 
+            this.colTransferDestination.DataPropertyName = "BranchName";
+            this.colTransferDestination.HeaderText = "振込先支店";
+            this.colTransferDestination.MaxInputLength = 60;
+            this.colTransferDestination.Name = "colTransferDestination";
+            this.colTransferDestination.Width = 150;
+            // 
+            // colKouzaKBN
+            // 
+            this.colKouzaKBN.DataPropertyName = "KouzaKBN";
+            this.colKouzaKBN.HeaderText = "振込先口座種別";
+            this.colKouzaKBN.Name = "colKouzaKBN";
+            this.colKouzaKBN.Visible = false;
+            // 
+            // colKouzaNO
+            // 
+            this.colKouzaNO.DataPropertyName = "KouzaNO";
+            this.colKouzaNO.HeaderText = "振込先口座番号";
+            this.colKouzaNO.Name = "colKouzaNO";
+            this.colKouzaNO.Visible = false;
+            // 
+            // colKouzaMeigi
+            // 
+            this.colKouzaMeigi.DataPropertyName = "KouzaMeigi";
+            this.colKouzaMeigi.HeaderText = "振込先口座名義";
+            this.colKouzaMeigi.Name = "colKouzaMeigi";
+            this.colKouzaMeigi.Visible = false;
+            // 
+            // colTransferAcc
+            // 
+            this.colTransferAcc.DataPropertyName = "transferAcc";
+            this.colTransferAcc.HeaderText = "振込口座";
+            this.colTransferAcc.MaxInputLength = 60;
+            this.colTransferAcc.Name = "colTransferAcc";
+            this.colTransferAcc.Width = 300;
+            // 
+            // colTransferAmount
+            // 
+            this.colTransferAmount.DataPropertyName = "TransferGaku";
+            this.colTransferAmount.HeaderText = "振込額";
+            this.colTransferAmount.Name = "colTransferAmount";
+            // 
+            // colTransferFee
+            // 
+            this.colTransferFee.DataPropertyName = "TransferFeeGaku";
+            this.colTransferFee.HeaderText = "振込手数料";
+            this.colTransferFee.Name = "colTransferFee";
+            // 
+            // colFeeKBN
+            // 
+            this.colFeeKBN.DataPropertyName = "FeeKBN";
+            this.colFeeKBN.HeaderText = "手数料負担区分";
+            this.colFeeKBN.Name = "colFeeKBN";
+            this.colFeeKBN.Visible = false;
+            // 
+            // colFeeBurden
+            // 
+            this.colFeeBurden.DataPropertyName = "FeeKBN1";
+            this.colFeeBurden.HeaderText = "手数料負担";
+            this.colFeeBurden.MaxInputLength = 80;
+            this.colFeeBurden.Name = "colFeeBurden";
+            this.colFeeBurden.Width = 150;
             // 
             // btnDisplay
             // 
@@ -325,109 +418,6 @@
             this.cboProcess.Size = new System.Drawing.Size(200, 20);
             this.cboProcess.TabIndex = 35;
             this.cboProcess.SelectedIndexChanged += new System.EventHandler(this.cboProcess_SelectedIndexChanged);
-            this.cboProcess.SelectedValueChanged += new System.EventHandler(this.cboProcess_SelectedValueChanged);
-            // 
-            // colPayment
-            // 
-            this.colPayment.DataPropertyName = "PayeeCD";
-            this.colPayment.HeaderText = "支払先";
-            this.colPayment.MaxInputLength = 11;
-            this.colPayment.Name = "colPayment";
-            this.colPayment.Width = 110;
-            // 
-            // colPayeeName
-            // 
-            this.colPayeeName.DataPropertyName = "VendorName";
-            this.colPayeeName.HeaderText = "支払先名";
-            this.colPayeeName.MaxInputLength = 100;
-            this.colPayeeName.Name = "colPayeeName";
-            this.colPayeeName.Width = 300;
-            // 
-            // colbank
-            // 
-            this.colbank.DataPropertyName = "BankCD";
-            this.colbank.HeaderText = "振込先銀行";
-            this.colbank.Name = "colbank";
-            this.colbank.Visible = false;
-            // 
-            // colBankTransfer
-            // 
-            this.colBankTransfer.DataPropertyName = "BankName";
-            this.colBankTransfer.HeaderText = "振込先銀行";
-            this.colBankTransfer.MaxInputLength = 60;
-            this.colBankTransfer.Name = "colBankTransfer";
-            this.colBankTransfer.Width = 150;
-            // 
-            // colbranch
-            // 
-            this.colbranch.DataPropertyName = "BranchCD";
-            this.colbranch.HeaderText = "振込先支店";
-            this.colbranch.Name = "colbranch";
-            this.colbranch.Visible = false;
-            // 
-            // colTransferDestination
-            // 
-            this.colTransferDestination.DataPropertyName = "BranchName";
-            this.colTransferDestination.HeaderText = "振込先支店";
-            this.colTransferDestination.MaxInputLength = 60;
-            this.colTransferDestination.Name = "colTransferDestination";
-            this.colTransferDestination.Width = 150;
-            // 
-            // colKouzaKBN
-            // 
-            this.colKouzaKBN.DataPropertyName = "KouzaKBN";
-            this.colKouzaKBN.HeaderText = "振込先口座種別";
-            this.colKouzaKBN.Name = "colKouzaKBN";
-            this.colKouzaKBN.Visible = false;
-            // 
-            // colKouzaNO
-            // 
-            this.colKouzaNO.DataPropertyName = "KouzaNO";
-            this.colKouzaNO.HeaderText = "振込先口座番号";
-            this.colKouzaNO.Name = "colKouzaNO";
-            this.colKouzaNO.Visible = false;
-            // 
-            // colKouzaMeigi
-            // 
-            this.colKouzaMeigi.DataPropertyName = "KouzaMeigi";
-            this.colKouzaMeigi.HeaderText = "振込先口座名義";
-            this.colKouzaMeigi.Name = "colKouzaMeigi";
-            this.colKouzaMeigi.Visible = false;
-            // 
-            // colTransferAcc
-            // 
-            this.colTransferAcc.DataPropertyName = "transferAcc";
-            this.colTransferAcc.HeaderText = "振込口座";
-            this.colTransferAcc.MaxInputLength = 60;
-            this.colTransferAcc.Name = "colTransferAcc";
-            this.colTransferAcc.Width = 300;
-            // 
-            // colTransferAmount
-            // 
-            this.colTransferAmount.DataPropertyName = "TransferGaku";
-            this.colTransferAmount.HeaderText = "振込額";
-            this.colTransferAmount.Name = "colTransferAmount";
-            // 
-            // colTransferFee
-            // 
-            this.colTransferFee.DataPropertyName = "TransferFeeGaku";
-            this.colTransferFee.HeaderText = "振込手数料";
-            this.colTransferFee.Name = "colTransferFee";
-            // 
-            // colFeeKBN
-            // 
-            this.colFeeKBN.DataPropertyName = "FeeKBN";
-            this.colFeeKBN.HeaderText = "手数料負担区分";
-            this.colFeeKBN.Name = "colFeeKBN";
-            this.colFeeKBN.Visible = false;
-            // 
-            // colFeeBurden
-            // 
-            this.colFeeBurden.DataPropertyName = "FeeKBN1";
-            this.colFeeBurden.HeaderText = "手数料負担";
-            this.colFeeBurden.MaxInputLength = 80;
-            this.colFeeBurden.Name = "colFeeBurden";
-            this.colFeeBurden.Width = 150;
             // 
             // FrmFBDataSakusei_FBデータ作成
             // 

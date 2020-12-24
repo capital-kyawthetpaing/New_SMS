@@ -54,10 +54,10 @@ namespace EDIKaitouNoukiTouroku
 
                 DataTable dtImport = new DataTable();
 
-
+                bool moveFile = true;
                 if (ext.Equals(".csv"))
                 {
-                    dtImport = CSVToTable(filePath, dee);
+                    dtImport = CSVToTable(filePath, dee, ref moveFile);
                 }
 
                 DataTable dt = new DataTable();
@@ -75,30 +75,32 @@ namespace EDIKaitouNoukiTouroku
                 //tmze.dt1 = dtImport;
                 //tmze.ImportFileName = Path.GetFileName(filePath);
 
-                M_MultiPorpose_Entity mmpe = new M_MultiPorpose_Entity();
-                mmpe.ID = MultiPorpose_BL.ID_EDI;
-                mmpe.Key = "1";
-                dt = ediAPI_bl.M_MultiPorpose_SelectID(mmpe);
-                
-                string destination =  dt.Rows[0]["Char2"].ToString() + @"\";
-                if (!Directory.Exists(destination))
+                if (moveFile)
                 {
-                    Directory.CreateDirectory(destination);
+                    M_MultiPorpose_Entity mmpe = new M_MultiPorpose_Entity();
+                    mmpe.ID = MultiPorpose_BL.ID_EDI;
+                    mmpe.Key = "1";
+                    dt = ediAPI_bl.M_MultiPorpose_SelectID(mmpe);
+
+                    string destination = dt.Rows[0]["Char2"].ToString() + @"\";
+                    if (!Directory.Exists(destination))
+                    {
+                        Directory.CreateDirectory(destination);
+                    }
+
+                    //読み取ったCSVファイルを汎用マスター.文字型２で設定されたドライブ、フォルダーに保存する。（元のフォルダーからは削除する）		
+                    if (File.Exists(destination + System.IO.Path.GetFileName(System.IO.Path.GetDirectoryName(filePath)) + @"\" + Path.GetFileName(filePath)))
+                        File.Delete(destination + System.IO.Path.GetFileName(System.IO.Path.GetDirectoryName(filePath)) + @"\" + Path.GetFileName(filePath));
+
+                    //仕入先ごとのサブフォルダーの構造は元のフォルダーと同じにする。
+                    //（サブフォルダーが無い場合   、作成する）
+                    if (!Directory.Exists(destination + System.IO.Path.GetFileName(System.IO.Path.GetDirectoryName(filePath))))
+                    {
+                        Directory.CreateDirectory(destination + System.IO.Path.GetFileName(System.IO.Path.GetDirectoryName(filePath)));
+                    }
+
+                    File.Move(filePath, destination + System.IO.Path.GetFileName(System.IO.Path.GetDirectoryName(filePath)) + @"\" + Path.GetFileName(filePath));
                 }
-
-                //読み取ったCSVファイルを汎用マスター.文字型２で設定されたドライブ、フォルダーに保存する。（元のフォルダーからは削除する）		
-                if (File.Exists(destination + System.IO.Path.GetFileName(System.IO.Path.GetDirectoryName(filePath)) + @"\" + Path.GetFileName(filePath)))
-                    File.Delete(destination + System.IO.Path.GetFileName(System.IO.Path.GetDirectoryName(filePath)) + @"\" + Path.GetFileName(filePath));
-
-                //仕入先ごとのサブフォルダーの構造は元のフォルダーと同じにする。
-                //（サブフォルダーが無い場合   、作成する）
-                if (!Directory.Exists(destination + System.IO.Path.GetFileName(System.IO.Path.GetDirectoryName(filePath))))
-                {
-                    Directory.CreateDirectory(destination + System.IO.Path.GetFileName(System.IO.Path.GetDirectoryName(filePath)));
-                }
-
-                File.Move(filePath, destination + System.IO.Path.GetFileName(System.IO.Path.GetDirectoryName(filePath)) + @"\" + Path.GetFileName(filePath));
-
                 return true;
             }
             catch (Exception ex)
@@ -134,7 +136,7 @@ namespace EDIKaitouNoukiTouroku
             return arr;
         }
 
-    public DataTable CSVToTable(string filePath, D_EDI_Entity dee)
+    public DataTable CSVToTable(string filePath, D_EDI_Entity dee, ref bool moveFile)
         {
             DataTable csvData = new DataTable();
             int count = 1;
@@ -272,11 +274,18 @@ namespace EDIKaitouNoukiTouroku
                             dee.ErrorSu++; 
                         }
                     }
+                    if (errNo.Equals(1))
+                    {
+                        moveFile = false;
+                    }
+                    
                 }
             }
             catch (Exception ex)
             {
+                moveFile = false;
             }
+
             return csvData;
         }
 

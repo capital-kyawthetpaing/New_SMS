@@ -289,6 +289,7 @@ namespace IkkatuHacchuuNyuuryoku
                            )
                         {
                             this.BtnSubF11.Focus();
+                           // CheckData(true);
                         }
                         else if (detailControls.Length - 1 > index)
                         {
@@ -1418,16 +1419,30 @@ namespace IkkatuHacchuuNyuuryoku
 
                 case (int)EIndex.JuchuuStaffCD:
 
-                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    //Old
+                    //if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    //{
+                    //     return true;
+                    //}
+
+                    //if (!CheckDependsOnHacchuuDate(index))
+                    //    return false;
+
+                    //CheckData(set);
+                    // edit 1221
+                    if (!string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
-                        return true;
+                        if (!CheckDependsOnHacchuuDate(index))
+                            return false;
+
+                        //CheckData(true);
                     }
 
-                    if (!CheckDependsOnHacchuuDate(index))
-                        return false;
 
-                    CheckData(set);
+                    //CheckData(set);
+                    CheckData(true);
                     CheckGrid(0, 0);
+                    
                     this.CalcKin();
 
                     break;
@@ -1822,7 +1837,7 @@ namespace IkkatuHacchuuNyuuryoku
                         foreach (var item in hacchuuNOList)
                         {
                             mOldIkkatuHacchuuNo = item;
-                            this.DeleteExclusive();
+                            //this.DeleteExclusive();
                         }
                         return false;
                     }
@@ -1845,7 +1860,8 @@ namespace IkkatuHacchuuNyuuryoku
         /// </summary>
         private bool SelectAndInsertExclusive_Juchuu(DataTable dt)
         {
-            DeleteExclusive_Juchuu();
+            //1221
+           // DeleteExclusive_Juchuu();
 
             DataView dtview = new DataView(dt);
             dt = dtview.ToTable(true, "JuchuuNO");
@@ -1868,7 +1884,7 @@ namespace IkkatuHacchuuNyuuryoku
                 if (dt2.Rows.Count > 0)
                 {
                     bbl.ShowMessage("S004", dt2.Rows[0]["Program"].ToString(), dt2.Rows[0]["Operator"].ToString());
-                    DeleteExclusive_Juchuu();
+                    //DeleteExclusive_Juchuu();
                     return false;
                 }
                 else
@@ -2349,6 +2365,7 @@ namespace IkkatuHacchuuNyuuryoku
             {
                 if (OperationMode == EOperationMode.INSERT)
                 {
+
                     //排他チェック
                     if (!this.SelectAndInsertExclusive_Juchuu(dt))
                     {

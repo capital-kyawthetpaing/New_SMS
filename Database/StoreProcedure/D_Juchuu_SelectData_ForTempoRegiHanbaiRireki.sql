@@ -1,14 +1,16 @@
- BEGIN TRY 
- Drop Procedure dbo.[D_Juchuu_SelectData_ForTempoRegiHanbaiRireki]
-END try
-BEGIN CATCH END CATCH 
 
-/****** Object:  StoredProcedure [dbo].[D_Juchuu_SelectData_ForTempoRegiHanbaiRireki]    Script Date: 2019/09/15 19:54:54 ******/
+
+/****** Object:  StoredProcedure [dbo].[D_Juchuu_SelectData_ForTempoRegiHanbaiRireki]    Script Date: 2020/12/24 15:47:36 ******/
+DROP PROCEDURE [dbo].[D_Juchuu_SelectData_ForTempoRegiHanbaiRireki]
+GO
+
+/****** Object:  StoredProcedure [dbo].[D_Juchuu_SelectData_ForTempoRegiHanbaiRireki]    Script Date: 2020/12/24 15:47:36 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
+
 
 --  ======================================================================
 --       Program Call    ìXï‹ÉåÉW îÃîÑóöóè∆âÔ
@@ -99,11 +101,13 @@ BEGIN
             AND DS.DeleteDateTime IS NULL
             Group by DS.JuchuuNO,DS.JuchuuRows),0) AS SalesSu
 
-           ,(Select DO.OrderNO
+        /*   ,(Select distinct DO.OrderNO
             from D_OrderDetails AS DO
             Where DO.JuchuuNO = DM.JuchuuNO
             AND DO.JuchuuRows = DM.JuchuuRows
-            AND DO.DeleteDateTime IS NULL) AS OrderNO
+            AND DO.DeleteDateTime IS NULL) AS OrderNO */
+
+		   ,NULL AS OrderNO
            ,DM.DirectFLG
             
           ,DM.JuchuuSuu - ISNULL((Select SUM(DS.SalesSu)

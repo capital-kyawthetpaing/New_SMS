@@ -104,6 +104,27 @@ namespace DL
             return SelectData(dic, sp);
 
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dee"></param>
+        /// <returns></returns>
+        public bool D_Exclusive_DeleteByKBN(D_Exclusive_Entity dee)
+        {
+            string sp = "D_Exclusive_DeleteByKBN";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = dee.Operator } },
+                { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = dee.Program } },
+                { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = dee.PC } }
+            };
+
+            UseTransaction = true;
+            return InsertUpdateDeleteData(dic, sp);
+        }
     }
 
 }

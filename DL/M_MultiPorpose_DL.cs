@@ -151,5 +151,19 @@ namespace DL
 
         }
 
+        /// <summary>
+        /// For TenzikaiShouhin
+        /// </summary>
+        /// <returns></returns>
+        public DataTable M_Multipurpose_SelectAll_ByID(int Type)
+        {
+            string sp = "M_Multipurpose_SelectAll_ByID";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                 { "@Type", new ValuePair { value1 = SqlDbType.Int, value2 = Type.ToString() } },
+            };
+            return SelectData(dic, sp);
+        }
+
     }
 }

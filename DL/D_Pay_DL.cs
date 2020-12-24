@@ -215,9 +215,21 @@ namespace DL
             {
                 {"@MotoKouzaCD", new ValuePair {value1 = SqlDbType.VarChar,value2 = dpe.MotoKouzaCD} },
                 {"@PayDate", new ValuePair {value1 = SqlDbType.Date,value2 = dpe.PayDate} },
-                {"@Flg", new ValuePair {value1 = SqlDbType.Date,value2 = dpe.Flg} }
+                {"@Flg", new ValuePair {value1 = SqlDbType.TinyInt,value2 = dpe.Flg} }
             };
             return SelectData(dic, "D_Pay_SelectForFB");
+        }
+
+        public DataTable D_Pay_SelectForText(D_FBControl_Entity dfbe, D_Pay_Entity dpe)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>()
+            {
+                {"@MotoKouzaCD", new ValuePair {value1 = SqlDbType.VarChar,value2 = dfbe.MotoKouzaCD} },
+                {"@PayDate", new ValuePair {value1 = SqlDbType.VarChar,value2 = dfbe.PayDate} },
+                {"@Flg", new ValuePair {value1 = SqlDbType.TinyInt,value2 = dpe.Flg} },
+                {"@ActualDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfbe.ActualPayDate } }
+            };
+            return SelectData(dic,"D_Pay_SelectForText");
         }
     }
 }

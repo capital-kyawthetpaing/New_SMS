@@ -110,6 +110,7 @@ namespace DL
             command.CommandTimeout = 0;
 
             AddParam(command, "@OperateMode", SqlDbType.Int, operationMode.ToString());
+            AddParam(command, "@KidouMode", SqlDbType.Int, dce.KidouMode.ToString());
             AddParam(command, "@StoreCD", SqlDbType.VarChar, dce.StoreCD);
             AddParam(command, "@CollectNO", SqlDbType.VarChar, dce.CollectNO);
             AddParam(command, "@ConfirmNO", SqlDbType.VarChar, dce.ConfirmNO);
@@ -132,6 +133,7 @@ namespace DL
             AddParam(command, "@Head_ConfirmAmount", SqlDbType.Money, dce.ConfirmAmount);
 
             AddParam(command, "@Remark", SqlDbType.VarChar, dce.Remark);
+            AddParam(command, "@DetailCount", SqlDbType.Int, dt.Rows.Count.ToString());
 
             AddParamForDataTable(command, "@Table", SqlDbType.Structured, dt);
             AddParam(command, "@Operator", SqlDbType.VarChar, dce.Operator);
