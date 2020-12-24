@@ -41,7 +41,7 @@ namespace TempoShukkaNyuuryoku
                 InProgramID = "TempoRegiShukkaNyuuryoku";
                 StartProgram();
 
-                btnClose.Text = "終了";
+                btnClose.Text = "終 了";
 
                 SetRequireField();
                 AddHandler();
