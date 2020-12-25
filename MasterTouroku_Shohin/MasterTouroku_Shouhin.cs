@@ -914,7 +914,6 @@ namespace MasterTouroku_Shouhin
             {
                 case (int)EIndex.SKUName:
                 case (int)EIndex.SKUShortName:
-                case (int)EIndex.KanaName:
                 case (int)EIndex.MakerItem:
                     //入力必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
@@ -926,6 +925,9 @@ namespace MasterTouroku_Shouhin
                     {
                         detailControls[(int)EIndex.SKUShortName].Text =bbl.LeftB( detailControls[index].Text,40);
                     }
+                    break;
+
+                case (int)EIndex.KanaName:
                     break;
 
                 case (int)EIndex.BrandCD:

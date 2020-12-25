@@ -458,12 +458,14 @@ namespace MasterTouroku_Shouhin
             {
                 case (int)EIndex.SKUName:
                 case (int)EIndex.SKUShortName:
-                case (int)EIndex.KanaName:
                     //入力必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
                         return false;
                     }
+                    break;
+
+                case (int)EIndex.KanaName:
                     break;
 
                 case (int)EIndex.ExhibitionSegmentCD:
