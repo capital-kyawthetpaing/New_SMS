@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterTouroku_Shouhin));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label6 = new CKM_Controls.CKM_Label();
             this.label7 = new CKM_Controls.CKM_Label();
             this.label5 = new CKM_Controls.CKM_Label();
@@ -41,7 +41,6 @@
             this.ckM_Label25 = new CKM_Controls.CKM_Label();
             this.txtOrderLot = new CKM_Controls.CKM_TextBox();
             this.ckM_Label24 = new CKM_Controls.CKM_Label();
-            this.ScExhibitionSegmentCD = new Search.CKM_SearchControl();
             this.ckM_Label23 = new CKM_Controls.CKM_Label();
             this.ckM_Label22 = new CKM_Controls.CKM_Label();
             this.ckM_Label27 = new CKM_Controls.CKM_Label();
@@ -73,6 +72,12 @@
             this.ckM_MultiLineTextBox1 = new CKM_Controls.CKM_MultiLineTextBox();
             this.ckM_Label14 = new CKM_Controls.CKM_Label();
             this.dgvDetail = new CKM_Controls.CKM_GridView();
+            this.colColorNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colColorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MakerCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MakerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColChangeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbCostingKBN = new CKM_Controls.CKM_ComboBox();
             this.cmbTaxRateFLG = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label12 = new CKM_Controls.CKM_Label();
@@ -171,14 +176,9 @@
             this.CmbLastYearTerm = new CKM_Controls.CKM_ComboBox();
             this.CmbLastSeason = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label21 = new CKM_Controls.CKM_Label();
+            this.ScExhibitionSegmentCD = new Search.CKM_SearchControl();
             this.ScCopyITEM = new Search.CKM_SearchControl();
             this.ScITEM = new Search.CKM_SearchControl();
-            this.colColorNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colColorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MakerCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MakerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColChangeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.PanelDetail.SuspendLayout();
@@ -477,36 +477,6 @@
             this.ckM_Label24.Text = "セグメント";
             this.ckM_Label24.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ScExhibitionSegmentCD
-            // 
-            this.ScExhibitionSegmentCD.AutoSize = true;
-            this.ScExhibitionSegmentCD.ChangeDate = "";
-            this.ScExhibitionSegmentCD.ChangeDateWidth = 100;
-            this.ScExhibitionSegmentCD.Code = "";
-            this.ScExhibitionSegmentCD.CodeWidth = 30;
-            this.ScExhibitionSegmentCD.CodeWidth1 = 30;
-            this.ScExhibitionSegmentCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ScExhibitionSegmentCD.DataCheck = false;
-            this.ScExhibitionSegmentCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ScExhibitionSegmentCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.ScExhibitionSegmentCD.IsCopy = false;
-            this.ScExhibitionSegmentCD.LabelText = "";
-            this.ScExhibitionSegmentCD.LabelVisible = true;
-            this.ScExhibitionSegmentCD.Location = new System.Drawing.Point(779, 256);
-            this.ScExhibitionSegmentCD.Margin = new System.Windows.Forms.Padding(0);
-            this.ScExhibitionSegmentCD.Name = "ScExhibitionSegmentCD";
-            this.ScExhibitionSegmentCD.NameWidth = 140;
-            this.ScExhibitionSegmentCD.SearchEnable = true;
-            this.ScExhibitionSegmentCD.Size = new System.Drawing.Size(204, 27);
-            this.ScExhibitionSegmentCD.Stype = Search.CKM_SearchControl.SearchType.単位;
-            this.ScExhibitionSegmentCD.TabIndex = 43;
-            this.ScExhibitionSegmentCD.test = null;
-            this.ScExhibitionSegmentCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ScExhibitionSegmentCD.UseChangeDate = false;
-            this.ScExhibitionSegmentCD.Value1 = null;
-            this.ScExhibitionSegmentCD.Value2 = null;
-            this.ScExhibitionSegmentCD.Value3 = null;
             // 
             // ckM_Label23
             // 
@@ -1062,18 +1032,18 @@
             this.dgvDetail.AllowUserToAddRows = false;
             this.dgvDetail.AllowUserToDeleteRows = false;
             this.dgvDetail.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvDetail.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvDetail.CheckCol")));
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetail.ColumnHeadersHeight = 25;
             this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colColorNo,
@@ -1082,14 +1052,14 @@
             this.MakerCD,
             this.MakerName,
             this.ColChangeDate});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDetail.Enabled = false;
             this.dgvDetail.EnableHeadersVisualStyles = false;
             this.dgvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
@@ -1097,9 +1067,9 @@
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.ReadOnly = true;
-            this.dgvDetail.RowHeadersVisible = false;
             this.dgvDetail.RowHeadersWidth = 35;
             this.dgvDetail.RowHeight_ = 20;
+            this.dgvDetail.RowTemplate.Height = 20;
             this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvDetail.Size = new System.Drawing.Size(658, 150);
             this.dgvDetail.TabIndex = 42;
@@ -1110,6 +1080,52 @@
             this.dgvDetail.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDetail_CellFormatting);
             this.dgvDetail.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvDetail_CellValidating);
             this.dgvDetail.CurrentCellChanged += new System.EventHandler(this.dgvDetail_CurrentCellChanged);
+            // 
+            // colColorNo
+            // 
+            this.colColorNo.Frozen = true;
+            this.colColorNo.HeaderText = "　";
+            this.colColorNo.Name = "colColorNo";
+            this.colColorNo.ReadOnly = true;
+            this.colColorNo.Width = 50;
+            // 
+            // colColorName
+            // 
+            this.colColorName.HeaderText = " ";
+            this.colColorName.Name = "colColorName";
+            this.colColorName.ReadOnly = true;
+            // 
+            // colBrandName
+            // 
+            this.colBrandName.DataPropertyName = "BrandName";
+            this.colBrandName.HeaderText = "サイズ１";
+            this.colBrandName.Name = "colBrandName";
+            this.colBrandName.ReadOnly = true;
+            this.colBrandName.Width = 120;
+            // 
+            // MakerCD
+            // 
+            this.MakerCD.DataPropertyName = "MakerCD";
+            this.MakerCD.HeaderText = "サイズ２";
+            this.MakerCD.Name = "MakerCD";
+            this.MakerCD.ReadOnly = true;
+            this.MakerCD.Width = 120;
+            // 
+            // MakerName
+            // 
+            this.MakerName.DataPropertyName = "MakerName";
+            this.MakerName.HeaderText = "サイズ３";
+            this.MakerName.Name = "MakerName";
+            this.MakerName.ReadOnly = true;
+            this.MakerName.Width = 120;
+            // 
+            // ColChangeDate
+            // 
+            this.ColChangeDate.DataPropertyName = "ChangeDate";
+            this.ColChangeDate.HeaderText = "サイズ４";
+            this.ColChangeDate.Name = "ColChangeDate";
+            this.ColChangeDate.ReadOnly = true;
+            this.ColChangeDate.Width = 120;
             // 
             // cmbCostingKBN
             // 
@@ -2528,11 +2544,11 @@
             this.ckM_CheckBox15.AutoSize = true;
             this.ckM_CheckBox15.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ckM_CheckBox15.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox15.Location = new System.Drawing.Point(288, 47);
+            this.ckM_CheckBox15.Location = new System.Drawing.Point(256, 47);
             this.ckM_CheckBox15.Name = "ckM_CheckBox15";
-            this.ckM_CheckBox15.Size = new System.Drawing.Size(31, 16);
+            this.ckM_CheckBox15.Size = new System.Drawing.Size(63, 16);
             this.ckM_CheckBox15.TabIndex = 39;
-            this.ckM_CheckBox15.Text = " ";
+            this.ckM_CheckBox15.Text = "完売品";
             this.ckM_CheckBox15.UseVisualStyleBackColor = true;
             // 
             // ckM_CheckBox14
@@ -2636,11 +2652,11 @@
             this.ckM_CheckBox6.AutoSize = true;
             this.ckM_CheckBox6.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ckM_CheckBox6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox6.Location = new System.Drawing.Point(18, 104);
+            this.ckM_CheckBox6.Location = new System.Drawing.Point(20, 104);
             this.ckM_CheckBox6.Name = "ckM_CheckBox6";
-            this.ckM_CheckBox6.Size = new System.Drawing.Size(89, 16);
+            this.ckM_CheckBox6.Size = new System.Drawing.Size(87, 16);
             this.ckM_CheckBox6.TabIndex = 30;
-            this.ckM_CheckBox6.Text = "予約品対象";
+            this.ckM_CheckBox6.Text = "         ";
             this.ckM_CheckBox6.UseVisualStyleBackColor = true;
             // 
             // ckM_CheckBox5
@@ -2955,6 +2971,36 @@
             this.ckM_Label21.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // ScExhibitionSegmentCD
+            // 
+            this.ScExhibitionSegmentCD.AutoSize = true;
+            this.ScExhibitionSegmentCD.ChangeDate = "";
+            this.ScExhibitionSegmentCD.ChangeDateWidth = 100;
+            this.ScExhibitionSegmentCD.Code = "";
+            this.ScExhibitionSegmentCD.CodeWidth = 30;
+            this.ScExhibitionSegmentCD.CodeWidth1 = 30;
+            this.ScExhibitionSegmentCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScExhibitionSegmentCD.DataCheck = false;
+            this.ScExhibitionSegmentCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScExhibitionSegmentCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.ScExhibitionSegmentCD.IsCopy = false;
+            this.ScExhibitionSegmentCD.LabelText = "";
+            this.ScExhibitionSegmentCD.LabelVisible = true;
+            this.ScExhibitionSegmentCD.Location = new System.Drawing.Point(779, 256);
+            this.ScExhibitionSegmentCD.Margin = new System.Windows.Forms.Padding(0);
+            this.ScExhibitionSegmentCD.Name = "ScExhibitionSegmentCD";
+            this.ScExhibitionSegmentCD.NameWidth = 140;
+            this.ScExhibitionSegmentCD.SearchEnable = true;
+            this.ScExhibitionSegmentCD.Size = new System.Drawing.Size(204, 27);
+            this.ScExhibitionSegmentCD.Stype = Search.CKM_SearchControl.SearchType.単位;
+            this.ScExhibitionSegmentCD.TabIndex = 43;
+            this.ScExhibitionSegmentCD.test = null;
+            this.ScExhibitionSegmentCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScExhibitionSegmentCD.UseChangeDate = false;
+            this.ScExhibitionSegmentCD.Value1 = null;
+            this.ScExhibitionSegmentCD.Value2 = null;
+            this.ScExhibitionSegmentCD.Value3 = null;
+            // 
             // ScCopyITEM
             // 
             this.ScCopyITEM.AutoSize = true;
@@ -3015,52 +3061,6 @@
             this.ScITEM.Value2 = null;
             this.ScITEM.Value3 = null;
             this.ScITEM.Leave += new System.EventHandler(this.ScItem_Leave);
-            // 
-            // colColorNo
-            // 
-            this.colColorNo.Frozen = true;
-            this.colColorNo.HeaderText = "　";
-            this.colColorNo.Name = "colColorNo";
-            this.colColorNo.ReadOnly = true;
-            this.colColorNo.Width = 50;
-            // 
-            // colColorName
-            // 
-            this.colColorName.HeaderText = " ";
-            this.colColorName.Name = "colColorName";
-            this.colColorName.ReadOnly = true;
-            // 
-            // colBrandName
-            // 
-            this.colBrandName.DataPropertyName = "BrandName";
-            this.colBrandName.HeaderText = "サイズ１";
-            this.colBrandName.Name = "colBrandName";
-            this.colBrandName.ReadOnly = true;
-            this.colBrandName.Width = 120;
-            // 
-            // MakerCD
-            // 
-            this.MakerCD.DataPropertyName = "MakerCD";
-            this.MakerCD.HeaderText = "サイズ２";
-            this.MakerCD.Name = "MakerCD";
-            this.MakerCD.ReadOnly = true;
-            this.MakerCD.Width = 120;
-            // 
-            // MakerName
-            // 
-            this.MakerName.DataPropertyName = "MakerName";
-            this.MakerName.HeaderText = "サイズ３";
-            this.MakerName.Name = "MakerName";
-            this.MakerName.ReadOnly = true;
-            this.MakerName.Width = 120;
-            // 
-            // ColChangeDate
-            // 
-            this.ColChangeDate.DataPropertyName = "ChangeDate";
-            this.ColChangeDate.HeaderText = "サイズ４";
-            this.ColChangeDate.Name = "ColChangeDate";
-            this.ColChangeDate.ReadOnly = true;
-            this.ColChangeDate.Width = 120;
             // 
             // MasterTouroku_Shouhin
             // 

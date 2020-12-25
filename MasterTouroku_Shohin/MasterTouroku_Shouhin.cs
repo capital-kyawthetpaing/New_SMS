@@ -54,7 +54,7 @@ namespace MasterTouroku_Shouhin
 
         , ChkDirectFlg
         , ChkParcelFlg
-        , Chk15
+        , ChkSoldOutFlg
         , Chk16
         , Chk17
         , ChkSaleExcludedFlg
@@ -303,7 +303,7 @@ namespace MasterTouroku_Shouhin
                 {
                     case (int)EIndex.ChkVirtualFlg:
                     case (int)EIndex.Chk6:
-                    case (int)EIndex.Chk15:
+                    //case (int)EIndex.ChkSoldOutFlg:
                     case (int)EIndex.Chk16:
                     case (int)EIndex.Chk17:
                     case (int)EIndex.Chk27:
@@ -616,6 +616,8 @@ namespace MasterTouroku_Shouhin
                             ((CheckBox)detailControls[(int)EIndex.ChkCatalogFlg]).Checked = true;
                         if (mie.ParcelFlg.Equals("1"))
                             ((CheckBox)detailControls[(int)EIndex.ChkParcelFlg]).Checked = true;
+                        if(mie.SoldOutFlg.Equals("1"))
+                            ((CheckBox)detailControls[(int)EIndex.ChkSoldOutFlg]).Checked = true;
                         if (mie.AutoOrderFlg.Equals("1"))
                             ((CheckBox)detailControls[(int)EIndex.ChkAutoOrderFlg]).Checked = true;
                         if (mie.SaleExcludedFlg.Equals("1"))
@@ -1315,6 +1317,7 @@ namespace MasterTouroku_Shouhin
                     case (int)EIndex.ChkAutoOrderFlg: name = "AutoOrderFlg"; oldVal = mie.AutoOrderFlg == null ? "0" : mie.AutoOrderFlg; break;
                     case (int)EIndex.ChkDirectFlg: name = "DirectFlg"; oldVal = mie.DirectFlg == null ? "0" : mie.DirectFlg; break;
                     case (int)EIndex.ChkParcelFlg: name = "ParcelFlg"; oldVal = mie.ParcelFlg == null ? "0" : mie.ParcelFlg; break;
+                    case (int)EIndex.ChkSoldOutFlg: name = "SoldOutFlg"; oldVal = mie.SoldOutFlg == null ? "0" : mie.SoldOutFlg; break;
                     case (int)EIndex.ChkSaleExcludedFlg: name = "SaleExcludedFlg"; oldVal = mie.SaleExcludedFlg == null ? "0" : mie.SaleExcludedFlg; break;
                     case (int)EIndex.ChkWebStockFlg: name = "WebStockFlg"; oldVal = mie.WebStockFlg == null ? "0" : mie.WebStockFlg; break;
                     case (int)EIndex.ChkInventoryAddFlg: name = "InventoryAddFlg"; oldVal = mie.InventoryAddFlg == null ? "0" : mie.InventoryAddFlg; break;
@@ -1393,6 +1396,7 @@ namespace MasterTouroku_Shouhin
                     case (int)EIndex.ChkAutoOrderFlg:
                     case (int)EIndex.ChkDirectFlg:
                     case (int)EIndex.ChkParcelFlg:
+                    case (int)EIndex.ChkSoldOutFlg:
                     case (int)EIndex.ChkSaleExcludedFlg:
                     case (int)EIndex.ChkWebStockFlg:
                     case (int)EIndex.ChkInventoryAddFlg:
@@ -1581,6 +1585,7 @@ namespace MasterTouroku_Shouhin
             mie.EDIOrderFlg = ((CheckBox)detailControls[(int)EIndex.ChkEDIOrderFlg]).Checked ? "1" : "0";
             mie.CatalogFlg = ((CheckBox)detailControls[(int)EIndex.ChkCatalogFlg]).Checked ? "1" : "0";
             mie.ParcelFlg = ((CheckBox)detailControls[(int)EIndex.ChkParcelFlg]).Checked ? "1" : "0";
+            mie.SoldOutFlg = ((CheckBox)detailControls[(int)EIndex.ChkSoldOutFlg]).Checked ? "1" : "0";
             mie.AutoOrderFlg = ((CheckBox)detailControls[(int)EIndex.ChkAutoOrderFlg]).Checked ? "1" : "0";
             mie.TaxRateFLG = ((ComboBox)detailControls[(int)EIndex.CmbTaxRateFLG]).SelectedValue.ToString();
             mie.TaxRateFLGName = detailControls[(int)EIndex.CmbTaxRateFLG].Text;
@@ -1786,6 +1791,7 @@ namespace MasterTouroku_Shouhin
                                     newrow["EDIOrderFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkEDIOrderFlg]).Checked ? 1 : 0;
                                     newrow["CatalogFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkCatalogFlg]).Checked ? 1 : 0;
                                     newrow["ParcelFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkParcelFlg]).Checked ? 1 : 0;
+                                    newrow["SoldOutFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkSoldOutFlg]).Checked ? 1 : 0;
                                     newrow["AutoOrderFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkAutoOrderFlg]).Checked ? 1 : 0;
 
                                     newrow["SaleExcludedFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkSaleExcludedFlg]).Checked ? 1 : 0;
