@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="D_Pay" msprop:Generator_TableClassName="D_PayDataTable" msprop:Generator_TableVarName="tableD_Pay" msprop:Generator_TablePropName="D_Pay" msprop:Generator_RowDeletingName="D_PayRowDeleting" msprop:Generator_RowChangingName="D_PayRowChanging" msprop:Generator_RowEvHandlerName="D_PayRowChangeEventHandler" msprop:Generator_RowDeletedName="D_PayRowDeleted" msprop:Generator_UserTableName="D_Pay" msprop:Generator_RowChangedName="D_PayRowChanged" msprop:Generator_RowEvArgName="D_PayRowChangeEvent" msprop:Generator_RowClassName="D_PayRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PayeeCD" msprop:Generator_ColumnVarNameInTable="columnPayeeCD" msprop:Generator_ColumnPropNameInRow="PayeeCD" msprop:Generator_ColumnPropNameInTable="PayeeCDColumn" msprop:Generator_UserColumnName="PayeeCD" type="xs:string" minOccurs="0" />
+              <xs:element name="VendorName" msprop:Generator_ColumnVarNameInTable="columnVendorName" msprop:Generator_ColumnPropNameInRow="VendorName" msprop:Generator_ColumnPropNameInTable="VendorNameColumn" msprop:Generator_UserColumnName="VendorName" type="xs:string" minOccurs="0" />
+              <xs:element name="BankCD" msprop:Generator_ColumnVarNameInTable="columnBankCD" msprop:Generator_ColumnPropNameInRow="BankCD" msprop:Generator_ColumnPropNameInTable="BankCDColumn" msprop:Generator_UserColumnName="BankCD" type="xs:string" minOccurs="0" />
+              <xs:element name="BankName" msprop:Generator_ColumnVarNameInTable="columnBankName" msprop:Generator_ColumnPropNameInRow="BankName" msprop:Generator_ColumnPropNameInTable="BankNameColumn" msprop:Generator_UserColumnName="BankName" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchCD" msprop:Generator_ColumnVarNameInTable="columnBranchCD" msprop:Generator_ColumnPropNameInRow="BranchCD" msprop:Generator_ColumnPropNameInTable="BranchCDColumn" msprop:Generator_UserColumnName="BranchCD" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchName" msprop:Generator_ColumnVarNameInTable="columnBranchName" msprop:Generator_ColumnPropNameInRow="BranchName" msprop:Generator_ColumnPropNameInTable="BranchNameColumn" msprop:Generator_UserColumnName="BranchName" type="xs:string" minOccurs="0" />
+              <xs:element name="transferAcc" msprop:Generator_ColumnVarNameInTable="columntransferAcc" msprop:Generator_ColumnPropNameInRow="transferAcc" msprop:Generator_ColumnPropNameInTable="transferAccColumn" msprop:Generator_UserColumnName="transferAcc" type="xs:string" minOccurs="0" />
+              <xs:element name="TransferGaku" msprop:Generator_ColumnVarNameInTable="columnTransferGaku" msprop:Generator_ColumnPropNameInRow="TransferGaku" msprop:Generator_ColumnPropNameInTable="TransferGakuColumn" msprop:Generator_UserColumnName="TransferGaku" type="xs:string" minOccurs="0" />
+              <xs:element name="TransferFeeGaku" msprop:Generator_ColumnVarNameInTable="columnTransferFeeGaku" msprop:Generator_ColumnPropNameInRow="TransferFeeGaku" msprop:Generator_ColumnPropNameInTable="TransferFeeGakuColumn" msprop:Generator_UserColumnName="TransferFeeGaku" type="xs:string" minOccurs="0" />
+              <xs:element name="FeeKBN" msprop:Generator_ColumnVarNameInTable="columnFeeKBN" msprop:Generator_ColumnPropNameInRow="FeeKBN" msprop:Generator_ColumnPropNameInTable="FeeKBNColumn" msprop:Generator_UserColumnName="FeeKBN" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

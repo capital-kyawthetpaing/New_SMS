@@ -41,6 +41,7 @@ namespace Entity
         public string WebStockFlg { get; set; }
         public string StopFlg { get; set; }
         public string DiscontinueFlg { get; set; }
+        public string SoldOutFlg { get; set; }
         public string InventoryAddFlg { get; set; }
         public string MakerAddFlg { get; set; }
         public string StoreAddFlg { get; set; }
