@@ -439,7 +439,7 @@ namespace MasterTouroku_TenzikaiShouhin
                         {
                             if (!String.IsNullOrEmpty(TB_StartDate.Text))
                             {
-                                if (bbl.ShowMessage("Q101") == DialogResult.Yes)
+                                if (bbl.ShowMessage("Q107") == DialogResult.Yes)
                                 {
                                     F11();
                                 }
@@ -546,6 +546,10 @@ namespace MasterTouroku_TenzikaiShouhin
             if (!tbl.M_Tenzikaishouhin_DeleteUpdate(mt))
             {
                 bbl.ShowMessage("S001");
+            }
+            else
+            {
+                bbl.ShowMessage("I002");
             }
                        
         }
