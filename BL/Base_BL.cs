@@ -716,6 +716,20 @@ namespace BL
                 return false;
             }
         }
+        public string Fnc_SetCheckdigit(string janCount)
+        {
+            string outJancd ="";
+
+            Function_DL fdl = new Function_DL();
+            DataTable dt = fdl.Fnc_SetCheckdigit(janCount);
+
+            if (dt.Rows.Count > 0)
+            {
+                outJancd =dt.Rows[0]["JANCD"].ToString();
+            }
+
+            return outJancd;
+        }
         public DataTable SimpleSelect1(string checkType = null, string changeDate = null, string param1 = null, string param2 = null, string param3 = null)
         {
             Base_DL bdl = new Base_DL();

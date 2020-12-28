@@ -123,5 +123,15 @@ namespace DL
 
             return SelectData(dic, sp);
         }
+        public DataTable Fnc_SetCheckdigit(string janCount)
+        {
+            string sp = "Select_SetCheckdigit";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@inJAN12", new ValuePair { value1 = SqlDbType.VarChar, value2 =janCount } },
+            };
+
+            return SelectData(dic, sp);
+        }
     }
 }
