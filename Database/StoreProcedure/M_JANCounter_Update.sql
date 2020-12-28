@@ -9,6 +9,7 @@ GO
 
 CREATE PROCEDURE M_JANCounter_Update
    (@MainKEY       tinyint,
+    @UpdatingFlg   tinyint,
     @Operator      varchar(10)
 )AS
 
@@ -20,15 +21,26 @@ CREATE PROCEDURE M_JANCounter_Update
 
 BEGIN
     
-    UPDATE [M_JANCounter]
-    SET [JanCount]       = JanCount + 1
-       ,[UpdatingFlg]    = 1
-       ,[UpdateOperator] = @Operator  
-       ,[UpdateDateTime] = SYSDATETIME()
-    WHERE MainKEY = @MainKEY
-    ;
-    
-
+    IF @UpdatingFlg = 1
+    BEGIN
+        UPDATE [M_JANCounter]
+        SET [JanCount]       = JanCount + 1
+           ,[UpdatingFlg]    = @UpdatingFlg
+           ,[UpdateOperator] = @Operator  
+           ,[UpdateDateTime] = SYSDATETIME()
+        WHERE MainKEY = @MainKEY
+        ;
+    END
+    ELSE
+    BEGIN
+        UPDATE [M_JANCounter]
+        SET [JanCount]       = M_JANCounter.BeforeJanCount
+           ,[UpdatingFlg]    = @UpdatingFlg
+           ,[UpdateOperator] = @Operator  
+           ,[UpdateDateTime] = SYSDATETIME()
+        WHERE MainKEY = @MainKEY
+        ;
+    END
 END
 
 GO

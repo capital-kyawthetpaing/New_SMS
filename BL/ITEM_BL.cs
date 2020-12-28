@@ -544,10 +544,19 @@ namespace BL
             }
         }
 
-        public void M_JANCounter_Update(M_JANCounter_Entity me)
+        public bool M_JANCounter_Update(M_JANCounter_Entity me)
         {
             M_JANCounter_DL msdl = new M_JANCounter_DL();
-            msdl.M_JANCounter_Update(me);
+            DataTable dt = msdl.M_JANCounter_Update(me);
+            if (dt.Rows.Count > 0)
+            {
+                me.JanCount = dt.Rows[0]["JanCount"].ToString();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
