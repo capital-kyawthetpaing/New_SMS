@@ -528,5 +528,26 @@ namespace BL
                 return false;
             }
         }
+
+        public bool M_JANCounter_Select(M_JANCounter_Entity me)
+        {
+            M_JANCounter_DL msdl = new M_JANCounter_DL();
+            DataTable dt = msdl.M_JANCounter_Select(me);
+            if (dt.Rows.Count > 0)
+            {
+                me.UpdatingFlg = dt.Rows[0]["UpdatingFlg"].ToString();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void M_JANCounter_Update(M_JANCounter_Entity me)
+        {
+            M_JANCounter_DL msdl = new M_JANCounter_DL();
+            msdl.M_JANCounter_Update(me);
+        }
     }
 }
