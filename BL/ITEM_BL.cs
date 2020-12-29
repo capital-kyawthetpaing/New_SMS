@@ -64,7 +64,8 @@ namespace BL
                 me.ConfirmCD = dt.Rows[0]["ConfirmCD"].ToString();
                 me.WebStockFlg = dt.Rows[0]["WebStockFlg"].ToString();
                 me.StopFlg = dt.Rows[0]["StopFlg"].ToString();
-                me.DiscontinueFlg = dt.Rows[0]["DiscontinueFlg"].ToString();
+                me.DiscontinueFlg = dt.Rows[0]["DiscontinueFlg"].ToString(); 
+                me.SoldOutFlg = dt.Rows[0]["SoldOutFlg"].ToString();
                 me.InventoryAddFlg = dt.Rows[0]["InventoryAddFlg"].ToString();
                 me.MakerAddFlg = dt.Rows[0]["MakerAddFlg"].ToString();
                 me.StoreAddFlg = dt.Rows[0]["StoreAddFlg"].ToString();
@@ -159,6 +160,7 @@ namespace BL
                 me.WebStockFlg = dt.Rows[0]["WebStockFlg"].ToString();
                 me.StopFlg = dt.Rows[0]["StopFlg"].ToString();
                 me.DiscontinueFlg = dt.Rows[0]["DiscontinueFlg"].ToString();
+                me.SoldOutFlg = dt.Rows[0]["SoldOutFlg"].ToString();
                 me.InventoryAddFlg = dt.Rows[0]["InventoryAddFlg"].ToString();
                 me.MakerAddFlg = dt.Rows[0]["MakerAddFlg"].ToString();
                 me.StoreAddFlg = dt.Rows[0]["StoreAddFlg"].ToString();
@@ -275,6 +277,7 @@ namespace BL
             dt.Columns.Add("EDIOrderFlg", typeof(int));
             dt.Columns.Add("CatalogFlg", typeof(int));
             dt.Columns.Add("ParcelFlg", typeof(int));
+            dt.Columns.Add("SoldOutFlg", typeof(int));
             dt.Columns.Add("AutoOrderFlg", typeof(int));
             dt.Columns.Add("TaxRateFLG", typeof(int));
             dt.Columns.Add("CostingKBN", typeof(int));
@@ -380,6 +383,7 @@ namespace BL
                  , Z_Set(row["EDIOrderFlg"])
                  , Z_Set(row["CatalogFlg"])
                  , Z_Set(row["ParcelFlg"])
+                 , Z_Set(row["SoldOutFlg"])
                  , Z_Set(row["AutoOrderFlg"])
                  , Z_Set(row["TaxRateFLG"])
                  , Z_Set(row["CostingKBN"])
@@ -535,7 +539,9 @@ namespace BL
             DataTable dt = msdl.M_JANCounter_Select(me);
             if (dt.Rows.Count > 0)
             {
+                me.JanCount = dt.Rows[0]["JanCount"].ToString();
                 me.UpdatingFlg = dt.Rows[0]["UpdatingFlg"].ToString();
+                me.BeforeJanCount = dt.Rows[0]["BeforeJanCount"].ToString();
                 return true;
             }
             else

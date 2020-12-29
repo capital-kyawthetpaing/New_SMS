@@ -20,6 +20,8 @@ CREATE PROCEDURE M_JANCounter_Update
 --********************************************--
 
 BEGIN
+    -- interfering with SELECT statements.
+    SET NOCOUNT ON;
     
     IF @UpdatingFlg = 1
     BEGIN
@@ -30,14 +32,36 @@ BEGIN
            ,[UpdateDateTime] = SYSDATETIME()
         WHERE MainKEY = @MainKEY
         ;
+        
+        SELECT JanCount FROM [M_JANCounter]
+        WHERE MainKEY = @MainKEY
+        ;
     END
-    ELSE
+    ELSE IF @UpdatingFlg = 0  --リセット時
     BEGIN
         UPDATE [M_JANCounter]
         SET [JanCount]       = M_JANCounter.BeforeJanCount
            ,[UpdatingFlg]    = @UpdatingFlg
            ,[UpdateOperator] = @Operator  
            ,[UpdateDateTime] = SYSDATETIME()
+        WHERE MainKEY = @MainKEY
+        ;
+        
+        SELECT JanCount FROM [M_JANCounter]
+        WHERE MainKEY = @MainKEY
+        ;
+    END
+    ELSE IF @UpdatingFlg = 2  --更新時
+    BEGIN
+        UPDATE [M_JANCounter]
+        SET [BeforeJanCount] = M_JANCounter.JanCount
+           ,[UpdatingFlg]    = 0
+           ,[UpdateOperator] = @Operator  
+           ,[UpdateDateTime] = SYSDATETIME()
+        WHERE MainKEY = @MainKEY
+        ;
+        
+        SELECT JanCount FROM [M_JANCounter]
         WHERE MainKEY = @MainKEY
         ;
     END

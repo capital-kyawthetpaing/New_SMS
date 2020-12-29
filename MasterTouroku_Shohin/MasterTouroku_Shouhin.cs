@@ -1804,6 +1804,9 @@ namespace MasterTouroku_Shouhin
 
             mibl.M_ITEM_Exec(mie,dt,dtS, (short)OperationMode);
 
+            if (OperationMode != EOperationMode.DELETE)
+                UpdateCounter();
+
             //更新後画面クリア
             InitScr();
 
@@ -1881,6 +1884,7 @@ namespace MasterTouroku_Shouhin
             //{
                 Scr_Clr(0);
             //}
+            ResetCounter();
 
             switch (mode)
             {
@@ -2109,6 +2113,7 @@ namespace MasterTouroku_Shouhin
         // ==================================================
         protected override void EndSec()
         {
+            ResetCounter();
             this.Close();
             //アプリケーションを終了する
             //Application.Exit();
@@ -2614,29 +2619,9 @@ namespace MasterTouroku_Shouhin
                         dgvDetail.Rows[i].Cells[ic].Value = "";
                     }
                 }
+
+                ResetCounter();
                 
-                //自身がカウントアップしていたJANのカウンター値を元に戻す
-
-
-                //M_JANCounterを	MainKEY＝	1でSelect	
-                M_JANCounter_Entity me = new M_JANCounter_Entity();
-                me.MainKEY = "1";
-                bool ret = mibl.M_JANCounter_Select(me);
-
-                if (ret)
-                {
-                    //UpdatingFlg＝１かつ、JANCount＝覚えていたカウントアップした最大値であればM_JANCounterをUpdate	
-                    if (me.UpdatingFlg.Equals("1") && me.JanCount.Equals(mJanCount))
-                    {
-                        me.UpdatingFlg = "0";
-                        me.Operator = InOperatorCD;
-                        mibl.M_JANCounter_Update(me);
-
-                        //覚えていたカウントアップした最大値も０クリア
-                        mJanCount = "0";
-                    }
-                }
-
             }
             catch (Exception ex)
             {
@@ -2753,7 +2738,10 @@ namespace MasterTouroku_Shouhin
                                             SetDataToNewRow(columnIndex, rowIndex, jancd);
                                         }
                                     }
-
+                                    else
+                                    {
+                                        rows[0]["JanCD"] = jancd;
+                                    }
                                     //③M_JANCounterをUpdate	
                                     me.UpdatingFlg = "1";
                                     me.Operator = InOperatorCD;
@@ -2898,6 +2886,54 @@ namespace MasterTouroku_Shouhin
             //{
             dtSKU.Rows.Add(newrow);
             //}
+        }
+        private void UpdateCounter()
+        {
+            //自身がカウントアップしていたJANのカウンター値を更新する
+
+            //M_JANCounterを	MainKEY＝	1でSelect	
+            M_JANCounter_Entity me = new M_JANCounter_Entity();
+            me.MainKEY = "1";
+            bool ret = mibl.M_JANCounter_Select(me);
+
+            if (ret)
+            {
+                //UpdatingFlg＝１かつ、JANCount＝覚えていたカウントアップした最大値であればM_JANCounterをUpdate	
+                if (me.UpdatingFlg.Equals("1") && me.JanCount.Equals(mJanCount))
+                {
+                    me.UpdatingFlg = "2";
+                    me.Operator = InOperatorCD;
+                    mibl.M_JANCounter_Update(me);
+
+                    //覚えていたカウントアップした最大値も０クリア
+                    mJanCount = "0";
+                }
+            }
+
+        }
+        private void ResetCounter()
+        {
+            //自身がカウントアップしていたJANのカウンター値を元に戻す
+
+            //M_JANCounterを	MainKEY＝	1でSelect	
+            M_JANCounter_Entity me = new M_JANCounter_Entity();
+            me.MainKEY = "1";
+            bool ret = mibl.M_JANCounter_Select(me);
+
+            if (ret)
+            {
+                //UpdatingFlg＝１かつ、JANCount＝覚えていたカウントアップした最大値であればM_JANCounterをUpdate	
+                if (me.UpdatingFlg.Equals("1") && me.JanCount.Equals(mJanCount))
+                {
+                    me.UpdatingFlg = "0";
+                    me.Operator = InOperatorCD;
+                    mibl.M_JANCounter_Update(me);
+
+                    //覚えていたカウントアップした最大値も０クリア
+                    mJanCount = "0";
+                }
+            }
+
         }
     }
 }
