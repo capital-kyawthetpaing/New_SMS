@@ -60,6 +60,7 @@ namespace NyuukinItiranHyou
             }
             cboStoreAuthorizations.Bind(string.Empty, "2");
             cboStoreAuthorizations.SelectedValue = StoreCD;
+            //cbo.Bind(string.Empty);
             SetRequireField();
         }
 
@@ -180,6 +181,15 @@ namespace NyuukinItiranHyou
             {
                 nie = GetNyuukinData();
                 DataTable table = dtlog = nih.getPrintData(nie);
+
+                foreach (DataRow dr in table.Rows)
+                {
+                    if (dr["ConfirmAmount"].ToString() == "")
+                    {
+                        dr["ConfirmAmount"] = 0;
+                        dr["Confirmbalance"] = dr["ConfirmSource"];
+                    }
+                }
                 try
                 {
                     if (table == null || table.Rows.Count == 0)
@@ -321,7 +331,7 @@ namespace NyuukinItiranHyou
             {
                 if (!string.IsNullOrWhiteSpace(paymentinputstart.Text) && !string.IsNullOrWhiteSpace(paymentinputend.Text))
                 {
-                    if (Convert.ToInt32((paymentstart.Text.ToString().Replace("/", ""))) > Convert.ToInt32(paymentend.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
+                    if (Convert.ToDateTime((paymentinputstart.Text.ToString())) > Convert.ToDateTime(paymentinputend.Text.ToString())) //対象期間(From)の方が大きい場合Error
                     {
                         bbl.ShowMessage("E103");
                         paymentinputend.Focus();
