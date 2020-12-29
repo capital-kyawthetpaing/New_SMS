@@ -247,10 +247,10 @@ namespace FBDataSakusei_FBデータ作成
                                 KouzaKBN = dtgv.Rows[0]["KouzaKBN"].ToString(),
                                 KouzaNO = dtgv.Rows[0]["KouzaNO"].ToString(),
                                 KouzaMeigi = dtgv.Rows[0]["KouzaMeigi"].ToString(),
-                                PayGaku = dtgv.Rows[0]["transferAcc"].ToString(),
+                                //PayGaku = dtgv.Rows[0]["transferAcc"].ToString(),
                                 TransferGaku = dtgv.Rows[0]["TransferGaku"].ToString(),
                                 TransferFee = dtgv.Rows[0]["TransferFeeGaku"].ToString(),
-                                TransferFeeKBN = dtgv.Rows[0]["FeeKBN1"].ToString(),
+                                TransferFeeKBN = dtgv.Rows[0]["FeeKBN"].ToString(),
                             };
                             dpe = new D_Pay_Entity
                             {
@@ -306,26 +306,14 @@ namespace FBDataSakusei_FBデータ作成
 
                                 }
 
-
-
-                                //    // Save File to .txt  
-                                //    //FileStream fParameter = new FileStream(dirParameter, FileMode.Create, FileAccess.Write);
-                                //    //StreamWriter m_WriterParameter = new StreamWriter(fParameter);
-                                //    //m_WriterParameter.BaseStream.Seek(0, SeekOrigin.End);
-                                //    //m_WriterParameter.Write(dttext);
-                                //    //m_WriterParameter.Flush();
-                                //    //m_WriterParameter.Close();
                             }
 
-
-
-                            if (fbbl.FBDataSakusei_Insert(dfbe, dfde, dpe))
-                            {
-                                Clear(panel1);
-                                BindCombo();
-                                cboProcess.Focus();
-                            }
-
+                            //if (fbbl.FBDataSakusei_Insert(dfbe, dfde, dpe))
+                            //{
+                            //    Clear(panel1);
+                            //    BindCombo();
+                            //    cboProcess.Focus();
+                            //}
 
                         }
                     }
