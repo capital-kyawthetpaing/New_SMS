@@ -10,10 +10,7 @@ GO
 /****** Object:  StoredProcedure [M_JANCounter_Select]    */
 CREATE PROCEDURE M_JANCounter_Select(
     -- Add the parameters for the stored procedure here
-    @MainKEY int,
-    @VendorCD varchar(13),
-    @ChangeDate varchar(10),
-    @StoreCD varchar(4)
+    @MainKEY int
 )AS
 BEGIN
     -- SET NOCOUNT ON added to prevent extra result sets from
@@ -25,8 +22,8 @@ BEGIN
           ,M.JanCount
           ,M.UpdatingFlg
           ,M.BeforeJanCount
-          ,MS.UpdateOperator
-          ,CONVERT(varchar,MS.UpdateDateTime) AS UpdateDateTime
+          ,M.UpdateOperator
+          ,CONVERT(varchar,M.UpdateDateTime) AS UpdateDateTime
 
     from M_JANCounter M
     
