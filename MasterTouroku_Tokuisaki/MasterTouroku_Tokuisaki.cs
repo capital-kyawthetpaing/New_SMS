@@ -1227,7 +1227,7 @@ namespace MasterTouroku_Tokuisaki
                         {
                             if (!(Convert.ToInt32(detailControls[index].Text.Replace(",","")) >= 0 && Convert.ToInt32(detailControls[index].Text.Replace(",", "")) <= 2))
                             {
-                                bbl.ShowMessage("E117");
+                                bbl.ShowMessage("E117","{0}","{2}","{2}");
                                 return false;
                             }
                         }
