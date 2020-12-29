@@ -27,7 +27,7 @@ namespace DL
                 { "@KouzaKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dfde.KouzaKBN } },
                 { "@KouzaNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfde.KouzaNO } },
                 { "@KouzaMeigi", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfde.KouzaMeigi } },
-                { "@PayGaku", new ValuePair { value1 = SqlDbType.Money, value2 = dfde.PayGaku } },
+                //{ "@PayGaku", new ValuePair { value1 = SqlDbType.Money, value2 = dfde.PayGaku } },
                 { "@TransferGaku", new ValuePair { value1 = SqlDbType.Money, value2 = dfde.TransferGaku } },
                 { "@TransferFee", new ValuePair { value1 = SqlDbType.Money, value2 = dfde.TransferFee } },
                 { "@TransferFeeKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dfde.TransferFeeKBN } },
