@@ -67,7 +67,7 @@ namespace MasterTouroku_Shouhin
         , ChkDiscontinueFlg
         , ChkStopFlg
         , ChkDiscountKBN
-        , ChkZaikoKBN
+        , Chk5
         , Chk6
 
         , ChkPresentKBN
@@ -79,8 +79,8 @@ namespace MasterTouroku_Shouhin
 
         , ChkDirectFlg
         , ChkParcelFlg
+        , ChkZaikoKBN
         , ChkSoldOutFlg
-        , Chk16
         , Chk17
         , ChkSaleExcludedFlg
 
@@ -256,15 +256,14 @@ namespace MasterTouroku_Shouhin
                 {
                     case (int)EIndex.ChkVariousFLG:
                     case (int)EIndex.ChkSetKBN:
-                    case (int)EIndex.ChkZaikoKBN:
+                    case (int)EIndex.Chk5:
                     case (int)EIndex.Chk6:
                     case (int)EIndex.ChkNoNetOrderFlg:
                     case (int)EIndex.ChkEDIOrderFlg:
                     case (int)EIndex.ChkAutoOrderFlg:
                     case (int)EIndex.ChkDirectFlg:
                     case (int)EIndex.ChkParcelFlg:
-                    //case (int)EIndex.ChkSoldOutFlg:
-                    case (int)EIndex.Chk16:
+                    case (int)EIndex.ChkZaikoKBN:
                     case (int)EIndex.Chk17:
                     case (int)EIndex.ChkWebStockFlg:
                     case (int)EIndex.ChkInventoryAddFlg:
