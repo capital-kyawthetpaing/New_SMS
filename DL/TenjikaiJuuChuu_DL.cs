@@ -319,6 +319,14 @@ namespace DL
         }
         public DataTable M_TenjiKaiJuuChuu_Select(Tenjikai_Entity tje)
         {
+            if (!DateTime.TryParse(tje.KibouBi1, out DateTime dt1))
+            {
+                tje.KibouBi1 = "1999-09-09";
+            }
+            if (!DateTime.TryParse(tje.KibouBi2, out DateTime dt2))
+            {
+                tje.KibouBi2 = "1999-09-09";
+            }
             string sp = "M_TenjiKaiJuuChuu_Select";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
