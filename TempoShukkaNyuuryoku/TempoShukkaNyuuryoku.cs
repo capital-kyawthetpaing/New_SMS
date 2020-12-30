@@ -471,7 +471,7 @@ namespace TempoShukkaNyuuryoku
                 //出荷数
                 //入力無くても良い(It is not necessary to input)
                 //入力無い場合、0とする（When there is no input, it is set to 0）
-                txtShippingSu.Text = bbl.Z_SetStr(txtShippingSu.Text);
+                txtShippingSu.Text = bbl.Z_SetStr(txtShippingSu.Text.ToString());
 
                 //入力された場合
                 //出荷数＞	Form.出荷可能数の場合、Error Ｅ１５０
