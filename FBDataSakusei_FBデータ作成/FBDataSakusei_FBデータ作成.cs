@@ -52,7 +52,7 @@ namespace FBDataSakusei_FBデータ作成
             SetRequireField();
 
             cboProcess.Focus();
-            //cboProcess.SelectedIndex = 0;
+            cboProcess.SelectedValue = 0;
         }
 
         public void BindCombo()
