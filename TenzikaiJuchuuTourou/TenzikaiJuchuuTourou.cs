@@ -22,6 +22,7 @@ namespace TenzikaiJuchuuTourou
         private const string ProID = "TenzikaiJuchuuTourou";
         private const string ProNm = "展示会受注登録";
         private const short mc_L_END = 3; // ロック用
+        //private const int TotalCount 
         private const string TempoNouhinsyo = "TenzikaiJuchuuTourou.exe";
         private string C_dt = "";
         private int mTennic;
@@ -612,7 +613,7 @@ namespace TenzikaiJuchuuTourou
 
         }
         private void GridControl_KeyDown(object sender, KeyEventArgs e)
-        {
+            {
             try
             {
                 int w_Row;
@@ -849,7 +850,12 @@ namespace TenzikaiJuchuuTourou
                     {
                         return;
                     }
-
+                    else
+                    {
+                        var con = ((this.Controls.Find(GetNextControl(w_ActCtl, true).Name, true)[0]) as CKM_ComboBox);
+                        con.Select();
+                        con.Focus();
+                    }                 //  this.SelectNextControl(GetNextControl(w_ActCtl,true),true,false,false,false);
                     //switch (CL)
                     //{
                     //    //case (int)ClsGridJuchuu.ColNO.NotPrintFLG:
@@ -1686,7 +1692,7 @@ namespace TenzikaiJuchuuTourou
 
             if (dt == null)
             {
-                for (int w_Row = 0; w_Row < 999; w_Row++)
+                for (int w_Row = 0; w_Row < ClsGridTenjikai.gMxGyo; w_Row++)
                 {
                     mGrid.g_DArray[w_Row].GYONO = (w_Row + 1).ToString();
                     //mGrid.g_DArray[w_Row].Rank1UnitPrice = "0";
@@ -3170,6 +3176,7 @@ namespace TenzikaiJuchuuTourou
 
         public void btn_Meisai_Click(object sender, EventArgs e)
         {
+            
             if (!CheckKey(-1))
             {
                 return;
@@ -3185,11 +3192,13 @@ namespace TenzikaiJuchuuTourou
             openFileDialog1.FileName = "";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
+                this.Cursor = Cursors.WaitCursor;
                 tkb = new TenjikaiJuuChuu_BL();
                 var dt = ConvertToDataTable(openFileDialog1.FileName);
 
                 if (dt == null || CheckMasterandDate(dt))
                 {
+                    this.Cursor = Cursors.Default;
                     //Exist with E269 (JanCD, DateError)
                     return;
                 }
@@ -3211,8 +3220,10 @@ namespace TenzikaiJuchuuTourou
                 mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
                 S_BodySeigyo(4, 0);
                 scjan_1.Focus();
+                this.Cursor = Cursors.Default;
                 //SelectNextControl(ActiveControl, true, true, true, true);
             }
+            this.Cursor = Cursors.Default;
         }
         public bool CheckMasterandDate(DataTable dt)
         {
@@ -3230,8 +3241,14 @@ namespace TenzikaiJuchuuTourou
                 r++;
                 if (!DateAllowed.Contains(dr["販売予定日"].ToString()))
                 {
-                    bbl.ShowMessage("E269", r.ToString(), "販売予定日の指定外の情報");
-                    return true;
+                    if ((dr["販売予定日"].ToString().Trim()) != "" && !String.IsNullOrEmpty(dr["販売予定日"].ToString().Trim()))
+                    {
+                        bbl.ShowMessage("E269", r.ToString(), "販売予定日の指定外の情報");
+                        return true;
+                    }
+                    else {
+                        dr["販売予定日"] = dr["販売予定日"].ToString().Trim();
+                    }
                 }
                 else
                 {
@@ -3689,7 +3706,7 @@ namespace TenzikaiJuchuuTourou
                     else if (pGrid == 2)
                     {
                     
-                        for (w_Row = 0; w_Row <= 999; w_Row++)
+                        for (w_Row = 0; w_Row <= ClsGridTenjikai.gMxGyo; w_Row++)
                         {
                             if (m_EnableCnt - 1 < w_Row)
                                 break;

@@ -278,7 +278,7 @@ BEGIN
 														union 
 														select * from #gamen4) a
 
-														select * from #res
+														select * from #res where _8ShuukaYoteiBi != '1999-09-09'
 
 														drop table #temp
 														drop table #temp1

@@ -107,6 +107,7 @@ namespace DL
             AddParam(command, "@EDIOrderFlg", SqlDbType.TinyInt, me.EDIOrderFlg);
             AddParam(command, "@CatalogFlg", SqlDbType.TinyInt, me.CatalogFlg);
             AddParam(command, "@ParcelFlg", SqlDbType.TinyInt, me.ParcelFlg);
+            AddParam(command, "@SoldOutFlg", SqlDbType.TinyInt, me.SoldOutFlg);
             AddParam(command, "@AutoOrderFlg", SqlDbType.TinyInt, me.AutoOrderFlg);
             AddParam(command, "@TaxRateFLG", SqlDbType.TinyInt, me.TaxRateFLG);
             AddParam(command, "@CostingKBN", SqlDbType.TinyInt, me.CostingKBN);

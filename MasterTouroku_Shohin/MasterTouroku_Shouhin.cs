@@ -42,7 +42,7 @@ namespace MasterTouroku_Shouhin
         , ChkDiscontinueFlg
         , ChkStopFlg
         , ChkDiscountKBN
-        , ChkZaikoKBN
+        , Chk5
         , Chk6
 
         , ChkPresentKBN
@@ -54,8 +54,8 @@ namespace MasterTouroku_Shouhin
 
         , ChkDirectFlg
         , ChkParcelFlg
+        , ChkZaikoKBN
         , ChkSoldOutFlg
-        , Chk16
         , Chk17
         , ChkSaleExcludedFlg
 
@@ -150,9 +150,10 @@ namespace MasterTouroku_Shouhin
         private DataTable dtSKU;
         private DataTable dtSite;
         private int mFractionKBN;
+        private string mJanCount;
         private decimal mOldPriceOutTax;
         private decimal mOldRate;
-        private decimal mOldOrderPriceWithoutTax;  
+        private decimal mOldOrderPriceWithoutTax;
 
         public MasterTouroku_Shouhin()
         {
@@ -302,9 +303,8 @@ namespace MasterTouroku_Shouhin
                 switch(i)
                 {
                     case (int)EIndex.ChkVirtualFlg:
+                    case (int)EIndex.Chk5:
                     case (int)EIndex.Chk6:
-                    //case (int)EIndex.ChkSoldOutFlg:
-                    case (int)EIndex.Chk16:
                     case (int)EIndex.Chk17:
                     case (int)EIndex.Chk27:
                     case (int)EIndex.Chk28:
@@ -1803,6 +1803,9 @@ namespace MasterTouroku_Shouhin
 
             mibl.M_ITEM_Exec(mie,dt,dtS, (short)OperationMode);
 
+            if (OperationMode != EOperationMode.DELETE)
+                UpdateCounter();
+
             //更新後画面クリア
             InitScr();
 
@@ -1880,6 +1883,7 @@ namespace MasterTouroku_Shouhin
             //{
                 Scr_Clr(0);
             //}
+            ResetCounter();
 
             switch (mode)
             {
@@ -2071,15 +2075,15 @@ namespace MasterTouroku_Shouhin
                         SearchData(kbn, PreviousCtrl);
 
                     break;
-                case 9://F10:展開
-                    InitGrid();
-                    //if (dgvDetail.CurrentCell == null)
-                    //    return;
+                //case 9://F10:展開
+                //    InitGrid();
+                //    //if (dgvDetail.CurrentCell == null)
+                //    //    return;
 
-                    //int ColumnIndex = dgvDetail.CurrentCell.ColumnIndex;
-                    //int RowIndex = dgvDetail.CurrentCell.RowIndex;
-                    //Expand(ColumnIndex, RowIndex);
-                    break;
+                //    //int ColumnIndex = dgvDetail.CurrentCell.ColumnIndex;
+                //    //int RowIndex = dgvDetail.CurrentCell.RowIndex;
+                //    //Expand(ColumnIndex, RowIndex);
+                //    break;
 
                 case 11:    //F12:登録
                     {
@@ -2108,6 +2112,7 @@ namespace MasterTouroku_Shouhin
         // ==================================================
         protected override void EndSec()
         {
+            ResetCounter();
             this.Close();
             //アプリケーションを終了する
             //Application.Exit();
@@ -2605,7 +2610,17 @@ namespace MasterTouroku_Shouhin
         {
             try
             {
+                //画面のJANCDをクリアする（自動採番以外のJANCDも含めて）
+                for (int i = 1; i < dgvDetail.Rows.Count; i++)
+                {
+                    for (int ic = 2; ic < dgvDetail.ColumnCount; ic++)
+                    {
+                        dgvDetail.Rows[i].Cells[ic].Value = "";
+                    }
+                }
 
+                ResetCounter();
+                
             }
             catch (Exception ex)
             {
@@ -2722,16 +2737,22 @@ namespace MasterTouroku_Shouhin
                                             SetDataToNewRow(columnIndex, rowIndex, jancd);
                                         }
                                     }
+                                    else
+                                    {
+                                        rows[0]["JanCD"] = jancd;
+                                    }
+                                    //③M_JANCounterをUpdate	
+                                    me.UpdatingFlg = "1";
+                                    me.Operator = InOperatorCD;
+                                    mibl.M_JANCounter_Update(me);
+
+                                    //④カウントアップした最大値を覚える
+                                    mJanCount =me.JanCount;
                                 }
                             }
                         }
                     }
 
-                    //③M_JANCounterをUpdate	
-                    me.Operator = InOperatorCD;
-                    mibl.M_JANCounter_Update(me);
-
-                    //④カウントアップした最大値を覚える
 
 
                 }
@@ -2864,6 +2885,54 @@ namespace MasterTouroku_Shouhin
             //{
             dtSKU.Rows.Add(newrow);
             //}
+        }
+        private void UpdateCounter()
+        {
+            //自身がカウントアップしていたJANのカウンター値を更新する
+
+            //M_JANCounterを	MainKEY＝	1でSelect	
+            M_JANCounter_Entity me = new M_JANCounter_Entity();
+            me.MainKEY = "1";
+            bool ret = mibl.M_JANCounter_Select(me);
+
+            if (ret)
+            {
+                //UpdatingFlg＝１かつ、JANCount＝覚えていたカウントアップした最大値であればM_JANCounterをUpdate	
+                if (me.UpdatingFlg.Equals("1") && me.JanCount.Equals(mJanCount))
+                {
+                    me.UpdatingFlg = "2";
+                    me.Operator = InOperatorCD;
+                    mibl.M_JANCounter_Update(me);
+
+                    //覚えていたカウントアップした最大値も０クリア
+                    mJanCount = "0";
+                }
+            }
+
+        }
+        private void ResetCounter()
+        {
+            //自身がカウントアップしていたJANのカウンター値を元に戻す
+
+            //M_JANCounterを	MainKEY＝	1でSelect	
+            M_JANCounter_Entity me = new M_JANCounter_Entity();
+            me.MainKEY = "1";
+            bool ret = mibl.M_JANCounter_Select(me);
+
+            if (ret)
+            {
+                //UpdatingFlg＝１かつ、JANCount＝覚えていたカウントアップした最大値であればM_JANCounterをUpdate	
+                if (me.UpdatingFlg.Equals("1") && me.JanCount.Equals(mJanCount))
+                {
+                    me.UpdatingFlg = "0";
+                    me.Operator = InOperatorCD;
+                    mibl.M_JANCounter_Update(me);
+
+                    //覚えていたカウントアップした最大値も０クリア
+                    mJanCount = "0";
+                }
+            }
+
         }
     }
 }

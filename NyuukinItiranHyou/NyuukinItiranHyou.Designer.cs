@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.search_customer = new Search.CKM_SearchControl();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
             this.rdb_all = new CKM_Controls.CKM_RadioButton();
@@ -45,7 +46,6 @@
             this.paymentend = new CKM_Controls.CKM_TextBox();
             this.paymentinputstart = new CKM_Controls.CKM_TextBox();
             this.paymentstart = new CKM_Controls.CKM_TextBox();
-            this.search_customer = new Search.CKM_SearchControl();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,6 +86,38 @@
             this.panel1.Size = new System.Drawing.Size(1700, 550);
             this.panel1.TabIndex = 9;
             // 
+            // search_customer
+            // 
+            this.search_customer.AutoSize = true;
+            this.search_customer.ChangeDate = "";
+            this.search_customer.ChangeDateWidth = 100;
+            this.search_customer.Code = "";
+            this.search_customer.CodeWidth = 100;
+            this.search_customer.CodeWidth1 = 100;
+            this.search_customer.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.search_customer.DataCheck = true;
+            this.search_customer.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.search_customer.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.search_customer.IsCopy = false;
+            this.search_customer.LabelText = "";
+            this.search_customer.LabelVisible = true;
+            this.search_customer.Location = new System.Drawing.Point(100, 124);
+            this.search_customer.Margin = new System.Windows.Forms.Padding(0);
+            this.search_customer.Name = "search_customer";
+            this.search_customer.NameWidth = 310;
+            this.search_customer.SearchEnable = true;
+            this.search_customer.Size = new System.Drawing.Size(444, 30);
+            this.search_customer.Stype = Search.CKM_SearchControl.SearchType.仕入先;
+            this.search_customer.TabIndex = 6;
+            this.search_customer.test = null;
+            this.search_customer.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.search_customer.UseChangeDate = false;
+            this.search_customer.Value1 = null;
+            this.search_customer.Value2 = null;
+            this.search_customer.Value3 = null;
+            this.search_customer.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.search_customer_CodeKeyDownEvent);
+            this.search_customer.Enter += new System.EventHandler(this.search_customer_Enter);
+            // 
             // ckM_Label8
             // 
             this.ckM_Label8.AutoSize = true;
@@ -95,7 +127,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(40, 182);
+            this.ckM_Label8.Location = new System.Drawing.Point(40, 164);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label8.TabIndex = 69;
@@ -124,7 +156,7 @@
             // 
             this.rdb_all.AutoSize = true;
             this.rdb_all.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.rdb_all.Location = new System.Drawing.Point(222, 180);
+            this.rdb_all.Location = new System.Drawing.Point(221, 162);
             this.rdb_all.Name = "rdb_all";
             this.rdb_all.Size = new System.Drawing.Size(56, 16);
             this.rdb_all.TabIndex = 8;
@@ -136,7 +168,7 @@
             // 
             this.rdb_one.AutoSize = true;
             this.rdb_one.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.rdb_one.Location = new System.Drawing.Point(100, 180);
+            this.rdb_one.Location = new System.Drawing.Point(99, 162);
             this.rdb_one.Name = "rdb_one";
             this.rdb_one.Size = new System.Drawing.Size(95, 16);
             this.rdb_one.TabIndex = 7;
@@ -157,7 +189,7 @@
             this.cbo_torikomi.MaxLength = 30;
             this.cbo_torikomi.MoveNext = true;
             this.cbo_torikomi.Name = "cbo_torikomi";
-            this.cbo_torikomi.Size = new System.Drawing.Size(270, 20);
+            this.cbo_torikomi.Size = new System.Drawing.Size(100, 20);
             this.cbo_torikomi.TabIndex = 5;
             // 
             // ckM_Label6
@@ -399,38 +431,6 @@
             this.paymentstart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.paymentstart.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.paymentstart.UseColorSizMode = false;
-            // 
-            // search_customer
-            // 
-            this.search_customer.AutoSize = true;
-            this.search_customer.ChangeDate = "";
-            this.search_customer.ChangeDateWidth = 100;
-            this.search_customer.Code = "";
-            this.search_customer.CodeWidth = 100;
-            this.search_customer.CodeWidth1 = 100;
-            this.search_customer.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.search_customer.DataCheck = true;
-            this.search_customer.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.search_customer.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.search_customer.IsCopy = false;
-            this.search_customer.LabelText = "";
-            this.search_customer.LabelVisible = true;
-            this.search_customer.Location = new System.Drawing.Point(100, 124);
-            this.search_customer.Margin = new System.Windows.Forms.Padding(0);
-            this.search_customer.Name = "search_customer";
-            this.search_customer.NameWidth = 310;
-            this.search_customer.SearchEnable = true;
-            this.search_customer.Size = new System.Drawing.Size(444, 48);
-            this.search_customer.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.search_customer.TabIndex = 6;
-            this.search_customer.test = null;
-            this.search_customer.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.search_customer.UseChangeDate = false;
-            this.search_customer.Value1 = null;
-            this.search_customer.Value2 = null;
-            this.search_customer.Value3 = null;
-            this.search_customer.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.search_customer_CodeKeyDownEvent);
-            this.search_customer.Enter += new System.EventHandler(this.search_customer_Enter);
             // 
             // NyuukinItiranHyou
             // 
