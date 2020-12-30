@@ -71,5 +71,7 @@ namespace Entity
 
         public string Flg { get; set; }
 
+        public string count { get; set; }
+
     }
 }

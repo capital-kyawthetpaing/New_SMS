@@ -104,6 +104,8 @@ namespace FBDataSakusei_FBデータ作成
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                     {
                         Clear(panel1);
+                        BindCombo();
+                        cboProcess.SelectedValue = 0;
                         cboProcess.Focus();
                     }
                     break;
@@ -133,6 +135,10 @@ namespace FBDataSakusei_FBデータ作成
                 if(dtgv.Rows.Count > 0)
                 {
                     gvFBDataSakusei.DataSource = dtgv;
+                    decimal total = dtgv.AsEnumerable().Sum(row => row.Field<decimal>("TransferGaku"));
+                    lblTransferAmount.Text = total.ToString();
+                    decimal totalFee = dtgv.AsEnumerable().Sum(row => row.Field<decimal>("TransferFeeGaku"));
+                    lblTransferFee.Text = totalFee.ToString();                 
                 }
                 else
                 {
@@ -255,6 +261,8 @@ namespace FBDataSakusei_FBデータ作成
                             dpe = new D_Pay_Entity
                             {
                                 Flg = cboProcess.SelectedValue.ToString(),
+                                TransferGaku = lblTransferAmount.Text,
+                                count = dtgv.Rows.Count.ToString(),
                             };
                             DataTable dttext = new DataTable();
                             dttext = fbbl.D_Pay_SelectForText(dfbe, dpe);
@@ -319,7 +327,7 @@ namespace FBDataSakusei_FBデータ作成
                     }
                     else if (Btn_F12.Text == "削除(F12)")
                     {
-                        if (bbl.ShowMessage("Q201") == DialogResult.Yes)
+                        if (bbl.ShowMessage("Q102") == DialogResult.Yes)
                         {
                             dfbe = new D_FBControl_Entity
                             {
