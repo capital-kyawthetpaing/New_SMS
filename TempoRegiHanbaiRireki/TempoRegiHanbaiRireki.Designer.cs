@@ -2324,7 +2324,7 @@
             this.btnCustomerSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomerSearch.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.btnCustomerSearch.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Small;
-            this.btnCustomerSearch.Location = new System.Drawing.Point(4, 79);
+            this.btnCustomerSearch.Location = new System.Drawing.Point(4, 80);
             this.btnCustomerSearch.Margin = new System.Windows.Forms.Padding(1);
             this.btnCustomerSearch.Name = "btnCustomerSearch";
             this.btnCustomerSearch.Size = new System.Drawing.Size(200, 41);
