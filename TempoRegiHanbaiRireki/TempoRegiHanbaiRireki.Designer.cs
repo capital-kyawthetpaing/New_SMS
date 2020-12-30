@@ -2273,13 +2273,13 @@
             this.ckmShop_Label4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label4.FontBold = true;
-            this.ckmShop_Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.ckmShop_Label4.ForeColor = System.Drawing.Color.Red;
             this.ckmShop_Label4.Location = new System.Drawing.Point(75, 914);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
             this.ckmShop_Label4.Size = new System.Drawing.Size(479, 30);
             this.ckmShop_Label4.TabIndex = 75;
             this.ckmShop_Label4.Text = "出荷可能・未出荷(引当済)の明細";
-            this.ckmShop_Label4.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
+            this.ckmShop_Label4.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Red;
             this.ckmShop_Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label5
