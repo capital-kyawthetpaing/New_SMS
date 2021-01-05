@@ -29,6 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.RB_Item = new CKM_Controls.CKM_RadioButton();
+            this.CK_suru = new CKM_Controls.CKM_CheckBox();
+            this.RB_makeritem = new CKM_Controls.CKM_RadioButton();
+            this.ckM_Label35 = new CKM_Controls.CKM_Label();
+            this.RB_all = new CKM_Controls.CKM_RadioButton();
+            this.RB_BaseInfo = new CKM_Controls.CKM_RadioButton();
+            this.RB_attributeinfo = new CKM_Controls.CKM_RadioButton();
+            this.RB_priceinfo = new CKM_Controls.CKM_RadioButton();
+            this.RB_Catloginfo = new CKM_Controls.CKM_RadioButton();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ckM_LB_Multiseparate = new CKM_Controls.CKM_Label();
             this.ckM_RB_or = new CKM_Controls.CKM_RadioButton();
@@ -38,10 +50,6 @@
             this.TB_Item = new CKM_Controls.CKM_TextBox();
             this.LB_ChangeDate = new System.Windows.Forms.Label();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
-            this.ckM_Label35 = new CKM_Controls.CKM_Label();
-            this.RB_makeritem = new CKM_Controls.CKM_RadioButton();
-            this.RB_Item = new CKM_Controls.CKM_RadioButton();
-            this.CK_suru = new CKM_Controls.CKM_CheckBox();
             this.ckM_Label34 = new CKM_Controls.CKM_Label();
             this.CK_UnApprove = new CKM_Controls.CKM_CheckBox();
             this.TB_ApprovalDateT = new CKM_Controls.CKM_TextBox();
@@ -101,20 +109,12 @@
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.SC_Vendor = new Search.CKM_SearchControl();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
-            this.RB_Catloginfo = new CKM_Controls.CKM_RadioButton();
-            this.RB_priceinfo = new CKM_Controls.CKM_RadioButton();
-            this.RB_attributeinfo = new CKM_Controls.CKM_RadioButton();
-            this.RB_BaseInfo = new CKM_Controls.CKM_RadioButton();
-            this.RB_all = new CKM_Controls.CKM_RadioButton();
             this.LB_targer = new CKM_Controls.CKM_Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.PanelHeader.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -212,6 +212,144 @@
             this.panel1.Size = new System.Drawing.Size(1670, 310);
             this.panel1.TabIndex = 99;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.RB_Item);
+            this.panel4.Controls.Add(this.CK_suru);
+            this.panel4.Controls.Add(this.RB_makeritem);
+            this.panel4.Controls.Add(this.ckM_Label35);
+            this.panel4.Location = new System.Drawing.Point(119, 280);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(700, 25);
+            this.panel4.TabIndex = 98;
+            // 
+            // RB_Item
+            // 
+            this.RB_Item.AutoSize = true;
+            this.RB_Item.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.RB_Item.Location = new System.Drawing.Point(53, 3);
+            this.RB_Item.Name = "RB_Item";
+            this.RB_Item.Size = new System.Drawing.Size(51, 16);
+            this.RB_Item.TabIndex = 77;
+            this.RB_Item.TabStop = true;
+            this.RB_Item.Text = "ITEM";
+            this.RB_Item.UseVisualStyleBackColor = true;
+            // 
+            // CK_suru
+            // 
+            this.CK_suru.AutoSize = true;
+            this.CK_suru.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.CK_suru.Location = new System.Drawing.Point(5, 4);
+            this.CK_suru.Name = "CK_suru";
+            this.CK_suru.Size = new System.Drawing.Size(50, 16);
+            this.CK_suru.TabIndex = 76;
+            this.CK_suru.Text = "する";
+            this.CK_suru.UseVisualStyleBackColor = true;
+            this.CK_suru.CheckedChanged += new System.EventHandler(this.CK_suru_CheckedChanged);
+            // 
+            // RB_makeritem
+            // 
+            this.RB_makeritem.AutoSize = true;
+            this.RB_makeritem.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.RB_makeritem.Location = new System.Drawing.Point(117, 4);
+            this.RB_makeritem.Name = "RB_makeritem";
+            this.RB_makeritem.Size = new System.Drawing.Size(115, 16);
+            this.RB_makeritem.TabIndex = 78;
+            this.RB_makeritem.TabStop = true;
+            this.RB_makeritem.Text = "メーカー商品CD";
+            this.RB_makeritem.UseVisualStyleBackColor = true;
+            // 
+            // ckM_Label35
+            // 
+            this.ckM_Label35.AutoSize = true;
+            this.ckM_Label35.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label35.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label35.DefaultlabelSize = true;
+            this.ckM_Label35.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label35.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label35.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label35.Location = new System.Drawing.Point(238, 7);
+            this.ckM_Label35.Name = "ckM_Label35";
+            this.ckM_Label35.Size = new System.Drawing.Size(437, 12);
+            this.ckM_Label35.TabIndex = 79;
+            this.ckM_Label35.Text = "検索された商品と同じITEM（メーカー商品CD）の商品も同時に出力する。";
+            this.ckM_Label35.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // RB_all
+            // 
+            this.RB_all.AutoSize = true;
+            this.RB_all.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.RB_all.Location = new System.Drawing.Point(123, 5);
+            this.RB_all.Name = "RB_all";
+            this.RB_all.Size = new System.Drawing.Size(49, 16);
+            this.RB_all.TabIndex = 1;
+            this.RB_all.TabStop = true;
+            this.RB_all.Text = "全て";
+            this.RB_all.UseVisualStyleBackColor = true;
+            // 
+            // RB_BaseInfo
+            // 
+            this.RB_BaseInfo.AutoSize = true;
+            this.RB_BaseInfo.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.RB_BaseInfo.Location = new System.Drawing.Point(178, 5);
+            this.RB_BaseInfo.Name = "RB_BaseInfo";
+            this.RB_BaseInfo.Size = new System.Drawing.Size(75, 16);
+            this.RB_BaseInfo.TabIndex = 3;
+            this.RB_BaseInfo.TabStop = true;
+            this.RB_BaseInfo.Text = "基本情報";
+            this.RB_BaseInfo.UseVisualStyleBackColor = true;
+            // 
+            // RB_attributeinfo
+            // 
+            this.RB_attributeinfo.AutoSize = true;
+            this.RB_attributeinfo.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.RB_attributeinfo.Location = new System.Drawing.Point(259, 5);
+            this.RB_attributeinfo.Name = "RB_attributeinfo";
+            this.RB_attributeinfo.Size = new System.Drawing.Size(75, 16);
+            this.RB_attributeinfo.TabIndex = 4;
+            this.RB_attributeinfo.TabStop = true;
+            this.RB_attributeinfo.Text = "属性情報";
+            this.RB_attributeinfo.UseVisualStyleBackColor = true;
+            // 
+            // RB_priceinfo
+            // 
+            this.RB_priceinfo.AutoSize = true;
+            this.RB_priceinfo.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.RB_priceinfo.Location = new System.Drawing.Point(340, 5);
+            this.RB_priceinfo.Name = "RB_priceinfo";
+            this.RB_priceinfo.Size = new System.Drawing.Size(75, 16);
+            this.RB_priceinfo.TabIndex = 5;
+            this.RB_priceinfo.TabStop = true;
+            this.RB_priceinfo.Text = "価格情報";
+            this.RB_priceinfo.UseVisualStyleBackColor = true;
+            // 
+            // RB_Catloginfo
+            // 
+            this.RB_Catloginfo.AutoSize = true;
+            this.RB_Catloginfo.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.RB_Catloginfo.Location = new System.Drawing.Point(417, 5);
+            this.RB_Catloginfo.Name = "RB_Catloginfo";
+            this.RB_Catloginfo.Size = new System.Drawing.Size(101, 16);
+            this.RB_Catloginfo.TabIndex = 6;
+            this.RB_Catloginfo.TabStop = true;
+            this.RB_Catloginfo.Text = "カタログ情報";
+            this.RB_Catloginfo.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(674, 16);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(12, 14);
+            this.flowLayoutPanel1.TabIndex = 97;
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(121, 1);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(600, 25);
+            this.panel3.TabIndex = 96;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.ckM_LB_Multiseparate);
@@ -270,6 +408,7 @@
             this.SC_Brand.ChangeDateWidth = 100;
             this.SC_Brand.Code = "";
             this.SC_Brand.CodeWidth = 100;
+            this.SC_Brand.CodeWidth1 = 100;
             this.SC_Brand.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_Brand.DataCheck = false;
             this.SC_Brand.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -280,10 +419,12 @@
             this.SC_Brand.Location = new System.Drawing.Point(123, 84);
             this.SC_Brand.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Brand.Name = "SC_Brand";
+            this.SC_Brand.NameWidth = 280;
             this.SC_Brand.SearchEnable = true;
             this.SC_Brand.Size = new System.Drawing.Size(414, 27);
             this.SC_Brand.Stype = Search.CKM_SearchControl.SearchType.ブランド;
             this.SC_Brand.TabIndex = 11;
+            this.SC_Brand.test = null;
             this.SC_Brand.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_Brand.UseChangeDate = false;
             this.SC_Brand.Value1 = null;
@@ -310,8 +451,9 @@
             this.TB_MakerItem.isMaxLengthErr = false;
             this.TB_MakerItem.IsNumber = true;
             this.TB_MakerItem.IsShop = false;
-            this.TB_MakerItem.Length = 32767;
+            this.TB_MakerItem.Length = 200;
             this.TB_MakerItem.Location = new System.Drawing.Point(117, 235);
+            this.TB_MakerItem.MaxLength = 200;
             this.TB_MakerItem.MoveNext = true;
             this.TB_MakerItem.Name = "TB_MakerItem";
             this.TB_MakerItem.Size = new System.Drawing.Size(1460, 19);
@@ -338,8 +480,9 @@
             this.TB_Item.isMaxLengthErr = false;
             this.TB_Item.IsNumber = true;
             this.TB_Item.IsShop = false;
-            this.TB_Item.Length = 32767;
+            this.TB_Item.Length = 300;
             this.TB_Item.Location = new System.Drawing.Point(117, 216);
+            this.TB_Item.MaxLength = 300;
             this.TB_Item.MoveNext = true;
             this.TB_Item.Name = "TB_Item";
             this.TB_Item.Size = new System.Drawing.Size(1460, 19);
@@ -375,59 +518,6 @@
             this.ckM_Label5.Text = "基準日";
             this.ckM_Label5.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_Label35
-            // 
-            this.ckM_Label35.AutoSize = true;
-            this.ckM_Label35.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label35.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label35.DefaultlabelSize = true;
-            this.ckM_Label35.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label35.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label35.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label35.Location = new System.Drawing.Point(238, 7);
-            this.ckM_Label35.Name = "ckM_Label35";
-            this.ckM_Label35.Size = new System.Drawing.Size(437, 12);
-            this.ckM_Label35.TabIndex = 79;
-            this.ckM_Label35.Text = "検索された商品と同じITEM（メーカー商品CD）の商品も同時に出力する。";
-            this.ckM_Label35.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // RB_makeritem
-            // 
-            this.RB_makeritem.AutoSize = true;
-            this.RB_makeritem.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.RB_makeritem.Location = new System.Drawing.Point(117, 4);
-            this.RB_makeritem.Name = "RB_makeritem";
-            this.RB_makeritem.Size = new System.Drawing.Size(115, 16);
-            this.RB_makeritem.TabIndex = 78;
-            this.RB_makeritem.TabStop = true;
-            this.RB_makeritem.Text = "メーカー商品CD";
-            this.RB_makeritem.UseVisualStyleBackColor = true;
-            // 
-            // RB_Item
-            // 
-            this.RB_Item.AutoSize = true;
-            this.RB_Item.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.RB_Item.Location = new System.Drawing.Point(53, 3);
-            this.RB_Item.Name = "RB_Item";
-            this.RB_Item.Size = new System.Drawing.Size(51, 16);
-            this.RB_Item.TabIndex = 77;
-            this.RB_Item.TabStop = true;
-            this.RB_Item.Text = "ITEM";
-            this.RB_Item.UseVisualStyleBackColor = true;
-            // 
-            // CK_suru
-            // 
-            this.CK_suru.AutoSize = true;
-            this.CK_suru.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.CK_suru.Location = new System.Drawing.Point(5, 4);
-            this.CK_suru.Name = "CK_suru";
-            this.CK_suru.Size = new System.Drawing.Size(50, 16);
-            this.CK_suru.TabIndex = 76;
-            this.CK_suru.Text = "する";
-            this.CK_suru.UseVisualStyleBackColor = true;
-            this.CK_suru.CheckedChanged += new System.EventHandler(this.CK_suru_CheckedChanged);
             // 
             // ckM_Label34
             // 
@@ -793,8 +883,9 @@
             this.TB_InstructionNo.isMaxLengthErr = false;
             this.TB_InstructionNo.IsNumber = true;
             this.TB_InstructionNo.IsShop = false;
-            this.TB_InstructionNo.Length = 32767;
+            this.TB_InstructionNo.Length = 50;
             this.TB_InstructionNo.Location = new System.Drawing.Point(1281, 169);
+            this.TB_InstructionNo.MaxLength = 50;
             this.TB_InstructionNo.MoveNext = true;
             this.TB_InstructionNo.Name = "TB_InstructionNo";
             this.TB_InstructionNo.Size = new System.Drawing.Size(300, 19);
@@ -991,6 +1082,7 @@
             this.SC_SportsCD.ChangeDateWidth = 100;
             this.SC_SportsCD.Code = "";
             this.SC_SportsCD.CodeWidth = 50;
+            this.SC_SportsCD.CodeWidth1 = 50;
             this.SC_SportsCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_SportsCD.DataCheck = false;
             this.SC_SportsCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1001,10 +1093,12 @@
             this.SC_SportsCD.Location = new System.Drawing.Point(690, 183);
             this.SC_SportsCD.Margin = new System.Windows.Forms.Padding(0);
             this.SC_SportsCD.Name = "SC_SportsCD";
+            this.SC_SportsCD.NameWidth = 280;
             this.SC_SportsCD.SearchEnable = true;
             this.SC_SportsCD.Size = new System.Drawing.Size(364, 27);
             this.SC_SportsCD.Stype = Search.CKM_SearchControl.SearchType.競技;
             this.SC_SportsCD.TabIndex = 45;
+            this.SC_SportsCD.test = null;
             this.SC_SportsCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_SportsCD.UseChangeDate = false;
             this.SC_SportsCD.Value1 = null;
@@ -1037,6 +1131,7 @@
             this.SC_char1.ChangeDateWidth = 100;
             this.SC_char1.Code = "";
             this.SC_char1.CodeWidth = 50;
+            this.SC_char1.CodeWidth1 = 50;
             this.SC_char1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_char1.DataCheck = false;
             this.SC_char1.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1047,10 +1142,12 @@
             this.SC_char1.Location = new System.Drawing.Point(690, 159);
             this.SC_char1.Margin = new System.Windows.Forms.Padding(0);
             this.SC_char1.Name = "SC_char1";
+            this.SC_char1.NameWidth = 280;
             this.SC_char1.SearchEnable = true;
             this.SC_char1.Size = new System.Drawing.Size(364, 27);
             this.SC_char1.Stype = Search.CKM_SearchControl.SearchType.競技;
             this.SC_char1.TabIndex = 43;
+            this.SC_char1.test = null;
             this.SC_char1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_char1.UseChangeDate = false;
             this.SC_char1.Value1 = null;
@@ -1227,8 +1324,9 @@
             this.TB_Catalog.isMaxLengthErr = false;
             this.TB_Catalog.IsNumber = true;
             this.TB_Catalog.IsShop = false;
-            this.TB_Catalog.Length = 32767;
+            this.TB_Catalog.Length = 50;
             this.TB_Catalog.Location = new System.Drawing.Point(690, 83);
+            this.TB_Catalog.MaxLength = 50;
             this.TB_Catalog.MoveNext = true;
             this.TB_Catalog.Name = "TB_Catalog";
             this.TB_Catalog.Size = new System.Drawing.Size(421, 19);
@@ -1338,8 +1436,9 @@
             this.TB_CommentInStore.isMaxLengthErr = false;
             this.TB_CommentInStore.IsNumber = true;
             this.TB_CommentInStore.IsShop = false;
-            this.TB_CommentInStore.Length = 32767;
+            this.TB_CommentInStore.Length = 100;
             this.TB_CommentInStore.Location = new System.Drawing.Point(123, 162);
+            this.TB_CommentInStore.MaxLength = 100;
             this.TB_CommentInStore.MoveNext = true;
             this.TB_CommentInStore.Name = "TB_CommentInStore";
             this.TB_CommentInStore.Size = new System.Drawing.Size(500, 19);
@@ -1371,6 +1470,7 @@
             this.SC_SKUCD.ChangeDateWidth = 100;
             this.SC_SKUCD.Code = "";
             this.SC_SKUCD.CodeWidth = 190;
+            this.SC_SKUCD.CodeWidth1 = 190;
             this.SC_SKUCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_SKUCD.DataCheck = false;
             this.SC_SKUCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1381,10 +1481,12 @@
             this.SC_SKUCD.Location = new System.Drawing.Point(335, 134);
             this.SC_SKUCD.Margin = new System.Windows.Forms.Padding(0);
             this.SC_SKUCD.Name = "SC_SKUCD";
+            this.SC_SKUCD.NameWidth = 350;
             this.SC_SKUCD.SearchEnable = true;
             this.SC_SKUCD.Size = new System.Drawing.Size(223, 27);
             this.SC_SKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
             this.SC_SKUCD.TabIndex = 18;
+            this.SC_SKUCD.test = null;
             this.SC_SKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_SKUCD.UseChangeDate = false;
             this.SC_SKUCD.Value1 = null;
@@ -1416,6 +1518,7 @@
             this.SC_JANCD.ChangeDateWidth = 100;
             this.SC_JANCD.Code = "";
             this.SC_JANCD.CodeWidth = 110;
+            this.SC_JANCD.CodeWidth1 = 110;
             this.SC_JANCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_JANCD.DataCheck = false;
             this.SC_JANCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1426,10 +1529,12 @@
             this.SC_JANCD.Location = new System.Drawing.Point(123, 134);
             this.SC_JANCD.Margin = new System.Windows.Forms.Padding(0);
             this.SC_JANCD.Name = "SC_JANCD";
+            this.SC_JANCD.NameWidth = 190;
             this.SC_JANCD.SearchEnable = true;
             this.SC_JANCD.Size = new System.Drawing.Size(143, 27);
             this.SC_JANCD.Stype = Search.CKM_SearchControl.SearchType.JANCD;
             this.SC_JANCD.TabIndex = 16;
+            this.SC_JANCD.test = null;
             this.SC_JANCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_JANCD.UseChangeDate = false;
             this.SC_JANCD.Value1 = null;
@@ -1473,8 +1578,9 @@
             this.TB_Shouhin.isMaxLengthErr = false;
             this.TB_Shouhin.IsNumber = true;
             this.TB_Shouhin.IsShop = false;
-            this.TB_Shouhin.Length = 32767;
+            this.TB_Shouhin.Length = 80;
             this.TB_Shouhin.Location = new System.Drawing.Point(123, 113);
+            this.TB_Shouhin.MaxLength = 80;
             this.TB_Shouhin.MoveNext = true;
             this.TB_Shouhin.Name = "TB_Shouhin";
             this.TB_Shouhin.Size = new System.Drawing.Size(500, 19);
@@ -1523,6 +1629,7 @@
             this.SC_makervendor.ChangeDateWidth = 100;
             this.SC_makervendor.Code = "";
             this.SC_makervendor.CodeWidth = 100;
+            this.SC_makervendor.CodeWidth1 = 100;
             this.SC_makervendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_makervendor.DataCheck = false;
             this.SC_makervendor.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1533,10 +1640,12 @@
             this.SC_makervendor.Location = new System.Drawing.Point(123, 60);
             this.SC_makervendor.Margin = new System.Windows.Forms.Padding(0);
             this.SC_makervendor.Name = "SC_makervendor";
+            this.SC_makervendor.NameWidth = 310;
             this.SC_makervendor.SearchEnable = true;
             this.SC_makervendor.Size = new System.Drawing.Size(444, 27);
             this.SC_makervendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.SC_makervendor.TabIndex = 10;
+            this.SC_makervendor.test = null;
             this.SC_makervendor.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_makervendor.UseChangeDate = false;
             this.SC_makervendor.Value1 = null;
@@ -1568,6 +1677,7 @@
             this.SC_Vendor.ChangeDateWidth = 100;
             this.SC_Vendor.Code = "";
             this.SC_Vendor.CodeWidth = 100;
+            this.SC_Vendor.CodeWidth1 = 100;
             this.SC_Vendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_Vendor.DataCheck = false;
             this.SC_Vendor.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1578,10 +1688,12 @@
             this.SC_Vendor.Location = new System.Drawing.Point(123, 22);
             this.SC_Vendor.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Vendor.Name = "SC_Vendor";
+            this.SC_Vendor.NameWidth = 310;
             this.SC_Vendor.SearchEnable = true;
             this.SC_Vendor.Size = new System.Drawing.Size(444, 27);
             this.SC_Vendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.SC_Vendor.TabIndex = 8;
+            this.SC_Vendor.test = null;
             this.SC_Vendor.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_Vendor.UseChangeDate = false;
             this.SC_Vendor.Value1 = null;
@@ -1606,66 +1718,6 @@
             this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // RB_Catloginfo
-            // 
-            this.RB_Catloginfo.AutoSize = true;
-            this.RB_Catloginfo.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.RB_Catloginfo.Location = new System.Drawing.Point(417, 5);
-            this.RB_Catloginfo.Name = "RB_Catloginfo";
-            this.RB_Catloginfo.Size = new System.Drawing.Size(101, 16);
-            this.RB_Catloginfo.TabIndex = 6;
-            this.RB_Catloginfo.TabStop = true;
-            this.RB_Catloginfo.Text = "カタログ情報";
-            this.RB_Catloginfo.UseVisualStyleBackColor = true;
-            // 
-            // RB_priceinfo
-            // 
-            this.RB_priceinfo.AutoSize = true;
-            this.RB_priceinfo.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.RB_priceinfo.Location = new System.Drawing.Point(340, 5);
-            this.RB_priceinfo.Name = "RB_priceinfo";
-            this.RB_priceinfo.Size = new System.Drawing.Size(75, 16);
-            this.RB_priceinfo.TabIndex = 5;
-            this.RB_priceinfo.TabStop = true;
-            this.RB_priceinfo.Text = "価格情報";
-            this.RB_priceinfo.UseVisualStyleBackColor = true;
-            // 
-            // RB_attributeinfo
-            // 
-            this.RB_attributeinfo.AutoSize = true;
-            this.RB_attributeinfo.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.RB_attributeinfo.Location = new System.Drawing.Point(259, 5);
-            this.RB_attributeinfo.Name = "RB_attributeinfo";
-            this.RB_attributeinfo.Size = new System.Drawing.Size(75, 16);
-            this.RB_attributeinfo.TabIndex = 4;
-            this.RB_attributeinfo.TabStop = true;
-            this.RB_attributeinfo.Text = "属性情報";
-            this.RB_attributeinfo.UseVisualStyleBackColor = true;
-            // 
-            // RB_BaseInfo
-            // 
-            this.RB_BaseInfo.AutoSize = true;
-            this.RB_BaseInfo.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.RB_BaseInfo.Location = new System.Drawing.Point(178, 5);
-            this.RB_BaseInfo.Name = "RB_BaseInfo";
-            this.RB_BaseInfo.Size = new System.Drawing.Size(75, 16);
-            this.RB_BaseInfo.TabIndex = 3;
-            this.RB_BaseInfo.TabStop = true;
-            this.RB_BaseInfo.Text = "基本情報";
-            this.RB_BaseInfo.UseVisualStyleBackColor = true;
-            // 
-            // RB_all
-            // 
-            this.RB_all.AutoSize = true;
-            this.RB_all.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.RB_all.Location = new System.Drawing.Point(123, 5);
-            this.RB_all.Name = "RB_all";
-            this.RB_all.Size = new System.Drawing.Size(49, 16);
-            this.RB_all.TabIndex = 1;
-            this.RB_all.TabStop = true;
-            this.RB_all.Text = "全て";
-            this.RB_all.UseVisualStyleBackColor = true;
-            // 
             // LB_targer
             // 
             this.LB_targer.AutoSize = true;
@@ -1683,37 +1735,12 @@
             this.LB_targer.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.LB_targer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(121, 1);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(600, 25);
-            this.panel3.TabIndex = 96;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(674, 16);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(12, 14);
-            this.flowLayoutPanel1.TabIndex = 97;
-            // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Location = new System.Drawing.Point(933, 679);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 100);
             this.flowLayoutPanel2.TabIndex = 100;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.RB_Item);
-            this.panel4.Controls.Add(this.CK_suru);
-            this.panel4.Controls.Add(this.RB_makeritem);
-            this.panel4.Controls.Add(this.ckM_Label35);
-            this.panel4.Location = new System.Drawing.Point(119, 280);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(700, 25);
-            this.panel4.TabIndex = 98;
             // 
             // MasterShutsuryoku_Shouhin
             // 
@@ -1739,10 +1766,10 @@
             this.PanelHeader.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

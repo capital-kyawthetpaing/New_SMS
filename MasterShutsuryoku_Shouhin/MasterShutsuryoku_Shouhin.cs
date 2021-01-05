@@ -62,6 +62,7 @@ namespace MasterShutsuryoku_Shouhin
             RB_all.Focus();
             RB_all.Checked = true;
            LB_ChangeDate.Text = bbl.GetDate();
+            
         }
 
         public override void FunctionProcess(int index)
@@ -103,15 +104,15 @@ namespace MasterShutsuryoku_Shouhin
                     return false;
                 }
             }
-            //if (!String.IsNullOrEmpty(SC_Brand.TxtCode.Text))
-            //{
-            //    if (!SC_Brand.IsExists(2))
-            //    {
-            //        bbl.ShowMessage("E101");
-            //        SC_Brand.SetFocus(1);
-            //        return false;
-            //    }
-            //}
+            if (!String.IsNullOrEmpty(SC_Brand.TxtCode.Text))
+            {
+                if (!SC_Brand.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    SC_Brand.SetFocus(1);
+                    return false;
+                }
+            }
             if (!String.IsNullOrEmpty(SC_JANCD.TxtCode.Text))
             {
                 if (!SC_JANCD.IsExists(2))
@@ -148,6 +149,18 @@ namespace MasterShutsuryoku_Shouhin
                     return false;
                 }
             }
+            if(!TB_InsertDateF.DateCheck())
+            {
+                TB_InsertDateF.Focus();
+                return false;
+                    
+            }
+
+           if(! TB_InsertDateT.DateCheck())
+            {
+                TB_InsertDateT.Focus();
+                return false;
+            }
             if (!String.IsNullOrEmpty(TB_InsertDateF.Text) && !String.IsNullOrEmpty(TB_InsertDateT.Text))
             {
                 if (Convert.ToDateTime(TB_InsertDateF.Text) > Convert.ToDateTime(TB_InsertDateT.Text))
@@ -158,8 +171,16 @@ namespace MasterShutsuryoku_Shouhin
                 }
             }
 
-            TB_InsertDateF.DateCheck();
-            TB_InsertDateT.DateCheck();
+            if(!TB_UpdateDateF.DateCheck())
+            {
+                TB_UpdateDateF.Focus();
+                return false;
+            }
+            if(!TB_UpdateDateT.DateCheck())
+            {
+                TB_UpdateDateT.Focus();
+                return false;
+            }
 
             if (!String.IsNullOrEmpty(TB_UpdateDateF.Text) && !String.IsNullOrEmpty(TB_UpdateDateT.Text))
             {
@@ -171,8 +192,17 @@ namespace MasterShutsuryoku_Shouhin
                 }
             }
 
-            TB_UpdateDateF.DateCheck();
-            TB_UpdateDateT.DateCheck();
+            if(!TB_ApprovalDateF.DateCheck())
+            {
+                TB_ApprovalDateF.Focus();
+                return false;
+            }
+            if(!TB_ApprovalDateT.DateCheck())
+            {
+                TB_ApprovalDateT.Focus();
+                return false;
+
+            }
             
             if (!String.IsNullOrEmpty(TB_ApprovalDateF.Text) && !String.IsNullOrEmpty(TB_ApprovalDateT.Text))
             {
@@ -183,8 +213,8 @@ namespace MasterShutsuryoku_Shouhin
                     return false;
                 }
             }
-            TB_ApprovalDateF.DateCheck();
-            TB_ApprovalDateT.DateCheck();
+            //TB_ApprovalDateF.DateCheck();
+            //TB_ApprovalDateT.DateCheck();
 
             return true;
 
@@ -507,7 +537,7 @@ namespace MasterShutsuryoku_Shouhin
                 {
                     if (!SC_Brand.SelectData())
                     {
-
+                        bbl.ShowMessage("E101");
                         SC_Brand.SetFocus(1);
                     }
                     
