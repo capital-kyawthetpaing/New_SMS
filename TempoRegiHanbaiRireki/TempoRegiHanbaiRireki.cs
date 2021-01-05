@@ -222,7 +222,7 @@ namespace TempoRegiHanbaiRireki
                     cs[0].Text = "\\" + bbl.Z_SetStr(row["JuchuuGaku"]);
                     cs[0].ForeColor = foreCl;
                 }
-                ckmShop_Label5.ForeColor = foreCl;
+                //ckmShop_Label5.ForeColor = foreCl;
             }
         }
 

@@ -588,7 +588,7 @@
             // 
             this.lblDtKin3.BackColor = System.Drawing.Color.Transparent;
             this.lblDtKin3.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtKin3.Location = new System.Drawing.Point(515, 365);
+            this.lblDtKin3.Location = new System.Drawing.Point(524, 365);
             this.lblDtKin3.Name = "lblDtKin3";
             this.lblDtKin3.Size = new System.Drawing.Size(190, 30);
             this.lblDtKin3.TabIndex = 68;
@@ -600,7 +600,7 @@
             // 
             this.lblDtSSu3.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSSu3.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSSu3.Location = new System.Drawing.Point(609, 317);
+            this.lblDtSSu3.Location = new System.Drawing.Point(618, 317);
             this.lblDtSSu3.Name = "lblDtSSu3";
             this.lblDtSSu3.Size = new System.Drawing.Size(96, 30);
             this.lblDtSSu3.TabIndex = 67;
@@ -612,7 +612,7 @@
             // 
             this.lblDtKSu3.BackColor = System.Drawing.Color.Transparent;
             this.lblDtKSu3.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtKSu3.Location = new System.Drawing.Point(609, 273);
+            this.lblDtKSu3.Location = new System.Drawing.Point(618, 273);
             this.lblDtKSu3.Name = "lblDtKSu3";
             this.lblDtKSu3.Size = new System.Drawing.Size(96, 30);
             this.lblDtKSu3.TabIndex = 66;
@@ -624,7 +624,7 @@
             // 
             this.lblDtColorSize3.BackColor = System.Drawing.Color.Transparent;
             this.lblDtColorSize3.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtColorSize3.Location = new System.Drawing.Point(38, 337);
+            this.lblDtColorSize3.Location = new System.Drawing.Point(36, 343);
             this.lblDtColorSize3.Name = "lblDtColorSize3";
             this.lblDtColorSize3.Size = new System.Drawing.Size(440, 60);
             this.lblDtColorSize3.TabIndex = 65;
@@ -636,7 +636,7 @@
             // 
             this.lblDtSKUName3.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSKUName3.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSKUName3.Location = new System.Drawing.Point(38, 272);
+            this.lblDtSKUName3.Location = new System.Drawing.Point(36, 270);
             this.lblDtSKUName3.Name = "lblDtSKUName3";
             this.lblDtSKUName3.Size = new System.Drawing.Size(465, 70);
             this.lblDtSKUName3.TabIndex = 64;
@@ -647,7 +647,7 @@
             // 
             this.lblDtKin2.BackColor = System.Drawing.Color.Transparent;
             this.lblDtKin2.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtKin2.Location = new System.Drawing.Point(515, 230);
+            this.lblDtKin2.Location = new System.Drawing.Point(524, 230);
             this.lblDtKin2.Name = "lblDtKin2";
             this.lblDtKin2.Size = new System.Drawing.Size(190, 30);
             this.lblDtKin2.TabIndex = 63;
@@ -659,7 +659,7 @@
             // 
             this.lblDtSSu2.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSSu2.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSSu2.Location = new System.Drawing.Point(609, 184);
+            this.lblDtSSu2.Location = new System.Drawing.Point(618, 184);
             this.lblDtSSu2.Name = "lblDtSSu2";
             this.lblDtSSu2.Size = new System.Drawing.Size(96, 30);
             this.lblDtSSu2.TabIndex = 62;
@@ -671,7 +671,7 @@
             // 
             this.lblDtKSu2.BackColor = System.Drawing.Color.Transparent;
             this.lblDtKSu2.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtKSu2.Location = new System.Drawing.Point(609, 140);
+            this.lblDtKSu2.Location = new System.Drawing.Point(617, 140);
             this.lblDtKSu2.Name = "lblDtKSu2";
             this.lblDtKSu2.Size = new System.Drawing.Size(96, 30);
             this.lblDtKSu2.TabIndex = 61;
@@ -683,7 +683,7 @@
             // 
             this.lblDtColorSize2.BackColor = System.Drawing.Color.Transparent;
             this.lblDtColorSize2.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtColorSize2.Location = new System.Drawing.Point(38, 201);
+            this.lblDtColorSize2.Location = new System.Drawing.Point(36, 205);
             this.lblDtColorSize2.Name = "lblDtColorSize2";
             this.lblDtColorSize2.Size = new System.Drawing.Size(440, 60);
             this.lblDtColorSize2.TabIndex = 60;
@@ -695,7 +695,7 @@
             // 
             this.lblDtSKUName2.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSKUName2.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSKUName2.Location = new System.Drawing.Point(40, 139);
+            this.lblDtSKUName2.Location = new System.Drawing.Point(36, 136);
             this.lblDtSKUName2.Name = "lblDtSKUName2";
             this.lblDtSKUName2.Size = new System.Drawing.Size(465, 70);
             this.lblDtSKUName2.TabIndex = 59;
@@ -760,7 +760,7 @@
             // 
             this.lblDtKin1.BackColor = System.Drawing.Color.Transparent;
             this.lblDtKin1.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtKin1.Location = new System.Drawing.Point(514, 97);
+            this.lblDtKin1.Location = new System.Drawing.Point(524, 97);
             this.lblDtKin1.Name = "lblDtKin1";
             this.lblDtKin1.Size = new System.Drawing.Size(190, 30);
             this.lblDtKin1.TabIndex = 53;
@@ -772,7 +772,7 @@
             // 
             this.lblDtSSu1.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSSu1.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSSu1.Location = new System.Drawing.Point(610, 8);
+            this.lblDtSSu1.Location = new System.Drawing.Point(618, 48);
             this.lblDtSSu1.Name = "lblDtSSu1";
             this.lblDtSSu1.Size = new System.Drawing.Size(96, 30);
             this.lblDtSSu1.TabIndex = 52;
@@ -784,7 +784,7 @@
             // 
             this.lblDtKSu1.BackColor = System.Drawing.Color.Transparent;
             this.lblDtKSu1.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtKSu1.Location = new System.Drawing.Point(609, 53);
+            this.lblDtKSu1.Location = new System.Drawing.Point(618, 5);
             this.lblDtKSu1.Name = "lblDtKSu1";
             this.lblDtKSu1.Size = new System.Drawing.Size(96, 30);
             this.lblDtKSu1.TabIndex = 51;
@@ -796,7 +796,7 @@
             // 
             this.lblDtColorSize1.BackColor = System.Drawing.Color.Transparent;
             this.lblDtColorSize1.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtColorSize1.Location = new System.Drawing.Point(36, 65);
+            this.lblDtColorSize1.Location = new System.Drawing.Point(36, 71);
             this.lblDtColorSize1.Name = "lblDtColorSize1";
             this.lblDtColorSize1.Size = new System.Drawing.Size(430, 60);
             this.lblDtColorSize1.TabIndex = 50;
@@ -808,7 +808,7 @@
             // 
             this.lblDtSKUName1.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSKUName1.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSKUName1.Location = new System.Drawing.Point(37, 2);
+            this.lblDtSKUName1.Location = new System.Drawing.Point(36, 2);
             this.lblDtSKUName1.Name = "lblDtSKUName1";
             this.lblDtSKUName1.Size = new System.Drawing.Size(465, 70);
             this.lblDtSKUName1.TabIndex = 47;

@@ -33,12 +33,16 @@ namespace TempoShukkaNyuuryoku
         public TempoShukkaNyuuryoku()
         {
             InitializeComponent();
+
+            this.btnStock.Click += new System.EventHandler(this.BTN_Zaiko_Click);
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
         }
         private void TempoShukkaNyuuryoku_Load(object sender, EventArgs e)
         {
             try
             {
                 InProgramID = "TempoRegiShukkaNyuuryoku";
+                Clear(pnlDetails);
                 StartProgram();
 
                 btnClose.Text = "終 了";
@@ -319,6 +323,30 @@ namespace TempoShukkaNyuuryoku
                 else
                     btnSeikyu.Text = "締請求";
             }
+            //[M_SKU]
+            M_SKU_Entity mse = new M_SKU_Entity
+            {
+                JanCD = txtJanCD.Text,
+                AdminNO = row["SKUNO"].ToString(),
+                SetKBN = "0",
+                ChangeDate = row["JuchuuDate"].ToString()
+            };
+
+            SKU_BL mbl = new SKU_BL();
+            DataTable dt = mbl.M_SKU_SelectAll(mse);
+
+            //※商品情報≠Null の場合（＝M_SKU.WebAddress≠Null の場合）		
+            if (!string.IsNullOrWhiteSpace(dt.Rows[0]["WebAddress"].ToString()))
+            {
+                //商品情報のボタンを利用可能にする
+                btnInfo.Enabled = true;
+                btnInfo.Tag = dt.Rows[0]["WebAddress"].ToString();
+            }
+            else
+            {
+                btnInfo.Enabled = false;
+                btnInfo.Tag = "";
+            }
         }
 
         private void CheckData_M_StoreButtonDetailes(string GroupNO = "")
@@ -443,7 +471,7 @@ namespace TempoShukkaNyuuryoku
                 //出荷数
                 //入力無くても良い(It is not necessary to input)
                 //入力無い場合、0とする（When there is no input, it is set to 0）
-                txtShippingSu.Text = bbl.Z_SetStr(txtShippingSu.Text);
+                txtShippingSu.Text = bbl.Z_SetStr(txtShippingSu.Text.ToString());
 
                 //入力された場合
                 //出荷数＞	Form.出荷可能数の場合、Error Ｅ１５０
@@ -716,7 +744,7 @@ namespace TempoShukkaNyuuryoku
             {
                 int w_Row = Convert.ToInt16(txtJanCD.Tag);
 
-                string adminNo = dtJuchu.Rows[w_Row]["AdminNO"].ToString();
+                string adminNo = dtJuchu.Rows[w_Row]["SKUNO"].ToString();
 
                 //在庫照会を該当商品をパラメータに起動します					
                 //EXEが存在しない時ｴﾗｰ
@@ -741,7 +769,30 @@ namespace TempoShukkaNyuuryoku
                 //EndSec();
             }
         }
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //ボタンを押された場合、Internetブラウザを利用してそのアドレスのサイトを表示する
+                //ブラウザの在り処は、iniファイルに設定する
+                string url = btnInfo.Tag.ToString();
+                if (!string.IsNullOrWhiteSpace(url))
+                {
+                    //urlを標準のブラウザで開いて表示する
+                    System.Diagnostics.Process.Start(url);
 
+                    //System.Diagnostics.Process process1;
+                    //string ie = @"C:\Program Files\Internet Explorer\iexplore.exe";
+                    //process1 = System.Diagnostics.Process.Start(ie, url); // Windows 8
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
         private bool CheckWidth(int type)
         {
             switch (type)

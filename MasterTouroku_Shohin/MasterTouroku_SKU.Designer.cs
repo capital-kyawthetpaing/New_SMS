@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterTouroku_SKU));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label6 = new CKM_Controls.CKM_Label();
             this.label7 = new CKM_Controls.CKM_Label();
@@ -1354,7 +1355,7 @@
             this.dgvDetail.CheckCol = ((System.Collections.ArrayList)(resources.GetObject("dgvDetail.CheckCol")));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1368,6 +1369,14 @@
             this.colAPIKey,
             this.colStoreCD,
             this.colSiteURL});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDetail.Enabled = false;
             this.dgvDetail.EnableHeadersVisualStyles = false;
             this.dgvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
@@ -2583,11 +2592,11 @@
             this.ckM_CheckBox16.AutoSize = true;
             this.ckM_CheckBox16.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ckM_CheckBox16.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox16.Location = new System.Drawing.Point(288, 66);
+            this.ckM_CheckBox16.Location = new System.Drawing.Point(256, 66);
             this.ckM_CheckBox16.Name = "ckM_CheckBox16";
-            this.ckM_CheckBox16.Size = new System.Drawing.Size(31, 16);
+            this.ckM_CheckBox16.Size = new System.Drawing.Size(63, 16);
             this.ckM_CheckBox16.TabIndex = 40;
-            this.ckM_CheckBox16.Text = " ";
+            this.ckM_CheckBox16.Text = "完売品";
             this.ckM_CheckBox16.UseVisualStyleBackColor = true;
             // 
             // ckM_CheckBox15
@@ -2595,11 +2604,11 @@
             this.ckM_CheckBox15.AutoSize = true;
             this.ckM_CheckBox15.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ckM_CheckBox15.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox15.Location = new System.Drawing.Point(256, 47);
+            this.ckM_CheckBox15.Location = new System.Drawing.Point(217, 47);
             this.ckM_CheckBox15.Name = "ckM_CheckBox15";
-            this.ckM_CheckBox15.Size = new System.Drawing.Size(63, 16);
+            this.ckM_CheckBox15.Size = new System.Drawing.Size(102, 16);
             this.ckM_CheckBox15.TabIndex = 39;
-            this.ckM_CheckBox15.Text = "完売品";
+            this.ckM_CheckBox15.Text = "在庫管理対象";
             this.ckM_CheckBox15.UseVisualStyleBackColor = true;
             // 
             // ckM_CheckBox14
@@ -2715,11 +2724,10 @@
             this.ckM_CheckBox5.AutoSize = true;
             this.ckM_CheckBox5.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ckM_CheckBox5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox5.Location = new System.Drawing.Point(5, 85);
+            this.ckM_CheckBox5.Location = new System.Drawing.Point(92, 85);
             this.ckM_CheckBox5.Name = "ckM_CheckBox5";
-            this.ckM_CheckBox5.Size = new System.Drawing.Size(102, 16);
+            this.ckM_CheckBox5.Size = new System.Drawing.Size(15, 14);
             this.ckM_CheckBox5.TabIndex = 29;
-            this.ckM_CheckBox5.Text = "在庫管理対象";
             this.ckM_CheckBox5.UseVisualStyleBackColor = true;
             // 
             // ckM_CheckBox4

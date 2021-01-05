@@ -9,6 +9,7 @@ GO
 
 CREATE PROCEDURE M_JANCounter_Update
    (@MainKEY       tinyint,
+    @UpdatingFlg   tinyint,
     @Operator      varchar(10)
 )AS
 
@@ -19,16 +20,51 @@ CREATE PROCEDURE M_JANCounter_Update
 --********************************************--
 
 BEGIN
+    -- interfering with SELECT statements.
+    SET NOCOUNT ON;
     
-    UPDATE [M_JANCounter]
-    SET [JanCount]       = JanCount + 1
-       ,[UpdatingFlg]    = 1
-       ,[UpdateOperator] = @Operator  
-       ,[UpdateDateTime] = SYSDATETIME()
-    WHERE MainKEY = @MainKEY
-    ;
-    
-
+    IF @UpdatingFlg = 1
+    BEGIN
+        UPDATE [M_JANCounter]
+        SET [JanCount]       = JanCount + 1
+           ,[UpdatingFlg]    = @UpdatingFlg
+           ,[UpdateOperator] = @Operator  
+           ,[UpdateDateTime] = SYSDATETIME()
+        WHERE MainKEY = @MainKEY
+        ;
+        
+        SELECT JanCount FROM [M_JANCounter]
+        WHERE MainKEY = @MainKEY
+        ;
+    END
+    ELSE IF @UpdatingFlg = 0  --リセット時
+    BEGIN
+        UPDATE [M_JANCounter]
+        SET [JanCount]       = M_JANCounter.BeforeJanCount
+           ,[UpdatingFlg]    = @UpdatingFlg
+           ,[UpdateOperator] = @Operator  
+           ,[UpdateDateTime] = SYSDATETIME()
+        WHERE MainKEY = @MainKEY
+        ;
+        
+        SELECT JanCount FROM [M_JANCounter]
+        WHERE MainKEY = @MainKEY
+        ;
+    END
+    ELSE IF @UpdatingFlg = 2  --更新時
+    BEGIN
+        UPDATE [M_JANCounter]
+        SET [BeforeJanCount] = M_JANCounter.JanCount
+           ,[UpdatingFlg]    = 0
+           ,[UpdateOperator] = @Operator  
+           ,[UpdateDateTime] = SYSDATETIME()
+        WHERE MainKEY = @MainKEY
+        ;
+        
+        SELECT JanCount FROM [M_JANCounter]
+        WHERE MainKEY = @MainKEY
+        ;
+    END
 END
 
 GO

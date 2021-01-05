@@ -52,7 +52,7 @@ namespace FBDataSakusei_FBデータ作成
             SetRequireField();
 
             cboProcess.Focus();
-            //cboProcess.SelectedIndex = 0;
+            cboProcess.SelectedValue = 0;
         }
 
         public void BindCombo()
@@ -104,6 +104,8 @@ namespace FBDataSakusei_FBデータ作成
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                     {
                         Clear(panel1);
+                        BindCombo();
+                        cboProcess.SelectedValue = 0;
                         cboProcess.Focus();
                     }
                     break;
@@ -133,6 +135,10 @@ namespace FBDataSakusei_FBデータ作成
                 if(dtgv.Rows.Count > 0)
                 {
                     gvFBDataSakusei.DataSource = dtgv;
+                    decimal total = dtgv.AsEnumerable().Sum(row => row.Field<decimal>("TransferGaku"));
+                    lblTransferAmount.Text = total.ToString();
+                    decimal totalFee = dtgv.AsEnumerable().Sum(row => row.Field<decimal>("TransferFeeGaku"));
+                    lblTransferFee.Text = totalFee.ToString();                 
                 }
                 else
                 {
@@ -247,14 +253,16 @@ namespace FBDataSakusei_FBデータ作成
                                 KouzaKBN = dtgv.Rows[0]["KouzaKBN"].ToString(),
                                 KouzaNO = dtgv.Rows[0]["KouzaNO"].ToString(),
                                 KouzaMeigi = dtgv.Rows[0]["KouzaMeigi"].ToString(),
-                                PayGaku = dtgv.Rows[0]["transferAcc"].ToString(),
+                                //PayGaku = dtgv.Rows[0]["transferAcc"].ToString(),
                                 TransferGaku = dtgv.Rows[0]["TransferGaku"].ToString(),
                                 TransferFee = dtgv.Rows[0]["TransferFeeGaku"].ToString(),
-                                TransferFeeKBN = dtgv.Rows[0]["FeeKBN1"].ToString(),
+                                TransferFeeKBN = dtgv.Rows[0]["FeeKBN"].ToString(),
                             };
                             dpe = new D_Pay_Entity
                             {
                                 Flg = cboProcess.SelectedValue.ToString(),
+                                TransferGaku = lblTransferAmount.Text,
+                                count = dtgv.Rows.Count.ToString(),
                             };
                             DataTable dttext = new DataTable();
                             dttext = fbbl.D_Pay_SelectForText(dfbe, dpe);
@@ -306,32 +314,20 @@ namespace FBDataSakusei_FBデータ作成
 
                                 }
 
-
-
-                                //    // Save File to .txt  
-                                //    //FileStream fParameter = new FileStream(dirParameter, FileMode.Create, FileAccess.Write);
-                                //    //StreamWriter m_WriterParameter = new StreamWriter(fParameter);
-                                //    //m_WriterParameter.BaseStream.Seek(0, SeekOrigin.End);
-                                //    //m_WriterParameter.Write(dttext);
-                                //    //m_WriterParameter.Flush();
-                                //    //m_WriterParameter.Close();
                             }
 
-
-
-                            if (fbbl.FBDataSakusei_Insert(dfbe, dfde, dpe))
-                            {
-                                Clear(panel1);
-                                BindCombo();
-                                cboProcess.Focus();
-                            }
-
+                            //if (fbbl.FBDataSakusei_Insert(dfbe, dfde, dpe))
+                            //{
+                            //    Clear(panel1);
+                            //    BindCombo();
+                            //    cboProcess.Focus();
+                            //}
 
                         }
                     }
                     else if (Btn_F12.Text == "削除(F12)")
                     {
-                        if (bbl.ShowMessage("Q201") == DialogResult.Yes)
+                        if (bbl.ShowMessage("Q102") == DialogResult.Yes)
                         {
                             dfbe = new D_FBControl_Entity
                             {
