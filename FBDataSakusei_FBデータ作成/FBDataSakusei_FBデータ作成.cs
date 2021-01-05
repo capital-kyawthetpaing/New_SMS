@@ -316,12 +316,12 @@ namespace FBDataSakusei_FBデータ作成
 
                             }
 
-                            //if (fbbl.FBDataSakusei_Insert(dfbe, dfde, dpe))
-                            //{
-                            //    Clear(panel1);
-                            //    BindCombo();
-                            //    cboProcess.Focus();
-                            //}
+                            if (fbbl.FBDataSakusei_Insert(dfbe, dfde, dpe))
+                            {
+                                Clear(panel1);
+                                BindCombo();
+                                cboProcess.Focus();
+                            }
 
                         }
                     }
