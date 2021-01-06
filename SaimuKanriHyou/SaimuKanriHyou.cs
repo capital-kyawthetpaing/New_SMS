@@ -94,8 +94,10 @@ namespace SaimuKanriHyou
         /// <returns></returns>
         private bool ErrorCheck()
         {
-            if (!txtTargetYear.DateCheck()) //added by ETZ
-                return false;
+            //if (!txtTargetYear.DateCheck()) //added by ETZ   // edit 
+            //    return false;
+
+
             if (!RequireCheck(new Control[] { cboStoreAuthorizations, txtTargetYear }))
                 return false;
          
