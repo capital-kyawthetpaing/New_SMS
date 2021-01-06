@@ -13,6 +13,7 @@ using Entity;
 using BL;
 using Search;
 using System.Data.OleDb;
+using ClosedXML.Excel;
 //using TempoJuchuuNyuuryoku;
 
 namespace TenzikaiJuchuuTourou
@@ -22,6 +23,7 @@ namespace TenzikaiJuchuuTourou
         private const string ProID = "TenzikaiJuchuuTourou";
         private const string ProNm = "展示会受注登録";
         private const short mc_L_END = 3; // ロック用
+        //private const int TotalCount 
         private const string TempoNouhinsyo = "TenzikaiJuchuuTourou.exe";
         private string C_dt = "";
         private int mTennic;
@@ -612,7 +614,7 @@ namespace TenzikaiJuchuuTourou
 
         }
         private void GridControl_KeyDown(object sender, KeyEventArgs e)
-        {
+            {
             try
             {
                 int w_Row;
@@ -694,26 +696,26 @@ namespace TenzikaiJuchuuTourou
                     bool changeFlg = false;
                     //switch (CL)
                     //{
-                        //case (int)ClsGridJuchuu.ColNO.JuchuuSuu:
-                        //    if (!mGrid.g_DArray[w_Row].JuchuuSuu.Equals(w_ActCtl.Text))
-                        //    {
-                        //        changeFlg = true;
-                        //    }
-                        //    break;
+                    //case (int)ClsGridJuchuu.ColNO.JuchuuSuu:
+                    //    if (!mGrid.g_DArray[w_Row].JuchuuSuu.Equals(w_ActCtl.Text))
+                    //    {
+                    //        changeFlg = true;
+                    //    }
+                    //    break;
 
-                        //case (int)ClsGridJuchuu.ColNO.JuchuuUnitPrice: //販売単価
-                        //    if (!mGrid.g_DArray[w_Row].JuchuuUnitPrice.Equals(w_ActCtl.Text))
-                        //    {
-                        //        changeFlg = true;
-                        //    }
-                        //    break;
+                    //case (int)ClsGridJuchuu.ColNO.JuchuuUnitPrice: //販売単価
+                    //    if (!mGrid.g_DArray[w_Row].JuchuuUnitPrice.Equals(w_ActCtl.Text))
+                    //    {
+                    //        changeFlg = true;
+                    //    }
+                    //    break;
 
-                        //case (int)ClsGridJuchuu.ColNO.CostUnitPrice: //原価単価
-                        //    if (!mGrid.g_DArray[w_Row].CostUnitPrice.Equals(w_ActCtl.Text))
-                        //    {
-                        //        changeFlg = true;
-                        //    }
-                        //    break;
+                    //case (int)ClsGridJuchuu.ColNO.CostUnitPrice: //原価単価
+                    //    if (!mGrid.g_DArray[w_Row].CostUnitPrice.Equals(w_ActCtl.Text))
+                    //    {
+                    //        changeFlg = true;
+                    //    }
+                    //    break;
                     //}
 
                     //画面の内容を配列へセット
@@ -784,30 +786,30 @@ namespace TenzikaiJuchuuTourou
                                     //mGrid.g_DArray[w_Row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.GenkaTanka) * wSuu);
                                     //mGrid.g_DArray[w_Row].OrderGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].OrderUnitPrice) * wSuu);
 
-                                   //.//CalcZei(w_Row);
+                                    //.//CalcZei(w_Row);
                                 }
                                 break;
 
-                            //case (int)ClsGridTenjikai.ColNO.JuchuuUnitPrice: //販売単価 
-                            //    {
-                            //        string tanka = mGrid.g_DArray[w_Row].JuchuuUnitPrice;
-                            //        if (mTennic.Equals(0))
-                            //            tanka = bbl.GetZeinukiKingaku(bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuUnitPrice), mGrid.g_DArray[w_Row].TaxRateFLG, ymd).ToString();
+                                //case (int)ClsGridTenjikai.ColNO.JuchuuUnitPrice: //販売単価 
+                                //    {
+                                //        string tanka = mGrid.g_DArray[w_Row].JuchuuUnitPrice;
+                                //        if (mTennic.Equals(0))
+                                //            tanka = bbl.GetZeinukiKingaku(bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuUnitPrice), mGrid.g_DArray[w_Row].TaxRateFLG, ymd).ToString();
 
-                            //        SetJuchuuGaku(w_Row, wSuu, ymd, tanka);
+                                //        SetJuchuuGaku(w_Row, wSuu, ymd, tanka);
 
-                            //        CalcZei(w_Row, true);
-                            //    }
-                            //    break;
+                                //        CalcZei(w_Row, true);
+                                //    }
+                                //    break;
 
-                            //case (int)ClsGridJuchuu.ColNO.CostUnitPrice: //原価単価
-                            //    //原価額=Form.Detail.原価単価×	Form.Detail.受注数
-                            //    mGrid.g_DArray[w_Row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].CostUnitPrice) * bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuSuu));
+                                //case (int)ClsGridJuchuu.ColNO.CostUnitPrice: //原価単価
+                                //    //原価額=Form.Detail.原価単価×	Form.Detail.受注数
+                                //    mGrid.g_DArray[w_Row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].CostUnitPrice) * bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuSuu));
 
-                            //    //粗利額
-                            //    mGrid.g_DArray[w_Row].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].CostGaku)); // 
+                                //    //粗利額
+                                //    mGrid.g_DArray[w_Row].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].CostGaku)); // 
 
-                               // break;
+                                // break;
                         }
                     }
 
@@ -825,7 +827,7 @@ namespace TenzikaiJuchuuTourou
                         //配列の内容を画面へセット
                         mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
-                       // IMT_DMY_0.Focus();
+                        // IMT_DMY_0.Focus();
                         //Focusセット処理
                         w_ActCtl.Focus();
                         return;
@@ -845,11 +847,25 @@ namespace TenzikaiJuchuuTourou
                 }
                 else if (e.KeyCode == Keys.Tab)
                 {
-                    if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int CL, out int w_CtlRow) == false)
+                    if (e.Modifiers == Keys.Shift && e.KeyCode == Keys.Tab)
+                    {
+                        if (ActiveControl is GridControl.clsGridCheckBox ac)
+                        {
+                            var con = ((this.Controls.Find("shuukayotei_" + ac.Name.Split('_').Last(), true)[0]) as CKM_TextBox);
+                            con.Select();
+                            con.Focus();
+                        }
+                    }
+                    else if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int CL, out int w_CtlRow) == false)
                     {
                         return;
                     }
-
+                    else
+                    {
+                        var con = ((this.Controls.Find(GetNextControl(w_ActCtl, true).Name, true)[0]) as CKM_ComboBox);
+                        con.Select();
+                        con.Focus();
+                    }                 //  this.SelectNextControl(GetNextControl(w_ActCtl,true),true,false,false,false);
                     //switch (CL)
                     //{
                     //    //case (int)ClsGridJuchuu.ColNO.NotPrintFLG:
@@ -863,6 +879,15 @@ namespace TenzikaiJuchuuTourou
 
                     //        break;
                     //}
+                }
+                else if (e.KeyData == (Keys.Tab | Keys.Shift))
+                {
+                    if (ActiveControl is GridControl.clsGridCheckBox ac)
+                    {
+                        var con = ((this.Controls.Find("shuukayotei_" + ac.Name.Split('_').Last(), true)[0]) as  CKM_TextBox);
+                        con.Select();
+                        con.Focus();
+                    }
                 }
             }
             catch (Exception ex)
@@ -1686,7 +1711,7 @@ namespace TenzikaiJuchuuTourou
 
             if (dt == null)
             {
-                for (int w_Row = 0; w_Row < 999; w_Row++)
+                for (int w_Row = 0; w_Row < ClsGridTenjikai.gMxGyo; w_Row++)
                 {
                     mGrid.g_DArray[w_Row].GYONO = (w_Row + 1).ToString();
                     //mGrid.g_DArray[w_Row].Rank1UnitPrice = "0";
@@ -3170,6 +3195,7 @@ namespace TenzikaiJuchuuTourou
 
         public void btn_Meisai_Click(object sender, EventArgs e)
         {
+            
             if (!CheckKey(-1))
             {
                 return;
@@ -3185,11 +3211,13 @@ namespace TenzikaiJuchuuTourou
             openFileDialog1.FileName = "";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
+                this.Cursor = Cursors.WaitCursor;
                 tkb = new TenjikaiJuuChuu_BL();
                 var dt = ConvertToDataTable(openFileDialog1.FileName);
 
                 if (dt == null || CheckMasterandDate(dt))
                 {
+                    this.Cursor = Cursors.Default;
                     //Exist with E269 (JanCD, DateError)
                     return;
                 }
@@ -3211,8 +3239,10 @@ namespace TenzikaiJuchuuTourou
                 mGrid.S_DispFromArray(this.Vsb_Mei_0.Value, ref this.Vsb_Mei_0);
                 S_BodySeigyo(4, 0);
                 scjan_1.Focus();
+                this.Cursor = Cursors.Default;
                 //SelectNextControl(ActiveControl, true, true, true, true);
             }
+            this.Cursor = Cursors.Default;
         }
         public bool CheckMasterandDate(DataTable dt)
         {
@@ -3230,8 +3260,14 @@ namespace TenzikaiJuchuuTourou
                 r++;
                 if (!DateAllowed.Contains(dr["販売予定日"].ToString()))
                 {
-                    bbl.ShowMessage("E269", r.ToString(), "販売予定日の指定外の情報");
-                    return true;
+                    if ((dr["販売予定日"].ToString().Trim()) != "" && !String.IsNullOrEmpty(dr["販売予定日"].ToString().Trim()))
+                    {
+                        bbl.ShowMessage("E269", r.ToString(), "販売予定日の指定外の情報");
+                        return true;
+                    }
+                    else {
+                        dr["販売予定日"] = dr["販売予定日"].ToString().Trim();
+                    }
                 }
                 else
                 {
@@ -3326,12 +3362,17 @@ namespace TenzikaiJuchuuTourou
                     oleda.Fill(ds, "excelData");
 
                     res = ds.Tables["excelData"];
-                }
+            }
 
             catch (Exception ex)
             {
-                bbl.ShowMessage("E137" + ex.StackTrace);
-                return null;
+                res = ByClosedXML(System.IO.Path.GetFullPath(FileName));
+                if (res == null)
+                {
+                    bbl.ShowMessage("E137" + ex.StackTrace);
+                    try { oledbConn.Close(); } catch { }
+                    return null;
+                }
             }
             oledbConn.Close();
             KibouBi1 = res.Columns[res.Columns.Count - 2].ColumnName;
@@ -3342,7 +3383,6 @@ namespace TenzikaiJuchuuTourou
             {
                 c.ColumnName = c.ColumnName.Trim();
             }
-
             if (res.Rows.Count == 0)
             {
                 MessageBox.Show("No Data Exist");
@@ -3357,7 +3397,56 @@ namespace TenzikaiJuchuuTourou
             }
             res.AcceptChanges();
             return res;
+        }
+        public DataTable ByClosedXML(string PathName)
+        {
+            try
+            {
+                string filePath = PathName;
+                DataTable dt = new DataTable();
+                //Open the Excel file using ClosedXML.
+                using (XLWorkbook workBook = new XLWorkbook(filePath))
+                {
+                    //Read the first Sheet from Excel file.
+                    IXLWorksheet workSheet = workBook.Worksheet(1);
 
+                    //Create a new DataTable.
+                  
+
+                    //Loop through the Worksheet rows.
+                    bool firstRow = true;
+                    foreach (IXLRow row in workSheet.Rows())
+                    {
+                        //Use the first row to add columns to DataTable.
+                        if (firstRow)
+                        {
+                            foreach (IXLCell cell in row.Cells())
+                            {
+                                dt.Columns.Add(cell.Value.ToString());
+                            }
+                            firstRow = false;
+                        }
+                        else
+                        {
+                            //Add rows to DataTable.
+                            dt.Rows.Add();
+                            int i = 0;
+                            foreach (IXLCell cell in row.Cells())
+                            {
+                                dt.Rows[dt.Rows.Count - 1][i] = cell.Value.ToString();
+                                i++;
+                            }
+                        }
+
+                       
+                    }
+                }
+                return dt;
+            }
+            catch
+            {
+                return null;
+            }
         }
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
@@ -3689,7 +3778,7 @@ namespace TenzikaiJuchuuTourou
                     else if (pGrid == 2)
                     {
                     
-                        for (w_Row = 0; w_Row <= 999; w_Row++)
+                        for (w_Row = 0; w_Row <= ClsGridTenjikai.gMxGyo; w_Row++)
                         {
                             if (m_EnableCnt - 1 < w_Row)
                                 break;
@@ -4569,6 +4658,11 @@ namespace TenzikaiJuchuuTourou
                 mOldJyuchuNo = detailControls[(int)Eindex.SCTenjiKai].Text;
                 return ret;
             }
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

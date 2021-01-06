@@ -4,14 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E47E175F-EE47-4FE8-9BB2-E4FCA9404374}</ProjectGuid>
+    <ProjectGuid>{DC9BD2C5-1C90-4724-97A7-10AC1B44F0D1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>TenzikaiJuchuuTourou</RootNamespace>
-    <AssemblyName>TenzikaiJuchuuTourou</AssemblyName>
+    <RootNamespace>MasterShutsuryoku_Shouhin</RootNamespace>
+    <AssemblyName>MasterShutsuryoku_Shouhin</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,18 +34,16 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>TenzikaiJuchuuTourou.Program</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="closedXML">
+    <Reference Include="closedXML, Version=0.69.1.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Search\RequiredDLL\closedXML.dll</HintPath>
     </Reference>
-    <Reference Include="GridControl, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\Debug\GridControl.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -58,38 +57,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClsGridTenjikai.cs" />
-    <Compile Include="FrmAddress.cs">
+    <Compile Include="MasterShutsuryoku_Shouhin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddress.Designer.cs">
-      <DependentUpon>FrmAddress.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Select_SKUForShukka.cs">
-      <SubType>Form</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Select_SKUForShukka.Designer.cs">
-      <DependentUpon>Select_SKUForShukka.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="TenzikaiJuchuuTourou.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TenzikaiJuchuuTourou.Designer.cs">
-      <DependentUpon>TenzikaiJuchuuTourou.cs</DependentUpon>
+    <Compile Include="MasterShutsuryoku_Shouhin.Designer.cs">
+      <DependentUpon>MasterShutsuryoku_Shouhin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmAddress.resx">
-      <DependentUpon>FrmAddress.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Select_SKUForShukka.resx">
-      <DependentUpon>Select_SKUForShukka.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TenzikaiJuchuuTourou.resx">
-      <DependentUpon>TenzikaiJuchuuTourou.cs</DependentUpon>
+    <EmbeddedResource Include="MasterShutsuryoku_Shouhin.resx">
+      <DependentUpon>MasterShutsuryoku_Shouhin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -125,10 +102,6 @@
     <ProjectReference Include="..\CKM_Controls\CKM_Controls\CKM_Controls.csproj">
       <Project>{472a8d76-1ce3-430e-89fe-373d2f6b1031}</Project>
       <Name>CKM_Controls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\clsGridBase\GridBase.csproj">
-      <Project>{86979b8d-b1ed-4342-a1d3-986c244e796a}</Project>
-      <Name>GridBase</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{9dd6c82a-1899-478f-bc18-524ad0b0dcc8}</Project>

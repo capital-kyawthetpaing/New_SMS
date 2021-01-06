@@ -295,8 +295,8 @@
             this.colorname_1 = new CKM_Controls.CKM_TextBox();
             this.color_1 = new CKM_Controls.CKM_TextBox();
             this.shouhin_1 = new CKM_Controls.CKM_TextBox();
-            this.scjan_1 = new Search.CKM_SearchControl();
             this.lbl_1 = new System.Windows.Forms.Label();
+            this.scjan_1 = new Search.CKM_SearchControl();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -585,7 +585,7 @@
             this.btn_Meisai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Meisai.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btn_Meisai.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btn_Meisai.Location = new System.Drawing.Point(1281, 116);
+            this.btn_Meisai.Location = new System.Drawing.Point(1292, 116);
             this.btn_Meisai.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Meisai.Name = "btn_Meisai";
             this.btn_Meisai.Size = new System.Drawing.Size(75, 23);
@@ -1290,7 +1290,7 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(16, 236);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1760, 550);
+            this.panel2.Size = new System.Drawing.Size(1765, 550);
             this.panel2.TabIndex = 25;
             // 
             // panel3
@@ -1304,10 +1304,11 @@
             this.panel3.Controls.Add(this.panel_3);
             this.panel3.Controls.Add(this.panel_2);
             this.panel3.Controls.Add(this.panel_1);
-            this.panel3.Location = new System.Drawing.Point(2, 62);
+            this.panel3.Location = new System.Drawing.Point(3, 62);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1750, 470);
             this.panel3.TabIndex = 305;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel12
             // 
@@ -1337,15 +1338,15 @@
             this.panel12.Controls.Add(this.shouhin_8);
             this.panel12.Controls.Add(this.scjan_8);
             this.panel12.Controls.Add(this.lbl_8);
-            this.panel12.Location = new System.Drawing.Point(0, 398);
+            this.panel12.Location = new System.Drawing.Point(2, 398);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(1357, 60);
+            this.panel12.Size = new System.Drawing.Size(1365, 60);
             this.panel12.TabIndex = 319;
             // 
             // choukusou_8
             // 
             this.choukusou_8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.choukusou_8.Location = new System.Drawing.Point(129, 20);
+            this.choukusou_8.Location = new System.Drawing.Point(137, 20);
             this.choukusou_8.Name = "choukusou_8";
             this.choukusou_8.Size = new System.Drawing.Size(48, 18);
             this.choukusou_8.TabIndex = 319;
@@ -1372,7 +1373,7 @@
             this.zeinutanku_8.IsNumber = true;
             this.zeinutanku_8.IsShop = false;
             this.zeinutanku_8.Length = 32767;
-            this.zeinutanku_8.Location = new System.Drawing.Point(1326, 20);
+            this.zeinutanku_8.Location = new System.Drawing.Point(1334, 20);
             this.zeinutanku_8.MoveNext = true;
             this.zeinutanku_8.Name = "zeinutanku_8";
             this.zeinutanku_8.Size = new System.Drawing.Size(30, 19);
@@ -1400,7 +1401,7 @@
             this.zeinu_8.IsNumber = true;
             this.zeinu_8.IsShop = false;
             this.zeinu_8.Length = 32767;
-            this.zeinu_8.Location = new System.Drawing.Point(1296, 20);
+            this.zeinu_8.Location = new System.Drawing.Point(1304, 20);
             this.zeinu_8.MoveNext = true;
             this.zeinu_8.Name = "zeinu_8";
             this.zeinu_8.Size = new System.Drawing.Size(30, 19);
@@ -1428,7 +1429,7 @@
             this.kobetsuhanbai_8.IsNumber = true;
             this.kobetsuhanbai_8.IsShop = false;
             this.kobetsuhanbai_8.Length = 32767;
-            this.kobetsuhanbai_8.Location = new System.Drawing.Point(913, 39);
+            this.kobetsuhanbai_8.Location = new System.Drawing.Point(921, 39);
             this.kobetsuhanbai_8.MoveNext = true;
             this.kobetsuhanbai_8.Name = "kobetsuhanbai_8";
             this.kobetsuhanbai_8.Size = new System.Drawing.Size(443, 19);
@@ -1456,7 +1457,7 @@
             this.shagaibikou_8.IsNumber = true;
             this.shagaibikou_8.IsShop = false;
             this.shagaibikou_8.Length = 32767;
-            this.shagaibikou_8.Location = new System.Drawing.Point(470, 39);
+            this.shagaibikou_8.Location = new System.Drawing.Point(478, 39);
             this.shagaibikou_8.MoveNext = true;
             this.shagaibikou_8.Name = "shagaibikou_8";
             this.shagaibikou_8.Size = new System.Drawing.Size(443, 19);
@@ -1484,7 +1485,7 @@
             this.shanaibikou_8.IsNumber = true;
             this.shanaibikou_8.IsShop = false;
             this.shanaibikou_8.Length = 32767;
-            this.shanaibikou_8.Location = new System.Drawing.Point(28, 39);
+            this.shanaibikou_8.Location = new System.Drawing.Point(36, 39);
             this.shanaibikou_8.MoveNext = true;
             this.shanaibikou_8.Name = "shanaibikou_8";
             this.shanaibikou_8.Size = new System.Drawing.Size(442, 19);
@@ -1512,7 +1513,7 @@
             this.ararigaku_8.IsNumber = true;
             this.ararigaku_8.IsShop = false;
             this.ararigaku_8.Length = 32767;
-            this.ararigaku_8.Location = new System.Drawing.Point(1206, 20);
+            this.ararigaku_8.Location = new System.Drawing.Point(1214, 20);
             this.ararigaku_8.MoveNext = true;
             this.ararigaku_8.Name = "ararigaku_8";
             this.ararigaku_8.Size = new System.Drawing.Size(90, 19);
@@ -1540,7 +1541,7 @@
             this.zeikomijuchuugaku_8.IsNumber = true;
             this.zeikomijuchuugaku_8.IsShop = false;
             this.zeikomijuchuugaku_8.Length = 32767;
-            this.zeikomijuchuugaku_8.Location = new System.Drawing.Point(1116, 20);
+            this.zeikomijuchuugaku_8.Location = new System.Drawing.Point(1124, 20);
             this.zeikomijuchuugaku_8.MoveNext = true;
             this.zeikomijuchuugaku_8.Name = "zeikomijuchuugaku_8";
             this.zeikomijuchuugaku_8.Size = new System.Drawing.Size(90, 19);
@@ -1568,7 +1569,7 @@
             this.zeinuJuchuugaka_8.IsNumber = true;
             this.zeinuJuchuugaka_8.IsShop = false;
             this.zeinuJuchuugaka_8.Length = 32767;
-            this.zeinuJuchuugaka_8.Location = new System.Drawing.Point(1026, 20);
+            this.zeinuJuchuugaka_8.Location = new System.Drawing.Point(1034, 20);
             this.zeinuJuchuugaka_8.MoveNext = true;
             this.zeinuJuchuugaka_8.Name = "zeinuJuchuugaka_8";
             this.zeinuJuchuugaka_8.Size = new System.Drawing.Size(90, 19);
@@ -1596,7 +1597,7 @@
             this.hanbaitanka_8.IsNumber = true;
             this.hanbaitanka_8.IsShop = false;
             this.hanbaitanka_8.Length = 9;
-            this.hanbaitanka_8.Location = new System.Drawing.Point(936, 20);
+            this.hanbaitanka_8.Location = new System.Drawing.Point(944, 20);
             this.hanbaitanka_8.MaxLength = 9;
             this.hanbaitanka_8.MoveNext = true;
             this.hanbaitanka_8.Name = "hanbaitanka_8";
@@ -1612,7 +1613,7 @@
             this.teni_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.teni_8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.teni_8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.teni_8.Location = new System.Drawing.Point(906, 20);
+            this.teni_8.Location = new System.Drawing.Point(914, 20);
             this.teni_8.Name = "teni_8";
             this.teni_8.Size = new System.Drawing.Size(30, 19);
             this.teni_8.TabIndex = 307;
@@ -1625,7 +1626,7 @@
             this.sku_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sku_8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sku_8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.sku_8.Location = new System.Drawing.Point(166, 1);
+            this.sku_8.Location = new System.Drawing.Point(174, 1);
             this.sku_8.Name = "sku_8";
             this.sku_8.Size = new System.Drawing.Size(250, 19);
             this.sku_8.TabIndex = 306;
@@ -1652,7 +1653,7 @@
             this.juchuusuu_8.IsNumber = true;
             this.juchuusuu_8.IsShop = false;
             this.juchuusuu_8.Length = 9;
-            this.juchuusuu_8.Location = new System.Drawing.Point(826, 20);
+            this.juchuusuu_8.Location = new System.Drawing.Point(834, 20);
             this.juchuusuu_8.MaxLength = 9;
             this.juchuusuu_8.MoveNext = true;
             this.juchuusuu_8.Name = "juchuusuu_8";
@@ -1682,7 +1683,7 @@
             this.nyuukayotei_8.IsNumber = true;
             this.nyuukayotei_8.IsShop = false;
             this.nyuukayotei_8.Length = 10;
-            this.nyuukayotei_8.Location = new System.Drawing.Point(746, 20);
+            this.nyuukayotei_8.Location = new System.Drawing.Point(754, 20);
             this.nyuukayotei_8.MaxLength = 10;
             this.nyuukayotei_8.MoveNext = true;
             this.nyuukayotei_8.Name = "nyuukayotei_8";
@@ -1712,7 +1713,7 @@
             this.hacchutanka_8.IsNumber = true;
             this.hacchutanka_8.IsShop = false;
             this.hacchutanka_8.Length = 9;
-            this.hacchutanka_8.Location = new System.Drawing.Point(666, 20);
+            this.hacchutanka_8.Location = new System.Drawing.Point(674, 20);
             this.hacchutanka_8.MaxLength = 9;
             this.hacchutanka_8.MoveNext = true;
             this.hacchutanka_8.Name = "hacchutanka_8";
@@ -1728,7 +1729,7 @@
             this.empty_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.empty_8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.empty_8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.empty_8.Location = new System.Drawing.Point(326, 20);
+            this.empty_8.Location = new System.Drawing.Point(334, 20);
             this.empty_8.Name = "empty_8";
             this.empty_8.Size = new System.Drawing.Size(340, 19);
             this.empty_8.TabIndex = 294;
@@ -1744,7 +1745,7 @@
             this.shuukasouko_8.Flag = 0;
             this.shuukasouko_8.FormattingEnabled = true;
             this.shuukasouko_8.Length = 10;
-            this.shuukasouko_8.Location = new System.Drawing.Point(177, 19);
+            this.shuukasouko_8.Location = new System.Drawing.Point(185, 19);
             this.shuukasouko_8.MaxLength = 10;
             this.shuukasouko_8.MoveNext = true;
             this.shuukasouko_8.Name = "shuukasouko_8";
@@ -1771,7 +1772,7 @@
             this.shuukayotei_8.IsNumber = true;
             this.shuukayotei_8.IsShop = false;
             this.shuukayotei_8.Length = 10;
-            this.shuukayotei_8.Location = new System.Drawing.Point(28, 20);
+            this.shuukayotei_8.Location = new System.Drawing.Point(36, 20);
             this.shuukayotei_8.MaxLength = 10;
             this.shuukayotei_8.MoveNext = true;
             this.shuukayotei_8.Name = "shuukayotei_8";
@@ -1785,15 +1786,15 @@
             // 
             this.panel13.BackColor = System.Drawing.Color.White;
             this.panel13.Controls.Add(this.chk_8);
-            this.panel13.Location = new System.Drawing.Point(0, 20);
+            this.panel13.Location = new System.Drawing.Point(1, 20);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(28, 38);
+            this.panel13.Size = new System.Drawing.Size(35, 38);
             this.panel13.TabIndex = 290;
             // 
             // chk_8
             // 
             this.chk_8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.chk_8.Location = new System.Drawing.Point(7, 12);
+            this.chk_8.Location = new System.Drawing.Point(11, 12);
             this.chk_8.Name = "chk_8";
             this.chk_8.Size = new System.Drawing.Size(13, 13);
             this.chk_8.TabIndex = 1;
@@ -1819,7 +1820,7 @@
             this.sizename_8.IsNumber = true;
             this.sizename_8.IsShop = false;
             this.sizename_8.Length = 32767;
-            this.sizename_8.Location = new System.Drawing.Point(1226, 1);
+            this.sizename_8.Location = new System.Drawing.Point(1234, 1);
             this.sizename_8.MoveNext = true;
             this.sizename_8.Name = "sizename_8";
             this.sizename_8.Size = new System.Drawing.Size(130, 19);
@@ -1847,7 +1848,7 @@
             this.size_8.IsNumber = true;
             this.size_8.IsShop = false;
             this.size_8.Length = 32767;
-            this.size_8.Location = new System.Drawing.Point(1146, 1);
+            this.size_8.Location = new System.Drawing.Point(1154, 1);
             this.size_8.MoveNext = true;
             this.size_8.Name = "size_8";
             this.size_8.Size = new System.Drawing.Size(80, 19);
@@ -1875,7 +1876,7 @@
             this.colorname_8.IsNumber = true;
             this.colorname_8.IsShop = false;
             this.colorname_8.Length = 32767;
-            this.colorname_8.Location = new System.Drawing.Point(1016, 1);
+            this.colorname_8.Location = new System.Drawing.Point(1024, 1);
             this.colorname_8.MoveNext = true;
             this.colorname_8.Name = "colorname_8";
             this.colorname_8.Size = new System.Drawing.Size(130, 19);
@@ -1903,7 +1904,7 @@
             this.color_8.IsNumber = true;
             this.color_8.IsShop = false;
             this.color_8.Length = 32767;
-            this.color_8.Location = new System.Drawing.Point(936, 1);
+            this.color_8.Location = new System.Drawing.Point(944, 1);
             this.color_8.MoveNext = true;
             this.color_8.Name = "color_8";
             this.color_8.Size = new System.Drawing.Size(80, 19);
@@ -1931,7 +1932,7 @@
             this.shouhin_8.IsNumber = true;
             this.shouhin_8.IsShop = false;
             this.shouhin_8.Length = 80;
-            this.shouhin_8.Location = new System.Drawing.Point(416, 1);
+            this.shouhin_8.Location = new System.Drawing.Point(424, 1);
             this.shouhin_8.MaxLength = 80;
             this.shouhin_8.MoveNext = true;
             this.shouhin_8.Name = "shouhin_8";
@@ -1955,7 +1956,7 @@
             this.scjan_8.IsCopy = false;
             this.scjan_8.LabelText = "";
             this.scjan_8.LabelVisible = false;
-            this.scjan_8.Location = new System.Drawing.Point(28, -4);
+            this.scjan_8.Location = new System.Drawing.Point(36, -4);
             this.scjan_8.Margin = new System.Windows.Forms.Padding(0);
             this.scjan_8.Name = "scjan_8";
             this.scjan_8.NameWidth = 281;
@@ -1976,9 +1977,9 @@
             this.lbl_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lbl_8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbl_8.Location = new System.Drawing.Point(0, 1);
+            this.lbl_8.Location = new System.Drawing.Point(1, 1);
             this.lbl_8.Name = "lbl_8";
-            this.lbl_8.Size = new System.Drawing.Size(28, 19);
+            this.lbl_8.Size = new System.Drawing.Size(35, 19);
             this.lbl_8.TabIndex = 282;
             this.lbl_8.Text = "8";
             this.lbl_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2011,15 +2012,15 @@
             this.panel14.Controls.Add(this.shouhin_7);
             this.panel14.Controls.Add(this.scjan_7);
             this.panel14.Controls.Add(this.lbl_7);
-            this.panel14.Location = new System.Drawing.Point(0, 341);
+            this.panel14.Location = new System.Drawing.Point(2, 341);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(1357, 60);
+            this.panel14.Size = new System.Drawing.Size(1365, 60);
             this.panel14.TabIndex = 318;
             // 
             // choukusou_7
             // 
             this.choukusou_7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.choukusou_7.Location = new System.Drawing.Point(129, 20);
+            this.choukusou_7.Location = new System.Drawing.Point(137, 20);
             this.choukusou_7.Name = "choukusou_7";
             this.choukusou_7.Size = new System.Drawing.Size(48, 18);
             this.choukusou_7.TabIndex = 319;
@@ -2046,7 +2047,7 @@
             this.zeinutanku_7.IsNumber = true;
             this.zeinutanku_7.IsShop = false;
             this.zeinutanku_7.Length = 32767;
-            this.zeinutanku_7.Location = new System.Drawing.Point(1326, 20);
+            this.zeinutanku_7.Location = new System.Drawing.Point(1334, 20);
             this.zeinutanku_7.MoveNext = true;
             this.zeinutanku_7.Name = "zeinutanku_7";
             this.zeinutanku_7.Size = new System.Drawing.Size(30, 19);
@@ -2074,7 +2075,7 @@
             this.zeinu_7.IsNumber = true;
             this.zeinu_7.IsShop = false;
             this.zeinu_7.Length = 32767;
-            this.zeinu_7.Location = new System.Drawing.Point(1296, 20);
+            this.zeinu_7.Location = new System.Drawing.Point(1304, 20);
             this.zeinu_7.MoveNext = true;
             this.zeinu_7.Name = "zeinu_7";
             this.zeinu_7.Size = new System.Drawing.Size(30, 19);
@@ -2102,7 +2103,7 @@
             this.kobetsuhanbai_7.IsNumber = true;
             this.kobetsuhanbai_7.IsShop = false;
             this.kobetsuhanbai_7.Length = 32767;
-            this.kobetsuhanbai_7.Location = new System.Drawing.Point(913, 39);
+            this.kobetsuhanbai_7.Location = new System.Drawing.Point(921, 39);
             this.kobetsuhanbai_7.MoveNext = true;
             this.kobetsuhanbai_7.Name = "kobetsuhanbai_7";
             this.kobetsuhanbai_7.Size = new System.Drawing.Size(443, 19);
@@ -2130,7 +2131,7 @@
             this.shagaibikou_7.IsNumber = true;
             this.shagaibikou_7.IsShop = false;
             this.shagaibikou_7.Length = 32767;
-            this.shagaibikou_7.Location = new System.Drawing.Point(470, 39);
+            this.shagaibikou_7.Location = new System.Drawing.Point(478, 39);
             this.shagaibikou_7.MoveNext = true;
             this.shagaibikou_7.Name = "shagaibikou_7";
             this.shagaibikou_7.Size = new System.Drawing.Size(443, 19);
@@ -2158,7 +2159,7 @@
             this.shanaibikou_7.IsNumber = true;
             this.shanaibikou_7.IsShop = false;
             this.shanaibikou_7.Length = 32767;
-            this.shanaibikou_7.Location = new System.Drawing.Point(28, 39);
+            this.shanaibikou_7.Location = new System.Drawing.Point(36, 39);
             this.shanaibikou_7.MoveNext = true;
             this.shanaibikou_7.Name = "shanaibikou_7";
             this.shanaibikou_7.Size = new System.Drawing.Size(442, 19);
@@ -2186,7 +2187,7 @@
             this.ararigaku_7.IsNumber = true;
             this.ararigaku_7.IsShop = false;
             this.ararigaku_7.Length = 32767;
-            this.ararigaku_7.Location = new System.Drawing.Point(1206, 20);
+            this.ararigaku_7.Location = new System.Drawing.Point(1214, 20);
             this.ararigaku_7.MoveNext = true;
             this.ararigaku_7.Name = "ararigaku_7";
             this.ararigaku_7.Size = new System.Drawing.Size(90, 19);
@@ -2214,7 +2215,7 @@
             this.zeikomijuchuugaku_7.IsNumber = true;
             this.zeikomijuchuugaku_7.IsShop = false;
             this.zeikomijuchuugaku_7.Length = 32767;
-            this.zeikomijuchuugaku_7.Location = new System.Drawing.Point(1116, 20);
+            this.zeikomijuchuugaku_7.Location = new System.Drawing.Point(1124, 20);
             this.zeikomijuchuugaku_7.MoveNext = true;
             this.zeikomijuchuugaku_7.Name = "zeikomijuchuugaku_7";
             this.zeikomijuchuugaku_7.Size = new System.Drawing.Size(90, 19);
@@ -2242,7 +2243,7 @@
             this.zeinuJuchuugaka_7.IsNumber = true;
             this.zeinuJuchuugaka_7.IsShop = false;
             this.zeinuJuchuugaka_7.Length = 32767;
-            this.zeinuJuchuugaka_7.Location = new System.Drawing.Point(1026, 20);
+            this.zeinuJuchuugaka_7.Location = new System.Drawing.Point(1034, 20);
             this.zeinuJuchuugaka_7.MoveNext = true;
             this.zeinuJuchuugaka_7.Name = "zeinuJuchuugaka_7";
             this.zeinuJuchuugaka_7.Size = new System.Drawing.Size(90, 19);
@@ -2270,7 +2271,7 @@
             this.hanbaitanka_7.IsNumber = true;
             this.hanbaitanka_7.IsShop = false;
             this.hanbaitanka_7.Length = 9;
-            this.hanbaitanka_7.Location = new System.Drawing.Point(936, 20);
+            this.hanbaitanka_7.Location = new System.Drawing.Point(944, 20);
             this.hanbaitanka_7.MaxLength = 9;
             this.hanbaitanka_7.MoveNext = true;
             this.hanbaitanka_7.Name = "hanbaitanka_7";
@@ -2286,7 +2287,7 @@
             this.teni_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.teni_7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.teni_7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.teni_7.Location = new System.Drawing.Point(906, 20);
+            this.teni_7.Location = new System.Drawing.Point(914, 20);
             this.teni_7.Name = "teni_7";
             this.teni_7.Size = new System.Drawing.Size(30, 19);
             this.teni_7.TabIndex = 307;
@@ -2299,7 +2300,7 @@
             this.sku_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sku_7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sku_7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.sku_7.Location = new System.Drawing.Point(166, 1);
+            this.sku_7.Location = new System.Drawing.Point(174, 1);
             this.sku_7.Name = "sku_7";
             this.sku_7.Size = new System.Drawing.Size(250, 19);
             this.sku_7.TabIndex = 306;
@@ -2326,7 +2327,7 @@
             this.juchuusuu_7.IsNumber = true;
             this.juchuusuu_7.IsShop = false;
             this.juchuusuu_7.Length = 9;
-            this.juchuusuu_7.Location = new System.Drawing.Point(826, 20);
+            this.juchuusuu_7.Location = new System.Drawing.Point(834, 20);
             this.juchuusuu_7.MaxLength = 9;
             this.juchuusuu_7.MoveNext = true;
             this.juchuusuu_7.Name = "juchuusuu_7";
@@ -2356,7 +2357,7 @@
             this.nyuukayotei_7.IsNumber = true;
             this.nyuukayotei_7.IsShop = false;
             this.nyuukayotei_7.Length = 10;
-            this.nyuukayotei_7.Location = new System.Drawing.Point(746, 20);
+            this.nyuukayotei_7.Location = new System.Drawing.Point(754, 20);
             this.nyuukayotei_7.MaxLength = 10;
             this.nyuukayotei_7.MoveNext = true;
             this.nyuukayotei_7.Name = "nyuukayotei_7";
@@ -2386,7 +2387,7 @@
             this.hacchutanka_7.IsNumber = true;
             this.hacchutanka_7.IsShop = false;
             this.hacchutanka_7.Length = 9;
-            this.hacchutanka_7.Location = new System.Drawing.Point(666, 20);
+            this.hacchutanka_7.Location = new System.Drawing.Point(674, 20);
             this.hacchutanka_7.MaxLength = 9;
             this.hacchutanka_7.MoveNext = true;
             this.hacchutanka_7.Name = "hacchutanka_7";
@@ -2402,7 +2403,7 @@
             this.empty_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.empty_7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.empty_7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.empty_7.Location = new System.Drawing.Point(326, 20);
+            this.empty_7.Location = new System.Drawing.Point(334, 20);
             this.empty_7.Name = "empty_7";
             this.empty_7.Size = new System.Drawing.Size(340, 19);
             this.empty_7.TabIndex = 294;
@@ -2418,7 +2419,7 @@
             this.shuukasouko_7.Flag = 0;
             this.shuukasouko_7.FormattingEnabled = true;
             this.shuukasouko_7.Length = 10;
-            this.shuukasouko_7.Location = new System.Drawing.Point(177, 19);
+            this.shuukasouko_7.Location = new System.Drawing.Point(185, 19);
             this.shuukasouko_7.MaxLength = 10;
             this.shuukasouko_7.MoveNext = true;
             this.shuukasouko_7.Name = "shuukasouko_7";
@@ -2445,7 +2446,7 @@
             this.shuukayotei_7.IsNumber = true;
             this.shuukayotei_7.IsShop = false;
             this.shuukayotei_7.Length = 10;
-            this.shuukayotei_7.Location = new System.Drawing.Point(28, 20);
+            this.shuukayotei_7.Location = new System.Drawing.Point(36, 20);
             this.shuukayotei_7.MaxLength = 10;
             this.shuukayotei_7.MoveNext = true;
             this.shuukayotei_7.Name = "shuukayotei_7";
@@ -2459,15 +2460,15 @@
             // 
             this.panel15.BackColor = System.Drawing.Color.White;
             this.panel15.Controls.Add(this.chk_7);
-            this.panel15.Location = new System.Drawing.Point(0, 20);
+            this.panel15.Location = new System.Drawing.Point(1, 20);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(28, 38);
+            this.panel15.Size = new System.Drawing.Size(35, 38);
             this.panel15.TabIndex = 290;
             // 
             // chk_7
             // 
             this.chk_7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.chk_7.Location = new System.Drawing.Point(7, 12);
+            this.chk_7.Location = new System.Drawing.Point(11, 12);
             this.chk_7.Name = "chk_7";
             this.chk_7.Size = new System.Drawing.Size(13, 13);
             this.chk_7.TabIndex = 1;
@@ -2493,7 +2494,7 @@
             this.sizename_7.IsNumber = true;
             this.sizename_7.IsShop = false;
             this.sizename_7.Length = 32767;
-            this.sizename_7.Location = new System.Drawing.Point(1226, 1);
+            this.sizename_7.Location = new System.Drawing.Point(1234, 1);
             this.sizename_7.MoveNext = true;
             this.sizename_7.Name = "sizename_7";
             this.sizename_7.Size = new System.Drawing.Size(130, 19);
@@ -2521,7 +2522,7 @@
             this.size_7.IsNumber = true;
             this.size_7.IsShop = false;
             this.size_7.Length = 32767;
-            this.size_7.Location = new System.Drawing.Point(1146, 1);
+            this.size_7.Location = new System.Drawing.Point(1154, 1);
             this.size_7.MoveNext = true;
             this.size_7.Name = "size_7";
             this.size_7.Size = new System.Drawing.Size(80, 19);
@@ -2549,7 +2550,7 @@
             this.colorname_7.IsNumber = true;
             this.colorname_7.IsShop = false;
             this.colorname_7.Length = 32767;
-            this.colorname_7.Location = new System.Drawing.Point(1016, 1);
+            this.colorname_7.Location = new System.Drawing.Point(1024, 1);
             this.colorname_7.MoveNext = true;
             this.colorname_7.Name = "colorname_7";
             this.colorname_7.Size = new System.Drawing.Size(130, 19);
@@ -2577,7 +2578,7 @@
             this.color_7.IsNumber = true;
             this.color_7.IsShop = false;
             this.color_7.Length = 32767;
-            this.color_7.Location = new System.Drawing.Point(936, 1);
+            this.color_7.Location = new System.Drawing.Point(944, 1);
             this.color_7.MoveNext = true;
             this.color_7.Name = "color_7";
             this.color_7.Size = new System.Drawing.Size(80, 19);
@@ -2605,7 +2606,7 @@
             this.shouhin_7.IsNumber = true;
             this.shouhin_7.IsShop = false;
             this.shouhin_7.Length = 80;
-            this.shouhin_7.Location = new System.Drawing.Point(416, 1);
+            this.shouhin_7.Location = new System.Drawing.Point(424, 1);
             this.shouhin_7.MaxLength = 80;
             this.shouhin_7.MoveNext = true;
             this.shouhin_7.Name = "shouhin_7";
@@ -2629,7 +2630,7 @@
             this.scjan_7.IsCopy = false;
             this.scjan_7.LabelText = "";
             this.scjan_7.LabelVisible = false;
-            this.scjan_7.Location = new System.Drawing.Point(28, -4);
+            this.scjan_7.Location = new System.Drawing.Point(36, -4);
             this.scjan_7.Margin = new System.Windows.Forms.Padding(0);
             this.scjan_7.Name = "scjan_7";
             this.scjan_7.NameWidth = 281;
@@ -2650,9 +2651,9 @@
             this.lbl_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lbl_7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbl_7.Location = new System.Drawing.Point(0, 1);
+            this.lbl_7.Location = new System.Drawing.Point(1, 1);
             this.lbl_7.Name = "lbl_7";
-            this.lbl_7.Size = new System.Drawing.Size(28, 19);
+            this.lbl_7.Size = new System.Drawing.Size(35, 19);
             this.lbl_7.TabIndex = 282;
             this.lbl_7.Text = "7";
             this.lbl_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2685,15 +2686,15 @@
             this.panel10.Controls.Add(this.shouhin_6);
             this.panel10.Controls.Add(this.scjan_6);
             this.panel10.Controls.Add(this.lbl_6);
-            this.panel10.Location = new System.Drawing.Point(0, 284);
+            this.panel10.Location = new System.Drawing.Point(2, 284);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1357, 60);
+            this.panel10.Size = new System.Drawing.Size(1365, 60);
             this.panel10.TabIndex = 317;
             // 
             // choukusou_6
             // 
             this.choukusou_6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.choukusou_6.Location = new System.Drawing.Point(129, 20);
+            this.choukusou_6.Location = new System.Drawing.Point(137, 20);
             this.choukusou_6.Name = "choukusou_6";
             this.choukusou_6.Size = new System.Drawing.Size(48, 18);
             this.choukusou_6.TabIndex = 319;
@@ -2720,7 +2721,7 @@
             this.zeinutanku_6.IsNumber = true;
             this.zeinutanku_6.IsShop = false;
             this.zeinutanku_6.Length = 32767;
-            this.zeinutanku_6.Location = new System.Drawing.Point(1326, 20);
+            this.zeinutanku_6.Location = new System.Drawing.Point(1334, 20);
             this.zeinutanku_6.MoveNext = true;
             this.zeinutanku_6.Name = "zeinutanku_6";
             this.zeinutanku_6.Size = new System.Drawing.Size(30, 19);
@@ -2748,7 +2749,7 @@
             this.zeinu_6.IsNumber = true;
             this.zeinu_6.IsShop = false;
             this.zeinu_6.Length = 32767;
-            this.zeinu_6.Location = new System.Drawing.Point(1296, 20);
+            this.zeinu_6.Location = new System.Drawing.Point(1304, 20);
             this.zeinu_6.MoveNext = true;
             this.zeinu_6.Name = "zeinu_6";
             this.zeinu_6.Size = new System.Drawing.Size(30, 19);
@@ -2776,7 +2777,7 @@
             this.kobetsuhanbai_6.IsNumber = true;
             this.kobetsuhanbai_6.IsShop = false;
             this.kobetsuhanbai_6.Length = 32767;
-            this.kobetsuhanbai_6.Location = new System.Drawing.Point(913, 39);
+            this.kobetsuhanbai_6.Location = new System.Drawing.Point(921, 39);
             this.kobetsuhanbai_6.MoveNext = true;
             this.kobetsuhanbai_6.Name = "kobetsuhanbai_6";
             this.kobetsuhanbai_6.Size = new System.Drawing.Size(443, 19);
@@ -2804,7 +2805,7 @@
             this.shagaibikou_6.IsNumber = true;
             this.shagaibikou_6.IsShop = false;
             this.shagaibikou_6.Length = 32767;
-            this.shagaibikou_6.Location = new System.Drawing.Point(470, 39);
+            this.shagaibikou_6.Location = new System.Drawing.Point(478, 39);
             this.shagaibikou_6.MoveNext = true;
             this.shagaibikou_6.Name = "shagaibikou_6";
             this.shagaibikou_6.Size = new System.Drawing.Size(443, 19);
@@ -2832,7 +2833,7 @@
             this.shanaibikou_6.IsNumber = true;
             this.shanaibikou_6.IsShop = false;
             this.shanaibikou_6.Length = 32767;
-            this.shanaibikou_6.Location = new System.Drawing.Point(28, 39);
+            this.shanaibikou_6.Location = new System.Drawing.Point(36, 39);
             this.shanaibikou_6.MoveNext = true;
             this.shanaibikou_6.Name = "shanaibikou_6";
             this.shanaibikou_6.Size = new System.Drawing.Size(442, 19);
@@ -2860,7 +2861,7 @@
             this.ararigaku_6.IsNumber = true;
             this.ararigaku_6.IsShop = false;
             this.ararigaku_6.Length = 32767;
-            this.ararigaku_6.Location = new System.Drawing.Point(1206, 20);
+            this.ararigaku_6.Location = new System.Drawing.Point(1214, 20);
             this.ararigaku_6.MoveNext = true;
             this.ararigaku_6.Name = "ararigaku_6";
             this.ararigaku_6.Size = new System.Drawing.Size(90, 19);
@@ -2888,7 +2889,7 @@
             this.zeikomijuchuugaku_6.IsNumber = true;
             this.zeikomijuchuugaku_6.IsShop = false;
             this.zeikomijuchuugaku_6.Length = 32767;
-            this.zeikomijuchuugaku_6.Location = new System.Drawing.Point(1116, 20);
+            this.zeikomijuchuugaku_6.Location = new System.Drawing.Point(1124, 20);
             this.zeikomijuchuugaku_6.MoveNext = true;
             this.zeikomijuchuugaku_6.Name = "zeikomijuchuugaku_6";
             this.zeikomijuchuugaku_6.Size = new System.Drawing.Size(90, 19);
@@ -2916,7 +2917,7 @@
             this.zeinuJuchuugaka_6.IsNumber = true;
             this.zeinuJuchuugaka_6.IsShop = false;
             this.zeinuJuchuugaka_6.Length = 32767;
-            this.zeinuJuchuugaka_6.Location = new System.Drawing.Point(1026, 20);
+            this.zeinuJuchuugaka_6.Location = new System.Drawing.Point(1034, 20);
             this.zeinuJuchuugaka_6.MoveNext = true;
             this.zeinuJuchuugaka_6.Name = "zeinuJuchuugaka_6";
             this.zeinuJuchuugaka_6.Size = new System.Drawing.Size(90, 19);
@@ -2944,7 +2945,7 @@
             this.hanbaitanka_6.IsNumber = true;
             this.hanbaitanka_6.IsShop = false;
             this.hanbaitanka_6.Length = 9;
-            this.hanbaitanka_6.Location = new System.Drawing.Point(936, 20);
+            this.hanbaitanka_6.Location = new System.Drawing.Point(944, 20);
             this.hanbaitanka_6.MaxLength = 9;
             this.hanbaitanka_6.MoveNext = true;
             this.hanbaitanka_6.Name = "hanbaitanka_6";
@@ -2960,7 +2961,7 @@
             this.teni_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.teni_6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.teni_6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.teni_6.Location = new System.Drawing.Point(906, 20);
+            this.teni_6.Location = new System.Drawing.Point(914, 20);
             this.teni_6.Name = "teni_6";
             this.teni_6.Size = new System.Drawing.Size(30, 19);
             this.teni_6.TabIndex = 307;
@@ -2973,7 +2974,7 @@
             this.sku_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sku_6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sku_6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.sku_6.Location = new System.Drawing.Point(166, 1);
+            this.sku_6.Location = new System.Drawing.Point(174, 1);
             this.sku_6.Name = "sku_6";
             this.sku_6.Size = new System.Drawing.Size(250, 19);
             this.sku_6.TabIndex = 306;
@@ -3000,7 +3001,7 @@
             this.juchuusuu_6.IsNumber = true;
             this.juchuusuu_6.IsShop = false;
             this.juchuusuu_6.Length = 9;
-            this.juchuusuu_6.Location = new System.Drawing.Point(826, 20);
+            this.juchuusuu_6.Location = new System.Drawing.Point(834, 20);
             this.juchuusuu_6.MaxLength = 9;
             this.juchuusuu_6.MoveNext = true;
             this.juchuusuu_6.Name = "juchuusuu_6";
@@ -3030,7 +3031,7 @@
             this.nyuukayotei_6.IsNumber = true;
             this.nyuukayotei_6.IsShop = false;
             this.nyuukayotei_6.Length = 10;
-            this.nyuukayotei_6.Location = new System.Drawing.Point(746, 20);
+            this.nyuukayotei_6.Location = new System.Drawing.Point(754, 20);
             this.nyuukayotei_6.MaxLength = 10;
             this.nyuukayotei_6.MoveNext = true;
             this.nyuukayotei_6.Name = "nyuukayotei_6";
@@ -3060,7 +3061,7 @@
             this.hacchutanka_6.IsNumber = true;
             this.hacchutanka_6.IsShop = false;
             this.hacchutanka_6.Length = 9;
-            this.hacchutanka_6.Location = new System.Drawing.Point(666, 20);
+            this.hacchutanka_6.Location = new System.Drawing.Point(674, 20);
             this.hacchutanka_6.MaxLength = 9;
             this.hacchutanka_6.MoveNext = true;
             this.hacchutanka_6.Name = "hacchutanka_6";
@@ -3076,7 +3077,7 @@
             this.empty_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.empty_6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.empty_6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.empty_6.Location = new System.Drawing.Point(326, 20);
+            this.empty_6.Location = new System.Drawing.Point(334, 20);
             this.empty_6.Name = "empty_6";
             this.empty_6.Size = new System.Drawing.Size(340, 19);
             this.empty_6.TabIndex = 294;
@@ -3092,7 +3093,7 @@
             this.shuukasouko_6.Flag = 0;
             this.shuukasouko_6.FormattingEnabled = true;
             this.shuukasouko_6.Length = 10;
-            this.shuukasouko_6.Location = new System.Drawing.Point(177, 19);
+            this.shuukasouko_6.Location = new System.Drawing.Point(185, 19);
             this.shuukasouko_6.MaxLength = 10;
             this.shuukasouko_6.MoveNext = true;
             this.shuukasouko_6.Name = "shuukasouko_6";
@@ -3119,7 +3120,7 @@
             this.shuukayotei_6.IsNumber = true;
             this.shuukayotei_6.IsShop = false;
             this.shuukayotei_6.Length = 10;
-            this.shuukayotei_6.Location = new System.Drawing.Point(28, 20);
+            this.shuukayotei_6.Location = new System.Drawing.Point(36, 20);
             this.shuukayotei_6.MaxLength = 10;
             this.shuukayotei_6.MoveNext = true;
             this.shuukayotei_6.Name = "shuukayotei_6";
@@ -3133,15 +3134,15 @@
             // 
             this.panel11.BackColor = System.Drawing.Color.White;
             this.panel11.Controls.Add(this.chk_6);
-            this.panel11.Location = new System.Drawing.Point(0, 20);
+            this.panel11.Location = new System.Drawing.Point(1, 20);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(28, 38);
+            this.panel11.Size = new System.Drawing.Size(35, 38);
             this.panel11.TabIndex = 290;
             // 
             // chk_6
             // 
             this.chk_6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.chk_6.Location = new System.Drawing.Point(7, 12);
+            this.chk_6.Location = new System.Drawing.Point(12, 12);
             this.chk_6.Name = "chk_6";
             this.chk_6.Size = new System.Drawing.Size(13, 13);
             this.chk_6.TabIndex = 1;
@@ -3167,7 +3168,7 @@
             this.sizename_6.IsNumber = true;
             this.sizename_6.IsShop = false;
             this.sizename_6.Length = 32767;
-            this.sizename_6.Location = new System.Drawing.Point(1226, 1);
+            this.sizename_6.Location = new System.Drawing.Point(1234, 1);
             this.sizename_6.MoveNext = true;
             this.sizename_6.Name = "sizename_6";
             this.sizename_6.Size = new System.Drawing.Size(130, 19);
@@ -3195,7 +3196,7 @@
             this.size_6.IsNumber = true;
             this.size_6.IsShop = false;
             this.size_6.Length = 32767;
-            this.size_6.Location = new System.Drawing.Point(1146, 1);
+            this.size_6.Location = new System.Drawing.Point(1154, 1);
             this.size_6.MoveNext = true;
             this.size_6.Name = "size_6";
             this.size_6.Size = new System.Drawing.Size(80, 19);
@@ -3223,7 +3224,7 @@
             this.colorname_6.IsNumber = true;
             this.colorname_6.IsShop = false;
             this.colorname_6.Length = 32767;
-            this.colorname_6.Location = new System.Drawing.Point(1016, 1);
+            this.colorname_6.Location = new System.Drawing.Point(1024, 1);
             this.colorname_6.MoveNext = true;
             this.colorname_6.Name = "colorname_6";
             this.colorname_6.Size = new System.Drawing.Size(130, 19);
@@ -3251,7 +3252,7 @@
             this.color_6.IsNumber = true;
             this.color_6.IsShop = false;
             this.color_6.Length = 32767;
-            this.color_6.Location = new System.Drawing.Point(936, 1);
+            this.color_6.Location = new System.Drawing.Point(944, 1);
             this.color_6.MoveNext = true;
             this.color_6.Name = "color_6";
             this.color_6.Size = new System.Drawing.Size(80, 19);
@@ -3279,7 +3280,7 @@
             this.shouhin_6.IsNumber = true;
             this.shouhin_6.IsShop = false;
             this.shouhin_6.Length = 80;
-            this.shouhin_6.Location = new System.Drawing.Point(416, 1);
+            this.shouhin_6.Location = new System.Drawing.Point(424, 1);
             this.shouhin_6.MaxLength = 80;
             this.shouhin_6.MoveNext = true;
             this.shouhin_6.Name = "shouhin_6";
@@ -3303,7 +3304,7 @@
             this.scjan_6.IsCopy = false;
             this.scjan_6.LabelText = "";
             this.scjan_6.LabelVisible = false;
-            this.scjan_6.Location = new System.Drawing.Point(28, -4);
+            this.scjan_6.Location = new System.Drawing.Point(36, -4);
             this.scjan_6.Margin = new System.Windows.Forms.Padding(0);
             this.scjan_6.Name = "scjan_6";
             this.scjan_6.NameWidth = 281;
@@ -3324,16 +3325,16 @@
             this.lbl_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lbl_6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbl_6.Location = new System.Drawing.Point(0, 1);
+            this.lbl_6.Location = new System.Drawing.Point(1, 1);
             this.lbl_6.Name = "lbl_6";
-            this.lbl_6.Size = new System.Drawing.Size(28, 19);
+            this.lbl_6.Size = new System.Drawing.Size(35, 19);
             this.lbl_6.TabIndex = 282;
             this.lbl_6.Text = "6";
             this.lbl_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Vsb_Mei_0
             // 
-            this.Vsb_Mei_0.Location = new System.Drawing.Point(1357, 0);
+            this.Vsb_Mei_0.Location = new System.Drawing.Point(1367, 1);
             this.Vsb_Mei_0.Name = "Vsb_Mei_0";
             this.Vsb_Mei_0.Size = new System.Drawing.Size(17, 454);
             this.Vsb_Mei_0.TabIndex = 316;
@@ -3367,15 +3368,15 @@
             this.panel_5.Controls.Add(this.shouhin_5);
             this.panel_5.Controls.Add(this.scjan_5);
             this.panel_5.Controls.Add(this.lbl_5);
-            this.panel_5.Location = new System.Drawing.Point(0, 227);
+            this.panel_5.Location = new System.Drawing.Point(2, 227);
             this.panel_5.Name = "panel_5";
-            this.panel_5.Size = new System.Drawing.Size(1360, 60);
+            this.panel_5.Size = new System.Drawing.Size(1365, 60);
             this.panel_5.TabIndex = 315;
             // 
             // choukusou_5
             // 
             this.choukusou_5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.choukusou_5.Location = new System.Drawing.Point(129, 20);
+            this.choukusou_5.Location = new System.Drawing.Point(137, 20);
             this.choukusou_5.Name = "choukusou_5";
             this.choukusou_5.Size = new System.Drawing.Size(48, 18);
             this.choukusou_5.TabIndex = 319;
@@ -3402,7 +3403,7 @@
             this.zeinutanku_5.IsNumber = true;
             this.zeinutanku_5.IsShop = false;
             this.zeinutanku_5.Length = 32767;
-            this.zeinutanku_5.Location = new System.Drawing.Point(1326, 20);
+            this.zeinutanku_5.Location = new System.Drawing.Point(1334, 20);
             this.zeinutanku_5.MoveNext = true;
             this.zeinutanku_5.Name = "zeinutanku_5";
             this.zeinutanku_5.Size = new System.Drawing.Size(30, 19);
@@ -3430,7 +3431,7 @@
             this.zeinu_5.IsNumber = true;
             this.zeinu_5.IsShop = false;
             this.zeinu_5.Length = 32767;
-            this.zeinu_5.Location = new System.Drawing.Point(1296, 20);
+            this.zeinu_5.Location = new System.Drawing.Point(1304, 20);
             this.zeinu_5.MoveNext = true;
             this.zeinu_5.Name = "zeinu_5";
             this.zeinu_5.Size = new System.Drawing.Size(30, 19);
@@ -3458,7 +3459,7 @@
             this.kobetsuhanbai_5.IsNumber = true;
             this.kobetsuhanbai_5.IsShop = false;
             this.kobetsuhanbai_5.Length = 32767;
-            this.kobetsuhanbai_5.Location = new System.Drawing.Point(913, 39);
+            this.kobetsuhanbai_5.Location = new System.Drawing.Point(921, 39);
             this.kobetsuhanbai_5.MoveNext = true;
             this.kobetsuhanbai_5.Name = "kobetsuhanbai_5";
             this.kobetsuhanbai_5.Size = new System.Drawing.Size(443, 19);
@@ -3486,7 +3487,7 @@
             this.shagaibikou_5.IsNumber = true;
             this.shagaibikou_5.IsShop = false;
             this.shagaibikou_5.Length = 32767;
-            this.shagaibikou_5.Location = new System.Drawing.Point(470, 39);
+            this.shagaibikou_5.Location = new System.Drawing.Point(478, 39);
             this.shagaibikou_5.MoveNext = true;
             this.shagaibikou_5.Name = "shagaibikou_5";
             this.shagaibikou_5.Size = new System.Drawing.Size(443, 19);
@@ -3514,7 +3515,7 @@
             this.shanaibikou_5.IsNumber = true;
             this.shanaibikou_5.IsShop = false;
             this.shanaibikou_5.Length = 32767;
-            this.shanaibikou_5.Location = new System.Drawing.Point(28, 39);
+            this.shanaibikou_5.Location = new System.Drawing.Point(36, 39);
             this.shanaibikou_5.MoveNext = true;
             this.shanaibikou_5.Name = "shanaibikou_5";
             this.shanaibikou_5.Size = new System.Drawing.Size(442, 19);
@@ -3542,7 +3543,7 @@
             this.ararigaku_5.IsNumber = true;
             this.ararigaku_5.IsShop = false;
             this.ararigaku_5.Length = 32767;
-            this.ararigaku_5.Location = new System.Drawing.Point(1206, 20);
+            this.ararigaku_5.Location = new System.Drawing.Point(1214, 20);
             this.ararigaku_5.MoveNext = true;
             this.ararigaku_5.Name = "ararigaku_5";
             this.ararigaku_5.Size = new System.Drawing.Size(90, 19);
@@ -3570,7 +3571,7 @@
             this.zeikomijuchuugaku_5.IsNumber = true;
             this.zeikomijuchuugaku_5.IsShop = false;
             this.zeikomijuchuugaku_5.Length = 32767;
-            this.zeikomijuchuugaku_5.Location = new System.Drawing.Point(1116, 20);
+            this.zeikomijuchuugaku_5.Location = new System.Drawing.Point(1124, 20);
             this.zeikomijuchuugaku_5.MoveNext = true;
             this.zeikomijuchuugaku_5.Name = "zeikomijuchuugaku_5";
             this.zeikomijuchuugaku_5.Size = new System.Drawing.Size(90, 19);
@@ -3598,7 +3599,7 @@
             this.zeinuJuchuugaka_5.IsNumber = true;
             this.zeinuJuchuugaka_5.IsShop = false;
             this.zeinuJuchuugaka_5.Length = 32767;
-            this.zeinuJuchuugaka_5.Location = new System.Drawing.Point(1026, 20);
+            this.zeinuJuchuugaka_5.Location = new System.Drawing.Point(1034, 20);
             this.zeinuJuchuugaka_5.MoveNext = true;
             this.zeinuJuchuugaka_5.Name = "zeinuJuchuugaka_5";
             this.zeinuJuchuugaka_5.Size = new System.Drawing.Size(90, 19);
@@ -3626,7 +3627,7 @@
             this.hanbaitanka_5.IsNumber = true;
             this.hanbaitanka_5.IsShop = false;
             this.hanbaitanka_5.Length = 9;
-            this.hanbaitanka_5.Location = new System.Drawing.Point(936, 20);
+            this.hanbaitanka_5.Location = new System.Drawing.Point(944, 20);
             this.hanbaitanka_5.MaxLength = 9;
             this.hanbaitanka_5.MoveNext = true;
             this.hanbaitanka_5.Name = "hanbaitanka_5";
@@ -3642,7 +3643,7 @@
             this.teni_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.teni_5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.teni_5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.teni_5.Location = new System.Drawing.Point(906, 20);
+            this.teni_5.Location = new System.Drawing.Point(914, 20);
             this.teni_5.Name = "teni_5";
             this.teni_5.Size = new System.Drawing.Size(30, 19);
             this.teni_5.TabIndex = 307;
@@ -3655,7 +3656,7 @@
             this.sku_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sku_5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sku_5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.sku_5.Location = new System.Drawing.Point(166, 1);
+            this.sku_5.Location = new System.Drawing.Point(174, 1);
             this.sku_5.Name = "sku_5";
             this.sku_5.Size = new System.Drawing.Size(250, 19);
             this.sku_5.TabIndex = 306;
@@ -3682,7 +3683,7 @@
             this.juchuusuu_5.IsNumber = true;
             this.juchuusuu_5.IsShop = false;
             this.juchuusuu_5.Length = 9;
-            this.juchuusuu_5.Location = new System.Drawing.Point(826, 20);
+            this.juchuusuu_5.Location = new System.Drawing.Point(834, 20);
             this.juchuusuu_5.MaxLength = 9;
             this.juchuusuu_5.MoveNext = true;
             this.juchuusuu_5.Name = "juchuusuu_5";
@@ -3712,7 +3713,7 @@
             this.nyuukayotei_5.IsNumber = true;
             this.nyuukayotei_5.IsShop = false;
             this.nyuukayotei_5.Length = 10;
-            this.nyuukayotei_5.Location = new System.Drawing.Point(746, 20);
+            this.nyuukayotei_5.Location = new System.Drawing.Point(754, 20);
             this.nyuukayotei_5.MaxLength = 10;
             this.nyuukayotei_5.MoveNext = true;
             this.nyuukayotei_5.Name = "nyuukayotei_5";
@@ -3742,7 +3743,7 @@
             this.hacchutanka_5.IsNumber = true;
             this.hacchutanka_5.IsShop = false;
             this.hacchutanka_5.Length = 9;
-            this.hacchutanka_5.Location = new System.Drawing.Point(666, 20);
+            this.hacchutanka_5.Location = new System.Drawing.Point(674, 20);
             this.hacchutanka_5.MaxLength = 9;
             this.hacchutanka_5.MoveNext = true;
             this.hacchutanka_5.Name = "hacchutanka_5";
@@ -3758,7 +3759,7 @@
             this.empty_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.empty_5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.empty_5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.empty_5.Location = new System.Drawing.Point(326, 20);
+            this.empty_5.Location = new System.Drawing.Point(334, 20);
             this.empty_5.Name = "empty_5";
             this.empty_5.Size = new System.Drawing.Size(340, 19);
             this.empty_5.TabIndex = 294;
@@ -3774,7 +3775,7 @@
             this.shuukasouko_5.Flag = 0;
             this.shuukasouko_5.FormattingEnabled = true;
             this.shuukasouko_5.Length = 10;
-            this.shuukasouko_5.Location = new System.Drawing.Point(177, 19);
+            this.shuukasouko_5.Location = new System.Drawing.Point(185, 19);
             this.shuukasouko_5.MaxLength = 10;
             this.shuukasouko_5.MoveNext = true;
             this.shuukasouko_5.Name = "shuukasouko_5";
@@ -3801,7 +3802,7 @@
             this.shuukayotei_5.IsNumber = true;
             this.shuukayotei_5.IsShop = false;
             this.shuukayotei_5.Length = 10;
-            this.shuukayotei_5.Location = new System.Drawing.Point(28, 20);
+            this.shuukayotei_5.Location = new System.Drawing.Point(36, 20);
             this.shuukayotei_5.MaxLength = 10;
             this.shuukayotei_5.MoveNext = true;
             this.shuukayotei_5.Name = "shuukayotei_5";
@@ -3815,15 +3816,15 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.White;
             this.panel8.Controls.Add(this.chk_5);
-            this.panel8.Location = new System.Drawing.Point(0, 20);
+            this.panel8.Location = new System.Drawing.Point(1, 20);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(28, 38);
+            this.panel8.Size = new System.Drawing.Size(35, 38);
             this.panel8.TabIndex = 290;
             // 
             // chk_5
             // 
             this.chk_5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.chk_5.Location = new System.Drawing.Point(7, 12);
+            this.chk_5.Location = new System.Drawing.Point(12, 12);
             this.chk_5.Name = "chk_5";
             this.chk_5.Size = new System.Drawing.Size(13, 13);
             this.chk_5.TabIndex = 1;
@@ -3849,7 +3850,7 @@
             this.sizename_5.IsNumber = true;
             this.sizename_5.IsShop = false;
             this.sizename_5.Length = 32767;
-            this.sizename_5.Location = new System.Drawing.Point(1226, 1);
+            this.sizename_5.Location = new System.Drawing.Point(1234, 1);
             this.sizename_5.MoveNext = true;
             this.sizename_5.Name = "sizename_5";
             this.sizename_5.Size = new System.Drawing.Size(130, 19);
@@ -3877,7 +3878,7 @@
             this.size_5.IsNumber = true;
             this.size_5.IsShop = false;
             this.size_5.Length = 32767;
-            this.size_5.Location = new System.Drawing.Point(1146, 1);
+            this.size_5.Location = new System.Drawing.Point(1154, 1);
             this.size_5.MoveNext = true;
             this.size_5.Name = "size_5";
             this.size_5.Size = new System.Drawing.Size(80, 19);
@@ -3905,7 +3906,7 @@
             this.colorname_5.IsNumber = true;
             this.colorname_5.IsShop = false;
             this.colorname_5.Length = 32767;
-            this.colorname_5.Location = new System.Drawing.Point(1016, 1);
+            this.colorname_5.Location = new System.Drawing.Point(1024, 1);
             this.colorname_5.MoveNext = true;
             this.colorname_5.Name = "colorname_5";
             this.colorname_5.Size = new System.Drawing.Size(130, 19);
@@ -3933,7 +3934,7 @@
             this.color_5.IsNumber = true;
             this.color_5.IsShop = false;
             this.color_5.Length = 32767;
-            this.color_5.Location = new System.Drawing.Point(936, 1);
+            this.color_5.Location = new System.Drawing.Point(944, 1);
             this.color_5.MoveNext = true;
             this.color_5.Name = "color_5";
             this.color_5.Size = new System.Drawing.Size(80, 19);
@@ -3961,7 +3962,7 @@
             this.shouhin_5.IsNumber = true;
             this.shouhin_5.IsShop = false;
             this.shouhin_5.Length = 80;
-            this.shouhin_5.Location = new System.Drawing.Point(416, 1);
+            this.shouhin_5.Location = new System.Drawing.Point(424, 1);
             this.shouhin_5.MaxLength = 80;
             this.shouhin_5.MoveNext = true;
             this.shouhin_5.Name = "shouhin_5";
@@ -3985,7 +3986,7 @@
             this.scjan_5.IsCopy = false;
             this.scjan_5.LabelText = "";
             this.scjan_5.LabelVisible = false;
-            this.scjan_5.Location = new System.Drawing.Point(28, -4);
+            this.scjan_5.Location = new System.Drawing.Point(36, -4);
             this.scjan_5.Margin = new System.Windows.Forms.Padding(0);
             this.scjan_5.Name = "scjan_5";
             this.scjan_5.NameWidth = 281;
@@ -4006,9 +4007,9 @@
             this.lbl_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lbl_5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbl_5.Location = new System.Drawing.Point(0, 1);
+            this.lbl_5.Location = new System.Drawing.Point(1, 1);
             this.lbl_5.Name = "lbl_5";
-            this.lbl_5.Size = new System.Drawing.Size(28, 19);
+            this.lbl_5.Size = new System.Drawing.Size(35, 19);
             this.lbl_5.TabIndex = 282;
             this.lbl_5.Text = "5";
             this.lbl_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4041,15 +4042,15 @@
             this.panel_4.Controls.Add(this.shouhin_4);
             this.panel_4.Controls.Add(this.scjan_4);
             this.panel_4.Controls.Add(this.lbl_4);
-            this.panel_4.Location = new System.Drawing.Point(0, 170);
+            this.panel_4.Location = new System.Drawing.Point(2, 170);
             this.panel_4.Name = "panel_4";
-            this.panel_4.Size = new System.Drawing.Size(1360, 60);
+            this.panel_4.Size = new System.Drawing.Size(1365, 60);
             this.panel_4.TabIndex = 314;
             // 
             // choukusou_4
             // 
             this.choukusou_4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.choukusou_4.Location = new System.Drawing.Point(129, 20);
+            this.choukusou_4.Location = new System.Drawing.Point(137, 20);
             this.choukusou_4.Name = "choukusou_4";
             this.choukusou_4.Size = new System.Drawing.Size(48, 18);
             this.choukusou_4.TabIndex = 319;
@@ -4076,7 +4077,7 @@
             this.zeinutanku_4.IsNumber = true;
             this.zeinutanku_4.IsShop = false;
             this.zeinutanku_4.Length = 32767;
-            this.zeinutanku_4.Location = new System.Drawing.Point(1326, 20);
+            this.zeinutanku_4.Location = new System.Drawing.Point(1334, 20);
             this.zeinutanku_4.MoveNext = true;
             this.zeinutanku_4.Name = "zeinutanku_4";
             this.zeinutanku_4.Size = new System.Drawing.Size(30, 19);
@@ -4104,7 +4105,7 @@
             this.zeinu_4.IsNumber = true;
             this.zeinu_4.IsShop = false;
             this.zeinu_4.Length = 32767;
-            this.zeinu_4.Location = new System.Drawing.Point(1296, 20);
+            this.zeinu_4.Location = new System.Drawing.Point(1304, 20);
             this.zeinu_4.MoveNext = true;
             this.zeinu_4.Name = "zeinu_4";
             this.zeinu_4.Size = new System.Drawing.Size(30, 19);
@@ -4132,7 +4133,7 @@
             this.kobetsuhanbai_4.IsNumber = true;
             this.kobetsuhanbai_4.IsShop = false;
             this.kobetsuhanbai_4.Length = 32767;
-            this.kobetsuhanbai_4.Location = new System.Drawing.Point(913, 39);
+            this.kobetsuhanbai_4.Location = new System.Drawing.Point(921, 39);
             this.kobetsuhanbai_4.MoveNext = true;
             this.kobetsuhanbai_4.Name = "kobetsuhanbai_4";
             this.kobetsuhanbai_4.Size = new System.Drawing.Size(443, 19);
@@ -4160,7 +4161,7 @@
             this.shagaibikou_4.IsNumber = true;
             this.shagaibikou_4.IsShop = false;
             this.shagaibikou_4.Length = 32767;
-            this.shagaibikou_4.Location = new System.Drawing.Point(470, 39);
+            this.shagaibikou_4.Location = new System.Drawing.Point(478, 39);
             this.shagaibikou_4.MoveNext = true;
             this.shagaibikou_4.Name = "shagaibikou_4";
             this.shagaibikou_4.Size = new System.Drawing.Size(443, 19);
@@ -4188,7 +4189,7 @@
             this.shanaibikou_4.IsNumber = true;
             this.shanaibikou_4.IsShop = false;
             this.shanaibikou_4.Length = 32767;
-            this.shanaibikou_4.Location = new System.Drawing.Point(28, 39);
+            this.shanaibikou_4.Location = new System.Drawing.Point(36, 39);
             this.shanaibikou_4.MoveNext = true;
             this.shanaibikou_4.Name = "shanaibikou_4";
             this.shanaibikou_4.Size = new System.Drawing.Size(442, 19);
@@ -4216,7 +4217,7 @@
             this.ararigaku_4.IsNumber = true;
             this.ararigaku_4.IsShop = false;
             this.ararigaku_4.Length = 32767;
-            this.ararigaku_4.Location = new System.Drawing.Point(1206, 20);
+            this.ararigaku_4.Location = new System.Drawing.Point(1214, 20);
             this.ararigaku_4.MoveNext = true;
             this.ararigaku_4.Name = "ararigaku_4";
             this.ararigaku_4.Size = new System.Drawing.Size(90, 19);
@@ -4244,7 +4245,7 @@
             this.zeikomijuchuugaku_4.IsNumber = true;
             this.zeikomijuchuugaku_4.IsShop = false;
             this.zeikomijuchuugaku_4.Length = 32767;
-            this.zeikomijuchuugaku_4.Location = new System.Drawing.Point(1116, 20);
+            this.zeikomijuchuugaku_4.Location = new System.Drawing.Point(1124, 20);
             this.zeikomijuchuugaku_4.MoveNext = true;
             this.zeikomijuchuugaku_4.Name = "zeikomijuchuugaku_4";
             this.zeikomijuchuugaku_4.Size = new System.Drawing.Size(90, 19);
@@ -4272,7 +4273,7 @@
             this.zeinuJuchuugaka_4.IsNumber = true;
             this.zeinuJuchuugaka_4.IsShop = false;
             this.zeinuJuchuugaka_4.Length = 32767;
-            this.zeinuJuchuugaka_4.Location = new System.Drawing.Point(1026, 20);
+            this.zeinuJuchuugaka_4.Location = new System.Drawing.Point(1034, 20);
             this.zeinuJuchuugaka_4.MoveNext = true;
             this.zeinuJuchuugaka_4.Name = "zeinuJuchuugaka_4";
             this.zeinuJuchuugaka_4.Size = new System.Drawing.Size(90, 19);
@@ -4300,7 +4301,7 @@
             this.hanbaitanka_4.IsNumber = true;
             this.hanbaitanka_4.IsShop = false;
             this.hanbaitanka_4.Length = 9;
-            this.hanbaitanka_4.Location = new System.Drawing.Point(936, 20);
+            this.hanbaitanka_4.Location = new System.Drawing.Point(944, 20);
             this.hanbaitanka_4.MaxLength = 9;
             this.hanbaitanka_4.MoveNext = true;
             this.hanbaitanka_4.Name = "hanbaitanka_4";
@@ -4316,7 +4317,7 @@
             this.teni_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.teni_4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.teni_4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.teni_4.Location = new System.Drawing.Point(906, 20);
+            this.teni_4.Location = new System.Drawing.Point(914, 20);
             this.teni_4.Name = "teni_4";
             this.teni_4.Size = new System.Drawing.Size(30, 19);
             this.teni_4.TabIndex = 307;
@@ -4329,7 +4330,7 @@
             this.sku_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sku_4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sku_4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.sku_4.Location = new System.Drawing.Point(166, 1);
+            this.sku_4.Location = new System.Drawing.Point(174, 1);
             this.sku_4.Name = "sku_4";
             this.sku_4.Size = new System.Drawing.Size(250, 19);
             this.sku_4.TabIndex = 306;
@@ -4356,7 +4357,7 @@
             this.juchuusuu_4.IsNumber = true;
             this.juchuusuu_4.IsShop = false;
             this.juchuusuu_4.Length = 9;
-            this.juchuusuu_4.Location = new System.Drawing.Point(826, 20);
+            this.juchuusuu_4.Location = new System.Drawing.Point(834, 20);
             this.juchuusuu_4.MaxLength = 9;
             this.juchuusuu_4.MoveNext = true;
             this.juchuusuu_4.Name = "juchuusuu_4";
@@ -4386,7 +4387,7 @@
             this.nyuukayotei_4.IsNumber = true;
             this.nyuukayotei_4.IsShop = false;
             this.nyuukayotei_4.Length = 10;
-            this.nyuukayotei_4.Location = new System.Drawing.Point(746, 20);
+            this.nyuukayotei_4.Location = new System.Drawing.Point(754, 20);
             this.nyuukayotei_4.MaxLength = 10;
             this.nyuukayotei_4.MoveNext = true;
             this.nyuukayotei_4.Name = "nyuukayotei_4";
@@ -4416,7 +4417,7 @@
             this.hacchutanka_4.IsNumber = true;
             this.hacchutanka_4.IsShop = false;
             this.hacchutanka_4.Length = 9;
-            this.hacchutanka_4.Location = new System.Drawing.Point(666, 20);
+            this.hacchutanka_4.Location = new System.Drawing.Point(674, 20);
             this.hacchutanka_4.MaxLength = 9;
             this.hacchutanka_4.MoveNext = true;
             this.hacchutanka_4.Name = "hacchutanka_4";
@@ -4432,7 +4433,7 @@
             this.empty_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.empty_4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.empty_4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.empty_4.Location = new System.Drawing.Point(326, 20);
+            this.empty_4.Location = new System.Drawing.Point(334, 20);
             this.empty_4.Name = "empty_4";
             this.empty_4.Size = new System.Drawing.Size(340, 19);
             this.empty_4.TabIndex = 294;
@@ -4448,7 +4449,7 @@
             this.shuukasouko_4.Flag = 0;
             this.shuukasouko_4.FormattingEnabled = true;
             this.shuukasouko_4.Length = 10;
-            this.shuukasouko_4.Location = new System.Drawing.Point(177, 19);
+            this.shuukasouko_4.Location = new System.Drawing.Point(185, 19);
             this.shuukasouko_4.MaxLength = 10;
             this.shuukasouko_4.MoveNext = true;
             this.shuukasouko_4.Name = "shuukasouko_4";
@@ -4475,7 +4476,7 @@
             this.shuukayotei_4.IsNumber = true;
             this.shuukayotei_4.IsShop = false;
             this.shuukayotei_4.Length = 10;
-            this.shuukayotei_4.Location = new System.Drawing.Point(28, 20);
+            this.shuukayotei_4.Location = new System.Drawing.Point(36, 20);
             this.shuukayotei_4.MaxLength = 10;
             this.shuukayotei_4.MoveNext = true;
             this.shuukayotei_4.Name = "shuukayotei_4";
@@ -4489,15 +4490,15 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.Controls.Add(this.chk_4);
-            this.panel7.Location = new System.Drawing.Point(0, 20);
+            this.panel7.Location = new System.Drawing.Point(1, 20);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(28, 38);
+            this.panel7.Size = new System.Drawing.Size(35, 38);
             this.panel7.TabIndex = 290;
             // 
             // chk_4
             // 
             this.chk_4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.chk_4.Location = new System.Drawing.Point(7, 12);
+            this.chk_4.Location = new System.Drawing.Point(12, 12);
             this.chk_4.Name = "chk_4";
             this.chk_4.Size = new System.Drawing.Size(13, 13);
             this.chk_4.TabIndex = 1;
@@ -4523,7 +4524,7 @@
             this.sizename_4.IsNumber = true;
             this.sizename_4.IsShop = false;
             this.sizename_4.Length = 32767;
-            this.sizename_4.Location = new System.Drawing.Point(1226, 1);
+            this.sizename_4.Location = new System.Drawing.Point(1234, 1);
             this.sizename_4.MoveNext = true;
             this.sizename_4.Name = "sizename_4";
             this.sizename_4.Size = new System.Drawing.Size(130, 19);
@@ -4551,7 +4552,7 @@
             this.size_4.IsNumber = true;
             this.size_4.IsShop = false;
             this.size_4.Length = 32767;
-            this.size_4.Location = new System.Drawing.Point(1146, 1);
+            this.size_4.Location = new System.Drawing.Point(1154, 1);
             this.size_4.MoveNext = true;
             this.size_4.Name = "size_4";
             this.size_4.Size = new System.Drawing.Size(80, 19);
@@ -4579,7 +4580,7 @@
             this.colorname_4.IsNumber = true;
             this.colorname_4.IsShop = false;
             this.colorname_4.Length = 32767;
-            this.colorname_4.Location = new System.Drawing.Point(1016, 1);
+            this.colorname_4.Location = new System.Drawing.Point(1024, 1);
             this.colorname_4.MoveNext = true;
             this.colorname_4.Name = "colorname_4";
             this.colorname_4.Size = new System.Drawing.Size(130, 19);
@@ -4607,7 +4608,7 @@
             this.color_4.IsNumber = true;
             this.color_4.IsShop = false;
             this.color_4.Length = 32767;
-            this.color_4.Location = new System.Drawing.Point(936, 1);
+            this.color_4.Location = new System.Drawing.Point(944, 1);
             this.color_4.MoveNext = true;
             this.color_4.Name = "color_4";
             this.color_4.Size = new System.Drawing.Size(80, 19);
@@ -4635,7 +4636,7 @@
             this.shouhin_4.IsNumber = true;
             this.shouhin_4.IsShop = false;
             this.shouhin_4.Length = 80;
-            this.shouhin_4.Location = new System.Drawing.Point(416, 1);
+            this.shouhin_4.Location = new System.Drawing.Point(424, 1);
             this.shouhin_4.MaxLength = 80;
             this.shouhin_4.MoveNext = true;
             this.shouhin_4.Name = "shouhin_4";
@@ -4659,7 +4660,7 @@
             this.scjan_4.IsCopy = false;
             this.scjan_4.LabelText = "";
             this.scjan_4.LabelVisible = false;
-            this.scjan_4.Location = new System.Drawing.Point(28, -4);
+            this.scjan_4.Location = new System.Drawing.Point(36, -4);
             this.scjan_4.Margin = new System.Windows.Forms.Padding(0);
             this.scjan_4.Name = "scjan_4";
             this.scjan_4.NameWidth = 281;
@@ -4680,9 +4681,9 @@
             this.lbl_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lbl_4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbl_4.Location = new System.Drawing.Point(0, 1);
+            this.lbl_4.Location = new System.Drawing.Point(1, 1);
             this.lbl_4.Name = "lbl_4";
-            this.lbl_4.Size = new System.Drawing.Size(28, 19);
+            this.lbl_4.Size = new System.Drawing.Size(35, 19);
             this.lbl_4.TabIndex = 282;
             this.lbl_4.Text = "4";
             this.lbl_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4715,15 +4716,15 @@
             this.panel_3.Controls.Add(this.shouhin_3);
             this.panel_3.Controls.Add(this.scjan_3);
             this.panel_3.Controls.Add(this.lbl_3);
-            this.panel_3.Location = new System.Drawing.Point(0, 113);
+            this.panel_3.Location = new System.Drawing.Point(2, 113);
             this.panel_3.Name = "panel_3";
-            this.panel_3.Size = new System.Drawing.Size(1360, 60);
+            this.panel_3.Size = new System.Drawing.Size(1365, 60);
             this.panel_3.TabIndex = 313;
             // 
             // choukusou_3
             // 
             this.choukusou_3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.choukusou_3.Location = new System.Drawing.Point(129, 21);
+            this.choukusou_3.Location = new System.Drawing.Point(137, 21);
             this.choukusou_3.Name = "choukusou_3";
             this.choukusou_3.Size = new System.Drawing.Size(48, 18);
             this.choukusou_3.TabIndex = 319;
@@ -4750,7 +4751,7 @@
             this.zeinutanku_3.IsNumber = true;
             this.zeinutanku_3.IsShop = false;
             this.zeinutanku_3.Length = 32767;
-            this.zeinutanku_3.Location = new System.Drawing.Point(1326, 20);
+            this.zeinutanku_3.Location = new System.Drawing.Point(1334, 20);
             this.zeinutanku_3.MoveNext = true;
             this.zeinutanku_3.Name = "zeinutanku_3";
             this.zeinutanku_3.Size = new System.Drawing.Size(30, 19);
@@ -4778,7 +4779,7 @@
             this.zeinu_3.IsNumber = true;
             this.zeinu_3.IsShop = false;
             this.zeinu_3.Length = 32767;
-            this.zeinu_3.Location = new System.Drawing.Point(1296, 20);
+            this.zeinu_3.Location = new System.Drawing.Point(1304, 20);
             this.zeinu_3.MoveNext = true;
             this.zeinu_3.Name = "zeinu_3";
             this.zeinu_3.Size = new System.Drawing.Size(30, 19);
@@ -4806,7 +4807,7 @@
             this.kobetsuhanbai_3.IsNumber = true;
             this.kobetsuhanbai_3.IsShop = false;
             this.kobetsuhanbai_3.Length = 32767;
-            this.kobetsuhanbai_3.Location = new System.Drawing.Point(913, 39);
+            this.kobetsuhanbai_3.Location = new System.Drawing.Point(921, 39);
             this.kobetsuhanbai_3.MoveNext = true;
             this.kobetsuhanbai_3.Name = "kobetsuhanbai_3";
             this.kobetsuhanbai_3.Size = new System.Drawing.Size(443, 19);
@@ -4834,7 +4835,7 @@
             this.shagaibikou_3.IsNumber = true;
             this.shagaibikou_3.IsShop = false;
             this.shagaibikou_3.Length = 32767;
-            this.shagaibikou_3.Location = new System.Drawing.Point(470, 39);
+            this.shagaibikou_3.Location = new System.Drawing.Point(478, 39);
             this.shagaibikou_3.MoveNext = true;
             this.shagaibikou_3.Name = "shagaibikou_3";
             this.shagaibikou_3.Size = new System.Drawing.Size(443, 19);
@@ -4862,7 +4863,7 @@
             this.shanaibikou_3.IsNumber = true;
             this.shanaibikou_3.IsShop = false;
             this.shanaibikou_3.Length = 32767;
-            this.shanaibikou_3.Location = new System.Drawing.Point(28, 39);
+            this.shanaibikou_3.Location = new System.Drawing.Point(36, 39);
             this.shanaibikou_3.MoveNext = true;
             this.shanaibikou_3.Name = "shanaibikou_3";
             this.shanaibikou_3.Size = new System.Drawing.Size(442, 19);
@@ -4890,7 +4891,7 @@
             this.ararigaku_3.IsNumber = true;
             this.ararigaku_3.IsShop = false;
             this.ararigaku_3.Length = 32767;
-            this.ararigaku_3.Location = new System.Drawing.Point(1206, 20);
+            this.ararigaku_3.Location = new System.Drawing.Point(1214, 20);
             this.ararigaku_3.MoveNext = true;
             this.ararigaku_3.Name = "ararigaku_3";
             this.ararigaku_3.Size = new System.Drawing.Size(90, 19);
@@ -4918,7 +4919,7 @@
             this.zeikomijuchuugaku_3.IsNumber = true;
             this.zeikomijuchuugaku_3.IsShop = false;
             this.zeikomijuchuugaku_3.Length = 32767;
-            this.zeikomijuchuugaku_3.Location = new System.Drawing.Point(1116, 20);
+            this.zeikomijuchuugaku_3.Location = new System.Drawing.Point(1124, 20);
             this.zeikomijuchuugaku_3.MoveNext = true;
             this.zeikomijuchuugaku_3.Name = "zeikomijuchuugaku_3";
             this.zeikomijuchuugaku_3.Size = new System.Drawing.Size(90, 19);
@@ -4946,7 +4947,7 @@
             this.zeinuJuchuugaka_3.IsNumber = true;
             this.zeinuJuchuugaka_3.IsShop = false;
             this.zeinuJuchuugaka_3.Length = 32767;
-            this.zeinuJuchuugaka_3.Location = new System.Drawing.Point(1026, 20);
+            this.zeinuJuchuugaka_3.Location = new System.Drawing.Point(1034, 20);
             this.zeinuJuchuugaka_3.MoveNext = true;
             this.zeinuJuchuugaka_3.Name = "zeinuJuchuugaka_3";
             this.zeinuJuchuugaka_3.Size = new System.Drawing.Size(90, 19);
@@ -4974,7 +4975,7 @@
             this.hanbaitanka_3.IsNumber = true;
             this.hanbaitanka_3.IsShop = false;
             this.hanbaitanka_3.Length = 9;
-            this.hanbaitanka_3.Location = new System.Drawing.Point(936, 20);
+            this.hanbaitanka_3.Location = new System.Drawing.Point(944, 20);
             this.hanbaitanka_3.MaxLength = 9;
             this.hanbaitanka_3.MoveNext = true;
             this.hanbaitanka_3.Name = "hanbaitanka_3";
@@ -4990,7 +4991,7 @@
             this.teni_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.teni_3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.teni_3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.teni_3.Location = new System.Drawing.Point(906, 20);
+            this.teni_3.Location = new System.Drawing.Point(914, 20);
             this.teni_3.Name = "teni_3";
             this.teni_3.Size = new System.Drawing.Size(30, 19);
             this.teni_3.TabIndex = 307;
@@ -5003,7 +5004,7 @@
             this.sku_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sku_3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sku_3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.sku_3.Location = new System.Drawing.Point(166, 1);
+            this.sku_3.Location = new System.Drawing.Point(174, 1);
             this.sku_3.Name = "sku_3";
             this.sku_3.Size = new System.Drawing.Size(250, 19);
             this.sku_3.TabIndex = 306;
@@ -5030,7 +5031,7 @@
             this.juchuusuu_3.IsNumber = true;
             this.juchuusuu_3.IsShop = false;
             this.juchuusuu_3.Length = 9;
-            this.juchuusuu_3.Location = new System.Drawing.Point(826, 20);
+            this.juchuusuu_3.Location = new System.Drawing.Point(834, 20);
             this.juchuusuu_3.MaxLength = 9;
             this.juchuusuu_3.MoveNext = true;
             this.juchuusuu_3.Name = "juchuusuu_3";
@@ -5060,7 +5061,7 @@
             this.nyuukayotei_3.IsNumber = true;
             this.nyuukayotei_3.IsShop = false;
             this.nyuukayotei_3.Length = 10;
-            this.nyuukayotei_3.Location = new System.Drawing.Point(746, 20);
+            this.nyuukayotei_3.Location = new System.Drawing.Point(754, 20);
             this.nyuukayotei_3.MaxLength = 10;
             this.nyuukayotei_3.MoveNext = true;
             this.nyuukayotei_3.Name = "nyuukayotei_3";
@@ -5090,7 +5091,7 @@
             this.hacchutanka_3.IsNumber = true;
             this.hacchutanka_3.IsShop = false;
             this.hacchutanka_3.Length = 9;
-            this.hacchutanka_3.Location = new System.Drawing.Point(666, 20);
+            this.hacchutanka_3.Location = new System.Drawing.Point(674, 20);
             this.hacchutanka_3.MaxLength = 9;
             this.hacchutanka_3.MoveNext = true;
             this.hacchutanka_3.Name = "hacchutanka_3";
@@ -5106,7 +5107,7 @@
             this.empty_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.empty_3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.empty_3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.empty_3.Location = new System.Drawing.Point(326, 20);
+            this.empty_3.Location = new System.Drawing.Point(334, 20);
             this.empty_3.Name = "empty_3";
             this.empty_3.Size = new System.Drawing.Size(340, 19);
             this.empty_3.TabIndex = 294;
@@ -5122,7 +5123,7 @@
             this.shuukasouko_3.Flag = 0;
             this.shuukasouko_3.FormattingEnabled = true;
             this.shuukasouko_3.Length = 10;
-            this.shuukasouko_3.Location = new System.Drawing.Point(177, 19);
+            this.shuukasouko_3.Location = new System.Drawing.Point(185, 19);
             this.shuukasouko_3.MaxLength = 10;
             this.shuukasouko_3.MoveNext = true;
             this.shuukasouko_3.Name = "shuukasouko_3";
@@ -5149,7 +5150,7 @@
             this.shuukayotei_3.IsNumber = true;
             this.shuukayotei_3.IsShop = false;
             this.shuukayotei_3.Length = 10;
-            this.shuukayotei_3.Location = new System.Drawing.Point(28, 20);
+            this.shuukayotei_3.Location = new System.Drawing.Point(36, 20);
             this.shuukayotei_3.MaxLength = 10;
             this.shuukayotei_3.MoveNext = true;
             this.shuukayotei_3.Name = "shuukayotei_3";
@@ -5163,15 +5164,15 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Controls.Add(this.chk_3);
-            this.panel6.Location = new System.Drawing.Point(0, 20);
+            this.panel6.Location = new System.Drawing.Point(1, 20);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(28, 38);
+            this.panel6.Size = new System.Drawing.Size(35, 38);
             this.panel6.TabIndex = 290;
             // 
             // chk_3
             // 
             this.chk_3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.chk_3.Location = new System.Drawing.Point(7, 12);
+            this.chk_3.Location = new System.Drawing.Point(12, 12);
             this.chk_3.Name = "chk_3";
             this.chk_3.Size = new System.Drawing.Size(13, 13);
             this.chk_3.TabIndex = 1;
@@ -5197,7 +5198,7 @@
             this.sizename_3.IsNumber = true;
             this.sizename_3.IsShop = false;
             this.sizename_3.Length = 32767;
-            this.sizename_3.Location = new System.Drawing.Point(1226, 1);
+            this.sizename_3.Location = new System.Drawing.Point(1234, 1);
             this.sizename_3.MoveNext = true;
             this.sizename_3.Name = "sizename_3";
             this.sizename_3.Size = new System.Drawing.Size(130, 19);
@@ -5225,7 +5226,7 @@
             this.size_3.IsNumber = true;
             this.size_3.IsShop = false;
             this.size_3.Length = 32767;
-            this.size_3.Location = new System.Drawing.Point(1146, 1);
+            this.size_3.Location = new System.Drawing.Point(1154, 1);
             this.size_3.MoveNext = true;
             this.size_3.Name = "size_3";
             this.size_3.Size = new System.Drawing.Size(80, 19);
@@ -5253,7 +5254,7 @@
             this.colorname_3.IsNumber = true;
             this.colorname_3.IsShop = false;
             this.colorname_3.Length = 32767;
-            this.colorname_3.Location = new System.Drawing.Point(1016, 1);
+            this.colorname_3.Location = new System.Drawing.Point(1024, 1);
             this.colorname_3.MoveNext = true;
             this.colorname_3.Name = "colorname_3";
             this.colorname_3.Size = new System.Drawing.Size(130, 19);
@@ -5281,7 +5282,7 @@
             this.color_3.IsNumber = true;
             this.color_3.IsShop = false;
             this.color_3.Length = 32767;
-            this.color_3.Location = new System.Drawing.Point(936, 1);
+            this.color_3.Location = new System.Drawing.Point(944, 1);
             this.color_3.MoveNext = true;
             this.color_3.Name = "color_3";
             this.color_3.Size = new System.Drawing.Size(80, 19);
@@ -5309,7 +5310,7 @@
             this.shouhin_3.IsNumber = true;
             this.shouhin_3.IsShop = false;
             this.shouhin_3.Length = 80;
-            this.shouhin_3.Location = new System.Drawing.Point(416, 1);
+            this.shouhin_3.Location = new System.Drawing.Point(424, 1);
             this.shouhin_3.MaxLength = 80;
             this.shouhin_3.MoveNext = true;
             this.shouhin_3.Name = "shouhin_3";
@@ -5333,7 +5334,7 @@
             this.scjan_3.IsCopy = false;
             this.scjan_3.LabelText = "";
             this.scjan_3.LabelVisible = false;
-            this.scjan_3.Location = new System.Drawing.Point(28, -4);
+            this.scjan_3.Location = new System.Drawing.Point(36, -4);
             this.scjan_3.Margin = new System.Windows.Forms.Padding(0);
             this.scjan_3.Name = "scjan_3";
             this.scjan_3.NameWidth = 281;
@@ -5354,9 +5355,9 @@
             this.lbl_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lbl_3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbl_3.Location = new System.Drawing.Point(0, 1);
+            this.lbl_3.Location = new System.Drawing.Point(1, 1);
             this.lbl_3.Name = "lbl_3";
-            this.lbl_3.Size = new System.Drawing.Size(28, 19);
+            this.lbl_3.Size = new System.Drawing.Size(35, 19);
             this.lbl_3.TabIndex = 282;
             this.lbl_3.Text = "3";
             this.lbl_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5389,15 +5390,15 @@
             this.panel_2.Controls.Add(this.shouhin_2);
             this.panel_2.Controls.Add(this.scjan_2);
             this.panel_2.Controls.Add(this.lbl_2);
-            this.panel_2.Location = new System.Drawing.Point(0, 56);
+            this.panel_2.Location = new System.Drawing.Point(2, 56);
             this.panel_2.Name = "panel_2";
-            this.panel_2.Size = new System.Drawing.Size(1360, 60);
+            this.panel_2.Size = new System.Drawing.Size(1365, 60);
             this.panel_2.TabIndex = 312;
             // 
             // choukusou_2
             // 
             this.choukusou_2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.choukusou_2.Location = new System.Drawing.Point(129, 21);
+            this.choukusou_2.Location = new System.Drawing.Point(137, 21);
             this.choukusou_2.Name = "choukusou_2";
             this.choukusou_2.Size = new System.Drawing.Size(48, 18);
             this.choukusou_2.TabIndex = 319;
@@ -5424,7 +5425,7 @@
             this.zeinutanku_2.IsNumber = true;
             this.zeinutanku_2.IsShop = false;
             this.zeinutanku_2.Length = 32767;
-            this.zeinutanku_2.Location = new System.Drawing.Point(1326, 20);
+            this.zeinutanku_2.Location = new System.Drawing.Point(1334, 20);
             this.zeinutanku_2.MoveNext = true;
             this.zeinutanku_2.Name = "zeinutanku_2";
             this.zeinutanku_2.Size = new System.Drawing.Size(30, 19);
@@ -5452,7 +5453,7 @@
             this.zeinu_2.IsNumber = true;
             this.zeinu_2.IsShop = false;
             this.zeinu_2.Length = 32767;
-            this.zeinu_2.Location = new System.Drawing.Point(1296, 20);
+            this.zeinu_2.Location = new System.Drawing.Point(1304, 20);
             this.zeinu_2.MoveNext = true;
             this.zeinu_2.Name = "zeinu_2";
             this.zeinu_2.Size = new System.Drawing.Size(30, 19);
@@ -5480,7 +5481,7 @@
             this.kobetsuhanbai_2.IsNumber = true;
             this.kobetsuhanbai_2.IsShop = false;
             this.kobetsuhanbai_2.Length = 32767;
-            this.kobetsuhanbai_2.Location = new System.Drawing.Point(913, 39);
+            this.kobetsuhanbai_2.Location = new System.Drawing.Point(921, 39);
             this.kobetsuhanbai_2.MoveNext = true;
             this.kobetsuhanbai_2.Name = "kobetsuhanbai_2";
             this.kobetsuhanbai_2.Size = new System.Drawing.Size(443, 19);
@@ -5508,7 +5509,7 @@
             this.shagaibikou_2.IsNumber = true;
             this.shagaibikou_2.IsShop = false;
             this.shagaibikou_2.Length = 32767;
-            this.shagaibikou_2.Location = new System.Drawing.Point(470, 39);
+            this.shagaibikou_2.Location = new System.Drawing.Point(478, 39);
             this.shagaibikou_2.MoveNext = true;
             this.shagaibikou_2.Name = "shagaibikou_2";
             this.shagaibikou_2.Size = new System.Drawing.Size(443, 19);
@@ -5536,7 +5537,7 @@
             this.shanaibikou_2.IsNumber = true;
             this.shanaibikou_2.IsShop = false;
             this.shanaibikou_2.Length = 32767;
-            this.shanaibikou_2.Location = new System.Drawing.Point(28, 39);
+            this.shanaibikou_2.Location = new System.Drawing.Point(36, 39);
             this.shanaibikou_2.MoveNext = true;
             this.shanaibikou_2.Name = "shanaibikou_2";
             this.shanaibikou_2.Size = new System.Drawing.Size(442, 19);
@@ -5564,7 +5565,7 @@
             this.ararigaku_2.IsNumber = true;
             this.ararigaku_2.IsShop = false;
             this.ararigaku_2.Length = 32767;
-            this.ararigaku_2.Location = new System.Drawing.Point(1206, 20);
+            this.ararigaku_2.Location = new System.Drawing.Point(1214, 20);
             this.ararigaku_2.MoveNext = true;
             this.ararigaku_2.Name = "ararigaku_2";
             this.ararigaku_2.Size = new System.Drawing.Size(90, 19);
@@ -5592,7 +5593,7 @@
             this.zeikomijuchuugaku_2.IsNumber = true;
             this.zeikomijuchuugaku_2.IsShop = false;
             this.zeikomijuchuugaku_2.Length = 32767;
-            this.zeikomijuchuugaku_2.Location = new System.Drawing.Point(1116, 20);
+            this.zeikomijuchuugaku_2.Location = new System.Drawing.Point(1124, 20);
             this.zeikomijuchuugaku_2.MoveNext = true;
             this.zeikomijuchuugaku_2.Name = "zeikomijuchuugaku_2";
             this.zeikomijuchuugaku_2.Size = new System.Drawing.Size(90, 19);
@@ -5620,7 +5621,7 @@
             this.zeinuJuchuugaka_2.IsNumber = true;
             this.zeinuJuchuugaka_2.IsShop = false;
             this.zeinuJuchuugaka_2.Length = 32767;
-            this.zeinuJuchuugaka_2.Location = new System.Drawing.Point(1026, 20);
+            this.zeinuJuchuugaka_2.Location = new System.Drawing.Point(1034, 20);
             this.zeinuJuchuugaka_2.MoveNext = true;
             this.zeinuJuchuugaka_2.Name = "zeinuJuchuugaka_2";
             this.zeinuJuchuugaka_2.Size = new System.Drawing.Size(90, 19);
@@ -5648,7 +5649,7 @@
             this.hanbaitanka_2.IsNumber = true;
             this.hanbaitanka_2.IsShop = false;
             this.hanbaitanka_2.Length = 9;
-            this.hanbaitanka_2.Location = new System.Drawing.Point(936, 20);
+            this.hanbaitanka_2.Location = new System.Drawing.Point(944, 20);
             this.hanbaitanka_2.MaxLength = 9;
             this.hanbaitanka_2.MoveNext = true;
             this.hanbaitanka_2.Name = "hanbaitanka_2";
@@ -5664,7 +5665,7 @@
             this.teni_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.teni_2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.teni_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.teni_2.Location = new System.Drawing.Point(906, 20);
+            this.teni_2.Location = new System.Drawing.Point(914, 20);
             this.teni_2.Name = "teni_2";
             this.teni_2.Size = new System.Drawing.Size(30, 19);
             this.teni_2.TabIndex = 307;
@@ -5677,7 +5678,7 @@
             this.sku_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sku_2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sku_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.sku_2.Location = new System.Drawing.Point(166, 1);
+            this.sku_2.Location = new System.Drawing.Point(174, 1);
             this.sku_2.Name = "sku_2";
             this.sku_2.Size = new System.Drawing.Size(250, 19);
             this.sku_2.TabIndex = 306;
@@ -5704,7 +5705,7 @@
             this.juchuusuu_2.IsNumber = true;
             this.juchuusuu_2.IsShop = false;
             this.juchuusuu_2.Length = 9;
-            this.juchuusuu_2.Location = new System.Drawing.Point(826, 20);
+            this.juchuusuu_2.Location = new System.Drawing.Point(834, 20);
             this.juchuusuu_2.MaxLength = 9;
             this.juchuusuu_2.MoveNext = true;
             this.juchuusuu_2.Name = "juchuusuu_2";
@@ -5734,7 +5735,7 @@
             this.nyuukayotei_2.IsNumber = true;
             this.nyuukayotei_2.IsShop = false;
             this.nyuukayotei_2.Length = 10;
-            this.nyuukayotei_2.Location = new System.Drawing.Point(746, 20);
+            this.nyuukayotei_2.Location = new System.Drawing.Point(754, 20);
             this.nyuukayotei_2.MaxLength = 10;
             this.nyuukayotei_2.MoveNext = true;
             this.nyuukayotei_2.Name = "nyuukayotei_2";
@@ -5764,7 +5765,7 @@
             this.hacchutanka_2.IsNumber = true;
             this.hacchutanka_2.IsShop = false;
             this.hacchutanka_2.Length = 9;
-            this.hacchutanka_2.Location = new System.Drawing.Point(666, 20);
+            this.hacchutanka_2.Location = new System.Drawing.Point(674, 20);
             this.hacchutanka_2.MaxLength = 9;
             this.hacchutanka_2.MoveNext = true;
             this.hacchutanka_2.Name = "hacchutanka_2";
@@ -5780,7 +5781,7 @@
             this.empty_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.empty_2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.empty_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.empty_2.Location = new System.Drawing.Point(326, 20);
+            this.empty_2.Location = new System.Drawing.Point(334, 20);
             this.empty_2.Name = "empty_2";
             this.empty_2.Size = new System.Drawing.Size(340, 19);
             this.empty_2.TabIndex = 294;
@@ -5796,7 +5797,7 @@
             this.shuukasouko_2.Flag = 0;
             this.shuukasouko_2.FormattingEnabled = true;
             this.shuukasouko_2.Length = 10;
-            this.shuukasouko_2.Location = new System.Drawing.Point(177, 19);
+            this.shuukasouko_2.Location = new System.Drawing.Point(185, 19);
             this.shuukasouko_2.MaxLength = 10;
             this.shuukasouko_2.MoveNext = true;
             this.shuukasouko_2.Name = "shuukasouko_2";
@@ -5823,7 +5824,7 @@
             this.shuukayotei_2.IsNumber = true;
             this.shuukayotei_2.IsShop = false;
             this.shuukayotei_2.Length = 10;
-            this.shuukayotei_2.Location = new System.Drawing.Point(28, 20);
+            this.shuukayotei_2.Location = new System.Drawing.Point(36, 20);
             this.shuukayotei_2.MaxLength = 10;
             this.shuukayotei_2.MoveNext = true;
             this.shuukayotei_2.Name = "shuukayotei_2";
@@ -5837,15 +5838,15 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.Add(this.chk_2);
-            this.panel5.Location = new System.Drawing.Point(0, 20);
+            this.panel5.Location = new System.Drawing.Point(1, 20);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(28, 38);
+            this.panel5.Size = new System.Drawing.Size(35, 38);
             this.panel5.TabIndex = 290;
             // 
             // chk_2
             // 
             this.chk_2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.chk_2.Location = new System.Drawing.Point(7, 12);
+            this.chk_2.Location = new System.Drawing.Point(11, 12);
             this.chk_2.Name = "chk_2";
             this.chk_2.Size = new System.Drawing.Size(13, 13);
             this.chk_2.TabIndex = 1;
@@ -5871,7 +5872,7 @@
             this.sizename_2.IsNumber = true;
             this.sizename_2.IsShop = false;
             this.sizename_2.Length = 32767;
-            this.sizename_2.Location = new System.Drawing.Point(1226, 1);
+            this.sizename_2.Location = new System.Drawing.Point(1234, 1);
             this.sizename_2.MoveNext = true;
             this.sizename_2.Name = "sizename_2";
             this.sizename_2.Size = new System.Drawing.Size(130, 19);
@@ -5899,7 +5900,7 @@
             this.size_2.IsNumber = true;
             this.size_2.IsShop = false;
             this.size_2.Length = 32767;
-            this.size_2.Location = new System.Drawing.Point(1146, 1);
+            this.size_2.Location = new System.Drawing.Point(1154, 1);
             this.size_2.MoveNext = true;
             this.size_2.Name = "size_2";
             this.size_2.Size = new System.Drawing.Size(80, 19);
@@ -5927,7 +5928,7 @@
             this.colorname_2.IsNumber = true;
             this.colorname_2.IsShop = false;
             this.colorname_2.Length = 32767;
-            this.colorname_2.Location = new System.Drawing.Point(1016, 1);
+            this.colorname_2.Location = new System.Drawing.Point(1024, 1);
             this.colorname_2.MoveNext = true;
             this.colorname_2.Name = "colorname_2";
             this.colorname_2.Size = new System.Drawing.Size(130, 19);
@@ -5955,7 +5956,7 @@
             this.color_2.IsNumber = true;
             this.color_2.IsShop = false;
             this.color_2.Length = 32767;
-            this.color_2.Location = new System.Drawing.Point(936, 1);
+            this.color_2.Location = new System.Drawing.Point(944, 1);
             this.color_2.MoveNext = true;
             this.color_2.Name = "color_2";
             this.color_2.Size = new System.Drawing.Size(80, 19);
@@ -5983,7 +5984,7 @@
             this.shouhin_2.IsNumber = true;
             this.shouhin_2.IsShop = false;
             this.shouhin_2.Length = 80;
-            this.shouhin_2.Location = new System.Drawing.Point(416, 1);
+            this.shouhin_2.Location = new System.Drawing.Point(424, 1);
             this.shouhin_2.MaxLength = 80;
             this.shouhin_2.MoveNext = true;
             this.shouhin_2.Name = "shouhin_2";
@@ -6007,7 +6008,7 @@
             this.scjan_2.IsCopy = false;
             this.scjan_2.LabelText = "";
             this.scjan_2.LabelVisible = false;
-            this.scjan_2.Location = new System.Drawing.Point(28, -4);
+            this.scjan_2.Location = new System.Drawing.Point(36, -4);
             this.scjan_2.Margin = new System.Windows.Forms.Padding(0);
             this.scjan_2.Name = "scjan_2";
             this.scjan_2.NameWidth = 281;
@@ -6027,10 +6028,10 @@
             this.lbl_2.BackColor = System.Drawing.Color.DarkGray;
             this.lbl_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbl_2.Location = new System.Drawing.Point(0, 1);
+            this.lbl_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.lbl_2.Location = new System.Drawing.Point(1, 1);
             this.lbl_2.Name = "lbl_2";
-            this.lbl_2.Size = new System.Drawing.Size(28, 19);
+            this.lbl_2.Size = new System.Drawing.Size(35, 19);
             this.lbl_2.TabIndex = 282;
             this.lbl_2.Text = "2";
             this.lbl_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -6061,17 +6062,17 @@
             this.panel_1.Controls.Add(this.colorname_1);
             this.panel_1.Controls.Add(this.color_1);
             this.panel_1.Controls.Add(this.shouhin_1);
-            this.panel_1.Controls.Add(this.scjan_1);
             this.panel_1.Controls.Add(this.lbl_1);
-            this.panel_1.Location = new System.Drawing.Point(0, -1);
+            this.panel_1.Controls.Add(this.scjan_1);
+            this.panel_1.Location = new System.Drawing.Point(-1, -1);
             this.panel_1.Name = "panel_1";
-            this.panel_1.Size = new System.Drawing.Size(1360, 60);
+            this.panel_1.Size = new System.Drawing.Size(1368, 60);
             this.panel_1.TabIndex = 311;
             // 
             // choukusou_1
             // 
             this.choukusou_1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.choukusou_1.Location = new System.Drawing.Point(129, 21);
+            this.choukusou_1.Location = new System.Drawing.Point(140, 21);
             this.choukusou_1.Name = "choukusou_1";
             this.choukusou_1.Size = new System.Drawing.Size(48, 18);
             this.choukusou_1.TabIndex = 103;
@@ -6098,7 +6099,7 @@
             this.zeinutanku_1.IsNumber = true;
             this.zeinutanku_1.IsShop = false;
             this.zeinutanku_1.Length = 32767;
-            this.zeinutanku_1.Location = new System.Drawing.Point(1326, 20);
+            this.zeinutanku_1.Location = new System.Drawing.Point(1337, 20);
             this.zeinutanku_1.MoveNext = true;
             this.zeinutanku_1.Name = "zeinutanku_1";
             this.zeinutanku_1.Size = new System.Drawing.Size(30, 19);
@@ -6127,7 +6128,7 @@
             this.kobetsuhanbai_1.IsNumber = true;
             this.kobetsuhanbai_1.IsShop = false;
             this.kobetsuhanbai_1.Length = 32767;
-            this.kobetsuhanbai_1.Location = new System.Drawing.Point(913, 39);
+            this.kobetsuhanbai_1.Location = new System.Drawing.Point(924, 39);
             this.kobetsuhanbai_1.MoveNext = true;
             this.kobetsuhanbai_1.Name = "kobetsuhanbai_1";
             this.kobetsuhanbai_1.Size = new System.Drawing.Size(443, 19);
@@ -6155,7 +6156,7 @@
             this.shagaibikou_1.IsNumber = true;
             this.shagaibikou_1.IsShop = false;
             this.shagaibikou_1.Length = 32767;
-            this.shagaibikou_1.Location = new System.Drawing.Point(470, 39);
+            this.shagaibikou_1.Location = new System.Drawing.Point(481, 39);
             this.shagaibikou_1.MoveNext = true;
             this.shagaibikou_1.Name = "shagaibikou_1";
             this.shagaibikou_1.Size = new System.Drawing.Size(443, 19);
@@ -6183,7 +6184,7 @@
             this.shanaibikou_1.IsNumber = true;
             this.shanaibikou_1.IsShop = false;
             this.shanaibikou_1.Length = 32767;
-            this.shanaibikou_1.Location = new System.Drawing.Point(28, 39);
+            this.shanaibikou_1.Location = new System.Drawing.Point(39, 39);
             this.shanaibikou_1.MoveNext = true;
             this.shanaibikou_1.Name = "shanaibikou_1";
             this.shanaibikou_1.Size = new System.Drawing.Size(442, 19);
@@ -6211,7 +6212,7 @@
             this.zeinu_1.IsNumber = true;
             this.zeinu_1.IsShop = false;
             this.zeinu_1.Length = 32767;
-            this.zeinu_1.Location = new System.Drawing.Point(1296, 20);
+            this.zeinu_1.Location = new System.Drawing.Point(1307, 20);
             this.zeinu_1.MoveNext = true;
             this.zeinu_1.Name = "zeinu_1";
             this.zeinu_1.Size = new System.Drawing.Size(30, 19);
@@ -6239,7 +6240,7 @@
             this.ararigaku_1.IsNumber = true;
             this.ararigaku_1.IsShop = false;
             this.ararigaku_1.Length = 32767;
-            this.ararigaku_1.Location = new System.Drawing.Point(1206, 20);
+            this.ararigaku_1.Location = new System.Drawing.Point(1217, 20);
             this.ararigaku_1.MoveNext = true;
             this.ararigaku_1.Name = "ararigaku_1";
             this.ararigaku_1.Size = new System.Drawing.Size(90, 19);
@@ -6267,7 +6268,7 @@
             this.zeikomijuchuugaku_1.IsNumber = true;
             this.zeikomijuchuugaku_1.IsShop = false;
             this.zeikomijuchuugaku_1.Length = 32767;
-            this.zeikomijuchuugaku_1.Location = new System.Drawing.Point(1116, 20);
+            this.zeikomijuchuugaku_1.Location = new System.Drawing.Point(1127, 20);
             this.zeikomijuchuugaku_1.MoveNext = true;
             this.zeikomijuchuugaku_1.Name = "zeikomijuchuugaku_1";
             this.zeikomijuchuugaku_1.Size = new System.Drawing.Size(90, 19);
@@ -6295,7 +6296,7 @@
             this.zeinuJuchuugaka_1.IsNumber = true;
             this.zeinuJuchuugaka_1.IsShop = false;
             this.zeinuJuchuugaka_1.Length = 32767;
-            this.zeinuJuchuugaka_1.Location = new System.Drawing.Point(1026, 20);
+            this.zeinuJuchuugaka_1.Location = new System.Drawing.Point(1037, 20);
             this.zeinuJuchuugaka_1.MoveNext = true;
             this.zeinuJuchuugaka_1.Name = "zeinuJuchuugaka_1";
             this.zeinuJuchuugaka_1.Size = new System.Drawing.Size(90, 19);
@@ -6323,7 +6324,7 @@
             this.hanbaitanka_1.IsNumber = true;
             this.hanbaitanka_1.IsShop = false;
             this.hanbaitanka_1.Length = 9;
-            this.hanbaitanka_1.Location = new System.Drawing.Point(936, 20);
+            this.hanbaitanka_1.Location = new System.Drawing.Point(947, 20);
             this.hanbaitanka_1.MaxLength = 9;
             this.hanbaitanka_1.MoveNext = true;
             this.hanbaitanka_1.Name = "hanbaitanka_1";
@@ -6340,7 +6341,7 @@
             this.teni_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.teni_1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.teni_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.teni_1.Location = new System.Drawing.Point(906, 20);
+            this.teni_1.Location = new System.Drawing.Point(917, 20);
             this.teni_1.Name = "teni_1";
             this.teni_1.Size = new System.Drawing.Size(32, 19);
             this.teni_1.TabIndex = 307;
@@ -6353,7 +6354,7 @@
             this.sku_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sku_1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sku_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.sku_1.Location = new System.Drawing.Point(166, 1);
+            this.sku_1.Location = new System.Drawing.Point(177, 1);
             this.sku_1.Name = "sku_1";
             this.sku_1.Size = new System.Drawing.Size(250, 19);
             this.sku_1.TabIndex = 306;
@@ -6380,7 +6381,7 @@
             this.juchuusuu_1.IsNumber = true;
             this.juchuusuu_1.IsShop = false;
             this.juchuusuu_1.Length = 9;
-            this.juchuusuu_1.Location = new System.Drawing.Point(826, 20);
+            this.juchuusuu_1.Location = new System.Drawing.Point(837, 20);
             this.juchuusuu_1.MaxLength = 9;
             this.juchuusuu_1.MoveNext = true;
             this.juchuusuu_1.Name = "juchuusuu_1";
@@ -6411,7 +6412,7 @@
             this.nyuukayotei_1.IsNumber = true;
             this.nyuukayotei_1.IsShop = false;
             this.nyuukayotei_1.Length = 10;
-            this.nyuukayotei_1.Location = new System.Drawing.Point(746, 20);
+            this.nyuukayotei_1.Location = new System.Drawing.Point(757, 20);
             this.nyuukayotei_1.MaxLength = 10;
             this.nyuukayotei_1.MoveNext = true;
             this.nyuukayotei_1.Name = "nyuukayotei_1";
@@ -6442,7 +6443,7 @@
             this.hacchutanka_1.IsNumber = true;
             this.hacchutanka_1.IsShop = false;
             this.hacchutanka_1.Length = 9;
-            this.hacchutanka_1.Location = new System.Drawing.Point(666, 20);
+            this.hacchutanka_1.Location = new System.Drawing.Point(677, 20);
             this.hacchutanka_1.MaxLength = 9;
             this.hacchutanka_1.MoveNext = true;
             this.hacchutanka_1.Name = "hacchutanka_1";
@@ -6459,7 +6460,7 @@
             this.empty_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.empty_1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.empty_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.empty_1.Location = new System.Drawing.Point(326, 20);
+            this.empty_1.Location = new System.Drawing.Point(337, 20);
             this.empty_1.Name = "empty_1";
             this.empty_1.Size = new System.Drawing.Size(340, 19);
             this.empty_1.TabIndex = 294;
@@ -6475,7 +6476,7 @@
             this.shuukasouko_1.Flag = 0;
             this.shuukasouko_1.FormattingEnabled = true;
             this.shuukasouko_1.Length = 10;
-            this.shuukasouko_1.Location = new System.Drawing.Point(177, 19);
+            this.shuukasouko_1.Location = new System.Drawing.Point(188, 19);
             this.shuukasouko_1.MaxLength = 10;
             this.shuukasouko_1.MoveNext = true;
             this.shuukasouko_1.Name = "shuukasouko_1";
@@ -6502,7 +6503,7 @@
             this.shuukayotei_1.IsNumber = true;
             this.shuukayotei_1.IsShop = false;
             this.shuukayotei_1.Length = 10;
-            this.shuukayotei_1.Location = new System.Drawing.Point(28, 20);
+            this.shuukayotei_1.Location = new System.Drawing.Point(39, 20);
             this.shuukayotei_1.MaxLength = 10;
             this.shuukayotei_1.MoveNext = true;
             this.shuukayotei_1.Name = "shuukayotei_1";
@@ -6516,15 +6517,15 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.chk_1);
-            this.panel4.Location = new System.Drawing.Point(0, 20);
+            this.panel4.Location = new System.Drawing.Point(4, 20);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(28, 38);
+            this.panel4.Size = new System.Drawing.Size(35, 38);
             this.panel4.TabIndex = 290;
             // 
             // chk_1
             // 
             this.chk_1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.chk_1.Location = new System.Drawing.Point(7, 12);
+            this.chk_1.Location = new System.Drawing.Point(10, 12);
             this.chk_1.Name = "chk_1";
             this.chk_1.Size = new System.Drawing.Size(13, 13);
             this.chk_1.TabIndex = 0;
@@ -6550,7 +6551,7 @@
             this.sizename_1.IsNumber = true;
             this.sizename_1.IsShop = false;
             this.sizename_1.Length = 32767;
-            this.sizename_1.Location = new System.Drawing.Point(1226, 1);
+            this.sizename_1.Location = new System.Drawing.Point(1237, 1);
             this.sizename_1.MoveNext = true;
             this.sizename_1.Name = "sizename_1";
             this.sizename_1.Size = new System.Drawing.Size(130, 19);
@@ -6578,7 +6579,7 @@
             this.size_1.IsNumber = true;
             this.size_1.IsShop = false;
             this.size_1.Length = 32767;
-            this.size_1.Location = new System.Drawing.Point(1146, 1);
+            this.size_1.Location = new System.Drawing.Point(1157, 1);
             this.size_1.MoveNext = true;
             this.size_1.Name = "size_1";
             this.size_1.Size = new System.Drawing.Size(80, 19);
@@ -6607,7 +6608,7 @@
             this.colorname_1.IsNumber = true;
             this.colorname_1.IsShop = false;
             this.colorname_1.Length = 32767;
-            this.colorname_1.Location = new System.Drawing.Point(1016, 1);
+            this.colorname_1.Location = new System.Drawing.Point(1027, 1);
             this.colorname_1.MoveNext = true;
             this.colorname_1.Name = "colorname_1";
             this.colorname_1.Size = new System.Drawing.Size(130, 19);
@@ -6636,7 +6637,7 @@
             this.color_1.IsNumber = true;
             this.color_1.IsShop = false;
             this.color_1.Length = 32767;
-            this.color_1.Location = new System.Drawing.Point(936, 1);
+            this.color_1.Location = new System.Drawing.Point(947, 1);
             this.color_1.MoveNext = true;
             this.color_1.Name = "color_1";
             this.color_1.Size = new System.Drawing.Size(80, 19);
@@ -6665,7 +6666,7 @@
             this.shouhin_1.IsNumber = true;
             this.shouhin_1.IsShop = false;
             this.shouhin_1.Length = 80;
-            this.shouhin_1.Location = new System.Drawing.Point(416, 1);
+            this.shouhin_1.Location = new System.Drawing.Point(427, 1);
             this.shouhin_1.MaxLength = 80;
             this.shouhin_1.MoveNext = true;
             this.shouhin_1.Name = "shouhin_1";
@@ -6674,6 +6675,19 @@
             this.shouhin_1.Text = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
             this.shouhin_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shouhin_1.UseColorSizMode = false;
+            // 
+            // lbl_1
+            // 
+            this.lbl_1.BackColor = System.Drawing.Color.DarkGray;
+            this.lbl_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lbl_1.Location = new System.Drawing.Point(4, 1);
+            this.lbl_1.Name = "lbl_1";
+            this.lbl_1.Size = new System.Drawing.Size(35, 19);
+            this.lbl_1.TabIndex = 282;
+            this.lbl_1.Text = "1";
+            this.lbl_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // scjan_1
             // 
@@ -6690,7 +6704,7 @@
             this.scjan_1.IsCopy = false;
             this.scjan_1.LabelText = "";
             this.scjan_1.LabelVisible = false;
-            this.scjan_1.Location = new System.Drawing.Point(28, -4);
+            this.scjan_1.Location = new System.Drawing.Point(39, -4);
             this.scjan_1.Margin = new System.Windows.Forms.Padding(0);
             this.scjan_1.Name = "scjan_1";
             this.scjan_1.NameWidth = 281;
@@ -6705,26 +6719,13 @@
             this.scjan_1.Value2 = null;
             this.scjan_1.Value3 = null;
             // 
-            // lbl_1
-            // 
-            this.lbl_1.BackColor = System.Drawing.Color.DarkGray;
-            this.lbl_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbl_1.Location = new System.Drawing.Point(0, 1);
-            this.lbl_1.Name = "lbl_1";
-            this.lbl_1.Size = new System.Drawing.Size(28, 19);
-            this.lbl_1.TabIndex = 282;
-            this.lbl_1.Text = "1";
-            this.lbl_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label24
             // 
             this.label24.BackColor = System.Drawing.Color.DarkGray;
             this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label24.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label24.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label24.Location = new System.Drawing.Point(915, 42);
+            this.label24.Location = new System.Drawing.Point(925, 42);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(443, 20);
             this.label24.TabIndex = 304;
@@ -6737,7 +6738,7 @@
             this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label23.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label23.Location = new System.Drawing.Point(472, 42);
+            this.label23.Location = new System.Drawing.Point(482, 42);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(443, 20);
             this.label23.TabIndex = 303;
@@ -6750,9 +6751,9 @@
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(2, 2);
+            this.label2.Location = new System.Drawing.Point(6, 2);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 20);
+            this.label2.Size = new System.Drawing.Size(35, 20);
             this.label2.TabIndex = 281;
             this.label2.Text = "№";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -6763,7 +6764,7 @@
             this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label21.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label21.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label21.Location = new System.Drawing.Point(30, 42);
+            this.label21.Location = new System.Drawing.Point(40, 42);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(442, 20);
             this.label21.TabIndex = 302;
@@ -6776,7 +6777,7 @@
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label22.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label22.Location = new System.Drawing.Point(1298, 22);
+            this.label22.Location = new System.Drawing.Point(1308, 22);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(60, 20);
             this.label22.TabIndex = 301;
@@ -6789,7 +6790,7 @@
             this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label19.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label19.Location = new System.Drawing.Point(1208, 22);
+            this.label19.Location = new System.Drawing.Point(1218, 22);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(90, 20);
             this.label19.TabIndex = 299;
@@ -6802,7 +6803,7 @@
             this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label20.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label20.Location = new System.Drawing.Point(1118, 22);
+            this.label20.Location = new System.Drawing.Point(1128, 22);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(90, 20);
             this.label20.TabIndex = 298;
@@ -6815,7 +6816,7 @@
             this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label18.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label18.Location = new System.Drawing.Point(1028, 22);
+            this.label18.Location = new System.Drawing.Point(1038, 22);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(90, 20);
             this.label18.TabIndex = 297;
@@ -6828,7 +6829,7 @@
             this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label17.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label17.Location = new System.Drawing.Point(938, 22);
+            this.label17.Location = new System.Drawing.Point(948, 22);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(90, 20);
             this.label17.TabIndex = 296;
@@ -6841,7 +6842,7 @@
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label16.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label16.Location = new System.Drawing.Point(908, 22);
+            this.label16.Location = new System.Drawing.Point(918, 22);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(36, 20);
             this.label16.TabIndex = 295;
@@ -6854,7 +6855,7 @@
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label15.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label15.Location = new System.Drawing.Point(828, 22);
+            this.label15.Location = new System.Drawing.Point(838, 22);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(80, 20);
             this.label15.TabIndex = 294;
@@ -6867,7 +6868,7 @@
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label14.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label14.Location = new System.Drawing.Point(748, 22);
+            this.label14.Location = new System.Drawing.Point(758, 22);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(80, 20);
             this.label14.TabIndex = 293;
@@ -6880,7 +6881,7 @@
             this.hacchutanka_1Header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hacchutanka_1Header.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.hacchutanka_1Header.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.hacchutanka_1Header.Location = new System.Drawing.Point(668, 22);
+            this.hacchutanka_1Header.Location = new System.Drawing.Point(678, 22);
             this.hacchutanka_1Header.Name = "hacchutanka_1Header";
             this.hacchutanka_1Header.Size = new System.Drawing.Size(80, 20);
             this.hacchutanka_1Header.TabIndex = 292;
@@ -6893,7 +6894,7 @@
             this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label12.Location = new System.Drawing.Point(328, 22);
+            this.label12.Location = new System.Drawing.Point(338, 22);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(340, 20);
             this.label12.TabIndex = 291;
@@ -6906,7 +6907,7 @@
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label11.Location = new System.Drawing.Point(178, 22);
+            this.label11.Location = new System.Drawing.Point(188, 22);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(150, 20);
             this.label11.TabIndex = 290;
@@ -6919,7 +6920,7 @@
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label10.Location = new System.Drawing.Point(130, 22);
+            this.label10.Location = new System.Drawing.Point(140, 22);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(48, 20);
             this.label10.TabIndex = 289;
@@ -6932,7 +6933,7 @@
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label9.Location = new System.Drawing.Point(30, 22);
+            this.label9.Location = new System.Drawing.Point(40, 22);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(100, 20);
             this.label9.TabIndex = 288;
@@ -6945,9 +6946,9 @@
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label8.Location = new System.Drawing.Point(2, 22);
+            this.label8.Location = new System.Drawing.Point(6, 22);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(28, 40);
+            this.label8.Size = new System.Drawing.Size(35, 40);
             this.label8.TabIndex = 287;
             this.label8.Text = "対象";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -6958,7 +6959,7 @@
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.Location = new System.Drawing.Point(1227, 2);
+            this.label6.Location = new System.Drawing.Point(1237, 2);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(131, 20);
             this.label6.TabIndex = 286;
@@ -6971,7 +6972,7 @@
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label7.Location = new System.Drawing.Point(1147, 2);
+            this.label7.Location = new System.Drawing.Point(1157, 2);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 20);
             this.label7.TabIndex = 285;
@@ -6984,7 +6985,7 @@
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(1017, 2);
+            this.label5.Location = new System.Drawing.Point(1027, 2);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(130, 20);
             this.label5.TabIndex = 284;
@@ -6997,7 +6998,7 @@
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(937, 2);
+            this.label4.Location = new System.Drawing.Point(947, 2);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 20);
             this.label4.TabIndex = 283;
@@ -7010,7 +7011,7 @@
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(30, 2);
+            this.label3.Location = new System.Drawing.Point(40, 2);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(908, 20);
             this.label3.TabIndex = 282;

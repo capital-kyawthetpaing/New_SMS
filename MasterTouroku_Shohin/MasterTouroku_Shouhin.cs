@@ -42,7 +42,7 @@ namespace MasterTouroku_Shouhin
         , ChkDiscontinueFlg
         , ChkStopFlg
         , ChkDiscountKBN
-        , ChkZaikoKBN
+        , Chk5
         , Chk6
 
         , ChkPresentKBN
@@ -54,8 +54,8 @@ namespace MasterTouroku_Shouhin
 
         , ChkDirectFlg
         , ChkParcelFlg
+        , ChkZaikoKBN
         , ChkSoldOutFlg
-        , Chk16
         , Chk17
         , ChkSaleExcludedFlg
 
@@ -303,9 +303,8 @@ namespace MasterTouroku_Shouhin
                 switch(i)
                 {
                     case (int)EIndex.ChkVirtualFlg:
+                    case (int)EIndex.Chk5:
                     case (int)EIndex.Chk6:
-                    //case (int)EIndex.ChkSoldOutFlg:
-                    case (int)EIndex.Chk16:
                     case (int)EIndex.Chk17:
                     case (int)EIndex.Chk27:
                     case (int)EIndex.Chk28:
@@ -2076,15 +2075,15 @@ namespace MasterTouroku_Shouhin
                         SearchData(kbn, PreviousCtrl);
 
                     break;
-                case 9://F10:展開
-                    InitGrid();
-                    //if (dgvDetail.CurrentCell == null)
-                    //    return;
+                //case 9://F10:展開
+                //    InitGrid();
+                //    //if (dgvDetail.CurrentCell == null)
+                //    //    return;
 
-                    //int ColumnIndex = dgvDetail.CurrentCell.ColumnIndex;
-                    //int RowIndex = dgvDetail.CurrentCell.RowIndex;
-                    //Expand(ColumnIndex, RowIndex);
-                    break;
+                //    //int ColumnIndex = dgvDetail.CurrentCell.ColumnIndex;
+                //    //int RowIndex = dgvDetail.CurrentCell.RowIndex;
+                //    //Expand(ColumnIndex, RowIndex);
+                //    break;
 
                 case 11:    //F12:登録
                     {
