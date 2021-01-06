@@ -295,8 +295,8 @@
             this.colorname_1 = new CKM_Controls.CKM_TextBox();
             this.color_1 = new CKM_Controls.CKM_TextBox();
             this.shouhin_1 = new CKM_Controls.CKM_TextBox();
-            this.scjan_1 = new Search.CKM_SearchControl();
             this.lbl_1 = new System.Windows.Forms.Label();
+            this.scjan_1 = new Search.CKM_SearchControl();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -1308,6 +1308,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1750, 470);
             this.panel3.TabIndex = 305;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel12
             // 
@@ -6675,6 +6676,19 @@
             this.shouhin_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shouhin_1.UseColorSizMode = false;
             // 
+            // lbl_1
+            // 
+            this.lbl_1.BackColor = System.Drawing.Color.DarkGray;
+            this.lbl_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lbl_1.Location = new System.Drawing.Point(4, 1);
+            this.lbl_1.Name = "lbl_1";
+            this.lbl_1.Size = new System.Drawing.Size(35, 19);
+            this.lbl_1.TabIndex = 282;
+            this.lbl_1.Text = "1";
+            this.lbl_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // scjan_1
             // 
             this.scjan_1.AutoSize = true;
@@ -6704,19 +6718,6 @@
             this.scjan_1.Value1 = null;
             this.scjan_1.Value2 = null;
             this.scjan_1.Value3 = null;
-            // 
-            // lbl_1
-            // 
-            this.lbl_1.BackColor = System.Drawing.Color.DarkGray;
-            this.lbl_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbl_1.Location = new System.Drawing.Point(4, 1);
-            this.lbl_1.Name = "lbl_1";
-            this.lbl_1.Size = new System.Drawing.Size(35, 19);
-            this.lbl_1.TabIndex = 282;
-            this.lbl_1.Text = "1";
-            this.lbl_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label24
             // 
