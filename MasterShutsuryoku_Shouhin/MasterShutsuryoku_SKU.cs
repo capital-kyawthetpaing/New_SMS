@@ -314,6 +314,8 @@ namespace MasterShutsuryoku_Shouhin
                             dt.Columns.Remove("改定日");
                             dt.Columns.Remove("承認日");
                             dt.Columns.Remove("SKUCD");
+                            dt.Columns.Remove("JANCD");
+                            dt.Columns.Remove("削除");
                             //dt.Columns.Remove("諸口区分");
                             dt.Columns.Remove("商品名");
                             dt.Columns.Remove("ITEMCD");
@@ -321,8 +323,6 @@ namespace MasterShutsuryoku_Shouhin
                             dt.Columns.Remove("カラー枝番");
                             dt.Columns.Remove("サイズ名");
                             dt.Columns.Remove("カラー名");
-                            dt.Columns.Remove("JANCD");
-                            dt.Columns.Remove("削除");
                         }
                         if (checkflg == 5 || checkflg == 6 || checkflg ==7 ||checkflg ==8)
                         {
@@ -654,6 +654,18 @@ namespace MasterShutsuryoku_Shouhin
         private void MasterShutsuryoku_Shouhin_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
+        }
+
+        private void SC_Vendor_Enter(object sender, EventArgs e)
+        {
+            SC_Vendor.ChangeDate = bbl.GetDate();
+            SC_Vendor.Value1 = "1";
+        }
+
+        private void SC_makervendor_Enter(object sender, EventArgs e)
+        {
+            SC_makervendor.ChangeDate = bbl.GetDate();
+            SC_makervendor.Value1 = "1";
         }
     }
 }

@@ -236,7 +236,7 @@
             // 
             this.CK_suru.AutoSize = true;
             this.CK_suru.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.CK_suru.Location = new System.Drawing.Point(5, 4);
+            this.CK_suru.Location = new System.Drawing.Point(2, 4);
             this.CK_suru.Name = "CK_suru";
             this.CK_suru.Size = new System.Drawing.Size(50, 16);
             this.CK_suru.TabIndex = 76;
@@ -364,7 +364,7 @@
             // 
             this.RB_all.AutoSize = true;
             this.RB_all.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.RB_all.Location = new System.Drawing.Point(3, 1);
+            this.RB_all.Location = new System.Drawing.Point(2, 1);
             this.RB_all.Name = "RB_all";
             this.RB_all.Size = new System.Drawing.Size(49, 16);
             this.RB_all.TabIndex = 1;
@@ -415,7 +415,7 @@
             // 
             this.ckM_RB_or.AutoSize = true;
             this.ckM_RB_or.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_RB_or.Location = new System.Drawing.Point(3, 4);
+            this.ckM_RB_or.Location = new System.Drawing.Point(2, 4);
             this.ckM_RB_or.Name = "ckM_RB_or";
             this.ckM_RB_or.Size = new System.Drawing.Size(37, 16);
             this.ckM_RB_or.TabIndex = 11;
@@ -1686,6 +1686,7 @@
             this.SC_makervendor.Value2 = null;
             this.SC_makervendor.Value3 = null;
             this.SC_makervendor.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_makervendor_CodeKeyDownEvent);
+            this.SC_makervendor.Enter += new System.EventHandler(this.SC_makervendor_Enter);
             // 
             // ckM_Label2
             // 
@@ -1734,6 +1735,7 @@
             this.SC_Vendor.Value2 = null;
             this.SC_Vendor.Value3 = null;
             this.SC_Vendor.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_Vendor_CodeKeyDownEvent);
+            this.SC_Vendor.Enter += new System.EventHandler(this.SC_Vendor_Enter);
             // 
             // ckM_Label1
             // 
