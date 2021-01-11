@@ -348,7 +348,7 @@ namespace DL
             return SelectData(dic, sp);
         }
 
-        public DataTable M_SKU_Export(M_SKU_Entity ms,int checkflg,int mode)
+        public DataTable M_SKU_Export(M_SKU_Entity ms,int checkflg,int chkUnapprove, int mode)
         {
             string sp = "M_SKU_Export";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
@@ -384,8 +384,15 @@ namespace DL
                { "@Tag4", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.TagName4} },
                { "@Tag5", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.TagName5 } },
                { "@checkflg", new ValuePair { value1 = SqlDbType.Int, value2 = checkflg.ToString()} },
+               { "@chkUnapprove", new ValuePair { value1 = SqlDbType.Int, value2 = chkUnapprove.ToString()} },
                { "@mode", new ValuePair { value1 = SqlDbType.Int, value2 = mode.ToString()} },
+               { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.Operator} },
+               { "@ProcessMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.ProcessMode} },
+               { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.ProgramID} },
+               { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.PC} },
+               { "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.Key} },
             };
+
             return SelectData(dic, sp);
         }
     }

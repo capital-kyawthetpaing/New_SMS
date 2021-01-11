@@ -353,7 +353,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZaikoReplicaSyori", "ZaikoR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailRecieve", "MailRecieve\MailRecieve.csproj", "{0EFAA515-2216-4B4A-A5BA-4A8E67474DD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterShutsuryoku_Shouhin", "MasterShutsuryoku_Shouhin\MasterShutsuryoku_Shouhin.csproj", "{DC9BD2C5-1C90-4724-97A7-10AC1B44F0D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterShutsuryoku_SKU", "MasterShutsuryoku_Shouhin\MasterShutsuryoku_SKU.csproj", "{DC9BD2C5-1C90-4724-97A7-10AC1B44F0D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
