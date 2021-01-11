@@ -64,7 +64,7 @@ namespace MailRecieve
                                 //[2] Download file  
                                 string[] stringParts = attachment[0].FileName.Split(new char[] { '.' });
                                 string strType = stringParts[1];
-                                attachment[0].Save
+                                //attachment[0].Save
 
                                 //Response.Clear();
                                 //Response.ClearContent();
