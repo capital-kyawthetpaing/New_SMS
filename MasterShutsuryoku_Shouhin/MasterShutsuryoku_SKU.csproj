@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DC9BD2C5-1C90-4724-97A7-10AC1B44F0D1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MasterShutsuryoku_Shouhin</RootNamespace>
-    <AssemblyName>MasterShutsuryoku_Shouhin</AssemblyName>
+    <RootNamespace>MasterShutsuryoku_SKU</RootNamespace>
+    <AssemblyName>MasterShutsuryoku_SKU</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -57,16 +57,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MasterShutsuryoku_Shouhin.cs">
+    <Compile Include="MasterShutsuryoku_SKU.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MasterShutsuryoku_Shouhin.Designer.cs">
-      <DependentUpon>MasterShutsuryoku_Shouhin.cs</DependentUpon>
+    <Compile Include="MasterShutsuryoku_SKU.Designer.cs">
+      <DependentUpon>MasterShutsuryoku_SKU.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MasterShutsuryoku_Shouhin.resx">
-      <DependentUpon>MasterShutsuryoku_Shouhin.cs</DependentUpon>
+    <EmbeddedResource Include="MasterShutsuryoku_SKU.resx">
+      <DependentUpon>MasterShutsuryoku_SKU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -76,6 +76,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
