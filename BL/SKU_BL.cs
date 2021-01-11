@@ -171,9 +171,9 @@ namespace BL
         }
 
 
-        public DataTable M_SKU_Export(M_SKU_Entity me,int checkflg, int type)
+        public DataTable M_SKU_Export(M_SKU_Entity me,int checkflg, int chkUnapprove,int type)
         {
-            return mdl.M_SKU_Export(me, checkflg,type);
+            return mdl.M_SKU_Export(me, checkflg, chkUnapprove,type);
         }
     }
 }

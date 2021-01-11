@@ -26,6 +26,8 @@ namespace MasterShutsuryoku_Shouhin
         SKU_BL mbl;
         int type = 0;
         int checkflg=0;
+        int chkUnapprove = 0;
+
         public MasterShutsuryoku_Shouhin()
         {
             InitializeComponent();
@@ -56,9 +58,10 @@ namespace MasterShutsuryoku_Shouhin
 
         private void MasterShutsuryoku_Shouhin_Load(object sender, EventArgs e)
         {
-            InProgramID = "MasterShutsuryoku_Shouhin";
+            InProgramID = "MasterShutsuryoku_SKU";
             StartProgram();
             BindCombo();
+            ModeVisible = false;
             RB_all.Focus();
             RB_all.Checked = true;
            LB_ChangeDate.Text = bbl.GetDate();
@@ -74,7 +77,7 @@ namespace MasterShutsuryoku_Shouhin
                 case 6:
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                     {
-                       // CanCelData();
+                        CleanData();
                     }
                     break;
                 case 10:
@@ -83,6 +86,11 @@ namespace MasterShutsuryoku_Shouhin
                     OutputExecel();
                     break;
             }
+        }
+        private void CleanData()
+        {
+            Clear(panel1);
+            RB_all.Checked = true;
         }
         private bool ErrorCheck()
         {
@@ -267,7 +275,12 @@ namespace MasterShutsuryoku_Shouhin
                 UpdateDateFrom=TB_UpdateDateF.Text,
                 UpdateDateTo=TB_UpdateDateT.Text,
                 ApprovalDateFrom=TB_ApprovalDateF.Text,
-                ApprovalDateTo=TB_ApprovalDateT.Text
+                ApprovalDateTo=TB_ApprovalDateT.Text,
+                Operator=InOperatorCD,
+                PC=InPcID,
+                ProgramID=InProgramID,
+                ProcessMode=ModeText,
+                Key=StoreCD +" "+ LB_ChangeDate.Text,
             };
             return msku;
         }
@@ -279,30 +292,21 @@ namespace MasterShutsuryoku_Shouhin
                 if (bbl.ShowMessage("Q203") == DialogResult.Yes)
                 {
                     type = (CK_suru.Checked && RB_Item.Checked) ? 1 : (CK_suru.Checked == true && RB_Item.Checked == true) ? 2 : 3;
-                    //if (CK_suru.Checked == true && RB_Item.Checked == true)
-                    //{
-                    //    type = 1;
-                    //}
-                    //else if (CK_suru.Checked == true && RB_Item.Checked == true)
-                    //{
-                    //    type = 2;
-                    //}
-                    //else
-                    //{
-                    //    type = 3;
-                    //}
-
-                    checkflg = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : 0;
+                   
+                    chkUnapprove = CK_UnApprove.Checked ? 1 : 0;
+                    checkflg = RB_all.Checked ? 1 : RB_BaseInfo.Checked ? 2 : RB_attributeinfo.Checked ? 3 : RB_priceinfo.Checked ? 4 : RB_Catloginfo.Checked ? 5 : RB_tagInfo.Checked?6 : RB_JanCD.Checked?7:RB_SizeURL.Checked ?8 :0;
 
                     msku = GetData();
                     DataTable dt = new DataTable();
-                    dt = mbl.M_SKU_Export(msku, checkflg, type);
+                    dt = mbl.M_SKU_Export(msku, checkflg, chkUnapprove, type);
                     if (dt.Rows.Count > 0)
                     {
                         if (checkflg != 1)
                         {
-                            dt.Columns.Remove("セグメントCD");
-                            dt.Columns.Remove("セグメント名");
+                            
+                            dt.Columns.Remove("商品情報アドレス");
+                            dt.Columns.Remove("構成数");
+                            dt.Columns.Remove("発注ロット");
                         }
                         if (checkflg == 0)
                         {
@@ -310,17 +314,17 @@ namespace MasterShutsuryoku_Shouhin
                             dt.Columns.Remove("改定日");
                             dt.Columns.Remove("承認日");
                             dt.Columns.Remove("SKUCD");
-                            dt.Columns.Remove("諸口区分");
+                            dt.Columns.Remove("JANCD");
+                            dt.Columns.Remove("削除");
+                            //dt.Columns.Remove("諸口区分");
                             dt.Columns.Remove("商品名");
                             dt.Columns.Remove("ITEMCD");
                             dt.Columns.Remove("サイズ枝番");
                             dt.Columns.Remove("カラー枝番");
                             dt.Columns.Remove("サイズ名");
                             dt.Columns.Remove("カラー名");
-                            dt.Columns.Remove("JANCD");
-
                         }
-                        if (checkflg == 5)
+                        if (checkflg == 5 || checkflg == 6 || checkflg ==7 ||checkflg ==8)
                         {
                             dt.Columns.Remove("標準原価");
                             dt.Columns.Remove("税込定価");
@@ -330,11 +334,18 @@ namespace MasterShutsuryoku_Shouhin
                             dt.Columns.Remove("掛率");
                         }
 
+                        if (checkflg != 8)
+                        {
+                            dt.Columns.Remove("APIKey");
+                            dt.Columns.Remove("サイト商品CD");
+                        }
+
                         if (checkflg != 1 && checkflg != 2)
                         {
-                            dt.Columns.Remove("カナ名");
-                            dt.Columns.Remove("略名");
-                            dt.Columns.Remove("英語名");
+                            dt.Columns.Remove("諸口区分");
+                            //dt.Columns.Remove("カナ名");
+                            //dt.Columns.Remove("略名");
+                            //dt.Columns.Remove("英語名");
                             dt.Columns.Remove("主要仕入先CD");
                             dt.Columns.Remove("主要仕入先名");
                             dt.Columns.Remove("メーカー仕入先CD");
@@ -342,10 +353,13 @@ namespace MasterShutsuryoku_Shouhin
                             dt.Columns.Remove("ブランドCD");
                             dt.Columns.Remove("ブランド名");
                             dt.Columns.Remove("メーカー商品CD");
+
                             dt.Columns.Remove("単位CD");
                             dt.Columns.Remove("単位名");
                             dt.Columns.Remove("競技CD");
                             dt.Columns.Remove("競技名");
+                            dt.Columns.Remove("セグメントCD");
+                            dt.Columns.Remove("セグメント名");
                             dt.Columns.Remove("商品分類CD");
                             dt.Columns.Remove("分類名");
                             dt.Columns.Remove("発売開始日");
@@ -438,9 +452,29 @@ namespace MasterShutsuryoku_Shouhin
                             dt.Columns.Remove("指示書番号");
                             dt.Columns.Remove("指示書発行日");
 
-                            dt.Columns.Remove("商品情報アドレス");
-                            dt.Columns.Remove("構成数");
-                            dt.Columns.Remove("発注ロット");
+                            //dt.Columns.Remove("商品情報アドレス");
+                            //dt.Columns.Remove("構成数");
+                            //dt.Columns.Remove("発注ロット");
+                        }
+
+                        if (checkflg != 1 && checkflg != 6)
+                        {
+                            dt.Columns.Remove("タグ1");
+                            dt.Columns.Remove("タグ2");
+                            dt.Columns.Remove("タグ3");
+                            dt.Columns.Remove("タグ4");
+                            dt.Columns.Remove("タグ5");
+                            dt.Columns.Remove("タグ6");
+                            dt.Columns.Remove("タグ7");
+                            dt.Columns.Remove("タグ8");
+                            dt.Columns.Remove("タグ9");
+                            dt.Columns.Remove("タグ10");
+                        }
+                        if(checkflg !=1 && checkflg!=2 )
+                        {
+                            dt.Columns.Remove("カナ名");
+                            dt.Columns.Remove("略名");
+                            dt.Columns.Remove("英語名");
                         }
                         if (checkflg != 1 && checkflg != 3 && checkflg != 4)
                         {
@@ -615,6 +649,23 @@ namespace MasterShutsuryoku_Shouhin
             {
                 RB_Item.Checked = true;
             }
+        }
+
+        private void MasterShutsuryoku_Shouhin_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
+
+        private void SC_Vendor_Enter(object sender, EventArgs e)
+        {
+            SC_Vendor.ChangeDate = bbl.GetDate();
+            SC_Vendor.Value1 = "1";
+        }
+
+        private void SC_makervendor_Enter(object sender, EventArgs e)
+        {
+            SC_makervendor.ChangeDate = bbl.GetDate();
+            SC_makervendor.Value1 = "1";
         }
     }
 }

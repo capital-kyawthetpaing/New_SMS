@@ -30,6 +30,7 @@ namespace ZaikoShoukai
         string shohinmei, color, size, item, skucd, brand, jancd, makercd,changedate,soukoname;
         int type = 0;
         int chktype = 0;
+        int chkunApprove = 0;
         public  ZaikoShoukai()
         {
             InitializeComponent();
@@ -89,35 +90,19 @@ namespace ZaikoShoukai
         {
             if (ErrorCheck())
             {
-                if (CKB_searchsuru.Checked == true && RB_item.Checked == true)
-                {
-                    type = 1;
-                }
-                else if (CKB_searchsuru.Checked == true && RB_Makashohincd.Checked == true)
-                {
-                    type = 2;
-                }
-                else
-                {
-                    type = 3;
-                }
+                type = (CKB_searchsuru.Checked && RB_item.Checked) ? 1 : (CKB_searchsuru.Checked && RB_Makashohincd.Checked) ? 2 : 3;
 
-                if (ckM_CKB_suru.Checked == true)
-                {
-                    chktype = 1;
-                }
-                else
-                {
-                    chktype = 0;
-                }
+                chktype = ckM_CKB_suru.Checked ? 1 : 0;
 
+                chkunApprove = chk_uncheckApprove.Checked ? 1 : 0;
+                
                 string[]  store = TB_Bikokeyword.ToString().Split(','); 
                 msku_Entity = GetDataEntity();
                 msInfo_Entity = GetInfoEntity();
                 msT_Entity = GetTagEntity();
                 ds_Entity = GetStockEntity();
 
-                dtData = zaibl.ZaikoShoukai_Search(msku_Entity, msInfo_Entity, msT_Entity,ds_Entity, type ,chktype);
+                dtData = zaibl.ZaikoShoukai_Search(msku_Entity, msInfo_Entity, msT_Entity,ds_Entity, type ,chktype, chkunApprove);
               
                 if (dtData.Rows.Count > 0)
                 {
@@ -291,7 +276,7 @@ namespace ZaikoShoukai
             Sports.Clear();
             ckM_RB_or.Checked = true;
             ckM_RB_and.Checked = false;
-            ckM_CKB_Mishohin.Checked = false;
+            chk_uncheckApprove.Checked = false;
             ckM_CKB_suru.Checked = false;
             CKB_searchsuru.Checked = false;
             RB_item.Checked = false;
