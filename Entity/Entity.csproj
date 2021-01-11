@@ -133,6 +133,7 @@
     <Compile Include="M_ItemOrderPrice_Entity.cs" />
     <Compile Include="M_ItemPrice_Entity.cs" />
     <Compile Include="M_ITEM_Entity.cs" />
+    <Compile Include="M_JANCounter_Entity.cs" />
     <Compile Include="M_JANOrderPrice_Entity.cs" />
     <Compile Include="M_Kouza_Entity.cs" />
     <Compile Include="M_Location_Entity.cs" />

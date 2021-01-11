@@ -939,6 +939,8 @@ namespace NyuukinNyuuryoku_Detail
                 Btn_F7.Text = "";
                 Btn_F8.Text = "";
                 Btn_F10.Text = "";
+                lblKesikomiZumi.Visible = false;
+                lblKesikomiZumiGaku.Visible = false;
 
                 //スタッフマスター(M_Staff)に存在すること
                 //[M_Staff]
@@ -1316,7 +1318,7 @@ namespace NyuukinNyuuryoku_Detail
                                 bool exist = nnbl.D_PaymentConfirm_Select(dce);
                                 if (exist)
                                 {
-                                    bbl.ShowMessage("E271", mes);
+                                    bbl.ShowMessage("E271");
                                     SetFocusAfterErr();
                                     return false;
                                 }
@@ -1329,7 +1331,7 @@ namespace NyuukinNyuuryoku_Detail
 
                                 if (OperationMode == EOperationMode.DELETE && mConfirmExistsFlg)
                                 {
-                                    bbl.ShowMessage("E271");
+                                    bbl.ShowMessage("E272");
                                     SetFocusAfterErr();
                                     return false;
                                 }
@@ -1400,7 +1402,7 @@ namespace NyuukinNyuuryoku_Detail
                     detailControls[(int)EIndex.Deduction1].Text = "0";
                     detailControls[(int)EIndex.Deduction2].Text = "0";
                     detailControls[(int)EIndex.DeductionConfirm].Text = "0";
-                    cboKouza.Bind(bbl.GetDate());
+                    //cboKouza.Bind(bbl.GetDate());
                 }
                 else
                 {
@@ -1436,8 +1438,8 @@ namespace NyuukinNyuuryoku_Detail
                 detailControls[(int)EIndex.CollectDate].Text = dtDetail.Rows[0]["CollectDate"].ToString();
                 cboDenomination.SelectedValue = dtDetail.Rows[0]["PaymentMethodCD"].ToString();
 
-                cboKouza.DataSource = null;
-                cboKouza.Bind(dtDetail.Rows[0]["CollectDate"].ToString());
+                //cboKouza.DataSource = null;
+                //cboKouza.Bind(dtDetail.Rows[0]["CollectDate"].ToString());
                 cboKouza.SelectedValue = dtDetail.Rows[0]["KouzaCD"].ToString();
                 detailControls[(int)EIndex.Tegata].Text = dtDetail.Rows[0]["BillDate"].ToString();
                 detailControls[(int)EIndex.StaffCD].Text = dtDetail.Rows[0]["StaffCD"].ToString();
@@ -1452,6 +1454,14 @@ namespace NyuukinNyuuryoku_Detail
                 if (index == (int)EIndex.CollectNO)
                 {
                     lblKin2.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmAmount"]);
+                    lblKesikomiZumiGaku.Text = bbl.Z_SetStr(dtDetail.Rows[0]["ConfirmAmount"]);
+
+                    if (mKidouMode.Equals(9))
+                    {
+                        //lblKesikomiZumiGaku.Visible = true;
+                        //lblKesikomiZumi.Visible = true;
+                        //lblKin1.Text = bbl.Z_SetStr(bbl.Z_Set(dtDetail.Rows[0]["ConfirmSource"]) - bbl.Z_Set(dtDetail.Rows[0]["ConfirmAmount"]));
+                    }
                 }
                 else
                 {
@@ -1832,6 +1842,12 @@ namespace NyuukinNyuuryoku_Detail
                     break;
 
                 case (int)EIndex.CustomerCD:
+                    //入金顧客へ入力があったとき、自動で入金顧客のチェックボックスをONに
+                    if (!string.IsNullOrWhiteSpace( keyControls[index].Text))
+                    {
+                        ckM_RadioButton2.Checked = true;
+                    }
+
                     //対象：入金顧客の場合、入力必須(Entry required)
                     if (ckM_RadioButton2.Checked)
                     {
@@ -1892,6 +1908,9 @@ namespace NyuukinNyuuryoku_Detail
                 if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
                     return false;
             }
+
+            if (!detailControls[index].Enabled)
+                return true;
 
             switch (index)
             {
@@ -2183,6 +2202,9 @@ namespace NyuukinNyuuryoku_Detail
                             return false;
                         }
                     }
+                    if (bbl.Z_Set(mGrid.g_DArray[row].ConfirmAmount)>0)
+                        mGrid.g_DArray[row].Chk = true;
+
                     //今回入金額＞未入金額(明細の請求額－入金済額)の場合、Error
                     //if (bbl.Z_Set(mGrid.g_DArray[row].ConfirmAmount) > bbl.Z_Set(mGrid.g_DArray[row].BillingGaku)- bbl.Z_Set(mGrid.g_DArray[row].CollectAmount)) //今回入金額＞未入金額の場合、Error
                     //今回入金額＞未入金額の場合、Error
@@ -2268,7 +2290,7 @@ namespace NyuukinNyuuryoku_Detail
                 ConfirmAmount = bbl.Z_SetStr(lblKin2.Text),
                 ConfirmSource = bbl.Z_SetStr(lblKin1.Text),
                 PaymentMethodCD = cboDenomination.SelectedValue.ToString(),
-                KouzaCD = cboKouza.SelectedValue.ToString(),
+                KouzaCD = cboKouza.SelectedIndex>0 ? cboKouza.SelectedValue.ToString():"",
                 BillDate = detailControls[(int)EIndex.Tegata].Text,
                 CollectClearDate = detailControls[(int)EIndex.CollectClearDate].Text,
 
@@ -2423,17 +2445,17 @@ namespace NyuukinNyuuryoku_Detail
                 //ChkAll時は金額計算しないため最後に1回
                 CalcKin();
 
-                //ヘッダ.消込原資額≠SUM(明細.今回入金額)の場合、エラー
-                if (bbl.Z_Set(lblKin1.Text) < bbl.Z_Set(lblSumKin3.Text))
-                {
-                    // Ｅ１９６
-                    if (bbl.ShowMessage("E196", "明細今回入金額の合計", "消込原資額－その他消込額以下") != DialogResult.Yes)
-                    {
-                        //明細の先頭項目へ
-                        mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridNyuukin_S.ColNO.ConfirmAmount);
-                        return;
-                    }
-                }
+                ////ヘッダ.消込原資額≠SUM(明細.今回入金額)の場合、エラー
+                //if (bbl.Z_Set(lblKin1.Text) < bbl.Z_Set(lblSumKin3.Text))
+                //{
+                //    // Ｅ１９６
+                //    if (bbl.ShowMessage("E196", "明細今回入金額の合計", "消込原資額－その他消込額以下") != DialogResult.Yes)
+                //    {
+                //        //明細の先頭項目へ
+                //        mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridNyuukin_S.ColNO.ConfirmAmount);
+                //        return;
+                //    }
+                //}
             }
             else
             {
@@ -2556,6 +2578,7 @@ namespace NyuukinNyuuryoku_Detail
                 btnUriage.Enabled = false;
                 btnDetail.Enabled = false;
                 mConfirmExistsFlg = false;
+                lblKesikomiZumiGaku.Text = "";
             }
 
             foreach (Control ctl in detailControls)
@@ -2631,11 +2654,11 @@ namespace NyuukinNyuuryoku_Detail
             lblSumKin4.Text = string.Format("{0:#,##0}", kin4);
 
             //ヘッダ.消込額 = SUM(明細.今回入金額)
-            lblKin2.Text = string.Format("{0:#,##0}", kin3);
+            lblKin2.Text = string.Format("{0:#,##0}", kin3 + bbl.Z_Set(lblKesikomiZumiGaku.Text));
             //lblKin2.Text = string.Format("{0:#,##0}", 0);
             //ヘッダ.残額 = ヘッダ.消込原資額 - SUM(明細.今回入金額)-その他消込額
             //残額を計算（残額＝消込原資額－消込額－その他消込）
-            lblKin3.Text = string.Format("{0:#,##0}",bbl.Z_Set(lblKin1.Text) - kin3 - bbl.Z_Set(detailControls[(int)EIndex.DeductionConfirm].Text));
+            lblKin3.Text = string.Format("{0:#,##0}",bbl.Z_Set(lblKin1.Text) -bbl.Z_Set(lblKin2.Text) - bbl.Z_Set(detailControls[(int)EIndex.DeductionConfirm].Text));
 
             return true;
         }
@@ -3178,10 +3201,9 @@ namespace NyuukinNyuuryoku_Detail
             {   
                 // 明細部  画面の範囲の内容を配列にセット
                 mGrid.S_DispToArray(Vsb_Mei_0.Value);
-
-                //ヘッダ.入金額に到達するまで、明細上から(回収予定日が古い順に)今回入金額（＝明細.請求額 - 明細.入金済額）をセット。
-                decimal wNyukin = bbl.Z_Set(detailControls[(int)EIndex.NyukinGaku].Text);
-
+                
+                //ヘッダ.消込原資額に到達するまで、明細上から(回収予定日が古い順に)今回入金額（＝明細.請求額 - 明細.入金済額）をセット。
+                decimal wNyukin = bbl.Z_Set(lblKin1.Text) - bbl.Z_Set(lblKesikomiZumiGaku.Text) - bbl.Z_Set(detailControls[(int)EIndex.DeductionConfirm].Text);
 
                 for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
                 {
@@ -3306,7 +3328,11 @@ namespace NyuukinNyuuryoku_Detail
                     label2.Visible = ckM_RadioButton2.Checked;
                     detailControls[(int)EIndex.CollectClearDate].Visible = ckM_RadioButton2.Checked;
                 }
-
+                else if (OperationMode != EOperationMode.INSERT)
+                {
+                    label2.Visible = ckM_RadioButton2.Checked && !string.IsNullOrWhiteSpace( keyControls[(int)EIndex.ConfirmNO].Text);
+                    detailControls[(int)EIndex.CollectClearDate].Visible = ckM_RadioButton2.Checked && !string.IsNullOrWhiteSpace(keyControls[(int)EIndex.ConfirmNO].Text);
+                }
             }
             catch (Exception ex)
             {
@@ -3446,8 +3472,8 @@ namespace NyuukinNyuuryoku_Detail
         }
         private void SetEnabledForMode()
         {
-            //通常起動
-            if (mKidouMode.Equals(0) && OperationMode == EOperationMode.INSERT)
+            //通常起動または新規入金時
+            if ((mKidouMode.Equals(0) || mKidouMode.Equals(1) ) && OperationMode == EOperationMode.INSERT)
                 return;
 
             if (mKidouMode.Equals(0) && mConfirmExistsFlg == false)

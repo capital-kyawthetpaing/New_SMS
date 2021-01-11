@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using Base.Client;
 using BL;
 using Entity;
+using System.IO;
+using CrystalDecisions.Shared;
+
 
 namespace FBDataSakusei_FBデータ作成
 {
@@ -21,6 +24,7 @@ namespace FBDataSakusei_FBデータ作成
         D_FBControl_Entity dfbe = new D_FBControl_Entity();
         D_FBData_Entity dfde = new D_FBData_Entity();
         DataTable dtgv = new DataTable();
+        public static string dirParameter = AppDomain.CurrentDomain.BaseDirectory + @"\file.txt";
 
         public FrmFBDataSakusei_FBデータ作成()
         {
@@ -48,7 +52,7 @@ namespace FBDataSakusei_FBデータ作成
             SetRequireField();
 
             cboProcess.Focus();
-            //cboProcess.SelectedIndex = 0;
+            cboProcess.SelectedValue = 0;
         }
 
         public void BindCombo()
@@ -100,6 +104,8 @@ namespace FBDataSakusei_FBデータ作成
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                     {
                         Clear(panel1);
+                        BindCombo();
+                        cboProcess.SelectedValue = 0;
                         cboProcess.Focus();
                     }
                     break;
@@ -129,63 +135,217 @@ namespace FBDataSakusei_FBデータ作成
                 if(dtgv.Rows.Count > 0)
                 {
                     gvFBDataSakusei.DataSource = dtgv;
+                    decimal total = dtgv.AsEnumerable().Sum(row => row.Field<decimal>("TransferGaku"));
+                    lblTransferAmount.Text = total.ToString();
+                    decimal totalFee = dtgv.AsEnumerable().Sum(row => row.Field<decimal>("TransferFeeGaku"));
+                    lblTransferFee.Text = totalFee.ToString();                 
+                }
+                else
+                {
+                    bbl.ShowMessage("E200");
+                    cboProcess.Focus();
                 }
             }
         }
 
         public void F11()
         {
-            if (bbl.ShowMessage("Q202") == DialogResult.Yes)
+            try
             {
+                FBDataSakusei_Report Report = new FBDataSakusei_Report();
+                DialogResult ret;
                 
+                        ret = bbl.ShowMessage("Q202");
+                        if (ret == DialogResult.Cancel)
+                        {
+                            return;
+                        }
+                        // 印字データをセット
+                        Report.SetDataSource(dtgv);
+                        Report.Refresh();
+                        Report.SetParameterValue("PrintDate", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("HH:mm"));
+                        Report.SetParameterValue("PaymentDate", txtPaymentDate.Text) ;
+                        Report.SetParameterValue("PaymentSource", cboPayment.SelectedValue.ToString() );
+                        Report.SetParameterValue("ActualDate", txtTransferDate.Text);
+
+                        if (ret == DialogResult.Yes)
+                        {
+                            var previewForm = new Viewer();
+                            previewForm.CrystalReportViewer1.ShowPrintButton = true;
+                            previewForm.CrystalReportViewer1.ReportSource = Report;
+                            previewForm.ShowDialog();
+                        }
+                        else
+                        {
+                            //int marginLeft = 360;
+                            CrystalDecisions.Shared.PageMargins margin = Report.PrintOptions.PageMargins;
+                            margin.leftMargin = DefaultMargin.Left; 
+                            margin.topMargin = DefaultMargin.Top;
+                            margin.bottomMargin = DefaultMargin.Bottom;
+                            margin.rightMargin = DefaultMargin.Right;
+                            Report.PrintOptions.ApplyPageMargins(margin);     /// Error Now
+                            // プリンタに印刷
+                            System.Drawing.Printing.PageSettings ps;
+                            try
+                            {
+                                System.Drawing.Printing.PrintDocument pDoc = new System.Drawing.Printing.PrintDocument();
+
+                                CrystalDecisions.Shared.PrintLayoutSettings PrintLayout = new CrystalDecisions.Shared.PrintLayoutSettings();
+
+                                System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
+
+
+
+                                Report.PrintOptions.PrinterName = "\\\\dataserver\\Canon LBP2900";
+                                System.Drawing.Printing.PageSettings pSettings = new System.Drawing.Printing.PageSettings(printerSettings);
+
+                                Report.PrintOptions.DissociatePageSizeAndPrinterPaperSize = true;
+
+                                Report.PrintOptions.PrinterDuplex = PrinterDuplex.Simplex;
+
+                                Report.PrintToPrinter(printerSettings, pSettings, false, PrintLayout);
+                                // Print the report. Set the startPageN and endPageN 
+                                // parameters to 0 to print all pages. 
+                                //Report.PrintToPrinter(1, false, 0, 0);
+                            }
+                            catch (Exception ex)
+                            {
+
+                            }
+                        }
+                      
             }
+            catch (Exception e)
+            {
+                var mse = e.Message;
+            }
+            finally
+            {
+                cboProcess.Focus();
+            }
+            
         }
 
         public void F12()
         {
             if(ErrorCheck(12))
             {
-                if(Btn_F12.Text == "出力(F12)")
+                if(dtgv.Rows.Count > 0)
                 {
-                    if (bbl.ShowMessage("Q301") == DialogResult.Yes)
+                    if (Btn_F12.Text == "出力(F12)")
                     {
-                        dfbe = new D_FBControl_Entity
+                        if (bbl.ShowMessage("Q301") == DialogResult.Yes)
                         {
-                            PayDate = txtPaymentDate.Text,
-                            ActualPayDate = txtTransferDate.Text,
-                            MotoKouzaCD = cboPayment.SelectedValue.ToString(),
-                            StaffCD = InOperatorCD
-                        };
-                        if (fbbl.D_FBControl_Insert(dfbe))
-                        {
-                            //Clear(panel1);
-                            //BindCombo();
-                            //cboProcess.Focus();
+
+                            dfbe = new D_FBControl_Entity
+                            {
+                                PayDate = txtPaymentDate.Text,
+                                ActualPayDate = txtTransferDate.Text,
+                                MotoKouzaCD = cboPayment.SelectedValue.ToString(),
+                                StoreCD = InOperatorCD
+                            };
+                            dfde = new D_FBData_Entity
+                            {
+                                PayeeCD = dtgv.Rows[0]["PayeeCD"].ToString(),
+                                PayeeName = dtgv.Rows[0]["VendorName"].ToString(),
+                                BankCD = dtgv.Rows[0]["BankCD"].ToString(),
+                                BranchCD = dtgv.Rows[0]["BranchCD"].ToString(),
+                                KouzaKBN = dtgv.Rows[0]["KouzaKBN"].ToString(),
+                                KouzaNO = dtgv.Rows[0]["KouzaNO"].ToString(),
+                                KouzaMeigi = dtgv.Rows[0]["KouzaMeigi"].ToString(),
+                                //PayGaku = dtgv.Rows[0]["transferAcc"].ToString(),
+                                TransferGaku = dtgv.Rows[0]["TransferGaku"].ToString(),
+                                TransferFee = dtgv.Rows[0]["TransferFeeGaku"].ToString(),
+                                TransferFeeKBN = dtgv.Rows[0]["FeeKBN"].ToString(),
+                            };
+                            dpe = new D_Pay_Entity
+                            {
+                                Flg = cboProcess.SelectedValue.ToString(),
+                                TransferGaku = lblTransferAmount.Text,
+                                count = dtgv.Rows.Count.ToString(),
+                            };
+                            DataTable dttext = new DataTable();
+                            dttext = fbbl.D_Pay_SelectForText(dfbe, dpe);
+                            if (dttext.Rows.Count > 0)
+                            {
+                                string Folderpath = "C:\\Test\\";
+                                if (!string.IsNullOrWhiteSpace(Folderpath))
+                                {
+                                    if (!Directory.Exists(Folderpath))
+                                    {
+                                        Directory.CreateDirectory(Folderpath);
+                                    }
+
+                                    SaveFileDialog savedialog = new SaveFileDialog();
+                                    savedialog.Filter = "Test|*.txt";
+
+                                    savedialog.Title = "Save";
+                                    string cmdLine = "TestFile" + " " + DateTime.Now.ToString(" yyyyMMdd_HHmmss ");
+                                    savedialog.FileName = cmdLine;
+                                    savedialog.InitialDirectory = Folderpath;
+                                    savedialog.RestoreDirectory = true;
+                                    if (savedialog.ShowDialog() == DialogResult.OK)
+                                    {
+                                        if (Path.GetExtension(savedialog.FileName).Contains("txt"))
+                                        {
+                                            var result = new StringBuilder();
+                                            foreach (DataRow row in dttext.Rows)
+                                            {
+                                                for (int i = 0; i < dttext.Columns.Count; i++)
+                                                {
+                                                    result.Append(row[i].ToString());
+
+                                                    //result.Append(i == dttext.Columns.Count - 1 );
+                                                }
+                                                result.AppendLine();
+                                                result.Replace("/", "");
+                                            }
+
+                                            //using (StreamWriter writer = new StreamWriter(Folderpath + "TestFile" + ".csv", false, utf8WithoutBom))
+                                            //{
+                                            //    objWriter.WriteLine(result.ToString());
+                                            //    objWriter.Close();
+                                            //}
+                                            StreamWriter objWriter = new StreamWriter(Folderpath + cmdLine + ".txt", false);
+                                            objWriter.WriteLine(result.ToString());
+                                            objWriter.Close();
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+                            if (fbbl.FBDataSakusei_Insert(dfbe, dfde, dpe))
+                            {
+                                Clear(panel1);
+                                BindCombo();
+                                cboProcess.Focus();
+                            }
+
                         }
-
-                        dfde = new D_FBData_Entity
-                        {
-                            PayeeCD = dtgv.Rows[0]["PayeeCD"].ToString(),
-                            PayeeName = dtgv.Rows[0]["VendorName"].ToString(),
-                            BankCD = dtgv.Rows[0]["BankCD"].ToString(),
-                            BranchCD = dtgv.Rows[0]["BranchCD"].ToString(),
-                            KouzaKBN = dtgv.Rows[0]["KouzaKBN"].ToString(),
-                            KouzaNO = dtgv.Rows[0]["KouzaNO"].ToString(),
-                            KouzaMeigi = dtgv.Rows[0]["KouzaMeigi"].ToString(),
-                            PayGaku = dtgv.Rows[0]["transferAcc"].ToString(),
-                            TransferGaku = dtgv.Rows[0]["TransferGaku"].ToString(),
-                            TransferFee = dtgv.Rows[0]["TransferFeeGaku"].ToString(),
-                            TransferFeeKBN = dtgv.Rows[0]["FeeKBN1"].ToString(),
-                            StaffCD = InOperatorCD,
-                        };
-                        if(fbbl.D_FBData_Insert(dfde))
-                        {
-
-                        }
-                        
-                           
-
                     }
+                    else if (Btn_F12.Text == "削除(F12)")
+                    {
+                        if (bbl.ShowMessage("Q102") == DialogResult.Yes)
+                        {
+                            dfbe = new D_FBControl_Entity
+                            {
+                                Operator = InOperatorCD,
+                            };
+                            if (fbbl.FBDataSakusei_Update(dfbe))
+                            {
+                                Clear(panel1);
+                                BindCombo();
+                                cboProcess.Focus();
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    bbl.ShowMessage("E200");
+                    cboProcess.Focus();                   
                 }
             }
         }

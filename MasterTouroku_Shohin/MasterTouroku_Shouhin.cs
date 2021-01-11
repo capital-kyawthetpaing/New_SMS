@@ -42,7 +42,7 @@ namespace MasterTouroku_Shouhin
         , ChkDiscontinueFlg
         , ChkStopFlg
         , ChkDiscountKBN
-        , ChkZaikoKBN
+        , Chk5
         , Chk6
 
         , ChkPresentKBN
@@ -54,8 +54,8 @@ namespace MasterTouroku_Shouhin
 
         , ChkDirectFlg
         , ChkParcelFlg
-        , Chk15
-        , Chk16
+        , ChkZaikoKBN
+        , ChkSoldOutFlg
         , Chk17
         , ChkSaleExcludedFlg
 
@@ -150,9 +150,10 @@ namespace MasterTouroku_Shouhin
         private DataTable dtSKU;
         private DataTable dtSite;
         private int mFractionKBN;
+        private string mJanCount;
         private decimal mOldPriceOutTax;
         private decimal mOldRate;
-        private decimal mOldOrderPriceWithoutTax;  
+        private decimal mOldOrderPriceWithoutTax;
 
         public MasterTouroku_Shouhin()
         {
@@ -302,9 +303,8 @@ namespace MasterTouroku_Shouhin
                 switch(i)
                 {
                     case (int)EIndex.ChkVirtualFlg:
+                    case (int)EIndex.Chk5:
                     case (int)EIndex.Chk6:
-                    case (int)EIndex.Chk15:
-                    case (int)EIndex.Chk16:
                     case (int)EIndex.Chk17:
                     case (int)EIndex.Chk27:
                     case (int)EIndex.Chk28:
@@ -616,6 +616,8 @@ namespace MasterTouroku_Shouhin
                             ((CheckBox)detailControls[(int)EIndex.ChkCatalogFlg]).Checked = true;
                         if (mie.ParcelFlg.Equals("1"))
                             ((CheckBox)detailControls[(int)EIndex.ChkParcelFlg]).Checked = true;
+                        if(mie.SoldOutFlg.Equals("1"))
+                            ((CheckBox)detailControls[(int)EIndex.ChkSoldOutFlg]).Checked = true;
                         if (mie.AutoOrderFlg.Equals("1"))
                             ((CheckBox)detailControls[(int)EIndex.ChkAutoOrderFlg]).Checked = true;
                         if (mie.SaleExcludedFlg.Equals("1"))
@@ -914,7 +916,6 @@ namespace MasterTouroku_Shouhin
             {
                 case (int)EIndex.SKUName:
                 case (int)EIndex.SKUShortName:
-                case (int)EIndex.KanaName:
                 case (int)EIndex.MakerItem:
                     //入力必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
@@ -926,6 +927,9 @@ namespace MasterTouroku_Shouhin
                     {
                         detailControls[(int)EIndex.SKUShortName].Text =bbl.LeftB( detailControls[index].Text,40);
                     }
+                    break;
+
+                case (int)EIndex.KanaName:
                     break;
 
                 case (int)EIndex.BrandCD:
@@ -1313,6 +1317,7 @@ namespace MasterTouroku_Shouhin
                     case (int)EIndex.ChkAutoOrderFlg: name = "AutoOrderFlg"; oldVal = mie.AutoOrderFlg == null ? "0" : mie.AutoOrderFlg; break;
                     case (int)EIndex.ChkDirectFlg: name = "DirectFlg"; oldVal = mie.DirectFlg == null ? "0" : mie.DirectFlg; break;
                     case (int)EIndex.ChkParcelFlg: name = "ParcelFlg"; oldVal = mie.ParcelFlg == null ? "0" : mie.ParcelFlg; break;
+                    case (int)EIndex.ChkSoldOutFlg: name = "SoldOutFlg"; oldVal = mie.SoldOutFlg == null ? "0" : mie.SoldOutFlg; break;
                     case (int)EIndex.ChkSaleExcludedFlg: name = "SaleExcludedFlg"; oldVal = mie.SaleExcludedFlg == null ? "0" : mie.SaleExcludedFlg; break;
                     case (int)EIndex.ChkWebStockFlg: name = "WebStockFlg"; oldVal = mie.WebStockFlg == null ? "0" : mie.WebStockFlg; break;
                     case (int)EIndex.ChkInventoryAddFlg: name = "InventoryAddFlg"; oldVal = mie.InventoryAddFlg == null ? "0" : mie.InventoryAddFlg; break;
@@ -1391,6 +1396,7 @@ namespace MasterTouroku_Shouhin
                     case (int)EIndex.ChkAutoOrderFlg:
                     case (int)EIndex.ChkDirectFlg:
                     case (int)EIndex.ChkParcelFlg:
+                    case (int)EIndex.ChkSoldOutFlg:
                     case (int)EIndex.ChkSaleExcludedFlg:
                     case (int)EIndex.ChkWebStockFlg:
                     case (int)EIndex.ChkInventoryAddFlg:
@@ -1579,6 +1585,7 @@ namespace MasterTouroku_Shouhin
             mie.EDIOrderFlg = ((CheckBox)detailControls[(int)EIndex.ChkEDIOrderFlg]).Checked ? "1" : "0";
             mie.CatalogFlg = ((CheckBox)detailControls[(int)EIndex.ChkCatalogFlg]).Checked ? "1" : "0";
             mie.ParcelFlg = ((CheckBox)detailControls[(int)EIndex.ChkParcelFlg]).Checked ? "1" : "0";
+            mie.SoldOutFlg = ((CheckBox)detailControls[(int)EIndex.ChkSoldOutFlg]).Checked ? "1" : "0";
             mie.AutoOrderFlg = ((CheckBox)detailControls[(int)EIndex.ChkAutoOrderFlg]).Checked ? "1" : "0";
             mie.TaxRateFLG = ((ComboBox)detailControls[(int)EIndex.CmbTaxRateFLG]).SelectedValue.ToString();
             mie.TaxRateFLGName = detailControls[(int)EIndex.CmbTaxRateFLG].Text;
@@ -1731,104 +1738,7 @@ namespace MasterTouroku_Shouhin
                                 //セット品の場合は展開が必須
                                 if (!((CheckBox)detailControls[(int)EIndex.ChkSetKBN]).Checked)
                                 {
-
-                                    //新規データ
-                                    DataRow newrow = dtSKU.NewRow();
-
-                                    //SKU画面のChkAll参照
-                                    //データをDataTableに
-                                    newrow["ITemCD"] = mie.ITemCD;
-                                    newrow["SKUCD"] = keyControls[(int)EIndex.ItemCD].Text + dgvDetail.Columns[columnIndex].HeaderText + dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
-                                    newrow["ChangeDate"] = mie.ChangeDate;
-                                    newrow["ColorNO"] = dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
-                                    newrow["SizeNO"] = dgvDetail.Columns[columnIndex].HeaderText;
-                                    newrow["ColorName"] = dgvDetail.Rows[rowIndex].Cells[1].Value.ToString().Trim();
-                                    newrow["SizeName"] = dgvDetail.Rows[0].Cells[columnIndex].Value.ToString().Trim();
-
-                                    newrow["JanCD"] = jancd;
-                                    //newrow["SetAdminCD"] = keyControls[(int)EIndex.SetAdminCD].Text;
-                                    //newrow["SetItemCD"] = keyControls[(int)EIndex.SetItemCD].Text;
-                                    newrow["SetSKUCD"] = "";
-                                    newrow["SetSU"] = 0;
-                                    newrow["ApprovalDate"] = detailControls[(int)EIndex.ApprovalDate].Text;
-
-                                    newrow["SKUName"] = detailControls[(int)EIndex.SKUName].Text;
-                                    newrow["KanaName"] = detailControls[(int)EIndex.KanaName].Text;
-                                    newrow["SKUShortName"] = detailControls[(int)EIndex.SKUShortName].Text;
-                                    newrow["EnglishName"] = detailControls[(int)EIndex.EnglishName].Text;
-                                    newrow["MakerItem"] = detailControls[(int)EIndex.MakerItem].Text;
-
-                                    newrow["VariousFLG"] = ((CheckBox)detailControls[(int)EIndex.ChkVariousFLG]).Checked ? 1 : 0;
-                                    newrow["SetKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkSetKBN]).Checked ? 1 : 0;
-                                    newrow["PresentKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkPresentKBN]).Checked ? 1 : 0;
-                                    newrow["SampleKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkSampleKBN]).Checked ? 1 : 0;
-                                    newrow["DiscountKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkDiscountKBN]).Checked ? 1 : 0;
-
-                                    newrow["WebFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkWebFlg]).Checked ? 1 : 0;
-                                    newrow["RealStoreFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkRealStoreFlg]).Checked ? 1 : 0;
-                                    newrow["MainVendorCD"] = detailControls[(int)EIndex.MainVendorCD].Text;
-                                    //newrow["MakerVendorCD"] = detailControls[(int)EIndex.MakerVendorCD].Text;
-
-                                    newrow["ZaikoKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkZaikoKBN]).Checked ? 1 : 0;
-                                    newrow["Rack"] = detailControls[(int)EIndex.Rack].Text;
-                                    newrow["VirtualFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkVirtualFlg]).Checked ? 1 : 0;
-                                    newrow["DirectFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkDirectFlg]).Checked ? 1 : 0;
-
-                                    newrow["WebStockFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkWebStockFlg]).Checked ? 1 : 0;
-                                    newrow["StopFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkStopFlg]).Checked ? 1 : 0;
-                                    newrow["DiscontinueFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkDiscontinueFlg]).Checked ? 1 : 0;
-                                    newrow["InventoryAddFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkInventoryAddFlg]).Checked ? 1 : 0;
-                                    newrow["MakerAddFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkMakerAddFlg]).Checked ? 1 : 0;
-                                    newrow["StoreAddFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkStoreAddFlg]).Checked ? 1 : 0;
-                                    newrow["NoNetOrderFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkNoNetOrderFlg]).Checked ? 1 : 0;
-                                    newrow["EDIOrderFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkEDIOrderFlg]).Checked ? 1 : 0;
-                                    newrow["CatalogFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkCatalogFlg]).Checked ? 1 : 0;
-                                    newrow["ParcelFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkParcelFlg]).Checked ? 1 : 0;
-                                    newrow["AutoOrderFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkAutoOrderFlg]).Checked ? 1 : 0;
-
-                                    newrow["SaleExcludedFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkSaleExcludedFlg]).Checked ? 1 : 0;
-                                    newrow["PriceWithTax"] = bbl.Z_Set(detailControls[(int)EIndex.PriceWithTax].Text);
-                                    newrow["PriceOutTax"] = bbl.Z_Set(detailControls[(int)EIndex.PriceOutTax].Text);
-                                    newrow["OrderPriceWithTax"] = bbl.Z_Set(detailControls[(int)EIndex.OrderPriceWithTax].Text);
-                                    newrow["OrderPriceWithoutTax"] = bbl.Z_Set(detailControls[(int)EIndex.OrderPriceWithoutTax].Text);
-                                    newrow["Rate"] = bbl.Z_Set(detailControls[(int)EIndex.Rate].Text);
-                                    newrow["SaleStartDate"] = detailControls[(int)EIndex.SaleStartDate].Text;
-                                    newrow["WebStartDate"] = detailControls[(int)EIndex.WebStartDate].Text;
-                                    newrow["OrderAttentionCD"] = cmbOrderAttentionCD.SelectedIndex > 0 ? cmbOrderAttentionCD.SelectedValue : "";
-                                    newrow["OrderAttentionNote"] = detailControls[(int)EIndex.OrderAttentionNote].Text;
-                                    newrow["CommentInStore"] = detailControls[(int)EIndex.CommentInStore].Text;
-                                    newrow["CommentOutStore"] = detailControls[(int)EIndex.CommentOutStore].Text;
-                                    newrow["ExhibitionSegmentCD"] = detailControls[(int)EIndex.ExhibitionSegmentCD].Text;
-                                    newrow["OrderLot"] = detailControls[(int)EIndex.OrderLot].Text;
-                                    newrow["LastYearTerm"] = detailControls[(int)EIndex.CmbLastYearTerm].Text;
-                                    newrow["LastSeason"] = detailControls[(int)EIndex.CmbLastSeason].Text;
-                                    newrow["LastCatalogNO"] = detailControls[(int)EIndex.LastCatalogNO].Text;
-                                    newrow["LastCatalogPage"] = detailControls[(int)EIndex.LastCatalogPage].Text;
-                                    newrow["LastCatalogText"] = detailControls[(int)EIndex.LastCatalogText].Text;
-                                    newrow["LastInstructionsNO"] = detailControls[(int)EIndex.LastInstructionsNO].Text;
-                                    newrow["LastInstructionsDate"] = detailControls[(int)EIndex.LastInstructionsDate].Text;
-                                    newrow["WebAddress"] = detailControls[(int)EIndex.WebAddress].Text;
-                                    newrow["TagName1"] = detailControls[(int)EIndex.CmbTag1].Text;
-                                    newrow["TagName2"] = detailControls[(int)EIndex.CmbTag2].Text;
-                                    newrow["TagName3"] = detailControls[(int)EIndex.CmbTag3].Text;
-                                    newrow["TagName4"] = detailControls[(int)EIndex.CmbTag4].Text;
-                                    newrow["TagName5"] = detailControls[(int)EIndex.CmbTag5].Text;
-                                    newrow["TagName6"] = detailControls[(int)EIndex.CmbTag6].Text;
-                                    newrow["TagName7"] = detailControls[(int)EIndex.CmbTag7].Text;
-                                    newrow["TagName8"] = detailControls[(int)EIndex.CmbTag8].Text;
-                                    newrow["TagName9"] = detailControls[(int)EIndex.CmbTag9].Text;
-                                    newrow["TagName10"] = detailControls[(int)EIndex.CmbTag10].Text;
-
-                                    //チェックボックス
-                                    if (checkDeleteFlg.Checked)
-                                        newrow["DeleteFlg"] = 1;
-                                    else
-                                        newrow["DeleteFlg"] = 0;
-
-                                    //if (row.Length == 0)
-                                    //{
-                                    dtSKU.Rows.Add(newrow);
-                                    //}
+                                    SetDataToNewRow(columnIndex,rowIndex, jancd);                                   
                                 }
                             }
 
@@ -1892,6 +1802,9 @@ namespace MasterTouroku_Shouhin
             DataTable dtS = mibl.GetSiteEntity(dtSite);
 
             mibl.M_ITEM_Exec(mie,dt,dtS, (short)OperationMode);
+
+            if (OperationMode != EOperationMode.DELETE)
+                UpdateCounter();
 
             //更新後画面クリア
             InitScr();
@@ -1970,6 +1883,7 @@ namespace MasterTouroku_Shouhin
             //{
                 Scr_Clr(0);
             //}
+            ResetCounter();
 
             switch (mode)
             {
@@ -2161,15 +2075,15 @@ namespace MasterTouroku_Shouhin
                         SearchData(kbn, PreviousCtrl);
 
                     break;
-                case 9://F10:展開
-                    InitGrid();
-                    //if (dgvDetail.CurrentCell == null)
-                    //    return;
+                //case 9://F10:展開
+                //    InitGrid();
+                //    //if (dgvDetail.CurrentCell == null)
+                //    //    return;
 
-                    //int ColumnIndex = dgvDetail.CurrentCell.ColumnIndex;
-                    //int RowIndex = dgvDetail.CurrentCell.RowIndex;
-                    //Expand(ColumnIndex, RowIndex);
-                    break;
+                //    //int ColumnIndex = dgvDetail.CurrentCell.ColumnIndex;
+                //    //int RowIndex = dgvDetail.CurrentCell.RowIndex;
+                //    //Expand(ColumnIndex, RowIndex);
+                //    break;
 
                 case 11:    //F12:登録
                     {
@@ -2198,6 +2112,7 @@ namespace MasterTouroku_Shouhin
         // ==================================================
         protected override void EndSec()
         {
+            ResetCounter();
             this.Close();
             //アプリケーションを終了する
             //Application.Exit();
@@ -2691,6 +2606,163 @@ namespace MasterTouroku_Shouhin
                 e.CellStyle.BackColor = Color.Silver;
             }
         }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //画面のJANCDをクリアする（自動採番以外のJANCDも含めて）
+                for (int i = 1; i < dgvDetail.Rows.Count; i++)
+                {
+                    for (int ic = 2; ic < dgvDetail.ColumnCount; ic++)
+                    {
+                        dgvDetail.Rows[i].Cells[ic].Value = "";
+                    }
+                }
+
+                ResetCounter();
+                
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnCount_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //カラー、サイズの未入力チェックも必要
+
+                //JANDCの入力が無いセルを対象にJANCDを自動採番し表示する
+                //JANDCの入力が無いセルが存在する場合
+                //①採番可否の判断（他の画面で自動採番中であればエラーにする）
+                //M_JANCounterを	MainKEY＝	1でSelect	
+                M_JANCounter_Entity me = new M_JANCounter_Entity();
+                me.MainKEY = "1";
+                bool ret = mibl.M_JANCounter_Select(me);
+
+                if (ret)
+                {
+                    //UpdatingFlg＝１であればエラー
+                    if (me.UpdatingFlg.Equals("1"))
+                    {
+                        bbl.ShowMessage("E220");
+                        //OKボタンでJANCD採番ボタンにカーソル戻す
+                        btnCount.Focus();
+                        return;
+                    }
+
+                    dgvDetail.CommitEdit(DataGridViewDataErrorContexts.Commit);
+
+                    //以下②以降はエラーでない場合のみ実行
+                    //②	JANCDの採番                    
+                    for (int i = 0; i < dgvDetail.Rows.Count; i++)
+                    {
+                        for (int ic = 1; ic < dgvDetail.ColumnCount; ic++)
+                        {
+                            if (i.Equals(0))
+                            {
+                                if (ic.Equals(1))
+                                    continue;
+
+                                //サイズ名必須
+                                if (dgvDetail.Rows[0].Cells[ic].Value == null)
+                                {
+                                    bbl.ShowMessage("E102");
+                                    dgvDetail.CurrentCell = dgvDetail[ic, 0];
+                                    dgvDetail.Focus();
+                                    return;
+                                }
+                                else
+                                {
+                                    //サイズ名をセット
+                                    DataRow[] row = dtSKU.Select("SizeNO = " + dgvDetail.Columns[ic].HeaderText);
+                                    foreach (DataRow rw in row)
+                                    {
+                                        //サイズ名をセット
+                                        rw["SizeName"] = dgvDetail.Rows[0].Cells[ic].Value.ToString().Trim();
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (ic.Equals(1))
+                                {
+                                    //カラー名必須
+                                    if (dgvDetail.Rows[i].Cells[1].Value == null)
+                                    {
+                                        bbl.ShowMessage("E102");
+                                        dgvDetail.CurrentCell = dgvDetail[1, i];
+                                        dgvDetail.Focus();
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        DataRow[] row = dtSKU.Select("ColorNo = " + dgvDetail.Rows[i].Cells[0].Value.ToString());
+                                        foreach (DataRow rw in row)
+                                        {
+                                            //カラー名をセット
+                                            rw["ColorName"] = dgvDetail.Rows[i].Cells[1].Value.ToString().Trim();
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    int rowIndex = i;
+                                    int columnIndex = ic;
+
+                                    if (dgvDetail.Rows[rowIndex].Cells[columnIndex].Value != null && !string.IsNullOrWhiteSpace(dgvDetail.Rows[rowIndex].Cells[columnIndex].Value.ToString()))
+                                        continue;
+
+                                    //JANDCの入力が無いセルごとに（順番は横→縦　下記の例で①②③④の順）JanCountを元にカウントアップ（12桁）
+                                    //カウントアップした値を（12桁）をパラメータにして、Fnc_SetCheckdigitからの戻り値（13桁）を画面表示する		
+                                    string jancd = bbl.Fnc_SetCheckdigit(me.JanCount);
+                                    dgvDetail.Rows[rowIndex].Cells[columnIndex].Value = jancd;
+
+                                    // parSKUCD + parSizeNo + parColorNo
+                                    DataRow[] rows = dtSKU.Select("SizeNo = " + dgvDetail.Columns[columnIndex].HeaderText
+                                                + " AND ColorNo = " + dgvDetail.Rows[rowIndex].Cells[0].Value.ToString());
+                                    foreach (DataRow dr in rows)
+                                    {
+                                        dr["SKUCD"] = keyControls[(int)EIndex.ItemCD].Text + dgvDetail.Columns[columnIndex].HeaderText + dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
+                                    }
+
+                                    if (rows.Length.Equals(0))
+                                    {
+                                        //セット品の場合は展開が必須
+                                        if (!((CheckBox)detailControls[(int)EIndex.ChkSetKBN]).Checked)
+                                        {
+                                            SetDataToNewRow(columnIndex, rowIndex, jancd);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        rows[0]["JanCD"] = jancd;
+                                    }
+                                    //③M_JANCounterをUpdate	
+                                    me.UpdatingFlg = "1";
+                                    me.Operator = InOperatorCD;
+                                    mibl.M_JANCounter_Update(me);
+
+                                    //④カウントアップした最大値を覚える
+                                    mJanCount =me.JanCount;
+                                }
+                            }
+                        }
+                    }
+
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         #endregion
 
@@ -2713,6 +2785,154 @@ namespace MasterTouroku_Shouhin
                 out dNullable
             );
         }
+        private void SetDataToNewRow(int columnIndex, int rowIndex, string jancd)
+        {
+            //新規データ
+            DataRow newrow = dtSKU.NewRow();
 
+            //SKU画面のChkAll参照
+            //データをDataTableに
+            newrow["ITemCD"] = mie.ITemCD;
+            newrow["SKUCD"] = keyControls[(int)EIndex.ItemCD].Text + dgvDetail.Columns[columnIndex].HeaderText + dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
+            newrow["ChangeDate"] = mie.ChangeDate;
+            newrow["ColorNO"] = dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
+            newrow["SizeNO"] = dgvDetail.Columns[columnIndex].HeaderText;
+            newrow["ColorName"] = dgvDetail.Rows[rowIndex].Cells[1].Value.ToString().Trim();
+            newrow["SizeName"] = dgvDetail.Rows[0].Cells[columnIndex].Value.ToString().Trim();
+
+            newrow["JanCD"] = jancd;
+            //newrow["SetAdminCD"] = keyControls[(int)EIndex.SetAdminCD].Text;
+            //newrow["SetItemCD"] = keyControls[(int)EIndex.SetItemCD].Text;
+            newrow["SetSKUCD"] = "";
+            newrow["SetSU"] = 0;
+            newrow["ApprovalDate"] = detailControls[(int)EIndex.ApprovalDate].Text;
+
+            newrow["SKUName"] = detailControls[(int)EIndex.SKUName].Text;
+            newrow["KanaName"] = detailControls[(int)EIndex.KanaName].Text;
+            newrow["SKUShortName"] = detailControls[(int)EIndex.SKUShortName].Text;
+            newrow["EnglishName"] = detailControls[(int)EIndex.EnglishName].Text;
+            newrow["MakerItem"] = detailControls[(int)EIndex.MakerItem].Text;
+
+            newrow["VariousFLG"] = ((CheckBox)detailControls[(int)EIndex.ChkVariousFLG]).Checked ? 1 : 0;
+            newrow["SetKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkSetKBN]).Checked ? 1 : 0;
+            newrow["PresentKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkPresentKBN]).Checked ? 1 : 0;
+            newrow["SampleKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkSampleKBN]).Checked ? 1 : 0;
+            newrow["DiscountKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkDiscountKBN]).Checked ? 1 : 0;
+
+            newrow["WebFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkWebFlg]).Checked ? 1 : 0;
+            newrow["RealStoreFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkRealStoreFlg]).Checked ? 1 : 0;
+            newrow["MainVendorCD"] = detailControls[(int)EIndex.MainVendorCD].Text;
+            //newrow["MakerVendorCD"] = detailControls[(int)EIndex.MakerVendorCD].Text;
+
+            newrow["ZaikoKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkZaikoKBN]).Checked ? 1 : 0;
+            newrow["Rack"] = detailControls[(int)EIndex.Rack].Text;
+            newrow["VirtualFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkVirtualFlg]).Checked ? 1 : 0;
+            newrow["DirectFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkDirectFlg]).Checked ? 1 : 0;
+
+            newrow["WebStockFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkWebStockFlg]).Checked ? 1 : 0;
+            newrow["StopFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkStopFlg]).Checked ? 1 : 0;
+            newrow["DiscontinueFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkDiscontinueFlg]).Checked ? 1 : 0;
+            newrow["InventoryAddFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkInventoryAddFlg]).Checked ? 1 : 0;
+            newrow["MakerAddFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkMakerAddFlg]).Checked ? 1 : 0;
+            newrow["StoreAddFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkStoreAddFlg]).Checked ? 1 : 0;
+            newrow["NoNetOrderFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkNoNetOrderFlg]).Checked ? 1 : 0;
+            newrow["EDIOrderFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkEDIOrderFlg]).Checked ? 1 : 0;
+            newrow["CatalogFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkCatalogFlg]).Checked ? 1 : 0;
+            newrow["ParcelFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkParcelFlg]).Checked ? 1 : 0;
+            newrow["SoldOutFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkSoldOutFlg]).Checked ? 1 : 0;
+            newrow["AutoOrderFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkAutoOrderFlg]).Checked ? 1 : 0;
+
+            newrow["SaleExcludedFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkSaleExcludedFlg]).Checked ? 1 : 0;
+            newrow["PriceWithTax"] = bbl.Z_Set(detailControls[(int)EIndex.PriceWithTax].Text);
+            newrow["PriceOutTax"] = bbl.Z_Set(detailControls[(int)EIndex.PriceOutTax].Text);
+            newrow["OrderPriceWithTax"] = bbl.Z_Set(detailControls[(int)EIndex.OrderPriceWithTax].Text);
+            newrow["OrderPriceWithoutTax"] = bbl.Z_Set(detailControls[(int)EIndex.OrderPriceWithoutTax].Text);
+            newrow["Rate"] = bbl.Z_Set(detailControls[(int)EIndex.Rate].Text);
+            newrow["SaleStartDate"] = detailControls[(int)EIndex.SaleStartDate].Text;
+            newrow["WebStartDate"] = detailControls[(int)EIndex.WebStartDate].Text;
+            newrow["OrderAttentionCD"] = cmbOrderAttentionCD.SelectedIndex > 0 ? cmbOrderAttentionCD.SelectedValue : "";
+            newrow["OrderAttentionNote"] = detailControls[(int)EIndex.OrderAttentionNote].Text;
+            newrow["CommentInStore"] = detailControls[(int)EIndex.CommentInStore].Text;
+            newrow["CommentOutStore"] = detailControls[(int)EIndex.CommentOutStore].Text;
+            newrow["ExhibitionSegmentCD"] = detailControls[(int)EIndex.ExhibitionSegmentCD].Text;
+            newrow["OrderLot"] = detailControls[(int)EIndex.OrderLot].Text;
+            newrow["LastYearTerm"] = detailControls[(int)EIndex.CmbLastYearTerm].Text;
+            newrow["LastSeason"] = detailControls[(int)EIndex.CmbLastSeason].Text;
+            newrow["LastCatalogNO"] = detailControls[(int)EIndex.LastCatalogNO].Text;
+            newrow["LastCatalogPage"] = detailControls[(int)EIndex.LastCatalogPage].Text;
+            newrow["LastCatalogText"] = detailControls[(int)EIndex.LastCatalogText].Text;
+            newrow["LastInstructionsNO"] = detailControls[(int)EIndex.LastInstructionsNO].Text;
+            newrow["LastInstructionsDate"] = detailControls[(int)EIndex.LastInstructionsDate].Text;
+            newrow["WebAddress"] = detailControls[(int)EIndex.WebAddress].Text;
+            newrow["TagName1"] = detailControls[(int)EIndex.CmbTag1].Text;
+            newrow["TagName2"] = detailControls[(int)EIndex.CmbTag2].Text;
+            newrow["TagName3"] = detailControls[(int)EIndex.CmbTag3].Text;
+            newrow["TagName4"] = detailControls[(int)EIndex.CmbTag4].Text;
+            newrow["TagName5"] = detailControls[(int)EIndex.CmbTag5].Text;
+            newrow["TagName6"] = detailControls[(int)EIndex.CmbTag6].Text;
+            newrow["TagName7"] = detailControls[(int)EIndex.CmbTag7].Text;
+            newrow["TagName8"] = detailControls[(int)EIndex.CmbTag8].Text;
+            newrow["TagName9"] = detailControls[(int)EIndex.CmbTag9].Text;
+            newrow["TagName10"] = detailControls[(int)EIndex.CmbTag10].Text;
+
+            //チェックボックス
+            if (checkDeleteFlg.Checked)
+                newrow["DeleteFlg"] = 1;
+            else
+                newrow["DeleteFlg"] = 0;
+
+            //if (row.Length == 0)
+            //{
+            dtSKU.Rows.Add(newrow);
+            //}
+        }
+        private void UpdateCounter()
+        {
+            //自身がカウントアップしていたJANのカウンター値を更新する
+
+            //M_JANCounterを	MainKEY＝	1でSelect	
+            M_JANCounter_Entity me = new M_JANCounter_Entity();
+            me.MainKEY = "1";
+            bool ret = mibl.M_JANCounter_Select(me);
+
+            if (ret)
+            {
+                //UpdatingFlg＝１かつ、JANCount＝覚えていたカウントアップした最大値であればM_JANCounterをUpdate	
+                if (me.UpdatingFlg.Equals("1") && me.JanCount.Equals(mJanCount))
+                {
+                    me.UpdatingFlg = "2";
+                    me.Operator = InOperatorCD;
+                    mibl.M_JANCounter_Update(me);
+
+                    //覚えていたカウントアップした最大値も０クリア
+                    mJanCount = "0";
+                }
+            }
+
+        }
+        private void ResetCounter()
+        {
+            //自身がカウントアップしていたJANのカウンター値を元に戻す
+
+            //M_JANCounterを	MainKEY＝	1でSelect	
+            M_JANCounter_Entity me = new M_JANCounter_Entity();
+            me.MainKEY = "1";
+            bool ret = mibl.M_JANCounter_Select(me);
+
+            if (ret)
+            {
+                //UpdatingFlg＝１かつ、JANCount＝覚えていたカウントアップした最大値であればM_JANCounterをUpdate	
+                if (me.UpdatingFlg.Equals("1") && me.JanCount.Equals(mJanCount))
+                {
+                    me.UpdatingFlg = "0";
+                    me.Operator = InOperatorCD;
+                    mibl.M_JANCounter_Update(me);
+
+                    //覚えていたカウントアップした最大値も０クリア
+                    mJanCount = "0";
+                }
+            }
+
+        }
     }
 }

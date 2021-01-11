@@ -50,6 +50,14 @@
             // 
             this.PanelHeader.Size = new System.Drawing.Size(1711, 0);
             // 
+            // PanelSearch
+            // 
+            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
+            // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // ckM_Label1
             // 
             this.ckM_Label1.AutoSize = true;
@@ -95,6 +103,7 @@
             this.cboStoreAuthorizations.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboStoreAuthorizations.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア;
             this.cboStoreAuthorizations.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboStoreAuthorizations.Flag = 0;
             this.cboStoreAuthorizations.FormattingEnabled = true;
             this.cboStoreAuthorizations.Length = 10;
             this.cboStoreAuthorizations.Location = new System.Drawing.Point(1503, 18);
@@ -162,19 +171,23 @@
             this.ScCollectCustomerCD.ChangeDateWidth = 100;
             this.ScCollectCustomerCD.Code = "";
             this.ScCollectCustomerCD.CodeWidth = 100;
+            this.ScCollectCustomerCD.CodeWidth1 = 100;
             this.ScCollectCustomerCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCollectCustomerCD.DataCheck = false;
             this.ScCollectCustomerCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScCollectCustomerCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScCollectCustomerCD.IsCopy = false;
             this.ScCollectCustomerCD.LabelText = "";
             this.ScCollectCustomerCD.LabelVisible = true;
             this.ScCollectCustomerCD.Location = new System.Drawing.Point(150, 92);
             this.ScCollectCustomerCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScCollectCustomerCD.Name = "ScCollectCustomerCD";
+            this.ScCollectCustomerCD.NameWidth = 500;
             this.ScCollectCustomerCD.SearchEnable = true;
             this.ScCollectCustomerCD.Size = new System.Drawing.Size(634, 28);
             this.ScCollectCustomerCD.Stype = Search.CKM_SearchControl.SearchType.得意先;
             this.ScCollectCustomerCD.TabIndex = 7;
+            this.ScCollectCustomerCD.test = null;
             this.ScCollectCustomerCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCollectCustomerCD.UseChangeDate = false;
             this.ScCollectCustomerCD.Value1 = null;
@@ -189,13 +202,14 @@
             this.cboWebCollectType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboWebCollectType.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.取込種別;
             this.cboWebCollectType.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboWebCollectType.Flag = 0;
             this.cboWebCollectType.FormattingEnabled = true;
             this.cboWebCollectType.Length = 10;
             this.cboWebCollectType.Location = new System.Drawing.Point(150, 70);
             this.cboWebCollectType.MaxLength = 10;
             this.cboWebCollectType.MoveNext = true;
             this.cboWebCollectType.Name = "cboWebCollectType";
-            this.cboWebCollectType.Size = new System.Drawing.Size(121, 20);
+            this.cboWebCollectType.Size = new System.Drawing.Size(90, 20);
             this.cboWebCollectType.TabIndex = 6;
             // 
             // txtInputDateT
@@ -203,7 +217,9 @@
             this.txtInputDateT.AllowMinus = false;
             this.txtInputDateT.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtInputDateT.BackColor = System.Drawing.Color.White;
+            this.txtInputDateT.BorderColor = false;
             this.txtInputDateT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtInputDateT.ClientColor = System.Drawing.Color.White;
             this.txtInputDateT.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtInputDateT.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtInputDateT.DecimalPlace = 0;
@@ -211,6 +227,8 @@
             this.txtInputDateT.IntegerPart = 0;
             this.txtInputDateT.IsCorrectDate = true;
             this.txtInputDateT.isEnterKeyDown = false;
+            this.txtInputDateT.IsFirstTime = true;
+            this.txtInputDateT.isMaxLengthErr = false;
             this.txtInputDateT.IsNumber = true;
             this.txtInputDateT.IsShop = false;
             this.txtInputDateT.Length = 10;
@@ -222,6 +240,7 @@
             this.txtInputDateT.TabIndex = 5;
             this.txtInputDateT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtInputDateT.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtInputDateT.UseColorSizMode = false;
             this.txtInputDateT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtInputDateT_KeyDown);
             // 
             // txtInputDateF
@@ -229,7 +248,9 @@
             this.txtInputDateF.AllowMinus = false;
             this.txtInputDateF.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtInputDateF.BackColor = System.Drawing.Color.White;
+            this.txtInputDateF.BorderColor = false;
             this.txtInputDateF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtInputDateF.ClientColor = System.Drawing.Color.White;
             this.txtInputDateF.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtInputDateF.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtInputDateF.DecimalPlace = 0;
@@ -237,6 +258,8 @@
             this.txtInputDateF.IntegerPart = 0;
             this.txtInputDateF.IsCorrectDate = true;
             this.txtInputDateF.isEnterKeyDown = false;
+            this.txtInputDateF.IsFirstTime = true;
+            this.txtInputDateF.isMaxLengthErr = false;
             this.txtInputDateF.IsNumber = true;
             this.txtInputDateF.IsShop = false;
             this.txtInputDateF.Length = 10;
@@ -248,13 +271,16 @@
             this.txtInputDateF.TabIndex = 4;
             this.txtInputDateF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtInputDateF.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtInputDateF.UseColorSizMode = false;
             // 
             // txtCollectDateT
             // 
             this.txtCollectDateT.AllowMinus = false;
             this.txtCollectDateT.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtCollectDateT.BackColor = System.Drawing.Color.White;
+            this.txtCollectDateT.BorderColor = false;
             this.txtCollectDateT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCollectDateT.ClientColor = System.Drawing.Color.White;
             this.txtCollectDateT.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtCollectDateT.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtCollectDateT.DecimalPlace = 0;
@@ -262,6 +288,8 @@
             this.txtCollectDateT.IntegerPart = 0;
             this.txtCollectDateT.IsCorrectDate = true;
             this.txtCollectDateT.isEnterKeyDown = false;
+            this.txtCollectDateT.IsFirstTime = true;
+            this.txtCollectDateT.isMaxLengthErr = false;
             this.txtCollectDateT.IsNumber = true;
             this.txtCollectDateT.IsShop = false;
             this.txtCollectDateT.Length = 10;
@@ -273,6 +301,7 @@
             this.txtCollectDateT.TabIndex = 2;
             this.txtCollectDateT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCollectDateT.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtCollectDateT.UseColorSizMode = false;
             this.txtCollectDateT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCollectDateT_KeyDown);
             // 
             // txtCollectDateF
@@ -280,7 +309,9 @@
             this.txtCollectDateF.AllowMinus = false;
             this.txtCollectDateF.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtCollectDateF.BackColor = System.Drawing.Color.White;
+            this.txtCollectDateF.BorderColor = false;
             this.txtCollectDateF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCollectDateF.ClientColor = System.Drawing.Color.White;
             this.txtCollectDateF.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtCollectDateF.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtCollectDateF.DecimalPlace = 0;
@@ -288,6 +319,8 @@
             this.txtCollectDateF.IntegerPart = 0;
             this.txtCollectDateF.IsCorrectDate = true;
             this.txtCollectDateF.isEnterKeyDown = false;
+            this.txtCollectDateF.IsFirstTime = true;
+            this.txtCollectDateF.isMaxLengthErr = false;
             this.txtCollectDateF.IsNumber = true;
             this.txtCollectDateF.IsShop = false;
             this.txtCollectDateF.Length = 10;
@@ -299,6 +332,7 @@
             this.txtCollectDateF.TabIndex = 1;
             this.txtCollectDateF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCollectDateF.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtCollectDateF.UseColorSizMode = false;
             // 
             // ckM_Label4
             // 

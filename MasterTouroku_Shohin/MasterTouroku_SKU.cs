@@ -67,7 +67,7 @@ namespace MasterTouroku_Shouhin
         , ChkDiscontinueFlg
         , ChkStopFlg
         , ChkDiscountKBN
-        , ChkZaikoKBN
+        , Chk5
         , Chk6
 
         , ChkPresentKBN
@@ -79,8 +79,8 @@ namespace MasterTouroku_Shouhin
 
         , ChkDirectFlg
         , ChkParcelFlg
-        , Chk15
-        , Chk16
+        , ChkZaikoKBN
+        , ChkSoldOutFlg
         , Chk17
         , ChkSaleExcludedFlg
 
@@ -256,15 +256,14 @@ namespace MasterTouroku_Shouhin
                 {
                     case (int)EIndex.ChkVariousFLG:
                     case (int)EIndex.ChkSetKBN:
-                    case (int)EIndex.ChkZaikoKBN:
+                    case (int)EIndex.Chk5:
                     case (int)EIndex.Chk6:
                     case (int)EIndex.ChkNoNetOrderFlg:
                     case (int)EIndex.ChkEDIOrderFlg:
                     case (int)EIndex.ChkAutoOrderFlg:
                     case (int)EIndex.ChkDirectFlg:
                     case (int)EIndex.ChkParcelFlg:
-                    case (int)EIndex.Chk15:
-                    case (int)EIndex.Chk16:
+                    case (int)EIndex.ChkZaikoKBN:
                     case (int)EIndex.Chk17:
                     case (int)EIndex.ChkWebStockFlg:
                     case (int)EIndex.ChkInventoryAddFlg:
@@ -458,12 +457,14 @@ namespace MasterTouroku_Shouhin
             {
                 case (int)EIndex.SKUName:
                 case (int)EIndex.SKUShortName:
-                case (int)EIndex.KanaName:
                     //入力必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
                         return false;
                     }
+                    break;
+
+                case (int)EIndex.KanaName:
                     break;
 
                 case (int)EIndex.ExhibitionSegmentCD:
@@ -782,6 +783,10 @@ namespace MasterTouroku_Shouhin
             {
                 ((CheckBox)detailControls[(int)EIndex.ChkParcelFlg]).Checked = true;
             }
+            if (mse.SoldOutFlg != null && mse.SoldOutFlg.Equals("1"))
+            {
+                ((CheckBox)detailControls[(int)EIndex.ChkSoldOutFlg]).Checked = true;
+            }
             if (mse.AutoOrderFlg != null && mse.AutoOrderFlg.Equals("1"))
             {
                 ((CheckBox)detailControls[(int)EIndex.ChkAutoOrderFlg]).Checked = true;
@@ -936,7 +941,8 @@ namespace MasterTouroku_Shouhin
                 ConfirmCD = mie.ConfirmCD,
                 StopFlg=mie.StopFlg,
                 DiscontinueFlg = mie.DiscontinueFlg,
-                CatalogFlg=mie.CatalogFlg,
+                SoldOutFlg = mie.SoldOutFlg,
+                CatalogFlg =mie.CatalogFlg,
                 ParcelFlg = mie.ParcelFlg,
                 ReserveName = mie.ReserveName,
                 NoticesName = mie.NoticesName,
@@ -1018,6 +1024,7 @@ namespace MasterTouroku_Shouhin
             mse.WebStockFlg = row[0]["WebStockFlg"].ToString();
             mse.StopFlg = row[0]["StopFlg"].ToString();
             mse.DiscontinueFlg = row[0]["DiscontinueFlg"].ToString();
+            mse.SoldOutFlg = row[0]["SoldOutFlg"].ToString();
             //mse.InventoryAddFlg = row[0]["InventoryAddFlg"].ToString();
             //mse.MakerAddFlg = row[0]["MakerAddFlg"].ToString();
             //mse.StoreAddFlg = row[0]["StoreAddFlg"].ToString();
@@ -1195,6 +1202,7 @@ namespace MasterTouroku_Shouhin
             newrow["EDIOrderFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkEDIOrderFlg]).Checked ? 1 : 0;
             newrow["CatalogFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkCatalogFlg]).Checked ? 1 : 0;
             newrow["ParcelFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkParcelFlg]).Checked ? 1 : 0;
+            newrow["SoldOutFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkSoldOutFlg]).Checked ? 1 : 0;
             newrow["AutoOrderFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkAutoOrderFlg]).Checked ? 1 : 0;
 
             newrow["SaleExcludedFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkSaleExcludedFlg]).Checked ? 1 : 0;

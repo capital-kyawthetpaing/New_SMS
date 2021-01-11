@@ -136,6 +136,7 @@
     <Compile Include="M_ItemOrderPrice_DL.cs" />
     <Compile Include="M_ItemPrice_DL.cs" />
     <Compile Include="M_ITEM_DL.cs" />
+    <Compile Include="M_JANCounter_DL.cs" />
     <Compile Include="M_JANOrderPrice_DL.cs" />
     <Compile Include="M_Kouza_DL.cs" />
     <Compile Include="M_Location_DL.cs" />
@@ -188,6 +189,7 @@
     <Compile Include="TenjikaiJuuChuu_DL.cs" />
     <Compile Include="TenzikaiShouhinJouhouShuturyoku_DL.cs" />
     <Compile Include="ZaikoKanriHyou_DL.cs" />
+    <Compile Include="ZaikoReplicaSyori_DL.cs" />
     <Compile Include="ZaikoShoukai_DL.cs" />
     <Compile Include="_Ponpare_DL.cs" />
   </ItemGroup>

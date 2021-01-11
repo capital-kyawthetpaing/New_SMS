@@ -225,6 +225,7 @@
     <Compile Include="ZaikoIdouNyuuryoku_BL.cs" />
     <Compile Include="ZaikoKanriHyou_BL.cs" />
     <Compile Include="ZaikoMotochouInsatsu_BL.cs" />
+    <Compile Include="ZaikoReplicaSyori_BL.cs" />
     <Compile Include="ZaikoShoukai_BL.cs" />
     <Compile Include="ZaikoYoteiHyou_BL.cs" />
     <Compile Include="ZipCode_BL.cs" />

@@ -256,7 +256,6 @@
             this.ckM_RadioButton1 = new CKM_Controls.CKM_RadioButton();
             this.ckM_RadioButton2 = new CKM_Controls.CKM_RadioButton();
             this.ckM_Label10 = new CKM_Controls.CKM_Label();
-            this.cboKouza = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label11 = new CKM_Controls.CKM_Label();
             this.ScStaff = new Search.CKM_SearchControl();
             this.ckM_Label12 = new CKM_Controls.CKM_Label();
@@ -280,6 +279,9 @@
             this.TxtRemark1 = new CKM_Controls.CKM_MultiLineTextBox();
             this.ckM_TextBox8 = new CKM_Controls.CKM_TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblKesikomiZumiGaku = new System.Windows.Forms.Label();
+            this.lblKesikomiZumi = new CKM_Controls.CKM_Label();
+            this.cboKouza = new CKM_Controls.CKM_ComboBox();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.Pnl_Body.SuspendLayout();
@@ -6654,23 +6656,6 @@
             this.ckM_Label10.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // cboKouza
-            // 
-            this.cboKouza.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cboKouza.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboKouza.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.銀行口座;
-            this.cboKouza.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
-            this.cboKouza.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboKouza.Flag = 0;
-            this.cboKouza.FormattingEnabled = true;
-            this.cboKouza.Length = 20;
-            this.cboKouza.Location = new System.Drawing.Point(446, 166);
-            this.cboKouza.MaxLength = 10;
-            this.cboKouza.MoveNext = false;
-            this.cboKouza.Name = "cboKouza";
-            this.cboKouza.Size = new System.Drawing.Size(115, 20);
-            this.cboKouza.TabIndex = 13;
-            // 
             // ckM_Label11
             // 
             this.ckM_Label11.AutoSize = true;
@@ -7141,10 +7126,59 @@
             this.label2.Text = "入金消込日";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // lblKesikomiZumiGaku
+            // 
+            this.lblKesikomiZumiGaku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblKesikomiZumiGaku.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblKesikomiZumiGaku.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKesikomiZumiGaku.Location = new System.Drawing.Point(59, 213);
+            this.lblKesikomiZumiGaku.Name = "lblKesikomiZumiGaku";
+            this.lblKesikomiZumiGaku.Size = new System.Drawing.Size(90, 18);
+            this.lblKesikomiZumiGaku.TabIndex = 752;
+            this.lblKesikomiZumiGaku.Text = "999,999,999";
+            this.lblKesikomiZumiGaku.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblKesikomiZumi
+            // 
+            this.lblKesikomiZumi.AutoSize = true;
+            this.lblKesikomiZumi.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.lblKesikomiZumi.BackColor = System.Drawing.Color.Transparent;
+            this.lblKesikomiZumi.DefaultlabelSize = true;
+            this.lblKesikomiZumi.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.lblKesikomiZumi.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.lblKesikomiZumi.ForeColor = System.Drawing.Color.Black;
+            this.lblKesikomiZumi.Location = new System.Drawing.Point(0, 216);
+            this.lblKesikomiZumi.Name = "lblKesikomiZumi";
+            this.lblKesikomiZumi.Size = new System.Drawing.Size(57, 12);
+            this.lblKesikomiZumi.TabIndex = 751;
+            this.lblKesikomiZumi.Text = "消込済額";
+            this.lblKesikomiZumi.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.lblKesikomiZumi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cboKouza
+            // 
+            this.cboKouza.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cboKouza.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboKouza.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.銀行口座;
+            this.cboKouza.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
+            this.cboKouza.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboKouza.Flag = 0;
+            this.cboKouza.FormattingEnabled = true;
+            this.cboKouza.Length = 20;
+            this.cboKouza.Location = new System.Drawing.Point(447, 166);
+            this.cboKouza.MaxLength = 10;
+            this.cboKouza.MoveNext = false;
+            this.cboKouza.Name = "cboKouza";
+            this.cboKouza.Size = new System.Drawing.Size(104, 20);
+            this.cboKouza.TabIndex = 13;
+            // 
             // NyuukinNyuuryoku_Detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.cboKouza);
+            this.Controls.Add(this.lblKesikomiZumiGaku);
+            this.Controls.Add(this.lblKesikomiZumi);
             this.Controls.Add(this.ckM_TextBox8);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ckM_Label20);
@@ -7166,7 +7200,6 @@
             this.Controls.Add(this.ckM_TextBox9);
             this.Controls.Add(this.ScStaff);
             this.Controls.Add(this.ckM_Label12);
-            this.Controls.Add(this.cboKouza);
             this.Controls.Add(this.ckM_Label11);
             this.Controls.Add(this.cboDenomination);
             this.Controls.Add(this.ckM_Label15);
@@ -7203,7 +7236,6 @@
             this.Controls.SetChildIndex(this.ckM_Label15, 0);
             this.Controls.SetChildIndex(this.cboDenomination, 0);
             this.Controls.SetChildIndex(this.ckM_Label11, 0);
-            this.Controls.SetChildIndex(this.cboKouza, 0);
             this.Controls.SetChildIndex(this.ckM_Label12, 0);
             this.Controls.SetChildIndex(this.ScStaff, 0);
             this.Controls.SetChildIndex(this.ckM_TextBox9, 0);
@@ -7225,6 +7257,9 @@
             this.Controls.SetChildIndex(this.ckM_Label20, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.ckM_TextBox8, 0);
+            this.Controls.SetChildIndex(this.lblKesikomiZumi, 0);
+            this.Controls.SetChildIndex(this.lblKesikomiZumiGaku, 0);
+            this.Controls.SetChildIndex(this.cboKouza, 0);
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();
             this.PanelSearch.ResumeLayout(false);
@@ -7454,7 +7489,6 @@
         private CKM_Controls.CKM_Label ckM_Label10;
         private CKM_Controls.CKM_RadioButton ckM_RadioButton2;
         private CKM_Controls.CKM_RadioButton ckM_RadioButton1;
-        private CKM_Controls.CKM_ComboBox cboKouza;
         private CKM_Controls.CKM_Label ckM_Label11;
         private Search.CKM_SearchControl ScStaff;
         private CKM_Controls.CKM_Label ckM_Label12;
@@ -7492,6 +7526,9 @@
         private CKM_Controls.CKM_MultiLineTextBox TxtRemark1;
         private CKM_Controls.CKM_TextBox ckM_TextBox8;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblKesikomiZumiGaku;
+        private CKM_Controls.CKM_Label lblKesikomiZumi;
+        private CKM_Controls.CKM_ComboBox cboKouza;
     }
 }
 

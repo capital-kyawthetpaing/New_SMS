@@ -27,7 +27,9 @@ namespace DL
             dic.Add("@StoreName", new ValuePair { value1 = SqlDbType.VarChar, value2 = nie.cbo_store });
             dic.Add("@WebCollectType", new ValuePair { value1 = SqlDbType.VarChar, value2 = nie.cbo_torikomi});
             dic.Add("@CollectCustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = nie.search_customer });
-            dic.Add("@Is_All", new ValuePair { value1 = SqlDbType.Int, value2 = nie.rdb_all });
+            dic.Add("@Is_All", new ValuePair { value1 = SqlDbType.Int, value2 = nie.rdb_all });//@StoreCD
+
+            dic.Add("@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = nie.cbo_store_cd });//@StoreCD
             UseTransaction = true;
             return SelectData(dic, "D_NyuuKinPrint");
         }

@@ -32,5 +32,11 @@ namespace BL
         {
             return dmdl.D_MailSend_Update(MailCount);
         }
-    }
+
+        ///Mail Receive
+        public DataTable ReceiveMailServer()
+        {
+            return dmdl.M_ReceiveMailServer_Select();
+        }
+}
 }

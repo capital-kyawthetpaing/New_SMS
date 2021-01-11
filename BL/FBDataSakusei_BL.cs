@@ -28,14 +28,20 @@ namespace BL
             return dpdl.D_Pay_SelectForFB(dpe);
         }
 
-        public bool D_FBControl_Insert(D_FBControl_Entity dfbe)
+        public bool FBDataSakusei_Insert(D_FBControl_Entity dfbe, D_FBData_Entity dfde, D_Pay_Entity dpe)
         {
-            return dfbdl.D_FBControl_Insert(dfbe);
+            return dfbdl.FBDataSakusei_Insert(dfbe, dfde,dpe);
         }
 
-        public bool D_FBData_Insert(D_FBData_Entity dfde)
+        public bool FBDataSakusei_Update(D_FBControl_Entity dfe)
         {
-            return dfddl.D_FBData_Insert(dfde);
+            return dfbdl.FBDataSakusei_Update(dfe);
         }
+
+        public DataTable D_Pay_SelectForText(D_FBControl_Entity dfbe,D_Pay_Entity dpe)
+        {
+            return dpdl.D_Pay_SelectForText(dfbe, dpe);
+        }
+
     }
 }

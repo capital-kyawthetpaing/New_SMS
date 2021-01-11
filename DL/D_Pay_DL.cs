@@ -219,5 +219,19 @@ namespace DL
             };
             return SelectData(dic, "D_Pay_SelectForFB");
         }
+
+        public DataTable D_Pay_SelectForText(D_FBControl_Entity dfbe, D_Pay_Entity dpe)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>()
+            {
+                {"@MotoKouzaCD", new ValuePair {value1 = SqlDbType.VarChar,value2 = dfbe.MotoKouzaCD} },
+                {"@PayDate", new ValuePair {value1 = SqlDbType.VarChar,value2 = dfbe.PayDate} },
+                {"@Flg", new ValuePair {value1 = SqlDbType.TinyInt,value2 = dpe.Flg} },
+                {"@ActualDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = dfbe.ActualPayDate } },
+                {"@TransferGaku", new ValuePair {value1 = SqlDbType.Money,value2 = dpe.TransferGaku} },
+                {"@Count", new ValuePair { value1 = SqlDbType.Int, value2 = dpe.count } }
+            };
+            return SelectData(dic,"D_Pay_SelectForText");
+        }
     }
 }
