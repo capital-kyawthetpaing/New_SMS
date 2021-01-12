@@ -218,7 +218,7 @@
             this.panel4.Location = new System.Drawing.Point(117, 280);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(700, 25);
-            this.panel4.TabIndex = 32;
+            this.panel4.TabIndex = 75;
             // 
             // RB_Item
             // 
