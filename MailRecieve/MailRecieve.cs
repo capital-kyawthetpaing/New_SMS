@@ -50,6 +50,25 @@ namespace MailRecieve
                         //dtMessages.Rows[dtMessages.Rows.Count - 1]["From"] = message.Headers.From;
 
                         List<MessagePart> attachment = message.FindAllAttachments();
+
+                        //for (int ct=0; ct<attachment.Count(); ct++)
+                        //{
+                        //    FileInfo file = new FileInfo("C:\\"+attachment[ct].ToString());
+
+                        //    //attachment.SaveToFile(file);
+                        //}
+
+                        //foreach (OpenPop.Mime.MessagePart attachment in attachments)
+                        //{
+                        //    if (attachment != null)
+                        //    {
+                        //        string ext = attachment.FileName.Split('.')[1];
+                        //        FileInfo file = new FileInfo(Server.MapPath("Attachments\\") + DateTime.Now.Ticks.ToString() + "." + ext);
+
+                        //        attachment.SaveToFile(file);
+                        //    }
+                        //}
+
                         //string filename= attachment[0].FileName.Trim();
                         //message.FileName = attachment[0].FileName.Trim();
                         //message.Attachment = attachment;
