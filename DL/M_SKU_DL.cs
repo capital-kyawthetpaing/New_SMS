@@ -347,6 +347,54 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
+
+        public DataTable M_SKU_Export(M_SKU_Entity ms,int checkflg,int chkUnapprove, int mode)
+        {
+            string sp = "M_SKU_Export";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+           {
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 =ms.ChangeDate } },
+               { "@VendorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.MainVendorCD } },
+               { "@makerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.MakerVendorCD } },
+               { "@brandCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.BrandCD } },
+               { "@SKUName", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.SKUName } },
+               { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.JanCD} },
+               { "@SkuCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.SKUCD } },
+               { "@MakerItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.MakerItem } },
+               { "@ItemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.ITemCD} },
+               { "@CommentInStore", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.CommentInStore } },
+               { "@ReserveCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.ReserveCD } },
+               { "@NoticesCD", new ValuePair { value1 = SqlDbType.VarChar, value2 =  ms.NoticesCD } },
+               { "@PostageCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.PostageCD } },
+               { "@OrderAttention", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.OrderAttentionCD } },
+               { "@SportsCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.SportsCD } },
+               { "@InsertDateTimeT", new ValuePair { value1 = SqlDbType.Date, value2 = ms.InputDateTo } },
+               { "@InsertDateTimeF", new ValuePair { value1 = SqlDbType.Date, value2 = ms.InputDateFrom } },
+               { "@UpdateDateTimeT", new ValuePair { value1 = SqlDbType.Date, value2 = ms.UpdateDateFrom } },
+               { "@UpdateDateTimeF", new ValuePair { value1 = SqlDbType.Date, value2 = ms.UpdateDateTo } },
+               { "@ApprovalDateF", new ValuePair { value1 = SqlDbType.Date, value2 = ms.ApprovalDateFrom } },
+               { "@ApprovalDateT", new ValuePair { value1 = SqlDbType.Date, value2 = ms.ApprovalDateTo} },
+               { "@YearTerm", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.LastYearTerm } },
+               { "@Season", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.LastSeason } },
+               { "@CatalogNo", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.LastCatalogNO} },
+               { "@InstructionsNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.LastInstructionsNO} },
+               { "@Tag1", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.TagName1} },
+               { "@Tag2", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.TagName2 } },
+               { "@Tag3", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.TagName3 } },
+               { "@Tag4", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.TagName4} },
+               { "@Tag5", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.TagName5 } },
+               { "@checkflg", new ValuePair { value1 = SqlDbType.Int, value2 = checkflg.ToString()} },
+               { "@chkUnapprove", new ValuePair { value1 = SqlDbType.Int, value2 = chkUnapprove.ToString()} },
+               { "@mode", new ValuePair { value1 = SqlDbType.Int, value2 = mode.ToString()} },
+               { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.Operator} },
+               { "@ProcessMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.ProcessMode} },
+               { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.ProgramID} },
+               { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.PC} },
+               { "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = ms.Key} },
+            };
+
+            return SelectData(dic, sp);
+        }
     }
 
 }

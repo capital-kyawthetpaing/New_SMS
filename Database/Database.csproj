@@ -462,6 +462,7 @@
     <Content Include="StoreProcedure\M_SKUPrice_SelectData.sql" />
     <Content Include="StoreProcedure\M_SKUPrice_SelectTanka.sql" />
     <Content Include="StoreProcedure\M_SKUSelectDataForHanbaiTankaKakeritu.sql" />
+    <Content Include="StoreProcedure\M_SKU_Export.sql" />
     <Content Include="StoreProcedure\M_Sku_henkouSelect.sql" />
     <Content Include="StoreProcedure\M_SKU_Select.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectAll.sql" />
