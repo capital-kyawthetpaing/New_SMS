@@ -593,6 +593,8 @@
             this.btn_Meisai.Text = "明細取込";
             this.btn_Meisai.UseVisualStyleBackColor = false;
             this.btn_Meisai.Click += new System.EventHandler(this.btn_Meisai_Click);
+            this.btn_Meisai.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btn_Meisai_KeyDown);
+            this.btn_Meisai.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btn_Meisai_KeyUp);
             // 
             // txt_HDenwa3
             // 
@@ -6075,7 +6077,7 @@
             this.choukusou_1.Location = new System.Drawing.Point(140, 21);
             this.choukusou_1.Name = "choukusou_1";
             this.choukusou_1.Size = new System.Drawing.Size(48, 18);
-            this.choukusou_1.TabIndex = 103;
+            this.choukusou_1.TabIndex = 28;
             this.choukusou_1.Text = "直送";
             this.choukusou_1.UseVisualStyleBackColor = true;
             // 
@@ -6481,7 +6483,7 @@
             this.shuukasouko_1.MoveNext = true;
             this.shuukasouko_1.Name = "shuukasouko_1";
             this.shuukasouko_1.Size = new System.Drawing.Size(150, 20);
-            this.shuukasouko_1.TabIndex = 293;
+            this.shuukasouko_1.TabIndex = 29;
             // 
             // shuukayotei_1
             // 
@@ -6508,7 +6510,7 @@
             this.shuukayotei_1.MoveNext = true;
             this.shuukayotei_1.Name = "shuukayotei_1";
             this.shuukayotei_1.Size = new System.Drawing.Size(100, 19);
-            this.shuukayotei_1.TabIndex = 291;
+            this.shuukayotei_1.TabIndex = 27;
             this.shuukayotei_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.shuukayotei_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.shuukayotei_1.UseColorSizMode = false;
@@ -6528,7 +6530,7 @@
             this.chk_1.Location = new System.Drawing.Point(10, 12);
             this.chk_1.Name = "chk_1";
             this.chk_1.Size = new System.Drawing.Size(13, 13);
-            this.chk_1.TabIndex = 0;
+            this.chk_1.TabIndex = 26;
             this.chk_1.UseVisualStyleBackColor = true;
             // 
             // sizename_1
@@ -6711,7 +6713,7 @@
             this.scjan_1.SearchEnable = true;
             this.scjan_1.Size = new System.Drawing.Size(133, 27);
             this.scjan_1.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.scjan_1.TabIndex = 1;
+            this.scjan_1.TabIndex = 25;
             this.scjan_1.test = null;
             this.scjan_1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scjan_1.UseChangeDate = false;

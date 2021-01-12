@@ -425,7 +425,7 @@ namespace TempoShukkaNyuuryoku
         }
         private bool ErrorCheck(int kbn = 0)
         {
-            if (kbn == 1)
+            if (kbn == 1 || kbn==5)
             {
                 //JANCD
                 if (!RequireCheck(new Control[] { txtJanCD }))
@@ -439,34 +439,37 @@ namespace TempoShukkaNyuuryoku
                 if (!CheckWidth(2))
                     return false;
 
-                //【Data Area Detail】に存在するJANCDで無い場合、Error
-                DataRow[] rows = dtJuchu.Select("JANCD = '" + txtJanCD.Text + "'");
-                if (rows.Length == 0)
+                if (kbn == 1)
                 {
-                    bbl.ShowMessage("E148");
-                    txtJanCD.Focus();
-                    return false;
-                }
-                else if (rows.Length > 1)
-                {
-                    //【Data Area Detail】に複数存在するJANCDの場合
-                    //「該当する行が複数存在します。右の一覧から選択してください」
-                    bbl.ShowMessage("E149");
-                    txtJanCD.Focus();
-                    return false;
-                }
-                else
-                {
-                    //【Data Area Detail】に１つだけ存在するJANCDの場合
-                    //画面転送表01に従って、画面情報を表示
-                    //rows[0]よりDataTableのRowIndexを求める
-                    int rowindex = dtJuchu.Rows.IndexOf(rows[0]);
-                    txtJanCD.Tag = rowindex;
+                    //【Data Area Detail】に存在するJANCDで無い場合、Error
+                    DataRow[] rows = dtJuchu.Select("JANCD = '" + txtJanCD.Text + "'");
+                    if (rows.Length == 0)
+                    {
+                        bbl.ShowMessage("E148");
+                        txtJanCD.Focus();
+                        return false;
+                    }
+                    else if (rows.Length > 1)
+                    {
+                        //【Data Area Detail】に複数存在するJANCDの場合
+                        //「該当する行が複数存在します。右の一覧から選択してください」
+                        bbl.ShowMessage("E149");
+                        txtJanCD.Focus();
+                        return false;
+                    }
+                    else
+                    {
+                        //【Data Area Detail】に１つだけ存在するJANCDの場合
+                        //画面転送表01に従って、画面情報を表示
+                        //rows[0]よりDataTableのRowIndexを求める
+                        int rowindex = dtJuchu.Rows.IndexOf(rows[0]);
+                        txtJanCD.Tag = rowindex;
 
-                    SetDataFromDataTable(rowindex + 1);
+                        SetDataFromDataTable(rowindex + 1);
+                    }
                 }
             }
-            if (kbn == 2)
+            if (kbn == 2 || kbn == 5)
             {
                 //出荷数
                 //入力無くても良い(It is not necessary to input)
@@ -990,13 +993,8 @@ namespace TempoShukkaNyuuryoku
         {
             try
             {
-                //商品CD
-                if (!Save(1))
-                {
-                    return;
-                }
-                //出荷数
-                if (!Save(2))
+                //商品CD,出荷数 Check
+                if (!Save(5))
                 {
                     return;
                 }

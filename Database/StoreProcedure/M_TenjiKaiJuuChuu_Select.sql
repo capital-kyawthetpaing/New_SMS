@@ -278,8 +278,8 @@ BEGIN
 														union 
 														select * from #gamen4) a
 
-														select * from #res where _8ShuukaYoteiBi != '1999-09-09'
-
+														select * from #res where cast ([_8ShuukaYoteiBi] as date)  !='1999-09-09'  or   [_8ShuukaYoteiBi]  is null
+															order by _1JanCD asc , _2SKUCD asc, _8ShuukaYoteiBi asc, _11NyuukaYoteiHyou asc,  _12SoukunoSu asc
 														drop table #temp
 														drop table #temp1
 														drop table #gamen2
