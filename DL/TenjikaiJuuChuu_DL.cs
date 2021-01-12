@@ -204,7 +204,7 @@ namespace DL
             string sp = "D_TenjiI_Details_insert";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = xml} },
+                { "@xml", new ValuePair { value1 = SqlDbType.Xml, value2 = xml} },
                 { "@JuchuuBi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.JuchuuBi } },
                 { "@ShuuKaSouKo", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.ShuuKaSouKo } },
                 { "@TantouStaffu", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.TantouStaffu } },
@@ -330,7 +330,7 @@ namespace DL
             string sp = "M_TenjiKaiJuuChuu_Select";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                 { "@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.xml } },
+                 { "@xml", new ValuePair { value1 = SqlDbType.Xml, value2 = tje.xml } },
                  { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Kokyaku } },
                  { "@JuuChuuBi", new ValuePair { value1 = SqlDbType.Date, value2 = tje.JuchuuBi.Replace("/","-") } },
                  { "@LastyearTerm", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.Nendo } },

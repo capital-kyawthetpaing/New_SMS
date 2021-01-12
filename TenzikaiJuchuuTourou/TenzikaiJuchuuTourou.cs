@@ -3523,7 +3523,9 @@ namespace TenzikaiJuchuuTourou
                         {
                             dr["販売予定日"] = dr["販売予定日"];
                         }
-                        catch { }
+                        catch(Exception ex) {
+
+                        }
                     }
                 }
                 else
@@ -3532,7 +3534,9 @@ namespace TenzikaiJuchuuTourou
                     {
                         dr["販売予定日"] = dr["販売予定日"];
                     }
-                    catch { }
+                    catch (Exception ex){
+
+                    }
                 }
             }
            
@@ -4375,6 +4379,7 @@ namespace TenzikaiJuchuuTourou
             }
             var resData = GetTable(out DataTable delete);
             if (OperationMode == EOperationMode.INSERT)
+
             {
                
                 if (resData.Rows.Count == 0)
@@ -4390,6 +4395,7 @@ namespace TenzikaiJuchuuTourou
                 {
                     bbl.ShowMessage("I101");
                     ChangeOperationMode(OperationMode);
+                    SetInitialState();
                     detailControls[(int)Eindex.SCShiiresaki].Focus();
                     return;
                 }
