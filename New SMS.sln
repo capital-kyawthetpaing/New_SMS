@@ -355,6 +355,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailRecieve", "MailRecieve\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterShutsuryoku_SKU", "MasterShutsuryoku_Shouhin\MasterShutsuryoku_SKU.csproj", "{DC9BD2C5-1C90-4724-97A7-10AC1B44F0D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterTorikomi_SKU", "MasterTorikomi_SKU\MasterTorikomi_SKU.csproj", "{BAC10FC8-CB76-41CB-8580-A52BDAEFAC9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2463,6 +2465,18 @@ Global
 		{DC9BD2C5-1C90-4724-97A7-10AC1B44F0D1}.Release|x64.Build.0 = Release|Any CPU
 		{DC9BD2C5-1C90-4724-97A7-10AC1B44F0D1}.Release|x86.ActiveCfg = Release|Any CPU
 		{DC9BD2C5-1C90-4724-97A7-10AC1B44F0D1}.Release|x86.Build.0 = Release|Any CPU
+		{BAC10FC8-CB76-41CB-8580-A52BDAEFAC9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAC10FC8-CB76-41CB-8580-A52BDAEFAC9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAC10FC8-CB76-41CB-8580-A52BDAEFAC9F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BAC10FC8-CB76-41CB-8580-A52BDAEFAC9F}.Debug|x64.Build.0 = Debug|Any CPU
+		{BAC10FC8-CB76-41CB-8580-A52BDAEFAC9F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BAC10FC8-CB76-41CB-8580-A52BDAEFAC9F}.Debug|x86.Build.0 = Debug|Any CPU
+		{BAC10FC8-CB76-41CB-8580-A52BDAEFAC9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAC10FC8-CB76-41CB-8580-A52BDAEFAC9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAC10FC8-CB76-41CB-8580-A52BDAEFAC9F}.Release|x64.ActiveCfg = Release|Any CPU
+		{BAC10FC8-CB76-41CB-8580-A52BDAEFAC9F}.Release|x64.Build.0 = Release|Any CPU
+		{BAC10FC8-CB76-41CB-8580-A52BDAEFAC9F}.Release|x86.ActiveCfg = Release|Any CPU
+		{BAC10FC8-CB76-41CB-8580-A52BDAEFAC9F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
