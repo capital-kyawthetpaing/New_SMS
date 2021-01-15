@@ -255,8 +255,8 @@ BEGIN
 			declare  @LastRow as int;
 			declare @LastTenjiRow as int;
 		--set @TenjiCD1 = (select dbo.[Fnc_TenjiGetNumber](13,getdate(),'0001'));
-		set @LastRow = (select Isnull(Max(TenzikaiJuchuuRows),0)  from  D_TenzikaiJuchuuDetails);
-		set @LastTenjiRow = (select Isnull(Max(TenzikaiJuchuuRows),0)  from  D_TenzikaiJuchuuDetails);
+		set @LastRow = (select Isnull(Max(TenzikaiJuchuuRows),0)  from  D_TenzikaiJuchuuDetails where TenzikaiJuchuuNO = @TenjiCD);
+		set @LastTenjiRow = (select Isnull(Max(TenzikaiJuchuuRows),0)  from  D_TenzikaiJuchuuDetails where TenzikaiJuchuuNO = @TenjiCD);
 		--select @TenjiCD,@LastRow
 		-----------------------------------------------------------------------------------B-Delete D_TenzikaiJuchuuDetails
 		
@@ -264,8 +264,8 @@ BEGIN
 
 		-----------------------------------------------------------------------------------D-L_TenzikaiJuchuuDetailsHistory
 		declare @LastRowLog as int,@LastRowSeq as int;
-		set @LastRowLog = (select Isnull(Max(HistorySEQ),0)  from  L_TenzikaiJuchuuHistory);
-		set @LastRowSeq = (select Isnull(Max(HistorySEQRows),0)  from  L_TenzikaiJuchuuDetailsHistory);
+		set @LastRowLog = (select Isnull(Max(HistorySEQ),0)  from  L_TenzikaiJuchuuHistory );
+		set @LastRowSeq = (select Isnull(Max(HistorySEQRows),0)  from  L_TenzikaiJuchuuDetailsHistory );
 
 
 
@@ -388,7 +388,7 @@ BEGIN
 						,@LastRowSeq+ dt.DisplayRows
 						 ,t.TenjiCD			
 						--,@LastRow + t.[No]
-						,@LastRow + t.[No]--(ROW_NUMBER() OVER (order by t.[No]))
+					,dt.TenzikaiJuchuuRows--,t.[No]--	,@LastRow + t.[No]--(ROW_NUMBER() OVER (order by t.[No]))
 						,t.[No]				
 					,t.[SCJAN]				
 					,t.[AdminNo]			

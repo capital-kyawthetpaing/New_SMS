@@ -30,7 +30,7 @@ namespace DL
             string sp = "D_TenjiI_Details_Delete";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = xml} },
+                { "@xml", new ValuePair { value1 = SqlDbType.Xml, value2 = xml} },
                 { "@TenjiCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.TenjiKaiOrderNo} },
                 { "@JuchuuBi", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.JuchuuBi } },
                 { "@ShuuKaSouKo", new ValuePair { value1 = SqlDbType.VarChar, value2 = tje.ShuuKaSouKo } },
