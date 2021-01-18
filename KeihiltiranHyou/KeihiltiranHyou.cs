@@ -17,11 +17,6 @@ using CrystalDecisions.Shared;
 namespace KeihiltiranHyou
 {
 
-
-
-
-
-
     public partial class FrmKeihiltiranHyou : FrmMainForm
     {
         CrystalDecisions.Windows.Forms.CrystalReportViewer vr;
@@ -124,7 +119,9 @@ namespace KeihiltiranHyou
         {
             string data = InOperatorCD;
             string date = DateTime.Today.ToShortDateString();
-            cboStoreName.Bind(date, data);
+            // cboStoreName.Bind(date, data);
+            cboStoreName.Bind(string.Empty, "2");
+            cboStoreName.SelectedValue = StoreCD;
         }
 
         public override void FunctionProcess(int index)
@@ -197,10 +194,16 @@ namespace KeihiltiranHyou
                                 {
                                     return;
                                 }
-                                //}
+                            //}
 
-                                // 印字データをセット
+                            // 印字データをセット
+                            try
+                            {
                                 Report.SetDataSource(table);
+                            }
+                            catch(Exception ex) {
+                                var exc = ex.StackTrace;
+                            }
                                 Report.Refresh();
                                 Report.SetParameterValue("txtStoreName", cboStoreName.SelectedValue.ToString() + "  " + dce2.Store);
                                 Report.SetParameterValue("txtDateTime", table.Rows[0]["yyyymmdd"].ToString() + "   " + table.Rows[0]["mmss"].ToString());

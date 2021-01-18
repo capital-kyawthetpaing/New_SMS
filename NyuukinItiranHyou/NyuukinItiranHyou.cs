@@ -104,7 +104,7 @@ namespace NyuukinItiranHyou
             }
             catch
             {
-                bbl.ShowMessage("E139");   // When no data inside combo
+             //   bbl.ShowMessage("E139");   // When no data inside combo
             }
         }
         public override void FunctionProcess(int index)
