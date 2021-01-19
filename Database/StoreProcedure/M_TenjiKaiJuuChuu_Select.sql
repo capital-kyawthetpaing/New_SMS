@@ -47,8 +47,8 @@ BEGIN
 														with
 														(
 														仮JANCD varchar(50),
-														SKUCD varchar(50),
-														商品名 varchar(50),
+														SKUCD varchar(500),
+														商品名 varchar(500),
 														カラー名 varchar(8),
 														サイズ名 varchar(8),
 														販売予定日 varchar(20),

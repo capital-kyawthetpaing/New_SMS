@@ -106,6 +106,7 @@ namespace DL
                     ValuePair vp = pair.Value;
                     AddParam(command, pair.Key, vp.value1, vp.value2);
                 }
+                
                 command.CommandTimeout = string.IsNullOrWhiteSpace(iniEntity.TimeoutValues) ? 0 : Convert.ToInt32(iniEntity.TimeoutValues);
                 adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
