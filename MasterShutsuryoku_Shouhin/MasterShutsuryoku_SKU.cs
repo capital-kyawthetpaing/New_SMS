@@ -303,8 +303,11 @@ namespace MasterShutsuryoku_Shouhin
                     {
                         if (checkflg != 1)
                         {
-
                             dt.Columns.Remove("商品情報アドレス");
+                          
+                        }
+                        if(checkflg !=1 && checkflg !=2)
+                        {
                             dt.Columns.Remove("構成数");
                             dt.Columns.Remove("発注ロット");
                         }
