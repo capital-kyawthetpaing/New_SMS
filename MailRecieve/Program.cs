@@ -19,7 +19,7 @@ namespace MailRecieve
 
         static void Main(string[] args)
         {
-            Console.Title = "FileTransferProtocolInput";
+            Console.Title = "Mail Receive";
 
             if (loginbl.ReadConfig() == true)
             {
@@ -33,8 +33,8 @@ namespace MailRecieve
                     return;
 
                 DataTable dtMail = msbl.ReceiveMailServer();
-
-                mail.MailRead(dtMail);
+                mail.MailRead(dtMail,dtMulti.Rows[0]["Char1"].ToString());
+             
 
             }
         }

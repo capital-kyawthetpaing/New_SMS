@@ -115,7 +115,7 @@ namespace CKM_Controls
 
             set; } = false;
 
-
+        public bool IsTimemmss { get; set; } = false;
         public Color ClientColor { get; set; } = SystemColors.Window;
         private bool IsRequire { get; set; } = false;
         private bool IsReversecheck { get; set; } = false;
@@ -955,6 +955,11 @@ namespace CKM_Controls
                     }
 
                     Text = hour + ":" + minutes + ":" + seconds;
+                }
+                if (IsTimemmss)
+                {
+                    if (Text.Contains(":"))
+                        Text = Text.Split(':')[0] + ":"+ Text.Split(':')[1];
                 }
             }
 

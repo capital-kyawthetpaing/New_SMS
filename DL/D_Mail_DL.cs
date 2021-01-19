@@ -61,5 +61,14 @@ public   class D_Mail_DL : Base_DL
             };
             return SelectData(dic, sp);
         }
+        public DataTable M_ReceiveOfVendorMail_Select(string AddressFrom)
+        {
+            string sp = "M_ReceiveOfVendorMail_Select";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                {"@AddressFrom",new ValuePair{value1=SqlDbType.VarChar,value2=AddressFrom} }
+            };
+            return SelectData(dic, sp);
+        }
     }
 }

@@ -71,8 +71,8 @@ namespace KeihiltiranHyou
 
         private void FrmKeihiltiranHyou_Load(object sender, EventArgs e)
         {
-
-         //   AllEvent_PrintLog();
+         
+            //   AllEvent_PrintLog();
             try
             {
                 try
@@ -108,13 +108,13 @@ namespace KeihiltiranHyou
                 F10Visible = false;
                 F11Visible = false;
             }
-            catch(Exception ex) {
+            catch (Exception ex)
+            {
                 //エラー時共通処理
                 MessageBox.Show(ex.Message);
                 EndSec();
             }
         }
-
         private void BindCombo()
         {
             string data = InOperatorCD;
@@ -122,8 +122,15 @@ namespace KeihiltiranHyou
             // cboStoreName.Bind(date, data);
             cboStoreName.Bind(string.Empty, "2");
             cboStoreName.SelectedValue = StoreCD;
+            SetRequireField();
+           
         }
-
+        private void SetRequireField()
+        {
+            cboStoreName.Require(true);
+            expense_timefrom.IsTimemmss = true;
+            expense_timeto.IsTimemmss = true;
+        }
         public override void FunctionProcess(int index)
         {
             base.FunctionProcess(index);
@@ -145,7 +152,7 @@ namespace KeihiltiranHyou
                         //Ｑ００４				
                         if (bbl.ShowMessage("Q004") != DialogResult.Yes)
                             return;
-
+                        SetInitialstate();
                         break;
                     }
 
@@ -153,6 +160,22 @@ namespace KeihiltiranHyou
                     break;
 
             }   //switch end
+        }
+        private void SetInitialstate()
+        {
+            var dt = DateTime.Now;
+            var val = dt.Year.ToString() + "/" + dt.Month.ToString().PadLeft(2, '0').ToString() + "/" + dt.Day.ToString().PadLeft(2, '0').ToString();
+            txtRecordFrom.Text = val;
+            txtRecordTo.Text = val;
+            txtPaymentFrom.Clear();
+            txtPaymentTo.Clear();
+            txtExpenseFrom.Clear();
+            txtExpenseTo.Clear();
+            expense_timefrom.Text =  expense_timeto.Text="00:00";
+            rdb_unpaid.Checked = true;
+            rdb_paid.Checked = rdb_all.Checked = false;
+            cboStoreName.Bind(string.Empty, "2");
+            cboStoreName.SelectedValue = StoreCD;
         }
 
         protected override void PrintSec()
@@ -171,8 +194,9 @@ namespace KeihiltiranHyou
 
                     try
                     {
-                        if (table == null)
+                        if (table == null || table.Rows.Count == 0)
                         {
+                        MessageBox.Show("There is no Corresponding data to print");
                             return;
                         }
 
@@ -306,79 +330,52 @@ namespace KeihiltiranHyou
 
         private bool ErrorCheck()
         {
-            if(!string.IsNullOrWhiteSpace(txtRecordFrom.Text))
+            if (!RequireCheck(new Control[] { cboStoreName }))   //Store CBO
+                return false;
+            if (!string.IsNullOrWhiteSpace(txtRecordFrom.Text) && !string.IsNullOrWhiteSpace(txtRecordTo.Text))  //payment
             {
-                M_Calendar_Entity mce = new M_Calendar_Entity();
-                //mce.CalendarDate = txtRecordFrom.Text;
-                //DataTable dcFrom = new DataTable();
-                //dcFrom = kthbl.CalendarSelect(mce);
-                //if(dcFrom.Rows.Count > 0)
-                //{
-                //    txtRecordFrom.Focus();
-                //    return false;
-                //}
-
-                if(!string.IsNullOrWhiteSpace(txtRecordTo.Text))
+                if (Convert.ToInt32((txtRecordFrom.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtRecordTo.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
                 {
-                    //mce.CalendarDate = txtRecordTo.Text;
-                    //DataTable dcTo = new DataTable();
-                    //dcTo = kthbl.CalendarSelect(mce);
-                    //if (dcTo.Rows.Count > 0)
-                    //{
-                    //    txtRecordTo.Focus();
-                    //    return false;
-                    //}
-
-                    int result = txtRecordFrom.Text.CompareTo(txtRecordTo.Text);
-                    if (result > 0)
-                    {
-                        kthbl.ShowMessage("E104");
-                        txtRecordTo.Focus();
-                        return false;
-                    }
-                }
-                if (cboStoreName.SelectedValue.ToString() == "-1")
-                {
-                    kthbl.ShowMessage("E102");
-                    cboStoreName.Focus();
+                    bbl.ShowMessage("E103");
+                    txtRecordFrom.Focus();
                     return false;
                 }
-                //else
-                //{
-                //    //M_StoreAuthorizations_Entity  mae = new M_StoreAuthorizations_Entity();
-                //    //mae.StoreAuthorizationsCD = made.AuthorizationsCD;
-                //    //mae.ChangeDate = made.ChangeDate;
-                //    //mae.ProgramID = "KeihiltiranHyou";
-                //    //mae.StoreCD = InOperatorCD;
-                //    //DataTable dtstoreAuto = new DataTable();
-
-                //}
-
-                if(!string.IsNullOrWhiteSpace(txtPaymentTo.Text))
-                {
-                    int result = txtPaymentFrom.Text.CompareTo(txtPaymentTo.Text);
-                    if (result > 0)
-                    {
-                        kthbl.ShowMessage("E104");
-                        txtPaymentTo.Focus();
-                        return false;
-                    }
-                }
-                if(!string .IsNullOrWhiteSpace (txtExpenseTo.Text))
-                {
-                    int result = txtExpenseFrom.Text.CompareTo(txtExpenseTo.Text);
-                    if (result > 0)
-                    {
-                        kthbl.ShowMessage("E104");
-                        txtExpenseTo.Focus();
-                        return false;
-                    }
-                }
-
             }
-
+            if (!string.IsNullOrWhiteSpace(txtPaymentFrom.Text) && !string.IsNullOrWhiteSpace(txtPaymentTo.Text))  // payment input
+            {
+                if (Convert.ToInt32((txtPaymentFrom.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtPaymentTo.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
+                {
+                    bbl.ShowMessage("E103");
+                    txtPaymentFrom.Focus();
+                    return false;
+                }
+            }
+            if (!string.IsNullOrWhiteSpace(txtExpenseFrom.Text) && !string.IsNullOrWhiteSpace(txtExpenseTo.Text))
+            {
+                if (Convert.ToDateTime((txtExpenseFrom.Text.ToString())) > Convert.ToDateTime(txtExpenseTo.Text.ToString())) //対象期間(From)の方が大きい場合Error
+                {
+                    bbl.ShowMessage("E103");
+                    txtExpenseFrom.Focus();
+                    return false;
+                }
+                if (Convert.ToDateTime((txtExpenseFrom.Text.ToString())) == Convert.ToDateTime(txtExpenseTo.Text.ToString()))
+                {
+                    if (!string.IsNullOrWhiteSpace(expense_timefrom.Text) && !string.IsNullOrWhiteSpace(expense_timeto.Text))
+                    {
+                        if (Convert.ToInt32(expense_timefrom.Text.Replace(":", "")) > Convert.ToInt32(expense_timeto.Text.Replace(":", "")))
+                        {
+                            bbl.ShowMessage("E103");
+                            expense_timefrom.Focus();
+                            return false;
+                        }
+                    }
+                }
+            }
             return true;
+           
         }
+
+   
         protected D_Cost_Entity GetCostData()
         {
             D_Cost_Entity de = new D_Cost_Entity();
@@ -421,6 +418,73 @@ namespace KeihiltiranHyou
             }
 
         }
+
+        private void txtRecordTo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(txtRecordTo.Text) && !string.IsNullOrWhiteSpace(txtRecordFrom.Text))
+                {
+                    if (Convert.ToInt32((txtRecordTo.Text.ToString().Replace("/", ""))) < Convert.ToInt32(txtRecordFrom.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
+                    {
+                        bbl.ShowMessage("E103");
+                        txtRecordTo.Focus();
+                    }
+                }
+            }
+        }
+
+        private void txtPaymentTo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(txtPaymentTo.Text) && !string.IsNullOrWhiteSpace(txtPaymentFrom.Text))
+                {
+                    if (Convert.ToDateTime((txtPaymentTo.Text.ToString())) < Convert.ToDateTime(txtPaymentFrom.Text.ToString())) //対象期間(From)の方が大きい場合Error
+                    {
+                        bbl.ShowMessage("E103");
+                        txtPaymentTo.Focus();
+                    }
+                }
+            }
+        }
+
+        private void txtExpenseTo_KeyDown(object sender, KeyEventArgs e)
+        {
+            LastDTCheck(e);
+        }
+        private void LastDTCheck(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(txtExpenseFrom.Text) && !string.IsNullOrWhiteSpace(txtExpenseTo.Text))
+                {
+                    if (Convert.ToDateTime((txtExpenseFrom.Text.ToString())) > Convert.ToDateTime(txtExpenseTo.Text.ToString())) //対象期間(From)の方が大きい場合Error
+                    {
+                        bbl.ShowMessage("E103");
+                        txtExpenseFrom.Focus();
+                        return;
+                    }
+                    if (Convert.ToDateTime((txtExpenseFrom.Text.ToString())) == Convert.ToDateTime(txtExpenseTo.Text.ToString()))
+                    {
+                        if (!string.IsNullOrWhiteSpace(expense_timefrom.Text) && !string.IsNullOrWhiteSpace(expense_timeto.Text))
+                        {
+                            if (Convert.ToInt32(expense_timefrom.Text.Replace(":", "")) > Convert.ToInt32(expense_timeto.Text.Replace(":", "")))
+                            {
+                                bbl.ShowMessage("E103");
+                                expense_timefrom.Focus();
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        private void expense_timeto_KeyDown(object sender, KeyEventArgs e)
+        {
+            LastDTCheck(e);
+        }
+
         private void printButton_Click(object sender, EventArgs e)
         {
             var dt =new DataTable();
