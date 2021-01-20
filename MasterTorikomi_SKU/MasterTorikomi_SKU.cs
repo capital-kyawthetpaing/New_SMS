@@ -345,7 +345,6 @@ namespace MasterTorikomi_SKU
                 {
 
                 }
-
                 if (String.IsNullOrEmpty(dt.Rows[i]["商品名"].ToString()))
                 {
                     
