@@ -17,7 +17,8 @@ namespace MasterTorikomi_SKU
     public partial class MasterTorikomi_SKU : FrmMainForm
     {
         Base_BL bbl;
-        DataTable dtJ = new DataTable();
+        DataTable dtSKU = new DataTable();
+        DataTable dtAdmin = new DataTable();
         SKU_BL sbl;
 
         public MasterTorikomi_SKU()
@@ -34,16 +35,14 @@ namespace MasterTorikomi_SKU
             InProgramID = "MasterTorikomi_SKU";
             StartProgram();
             RB_all.Checked = true;
-            dtJ= sbl.M_SKU_SelectAll_NOPara();
+            dtSKU = sbl.M_SKU_SelectAll_NOPara();
+
         }
 
         private void BT_Torikomi_Click(object sender, EventArgs e)
         {
             if (bbl.ShowMessage("Q001") == DialogResult.Yes)
             {
-
-                
-
                 string filePath = string.Empty;
                 string fileExt = string.Empty;
                 //if (!System.IO.Directory.Exists("C:\\SMS\\TenzikaiShouhin\\"))
@@ -71,18 +70,18 @@ namespace MasterTorikomi_SKU
                     //}
                     if(dt != null)
                     {
-                        ExcelErrorCheck(dt);
-                        GV_SKU.DataSource = dt;
+                        if (ErrorCheck(dt))
+                        {
+                            ExcelErrorCheck(dt);
+                            GV_SKU.DataSource = null;
+                            GV_SKU.DataSource = dt;
+                            bbl.ShowMessage("I101");
+                        }
 
                     }
-
                 }
             }
-
-
         }
-
-
         protected Boolean ColumnCheck(String[] colName, DataTable dtMain)
         {
             DataColumnCollection cols = dtMain.Columns;
@@ -96,315 +95,210 @@ namespace MasterTorikomi_SKU
             return true;
         }
 
-        private void ErrorCheck(DataTable dt)
+        private bool ErrorCheck(DataTable dt)
         {
             string kibun = dt.Rows[0]["データ区分"].ToString();
             if (RB_all.Checked)
             {
-
-
                 if (dt.Columns.Count != 126)
                 {
                     bbl.ShowMessage("E137");
+                    return false;
                 }
 
-                //if (String.IsNullOrEmpty(dt.Rows[i]["データ区分"].ToString()))
-                //{
-                //    bbl.ShowMessage("E102");
-                //    return false;
-                //}
-                if (kibun != "1")
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
                 {
-                    bbl.ShowMessage("E190");
+                    if (kibun != "1")
+                    {
+                        bbl.ShowMessage("E190");
+                        return false;
+                    }
                 }
+
             }
             else if (RB_BaseInfo.Checked)
             {
                 if (dt.Columns.Count != 46)
                 {
                     bbl.ShowMessage("E137");
+                    return false;
                 }
 
-                //if (String.IsNullOrEmpty(dt.Rows[i]["データ区分"].ToString()))
-                //{
-                //    bbl.ShowMessage("E102");
-                //    return false;
-                //}
-                if (kibun != "2")
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
                 {
-                    bbl.ShowMessage("E137");
+                    if (kibun != "2")
+                    {
+                        bbl.ShowMessage("E137");
+                        return false;
+                    }
                 }
+
             }
             else if (RB_attributeinfo.Checked)
             {
                 if (dt.Columns.Count != 73)
                 {
                     bbl.ShowMessage("E137");
+                    return false;
                 }
 
-                //if (String.IsNullOrEmpty(dt.Rows[i]["データ区分"].ToString()))
-                //{
-                //    bbl.ShowMessage("E102");
-                //    return false;
-                //}
-                if (kibun != "3")
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
                 {
-                    bbl.ShowMessage("E137");
+                    if (kibun != "3")
+                    {
+                        bbl.ShowMessage("E137");
+                        return false;
+                    }
                 }
+
             }
             else if (RB_priceinfo.Checked)
             {
                 if (dt.Columns.Count != 27)
                 {
                     bbl.ShowMessage("E137");
+                    return false;
                 }
 
-                //if (String.IsNullOrEmpty(dt.Rows[i]["データ区分"].ToString()))
-                //{
-                //    bbl.ShowMessage("E102");
-                //    return false;
-                //}
-                if (kibun != "4")
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
                 {
-                    bbl.ShowMessage("E137");
+                    if (kibun != "4")
+                    {
+                        bbl.ShowMessage("E137");
+                        return false;
+                    }
                 }
+
             }
             else if (RB_Catloginfo.Checked)
             {
                 if (dt.Columns.Count != 22)
                 {
                     bbl.ShowMessage("E137");
+                    return false;
                 }
 
-                //if (String.IsNullOrEmpty(dt.Rows[i]["データ区分"].ToString()))
-                //{
-                //    bbl.ShowMessage("E102");
-                //    return false;
-                //}
-                if (kibun != "5")
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
                 {
-                    bbl.ShowMessage("E137");
+                    if (kibun != "5")
+                    {
+                        bbl.ShowMessage("E137");
+                        return false;
+                    }
                 }
+                
             }
             else if (RB_tagInfo.Checked)
             {
                 if (dt.Columns.Count != 23)
                 {
                     bbl.ShowMessage("E137");
+                    return false;
                 }
 
-                //if (String.IsNullOrEmpty(dt.Rows[i]["データ区分"].ToString()))
-                //{
-                //    bbl.ShowMessage("E102");
-                //    return false;
-                //}
-                if (kibun != "6")
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
                 {
-                    bbl.ShowMessage("E137");
+                    if (kibun != "6")
+                    {
+                        bbl.ShowMessage("E137");
+                        return false;
+                    }
                 }
+                
             }
             else if (RB_JanCD.Checked)
             {
                 if (dt.Columns.Count != 16)
                 {
                     bbl.ShowMessage("E137");
+                    return false;
                 }
 
-                //if (String.IsNullOrEmpty(dt.Rows[i]["データ区分"].ToString()))
-                //{
-                //    bbl.ShowMessage("E102");
-                //    return false;
-                //}
-                if (kibun != "7")
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
                 {
-                    bbl.ShowMessage("E137");
+                    if (kibun != "7")
+                    {
+                        bbl.ShowMessage("E137");
+                        return false;
+                    }
                 }
+                
             }
             else if (RB_SizeURL.Checked)
             {
                 if (dt.Columns.Count != 15)
                 {
                     bbl.ShowMessage("E137");
+                    return false;
                 }
 
-                //if (String.IsNullOrEmpty(dt.Rows[i]["データ区分"].ToString()))
-                //{
-                //    bbl.ShowMessage("E102");
-                //    return false;
-                //}
-                if (kibun != "8")
+                if (!String.IsNullOrEmpty(dt.Rows[1]["データ区分"].ToString()))
                 {
-                    bbl.ShowMessage("E137");
+                    if (kibun != "8")
+                    {
+                        bbl.ShowMessage("E137");
+                        return false;
+                    }
                 }
+                
             }
+            return true;
         }
         private void ExcelErrorCheck(DataTable dt)
         {
+           
+            dt.Columns.Add("EItem");
+            dt.Columns.Add("Error");
+            DataRow dr;
             string kibun = dt.Rows[1]["データ区分"].ToString();
-            if (RB_all.Checked)
-            {
-
-                if (dt.Columns.Count != 126)
-                {
-                    bbl.ShowMessage("E137");
-                }
-                if (kibun != "1")
-                {
-                    bbl.ShowMessage("E190");
-                }
-                //if (String.IsNullOrEmpty(dt.Rows[i]["データ区分"].ToString()))
-                //{
-                //    bbl.ShowMessage("E102");
-                //    return false;
-                //}
-
-            }
-            else if (RB_BaseInfo.Checked)
-            {
-                if (dt.Columns.Count != 46)
-                {
-                    bbl.ShowMessage("E137");
-                }
-
-                //if (String.IsNullOrEmpty(dt.Rows[i]["データ区分"].ToString()))
-                //{
-                //    bbl.ShowMessage("E102");
-                //    return false;
-                //}
-                if (kibun != "2")
-                {
-                    bbl.ShowMessage("E137");
-                }
-            }
-            else if (RB_attributeinfo.Checked)
-            {
-                if (dt.Columns.Count != 73)
-                {
-                    bbl.ShowMessage("E137");
-                }
-
-                //if (String.IsNullOrEmpty(dt.Rows[i]["データ区分"].ToString()))
-                //{
-                //    bbl.ShowMessage("E102");
-                //    return false;
-                //}
-                if (kibun != "3")
-                {
-                    bbl.ShowMessage("E137");
-                }
-            }
-            else if (RB_priceinfo.Checked)
-            {
-                if (dt.Columns.Count != 27)
-                {
-                    bbl.ShowMessage("E137");
-                }
-
-                //if (String.IsNullOrEmpty(dt.Rows[i]["データ区分"].ToString()))
-                //{
-                //    bbl.ShowMessage("E102");
-                //    return false;
-                //}
-                if (kibun != "4")
-                {
-                    bbl.ShowMessage("E137");
-                }
-            }
-            else if (RB_Catloginfo.Checked)
-            {
-                if (dt.Columns.Count != 22)
-                {
-                    bbl.ShowMessage("E137");
-                }
-
-                //if (String.IsNullOrEmpty(dt.Rows[i]["データ区分"].ToString()))
-                //{
-                //    bbl.ShowMessage("E102");
-                //    return false;
-                //}
-                if (kibun != "5")
-                {
-                    bbl.ShowMessage("E137");
-                }
-            }
-            else if (RB_tagInfo.Checked)
-            {
-                if (dt.Columns.Count != 23)
-                {
-                    bbl.ShowMessage("E137");
-                }
-
-                //if (String.IsNullOrEmpty(dt.Rows[i]["データ区分"].ToString()))
-                //{
-                //    bbl.ShowMessage("E102");
-                //    return false;
-                //}
-                if (kibun != "6")
-                {
-                    bbl.ShowMessage("E137");
-                }
-            }
-            else if (RB_JanCD.Checked)
-            {
-                if (dt.Columns.Count != 16)
-                {
-                    bbl.ShowMessage("E137");
-                }
-
-                //if (String.IsNullOrEmpty(dt.Rows[i]["データ区分"].ToString()))
-                //{
-                //    bbl.ShowMessage("E102");
-                //    return false;
-                //}
-                if (kibun != "7")
-                {
-                    bbl.ShowMessage("E137");
-                }
-            }
-            else if (RB_SizeURL.Checked)
-            {
-                if (dt.Columns.Count != 15)
-                {
-                    bbl.ShowMessage("E137");
-                }
-
-                //if (String.IsNullOrEmpty(dt.Rows[i]["データ区分"].ToString()))
-                //{
-                //    bbl.ShowMessage("E102");
-                //    return false;
-                //}
-                if (kibun != "8")
-                {
-                    bbl.ShowMessage("E137");
-                }
-            }
+            
             for (int i = 0; i < dt.Rows.Count; i++)
             {
 
                 if (String.IsNullOrEmpty(dt.Rows[i]["データ区分"].ToString()))
                 {
-                    bbl.ShowMessage("E102");
+                    
+                    dt.Rows[i]["EItem"] = "データ区分";
+                    dt.Rows[i]["Error"] = "E102";
                 }
 
                 if (String.IsNullOrEmpty(dt.Rows[i]["AdminNO"].ToString()))
                 {
-                    bbl.ShowMessage("E102");
+                   
+                    dt.Rows[i]["EItem"] = "AdminNO";
+                    dt.Rows[i]["Error"] = "E102";
                 }
                 else
                 {
-
+                    if (dt.Rows[i]["AdminNo"].ToString() != "New")
+                    {
+                        String query = "AdminNO = " + dt.Rows[i]["AdminNO"].ToString() + "" +
+                            " and SKUCD = '" + dt.Rows[i]["SKUCD"].ToString() + "'";
+                          
+                        var result = dtSKU.Select(query);
+                        if (result.Count() == 0)
+                        {
+                            
+                            dt.Rows[i]["EItem"] = "JANCD";
+                            dt.Rows[i]["Error"] = "E101";
+                        }
+                    }
                 }
                 if (!String.IsNullOrEmpty(dt.Rows[i]["改定日"].ToString()))
                 {
                     string date = bbl.FormatDate(dt.Rows[i]["改定日"].ToString());
                     if (!bbl.CheckDate(date))
                     {
-                        bbl.ShowMessage("E103");
+                      
+                        dt.Rows[i]["EItem"] = "改定日";
+                        dt.Rows[i]["Error"] = "E103";
                     }
                 }
                 else
                 {
-                    bbl.ShowMessage("E102");
+                  
+                    dt.Rows[i]["EItem"] = "改定日";
+                    dt.Rows[i]["Error"] = "E102";
                 }
 
 
@@ -413,22 +307,38 @@ namespace MasterTorikomi_SKU
                     string date = bbl.FormatDate(dt.Rows[i]["承認日"].ToString());
                     if (!bbl.CheckDate(date))
                     {
-                        bbl.ShowMessage("E103");
+                        
+                        dt.Rows[i]["EItem"] = "承認日";
+                        dt.Rows[i]["Error"] = "E103";
                     }
                 }
                 if (String.IsNullOrEmpty(dt.Rows[i]["SKUCD"].ToString()))
                 {
-                    bbl.ShowMessage("E102");
+                   
+                    dt.Rows[i]["EItem"] = "SKUCD";
+                    dt.Rows[i]["Error"] = "E102";
                 }
                 if (String.IsNullOrEmpty(dt.Rows[i]["JANCD"].ToString()))
                 {
-                    bbl.ShowMessage("E102");
+                   
+                    dt.Rows[i]["EItem"] = "JANCD";
+                    dt.Rows[i]["Error"] = "E102";
                 }
                 else
                 {
-
-                    String jancd1 = " JanCD = '" + dt.Rows[i]["JANCD"].ToString() + "'";
-                    var result = dtJ.Select(jancd1);
+                    if(dt.Rows[i]["JANCD"].ToString() !="Auto")
+                    {
+                        String query = " JanCD = '" + dt.Rows[i]["JANCD"].ToString() + "'" +
+                            " and SKUCD = '" + dt.Rows[i]["SKUCD"].ToString() + "'";
+                      
+                        var result = dtSKU.Select(query);
+                        if(result.Count() == 0)
+                        {
+                            
+                            dt.Rows[i]["EItem"] = "JANCD";
+                            dt.Rows[i]["Error"] = "E101";
+                        }
+                    }
                 }
 
                 if (!String.IsNullOrEmpty(dt.Rows[i]["削除"].ToString()))
@@ -438,26 +348,35 @@ namespace MasterTorikomi_SKU
 
                 if (String.IsNullOrEmpty(dt.Rows[i]["商品名"].ToString()))
                 {
-                    bbl.ShowMessage("E102");
+                    
+                    dt.Rows[i]["EItem"] = "商品名";
+                    dt.Rows[i]["Error"] = "E102";
                 }
 
 
               
                 if (String.IsNullOrEmpty(dt.Rows[i]["ITEMCD"].ToString()))
                 {
-                    bbl.ShowMessage("E102");
+                   
+                    dt.Rows[i]["EItem"] = "ITEMCD";
+                    dt.Rows[i]["Error"] = "E102";
                 }
                 if (String.IsNullOrEmpty(dt.Rows[i]["サイズ枝番"].ToString()))
                 {
-                    bbl.ShowMessage("E102");
+                    dt.Rows[i]["EItem"] = "サイズ枝番";
+                    dt.Rows[i]["Error"] = "E102";
                 }
                 if (String.IsNullOrEmpty(dt.Rows[i]["カラー枝番"].ToString()))
                 {
-                    bbl.ShowMessage("E102");
+                    
+                    dt.Rows[i]["EItem"] = "カラー枝番";
+                    dt.Rows[i]["Error"] = "E102";
                 }
                 if (String.IsNullOrEmpty(dt.Rows[i]["サイズ名"].ToString()))
                 {
-                    bbl.ShowMessage("E102");
+                    
+                    dt.Rows[i]["EItem"] = "サイズ名";
+                    dt.Rows[i]["Error"] = "E102";
                 }
                 //if (String.IsNullOrEmpty(dt.Rows[i]["カナ名"].ToString()))
                 //{
@@ -545,7 +464,10 @@ namespace MasterTorikomi_SKU
                         var dtResult = bbl.SimpleSelect1("28", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), dt.Rows[i]["主要仕入先CD"].ToString());
                         if (dtResult.Rows.Count == 0)
                         {
-                            bbl.ShowMessage("E101");
+                            
+                            dt.Rows[i]["EItem"] = "主要仕入先CD";
+                            dt.Rows[i]["Error"] = "E101";
+
                         }
                     }
 
@@ -567,7 +489,10 @@ namespace MasterTorikomi_SKU
                         var drB = bbl.SimpleSelect1("56", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), dt.Rows[i]["ブランドCD"].ToString());
                         if (drB.Rows.Count == 0)
                         {
-                            bbl.ShowMessage("E101");
+                           
+                            dt.Rows[i]["EItem"] = "ブランドCD";
+                            dt.Rows[i]["Error"] = "E101";
+
                         }
                     }
 
@@ -592,7 +517,9 @@ namespace MasterTorikomi_SKU
                         var dtTani = bbl.SimpleSelect1("57", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), dt.Rows[i]["単位CD"].ToString(), "201");
                         if (dtTani.Rows.Count == 0)
                         {
-                            bbl.ShowMessage("E101");
+                           
+                            dt.Rows[i]["EItem"] = "単位CD";
+                            dt.Rows[i]["Error"] = "E101";
                         }
                     }
 
@@ -601,7 +528,9 @@ namespace MasterTorikomi_SKU
                         var dtSp = bbl.SimpleSelect1("57", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), dt.Rows[i]["競技CD"].ToString(), "202");
                         if (dtSp.Rows.Count == 0)
                         {
-                            bbl.ShowMessage("E101");
+                           
+                            dt.Rows[i]["EItem"] = "競技CD";
+                            dt.Rows[i]["Error"] = "E101";
 
                         }
                     }
@@ -617,7 +546,9 @@ namespace MasterTorikomi_SKU
                         string date = bbl.FormatDate(dt.Rows[i]["発売開始日"].ToString());
                         if (!bbl.CheckDate(date))
                         {
-                            bbl.ShowMessage("E103");
+                           
+                            dt.Rows[i]["EItem"] = "発売開始日";
+                            dt.Rows[i]["Error"] = "E103";
                         }
                     }
                     if (!String.IsNullOrEmpty(dt.Rows[i]["Web掲載開始日"].ToString()))
@@ -625,7 +556,9 @@ namespace MasterTorikomi_SKU
                         string date = bbl.FormatDate(dt.Rows[i]["Web掲載開始日"].ToString());
                         if (!bbl.CheckDate(date))
                         {
-                            bbl.ShowMessage("E103");
+                          
+                            dt.Rows[i]["EItem"] = "Web掲載開始日";
+                            dt.Rows[i]["Error"] = "E103";
                         }
                     }
                     
@@ -635,7 +568,9 @@ namespace MasterTorikomi_SKU
                         var dtSeg = bbl.SimpleSelect1("57", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), dt.Rows[i]["セグメントCD"].ToString(), "226");
                         if (dtSeg.Rows.Count == 0)
                         {
-                            bbl.ShowMessage("E101");
+                           
+                            dt.Rows[i]["EItem"] = "セグメントCD";
+                            dt.Rows[i]["Error"] = "E101";
 
                         }
                     }
@@ -645,7 +580,9 @@ namespace MasterTorikomi_SKU
                         var dt1 = bbl.SimpleSelect1("57", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), dt.Rows[i]["発注注意区分"].ToString(), "316");
                         if (dt1.Rows.Count == 0)
                         {
-                            bbl.ShowMessage("E101");
+                            
+                            dt.Rows[i]["EItem"] = "発注注意区分";
+                            dt.Rows[i]["Error"] = "E101";
 
                         }
                     }
@@ -726,8 +663,9 @@ namespace MasterTorikomi_SKU
                         var dt1 = bbl.SimpleSelect1("57", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), dt.Rows[i]["予約品区分"].ToString(), "311");
                         if (dt1.Rows.Count == 0)
                         {
-                            bbl.ShowMessage("E101");
-
+                           
+                            dt.Rows[i]["EItem"] = "予約品区分";
+                            dt.Rows[i]["Error"] = "E101";
                         }
                     }
 
@@ -736,7 +674,9 @@ namespace MasterTorikomi_SKU
                         var dt1 = bbl.SimpleSelect1("57", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), dt.Rows[i]["特記区分"].ToString(), "310");
                         if (dt1.Rows.Count == 0)
                         {
-                            bbl.ShowMessage("E101");
+                            
+                            dt.Rows[i]["EItem"] = "特記区分";
+                            dt.Rows[i]["Error"] = "E101";
 
                         }
                     }
@@ -749,7 +689,9 @@ namespace MasterTorikomi_SKU
                         var dt1 = bbl.SimpleSelect1("57", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), dt.Rows[i]["送料区分"].ToString(), "309");
                         if (dt1.Rows.Count == 0)
                         {
-                            bbl.ShowMessage("E101");
+                           
+                            dt.Rows[i]["EItem"] = "送料区分";
+                            dt.Rows[i]["Error"] = "E101";
 
                         }
                     }
@@ -762,7 +704,10 @@ namespace MasterTorikomi_SKU
                         var dt1 = bbl.SimpleSelect1("57", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), dt.Rows[i]["要加工品区分"].ToString(), "312");
                         if (dt1.Rows.Count == 0)
                         {
-                            bbl.ShowMessage("E101");
+                            
+                            dt.Rows[i]["EItem"] = "要加工品区分";
+                            dt.Rows[i]["Error"] = "E101";
+
 
                         }
                     }
@@ -771,7 +716,9 @@ namespace MasterTorikomi_SKU
                         var dt1 = bbl.SimpleSelect1("57", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), dt.Rows[i]["要確認品区分"].ToString(), "313");
                         if (dt1.Rows.Count == 0)
                         {
-                            bbl.ShowMessage("E101");
+                           
+                            dt.Rows[i]["EItem"] = "要確認品区分";
+                            dt.Rows[i]["Error"] = "E101";
 
                         }
                     }
@@ -924,7 +871,9 @@ namespace MasterTorikomi_SKU
                         string date = bbl.FormatDate(dt.Rows[i]["指示書発行日"].ToString());
                         if (!bbl.CheckDate(dt.Rows[i]["指示書発行日"].ToString()))
                         {
-                            bbl.ShowMessage("E103");
+                           
+                            dt.Rows[i]["EItem"] = "指示書発行日";
+                            dt.Rows[i]["Error"] = "E103";
                         }
                     }
                 }
@@ -976,7 +925,7 @@ namespace MasterTorikomi_SKU
                
                
 
-                if (RB_all.Checked || RB_attributeinfo.Checked || RB_JanCD.Checked)
+                if (RB_all.Checked || RB_BaseInfo.Checked || RB_JanCD.Checked)
                 {
 
                     if (!String.IsNullOrEmpty(dt.Rows[i]["カナ名"].ToString()))
@@ -989,7 +938,7 @@ namespace MasterTorikomi_SKU
                     {
                     }
                 }
-                if (RB_all.Checked || RB_BaseInfo.Checked || RB_JanCD.Checked)
+                if (RB_all.Checked || RB_attributeinfo.Checked || RB_priceinfo.Checked)
                 {
                     if (!String.IsNullOrEmpty(dt.Rows[i]["Sale対象外区分"].ToString()))
                     {
@@ -1061,6 +1010,20 @@ namespace MasterTorikomi_SKU
         private void RB_priceinfo_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void GV_SKU_Paint(object sender, PaintEventArgs e)
+        {
+            for (int j = 6; j < 8;)
+            {
+                Rectangle r1 = this.GV_SKU.GetCellDisplayRectangle(j, -1, true);
+                int w1 = this.GV_SKU.GetCellDisplayRectangle(j + 1, -1, true).Width;
+                r1.X += 1;
+                r1.Y += 1;
+                r1.Width = r1.Width + w1 - 2;
+                r1.Height = r1.Height - 2;
+                j += 7;
+            }
         }
     }
 }
