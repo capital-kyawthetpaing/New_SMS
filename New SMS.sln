@@ -357,6 +357,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterShutsuryoku_SKU", "Ma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterTorikomi_SKU", "MasterTorikomi_SKU\MasterTorikomi_SKU.csproj", "{BAC10FC8-CB76-41CB-8580-A52BDAEFAC9F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterTorikomi_Item", "MasterTorikomi_Item\MasterTorikomi_Item.csproj", "{F2353C9D-AAF0-461D-B13D-699D3825649E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2477,6 +2479,18 @@ Global
 		{BAC10FC8-CB76-41CB-8580-A52BDAEFAC9F}.Release|x64.Build.0 = Release|Any CPU
 		{BAC10FC8-CB76-41CB-8580-A52BDAEFAC9F}.Release|x86.ActiveCfg = Release|Any CPU
 		{BAC10FC8-CB76-41CB-8580-A52BDAEFAC9F}.Release|x86.Build.0 = Release|Any CPU
+		{F2353C9D-AAF0-461D-B13D-699D3825649E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2353C9D-AAF0-461D-B13D-699D3825649E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2353C9D-AAF0-461D-B13D-699D3825649E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F2353C9D-AAF0-461D-B13D-699D3825649E}.Debug|x64.Build.0 = Debug|Any CPU
+		{F2353C9D-AAF0-461D-B13D-699D3825649E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F2353C9D-AAF0-461D-B13D-699D3825649E}.Debug|x86.Build.0 = Debug|Any CPU
+		{F2353C9D-AAF0-461D-B13D-699D3825649E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2353C9D-AAF0-461D-B13D-699D3825649E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2353C9D-AAF0-461D-B13D-699D3825649E}.Release|x64.ActiveCfg = Release|Any CPU
+		{F2353C9D-AAF0-461D-B13D-699D3825649E}.Release|x64.Build.0 = Release|Any CPU
+		{F2353C9D-AAF0-461D-B13D-699D3825649E}.Release|x86.ActiveCfg = Release|Any CPU
+		{F2353C9D-AAF0-461D-B13D-699D3825649E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
