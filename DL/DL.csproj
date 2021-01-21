@@ -155,6 +155,7 @@
     <Compile Include="M_SalesTax_DL.cs" />
     <Compile Include="M_Settlement_DL.cs" />
     <Compile Include="M_Site_DL.cs" />
+    <Compile Include="M_SKUCounter_DL.cs" />
     <Compile Include="M_SKULastCost_DL.cs" />
     <Compile Include="M_SKUPrice_DL.cs" />
     <Compile Include="M_SKU_DL.cs" />
