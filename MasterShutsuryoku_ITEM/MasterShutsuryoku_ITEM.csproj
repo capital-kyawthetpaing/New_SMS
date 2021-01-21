@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F2353C9D-AAF0-461D-B13D-699D3825649E}</ProjectGuid>
+    <ProjectGuid>{C20F59B9-C8BF-4BAE-A6B6-DEDCEAA3BC45}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MasterTorikomi_Item</RootNamespace>
-    <AssemblyName>MasterTorikomi_Item</AssemblyName>
+    <RootNamespace>MasterShutsuryoku_ITEM</RootNamespace>
+    <AssemblyName>MasterShutsuryoku_ITEM</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MasterTorikomi_Item.cs">
+    <Compile Include="MasterShutsuryoku_ITEM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MasterTorikomi_Item.Designer.cs">
-      <DependentUpon>MasterTorikomi_Item.cs</DependentUpon>
+    <Compile Include="MasterShutsuryoku_ITEM.Designer.cs">
+      <DependentUpon>MasterShutsuryoku_ITEM.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MasterTorikomi_Item.resx">
-      <DependentUpon>MasterTorikomi_Item.cs</DependentUpon>
+    <EmbeddedResource Include="MasterShutsuryoku_ITEM.resx">
+      <DependentUpon>MasterShutsuryoku_ITEM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -95,10 +95,6 @@
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{9dd6c82a-1899-478f-bc18-524ad0b0dcc8}</Project>
       <Name>Entity</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Search\Search.csproj">
-      <Project>{83d6364b-73ea-4288-bce7-55a1119ee5a2}</Project>
-      <Name>Search</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
