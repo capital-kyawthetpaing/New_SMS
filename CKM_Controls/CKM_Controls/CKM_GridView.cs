@@ -707,7 +707,11 @@ namespace CKM_Controls
                         case Keys.None:
                             break;
                     }
-            this.BeginEdit(true);
+            try
+            {
+                this.BeginEdit(true);
+            }
+            catch { }
             //}
             //}
         } // MyProcessCmdKey

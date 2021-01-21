@@ -48,7 +48,7 @@
             this.btn_Proj11 = new CKM_Controls.CKM_Button();
             this.btn_Proj10 = new CKM_Controls.CKM_Button();
             this.btn_Proj9 = new CKM_Controls.CKM_Button();
-            this.ckM_Button9btn_Proj8 = new CKM_Controls.CKM_Button();
+            this.btn_Proj8 = new CKM_Controls.CKM_Button();
             this.btn_Proj7 = new CKM_Controls.CKM_Button();
             this.btn_Proj6 = new CKM_Controls.CKM_Button();
             this.btn_Proj5 = new CKM_Controls.CKM_Button();
@@ -260,7 +260,7 @@
             this.panel_right.Controls.Add(this.btn_Proj11);
             this.panel_right.Controls.Add(this.btn_Proj10);
             this.panel_right.Controls.Add(this.btn_Proj9);
-            this.panel_right.Controls.Add(this.ckM_Button9btn_Proj8);
+            this.panel_right.Controls.Add(this.btn_Proj8);
             this.panel_right.Controls.Add(this.btn_Proj7);
             this.panel_right.Controls.Add(this.btn_Proj6);
             this.panel_right.Controls.Add(this.btn_Proj5);
@@ -420,26 +420,26 @@
             this.btn_Proj9.Text = "ckm_1";
             this.btn_Proj9.UseVisualStyleBackColor = false;
             // 
-            // ckM_Button9btn_Proj8
+            // btn_Proj8
             // 
-            this.ckM_Button9btn_Proj8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ckM_Button9btn_Proj8.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.White;
-            this.ckM_Button9btn_Proj8.BackgroundImage = global::MainMenu.Properties.Resources.bn_9;
-            this.ckM_Button9btn_Proj8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckM_Button9btn_Proj8.DefaultBtnSize = false;
-            this.ckM_Button9btn_Proj8.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ckM_Button9btn_Proj8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ckM_Button9btn_Proj8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ckM_Button9btn_Proj8.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
-            this.ckM_Button9btn_Proj8.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XSmall;
-            this.ckM_Button9btn_Proj8.ForeColor = System.Drawing.Color.Green;
-            this.ckM_Button9btn_Proj8.Location = new System.Drawing.Point(361, 294);
-            this.ckM_Button9btn_Proj8.Margin = new System.Windows.Forms.Padding(1);
-            this.ckM_Button9btn_Proj8.Name = "ckM_Button9btn_Proj8";
-            this.ckM_Button9btn_Proj8.Size = new System.Drawing.Size(334, 131);
-            this.ckM_Button9btn_Proj8.TabIndex = 43;
-            this.ckM_Button9btn_Proj8.Text = "ckm_1";
-            this.ckM_Button9btn_Proj8.UseVisualStyleBackColor = false;
+            this.btn_Proj8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_Proj8.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.White;
+            this.btn_Proj8.BackgroundImage = global::MainMenu.Properties.Resources.bn_9;
+            this.btn_Proj8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Proj8.DefaultBtnSize = false;
+            this.btn_Proj8.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_Proj8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_Proj8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Proj8.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.btn_Proj8.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XSmall;
+            this.btn_Proj8.ForeColor = System.Drawing.Color.Green;
+            this.btn_Proj8.Location = new System.Drawing.Point(361, 294);
+            this.btn_Proj8.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_Proj8.Name = "btn_Proj8";
+            this.btn_Proj8.Size = new System.Drawing.Size(334, 131);
+            this.btn_Proj8.TabIndex = 43;
+            this.btn_Proj8.Text = "ckm_1";
+            this.btn_Proj8.UseVisualStyleBackColor = false;
             // 
             // btn_Proj7
             // 
@@ -900,7 +900,7 @@
         private CKM_Controls.CKM_Button btn_Proj11;
         private CKM_Controls.CKM_Button btn_Proj10;
         private CKM_Controls.CKM_Button btn_Proj9;
-        private CKM_Controls.CKM_Button ckM_Button9btn_Proj8;
+        private CKM_Controls.CKM_Button btn_Proj8;
         private CKM_Controls.CKM_Button btn_Proj7;
         private CKM_Controls.CKM_Button btn_Proj6;
         private CKM_Controls.CKM_Button btnClose;

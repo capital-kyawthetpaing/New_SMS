@@ -24,193 +24,211 @@ namespace MailRecieve
 
         static MailSend_BL msbl = new MailSend_BL();
         static Base_BL bl = new Base_BL();
+        string[] filename;
+        string realFilepath;
+        string tempFilepath;
+        string tempfilename;
+        string dateTime;
+        
 
         public void MailRead(DataTable dtMailAddress, string filepath)
         {
-            using (Pop3 pop3 = new Pop3())
-            {
-                for (int i = 0; i < dtMailAddress.Rows.Count; i++)
-                {
+
+            int readCount =  0; int startIndex = 1;
+            for (int i = 0; i < dtMailAddress.Rows.Count; i++)
+             {
+                ///Read mail
+                using (Pop3 pop3 = new Pop3())
+                  {
                     pop3.Connect(dtMailAddress.Rows[i]["ReceiveServer"].ToString(), 110, false);   // or ConnectSSL
                     pop3.UseBestLogin(dtMailAddress.Rows[i]["Account"].ToString(), dtMailAddress.Rows[i]["Password"].ToString());
 
                     foreach (string uid in pop3.GetAll())
                     {
+
                         IMail email = new MailBuilder().CreateFromEml(pop3.GetMessageByUID(uid));
                         Console.WriteLine(email.Subject);
                         string AddressFrom = email.From[0].Address.Replace("\"", "");
 
-                        //select VendorCD
+                        ///select VendorCD
                         DataTable dtVendorCD = msbl.ReceiveOfVendorMail(AddressFrom);
-
-                        // save all attachments to disk
-                        foreach (MimeData mime in email.Attachments)
+                        if (dtVendorCD.Rows.Count > 0)
                         {
-
-                            if (mime.SafeFileName.Contains(".csv"))
+                            /// save all attachments to disk
+                            int ct = 0;
+                            foreach (MimeData mime in email.Attachments)
                             {
-                                if (!Directory.Exists(filepath + dtVendorCD.Rows[0]["VendorCD"].ToString()))
+                                if (mime.SafeFileName.Contains(".csv"))
                                 {
-                                    Directory.CreateDirectory(filepath + "\\" + dtVendorCD.Rows[0]["VendorCD"].ToString());
+
+                                    filename = new string[email.Attachments.Count];
+                                    if (!Directory.Exists(filepath + "\\" + dtVendorCD.Rows[0]["VendorCD"].ToString()))
+                                    {
+                                        //Directory.CreateDirectory(filepath + "\\" + dtVendorCD.Rows[0]["VendorCD"].ToString());
+                                        Directory.CreateDirectory(filepath + "\\" + dtVendorCD.Rows[0]["VendorCD"].ToString() + "\\" + "tempfolder");
+                                    }
+
+                                    dateTime = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+                                    tempfilename = mime.SafeFileName;
+                                    tempFilepath = filepath + "\\" + dtVendorCD.Rows[0]["VendorCD"].ToString() + "\\" + "tempfolder" + "\\";
+                                    realFilepath = filepath + "\\" + dtVendorCD.Rows[0]["VendorCD"].ToString() + "\\";
+
+                                    mime.Save(tempFilepath + tempfilename);
+                                    filename[ct] = tempfilename;
+                                    ct++;
+
+                                    readCount++;
+
+                                }
+                            }
+
+
+                            #region Send Mail
+
+                            MailMessage mm = new MailMessage();
+                            SmtpClient smtpServer = new SmtpClient(dtMailAddress.Rows[i]["ReceiveServer"].ToString());
+                            mm.From = new System.Net.Mail.MailAddress(dtMailAddress.Rows[i]["Account"].ToString());
+                            mm.Subject = "Forward Mail";
+                            mm.Body = email.Text;
+                            mm.To.Add(dtMailAddress.Rows[i]["BackUpAddress"].ToString());
+
+                            if (filename != null && filename.Length > 0)
+                                for (int fnc = 0; fnc < filename.Length; fnc++)
+                                {
+                                    if (File.Exists(tempFilepath + "\\" + filename[fnc].ToString()))
+                                    {
+                                        mm.Attachments.Add(new Attachment(tempFilepath + "\\" + filename[fnc].ToString()));
+                                    }
                                 }
 
-
-                                string dateTime = DateTime.Now.ToString("yyyyMMdd_HHmmss");
-                                string realFilepath = filepath + "\\" + dtVendorCD.Rows[0]["VendorCD"].ToString() + "\\";
-                                mime.Save(realFilepath + dateTime + mime.SafeFileName);
+                            smtpServer.Port = 587;
+                            smtpServer.Credentials = new System.Net.NetworkCredential(mm.From.Address, dtMailAddress.Rows[i]["Password"].ToString());
+                            smtpServer.EnableSsl = false;
+                            try
+                            {
+                                smtpServer.Send(mm);
+                                Console.WriteLine("メールのご送信が完了致しました。");
 
                             }
+                            catch (Exception ex)
+                            {
+                                var er = ex.Message;
+                            }
+                            mm.Dispose();
+
+                            #endregion
+
+                            ///Move file
+                            if (filename != null && filename.Length > 0)
+                            {
+                                for (int fnc = 0; fnc < filename.Length; fnc++)
+                                {
+                                    File.Move(tempFilepath + filename[fnc], realFilepath + dateTime + filename[fnc]);
+                                }
+                                if (Directory.Exists(filepath + "\\" + dtVendorCD.Rows[0]["VendorCD"].ToString() + "\\" + "tempfolder"))
+                                    Directory.Delete(filepath + "\\" + dtVendorCD.Rows[0]["VendorCD"].ToString() + "\\" + "tempfolder");
+
+                            }
+                                
+
+
+                            #region no use test for forward
+                            //byte[] eml = pop3.GetMessageByUID(uid);
+
+                            //MailBuilder builder = new MailBuilder();
+                            //builder.From.Add(new MailBox(AddressFrom));
+                            //builder.To.Add(new MailBox(dtMailAddress.Rows[0]["BackUpAddress"].ToString()));
+                            //builder.Subject = "Forwarded email is attached";
+
+                            //// attach themle message
+                            //MimeRfc822 rfc822 = new MimeFactory().CreateMimeRfc822();
+                            //rfc822.Data = eml;
+
+                            //builder.AddAttachment(rfc822);
+
+                            //IMail forward = builder.Create();
+
+                            //using (Smtp smtp = new Smtp())
+                            //{
+                            //    smtp.Connect(dtMailAddress.Rows[i]["ReceiveServer"].ToString()); // or ConnectSSL if you want to use SSL
+                            //    smtp.UseBestLogin(dtMailAddress.Rows[i]["Account"].ToString(), dtMailAddress.Rows[i]["Password"].ToString());
+                            //    smtp.SendMessage(forward);
+                            //    Console.WriteLine("Forward mail");
+                            //    smtp.Close();
+                            //}
+
+                            #endregion
+
+
+                            ///Delete Mail
+                            ///
+                            //DateTime datesent = email.Date.Value.ToString("");
+
+                            //pop3.DeleteMessageByUID(uid);
+
+                            //AccountStats stat = pop3.GetAccountStat();
+
+                            //for(int mailId = 1 ; mailId <= stat.MessageCount; mailId++)
+                            // {
+                            //  IMail email = new MailBuilder().CreateFromEml(pop3.GetMessageByUID(uid));
+                            //  Console.WriteLine(email.Subject);
+                            //  string AddressFrom = email.From[0].Address.Replace("\"", "");
+
+                            //  //string messageContent = pop3.GetMessageByNumber(mailId);
+                            //  //do Something with the Mail
+                            //  pop3.DeleteMessageByNumber(mailId);
+                            //  }
+
+                            //pop3.DeleteMessageByUID(uid);
+                            //pop3.DeleteMessageByNumber(1);
+
+                            //pop3.Dispose();
                         }
-
-                        #region test for forward
-                        //byte[] eml = pop3.GetMessageByUID(uid);
-
-                        //MailBuilder builder = new MailBuilder();
-                        //builder.From.Add(new MailBox(AddressFrom));
-                        //builder.To.Add(new MailBox(dtMailAddress.Rows[0]["BackUpAddress"].ToString()));
-                        //builder.Subject = "Forwarded email is attached";
-
-                        //// attach themle message
-                        //MimeRfc822 rfc822 = new MimeFactory().CreateMimeRfc822();
-                        //rfc822.Data = eml;
-
-                        //builder.AddAttachment(rfc822);
-
-                        //IMail forward = builder.Create();
-
-                        //using (Smtp smtp = new Smtp())
-                        //{
-                        //    smtp.Connect(dtMailAddress.Rows[i]["ReceiveServer"].ToString()); // or ConnectSSL if you want to use SSL
-                        //    smtp.UseBestLogin(dtMailAddress.Rows[i]["Account"].ToString(), dtMailAddress.Rows[i]["Password"].ToString());
-                        //    smtp.SendMessage(forward);
-                        //    Console.WriteLine("Forward mail");
-                        //    smtp.Close();
-                        //}
-
-                        #endregion
-
-                        pop3.DeleteMessageByUID(uid);
-                        
-
                     }
-                  
-                }
 
-                pop3.Close();
+                    pop3.Close();
+
+                  }
+
+
+                ///Delete Mail
+                using (Pop3Client pop3Client = new Pop3Client())
+                {
+                    pop3Client.Connect(dtMailAddress.Rows[i]["ReceiveServer"].ToString(), 110, false);
+                    pop3Client.Authenticate(dtMailAddress.Rows[i]["Account"].ToString(), dtMailAddress.Rows[i]["Password"].ToString());
+
+                    int count = pop3Client.GetMessageCount();
+                    Message message = pop3Client.GetMessage(count);
+
+                    if(readCount>0)
+                    {
+                        while (startIndex <= readCount)//delete count
+                        {
+                            try
+                            {
+                                message = pop3Client.GetMessage(startIndex);
+                                DateTime date1 = message.Headers.DateSent;
+                                //mark as delete
+                                pop3Client.DeleteMessage(startIndex);
+                             
+                                startIndex++;
+                            }
+                            catch (Exception errMessage)
+                            {
+                                throw errMessage;
+                            }
+                        }
+                        //commit delete
+                        pop3Client.Disconnect();
+                    }
+                    
+                }
+                   
+               
 
             }
 
-            #region Testing
-            //Pop3Client pop3Client;
-            //pop3Client = new Pop3Client();
-
-            //for (int i = 0; i < dtMailAddress.Rows.Count; i++)
-            //{
-            //    DataTable dtMessages = new DataTable();
-            //    dtMessages.Columns.Add("MessageNumber");
-            //    dtMessages.Columns.Add("From");
-            //    dtMessages.Columns.Add("Subject");
-            //    dtMessages.Columns.Add("DateSent");
-            //    dtMessages.Columns.Add("MessageBody");
-            //    dtMessages.Columns.Add("User_Email");
-
-            //    pop3Client.Connect(dtMailAddress.Rows[i]["ReceiveServer"].ToString(), 110, false);
-            //    pop3Client.Authenticate(dtMailAddress.Rows[i]["Account"].ToString(), dtMailAddress.Rows[i]["Password"].ToString());
-            //    int count = pop3Client.GetMessageCount();
-            //    for (int j = 1; j <= count; j++)
-            //    {
-            //        byte[] str = pop3Client.GetMessageAsBytes(j);
-            //        string strs = Encoding.GetEncoding(50222).GetString(str).TrimEnd();
-            //        if (ReadError(strs))
-            //        {
-
-
-
-            //            #region Testing
-            //            //OpenPop.Mime.Message msg = pop3Client.GetMessage(j);
-
-            //            //OpenPop.Mime.MessagePart plainTextPart = msg.FindFirstPlainTextVersion();
-            //            //List<MessagePart> attachments = msg.FindAllAttachments();
-            //            //foreach (OpenPop.Mime.MessagePart attachment in attachments)
-            //            //{
-            //            //    if (attachment != null)
-            //            //    {
-            //            //        string ext = attachment.FileName.Split('.')[1];
-            //            //        FileInfo file = new FileInfo("C:\\Attachments" + DateTime.Now.Ticks.ToString() + "." + ext);
-
-            //            //        msg.
-            //            //    }
-            //            //}
-            //            //Message message = pop3Client.GetMessage(j);
-            //            //byte[] body = message.MessagePart.Body;
-            //            //dtMessages.Rows.Add();
-            //            //dtMessages.Rows[dtMessages.Rows.Count - 1]["MessageNumber"] = j;
-            //            //dtMessages.Rows[dtMessages.Rows.Count - 1]["Subject"] = message.Headers.Subject;
-            //            //dtMessages.Rows[dtMessages.Rows.Count - 1]["DateSent"] = message.Headers.DateSent.AddHours(9);
-            //            //dtMessages.Rows[dtMessages.Rows.Count - 1]["From"] = message.Headers.From;
-
-            //            //List<MessagePart> attachment = message.FindAllAttachments();
-
-            //            //for (int ct=0; ct<attachment.Count(); ct++)
-            //            //{
-            //            //    FileInfo file = new FileInfo("C:\\"+attachment[ct].ToString());
-
-            //            //    //attachment.SaveToFile(file);
-            //            //}
-
-            //            //foreach (OpenPop.Mime.MessagePart attachment in attachments)
-            //            //{
-            //            //    if (attachment != null)
-            //            //    {
-            //            //        string ext = attachment.FileName.Split('.')[1];
-            //            //        FileInfo file = new FileInfo(Server.MapPath("Attachments\\") + DateTime.Now.Ticks.ToString() + "." + ext);
-
-            //            //        attachment.SaveToFile(file);
-            //            //    }
-            //            //}
-
-            //            //string filename= attachment[0].FileName.Trim();
-            //            //message.FileName = attachment[0].FileName.Trim();
-            //            //message.Attachment = attachment;
-            //            //if (attachment.Count() > 0)
-            //            //    if (attachment[0] != null)
-            //            //    {
-            //            //        byte[] content = attachment[0].Body;
-
-            //            //        //[1] Save file to server path  
-            //            //        //File.WriteAllBytes(Path.Combine(HttpRuntime.AppDomainAppPath, "Files/") + message.FileName, attachment[0].Body);  
-
-            //            //        //[2] Download file  
-            //            //        string[] stringParts = attachment[0].FileName.Split(new char[] { '.' });
-            //            //        string strType = stringParts[1];
-            //            //        //attachment[0].Save
-
-            //            //        //Response.Clear();
-            //            //        //Response.ClearContent();
-            //            //        //Response.ClearHeaders();
-            //            //        //Response.AddHeader("content-disposition", "attachment; filename=" + message.FileName);
-
-            //            //        ////Set the content type as file extension type  
-            //            //        //Response.ContentType = strType;
-            //            //        ////attachment[0].ContentType.MediaType;  
-
-            //            //        ////Write the file content  
-            //            //        //Response.BinaryWrite(content);
-            //            //        //Response.End();
-            //            //    }
-
-            //            #endregion
-            //        }
-            //    }
-
-            //pop3Client.Connect("133.242.249.67", 110, false);
-            // pop3Client.Authenticate("tennicedi@act-gr.co.jp", "@Capital13");
-            //pop3Client.Authenticate("order@capitalk-mm.com", "oeui39@efad");
-
-            //pop3Client.Connect("smtp.gmail.com", 587, false);
-            //pop3Client.Authenticate("skshomepage@gmail.com", "homepage");
-
-            #endregion
+            
         }
 
 
