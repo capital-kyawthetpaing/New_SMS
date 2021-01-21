@@ -514,23 +514,30 @@ namespace MainMenu
         {
             if (IsClose)
             {
-                BL.Base_BL bbl = new Base_BL();
-                if (bbl.ShowMessage("Q003") == DialogResult.Yes)
+                if (CheckOpenForm())
                 {
-                    try
+                    BL.Base_BL bbl = new Base_BL();
+                    if (bbl.ShowMessage("Q003") == DialogResult.Yes)
                     {
-                        ForceToclose();
+                        try
+                        {
+                            ForceToclose();
+                        }
+                        catch { }
+                        e.Cancel = false;
                     }
-                    catch { }
-                    e.Cancel = false;
+                    else
+                        e.Cancel = true;
                 }
-                else
-                    e.Cancel = true;
             }
             else
             {
                 e.Cancel = true;
             }
+        }
+        private bool CheckOpenForm()
+        {
+            return (Application.OpenForms["Capitalsports_MainMenu"].Visible == true);
         }
         public void ForceToclose()
         {

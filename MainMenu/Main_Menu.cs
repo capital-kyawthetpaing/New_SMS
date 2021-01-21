@@ -593,15 +593,21 @@ namespace MainMenu
         }
         public void Main_Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            BL.Base_BL bbl = new Base_BL();
-            if (bbl.ShowMessage("Q003") == DialogResult.Yes)
+            if (CheckOpenForm())
             {
-
-                ForceToClose();
-                e.Cancel = false;
+                BL.Base_BL bbl = new Base_BL();
+                if (bbl.ShowMessage("Q003") == DialogResult.Yes)
+                {
+                    ForceToClose();
+                    e.Cancel = false;
+                }
+                else
+                    e.Cancel = true;
             }
-            else
-                e.Cancel = true;
+        }
+        private bool CheckOpenForm()
+        {
+            return (Application.OpenForms["Main_Menu"].Visible == true);
         }
         public void ForceToClose()
         {
@@ -677,7 +683,7 @@ namespace MainMenu
             (sender as CKM_Button).BackgroundImage = Properties.Resources.bn_15;
             // 
             if (!Defg)
-            (sender as CKM_Button).Font = d;
+            (sender as CKM_Button).Font = new Font("MS Gothic", 14, FontStyle.Bold);
             else
                 (sender as CKM_Button).Font = new Font("MS Gothic", 22, FontStyle.Bold);
             (sender as CKM_Button).ForeColor = Color.White;
