@@ -75,6 +75,12 @@
     <Compile Include="Search_Brand.designer.cs">
       <DependentUpon>Search_Brand.cs</DependentUpon>
     </Compile>
+    <Compile Include="Search_Brand_Shop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_Brand_Shop.Designer.cs">
+      <DependentUpon>Search_Brand_Shop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Search_Carrier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -369,6 +375,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Search_Brand.resx">
       <DependentUpon>Search_Brand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search_Brand_Shop.resx">
+      <DependentUpon>Search_Brand_Shop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Search_Carrier.resx">
       <DependentUpon>Search_Carrier.cs</DependentUpon>
